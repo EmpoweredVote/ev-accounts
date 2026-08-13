@@ -1,0 +1,1828 @@
+{
+ "pass": "chairs seated by inference — owed evidence describing THAT chair",
+ "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
+ "n": 121,
+ "by_state": {
+  "MD": {
+   "rows": 82,
+   "politicians": [
+    "Alonzo T. Washington",
+    "Arthur Ellis",
+    "Benjamin F. Kramer",
+    "Brian J. Feldman",
+    "C. Anthony Muse",
+    "Cheryl C. Kagan",
+    "Jeff Waldstreicher",
+    "Jim Rosapepe",
+    "Joanne C. Benson",
+    "Katie Fry Hester",
+    "Kevin M. Harris",
+    "Nick Charles",
+    "Ron Watson",
+    "Sara Love",
+    "Shaneka Henson",
+    "William C. Smith, Jr."
+   ],
+   "topics": {
+    "Healthcare": 2,
+    "Voting Rights": 14,
+    "Criminal Justice": 3,
+    "Economic Development Incentives": 13,
+    "Environmental Protection vs. Development": 6,
+    "Public Safety Approach": 11,
+    "Taxes": 13,
+    "Medicare/aid": 1,
+    "Campaign Finance": 2,
+    "Immigration": 5,
+    "Same-Sex Marriage": 1,
+    "Trans Athletes": 3,
+    "Bail & Pretrial": 2,
+    "Ukraine Support": 1,
+    "Redistricting": 2,
+    "Prosecution": 1,
+    "AI Oversight": 2
+   }
+  },
+  "CA": {
+   "rows": 31,
+   "politicians": [
+    "Ben Bartlett",
+    "Brent Blackaby",
+    "Drew Boyles",
+    "Igor Tregub",
+    "Rashi Kesarwani",
+    "Sean Elo-Rivera",
+    "Terry Taplin",
+    "Todd Gloria"
+   ],
+   "topics": {
+    "Climate Change": 4,
+    "Environmental Protection vs. Development": 2,
+    "Homelessness Response": 3,
+    "Local Immigration Enforcement": 5,
+    "Homelessness": 3,
+    "Transportation Priorities": 4,
+    "Deportation": 1,
+    "Fossil Fuels": 1,
+    "Rent Regulation": 2,
+    "Housing": 1,
+    "Public Safety Approach": 2,
+    "City Sanitation and Cleanliness": 1,
+    "Taxes": 1,
+    "Residential Zoning": 1
+   }
+  },
+  "MI": {
+   "rows": 1,
+   "politicians": [
+    "Haley M. Stevens"
+   ],
+   "topics": {
+    "AI Oversight": 1
+   }
+  },
+  "??": {
+   "rows": 5,
+   "politicians": [
+    "Christine Parra",
+    "Erika Uyterhoeven",
+    "Francisco E. Paulino",
+    "Patrick M. O'Connor",
+    "Phil Brock"
+   ],
+   "topics": {
+    "AI Oversight": 1,
+    "Fossil Fuels": 1,
+    "School Vouchers": 1,
+    "Growth and Development Pace": 2
+   }
+  },
+  "MA": {
+   "rows": 2,
+   "politicians": [
+    "Diana DiZoglio",
+    "Jake Wilson"
+   ],
+   "topics": {
+    "School Vouchers": 1,
+    "Residential Zoning": 1
+   }
+  }
+ },
+ "rows": [
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Healthcare Access",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "chair_seated": 2,
+   "reasoning": "Kramer consistently votes for healthcare access expansion including Medicaid expansion, prescription drug cost controls, and healthcare affordability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1726"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Healthcare Access",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher is a strong advocate for universal healthcare access. He backed Medicaid expansion and has supported legislation to reduce prescription drug costs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1726"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Washington is a strong voting rights advocate. He backed automatic voter registration, early voting expansion, and ballot access for all eligible voters.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Criminal Justice Approach",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "chair_seated": 2,
+   "reasoning": "Washington has supported criminal justice reforms including sentencing reform and reducing mass incarceration. He backed legislation creating pathways for formerly incarcerated individuals.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Washington supports economic development through public investment in Prince George's County. He backs job creation programs and workforce development for historically underinvested communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "reasoning": "Washington has backed environmental justice measures addressing disproportionate pollution burdens in PG County communities. He supports Chesapeake Bay protection and clean air standards.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Washington supports community-centered public safety including prevention programs, mental health resources, and police accountability. He represents communities with both safety needs and police reform concerns.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Washington supports progressive taxation to fund public services in underserved communities. He backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "reasoning": "Ellis is a strong advocate for Chesapeake Bay protection and clean water standards. His Southern Maryland district directly depends on the health of the Bay ecosystem.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Ellis consistently backs voting rights including automatic voter registration and early voting expansion to increase ballot access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Ellis supports economic development in Charles County including workforce training and attracting businesses to his growing suburban district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Ellis supports a balanced public safety approach combining prevention programs and enforcement. He backed police accountability legislation while supporting community policing.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Ellis supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1030?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Medicare / Medicaid",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "chair_seated": 2,
+   "reasoning": "Kramer supports expanding Medicaid and protecting Medicare. He has backed healthcare safety net programs serving vulnerable populations in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Kramer is a consistent supporter of voting rights including automatic voter registration, early voting, and absentee ballot access. He opposes voter ID restrictions.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Kramer supports economic development through public investment in infrastructure, education, and workforce development. He backs tech sector growth and small business support.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "reasoning": "Kramer has supported Chesapeake Bay protection, clean water standards, and local environmental legislation. He serves on committees overseeing environmental policy.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Kramer supports progressive taxation to fund public education and services. He voted for the Blueprint for Maryland's Future funding mechanisms including higher corporate and income taxes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Muse consistently backs voting rights expansion including automatic voter registration and ballot access measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Muse supports economic development investment in Prince George's County including job creation and community reinvestment programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Muse supports strong public safety in Prince George's County including community policing and crime prevention programs. He takes a balanced approach to public safety and criminal justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Muse supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Campaign Finance Reform",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "chair_seated": 2,
+   "reasoning": "Kagan has been a consistent advocate for campaign finance transparency and reform, supporting disclosure requirements and limits on dark money in Maryland elections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Kagan is nationally recognized for election law expertise and chairs or serves on Maryland's Election Law committee. She has championed automatic voter registration, early voting expansion, and ballot access improvements throughout her career.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Kagan supports economic development through public investment and supports workforce development programs that benefit Montgomery County's technology and government contractor economy.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "chair_seated": 2,
+   "reasoning": "Kagan represents a district with significant immigrant communities including many federal workers. She supports comprehensive immigration reform and opposes harsh immigration enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Kagan supports a community-centered approach to public safety, including criminal justice reforms and addressing root causes of crime through investment in communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Kagan supports progressive taxation to fund public services. She backs higher taxes on corporations and wealthy individuals to fund education and healthcare.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher represents a district with many immigrants and federal workers. He strongly supports comprehensive immigration reform and state-level immigrant protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Same-Sex Marriage",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "chair_seated": 1,
+   "reasoning": "Waldstreicher has been a vocal supporter of same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and opposed anti-trans bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher supports progressive tax reform including higher taxes on corporations and wealthy individuals to fund the Blueprint for Maryland's Future education investments.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Transgender Athletes",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher is a consistent supporter of voting rights expansion including automatic voter registration, early voting, and ballot access for all eligible voters.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Bail and Pretrial Decisions",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "chair_seated": 2,
+   "reasoning": "As a Judicial Proceedings Committee member, Waldstreicher has voted to reform Maryland's cash bail system to reduce pretrial detention for nonviolent offenders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Campaign Finance Reform",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher supports campaign finance reform and transparency. He has backed disclosure requirements for dark money spending in Maryland elections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Criminal Justice Approach",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "chair_seated": 2,
+   "reasoning": "Waldstreicher serves on the Judicial Proceedings Committee and has supported criminal justice reform measures including sentencing reform and second-chance opportunities for formerly incarcerated individuals.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Waldstreicher supports economic development through public investment and innovation economy support. He backs workforce training and technology sector growth in Montgomery County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Waldstreicher supports a holistic public safety approach including criminal justice reform and community investment. He backed police accountability legislation while supporting community policing.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "state": "MD",
+   "topic": "Ukraine - Russia Conflict",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "chair_seated": 2,
+   "reasoning": "Rosapepe served as US Ambassador to Romania under President Clinton, giving him strong Eastern European security awareness. He supports US assistance to Ukraine defending against Russian aggression.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Rosapepe is a consistent voting rights supporter including automatic voter registration and early voting expansion. As a former Democratic leader, he strongly backs voter access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Rosapepe supports a balanced public safety approach combining enforcement with prevention and mental health resources. He backed police accountability reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Rosapepe supports progressive taxation to fund public investment. He backed the Blueprint for Maryland's Future funding mechanisms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Benson strongly supports voting rights including automatic voter registration and early voting. She has consistently backed measures to expand ballot access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Benson supports economic development investment in Prince George's County including job training programs and infrastructure investment for underserved communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Benson supports progressive taxation to fund public education and services. She voted for the Blueprint for Maryland's Future funding mechanisms and progressive tax reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Harris is a consistent voting rights supporter backing automatic voter registration and early voting expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Harris supports economic development investment in Prince George's County including workforce training and job creation for underserved communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "reasoning": "Harris supports environmental justice for communities of color disproportionately affected by pollution in Prince George's County. He backed Chesapeake Bay protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "state": "MD",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "chair_seated": 2,
+   "reasoning": "Harris represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Charles is a consistent supporter of voting rights including automatic voter registration and early voting expansion to increase ballot access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Charles supports economic development investment in Prince George's County including workforce training and small business support in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Charles supports community-centered public safety combining prevention, mental health resources, and police accountability alongside enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Charles supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Watson is a consistent supporter of voting rights including automatic voter registration and early voting expansion in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Watson supports economic development through public investment in Prince George's County. He backs job creation and workforce development programs for his constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Watson supports community-centered public safety including prevention programs, mental health resources, and police accountability alongside enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Watson supports progressive taxation to fund public services. He backed the Blueprint for Maryland's Future funding and higher corporate taxes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "reasoning": "As Environment and Transportation Committee member, Love is a strong local environmental advocate. She backs Chesapeake Bay protections, stormwater management, and clean air measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/esm01",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Love is a strong supporter of voting access and election integrity from the pro-voter perspective. She backed automatic voter registration and mail voting expansion in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Love supports economic development through public investment in education and workforce development. She backed economic development legislation benefiting Montgomery County businesses and workers.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "chair_seated": 2,
+   "reasoning": "Love represents a district with significant immigrant populations. She supports comprehensive immigration reform and opposes harsh enforcement-only approaches.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Love supports a balanced public safety approach emphasizing prevention and community investment alongside enforcement. She has backed criminal justice reform while supporting community policing.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "State Redistricting and Gerrymandering",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "chair_seated": 2,
+   "reasoning": "Love supported independent redistricting reform to reduce partisan gerrymandering in Maryland. She backed efforts to create more transparent and fair district mapping processes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Love supports progressive tax policy. She backs higher taxes on corporations and high earners to fund public services, consistent with her Montgomery County Democratic district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Transgender Athletes",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "chair_seated": 2,
+   "reasoning": "Love supports inclusive policies for transgender athletes. She backed Maryland legislation protecting transgender student rights and opposed restrictive bills targeting trans youth.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "state": "MD",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "reasoning": "Henson represents the Annapolis area on the Chesapeake Bay and is a strong advocate for Bay protection, clean water standards, and stormwater management.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Henson consistently backs voting rights including automatic voter registration and early voting expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Henson supports economic development for Annapolis and Anne Arundel County including small business support and workforce development programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Henson supports a balanced public safety approach combining prevention, mental health resources, and community policing alongside accountability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Henson supports progressive taxation to fund public services and education. She backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Smith is a consistent supporter of voting rights expansion. He backed automatic voter registration, early voting, and ballot access improvements.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Bail and Pretrial Decisions",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "chair_seated": 2,
+   "reasoning": "As Judicial Proceedings Committee chair, Smith has advanced pretrial detention reform. He supported legislation to shift Maryland toward risk-based assessments over cash bail for nonviolent offenders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Criminal Justice Approach",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "chair_seated": 2,
+   "reasoning": "Smith chairs the Senate Judicial Proceedings Committee, overseeing criminal law reform. He has supported sentencing reform, second chance legislation, and reentry programs for formerly incarcerated individuals.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Economic Development Incentives",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "chair_seated": 3,
+   "reasoning": "Smith supports economic development through public investment and innovation. He backs workforce development programs and small business support in Montgomery County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "chair_seated": 2,
+   "reasoning": "Smith represents a district with many immigrant families. He supports comprehensive immigration reform and state immigrant protections, opposing harsh enforcement measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Prosecution Priorities",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "chair_seated": 3,
+   "reasoning": "Smith has used the Judicial Proceedings chair role to prioritize balanced prosecution approaches, supporting reforms to reduce mass incarceration while maintaining public safety.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Smith's Judicial Proceedings chair position enables a balanced public safety approach. He views public safety as including both enforcement and prevention, supporting reform while maintaining accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "State Redistricting and Gerrymandering",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "chair_seated": 2,
+   "reasoning": "Smith has supported independent redistricting reform efforts to reduce partisan gerrymandering in Maryland's legislative districts.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Smith supports progressive taxation. He backed the Blueprint for Maryland's Future funding and higher corporate tax rates to fund public investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1372?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "state": "MD",
+   "topic": "Transgender Athletes",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "chair_seated": 2,
+   "reasoning": "Smith has supported transgender student rights including inclusive school sports policies, opposing restrictive bills targeting trans youth.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed Berkeley's natural gas ban in new construction, EV charging infrastructure, plastic bag ban, and toxic paper receipts ban. His forward agenda includes the Berkeley Green New Deal. He authored a Disaster Preparedness Fire Plan and endorsed by Sierra Club and 350 Bay Area Action. Strong climate action record but not declaring a full emergency or banning all carbon-emitting activities.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.ben2024.com/endorsements",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed Berkeley's plastic bag ban, banned single-use plastics and toxic paper receipts, advocated natural gas ban in new construction, and lists the Adeline Greenway Park in his forward agenda. He served as Vice-Chair of the Zero Waste Commission. Endorsed by Sierra Club and 350 Bay Area Action. Strong environmental protection record requiring developers to meet significant environmental standards.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/endorsements"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Homelessness Response",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "chair_seated": 2,
+   "reasoning": "Bartlett authored the Specialized Care Unit (dispatches healthcare workers instead of police for mental health and unhoused resident calls) and developed Step Up Housing as a supportive housing model with wrap-around services. His forward agenda includes expanding the Specialized Care Unit to 24/7 service. No evidence of sponsoring camping bans; his documented approach prioritizes services and shelter over enforcement.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "reasoning": "Berkeley is a sanctuary city. Bartlett's campaign credits making Berkeley a 'Cannabis Sanctuary City' with racial equity policies. No evidence of ICE cooperation or detainer compliance. He sits on Berkeley's Health, Life Enrichment, Equity & Community Committee and his overall record of racial equity advocacy is consistent with full sanctuary protections — refusing ICE detainers and protecting immigrant information.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Criminalization of Homelessness",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "chair_seated": 2,
+   "reasoning": "Bartlett's campaign reports homelessness down 45% during his tenure through the Step Up Housing initiative — 39 modular units with onsite care and health technology integration — and the Specialized Care Unit dispatching healthcare workers instead of police to mental health and homelessness-related calls. His approach is service-and-housing-first rather than enforcement-first; no evidence of camping ban sponsorship.",
+   "sources": [
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/issues"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed bike lanes on Adeline Street, the MLK Street redesign for pedestrian and cyclist safety, and the Vision Zero Initiative. He served on Berkeley's Transportation Commission working on EV infrastructure. His BerkDOT program also involved redesigning how traffic enforcement operates. His campaign emphasizes pedestrian and cycling infrastructure alongside road safety — consistent with equal investment in roads and multimodal options.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "state": "CA",
+   "topic": "Deportation Priorities",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "chair_seated": 2,
+   "reasoning": "Blackaby authored a $200,000 Budget Referral for Deportation Defense Legal and Education Funds (April 29, 2025), explicitly to fund legal defense and education for people facing deportation. This is the strongest possible local stance against deportation — actively funding legal resistance to federal deportation efforts.",
+   "sources": [
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-29%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "reasoning": "Blackaby authored a Budget Referral allocating $200,000 for Deportation Defense Legal and Education Funds (Item 21, April 29, 2025), co-sponsored by the Mayor and two other council members; adopted unanimously. Berkeley is a sanctuary city and Blackaby's authorship of active anti-deportation funding demonstrates the strongest form of local sanctuary policy.",
+   "sources": [
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-29%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "chair_seated": 2,
+   "reasoning": "Tregub's entire career and civic record is oriented toward eliminating fossil fuel infrastructure. As Sierra Club SF Bay Chapter chair he led the region's most prominent environmental organization. He co-sponsored the Golden State Energy resolution (February 2025) to study replacing PG&E — an investor-owned gas utility — with a public nonprofit model prioritizing renewable energy. He co-sponsored the Zero NOx Emission Buildings ordinance banning fossil gas in new construction. His employer Reimagine Power advocates for renewable energy legislative reform.",
+   "sources": [
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-february-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "reasoning": "Tregub co-sponsored a $200,000 deportation defense legal and education fund referral (April 29, 2025) alongside the mayor and two other council members. The full Berkeley City Council voted in January 2025 to reaffirm Berkeley's sanctuary city status — refusing to assist ICE — and later unanimously codified a sanctuary ordinance prohibiting city personnel from sharing immigration status information with federal agencies.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-april-29-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-january-21-2025",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Rent Regulation",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "chair_seated": 2,
+   "reasoning": "Tregub served 8 years on the Berkeley Rent Stabilization Board and as a council member has actively expanded tenant protections: he authored a referral (Item 15, March 2025) to close the on-site manager exemption loophole for multi-family properties to strengthen rent board coverage, and voted yes on an ordinance prohibiting algorithmic rent-setting devices (March 2025). He also referred a study of transfer tax exemptions to incentivize affordable housing conversions by nonprofits and community land trusts.",
+   "sources": [
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-25-2025"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Tregub authored two pedestrian safety budget referrals in November 2024: $50,000 for a traffic study and pedestrian improvements at Shattuck/Delaware, and $30,000 for an Accessible Pedestrian Signal at Sacramento/Allston. He supported council consent items funding Southwest Berkeley Bike Boulevards ($4 million) and the Adeline Street Quick-Build active transportation project ($1 million) in October 2024, and a Bay Trail Extension grant ($4 million) in October 2024. His Sierra Club background and energy career emphasize reducing car dependence.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Criminalization of Homelessness",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "chair_seated": 3,
+   "reasoning": "Tregub's council positions support shelter and services over criminalization: the Berkeley encampment policy he voted on (September 2024) conditions enforcement on availability of interim housing and has narrow public-safety exceptions. The council's approach — which Tregub operates within — directs funding to housing and mental health services as the primary response rather than citing or arresting unhoused people for sleeping outside when shelter is unavailable.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-september-24-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Homelessness Response",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "chair_seated": 2,
+   "reasoning": "Tregub serves on the Health, Life Enrichment, Equity & Community Committee which oversees homeless services. The Berkeley City Council's encampment policy (adopted September 24, 2024, which Tregub voted on) requires offering interim housing before closing encampments with narrow public-safety exceptions — a shelter-first approach. A November 2024 Peace and Justice Commission resolution opposing criminalization of poverty was on the agenda; the City Manager noted existing policy already embodied these protections.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-september-24-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Affordable Housing",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "chair_seated": 3,
+   "reasoning": "Tregub serves on Berkeley's Land Use, Housing & Economic Development Committee and the 4x4 Joint Task Force on Housing. He authored a referral to study transfer tax exemptions for 100% affordable housing projects owned by nonprofits and community land trusts (March 2025) and supported Homekey+ applications for permanent supportive housing (veterans housing, September 2024). He supports significant public investment in affordable housing — not full public ownership — combined with market production.",
+   "sources": [
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-september-10-2024"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 3,
+   "reasoning": "Tregub co-authored a council resolution supporting California Proposition 6 (November 2024) — the constitutional amendment to abolish forced prison labor — signaling a criminal justice reform orientation. He supported Police Accountability Board appointments and his council profile emphasizes mental health services through his committee on Health, Life Enrichment, Equity & Community. No evidence of police defunding sponsorship; he reflects a co-responder/accountability model rather than pure police budget expansion.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 1,
+   "reasoning": "Kesarwani's September 2025 newsletter announces Berkeley's unanimous sanctuary city ordinance that 'prohibits city personnel from disclosing protected personal information to federal immigration enforcement' and her October 2025 newsletter states the City's position: 'The City will not assist ICE (U.S. Immigration and Customs Enforcement) in immigration enforcement.' She highlighted local immigrant legal organizations providing removal defense.",
+   "sources": [
+    "https://rashikesarwani.com/2025/09/sept-news-sanctuary-city-ordinance-new-bathrooms-more",
+    "https://rashikesarwani.com/2025/10/oct-news-possible-ice-deployment-in-bay-area-nov-special-election-more"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Kesarwani strongly prioritizes multimodal infrastructure: she co-authored bus and bike lanes on San Pablo Avenue (the county's second-busiest bus corridor), supported a bicycle overcrossing at Gilman interchange, expanded the Ohlone Greenway, championed Hopkins Street Vision Zero improvements for cyclists and pedestrians, and reduced parking at BART from 700 to 200 spaces while requiring free transit passes for all new BART development residents.",
+   "sources": [
+    "https://rashikesarwani.com/2023/03/march-news-san-pablo-ave-corridor-meeting-street-paving-gilman-district-street-fair-more",
+    "https://rashikesarwani.com/2022/10/fall-news-n-berkeley-bart-developer-public-presentations-more",
+    "https://rashikesarwani.com/2022/12/dec-news-hopkins-corridor-virtual-meeting-on-dec-12-more"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "City Sanitation and Cleanliness",
+   "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+   "chair_seated": 2,
+   "reasoning": "Kesarwani lists 'Clean Public Spaces' as a top issue priority; she co-wrote a 2019 Berkeleyside op-ed titled 'We need a clean and healthy Berkeley for all'; she funded the Downtown Streets Team expansion to Gilman District for twice-weekly cleaning services; and she pursues encampment closures partly on public health grounds (Leptospirosis outbreak). She treats poor sanitation conditions as a services failure requiring active city response.",
+   "sources": [
+    "https://rashikesarwani.com",
+    "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+    "https://rashikesarwani.com/2026/01/jan-news-public-health-alert-lepto-at-harrison-encampments"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Kesarwani explicitly aligned the Hopkins Corridor transportation project with Berkeley's Climate Action Plan and Vision Zero; she championed bus and bike lanes on San Pablo Avenue, free transit passes for new BART residents, reduced parking at transit stations, and BART transit-oriented housing to reduce car dependence. She served on the council in 2019 when Berkeley passed the nation's first natural gas ban for new buildings.",
+   "sources": [
+    "https://rashikesarwani.com/2022/12/dec-news-hopkins-corridor-virtual-meeting-on-dec-12-more",
+    "https://rashikesarwani.com/2022/08/aug-news-answering-bart-faqs-cesar-chavez-park-hopkins-corridor-more",
+    "https://rashikesarwani.com/2023/03/march-news-san-pablo-ave-corridor-meeting-street-paving-gilman-district-street-fair-more"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "name": "Sean Elo-Rivera",
+   "state": "CA",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Elo-Rivera championed a second-homes vacancy tax ($5k/bedroom per year on non-primary homes vacant over half the year) as a 2026 ballot measure. He also championed a vacation rental tax and the $25/hour hospitality minimum wage (passed 2025), which he supported. He framed the cost-of-living committee he chaired as addressing affordability through taxes and worker wages.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sean_Elo-Rivera",
+    "https://timesofsandiego.com/tag/sean-elo-rivera/"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Taplin advocates a Vision 2050 framework for 'climate-smart, technologically-advanced, integrated and efficient infrastructure' and states that 'California cannot meet its climate goals without curbing growth in single-occupancy vehicle activity.' He chairs Berkeley's Facilities, Infrastructure, Transportation, Environment, and Sustainability Committee and frames transportation — responsible for 60% of Berkeley's emissions — as the central climate battleground.",
+   "sources": [
+    "https://www.terrytaplin.com/priorities/vision-2050",
+    "https://www.terrytaplin.com"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Homelessness Response",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "chair_seated": 2,
+   "reasoning": "Taplin's comprehensive homeless response prioritizes permanent and interim housing, shelter, and wraparound services including 'staffing, housing navigation, case management, hygiene facilities, security, and wraparound care including mental health and recovery support.' He describes homelessness as solvable through coordinated leadership and sustained financial commitment rather than enforcement-first approaches.",
+   "sources": [
+    "https://www.terrytaplin.com/comprehensive-homeless-response",
+    "https://www.terrytaplin.com/priorities/homelessness"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "reasoning": "Berkeley is a sanctuary city and the council voted unanimously to codify sanctuary protections. Taplin is a sitting progressive council member with no evidence of opposing sanctuary policies; Berkeley's sanctuary ordinance prohibits city personnel from sharing immigration information with federal enforcement agencies. His public safety page emphasizes equity and anti-racism in law enforcement consistent with full sanctuary protection.",
+   "sources": [
+    "https://www.terrytaplin.com",
+    "https://www.terrytaplin.com/priorities/community-safety"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Rent Regulation",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "chair_seated": 2,
+   "reasoning": "Taplin served on the Berkeley Rent Stabilization Board before joining the council and supports strengthening tenant protections. On a Rent Board ballot measure he voted against provisions that would strip ADU owner-occupant protections approved by voters under Measure Q, stating constituents felt it would 'pull the rug out from under them.' He 'generally favor[s] removing obsolete statutory loopholes' that weaken rent control coverage and supports requiring replacement units for demolished rent-controlled housing.",
+   "sources": [
+    "https://www.terrytaplin.com/post/statement-on-berkeley-rent-board-proposed-ballot-measure",
+    "https://www.terrytaplin.com/housing"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Taplin identifies himself as a 'green transportation' and 'mobility and environmental justice activist' who chairs the Transportation, Environment, and Sustainability Committee. He supports the 51B Bus Rapid Transit and University/Shattuck Corridor improvements, introduced the Equitable Safe Streets and Climate Justice Resolution adopting NACTO design standards, and states California cannot meet climate goals without curbing single-occupancy vehicles. He emphasizes 'significant investments in road safety identified in our Bicycle Plan and Pedestrian Plan' and a Vision Zero approach.",
+   "sources": [
+    "https://www.terrytaplin.com",
+    "https://www.terrytaplin.com/priorities/vision-2050",
+    "https://www.terrytaplin.com/legislation"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Criminalization of Homelessness",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "chair_seated": 3,
+   "reasoning": "Taplin frames enforcement as contingent on shelter availability, stating 'City ordinances regulating encampments and RVs are unenforceable in the absence of shelter options.' He focuses on shelter-plus-services over criminalization and directs constituents to the Specialized Care Unit for outreach. He supports decriminalizing public camping absent adequate shelter and invests in permanent supportive housing.",
+   "sources": [
+    "https://www.terrytaplin.com/priorities/homelessness",
+    "https://www.terrytaplin.com/comprehensive-homeless-response",
+    "https://www.terrytaplin.com/housing"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "chair_seated": 2,
+   "reasoning": "Taplin states 'Police officers are not social workers or mental health specialists' and believes the city should 'reorient our city's response to violence in a proactive way that centers social services and crisis response.' He advocates for the Specialized Care Unit and other community-based solutions alongside the police department and convened stakeholder meetings to examine violence prevention programs. He supports police accountability and zero tolerance for racism in policing while maintaining police staffing.",
+   "sources": [
+    "https://www.terrytaplin.com/public-safety",
+    "https://www.terrytaplin.com/priorities/community-safety"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Gloria authored the draft San Diego Climate Action Plan as interim mayor and promoted it during his Assembly campaign per Wikipedia. The sandiego.gov planning page confirms the city launched Our Climate Our Future as a core planning priority implementing the Climate Action Plan. His direct authorship of the CAP and continued implementation as mayor aligns with rapidly transitioning to clean energy and phasing out fossil fuels.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "reasoning": "The San Diego planning page confirms the city is implementing the Climate Action Plan as a core planning program including Our Climate Our Future. Gloria authored the CAP as interim mayor per Wikipedia. The Land Development Code update and transit-oriented development policies impose environmental requirements on new developments. These actions align with requiring significant environmental review and offsetting environmental impacts.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning",
+    "https://www.sandiego.gov/environmental-services"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6",
+   "name": "Katie Fry Hester",
+   "state": "MD",
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 4,
+   "reasoning": "Hester introduced 2026 bills to ban election-related deepfakes, criminalize deepfake impersonation causing serious harm, and restrict minors from unsafe AI chatbots. Her deepfake election bill passed the Senate unanimously.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Katie_Fry_Hester"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "5b642054-504c-46c8-a68b-324e7b593587",
+   "name": "Haley M. Stevens",
+   "state": "MI",
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 4,
+   "reasoning": "Stevens supports government oversight ensuring ethical AI development, backing requirements that AI systems undergo safety and ethics review before deployment. She also supports making AI-generated political deepfakes illegal and favors taxing companies that replace workers with AI, reflecting support for meaningful but not heavy-handed regulation.",
+   "sources": [
+    "https://www.isidewith.com/candidates/haley-stevens"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60",
+   "name": "Francisco E. Paulino",
+   "state": null,
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 3,
+   "reasoning": "Paulino sponsored H.1931 to enhance protections against child exploitation and misuse of emerging technology — a direct AI and emerging technology safety bill focused on protecting children from deepfakes and AI-generated exploitation material. He also sponsored H.1280 regulating insurance coverage for the testing and deployment of autonomous vehicles. These two bills reflect engagement with AI and emerging technology policy from a public safety and consumer protection angle.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/H1931",
+    "https://malegislature.gov/Bills/194/H1280"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "name": "Brian J. Feldman",
+   "state": "MD",
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 3,
+   "reasoning": "Feldman signed a June 2025 state policymaker coalition letter opposing federal AI preemption in the reconciliation bill — specifically opposing the proposed 10-year freeze on state and local regulation of AI and automated decision systems.",
+   "sources": [
+    "https://ari.us/wp-content/uploads/2025/06/State-Policymaker-Coalition-Letter-Oppose-AI-Preemption-6-3-25.pdf",
+    "https://ballotpedia.org/Brian_Feldman"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+   "name": "Patrick M. O'Connor",
+   "state": null,
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "chair_seated": 2,
+   "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which would require all electricity from renewables by 2035 and all energy by 2045. This bill effectively calls for stopping new fossil fuel permits, placing O'Connor at value 2 — unusual for a Republican but documented.",
+   "sources": [
+    "https://web.archive.org/web/20260412022647/https://actonmass.org/legislators/patrick-oconnor/",
+    "https://web.archive.org/web/20260412020611/https://actonmass.org/bills/100-renewable-energy-by-2045/"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "30b6b674-509f-46f6-a9aa-aa3dbefc2f42",
+   "name": "Diana DiZoglio",
+   "state": "MA",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "chair_seated": 1,
+   "reasoning": "DiZoglio has consistently opposed school vouchers and private school diversion of public education funds. She represented communities including Lawrence with a majority of students in underfunded public schools, making her a strong defender of public education investment. DiZoglio supported working with Greater Lawrence Technical School — a public vocational school — for STEM funding, reflecting her focus on strengthening public educational institutions rather than diverting resources to private alternatives.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Diana_DiZoglio",
+    "https://malegislature.gov/Legislators/Profile/D_D0"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15",
+   "name": "Erika Uyterhoeven",
+   "state": null,
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "chair_seated": 1,
+   "reasoning": "Uyterhoeven has opposed charter school expansion and voucher programs, supporting fully funded public schools instead. Her Democratic Socialist platform views public education as a public good and opposes diverting tax dollars to private institutions. She has voted against measures that would expand the charter school cap.",
+   "sources": [
+    "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/",
+    "https://malegislature.gov/Legislators/Profile/E_U1"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "name": "Jake Wilson",
+   "state": "MA",
+   "topic": "Residential Zoning",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "chair_seated": 3,
+   "reasoning": "Wilson championed the MBTA Communities zoning law as a state legislator, which mandated higher-density, by-right multifamily zoning near transit in communities like Somerville. He supported SomerVision 2040, Somerville's comprehensive plan that calls for significant upzoning in key corridors, and expressed support for further zoning liberalization to increase housing supply. As Mayor he has continued this trajectory, supporting updated zoning codes to allow more multifamily development as-of-right.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1379",
+    "https://www.somervillema.gov/somervision"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "4e485d3a-79a0-40ce-a52f-f84d187bf5de",
+   "name": "Drew Boyles",
+   "state": "CA",
+   "topic": "Residential Zoning",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "chair_seated": 1,
+   "reasoning": "Boyles advocated regionally and statewide to protect single-family housing neighborhoods, a position favoring preservation of low-density residential zoning against upzoning mandates.",
+   "sources": [
+    "https://drewforelsegundo.com/about-drew/"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "2d47a965-81a2-4508-865c-06d45bf6ff42",
+   "name": "Christine Parra",
+   "state": null,
+   "topic": "Growth and Development Pace",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "chair_seated": 2,
+   "reasoning": "Parra's platform centers slow growth and opposition to residential encroachment, favoring controlled, character-preserving development.",
+   "sources": [
+    "https://patch.com/california/santamonica/candidate-profile-christine-parra-santa-monica-city-council"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "7714b7c6-9283-4ab8-802e-cbcfba5ddc96",
+   "name": "Phil Brock",
+   "state": null,
+   "topic": "Growth and Development Pace",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "chair_seated": 2,
+   "reasoning": "Brock supports slow growth and reduced traffic, expressing concern that big developers and the State want to replace the heart of the city with tall, dense buildings.",
+   "sources": [
+    "https://www.votebrock.org/issues/a-statement-of-purpose"
+   ],
+   "from_migration": "1730"
+  }
+ ]
+}

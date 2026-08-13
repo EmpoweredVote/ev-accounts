@@ -111,3 +111,30 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   - `offices.representation_note` is **required** whenever `voting_powers <> 'full'` (a CHECK) or
     `representation_basis <> 'residency'` (post-verify + read path — a CHECK can't cross tables).
     **The read path must not render such a seat without the note.**
+
+## Compass chairs are five distinct stances, not a polarity rating
+
+**To seat a politician in a chair you need evidence describing THAT chair, with sources.** The five
+options are five distinct stances along a spectrum; the chair is a voter-facing claim about what
+this person holds, not a rating of how strongly they lean.
+
+- Evidence that establishes only the **direction** (pro/anti) under-determines *which* of the two or
+  three chairs on that side applies. Seating anyway is an unevidenced claim — the same defect class
+  as a composed citation, expressed as a number.
+- A bill citation proves direction. It does **not** automatically prove magnitude: "supports
+  progressive taxation to fund public services" cannot distinguish *significantly raise taxes on the
+  wealthy* (1) from *moderately raise* (2).
+- ⚠ **"The least extreme option the reasoning supports" is a TIEBREAKER, not evidence.** Reaching
+  for it is the signal that the row is not yet evidenced.
+- The honest alternative to a guessed chair is a **blank spoke**. A blank spoke is correct.
+- **Never assume polarity.** Read each ladder from `inform.compass_stances`. The corpus convention is
+  chair 1 = maximum government action, but **AI Oversight and Tariffs run the other way**, and
+  Residential Zoning, Growth and Development Pace and Government Deference are off-axis entirely
+  (the deregulatory and the progressive position sit at the same end). See
+  [`.planning/todos/2026-08-12-ladder-orientation-and-consumers.md`](.planning/todos/2026-08-12-ladder-orientation-and-consumers.md).
+- A re-sourcing pass that cites **sponsorship** must refuse any row at the anti pole — the new
+  citation would contradict the displayed position.
+
+**Gate:** `node scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
+carries reasoning that names no instrument, act or vote. Run it before committing any migration that
+sets a chair.

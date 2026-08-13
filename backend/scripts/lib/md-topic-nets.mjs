@@ -47,6 +47,22 @@ export const TOPIC_CORE = {
   'Misinformation and the Role of Algorithms in Democracy': /\bmisinformation\b|\bdisinformation\b|\bdeepfake|\bsynthetic media\b|\bartificial intelligence\b|\balgorithm|\bsocial media\b|\bcontent moderation\b|\belections?\b/i,
   'Civil Rights and Social Justice': /\bdiscriminat|\bcivil rights?\b|\bhate crime|\bequal pay\b|\bracial\b|\bfair housing\b|\bpublic accommodation|\breparation|\bequity\b/i,
   'Climate Change and Environmental Protection': /\bclimate\b|\bgreenhouse\b|\bclean energy\b|\brenewable\b|\bsolar\b|\bemissions\b|\bcarbon\b|\bnet.zero\b|\bfossil fuel|\belectric vehicle/i,
+  // Added 2026-08-12 for the "chairs owed evidence" pass — the 14 topics the earlier MD passes
+  // never touched. ⚠ Still only a RANKING aid: a title match is topical, never chair-specific.
+  'Voting Rights and Electoral Integrity': /\bvoter registration\b|\bearly voting\b|\babsentee\b|\bmail.in ballot|\bballot access\b|\bpolling place\b|\bvoter roll|\bvoter id\b|\bsame.day registration\b|\bautomatic voter\b/i,
+  'Economic Development Incentives': /\beconomic development\b|\btax credit\b|\benterprise zone\b|\bopportunity zone\b|\bRISE zone\b|\bworkforce development\b|\bjob creation\b|\bbusiness incentive/i,
+  'Taxation and Public Spending': /\bincome tax\b|\btax rate\b|\bcorporate tax\b|\bcapital gains\b|\bestate tax\b|\bsales (and use )?tax\b|\bproperty tax\b|\btax credit\b|\brevenue\b|\bsurcharge\b/i,
+  'Public Safety Approach': /\bpublic safety\b|\bpolice accountability\b|\bcommunity policing\b|\bviolence (prevention|intervention)\b|\bcrisis response\b|\bbody.worn camera|\bfirearms?\b/i,
+  'Environmental Protection vs. Development': /\bchesapeake\b|\bstormwater\b|\bwater quality\b|\btree canopy\b|\bforest conservation\b|\bcritical area\b|\bgreen space\b|\bland use\b|\bpollution\b/i,
+  'Immigration and Treatment of Immigrants': /\bimmigrat|\bundocumented\b|\bsanctuary\b|\brefugee|\basylum\b|\bnoncitizen|\blanguage access\b/i,
+  'Criminal Justice Approach': /\bsentencing\b|\bexpungement\b|\bparole\b|\bprobation\b|\breentry\b|\bincarcerat|\bcorrectional\b|\bjuvenile (justice|services)\b|\brestorative\b/i,
+  'Transgender Athletes': /\btransgender\b|\bgender identity\b|\binterscholastic\b|\bathletic|\bstudent athlet/i,
+  'Campaign Finance Reform': /\bcampaign finance\b|\bpolitical committee\b|\bdark money\b|\bindependent expenditure\b|\bpublic financing\b|\bcontribution limit|\belectioneering\b|\bdisclosure\b/i,
+  'Bail and Pretrial Decisions': /\bbail\b|\bpretrial\b|\bpretrial release\b|\bbond\b|\bdetention\b/i,
+  'State Redistricting and Gerrymandering': /\bredistricting\b|\blegislative district|\bcongressional district|\bapportion|\bgerrymander|\bcensus\b/i,
+  'Artificial Intelligence Oversight': /\bartificial intelligence\b|\balgorithm|\bdeepfake|\bsynthetic media\b|\bautomated decision|\bfacial recognition\b|\bchatbot/i,
+  'Ukraine - Russia Conflict': /\bukraine\b|\brussia\b|\bdivest|\bsanctions\b/i,
+  'Prosecution Priorities': /\bprosecut|\bstate'?s attorney\b|\bdiversion\b|\bdeclination\b|\bcharging\b/i,
 };
 
 /**
@@ -88,4 +104,20 @@ export const TOPIC_NETS = {
   'Misinformation and the Role of Algorithms in Democracy': /misinformation|disinformation|deepfake|synthetic media|artificial intelligence|algorithm|social media|online platform|content moderation|election (integrity|disinformation)|digital literacy|data privacy|personal information|consumer data/i,
 
   'Climate Change and Environmental Protection': /climate|greenhouse|clean energy|renewable|solar|wind energy|emissions|carbon|energy efficien|electric vehicle|zero-emission|environment|pollution|chesapeake|conservation|net-?zero|fossil fuel/i,
+  // Added 2026-08-12 for the "chairs owed evidence" pass. Recall nets — deliberately broad, because
+  // a missed bill is a manufactured absence. The reading, not the net, decides the chair.
+  'Voting Rights and Electoral Integrity': /election|voting|voter|ballot|absentee|polling|registration|canvass|precinct|franchise/i,
+  'Economic Development Incentives': /economic development|tax credit|enterprise zone|opportunity zone|RISE zone|workforce|job creation|business|employer|incentive|small business|entrepreneur/i,
+  'Taxation and Public Spending': /tax|revenue|budget|appropriation|fiscal|surcharge|exemption|deduction|credit|assessment/i,
+  'Public Safety Approach': /public safety|police|law enforcement|crime|criminal|violence|firearm|emergency|911|sheriff|correctional officer/i,
+  'Environmental Protection vs. Development': /environment|chesapeake|stormwater|water quality|tree|forest|green space|land use|critical area|pollution|conservation|wetland|watershed|smart growth/i,
+  'Immigration and Treatment of Immigrants': /immigra|undocumented|sanctuary|refugee|asylum|noncitizen|citizenship|language access|interpreter/i,
+  'Criminal Justice Approach': /sentencing|expungement|parole|probation|reentry|incarcerat|correctional|juvenile|restorative|record shielding|second chance/i,
+  'Transgender Athletes': /transgender|gender identity|interscholastic|athletic|sports|student athlete|LGBTQ/i,
+  'Campaign Finance Reform': /campaign finance|political committee|dark money|independent expenditure|public financing|contribution|electioneering|disclosure|lobbying|ethics/i,
+  'Bail and Pretrial Decisions': /bail|pretrial|bond|detention|release|commissioner/i,
+  'State Redistricting and Gerrymandering': /redistricting|legislative district|congressional district|apportion|gerrymander|census|boundaries/i,
+  'Artificial Intelligence Oversight': /artificial intelligence|algorithm|deepfake|synthetic media|automated decision|facial recognition|chatbot|machine learning|data privacy|biometric/i,
+  'Ukraine - Russia Conflict': /ukraine|russia|divest|sanctions|foreign/i,
+  'Prosecution Priorities': /prosecut|state'?s attorney|diversion|declination|charging|grand jury/i,
 };
