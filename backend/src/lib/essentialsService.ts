@@ -743,6 +743,12 @@ async function resolveOfficialsAtPoint(
         OR (gb.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
         OR (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
         OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
+        -- PR ONLY: a municipio IS both the county-equivalent and the municipality. TIGER files all
+        -- 78 in the county layer (G4020), but their executive is an alcalde, so they are typed
+        -- LOCAL_EXEC like every other mayor (migration 1728). SCOPED TO PR deliberately — G4020
+        -- geo_ids are state-FIPS-prefixed, so 72xxx belongs to Puerto Rico alone.
+        -- Keep in step with MTFCC_DISTRICT_TYPE_GUARD in src/lib/geoIdGuard.ts.
+        OR (gb.mtfcc = 'G4020' AND lower(d.state) = 'pr' AND d.district_type = 'LOCAL_EXEC')
         OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G4110', 'G4120') AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')

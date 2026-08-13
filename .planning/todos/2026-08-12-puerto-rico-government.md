@@ -156,11 +156,56 @@ Read this first; the existing sweep's guards are tuned for a population these pe
 
 ## Still open after 1723
 
-- **The 78 municipios and their mayors** — unchanged, and still the big remaining piece. See the
-  sourcing caveat above: no non-partisan roster was found, and a wrong mayor is a false statement
-  about a real person.
+- ~~**The 78 municipios and their mayors**~~ — **✅ DONE 2026-08-12, migration 1728.** See below.
 - ~~**Wandy Soto's party**~~ — ✅ fixed, migration 1725 (see above).
 - **No `term_end`** on any of the 82; the re-seating pass is still due after the November 2028 general.
+  Same for the 78 alcaldes (their terms run to the second Monday of January 2029).
+
+## ✅ The 78 municipios and their alcaldes (migration 1728, 2026-08-12)
+
+**🔴 THE RECORDED BLOCKER WAS FALSE.** This todo said no non-partisan roster existed and the only
+lists were the two PARTISAN mayors' associations. **The CEE publishes the certified count as
+machine-readable XML**, behind a portal that returns HTTP 999 to a plain fetch but loads fine in a
+browser:
+`https://elecciones2024.ceepur.org/Escrutinio_General_123/data/ALCALDES_Municipios.xml`
+(ISO-8859-1, one `<group>` per municipio, certified 2025-02-11; find it via `data/NAVIGATION.xml`).
+Note `Escrutinio_General` is the FINAL count — `Noche_del_Evento` is election-night preliminary and
+disagrees (news reports of "PPD 45 / PNP 33" are from that stage; the certified split is **41/37**).
+**Re-test a carried-forward caveat before planning around it.**
+
+Cross-checked all 78 against the independently-maintained es.wikipedia per-municipio result tables
+(raw wikitext via `action=query&prop=revisions` — the WebFetch summariser wrongly reported the
+article as incomplete): **78/78 agreed on winner AND party**, totals match, no race closer than 50
+votes. Only rows where both sources agreed were written.
+
+**🔴 A NAME-BASED CROSS-CHECK FAILED SPECTACULARLY AND IS WORTH REMEMBERING.** My first attempt
+resolved municipio articles by title and got **`San Sebastián` → the Spanish city** (returning a
+Basque Nationalist mayor) and **`Florida` → the US state** (returning Ron DeSantis). Puerto Rican
+municipio names collide with Spanish and US place names — `Florida`, `San Sebastián`, `Isabela`,
+`Salinas`, `Las Marías`. Never resolve a PR municipio by bare name.
+
+**Geography:** `scripts/load-pr-municipio-boundaries.mjs` (TIGERweb State_County **layer 1**, MTFCC
+G4020, names `"<Municipio> Municipio"`). It verifies the 78 **TILE the territory** — union area
+equals the PR polygon exactly, zero uncovered area, no overlap — plus eight spot coordinates each
+landing in exactly one municipio, including Vieques and Culebra.
+
+**🔴 GEO_ID COLLISION IS NOW THREE-DEEP ON THE SAME NUMBER.** `72001` is Adjuntas (G4020),
+Senate District 1 (G5210) AND House District 1 (G5220). Resolution is by MTFCC only.
+`MTFCC_DISTRICT_TYPE_GUARD` gained a **PR-scoped** clause (`G4020` + `state='pr'` → `LOCAL_EXEC`),
+mirrored in `essentialsService.ts`'s inline copy — keep the two in step. Typed LOCAL_EXEC rather
+than COUNTY so "find the mayors" queries do not silently miss all 78.
+
+**`ocd_id` is NULL on purpose** — Open Civic Data has **no Puerto Rico divisions at all** (zero
+`state:pr` lines in `country-us.csv`), so any value would be a synthesized sticky slug. ocd_id gates
+only the admin coverage dashboard; address search resolves on geo_id.
+
+**Term start is statutory:** Código Municipal (Ley 107-2020) — four years "a partir del segundo lunes
+del mes de enero del año siguiente a la elección general" = **2025-01-13**. Contemporary coverage
+calling 8 January "the second Monday" is simply wrong (1 Jan 2025 was a Wednesday).
+
+**Verified end-to-end**, which is the only detector that counts: a San Juan coordinate returns
+Miguel Romero, Ponce returns Marlese Sifre, and Vieques/Culebra both resolve — one mayor each, no
+fan-out. `check:reachability` UNREACHABLE stayed at 40 after adding 78 officeholders.
 
 ## Unrelated finding, checked and closed
 

@@ -24,6 +24,14 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
     OR (gp.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
     OR (gp.mtfcc = 'G4020' AND d.district_type IN ('COUNTY','JUDICIAL'))
+    -- PR ONLY: a municipio IS both the county-equivalent and the municipality. TIGER files all 78
+    -- in the county layer (G4020), but civically they are municipalities whose executive is an
+    -- alcalde, so they are typed LOCAL_EXEC like every other mayor rather than COUNTY — otherwise
+    -- every "find the mayors" query silently misses all 78 (migration 1728).
+    -- SCOPED TO PR deliberately, same argument as DC above: G4020 geo_ids are state-FIPS-prefixed,
+    -- so 72xxx belongs to Puerto Rico alone. Unscoped, a mainland county geofence could match a
+    -- same-geo_id LOCAL_EXEC seat and surface the wrong official.
+    OR (gp.mtfcc = 'G4020' AND lower(d.state) = 'pr' AND d.district_type = 'LOCAL_EXEC')
     OR (gp.mtfcc = 'G4040' AND d.district_type IN ('LOCAL','LOCAL_EXEC'))
     OR (gp.mtfcc IN ('G4110','G4120') AND d.district_type IN ('LOCAL','LOCAL_EXEC'))
     OR (gp.mtfcc IN ('G5400','G5410','G5420') AND d.district_type = 'SCHOOL')
