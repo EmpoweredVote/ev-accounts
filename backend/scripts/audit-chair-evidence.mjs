@@ -40,8 +40,17 @@ for (const [mig, f] of files) {
 
 // Does the reasoning name something that can distinguish ONE chair from its neighbour — a bill, an
 // act, an ordinance, a recorded vote? A description of direction cannot.
+// ⚠ MUNICIPAL VOCABULARY (added 2026-08-13, mig 1738). The original pattern was built for state
+// legislatures and could not see a single thing a CITY COUNCIL does — 14 of the 31 California rows
+// named a real instrument it scored as "directional only". The additions are deliberately NARROW,
+// because the point is never that a word appears:
+//   · "Resolution No." / "Ordinance No." require the NUMBER, so a numbered adopted instrument
+//     passes and a passing mention of "the sanctuary ordinance" does not.
+//   · "referral approved/adopted/considered" requires the referral to have been ACTED ON. Berkeley
+//     referrals carry no number, and an unqualified "referral" would have admitted the withdrawn
+//     item this very migration had to remove (2025-03-11 Item 15, "removed from the agenda").
 const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d)/;
+  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

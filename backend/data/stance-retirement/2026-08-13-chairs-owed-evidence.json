@@ -1,0 +1,432 @@
+{
+ "pass": "chairs seated by inference — owed evidence describing THAT chair",
+ "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
+ "n": 25,
+ "by_state": {
+  "MD": {
+   "rows": 3,
+   "politicians": [
+    "Alonzo T. Washington",
+    "C. Anthony Muse",
+    "Jeff Waldstreicher"
+   ],
+   "topics": {
+    "Voting Rights": 2,
+    "Same-Sex Marriage": 1
+   }
+  },
+  "CA": {
+   "rows": 14,
+   "politicians": [
+    "Ben Bartlett",
+    "Drew Boyles",
+    "Igor Tregub",
+    "Rashi Kesarwani",
+    "Sean Elo-Rivera",
+    "Terry Taplin",
+    "Todd Gloria"
+   ],
+   "topics": {
+    "Climate Change": 4,
+    "Environmental Protection vs. Development": 2,
+    "Homelessness Response": 1,
+    "Local Immigration Enforcement": 1,
+    "Homelessness": 1,
+    "Transportation Priorities": 2,
+    "City Sanitation and Cleanliness": 1,
+    "Taxes": 1,
+    "Residential Zoning": 1
+   }
+  },
+  "MI": {
+   "rows": 1,
+   "politicians": [
+    "Haley M. Stevens"
+   ],
+   "topics": {
+    "AI Oversight": 1
+   }
+  },
+  "??": {
+   "rows": 5,
+   "politicians": [
+    "Christine Parra",
+    "Erika Uyterhoeven",
+    "Francisco E. Paulino",
+    "Patrick M. O'Connor",
+    "Phil Brock"
+   ],
+   "topics": {
+    "AI Oversight": 1,
+    "Fossil Fuels": 1,
+    "School Vouchers": 1,
+    "Growth and Development Pace": 2
+   }
+  },
+  "MA": {
+   "rows": 2,
+   "politicians": [
+    "Diana DiZoglio",
+    "Jake Wilson"
+   ],
+   "topics": {
+    "School Vouchers": 1,
+    "Residential Zoning": 1
+   }
+  }
+ },
+ "rows": [
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Washington is a strong voting rights advocate. He backed automatic voter registration, early voting expansion, and ballot access for all eligible voters.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "state": "MD",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "chair_seated": 2,
+   "reasoning": "Muse consistently backs voting rights expansion including automatic voter registration and ballot access measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic": "Same-Sex Marriage",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "chair_seated": 1,
+   "reasoning": "Waldstreicher has been a vocal supporter of same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and opposed anti-trans bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed Berkeley's natural gas ban in new construction, EV charging infrastructure, plastic bag ban, and toxic paper receipts ban. His forward agenda includes the Berkeley Green New Deal. He authored a Disaster Preparedness Fire Plan and endorsed by Sierra Club and 350 Bay Area Action. Strong climate action record but not declaring a full emergency or banning all carbon-emitting activities.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.ben2024.com/endorsements",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed Berkeley's plastic bag ban, banned single-use plastics and toxic paper receipts, advocated natural gas ban in new construction, and lists the Adeline Greenway Park in his forward agenda. He served as Vice-Chair of the Zero Waste Commission. Endorsed by Sierra Club and 350 Bay Area Action. Strong environmental protection record requiring developers to meet significant environmental standards.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/endorsements"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Homelessness Response",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "chair_seated": 2,
+   "reasoning": "Bartlett authored the Specialized Care Unit (dispatches healthcare workers instead of police for mental health and unhoused resident calls) and developed Step Up Housing as a supportive housing model with wrap-around services. His forward agenda includes expanding the Specialized Care Unit to 24/7 service. No evidence of sponsoring camping bans; his documented approach prioritizes services and shelter over enforcement.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "reasoning": "Berkeley is a sanctuary city. Bartlett's campaign credits making Berkeley a 'Cannabis Sanctuary City' with racial equity policies. No evidence of ICE cooperation or detainer compliance. He sits on Berkeley's Health, Life Enrichment, Equity & Community Committee and his overall record of racial equity advocacy is consistent with full sanctuary protections — refusing ICE detainers and protecting immigrant information.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Criminalization of Homelessness",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "chair_seated": 2,
+   "reasoning": "Bartlett's campaign reports homelessness down 45% during his tenure through the Step Up Housing initiative — 39 modular units with onsite care and health technology integration — and the Specialized Care Unit dispatching healthcare workers instead of police to mental health and homelessness-related calls. His approach is service-and-housing-first rather than enforcement-first; no evidence of camping ban sponsorship.",
+   "sources": [
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/issues"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Bartlett championed bike lanes on Adeline Street, the MLK Street redesign for pedestrian and cyclist safety, and the Vision Zero Initiative. He served on Berkeley's Transportation Commission working on EV infrastructure. His BerkDOT program also involved redesigning how traffic enforcement operates. His campaign emphasizes pedestrian and cycling infrastructure alongside road safety — consistent with equal investment in roads and multimodal options.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "reasoning": "Tregub authored two pedestrian safety budget referrals in November 2024: $50,000 for a traffic study and pedestrian improvements at Shattuck/Delaware, and $30,000 for an Accessible Pedestrian Signal at Sacramento/Allston. He supported council consent items funding Southwest Berkeley Bike Boulevards ($4 million) and the Adeline Street Quick-Build active transportation project ($1 million) in October 2024, and a Bay Trail Extension grant ($4 million) in October 2024. His Sierra Club background and energy career emphasize reducing car dependence.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "City Sanitation and Cleanliness",
+   "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+   "chair_seated": 2,
+   "reasoning": "Kesarwani lists 'Clean Public Spaces' as a top issue priority; she co-wrote a 2019 Berkeleyside op-ed titled 'We need a clean and healthy Berkeley for all'; she funded the Downtown Streets Team expansion to Gilman District for twice-weekly cleaning services; and she pursues encampment closures partly on public health grounds (Leptospirosis outbreak). She treats poor sanitation conditions as a services failure requiring active city response.",
+   "sources": [
+    "https://rashikesarwani.com",
+    "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+    "https://rashikesarwani.com/2026/01/jan-news-public-health-alert-lepto-at-harrison-encampments"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Kesarwani explicitly aligned the Hopkins Corridor transportation project with Berkeley's Climate Action Plan and Vision Zero; she championed bus and bike lanes on San Pablo Avenue, free transit passes for new BART residents, reduced parking at transit stations, and BART transit-oriented housing to reduce car dependence. She served on the council in 2019 when Berkeley passed the nation's first natural gas ban for new buildings.",
+   "sources": [
+    "https://rashikesarwani.com/2022/12/dec-news-hopkins-corridor-virtual-meeting-on-dec-12-more",
+    "https://rashikesarwani.com/2022/08/aug-news-answering-bart-faqs-cesar-chavez-park-hopkins-corridor-more",
+    "https://rashikesarwani.com/2023/03/march-news-san-pablo-ave-corridor-meeting-street-paving-gilman-district-street-fair-more"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "name": "Sean Elo-Rivera",
+   "state": "CA",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "reasoning": "Elo-Rivera championed a second-homes vacancy tax ($5k/bedroom per year on non-primary homes vacant over half the year) as a 2026 ballot measure. He also championed a vacation rental tax and the $25/hour hospitality minimum wage (passed 2025), which he supported. He framed the cost-of-living committee he chaired as addressing affordability through taxes and worker wages.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sean_Elo-Rivera",
+    "https://timesofsandiego.com/tag/sean-elo-rivera/"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Taplin advocates a Vision 2050 framework for 'climate-smart, technologically-advanced, integrated and efficient infrastructure' and states that 'California cannot meet its climate goals without curbing growth in single-occupancy vehicle activity.' He chairs Berkeley's Facilities, Infrastructure, Transportation, Environment, and Sustainability Committee and frames transportation — responsible for 60% of Berkeley's emissions — as the central climate battleground.",
+   "sources": [
+    "https://www.terrytaplin.com/priorities/vision-2050",
+    "https://www.terrytaplin.com"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "reasoning": "Gloria authored the draft San Diego Climate Action Plan as interim mayor and promoted it during his Assembly campaign per Wikipedia. The sandiego.gov planning page confirms the city launched Our Climate Our Future as a core planning priority implementing the Climate Action Plan. His direct authorship of the CAP and continued implementation as mayor aligns with rapidly transitioning to clean energy and phasing out fossil fuels.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "reasoning": "The San Diego planning page confirms the city is implementing the Climate Action Plan as a core planning program including Our Climate Our Future. Gloria authored the CAP as interim mayor per Wikipedia. The Land Development Code update and transit-oriented development policies impose environmental requirements on new developments. These actions align with requiring significant environmental review and offsetting environmental impacts.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning",
+    "https://www.sandiego.gov/environmental-services"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "5b642054-504c-46c8-a68b-324e7b593587",
+   "name": "Haley M. Stevens",
+   "state": "MI",
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 4,
+   "reasoning": "Stevens supports government oversight ensuring ethical AI development, backing requirements that AI systems undergo safety and ethics review before deployment. She also supports making AI-generated political deepfakes illegal and favors taxing companies that replace workers with AI, reflecting support for meaningful but not heavy-handed regulation.",
+   "sources": [
+    "https://www.isidewith.com/candidates/haley-stevens"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60",
+   "name": "Francisco E. Paulino",
+   "state": null,
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_seated": 3,
+   "reasoning": "Paulino sponsored H.1931 to enhance protections against child exploitation and misuse of emerging technology — a direct AI and emerging technology safety bill focused on protecting children from deepfakes and AI-generated exploitation material. He also sponsored H.1280 regulating insurance coverage for the testing and deployment of autonomous vehicles. These two bills reflect engagement with AI and emerging technology policy from a public safety and consumer protection angle.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/H1931",
+    "https://malegislature.gov/Bills/194/H1280"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+   "name": "Patrick M. O'Connor",
+   "state": null,
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "chair_seated": 2,
+   "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which would require all electricity from renewables by 2035 and all energy by 2045. This bill effectively calls for stopping new fossil fuel permits, placing O'Connor at value 2 — unusual for a Republican but documented.",
+   "sources": [
+    "https://web.archive.org/web/20260412022647/https://actonmass.org/legislators/patrick-oconnor/",
+    "https://web.archive.org/web/20260412020611/https://actonmass.org/bills/100-renewable-energy-by-2045/"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "30b6b674-509f-46f6-a9aa-aa3dbefc2f42",
+   "name": "Diana DiZoglio",
+   "state": "MA",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "chair_seated": 1,
+   "reasoning": "DiZoglio has consistently opposed school vouchers and private school diversion of public education funds. She represented communities including Lawrence with a majority of students in underfunded public schools, making her a strong defender of public education investment. DiZoglio supported working with Greater Lawrence Technical School — a public vocational school — for STEM funding, reflecting her focus on strengthening public educational institutions rather than diverting resources to private alternatives.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Diana_DiZoglio",
+    "https://malegislature.gov/Legislators/Profile/D_D0"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15",
+   "name": "Erika Uyterhoeven",
+   "state": null,
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "chair_seated": 1,
+   "reasoning": "Uyterhoeven has opposed charter school expansion and voucher programs, supporting fully funded public schools instead. Her Democratic Socialist platform views public education as a public good and opposes diverting tax dollars to private institutions. She has voted against measures that would expand the charter school cap.",
+   "sources": [
+    "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/",
+    "https://malegislature.gov/Legislators/Profile/E_U1"
+   ],
+   "from_migration": "1729"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "name": "Jake Wilson",
+   "state": "MA",
+   "topic": "Residential Zoning",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "chair_seated": 3,
+   "reasoning": "Wilson championed the MBTA Communities zoning law as a state legislator, which mandated higher-density, by-right multifamily zoning near transit in communities like Somerville. He supported SomerVision 2040, Somerville's comprehensive plan that calls for significant upzoning in key corridors, and expressed support for further zoning liberalization to increase housing supply. As Mayor he has continued this trajectory, supporting updated zoning codes to allow more multifamily development as-of-right.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1379",
+    "https://www.somervillema.gov/somervision"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "4e485d3a-79a0-40ce-a52f-f84d187bf5de",
+   "name": "Drew Boyles",
+   "state": "CA",
+   "topic": "Residential Zoning",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "chair_seated": 1,
+   "reasoning": "Boyles advocated regionally and statewide to protect single-family housing neighborhoods, a position favoring preservation of low-density residential zoning against upzoning mandates.",
+   "sources": [
+    "https://drewforelsegundo.com/about-drew/"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "2d47a965-81a2-4508-865c-06d45bf6ff42",
+   "name": "Christine Parra",
+   "state": null,
+   "topic": "Growth and Development Pace",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "chair_seated": 2,
+   "reasoning": "Parra's platform centers slow growth and opposition to residential encroachment, favoring controlled, character-preserving development.",
+   "sources": [
+    "https://patch.com/california/santamonica/candidate-profile-christine-parra-santa-monica-city-council"
+   ],
+   "from_migration": "1730"
+  },
+  {
+   "politician_id": "7714b7c6-9283-4ab8-802e-cbcfba5ddc96",
+   "name": "Phil Brock",
+   "state": null,
+   "topic": "Growth and Development Pace",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "chair_seated": 2,
+   "reasoning": "Brock supports slow growth and reduced traffic, expressing concern that big developers and the State want to replace the heart of the city with tall, dense buildings.",
+   "sources": [
+    "https://www.votebrock.org/issues/a-statement-of-purpose"
+   ],
+   "from_migration": "1730"
+  }
+ ]
+}

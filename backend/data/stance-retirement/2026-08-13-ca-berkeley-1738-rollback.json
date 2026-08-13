@@ -1,0 +1,159 @@
+{
+ "migration": "1738_ca_berkeley_chairs_evidenced",
+ "note": "Berkeley chairs-owed pass. chair_after null = spoke BLANKED (answer deleted, politician_context kept).",
+ "rows": [
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "name": "Igor Tregub",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 2,
+   "chair_after": 1,
+   "disposition": "reseat"
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "name": "Brent Blackaby",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 2,
+   "chair_after": 1,
+   "disposition": "reseat"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "name": "Terry Taplin",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 2,
+   "chair_after": 1,
+   "disposition": "reseat"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "name": "Rashi Kesarwani",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 1,
+   "chair_after": 1,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "name": "Igor Tregub",
+   "topic": "Fossil Fuel Policy",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Igor Tregub",
+   "topic": "Rent Regulation",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "name": "Igor Tregub",
+   "topic": "Criminalization of Homelessness",
+   "chair_before": 3,
+   "chair_after": 3,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "name": "Igor Tregub",
+   "topic": "Homelessness Response",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Igor Tregub",
+   "topic": "Affordable Housing",
+   "chair_before": 3,
+   "chair_after": 3,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "name": "Terry Taplin",
+   "topic": "Criminalization of Homelessness",
+   "chair_before": 3,
+   "chair_after": 3,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "name": "Terry Taplin",
+   "topic": "Homelessness Response",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Terry Taplin",
+   "topic": "Rent Regulation",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "name": "Terry Taplin",
+   "topic": "Transportation Priorities",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "name": "Rashi Kesarwani",
+   "topic": "Transportation Priorities",
+   "chair_before": 2,
+   "chair_after": 2,
+   "disposition": "resource"
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "name": "Brent Blackaby",
+   "topic": "Deportation Priorities",
+   "chair_before": 2,
+   "chair_after": null,
+   "disposition": "blank"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Igor Tregub",
+   "topic": "Public Safety Approach",
+   "chair_before": 3,
+   "chair_after": null,
+   "disposition": "blank"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Terry Taplin",
+   "topic": "Public Safety Approach",
+   "chair_before": 2,
+   "chair_after": null,
+   "disposition": "blank"
+  }
+ ]
+}
