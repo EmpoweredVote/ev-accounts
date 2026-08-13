@@ -1,0 +1,58 @@
+{
+ "pass": "chairs seated by inference — owed evidence describing THAT chair",
+ "migration": "1740_ca_sandiego_chairs_evidenced.sql",
+ "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
+ "note": "Pre-1740 state of the 3 San Diego rows. All 3 re-sourced; 1 also re-seated (Gloria / Climate 3 -> 2). No blanks. Restore by writing chair_seated back to inform.politician_answers.value and reasoning/sources back to inform.politician_context.",
+ "n": 3,
+ "rows": [
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "office": "Mayor, City of San Diego",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "disposition": "RE-SEATED 3 -> 2 (end-state reading; the stored reasoning already described chair 2)",
+   "reasoning": "Gloria authored the draft San Diego Climate Action Plan as interim mayor and promoted it during his Assembly campaign per Wikipedia. The sandiego.gov planning page confirms the city launched Our Climate Our Future as a core planning priority implementing the Climate Action Plan. His direct authorship of the CAP and continued implementation as mayor aligns with rapidly transitioning to clean energy and phasing out fossil fuels.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "state": "CA",
+   "office": "Mayor, City of San Diego",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 3,
+   "disposition": "re-sourced, chair 3 kept",
+   "reasoning": "The San Diego planning page confirms the city is implementing the Climate Action Plan as a core planning program including Our Climate Our Future. Gloria authored the CAP as interim mayor per Wikipedia. The Land Development Code update and transit-oriented development policies impose environmental requirements on new developments. These actions align with requiring significant environmental review and offsetting environmental impacts.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://www.sandiego.gov/planning",
+    "https://www.sandiego.gov/environmental-services"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "name": "Sean Elo-Rivera",
+   "state": "CA",
+   "office": "Council Member, City of San Diego (District 9)",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_seated": 2,
+   "disposition": "re-sourced, chair 2 kept (stored tax structure was factually wrong: $5k/bedroom, actual is $8,000 flat per home)",
+   "reasoning": "Elo-Rivera championed a second-homes vacancy tax ($5k/bedroom per year on non-primary homes vacant over half the year) as a 2026 ballot measure. He also championed a vacation rental tax and the $25/hour hospitality minimum wage (passed 2025), which he supported. He framed the cost-of-living committee he chaired as addressing affordability through taxes and worker wages.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sean_Elo-Rivera",
+    "https://timesofsandiego.com/tag/sean-elo-rivera/"
+   ],
+   "from_migration": "1727"
+  }
+ ]
+}

@@ -49,8 +49,22 @@ for (const [mig, f] of files) {
 //   · "referral approved/adopted/considered" requires the referral to have been ACTED ON. Berkeley
 //     referrals carry no number, and an unqualified "referral" would have admitted the withdrawn
 //     item this very migration had to remove (2025-03-11 Item 15, "removed from the agenda").
+// ⚠ WIDENED TWICE, EACH TIME ONLY ALONGSIDE ROWS ALREADY VERIFIED BY READING THE SOURCE.
+// The original list was STATE-LEGISLATURE shaped and could not see a city council's vocabulary at
+// all; mig 1738 added the municipal terms, requiring a NUMBER so that an unadopted referral could not
+// sneak through. Mig 1740 adds the two forms a MAYOR's record takes, for the same reason:
+//   · `Measure \d+\.\d+` — a numbered measure inside an adopted municipal plan. San Diego's 2022
+//     Climate Action Plan is Gloria's actual instrument (he proposed and signed it; the Council
+//     adopted it unanimously), and its commitments live in numbered measures such as Measure 1.1
+//     "phase out 45% of natural gas usage from existing buildings by 2030". The decimal is required
+//     precisely so that vague prose, or a bare ballot "Measure A", cannot satisfy it.
+//   · `O-#####` / `R-######` — San Diego's ordinance and resolution numbering, e.g. Ordinance
+//     O-21528 N.S. (Climate Action Plan Consistency Regulations) and Resolution R-316659.
+// 🔑 The point of the gate is that PASSING MEANS SOMETHING. Both widenings were paired with rows whose
+//    instruments had been read in the source document, and in each case the recorded proof is that the
+//    debt fell by exactly the number of rows touched — never more.
 const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call)/;
+  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

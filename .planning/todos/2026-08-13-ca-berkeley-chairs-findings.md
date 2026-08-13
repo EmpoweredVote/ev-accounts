@@ -258,15 +258,74 @@ Ord. 7,935. Chair 3 is seated because it **beats every rival**, not because both
 the honest state. ⚠ Her seated Climate reasoning contains a pure non-argument worth deleting whenever
 this row is next touched: *"served on the council in 2019 when Berkeley passed the natural gas ban"* —
 **presence at a vote is not a position.**
-## ▶▶ NEXT — the 17 rows left, and Berkeley tooling does NOT transfer to any of them
-- **San Diego 3** (Gloria 2, Elo-Rivera 1) and **El Segundo 1** (Boyles). ⚠ Elo-Rivera / Taxation ch2
-  is the magnitude-bound ladder that killed all 13 MD Taxation rows — expect the same.
-  ⚠ Gloria's 2 rows (Climate ch3, Env-vs-Dev ch3) rest on **Wikipedia + a sandiego.gov landing page**;
-  "authored the draft Climate Action Plan as interim mayor" needs the CAP itself, and note
-  [[landing_pages_not_coverage]] — `sandiego.gov/planning` is a nav page, not an instrument.
-  🔑 Gloria is a **mayor**, so the Berkeley model (author/co-sponsor lines on an annotated agenda) does
-  not apply — a mayor signs and proposes rather than co-sponsors. Expect council resolutions *he
-  transmitted* plus the CAP's own adopted targets.
+## ✅ SAN DIEGO CLOSED — **mig 1740**. Debt **17 → 14**, CA **6 → 3** (Kesarwani 2 + Boyles 1)
+All 3 re-sourced, 1 re-seated. Gate exit 0; **no blanks**, so nothing here rests on a completeness
+claim. Debt fell by exactly 3 = rows touched. Sources cached at `%TEMP%/ev-stance-cache/sandiego/`.
+🔑 **A MAYOR'S ATTRIBUTION IS BETTER THAN A CO-SPONSORSHIP, NOT WORSE.** Gloria doesn't co-sponsor —
+he proposes and signs. The adopted **2022 Climate Action Plan** carries his **signed first-person
+letter**, and the City's news release calls it "**the Mayor's CAP update**".
+
+- **Gloria / Climate ch3 → 2.** Applies the end-state reading from 1739, on stronger evidence than
+  Berkeley's because it is dated and quantified: CAP adopted unanimously 2022-08-02, net zero by 2035,
+  and **numbered measures with deadlines** — M1.1 phase out **45% of natural gas in existing buildings
+  by 2030, 90% by 2035**; M1.2 **all-electric reach code from 2023** for new development; M1.3 **50% of
+  municipal gas by 2030, 100% by 2035**; SDCP 100% renewable electricity by 2035. Plan text: net zero
+  "means **eliminating fossil-fuel emissions**"; the City "has taken bold steps to **accelerate** the
+  transition away from fossil fuels".
+  🔑 **The stored reasoning ALREADY described chair 2 while seated at chair 3** — it ended "aligns with
+  rapidly transitioning to clean energy and phasing out fossil fuels". An independent instance of
+  [[chair_reasoning_inversion]], found before the evidence and corroborating it.
+  ⚠ Completion is 2035, not ch2's 2030; the 2030 milestones are partial. Recorded in the row.
+- **Gloria / Env-vs-Dev ch3 KEPT.** 🔑 Settled by the **regulation's own structure**, not by judging his
+  politics: **CAP Consistency Regulations**, SDMC ch.14 art.3 div.14, added by **Ordinance O-21528 N.S.**
+  (2022-09-21, eff. 2022-10-23). §143.1403(b) **bars using a bonus or incentive to waive** the
+  requirements = "consistent standards"; **§143.1403(c) lets development that DEVIATES be approved with
+  a Process Two Neighborhood Development Permit** = "reasonable flexibility", in the code's own words.
+  Beats ch1 (thresholds: 3+ units / 5,000+ sq ft; state-law ADUs exempt → not "any development"),
+  ch2 (deviation pathway, no full-offset), ch4 (on-site duties incentives can't buy out), ch5 (adds
+  local restrictions). ⚠ Its stored reasoning also named the WRONG chair ("requiring significant
+  environmental review and offsetting") — chair survives, reasoning does not.
+  ⚠ **CHECKED AND DELIBERATELY NOT CITED**: the 2021 **Parks Master Plan** (acreage → recreational-value
+  points; on-site amenities offset park fees). It reads as ch4 vocabulary but governs **park adequacy
+  owed by new development**, not environmental preservation vs development. Off-axis.
+- **Elo-Rivera / Taxes ch2 KEPT.** 🔴🔴 **THIS LADDER IS NOT PURELY MAGNITUDE-BOUND — see below.**
+  He **introduced** the Empty Homes Tax (Rules Cttee Jan 2026, per IBA 26-05); **Ord. O-22071** +
+  **Res. R-316659**, both 2026-03-03, placed it as **Measure A** on the 2026-06-02 ballot. SDMC
+  §§32.0101–32.0123: **$8,000 (2027) → $10,000** on non-primary residences vacant >182 days, **plus a
+  separate $4,000/$5,000 charge on corporate-owned** empty homes — ch2's "wealthy people **and** large
+  companies" on both halves at once. IBA 26-08: **"all revenue would be unrestricted and deposited into
+  the City's General Fund"**, $9.2M–$21.4M yr 1.
+  ⚠ Stored reasoning was **factually wrong about its own instrument**: "$5k/bedroom" vs the actual flat
+  $8,000/home. A wrong instrument description is a sourcing defect even when the chair is right.
+  🔴 **Counter-evidence cited in the row** (Ellis rule): as Council President he backed **Measure E**
+  (Nov 2024), a **one-cent GENERAL SALES TAX**, 7.75%→8.75%, **$360–400M/yr**. A sales tax is not levied
+  on "wealthy people and large companies", and $400M is not "moderate" — but it too went to the
+  unrestricted General Fund against a ~$200M structural deficit.
+
+### 🔴🔴 THE TAXES LADDER'S ch1/ch2 DISCRIMINATOR IS **PURPOSE**, NOT MAGNITUDE — re-examine MD
+ch1 = "significantly raise … to fund **MORE** public services"; ch2 = "moderately … to fund **EXISTING**
+services". **The second half is a documentable purpose test.** Both Elo-Rivera instruments send proceeds
+to the **unrestricted General Fund to sustain existing operations against a deficit** — neither creates a
+new programme — so **ch1 is contradicted and ch2 wins without any judgement about "moderately".**
+▶ [[chairs_owed_evidence]] records the MD reading as "the only difference from chair 1 is MAGNITUDE".
+That is a **misreading of the chair text**, and the 13 MD Taxation rows blanked in mig 1736 may have
+been decidable on the purpose clause (e.g. where a bill's revenue was earmarked for a NEW programme vs
+the general fund). **Not reopened here** — flagged as a re-examination candidate, needs the user's call.
+
+### ⚠ The gate was widened a SECOND time, narrowly, and only alongside these verified rows
+`NAMES_INSTRUMENT` was legislature-shaped, then municipal after 1738 — but it still could not see a
+**mayor's** instrument, an adopted municipal PLAN. Added `Measure \d+\.\d+` (a numbered measure inside
+an adopted plan; the **decimal is required** so vague prose and a bare ballot "Measure A" cannot satisfy
+it) and `O-#####`/`R-######` (San Diego numbering). **Proof it greened nothing unread: debt fell by
+exactly 3, the number of rows touched.**
+
+## ▶▶ NEXT — the 14 rows left
+- **CA 3**: Kesarwani 2 (owed by design, see above) + **Boyles / Residential Zoning** (El Segundo, one
+  campaign-site citation; ⚠ Residential Zoning is **OFF-AXIS** per [[ladder_orientation]]).
+- **Non-CA 11**: MD 3 (Washington + Muse / Voting Rights, restored by 1732 and still owed; Waldstreicher
+  / Same-Sex Marriage needs the **2012** Civil Marriage Protection Act roll call, outside the 2013+
+  corpus), MI 1 (Stevens / AI Oversight — sourced only to isidewith.com; ⚠ AI Oversight runs
+  **BACKWARDS**), MA 2, 5 unattributed.
 - **Non-CA 11**: MD 3 (Washington, Muse — **both restored to chair 2 by mig 1732 and still owed, so
   MD debt is 3, not the 1 the previous handoff recorded**; plus Waldstreicher / Same-Sex Marriage,
   which needs the **2012** Civil Marriage Protection Act roll call, outside the 2013+ corpus),
