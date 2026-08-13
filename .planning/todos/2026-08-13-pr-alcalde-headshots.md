@@ -127,16 +127,38 @@ sourced for. Prefer a filename that names the *office* (`Alcaldesa_Rosachely_Riv
 
 ## Where it stands
 
-**8 of 78 imported** (migration 1733). **70 remain.** Bayamón is closed as a negative, so the
-realistic pool is 69 unknowns + Bayamón-if-it-ever-publishes-one.
+**8 of 78 imported** (migration 1733). **70 remain.** Two of the three leads are now closed
+negatives: **Bayamón** as a municipality, and **Ballotpedia entirely** — BP is exhausted at 4
+portraits, all imported. What is left is the municipal/subdomain sweep and the Facebook ruling.
 
 ## What is left, in order of expected value
 
-1. **Ballotpedia infobox re-extraction** with the filename guard, driven through Playwright to dodge
-   the 202. 50 pages exist; the 12-with-images figure came from a naive selector and is probably an
-   undercount of what the infobox holds. **Wave 1 used only the 2 that already passed the guard, so
-   this is still fully open.** (BP's S3 host `s3.amazonaws.com/ballotpedia-api4` serves images with
-   no rate limiting — only `ballotpedia.org` page fetches 202.)
+1. ~~**Ballotpedia infobox re-extraction**~~ — ❌ **DONE AND CLOSED 2026-08-12. ZERO new portraits.
+   Do not re-run it.** (`data/pr-alcaldes/ballotpedia-infobox-negatives.json`, 43 rows.)
+
+   The hypothesis in this file was **backwards**: "12 with images is probably an undercount" — it was
+   an **OVERCOUNT**. The true infobox-portrait count across all 50 BP pages is **exactly 4**
+   (Humacao, Mayagüez, Ponce, San Juan), **all already imported in wave 1**.
+
+   **Where the portrait actually lives**, for anyone doing this on another cohort:
+   ```
+   <div class="infobox person">
+     <div class="widget-row value-only ...">Marlese Sifre</div>   <- name, a free 2nd factor
+     <img src=".../files/thumbs/200/300/X.jpg" class="widget-img" />   <- THE portrait
+   ```
+   Strip `thumbs/W/H/` from that src for the full-size original.
+   🔴 **The decoys are `class="image-candidate-thumbnail"` inside `<table class="results_table">` —
+   one per candidate in the race.** "First `ballotpedia-api4` image on the page" grabs whichever
+   comes first, which is why the earlier pass was wrong-person 8 times in 12. On all 8 of those
+   pages the infobox has **no** portrait and that single results-table thumbnail was an *opponent*.
+
+   🔴🔴 **THE 43 NEGATIVES ARE POSITIVE EVIDENCE, NOT A FAILED CRAWL.** Every one of the 43
+   infoboxes carries exactly one image: `SubmitPhoto-150px.png`, **Ballotpedia's own "submit a
+   photo" placeholder** — BP explicitly stating no photo on file. Detect *that*, not the absence of
+   a selector. Proven before being believed: the extractor was run as a **positive control** against
+   the 4 known-good pages and found all 4 (a 43/43 uniform answer is the shape of a broken detector,
+   so it does not count until a control passes). Pages are cached, so a re-check is free.
+
 2. **The `sanjuan.pr` / `gurabopr.net` leads above**, then a **subdomain** sweep for the 48 unknown
    sites. Weigh against the measured ~10% portrait yield from the 30 sites already found —
    the WP `/wp-json/wp/v2/media?search=alcalde` enumeration makes each site much cheaper to check
