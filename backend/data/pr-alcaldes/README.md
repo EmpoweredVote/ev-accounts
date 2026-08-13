@@ -12,6 +12,16 @@ Full narrative + verified negatives: `.planning/todos/2026-08-13-pr-alcalde-head
 | `ballotpedia-probe.json` | Per-alcalde Ballotpedia probe: which of the 78 have a page (50), which expose a portrait (12), the working title form. | 🔴 **Expensive — BP rate-limits silently with HTTP 202 + a zero-byte body.** Do not re-run casually. |
 | `muni-site-liveness.json` | The 78 Wikidata `P856` values probed for liveness AND self-naming. Only 17 pass; 24 point at the defunct `gobierno.pr/OCAM` directory. | Cheap. |
 | `muni-domain-sweep.json` | 13 further municipal sites found by testing 18 domain patterns; plus the 48 still unknown. | Cheap (~1,300 requests, no search quota). |
+| `eswiki-person-sweep.json` | Per-alcalde es.wikipedia probe: best-matching article title, how many of our name tokens it contains, its lead image and Wikidata QID. Asks whether an article *about the person* carries a portrait — a different question from the municipio item's `P6`. **5 real hits; net new = Gurabo, plus upgrades for Humacao and San Juan.** | Cheap (~78 searches + 78 pageimages calls, ~1 min). |
+
+## 🔴 Before using `eswiki-person-sweep.json`
+
+`name_tokens_in_title` is a **weak** signal: **3 of the 8 apparent hits are the wrong person**, all
+three the two-surname trap — Carolina's José Carlos Aponte **Dalmau** matched *José Luis Dalmau*,
+Coamo's Juan Carlos **García Padilla** matched *Alejandro García Padilla* (the former **Governor**),
+and Toa Baja's **Bernardo Márquez García** matched *José Bernardo Márquez*. **Two shared surname
+tokens is not a match.** Confirm against the `LOCAL_EXEC` seat before using any row, and prefer a
+filename that names the office (`Alcaldesa_<name>.jpg`).
 
 ## 🔴 Before using `ballotpedia-probe.json`
 
