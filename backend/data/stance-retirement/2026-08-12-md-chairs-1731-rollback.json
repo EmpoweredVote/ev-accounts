@@ -1,0 +1,23 @@
+{
+ "pass": "Maryland slice 1 — seat a chair only on evidence describing THAT chair, or blank the spoke",
+ "migration": "1731_md_chairs_evidenced_or_blanked.sql",
+ "note": "Chairs are NOT changed. Re-sourced rows keep the chair they held; blanked rows had their politician_answers row DELETED and their politician_context row kept.",
+ "n_resourced": 8,
+ "n_blanked": 3,
+ "remaining_md_owed": 71,
+ "rows": [
+  { "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33", "name": "Benjamin F. Kramer", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair": 2, "bill": "SB0029 2021RS", "prior_reasoning": "Kramer is a consistent supporter of voting rights including automatic voter registration, early voting, and absentee ballot access. He opposes voter ID restrictions.", "prior_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02", "https://ballotpedia.org/Benjamin_Kramer"] },
+  { "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1", "name": "Cheryl C. Kagan", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair": 2, "bill": "SB0343 2019RS" },
+  { "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570", "name": "Jeff Waldstreicher", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair": 2, "bill": "SB0461 2019RS" },
+  { "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029", "name": "Joanne C. Benson", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair": 2, "bill": "SB0373 2013RS" },
+  { "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc", "name": "William C. Smith, Jr.", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair": 2, "bill": "SB0730 2018RS" },
+  { "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33", "name": "Benjamin F. Kramer", "topic": "Healthcare Access", "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529", "chair": 2, "bill": "SB0410 2019RS" },
+  { "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570", "name": "Jeff Waldstreicher", "topic": "Healthcare Access", "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529", "chair": 2, "bill": "SB0868 2019RS" },
+  { "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc", "name": "William C. Smith, Jr.", "topic": "Public Safety Approach", "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85", "chair": 3, "bill": "SB0815 2019RS" }
+ ],
+ "blanked": [
+  { "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca", "name": "Alonzo T. Washington", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair_removed": 2, "candidates_read": 8, "why": "the only election bill in the complete list is SB0515 (2024) 'Voter Registration Age - Alteration' — registration, not early voting or no-excuse mail" },
+  { "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7", "name": "Arthur Ellis", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair_removed": 2, "candidates_read": 32, "why": "precinct procedures, absentee envelope party affiliation, correctional-facility registration, elderly/disabled polling procedures — none expands early voting or no-excuse mail" },
+  { "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891", "name": "C. Anthony Muse", "topic": "Voting Rights and Electoral Integrity", "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2", "chair_removed": 2, "candidates_read": 22, "why": "SB0018 (2025) 'Early Voting - Number of Days' does not say whether the number rises or falls; SB0929 is a workgroup. Blanked rather than guessed — reading SB0018's page could recover this row." }
+ ]
+}

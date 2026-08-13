@@ -51,18 +51,25 @@ const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^D
 const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: false } });
 
 const rows = [];
+let blanked = 0;
 for (const p of pairs) {
   const { rows: r } = await pool.query(
     `SELECT c.reasoning, c.sources, pol.full_name AS name, o.representing_state AS state,
-            t.short_title AS topic, t.title AS topic_title
+            t.short_title AS topic, t.title AS topic_title, a.value AS chair_now
        FROM inform.politician_context c
        JOIN essentials.politicians pol ON pol.id = c.politician_id
        LEFT JOIN essentials.offices o ON o.id = pol.office_id
        JOIN inform.compass_topics t ON t.id = c.topic_id
+       LEFT JOIN inform.politician_answers a
+              ON a.politician_id = c.politician_id AND a.topic_id = c.topic_id
       WHERE c.politician_id = $1 AND c.topic_id = $2`,
     [p.pid, p.tid],
   );
   if (!r[0]) continue;
+  // A BLANKED SPOKE IS RESOLVED, NOT OWED. The debt is "chairs seated without evidence for that
+  // chair"; a row with no answer seats no chair, so counting its directional reasoning as debt
+  // would keep the number from ever converging and invite a future pass to redo settled rows.
+  if (r[0].chair_now == null) { blanked++; continue; }
   rows.push({
     ...p, ...r[0],
     names_instrument: NAMES_INSTRUMENT.test(r[0].reasoning || ''),
@@ -86,7 +93,7 @@ if (CHECK) {
   process.exit(0);
 }
 
-console.log(`chairs corrected: ${rows.length}`);
+console.log(`chairs corrected: ${rows.length + blanked}  (${blanked} since blanked — a blank spoke seats no chair and is resolved)`);
 console.log(`  sources include a primary instrument:            ${rows.filter((r) => r.instrument_src).length}  ${pct(rows.filter((r) => r.instrument_src).length)}`);
 console.log(`  reasoning NAMES a specific instrument/act/vote:  ${rows.length - unevidenced.length}  ${pct(rows.length - unevidenced.length)}`);
 console.log(`  reasoning is DIRECTIONAL ONLY (not evidenced):   ${unevidenced.length}  ${pct(unevidenced.length)}`);

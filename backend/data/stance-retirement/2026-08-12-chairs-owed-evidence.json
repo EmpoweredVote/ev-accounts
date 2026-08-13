@@ -1,10 +1,10 @@
 {
  "pass": "chairs seated by inference — owed evidence describing THAT chair",
  "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
- "n": 121,
+ "n": 110,
  "by_state": {
   "MD": {
-   "rows": 82,
+   "rows": 71,
    "politicians": [
     "Alonzo T. Washington",
     "Arthur Ellis",
@@ -24,12 +24,10 @@
     "William C. Smith, Jr."
    ],
    "topics": {
-    "Healthcare": 2,
-    "Voting Rights": 14,
     "Criminal Justice": 3,
     "Economic Development Incentives": 13,
     "Environmental Protection vs. Development": 6,
-    "Public Safety Approach": 11,
+    "Public Safety Approach": 10,
     "Taxes": 13,
     "Medicare/aid": 1,
     "Campaign Finance": 2,
@@ -38,6 +36,7 @@
     "Trans Athletes": 3,
     "Bail & Pretrial": 2,
     "Ukraine Support": 1,
+    "Voting Rights": 6,
     "Redistricting": 2,
     "Prosecution": 1,
     "AI Oversight": 2
@@ -110,48 +109,6 @@
   }
  },
  "rows": [
-  {
-   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
-   "name": "Benjamin F. Kramer",
-   "state": "MD",
-   "topic": "Healthcare Access",
-   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
-   "chair_seated": 2,
-   "reasoning": "Kramer consistently votes for healthcare access expansion including Medicaid expansion, prescription drug cost controls, and healthcare affordability measures.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
-    "https://ballotpedia.org/Benjamin_Kramer"
-   ],
-   "from_migration": "1726"
-  },
-  {
-   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
-   "name": "Jeff Waldstreicher",
-   "state": "MD",
-   "topic": "Healthcare Access",
-   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
-   "chair_seated": 2,
-   "reasoning": "Waldstreicher is a strong advocate for universal healthcare access. He backed Medicaid expansion and has supported legislation to reduce prescription drug costs.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
-    "https://ballotpedia.org/Jeff_Waldstreicher"
-   ],
-   "from_migration": "1726"
-  },
-  {
-   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
-   "name": "Alonzo T. Washington",
-   "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Washington is a strong voting rights advocate. He backed automatic voter registration, early voting expansion, and ballot access for all eligible voters.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
-    "https://ballotpedia.org/Alonzo_Washington"
-   ],
-   "from_migration": "1727"
-  },
   {
    "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
    "name": "Alonzo T. Washington",
@@ -239,19 +196,6 @@
    "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
    "name": "Arthur Ellis",
    "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Ellis consistently backs voting rights including automatic voter registration and early voting expansion to increase ballot access.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
-   "name": "Arthur Ellis",
-   "state": "MD",
    "topic": "Economic Development Incentives",
    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
    "chair_seated": 3,
@@ -306,20 +250,6 @@
    "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
    "name": "Benjamin F. Kramer",
    "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Kramer is a consistent supporter of voting rights including automatic voter registration, early voting, and absentee ballot access. He opposes voter ID restrictions.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
-    "https://ballotpedia.org/Benjamin_Kramer"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
-   "name": "Benjamin F. Kramer",
-   "state": "MD",
    "topic": "Economic Development Incentives",
    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
    "chair_seated": 3,
@@ -357,20 +287,6 @@
     "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
     "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
     "https://ballotpedia.org/Benjamin_Kramer"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
-   "name": "C. Anthony Muse",
-   "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Muse consistently backs voting rights expansion including automatic voter registration and ballot access measures.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
-    "https://ballotpedia.org/C._Anthony_Muse"
    ],
    "from_migration": "1727"
   },
@@ -424,20 +340,6 @@
    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
    "chair_seated": 2,
    "reasoning": "Kagan has been a consistent advocate for campaign finance transparency and reform, supporting disclosure requirements and limits on dark money in Maryland elections.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
-    "https://ballotpedia.org/Cheryl_C._Kagan"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
-   "name": "Cheryl C. Kagan",
-   "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Kagan is nationally recognized for election law expertise and chairs or serves on Maryland's Election Law committee. She has championed automatic voter registration, early voting expansion, and ballot access improvements throughout her career.",
    "sources": [
     "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
     "https://ballotpedia.org/Cheryl_C._Kagan"
@@ -550,20 +452,6 @@
    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
    "chair_seated": 2,
    "reasoning": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
-    "https://ballotpedia.org/Jeff_Waldstreicher"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
-   "name": "Jeff Waldstreicher",
-   "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Waldstreicher is a consistent supporter of voting rights expansion including automatic voter registration, early voting, and ballot access for all eligible voters.",
    "sources": [
     "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
     "https://ballotpedia.org/Jeff_Waldstreicher"
@@ -695,20 +583,6 @@
     "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
     "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
     "https://ballotpedia.org/Jim_Rosapepe"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
-   "name": "Joanne C. Benson",
-   "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Benson strongly supports voting rights including automatic voter registration and early voting. She has consistently backed measures to expand ballot access.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
-    "https://ballotpedia.org/Joanne_Benson"
    ],
    "from_migration": "1727"
   },
@@ -1102,20 +976,6 @@
    "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
    "name": "William C. Smith, Jr.",
    "state": "MD",
-   "topic": "Voting Rights and Electoral Integrity",
-   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
-   "chair_seated": 2,
-   "reasoning": "Smith is a consistent supporter of voting rights expansion. He backed automatic voter registration, early voting, and ballot access improvements.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
-    "https://ballotpedia.org/William_C._Smith"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
-   "name": "William C. Smith, Jr.",
-   "state": "MD",
    "topic": "Bail and Pretrial Decisions",
    "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
    "chair_seated": 2,
@@ -1176,20 +1036,6 @@
    "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
    "chair_seated": 3,
    "reasoning": "Smith has used the Judicial Proceedings chair role to prioritize balanced prosecution approaches, supporting reforms to reduce mass incarceration while maintaining public safety.",
-   "sources": [
-    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
-    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
-   ],
-   "from_migration": "1727"
-  },
-  {
-   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
-   "name": "William C. Smith, Jr.",
-   "state": "MD",
-   "topic": "Public Safety Approach",
-   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
-   "chair_seated": 3,
-   "reasoning": "Smith's Judicial Proceedings chair position enables a balanced public safety approach. He views public safety as including both enforcement and prevention, supporting reform while maintaining accountability.",
    "sources": [
     "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
     "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
