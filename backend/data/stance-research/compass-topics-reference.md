@@ -1,470 +1,600 @@
 # Compass Topics Reference
 
-**Purpose:** Authoritative reference for stance research agents. Lists all 41 applicable compass topic keys, a neutral policy question for each, and the 1–5 answer scale.
+**GENERATED FILE - DO NOT HAND-EDIT.** Regenerate with:
 
-**Excluded topics (do NOT use in exec or senator CSVs):** `data-centers`, `local-immigration`, `transportation-priorities`
+```
+node scripts/gen-compass-topics-reference.mjs
+```
 
-**Answer scale convention:** 1 = strong progressive/left stance; 5 = strong conservative/right stance; 3 = mixed or centrist.
+Source of truth: `inform.compass_stances` joined to `inform.compass_topics` (is_live AND is_active).
+44 live topics. The chair text below is verbatim from the database - it is what the voter sees.
+
+## The rule for seating anyone in a chair
+
+A chair requires evidence describing **THAT chair**. The five chairs are five distinct stances, not
+a polarization rating. Direction is not a chair: evidence that establishes only pro/anti under-
+determines which of the two or three chairs on that side the person occupies, and seating them anyway
+is an unevidenced voter-facing claim.
+
+- A polarization score, an endorsement grade, or an advocacy-group rating is **never** a chair.
+- "Least extreme option the reasoning supports" is a **tiebreaker, not evidence**. Reaching for it is
+  the signal that the row is not evidenced.
+- The honest alternative to a guessed chair is a **blank spoke**. A blank spoke is a correct answer.
+- A citation to legislation the member CO-SPONSORED can only ever evidence the chair that legislation
+  describes. Co-sponsorship counts as much as authorship.
+- Before calling a chair pair unevidenceable, check *which word* differs between them:
+  **pace/magnitude only** (taxes 1 "significantly raise" vs 2 "moderately raise") cannot be settled by
+  a sponsorship - blank it; an **end-state** difference (climate 2 "phase out" vs 3 "gradually reducing
+  reliance on") is elimination vs reduction and can be evidenced.
+- Consistency check: the same instrument cannot seat two co-sponsors in two different chairs.
+
+## Orientation: read chair 1, every time
+
+**Do not assume 1 = progressive.** The prevailing convention is *chair 1 = maximum government action,
+chair 5 = minimum*, which is a different axis from left-to-right, and several ladders do not follow
+either reading:
+
+- **Reversed** - `ai-regulation` chair 1 is "allow AI companies to develop freely" and chair 5 is the
+  ban. `tariffs` chair 1 is complete free trade. On these, the pro-regulation politician is at the
+  HIGH chair.
+- **Off-axis** - on `residential-zoning` (chair 5 eliminates single-family-only zoning),
+  `growth-and-development`, and `housing` chair 4 ("cut regulations so private developers can build"),
+  the deregulatory and the progressive-housing positions sit at the SAME end. `housing` chair 4 is
+  right for a YIMBY and wrong for a tenant-protection member: same chair, opposite verdicts, decided
+  per row.
+- **Not an intervention axis at all** - `judicial-government-deference` chair 1 is "the citizen,
+  almost always". No political lexicon maps onto it; do not scan it with one.
+- `misinformation` chair 5 ("ban any government involvement in content moderation") is a free-speech
+  position held across the spectrum.
+
+Orientation is **not** stored on `compass_topics`, so nothing in the code derives it and no scan can
+infer it. The authoritative test is the chair text printed below. Read chair 1 and chair 5 and decide
+which end your evidence describes before picking a number.
+
+## Output format
+
+Emit the chair number **1-5 directly**, matching the option number below. Apply scripts use
+`parseInt(value)` with no conversion formula. CSV: `politician_id,topic_id,topic_key,value,notes`;
+keep notes under 120 chars and use semicolons, not commas.
+
+## Scope
+
+`office_scope` is NULL on every live topic, so scope is a judgment call, not a lookup. Pick the topics
+the office actually acts on. `data-centers`, `local-immigration` and `transportation-priorities` are
+live and are usually the WRONG choice for a federal or statewide official and the RIGHT choice for a
+city or county one. (An earlier version of this file listed those three as deprecated. They are not.)
 
 ---
 
 ## Topics
 
 ### abortion
-**Question:** What is the politician's position on abortion access and reproductive rights?
-**Scale:**
-- 1 = Strongly supports broad abortion access; opposes all restrictions; supports public funding
-- 2 = Supports abortion rights with minimal restrictions; favors access beyond Roe baseline
-- 3 = Mixed/moderate; supports some restrictions but also some access
-- 4 = Supports significant restrictions; favors parental notification, waiting periods, 20-week ban
-- 5 = Opposes abortion in most or all cases; supports near-total bans or fetal personhood
+**Title:** Abortion
+**Question:** What legal framework should govern abortion access?
+**Chairs (verbatim):**
+- 1 = ensure abortion is legal, accessible, and publicly funded at all stages of pregnancy.
+- 2 = keep abortion legal and accessible through the second trimester with rare exceptions afterward.
+- 3 = allow abortion in the first trimester and in cases of rape, incest, or maternal health risks.
+- 4 = restrict abortion to only cases involving rape, incest, or serious threats to the mother's life.
+- 5 = ban abortion completely with no exceptions and impose criminal penalties for providers and patients.
 
 ---
 
 ### ai-regulation
-**Question:** Should artificial intelligence be heavily regulated by government?
-**Scale:**
-- 1 = Strongly favors comprehensive federal AI regulation, oversight boards, liability rules
-- 2 = Supports meaningful regulation with safety standards and transparency requirements
-- 3 = Supports light-touch guidelines with voluntary industry standards
-- 4 = Prefers industry self-regulation over government mandates
-- 5 = Opposes regulation; believes free market should govern AI development
+**Title:** AI Oversight
+**Question:** How much should government oversee artificial intelligence development and deployment?
+**Chairs (verbatim):**
+- 1 = Allow AI companies to develop and deploy technology freely without government interference
+- 2 = Suggest AI safety guidelines but let companies choose whether to follow them
+- 3 = Require AI developers to disclose risks and be held responsible when their systems cause harm
+- 4 = Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing
+- 5 = Impose strict approval requirements and ban AI systems that could cause serious harm
 
 ---
 
 ### campaign-finance
-**Question:** Should money in political campaigns be limited or regulated?
-**Scale:**
-- 1 = Strongly supports public financing, strict contribution limits, overturning Citizens United
-- 2 = Supports disclosure requirements and limits on dark money
-- 3 = Favors some transparency but no major structural reform
-- 4 = Supports minimal restrictions; believes money is free speech
-- 5 = Opposes campaign finance limits; supports unlimited political spending
+**Title:** Campaign Finance
+**Question:** What rules should govern money in political campaigns and elections?
+**Chairs (verbatim):**
+- 1 = ban all private money in politics and publicly fund campaigns
+- 2 = strictly limit corporate donations and dark money groups
+- 3 = require full disclosure of all political donations
+- 4 = reduce restrictions on political donations and spending
+- 5 = eliminate all campaign finance laws and limits
 
 ---
 
 ### childcare
-**Question:** Should government subsidize or expand access to childcare?
-**Scale:**
-- 1 = Strongly supports universal subsidized childcare or free pre-K for all families
-- 2 = Supports expanded subsidies and tax credits for working families
-- 3 = Supports targeted subsidies for low-income families
-- 4 = Prefers tax incentives over direct subsidies; favors private market solutions
-- 5 = Opposes government childcare programs; believes childcare is a family/private responsibility
+**Title:** Childcare
+**Question:** How should government address the cost and availability of childcare?
+**Chairs (verbatim):**
+- 1 = Establishing publicly funded universal childcare so that all families have access regardless of income
+- 2 = Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families
+- 3 = Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants
+- 4 = Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families
+- 5 = Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers
 
 ---
 
 ### city-sanitation
-**Question:** How should government handle public cleanliness, waste management, and encampment removal?
-**Scale:**
-- 1 = Strongly opposes forced encampment clearances; prioritizes services over enforcement
-- 2 = Favors voluntary services-first approach before any enforcement
-- 3 = Supports balanced approach: services and cleanup enforcement
-- 4 = Favors proactive enforcement of sanitation and anti-camping ordinances
-- 5 = Strongly supports aggressive enforcement and clearances to maintain public order
+**Title:** City Sanitation and Cleanliness
+**Question:** How should your community approach street cleanliness and sanitation?
+**Chairs (verbatim):**
+- 1 = Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure
+- 2 = Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness communitywide
+- 3 = Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners
+- 4 = Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible
+- 5 = Privatize sanitation services and require residents and businesses to contract for cleanup directly
 
 ---
 
 ### civil-rights
-**Question:** How strongly does the politician support civil rights protections for minority groups?
-**Scale:**
-- 1 = Strong champion of expansive civil rights protections; supports reparations and anti-discrimination enforcement
-- 2 = Supports comprehensive civil rights legislation and enforcement
-- 3 = Supports baseline civil rights laws but cautious on new expansions
-- 4 = Favors limiting scope of civil rights law; opposes affirmative action
-- 5 = Opposes most affirmative action; favors "colorblind" law; opposes expansions of civil rights categories
+**Title:** Civil Rights
+**Question:** What role should government play in addressing racial and social inequality?
+**Chairs (verbatim):**
+- 1 = mandate racial equity requirements in all institutions and provide reparations
+- 2 = strengthen civil rights enforcement and address systemic discrimination
+- 3 = maintain current civil rights laws while promoting equal opportunity
+- 4 = limit federal civil rights enforcement to clear cases of discrimination
+- 5 = eliminate affirmative action and all race-based government programs
 
 ---
 
 ### climate-change
-**Question:** Should government take aggressive action to address climate change?
-**Scale:**
-- 1 = Strongly supports aggressive climate action: carbon tax, green energy mandates, net-zero targets
-- 2 = Supports comprehensive clean energy legislation and emissions reduction commitments
-- 3 = Supports moderate climate measures; balances environment with economic concerns
-- 4 = Skeptical of aggressive action; prefers market-based approaches with limited mandates
-- 5 = Opposes climate mandates; denies urgency; prioritizes fossil fuel jobs over transition
+**Title:** Climate Change
+**Question:** What priority should climate change receive in energy and economic policy?
+**Chairs (verbatim):**
+- 1 = declare a climate emergency and ban all activities that increase carbon emissions
+- 2 = rapidly transition to renewable energy and phase out fossil fuels by 2030
+- 3 = invest in clean energy while gradually reducing reliance on fossil fuels
+- 4 = let market forces drive any transition to cleaner energy sources
+- 5 = reject climate change policies and focus on economic growth instead
+
+---
+
+### data-centers
+**Title:** Data Centers
+**Question:** How should government manage the growth of large-scale data centers?
+**Chairs (verbatim):**
+- 1 = Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers
+- 2 = Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers
+- 3 = Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval
+- 4 = Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts
+- 5 = Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents
 
 ---
 
 ### deportation
-**Question:** Should undocumented immigrants be deported?
-**Scale:**
-- 1 = Strongly opposes most deportations; supports sanctuary policies and pathways to citizenship
-- 2 = Opposes mass deportation; supports case-by-case removal only for serious crimes
-- 3 = Supports enforcement of existing law with some humanitarian exceptions
-- 4 = Supports expanded deportation including interior enforcement
-- 5 = Strongly supports mass deportation and strict interior enforcement of all immigration violations
+**Title:** Deportation
+**Question:** Who should be deported, and how aggressively?
+**Chairs (verbatim):**
+- 1 = Stop deportations entirely and protect undocumented residents from removal
+- 2 = Only deport people convicted of serious violent crimes
+- 3 = Focus deportation on recent arrivals while leaving long-term residents in place
+- 4 = Deport everyone without legal status, starting with those who have criminal records
+- 5 = Move quickly to deport all undocumented people regardless of how long they've lived here or family ties
 
 ---
 
 ### economic-development
-**Question:** How should government stimulate economic growth and job creation?
-**Scale:**
-- 1 = Strongly favors government-led investment, worker protections, public jobs programs
-- 2 = Supports targeted public investment with strong labor standards
-- 3 = Favors public-private partnerships and mixed approach
-- 4 = Prefers tax incentives and deregulation to attract private investment
-- 5 = Strongly favors deregulation, low taxes, and removing government from business decisions
+**Title:** Economic Development Incentives
+**Question:** How should government attract businesses and support economic development?
+**Chairs (verbatim):**
+- 1 = No corporate tax incentives; invest in public services and infrastructure to attract business organically
+- 2 = Small business support and local entrepreneur programs only; avoid large corporate subsidies
+- 3 = Targeted incentives for specific industries with community benefit agreements and job quality requirements
+- 4 = Compete actively for major employers with significant tax abatements and infrastructure investment
+- 5 = Offer maximum incentives to attract any large employer; economic growth is the top priority
 
 ---
 
 ### fossil-fuels
-**Question:** Should government continue to support fossil fuel production and use?
-**Scale:**
-- 1 = Strongly opposes fossil fuels; supports immediate phase-out, no new drilling/pipelines
-- 2 = Favors phasing out fossil fuels over a defined timeline; opposes new fossil fuel infrastructure
-- 3 = Supports transition to clean energy while allowing near-term fossil fuel use
-- 4 = Supports continued fossil fuel development alongside clean energy
-- 5 = Strongly supports fossil fuel industry; opposes restrictions on drilling, fracking, or pipelines
+**Title:** Fossil Fuels
+**Question:** What role should fossil fuels play in the nation's energy future?
+**Chairs (verbatim):**
+- 1 = immediately ban all new fossil fuel drilling and extraction
+- 2 = stop issuing new permits for fossil fuel drilling
+- 3 = maintain current levels of fossil fuel production with existing environmental regulations
+- 4 = expand fossil fuel drilling permits
+- 5 = remove environmental restrictions and maximize fossil fuel extraction
 
 ---
 
 ### growth-and-development
-**Question:** Should government prioritize economic and residential development or preservation?
-**Scale:**
-- 1 = Strongly favors community-controlled growth; strict environmental and neighborhood review
-- 2 = Supports growth with significant community input and environmental standards
-- 3 = Balances development interests with community concerns
-- 4 = Supports streamlining approvals to accelerate growth
-- 5 = Strongly favors deregulation and fast-tracking development with minimal restrictions
+**Title:** Growth and Development Pace
+**Question:** How should government manage population growth and new development?
+**Chairs (verbatim):**
+- 1 = Impose growth limits; require voter approval for major annexations or large-scale developments
+- 2 = Allow growth only where existing infrastructure can support it; slow approvals until capacity catches up
+- 3 = Plan proactively — invest in infrastructure ahead of growth to support responsible expansion
+- 4 = Streamline permitting, reduce fees, and actively recruit development to grow the tax base
+- 5 = Remove regulatory barriers to development entirely; let market demand determine growth pace
 
 ---
 
 ### healthcare
-**Question:** Should the government expand or replace the current healthcare system?
-**Scale:**
-- 1 = Strongly supports Medicare for All or single-payer universal healthcare
-- 2 = Supports significant public option expansion and coverage mandates
-- 3 = Supports ACA-style reforms; mixed public/private system
-- 4 = Prefers market competition and private insurance with minimal mandates
-- 5 = Opposes government healthcare expansion; supports full privatization and deregulation
+**Title:** Healthcare
+**Question:** What role should government play in healthcare access?
+**Chairs (verbatim):**
+- 1 = Make healthcare free and available to everyone, paid for and run by the public sector
+- 2 = Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance
+- 3 = Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else
+- 4 = Only help the poorest people afford healthcare and leave everyone else to employers and private insurance
+- 5 = Stay out of healthcare entirely and let private markets handle all coverage decisions
 
 ---
 
 ### homelessness
-**Question:** What is the root cause of homelessness and how should it be addressed?
-**Scale:**
-- 1 = Views homelessness as structural/systemic; emphasizes housing-first, mental health, and social services
-- 2 = Supports robust services and housing programs as primary response
-- 3 = Mixed: supports services and some enforcement
-- 4 = Emphasizes personal responsibility and behavioral issues; supports enforcement-first
-- 5 = Views homelessness primarily as a law enforcement/public order issue; strongly favors removal
+**Title:** Homelessness
+**Question:** How should government address people sleeping or camping in public spaces?
+**Chairs (verbatim):**
+- 1 = Protecting the right to sleep in public spaces and redirecting enforcement budgets toward permanent supportive housing and mental health services
+- 2 = Decriminalizing public sleeping while investing in shelter capacity, outreach workers, and voluntary service connections
+- 3 = Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system
+- 4 = Prohibiting encampments on public property with graduated warnings and penalties, while requiring jurisdictions to maintain basic shelter options
+- 5 = Banning public camping and sleeping with criminal penalties to maintain public safety and order, relying on existing social services for those who seek help
 
 ---
 
 ### homelessness-response
-**Question:** Should government prioritize housing-first or treatment/enforcement in homelessness response?
-**Scale:**
-- 1 = Strongly supports housing-first with no preconditions for services
-- 2 = Supports housing-first with wraparound services
-- 3 = Supports balanced approach with both housing and treatment requirements
-- 4 = Requires treatment/sobriety as condition for permanent housing
-- 5 = Strongly favors enforcement and treatment mandates before housing placement
+**Title:** Homelessness Response
+**Question:** What should be your community's primary strategy for addressing homelessness?
+**Chairs (verbatim):**
+- 1 = Housing-first: provide permanent supportive housing with no preconditions; avoid criminalization entirely
+- 2 = Expand shelter capacity and services as the primary strategy; use enforcement only after services are offered
+- 3 = Invest in outreach, shelter, and mental health services while enforcing reasonable public space rules
+- 4 = Enforce anti-camping ordinances as the primary tool while maintaining basic outreach programs
+- 5 = Prioritize strict enforcement of trespassing and camping bans; minimize public spending on homeless services
 
 ---
 
 ### housing
-**Question:** How should government address the housing shortage and affordability crisis?
-**Scale:**
-- 1 = Strongly supports 100% affordable-only projects; opposes market-rate development; favors rent control
-- 2 = Supports significant affordable mandates; cautious on market-rate upzoning
-- 3 = Supports mixed-income development with affordability requirements
-- 4 = Favors market-rate development with some affordability incentives
-- 5 = Strongly supports deregulation and market-rate development; opposes rent control and inclusionary requirements
+**Title:** Housing
+**Question:** What role should government play in making sure people can afford housing?
+**Chairs (verbatim):**
+- 1 = Directly build and operate public housing so anyone who needs a home can get one
+- 2 = Use rent caps, require new developments to include affordable units, and publicly fund new housing
+- 3 = Offer targeted help like subsidies for affordable projects, first-time buyer assistance, and easier building permits
+- 4 = Cut regulations and zoning rules so private developers can build more housing
+- 5 = Stay out of housing entirely and let the market decide prices and supply
 
 ---
 
 ### immigration
-**Question:** Should the US have stricter or more permissive immigration policies?
-**Scale:**
-- 1 = Strongly supports expanded legal immigration, asylum access, and pathways to citizenship
-- 2 = Supports comprehensive immigration reform with path to citizenship for undocumented residents
-- 3 = Supports maintaining current legal immigration levels with modest reforms
-- 4 = Supports reducing legal immigration levels and stricter enforcement
-- 5 = Strongly supports major reductions in legal immigration and aggressive enforcement
+**Title:** Immigration
+**Question:** How welcoming or restrictive should government be toward immigrants?
+**Chairs (verbatim):**
+- 1 = Make it easier for immigrants to come here legally, and let all immigrants — including undocumented residents — fully use public services
+- 2 = Keep legal immigration open and let most residents use public services regardless of legal status
+- 3 = Keep immigration levels and rules about where they are now
+- 4 = Make it harder to immigrate legally and limit public services to people with legal status
+- 5 = Stop most legal immigration and block public services for anyone without legal status
 
 ---
 
 ### jail-capacity
-**Question:** Should government expand jail and prison capacity?
-**Scale:**
-- 1 = Strongly opposes jail expansion; supports decarceration and alternative sentencing
-- 2 = Opposes new jail construction; supports diversion programs
-- 3 = Supports maintaining current capacity with some reform
-- 4 = Supports adding capacity to handle current population
-- 5 = Strongly supports expanding jail and prison capacity to increase incarceration rates
+**Title:** Jail Capacity
+**Question:** How should government respond to jail overcrowding and criminal justice demand?
+**Chairs (verbatim):**
+- 1 = Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system
+- 2 = Reducing the incarcerated population through pretrial diversion, bail reform, and treatment alternatives rather than building new capacity
+- 3 = Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity
+- 4 = Building additional jail capacity to address overcrowding and facility deficiencies
+- 5 = Expanding jail capacity and enforcement as the primary response to crime, prioritizing detention over alternatives
 
 ---
 
 ### judicial-access-to-justice
-**Question:** Should government expand access to legal representation and the courts for low-income individuals?
-**Scale:**
-- 1 = Strongly supports universal right to counsel in civil matters; funds public defenders
-- 2 = Supports significant expansion of legal aid and public defender funding
-- 3 = Supports modest expansion within current budget constraints
-- 4 = Prefers private bar pro bono over government-funded access programs
-- 5 = Opposes expanding government-funded legal services
+**Title:** Court Access
+**Question:** Should it be easy or hard to take someone to court?
+**Chairs (verbatim):**
+- 1 = Easy. Courts exist for everyone — not just people with expensive lawyers. Low barriers mean more access to justice.
+- 2 = Accessible. Some basic requirements are fine, but courts shouldn't be a maze that only the wealthy can navigate.
+- 3 = Reasonable standards that keep out frivolous cases without blocking legitimate ones.
+- 4 = Higher bars are fine. Too much litigation clogs the system and costs everyone money.
+- 5 = Hard. Most disputes should be settled privately. Courts should be a last resort, not a first option.
 
 ---
 
 ### judicial-bail-pretrial
-**Question:** Should cash bail be eliminated or reformed?
-**Scale:**
-- 1 = Strongly supports eliminating cash bail; favors release for all non-violent charges
-- 2 = Supports significant bail reform; risk-based assessment over cash
-- 3 = Supports modest reform while retaining bail for serious charges
-- 4 = Supports retaining cash bail with limited reforms
-- 5 = Strongly opposes bail reform; supports cash bail as public safety tool
+**Judicial role:** judge
+**Title:** Bail & Pretrial
+**Question:** Should a judge trust what prosecutors say, or watch them closely?
+**Chairs (verbatim):**
+- 1 = Watch closely. Prosecutors have enormous power and real incentives to win. A judge's job is to make sure that power is used fairly.
+- 2 = Be skeptical. Hold prosecution to strict standards — especially on evidence handling and plea deals.
+- 3 = Treat both sides equally and let the process work.
+- 4 = Give prosecutors reasonable deference. They're trained professionals representing the public.
+- 5 = Trust prosecutors. They represent the community and have already screened the case — judges shouldn't second-guess that judgment.
 
 ---
 
 ### judicial-criminal-justice
-**Question:** Should criminal justice focus on rehabilitation or punishment/deterrence?
-**Scale:**
-- 1 = Strongly favors rehabilitation, reduced sentences, and restorative justice
-- 2 = Supports significant sentencing reform and rehabilitation investment
-- 3 = Supports balanced approach combining accountability and rehabilitation
-- 4 = Emphasizes punishment and deterrence with targeted rehabilitation
-- 5 = Strongly favors punishment-first approach; opposes most sentencing reductions
+**Title:** Criminal Justice
+**Question:** When someone breaks the law, what matters most?
+**Chairs (verbatim):**
+- 1 = Helping the person change their life and stay out of trouble in the future.
+- 2 = Giving the person a fair chance to make things right — through treatment, community service, or restitution.
+- 3 = A mix: some accountability, some support, depending on what happened.
+- 4 = Making sure others think twice before doing the same thing.
+- 5 = Punishing the behavior. Society needs to know that breaking the law has real consequences.
 
 ---
 
 ### judicial-government-deference
-**Question:** Should courts defer to government agencies on regulatory and policy questions?
-**Scale:**
-- 1 = Strongly favors judicial deference to agency expertise (Chevron-style)
-- 2 = Supports substantial deference to agencies on technical matters
-- 3 = Case-by-case deference depending on statute clarity
-- 4 = Skeptical of deference; favors courts reading statutes independently
-- 5 = Strongly opposes deference doctrines; favors major questions doctrine and independent judicial interpretation
+**Title:** Government Deference
+**Question:** When government and a citizen clash, who gets the benefit of the doubt?
+**Chairs (verbatim):**
+- 1 = The citizen, almost always. Government has lawyers, money, and power. Regular people need courts to level the playing field.
+- 2 = The citizen usually — unless the government has clear legal authority on its side.
+- 3 = Neither side automatically. Look at the facts and apply the law evenly.
+- 4 = The government usually — it represents everyone, and its decisions deserve respect unless clearly wrong.
+- 5 = The government, unless it has obviously overreached. Officials make decisions for good reasons — courts shouldn't second-guess them constantly.
 
 ---
 
 ### judicial-interpretation
-**Question:** Should judges interpret the Constitution based on original meaning or evolving standards?
-**Scale:**
-- 1 = Strongly favors living constitutionalism / evolving standards of decency
-- 2 = Favors pragmatic interpretation with attention to societal change
-- 3 = Supports balanced approach; text-and-purpose reading
-- 4 = Leans toward original public meaning/textualism
-- 5 = Strongly favors strict originalism or textualism; opposes judicial activism
+**Title:** Interpretation
+**Question:** Does the law change with the times, or does it mean what it said when it was written?
+**Chairs (verbatim):**
+- 1 = Courts should reconsider old rulings when we know more or society has changed. Keeping bad precedent alive is its own injustice.
+- 2 = Laws were written for a purpose. When the exact words don't fit a new situation, look at what the law was trying to accomplish.
+- 3 = Follow the text closely, but use some common sense about what lawmakers were trying to do.
+- 4 = The law means what it says. Use original intent to fill gaps, but don't stretch the meaning.
+- 5 = A judge's job is to apply the law as written — not rewrite it. If society has changed, pass a new law. That's what elections are for.
 
 ---
 
 ### judicial-police-accountability
-**Question:** Should police have qualified immunity and other protections from accountability?
-**Scale:**
-- 1 = Strongly supports eliminating qualified immunity; favors civilian oversight and independent prosecutors
-- 2 = Supports reforming qualified immunity and expanding oversight
-- 3 = Supports modest reforms while preserving officer protections for good-faith actions
-- 4 = Opposes removing qualified immunity; favors strong officer protections
-- 5 = Strongly supports qualified immunity and opposes most police accountability measures
+**Judicial role:** city_attorney_da
+**Title:** Police Accountability
+**Question:** When government employees do wrong, does the office defend them or hold them accountable?
+**Chairs (verbatim):**
+- 1 = Investigate independently. The office works for the public — not the officials it's supposed to keep accountable.
+- 2 = Settle valid claims quickly and pursue real accountability. Defending misconduct wastes money and public trust.
+- 3 = Represent the government fairly while acknowledging when claims have merit.
+- 4 = Defend government employees vigorously. That's the job. Settlements invite more lawsuits.
+- 5 = The client is the government. Defending its employees and decisions — aggressively when needed — is the core function.
 
 ---
 
 ### judicial-prosecution-priorities
-**Question:** Should prosecutors pursue aggressive criminal enforcement or focus on diversion?
-**Scale:**
-- 1 = Strongly favors diversion, reduced prosecution of low-level offenses, and restorative approaches
-- 2 = Supports progressive prosecution priorities with diversion for non-violent offenses
-- 3 = Supports case-by-case prosecutorial discretion
-- 4 = Favors consistent enforcement of criminal law with limited diversion
-- 5 = Strongly favors aggressive prosecution of all criminal violations
+**Judicial role:** city_attorney_da
+**Title:** Prosecution
+**Question:** Does the office try to put people away, or find better solutions?
+**Chairs (verbatim):**
+- 1 = Prosecution should be a last resort. Connecting people to treatment, housing, or job programs does more good than a criminal record.
+- 2 = Use diversion when it's available and makes sense. Reserve prosecution for when community safety actually requires it.
+- 3 = Strong cases get prosecuted. Diversion is used when there's a clear benefit — it's a judgment call every time.
+- 4 = Prosecute all solid cases. Declination is the exception and needs a strong reason.
+- 5 = The office enforces the law — not social policy. If a case is prosecutable, prosecute it. Courts figure out the rest.
 
 ---
 
 ### judicial-transparency
-**Question:** Should judicial proceedings and records be more publicly accessible?
-**Scale:**
-- 1 = Strongly supports open court records, cameras in courtrooms, and judicial financial disclosure
-- 2 = Supports significant transparency reforms including disclosure requirements
-- 3 = Supports baseline transparency within current framework
-- 4 = Cautious on expanded transparency; favors judicial independence over disclosure
-- 5 = Opposes new transparency mandates on judiciary
+**Title:** Legal Transparency
+**Question:** How much should the public know about what happens in court?
+**Chairs (verbatim):**
+- 1 = Everything possible should be public — hearings, evidence, rulings, and the reasoning behind them. Secrecy breeds injustice.
+- 2 = Default to open proceedings. Sealing records or closing hearings requires a compelling, documented reason.
+- 3 = Balance openness with legitimate needs for privacy — protect victims, seal juvenile records, but keep the courtroom open as a rule.
+- 4 = Courts should protect sensitive information broadly — personal details, ongoing investigations, and anything that could prejudice a fair trial.
+- 5 = The law is complicated. Public access to proceedings can distort outcomes. Broad judicial discretion to limit access protects the integrity of the process.
 
 ---
 
 ### local-environment
-**Question:** How should local government protect the environment and address local pollution?
-**Scale:**
-- 1 = Strongly supports aggressive local environmental regulations; favors green infrastructure mandates
-- 2 = Supports significant local environmental protections beyond state/federal minimums
-- 3 = Supports enforcing existing environmental standards
-- 4 = Prefers voluntary compliance and incentives over mandates
-- 5 = Opposes local environmental mandates beyond state/federal requirements
+**Title:** Environmental Protection vs. Development
+**Question:** How should your community balance new development with environmental preservation?
+**Chairs (verbatim):**
+- 1 = Require significant green space, tree preservation, and environmental review before approving any development
+- 2 = Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact
+- 3 = Apply consistent environmental standards while giving developers reasonable flexibility on implementation
+- 4 = Allow developers to pay fees in lieu of on-site preservation; prioritize economic activity over green space
+- 5 = Remove local environmental restrictions beyond what state and federal law requires
+
+---
+
+### local-immigration
+**Title:** Local Immigration Enforcement
+**Question:** How should your community's law enforcement relate to federal immigration enforcement?
+**Chairs (verbatim):**
+- 1 = Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies
+- 2 = Comply only with court-ordered detainers; protect undocumented crime victims and witnesses from referral
+- 3 = Follow federal law as required but do not use local resources for proactive immigration enforcement
+- 4 = Honor ICE detainers and share information proactively when federal agencies request it
+- 5 = Direct local police to actively assist with immigration enforcement and support federal detention operations
 
 ---
 
 ### medicare/aid
-**Question:** Should Medicare and Medicaid be expanded or cut?
-**Scale:**
-- 1 = Strongly supports expanding Medicare and Medicaid; opposes any cuts
-- 2 = Supports expanding coverage and eligibility; opposes benefit cuts
-- 3 = Supports maintaining current programs with moderate reforms
-- 4 = Supports means-testing and block grant conversion to reduce costs
-- 5 = Strongly supports cutting Medicare/Medicaid spending; favors privatization
+**Title:** Medicare/aid
+**Question:** How should Medicare and Medicaid be funded and structured?
+**Chairs (verbatim):**
+- 1 = expand Medicare to cover everyone regardless of age
+- 2 = lower Medicare age to 55 and expand Medicaid significantly
+- 3 = improve current programs while controlling costs
+- 4 = partially privatize Medicare and reduce Medicaid coverage
+- 5 = phase out both programs and use private insurance only
 
 ---
 
 ### misinformation
-**Question:** Should government or platforms take action to limit political misinformation?
-**Scale:**
-- 1 = Strongly supports government/platform action against misinformation; favors content moderation mandates
-- 2 = Supports platform accountability and transparency about moderation
-- 3 = Supports voluntary measures and media literacy without mandates
-- 4 = Skeptical of government role; concerned about censorship
-- 5 = Strongly opposes misinformation restrictions as free speech violations
+**Title:** Misinformation
+**Question:** What responsibility do platforms and government have in combating online misinformation?
+**Chairs (verbatim):**
+- 1 = require platforms to remove all false information and regulate algorithms
+- 2 = mandate fact-checking and transparency in how algorithms promote content
+- 3 = encourage voluntary standards for combating misinformation online
+- 4 = protect free speech online and prevent government censorship
+- 5 = ban any government involvement in content moderation decisions
 
 ---
 
 ### public-safety-approach
-**Question:** Should public safety be addressed primarily through police/prosecution or social services?
-**Scale:**
-- 1 = Strongly favors social services, mental health, and community investment over policing
-- 2 = Supports significant investment in non-police public safety alternatives
-- 3 = Supports balanced approach: policing plus social services
-- 4 = Emphasizes law enforcement and prosecution as primary public safety tools
-- 5 = Strongly favors policing, incarceration, and prosecution with minimal social service investment
+**Title:** Public Safety Approach
+**Question:** How should your community fund and operate public safety services?
+**Chairs (verbatim):**
+- 1 = Redirect a significant portion of the police budget to social services, mental health, and community programs
+- 2 = Maintain current police staffing but shift non-violent calls to unarmed mental health co-responders
+- 3 = Keep current public safety funding while adding crisis response teams for mental health and addiction calls
+- 4 = Increase police staffing, equipment, and pay to improve response times and deter crime
+- 5 = Make expanding the police budget the top spending priority over other services
 
 ---
 
 ### redistricting
-**Question:** Should redistricting be controlled by independent commissions or state legislatures?
-**Scale:**
-- 1 = Strongly supports independent nonpartisan redistricting commissions
-- 2 = Supports commissions with some legislative oversight
-- 3 = Supports bipartisan legislative process
-- 4 = Prefers legislature-controlled redistricting
-- 5 = Supports partisan-controlled redistricting by the majority party
+**Title:** Redistricting
+**Question:** Who should draw electoral district boundaries and how should they be determined?
+**Chairs (verbatim):**
+- 1 = independent citizens' commissions with no elected officials involved at any level.
+- 2 = independent redistricting commissions with equal representation from both major parties.
+- 3 = bipartisan legislative committees with strict rules requiring supermajority approval.
+- 4 = state legislatures with court oversight to prevent extreme partisan bias.
+- 5 = the party that controls the state legislature without outside interference.
 
 ---
 
 ### religious-freedom
-**Question:** Should religious exemptions allow businesses/individuals to decline services based on faith?
-**Scale:**
-- 1 = Strongly opposes religious exemptions that override anti-discrimination law
-- 2 = Supports anti-discrimination protections with narrow religious exemptions
-- 3 = Balances religious freedom with civil rights on case-by-case basis
-- 4 = Supports broad religious exemptions including in commercial contexts
-- 5 = Strongly supports expansive religious freedom; businesses/individuals may decline based on faith
+**Title:** Religious Freedom
+**Question:** What role should religion play in government, public institutions, and policymaking?
+**Chairs (verbatim):**
+- 1 = strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws.
+- 2 = protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing.
+- 3 = balance protecting religious practices with maintaining equal treatment under the law for all citizens.
+- 4 = protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs.
+- 5 = strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices.
 
 ---
 
 ### rent-regulation
-**Question:** Should government regulate rents through rent control or stabilization?
-**Scale:**
-- 1 = Strongly supports broad rent control and tenant protections
-- 2 = Supports rent stabilization and just-cause eviction protections
-- 3 = Supports modest tenant protections without hard rent caps
-- 4 = Skeptical of rent control; prefers supply-side solutions
-- 5 = Strongly opposes rent control as market-distorting
+**Title:** Rent Regulation
+**Question:** What role should government play in regulating rents and protecting tenants?
+**Chairs (verbatim):**
+- 1 = Expand rent control to all rental units with strong tenant protections and just-cause eviction requirements
+- 2 = Strengthen existing rent stabilization and extend coverage to more units
+- 3 = Maintain current tenant protections while allowing market rents for new construction
+- 4 = Limit rent regulations to subsidized units; allow market rents broadly
+- 5 = Oppose rent control entirely; rents should be set by the market without government intervention
 
 ---
 
 ### residential-zoning
-**Question:** Should zoning laws be reformed to allow more housing density?
-**Scale:**
-- 1 = Strongly opposes upzoning; favors maintaining single-family neighborhoods and community character
-- 2 = Supports limited density increases in specific transit-served areas
-- 3 = Supports moderate zoning reform allowing mid-density housing
-- 4 = Supports significant upzoning and allowing multi-family housing in most zones
-- 5 = Strongly supports eliminating exclusionary zoning; end single-family-only zoning everywhere
+**Title:** Residential Zoning
+**Question:** What should guide decisions about housing density and neighborhood character in your community?
+**Chairs (verbatim):**
+- 1 = Protect existing neighborhood character strictly; require community votes before any rezoning
+- 2 = Allow modest density increases (duplexes, accessory units) with strong design review and neighborhood input
+- 3 = Allow multifamily and mixed-use near commercial corridors while protecting most residential zones
+- 4 = Upzone broadly to allow multifamily by right; streamline approvals and reduce parking requirements
+- 5 = Eliminate single-family-only zoning; allow any housing type on any lot communitywide
 
 ---
 
 ### same-sex-marriage
-**Question:** Should same-sex marriage be legally recognized?
-**Scale:**
-- 1 = Strongly supports same-sex marriage and full LGBTQ+ civil rights
-- 2 = Supports same-sex marriage and legal protections for LGBTQ+ individuals
-- 3 = Accepts legal status but does not actively champion
-- 4 = Opposes same-sex marriage; supports civil unions only
-- 5 = Strongly opposes same-sex marriage; favors traditional marriage definition only
+**Title:** Same-Sex Marriage
+**Question:** What legal recognition should same-sex marriages receive?
+**Chairs (verbatim):**
+- 1 = require all states to recognize same-sex marriages and provide full federal benefits and protections.
+- 2 = allow same-sex marriage nationwide while protecting some organizations' right to decline participation.
+- 3 = let each state decide its own same-sex marriage laws without federal interference.
+- 4 = recognize civil unions for same-sex couples but reserve marriage for opposite-sex couples.
+- 5 = make same-sex marriage illegal and define marriage as only between one man and one woman.
 
 ---
 
 ### school-vouchers
-**Question:** Should public funds be used for private school vouchers?
-**Scale:**
-- 1 = Strongly opposes school vouchers; supports fully funding public schools
-- 2 = Opposes vouchers; supports targeted public school investment
-- 3 = Open to limited pilot programs with accountability measures
-- 4 = Supports vouchers for low-income families or failing schools
-- 5 = Strongly supports universal school choice and voucher programs
+**Title:** School Vouchers
+**Question:** What role should vouchers and school choice play in the public education system?
+**Chairs (verbatim):**
+- 1 = Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions
+- 2 = Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options
+- 3 = Funding public schools at current levels while allowing means-tested voucher programs with accountability requirements for participating private schools
+- 4 = Expanding voucher eligibility to most families so parents can choose the school that best fits their child, while maintaining baseline public school funding
+- 5 = Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family
 
 ---
 
 ### social-security
-**Question:** Should Social Security benefits be maintained, expanded, or cut?
-**Scale:**
-- 1 = Strongly supports expanding Social Security benefits and lifting the payroll cap
-- 2 = Supports maintaining and modestly expanding benefits
-- 3 = Supports maintaining current benefit levels with solvency reforms
-- 4 = Supports modest benefit reductions or means-testing to ensure solvency
-- 5 = Strongly supports privatizing or significantly cutting Social Security
+**Title:** Social Security
+**Question:** How should Social Security be funded and structured for the future?
+**Chairs (verbatim):**
+- 1 = expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it.
+- 2 = increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program.
+- 3 = make small adjustments to both benefits and taxes to keep Social Security stable for future generations.
+- 4 = gradually raise the retirement age and reduce benefits for higher earners to save Social Security.
+- 5 = transition Social Security to private investment accounts that individuals control themselves.
 
 ---
 
 ### tariffs
-**Question:** Should the US use tariffs as a trade policy tool?
-**Scale:**
-- 1 = Strongly opposes broad tariffs; favors free trade agreements and open markets
-- 2 = Supports targeted tariffs for national security but opposes broad tariffs
-- 3 = Supports some tariffs as leverage while favoring trade agreements
-- 4 = Supports significant tariffs to protect domestic industry
-- 5 = Strongly supports broad tariffs and protectionist trade policy
+**Title:** Tariffs
+**Question:** How should trade policy balance domestic industry with global commerce?
+**Chairs (verbatim):**
+- 1 = eliminate all tariffs and pursue completely free trade with every country.
+- 2 = reduce most tariffs while keeping some on products that harm the environment.
+- 3 = use tariffs selectively to protect key American industries and jobs.
+- 4 = increase tariffs on countries that don't trade fairly with America.
+- 5 = impose high tariffs on all imports to bring manufacturing back to America.
 
 ---
 
 ### taxes
-**Question:** Should taxes on high earners and corporations be raised?
-**Scale:**
-- 1 = Strongly supports higher taxes on corporations and the wealthy to fund social programs
-- 2 = Supports raising taxes on high earners and closing corporate loopholes
-- 3 = Supports maintaining current tax levels with targeted adjustments
-- 4 = Supports tax cuts for businesses and high earners to stimulate growth
-- 5 = Strongly supports major tax cuts and reducing government revenue
+**Title:** Taxes
+**Question:** How should government balance what it collects in taxes against what it spends on public services?
+**Chairs (verbatim):**
+- 1 = Significantly raise taxes on wealthy people and large companies to fund more public services
+- 2 = Moderately raise taxes on wealthy people and large companies to fund existing services
+- 3 = Keep the current tax system mostly as-is with small adjustments to close unfair loopholes
+- 4 = Cut taxes for everyone and scale back public services to match
+- 5 = Drastically cut taxes and shrink government so people and businesses keep more of their money
 
 ---
 
 ### trans-athletes
-**Question:** Should transgender athletes compete in sports according to their gender identity?
-**Scale:**
-- 1 = Strongly supports transgender inclusion in sports at all levels
-- 2 = Supports inclusion with science-based guidelines on a case-by-case basis
-- 3 = Supports inclusion in some categories; restrictions in others
-- 4 = Supports restricting transgender athletes from competing in their gender category at most levels
-- 5 = Strongly opposes transgender athletes in any gender-aligned competition; supports total exclusion
+**Title:** Trans Athletes
+**Question:** How should sports leagues determine eligibility for transgender athletes?
+**Chairs (verbatim):**
+- 1 = allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements.
+- 2 = should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.
+- 3 = create separate transgender divisions or allow case-by-case decisions based on individual circumstances and sport requirements.
+- 4 = require transgender athletes to compete only on teams matching their biological sex assigned at birth.
+- 5 = completely ban all transgender athletes from competing in any organized sports competitions.
+
+---
+
+### transportation-priorities
+**Title:** Transportation Priorities
+**Question:** Where should government focus its transportation investment?
+**Chairs (verbatim):**
+- 1 = Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements communitywide
+- 2 = Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects
+- 3 = Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it
+- 4 = Focus on road capacity and traffic flow; transportation investment should serve the majority who drive
+- 5 = Prioritize highway access and abundant free parking as the foundation of local transportation policy
 
 ---
 
 ### ukraine-support
-**Question:** Should the US continue providing military and financial aid to Ukraine?
-**Scale:**
-- 1 = Strongly supports robust US military and financial assistance to Ukraine
-- 2 = Supports continued aid with oversight and accountability
-- 3 = Supports limited aid focused on humanitarian needs
-- 4 = Skeptical of continued aid; favors diplomatic solution over military support
-- 5 = Strongly opposes US military aid to Ukraine; favors immediate cessation
+**Title:** Ukraine Support
+**Question:** What level of military and financial support should be provided to Ukraine?
+**Chairs (verbatim):**
+- 1 = significantly increase military aid to Ukraine and commit to supporting them until complete victory over Russia
+- 2 = continue providing current levels of military and economic aid to help Ukraine defend itself.
+- 3 = provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war.
+- 4 = reduce aid to Ukraine and focus American resources on domestic priorities instead.
+- 5 = end all aid to Ukraine immediately and stay completely out of the conflict.
 
 ---
 
 ### voting-rights
-**Question:** Should government expand or restrict voting access?
-**Scale:**
-- 1 = Strongly supports expanded voting access: automatic registration, vote-by-mail, early voting, restoring felon voting rights
-- 2 = Supports expanding voting access and opposing restrictive ID laws
-- 3 = Supports maintaining current access with modest modernization
-- 4 = Supports voter ID requirements and opposes automatic registration
-- 5 = Strongly supports strict voter ID, reduced polling locations, and limited early voting
+**Title:** Voting Rights
+**Question:** How should voter access be balanced with election security?
+**Chairs (verbatim):**
+- 1 = automatically register all eligible citizens to vote and allow online voting
+- 2 = expand early voting periods and make mail-in voting available to all voters without requiring an excuse
+- 3 = standardize voter ID requirements while ensuring free IDs are available to all eligible citizens
+- 4 = require photo ID for voting and regularly update voter rolls to remove inactive registrations
+- 5 = mandate in-person voting with strict photo ID and eliminate mail-in voting except for military overseas
 
 ---
-
-## Excluded Topics (do NOT use)
-
-| topic_key | Reason |
-|-----------|--------|
-| `data-centers` | Deprecated; not in TOPIC_UUIDS dict — gen_migration.py will skip with WARNING |
-| `local-immigration` | Excluded from EXCLUDED_TOPICS_FEDERAL — not applicable for state/federal officials |
-| `transportation-priorities` | Excluded from EXCLUDED_TOPICS_FEDERAL — not applicable for state/federal officials |
