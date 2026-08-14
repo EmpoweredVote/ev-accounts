@@ -22,6 +22,7 @@ import * as path from 'path';
 import * as https from 'https';
 import AdmZip from 'adm-zip';
 import * as shapefile from 'shapefile';
+import { pathToFileURL } from 'url';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -56,6 +57,15 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // union high district, i.e. two separate elected boards. elsd/scsd layer support was added
   // for exactly this.
   WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
+  // WA. place: Washington's incorporated cities and towns are elected governments.
+  // cousub is deliberately EXCLUDED — WA county subdivisions are statistical CCDs,
+  // not elected bodies, same as CA. Do NOT add WA to COUSUB_FUNCSTAT_STATES.
+  // sldu/sldl: WA has 49 legislative districts, each electing ONE senator and TWO
+  // representatives (Position 1 / Position 2) over the SAME boundary — the same
+  // multi-member shape as AZ. TIGER SLDL is therefore 49 polygons covering 98
+  // seats, NOT 98 polygons. Counts asserted in the WA pre-flight block below.
+  // cd119 (10) and county (39) are already loaded for WA and are not re-run here.
+  WA: new Set(['place', 'sldu', 'sldl']),
   DC: new Set(['sldl']),
 };
 
@@ -131,6 +141,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
+  WA: new Set(['place', 'sldu', 'sldl']),
   DC: new Set(['sldl']),
 };
 
@@ -1118,6 +1129,55 @@ async function processLayer(
     }
   }
 
+  // ── WA MTFCC pre-flight assertion ───────────────────────────────────────────
+  // Count records satisfying the same filters as the upsert pass BEFORE any DB
+  // write. Assertion failure is named and fatal.
+  //
+  // WA has the same multi-member shape as AZ: 49 legislative districts, each
+  // electing 1 senator + 2 representatives (Position 1 / Position 2) over the
+  // SAME boundary. TIGER SLDL is therefore 49 polygons covering 98 seats, NOT 98.
+  //
+  // NOTE the MTFCC assignment is INVERTED relative to the plain TIGER reading,
+  // confirmed by dry-run 2026-08-13: sldu → G5210 (STATE_UPPER),
+  // sldl → G5220 (STATE_LOWER). Same as CA/VA/NV/AZ in this loader.
+  //
+  if (fipsArg === '53') {
+    const EXPECTED_WA_MTFCC: Record<string, number> = {
+      sldu:   49,  // confirmed via pre-flight assertion 2026-08-13 — 49 WA legislative districts (1 senator each)
+      sldl:   49,  // confirmed via pre-flight assertion 2026-08-13 — 49 polygons covering 98 house seats (2 per district), NOT 98
+      place: 281,  // confirmed via pre-flight assertion 2026-08-13 — 281 WA G4110 incorporated cities and towns
+    };
+    if (layer in EXPECTED_WA_MTFCC) {
+      const expected = EXPECTED_WA_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[WA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 53 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] WA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── WI MTFCC pre-flight assertion ───────────────────────────────────────────
   // Count records satisfying the same filters as the upsert pass BEFORE any DB
   // write. Assertion failure is named and fatal.
@@ -1911,7 +1971,11 @@ async function main(): Promise<void> {
 // imported for unit testing pure helpers like slugifyName.
 const isMainModule = (() => {
   try {
-    return import.meta.url === `file://${process.argv[1]}`;
+    // Must use pathToFileURL, NOT a `file://${argv[1]}` template. On Windows
+    // argv[1] is a backslash drive path (C:\...\x.ts) while import.meta.url is
+    // file:///C:/.../x.ts — the template can never match, so main() silently
+    // never ran and every invocation exited 0 with no output.
+    return import.meta.url === pathToFileURL(process.argv[1]).href;
   } catch {
     return false;
   }
