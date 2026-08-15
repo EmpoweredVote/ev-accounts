@@ -5,9 +5,9 @@ on:
     branches: [master]
   push:
     branches: [master]
-  # Address reachability needs a live DB, so it also runs on a schedule: the data drifts on its own
-  # as terms start and end, with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after
-  # the 06:00 UTC FEC ingest window.
+  # The live-DB jobs (`reachability` and `stance-sources`) also run on a schedule: their data drifts on
+  # its own — terms start and end, boundary loads land, research passes write rows — with no commit to
+  # trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest window.
   schedule:
     - cron: '0 13 * * *'
   workflow_dispatch:
@@ -16,8 +16,8 @@ jobs:
   backend:
     name: backend lint · typecheck · test
     runs-on: ubuntu-latest
-    # Skipped on the nightly schedule: no commit means no new code to lint, and the only thing the
-    # scheduled run exists for is the reachability job below.
+    # Skipped on the nightly schedule: no commit means no new code to lint, and the scheduled run
+    # exists only for the live-DB jobs below (`reachability` and `stance-sources`).
     if: github.event_name != 'schedule'
     defaults:
       run:
@@ -153,18 +153,58 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-      # Shares this job rather than getting its own because it needs exactly the same three things:
-      # the live database, the DATABASE_URL secret, and the DAILY cadence. Same drift shape too —
-      # migration 1696 persisted the child->county spatial assignment into a materialized view, and
-      # 52 scripts insert into essentials.geofence_boundaries, so there is no single loader to hook a
-      # refresh onto. Without this, a boundary load silently leaves newly added cities sitting
-      # outside their county on the coverage dashboard until someone happens to look.
+      # Migration 1696 persisted the child->county spatial assignment into a materialized view, and 52
+      # scripts insert into essentials.geofence_boundaries, so there is no single loader to hook a
+      # refresh onto. Without this, a boundary load silently leaves newly added cities sitting outside
+      # their county on the coverage dashboard until someone happens to look.
       #
       # Zero tolerance, no baseline: the correct value is 0 and the fix is one command.
+      #
+      # ⚠ THIS STEP AND THE ONE ABOVE ARE THE LAST REMAINING MASKING PAIR IN THIS FILE. It was THIS
+      # check going red on 2026-08-14 that hid the stance regression for two days, which is why stance
+      # sourcing now has its own job. The same exposure still exists in the other direction: if
+      # reachability fails, this never runs. Kept together for now because both are geofence/address
+      # concerns that usually fail for the same underlying reason — but if they ever start failing
+      # independently, split this out too rather than reading the job name and guessing.
       - name: Check the persisted child→county mapping is not stale
         run: npm run check:child-county
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  stance-sources:
+    name: stance sourcing
+    runs-on: ubuntu-latest
+    # 🔴 THIS HAD ITS OWN JOB CREATED ON 2026-08-14 BECAUSE SHARING ONE COST TWO DAYS OF BLINDNESS.
+    # It used to be the third step of `address-search reachability`. On 2026-08-13 02:53 ORPHAN_CONTEXT
+    # went 50 -> 224 and this check went red. From 08-14 15:34 a SECOND, unrelated failure — a stale
+    # geofence_child_county matview left by the WA TIGER load — started failing EARLIER IN THE SAME JOB,
+    # so this step never executed at all and the run log showed only the mapping error. The stance
+    # regression sat unexamined for 19 consecutive red runs, hidden behind a defect that had nothing to
+    # do with it.
+    #
+    # 🔑 A failing early step in a shared job MASKS every check after it, and the masked check does not
+    # report "skipped" anywhere a human is looking — the job is simply red for the first reason. Two
+    # data checks that can fail for unrelated reasons should not share a job, however similar their
+    # setup: sharing optimises for a few seconds of `npm ci` and pays for it in diagnosis.
+    #
+    # Same triggers and same prod-drift reasoning as `reachability` — NOT on pull_request, because
+    # migrations here are applied ad hoc and never replayed by a deploy, so a PR's SQL has not touched
+    # prod yet. What this guards is the corpus as it actually stands.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
 
       # Migrations 1494, 1507 and 1508 retired 1,157 stance answers whose only citation was a
       # Ballotpedia bio that does not contain the claim. Nothing in the repo prevented writing them, so
@@ -183,7 +223,8 @@ jobs:
       # (1539, 1540, 1548, 1558, 1562) passed this step green while they were live; the check stops what
       # was confirmed from coming back, it does not prove none exists.
       #
-      # Same prod-drift reasoning as the check above, and it likewise skips itself without DATABASE_URL.
+      # Skips itself (exit 0) when DATABASE_URL is absent, so forks get a green skip rather than a red
+      # build they cannot fix.
       - name: Check stance sourcing — no Ballotpedia-only rows, no known-fabricated citations
         run: npm run check:stance-sources
         env:
