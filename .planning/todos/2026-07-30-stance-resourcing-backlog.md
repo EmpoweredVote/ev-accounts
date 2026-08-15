@@ -16,7 +16,7 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
-## 🔴 HANDOFF 2026-08-14 — ORPHAN_CONTEXT 224 → 105; judicial cohort closed by 1755
+## ✅ HANDOFF 2026-08-14 — ORPHAN_CONTEXT 224 → 50. GATE GREEN, BASELINE UNCHANGED
 
 **CI had been red on `ORPHAN_CONTEXT` since 2026-08-13 02:53 — 19 consecutive runs.** From 08-14 15:34
 a *second*, unrelated failure (a stale `geofence_child_county` matview from the WA TIGER load) sat
@@ -71,23 +71,71 @@ legislator can hold a position on either — that may be where this evidence bel
 automatically a *criminal justice* chair. Per the standing rule, evidence must describe THAT chair.
 (The ~80 is a first-cut classifier count and every first cut over-fires — treat it as a ceiling.)
 
-### ▶ What is left, and why the baseline was NOT touched
+### ✅ MD 51 — rewritten as documented blanks by 1756
 
-**105 = the 50 already-baselined backlog + 55 genuinely new unworked rows.**
+**These were NOT honest blanks and that is why they counted.** The answers were correctly deleted by
+1731/1732/1734/1736, but the prose stayed and the prose still asserts a position:
+· **Harris / Immigration** — "represents a district with significant immigrant communities. He supports
+immigrant protections" — a position inferred from **DISTRICT DEMOGRAPHICS**.
+· **Rosapepe / Voting Rights** — "**As a former Democratic leader**, he strongly backs voter access" —
+a **PARTY prior**, the class flagged as still-open since 08-01 and never worked. His Ukraine row is a
+**BIOGRAPHY prior** (ambassador to Romania).
+· **Economic Development Incentives was 10 near-identical sentences with the county name swapped;
+Taxes was 11 more.** Template output — no instrument, no source for the claim.
+That is the attribute-prior class **1521** retired, sitting one answer away from publication.
 
-| state | observed | baseline | note |
-|---|---|---|---|
-| md | 51 | — | NEW; the 08-13 Maryland chairs passes |
-| ca | 39 | 35 | +4 new |
-| fl 6 · tx 5 · la 2 · mn 1 · ky 1 | 15 | 15 | exactly at baseline, untouched |
+🔑 **OPPOSITE REMEDY TO 1755, SAME GATE, AND THE DIFFERENCE IS THE WHOLE LESSON.** For the judicial
+cohort the question did not apply to the subject at all, so a blank would have asserted an untested
+absence — those rows were deleted. Here the topics genuinely apply (a Maryland legislator can hold a
+position on Taxes) **and the looking is on the record**: 1736 read every candidate behind its rows
+(~2,765 titles), 1734 read 1,471 across its non-judicial rows, both recording a count per row. So the
+honest state is a documented blank, which is exactly what the gate asks for.
 
-🔴 **The baseline was deliberately left alone, so CI stays red on md/ca.** That is correct: those 55
-rows are real unworked growth, and the standing rule since 08-07 is that the baseline is ratcheted only
-as a cluster genuinely lands, in the same commit. Bumping it here would exempt rows nobody has read.
-**MA 36, WI 16, VA 5 and UT 4 vanished entirely** — every one of those "new states" was judicial.
+⚠ **THE CARVE-OUT IS EARNED BY TRUTH, NOT BY WORDING.** The gate exempts a leading
+"Researched YYYY-MM-DD", so that prefix could exempt anything. It is used here only because every row
+carries a count of what was read plus the reason it failed, taken from the migration that blanked it.
+**Never prefix that date to a row whose reading is not on the record.**
 
-▶ **Next: MD 51** (it now includes the 2 leftover Smith/Waldstreicher rows — same pass, same
-`mgaleg.maryland.gov` member-page sourcing trap), then **CA +4**. That closes the gate.
+🔑 **MAGNITUDE is the largest single group and it is a FINDING, not a gap.** Every Taxation row sits at
+chair 2 — "MODERATELY raise taxes … to fund EXISTING services" — differing from chair 1 only in degree.
+Washington LEADS the Digital Advertising Gross Revenues tax (HB0695, 2020); Kagan co-sponsored
+carried-interest repeal. **Every one proves DIRECTION and not one can prove "moderately".**
+
+🔴 **The grounding script first reported Rosapepe / Voting Rights as ungrounded — because it indexed
+1731/1734/1736 and not 1732.** The absence was in my index, not in the record. **A tool's gap looks
+exactly like a politician having no record.**
+
+▶ **4 RE-SEAT CANDIDATES named in 1756 so they survive the rewrite** — Rosapepe / Voting Rights (the
+Universal Voter Registration Act is chair 1's language), Hester / AI Oversight, Kramer /
+Medicare-Medicaid, Kagan / Campaign Finance. The blanks say the seated chair is unevidenced; they do
+**not** say the person has no view.
+
+### ✅ CA +4 — Berkeley rows rewritten by 1757, and the regression is closed
+
+The last four above baseline were all Berkeley, blanked by 1738 (3) and 1739 (1) — **the same
+answer-deleted-context-kept shape for the third time in one investigation.** Each blank was restated
+from the finding that produced it. Two are worth keeping visible:
+· **Blackaby / Deportation** — the ladder asks **WHO should be deported**; a city instrument answers
+**WHETHER THE CITY COOPERATES**. Same structural mismatch that blanked all five MD Immigration rows.
+· **Taplin / Public Safety** — the sole mental-health item is a **CEREMONIAL PROCLAMATION**
+(Res. 69,853-N.S., "May 2021 as Mental Health Month"). **On-topic by VOCABULARY, not by RATIONALE.**
+⚠ **Tregub / Transportation could have been a gap rather than a finding**, and 1739 settled it before
+blanking: seated December 2024, and none of the 96 items recovered by the corpus repair falls inside
+that tenure. **An absence is only a finding once the record behind it is complete.**
+
+### ✅ Final state — gate GREEN, and not one baseline number changed
+
+`ORPHAN_CONTEXT` **50 observed against baseline 50**; ca back to 35; fl 6 · tx 5 · la 2 · mn 1 · ky 1
+untouched. **MA 36, WI 16, VA 5 and UT 4 disappeared entirely** — every one of those "new states" was
+judicial. The 224 is worked off **because the rows were read, not because the threshold moved**.
+Migrations 1755 (delete 119) · 1756 (rewrite 51) · 1757 (rewrite 4). **Next free migration: 1758.**
+
+🔑 **THE ONE STRUCTURAL FIX STILL OWED.** Three separate passes in two days each deleted answers and
+left the reasoning, and none of them saw the violation it created. `politician_context` has no FK or
+trigger tying it to `politician_answers`, and it must not have one (the 404 legitimate blanks are
+context-without-answer by design). **The cheap fix is a guard template: any migration that deletes from
+`politician_answers` asserts what happened to the matching context row before it commits.** 1735, 1738,
+1739 and the four MD passes would each have failed that assertion and been fixed in the same commit.
 
 ---
 

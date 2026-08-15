@@ -1,0 +1,57 @@
+{
+ "pass": "Berkeley orphan context — reasoning rewritten as documented blanks",
+ "migration": "1757_ca_berkeley_orphan_context_blanks.sql",
+ "note": "reasoning REPLACED, sources untouched, no answer created or deleted. Each new text restates the finding recorded in the header of the migration that blanked the answer (1738 or 1739). Restoring is an UPDATE from prior_reasoning.",
+ "n_rows": 4,
+ "rows": [
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "who": "Brent Blackaby / Deportation",
+   "blanked_by": "1738",
+   "prior_reasoning": "Blackaby authored a $200,000 Budget Referral for Deportation Defense Legal and Education Funds (April 29, 2025), explicitly to fund legal defense and education for people facing deportation. This is the strongest possible local stance against deportation — actively funding legal resistance to federal deportation efforts.",
+   "new_reasoning": "Researched 2026-08-13 — all 52 council items read, and the row fails for two independent reasons. The ladder asks WHO should be deported: chair 2 is \"only deport people convicted of serious violent crimes\", but the ordinance backed here is CATEGORICAL, carrying no criminal-conviction carve-out anywhere, which contradicts that chair rather than supporting it. And the cited instrument, the $200,000 deportation defence fund, is the same act already carrying the Local Immigration Enforcement row — a city instrument answers whether the city cooperates, not who should be deported. No scorable public record was found for this chair.",
+   "sources": [
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-29%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby"
+   ]
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "who": "Igor Tregub / Public Safety Approach",
+   "blanked_by": "1738",
+   "prior_reasoning": "Tregub co-authored a council resolution supporting California Proposition 6 (November 2024) — the constitutional amendment to abolish forced prison labor — signaling a criminal justice reform orientation. He supported Police Accountability Board appointments and his council profile emphasizes mental health services through his committee on Health, Life Enrichment, Equity & Community. No evidence of police defunding sponsorship; he reflects a co-responder/accountability model rather than pure police budget expansion.",
+   "new_reasoning": "Researched 2026-08-13 — chair 3 is \"adding crisis response teams\". The cited Proposition 6 resolution is about FORCED PRISON LABOUR, and the only Specialized Care Unit item in this tenure is a City Manager contract to EVALUATE the existing unit (2024-11-19). No scorable public record was found for this chair.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ]
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "who": "Terry Taplin / Public Safety Approach",
+   "blanked_by": "1738",
+   "prior_reasoning": "Taplin states 'Police officers are not social workers or mental health specialists' and believes the city should 'reorient our city's response to violence in a proactive way that centers social services and crisis response.' He advocates for the Specialized Care Unit and other community-based solutions alongside the police department and convened stakeholder meetings to examine violence prevention programs. He supports police accountability and zero tolerance for racism in policing while maintaining police staffing.",
+   "new_reasoning": "Researched 2026-08-13 — chair 2 is \"shift non-violent calls to unarmed mental health co-responders\". The sole mental-health item in the record is a CEREMONIAL PROCLAMATION, Res. 69,853-N.S. declaring May 2021 Mental Health Month: on-topic by vocabulary, not by rationale. No scorable public record was found for this chair.",
+   "sources": [
+    "https://www.terrytaplin.com/public-safety",
+    "https://www.terrytaplin.com/priorities/community-safety"
+   ]
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "who": "Igor Tregub / Transportation Priorities",
+   "blanked_by": "1739",
+   "prior_reasoning": "Tregub authored two pedestrian safety budget referrals in November 2024: $50,000 for a traffic study and pedestrian improvements at Shattuck/Delaware, and $30,000 for an Accessible Pedestrian Signal at Sacramento/Allston. He supported council consent items funding Southwest Berkeley Bike Boulevards ($4 million) and the Adeline Street Quick-Build active transportation project ($1 million) in October 2024, and a Bay Trail Extension grant ($4 million) in October 2024. His Sierra Club background and energy career emphasize reducing car dependence.",
+   "new_reasoning": "Researched 2026-08-13 — chair 2's \"invest equally in roads\" is CONTRADICTED by a record that is pedestrian, cycling and transit throughout (the Oxford for All Class IV bikeway, accessible pedestrian signals, the MTC letter). Chair 1 would fit that half, but its second clause, \"reduce parking requirements communitywide\", has no instrument behind it anywhere in the repaired corpus. Contradicted at 2, incomplete at 1, so neither chair is described. The absence rests on a COMPLETE record: seated December 2024, and none of the 96 items recovered by the corpus repair falls inside that tenure. No scorable public record was found for this chair.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ]
+  }
+ ]
+}
