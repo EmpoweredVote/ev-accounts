@@ -98,7 +98,7 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   `Citations.jsx` renders the old prose verbatim under "Why this position?".
   Paste the guard from `backend/migrations/_templates/answer_delete_context_guard.sql` and state a
   `-- @context-decision:` line; `npm run check:answer-delete-guards --prefix backend` enforces it
-  (CI job "migration hygiene"). Seven passes skipped this on 2026-08-12/13 and took `ORPHAN_CONTEXT`
+  (CI job "answer-delete context guards"). Seven passes skipped this on 2026-08-12/13 and took `ORPHAN_CONTEXT`
   from 50 to 224.
   ⚠ **A guard asserting the context SURVIVED is not this guard** — 1735 had one and passed green while
   creating 117 violations. The test is whether the surviving context is still a *gate-visible orphan*.

@@ -5,19 +5,28 @@ on:
     branches: [master]
   push:
     branches: [master]
-  # The live-DB jobs (`reachability` and `stance-sources`) also run on a schedule: their data drifts on
-  # its own — terms start and end, boundary loads land, research passes write rows — with no commit to
-  # trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest window.
+  # The live-DB jobs (`reachability`, `child-county`, `stance-sources`) also run on a schedule: their
+  # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
+  # with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest
+  # window.
   schedule:
     - cron: '0 13 * * *'
   workflow_dispatch:
 
+# 🔑 ONE INDEPENDENT DATA CHECK PER JOB. A failing step masks every step after it in the same job, and
+# the masked check reports "skipped" nowhere a human is looking — the job is just red for the first
+# reason. That cost two days on 2026-08-14: a stale matview failed ahead of the stance check, which
+# therefore never ran, hiding an ORPHAN_CONTEXT regression through 19 red runs. Jobs run in parallel,
+# so the only price of splitting is a duplicated `npm ci`, and similar subject matter is NOT a reason
+# to couple failure reporting. If you add a check that can fail for its own reasons, give it its own
+# job. (`backend` is the deliberate exception: lint → typecheck → test is one pipeline over one commit,
+# where the run order IS the fix order.)
 jobs:
   backend:
     name: backend lint · typecheck · test
     runs-on: ubuntu-latest
     # Skipped on the nightly schedule: no commit means no new code to lint, and the scheduled run
-    # exists only for the live-DB jobs below (`reachability` and `stance-sources`).
+    # exists only for the live-DB jobs below.
     if: github.event_name != 'schedule'
     defaults:
       run:
@@ -45,10 +54,8 @@ jobs:
       - name: Unit tests
         run: npm run test:unit
 
-  migrations:
-    # Static migration hygiene: numbering collisions, and answer-deletes that never decided what
-    # happens to their context. Both read files only -- no DATABASE_URL, so they run on forks too.
-    name: migration hygiene
+  migration-numbering:
+    name: migration numbering
     runs-on: ubuntu-latest
     # Runs on PRs AND on pushes to master.
     #
@@ -79,20 +86,37 @@ jobs:
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
-      # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
-      # (1735, 1738, 1739 and the four Maryland passes). Every decision about the ANSWER was correct;
-      # none of them made a decision about the CONTEXT, so each silently created ORPHAN_CONTEXT
-      # violations. The gate went 50 -> 224 and CI stayed red for 19 runs before anyone looked.
-      #
-      # This is a LINT, not a constraint, and deliberately so: an FK requiring every context row to
-      # have an answer would be wrong, because 404 rows are context-without-answer by design
-      # (documented blanks). The property being enforced is "whoever removed an answer thought about
-      # the context" -- a property of the change, not of the data.
-      #
-      # It lives in THIS job rather than alongside check:stance-sources for two reasons: it is static
-      # (no DATABASE_URL, so it also runs on forks), and the stance job is exactly where a failing
-      # early step masked this class for two days. A guard against that failure should not be filed
-      # behind the step that caused it.
+  answer-delete-guards:
+    name: answer-delete context guards
+    runs-on: ubuntu-latest
+    # Split from the numbering check on 2026-08-14, the same day it was written. The two share a
+    # subject (migration hygiene) and nothing else: a duplicate number and a missing context guard are
+    # unrelated failures, so pairing them would let a numbering collision mask this — the exact defect
+    # this check exists to prevent, reproduced in the job that hosts it.
+    #
+    # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
+    # (1735, 1738, 1739 and the four Maryland passes). Every decision about the ANSWER was correct;
+    # none of them made a decision about the CONTEXT, so each silently created ORPHAN_CONTEXT
+    # violations. The gate went 50 -> 224 and CI stayed red for 19 runs before anyone looked.
+    #
+    # This is a LINT, not a constraint, and deliberately so: an FK requiring every context row to have
+    # an answer would be wrong, because 404 rows are context-without-answer by design (documented
+    # blanks). The property being enforced is "whoever removed an answer thought about the context" --
+    # a property of the change, not of the data.
+    #
+    # Static: no DATABASE_URL, so it runs on forks too. Same trigger as the numbering check, and for
+    # the same reason -- this repo is worked by direct pushes to master, so a PR-only guard would miss
+    # most of what it guards.
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    steps:
+      # Shallow checkout is enough: unlike the numbering check, this one never diffs against a base.
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Dependency-free, so it runs straight off node with no npm install.
       - name: Check answer deletes decide what happens to their context
         run: node backend/scripts/check-answer-delete-guards.mjs
 
@@ -153,6 +177,39 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  child-county:
+    name: child→county mapping
+    runs-on: ubuntu-latest
+    # 🔴 THIS IS THE CHECK THAT DID THE MASKING, so it is the one with the least excuse to share a job.
+    # On 2026-08-14 15:34 a stale matview left by the WA TIGER load turned this step red while it was
+    # the second step of `address-search reachability`. The stance sourcing check sat AFTER it in the
+    # same job and therefore never executed, hiding an ORPHAN_CONTEXT regression that had been red
+    # since 08-13. The run log showed only the mapping error.
+    #
+    # It was kept beside reachability for one more commit on the argument that both are
+    # geofence/address concerns "that usually fail for the same underlying reason". That argument is
+    # wrong in the way that matters: the two checks failing for the SAME reason costs nothing, and the
+    # one time they failed for DIFFERENT reasons is precisely when the masking happened. Similar
+    # subject matter is not a reason to couple failure reporting.
+    #
+    # Same triggers and prod-drift reasoning as reachability: master pushes + the daily schedule, never
+    # on PRs.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
       # Migration 1696 persisted the child->county spatial assignment into a materialized view, and 52
       # scripts insert into essentials.geofence_boundaries, so there is no single loader to hook a
       # refresh onto. Without this, a boundary load silently leaves newly added cities sitting outside
@@ -160,12 +217,7 @@ jobs:
       #
       # Zero tolerance, no baseline: the correct value is 0 and the fix is one command.
       #
-      # ⚠ THIS STEP AND THE ONE ABOVE ARE THE LAST REMAINING MASKING PAIR IN THIS FILE. It was THIS
-      # check going red on 2026-08-14 that hid the stance regression for two days, which is why stance
-      # sourcing now has its own job. The same exposure still exists in the other direction: if
-      # reachability fails, this never runs. Kept together for now because both are geofence/address
-      # concerns that usually fail for the same underlying reason — but if they ever start failing
-      # independently, split this out too rather than reading the job name and guessing.
+      # Skips itself (exit 0) without DATABASE_URL, so forks get a green skip.
       - name: Check the persisted child→county mapping is not stale
         run: npm run check:child-county
         env:
