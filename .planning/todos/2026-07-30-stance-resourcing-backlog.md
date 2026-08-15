@@ -16,6 +16,81 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🔴 HANDOFF 2026-08-14 — ORPHAN_CONTEXT 224 → 105; judicial cohort closed by 1755
+
+**CI had been red on `ORPHAN_CONTEXT` since 2026-08-13 02:53 — 19 consecutive runs.** From 08-14 15:34
+a *second*, unrelated failure (a stale `geofence_child_county` matview from the WA TIGER load) sat
+**ahead of it in the same `address-search reachability` job**, so the stance check never executed and
+the log showed only the mapping error.
+🔑 **A failing early step in a shared CI job MASKS every check after it.** Read which STEP failed and
+which were skipped, not just the job name. Worth splitting independent data checks into separate jobs.
+
+### The judicial cohort was the residue of a CORRECT fix, not a leak
+
+**121 orphans sat on judicial-scoped topics — not 134.** The earlier estimate double-counted: Taxes
+(15 rows) is not judicial and `judicial-transparency` has zero. Of the 121, **119 sat on the three
+role-conduct ladders** (Police Accountability 70, Bail and Pretrial 26, Prosecution 23); the other 2
+are on `judicial-criminal-justice`, which is role-**un**scoped.
+
+**117 of the 119 map exactly onto migration `1735_judicial_topic_scope.sql` (2026-08-12)**, which
+deliberately deleted 117 answers as a category error — "a state senator cannot hold a position on how
+*their office* charges cases" — and kept the context on purpose. Guard 2 of 1735 *asserts* the context
+survived. The gate went red the next morning.
+🔑 **Retiring an ANSWER and retiring a STANCE are not the same operation.** Any pass that deletes
+answers must decide what happens to the context in the SAME migration. The gate finds it either way —
+just later, and with less of the reasoning still in the room.
+
+**1735 could not see 2 of the 119, for the reason this workstream keeps re-learning.** It drove
+`FROM inform.politician_answers`, so William Smith and Jeff Waldstreicher — whose Bail and Pretrial
+answers the Maryland pass had already blanked — were outside its universe *by construction*. That is
+the identical FROM-clause blindness that hid this whole class from the gate until 08-07, **recurring
+inside the fix for it.**
+
+✅ **`1755_judicial_orphan_context_delete.sql` APPLIED — 119 context rows deleted. ORPHAN_CONTEXT
+224 → 105. Next free migration: 1756.**
+Verified before deleting: **0 of 119 qualified** for the role under 1735's own holds-or-runs test,
+re-run at capture time; **0 of 119 had a `politician_context_evidence` row**, so the Citations.jsx path
+was still closed and the risk was latent, never live.
+The delete list was taken **from the rollback capture, not re-derived**, so record and delete cannot
+disagree. Rollback:
+[`2026-08-14-judicial-orphan-context-1755-rollback.json`](../../backend/data/stance-retirement/2026-08-14-judicial-orphan-context-1755-rollback.json)
+— reasoning and sources verbatim; restoring is an INSERT from that file.
+
+⚠ **Deleted, not rewritten as documented blanks, on purpose.** A blank asserts "we looked and found
+nothing". That is not what was true: the question does not apply to these people at all. Rewriting 119
+rows to assert an untested absence would put a false statement in a voter-facing field to quiet a gate.
+
+### ▶ OWED: ~80 rows of good evidence lost their ladder
+
+Roughly 80 of the 119 carried **real, named-instrument evidence** — Warren co-sponsoring the No Money
+Bail Act, Brownsberger authoring the 2018 CJ reform law, Nazarian's AYE on SB 10, Mitchell's Care First
+Pretrial Agency motion. The research is sound; it was attached to a ladder its subject cannot stand on.
+**`judicial-criminal-justice` and `public-safety-approach` are live and role-UNSCOPED**, so a
+legislator can hold a position on either — that may be where this evidence belongs.
+⚠ **This is re-research, NOT a re-parenting UPDATE.** Bail-reform evidence supports a *bail* chair, not
+automatically a *criminal justice* chair. Per the standing rule, evidence must describe THAT chair.
+(The ~80 is a first-cut classifier count and every first cut over-fires — treat it as a ceiling.)
+
+### ▶ What is left, and why the baseline was NOT touched
+
+**105 = the 50 already-baselined backlog + 55 genuinely new unworked rows.**
+
+| state | observed | baseline | note |
+|---|---|---|---|
+| md | 51 | — | NEW; the 08-13 Maryland chairs passes |
+| ca | 39 | 35 | +4 new |
+| fl 6 · tx 5 · la 2 · mn 1 · ky 1 | 15 | 15 | exactly at baseline, untouched |
+
+🔴 **The baseline was deliberately left alone, so CI stays red on md/ca.** That is correct: those 55
+rows are real unworked growth, and the standing rule since 08-07 is that the baseline is ratcheted only
+as a cluster genuinely lands, in the same commit. Bumping it here would exempt rows nobody has read.
+**MA 36, WI 16, VA 5 and UT 4 vanished entirely** — every one of those "new states" was judicial.
+
+▶ **Next: MD 51** (it now includes the 2 leftover Smith/Waldstreicher rows — same pass, same
+`mgaleg.maryland.gov` member-page sourcing trap), then **CA +4**. That closes the gate.
+
+---
+
 ## 🔴 HANDOFF 2026-08-02 (eleventh) — FETCH_FAILED swept: 5 invented outlets, 1 invented congressional host
 
 **No migration.** Review: [`2026-08-02-invented-domain-sweep.md`](../../backend/data/stance-retirement/2026-08-02-invented-domain-sweep.md).

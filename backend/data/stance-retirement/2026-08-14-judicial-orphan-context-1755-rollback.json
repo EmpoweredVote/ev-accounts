@@ -1,0 +1,1929 @@
+{
+ "pass": "judicial role-conduct ladders — context left behind when the answer was blanked as a category error",
+ "migration": "1755_judicial_orphan_context_delete.sql",
+ "captured_at": "2026-08-14",
+ "note": "Rows deleted from inform.politician_context. Every row sits on a ladder that asks about the subject's own conduct in a role they neither hold nor seek, so the position it describes cannot exist for that person. 117 of these are the answers blanked by migration 1735 (their answers are in 2026-08-12-judicial-scope-1735-rollback.json); the remaining 2 were already answer-less then and are captured here for the first time. reasoning/sources are verbatim — restoring is an INSERT from this file.",
+ "qualification_test": "Re-ran migration 1735's holds-or-runs-for-the-role predicate at capture time. All rows returned false; the script refuses to emit if any row qualifies.",
+ "n_rows": 119,
+ "by_topic": {
+  "judicial-bail-pretrial": 26,
+  "judicial-police-accountability": 70,
+  "judicial-prosecution-priorities": 23
+ },
+ "rows": [
+  {
+   "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Auchincloss has supported bail reform moving away from cash bail for nonviolent offenses, consistent with his First Step Act support and rehabilitation-focused record. As a moderate, he also backs preventive detention for violent and high-risk defendants — supporting a risk-based pretrial system that retains judicial discretion for dangerous defendants rather than abolishing pretrial detention entirely.",
+   "sources": [
+    "https://web.archive.org/web/20221209104046/https://auchincloss.house.gov/issues",
+    "https://ballotpedia.org/Jake_Auchincloss"
+   ],
+   "name": "Jake Auchincloss",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-04",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "122f1897-2dae-4f21-bee0-1c02c95e9e3a",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Barger issued a statement expressing concerns about the LA Superior Court's new zero-bail policy (October 2023 implementation), and her endorsement of the Gascón recall cited concerns about \"diversion program failures\" and inadequate accountability. Her support for Prop 36 restoring drug crime penalties signals a preference for pretrial detention over diversion.",
+   "sources": [
+    "https://kathrynbarger.lacounty.gov/?s=bail",
+    "https://kathrynbarger.lacounty.gov/barger-issues-statement-on-supporting-prop-36/"
+   ],
+   "name": "Kathryn Barger",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Bonta authored AB 42 (2017), a bail reform bill to modify California's pretrial release system. He then co-authored SB 10 (2018, chaptered), which made California the first state to eliminate money bail in favor of risk-assessment-based pretrial release — though it was later suspended by referendum before taking effect. His consistent bill sponsorship on bail reform reflects support for risk-assessment-based pretrial systems that reduce reliance on cash bail while maintaining some accountability mechanisms.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201720180AB42",
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201720180SB10"
+   ],
+   "name": "Rob Bonta",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Attorney General",
+   "running_for": "CA Attorney General",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "The 2018 CJ reform law that Brownsberger authored included significant pretrial detention reforms, reducing the use of cash bail for non-violent defendants and reforming the dangerousness hearing process. He has been a consistent advocate for eliminating cash bail as a condition of pretrial release, arguing it unfairly penalizes poverty. He has supported risk-based pretrial decision-making and backed legislation further reforming the bail system.",
+   "sources": [
+    "https://malegislature.gov/Bills/190/S2185"
+   ],
+   "name": "William Brownsberger",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Senator, Suffolk and Middlesex District",
+   "running_for": "MA State Senate Suffolk and Middlesex District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "602f147a-90bc-4083-aeab-1d0becf088e9",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Campbell's twin brother died while held as a pretrial detainee in state custody, making bail reform deeply personal for her. During the 2022 AG debate she expressed support for bail reform while coupling it with public safety concerns -- a skeptical but balanced stance that prioritizes scrutiny of pretrial detention without simply deferring to prosecutors.",
+   "sources": [
+    "https://commonwealthbeacon.org/attorney-general/in-ag-debate-dems-play-their-hands/",
+    "https://en.wikipedia.org/wiki/Andrea_Joy_Campbell"
+   ],
+   "name": "Andrea Campbell",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Attorney General",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "86c12b33-cb76-41da-bdf0-6b58a0cbbed6",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Chiu's criminal justice record in the Assembly — including fair chance licensing (AB 2138) emphasizing rehabilitation and reduced collateral consequences — indicates support for pretrial diversion and bail reform over cash bail systems. No specific bail bill was found, but his consistent orientation toward reducing barriers for those with criminal records suggests he opposes cash bail requirements.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB2138",
+    "https://en.wikipedia.org/wiki/David_Chiu_(politician)"
+   ],
+   "name": "David Chiu",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "City Attorney",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Clark's record on alternative sentencing and rehabilitation since the 1990s places her squarely in the cash bail reform camp. She backed the Pretrial Integrity and Safety Act and supports risk-based pretrial release assessment replacing wealth-based cash bail. Her progressive criminal justice record consistently favors reducing pretrial detention for nonviolent defendants.",
+   "sources": [
+    "https://katherineclark.house.gov/issues",
+    "https://ballotpedia.org/Katherine_Clark"
+   ],
+   "name": "Katherine Clark",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-05",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "77256186-0ce8-4069-9d06-1d2fd5b4b622",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Gill was among the most vocal defenders of Utah's 2020 bail reform, calling cash bail 'probably unjust because it disproportionately impacts people who don't have money' and noting it causes people in poverty to 'lose their jobs, lose their shelter, their homes.' He reported 2020 reform was working as designed in Salt Lake County, with his office successfully securing pretrial detention via risk-based tools (ankle monitors, treatment, release conditions) in nearly all cases where detention was warranted.",
+   "sources": [
+    "https://www.deseret.com/utah/2021/2/21/22278879/prosecutors-defend-utah-bail-reform-as-lawmakers-eye-changes-hb206-220/",
+    "https://www.sltrib.com/news/politics/2021/03/01/utah-prosectors-public/"
+   ],
+   "name": "Sim Gill",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "District Attorney",
+   "running_for": "Salt Lake County District Attorney",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Hayes has supported bail reform to reduce pretrial detention of low-income Baltimoreans, backing risk-based assessment over cash bail requirements.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+    "https://ballotpedia.org/Antonio_Hayes"
+   ],
+   "name": "Antonio Hayes",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Hernandez's leadership of JusticeLA explicitly advocated for bail reform as part of building alternatives to pretrial detention, and co-chaired Measure J to fund community-based alternatives to incarceration. Her abolitionist platform and JusticeLA's work on alternatives to incarceration place her squarely at eliminating cash bail and maximizing diversion programs.",
+   "sources": [
+    "https://justicelanow.org",
+    "https://en.wikipedia.org/wiki/Eunisses_Hernandez"
+   ],
+   "name": "Eunisses Hernandez",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Council Member",
+   "running_for": "Los Angeles City Council District 1",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "81dfcf88-c739-4461-9d16-931f8d51a8c5",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Horvath publicly backed Measure J (2020) calling for shifting county resources away from incarceration toward diversion and community care, and reaffirmed this commitment in July 2025 when she introduced a motion to enshrine the measure beyond its 2028 sunset. She supports juvenile justice transformation, ordering the transfer of authority from Probation to a new Department of Youth Development and directing release of eligible young people from detention. Her public safety philosophy explicitly embraces care-first over punitive detention.",
+   "sources": [
+    "https://lindseyhorvath.lacounty.gov/reaffirm-measure-j/",
+    "https://lindseyhorvath.lacounty.gov/board-of-supervisors-adopts-motions-to-transform-juvenile-justice/",
+    "https://lindseyhorvath.lacounty.gov/public-safety-justice-reform/"
+   ],
+   "name": "Lindsey P. Horvath",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Supervisor",
+   "running_for": "Los Angeles County Board of Supervisors District 3",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Co-sponsored Age of Criminal Majority to 21 and Prison Moratorium; her criminal justice bills consistently favor diversion over detention and signal skepticism toward prosecutorial over-reach and high pretrial detention.",
+   "sources": [
+    "https://web.archive.org/web/20260412023712/https://actonmass.org/legislators/patricia-jehlen/",
+    "https://malegislature.gov/Bills/194/S1134"
+   ],
+   "name": "Patricia Jehlen",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Senator, Second Middlesex District",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "969f1ca4-4766-44fd-8638-ef813b1835e7",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Jenkins reversed Chesa Boudin's approach and reinstated cash bail requests for drug traffickers and other defendants. Her office repeatedly publicized cases where defendants were released on own recognizance by courts and went on to commit new crimes, framing OR releases as a public safety failure. She made drug dealers ineligible for community courts, which effectively increases pretrial detention pressure on that category of defendant.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Brooke_Jenkins",
+    "https://sfdistrictattorney.org/news/press-releases/"
+   ],
+   "name": "Brooke Jenkins",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "District Attorney",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "faf86b5b-5add-4afb-a8e2-96b3e8be4b78",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Markey co-sponsored the Pretrial Integrity and Safety Act which would incentivize states to replace cash bail with risk assessments and evidence-based pretrial services. He has supported reducing pretrial detention through alternatives including electronic monitoring, supervised release, and community-based supports. His criminal justice reform record — rated 78% by CURE — reflects consistent support for reducing unnecessary incarceration at the pretrial stage.",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+    "https://en.wikipedia.org/wiki/Ed_Markey",
+    "https://www.markey.senate.gov/news/press-releases"
+   ],
+   "name": "Edward Markey",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": "U.S. Senate Massachusetts",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "McGovern supported the Pretrial Integrity and Safety Act, which establishes evidence-based risk assessment rather than cash bail for pretrial release. His overall criminal justice record strongly favors reform of the cash bail system to eliminate wealth-based pretrial detention, consistent with his 87% ACLU and progressive caucus positions.",
+   "sources": [
+    "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+    "https://mcgovern.house.gov/issues"
+   ],
+   "name": "Jim McGovern",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-02",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Mitchell authored a motion to establish a \"Care First Pretrial Agency\" under the Justice, Care and Opportunities Department, explicitly aimed at maximizing pretrial diversion and reducing pretrial detention. Her sustained work on diversion programs and the Care First framework consistently prioritizes release and community-based supervision over cash bail or pretrial detention.",
+   "sources": [
+    "https://mitchell.lacounty.gov/?s=pretrial",
+    "https://mitchell.lacounty.gov/?s=care+first",
+    "https://mitchell.lacounty.gov/?s=diversion"
+   ],
+   "name": "Holly J. Mitchell",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "e30ddde5-a722-477b-837b-056fdc7e2d6b",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Nazarian voted AYE on SB 10 (August 2018), California's comprehensive pretrial reform bill that eliminated cash bail and replaced it with risk-assessment-based release determinations. The bill mandated automatic release of misdemeanor arrestees within 12 hours and established three risk categories for other detainees. This directly aligns with reform bail using risk assessment tools rather than monetary conditions.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201720180SB10",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB10"
+   ],
+   "name": "Adrin Nazarian",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Council Member",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Neal's 78% CURE rating (Citizens United for Rehabilitation of Errants), opposition to mandatory minimums, and support for sentencing alternatives place him closer to reforming cash bail toward risk-based pretrial assessment. He has supported the First Step Act and criminal justice reform legislation that reduces incarceration of non-violent offenders before trial.",
+   "sources": [
+    "https://www.ontheissues.org/ma/Richard_Neal.htm",
+    "https://en.wikipedia.org/wiki/Richard_Neal"
+   ],
+   "name": "Richard Neal",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-01",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Pressley has been a leading advocate for ending cash bail, supporting the No Money Bail Act of 2021. She has highlighted how the cash bail system disproportionately imprisons low-income people and people of color who cannot afford bail. She supported the George Floyd Justice in Policing Act's pretrial provisions and has spoken publicly about constituents trapped in pretrial detention. She frames bail reform as a racial and economic justice imperative.",
+   "sources": [
+    "https://congress.gov/bill/117th-congress/house-bill/1437"
+   ],
+   "name": "Ayanna Pressley",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-07",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8c34f0b8-4201-49b4-95a2-d043e99a3eef",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Under Rivera's leadership Salt Lake County Jail uses the Public Safety Assessment (PSA) — an evidence-based risk tool — for pretrial release decisions. The county's Pretrial Services program allows qualifying individuals to be released from jail while awaiting court hearings 'utilizing the least restrictive conditions possible' with non-financial release and case management. Rivera has explicitly supported and implemented pretrial release programs as a named priority throughout her tenure since 2017.",
+   "sources": [
+    "https://www.saltlakecounty.gov/criminal-justice-services/pretrial/",
+    "https://www.saltlakecounty.gov/sheriff/rosie-rivera/"
+   ],
+   "name": "Rosie Rivera",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Sheriff",
+   "running_for": "Salt Lake County Sheriff",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6b16270a-c6c7-46be-9b9c-7def323dc4ef",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Utah County is the largest county in Utah without a pretrial services program as of 2023. A subcommittee formed in July 2023 to explore one and the Criminal Justice Coordinating Council requested $3 million for an initial program, but no evidence that Gray has publicly championed pretrial services reform. His prosecution policies prioritize keeping higher-risk defendants in custody and his evidence-based charging philosophy (file enhancements where supported) tends to increase pretrial detention rather than reduce it.",
+   "sources": [
+    "https://atty.utahcounty.gov/",
+    "https://www.heraldextra.com/news/local/2022/jun/07/gray-seeks-to-undo-leavitts-actions-if-elected-as-utah-county-attorney/"
+   ],
+   "name": "Jeffrey S. Gray",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "County Attorney",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "As Judicial Proceedings Committee chair, Smith has advanced pretrial detention reform. He supported legislation to shift Maryland toward risk-based assessments over cash bail for nonviolent offenders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "William Smith",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Trahan's criminal justice record — supporting rehabilitation over incarceration and backing sentencing reform — aligns with bail reform replacing cash bail with risk-based pretrial assessment. She backed the Pretrial Integrity and Safety Act co-sponsored by progressive House Democrats. Her focus on nonviolent offense treatment and reentry reflects comprehensive system reform including bail.",
+   "sources": [
+    "https://trahan.house.gov/issues",
+    "https://ballotpedia.org/Lori_Trahan"
+   ],
+   "name": "Lori Trahan",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-03",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "As a Judicial Proceedings Committee member, Waldstreicher has voted to reform Maryland's cash bail system to reduce pretrial detention for nonviolent offenders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "dd08c9de-076d-40ee-ab27-9298bbb72d1a",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Warren has co-sponsored the Pretrial Integrity and Safety Act and the No Money Bail Act, which would end cash bail for federal offenses and incentivize states to eliminate money bail. She has argued that cash bail criminalizes poverty and disproportionately harms low-income defendants who cannot afford release while awaiting trial. Her criminal justice reform platform consistently includes pre-trial detention reform as a structural inequity requiring legislative correction.",
+   "sources": [
+    "https://www.warren.senate.gov/newsroom/press-releases",
+    "https://www.ontheissues.org/Elizabeth_Warren.htm"
+   ],
+   "name": "Elizabeth Warren",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "reasoning": "Sponsored Criminal Procedure - District Court - Issuance of Summonses and Arrest Warrants reform; as Judiciary Committee member supports reform of pretrial processes to reduce unnecessary detention.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation"
+   ],
+   "name": "Jamila Woods",
+   "topic_key": "judicial-bail-pretrial",
+   "topic": "Bail and Pretrial Decisions",
+   "judicial_role": "judge",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Acevero sponsored legislation banning no-knock search warrants and creating misdemeanor liability for failure to prevent excessive force or render first aid — among the strongest police accountability positions in the MD House.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/acevero01"
+   ],
+   "name": "Gabriel Acevero",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "7cd80dd2-bbc6-4ae0-8445-b8688bf19c47",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Advocates implicit-bias and de-escalation training plus strengthening civilian oversight committees",
+   "sources": [
+    "https://racinecountyeye.com/2025/02/11/grace-allen-racine-9th-district/"
+   ],
+   "name": "Grace Allen",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Alderman, District 9",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Auchincloss directly sponsored legislation enacting stricter rules for police accountability (March 2021), demonstrating a concrete legislative commitment to reform. He co-sponsored the George Floyd Justice in Policing Act and supported body camera mandates and restricting chokeholds. He does not support defunding police but advocates for professional accountability standards.",
+   "sources": [
+    "https://web.archive.org/web/20221209104046/https://auchincloss.house.gov/issues",
+    "https://ballotpedia.org/Jake_Auchincloss"
+   ],
+   "name": "Jake Auchincloss",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-04",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Benson supported the Maryland Police Accountability Act of 2021 and police reform legislation including officer discipline reforms and civilian oversight.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0166?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "name": "Joanne Benson",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "13ebfaf6-3fc1-4448-a034-8b6bb6eade65",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Jerry Bollig",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "His 2020 police reform bill created a civilian-majority POST Commission with independent investigation authority and decertification power. Supported modest qualified immunity reform targeting cases where courts dismiss without determining if conduct was unconstitutional.",
+   "sources": [
+    "https://willbrownsberger.com/police-reform/",
+    "https://willbrownsberger.com/qualified-immunity/"
+   ],
+   "name": "William Brownsberger",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Suffolk and Middlesex District",
+   "running_for": "MA State Senate Suffolk and Middlesex District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charkoudian01"
+   ],
+   "name": "Lorig Charkoudian",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Charles backed the Maryland Police Accountability Act of 2021 and police reform measures including oversight boards and officer discipline reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0071?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/house/1047.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "name": "Nick Charles",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Clark is rated 62% by the National Association of Police Officers (NAPO), indicating a moderate rather than extreme stance on police reform. She co-sponsored the George Floyd Justice in Policing Act and supported mandatory body cameras and restricting chokeholds. Clark is personally affected by police accountability issues: she was the target of a 'swatting' attack in 2023, which resulted in the arrest of her own child for assaulting an officer — giving her direct experience with the complex dynamics of police response and accountability.",
+   "sources": [
+    "https://katherineclark.house.gov/issues",
+    "https://en.wikipedia.org/wiki/Katherine_Clark"
+   ],
+   "name": "Katherine Clark",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-05",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01"
+   ],
+   "name": "Charlotte Crutchfield",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "DiDomenico co-authored a 2020 op-ed calling for the Environmental Justice Act and criticizing administration decisions that harmed communities of color, and sponsored S.1066 ('Act addressing discriminatory police reporting') requiring accountability for racially biased police practices. His support for the 2020 police reform bill and civil rights enforcement restoration (S.1064) reflect a settle-valid-claims approach to government accountability.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/S1066",
+    "https://malegislature.gov/Bills/194/S1064"
+   ],
+   "name": "Sal DiDomenico",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Middlesex and Suffolk District",
+   "running_for": "MA State Senate Middlesex and Suffolk District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b47b26a2-ef64-42d2-b3e8-d076d4ecd1df",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Co-sponsored and voted yes on 2025 RES-403 removing sheriff budget funding for the Flock license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/matters/31885/sponsors",
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Michele Doolan",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "1ff55ff7-c617-42cf-864e-a0d788815c43",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Patrick Downing",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Elo-Rivera championed the appointment of 25 permanent members to San Diego's Commission on Police Practices in August 2023, creating an independent civilian oversight body for the SDPD. The commission was designed to review officer conduct and provide accountability independent of the police department. This reflects a strong posture of civilian oversight and police accountability reform.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sean_Elo-Rivera"
+   ],
+   "name": "Sean Elo-Rivera",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Ferguson backed the Maryland Police Accountability Act of 2021 as Senate President, a landmark reform that created civilian accountability boards and enhanced police oversight statewide.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson",
+    "https://ballotpedia.org/Bill_Ferguson"
+   ],
+   "name": "Bill Ferguson",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b80a680a-9f79-4d56-994b-00ce24ec7ef3",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0030 (Public Safety - Department of State Police - Police-Initiated Towing - Alterations) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0030?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/foley01"
+   ],
+   "name": "Linda Foley",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6640a2dd-0f1d-4f3e-a794-23e3cc716ae6",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Authored ordinance barring law enforcement from wearing masks or concealing identities during public operations, passed by the Board (2025), stating: 'This is how authoritarian secret police behaves — not legitimate law enforcement in a democracy.' Testified before Congress on ICE misconduct alleging agents targeted residents by race, accent, and workplace. Supported chief firing guilty probation officers and called for wholesale culture change in the department.",
+   "sources": [
+    "https://hahn.lacounty.gov/news/los-angeles-county-supervisors-vote-to-bar-law-enforcement-from-wearing-masks-concealing-identities/",
+    "https://hahn.lacounty.gov/news/hahn-testifies-at-congressional-hearing-on-ice-misconduct/",
+    "https://hahn.lacounty.gov/news/hahn-issues-statement-after-california-ag-indicts-30-probation-officers/"
+   ],
+   "name": "Janice Hahn",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "9e3f9d94-ec56-4d9e-811f-8b4672494362",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Hashmi voted to ban chokeholds by Virginia law enforcement (2020 special session) and co-patroned the creation of civilian law enforcement review boards. She supported stronger whistleblower protections for officers who report misconduct and called for robust independent oversight of police departments.",
+   "sources": [
+    "https://ballotpedia.org/Ghazala_Hashmi"
+   ],
+   "name": "Ghazala Hashmi",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Lieutenant Governor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Henson backed the Maryland Police Accountability Act of 2021 and police reform measures including oversight boards and officer discipline standards.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0071?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/house/1047.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Hernandez voted as the sole dissenter against the 2023 city budget citing its $3.2 billion LAPD allocation, voted against a four-year police compensation package (2023), moved CF 23-0002-S33 (14-0-1) to ban police use of unleashed dogs for apprehension, and moved CF 25-0002-S84 (14-0-1) banning military drones from spying on civilians. As a self-described police abolitionist, she represents the most aggressive oversight position.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eunisses_Hernandez",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=23-0002-S33",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0002-S84"
+   ],
+   "name": "Eunisses Hernandez",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": "Los Angeles City Council District 1",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "81dfcf88-c739-4461-9d16-931f8d51a8c5",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "As a Metro Board member, expressed reservations about extending law enforcement contracts and questioned whether LAPD bias-free policing policies align with transit safety goals. Called out a 10% cost increase in law enforcement contracts without a corresponding increase in officer presence, and proposed accountability measures requiring deputies to patrol by riding buses and trains.",
+   "sources": [
+    "https://lindseyhorvath.lacounty.gov",
+    "https://spectrumnews1.com/ca/la-west/transportation/2023/03/23/metro-action"
+   ],
+   "name": "Lindsey P. Horvath",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": "Los Angeles County Board of Supervisors District 3",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "a7d28222-72e6-4fb5-befd-74b6ef664cd0",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Kierstin Huelsemann",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "560d30c0-6904-4a3e-a4c5-4294d5ff87dd",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Lisa Jackson",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored S.1136 (preventing false confessions) to create accountability for coercive interrogation practices, and co-sponsored the Safe Communities Act to limit police cooperation with ICE. Favors settling valid accountability claims through reform legislation.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/S1136",
+    "https://web.archive.org/web/20260412023712/https://actonmass.org/legislators/patricia-jehlen/"
+   ],
+   "name": "Patricia Jehlen",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Second Middlesex District",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Kaine supported the George Floyd Justice in Policing Act (H.R.1280, 117th Congress), which would limit qualified immunity, ban chokeholds and no-knock warrants, and establish anti-racial-profiling standards. As Virginia governor he required police body cameras statewide. In 2025 he explicitly demanded ICE and CBP wear body cameras and obtain warrants before entering homes. His record consistently supports strong accountability mechanisms for law enforcement at every level of government.",
+   "sources": [
+    "https://www.congress.gov/bill/117th-congress/house-bill/1280",
+    "https://thehill.com/homenews/senate/5774045-kaine-ice-cbp-funding/",
+    "https://ontheissues.org/Senate/Tim_Kaine.htm"
+   ],
+   "name": "Tim Kaine",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0634 (Police Training - Autism and Dementia (LEAD Act of 2026)) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0634?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kaufman01"
+   ],
+   "name": "Aaron Kaufman",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "fc67428c-f769-47ca-9004-0f68bc917409",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Co-sponsored and voted yes on 2025 RES-403 removing sheriff budget funding for the Flock license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/matters/31885/sponsors",
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Chad Kemp",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c0baa6ca-b02d-4bbe-8d90-5f36d31cba1e",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Keys-Gamarra chiefly patronized HB 167 (2024) requiring courts to impanel a special grand jury when an unarmed person is killed by law enforcement - mandating independent public accountability for police use of force resulting in death.",
+   "sources": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB167"
+   ],
+   "name": "Karen Keys-Gamarra",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on police conduct standards.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/korman01"
+   ],
+   "name": "Marc Korman",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Lam supports increased police accountability and reducing racially biased policing, and has advocated for criminal justice reform that addresses systemic racism throughout his legislative record.",
+   "sources": [
+    "https://www.clarencelam.com/meet-clarence/"
+   ],
+   "name": "Clarence Lam",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "21975878-739e-452b-8bf7-95919680462a",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Luna created the Office of Constitutional Policing, banned deputy gangs (a major LASD scandal), posted use-of-force statistics publicly on transparency dashboards, and actively pursued compliance with four federal consent decrees. He ran explicitly on accountability and reform. Aligns with answer [2]: settle valid claims quickly and pursue real accountability.",
+   "sources": [
+    "https://lasd.org/",
+    "https://ballotpedia.org/Robert_Luna"
+   ],
+   "name": "Robert Luna",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Sheriff",
+   "running_for": "LA County Sheriff",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Malik has highlighted that LAPD consumes 46% of the city's discretionary budget while only 8% of calls involve violent crimes. She supports moving beyond a policing-first approach and has stated that continued increases to the LAPD budget have disproportionately harmed Black and Brown communities. She supports community-based accountability measures and alternative response models.",
+   "sources": [
+    "https://web.archive.org/web/20260609024810/https://www.faizahforla.com/",
+    "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-11"
+   ],
+   "name": "Faizah Malik",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": null,
+   "running_for": "Los Angeles City Council District 11",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "faf86b5b-5add-4afb-a8e2-96b3e8be4b78",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Markey co-sponsored the George Floyd Justice in Policing Act providing federal standards on use of force, banning chokeholds, restricting no-knock warrants, and establishing a national misconduct registry. He supported restricting transfer of military equipment to police (1033 program reform). He has called for robust civilian oversight of law enforcement and supported defunding the militarization of police, while backing community-based public safety investments.",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+    "https://en.wikipedia.org/wiki/Ed_Markey",
+    "https://www.markey.senate.gov/news/press-releases"
+   ],
+   "name": "Edward Markey",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": "U.S. Senate Massachusetts",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "5587e9e4-0bfe-40d7-97a0-5a736fd7b5b7",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Kerry Marren",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6cd02c2b-6bca-4b74-9703-0917872bf3f7",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "His administration runs a police reform initiative emphasizing accountability training policies and practices",
+   "sources": [
+    "https://cityofracinewi.gov/government/city-leadership/mayor/"
+   ],
+   "name": "Cory Mason",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Mayor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b89b09f0-6a9f-46e5-9193-8a9de99867b0",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "McCarty authored AB-284 (2017-18, died) creating a statewide officer-involved shooting investigation team, and AB-1506 (2019-20, chaptered) mandating state prosecutors investigate officer-involved shootings resulting in death of unarmed civilians and establishing a police practices division at the DOJ. Strong record of legislating independent oversight of law enforcement.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201920200AB1506",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB284"
+   ],
+   "name": "Kevin McCarty",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Mayor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "McGovern co-sponsored the George Floyd Justice in Policing Act (2021), which limits qualified immunity for officers, mandates body cameras, and bans chokeholds. He strongly supports civilian oversight boards and independent accountability mechanisms. He has explicitly backed stronger enforcement of civil rights against police misconduct.",
+   "sources": [
+    "https://mcgovern.house.gov/issues",
+    "https://www.ontheissues.org/MA/Jim_McGovern.htm"
+   ],
+   "name": "Jim McGovern",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-02",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "590fd6ec-3194-43af-97fc-25490490c565",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Mejia has made police accountability a signature focus of the Controller's office, publishing audits of LAPD spending, overtime, and use-of-force outcomes. He has audited the LAPD overtime budget and called for greater transparency and civilian oversight of police misconduct, consistent with his Democratic Socialist platform.",
+   "sources": [
+    "https://lacontroller.org/audits/",
+    "https://ballotpedia.org/Kenneth_Mejia"
+   ],
+   "name": "Kenneth Mejia",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "City Controller",
+   "running_for": "Los Angeles City Controller",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "ee52f7fe-8923-4ac7-85b4-7bd9ea68389c",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Patrick Miles",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mireku01"
+   ],
+   "name": "Bernice Mireku-North",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Mitchell co-authored a charter amendment to allow the Board of Supervisors to remove a sheriff for unlawful actions or abuse of power, issued statements on excessive force bodycam footage, moved parking enforcement out of the Sheriff's Department, and co-authored motions on accountability through checks and balances of the Sheriff. She consistently pushes for civilian oversight and structural accountability.",
+   "sources": [
+    "https://mitchell.lacounty.gov/?s=sheriff",
+    "https://mitchell.lacounty.gov/?s=public+safety"
+   ],
+   "name": "Holly J. Mitchell",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c1a5fe0a-5c9a-490d-9d2d-71bd8b3f22d1",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "After deputies conducted an unlawful group strip search of 20 women in County Jail 2 in May 2025, Miyamoto's office collaborated with the Department of Police Accountability, the Sheriff's Oversight Board, Human Rights Commission, Department on Status of Women, and Public Defender's Office. Deputies were reassigned by March 2026. The department disputed some factual claims in the lawsuit. This is a mixed record: cooperation with oversight bodies after the fact, but the underlying incident reflects a failure of internal accountability — consistent with stance 3 (balance protecting religious/professional practices while maintaining equal treatment; here, accountability exists but is reactive not preventive).",
+   "sources": [
+    "https://sfstandard.com/2026/05/22/san-francisco-sheriff-sued-women-strip-search/",
+    "https://missionlocal.org/2026/05/sf-jail-women-mass-strip-search-lawsuit/",
+    "http://sfsheriff.com/about"
+   ],
+   "name": "Paul Miyamoto",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Sheriff",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0904 (Law Enforcement - Protective Body Armor - Requirements and Reporting) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0904?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moon01"
+   ],
+   "name": "David Moon",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Moulton co-sponsored stricter police accountability rules in March 2021 and supports addressing systemic discrimination in law enforcement. His approach supports meaningful oversight and accountability for police conduct rather than institutional defense.",
+   "sources": [
+    "https://www.ontheissues.org/senate/Seth_Moulton.htm",
+    "https://en.wikipedia.org/wiki/Seth_Moulton"
+   ],
+   "name": "Seth Moulton",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. Senate Massachusetts",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "e30ddde5-a722-477b-837b-056fdc7e2d6b",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Nazarian voted AYE on AB 1185 (2019-20) establishing county board of supervisors sheriff oversight authority, AB 392 (2019-20) reforming police deadly force standards to require necessity rather than reasonable fear, and AB 1215 (2019-20) prohibiting law enforcement use of facial recognition and biometric surveillance. This pattern reflects strong support for civilian oversight and structural police reform.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB1185",
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB392",
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB1215"
+   ],
+   "name": "Adrin Nazarian",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Neal has sponsored stricter police accountability rules and is rated 97% by the NAACP. He backed the George Floyd Justice in Policing Act (voted YES in House) and generally supported measures to strengthen civilian oversight, restrict chokeholds, and require body cameras. He did not support abolishing or defunding police departments.",
+   "sources": [
+    "https://www.ontheissues.org/ma/Richard_Neal.htm",
+    "https://en.wikipedia.org/wiki/Richard_Neal"
+   ],
+   "name": "Richard Neal",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-01",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Co-sponsored Public Safety - Law Enforcement - Use of Body-Worn Cameras (2026); supports police transparency and accountability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+   ],
+   "name": "Darrell Odom",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "2717ff94-f7e8-4b39-b6ec-fc3e30f3d46f",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Padilla introduced the Accountability for Federal Law Enforcement Act to establish civil liability for federal officers who violate civil or constitutional rights, noting Americans currently lack the right to sue federal law enforcement as they can sue state and local officers. He cosponsored the George Floyd Justice in Policing Act, supporting limits on qualified immunity, banning chokeholds, and ending racial profiling. He has not called for abolition or defunding, aligning with strong civilian oversight and reform.",
+   "sources": [
+    "https://padilla.senate.gov/newsroom/press-releases/padilla-introduces-legislation-to-improve-accountability-for-federal-law-enforcement/",
+    "https://padilla.senate.gov/newsroom/press-releases/padilla-booker-introduce-sweeping-law-enforcement-reforms-through-george-floyd-justice-in-policing-act/"
+   ],
+   "name": "Alex Padilla",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "U.S. Senate - California",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "70d58d4b-4203-4fc2-b36f-32e6231c4339",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/palakovich01"
+   ],
+   "name": "Julie Palakovich Carr",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "26e2d1ad-130f-4794-83e9-82b341644cc9",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "David Peterson",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "27033804-17b9-4aed-9d27-e6b31d2ada80",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Voted yes on 2025 RES-403 removing sheriff budget funding for the Flock automatic license plate reader surveillance system",
+   "sources": [
+    "https://webapi.legistar.com/v1/dane/eventitems/356184/votes",
+    "https://webapi.legistar.com/v1/dane/matters/31885"
+   ],
+   "name": "Don Postler",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Pressley was one of the most vocal proponents of the George Floyd Justice in Policing Act including ending qualified immunity, national use-of-force standards, and civilian oversight boards. She has supported the BREATHE Act which called for defunding federal programs that support militarized policing. She has spoken at Black Lives Matter rallies and introduced legislation to end no-knock warrants federally. She has framed police accountability as the central civil rights issue of her generation.",
+   "sources": [
+    "https://www.govtrack.us/congress/votes/117-2021/h118",
+    "https://breatheact.org/"
+   ],
+   "name": "Ayanna Pressley",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-07",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8c34f0b8-4201-49b4-95a2-d043e99a3eef",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Rivera stated in June 2020 that officers 'need to be held accountable. We need to hold our officers accountable when something like that happens' and acknowledged 'There still is racism here, even in Salt Lake. And once we all agree that it exists, then we can start moving forward,' citing her own personal experience with racism. She joined the CCJ Task Force on Policing, serves on the Commission on Protecting Privacy and Preventing Discrimination, and has prioritized de-escalation training and community policing.",
+   "sources": [
+    "https://www.kuer.org/justice/2020-06-01/salt-lake-county-sheriff-rosie-rivera-says-police-need-to-be-held-accountable",
+    "https://counciloncj.org/ccj-directory/rosie-rivera/",
+    "https://www.saltlakecounty.gov/sheriff/rosie-rivera/"
+   ],
+   "name": "Rosie Rivera",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Sheriff",
+   "running_for": "Salt Lake County Sheriff",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Smith steered the Maryland Police Accountability Act of 2021 through Judicial Proceedings. He supported officer discipline reforms, civilian oversight boards, and body camera requirements.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0071?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0074?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0599?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0600?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "William Smith",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c0bf0c64-6254-40a7-b810-8717977759dd",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/solomon01"
+   ],
+   "name": "Jared Solomon",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Soto-Martinez co-introduced a motion to reform LAPD discipline systems to make officer suspension and termination easier, voted against the August 2023 police raises package warning it would divert funding from mental health and homeless services, and dissented on the May 2024 budget that prioritized LAPD while cutting other departments. He seconded CF 23-0002-S37 supporting SB 50 (prohibiting police traffic stops for low-level violations). His record shows strong civilian oversight and accountability orientation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=23-0002-S37"
+   ],
+   "name": "Hugo Soto-Martinez",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": "Los Angeles City Council District 13",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "46c6ebb0-137a-46aa-b6fa-17af31aa4ef1",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Spanberger voted for the George Floyd Justice in Policing Act, which would have banned chokeholds, required body cameras, ended qualified immunity for law enforcement officers, and created a national registry of police misconduct. She distinguished between supporting law enforcement broadly and holding specific officers accountable for misconduct — opposing defund the police while backing accountability reforms that she argued would strengthen public trust.",
+   "sources": [
+    "https://ballotpedia.org/Abigail_Spanberger",
+    "https://ontheissues.org/VA/Abigail_Spanberger.htm"
+   ],
+   "name": "Abigail Spanberger",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Governor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "203a0228-7a63-4a6a-b26d-fa45ba139472",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0794 (Public Safety - Maryland Police Training and Standards Commission - Prohibition Against Certain Affiliation or Support by Police Officers) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0794?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/spiegel01"
+   ],
+   "name": "Ryan Spiegel",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "ac558ee8-ecae-47b6-a25e-46307521b4af",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0634 (Police Training - Autism and Dementia (LEAD Act of 2026)) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0634?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stewart01"
+   ],
+   "name": "Vaughn Stewart",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Trahan co-sponsored the George Floyd Justice in Policing Act (H.R. 1280), which lowered the criminal intent standard for federal civil rights prosecutions, restricted qualified immunity, and required body cameras for federal officers. She supports civilian oversight and stronger accountability for police misconduct.",
+   "sources": [
+    "https://trahan.house.gov/issues",
+    "https://ballotpedia.org/Lori_Trahan"
+   ],
+   "name": "Lori Trahan",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-03",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored HB0350 (2026) — requiring law enforcement use of body-worn cameras; supports transparency and accountability measures for police conduct.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+   ],
+   "name": "Veronica Turner",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6c14655c-5643-4f0e-8950-a53f60394bf7",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Platform centered on misconduct; cites lack of accountability in town PD and open-meetings violations; wants to rid government of bad actors (2025 JT Q&A)",
+   "sources": [
+    "https://journaltimes.com/news/local/government-politics/elections/article_bbc94464-010c-11f0-8991-7318ec97815f.html"
+   ],
+   "name": "Robert Ulander",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Town Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "458a60ba-a235-4b36-80bb-8b537375a4ff",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0634 (Police Training - Autism and Dementia (LEAD Act of 2026)) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0634?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/vogel01"
+   ],
+   "name": "Joe Vogel",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Waldstreicher backed the Maryland Police Accountability Act (2021) and supported subsequent police reform legislation including body camera requirements and oversight measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0071?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0074?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Warner cosponsored the Justice in Policing Act (S.3912, Sep 2020), which would have banned chokeholds, established a national police misconduct registry, and limited qualified immunity. OnTheIssues notes he was endorsed by the Virginia Police Benevolent Association in 2008 and rated 64% by NAPO (National Association of Police Organizations) as of Dec 2014. He supports reform and accountability measures but also backs law enforcement funding — a reform-oriented without-extreme-accountability position.",
+   "sources": [
+    "https://www.congress.gov/bill/116th-congress/senate-bill/3912",
+    "https://ontheissues.org/Senate/Mark_Warner.htm"
+   ],
+   "name": "Mark Warner",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": "U.S. Senate Virginia",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "dd08c9de-076d-40ee-ab27-9298bbb72d1a",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Warren has stated 'racist policing isn't one bad apple; it's structural,' supporting systemic accountability reforms. She backs independent investigation of misconduct and calls for ending stop-and-frisk practices targeted at communities of color. Her approach reflects settling valid claims quickly and pursuing real accountability rather than reflexively defending government employees.",
+   "sources": [
+    "https://www.ontheissues.org/Elizabeth_Warren.htm",
+    "https://en.wikipedia.org/wiki/Political_positions_of_Elizabeth_Warren"
+   ],
+   "name": "Elizabeth Warren",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Washington supported the Maryland Police Accountability Act of 2021 and backed subsequent police reform measures. As a Prince George's County senator, accountability in policing is a top priority.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "name": "Alonzo Washington",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilkins01"
+   ],
+   "name": "Jheanelle Wilkins",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "3342ae40-cc86-43e5-8581-3237b6aa8f08",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Wong's office conducted an independent performance audit of Berkeley Police Department operations — an external accountability review outside the police chain of command — consistent with the stance that an accountability office works for the public and investigates independently. As City Auditor she reviews police operations for efficiency and compliance rather than defending city departments.",
+   "sources": [
+    "https://www.jennyforauditor.com",
+    "https://berkeleyca.gov/auditor"
+   ],
+   "name": "Jenny Wong",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "City Auditor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "36171e41-704b-4bf9-b300-755afe4ee06f",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "reasoning": "Sponsored/co-sponsored HB0155 (Public Safety - Law Enforcement Officers - Prohibition on Face Coverings) on law enforcement accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woorman01"
+   ],
+   "name": "Teresa Woorman",
+   "topic_key": "judicial-police-accountability",
+   "topic": "Police Accountability",
+   "judicial_role": "city_attorney_da",
+   "offices": "Delegate",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "85f785f3-08c3-4d80-ba9a-96b81be758c0",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Supports evidence-based diversion programs that repair harm",
+   "sources": [
+    "https://www.richelle4danecounty.org/issues"
+   ],
+   "name": "Richelle Andrae",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Auchincloss sponsors police accountability legislation and opposes punitive-first approaches, but as a moderate New Democrat he has not explicitly advocated for deprioritizing enforcement of any specific crime category. His record suggests balanced prosecution priorities — reducing mandatory minimums for nonviolent offenses while maintaining vigorous prosecution of violent and property crimes.",
+   "sources": [
+    "https://web.archive.org/web/20221209104046/https://auchincloss.house.gov/issues",
+    "https://ballotpedia.org/Jake_Auchincloss"
+   ],
+   "name": "Jake Auchincloss",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-04",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "122f1897-2dae-4f21-bee0-1c02c95e9e3a",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Barger endorsed the recall of DA George Gascón, calling a diversion program failure the \"last straw\" and endorsing accountability-focused prosecution. She supported Proposition 36 (2024), which reinstated criminal penalties for repeat drug/theft offenders, stating it \"will reinstate accountability on crimes destroying the quality of life.\" She was critical of Prop 47's elimination of drug courts and rehabilitation incentives.",
+   "sources": [
+    "https://kathrynbarger.lacounty.gov/barger-issues-statement-on-supporting-prop-36/",
+    "https://kathrynbarger.lacounty.gov/?s=Gasc%C3%B3n+recall"
+   ],
+   "name": "Kathryn Barger",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Criminal justice work consistently emphasizes diversion over prosecution: supported pretrial services, expanded alternatives to incarceration, and argued mandatory minimum sentences cause disproportionate harm. Harm reduction advocacy including supervised injection facilities and marijuana legalization reflects a framework where prosecution is a last resort.",
+   "sources": [
+    "https://willbrownsberger.com/criminal-justice-reform/",
+    "https://willbrownsberger.com/bail-reform-in-the-criminal-justice-package/"
+   ],
+   "name": "William Brownsberger",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Suffolk and Middlesex District",
+   "running_for": "MA State Senate Suffolk and Middlesex District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Clark's documented support for alternative sentencing, diversion programs, and job skills for inmates since the 1990s informs a prosecution philosophy prioritizing treatment and rehabilitation over incarceration for nonviolent offenses. She backed reducing mandatory minimums for drug offenses and shifting prosecutorial resources toward violent crime prevention.",
+   "sources": [
+    "https://katherineclark.house.gov/issues",
+    "https://www.ontheissues.org/MA/Katherine_Clark.htm"
+   ],
+   "name": "Katherine Clark",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-05",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Decker co-sponsored Overdose Prevention Centers (treating drug use as a health matter rather than criminal) and Age of Criminal Majority to 21 (diversion over prosecution for young adults), reflecting a framework where connection to treatment and services is preferred over a criminal record.",
+   "sources": [
+    "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/",
+    "https://actonmass.org/overdose-prevention-centers/"
+   ],
+   "name": "Marjorie Decker",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative, 25th Middlesex District",
+   "running_for": "MA House 25th Middlesex District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Support for the 2018 criminal justice reform (mandatory minimum reductions, diversion programs), juvenile justice bills limiting deceptive interrogation practices, and reentry programs reflects a preference for diversion when available. S.1065 explicitly protects juveniles from coercive interrogation tactics that produce false confessions.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/S1065",
+    "https://malegislature.gov/Bills/190/H4012"
+   ],
+   "name": "Sal DiDomenico",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Middlesex and Suffolk District",
+   "running_for": "MA State Senate Middlesex and Suffolk District",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "184ffdfb-7026-4d65-8916-3bc31bf14d2a",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Her reform package expands Community Restorative Court and calls on law enforcement to expand pre-arrest diversion practices",
+   "sources": [
+    "https://danecounty.gov/PressDetail/10648"
+   ],
+   "name": "Analiese Eicher",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "County Board Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Hernandez's entire career prior to elected office focused on diversion, community reinvestment, and reducing incarceration as alternatives to prosecution. She co-chaired Measure J (2020) directing resources away from the justice system toward community-based care, and co-founded La Defensa specifically to reduce women's incarceration. Her voting record and background reflect a diversion-and-rehabilitation-first prosecution philosophy.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eunisses_Hernandez",
+    "https://justicelanow.org"
+   ],
+   "name": "Eunisses Hernandez",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": "Los Angeles City Council District 1",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "81dfcf88-c739-4461-9d16-931f8d51a8c5",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Horvath explicitly stated in 2025: 'In 2020, the people of Los Angeles County overwhelmingly approved Measure J to shift County resources away from incarceration and toward community-based investments.' She championed closure of Men's Central Jail, led juvenile justice transformation away from the Probation Department toward a youth development model, and opposed the Grants Pass ruling that 'green lights the criminalization of homelessness and poverty.' Her 2024-25 budget directed 28 positions to youth justice reform and 10 positions to jail closure implementation.",
+   "sources": [
+    "https://lindseyhorvath.lacounty.gov/reaffirm-measure-j/",
+    "https://lindseyhorvath.lacounty.gov/chair-horvath-grants-pass-decision/",
+    "https://lindseyhorvath.lacounty.gov/supervisor-priorities-budget-changes/"
+   ],
+   "name": "Lindsey P. Horvath",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": "Los Angeles County Board of Supervisors District 3",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Did not co-sponsor Life Without Parole per Act on Mass; her entire criminal justice record supports diversion, medical parole, and age-of-majority reforms. Consistently favors diversion programs when available over maximum incarceration.",
+   "sources": [
+    "https://web.archive.org/web/20260412023712/https://actonmass.org/legislators/patricia-jehlen/",
+    "https://malegislature.gov/Bills/194/S2857"
+   ],
+   "name": "Patricia Jehlen",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator, Second Middlesex District",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "faf86b5b-5add-4afb-a8e2-96b3e8be4b78",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Markey's 78% CURE rating, opposition to mandatory minimums, and rehabilitation-focused criminal justice stance all indicate he favors diversion programs and treatment over prosecution for non-violent offenses. He has supported legislation expanding drug courts, mental health courts, and community-based diversion programs. He opposes the death penalty and has supported clemency reforms allowing commutation of harsh sentences imposed under now-repealed mandatory minimum provisions.",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+    "https://www.markey.senate.gov/news/press-releases",
+    "https://en.wikipedia.org/wiki/Ed_Markey"
+   ],
+   "name": "Edward Markey",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": "U.S. Senate Massachusetts",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "McGovern consistently favors diversion over prosecution: he supported drug courts, opposed mandatory minimum sentences for drug offenses, and backed decriminalization of marijuana possession. He has consistently voted to reduce incarceration for non-violent offenses and shift prosecutorial resources away from low-level drug crimes toward violent crime.",
+   "sources": [
+    "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+    "https://mcgovern.house.gov/issues"
+   ],
+   "name": "Jim McGovern",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-02",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Mitchell's entire criminal justice platform is built around diversion over prosecution: Care First Jails Last, the Care First Pretrial Agency, jail-based diversion expansion, juvenile hall depopulation, and the county's Violence Prevention strategy in parks. As a state senator she authored SB 190 to eliminate fees that trapped juveniles in the system. She has consistently prioritized treatment, rehabilitation, and community-based alternatives over prosecution.",
+   "sources": [
+    "https://mitchell.lacounty.gov/?s=care+first",
+    "https://mitchell.lacounty.gov/?s=diversion",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB190"
+   ],
+   "name": "Holly J. Mitchell",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Supervisor",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Moulton supports legalizing marijuana and reducing drug-based convictions, and backs diversion programs over incarceration for non-violent offenses. His criminal justice philosophy consistently prioritizes alternatives to prosecution and rehabilitation for non-violent cases.",
+   "sources": [
+    "https://www.ontheissues.org/senate/Seth_Moulton.htm",
+    "https://www.ontheissues.org/Seth_Moulton.htm"
+   ],
+   "name": "Seth Moulton",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. Senate Massachusetts",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "e30ddde5-a722-477b-837b-056fdc7e2d6b",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Nazarian voted AYE on AB 2542 (2020, criminal procedure anti-discrimination), AB 1076 (automatic criminal record relief), and SB 10 (cash bail elimination with risk-based pretrial detention). These votes favor diversion and rehabilitation-oriented prosecution priorities. He also authored AB 1031 (2019-20, Youth Substance Use Disorder Treatment and Recovery Program Act), signaling treatment-over-incarceration for drug offenses.",
+   "sources": [
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB2542",
+    "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB1076",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201920200AB1031"
+   ],
+   "name": "Adrin Nazarian",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Neal's criminal justice record favors deprioritizing prosecution of non-violent drug offenses — he voted to reduce marijuana sentencing disparities and supported sentencing reform that shifted enforcement resources toward violent crime. His CURE rating (78%) and First Step Act support reflect a prosecution philosophy emphasizing diversion and treatment over incarceration.",
+   "sources": [
+    "https://www.ontheissues.org/ma/Richard_Neal.htm",
+    "https://ballotpedia.org/Richard_Neal"
+   ],
+   "name": "Richard Neal",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-01",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Pressley has consistently supported progressive prosecutorial approaches — declining to prosecute low-level offenses, diversion for drug possession, and focusing resources on violent crime. She has backed reform prosecutors in Boston and nationally. She introduced the People's Justice Guarantee which would direct prosecutorial resources toward serious crimes while decriminalizing many nonviolent offenses. She has explicitly endorsed the \"harm reduction\" prosecutorial philosophy.",
+   "sources": [
+    "https://congress.gov/bill/117th-congress/house-bill/1442",
+    "https://congress.gov/member/ayanna-pressley/P000617"
+   ],
+   "name": "Ayanna Pressley",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-07",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Smith has used the Judicial Proceedings chair role to prioritize balanced prosecution approaches, supporting reforms to reduce mass incarceration while maintaining public safety.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "William Smith",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Senator",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Soto-Martinez's overall policy framework prioritizes rehabilitation and diversion over punitive prosecution. His votes against LAPD budget increases, support for mental health alternatives, and background as a community organizer fighting for housing and labor rights reflect a diversion-and-rehabilitation orientation. He has publicly framed homelessness and crime as failures of social services rather than individual wrongdoing requiring prosecution.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez"
+   ],
+   "name": "Hugo Soto-Martinez",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Council Member",
+   "running_for": "Los Angeles City Council District 13",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Trahan supports rehabilitation and treatment over incarceration for nonviolent drug offenses, co-sponsored federal death penalty abolition, and backed reducing prosecutorial use of mandatory minimums. Her record reflects diverting prosecutorial resources away from low-level drug offenses toward violent crime prevention.",
+   "sources": [
+    "https://trahan.house.gov/issues",
+    "https://ballotpedia.org/Lori_Trahan"
+   ],
+   "name": "Lori Trahan",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Representative",
+   "running_for": "U.S. House MA-03",
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "c7ee1c03-63d7-4107-b076-72b1f059b0f7",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Authored the ordinance that decriminalized cannabis possession in Madison",
+   "sources": [
+    "https://captimes.com/news/government/madison-spring-election-q-a-with-district-4-city-council-candidates/article_d6cde8e6-ff4f-11ef-9acd-ff53e73aaf07.html"
+   ],
+   "name": "Michael Verveer",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "Alder, District 4",
+   "running_for": null,
+   "qualifies_now": false
+  },
+  {
+   "politician_id": "dd08c9de-076d-40ee-ab27-9298bbb72d1a",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "reasoning": "Warren's criminal justice platform emphasizes diversion programs, rehabilitation, and reducing mass incarceration through alternatives to prosecution. She supports treatment-based alternatives for non-violent offenses and has called for complete criminal justice restructuring. This reflects a philosophy of using diversion when community safety is not at risk, reserving prosecution for cases requiring it.",
+   "sources": [
+    "https://www.ontheissues.org/Elizabeth_Warren.htm",
+    "https://en.wikipedia.org/wiki/Political_positions_of_Elizabeth_Warren"
+   ],
+   "name": "Elizabeth Warren",
+   "topic_key": "judicial-prosecution-priorities",
+   "topic": "Prosecution Priorities",
+   "judicial_role": "city_attorney_da",
+   "offices": "U.S. Senate - Massachusetts",
+   "running_for": null,
+   "qualifies_now": false
+  }
+ ]
+}
