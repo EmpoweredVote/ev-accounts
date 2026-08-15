@@ -1,0 +1,730 @@
+{
+ "n_orphans": 51,
+ "matched": [
+  {
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Feldman signed a June 2025 state policymaker coalition letter opposing federal AI preemption in the reconciliation bill — specifically opposing the proposed 10-year freeze on state and local regulation of AI and automated decision systems.",
+   "sources": [
+    "https://ari.us/wp-content/uploads/2025/06/State-Policymaker-Coalition-Letter-Oppose-AI-Preemption-6-3-25.pdf",
+    "https://ballotpedia.org/Brian_Feldman"
+   ],
+   "name": "Brian Feldman",
+   "topic": "AI Oversight",
+   "mig": "1736",
+   "candidates_read": 9,
+   "why": "record shows disclosure and liability, no bans"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Waldstreicher supports campaign finance reform and transparency. He has backed disclosure requirements for dark money spending in Maryland elections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Campaign Finance",
+   "mig": "1736",
+   "candidates_read": 13,
+   "why": "disclosure/anti-fraud, not limits on corporate or dark money"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "reasoning": "Smith chairs the Senate Judicial Proceedings Committee, overseeing criminal law reform. He has supported sentencing reform, second chance legislation, and reentry programs for formerly incarcerated individuals.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "William Smith",
+   "topic": "Criminal Justice",
+   "mig": "1734",
+   "candidates_read": 106,
+   "why": null
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "reasoning": "Waldstreicher serves on the Judicial Proceedings Committee and has supported criminal justice reform measures including sentencing reform and second-chance opportunities for formerly incarcerated individuals.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Criminal Justice",
+   "mig": "1734",
+   "candidates_read": 64,
+   "why": null
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Charles supports economic development investment in Prince George's County including workforce training and small business support in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "name": "Nick Charles",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 34,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Ellis supports economic development in Charles County including workforce training and attracting businesses to his growing suburban district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "name": "Arthur Ellis",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 42,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Harris supports economic development investment in Prince George's County including workforce training and job creation for underserved communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "name": "Kevin Harris",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 21,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Henson supports economic development for Annapolis and Anne Arundel County including small business support and workforce development programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic": "Economic Development Incentives",
+   "mig": "1734",
+   "candidates_read": 24,
+   "why": null
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Kagan supports economic development through public investment and supports workforce development programs that benefit Montgomery County's technology and government contractor economy.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "name": "Cheryl Kagan",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 39,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Love supports economic development through public investment in education and workforce development. She backed economic development legislation benefiting Montgomery County businesses and workers.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "name": "Sara Love",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 12,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Muse supports economic development investment in Prince George's County including job creation and community reinvestment programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "name": "C. Anthony Muse",
+   "topic": "Economic Development Incentives",
+   "mig": "1734",
+   "candidates_read": 48,
+   "why": null
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Waldstreicher supports economic development through public investment and innovation economy support. He backs workforce training and technology sector growth in Montgomery County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 49,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Washington supports economic development through public investment in Prince George's County. He backs job creation programs and workforce development for historically underinvested communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "name": "Alonzo Washington",
+   "topic": "Economic Development Incentives",
+   "mig": "1734",
+   "candidates_read": 94,
+   "why": null
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "reasoning": "Watson supports economic development through public investment in Prince George's County. He backs job creation and workforce development programs for his constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "name": "Ron Watson",
+   "topic": "Economic Development Incentives",
+   "mig": "1736",
+   "candidates_read": 14,
+   "why": "targeted-industry incentives without the job-quality/CBA clause"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "reasoning": "Ellis is a strong advocate for Chesapeake Bay protection and clean water standards. His Southern Maryland district directly depends on the health of the Bay ecosystem.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "name": "Arthur Ellis",
+   "topic": "Environmental Protection vs. Development",
+   "mig": "1734",
+   "candidates_read": 14,
+   "why": null
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "reasoning": "Harris supports environmental justice for communities of color disproportionately affected by pollution in Prince George's County. He backed Chesapeake Bay protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "name": "Kevin Harris",
+   "topic": "Environmental Protection vs. Development",
+   "mig": "1734",
+   "candidates_read": 12,
+   "why": null
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "reasoning": "Henson represents the Annapolis area on the Chesapeake Bay and is a strong advocate for Bay protection, clean water standards, and stormwater management.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic": "Environmental Protection vs. Development",
+   "mig": "1736",
+   "candidates_read": 15,
+   "why": "no tree-canopy or developer-offset instrument"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "reasoning": "Kramer has supported Chesapeake Bay protection, clean water standards, and local environmental legislation. He serves on committees overseeing environmental policy.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "name": "Benjamin Kramer",
+   "topic": "Environmental Protection vs. Development",
+   "mig": "1734",
+   "candidates_read": 25,
+   "why": null
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "reasoning": "Washington has backed environmental justice measures addressing disproportionate pollution burdens in PG County communities. He supports Chesapeake Bay protection and clean air standards.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "name": "Alonzo Washington",
+   "topic": "Environmental Protection vs. Development",
+   "mig": "1734",
+   "candidates_read": 21,
+   "why": null
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Harris represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "name": "Kevin Harris",
+   "topic": "Immigration",
+   "mig": "1736",
+   "candidates_read": 3,
+   "why": "ladder is public-service access; the record is enforcement cooperation"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Kagan represents a district with significant immigrant communities including many federal workers. She supports comprehensive immigration reform and opposes harsh immigration enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "name": "Cheryl Kagan",
+   "topic": "Immigration",
+   "mig": "1736",
+   "candidates_read": 9,
+   "why": "ladder is public-service access; the record is enforcement cooperation"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Love represents a district with significant immigrant populations. She supports comprehensive immigration reform and opposes harsh enforcement-only approaches.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "name": "Sara Love",
+   "topic": "Immigration",
+   "mig": "1736",
+   "candidates_read": 10,
+   "why": "ladder is public-service access; the record is enforcement cooperation"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Smith represents a district with many immigrant families. He supports comprehensive immigration reform and state immigrant protections, opposing harsh enforcement measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "name": "William Smith",
+   "topic": "Immigration",
+   "mig": "1736",
+   "candidates_read": 17,
+   "why": "ladder is public-service access; the record is enforcement cooperation"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Waldstreicher represents a district with many immigrants and federal workers. He strongly supports comprehensive immigration reform and state-level immigrant protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Immigration",
+   "mig": "1736",
+   "candidates_read": 10,
+   "why": "ladder is public-service access; the record is enforcement cooperation"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Charles supports community-centered public safety combining prevention, mental health resources, and police accountability alongside enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "name": "Nick Charles",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 55,
+   "why": null
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Ellis supports a balanced public safety approach combining prevention programs and enforcement. He backed police accountability legislation while supporting community policing.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "name": "Arthur Ellis",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 31,
+   "why": null
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Henson supports a balanced public safety approach combining prevention, mental health resources, and community policing alongside accountability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 49,
+   "why": null
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Muse supports strong public safety in Prince George's County including community policing and crime prevention programs. He takes a balanced approach to public safety and criminal justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "name": "C. Anthony Muse",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 154,
+   "why": null
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Rosapepe supports a balanced public safety approach combining enforcement with prevention and mental health resources. He backed police accountability reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "name": "Jim Rosapepe",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 113,
+   "why": null
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Waldstreicher supports a holistic public safety approach including criminal justice reform and community investment. He backed police accountability legislation while supporting community policing.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 242,
+   "why": null
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "reasoning": "Watson supports community-centered public safety including prevention programs, mental health resources, and police accountability alongside enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "name": "Ron Watson",
+   "topic": "Public Safety Approach",
+   "mig": "1734",
+   "candidates_read": 64,
+   "why": null
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "reasoning": "Love supported independent redistricting reform to reduce partisan gerrymandering in Maryland. She backed efforts to create more transparent and fair district mapping processes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "name": "Sara Love",
+   "topic": "Redistricting",
+   "mig": "1736",
+   "candidates_read": 3,
+   "why": "district STANDARDS, not an independent commission"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Benson supports progressive taxation to fund public education and services. She voted for the Blueprint for Maryland's Future funding mechanisms and progressive tax reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "name": "Joanne Benson",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 150,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Charles supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "name": "Nick Charles",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 40,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Ellis supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1030?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "name": "Arthur Ellis",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 39,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Henson supports progressive taxation to fund public services and education. She backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 46,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Kagan supports progressive taxation to fund public services. She backs higher taxes on corporations and wealthy individuals to fund education and healthcare.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "name": "Cheryl Kagan",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 74,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Kramer supports progressive taxation to fund public education and services. He voted for the Blueprint for Maryland's Future funding mechanisms including higher corporate and income taxes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "name": "Benjamin Kramer",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 81,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Muse supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "name": "C. Anthony Muse",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 76,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Rosapepe supports progressive taxation to fund public investment. He backed the Blueprint for Maryland's Future funding mechanisms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "name": "Jim Rosapepe",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 194,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Smith supports progressive taxation. He backed the Blueprint for Maryland's Future funding and higher corporate tax rates to fund public investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1372?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "name": "William Smith",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 119,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Waldstreicher supports progressive tax reform including higher taxes on corporations and wealthy individuals to fund the Blueprint for Maryland's Future education investments.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 92,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Watson supports progressive taxation to fund public services. He backed the Blueprint for Maryland's Future funding and higher corporate taxes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "name": "Ron Watson",
+   "topic": "Taxes",
+   "mig": "1736",
+   "candidates_read": 26,
+   "why": "MAGNITUDE — ch2 differs from ch1 only in degree; sponsorship cannot prove \"moderately\""
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Love supports inclusive policies for transgender athletes. She backed Maryland legislation protecting transgender student rights and opposed restrictive bills targeting trans youth.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "name": "Sara Love",
+   "topic": "Trans Athletes",
+   "mig": "1736",
+   "candidates_read": 10,
+   "why": "never legislated in the MD corpus"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Smith has supported transgender student rights including inclusive school sports policies, opposing restrictive bills targeting trans youth.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "name": "William Smith",
+   "topic": "Trans Athletes",
+   "mig": "1736",
+   "candidates_read": 5,
+   "why": "never legislated in the MD corpus"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "name": "Jeff Waldstreicher",
+   "topic": "Trans Athletes",
+   "mig": "1736",
+   "candidates_read": 4,
+   "why": "never legislated in the MD corpus"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "reasoning": "Rosapepe served as US Ambassador to Romania under President Clinton, giving him strong Eastern European security awareness. He supports US assistance to Ukraine defending against Russian aggression.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "name": "Jim Rosapepe",
+   "topic": "Ukraine Support",
+   "mig": "1736",
+   "candidates_read": 3,
+   "why": "a federal question a state record cannot reach"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "reasoning": "Ellis consistently backs voting rights including automatic voter registration and early voting expansion to increase ballot access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "name": "Arthur Ellis",
+   "topic": "Voting Rights",
+   "mig": "1731",
+   "candidates_read": 32,
+   "why": "precinct procedures, absentee envelope party affiliation, correctional-facility registration, elderly/disabled polling procedures — none expands early voting or no-excuse mail"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "reasoning": "Henson consistently backs voting rights including automatic voter registration and early voting expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "name": "Shaneka Henson",
+   "topic": "Voting Rights",
+   "mig": "1736",
+   "candidates_read": 13,
+   "why": "no early-voting or no-excuse-mail instrument"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "reasoning": "Love is a strong supporter of voting access and election integrity from the pro-voter perspective. She backed automatic voter registration and mail voting expansion in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "name": "Sara Love",
+   "topic": "Voting Rights",
+   "mig": "1736",
+   "candidates_read": 23,
+   "why": "no early-voting or no-excuse-mail instrument"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "reasoning": "Rosapepe is a consistent voting rights supporter including automatic voter registration and early voting expansion. As a former Democratic leader, he strongly backs voter access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "name": "Jim Rosapepe",
+   "topic": "Voting Rights",
+   "mig": "1732",
+   "candidates_read": 50,
+   "why": "deep election-law record but nothing expanding early voting or no-excuse mail; his Universal Voter Registration Act is chair 1's language, a re-seat to consider on evidence later"
+  }
+ ],
+ "unmatched": []
+}
