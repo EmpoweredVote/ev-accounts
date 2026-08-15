@@ -46,7 +46,9 @@ jobs:
         run: npm run test:unit
 
   migrations:
-    name: migration numbering
+    # Static migration hygiene: numbering collisions, and answer-deletes that never decided what
+    # happens to their context. Both read files only -- no DATABASE_URL, so they run on forks too.
+    name: migration hygiene
     runs-on: ubuntu-latest
     # Runs on PRs AND on pushes to master.
     #
@@ -76,6 +78,23 @@ jobs:
         run: node backend/scripts/check-migration-numbers.mjs
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
+
+      # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
+      # (1735, 1738, 1739 and the four Maryland passes). Every decision about the ANSWER was correct;
+      # none of them made a decision about the CONTEXT, so each silently created ORPHAN_CONTEXT
+      # violations. The gate went 50 -> 224 and CI stayed red for 19 runs before anyone looked.
+      #
+      # This is a LINT, not a constraint, and deliberately so: an FK requiring every context row to
+      # have an answer would be wrong, because 404 rows are context-without-answer by design
+      # (documented blanks). The property being enforced is "whoever removed an answer thought about
+      # the context" -- a property of the change, not of the data.
+      #
+      # It lives in THIS job rather than alongside check:stance-sources for two reasons: it is static
+      # (no DATABASE_URL, so it also runs on forks), and the stance job is exactly where a failing
+      # early step masked this class for two days. A guard against that failure should not be filed
+      # behind the step that caused it.
+      - name: Check answer deletes decide what happens to their context
+        run: node backend/scripts/check-answer-delete-guards.mjs
 
   occupancy:
     name: office occupancy (ADR 0002)

@@ -13,6 +13,8 @@
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
+    "check:answer-delete-guards": "node scripts/check-answer-delete-guards.mjs",
+    "check:answer-delete-guards:list": "node scripts/check-answer-delete-guards.mjs --list",
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:reachability": "node scripts/check-address-reachability.mjs",

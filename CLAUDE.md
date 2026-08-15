@@ -91,6 +91,21 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
+- 🔴 **Deleting from `inform.politician_answers` obliges you to decide what happens to the matching
+  `inform.politician_context` row, in the same migration.** Removing the answer removes the chair; the
+  reasoning that argued for that chair survives, still asserting a position, attached to nothing. It
+  is not published while the pair has no answer — but write an answer for that pair later and
+  `Citations.jsx` renders the old prose verbatim under "Why this position?".
+  Paste the guard from `backend/migrations/_templates/answer_delete_context_guard.sql` and state a
+  `-- @context-decision:` line; `npm run check:answer-delete-guards --prefix backend` enforces it
+  (CI job "migration hygiene"). Seven passes skipped this on 2026-08-12/13 and took `ORPHAN_CONTEXT`
+  from 50 to 224.
+  ⚠ **A guard asserting the context SURVIVED is not this guard** — 1735 had one and passed green while
+  creating 117 violations. The test is whether the surviving context is still a *gate-visible orphan*.
+  ⚠ Two dispositions, and they are opposites: if the ladder asks about a role the person neither holds
+  nor seeks, **delete** the context (a blank would assert an untested absence); if the topic genuinely
+  applies and the record was read, **rewrite it as a documented blank**. Never make rows fall out by
+  widening the carve-out regex in `check-stance-sources.mjs`.
 
 ## Repo facts worth knowing
 
