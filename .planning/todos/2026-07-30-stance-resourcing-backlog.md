@@ -60,16 +60,58 @@ disagree. Rollback:
 nothing". That is not what was true: the question does not apply to these people at all. Rewriting 119
 rows to assert an untested absence would put a false statement in a voter-facing field to quiet a gate.
 
-### ▶ OWED: ~80 rows of good evidence lost their ladder
+### ✅ CLOSED — the "~80 relocatable rows" was wrong, and the real yield is ONE (mig 1758)
 
-Roughly 80 of the 119 carried **real, named-instrument evidence** — Warren co-sponsoring the No Money
-Bail Act, Brownsberger authoring the 2018 CJ reform law, Nazarian's AYE on SB 10, Mitchell's Care First
-Pretrial Agency motion. The research is sound; it was attached to a ladder its subject cannot stand on.
-**`judicial-criminal-justice` and `public-safety-approach` are live and role-UNSCOPED**, so a
-legislator can hold a position on either — that may be where this evidence belongs.
-⚠ **This is re-research, NOT a re-parenting UPDATE.** Bail-reform evidence supports a *bail* chair, not
-automatically a *criminal justice* chair. Per the standing rule, evidence must describe THAT chair.
-(The ~80 is a first-cut classifier count and every first cut over-fires — treat it as a ceiling.)
+I wrote above that ~80 of the 119 carried real named-instrument evidence that might belong on
+`judicial-criminal-justice` or `public-safety-approach`. **That was a claim about EVIDENCE QUALITY,
+and evidence quality is not the binding constraint.** Measured
+(`scripts/judicial-relocation-survey.mjs`, data in `2026-08-14-judicial-relocation-survey.json`):
+
+🔴 **1. THE DESTINATIONS ARE ALREADY OCCUPIED.** **96 of the 119** politicians already hold an answer
+or context on `judicial-criminal-justice`; **102** on `public-safety-approach`. Only **23** and **17**
+slots are free. For the rest there is nothing to relocate *into*, and overwriting would destroy
+research that was done properly.
+
+🔴 **2. THE LADDERS ASK DIFFERENT QUESTIONS THAN THE EVIDENCE ANSWERS.** Read the chair text, not the
+topic name:
+- `public-safety-approach` = *"How should your community **fund and operate** public safety services?"*
+  — every chair is about the police **budget and staffing**. The **70 Police Accountability rows are
+  about officer MISCONDUCT** (qualified immunity, Justice in Policing Act). Both mention police; they
+  answer different questions. **On-topic by VOCABULARY, not by RATIONALE** — the test that blanked
+  Taplin in 1738.
+- `judicial-criminal-justice` = *"When someone breaks the law, what matters most?"* — a
+  rehabilitation↔punishment axis about the **purpose of the sanction**. The **26 Bail rows are about
+  detention BEFORE adjudication**, of people not convicted of anything. The ladder does not reach them.
+- **Only Prosecution Priorities (diversion vs prosecute) maps onto that axis at all.**
+
+🔴 **3. `public-safety-approach` SAYS "YOUR COMMUNITY", AND 69 OF THE 119 ARE FEDERAL OR STATE
+OFFICEHOLDERS.** A US Senator has no community police budget. Relocating those would **re-commit the
+exact category error 1755 removed**, wearing a friendlier topic name. **Mark Warner** was among the
+rows whose public-safety slot was free.
+
+Intersecting all three leaves **three** candidates; reading them leaves **one**:
+- ❌ **Hayes / Bail → CJ** — rejected twice over: pretrial detention is not what the ladder asks, and
+  the sources are a bare `mgaleg` member page (single session) plus a Ballotpedia bio. No instrument.
+- ❌ **Verveer / Prosecution → CJ** — Madison's cannabis decriminalisation ordinance says what should
+  **not be a crime**, not what matters once someone breaks the law. **Proves DIRECTION, cannot
+  discriminate a chair.**
+- ✅ **Andrae / Prosecution → CJ, seated chair 2 (mig 1758).** Verified against the live page
+  **before** seating: `richelle4danecounty.org/issues` (raw 6,640c) carries *"provide the necessary
+  resource for evidence-based diversion programs that repair harm"* and *"implement Community Court"*
+  verbatim. Chair 2 is *"a fair chance to make things right — through treatment, community service, or
+  restitution"*, and this **follows 1734's precedent**, which seated Alonzo Washington at this same
+  chair on restorative-practices bills because *"making things right" is chair 2's own idea*.
+  ⚠ Not a clean single reading — the same paragraph says the reforms *"balance public safety"* (ch3)
+  and address *"root causes"* (ch1). Neither is a **mechanism**; chair 2's mechanism is named outright.
+  Recorded so the next reader sees the competing sentences instead of rediscovering them.
+
+🔑 **THE TRANSFERABLE LESSON: "this evidence is good" and "this evidence can move" are different
+questions, and the second is mostly answered by the DESTINATION, not the source.** Before proposing a
+relocation, check (a) is the destination slot free, (b) does the destination's chair text ask the same
+question, (c) does the destination's scope include this officeholder. All three failed here at scale.
+This is the same shape as the LA voter-guide cluster (1 of 34 survived): **rich sourcing ≠ scorable.**
+The 119 remain preserved verbatim in `2026-08-14-judicial-orphan-context-1755-rollback.json`.
+**Next free migration: 1759.**
 
 ### ✅ MD 51 — rewritten as documented blanks by 1756
 

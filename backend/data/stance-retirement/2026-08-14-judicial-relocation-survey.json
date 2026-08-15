@@ -1,0 +1,954 @@
+[
+ {
+  "name": "Jake Auchincloss",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kathryn Barger",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Rob Bonta",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Attorney General",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "William Brownsberger",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Senator, Suffolk and Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Andrea Campbell",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Attorney General",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "David Chiu",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "City Attorney",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Katherine Clark",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Sim Gill",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "District Attorney",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Antonio Hayes",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Eunisses Hernandez",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lindsey P. Horvath",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Patricia Jehlen",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Senator, Second Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Brooke Jenkins",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "District Attorney",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Edward Markey",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jim McGovern",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Holly J. Mitchell",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Adrin Nazarian",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Richard Neal",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Ayanna Pressley",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Rosie Rivera",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Sheriff",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jeffrey S. Gray",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "County Attorney",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "William Smith",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lori Trahan",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jeff Waldstreicher",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Elizabeth Warren",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jamila Woods",
+  "source_topic": "judicial-bail-pretrial",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Gabriel Acevero",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Grace Allen",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Alderman, District 9",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jake Auchincloss",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Joanne Benson",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jerry Bollig",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "William Brownsberger",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator, Suffolk and Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lorig Charkoudian",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Nick Charles",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Katherine Clark",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Charlotte Crutchfield",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Sal DiDomenico",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator, Middlesex and Suffolk District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Michele Doolan",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Patrick Downing",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Sean Elo-Rivera",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Bill Ferguson",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Linda Foley",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Janice Hahn",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Ghazala Hashmi",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Lieutenant Governor",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Shaneka Henson",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Eunisses Hernandez",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lindsey P. Horvath",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kierstin Huelsemann",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lisa Jackson",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Patricia Jehlen",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator, Second Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Tim Kaine",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Aaron Kaufman",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Chad Kemp",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Karen Keys-Gamarra",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Marc Korman",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Clarence Lam",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Robert Luna",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Sheriff",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Faizah Malik",
+  "source_topic": "judicial-police-accountability",
+  "offices": null,
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Edward Markey",
+  "source_topic": "judicial-police-accountability",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kerry Marren",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Cory Mason",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Mayor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kevin McCarty",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Mayor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jim McGovern",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kenneth Mejia",
+  "source_topic": "judicial-police-accountability",
+  "offices": "City Controller",
+  "local": null,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Patrick Miles",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Bernice Mireku-North",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Holly J. Mitchell",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Paul Miyamoto",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Sheriff",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "David Moon",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Seth Moulton",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Adrin Nazarian",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Richard Neal",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Darrell Odom",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Alex Padilla",
+  "source_topic": "judicial-police-accountability",
+  "offices": "U.S. Senate - California",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Julie Palakovich Carr",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "David Peterson",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Don Postler",
+  "source_topic": "judicial-police-accountability",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Ayanna Pressley",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Rosie Rivera",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Sheriff",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "William Smith",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jared Solomon",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Hugo Soto-Martinez",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Abigail Spanberger",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Governor",
+  "local": null,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Ryan Spiegel",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Vaughn Stewart",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lori Trahan",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Veronica Turner",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Robert Ulander",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Town Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Joe Vogel",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jeff Waldstreicher",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Mark Warner",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Elizabeth Warren",
+  "source_topic": "judicial-police-accountability",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Alonzo Washington",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jheanelle Wilkins",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jenny Wong",
+  "source_topic": "judicial-police-accountability",
+  "offices": "City Auditor",
+  "local": null,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Teresa Woorman",
+  "source_topic": "judicial-police-accountability",
+  "offices": "Delegate",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Richelle Andrae",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": false,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jake Auchincloss",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Kathryn Barger",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "William Brownsberger",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Senator, Suffolk and Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Katherine Clark",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Marjorie Decker",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative, 25th Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Sal DiDomenico",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Senator, Middlesex and Suffolk District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Analiese Eicher",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "County Board Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Eunisses Hernandez",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lindsey P. Horvath",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Patricia Jehlen",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Senator, Second Middlesex District",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Edward Markey",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Jim McGovern",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Holly J. Mitchell",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Supervisor",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Seth Moulton",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Adrin Nazarian",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Richard Neal",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Ayanna Pressley",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "William Smith",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Senator",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Hugo Soto-Martinez",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Council Member",
+  "local": true,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Lori Trahan",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Representative",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ },
+ {
+  "name": "Michael Verveer",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "Alder, District 4",
+  "local": null,
+  "dest_cj_taken": false,
+  "dest_ps_taken": false
+ },
+ {
+  "name": "Elizabeth Warren",
+  "source_topic": "judicial-prosecution-priorities",
+  "offices": "U.S. Senate - Massachusetts",
+  "local": false,
+  "dest_cj_taken": true,
+  "dest_ps_taken": true
+ }
+]
