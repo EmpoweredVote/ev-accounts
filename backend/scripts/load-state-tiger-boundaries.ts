@@ -1964,6 +1964,23 @@ async function main(): Promise<void> {
   console.log(
     `  SELECT mtfcc, COUNT(*) FROM essentials.geofence_boundaries\n   WHERE state = '${args.fips}' GROUP BY mtfcc ORDER BY mtfcc;`,
   );
+
+  // Nothing else in the codebase refreshes essentials.geofence_child_county — it is only READ, by
+  // coverageMapService, and only CHECKED, by scripts/check-child-county-mapping.mjs. So inserting
+  // boundaries here silently leaves it stale, every affected jurisdiction shows with NO county on
+  // the coverage dashboard, and CI goes red on a later, unrelated commit.
+  // That is not hypothetical: the 2026-08-14 Washington load added 281 G4110 places and left CI red
+  // until it was refreshed by hand. Say so loudly whenever this run actually inserted a boundary.
+  if (grandTotals.inserted_boundary > 0) {
+    console.log('\n=== ⚠ ACTION REQUIRED: refresh the persisted child→county mapping ===');
+    console.log(`  This run inserted ${grandTotals.inserted_boundary} boundary/ies. Until the matview is`);
+    console.log('  refreshed they will show with NO county on the coverage dashboard, and');
+    console.log('  `npm run check:child-county` (which CI runs on every push) will FAIL.');
+    console.log('\n  REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;');
+    console.log('\n  ~17 s. CONCURRENTLY cannot run inside a transaction block. Requires ownership of');
+    console.log('  the matview, so run it as postgres, not as ev_api. Then confirm with:');
+    console.log('    npm run check:child-county   -> expect "stale 0"');
+  }
 }
 
 // Only auto-run when executed directly (`npx tsx scripts/load-state-tiger-boundaries.ts ...`).
