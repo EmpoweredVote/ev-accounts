@@ -20,8 +20,8 @@ the chair text and probably generalise; the others may be Washington-specific. F
 
 ## The pattern that runs through half of these entries: THE LADDERS DESCRIBE CHANGE, AND MOST LEGISLATING DEFENDS WHAT EXISTS
 
-Written after the sweep had produced 34 documented blanks, because the same shape kept recurring on
-unrelated ladders and it is probably the single most useful thing here:
+Written after the sweep had produced 34 documented blanks (**49 as of 2026-08-15**), because the same
+shape kept recurring on unrelated ladders and it is probably the single most useful thing here:
 
 - `climate-change` — nine senators who want to KEEP the statutory emission targets while opposing new
   state-specific mandates have no chair; every chair moves the policy somewhere.
@@ -246,6 +246,37 @@ is a prediction no bill makes about itself.
 **Generalises?** Yes. Every state has sales-tax-cut bills and none of them legislates the service
 reduction the chair requires.
 
+### `judicial-criminal-justice` chair 4 vs 5 — distinguished only by a purpose no penal statute states
+> 4 = "Making sure others think twice before doing the same thing."
+> 5 = "Punishing the behavior. Society needs to know that breaking the law has real consequences."
+
+Same shape as the taxes pair above, one level worse: both chairs are *purposes of punishment*
+(deterrence and retribution), and **penal statutes describe mechanisms, not purposes**. Chair 5's
+first clause, "punishing the behavior", is satisfied by every penalty provision in the criminal code
+— John Lovick sits at chair 3 holding two penalty-increase instruments — so all the discriminating
+work falls on its second clause, which is a claim about the message sent to the public, exactly as
+inferential as chair 4's.
+
+**The decisive example is an instrument that names BOTH chairs and ranks neither.** Wagoner's SB 5267
+would allow a death penalty charge for aggravated murder committed while already incarcerated. It
+directs the review panel to weigh "whether imposition of the death penalty measurably contributes to
+the core purposes of **retribution and deterrence** of capital crimes by prospective offenders" —
+chair 5's value and chair 4's value, side by side as co-equal criteria — alongside "sufficient
+mitigating circumstances to merit leniency" and "fairness and consistency". The most explicitly
+purposive criminal instrument in 3,411 bills states both purposes and prefers neither.
+
+Migration 1781 tried to break the tie structurally and seated 12 senators at chair 5; **the operator
+reversed it in 1783** and eleven became documented blanks. The twelfth, Boehnke, was seated at chair
+**4** — on SB 6083, whose §1 states a prospective "protect the property and persons" rationale. So
+the pair *is* discriminable, but only from a stated purpose, and only one instrument among twelve
+members' full criminal-justice records had one.
+
+**The fix is to drop chair 5's second sentence and give chair 4 a mechanism.** As written, "punishing
+the behavior" is not a position — it is what every criminal statute does — and the sentence that
+makes it a position is a forecast about public opinion that no bill makes about itself.
+**Generalises?** Yes. Sentencing bills state purposes in almost no state; this pair will blank the
+punitive end of every legislative corpus.
+
 ---
 
 ## Class D — the topic detector files the row against the wrong ladder
@@ -280,6 +311,15 @@ Not a ladder-text problem, but it corrupts research if unnoticed.
 - **HB 2335 §403** ("necessary for the immediate preservation of the public peace... or support of the
   state government and its existing public institutions") is the standard emergency clause, not a
   pro-government fiscal position.
+- **SB 6022 is captioned "improving juvenile rehabilitation" and REPEALS the JR-25 policies outright**
+  — the fifth confirmed trap, and the one where the title states the opposite of the operative effect.
+  Read against `judicial-criminal-justice` it looks like a chair-1 or chair-3 support limb for its two
+  sponsors. Its §1 argues **cost** (approximately $257,000 per incarcerated individual at DCYF against
+  $76,000 at corrections) and violence and contraband at Green Hill School. That is an efficacy and
+  fiscal argument, not a position on what matters when someone breaks the law, so it reaches no chair
+  and supplies no support limb. Also note the inverse: **SB 6083's title agrees with its §1**, and
+  that is what made it safe to seat from — a title is not evidence, but a title contradicted by the
+  text is a warning and a title corroborated by the text is neither.
 
 ---
 

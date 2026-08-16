@@ -354,12 +354,58 @@ support, and the exclusions are the "depending on what happened". Seated 12 (7 s
 5 representatives on HB 1317 / HB 1229), and Hackney's documented blank from 1779 was rewritten into
 an answer.
 
+### ⚖ THE RULING DOES NOT REACH THE 4/5 PAIR ✅ (operator ruling, 08-15 — migration 1781 REVERSED by 1783)
+
+Migration 1781 extended "structure over inferred purpose" to chairs 4 and 5, reasoning that chair 4
+("making sure others think twice") is a purpose while chair 5 ("punishing the behavior…") is a
+structure, and seated 12 senators at chair 5 on SB 5566. It flagged itself for review. **The operator
+reversed it.** The facts were all confirmed on re-reading — SB 5566 has no findings and no intent
+section, and its own sponsor line names exactly the 12 members. Three things broke the reasoning:
+
+1. **It reasoned from absence.** Chair 3 was refuted because "the act has no support limb
+   whatsoever". That is incompleteness, and 9b says a chair is refuted by CONTRADICTION only.
+2. **Lovick is the counterexample, on this same ladder.** He sits at chair 3 while holding two
+   penalty-increase instruments. So "the act punishes, therefore chair 5" is a predicate his record
+   also satisfies. Chair 5's first clause is true of **every penalty provision in the criminal code**
+   and discriminates nothing.
+3. **Chair 5's discriminating clause is itself a purpose.** "Society needs to know that breaking the
+   law has real consequences" is a claim about the message sent to the public — the same order of
+   inference 1781 correctly refused to make for chair 4.
+
+🔑 **THE SCOPE OF THE RULING, STATED SO IT IS NOT EXTENDED A THIRD TIME.** "Structure over inferred
+purpose" resolves a purpose-free mechanism against a chair **whose text the mechanism instantiates
+clause by clause** — in 1780, time served / the petition / the exclusions, matched to chair 3's three
+clauses. It is **not** a tiebreaker that sends purposeless instruments to whichever chair reads as
+more structural. Where no chair is positively matched, precedent 1 governs: the fallback is BLANK.
+
+**The one testable case pointed the other way.** Boehnke's SB 6083 is the only instrument among the
+twelve that states a purpose, and it states a chair-**4** one — see the boundary rule immediately
+below. A tiebreaker that gets the only checkable case wrong is not a tiebreaker.
+
+Outcome: 11 documented blanks, Boehnke seated at chair 4, coverage 136 → 131.
+
 🔑 **THE RULING HAS A BOUNDARY, AND IT IS IN THE WORDING: *inferred*.** Where an act STATES its
 purpose, that is evidence, not inference, and the stated purpose governs. HB 1239 (the reentry
 readiness act) finds that "reentry readiness reduces recidivism" and that earned time is "the most
 effective means of incentivizing participation in rehabilitative programming" — chair 1's text
 asserted by the act about itself. Its 7 sponsors are seated at **chair 1**, three of whom also signed
 a second-look statute: instrument A sets the floor, instrument B raises it.
+
+**The boundary works at the punitive end too, and that is how Boehnke was seated (mig 1783).** SB 6083
+(2026, Boehnke sole sponsor) removes a court's ability to waive restitution owed to a postsecondary
+institution, and its §1 says why: a threat to public safety from "organized groups under the guise of
+political speech", and it "has become necessary to protect the property and persons of its citizens",
+the waiver being narrowed "in furtherance of this goal". Prospective, aimed at people not before the
+court → **chair 4**. The act's own title ("discouraging violent protests…") agrees with §1 rather than
+pointing away from it, which is the *opposite* of the §12 title traps. Chair 5 fails because nothing
+says the offender deserves the sanction.
+⚠ Chair 2 names "restitution" verbatim and is still **refuted**: the act makes restitution
+non-waivable even where the court finds the offender "does not have the current or likely future
+ability to pay", which is the opposite of giving the person a fair chance to make things right. A
+textbook §11 case — vocabulary is not rationale.
+⚠ Recorded weakness: single-instrument seating on an intent section. If a later reader reads "protect
+the property and persons" as a generic public-safety finding, that row moves — **to a blank, not to
+chair 5**.
 
 ⚠ Two instruments read and deliberately left OFF the ladder: Nobles' SB 5182 (midwifery and doula
 services for incarcerated pregnant people) and Simmons' HB 1233 (the ending forced labor act). Both
@@ -396,7 +442,33 @@ A blank is a **context row with sources and NO answer row**. It must:
 - carry the sources actually fetched.
 
 Purpose: let a later pass distinguish "researched, ladder cannot reach it" from "never researched".
-19 exist so far (Orcutt taxes ×1, abortion ×18).
+**49 exist as of 08-15**: abortion 18, judicial-criminal-justice 11, climate-change 10, taxes 4,
+healthcare 3, childcare 1, growth-and-development 1, rent-regulation 1.
+
+## 10a. ⚖ LEADERSHIP IS NOT GETTING A SECOND SOURCE CLASS ✅ (operator ruling, 08-15)
+
+Jinkins (Speaker) and Stokesbary (Minority Leader) are the two members sponsorship cannot reach, and
+the record is worse than "thin": **Jinkins has 26 sponsorships and every one is a ceremonial House
+Resolution** (honouring, celebrating, observing). Stokesbary has 19, of which 17 are ceremonial; his
+only substantive items are HB 2565 (investment of University of Washington gifts and bequests — a
+postsecondary endowment-management bill) and HB 2149 (emergency replacement of failed infrastructure
+on state route 165, a single-route capital fix). Both were read; neither bears on any ladder.
+
+**The ruling: the question is not whether *these two* get a second source class, it is whether *the
+sweep* does.** They are the members sponsorship missed, so selecting them for richer evidence is
+selecting on the outcome. Their rows would not be comparable to the other 297, they would be
+asymmetrically generous — the Speaker seated on evidence 145 colleagues were never screened against
+— and the compass displays chairs, not source classes, so no viewer could tell. If roll calls, floor
+statements or questionnaires are legitimate evidence here, they are legitimate for all 147. That is
+a separate, larger project; see `project_votefirst_only_one_source_class` for how a roll-call-only
+pass overclaims.
+
+⚠ **They get NO topic-scoped blanks, deliberately.** A documented blank must name the instrument read
+and the clause that failed. For these two there is no instrument on any ladder, so a per-topic blank
+would assert an absence nobody tested — the exact failure the answer-delete template warns about
+under `deleted`. The finding is member-level and the corpus has no member-level context row, so **this
+paragraph is the record**. A future session reading this file has what it needs: they were researched,
+and sponsorship reaches nothing.
 
 ---
 

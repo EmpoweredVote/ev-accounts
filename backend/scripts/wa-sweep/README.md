@@ -80,8 +80,13 @@ Rebuild only with `wa_sponsor_index_full.py`, then `wa_link_members.mjs` to reli
   spread before picking the next one.
 - **Escape apostrophes in generated SQL.** `T'wina Nobles` terminated a `RAISE EXCEPTION` literal and
   failed a whole migration to parse.
-- **Leadership is unresearchable this way.** Jinkins (Speaker) has 26 sponsorships, all procedural;
-  Stokesbary (Minority Leader) has 2. They need a different source class entirely.
+- **Leadership is unresearchable this way, and that is now a RULING, not a to-do.** Jinkins (Speaker)
+  has 26 sponsorships and every one is a ceremonial House Resolution; Stokesbary (Minority Leader) has
+  19, of which 17 are ceremonial and the other two (HB 2565, HB 2149) reach no ladder. The operator
+  ruled on 2026-08-15 that they do **not** get a second source class, because the sweep does not have
+  one: adding roll calls or statements for the two members sponsorship missed is selecting on the
+  outcome, and their rows would not be comparable to the other 297. They get no topic blanks either —
+  there is no instrument to name. See WA-SWEEP-PRECEDENTS.md §10a.
 
 ## Related
 
