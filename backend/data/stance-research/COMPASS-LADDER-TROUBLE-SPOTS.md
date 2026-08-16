@@ -179,6 +179,18 @@ bills *restores* a low-income utility credit.
 which would bias the corpus by party. The destination rule that fixed 1-vs-2 has no analogue here,
 because a tax cut's effect on services is a forecast, not a clause.
 
+**RESOLVED — it is not a party bias, it is a broken chair (migration 1777).** Deborah Krishnadasan
+(D-26) proposed the *same* cut Orcutt did — the state sales tax from 6.5% to 6.0%, SB 5795 — for the
+opposite reason: Washington's tax code "remains the second most regressive in the nation" and lowering
+the sales tax reduces "one of the key drivers of regressivity". She is unplaceable for exactly the
+missing clause that blanked Orcutt. So the ladder cannot describe a tax cut offered as **fairness**
+policy any more than one offered as **small-government** policy, and the two blanks sit on opposite
+sides of the aisle. **The fix is to drop the consequence clause from chair 4** — "cut taxes for
+everyone" is a position people actually hold and legislate; "and scale back public services to match"
+is a prediction no bill makes about itself.
+**Generalises?** Yes. Every state has sales-tax-cut bills and none of them legislates the service
+reduction the chair requires.
+
 ---
 
 ## Class D — the topic detector files the row against the wrong ladder
