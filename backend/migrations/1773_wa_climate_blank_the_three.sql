@@ -28,7 +28,19 @@
 -- Nothing about the underlying research is retracted. Each row still names every instrument that was
 -- read and still carries its sources; what changes is that the row now records that the ladder could
 -- not reach the position, which is the honest state of it.
+--
+-- 📌 FILE EDITED AFTER APPLY, deliberately and narrowly. The first version was applied and pushed
+-- without the `@context-decision` marker and the scoped guard below, and check-answer-delete-guards.mjs
+-- failed the build — correctly, since this is exactly the kind of migration it exists to catch. What
+-- was added is ASSERTION ONLY: a temp table naming the three pairs, the disposition line, and a guard
+-- running the gate's ORPHAN_CONTEXT predicate against just those pairs. No INSERT, UPDATE or DELETE
+-- changed. The added guard was then run against production standalone and returned zero, so the file
+-- and the database agree.
 BEGIN;
+
+-- the pairs this migration takes an answer away from, so the guard below is scoped to them rather
+-- than resting on a global count
+CREATE TEMP TABLE cc_blanked (pid uuid, tid uuid) ON COMMIT DROP;
 
 CREATE TEMP TABLE cc_snap ON COMMIT DROP AS
 SELECT (SELECT count(*) FROM inform.politician_answers) AS ans_before,
@@ -57,6 +69,11 @@ BEGIN
   IF n <> 1 THEN RAISE EXCEPTION 'pre-check: Drew MacEwen does not hold exactly one climate context row (%)', n; END IF;
 END $$;
 
+INSERT INTO cc_blanked (pid, tid) VALUES
+('7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec','f1e44d66-5d27-4b51-b54f-b7ace86f6a3c'),
+('4be6f4b9-2c9d-4cff-b75a-cdb0c322c2b3','f1e44d66-5d27-4b51-b54f-b7ace86f6a3c'),
+('5ab349b4-f041-4637-af64-c4e6e4f54c3e','f1e44d66-5d27-4b51-b54f-b7ace86f6a3c');
+
 DELETE FROM inform.politician_answers
  WHERE topic_id='f1e44d66-5d27-4b51-b54f-b7ace86f6a3c' AND politician_id IN ('7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec','4be6f4b9-2c9d-4cff-b75a-cdb0c322c2b3','5ab349b4-f041-4637-af64-c4e6e4f54c3e');
 
@@ -74,6 +91,32 @@ UPDATE inform.politician_context
    SET reasoning = $r$Unable to place on this ladder. Prime sponsor of SB 5208, which would offer state loans for electric and hydrogen vehicles and charging infrastructure, solar, wind, geothermal and hydrogen equipment, advanced nuclear reactors, grid modernization and facility decarbonization, on the finding that the funding is "fundamental to helping Washington meet ... the emissions reductions established under RCW 70A.45.020" — and also of SB 5091, which would bar adoption of California's motor vehicle emission standards. Chair 3 ("invest in clean energy while gradually reducing reliance on fossil fuels") describes the investment but not the repeal: SB 5091 would remove the state's principal vehicle decarbonization requirement, so "gradually reducing reliance on fossil fuels" does not describe this record as a whole. Chairs 1 and 2 are refuted for want of an emergency declaration or a phase-out date, chair 5 is refuted by SB 5091's own finding that decarbonizing transportation is "an important objective", and chair 4 requires the transition to be left to market forces, which an act directing ecology to adopt federal-consistent rules does not do. No chair describes supporting the statutory emission targets while opposing state-specific mandates.$r$,
        sources   = ARRAY['https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5208.pdf','https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5091.pdf']
  WHERE topic_id='f1e44d66-5d27-4b51-b54f-b7ace86f6a3c' AND politician_id='5ab349b4-f041-4637-af64-c4e6e4f54c3e';
+
+-- @context-decision: rewritten-as-blank — the climate ladder genuinely applies to these three and
+-- their records WERE read (SB 5208, 5991, 6004, 5036 and 5091 in full), so each row is rewritten to
+-- state what was checked and which chair failed, rather than deleted or left asserting chair 3.
+
+-- GUARD: check-stance-sources.mjs's ORPHAN_CONTEXT predicate, applied to the pairs THIS migration
+-- took an answer from. Regexes kept character-identical to the gate's; a global count would pass even
+-- if these three rows were the ones that broke.
+DO $$
+DECLARE new_orphans int;
+BEGIN
+  SELECT count(*) INTO new_orphans
+    FROM cc_blanked t
+    JOIN inform.politician_context pc
+      ON pc.politician_id = t.pid AND pc.topic_id = t.tid
+   WHERE coalesce(cardinality(pc.sources), 0) > 0
+     AND pc.reasoning !~* '^researched\s+[0-9]{4}-[0-9]{2}-[0-9]{2}'
+     AND pc.reasoning !~* 'no (scorable |substantive |specific |detailed )?public record|no public statements? found|no record found|no scorable|unable to place|insufficient public record|no substantive [a-z ]{0,40}(available|found)';
+
+  IF new_orphans > 0 THEN
+    RAISE EXCEPTION
+      'context guard: % row(s) lost their answer but kept reasoning that still describes a position. '
+      'Delete that context, or rewrite it as a documented blank, IN THIS MIGRATION -- not later.',
+      new_orphans;
+  END IF;
+END $$;
 
 DO $$
 DECLARE ans_after int; ctx_after int; s record; bad int; nb int; total_blanks int;
