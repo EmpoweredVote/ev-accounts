@@ -65,6 +65,18 @@ legislators who enacted statewide rent caps — the strongest possible evidence 
 **Generalises?** Partly. Inclusionary zoning is usually municipal, not state, so a state-level corpus
 may never reach this chair anywhere.
 
+> ✅ **RESOLVED AT CITY LEVEL, 2026-08-15 — and this is the most transferable lesson in the file.**
+> Seattle's **MHA is inclusionary zoning**, so the element with zero state instruments is routine
+> municipal policy. Dionne Foster holds all three limbs at once: statewide rent stabilization, MHA
+> applied to middle housing ("Allowing duplexes, triplexes, and other middle housing types without
+> any affordability requirements risks missing an opportunity"), and protecting dedicated affordable
+> housing funds. Seated at chair 2 in migration 1784.
+> 🔑 **UNREACHABILITY IS A PROPERTY OF A CHAIR MEETING A CORPUS, NOT OF THE CHAIR TEXT ALONE.** The
+> "Generalises? Partly" hedge above was right for the wrong reason — the chair is fine, the state
+> corpus was the wrong place to look. **Re-test every Class A finding when the corpus changes**, and
+> do not carry "unreachable" across a level of government. The scope caveat at the top of this file
+> says this in the abstract; this is the first measured instance.
+
 ---
 
 ## Class B — the ladder cannot describe a real, widely-held position
@@ -195,6 +207,31 @@ actually did. **The fix is to drop "maintain"/"keep current" from chairs 2 and 3
 the co-response position stand on its own merits instead of requiring a police-funding freeze.
 **Generalises?** Yes — co-response has broad bipartisan support in many states precisely because it is
 *not* framed as a trade against police staffing.
+
+### `local-environment` — "trees AND housing" has no chair
+> 1 = "Require significant green space, **tree preservation**, and environmental review before approving any development"
+> 2 = "Protect existing parks and tree canopy strictly; require developers to **fully offset** any environmental impact"
+> 3 = "Apply consistent environmental standards while giving developers **reasonable flexibility** on implementation"
+> 5 = "**Remove** local environmental restrictions beyond what state and federal law requires"
+
+Every chair treats canopy as a **duty on development**, varying only in how heavy. Seattle's actual
+argument is about **where the duty sits**. Eddie Lin: "We can increase tree canopy by putting more
+trees in public spaces, including rights-of-way, **instead of** trying to impose tree retention
+burdens on housing", and "I push back against the idea that trees have to be maintained on private
+property, and I'm concerned that wealthier neighborhoods are using trees as a way to continue
+segregation and stop housing production."
+
+That is *more* canopy and *less* private-lot regulation simultaneously. Chairs 1 and 2 fail because he
+rejects the development duty; chairs 4 and 5 fail because he would expand public canopy, not reduce
+protection; chair 3 describes flexibility *within* the existing duty rather than relocating it. He was
+**blanked** in migration 1784.
+
+**The fix is a chair that separates the LOCATION of environmental obligation from its STRENGTH** — or
+wording that does not assume the only lever is a condition on private development. Note this is the
+same shape as the `taxes` chair 4/5 problem: the chair bundles a mechanism with a level, and real
+politics varies them independently.
+**Generalises?** Yes. Tree-canopy-versus-housing is a live fight in every upzoning city, and the
+pro-housing side of it is systematically unplaceable here.
 
 ---
 
