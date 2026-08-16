@@ -210,6 +210,49 @@ here, no chair describes "let districts decide", so permissiveness had nowhere t
 
 ---
 
+## 9a. `public-safety-approach`
+
+### ch4 = an operative increase in officers; ch5 needs a RANKING against other spending ✅
+Set by mig 1771 (HB 1435, 23 sponsors — 16 R and 7 D, the first genuinely bipartisan cohort).
+
+- **Chair 4** is "increase police staffing, equipment, and pay". HB 1435 pays 75% of a new officer's
+  entry-level salary and benefits, capped at $125,000 per position, and bars grants for anyone
+  employed by a Washington agency in the previous 12 months — so it buys *additional* officers, not
+  transfers. Abell's companion bills (HB 1436, HB 1896) supply chair 4's deterrence rationale
+  verbatim: violent crime at "25-year highs", the state "last in the nation for law enforcement
+  officers per capita", funding more officers "with the goal of reducing violent and property crime".
+- **Chair 5** needs the police budget to be "the top spending priority **over other services**".
+  Nothing in this record ranks police against other spending, and the companion funding bills are
+  *permissive local options* adopted "to avoid placing more burden on local governments". Same shape
+  as taxes ch4/ch5: the chair carries a comparative clause that ordinary instruments never state.
+- ⚠ Recorded weakness: chair 4 is a compound — staffing, equipment **and** pay. The grant may be
+  spent on nothing but salaries and benefits, so the equipment limb is unmatched. It survives on its
+  main clause plus refutation of all four neighbours, as residential-zoning ch2 did in 1769.
+
+### Scope: this ladder IS used for state legislators ✅
+Same ground as `local-immigration` in 1766 — a state appropriation that pays local and tribal agencies
+to put officers on the street legislates on exactly what the ladder asks. ⚠ The `transportation-
+priorities` inconsistency flagged in 1766 remains open.
+
+## 9b. A chair is refuted by CONTRADICTION, not by incompleteness ✅
+
+Set by mig 1771, and it is the natural limit of precedent 1 above — read the two together, because
+they pull in opposite directions and a session that has only one of them will get the other wrong.
+
+Lauren Davis (HB 1498, domestic violence co-responder grants) and Greg Nance (HB 1809, behavioral
+health co-response training) both hold instruments that *look* like chairs 2-3 and both stayed at
+chair 4:
+- chair 2 wants non-violent calls shifted to **unarmed mental health** responders; HB 1498's advocates
+  are "summoned **by law enforcement** to the scene" for victim support, so the officer still takes
+  the call;
+- chair 3 requires **keeping** public safety funding current, which each of them refuted by sponsoring
+  HB 1435.
+Their position — more officers *and* more co-response — is **broader** than chair 4, and chair 4 is
+still true of them, because it claims no exclusivity. Contrast the abortion blanks in 1767, where
+chairs 2-5 each **asserted a gestational limit the members rejected**. 🔑 The test is whether the
+chair's text says something the record contradicts. If it does, blank. If the chair is merely a
+partial picture, seat it.
+
 ## 10. Documented blanks — how to write one
 
 A blank is a **context row with sources and NO answer row**. It must:

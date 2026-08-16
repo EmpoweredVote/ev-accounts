@@ -62,6 +62,22 @@ abortion care), **18 blanked** despite unambiguous, well-documented positions.
 abortion rights at all stages and land in no chair at all.
 **Generalises?** Yes. Any state with constitutional-right politics and no funding statute hits this.
 
+### `public-safety-approach` — "more police" and "more crisis response" are mutually exclusive rungs
+> 2 = "**Maintain** current police staffing but shift non-violent calls to unarmed mental health co-responders"
+> 3 = "**Keep current** public safety funding while adding crisis response teams for mental health and addiction calls"
+> 4 = "Increase police staffing, equipment, and pay to improve response times and deter crime"
+
+Both middle chairs open with a freeze on police funding or staffing, so the ladder can only describe
+adding crisis response **instead of** adding officers. HB 1435's 23 sponsors include Lauren Davis
+(prime sponsor of the enacted domestic violence co-responder grant program) and Greg Nance (behavioral
+health co-response training and reimbursement) — legislators who fund **both**, and Washington already
+runs "over 60 co-response teams" alongside a statewide officer shortage. They were seated at chair 4
+because it is true of them and claims no exclusivity, but nothing on this ladder says what they
+actually did. **The fix is to drop "maintain"/"keep current" from chairs 2 and 3**, which would let
+the co-response position stand on its own merits instead of requiring a police-funding freeze.
+**Generalises?** Yes — co-response has broad bipartisan support in many states precisely because it is
+*not* framed as a trade against police staffing.
+
 ---
 
 ## Class C — chairs distinguished only by an adverb the record never uses

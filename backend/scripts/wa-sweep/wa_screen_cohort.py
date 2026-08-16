@@ -23,6 +23,12 @@ KEYWORDS = {
              r"|just cause|rent control|rent stabiliz"),
     "climate": (r"\bclimate\b|\bcarbon\b|greenhouse|\bemission|clean energy|renewable|fossil"
                 r"|\bcoal\b|cap and invest|cap-and-invest|decarbon|\bnatural gas\b"),
+    # `public-safety-approach` turns on staffing/funding levels AND on whether non-police responders
+    # take the call, so the screen has to catch BOTH the police-budget bills and the co-responder /
+    # crisis-team ones -- a member holding one of each is the case the screen exists to find.
+    "police": (r"\bpolice\b|\bpolicing\b|law enforcement|\bsheriff|\bofficer(s)?\b|public safety"
+               r"|co-?responder|crisis response|crisis team|behavioral health response|\b988\b"
+               r"|peace officer|\bdeputies\b|community safety"),
     # Deliberately NOT anchored on "revenue" alone: the department of revenue administers most of
     # the tax code, so it fires on every administrative bill. The taxes ladder turns on whether a
     # member raises or cuts, and where the money lands, so match the instruments that do either.
