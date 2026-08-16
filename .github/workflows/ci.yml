@@ -120,6 +120,38 @@ jobs:
       - name: Check answer deletes decide what happens to their context
         run: node backend/scripts/check-answer-delete-guards.mjs
 
+  cal-access-predicate:
+    name: cal-access predicate tripwire
+    runs-on: ubuntu-latest
+    # `confirm-cal-access.ts` matches Cal-Access committees to politicians on the LAST
+    # SPACE-DELIMITED TOKEN of full_name, ignoring the `last_name` column on the same row. Audited
+    # 2026-08-16: 7,853 links across 578 active politicians, 7,836 of them auto-confirmed, $42.3M
+    # displayed. "Gracey Van Der Mark" becomes "mark" and claims 391 committees bearing the given
+    # name Mark; "Jesse Avila Jr" becomes "jr" and claims 116.
+    #
+    # The script is inert only by ACCIDENT: migration 1463 dropped `essentials.offices.politician_id`,
+    # which it still joins on, so it throws at runtime. Repairing that join is a one-line change that
+    # would re-run the identical predicate at full scale. A comment cannot stop that; this can.
+    #
+    # A RATCHET, not a freeze: it fails only on the single combination that re-creates the defect --
+    # the in-script abort removed while the last-token rule is still there. Replace the predicate and
+    # the check lets you drop the abort. It tests code with comments stripped, because the tripwire
+    # block quotes the defective rule and matching raw text would jam the ratchet shut forever.
+    #
+    # Static: no DATABASE_URL, so it runs on forks. Same trigger as the guards above -- this repo is
+    # worked by direct pushes to master, so a PR-only check would miss most of what it guards.
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Dependency-free, so it runs straight off node with no npm install.
+      - name: Check confirm-cal-access.ts has not been re-enabled with the broken predicate
+        run: node backend/scripts/check-cal-access-predicate.mjs
+
   occupancy:
     name: office occupancy (ADR 0002)
     runs-on: ubuntu-latest

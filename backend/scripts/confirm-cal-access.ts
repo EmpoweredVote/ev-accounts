@@ -28,6 +28,54 @@ import * as path from 'path';
 import { Pool } from 'pg';
 import { parse as parseCsv } from 'csv-parse/sync';
 
+// ─── 🔴 PREDICATE TRIPWIRE — READ BEFORE RE-ENABLING THIS SCRIPT ──────────────
+//
+// This script's matching rule is BROKEN and produced 7,853 committee links across 578 active
+// politicians (7,836 of them auto-confirmed), displaying $42.3M. Audited 2026-08-16.
+//
+// THE DEFECT, in two parts:
+//   1. `extractLastName()` returns the LAST SPACE-DELIMITED TOKEN of full_name, which is very often
+//      not the surname. `essentials.politicians.last_name` is stored on the row and was ignored.
+//        Gracey Van Der Mark -> "mark"  -> 391 committees containing the GIVEN NAME Mark
+//        Jesse Avila Jr      -> "jr"    -> 116 committees containing the SUFFIX
+//        Walter Allen III    -> "iii"   ->  25
+//   2. Even when the token IS the surname, a surname is not a person. Traci Park -> "park" matched
+//      Buena Park, Menlo Park and East Bay Regional Park District. Ashley Johnson -> "johnson"
+//      matched Ray, Ben, Jimmie, Stephanie, Nancy and Michael V. Johnson's committees.
+//   Compounding both: hasSignalWord() is not a filter. SIGNAL_WORDS is FOR/COMMITTEE/CAMPAIGN/
+//   ELECT/OFFICEHOLDER/EXPLORATORY, and every candidate committee name contains one, so it ADMITS.
+//
+// 🔑 THERE WAS NEVER AN INDEPENDENT CHECK. This script both generates the match and confirms it in
+// one pass, which is why 7,836 of 7,853 came back "confirmed". A ~100% confirm rate is the smell.
+//
+// The script has been INERT since migration 1463 dropped `essentials.offices.politician_id`, which
+// line ~163 still joins on — it throws at runtime. That is luck, not design. Fixing that join is a
+// one-line change and would silently re-run the identical predicate at full scale.
+//
+// ⛔ DO NOT remove this abort merely to make the script run. Replace the PREDICATE first:
+//   · match on `essentials.politicians.last_name`, never on a token split out of full_name;
+//   · require the politician's GIVEN name adjacent to the surname, or corroborate against the
+//     Cal-Access candidate-name / office / district / year fields — `committee_name` alone cannot
+//     identify a person;
+//   · make confirmation a SEPARATE pass with a DIFFERENT predicate from the generator.
+// `backend/scripts/check-cal-access-predicate.mjs` enforces exactly this in CI: it lets you delete
+// this abort only once `parts[parts.length - 1]` is gone from the file.
+//
+// Audit + remediation state: memory `cal_access_lasttoken_mislinks`; migration 1788 (the Robert
+// Garcia / Antonio Vazquez conflation that surfaced it); migration 1789 (bucket-A cleanup).
+if (!process.env.CAL_ACCESS_PREDICATE_REPLACED) {
+  console.error(
+    'ABORT: confirm-cal-access.ts is disabled — its matching predicate is known-broken.\n' +
+    'It links committees on the LAST TOKEN of full_name ("Van Der Mark" -> "mark", "Avila Jr" -> "jr")\n' +
+    'and its signal-word check admits every committee name rather than filtering any.\n' +
+    'It created 7,853 links on 578 active politicians, 7,836 auto-confirmed, $42.3M displayed.\n\n' +
+    'Fix the PREDICATE, not just the dead offices.politician_id join, then set\n' +
+    'CAL_ACCESS_PREDICATE_REPLACED=1. See the block above this check and memory\n' +
+    '`cal_access_lasttoken_mislinks` for what a correct predicate has to do.'
+  );
+  process.exit(1);
+}
+
 // ─── Env guard ────────────────────────────────────────────────────────────────
 
 if (!process.env.DATABASE_URL) {
