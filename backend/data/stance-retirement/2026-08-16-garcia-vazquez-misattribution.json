@@ -1,0 +1,72 @@
+{
+  "migration": "1788_garcia_vazquez_misattribution",
+  "retired_on": "2026-08-16",
+  "reason": "All 9 stances on essentials.politicians 8bfb459b (full_name 'Robert Garcia', CA Assembly District 50) are about ANTONIO 'TONY' VAZQUEZ, member of the California State Board of Equalization for the 3rd District and former mayor of Santa Monica. Every reasoning names Vazquez; every source is boe.ca.gov/vazquez/* or a Santa Monica Daily Press interview about him. Verified against boe.ca.gov/vazquez/about.htm ('Antonio Vazquez, Board Member ... representing the 3rd District, was elected to the Board in November 2018 and reelected in November 2022') and against the official CA Assembly roster ('Garcia, Robert | District: 50 | Democrat'), which are two different people.",
+  "correct_subject": {
+    "name": "Antonio 'Tony' Vazquez",
+    "office": "California State Board of Equalization, 3rd District",
+    "note": "No politician row exists for him. If one is seeded, these 9 rows can be re-attached AFTER re-verifying them on their merits — see caveats below."
+  },
+  "caveats_if_reattached": [
+    "The reasoning text uses an obsolete scale vocabulary ('new stance 2', 'new stance 3') and predates the current chair definitions.",
+    "The 'deportation' row concedes 'Evidence is limited' and reasons from adjacent statements rather than a position on removal policy.",
+    "The 'medicare/aid' row infers support for 'lowering the Medicare age' from a Medi-Cal expansion statement — a state official commenting on state policy does not evidence a federal Medicare position.",
+    "Re-verify each row against the chair text before re-seating; do not bulk re-attach."
+  ],
+  "rows": [
+    {
+      "topic_key": "childcare",
+      "value": 2,
+      "reasoning": "Vazquez's January 2019 budget statement praised the Governor's proposal for \"universal preschool and kindergarten\" and \"child care\" expansion as a key benefit for \"underserved Californians.\" This represents direct support for significant public investment in childcare and early childhood education.",
+      "sources": ["https://www.boe.ca.gov/vazquez/19-01.htm"]
+    },
+    {
+      "topic_key": "civil-rights",
+      "value": 2,
+      "reasoning": "Vazquez stated in a 2019 SMDP interview: \"I like to think my impact was to say that those who have been disenfranchised over the years, many of them now feel a little more empowered because of my time on Council. I hope I created some access to those folks and was able to distribute some of the resources and benefits the city has to offer.\" He became the first Latino mayor of Santa Monica since its 1886 incorporation.",
+      "sources": ["https://www.smdp.com/former-mayor-looks-to-rebuild-board-of-equalization-after-recent-election/", "https://www.boe.ca.gov/vazquez/about.htm"]
+    },
+    {
+      "topic_key": "deportation",
+      "value": 2,
+      "reasoning": "Vazquez condemned the \"increasingly unjust treatment of immigrants\" in his 2019 budget statement and has advocated strongly for immigrant communities from Mexico and Central America. As a Board of Equalization member, deportation is not directly in his purview, but his public statements reflect strong opposition to aggressive removal policies targeting non-criminal undocumented residents. Evidence is limited but consistently points toward new stance 2: only deport people convicted of serious violent crimes.",
+      "sources": ["https://www.boe.ca.gov/vazquez/19-01.htm", "https://www.boe.ca.gov/vazquez/19-04.htm"]
+    },
+    {
+      "topic_key": "healthcare",
+      "value": 3,
+      "reasoning": "Vazquez praised California's expansion of healthcare access to undocumented and low-income residents in his February 2020 statement, and his 2019 budget statement highlighted state priorities for \"the most vulnerable populations.\" These statements reflect support for helping people who cannot afford care and expanding programs for low-income residents — consistent with new stance 3 — rather than a broader mandate for universal affordable coverage across all income levels.",
+      "sources": ["https://www.boe.ca.gov/vazquez/20-04.htm", "https://www.boe.ca.gov/vazquez/19-01.htm"]
+    },
+    {
+      "topic_key": "homelessness",
+      "value": 2,
+      "reasoning": "Vazquez's BOE biography credits him with supporting \"homeless transitioning to permanent housing\" as Santa Monica Mayor. In his 2020 State of the State statement he praised Governor Newsom's call for \"solutions to meet the desperate need of hundreds of thousands of vulnerable Californians for shelter\" and pledged commitment to working on the homelessness crisis.",
+      "sources": ["https://www.boe.ca.gov/vazquez/about.htm", "https://www.boe.ca.gov/vazquez/20-04.htm"]
+    },
+    {
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "As Santa Monica Mayor Vazquez worked to obtain affordable housing funding, and his official BOE biography describes him as an advocate for affordable housing. His 2019 statements praised Governor Newsom's increased investment in affordable housing. This consistent record of pursuing public funding and government-led affordable housing programs aligns with new stance 2: publicly funding new housing and ensuring developments include affordable units.",
+      "sources": ["https://www.boe.ca.gov/vazquez/about.htm", "https://www.boe.ca.gov/vazquez/19-01.htm", "https://www.boe.ca.gov/vazquez/19-04.htm"]
+    },
+    {
+      "topic_key": "immigration",
+      "value": 2,
+      "reasoning": "In his January 2019 budget statement, Vazquez praised 'allocations for an immigration rapid response program and ongoing immigration-related services,' calling them 'sorely needed to address the increasingly unjust treatment of immigrants — particularly those from Mexico and Central America.' His 2019 State of the State response thanked Governor Newsom for 'setting the story straight on our immigrants, who are a vital part of our economy and our communities.' His record consistently supports public services access for immigrants regardless of status and an open, welcoming posture — consistent with new stance 2.",
+      "sources": ["https://www.boe.ca.gov/vazquez/19-01.htm", "https://www.boe.ca.gov/vazquez/19-04.htm"]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "value": 2,
+      "reasoning": "Vazquez praised healthcare expansion for low-income Californians in his 2020 State of the State statement and supported budget measures for the most vulnerable populations. His alignment with Governor Newsom's Medi-Cal expansion agenda signals support for lowering the Medicare age and significantly expanding Medicaid.",
+      "sources": ["https://www.boe.ca.gov/vazquez/20-04.htm", "https://www.boe.ca.gov/vazquez/19-01.htm"]
+    },
+    {
+      "topic_key": "taxes",
+      "value": 2,
+      "reasoning": "Vazquez has advocated for closing corporate tax loopholes and supported expanding the California Earned Income Tax Credit via the Working Families Tax Credit, stating corporations use loopholes that undermine a level playing field. His positions reflect a preference for moderately raising taxes on wealthy people and large companies to better fund existing services rather than launching sweeping new program expansions, fitting new stance 2.",
+      "sources": ["https://www.smdp.com/former-mayor-looks-to-rebuild-board-of-equalization-after-recent-election/", "https://www.boe.ca.gov/vazquez/19-01.htm"]
+    }
+  ]
+}
