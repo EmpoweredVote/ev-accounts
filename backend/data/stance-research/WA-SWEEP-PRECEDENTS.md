@@ -7,6 +7,14 @@ that satisfies it**, and the **migration that set it**.
 Operator ratified everything marked ✅ on 2026-08-15. Where the operator was asked and chose, that is
 recorded — those are the ones not to relitigate.
 
+📐 **Choosing a method for the NEXT jurisdiction is a separate question, answered in
+`RESEARCH-METHOD-SELECTION.md`.** Read it before indexing anything. Short version: this file records
+an *instrument-first* sweep that covered 131 of 147 legislators from ~19 instruments, and the same
+method covered **1 of 11** Seattle councilmembers from 10,639 agenda items. Neither number
+generalises — the rule is to match the method to the unit at which the office generates attributable
+evidence, and to run both where you can, because instrument-first is the better *verifier* and the
+better *ladder diagnostic* even where it is the worse *coverage* tool.
+
 ---
 
 ## 0. The standing method (✅ operator-approved)
