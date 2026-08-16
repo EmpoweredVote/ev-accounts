@@ -33,6 +33,28 @@ cd backend && set -a && source .env && set +a && node --dns-result-order=verbati
 7. Generate the migration from the cache rather than hand-typing rows. `_example_generator.py` is a
    working template (migration 1769): pre-checks, split cohorts, content guards, gate invariants.
 
+## Picking a subject when the reach ranker stops helping
+
+`wa_next.mjs` ranks the whole corpus and by the end of a sweep keeps surfacing instruments that reach
+no chair. These are what actually closed the last four blocs — run them from `backend/` with the
+env loaded, same as the others:
+
+- **`wa_uncovered.mjs`** — the authoritative uncovered list with chamber and party.
+  🔴 Coverage is **147 minus this count**. It is NOT the previous count plus the size of your last
+  cohort: most cohort members are already covered on another topic, so an 11-row cohort can add 4.
+- **`wa_target.mjs`** — rank instruments by reach into ONE bucket. `TC=House TP=R node …` sets the
+  chamber and party. Prime-sponsor party is irrelevant to the cohort rule, so this ranks by who the
+  bill actually reaches.
+- **`wa_ladder_hunt.mjs`** — ladder-first search: anchored keywords per ladder, so you start from a
+  chair that can be evidenced instead of from a bill that happens to have sponsors.
+- **`wa_matrix.mjs <cohortBill> <billId…>`** — prints who signed which. This is what turned a
+  16-member dud into 3 seats and 6 blanks: it shows which members hold the second instrument that
+  raises them off the cohort floor.
+- **`wa_reach.mjs <billId…>`** — total sponsors, uncovered reach, and uncovered reach into the target
+  bucket, for a handful of candidates at once.
+- **`wa_member_bills.mjs <regex> <member…>`** — one member's whole record filtered by a pattern, for
+  when a bloc is down to individuals with scattered records.
+
 ## Caches
 
 `%TEMP%/ev-stance-cache/wa-leg/` — `sponsorship-index-full.json` (3,411 bills), `member-link.json`
