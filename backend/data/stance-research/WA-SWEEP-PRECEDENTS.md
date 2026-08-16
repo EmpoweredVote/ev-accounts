@@ -164,13 +164,23 @@ motor vehicle emission standards).
   their own; six were **blanked**. Do not let an instrument that refutes the far chairs be treated as
   evidence for the near ones.
 
-### ch3 is a COMPOUND chair — both limbs, from a member's own record ✅
-"Invest in clean energy **while gradually reducing reliance on fossil fuels**". Mig 1772 seats
-Boehnke (SB 6004 + SB 5991 for investment; enacted SB 5036 for accountability to the RCW 70A.45.020
-targets), MacEwen and Dozier (SB 5208 supplies both limbs in one instrument — clean energy loans
-expressly "fundamental to helping Washington meet ... the emissions reductions established under RCW
-70A.45.020"). Combining two of a member's own instruments to satisfy a compound chair is the same
-pattern migration 1769 used for residential-zoning chair 4.
+### ch3 is CLOSED to this caucus until the ladder gains a chair ✅ (operator ruling, 08-15)
+
+Migration 1772 seated Boehnke, MacEwen and Dozier at chair 3 on the compound-chair pattern of 1769 —
+each held both limbs from their own record (SB 6004 and SB 5991 for investment, enacted SB 5036 for
+accountability to the RCW 70A.45.020 targets; SB 5208 supplies both limbs in one instrument). The
+**operator blanked all three in migration 1773**, on this reasoning: chair 3 put them on the same rung
+as the eleven Democrats who wrote cap-and-invest (mig 1763), so 27 legislators sat at one chair and
+the compass read as cross-caucus agreement that does not exist. **Do not re-seat them** until the
+ladder has a chair for "keep the statutory emission targets, oppose new state-specific mandates".
+
+🔑 **This is not a reversal of 9b below, and the distinction is the thing to keep.** 9b says
+contradiction blanks a chair and incompleteness does not. Davis and Nance (1771) **added** co-response
+to police hiring — nothing in their record cut against chair 4. These three **sponsored the removal**
+of the state's principal vehicle decarbonization requirement, and chair 3's second limb is "gradually
+reducing reliance on fossil fuels". Adding a mechanism leaves the chair true; removing the mechanism
+the chair names does not. The compound-chair method of 1769 is unaffected — it was the ladder, not
+the method, that failed here.
 
 ## 6. `civil-rights`
 

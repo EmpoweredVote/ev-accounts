@@ -74,11 +74,18 @@ chair 5 outright, and chairs 1-2 for want of a phase-out. But it invests in noth
 and it swaps one regulator for another rather than deregulating (chair 4 fails). **Six senators were
 blanked** whose entire climate record is that bill plus carve-outs from cap-and-invest.
 
-Worse, the ladder now reads as agreement where none exists: **27 Washington legislators sit at chair
-3** — 11 Democrats who wrote the cap-and-invest programme and 3 Republicans who fund clean energy
-while repealing the vehicle mandate. Chair 3 is doing the work of the entire middle of the spectrum.
+Three others — Boehnke, MacEwen and Dozier — DID hold both limbs of chair 3 from their own records
+(clean energy loans, carbon capture, public renewable generation, plus enacted annual accountability
+for the RCW 70A.45.020 targets) and were seated there by migration 1772. **The operator blanked them
+too, in migration 1773**, because chair 3 put them on the same rung as the 11 Democrats who wrote the
+cap-and-invest programme: 27 legislators at one chair, reading as cross-caucus agreement that does
+not exist. Chair 3 is doing the work of the entire middle of the spectrum.
+
+**So this ladder currently cannot place ANY of the nine Senate Republicans who were researched on it**
+— not the six with only a repeal in their record, and not the three who fund clean energy as well.
 **The fix is a chair for "keep existing emission targets but oppose new state-specific mandates"**,
-which is the modal minority-party position here and currently maps nowhere.
+which is the modal minority-party position here and currently maps nowhere. Until it exists, the
+honest corpus is nine blanks, which is what is in the database.
 **Generalises?** Yes. Any state with a Democratic climate programme and a Republican
 repeal-the-mandate caucus produces exactly this pair of unplaceable positions.
 
