@@ -288,6 +288,28 @@ chairs 2-5 each **asserted a gestational limit the members rejected**. 🔑 The 
 chair's text says something the record contradicts. If it does, blank. If the chair is merely a
 partial picture, seat it.
 
+## 9c. `voting-rights`
+
+### ch4 needs BOTH mechanisms, and takes two instruments to evidence ✅
+Set by mig 1774. Chair 4 is "require photo ID for voting **and** regularly update voter rolls to
+remove inactive registrations". HB 1584 supplies the first (photo ID to vote in person); HB 1585
+supplies the second in its strongest form (auditors check every registered voter against department
+of licensing citizenship records and **cancel** registrations without proof). Only the 11 members who
+sponsored **both** were seated — the compound-chair pattern of 1769.
+
+### ch5 is refuted on its own terms by a bill that abolishes vote by mail ✅
+The obvious reading of HB 1584 is chair 5, and it fails on two of that chair's three limbs:
+- "eliminate mail-in voting **except for military overseas**" — HB 1584 §1 keeps "limited absentee
+  voting" for "those who most need it" and mails a ballot to "each voter who qualifies", including
+  health care facility residents. Broader than military and overseas.
+- "**strict** photo ID" — the accepted list includes **student and employer** identification cards,
+  and tribal cards with no address or expiration date.
+So the cohort sits at chair 4 while holding a position on mail voting that chair 4 never mentions.
+Under 9b that is incompleteness, not contradiction: both of chair 4's mechanisms are things these
+members voted to require, and nothing in the record cuts against either.
+🔴 Ladder consequence, logged for the owner: the tightening end of this ladder cannot tell "photo ID
+and roll purges" from "abolish vote by mail statewide", because chair 5 bundles two conditions.
+
 ## 10. Documented blanks — how to write one
 
 A blank is a **context row with sources and NO answer row**. It must:

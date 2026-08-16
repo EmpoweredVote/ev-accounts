@@ -62,6 +62,24 @@ abortion care), **18 blanked** despite unambiguous, well-documented positions.
 abortion rights at all stages and land in no chair at all.
 **Generalises?** Yes. Any state with constitutional-right politics and no funding statute hits this.
 
+### `voting-rights` — chair 5 bundles two conditions, so abolishing vote by mail lands at chair 4
+> 4 = "require photo ID for voting and regularly update voter rolls to remove inactive registrations"
+> 5 = "mandate in-person voting with **strict** photo ID and eliminate mail-in voting **except for military overseas**"
+
+HB 1584 (15 sponsors) would end vote by mail statewide and restore polling places. That is chair 5's
+headline, and chair 5 still fails: the act keeps "limited absentee voting" for "those who most need
+it" — health care facility residents among them, so wider than military and overseas — and the photo
+ID list it accepts includes **student and employer** cards, which is not "strict". The eleven members
+who also sponsored the citizenship-verification bill were seated at **chair 4**, whose two mechanisms
+they do both hold, but chair 4 says nothing about mail voting at all.
+
+**The tightening half of this ladder therefore cannot distinguish "photo ID and roll maintenance"
+from "abolish vote by mail".** The fix is to unbundle chair 5 — the strictness of the ID, the fate of
+mail voting, and the exemption list are three separate questions, and no real bill sets all three the
+way the chair does.
+**Generalises?** Yes. Every state's mail-voting rollback bill keeps some absentee category, so this
+chair is unreachable almost by construction.
+
 ### `climate-change` — no chair for "keep the targets, without state-specific mandates or new spending"
 > 3 = "**invest in clean energy** while gradually reducing reliance on fossil fuels"
 > 4 = "let **market forces** drive any transition to cleaner energy sources"

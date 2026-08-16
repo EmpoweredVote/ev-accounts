@@ -23,6 +23,13 @@ KEYWORDS = {
              r"|just cause|rent control|rent stabiliz"),
     "climate": (r"\bclimate\b|\bcarbon\b|greenhouse|\bemission|clean energy|renewable|fossil"
                 r"|\bcoal\b|cap and invest|cap-and-invest|decarbon|\bnatural gas\b"),
+    # `voting-rights` runs from automatic registration (chair 1) to in-person-only with strict photo
+    # ID (chair 5), so the screen has to catch registration bills, ID bills, mail/absentee bills and
+    # roll-maintenance bills alike. "election" alone is useless -- it matches every campaign-finance,
+    # districting and canvassing bill in the corpus -- so it is only matched next to a subject word.
+    "voting": (r"\bvoter\b|\bvoters\b|voter registration|\bballot\b|\bballots\b|vote by mail"
+               r"|absentee|polling place|voting center|voter roll|election security|election integrity"
+               r"|proof of citizenship|verification of citizenship|\bcanvass"),
     # `public-safety-approach` turns on staffing/funding levels AND on whether non-police responders
     # take the call, so the screen has to catch BOTH the police-budget bills and the co-responder /
     # crisis-team ones -- a member holding one of each is the case the screen exists to find.
