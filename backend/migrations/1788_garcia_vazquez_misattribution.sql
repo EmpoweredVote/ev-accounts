@@ -117,8 +117,41 @@ END $$;
 
 -- 1. The 9 misattributed stances. Answer AND context together: deleting only the answer would
 --    manufacture an orphan context row, which is the failure the ORPHAN_CONTEXT gate exists to catch.
+CREATE TEMP TABLE gv_pairs ON COMMIT DROP AS
+SELECT politician_id AS pid, topic_id AS tid
+  FROM inform.politician_context
+ WHERE politician_id='8bfb459b-9823-4b0d-81f4-49cb97831a80';
+
 DELETE FROM inform.politician_answers WHERE politician_id='8bfb459b-9823-4b0d-81f4-49cb97831a80';
 DELETE FROM inform.politician_context WHERE politician_id='8bfb459b-9823-4b0d-81f4-49cb97831a80';
+
+-- @context-decision: deleted — the ladders do not apply to this person at all. The reasoning is about
+-- Antonio Vazquez, so rewriting it as a documented blank on Robert Garcia would assert that Garcia's
+-- record was read and found wanting, which never happened. Captured verbatim to
+-- backend/data/stance-retirement/2026-08-16-garcia-vazquez-misattribution.json first.
+
+-- GUARD: check-stance-sources.mjs's ORPHAN_CONTEXT predicate, applied to the pairs THIS migration
+-- deleted. The global count in guard 3 below would also catch a regression, but this forces the
+-- decision here and names the rows responsible if it ever fires.
+-- ⚠ Both regexes are character-identical to the gate's.
+DO $$
+DECLARE new_orphans int;
+BEGIN
+  SELECT count(*) INTO new_orphans
+    FROM gv_pairs t
+    JOIN inform.politician_context pc
+      ON pc.politician_id = t.pid AND pc.topic_id = t.tid
+   WHERE coalesce(cardinality(pc.sources), 0) > 0
+     AND pc.reasoning !~* '^researched\s+[0-9]{4}-[0-9]{2}-[0-9]{2}'
+     AND pc.reasoning !~* 'no (scorable |substantive |specific |detailed )?public record|no public statements? found|no record found|no scorable|unable to place|insufficient public record|no substantive [a-z ]{0,40}(available|found)';
+
+  IF new_orphans > 0 THEN
+    RAISE EXCEPTION
+      'context guard: % row(s) lost their answer but kept reasoning that still describes a position. '
+      'Delete that context, or rewrite it as a documented blank, IN THIS MIGRATION -- not later.',
+      new_orphans;
+  END IF;
+END $$;
 
 -- 2. Vazquez's seat.
 DELETE FROM essentials.office_terms t
