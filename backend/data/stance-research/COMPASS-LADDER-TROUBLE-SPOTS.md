@@ -271,6 +271,18 @@ bills *restores* a low-income utility credit.
 which would bias the corpus by party. The destination rule that fixed 1-vs-2 has no analogue here,
 because a tax cut's effect on services is a forecast, not a clause.
 
+> ✅ **PARTLY RESOLVED, 2026-08-16 — THE CHAIR IS NOT BROKEN EVERYWHERE, IT IS BROKEN FOR ONE SOURCE
+> CLASS (migration 1785).** Reagan Dunn's King County **voters' pamphlet statement** supplies the
+> consequence clause four legislators' bills could not. He is "running for re-election to fight
+> against new and unnecessary taxes, higher fees, **and government spending at all levels**", will
+> "fight to keep your taxes low", and will "prioritize government spending so that **critical
+> emergency services and road maintenance** are properly funded" — naming what survives, which is the
+> scale-back the chair asks for. Seated at chair 4.
+> 🔑 A **bill** cannot legislate its own downstream effect on services, so the clause is unreachable
+> from legislation. A **candidate statement** is exactly the genre in which people do state it. Before
+> concluding a chair is broken, ask *which source class* was searched — the same correction that
+> `housing` chair 2 needed above.
+
 **RESOLVED — it is not a party bias, it is a broken chair (migration 1777).** Deborah Krishnadasan
 (D-26) proposed the *same* cut Orcutt did — the state sales tax from 6.5% to 6.0%, SB 5795 — for the
 opposite reason: Washington's tax code "remains the second most regressive in the nation" and lowering
@@ -357,6 +369,35 @@ Not a ladder-text problem, but it corrupts research if unnoticed.
   and supplies no support limb. Also note the inverse: **SB 6083's title agrees with its §1**, and
   that is what made it safe to seat from — a title is not evidence, but a title contradicted by the
   text is a warning and a title corroborated by the text is neither.
+
+---
+
+## Class G — the office EXECUTES the policy rather than choosing it
+
+Not a ladder-text problem and not a research gap: a real class of official who can never hold a chair
+on the ladder their job is about. Found across King County's countywide offices (migration 1785).
+
+### The test: **advocacy vs administration**
+
+- **King County Sheriff / `local-immigration`.** KCSO does not honor ICE detainers — and its own page
+  presents that as compliance with three **binding** authorities: RCW 10.93.160, **K.C.C. 2.15** and
+  General Orders Manual 5.05.000. 🔑 K.C.C. 2.15 is the chapter created by **Ordinance 18665, the very
+  instrument that seated Balducci and Dembowski at chair 2** in migration 1754. The councilmembers who
+  *wrote* the policy hold the chair; the appointed sheriff who *executes* it does not. Blanked.
+- **King County Assessor / `taxes`.** "State law provides 2 tax benefit programs for senior citizens
+  and persons with disabilities"; the office processes applications and does not set eligibility or
+  thresholds. An assessor values property and applies rates set elsewhere. Blanked.
+- **Contrast — King County Elections Director / `voting-rights`, SEATED at chair 2.** Julie Wise
+  *requested* prepaid postage for all voters and her push "led to statewide action resulting in
+  prepaid postage for all Washington voters in 2018"; she took drop boxes from 10 to over 80 and
+  created the Voter Education Fund. **Advocating a change in the law is a position; applying a law
+  someone else wrote is not.**
+
+⚠ The trap is that the execute-only official's record *reads* like a strong stance — a sheriff with a
+sanctuary policy looks like a chair-1 or chair-2 official. Seating them would double-count the
+legislators who actually chose it, and would put words in the mouth of someone who never spoke.
+**Generalises?** Strongly. Sheriffs, assessors, clerks, registrars and appointed department heads
+exist in every county in the country, and most compass ladders describe legislative choices.
 
 ---
 
