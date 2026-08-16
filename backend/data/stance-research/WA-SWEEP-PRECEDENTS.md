@@ -264,6 +264,17 @@ Set by mig 1771 (HB 1435, 23 sponsors — 16 R and 7 D, the first genuinely bipa
   spent on nothing but salaries and benefits, so the equipment limb is unmatched. It survives on its
   main clause plus refutation of all four neighbours, as residential-zoning ch2 did in 1769.
 
+### The enacted text of a funding act can differ from the bill you read ✅
+Set by mig 1779 (ESHB 2015). The INTRODUCED bill funded "hiring, retaining, and training law
+enforcement officers". The ENACTED act funds "law enforcement officers, **peer counselors, and
+behavioral health personnel working in co-response**" — the co-response staff were added in the
+legislative process. A cohort seated from the introduced version would have been reasoning about a
+different act. Always cite and read the session law when one exists.
+
+It stays at chair 4 anyway, and this is the cleanest example of the 9b rule in the corpus: **one
+enacted instrument funds more officers AND more co-response**, and chairs 2 and 3 both forbid that
+combination by opening with maintain/keep-current. Chair 4 claims no exclusivity, so it remains true.
+
 ### Scope: this ladder IS used for state legislators ✅
 Same ground as `local-immigration` in 1766 — a state appropriation that pays local and tribal agencies
 to put officers on the street legislates on exactly what the ladder asks. ⚠ The `transportation-
@@ -332,6 +343,25 @@ use; HB 2667 §1 states the intent as a framework that "continues to promote inn
 comprehensive risk-based approach to artificial intelligence accountability". Accountability is chair
 3's second limb at a wider scope, and **scope is not a chair on this ladder** — chair 4 is reached by
 banning, not by regulating more things.
+
+## 9e. ▶ OPEN, AND NOW WORTH ONE RULING: `judicial-criminal-justice` chair 1 vs chair 3
+
+Two members turn on the same question, so it should be decided once rather than per member.
+
+- **Dhingra, SB 6074** (reinstituting parole; petition at 60% of term for people who offended before
+  18, excluding aggravated murder and sex offences). No findings or intent section.
+- **Hackney, HB 1317 and HB 1229** (early release petitions after 25 years for offences before 21,
+  with disqualifiers; resentencing where robbery 2 drove a persistent offender sentence). Also **no
+  findings and no intent section** — mig 1779 blanked him for it.
+
+Chair 1 is "helping the person change their life and stay out of trouble in the future"; chair 3 is
+"a mix: some accountability, some support, depending on what happened". A second-look statute is
+structurally BOTH: time served is the accountability, the petition is the support, the disqualifiers
+are the "depending on what happened". Nothing in either record breaks the tie, because sentencing
+bills describe mechanisms and almost never state a purpose.
+
+The general shape — **a purpose-free mechanism cannot choose between a purpose chair and a structure
+chair** — is likely to recur on every criminal justice record in every state.
 
 ## 10. Documented blanks — how to write one
 

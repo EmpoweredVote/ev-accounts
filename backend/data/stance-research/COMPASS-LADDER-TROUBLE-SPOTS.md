@@ -178,7 +178,15 @@ repeal-the-mandate caucus produces exactly this pair of unplaceable positions.
 > 4 = "Increase police staffing, equipment, and pay to improve response times and deter crime"
 
 Both middle chairs open with a freeze on police funding or staffing, so the ladder can only describe
-adding crisis response **instead of** adding officers. HB 1435's 23 sponsors include Lauren Davis
+adding crisis response **instead of** adding officers.
+
+**The decisive example is a single enacted act.** ESHB 2015 (2025) funds a grant program for "hiring,
+retaining, and training law enforcement officers, **peer counselors, and behavioral health personnel
+working in co-response**", paid for by a new criminal justice account and a local option tax. One
+instrument, more police AND more co-response, and chairs 2 and 3 rule it out by their opening clause
+while chair 4 never mentions co-response. Fourteen legislators sit at chair 4 on an act whose text
+they would only half recognise there. No cross-referencing of separate bills is needed to see the
+problem — the ladder cannot describe the contents of one statute. HB 1435's 23 sponsors include Lauren Davis
 (prime sponsor of the enacted domestic violence co-responder grant program) and Greg Nance (behavioral
 health co-response training and reimbursement) — legislators who fund **both**, and Washington already
 runs "over 60 co-response teams" alongside a statewide officer shortage. They were seated at chair 4
