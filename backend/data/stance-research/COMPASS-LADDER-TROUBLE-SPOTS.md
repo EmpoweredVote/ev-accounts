@@ -11,6 +11,12 @@ a corpus. The Washington sweep is the first time the ladders have been tested at
 complete legislative record (3,411 bills, 147 legislators, 2025-26 biennium), so it is the first time
 these can be measured instead of guessed.
 
+📤 **Handoff version for the compass owner** — the five highest-cost chairs ranked by measured blanks,
+each with the exact clause, what was in the record, and a concrete proposed rewording:
+https://claude.ai/code/artifact/22f2169e-d7f1-4023-9045-b8cd68af8b54
+That page is the *prioritised* read. This file remains the *complete* evidence, and is what the
+handoff cites.
+
 **Scope caveat, important.** "Unreachable" below means *unreachable from legislative sponsorship in
 this corpus*. A chair could still be reachable from candidate statements, questionnaires, or floor
 speeches. Two of the classes below (UNREACHABLE ELEMENT, INDISTINGUISHABLE PAIR) are properties of
@@ -20,8 +26,9 @@ the chair text and probably generalise; the others may be Washington-specific. F
 
 ## The pattern that runs through half of these entries: THE LADDERS DESCRIBE CHANGE, AND MOST LEGISLATING DEFENDS WHAT EXISTS
 
-Written after the sweep had produced 34 documented blanks (**49 as of 2026-08-15**), because the same
-shape kept recurring on unrelated ladders and it is probably the single most useful thing here:
+Written after the sweep had produced 34 documented blanks (**58 as of 2026-08-16**, across 14
+ladders), because the same shape kept recurring on unrelated ladders and it is probably the single
+most useful thing here:
 
 - `climate-change` — nine senators who want to KEEP the statutory emission targets while opposing new
   state-specific mandates have no chair; every chair moves the policy somewhere.
@@ -233,6 +240,33 @@ politics varies them independently.
 **Generalises?** Yes. Tree-canopy-versus-housing is a live fight in every upzoning city, and the
 pro-housing side of it is systematically unplaceable here.
 
+> 🔴 **AND THE SAME LADDER FAILS THE OPPOSITE WAY: CHAIR 3 ABSORBS BOTH SIDES OF A DIVIDED VOTE
+> (migration 1787, 2026-08-16).** This is the first ladder defect in the file measured from a
+> contested municipal **roll call** rather than from sponsorship, and it is the cleanest instrument
+> in the corpus for the purpose — a 4-3 vote, one question, nine members, all positions recorded.
+>
+> Amendment 102 to Seattle CB 120993 (Rivera; adopted 4-3 on 2025-09-18; enacted in Ordinance
+> 127376) strikes "cannot" from SMC 25.11.070.A.4.b so that a tree protection area "may be altered
+> by the Director", and lets the Director approve modifications that "do not interfere with the
+> overall health and stability of the retained tree". Rivera, Saka, Juarez and Hollingsworth voted
+> aye. **Strauss voted no — and already sat at chair 3** from Ordinance 126821, the ordinance
+> Amendment 102 amends. Seating the four ayes correctly puts all five at chair 3.
+>
+> Chair 3 is "apply consistent environmental standards while giving developers **reasonable
+> flexibility** on implementation". Both sides of this vote hold consistent standards, and both hold
+> some flexibility; they disagree about **how much discretion an administrator gets over a
+> protection area**, and that variable does not appear anywhere on the ladder. Chairs 1 and 2
+> escalate the *duty*; chairs 4 and 5 remove it. Nothing varies *who decides* or *how much slack the
+> decider has*, which is the actual axis of municipal environmental politics once a protection
+> regime exists.
+> 🔑 The failure is not a bundled clause and not a missing chair at an end — it is a **missing
+> dimension in the middle**, and it only becomes visible when you have both sides of one vote. A
+> corpus built from sponsorship alone would have shown four aye-voters at chair 3 and called it
+> agreement.
+> **Generalises?** Yes, and it is the general case of the `climate-change` chair 3 problem below:
+> wherever a policy regime already exists, argument moves from *whether* to *how much discretion*,
+> and a five-point direction-of-travel ladder has no room for that.
+
 ---
 
 ## Class C — chairs distinguished only by an adverb the record never uses
@@ -294,6 +328,21 @@ everyone" is a position people actually hold and legislate; "and scale back publ
 is a prediction no bill makes about itself.
 **Generalises?** Yes. Every state has sales-tax-cut bills and none of them legislates the service
 reduction the chair requires.
+
+> ⚠ **THE CONSEQUENCE CLAUSE IS THE SECOND FAULT, NOT THE ONLY ONE — measured across all four
+> blanks, 2026-08-16.** Two of the four (Steele's HJR 4207 homestead exemption, Schoesler's SB 5289
+> farm-machinery exemption) fail chair 4 **twice**: no service consequence, *and* a targeted
+> exemption is not a cut "for **everyone**". For those two, chair 3 fails as well, and for a reason
+> worth stating plainly: chair 3 is "keep the current tax system mostly as-is with small adjustments
+> to **close unfair loopholes**", and an exemption **opens** a preference rather than closing one.
+> 🔑 So a single farm-equipment exemption bill refutes **four of the five chairs** — 1 and 2 (it
+> raises nothing), 3 (wrong direction), 4 and 5 (no consequence, not universal). Targeted exemptions
+> and credits are the *ordinary form* of minority-party tax legislating, so the ladder is not merely
+> missing a clause at chair 4; it has **no chair for narrowing a specific tax**, which is most of
+> what tax politics consists of outside a budget year.
+> ⚠ Attribution note for anyone costing this fix: `taxes` carries **6** documented blanks, of which
+> **4** are this defect. The other two are unrelated — Juarez (a single recorded No vote on
+> JumpStart, no rationale on the rate question) and King County Assessor John Wilson (Class G).
 
 ### `judicial-criminal-justice` chair 4 vs 5 — distinguished only by a purpose no penal statute states
 > 4 = "Making sure others think twice before doing the same thing."
@@ -369,6 +418,35 @@ Not a ladder-text problem, but it corrupts research if unnoticed.
   and supplies no support limb. Also note the inverse: **SB 6083's title agrees with its §1**, and
   that is what made it safe to seat from — a title is not evidence, but a title contradicted by the
   text is a warning and a title corroborated by the text is neither.
+- 🔴 **THE SIXTH TRAP IS NOT A TITLE AT ALL — IT IS A NEWS SUMMARY, AND IT IS THE MOST DANGEROUS ONE
+  (migration 1787).** Seattle's Amendment 102 reached this workstream through a reputable outlet's
+  write-up as an amendment *tightening* tree preservation, and the research question was framed as
+  `local-environment` chair 1 versus chair 2 on the full-offset clause. The redline says the
+  opposite: its operative move strikes the word **"cannot"** so that a tree protection area **"may be
+  altered by the Director"**, converting a prohibition into administrative discretion. The correct
+  chair is **3**, which was not among the two under consideration. The amendment does tighten in
+  places — Tier 3 trees added to the purpose section, the removal threshold cut from 15 feet to 10 —
+  which is exactly why a summary can be accurate sentence by sentence and still point at the wrong
+  chair: **a summary reports the changes; a chair is decided by which change is operative.**
+  ⚠ A title you can distrust on sight. A summary from a good outlet reads as reading, and the only
+  defence is the rule already in this file: open the enacted text before naming a chair.
+  ⚠ Second-order trap in the same instrument: the amendment was to **CB 120993**, the zoning
+  compliance bill, not to CB 120985, the comprehensive plan everyone was discussing. Amendments 1-53
+  belong to one bill and 54-114 to the other. Searching the wrong matter's 43 attachments for
+  "Amendment 102" returns nothing, which reads as "not in Legistar" rather than "wrong bill".
+
+---
+
+## Class F — scope questions the reference answers with "usually"
+
+- **`local-immigration` for state legislators.** The generated reference says it is "usually the WRONG
+  choice for a federal or statewide official". Used deliberately for WA senators, because SB 6264,
+  SB 5818 and SB 5002 legislate on precisely what the ladder asks — whether local law enforcement
+  cooperates with federal immigration enforcement. A state legislator writing the statewide rule for
+  local agencies is answering that question, not an adjacent one.
+- **`transportation-priorities`** carries local framing ("communitywide", "local transportation
+  policy") and was NOT used for state legislators, even where road-vs-transit instruments existed.
+  The inconsistency between these two decisions is worth a ruling.
 
 ---
 
@@ -398,19 +476,6 @@ sanctuary policy looks like a chair-1 or chair-2 official. Seating them would do
 legislators who actually chose it, and would put words in the mouth of someone who never spoke.
 **Generalises?** Strongly. Sheriffs, assessors, clerks, registrars and appointed department heads
 exist in every county in the country, and most compass ladders describe legislative choices.
-
----
-
-## Class F — scope questions the reference answers with "usually"
-
-- **`local-immigration` for state legislators.** The generated reference says it is "usually the WRONG
-  choice for a federal or statewide official". Used deliberately for WA senators, because SB 6264,
-  SB 5818 and SB 5002 legislate on precisely what the ladder asks — whether local law enforcement
-  cooperates with federal immigration enforcement. A state legislator writing the statewide rule for
-  local agencies is answering that question, not an adjacent one.
-- **`transportation-priorities`** carries local framing ("communitywide", "local transportation
-  policy") and was NOT used for state legislators, even where road-vs-transit instruments existed.
-  The inconsistency between these two decisions is worth a ruling.
 
 ---
 
