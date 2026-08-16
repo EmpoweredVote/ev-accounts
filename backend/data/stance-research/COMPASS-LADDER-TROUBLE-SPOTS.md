@@ -76,6 +76,17 @@ preserving existing services → 2. That works and should probably be written in
 because the adverb currently invites the wrong reading and the destination clause is doing all the
 work.
 
+**Refinement forced by ESSB 6346 (migration 1770): a real tax act funds BOTH destinations at once.**
+The enacted millionaires' tax states in §1(6) that its intent is to "maintain and preserve essential
+governmental services" (chair 2) while its §1 also aspires to free school meals for every child, a
+new city and county fiscal health account, and increased K-12 funding (chair 1). It was seated at
+chair 2 because none of the chair-1 items has an operative section — the act's Parts IX–XI are titled
+TAX RELIEF — but that test only works when the two destinations are unequal in force. **An act that
+genuinely funded both existing services and a new programme would not be placeable on this ladder at
+all**, and neither would a member whose own record contains one of each (two came up in this cohort:
+C. Wilson and Saldaña). The ladder assumes tax policy has a single destination; budgets do not work
+that way.
+
 ### `taxes` chair 4 vs 5 — the same problem, still unresolved
 > 4 = "Cut taxes for everyone **and scale back public services to match**"
 > 5 = "**Drastically** cut taxes and **shrink government**"
@@ -111,6 +122,13 @@ Not a ladder-text problem, but it corrupts research if unnoticed.
 - **"Millionaires tax" (HB 2724)** reads as `taxes` chair 1. Its own §1(6) says the intent is to
   "maintain and preserve" existing services and §202 spends the revenue offsetting sales and B&O tax
   cuts → chair 2.
+- **ESSB 6346's own INTENT section points at the wrong chair — one level deeper than a title.**
+  Read against the House companion it enacts, the Senate act adds three chair-1-sounding promises to
+  §1: breakfast and lunch "for all children served without charge", a city and county fiscal health
+  account the legislature "intends to create", and "increase state funding for K-12 education".
+  **None has an operative section in the act's 110 pages.** The trap is not the title here; it is
+  enacted text that a careful reader would reasonably trust. Read the operative parts and the
+  distribution section (§202), then come back to the intent.
 - **HB 2367 ends "declaring an emergency"** — Washington boilerplate for immediate effect. `climate-change`
   chair 1 is "declare a climate **emergency**". Title-reading seats it at chair 1 and is flatly wrong.
 - **HB 2335 §403** ("necessary for the immediate preservation of the public peace... or support of the

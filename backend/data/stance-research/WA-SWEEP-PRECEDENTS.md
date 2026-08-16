@@ -47,13 +47,41 @@ wrong, and "least extreme option the reasoning supports" is an explicitly forbid
 ## 2. `taxes`
 
 ### ch1 vs ch2 — the DESTINATION of the revenue decides, never the adverb ✅
-Set by mig 1759 (Mosqueda = 1), applied in mig 1762 (Fitzgibbon = 2). Bills do not characterise
+Set by mig 1759 (Mosqueda = 1), applied in migs 1762 (Fitzgibbon = 2) and 1770 (26 senators = 2).
+Bills do not characterise
 their own magnitude, so "significantly" vs "moderately" is unusable.
 
 - Revenue funds **new** investment → **chair 1**.
 - Revenue **preserves existing services** or offsets other tax cuts → **chair 2**.
 - Fitzgibbon: HB 2724 §1(6) says the intent is to "maintain and preserve essential governmental
   services" and §202 spends it offsetting sales and B&O relief → chair 2, despite a 9.9% new tax.
+
+### An intent section's ASPIRATIONS are not a destination ✅
+Set by mig 1770 (ESSB 6346, the enacted millionaires' tax, 26 senators at chair 2).
+
+The destination test above asks where the revenue goes. Answer it from the **operative** sections —
+§202 "distribution of tax revenues" and the parts that spend — not from §1. ESSB 6346's §1 adds three
+chair-1-sounding promises the House companion lacked, and **not one has an operative section** in 110
+pages: breakfast and lunch "for all children served without charge" (the standalone free-meals bill,
+SB 5352, died), a "city and county fiscal health account" the legislature "intends to create", and
+"increase state funding for K-12 education". Parts IX–XI are titled TAX RELIEF. The only new
+dedicated money is §202(2)'s five percent to the pre-existing fair start for kids account, from 2029.
+Reading §1 alone seats 26 senators at chair 1 on programmes that do not exist.
+
+### When a member's OWN record states both destinations, the cohort instrument governs ✅
+Also mig 1770, and the first time the screen found a genuine conflict *inside* one member's record.
+
+Two of the 26 primary-sponsored a tax on large companies dedicated to a **new** programme — chair 1's
+description exactly: C. Wilson's SB 5799 (0.4% B&O surtax on social media platforms creating the
+youth behavioral health account) and Saldaña's SB 5638 (excise tax on excess hospital executive pay
+to "increase Washingtonians' access to health care"). Each also authored a **larger** instrument
+stating the opposite destination in its own words — Wilson's enacted SB 5813 funds "ongoing support"
+of K-12, early learning and higher education; Saldaña's SB 5796 says "maintain and preserve essential
+services" verbatim. Both stayed at chair 2.
+🔑 This is not the forbidden "least extreme option" tiebreaker, and the difference matters: chair 2 is
+**positively evidenced** for all 26 by §1(6) of the act each of them sponsored. The rule is that a
+member whose own record documents both destinations has not been discriminated by the ladder, so the
+instrument they signed governs. If a later reader disagrees, those are the two rows to move.
 
 ### ch4 vs ch5 — BLANK unless an instrument states what happens to services ✅
 Set by mig 1764 (Orcutt). Both chairs carry a consequence clause about public services; tax-cut bills

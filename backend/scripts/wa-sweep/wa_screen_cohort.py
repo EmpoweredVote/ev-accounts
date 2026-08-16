@@ -23,6 +23,12 @@ KEYWORDS = {
              r"|just cause|rent control|rent stabiliz"),
     "climate": (r"\bclimate\b|\bcarbon\b|greenhouse|\bemission|clean energy|renewable|fossil"
                 r"|\bcoal\b|cap and invest|cap-and-invest|decarbon|\bnatural gas\b"),
+    # Deliberately NOT anchored on "revenue" alone: the department of revenue administers most of
+    # the tax code, so it fires on every administrative bill. The taxes ladder turns on whether a
+    # member raises or cuts, and where the money lands, so match the instruments that do either.
+    "tax": (r"\btax\b|\btaxes\b|\btaxed\b|\btaxation\b|\btaxable\b|\btax credit|\btax exemption"
+            r"|\btax preference|\bexcise\b|\bb&o\b|business and occupation|\blevy\b|\blevies\b"
+            r"|sales and use tax|property tax|capital gains|\bsurcharge\b|\bsurtax\b"),
 }
 
 
