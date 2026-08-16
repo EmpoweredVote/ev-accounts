@@ -26,7 +26,11 @@ cd backend && set -a && source .env && set +a && node --dns-result-order=verbati
 4. **`wa_cohort.py "HB 1217"`** — everyone among the seated 147 who sponsored it, by member ID.
 5. **`wa_screen_cohort.py "HB 1217" rent`** — per-member screen for a DIFFERENT instrument that would
    evidence a different chair. Required before any cohort write.
-6. Generate the migration from the cache rather than hand-typing rows. `_example_generator.py` is a
+6. **`wa_audit_sponsors.py "SB 6346:Senate%20Bills/6346.pdf"`** — compare the web service's sponsor
+   list against the list printed on the bill. Run it before every cohort write. The service is the
+   index's only source and it **under-reported SB 6346 by one member** (the enrolled act names 27
+   sponsors, the service returned 26), which cost Adrian Cortes his row until migration 1776.
+7. Generate the migration from the cache rather than hand-typing rows. `_example_generator.py` is a
    working template (migration 1769): pre-checks, split cohorts, content guards, gate invariants.
 
 ## Caches

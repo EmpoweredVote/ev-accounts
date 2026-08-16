@@ -386,6 +386,16 @@ Three confirmed traps, all of which point at a *wrong chair*:
   chair was read from, and the source URL. On split cohorts, assert **both sides separately** — a bug
   collapsing everyone onto one chair still satisfies a count guard.
 - **Verify on row counts** after applying, not on the apply script's "OK".
+- 🔴 **AUDIT THE SPONSOR LIST AGAINST THE BILL ITSELF before any cohort write.** The index's only
+  source is SponsorService/GetSponsors, and on SB 6346 it returned **26** sponsors where the enrolled
+  session law names **27** — Adrian Cortes was missing, and migration 1770 was short his row until
+  1776 added it. Nothing downstream can catch this: the guards check the rows that were written, and
+  a member the service never mentions is indistinguishable from one who sponsored nothing.
+  `scripts/wa-sweep/wa_audit_sponsors.py` does the comparison. All 19 seated instruments were
+  re-checked and SB 6346 is the only real discrepancy, so the rest of the corpus stands.
+  ⚠ Two benign false alarms: a **name change** (member 20760 is "Caldier" on January 2025 bills and
+  "Valdez" today — compare member IDs, never surnames), and sponsor lines running into the bill text
+  so a token like "(3" reads as a name.
 - **Anchor every keyword.** Five confirmed over-fires: pa**rent**al, pa**rent**ing, re**lease**,
   p**reparation** (made an unreachable chair look reachable), special-education "**inclusionary**
   practices".
