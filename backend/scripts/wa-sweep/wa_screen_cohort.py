@@ -23,6 +23,14 @@ KEYWORDS = {
              r"|just cause|rent control|rent stabiliz"),
     "climate": (r"\bclimate\b|\bcarbon\b|greenhouse|\bemission|clean energy|renewable|fossil"
                 r"|\bcoal\b|cap and invest|cap-and-invest|decarbon|\bnatural gas\b"),
+    # `judicial-criminal-justice` runs rehabilitation (1) to punishment (5), so a competing instrument
+    # is one that lengthens or shortens exposure, or supplies the PURPOSE the second-look statutes
+    # never state. Anchored: unanchored "sentence" matches "sentencing of a bill" boilerplate and
+    # "offender" appears in every scoring formula in the code.
+    "crimjust": (r"\bsentenc|resentenc|\bparole\b|incarcerat|correctional|\boffender|\bfelony\b"
+                 r"|misdemeanor|probation|community custody|\breentry\b|re-entry|expunge|vacat(e|ing) "
+                 r"the record|clemency|restitution|diversion program|therapeutic court|drug court"
+                 r"|criminal justice|\bpenalt(y|ies)\b"),
     # `ai-regulation` runs BACKWARDS -- chair 1 is "allow AI companies to develop freely", chair 5 is
     # the ban -- so a competing instrument here is one that regulates HARDER or softer, not left/right.
     # Bare "AI" is not matched: it hits "said", "claim" and every acronym in the corpus.

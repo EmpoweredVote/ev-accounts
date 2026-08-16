@@ -344,9 +344,31 @@ comprehensive risk-based approach to artificial intelligence accountability". Ac
 3's second limb at a wider scope, and **scope is not a chair on this ladder** — chair 4 is reached by
 banning, not by regulating more things.
 
-## 9e. ▶ OPEN, AND NOW WORTH ONE RULING: `judicial-criminal-justice` chair 1 vs chair 3
+## 9e. ✅ RESOLVED — `judicial-criminal-justice`: STRUCTURE OVER INFERRED PURPOSE
 
-Two members turn on the same question, so it should be decided once rather than per member.
+**Operator ruling, 2026-08-15, applied in migration 1780: "chair 3 for both — structure over inferred
+purpose."** Where an instrument states no purpose, place it on what it does, not on what a reader
+takes it to be for. A second-look statute is structurally chair 3 — "a mix: some accountability, some
+support, depending on what happened" — because time served is the accountability, the petition is the
+support, and the exclusions are the "depending on what happened". Seated 12 (7 senators on SB 6074,
+5 representatives on HB 1317 / HB 1229), and Hackney's documented blank from 1779 was rewritten into
+an answer.
+
+🔑 **THE RULING HAS A BOUNDARY, AND IT IS IN THE WORDING: *inferred*.** Where an act STATES its
+purpose, that is evidence, not inference, and the stated purpose governs. HB 1239 (the reentry
+readiness act) finds that "reentry readiness reduces recidivism" and that earned time is "the most
+effective means of incentivizing participation in rehabilitative programming" — chair 1's text
+asserted by the act about itself. Its 7 sponsors are seated at **chair 1**, three of whom also signed
+a second-look statute: instrument A sets the floor, instrument B raises it.
+
+⚠ Two instruments read and deliberately left OFF the ladder: Nobles' SB 5182 (midwifery and doula
+services for incarcerated pregnant people) and Simmons' HB 1233 (the ending forced labor act). Both
+are conditions-of-confinement bills and say nothing about what matters when someone breaks the law.
+⚠ Lovick holds the parole act AND two penalty-increase instruments. He stays at chair 3, and for him
+it is not a compromise — "some accountability, some support" describes that record literally.
+
+### The history, kept because the shape will recur
+Two members turned on the same question, and it should be decided once rather than per member.
 
 - **Dhingra, SB 6074** (reinstituting parole; petition at 60% of term for people who offended before
   18, excluding aggravated murder and sex offences). No findings or intent section.
@@ -357,11 +379,12 @@ Two members turn on the same question, so it should be decided once rather than 
 Chair 1 is "helping the person change their life and stay out of trouble in the future"; chair 3 is
 "a mix: some accountability, some support, depending on what happened". A second-look statute is
 structurally BOTH: time served is the accountability, the petition is the support, the disqualifiers
-are the "depending on what happened". Nothing in either record breaks the tie, because sentencing
+are the "depending on what happened". Nothing in either record broke the tie, because sentencing
 bills describe mechanisms and almost never state a purpose.
 
 The general shape — **a purpose-free mechanism cannot choose between a purpose chair and a structure
-chair** — is likely to recur on every criminal justice record in every state.
+chair, so the structure chair wins** — is likely to recur on every criminal justice record in every
+state, and the ruling above is the answer to carry there.
 
 ## 10. Documented blanks — how to write one
 
