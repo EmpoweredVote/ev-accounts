@@ -100,7 +100,41 @@ high wrong-rate. The remaining ~259 money links share ~$0.7M and fall to Track B
 **Output:** one migration + a rollback JSON capturing every purged link's filer id, official committee
 name, and dollar figure.
 
-### Track B — the ~7,270 zero-dollar links
+### 🔴 TRACK B AS SPECIFIED BELOW WAS SUPERSEDED AT THE GATE (operator, 2026-08-16)
+
+Track A shipped as migration 1790. Measuring the remainder at the Task 5 gate falsified two premises
+this section rests on. **Read this before the original text below, which is kept for the record.**
+
+1. **"the ~7,270 zero-dollar links" is wrong — the remainder holds $28.6M.** Track A covered the top
+   50 by dollars, not all money-bearing links. Splitting what is still `confirmed`: 784 links with
+   surname+given name ($13.71M), 2,766 naming a different person ($0.65M), 3,716 untestable
+   ($14.26M). A mechanical name rule would have moved ~$14.9M on inference.
+2. 🔴 **A name-based rule marks Track A's own verified keeps as unknown.** Newsom, Irwin, Gipson,
+   Lackey and Solis all lack a given name in their committee and land in the untestable group. Any
+   Track B rule MUST exclude links Track A already adjudicated.
+
+**Revised approach: verify the money, demote the rest.** 336 money-bearing links remain `confirmed`,
+32 of them Track A keeps, so **304 are genuinely unresearched** — about 12 `browser_evaluate` batches.
+Adjudicating those on the official filer record takes evidence coverage of cal_access money from
+94.4% to **100%**. Only then is the genuinely evidence-free remainder marked unknown.
+
+🔑 **Three statuses, not two.** The binary keep/purge was the error in this spec:
+`confirmed` = a filer record ties it to this politician · `not_applicable` = affirmative disproof ·
+`needs_research` = we do not know, which is **true without inference** and still disarms the link,
+because display (`campaignFinanceService`) and ingestion (`campaignFinanceScheduler`) both gate on
+`research_status = 'confirmed'` and nothing reads `needs_research`.
+⚠ Zero-dollar links are **armed, not inert** — $0 means ingestion has not reached them yet. The 4,859
+contributions cleaned up in 1789/1790 arrived through exactly such links.
+⚠ The office proof route (added in Track A) must **not** be used for the zero-dollar remainder. It
+exists to prevent an irreversible deletion of money; marking a link unknown destroys nothing, and
+using it there would put thousands of guesses into `confirmed` on far softer evidence.
+
+Executable detail is in the plan, Tasks 5–7:
+`docs/superpowers/plans/2026-08-16-cal-access-bucket-b.md`.
+
+---
+
+### ~~Track B — the ~7,270 zero-dollar links~~ (superseded; kept for the record)
 
 **Rule:** keep if the committee name contains **both** the politician's `last_name` and `first_name`
 as whole words. Otherwise demote to `not_applicable` with a WRONG PERSON note. No contributions exist

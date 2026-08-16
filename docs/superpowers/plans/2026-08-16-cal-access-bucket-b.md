@@ -529,289 +529,156 @@ masks later checks.
 
 ---
 
-### Task 5: GATE — report the wrong-rate before touching Track B
+### ✅ Tasks 1–4 COMPLETE (2026-08-16) — Track A shipped
 
-**Files:** none.
+Migration **1790**, commit `ce0a4299`, CI green on every job.
+**18 links purged / $12,683,421.80 · 32 kept / $26,451,393.94.** cal_access displayed money on active
+politicians went **$41,474,744.97 → $28,791,323.17**, exactly the purge total.
 
-**Interfaces:**
-- Consumes: Task 3's wrong-rate and Task 4's verified totals.
-- Produces: an operator decision to proceed with, or revise, Track B.
+**Deviations from the plan as written, all deliberate and already in the committed code:**
 
-This gate is in the spec by design. Track B demotes roughly 3,700 links on a rule, not on evidence.
-Track A is the only measurement of how often that rule would be wrong.
+1. 🔴 **The Playwright fetch in Task 2 does not work and fails SILENTLY.** Cal-Access sits behind
+   Incapsula: curl gets a 212-byte stub, headless Chromium gets 0 chars even on the home page, headed
+   Chromium gets the home page but empty detail pages, and adding a custom UA made it worse. Every
+   detail page returns an **empty body with a 200**, so the scripted run reported `not-found` for all
+   25 rather than erroring. **What works:** same-origin `fetch()` from inside the long-lived MCP
+   browser, which already holds the Incapsula cookie — all 25 names in ONE `browser_evaluate` call.
+   `02-fetch-filers.ts` now emits that snippet and documents the whole failure ladder.
+2. 🔑 **A second proof route was added: the office the politician holds.** The first run purged
+   Newsom's $10.68M, because the rule accepted only surname+given-name and "NEWSOM FOR CALIFORNIA
+   GOVERNOR 2022" contains no "Gavin". Cal-Access routinely omits an incumbent's given name from
+   their own committee. The office is an affirmative tie of the same kind; it rescued 5 links /
+   $13.0M (Newsom·Governor, Irwin·Gipson·Lackey·Assembly, Solis·Supervisor).
+3. 🔑 **Disproof OUTRANKS corroboration.** Rob Bonta once held an Assembly seat, so an office match
+   alone would rescue "BONTA FOR ASSEMBLY 2024; MIA". A conflicting trailing given name vetoes the
+   office route. Implemented as an explicit ordering in `03-classify-track-a.ts`.
+4. **Tony Strickland is an operator ruling keyed by filer id** (`OPERATOR_KEEPS`), not a rule: he
+   holds a Senate seat so no office match reaches a Controller committee, but the operator confirmed
+   it is the same man and his real 2010 statewide run, so the donations merge.
+5. ⚠ `officeKeywords()` does not recognise **"Board of Trustees"**. Harmless in Track A (the one
+   affected row, Dolores Santiago, was purged correctly anyway) but its recorded *basis* wrongly says
+   "no office recorded". **Fix before any further use of the office route.**
 
-- [ ] **Step 1: Report to the operator**
-
-State: how many of the top 50 were purged and for how much; the wrong-rate; and — the number that
-matters — **how many purges were "no official record / surname only" rather than "names someone
-else."** A high proportion of the former means prove-it-right is removing mostly-correct data, and
-Track B would do that ~3,700 more times.
-
-- [ ] **Step 2: Offer the coverage extension the spec allows**
-
-The spec permits extending Track A from the top 50 to the top 100 (94.4% → 98% of dollars) if the
-first pass shows a high wrong-rate. If it did, re-run Tasks 1–4 with `TOP_N=100`; `01-build-worklist.ts`
-takes `TOP_N` from the environment, and Task 3 will simply re-decide the same links plus 50 more.
-Skip the extension when the wrong-rate is low — the extra 50 links share only ~$1.6M.
-
-- [ ] **Step 3: Wait for an explicit decision**
-
-Do not start Task 6 without it. If the operator revises the posture, the spec and this plan both need
-updating first.
-
----
-
-### Task 6: Track B classifier — dry run
-
-**Files:**
-- Create: `backend/scripts/cal-access-bucket-b/04-classify-track-b.ts`
-- Create (output): `backend/data/cal-access-bucket-b/track-b-decisions.json`
-
-**Interfaces:**
-- Consumes: the DB, plus `namesThem(official: string, first: string, last: string): boolean`
-  **imported from `03-classify-track-a.ts` rather than copied**, so the two tracks cannot drift.
-  `DIMINUTIVES` stays private to that module — `namesThem` already applies it.
-- Produces: `track-b-decisions.json` — `{ source_id, politician_name, committee_name, decision, basis }`.
-
-**Rule:** keep when the committee name carries the surname **in leading position** AND the given name
-(or a diminutive). Otherwise purge. Leading position is what stops "Buena Park" and "Menlo Park"
-counting as naming Traci Park.
-
-- [ ] **Step 1: Export the helpers from Task 3's script**
-
-In `03-classify-track-a.ts`, change `const DIMINUTIVES` to `export const DIMINUTIVES`, and
-`function namesThem` to `export function namesThem`, and guard its top-level body so importing does
-not re-run it:
-
-```ts
-// at the top of the executable section of 03-classify-track-a.ts
-const isMain = process.argv[1]?.endsWith('03-classify-track-a.ts');
-if (isMain) {
-  // ... existing read/classify/write/generate code, indented into this block ...
-}
-```
-
-- [ ] **Step 2: Write the Track B classifier**
-
-```ts
-// backend/scripts/cal-access-bucket-b/04-classify-track-b.ts
-import 'dotenv/config';
-import * as fs from 'fs';
-import * as path from 'path';
-import { Pool } from 'pg';
-import { namesThem } from './03-classify-track-a';
-
-const DIR = path.join(process.cwd(), 'data', 'cal-access-bucket-b');
-
-const SQL = `
-SELECT ps.id AS source_id, p.full_name AS politician_name,
-       coalesce(p.first_name,'') AS first_name, coalesce(p.last_name,'') AS last_name,
-       coalesce(substring(ps.notes from '"committee_name"\\s*:\\s*"([^"]{0,200})'),'') AS committee_name,
-       coalesce((SELECT sum(g.total_amount) FROM transparent_motivations.contribution_summary_agg g
-                  WHERE g.politician_source_id = ps.id), 0) AS dollars
-  FROM transparent_motivations.politician_sources ps
-  JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
- WHERE ps.source_system = 'cal_access'
-   AND p.is_active
-   AND ps.research_status = 'confirmed'
-   AND lower(regexp_replace(p.full_name,'^.*\\s','')) = lower(coalesce(p.last_name,''));
-`;
-
-// Cal-Access writes the candidate's surname first: "SOLACHE FOR ASSEMBLY 2026; FRIENDS OF".
-// Requiring it in the leading position stops "Buena Park" naming Traci Park.
-function surnameLeads(committee: string, last: string): boolean {
-  const head = committee.trim().toLowerCase().slice(0, last.trim().length + 2);
-  return head.startsWith(last.trim().toLowerCase());
-}
-
-async function main() {
-  if (!process.env.DATABASE_URL) { console.error('ERROR: DATABASE_URL is not set'); process.exit(1); }
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  const { rows } = await pool.query(SQL);
-  await pool.end();
-
-  const decisions = rows.map(r => {
-    const leads = surnameLeads(r.committee_name, r.last_name);
-    const named = namesThem(r.committee_name, r.first_name, r.last_name);
-    if (leads && named) return { ...r, decision: 'keep', basis: 'surname leads and given name present' };
-    if (!leads)         return { ...r, decision: 'purge', basis: 'surname not in leading position' };
-    return { ...r, decision: 'purge', basis: 'no given name in committee name (unprovable)' };
-  });
-
-  fs.mkdirSync(DIR, { recursive: true });
-  fs.writeFileSync(path.join(DIR, 'track-b-decisions.json'), JSON.stringify(decisions, null, 2));
-
-  const tally: Record<string, number> = {};
-  let purgeMoney = 0;
-  for (const d of decisions) {
-    tally[`${d.decision}: ${d.basis}`] = (tally[`${d.decision}: ${d.basis}`] ?? 0) + 1;
-    if (d.decision === 'purge') purgeMoney += Number(d.dollars);
-  }
-  console.log(`${decisions.length} links classified`);
-  for (const [k, v] of Object.entries(tally)) console.log(`  ${v.toString().padStart(5)}  ${k}`);
-  console.log(`money on purge set: $${purgeMoney.toFixed(2)}  <-- must be small; Track A took the big money`);
-}
-main();
-```
-
-- [ ] **Step 3: Run the dry run**
-
-```bash
-cd "C:/EV-Accounts/backend" && npx tsx scripts/cal-access-bucket-b/04-classify-track-b.ts
-```
-
-Expected: roughly 7,270 links classified, and **`money on purge set` should be small** — Track A
-already removed the large sums. If it is large, Track A did not cover what it should have; stop.
-
-- [ ] **Step 4: Spot-check 10 keeps and 10 purges by eye**
-
-Read them out of `track-b-decisions.json`. A keep that names someone else, or a purge of a committee
-that plainly names the politician, means the rule is wrong. Fix before generating a migration.
-
-- [ ] **Step 5: Commit**
-
-```bash
-cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/04-classify-track-b.ts backend/data/cal-access-bucket-b/track-b-decisions.json && git commit -m "chore(cal-access): Track B classifier dry run"
-```
+**Gate result — 17 of 18 purges were affirmatively disproved**, not guesses: 11 name a different
+person outright, 2 do not share a surname at all, 3 share a surname but the office contradicts. Only
+Kyle Langford ($113,004.50) was a bare unprovable. Prove-it-right cost almost nothing — *because the
+office route existed*.
 
 ---
 
-### Task 7: Track B migration — generate, apply, ship
+## 🔴 TRACK B WAS RE-SCOPED AT THE GATE (operator decision, 2026-08-16). READ THIS BEFORE TASK 5.
+
+The original Tasks 5–7 said: apply a mechanical name rule to ~7,270 links, keep or demote. **That is
+superseded.** Measuring the remainder at the gate broke two assumptions the plan rested on:
+
+- **The remainder is NOT zero-dollar.** Splitting the still-`confirmed` bucket-B links three ways:
+
+  | group | links | dollars |
+  |---|---|---|
+  | A — surname leads + own given name | 784 | **$13,710,488** |
+  | B — names a different person | 2,766 | $652,846 |
+  | C — unknown, no given name to test | 3,716 | **$14,262,907** |
+
+  A "mechanical rule" would therefore have moved ~$14.9M on inference, and "demote everything" would
+  have taken $28.63M — effectively all of cal_access — off display indefinitely.
+- 🔴 **A name-based rule marks Track A's own verified keeps as unknown.** Newsom, Irwin, Gipson,
+  Lackey and Solis all fail the given-name test and land in group C. **Any Track B rule MUST exclude
+  links Track A already adjudicated**, or it silently undoes evidence work.
+
+**The decision: verify the money, demote the rest.**
+Only **336** money-bearing bucket-B links remain `confirmed`, and **32 of those are Track A's keeps**,
+so **304 are genuinely unresearched**. At 25 per `browser_evaluate` call that is ~12 calls. Doing them
+takes evidence coverage of cal_access money from 94.4% to **100%** — no dollar anywhere resting on a
+guess — and leaves only genuinely evidence-free rows to be marked unknown.
+
+🔑 **Three statuses, mapped to what is actually known** — the binary keep/purge was the error:
+- `confirmed` — an official filer record ties it to this politician.
+- `not_applicable` — a filer record or committee name names a **different** person. Affirmative disproof.
+- `needs_research` — we do not know. **True without inference, and it disarms the link**: both
+  `campaignFinanceService` (display) and `campaignFinanceScheduler` (ingestion) gate on
+  `research_status = 'confirmed'`, and nothing reads `needs_research`.
+
+⚠ This matters because the zero-dollar links are **armed, not inert** — they show $0 because ingestion
+has not reached them, not because they are harmless. The 4,859 contributions cleaned up in migrations
+1789/1790 arrived through exactly such links.
+
+---
+
+### Task 5: Verify the remaining 304 money-bearing links
 
 **Files:**
-- Modify: `backend/scripts/cal-access-bucket-b/04-classify-track-b.ts` (add migration emission)
-- Create: `backend/migrations/1791_cal_access_track_b.sql` ← **re-check the number**
+- Create: `backend/scripts/cal-access-bucket-b/05-build-money-worklist.ts`
+- Create (output): `backend/data/cal-access-bucket-b/money-worklist.json`, `money-filer-records.json`
 
-**Interfaces:**
-- Consumes: `track-b-decisions.json`.
-- Produces: the applied migration.
+- [ ] **Step 1: Build the worklist of every still-`confirmed` money link Track A did not adjudicate**
 
-- [ ] **Step 1: Emit the migration from the classifier**
+Copy `01-build-worklist.ts` and change the selection to: bucket B, `research_status = 'confirmed'`,
+has a `contribution_summary_agg` row, and `id NOT IN` the Track A decision set (read the 50
+`source_id`s from `track-a-decisions.json` — do NOT filter on the migration-1790 note, which only the
+18 purges carry). Expect **304**. If it is not 304, reconcile before fetching.
 
-Append to `main()` in `04-classify-track-b.ts`, before it returns:
+- [ ] **Step 2: Fetch official filer records, 25–30 per call**
 
-```ts
-  const MIGRATION_NUMBER = process.env.MIGRATION_NUMBER ?? '1791';
-  const purge = decisions.filter(d => d.decision === 'purge');
-  const keep  = decisions.filter(d => d.decision === 'keep');
+Same method as Task 2 and it is the ONLY one that works: navigate the MCP browser to
+`https://cal-access.sos.ca.gov/` once, then run the `02-fetch-filers.ts` snippet with each batch of
+ids. Keep the 400ms in-loop pause — it is a government host.
+🔑 **Control every batch:** re-include filer `1414018` and confirm it still returns
+`NEWSOM FOR CALIFORNIA GOVERNOR 2022`. If a batch returns `__NOMATCH__` for everything, you are being
+challenged again, not looking at empty records — reload the home page and retry that batch.
 
-  const sql = `-- ${MIGRATION_NUMBER}_cal_access_track_b.sql
--- Cal-Access bucket B, Track B: the ${decisions.length} zero-dollar links left after Track A.
---
--- Spec: docs/superpowers/specs/2026-08-16-cal-access-bucket-b-design.md
--- Decisions: backend/data/cal-access-bucket-b/track-b-decisions.json
---
--- Rule (the operator's prove-it-right posture, applied mechanically): keep a link only when the
--- committee name carries the politician's surname IN LEADING POSITION -- where Cal-Access puts it --
--- AND their given name or a known diminutive. Otherwise demote.
--- The leading-position test is what stops "Buena Park" and "Menlo Park" from naming Traci Park; the
--- diminutive list is what stops "BOB SMITH FOR COUNCIL" being demoted off a politician named Robert.
---
--- ⚠ This DELIBERATELY demotes correct-but-unprovable links such as "SOLACHE FOR ASSEMBLY 2026" --
--- surname, office, year, no given name anywhere. That is the posture working as intended, and the
--- same call the operator made on Socrata bucket C. No money rides on these rows, so the cost is a
--- missing source listing rather than a wrong figure.
---
--- KEEP ${keep.length} · PURGE ${purge.length}
-BEGIN;
+- [ ] **Step 3: Merge results into `money-filer-records.json`** in the same shape as
+`filer-records.json`: `{ filer_id: { official_name, fetched_at, status } }`.
 
-CREATE TEMP TABLE tb_purge (sid uuid PRIMARY KEY) ON COMMIT DROP;
-INSERT INTO tb_purge (sid) VALUES
-  ${purge.map(d => `('${d.source_id}')`).join(',\n  ')};
+- [ ] **Step 4: Commit** the worklist, the records and the script.
 
-DO $$
-DECLARE n int; d numeric;
-BEGIN
-  SELECT count(*) INTO n FROM tb_purge;
-  IF n <> ${purge.length} THEN RAISE EXCEPTION 'pre-check: purge set is %, expected ${purge.length}', n; END IF;
+---
 
-  SELECT count(*) INTO n FROM transparent_motivations.politician_sources ps JOIN tb_purge t ON t.sid = ps.id
-   WHERE ps.source_system <> 'cal_access';
-  IF n <> 0 THEN RAISE EXCEPTION 'pre-check: % target(s) are not cal_access links', n; END IF;
+### Task 6: Classify the 304 and write the migration
 
-  -- Track A owns the money. If anything here still displays dollars, the two tracks disagree.
-  SELECT round(coalesce(sum(g.total_amount),0)::numeric,2) INTO d
-    FROM transparent_motivations.contribution_summary_agg g JOIN tb_purge t ON t.sid = g.politician_source_id;
-  IF d > 1000 THEN RAISE EXCEPTION 'pre-check: purge set still displays %, which Track A should have handled', d; END IF;
-END $$;
+**Files:**
+- Create: `backend/scripts/cal-access-bucket-b/06-classify-money.ts`
+- Create: `backend/migrations/<N>_cal_access_money_verified.sql` ← re-check the number
 
-UPDATE transparent_motivations.politician_sources ps
-   SET research_status = 'not_applicable',
-       notes = coalesce(ps.notes,'') || ' | WRONG PERSON (migration ${MIGRATION_NUMBER}, 2026-08-16):'
-               || ' committee name does not carry this politician''''s surname in leading position and'
-               || ' given name. Unprovable under the prove-it-right posture.',
-       updated_at = now()
-  FROM tb_purge t
- WHERE ps.id = t.sid;
+- [ ] **Step 1: Fix `officeKeywords()` first.** Add "board of trustees" → `school board`, then audit
+the mapping against the actual `offices.title` / `chambers.name` values held by the 304's politicians
+(`SELECT DISTINCT title, chamber ...`). An unrecognised office silently becomes "no corroboration",
+which under prove-it-right means a purge.
 
-DO $$
-DECLARE n int;
-BEGIN
-  SELECT count(*) INTO n FROM transparent_motivations.politician_sources ps JOIN tb_purge t ON t.sid = ps.id
-   WHERE ps.research_status = 'not_applicable' AND ps.notes LIKE '%WRONG PERSON (migration ${MIGRATION_NUMBER}%';
-  IF n <> ${purge.length} THEN RAISE EXCEPTION 'guard: % of ${purge.length} demoted with a note', n; END IF;
+- [ ] **Step 2: Classify** by importing `namesThem`, `officeKeywords`, `conflictingGivenName` and
+`OPERATOR_KEEPS` from `03-classify-track-a.ts` — do not reimplement. Same ordered rule:
+operator ruling → no record → surname+given → surname absent → conflicting given name → office match
+→ otherwise purge.
 
-  -- Count ONLY bucket-B links. Bucket A's 14 correct keeps (migration 1789) are also still
-  -- \`confirmed\` and are not this migration's business -- an unscoped count would be off by 14.
-  SELECT count(*) INTO n FROM transparent_motivations.politician_sources ps
-    JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-   WHERE ps.source_system = 'cal_access' AND p.is_active AND ps.research_status = 'confirmed'
-     AND lower(regexp_replace(p.full_name,'^.*\\s','')) = lower(coalesce(p.last_name,''));
-  IF n <> ${keep.length} THEN RAISE EXCEPTION 'guard: % bucket-B links still confirmed, expected ${keep.length}', n; END IF;
+- [ ] **Step 3: Read every PURGE line before applying.** 304 is small enough to eyeball and this is
+the last evidence-grade pass over cal_access money.
 
-  RAISE NOTICE 'cal_access Track B: ${purge.length} links demoted, ${keep.length} kept';
-END $$;
+- [ ] **Step 4: Generate, apply, verify on row counts, commit, push, confirm CI** — exactly as Tasks
+3–4. Money by INLINE literal ids; never `count(*)` on `contributions`; delete
+`contribution_summary_agg` rows too. Guard that the keep set survived with its dollar total unchanged.
 
-COMMIT;
-`;
-  fs.writeFileSync(path.join(process.cwd(), 'migrations', `${MIGRATION_NUMBER}_cal_access_track_b.sql`), sql);
-  console.log(`wrote migrations/${MIGRATION_NUMBER}_cal_access_track_b.sql`);
-```
+---
 
-⚠ The `''''` in the note text is deliberate: it is a single quote inside a SQL string inside a JS
-template literal. Read the generated `.sql` and confirm the note reads `politician's`, not
-`politician''s`.
+### Task 7: Demote the zero-dollar remainder to `needs_research`
 
-- [ ] **Step 2: Get the number and generate**
+**Files:**
+- Create: `backend/scripts/cal-access-bucket-b/07-demote-remainder.ts`
+- Create: `backend/migrations/<N>_cal_access_demote_unresearched.sql` ← re-check the number
 
-```bash
-cd "C:/EV-Accounts" && git fetch origin master --quiet && node backend/scripts/check-migration-numbers.mjs
-cd "C:/EV-Accounts/backend" && MIGRATION_NUMBER=<next free> npx tsx scripts/cal-access-bucket-b/04-classify-track-b.ts
-```
+- [ ] **Step 1: Select the remainder** — bucket B, still `confirmed`, **no** `contribution_summary_agg`
+row, and not in the Track A or Task 6 decision sets. Roughly 6,930.
 
-- [ ] **Step 3: Apply**
+- [ ] **Step 2: Split two ways, not three.** Where the committee name names a demonstrably different
+person (`conflictingGivenName` fires), set `not_applicable` with a WRONG PERSON note. Everything else
+→ `needs_research` with a note saying it was produced by a discredited predicate and never verified.
+⚠ Do **not** apply the office route here. It exists to prevent an irreversible deletion of money;
+marking a link unknown destroys nothing, and using it here would put thousands more guesses into
+`confirmed` on far softer evidence than Track A's.
 
-```bash
-cd "C:/EV-Accounts/backend" && npx tsx scripts/_apply-file.ts migrations/<N>_cal_access_track_b.sql
-```
+- [ ] **Step 3: Guard that no money moves.** Assert the displayed cal_access total is **identical**
+before and after — this migration must touch only rows with no agg row.
 
-- [ ] **Step 4: Verify on row counts**
+- [ ] **Step 4: Apply, verify, commit, push, CI.**
 
-```sql
-SELECT research_status, count(*) AS links
-FROM transparent_motivations.politician_sources ps
-JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-WHERE ps.source_system='cal_access' AND p.is_active
-GROUP BY 1 ORDER BY 2 DESC;
-```
-
-Expected: `confirmed` equals the classifier's KEEP count exactly; the rest `not_applicable`.
-
-Also re-run the money query from Task 4 Step 2 and confirm `dollars_displayed` is **unchanged** from
-after Track A — Track B must not move money.
-
-- [ ] **Step 5: Re-check the number, commit, push, confirm CI**
-
-```bash
-cd "C:/EV-Accounts" && git fetch origin master --quiet && node backend/scripts/check-migration-numbers.mjs
-git add backend/migrations/<N>_cal_access_track_b.sql backend/scripts/cal-access-bucket-b/04-classify-track-b.ts && git commit -m "fix(cal-access): Track B — demote committee links that cannot be tied to the politician"
-git push origin master
-cd "C:/EV-Accounts" && until [ "$(gh run list --limit 1 --json status -q '.[0].status')" = "completed" ]; do sleep 15; done
-rid=$(gh run list --limit 1 --json databaseId -q '.[0].databaseId'); gh run view "$rid" --json jobs -q '.jobs[] | "\(.name) :: \(.conclusion)"'
-```
-
-- [ ] **Step 6: Update the memory record**
-
-Update `cal_access_lasttoken_mislinks`: mark bucket B done, record the final displayed-dollar figure
-and the keep/purge counts, and note that the deferred bulk-registration ingest is now the only
-remaining path to re-enabling cal_access.
+- [ ] **Step 5: Update memory** `cal_access_lasttoken_mislinks`: final displayed total, the
+confirmed/not_applicable/needs_research counts, and that the deferred bulk-registration ingest is now
+the only path to re-earning the `needs_research` links.
