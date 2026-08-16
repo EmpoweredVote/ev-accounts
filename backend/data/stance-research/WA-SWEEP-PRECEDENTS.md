@@ -147,6 +147,31 @@ date. Eleven sponsors of HB 2367 seated at 3; Fitzgibbon's four further CCA bill
 
 ---
 
+### An instrument can refute three chairs and evidence none ✅
+Set by mig 1772 (SB 5091, 16 sponsors — the minority-party bill barring adoption of California's
+motor vehicle emission standards).
+
+- **Chair 5 is refuted by the bill's own findings**, which is the finding worth carrying forward: a
+  Republican bill repealing an EV mandate reads as "reject climate change policies", and §1 says
+  "decarbonizing the transportation sector is achievable and an important objective in Washington
+  state" and calls for "a more balanced approach ... for Washington's transition to a carbon free
+  transportation sector". Chairs 1 and 2 fail for want of an emergency or a phase-out date.
+- **Chair 3 fails because the act invests in nothing** — it is a repeal.
+- **Chair 4 fails because the act is not deregulation**: it directs ecology to adopt rules consistent
+  with the *federal* clean air act. Substituting one regulator for another is not "letting market
+  forces drive" anything.
+- Result: the instrument sets **no floor at all**. Three members were seated on other instruments of
+  their own; six were **blanked**. Do not let an instrument that refutes the far chairs be treated as
+  evidence for the near ones.
+
+### ch3 is a COMPOUND chair — both limbs, from a member's own record ✅
+"Invest in clean energy **while gradually reducing reliance on fossil fuels**". Mig 1772 seats
+Boehnke (SB 6004 + SB 5991 for investment; enacted SB 5036 for accountability to the RCW 70A.45.020
+targets), MacEwen and Dozier (SB 5208 supplies both limbs in one instrument — clean energy loans
+expressly "fundamental to helping Washington meet ... the emissions reductions established under RCW
+70A.45.020"). Combining two of a member's own instruments to satisfy a compound chair is the same
+pattern migration 1769 used for residential-zoning chair 4.
+
 ## 6. `civil-rights`
 
 ### ch2 = strengthening enforcement; ch1 needs reparations; ch3 refuted by any broadening amendment ✅

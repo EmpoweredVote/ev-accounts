@@ -62,6 +62,26 @@ abortion care), **18 blanked** despite unambiguous, well-documented positions.
 abortion rights at all stages and land in no chair at all.
 **Generalises?** Yes. Any state with constitutional-right politics and no funding statute hits this.
 
+### `climate-change` — no chair for "keep the targets, without state-specific mandates or new spending"
+> 3 = "**invest in clean energy** while gradually reducing reliance on fossil fuels"
+> 4 = "let **market forces** drive any transition to cleaner energy sources"
+> 5 = "**reject** climate change policies and focus on economic growth instead"
+
+SB 5091 (16 senators) bars Washington from adopting California's motor vehicle emission standards and
+requires rules consistent with the **federal** clean air act instead — while finding that
+"decarbonizing the transportation sector is achievable and an important objective". That refutes
+chair 5 outright, and chairs 1-2 for want of a phase-out. But it invests in nothing (chair 3 fails)
+and it swaps one regulator for another rather than deregulating (chair 4 fails). **Six senators were
+blanked** whose entire climate record is that bill plus carve-outs from cap-and-invest.
+
+Worse, the ladder now reads as agreement where none exists: **27 Washington legislators sit at chair
+3** — 11 Democrats who wrote the cap-and-invest programme and 3 Republicans who fund clean energy
+while repealing the vehicle mandate. Chair 3 is doing the work of the entire middle of the spectrum.
+**The fix is a chair for "keep existing emission targets but oppose new state-specific mandates"**,
+which is the modal minority-party position here and currently maps nowhere.
+**Generalises?** Yes. Any state with a Democratic climate programme and a Republican
+repeal-the-mandate caucus produces exactly this pair of unplaceable positions.
+
 ### `public-safety-approach` — "more police" and "more crisis response" are mutually exclusive rungs
 > 2 = "**Maintain** current police staffing but shift non-violent calls to unarmed mental health co-responders"
 > 3 = "**Keep current** public safety funding while adding crisis response teams for mental health and addiction calls"
