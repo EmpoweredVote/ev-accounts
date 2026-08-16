@@ -216,8 +216,16 @@ legislators who actually chose the policy, and attributes a position to someone 
 | Cohort | Officials | Covered | Rows | Documented blanks | Method |
 |---|---|---|---|---|---|
 | WA legislature | 147 | 131 | 286 | 49 | instrument-first |
-| Seattle city | 11 | **11** | 44 | 5 | person-first (2 rows survive from instrument-first) |
+| Seattle city | 11 | **11** | 48 | 5 | person-first, then instrument-first (see below) |
 | King County | 14 | 11 | 35 | 4 | person-first |
+
+⚠ **Seattle's last four rows came back from instrument-first, and that is the thesis of this file
+working (migration 1787, 08-16).** The person-first pass covered all eleven officials and left
+`local-environment` empty for four of them, because a questionnaire answer about trees is valence.
+Reading one contested amendment's enacted text — Amendment 102 to CB 120993, adopted 4-3 — seated
+all four at once, *and* was the only thing that could have. It also produced a ladder defect the
+person-first pass could not see: chair 3 absorbs both sides of that 4-3 vote. **Person-first supplied
+the coverage; instrument-first supplied the last rows and the diagnostic.** Run both.
 
 The three King County officials with no rows are blanks by finding, not gaps: two are Class G, and
 one was appointed three months ago with no public policy statement of any kind.
