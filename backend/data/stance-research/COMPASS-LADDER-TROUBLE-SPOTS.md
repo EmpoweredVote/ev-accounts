@@ -18,6 +18,30 @@ the chair text and probably generalise; the others may be Washington-specific. F
 
 ---
 
+## The pattern that runs through half of these entries: THE LADDERS DESCRIBE CHANGE, AND MOST LEGISLATING DEFENDS WHAT EXISTS
+
+Written after the sweep had produced 34 documented blanks, because the same shape kept recurring on
+unrelated ladders and it is probably the single most useful thing here:
+
+- `climate-change` — nine senators who want to KEEP the statutory emission targets while opposing new
+  state-specific mandates have no chair; every chair moves the policy somewhere.
+- `taxes` chairs 4 and 5 — a tax cut must come "and scale back public services to match". Three
+  legislators across both parties (Orcutt R, Krishnadasan D, Steele R) proposed cuts and stated no
+  service consequence, because bills do not legislate their own consequences.
+- `healthcare` — Penner's HB 2331 forbids the health care authority from cutting off life-sustaining
+  medicaid services. Chair 3 pairs helping people who cannot afford care with EXPANDING programmes;
+  chair 4 says help ONLY the poorest. Defending the current scope is neither.
+- `public-safety-approach` chairs 2 and 3 open with "maintain"/"keep current" and then require a
+  co-responder trade-off, so wanting both more officers and more crisis response has no chair either.
+
+**A legislature spends most of its effort protecting, funding and adjusting programmes that already
+exist.** Ladders built as five points along a direction of travel cannot describe that, and the
+result is not neutrality — it is a blank, which reads to a coverage-hungry session as "not yet
+researched". If one change were made to the compass off the back of this sweep, it should be to give
+the middle chairs a defend-the-status-quo reading rather than a stalled-change one.
+
+---
+
 ## Class A — a chair requires an element that has NO instrument anywhere in the corpus
 
 The chair cannot be evidenced for *anyone*, no matter how strong their record. This is the most
@@ -61,6 +85,29 @@ abortion care), **18 blanked** despite unambiguous, well-documented positions.
 **The fix is probably to unbundle funding from legality.** As written, a legislator can support
 abortion rights at all stages and land in no chair at all.
 **Generalises?** Yes. Any state with constitutional-right politics and no funding statute hits this.
+
+### `childcare` — a subsidy channelled through EMPLOYERS has no chair
+> 2 = "Significantly expanding subsidies and provider grants to make childcare affordable for **low- and middle-income families**"
+> 3 = "Offering targeted tax credits and subsidies for **families below a set income threshold** while supporting providers through training and facility grants"
+> 5 = "Leaving childcare to the private market and families, with **no government subsidies**"
+
+Penner's HB 2187 gives employers a B&O and public utility tax credit worth 50 percent of what they
+pay a registered provider for an employee's dependents — a capped five-year pilot, small employers
+first, with small businesses encouraged to pool into "child care consortiums". Chair 5 is refuted
+because a tax credit **is** a public subsidy. Chairs 2 and 3 aim their subsidies at families, by
+income; this one is paid to employers with no income test and no provider grants. Chair 4 is
+deregulation, which the act does not do.
+
+Employer-side child care support is a mainstream policy in both parties and it sits in the gap
+between "subsidise families" and "leave it to the market". **The fix is a chair for supply-side or
+employer-mediated support**, or wording in chairs 2-3 that does not name the recipient.
+**Generalises?** Yes — employer child care credits exist in many state codes and in the federal one.
+
+Also worth noting on this ladder: HB 1128 (enacted, 43 sponsors) establishes a child care WORKFORCE
+STANDARDS BOARD to set minimum compensation for child care workers, on the finding that low pay has
+"resulted in lack of access, unaffordable prices". Labour standards are a third mechanism for the
+same goal — cost and availability — and no chair mentions the workforce at all, so a 43-sponsor
+enacted instrument reaches nothing.
 
 ### `ai-regulation` — no scope axis, so a chatbot rule and an economy-wide framework share a chair
 > 3 = "Require AI developers to disclose risks and be held responsible when their systems cause harm"
