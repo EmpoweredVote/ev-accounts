@@ -225,3 +225,6 @@ one was appointed three months ago with no public policy statement of any kind.
 **Related:** `WA-SWEEP-PRECEDENTS.md` (every chair ruling), `COMPASS-LADDER-TROUBLE-SPOTS.md` (where
 the ladders fail), `2026-08-15-seattle-council-web-sources.md` (the Seattle re-run in detail),
 `scripts/wa-sweep/README.md` (the instrument-first tooling and the failures it encodes).
+
+**Shareable version** of this note (same content, formatted for reading outside the repo):
+https://claude.ai/code/artifact/52b76ebf-9e94-4529-af2d-1b17b51ea181
