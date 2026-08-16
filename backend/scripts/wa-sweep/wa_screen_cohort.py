@@ -23,6 +23,11 @@ KEYWORDS = {
              r"|just cause|rent control|rent stabiliz"),
     "climate": (r"\bclimate\b|\bcarbon\b|greenhouse|\bemission|clean energy|renewable|fossil"
                 r"|\bcoal\b|cap and invest|cap-and-invest|decarbon|\bnatural gas\b"),
+    # `ai-regulation` runs BACKWARDS -- chair 1 is "allow AI companies to develop freely", chair 5 is
+    # the ban -- so a competing instrument here is one that regulates HARDER or softer, not left/right.
+    # Bare "AI" is not matched: it hits "said", "claim" and every acronym in the corpus.
+    "ai": (r"artificial intelligence|\bchatbot|machine learning|automated decision|algorithmic"
+           r"|deepfake|synthetic media|digital likeness|facial recognition"),
     # `voting-rights` runs from automatic registration (chair 1) to in-person-only with strict photo
     # ID (chair 5), so the screen has to catch registration bills, ID bills, mail/absentee bills and
     # roll-maintenance bills alike. "election" alone is useless -- it matches every campaign-finance,

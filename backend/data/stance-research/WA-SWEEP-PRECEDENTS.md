@@ -310,6 +310,29 @@ members voted to require, and nothing in the record cuts against either.
 🔴 Ladder consequence, logged for the owner: the tightening end of this ladder cannot tell "photo ID
 and roll purges" from "abolish vote by mail statewide", because chair 5 bundles two conditions.
 
+## 9d. `ai-regulation` — READ CHAIR 1 FIRST, THIS LADDER RUNS BACKWARDS
+
+Chair 1 is "allow AI companies to develop and deploy technology freely without government
+interference"; chair 5 is the ban. The pro-regulation politician is at the HIGH end, the opposite of
+most ladders here. Migration 1775 carries a pre-check asserting chair 1 still reads
+"freely without government interference" — if the ladder is ever reordered, those 31 rows mean the
+opposite of what they were written to mean, and the tripwire is cheaper than re-reading them.
+
+### ch3 = disclosure + liability; ch4 needs an actual BAN ✅
+Set by mig 1775 (HB 2225, AI companion chatbots, 31 sponsors). Chair 3's two limbs are both enacted
+text: the "artificially generated and not human" notice at the start, every three hours and each new
+session (disclosure), and §7 making a violation an unfair practice under the consumer protection act
+(responsibility for harm). Chair 2 is refuted because every duty is mandatory; chairs 4 and 5 because
+the act mandates no testing regime, bans no use, and creates no approval process.
+
+🔑 **A comprehensive high-risk AI framework is STILL chair 3.** The screen surfaced Ryu's HB 2157
+(high-risk AI development and deployment) and Shavers' HB 2667 (consumer protections for AI systems) —
+economy-wide duties against algorithmic discrimination in consequential decisions. Neither prohibits a
+use; HB 2667 §1 states the intent as a framework that "continues to promote innovation" through "a
+comprehensive risk-based approach to artificial intelligence accountability". Accountability is chair
+3's second limb at a wider scope, and **scope is not a chair on this ladder** — chair 4 is reached by
+banning, not by regulating more things.
+
 ## 10. Documented blanks — how to write one
 
 A blank is a **context row with sources and NO answer row**. It must:

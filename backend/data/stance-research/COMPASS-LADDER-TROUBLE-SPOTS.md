@@ -62,6 +62,24 @@ abortion care), **18 blanked** despite unambiguous, well-documented positions.
 abortion rights at all stages and land in no chair at all.
 **Generalises?** Yes. Any state with constitutional-right politics and no funding statute hits this.
 
+### `ai-regulation` — no scope axis, so a chatbot rule and an economy-wide framework share a chair
+> 3 = "Require AI developers to disclose risks and be held responsible when their systems cause harm"
+> 4 = "Require safety testing and **ban** high-risk AI uses in areas like hiring, healthcare, and policing"
+
+Chair 4 is reached only by BANNING. Washington's actual AI legislation does not ban: HB 2225 (enacted,
+31 sponsors) regulates one product class with disclosure duties and consumer protection act liability,
+and HB 2157 and HB 2667 build economy-wide duties against algorithmic discrimination in consequential
+decisions — hiring, healthcare, lending, housing — while expressly intending to "continue to promote
+innovation". All three land at chair 3, so a narrow chatbot rule is indistinguishable from a
+comprehensive risk framework.
+
+**The fix is a scope dimension, or a chair 4 that reads "require testing and impact assessments for
+high-risk uses" without the ban.** As written, the entire middle of AI policy — every risk-based
+accountability regime anyone has actually passed — collapses onto one chair, and chairs 4 and 5 are
+reachable only by legislation no state has enacted.
+**Generalises?** Yes, and it will get worse: risk-based frameworks are the dominant model in the US
+and the EU, and none of them bans a use outright.
+
 ### `voting-rights` — chair 5 bundles two conditions, so abolishing vote by mail lands at chair 4
 > 4 = "require photo ID for voting and regularly update voter rolls to remove inactive registrations"
 > 5 = "mandate in-person voting with **strict** photo ID and eliminate mail-in voting **except for military overseas**"
