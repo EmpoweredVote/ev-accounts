@@ -25,18 +25,65 @@ most one selected per stance":
 quotes_one_selected_per_stance UNIQUE (politician_id, lower(topic_key)) WHERE readrank_selected
 ```
 
-## Why the index cannot simply be dropped
+## What the index does and does not protect
 
-It looks like a stale stance-era artifact — 293 predates 1377 by ~1084 migrations — but today it is
-what **prevents a corruption**. If two questions in one topic each held selected quotes for the same
-candidate, `getRaceBlindQuotes` would:
+It looks like a stale stance-era artifact — 293 predates 1377 by ~1084 migrations — and it does
+block the *same-candidate* case: one politician cannot hold two selected quotes in one topic.
 
-1. merge all of them into a single topic card,
+**But it does not close the hole, because it is keyed on `(politician_id, lower(topic_key))`, not on
+the topic alone.** Candidate A selected on question 1 and candidate B selected on question 2 of the
+*same topic* satisfies the index perfectly — each politician has exactly one selected quote — and
+still produces the corruption. `getRaceBlindQuotes` would:
+
+1. merge both into a single topic card,
 2. print one question text chosen **nondeterministically** (the `ORDER BY` is on topic title, so
    intra-topic row order is unspecified),
-3. show quotes answering the *other* question underneath it.
+3. place the two quotes side by side as a head-to-head comparison, though they answer **different
+   questions**.
 
-`getPlayableRaces` would also still count that as one rankable topic, understating coverage.
+`getPlayableRaces` does not catch it either: its `HAVING COUNT(DISTINCT politician_id) >= 2` sees two
+distinct candidates in the merged topic, so the race stays playable and the topic counts as rankable.
+The admin grid meanwhile reports *both* questions as `answering=1`, not rankable — so the two layers
+disagree, and the game is the one that shows the bogus card.
+
+⚠ 1815's header says the index "is what PREVENTS a corruption". That is too strong — it prevents only
+the same-candidate case. This file is the accurate account.
+
+### The concrete trap
+
+For LA Mayor today both candidates are selected on the film question, so any *additional* selection
+on downtown hits the index and fails loudly. The dangerous move is a **swap**, which is exactly what
+an editor wanting downtown live would naturally do:
+
+> unselect Raman from film → select Raman on downtown
+
+Now film holds only Bass and downtown only Raman. The index is satisfied. The game renders one
+econ-dev card pairing Bass's *film* answer against Raman's *downtown* answer under a single
+nondeterministically-chosen question. Nothing errors.
+
+## Footprint in prod, measured 2026-08-17
+
+| | |
+|---|---|
+| Confirmed questions | 2431 |
+| Distinct race/topic pairs | 2429 |
+| Race/topic pairs hosting **>1** question | **1** — LA Mayor general, `economic-development` (3 questions) |
+| Merged-card cases currently live | **0** |
+
+So the corpus is 1:1 everywhere except the one cluster this session touched, and nothing is corrupt
+today. The bug is latent and narrowly scoped — but it is armed at exactly the place someone is most
+likely to edit next, since downtown is fully prepared and waiting.
+
+A cheap standing check, worth adding as a guard script:
+
+```sql
+SELECT rq.race_id, lower(q.topic_key), count(DISTINCT q.question_id)
+  FROM essentials.quotes q
+  JOIN essentials.readrank_questions rq ON rq.id = q.question_id
+ WHERE q.readrank_selected AND q.deidentified_text IS NOT NULL
+ GROUP BY 1, 2
+HAVING count(DISTINCT q.question_id) > 1;   -- must return 0 rows until the fix lands
+```
 
 ## Consequence being lived with
 
