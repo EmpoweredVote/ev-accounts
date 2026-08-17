@@ -55,14 +55,29 @@
 -- Majji (6,201 / 27%) and Babu Venkat (3,889 / 16%); Dynette Davis held Place 4
 -- (15,212 / 66%). Source: Community Impact, 2026-05-02.
 --
--- 🔴 AND THE OTHER HALF IS WRONG TOO. The occupancy predicate is `term_end IS NULL AND
--- is_incumbent`. The duplicate (ISD) row carries is_incumbent = TRUE, while the SURVIVING
--- mayoral row carries is_incumbent = FALSE. So the corpus today asserts Hill occupies
--- Frisco ISD Place 5 — which he vacated — and asserts that the City of Frisco has NO
--- sitting mayor, which is equally false. Retiring the duplicate alone would fix the first
--- and leave the second, so the survivor's incumbency flag is set here as well. Hill won
--- the 2026-06-13 runoff and is the sitting mayor; friscotexas.gov/2054/Mayor-Mark-Hill,
--- the city's own officeholder page, is already this row's photo_origin_url.
+-- ⚠⚠ CORRECTION, 2026-08-17 — THE PARAGRAPH BELOW WAS WRONG WHEN WRITTEN. Left in place,
+-- struck through, because the wrong claim was also reported to the operator.
+--
+--   WRONG: "The occupancy predicate is `term_end IS NULL AND is_incumbent` ... the corpus
+--   asserts that the City of Frisco has NO sitting mayor."
+--
+--   It does not. Occupancy resolves through essentials.current_office_holders, which filters
+--   ONLY on term dates — (term_start IS NULL OR term_start <= CURRENT_DATE) AND (term_end IS
+--   NULL OR term_end >= CURRENT_DATE) — and never reads is_incumbent at all. 76,372 current
+--   office holders carry is_incumbent = false. Mark Hill resolved as Frisco's mayor before
+--   this migration and after it. There are TWO SEPARATE GATES, not one conjunction: the
+--   officials queries use the term-date view above, while getPoliticiansFlatList's
+--   incumbents-only view filters p.is_incumbent = true with NO occupancy join.
+--
+--   So the real defect was smaller and different: Hill was absent from the INCUMBENTS-ONLY
+--   list, not from Frisco's mayoralty. Setting is_incumbent = true is still correct — he won
+--   the 2026-06-13 runoff and is the sitting mayor, per friscotexas.gov/2054/Mayor-Mark-Hill,
+--   already this row's photo_origin_url — so step 2 below stands unchanged. Only the
+--   justification was overstated.
+--
+--   The ISD half of the paragraph WAS right, and for a reason that survives the correction:
+--   that term was open-ended (term_end NULL), which makes it current under the real predicate
+--   too. Closing it at 2026-05-31 is what vacates Place 5.
 --
 -- The mayoral term's term_start is deliberately left NULL / precision 'unknown'. The
 -- runoff date is documented but the swearing-in date is not, and a guessed day is worse
