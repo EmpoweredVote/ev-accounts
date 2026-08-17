@@ -39,6 +39,7 @@ app.use(express.json());
 app.use('/api/admin/readrank-quotes', readrankRouter);
 
 const UUID = '11111111-1111-1111-1111-111111111111';
+const QUESTION_UUID = '22222222-2222-2222-2222-222222222222';
 
 beforeEach(() => {
   mockUpdate.mockReset();
@@ -65,7 +66,7 @@ describe('PUT /api/admin/readrank-quotes/deselect', () => {
     mockClear.mockResolvedValue(undefined);
     const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: UUID, topic_key: 'housing' });
     expect(res.status).toBe(200);
-    expect(mockClear).toHaveBeenCalledWith(UUID, 'housing');
+    expect(mockClear).toHaveBeenCalledWith(UUID, 'housing', null); // no question_id -> whole topic
     expect(mockLogAdminAction).toHaveBeenCalledWith(
       'admin-1', 'readrank_quote.deselect', null, expect.objectContaining({ politician_id: UUID, topic_key: 'housing' }),
     );
@@ -75,6 +76,27 @@ describe('PUT /api/admin/readrank-quotes/deselect', () => {
     mockClear.mockRejectedValue(new Error('boom'));
     const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: UUID, topic_key: 'housing' });
     expect(res.status).toBe(500);
+  });
+
+  it('200 forwards an optional question_id so one question can be cleared alone', async () => {
+    // Without this the admin can only clear a whole topic, which is too coarse for
+    // a topic hosting several questions (migration 1377).
+    mockClear.mockResolvedValue(undefined);
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect')
+      .send({ politician_id: UUID, topic_key: 'economic-development', question_id: QUESTION_UUID });
+    expect(res.status).toBe(200);
+    expect(mockClear).toHaveBeenCalledWith(UUID, 'economic-development', QUESTION_UUID);
+    expect(mockLogAdminAction).toHaveBeenCalledWith(
+      'admin-1', 'readrank_quote.deselect', null,
+      expect.objectContaining({ politician_id: UUID, topic_key: 'economic-development', question_id: QUESTION_UUID }),
+    );
+  });
+
+  it('422 when question_id is present but not a uuid', async () => {
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect')
+      .send({ politician_id: UUID, topic_key: 'housing', question_id: 'nope' });
+    expect(res.status).toBe(422);
+    expect(mockClear).not.toHaveBeenCalled();
   });
 });
 

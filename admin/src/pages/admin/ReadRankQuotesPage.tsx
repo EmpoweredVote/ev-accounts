@@ -18,7 +18,16 @@ interface AdminQuote {
   editorNote: string | null;
   readrankSelected: boolean;
 }
-interface AdminTopicQuotes { topicKey: string; quotes: AdminQuote[]; }
+/** One selectable group = one QUESTION (migration 1377), not one topic. A topic can
+ *  host several questions, so `topicKey` is not unique across groups — key React
+ *  lists, radio groups and the clear button on `key` instead. */
+interface AdminTopicQuotes {
+  key: string;
+  topicKey: string;
+  questionId: string | null;
+  questionText: string | null;
+  quotes: AdminQuote[];
+}
 
 export function ReadRankQuotesPage() {
   const [politicians, setPoliticians] = useState<PoliticianWithQuotes[]>([]);
@@ -93,14 +102,20 @@ export function ReadRankQuotesPage() {
     } finally { setSavingId(null); }
   }
 
-  // Turn a topic off entirely: deselect all quotes in the candidate+topic group.
-  async function clearSelection(topicKey: string) {
+  // Turn one QUESTION off: deselect this candidate's quotes answering it. Passing
+  // question_id matters — omitting it clears every question in the topic, which is
+  // how an editor could silently unselect a sibling question's live answer.
+  async function clearSelection(group: AdminTopicQuotes) {
     if (!expandedId) return;
-    setSavingTopic(topicKey); setTopicsError(null);
+    setSavingTopic(group.key); setTopicsError(null);
     try {
       await apiFetch('/admin/readrank-quotes/deselect', {
         method: 'PUT',
-        body: JSON.stringify({ politician_id: expandedId, topic_key: topicKey }),
+        body: JSON.stringify({
+          politician_id: expandedId,
+          topic_key: group.topicKey,
+          question_id: group.questionId,
+        }),
       });
       await refetchTopics(expandedId);
     } catch (e) {
@@ -233,17 +248,26 @@ export function ReadRankQuotesPage() {
                   <p className="py-3 text-sm text-gray-500 dark:text-gray-400">No quotes for this politician.</p>
                 )}
                 {topics?.map((t) => (
-                  <section key={t.topicKey} className="mt-3 mb-4">
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{t.topicKey}</h3>
+                  <section key={t.key} className="mt-3 mb-4">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="min-w-0">
+                        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{t.topicKey}</h3>
+                        {/* A topic can host several questions; the question text is what
+                            distinguishes two groups that share this heading. */}
+                        {t.questionText && (
+                          <p className="text-xs text-gray-600 dark:text-gray-300 mt-0.5">{t.questionText}</p>
+                        )}
+                      </div>
                       {t.quotes.some((q) => q.readrankSelected) && (
                         <button
-                          className="text-xs text-gray-500 dark:text-gray-400 hover:text-ev-red hover:underline disabled:opacity-50"
-                          disabled={savingTopic === t.topicKey}
-                          onClick={() => clearSelection(t.topicKey)}
-                          title="Turn this topic off for Read &amp; Rank — deselect all quotes"
+                          className="text-xs shrink-0 text-gray-500 dark:text-gray-400 hover:text-ev-red hover:underline disabled:opacity-50"
+                          disabled={savingTopic === t.key}
+                          onClick={() => clearSelection(t)}
+                          title={t.questionId
+                            ? 'Turn this question off for Read & Rank — deselect its quotes'
+                            : 'Turn this topic off for Read & Rank — deselect all quotes'}
                         >
-                          {savingTopic === t.topicKey ? 'Clearing…' : 'Clear selection'}
+                          {savingTopic === t.key ? 'Clearing…' : 'Clear selection'}
                         </button>
                       )}
                     </div>
@@ -252,7 +276,9 @@ export function ReadRankQuotesPage() {
                         <li key={q.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 flex gap-3 items-start bg-white dark:bg-gray-900">
                           <input
                             type="radio"
-                            name={`sel-${p.id}-${t.topicKey}`}
+                            // Per QUESTION: one radio group per topic let the editor
+                            // select only one answer across all of the topic's questions.
+                            name={`sel-${p.id}-${t.key}`}
                             className="mt-1 shrink-0"
                             checked={q.readrankSelected}
                             disabled={!q.deidentifiedText || savingId === q.id}

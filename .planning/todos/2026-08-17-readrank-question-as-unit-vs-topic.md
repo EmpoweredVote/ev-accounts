@@ -115,3 +115,72 @@ question `ded400bd` is unusable on both sides regardless and is a separate retir
 - 1814's post-verify gate 3 asserts no econ-dev quote is selected outside the film question for these
   candidates. That gate is deliberately redundant with the index today, so an index rework cannot
   void the invariant silently — expect to revisit it when step 3 lands.
+
+---
+
+## Status — done 2026-08-17
+
+Steps 1, 2, 3 and 5 are implemented and tested; step 4 is done for the admin app and **blocked in the
+game client**, which is a separate repo. 554 backend tests pass, typecheck clean, 0 lint errors.
+
+| Step | Where | State |
+|---|---|---|
+| 1. Blind payload per question | `readrankService.ts` `getRaceBlindQuotes` | done |
+| 2. Rankable **questions** | `readrankService.ts` `getPlayableRaces` | done |
+| 3. Index rework | `backend/migrations/1820_readrank_one_selected_per_question.sql` | **authored, not applied** |
+| 4. Frontend audit | `admin/` done · `read-rank/` outstanding | **partial** |
+| 5. Scoring | `readrankService.ts` `computeRaceMatch` | done |
+| + | `backend/scripts/check-readrank-question-unit.mjs` + CI job | done |
+
+Cards are keyed on `COALESCE(question_id::text, 'topic:' || lower(topic_key))`, exposed as
+`questionCardKey()` in TypeScript. The payload gained `topics[].key`, `topics[].questionId` and
+`quotes[].cardKey`; `BallotEntry.perTopic[]` gained `key`, `questionId` and `question`. The
+`topicCount` / `rankableTopicCount` wire names were **kept** (the game client reads
+`rankableTopicCount ?? topicCount`) and now carry question-keyed numbers, with
+`questionCount` / `rankableQuestionCount` added as the honest names.
+
+### Two things this doc missed
+
+**a. `selectReadrankQuote` was itself the trigger.** The doc frames the dangerous move as an editor
+manually swapping. It was worse: the admin *select* button cleared by
+`(politician_id, lower(topic_key))`, so selecting Raman's downtown quote **silently unselected
+Raman's film quote** — one click, no error, straight to the merged card. The admin radio groups were
+`name={sel-${p.id}-${t.topicKey}}` for the same reason, so the UI physically prevented one selection
+per question. Both are now question-scoped (`readrankQuotesService.ts`, `ReadRankQuotesPage.tsx`),
+`listReadrankQuotes` groups per question, and `PUT /deselect` takes an optional `question_id`.
+This had to land **before** step 3, not after.
+
+**b. Step 3 arms a *client* corruption, so it cannot be applied alone.** `read-rank`'s
+`useReadRankStore.ts` builds progress as `topics[t.topicKey] = {...}` — a Record keyed by topicKey —
+and routes verdicts via `race.topics[quote.topicKey]`. Two cards sharing a topicKey collide: the
+second overwrites the first, `topicOrder` lists the key twice, and one question renders twice while
+the other's quotes never appear. Nothing errors. So the ordering is really 1, 2, 5, admin, **client**,
+then 3.
+
+### Coordinated change needed in `read-rank` before a split topic goes live
+
+Group on the payload's `key` / `cardKey`, not `topicKey`:
+
+- `src/store/useReadRankStore.ts` — `buildRaceProgress` (`topics[t.topicKey]` → `topics[t.key]`,
+  `topicOrder.push(t.key)`), `refreshRaceContent`, and every `race.topics[quote.topicKey]` verdict
+  lookup (~:366, :386, :449) → `quote.cardKey`.
+- `src/data/api.ts:279` — `isTopicAllowed(t.topicKey)` still gates on the real topic, which is
+  correct; leave it.
+- `src/utils/alignmentGrid.ts:26`, `src/components/AlignmentPills.tsx:22` — `new Map(entry.perTopic.map(t => [t.topicKey, t]))`
+  loses a section; key on `t.key`.
+- `src/data/mockData.ts:251` — same, in the mock reveal builder.
+- Render `perTopic[].question` where two sections share a `title`.
+- Optional: migrate to `rankableQuestionCount` / `questionCount`.
+
+Until that ships, `npm run check:readrank-question-unit --prefix backend` (CI job
+"read & rank question unit", master + daily, skips without `DATABASE_URL`) fails the moment two
+questions in one race/topic both serve quotes.
+
+### Prod steps not taken here
+
+- **1820 has not been dry-run or applied.** Per CLAUDE.md, wrap the body in `BEGIN; … ROLLBACK;`
+  against prod and confirm the rollback reverted first. Creating either unique index errors rather
+  than corrupts if live data violates it.
+- **The downtown pair is still unselected.** Bass `b2d1f06d` / Raman `f7625f7b` stay parked until
+  1820 is applied *and* the client change lands. Seating them makes 1815's Gate 3 false by design —
+  it was a point-in-time assertion, and the CI guard is the standing invariant that replaces it.

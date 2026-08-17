@@ -21,6 +21,8 @@
     "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
     "check:child-county": "node scripts/check-child-county-mapping.mjs",
     "check:child-county:verbose": "node scripts/check-child-county-mapping.mjs --verbose",
+    "check:readrank-question-unit": "node scripts/check-readrank-question-unit.mjs",
+    "check:readrank-question-unit:verbose": "node scripts/check-readrank-question-unit.mjs --verbose",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
     "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
