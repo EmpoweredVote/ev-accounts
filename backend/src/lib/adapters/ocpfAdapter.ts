@@ -1,8 +1,18 @@
 /**
  * ocpfAdapter — Massachusetts OCPF adapter implementing SourceAdapter.
  * Base URL: https://api.ocpf.us
- * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
- * No auth required. Paginate until items.length < pageSize.
+ * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageSize={n}
+ * No auth required.
+ *
+ * 🔴 THIS ENDPOINT DOES NOT PAGINATE. `pageSize` is honoured; every offset parameter is
+ * IGNORED. Verified live against api.ocpf.us on 2026-08-17 for cpfId 12008, window
+ * 2005-Q2: pageNumber=1, 2, 3, 50, 298, 500 and 1000 each returned the SAME 250 records
+ * (identical leading ids 518289, 518326), and `page`, `PageNumber`, `pageIndex`, `offset`,
+ * `skip` and `start` all behaved the same way. Ask for pageSize=1000 and you get the
+ * window's true total (289) in one response.
+ *
+ * So a full page is NOT evidence that another page exists. Issue ONE request with a
+ * pageSize above the expected count and read the whole window at once.
  * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month) — factory function.
  *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
  *   Pass a year + quarter to scope to a single calendar quarter (e.g. Q2 = Apr 1 – Jun 30).
@@ -27,9 +37,17 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 // ---------------------------------------------------------------------------
 
 const OCPF_BASE = 'https://api.ocpf.us';
-const PAGE_SIZE = 250;
 
-const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
+// Single-request window size. Not a page size — this endpoint does not paginate (see the
+// file header). It must exceed the largest window any filer can produce, because there is
+// no total-count field to check against: `summary` is null on every response.
+//
+// Sizing evidence, measured live 2026-08-17 across ALL 20 ocpf politician_sources, each
+// fetched as full history in one request: the largest filer is cpf 15710 at 89,557 records
+// in 3,491 ms, next is 15931 at 32,941. pageSize=100000 returned 89,557 (not truncated), so
+// the server imposes no ceiling below that. 250,000 leaves ~2.8x headroom over the current
+// worst case while still being a real bound rather than "infinity".
+const OCPF_MAX_WINDOW = parseInt(process.env.OCPF_MAX_WINDOW ?? '250000', 10);
 
 // ---------------------------------------------------------------------------
 // OCPF API response types
@@ -37,7 +55,8 @@ const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(r
 
 interface OcpfSearchResponse {
   items: OcpfItem[];
-  // No total count — paginate until items.length < pageSize
+  // No total count, and `summary` is null on every response — so a full window is the
+  // only truncation signal there is. See OCPF_MAX_WINDOW.
 }
 
 interface OcpfItem {
@@ -92,12 +111,11 @@ function monthDateRange(year: number, month: Month): { start: string; end: strin
 }
 
 // ---------------------------------------------------------------------------
-// Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
+// Fetch — ONE request per window; this endpoint does not paginate (see file header)
 // ---------------------------------------------------------------------------
 
 async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
-  let pageNumber = 1;
 
   // Date filter: dateOverride takes precedence over all other params.
   // Otherwise: month > quarter > year > full-history. OCPF expects MM/DD/YYYY.
@@ -121,47 +139,53 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
         ? `${year}-Q${quarter}`
         : (typeof year === 'number' ? String(year) : 'all'));
 
-  for (;;) {
-    const url =
-      `${OCPF_BASE}/search/items` +
-      `?SearchTypeId=1&SearchTypeCategory=receipts` +
-      `&CpfId=${encodeURIComponent(cpfId)}` +
-      `&pageNumber=${pageNumber}&pageSize=${PAGE_SIZE}` +
-      dateFilter;
+  // ONE request. See the file header: this endpoint ignores every offset parameter, so
+  // the previous `for(;;)` loop — which exited only on `items.length < PAGE_SIZE` — could
+  // never terminate for a window holding >= 250 records. It re-appended the SAME 250 rows
+  // until the scheduler's 180s per-cycle AbortSignal killed it at ~page 300, which is why
+  // every failure in prod carried `page=296..300` regardless of filer or cycle.
+  const url =
+    `${OCPF_BASE}/search/items` +
+    `?SearchTypeId=1&SearchTypeCategory=receipts` +
+    `&CpfId=${encodeURIComponent(cpfId)}` +
+    `&pageSize=${OCPF_MAX_WINDOW}` +
+    dateFilter;
 
-    let response: Response;
-    try {
-      const pageSignal = externalSignal
-        ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
-        : AbortSignal.timeout(30_000);
-      response = await fetch(url, { signal: pageSignal });
-    } catch (err) {
-      throw new Error(
-        `[ocpfAdapter] fetch error cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
-      );
-    }
+  let response: Response;
+  try {
+    const requestSignal = externalSignal
+      ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
+      : AbortSignal.timeout(30_000);
+    response = await fetch(url, { signal: requestSignal });
+  } catch (err) {
+    throw new Error(
+      `[ocpfAdapter] fetch error cpfId=${cpfId} cycle=${cycleLabel}: ${err instanceof Error ? err.message : String(err)}`
+    );
+  }
 
-    if (response.status !== 200) {
-      throw new Error(
-        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}`
-      );
-    }
+  if (response.status !== 200) {
+    throw new Error(
+      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} cycle=${cycleLabel}`
+    );
+  }
 
-    const body = await response.json() as OcpfSearchResponse;
-    const items = body.items ?? [];
+  const body = await response.json() as OcpfSearchResponse;
+  const items = body.items ?? [];
 
-    for (const item of items) {
-      allItems.push(item as unknown as Record<string, unknown>);
-    }
+  for (const item of items) {
+    allItems.push(item as unknown as Record<string, unknown>);
+  }
 
-    if (items.length < PAGE_SIZE) {
-      // Last page
-      break;
-    }
-
-    pageNumber++;
-    // Polite delay between pages — no documented rate limit, be conservative
-    await sleep(500);
+  // A response that exactly fills the requested window is the ONLY truncation signal
+  // available — there is no total count (`summary` is null on every response). Failing
+  // loudly beats silently undercounting a filer's receipts, which is the defect the old
+  // loop was originally written to avoid.
+  if (items.length >= OCPF_MAX_WINDOW) {
+    throw new Error(
+      `[ocpfAdapter] possible truncation for cpfId=${cpfId} cycle=${cycleLabel}: ` +
+      `received ${items.length} records, which fills the requested window of ${OCPF_MAX_WINDOW}. ` +
+      `Raise OCPF_MAX_WINDOW or narrow the date range.`
+    );
   }
 
   return allItems;
