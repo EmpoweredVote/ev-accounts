@@ -1,6 +1,6 @@
 # Kitsap County Sheriff — interim appointment lands by 2026-08-29
 
-**Opened** 2026-08-17 · **Re-check after** 2026-08-29 · **Migration that set current state:** 1820
+**Opened** 2026-08-17 · **Re-check after** 2026-08-29 · **Migration that set current state:** 1822
 
 ## What we hold now
 
@@ -36,13 +36,13 @@ Interviews were held 2026-07-14, followed by executive session.
 2. If an interim was appointed, close Sapp's term the day before and `seat_officeholder` the
    appointee with `how_started => 'appointed'`.
 3. 🔴 **If the appointee is Brandon Myers, he is simultaneously a `race_candidates` row on the
-   2026 general** (`pid 01119ca2-d252-4c9d-8052-57164ace14b8`, already has a headshot from mig 1820).
+   2026 general** (`pid 01119ca2-d252-4c9d-8052-57164ace14b8`, already has a headshot from mig 1822).
    Seating him makes him an incumbent — check whether `race_candidates.is_incumbent` should flip
    for that row, and remember party never goes on a candidate (it lives on `races.primary_party`).
 4. The general itself resolves the seat on 2026-11-03 (Myers vs. Rick Kuss), so this office needs a
    third pass in November regardless.
 
-## Traps recorded while doing 1820
+## Traps recorded while doing 1822
 
 🔴 **`kitsap.gov/sheriff/Pages/Admin-Department.aspx` has `alt` text shifted by one slot.**
 `Chief Penelope Sapp.png` carries `alt="Sheriff John Gese"`; `Chief Jeff Menge.png` carries
@@ -54,5 +54,5 @@ people wanted for shoplifting and burglary. Do not let a portrait harvester near
 
 🔴 **A `term_end IS NULL` test for "has this person left office" passes vacuously here.** Kitsap's
 county rows all carry real fixed `term_end` dates, so Gese read as having zero open terms *before*
-the migration ran. The post-verify in 1820 asserts the positive fact instead (term_end =
+the migration ran. The post-verify in 1822 asserts the positive fact instead (term_end =
 2026-06-25 AND how_ended = 'resigned', plus absence from `office_current_holder`).
