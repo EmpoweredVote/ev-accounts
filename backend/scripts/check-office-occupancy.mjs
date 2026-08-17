@@ -106,7 +106,17 @@ const PATTERNS = [
     // `(?!och\b)` is NOT enough — \b does not stop at a digit, so `och2.politician_id` slipped
     // through as a false positive; the lookahead must be `och[0-9]*\b`.
     // \b would fire mid-identifier on `och.politician_id`, hence the explicit preceding-char guard.
-    re: /(^|[^\w.])(?!och[0-9]*\b)(?:o[0-9a-z]*|off|offices)\.politician_id\b/gi,
+    //
+    // 🔴 `ot` ADDED TO THE LOOKAHEAD 2026-08-17 — the comment above already CLAIMED `ot.` was
+    // excluded, but the implementation did not do it: `o[0-9a-z]*` swallows `ot`, so every
+    // `ot.politician_id` (the conventional office_terms alias) was a false positive. It went
+    // unnoticed for a year because this guard scans only files CHANGED vs origin/master, and
+    // `ot.politician_id` already appears in at least ten COMMITTED migrations that CI has always
+    // passed — 1458 (the office_terms schema itself), 1460, 1496, 1543-1545, 1548, 1566-1568.
+    // Migration 1822 was simply the first NEW file to use the repo's own alias.
+    // This narrows nothing: office_terms.politician_id is the column ADR 0002 tells you to read.
+    // Numbered variants are covered for the same reason `och[0-9]*` is.
+    re: /(^|[^\w.])(?!(?:och|ot)[0-9]*\b)(?:o[0-9a-z]*|off|offices)\.politician_id\b/gi,
     why: "reads <offices alias>.politician_id — the column no longer exists",
   },
   {
