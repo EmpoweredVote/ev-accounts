@@ -1,6 +1,7 @@
 import { pool } from './db.js';
 
 export interface StanceCount {
+  id: string; // inform.compass_stances.id — stable handle for per-stance references
   value: number; // integer 1-5
   text: string;
   count: number;
@@ -34,6 +35,7 @@ interface StanceRow {
   title: string;
   short_title: string | null;
   is_live: boolean;
+  stance_id: string | null;
   stance_value: number | null;
   stance_text: string | null;
 }
@@ -55,6 +57,7 @@ const STANCES_SQL = `
          t.title,
          t.short_title,
          t.is_live,
+         s.id::text       AS stance_id,
          s.value::int     AS stance_value,
          s.text           AS stance_text
   FROM inform.compass_topics t
@@ -102,8 +105,14 @@ export async function getStanceBreakdown(): Promise<StanceBreakdownReport> {
       };
       byTopic.set(row.topic_id, topic);
     }
-    if (row.stance_value !== null && row.stance_text !== null) {
-      topic.stances.push({ value: row.stance_value, text: row.stance_text, count: 0 });
+    // LEFT JOIN yields null stance columns for topics that have no stances yet.
+    if (row.stance_id !== null && row.stance_value !== null && row.stance_text !== null) {
+      topic.stances.push({
+        id: row.stance_id,
+        value: row.stance_value,
+        text: row.stance_text,
+        count: 0,
+      });
     }
   }
 
