@@ -155,17 +155,28 @@ function selectCanonical(scores: PoliticianScore[]): { canonical: PoliticianScor
  *      counting them fires on every incumbent running for higher office (Barr, Moulton, Marshall
  *      all hold a seat AND a "Candidate for U.S. Senate" placeholder, and are one person each).
  *
- *   2. RACE CONFLICT — two rows are candidates in different races. A person contests one office
- *      per cycle, so two rows in two races are two people. This catches pairs that detector 1
- *      misses because the challenger holds no seat at all (e.g. "Mike Johnson" = the sitting
- *      U.S. Rep for District 4 and an unrelated District 7 candidate).
+ *   2. RACE CONFLICT — two rows are candidates in different races. This catches pairs that
+ *      detector 1 misses because the challenger holds no seat at all (e.g. "Mike Johnson" = the
+ *      sitting U.S. Rep for Louisiana District 4 and an unrelated Florida District 7 candidate,
+ *      confirmed two people 2026-08-16).
  *
- * Screened against the live corpus: 11 of 49 groups flagged, 10 of them genuinely distinct people
- * (Alex Padilla = an Inglewood councilmember and the U.S. Senator; Mike Rogers = three people).
- * The known false positive is a row whose only "seat" is a generic placeholder such as
- * "Indiana Elected Official" — Victoria Spartz trips detector 1 for that reason and is in fact one
- * person. A false positive costs a hand-review; a false negative destroys an officeholder, so the
- * check deliberately errs toward refusing.
+ *      ⚠ ITS PREMISE IS NOT UNIVERSALLY TRUE. This detector was written on the assumption that
+ *      "a person contests one office per cycle". PERENNIAL AND PROTEST FILERS BREAK THAT. Randall
+ *      Terry filed with the FEC in NJ-07 (H6NJ07300) and VA-07 (H6VA07312) in the 2026 cycle and
+ *      appeared on the HI-02 ballot in a third state — all one man, all from the same address in
+ *      Ellendale TN. Detector 2 cannot tell a name collision from a serial filer, so a race
+ *      conflict is a reason to STOP AND LOOK, never a proof of two people.
+ *
+ * Screened against the live corpus: 12 groups blocked out of 49. As of 2026-08-16, 9 of those hold
+ * genuinely distinct people (Alex Padilla = an Inglewood councilmember and the U.S. Senator; Mike
+ * Rogers = three people) and 3 are FALSE POSITIVES, each one person:
+ *   - Victoria Spartz — detector 1, on a row whose only "seat" is a generic placeholder such as
+ *     "Indiana Elected Official".
+ *   - Mark Hill — detector 1, on City of Frisco vs Frisco ISD. He was the ISD Place 5 trustee and
+ *     board president, then won the 2026 mayoral runoff. Merged by migration 1794.
+ *   - Randall Terry — detector 2, the serial-filer case above. Merged by migration 1795.
+ * A false positive costs a hand-review; a false negative destroys an officeholder, so the check
+ * deliberately errs toward refusing.
  *
  * There is no bypass flag. A blocked group must be merged by hand in a migration, where the
  * reasoning is reviewable, rather than by a scripted heuristic.
