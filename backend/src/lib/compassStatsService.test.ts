@@ -16,6 +16,7 @@ function mockRows(stanceRows: unknown[], countRows: unknown[], totalsRows: unkno
 const topicA = { topic_id: 't1', title: 'Housing', short_title: 'Housing', is_live: true };
 const stanceRowsA = [1, 2, 3, 4, 5].map((v) => ({
   ...topicA,
+  stance_id: `t1-s${v}`,
   stance_value: v,
   stance_text: `Stance ${v}`,
 }));
@@ -35,6 +36,29 @@ describe('getStanceBreakdown', () => {
     for (const sql of sqls.filter((s) => s.includes('inform.compass_responses'))) {
       expect(sql).toContain('deleted_at IS NULL');
     }
+  });
+
+  it('carries the stance id through to each bucket', async () => {
+    mockRows(stanceRowsA, [], [{ responses: 0, users: 0 }]);
+    const out = await getStanceBreakdown();
+    expect(out.topics[0].stances.map((s) => s.id)).toEqual([
+      't1-s1',
+      't1-s2',
+      't1-s3',
+      't1-s4',
+      't1-s5',
+    ]);
+  });
+
+  it('skips stance rows the LEFT JOIN left null', async () => {
+    mockRows(
+      [{ ...topicA, stance_id: null, stance_value: null, stance_text: null }],
+      [],
+      [{ responses: 0, users: 0 }]
+    );
+    const out = await getStanceBreakdown();
+    expect(out.topics).toHaveLength(1);
+    expect(out.topics[0].stances).toEqual([]);
   });
 
   it('maps integer values onto stance buckets and totals per topic', async () => {
@@ -79,7 +103,15 @@ describe('getStanceBreakdown', () => {
   it('includes topics with no responses and sorts by response count desc', async () => {
     const topicB = { topic_id: 't2', title: 'Zoning', short_title: null, is_live: false };
     mockRows(
-      [...stanceRowsA, ...[1, 2, 3, 4, 5].map((v) => ({ ...topicB, stance_value: v, stance_text: `S${v}` }))],
+      [
+        ...stanceRowsA,
+        ...[1, 2, 3, 4, 5].map((v) => ({
+          ...topicB,
+          stance_id: `t2-s${v}`,
+          stance_value: v,
+          stance_text: `S${v}`,
+        })),
+      ],
       [{ topic_id: 't2', value: 4, n: 1, write_ins: 0 }],
       [{ responses: 1, users: 1 }]
     );

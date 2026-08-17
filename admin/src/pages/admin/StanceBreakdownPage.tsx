@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { apiFetch } from '../../lib/api';
 
-interface StanceCount { value: number; text: string; count: number; }
+interface StanceCount { id: string; value: number; text: string; count: number; }
 interface BetweenCount { value: number; count: number; }
 interface TopicBreakdown {
   topicId: string;
