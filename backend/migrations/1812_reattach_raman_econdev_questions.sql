@@ -1,8 +1,8 @@
--- 1628_reattach_raman_econdev_questions.sql
+-- 1812_reattach_raman_econdev_questions.sql
 --
 -- Moves Nithya Raman's three economic-development answers off the legacy pooled question
 -- (ded400bd, origin='compass', and owned by the retired JUNE PRIMARY race) onto the two
--- race-local moderator questions created in 1626. Bass's side was attached in 1627; this
+-- race-local moderator questions created in 1810 (applied as 1626). Bass's side was attached in 1811 (applied as 1627); this
 -- completes both sets.
 --
 -- Gate 2 (question-as-unit design) checked per quote — each genuinely answers the question it is

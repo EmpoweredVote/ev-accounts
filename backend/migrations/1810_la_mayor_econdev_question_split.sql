@@ -1,4 +1,4 @@
--- 1626_la_mayor_econdev_question_split.sql
+-- 1810_la_mayor_econdev_question_split.sql
 --
 -- Splits LA Mayor's economic-development question in two. The per-set comparability pass found
 -- the existing question pools two unrelated debate exchanges — downtown revitalization and
@@ -31,7 +31,7 @@
 --
 -- KNOWN ISSUE, NOT FIXED HERE: the LA Mayor GENERAL race (9e888818) owns zero readrank_questions
 -- rows, while its quotes reference 22 questions all owned by the JUNE PRIMARY race (24bc3631) —
--- the same root cause as the mis-pointed pipeline row fixed in 1619. Consequence:
+-- the same root cause as the mis-pointed pipeline row fixed in 1803 (applied as 1619). Consequence:
 -- readrankQuestionsService.listRaceQuestions('9e888818') returns nothing, so the coverage grid is
 -- blind for this race. These two rows are created on the GENERAL race, which is correct; the 22
 -- need a decision (repoint vs duplicate) and a migration of their own.

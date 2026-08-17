@@ -1,4 +1,4 @@
--- 1625_retire_unsourceable_quotes.sql
+-- 1809_retire_unsourceable_quotes.sql
 --
 -- Hard-deletes the six quotes the 2026-08-07 provenance pass could not tie to any source, after
 -- both an exhaustive search of all 153 ingested transcripts (17,660 segments) and an open-web
@@ -10,7 +10,7 @@
 -- it failed are recorded in on-the-record docs/audits/2026-08-07-unverified-quote-trace.md, which
 -- is in git. Deleting the row removes it from selection; the record survives.
 --
--- All six are drafts (readrank_selected = false — two were de-selected by migration 1623), and
+-- All six are drafts (readrank_selected = false — two were de-selected by migration 1807 (applied as 1623)), and
 -- none is referenced by essentials.readrank_questions.origin_quote_id.
 --
 --   8f51a4e3  Raman / growth-and-development  — FABRICATED. An LA Times paraphrase (no quotation

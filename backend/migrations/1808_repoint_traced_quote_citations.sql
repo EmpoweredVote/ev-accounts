@@ -1,4 +1,4 @@
--- 1624_repoint_traced_quote_citations.sql
+-- 1808_repoint_traced_quote_citations.sql
 --
 -- Five of the ten quotes traced by the 2026-08-07 unverified-quote research. Only these five
 -- were INDEPENDENTLY RE-VERIFIED before applying: each proposed page was fetched here and the

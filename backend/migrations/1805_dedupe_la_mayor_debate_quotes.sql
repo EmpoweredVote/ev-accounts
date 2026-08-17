@@ -1,4 +1,4 @@
--- 1621_dedupe_la_mayor_debate_quotes.sql
+-- 1805_dedupe_la_mayor_debate_quotes.sql
 --
 -- Follow-up to 1566. Sourcing the 30 orphaned LA Mayor quotes to the 2026-05-06 NBC4/Telemundo
 -- debate revealed that four of them duplicate other rows from the SAME moment of the SAME debate:

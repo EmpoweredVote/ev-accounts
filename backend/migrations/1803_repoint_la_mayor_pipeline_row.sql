@@ -1,4 +1,4 @@
--- 1619_repoint_la_mayor_pipeline_row.sql
+-- 1803_repoint_la_mayor_pipeline_row.sql
 --
 -- The Read & Rank pipeline row labelled "Los Angeles Mayor (CA, 2026-11-03)" carried the race_id
 -- of the JUNE 2 PRIMARY race (24bc3631, 14 candidates, 12 of them eliminated) instead of the

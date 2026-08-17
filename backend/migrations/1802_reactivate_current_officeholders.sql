@@ -1,4 +1,4 @@
--- 1536_reactivate_current_officeholders.sql
+-- 1802_reactivate_current_officeholders.sql
 -- Re-activate the TWO politician rows that are is_active = false while genuinely holding
 -- the office essentials says they hold. Idempotent (guarded on is_active; a re-run no-ops).
 --

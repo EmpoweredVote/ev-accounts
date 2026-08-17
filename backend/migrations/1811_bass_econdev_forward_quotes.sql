@@ -1,4 +1,4 @@
--- 1627_bass_econdev_forward_quotes.sql
+-- 1811_bass_econdev_forward_quotes.sql
 --
 -- Karen Bass looked absent from both of LA Mayor's new economic-development questions. She was not.
 -- The forward-looking material existed; it had been trimmed away or never curated.
@@ -25,7 +25,7 @@
 -- canonical in every case. On downtown that is a consequence of the fix — every incumbency vector
 -- lived in the record half the trim now drops.
 --
--- All three attach to the questions created in 1626 and are inserted as DRAFTS. Selecting the live
+-- All three attach to the questions created in 1810 (applied as 1626) and are inserted as DRAFTS. Selecting the live
 -- quote stays a human step.
 --
 -- Bass's Compass value on economic-development is 3 ("targeted incentives for specific industries
