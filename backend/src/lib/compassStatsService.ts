@@ -4,14 +4,18 @@ export interface StanceCount {
   id: string; // inform.compass_stances.id — stable handle for per-stance references
   value: number; // integer 1-5
   text: string;
-  count: number;
+  users: number; // count from inform.compass_responses (user answers)
+  politicians: number; // count from inform.politician_answers
 }
 
 // Responses whose value sits between stances (0.5 grid: 0.5, 1.5, ... 5.5).
 // These are write-in placements and must not be rounded into a stance bucket.
+// Politician answers are integer-valued, so in practice only users land here,
+// but both cohorts are carried for uniformity.
 export interface BetweenCount {
   value: number;
-  count: number;
+  users: number;
+  politicians: number;
 }
 
 export interface TopicBreakdown {
@@ -19,14 +23,21 @@ export interface TopicBreakdown {
   title: string;
   shortTitle: string | null;
   isLive: boolean;
-  totalResponses: number;
-  writeInCount: number;
+  userResponses: number;
+  politicianAnswers: number;
+  userWriteIns: number;
+  politicianWriteIns: number;
   stances: StanceCount[];
   betweens: BetweenCount[];
 }
 
 export interface StanceBreakdownReport {
-  totals: { responses: number; users: number };
+  totals: {
+    userResponses: number;
+    users: number;
+    politicianAnswers: number;
+    politicians: number;
+  };
   topics: TopicBreakdown[];
 }
 
@@ -47,11 +58,6 @@ interface CountRow {
   write_ins: number;
 }
 
-interface TotalsRow {
-  responses: number;
-  users: number;
-}
-
 const STANCES_SQL = `
   SELECT t.id::text       AS topic_id,
          t.title,
@@ -65,7 +71,7 @@ const STANCES_SQL = `
   ORDER BY t.title ASC, s.value ASC
 `;
 
-const COUNTS_SQL = `
+const USER_COUNTS_SQL = `
   SELECT topic_id::text AS topic_id,
          value::float8  AS value,
          COUNT(*)::int  AS n,
@@ -75,19 +81,76 @@ const COUNTS_SQL = `
   GROUP BY topic_id, value
 `;
 
-const TOTALS_SQL = `
+// politician_answers has no soft-delete column; every row is live.
+const POLITICIAN_COUNTS_SQL = `
+  SELECT topic_id::text AS topic_id,
+         value::float8  AS value,
+         COUNT(*)::int  AS n,
+         (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
+  FROM inform.politician_answers
+  GROUP BY topic_id, value
+`;
+
+const USER_TOTALS_SQL = `
   SELECT COUNT(*)::int                 AS responses,
-         COUNT(DISTINCT user_id)::int  AS users
+         COUNT(DISTINCT user_id)::int  AS respondents
   FROM inform.compass_responses
   WHERE deleted_at IS NULL
 `;
 
+const POLITICIAN_TOTALS_SQL = `
+  SELECT COUNT(*)::int                       AS responses,
+         COUNT(DISTINCT politician_id)::int  AS respondents
+  FROM inform.politician_answers
+`;
+
+interface TotalsRow {
+  responses: number;
+  respondents: number;
+}
+
+type Cohort = 'users' | 'politicians';
+
+function applyCounts(
+  byTopic: Map<string, TopicBreakdown>,
+  rows: CountRow[],
+  cohort: Cohort
+): void {
+  for (const row of rows) {
+    const topic = byTopic.get(row.topic_id);
+    if (!topic) continue; // response for a topic that no longer exists
+    if (cohort === 'users') {
+      topic.userResponses += row.n;
+      topic.userWriteIns += row.write_ins;
+    } else {
+      topic.politicianAnswers += row.n;
+      topic.politicianWriteIns += row.write_ins;
+    }
+    const stance = Number.isInteger(row.value)
+      ? topic.stances.find((s) => s.value === row.value)
+      : undefined;
+    if (stance) {
+      stance[cohort] += row.n;
+      continue;
+    }
+    let between = topic.betweens.find((b) => b.value === row.value);
+    if (!between) {
+      between = { value: row.value, users: 0, politicians: 0 };
+      topic.betweens.push(between);
+    }
+    between[cohort] += row.n;
+  }
+}
+
 export async function getStanceBreakdown(): Promise<StanceBreakdownReport> {
-  const [stanceRes, countRes, totalsRes] = await Promise.all([
-    pool.query<StanceRow>(STANCES_SQL),
-    pool.query<CountRow>(COUNTS_SQL),
-    pool.query<TotalsRow>(TOTALS_SQL),
-  ]);
+  const [stanceRes, userCountRes, politicianCountRes, userTotalsRes, politicianTotalsRes] =
+    await Promise.all([
+      pool.query<StanceRow>(STANCES_SQL),
+      pool.query<CountRow>(USER_COUNTS_SQL),
+      pool.query<CountRow>(POLITICIAN_COUNTS_SQL),
+      pool.query<TotalsRow>(USER_TOTALS_SQL),
+      pool.query<TotalsRow>(POLITICIAN_TOTALS_SQL),
+    ]);
 
   const byTopic = new Map<string, TopicBreakdown>();
   for (const row of stanceRes.rows) {
@@ -98,8 +161,10 @@ export async function getStanceBreakdown(): Promise<StanceBreakdownReport> {
         title: row.title,
         shortTitle: row.short_title,
         isLive: row.is_live,
-        totalResponses: 0,
-        writeInCount: 0,
+        userResponses: 0,
+        politicianAnswers: 0,
+        userWriteIns: 0,
+        politicianWriteIns: 0,
         stances: [],
         betweens: [],
       };
@@ -111,32 +176,32 @@ export async function getStanceBreakdown(): Promise<StanceBreakdownReport> {
         id: row.stance_id,
         value: row.stance_value,
         text: row.stance_text,
-        count: 0,
+        users: 0,
+        politicians: 0,
       });
     }
   }
 
-  for (const row of countRes.rows) {
-    const topic = byTopic.get(row.topic_id);
-    if (!topic) continue; // response for a topic that no longer exists
-    topic.totalResponses += row.n;
-    topic.writeInCount += row.write_ins;
-    const stance = Number.isInteger(row.value)
-      ? topic.stances.find((s) => s.value === row.value)
-      : undefined;
-    if (stance) {
-      stance.count += row.n;
-    } else {
-      topic.betweens.push({ value: row.value, count: row.n });
-    }
-  }
+  applyCounts(byTopic, userCountRes.rows, 'users');
+  applyCounts(byTopic, politicianCountRes.rows, 'politicians');
 
   const topics = [...byTopic.values()];
   for (const t of topics) t.betweens.sort((a, b) => a.value - b.value);
   topics.sort(
-    (a, b) => b.totalResponses - a.totalResponses || a.title.localeCompare(b.title)
+    (a, b) =>
+      b.politicianAnswers + b.userResponses - (a.politicianAnswers + a.userResponses) ||
+      a.title.localeCompare(b.title)
   );
 
-  const totals = totalsRes.rows[0] ?? { responses: 0, users: 0 };
-  return { totals: { responses: totals.responses, users: totals.users }, topics };
+  const userTotals = userTotalsRes.rows[0] ?? { responses: 0, respondents: 0 };
+  const politicianTotals = politicianTotalsRes.rows[0] ?? { responses: 0, respondents: 0 };
+  return {
+    totals: {
+      userResponses: userTotals.responses,
+      users: userTotals.respondents,
+      politicianAnswers: politicianTotals.responses,
+      politicians: politicianTotals.respondents,
+    },
+    topics,
+  };
 }
