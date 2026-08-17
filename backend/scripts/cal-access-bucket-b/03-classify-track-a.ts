@@ -84,7 +84,14 @@ export function conflictingGivenName(official: string, first: string): string | 
   const ORG = new Set(['committee', 'friends', 'the', 'a', 'citizens', 'of', 'inc', 'council', 'board',
     'mayor', 'supervisor', 'assembly', 'senate', 'sheriff', 'treasurer', 'governor', 'ii', 'iii', 'jr', 'sr',
     'reelect', 're-elect', 'elect', 'campaign', 'officeholder', 'director', 'trustee', 'clerk', 'auditor',
-    'assessor', 'attorney', 'controller', 'city', 'county', 'district', 'account', 'special', 'for', 'and']);
+    'assessor', 'attorney', 'controller', 'city', 'county', 'district', 'account', 'special', 'for', 'and',
+    // Stance and sponsorship verbs, added 2026-08-16 (Task 7). A committee's posture is not a person:
+    // "...; BUILDING A STRONGER CALIFORNIA, SUPPORTING HEATHER" is Heather Hutt's OWN committee and
+    // "BONTA FOR ASSEMBLY 2012, ... SUPPORT ROB" is Rob Bonta's, yet both read as naming someone else
+    // because the verb sat where the given name was expected. Skipping these reaches the real name
+    // behind them -- "OPPOSING CARL" still correctly disproves, now citing CARL rather than OPPOSING.
+    'opposing', 'supporting', 'support', 'against', 'neighbors', 'judge', 'voters', 'residents',
+    'leaders', 'coalition', 'alliance', 'team', 'group', 'fund', 'sponsored', 'funding', 'major']);
 
   // Pattern 1 (original): a bare given name trailing a comma or semicolon -- "...; MIA".
   // Pattern 2 (added 2026-08-16, Task 6): the same disproof written as a phrase -- "..., COMMITTEE TO
