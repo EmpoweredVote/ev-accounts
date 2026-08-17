@@ -64,27 +64,16 @@ const router = Router();
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // ---------------------------------------------------------------------------
-// Helper: get username from authenticated request (best-effort, non-fatal)
+// Audit-log username: the user id itself (see note)
 // ---------------------------------------------------------------------------
 
-/**
- * resolveUsername does a best-effort lookup of username from app_auth.users
- * for audit logging purposes. Falls back to userId on any error.
- */
-async function resolveUsername(userId: string): Promise<string> {
-  // Import pool directly for the username lookup — this is an admin-layer
-  // concern, not exposed via service layer.
-  const { pool } = await import('../lib/db.js');
-  try {
-    const result = await pool.query<{ username: string }>(
-      `SELECT username FROM app_auth.users WHERE user_id = $1 LIMIT 1`,
-      [userId]
-    );
-    return result.rows[0]?.username ?? userId;
-  } catch {
-    return userId;
-  }
-}
+// A `resolveUsername()` helper used to live here, reading a display name via
+// `SELECT username FROM app_auth.users WHERE user_id = $1`. It was removed with migration 1819,
+// which drops the retired `app_auth` schema. It was ALREADY a no-op: `app_auth.user_id` holds
+// legacy text keys from the pre-JWT custom auth system, and all 17 of them match ZERO
+// `auth.users.id` values — so a Supabase uuid could never hit a row and the lookup always fell
+// through to `?? userId`. The audit log's `username` column has therefore always held the user id.
+// The call sites below pass `authReq.userId`, preserving that behaviour exactly.
 
 // ---------------------------------------------------------------------------
 // Sources CRUD routes — requireAuth + requireAdmin
@@ -142,7 +131,7 @@ router.post(
 
       // Audit log — best-effort, non-fatal on error
       const authReq = req as AuthenticatedRequest;
-      const username = await resolveUsername(authReq.userId).catch(() => authReq.userId);
+      const username = authReq.userId; // see note above: the app_auth lookup was always a no-op
       await logSourceAudit(newSource.id, authReq.userId, username, 'CREATE', null, newSource).catch(
         (err) => console.warn('[sources CRUD] audit log failed (non-fatal):', err)
       );
@@ -200,7 +189,7 @@ router.put(
 
       // Audit log — best-effort, non-fatal on error
       const authReq = req as AuthenticatedRequest;
-      const username = await resolveUsername(authReq.userId).catch(() => authReq.userId);
+      const username = authReq.userId; // see note above: the app_auth lookup was always a no-op
       await logSourceAudit(id, authReq.userId, username, 'UPDATE', existing, updated).catch(
         (err) => console.warn('[sources CRUD] audit log failed (non-fatal):', err)
       );
@@ -242,7 +231,7 @@ router.delete(
 
       // Audit log — best-effort, non-fatal on error
       const authReq = req as AuthenticatedRequest;
-      const username = await resolveUsername(authReq.userId).catch(() => authReq.userId);
+      const username = authReq.userId; // see note above: the app_auth lookup was always a no-op
       await logSourceAudit(id, authReq.userId, username, 'DELETE', existing, null).catch(
         (err) => console.warn('[sources CRUD] audit log failed (non-fatal):', err)
       );
