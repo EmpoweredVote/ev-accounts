@@ -51,6 +51,41 @@ describe('listReadrankQuotes', () => {
   });
 });
 
+describe('listReadrankQuotes — grouped by question', () => {
+  it('splits two questions in one topic into two groups', async () => {
+    // The admin page renders one radio group per group returned here. Grouping by
+    // topic gave a split topic ONE radio group, so the editor physically could not
+    // select an answer to each question — the UI enforced the retired invariant.
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { id: 'bass-film', topic_key: 'economic-development', question_id: 'q-film', question_text: 'Film and TV?', quote_text: 'a', deidentified_text: 'A', source_url: null, source_name: null, editor_note: null, readrank_selected: true },
+      { id: 'bass-downtown', topic_key: 'economic-development', question_id: 'q-downtown', question_text: 'Downtown?', quote_text: 'b', deidentified_text: 'B', source_url: null, source_name: null, editor_note: null, readrank_selected: false },
+    ] });
+
+    const out = await listReadrankQuotes('bass');
+
+    expect(out).toHaveLength(2);
+    expect(out.map((g) => g.key).sort()).toEqual(['q-downtown', 'q-film']);
+    expect(out.map((g) => g.topicKey)).toEqual(['economic-development', 'economic-development']);
+    const film = out.find((g) => g.questionId === 'q-film')!;
+    expect(film.questionText).toBe('Film and TV?');
+    expect(film.quotes.map((q) => q.id)).toEqual(['bass-film']);
+  });
+
+  it('keeps compass-era quotes in one topic group', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { id: 'q1', topic_key: 'healthcare', question_id: null, question_text: null, quote_text: 'a', deidentified_text: 'A', source_url: null, source_name: null, editor_note: null, readrank_selected: true },
+      { id: 'q2', topic_key: 'healthcare', question_id: null, question_text: null, quote_text: 'b', deidentified_text: 'B', source_url: null, source_name: null, editor_note: null, readrank_selected: false },
+      { id: 'q3', topic_key: 'housing', question_id: null, question_text: null, quote_text: 'c', deidentified_text: null, source_url: null, source_name: null, editor_note: null, readrank_selected: false },
+    ] });
+
+    const out = await listReadrankQuotes('pol-1');
+
+    expect(out.map((g) => g.key)).toEqual(['topic:healthcare', 'topic:housing']);
+    expect(out[0].quotes).toHaveLength(2);
+    expect(out[0]).toMatchObject({ topicKey: 'healthcare', questionId: null, questionText: null });
+  });
+});
+
 describe('selectReadrankQuote', () => {
   it('rejects selecting a quote with no de-identified text', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{ politician_id: 'pol-1', topic_key: 'healthcare', deidentified_text: null }] });
@@ -91,6 +126,52 @@ describe('selectReadrankQuote', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Selecting is scoped to the QUESTION, not the topic.
+//
+// The topic-wide clear was the live trap: with two econ-dev questions in the LA
+// Mayor race, selecting Raman's downtown quote ALSO unselected Raman's film quote.
+// Film then held only Bass and downtown only Raman — the partial unique index was
+// satisfied, nothing errored, and the game paired Bass's film answer against
+// Raman's downtown answer under one question heading.
+// ---------------------------------------------------------------------------
+
+describe('selectReadrankQuote — scoped to the question', () => {
+  it('clears only the same question, leaving a sibling question in the topic selected', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      politician_id: 'raman', topic_key: 'economic-development',
+      question_id: 'q-downtown', deidentified_text: 'Invest in transit first.',
+    }] });
+    mockClientQuery.mockResolvedValue({});
+
+    await selectReadrankQuote('raman-downtown');
+
+    const clear = mockClientQuery.mock.calls.find((c) => /readrank_selected\s*=\s*false/i.test(String(c[0])))!;
+    expect(String(clear[0])).toMatch(/question_id\s*=\s*\$2/i);
+    // A topic_key predicate here would sweep up the film selection.
+    expect(String(clear[0])).not.toMatch(/topic_key/i);
+    expect(clear[1]).toEqual(['raman', 'q-downtown']);
+  });
+
+  it('falls back to the topic for a compass-era quote with no question_id', async () => {
+    // question_id IS NULL predates 1377. Those quotes group by topic, so the
+    // "one selected per card" rule for them is still one per (candidate, topic) —
+    // and must not clear the topic's question-bearing selections.
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      politician_id: 'pol-1', topic_key: 'Healthcare',
+      question_id: null, deidentified_text: 'A',
+    }] });
+    mockClientQuery.mockResolvedValue({});
+
+    await selectReadrankQuote('q1');
+
+    const clear = mockClientQuery.mock.calls.find((c) => /readrank_selected\s*=\s*false/i.test(String(c[0])))!;
+    expect(String(clear[0])).toMatch(/lower\(topic_key\)\s*=\s*lower\(\$2\)/i);
+    expect(String(clear[0])).toMatch(/question_id\s+IS\s+NULL/i);
+    expect(clear[1]).toEqual(['pol-1', 'Healthcare']);
+  });
+});
+
 describe('clearReadrankSelection', () => {
   it('clears every selected quote in the candidate+topic group (case-insensitive topic)', async () => {
     mockQuery.mockResolvedValueOnce({ rowCount: 1 });
@@ -106,6 +187,16 @@ describe('clearReadrankSelection', () => {
   it('is idempotent — resolves even when nothing was selected', async () => {
     mockQuery.mockResolvedValueOnce({ rowCount: 0 });
     await expect(clearReadrankSelection('pol-1', 'housing')).resolves.toBeUndefined();
+  });
+
+  it('clears just one question when given a question id', async () => {
+    // Turning ONE question off in a split topic must not take its sibling with it.
+    mockQuery.mockResolvedValueOnce({ rowCount: 1 });
+    await clearReadrankSelection('raman', 'economic-development', 'q-downtown');
+    const call = mockQuery.mock.calls[0];
+    expect(String(call[0])).toMatch(/question_id\s*=\s*\$2/i);
+    expect(String(call[0])).not.toMatch(/topic_key/i);
+    expect(call[1]).toEqual(['raman', 'q-downtown']);
   });
 });
 

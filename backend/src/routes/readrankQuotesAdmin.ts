@@ -64,22 +64,32 @@ router.put('/select', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-const deselectBody = z.object({ politician_id: z.string().uuid(), topic_key: z.string().min(1) });
+// question_id is optional: present to clear ONE question in a topic hosting
+// several (migration 1377), absent to clear the whole topic.
+const deselectBody = z.object({
+  politician_id: z.string().uuid(),
+  topic_key: z.string().min(1),
+  question_id: z.string().uuid().nullish(),
+});
 
-// PUT /api/admin/readrank-quotes/deselect — turn a candidate+topic off (clear its selection)
+// PUT /api/admin/readrank-quotes/deselect — turn a candidate+question (or whole topic) off
 router.put('/deselect', async (req: Request, res: Response): Promise<void> => {
   const parsed = deselectBody.safeParse(req.body);
   if (!parsed.success) {
-    res.status(422).json({ error: 'politician_id (uuid) and topic_key are required' });
+    res.status(422).json({ error: 'politician_id (uuid), topic_key, and an optional question_id (uuid) are required' });
     return;
   }
   try {
-    await clearReadrankSelection(parsed.data.politician_id, parsed.data.topic_key);
+    await clearReadrankSelection(parsed.data.politician_id, parsed.data.topic_key, parsed.data.question_id ?? null);
     await logAdminAction(
       (req as AuthenticatedRequest).userId,
       'readrank_quote.deselect',
       null,
-      { politician_id: parsed.data.politician_id, topic_key: parsed.data.topic_key },
+      {
+        politician_id: parsed.data.politician_id,
+        topic_key: parsed.data.topic_key,
+        question_id: parsed.data.question_id ?? null,
+      },
     );
     res.status(200).json({ ok: true });
   } catch (err) {

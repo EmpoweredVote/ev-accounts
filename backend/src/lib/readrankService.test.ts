@@ -77,7 +77,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e1', election_name: 'LA 2026', election_date: new Date('2026-11-03T00:00:00Z'),
       jurisdiction_level: 'county', state: 'CA',
       boundary_layer: 'G4110', boundary_geoid: '0644000',
-      candidate_count: '3', topic_count: '5', quote_count: '24', rankable_topic_count: '4',
+      candidate_count: '3', question_count: '5', quote_count: '24', rankable_question_count: '4',
       politician_ids: ['p1', 'p2', 'p3'],
     }] });
 
@@ -96,7 +96,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e2', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -110,7 +110,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e3', election_name: 'Somewhere 2026', election_date: null,
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
-      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
+      candidate_count: '2', question_count: '2', quote_count: '6', rankable_question_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -125,7 +125,7 @@ describe('getPlayableRaces', () => {
       jurisdiction_level: 'federal', state: 'IN',
       boundary_layer: 'G5200', boundary_geoid: '1807',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -140,7 +140,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null, frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -154,7 +154,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'county', state: 'IN',
       boundary_layer: 'G4020', boundary_geoid: '18105', frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -169,7 +169,7 @@ describe('getPlayableRaces', () => {
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: 'G4110', boundary_geoid: '1805860',
       frame_layer: 'G4020', frame_geoid: '18105',
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -184,7 +184,7 @@ describe('getPlayableRaces', () => {
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: 'X0001', boundary_geoid: '180586000001',
       frame_layer: 'G4110', frame_geoid: '1805860',
-      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
+      candidate_count: '2', question_count: '2', quote_count: '6', rankable_question_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -201,7 +201,7 @@ describe('getPlayableRaces', () => {
       jurisdiction_level: 'county', state: 'UT',
       boundary_layer: 'X0001', boundary_geoid: 'ocd-division/country:us/state:ut/county:salt_lake/council_district:5',
       frame_layer: 'G4020', frame_geoid: '49035',
-      candidate_count: '2', topic_count: '1', quote_count: '6', rankable_topic_count: '1',
+      candidate_count: '2', question_count: '1', quote_count: '6', rankable_question_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -216,7 +216,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'UT 2026', election_date: null,
       jurisdiction_level: 'state', state: 'UT',
       boundary_layer: 'G5210', boundary_geoid: '49013', frame_layer: null, frame_geoid: null,
-      candidate_count: '3', topic_count: '3', quote_count: '12', rankable_topic_count: '3',
+      candidate_count: '3', question_count: '3', quote_count: '12', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5210:49013', ['49013']]]));
@@ -255,7 +255,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'IN 2025', election_date: null,
       jurisdiction_level: 'county', state: 'IN',
       boundary_layer: 'G4020', boundary_geoid: '18105', frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
+      candidate_count: '2', question_count: '3', quote_count: '6', rankable_question_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -270,7 +270,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: 'G5220', boundary_geoid: '18061', frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
+      candidate_count: '2', question_count: '3', quote_count: '6', rankable_question_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -284,7 +284,7 @@ describe('getPlayableRaces', () => {
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null, frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race] } = await getPlayableRacesResult();
@@ -311,9 +311,9 @@ const BASE_ROW = {
   frame_layer: 'G4020',
   frame_geoid: '18105',
   candidate_count: '2',
-  topic_count: '3',
+  question_count: '3',
   quote_count: '6',
-  rankable_topic_count: '2',
+  rankable_question_count: '2',
   politician_ids: ['pol-1', 'pol-2'],
 };
 
@@ -390,7 +390,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       jurisdiction_level: 'federal', state: 'UT',
       boundary_layer: 'G5200', boundary_geoid: '4903',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '9', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '9', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetDistrictCountyGeoIds.mockResolvedValue(new Map([['G5200:4903', ['49035', '49049']]]));
@@ -405,7 +405,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       jurisdiction_level: 'federal', state: 'UT',
       boundary_layer: 'G5200', boundary_geoid: '4901',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
+      candidate_count: '2', question_count: '1', quote_count: '3', rankable_question_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetDistrictCountyGeoIds.mockResolvedValue(new Map());
@@ -424,7 +424,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: 'G5200', boundary_geoid: '1809',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
+      candidate_count: '2', question_count: '1', quote_count: '3', rankable_question_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5200:1809', ['18001', '18003']]]));
@@ -532,7 +532,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       jurisdiction_level: 'state', state: 'UT',
       boundary_layer: 'G4000', boundary_geoid: '49',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '4', quote_count: '8', rankable_topic_count: '4',
+      candidate_count: '2', question_count: '4', quote_count: '8', rankable_question_count: '4',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetStateCountyGeoIds.mockResolvedValue(new Map([['UT', ['49035', '49049', '49011']]]));
@@ -551,7 +551,7 @@ describe('getPlayableRaces — counties name index', () => {
       jurisdiction_level: 'state', state: 'UT',
       boundary_layer: 'G4000', boundary_geoid: '49',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '4', quote_count: '8', rankable_topic_count: '4',
+      candidate_count: '2', question_count: '4', quote_count: '8', rankable_question_count: '4',
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetStateCountyGeoIds.mockResolvedValue(new Map([['UT', ['49035']]]));
@@ -571,7 +571,7 @@ describe('getPlayableRaces — geographic isLocal', () => {
       jurisdiction_level: 'federal', state: 'IN',
       boundary_layer: 'G5200', boundary_geoid: '1809',
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '6', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
       ...overrides,
     };
@@ -608,7 +608,7 @@ describe('getPlayableRaces — geographic isLocal', () => {
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const jurisdiction: JurisdictionGeoIds = {
@@ -625,7 +625,7 @@ describe('getPlayableRaces — geographic isLocal', () => {
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
       frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      candidate_count: '2', question_count: '3', quote_count: '8', rankable_question_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
     const { races: [race2] } = await getPlayableRacesResult(['p1'], jurisdiction);
@@ -920,9 +920,11 @@ describe('getRaceBlindQuotes — topic with no live Compass topic', () => {
     expect(payload!.topics[0].title).toBe('Israel Aid');
     expect(payload!.topics[0].question).toBe('Should US aid to Israel carry conditions?');
     expect(payload!.topics[0].quotes).toHaveLength(2);
-    // Blindness invariant: no attribution leaks onto the blind card.
+    // Blindness invariant: no attribution leaks onto the blind card. `cardKey` was
+    // added when cards became per-question — it names the QUESTION, not the speaker,
+    // so it widens the shape without weakening the premise.
     for (const q of payload!.topics[0].quotes) {
-      expect(Object.keys(q).sort()).toEqual(['candidateToken', 'id', 'text', 'topicKey']);
+      expect(Object.keys(q).sort()).toEqual(['candidateToken', 'cardKey', 'id', 'text', 'topicKey']);
     }
   });
 
@@ -993,5 +995,338 @@ describe('computeRaceMatch — topic with no live Compass topic', () => {
     const result = await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
 
     expect(result!.ballot[0].perTopic[0].title).toBe('Housing');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The QUESTION is the unit of comparison, not the topic.
+//
+// 1377 made essentials.readrank_questions first-class: one topic can host several
+// questions (LA Mayor's economic-development topic hosts a film/TV question and a
+// downtown question). The player path used to bucket by lower(topic_key), so two
+// questions in one topic merged into a single card that paired answers to DIFFERENT
+// questions under whichever question text happened to arrive first.
+//
+// Cards are keyed by question_id, falling back to 'topic:<topic_key>' — compass-era
+// quotes predate question_id and must still group by topic.
+// ---------------------------------------------------------------------------
+
+describe('getRaceBlindQuotes — one card per question', () => {
+  /** Two econ-dev questions in one topic: the film pair and the downtown pair. */
+  const splitTopicRows = [
+    {
+      quote_id: 'bass-film', deidentified_text: 'Keep film production here.', topic_key: 'economic-development',
+      politician_id: 'bass', question_id: 'q-film', topic_title: 'Economic Development',
+      topic_question: 'How would you keep film and TV production in the city?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'raman-film', deidentified_text: 'Subsidies are the wrong tool.', topic_key: 'economic-development',
+      politician_id: 'raman', question_id: 'q-film', topic_title: 'Economic Development',
+      topic_question: 'How would you keep film and TV production in the city?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'bass-downtown', deidentified_text: 'Convert offices to housing.', topic_key: 'economic-development',
+      politician_id: 'bass', question_id: 'q-downtown', topic_title: 'Economic Development',
+      topic_question: 'What is your plan for downtown?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'raman-downtown', deidentified_text: 'Invest in transit first.', topic_key: 'economic-development',
+      politician_id: 'raman', question_id: 'q-downtown', topic_title: 'Economic Development',
+      topic_question: 'What is your plan for downtown?', position_name: 'Los Angeles Mayor',
+    },
+  ];
+
+  it('splits two questions in one topic into two cards, each with its own question text', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const payload = await getRaceBlindQuotes('race-la-mayor');
+
+    expect(payload!.topics).toHaveLength(2);
+    const byQuestionId = new Map(payload!.topics.map((t) => [t.questionId, t]));
+    expect([...byQuestionId.keys()].sort()).toEqual(['q-downtown', 'q-film']);
+
+    const film = byQuestionId.get('q-film')!;
+    expect(film.question).toBe('How would you keep film and TV production in the city?');
+    expect(film.quotes.map((q) => q.id).sort()).toEqual(['bass-film', 'raman-film']);
+
+    const downtown = byQuestionId.get('q-downtown')!;
+    expect(downtown.question).toBe('What is your plan for downtown?');
+    expect(downtown.quotes.map((q) => q.id).sort()).toEqual(['bass-downtown', 'raman-downtown']);
+  });
+
+  it('never pairs answers to different questions on one card', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const payload = await getRaceBlindQuotes('race-la-mayor');
+
+    // The corruption this fix exists to prevent: a card whose quotes answer more
+    // than one question, displayed under a single question heading.
+    const quoteQuestion: Record<string, string> = {
+      'bass-film': 'q-film', 'raman-film': 'q-film',
+      'bass-downtown': 'q-downtown', 'raman-downtown': 'q-downtown',
+    };
+    for (const card of payload!.topics) {
+      const answered = new Set(card.quotes.map((q) => quoteQuestion[q.id]));
+      expect([...answered]).toEqual([card.questionId]);
+    }
+  });
+
+  it('stamps each quote with its own card key', async () => {
+    // The game client routes a verdict by looking the card up from the QUOTE
+    // (`race.topics[quote.topicKey]`). With two cards sharing a topicKey the quote
+    // has to carry the card key itself, or an agree/disagree lands on the wrong card.
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const payload = await getRaceBlindQuotes('race-la-mayor');
+
+    for (const card of payload!.topics) {
+      for (const quote of card.quotes) expect(quote.cardKey).toBe(card.key);
+    }
+    const film = payload!.topics.find((t) => t.questionId === 'q-film')!;
+    expect(film.quotes.map((q) => q.cardKey)).toEqual(['q-film', 'q-film']);
+  });
+
+  it('keeps the blind payload free of attribution after adding cardKey', async () => {
+    // cardKey names the QUESTION, never the speaker, so it cannot de-anonymise a
+    // card. This restates the blindness invariant over the widened quote shape.
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const payload = await getRaceBlindQuotes('race-la-mayor');
+
+    for (const card of payload!.topics) {
+      for (const quote of card.quotes) {
+        expect(Object.keys(quote).sort()).toEqual(['cardKey', 'candidateToken', 'id', 'text', 'topicKey'].sort());
+      }
+    }
+  });
+
+  it('gives each card a distinct key while both keep the real topicKey', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const payload = await getRaceBlindQuotes('race-la-mayor');
+
+    // topicKey stays truthful (both cards ARE economic-development) — `key` is what
+    // consumers must group by. A consumer keying a map by topicKey drops a card.
+    expect(payload!.topics.map((t) => t.topicKey)).toEqual(['economic-development', 'economic-development']);
+    expect(new Set(payload!.topics.map((t) => t.key)).size).toBe(2);
+  });
+
+  it('still groups compass-era quotes (question_id NULL) by topic', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Build more homes.', topic_key: 'housing', politician_id: 'p1', question_id: null, topic_title: 'Housing', topic_question: 'Q?', position_name: 'Governor' },
+        { quote_id: 'q2', deidentified_text: 'Build fewer homes.', topic_key: 'housing', politician_id: 'p2', question_id: null, topic_title: 'Housing', topic_question: 'Q?', position_name: 'Governor' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-1');
+
+    expect(payload!.topics).toHaveLength(1);
+    expect(payload!.topics[0]).toMatchObject({ key: 'topic:housing', topicKey: 'housing', questionId: null });
+    expect(payload!.topics[0].quotes).toHaveLength(2);
+  });
+
+  it('separates a question-bearing card from a compass-era card in the same topic', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Legacy answer.', topic_key: 'housing', politician_id: 'p1', question_id: null, topic_title: 'Housing', topic_question: 'Compass question?', position_name: 'Governor' },
+        { quote_id: 'q2', deidentified_text: 'Question answer.', topic_key: 'housing', politician_id: 'p2', question_id: 'q-zoning', topic_title: 'Housing', topic_question: 'Would you upzone?', position_name: 'Governor' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-1');
+
+    expect(payload!.topics).toHaveLength(2);
+    expect(payload!.topics.map((t) => t.key).sort()).toEqual(['q-zoning', 'topic:housing']);
+  });
+
+  it('selects question_id and orders cards deterministically within a topic', async () => {
+    // Structural guard: pool.query is mocked, so the grouping key can only be
+    // trusted if the SQL actually returns question_id, and card order within a
+    // topic is only stable if the ORDER BY reaches past the topic title.
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getRaceBlindQuotes('race-1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/q\.question_id/);
+    expect(sql).toMatch(/ORDER BY[\s\S]*COALESCE\(ct\.short_title, lower\(q\.topic_key\)\)[\s\S]*q\.question_id/);
+  });
+});
+
+describe('getPlayableRaces — playability is measured in questions', () => {
+  it('counts questions, not topics, for playability', async () => {
+    // A split topic advertises TWO playable cards. Counting topics reported one,
+    // understating the race and disagreeing with the admin coverage grid.
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-la', position_name: 'Los Angeles Mayor', district_label: null, district_type: 'LOCAL_EXEC',
+      election_id: 'e1', election_name: 'LA 2026', election_date: null,
+      jurisdiction_level: 'county', state: 'CA',
+      boundary_layer: 'G4110', boundary_geoid: '0644000',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', question_count: '2', quote_count: '4', rankable_question_count: '2',
+      politician_ids: ['bass', 'raman'],
+    }] });
+
+    const { races: [race] } = await getPlayableRacesResult();
+
+    expect(race.questionCount).toBe(2);
+    expect(race.rankableQuestionCount).toBe(2);
+    // The pre-question wire names stay, carrying the same numbers, because the
+    // game client reads `rankableTopicCount ?? topicCount`. Renaming them without
+    // a coordinated client release would zero out every race card's progress.
+    expect(race.topicCount).toBe(2);
+    expect(race.rankableTopicCount).toBe(2);
+  });
+
+  it('keys both playability counts on the question, with the topic fallback', async () => {
+    // Structural guard: the counting happens in SQL and pool.query is mocked, so
+    // this asserts the grouping key rather than the arithmetic. A GROUP BY on bare
+    // lower(topic_key) is the defect — it merges two questions into one rankable
+    // unit and passes a 2-candidate check that no single question satisfies.
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getPlayableRacesResult();
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain("COUNT(DISTINCT COALESCE(q.question_id::text, 'topic:' || lower(q.topic_key)))");
+    expect(sql).toContain("GROUP BY COALESCE(q2.question_id::text, 'topic:' || lower(q2.topic_key))");
+    expect(sql).not.toMatch(/GROUP BY lower\(q2\.topic_key\)/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The reveal must not merge two questions' rankings.
+//
+// computeRaceMatch grouped perTopic (and the userTopWinner tie-break) by
+// lower(topic_key). With two questions in one topic that silently pooled both
+// questions' quotes into a single reveal section and awarded ONE winner across
+// answers to two different questions.
+// ---------------------------------------------------------------------------
+
+describe('computeRaceMatch — the reveal is keyed by question', () => {
+  const splitTopicRows = [
+    {
+      quote_id: 'bass-film', politician_id: 'bass', topic_key: 'economic-development', question_id: 'q-film',
+      deidentified_text: 'Keep film production here.', source_name: 'Debate', source_url: 'https://example.com/d',
+      full_name: 'Karen Bass', photo: null, office_title: 'Mayor', topic_title: 'Economic Development',
+      topic_question: 'How would you keep film and TV production in the city?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'raman-film', politician_id: 'raman', topic_key: 'economic-development', question_id: 'q-film',
+      deidentified_text: 'Subsidies are the wrong tool.', source_name: 'Forum', source_url: 'https://example.com/f',
+      full_name: 'Nithya Raman', photo: null, office_title: 'Council Member', topic_title: 'Economic Development',
+      topic_question: 'How would you keep film and TV production in the city?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'bass-downtown', politician_id: 'bass', topic_key: 'economic-development', question_id: 'q-downtown',
+      deidentified_text: 'Convert offices to housing.', source_name: 'Debate', source_url: 'https://example.com/d',
+      full_name: 'Karen Bass', photo: null, office_title: 'Mayor', topic_title: 'Economic Development',
+      topic_question: 'What is your plan for downtown?', position_name: 'Los Angeles Mayor',
+    },
+    {
+      quote_id: 'raman-downtown', politician_id: 'raman', topic_key: 'economic-development', question_id: 'q-downtown',
+      deidentified_text: 'Invest in transit first.', source_name: 'Forum', source_url: 'https://example.com/f',
+      full_name: 'Nithya Raman', photo: null, office_title: 'Council Member', topic_title: 'Economic Development',
+      topic_question: 'What is your plan for downtown?', position_name: 'Los Angeles Mayor',
+    },
+  ];
+
+  it('gives a candidate one reveal section per question, not one per topic', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const result = await computeRaceMatch('race-la-mayor', [
+      { quote_id: 'bass-film', supported: true, rank: 1 },
+      { quote_id: 'bass-downtown', supported: true, rank: 2 },
+    ]);
+
+    const bass = result!.ballot.find((b) => b.candidateId === 'bass')!;
+    expect(bass.perTopic).toHaveLength(2);
+    expect(bass.perTopic.map((t) => t.questionId).sort()).toEqual(['q-downtown', 'q-film']);
+    for (const section of bass.perTopic) {
+      expect(section.quotes).toHaveLength(1);
+      expect(section.topicKey).toBe('economic-development');
+    }
+  });
+
+  it('carries the question text so two sections of one topic are distinguishable', async () => {
+    // Both sections share the topic short_title, so without the question text the
+    // reveal shows the same heading twice with no way to tell them apart.
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const result = await computeRaceMatch('race-la-mayor', [
+      { quote_id: 'bass-film', supported: true, rank: 1 },
+      { quote_id: 'bass-downtown', supported: true, rank: 2 },
+    ]);
+
+    const bass = result!.ballot.find((b) => b.candidateId === 'bass')!;
+    const byQuestion = new Map(bass.perTopic.map((t) => [t.questionId, t.question]));
+    expect(byQuestion.get('q-film')).toBe('How would you keep film and TV production in the city?');
+    expect(byQuestion.get('q-downtown')).toBe('What is your plan for downtown?');
+  });
+
+  it('decides userTopWinner per question, so each candidate can win their own', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const result = await computeRaceMatch('race-la-mayor', [
+      { quote_id: 'bass-film', supported: true, rank: 1 },
+      { quote_id: 'raman-film', supported: true, rank: 2 },
+      { quote_id: 'bass-downtown', supported: true, rank: 2 },
+      { quote_id: 'raman-downtown', supported: true, rank: 1 },
+    ]);
+
+    const winner = (candidateId: string, questionId: string) =>
+      result!.ballot.find((b) => b.candidateId === candidateId)!
+        .perTopic.find((t) => t.questionId === questionId)!.userTopWinner;
+
+    // Topic-keyed, the single rank-1 for the whole topic went to whoever was seen
+    // first (bass), and raman won nothing despite topping the downtown question.
+    expect(winner('bass', 'q-film')).toBe(true);
+    expect(winner('bass', 'q-downtown')).toBe(false);
+    expect(winner('raman', 'q-downtown')).toBe(true);
+    expect(winner('raman', 'q-film')).toBe(false);
+  });
+
+  it('counts agreement in questions, not topics', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: splitTopicRows });
+
+    const result = await computeRaceMatch('race-la-mayor', [
+      { quote_id: 'bass-film', supported: true, rank: 1 },
+      { quote_id: 'bass-downtown', supported: true, rank: 2 },
+    ]);
+
+    const bass = result!.ballot.find((b) => b.candidateId === 'bass')!;
+    // Two agreements on two distinct questions. Topic-keyed this reported 1,
+    // understating breadth of agreement against a question-keyed denominator.
+    expect(bass.evidence.agreementCount).toBe(2);
+    expect(bass.evidence.topicsWithAgreement).toBe(2);
+  });
+
+  it('still keys compass-era quotes (question_id NULL) by topic', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [{
+        quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', question_id: null,
+        deidentified_text: 'Build more homes.', source_name: null, source_url: null,
+        full_name: 'Alex Doe', photo: null, office_title: 'State Senator',
+        topic_title: 'Housing', topic_question: 'Q?', position_name: 'Governor',
+      }],
+    });
+
+    const result = await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    expect(result!.ballot[0].perTopic).toHaveLength(1);
+    expect(result!.ballot[0].perTopic[0]).toMatchObject({
+      key: 'topic:housing', topicKey: 'housing', questionId: null, userTopWinner: true,
+    });
+  });
+
+  it('selects question_id and resolves the question text in SQL', async () => {
+    // Structural guard: pool.query is mocked, so the grouping key is only real if
+    // the reveal query returns question_id, and the heading is only disambiguated
+    // if it resolves question text through the same three sources as the payload.
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/q\.question_id/);
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
   });
 });

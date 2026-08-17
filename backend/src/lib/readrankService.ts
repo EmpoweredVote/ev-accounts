@@ -69,10 +69,18 @@ export interface RaceSummary {
   state: string | null;
   jurisdictionLevel: string | null;
   candidateCount: number;
+  /** Distinct questions with a served quote. @deprecated misnamed — reads
+   *  `questionCount`. Kept because the game client reads it. */
   topicCount: number;
+  /** Distinct questions this race serves — one evaluation card each. */
+  questionCount: number;
   isLocal: boolean;
   quoteCount: number;
+  /** @deprecated misnamed — reads `rankableQuestionCount`. Kept because the game
+   *  client reads `rankableTopicCount ?? topicCount` to size race progress. */
   rankableTopicCount: number;
+  /** Questions with >= 2 live candidates answering — a real head-to-head. */
+  rankableQuestionCount: number;
   tier: 'federal' | 'state' | 'local';
   scope: 'statewide' | 'district' | 'county' | 'citywide';
   boundaryRef: BoundaryRef | null;
@@ -87,12 +95,52 @@ export interface BlindQuote {
   text: string;
   candidateToken: string;
   topicKey: string;
+  /** The card this quote belongs to — matches RaceTopicCard.key. Present because
+   *  the client resolves a verdict's card FROM THE QUOTE; with two cards sharing a
+   *  topicKey, topicKey alone routes the verdict to the wrong one. Names the
+   *  question, never the speaker, so it carries no attribution. */
+  cardKey: string;
+}
+
+/**
+ * One evaluation card: a single ranking question and the blind answers to it.
+ *
+ * The QUESTION is the unit of comparison (migration 1377), NOT the topic — one
+ * topic legitimately hosts several questions (LA Mayor's economic-development
+ * topic hosts a film/TV question and a downtown question). So `topicKey` is
+ * deliberately NOT unique across cards, and a consumer keying a map or a
+ * progress record by it silently drops a card. Group by `key`.
+ */
+export interface RaceTopicCard {
+  /** Stable card identity: the question id, or `topic:<topic_key>` for a
+   *  compass-era quote that predates question_id. Unique within a payload. */
+  key: string;
+  /** The real Compass topic this question sits under. NOT unique across cards. */
+  topicKey: string;
+  /** NULL for compass-era quotes, which are still grouped by topic. */
+  questionId: string | null;
+  title: string;
+  question: string;
+  quotes: BlindQuote[];
 }
 
 export interface RacePayload {
   raceId: string;
   positionName: string;
-  topics: Array<{ topicKey: string; title: string; question: string; quotes: BlindQuote[] }>;
+  /** Cards, one per question. Named `topics` for wire compatibility with the
+   *  game client; the elements have been per-question since this fix. */
+  topics: RaceTopicCard[];
+}
+
+/**
+ * Card identity for every question-keyed grouping in the player path.
+ *
+ * Mirrors the SQL-side key `COALESCE(question_id::text, 'topic:' || lower(topic_key))`
+ * used by getPlayableRaces' counts. Keep the two in step — if they diverge, the
+ * race list advertises a card count the payload does not deliver.
+ */
+export function questionCardKey(questionId: string | null | undefined, topicKey: string | null | undefined): string {
+  return questionId ?? `topic:${(topicKey ?? '').toLowerCase()}`;
 }
 
 export interface VerdictInput {
@@ -112,10 +160,23 @@ export interface BallotEntry {
   office: string;
   photo: string;
   essentialsUrl: string;
-  evidence: { agreementCount: number; firstPlaceCount: number; topicsWithAgreement: number };
+  evidence: {
+    agreementCount: number;
+    firstPlaceCount: number;
+    /** Distinct QUESTIONS with at least one agreement. Named for the wire. */
+    topicsWithAgreement: number;
+  };
+  /** One section per question, NOT per topic — two questions in one topic are two
+   *  sections sharing a topicKey. Named `perTopic` for wire compatibility. */
   perTopic: Array<{
+    /** Matches RaceTopicCard.key from the evaluation payload. Group by this. */
+    key: string;
     topicKey: string;
+    questionId: string | null;
     title: string;
+    /** The ranking question. Two sections of one topic share `title`, so this is
+     *  what tells them apart in the reveal. */
+    question: string;
     userTopWinner: boolean;
     quotes: Array<{ quoteId: string; text: string; supported: boolean; rank: number | null; sourceName?: string; sourceUrl?: string }>;
   }>;
@@ -310,7 +371,7 @@ export async function getPlayableRaces(
     election_date: Date | null; jurisdiction_level: string | null; state: string | null;
     boundary_layer: string | null; boundary_geoid: string | null;
     frame_layer: string | null; frame_geoid: string | null;
-    candidate_count: string; topic_count: string; quote_count: string; rankable_topic_count: string;
+    candidate_count: string; question_count: string; quote_count: string; rankable_question_count: string;
     politician_ids: string[];
   }>(`
     SELECT r.id AS race_id,
@@ -323,11 +384,15 @@ export async function getPlayableRaces(
            COALESCE(d.geo_id, d.tiger_geoid) AS boundary_geoid,
            frame.frame_layer, frame.frame_geoid,
            COUNT(DISTINCT rc.politician_id)   AS candidate_count,
-           COUNT(DISTINCT lower(q.topic_key)) AS topic_count,
+           -- The QUESTION is the unit of comparison (1377), so a topic hosting two
+           -- questions contributes two cards. The 'topic:' fallback keeps compass-era
+           -- quotes (question_id IS NULL) grouped by topic. Must stay in step with
+           -- questionCardKey() in TypeScript.
+           COUNT(DISTINCT COALESCE(q.question_id::text, 'topic:' || lower(q.topic_key))) AS question_count,
            COUNT(q.id)                        AS quote_count,
            (
              SELECT COUNT(*) FROM (
-               SELECT lower(q2.topic_key) AS tk
+               SELECT COALESCE(q2.question_id::text, 'topic:' || lower(q2.topic_key)) AS qk
                FROM essentials.race_candidates rc2
                JOIN essentials.quotes q2
                  ON q2.politician_id = rc2.politician_id
@@ -341,10 +406,13 @@ export async function getPlayableRaces(
                  -- ON clause would invert the kill switch: a retired topic would fail
                  -- to match, yield ct2 IS NULL, and survive as an "unknown" topic.
                  AND (ct2.topic_key IS NULL OR ct2.is_live = true)
-               GROUP BY lower(q2.topic_key)
+               -- Per QUESTION, not per topic. Grouping by lower(topic_key) counted a
+               -- split topic as one rankable unit whenever its two questions had one
+               -- answering candidate each — a pairing no single question satisfies.
+               GROUP BY COALESCE(q2.question_id::text, 'topic:' || lower(q2.topic_key))
                HAVING COUNT(DISTINCT rc2.politician_id) >= 2
              ) rankable
-           )                                  AS rankable_topic_count,
+           )                                  AS rankable_question_count,
            array_agg(DISTINCT rc.politician_id) AS politician_ids
     FROM essentials.races r
     JOIN essentials.elections e ON e.id = r.election_id
@@ -494,9 +562,13 @@ export async function getPlayableRaces(
       state: r.state,
       jurisdictionLevel: r.jurisdiction_level,
       candidateCount: Number(r.candidate_count),
-      topicCount: Number(r.topic_count),
+      questionCount: Number(r.question_count),
+      rankableQuestionCount: Number(r.rankable_question_count),
+      // Deprecated aliases, same numbers. The game client reads these; dropping them
+      // would zero every race card's topic count and progress denominator.
+      topicCount: Number(r.question_count),
       quoteCount: Number(r.quote_count),
-      rankableTopicCount: Number(r.rankable_topic_count),
+      rankableTopicCount: Number(r.rankable_question_count),
       tier,
       scope,
       boundaryRef,
@@ -546,11 +618,13 @@ export async function getPlayableRaces(
 export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | null> {
   const { rows } = await pool.query<{
     quote_id: string; deidentified_text: string; topic_key: string; politician_id: string;
+    // NULL for compass-era quotes, which predate migration 1377's question_id.
+    question_id: string | null;
     // topic_title / topic_question are NULL for a topic with no Compass row.
     topic_title: string | null; topic_question: string | null; position_name: string;
   }>(`
     SELECT q.id AS quote_id, q.deidentified_text, lower(q.topic_key) AS topic_key,
-           q.politician_id,
+           q.politician_id, q.question_id,
            ct.short_title AS topic_title,
            -- Question resolves: the quote's own question -> per-race topic override
            -- -> Compass. A non-Compass topic has only the first source, so this
@@ -578,36 +652,48 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
       AND (ct.topic_key IS NULL OR ct.is_live = true)
     -- Non-Compass topics have no short_title; order them by key so a race with
     -- several of them still comes back in a stable order rather than by chance.
-    ORDER BY COALESCE(ct.short_title, lower(q.topic_key))
+    -- The trailing two keys order CARDS WITHIN a topic: ordering by topic title
+    -- alone left the row order of a multi-question topic unspecified, which is
+    -- how the merged card used to pick its question text by chance.
+    ORDER BY COALESCE(ct.short_title, lower(q.topic_key)),
+             COALESCE(rq.question_text, rtq.question_text, ct.question_text),
+             q.question_id NULLS FIRST
   `, [raceId]);
 
   if (rows.length === 0) return null;
 
   const positionName = rows[0].position_name;
-  const topicOrder: string[] = [];
-  const byTopic = new Map<string, RacePayload['topics'][number]>();
+  const cardOrder: string[] = [];
+  const byCard = new Map<string, RaceTopicCard>();
 
   for (const row of rows) {
-    let topic = byTopic.get(row.topic_key);
-    if (!topic) {
-      topic = {
+    // Keyed by QUESTION, not topic: two questions in one topic are two cards, each
+    // carrying its own question text. Keying by topic_key here merged them and
+    // printed one nondeterministically-chosen question over both sets of answers.
+    const key = questionCardKey(row.question_id, row.topic_key);
+    let card = byCard.get(key);
+    if (!card) {
+      card = {
+        key,
         topicKey: row.topic_key,
+        questionId: row.question_id,
         title: row.topic_title ?? topicTitleFromKey(row.topic_key),
         question: row.topic_question ?? '',
         quotes: [],
       };
-      byTopic.set(row.topic_key, topic);
-      topicOrder.push(row.topic_key);
+      byCard.set(key, card);
+      cardOrder.push(key);
     }
-    topic.quotes.push({
+    card.quotes.push({
       id: row.quote_id,
       text: row.deidentified_text, // NEVER quote_text
       candidateToken: candidateToken(raceId, row.politician_id),
       topicKey: row.topic_key,
+      cardKey: key,
     });
   }
 
-  return { raceId, positionName, topics: topicOrder.map((k) => byTopic.get(k)!) };
+  return { raceId, positionName, topics: cardOrder.map((k) => byCard.get(k)!) };
 }
 
 // ---------------------------------------------------------------------------
@@ -625,14 +711,22 @@ export async function computeRaceMatch(
   if (quoteIds.length === 0) return { raceId, positionName: '', ballot: [] };
 
   const { rows } = await pool.query<{
-    quote_id: string; politician_id: string; topic_key: string; deidentified_text: string;
+    quote_id: string; politician_id: string; topic_key: string; question_id: string | null;
+    deidentified_text: string;
     source_name: string | null; source_url: string | null; full_name: string;
-    photo: string | null; office_title: string | null; topic_title: string | null; position_name: string;
+    photo: string | null; office_title: string | null; topic_title: string | null;
+    topic_question: string | null; position_name: string;
   }>(`
     SELECT q.id AS quote_id, q.politician_id, lower(q.topic_key) AS topic_key,
+           q.question_id,
            q.deidentified_text, q.source_name, q.source_url,
            p.full_name, p.photo_origin_url AS photo,
-           o.title AS office_title, ct.short_title AS topic_title, r.position_name
+           o.title AS office_title, ct.short_title AS topic_title,
+           -- Same three-source resolution as getRaceBlindQuotes. The reveal needs it
+           -- because two sections of one topic share the topic short_title and are
+           -- otherwise indistinguishable to the reader.
+           COALESCE(rq.question_text, rtq.question_text, ct.question_text) AS topic_question,
+           r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id IS NOT NULL
     JOIN essentials.quotes q ON q.politician_id = rc.politician_id AND q.deidentified_text IS NOT NULL AND q.readrank_selected = true
@@ -647,6 +741,10 @@ export async function computeRaceMatch(
       LIMIT 1
     ) o ON true
     LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
+    LEFT JOIN essentials.readrank_questions rq
+      ON rq.id = q.question_id
+    LEFT JOIN essentials.readrank_race_topic_questions rtq
+      ON rtq.race_id = r.id AND rtq.topic_key = lower(q.topic_key)
     WHERE r.id = $1 AND q.id = ANY($2::uuid[])
       -- Kill switch in WHERE, not ON — see getPlayableRaces. The reveal must not
       -- resurrect a retired topic the evaluation payload already refused to show.
@@ -661,15 +759,19 @@ export async function computeRaceMatch(
   interface Agg {
     politicianId: string; name: string; photo: string; office: string;
     agreementCount: number; firstPlaceCount: number; score: number;
+    /** Card keys, not topic keys — see questionCardKey. */
     topicsWithAgreement: Set<string>;
     perTopic: Map<string, BallotEntry['perTopic'][number]>;
   }
   const aggs = new Map<string, Agg>();
-  const topicBest: Record<string, { pid: string; rank: number }> = {};
+  /** Best rank per CARD. Keyed by topic, one rank-1 was shared across every
+   *  question in the topic, so only the first candidate seen could ever win. */
+  const cardBest: Record<string, { pid: string; rank: number }> = {};
 
   for (const row of rows) {
     const v = verdictByQuote.get(row.quote_id);
     if (!v) continue;
+    const cardKey = questionCardKey(row.question_id, row.topic_key);
     let a = aggs.get(row.politician_id);
     if (!a) {
       a = {
@@ -680,15 +782,18 @@ export async function computeRaceMatch(
       };
       aggs.set(row.politician_id, a);
     }
-    let pt = a.perTopic.get(row.topic_key);
+    let pt = a.perTopic.get(cardKey);
     if (!pt) {
       pt = {
+        key: cardKey,
         topicKey: row.topic_key,
+        questionId: row.question_id,
         title: row.topic_title ?? topicTitleFromKey(row.topic_key),
+        question: row.topic_question ?? '',
         userTopWinner: false,
         quotes: [],
       };
-      a.perTopic.set(row.topic_key, pt);
+      a.perTopic.set(cardKey, pt);
     }
     pt.quotes.push({
       quoteId: row.quote_id, text: row.deidentified_text, supported: v.supported, rank: v.rank,
@@ -697,11 +802,11 @@ export async function computeRaceMatch(
     if (v.supported) {
       a.agreementCount += 1;
       a.score += rankBonus(v.rank);
-      a.topicsWithAgreement.add(row.topic_key);
+      a.topicsWithAgreement.add(cardKey);
       if (v.rank === 1) a.firstPlaceCount += 1;
       if (v.rank != null) {
-        const best = topicBest[row.topic_key];
-        if (!best || v.rank < best.rank) topicBest[row.topic_key] = { pid: row.politician_id, rank: v.rank };
+        const best = cardBest[cardKey];
+        if (!best || v.rank < best.rank) cardBest[cardKey] = { pid: row.politician_id, rank: v.rank };
       }
     }
   }
@@ -721,7 +826,7 @@ export async function computeRaceMatch(
     .sort((x, y) => x.name.localeCompare(y.name));
 
   const toEntry = (a: Agg, rank: number | null): BallotEntry => {
-    for (const pt of a.perTopic.values()) pt.userTopWinner = topicBest[pt.topicKey]?.pid === a.politicianId;
+    for (const pt of a.perTopic.values()) pt.userTopWinner = cardBest[pt.key]?.pid === a.politicianId;
     const entry: BallotEntry = {
       rank,
       candidateId: a.politicianId,

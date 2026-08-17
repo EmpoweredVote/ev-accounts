@@ -5,7 +5,8 @@ on:
     branches: [master]
   push:
     branches: [master]
-  # The live-DB jobs (`reachability`, `child-county`, `stance-sources`) also run on a schedule: their
+  # The live-DB jobs (`reachability`, `child-county`, `stance-sources`, `readrank-question-unit`) also
+  # run on a schedule: their
   # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
   # with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest
   # window.
@@ -311,5 +312,51 @@ jobs:
       # build they cannot fix.
       - name: Check stance sourcing — no Ballotpedia-only rows, no known-fabricated citations
         run: npm run check:stance-sources
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  readrank-question-unit:
+    name: read & rank question unit
+    runs-on: ubuntu-latest
+    # Its own job per the rule at the top of this file: it fails for reasons entirely unrelated to
+    # the other live-DB checks (an editor's quote selection, not geometry or citations), so sharing a
+    # job would let either one mask the other.
+    #
+    # Same triggers and prod-drift reasoning as `reachability` / `child-county` / `stance-sources`:
+    # NOT on pull_request. What this guards is a DATA state an editor creates through the admin UI —
+    # no commit is involved, and a PR's SQL has not touched prod yet.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Migration 1377 made the QUESTION the unit of comparison; one topic can host several. The
+      # player path stayed topic-grouped until 2026-08-17, merging two questions onto one card under a
+      # nondeterministically-chosen question text. The backend is fixed, but NO CONSTRAINT CAN EXPRESS
+      # the remaining invariant: 1820 re-keyed the partial unique index to (politician_id, question_id),
+      # which correctly and deliberately permits two questions in one topic to be live.
+      #
+      # What still breaks is the read-rank CLIENT: it keys race progress by topicKey
+      # (`topics[t.topicKey] = {...}`), so two cards sharing a topicKey collide — one question renders
+      # twice and the other's quotes never appear. The payload now carries `topics[].key` for the client
+      # to group on; until that ships, a split topic must not go live, and this is what says so.
+      #
+      # Zero tolerance, no baseline: the correct value is 0, and exactly one race/topic pair in prod
+      # (LA Mayor general, economic-development) can even produce a violation.
+      #
+      # Skips itself (exit 0) without DATABASE_URL, so forks get a green skip.
+      - name: Check no race/topic serves quotes for more than one question
+        run: npm run check:readrank-question-unit
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
