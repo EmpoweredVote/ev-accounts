@@ -20,6 +20,13 @@ export const OPERATOR_KEEPS: Record<string, string> = {
   // committee. Operator ruling 2026-08-16: it is the same Tony Strickland, who really did run for
   // Controller statewide in 2010, and his donations should be merged onto him.
   '1325751': 'operator ruling 2026-08-16: same Tony Strickland; his real 2010 statewide Controller run',
+  // Task 6. Same man, same reasoning as above: he really did hold a State Senate seat. The rule could
+  // not reach it because essentials has NO office_terms row for him at all, so both the office and
+  // OFFICEHOLDER routes are structurally unable to fire -- a gap in our data, not evidence against him.
+  // ⚠ Deliberately NOT extended to filer 1285101 "STRICKLAND FOR JUDGE, COMMITTEE TO ELECT": he has
+  // never been a judge, so that is very probably a different Strickland and it stays purged. The
+  // ruling is per committee, not per person.
+  '1294413': 'operator ruling 2026-08-16: same Tony Strickland; his real State Senate service, which no office record of ours can corroborate',
 };
 
 // ── Office corroboration: the SECOND proof route ─────────────────────────────────────────────────
@@ -36,14 +43,34 @@ export function officeKeywords(offices: { title: string | null; chamber: string 
     if (/\bsenate\b|\bsenator\b/.test(s)) kws.add('senate');
     if (/supervisor/.test(s)) kws.add('supervisor');
     if (/\bmayor\b/.test(s)) kws.add('mayor');
-    if (/city council|councilmember|council member|councilwoman|councilman/.test(s)) kws.add('city council');
+    // 'council' as well as 'city council': Cal-Access routinely registers the seat as plain
+    // "OHLSEN FOR COUNCIL 2026" / "RICKS-ODDIE FOR COUNCIL 2022", which 'city council' cannot match.
+    // Those read as no-corroboration and were purged, though both are sitting council members.
+    if (/city council|councilmember|council member|councilwoman|councilman/.test(s)) { kws.add('city council'); kws.add('council'); }
     if (/attorney general/.test(s)) kws.add('attorney general');
     if (/controller/.test(s)) kws.add('controller');
     if (/treasurer/.test(s)) kws.add('treasurer');
     if (/sheriff/.test(s)) kws.add('sheriff');
-    if (/board of education|school/.test(s)) kws.add('school board');
+    // 'school' as well: the same seat is registered as "...CORONADO UNIFIED SCHOOL DISTRICT 2022",
+    // which neither 'school board' nor 'board of education' matches.
+    if (/board of education|school/.test(s)) { kws.add('school board'); kws.add('board of education'); kws.add('school'); }
     if (/water/.test(s)) kws.add('water');
     if (/judge|court/.test(s)) kws.add('judge');
+    // ── Added 2026-08-16, Task 6 step 1 ────────────────────────────────────────────────────────
+    // Audited against the DISTINCT (offices.title, chambers.name) actually held by the 304 links'
+    // politicians. Seven pairs produced no keyword at all, and an unrecognised office is silently
+    // indistinguishable from "no corroboration" -- which under prove-it-right means a PURGE. The
+    // largest gap by far was Board of Trustees (19 politicians).
+    if (/board of trustees|\btrustee\b/.test(s)) {
+      kws.add('trustee');            // committees read "FOR CUSD TRUSTEE AREA 7"
+      kws.add('school board');       // ...and, for the same seat, "FOR SCHOOL BOARD"
+      kws.add('board of education');
+    }
+    if (/district attorney/.test(s)) kws.add('district attorney');
+    if (/\bassessor\b/.test(s)) kws.add('assessor');
+    if (/\bauditor\b/.test(s)) kws.add('auditor');
+    if (/public utilities/.test(s)) kws.add('public utilities');
+    if (/house of representatives|\bcongress/.test(s)) kws.add('congress');
   }
   return [...kws];
 }
@@ -54,17 +81,41 @@ export function officeKeywords(offices: { title: string | null; chamber: string 
  * ASSEMBLY 2024; MIA" would be rescued by an office match. The "; MIA" must veto it.
  */
 export function conflictingGivenName(official: string, first: string): string | null {
-  const m = official.match(/[,;]\s*([A-Za-z'’.\-]+)\s*$/);
-  if (!m) return null;
-  const tail = m[1].toLowerCase().replace(/[.'’]/g, '');
   const ORG = new Set(['committee', 'friends', 'the', 'a', 'citizens', 'of', 'inc', 'council', 'board',
     'mayor', 'supervisor', 'assembly', 'senate', 'sheriff', 'treasurer', 'governor', 'ii', 'iii', 'jr', 'sr',
-    'reelect', 're-elect', 'elect', 'campaign', 'officeholder']);
-  if (ORG.has(tail)) return null;
-  const given = first.trim().split(/\s+/)[0].toLowerCase();
-  if (tail === given) return null;
-  for (const d of DIMINUTIVES[given] ?? []) if (tail === d) return null;
-  return m[1];
+    'reelect', 're-elect', 'elect', 'campaign', 'officeholder', 'director', 'trustee', 'clerk', 'auditor',
+    'assessor', 'attorney', 'controller', 'city', 'county', 'district', 'account', 'special', 'for', 'and']);
+
+  // Pattern 1 (original): a bare given name trailing a comma or semicolon -- "...; MIA".
+  // Pattern 2 (added 2026-08-16, Task 6): the same disproof written as a phrase -- "..., COMMITTEE TO
+  // ELECT BERT", "..., FRIENDS OF DOUGLAS O.". 40+ of the 69 links this pass labelled `unprovable`
+  // in fact name another person in exactly this shape; calling those "no evidence either way"
+  // understated what the record actually says and skewed the disproof rate the operator gates on.
+  // Deliberately narrow: it fires only on these fixed lead-ins followed by 1-3 name-like tokens, so
+  // trailing fragments such as "SANTOS, SAN LEANDRANS FOR" stay honestly unprovable rather than
+  // being asserted as disproof we do not have.
+  const candidates: string[] = [];
+  // The trailing segment after the last comma/semicolon, capped at TWO tokens so a real name plus an
+  // initial or nickname is seen ("FRANK J.", "WILLIAM \"BILL\"", "CASTULO R.") while a longer
+  // fragment that is not a person ("SANTOS, SAN LEANDRANS FOR") is left alone rather than asserted
+  // as disproof we do not have.
+  const seg = official.match(/[,;]\s*([^,;]+?)\s*$/);
+  if (seg) {
+    const toks = seg[1].trim().split(/\s+/);
+    if (toks.length <= 2) for (const t of toks) if (/[A-Za-z]{2,}/.test(t)) candidates.push(t);
+  }
+  const m2 = official.match(/\b(?:COMMITTEE TO ELECT|FRIENDS TO ELECT|COMMITTEE TO SUPPORT|COMMITTEE FOR|NEIGHBORS FOR|SUPPORTERS OF|FRIENDS OF|TO SUPPORT|TO ELECT|ELECT)\s+((?:[A-Za-z'’.\-]+|"[A-Za-z'’.\-]+")(?:\s+(?:[A-Za-z'’.\-]+|"[A-Za-z'’.\-]+")){0,2})\s*$/i);
+  if (m2) candidates.push(m2[1].trim().split(/\s+/)[0]);
+
+  const given = givenName(first);
+  for (const raw of candidates) {
+    const tail = fold(raw.toLowerCase()).replace(/[.'’"]/g, '');
+    if (!tail || ORG.has(tail) || TITLES.has(tail)) continue;
+    if (tail === fold(given)) continue;
+    if ((DIMINUTIVES[given] ?? []).some(d => tail === d)) continue;
+    return raw;
+  }
+  return null;
 }
 
 // Without these, the rule falsely demotes correct links at scale: a politician stored as "Robert"
@@ -81,13 +132,59 @@ export const DIMINUTIVES: Record<string, string[]> = {
 };
 
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * Strip diacritics before comparing names.
+ * 🔴 Found 2026-08-16 in Task 6: "MUNOZ-GUEVARA FOR LYNWOOD CITY COUNCIL 2022; JUAN" was classified
+ * `no-surname` for Juan Muñoz-Guevara and would have been purged with his $7,435 -- Cal-Access stores
+ * committee names unaccented while `essentials.politicians.last_name` keeps the accent, so `\bmuñoz`
+ * cannot match `MUNOZ`. The failure is silent and looks exactly like a genuinely different surname.
+ */
+export const fold = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 const hasWord = (hay: string, needle: string) =>
-  needle.length > 0 && new RegExp('\\b' + esc(needle) + '\\b', 'i').test(hay);
+  needle.length > 0 && new RegExp('\\b' + esc(fold(needle)) + '\\b', 'i').test(fold(hay));
+
+/**
+ * Titles are not names -- on either side of the comparison.
+ * 🔴 Found 2026-08-16 in Task 6: `essentials.politicians.first_name` for "Dr. Monica Sanchez" begins
+ * with the title, so taking the first whitespace token yielded "dr." as her given name. Both of her
+ * committees -- one of which literally ends "; DR. MONICA" -- were then read as naming a different
+ * person and flipped from keep to purge. The given name must be the first token that is not a title.
+ */
+export const TITLES = new Set(['dr', 'mr', 'mrs', 'ms', 'miss', 'rev', 'hon', 'sgt', 'capt', 'prof', 'md', 'phd']);
+
+export function givenName(first: string): string {
+  const toks = fold(String(first ?? '').trim().toLowerCase()).replace(/[.'’]/g, ' ').split(/\s+/).filter(Boolean);
+  for (const t of toks) if (!TITLES.has(t)) return t;
+  return toks[0] ?? '';
+}
+
+/**
+ * The committee leads with a DIFFERENT surname: "NAGRA FOR LATHROP CITY COUNCIL 2020".
+ * Cal-Access committee names open with the candidate's surname followed by "FOR", so when that
+ * opening token is not our politician, their surname is appearing incidentally -- as the CITY in the
+ * Lathrop case, and as a given name elsewhere ("BRADY FOR PLACENTIA CITY COUNCIL, SCOTT P.").
+ * Another disproof, so it must outrank the office route: without it "NAGRA FOR LATHROP CITY COUNCIL"
+ * corroborates on 'city council' and Bruce Lathrop keeps money that is Nagra's.
+ * Returns the conflicting leading surname, or null when the committee leads with our own.
+ */
+export function leadingDifferentSurname(official: string, last: string): string | null {
+  const m = official.match(/^([A-Za-z'’\-]+)\s+FOR\s+/i);
+  if (!m) return null;                       // no "<SURNAME> FOR ..." opening; says nothing either way
+  const lead = fold(m[1].toLowerCase()).replace(/[.'’]/g, '');
+  const surname = fold(last.trim().toLowerCase());
+  if (!lead || !surname) return null;
+  if (lead === surname) return null;
+  // A multi-word surname legitimately opens with its own first word ("DE LEON FOR ...").
+  if (surname.split(/[\s\-]/)[0] === lead) return null;
+  return m[1];
+}
 
 /** True when `official` carries BOTH the surname and the given name (or a known diminutive). */
 export function namesThem(official: string, first: string, last: string): boolean {
   const o = official.toLowerCase();
-  const given = first.trim().split(/\s+/)[0].toLowerCase();
+  const given = givenName(first);
   const surname = last.trim().toLowerCase();
   if (!hasWord(o, surname)) return false;
   if (hasWord(o, given)) return true;

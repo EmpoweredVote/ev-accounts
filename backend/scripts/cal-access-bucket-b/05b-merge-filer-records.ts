@@ -10,6 +10,18 @@
 // `__NOMATCH__len=0` for every id -- which is indistinguishable from "these committees do not exist"
 // unless a filer KNOWN to exist is in the same batch. 1414018 (NEWSOM FOR CALIFORNIA GOVERNOR 2022)
 // rides along in each batch for exactly that reason. A batch whose control fails is not evidence.
+//
+// ── 🔑 THE FILER PAGE CARRIES THREE FIELDS, NOT ONE (found 2026-08-16, Task 6) ────────────────────
+// The first pass read only the SUMMARY INFORMATION name and concluded that 26 links were unprovable
+// because that name has no given name in it. Two further fields on the same page settle many of them:
+//   · (OFFICEHOLDER: ASSEMBLY DISTRICT 42) -- the seat the committee's officeholder actually holds
+//   · HISTORICAL NAMES FOR THIS COMMITTEE  -- earlier registered names, which routinely DO carry the
+//     given name Cal-Access later dropped
+// Jacqui Irwin's "IRWIN FOR LIEUTENANT GOVERNOR 2030" is the worked example: no given name and an
+// office she does not hold, so it read as a $60,380 guess -- while the same page says
+// "OFFICEHOLDER: ASSEMBLY DISTRICT 42" and "IRWIN FOR LT. GOVERNOR 2030; JACQUI".
+// `rich-batch-*.json` carries all three; `raw-batch-*.json` is the name-only first pass, kept as
+// provenance. Rich batches win where both exist.
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -22,37 +34,42 @@ const FETCHED_AT = '2026-08-16';
 const worklist = JSON.parse(fs.readFileSync(path.join(DIR, 'money-worklist.json'), 'utf8'));
 const wanted = new Set<string>(worklist.map((r: any) => String(r.filer_id)));
 
-const files = fs.readdirSync(RAW).filter(f => /^raw-batch-\d+\.json$/.test(f)).sort();
-if (files.length === 0) { console.error('ERROR: no raw batch files'); process.exit(1); }
-
-const merged: Record<string, string> = {};
+type Rec = { name: string; officeholder: string; historical: string[] };
+const merged: Record<string, Rec> = {};
 let failures = 0;
 
-for (const f of files) {
-  const text = fs.readFileSync(path.join(RAW, f), 'utf8');
-  // browser_evaluate wrote a JSON *string* for the batches that used the filename option; batch 00
-  // was captured inline as a plain object. Accept both.
-  let parsed: any = JSON.parse(text);
-  if (typeof parsed === 'string') parsed = JSON.parse(parsed);
+function loadBatches(prefix: string, rich: boolean) {
+  const files = fs.readdirSync(RAW).filter(f => new RegExp(`^${prefix}-\\d+\\.json$`).test(f)).sort();
+  for (const f of files) {
+    let parsed: any = JSON.parse(fs.readFileSync(path.join(RAW, f), 'utf8'));
+    if (typeof parsed === 'string') parsed = JSON.parse(parsed);
 
-  const control = parsed[CONTROL_ID];
-  if (control !== CONTROL_NAME) {
-    console.error(`🔴 ${f}: CONTROL FAILED -- got ${JSON.stringify(control)}. This batch was challenged, not empty. Re-fetch it.`);
-    failures++;
-    continue;
-  }
-  let n = 0;
-  for (const [id, name] of Object.entries(parsed as Record<string, string>)) {
-    if (!wanted.has(id)) continue; // drops the control, which is a Track A keep and not in the 304
-    if (merged[id] && merged[id] !== name) {
-      console.error(`🔴 ${id}: conflicting names "${merged[id]}" vs "${name}"`);
+    const controlName = rich ? parsed[CONTROL_ID]?.name : parsed[CONTROL_ID];
+    if (controlName !== CONTROL_NAME) {
+      console.error(`🔴 ${f}: CONTROL FAILED -- got ${JSON.stringify(controlName)}. That batch was challenged, not empty. Re-fetch it.`);
       failures++;
+      continue;
     }
-    merged[id] = name;
-    n++;
+    let n = 0;
+    for (const [id, v] of Object.entries(parsed as Record<string, any>)) {
+      if (!wanted.has(id)) continue; // drops the control, a Track A keep and not one of the 304
+      const rec: Rec = rich
+        ? { name: String(v.name ?? ''), officeholder: String(v.officeholder ?? ''), historical: Array.isArray(v.historical) ? v.historical : [] }
+        : { name: String(v), officeholder: '', historical: [] };
+      if (!rich && merged[id]) { n++; continue; }   // never let the name-only pass overwrite a rich one
+      if (merged[id] && merged[id].name !== rec.name) {
+        console.error(`🔴 ${id}: conflicting names "${merged[id].name}" vs "${rec.name}"`);
+        failures++;
+      }
+      merged[id] = rec;
+      n++;
+    }
+    console.log(`  ${f}: control OK, ${n} worklist ids`);
   }
-  console.log(`  ${f}: control OK, ${n} worklist ids`);
 }
+
+loadBatches('rich-batch', true);
+loadBatches('raw-batch', false);
 
 const missing = [...wanted].filter(id => !(id in merged));
 if (missing.length) {
@@ -60,17 +77,21 @@ if (missing.length) {
   failures++;
 }
 
-const out: Record<string, { official_name: string; fetched_at: string; status: string }> = {};
-let ok = 0, notFound = 0, errored = 0;
-for (const [id, name] of Object.entries(merged)) {
-  if (name.startsWith('__ERROR__')) { out[id] = { official_name: '', fetched_at: FETCHED_AT, status: 'error' }; errored++; }
-  else if (name.startsWith('__NOMATCH__')) { out[id] = { official_name: '', fetched_at: FETCHED_AT, status: 'not-found' }; notFound++; }
-  else { out[id] = { official_name: name, fetched_at: FETCHED_AT, status: 'ok' }; ok++; }
+const out: Record<string, any> = {};
+let ok = 0, notFound = 0, errored = 0, withOh = 0, withHist = 0;
+for (const [id, rec] of Object.entries(merged)) {
+  const base = { fetched_at: FETCHED_AT, officeholder: rec.officeholder, historical: rec.historical };
+  if (rec.name.startsWith('__ERROR__')) { out[id] = { official_name: '', status: 'error', ...base }; errored++; }
+  else if (rec.name.startsWith('__NOMATCH__')) { out[id] = { official_name: '', status: 'not-found', ...base }; notFound++; }
+  else { out[id] = { official_name: rec.name, status: 'ok', ...base }; ok++; }
+  if (rec.officeholder) withOh++;
+  if (rec.historical.length) withHist++;
 }
 
 fs.writeFileSync(path.join(DIR, 'money-filer-records.json'), JSON.stringify(out, null, 2));
 console.log(`\nwrote money-filer-records.json: ${Object.keys(out).length} records`);
 console.log(`  ok ${ok} · not-found ${notFound} · error ${errored}`);
+console.log(`  with an OFFICEHOLDER line: ${withOh} · with HISTORICAL names: ${withHist}`);
 console.log(`  worklist filer ids: ${wanted.size}`);
 
 if (failures) { console.error(`\n🔴 ${failures} problem(s). Do NOT classify on this.`); process.exit(1); }
