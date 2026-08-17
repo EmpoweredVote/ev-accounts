@@ -83,4 +83,31 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/cities — contract', () => {
       }
     }
   });
+
+  // SCOPE-01: available_datasets entries expose fund_scope -- which funds the row's
+  // total covers. Exposed at the dataset level, not just on the budget, so the
+  // frontend can label scope and hold `unknown` rows out of cross-entity comparison
+  // while building the year/dataset picker, without fetching every budget first.
+  //
+  // `unknown` is a LEGAL, EXPECTED value, not a failure: as of 2026-08-17 it covers
+  // 26,523 of 79,927 rows. A source is only classified against an independent
+  // document, so an unreconciled source stays honestly unclassified. This test must
+  // never be "fixed" by asserting that unknown is absent.
+  it('available_datasets entries expose a fund_scope key with a legal value', async () => {
+    const LEGAL_SCOPES = ['general_fund', 'total_governmental', 'all_funds', 'unknown'];
+    const res = await request(app).get('/api/treasury/cities');
+    expect(res.status).toBe(200);
+    const cities = res.body as Array<Record<string, unknown>>;
+    if (cities.length === 0) return;
+    for (const city of cities) {
+      const datasets = (city['available_datasets'] as Array<Record<string, unknown>>) ?? [];
+      for (const ds of datasets) {
+        expect(ds, 'each dataset entry must carry fund_scope').toHaveProperty('fund_scope');
+        expect(
+          LEGAL_SCOPES,
+          `fund_scope "${String(ds['fund_scope'])}" is outside the CHECK constraint on treasury.budgets`
+        ).toContain(ds['fund_scope']);
+      }
+    }
+  });
 });
