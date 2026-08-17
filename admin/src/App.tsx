@@ -24,6 +24,7 @@ import { PoliticianStagingReviewPage } from './pages/admin/PoliticianStagingRevi
 import { ResearchReviewPage } from './pages/admin/ResearchReviewPage';
 import { ReadRankQuotesPage } from './pages/admin/ReadRankQuotesPage';
 import { ReadRankCoveragePage } from './pages/admin/ReadRankCoveragePage';
+import { StanceBreakdownPage } from './pages/admin/StanceBreakdownPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InformSignup from './pages/InformSignup';
@@ -108,6 +109,7 @@ function App() {
           <Route path="roles" element={<RolesPage />} />
           <Route path="role-audit" element={<RoleAuditPage />} />
           <Route path="topics" element={<TopicsPage />} />
+          <Route path="stance-breakdown" element={<StanceBreakdownPage />} />
           <Route path="politicians" element={<PoliticiansPage />} />
           <Route path="categories" element={<CategoriesPage />} />
           <Route path="coverage" element={<CoveragePage />} />

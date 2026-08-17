@@ -36,6 +36,7 @@ import readrankRouter from './routes/readrank.js';
 import informRouter from './routes/inform.js';
 import readrankQuotesAdminRouter from './routes/readrankQuotesAdmin.js';
 import readrankCoverageAdminRouter from './routes/readrankCoverageAdmin.js';
+import compassStatsAdminRouter from './routes/compassStatsAdmin.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js';
 import essentialsCoordinateLookupRouter from './routes/essentialsCoordinateLookup.js';
@@ -138,6 +139,7 @@ app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/admin/source-verifications', sourceVerificationsRouter);
 app.use('/api/admin/readrank-quotes', readrankQuotesAdminRouter);
 app.use('/api/admin/readrank-coverage', readrankCoverageAdminRouter);
+app.use('/api/admin/compass-stats', compassStatsAdminRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
 // GET /api/essentials/candidates/:zip
