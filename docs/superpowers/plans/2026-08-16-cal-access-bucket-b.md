@@ -59,7 +59,7 @@ Cal-Access fetch; migrations applied with `npx tsx scripts/_apply-file.ts`.
      verdict: 'names-them' | 'needs-evidence' | 'no-committee-name' }`.
   Tasks 2 and 3 read this file.
 
-- [ ] **Step 1: Write the script**
+- [x] **Step 1: Write the script**
 
 ```ts
 // backend/scripts/cal-access-bucket-b/01-build-worklist.ts
@@ -134,7 +134,7 @@ async function main() {
 main();
 ```
 
-- [ ] **Step 2: Run it**
+- [x] **Step 2: Run it**
 
 ```bash
 cd "C:/EV-Accounts/backend" && npx tsx scripts/cal-access-bucket-b/01-build-worklist.ts
@@ -148,13 +148,13 @@ Expected, matching the 2026-08-16 audit:
   TOTAL: $39134815.74
 ```
 
-- [ ] **Step 3: Check the numbers against the spec**
+- [x] **Step 3: Check the numbers against the spec**
 
 If `names-them + needs-evidence + no-committee-name` is not 50, or TOTAL is not within a few dollars
 of $39,134,815.74, **STOP and report**. Something moved since the audit and the plan's assumptions
 need re-checking before any purge.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/01-build-worklist.ts backend/data/cal-access-bucket-b/worklist.json && git commit -m "chore(cal-access): build Track A worklist — top 50 money links by verdict"
@@ -177,7 +177,7 @@ cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/01-build-work
 the detail URL returns an empty body. You MUST load `https://cal-access.sos.ca.gov/` first in the same
 browser context to clear the challenge, then navigate to each detail page. Verified on filer 1414018.
 
-- [ ] **Step 1: Write the script**
+- [x] **Step 1: Write the script**
 
 ```ts
 // backend/scripts/cal-access-bucket-b/02-fetch-filers.ts
@@ -233,7 +233,7 @@ async function main() {
 main();
 ```
 
-- [ ] **Step 2: Run it**
+- [x] **Step 2: Run it**
 
 ```bash
 cd "C:/EV-Accounts/backend" && npx tsx scripts/cal-access-bucket-b/02-fetch-filers.ts
@@ -242,14 +242,14 @@ cd "C:/EV-Accounts/backend" && npx tsx scripts/cal-access-bucket-b/02-fetch-file
 Expected: ~25 lines, most `ok`. Filer `1414018` must resolve to `NEWSOM FOR CALIFORNIA GOVERNOR 2022`
 — that is the known-good control. If it does not, the parse anchor is wrong; fix it before continuing.
 
-- [ ] **Step 3: Handle failures**
+- [x] **Step 3: Handle failures**
 
 If more than ~3 come back `error` or `not-found`, the WAF is likely throttling. Raise the
 `waitForTimeout` after each page to 3000ms and re-run — the script overwrites the whole file, so
 re-running is safe. If the site blocks sustained access entirely, **STOP and report**; the spec's
 fallback is per-link judgment on committee name plus office and era, recorded as a weaker basis.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/02-fetch-filers.ts backend/data/cal-access-bucket-b/filer-records.json && git commit -m "chore(cal-access): fetch official filer names for Track A evidence"
@@ -275,7 +275,7 @@ cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/02-fetch-file
 - official name unavailable, or names only the surname → **purge** (prove-it-right)
 Every `names-them` row from Task 1 is an automatic **keep** and is not fetched.
 
-- [ ] **Step 1: Write the classifier**
+- [x] **Step 1: Write the classifier**
 
 ```ts
 // backend/scripts/cal-access-bucket-b/03-classify-track-a.ts
@@ -449,7 +449,7 @@ fs.writeFileSync(path.join(process.cwd(), 'migrations', `${MIGRATION_NUMBER}_cal
 console.log(`\nwrote migrations/${MIGRATION_NUMBER}_cal_access_track_a.sql`);
 ```
 
-- [ ] **Step 2: Get the real migration number, then run**
+- [x] **Step 2: Get the real migration number, then run**
 
 ```bash
 cd "C:/EV-Accounts" && git fetch origin master --quiet && node backend/scripts/check-migration-numbers.mjs
@@ -460,13 +460,13 @@ Expected: a keep/purge split, a wrong-rate percentage, and one PURGE line per li
 committee. Read every PURGE line. Any that looks wrong means the rule or the fetch is wrong — fix it
 before applying.
 
-- [ ] **Step 3: Sanity-check the two controls**
+- [x] **Step 3: Sanity-check the two controls**
 
 - Newsom's filer `1414018` (`NEWSOM FOR CALIFORNIA GOVERNOR 2022`) must be a **keep**.
 - If `BONTA FOR ASSEMBLY 2024; MIA` appears in the top 50, it must be a **purge**.
 If either is wrong, stop and fix the classifier.
 
-- [ ] **Step 4: Commit the script and the decisions (not yet applied)**
+- [x] **Step 4: Commit the script and the decisions (not yet applied)**
 
 ```bash
 cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/03-classify-track-a.ts backend/data/cal-access-bucket-b/track-a-decisions.json && git commit -m "chore(cal-access): classify Track A against official filer records"
@@ -483,7 +483,7 @@ cd "C:/EV-Accounts" && git add backend/scripts/cal-access-bucket-b/03-classify-t
 - Consumes: the migration from Task 3.
 - Produces: a purged database and a pushed commit.
 
-- [ ] **Step 1: Apply**
+- [x] **Step 1: Apply**
 
 ```bash
 cd "C:/EV-Accounts/backend" && npx tsx scripts/_apply-file.ts migrations/<N>_cal_access_track_a.sql
@@ -492,7 +492,7 @@ cd "C:/EV-Accounts/backend" && npx tsx scripts/_apply-file.ts migrations/<N>_cal
 Expected: `Applied ... OK`. If it times out, a `contributions` scan slipped in — check that every
 reference uses inline literals, not the temp table.
 
-- [ ] **Step 2: Verify on row counts, not on "OK"**
+- [x] **Step 2: Verify on row counts, not on "OK"**
 
 Run via `mcp__supabase-local__execute_sql`:
 
@@ -508,7 +508,7 @@ WHERE ps.source_system='cal_access' AND p.is_active;
 Expected: `dollars_displayed` equals the pre-apply figure minus the migration's purge total, to the
 cent. If it does not, stop and reconcile before committing.
 
-- [ ] **Step 3: Re-check the migration number, commit, push**
+- [x] **Step 3: Re-check the migration number, commit, push**
 
 ```bash
 cd "C:/EV-Accounts" && git fetch origin master --quiet && node backend/scripts/check-migration-numbers.mjs
@@ -516,7 +516,7 @@ git add backend/migrations/<N>_cal_access_track_a.sql && git commit -m "fix(cal-
 git push origin master
 ```
 
-- [ ] **Step 4: Confirm CI is green on the commit you pushed**
+- [x] **Step 4: Confirm CI is green on the commit you pushed**
 
 ```bash
 cd "C:/EV-Accounts" && until [ "$(gh run list --limit 1 --json status -q '.[0].status')" = "completed" ]; do sleep 15; done
@@ -610,14 +610,14 @@ has not reached them, not because they are harmless. The 4,859 contributions cle
 - Create: `backend/scripts/cal-access-bucket-b/05-build-money-worklist.ts`
 - Create (output): `backend/data/cal-access-bucket-b/money-worklist.json`, `money-filer-records.json`
 
-- [ ] **Step 1: Build the worklist of every still-`confirmed` money link Track A did not adjudicate**
+- [x] **Step 1: Build the worklist of every still-`confirmed` money link Track A did not adjudicate**
 
 Copy `01-build-worklist.ts` and change the selection to: bucket B, `research_status = 'confirmed'`,
 has a `contribution_summary_agg` row, and `id NOT IN` the Track A decision set (read the 50
 `source_id`s from `track-a-decisions.json` — do NOT filter on the migration-1790 note, which only the
 18 purges carry). Expect **304**. If it is not 304, reconcile before fetching.
 
-- [ ] **Step 2: Fetch official filer records, 25–30 per call**
+- [x] **Step 2: Fetch official filer records, 25–30 per call**
 
 Same method as Task 2 and it is the ONLY one that works: navigate the MCP browser to
 `https://cal-access.sos.ca.gov/` once, then run the `02-fetch-filers.ts` snippet with each batch of
@@ -626,10 +626,10 @@ ids. Keep the 400ms in-loop pause — it is a government host.
 `NEWSOM FOR CALIFORNIA GOVERNOR 2022`. If a batch returns `__NOMATCH__` for everything, you are being
 challenged again, not looking at empty records — reload the home page and retry that batch.
 
-- [ ] **Step 3: Merge results into `money-filer-records.json`** in the same shape as
+- [x] **Step 3: Merge results into `money-filer-records.json`** in the same shape as
 `filer-records.json`: `{ filer_id: { official_name, fetched_at, status } }`.
 
-- [ ] **Step 4: Commit** the worklist, the records and the script.
+- [x] **Step 4: Commit** the worklist, the records and the script.
 
 ---
 
@@ -639,20 +639,20 @@ challenged again, not looking at empty records — reload the home page and retr
 - Create: `backend/scripts/cal-access-bucket-b/06-classify-money.ts`
 - Create: `backend/migrations/<N>_cal_access_money_verified.sql` ← re-check the number
 
-- [ ] **Step 1: Fix `officeKeywords()` first.** Add "board of trustees" → `school board`, then audit
+- [x] **Step 1: Fix `officeKeywords()` first.** Add "board of trustees" → `school board`, then audit
 the mapping against the actual `offices.title` / `chambers.name` values held by the 304's politicians
 (`SELECT DISTINCT title, chamber ...`). An unrecognised office silently becomes "no corroboration",
 which under prove-it-right means a purge.
 
-- [ ] **Step 2: Classify** by importing `namesThem`, `officeKeywords`, `conflictingGivenName` and
+- [x] **Step 2: Classify** by importing `namesThem`, `officeKeywords`, `conflictingGivenName` and
 `OPERATOR_KEEPS` from `03-classify-track-a.ts` — do not reimplement. Same ordered rule:
 operator ruling → no record → surname+given → surname absent → conflicting given name → office match
 → otherwise purge.
 
-- [ ] **Step 3: Read every PURGE line before applying.** 304 is small enough to eyeball and this is
+- [x] **Step 3: Read every PURGE line before applying.** 304 is small enough to eyeball and this is
 the last evidence-grade pass over cal_access money.
 
-- [ ] **Step 4: Generate, apply, verify on row counts, commit, push, confirm CI** — exactly as Tasks
+- [x] **Step 4: Generate, apply, verify on row counts, commit, push, confirm CI** — exactly as Tasks
 3–4. Money by INLINE literal ids; never `count(*)` on `contributions`; delete
 `contribution_summary_agg` rows too. Guard that the keep set survived with its dollar total unchanged.
 
@@ -664,21 +664,71 @@ the last evidence-grade pass over cal_access money.
 - Create: `backend/scripts/cal-access-bucket-b/07-demote-remainder.ts`
 - Create: `backend/migrations/<N>_cal_access_demote_unresearched.sql` ← re-check the number
 
-- [ ] **Step 1: Select the remainder** — bucket B, still `confirmed`, **no** `contribution_summary_agg`
+- [x] **Step 1: Select the remainder** — bucket B, still `confirmed`, **no** `contribution_summary_agg`
 row, and not in the Track A or Task 6 decision sets. Roughly 6,930.
 
-- [ ] **Step 2: Split two ways, not three.** Where the committee name names a demonstrably different
+- [x] **Step 2: Split two ways, not three.** Where the committee name names a demonstrably different
 person (`conflictingGivenName` fires), set `not_applicable` with a WRONG PERSON note. Everything else
 → `needs_research` with a note saying it was produced by a discredited predicate and never verified.
 ⚠ Do **not** apply the office route here. It exists to prevent an irreversible deletion of money;
 marking a link unknown destroys nothing, and using it here would put thousands more guesses into
 `confirmed` on far softer evidence than Track A's.
 
-- [ ] **Step 3: Guard that no money moves.** Assert the displayed cal_access total is **identical**
+- [x] **Step 3: Guard that no money moves.** Assert the displayed cal_access total is **identical**
 before and after — this migration must touch only rows with no agg row.
 
-- [ ] **Step 4: Apply, verify, commit, push, CI.**
+- [x] **Step 4: Apply, verify, commit, push, CI.**
 
-- [ ] **Step 5: Update memory** `cal_access_lasttoken_mislinks`: final displayed total, the
+- [x] **Step 5: Update memory** `cal_access_lasttoken_mislinks`: final displayed total, the
 confirmed/not_applicable/needs_research counts, and that the deferred bulk-registration ingest is now
 the only path to re-earning the `needs_research` links.
+
+---
+
+### ✅ TASKS 5–7 COMPLETE (2026-08-16) — bucket B closed
+
+Migration **1791** (commit `152089af`) and **1792** (commit `7048122a`), both pushed, all CI jobs green.
+
+| | links | dollars |
+|---|---|---|
+| Task 6 keep | 129 | $1,151,478.23 |
+| Task 6 purge | 175 | $1,023,368.85 |
+| Task 7 → `not_applicable` | 4,540 | $0 moved |
+| Task 7 → `needs_research` | 2,390 | $0 moved |
+
+Displayed cal_access money on active politicians **$28,791,323.17 → $27,767,954.32**, exactly the
+Task 6 purge total. Bucket B now **161 confirmed / 4,753 not_applicable / 2,407 needs_research**, and
+all 161 are backed by a fetched filer record — **money evidence coverage 94.4% → 100%**.
+
+**Gate result (Task 5's hard gate):** 151 of 175 Task 6 purges are affirmative disproof, 24 unprovable
+— comparable to Track A's 17 of 18. The prove-it-right posture is not removing mostly-correct data.
+
+**Deviations from the plan as written, all deliberate:**
+
+1. 🔑 **The filer page has THREE fields, not one.** Task 2's parser read only the SUMMARY INFORMATION
+   name, which left 69 links "unprovable". The same page carries `(OFFICEHOLDER: ...)` and
+   **HISTORICAL NAMES FOR THIS COMMITTEE**; adding them cut that to 24 and rescued Jacqui Irwin's
+   $60,380 (`IRWIN FOR LT. GOVERNOR 2030; JACQUI`) and Mike Gipson's $20,650 (`OFFICEHOLDER: ASSEMBLY
+   DISTRICT 65`). Cal-Access drops the given name when a committee is renamed, so a committee with no
+   given name in its *current* title is not a committee with no evidence. All 304 were re-fetched.
+2. **Step 1 of Task 6 found more than "Board of Trustees".** Seven title/chamber pairs held by these
+   politicians produced NO keyword, and the surface forms were too narrow (`city council` misses "FOR
+   COUNCIL", `school board` misses "UNIFIED SCHOOL DISTRICT").
+3. 🔴 **Reading every purge line found three further identity defects** that the plan could not have
+   anticipated: unfolded diacritics (Muñoz-Guevara), a title stored in `first_name` (Dr. Monica
+   Sanchez), and 1–2 character surnames ("Francis De"). Two new disproof routes were added —
+   `leadingDifferentSurname` ("NAGRA FOR **LATHROP** CITY COUNCIL" is not Bruce Lathrop's) and a
+   surname-length floor. **This is the step that earns its keep; none of it is visible in aggregate.**
+4. ‼ **`05c-recheck-track-a.ts` was added** because Task 6 mutates helpers Track A already shipped on.
+   It re-runs Track A's rule against the committed decisions and diffs. Every fix flips 0 of 1790's
+   18 purges — proved, not assumed.
+5. ⚖ **Operator ruling:** filer `1294413` STRICKLAND FOR SENATE kept (essentials holds no
+   `office_terms` row for him, so the office routes structurally cannot fire); `1285101` STRICKLAND
+   FOR JUDGE left purged. Rulings are per committee, not per person.
+6. ⚠ **Task 7 used only `conflictingGivenName` for the not_applicable branch**, as specified — these
+   rows have no fetched filer record, so the stronger claim is reserved for the one test that reads a
+   different personal name straight out of the stored committee name. Scanning all 4,563 conflict
+   tokens (not a sample) exposed a stance-verb bug: "…SUPPORTING HEATHER" is Heather Hutt's own
+   committee. 36 rows affected; 0 in either applied migration.
+7. ⚠ **The post-apply guard rejected 1791's first attempt** — `moneyIds` filtered on `dollars > 0`,
+   leaving the one agg row totalling $0 undeleted. A $0 agg row is still a row. Rolled back cleanly.
