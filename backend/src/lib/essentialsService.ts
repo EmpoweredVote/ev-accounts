@@ -144,6 +144,18 @@ export interface PoliticianFlatRecord {
   chamber_url: string;
   government_type: string;
   is_elected: boolean;
+  /**
+   * ADR 0003. 'full' for an ordinary seat; 'committee_only' or 'non_voting' for a holder
+   * who cannot cast a floor vote — the six territory/DC House delegates, DC's two shadow
+   * senators, Maine's three tribal representatives.
+   *
+   * 🔴 representation_note is REQUIRED whenever voting_powers <> 'full', and the client MUST
+   * render it with the seat. Until 2026-08-18 the address path selected NEITHER column, so
+   * nine non-voting seats reached voters looking exactly like ordinary ones — a voter told
+   * to "contact your representative" about a floor vote their delegate cannot cast.
+   */
+  voting_powers: 'full' | 'committee_only' | 'non_voting';
+  representation_note: string | null;
   is_appointed: boolean;
   faces_retention_vote: boolean;
   election_frequency: string;
@@ -491,6 +503,7 @@ export async function getPoliticiansFlatList(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
            COALESCE(NULLIF(o.description, ''), pd_specific.description, pd_generic.description, '') AS office_description,
@@ -565,6 +578,8 @@ export async function getPoliticiansFlatList(
     chamber_url: row.chamber_url ?? '',
     government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
@@ -714,6 +729,7 @@ async function resolveOfficialsAtPoint(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
@@ -805,6 +821,7 @@ async function resolveOfficialsAtPoint(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
@@ -964,6 +981,8 @@ async function resolveOfficialsAtPoint(
     chamber_url: row.chamber_url ?? '',
     government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
@@ -1298,6 +1317,18 @@ export interface PoliticianDetail {
   is_vacant: boolean;
   is_active: boolean;
   is_elected: boolean;
+  /**
+   * ADR 0003. 'full' for an ordinary seat; 'committee_only' or 'non_voting' for a holder
+   * who cannot cast a floor vote — the six territory/DC House delegates, DC's two shadow
+   * senators, Maine's three tribal representatives.
+   *
+   * 🔴 representation_note is REQUIRED whenever voting_powers <> 'full', and the client MUST
+   * render it with the seat. Until 2026-08-18 the address path selected NEITHER column, so
+   * nine non-voting seats reached voters looking exactly like ordinary ones — a voter told
+   * to "contact your representative" about a floor vote their delegate cannot cast.
+   */
+  voting_powers: 'full' | 'committee_only' | 'non_voting';
+  representation_note: string | null;
   // Term dates
   term_start: string;
   term_end: string;
@@ -1408,6 +1439,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.voting_powers, o.representation_note,
            o.is_appointed_position, o.seats AS office_seats,
            COALESCE(NULLIF(o.description, ''), pd_specific.description, pd_generic.description, '') AS office_description,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
@@ -1579,6 +1611,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     is_active: row.is_active ?? false,
     // is_elected derived: NOT appointed position. governments table has no is_elected column.
     is_elected: !row.is_appointed_position,
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
     term_start: row.term_start ?? '',
     term_end: row.term_end ?? '',
     term_date_precision: row.term_date_precision ?? '',
@@ -1950,6 +1984,7 @@ export async function getRepresentativesByJurisdiction(
     COALESCE(p.term_date_precision, '') AS term_date_precision,
     COALESCE(p.appointment_date::text, '') AS appointment_date,
     o.title AS office_title, o.representing_state, o.representing_city,
+    o.voting_powers, o.representation_note,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
     p.is_appointed, o.faces_retention_vote,
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
@@ -2068,6 +2103,8 @@ export async function getRepresentativesByJurisdiction(
     chamber_url: (row.chamber_url as string) ?? '',
     government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
     election_frequency: (row.election_frequency as string) ?? '',
@@ -2132,6 +2169,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     COALESCE(p.term_date_precision, '') AS term_date_precision,
     COALESCE(p.appointment_date::text, '') AS appointment_date,
     o.title AS office_title, o.representing_state, o.representing_city,
+    o.voting_powers, o.representation_note,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
     p.is_appointed, o.faces_retention_vote,
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
@@ -2208,6 +2246,8 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     chamber_url: (row.chamber_url as string) ?? '',
     government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
     election_frequency: (row.election_frequency as string) ?? '',

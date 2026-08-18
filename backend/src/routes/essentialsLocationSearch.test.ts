@@ -101,6 +101,8 @@ function makeRep(overrides: Partial<PoliticianFlatRecord>): PoliticianFlatRecord
     chamber_url: '',
     government_type: '',
     is_elected: true,
+    voting_powers: 'full',
+    representation_note: null,
     is_appointed: false,
     faces_retention_vote: false,
     election_frequency: '',
