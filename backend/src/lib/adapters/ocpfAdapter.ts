@@ -13,12 +13,18 @@
  *
  * So a full page is NOT evidence that another page exists. Issue ONE request with a
  * pageSize above the expected count and read the whole window at once.
- * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month) — factory function.
- *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
- *   Pass a year + quarter to scope to a single calendar quarter (e.g. Q2 = Apr 1 – Jun 30).
- *   Pass a year + month to scope to a single calendar month (month takes precedence over quarter).
- *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-quarter timeout).
- *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
+ * Because the whole filer fits in one response, there is nothing to chunk. A filer's FULL
+ * HISTORY is a single request: measured live 2026-08-17 across all 20 ocpf sources, the
+ * largest (cpf 15710, 2001–present) is 89,557 records in ~5 s against a 180 s budget.
+ *
+ * 🔴 The year/quarter/month/week chunking this adapter used to carry was sized in PAGES of
+ * the phantom loop ("~300 pages/month", "75k+ contributions per quarter"). Both numbers were
+ * duplicates of the same 250 rows. cpf 15710's true worst QUARTER is 5,754 records, and its
+ * true LIFETIME is 89,557 — so the chunking subdivided a 5-second call. It is gone; do not
+ * reintroduce date windows without measuring the window first.
+ *
+ * Export: createOcpfAdapter(signal?: AbortSignal) — factory function.
+ *   Pass a signal to cancel an in-flight fetch from an external AbortController.
  */
 
 import { pool } from '../db.js';
@@ -76,80 +82,23 @@ interface OcpfItem {
 }
 
 // ---------------------------------------------------------------------------
-// Quarter and Month helpers
+// Fetch — ONE request, full history; this endpoint does not paginate (see file header)
 // ---------------------------------------------------------------------------
 
-type Quarter = 1 | 2 | 3 | 4;
-export type Month = 1|2|3|4|5|6|7|8|9|10|11|12;
-
-/**
- * quarterDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
- * given calendar quarter. Slashes in query-string values are safe (no encoding).
- */
-function quarterDateRange(year: number, quarter: Quarter): { start: string; end: string } {
-  switch (quarter) {
-    case 1: return { start: `01/01/${year}`, end: `03/31/${year}` };
-    case 2: return { start: `04/01/${year}`, end: `06/30/${year}` };
-    case 3: return { start: `07/01/${year}`, end: `09/30/${year}` };
-    case 4: return { start: `10/01/${year}`, end: `12/31/${year}` };
-  }
-}
-
-/**
- * monthDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
- * given calendar month. Uses new Date(year, month, 0).getDate() for correct
- * last-day-of-month calculation including leap years.
- */
-function monthDateRange(year: number, month: Month): { start: string; end: string } {
-  const mm = String(month).padStart(2, '0');
-  const lastDay = new Date(year, month, 0).getDate();
-  const dd = String(lastDay).padStart(2, '0');
-  return {
-    start: `${mm}/01/${year}`,
-    end:   `${mm}/${dd}/${year}`,
-  };
-}
-
-// ---------------------------------------------------------------------------
-// Fetch — ONE request per window; this endpoint does not paginate (see file header)
-// ---------------------------------------------------------------------------
-
-async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, externalSignal?: AbortSignal): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
 
-  // Date filter: dateOverride takes precedence over all other params.
-  // Otherwise: month > quarter > year > full-history. OCPF expects MM/DD/YYYY.
-  let dateFilter = '';
-  if (dateOverride) {
-    dateFilter = `&StartDate=${dateOverride.start}&EndDate=${dateOverride.end}`;
-  } else if (typeof year === 'number' && typeof month === 'number') {
-    const { start, end } = monthDateRange(year, month);
-    dateFilter = `&StartDate=${start}&EndDate=${end}`;
-  } else if (typeof year === 'number' && typeof quarter === 'number') {
-    const { start, end } = quarterDateRange(year, quarter);
-    dateFilter = `&StartDate=${start}&EndDate=${end}`;
-  } else if (typeof year === 'number') {
-    dateFilter = `&StartDate=01/01/${year}&EndDate=12/31/${year}`;
-  }
-
-  // Cycle label for error messages
-  const cycleLabel = typeof month === 'number'
-    ? `${year}-M${String(month).padStart(2, '0')}`
-    : (typeof quarter === 'number'
-        ? `${year}-Q${quarter}`
-        : (typeof year === 'number' ? String(year) : 'all'));
-
-  // ONE request. See the file header: this endpoint ignores every offset parameter, so
-  // the previous `for(;;)` loop — which exited only on `items.length < PAGE_SIZE` — could
-  // never terminate for a window holding >= 250 records. It re-appended the SAME 250 rows
-  // until the scheduler's 180s per-cycle AbortSignal killed it at ~page 300, which is why
-  // every failure in prod carried `page=296..300` regardless of filer or cycle.
+  // ONE request, no date filter — the filer's whole history. See the file header: this
+  // endpoint ignores every offset parameter, so the previous `for(;;)` loop — which exited
+  // only on `items.length < PAGE_SIZE` — could never terminate for a window holding >= 250
+  // records. It re-appended the SAME 250 rows until the scheduler's 180s per-cycle
+  // AbortSignal killed it at ~page 300, which is why every failure in prod carried
+  // `page=296..300` regardless of filer or cycle.
   const url =
     `${OCPF_BASE}/search/items` +
     `?SearchTypeId=1&SearchTypeCategory=receipts` +
     `&CpfId=${encodeURIComponent(cpfId)}` +
-    `&pageSize=${OCPF_MAX_WINDOW}` +
-    dateFilter;
+    `&pageSize=${OCPF_MAX_WINDOW}`;
 
   let response: Response;
   try {
@@ -159,13 +108,13 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
     response = await fetch(url, { signal: requestSignal });
   } catch (err) {
     throw new Error(
-      `[ocpfAdapter] fetch error cpfId=${cpfId} cycle=${cycleLabel}: ${err instanceof Error ? err.message : String(err)}`
+      `[ocpfAdapter] fetch error cpfId=${cpfId}: ${err instanceof Error ? err.message : String(err)}`
     );
   }
 
   if (response.status !== 200) {
     throw new Error(
-      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} cycle=${cycleLabel}`
+      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId}`
     );
   }
 
@@ -182,9 +131,9 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
   // loop was originally written to avoid.
   if (items.length >= OCPF_MAX_WINDOW) {
     throw new Error(
-      `[ocpfAdapter] possible truncation for cpfId=${cpfId} cycle=${cycleLabel}: ` +
+      `[ocpfAdapter] possible truncation for cpfId=${cpfId}: ` +
       `received ${items.length} records, which fills the requested window of ${OCPF_MAX_WINDOW}. ` +
-      `Raise OCPF_MAX_WINDOW or narrow the date range.`
+      `Raise OCPF_MAX_WINDOW.`
     );
   }
 
@@ -373,18 +322,10 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
 // ---------------------------------------------------------------------------
 
 class OcpfAdapter implements SourceAdapter {
-  private readonly year?: number;
   private readonly externalSignal?: AbortSignal;
-  private readonly quarter?: Quarter;
-  private readonly month?: Month;
-  private readonly dateOverride?: { start: string; end: string };
 
-  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }) {
-    this.year = year;
+  constructor(externalSignal?: AbortSignal) {
     this.externalSignal = externalSignal;
-    this.quarter = quarter;
-    this.month = month;
-    this.dateOverride = dateOverride;
   }
 
   name(): string {
@@ -393,7 +334,7 @@ class OcpfAdapter implements SourceAdapter {
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter, this.month, this.dateOverride);
+    const records = await fetchOcpfReceipts(cpfId, this.externalSignal);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -430,25 +371,16 @@ class OcpfAdapter implements SourceAdapter {
 
 /**
  * createOcpfAdapter returns an OcpfAdapter implementing SourceAdapter.
- * The adapter fetches OCPF receipts from api.ocpf.us for the given cpfId
- * (stored as politician_sources.external_id).
+ * The adapter fetches a filer's ENTIRE receipt history from api.ocpf.us in ONE request,
+ * keyed on cpfId (stored as politician_sources.external_id).
  *
- * @param year - Optional calendar year to scope the fetch. When provided, the adapter
- *   appends StartDate=01/01/{year}&EndDate=12/31/{year} to the OCPF API URL, limiting
- *   results to that single year. Omit to fetch the filer's full history (original behavior).
- * @param signal - Optional external AbortSignal. When provided, combined with the per-page
- *   30-second timeout via AbortSignal.any — whichever fires first cancels the in-flight fetch.
- *   Use with AbortController in the scheduler for per-quarter cancellation without heap leaks.
- * @param quarter - Optional 1-4. When provided alongside `year`, narrows StartDate/EndDate to
- *   that calendar quarter. Used by the scheduler to chunk high-volume statewide sources into
- *   ~37-second windows instead of ~295-page full-year fetches that exceed the 3-minute budget.
- * @param month - Optional 1-12. When provided alongside `year`, narrows StartDate/EndDate to
- *   that single calendar month. month takes precedence over quarter when both are provided.
- *   Used by the high-volume ingest script to split statewide filers (~75k/quarter = ~25k/month)
- *   into ~50-second windows, well within the 3-minute timeout budget.
- * @param dateOverride - Optional explicit {start, end} in MM/DD/YYYY format. Overrides all
- *   other date params. Used for week-granularity chunks on extremely high-volume filers.
+ * There is deliberately no year/quarter/month parameter. See the file header: the endpoint
+ * does not paginate, and the largest filer's full history is ~5 s. Date windows only ever
+ * existed to subdivide the phantom page loop.
+ *
+ * @param signal - Optional external AbortSignal, combined with the 30-second request timeout
+ *   via AbortSignal.any — whichever fires first cancels the in-flight fetch.
  */
-export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month, dateOverride?: { start: string; end: string }): SourceAdapter {
-  return new OcpfAdapter(year, signal, quarter, month, dateOverride);
+export function createOcpfAdapter(signal?: AbortSignal): SourceAdapter {
+  return new OcpfAdapter(signal);
 }

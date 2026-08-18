@@ -42,12 +42,13 @@ describe('ocpfAdapter pagination', () => {
   afterEach(() => vi.unstubAllGlobals());
 
   it('terminates and returns each record ONCE when the window holds more than one page', async () => {
-    // 289 = the real 2005-Q2 total for cpf 12008. Above PAGE_SIZE, so this is
-    // exactly the shape that used to loop forever.
+    // 289 records — above PAGE_SIZE, so this is exactly the shape that used to loop
+    // forever. (It was the real 2005-Q2 total for cpf 12008 back when the adapter still
+    // took date windows; the adapter now always asks for the filer's full history.)
     const fetchMock = mockOcpfIgnoringPageNumber(289);
     vi.stubGlobal('fetch', fetchMock);
 
-    const result = await createOcpfAdapter(2005, undefined, 2).fetch(source());
+    const result = await createOcpfAdapter().fetch(source());
 
     // Before the fix this never returned — the loop appended the same 250 rows
     // ~300 times until the external 180s timeout aborted it.
@@ -58,20 +59,20 @@ describe('ocpfAdapter pagination', () => {
     expect(ids.size).toBe(289);
   });
 
-  it('issues ONE request per window, not one per phantom page', async () => {
+  it('issues ONE request per filer, not one per phantom page', async () => {
     const fetchMock = mockOcpfIgnoringPageNumber(289);
     vi.stubGlobal('fetch', fetchMock);
 
-    await createOcpfAdapter(2005, undefined, 2).fetch(source());
+    await createOcpfAdapter().fetch(source());
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
-  it('still returns everything for a window smaller than one page', async () => {
+  it('still returns everything for a filer with less than one page of receipts', async () => {
     const fetchMock = mockOcpfIgnoringPageNumber(42);
     vi.stubGlobal('fetch', fetchMock);
 
-    const result = await createOcpfAdapter(2005, undefined, 2).fetch(source());
+    const result = await createOcpfAdapter().fetch(source());
 
     expect(result.records.length).toBe(42);
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -85,6 +86,23 @@ describe('ocpfAdapter pagination', () => {
 
     expect(result.records.length).toBe(89_557);
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('sends NO date window — the chunking it replaced was sized in phantom pages', async () => {
+    // The year/quarter/month/week chunking existed to keep each fetch inside a 3-minute
+    // budget, sized as "~300 pages x 0.5s". Those pages were the same 250 rows re-appended.
+    // Measured live 2026-08-17: cpf 15710's ENTIRE history is 89,557 records in ~5s, and its
+    // worst single quarter is 5,754 — so the windows subdivided one short call. A StartDate
+    // reappearing here means someone reintroduced a window without measuring it.
+    const fetchMock = mockOcpfIgnoringPageNumber(289);
+    vi.stubGlobal('fetch', fetchMock);
+
+    await createOcpfAdapter().fetch(source());
+
+    const url = new URL(fetchMock.mock.calls[0][0] as string);
+    expect(url.searchParams.get('StartDate')).toBeNull();
+    expect(url.searchParams.get('EndDate')).toBeNull();
+    expect(url.searchParams.get('CpfId')).toBe('12008');
   });
 
   it('throws rather than silently truncating if the response fills the requested pageSize', async () => {
