@@ -183,7 +183,9 @@ function nextEvenYear(year: number): number {
  * The comma case is the dangerous one: it returned a plausible small number rather than
  * an error, which capped the entire stored MA corpus at $999.00. 11,672 of 107,698 rows
  * understated by $15,643,496.52 in total, and the largest real contribution, $945,000,
- * was stored as $945. Existing rows are repaired by migration NNNN_MIGNUM.
+ * was stored as $945. Existing rows were repaired by RE-INGESTING (no migration): the
+ * upsert below now refreshes amount on conflict, so a re-read corrects every stored row
+ * and rebuilds contribution_summary_agg through the same path.
  *
  * So parse STRICTLY and refuse anything unrecognised. Returning null costs one skipped
  * row plus a warning; guessing costs a wrong dollar figure that looks entirely real.
