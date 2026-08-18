@@ -36,7 +36,6 @@
  */
 
 import { pool } from './db.js';
-import { FALLBACK_EXCLUDED_MTFCC_SQL_LIST } from './geoIdGuard.js';
 import { geocodeAddress, GeocodingError } from './geocodingService.js';
 // Phase 213 (RSLV-03): the coordinate-only entry point below reuses the
 // Phase 212 national-fallback floor + single-House-rep derivation. Safe
@@ -45,32 +44,17 @@ import { geocodeAddress, GeocodingError } from './geocodingService.js';
 // `import type`, which is erased at compile time (no runtime cycle).
 import { FIPS_TO_ABBREV, getStatewideOfficials, getPoliticiansByArea } from './essentialsBrowseService.js';
 
-/**
- * LATERAL subquery that fetches the next upcoming primary and general election
- * dates for a politician who is actually on an upcoming ballot.
- *
- * Matches via:
- *   1. Office match — a race exists for the politician's office (r.office_id = o.id)
- *   2. Candidate match — the politician is explicitly listed as an active candidate
- *
- * Expects `p` (politicians) and `o` (offices) aliases in the outer query.
- */
-const UPCOMING_ELECTIONS_LATERAL = `
-  LEFT JOIN LATERAL (
-    SELECT
-      MIN(CASE WHEN e.election_type = 'primary' THEN e.election_date END)::text AS next_primary_date,
-      MIN(CASE WHEN e.election_type = 'general' THEN e.election_date END)::text AS next_general_date
-    FROM essentials.elections e
-    JOIN essentials.races r ON r.election_id = e.id
-    LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id = p.id
-    WHERE e.election_date >= CURRENT_DATE
-      -- The candidate_status = 'active' test is stricter than the shared predicate (it also
-      -- excludes 'filed'); kept as-is. is_live_candidate adds the not_nominated rule (mig 1582).
-      AND (r.office_id = o.id OR (rc.politician_id IS NOT NULL
-                                  AND rc.candidate_status = 'active'
-                                  AND essentials.is_live_candidate(rc.candidate_status, rc.result)))
-  ) upcoming ON true
-`;
+
+// Shared SQL text for every "who holds office here" lookup. Lives in its own
+// side-effect-free module so it can be unit-tested without db.js env validation
+// killing the run (see districtQueries.ts header).
+import {
+  UPCOMING_ELECTIONS_LATERAL,
+  DISTRICT_SELECT_FIELDS,
+  DISTRICT_JOINS,
+  buildDistrictQuery,
+  buildStatewideQuery,
+} from './districtQueries.js';
 export { GeocodingError };
 
 /**
@@ -715,171 +699,25 @@ async function resolveOfficialsAtPoint(
   const resolvedLat = point.lat;
   const state = stateAbbrev;
 
+  // Officials whose district polygon COVERS this point. Built from the shared
+  // district-query text (districtQueries.ts) so the point path and the ZIP/area
+  // path cannot drift apart — notably on the MTFCC-to-district_type mapping.
+  //
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
-  const districtQueryText = `
-    SELECT DISTINCT ON (COALESCE(p.id, o.id))
-           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party,
-           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-           p.web_form_url,
-           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-           p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
-           COALESCE(p.appointment_date::text, '') AS appointment_date,
-           o.title AS office_title, o.representing_state, o.representing_city,
-           o.voting_powers, o.representation_note,
-           o.is_appointed_position, o.is_vacant, o.vacant_since,
-           p.is_appointed, o.faces_retention_vote,
-           d.district_type, d.label AS district_label, d.district_id, d.geo_id,
-           d.mtfcc,
-           gb.name AS geofence_name,
-           ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-           ch.election_frequency,
-           ch.policy_engagement_level,
-           g.name AS government_name,
-           g.type AS government_type,
-           COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url,
-           COALESCE(ch.website_url, '') AS chamber_url,
-           upcoming.next_primary_date, upcoming.next_general_date
-    FROM essentials.geofence_boundaries gb
-    JOIN essentials.districts d ON d.geo_id = gb.geo_id
-      AND (
-        -- MTFCC-to-district_type mapping prevents cross-matching (e.g., SLDU vs SLDL)
-        (gb.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
-        OR (gb.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
-        -- DC ONLY: TIGER files DC's 8 wards as the SLDL layer (G5220, geo_id 11001..11008) because
-        -- the DC Council IS DC's legislature. Its ward seats are typed CITY_COUNCIL and the SBOE's
-        -- SCHOOL_BOARD, so without this all 16 stay unreachable by address (migration 1485).
-        -- SCOPED TO DC deliberately — unscoped, another state's state-house geofence could match a
-        -- same-geo_id council district and surface the wrong officials.
-        -- Keep in step with MTFCC_DISTRICT_TYPE_GUARD in src/lib/geoIdGuard.ts.
-        OR (gb.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
-        OR (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
-        OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
-        -- PR ONLY: a municipio IS both the county-equivalent and the municipality. TIGER files all
-        -- 78 in the county layer (G4020), but their executive is an alcalde, so they are typed
-        -- LOCAL_EXEC like every other mayor (migration 1728). SCOPED TO PR deliberately — G4020
-        -- geo_ids are state-FIPS-prefixed, so 72xxx belongs to Puerto Rico alone.
-        -- Keep in step with MTFCC_DISTRICT_TYPE_GUARD in src/lib/geoIdGuard.ts.
-        OR (gb.mtfcc = 'G4020' AND lower(d.state) = 'pr' AND d.district_type = 'LOCAL_EXEC')
-        OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
-        OR (gb.mtfcc IN ('G4110', 'G4120') AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
-        OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')
-        OR (gb.mtfcc = 'X0001' AND d.district_type IN ('LOCAL', 'COUNTY'))
-        OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
-        OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
-        -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
-        -- JUDICIAL added for appellate districts whose geometry is a union of counties and so
-        -- has no TIGER layer of its own (e.g. WI Court of Appeals District II, 12 counties).
-        OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
-        -- Fallback: if MTFCC not in known set, match any district type for this geo_id
-        -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
-        -- stays on G5200; only the elections opt-in join (electionService.ts) may reach V26.
-        -- G6350 (ZCTA / ZIP polygons) is excluded here too: a ZIP has no districts
-        -- and its bare 5-digit geo_id can collide with a district geo_id.
-        OR (gb.mtfcc NOT IN (${FALLBACK_EXCLUDED_MTFCC_SQL_LIST})
-            AND gb.mtfcc NOT LIKE 'X%')
-      )
-    JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
-    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
-    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
-    -- impossible — so this cannot fan the result set out.
-    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
-    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
-    -- the expired holder; such a seat now correctly reads as vacant.
-    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
-    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-    LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    LEFT JOIN essentials.government_bodies gvb
-      ON gvb.state = d.state
-      AND gvb.geo_id = d.geo_id
-      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    ${UPCOMING_ELECTIONS_LATERAL}
-    WHERE public.ST_Covers(
+  const districtQueryText = buildDistrictQuery({
+    // geofence_name feeds pickCountyFromDistrictRows — the county's real name,
+    // as opposed to district_label, which is a seat label ("At-Large").
+    extraSelect: ', gb.name AS geofence_name',
+    spatialPredicate: `public.ST_Covers(
       gb.geometry,
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
-    )
-    AND (p.is_active = true OR o.is_vacant = true)
-    ${includeChallengers ? '' : "AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'"}
-    ORDER BY COALESCE(p.id, o.id)
-  `;
+    )`,
+    includeChallengers,
+  });
 
   // Statewide politicians — includes President/VP, Senators, Governor, Supreme Court
-  const statewideQueryText = `
-    SELECT DISTINCT ON (COALESCE(p.id, o.id))
-           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party,
-           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-           p.web_form_url,
-           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-           p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
-           COALESCE(p.appointment_date::text, '') AS appointment_date,
-           o.title AS office_title, o.representing_state, o.representing_city,
-           o.voting_powers, o.representation_note,
-           o.is_appointed_position, o.is_vacant, o.vacant_since,
-           p.is_appointed, o.faces_retention_vote,
-           d.district_type, d.label AS district_label, d.district_id, d.geo_id,
-           d.mtfcc,
-           ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-           ch.election_frequency,
-           ch.policy_engagement_level,
-           g.name AS government_name,
-           g.type AS government_type,
-           COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url,
-           COALESCE(ch.website_url, '') AS chamber_url,
-           upcoming.next_primary_date, upcoming.next_general_date
-    FROM essentials.districts d
-    JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
-    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
-    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
-    -- impossible — so this cannot fan the result set out.
-    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
-    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
-    -- the expired holder; such a seat now correctly reads as vacant.
-    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
-    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-    LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    LEFT JOIN essentials.government_bodies gvb
-      ON gvb.state = d.state
-      AND gvb.geo_id = d.geo_id
-      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    ${UPCOMING_ELECTIONS_LATERAL}
-    WHERE (
-      d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
-      -- DC's CITYWIDE seats: Mayor, Attorney General, Council Chairman, the 4 at-large Council
-      -- members (all on geo_id 'dc-council-at-large') and the at-large SBOE member. They are
-      -- elected by the whole city, exactly like a Governor or state AG, but DC has no STATE_EXEC
-      -- district so nothing here admitted them and they were unreachable by address.
-      --
-      -- KEYED ON THE AT-LARGE geo_ids, NOT on district_type, and that is load-bearing: DC's 8 WARD
-      -- seats are also district_type CITY_COUNCIL, so admitting the type would return all eight
-      -- ward councilmembers for EVERY DC address — the ward seats already resolve correctly and
-      -- individually through the geofence join (migration 1485).
-      -- Nor can this key on ocd_id: the at-large SBOE member shares
-      -- state:dc/school_district:district_of_columbia with the 8 SBOE ward seats.
-      OR (lower(d.state) = 'dc' AND d.geo_id IN ('dc-council-at-large', 'dc-sboe-at-large'))
-    )
-    AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
-    AND (p.is_active = true OR o.is_vacant = true)
-    AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-    -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
-    -- county FIPS geo_ids. Those are matched via geofence intersection.
-    -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
-    AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
-    ORDER BY COALESCE(p.id, o.id)
-  `;
+  const statewideQueryText = buildStatewideQuery();
 
   // D-06 / Pitfall 5: narrow tribal-lands lookup, always-present block.
   const tribalQueryText = `
@@ -1975,51 +1813,10 @@ export async function getRepresentativesByJurisdiction(
 
   if (conditions.length === 0) return [];
 
-  const SELECT_FIELDS = `
-    DISTINCT ON (COALESCE(p.id, o.id))
-    p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-    p.preferred_name, p.name_suffix, p.party,
-    COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-    p.finance_summary,
-    COALESCE(p.valid_from, '') AS term_start,
-    COALESCE(p.valid_to, '') AS term_end,
-    COALESCE(p.term_date_precision, '') AS term_date_precision,
-    COALESCE(p.appointment_date::text, '') AS appointment_date,
-    o.title AS office_title, o.representing_state, o.representing_city,
-    o.voting_powers, o.representation_note,
-    o.is_appointed_position, o.is_vacant, o.vacant_since,
-    p.is_appointed, o.faces_retention_vote,
-    d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
-    ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
-    ch.policy_engagement_level,
-    g.name AS government_name,
-    g.type AS government_type,
-    COALESCE(gvb.display_name, '') AS government_body_name,
-    COALESCE(gvb.website_url, '') AS government_body_url,
-    COALESCE(ch.website_url, '') AS chamber_url,
-    upcoming.next_primary_date, upcoming.next_general_date
-  `;
-
-  const JOINS = `
-    JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
-    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
-    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
-    -- impossible — so this cannot fan the result set out.
-    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
-    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
-    -- the expired holder; such a seat now correctly reads as vacant.
-    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
-    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-    LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    LEFT JOIN essentials.government_bodies gvb
-      ON gvb.state = d.state
-      AND gvb.geo_id = d.geo_id
-      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    ${UPCOMING_ELECTIONS_LATERAL}
-  `;
+  // Shared with the point/area paths — see districtQueries.ts. Aliased locally so
+  // the query text below reads unchanged.
+  const SELECT_FIELDS = DISTRICT_SELECT_FIELDS;
+  const JOINS = DISTRICT_JOINS;
 
   const districtQueryText = `
     SELECT ${SELECT_FIELDS}
@@ -2157,54 +1954,17 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
 
   const geoIds = rpcResult.rows.map((r) => r.geo_id);
 
-  // Step 2: fetch politicians for those geo_ids using the same SELECT_FIELDS
-  // and JOIN pattern as getRepresentativesByJurisdiction. The mapping block
-  // below is intentionally duplicated — do NOT refactor getRepresentativesByJurisdiction.
-  const SELECT_FIELDS = `
-    DISTINCT ON (COALESCE(p.id, o.id))
-    p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-    p.preferred_name, p.name_suffix, p.party,
-    COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-    p.finance_summary,
-    COALESCE(p.valid_from, '') AS term_start,
-    COALESCE(p.valid_to, '') AS term_end,
-    COALESCE(p.term_date_precision, '') AS term_date_precision,
-    COALESCE(p.appointment_date::text, '') AS appointment_date,
-    o.title AS office_title, o.representing_state, o.representing_city,
-    o.voting_powers, o.representation_note,
-    o.is_appointed_position, o.is_vacant, o.vacant_since,
-    p.is_appointed, o.faces_retention_vote,
-    d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
-    ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
-    ch.policy_engagement_level,
-    g.name AS government_name,
-    g.type AS government_type,
-    COALESCE(gvb.display_name, '') AS government_body_name,
-    COALESCE(gvb.website_url, '') AS government_body_url,
-    COALESCE(ch.website_url, '') AS chamber_url,
-    upcoming.next_primary_date, upcoming.next_general_date
-  `;
-
-  const JOINS = `
-    JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
-    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
-    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
-    -- impossible — so this cannot fan the result set out.
-    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
-    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
-    -- the expired holder; such a seat now correctly reads as vacant.
-    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
-    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-    LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    LEFT JOIN essentials.government_bodies gvb
-      ON gvb.state = d.state
-      AND gvb.geo_id = d.geo_id
-      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    ${UPCOMING_ELECTIONS_LATERAL}
-  `;
+  // Step 2: fetch politicians for those geo_ids. The COLUMN LIST and JOIN CHAIN are
+  // now shared with every other district lookup (districtQueries.ts) — they were
+  // byte-identical copies, and the point-path result set was verified unchanged
+  // against prod after consolidating them.
+  //
+  // The geo-pair MAPPING BLOCK further down remains intentionally duplicated —
+  // do NOT fold it into getRepresentativesByJurisdiction.
+  //
+  // Aliased locally so the query text below reads unchanged.
+  const SELECT_FIELDS = DISTRICT_SELECT_FIELDS;
+  const JOINS = DISTRICT_JOINS;
 
   const queryText = `
     SELECT ${SELECT_FIELDS}

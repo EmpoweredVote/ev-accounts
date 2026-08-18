@@ -44,12 +44,21 @@ describe('fallback MTFCC exclusion list', () => {
     expect(MTFCC_DISTRICT_TYPE_GUARD).toContain(FALLBACK_EXCLUDED_MTFCC_SQL_LIST);
   });
 
-  it('leaves no hard-coded duplicate of the list in essentialsService.ts', () => {
+  it('leaves no hard-coded duplicate of the list in districtQueries.ts', () => {
     // Drift guard: the second copy of this list used to live inline in
-    // districtQueryText's fallback clause. It must now interpolate the constant,
-    // so adding an MTFCC in geoIdGuard.ts cannot leave the address path behind.
-    const src = read('./essentialsService.ts');
+    // essentialsService.ts's districtQueryText. That clause now lives in
+    // districtQueries.ts and must interpolate the constant, so adding an MTFCC
+    // in geoIdGuard.ts cannot leave the address path behind.
+    const src = read('./districtQueries.ts');
     expect(src).not.toContain("'G5400','G5410','G5420','G5200V26'");
     expect(src).toContain('FALLBACK_EXCLUDED_MTFCC_SQL_LIST');
+  });
+
+  it('leaves no copy of the fallback clause behind in essentialsService.ts', () => {
+    // The whole point of the extraction: essentialsService must not carry its
+    // own geofence->districts join any more.
+    const src = read('./essentialsService.ts');
+    expect(src).not.toContain("'G5400','G5410','G5420','G5200V26'");
+    expect(src).toContain('buildDistrictQuery(');
   });
 });
