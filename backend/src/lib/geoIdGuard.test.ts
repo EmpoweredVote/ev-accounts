@@ -22,6 +22,17 @@ describe('fallback MTFCC exclusion list', () => {
     expect(FALLBACK_EXCLUDED_MTFCCS).toContain('G6350');
   });
 
+  it('excludes G4000 so statewide seats come from ONE query, not two', () => {
+    // A Governor/Senator/state-supreme-court seat has no polygon; it is resolved
+    // by district_type + state in buildStatewideQuery. While G4000 was admitted
+    // here, those officials arrived from both queries and the results are
+    // concatenated without dedup — a single Bloomington address returned 28
+    // duplicated politicians in prod (both IN senators, 4 justices, twice each).
+    // For an AREA query it also smuggled a neighbouring state's whole executive
+    // branch past the 1% multi-state floor (ZIP 46360 clips MI by 0.013%).
+    expect(FALLBACK_EXCLUDED_MTFCCS).toContain('G4000');
+  });
+
   it('renders the list as a single-quoted SQL IN list', () => {
     expect(FALLBACK_EXCLUDED_MTFCC_SQL_LIST).toContain("'G6350'");
     expect(FALLBACK_EXCLUDED_MTFCC_SQL_LIST).toContain("'G5200V26'");

@@ -26,14 +26,26 @@
  *   geo_ids. ZIPs resolve by AREA OVERLAP (resolveOfficialsInArea), never by
  *   geo_id — so admitting them here would attach arbitrary officials to a ZIP
  *   AND, because this clause is shared, to any address lookup as well.
+ * G4000: state outlines. A statewide seat (Governor, Senator, state supreme
+ *   court) has no polygon of its own and is resolved by district_type + state in
+ *   buildStatewideQuery. Admitting G4000 here made those officials arrive from
+ *   BOTH queries, and the results are concatenated without dedup — measured
+ *   2026-08-18 against prod: a single Bloomington address returned 28 DUPLICATED
+ *   politicians, including both Indiana senators and four supreme court justices
+ *   twice each. For an AREA query it was worse than duplication: a ZIP clipping
+ *   a neighbouring state by 0.013% (46360, Michigan City) pulled in Michigan's
+ *   entire executive branch, bypassing the deliberate 1% multi-state floor.
+ *   Verified safe: every district_type reachable via a G4000 geofence
+ *   (STATE_EXEC, NATIONAL_UPPER, JUDICIAL, NATIONAL_JUDICIAL) is already
+ *   admitted by buildStatewideQuery, so nothing becomes unreachable.
  *
- * SINGLE SOURCE OF TRUTH — essentialsService.ts's districtQueryText interpolates
+ * SINGLE SOURCE OF TRUTH — districtQueries.ts interpolates
  * FALLBACK_EXCLUDED_MTFCC_SQL_LIST rather than restating the list. Guarded by
  * geoIdGuard.test.ts.
  */
 export const FALLBACK_EXCLUDED_MTFCCS: readonly string[] = [
   'G5210', 'G5220', 'G5200', 'G4020', 'G4040', 'G4110', 'G4120',
-  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350',
+  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350', 'G4000',
 ];
 
 /** The same list rendered for a SQL `IN (...)` clause. */
