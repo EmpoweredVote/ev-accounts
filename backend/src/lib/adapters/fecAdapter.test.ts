@@ -318,7 +318,7 @@ describe('fecAdapter FEC-04 — amendment supersession (original_sub_id retireme
     };
   }
 
-  it('shouldSkipRecord (via normalize) still skips memo_code="X" but no longer skips a plain amended row lacking the absent is_amended flag', async () => {
+  it('shouldSkipRecord (via normalize) still EXCLUDES memo_code="X" but no longer skips a plain amended row lacking the absent is_amended flag', async () => {
     const adapter = createFecAdapter('2026');
     const memoRecord = scheduleARecord({ sub_id: 'SUB-MEMO-1', memo_code: 'X' });
     // A plain amended row: no is_amended field at all (confirmed absent from the live
@@ -331,7 +331,12 @@ describe('fecAdapter FEC-04 — amendment supersession (original_sub_id retireme
       ps
     );
 
-    expect(result.skipped).toBe(1);
+    // The memo row is reported as EXCLUDED (a deliberate business rule), not as
+    // `skipped` (which means a normalize DEFECT and drives runIngestion's 1% alarm).
+    // Asserting skipped === 0 is the point: it is what keeps that alarm meaningful
+    // for FEC instead of firing on every run with memo traffic.
+    expect(result.excluded).toBe(1);
+    expect(result.skipped).toBe(0);
     expect(result.totalParsed).toBe(2);
     expect(result.contributions).toHaveLength(1);
     expect(result.contributions[0]!.source_transaction_id).toBe('SUB-AMENDED-1');

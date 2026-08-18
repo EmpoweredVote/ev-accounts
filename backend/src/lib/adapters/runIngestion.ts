@@ -54,6 +54,7 @@ export async function runIngestion(
     let totalFetched = 0;
     let totalExpected = 0;
     let normalizeSkipped = 0;
+    let normalizeExcluded = 0;
     let normalizeTotalParsed = 0;
     let upsertInserted = 0;
     let upsertSkipped = 0;
@@ -73,6 +74,7 @@ export async function runIngestion(
         );
         const up = await adapter.upsert(norm);
         normalizeSkipped += norm.skipped;
+        normalizeExcluded += norm.excluded ?? 0;
         normalizeTotalParsed += norm.totalParsed;
         upsertInserted += up.inserted;
         upsertSkipped += up.skipped;
@@ -90,6 +92,7 @@ export async function runIngestion(
       totalFetched = fetchResult.totalFetched;
       totalExpected = fetchResult.totalExpected;
       normalizeSkipped = normalizeResult.skipped;
+      normalizeExcluded = normalizeResult.excluded ?? 0;
       normalizeTotalParsed = normalizeResult.totalParsed;
       upsertInserted = upsertResult.inserted;
       upsertSkipped = upsertResult.skipped;
@@ -101,8 +104,10 @@ export async function runIngestion(
     const completedAt = new Date();
     const durationMs = completedAt.getTime() - startedAt.getTime();
 
-    // RecordsSkipped is additive: normalizer skips + upsert duplicate skips
-    const recordsSkipped = normalizeSkipped + upsertSkipped;
+    // RecordsSkipped is additive and keeps its historical meaning — "fetched but not
+    // inserted" — so it stays continuous across this change: normalizer DEFECTS +
+    // deliberate EXCLUSIONS (e.g. FEC memo items) + upsert duplicate skips.
+    const recordsSkipped = normalizeSkipped + normalizeExcluded + upsertSkipped;
 
     // Determine initial status
     let status = 'completed';
@@ -118,7 +123,14 @@ export async function runIngestion(
       notes = `fetched ${totalFetched} of expected ${totalExpected} (${pct}%)`;
     }
 
-    // Skip threshold: warn if >1% of examined rows were skipped (Cal-Access locked decision)
+    // Skip threshold: warn if >1% of examined rows were skipped (Cal-Access locked decision).
+    //
+    // 🔴 DEFECTS ONLY. `normalizeExcluded` is deliberately NOT counted here. Deliberate,
+    // rule-based omissions are not defects, and folding them in made this alarm useless
+    // on FEC — 9,636 warnings in 60 days (median 42%, p95 71%, max 100%) purely because
+    // FEC excludes memo items, while in the same window NO other adapter tripped it once.
+    // The 1% figure is unchanged and still exactly right for what it actually measures:
+    // Cal-Access's missing_required_field / amount_parse_error rows.
     if (normalizeTotalParsed > 0 && normalizeSkipped > 0) {
       const skipRate = normalizeSkipped / normalizeTotalParsed;
       if (skipRate > 0.01) {

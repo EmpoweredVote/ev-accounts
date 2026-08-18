@@ -62,7 +62,28 @@ export interface SupersededFiling {
 
 export interface NormalizeResult {
   contributions: ContributionInsert[];
+  /**
+   * Rows the normalizer could NOT use — a DEFECT signal. Missing required fields,
+   * unparseable amounts, malformed dates. runIngestion warns above 1% of totalParsed.
+   *
+   * 🔴 Do NOT put deliberate, rule-based omissions here; use `excluded`. Conflating the
+   * two is what produced 9,636 false "skip threshold exceeded" warnings on FEC in 60
+   * days (median 42%, p95 71%): FEC's only omission is `memo_code === 'X'`, an
+   * intentional exclusion, while Cal-Access's are genuine parse failures. One field,
+   * two opposite meanings, so the 1% alarm could never mean anything on FEC — and would
+   * have stayed silent about a real FEC defect hiding under the memo noise.
+   */
   skipped: number;
+  /**
+   * Rows deliberately omitted by a business rule and working exactly as intended —
+   * NOT a defect and never a warning. FEC memo items (`memo_code === 'X'`) live here:
+   * they are sub-itemizations of earmarked/conduit contributions, and counting them
+   * would double-count ActBlue money.
+   *
+   * Still added to `ingestion_runs.records_skipped` so that column keeps meaning
+   * "rows fetched but not inserted" and stays continuous with historical rows.
+   */
+  excluded?: number;
   totalParsed: number;
   supersededSubIds?: string[];
   /** FEC-04b: reports whose earlier filings should be retired. See SupersededFiling. */

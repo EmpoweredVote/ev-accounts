@@ -669,7 +669,13 @@ function shouldSkipRecord(record: Record<string, unknown>): boolean {
 
 /**
  * normalizeRecords converts raw FEC Schedule A records into ContributionInsert structs.
- * Memo items are counted in NormalizeResult.skipped and excluded from the contributions slice.
+ * Memo items are counted in NormalizeResult.EXCLUDED (not `skipped`) and left out of the
+ * contributions slice. They are a deliberate business rule — a memo row is a
+ * sub-itemization of an earmarked/conduit contribution, so inserting it would
+ * double-count ActBlue money — and `skipped` means DEFECT. Reporting them as skipped
+ * made every FEC run trip runIngestion's 1% defect alarm: 9,636 false warnings in 60
+ * days, median 42%, p95 71%. `skipped` stays 0 here so a genuine FEC normalize defect
+ * would actually surface.
  *
  * FEC-04: every record's non-null `original_sub_id` is collected into
  * NormalizeResult.supersededSubIds — the OLD sub_id an amended row replaces. The amended row
@@ -688,7 +694,7 @@ function normalizeRecords(
   ps: PoliticianSource
 ): NormalizeResult {
   const contributions: ContributionInsert[] = [];
-  let skipped = 0;
+  let excluded = 0;
   const totalParsed = records.length;
   const supersededSubIds: string[] = [];
   // FEC-04b: highest file_number per (committee, report_year, report_type) in this batch.
@@ -730,7 +736,8 @@ function normalizeRecords(
     }
 
     if (shouldSkipRecord(record)) {
-      skipped++;
+      // Memo item — deliberate exclusion, NOT a defect. See the doc comment above.
+      excluded++;
       continue;
     }
 
@@ -740,7 +747,8 @@ function normalizeRecords(
 
   return {
     contributions,
-    skipped,
+    skipped: 0,
+    excluded,
     totalParsed,
     ...(supersededSubIds.length > 0 ? { supersededSubIds } : {}),
     ...(filingMax.size > 0 ? { supersededFilings: [...filingMax.values()] } : {}),
