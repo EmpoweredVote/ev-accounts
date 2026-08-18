@@ -1,8 +1,39 @@
 export type MapLevel = 'county' | 'local' | 'school';
-export type Metric = 'completeness' | 'elections';
+export type Metric = 'completeness' | 'federal' | 'elections';
+
+export type FederalTier = 'senate' | 'house' | 'governor' | 'statewide' | 'stateleg' | 'candidate';
+
+/** Federal + state-office coverage for one state — present for every state. */
+export interface FederalStats {
+  code: string; fips: string; name: string;
+  senate: { filled: number; expected: number; withPhoto: number; researched: number };
+  house: { filled: number; districtsCovered: number; expected: number; withPhoto: number; researched: number };
+  governor: { filled: number; expected: number };
+  statewideExecs: number;
+  stateLeg: { members: number; districtsCovered: number; districtsTotal: number; researched: number };
+  candidatesTracked: number;
+  score: number; // composite 0..100
+}
+
+/** One officeholder (or tracked candidate) in a state's federal/state roster. */
+export interface FederalMember {
+  politician_id: string;
+  full_name: string;
+  title: string | null;
+  tier: FederalTier;
+  district_ocd: string;
+  has_photo: boolean;
+  researched: boolean;
+  has_donors: boolean;
+  voting_powers: 'full' | 'committee_only' | 'non_voting';
+  representation_note: string | null; // REQUIRED display when voting_powers ≠ 'full' (ADR 0003)
+}
 
 export interface StateScore {
-  fips: string; code: string; name: string; score: number;
+  fips: string; code: string; name: string;
+  tracked: boolean;          // false = no coverage YAML — local fields are zeros
+  score: number | null;      // local composite; null when untracked
+  federal: FederalStats;     // always present
   jurisdiction_count: number; populated_count: number;
   breadth: number; depth: number;
   counties_started: number; counties_total: number;

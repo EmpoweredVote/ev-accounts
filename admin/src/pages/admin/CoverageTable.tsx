@@ -155,58 +155,145 @@ const STATUS_STYLE: Record<CoverageLocation['status'], string> = {
 const COUNTY_LEVEL_LABEL = { county: 'County govt', local: 'City / Town', school: 'School District' } as const;
 
 // ---------------------------------------------------------------------------
-// US overview — every tracked state, shown on the first page (no state selected)
+// US overview — EVERY state (tracked or not), shown on the first page (no state
+// selected). Local columns read "—" for untracked states; the federal columns
+// are live for all 56, so a state with only its congressional delegation loaded
+// no longer looks like nothing has been covered.
 // ---------------------------------------------------------------------------
 
-const US_COLS = ['State', 'Composite', 'Breadth', 'Depth', 'Counties', 'Cities', 'Schools', 'Stances', 'Photos'];
+/** n/N with the usual green/amber/grey ratio coloring; em-dash when N is 0. */
+function Ratio({ have, total }: { have: number; total: number }) {
+  if (total === 0) return <span className="text-gray-300 dark:text-gray-600">—</span>;
+  const cls =
+    have >= total ? 'text-emerald-700 dark:text-emerald-400'
+    : have > 0 ? 'text-amber-700 dark:text-amber-400'
+    : 'text-gray-400 dark:text-gray-600';
+  return (
+    <span className={`tabular-nums text-xs font-medium ${cls}`}>
+      {have}<span className="text-gray-400">/{total}</span>
+    </span>
+  );
+}
+
+const Dash = () => <span className="text-gray-300 dark:text-gray-600">—</span>;
 
 function UsOverviewTable({ states, loading, onPick }: { states: StateScore[]; loading: boolean; onPick: (fips: string, name: string) => void }) {
-  const sorted = [...states].sort((a, b) => b.score - a.score);
+  // Tracked states first (by local composite), then the rest by federal score —
+  // the working set stays on top, the untracked tail still ranks meaningfully.
+  const sorted = [...states].sort((a, b) => {
+    if (a.tracked !== b.tracked) return a.tracked ? -1 : 1;
+    if (a.tracked) return (b.score ?? 0) - (a.score ?? 0);
+    return b.federal.score - a.federal.score;
+  });
+  const trackedCount = states.filter((s) => s.tracked).length;
+  const NCOLS = 11;
+
+  const th = (label: string, key = label, first = false) => (
+    <th key={key} className={`whitespace-nowrap px-3 py-2 font-medium text-gray-500 dark:text-gray-400 ${first ? 'text-left' : 'text-right'}`}>
+      {label}
+    </th>
+  );
+
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-900">
       <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3 dark:border-gray-800">
         <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
-          All tracked states <span className="font-normal text-gray-400">({states.length})</span>
+          All states <span className="font-normal text-gray-400">({states.length} · {trackedCount} tracked locally)</span>
         </h2>
         {states.length > 0 && <span className="text-xs text-gray-400">click a row to drill in</span>}
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+            <tr className="border-b border-gray-200 dark:border-gray-700">
+              <th />
+              <th colSpan={4} className="px-3 pt-2 text-center text-[10px] font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+                Local government
+              </th>
+              <th colSpan={6} className="px-3 pt-2 text-center text-[10px] font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+                Federal &amp; state
+              </th>
+            </tr>
             <tr>
-              {US_COLS.map((h, i) => (
-                <th key={h} className={`px-3 py-2 font-medium text-gray-500 dark:text-gray-400 ${i === 0 ? 'text-left' : 'text-right'}`}>{h}</th>
-              ))}
+              {th('State', 'state', true)}
+              {th('Score', 'local-score')}
+              {th('Counties')}
+              {th('Cities')}
+              {th('Schools')}
+              {th('Score', 'fed-score')}
+              {th('Senate')}
+              {th('House')}
+              {th('Gov')}
+              {th('Leg')}
+              {th('Researched')}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
             {loading && states.length === 0 ? (
-              Array.from({ length: 6 }).map((_, i) => (
+              Array.from({ length: 8 }).map((_, i) => (
                 <tr key={i} className="animate-pulse">
-                  <td colSpan={US_COLS.length} className="px-3 py-2"><div className="h-4 w-full rounded bg-gray-200 dark:bg-gray-700" /></td>
+                  <td colSpan={NCOLS} className="px-3 py-2"><div className="h-4 w-full rounded bg-gray-200 dark:bg-gray-700" /></td>
                 </tr>
               ))
             ) : states.length === 0 ? (
-              <tr><td colSpan={US_COLS.length} className="px-3 py-6 text-center text-gray-400">No tracked states yet.</td></tr>
+              <tr><td colSpan={NCOLS} className="px-3 py-6 text-center text-gray-400">No coverage data yet.</td></tr>
             ) : (
-              sorted.map((s) => (
-                <tr key={s.fips} onClick={() => onPick(s.fips, s.name)} className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/40">
-                  <td className="px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block h-3.5 w-3.5 shrink-0 rounded-sm" style={{ background: completenessColor(s.score) }} title="completeness" />
-                      <span className="font-medium text-gray-900 dark:text-white">{s.name}</span>
-                    </div>
-                  </td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.score}%</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{Math.round(s.breadth * 100)}%</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.depth}%</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.counties_started}/{s.counties_total}</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.cities_started}/{s.cities_total}</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.schools_started}/{s.schools_total}</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.stances_pct}%</td>
-                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.photo_pct}%</td>
-                </tr>
-              ))
+              sorted.map((s) => {
+                const f = s.federal;
+                const delegation = f.senate.filled + f.house.filled;
+                const researchedPct = delegation > 0 ? Math.round(((f.senate.researched + f.house.researched) / delegation) * 100) : 0;
+                return (
+                  <tr key={s.fips} onClick={() => onPick(s.fips, s.name)} className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/40">
+                    <td className="px-3 py-2">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="inline-block h-3.5 w-3.5 shrink-0 rounded-sm"
+                          style={{ background: completenessColor(s.tracked ? s.score : f.score) }}
+                          title={s.tracked ? 'local completeness' : 'federal & state completeness (untracked locally)'}
+                        />
+                        <span className="font-medium text-gray-900 dark:text-white">{s.name}</span>
+                      </div>
+                    </td>
+                    {s.tracked ? (
+                      <>
+                        <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.score}%</td>
+                        <td className="px-3 py-2 text-right"><Ratio have={s.counties_started} total={s.counties_total} /></td>
+                        <td className="px-3 py-2 text-right"><Ratio have={s.cities_started} total={s.cities_total} /></td>
+                        <td className="px-3 py-2 text-right"><Ratio have={s.schools_started} total={s.schools_total} /></td>
+                      </>
+                    ) : (
+                      <>
+                        <td className="px-3 py-2 text-right"><Dash /></td>
+                        <td className="px-3 py-2 text-right"><Dash /></td>
+                        <td className="px-3 py-2 text-right"><Dash /></td>
+                        <td className="px-3 py-2 text-right"><Dash /></td>
+                      </>
+                    )}
+                    <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{f.score}%</td>
+                    <td className="px-3 py-2 text-right">
+                      {f.senate.expected > 0 ? <Ratio have={f.senate.filled} total={f.senate.expected} /> : <Dash />}
+                    </td>
+                    <td className="px-3 py-2 text-right"><Ratio have={f.house.districtsCovered} total={f.house.expected} /></td>
+                    <td className="px-3 py-2 text-right">
+                      {f.governor.expected === 0 ? <Dash /> : (
+                        <span className={f.governor.filled > 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-400 dark:text-gray-600'}>
+                          {f.governor.filled > 0 ? '✓' : '✕'}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-3 py-2 text-right">
+                      {f.stateLeg.districtsTotal > 0 ? (
+                        <Ratio have={f.stateLeg.districtsCovered} total={f.stateLeg.districtsTotal} />
+                      ) : f.stateLeg.members > 0 ? (
+                        <span className="tabular-nums text-xs text-gray-500 dark:text-gray-400">{f.stateLeg.members}</span>
+                      ) : (
+                        <Dash />
+                      )}
+                    </td>
+                    <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{researchedPct}%</td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
