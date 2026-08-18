@@ -223,6 +223,36 @@ function isFutureQuarter(year: number, quarter: 1 | 2 | 3 | 4, now: Date): boole
 // ---------------------------------------------------------------------------
 
 /**
+ * runFecForSources walks a list of FEC sources through the ingestion pipeline.
+ *
+ * Extracted from runAdapterForAll so the daily 06:00 burst and the restart-resume path
+ * (fecBurstResume.ts) drive the SAME loop. Duplicating it would let the two drift on the
+ * inter-source delay, which is what keeps the shared FEC key under 1,000 req/hr.
+ *
+ * Non-aborting: a per-source failure is logged and the walk continues.
+ */
+export async function runFecForSources(
+  sources: PoliticianSourceRow[],
+  cycle: string
+): Promise<void> {
+  for (let i = 0; i < sources.length; i++) {
+    const ps = sources[i];
+    if (i > 0) await sleep(3000); // 3s between politicians — keeps FEC API under 1000 req/hr
+    try {
+      const adapter = createFecAdapter(cycle);
+      await runIngestion(adapter, ps, cycle);
+      console.log(`[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} done`);
+    } catch (err) {
+      console.error(
+        `[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} error:`,
+        err instanceof Error ? err.message : String(err)
+      );
+      // Non-aborting: continue to next source
+    }
+  }
+}
+
+/**
  * runAdapterForAll queries all confirmed politician_sources for the given adapter's
  * source_system and runs the ingestion pipeline for each one.
  *
@@ -265,21 +295,7 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
   switch (adapterName) {
     case 'fec': {
       const cycle = currentFecCycle();
-      for (let i = 0; i < sources.length; i++) {
-        const ps = sources[i];
-        if (i > 0) await sleep(3000); // 3s between politicians — keeps FEC API under 1000 req/hr
-        try {
-          const adapter = createFecAdapter(cycle);
-          await runIngestion(adapter, ps, cycle);
-          console.log(`[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} done`);
-        } catch (err) {
-          console.error(
-            `[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} error:`,
-            err instanceof Error ? err.message : String(err)
-          );
-          // Non-aborting: continue to next source
-        }
-      }
+      await runFecForSources(sources, cycle);
       // Update freshness timestamp so X-Data-Updated-At header has a value
       try {
         await pool.query(

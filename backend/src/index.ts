@@ -67,6 +67,7 @@ import { startDiscoverySweepCron } from './cron/discoverySweep.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 import { maybeResumeBackfillOnBoot } from './lib/fecBackfill.js';
+import { maybeResumeFecBurstOnBoot } from './lib/fecBurstResume.js';
 
 const app = express();
 
@@ -229,6 +230,7 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
       console.warn('[startup] stale ingestion-run reap failed — continuing anyway:', e)
     );
     maybeResumeBackfillOnBoot();  // self-heals the FEC historical backfill across dyno restarts (gated by FEC_BACKFILL_AUTORESUME)
+    maybeResumeFecBurstOnBoot();  // finishes a DAILY burst this restart cut short (see fecBurstResume.ts)
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.
     // Without this, the pg pool and cron job keep the event loop alive and
