@@ -36,6 +36,7 @@
  */
 
 import { pool } from './db.js';
+import { FALLBACK_EXCLUDED_MTFCC_SQL_LIST } from './geoIdGuard.js';
 import { geocodeAddress, GeocodingError } from './geocodingService.js';
 // Phase 213 (RSLV-03): the coordinate-only entry point below reuses the
 // Phase 212 national-fallback floor + single-House-rep derivation. Safe
@@ -778,7 +779,9 @@ async function resolveOfficialsAtPoint(
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
         -- stays on G5200; only the elections opt-in join (electionService.ts) may reach V26.
-        OR (gb.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','G5200V26')
+        -- G6350 (ZCTA / ZIP polygons) is excluded here too: a ZIP has no districts
+        -- and its bare 5-digit geo_id can collide with a district geo_id.
+        OR (gb.mtfcc NOT IN (${FALLBACK_EXCLUDED_MTFCC_SQL_LIST})
             AND gb.mtfcc NOT LIKE 'X%')
       )
     JOIN essentials.offices o ON o.district_id = d.id

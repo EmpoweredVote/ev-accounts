@@ -12,6 +12,34 @@
  * (geo_id, mtfcc) pair source aliased `gp` and essentials.districts aliased `d`.
  * Mirrors the inline guard in getRepresentativesByAddress (essentialsService.ts).
  */
+/**
+ * MTFCCs that must NOT reach the district-join catch-all clause.
+ *
+ * The catch-all (`mtfcc NOT IN (...) AND mtfcc NOT LIKE 'X%'`) means "match any
+ * district_type for this geo_id", so any layer NOT listed here joins to a
+ * district purely on a bare geo_id string match.
+ *
+ * G5200V26: 2026-vintage congressional boundaries — only the elections opt-in
+ *   join (electionService.ts) may resolve against it.
+ * G6350: ZIP Code Tabulation Areas. A ZCTA has no districts of its own, and its
+ *   geo_id is a bare 5-digit ZIP ('46220') that can collide with district
+ *   geo_ids. ZIPs resolve by AREA OVERLAP (resolveOfficialsInArea), never by
+ *   geo_id — so admitting them here would attach arbitrary officials to a ZIP
+ *   AND, because this clause is shared, to any address lookup as well.
+ *
+ * SINGLE SOURCE OF TRUTH — essentialsService.ts's districtQueryText interpolates
+ * FALLBACK_EXCLUDED_MTFCC_SQL_LIST rather than restating the list. Guarded by
+ * geoIdGuard.test.ts.
+ */
+export const FALLBACK_EXCLUDED_MTFCCS: readonly string[] = [
+  'G5210', 'G5220', 'G5200', 'G4020', 'G4040', 'G4110', 'G4120',
+  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350',
+];
+
+/** The same list rendered for a SQL `IN (...)` clause. */
+export const FALLBACK_EXCLUDED_MTFCC_SQL_LIST: string =
+  FALLBACK_EXCLUDED_MTFCCS.map((m) => `'${m}'`).join(',');
+
 export const MTFCC_DISTRICT_TYPE_GUARD = `(
     (gp.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
     OR (gp.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
@@ -41,7 +69,7 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
     -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
     -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.
-    OR (gp.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','G5200V26') AND gp.mtfcc NOT LIKE 'X%')
+    OR (gp.mtfcc NOT IN (${FALLBACK_EXCLUDED_MTFCC_SQL_LIST}) AND gp.mtfcc NOT LIKE 'X%')
   )`;
 
 /** A geo_id paired with the MTFCC of the layer it was sourced from. */
