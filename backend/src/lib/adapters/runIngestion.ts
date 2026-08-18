@@ -27,7 +27,9 @@ import { refreshSummaryAggForSource } from '../campaignFinanceService.js';
  * rather than completed — this signals a potential truncation in the FEC data feed.
  *
  * CRITICAL: pg returns numeric IDs as strings from INSERT RETURNING — Number() them.
- * RecordsSkipped is additive: normalizer skips + upsert duplicate skips combined.
+ * RecordsSkipped is additive: normalizer defects + deliberate exclusions + rows refreshed
+ * on conflict + duplicate keys dropped. A REFRESHED row is a success, not a defect — see the
+ * comment at the recordsSkipped assignment and UpsertResult.updated.
  */
 export async function runIngestion(
   adapter: SourceAdapter,
@@ -57,6 +59,7 @@ export async function runIngestion(
     let normalizeExcluded = 0;
     let normalizeTotalParsed = 0;
     let upsertInserted = 0;
+    let upsertUpdated = 0;
     let upsertSkipped = 0;
     let upsertUnresolved = 0;
     let upsertErrors = 0;
@@ -77,6 +80,7 @@ export async function runIngestion(
         normalizeExcluded += norm.excluded ?? 0;
         normalizeTotalParsed += norm.totalParsed;
         upsertInserted += up.inserted;
+        upsertUpdated += up.updated;
         upsertSkipped += up.skipped;
         upsertUnresolved += up.unresolved;
         upsertErrors += up.errors;
@@ -95,6 +99,7 @@ export async function runIngestion(
       normalizeExcluded = normalizeResult.excluded ?? 0;
       normalizeTotalParsed = normalizeResult.totalParsed;
       upsertInserted = upsertResult.inserted;
+      upsertUpdated = upsertResult.updated;
       upsertSkipped = upsertResult.skipped;
       upsertUnresolved = upsertResult.unresolved;
       upsertErrors = upsertResult.errors;
@@ -105,9 +110,16 @@ export async function runIngestion(
     const durationMs = completedAt.getTime() - startedAt.getTime();
 
     // RecordsSkipped is additive and keeps its historical meaning — "fetched but not
-    // inserted" — so it stays continuous across this change: normalizer DEFECTS +
-    // deliberate EXCLUSIONS (e.g. FEC memo items) + upsert duplicate skips.
-    const recordsSkipped = normalizeSkipped + normalizeExcluded + upsertSkipped;
+    // inserted" — so it stays continuous: normalizer DEFECTS + deliberate EXCLUSIONS
+    // (e.g. FEC memo items) + rows REFRESHED on conflict + rows dropped as duplicate keys.
+    //
+    // 🔴 upsertUpdated is counted here to keep this column's VALUE unchanged, but it is a
+    // fundamentally different event from the other three and must not be read as a defect:
+    // a refreshed row is a SUCCESS. ocpf and netfile rewrite amount / contribution_date /
+    // raw_record on conflict, which is the mechanism that repaired a $15.6M amount defect
+    // on 2026-08-18 — and that repair reported "89,557 skipped", i.e. the exact opposite of
+    // what it did. That is why it now has its own counter and its own note below.
+    const recordsSkipped = normalizeSkipped + normalizeExcluded + upsertSkipped + upsertUpdated;
 
     // Determine initial status
     let status = 'completed';
@@ -138,6 +150,14 @@ export async function runIngestion(
         const skipNote = `skip threshold exceeded: ${normalizeSkipped}/${normalizeTotalParsed} rows skipped (${(skipRate * 100).toFixed(1)}%)`;
         notes = notes ? `${notes}; ${skipNote}` : skipNote;
       }
+    }
+
+    // Refreshed rows are worth stating explicitly, because records_skipped cannot express
+    // the difference between "declined to write 89,557 rows" and "repaired 89,557 rows".
+    // There is no records_updated column, so the note is where this becomes legible.
+    if (upsertUpdated > 0) {
+      const refreshNote = `refreshed ${upsertUpdated} existing row(s) from source`;
+      notes = notes ? `${notes}; ${refreshNote}` : refreshNote;
     }
 
     // Populate ETag/download metadata if adapter provides it (Cal-Access does).

@@ -868,11 +868,11 @@ export async function upsertContributions(
   const supersededSubIds = normalized.supersededSubIds ?? [];
 
   if (normalized.contributions.length === 0 && supersededSubIds.length === 0) {
-    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+    return { inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
   let inserted = 0;
-  let skipped = 0;
+  let updated = 0;
   let errors = 0;
 
   // Process in batches of 100
@@ -888,7 +888,7 @@ export async function upsertContributions(
       try {
         const { batchInserted, batchSkipped } = await upsertBatch(batch);
         inserted += batchInserted;
-        skipped += batchSkipped;
+        updated += batchSkipped; // ON CONFLICT rows were REFRESHED, not skipped
         break;
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -941,7 +941,7 @@ export async function upsertContributions(
     }
   }
 
-  return { inserted, skipped, unresolved: 0, errors };
+  return { inserted, updated, skipped: 0, unresolved: 0, errors };
 }
 
 /**

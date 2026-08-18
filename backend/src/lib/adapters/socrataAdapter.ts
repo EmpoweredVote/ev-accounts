@@ -295,7 +295,7 @@ function normalizeRecords(
  */
 async function upsertContributions(contributions: ContributionInsert[]): Promise<UpsertResult> {
   if (contributions.length === 0) {
-    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+    return { inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
   // Deduplicate by source_transaction_id. Socrata data can have duplicate rows
@@ -307,10 +307,13 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
     seen.set(c.source_transaction_id, c);
   }
   const deduped = Array.from(seen.values());
+  // Collapsed duplicates reach the database nowhere — the only genuine "skipped" here,
+  // and previously uncounted.
+  const totalDropped = contributions.length - deduped.length;
   contributions = deduped;
 
   let totalInserted = 0;
-  let totalSkipped = 0;
+  let totalUpdated = 0;
   let totalErrors = 0;
 
   const BATCH_SIZE = 100;
@@ -393,7 +396,7 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
       }
 
       totalInserted += batchInserted;
-      totalSkipped += batchSkipped;
+      totalUpdated += batchSkipped; // ON CONFLICT rows were REFRESHED, not skipped
     } catch (err) {
       console.error(`[socrataAdapter] upsert batch error (i=${i}): ${err instanceof Error ? err.message : String(err)}`);
       totalErrors++;
@@ -402,7 +405,8 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
 
   return {
     inserted: totalInserted,
-    skipped: totalSkipped,
+    updated: totalUpdated,
+    skipped: totalDropped,
     unresolved: 0,
     errors: totalErrors,
   };

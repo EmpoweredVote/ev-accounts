@@ -16,7 +16,7 @@ function adapterWith(name: string, n: Partial<NormalizeResult>): SourceAdapter {
     name: () => name,
     fetch: async () => ({ records: [], totalExpected: 0, totalFetched: 0 }),
     normalize: async () => ({ contributions: [], skipped: 0, totalParsed: 0, ...n }) as NormalizeResult,
-    upsert: async () => ({ inserted: 0, skipped: 0, unresolved: 0, errors: 0 }),
+    upsert: async () => ({ inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 }),
   };
 }
 

@@ -277,16 +277,20 @@ function normalizeOcpfItem(
 
 async function upsertBatch(
   batch: ContributionInsert[]
-): Promise<{ batchInserted: number; batchSkipped: number }> {
-  if (batch.length === 0) return { batchInserted: 0, batchSkipped: 0 };
+): Promise<{ batchInserted: number; batchUpdated: number; batchDropped: number }> {
+  if (batch.length === 0) return { batchInserted: 0, batchUpdated: 0, batchDropped: 0 };
 
-  // Deduplicate within batch by source_transaction_id
+  // Deduplicate within batch by source_transaction_id. These rows reach the database
+  // NOWHERE, so they are the only genuine "skipped" in this adapter — and they used to
+  // vanish uncounted, which is why the taxonomy split below needed them surfaced.
   const seen = new Set<string>();
+  const beforeDedup = batch.length;
   batch = batch.filter((c) => {
     if (seen.has(c.source_transaction_id)) return false;
     seen.add(c.source_transaction_id);
     return true;
   });
+  const batchDropped = beforeDedup - batch.length;
 
   const params: unknown[] = [];
   const valuePlaceholders: string[] = [];
@@ -337,24 +341,27 @@ async function upsertBatch(
   const result = await pool.query<{ is_insert: boolean }>(sql, params);
 
   let batchInserted = 0;
-  let batchSkipped = 0;
+  let batchUpdated = 0;
   for (const row of result.rows) {
     if (row.is_insert) {
       batchInserted++;
     } else {
-      batchSkipped++;
+      // xmax != 0 means the DO UPDATE fired. Since 2026-08-18 that clause refreshes
+      // amount / contribution_date / election_cycle / raw_record, so this is a REPAIR.
+      batchUpdated++;
     }
   }
 
-  return { batchInserted, batchSkipped };
+  return { batchInserted, batchUpdated, batchDropped };
 }
 
 async function upsertContributions(normalized: NormalizeResult): Promise<UpsertResult> {
   if (normalized.contributions.length === 0) {
-    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+    return { inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
   let inserted = 0;
+  let updated = 0;
   let skipped = 0;
   let errors = 0;
 
@@ -362,16 +369,17 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
   for (let i = 0; i < normalized.contributions.length; i += batchSize) {
     const batch = normalized.contributions.slice(i, i + batchSize);
     try {
-      const { batchInserted, batchSkipped } = await upsertBatch(batch);
+      const { batchInserted, batchUpdated, batchDropped } = await upsertBatch(batch);
       inserted += batchInserted;
-      skipped += batchSkipped;
+      updated += batchUpdated;
+      skipped += batchDropped;
     } catch (err) {
       errors += batch.length;
       console.error(`[ocpfAdapter] upsert batch error at offset ${i}:`, err);
     }
   }
 
-  return { inserted, skipped, unresolved: 0, errors };
+  return { inserted, updated, skipped, unresolved: 0, errors };
 }
 
 // ---------------------------------------------------------------------------

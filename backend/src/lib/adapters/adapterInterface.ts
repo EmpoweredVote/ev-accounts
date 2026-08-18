@@ -93,12 +93,36 @@ export interface NormalizeResult {
 /**
  * UpsertResult is returned by the Upsert phase.
  * Inserted: rows newly written to contributions table.
- * Skipped: rows already present (ON CONFLICT DO UPDATE / DO NOTHING).
+ * Updated: rows that already existed and were REFRESHED from the source.
+ * Skipped: rows fetched but written nowhere at all.
  * Unresolved: records with no matching PoliticianSource (logged but not inserted).
  * Errors: count of records that failed for unexpected reasons.
  */
 export interface UpsertResult {
   inserted: number;
+
+  /**
+   * Pre-existing rows whose stored values were REFRESHED by the ON CONFLICT DO UPDATE.
+   *
+   * 🔴 Split out from `skipped` on 2026-08-18 because the two had become opposites while
+   * sharing one field. ocpf and netfile refresh amount / contribution_date / raw_record on
+   * conflict, so re-reading a filer's history REPAIRS its rows — that is the mechanism that
+   * corrected a $15.6M amount defect. Reporting 89,557 repaired rows as "skipped" states
+   * the reverse of what happened, and made a successful repair indistinguishable from a
+   * run that declined to write anything.
+   *
+   * Same failure shape as the `NormalizeResult.skipped`/`excluded` conflation below: one
+   * field, two opposite meanings, so neither number could be trusted.
+   */
+  updated: number;
+
+  /**
+   * Rows fetched but written NOWHERE — not inserted and not updated. Today this is
+   * within-batch duplicate keys dropped before the INSERT (two source records colliding on
+   * one source_transaction_id); those were previously discarded uncounted.
+   *
+   * A conflict row that got refreshed is NOT this. See `updated`.
+   */
   skipped: number;
   unresolved: number;
   errors: number;

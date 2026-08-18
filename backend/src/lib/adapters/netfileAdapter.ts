@@ -320,7 +320,7 @@ function normalizeTransactions({
 
 async function upsertContributions(contributions: ContributionInsert[]): Promise<UpsertResult> {
   if (contributions.length === 0) {
-    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+    return { inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
   // Deduplicate by source_transaction_id before batching.
@@ -329,9 +329,12 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
     seen.set(c.source_transaction_id, c);
   }
   const deduped = Array.from(seen.values());
+  // Collapsed duplicates reach the database nowhere — the only genuine "skipped" here.
+  // Previously uncounted.
+  const totalDropped = contributions.length - deduped.length;
 
   let totalInserted = 0;
-  let totalSkipped = 0;
+  let totalUpdated = 0;
   let totalErrors = 0;
 
   const BATCH_SIZE = 100;
@@ -384,7 +387,7 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
 
       for (const row of result.rows) {
         if (row.inserted) totalInserted++;
-        else totalSkipped++;
+        else totalUpdated++; // DO UPDATE refreshes amount/date/raw_record — a REFRESH
       }
     } catch (err) {
       console.error(
@@ -395,7 +398,7 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
     }
   }
 
-  return { inserted: totalInserted, skipped: totalSkipped, unresolved: 0, errors: totalErrors };
+  return { inserted: totalInserted, updated: totalUpdated, skipped: totalDropped, unresolved: 0, errors: totalErrors };
 }
 
 // ---------------------------------------------------------------------------

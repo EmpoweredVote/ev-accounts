@@ -443,11 +443,11 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
  */
 async function upsertContributions(normalized: NormalizeResult): Promise<UpsertResult> {
   if (normalized.contributions.length === 0) {
-    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+    return { inserted: 0, updated: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
   let inserted = 0;
-  let skipped = 0;
+  let updated = 0;
   let errors = 0;
 
   const batchSize = 100;
@@ -456,7 +456,7 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
     try {
       const { batchInserted, batchSkipped } = await upsertBatch(batch);
       inserted += batchInserted;
-      skipped  += batchSkipped;
+      updated  += batchSkipped; // ON CONFLICT rows were REFRESHED, not skipped
     } catch (err) {
       // Per-batch error isolation — count errors and continue
       errors += batch.length;
@@ -464,7 +464,7 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
     }
   }
 
-  return { inserted, skipped, unresolved: 0, errors };
+  return { inserted, updated, skipped: 0, unresolved: 0, errors };
 }
 
 async function upsertBatch(
