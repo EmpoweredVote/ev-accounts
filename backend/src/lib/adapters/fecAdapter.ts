@@ -392,7 +392,7 @@ async function streamPagesForWindow(
       }
     }
 
-    const page = await fetchWithRetry(`${baseUrl}?${params.toString()}`);
+    const page = await fetchWithRetry(`${baseUrl}?${params.toString()}`, 5, signal);
 
     if (firstPage) {
       totalExpected = page.pagination.count;
@@ -581,11 +581,14 @@ async function streamAllPages(
  * fetchWithRetry wraps native fetch() with 429 exponential backoff.
  * Start delay: 1s, max delay: 60s, max retries: 3.
  */
-async function fetchWithRetry(url: string, maxRetries = 5): Promise<FecScheduleAResponse> {
+async function fetchWithRetry(url: string, maxRetries = 5, signal?: AbortSignal): Promise<FecScheduleAResponse> {
   let delayMs = 2000;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    await acquireFecSlot(); // FEC-03 — shared limiter gate, before every attempt including retries
+    // Signal threaded through so a per-source timeout can interrupt the LIMITER wait too,
+    // not just the socket. Without it an abort could not reach acquireFecSlot, which is
+    // where the 2026-08-18 burst actually stalled for 29 minutes.
+    await acquireFecSlot(signal); // FEC-03 — shared limiter gate, before every attempt including retries
     let response: Response;
     try {
       response = await fetch(url, { signal: AbortSignal.timeout(60_000) });

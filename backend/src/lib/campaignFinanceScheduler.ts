@@ -212,24 +212,78 @@ export function currentFecCycle(): string {
  * inter-source delay, which is what keeps the shared FEC key under 1,000 req/hr.
  *
  * Non-aborting: a per-source failure is logged and the walk continues.
+ *
+ * 🔴 EVERY SOURCE IS TIME-BOUNDED, and that bound is load-bearing. On 2026-08-18 this loop
+ * stopped dead: it logged "Fetching committee C00492785 for candidate S2TX00312" at
+ * 06:23:43 and emitted nothing for the next 29 minutes while /api/health answered 200 in
+ * 4ms. Catching errors is not enough — A HANG IS NOT AN ERROR. Nothing threw, so the catch
+ * never ran, and the remaining ~500 sources simply never happened.
+ *
+ * The stall was inside acquireFecSlot's unbounded for(;;) (bounded in the same change), but
+ * this timeout deliberately does NOT depend on that diagnosis being complete. It is the
+ * backstop that guarantees the walk advances no matter what stalls underneath — a hung
+ * socket, a wedged Redis round-trip, a future retry loop nobody has written yet.
+ *
+ * Note the failure mode this protects against is silent: a source that never runs writes no
+ * ingestion_runs row, so a failure-count query reports the burst as healthy. Runs STARTED
+ * vs. confirmed-source count is the only honest metric.
  */
 export async function runFecForSources(
   sources: PoliticianSourceRow[],
   cycle: string
 ): Promise<void> {
+  // Generous next to a normal source (seconds), tight next to a 33-minute walk of 662.
+  const PER_SOURCE_TIMEOUT_MS = parseInt(process.env.FEC_PER_SOURCE_TIMEOUT_MS ?? '', 10) || 10 * 60 * 1000;
+
   for (let i = 0; i < sources.length; i++) {
     const ps = sources[i];
     if (i > 0) await sleep(3000); // 3s between politicians — keeps FEC API under 1000 req/hr
+
+    const controller = new AbortController();
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    // 🔴 RACE the work, do not merely signal it. Aborting only helps code that CHECKS the
+    // signal; anything that hangs without checking (a wedged socket in a library, a poll
+    // loop nobody threaded the signal into) would leave `await runIngestion(...)` pending
+    // forever and the walk stalled — the exact 2026-08-18 failure this is meant to end.
+    // A unit test caught this: signalling alone did not free the loop.
+    const timeoutReached = new Promise<never>((_, reject) => {
+      timeoutId = setTimeout(() => {
+        const err = new Error(
+          `[fec] per-source timeout (${PER_SOURCE_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycle}`
+        );
+        controller.abort(err);  // ask cooperative code to stop and free its socket
+        reject(err);            // and move on regardless of whether it does
+      }, PER_SOURCE_TIMEOUT_MS);
+    });
+
     try {
       const adapter = createFecAdapter(cycle);
-      await runIngestion(adapter, ps, cycle);
+      // The signal reaches the FEC fetch path via runIngestion -> fetchStream, and reaches
+      // the rate-limiter's poll loop because acquireFecSlot now accepts one.
+      const work = runIngestion(adapter, ps, cycle, controller.signal);
+      // Abandoned work may settle later; swallow it so it cannot surface as an unhandled
+      // rejection and take the process down after we have already moved on.
+      work.catch(() => {});
+      await Promise.race([work, timeoutReached]);
       console.log(`[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} done`);
     } catch (err) {
       console.error(
         `[campaignFinanceScheduler] fec: source=${ps.id} cycle=${cycle} error:`,
         err instanceof Error ? err.message : String(err)
       );
+      // Leave no row wedged in 'running' — the reaper would otherwise wait hours for it.
+      await pool.query(
+        `UPDATE transparent_motivations.ingestion_runs
+         SET status = 'failed', completed_at = NOW(), notes = $1
+         WHERE status = 'running'
+           AND politician_source_id = $2
+           AND election_cycle = $3`,
+        [err instanceof Error ? err.message : String(err), ps.id, cycle]
+      ).catch((e: unknown) => console.warn('[campaignFinanceScheduler] fec: zombie cleanup failed:', e));
       // Non-aborting: continue to next source
+    } finally {
+      if (timeoutId) clearTimeout(timeoutId);
     }
   }
 }

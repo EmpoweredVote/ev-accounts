@@ -130,3 +130,53 @@ describe('acquireFecSlot', () => {
     expect(incrMock).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('acquireFecSlot — bounded wait (2026-08-18 burst halt)', () => {
+  // 🔴 The 06:00 burst stopped dead inside this function for 29 minutes on a dyno whose
+  // /api/health was answering 200 in 4ms. A for(;;) that neither returns nor throws is
+  // indistinguishable from a healthy idle process. These tests exist so it cannot recur.
+
+  it('THROWS instead of waiting forever when the bucket never frees', async () => {
+    vi.setSystemTime(new Date('2026-01-01T00:00:00.000Z'));
+    process.env.FEC_RATE_LIMIT_PER_MINUTE = '1';
+    process.env.FEC_RATE_LIMIT_MAX_WAIT_MS = '10000';
+    // Always over budget — the pre-fix loop could never exit this.
+    incrMock.mockResolvedValue(999);
+
+    const { acquireFecSlot } = await import('./fecRateLimiter.js');
+    const slot = acquireFecSlot();
+    const assertion = expect(slot).rejects.toThrow(/gave up waiting for a slot/);
+
+    await vi.advanceTimersByTimeAsync(15000);
+    await assertion;
+  });
+
+  it('honours an AbortSignal so an upstream per-source timeout can interrupt the wait', async () => {
+    vi.setSystemTime(new Date('2026-01-01T00:00:00.000Z'));
+    process.env.FEC_RATE_LIMIT_PER_MINUTE = '1';
+    incrMock.mockResolvedValue(999);
+
+    const { acquireFecSlot } = await import('./fecRateLimiter.js');
+    const controller = new AbortController();
+    const slot = acquireFecSlot(controller.signal);
+    const assertion = expect(slot).rejects.toThrow(/aborted while waiting/);
+
+    controller.abort();
+    await vi.advanceTimersByTimeAsync(5000);
+    await assertion;
+  });
+
+  it('degrades to the in-process counter when a Redis round-trip HANGS', async () => {
+    // Upstash speaks HTTP via fetch, which has no default timeout. A never-settling incr
+    // blocked this function forever and is the leading suspect for the 06:23:43 stall.
+    vi.setSystemTime(new Date('2026-01-01T00:00:00.000Z'));
+    incrMock.mockImplementation(() => new Promise(() => {})); // never settles
+
+    const { acquireFecSlot } = await import('./fecRateLimiter.js');
+    const slot = acquireFecSlot();
+
+    // Past the 5s Redis bound: it must fall through to in-process counting and resolve.
+    await vi.advanceTimersByTimeAsync(6000);
+    await expect(slot).resolves.toBeUndefined();
+  });
+});
