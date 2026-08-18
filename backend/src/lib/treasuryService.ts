@@ -118,6 +118,9 @@ export interface TreasuryDataset {
   // `unknown` rows out of cross-entity comparison while building the year/dataset
   // picker, without fetching every budget first.
   fund_scope: string;
+  // SCOPE-02: accounting basis and reporting entity for this row -- see TreasuryBudget.
+  basis?: string | null;
+  reporting_entity?: string | null;
 }
 
 export interface TreasuryCity {
@@ -145,6 +148,10 @@ export interface TreasuryBudget {
   // Typed as string rather than a union deliberately: SCOPE-02 may add values, and a
   // widened union is a breaking change for consumers that switch exhaustively.
   fund_scope: string;
+  // SCOPE-02: accounting basis ('actual' | 'adopted' | 'unknown') and reporting entity
+  // ('primary_government' | 'incl_component_units' | 'unknown') for total_budget.
+  basis?: string | null;
+  reporting_entity?: string | null;
   data_source: string | null;
   data_source_info: {
     displayName: string;
@@ -230,6 +237,7 @@ interface CityRow {
   // Joined from budgets — aggregated as JSON array
   available_datasets: Array<{
     fiscal_year: string; dataset_type: string; period_label: string | null; fund_scope: string;
+    basis: string; reporting_entity: string;
   }> | null;
 }
 
@@ -241,6 +249,8 @@ interface BudgetRow {
   period_label: string | null;
   total_budget: string; // numeric returned as string
   fund_scope: string;   // SCOPE-01; NOT NULL with a 'unknown' default, so always present
+  basis: string;        // SCOPE-02; NOT NULL with a 'unknown' default, so always present
+  reporting_entity: string; // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   data_source: string | null;
   source_url: string | null;   // municipal attribution (non-federal fallback)
   source_date: string | null;  // municipal attribution (non-federal fallback)
@@ -346,6 +356,8 @@ function mapCity(row: CityRow): TreasuryCity {
       dataset_type: d.dataset_type,
       period_label: d.period_label ?? null,
       fund_scope: d.fund_scope,
+      basis: d.basis,
+      reporting_entity: d.reporting_entity,
     })),
   };
 }
@@ -359,6 +371,8 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     period_label: row.period_label ?? null,
     total_budget: Number(row.total_budget),
     fund_scope: row.fund_scope,
+    basis: row.basis,
+    reporting_entity: row.reporting_entity,
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url
       ? {
@@ -436,7 +450,8 @@ export async function getCities(): Promise<TreasuryCity[]> {
             COALESCE(
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
-                                 'period_label', b.period_label, 'fund_scope', b.fund_scope)
+                                 'period_label', b.period_label, 'fund_scope', b.fund_scope,
+                                 'basis', b.basis, 'reporting_entity', b.reporting_entity)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -475,7 +490,8 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
             COALESCE(
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
-                                 'period_label', b.period_label, 'fund_scope', b.fund_scope)
+                                 'period_label', b.period_label, 'fund_scope', b.fund_scope,
+                                 'basis', b.basis, 'reporting_entity', b.reporting_entity)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -503,7 +519,7 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope,
+              b.fund_scope, b.basis, b.reporting_entity,
               b.data_source, b.source_url, b.source_date,
               sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -524,7 +540,7 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope,
+              b.fund_scope, b.basis, b.reporting_entity,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -783,7 +799,7 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope,
+              b.fund_scope, b.basis, b.reporting_entity,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
