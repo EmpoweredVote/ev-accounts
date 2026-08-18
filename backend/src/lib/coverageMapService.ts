@@ -39,6 +39,7 @@ import { toSlug, PLACE_STRIP } from './electionsMap.js';
 import { aggregateUnits, type Unit } from './coverageBivariate.js';
 import { HAS_RENDERABLE_PHOTO_SQL } from './photoCoverage.js';
 import { HAS_ANY_CONTRIBUTION_SQL } from './donorCoverage.js';
+import { ALL_STATES, getFederalStateStats, type FederalStateStats } from './federalCoverage.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -141,7 +142,12 @@ export interface StateScore {
   fips: string; // 2-digit state FIPS (matches us-atlas state keys)
   code: string; // 2-letter lowercase (e.g. 'ut')
   name: string;
-  score: number; // 0..100
+  /** false = no coverage YAML — local fields are zeros and `score` is null. */
+  tracked: boolean;
+  /** Local-government composite 0..100; null when the state is untracked. */
+  score: number | null;
+  /** Federal + state-office coverage — present for EVERY state (live from DB). */
+  federal: FederalStateStats;
   jurisdiction_count: number;
   populated_count: number;
   // Bivariate + hover breakdown (completeness mode):
@@ -629,7 +635,15 @@ async function mapWithConcurrency<T, R>(
   return out;
 }
 
-/** US choropleth: one score per tracked state. Untracked states are omitted. */
+/**
+ * US choropleth: one entry per state/territory — ALL 56, not just the tracked
+ * ones. Tracked states (a coverage YAML exists) carry the local-government
+ * composite `score`; untracked states carry `score: null` and zeroed local
+ * fields. EVERY state carries the live `federal` block, because federal + state
+ * offices are covered everywhere regardless of YAML tracking — omitting the
+ * untracked states painted them "not started" when e.g. their full congressional
+ * delegation is loaded.
+ */
 export async function getStateScores(
   opts: { refresh?: boolean; weights?: AxisWeights } = {},
 ): Promise<StateScore[]> {
@@ -642,17 +656,49 @@ export async function getStateScores(
       .filter((t): t is { code: string; file: ReturnType<typeof readCoverageFile> & { universe: { state_fips: string } } } =>
         Boolean(t.file.universe?.state_fips));
 
-    return mapWithConcurrency(tracked, STATE_BUILD_CONCURRENCY, async ({ code, file }) => {
-      const fips = file.universe.state_fips;
-      const jur = await buildJurisdictions(fips, code, weights);
+    const [federalByCode, trackedScores] = await Promise.all([
+      getFederalStateStats(),
+      mapWithConcurrency(tracked, STATE_BUILD_CONCURRENCY, async ({ code, file }) => {
+        const fips = file.universe.state_fips;
+        const jur = await buildJurisdictions(fips, code, weights);
+        return {
+          fips,
+          code,
+          name: file.state_name,
+          score: mean(jur.map((j) => j.score)),
+          jurisdiction_count: jur.length,
+          populated_count: jur.filter((j) => j.populated).length,
+          ...stateBreakdown(jur, fips),
+        };
+      }),
+    ]);
+
+    const trackedByCode = new Map(trackedScores.map((s) => [s.code, s]));
+    // ALL_STATES order (FIPS order) — the frontend keys by fips and sorts itself.
+    return ALL_STATES.map((meta): StateScore => {
+      const federal = federalByCode.get(meta.code)!;
+      const t = trackedByCode.get(meta.code);
+      if (t) return { ...t, tracked: true, federal };
       return {
-        fips,
-        code,
-        name: file.state_name,
-        score: mean(jur.map((j) => j.score)),
-        jurisdiction_count: jur.length,
-        populated_count: jur.filter((j) => j.populated).length,
-        ...stateBreakdown(jur, fips),
+        fips: meta.fips,
+        code: meta.code,
+        name: meta.name,
+        tracked: false,
+        score: null,
+        federal,
+        jurisdiction_count: 0,
+        populated_count: 0,
+        breadth: 0,
+        depth: 0,
+        counties_started: 0,
+        counties_total: US_COUNTY_COUNTS[meta.fips] ?? 0,
+        cities_started: 0,
+        cities_total: 0,
+        schools_started: 0,
+        schools_total: 0,
+        roster_pct: 0,
+        stances_pct: 0,
+        photo_pct: 0,
       };
     });
   });

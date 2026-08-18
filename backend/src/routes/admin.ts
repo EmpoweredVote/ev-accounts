@@ -66,6 +66,7 @@ import {
 } from '../lib/adminService.js';
 import { getCoverage, listCoverageStates } from '../lib/coverageService.js';
 import { getStateScores, getCountyScores } from '../lib/coverageMapService.js';
+import { getFederalDelegation } from '../lib/federalCoverage.js';
 import { getElectionsStateScores, getElectionsCountyScores } from '../lib/electionsMapService.js';
 import {
   listPendingResearchReview,
@@ -195,6 +196,27 @@ router.get('/coverage/map', async (req, res) => {
     res.json({ states: await getStateScores({ refresh }) });
   } catch (err) {
     console.error('[admin/coverage/map] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/coverage/federal?state=ut
+ * Per-member federal + state-office roster for one state (any of the 56 — no
+ * coverage YAML required): U.S. Senate, U.S. House, governor, statewide execs,
+ * state legislature, plus tracked challengers. Non-voting seats carry their
+ * representation_note (ADR 0003) — the client must render it with the seat.
+ */
+router.get('/coverage/federal', async (req, res) => {
+  try {
+    const state = String(req.query.state ?? '').toLowerCase();
+    if (!/^[a-z]{2}$/.test(state)) {
+      res.status(400).json({ error: 'state query param required (2-letter code)' });
+      return;
+    }
+    res.json({ state, members: await getFederalDelegation(state) });
+  } catch (err) {
+    console.error('[admin/coverage/federal] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

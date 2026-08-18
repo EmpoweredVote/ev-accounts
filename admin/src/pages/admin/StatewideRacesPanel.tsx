@@ -6,6 +6,7 @@
  * together (D-02). Data arrives pre-fetched on `StateElection` — no new fetch.
  */
 import type { StateElection } from './coverageTypes';
+import { TIER_INFO } from './ElectionsTierLegend';
 
 interface Props {
   stateElection: StateElection | null;
@@ -36,9 +37,9 @@ export function StatewideRacesPanel({ stateElection, loading = false }: Props) {
           Statewide &amp; legislative races <span className="font-normal text-gray-400">({statewideRaces.length})</span>
         </h2>
         <span className="text-xs text-gray-400">
-          Tier 3: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t3}/{total}</span>
-          {' · '}Tier 2: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t2}/{total}</span>
-          {' · '}Tier 1: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t1}/{total}</span>
+          <span title={TIER_INFO[3].desc}>{TIER_INFO[3].label}: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t3}/{total}</span></span>
+          {' · '}<span title={TIER_INFO[2].desc}>{TIER_INFO[2].label.toLowerCase()}: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t2}/{total}</span></span>
+          {' · '}<span title={TIER_INFO[1].desc}>{TIER_INFO[1].label.toLowerCase()}: <span className="tabular-nums text-gray-600 dark:text-gray-300">{tierCounts.t1}/{total}</span></span>
           <span className="mx-2 text-gray-300 dark:text-gray-600">|</span>
           County-pinnable:{' '}
           {countyCoverage.status === 'unknown' ? (
@@ -68,12 +69,13 @@ export function StatewideRacesPanel({ stateElection, loading = false }: Props) {
               statewideRaces.map((r) => (
                 <tr key={r.race_id} className="hover:bg-gray-50 dark:hover:bg-gray-800/40">
                   <td className="px-3 py-2 font-medium text-gray-900 dark:text-white">{r.position_name}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">
-                    {r.tier === 0 ? (
-                      <span className="text-gray-400">Tier 0</span>
-                    ) : (
-                      <span className="text-gray-600 dark:text-gray-400">Tier {r.tier}</span>
-                    )}
+                  <td className="px-3 py-2 text-right">
+                    <span
+                      className={`inline-block whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium ${TIER_INFO[r.tier].chip}`}
+                      title={TIER_INFO[r.tier].desc}
+                    >
+                      {TIER_INFO[r.tier].label}
+                    </span>
                   </td>
                   <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">
                     {r.candidate_count}/{r.seats} candidates

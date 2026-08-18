@@ -18,13 +18,17 @@ vi.mock('../middleware/requireAdmin.js', () => ({
   requireAdmin: (_req: unknown, _res: unknown, next: () => void) => next(),
 }));
 
-const { mockGetElectionsStateScores, mockGetElectionsCountyScores } = vi.hoisted(() => ({
+const { mockGetElectionsStateScores, mockGetElectionsCountyScores, mockGetFederalDelegation } = vi.hoisted(() => ({
   mockGetElectionsStateScores: vi.fn(),
   mockGetElectionsCountyScores: vi.fn(),
+  mockGetFederalDelegation: vi.fn(),
 }));
 vi.mock('../lib/electionsMapService.js', () => ({
   getElectionsStateScores: mockGetElectionsStateScores,
   getElectionsCountyScores: mockGetElectionsCountyScores,
+}));
+vi.mock('../lib/federalCoverage.js', () => ({
+  getFederalDelegation: mockGetFederalDelegation,
 }));
 
 import adminRouter from './admin.js';
@@ -35,6 +39,7 @@ app.use('/api/admin', adminRouter);
 beforeEach(() => {
   mockGetElectionsStateScores.mockReset();
   mockGetElectionsCountyScores.mockReset();
+  mockGetFederalDelegation.mockReset();
 });
 
 // Shared fixture race set — one statewide race (bare-state ocd_id, no county-pinnable
@@ -99,6 +104,37 @@ describe('GET /api/admin/coverage/map?metric=elections&level=county', () => {
     const res = await request(app).get('/api/admin/coverage/map?metric=elections&level=county');
     expect(res.status).toBe(400);
     expect(mockGetElectionsCountyScores).not.toHaveBeenCalled();
+  });
+});
+
+describe('GET /api/admin/coverage/federal', () => {
+  const member = {
+    politician_id: 'p-1',
+    full_name: 'Ashley Moody',
+    title: 'Senator',
+    tier: 'senate',
+    district_ocd: 'ocd-division/country:us/state:fl',
+    has_photo: true,
+    researched: true,
+    has_donors: false,
+    voting_powers: 'full',
+    representation_note: null,
+  };
+
+  it('200 with the delegation payload, unmodified, lowercasing the state code', async () => {
+    mockGetFederalDelegation.mockResolvedValueOnce([member]);
+    const res = await request(app).get('/api/admin/coverage/federal?state=FL');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ state: 'fl', members: [member] });
+    expect(mockGetFederalDelegation).toHaveBeenCalledWith('fl');
+  });
+
+  it('400 when state param is missing or not a 2-letter code', async () => {
+    for (const qs of ['', '?state=', '?state=flx', '?state=f1']) {
+      const res = await request(app).get(`/api/admin/coverage/federal${qs}`);
+      expect(res.status).toBe(400);
+    }
+    expect(mockGetFederalDelegation).not.toHaveBeenCalled();
   });
 });
 

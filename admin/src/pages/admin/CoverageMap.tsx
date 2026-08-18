@@ -14,7 +14,8 @@ import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react'
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 import { completenessColor, NOT_STARTED } from './completenessColor';
 import { CompletenessLegend } from './CompletenessLegend';
-import { StateHoverCard, CountyHoverCard } from './CoverageHoverCard';
+import { ElectionsTierLegend } from './ElectionsTierLegend';
+import { StateHoverCard, CountyHoverCard, FederalHoverCard } from './CoverageHoverCard';
 import type { StateScore, CountyScore, StateElection, CountyElection, Metric } from './coverageTypes';
 
 const STATES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
@@ -116,21 +117,23 @@ export function CoverageMap(props: Props) {
     setZoom(Math.min(12, Math.max(1, k)));
   }, []);
 
-  // Reset framing + hover when the parent clears the selection (back to US).
+  // Reset framing + hover when the parent clears the selection (back to US),
+  // or when the federal lens takes over (it always shows the whole US — there
+  // is no county-level federal drill-down to zoom into).
   useEffect(() => {
-    if (!selected) {
+    if (!selected || metric === 'federal') {
       setCenter([-96, 38]);
       setZoom(1);
       setHover(null);
       framedFipsRef.current = null;
     }
-  }, [selected]);
+  }, [selected, metric]);
 
   // Re-place the card whenever its contents change (hover enter / level switch),
   // using the last known cursor position.
   useEffect(() => { positionCard(); }, [hover, positionCard]);
 
-  // Completeness hover card.
+  // Completeness / federal hover cards.
   let hoverCard: ReactNode = null;
   if (hover && metric === 'completeness') {
     if (hover.level === 'state') {
@@ -140,6 +143,10 @@ export function CoverageMap(props: Props) {
       const cs = countyByFips.get(hover.fips);
       if (cs) hoverCard = <CountyHoverCard c={cs} />;
     }
+  }
+  if (hover && metric === 'federal' && hover.level === 'state') {
+    const sc = stateByFips.get(hover.fips);
+    if (sc) hoverCard = <FederalHoverCard name={sc.name} f={sc.federal} />;
   }
 
   // Elections text readout.
@@ -152,9 +159,9 @@ export function CoverageMap(props: Props) {
           <span className="font-medium">{hover.name}</span>
           {es ? (
             <>
-              <span className="ml-2 tabular-nums text-gray-500 dark:text-gray-400">{es.depthScore}</span>
+              <span className="ml-2 tabular-nums text-gray-500 dark:text-gray-400" title="research depth, 0–100">{es.depthScore}</span>
               <span className="ml-2 text-gray-400">
-                (T3 {es.tierCounts.t3} · T2 {es.tierCounts.t2} · T1 {es.tierCounts.t1})
+                ({es.tierCounts.t3} fully · {es.tierCounts.t2} partly · {es.tierCounts.t1} candidates-only)
               </span>
               <span className="ml-2 text-gray-400">
                 · county:{' '}
@@ -193,8 +200,9 @@ export function CoverageMap(props: Props) {
           </div>
         )}
 
-        {/* Legend overlay (completeness) */}
-        {metric === 'completeness' && (
+        {/* Legend overlay (completeness + federal share the same honest ramp).
+            Elections' tier decoder lives BELOW the map — as an overlay it covered it. */}
+        {metric !== 'elections' && (
           <div className="absolute bottom-3 left-3 z-20 rounded-md border border-gray-200/70 bg-white/85 px-3 py-2 shadow-sm backdrop-blur-sm dark:border-gray-700/70 dark:bg-gray-900/85">
             <CompletenessLegend />
           </div>
@@ -202,7 +210,7 @@ export function CoverageMap(props: Props) {
 
         <ComposableMap projection="geoAlbersUsa" width={MAP_W} height={MAP_H} style={{ width: '100%', height: 'auto' }}>
           <ZoomableGroup center={center} zoom={zoom} minZoom={1} maxZoom={12}>
-            {!selected ? (
+            {!selected || metric === 'federal' ? (
               <Geographies geography={STATES_TOPO}>
                 {({ geographies, path, projection }) => {
                   pathRef.current = path;
@@ -210,7 +218,11 @@ export function CoverageMap(props: Props) {
                   return geographies.map((geo) => {
                     const sc = stateByFips.get(geo.id as string);
                     const es = elecStatesByFips.get(geo.id as string);
-                    const fill = metric === 'elections' ? electionStateColor(es) : completenessColor(sc?.score ?? null);
+                    const fill =
+                      metric === 'elections' ? electionStateColor(es)
+                      : metric === 'federal' ? completenessColor(sc ? sc.federal.score : null)
+                      : completenessColor(sc?.score ?? null);
+                    const isSel = selected?.fips === geo.id;
                     return (
                       <Geography
                         key={geo.rsmKey}
@@ -219,7 +231,7 @@ export function CoverageMap(props: Props) {
                         onMouseLeave={() => setHover(null)}
                         onClick={() => { setHover(null); props.onSelectState(geo.id as string, geo.properties.name); }}
                         style={{
-                          default: { fill, stroke: '#fff', strokeWidth: 0.5, outline: 'none' },
+                          default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
                           hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
                           pressed: { fill, outline: 'none' },
                         }}
@@ -267,18 +279,23 @@ export function CoverageMap(props: Props) {
         </ComposableMap>
       </div>
 
-      {/* Elections readout + legend (completeness uses the in-map hover card + overlay legend) */}
+      {/* Elections readout + legends (completeness uses the in-map hover card + overlay legend) */}
       {metric === 'elections' && (
-        <div className="mt-2 flex items-center justify-between text-sm">
-          <div className="text-gray-600 dark:text-gray-300">
-            {elecReadout ?? <span className="text-gray-400">{selected ? 'Hover a county' : 'Hover a state'}</span>}
+        <>
+          <div className="mt-2 flex items-center justify-between text-sm">
+            <div className="text-gray-600 dark:text-gray-300">
+              {elecReadout ?? <span className="text-gray-400">{selected ? 'Hover a county' : 'Hover a state'}</span>}
+            </div>
+            <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+              {props.elecDate && <span className="font-medium capitalize text-gray-600 dark:text-gray-300">{props.elecDate.type} · {props.elecDate.date}</span>}
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NO_RACE_DATA }} /> no race data</span>
+              <span className="inline-flex items-center gap-1.5"><span>low</span><div className="h-2 w-24 rounded-full" style={{ background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(45)}, ${scoreColor(100)})` }} /><span>high</span></span>
+            </div>
           </div>
-          <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
-            {props.elecDate && <span className="font-medium capitalize text-gray-600 dark:text-gray-300">{props.elecDate.type} · {props.elecDate.date}</span>}
-            <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NO_RACE_DATA }} /> no race data</span>
-            <span className="inline-flex items-center gap-1.5"><span>low</span><div className="h-2 w-24 rounded-full" style={{ background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(45)}, ${scoreColor(100)})` }} /><span>high</span></span>
+          <div className="mt-2">
+            <ElectionsTierLegend />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

@@ -2,11 +2,16 @@
  * Hover cards for the completeness map. They convey WHAT is covered, not just a
  * %: breadth bars (how many child units started) + a one-line per-axis summary
  * (state and county both show Rosters/Stances/Photos[/Donors] percentages).
+ * The federal lens gets its own card; untracked states hovering in local mode
+ * show the federal summary too — grey no longer means "we have nothing".
  */
 import { Chip, type Tristate } from './coverageCells';
+import type { FederalStats } from './coverageTypes';
 
 export interface StateHover {
   name: string;
+  tracked: boolean;
+  federal: FederalStats;
   counties_started: number; counties_total: number;
   cities_started: number; cities_total: number;
   schools_started: number; schools_total: number;
@@ -35,7 +40,33 @@ function Bar({ label, started, total }: { label: string; started: number; total:
   );
 }
 
+/** One-line federal delegation summary — shared by both state cards. */
+function FederalSummaryLine({ f }: { f: FederalStats }) {
+  const parts = [
+    f.senate.expected > 0 ? `Senate ${f.senate.filled}/${f.senate.expected}` : null,
+    f.house.expected > 0 ? `House ${f.house.districtsCovered}/${f.house.expected}` : null,
+    f.governor.expected > 0 ? `Gov ${f.governor.filled > 0 ? '✓' : '—'}` : null,
+  ].filter(Boolean);
+  return <>{parts.join(' · ')}</>;
+}
+
 export function StateHoverCard({ s }: { s: StateHover }) {
+  // Untracked locally — say what IS covered (the federal tier) instead of
+  // presenting grey as "nothing".
+  if (!s.tracked) {
+    return (
+      <div className="w-64 rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-900">
+        <div className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">{s.name}</div>
+        <div className="mb-2 text-xs text-gray-500 dark:text-gray-400">No local coverage file yet</div>
+        <div className="text-[11px] text-gray-600 dark:text-gray-300">
+          <FederalSummaryLine f={s.federal} />
+        </div>
+        <div className="mt-2 border-t border-gray-100 pt-1.5 text-[11px] text-gray-500 dark:border-gray-800 dark:text-gray-400">
+          Federal &amp; state coverage {s.federal.score}% — switch to the Federal lens
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="w-64 rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-900">
       <div className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">{s.name}</div>
@@ -49,6 +80,44 @@ export function StateHoverCard({ s }: { s: StateHover }) {
       </div>
       <div className="mt-2 border-t border-gray-100 pt-1.5 text-[11px] text-gray-500 dark:border-gray-800 dark:text-gray-400">
         Rosters {s.roster_pct}% · Stances {s.stances_pct}% · Photos {s.photo_pct}%
+      </div>
+      <div className="mt-1 text-[11px] text-gray-500 dark:text-gray-400">
+        Federal: <FederalSummaryLine f={s.federal} />
+      </div>
+    </div>
+  );
+}
+
+/** Federal-lens hover card — the delegation + state offices at a glance. */
+export function FederalHoverCard({ name, f }: { name: string; f: FederalStats }) {
+  const delegationTotal = f.senate.filled + f.house.filled;
+  const pct = (part: number) => (delegationTotal > 0 ? Math.round((part / delegationTotal) * 100) : 0);
+  const stancesPct = pct(f.senate.researched + f.house.researched);
+  const photosPct = pct(f.senate.withPhoto + f.house.withPhoto);
+  const legKnown = f.stateLeg.districtsTotal > 0;
+  return (
+    <div className="w-64 rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-900">
+      <div className="mb-1 flex items-baseline justify-between">
+        <span className="text-sm font-semibold text-gray-900 dark:text-white">{name}</span>
+        <span className="tabular-nums text-xs text-gray-500 dark:text-gray-400">{f.score}%</span>
+      </div>
+      <ul className="space-y-0.5 text-[11px] text-gray-600 dark:text-gray-300">
+        {f.senate.expected > 0 && <li>U.S. Senate {f.senate.filled}/{f.senate.expected}</li>}
+        <li>U.S. House {f.house.districtsCovered}/{f.house.expected} districts</li>
+        {f.governor.expected > 0 && <li>Governor {f.governor.filled > 0 ? '✓' : 'not loaded'}</li>}
+        {f.statewideExecs > 0 && <li>Statewide officials {f.statewideExecs}</li>}
+        <li>
+          Legislature{' '}
+          {legKnown
+            ? `${f.stateLeg.districtsCovered}/${f.stateLeg.districtsTotal} districts`
+            : f.stateLeg.members > 0
+              ? `${f.stateLeg.members} members`
+              : 'not loaded'}
+        </li>
+        {f.candidatesTracked > 0 && <li>Candidates tracked {f.candidatesTracked}</li>}
+      </ul>
+      <div className="mt-2 border-t border-gray-100 pt-1.5 text-[11px] text-gray-500 dark:border-gray-800 dark:text-gray-400">
+        Delegation stances {stancesPct}% · Photos {photosPct}%
       </div>
     </div>
   );

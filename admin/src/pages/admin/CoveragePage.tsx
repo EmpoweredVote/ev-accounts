@@ -1,16 +1,25 @@
 /**
  * CoveragePage — unified coverage view. The map (top) is the selector for the
- * table (below); the WHOLE PAGE scrolls (no inner scroll box). Completeness mode
- * shows the bivariate map + the per-state coverage tracker / per-county
- * breakdown. Elections mode shows the race-coverage map (its drill-down lives in
- * the map's own hover/readout); the table is completeness-only.
+ * table (below); the WHOLE PAGE scrolls (no inner scroll box). Three lenses:
+ *   Local    — the YAML-tracked local-government composite (map + tracker table)
+ *   Federal  — federal + state offices, live for ALL 56 states (map + roster)
+ *   Elections— race coverage for each state's nearest upcoming election
+ * Every state is clickable in every lens; untracked states drill into their
+ * federal/state roster instead of a local tracker they don't have.
  */
 import { useEffect, useMemo, useState, useCallback } from 'react';
 import { apiFetch } from '../../lib/api';
 import { CoverageMap } from './CoverageMap';
 import { CoverageTable } from './CoverageTable';
 import { StatewideRacesPanel } from './StatewideRacesPanel';
+import { FederalDelegationPanel } from './FederalDelegationPanel';
 import type { StateScore, CountyScore, StateElection, CountyElection, Metric } from './coverageTypes';
+
+const METRIC_LABEL: Record<Metric, string> = {
+  completeness: 'Local',
+  federal: 'Federal & state',
+  elections: 'Elections',
+};
 
 export function CoveragePage() {
   const [metric, setMetric] = useState<Metric>('completeness');
@@ -74,12 +83,16 @@ export function CoveragePage() {
   }, [metric]);
 
   const onSelectState = useCallback((fips: string, name: string) => {
-    const code = metric === 'completeness'
+    const code = metric === 'completeness' || metric === 'federal'
       ? stateByFips.get(fips)?.code
       : elecStatesByFips.get(fips)?.code ?? stateByFips.get(fips)?.code;
     setSelected({ fips, name, code });
     setSelectedCounty(null);
     if (!code) { setCounties([]); setElecCounties([]); return; }
+    // Federal lens has no county drill-down; untracked states have no county
+    // scores to fetch (no YAML) — their drill-down is the federal roster.
+    if (metric === 'federal') return;
+    if (metric === 'completeness' && stateByFips.get(fips)?.tracked === false) { setCounties([]); return; }
     loadCounties(code);
   }, [metric, stateByFips, elecStatesByFips, loadCounties]);
 
@@ -88,6 +101,8 @@ export function CoveragePage() {
   // already closes over the current metric, and onSelectState handles the click
   // path — adding them would double-fetch on every state click.
   useEffect(() => {
+    if (metric === 'federal') return; // no county layer in the federal lens
+    if (metric === 'completeness' && selected && stateByFips.get(selected.fips)?.tracked === false) return;
     if (selected?.code) loadCounties(selected.code);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [metric]);
@@ -95,6 +110,8 @@ export function CoveragePage() {
   const onSelectCounty = useCallback((fips: string) => {
     if (metric === 'completeness') setSelectedCounty(countyByFips.get(fips) ?? null);
   }, [metric, countyByFips]);
+
+  const selectedUntracked = selected != null && stateByFips.get(selected.fips)?.tracked === false;
 
   const backToUS = useCallback(() => {
     setSelected(null);
@@ -111,13 +128,13 @@ export function CoveragePage() {
         <div className="flex items-center gap-3">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Coverage</h1>
           <div className="inline-flex overflow-hidden rounded-md border border-gray-300 text-xs dark:border-gray-600">
-            {(['completeness', 'elections'] as Metric[]).map((m) => (
+            {(['completeness', 'federal', 'elections'] as Metric[]).map((m) => (
               <button
                 key={m}
                 onClick={() => { setMetric(m); setSelectedCounty(null); }}
-                className={`px-2.5 py-1 font-medium capitalize ${metric === m ? 'bg-ev-teal text-white dark:bg-ev-teal-light dark:text-gray-900' : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800'}`}
+                className={`px-2.5 py-1 font-medium ${metric === m ? 'bg-ev-teal text-white dark:bg-ev-teal-light dark:text-gray-900' : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800'}`}
               >
-                {m}
+                {METRIC_LABEL[m]}
               </button>
             ))}
           </div>
@@ -174,16 +191,45 @@ export function CoveragePage() {
         <StatewideRacesPanel stateElection={elecStatesByFips.get(selected.fips) ?? null} loading={statesLoading} />
       )}
 
-      {/* TABLE (below) — completeness only; whole page scrolls (no inner scroll box) */}
-      {metric === 'completeness' && (
+      {/* FEDERAL ROSTER (below map) — the federal lens drill-down for ANY state */}
+      {metric === 'federal' && selected?.code && (
+        <FederalDelegationPanel stateCode={selected.code} stateName={selected.name} />
+      )}
+      {metric === 'federal' && !selected && (
         <CoverageTable
           states={states}
           statesLoading={statesLoading}
-          state={selected?.code ?? null}
-          focusCounty={selectedCounty}
+          state={null}
+          focusCounty={null}
           onClearCounty={() => setSelectedCounty(null)}
           onPickState={onSelectState}
         />
+      )}
+
+      {/* TABLE (below) — local (completeness) mode; whole page scrolls (no inner scroll box).
+          Untracked states have no YAML tracker — show their federal/state roster instead of
+          silently falling back to the first tracked state's file (the old behavior). */}
+      {metric === 'completeness' && (
+        selected?.code && selectedUntracked ? (
+          <div className="space-y-4">
+            <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
+              <span className="font-medium text-gray-700 dark:text-gray-200">{selected.name}</span> has no local
+              coverage file yet — local government isn't tracked. Add{' '}
+              <code className="rounded bg-gray-100 px-1 dark:bg-gray-800">data/coverage/{selected.code}.yaml</code> to
+              start. Its federal &amp; state officials are covered below.
+            </div>
+            <FederalDelegationPanel stateCode={selected.code} stateName={selected.name} />
+          </div>
+        ) : (
+          <CoverageTable
+            states={states}
+            statesLoading={statesLoading}
+            state={selected?.code ?? null}
+            focusCounty={selectedCounty}
+            onClearCounty={() => setSelectedCounty(null)}
+            onPickState={onSelectState}
+          />
+        )
       )}
     </div>
   );

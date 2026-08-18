@@ -1,13 +1,21 @@
 # Coverage Map — how the % is calculated
 
 The coverage map lives at `/admin/coverage` (stacked above the tabular tracker — the two
-were merged into one tab; `/admin/coverage/map` now redirects there). In **completeness**
-mode it colors each geography (US states → counties → jurisdictions) by an **honest
-single completeness gradient** over the composite `score` (see "Completeness coloring"
-below) — empty units count, so the color reflects how complete the *whole* jurisdiction
-is. **Breadth** and **depth** are still computed and surfaced as numbers in the hover
-cards + US overview table, but no longer drive the color. This doc explains exactly what
-those numbers count, so there's no guessing about whether a column is "really" tracked.
+were merged into one tab; `/admin/coverage/map` now redirects there). Three lenses:
+
+- **Local** (the completeness metric) colors each geography (US states → counties →
+  jurisdictions) by an **honest single completeness gradient** over the composite `score`
+  (see "Completeness coloring" below) — empty units count, so the color reflects how
+  complete the *whole* jurisdiction is. **Breadth** and **depth** are still computed and
+  surfaced as numbers in the hover cards, but no longer drive the color.
+- **Federal & state** colors EVERY state (no YAML required) by federal + state-office
+  coverage, live from the DB — see "Federal & state lens" below. This lens exists because
+  the local composite deliberately ignores federal/state officials, which made states with
+  a fully-loaded congressional delegation read as "not started".
+- **Elections** — race coverage for each state's nearest upcoming election (end of doc).
+
+This doc explains exactly what those numbers count, so there's no guessing about whether
+a column is "really" tracked.
 
 - **Backend:** `backend/src/lib/coverageMapService.ts` (rollup `score` + breadth/depth) and
   `backend/src/lib/coverageBivariate.ts` (pure breadth/depth aggregation, unit-tested)
@@ -82,8 +90,10 @@ jurisdictions inside it**:
   number.
 
 ### "Not started" vs "low"
-- **Gray** = `null` score = the state has **no coverage YAML** (untracked). Not the same
-  as 0%.
+- **Gray** = `null` score = the state has **no coverage YAML** (untracked locally). Not
+  the same as 0% — and since the federal lens landed, not the same as "we have nothing":
+  hovering a gray state shows its federal delegation summary, and clicking it opens the
+  federal/state roster instead of a local tracker it doesn't have.
 - **Pale sage (~3%)** = tracked, but the jurisdiction has only its boundary, no people.
 - **Deeper sage → purple → yellow** = increasing real coverage. The ramp uses a gamma
   curve so the clustered low scores still separate visually (see "Completeness coloring").
@@ -155,6 +165,46 @@ grey coloring — the same shape as stances — instead of Full / Partial / None
   `politician_sources.essentials_politician_id`). The old YAML `donors` flag is no longer
   used by the map. Donor data is FEC-sourced and currently concentrated in CA (~260
   politicians); states with no contribution data correctly read `none`.
+
+---
+
+## Federal & state lens
+
+**Backend:** `backend/src/lib/federalCoverage.ts`. **Endpoint:** the `federal` block rides
+on every state in `GET /api/admin/coverage/map?level=state` (all 56 states/territories are
+now returned — untracked states carry `tracked: false`, `score: null` and zeroed local
+fields); the per-member roster is `GET /api/admin/coverage/federal?state=<code>`.
+
+Active politicians are classified by `districts.ocd_id` shape + `offices.title`
+(`TIER_CASE_SQL` — shared by the rollup and the roster so they can't disagree):
+
+| Tier | Match | Notes |
+|------|-------|-------|
+| **senate** | bare `state:xx` district + title `Senator` / `U.S. Senate%` | State senators can't collide — they sit at `/sldu:` districts. Verified: exactly 100 across 50 states. |
+| **house** | `/cd:` district | Includes the six non-voting delegates (DC + territories, ADR 0003) — that IS the delegation. DC's shadow senators also sit at `cd:98` but hold no seat in Congress → classified `statewide`. |
+| **governor** | bare state + `role_canonical`/title `Governor` | Exactly 50. |
+| **statewide** | any other bare-state officeholder | AG, SoS, treasurer, courts, DC mayor/council, shadow senators. |
+| **stateleg** | `/sldu:` or `/sldl:` district | Only loaded for tracked states. |
+| **candidate** | title `Candidate for …` | 2026 Senate challengers seated by the migration-1459 backfill — tracked PEOPLE, not officeholders. Never counted as a filled seat; surfaced as their own roster section. |
+
+**Denominators are honest:** Senate = 2 for the 50 states (0 for DC/territories), House =
+the state's `/cd:` district count in `essentials.districts`, legislature = loaded
+`/sldu:`+`/sldl:` district count (0 ⇒ unknown ⇒ axis dropped). We never invent a universe
+we haven't loaded.
+
+**Score** (`federalStateScore`, unit-tested): weighted renormalising composite —
+senate roster 0.2 · house districts covered 0.3 · governor 0.1 · delegation stances 0.2 ·
+delegation photos 0.1 · legislature districts covered 0.1. Axes with no denominator (DC
+has no Senate seats; most states have no legislative districts loaded) are dropped and the
+rest renormalise, same as the local composite's roster axis.
+
+**Roster rendering rule (ADR 0003):** the per-member panel must render
+`representation_note` alongside any seat with `voting_powers ≠ 'full'` — the note is what
+keeps a tribal or territorial seat from reading as an ordinary one.
+
+The US overview table now lists **all 56** states with a Local column group (— for
+untracked) and a Federal & state group; breadth/depth left the table for space but remain
+in the state hover cards.
 
 ---
 
