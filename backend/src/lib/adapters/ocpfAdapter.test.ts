@@ -6,7 +6,7 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 const poolQueryMock = vi.fn();
 vi.mock('../db.js', () => ({ pool: { query: (...args: unknown[]) => poolQueryMock(...args) } }));
 
-import { createOcpfAdapter } from './ocpfAdapter.js';
+import { createOcpfAdapter, parseOcpfAmount } from './ocpfAdapter.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
 const PAGE_SIZE = 250;
@@ -118,5 +118,69 @@ describe('ocpfAdapter pagination', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     await expect(createOcpfAdapter().fetch(source())).rejects.toThrow(/truncat|cap/i);
+  });
+});
+
+describe('parseOcpfAmount', () => {
+  // OCPF sends PRESENTATION TEXT, not numbers. The old parser was
+  // parseFloat(s.replace(/^[$]/, '')), which failed two ways at once.
+
+  it('parses a thousands separator instead of TRUNCATING at it', () => {
+    // 🔴 THE SILENT BUG. parseFloat("1,000.00") === 1, and that 1 was stored as a real
+    // dollar figure. It capped the entire stored MA corpus at $999.00: 11,672 of 107,698
+    // rows understated by $15,643,496.52 in total.
+    expect(parseOcpfAmount('$1,000.00')).toBe(1000);
+    expect(parseOcpfAmount('$12,345.67')).toBe(12345.67);
+    // The largest real contribution in the corpus, previously stored as $945.
+    expect(parseOcpfAmount('$945,000.00')).toBe(945000);
+  });
+
+  it('reads ACCOUNTING PARENTHESES as negative rather than dropping the row', () => {
+    // The loud bug: parseFloat("($1,000.00)") === NaN, so the row was skipped entirely.
+    // 609 records on cpf 15710 and 99 on 15931 never reached the database.
+    expect(parseOcpfAmount('($1,000.00)')).toBe(-1000);
+    expect(parseOcpfAmount('($5.00)')).toBe(-5);
+    expect(parseOcpfAmount('(945,000.00)')).toBe(-945000);
+  });
+
+  it('handles plain and zero amounts', () => {
+    expect(parseOcpfAmount('$50.00')).toBe(50);
+    expect(parseOcpfAmount('$0.00')).toBe(0);
+    expect(parseOcpfAmount('-$25.00')).toBe(-25);
+    expect(parseOcpfAmount('100')).toBe(100);
+    expect(parseOcpfAmount(42)).toBe(42);
+  });
+
+  it('REFUSES anything unrecognised instead of coercing it', () => {
+    // The whole lesson of the comma defect: a wrong number that looks real is worse
+    // than a skipped row. Anything not matching the expected shape must return null.
+    for (const bad of ['', '   ', 'abc', '$', '$1.2.3', '--5', '12 dollars', null, undefined, {}]) {
+      expect(parseOcpfAmount(bad as unknown)).toBeNull();
+    }
+    expect(parseOcpfAmount(NaN)).toBeNull();
+  });
+});
+
+describe('ocpfAdapter normalize — amount fidelity', () => {
+  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('carries a four-figure amount and a negative through to the contribution', async () => {
+    const items = [
+      { id: 1, amount: '$1,000.00', date: '03/15/2024', firstName: 'A', lastName: 'B', electionYear: 2024 },
+      { id: 2, amount: '($250.00)', date: '03/16/2024', firstName: 'C', lastName: 'D', electionYear: 2024 },
+      { id: 3, amount: '$945,000.00', date: '03/17/2024', firstName: 'E', lastName: 'F', electionYear: 2024 },
+    ];
+    vi.stubGlobal('fetch', vi.fn(async () => (
+      { status: 200, json: async () => ({ summary: null, items }) } as unknown as Response
+    )));
+
+    const adapter = createOcpfAdapter();
+    const ps = source();
+    const norm = await adapter.normalize(await adapter.fetch(ps), ps);
+
+    // No row is dropped, and no amount is truncated.
+    expect(norm.contributions.map((c) => c.amount)).toEqual([1000, -250, 945000]);
+    expect(norm.skipped).toBe(0);
   });
 });

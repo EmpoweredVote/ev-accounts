@@ -170,16 +170,63 @@ function nextEvenYear(year: number): number {
   return year % 2 !== 0 ? year + 1 : year;
 }
 
+/**
+ * parseOcpfAmount parses OCPF FORMATTED CURRENCY strings to a number.
+ *
+ * 🔴 OCPF does not send a bare numeric — it sends presentation text: "$50.00",
+ * "$1,000.00", and negatives in ACCOUNTING PARENTHESES, "($1,000.00)". The previous
+ * implementation was parseFloat(s.replace(/^\$/, "")), which broke on BOTH:
+ *
+ *   parseFloat("1,000.00")     === 1     <- SILENT; stops at the thousands separator
+ *   parseFloat("($1,000.00)")  === NaN   <- loud; row dropped
+ *
+ * The comma case is the dangerous one: it returned a plausible small number rather than
+ * an error, which capped the entire stored MA corpus at $999.00. 11,672 of 107,698 rows
+ * understated by $15,643,496.52 in total, and the largest real contribution, $945,000,
+ * was stored as $945. Existing rows are repaired by migration NNNN_MIGNUM.
+ *
+ * So parse STRICTLY and refuse anything unrecognised. Returning null costs one skipped
+ * row plus a warning; guessing costs a wrong dollar figure that looks entirely real.
+ */
+export function parseOcpfAmount(raw: unknown): number | null {
+  if (typeof raw === 'number') return Number.isFinite(raw) ? raw : null;
+  if (typeof raw !== 'string') return null;
+
+  let s = raw.trim();
+  if (s === '') return null;
+
+  // Accounting negative: "($1,000.00)" — the parentheses wrap the entire value.
+  let negative = false;
+  if (s.startsWith('(') && s.endsWith(')')) {
+    negative = true;
+    s = s.slice(1, -1).trim();
+  }
+
+  // A sign may also be written plainly, and may sit inside the parentheses.
+  if (s.startsWith('-')) {
+    negative = !negative;
+    s = s.slice(1).trim();
+  }
+
+  s = s.replace(/^[$]/, '').replace(/,/g, '').trim();
+
+  // Strict shape check. Stray text, a doubled sign or an empty remainder is REFUSED
+  // rather than coerced. This is precisely the guard the old parseFloat lacked.
+  if (!/^[0-9]+([.][0-9]+)?$/.test(s)) return null;
+
+  const n = Number(s);
+  if (!Number.isFinite(n)) return null;
+
+  return negative ? -n : n;
+}
+
 function normalizeOcpfItem(
   item: OcpfItem,
   ps: PoliticianSource
 ): ContributionInsert | null {
-  // --- Amount: strip leading "$", parse float ---
-  const rawAmount = typeof item.amount === 'string'
-    ? item.amount.replace(/^\$/, '')
-    : String(item.amount ?? '');
-  const amount = parseFloat(rawAmount);
-  if (isNaN(amount)) {
+  // --- Amount: OCPF sends formatted currency, not a number. See parseOcpfAmount. ---
+  const amount = parseOcpfAmount(item.amount);
+  if (amount === null) {
     console.warn(`[ocpfAdapter] normalize: skip item id=${item.id} — cannot parse amount "${item.amount}"`);
     return null;
   }
@@ -272,8 +319,18 @@ async function upsertBatch(
     VALUES ${valuePlaceholders.join(', ')}
     ON CONFLICT (data_source, source_transaction_id)
     DO UPDATE SET
-      updated_at = NOW(),
-      donor_name_normalized = EXCLUDED.donor_name_normalized
+      updated_at            = NOW(),
+      donor_name_normalized = EXCLUDED.donor_name_normalized,
+      -- 🔴 These four MUST be refreshed, and were not until 2026-08-18. They are derived
+      -- from the source record, so leaving them out made re-ingestion incapable of ever
+      -- REPAIRING anything: the $15.64M comma-truncation defect would have survived every
+      -- future run of a corrected adapter, because the conflicting row was left untouched.
+      -- A re-read is only meaningfully idempotent if it also corrects. (Fetch is
+      -- all-or-nothing and throws on truncation, so a partial response cannot blank a row.)
+      amount                = EXCLUDED.amount,
+      contribution_date     = EXCLUDED.contribution_date,
+      election_cycle        = EXCLUDED.election_cycle,
+      raw_record            = EXCLUDED.raw_record
     RETURNING (xmax = 0) AS is_insert
   `;
 
