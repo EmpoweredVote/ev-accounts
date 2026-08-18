@@ -36,7 +36,15 @@
  */
 
 import { pool } from './db.js';
+import { cache } from './cache.js';
 import { geocodeAddress, GeocodingError } from './geocodingService.js';
+import {
+  buildZipDistrictQuery,
+  buildZipStatesQuery,
+  buildZipCountyQuery,
+  buildZctaExistsQuery,
+  rollUpAmbiguity,
+} from './zipQueries.js';
 // Phase 213 (RSLV-03): the coordinate-only entry point below reuses the
 // Phase 212 national-fallback floor + single-House-rep derivation. Safe
 // against circular-import breakage — essentialsBrowseService.ts only
@@ -677,6 +685,69 @@ export function buildLocality(
 }
 
 /**
+ * mapPoliticianRow — DB row -> PoliticianFlatRecord, via an EXPLICIT field
+ * whitelist (house rule: rows are NEVER spread into responses).
+ *
+ * Shared by the point path and the ZIP/area path so the two cannot return
+ * differently-shaped politicians. NOTE: essentialsBrowseService.mapBrowseRow and
+ * the mapper in getPoliticiansFlatList are two further copies of this same field
+ * set — consolidating those is worth doing, but is not this change's job.
+ */
+function mapPoliticianRow(row: Record<string, any>): PoliticianFlatRecord {
+  return {
+    id: row.id as string,
+    external_id: row.external_id != null ? Number(row.external_id) : null,
+    first_name: row.first_name ?? '',
+    middle_initial: row.middle_initial ?? '',
+    last_name: row.last_name ?? '',
+    preferred_name: row.preferred_name ?? '',
+    name_suffix: row.name_suffix ?? '',
+    full_name: row.full_name ?? '',
+    party: row.party ?? '',
+    photo_origin_url: row.photo_origin_url ?? '',
+    web_form_url: row.web_form_url ?? '',
+    urls: row.urls ?? null,
+    email_addresses: row.email_addresses ?? null,
+    office_title: row.office_title ?? '',
+    representing_state: row.representing_state ?? '',
+    representing_city: row.representing_city ?? '',
+    district_type: row.district_type ?? '',
+    district_label: row.district_label ?? '',
+    district_id: row.district_id ?? '',
+    geo_id: row.geo_id ?? '',
+    mtfcc: row.mtfcc ?? '',
+    chamber_name: row.chamber_name ?? '',
+    chamber_name_formal: row.chamber_name_formal ?? '',
+    government_name: row.government_name ?? '',
+    government_body_name: row.government_body_name ?? '',
+    government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
+    is_elected: !row.is_appointed_position,
+    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
+    representation_note: (row.representation_note as string | null) ?? null,
+    is_appointed: row.is_appointed ?? false,
+    faces_retention_vote: row.faces_retention_vote ?? false,
+    election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
+    committees: [],
+    bio_text: row.bio_text ?? null,
+    slug: row.slug ?? null,
+    is_incumbent: row.is_incumbent ?? false,
+    term_start: row.term_start ?? '',
+    term_end: row.term_end ?? '',
+    term_date_precision: row.term_date_precision ?? '',
+    appointment_date: row.appointment_date ?? '',
+    office_description: row.office_description ?? '',
+    is_vacant: row.is_vacant ?? false,
+    vacant_since: row.vacant_since ?? null,
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
+    images: [],
+    finance_summary: row.finance_summary ?? null,
+  };
+}
+/**
  * resolveOfficialsAtPoint — the shared coordinate->officials core, extracted
  * from getRepresentativesByAddress (Phase 213, D-04) so a precise point can
  * be resolved WITHOUT a Census geocode. Both getRepresentativesByAddress
@@ -792,58 +863,7 @@ async function resolveOfficialsAtPoint(
     };
   }
 
-  const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
-    id: row.id as string,
-    external_id: row.external_id != null ? Number(row.external_id) : null,
-    first_name: row.first_name ?? '',
-    middle_initial: row.middle_initial ?? '',
-    last_name: row.last_name ?? '',
-    preferred_name: row.preferred_name ?? '',
-    name_suffix: row.name_suffix ?? '',
-    full_name: row.full_name ?? '',
-    party: row.party ?? '',
-    photo_origin_url: row.photo_origin_url ?? '',
-    web_form_url: row.web_form_url ?? '',
-    urls: row.urls ?? null,
-    email_addresses: row.email_addresses ?? null,
-    office_title: row.office_title ?? '',
-    representing_state: row.representing_state ?? '',
-    representing_city: row.representing_city ?? '',
-    district_type: row.district_type ?? '',
-    district_label: row.district_label ?? '',
-    district_id: row.district_id ?? '',
-    geo_id: row.geo_id ?? '',
-    mtfcc: row.mtfcc ?? '',
-    chamber_name: row.chamber_name ?? '',
-    chamber_name_formal: row.chamber_name_formal ?? '',
-    government_name: row.government_name ?? '',
-    government_body_name: row.government_body_name ?? '',
-    government_body_url: row.government_body_url ?? '',
-    chamber_url: row.chamber_url ?? '',
-    government_type: row.government_type ?? '',
-    is_elected: !row.is_appointed_position,
-    voting_powers: (row.voting_powers as 'full' | 'committee_only' | 'non_voting') ?? 'full',
-    representation_note: (row.representation_note as string | null) ?? null,
-    is_appointed: row.is_appointed ?? false,
-    faces_retention_vote: row.faces_retention_vote ?? false,
-    election_frequency: row.election_frequency ?? '',
-    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
-    committees: [],
-    bio_text: row.bio_text ?? null,
-    slug: row.slug ?? null,
-    is_incumbent: row.is_incumbent ?? false,
-    term_start: row.term_start ?? '',
-    term_end: row.term_end ?? '',
-    term_date_precision: row.term_date_precision ?? '',
-    appointment_date: row.appointment_date ?? '',
-    office_description: row.office_description ?? '',
-    is_vacant: row.is_vacant ?? false,
-    vacant_since: row.vacant_since ?? null,
-    next_primary_date: row.next_primary_date ?? '',
-    next_general_date: row.next_general_date ?? '',
-    images: [],
-    finance_summary: row.finance_summary ?? null,
-  }));
+  const politicians: PoliticianFlatRecord[] = rows.map(mapPoliticianRow);
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
 
@@ -860,6 +880,125 @@ async function resolveOfficialsAtPoint(
   );
   const jurisdictionGeoIds = pickJurisdictionFromDistrictRows(districtResult.rows);
   return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds, locality };
+}
+
+// ---------------------------------------------------------------------------
+// ZIP (area) resolution
+// ---------------------------------------------------------------------------
+
+/** A politician plus how much of the ZIP their district covers. */
+export interface AreaOfficial extends PoliticianFlatRecord {
+  /**
+   * Fraction (0-1] of the ZIP's area this official's district covers.
+   * null for statewide offices: a state contains the whole ZIP, so a percentage
+   * there would be noise rather than information.
+   */
+  share: number | null;
+}
+
+export interface ZipSearchResult {
+  zip: string;
+  /** USPS abbreviations for every state covering >=1% of the ZIP. */
+  states: string[];
+  /** The county covering the largest part of the ZIP, or null. */
+  county: { geoid: string; name: string } | null;
+  politicians: AreaOfficial[];
+  /** Offices this ZIP cannot pin down, e.g. [{ STATE_LOWER, 4 }]. */
+  ambiguity: Array<{ district_type: string; count: number }>;
+}
+
+/**
+ * resolveOfficialsInArea — every official serving any part of a ZIP.
+ *
+ * The area analogue of resolveOfficialsAtPoint. A point falls on one side of every
+ * district line; an area straddles them, so this legitimately returns four state
+ * house members for a ZIP like 46220 — that is the answer, not a bug.
+ *
+ * Returns null when no ZCTA polygon exists for the ZIP: a well-formed string that
+ * is not a real ZIP, which the route reports as 404 rather than as an empty result.
+ *
+ * `zip` MUST already be normalized to 5 digits (see normalizeZip).
+ */
+export async function resolveOfficialsInArea(zip: string): Promise<ZipSearchResult | null> {
+  const [districtResult, statesResult, countyResult] = await Promise.all([
+    pool.query(buildZipDistrictQuery(), [zip]),
+    pool.query(buildZipStatesQuery(), [zip]),
+    pool.query(buildZipCountyQuery(), [zip]),
+  ]);
+
+  // A missing ZCTA makes the CTE empty, which makes every query above return zero
+  // rows — indistinguishable from a real ZIP we cover nothing in. Ask directly.
+  if (districtResult.rows.length === 0 && statesResult.rows.length === 0) {
+    const exists = await pool.query(buildZctaExistsQuery(), [zip]);
+    if (exists.rows.length === 0) return null;
+  }
+
+  const states = statesResult.rows
+    .map((r) => FIPS_TO_ABBREV[r.fips as string])
+    .filter((abbrev): abbrev is string => Boolean(abbrev));
+
+  // Statewide officials for every state the ZIP meaningfully touches — the same
+  // query the point path runs, once per state. Roughly 1% of ZIPs cross a state
+  // line, and those genuinely have two delegations.
+  const statewideRows = states.length > 0
+    ? (await Promise.all(states.map((s) => pool.query(buildStatewideQuery(), [s]))))
+        .flatMap((r) => r.rows)
+    : [];
+
+  const politicians: AreaOfficial[] = [
+    ...districtResult.rows.map((row) => ({
+      ...mapPoliticianRow(row),
+      share: row.share != null ? Number(row.share) : null,
+    })),
+    ...statewideRows.map((row) => ({ ...mapPoliticianRow(row), share: null })),
+  ];
+
+  await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
+
+  const countyRow = countyResult.rows[0];
+  return {
+    zip,
+    states,
+    county: countyRow
+      ? { geoid: countyRow.geoid as string, name: (countyRow.name as string) ?? '' }
+      : null,
+    politicians,
+    // Keyed on geo_id, not on politician count: 29 judges on one county court is
+    // one district, not 29 ambiguities. See rollUpAmbiguity.
+    ambiguity: rollUpAmbiguity(
+      districtResult.rows.map((r) => ({
+        district_type: (r.district_type as string) ?? '',
+        geo_id: (r.geo_id as string) ?? '',
+      })),
+    ),
+  };
+}
+
+/**
+ * Cache key prefix for ZIP lookups.
+ *
+ * VERSIONED DELIBERATELY. The removed candidateService.getCandidatesByZip wrote
+ * `candidates:zip:${zip}` with a 900s TTL, holding every active empowered_profiles
+ * row regardless of ZIP. Reusing the unversioned key would serve that payload to
+ * this reader for up to 15 minutes after deploy.
+ */
+export const ZIP_CACHE_KEY_PREFIX = 'candidates:zip:v2:';
+
+/** ZIP boundaries and officeholders both change on the order of months. */
+const ZIP_CACHE_TTL_SECONDS = 3600;
+
+/** Cached wrapper around resolveOfficialsInArea. */
+export async function getOfficialsByZip(zip: string): Promise<ZipSearchResult | null> {
+  const cacheKey = `${ZIP_CACHE_KEY_PREFIX}${zip}`;
+  const cached = await cache.get<ZipSearchResult>(cacheKey);
+  if (cached !== null) return cached;
+
+  const result = await resolveOfficialsInArea(zip);
+  // A negative result is cached too, but cache.get returns null for both "miss"
+  // and "cached null", so an unknown ZIP re-runs the lookup. Accepted: correctness
+  // over a sentinel, and unknown ZIPs are rare traffic.
+  await cache.set(cacheKey, result, ZIP_CACHE_TTL_SECONDS);
+  return result;
 }
 
 /**
