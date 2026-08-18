@@ -61,6 +61,8 @@ import eventsRouter from './routes/events.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
+import { startReapStaleRunsCron } from './cron/reapStaleRuns.js';
+import { reapStaleIngestionRuns } from './lib/reapStaleIngestionRuns.js';
 import { startDiscoverySweepCron } from './cron/discoverySweep.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
@@ -217,7 +219,15 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
     startCampaignFinanceCron();
     startDistrictStalenessCron();
     startDiscoverySweepCron();   // Phase 7 — weekly candidate discovery sweep
+    startReapStaleRunsCron();
     startSqsWorker();
+
+    // A restart is precisely what strands ingestion_runs rows in 'running' (this
+    // service auto-deploys on every push to master, and the FEC burst runs 33+
+    // minutes), so sweep once at boot rather than waiting for 05:30. Non-fatal.
+    void reapStaleIngestionRuns().catch((e) =>
+      console.warn('[startup] stale ingestion-run reap failed — continuing anyway:', e)
+    );
     maybeResumeBackfillOnBoot();  // self-heals the FEC historical backfill across dyno restarts (gated by FEC_BACKFILL_AUTORESUME)
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.
