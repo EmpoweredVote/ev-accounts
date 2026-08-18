@@ -145,6 +145,19 @@ export function buildZctaExistsQuery(): string {
 }
 
 /**
+ * Cache key prefix for ZIP lookups.
+ *
+ * VERSIONED DELIBERATELY. The removed candidateService.getCandidatesByZip wrote
+ * `candidates:zip:${zip}` with a 900s TTL, holding every active
+ * empowered_profiles row regardless of ZIP. Reusing the unversioned key would
+ * serve that payload to this reader for up to 15 minutes after deploy.
+ */
+export const ZIP_CACHE_KEY_PREFIX = 'candidates:zip:v2:';
+
+/** ZIP boundaries and officeholders both change on the order of months. */
+export const ZIP_CACHE_TTL_SECONDS = 3600;
+
+/**
  * rollUpAmbiguity — which offices this ZIP genuinely cannot pin down.
  *
  * COUNTS DISTINCT DISTRICTS, NOT PEOPLE, and that distinction is the whole

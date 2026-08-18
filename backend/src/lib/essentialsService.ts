@@ -44,6 +44,8 @@ import {
   buildZipCountyQuery,
   buildZctaExistsQuery,
   rollUpAmbiguity,
+  ZIP_CACHE_KEY_PREFIX,
+  ZIP_CACHE_TTL_SECONDS,
 } from './zipQueries.js';
 // Phase 213 (RSLV-03): the coordinate-only entry point below reuses the
 // Phase 212 national-fallback floor + single-House-rep derivation. Safe
@@ -974,18 +976,6 @@ export async function resolveOfficialsInArea(zip: string): Promise<ZipSearchResu
   };
 }
 
-/**
- * Cache key prefix for ZIP lookups.
- *
- * VERSIONED DELIBERATELY. The removed candidateService.getCandidatesByZip wrote
- * `candidates:zip:${zip}` with a 900s TTL, holding every active empowered_profiles
- * row regardless of ZIP. Reusing the unversioned key would serve that payload to
- * this reader for up to 15 minutes after deploy.
- */
-export const ZIP_CACHE_KEY_PREFIX = 'candidates:zip:v2:';
-
-/** ZIP boundaries and officeholders both change on the order of months. */
-const ZIP_CACHE_TTL_SECONDS = 3600;
 
 /** Cached wrapper around resolveOfficialsInArea. */
 export async function getOfficialsByZip(zip: string): Promise<ZipSearchResult | null> {

@@ -10,6 +10,8 @@ import {
   buildZctaExistsQuery,
   rollUpAmbiguity,
   normalizeZip,
+  ZIP_CACHE_KEY_PREFIX,
+  ZIP_CACHE_TTL_SECONDS,
 } from './zipQueries.js';
 
 describe('normalizeZip', () => {
@@ -141,6 +143,24 @@ describe('buildZctaExistsQuery', () => {
     expect(sql).toContain("mtfcc = 'G6350'");
     expect(sql).toContain('geo_id = $1');
     expect(sql).toContain('LIMIT 1');
+  });
+});
+
+describe('ZIP cache key', () => {
+  it('is versioned past the deleted stub key', () => {
+    // The removed getCandidatesByZip wrote `candidates:zip:${zip}` holding every
+    // active empowered_profile. Reusing that key would serve its wrong payload to
+    // this reader for up to its 900s TTL after deploy.
+    expect(ZIP_CACHE_KEY_PREFIX).toBe('candidates:zip:v2:');
+    expect(ZIP_CACHE_KEY_PREFIX).not.toBe('candidates:zip:');
+  });
+
+  it('ends in a separator so keys cannot collide', () => {
+    expect(ZIP_CACHE_KEY_PREFIX.endsWith(':')).toBe(true);
+  });
+
+  it('has a TTL on the order of an hour, not a day', () => {
+    expect(ZIP_CACHE_TTL_SECONDS).toBe(3600);
   });
 });
 
