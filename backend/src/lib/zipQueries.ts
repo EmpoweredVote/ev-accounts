@@ -114,22 +114,53 @@ export function buildZipDistrictQuery(): string {
 
 /**
  * State FIPS codes for every state covering at least MULTI_STATE_SHARE_FLOOR of
- * the ZIP. G4000 is the state-outline layer and its geo_id IS the state FIPS.
- * Only ~53 polygons, so this is cheap. $1 = normalized 5-digit ZIP.
+ * the ZIP. $1 = normalized 5-digit ZIP.
  *
- * The numeric-FIPS guard is load-bearing: the G4000 layer also holds a NATIONAL
- * outline row (geo_id 'US', name 'United States') which covers every ZIP and is
- * not a state. A FIPS->abbrev lookup happens to miss it, but excluding it here
- * means correctness does not depend on a map lookup failing.
+ * READS G5200 (congressional districts), NOT G4000 (state outlines). That is the
+ * whole point of this query and reverting it re-opens a real bug.
+ *
+ * Congressional districts tile a state exactly, so "some district of state X
+ * covers >=1% of this ZIP" is the same question as "state X covers >=1% of this
+ * ZIP" — but asked of the layer that ALSO decides which U.S. Representative the
+ * ZIP gets. The `states` array therefore agrees with the returned Representative
+ * BY CONSTRUCTION. Using G4000 asked a coarser layer the same question and let
+ * the two answers diverge.
+ *
+ * Measured on prod 2026-08-18, once the nationwide ZCTA layer was loaded:
+ *   - 919 ZIPs were granted a second state's delegation on the G4000 share
+ *   - for 779 of them NO congressional district of that state covered any area
+ *   - average disagreement 7.9%, worst case 49.8%
+ *
+ * The worst single case, ZIP 40820 (Benham, KY): G5200 puts KY-05 at share
+ * 1.0000000000 and VA-09 at 0.0 — a zero-area boundary touch along the Black
+ * Mountain ridge, summing to exactly 1 — while G4000 claimed Virginia covered
+ * 4.465%. That cleared the 1% floor and handed a Kentucky ZIP Virginia's whole
+ * statewide delegation: Spanberger, Warner, Kaine, Hashmi, Jones.
+ *
+ * This is NOT a coverage gap in G5200: it holds 441 rows across 56 states (435
+ * districts + DC + territorial delegates), no NULL states. G4000 is simply the
+ * more generalised polygon.
+ *
+ * DISTINCT is required: G4000 had one row per state, G5200 has many, so a ZIP
+ * inside a single state routinely matches several of its districts.
+ *
+ * NOT ST_Touches keeps this consistent with ZIP_AREA_SPATIAL_PREDICATE. The 1%
+ * floor would mask a zero-area touch anyway, but correctness should not depend
+ * on a threshold to hide a row that never belonged in the result.
+ *
+ * The old numeric-FIPS guard (`geo_id ~ '^[0-9]{2}$'`) is gone with G4000, and
+ * with it the national 'US' outline row that guard existed to exclude — G5200
+ * has no equivalent nationwide row.
  */
 export function buildZipStatesQuery(): string {
   return `${ZCTA_CTE}
-    SELECT gb.geo_id AS fips
+    SELECT DISTINCT gb.state AS fips
     FROM essentials.geofence_boundaries gb
-    WHERE gb.mtfcc = 'G4000'
-      AND gb.geo_id ~ '^[0-9]{2}$'
+    WHERE gb.mtfcc = 'G5200'
+      AND gb.state IS NOT NULL
       AND gb.geometry OPERATOR(public.&&) (SELECT g FROM zcta)
       AND public.ST_Intersects(gb.geometry, (SELECT g FROM zcta))
+      AND NOT public.ST_Touches(gb.geometry, (SELECT g FROM zcta))
       AND ${ZIP_SHARE_EXPR} >= ${MULTI_STATE_SHARE_FLOOR}
     ORDER BY 1`;
 }
