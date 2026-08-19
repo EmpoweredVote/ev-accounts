@@ -1,7 +1,7 @@
 # Austin TX / Travis County deep seed — wave 1 landed, wave 2 open
 
 Created 2026-08-18. Wave 1 applied to prod as migrations **1827** (seats) + **1828** (people/occupancy)
-+ **1829** (20 portraits). Roster and sourcing: `backend/data/seed-austin-2026/ROSTERS.md`.
++ **1829** (20 portraits) + **1830** (final 3). Roster and sourcing: `backend/data/seed-austin-2026/ROSTERS.md`.
 Contact sheet reviewed before import: https://claude.ai/code/artifact/f98aaa45-7aa6-415d-aa30-d3cb6a5f39e2
 
 ## Wave 1 — DONE and verified
@@ -46,20 +46,38 @@ Still outstanding for wave 1 scope: the **banner** (candidate asset identified �
 `Austin City Council - Web_austin-city-hall-council.jpg` on the same Widen DAM) and **stances**
 (city seats only, now unblocked since seating is done).
 
-## 🔴 Open: portraits for the 3 remaining officials — press sweep chosen
+## ✅ CLOSED: portraits — 23 of 23 seats (migrations 1829 + 1830)
 
-Sheriff **Sally Hernandez**, Tax Assessor-Collector **Celia Israel**, County Treasurer
-**Dolores Ortega Carter**. Each sits on a domain separate from the main county site and none
-publishes a portrait of the officeholder — a genuine absence, not a failed fetch. Already checked and
-dry: `tcsheriff.org` (home + `/about/office-of-the-sheriff`), `tax-office.traviscountytx.gov`,
-`/treasurer` on the main domain. `/sheriff`, `/tax-assessor-collector`, `/county-clerk` and
-`/county-treasurer` all **404** on `traviscountytx.gov`.
+15 clean downscales, 8 soft flagged `REPLACE`, 1 public domain. Every Austin/Travis seat renders a
+portrait; the gate asserts it directly with `photoCoverage.HAS_RENDERABLE_PHOTO_SQL`.
 
-Next lead, per Chris: **local press** — KUT, Austin Monitor, Community Impact, Austin
-American-Statesman. Rationale: the Newton cohort was wrongly written off as dead until `patch.com`
-per-person candidate profiles turned up portraits. 🔴 **The credit line is the licence test** —
-"Courtesy of <name>" is OK, a photographer credit or "Credit:" is a REFUSE, no credit is UNKNOWN.
-Grep the raw HTML near the image FILENAME; a figcaption regex has missed a photographer credit twice.
+🔴 **1829 recorded 3 officials as "no portrait found anywhere". THAT WAS WRONG, and two of the
+three were my own method's fault.** Both failure modes generalise — this is the lesson from this wave:
+
+* **A GUESSED URL THAT 404s IS INDISTINGUISHABLE FROM AN ABSENT PORTRAIT.** Sheriff Sally Hernandez
+  had a 1000x1000 official uniform portrait on `traviscountytx.gov` the whole time, at
+  `/topics/forensic-mental-health-planning/sheriff-sally-hernandez`. The first sweep probed `/sheriff`
+  (404) and concluded absence. **Discover links from pages that resolve; do not enumerate guesses.**
+* 🔴 **A SIZE FLOOR IS INDISTINGUISHABLE FROM AN EMPTY SITE.** Treasurer Dolores Ortega Carter's
+  official portrait is at `/images/county_treasurer/ortega-carter.jpg`, linked from `/treasurer`
+  (not `/county-treasurer`, which 404s) — and it is **160x186**, so the probe's `>=200px` filter
+  discarded it silently. **Measure and report every candidate; filter at the DECISION, never at the
+  fetch.**
+* Only Celia Israel was genuinely absent from county domains. Resolved from Wikimedia Commons:
+  **LBJ Library photograph DIG13787-071, PUBLIC DOMAIN** (US government work) — the cleanest licence
+  in the wave.
+
+🔴 **RESOLUTION DOES NOT OUTRANK COMPOSITION.** A 1451x1927 CC BY-SA 4.0 photo of Israel was
+rejected in favour of the 1104x1289 public-domain one: the larger file was a rally shot with her mouth
+open mid-speech, a microphone in frame and protest banners behind. Bigger and adequately licensed is
+still not a headshot.
+
+Soft rows worth re-hunting if a better source ever appears (all flagged `REPLACE` with source
+dimensions in `photo_license`): Ortega Carter **4.05x** (softest in the wave), Andy Brown / Velva Price
+/ Dyana Limon-Mercado 3.0x, José Garza 2.5x, Travillion 2.64x, Ann Howard 1.88x, Delia Garza 1.5x.
+
+Two caveats deliberately written into `photo_license` rather than hidden: Israel's photo is an **event
+photograph, not an official portrait**, and dates to **c.2015-2016**, predating her 2025 term.
 
 ## ✅ RESOLVED by another session — the `check:reachability` break
 
