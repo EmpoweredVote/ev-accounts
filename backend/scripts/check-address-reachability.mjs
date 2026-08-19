@@ -36,9 +36,16 @@
  * resolution (essentialsBrowseService.ts, electionService.ts), so those paths under-match such
  * districts. This script inherits the stricter mapping, which means an X%-mtfcc JUDICIAL district
  * could in principle be reported UNREACHABLE here while address search resolves it fine. Verified
- * this produces no false positive in the current baseline: the IN judicial rows resolve through the
- * G4000 catch-all, and the two genuinely UNREACHABLE ones (geo_id 1800001/1800002) have no geofence
- * of any kind. Re-check this note if a JUDICIAL bucket ever appears unexpectedly.
+ * this produces no false positive in the current baseline.
+ *
+ * 🔴 CORRECTED 2026-08-19. This note previously said the IN judicial rows "resolve through the G4000
+ * catch-all" and that geo_id 1800001/1800002 were "genuinely UNREACHABLE ... no geofence of any kind".
+ * The second half was wrong, and it had two false positives sitting in the UNREACHABLE baseline
+ * because of it. Both rows are Indiana Appeals Court seats with 7-char geo_ids and NO polygon, and
+ * production returns them for a Bloomington address anyway — L. M Bailey and Cale J Bradford both
+ * appear in the live response — because buildStatewideQuery admits JUDICIAL rows whose geo_id is not
+ * 5 digits. They are reachable; they are simply not reachable SPATIALLY. Reachability now accounts
+ * for that via STATEWIDE_RESOLVED below, and their stale baseline allowance has been removed.
  *
  * WHAT IS CHECKED
  *
@@ -162,10 +169,29 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
 
 // One CTE the three baselined checks all read from: per district, is it reachable, does it have a
 // usable polygon, and is it occupied?
+/**
+ * A STATE-LEVEL COURT is reachable by address, but NOT through a polygon of its own.
+ *
+ * essentials.districts models state supreme / appeals / tax courts as JUDICIAL rows whose geo_id is
+ * the 2-char state FIPS; county-level courts (circuit, superior) carry the 5-digit county FIPS and DO
+ * resolve spatially. buildStatewideQuery in districtQueries.ts draws exactly that line —
+ * `district_type != 'JUDICIAL' OR LENGTH(geo_id) != 5` — and returns the state-level ones for the
+ * address's state alongside the Governor and the Senators.
+ *
+ * This predicate mirrors that rule, so those seats are not reported UNREACHABLE for lacking a polygon
+ * they were never meant to have. Same reasoning the membership-basis exclusion below already applies:
+ * the check must model the mechanism that actually resolves the seat.
+ *
+ * A JUDICIAL row with a NULL geo_id (the ~504 CA rows) is deliberately NOT covered — `length(NULL)`
+ * is NULL, so it stays in whatever bucket it is in today. Those are a real backlog, not a modelling
+ * artefact, and this change must not quietly absolve them.
+ */
+const STATEWIDE_RESOLVED = `(d.district_type = 'JUDICIAL' AND length(d.geo_id) <> 5 AND d.state IS NOT NULL)`;
+
 const CLASSIFY = `
   WITH g AS (
     SELECT d.id, lower(d.state) AS st, d.district_type AS dt, d.label, d.geo_id,
-           bool_or(${GUARD}) AS reachable,
+           bool_or(${GUARD}) OR bool_or(${STATEWIDE_RESOLVED}) AS reachable,
            bool_or(gp.geometry IS NOT NULL
                    AND public.ST_IsValid(gp.geometry)
                    AND NOT public.ST_IsEmpty(gp.geometry)) AS good_geom
@@ -297,6 +323,35 @@ async function membershipGeometryInvariant() {
   return rows;
 }
 
+/**
+ * STATEWIDE_UNRESOLVED — the positive counterpart to STATEWIDE_RESOLVED above.
+ *
+ * Excusing state-level courts from the polygon check only stays honest if something still proves they
+ * ARE reachable. This replays buildStatewideQuery's own admission rule against every occupied
+ * state-level JUDICIAL district and reports the ones it would not return, so "reachable by the
+ * statewide path" is verified rather than asserted.
+ *
+ * ZERO TOLERANCE: unlike the polygon backlog there is nothing pre-existing to baseline here — a state
+ * supreme court that the statewide query cannot return is simply unreachable by any means.
+ */
+async function statewideUnresolved() {
+  const { rows } = await pool.query(
+    `SELECT lower(d.state) AS st, d.district_type AS dt, d.label, d.geo_id
+       FROM essentials.districts d
+      WHERE d.district_type = 'JUDICIAL'
+        AND length(d.geo_id) <> 5
+        AND d.representation_basis = 'residency'
+        AND EXISTS (SELECT 1 FROM essentials.offices o
+                      JOIN essentials.office_current_holder och ON och.office_id = o.id
+                      JOIN essentials.politicians p ON p.id = och.politician_id AND p.is_active
+                     WHERE o.district_id = d.id)
+        -- buildStatewideQuery keys on d.state; a NULL/blank state means it can never be returned.
+        AND coalesce(d.state, '') = ''
+      ORDER BY 1, 3`,
+  );
+  return rows;
+}
+
 function bucketKey(r) {
   return `${r.st || '-'}|${r.dt}`;
 }
@@ -308,6 +363,21 @@ function bucketKey(r) {
   }
 
   // Cheap and absolute: not baselined, not tolerated. Runs first so it fails fast.
+  const orphanCourts = await statewideUnresolved();
+  if (orphanCourts.length) {
+    console.error(
+      '\nFAIL — an occupied state-level court is reachable by NEITHER a polygon nor the statewide path:\n',
+    );
+    for (const r of orphanCourts) console.error(`  ${r.st}|${r.dt}  ${r.label}  geo_id=${r.geo_id}`);
+    console.error(
+      '\nThese rows are excused from the polygon check because a state supreme/appeals court has no\n'
+      + 'geometry of its own — buildStatewideQuery returns them by district_type + state instead. With\n'
+      + 'no usable state they are returned by nothing at all, so a sitting justice is unreachable by\n'
+      + 'any address. Give the district its state rather than relaxing this check.\n',
+    );
+    process.exitCode = 1;
+  }
+
   const leaked = await membershipGeometryInvariant();
   if (leaked.length) {
     console.error(
