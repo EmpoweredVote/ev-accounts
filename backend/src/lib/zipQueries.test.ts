@@ -116,8 +116,32 @@ describe('buildZipDistrictQuery', () => {
 describe('buildZipStatesQuery', () => {
   const sql = buildZipStatesQuery();
 
-  it('reads the state-outline layer, whose geo_id is the state FIPS', () => {
-    expect(sql).toContain("gb.mtfcc = 'G4000'");
+  it('reads the congressional-district layer, NOT the state outline', () => {
+    // G4000 is coarser than G5200 and the two disagree at borders. Measured on
+    // prod 2026-08-18 with the nationwide ZCTA layer loaded: 919 ZIPs were
+    // granted a second state's delegation on the G4000 share, and for 779 of
+    // them NO congressional district of that state covered any area at all.
+    //
+    // The worst case, ZIP 40820 (Benham KY): G5200 puts KY-05 at share
+    // 1.0000000000 and VA-09 at 0.0 (a zero-area boundary touch on the Black
+    // Mountain ridge) — summing to exactly 1 — while G4000 claimed Virginia
+    // covered 4.465%. That cleared the 1% floor and handed a Kentucky ZIP
+    // Virginia's entire statewide delegation: Spanberger, Warner, Kaine,
+    // Hashmi and Jones.
+    //
+    // Reading G5200 makes `states` agree with the returned U.S. Representative
+    // BY CONSTRUCTION, because it is the same layer and the same predicate that
+    // decides the congressional seat. That is the property worth having; it is
+    // not merely a more precise polygon.
+    expect(sql).toContain("gb.mtfcc = 'G5200'");
+    expect(sql).not.toContain("gb.mtfcc = 'G4000'");
+  });
+
+  it('selects the FIPS from `state`, which is where G5200 carries it', () => {
+    // The two layers disagree on where the state code lives, and mixing them up
+    // silently yields zero rows: G4000 has geo_id='51', state='VA' (postal),
+    // whereas G5200 has geo_id='5109' (the district) and state='51' (FIPS).
+    expect(sql).toContain('gb.state AS fips');
   });
 
   it('applies the 1% floor so a trivial state-line clip adds no delegation', () => {
@@ -129,10 +153,19 @@ describe('buildZipStatesQuery', () => {
     expect(sql).toContain('OPERATOR(public.&&)');
   });
 
-  it("excludes the national 'US' outline row that also lives in the G4000 layer", () => {
-    // Verified in prod: G4000 holds exactly one non-FIPS row, geo_id 'US'
-    // ("United States"), which covers every ZIP and is not a state.
-    expect(sql).toContain("gb.geo_id ~ '^[0-9]{2}$'");
+  it('excludes zero-area boundary touches', () => {
+    // Without this a district that merely shares a state line with the ZIP is
+    // an intersection. It cannot clear the 1% floor on its own, but excluding
+    // it keeps this query consistent with ZIP_AREA_SPATIAL_PREDICATE rather
+    // than relying on the floor to mask it.
+    expect(sql).toContain('NOT public.ST_Touches');
+  });
+
+  it('de-duplicates, because a state has many congressional districts', () => {
+    // G4000 returned at most one row per state. G5200 has 441 rows across 56
+    // states, so a ZIP sitting inside one state can match several of its
+    // districts; without DISTINCT the caller would see that state repeated.
+    expect(sql).toContain('DISTINCT');
   });
 });
 
