@@ -14,27 +14,105 @@
   },
   "austin_monitor_tags": {
     "_base": "https://austinmonitor.com/stories/tag/",
-    "Kirk Watson": { "slug": "state-senator-kirk-watson", "stories_page1": 17 },
-    "Natasha Harper-Madison": { "slug": "council-member-natasha-harper-madison", "stories_page1": 17 },
-    "Paige Ellis": { "slug": "council-member-paige-ellis", "stories_page1": 16 },
-    "Zohaib \"Zo\" Qadri": { "slug": "zo-qadri", "stories_page1": 15 },
-    "Vanessa Fuentes": { "slug": "vanessa-fuentes", "stories_page1": 14 },
-    "José \"Chito\" Vela": { "slug": "jose-chito-vela", "stories_page1": 13 },
-    "Ryan Alter": { "slug": "ryan-alter", "stories_page1": 11 },
-    "José Velásquez": { "slug": "jose-velasquez", "stories_page1": 8 },
-    "Krista Laine": { "slug": "krista-laine", "stories_page1": 7 },
-    "Mike Siegel": { "slug": "mike-siegel", "stories_page1": 6 },
-    "Marc Duchen": { "slug": "marc-duchen", "stories_page1": 6 }
+    "Kirk Watson": {
+      "slug": "state-senator-kirk-watson",
+      "stories_page1": 17
+    },
+    "Natasha Harper-Madison": {
+      "slug": "council-member-natasha-harper-madison",
+      "stories_page1": 17
+    },
+    "Paige Ellis": {
+      "slug": "council-member-paige-ellis",
+      "stories_page1": 16
+    },
+    "Zohaib \"Zo\" Qadri": {
+      "slug": "zo-qadri",
+      "stories_page1": 15
+    },
+    "Vanessa Fuentes": {
+      "slug": "vanessa-fuentes",
+      "stories_page1": 14
+    },
+    "José \"Chito\" Vela": {
+      "slug": "jose-chito-vela",
+      "stories_page1": 13
+    },
+    "Ryan Alter": {
+      "slug": "ryan-alter",
+      "stories_page1": 11
+    },
+    "José Velásquez": {
+      "slug": "jose-velasquez",
+      "stories_page1": 8
+    },
+    "Krista Laine": {
+      "slug": "krista-laine",
+      "stories_page1": 7
+    },
+    "Mike Siegel": {
+      "slug": "mike-siegel",
+      "stories_page1": 6
+    },
+    "Marc Duchen": {
+      "slug": "marc-duchen",
+      "stories_page1": 6
+    }
   },
   "ballotpedia_candidate_connection": {
     "_note": "Detector warning: EVERY Ballotpedia page contains the boilerplate strings 'Candidate Connection' and 'Campaign themes', so testing for those returns a uniform true and is a BROKEN detector. The discriminating signal is a real 'Key messages' block. Positive control: Mike_Siegel (first-person climate prose). Negative control: Kirk_Watson (nothing). 'has not yet completed' also appears on both and is likewise boilerplate.",
-    "has_survey": ["Mike_Siegel", "Krista_Laine", "Marc_Duchen"],
-    "no_survey": ["Kirk_Watson", "Zohaib_Qadri", "Paige_Ellis", "Ryan_Alter", "Vanessa_Fuentes"],
+    "has_survey": [
+      "Mike_Siegel",
+      "Krista_Laine",
+      "Marc_Duchen"
+    ],
+    "no_survey": [
+      "Kirk_Watson",
+      "Zohaib_Qadri",
+      "Paige_Ellis",
+      "Ryan_Alter",
+      "Vanessa_Fuentes"
+    ],
     "access": "Cross-origin fetch is CORS-blocked; navigate to the origin first, then same-origin fetch."
   },
   "press_free_to_read": [
     "https://www.kut.org  (public radio, no paywall)",
     "https://www.texastribune.org  (nonprofit newsroom; WebFetch got a 403 on one article — retry or use KUT)",
     "https://austinmonitor.com  (carries subscribe language; tag archives were readable)"
-  ]
+  ],
+  "council_voting_record": {
+    "url": "https://data.austintexas.gov/resource/3c89-i35a.json",
+    "harvester": "backend/scripts/harvest-austin-voting-record.mjs",
+    "what": "Socrata open dataset, no auth and no WAF. 71,885 per-member roll-call rows from 2023 forward. This is the per-member attribution Legistar does not publish.",
+    "join": "voter_name matches essentials.politicians.full_name EXACTLY for all 11 current seats, including diacritics and quoted nicknames (José \"Chito\" Vela, Zohaib \"Zo\" Qadri). The harvester still asserts the match and reports drift rather than trusting it.",
+    "signal": "63,960 of 71,885 votes are Yes. Unanimous items cannot separate members, so only the 143 items where a CURRENT member cast a recorded No or Abstain are useful. Absent / Off Dais / Withdrawn are not positions.",
+    "caveat": "A vote names an instrument and a position but carries NO reasoning, and many items are contract authorisations where a No may be about cost, process or timing rather than policy. Pair every hit with the member Council Message Board post on the same item before seating a chair.",
+    "topic_yield": {
+      "local-environment": 65,
+      "residential-zoning": 50,
+      "transportation-priorities": 20,
+      "public-safety-approach": 14,
+      "homelessness-response": 9,
+      "economic-development": 9,
+      "climate-change": 4,
+      "civil-rights": 3,
+      "housing": 2,
+      "childcare": 1,
+      "jail-capacity": 1
+    },
+    "dissents_by_member": {
+      "Marc Duchen": 78,
+      "Zohaib \"Zo\" Qadri": 26,
+      "Paige Ellis": 26,
+      "Kirk Watson": 25,
+      "Natasha Harper-Madison": 21,
+      "Vanessa Fuentes": 17,
+      "Ryan Alter": 17,
+      "José Velásquez": 16,
+      "Mike Siegel": 16,
+      "José \"Chito\" Vela": 10,
+      "Krista Laine": 8
+    },
+    "climate_negative": "Only 4 contested climate items, and nearly every climate dissent in the whole dataset is Mackenzie Kelly, a FORMER member. The current council is effectively unanimous on climate, so votes cannot discriminate there and the message board is the only climate path."
+  }
 }
