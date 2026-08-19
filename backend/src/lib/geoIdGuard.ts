@@ -26,7 +26,23 @@
  *   geo_ids. ZIPs resolve by AREA OVERLAP (resolveOfficialsInArea), never by
  *   geo_id — so admitting them here would attach arbitrary officials to a ZIP
  *   AND, because this clause is shared, to any address lookup as well.
- * ⚠ G4000 (state outlines) is DELIBERATELY *NOT* LISTED HERE — see below.
+ * G4000: state outlines. A statewide seat (Governor, Senator, state supreme
+ *   court) has no polygon of its own and is resolved by district_type + state in
+ *   buildStatewideQuery. Because G4000 ALSO reached those districts through this
+ *   catch-all, and the two result sets are concatenated without dedup, every
+ *   address lookup returned statewide officials TWICE: measured 2026-08-18
+ *   against prod, one Bloomington address returned 139 politicians with 28
+ *   DUPLICATED — both Indiana senators and four supreme court justices among
+ *   them. Now 111 with 0 duplicates.
+ *
+ *   ⚠ EXCLUDING THIS BREAKS check-address-reachability.mjs UNLESS THAT SCRIPT
+ *   MODELS THE STATEWIDE PATH. It defines reachability purely through this guard,
+ *   and 13 occupied state-level court districts (12 IN + 1 WI JUDICIAL, geo_id =
+ *   2-char state FIPS) satisfy it ONLY via their G4000 outline. A first attempt
+ *   on 2026-08-19 excluded G4000 without touching the script and turned master
+ *   CI red on the zero-tolerance ST_COVERS_ROUNDTRIP check; it was reverted the
+ *   same day and re-landed here together with STATEWIDE_RESOLVED in that script.
+ *   Keep the two in step.
  *
  * SINGLE SOURCE OF TRUTH — districtQueries.ts interpolates
  * FALLBACK_EXCLUDED_MTFCC_SQL_LIST rather than restating the list. Guarded by
@@ -34,40 +50,8 @@
  */
 export const FALLBACK_EXCLUDED_MTFCCS: readonly string[] = [
   'G5210', 'G5220', 'G5200', 'G4020', 'G4040', 'G4110', 'G4120',
-  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350',
+  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350', 'G4000',
 ];
-
-/**
- * WHY G4000 IS NOT IN THE LIST ABOVE — and what is owed.
- *
- * It arguably should be. A statewide seat (Governor, Senator, state supreme
- * court) has no polygon of its own and is resolved by district_type + state in
- * buildStatewideQuery. Because G4000 ALSO reaches those districts through the
- * catch-all, and the two result sets are concatenated without dedup, every
- * address lookup returns statewide officials twice: measured 2026-08-18 against
- * prod, one Bloomington address returned 139 politicians with 28 DUPLICATED —
- * both Indiana senators and four supreme court justices among them.
- *
- * Excluding it here was tried on 2026-08-19 and REVERTED the same day, because
- * `scripts/check-address-reachability.mjs` defines reachability purely through
- * this guard. Statewide seats satisfy it ONLY via their G4000 polygon, so the
- * exclusion flipped ~105 baseline buckets — every state's STATE_EXEC and
- * NATIONAL_UPPER, ~250+ districts — and tripped the zero-tolerance
- * ST_COVERS_ROUNDTRIP check. Those seats are NOT actually unreachable (prod
- * confirmed they still resolve via buildStatewideQuery); the SCRIPT'S MODEL is
- * what does not know about the statewide path.
- *
- * ▶ OWED: teach check-address-reachability.mjs that statewide district_types are
- * reachable via the statewide predicate rather than a polygon, then exclude
- * G4000 here in the same change so the dedup fix and the guard update are
- * reviewed together.
- *
- * MEANWHILE the ZIP/area path excludes G4000 in its own predicate
- * (ZIP_AREA_SPATIAL_PREDICATE in zipQueries.ts), because there the bug is worse
- * than duplication: a ZIP clipping a neighbouring state by 0.013% of its area
- * (46360, Michigan City) pulled in Michigan's ENTIRE executive branch, bypassing
- * the deliberate 1% multi-state floor.
- */
 
 /** The same list rendered for a SQL `IN (...)` clause. */
 export const FALLBACK_EXCLUDED_MTFCC_SQL_LIST: string =
