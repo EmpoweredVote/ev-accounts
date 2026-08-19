@@ -191,6 +191,16 @@ const STATEWIDE_RESOLVED = `(d.district_type = 'JUDICIAL' AND length(d.geo_id) <
 const CLASSIFY = `
   WITH g AS (
     SELECT d.id, lower(d.state) AS st, d.district_type AS dt, d.label, d.geo_id,
+           -- TWO notions, deliberately separate. reachable_spatially is what the GEOMETRY-shaped
+           -- checks (BAD_GEOMETRY, DEAD_GEOGRAPHY) must key on: they ask questions about a polygon,
+           -- and a statewide seat has none. reachable is the broader "a resident can surface this
+           -- person at all", which is the only thing UNREACHABLE should judge.
+           --
+           -- Conflating them is a real bug I shipped on 2026-08-19: marking the two Indiana Appeals
+           -- Court rows reachable put them into BAD_GEOMETRY as a NEW bucket, because they have no
+           -- geofence row at all. "Bad geometry" is a category error for a seat that is not supposed
+           -- to have any.
+           bool_or(${GUARD}) AS reachable_spatially,
            bool_or(${GUARD}) OR bool_or(${STATEWIDE_RESOLVED}) AS reachable,
            bool_or(gp.geometry IS NOT NULL
                    AND public.ST_IsValid(gp.geometry)
@@ -219,7 +229,7 @@ const CLASSIFY = `
       JOIN essentials.offices off ON off.district_id = g.id
       LEFT JOIN essentials.office_current_holder och ON och.office_id = off.id
       LEFT JOIN essentials.politicians p ON p.id = och.politician_id
-     GROUP BY g.id, g.st, g.dt, g.label, g.geo_id, g.reachable, g.good_geom
+     GROUP BY g.id, g.st, g.dt, g.label, g.geo_id, g.reachable, g.reachable_spatially, g.good_geom
   )
 `;
 
@@ -229,12 +239,21 @@ async function classify() {
      SELECT 'UNREACHABLE' AS chk, st, dt, label, geo_id FROM o
        WHERE active_holders > 0 AND coalesce(reachable, false) = false
      UNION ALL
+     -- Stays on the broader reachable DELIBERATELY. "Offices but nobody active" is worth
+     -- reporting for a statewide seat too, and the baseline already carries in|JUDICIAL: 2
+     -- on that basis — two Indiana court districts with offices and no active holder.
+     -- Narrowing this to reachable_spatially would drop them out of every check silently,
+     -- which is a coverage loss disguised as a green build.
      SELECT 'DEAD_GEOGRAPHY', st, dt, label, geo_id FROM o
        WHERE coalesce(reachable, false) = true AND offices > 0
          AND active_holders = 0 AND vacant_offices = 0
      UNION ALL
+     -- This one asks a question ABOUT A POLYGON, so it keys on reachable_spatially. A
+     -- statewide seat has no geometry by design, so "polygon is null/invalid/empty" is a
+     -- category error for it — keying this on reachable put the two Indiana Appeals Court
+     -- rows (no geofence at all) into BAD_GEOMETRY as a NEW bucket on 2026-08-19.
      SELECT 'BAD_GEOMETRY', st, dt, label, geo_id FROM o
-       WHERE active_holders > 0 AND coalesce(reachable, false) = true
+       WHERE active_holders > 0 AND coalesce(reachable_spatially, false) = true
          AND coalesce(good_geom, false) = false
      UNION ALL
      SELECT 'REPS_FILTER_HIDDEN', st, dt, label, geo_id FROM o
