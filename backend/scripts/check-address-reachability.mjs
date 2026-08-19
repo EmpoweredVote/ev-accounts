@@ -119,7 +119,42 @@ function loadGuard() {
     );
     process.exit(2);
   }
-  return m[1];
+  let guard = m[1];
+
+  // The guard is a TEMPLATE LITERAL, so it may interpolate sibling constants. Reading it as raw
+  // source therefore yields `${NAME}` verbatim, and Postgres rejects that with
+  // `syntax error at or near "$"` — which is exactly how this job broke on 2026-08-19, when the
+  // MTFCC exclusion list was hoisted into FALLBACK_EXCLUDED_MTFCC_SQL_LIST to stop it drifting
+  // between geoIdGuard.ts and districtQueries.ts.
+  //
+  // Resolve the one interpolation shape this file uses: a string constant built by joining a
+  // string-array constant. Anything else is refused below rather than guessed at.
+  const listMatch = src.match(
+    /export const FALLBACK_EXCLUDED_MTFCCS\s*:\s*readonly string\[\]\s*=\s*\[([\s\S]*?)\];/,
+  );
+  if (listMatch) {
+    const codes = [...listMatch[1].matchAll(/'([^']+)'/g)].map((x) => x[1]);
+    if (codes.length > 0) {
+      guard = guard.replaceAll(
+        '${FALLBACK_EXCLUDED_MTFCC_SQL_LIST}',
+        codes.map((c) => `'${c}'`).join(','),
+      );
+    }
+  }
+
+  // Anything still unresolved would reach Postgres as a literal `${...}`. Fail loudly: a guard
+  // that cannot be parsed is not a guard, and this job's whole value is that it fails visibly.
+  const leftover = guard.match(/\$\{[^}]*\}/g);
+  if (leftover) {
+    console.error(
+      `FAIL: MTFCC_DISTRICT_TYPE_GUARD still contains unresolved interpolation(s): ${[...new Set(leftover)].join(', ')}.\n` +
+      'Teach loadGuard() in scripts/check-address-reachability.mjs how to resolve them — ' +
+      'do NOT inline the value back into geoIdGuard.ts, which would re-duplicate the list this job exists to keep single.',
+    );
+    process.exit(2);
+  }
+
+  return guard;
 }
 
 const GUARD = loadGuard();

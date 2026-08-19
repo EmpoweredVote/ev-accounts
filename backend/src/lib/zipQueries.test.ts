@@ -62,6 +62,16 @@ describe('ZIP_AREA_SPATIAL_PREDICATE', () => {
     expect(ZIP_AREA_SPATIAL_PREDICATE).toContain("gb.mtfcc <> 'G6350'");
   });
 
+  it("excludes the state-outline layer so a neighbouring state cannot bypass the 1% floor", () => {
+    // ZIP 46360 (Michigan City) clips Michigan by 0.013% of its area. With G4000
+    // admitted, that returned Michigan's entire executive branch — Nessel, Benson,
+    // Gilchrist, Peters — for an Indiana ZIP, with a bogus 0.013% share, because
+    // they came through the DISTRICT query rather than the statewide one and so
+    // never met MULTI_STATE_SHARE_FLOOR. Excluded here rather than globally: see
+    // the note in geoIdGuard.ts.
+    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain("gb.mtfcc <> 'G4000'");
+  });
+
   it('contains no OR — one predicate per branch is the index-driven shape', () => {
     expect(ZIP_AREA_SPATIAL_PREDICATE).not.toMatch(/\bOR\b/);
   });

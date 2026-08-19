@@ -52,8 +52,23 @@ export const ZCTA_CTE = `WITH zcta AS (
  * Other ZCTAs are filtered out explicitly: roughly 30 neighbouring ZIP polygons
  * intersect any given one. The geoIdGuard exclusion already stops them producing
  * rows, but without this we would still pay to intersect them.
+ *
+ * G4000 (state outlines) is excluded HERE rather than in FALLBACK_EXCLUDED_MTFCCS,
+ * and the difference matters. Statewide seats are resolved separately, by
+ * district_type + state, with a >=1% share floor for a second state. Letting the
+ * state outline through this predicate smuggles a neighbouring state's whole
+ * delegation past that floor: ZIP 46360 (Michigan City) clips Michigan by 0.013%
+ * of its area and returned Nessel, Benson, Gilchrist and Peters for an Indiana
+ * ZIP — with a bogus 0.013% share attached, because they arrived through the
+ * DISTRICT query rather than the statewide one.
+ *
+ * It is scoped to this predicate because excluding it globally breaks
+ * check-address-reachability.mjs, which treats a statewide seat's G4000 polygon as
+ * its only proof of reachability. See the long note in geoIdGuard.ts for what is
+ * owed there.
  */
 export const ZIP_AREA_SPATIAL_PREDICATE = `gb.mtfcc <> 'G6350'
+    AND gb.mtfcc <> 'G4000'
     AND gb.geometry OPERATOR(public.&&) (SELECT g FROM zcta)
     AND public.ST_Intersects(gb.geometry, (SELECT g FROM zcta))
     AND NOT public.ST_Touches(gb.geometry, (SELECT g FROM zcta))`;
