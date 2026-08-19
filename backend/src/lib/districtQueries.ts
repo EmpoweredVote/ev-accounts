@@ -126,8 +126,12 @@ export const GEOFENCE_DISTRICT_JOIN = `
         OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
         OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
         -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
-        -- JUDICIAL added for appellate districts whose geometry is a union of counties and so
-        -- has no TIGER layer of its own (e.g. WI Court of Appeals District II, 12 counties).
+        -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
+        -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT here
+        -- and in MTFCC_DISTRICT_TYPE_GUARD; the two must stay in step, and the X catch-all in
+        -- geoIdGuard.ts does NOT admit JUDICIAL, so relying on a catch-all would leave these
+        -- reachable through this join but UNREACHABLE to check-address-reachability.mjs.
+        OR (gb.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')
         OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id.
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
@@ -213,10 +217,34 @@ export function buildStatewideQuery(): string {
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND (p.is_active = true OR o.is_vacant = true)
     ${INCUMBENTS_ONLY_CLAUSE}
-    -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
-    -- county FIPS geo_ids. Those are matched via geofence intersection.
-    -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
-    AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
+    -- JUDICIAL: a court belongs here only if it is elected by the WHOLE state. The test is whether
+    -- the court has geography of its own, NOT how long its geo_id happens to be.
+    --
+    -- This was a geo_id-LENGTH test — "county courts carry a 5-digit FIPS, everything else is
+    -- statewide". That misread every Indiana Court of Appeals district: judges of Districts 1, 2 and 3
+    -- stand for retention before THEIR DISTRICT'S voters only, but their geo_ids are 7 characters, so
+    -- the length rule returned all of them for every Indiana address — a District 1 judge shown to a
+    -- District 3 voter. Only Districts 4 and 5 (at large, one judge from each of the first three) and
+    -- the Supreme Court genuinely retain statewide.
+    --
+    -- The honest test: a JUDICIAL district is statewide iff it has no geofence below the state
+    -- outline. G4000 is excluded from the EXISTS because a statewide seat legitimately resolves
+    -- against its state outline; any OTHER layer means the court has its own polygon and must be
+    -- matched spatially instead (migration 1832 gave Indiana's Districts 1-3 X0029 polygons).
+    --
+    -- ⚠ d.geo_id IS NOT NULL is load-bearing. ~504 California JUDICIAL rows carry a NULL geo_id;
+    -- under the old rule LENGTH(NULL) != 5 is NULL, so they were excluded. Without this clause the
+    -- NOT EXISTS would be vacuously TRUE and all 504 would surface on every California address.
+    -- Measured against prod: with it, this rule admits exactly the same rows as the old one
+    -- (CA 0, IN 16, WI 1); without it, CA jumps 0 -> 504.
+    --
+    -- Keep in step with STATEWIDE_RESOLVED in scripts/check-address-reachability.mjs.
+    AND (
+      d.district_type != 'JUDICIAL'
+      OR (d.geo_id IS NOT NULL
+          AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gsw
+                           WHERE gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'))
+    )
     ORDER BY COALESCE(p.id, o.id)
   `;
 }

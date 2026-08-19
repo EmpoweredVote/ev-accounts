@@ -83,6 +83,11 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'X0001' AND d.district_type IN ('LOCAL','COUNTY'))
     OR (gp.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
     OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
+    -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
+    -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT rather
+    -- than left to the X catch-all below, which admits only LOCAL/COUNTY and would therefore leave
+    -- every one of these seats unreachable by address.
+    OR (gp.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
     -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
     -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.
