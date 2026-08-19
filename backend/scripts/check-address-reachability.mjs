@@ -167,6 +167,27 @@ function loadGuard() {
 const GUARD = loadGuard();
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
+/**
+ * Raise the statement timeout for THIS SESSION.
+ *
+ * The ST_COVERS_ROUNDTRIP probe runs `--sample` (default 500) point-in-polygon round trips through
+ * the full guard join, and it has always sat close to the app role's 30s statement_timeout — the
+ * comment in roundTrip() records an earlier version tipping over it. It finally did on 2026-08-19,
+ * when migration 1835 added four Court of Appeals districts: the sample is `ORDER BY d.id LIMIT n`
+ * over a uuid, so new districts change WHICH 500 rows get probed, not just how many.
+ *
+ * ⚠ It must be an in-session SET. Supavisor (the Supabase pooler CI connects through) silently
+ * IGNORES `options=-c statement_timeout=...` on the connection string — it still reports 30s. Same
+ * finding as scripts/load-zcta-boundaries.sh.
+ *
+ * This raises the ceiling for a CI gate only. It is NOT masking a slow read path: measured against
+ * prod the same day, a real address point-in-polygon across every geofence row plans as an Index
+ * Scan on idx_geofence_boundaries_geometry and runs in 52 ms.
+ */
+pool.on('connect', (client) => {
+  client.query("SET statement_timeout = '180s'").catch(() => { /* server may forbid; probe will fail loudly */ });
+});
+
 // One CTE the three baselined checks all read from: per district, is it reachable, does it have a
 // usable polygon, and is it occupied?
 /**
@@ -174,9 +195,15 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
  *
  * essentials.districts models state supreme / appeals / tax courts as JUDICIAL rows whose geo_id is
  * the 2-char state FIPS; county-level courts (circuit, superior) carry the 5-digit county FIPS and DO
- * resolve spatially. buildStatewideQuery in districtQueries.ts draws exactly that line —
- * `district_type != 'JUDICIAL' OR LENGTH(geo_id) != 5` — and returns the state-level ones for the
- * address's state alongside the Governor and the Senators.
+ * resolve spatially. buildStatewideQuery in districtQueries.ts draws that line and this predicate
+ * mirrors it: a JUDICIAL district is statewide iff it has NO geofence below the state outline.
+ *
+ * ⚠ Both used to test `LENGTH(geo_id) != 5`. That was a proxy for "has its own geography", and it
+ * broke on Indiana's Court of Appeals: Districts 1-3 retain BY DISTRICT but carry 7-char geo_ids, so
+ * the length rule called them statewide and every Indiana address got all of them. Once migration
+ * 1832 gave them real X0029 polygons the length rule would ALSO have kept absolving them here — a
+ * deleted polygon would then show as neither UNREACHABLE (statewide-resolved) nor BAD_GEOMETRY (not
+ * spatially reachable), i.e. silently. The EXISTS test has no such blind spot.
  *
  * This predicate mirrors that rule, so those seats are not reported UNREACHABLE for lacking a polygon
  * they were never meant to have. Same reasoning the membership-basis exclusion below already applies:
@@ -186,7 +213,9 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
  * is NULL, so it stays in whatever bucket it is in today. Those are a real backlog, not a modelling
  * artefact, and this change must not quietly absolve them.
  */
-const STATEWIDE_RESOLVED = `(d.district_type = 'JUDICIAL' AND length(d.geo_id) <> 5 AND d.state IS NOT NULL)`;
+const STATEWIDE_RESOLVED = `(d.district_type = 'JUDICIAL' AND d.state IS NOT NULL AND d.geo_id IS NOT NULL
+   AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gsw
+                    WHERE gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'))`;
 
 const CLASSIFY = `
   WITH g AS (
@@ -358,7 +387,13 @@ async function statewideUnresolved() {
     `SELECT lower(d.state) AS st, d.district_type AS dt, d.label, d.geo_id
        FROM essentials.districts d
       WHERE d.district_type = 'JUDICIAL'
-        AND length(d.geo_id) <> 5
+        -- Same "statewide iff it has no geography of its own" test as STATEWIDE_RESOLVED and
+        -- buildStatewideQuery. A court that owns a polygon (Indiana's Court of Appeals Districts
+        -- 1-3, X0029) resolves spatially and is judged by the polygon checks instead, so it must
+        -- not be dragged into a check about the statewide path.
+        AND d.geo_id IS NOT NULL
+        AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gsw
+                         WHERE gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000')
         AND d.representation_basis = 'residency'
         AND EXISTS (SELECT 1 FROM essentials.offices o
                       JOIN essentials.office_current_holder och ON och.office_id = o.id

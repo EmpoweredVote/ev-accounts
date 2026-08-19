@@ -64,12 +64,24 @@ describe('buildDistrictQuery', () => {
 });
 
 describe('buildStatewideQuery', () => {
-  it('admits JUDICIAL but excludes 5-digit county-court geo_ids', () => {
-    // State supreme/appellate courts are statewide; circuit and superior courts
-    // carry 5-digit county FIPS geo_ids and resolve by geofence instead.
+  it('admits a JUDICIAL seat only when it has no geography of its own', () => {
+    // Was `LENGTH(d.geo_id) != 5` — a proxy for "county courts resolve by geofence,
+    // everything else is statewide". It misclassified Indiana's Court of Appeals:
+    // Districts 1-3 retain BY DISTRICT but carry 7-char geo_ids, so every Indiana
+    // address got all of them. The rule now asks the real question — does this court
+    // own a polygon below the state outline?
     const sql = buildStatewideQuery();
     expect(sql).toContain("'JUDICIAL'");
-    expect(sql).toContain("AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)");
+    expect(sql).toContain("gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'");
+    expect(sql).not.toContain('LENGTH(d.geo_id) != 5');
+  });
+
+  it('keeps NULL-geo_id judicial rows OUT of the statewide path', () => {
+    // ~504 California JUDICIAL rows carry a NULL geo_id. Under the old rule
+    // LENGTH(NULL) != 5 evaluated to NULL and excluded them. A bare NOT EXISTS is
+    // vacuously TRUE for them, so without this clause all 504 would surface on
+    // every California address. Measured against prod: CA 0 -> 504.
+    expect(buildStatewideQuery()).toContain('d.geo_id IS NOT NULL');
   });
 
   it('admits DC citywide seats by geo_id, never by district_type', () => {
@@ -79,8 +91,20 @@ describe('buildStatewideQuery', () => {
     expect(sql).not.toContain("d.district_type IN ('CITY_COUNCIL'");
   });
 
-  it('does not reference the geofence table — a statewide seat has no polygon', () => {
-    expect(buildStatewideQuery()).not.toContain('geofence_boundaries');
+  it('never MATCHES a statewide seat against a polygon', () => {
+    // The original assertion was "does not reference geofence_boundaries at all". That
+    // held while statewide-ness was inferred from geo_id length. It now needs the table
+    // to ask whether a court owns geography — but ONLY as an anti-join discriminator.
+    // What must stay true is the design itself: a statewide seat is admitted by
+    // district_type + state, never by intersecting its polygon. So the table may appear
+    // exactly once, inside the NOT EXISTS, and never in FROM/JOIN position.
+    const sql = buildStatewideQuery();
+    expect(sql).not.toMatch(/(FROM|JOIN)\s+essentials\.geofence_boundaries\s+gbo?\b/);
+    expect(sql).not.toContain('ST_Covers');
+    expect(sql).not.toContain('ST_Intersects');
+    const refs = sql.match(/geofence_boundaries/g) ?? [];
+    expect(refs).toHaveLength(1);
+    expect(sql).toMatch(/NOT EXISTS \(SELECT 1 FROM essentials\.geofence_boundaries gsw/);
   });
 
   it('scopes to the bound state while letting federal offices through', () => {

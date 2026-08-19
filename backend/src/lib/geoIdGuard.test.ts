@@ -41,7 +41,23 @@ describe('fallback MTFCC exclusion list', () => {
     // never drift apart again.
     const script = read('../../scripts/check-address-reachability.mjs');
     expect(script).toContain('STATEWIDE_RESOLVED');
-    expect(script).toContain("d.district_type = 'JUDICIAL' AND length(d.geo_id) <> 5");
+    // The predicate must be the "has no geography of its own" test, NOT the old
+    // `length(geo_id) <> 5` proxy — see the X0029 tests below for why.
+    expect(script).toContain("gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'");
+    expect(script).not.toContain('length(d.geo_id) <> 5');
+  });
+
+  it('defines "statewide court" identically in the script and in buildStatewideQuery', () => {
+    // Two copies of one rule. When they disagreed, a seat could be reported reachable
+    // by the gate while the read path resolved it differently (or not at all).
+    const script = read('../../scripts/check-address-reachability.mjs');
+    const queries = read('./districtQueries.ts');
+    const predicate = "gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'";
+    expect(script).toContain(predicate);
+    expect(queries).toContain(predicate);
+    // NULL geo_id must stay excluded in BOTH, or ~504 CA judges surface on every CA address.
+    expect(script).toContain('d.geo_id IS NOT NULL');
+    expect(queries).toContain('d.geo_id IS NOT NULL');
   });
 
   it('renders the list as a single-quoted SQL IN list', () => {
@@ -82,5 +98,38 @@ describe('fallback MTFCC exclusion list', () => {
     const src = read('./essentialsService.ts');
     expect(src).not.toContain("'G5400','G5410','G5420','G5200V26'");
     expect(src).toContain('buildDistrictQuery(');
+  });
+});
+
+describe('X0029 — appellate districts derived as unions of counties', () => {
+  it('admits X0029 for JUDICIAL explicitly, not via the X catch-all', () => {
+    // Indiana Court of Appeals Districts 1-3 retain BY DISTRICT, and their polygons are
+    // unions of whole counties, so they have no TIGER layer of their own (migration 1832).
+    // The X catch-all in this guard admits only LOCAL/COUNTY, so without an explicit
+    // clause every one of these seats would be UNREACHABLE by address.
+    expect(MTFCC_DISTRICT_TYPE_GUARD).toContain(
+      "(gp.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')",
+    );
+  });
+
+  it('does NOT let the X catch-all admit JUDICIAL in this guard', () => {
+    // districtQueries.ts's own catch-all DOES include JUDICIAL; this one must not,
+    // otherwise the explicit clause above is untested cover for a silent divergence.
+    const catchAll = MTFCC_DISTRICT_TYPE_GUARD.split('\n').find(
+      (l) => l.includes("LIKE 'X%'") && l.includes('NOT IN'),
+    );
+    expect(catchAll).toBeDefined();
+    expect(catchAll).not.toContain('JUDICIAL');
+  });
+
+  it('admits X0029 for JUDICIAL in the geofence district join too', () => {
+    const queries = read('./districtQueries.ts');
+    expect(queries).toContain("(gb.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')");
+  });
+
+  it('keeps X0029 out of the fallback exclusion list', () => {
+    // X-codes never reach the fallback (it excludes `LIKE 'X%'`), so listing X0029
+    // there would be misleading noise rather than protection.
+    expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X0029');
   });
 });
