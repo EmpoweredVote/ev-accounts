@@ -1,20 +1,25 @@
 import { Router } from 'express';
 import { optionalAuth } from '../middleware/auth.js';
-import { getCandidatesByZip } from '../lib/candidateService.js';
-import { getRepresentativesByAddress, getPoliticiansFlatList } from '../lib/essentialsService.js';
+import { getRepresentativesByAddress, getPoliticiansFlatList, getOfficialsByZip } from '../lib/essentialsService.js';
 import type { Request, Response } from 'express';
 
 /**
- * Essentials candidates routes — ZIP-based candidate discovery for Essentials frontend.
+ * Essentials candidates routes — location-based officeholder discovery.
  *
  * Architecture rules enforced here:
  *   - Service-role client is NOT used directly — architecture.test.ts bans it from routes/
- *   - All database access goes through lib/candidateService.ts
- *   - optionalAuth — no authentication required for public candidate discovery
+ *   - All database access goes through src/lib/
+ *   - optionalAuth — no authentication required for public discovery
  *
- * CRITICAL: Only ACTIVE candidates are returned. Inactive (demoted) candidates
- * are excluded from local discovery — getCandidatesByZip enforces is_active = true.
- * A valid ZIP with no active candidates returns 200 with an empty array (NOT 404).
+ * TWO KINDS OF LOCATION, and the difference is the point of the ZIP route:
+ *   POST /search  — a full street address geocodes to a POINT, which falls on
+ *                   exactly one side of every district line. Precise.
+ *   GET  /:zip    — a ZIP is an AREA, which straddles district lines. It
+ *                   legitimately returns several holders of the SAME office,
+ *                   each with the share of the ZIP their district covers.
+ *
+ * Both resolve through essentialsService, which admits active holders and vacant
+ * seats and excludes challenger placeholder offices.
  */
 
 const router = Router();
@@ -56,10 +61,23 @@ router.get('/search-by-name', optionalAuth, async (req: Request, res: Response):
 // ---------------------------------------------------------------------------
 // GET /api/essentials/candidates/:zip
 // Auth: optional — works unauthenticated
-// Returns all active candidates representing the given ZIP code.
-// Validates ZIP format (5-digit or ZIP+4). Normalizes to 5-digit before lookup.
-// Returns 200 with empty array [] when valid ZIP has no matching candidates.
-// Returns 422 for invalid ZIP format.
+//
+// Every official who serves ANY PART of the ZIP. A ZIP is an area, not a point,
+// so this legitimately returns several holders of the same office — where a ZIP
+// spans two state house districts, both members are returned, because the ZIP
+// cannot say which side of the line the visitor lives on.
+//
+// Each politician carries `share`: the fraction of the ZIP their district
+// covers. Statewide offices carry share: null (a state contains the whole ZIP).
+//
+// NOTHING IS FILTERED BY SHARE. Collapsing slivers is presentation, applied by
+// the client: a server-side cutoff would drop a real answer (measured — a >=10%
+// cutoff removes Bloomington from 47401) and a resident of that slice still has
+// a real council member.
+//
+// 422 — malformed ZIP (not 5-digit or ZIP+4)
+// 404 — well-formed but no such ZCTA polygon, i.e. not a real ZIP
+// 200 — resolved; `politicians` may be empty for a real ZIP we cover no offices in
 // ---------------------------------------------------------------------------
 
 router.get('/:zip', optionalAuth, async (req: Request, res: Response): Promise<void> => {
@@ -75,12 +93,26 @@ router.get('/:zip', optionalAuth, async (req: Request, res: Response): Promise<v
       return;
     }
 
-    // Normalize to 5-digit ZIP for consistent cache keys and DB lookups
+    // Normalize to 5-digit — ZCTAs are 5-digit, and this keeps cache keys
+    // single-valued so '46220' and '46220-1234' cannot occupy two entries.
     const normalizedZip = zip.slice(0, 5);
 
-    const candidates = await getCandidatesByZip(normalizedZip);
+    const result = await getOfficialsByZip(normalizedZip);
 
-    res.status(200).json(candidates);
+    if (result === null) {
+      res.status(404).json({ code: 'ZIP_NOT_FOUND', message: 'No such ZIP code' });
+      return;
+    }
+
+    res.setHeader('X-Data-Status', result.politicians.length === 0 ? 'no-geofence-data' : 'fresh');
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.status(200).json({
+      zip: result.zip,
+      states: result.states,
+      county: result.county,
+      politicians: result.politicians,
+      ambiguity: result.ambiguity,
+    });
   } catch (err) {
     console.error('[GET /essentials/candidates/:zip] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });

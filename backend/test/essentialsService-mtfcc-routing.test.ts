@@ -2,8 +2,12 @@ import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 
+// The geofence->districts MTFCC mapping these guards cover moved out of
+// essentialsService.ts into districtQueries.ts, so that one query text could be
+// shared by the address path and the ZIP/area path instead of drifting in four
+// copies. The guards themselves are unchanged — only the file they read.
 const SRC = fs.readFileSync(
-  path.resolve(__dirname, '../src/lib/essentialsService.ts'),
+  path.resolve(__dirname, '../src/lib/districtQueries.ts'),
   'utf-8',
 );
 

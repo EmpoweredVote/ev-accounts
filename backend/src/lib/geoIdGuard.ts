@@ -12,6 +12,46 @@
  * (geo_id, mtfcc) pair source aliased `gp` and essentials.districts aliased `d`.
  * Mirrors the inline guard in getRepresentativesByAddress (essentialsService.ts).
  */
+/**
+ * MTFCCs that must NOT reach the district-join catch-all clause.
+ *
+ * The catch-all (`mtfcc NOT IN (...) AND mtfcc NOT LIKE 'X%'`) means "match any
+ * district_type for this geo_id", so any layer NOT listed here joins to a
+ * district purely on a bare geo_id string match.
+ *
+ * G5200V26: 2026-vintage congressional boundaries — only the elections opt-in
+ *   join (electionService.ts) may resolve against it.
+ * G6350: ZIP Code Tabulation Areas. A ZCTA has no districts of its own, and its
+ *   geo_id is a bare 5-digit ZIP ('46220') that can collide with district
+ *   geo_ids. ZIPs resolve by AREA OVERLAP (resolveOfficialsInArea), never by
+ *   geo_id — so admitting them here would attach arbitrary officials to a ZIP
+ *   AND, because this clause is shared, to any address lookup as well.
+ * G4000: state outlines. A statewide seat (Governor, Senator, state supreme
+ *   court) has no polygon of its own and is resolved by district_type + state in
+ *   buildStatewideQuery. Admitting G4000 here made those officials arrive from
+ *   BOTH queries, and the results are concatenated without dedup — measured
+ *   2026-08-18 against prod: a single Bloomington address returned 28 DUPLICATED
+ *   politicians, including both Indiana senators and four supreme court justices
+ *   twice each. For an AREA query it was worse than duplication: a ZIP clipping
+ *   a neighbouring state by 0.013% (46360, Michigan City) pulled in Michigan's
+ *   entire executive branch, bypassing the deliberate 1% multi-state floor.
+ *   Verified safe: every district_type reachable via a G4000 geofence
+ *   (STATE_EXEC, NATIONAL_UPPER, JUDICIAL, NATIONAL_JUDICIAL) is already
+ *   admitted by buildStatewideQuery, so nothing becomes unreachable.
+ *
+ * SINGLE SOURCE OF TRUTH — districtQueries.ts interpolates
+ * FALLBACK_EXCLUDED_MTFCC_SQL_LIST rather than restating the list. Guarded by
+ * geoIdGuard.test.ts.
+ */
+export const FALLBACK_EXCLUDED_MTFCCS: readonly string[] = [
+  'G5210', 'G5220', 'G5200', 'G4020', 'G4040', 'G4110', 'G4120',
+  'G5400', 'G5410', 'G5420', 'G5200V26', 'G6350', 'G4000',
+];
+
+/** The same list rendered for a SQL `IN (...)` clause. */
+export const FALLBACK_EXCLUDED_MTFCC_SQL_LIST: string =
+  FALLBACK_EXCLUDED_MTFCCS.map((m) => `'${m}'`).join(',');
+
 export const MTFCC_DISTRICT_TYPE_GUARD = `(
     (gp.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
     OR (gp.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
@@ -41,7 +81,7 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
     -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
     -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.
-    OR (gp.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','G5200V26') AND gp.mtfcc NOT LIKE 'X%')
+    OR (gp.mtfcc NOT IN (${FALLBACK_EXCLUDED_MTFCC_SQL_LIST}) AND gp.mtfcc NOT LIKE 'X%')
   )`;
 
 /** A geo_id paired with the MTFCC of the layer it was sourced from. */

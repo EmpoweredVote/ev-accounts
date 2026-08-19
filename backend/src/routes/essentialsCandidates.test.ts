@@ -15,18 +15,20 @@ import type { AddressSearchResult, PoliticianFlatRecord } from '../lib/essential
  * import time and process.exits when absent (as in this unit-test
  * environment). Only the symbols the route actually imports are needed.
  */
-const { mockGetRepresentativesByAddress } = vi.hoisted(() => ({
+const { mockGetRepresentativesByAddress, mockGetOfficialsByZip } = vi.hoisted(() => ({
   mockGetRepresentativesByAddress: vi.fn(),
+  mockGetOfficialsByZip: vi.fn(),
 }));
 
 vi.mock('../lib/essentialsService.js', () => ({
   getRepresentativesByAddress: mockGetRepresentativesByAddress,
   getPoliticiansFlatList: vi.fn(),
+  getOfficialsByZip: mockGetOfficialsByZip,
 }));
 
-vi.mock('../lib/candidateService.js', () => ({
-  getCandidatesByZip: vi.fn(),
-}));
+// NOTE: no candidateService mock — the route no longer imports it. Its
+// getCandidatesByZip stub ignored the ZIP and returned every active
+// empowered_profile; it was deleted rather than left one import away.
 
 vi.mock('../middleware/auth.js', () => ({
   optionalAuth: (_req: unknown, _res: unknown, next: () => void) => next(),
@@ -40,6 +42,7 @@ app.use('/api/essentials/candidates', candidatesRouter);
 
 beforeEach(() => {
   mockGetRepresentativesByAddress.mockReset();
+  mockGetOfficialsByZip.mockReset();
 });
 
 function makeRep(overrides: Partial<PoliticianFlatRecord>): PoliticianFlatRecord {
@@ -153,5 +156,103 @@ describe('POST /api/essentials/candidates/search — subset-key smoke test (LOC-
 
     expect(res.status).toBe(200);
     expect(res.body.locality).toEqual({ incorporated: null, place_name: null, county_name: null });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/candidates/:zip
+//
+// This route previously called a stub that IGNORED its zip argument and
+// returned every active empowered_profiles row. These tests pin the real
+// contract: a ZIP is an AREA, so several holders of one office is a valid
+// answer, each carrying the share of the ZIP their district covers.
+// ---------------------------------------------------------------------------
+
+describe('GET /api/essentials/candidates/:zip', () => {
+  it('returns 422 for a malformed ZIP without touching the service', async () => {
+    const res = await request(app).get('/api/essentials/candidates/4622');
+    expect(res.status).toBe(422);
+    expect(res.body.code).toBe('VALIDATION_ERROR');
+    expect(mockGetOfficialsByZip).not.toHaveBeenCalled();
+  });
+
+  it('normalizes ZIP+4 to five digits before lookup', async () => {
+    mockGetOfficialsByZip.mockResolvedValue({
+      zip: '46220', states: ['IN'], county: null, politicians: [], ambiguity: [],
+    });
+    const res = await request(app).get('/api/essentials/candidates/46220-1234');
+    expect(res.status).toBe(200);
+    expect(mockGetOfficialsByZip).toHaveBeenCalledWith('46220');
+  });
+
+  it('returns 404 ZIP_NOT_FOUND when no ZCTA polygon exists', async () => {
+    // Distinguishes "not a real ZIP" from "real ZIP, no offices covered" — a
+    // distinction the old stub could not make, because it never read the ZIP.
+    mockGetOfficialsByZip.mockResolvedValue(null);
+    const res = await request(app).get('/api/essentials/candidates/00000');
+    expect(res.status).toBe(404);
+    expect(res.body.code).toBe('ZIP_NOT_FOUND');
+  });
+
+  it('passes share, ambiguity, states and county through to the response', async () => {
+    mockGetOfficialsByZip.mockResolvedValue({
+      zip: '46220',
+      states: ['IN'],
+      county: { geoid: '18097', name: 'Marion County' },
+      politicians: [
+        { ...makeRep({ id: 'a', district_type: 'STATE_LOWER' }), share: 0.38 },
+        { ...makeRep({ id: 'b', district_type: 'STATE_LOWER' }), share: 0.01 },
+      ],
+      ambiguity: [{ district_type: 'STATE_LOWER', count: 2 }],
+    });
+    const res = await request(app).get('/api/essentials/candidates/46220');
+    expect(res.status).toBe(200);
+    expect(res.body.zip).toBe('46220');
+    expect(res.body.states).toEqual(['IN']);
+    expect(res.body.county.name).toBe('Marion County');
+    expect(res.body.politicians.map((p: { share: number }) => p.share)).toEqual([0.38, 0.01]);
+    expect(res.body.ambiguity).toEqual([{ district_type: 'STATE_LOWER', count: 2 }]);
+  });
+
+  it('does NOT drop a sliver server-side — collapsing is the client\'s job', async () => {
+    // A >=10% server cutoff would have removed Bloomington from 47401.
+    mockGetOfficialsByZip.mockResolvedValue({
+      zip: '46360', states: ['IN'], county: null,
+      politicians: [
+        { ...makeRep({ id: 'real' }), share: 0.61 },
+        { ...makeRep({ id: 'sliver' }), share: 0.0004 },
+      ],
+      ambiguity: [],
+    });
+    const res = await request(app).get('/api/essentials/candidates/46360');
+    expect(res.status).toBe(200);
+    expect(res.body.politicians).toHaveLength(2);
+    expect(res.body.politicians[1].share).toBeCloseTo(0.0004);
+  });
+
+  it('returns 200 with an empty politicians array for a real ZIP we cover no offices in', async () => {
+    mockGetOfficialsByZip.mockResolvedValue({
+      zip: '99999', states: [], county: null, politicians: [], ambiguity: [],
+    });
+    const res = await request(app).get('/api/essentials/candidates/99999');
+    expect(res.status).toBe(200);
+    expect(res.body.politicians).toEqual([]);
+    expect(res.headers['x-data-status']).toBe('no-geofence-data');
+  });
+
+  it('marks a populated result fresh', async () => {
+    mockGetOfficialsByZip.mockResolvedValue({
+      zip: '46220', states: ['IN'], county: null,
+      politicians: [{ ...makeRep({ id: 'a' }), share: 1 }], ambiguity: [],
+    });
+    const res = await request(app).get('/api/essentials/candidates/46220');
+    expect(res.headers['x-data-status']).toBe('fresh');
+  });
+
+  it('returns 500 when the service throws', async () => {
+    mockGetOfficialsByZip.mockRejectedValue(new Error('boom'));
+    const res = await request(app).get('/api/essentials/candidates/46220');
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
   });
 });
