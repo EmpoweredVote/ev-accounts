@@ -42,9 +42,40 @@ What the contact sheet caught (it has now caught something on every wave):
 * 🔴 **The DA's asset is named `...1727-×-2506-px...` and serves at 300×300**; its `srcset` confirms
   300w is the largest that exists. Filename dimensions are decoration, not a hint.
 
-Still outstanding for wave 1 scope: the **banner** (candidate asset identified —
-`Austin City Council - Web_austin-city-hall-council.jpg` on the same Widen DAM) and **stances**
-(city seats only, now unblocked since seating is done).
+### Banners — DONE (essentials repo, commits `059dce60` + `cc2d80ee`)
+
+🔴 **The Texas STATE banner was a photograph of the Austin skyline**, so state and capital shared one
+subject — the defect already corrected three times (Seattle→WA, Portland→ME, Portland→OR). Resolved
+the same way:
+
+| Path | Subject | Licence |
+|---|---|---|
+| `states/TX-v2.jpg` | Chisos Mountains, Big Bend NP | Tlshands, CC BY-SA 3.0 |
+| `cities/austin.jpg` | The former TX skyline, **byte-for-byte** (sha256 `62cba3d5`) | Sk5893, CC BY-SA 4.0 |
+| `cities/travis-county.jpg` | Hamilton Pool Preserve | Fredlyfish4, CC BY-SA 4.0 |
+
+Lessons worth carrying:
+
+* 🔴 **THE CDN STALENESS IS REAL AND IT FIRED.** Uploading over `states/TX.jpg` and re-fetching
+  immediately returned the **OLD** bytes on the plain URL (`62cba3d5`) while `?v=` returned the new
+  (`b23ea801`). SectionBanner requests the plain URL. Fixed by adding `STATE_PANORAMA_FILES` to
+  `buildingImages.js` — the state URL was hardcoded `${abbrev}.jpg` with no way to express a version.
+  ⚠ WA's 2026-08-14 in-place overwrite looks fine today only because four days of cache expired.
+  **Version state filenames too.**
+* 🔴 **`banner_review.md` carried a stale instruction that would have reproduced the Bend defect** —
+  "certify against the FULL 3.15:1 frame", from a brief period when `BANNER_ASPECT` was a single
+  ratio. It is now a responsive pair (13/4 mobile keeps 96.9%, **6/1 desktop keeps 52.5%**), so
+  desktop still crops to half. Corrected in that file. Two candidates in this review looked fine at
+  full frame and failed in the band.
+* 🔴 **Distance and scale, not the presence of people.** Hamilton Pool ships with distant beachgoers
+  (10–20px silhouettes at 1700×540, operator-reviewed); Barton Springs and Barton Creek were refused
+  because subjects filled the foreground at close range. One rule, not a reversal.
+* ⚠ **`COVERAGE_COUNTIES` has no runtime effect** — no importers, so Rollup drops it. Test by LABEL,
+  not geo_id: "Travis County" returns 0 in a built bundle, while `48453` returns 4 from unrelated
+  population data and would read as though the entry shipped. County banners resolve via
+  `browse_label` from the backend `location-search` endpoint.
+
+Still outstanding for wave 1 scope: **stances** (city seats only, now unblocked since seating is done).
 
 ## ✅ CLOSED: portraits — 23 of 23 seats (migrations 1829 + 1830)
 
