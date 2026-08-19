@@ -167,6 +167,27 @@ function loadGuard() {
 const GUARD = loadGuard();
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
+/**
+ * Raise the statement timeout for THIS SESSION.
+ *
+ * The ST_COVERS_ROUNDTRIP probe runs `--sample` (default 500) point-in-polygon round trips through
+ * the full guard join, and it has always sat close to the app role's 30s statement_timeout — the
+ * comment in roundTrip() records an earlier version tipping over it. It finally did on 2026-08-19,
+ * when migration 1835 added four Court of Appeals districts: the sample is `ORDER BY d.id LIMIT n`
+ * over a uuid, so new districts change WHICH 500 rows get probed, not just how many.
+ *
+ * ⚠ It must be an in-session SET. Supavisor (the Supabase pooler CI connects through) silently
+ * IGNORES `options=-c statement_timeout=...` on the connection string — it still reports 30s. Same
+ * finding as scripts/load-zcta-boundaries.sh.
+ *
+ * This raises the ceiling for a CI gate only. It is NOT masking a slow read path: measured against
+ * prod the same day, a real address point-in-polygon across every geofence row plans as an Index
+ * Scan on idx_geofence_boundaries_geometry and runs in 52 ms.
+ */
+pool.on('connect', (client) => {
+  client.query("SET statement_timeout = '180s'").catch(() => { /* server may forbid; probe will fail loudly */ });
+});
+
 // One CTE the three baselined checks all read from: per district, is it reachable, does it have a
 // usable polygon, and is it occupied?
 /**
