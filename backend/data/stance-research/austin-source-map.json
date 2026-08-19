@@ -1,0 +1,40 @@
+{
+  "_note": "Verified source map for the City of Austin stance wave (probed 2026-08-19). Every URL here returned HTTP 200 with the stated story count on page 1 — none are guessed. Austin Monitor tag slugs are irregular: Watson's is a STALE 'state-senator-' label from his Texas Senate days, Ellis and Harper-Madison carry a 'council-member-' prefix, and Vela's uses his full 'jose-chito-vela' form. Do not guess these; they were found by scraping tag links out of article markup after 4 of 11 guessed slugs 404'd.",
+  "_sources_ruled_out": {
+    "legistar_api": "https://webapi.legistar.com/v1/austintexas — agenda index ONLY. /eventitems/{id}/votes returns [], /matters/{id}/sponsors returns [], /matters/{id}/histories returns 0 rows, and 0 of 30 published 2025 council meetings carry a minutes file. Proves an instrument exists; carries NO attribution. Cannot seat a chair on its own.",
+    "austintexas_gov_district_pages": "https://www.austintexas.gov/district-N — ~4-5k chars, all site chrome, zero positional content.",
+    "austin_monitor_onsite_search": "https://austinmonitor.com/?s= — returns unrelated results; use the tag archives below instead."
+  },
+  "message_board": {
+    "url": "https://austincouncilforum.org",
+    "harvester": "backend/scripts/harvest-austin-council-board.mjs",
+    "access": "Incapsula WAF — curl gets a JS interstitial at HTTP 200. Playwright passes.",
+    "caveat": "Posting is open to council members AND authorized staff. Staff posts are quarantined to _staff-authored/ and must never be attributed to a member. Some staff write in the officeholder's first-person voice: the Mayor's chief of staff (Colleen Pate, 240 topics) opens threads as 'I' and members reply 'Mayor, ...'. That is evidence ABOUT Watson, not a quote FROM him.",
+    "quirk": "viewtopic.php IGNORES ?start= and viewforum.php CLAMPS it — both re-serve a page rather than returning empty, so any offset loop must terminate on 'no new ids', never on an empty batch."
+  },
+  "austin_monitor_tags": {
+    "_base": "https://austinmonitor.com/stories/tag/",
+    "Kirk Watson": { "slug": "state-senator-kirk-watson", "stories_page1": 17 },
+    "Natasha Harper-Madison": { "slug": "council-member-natasha-harper-madison", "stories_page1": 17 },
+    "Paige Ellis": { "slug": "council-member-paige-ellis", "stories_page1": 16 },
+    "Zohaib \"Zo\" Qadri": { "slug": "zo-qadri", "stories_page1": 15 },
+    "Vanessa Fuentes": { "slug": "vanessa-fuentes", "stories_page1": 14 },
+    "José \"Chito\" Vela": { "slug": "jose-chito-vela", "stories_page1": 13 },
+    "Ryan Alter": { "slug": "ryan-alter", "stories_page1": 11 },
+    "José Velásquez": { "slug": "jose-velasquez", "stories_page1": 8 },
+    "Krista Laine": { "slug": "krista-laine", "stories_page1": 7 },
+    "Mike Siegel": { "slug": "mike-siegel", "stories_page1": 6 },
+    "Marc Duchen": { "slug": "marc-duchen", "stories_page1": 6 }
+  },
+  "ballotpedia_candidate_connection": {
+    "_note": "Detector warning: EVERY Ballotpedia page contains the boilerplate strings 'Candidate Connection' and 'Campaign themes', so testing for those returns a uniform true and is a BROKEN detector. The discriminating signal is a real 'Key messages' block. Positive control: Mike_Siegel (first-person climate prose). Negative control: Kirk_Watson (nothing). 'has not yet completed' also appears on both and is likewise boilerplate.",
+    "has_survey": ["Mike_Siegel", "Krista_Laine", "Marc_Duchen"],
+    "no_survey": ["Kirk_Watson", "Zohaib_Qadri", "Paige_Ellis", "Ryan_Alter", "Vanessa_Fuentes"],
+    "access": "Cross-origin fetch is CORS-blocked; navigate to the origin first, then same-origin fetch."
+  },
+  "press_free_to_read": [
+    "https://www.kut.org  (public radio, no paywall)",
+    "https://www.texastribune.org  (nonprofit newsroom; WebFetch got a 403 on one article — retry or use KUT)",
+    "https://austinmonitor.com  (carries subscribe language; tag archives were readable)"
+  ]
+}
