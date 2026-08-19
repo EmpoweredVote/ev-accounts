@@ -1,7 +1,8 @@
 # Austin TX / Travis County deep seed — wave 1 landed, wave 2 open
 
-Created 2026-08-18. Wave 1 applied to prod as migrations **1827** (seats) + **1828** (people/occupancy).
-Roster and sourcing: `backend/data/seed-austin-2026/ROSTERS.md`.
+Created 2026-08-18. Wave 1 applied to prod as migrations **1827** (seats) + **1828** (people/occupancy)
++ **1829** (20 portraits). Roster and sourcing: `backend/data/seed-austin-2026/ROSTERS.md`.
+Contact sheet reviewed before import: https://claude.ai/code/artifact/f98aaa45-7aa6-415d-aa30-d3cb6a5f39e2
 
 ## Wave 1 — DONE and verified
 
@@ -15,40 +16,81 @@ Roster and sourcing: `backend/data/seed-austin-2026/ROSTERS.md`.
   the city, but it does share `48015` with TX SD15 and TX HD15.
 * `check:migrations` and `check:occupancy` both green.
 
-Still outstanding for wave 1 scope: **headshots** (11 city portraits located on the Widen DAM, county
-portraits mostly not yet located) and the **banner** (candidate asset identified). Stances were
-scoped to city seats only, after seating — seating is now done, so that work is unblocked.
+### Headshots — 20 of 23 imported (migration 1829)
 
-## 🔴 BLOCKER FOUND, NOT MINE, NOT FIXED — `check:reachability` is broken on `feat/zip-code-search`
+`11/11` city renderable, `9/12` county. The gate is the **upscale factor** `600/crop_width`, not a
+pixel floor.
 
-`npm run check:reachability` fails with `syntax error at or near "$"` and **verifies nothing**.
+* **13 clean** (0.37x–0.71x): all 11 city portraits from Austin's Widen DAM at ~2000px, plus
+  George Morales III (880x1099) and Brigid Shea (1033x1059).
+* **7 soft** (1.5x–3.0x), each flagged `REPLACE` in `photo_license` with its source dimensions:
+  Delia Garza 1.5x, Ann Howard 1.88x, José Garza 2.5x, Travillion 2.64x, and Andy Brown /
+  Velva Price / Dyana Limon-Mercado all at 3.0x. Shipped on the standing call that an upscale beats
+  a blank spot. **At 3.0x the pixels are largely invented — these are placeholders that happen to be
+  the right person.** Worth re-hunting whenever a better source appears.
+* **3 absent** — see the press-sweep item below.
 
-Cause: commit `1dc0562b` ("fix(geo): exclude G6350 from the district-join catch-all") added
-`FALLBACK_EXCLUDED_MTFCC_SQL_LIST` and interpolated it into the `MTFCC_DISTRICT_TYPE_GUARD`
-template literal in `src/lib/geoIdGuard.ts:84`. But `scripts/check-address-reachability.mjs`
-extracts that guard as **raw source text** with a regex (`loadGuard()`), deliberately, so there is
-one definition of the mapping. A nested `${...}` is never expanded by that path, so the literal
-string `${FALLBACK_EXCLUDED_MTFCC_SQL_LIST}` reaches Postgres.
+What the contact sheet caught (it has now caught something on every wave):
+* A 1080px file on Ann Howard's own precinct page is **not a portrait** — it is a departmental
+  graphic reading "When you need help, who should you contact?". It was a candidate purely because
+  of its size and location. She fell back to the 400px file, which is why her row is soft.
+* 🔴 **The county publishes DEPARTMENT STAFF portraits beside the electeds** — `kate-garza.jpg` sits
+  on the County Judge's page, `Grace_Inman_headshot.JPG` elsewhere. Matching a filename containing
+  "headshot" would have filed a staffer's face under an officeholder's name.
+* 🔴 **A bare `.convert('RGB')` turns transparent PNG corners BLACK.** It put hard black corners on
+  the DA's circular-vignette portrait and Brigid Shea's PNG. Flatten alpha onto white first.
+* 🔴 **The DA's asset is named `...1727-×-2506-px...` and serves at 300×300**; its `srcset` confirms
+  300w is the largest that exists. Filename dimensions are decoration, not a hint.
 
-Scope:
-* `origin/master` does **not** contain the constant — the gate still works there, including the
-  daily cron.
-* `1dc0562b` exists only on `feat/zip-code-search` (and its pushed remote), so the break lands on
-  master the moment that branch merges.
+Still outstanding for wave 1 scope: the **banner** (candidate asset identified —
+`Austin City Council - Web_austin-city-hall-council.jpg` on the same Widen DAM) and **stances**
+(city seats only, now unblocked since seating is done).
 
-This is the "a broken positive guard is worse than none" failure mode: the gate exits non-zero for a
-reason unrelated to data, so a real unreachable district would be indistinguishable from this.
+## 🔴 Open: portraits for the 3 remaining officials — press sweep chosen
 
-Two candidate fixes, for whoever owns that branch:
-1. Make `loadGuard()` resolve the nested constant (extract `FALLBACK_EXCLUDED_MTFCCS` too and
-   substitute), or
-2. Stop interpolating: inline the list in the guard and have `geoIdGuard.test.ts` assert the inline
-   list equals `FALLBACK_EXCLUDED_MTFCCS`, keeping the single-source-of-truth property without a
-   template placeholder that raw-text consumers cannot see.
+Sheriff **Sally Hernandez**, Tax Assessor-Collector **Celia Israel**, County Treasurer
+**Dolores Ortega Carter**. Each sits on a domain separate from the main county site and none
+publishes a portrait of the officeholder — a genuine absence, not a failed fetch. Already checked and
+dry: `tcsheriff.org` (home + `/about/office-of-the-sheriff`), `tax-office.traviscountytx.gov`,
+`/treasurer` on the main domain. `/sheriff`, `/tax-assessor-collector`, `/county-clerk` and
+`/county-treasurer` all **404** on `traviscountytx.gov`.
 
-Austin/Travis reachability was verified by running the classify query with the constant expanded by
-hand — G4110→LOCAL and G4020→COUNTY are both admitted by the guard. That is a manual substitute for
-the gate, not a replacement for fixing it.
+Next lead, per Chris: **local press** — KUT, Austin Monitor, Community Impact, Austin
+American-Statesman. Rationale: the Newton cohort was wrongly written off as dead until `patch.com`
+per-person candidate profiles turned up portraits. 🔴 **The credit line is the licence test** —
+"Courtesy of <name>" is OK, a photographer credit or "Credit:" is a REFUSE, no credit is UNKNOWN.
+Grep the raw HTML near the image FILENAME; a figcaption regex has missed a photographer credit twice.
+
+## ✅ RESOLVED by another session — the `check:reachability` break
+
+While this wave was in flight, `npm run check:reachability` failed with `syntax error at or near "$"`
+and verified nothing. Cause: `1dc0562b` interpolated `FALLBACK_EXCLUDED_MTFCC_SQL_LIST` into
+`MTFCC_DISTRICT_TYPE_GUARD`, but `scripts/check-address-reachability.mjs` extracts that guard as
+**raw source text** (`loadGuard()`) so there is one definition of the mapping — a nested `${...}` is
+never expanded and reached Postgres literally.
+
+Fixed by the parallel session in `087eb779`, cherry-picked to master as `bad34f33`
+("revert the global G4000 exclusion"). The gate runs again. Keeping the note because the shape
+recurs: **a raw-text consumer of a template literal cannot see nested interpolation**, and the
+failure mode is a guard that exits non-zero for a reason unrelated to data — indistinguishable from
+a real regression.
+
+## 🔴 Open, NOT OURS — reachability gate is RED on master (Indiana judicial geometry)
+
+With the gate working, it now fails on a different regression:
+
+```
+BAD_GEOMETRY     observed 7 (baseline 5)
+  in JUDICIAL  Indiana Appeals Court Judge - District 1 (Retain Bailey?)  [1800001]
+  in JUDICIAL  Indiana Appeals Court Judge - District 2 (Retain Bradford?)  [1800002]
+BAD_GEOMETRY  in|JUDICIAL  observed 2 (NEW bucket — this jurisdiction was clean before)
+```
+
+**Austin/Travis introduced no regression**: `UNREACHABLE` held exactly at its baseline of 38 and
+`DEAD_GEOGRAPHY` improved 20 → 19. This wave created no `JUDICIAL` districts at all. The baseline was
+deliberately **not** updated here — doing so would mask someone else's regression behind an unrelated
+commit. Whoever seeded those two Indiana retention districts owns it; see also
+`.planning/todos/2026-07-30-indiana-address-reachability.md`.
 
 ## Wave 2 — deferred, with reasons
 
