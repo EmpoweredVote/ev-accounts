@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "politician_id": "d0e80e1b-32d3-4b10-9fd1-e90afc412a12",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "d0e80e1b-32d3-4b10-9fd1-e90afc412a12",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e0d9989c-af22-42a5-a6b0-f77073d20386",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e0d9989c-af22-42a5-a6b0-f77073d20386",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "ccaf36cf-65a7-43d4-9f6e-6d8071b5f8bd",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "193123e1-8c6b-48b4-9581-2305ba4128b2",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "f7583cbb-70e8-42ee-a0c9-f6e07ca41ec1",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "8feee56c-d748-4ad8-9c4c-01a363bf1fc1",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "chair_after": 2
+    }
+  ]
+}

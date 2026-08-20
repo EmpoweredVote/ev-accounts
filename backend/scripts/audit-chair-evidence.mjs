@@ -60,11 +60,28 @@ for (const [mig, f] of files) {
 //     precisely so that vague prose, or a bare ballot "Measure A", cannot satisfy it.
 //   · `O-#####` / `R-######` — San Diego's ordinance and resolution numbering, e.g. Ordinance
 //     O-21528 N.S. (Climate Action Plan Consistency Regulations) and Resolution R-316659.
-// 🔑 The point of the gate is that PASSING MEANS SOMETHING. Both widenings were paired with rows whose
+// ⚠ WIDENED A THIRD TIME (2026-08-19, Travis County wave), for the vocabulary of a COUNTY
+// COMMISSIONERS COURT. The pattern was state-legislature shaped, then learned city councils (1738)
+// and mayors (1740); it still could not see a single thing a county does. Two additions, both
+// deliberately narrow and both copying the shape of an existing rule:
+//   · `Proposition [A-Z0-9]{1,3}` — a LETTERED/NUMBERED ballot proposition. This is the "Measure A"
+//     objection answered rather than repeated: the identifier is required, so vague prose cannot
+//     pass, and the rows it admits are county propositions actually put to and carried at an
+//     election (Travis County Proposition A, Nov 2024, 59.43%). A county's budget-and-ballot
+//     instruments have no bill number; this is the identifier they do have.
+//   · `Commissioners Court (approved|adopted|voted)` — requires the BODY TO HAVE ACTED, exactly the
+//     test already applied to `referrals? (approved|adopted|considered)`. An unqualified
+//     "Commissioners Court" would have admitted every passing mention of the body and is not used.
+// ⚠ WHAT THIS WIDENING DELIBERATELY DOES NOT RESCUE. Five rows in the same verified wave still fail,
+//    and that is the correct result, not an oversight: a diversion steering committee, a solar
+//    installation programme, an early-case-review process and a campaign platform are PROGRAMMES,
+//    not instruments. They may well be sound evidence, but they are not the thing this gate tests,
+//    and inventing lexical hooks for them would make passing mean nothing.
+// 🔑 The point of the gate is that PASSING MEANS SOMETHING. All three widenings were paired with rows whose
 //    instruments had been read in the source document, and in each case the recorded proof is that the
 //    debt fell by exactly the number of rows touched — never more.
 const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted))/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;
