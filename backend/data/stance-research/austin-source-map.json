@@ -16,48 +16,50 @@
     "_base": "https://austinmonitor.com/stories/tag/",
     "Kirk Watson": {
       "slug": "state-senator-kirk-watson",
-      "stories_page1": 17
+      "tagged_stories": 12
     },
     "Natasha Harper-Madison": {
       "slug": "council-member-natasha-harper-madison",
-      "stories_page1": 17
+      "tagged_stories": 12
     },
     "Paige Ellis": {
       "slug": "council-member-paige-ellis",
-      "stories_page1": 16
+      "tagged_stories": 11
     },
     "Zohaib \"Zo\" Qadri": {
       "slug": "zo-qadri",
-      "stories_page1": 15
+      "tagged_stories": 10
     },
     "Vanessa Fuentes": {
       "slug": "vanessa-fuentes",
-      "stories_page1": 14
+      "tagged_stories": 9
     },
     "José \"Chito\" Vela": {
       "slug": "jose-chito-vela",
-      "stories_page1": 13
+      "tagged_stories": 8
     },
     "Ryan Alter": {
       "slug": "ryan-alter",
-      "stories_page1": 11
+      "tagged_stories": 6
     },
     "José Velásquez": {
       "slug": "jose-velasquez",
-      "stories_page1": 8
+      "tagged_stories": 3
     },
     "Krista Laine": {
       "slug": "krista-laine",
-      "stories_page1": 7
+      "tagged_stories": 2
     },
     "Mike Siegel": {
       "slug": "mike-siegel",
-      "stories_page1": 6
+      "tagged_stories": 1
     },
     "Marc Duchen": {
       "slug": "marc-duchen",
-      "stories_page1": 6
-    }
+      "tagged_stories": 1
+    },
+    "_counting_note": "stories_page1 counts recorded earlier were INFLATED. Every tag page carries an identical five-item \"most read\" widget (your-ultimate-guide, austin-growth-is-slowing, council-hears-plan-to-overhaul, hyde-park-quarries, most-austin-area-drivers) that is not tagged content. tagged_stories below excludes it. Real corpus is ~75 articles across all 11, not ~130.",
+    "_yield_note": "Measured on a full pass: 2 seatable rows from 11 archives (Watson local-environment, Qadri residential-zoning). Four candidates were checked and rejected — Watson public-safety (his DPS-patrol position reversed within months), Qadri housing (the reporter states outright he would not give specifics), Harper-Madison public-safety (her quote is about City Hall/APD relations, not budget allocation) and Harper-Madison homelessness (encampment siting equity, off the services-vs-enforcement axis, and dated 2021). The archives skew to annual \"what will X focus on\" profiles, which give direction more often than magnitude."
   },
   "ballotpedia_candidate_connection": {
     "_note": "Detector warning: EVERY Ballotpedia page contains the boilerplate strings 'Candidate Connection' and 'Campaign themes', so testing for those returns a uniform true and is a BROKEN detector. The discriminating signal is a real 'Key messages' block. Positive control: Mike_Siegel (first-person climate prose). Negative control: Kirk_Watson (nothing). 'has not yet completed' also appears on both and is likewise boilerplate.",
