@@ -474,3 +474,33 @@ scale currently cannot represent them at all.
 ⚠ One misattribution caught in passing: Colorado Politics' own search UI labels Broerman as "Clerk
 and Recorder". He is the **Treasurer**; Schleiker is the Clerk. The agent verified true authorship
 before citing.
+
+## 🔴 Caucus-site CMS tags are NOT authorship — hit twice, avoided both times
+
+`coloradohouserepublicans.com` (and likely its Senate/Dem equivalents) attaches member name-tags to
+`/news/` articles as a CMS taxonomy, **independently of who actually signed or is quoted**. Two
+agents hit this:
+- One nearly seated `climate-change` on a "House Republicans Deliver Letter Opposing Costly PUC
+  Heating Mandate" article that tagged their subject — a targeted re-fetch showed the letter's
+  **signature block names only Dan Woog**. Not a signer. Used as background context only.
+- Another found the same pattern and refused a row because the member's name appeared solely via a
+  `/news/tag/` hyperlink with no evidence she had signed.
+
+**Rule: a name in a tag, byline strip, or `/tag/` URL is not evidence.** Find the signature block,
+the quote attribution, or the bill's sponsor list. Group letters in particular list many members in
+metadata and quote two or three — only the ones actually named in the text can carry a chair, and
+even then the letter's *own stated reasoning* has to name the chair.
+
+## County vacancies go through the PARTY, not the Board — so there is no county vacancy packet
+
+The city appointee's vacancy-application packet was the best single find of this wave, so I asked
+whether the county had an equivalent for its June-2025 appointee. **It does not, and the reason is
+structural:** a Colorado county commissioner vacancy is filled by a **party vacancy committee**, not
+by an act of the Board. (Hers took four rounds, a 20–20 deadlock, then 21 votes.) So AgendaSuite —
+which only carries Board business — has no application materials for that office type, and there is
+nothing to hunt for. Don't repeat the search on a future county wave.
+
+What worked instead for both remaining commissioners was **their own campaign sites**. ⚠ Both are
+built on a template where **the nav labels are decorative and the real content sits at `/blank` and
+`/blank-2`** — the "Issues" link on one is a dead placeholder while the actual platform text is on
+the homepage. An agent that trusts the nav concludes the site is empty. Check the odd paths.
