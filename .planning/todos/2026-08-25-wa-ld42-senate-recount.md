@@ -50,11 +50,22 @@ race green. Any future certification pass in a top-two or runoff state needs the
    - Eamonn Collins `29e39789-6707-4a17-9c12-e9d47828caac`
    - Ryan Bowman `325f5919-1689-4c41-b1cf-a0c74363fad6`
 
-## Guard to run after
+## Tooling
+
+The pass that produced 1842 is committed and re-runnable. Re-fetch the feeds (the curl commands
+are in the harvest script's header), then:
 
 ```bash
-node backend/.tmp-wa-cert-pass.mjs   # if still present; otherwise re-derive from the feeds
+cd backend
+node scripts/wa-cert-harvest.mjs          # disposition.json + the report, incl. the margin test
+node scripts/wa-cert-emit-migration.mjs   # migrations/_wip_wa_2026_primary_certification_pass.sql
+node scripts/dry-run-migration-file.mjs migrations/<NNNN>_....sql   # BEGIN … ROLLBACK against prod
 ```
+
+The harvest script's cut-line check is the margin test that flagged this race in the first place —
+it will keep flagging LD 42 until the recount margin clears the RCW 29A.64.021 thresholds, which is
+the behaviour you want. Verified 2026-08-20 that re-running both scripts reproduces 1842
+byte-for-byte below its header line.
 
 The post-verify gate in 1842 asserts LD 42 still has **4 rows, all `result IS NULL`, all
 `provisional_until = 2026-09-04`**. Resolving this race will make that assertion false, which is
