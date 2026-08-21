@@ -1,55 +1,32 @@
-# ▶️ RESUME HERE — Colorado Springs stance wave (state as of 2026-08-21)
+# ✅ COMPLETE — Colorado Springs stance wave (2026-08-21)
 
-**Branch `feat/colorado-springs-geometry`. Nothing pushed to prod yet. All work committed as CSVs.**
+**PUSHED TO PROD.** 77 answers + 77 matching contexts across 28 people. All 35 cohort members
+researched; 7 produced a documented, honest zero.
 
-## Exactly where we are
+Post-push verification:
+- `inform.politician_answers` = 77, `inform.politician_context` = 77, paired 1:1, 28 people.
+- `npm run check:stance-sources` is **byte-identical to the pre-push baseline** — 745 offending rows
+  across 4 checks, every counter unchanged (BALLOTPEDIA_ONLY 158/159, BARE_AGGREGATOR_DOMAIN 1/1,
+  ORPHAN_CONTEXT 50/50, PRIMARY_SITE_NO_PATH 536/536; the four must-be-zero checks all 0).
+  **The wave added no source debt.**
+- `verify-quotes.mjs`: **61 quotes, all verified against raw source bytes, 0 not-found.**
+- `validate-wave.mjs`: clean (high=0, medium=0).
 
-- **66 rows across 22 people**, `validate-wave.mjs` clean (high=0, medium=0).
-- **All 51 quotes verified** against raw source bytes — `verify-quotes.mjs` reports 0 not-found.
-- Cohort is **35 people**: 10 CS council ✅ done, 11 El Paso County (9 done), 14 legislators (11 done).
+Banners also shipped: essentials `main` pushed (`916aacaa..b549f727`), both assets serving 200 at
+the exact uploaded byte counts.
 
-## What is left — do these in order
+## Coverage
 
-1. **Two legislators never dispatched:** **Lynda Zamora Wilson** (Senate District 9) and
-   **Rod Pelton** (Senate District 35). Sources already harvested at
-   `sources/leg-lynda-zamora-wilson.md` and `sources/leg-rod-pelton.md`.
-   Dispatch with `BRIEF-state.md` + `scale-state.json`, output to `out-zamora-wilson.csv` /
-   `out-pelton.csv`. Copy a recent legislator dispatch prompt — they carry the accumulated playbook.
-2. **Four agents were in flight** when context ran out. Check whether these files exist and are
-   valid before re-dispatching anyone: `out-keltie.csv` (Rebecca Keltie HD16),
-   `out-english.csv` (Regina English HD17), `out-flanell.csv` (Ava Flanell HD14),
-   `out-applegate-nelson.csv` (Cory Applegate + Lauren Nelson, county). If a file is missing, that
-   agent died — re-dispatch it.
-3. **Re-run both checks** after any new rows land:
-   `node data/stance-research/colorado-springs/validate-wave.mjs`
-   `node data/stance-research/colorado-springs/verify-quotes.mjs`   (must report 0 not-found)
-4. **Push to prod:** `node data/stance-research/colorado-springs/push-wave.mjs --dry-run` then
-   `--commit`. It writes `politician_answers` + `politician_context` together in one transaction and
-   refuses to overwrite an existing value. Dry-run has been clean throughout and the rollback was
-   confirmed to actually revert.
-5. **Re-run the CI gate** and confirm no baseline moved:
-   `npm run check:stance-sources --prefix backend`.
-   **Pre-push baseline, recorded 2026-08-21:** 745 offending rows / 4 checks —
-   BALLOTPEDIA_ONLY 158 (baseline 159), BARE_AGGREGATOR_DOMAIN 1 (1), ORPHAN_CONTEXT 50 (50),
-   PRIMARY_SITE_NO_PATH 536 (536); ANSWER_WITHOUT_CONTEXT / EMPTY_SOURCES / FABRICATED_SOURCE /
-   NON_URL_SOURCE all 0 and must stay 0.
-   ✅ Already verified safe: our 116 source URLs include **0 bare-domain and 0 Ballotpedia**, so the
-   push cannot raise those two counts.
+| Cohort | People | Rows |
+|---|---|---|
+| Colorado Springs council | 10 / 10 | 42 |
+| El Paso County | 11 / 11 | 13 |
+| CS-area legislators | 14 / 14 | 22 |
 
-## Also outstanding, unrelated to stances
-
-🔴 **The banners are committed but NOT PUSHED.** Commit `b549f727` on `main` in
-`C:\Transparent Motivations\essentials`. The two assets are already uploaded to Supabase Storage and
-sha256-verified, so only the registry commit needs to reach Netlify. One `git push` makes them live.
-
-## Two cohort-level lessons that must be applied to any future wave
-
-Per-person agents cannot see each other's work. **Twice** on this wave, comparing rows side by side
-changed an answer — `growth-and-development` (inconsistent 2/3 seating) and `local-immigration`
-(the county Board Chair seated a chair ABOVE the Sheriff on weaker evidence). **Any ladder touched
-by several members of one body needs a cohort-level adjudication pass before push.** The remaining
-legislators are in different chambers/districts so this is lower risk, but re-check
-`local-immigration` and `homelessness` if new county rows land.
+🔴 **The legislator count understates the record.** Colorado's legislature is mid-migration and
+exposes essentially only the current session — a search for a 13-year member returned 26 bills, 25
+from 2026. **That half is worth re-running once the migration completes.** Not a finding about the
+people.
 
 ---
 
@@ -504,3 +481,18 @@ What worked instead for both remaining commissioners was **their own campaign si
 built on a template where **the nav labels are decorative and the real content sits at `/blank` and
 `/blank-2`** — the "Issues" link on one is a dead placeholder while the actual platform text is on
 the homepage. An agent that trusts the nav concludes the site is empty. Check the odd paths.
+
+## 📋 Scale-coverage gaps found — real positions with nowhere to sit
+
+Three times this wave an official had genuine, well-sourced, first-person policy advocacy that
+seated **nothing**, because no ladder asks that question. These are gaps in the topic set, not gaps
+in the record, and they are worth raising when the scales are next reviewed:
+
+| Missing topic | Scale | Who it would have seated |
+|---|---|---|
+| **elections / voting-rights** | LOCAL (22) | County **Clerk & Recorder** (op-ed "How we know our El Paso County elections are safe and secure"; withdrew the county from the Colorado County Clerks Association) and county **Treasurer** (co-authored "Update, safeguard Colorado's mail ballot with voter ID"). The state scale has `voting-rights`; the local one does not — yet **county clerks are the officials most likely to hold a public position on exactly this axis**, and the scale cannot represent them at all. |
+| **privacy / surveillance** | STATE (28) | A senator whose only quotable, forward-looking statements are on surveillance-technology bills (SB26-070, SB26-071). Zero rows seated as a result. |
+| **firearms** | STATE (28) | A representative who owns a firearms business and wrote a veto-urging op-ed — her richest personal vein, entirely off-scale. |
+
+Not an argument for adding topics casually — but the clerk case in particular looks like a genuine
+blind spot for any county cohort, since it is the one office whose whole remit is elections.
