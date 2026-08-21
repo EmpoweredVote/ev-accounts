@@ -336,3 +336,26 @@ reported it. Propagating findings back into the brief mid-wave is what made the 
 
 Standing rule for any future wave: **treat WebFetch output as a summary, never as a transcript.**
 Confirm a quote with a strict re-fetch, and verify the whole set against raw bytes afterwards.
+
+## Third row dropped — `deportation` for a legislator, same error class as the sanctuary row
+
+The agent flagged this one itself as "the closest this pass came to the sponsorship/magnitude trap",
+and on review it does not survive.
+
+The row seated chair 4 ("deport everyone without legal status, starting with those who have criminal
+records") on prime sponsorship of SB25-047, which reinstates a mandate that peace officers report
+anyone they have probable cause to believe is unlawfully present to federal immigration authorities.
+
+🔴 **That is an enforcement-COOPERATION instrument, and the ladder asks who should be DEPORTED.**
+Reporting to ICE does not establish deportation scope. Worse, the two available pieces of evidence
+point at different chairs: the bill has no criminal carve-out (which reads toward 4), while his own
+op-ed's stated motivating concern is a serious criminal offender (which reads toward 2, "only deport
+people convicted of serious violent crimes"). Two chairs fit and nothing separates them.
+
+The quote attached to it — "Continue defending laws that make cooperation harder, or fix a system
+that is failing the people it is supposed to protect" — is about cooperation, and fails the
+on-question gate for this ladder.
+
+This is the same defect as the city `local-immigration` row dropped earlier: **an instrument about
+cooperating with federal enforcement mapped onto a ladder asking a different question.** Worth
+generalising — that mapping is the most seductive wrong answer in this whole topic area.

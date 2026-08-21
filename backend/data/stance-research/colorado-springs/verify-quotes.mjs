@@ -89,8 +89,23 @@ for (const f of files) {
     // An ellipsis is a truncation MARKER, not text to find. Split on it and require every
     // substantial fragment to appear in the source — that still catches a fabricated quote
     // while allowing honest excerpting.
-    const frags = nq.split(/\s*\.\.\.\s*/).map((s) => s.trim()).filter((s) => s.length >= 20);
-    const hasAll = (t) => frags.length > 0 && frags.every((fr) => t.includes(fr));
+    // 🔴 Split on the ellipsis in the RAW quote, BEFORE normalising. `norm()` strips punctuation,
+    // which destroys the "..." marker — so splitting afterwards yields one fragment and an
+    // honestly-elided quote fails. This masked a genuine quote whose author had correctly marked
+    // an omission ("…re-distribution...and socialism" for "…re-distribution, open borders,
+    // impeachment talk and socialism").
+    const frags = q.split(/\s*(?:\.\.\.|…)\s*/).map((s) => norm(s)).filter((s) => s.length >= 20);
+    // Whole-string first. If that fails, fall back to sliding word-windows: a quote elided
+    // internally, or spanning a paragraph break the source renders with extra markup, will not
+    // match end-to-end even though every word of it is genuinely present. Requiring EVERY 8-word
+    // window to appear still makes a fabricated clause impossible to pass — you cannot invent a
+    // sentence and have all of its windows turn up in the source.
+    const words = nq.split(' ').filter(Boolean);
+    const windows = [];
+    for (let i = 0; i + 8 <= words.length; i += 4) windows.push(words.slice(i, i + 8).join(' '));
+    const hasAll = (t) =>
+      (frags.length > 0 && frags.every((fr) => t.includes(fr))) ||
+      (windows.length > 0 && windows.every((w) => t.includes(w)));
 
     if (localText.some(hasAll)) { results.local.push({ who: r.full_name, topic: r.topic_key }); continue; }
 
@@ -100,7 +115,7 @@ for (const f of files) {
       const t = await fetchNorm(u);
       if (t.startsWith('__')) continue;
       anyFetched = true;
-      if (t.includes(nq)) { hit = true; break; }
+      if (hasAll(t)) { hit = true; break; }
     }
     if (hit) results.verified.push({ who: r.full_name, topic: r.topic_key });
     else if (!anyFetched) results.unfetchable.push({ who: r.full_name, topic: r.topic_key, urls });
