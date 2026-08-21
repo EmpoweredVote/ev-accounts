@@ -141,6 +141,12 @@ response team, and a January 2024 migrants/sanctuary statement. It took that per
   single highest-value source for the one council member who had no questionnaire at all.
 - ✅ **`coloradopolitics.com` and `completecolorado.com` also work** — statewide political coverage
   and op-eds, useful when a local official comments beyond city business.
+- ⚠ **The alternative press is CITY-weighted.** `pikespeakbulletin.org` and `socoinsider.com` are
+  strong on Colorado Springs city council and weak-to-empty on **county** officials — for one
+  commissioner, Pikes Peak Bulletin returned a single substantive article across a dozen query
+  variants and SoCo Insider returned **zero** hits for every query including bare "El Paso County".
+  For county subjects lead with **`koaa.com/search`** instead, which surfaced the only usable
+  material for her.
 - ✅ **`pikespeakbulletin.org/?s=<term>` and `socoinsider.com/?s=<term>` BOTH WORK** — verified
   server-rendered search, ~215KB and ~111KB of real results. These are the local
   alternative-press outlets (successors to the Colorado Springs Independent) and they cover

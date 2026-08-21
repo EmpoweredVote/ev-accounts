@@ -292,3 +292,47 @@ One real edit surfaced and is now disclosed rather than silent: a councilmember'
 the spoken stutter "you have to you have to do something", which had been cleaned to "You have to do
 something" with no note. The `editor_note` now states the repetition was removed and nothing else
 changed.
+
+## ✅ RESOLVED: `growth-and-development` adjudicated across the whole council
+
+Decided once, comparatively, from `sources/growth-and-development-comparison.md` (all nine members'
+own answers side by side) rather than leaving it to whichever agent happened to read which file.
+
+**The discriminator:** chair 3's distinguishing content is *investing in infrastructure AHEAD of
+growth*. Chair 2's is *conditioning growth on the capacity already in place*. "Plan carefully and
+consider infrastructure" is what every Colorado Springs politician says and separates neither.
+
+**Two rows changed, 3 → 2**, with their public reasoning rewritten to justify the new chair:
+- **Gold** — "District 4 has seen firsthand what happens when development **outpaces**
+  infrastructure"; annexation judged on "water availability, infrastructure capacity". Conditioning,
+  not investing ahead.
+- **Leinweber** — infill before annexation, "taking advantage of **existing** infrastructure", and
+  he would have slowed the process to gather facts. Conditioning, not investing ahead.
+
+**Kept as-is:** Henjum 2 (opposes flagpole annexations on water/infrastructure/public-safety
+grounds, with votes), Rainey 2 (backs a specific numeric water-supply threshold, the 128% rule,
+before annexation), Casey 2 ("vital to ensure development does not outpace the ability of City
+services to support"), **Mobolade 3** — he is the one member with an affirmative forward programme
+(RetoolCOS zoning flexibility, an annexation policy weighing future utility needs), which is what
+chair 3 actually describes.
+
+**Kept skipped:** Donelson (describes wastewater capacity being fixed to unlock Banning Lewis Ranch —
+a fact, not a stated preference, and it reads across two chairs), Williams (only "we need to grow
+intentionally"), Risley (says "the market will largely drive the balance", which points at the
+deregulatory end, but he also criticises the water ordinance as rushed — no clean chair).
+
+Final distribution: **Casey 2, Gold 2, Henjum 2, Leinweber 2, Rainey 2, Mobolade 3**, three blank.
+
+## ✅ The WebFetch-paraphrase warning proved load-bearing
+
+After the warning went into both briefs, an agent researching a county commissioner reported that an
+earlier WebFetch pass had **hallucinated two quotes** attributed to her — one about preserving
+"2½-acre plots", one about a 300-year water rule. A strict "only text inside quotation marks"
+re-fetch of the *same article* confirmed **neither sentence exists in the source**. She dropped both.
+
+That is two fabricated statements about a real person, caught before they were written down, by a
+warning that only existed because two other agents had hit the same defect earlier in the night and
+reported it. Propagating findings back into the brief mid-wave is what made the difference.
+
+Standing rule for any future wave: **treat WebFetch output as a summary, never as a transcript.**
+Confirm a quote with a strict re-fetch, and verify the whole set against raw bytes afterwards.
