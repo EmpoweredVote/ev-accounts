@@ -135,6 +135,12 @@ response team, and a January 2024 migrants/sanctuary statement. It took that per
   positions and confirming absence.
 - 🔴 `krdo.com` has no WebFetch-reachable search endpoint — both `?s=` and `/search/?q=` return
   404. Don't retry it. (Individual krdo.com article URLs still work if you have one.)
+- ✅ **On `koaa.com/search?q=<name>`, look for a "one-on-one with…" or profile-interview headline
+  and fetch that FIRST.** Measured: a sit-down interview is far richer per fetch than vote-report
+  coverage, which tends to quote everyone *except* the person you are researching. It was the
+  single highest-value source for the one council member who had no questionnaire at all.
+- ✅ **`coloradopolitics.com` and `completecolorado.com` also work** — statewide political coverage
+  and op-eds, useful when a local official comments beyond city business.
 - ✅ **`pikespeakbulletin.org/?s=<term>` and `socoinsider.com/?s=<term>` BOTH WORK** — verified
   server-rendered search, ~215KB and ~111KB of real results. These are the local
   alternative-press outlets (successors to the Colorado Springs Independent) and they cover
@@ -202,6 +208,16 @@ city council.
   position.)
 - **Commissioners** set county policy on land use, jail funding, roads and public health, so they
   are the richer half of this cohort.
+
+🔴 **The county's meeting record CANNOT seat a chair, and here is why — don't spend time on it.**
+El Paso County publishes BOCC agendas and minutes through **AgendaSuite**
+(`agendasuite.org/iip/elpaso`, documents at `.../file/getfile/<id>`), and it is freely fetchable.
+But the minutes are **ACTION MINUTES** — motions, seconds and vote tallies in block capitals
+("VICE CHAIR WILLIAMS MOVED/COMMISSIONER APPLEGATE SECONDED… MOTION CARRIED (4-0)") with **no
+narrative of what any commissioner said**. That is the opposite of the *city* council's minutes,
+which do summarise each member's reasoning. So the county record establishes *how someone voted*
+and nothing about *why* — and a bare vote cannot seat a chair. Use it only to confirm a fact, never
+as the basis for a value.
 
 🔴 **The county has NOT certified a 2026 candidate list yet** (checked 2026-08-21), so there is no
 2026 voter guide to find. Don't hunt for one.

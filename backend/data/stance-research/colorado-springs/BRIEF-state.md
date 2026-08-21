@@ -83,10 +83,27 @@ actual issues statement lives.
   on every page; only the person's own answers count)
 - Vote Smart (`justfacts.votesmart.org`) political courage test responses
 - `coloradohouserepublicans.com` / `cohousedems.com` / senate caucus sites — issues pages
-- `coloradonewsline.com`, `coloradosun.com`, `gazette.com`, `koaa.com`, `krdo.com`
+- `koaa.com`, `krdo.com` (article URLs; krdo search endpoints 404)
+- ✅ **`coloradopolitics.com` and `completecolorado.com` WORK and were the two most productive
+  tier-2 sources found for a legislator** — op-eds and statewide political coverage in the
+  member's own words. Not obvious, easily missed, use them.
+- ⚠ `coloradosun.com` and `coloradonewsline.com` were unreachable in at least one session; try
+  them but don't burn attempts if they fail.
+- ⚠ `denvergazette.com` shares the `gazette.com` WAF — both 403.
 - The member's own campaign site
 
 🔴 **cpr.org is behind a WAF** — WebFetch and curl both get HTTP 403. Do not spend attempts on it.
+
+🔴 **Ballotpedia returns an EMPTY BODY for this cohort** (not a 403 — an empty 200, which looks
+like a fetch failure but is the real response). Six agents are now 0-for-6 on it. Skip it.
+
+✅ **`pikespeakbulletin.org/?s=` and `socoinsider.com/?s=` both work** (verified server-rendered
+search) and cover El Paso County politics in real depth. Under-used.
+
+✅ **On `koaa.com/search?q=<name>`, look specifically for a "one-on-one with…" or profile-interview
+headline and fetch that first.** Measured across this cohort: a sit-down interview is far richer
+per fetch than vote-report coverage, which tends to quote everyone *except* the person you are
+researching.
 
 **Tool rule:** prefer the local file (Read), then WebFetch. Do not use WebSearch or Playwright.
 

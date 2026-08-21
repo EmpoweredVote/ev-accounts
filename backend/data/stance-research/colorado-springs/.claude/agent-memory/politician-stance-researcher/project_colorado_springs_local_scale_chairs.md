@@ -281,3 +281,54 @@ now with much higher confidence since it's a documented absence, not just an unc
 
 Running total for Henjum: 4/22 topics seated (growth-and-development, residential-zoning,
 public-safety-approach, local-immigration). File: `out-henjum.csv`.
+
+## Lynette Crow-Iverson (At-Large 1, NO questionnaire response) — 2/22 seated, entirely from web
+## sourcing, see [[project_colorado_springs_web_sourcing]] for the source-discovery detail
+
+`sources/cpr-2023-crow-iverson.md` is "Candidate did not respond to survey" on every question —
+first true zero-tier-1 candidate in the cohort. Found via `pikespeakbulletin.org/?s=` +
+`koaa.com/search?q=` instead. Output at `out-crow-iverson.csv`.
+
+**Seated:**
+- `homelessness` = 5 (criminal penalties, reliance on existing social services). A koaa.com
+  one-on-one interview quotes her own normative framing of the city's sit-lie ordinance —
+  "Getting people the help they need is more compassionate than letting them sit there in freezing
+  temperatures" — cross-referenced against the ordinance's actual mechanics from
+  `pikespeakbulletin.org` ($500 fine 1st offense, up to 90 days JAIL 2nd offense, no shelter-bed
+  contingency, no warning step). The "criminal penalty + existing services, not a new shelter
+  mandate" combination is what separates this from chair 4.
+- `homelessness-response` = 4 (enforcement-primary + basic outreach). Same interview, "You can't
+  just trash a part of our city. You have to do something" — enforcement (sit-lie) is what she
+  leads with as her policy; no call for new outreach/shelter investment anywhere found, which is
+  what keeps this from reading as chair 3 (services-primary, enforcement secondary).
+
+**Skipped — close but under-determined:**
+- `public-safety-approach` — "I'm a limited government. Essential functions of government, police,
+  fire and infrastructure... will continue to be my focus" is priority/continuity language with no
+  funding-DIRECTION verb (no "increase," no staffing number). Contrast Henjum ("200 more sworn
+  officers") and Williams ("active role to recruit and retain officers") — both had an explicit
+  ask; Crow-Iverson's version reads as "keep emphasizing" rather than "grow," which under-
+  determines between the ladder's "keep current + add crisis teams" (3) and "increase staffing" (4)
+  chairs. Neither sub-clause (crisis teams; a specific increase) is evidenced — skip rather than
+  guess from tone.
+- `economic-development` — "the redevelopment of the North Nevada corridor... it's kind of a gem
+  in the rough right now" names a real, specific project but never states the funding mechanism
+  (tax abatement vs. public infrastructure spend vs. pure zoning/permitting change) that would
+  distinguish this ladder's chairs. Searched twice for corroboration (pikespeakbulletin.org,
+  socoinsider.com) and found nothing — a genuinely dangling lead, not yet resolvable.
+- `local-immigration` — she was directly involved in an immigration-adjacent controversy (faith
+  leaders' MLK-day comments criticizing ICE; she reprimanded a colleague over it) but read three
+  full articles and confirmed she deliberately kept her own remarks to meeting-decorum grounds,
+  never engaging the ICE-detainer substance. This is a confirmed, deliberate non-position, not an
+  unchecked gap.
+- No local record found at all: abortion, campaign-finance, childcare, city-sanitation,
+  civil-rights, climate-change, data-centers, fossil-fuels, growth-and-development, housing,
+  jail-capacity, local-environment, religious-freedom, rent-regulation, residential-zoning,
+  trans-athletes, transportation-priorities (the CPR bio's TOPS/PPRTA-advocacy claims are
+  reporter's-voice only and produced zero independent corroboration on a direct search for either
+  ballot campaign).
+
+Running total for Crow-Iverson: 2/22 — lowest yield in the cohort so far, but a genuine, honest
+result given zero tier-1 material. Confirms the brief's framing: web sourcing alone, done well
+(alt-press search + a profile interview), can partially substitute for a missing questionnaire but
+does not come close to matching one.

@@ -168,3 +168,48 @@ alone cannot separate 2 from 3, and an agent reading it in isolation drifts to 3
 proactive. **Do not resolve this per-agent.** Held for a single adjudication pass over the whole
 cohort with all sources in view, so the answer is consistent across the nine council members rather
 than an artifact of which agent read which file.
+
+## 🔑 THE LEGISTAR WEB API — the biggest source find of this wave, and it generalises
+
+Colorado Springs runs its legislative record on Legistar. The **WebForms UI at
+`coloradosprings.legistar.com` is not fetchable** — it needs interactive postback, which is exactly
+where one agent correctly gave up. But Legistar exposes a **public, unauthenticated JSON Web API**
+that needs no browser at all:
+
+    https://webapi.legistar.com/v1/coloradosprings/...
+
+    events?$filter=EventDate ge datetime'2026-04-01' and EventDate le datetime'2026-04-15'
+    events/{id}/eventitems?Attachments=1     → agenda items + attachment URLs
+    events/{id}                              → EventAgendaFile / EventMinutesFile PDF links
+    matters?$filter=substringof('camping',MatterTitle)
+    matters/{id}/histories                   → every action, with mover/seconder and vote tallies
+    matters/{id}/attachments                 → ordinance text, staff presentations
+    eventitems/{MatterHistoryId}/votes       → 🔑 THE PER-MEMBER ROLL CALL, by name
+
+Attachment PDFs at `legistar2.granicus.com/...` are then plain-fetchable.
+
+**What it unlocked here, concretely:**
+1. **Ken Casey's vacancy-application packet.** He is an appointee with no campaign and no
+   questionnaire, and his first pass was an honest zero across all 22 topics. The packet
+   ("District 2 Candidates - Finalists", attached to event 2840) contains his written answers to
+   nine questions including growth, public safety, transportation and parks — a first-person policy
+   record equal to a campaign questionnaire. He went 0 → 2 seated topics, and would have stayed at
+   zero without it.
+2. **Ordinance No. 26-08, the camping ordinance** — matter 25-590, presented by Donelson, finally
+   passed 2026-03-10 **7-2** (No: Gold, Henjum). A numbered, adopted, non-quasi-judicial instrument
+   squarely on the `homelessness` axis, with the per-member roll call *and* the minutes in which
+   members explain themselves.
+
+**The minutes are narrative.** They summarise what each member said — "Councilmember Leinweber
+stated he cannot support a person living in their car because living that way supports isolation
+and loneliness when what they really need is the resources to help them… this Ordinance does not
+criminalize homelessness; it regulates camping on public land." 🔴 That is the **clerk's
+third-person summary, not a verbatim quote** — it can carry `reasoning` and it proves the member
+articulated a position rather than merely voting, but it must never become `quote_text`.
+
+Consolidated into `sources/camping-ordinance-26-08.md` (both roll calls + both discussions) for a
+single adjudication pass over the whole council, rather than nine separate re-reads.
+
+**Generalises to:** any jurisdiction on Legistar/Granicus — which is most mid-size and large US
+cities and many counties. Worth trying `webapi.legistar.com/v1/<client>/` before concluding a
+council has no reachable record.

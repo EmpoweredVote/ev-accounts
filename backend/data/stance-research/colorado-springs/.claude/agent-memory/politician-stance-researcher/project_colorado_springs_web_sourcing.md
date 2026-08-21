@@ -187,3 +187,72 @@ for Henjum specifically (which topics her questionnaire could/couldn't seat).
 - `krdo.com` still has no reachable search endpoint (`/search/?q=` 404s too, joining `?s=` and
   `/search/`) - three endpoint guesses now dead across two research passes, stop trying krdo.com
   search entirely for this cohort and rely on koaa.com.
+
+## Lynette Crow-Iverson (At-Large 1) pass, 2026-08-21 — first NO-QUESTIONNAIRE candidate in this
+## cohort, and first real test of pikespeakbulletin.org / socoinsider.com
+
+Her `sources/cpr-2023-crow-iverson.md` records "Candidate did not respond to survey" on every
+single question (verified by reading the full file) — zero tier-1 material, unlike every prior
+candidate in this cohort. Went in expecting 0 rows; landed 2/22 via web sourcing alone.
+
+- **`pikespeakbulletin.org/?s=<Name>` WORKS WELL and DID surface real content** — 5 distinct
+  articles for "Crow-Iverson" (2025-2026), mostly about her as Council President (sworn in April
+  2025) handling public-comment procedure, an MLK proclamation controversy, and a Charlie Kirk
+  resolution. Good WebFetch summarization quality — returned real dates, URLs and verbatim quotes
+  on the first pass, no retry needed.
+- **`socoinsider.com/?s=<Name>` returned a genuine, trustworthy ZERO** ("Search Results:
+  Crow-Iverson (0)") — confirms the brief's claim that this endpoint is real server-rendered
+  search, not a JS shell; a negative here is worth recording; don't skip trying it just because it
+  came up empty for this person — it may hit for others.
+- **Most of what pikespeakbulletin.org surfaced for her was PROCEDURAL/DECORUM, not policy** — her
+  Council-President-era fights (banning public comment on a resolution, reprimanding a colleague
+  for a social-media post, restricting comment procedure) all involve free-speech/meeting-process
+  disputes that do NOT map onto any of the 22 topics (not `religious-freedom`, not
+  `campaign-finance`, not `civil-rights` — checked all three explicitly). **A council president's
+  procedural fight over WHO gets to talk and WHEN is not a policy stance on the subject they were
+  talking about.** She was notably deliberate about staying off the immigration substance during
+  the MLK/ICE controversy — her reprimand of Councilmember Gold was framed entirely as a decorum
+  violation, explicitly NOT engaging the ICE-detainer content faith leaders raised. Read three
+  separate articles on this to confirm she never took a position on the actual immigration
+  question — this is a genuine, confirmed absence (not an unchecked topic) for `local-immigration`,
+  distinct from Henjum's case (where she had a real detainer-adjacent quote).
+- **The single highest-value source for her: `koaa.com` had an actual sit-down interview article**
+  — "One-on-one with Colorado Springs City Council President Lynette Crow-Iverson" (found via
+  `koaa.com/search?q=Crow-Iverson`, by Tony Keith). This is a proper Q&A/profile interview, not a
+  vote-report — it yielded her own words on limited-government philosophy, police/fire/
+  infrastructure as her "essential functions" focus, the sit-lie ordinance, and a North Nevada
+  Avenue corridor redevelopment mention. **When a name search on koaa.com surfaces a "one-on-one"
+  or profile-interview headline, prioritize fetching it directly** — it's a much richer source per
+  fetch than vote-report articles, which tend to quote everyone BUT the person you're researching.
+- **Her own words on the sit-lie ordinance seated 2 chairs where a bare vote (Henjum's case)
+  seated none.** She said, unprompted, in the interview: "we expanded sit-lie, which is a
+  compassionate way of dealing with homelessness and vagrancy," "Getting people the help they need
+  is more compassionate than letting them sit there in freezing temperatures," and "You can't just
+  trash a part of our city. You have to do something." Cross-referenced with
+  `pikespeakbulletin.org/?s=sit-lie` for the ordinance's actual mechanics (found via
+  `local-politics/homeless-union-protests-sit-lie-expansion/`): $500 fine 1st offense, up to 90
+  days JAIL 2nd offense, no shelter-bed contingency mentioned, no explicit warning step before the
+  first penalty. The combination of (a) her own forward-looking normative framing and (b) the
+  ordinance's actual criminal-penalty mechanics is what let both `homelessness` and
+  `homelessness-response` seat cleanly (5 and 4 respectively) — neither the quote alone nor the
+  ordinance-mechanics alone would have been enough.
+- **`public-safety-approach` and `economic-development` came close but didn't seat** — her "I'm a
+  limited government. Essential functions of government, police, fire and infrastructure... will
+  continue to be my focus" is priority/continuity language, not a funding-DIRECTION claim (no
+  "increase," no specific budget ask like Henjum's "200 more sworn officers"), so it under-
+  determines between "keep current" and "increase" chairs — skipped. Her "North Nevada corridor...
+  it's kind of a gem in the rough" economic-development lead went nowhere: searched
+  `pikespeakbulletin.org/?s=North+Nevada+corridor` and `socoinsider.com/?s=North+Nevada` for the
+  actual funding mechanism (tax abatement? public infrastructure spend?) and found NOTHING on
+  either — a real, checkable lead that simply has no corroborating source yet.
+- **The CPR bio-paragraph's TOPS/PPRTA advocacy claims (rule: reporter's voice, not usable)
+  produced zero corroboration anyway** — searched `pikespeakbulletin.org/?s=PPRTA` and
+  `socoinsider.com/?s=PPRTA` specifically hoping to find HER OWN words on the ballot campaign; no
+  PPRTA article mentions her at all. Even if the bio-paragraph rule didn't bar it, there's no
+  independent source to promote it with. Same non-result for a direct utilities/rate-case search
+  (`pikespeakbulletin.org/?s=Crow-Iverson+utilities`) — nothing CSU-board-specific for her.
+- **Net effect: alt-press search (`pikespeakbulletin.org`) + a koaa.com profile-interview together
+  fully replaced a missing questionnaire for 2 of 22 topics** — meaningfully better than zero, and
+  proof that `pikespeakbulletin.org/?s=` is worth running FIRST (before `coloradosprings.gov` or
+  `koaa.com`) for any candidate in this cohort, questionnaire or not — it was faster and higher
+  signal-per-fetch than any other source tried this pass.
