@@ -1,3 +1,58 @@
+# ▶️ RESUME HERE — Colorado Springs stance wave (state as of 2026-08-21)
+
+**Branch `feat/colorado-springs-geometry`. Nothing pushed to prod yet. All work committed as CSVs.**
+
+## Exactly where we are
+
+- **66 rows across 22 people**, `validate-wave.mjs` clean (high=0, medium=0).
+- **All 51 quotes verified** against raw source bytes — `verify-quotes.mjs` reports 0 not-found.
+- Cohort is **35 people**: 10 CS council ✅ done, 11 El Paso County (9 done), 14 legislators (11 done).
+
+## What is left — do these in order
+
+1. **Two legislators never dispatched:** **Lynda Zamora Wilson** (Senate District 9) and
+   **Rod Pelton** (Senate District 35). Sources already harvested at
+   `sources/leg-lynda-zamora-wilson.md` and `sources/leg-rod-pelton.md`.
+   Dispatch with `BRIEF-state.md` + `scale-state.json`, output to `out-zamora-wilson.csv` /
+   `out-pelton.csv`. Copy a recent legislator dispatch prompt — they carry the accumulated playbook.
+2. **Four agents were in flight** when context ran out. Check whether these files exist and are
+   valid before re-dispatching anyone: `out-keltie.csv` (Rebecca Keltie HD16),
+   `out-english.csv` (Regina English HD17), `out-flanell.csv` (Ava Flanell HD14),
+   `out-applegate-nelson.csv` (Cory Applegate + Lauren Nelson, county). If a file is missing, that
+   agent died — re-dispatch it.
+3. **Re-run both checks** after any new rows land:
+   `node data/stance-research/colorado-springs/validate-wave.mjs`
+   `node data/stance-research/colorado-springs/verify-quotes.mjs`   (must report 0 not-found)
+4. **Push to prod:** `node data/stance-research/colorado-springs/push-wave.mjs --dry-run` then
+   `--commit`. It writes `politician_answers` + `politician_context` together in one transaction and
+   refuses to overwrite an existing value. Dry-run has been clean throughout and the rollback was
+   confirmed to actually revert.
+5. **Re-run the CI gate** and confirm no baseline moved:
+   `npm run check:stance-sources --prefix backend`.
+   **Pre-push baseline, recorded 2026-08-21:** 745 offending rows / 4 checks —
+   BALLOTPEDIA_ONLY 158 (baseline 159), BARE_AGGREGATOR_DOMAIN 1 (1), ORPHAN_CONTEXT 50 (50),
+   PRIMARY_SITE_NO_PATH 536 (536); ANSWER_WITHOUT_CONTEXT / EMPTY_SOURCES / FABRICATED_SOURCE /
+   NON_URL_SOURCE all 0 and must stay 0.
+   ✅ Already verified safe: our 116 source URLs include **0 bare-domain and 0 Ballotpedia**, so the
+   push cannot raise those two counts.
+
+## Also outstanding, unrelated to stances
+
+🔴 **The banners are committed but NOT PUSHED.** Commit `b549f727` on `main` in
+`C:\Transparent Motivations\essentials`. The two assets are already uploaded to Supabase Storage and
+sha256-verified, so only the registry commit needs to reach Netlify. One `git push` makes them live.
+
+## Two cohort-level lessons that must be applied to any future wave
+
+Per-person agents cannot see each other's work. **Twice** on this wave, comparing rows side by side
+changed an answer — `growth-and-development` (inconsistent 2/3 seating) and `local-immigration`
+(the county Board Chair seated a chair ABOVE the Sheriff on weaker evidence). **Any ladder touched
+by several members of one body needs a cohort-level adjudication pass before push.** The remaining
+legislators are in different chambers/districts so this is lower risk, but re-check
+`local-immigration` and `homelessness` if new county rows land.
+
+---
+
 # Colorado Springs stance wave — working notes
 
 Started 2026-08-21. Branch `feat/colorado-springs-geometry`. Phase 5 of the CS deep seed
@@ -388,3 +443,34 @@ underlying posture, which is what the evidence actually shows.
 **The general lesson:** per-person agents cannot see each other's work, so a ladder touched by
 several members of the same body needs a cohort-level pass. This is the second time on this wave
 (after `growth-and-development`) that comparing rows side by side changed an answer.
+
+## County row officers — a documented zero, and a scale-coverage gap worth acting on
+
+All four administrative row officers (Assessor, Clerk & Recorder, Coroner, Treasurer) produced
+**zero rows**, checked individually rather than waved off. Two distinct reasons, and they mean
+different things:
+
+- **No record at all**: Assessor Mark Flutcher and Coroner Emily Russell-Kinsley. The only Flutcher
+  hit has him observing that reappraisal notices "scared a lot of people" — a comment on public
+  reaction, not a proposal. Russell-Kinsley's coverage is appointment notices and a profile about
+  management style; targeted searches for any overdose/harm-reduction policy statement found only
+  factual death reports, which is precisely the "reporting data is not a position" trap.
+- 🔴 **Real, quotable policy positions with NOWHERE ON THE SCALE TO PUT THEM**: Clerk & Recorder
+  **Steve Schleiker** wrote an April 2026 op-ed, "How we know our El Paso County elections are safe
+  and secure" (SAVE Act, mail-in voting), and pulled the county out of the Colorado County Clerks
+  Association. Treasurer **Chuck Broerman** co-authored an April 2026 Colorado Politics op-ed,
+  "Update, safeguard Colorado's mail ballot with voter ID."
+
+Both are genuine first-person policy advocacy. Both concern **election administration and voter ID**
+— and **the 22-topic LOCAL scale has no `voting-rights` or elections topic at all** (the *state*
+scale does). So the honest outcome is a blank, but the cause is a gap in the ladder set rather than
+a gap in the record.
+
+**Recommendation:** if a local elections/voting-rights topic is ever added, these two officers are
+ready-made, well-sourced subjects for it. Worth noting when the local scale is next reviewed —
+county clerks are the officials most likely to hold a public position on exactly that axis, and the
+scale currently cannot represent them at all.
+
+⚠ One misattribution caught in passing: Colorado Politics' own search UI labels Broerman as "Clerk
+and Recorder". He is the **Treasurer**; Schleiker is the Clerk. The agent verified true authorship
+before citing.
