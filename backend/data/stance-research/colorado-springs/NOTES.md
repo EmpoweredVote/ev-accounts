@@ -496,3 +496,19 @@ in the record, and they are worth raising when the scales are next reviewed:
 
 Not an argument for adding topics casually — but the clerk case in particular looks like a genuine
 blind spot for any county cohort, since it is the one office whose whole remit is elections.
+
+## Decision: the harvested sources stay in the repo (operator, 2026-08-21)
+
+The PR is +28,821 lines and most of it is `sources/` and the `out-*.csv` payloads rather than code.
+**Operator decision: keep them.** Not up for re-litigation on a future wave.
+
+The reason it matters: a stance is a public claim about a real person, and `reasoning` renders to
+voters under "Why this position?". Six months from now the only way to check whether a chair was
+fairly seated is to re-read *the text it was drawn from* — and several of this wave's best sources
+are behind a WAF (cpr.org allows one page per browser launch), are Legistar attachments reachable
+only via an undocumented JSON API, or are news pages that rot. Freezing them to `sources/` is what
+makes the wave auditable rather than merely asserted. The CSVs are the same argument: they carry the
+per-row source URLs, quotes and editor notes that the DB flattens.
+
+Practical consequence for future waves: **harvest to `sources/` and commit it.** Don't treat the
+harvest as scratch.
