@@ -359,3 +359,32 @@ on-question gate for this ladder.
 This is the same defect as the city `local-immigration` row dropped earlier: **an instrument about
 cooperating with federal enforcement mapped onto a ladder asking a different question.** Worth
 generalising — that mapping is the most seductive wrong answer in this whole topic area.
+
+## Harmonised: `local-immigration` across the county, 5 → 4 for the Board Chair
+
+Three county officials were seated on this ladder by three different agents, and the result was
+internally inconsistent:
+
+| | seated | evidence |
+|---|---|---|
+| Sheriff Roybal | 4 | reinstated ICE communication, authorised deputies to assist **"when requested"**, publishes transfer lists, **pursued a formal 287(g) agreement**, "my office collaborates with ICE when criminal activity is involved" |
+| Commissioner H. Williams | 4 | joined the county lawsuit; "fully collaborating with ICE Officials, **as state statute allows**" |
+| Commissioner Geitner (Chair) | **5** | announced the same lawsuit, framed as restoring the Sheriff's ability to contract with the federal government |
+
+🔴 **The Board Chair was seated a chair ABOVE the Sheriff, on weaker evidence, for the same county
+action.** That is the tell. Two things settle it:
+
+1. Chair 5's operative verb is "**Direct** local police to actively assist… and support federal
+   detention operations." A county commissioner cannot direct the Sheriff — the office is
+   independently elected. Litigating to remove a statutory barrier is *enabling* cooperation, not
+   directing enforcement.
+2. Her own quote carries the same criminal-conduct limit that kept the Sheriff at chair 4 ("if we
+   have criminals in our community who are doing harm… we want to make sure that we are able to get
+   them out"). The same framing cannot support two different chairs.
+
+Changed to 4 with the reasoning rewritten. All three county officials now sit at chair 4 on the same
+underlying posture, which is what the evidence actually shows.
+
+**The general lesson:** per-person agents cannot see each other's work, so a ladder touched by
+several members of the same body needs a cohort-level pass. This is the second time on this wave
+(after `growth-and-development`) that comparing rows side by side changed an answer.
