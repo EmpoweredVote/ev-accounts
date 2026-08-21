@@ -76,15 +76,33 @@
  * El Paso County pockets sit inside the city outline, and an address in one has
  * NO council member. The district polygons already model this correctly — of 52
  * testable enclave centroids, 51 fall outside every district. ONE does not, a
- * ~0.6 ha sliver near (-104.785, 38.981) where the district edge and the
- * city-limits edge were digitized differently; at ~35 m resolution it is 5 grid
- * points. That is a digitizing mismatch, not a swallowed neighborhood, and it is
- * NOT clipped here: re-cutting the city's authoritative district polygons
- * against a different layer's edges would make us the authority instead of the
- * city and would introduce fresh artifacts along the whole ~100 km boundary for
- * a sliver that plausibly contains no address. Instead the enclave overlap is a
- * NEGATIVE CONTROL with an allowance of 1 — if the city ever republishes a
- * layer that genuinely swallows an enclave, the load refuses.
+ * ~0.6 ha sliver near (-104.785, 38.981); at ~35 m resolution it is 5 grid points.
+ *
+ * THAT ONE IS NOT CLEARLY AN ERROR — the sources genuinely disagree about it.
+ * Checked 2026-08-21, the point resolves as:
+ *
+ *     city council district layer   District 2                 -> IN the city
+ *     TIGER place 0816000           "Colorado Springs city"    -> IN the city
+ *     city CityLimits layer         outside
+ *     city County Enclaves layer    "NOT IN CITY OF COLORADO SPRINGS"
+ *
+ * Two sources put it in and two put it out, and the two that put it in include
+ * the layer this loader treats as authoritative for districts plus the Census.
+ * The likeliest reading is that the enclave layer lags an annexation. Clipping
+ * would side with one city layer against another city layer AND against TIGER,
+ * make us rather than the city the authority on the boundary, and introduce
+ * fresh edge artifacts along the whole ~100 km perimeter to fix 0.6 ha. So it is
+ * left alone.
+ *
+ * The consequence is worth knowing: a point in that sliver returns a district
+ * councilmember and NO mayor, because the city-wide seats hang off CityLimits,
+ * which excludes it. That is the same partial-answer shape this file rejects
+ * TIGER for above — at roughly one twenty-thousandth of the area, and with the
+ * sources split rather than one simply being stale.
+ *
+ * The enclave overlap is therefore a NEGATIVE CONTROL with an allowance of 1 — if
+ * the city ever republishes a layer that genuinely swallows an enclave, the load
+ * refuses.
  *
  * CRITICAL: outSR=4326 is mandatory. CRITICAL: f=geojson (NOT f=json).
  * CRITICAL: state='co' LOWERCASE — LOCAL-tier routing join key.
