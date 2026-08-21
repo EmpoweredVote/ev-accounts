@@ -105,6 +105,17 @@ headline and fetch that first.** Measured across this cohort: a sit-down intervi
 per fetch than vote-report coverage, which tends to quote everyone *except* the person you are
 researching.
 
+
+🔴 **WEBFETCH PARAPHRASES — NEVER TRUST IT FOR A QUOTE.** WebFetch runs a summarising model over the
+page. It will sometimes hand back paraphrased talking points *formatted as if quoted*, and two
+"reproduce verbatim" calls on the same page can return two different "exact quotes". Two agents on
+this wave hit this independently. Before you put anything in `quote_text`:
+- re-fetch with an explicit instruction to return **only text inside quotation marks**, and
+- treat a quote as safe only if it reproduces identically across independent fetches.
+If you cannot confirm it, leave `quote_text` blank and record the stance from the record. Every
+quote in this wave is re-checked against raw source bytes afterwards, so an invented one will be
+caught — but catching it costs a rewrite, and a dropped real quote costs coverage.
+
 **Tool rule:** prefer the local file (Read), then WebFetch. Do not use WebSearch or Playwright.
 
 ## Output

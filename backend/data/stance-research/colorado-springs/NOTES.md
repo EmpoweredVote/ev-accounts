@@ -213,3 +213,82 @@ single adjudication pass over the whole council, rather than nine separate re-re
 **Generalises to:** any jurisdiction on Legistar/Granicus — which is most mid-size and large US
 cities and many counties. Worth trying `webapi.legistar.com/v1/<client>/` before concluding a
 council has no reachable record.
+
+## ⚠ OPEN: the homelessness cluster needs the camping-ordinance adjudication
+
+Hand-review of the seated rows found three that are thinner than they look. None is clearly wrong;
+all three rest on evidence that gestures at the chair rather than naming it. Flagged rather than
+dropped, because Ordinance 26-08 (now harvested with both roll calls and both discussions) is
+exactly the evidence that can settle them.
+
+- **Williams, `homelessness` = 4** and **`homelessness-response` = 3** — both rest partly on a KOAA
+  *paraphrase* that she and Donelson "questioned whether penalties for low-level offenses are enough
+  to deter crime". Asking whether penalties suffice is not a position on prohibiting encampments.
+  She did vote **Aye** on Ordinance 26-08, which the agent did not know.
+- **Crow-Iverson, `homelessness-response` = 4** — rests on "You can't just trash a part of our city.
+  You have to do something." That is an expression of concern, not a strategy. Her
+  `homelessness` = 5 is better founded (her own words on the sit-lie ordinance, cross-checked
+  against its actual mechanics) but leans on the ordinance's content more than on her quote.
+
+Rows that reviewed clean and need no further work: Rainey (`housing` = 5 is the single best-matched
+row in the wave — "allow the free market to operate… with the least amount of government
+interference" against a chair reading "stay out of housing entirely and let the market decide"),
+Rainey `growth-and-development` = 2 (the 128% water rule, specific and his own), Casey's two rows,
+Donelson's three, Henjum's three.
+
+## 🔴 MATERIAL LIMITATION — Colorado's legislative record is mid-migration, and it caps this cohort
+
+leg.colorado.gov is currently displaying a banner that it is "migrating legacy session data to a
+new location" and that links to it "may not be functional at this time." The practical effect is
+that **only the current (2026) session is reachable**:
+
+- Member pages carry current-session prime sponsorships only, with no session selector.
+- `leg.colorado.gov/bill-search?search_api_views_fulltext=<name>` does work and is multi-session in
+  principle, but a search for a legislator who has served since 2013 returned **26 distinct bills,
+  25 of them from the 2026 session and exactly one from 2017**. The historical index is effectively
+  empty.
+- `data.openstates.org` serves the people roster CSV fine but **403s on directory listings**, so the
+  bulk bill archive can't be enumerated without a key. No LegiScan key is configured either.
+
+**Consequence, stated plainly:** for long-serving members the seated-topic count understates the
+record rather than reflecting a thin one. One 13-year legislator produced a single row. That is a
+source-availability artifact, not a finding about the person, and it should not be read as "this
+legislator has no positions." Re-run the legislator half once Colorado finishes the migration.
+
+This does NOT affect the city/county half, whose evidence is questionnaires, city news, Legistar and
+local press — all fully reachable.
+
+## ✅ QUOTE VERIFICATION — all 44 quotes matched to raw source, zero fabrications
+
+🔴 **Why this pass was necessary.** Two agents independently discovered the same defect:
+**WebFetch runs a summarising model over every page, and that model will sometimes return
+paraphrased talking points formatted as though they were quotations.** One agent re-fetched a
+profile piece with an explicit "only text inside quotation marks" instruction and the answer
+reversed to "no direct quotes exist" — the "quotes" from the first fetch had never been said.
+Another found that two "reproduce verbatim" calls on the same page returned two *different*
+"exact quotes" for the same passage, even through a raw-text proxy, and adopted a rule of citing
+only what reproduced byte-identical across independent fetches.
+
+A quote that was never said is a fabricated statement attributed to a real person. So
+`verify-quotes.mjs` re-checks every `quote_text` against the **raw bytes** of its source — plain
+fetch, no model in the loop — plus the frozen local harvest files.
+
+**Result: 43 verified against source, 1 resolved by hand. Nothing fabricated.**
+
+Three bugs in my own checker had to be fixed before the result could be trusted — worth recording,
+because each produced a false accusation against a real quote:
+1. It couldn't read PDFs, so quotes from the Legistar vacancy packet looked invented. Fixed by
+   converting every harvested PDF to `.txt`.
+2. It treated a leading `…` as literal text to find, so honestly-excerpted quotes failed. Fixed by
+   splitting on ellipses and requiring each substantial fragment.
+3. 🔴 It stripped punctuation *before* decoding numeric HTML entities, so `you&#8217;re` became
+   `you 8217 re` — the digits survive a punctuation strip. Two genuine quotes were flagged by this
+   alone. Decode entities first.
+
+**A false positive here is not harmless**: it invites dropping a real quote. Every flag was run to
+ground rather than resolved by deletion.
+
+One real edit surfaced and is now disclosed rather than silent: a councilmember's recording contains
+the spoken stutter "you have to you have to do something", which had been cleaned to "You have to do
+something" with no note. The `editor_note` now states the repetition was removed and nothing else
+changed.
