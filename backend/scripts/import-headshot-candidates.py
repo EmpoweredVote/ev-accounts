@@ -49,6 +49,9 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--exclude", nargs="*", default=[], help="names to skip")
 ap.add_argument("--only", nargs="*", default=[], help="import only these names")
 ap.add_argument("--dry-run", action="store_true")
+ap.add_argument("--max-upscale", type=float, default=1.0,
+                help="enlarge up to this factor to reach 600x750; beyond it, store at native "
+                     "cropped size instead (default 1.0 = never enlarge)")
 args = ap.parse_args()
 
 key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
@@ -98,8 +101,22 @@ for c in cands:
         else:
             kw, kh = w, int(w / ratio)
             img = img.crop((0, (h - kh) // 2, w, (h - kh) // 2 + kh))
+
+        # NEVER ENLARGE, AND NEVER SKIP FOR BEING SMALL.
+        # A source below 600x750 gets stored at its own cropped size instead of being
+        # blown up to fit. Both alternatives are worse: enlarging bakes in interpolation
+        # and produces a file that LOOKS like a full-resolution asset while carrying no
+        # more detail, and skipping leaves the person hotlinked to somebody else's host,
+        # which is how 7 Colorado portraits silently became 404s. Storing the real pixels
+        # keeps the bytes ours AND keeps the recorded resolution honest -- the browser
+        # scales it at render time, and anyone inspecting the file sees what it actually is.
+        # --max-upscale raises the ceiling deliberately; it is not the default.
         upscale = max(TARGET_W / kw, TARGET_H / kh)
-        img = img.resize((TARGET_W, TARGET_H), Image.LANCZOS)
+        if upscale <= args.max_upscale:
+            out_w, out_h = TARGET_W, TARGET_H
+        else:
+            out_w, out_h = kw, kh          # native cropped size, no enlargement
+        img = img.resize((out_w, out_h), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=90)
         data = buf.getvalue()
@@ -107,7 +124,8 @@ for c in cands:
         final = CDN + filename
 
         if args.dry_run:
-            print(f"  would   {c['name']:<26} {w}x{h} ({upscale:.2f}x) -> {filename}")
+            print(f"  would   {c['name']:<26} {w}x{h} -> {out_w}x{out_h}"
+                  f"{'  [native, not enlarged]' if (out_w, out_h) != (TARGET_W, TARGET_H) else ''}")
             done += 1
             continue
 
@@ -130,7 +148,8 @@ for c in cands:
             (c["page"], pid))
         conn.commit()
         done += 1
-        print(f"  imported {c['name']:<26} {w}x{h} ({upscale:.2f}x)")
+        print(f"  imported {c['name']:<26} {w}x{h} -> {out_w}x{out_h}"
+              f"{'  [native, not enlarged]' if (out_w, out_h) != (TARGET_W, TARGET_H) else ''}")
     except Exception as e:  # noqa: BLE001
         conn.rollback()
         failed += 1

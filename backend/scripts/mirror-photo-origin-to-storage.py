@@ -18,9 +18,10 @@ SAFETY
   * Refuses to write anything for a URL whose bytes are not a real image. The
     check is the MAGIC NUMBER, never the extension and never r.ok -- a WAF
     rejection can be HTTP 200.
-  * Refuses to UPSCALE beyond --max-upscale (default 1.0, i.e. never). A blurry
-    enlargement is worse than a blank, and the upscale factor is the gate on this
-    work. Skipped subjects are reported, not silently written.
+  * NEVER ENLARGES past --max-upscale (default 1.0, i.e. never), and never skips for
+    being small either -- a smaller source is stored at its own cropped size. Enlarging
+    fabricates detail; skipping leaves a live hotlink to somebody else's host for
+    exactly the flimsiest sources, and a rotted hotlink still reads as coverage.
   * Skips anyone who already has a politician_images row.
   * Storage upload uses x-upsert, so a re-run overwrites the same object rather
     than orphaning one. The DB insert is guarded on not-exists, so a re-run
@@ -164,10 +165,14 @@ def main():
             ratio = TARGET_W / TARGET_H
             keep_w, keep_h = (int(h * ratio), h) if w / h > ratio else (w, int(w / ratio))
             upscale = max(TARGET_W / keep_w, TARGET_H / keep_h)
-            if upscale > args.max_upscale:
-                skipped += 1
-                problems.append(f"{name}: source {w}x{h} needs {upscale:.2f}x upscale — skipped")
-                continue
+            # NEVER ENLARGE, BUT NEVER LEAVE SOMEONE HOTLINKED EITHER. A source below
+            # 600x750 is stored at its own cropped size rather than skipped. Skipping was
+            # the original behaviour and it is wrong: it leaves a live dependency on
+            # somebody else's host for exactly the people whose source is flimsiest, and
+            # a rotted hotlink still counts as coverage (HAS_RENDERABLE_PHOTO_SQL accepts
+            # any 'http%'), so the gap hides itself. Enlarging is the other wrong answer --
+            # it fabricates detail and produces a file that reads as full resolution.
+            out_w, out_h = (TARGET_W, TARGET_H) if upscale <= args.max_upscale else (keep_w, keep_h)
 
             # Centre crop to 4:5, then resize.
             if w / h > ratio:
@@ -176,7 +181,7 @@ def main():
             else:
                 top = (h - keep_h) // 2
                 img = img.crop((0, top, w, top + keep_h))
-            img = img.resize((TARGET_W, TARGET_H), Image.LANCZOS)
+            img = img.resize((out_w, out_h), Image.LANCZOS)
 
             buf = BytesIO()
             img.save(buf, "JPEG", quality=90)
@@ -186,7 +191,8 @@ def main():
 
             if args.dry_run:
                 src = "" if used_url == url else "  [upgraded variant]"
-                print(f"  would mirror {name:<28} {w}x{h} -> {TARGET_W}x{TARGET_H} ({upscale:.2f}x) {len(data)//1024}KB{src}")
+                native = "  [native, not enlarged]" if (out_w, out_h) != (TARGET_W, TARGET_H) else ""
+                print(f"  would mirror {name:<28} {w}x{h} -> {out_w}x{out_h} {len(data)//1024}KB{src}{native}")
                 done += 1
                 continue
 
@@ -213,7 +219,7 @@ def main():
             )
             conn.commit()
             done += 1
-            print(f"  mirrored {name:<28} {w}x{h} ({upscale:.2f}x) -> {final_url}")
+            print(f"  mirrored {name:<28} {w}x{h} -> {out_w}x{out_h} -> {final_url}")
 
         except Exception as e:  # noqa: BLE001 - report and continue, never half-write
             conn.rollback()
