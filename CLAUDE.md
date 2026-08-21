@@ -80,6 +80,11 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 
 - Live in `backend/migrations/`, numbered `NNNN_snake_case.sql`. **Take the next free number** and
   verify with `npm run check:migrations --prefix backend` (also CI-enforced on PRs).
+- 🔴 **`git fetch origin` before you read the max.** A stale worktree is the single most common
+  source of a collision: one has read 1424 when upstream was at 1464, and 1825 when it was at 1848.
+  The check compares against **every remote-tracking ref**, not just the base branch, so a number
+  claimed on a colleague's pushed-but-unmerged branch fails too — but only if you have fetched it.
+  `--list-duplicates` also reports slots claimed by different filenames on different refs.
 - **There is no `schema_migrations` table and no number-ordered runner.** Each migration is applied
   **once, ad hoc**; the number is a filename label for humans. Migrations are never replayed by a
   deploy — so a column drop cannot break historical migrations, but nothing re-applies them either.
@@ -91,6 +96,13 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
+- **Per-author namespace (opt-in) for the collision no tool can see.** Two authors both taking the
+  next free number *before either pushes* is not observable from any repo state — fetching does not
+  help. A filename may therefore carry a leading author namespace, `CA_1849_snake_case.sql`, where
+  `CA_1849` and `1849` are different slots and each author counts within their own. Duplicates
+  inside a namespace are still caught. Namespaced files sort after every numeric one, and nothing
+  globs the directory (migrations are applied one at a time by hand), so apply order is unaffected.
+  Adopt it per author or not at all — a half-adopted namespace just hides who owns which number.
 - 🔴 **Deleting from `inform.politician_answers` obliges you to decide what happens to the matching
   `inform.politician_context` row, in the same migration.** Removing the answer removes the chair; the
   reasoning that argued for that chair survives, still asserting a position, attached to nothing. It
