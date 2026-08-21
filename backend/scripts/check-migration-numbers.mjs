@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 /**
- * Fail if two migrations share a numeric prefix.
+ * Fail if two migrations share a slot — a slot being a numeric prefix, optionally inside a
+ * per-author namespace (see NAMESPACES below).
  *
- * Migrations are applied by filename order (`psql -f` per file, see DEPLOY.md), so two files sharing
- * a prefix have no defined order relative to each other.
+ * Migrations are applied one at a time by hand; the number is a filename label for humans
+ * (see CLAUDE.md). Two files sharing a slot make every cross-reference to that number ambiguous.
  *
- * ── TWO CHECKS, AND WHY BOTH ARE NEEDED ────────────────────────────────────────────────────────
+ * ── THREE CHECKS, AND WHY EACH IS NEEDED ───────────────────────────────────────────────────────
  *
- * A. **ADDED-VS-BASE** — files added on this branch that reuse a prefix already on base, or each
- *    other's. This is the pre-push signal and it catches the ordinary mistake.
+ * A. **ADDED-VS-CLAIMED** — files added on this branch that reuse a slot claimed anywhere the repo
+ *    can see: on the base branch, on ANY remote-tracking ref, or by each other. This is the
+ *    pre-push signal and it catches the ordinary mistake.
  *
- * B. **TREE SCAN** — duplicates at or above FLOOR anywhere in the migrations directory, regardless of
- *    what git thinks was "added".
+ * B. **TREE SCAN** — duplicate slots anywhere in the migrations directory, regardless of what git
+ *    thinks was "added".
  *
  * 🔴 CHECK B EXISTS BECAUSE CHECK A HAS A BLIND SPOT THAT LET A REAL COLLISION THROUGH.
  * On 2026-08-10 two parallel sessions both took 1681 (`1681_repoint_ca_municipal_urls_caveats_cleared`
@@ -26,12 +28,35 @@
  * worktree, which is how this repo is worked. A check whose green light depends on *when* you ran it
  * relative to someone else's push is not a check.
  *
+ * 🔴 CHECK A NOW READS EVERY REMOTE-TRACKING REF, NOT JUST THE BASE BRANCH.
+ * Comparing only against base left a second hole: a number claimed on a colleague's PUSHED but
+ * UNMERGED branch was invisible, so the check green-lit taking it. Verified on 2026-08-21 —
+ * `1827_austin_travis_offices.sql` was on `origin/feat/austin-tx-deep-seed` and not on master, and
+ * the check raised nothing against a fresh file taking 1827. Scanning all of `refs/remotes/` closes
+ * the half of this problem a tool CAN see. The other half — two authors both taking the next free
+ * number before EITHER pushes — is not observable from any repo state, and is what NAMESPACES are
+ * for. A number claimed on an abandoned branch stays claimed; delete the dead remote branch rather
+ * than working around the warning.
+ *
+ * ── NAMESPACES (opt-in, per author) ────────────────────────────────────────────────────────────
+ * A filename may carry a leading author namespace: `CA_1849_local_people_role_nullable.sql`.
+ * `CA_1849` and `1849` are DIFFERENT slots, so two authors working from their own namespace cannot
+ * collide with each other at all, without coordinating on a shared counter — which is the failure
+ * mode above. Duplicates WITHIN a namespace are still caught. A namespace is 1–8 alphanumerics
+ * starting with a letter, compared case-insensitively.
+ *
+ * This exists so the option is safe: before it, a `CA_`-prefixed file failed the `^(\d+)_` regex and
+ * was silently invisible to BOTH checks. Adopting it is a convention decision, not a tooling one.
+ *
  * ── WHY HISTORY IS ALLOWLISTED RATHER THAN RENAMED ─────────────────────────────────────────────
  * master carries ~23 duplicate groups going back to 047. Renaming an applied migration desynchronises
  * its filename from the order it actually ran in, and the number can already be embedded in prod data
  * (`source` columns, COMMENTs — see CLAUDE.md). So known pairs are listed in KNOWN_DUPLICATES with a
  * reason, and anything NOT listed fails. Adding to that list is a deliberate act with a note, not a
  * way to silence the check.
+ *
+ * FLOOR applies only to un-namespaced slots: legacy history is all un-namespaced, so a namespaced
+ * slot is always checked no matter how small its number.
  *
  * Usage:
  *   node scripts/check-migration-numbers.mjs              # diff against origin/master (or master)
@@ -44,12 +69,15 @@ import path from "node:path";
 
 const FLOOR = 1419;
 const MIGRATIONS_DIR = "backend/migrations";
-const NUMBERED = /^(\d+)_/;
+// Optional `NS_` author namespace, then the number. The namespace group must start with a letter so
+// that `1516_222_fairview_...` still reads as slot 1516, and `generate_md_house.ps1` still reads as
+// nothing at all.
+const NUMBERED = /^(?:([A-Za-z][A-Za-z0-9]{0,7})_)?(\d+)_/;
 const LIST_ONLY = process.argv.includes("--list-duplicates");
 
 /**
- * Duplicate prefixes that already exist and are NOT being renamed. Keyed by prefix; the value is why.
- * Only pairs at or above FLOOR need listing — below it, check B does not look.
+ * Duplicate slots that already exist and are NOT being renamed. Keyed by slot; the value is why.
+ * Only un-namespaced slots at or above FLOOR need listing — below it, check B does not look.
  */
 const KNOWN_DUPLICATES = {
   1527: "pre-existing pair (repair_prose_in_sources / repair_split_sources); both applied, renaming would desync filename from apply order",
@@ -68,10 +96,17 @@ const tryGit = (args) => {
   }
 };
 
-const prefixOf = (file) => {
+/** {ns, num, key} for a migration filename, or null if it is not a numbered migration. */
+function slotOf(file) {
   const m = NUMBERED.exec(path.basename(file));
-  return m ? m[1].replace(/^0+(?=\d)/, "") : null;   // '047' and '47' are the same slot
-};
+  if (!m) return null;
+  const ns = m[1] ? m[1].toUpperCase() : "";
+  const num = m[2].replace(/^0+(?=\d)/, "");   // '047' and '47' are the same slot
+  return { ns, num, key: ns ? `${ns}_${num}` : num };
+}
+const prefixOf = (file) => slotOf(file)?.key ?? null;
+/** Slots below FLOOR are legacy and unchecked by the tree scan — but only un-namespaced ones. */
+const belowFloor = (slot) => slot.ns === "" && Number(slot.num) < FLOOR;
 
 function resolveBase() {
   if (process.env.BASE_REF) return process.env.BASE_REF;
@@ -95,63 +130,109 @@ function addedFiles(base) {
   ])];
 }
 
-/**
- * prefix -> [filenames] on `base`. 🔴 An ARRAY, not a single name: the previous version used
- * `map.set(prefix, name)`, which silently kept only the last file for a prefix and so could never
- * observe that base itself already held a collision.
- */
-function basePrefixes(base) {
-  const out = tryGit(["ls-tree", "--name-only", base, `${MIGRATIONS_DIR}/`]);
-  if (out === null) return null;
-  const map = new Map();
-  for (const f of out.split("\n").filter(Boolean)) {
-    const p = prefixOf(f);
-    if (!p) continue;
-    if (!map.has(p)) map.set(p, []);
-    map.get(p).push(path.basename(f));
-  }
-  return map;
+/** Every remote-tracking ref, minus the trailing-HEAD symrefs that just alias another entry. */
+function remoteRefs() {
+  const out = tryGit(["for-each-ref", "--format=%(refname)", "refs/remotes/"]);
+  if (!out) return [];
+  return out.split("\n").filter(Boolean).filter((r) => !r.endsWith("/HEAD"));
 }
 
-/** Every duplicate group in the working tree, whatever its number. */
+const label = (ref) => ref.replace(/^refs\/remotes\//, "").replace(/^refs\/heads\//, "");
+
+/**
+ * slot key -> {slot, byName: Map(basename -> Set(ref label))} across the base branch AND every
+ * remote-tracking ref. 🔴 byName is a MAP OF NAMES, not a single name: an earlier version used
+ * `map.set(prefix, name)`, which silently kept only the last file for a slot and so could never
+ * observe that base itself already held a collision. Tracking which refs claim each name is what
+ * lets the failure message say *where* the number went.
+ *
+ * Returns null if no ref could be read at all, so callers can fall back to the tree scan alone.
+ */
+function claimedSlots(base) {
+  const refs = [...new Set([...(base ? [base] : []), ...remoteRefs()])];
+  const map = new Map();
+  let read = false;
+  for (const ref of refs) {
+    const out = tryGit(["ls-tree", "--name-only", ref, `${MIGRATIONS_DIR}/`]);
+    if (out === null) continue;
+    read = true;
+    for (const f of out.split("\n").filter(Boolean)) {
+      const slot = slotOf(f);
+      if (!slot) continue;
+      const name = path.basename(f);
+      if (!map.has(slot.key)) map.set(slot.key, { slot, byName: new Map() });
+      const { byName } = map.get(slot.key);
+      if (!byName.has(name)) byName.set(name, new Set());
+      byName.get(name).add(label(ref));
+    }
+  }
+  return read ? map : null;
+}
+
+/** Every duplicate slot group in the working tree, whatever its number. */
 function treeDuplicates() {
   const groups = new Map();
   for (const f of readdirSync(path.join(repoRoot, MIGRATIONS_DIR))) {
-    const p = prefixOf(f);
-    if (!p) continue;
-    if (!groups.has(p)) groups.set(p, []);
-    groups.get(p).push(f);
+    const slot = slotOf(f);
+    if (!slot) continue;
+    if (!groups.has(slot.key)) groups.set(slot.key, { slot, files: [] });
+    groups.get(slot.key).files.push(f);
   }
-  return [...groups.entries()]
-    .filter(([, files]) => files.length > 1)
-    .map(([p, files]) => ({ prefix: p, files: files.sort() }))
-    .sort((a, b) => Number(a.prefix) - Number(b.prefix));
+  return [...groups.values()]
+    .filter(({ files }) => files.length > 1)
+    .map(({ slot, files }) => ({ slot, files: files.sort() }))
+    .sort((a, b) => a.slot.ns.localeCompare(b.slot.ns) || Number(a.slot.num) - Number(b.slot.num));
+}
+
+/**
+ * Lowest free number in `ns`, counting every claim the repo can see plus anything added here.
+ * Namespaced counters start at 1; the shared un-namespaced one never goes below FLOOR.
+ */
+function nextFree(ns, claimed, added) {
+  const nums = [];
+  for (const { slot } of (claimed?.values() ?? [])) if (slot.ns === ns) nums.push(Number(slot.num));
+  for (const f of added) {
+    const slot = slotOf(f);
+    if (slot && slot.ns === ns) nums.push(Number(slot.num));
+  }
+  return Math.max(ns === "" ? FLOOR - 1 : 0, ...nums) + 1;
 }
 
 const allDupes = treeDuplicates();
+const base = resolveBase();
+const claimed = claimedSlots(base);
 
 if (LIST_ONLY) {
-  console.log(`${allDupes.length} duplicate prefix group(s) in ${MIGRATIONS_DIR}:`);
-  for (const { prefix, files } of allDupes) {
-    const known = KNOWN_DUPLICATES[prefix];
-    const tag = Number(prefix) < FLOOR ? "below FLOOR" : known ? "allowlisted" : "🔴 UNEXPECTED";
-    console.log(`  ${prefix.padStart(4)}  [${tag}]  ${files.join(", ")}`);
+  console.log(`${allDupes.length} duplicate slot group(s) in ${MIGRATIONS_DIR}:`);
+  for (const { slot, files } of allDupes) {
+    const known = KNOWN_DUPLICATES[slot.key];
+    const tag = belowFloor(slot) ? "below FLOOR" : known ? "allowlisted" : "🔴 UNEXPECTED";
+    console.log(`  ${slot.key.padStart(6)}  [${tag}]  ${files.join(", ")}`);
     if (known) console.log(`        ${known}`);
+  }
+  // Informational only: slots claimed by different filenames on different refs. These are NOT
+  // failures here — check A fails them for whoever is adding one — but they are invisible in a
+  // single working tree, so listing them is the only way to notice they exist.
+  const crossRef = [...(claimed?.values() ?? [])]
+    .filter(({ slot, byName }) => byName.size > 1 && !belowFloor(slot) && !KNOWN_DUPLICATES[slot.key])
+    .sort((a, b) => Number(a.slot.num) - Number(b.slot.num));
+  console.log(`\n${crossRef.length} slot(s) claimed by different filenames across refs:`);
+  for (const { slot, byName } of crossRef) {
+    console.log(`  ${slot.key}`);
+    for (const [name, refs] of [...byName].sort()) console.log(`      ${name}  (${[...refs].sort().join(", ")})`);
   }
   process.exit(0);
 }
 
-const base = resolveBase();
-const baseMap = base ? basePrefixes(base) : null;
 const problems = [];
 
 // ── CHECK B: tree scan (always runs) ───────────────────────────────────────────────────────────
-const unexpected = allDupes.filter(({ prefix }) => Number(prefix) >= FLOOR && !KNOWN_DUPLICATES[prefix]);
-for (const { prefix, files } of unexpected) {
-  problems.push(`  ${prefix}: ${files.join(", ")}`);
+const unexpected = allDupes.filter(({ slot }) => !belowFloor(slot) && !KNOWN_DUPLICATES[slot.key]);
+for (const { slot, files } of unexpected) {
+  problems.push(`  ${slot.key}: ${files.join(", ")}`);
 }
 if (unexpected.length) {
-  problems.unshift(`Duplicate migration numbers at or above ${FLOOR} (tree scan):`);
+  problems.unshift(`Duplicate migration slots in the working tree (tree scan):`);
   problems.push(
     "",
     "This fires even when git shows nothing 'added' — which is exactly how the 1681 collision hid.",
@@ -161,40 +242,44 @@ if (unexpected.length) {
   );
 }
 
-// ── CHECK A: added-vs-base ─────────────────────────────────────────────────────────────────────
-if (!baseMap) {
+// ── CHECK A: added-vs-claimed (base + every remote-tracking ref) ───────────────────────────────
+if (!claimed) {
   if (!unexpected.length) {
-    console.log(`No git base available; tree scan only — no unexpected duplicates >= ${FLOOR}.`);
+    console.log(`No refs available to compare against; tree scan only — no unexpected duplicate slots.`);
   }
 } else {
   const added = addedFiles(base).filter((f) => prefixOf(f));
   const seen = new Map();
   const aProblems = [];
+  let firstNs = null;
   for (const f of added.sort()) {
-    const p = prefixOf(f);
+    const slot = slotOf(f);
     const name = path.basename(f);
-    const onBase = (baseMap.get(p) || []).filter((b) => b !== name);
-    if (onBase.length) {
-      aProblems.push(`  ${name} reuses prefix ${p}, already taken by ${onBase.join(", ")} on ${base}`);
+    const entry = claimed.get(slot.key);
+    for (const [other, refs] of entry?.byName ?? []) {
+      // Skip my own filename: once this branch is pushed it appears on a remote-tracking ref too,
+      // and matching it against itself would fail the check forever after the first push.
+      if (other === name) continue;
+      aProblems.push(`  ${name} reuses slot ${slot.key}, already taken by ${other} on ${[...refs].sort().join(", ")}`);
+      firstNs ??= slot.ns;
     }
-    if (seen.has(p)) {
-      aProblems.push(`  ${name} collides with ${seen.get(p)} — both added on this branch`);
+    if (seen.has(slot.key)) {
+      aProblems.push(`  ${name} collides with ${seen.get(slot.key)} — both added on this branch`);
+      firstNs ??= slot.ns;
     }
-    seen.set(p, name);
+    seen.set(slot.key, name);
   }
   if (aProblems.length) {
-    problems.push("Migration number collision in newly added files:", ...aProblems);
-    const next = Math.max(
-      ...[...baseMap.keys()].map(Number),
-      ...added.map((f) => Number(prefixOf(f))),
-      FLOOR - 1,
-    ) + 1;
-    problems.push("", `Next free number is ${next}. Rename and re-run this check.`);
+    problems.push("Migration slot collision in newly added files:", ...aProblems);
+    const ns = firstNs ?? "";
+    const next = nextFree(ns, claimed, added);
+    problems.push("", `Next free number in ${ns ? `namespace ${ns}` : "the shared sequence"} is ${next}. Rename and re-run this check.`);
   } else if (!problems.length) {
     const allowed = Object.keys(KNOWN_DUPLICATES).length;
+    const refCount = new Set([...(base ? [base] : []), ...remoteRefs()]).size;
     console.log(
       `Migration numbering OK — ${added.length} added vs ${base}; ` +
-      `${baseMap.size} prefixes on base; tree scan clean above ${FLOOR} ` +
+      `${claimed.size} slots claimed across ${refCount} ref(s); tree scan clean ` +
       `(${allowed} allowlisted duplicate${allowed === 1 ? "" : "s"}).`
     );
   }
