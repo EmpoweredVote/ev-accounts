@@ -66,6 +66,23 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // seats, NOT 98 polygons. Counts asserted in the WA pre-flight block below.
   // cd119 (10) and county (39) are already loaded for WA and are not re-run here.
   WA: new Set(['place', 'sldu', 'sldl']),
+  // CO. sldu/sldl: Colorado has 35 Senate and 65 House districts as DISTINCT polygons —
+  // single-member in both chambers, so the polygon count equals the seat count (unlike
+  // AZ/WA, where one SLDL polygon carries two seats). Measured 2026-08-21 against TIGER
+  // 2024 FIPS 08: 35 / 65 with NO 'ZZZ' pseudo-district in either file, so the skip rule
+  // is a no-op here rather than the -1 it is in WI.
+  // VINTAGE IS CORRECT AS PLAIN TIGER 2024: Colorado's independent-commission map has been
+  // in effect since 2021 and the state did NOT redistrict mid-decade, so these are the maps
+  // governing the 2026 election. This is why CO gets G5210/G5220 and NOT the 'G5200V26'
+  // vintage-tagged treatment used by the states that redrew (whose sources read like
+  // 'al_sos_2026') — that suffix is a congressional-only convention.
+  // place: Colorado's incorporated cities and towns are elected governments. 272 G4110
+  // records; the 210 G4210 CDPs in the same file are statistical and are filtered out.
+  // cousub is deliberately EXCLUDED — CO county subdivisions are statistical CCDs, not
+  // elected bodies, same as CA and WA. Do NOT add CO to COUSUB_FUNCSTAT_STATES.
+  // cd/cd119 and county are NOT re-run here: prod already holds 8 G5200 congressional and
+  // 64 G4020 county polygons for FIPS 08.
+  CO: new Set(['sldu', 'sldl', 'place']),
   DC: new Set(['sldl']),
 };
 
@@ -124,6 +141,12 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   // place (all G4110, FUNCSTAT='A') before wiring this gate.
   WI: ['Racine city', 'Burlington city', 'Mount Pleasant village', 'Caledonia village',
        'Sturtevant village', 'Union Grove village'],
+  // El Paso County's incorporated municipalities plus the Colorado Springs wave's own
+  // subject. Every string verified present in TIGER 2024 FIPS 08 place (all G4110,
+  // FUNCSTAT='A') by direct probe 2026-08-21 before wiring this gate — Colorado Springs
+  // city resolves to GEOID 0816000, which is the geo_id the city district row keys on.
+  CO: ['Colorado Springs city', 'Manitou Springs city', 'Fountain city',
+       'Monument town', 'Green Mountain Falls town'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -142,6 +165,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
   WA: new Set(['place', 'sldu', 'sldl']),
+  CO: new Set(['sldu', 'sldl', 'place']),
   DC: new Set(['sldl']),
 };
 
@@ -1175,6 +1199,63 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] WA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── CO MTFCC pre-flight assertion ───────────────────────────────────────────
+  // Count records satisfying the same filters as the upsert pass BEFORE any DB
+  // write. Assertion failure is named and fatal.
+  //
+  // Colorado is single-member in BOTH chambers, so unlike AZ/WA the polygon count
+  // equals the seat count: 35 Senate, 65 House.
+  //
+  // ⚠ CO HOUSE DISTRICTS DO NOT NEST INSIDE SENATE DISTRICTS. Measured 2026-08-21
+  // against the loaded polygons: only 13 of 65 House districts fall wholly within a
+  // single Senate district, and there are 149 HD×SD overlaps above 0.1% of HD area.
+  // (HD 18 alone spans SD 9, SD 11 and SD 12.) Wisconsin's 3-Assembly-per-Senate
+  // nesting is NOT the general rule and must not be assumed here: a resident's
+  // Senate district CANNOT be derived from their House district. Both layers have to
+  // be resolved independently by ST_Covers, which is what address search already does.
+  //
+  // Counts are MEASURED, not assumed — probed directly against TIGER 2024 FIPS 08
+  // on 2026-08-21 (sldu 35/35 kept, sldl 65/65 kept, place 482 total → 272 G4110
+  // kept and 210 G4210 CDPs filtered). Neither SLD file carries a 'ZZZ'
+  // pseudo-district, so skipDistrictCodes removes nothing here.
+  //
+  if (fipsArg === '08') {
+    const EXPECTED_CO_MTFCC: Record<string, number> = {
+      sldu:   35,  // 35 CO Senate districts (2021 commission map) — measured 2026-08-21, no 'ZZZ' row
+      sldl:   65,  // 65 CO House districts  (2021 commission map) — measured 2026-08-21, no 'ZZZ' row
+      place: 272,  // 272 CO G4110 incorporated cities/towns; the file's other 210 records are G4210 CDPs
+    };
+    if (layer in EXPECTED_CO_MTFCC) {
+      const expected = EXPECTED_CO_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[CO MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 08 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] CO MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
