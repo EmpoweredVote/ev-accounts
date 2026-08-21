@@ -131,3 +131,4 @@ backend/data/census-gov-units/
 # tracked, never the content, so a fresh clone got an empty directory regardless.
 # It is upstream tooling (github.com/nextlevelbuilder/ui-ux-pro-max-skill), not part of this app.
 ui-ux-pro-max-skill/
+backend/.tmp-wa-cert/
