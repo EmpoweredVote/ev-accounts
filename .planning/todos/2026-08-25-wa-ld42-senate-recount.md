@@ -59,7 +59,7 @@ are in the harvest script's header), then:
 cd backend
 node scripts/wa-cert-harvest.mjs          # disposition.json + the report, incl. the margin test
 node scripts/wa-cert-emit-migration.mjs   # migrations/_wip_wa_2026_primary_certification_pass.sql
-node scripts/dry-run-migration-file.mjs migrations/<NNNN>_....sql   # BEGIN … ROLLBACK against prod
+node scripts/dry-run-migration.mjs migrations/<NNNN>_....sql   # BEGIN … ROLLBACK against prod
 ```
 
 The harvest script's cut-line check is the margin test that flagged this race in the first place —
