@@ -96,13 +96,27 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
-- **Per-author namespace (opt-in) for the collision no tool can see.** Two authors both taking the
-  next free number *before either pushes* is not observable from any repo state — fetching does not
-  help. A filename may therefore carry a leading author namespace, `CA_1849_snake_case.sql`, where
-  `CA_1849` and `1849` are different slots and each author counts within their own. Duplicates
-  inside a namespace are still caught. Namespaced files sort after every numeric one, and nothing
-  globs the directory (migrations are applied one at a time by hand), so apply order is unaffected.
-  Adopt it per author or not at all — a half-adopted namespace just hides who owns which number.
+- 🔴 **Per-author namespaces are IN USE. Chris's migrations are `CA_NNNN_snake_case.sql`.**
+  Two authors both taking the next free number *before either pushes* is not observable from any
+  repo state — fetching does not help; this is the 1681 collision. So the shared sequence is now
+  one namespace among several: `CA_1` and `1` are different slots, and each author counts only
+  within their own.
+  - **Chris → `CA_`**, counting from `CA_0001` upward. He never reads the shared max again.
+  - **The plain `NNNN_` sequence stays as it is** for everyone else; keep taking the next free
+    number there exactly as before.
+  - Zero-pad `CA_` to four digits so `ls` sorts correctly. Leading zeros are stripped when
+    comparing, so `CA_0001` and `CA_1` are the *same* slot — the checker prints the stripped form
+    (`CA_1`) in collision messages, the same way it prints `47` for `047`.
+  - **Always cite the full slot, namespace included** (`CA_0001`, never "migration 1"). Numbers get
+    embedded in prod data and comments, and `CA_0001` vs a legacy `0001` is only unambiguous if the
+    namespace travels with it.
+  - Duplicates inside a namespace are still caught, by both checks.
+  - Do **not** retro-rename anything into `CA_`. Renaming an applied migration desyncs the filename
+    from its apply order and from numbers already written to prod. The namespace starts now and
+    applies going forward only.
+  - Namespaced files sort after every numeric one. Harmless: nothing globs the directory
+    (`applyMigrations.ts` carries a hardcoded 026–038 list) and migrations are applied one at a time
+    by hand, so apply order is unaffected.
 - 🔴 **Deleting from `inform.politician_answers` obliges you to decide what happens to the matching
   `inform.politician_context` row, in the same migration.** Removing the answer removes the chair; the
   reasoning that argued for that chair survives, still asserting a position, attached to nothing. It
