@@ -150,10 +150,36 @@ cannot block wave 2 or 3.** It is not caused by, and will not be fixed by, this 
 Sequenced so that the thing most likely to be wrong is proven earliest, and so that nothing depends
 on a wave that hasn't landed. Each wave is independently shippable and independently verifiable.
 
-### Wave 1 — NC General Assembly (170 seats)
+### Wave 1 — NC General Assembly (170 seats) — ✅ DONE 2026-08-22
 
-The largest wave and the prerequisite for wave 3, because Buncombe's commission districts are the
-House districts.
+Applied as **`CA_0004`** (2 chambers + 170 offices) and **`CA_0005`** (170 politicians + 170 terms),
+on top of a TIGER `sldu,sldl` load. Verified in prod: 120 House / 50 Senate, 170 seated,
+`offices_missing_terms` unflagged still **655** (zero drift), reachability at or below baseline
+(`DEAD_GEOGRAPHY` improved 18 → 17), 1185 tests green.
+
+End-to-end probe returns exactly one House and one Senate member per address:
+
+| Anchor | House | Senate |
+|---|---|---|
+| Asheville | HD-116 Brian Turner | SD-49 Julie Mayfield |
+| Black Mountain | HD-114 Eric Ager | SD-46 Warren Daniel |
+| Durham City Hall | HD-30 Marcia Morey | SD-22 Sophia Chitlik |
+| Raleigh (Leg. Bldg) | HD-38 Abe Jones | SD-14 Dan Blue |
+
+The Buncombe rows match the county's own GIS roster exactly — the same oracle used to validate the
+commission-district coupling, so **wave 3 can now derive Buncombe's 3 commission districts from
+`sldl` 114/115/116.**
+
+🔴 **Two things wave 1 learned that waves 2–3 must not relearn:**
+
+1. **The dry-run recipe below was WRONG as originally written, and it cost a real un-rehearsed
+   apply.** See "Dry-running a migration in this repo".
+2. **All 8 contested legislative districts seat the SUCCESSOR** (HD-40 Rubin, HD-47 John L. Lowery,
+   HD-60 Cook, HD-90 Kiger, HD-119 Ferguson, SD-18 Fatmi, SD-23 Garson, SD-34 Measmer). The chamber's
+   own roster lists departed members alongside successors, and in HD-40 and HD-119 the **departed**
+   member carries no annotation at all — filtering on "Resigned" seats two people in one seat.
+
+The original plan follows, for reference.
 
 * Add `NC` to `STATE_LAYER_ALLOWLIST` in `scripts/load-state-tiger-boundaries.ts` as
   `NC: new Set(['sldu', 'sldl', 'place'])`, matching the VA/NV/AZ/MD/OR shape. The allowlist is
@@ -200,6 +226,29 @@ than create a parallel election.
 ---
 
 ## Standing rules this program must not break
+
+* 🔴 **Dry-running a migration here — the naive recipe DOES NOT WORK and silently APPLIES.**
+  **1497 of 1764 migrations self-wrap in `BEGIN;` … `COMMIT;`**, including the CO (1843/1844) and WA
+  (1742) siblings this generator family is modelled on. So this, which looks right, is not:
+
+  ```bash
+  BEGIN;
+  \i migrations/CA_0004_whatever.sql   # ← its own COMMIT closes YOUR transaction
+  ROLLBACK;                            # ← "WARNING: there is no transaction in progress"
+  ```
+
+  The inner `COMMIT` wins and the rehearsal is a real apply. **This happened on 2026-08-22 with
+  `CA_0004`.** CLAUDE.md says to wrap *the body* — that word is load-bearing. Strip the file's own
+  transaction control first, then wrap what remains:
+
+  ```bash
+  grep -vE '^(BEGIN|COMMIT);$' migrations/CA_0005_whatever.sql > body.sql
+  # then:  BEGIN; \i C:/abs/windows/path/body.sql ; <count queries>; ROLLBACK;
+  # psql's \i needs a WINDOWS path — a /c/... path fails with "No such file or directory".
+  ```
+
+  Then **prove reversion with a separate query afterwards.** A printed `ROLLBACK` is not proof; the
+  presence or absence of the WARNING is what distinguishes a rehearsal from an apply.
 
 * **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0004`** (`CA_0001`–`CA_0003` exist;
   `check:migrations` green 2026-08-21). Unlike the shared sequence, the `CA_` namespace does **not**
