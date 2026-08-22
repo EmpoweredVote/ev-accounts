@@ -16,6 +16,12 @@
 - **Migrations are `CA_NNNN_snake_case.sql`** — Chris's namespace. **`CA_0004` and `CA_0005` are the slots** (`CA_0001`–`CA_0003` exist; `check:migrations` green 2026-08-21). Unlike the shared sequence, `CA_` numbers do **not** have to be taken last. Always cite the full slot, never "migration 4".
 - **Every migration is idempotent** (`IF NOT EXISTS` / `NOT EXISTS` guards / guarded `UPDATE`) and ends with a `DO $$ ... $$` post-verify gate that `RAISE EXCEPTION`s on a wrong count. This is house style; match it.
 - **Dry-run against prod first** by wrapping the body `BEGIN; ... ROLLBACK;`, and confirm the rollback actually reverted before trusting it.
+  > ⚠ **This recipe as written silently applies to prod.** 1497 of 1764 migrations in this repo
+  > self-wrap in their own `BEGIN;`/`COMMIT;`, so the file's own `COMMIT` closes the *outer*
+  > transaction and the "rehearsal" becomes a real apply — this happened to `CA_0004` on
+  > 2026-08-22. The tell is `WARNING: there is no transaction in progress`. Use the corrected
+  > recipe in the spec's "Standing rules" section instead:
+  > [`.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md`](../../../.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md).
 - `psql "$DATABASE_URL"` (pooler creds in `backend/.env`) runs as `ev_api`. All writes here are **DML into existing tables**, so `psql` works and gives real `BEGIN`/`ROLLBACK`. No new objects are created, so the Supabase MCP (= PRODUCTION) is not needed.
 - **Never cache "current" in a column.** Occupancy is `essentials.office_terms`, resolved at read time via `essentials.office_current_holder`.
 - **Seat people with `essentials.seat_officeholder(office_id, politician_id, term_start, source)`** — do not hand-roll the two-step.
@@ -631,6 +637,13 @@ Then update any `_wip_` self-reference inside the file to `CA_0004`.
 
 - [ ] **Step 3: Dry-run against prod and confirm the rollback reverted**
 
+> ⚠ **As executed, this actually applied `CA_0004` to prod (2026-08-22).** This migration file
+> self-wraps in its own `BEGIN;`/`COMMIT;`, so the outer `BEGIN`/`ROLLBACK` below never had a
+> transaction open by the time it ran — the tell is `WARNING: there is no transaction in progress`.
+> The corrected recipe is in the spec's "Standing rules" section:
+> [`.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md`](../../../.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md).
+> Left as-executed below for the record.
+
 ```bash
 cd /c/EV-Accounts/backend && set -a && . ./.env && set +a && psql "$DATABASE_URL" -v ON_ERROR_STOP=1 <<SQL
 BEGIN;
@@ -699,6 +712,13 @@ cd /c/EV-Accounts/backend && set -a && . ./.env && set +a && psql "$DATABASE_URL
 Expected: `0`. A nonzero result means another wave claimed the band — **stop**, an `external_id` collision seats the wrong person silently.
 
 - [ ] **Step 2: Rename into the slot and dry-run**
+
+> ⚠ **This recipe as written silently applies to prod** — `CA_0005_nc_legislature_incumbents.sql`
+> self-wraps in its own `BEGIN;`/`COMMIT;` (like 1497 of 1764 migrations in this repo), so the
+> file's own `COMMIT` closes the outer transaction below before `ROLLBACK` runs. The tell is
+> `WARNING: there is no transaction in progress`. Use the corrected recipe in the spec's
+> "Standing rules" section instead:
+> [`.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md`](../../../.planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md).
 
 ```bash
 cd /c/EV-Accounts/backend && mv migrations/_wip_nc_legislature_incumbents.sql migrations/CA_0005_nc_legislature_incumbents.sql && set -a && . ./.env && set +a && psql "$DATABASE_URL" -v ON_ERROR_STOP=1 <<SQL

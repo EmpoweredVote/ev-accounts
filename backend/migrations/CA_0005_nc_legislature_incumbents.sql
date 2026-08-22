@@ -1,4 +1,4 @@
--- nc_legislature_incumbents.sql
+-- CA_0005_nc_legislature_incumbents.sql
 -- Seats all 170 North Carolina General Assembly members (120 Representatives +
 -- 50 Senators).
 --
@@ -35,7 +35,9 @@
 -- repo only for cross-source MATCHING, never for what gets stored). Two names
 -- carry non-ASCII characters (Erin Paré, HD 37; Renée A. Price, HD 50) and one
 -- carries embedded double quotes around a nickname (Jerry "Alan" Branson, HD
--- 59, stored with preferred_name='Alan'). This file is written as UTF-8
+-- 59, stored with 'Alan' in alternate_names -- there is no preferred_name in
+-- the INSERT column list; preferred_name is NULL for all 170 rows). This
+-- file is written as UTF-8
 -- without a BOM; the generator verifies the emitted bytes decode correctly for
 -- both accented names before reporting success.
 --

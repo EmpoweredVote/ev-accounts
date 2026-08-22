@@ -11,11 +11,20 @@ FROM essentials.geofence_boundaries
 WHERE state = '37' AND mtfcc IN ('G5220', 'G5210')
 GROUP BY 1 ORDER BY 1;
 
+-- 🔴 THE mtfcc PAIRING HERE IS LOAD-BEARING, same as the identity-anchor query below: a bare
+-- g.geo_id = d.geo_id join can be satisfied by an NC COUNTY boundary instead of the district's
+-- own polygon -- 85 of the 170 NC legislative districts share a geo_id with a county ('37001' is
+-- HD-1, SD-1 AND Alamance County). G5220 = STATE_LOWER, G5210 = STATE_UPPER.
 \echo '== every district has geometry (expect 0) =='
 SELECT count(*) AS districts_without_geometry
 FROM essentials.districts d
 WHERE lower(d.state) = 'nc' AND d.district_type IN ('STATE_LOWER', 'STATE_UPPER')
-  AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries g WHERE g.geo_id = d.geo_id);
+  AND NOT EXISTS (
+    SELECT 1 FROM essentials.geofence_boundaries g
+     WHERE g.geo_id = d.geo_id
+       AND ((g.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
+         OR (g.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER'))
+  );
 
 \echo '== identity anchors (expect HD-116/SD-49, HD-115, HD-114/SD-46, HD-30/SD-22) =='
 -- 🔴 THE mtfcc PAIRING IN THIS JOIN IS LOAD-BEARING — see "The geo_id collision" below.

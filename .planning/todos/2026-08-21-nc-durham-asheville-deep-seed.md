@@ -250,10 +250,10 @@ than create a parallel election.
   Then **prove reversion with a separate query afterwards.** A printed `ROLLBACK` is not proof; the
   presence or absence of the WARNING is what distinguishes a rehearsal from an apply.
 
-* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0004`** (`CA_0001`–`CA_0003` exist;
+* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0006`** (`CA_0001`–`CA_0005` exist;
   `check:migrations` green 2026-08-21). Unlike the shared sequence, the `CA_` namespace does **not**
   require taking the number last — Chris counts within his own namespace and never reads the shared
-  max. Cite slots in full (`CA_0004`, never "migration 4").
+  max. Cite slots in full (`CA_0006`, never "migration 6").
 * **An office with no `office_terms` row is invisible and nothing errors.** Watch
   `essentials.offices_missing_terms`; unflagged baseline is 699 and it read **655** on 2026-08-21.
 * Seating is a deliberate two-step — close the predecessor, then insert. Use `seat_officeholder` /

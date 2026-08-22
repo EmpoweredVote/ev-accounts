@@ -83,6 +83,14 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // cd/cd119 and county are NOT re-run here: prod already holds 8 G5200 congressional and
   // 64 G4020 county polygons for FIPS 08.
   CO: new Set(['sldu', 'sldl', 'place']),
+  // DC's TIGER 2024 SLDL file (tl_2024_11_sldl.zip) returns HTTP 404 from
+  // Census as of 2026-08-22, verified directly; DC's SLDU returns 200, so
+  // this is specific to the one file -- the only 404 across all ~55
+  // allowlisted state x layer URLs. TIGER files DC's 8 WARDS as the SLDL
+  // layer (G5220, geo_id 11001..11008 -- see the DC carve-out in
+  // src/lib/geoIdGuard.ts), so DC ward geometry cannot currently be reloaded
+  // from TIGER 2024. DC's wards are already in prod, so nothing is blocked
+  // today. Pre-existing Census-side gap, not caused by any change here.
   DC: new Set(['sldl']),
   // NC. sldu/sldl: SL 2023-146 (Senate) and SL 2023-149 (House), both enacted
   // 2023-10-25 and STILL the operative maps for 2026 — only the CONGRESSIONAL
@@ -2020,10 +2028,14 @@ async function main(): Promise<void> {
   console.log(`[load-state-tiger] Layers: ${args.layers.join(', ')}`);
   console.log(`[load-state-tiger] Vintage: ${args.vintage}, Congress: ${args.congress}`);
 
-  // Dry-run short-circuits BEFORE opening any DB client. Each per-layer
-  // processLayer() call further short-circuits before any I/O happens (per
-  // 130-04 plan: "DRY RUN: would write {N} rows for layer {layer}" without
-  // connecting to the DB).
+  // Dry-run short-circuits BEFORE opening any DB client. Since 4a0f8dad, each
+  // per-layer processLayer() call under --dry-run still downloads and
+  // extracts the layer's shapefile, runs the STATE_CITY_ASSERTIONS gate and
+  // the per-state EXPECTED_*_MTFCC pre-flight assertion, then returns
+  // immediately BEFORE the record-streaming/write pass. So --dry-run DOES
+  // perform network and disk I/O (cached under .tmp-tiger-*) and CAN FAIL on
+  // a bad expected count -- that's the point: before 4a0f8dad those
+  // assertions were unreachable under --dry-run for every state.
   if (args.dryRun) {
     console.log('\n[dry-run] Would process layers:');
     // Pass `null as unknown as Client` so processLayer's signature stays honest;

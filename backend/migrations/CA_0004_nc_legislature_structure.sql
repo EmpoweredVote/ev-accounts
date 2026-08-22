@@ -1,4 +1,4 @@
--- nc_legislature_structure.sql
+-- CA_0004_nc_legislature_structure.sql
 -- North Carolina General Assembly: 2 chambers + 170 offices.
 --
 -- NC General Assembly wave 1. Depends on the NC TIGER/redistricting load, which
@@ -103,6 +103,14 @@ BEGIN
 
   -- Every office must hang off a district that actually has geometry, or the
   -- seat is unreachable by address and nothing will error.
+  -- 🔴 WEAK CHECK: this join is bare geo_id, with no mtfcc pairing, so it can
+  -- be satisfied by a COUNTY polygon rather than the district's own -- 85 of
+  -- the 170 NC legislative districts share a geo_id with an NC county
+  -- boundary ('37001' is HD-1, SD-1 AND Alamance County). It is covered here
+  -- by the paired 120/50 per-chamber counts below (the fourth assertion) and
+  -- by the identity-anchor probe in verify-nc-tiger-import.sql, not by this
+  -- gate alone. Any file copying this pattern MUST add the mtfcc pairing
+  -- (see that script's identity anchor query for the shape).
   SELECT count(*) INTO n_orphan FROM essentials.offices o
     JOIN essentials.districts d ON d.id = o.district_id
    WHERE lower(d.state) = 'nc' AND d.district_type IN ('STATE_LOWER','STATE_UPPER')
