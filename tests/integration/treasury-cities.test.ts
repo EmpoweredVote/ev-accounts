@@ -110,4 +110,31 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/cities — contract', () => {
       }
     }
   });
+
+  // SCOPE-04: available_datasets entries expose `derivation` -- did a government
+  // PUBLISH this figure, or did Treasury Tracker compute it from published
+  // components? It rides on the dataset entry, not only the budget, so the series
+  // pill can say "derived" at FIRST PAINT; a pill that renders unmarked until a
+  // budget row loads is the mislabel window SCOPE-04 exists to close.
+  //
+  // ⚠ fund_scope alone cannot carry this. `total_governmental` holds BOTH published
+  // rows (MN OSA, Ohio AOS) and CA rows Treasury Tracker derived, so without this
+  // key a reader sees one label over two epistemically different things.
+  it('available_datasets entries expose a derivation key with a legal value', async () => {
+    const LEGAL_DERIVATIONS = ['published', 'derived'];
+    const res = await request(app).get('/api/treasury/cities');
+    expect(res.status).toBe(200);
+    const cities = res.body as Array<Record<string, unknown>>;
+    if (cities.length === 0) return;
+    for (const city of cities) {
+      const datasets = (city['available_datasets'] as Array<Record<string, unknown>>) ?? [];
+      for (const ds of datasets) {
+        expect(ds, 'each dataset entry must carry derivation').toHaveProperty('derivation');
+        expect(
+          LEGAL_DERIVATIONS,
+          `derivation "${String(ds['derivation'])}" is outside the CHECK constraint on treasury.budgets`
+        ).toContain(ds['derivation']);
+      }
+    }
+  });
 });

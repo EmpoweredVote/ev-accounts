@@ -121,6 +121,11 @@ export interface TreasuryDataset {
   // SCOPE-02: accounting basis and reporting entity for this row -- see TreasuryBudget.
   basis?: string | null;
   reporting_entity?: string | null;
+  // SCOPE-04: 'published' | 'derived' -- see TreasuryBudget. Exposed on the dataset
+  // entry, not only on the budget, so the series pill can say "derived" at FIRST
+  // PAINT. A pill that renders unmarked until a budget row loads is exactly the
+  // mislabel window SCOPE-04 exists to close.
+  derivation?: string | null;
 }
 
 export interface TreasuryCity {
@@ -152,6 +157,11 @@ export interface TreasuryBudget {
   // ('primary_government' | 'incl_component_units' | 'unknown') for total_budget.
   basis?: string | null;
   reporting_entity?: string | null;
+  // SCOPE-04: did a government PUBLISH this figure, or did Treasury Tracker compute
+  // it from published components? 'published' | 'derived'. Separate from fund_scope
+  // on purpose -- total_governmental holds both MN/Ohio published rows and CA derived
+  // ones, so the scope value alone cannot tell a reader which kind they are seeing.
+  derivation?: string | null;
   data_source: string | null;
   data_source_info: {
     displayName: string;
@@ -237,7 +247,7 @@ interface CityRow {
   // Joined from budgets — aggregated as JSON array
   available_datasets: Array<{
     fiscal_year: string; dataset_type: string; period_label: string | null; fund_scope: string;
-    basis: string; reporting_entity: string;
+    basis: string; reporting_entity: string; derivation: string;
   }> | null;
 }
 
@@ -251,6 +261,7 @@ interface BudgetRow {
   fund_scope: string;   // SCOPE-01; NOT NULL with a 'unknown' default, so always present
   basis: string;        // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   reporting_entity: string; // SCOPE-02; NOT NULL with a 'unknown' default, so always present
+  derivation: string;   // SCOPE-04; NOT NULL with a 'published' default, so always present
   data_source: string | null;
   source_url: string | null;   // municipal attribution (non-federal fallback)
   source_date: string | null;  // municipal attribution (non-federal fallback)
@@ -358,6 +369,7 @@ function mapCity(row: CityRow): TreasuryCity {
       fund_scope: d.fund_scope,
       basis: d.basis,
       reporting_entity: d.reporting_entity,
+      derivation: d.derivation,
     })),
   };
 }
@@ -373,6 +385,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     fund_scope: row.fund_scope,
     basis: row.basis,
     reporting_entity: row.reporting_entity,
+    derivation: row.derivation,
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url
       ? {
@@ -451,7 +464,8 @@ export async function getCities(): Promise<TreasuryCity[]> {
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
                                  'period_label', b.period_label, 'fund_scope', b.fund_scope,
-                                 'basis', b.basis, 'reporting_entity', b.reporting_entity)
+                                 'basis', b.basis, 'reporting_entity', b.reporting_entity,
+                                 'derivation', b.derivation)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -491,7 +505,8 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
                                  'period_label', b.period_label, 'fund_scope', b.fund_scope,
-                                 'basis', b.basis, 'reporting_entity', b.reporting_entity)
+                                 'basis', b.basis, 'reporting_entity', b.reporting_entity,
+                                 'derivation', b.derivation)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -519,7 +534,7 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
               b.data_source, b.source_url, b.source_date,
               sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -540,7 +555,7 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -799,7 +814,7 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
