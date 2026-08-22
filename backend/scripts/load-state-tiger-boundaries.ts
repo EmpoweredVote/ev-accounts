@@ -652,21 +652,11 @@ async function processLayer(
 
   const url = layerDef.urlTemplate(vintage, fips, congress);
 
-  // ── NC MTFCC pre-flight assertion (Wave 1) — expected-count table ───────────
-  // NC is single-member in BOTH chambers, so polygon count EQUALS seat count —
-  // unlike AZ/WA where SLDL polygons cover two seats each. Verified against raw
-  // TIGER 2024 FIPS 37 on 2026-08-21: sldl 120 / sldu 50, zero ZZZ pseudo-districts.
-  // Hoisted here (rather than inline beside the other EXPECTED_*_MTFCC blocks
-  // further down) because the generic dry-run short-circuit immediately below
-  // returns BEFORE that block is ever reached for any state — see the
-  // NC-specific dry-run branch a few lines down, which needs this same table to
-  // make the gate provable with --dry-run instead of silently-dead code.
-  const EXPECTED_NC_MTFCC: Record<string, number> = {
-    sldl: 120,
-    sldu: 50,
-  };
-
-  // ── Dry run short-circuit BEFORE any I/O or DB call ─────────────────────────
+  // ── Dry-run: print summary, run every per-state pre-flight assertion below,
+  // then return BEFORE the write pass (mirrors processNationwideCounty's
+  // count-then-return-then-write shape). The short-circuit that used to sit
+  // here — returning before any I/O — made every EXPECTED_*_MTFCC block in
+  // this function dead code under --dry-run; see task-1-report.md fix round 1.
   if (dryRun) {
     console.log(`  [dry-run] ${layer} (${layerDef.mtfcc} → ${layerDef.district_type})`);
     console.log(`  [dry-run] URL: ${url}`);
@@ -716,63 +706,6 @@ async function processLayer(
         console.warn(`  [dry-run] aiannh scan failed: ${(err as Error).message}`);
       }
     }
-
-    // ── NC MTFCC pre-flight assertion, exercised in --dry-run (Wave 1) ────────
-    // Without this branch, the generic short-circuit above returns before any
-    // download happens, so the EXPECTED_NC_MTFCC block further down the
-    // function (which fires on `fipsArg === '37'`, alongside every other
-    // state's EXPECTED_*_MTFCC block) is NEVER reached in --dry-run mode —
-    // dead code that would silently let a wrong count through. Confirmed by
-    // running this file's Step 2 with `sldl: 999`: dry-run printed "complete"
-    // with the assertion never having run. That is a PRE-EXISTING, GENERAL
-    // defect: MA/ME/TX/CA/OR/MD/VA/NV/AZ/WA/CO/WI/DC's pre-flight blocks have
-    // the identical problem in --dry-run. Scoped fix applied to NC ONLY here
-    // — see task-1-report.md for the finding and the case for/against a
-    // broader fix. This branch downloads/extracts/streams (real network I/O,
-    // no DB — `client` is still `null` in this call path) and re-throws a
-    // failing assertion so main()'s uncaught rejection handler exits non-zero,
-    // exactly like the live-mode path below does.
-    if (fipsArg === '37' && layer in EXPECTED_NC_MTFCC) {
-      const tmpRoot = path.join(process.cwd(), `.tmp-tiger-${vintage}-${fips}`);
-      fs.mkdirSync(tmpRoot, { recursive: true });
-      const baseName = path.basename(url, '.zip');
-      const zipPath = path.join(tmpRoot, `${baseName}.zip`);
-      const destDir = path.join(tmpRoot, baseName);
-      await downloadWithRedirects(url, zipPath);
-      extractZip(zipPath, destDir);
-      const entries = fs.readdirSync(destDir);
-      const shpFile = entries.find((e) => e.toLowerCase().endsWith('.shp'));
-      const dbfFile = entries.find((e) => e.toLowerCase().endsWith('.dbf'));
-      if (!shpFile || !dbfFile) {
-        throw new Error(`[${layer}] could not locate .shp/.dbf in ${destDir} (entries: ${entries.join(', ')})`);
-      }
-      const shpPath = path.join(destDir, shpFile);
-      const dbfPath = path.join(destDir, dbfFile);
-      const expected = EXPECTED_NC_MTFCC[layer];
-      let actualCount = 0;
-      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
-        if (layerDef.filterByStatefp) {
-          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
-          if (String(props[statefpKey] ?? '') !== fipsArg) return;
-        }
-        if (layerDef.districtNumField) {
-          const fpKey = resolveColumn(props, layerDef.districtNumField);
-          const fpVal = String(props[fpKey] ?? '');
-          if (layerDef.skipDistrictCodes.has(fpVal)) return;
-        }
-        actualCount++;
-      });
-      if (actualCount !== expected) {
-        const err = new Error(
-          `[NC MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
-          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 37 file is correct.`
-        );
-        err.name = 'MtfccAssertionError';
-        throw err;
-      }
-      console.log(`  [${layer}] NC MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
-    }
-    return totals;
   }
 
   // ── Resolve paths under per-run temp dir ────────────────────────────────────
@@ -1448,9 +1381,11 @@ async function processLayer(
   // NC is single-member in BOTH chambers, so polygon count EQUALS seat count —
   // unlike AZ/WA where SLDL polygons cover two seats each. Verified against raw
   // TIGER 2024 FIPS 37 on 2026-08-21: sldl 120 / sldu 50, zero ZZZ pseudo-districts.
-  // EXPECTED_NC_MTFCC is hoisted to the top of this function (see comment there)
-  // so the --dry-run branch above and this live-mode block share one table.
   if (fipsArg === '37') {
+    const EXPECTED_NC_MTFCC: Record<string, number> = {
+      sldl: 120,
+      sldu: 50,
+    };
     if (layer in EXPECTED_NC_MTFCC) {
       const expected = EXPECTED_NC_MTFCC[layer];
       let actualCount = 0;
@@ -1478,7 +1413,19 @@ async function processLayer(
     }
   }
 
-  // ── Stream records ──────────────────────────────────────────────────────────
+  // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC) has now run against
+  // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
+  // count throws and aborts BEFORE this point, exactly like a live run.
+  // `client` is still never touched above this line (see task-1-report.md
+  // fix round 1 audit) — mirrors processNationwideCounty's
+  // count-then-return-then-write shape at the bottom of this file.
+  if (dryRun) {
+    console.log(`  [dry-run] ${layer}: all pre-flight assertions passed — would write rows (no DB writes made).`);
+    return totals;
+  }
+
+  // ── Stream records (only reachable after every per-state pre-flight assertion above has passed) ──
   await streamShapefile(shpPath, dbfPath, async (geom, props) => {
     try {
       // STATEFP filter (US-wide files only)
