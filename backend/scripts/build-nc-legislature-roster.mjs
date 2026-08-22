@@ -344,7 +344,26 @@ export function ballotpediaCitesNcgaMemberId(html, memberId) {
   return html.toLowerCase().includes(needle);
 }
 
-/** Extracts "He/She assumed office on Month D, YYYY." or "... in YYYY." from a Ballotpedia bio page. */
+/**
+ * Extracts "He/She assumed office on Month D, YYYY." or "... in YYYY." from a
+ * Ballotpedia bio page.
+ *
+ * ⚠ DO NOT "CORRECT" A CLUSTER OF January-1 DATES TO 'year' PRECISION.
+ * Reviewed 2026-08-22: 124 of the 170 seats in the final roster carry a
+ * 'day'-precision assumedOffice of exactly YYYY-01-01. That is NOT
+ * Ballotpedia boilerplate leaking in as false precision -- it is the
+ * correct, literal day. The North Carolina Constitution, Article II, Section 9 ("Term of office"),
+ * provides that "the term of office of Senators and Representatives shall
+ * commence on the first day of January next after their election." January 1
+ * is the LEGALLY MANDATED term-start date for every NC legislator who was
+ * seated at the start of a normal term (as opposed to the 8 appointed
+ * mid-term successors, who get their date from ncleg.gov's own annotation
+ * instead -- see the howStarted==='appointed' branch in buildRoster). Ballotpedia's
+ * "He assumed office on January 1, 20XX" sentence is reporting this
+ * constitutional date honestly, at genuine day precision, not guessing a
+ * year and rendering it as a full date. Confirmed by hand against the NC
+ * Constitution text, not inferred from the pattern alone.
+ */
 export function parseBallotpediaAssumedOffice(html) {
   const dayMatch = html.match(/assumed office on ([A-Z][a-z]+ \d{1,2}, \d{4})/);
   if (dayMatch) {
@@ -378,6 +397,7 @@ async function buildRoster() {
   const seats = [];
   const refusals = [];
   const nameVariances = [];
+  const nameOnlyConfirmations = [];
 
   for (const chamber of ['lower', 'upper']) {
     const byDistrict = groupByDistrict(ncgaRows[chamber]);
@@ -455,8 +475,26 @@ async function buildRoster() {
       // same person (measured 2026-08-22: Michael V. Lee — a stale one, 404,
       // alongside a disambiguated live one). Try each in order until one
       // both fetches and confirms identity.
+      //
+      // The id-citation check is strongly preferred, but CANNOT be required
+      // outright: measured 2026-08-22, doing so refuses 5 real, correctly-
+      // identified seats whose Ballotpedia pages simply have not caught up
+      // yet — Dan Kiger, Anna Ferguson, Haseeb Fatmi and Jonah Garson were
+      // all appointed within the last few months and their pages don't yet
+      // cite ncleg.gov at all, and Jake Johnson's page is a sparse stub with
+      // no infobox or citations of any kind. Refusing all 5 outright would
+      // silently drop real seats from the roster over a Ballotpedia lag, not
+      // a genuine identity problem. So the name-only fallback stays, but
+      // (per review) it must never be silent: every seat records HOW its
+      // Ballotpedia identity was confirmed, the count of name-only
+      // confirmations is printed, and — the point of this comment — that
+      // count is asserted below so a FUTURE increase (a new ambiguous match
+      // slipping through unnoticed) fails the build instead of passing
+      // quietly. If this assertion ever fails, read the new entries in
+      // `nameOnlyConfirmations` by hand before touching the expected count.
       let bpHtml = null;
       let bpUrlUsed = null;
+      let bpConfirmedBy = null; // 'member_id' | 'name_only'
       const attemptErrors = [];
       for (const candidateUrl of ballotpediaCandidates) {
         // A fixed pause before every Ballotpedia request (not just on
@@ -474,6 +512,7 @@ async function buildRoster() {
         if (idConfirmed) {
           bpHtml = candidateHtml;
           bpUrlUsed = candidateUrl;
+          bpConfirmedBy = 'member_id';
           break;
         }
         const titleMatch = candidateHtml.match(/<title>([^<]+) - Ballotpedia<\/title>/);
@@ -481,6 +520,10 @@ async function buildRoster() {
         if (bpName && namesMatch(sitting.name, bpName)) {
           bpHtml = candidateHtml;
           bpUrlUsed = candidateUrl;
+          bpConfirmedBy = 'name_only';
+          nameOnlyConfirmations.push({
+            chamber, district, name: sitting.name, url: candidateUrl,
+          });
           break;
         }
         attemptErrors.push(
@@ -520,6 +563,13 @@ async function buildRoster() {
         portraitUrl: osRecord.image || null,
         howStarted: sitting.howStarted,
         source: sitting.ncgaSource,
+        // How THIS seat's Ballotpedia identity was confirmed — 'member_id'
+        // (the page cites this exact ncleg.gov member id) is the strong case;
+        // 'name_only' means only the page <title> matched sitting.name, with
+        // no id citation at all. Recorded per-seat, not just logged, so a
+        // consumer can tell the difference without re-deriving it. See the
+        // EXPECTED_NAME_ONLY_CONFIRMATIONS assertion below.
+        ballotpediaConfirmedBy: bpConfirmedBy,
       });
     }
   }
@@ -535,6 +585,32 @@ async function buildRoster() {
     for (const v of nameVariances) {
       console.log(`  - ${v.chamber} district ${v.district}: ${v.note}`);
     }
+  }
+  if (nameOnlyConfirmations.length > 0) {
+    console.log(
+      `${nameOnlyConfirmations.length} seat(s) confirmed by Ballotpedia PAGE TITLE ONLY ` +
+      `(no ncleg.gov member id citation found on the page):`
+    );
+    for (const c of nameOnlyConfirmations) {
+      console.log(`  - ${c.chamber} district ${c.district}: ${c.name} — ${c.url}`);
+    }
+  }
+  // Measured 2026-08-22: exactly 5 seats (4 very-recent appointees whose
+  // Ballotpedia pages haven't been updated with an ncleg.gov citation yet,
+  // plus one sparse stub page with no infobox at all) fall through to the
+  // name-only fallback. This is a KNOWN, reviewed count, not a target to
+  // silently grow toward — a future increase means some new seat's
+  // Ballotpedia identity is resting on a title-string match alone, which is
+  // exactly the weaker-evidence shape this assertion exists to catch. If
+  // this throws, read the newly-added entries in `nameOnlyConfirmations`
+  // (printed above) by hand before deciding whether to accept them and only
+  // then raise this number.
+  const EXPECTED_NAME_ONLY_CONFIRMATIONS = 5;
+  if (nameOnlyConfirmations.length !== EXPECTED_NAME_ONLY_CONFIRMATIONS) {
+    throw new Error(
+      `FATAL: expected ${EXPECTED_NAME_ONLY_CONFIRMATIONS} name-only Ballotpedia confirmations, ` +
+      `got ${nameOnlyConfirmations.length} — read the list above before adjusting this number.`
+    );
   }
 
   const lower = seats.filter((s) => s.chamber === 'lower');

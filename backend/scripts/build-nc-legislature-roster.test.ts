@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { pickSittingMember, parseNcgaDate } from './build-nc-legislature-roster.mjs';
+import {
+  pickSittingMember,
+  parseNcgaDate,
+  namesMatch,
+  firstLastTokens,
+  decodeHtmlEntities,
+  normalizeNameForMatch,
+} from './build-nc-legislature-roster.mjs';
 
 describe('parseNcgaDate', () => {
   it('converts NCGA M/D/YY to ISO', () => {
@@ -83,5 +90,103 @@ describe('pickSittingMember', () => {
   it('marks an uncontested member with howStarted elected', () => {
     const rows = [{ name: 'Jay Adams', appointedOn: null, resignedOn: null }];
     expect(pickSittingMember('96', rows).howStarted).toBe('elected');
+  });
+});
+
+
+// -----------------------------------------------------------------------------
+// Name normalization / matching — these are the pure functions that produced
+// most of the real bugs this script hit against live data (HTML entities,
+// credential suffixes, quoted nicknames, parenthetical Ballotpedia
+// disambiguators). Every fixture below is a REAL name measured 2026-08-22,
+// not an invented example.
+// -----------------------------------------------------------------------------
+
+describe('decodeHtmlEntities', () => {
+  it('decodes numeric hex entities ncleg.gov actually renders in names', () => {
+    // ncleg's own House list literally contains "Erin Par&#xE9;" — the raw,
+    // un-decoded HTML entity — in place of "Erin Paré".
+    expect(decodeHtmlEntities('Erin Par&#xE9;')).toBe('Erin Paré');
+    expect(decodeHtmlEntities('Ren&#xE9;e A. Price')).toBe('Renée A. Price');
+  });
+
+  it('decodes &quot; — ncleg renders a quoted preferred name literally', () => {
+    // Jerry "Alan" Branson goes by his middle name; ncleg's list shows this
+    // as `Jerry &quot;Alan&quot; Branson`.
+    expect(decodeHtmlEntities('Jerry &quot;Alan&quot; Branson')).toBe('Jerry "Alan" Branson');
+  });
+});
+
+describe('normalizeNameForMatch', () => {
+  // 🔴 Standing rule: NFD combining marks must be DELETED, not replaced with a
+  // space. Pinned here so a future "fix" (e.g. `.replace(/[̀-ͯ]/g, ' ')`
+  // instead of `''`) fails loudly instead of silently splitting names like
+  // "Paré" into "par e".
+  it('deletes NFD combining marks rather than spacing them', () => {
+    expect(normalizeNameForMatch('Paré')).toBe('pare');
+    expect(normalizeNameForMatch('Paré')).not.toContain(' ');
+    expect(normalizeNameForMatch('Renée')).toBe('renee');
+  });
+});
+
+describe('firstLastTokens', () => {
+  it('strips a professional credential suffix (measured: Timothy Reeder, MD)', () => {
+    expect(firstLastTokens('Timothy Reeder, MD')).toEqual({ first: 'timothy', last: 'reeder' });
+  });
+
+  it('strips a generational suffix AND a middle initial together (measured: David W. Craven, Jr.)', () => {
+    expect(firstLastTokens('David W. Craven, Jr.')).toEqual({ first: 'david', last: 'craven' });
+  });
+
+  it('strips quotes around a preferred name but keeps the LEGAL first name (measured: Jerry "Alan" Branson)', () => {
+    // firstLastTokens has no concept of "goes by a middle name" — it reduces
+    // to the legal first token, "jerry", not the preferred "alan". That gap
+    // is exactly why the roster builder relies on the ncleg.gov member id,
+    // not name matching, to confirm this person's identity.
+    expect(firstLastTokens('Jerry "Alan" Branson')).toEqual({ first: 'jerry', last: 'branson' });
+  });
+
+  it('strips a middle initial (measured: Edward C. Goodwin)', () => {
+    expect(firstLastTokens('Edward C. Goodwin')).toEqual({ first: 'edward', last: 'goodwin' });
+    expect(firstLastTokens('Ed Goodwin')).toEqual({ first: 'ed', last: 'goodwin' });
+  });
+});
+
+describe('namesMatch', () => {
+  it('matches through a middle initial difference (measured: John L. Lowery vs John Lowery)', () => {
+    expect(namesMatch('John L. Lowery', 'John Lowery')).toBe(true);
+  });
+
+  it('matches through a credential suffix (measured: Timothy Reeder, MD)', () => {
+    expect(namesMatch('Timothy Reeder, MD', 'Timothy Reeder')).toBe(true);
+  });
+
+  it('matches through a generational suffix (measured: David W. Craven, Jr.)', () => {
+    expect(namesMatch('David W. Craven, Jr.', 'David Craven')).toBe(true);
+  });
+
+  it('matches an HTML-entity-decoded name against its plain form (measured: Erin Paré)', () => {
+    expect(namesMatch(decodeHtmlEntities('Erin Par&#xE9;'), 'Erin Paré')).toBe(true);
+  });
+
+  // These four are the real, unresolved boundary: genuine nicknames and a
+  // quoted preferred name that firstLastTokens cannot and should not paper
+  // over. The roster builder accepts these ONLY via the independently-cited
+  // ncleg.gov member id (see buildRoster), never via namesMatch — pinning
+  // namesMatch itself as false here documents that the two mechanisms are
+  // deliberately separate, not that these are unresolved bugs.
+  it('does NOT match a nickname against the legal first name (measured: Edward C. Goodwin vs Ed Goodwin)', () => {
+    expect(namesMatch('Edward C. Goodwin', 'Ed Goodwin')).toBe(false);
+  });
+
+  it('does NOT match a preferred middle name against the legal first name (measured: Jerry "Alan" Branson vs Alan Branson)', () => {
+    expect(namesMatch('Jerry "Alan" Branson', 'Alan Branson')).toBe(false);
+  });
+
+  // Negative case: two genuinely DIFFERENT people (HD-47's predecessor and
+  // successor) must never be reported as the same person merely because they
+  // share a last name and a similar-looking first name.
+  it('does NOT match two different people who share a last name (measured: Jarrod Lowery vs John L. Lowery)', () => {
+    expect(namesMatch('Jarrod Lowery', 'John L. Lowery')).toBe(false);
   });
 });
