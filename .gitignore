@@ -53,7 +53,6 @@ backend/data/topic-drafts/*.json
 # TIGER/Line shapefiles downloaded by boundary loader scripts
 backend/tl_2024_*/
 backend/tl_2024_*.zip
-backend/.tmp-tiger-*/
 
 # Python — validator script runtime artifacts
 __pycache__/
@@ -61,11 +60,9 @@ __pycache__/
 *.pyo
 .venv/
 *.venv
-backend/.tmp-legislators-current.yaml
 
 # Playwright MCP session artifacts (screenshots / page snapshots)
 .playwright-mcp/
-backend/.tmp-national-cd119/
 
 # One-shot migration apply/verify helpers & scratch (not durable record)
 backend/scripts/_*
@@ -131,4 +128,23 @@ backend/data/census-gov-units/
 # tracked, never the content, so a fresh clone got an empty directory regardless.
 # It is upstream tooling (github.com/nextlevelbuilder/ui-ux-pro-max-skill), not part of this app.
 ui-ux-pro-max-skill/
-backend/.tmp-wa-cert/
+
+# Scratch working dirs and one-off probe scripts, anywhere in the tree.
+#
+# The `.tmp-` prefix is the house marker for "regenerable, not a durable record":
+# TIGER/Census downloads, gazetteer zips, ad-hoc .mjs/.ts probes, page snapshots.
+# 124MB of it had accumulated untracked by 2026-08-22, which buries the handful of
+# untracked paths that DO matter (live backfill state, unfiled research) in noise.
+# This one rule replaces four single-purpose rules that each named one such dir.
+.tmp-*
+
+# ...except five that were committed INSIDE `.tmp-` dirs before the rule existed.
+# `.tmp-*` does not untrack an already-tracked file, so these keep working either
+# way — they are re-included so this file states what is actually tracked. Note a
+# negation cannot reach into an excluded directory, so the DIRECTORY is negated,
+# not the zip inside it.
+!backend/.tmp-in-school-unsd/
+!backend/.tmp-me-school-unsd/
+!backend/.tmp-or-school-unsd/
+!backend/.tmp-tx-school-unsd/
+!backend/scripts/.tmp-phase89-headshot-log.txt
