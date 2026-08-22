@@ -171,6 +171,20 @@ WHERE NOT EXISTS (
 -- No numbered seat exists on Durham's ballot (see header). Guarded on a
 -- target-count top-up, not NOT EXISTS-on-title, since three rows must share
 -- one title without collapsing to one on a re-run.
+--
+-- 🔴 CAVEAT FOR FUTURE WAVES: the top-up below counts existing offices scoped
+-- to chamber_id ALONE, not to (chamber_id, district_id). That is correct here
+-- because Durham's City Council chamber maps to exactly one district (the
+-- Citywide LOCAL district) -- there is nothing else for the count to
+-- conflate with. It stops being correct the moment a chamber spans MULTIPLE
+-- districts, e.g. Buncombe County's Commission in wave 3: six 'Commissioner'
+-- seats spread across three districts (HD-114/115/116) within one chamber.
+-- A chamber-scoped count there would top up to 6 total and could land all
+-- six offices on a single district while still reporting "6 offices
+-- created" -- a silent misassignment, not an error. Any wave that copies
+-- this top-up pattern onto a chamber spanning multiple districts MUST scope
+-- the existing-count subquery to (chamber_id, district_id) together, not
+-- chamber_id alone.
 
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state, representing_city)
@@ -194,6 +208,17 @@ WHERE g.geo_id = '3719000' AND g.type = 'City' AND c.name = 'City Council';
 -- header. A bare geo_id = '37063' join matches NC House District 63 too.
 -- Same target-count top-up as 4b, for the same reason (no numbered seat on
 -- Durham County's ballot either).
+--
+-- 🔴 SAME CAVEAT AS 4b: this top-up counts existing 'Commissioner' offices
+-- scoped to chamber_id alone, which is correct only because Durham's Board
+-- of County Commissioners chamber maps to exactly one district (COUNTY
+-- 37063). It becomes WRONG the moment a chamber spans multiple districts --
+-- exactly the shape of Buncombe County's Commission in wave 3, six seats
+-- across three districts (HD-114/115/116) in one chamber -- where a
+-- chamber-scoped count could top up to 6 total and land them all on one
+-- district while still reporting "6 offices created". Any wave copying this
+-- pattern onto a chamber that spans districts MUST scope the count to
+-- (chamber_id, district_id) together, not chamber_id alone.
 
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state)

@@ -29,7 +29,22 @@
 -- (geo_id, district_type, office_title):
 --   * office side:  ORDER BY o.id (each office row's UUID is fixed for good
 --                   the moment CA_0006 creates it -- an arbitrary but STABLE
---                   ordering key, never reshuffled by a later run).
+--                   ordering key, never reshuffled by a RE-RUN of these two
+--                   migrations). 🔴 This is silent about OUT-OF-BAND
+--                   deletion: if an office row is deleted outside CA_0006/
+--                   CA_0007 and the top-up in CA_0006 regenerates a
+--                   replacement, the replacement gets a NEW UUID, which can
+--                   sort into a different rank and shift the rank→person
+--                   mapping. For the three at-large seats and the five
+--                   Commissioner seats this would NOT produce a wrong
+--                   voter-facing roster -- those seats are genuinely
+--                   interchangeable, so the wrong PERSON never lands on the
+--                   wrong SEAT LABEL. It WOULD, however, fabricate term_end
+--                   values on real people's tenure records: re-running the
+--                   seating loop with a shifted mapping makes
+--                   seat_officeholder() close and reopen terms against the
+--                   wrong predecessor, writing an incorrect term_end onto
+--                   whoever it now (wrongly) believes vacated the seat.
 --   * roster side:  ORDER BY s.ext_id (fixed per person by ROSTERS.md's own
 --                   external_id mapping table).
 -- Because the structure migration is asserted (by its own post-verify gate)
@@ -48,7 +63,7 @@
 --
 -- 🔴 THE MIKE LEE COLLISION: Durham County's Board Chair is stored as
 -- full_name = 'Dr. Michael "Mike" Lee' (external_id -3730008), first_name
--- 'Dr. Michael', last_name 'Lee', preferred_name 'Mike' -- matching this
+-- 'Dr. Michael', last_name 'Lee', alternate_names {'Mike'} -- matching this
 -- corpus's existing convention of folding a courtesy title into first_name
 -- (see 'Dr. Kathleen Lang', 'Dr. Monica Sanchez'). Prod ALREADY contains two
 -- distinct, unrelated people: 'Mike Lee' (external_id -400077, US Senator,

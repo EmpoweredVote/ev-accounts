@@ -510,7 +510,7 @@ const incumbents = `-- _wip_durham_incumbents.sql
 --
 -- 🔴 THE MIKE LEE COLLISION: Durham County's Board Chair is stored as
 -- full_name = 'Dr. Michael "Mike" Lee' (external_id -3730008), first_name
--- 'Dr. Michael', last_name 'Lee', preferred_name 'Mike' -- matching this
+-- 'Dr. Michael', last_name 'Lee', alternate_names {'Mike'} -- matching this
 -- corpus's existing convention of folding a courtesy title into first_name
 -- (see 'Dr. Kathleen Lang', 'Dr. Monica Sanchez'). Prod ALREADY contains two
 -- distinct, unrelated people: 'Mike Lee' (external_id -400077, US Senator,
