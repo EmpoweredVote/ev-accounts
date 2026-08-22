@@ -204,8 +204,16 @@ Reads nothing from the DB and writes nothing to it. Pure fetch + reconcile + ass
 **Interfaces:**
 - Consumes: nothing from Task 1.
 - Produces: `data/nc-legislature-roster.json` shaped `{ retrievedAt: string, seats: Seat[] }` where
-  `Seat = { chamber: 'upper' | 'lower', district: number, name: string, memberId: string, assumedOffice: string | null, assumedPrecision: 'day' | 'year' | 'unknown', portraitUrl: string | null, source: string }`.
+  `Seat = { chamber: 'upper' | 'lower', district: number, name: string, memberId: string, assumedOffice: string | null, assumedPrecision: 'day' | 'year' | 'unknown', howStarted: 'elected' | 'appointed' | 'unknown', portraitUrl: string | null, source: string }`.
   Task 3 reads exactly these field names.
+
+  🔴 **`howStarted` is load-bearing.** `essentials.seat_officeholder` takes `p_how_started` and
+  **defaults it to `'elected'`**. The eight contested-district survivors reached their seats by
+  *appointment*, so without this field the migration records an untrue claim about eight named
+  people. `office_terms.how_started` CHECKs `'elected'|'appointed'|'succeeded'|'redistricted'|'unknown'`
+  (`'appointed'` already appears on 61 existing rows). Populate `'appointed'` for exactly the eight
+  — House 40, 47, 60, 90, 119 and Senate 18, 23, 34 — `'elected'` otherwise, and `'unknown'` rather
+  than a guess. Assert the count is exactly 8.
 
 **Why this needs its own unit test:** the sitting-member rule is pure logic over a known-tricky input, and getting it wrong seats a resigned member — a silent, voter-facing wrong answer. The rest of the script is I/O.
 
@@ -532,7 +540,22 @@ BEGIN
 END $$;
 ```
 
-The **incumbents** migration must insert 170 politicians (guarded on `external_id`) and then call `essentials.seat_officeholder` once per seat, passing `assumedOffice` and the matching `start_precision`. It ends with its own gate asserting 170 seated:
+The **incumbents** migration must insert 170 politicians (guarded on `external_id`) and then call `essentials.seat_officeholder` once per seat. The full signature is:
+
+```
+essentials.seat_officeholder(p_office_id uuid, p_politician_id uuid, p_term_start date,
+                             p_source text,
+                             p_how_started text DEFAULT 'elected',
+                             p_start_precision text DEFAULT 'day',
+                             p_how_ended_prev text DEFAULT 'term_expired')
+```
+
+Pass `assumedOffice` → `p_term_start`, `assumedPrecision` → `p_start_precision`, and
+**`howStarted` → `p_how_started`**. Do not let `p_how_started` fall through to its `'elected'`
+default — eight of these members were appointed. Add a gate assertion that exactly 8 NC legislative
+terms carry `how_started = 'appointed'`.
+
+It ends with its own gate asserting 170 seated:
 
 ```sql
 DO $$
