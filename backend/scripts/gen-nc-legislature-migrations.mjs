@@ -66,6 +66,16 @@ const extId = (s) => (s.chamber === 'upper' ? -(3710000 + s.district) : -(372000
  * dropped or corrupted if the split is imperfect -- full_name always carries
  * the roster's exact string.
  */
+// Surname particles that begin a multi-word surname (a preposition/article
+// fused onto the family name, not a middle name). Matched case-INSENSITIVELY
+// for detection only -- the token's original casing is always preserved in
+// the output, since some people capitalise theirs (Van Buren) and some don't
+// (van Buren); normalizing either to a house style would misstate the name.
+const SURNAME_PARTICLES = new Set([
+  'von', 'van', 'de', 'del', 'della', 'di', 'da', 'du',
+  'la', 'le', 'den', 'ter', 'ten', 'dos', 'das',
+]);
+
 const splitName = (full) => {
   let namePart = full;
   let suffix = null;
@@ -83,9 +93,31 @@ const splitName = (full) => {
     tokens.splice(quotedIdx, 1);
   }
 
+  // A particle counts only when it is strictly interior -- not the first
+  // token (which would just be a one-word first name) and not the last
+  // (already the whole surname on its own). This is what keeps the rule from
+  // firing on "A. Reece Pyrtle" or any suffix/credential row: none of their
+  // interior tokens are in SURNAME_PARTICLES.
+  let particleIdx = -1;
+  for (let i = 1; i < tokens.length - 1; i++) {
+    if (SURNAME_PARTICLES.has(tokens[i].toLowerCase())) {
+      particleIdx = i;
+      break;
+    }
+  }
+
   const first = tokens[0];
-  const last = tokens[tokens.length - 1];
-  const middle = tokens.slice(1, -1).join(' ') || null;
+  let last;
+  let middle;
+  if (particleIdx !== -1) {
+    // Everything from the particle onward is the surname, e.g.
+    // ["Julie", "von", "Haefen"] -> first "Julie", last "von Haefen".
+    last = tokens.slice(particleIdx).join(' ');
+    middle = tokens.slice(1, particleIdx).join(' ') || null;
+  } else {
+    last = tokens[tokens.length - 1];
+    middle = tokens.slice(1, -1).join(' ') || null;
+  }
 
   return { first, last, middle, suffix, preferred };
 };
