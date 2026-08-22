@@ -212,6 +212,13 @@ than create a parallel election.
 * **Don't invent dates.** Year-only sources get `start_precision => 'year'`; genuinely unknown starts
   get `'unknown'`, not a guess.
 * Party lives on `races.primary_party`, never on `race_candidates`.
+* 🔴 **`geo_id` is not unique across layers — always pair it with `mtfcc` in a join.** TIGER's GEOID
+  is `STATEFP || district`, so NC districts 1–50 will carry the same `geo_id` in both chambers
+  (`37040` is both HD-40 and SD-40). This is the known ~1,159-row collision class that
+  `src/lib/geoIdGuard.ts` disambiguates (`G5220→STATE_LOWER`, `G5210→STATE_UPPER`); ad-hoc SQL is
+  **not** guarded. Measured on already-loaded Colorado: a Denver point joined on `geo_id` alone
+  returns **five** rows — both chambers of HD-6 and SD-31 *plus* `COUNTY|Denver County`, because
+  `08031` is also Denver's county FIPS. The correct answer is two. Nothing errors when this is wrong.
 * **The state stance scale is 28 topics, not 26** — `inform.compass_topic_roles` where
   `role_scope='state'`, measured 2026-08-21. Local is 22. The 26 figure in project memory is stale;
   re-verify topic UUIDs against prod before any stance push regardless.
