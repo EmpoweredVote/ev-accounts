@@ -84,6 +84,19 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // 64 G4020 county polygons for FIPS 08.
   CO: new Set(['sldu', 'sldl', 'place']),
   DC: new Set(['sldl']),
+  // NC. sldu/sldl: SL 2023-146 (Senate) and SL 2023-149 (House), both enacted
+  // 2023-10-25 and STILL the operative maps for 2026 — only the CONGRESSIONAL
+  // map was redrawn for 2026 (SL 2025-95), and it is already loaded as G5200V26.
+  // TIGER 2024 carries LSY=2024 on both layers, i.e. the 2023 Acts. Verified by
+  // identity anchors against Buncombe County's own GIS: Asheville -> HD-116
+  // (Turner) / SD-49 (Mayfield), Weaverville -> HD-115 (Prather), Black Mountain
+  // -> HD-114 (Ager) / SD-46 (Daniel).
+  // 120 sldl and 50 sldu polygons = 120 and 50 seats; single-member both chambers.
+  // county is EXCLUDED: all 100 NC counties already exist with geo_id and carry
+  // offices in later waves — do not disturb them.
+  // place is declared here but is NOT run in wave 1; waves 2 and 3 run it alone
+  // so a city mistake never forces a re-run of 170 seats.
+  NC: new Set(['sldu', 'sldl', 'place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -639,6 +652,20 @@ async function processLayer(
 
   const url = layerDef.urlTemplate(vintage, fips, congress);
 
+  // ── NC MTFCC pre-flight assertion (Wave 1) — expected-count table ───────────
+  // NC is single-member in BOTH chambers, so polygon count EQUALS seat count —
+  // unlike AZ/WA where SLDL polygons cover two seats each. Verified against raw
+  // TIGER 2024 FIPS 37 on 2026-08-21: sldl 120 / sldu 50, zero ZZZ pseudo-districts.
+  // Hoisted here (rather than inline beside the other EXPECTED_*_MTFCC blocks
+  // further down) because the generic dry-run short-circuit immediately below
+  // returns BEFORE that block is ever reached for any state — see the
+  // NC-specific dry-run branch a few lines down, which needs this same table to
+  // make the gate provable with --dry-run instead of silently-dead code.
+  const EXPECTED_NC_MTFCC: Record<string, number> = {
+    sldl: 120,
+    sldu: 50,
+  };
+
   // ── Dry run short-circuit BEFORE any I/O or DB call ─────────────────────────
   if (dryRun) {
     console.log(`  [dry-run] ${layer} (${layerDef.mtfcc} → ${layerDef.district_type})`);
@@ -688,6 +715,62 @@ async function processLayer(
       } catch (err) {
         console.warn(`  [dry-run] aiannh scan failed: ${(err as Error).message}`);
       }
+    }
+
+    // ── NC MTFCC pre-flight assertion, exercised in --dry-run (Wave 1) ────────
+    // Without this branch, the generic short-circuit above returns before any
+    // download happens, so the EXPECTED_NC_MTFCC block further down the
+    // function (which fires on `fipsArg === '37'`, alongside every other
+    // state's EXPECTED_*_MTFCC block) is NEVER reached in --dry-run mode —
+    // dead code that would silently let a wrong count through. Confirmed by
+    // running this file's Step 2 with `sldl: 999`: dry-run printed "complete"
+    // with the assertion never having run. That is a PRE-EXISTING, GENERAL
+    // defect: MA/ME/TX/CA/OR/MD/VA/NV/AZ/WA/CO/WI/DC's pre-flight blocks have
+    // the identical problem in --dry-run. Scoped fix applied to NC ONLY here
+    // — see task-1-report.md for the finding and the case for/against a
+    // broader fix. This branch downloads/extracts/streams (real network I/O,
+    // no DB — `client` is still `null` in this call path) and re-throws a
+    // failing assertion so main()'s uncaught rejection handler exits non-zero,
+    // exactly like the live-mode path below does.
+    if (fipsArg === '37' && layer in EXPECTED_NC_MTFCC) {
+      const tmpRoot = path.join(process.cwd(), `.tmp-tiger-${vintage}-${fips}`);
+      fs.mkdirSync(tmpRoot, { recursive: true });
+      const baseName = path.basename(url, '.zip');
+      const zipPath = path.join(tmpRoot, `${baseName}.zip`);
+      const destDir = path.join(tmpRoot, baseName);
+      await downloadWithRedirects(url, zipPath);
+      extractZip(zipPath, destDir);
+      const entries = fs.readdirSync(destDir);
+      const shpFile = entries.find((e) => e.toLowerCase().endsWith('.shp'));
+      const dbfFile = entries.find((e) => e.toLowerCase().endsWith('.dbf'));
+      if (!shpFile || !dbfFile) {
+        throw new Error(`[${layer}] could not locate .shp/.dbf in ${destDir} (entries: ${entries.join(', ')})`);
+      }
+      const shpPath = path.join(destDir, shpFile);
+      const dbfPath = path.join(destDir, dbfFile);
+      const expected = EXPECTED_NC_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[NC MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 37 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] NC MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
     return totals;
   }
@@ -1358,6 +1441,40 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] DC MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── NC MTFCC pre-flight assertion (Wave 1) ──────────────────────────────────
+  // NC is single-member in BOTH chambers, so polygon count EQUALS seat count —
+  // unlike AZ/WA where SLDL polygons cover two seats each. Verified against raw
+  // TIGER 2024 FIPS 37 on 2026-08-21: sldl 120 / sldu 50, zero ZZZ pseudo-districts.
+  // EXPECTED_NC_MTFCC is hoisted to the top of this function (see comment there)
+  // so the --dry-run branch above and this live-mode block share one table.
+  if (fipsArg === '37') {
+    if (layer in EXPECTED_NC_MTFCC) {
+      const expected = EXPECTED_NC_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[NC MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 37 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] NC MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
