@@ -212,11 +212,29 @@ Any hit outside `nc` is a homonym to document, **never** a row to reuse.
 **Structure migration (`CA_0006`) must:**
 
 - Insert **one** `LOCAL` district: `geo_id '3719000'`, `state 'nc'`, label **`Durham Citywide`**.
-  🔴 Follow the **Bainbridge Island Citywide** precedent (`5303736`, 6 offices), **not** Austin's.
+  🔴 Follow the **Bainbridge Island Citywide** precedent (`5303736`, **7 offices** — the same shape as Durham's council), **not** Austin's.
   Austin's council is genuinely district-elected, so it has 10 separate district rows; Durham's
   entire council is elected citywide, so all 7 seats hang off this single district.
 - Insert 7 city offices on that district, and 8 county offices on the **existing** `37063` district
   (`NOT EXISTS`-guarded; do not create the county district).
+
+  🔴 **`geo_id '37063'` is claimed by TWO districts — pairing with `district_type` is MANDATORY.**
+  Measured in prod 2026-08-22:
+
+  ```
+  COUNTY      | Durham County           | 37063 | 0 offices
+  STATE_LOWER | State House District 63 | 37063 | 1 office   <- seated by wave 1
+  ```
+
+  NC House District 63's geo_id is `'37'||lpad(63,3,'0')` = `37063`, byte-identical to Durham
+  County's FIPS. A bare `geo_id = '37063'` lookup matches both, and would attach the Sheriff,
+  Register of Deeds, Clerk and 5 commissioners to **a state house district** — or fan out to 16
+  offices — while an "8 offices created" count still looks correct. Every county join must read:
+
+  ```sql
+  JOIN essentials.districts d
+    ON d.geo_id = '37063' AND d.district_type = 'COUNTY' AND lower(d.state) = 'nc'
+  ```
 - 🔴 Set `representation_note` on the **3 ward seats**, in the Bainbridge house style but adjusted:
   Bainbridge wards *nominate* in the primary; **Durham's do not affect voting at all.** The city's own
   wording is *"The candidate is, however, elected by all city voters. Wards do not affect where a
@@ -225,9 +243,23 @@ Any hit outside `nc` is a homonym to document, **never** a row to reuse.
   would assert a primary restriction Durham does not have.
   `representation_note` on a `voting_powers='full'` seat is permitted (CHECK requires it only when
   powers are not full) and there are 10 existing precedents.
-- End with a post-verify gate asserting: 1 new `LOCAL` district; 7 offices on `3719000`; 8 on
-  `37063`; 3 ward offices carrying a non-null `representation_note`; **0** offices on a district
-  lacking geometry; and **0** districts carrying an unexpected office count.
+- End with a post-verify gate asserting: 1 new `LOCAL` district; 7 offices on `3719000`; 8 on the
+  `COUNTY` row for `37063`; 3 ward offices carrying a non-null `representation_note`; **0** offices
+  on a district lacking geometry; and **0** districts carrying an unexpected office count.
+
+  🔴 **Plus the assertion that actually catches the collision:** after `CA_0006` runs,
+  `STATE_LOWER` district `37063` must still carry **exactly 1** office — its Representative.
+
+  ```sql
+  SELECT count(*) INTO n_hd63 FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE d.geo_id = '37063' AND d.district_type = 'STATE_LOWER';
+  IF n_hd63 <> 1 THEN RAISE EXCEPTION
+    'CA_0006: NC House District 63 carries % offices, expected 1 — county offices cross-wired onto the house district', n_hd63; END IF;
+  ```
+
+  Counting offices on the county row alone would **not** notice offices landing on the house
+  district; only this assertion does.
 
 **Incumbents migration (`CA_0007`) must:** insert 15 politicians guarded on `external_id`, seat each
 via `seat_officeholder` (passing `how_started` and `start_precision` explicitly — do **not** let
