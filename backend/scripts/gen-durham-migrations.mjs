@@ -22,6 +22,24 @@
  * this script does NOT apply anything and does NOT touch the database. It
  * only reads the roster JSON and writes the two SQL files below.
  *
+ * FIX ROUND 1 (coordinator, 2026-08-22): two changes from the first draft.
+ *   (A) Durham's ballot has no numbered at-large or commissioner seats --
+ *       the earlier "At-Large 1/2/3" / "Seat 1..5" titles invented a
+ *       distinction that does not exist (the Bainbridge precedent misled:
+ *       WA law puts numbered "Council Position No. N" ON THE BALLOT; NC does
+ *       not). The house convention for genuinely identical multi-member
+ *       seats is IDENTICAL TITLES, MULTIPLE OFFICE ROWS -- measured in prod:
+ *       468 distinct (district_id, title) groups already carry more than one
+ *       office (Newton 16 "City Councilor", Cambridge 9 "City Councillor",
+ *       the United States 8 "Associate Justice", "House At-Large" 13
+ *       "Representative"). So: 3 identical "Council Member, At-Large" rows
+ *       and 5 identical "Commissioner" rows. The 3 ward seats keep their
+ *       distinct titles -- Durham genuinely designates Ward 1/2/3.
+ *   (B) Durham writes "Council Member" as two words (its own roster page:
+ *       "the Mayor, 3 Council Members representing specific wards, and 3
+ *       at-large Council Members") -- not Bainbridge's one-word
+ *       "Councilmember".
+ *
  * Usage (from C:/EV-Accounts/backend):
  *   node scripts/gen-durham-migrations.mjs
  */
@@ -61,7 +79,22 @@ if (execSeats.length !== 3) {
   process.exit(1);
 }
 
-// ── Ward representation notes ──────────────────────────────────────────────
+const AT_LARGE_TITLE = 'Council Member, At-Large';
+const COMMISSIONER_TITLE = 'Commissioner';
+
+const atLargeCount = citySeats.filter((s) => s.officeTitle === AT_LARGE_TITLE).length;
+const commissionerCount = commissionSeats.filter((s) => s.officeTitle === COMMISSIONER_TITLE).length;
+if (atLargeCount !== 3) {
+  console.error(`FATAL: expected 3 roster rows titled '${AT_LARGE_TITLE}', got ${atLargeCount}.`);
+  process.exit(1);
+}
+if (commissionerCount !== 5) {
+  console.error(`FATAL: expected 5 roster rows titled '${COMMISSIONER_TITLE}', got ${commissionerCount}.`);
+  process.exit(1);
+}
+
+// ── Ward representation notes (unchanged by fix round 1 -- confirmed correct
+// by the coordinator; kept verbatim) ─────────────────────────────────────────
 // Bainbridge Island's ward notes (migration 1800) say "residency and
 // nomination district" -- correct THERE because BIMC 2.06 has ward voters
 // nominate in the August primary before an all-city November general.
@@ -77,6 +110,29 @@ const wardNote = (n) =>
   `this seat must reside in Ward ${n} of the City of Durham. The candidate is, however, elected by ` +
   `all city voters. Wards do not affect where a resident votes or which candidate(s) a resident can ` +
   `vote for. (durhamnc.gov/1396/City-Council-Members, retrieved ${RETRIEVED}.)`;
+
+// ── Post-verify office-count expectations (used by both the structure gate
+// and the FATAL pre-checks above) ────────────────────────────────────────────
+const OFFICE_EXPECTATIONS = [
+  { geoId: '3719000', districtType: 'LOCAL', title: 'Mayor', expected: 1 },
+  { geoId: '3719000', districtType: 'LOCAL', title: 'Council Member, Ward 1', expected: 1 },
+  { geoId: '3719000', districtType: 'LOCAL', title: 'Council Member, Ward 2', expected: 1 },
+  { geoId: '3719000', districtType: 'LOCAL', title: 'Council Member, Ward 3', expected: 1 },
+  { geoId: '3719000', districtType: 'LOCAL', title: AT_LARGE_TITLE, expected: 3 },
+  { geoId: '37063', districtType: 'COUNTY', title: COMMISSIONER_TITLE, expected: 5 },
+  { geoId: '37063', districtType: 'COUNTY', title: 'Sheriff', expected: 1 },
+  { geoId: '37063', districtType: 'COUNTY', title: 'Register of Deeds', expected: 1 },
+  { geoId: '37063', districtType: 'COUNTY', title: 'Clerk of Superior Court', expected: 1 },
+];
+
+const officeGateChecks = OFFICE_EXPECTATIONS.map(
+  (e) => `  SELECT count(*) INTO n_check FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE d.geo_id = ${q(e.geoId)} AND d.district_type = ${q(e.districtType)} AND o.title = ${q(e.title)};
+  IF n_check <> ${e.expected} THEN
+    RAISE EXCEPTION 'CA_0006: expected % office(s) titled % on (%, %), found %', ${e.expected}, ${q(e.title)}, ${q(e.geoId)}, ${q(e.districtType)}, n_check;
+  END IF;`
+).join('\n\n');
 
 // ── structure ────────────────────────────────────────────────────────────────
 const structure = `-- _wip_durham_structure.sql
@@ -107,25 +163,54 @@ const structure = `-- _wip_durham_structure.sql
 -- offices; migration 1800), not Austin's 10-district model (Austin's council
 -- is genuinely district-elected; Durham's is not).
 --
+-- 🔴 FIX ROUND 1: Durham's ballot has NO numbered at-large or commissioner
+-- seats -- voters elect three at-large council members and a slate of
+-- commissioners, with no "At-Large 2" or "Seat 4" anywhere in Durham's
+-- election machinery (unlike Bainbridge, where WA law puts a legally numbered
+-- "Council Position No. N" ON THE BALLOT). Inventing seat numbers here would
+-- assert a distinction that does not exist. Instead this migration follows
+-- the corpus's own convention for genuinely identical multi-member seats:
+-- IDENTICAL TITLES, MULTIPLE OFFICE ROWS -- measured in prod, 468 distinct
+-- (district_id, title) groups already carry more than one office this way
+-- (Newton 16 "City Councilor", Cambridge 9 "City Councillor", the United
+-- States 8 "Associate Justice", "House At-Large" 13 "Representative"). So:
+-- 3 offices titled 'Council Member, At-Large' (identical) and 5 titled
+-- 'Commissioner' (identical). The 3 ward seats keep their distinct titles --
+-- Durham genuinely designates Ward 1/2/3, so those are real, not invented.
+--
+-- 🔴 Because two title groups are now intentionally non-unique per
+-- (district_id, title), the usual NOT EXISTS-on-title idempotency guard would
+-- COLLAPSE 3 at-large seats (or 5 commissioner seats) down to 1 on a re-run.
+-- Those two INSERTs instead guard on a COUNT: each run tops the group up to
+-- its target (3 or 5) via 'generate_series(1, target - existing)', which is
+-- empty (zero rows) once the target is already met -- see steps 4b/5a below.
+-- Reasoned proof of idempotency (not applied, per task scope): on a first run
+-- existing=0, so generate_series(1,3-0)=generate_series(1,3) inserts 3 rows;
+-- on any subsequent run existing=3, so generate_series(1,3-3)=
+-- generate_series(1,0) is empty (Postgres generate_series with start > stop
+-- and the default ascending step returns zero rows) and nothing more is
+-- inserted. The same reasoning holds for Commissioner at target 5.
+--
+-- Durham writes the body's title as "Council Member" (two words) --
+-- durhamnc.gov's own roster page: "the Mayor, 3 Council Members representing
+-- specific wards, and 3 at-large Council Members" -- not Bainbridge's
+-- one-word "Councilmember".
+--
 -- Durham County Commissioners are 5 at-large seats; per ROSTERS.md, Chair and
 -- Vice-Chair are annual BOARD VOTES, not separate offices, so no Chair/
--- Vice-Chair office is created here. The 5 commissioner seats share an
--- identical title in the source record, so "Commissioner, Seat 1..5" is used
--- as an internal DB disambiguator ONLY (no numbered-seat claim is being made
--- about Durham County's actual structure) -- the same convention this corpus
--- already uses for indistinguishable at-large seats (e.g. "Council Member
--- (At-Large 1..N)" in Auburn/Augusta/Bangor/Bath, Maine). The 3 city
--- at-large seats get the identical treatment for the identical reason.
+-- Vice-Chair office is created here.
 --
 -- essentials.offices.politician_id was DROPPED (ADR 0002 phase 5, migration
 -- 1463). This migration writes NO occupant -- occupancy is entirely
 -- migrations/_wip_durham_incumbents.sql, through essentials.office_terms.
 --
--- Idempotency: essentials.districts/governments/chambers/offices have no
--- unique index beyond their pkeys (chambers.slug is a GENERATED ALWAYS column
--- and must never be inserted directly), so every insert below is NOT EXISTS
--- guarded. Chamber idempotency keys on (government_id, name); office
--- idempotency keys on (chamber_id, title).
+-- Idempotency: essentials.districts/governments/chambers have no unique index
+-- beyond their pkeys (chambers.slug is a GENERATED ALWAYS column and must
+-- never be inserted directly), so those inserts are NOT EXISTS guarded.
+-- Single-seat office titles (Mayor, wards, Sheriff, Register of Deeds, Clerk
+-- of Superior Court) are also NOT EXISTS guarded on (chamber_id, title). The
+-- two multi-seat titles (Council Member, At-Large / Commissioner) are instead
+-- guarded on a target-count top-up -- see above.
 
 BEGIN;
 
@@ -195,19 +280,16 @@ WHERE g.geo_id = '37063' AND g.type = 'County'
     WHERE c.government_id = g.id AND c.name = 'Elected Officials'
   );
 
--- ─── 4. City offices: 7, on the Durham Citywide LOCAL district ──────────────
+-- ─── 4a. City single-seat offices: Mayor + 3 wards, on the Citywide district ─
 
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state, representing_city, representation_note)
 SELECT c.id, d.id, v.title, 'NC', 'Durham', v.note
 FROM (VALUES
-  ('Mayor',                       NULL),
-  ('Councilmember, Ward 1',       ${q(wardNote(1))}),
-  ('Councilmember, Ward 2',       ${q(wardNote(2))}),
-  ('Councilmember, Ward 3',       ${q(wardNote(3))}),
-  ('Councilmember, At-Large 1',   NULL),
-  ('Councilmember, At-Large 2',   NULL),
-  ('Councilmember, At-Large 3',   NULL)
+  ('Mayor',                          NULL),
+  ('Council Member, Ward 1',         ${q(wardNote(1))}),
+  ('Council Member, Ward 2',         ${q(wardNote(2))}),
+  ('Council Member, Ward 3',         ${q(wardNote(3))})
 ) AS v(title, note)
 CROSS JOIN LATERAL (
   SELECT ch.id FROM essentials.chambers ch
@@ -222,34 +304,52 @@ WHERE NOT EXISTS (
   SELECT 1 FROM essentials.offices o WHERE o.chamber_id = c.id AND o.title = v.title
 );
 
--- ─── 5. County commission offices: 5, on the EXISTING COUNTY district ───────
+-- ─── 4b. City at-large offices: 3 IDENTICAL 'Council Member, At-Large' rows ──
+-- No numbered seat exists on Durham's ballot (see header). Guarded on a
+-- target-count top-up, not NOT EXISTS-on-title, since three rows must share
+-- one title without collapsing to one on a re-run.
+
+INSERT INTO essentials.offices
+  (chamber_id, district_id, title, representing_state, representing_city)
+SELECT c.id, d.id, '${AT_LARGE_TITLE}', 'NC', 'Durham'
+FROM essentials.chambers c
+JOIN essentials.governments g ON g.id = c.government_id
+CROSS JOIN LATERAL (
+  SELECT dd.id FROM essentials.districts dd
+  WHERE dd.geo_id = '3719000' AND dd.district_type = 'LOCAL' AND lower(dd.state) = 'nc'
+) d
+CROSS JOIN LATERAL (
+  SELECT generate_series(1, 3 - (
+    SELECT count(*) FROM essentials.offices o
+    WHERE o.chamber_id = c.id AND o.title = '${AT_LARGE_TITLE}'
+  )) AS n
+) gs
+WHERE g.geo_id = '3719000' AND g.type = 'City' AND c.name = 'City Council';
+
+-- ─── 5a. County commission offices: 5 IDENTICAL 'Commissioner' rows ─────────
 -- 🔴 district join MUST pair geo_id with district_type = 'COUNTY' -- see
 -- header. A bare geo_id = '37063' join matches NC House District 63 too.
+-- Same target-count top-up as 4b, for the same reason (no numbered seat on
+-- Durham County's ballot either).
 
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state)
-SELECT c.id, d.id, v.title, 'NC'
-FROM (VALUES
-  ('Commissioner, Seat 1'),
-  ('Commissioner, Seat 2'),
-  ('Commissioner, Seat 3'),
-  ('Commissioner, Seat 4'),
-  ('Commissioner, Seat 5')
-) AS v(title)
-CROSS JOIN LATERAL (
-  SELECT ch.id FROM essentials.chambers ch
-  JOIN essentials.governments g ON g.id = ch.government_id
-  WHERE g.geo_id = '37063' AND g.type = 'County' AND ch.name = 'Board of County Commissioners'
-) c
+SELECT c.id, d.id, '${COMMISSIONER_TITLE}', 'NC'
+FROM essentials.chambers c
+JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
   WHERE dd.geo_id = '37063' AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'nc'
 ) d
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.offices o WHERE o.chamber_id = c.id AND o.title = v.title
-);
+CROSS JOIN LATERAL (
+  SELECT generate_series(1, 5 - (
+    SELECT count(*) FROM essentials.offices o
+    WHERE o.chamber_id = c.id AND o.title = '${COMMISSIONER_TITLE}'
+  )) AS n
+) gs
+WHERE g.geo_id = '37063' AND g.type = 'County' AND c.name = 'Board of County Commissioners';
 
--- ─── 6. County executive offices: 3, on the EXISTING COUNTY district ────────
+-- ─── 5b. County executive offices: 3, on the EXISTING COUNTY district ───────
 
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state)
@@ -276,7 +376,7 @@ WHERE NOT EXISTS (
 DO $$
 DECLARE
   n_district int; n_city_off int; n_county_off int; n_ward_notes int;
-  n_orphan int; n_hd63 int;
+  n_orphan int; n_hd63 int; n_check int;
 BEGIN
   -- 1 new LOCAL district.
   SELECT count(*) INTO n_district FROM essentials.districts
@@ -306,7 +406,7 @@ BEGIN
   SELECT count(*) INTO n_ward_notes FROM essentials.offices o
     JOIN essentials.districts d ON d.id = o.district_id
    WHERE d.geo_id = '3719000' AND d.district_type = 'LOCAL'
-     AND o.title LIKE 'Councilmember, Ward %'
+     AND o.title LIKE 'Council Member, Ward %'
      AND o.representation_note IS NOT NULL;
   IF n_ward_notes <> 3 THEN
     RAISE EXCEPTION 'CA_0006: expected 3 Durham ward offices with a representation_note, found %', n_ward_notes;
@@ -323,12 +423,12 @@ BEGIN
     RAISE EXCEPTION 'CA_0006: % Durham offices lack district geometry', n_orphan;
   END IF;
 
-  -- 0 districts carrying an unexpected office count: the two exact-count
-  -- assertions above (7 and 8) already prove this for the two districts this
-  -- migration touches, but restated explicitly as a single combined check.
-  IF (n_city_off, n_county_off) IS DISTINCT FROM (7, 8) THEN
-    RAISE EXCEPTION 'CA_0006: unexpected office count on a Durham district (city=%, county=%)', n_city_off, n_county_off;
-  END IF;
+  -- Explicit per-title counts: 1 each for Mayor / Ward 1 / Ward 2 / Ward 3 /
+  -- Sheriff / Register of Deeds / Clerk of Superior Court; 3 for
+  -- 'Council Member, At-Large'; 5 for 'Commissioner'. This is what actually
+  -- proves the two multi-seat groups landed at their target count and no
+  -- other title group was fed extra rows by mistake.
+${officeGateChecks}
 
   -- 🔴 The assertion that actually catches the '37063' collision: NC House
   -- District 63 (STATE_LOWER, same geo_id, different district_type) must
@@ -380,6 +480,33 @@ const incumbents = `-- _wip_durham_incumbents.sql
 -- election win): ${appointedNames}. Passed through to p_how_started
 -- explicitly -- NOT left to seat_officeholder()'s 'elected' default, which
 -- would misclassify all three.
+--
+-- 🔴 FIX ROUND 1 (coordinator, 2026-08-22): the structure migration now
+-- creates 3 IDENTICALLY-TITLED 'Council Member, At-Large' offices and 5
+-- IDENTICALLY-TITLED 'Commissioner' offices (no numbered seat exists on
+-- Durham's ballot -- see _wip_durham_structure.sql header). A bare
+-- office_id/title join can no longer resolve one person to one office row
+-- within either group. This file resolves the ambiguity DETERMINISTICALLY
+-- by pairing row_number() over each side's natural key, partitioned by
+-- (geo_id, district_type, office_title):
+--   * office side:  ORDER BY o.id (each office row's UUID is fixed for good
+--                   the moment CA_0006 creates it -- an arbitrary but STABLE
+--                   ordering key, never reshuffled by a later run).
+--   * roster side:  ORDER BY s.ext_id (fixed per person by ROSTERS.md's own
+--                   external_id mapping table).
+-- Because the structure migration is asserted (by its own post-verify gate)
+-- to create EXACTLY 3 At-Large offices and EXACTLY 5 Commissioner offices,
+-- and this file's payload guard (below) asserts EXACTLY 3 and 5 roster rows
+-- per group, row_number() on each side produces the SAME set of integers
+-- 1..N with no gaps and no repeats -- so the join is a bijection: every
+-- office gets exactly one politician, every politician gets exactly one
+-- office, and re-running is idempotent (the same office UUID always sorts to
+-- the same rank, so the same person is matched to the same row every time).
+-- If the two counts ever drifted apart, the payload guard below fails loudly
+-- instead of silently double-seating one office or leaving another vacant.
+-- Every other seat (Mayor, wards, Sheriff, Register of Deeds, Clerk of
+-- Superior Court) is a group of size 1, where rank 1 trivially matches rank
+-- 1 -- the identical mechanism, just with N=1.
 --
 -- 🔴 THE MIKE LEE COLLISION: Durham County's Board Chair is stored as
 -- full_name = 'Dr. Michael "Mike" Lee' (external_id -3730008), first_name
@@ -437,16 +564,38 @@ CREATE TEMP TABLE durham_seed (
 INSERT INTO durham_seed VALUES
 ${rows};
 
--- Guard the payload itself before it touches anything.
+-- Guard the payload itself before it touches anything. Duplicate office_title
+-- within (geo_id, district_type) is now EXPECTED for the two multi-seat
+-- groups (3x 'Council Member, At-Large', 5x 'Commissioner'), so the guard
+-- checks per-group COUNTS against the exact expectation instead of rejecting
+-- any duplicate -- a plain duplicate-key check would wrongly fail on these
+-- two legitimate groups.
 DO $$
-DECLARE v_n int; v_dup int;
+DECLARE v_n int; v_dup int; v_grp int;
 BEGIN
   SELECT count(*) INTO v_n FROM durham_seed;
   IF v_n <> 15 THEN RAISE EXCEPTION 'seed payload: expected 15 rows, got %', v_n; END IF;
+
   SELECT count(*) INTO v_dup FROM (SELECT ext_id FROM durham_seed GROUP BY ext_id HAVING count(*) > 1) x;
   IF v_dup <> 0 THEN RAISE EXCEPTION 'seed payload: % duplicate external_id(s)', v_dup; END IF;
-  SELECT count(*) INTO v_dup FROM (SELECT geo_id, district_type, office_title FROM durham_seed GROUP BY geo_id, district_type, office_title HAVING count(*) > 1) x;
-  IF v_dup <> 0 THEN RAISE EXCEPTION 'seed payload: % duplicate (geo_id, district_type, office_title) key(s)', v_dup; END IF;
+
+  SELECT count(*) INTO v_grp FROM durham_seed
+   WHERE geo_id = '3719000' AND district_type = 'LOCAL' AND office_title = '${AT_LARGE_TITLE}';
+  IF v_grp <> 3 THEN RAISE EXCEPTION 'seed payload: expected 3 ''${AT_LARGE_TITLE}'' rows, got %', v_grp; END IF;
+
+  SELECT count(*) INTO v_grp FROM durham_seed
+   WHERE geo_id = '37063' AND district_type = 'COUNTY' AND office_title = '${COMMISSIONER_TITLE}';
+  IF v_grp <> 5 THEN RAISE EXCEPTION 'seed payload: expected 5 ''${COMMISSIONER_TITLE}'' rows, got %', v_grp; END IF;
+
+  -- Every OTHER (geo_id, district_type, office_title) combination must be
+  -- unique -- these are the genuinely single-seat titles (Mayor, wards,
+  -- Sheriff, Register of Deeds, Clerk of Superior Court).
+  SELECT count(*) INTO v_dup FROM (
+    SELECT geo_id, district_type, office_title FROM durham_seed
+    WHERE office_title NOT IN ('${AT_LARGE_TITLE}', '${COMMISSIONER_TITLE}')
+    GROUP BY geo_id, district_type, office_title HAVING count(*) > 1
+  ) x;
+  IF v_dup <> 0 THEN RAISE EXCEPTION 'seed payload: % unexpected duplicate single-seat (geo_id, district_type, office_title) key(s)', v_dup; END IF;
 END $$;
 
 -- ─── Politicians ─────────────────────────────────────────────────────────────
@@ -464,6 +613,12 @@ ON CONFLICT (external_id) DO NOTHING;
 -- inserting, which is the whole reason it exists. All 15 rows carry a real
 -- term_start (Jacobs' is year-precision, not NULL), so every row goes through
 -- this loop -- no direct office_terms insert is needed for this file.
+--
+-- office_rank/seed_rank: deterministic row_number() pairing within each
+-- (geo_id, district_type, office_title) group -- see file header for the
+-- bijection argument. For every size-1 group this degenerates to "the one
+-- office matches the one roster row", identical in effect to a plain title
+-- join.
 
 DO $$
 DECLARE
@@ -471,19 +626,35 @@ DECLARE
   v_seated int := 0;
 BEGIN
   FOR r IN
-    SELECT s.term_start, s.start_precision, s.how_started, s.source,
-           o.id AS office_id, p.id AS politician_id
-    FROM durham_seed s
-    JOIN essentials.politicians p ON p.external_id = s.ext_id
-    JOIN essentials.districts d
-      ON d.geo_id = s.geo_id
-     AND d.district_type = s.district_type
-     AND lower(d.state) = 'nc'
-    JOIN essentials.offices o
-      ON o.district_id = d.id AND o.title = s.office_title
+    WITH office_rank AS (
+      SELECT o.id AS office_id, d.geo_id, d.district_type, o.title,
+             row_number() OVER (
+               PARTITION BY d.geo_id, d.district_type, o.title ORDER BY o.id
+             ) AS rn
+      FROM essentials.offices o
+      JOIN essentials.districts d ON d.id = o.district_id
+      WHERE (d.geo_id = '3719000' AND d.district_type = 'LOCAL')
+         OR (d.geo_id = '37063' AND d.district_type = 'COUNTY')
+    ),
+    seed_rank AS (
+      SELECT s.*,
+             row_number() OVER (
+               PARTITION BY s.geo_id, s.district_type, s.office_title ORDER BY s.ext_id
+             ) AS rn
+      FROM durham_seed s
+    )
+    SELECT sr.term_start, sr.start_precision, sr.how_started, sr.source,
+           orr.office_id, p.id AS politician_id
+    FROM seed_rank sr
+    JOIN office_rank orr
+      ON orr.geo_id = sr.geo_id
+     AND orr.district_type = sr.district_type
+     AND orr.title = sr.office_title
+     AND orr.rn = sr.rn
+    JOIN essentials.politicians p ON p.external_id = sr.ext_id
     WHERE NOT EXISTS (
       SELECT 1 FROM essentials.office_terms t
-      WHERE t.office_id = o.id AND t.politician_id = p.id
+      WHERE t.office_id = orr.office_id AND t.politician_id = p.id
     )
   LOOP
     PERFORM essentials.seat_officeholder(
