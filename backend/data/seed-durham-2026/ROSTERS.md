@@ -28,6 +28,8 @@ vote, **not** separate offices — see "Chair/Vice-Chair" note under Durham Coun
 | S15 | `er.ncsbe.gov` (NC State Board of Elections official results lookup) | Attempted direct primary source for both county-executive races | 2026-08-22 — **see defect below** |
 | S16 | Sheriff's office bio (`durhamsheriff.com/about-us/welcome/sheriff-s-bio`) + Spectrum News `new-durham-county-sheriff-takes-oath-of-office` (2018-12-03) | Clarence F. Birkhead sworn in **2018-12-03**, first African-American sheriff of Durham County | 2026-08-22 |
 | S17 | `essentials.politicians` / `essentials.office_current_holder` (production, read-only) | Cross-state homonym check — see below | 2026-08-22 |
+| S18 | N.C.G.S. § 153A-26 (newly elected county officers take the oath **on the first Monday in December** following the general election) + full re-read of `20121210RSMinutes.pdf` (all 14 pages, not just the first 3) + search for a `20121203*Minutes.pdf` in the same `dconc.gov` archive directory | Fix-round follow-up on Wendy Jacobs' 2012 date — **statute points to 2012-12-03; primary minutes do not confirm it** — see defect below | 2026-08-22 |
+| S19 | Ballotpedia assumed-office dates cross-checked individually for the other 8 Durham people Ballotpedia was cited for (Caballero, Allam, Birkhead, Dr. Michael "Mike" Lee, Aminah M. Thompson, Sharon A. Davis, Stephen J. Valentine, Michelle Burton) | Confirms the Chelsea Cook one-day discrepancy (see below) is **isolated, not systemic** — all 8 others match this file's dates exactly | 2026-08-22 |
 
 ### Source defects found (do not silently re-trust)
 
@@ -46,18 +48,53 @@ vote, **not** separate offices — see "Chair/Vice-Chair" note under Durham Coun
   2024 term her "third term," while a campaign-adjacent article headlines it as her "fourth term."
   Not resolved here — term count is not one of this task's required fields, and her seat's
   `term_start` (see below) does not depend on which count is correct.
-- 🔴 **Wendy Jacobs' original assumed-office date could not be pinned to a day.** Every secondary
+- 🔴 **Wendy Jacobs' original assumed-office date could not be pinned to a day — fix-round A, re-checked, still unpinned.** Every secondary
   source gives only "2012." The primary-source bracket (S10) narrows it to somewhere between
   2012-11-29 (still "Commissioner-Elect" in special-session minutes) and 2012-12-10 (seated as full
-  "Commissioner" in the next regular-session minutes) — almost certainly the county's habitual
-  first-Monday-in-December organizational meeting (which would be 2012-12-03), but **that specific
-  date was never found stated outright in any primary document**, so per the "never guess a date"
-  rule this row is recorded as `2012-01-01` / `precision='year'`, not `2012-12-03`.
+  "Commissioner" in the next regular-session minutes).
+  **N.C.G.S. § 153A-26** (S18) says newly elected county officers take the oath on the first Monday
+  in December following the general election — first Monday in December 2012 is **2012-12-03**,
+  which sits inside that bracket and is almost certainly the actual date. Acting on a coordinator tip
+  that `20121210RSMinutes.pdf` might reference the 12-03 organizational meeting directly, the full
+  14-page document was re-read end to end (the first pass had only read pages 1–3). **No reference to
+  a December 3, 2012 organizational meeting, an oath of office, or any swearing-in ceremony appears
+  anywhere in it** — the document is a routine regular session (resolutions, consent agenda, five
+  public hearings on UDO text amendments, board appointments, one closed session) that simply lists
+  Jacobs as an already-seated Commissioner without narrating how she got there. A direct guess at the
+  filename `20121203OSMinutes.pdf` 404'd, and neither a targeted site search nor a general web search
+  turned up any `20121203*` file in the `dconc.gov` archive.
+  **Conclusion: the statute is highly suggestive but is not direct attestation.** A statute establishes
+  what should have happened; boards do occasionally deviate (holiday scheduling, quorum problems,
+  administrative delay), and `precision='day'` asserts we *know* the day happened, not that we
+  inferred it from law. Per the coordinator's explicit instruction, this row **stays at**
+  `2012-01-01` / **`precision='year'`** rather than upgrading to `2012-12-03` on the statute alone.
+  A future researcher who reaches an actual primary attestation (an organizational-meeting agenda/
+  minutes PDF, a contemporaneous 2012 news account of the ceremony, or the County Clerk's records)
+  should upgrade this row and cite it — the citation and the reasoning are recorded here specifically
+  so that work doesn't need to be redone from scratch.
 - No contradictions were found between S1/S2/S3 (city) or S7/S8/S9 (county) on any of the other 14
   people's identity, seat, or date — the swearing-in dates for the two 2025 city cohorts
   (2025-12-01) and the 2023 city cohort (2023-12-04) and the 2024 county cohort (2024-12-02) are each
   corroborated by at least two independently-published sources (an official government page plus a
   press account).
+- ⚠ **Chelsea Cook: a one-day discrepancy between this file's primary source and Ballotpedia — fix-round B.**
+  This file records `2024-01-16` for her appointment/swearing-in, from WRAL (S5): "Cook is the newest
+  Durham City Council member as of Jan. 16" and "will be sworn in at the 7 p.m. Tuesday city council
+  meeting" — 2024-01-16 was itself a Tuesday, and a contemporaneous photo of the appointment is
+  captioned `1:16:24`. **Ballotpedia's `Chelsea_Cook` page instead gives `January 17, 2024`.**
+  **Resolution: `2024-01-16` stays.** A specific, contemporaneous account of the vote-and-swearing-in
+  event (same evening, named weekday, matching calendar date) outranks a secondary aggregator with no
+  narrated event behind its date field — this project's standing rule is that Ballotpedia is a
+  detector, not an oracle (see the Austin wave's Precinct 4 defect for precedent). Recorded here so a
+  future reader doesn't "correct" this row back to Ballotpedia's date.
+  **Is this systemic?** No. S19: Ballotpedia's assumed-office date was individually checked for the
+  other 8 Durham people this file cites Ballotpedia for (Javiera Caballero, Nida Allam, Clarence F.
+  Birkhead, Dr. Michael "Mike" Lee, Aminah M. Thompson, Sharon A. Davis, Stephen J. Valentine, Michelle
+  Burton) — all 8 match this file's dates exactly, with no off-by-one in either direction. The Cook
+  page's error appears to be an isolated Ballotpedia data-entry defect, not a pattern of recording
+  "the day after the swearing-in." **Still worth carrying into wave 3 (Asheville/Buncombe):** confirm
+  each Ballotpedia date against a contemporaneous primary account rather than assuming the pattern
+  holds just because it held for 8/9 people here.
 
 ## 🔴 The Mike Lee collision — read before seating anyone named Lee
 
@@ -199,7 +236,7 @@ recorded as context only, never as a sixth seat or as part of any `office_title`
 | Commissioner | Nida Allam | first: Nida · last: Allam | 2020-12-07 | day | elected | -3730009 | S8, S9 |
 | Commissioner | Michelle Burton | first: Michelle · last: Burton | 2024-12-02 | day | elected | -3730010 | S7, S9 |
 | Commissioner | Stephen J. Valentine | first: Stephen · middle initial: J. · last: Valentine | 2024-12-02 | day | elected | -3730011 | S8, S9 |
-| Commissioner | Wendy Jacobs | first: Wendy · last: Jacobs | **2012-01-01** | **year** | elected | -3730012 | S7, S9, S10 |
+| Commissioner | Wendy Jacobs | first: Wendy · last: Jacobs | **2012-01-01** | **year** | elected | -3730012 | S7, S9, S10, S18 |
 | Sheriff | Clarence F. Birkhead | first: Clarence · middle initial: F. · last: Birkhead | 2018-12-03 | day | elected | -3730013 | S16 |
 | Register of Deeds | Sharon A. Davis | first: Sharon · middle initial: A. · last: Davis | **2016-06-01** | day | **appointed** | -3730014 | S11, S12 |
 | Clerk of Superior Court | Aminah M. Thompson | first: Aminah · middle initial: M. · last: Thompson | 2022-12-05 | day | elected | -3730015 | S13, S14 |
@@ -210,8 +247,12 @@ Notes:
   genuinely unrecoverable" case.** She was first elected in 2012 and has served continuously since
   (through 2016, 2020, and 2024 re-elections); her `term_start` is her original 2012 seating, not any
   later re-election — but no source states that day, so it is written with `precision='year'` rather
-  than the plausible-but-unconfirmed 2012-12-03. See "Source defects" above for the primary-source
-  bracket that narrowed but did not pin the date.
+  than `2012-12-03`. **`2012-12-03` is not a guess pulled from nowhere** — N.C.G.S. § 153A-26 (S18)
+  puts newly elected county officers' oaths on the first Monday in December, which was 2012-12-03 —
+  but a full re-read of the one primary document that bracketed the date
+  (`20121210RSMinutes.pdf`, all 14 pages) contains no attestation of that ceremony, and no
+  `20121203*` minutes file could be located in the county's archive. See "Source defects" above for
+  the full account of what was and wasn't found.
 - **Sharon A. Davis is a third appointment-then-election case**, structurally identical to Chelsea
   Cook and Javiera Caballero: she was appointed Register of Deeds on 2016-06-01 to fill a vacancy,
   then elected to a full term in November 2016, and has been re-elected since (most recently
