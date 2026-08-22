@@ -461,7 +461,21 @@ const q = (s) => (s === null || s === undefined ? 'NULL' : `'${String(s).replace
 The **structure** migration must:
 - Insert exactly two chambers on `GOV_ID` — `North Carolina House of Representatives` (`official_count` 120) and `North Carolina Senate` (50), guarded `WHERE NOT EXISTS`.
   🔴 **One chamber per chamber, not one per district.** Indiana has 100+ rows named `Indiana House of Representatives - District 45`, each with its own `government_id` and `official_count = 0`. That shape is the bug, not the pattern.
-- Insert 170 offices, each joined to its district by `geo_id` (`'37' || lpad(district::text, 3, '0')`), with `title` `Representative` / `Senator`, `representing_state` `NC`, `seats` 1.
+- Insert 170 offices, with `title` `Representative` / `Senator`, `representing_state` `NC`, `seats` 1.
+  🔴 **The office→district join must match on `geo_id` AND `district_type` together.** `geo_id` alone
+  is ambiguous — `37040` is both HD-40 and SD-40 — so a bare join either attaches a House office to a
+  Senate district or fans out to two rows per seat, while still producing a plausible-looking count.
+  `(geo_id, district_type)` is unique (verified on already-loaded Colorado: zero groups with more
+  than one row). Per chamber:
+
+```sql
+  -- House seats
+  JOIN essentials.districts d
+    ON d.geo_id = '37' || lpad(:district::text, 3, '0')
+   AND d.district_type = 'STATE_LOWER'
+   AND lower(d.state) = 'nc'
+  -- Senate seats: identical, but district_type = 'STATE_UPPER'
+```
 - End with a post-verify gate:
 
 ```sql
@@ -486,6 +500,35 @@ BEGIN
      AND (d.geo_id IS NULL
           OR NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries g WHERE g.geo_id = d.geo_id));
   IF n_orphan <> 0 THEN RAISE EXCEPTION 'CA_0004: % NC legislative offices lack district geometry', n_orphan; END IF;
+END $$;
+```
+
+Plus a fourth assertion in the same gate — every seat maps to exactly one district, and each chamber
+has the right shape. This is what catches a cross-wired `geo_id` join, which the 170-count alone
+does not:
+
+```sql
+DO $$
+DECLARE n_lower int; n_upper int; n_dupe int;
+BEGIN
+  SELECT count(*) INTO n_lower FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state)='nc' AND d.district_type='STATE_LOWER';
+  IF n_lower <> 120 THEN RAISE EXCEPTION 'CA_0004: expected 120 NC House offices, found %', n_lower; END IF;
+
+  SELECT count(*) INTO n_upper FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state)='nc' AND d.district_type='STATE_UPPER';
+  IF n_upper <> 50 THEN RAISE EXCEPTION 'CA_0004: expected 50 NC Senate offices, found %', n_upper; END IF;
+
+  -- Two offices on one district means the geo_id join fanned across chambers.
+  SELECT count(*) INTO n_dupe FROM (
+    SELECT o.district_id FROM essentials.offices o
+      JOIN essentials.districts d ON d.id = o.district_id
+     WHERE lower(d.state)='nc' AND d.district_type IN ('STATE_LOWER','STATE_UPPER')
+     GROUP BY o.district_id HAVING count(*) > 1
+  ) x;
+  IF n_dupe <> 0 THEN RAISE EXCEPTION 'CA_0004: % NC districts carry more than one office — geo_id join fanned across chambers', n_dupe; END IF;
 END $$;
 ```
 
