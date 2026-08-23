@@ -201,15 +201,25 @@ The original plan follows, for reference.
   `5310000/5320000` and CO's `810000/820000`. **Verified free 2026-08-21: 0 rows in
   `-3729999..-3710001`.**
 
-### Wave 2 — Durham city + Durham County
+### Wave 2 — Durham city + Durham County — ✅ DONE 2026-08-22
+
+Applied as **`CA_0006`** (1 LOCAL district `Durham Citywide`, geo_id `3719000` + 15 offices) and
+**`CA_0007`** (15 politicians + 15 terms). End-to-end probe: a Durham City Hall address returns
+**8 county + 7 city + HD-30 + SD-22**.
 
 * `place` layer, **G4110-only**. The 224 `G4210` CDPs in the NC file are not governments; loading
   them invents 224 fake municipalities.
 * Durham city `LOCAL` district on `geo_id 3719000`; 7 offices, all on the city polygon.
-* Durham County's 5 at-large commissioners onto the **existing** `37063` county district.
+* Durham County's **8 offices** onto the **existing** `37063` county district: the 5 at-large
+  Commissioners plus Sheriff, Register of Deeds and Clerk of Superior Court.
 * Banner, headshots, stances (local scale, 22 topics).
 
 ### Wave 3 — Asheville + Buncombe County
+
+🔴 The `place` layer is **already loaded for all of NC** (wave 2's load wrote 552 `G4110` / 0
+`G4210` records statewide, not just for Durham) — Asheville city `geo_id 3702140` is **already
+present** in `essentials.geofence_boundaries`. **Wave 3 must NOT re-run `place`**; doing so would be
+wasted work and an unnecessary prod write.
 
 * Asheville city `LOCAL` district on `geo_id 3702140`; 7 offices, all at-large on the city polygon.
 * Buncombe: at-large chair on the existing `37021` county district; six district commissioners on
@@ -250,7 +260,7 @@ than create a parallel election.
   Then **prove reversion with a separate query afterwards.** A printed `ROLLBACK` is not proof; the
   presence or absence of the WARNING is what distinguishes a rehearsal from an apply.
 
-* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0006`** (`CA_0001`–`CA_0005` exist;
+* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0008`** (`CA_0001`–`CA_0007` exist;
   `check:migrations` green 2026-08-21). Unlike the shared sequence, the `CA_` namespace does **not**
   require taking the number last — Chris counts within his own namespace and never reads the shared
   max. Cite slots in full (`CA_0006`, never "migration 6").
@@ -293,7 +303,7 @@ term row is missing.
 |---|---|---|
 | 1 | Durham City Hall `-78.8997, 35.9961` | HD-30 + SD-22 present |
 | 1 | Asheville `-82.5554, 35.5967` | HD-116 + SD-49 present |
-| 2 | Durham City Hall | + 7 city + 5 county officials |
+| 2 | Durham City Hall | + 7 city + 8 county officials |
 | 3 | Asheville | + 7 city + chair + 2 D3 commissioners |
 | 3 | Black Mountain `-82.3200, 35.6197` | HD-114, and **D1** commissioners — not D3 |
 

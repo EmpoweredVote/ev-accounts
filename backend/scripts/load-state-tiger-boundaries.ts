@@ -1385,14 +1385,20 @@ async function processLayer(
     }
   }
 
-  // ── NC MTFCC pre-flight assertion (Wave 1) ──────────────────────────────────
+  // ── NC MTFCC pre-flight assertion (Wave 1 + Wave 2) ─────────────────────────
   // NC is single-member in BOTH chambers, so polygon count EQUALS seat count —
   // unlike AZ/WA where SLDL polygons cover two seats each. Verified against raw
   // TIGER 2024 FIPS 37 on 2026-08-21: sldl 120 / sldu 50, zero ZZZ pseudo-districts.
+  // place: measured from raw TIGER 2024 FIPS 37 on 2026-08-21 — 776 total records =
+  // 552 G4110 incorporated places + 224 G4210 CDPs. The G4110 filter below (same as
+  // OR/MD/VA/NV/AZ/WA/CO) excludes the CDPs so the 224 fake-municipality rows are
+  // never counted, let alone written.
   if (fipsArg === '37') {
     const EXPECTED_NC_MTFCC: Record<string, number> = {
       sldl: 120,
       sldu: 50,
+      place: 552, // 552 NC G4110 incorporated places (confirmed via dry-run 2026-08-22;
+                  // the file's other 224 records are G4210 CDPs, filtered out above).
     };
     if (layer in EXPECTED_NC_MTFCC) {
       const expected = EXPECTED_NC_MTFCC[layer];
@@ -1401,6 +1407,10 @@ async function processLayer(
         if (layerDef.filterByStatefp) {
           const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
           if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
         }
         if (layerDef.districtNumField) {
           const fpKey = resolveColumn(props, layerDef.districtNumField);
