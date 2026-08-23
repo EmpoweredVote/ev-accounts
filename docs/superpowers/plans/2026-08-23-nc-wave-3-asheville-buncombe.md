@@ -97,19 +97,88 @@ RETURNING public.ST_GeometryType(geometry) AS gtype, public.ST_IsValid(geometry)
 
 - [ ] **Step 1: Write the failing coupling assertion first**
 
-Create `backend/scripts/verify-buncombe-commission-coupling.sql`. It asserts the loaded commission polygons still equal the NC House polygons they are statutorily tied to:
+🔴 **CORRECTED DURING EXECUTION 2026-08-23 — this gate is a TOLERANCE test, not `ST_Equals`.** The first draft of this plan specified `ST_Equals`, reasoning from the spec's "byte-identical" finding. That finding is real but is a comparison between two layers of **Buncombe's own GIS**. Our House polygons are **TIGER 2024 `sldl`** — an independent digitization of the same legal boundary. Measured:
+
+| comparison | `ST_Equals` | IoU | symmetric difference |
+|---|---|---|---|
+| comm D1 vs TIGER `37114` | **false** | 99.681 % | 2.09 km² |
+| comm D2 vs TIGER `37115` | **false** | 99.883 % | 1.07 km² |
+| comm D3 vs TIGER `37116` | **false** | 99.969 % | 0.04 km² |
+
+An `ST_Equals` gate fails permanently on correct data. The hazard is not the red build — it is that the obvious fix for a permanently-red gate is to delete it, losing the only check on the coupling.
+
+**The tolerance has measured discriminating power**, so it is not a rubber stamp. Every wrong pairing was measured too:
+
+|  | TIGER `37114` | TIGER `37115` | TIGER `37116` |
+|---|---|---|---|
+| comm D1 | **99.681 %** | 0.002 % | 0.002 % |
+| comm D2 | 0.000 % | **99.883 %** | 0.001 % |
+| comm D3 | 0.001 % | 0.002 % | **99.969 %** |
+
+Correct pairings cluster at ~99.7–100 %, wrong ones at ~0 %; any threshold from 1 % to 99 % separates them. **99.0 %** is chosen for 0.68 pp of headroom below the worst correct pairing, while a genuine redraw moves whole precincts and cannot hide under it.
+
+Create `backend/scripts/verify-buncombe-commission-coupling.sql`. It asserts the loaded commission polygons still agree with the NC House polygons they are statutorily tied to, distinguishes a **missing** row from a **decoupled** one (before the loader runs, all three are absent, which is not a decoupling), and refuses to pass vacuously if fewer than 3 comparisons actually ran:
 
 ```sql
 -- verify-buncombe-commission-coupling.sql
--- A 2011 local act sets Buncombe's 3 commission districts EQUAL to NC House
--- districts 114/115/116, two commissioners each. Buncombe is the only one of
--- NC's 100 counties with this arrangement. THIS IS A LIVE COUPLING: a future NC
--- House redraw silently moves Buncombe's commission lines, and nothing in our
--- schema would notice. Run this after any NC sldl reload.
+--
+-- A 2011 local act sets Buncombe County's 3 commission districts EQUAL to NC
+-- House districts 114/115/116, two commissioners each. Buncombe is the only one
+-- of NC's 100 counties with this arrangement.
+--
+-- 🔴 THIS IS A LIVE COUPLING, NOT A HISTORICAL NOTE. A future NC House redraw
+-- silently moves Buncombe's commission lines. Nothing in the schema expresses
+-- the dependency -- `essentials.districts` has no note column -- so this script
+-- IS the record. Run it after any NC `sldl` reload, and after any migration that
+-- touches the X0034 rows.
+--
+-- Loaded by: backend/scripts/load-buncombe-commissioner-boundaries.ts
+-- Consumed by: CA_0009 (structure), CA_0010 (occupancy) -- wave 3 of the NC
+--              deep-seed program, .planning/todos/2026-08-21-nc-durham-asheville-deep-seed.md
+--
+-- ─────────────────────────────────────────────────────────────────────────────
+-- 🔴 WHY THIS IS A TOLERANCE TEST AND NOT `ST_Equals`. READ BEFORE TIGHTENING IT.
+--
+-- The spec records Buncombe's commission districts as BYTE-IDENTICAL to the
+-- state House districts -- same `Shape.STArea()`, `Shape.STLength()` and
+-- population. That is true, and it is a comparison between two layers of
+-- BUNCOMBE'S OWN GIS (`bcmap_VotingDistricts3/7` vs `/5`).
+--
+-- Our House polygons are not Buncombe's. They are TIGER 2024 `sldl`. TIGER and
+-- the county are two independent digitizations of one legal boundary, so they
+-- are NOT geometrically equal. Measured 2026-08-23:
+--
+--   commission D1 vs TIGER 37114:  ST_Equals FALSE, IoU 99.681%, symdiff 2.09 km2
+--   commission D2 vs TIGER 37115:  ST_Equals FALSE, IoU 99.883%, symdiff 1.07 km2
+--   commission D3 vs TIGER 37116:  ST_Equals FALSE, IoU 99.969%, symdiff 0.04 km2
+--
+-- An `ST_Equals` gate therefore FAILS PERMANENTLY on correct data. The danger is
+-- not the red build -- it is that the obvious way to "fix" a permanently red gate
+-- is to delete it, which discards the only check on the coupling.
+--
+-- The tolerance has real discriminating power; it is not a rubber stamp.
+-- Every WRONG pairing was measured too, and they are not close:
+--
+--            TIGER 37114   TIGER 37115   TIGER 37116
+--   comm D1      99.681%        0.002%        0.002%
+--   comm D2       0.000%       99.883%        0.001%
+--   comm D3       0.001%        0.002%       99.969%
+--
+-- Correct pairings cluster at ~99.7-100%, wrong ones at ~0%. Any threshold from
+-- 1% to 99% separates them perfectly. 99.0% is chosen because it leaves 0.68
+-- percentage points of headroom below the worst correct pairing (D1) for a TIGER
+-- vintage change, while a genuine redraw -- which moves whole precincts, tens of
+-- km2 -- cannot hide underneath it.
+
+\set MIN_IOU_PCT 99.0
+
 DO $$
 DECLARE
-  pair   RECORD;
-  n_bad  int := 0;
+  pair    RECORD;
+  v_iou   numeric;
+  min_iou numeric := 99.0;   -- keep in sync with \set MIN_IOU_PCT above
+  n_bad   int := 0;
+  n_seen  int := 0;
 BEGIN
   FOR pair IN
     SELECT * FROM (VALUES
@@ -118,24 +187,44 @@ BEGIN
       ('buncombe-nc-commissioner-district-3', '37116')
     ) AS t(comm_geo_id, hd_geo_id)
   LOOP
-    IF NOT EXISTS (
-      SELECT 1
-        FROM essentials.geofence_boundaries c
-        JOIN essentials.geofence_boundaries h
-          ON h.geo_id = pair.hd_geo_id AND h.mtfcc = 'G5220' AND h.state = '37'
-       WHERE c.geo_id = pair.comm_geo_id AND c.mtfcc = 'X0034'
-         AND public.ST_Equals(c.geometry, h.geometry)
-    ) THEN
+    -- Pair geo_id with mtfcc on BOTH sides. geo_id is not unique across layers:
+    -- '37021' alone returns Buncombe County, NC Senate 21 AND NC House 21.
+    SELECT 100.0 * public.ST_Area(public.ST_Intersection(c.geometry, h.geometry)::geography)
+                 / public.ST_Area(public.ST_Union(c.geometry, h.geometry)::geography)
+      INTO v_iou
+      FROM essentials.geofence_boundaries c
+      JOIN essentials.geofence_boundaries h
+        ON h.geo_id = pair.hd_geo_id AND h.mtfcc = 'G5220' AND h.state = '37'
+     WHERE c.geo_id = pair.comm_geo_id AND c.mtfcc = 'X0034';
+
+    IF v_iou IS NULL THEN
+      -- Either side absent. Distinguish this from a geometry mismatch: before the
+      -- loader runs, ALL THREE are absent, and that is not a decoupling.
       n_bad := n_bad + 1;
-      RAISE WARNING 'DECOUPLED: % no longer equals NC House %',
+      RAISE WARNING 'MISSING: % or NC House % not present -- has the loader run?',
         pair.comm_geo_id, pair.hd_geo_id;
+    ELSE
+      n_seen := n_seen + 1;
+      IF v_iou < min_iou THEN
+        n_bad := n_bad + 1;
+        RAISE WARNING 'DECOUPLED: % vs NC House % agree only %%% (need >= %%%)',
+          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3), min_iou;
+      ELSE
+        RAISE NOTICE '  ok: % vs NC House % agree %%%',
+          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3);
+      END IF;
     END IF;
   END LOOP;
 
   IF n_bad > 0 THEN
     RAISE EXCEPTION 'Buncombe commission coupling broken for % of 3 districts', n_bad;
   END IF;
-  RAISE NOTICE 'Buncombe coupling OK — all 3 commission districts equal their NC House twin.';
+  IF n_seen <> 3 THEN
+    -- Belt and braces: a vacuous pass is the failure mode this whole program
+    -- guards against. Three comparisons must actually have been made.
+    RAISE EXCEPTION 'Buncombe coupling check was vacuous: % of 3 comparisons ran', n_seen;
+  END IF;
+  RAISE NOTICE 'Buncombe coupling OK - all 3 commission districts match their NC House twin.';
 END $$;
 ```
 
@@ -147,7 +236,7 @@ Expected: **FAILS** — `Buncombe commission coupling broken for 3 of 3 district
 
 - [ ] **Step 3: Write the loader, and give it the coupling check as a load gate**
 
-Beyond El Paso's control-point and county-fit checks, the loader must **refuse to write** unless each fetched polygon's area matches its NC House twin. Expected values, measured from the county's own service on 2026-08-23 (`Shape.STArea()`, native state-plane units):
+Beyond El Paso's control-point and county-fit checks, the loader must **refuse to write** unless each fetched polygon agrees with its NC House twin at **IoU >= 99.0 %** (see Step 1 for why this is a tolerance and not equality). It runs that comparison against the database *before* inserting, so `--dry-run` exercises the real gate. Attribute values expected from the county's own service, measured 2026-08-23 (`Shape.STArea()` in native state-plane units):
 
 | Fetched `DISTRICT` | `geo_id` written | `PL20AA_TOT` | `Shape.STArea()` | must equal NC House |
 |---|---|---|---|---|
@@ -176,7 +265,7 @@ Run: `cd /c/EV-Accounts/backend && npx tsx scripts/load-buncombe-commissioner-bo
 
 - [ ] **Step 6: Re-run the coupling assertion — now it must PASS**
 
-Expected: `Buncombe coupling OK — all 3 commission districts equal their NC House twin.` A pass here is the whole justification for treating a county body's districts as the state House's polygons.
+Expected: `Buncombe coupling OK - all 3 commission districts match their NC House twin.` plus a per-district `ok: ... agree 99.xxx%` line. A pass here is the whole justification for treating a county body's districts as the state House's boundary.
 
 - [ ] **Step 7: Check the child→county matview**
 
