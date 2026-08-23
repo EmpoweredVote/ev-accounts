@@ -205,13 +205,17 @@ BEGIN
         pair.comm_geo_id, pair.hd_geo_id;
     ELSE
       n_seen := n_seen + 1;
+      -- NB: build the percent sign into the argument. In RAISE, '%%%' parses as
+      -- literal-'%' followed by the placeholder, so it renders "%99.681" rather
+      -- than "99.681%".
       IF v_iou < min_iou THEN
         n_bad := n_bad + 1;
-        RAISE WARNING 'DECOUPLED: % vs NC House % agree only %%% (need >= %%%)',
-          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3), min_iou;
+        RAISE WARNING 'DECOUPLED: % vs NC House % agree only % (need >= %)',
+          pair.comm_geo_id, pair.hd_geo_id,
+          round(v_iou, 3)::text || '%', min_iou::text || '%';
       ELSE
-        RAISE NOTICE '  ok: % vs NC House % agree %%%',
-          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3);
+        RAISE NOTICE '  ok: % vs NC House % agree %',
+          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3)::text || '%';
       END IF;
     END IF;
   END LOOP;
@@ -267,17 +271,19 @@ Run: `cd /c/EV-Accounts/backend && npx tsx scripts/load-buncombe-commissioner-bo
 
 Expected: `Buncombe coupling OK - all 3 commission districts match their NC House twin.` plus a per-district `ok: ... agree 99.xxx%` line. A pass here is the whole justification for treating a county body's districts as the state House's boundary.
 
-- [ ] **Step 7: Check the child→county matview**
+- [ ] **Step 7: Check the child→county matview — and expect NO refresh to be needed**
 
 Run: `cd /c/EV-Accounts/backend && npm run check:child-county`
 
-These 3 polygons nest inside a county, so they are child boundaries. If it reports stale, refresh as `postgres` (matview ownership — **not** `ev_api`) and re-check:
+🔴 **CORRECTED DURING EXECUTION 2026-08-23.** This step originally claimed the 3 polygons "nest inside a county, so they are child boundaries", and told you to refresh the matview. **That premise is wrong.** `check-child-county-mapping.mjs` defines children as `mtfcc IN ('G4110','G5420','G5400','G5410')` — places and school districts, the layers the coverage dashboard rolls up. **`X0034` is not in that set, so the matview does not track it and no refresh is required.** Confirmed by precedent: `X0033` (El Paso), `X0027` (Kitsap) and in fact **every** `X%` mtfcc have **0** rows in `essentials.geofence_child_county`.
+
+Run the check anyway — it is cheap and CI enforces `stale 0` on master pushes — but read a green result correctly. **`stale 0` here is a true statement about places and school districts, and says nothing whatsoever about the X0034 rows.** Do not treat it as evidence the commission districts loaded correctly; that evidence is Step 6's coupling assertion and Task 6's address probes.
+
+If it ever does report stale, refresh as `postgres` (matview ownership — **not** `ev_api`) and re-check:
 
 ```sql
 REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;
 ```
-
-CI enforces `stale 0` on every push to master, so this cannot be deferred.
 
 - [ ] **Step 8: Re-run the loader to prove idempotency** — second run must report all 3 skipped (`already exists`) and write nothing.
 

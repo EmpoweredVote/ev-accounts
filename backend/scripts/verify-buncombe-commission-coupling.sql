@@ -83,13 +83,17 @@ BEGIN
         pair.comm_geo_id, pair.hd_geo_id;
     ELSE
       n_seen := n_seen + 1;
+      -- NB: build the percent sign into the argument. In RAISE, '%%%' parses as
+      -- literal-'%' followed by the placeholder, so it renders "%99.681" rather
+      -- than "99.681%".
       IF v_iou < min_iou THEN
         n_bad := n_bad + 1;
-        RAISE WARNING 'DECOUPLED: % vs NC House % agree only %%% (need >= %%%)',
-          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3), min_iou;
+        RAISE WARNING 'DECOUPLED: % vs NC House % agree only % (need >= %)',
+          pair.comm_geo_id, pair.hd_geo_id,
+          round(v_iou, 3)::text || '%', min_iou::text || '%';
       ELSE
-        RAISE NOTICE '  ok: % vs NC House % agree %%%',
-          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3);
+        RAISE NOTICE '  ok: % vs NC House % agree %',
+          pair.comm_geo_id, pair.hd_geo_id, round(v_iou, 3)::text || '%';
       END IF;
     END IF;
   END LOOP;
