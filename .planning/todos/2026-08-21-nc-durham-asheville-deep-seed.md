@@ -1,6 +1,7 @@
 # North Carolina deep seed — Durham, Asheville, their counties, and the legislature
 
-**Created** 2026-08-21 · **Status** design approved, wave 1 not started
+**Created** 2026-08-21 · **Status** waves 1–3 applied to prod (2026-08-22/23); wave 2b (Durham +
+Asheville banners/headshots/stances) and wave 4 (2026 candidates) not started. Next slot `CA_0011`.
 **Scope** NC General Assembly (170 seats) · Durham city + county · Asheville + Buncombe County ·
 banners · headshots · stances · 2026 candidates
 
@@ -214,18 +215,45 @@ Applied as **`CA_0006`** (1 LOCAL district `Durham Citywide`, geo_id `3719000` +
   Commissioners plus Sheriff, Register of Deeds and Clerk of Superior Court.
 * Banner, headshots, stances (local scale, 22 topics).
 
-### Wave 3 — Asheville + Buncombe County
+### Wave 3 — Asheville + Buncombe County — ✅ DONE 2026-08-23
 
-🔴 The `place` layer is **already loaded for all of NC** (wave 2's load wrote 552 `G4110` / 0
-`G4210` records statewide, not just for Durham) — Asheville city `geo_id 3702140` is **already
-present** in `essentials.geofence_boundaries`. **Wave 3 must NOT re-run `place`**; doing so would be
-wasted work and an unnecessary prod write.
+Applied as **`CA_0009`** (1 `LOCAL` district `Asheville Citywide` on `3702140`, 3 `COUNTY` districts
+on new synthetic **`mtfcc X0034`**, 2 governments, 3 chambers, 17 offices) and **`CA_0010`**
+(17 politicians + 17 terms). **Next free slot: `CA_0011`.** Both idempotent, re-run clean.
 
-* Asheville city `LOCAL` district on `geo_id 3702140`; 7 offices, all at-large on the city polygon.
-* Buncombe: at-large chair on the existing `37021` county district; six district commissioners on
-  three districts derived from wave 1's `sldl` 114/115/116.
-* Cross-check against `gis.buncombecounty.org` layer 7 before trusting the derivation, and record
-  the statutory coupling on the district rows.
+Geometry loaded by `scripts/load-buncombe-commissioner-boundaries.ts`; standing assertions in
+`scripts/verify-buncombe-commission-coupling.sql` and `scripts/verify-wave3-address-probes.sql`.
+`place` was **not** re-run, as required — Asheville's polygon was already present.
+
+End-to-end probes: Asheville City Hall returns **16** (7 city + chair + 3 row offices + District 3's
+two commissioners + HD-116 + SD-49 + US Rep); Black Mountain returns **9** (4 countywide + District
+1's two + HD-114 + SD-46 + US Rep) and **zero** Asheville city officials. All four negative controls
+hold, each with a control-of-the-control. `offices_missing_terms` unflagged still **655**.
+
+Scope was seats + banner; headshots and stances defer to a combined wave 2b covering **Durham and
+Asheville together**.
+
+**Open question closed:** Asheville has *not* reinstated a district plan. Both the city's own council
+page and Buncombe Election Services list mayor + 6, all at-large, with no district labels.
+
+#### 🔴 Three corrections this wave produced, for whoever does wave 4 or the next county
+
+1. **The coupling gate must be a TOLERANCE test, not `ST_Equals`.** The byte-identical finding above
+   is real but compares two layers of **Buncombe's own** GIS. Our House polygons are **TIGER 2024**,
+   an independent digitization: `ST_Equals` is **false** for all three, at IoU 99.681 / 99.883 /
+   99.969 % (symmetric differences 2.09 / 1.07 / 0.04 km²). An equality gate fails permanently on
+   correct data, and the obvious fix for a permanently-red gate is to delete it. The threshold is
+   99.0 %, chosen against the measured off-diagonal — every wrong pairing sits at 0.000–0.002 %.
+   **The coupling survived the 2023 NC House redraw**, which is direct evidence it is a live
+   statutory link the county maintains, not a 2011 coincidence.
+2. **`check:child-county` does not track `X*` boundaries and never did.** It defines children as
+   `mtfcc IN ('G4110','G5420','G5400','G5410')`. `X0033`, `X0027` and every other `X%` mtfcc have
+   **0** rows in `essentials.geofence_child_county`. A green `stale 0` after loading `X0034` says
+   nothing about those rows — do not read it as evidence the load worked.
+3. **Buncombe's published year is TERM EXPIRY**, and reading it as "elected four years earlier" is
+   wrong for **5 of 17** people, because this board fills vacancies by appointment repeatedly
+   (Whitesides 2016, Ball 2025, Christy 2023 — three separate vacancies). See the wave-3
+   `ROSTERS.md` "Source defects found".
 
 ### Wave 4 — 2026 candidates
 
@@ -260,7 +288,7 @@ than create a parallel election.
   Then **prove reversion with a separate query afterwards.** A printed `ROLLBACK` is not proof; the
   presence or absence of the WARNING is what distinguishes a rehearsal from an apply.
 
-* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0008`** (`CA_0001`–`CA_0007` exist;
+* **Migrations are `CA_NNNN_*.sql`.** Next free slot is **`CA_0011`** (`CA_0001`–`CA_0010` exist;
   `check:migrations` green 2026-08-21). Unlike the shared sequence, the `CA_` namespace does **not**
   require taking the number last — Chris counts within his own namespace and never reads the shared
   max. Cite slots in full (`CA_0006`, never "migration 6").
