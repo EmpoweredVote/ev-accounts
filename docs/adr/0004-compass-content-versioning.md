@@ -274,26 +274,6 @@ inline notice: what changed, rendered as in §9, and a way to answer again. No e
 **Only when the meaning moved.** Trigger on a `version` gap, not a `revision` gap — a comma fix must
 never prompt anyone to revisit their position. This is the second thing the two-level numbering buys.
 
-### 11a. Corrected 2026-08-21: the reviewer population is ONE person, not four
-
-🔴 This ADR said "the four holders of the `Compass Stance Editor` role" throughout. That was wrong, and
-it was wrong in a way worth naming: `public.user_roles` holds **four grant rows** for that role and they
-all belong to **one user**. A count of rows reads as a count of people. It is not.
-
-Two decisions in this document were argued partly on that number and should be re-read with one holder
-in mind:
-
-- **§7, approval gate.** "Approval requires a Compass Stance Editor (4 holders today)" is now a
-  single-person gate. That is a bus factor of one on every compass content change.
-- **§7, the rejected "author cannot approve their own draft" option.** It was rejected as liable to
-  "deadlock a small team on a Friday". With one holder it would not deadlock occasionally — it would
-  deadlock **always**, because that person is also the likeliest author. Rejecting it was right, but for
-  a stronger reason than the one recorded.
-
-The design does not change. What changes is that granting the role to the actual reviewers is now a
-**prerequisite to the workflow working at all**, not an afterthought. Note also that the role is granted
-per-user with no scope constraint here, so a second grant row for the same person adds nothing.
-
 ### 11. Decided while implementing CA_0011/CA_0012, not before
 
 Three things this ADR left open or wrong, settled by writing the SQL. Recorded here because each one
@@ -330,6 +310,47 @@ in-place edit in that window would leave the revision stale, and `CA_0013`'s rep
 project. So content `UPDATE`s on `compass_topics`/`compass_stances` raise, pointing the author at the
 new path. Safe to do abruptly precisely because `admin_audit_log` proves the in-place path has never
 been used. `is_live`/`went_live_at`/`updated_at` stay editable so archiving a topic needs no exception.
+
+### 11a. Corrected twice: the reviewer role has ZERO live holders
+
+🔴 This ADR said "the four holders of the `Compass Stance Editor` role". I then corrected that to "one
+holder". **Both were wrong.** The role has **no live holders at all.**
+
+`public.user_roles` holds four grant rows for it. All four carry a `revoked_at` — granted and revoked on
+2026-04-06/07, apparently while the role system itself was being tested. `public.get_user_roles(uid)`
+filters revoked grants correctly, so `requireRole('compass_stance_editor')` currently admits **nobody**.
+
+**Counting that table misleads twice over**, and both mistakes are easy:
+
+1. **Rows are not people.** One user can hold several grants of the same role at different scopes.
+2. **Rows include revoked history.** The table is append-only; a revoke sets a timestamp rather than
+   deleting the row.
+
+Use `get_user_roles(uid)`, or filter `revoked_at IS NULL`. `Campaign Manager` and
+`Essentials Data Editor` are in the same state — zero live holders — which means
+`routes/compassContributor.ts` and `routes/essentialsEditor.ts` are also currently unreachable. That is
+pre-existing and out of scope here, but worth knowing before assuming any role-gated route has users.
+
+### 11b. Approval admits admins as well as editors, and records which
+
+Because of the above, gating approval on the role alone would have shipped a review queue that no
+account on the platform could open — reachable from an admin dashboard, and rejecting every admin who
+clicked it.
+
+`requireCompassReviewer` therefore admits **either** a live `compass_stance_editor` **or** a member of
+`public.admin_users` (two people: the two who would actually review). The role is checked first, so
+someone holding both is recorded as an editor rather than flattened into an admin.
+
+**The capacity is recorded, not discarded.** Every approve, reject and publish writes
+`capacity: 'editor' | 'admin'` into its `admin_audit_log` details. Approving compass content is an
+**editorial** judgement; admin access is a **technical** privilege. Collapsing the two would make an
+admin's sign-off indistinguishable from an editor's in the record — and conflating an editorial role
+with a technical one is the exact mistake that left migration 061 unused for four months. Admin is the
+path that keeps the workflow usable; `compass_stance_editor` remains the intended one, and the record
+will show which was used every time.
+
+This also strengthens §7's rejection of an "author cannot approve their own draft" constraint. With one
+holder it would deadlock often; with zero it is unimplementable.
 
 ## Schema shape
 

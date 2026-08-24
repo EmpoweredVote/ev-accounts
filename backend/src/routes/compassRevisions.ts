@@ -4,13 +4,15 @@
  * Mounted at /api/compass/revisions.
  *
  * AUTHORISATION
- * Review routes: requireAuth + requireRole('compass_stance_editor'), matching
- * routes/compassContributor.ts.
+ * Review routes: requireAuth + requireCompassReviewer, which admits EITHER a
+ * holder of `compass_stance_editor` OR a member of `public.admin_users`, and
+ * records which in `reviewerCapacity`. Every mutation logs that capacity, so an
+ * admin's approval is never mistaken for an editor's.
  *
- * 🔴 EXACTLY ONE person holds that role today. public.user_roles has FOUR grant
- * rows for `Compass Stance Editor` but they all belong to a single user, so a
- * count of rows reads as four reviewers and is wrong. Until the role is granted
- * to the other reviewers, every route in this file is usable by one account.
+ * 🔴 NOBODY holds the editor role today. `Compass Stance Editor` has four grant
+ * rows and all four are revoked, so it has ZERO live holders. Admitting admins is
+ * not a convenience here — without it this router is unreachable by every account
+ * on the platform. `admin_users` holds two people, and they are the reviewers.
  *
  * The history route is deliberately PUBLIC and unauthenticated. It is the reader-
  * facing record (ADR 0004 §9), and /api/compass/topics is already served
@@ -36,7 +38,10 @@
 import { Router, type Request, type Response } from 'express';
 import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
-import { requireRole } from '../middleware/requireRole.js';
+import {
+  requireCompassReviewer,
+  reviewerCapacity,
+} from '../middleware/requireCompassReviewer.js';
 import { logAdminAction } from '../lib/adminService.js';
 import {
   listOpenRevisions,
@@ -51,8 +56,6 @@ const router = Router();
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const TOPIC_KEY_RE = /^[a-z0-9-/]{1,80}$/;
-
-const REVIEWER = 'compass_stance_editor';
 
 const rejectSchema = z.object({
   reason: z.string().trim().min(1, 'A reason is required').max(2000),
@@ -102,7 +105,7 @@ function sendRpcError(res: Response, err: unknown, where: string): void {
 router.get(
   '/queue',
   requireAuth,
-  requireRole(REVIEWER),
+  requireCompassReviewer,
   async (_req: Request, res: Response): Promise<void> => {
     try {
       res.json({ revisions: await listOpenRevisions() });
@@ -120,7 +123,7 @@ router.get(
 router.get(
   '/:id',
   requireAuth,
-  requireRole(REVIEWER),
+  requireCompassReviewer,
   async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id as string;
     if (!UUID_RE.test(id)) {
@@ -150,7 +153,7 @@ router.get(
 router.post(
   '/:id/approve',
   requireAuth,
-  requireRole(REVIEWER),
+  requireCompassReviewer,
   async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id as string;
     if (!UUID_RE.test(id)) {
@@ -160,7 +163,10 @@ router.post(
     const actorId = (req as AuthenticatedRequest).userId;
     try {
       await approveRevision(id, actorId);
-      await logAdminAction(actorId, 'compass:revision:approve', null, { revision_id: id });
+      await logAdminAction(actorId, 'compass:revision:approve', null, {
+        revision_id: id,
+        capacity: reviewerCapacity(req),
+      });
       res.status(200).json({ ok: true });
     } catch (err) {
       sendRpcError(res, err, 'POST /compass/revisions/:id/approve');
@@ -175,7 +181,7 @@ router.post(
 router.post(
   '/:id/reject',
   requireAuth,
-  requireRole(REVIEWER),
+  requireCompassReviewer,
   async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id as string;
     if (!UUID_RE.test(id)) {
@@ -196,6 +202,7 @@ router.post(
       await logAdminAction(actorId, 'compass:revision:reject', null, {
         revision_id: id,
         reason: parsed.data.reason,
+        capacity: reviewerCapacity(req),
       });
       res.status(200).json({ ok: true });
     } catch (err) {
@@ -213,7 +220,7 @@ router.post(
 router.post(
   '/:id/publish',
   requireAuth,
-  requireRole(REVIEWER),
+  requireCompassReviewer,
   async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id as string;
     if (!UUID_RE.test(id)) {
@@ -225,6 +232,7 @@ router.post(
       const result = await publishRevision(id, actorId);
       await logAdminAction(actorId, 'compass:revision:publish', null, {
         revision_id: id,
+        capacity: reviewerCapacity(req),
         ...result,
       });
       res.status(200).json(result);
