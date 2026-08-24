@@ -1,7 +1,8 @@
 # NC wave 2b — Durham banner, headshots, and local-scale stances
 
-**Created** 2026-08-23 · **Status** decomposed and sequenced; sub-project 1 (Durham banner) designed
-and approved, not yet built. Sub-projects 2 and 3 not started.
+**Created** 2026-08-23 · **Status** sub-project 1 (Durham banner) shipped, essentials #101 merged.
+**Sub-project 2 (headshots) DONE 2026-08-23 — 31 of 32 imported and verified.** Sub-project 3
+(local-scale stances) not started.
 **Scope** Durham (15 seats), Asheville (7), Buncombe County (10) — 32 people total.
 
 Waves 1–3 of the [NC deep seed](./2026-08-21-nc-durham-asheville-deep-seed.md) seated all 32 and
@@ -63,8 +64,71 @@ cohort by whether each person has their own page"; this cohort shows that test p
 assets remain unusable. Probe dimensions during profiling and quote measured yield in usable
 headshots, never in pages found.
 
-Not yet probed: Asheville's 7, Durham's 15, and Buncombe's 3 row officers (Sheriff, Register of
-Deeds, Clerk of Superior Court).
+Correction, measured 2026-08-23: the directory range is `eid=160–166` **inclusive — seven entries**,
+not "160 and 162–166". Every one of the seven measures 200 × 279, and two positive controls confirm
+that is the asset rather than a server-side transform: the shared images on the same pages return
+350 × 100 and an SVG, and the same CMS serves 800 × 800 news photos.
+
+## Sub-project 2 RESULT — 31 of 32 imported (2026-08-23)
+
+**The gate is the upscale factor on the FACE crop, not the frame** — `600 / crop_width` after the
+4:5 crop that ships. The frame figure overstates quality on any environmental shot. Two Buncombe
+sheriff photos prove it: a 2500 × 1479 parade photo scores ×0.51 on the frame and is unusable (he is
+handing out candy, looking down), and an 800 × 724 full-body shot in front of flags scores ×1.04
+with a face barely 100px wide. The face-crop figure was worse than the frame figure for all 32.
+
+| Cohort | People | Source that worked | Face-crop gate |
+|---|---|---|---|
+| Durham county commissioners | 5 | `dconc.gov/Images/DCo-<Name>-*.jpg`, **drop `?Medium`** | ×0.90 – ×1.16 |
+| Asheville city council | 7 | `ashevillenc.gov` `<Name>_1000x500.jpg` | ×1.50 |
+| Durham city council | 7 | `durhamnc.gov` `ImageRepository?documentId=` | ×1.50 – ×1.81 |
+| Buncombe commissioners | 7 | **`buncombedems.org/elected-officials`** | ×0.69 – ×1.23 |
+| Row officers | 5 | five different hosts, see below | ×0.56 – ×1.95 |
+| Refused on licence | 1 | Sharon A. Davis — see open items | — |
+
+Row officers, one host each: Birkhead `durhamsheriff.com` ×0.59 · Miller **`ncsheriffs.org`** ×0.56 ·
+Christy `christyforclerk.com` ×0.84 · Reisinger `drewfordeeds.org` ×0.76 · Thompson
+**Ballotpedia raw path** ×1.95.
+
+### Reusable findings
+
+- 🔴 **A county-party roster can beat the county's own site.** `buncombedems.org/elected-officials`
+  serves a name-captioned portrait per commissioner at 800 × 1115 — four times the county's
+  200 × 279 — and converted a cohort already written off as press-only into seven clean rows. Try the
+  county-party roster **before** local press in any county wave. Caveat: it exists because this board
+  is all-Democrat, so it is not a general source and it introduces the same asymmetry as a
+  challenger-photo gap.
+- 🔴 **Ballotpedia serves the ORIGINAL, not only the 200 × 300 thumb.** Drop `thumbs/200/300/` from
+  `s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/<Name>.jpg` for the raw upload — Sharon
+  Davis 200 × 300 → **5533 × 8300**. This corrects the older note that the thumb was all that existed.
+  Intermediate sizes still 404, so it is the thumb or the original, nothing between.
+- 🔴 **A Ballotpedia homonym hides behind the bare title.** `/Amanda_Edwards` is a different person
+  and never mentions North Carolina. The real page is
+  `/Amanda_Edwards_(Buncombe_County_Board_of_Commissioners_Chair,_North_Carolina,_candidate_2024)`.
+  Search for the disambiguated title, and test the page text for the state and county before use.
+  BP holds no portrait for any of the seven commissioners, disambiguated or not.
+- 🔴 **`ncsheriffs.org/people/<slug>` carries an official studio portrait per NC sheriff.** Strip the
+  `img.nmcdn.io/e1/w:500,h:500,v:1/` transform for the WordPress original. Miller is 2048 × 2560
+  there while his own office site has no portrait of him at all. Sheriffs recur in every county wave.
+- 🔴 **A face-first scan beats reading filenames.** Reisinger was wrongly written off after opening
+  only one of the two large images on his Wix site (the other was stock photography of a law book).
+  Download every image, keep only single-large-face frames, and report the face width — that pass
+  found the portrait immediately. Script: `facescan.py` in the session scratchpad.
+- `durhamsheriff.com` returns **HTTP 403 with an HTML body** to any plain fetch, referer included, so
+  those bytes need a real browser. Ballotpedia's `api.php` now answers with HTML, not JSON, so
+  profile pages must be read as pages.
+- Guessed paths 404 as usual (`/94/City-Council`, `Sharon-A.-Davis.png`, `sheriff-09-scaled.webp`);
+  every nav-crawled or search-found URL resolved.
+- Durham county's roster page shows only a **group photo of all five** commissioners. A
+  presence-based check would have scored that cohort as covered.
+
+### Import mechanics used
+
+Uploaded to `politician_photos` as `<pid>-headshot.jpg` (600 × 750, 4:5, Lanczos, q90). The insert
+joins on **`external_id` AND `full_name`**, so a wrong `politician_id` drops the row rather than
+seating the wrong face; both batches were dry-run `BEGIN … ROLLBACK` first and the rollback was
+confirmed reverted. 31 of 31 verified on the CDN at 600 × 750 with a SHA-256 matching the local
+render. 18 rows carry `REPLACE` in `photo_license`, findable with `photo_license ILIKE '%REPLACE%'`.
 
 ---
 
@@ -123,7 +187,7 @@ rule applies to overwrites.
 
 ---
 
-## Sub-project 2 — Headshots, 32 people (not started)
+## Sub-project 2 — Headshots, 32 people (DONE 2026-08-23 — see RESULT above)
 
 Standing rules that apply and must not be re-litigated:
 
@@ -166,9 +230,21 @@ Re-verify the 22 topic UUIDs against prod before any push.
 
 ---
 
-## Open questions for later sub-projects
+## Open items
 
-- Do Asheville's 7, Durham's 15, and Buncombe's 3 row officers have usable-resolution portraits? Only
-  Buncombe's commissioners have been probed, and they failed on size.
+- **Sharon A. Davis, Durham Register of Deeds — the one person with no usable source.** Ballotpedia's
+  raw path holds a 5533 × 8300 studio portrait, ×0.14, the best asset in the wave, but it carries a
+  **photographer copyright watermark** ("© C.PS. 2024") in the corner. Refused on Chris's ruling
+  (2026-08-23) under the credit-line rule rather than imported and mislabelled. Durham has no
+  county-party roster equivalent to Buncombe's, and the county's own Register of Deeds page carries
+  office signage, not a portrait. Next: Durham local press (INDY Week, The 9th Street Journal,
+  Durham's own newsroom), credit line tested on each.
+- ⚠ **DATA FLAG — Martin Moore.** He won the March 2026 Buncombe DA primary
+  (BPR, 2026-03-06: "first Black district attorney") while the county-party roster still lists him as
+  Vice Chair and District 2 Commissioner. His commission seat may need an occupancy check and, if he
+  has resigned, a `vacate_office` / successor pass.
+- 18 of the 31 rows are flagged `REPLACE`. The two worth revisiting first are Aminah M. Thompson
+  (×1.95) and Jennifer Horton (×1.23); the Asheville seven are frame-limited at ×1.50 by the
+  1000 × 502 banner the city publishes, so they only improve if the city publishes a taller asset.
 - Does the LOCAL scale still lack an elections / voting-rights topic? That gap was recorded during the
   Colorado Springs wave and would apply to all 32 people here.
