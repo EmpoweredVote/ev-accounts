@@ -422,13 +422,20 @@ every remote-tracking ref.
    `rung_map = NULL`, with a `rationale` recording that the original reasoning was never captured. Copy
    the 220 ladder rows. Stamp `answered_revision_id` on every `compass_responses` and
    `compass_change_history` row. Create both compat views. Arm the legacy freeze (§11).
-   🔴 **The six topics already at `version = 2` keep `version = 2`** — corrected from this ADR's first
-   draft, which said version 1. `revision = 1` because it is the first revision *we stored*; `version`
-   stays at the number that already existed and is already readable through `/api/compass/topics`.
-   Writing version 1 would erase the fact that a change happened, which is the opposite of what the
-   table is for. Their `public_note` says the earlier wording was not kept. Their v1 content was
-   deleted in April and **is not recoverable — decided 2026-08-21, we are not reconstructing it.** The
-   backfill must not invent prior wording under any circumstances.
+   🔴 **CLEAN SLATE: all 44 topics are `version = 1`, `revision = 1`.** Decided 2026-08-21. Six topics
+   carry `version = 2` in the legacy column and their v1 content was deleted in April; that content is
+   **not recoverable and we are not reconstructing it.** This ADR went back and forth here: the first
+   draft said version 1, an intermediate draft carried the legacy 2 forward, and the final decision is
+   version 1 for everything. The record begins now; only revisions written *after* this migration carry
+   history.
+   `public_note` is therefore **uniform across all 44** — *"First tracked version of this topic."* That
+   is true of every one and asserts nothing about what came before; it is not a claim that a topic has
+   never changed. The fact that six of them *were* edited pre-tracking is preserved in `rationale`,
+   which is internal and never served, so the team keeps the knowledge without a version-2 signal
+   reaching readers. The backfill must not invent prior wording under any circumstances.
+   Accepted consequence: until `CA_0013` drops `compass_topics.version`, that column reads 2 for those
+   six while the revision reads 1. Nothing reads the revision `version` until the repoint, and
+   `CA_0013` removes the disagreement by deleting the older of the two.
    🔴 **Assert invariants, not literal counts.** `compass_change_history` went from 1,818 to 1,819 rows
    during the hour this ADR was drafted. The gate asserts "nothing left `NULL`" and "revision text
    equals source text", never a hardcoded number.

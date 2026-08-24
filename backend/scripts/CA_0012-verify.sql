@@ -37,30 +37,40 @@ SELECT
 -- EXPECT: 44 / 44 / 44 / 220 / 0 / PASS
 
 
--- ── 2. Version numbers: the six pre-revised topics must still say 2 ─────────
+-- ── 2. Clean slate: EVERYTHING is version 1, revision 1 ────────────────────
 SELECT
-  '2. versions' AS step,
-  r.version,
-  count(*) AS topics,
-  string_agg(t.topic_key, ', ' ORDER BY t.topic_key) AS which
-FROM inform.compass_topic_revisions r
-JOIN inform.compass_topics t ON t.id = r.topic_id
-WHERE r.is_current
-GROUP BY r.version
-ORDER BY r.version;
--- EXPECT: version 1 -> 38 topics
---         version 2 -> 6 topics: ai-regulation, deportation, healthcare,
---                      housing, immigration, taxes
--- 🔴 If version 2 shows no row, the GREATEST(t.version,1) copy failed and the
---    public record would be claiming these six have never changed.
+  '2. version spread' AS step,
+  version, revision, count(*) AS topics,
+  CASE WHEN version = 1 AND revision = 1 THEN 'PASS' ELSE 'FAIL' END AS verdict
+FROM inform.compass_topic_revisions
+GROUP BY version, revision
+ORDER BY version, revision;
+-- EXPECT: exactly ONE row -> 1 | 1 | 44 | PASS
+-- 🔴 A version 2 row means the GREATEST(t.version,1) logic from an earlier draft
+--    survived. Decided 2026-08-21: the record starts now, everything live is v1.
 
 SELECT
-  '2b. version guard' AS step,
-  count(*) AS topics_with_wrong_version,
-  CASE WHEN count(*) = 0 THEN 'PASS' ELSE 'FAIL' END AS verdict
-FROM inform.compass_topics t
-JOIN inform.compass_topic_revisions r ON r.topic_id = t.id AND r.is_current
-WHERE r.version <> GREATEST(t.version, 1);
+  '2b. public note uniform' AS step,
+  public_note, count(*) AS topics,
+  CASE WHEN count(*) = (SELECT count(*) FROM inform.compass_topic_revisions)
+       THEN 'PASS' ELSE 'FAIL' END AS verdict
+FROM inform.compass_topic_revisions
+GROUP BY public_note;
+-- EXPECT: ONE row -> 'First tracked version of this topic.' | 44 | PASS
+-- More than one row means a reader-facing note leaks a pre-tracking signal.
+
+SELECT
+  '2c. rationale keeps the fact' AS step,
+  t.topic_key, t.version AS legacy_version,
+  (r.rationale LIKE '%before tracking began%') AS rationale_flags_prior_edit
+FROM inform.compass_topic_revisions r
+JOIN inform.compass_topics t ON t.id = r.topic_id
+WHERE t.version > 1 OR r.rationale LIKE '%before tracking began%'
+ORDER BY t.topic_key;
+-- EXPECT: 6 rows — ai-regulation, deportation, healthcare, housing, immigration,
+-- taxes — each legacy_version 2 and rationale_flags_prior_edit true.
+-- The public note deliberately omits this; `rationale` is where the team keeps it.
+-- A row here with legacy_version 2 and FALSE means the fact was silently lost.
 
 
 -- ── 3. Every revision is revision 1, published, current, no rung map ───────
@@ -73,18 +83,6 @@ GROUP BY 1,2,3,4,5,6
 ORDER BY n DESC;
 -- EXPECT: exactly ONE row -> 1 | published | t | substantive | t | 44
 -- More than one row means the backfill treated some topics differently.
-
-
--- ── 4. The public note for the six — this is prose voters will read ────────
-SELECT
-  '4. public note' AS step,
-  t.topic_key, r.version, r.public_note
-FROM inform.compass_topic_revisions r
-JOIN inform.compass_topics t ON t.id = r.topic_id
-WHERE r.version > 1
-ORDER BY t.topic_key;
--- EXPECT: 6 rows, each ending "...the earlier wording was not kept."
--- Read the prose itself. It is published.
 
 
 -- ── 5. Topic content byte-identical to source ─────────────────────────────

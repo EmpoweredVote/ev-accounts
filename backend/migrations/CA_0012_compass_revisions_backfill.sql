@@ -5,18 +5,31 @@ BEGIN;
 -- =============================================================================
 -- Implements ADR 0004 migration-path step 2. Requires CA_0011.
 --
--- Reads the 44 live topics and their 220 rungs and records each as revision 1.
--- Adds answer provenance to compass_responses and compass_change_history. Creates
--- the compatibility views. Freezes in-place content edits for the duration of the
--- transition (Section 5 — read that one before objecting to it).
+-- Reads the 44 live topics and their 220 rungs and records each as revision 1,
+-- version 1. Adds answer provenance to compass_responses and
+-- compass_change_history. Creates the compatibility views. Freezes in-place
+-- content edits for the duration of the transition (Section 5 — read that one
+-- before objecting to it).
 --
--- 🔴 DOES NOT invent prior wording. Six topics (ai-regulation, deportation,
--- healthcare, housing, immigration, taxes) carry version = 2 and their version-1
--- rows were DELETED in April 2026. Decided 2026-08-21: we are not reconstructing
--- them from git. They are recorded at their CURRENT version number with a
--- public_note that says the earlier wording was not kept — because recording them
--- as "version 1" would erase the fact that a change happened, which is the exact
--- opposite of what this table is for.
+-- 🔴 CLEAN SLATE: EVERY TOPIC IS version 1. Decided 2026-08-21. Six topics
+-- (ai-regulation, deportation, healthcare, housing, immigration, taxes) carry
+-- version = 2 in the legacy column, and their version-1 rows were DELETED in April
+-- 2026. An earlier draft of this migration carried that 2 forward. It no longer
+-- does: the record starts now, and everything live today is version 1.
+--
+-- Note what that does and does not claim. "First tracked version of this topic" is
+-- true of all 44 and asserts nothing about what came before. It is not a claim that
+-- the topic has never changed. The fact that six of them DID change before tracking
+-- began is preserved in `rationale`, which is internal and never served — so the
+-- team keeps the knowledge without a version-2 signal reaching readers.
+--
+-- 🔴 DOES NOT invent prior wording, ever. The deleted April content is not
+-- recoverable from the database and we are not reconstructing it from git.
+--
+-- Consequence, accepted: until CA_0013 drops inform.compass_topics.version, that
+-- column says 2 for those six while the revision says 1. Nothing reads the revision
+-- version until the repoint, and CA_0013 removes the disagreement by deleting the
+-- older of the two.
 --
 -- Counts are asserted as invariants ("nothing left NULL"), not as literals.
 -- compass_change_history grew from 1,818 to 1,819 rows in the hour between
@@ -59,11 +72,8 @@ END $$;
 -- ---------------------------------------------------------------------------
 -- Section 2: Topic revisions
 -- ---------------------------------------------------------------------------
--- revision = 1 always: this is the first revision WE STORED.
--- version   = the topic's existing version: this is the first revision that
---             EXISTED, and for six topics that number is 2. Keeping it preserves
---             continuity with a number already written to prod and already
---             readable through /api/compass/topics.
+-- revision = 1 and version = 1, for all 44. Clean slate: the public record begins
+--             here. Only revisions written AFTER this migration carry history.
 -- rung_map  = NULL: there is no prior ladder in this table to map from. Legal per
 --             CA_0011's validator (which was tested for exactly this case).
 -- ---------------------------------------------------------------------------
@@ -78,20 +88,28 @@ INSERT INTO inform.compass_topic_revisions (
 SELECT
   t.id,
   1,
-  GREATEST(t.version, 1),
+  1,                                    -- clean slate: everything live today is v1
   'substantive',                        -- founding content, not an edit
   t.title,
   t.short_title,
   t.question_text,
+  -- INTERNAL. Carries the one fact the uniform public note deliberately omits, so
+  -- the team does not lose it: six topics were edited before tracking existed.
   'Backfilled by CA_0012 at the introduction of content versioning (ADR 0004). '
     || 'This content predates the revision model, so its original decision reasoning '
-    || 'was never recorded and is not recoverable.',
-  CASE WHEN COALESCE(t.version, 1) > 1 THEN
-    'First tracked version of this topic. This topic had been revised once before '
-    || 'tracking began, and the earlier wording was not kept.'
-  ELSE
-    'First tracked version of this topic.'
-  END,
+    || 'was never recorded and is not recoverable. '
+    || CASE WHEN COALESCE(t.version, 1) > 1 THEN
+         'NOTE: inform.compass_topics.version read ' || t.version || ' at backfill time, '
+         || 'meaning this topic was revised at least once before tracking began. That '
+         || 'earlier wording was deleted in April 2026 and is not in the database. '
+         || 'Recorded here as version 1 by decision of 2026-08-21 (clean slate); the '
+         || 'public note is uniform across all 44 topics and does not surface this.'
+       ELSE
+         'No prior revision of this topic is known.'
+       END,
+  -- PUBLIC. Uniform across all 44. True of every one, and asserts nothing about
+  -- what came before — it is not a claim that the topic has never changed.
+  'First tracked version of this topic.',
   NULL,                                 -- no prior ladder to map from
   'published',
   true,
@@ -319,13 +337,32 @@ BEGIN
     RAISE EXCEPTION 'CA_0012: % rungs whose revision text differs from the source row', v_bad;
   END IF;
 
-  -- The six pre-revised topics must keep their real version number.
+  -- Clean slate: every backfilled revision is version 1, revision 1. A stray 2
+  -- here would mean the GREATEST() logic from the earlier draft survived a merge.
+  SELECT count(*) INTO v_bad
+  FROM inform.compass_topic_revisions
+  WHERE version <> 1 OR revision <> 1;
+  IF v_bad > 0 THEN
+    RAISE EXCEPTION 'CA_0012: % revisions are not version 1 / revision 1 — clean slate violated', v_bad;
+  END IF;
+
+  -- The internal rationale must carry the prior-edit note for exactly the topics
+  -- whose legacy version column is above 1. If this drifts, the team silently loses
+  -- the only remaining record that those six were ever edited.
   SELECT count(*) INTO v_bad
   FROM inform.compass_topics t
   JOIN inform.compass_topic_revisions r ON r.topic_id = t.id AND r.is_current
-  WHERE r.version <> GREATEST(t.version, 1);
+  WHERE (COALESCE(t.version, 1) > 1) <> (r.rationale LIKE '%before tracking began%');
   IF v_bad > 0 THEN
-    RAISE EXCEPTION 'CA_0012: % topics whose revision version does not match the source version', v_bad;
+    RAISE EXCEPTION 'CA_0012: % topics whose rationale does not match their legacy version', v_bad;
+  END IF;
+
+  -- And no reader-facing note may leak a version-2 signal.
+  SELECT count(*) INTO v_bad
+  FROM inform.compass_topic_revisions
+  WHERE public_note <> 'First tracked version of this topic.';
+  IF v_bad > 0 THEN
+    RAISE EXCEPTION 'CA_0012: % public notes are not the uniform clean-slate text', v_bad;
   END IF;
 
   -- Provenance: invariant, not a literal count.
