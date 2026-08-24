@@ -14,6 +14,7 @@ import compassAdminRouter from './routes/compassAdmin.js';
 import topicRewritesRouter from './routes/topicRewrites.js';
 import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
+import compassRevisionsRouter from './routes/compassRevisions.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import vqRouter from './routes/vq.js';
@@ -110,6 +111,7 @@ app.use('/api/account/profile', profileRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/invites', invitesRouter);
 app.use('/api/connect', connectRouter);
+app.use('/api/compass/revisions', compassRevisionsRouter);
 app.use('/api/compass', compassContributorRouter);
 app.use('/api/compass', compassRouter);
 // Dual-router pattern: compassAdminRouter shares the /api/compass prefix with compassRouter.
