@@ -32,6 +32,7 @@
  */
 
 import { pool } from './db.js';
+import { adminRpc } from './supabase.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -274,7 +275,14 @@ export async function getTopicRevisionHistory(topicKey: string) {
 // ---------------------------------------------------------------------------
 
 export async function approveRevision(revisionId: string, actorId: string): Promise<void> {
-  await pool.query('SELECT inform.admin_approve_topic_revision($1, $2)', [revisionId, actorId]);
+  const { error } = await adminRpc(
+    'admin_approve_topic_revision',
+    { p_revision_id: revisionId, p_actor_id: actorId },
+    'inform'
+  );
+  // Rethrow the RPC's own message unchanged — the route maps its NAMED: prefix
+  // to a status code and shows the rest to a human reviewer.
+  if (error) throw new Error(error.message);
 }
 
 export async function rejectRevision(
@@ -282,22 +290,25 @@ export async function rejectRevision(
   actorId: string,
   reason: string
 ): Promise<void> {
-  await pool.query('SELECT inform.admin_reject_topic_revision($1, $2, $3)', [
-    revisionId,
-    actorId,
-    reason,
-  ]);
+  const { error } = await adminRpc(
+    'admin_reject_topic_revision',
+    { p_revision_id: revisionId, p_actor_id: actorId, p_reason: reason },
+    'inform'
+  );
+  if (error) throw new Error(error.message);
 }
 
 export async function publishRevision(
   revisionId: string,
   actorId: string
 ): Promise<{ published_revision: number; published_version: number; superseded_revision: number }> {
-  const { rows } = await pool.query('SELECT inform.admin_publish_topic_revision($1, $2) AS out', [
-    revisionId,
-    actorId,
-  ]);
-  return rows[0].out;
+  const { data, error } = await adminRpc(
+    'admin_publish_topic_revision',
+    { p_revision_id: revisionId, p_actor_id: actorId },
+    'inform'
+  );
+  if (error) throw new Error(error.message);
+  return data as { published_revision: number; published_version: number; superseded_revision: number };
 }
 
 // ---------------------------------------------------------------------------

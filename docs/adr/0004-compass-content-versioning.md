@@ -331,6 +331,24 @@ Use `get_user_roles(uid)`, or filter `revoked_at IS NULL`. `Campaign Manager` an
 `routes/compassContributor.ts` and `routes/essentialsEditor.ts` are also currently unreachable. That is
 pre-existing and out of scope here, but worth knowing before assuming any role-gated route has users.
 
+### 11c. Reads run as `ev_api`, writes as `service_role` — caught pre-deploy
+
+`compassRevisionService` originally called the lifecycle RPCs over `pool`. That works against a
+superuser connection and **fails in production**, because per `DEPLOY.md` the API connects as the
+least-privilege **`ev_api`** role and CA_0015 grants `EXECUTE` on those SECURITY DEFINER functions to
+`service_role` only. Reads would have worked and every approve/reject/publish would have returned a
+500.
+
+The fix is the house pattern, not a wider grant: reads through `pool`, writes through
+`adminRpc(fn, args, 'inform')`, exactly as `lib/topicRewriteService.ts` does. `ev_api` deliberately
+cannot mutate compass content directly — the only path is a reviewed RPC. Widening its privileges to
+make the original code work would have quietly removed that property.
+
+Worth noting alongside: `ev_api` carries `rolbypassrls`, so its reads *do* see drafts. That is intended
+— draft access is gated at the route by `requireCompassReviewer`, not by RLS. RLS is what protects the
+anonymous public record (§11), and that was verified separately against a real draft: as `anon`, 44
+published revisions and 220 rungs are visible and **zero** drafts.
+
 ### 11b. Approval admits admins as well as editors, and records which
 
 Because of the above, gating approval on the role alone would have shipped a review queue that no
