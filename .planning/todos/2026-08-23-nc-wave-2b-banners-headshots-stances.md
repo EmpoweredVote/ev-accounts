@@ -239,10 +239,13 @@ Re-verify the 22 topic UUIDs against prod before any push.
   county-party roster equivalent to Buncombe's, and the county's own Register of Deeds page carries
   office signage, not a portrait. Next: Durham local press (INDY Week, The 9th Street Journal,
   Durham's own newsroom), credit line tested on each.
-- ⚠ **DATA FLAG — Martin Moore.** He won the March 2026 Buncombe DA primary
-  (BPR, 2026-03-06: "first Black district attorney") while the county-party roster still lists him as
-  Vice Chair and District 2 Commissioner. His commission seat may need an occupancy check and, if he
-  has resigned, a `vacate_office` / successor pass.
+- ✅ **Martin Moore occupancy — CHECKED 2026-08-23, no correction needed.** He did not resign; he ran
+  for DA *instead of seeking re-election*, and the county's elected-officials PDF states his District 2
+  expiry as **(2026)** against Wells' (2028). His seat is on the November 2026 ballot, so occupancy
+  changes at the December swearing-in. Dated follow-up:
+  [`2026-12-01-buncombe-d2-moore-term-ends.md`](./2026-12-01-buncombe-d2-moore-term-ends.md), which
+  also records why `term_end` was not written from a published expiry year —
+  `office_terms` has `start_precision` but **no `end_precision`**.
 - 18 of the 31 rows are flagged `REPLACE`. The two worth revisiting first are Aminah M. Thompson
   (×1.95) and Jennifer Horton (×1.23); the Asheville seven are frame-limited at ×1.50 by the
   1000 × 502 banner the city publishes, so they only improve if the city publishes a taller asset.
