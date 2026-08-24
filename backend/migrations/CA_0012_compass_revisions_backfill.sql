@@ -174,10 +174,16 @@ COMMENT ON COLUMN inform.compass_responses.answered_revision_id IS
 -- is_live / went_live_at / updated_at are deliberately still editable, so
 -- archiving a topic does not require dropping the guard.
 --
--- TO REMOVE (after CA_0013 drops the duplicated columns, at which point these
--- triggers have nothing left to guard):
---   DROP TRIGGER compass_topics_content_frozen  ON inform.compass_topics;
---   DROP TRIGGER compass_stances_content_frozen ON inform.compass_stances;
+-- 🔴 REMOVE THESE **BEFORE** CA_0013, NOT AFTER. compass_topics_content_frozen is
+-- an `UPDATE OF <column>` trigger, so pg_trigger holds a reference to title,
+-- short_title, question_text and version. CA_0013 drops exactly those columns, and
+-- ALTER TABLE ... DROP COLUMN will not silently step over a dependent trigger. So
+-- CA_0013 must open with:
+--   DROP TRIGGER IF EXISTS compass_topics_content_frozen  ON inform.compass_topics;
+--   DROP TRIGGER IF EXISTS compass_stances_content_frozen ON inform.compass_stances;
+-- and only then drop the columns. Dropping the guard is safe at that point: once
+-- the duplicated columns are gone there is nothing left for an in-place edit to
+-- corrupt, which is the entire window this guard exists to cover.
 -- ---------------------------------------------------------------------------
 
 CREATE OR REPLACE FUNCTION inform.compass_legacy_content_frozen()

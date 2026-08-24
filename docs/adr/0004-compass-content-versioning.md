@@ -432,7 +432,10 @@ every remote-tracking ref.
    🔴 **Assert invariants, not literal counts.** `compass_change_history` went from 1,818 to 1,819 rows
    during the hour this ADR was drafted. The gate asserts "nothing left `NULL`" and "revision text
    equals source text", never a hardcoded number.
-3. **`CA_0013`** — repoint the ~13 backend files to `compass_topics_live` / `compass_stances_live`,
+3. **`CA_0013`** — 🔴 **first** `DROP` the two freeze triggers from `CA_0012`: they are
+   `UPDATE OF <column>` triggers holding references to the very columns this step removes, and
+   `DROP COLUMN` will not step over a dependent trigger. **Then** repoint the ~13 backend files to
+   `compass_topics_live` / `compass_stances_live`,
    then drop `title`, `short_title`, `question_text`, `version`, `is_live`, `is_active`, `went_live_at`
    from `inform.compass_topics`. `is_active` is `GENERATED ALWAYS AS (is_live)` and must be dropped
    with it. **Ship the repoint before the drop**, in that order, in a shared-blast-radius schema.
