@@ -59,8 +59,13 @@ Every task inherits these. They are not suggestions.
     `-- @context-decision:` line and the guard from
     `backend/migrations/_templates/answer_delete_context_guard.sql` in the same migration.
     `npm run check:answer-delete-guards --prefix backend` enforces it.
-11. **Chris's migration namespace is `CA_NNNN_*.sql`.** The next free slot is **`CA_0011`**. Count
-    within that namespace only; never read the shared max; never retro-rename.
+11. **Chris's migration namespace is `CA_NNNN_*.sql`.** As of 2026-08-24 the claimed slots across
+    all 21 remote refs are `CA_0001`–`CA_0012`, `CA_0015`, `CA_0016`. **Take `CA_0017`.** The gap at
+    0013/0014 is not a free lunch — two authors taking a number before either pushes is invisible
+    from any repo state, so do not fill gaps. Run `npm run check:migrations --prefix backend` after
+    `git fetch origin`, and count within the namespace only; never read the shared max; never
+    retro-rename. (This campaign writes through guarded upserts, not migrations, so a slot is needed
+    only if a correction pass requires one.)
 12. **`git fetch origin` before reading anything git-related.** Master moves under you.
 
 ### Measured facts (verified against prod 2026-08-24 — re-verify, do not re-derive)
@@ -520,3 +525,12 @@ todo how many quote drafts are parked and where the list lives.
   matching at its STEP 4b). It routes around them. Fixing the skill is a separate task.
 - **Season 2 collision:** if the ladder revision lands mid-campaign, Task 1 Step 2 catches it
   (topic counts move off 28/22). Stop rather than mixing scales within a cohort.
+- **Season 2 machinery is already live (2026-08-24).** ADR 0004 (compass content versioning) shipped
+  as `CA_0011`, `CA_0012`, `CA_0015`, `CA_0016`, adding a revision lifecycle and an admin review
+  queue. This is the mechanism that will carry the ladder rewrites, and the `research-stances` skill
+  has a matching `--rewrite-id` mode that re-scores existing rows against new framing via
+  `inform.topic_rewrites` / `topic_rewrite_stance_proposals` instead of writing live data. **That is
+  the intended path for re-scoring this campaign's rows when season 2 lands** — the ledger
+  (`written-*.json`) supplies the politician/topic list to seed the proposals. Read ADR 0004 before
+  starting any re-score, and note the skill's rewrite mode auto-approves proposals, so the audit
+  trail rather than a human gate is what makes it reversible.
