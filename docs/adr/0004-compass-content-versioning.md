@@ -351,6 +351,12 @@ published revisions and 220 rungs are visible and **zero** drafts.
 
 ### 11b. Approval admits admins as well as editors, and records which
 
+**Decided 2026-08-24: one admin role is enough for now, and the team will expand later.** So the
+zero-holder finding in §11a is context, not an outstanding defect — nobody needs to go and grant
+`compass_stance_editor` before this workflow is usable. Do not re-raise it as a blocker. It becomes
+live again when the reviewer group actually grows, and §11a is the note explaining how to count
+holders correctly when that happens (`get_user_roles(uid)`, not a row count).
+
 Because of the above, gating approval on the role alone would have shipped a review queue that no
 account on the platform could open — reachable from an admin dashboard, and rejecting every admin who
 clicked it.
@@ -366,6 +372,11 @@ admin's sign-off indistinguishable from an editor's in the record — and confla
 with a technical one is the exact mistake that left migration 061 unused for four months. Admin is the
 path that keeps the workflow usable; `compass_stance_editor` remains the intended one, and the record
 will show which was used every time.
+
+That split is what makes "one admin role for now" safe rather than lossy. Every approval today is
+recorded as `capacity: 'admin'`. When editors are added later, their approvals record as `'editor'`,
+and the audit log distinguishes the two eras without anything needing to be migrated or reinterpreted.
+Widening the gate costs nothing precisely because the capacity was never flattened away.
 
 This also strengthens §7's rejection of an "author cannot approve their own draft" constraint. With one
 holder it would deadlock often; with zero it is unimplementable.
