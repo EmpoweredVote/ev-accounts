@@ -31,7 +31,20 @@ interface ResearchReviewRow {
   batchId: string;
 }
 
-type Tab = 'stances' | 'politicians' | 'research';
+interface TopicRevisionRow {
+  id: string;
+  topicKey: string;
+  revision: number;
+  version: number;
+  changeClass: string;
+  status: string;
+  title: string;
+  publicNote: string;
+  proposedByName: string | null;
+  ladderChanged: boolean;
+}
+
+type Tab = 'stances' | 'politicians' | 'research' | 'topics';
 
 function Badge({ n }: { n: number }) {
   return (
@@ -44,11 +57,16 @@ function Badge({ n }: { n: number }) {
 export function ReviewQueuePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const rawTab = searchParams.get('tab');
-  const tab: Tab = rawTab === 'politicians' ? 'politicians' : rawTab === 'research' ? 'research' : 'stances';
+  const tab: Tab =
+    rawTab === 'politicians' ? 'politicians'
+    : rawTab === 'research' ? 'research'
+    : rawTab === 'topics' ? 'topics'
+    : 'stances';
 
   const [stances, setStances] = useState<StagingStance[]>([]);
   const [politicians, setPoliticians] = useState<StagingPolitician[]>([]);
   const [research, setResearch] = useState<ResearchReviewRow[]>([]);
+  const [topicRevisions, setTopicRevisions] = useState<TopicRevisionRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -66,6 +84,19 @@ export function ReviewQueuePage() {
       setStances(stancesData);
       setPoliticians(politiciansData);
       setResearch(researchData);
+
+      // Deliberately NOT in the Promise.all above. apiFetch throws on a non-2xx,
+      // so folding a fourth endpoint into that array would let one failure blank
+      // the entire queue — including the three tabs that loaded fine. This tab
+      // degrades to empty on its own.
+      try {
+        const { revisions } = await apiFetch<{ revisions: TopicRevisionRow[] }>(
+          '/compass/revisions/queue'
+        );
+        setTopicRevisions(revisions);
+      } catch {
+        setTopicRevisions([]);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load queue');
     } finally {
@@ -90,6 +121,7 @@ export function ReviewQueuePage() {
           { key: 'stances', label: 'Stances', count: stances.length, params: {} },
           { key: 'politicians', label: 'Politicians', count: politicians.length, params: { tab: 'politicians' } },
           { key: 'research', label: 'Research Review', count: research.length, params: { tab: 'research' } },
+          { key: 'topics', label: 'Topic Revisions', count: topicRevisions.length, params: { tab: 'topics' } },
         ] as const).map(({ key, label, count, params }) => (
           <button
             key={key}
@@ -156,6 +188,31 @@ export function ReviewQueuePage() {
                 <div className="text-right text-sm text-gray-500 dark:text-gray-400">
                   <p>by {politician.addedBy}</p>
                   {politician.reviewCount > 0 && <p className="text-xs">{politician.reviewCount}/2 approvals</p>}
+                </div>
+              </Link>
+            ))}
+          </div>
+        )
+      ) : tab === 'topics' ? (
+        topicRevisions.length === 0 ? (
+          <Empty message="No topic revisions pending review." />
+        ) : (
+          <div className="space-y-2">
+            {topicRevisions.map((rev) => (
+              <Link
+                key={rev.id}
+                to={`/admin/review/topics/${rev.id}`}
+                className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-ev-red dark:hover:border-ev-red transition-colors"
+              >
+                <div className="min-w-0 pr-4">
+                  <p className="font-medium text-gray-900 dark:text-white">{rev.topicKey}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">{rev.publicNote}</p>
+                </div>
+                <div className="text-right text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                  <p className="font-medium text-gray-700 dark:text-gray-300">v{rev.version} · {rev.status}</p>
+                  <p className="text-xs">
+                    {rev.changeClass}{rev.ladderChanged ? ' · ladder changed' : ''}
+                  </p>
                 </div>
               </Link>
             ))}
