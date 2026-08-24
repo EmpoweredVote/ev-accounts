@@ -19,6 +19,7 @@ import { CoveragePage } from './pages/admin/CoveragePage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import { ReviewQueuePage } from './pages/admin/ReviewQueuePage';
+import { TopicRevisionReviewPage } from './pages/admin/TopicRevisionReviewPage';
 import { StanceReviewPage } from './pages/admin/StanceReviewPage';
 import { PoliticianStagingReviewPage } from './pages/admin/PoliticianStagingReviewPage';
 import { ResearchReviewPage } from './pages/admin/ResearchReviewPage';
@@ -118,6 +119,7 @@ function App() {
           <Route path="review/stances/:id" element={<StanceReviewPage />} />
           <Route path="review/politicians/:id" element={<PoliticianStagingReviewPage />} />
           <Route path="review/research/:id" element={<ResearchReviewPage />} />
+          <Route path="review/topics/:id" element={<TopicRevisionReviewPage />} />
           <Route path="readrank-quotes" element={<ReadRankQuotesPage />} />
           <Route path="readrank-coverage" element={<ReadRankCoveragePage />} />
         </Route>
