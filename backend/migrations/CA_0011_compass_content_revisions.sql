@@ -1,5 +1,8 @@
 BEGIN;
 
+-- ✅ APPLIED TO PRODUCTION 2026-08-21. Verified: both tables present and empty,
+-- 2 RLS policies, 2 immutability triggers, 8 indexes, rung_map validator correct.
+
 -- =============================================================================
 -- CA_0011: Compass content revisions — additive tables only
 -- =============================================================================

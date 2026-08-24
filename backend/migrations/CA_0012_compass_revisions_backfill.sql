@@ -1,5 +1,12 @@
 BEGIN;
 
+-- ✅ APPLIED TO PRODUCTION 2026-08-21. Verified: 44 revisions / 220 rungs, all
+-- (version 1, revision 1, published, is_current, rung_map NULL); one distinct
+-- public_note across all 44; rationale flagged on exactly the six pre-revised
+-- topics; zero text drift; 184 responses + 1,819 history rows stamped, none
+-- pointing at another topic's revision; views 44/220 with no fan-out; all four
+-- triggers armed AND proven to fire (8/8 guard tests passed).
+
 -- =============================================================================
 -- CA_0012: Backfill compass content revisions from the live rows
 -- =============================================================================
