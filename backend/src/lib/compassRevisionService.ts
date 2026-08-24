@@ -9,7 +9,8 @@
  *      on the topic — 2,014 rows for `taxes`. Nothing in this file touches
  *      politician answers. Publishing is a pointer flip.
  *   2. Its one admin screen served both authors (who work in SQL) and reviewers
- *      (four non-technical `Compass Stance Editor` holders). This layer serves
+ *      (non-technical `Compass Stance Editor` holders — exactly ONE account holds
+ *      that role today, despite four grant rows). This layer serves
  *      REVIEWERS only. Authoring happens in the author's own tooling, which
  *      writes a `status='draft'` revision row via the propose RPC.
  *

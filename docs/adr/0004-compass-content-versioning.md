@@ -55,7 +55,7 @@ individually approve or reject **2,014 rows**. `abortion` 1,902, `climate-change
 **2. One surface was built for two roles that are not the same people.**
 `admin_create_topic_rewrite` requires typing `title`, `short_title`, `question_text` and a `stances`
 JSONB blob into a web form. Our authors are engineers and agents working in SQL and generator
-scripts — they would have to abandon their tooling to use it. Our reviewers are the four holders of
+scripts — they would have to abandon their tooling to use it. Our reviewers are the holders of
 the **`Compass Stance Editor`** role and are mostly non-technical — they were never going to write
 SQL. The form fit neither, and both routed around it: authors to migrations, reviewers to a Google
 Doc.
@@ -273,6 +273,26 @@ inline notice: what changed, rendered as in §9, and a way to answer again. No e
 
 **Only when the meaning moved.** Trigger on a `version` gap, not a `revision` gap — a comma fix must
 never prompt anyone to revisit their position. This is the second thing the two-level numbering buys.
+
+### 11a. Corrected 2026-08-21: the reviewer population is ONE person, not four
+
+🔴 This ADR said "the four holders of the `Compass Stance Editor` role" throughout. That was wrong, and
+it was wrong in a way worth naming: `public.user_roles` holds **four grant rows** for that role and they
+all belong to **one user**. A count of rows reads as a count of people. It is not.
+
+Two decisions in this document were argued partly on that number and should be re-read with one holder
+in mind:
+
+- **§7, approval gate.** "Approval requires a Compass Stance Editor (4 holders today)" is now a
+  single-person gate. That is a bus factor of one on every compass content change.
+- **§7, the rejected "author cannot approve their own draft" option.** It was rejected as liable to
+  "deadlock a small team on a Friday". With one holder it would not deadlock occasionally — it would
+  deadlock **always**, because that person is also the likeliest author. Rejecting it was right, but for
+  a stronger reason than the one recorded.
+
+The design does not change. What changes is that granting the role to the actual reviewers is now a
+**prerequisite to the workflow working at all**, not an afterthought. Note also that the role is granted
+per-user with no scope constraint here, so a second grant row for the same person adds nothing.
 
 ### 11. Decided while implementing CA_0011/CA_0012, not before
 

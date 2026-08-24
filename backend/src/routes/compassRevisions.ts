@@ -5,7 +5,12 @@
  *
  * AUTHORISATION
  * Review routes: requireAuth + requireRole('compass_stance_editor'), matching
- * routes/compassContributor.ts. Four people hold that role today.
+ * routes/compassContributor.ts.
+ *
+ * 🔴 EXACTLY ONE person holds that role today. public.user_roles has FOUR grant
+ * rows for `Compass Stance Editor` but they all belong to a single user, so a
+ * count of rows reads as four reviewers and is wrong. Until the role is granted
+ * to the other reviewers, every route in this file is usable by one account.
  *
  * The history route is deliberately PUBLIC and unauthenticated. It is the reader-
  * facing record (ADR 0004 §9), and /api/compass/topics is already served
