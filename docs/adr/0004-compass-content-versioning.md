@@ -4,7 +4,12 @@ status: proposed
 
 > **Design stage, 2026-08-21. Nothing implemented.** Decided in a grilling session against the live
 > schema; every number below was read from prod, not estimated. The migrations named here are
-> proposed slots in the `CA_` namespace (`CA_0003`–`CA_0006`), not applied work.
+> proposed slots in the `CA_` namespace (`CA_0011`–`CA_0014`), not applied work.
+>
+> **`CA_0011` and `CA_0012` written 2026-08-21**, not yet applied. Writing them settled four things
+> this document had left open or wrong; all are recorded in **§11** and corrected in place above. The
+> proposed slots also moved: `CA_0003`–`CA_0006` were already taken on other remote refs (the `CA_`
+> namespace is at `CA_0010`), so this is `CA_0011`–`CA_0014`.
 >
 > **Amended same day**, after the reader-facing requirement was sharpened to *"a public record of all
 > changes, like Wikipedia, but easier to see the differences"*. Three things moved: the public record
@@ -269,6 +274,43 @@ inline notice: what changed, rendered as in §9, and a way to answer again. No e
 **Only when the meaning moved.** Trigger on a `version` gap, not a `revision` gap — a comma fix must
 never prompt anyone to revisit their position. This is the second thing the two-level numbering buys.
 
+### 11. Decided while implementing CA_0011/CA_0012, not before
+
+Three things this ADR left open or wrong, settled by writing the SQL. Recorded here because each one
+is a decision, not a detail.
+
+**`rung_map` has exactly one spelling.** This document originally offered
+`identity | {"1":2,…} | invalidated`. Pinned to a single form: a JSONB object with exactly the keys
+`'1'`–`'5'`, each value either an integer 1–5 or the string `"invalidated"`. An unchanged ladder is
+written out in full as `{"1":1,…,"5":5}`. **There is no `identity` shorthand** — two spellings of one
+fact is precisely how `compass-topics-reference.md` drifted. `NULL` means "no mapping applies" and is
+legal only for revision 1 or a byte-identical ladder. Validated by
+`inform.is_valid_rung_map()`, proved against 17 cases.
+
+🔴 **The validator must use `CASE`, not a chain of `AND`s.** `jsonb_object_keys()` *raises* on a scalar,
+so the type guard has to be evaluated before the key count. An `AND` chain happened to short-circuit
+when tested against prod, but Postgres does not guarantee `AND` evaluation order, and the plan can
+change once the expression is inlined into a `CHECK` over a populated column. `CASE` is documented to
+evaluate in order. The migration carries this warning inline; do not "simplify" it.
+
+**Drafts are not public.** This ADR said the record is anonymous-readable and did not say what happens
+to unapproved rows. RLS reads are gated on `status IN ('published','superseded')`. `draft` and
+`rejected` are withheld — publishing wording the team *refused* would misrepresent it as something we
+considered saying.
+
+**Immutability is enforced by trigger, not convention.** Content columns physically cannot be
+`UPDATE`d; only `status` and `is_current` move. Append-only is the load-bearing property of the whole
+design, and a convention will not hold it across future migrations written under time pressure — the
+six deleted v1 rows are the evidence.
+
+**The legacy tables are frozen for the transition.** Between `CA_0012` and `CA_0013`, both
+`compass_topics` and the revision table hold `title`/`question_text`: two authoritative copies. An
+in-place edit in that window would leave the revision stale, and `CA_0013`'s repoint would then
+**silently revert published content to older text**. That is the worst available outcome of this
+project. So content `UPDATE`s on `compass_topics`/`compass_stances` raise, pointing the author at the
+new path. Safe to do abruptly precisely because `admin_audit_log` proves the in-place path has never
+been used. `is_live`/`went_live_at`/`updated_at` stay editable so archiving a topic needs no exception.
+
 ## Schema shape
 
 ```sql
@@ -298,9 +340,10 @@ CREATE TABLE inform.compass_topic_revisions (
   public_note     TEXT NOT NULL CHECK (btrim(public_note) <> ''), -- reader-facing edit summary
   review_ref      TEXT,                                          -- Doc / Slack / PR URL
 
-  -- identity | {"1":2,"2":2,...} | invalidated, one entry per rung.
-  -- NULL is only legal when the ladder is byte-identical to the prior revision.
-  rung_map        JSONB,
+  -- Exactly keys '1'..'5'; each value an int 1-5 or the string "invalidated".
+  -- An unchanged ladder is written in full: {"1":1,...,"5":5}. No shorthand (§11).
+  -- NULL only for revision 1, or a ladder byte-identical to its predecessor.
+  rung_map        JSONB CHECK (inform.is_valid_rung_map(rung_map)),
 
   status          inform.revision_status NOT NULL DEFAULT 'draft',
   is_current      BOOLEAN NOT NULL DEFAULT false,
@@ -313,8 +356,15 @@ CREATE TABLE inform.compass_topic_revisions (
   published_at    TIMESTAMPTZ,
 
   UNIQUE (topic_id, revision),
-  CHECK (status <> 'published' OR published_at IS NOT NULL)
+  CHECK (NOT is_current OR status = 'published'),          -- a draft is never served
+  CHECK (status NOT IN ('published','superseded') OR published_at IS NOT NULL)
 );
+
+-- RLS: public reads see published history only; drafts and rejects are withheld (§11).
+ALTER TABLE inform.compass_topic_revisions ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "compass_topic_revisions: public read published"
+  ON inform.compass_topic_revisions FOR SELECT TO anon, authenticated
+  USING (status IN ('published', 'superseded'));
 
 -- Exactly one current revision per topic — the same trick is_live uses today.
 CREATE UNIQUE INDEX compass_topic_revisions_one_current
@@ -363,27 +413,30 @@ rows), unrelated to content. The new tables are deliberately `*_revisions` to av
 
 ## Migration path
 
-`CA_` is its own slot namespace (`CA_1849` and `1849` are different slots) and its counter is at
-`CA_0002`. Global numbering is at 1848. `git fetch origin` before reading either — the check scans
+`CA_` is its own slot namespace (`CA_1849` and `1849` are different slots). Global numbering is at 1848. `git fetch origin` before reading either — the check scans
 every remote-tracking ref.
 
-1. **`CA_0003`** — create the revision tables, enums and indexes. No data movement. Non-breaking.
-2. **`CA_0004`** — backfill revision 1 for all 44 topics from the current rows, `is_current = true`,
-   `status = 'published'`, `version = 1`, `change_class = 'substantive'`, `rung_map = 'identity'`,
-   `rationale = 'Backfilled at introduction of versioning; content predates this ADR and its original
-   reasoning was not recorded.'` and `public_note = 'Recorded as the first tracked version of this
-   topic. Earlier wording was not kept.'` — which is true, and is the honest first entry in a public
-   log. Copy the 220 ladder rows. Backfill `answered_revision_id` on 184 responses and 1,818
-   change-history rows. Create both compat views. Post-verify gate asserting 44/44/220.
-   🔴 **The six topics already at `version = 2` are backfilled as revision 1, version 1.** Their v1
-   content was deleted in April and is not recoverable from the database. **Decided 2026-08-21: we are
-   not reconstructing it.** The public log's first entry says so plainly rather than implying the topic
-   has never changed. The backfill must not invent prior wording under any circumstances.
-3. **`CA_0005`** — repoint the ~13 backend files to `compass_topics_live` / `compass_stances_live`,
+1. **`CA_0011`** — create the revision tables, enums and indexes. No data movement. Non-breaking.
+2. **`CA_0012`** — backfill all 44 topics from the current rows as `revision = 1`, `is_current = true`,
+   `status = 'published'`, `change_class = 'substantive'` (founding content, not an edit),
+   `rung_map = NULL`, with a `rationale` recording that the original reasoning was never captured. Copy
+   the 220 ladder rows. Stamp `answered_revision_id` on every `compass_responses` and
+   `compass_change_history` row. Create both compat views. Arm the legacy freeze (§11).
+   🔴 **The six topics already at `version = 2` keep `version = 2`** — corrected from this ADR's first
+   draft, which said version 1. `revision = 1` because it is the first revision *we stored*; `version`
+   stays at the number that already existed and is already readable through `/api/compass/topics`.
+   Writing version 1 would erase the fact that a change happened, which is the opposite of what the
+   table is for. Their `public_note` says the earlier wording was not kept. Their v1 content was
+   deleted in April and **is not recoverable — decided 2026-08-21, we are not reconstructing it.** The
+   backfill must not invent prior wording under any circumstances.
+   🔴 **Assert invariants, not literal counts.** `compass_change_history` went from 1,818 to 1,819 rows
+   during the hour this ADR was drafted. The gate asserts "nothing left `NULL`" and "revision text
+   equals source text", never a hardcoded number.
+3. **`CA_0013`** — repoint the ~13 backend files to `compass_topics_live` / `compass_stances_live`,
    then drop `title`, `short_title`, `question_text`, `version`, `is_live`, `is_active`, `went_live_at`
    from `inform.compass_topics`. `is_active` is `GENERATED ALWAYS AS (is_live)` and must be dropped
    with it. **Ship the repoint before the drop**, in that order, in a shared-blast-radius schema.
-4. **`CA_0006`** — the same split for `essentials.readrank_questions` (2,431 rows), keeping its `id` so
+4. **`CA_0014`** — the same split for `essentials.readrank_questions` (2,431 rows), keeping its `id` so
    `essentials.quotes.question_id` is untouched.
 5. Then, and only then, drop the superseded 061 machinery: `inform.topic_rewrites`,
    `topic_rewrite_stance_proposals`, the eight RPCs, `topicRewriteService.ts`, `routes/topicRewrites.ts`
