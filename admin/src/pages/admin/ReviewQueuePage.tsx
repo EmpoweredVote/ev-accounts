@@ -46,11 +46,60 @@ interface TopicRevisionRow {
 
 type Tab = 'stances' | 'politicians' | 'research' | 'topics';
 
-function Badge({ n }: { n: number }) {
+/**
+ * One queue's outcome. `rows` is meaningless unless `error` is null — an empty
+ * array and a failed fetch are DIFFERENT states and must not render the same.
+ * Collapsing them is how "we could not load this" becomes "there is nothing
+ * here", which is the more dangerous of the two because it looks like good news.
+ */
+interface QueueState<T> {
+  rows: T[];
+  error: string | null;
+}
+
+const EMPTY = <T,>(): QueueState<T> => ({ rows: [], error: null });
+
+function reason(err: unknown, what: string): string {
+  return err instanceof Error ? err.message : `Failed to load ${what}`;
+}
+
+/** Settle a queue fetch into a QueueState instead of throwing. */
+async function settle<T>(what: string, fn: () => Promise<T[]>): Promise<QueueState<T>> {
+  try {
+    return { rows: await fn(), error: null };
+  } catch (err) {
+    return { rows: [], error: reason(err, what) };
+  }
+}
+
+function Badge({ q }: { q: QueueState<unknown> }) {
+  // A count of 0 beside a failed fetch would assert something we do not know.
+  if (q.error) {
+    return (
+      <span
+        title={q.error}
+        className="ml-1.5 text-xs bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 px-1.5 py-0.5 rounded"
+      >
+        !
+      </span>
+    );
+  }
   return (
     <span className="ml-1.5 text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-1.5 py-0.5 rounded">
-      {n}
+      {q.rows.length}
     </span>
+  );
+}
+
+function LoadError({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div className="text-center py-12">
+      <p className="text-sm text-amber-700 dark:text-amber-400">Could not load this queue.</p>
+      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{message}</p>
+      <button onClick={onRetry} className="mt-3 text-sm underline text-gray-600 dark:text-gray-300">
+        Retry
+      </button>
+    </div>
   );
 }
 
@@ -63,45 +112,41 @@ export function ReviewQueuePage() {
     : rawTab === 'topics' ? 'topics'
     : 'stances';
 
-  const [stances, setStances] = useState<StagingStance[]>([]);
-  const [politicians, setPoliticians] = useState<StagingPolitician[]>([]);
-  const [research, setResearch] = useState<ResearchReviewRow[]>([]);
-  const [topicRevisions, setTopicRevisions] = useState<TopicRevisionRow[]>([]);
+  const [stances, setStances] = useState<QueueState<StagingStance>>(EMPTY);
+  const [politicians, setPoliticians] = useState<QueueState<StagingPolitician>>(EMPTY);
+  const [research, setResearch] = useState<QueueState<ResearchReviewRow>>(EMPTY);
+  const [topicRevisions, setTopicRevisions] = useState<QueueState<TopicRevisionRow>>(EMPTY);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => { loadData(); }, []);
 
+  /**
+   * Each queue is fetched and settled INDEPENDENTLY.
+   *
+   * This used to be a Promise.all. apiFetch throws on any non-2xx, and
+   * Promise.all rejects on the first rejection — so a single failing endpoint
+   * replaced the whole page with one error, hiding the queues that had loaded
+   * perfectly well. One backend hiccup made every review queue unreachable.
+   *
+   * Now a failure is scoped to the tab it belongs to: the other tabs still work,
+   * the failed tab says so and offers a retry, and its badge shows "!" rather
+   * than a zero it cannot justify.
+   */
   async function loadData() {
     setLoading(true);
-    setError(null);
-    try {
-      const [stancesData, politiciansData, researchData] = await Promise.all([
-        apiFetch<StagingStance[]>('/staging/stances?status=needs_review'),
-        apiFetch<StagingPolitician[]>('/staging/politicians?status=needs_review'),
-        apiFetch<ResearchReviewRow[]>('/admin/research-review'),
-      ]);
-      setStances(stancesData);
-      setPoliticians(politiciansData);
-      setResearch(researchData);
-
-      // Deliberately NOT in the Promise.all above. apiFetch throws on a non-2xx,
-      // so folding a fourth endpoint into that array would let one failure blank
-      // the entire queue — including the three tabs that loaded fine. This tab
-      // degrades to empty on its own.
-      try {
-        const { revisions } = await apiFetch<{ revisions: TopicRevisionRow[] }>(
-          '/compass/revisions/queue'
-        );
-        setTopicRevisions(revisions);
-      } catch {
-        setTopicRevisions([]);
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load queue');
-    } finally {
-      setLoading(false);
-    }
+    const [s, p, r, t] = await Promise.all([
+      settle('stances', () => apiFetch<StagingStance[]>('/staging/stances?status=needs_review')),
+      settle('politicians', () => apiFetch<StagingPolitician[]>('/staging/politicians?status=needs_review')),
+      settle('research review', () => apiFetch<ResearchReviewRow[]>('/admin/research-review')),
+      settle('topic revisions', async () =>
+        (await apiFetch<{ revisions: TopicRevisionRow[] }>('/compass/revisions/queue')).revisions
+      ),
+    ]);
+    setStances(s);
+    setPoliticians(p);
+    setResearch(r);
+    setTopicRevisions(t);
+    setLoading(false);
   }
 
   return (
@@ -118,11 +163,11 @@ export function ReviewQueuePage() {
 
       <div className="flex gap-1 mb-6 border-b border-gray-200 dark:border-gray-700">
         {([
-          { key: 'stances', label: 'Stances', count: stances.length, params: {} },
-          { key: 'politicians', label: 'Politicians', count: politicians.length, params: { tab: 'politicians' } },
-          { key: 'research', label: 'Research Review', count: research.length, params: { tab: 'research' } },
-          { key: 'topics', label: 'Topic Revisions', count: topicRevisions.length, params: { tab: 'topics' } },
-        ] as const).map(({ key, label, count, params }) => (
+          { key: 'stances', label: 'Stances', queue: stances, params: {} },
+          { key: 'politicians', label: 'Politicians', queue: politicians, params: { tab: 'politicians' } },
+          { key: 'research', label: 'Research Review', queue: research, params: { tab: 'research' } },
+          { key: 'topics', label: 'Topic Revisions', queue: topicRevisions, params: { tab: 'topics' } },
+        ] as const).map(({ key, label, queue, params }) => (
           <button
             key={key}
             onClick={() => setSearchParams(params)}
@@ -133,24 +178,21 @@ export function ReviewQueuePage() {
             }`}
           >
             {label}
-            {!loading && <Badge n={count} />}
+            {!loading && <Badge q={queue} />}
           </button>
         ))}
       </div>
 
       {loading ? (
         <p className="text-sm text-gray-500 dark:text-gray-400">Loading...</p>
-      ) : error ? (
-        <div className="text-red-600 dark:text-red-400">
-          <p className="text-sm">{error}</p>
-          <button onClick={loadData} className="mt-2 text-sm underline">Retry</button>
-        </div>
       ) : tab === 'stances' ? (
-        stances.length === 0 ? (
+        stances.error ? (
+          <LoadError message={stances.error} onRetry={loadData} />
+        ) : stances.rows.length === 0 ? (
           <Empty message="No stances pending review." />
         ) : (
           <div className="space-y-2">
-            {stances.map((stance) => (
+            {stances.rows.map((stance) => (
               <Link
                 key={stance.id}
                 to={`/admin/review/stances/${stance.id}`}
@@ -169,11 +211,13 @@ export function ReviewQueuePage() {
           </div>
         )
       ) : tab === 'politicians' ? (
-        politicians.length === 0 ? (
+        politicians.error ? (
+          <LoadError message={politicians.error} onRetry={loadData} />
+        ) : politicians.rows.length === 0 ? (
           <Empty message="No politicians pending review." />
         ) : (
           <div className="space-y-2">
-            {politicians.map((politician) => (
+            {politicians.rows.map((politician) => (
               <Link
                 key={politician.id}
                 to={`/admin/review/politicians/${politician.id}`}
@@ -194,11 +238,13 @@ export function ReviewQueuePage() {
           </div>
         )
       ) : tab === 'topics' ? (
-        topicRevisions.length === 0 ? (
+        topicRevisions.error ? (
+          <LoadError message={topicRevisions.error} onRetry={loadData} />
+        ) : topicRevisions.rows.length === 0 ? (
           <Empty message="No topic revisions pending review." />
         ) : (
           <div className="space-y-2">
-            {topicRevisions.map((rev) => (
+            {topicRevisions.rows.map((rev) => (
               <Link
                 key={rev.id}
                 to={`/admin/review/topics/${rev.id}`}
@@ -218,11 +264,13 @@ export function ReviewQueuePage() {
             ))}
           </div>
         )
-      ) : research.length === 0 ? (
+      ) : research.error ? (
+        <LoadError message={research.error} onRetry={loadData} />
+      ) : research.rows.length === 0 ? (
         <Empty message="No research stances pending review." />
       ) : (
         <div className="space-y-2">
-          {research.map((row) => (
+          {research.rows.map((row) => (
             <Link
               key={row.id}
               to={`/admin/review/research/${row.id}`}
