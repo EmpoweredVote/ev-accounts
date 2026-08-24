@@ -381,6 +381,28 @@ Widening the gate costs nothing precisely because the capacity was never flatten
 This also strengthens §7's rejection of an "author cannot approve their own draft" constraint. With one
 holder it would deadlock often; with zero it is unimplementable.
 
+### 11d. A rejected draft must not block future proposals — CA_0016
+
+Found the first time the reject path was ever exercised, which is a fair argument for exercising every
+path before trusting any of it.
+
+`admin_propose_topic_revision` numbered a new draft as `current.revision + 1`. But
+`UNIQUE (topic_id, revision)` covers **every** row, and rejected and superseded revisions are
+**retained by design** — a rejected proposal is part of the record of what the team refused (§7). So the
+moment any draft was rejected its number was consumed forever, and every later proposal for that topic
+died on a duplicate key. **One rejection permanently bricked a topic**, making "request changes, then
+send a revised version" impossible — the ordinary path a review workflow exists to support.
+
+`revision` is a monotonic counter over all rows, so it must be `max(revision) + 1`.
+
+🔴 **`version` deliberately still derives from the CURRENT revision, and the two must not be unified.**
+They answer different questions (§3): `revision` counts every write ever made, including refused ones;
+`version` is the public milestone and follows the *published* lineage. A rejected v2 must not push the
+next genuine proposal to v3. The live lineage on `judicial-bail-pretrial` shows this working — revision
+3 carries version 2, because revision 2 was rejected rather than published.
+
+The failure was loud rather than silent, which is the only reason it corrupted nothing.
+
 ## Schema shape
 
 ```sql
