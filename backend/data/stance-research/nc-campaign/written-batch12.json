@@ -1,0 +1,116 @@
+{
+  "rows": [
+    {
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+      "full_name": "Jordan Lopez",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+      "full_name": "Jordan Lopez",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+      "full_name": "Jordan Lopez",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+      "full_name": "Jordan Lopez",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+      "full_name": "Jordan Lopez",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+      "full_name": "Lindsey Prather",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c",
+      "full_name": "Brian Turner",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c",
+      "full_name": "Brian Turner",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c",
+      "full_name": "Brian Turner",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c",
+      "full_name": "Brian Turner",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "724dbd0e-5834-4622-8302-bf76c3762d9c",
+      "full_name": "Jennifer Balkcom",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 4
+    }
+  ]
+}

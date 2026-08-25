@@ -5,6 +5,8 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 12 | 2026-08-25 | NC House districts 111-120 | 10 | **16** | 0 | `2026-08-25-nc-batch12.csv` | `written-batch12.json` |
+| 11 | 2026-08-25 | NC House districts 101-110 | 10 | **14** | 0 | `2026-08-25-nc-batch11.csv` | `written-batch11.json` |
 | 10 | 2026-08-24 | NC House districts 91-100 | 10 | **15** | 0 | `2026-08-24-nc-batch10.csv` | `written-batch10.json` |
 | 09 | 2026-08-24 | NC House districts 81-90 (+3 backfills) | 10 | **11** | 0 | `2026-08-24-nc-batch09.csv` | `written-batch09.json` |
 | 08 | 2026-08-24 | NC House districts 71-80 | 10 | **14** | 0 | `2026-08-24-nc-batch08.csv` | `written-batch08.json` |
@@ -522,3 +524,52 @@ fetch, as it did for Clark and Rubin.
 Blowing Rock, Boone and Watauga County build housing **exclusively for their own employees**. It
 appropriates nothing, and chair 1's "anyone who needs a home" is contradicted by the employees-only
 limit. A local enabling act for one employer is not a position on the state's role in housing.
+
+## Batches 11-12 — NC House districts 101-120 (2026-08-25)
+
+**30 rows. THE HOUSE IS COMPLETE: 78 of 120 members stanced, 187 rows.**
+
+| District | Member | Rows |
+|---|---|---|
+| 101 | Carolyn G. Logan | redistricting 1 · abortion 2 · housing 3 · childcare 2 · ai-regulation 3 |
+| 102 | Becky Carney | redistricting 1 · abortion 2 · housing 3 |
+| 103 | Laura Budd | redistricting 1 · abortion 2 |
+| 104 | Brandon Lofton | housing 3 |
+| 106 | Carla D. Cunningham | abortion 2 · housing 3 |
+| 107 | Aisha O. Dew | abortion 2 |
+| 112 | Jordan Lopez | redistricting 1 · housing 3 · childcare 2 · data-centers 1 · campaign-finance 2 |
+| 115 | Lindsey Prather | redistricting 1 · abortion 2 · housing 3 · data-centers 1 · ai-regulation 3 · taxes 1 |
+| 116 | Brian Turner | redistricting 1 · abortion 2 · housing 3 · data-centers 1 |
+| 117 | Jennifer Balkcom | homelessness 4 |
+| 105, 108-111, 113, 118-120 | Cotham, Torbett, Loftis, Hastings, Scott, Jake Johnson, Pless, Ferguson, Gillespie | 0 |
+
+Prather ties Harrison for the widest record at six rows.
+
+### Cunningham sponsors both a subsidy bill and a deregulation bill — that is chair 3, not a conflict
+
+She is a primary sponsor of House Bill 1072 ($50M in below-market loans at 80% AMI) **and** of House
+Bill 765 (pure planning deregulation). Chair 3 is the only chair that accommodates both — chair 4 has
+no room for public money. Same reasoning that put Ager at chair 3 on House Bill 1056, which carries
+both halves in a single bill. **Two bills pointing at different mechanisms of the same chair is
+corroboration; two bills pointing at different chairs is a conflict.**
+
+### Three refusals from this stretch
+
+- **House Bill 306** (Pickett): a local act letting three named jurisdictions build housing only for
+  their own employees. Chair 1's "anyone who needs a home" is contradicted by that limit.
+- **House Bill 939** (Scott), school chaplains, is squarely on the `religious-freedom` question — the
+  ladder asks what role religion should play in public institutions — but **no chair names religion
+  *inside* a public institution.** Every chair on that ladder is framed around exemptions and
+  anti-discrimination balance. A near-miss worth noting for the season 2 review.
+- **House Bill 876** alone (Gillespie) is development review timelines. Zenger's chair 4 rested on
+  House Bill 765 plus two others; a single timelines bill does not reach "cut regulations and zoning
+  rules so private developers can build more housing".
+
+## ▶️ HOUSE COMPLETE — what remains
+
+| Cohort | Status |
+|---|---|
+| NC House, 120 seats | ✅ **done — 78 stanced, 187 rows** |
+| NC Senate, 50 seats | **next.** 1 stanced (Mayfield, pilot). Needs Senate bill sponsor lists: S467, S381, S439 are already chair-verified. |
+| Wave 2b locals, 32 | not started. **Probe Legistar/Granicus per body first** — Durham returned HTTP 500 on the obvious client slug. |
+| PDF-read queue | H565, H727, H437, H87 — served text and current title cannot be reconciled. H565 alone would seat `ai-regulation` for four members. |
