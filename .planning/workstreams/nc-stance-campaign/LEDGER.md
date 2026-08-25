@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 04 | 2026-08-24 | NC House districts 31-40 | 10 | **26** | 0 | `2026-08-24-nc-batch04.csv` | `written-batch04.json` |
 | 03 | 2026-08-24 | NC House districts 21-30 (+3 backfills) | 10 | **17** | 0 | `2026-08-24-nc-batch03.csv` | `written-batch03.json` |
 | 02 | 2026-08-24 | NC House districts 11-20 | 10 | **10** | 0 | `2026-08-24-nc-batch02.csv` | `written-batch02.json` |
 | 01 | 2026-08-24 | NC House districts 1-10 | 10 | **8** | 0 | `2026-08-24-nc-batch01.csv` | `written-batch01.json` |
@@ -246,3 +247,56 @@ no camping provisions at all. So a later edition added them, and **reading editi
 bill**. The same shape explains H565 and H727. Where the later editions still do not show the current
 subject, the bill stays unresolved and the spoke stays blank — that is now three bills
 (H437, H565, H727) parked for a PDF read rather than guessed.
+
+## Batch notes — batch 04, NC House districts 31-40 (2026-08-24)
+
+**26 rows, and for the first time every member in the batch seated something.** Three times the
+previous best, on **four** new source reads instead of twenty-five, because the batch was worked
+bill-first: pull each chair-shaped bill's full sponsor list once, then read it across the roster.
+
+| District | Member | Rows |
+|---|---|---|
+| 31 | Zack Hawkins | redistricting 1 · abortion 2 · campaign-finance 2 · housing 3 |
+| 32 | Bryan Cohn | redistricting 1 · housing 3 |
+| 33 | Monika Johnson-Hostler | abortion 2 · housing 3 |
+| 34 | Tim Longest | redistricting 1 · abortion 2 · housing 3 · ai-regulation 3 |
+| 35 | Mike Schietzelt | ai-regulation 3 · housing 3 |
+| 36 | Julie von Haefen | redistricting 1 · abortion 2 · housing 3 |
+| 37 | Erin Paré | **childcare 4** |
+| 38 | Abe Jones | redistricting 1 |
+| 39 | James Roberson | redistricting 1 · abortion 2 · housing 3 · data-centers 1 |
+| 40 | Phil Rubin | redistricting 1 · abortion 2 · housing 3 |
+
+### 🔴 CORRECTION APPLIED IN PROD: Alston was described as a primary sponsor and is not
+
+House Bill 1056's primary sponsor is **Dahle alone**; Alston is a cosponsor. The batch 03 row said
+"Alston is a primary sponsor", which is wrong in text a voter reads. The chair is unaffected —
+cosponsorship supports chair 3 the same way it does for Ager — so the fix was the sentence, not the
+value. Updated in place.
+
+**Root cause:** a member's `IntroducedBills` page was read as though every bill listed were primarily
+sponsored. It is not. **Confirm primary sponsorship against the BILL's sponsor list, never against
+the member's bill list.** Every other committed row claiming primary sponsorship was audited against
+its bill's sponsor list and is correct.
+
+This also means a reasoning-only correction cannot go through `push-nc-stances.mjs`: the value is
+unchanged, so the row lands in the `unchanged` bucket and is skipped. It needs a targeted UPDATE.
+
+### `childcare` finally has a chair on the other side
+
+House Bill 412 lowers the lead-teacher requirement to one per two groups, widens who qualifies as a
+lead teacher, allows larger toddler groups, deems school buildings compliant for after-school care,
+and makes star ratings voluntary so reimbursement no longer depends on them — while leaving subsidy
+rates alone. That is chair 4's first clause exactly. Chair 3 needs provider training and facility
+grants (absent) and chair 5 needs subsidies gone (contradicted), so chair 4 uniquely fits. Set
+against G. Brown's chair 2 on House Bill 316, the axis now has real spread.
+
+### Hawkins is blank on `ai-regulation`, and it took three bills to see why
+
+He is a primary sponsor of House Bill 934 (developer immunity), House Bill 1161 "Omnibus Artificial
+Intelligence Protections" **and** House Bill 1177 "Consumer Protection AI Bill of Rights". That is
+chair disagreement inside one member's own record. Rubin is blank for a different reason: he is a
+cosponsor of House Bill 934 only, and that bill pins nothing by itself.
+
+⚠ **House Bill 1161 and House Bill 1177 are unread.** They may seat `ai-regulation` for members who
+are not on House Bill 934. Worth pulling both sponsor lists before the next AI-heavy batch.
