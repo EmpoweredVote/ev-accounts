@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "politician_id": "2f1ccb1c-4c03-4213-b4be-759ff2cad119",
+      "full_name": "Mujtaba A. Mohammed",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f138d19b-55e1-4f3b-8a44-2802e546435a",
+      "full_name": "Gladys A. Robinson",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
+      "full_name": "Kandie D. Smith",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+      "full_name": "Joyce Waddell",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+      "full_name": "Natalie S. Murdock",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07",
+      "full_name": "Julie Mayfield",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "e91f21c8-43b5-4e33-a3eb-a8206817df78",
+      "full_name": "DeAndrea Salvador",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab",
+      "full_name": "Michael Garrett",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+      "full_name": "Natalie S. Murdock",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+      "full_name": "Val Applewhite",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
+      "full_name": "Kandie D. Smith",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+      "full_name": "Joyce Waddell",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    }
+  ]
+}

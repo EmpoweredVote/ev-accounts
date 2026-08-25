@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "politician_id": "3ab20c62-4e80-49f7-a11d-b95363e687d1",
+      "full_name": "B. Ray Jeffers",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "4f7eefdf-d9ba-405e-ba9f-4bff28113da6",
+      "full_name": "Steve Tyson",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6728cd29-6abe-448b-8772-ff04693883bb",
+      "full_name": "Joseph Pike",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "81f31ead-9f94-4cdf-a00e-a7402a1d2b1d",
+      "full_name": "Matthew Winslow",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00",
+      "full_name": "Gloristine Brown",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00",
+      "full_name": "Gloristine Brown",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00",
+      "full_name": "Gloristine Brown",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "faa95b98-4d86-4134-ac92-4f191e69d0b6",
+      "full_name": "John R. Bell, IV",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "rows": [
+    {
+      "politician_id": "f54011e6-e7ed-4677-b0cd-b6c830c9b060",
+      "full_name": "Martin Moore",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "17040839-338d-406e-8048-ba7b6e4a70f3",
+      "full_name": "Terri Wells",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d6cd037b-81de-4501-a7fe-107ebe998779",
+      "full_name": "Parker Sloan",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "40fe7f82-f23a-4f89-9d41-f57ae09472df",
+      "full_name": "Al Whitesides",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "9d213c47-7dc3-4363-bf01-c44cd0467158",
+      "full_name": "Amanda Edwards",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "aee79a53-a820-43a5-83e2-0f9036e7271b",
+      "full_name": "Drew Ball",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "01f6ca01-b22e-4fe1-b210-e4a4a5151b76",
+      "full_name": "Jennifer Horton",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    }
+  ]
+}

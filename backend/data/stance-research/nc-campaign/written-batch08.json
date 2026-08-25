@@ -1,0 +1,102 @@
+{
+  "rows": [
+    {
+      "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+      "full_name": "Kanika Brown",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+      "full_name": "Kanika Brown",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+      "full_name": "Kanika Brown",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+      "full_name": "Kanika Brown",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2",
+      "full_name": "Amber M. Baker",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2",
+      "full_name": "Amber M. Baker",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2",
+      "full_name": "Amber M. Baker",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2",
+      "full_name": "Amber M. Baker",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "ba95ecc9-d652-4397-b19d-a1841cbceb65",
+      "full_name": "Jonathan L. Almond",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "b5a36d1a-7d48-45ec-8052-57d16b265379",
+      "full_name": "Jeff Zenger",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "45274204-828d-4292-8466-36f9681f99ec",
+      "full_name": "Donny Lambeth",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "3f90c6a1-21b8-4e28-a94f-db3b584af143",
+      "full_name": "Harry Warren",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216",
+      "full_name": "Neal Jackson",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216",
+      "full_name": "Neal Jackson",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 4
+    }
+  ]
+}

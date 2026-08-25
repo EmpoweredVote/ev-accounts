@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "politician_id": "92bd7516-5718-4613-a0a1-5a6f42fa40eb",
+      "full_name": "Lisa Grafstein",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab",
+      "full_name": "Michael Garrett",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "8d19be64-ab26-4b43-b046-3dac10be5f32",
+      "full_name": "Woodson Bradley",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    }
+  ]
+}

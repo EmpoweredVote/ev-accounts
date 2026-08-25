@@ -1,0 +1,102 @@
+{
+  "rows": [
+    {
+      "politician_id": "42b9cee0-e1c3-4230-a542-ed8cec9e5a2a",
+      "full_name": "Leonardo \"Leo\" Williams",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "bf70b1c7-ab1d-48ef-9cc1-ba484d5a6434",
+      "full_name": "Javiera Caballero",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "1dfe0787-ceed-46e7-93f9-c005e81e3bd1",
+      "full_name": "Nate Baker",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "6aa4243e-fc21-4a1d-acdd-3889d5c79301",
+      "full_name": "Shanetta Burris",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "a373bf42-5591-4225-82f0-34cc3639cd29",
+      "full_name": "Chelsea Cook",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "903de6c5-aee9-45db-b29e-dfd34b3ee298",
+      "full_name": "Matt Kopac",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "fbf23fa3-e59d-46d6-b483-ef45546ae2b3",
+      "full_name": "Carl Rist",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "42b9cee0-e1c3-4230-a542-ed8cec9e5a2a",
+      "full_name": "Leonardo \"Leo\" Williams",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "bf70b1c7-ab1d-48ef-9cc1-ba484d5a6434",
+      "full_name": "Javiera Caballero",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "1dfe0787-ceed-46e7-93f9-c005e81e3bd1",
+      "full_name": "Nate Baker",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6aa4243e-fc21-4a1d-acdd-3889d5c79301",
+      "full_name": "Shanetta Burris",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "a373bf42-5591-4225-82f0-34cc3639cd29",
+      "full_name": "Chelsea Cook",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "903de6c5-aee9-45db-b29e-dfd34b3ee298",
+      "full_name": "Matt Kopac",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "fbf23fa3-e59d-46d6-b483-ef45546ae2b3",
+      "full_name": "Carl Rist",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "chair_after": 2
+    }
+  ]
+}

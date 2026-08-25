@@ -1,0 +1,186 @@
+{
+  "rows": [
+    {
+      "politician_id": "ceb5b1cb-144a-44b9-945f-e40225264428",
+      "full_name": "Zack Hawkins",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "ceb5b1cb-144a-44b9-945f-e40225264428",
+      "full_name": "Zack Hawkins",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "ceb5b1cb-144a-44b9-945f-e40225264428",
+      "full_name": "Zack Hawkins",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "ceb5b1cb-144a-44b9-945f-e40225264428",
+      "full_name": "Zack Hawkins",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6b358d6c-19c8-4c31-8ff4-56d6938f2795",
+      "full_name": "Bryan Cohn",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "6b358d6c-19c8-4c31-8ff4-56d6938f2795",
+      "full_name": "Bryan Cohn",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "50460952-dd8a-4d81-aa0f-77986ded987e",
+      "full_name": "Monika Johnson-Hostler",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "50460952-dd8a-4d81-aa0f-77986ded987e",
+      "full_name": "Monika Johnson-Hostler",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+      "full_name": "Tim Longest",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+      "full_name": "Tim Longest",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+      "full_name": "Tim Longest",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+      "full_name": "Tim Longest",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
+      "full_name": "Mike Schietzelt",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
+      "full_name": "Mike Schietzelt",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "e4af46e2-165a-444a-a671-d7517c621632",
+      "full_name": "Julie von Haefen",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e4af46e2-165a-444a-a671-d7517c621632",
+      "full_name": "Julie von Haefen",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e4af46e2-165a-444a-a671-d7517c621632",
+      "full_name": "Julie von Haefen",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "91c8abbc-8c76-42f2-8607-47ee476a0a8e",
+      "full_name": "Erin Paré",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "0eff4a03-65bf-42d8-bb07-6ad1ab8dae97",
+      "full_name": "Abe Jones",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e72ad020-c534-4730-8119-e77948e96c46",
+      "full_name": "James Roberson",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e72ad020-c534-4730-8119-e77948e96c46",
+      "full_name": "James Roberson",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e72ad020-c534-4730-8119-e77948e96c46",
+      "full_name": "James Roberson",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "e72ad020-c534-4730-8119-e77948e96c46",
+      "full_name": "James Roberson",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974",
+      "full_name": "Phil Rubin",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974",
+      "full_name": "Phil Rubin",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974",
+      "full_name": "Phil Rubin",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    }
+  ]
+}

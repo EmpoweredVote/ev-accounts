@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "politician_id": "ecb7641d-37ff-47ab-a54f-f53bef20aa61",
+      "full_name": "Brian Echevarria",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "22d8609a-82af-4155-97f5-63297aaf4190",
+      "full_name": "Jeffrey C. McNeely",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "2219ec2a-f45f-43e9-863c-0265b420d1ac",
+      "full_name": "Dudley Greene",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+      "full_name": "Mary Belk",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+      "full_name": "Mary Belk",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+      "full_name": "Mary Belk",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+      "full_name": "Mary Belk",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+      "full_name": "Mary Belk",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "17c741bd-42b9-4d9a-8cb0-c4d4505b5df1",
+      "full_name": "Dean Arp",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216",
+      "full_name": "Neal Jackson",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "a16b4745-7388-4818-abf4-ee50d4d4c520",
+      "full_name": "Ben T. Moss, Jr.",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "chair_after": 4
+    }
+  ]
+}

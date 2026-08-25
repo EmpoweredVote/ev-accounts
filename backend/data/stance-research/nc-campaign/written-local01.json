@@ -1,0 +1,144 @@
+{
+  "rows": [
+    {
+      "politician_id": "ba76e3fa-2450-4c48-88bd-30c4f7e1698e",
+      "full_name": "Sage Turner",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "b098dcd4-55e3-4e74-95b1-1f28c3b479c9",
+      "full_name": "Kim Roney",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "2d6dfc75-7fef-4c68-9f14-e2078471a012",
+      "full_name": "Esther E. Manheimer",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "d9703ad7-643d-4ce0-9961-5500eae7fdd8",
+      "full_name": "S. Antanette Mosley",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "62b659e4-6bd3-46b9-8fae-4d92183b9a1e",
+      "full_name": "Bo Hess",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "b1c0297d-82b5-4a05-be99-14332e8712fa",
+      "full_name": "Sheneika Smith",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "75a15642-c10f-4a20-a934-129774d18829",
+      "full_name": "Maggie Ullman",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "b098dcd4-55e3-4e74-95b1-1f28c3b479c9",
+      "full_name": "Kim Roney",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d9703ad7-643d-4ce0-9961-5500eae7fdd8",
+      "full_name": "S. Antanette Mosley",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "2d6dfc75-7fef-4c68-9f14-e2078471a012",
+      "full_name": "Esther E. Manheimer",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "62b659e4-6bd3-46b9-8fae-4d92183b9a1e",
+      "full_name": "Bo Hess",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "b1c0297d-82b5-4a05-be99-14332e8712fa",
+      "full_name": "Sheneika Smith",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "ba76e3fa-2450-4c48-88bd-30c4f7e1698e",
+      "full_name": "Sage Turner",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "75a15642-c10f-4a20-a934-129774d18829",
+      "full_name": "Maggie Ullman",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "b098dcd4-55e3-4e74-95b1-1f28c3b479c9",
+      "full_name": "Kim Roney",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "b1c0297d-82b5-4a05-be99-14332e8712fa",
+      "full_name": "Sheneika Smith",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "2d6dfc75-7fef-4c68-9f14-e2078471a012",
+      "full_name": "Esther E. Manheimer",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d9703ad7-643d-4ce0-9961-5500eae7fdd8",
+      "full_name": "S. Antanette Mosley",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "62b659e4-6bd3-46b9-8fae-4d92183b9a1e",
+      "full_name": "Bo Hess",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "75a15642-c10f-4a20-a934-129774d18829",
+      "full_name": "Maggie Ullman",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "chair_after": 3
+    }
+  ]
+}

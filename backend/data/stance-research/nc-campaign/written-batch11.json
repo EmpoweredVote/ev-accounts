@@ -1,0 +1,102 @@
+{
+  "rows": [
+    {
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7",
+      "full_name": "Carolyn G. Logan",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7",
+      "full_name": "Carolyn G. Logan",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7",
+      "full_name": "Carolyn G. Logan",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7",
+      "full_name": "Carolyn G. Logan",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "cd3b506c-acf1-48b5-8b56-a43c79ac83e7",
+      "full_name": "Carolyn G. Logan",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2",
+      "full_name": "Becky Carney",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2",
+      "full_name": "Becky Carney",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2",
+      "full_name": "Becky Carney",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "87705a07-011d-4a10-9b21-f51fdda6e130",
+      "full_name": "Laura Budd",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "87705a07-011d-4a10-9b21-f51fdda6e130",
+      "full_name": "Laura Budd",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e81ce3e4-8b6c-4c57-82c1-733ecd1ba931",
+      "full_name": "Brandon Lofton",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "9a74561d-7bd2-42b7-83d1-810475545297",
+      "full_name": "Carla D. Cunningham",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "9a74561d-7bd2-42b7-83d1-810475545297",
+      "full_name": "Carla D. Cunningham",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "24aa0b9f-356a-45af-a24d-8f66f53bf6ca",
+      "full_name": "Aisha O. Dew",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    }
+  ]
+}

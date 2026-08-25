@@ -1,0 +1,18 @@
+{
+  "rows": [
+    {
+      "politician_id": "5814ca59-6a68-41c8-a02b-b9d90c79a953",
+      "full_name": "Nida Allam",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_key": "public-safety-approach",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "ee4556b3-69fd-4369-9138-f6ed49796b41",
+      "full_name": "Wendy Jacobs",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_key": "public-safety-approach",
+      "chair_after": 3
+    }
+  ]
+}
