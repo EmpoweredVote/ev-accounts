@@ -701,3 +701,61 @@ register all eligible citizens **and allow online voting**", and the bill says n
 voting. So `voting-rights` is compound at *both* ends: chair 1 bundles automatic registration with
 online voting, chair 2 bundles early voting with no-excuse mail-in. Every near-miss on that ladder
 this campaign has been a half-met compound chair.
+
+## Batch notes — local 01, Asheville City Council (2026-08-25)
+
+**20 rows across all 7 members.** First batch of the 32 wave-2b locals. Source map for all four
+bodies: `backend/data/stance-research/nc-campaign/local-source-map.md`.
+
+### Three instruments carried the whole council
+
+| Topic | Chair | Instrument |
+|---|---|---|
+| `data-centers` | 1 | **Ordinance 5238**, 2026-06-23 — one-year moratorium on new data center development. Turner moved, Roney seconded, unanimous, all 7 present. |
+| `housing` | 3 | **Resolution No. 26-114**, 2026-06-09 — $9.5M of CDBG-DR to build 126 affordable rental units, 35-year affordability. Roney moved, Mosley seconded, **6-1 with Turner voting no**. Turner is seated instead off **Resolution No. 26-51** (2026-03-10), which she moved, adding affordable rental construction to the Consolidated Plan as a priority need. |
+| `economic-development` | 3 | **Resolution No. 26-20**, 2026-01-27 — a $35,000 performance-based grant paid only after investment and hiring, under a city policy carrying a living-wage benchmark. Roney moved, Smith seconded, unanimous. **Turner was absent**, so this is 6 rows, not 7. |
+
+### The seating rule used, stated once
+
+Seat a member when a **standalone, non-consent, recorded vote** on a chair-shaped instrument names
+them — as mover, as seconder, or through a stated tally read against the attendance list. Consent-
+agenda items seat nobody: they are one block vote on thirty unrelated things.
+
+### 🔴 Four topics were BLANKED with evidence in hand — record why
+
+- **`residential-zoning`.** Ordinance 5196 (ADU by-right adaptive reuse, Smith moved, Mosley
+  seconded) satisfies chair 2's *density* clause — accessory units — while **contradicting its
+  review clause**, because the whole point of the ordinance is removing Board of Adjustment review.
+  It does not reach chair 4's breadth either. Two adjacent chairs, neither clean. The ladder is
+  already flagged off-axis in `.planning/todos/2026-08-12-ladder-orientation-and-consumers.md`.
+- **`local-immigration`.** Resolution No. 26-97 says the City "shall not utilize these public safety
+  tools to participate in enforcement of federal immigration law" — chair 3's text almost verbatim.
+  But it was voted **as one bundled motion** with a $1.14M surveillance grant and a budget amendment.
+  🔴 **An aye on a bundle does not isolate a clause**, and Roney's lone no was aimed at the
+  surveillance half. Same defect shape as a compound chair, arriving through the agenda instead of
+  through the ladder.
+- **`public-safety-approach`.** The Axon/Fusus contract and the Real Time Intelligence Center are
+  police **equipment**. Chair 4 is compound — staffing *and* equipment *and* pay — and the FY27
+  budget does not evidence the other two clauses.
+- **`transportation-priorities`.** The only instrument is a four-year transit O&M vendor contract
+  (Ullman moved, 4-3, Mosley/Smith/Turner no). A vendor choice is not a spending priority, and the
+  three no votes were about the vendor.
+
+### 🔴 A minutes document can be an unfilled TEMPLATE
+
+`2025-12-09` is published as approved minutes but reads `Councilwoman ____ moved to`. The clerk
+posted the template. It names no one and must be excluded — a scan keyed on member surnames would
+otherwise treat the Mayor's boilerplate lines as acts.
+
+### 🔴 Asheville publishes each minutes document TWICE
+
+The ACF `meeting_minutes` field on the agenda-briefing meeting and on the formal meeting point at the
+**same** Google Doc, because one document covers both. 21 downloads deduped to **11**. Without a
+content-hash dedupe every instrument is double-counted and the corpus looks twice as deep as it is.
+
+### Coverage limit to state plainly
+
+Asheville minutes before ~Dec 2025 are `drive.google.com/file/` PDFs that require a Google sign-in —
+confirmed in a real browser, not only with curl. **The readable window is 2025-12-09 → 2026-06-23.**
+Twenty rows off eleven meetings is not a full read of this council's record; it is a full read of
+the seven months that are public.
