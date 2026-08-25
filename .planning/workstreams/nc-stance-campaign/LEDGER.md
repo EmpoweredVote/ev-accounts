@@ -850,3 +850,48 @@ seated anything.** Against the assembly's 1.6 and 2.4. Councils are thinner than
 because one instrument seats a whole body at once: **three instruments carried Asheville's seven, two
 carried Durham's seven, one carried Buncombe's seven.** The binding constraint is not evidence per
 person, it is how many chair-shaped instruments a body voted on inside the readable window.
+
+## PDF-read queue closed (2026-08-25) — 0 new rows, and the blanks were right
+
+H565, H727, H437 and H87 were parked because the text served from
+`/Sessions/2025/Bills/House/HTML/` was a different subject from the bill's current title, and the
+campaign refused to guess. Reading the **PDF editions** off `/BillLookUp/2025/<bill>` resolves all
+four at once, and they are all the same thing.
+
+### 🔴🔴 A BILL'S CURRENT TITLE CAN BELONG TO THE OTHER CHAMBER'S COMMITTEE SUBSTITUTE
+
+Every one of the four was **gutted and replaced in a SENATE committee substitute**, a year or more
+after House members filed it. The sponsor list never changes — it still names the original House
+filers — so pairing *current title* with *primary sponsors* attributes the Senate's policy to House
+members who never filed it.
+
+| Bill | As filed and as it left the House | After the Senate substitute |
+|---|---|---|
+| **H565** | organ and tissue donation enrolment via the income tax return (v0-v3) | **AI in healthcare billing** — Senate Health Care CS 6/3/26, Senate Judiciary CS 6/23/26 |
+| **H727** | modify the laws of marriage and family therapy (v0-v2) | limit Medicaid reimbursement for facility fees — Senate Health Care CS 4/30/26 |
+| **H437** | drug-free homeless service zones (v0-v2) | **+ ban unauthorized public camping statewide** — Senate Judiciary CS 6/10/26; **RATIFIED** at v6 |
+| **H87** | cell-phone-free education (v0-v3) | Educational Choice for Children Act, a federal scholarship tax credit — Senate Finance CS 7/29/25 |
+
+**H565 was the whole prize and it is refused.** It would have been the campaign's only
+`ai-regulation` row, for Reeder (D9), Potts, Shepard (D15) and Huneycutt. What those four actually
+filed is `AN ACT TO ALLOW RESIDENT TAXPAYERS TO ENROLL IN THE ORGAN AND TISSUE DONATION PROGRAM VIA
+THEIR INCOME TAX RETURN`. Seating them on AI would have been a false statement about four real people
+— arrived at through a citation that checks out at every step except the one that matters.
+
+**This also explains the "irreconcilable" HTML.** The `/Sessions/` page was serving an early House
+edition while the title tracked the latest Senate edition. Not a data bug — a real gut-and-replace.
+🔴 **The `/Sessions/` HTML does not carry every edition; the PDF list on BillLookUp does.** v0 through
+v5, v6 or v7 exist for these bills where the HTML offered two.
+
+### The rule this adds
+
+**Sponsorship evidences the bill AS FILED.** Before citing a bill by its current title, check whether
+the edition carrying that title is a committee substitute from the *other* chamber. If it is, the
+sponsors are evidence for the old subject, not the new one.
+
+### One follow-up worth recording
+
+**H437 is ratified law and bans unauthorized public camping statewide** — that is chair-shaped for
+`homelessness` (4 or 5, depending on the enforcement mechanism). It is unreachable from sponsorship,
+because the camping ban is Senate committee work. It would be reachable from the **ratification roll
+calls**, which this campaign never used. Park it for whenever roll-call evidence enters the pipeline.
