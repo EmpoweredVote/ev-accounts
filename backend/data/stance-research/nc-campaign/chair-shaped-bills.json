@@ -1,0 +1,126 @@
+{
+ "_comment": [
+  "Chair-shaped NC bills whose operative text was READ AT SOURCE and matched against the ladder,",
+  "with each bill's full sponsor list. This is the campaign's working index: pull a bill's list ONCE,",
+  "then read it across the roster. Batch 04 produced 26 rows on four new source reads using this.",
+  "",
+  "HOW TO USE: resolve each surname through nc-house-member-ids.json BY DISTRICT, never by name.",
+  "ncleg prints bare surnames with initials -- G./K./T. Brown are three different members, A. Jones",
+  "and B. Jones are two, R. Pierce and G. Pierce are two, F./N. Jackson are two.",
+  "",
+  "BEFORE SEATING, CHECK conflicts_blank_these. A member on two bills pointing at adjacent chairs on",
+  "the same topic gets a BLANK, not the first chair you happened to find.",
+  "",
+  "Sponsor lists were captured from BillLookUp via a summarising fetch. Treat them as a worklist:",
+  "re-confirm on the bill page before seating a member not already cross-checked.",
+  "PRIMARY SPONSORSHIP must be confirmed on the BILL page. A member's IntroducedBills page lists bills",
+  "they introduced, not only ones they primarily sponsored -- that error put a wrong sentence into a",
+  "live row for Alston and had to be corrected in prod."
+ ],
+ "captured": "2026-08-24",
+ "bills": [
+  {"bill": "H20", "short_title": "Fair Maps Act", "topic_key": "redistricting", "chair": 1,
+   "primary_sponsors": ["Harrison", "Morey", "Hawkins", "Prather"],
+   "cosponsors": ["Ager","Alston","Baker","Ball","Belk","G. Brown","K. Brown","T. Brown","Buansi","Budd","Butler","Carney","Cervania","Clark","Cohn","Colvin","Crawford","Dahle","Greenfield","Helfrich","F. Jackson","Jeffers","A. Jones","Liu","Logan","Longest","Lopez","Majeed","R. Pierce","Price","Quick","Reives","Roberson","Rubin","Turner","von Haefen"]},
+
+  {"bill": "H509", "short_title": "Right to Reproductive Freedom Act", "topic_key": "abortion", "chair": 2,
+   "primary_sponsors": ["von Haefen", "Butler", "Greenfield", "Dew"],
+   "cosponsors": ["Ager","Alston","Baker","Ball","Belk","G. Brown","K. Brown","Buansi","Budd","Carney","Clark","Cunningham","Dahle","Harrison","Hawkins","Helfrich","Johnson-Hostler","Liu","Logan","Longest","Majeed","Morey","R. Pierce","Prather","Price","Reives","Roberson","Rubin","Turner"]},
+
+  {"bill": "H1189", "short_title": "Datacenter Transparency Act", "topic_key": "data-centers", "chair": 1,
+   "primary_sponsors": ["Loftis", "Ward", "Harrison"],
+   "cosponsors": ["Ager","Belk","Butler","Cervania","Greenfield","Lopez","Morey","Pike","Prather","Quick","Roberson","Turner"]},
+
+  {"bill": "H638", "short_title": "Equit. Escalation of Electricity Demand Act", "topic_key": "data-centers", "chair": 2,
+   "primary_sponsors": ["Loftis", "Ward", "Tyson", "Greene"], "cosponsors": ["Moss"]},
+
+  {"bill": "H1229", "short_title": "Strip Corporations of Political Spending", "topic_key": "campaign-finance", "chair": 2,
+   "primary_sponsors": ["Morey", "Butler", "Harrison", "Cook"],
+   "cosponsors": ["Ager","Belk","K. Brown","Cervania","Clark","Greenfield","Hawkins","Lopez"]},
+
+  {"bill": "H1056", "short_title": "Relieving Housing Bottlenecks", "topic_key": "housing", "chair": 3,
+   "primary_sponsors": ["Dahle"],
+   "cosponsors": ["Alston","Lopez","Prather","Ager","Baker","Ball","Belk","G. Brown","K. Brown","T. Brown","Buansi","Butler","Carney","Cervania","Clark","Cohn","Crawford","Greenfield","Hawkins","F. Jackson","Johnson-Hostler","Lofton","Logan","Longest","Morey","R. Pierce","Price","Quick","Reives","Roberson","Rubin","Charles Smith","Turner","von Haefen"],
+   "note": "Deregulation PLUS $40M at 60-120% AMI in ONE bill. That pairing is why chair 3 fits and chair 4 does not."},
+
+  {"bill": "H538", "short_title": "Equality for All", "topic_key": "civil-rights", "chair": 2,
+   "primary_sponsors": ["Dahle", "Butler", "Harrison"], "cosponsors": []},
+
+  {"bill": "H1072", "short_title": "Affordable Housing Infrastructure Development", "topic_key": "housing", "chair": 3,
+   "primary_sponsors": ["Bell", "Reives", "Humphrey", "Cunningham"], "cosponsors": []},
+
+  {"bill": "H1118", "short_title": "Workforce Housing Loan Renewal Act", "topic_key": "housing", "chair": 3,
+   "primary_sponsors": ["Chesser", "Schietzelt", "Willingham", "Buansi"], "cosponsors": []},
+
+  {"bill": "H404", "short_title": "Fair & Affordable Housing Act", "topic_key": "housing", "chair": 3,
+   "primary_sponsors": ["Lopez", "G. Brown", "Ager", "Buansi"], "cosponsors": []},
+
+  {"bill": "H375", "short_title": "AI/Ban Deceptive Ads", "topic_key": "ai-regulation", "chair": 3,
+   "primary_sponsors": ["Warren", "Davis", "Schietzelt", "Blust"],
+   "cosponsors": ["Adams","Almond","Branson","T. Brown","Buansi","Clark","Harrison","Huneycutt","F. Jackson","Logan","Longest","Lowery","McNeely","G. Pierce","Pike","Prather","Price","Ward"],
+   "note": "This ladder runs the OPPOSITE way: chair 1 = least oversight. Disclosure plus liability, no safety testing."},
+
+  {"bill": "H316", "short_title": "Child Care Act", "topic_key": "childcare", "chair": 2,
+   "primary_sponsors": ["Logan", "G. Brown", "Lopez", "G. Pierce"], "cosponsors": []},
+
+  {"bill": "H412", "short_title": "Child Care Regulatory Reforms", "topic_key": "childcare", "chair": 4,
+   "primary_sponsors": ["Arp", "Lambeth", "Pare", "Rhyne"], "cosponsors": []},
+
+  {"bill": "H765", "short_title": "Save the American Dream Act", "topic_key": "housing", "chair": 4,
+   "primary_sponsors": ["Zenger", "Brody", "Winslow", "Cunningham"], "cosponsors": [],
+   "note": "Pure deregulation, no money. Chair 4 only holds if the member has NO housing appropriation elsewhere."},
+
+  {"bill": "H627", "short_title": "Regulation of Accessory Dwelling Units", "topic_key": "housing", "chair": 4,
+   "primary_sponsors": ["Alston", "Winslow"], "cosponsors": [],
+   "note": "ADU mandate, no money. Same caveat as H765 -- pairs with a subsidy bill into chair 3 instead."},
+
+  {"bill": "H626", "short_title": "Housing Choice Act", "topic_key": "housing", "chair": null,
+   "primary_sponsors": ["Alston", "Dahle", "G. Brown"], "cosponsors": [],
+   "note": "Permitting incentives only. NOT a chair on its own; combines with a money bill to make chair 3."},
+
+  {"bill": "H1073", "short_title": "Fair Share for Public Schools Act", "topic_key": "taxes", "chair": 1,
+   "primary_sponsors": ["Buansi", "Prather", "Baker", "R. Pierce"], "cosponsors": [],
+   "note": "7% bracket above $1M into the State Public School Fund. States a RATE and a DESTINATION, which is what lets it clear the significantly-vs-moderately problem CLAUDE.md warns about."},
+
+  {"bill": "H934", "short_title": "AI Regulatory Reform Act", "topic_key": "ai-regulation", "chair": null,
+   "primary_sponsors": ["Johnson", "Zenger", "Hawkins", "Alston"],
+   "cosponsors": ["Ager","Belk","Budd","Cervania","Clark","N. Jackson","Lopez","G. Pierce","Rubin","Ward"],
+   "note": "PINS NOTHING. Section 1 creates deepfake liability; Section 2 grants developers immunity. Anyone whose only AI instrument is this bill gets a BLANK."}
+ ],
+ "senate_bills": [
+  {"bill": "S467", "topic_key": "abortion", "chair": 2, "note": "Senate companion of H509."},
+  {"bill": "S381", "topic_key": "civil-rights", "chair": 2, "note": "Senate companion of H538."},
+  {"bill": "S439", "topic_key": "school-vouchers", "chair": 1,
+   "note": "Stops new voucher grants, winds the program down, moves $113.46M recurring to public schools. Both clauses of chair 1."},
+  {"bill": "S495", "topic_key": "housing", "chair": null, "note": "ADU mandate, NO appropriation. Alone it reads chair 4, not 3."},
+  {"bill": "S233", "topic_key": "taxes", "chair": null, "note": "HELD. Halting a scheduled corporate cut is not raising a tax."},
+  {"bill": "S65", "topic_key": "growth-and-development", "chair": null, "note": "HELD. Restoring down-zoning authority is not named by any chair."}
+ ],
+ "conflicts_blank_these": [
+  {"members": ["Ward", "Loftis"], "topic_key": "data-centers",
+   "why": "primary sponsor of BOTH H1189 (chair 1) and H638 (chair 2)"},
+  {"members": ["Clark", "G. Pierce", "Ward"], "topic_key": "ai-regulation",
+   "why": "on BOTH H375 (chair 3) and H934 (pins nothing)"},
+  {"members": ["Hawkins"], "topic_key": "ai-regulation",
+   "why": "primary on H934 immunity AND on H1161 protections AND H1177 AI Bill of Rights"},
+  {"members": ["Alston", "Johnson", "Zenger"], "topic_key": "ai-regulation",
+   "why": "primary sponsor of H934, which pins nothing"},
+  {"members": ["Rubin", "Ager", "Belk", "Budd", "Cervania", "Lopez", "N. Jackson"], "topic_key": "ai-regulation",
+   "why": "cosponsor of H934 only; that bill pins nothing on its own"}
+ ],
+ "unresolved_park_for_pdf_read": [
+  {"bill": "H565", "short_title": "Limit Use of AI Medicaid/Commercial Insurance",
+   "primary_sponsors": ["Reeder", "Potts", "Shepard", "Huneycutt"],
+   "why": "Editions 1 and 2 served from /Sessions/ are 'Check Yes, Save Lives' (organ donation) with these same sponsors, while the member list and BillLookUp both give the AI title and the ARTIFICIAL INTELLIGENCE keyword. Would seat ai-regulation for four members. Read the PDF."},
+  {"bill": "H727", "short_title": "Limit Medicaid Reimb. for Facility Fees",
+   "primary_sponsors": ["Reeder", "Blackwell", "Wheatley", "Gable"],
+   "why": "Editions 1 and 2 are marriage-and-family-therapist licensure. Would supply the 'controlling costs' clause that medicare/aid chair 3 needs."},
+  {"bill": "H437", "short_title": "Drug-Free Zones/Unauthorized Public Camping",
+   "primary_sponsors": ["Rhyne", "Chesser", "Pickett"],
+   "why": "Editions 1 and 2 are drug-free homeless service zones with no camping provisions; the current title says otherwise, so a later edition added them. Would seat homelessness."}
+ ],
+ "unread_may_seat_rows": [
+  {"bill": "H1161", "short_title": "Omnibus Artificial Intelligence Protections", "sponsor_note": "Hawkins is primary."},
+  {"bill": "H1177", "short_title": "Consumer Protection AI Bill of Rights", "sponsor_note": "Hawkins is primary."}
+ ]
+}
