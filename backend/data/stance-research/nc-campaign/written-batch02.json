@@ -1,0 +1,74 @@
+{
+  "rows": [
+    {
+      "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79",
+      "full_name": "Allison A. Dahle",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79",
+      "full_name": "Allison A. Dahle",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79",
+      "full_name": "Allison A. Dahle",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "5905abfb-ae5d-4b90-abab-965cb511d1d7",
+      "full_name": "Chris Humphrey",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f",
+      "full_name": "Deb Butler",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f",
+      "full_name": "Deb Butler",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f",
+      "full_name": "Deb Butler",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f",
+      "full_name": "Deb Butler",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "33e1a3a2-4472-4bcf-869b-1c4e0838029f",
+      "full_name": "Deb Butler",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "c8f242c3-d4f6-4260-b585-6b6cf141409e",
+      "full_name": "Ted Davis, Jr.",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    }
+  ]
+}

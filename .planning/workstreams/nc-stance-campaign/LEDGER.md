@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 02 | 2026-08-24 | NC House districts 11-20 | 10 | **10** | 0 | `2026-08-24-nc-batch02.csv` | `written-batch02.json` |
 | 01 | 2026-08-24 | NC House districts 1-10 | 10 | **8** | 0 | `2026-08-24-nc-batch01.csv` | `written-batch01.json` |
 | pilot | 2026-08-24 | Ager (HD 114) · Mayfield (SD 49) · Kopac (Durham W1) | 3 | **8** | 5 parked, 0 inserted | `2026-08-24-nc-pilot-approved.csv` | `written-pilot.json` |
 
@@ -110,3 +111,71 @@ restrictive chairs are about photo ID, voter-roll maintenance and mail-in voting
 bill touches. So the ladder will seat members who expand early voting and blank members who restrict
 it, on the same axis. That is a coverage bias built into the scale, and it belongs in the ADR 0004
 revision queue with the `medicare/aid` and `same-sex-marriage` scope defects.
+
+## Batch notes — batch 02, NC House districts 11-20 (2026-08-24)
+
+**10 rows across 4 people. Six members seated nothing.**
+
+| District | Member | Rows |
+|---|---|---|
+| 11 | Allison A. Dahle | redistricting 1 · civil-rights 2 · housing 3 |
+| 12 | Chris Humphrey | housing 3 |
+| 13 | Celeste C. Cairns | 0 |
+| 14 | Wyatt Gable | 0 |
+| 15 | Phil Shepard | 0 |
+| 16 | Carson Smith | 0 |
+| 17 | Frank Iler | 0 |
+| 18 | Deb Butler | redistricting 1 · civil-rights 2 · abortion 2 · campaign-finance 2 · data-centers 1 |
+| 19 | Charles W. Miller | 0 |
+| 20 | Ted Davis, Jr. | ai-regulation 3 |
+
+**First `ai-regulation` row in the campaign.** House Bill 375 requires AI-generated political content
+to carry disclosure and embedded provenance and makes creators liable for resulting harm, with
+criminal penalties and damages to $10,000 — chair 3. It requires no safety testing and bans no
+category of use, which excludes chair 4. Remember this ladder runs the opposite way from most:
+chair 1 is the *least* oversight.
+
+### 🔴 CORRECTION to batch 01's "a short title is not evidence"
+
+The batch 01 note listed five bills as contradicting their titles. That is too strong for two of
+them, and the real situation is worse in a different way:
+
+- **H422 and H96 are settled.** Both were judged from BillLookUp *metadata* — the statute chapters
+  and keywords — which is independent of the title. `Beyond The Choice Act` amends Chapter 116
+  (colleges and universities); `Expedited Removal of Unauthorized Persons` amends Chapter 14
+  (trespass). Those conclusions stand.
+- **H765 is settled.** The sponsors on the text page matched the lookup page, and the content matches
+  the title's evident purpose. `Save the American Dream Act` genuinely is a development-deregulation
+  omnibus.
+- **H565 and H727 are UNRESOLVED, and both are blank because of it.** The member list and the lookup
+  page agree that H565 is `Limit Use of AI Medicaid/Commercial Insurance` (keyword ARTIFICIAL
+  INTELLIGENCE, amending Chapters 108C, 58 and 90) and that H727 is `Limit Medicaid Reimb. for
+  Facility Fees`. But **editions 1 and 2 of both, served from `/Sessions/2025/Bills/House/HTML/`,
+  are different subjects entirely** — organ-donor tax enrolment and marriage-and-family-therapist
+  licensure — with the correct sponsors attached. A gut-and-replace would explain it, but the later
+  edition still shows the old subject, so that theory does not hold either.
+
+**The rule: when the served text and the title disagree and cannot be reconciled, leave the spoke
+blank.** H565 would have seated `ai-regulation` for Reeder (district 9), Shepard (district 15),
+Potts and Huneycutt. It is worth resolving properly — by reading the PDF rather than the HTML — but
+not worth guessing.
+
+### Refusals worth recording
+
+- **House Bill 282** (Butler, primary) changes bike and pedestrian funding from "shall not provide"
+  to "may provide". Someone who wants to *prioritise* walking and transit (chair 1) and someone who
+  wants it *selectively* (chair 3) would both file it. Two chairs fit, so it seats nothing.
+- **House Bill 318** (Carson Smith, primary) creates a judicial hold process for ICE detainers with a
+  48-hour cap. It does not decide *who* is deported, which is what the `deportation` ladder asks.
+- **House Bill 799** (Gable, primary) bars state funds for DEI programs, but by its own terms does not
+  reach voluntary initiatives or admissions. Chair 5 requires eliminating affirmative action **and
+  all** race-based government programs; chair 4 is about limiting *federal* enforcement. Neither is
+  named.
+
+### 🔴 Fifth ladder observation: `civil-rights` is asymmetric the same way `voting-rights` is
+
+Chair 2 is reachable by a state bill — Equality for All seats it cleanly, twice in this batch. But
+chair 4 is written about **federal** enforcement, which no state legislator can do, and chair 5
+demands **all** race-based programs be eliminated, which a partial DEI funding ban does not achieve.
+So the restrictive half of this axis is close to unreachable for the people we are scoring, exactly
+like early voting on `voting-rights`. Both belong in the ADR 0004 queue as coverage bias.
