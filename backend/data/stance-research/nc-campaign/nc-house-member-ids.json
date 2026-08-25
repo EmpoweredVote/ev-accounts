@@ -1,0 +1,615 @@
+{
+ "_comment": [
+  "NC House district -> ncleg.gov member ID, captured 2026-08-24 from /Members/MemberList/H.",
+  "JOIN BY DISTRICT, NEVER BY NAME. ncleg prints sponsor lists as bare surnames with initials",
+  "('G. Brown', 'T. Brown', 'K. Brown' are three different members), and our roster carries",
+  "suffixes and honorifics ncleg omits ('John R. Bell, IV' vs 'John R. Bell IV').",
+  "Member pages: /Members/Biography/H/<id>, /Members/IntroducedBills/H/<id> (primary sponsorships).",
+  "Names here are ncleg's spelling, not ours -- use the district to reach our politician_id."
+ ],
+ "source": "https://www.ncleg.gov/Members/MemberList/H",
+ "captured": "2026-08-24",
+ "chamber": "NC House",
+ "members": [
+  {
+   "district": 1,
+   "ncleg_name": "Edward C. Goodwin",
+   "member_id": 744
+  },
+  {
+   "district": 2,
+   "ncleg_name": "B. Ray Jeffers",
+   "member_id": 805
+  },
+  {
+   "district": 3,
+   "ncleg_name": "Steve Tyson",
+   "member_id": 774
+  },
+  {
+   "district": 4,
+   "ncleg_name": "Jimmy Dixon",
+   "member_id": 613
+  },
+  {
+   "district": 5,
+   "ncleg_name": "Bill Ward",
+   "member_id": 816
+  },
+  {
+   "district": 6,
+   "ncleg_name": "Joseph Pike",
+   "member_id": 808
+  },
+  {
+   "district": 7,
+   "ncleg_name": "Matthew Winslow",
+   "member_id": 776
+  },
+  {
+   "district": 8,
+   "ncleg_name": "Gloristine Brown",
+   "member_id": 794
+  },
+  {
+   "district": 9,
+   "ncleg_name": "Timothy Reeder",
+   "member_id": 811
+  },
+  {
+   "district": 10,
+   "ncleg_name": "John R. Bell IV",
+   "member_id": 661
+  },
+  {
+   "district": 11,
+   "ncleg_name": "Allison A. Dahle",
+   "member_id": 740
+  },
+  {
+   "district": 12,
+   "ncleg_name": "Chris Humphrey",
+   "member_id": 747
+  },
+  {
+   "district": 13,
+   "ncleg_name": "Celeste C. Cairns",
+   "member_id": 797
+  },
+  {
+   "district": 14,
+   "ncleg_name": "Wyatt Gable",
+   "member_id": 837
+  },
+  {
+   "district": 15,
+   "ncleg_name": "Phil Shepard",
+   "member_id": 628
+  },
+  {
+   "district": 16,
+   "ncleg_name": "Carson Smith",
+   "member_id": 755
+  },
+  {
+   "district": 17,
+   "ncleg_name": "Frank Iler",
+   "member_id": 598
+  },
+  {
+   "district": 18,
+   "ncleg_name": "Deb Butler",
+   "member_id": 730
+  },
+  {
+   "district": 19,
+   "ncleg_name": "Charles W. Miller",
+   "member_id": 778
+  },
+  {
+   "district": 20,
+   "ncleg_name": "Ted Davis Jr.",
+   "member_id": 637
+  },
+  {
+   "district": 21,
+   "ncleg_name": "Ya Liu",
+   "member_id": 806
+  },
+  {
+   "district": 22,
+   "ncleg_name": "William D. Brisson",
+   "member_id": 558
+  },
+  {
+   "district": 23,
+   "ncleg_name": "Shelly Willingham",
+   "member_id": 700
+  },
+  {
+   "district": 24,
+   "ncleg_name": "Dante Pittman",
+   "member_id": 839
+  },
+  {
+   "district": 25,
+   "ncleg_name": "Allen Chesser",
+   "member_id": 799
+  },
+  {
+   "district": 26,
+   "ncleg_name": "Donna McDowell White",
+   "member_id": 728
+  },
+  {
+   "district": 27,
+   "ncleg_name": "Rodney D. Pierce",
+   "member_id": 838
+  },
+  {
+   "district": 28,
+   "ncleg_name": "Larry C. Strickland",
+   "member_id": 727
+  },
+  {
+   "district": 29,
+   "ncleg_name": "Vernetta Alston",
+   "member_id": 765
+  },
+  {
+   "district": 30,
+   "ncleg_name": "Marcia Morey",
+   "member_id": 732
+  },
+  {
+   "district": 31,
+   "ncleg_name": "Zack Hawkins",
+   "member_id": 742
+  },
+  {
+   "district": 32,
+   "ncleg_name": "Bryan Cohn",
+   "member_id": 827
+  },
+  {
+   "district": 33,
+   "ncleg_name": "Monika Johnson-Hostler",
+   "member_id": 834
+  },
+  {
+   "district": 34,
+   "ncleg_name": "Tim Longest",
+   "member_id": 818
+  },
+  {
+   "district": 35,
+   "ncleg_name": "Mike Schietzelt",
+   "member_id": 840
+  },
+  {
+   "district": 36,
+   "ncleg_name": "Julie von Haefen",
+   "member_id": 758
+  },
+  {
+   "district": 37,
+   "ncleg_name": "Erin Pare",
+   "member_id": 770
+  },
+  {
+   "district": 38,
+   "ncleg_name": "Abe Jones",
+   "member_id": 780
+  },
+  {
+   "district": 39,
+   "ncleg_name": "James Roberson",
+   "member_id": 786
+  },
+  {
+   "district": 40,
+   "ncleg_name": "Phil Rubin",
+   "member_id": 844
+  },
+  {
+   "district": 41,
+   "ncleg_name": "Maria Cervania",
+   "member_id": 798
+  },
+  {
+   "district": 42,
+   "ncleg_name": "Mike Colvin",
+   "member_id": 831
+  },
+  {
+   "district": 43,
+   "ncleg_name": "Diane Wheatley",
+   "member_id": 785
+  },
+  {
+   "district": 44,
+   "ncleg_name": "Charles Smith",
+   "member_id": 813
+  },
+  {
+   "district": 45,
+   "ncleg_name": "Frances Jackson",
+   "member_id": 803
+  },
+  {
+   "district": 46,
+   "ncleg_name": "Brenden H. Jones",
+   "member_id": 723
+  },
+  {
+   "district": 47,
+   "ncleg_name": "John L. Lowery",
+   "member_id": 1001
+  },
+  {
+   "district": 48,
+   "ncleg_name": "Garland E. Pierce",
+   "member_id": 497
+  },
+  {
+   "district": 49,
+   "ncleg_name": "Cynthia Ball",
+   "member_id": 711
+  },
+  {
+   "district": 50,
+   "ncleg_name": "Renee A. Price",
+   "member_id": 810
+  },
+  {
+   "district": 51,
+   "ncleg_name": "John Sauls",
+   "member_id": 393
+  },
+  {
+   "district": 52,
+   "ncleg_name": "Ben T. Moss Jr.",
+   "member_id": 784
+  },
+  {
+   "district": 53,
+   "ncleg_name": "Howard Penny Jr.",
+   "member_id": 768
+  },
+  {
+   "district": 54,
+   "ncleg_name": "Robert T. Reives II",
+   "member_id": 684
+  },
+  {
+   "district": 55,
+   "ncleg_name": "Mark Brody",
+   "member_id": 663
+  },
+  {
+   "district": 56,
+   "ncleg_name": "Allen Buansi",
+   "member_id": 790
+  },
+  {
+   "district": 57,
+   "ncleg_name": "Tracy Clark",
+   "member_id": 822
+  },
+  {
+   "district": 58,
+   "ncleg_name": "Amos L. Quick III",
+   "member_id": 725
+  },
+  {
+   "district": 59,
+   "ncleg_name": "Jerry Alan Branson",
+   "member_id": 821
+  },
+  {
+   "district": 60,
+   "ncleg_name": "Amanda P. Cook",
+   "member_id": 1002
+  },
+  {
+   "district": 61,
+   "ncleg_name": "Pricey Harrison",
+   "member_id": 504
+  },
+  {
+   "district": 62,
+   "ncleg_name": "John M. Blust",
+   "member_id": 234
+  },
+  {
+   "district": 63,
+   "ncleg_name": "Stephen M. Ross",
+   "member_id": 812
+  },
+  {
+   "district": 64,
+   "ncleg_name": "Dennis Riddell",
+   "member_id": 665
+  },
+  {
+   "district": 65,
+   "ncleg_name": "A. Reece Pyrtle Jr.",
+   "member_id": 787
+  },
+  {
+   "district": 66,
+   "ncleg_name": "Sarah Crawford",
+   "member_id": 800
+  },
+  {
+   "district": 67,
+   "ncleg_name": "Cody Huneycutt",
+   "member_id": 833
+  },
+  {
+   "district": 68,
+   "ncleg_name": "David Willis",
+   "member_id": 779
+  },
+  {
+   "district": 69,
+   "ncleg_name": "Dean Arp",
+   "member_id": 640
+  },
+  {
+   "district": 70,
+   "ncleg_name": "Brian Biggs",
+   "member_id": 793
+  },
+  {
+   "district": 71,
+   "ncleg_name": "Kanika Brown",
+   "member_id": 795
+  },
+  {
+   "district": 72,
+   "ncleg_name": "Amber M. Baker",
+   "member_id": 782
+  },
+  {
+   "district": 73,
+   "ncleg_name": "Jonathan L. Almond",
+   "member_id": 843
+  },
+  {
+   "district": 74,
+   "ncleg_name": "Jeff Zenger",
+   "member_id": 775
+  },
+  {
+   "district": 75,
+   "ncleg_name": "Donny Lambeth",
+   "member_id": 646
+  },
+  {
+   "district": 76,
+   "ncleg_name": "Harry Warren",
+   "member_id": 630
+  },
+  {
+   "district": 77,
+   "ncleg_name": "Julia C. Howard",
+   "member_id": 53
+  },
+  {
+   "district": 78,
+   "ncleg_name": "Neal Jackson",
+   "member_id": 804
+  },
+  {
+   "district": 79,
+   "ncleg_name": "Keith Kidwell",
+   "member_id": 749
+  },
+  {
+   "district": 80,
+   "ncleg_name": "Sam Watford",
+   "member_id": 687
+  },
+  {
+   "district": 81,
+   "ncleg_name": "Larry W. Potts",
+   "member_id": 724
+  },
+  {
+   "district": 82,
+   "ncleg_name": "Brian Echevarria",
+   "member_id": 828
+  },
+  {
+   "district": 83,
+   "ncleg_name": "Grant L. Campbell",
+   "member_id": 830
+  },
+  {
+   "district": 84,
+   "ncleg_name": "Jeffrey C. McNeely",
+   "member_id": 761
+  },
+  {
+   "district": 85,
+   "ncleg_name": "Dudley Greene",
+   "member_id": 777
+  },
+  {
+   "district": 86,
+   "ncleg_name": "Hugh Blackwell",
+   "member_id": 580
+  },
+  {
+   "district": 87,
+   "ncleg_name": "Destin Hall",
+   "member_id": 719
+  },
+  {
+   "district": 88,
+   "ncleg_name": "Mary Belk",
+   "member_id": 713
+  },
+  {
+   "district": 89,
+   "ncleg_name": "Mitchell S. Setzer",
+   "member_id": 149
+  },
+  {
+   "district": 90,
+   "ncleg_name": "Dan Kiger",
+   "member_id": 1004
+  },
+  {
+   "district": 91,
+   "ncleg_name": "Kyle Hall",
+   "member_id": 704
+  },
+  {
+   "district": 92,
+   "ncleg_name": "Terry M. Brown Jr.",
+   "member_id": 783
+  },
+  {
+   "district": 93,
+   "ncleg_name": "Ray Pickett",
+   "member_id": 772
+  },
+  {
+   "district": 94,
+   "ncleg_name": "Blair Eddins",
+   "member_id": 825
+  },
+  {
+   "district": 95,
+   "ncleg_name": "Todd Carver",
+   "member_id": 842
+  },
+  {
+   "district": 96,
+   "ncleg_name": "Jay Adams",
+   "member_id": 697
+  },
+  {
+   "district": 97,
+   "ncleg_name": "Heather H. Rhyne",
+   "member_id": 823
+  },
+  {
+   "district": 98,
+   "ncleg_name": "Beth Helfrich",
+   "member_id": 832
+  },
+  {
+   "district": 99,
+   "ncleg_name": "Nasif Majeed",
+   "member_id": 752
+  },
+  {
+   "district": 100,
+   "ncleg_name": "Julia Greenfield",
+   "member_id": 829
+  },
+  {
+   "district": 101,
+   "ncleg_name": "Carolyn G. Logan",
+   "member_id": 750
+  },
+  {
+   "district": 102,
+   "ncleg_name": "Becky Carney",
+   "member_id": 322
+  },
+  {
+   "district": 103,
+   "ncleg_name": "Laura Budd",
+   "member_id": 796
+  },
+  {
+   "district": 104,
+   "ncleg_name": "Brandon Lofton",
+   "member_id": 751
+  },
+  {
+   "district": 105,
+   "ncleg_name": "Tricia Ann Cotham",
+   "member_id": 817
+  },
+  {
+   "district": 106,
+   "ncleg_name": "Carla D. Cunningham",
+   "member_id": 642
+  },
+  {
+   "district": 107,
+   "ncleg_name": "Aisha O. Dew",
+   "member_id": 836
+  },
+  {
+   "district": 108,
+   "ncleg_name": "John A. Torbett",
+   "member_id": 606
+  },
+  {
+   "district": 109,
+   "ncleg_name": "Donnie Loftis",
+   "member_id": 788
+  },
+  {
+   "district": 110,
+   "ncleg_name": "Kelly E. Hastings",
+   "member_id": 618
+  },
+  {
+   "district": 111,
+   "ncleg_name": "Paul Scott",
+   "member_id": 841
+  },
+  {
+   "district": 112,
+   "ncleg_name": "Jordan Lopez",
+   "member_id": 835
+  },
+  {
+   "district": 113,
+   "ncleg_name": "Jake Johnson",
+   "member_id": 762
+  },
+  {
+   "district": 114,
+   "ncleg_name": "Eric Ager",
+   "member_id": 819
+  },
+  {
+   "district": 115,
+   "ncleg_name": "Lindsey Prather",
+   "member_id": 809
+  },
+  {
+   "district": 116,
+   "ncleg_name": "Brian Turner",
+   "member_id": 696
+  },
+  {
+   "district": 117,
+   "ncleg_name": "Jennifer Balkcom",
+   "member_id": 820
+  },
+  {
+   "district": 118,
+   "ncleg_name": "Mark Pless",
+   "member_id": 773
+  },
+  {
+   "district": 119,
+   "ncleg_name": "Anna Ferguson",
+   "member_id": 1003
+  },
+  {
+   "district": 120,
+   "ncleg_name": "Karl E. Gillespie",
+   "member_id": 771
+  }
+ ]
+}

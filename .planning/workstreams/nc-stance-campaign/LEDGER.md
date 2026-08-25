@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 01 | 2026-08-24 | NC House districts 1-10 | 10 | **8** | 0 | `2026-08-24-nc-batch01.csv` | `written-batch01.json` |
 | pilot | 2026-08-24 | Ager (HD 114) · Mayfield (SD 49) · Kopac (Durham W1) | 3 | **8** | 5 parked, 0 inserted | `2026-08-24-nc-pilot-approved.csv` | `written-pilot.json` |
 
 ## Pre-campaign baselines (measured 2026-08-24, before any batch was pushed)
@@ -48,3 +49,64 @@ both halves. Chair 4 has no room for the money.
 `medicare/aid` chair 2 reads "lower Medicare age to 55 and expand Medicaid significantly", and
 `same-sex-marriage` chairs 1 and 2 are written at federal scope. A state legislator can never
 evidence either fully, so those spokes are unreachable by construction for all 170.
+
+## Batch notes — batch 01, NC House districts 1-10 (2026-08-24)
+
+**8 rows across 6 people. Four members seated nothing.** Researched inline, primary sponsorships
+first, every cited bill opened and read.
+
+| District | Member | Rows |
+|---|---|---|
+| 1 | Edward C. Goodwin | 0 — veterans and commemorative bills only |
+| 2 | B. Ray Jeffers | redistricting 1 |
+| 3 | Steve Tyson | data-centers 2 |
+| 4 | Jimmy Dixon | 0 — agriculture bills; a Medicaid rebase is routine funding, not a chair |
+| 5 | Bill Ward | **0 — blanked by his own conflict** |
+| 6 | Joseph Pike | data-centers 1 |
+| 7 | Matthew Winslow | housing 4 |
+| 8 | Gloristine Brown | childcare 2 · housing 3 · redistricting 1 |
+| 9 | Timothy Reeder, MD | 0 |
+| 10 | John R. Bell, IV | housing 3 |
+
+### The Ward conflict, and why it matters
+
+Ward is a **primary sponsor of both** House Bill 1189, which imposes a datacenter permit moratorium
+(chair 1), **and** House Bill 638, which instead makes data centers pay for their own dispatchable
+power (chair 2). Two adjacent chairs, both his own bills. His `data-centers` spoke is blank.
+
+The same check cleared three others: Tyson is not on House Bill 1189, Pike is not on House Bill 638,
+and Ager (pilot) is a cosponsor of 1189 only. **Check every member against every instrument on the
+topic before seating, not just the one you found first.**
+
+### Housing 3 versus housing 4 is a real distinction, not a partisan one
+
+Ager, Gloristine Brown and Bell all sit at chair 3; Winslow sits at chair 4. The discriminator is
+whether public money is present. Ager's House Bill 1056 pairs deregulation with a $40 million
+subsidy; Brown pairs House Bill 404's Housing Trust Fund money with House Bill 626's easier
+permitting; Bell's House Bill 1072 is $50 million in below-market loans. Winslow's two bills — House
+Bill 765 and House Bill 627 — spend nothing and work purely by removing local rules, which is what
+chair 4 says. **Bell is the House Majority Leader and lands on the same chair as two Democrats.**
+That is the compass working as designed.
+
+### 🔴 A SHORT TITLE IS NOT EVIDENCE. Five bills in ten members contradicted their own titles
+
+- `Beyond The Choice Act` (H422) — veterans' tuition, not abortion
+- `Expedited Removal of Unauthorized Persons` (H96) — amends the trespass statutes; squatters, not immigration
+- `Energy Security Act of 2025` (H73) — physical security at electrical substations
+- `Save the American Dream Act` (H765) — a local development-regulation omnibus
+- `Limit Use of AI Medicaid/Commercial Insurance` (H565) — the text returned an organ-donor tax provision
+
+**Cross-check by sponsor list.** When a bill's text and its title disagree, compare the sponsors on
+the text page against the sponsors on the lookup page. If they match, the text is the right bill and
+the title is just branding (H765). If it cannot be resolved, leave the spoke blank — H565 would have
+been the campaign's only `ai-regulation` row and it is not worth seating on a self-contradicting
+source.
+
+### 🔴 Fourth ladder defect: voting-rights is asymmetric
+
+Tyson is primary sponsor of House Bill 66, which shortens early voting by about a week. Chair 2
+explicitly names *expanding* early voting periods, but **no chair names reducing them** — the
+restrictive chairs are about photo ID, voter-roll maintenance and mail-in voting, none of which the
+bill touches. So the ladder will seat members who expand early voting and blank members who restrict
+it, on the same axis. That is a coverage bias built into the scale, and it belongs in the ADR 0004
+revision queue with the `medicare/aid` and `same-sex-marriage` scope defects.
