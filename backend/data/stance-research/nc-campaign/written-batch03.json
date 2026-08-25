@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "politician_id": "05a8fe10-5b46-493d-b9af-44162b2de2eb",
+      "full_name": "Ya Liu",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "05a8fe10-5b46-493d-b9af-44162b2de2eb",
+      "full_name": "Ya Liu",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "8cad6813-2d2a-4c22-b5f5-70f7f5f63812",
+      "full_name": "Shelly Willingham",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d62b489b-2280-41d4-b06c-16cde06b5610",
+      "full_name": "Allen Chesser",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "14024874-9a06-40c7-9a3e-8a38901139ac",
+      "full_name": "Rodney D. Pierce",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "14024874-9a06-40c7-9a3e-8a38901139ac",
+      "full_name": "Rodney D. Pierce",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "14024874-9a06-40c7-9a3e-8a38901139ac",
+      "full_name": "Rodney D. Pierce",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "3f7603aa-e71f-47be-8297-b13adc02b117",
+      "full_name": "Vernetta Alston",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "3f7603aa-e71f-47be-8297-b13adc02b117",
+      "full_name": "Vernetta Alston",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "3f7603aa-e71f-47be-8297-b13adc02b117",
+      "full_name": "Vernetta Alston",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39",
+      "full_name": "Marcia Morey",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39",
+      "full_name": "Marcia Morey",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39",
+      "full_name": "Marcia Morey",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39",
+      "full_name": "Marcia Morey",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00",
+      "full_name": "Gloristine Brown",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79",
+      "full_name": "Allison A. Dahle",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6728cd29-6abe-448b-8772-ff04693883bb",
+      "full_name": "Joseph Pike",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    }
+  ]
+}

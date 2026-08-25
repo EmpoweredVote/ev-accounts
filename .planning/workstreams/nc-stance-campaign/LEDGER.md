@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 03 | 2026-08-24 | NC House districts 21-30 (+3 backfills) | 10 | **17** | 0 | `2026-08-24-nc-batch03.csv` | `written-batch03.json` |
 | 02 | 2026-08-24 | NC House districts 11-20 | 10 | **10** | 0 | `2026-08-24-nc-batch02.csv` | `written-batch02.json` |
 | 01 | 2026-08-24 | NC House districts 1-10 | 10 | **8** | 0 | `2026-08-24-nc-batch01.csv` | `written-batch01.json` |
 | pilot | 2026-08-24 | Ager (HD 114) · Mayfield (SD 49) · Kopac (Durham W1) | 3 | **8** | 5 parked, 0 inserted | `2026-08-24-nc-pilot-approved.csv` | `written-pilot.json` |
@@ -179,3 +180,69 @@ chair 4 is written about **federal** enforcement, which no state legislator can 
 demands **all** race-based programs be eliminated, which a partial DEI funding ban does not achieve.
 So the restrictive half of this axis is close to unreachable for the people we are scoring, exactly
 like early voting on `voting-rights`. Both belong in the ADR 0004 queue as coverage bias.
+
+## Batch notes — batch 03, NC House districts 21-30 (2026-08-24)
+
+**17 rows: 14 for districts 21-30, plus 3 backfills into earlier batches.** Four members seated nothing.
+
+| District | Member | Rows |
+|---|---|---|
+| 21 | Ya Liu | abortion 2 · redistricting 1 |
+| 22 | William D. Brisson | 0 — one primary bill in the session, on corn farming |
+| 23 | Shelly Willingham | housing 3 |
+| 24 | Dante Pittman | 0 |
+| 25 | Allen Chesser | housing 3 |
+| 26 | Donna McDowell White | 0 |
+| 27 | Rodney D. Pierce | abortion 2 · redistricting 1 · **taxes 1** |
+| 28 | Larry C. Strickland | 0 — budget bills only |
+| 29 | Vernetta Alston | abortion 2 · redistricting 1 · housing 3 |
+| 30 | Marcia Morey | abortion 2 · redistricting 1 · data-centers 1 · campaign-finance 2 |
+
+### 🔴 BACKFILL: fetching a bill's full sponsor list found rows the person-first pass missed
+
+House Bill 509's cosponsor list contains **G. Brown (batch 01)** and **Dahle (batch 02)**, and House
+Bill 375's contains **Pike (batch 01)**. All three were missed because those batches were worked
+member-by-member without pulling each instrument's complete sponsor list.
+
+**Pull the full sponsor list for every chair-shaped bill, once, and check it against every batch —
+including batches already pushed.** The bills that carry most of the coverage so far are H20, H509,
+H1189, H1229, H1056, H538, H1072, H1118 and H375.
+
+### The first `taxes` row, and why it is chair 1 and not chair 2
+
+`CLAUDE.md` uses this exact ladder as its warning: a bill establishing direction cannot separate
+*significantly raise* (1) from *moderately raise* (2). House Bill 1073 escapes that because it states
+a **rate and a destination** — a 7% bracket on income above $1 million, paid into the State Public
+School Fund. On top of North Carolina's existing flat rate that more than doubles the tax above the
+threshold, which no ordinary reading calls moderate, and the money adds to existing school funding.
+Chair 2 does not fit; chair 1 does.
+
+### Conflicts and refusals
+
+- **House Bill 934, the AI Regulatory Reform Act, pins nothing by itself.** Section 1 creates criminal
+  and civil liability for deepfakes while Section 2 grants AI developers immunity — "the developer of
+  the artificial intelligence product is not liable for any errors". One bill pointing at opposite
+  ends of the ladder. Alston is a primary sponsor, so her `ai-regulation` spoke is blank.
+  ⚠ **Clark, G. Pierce and Ward are on BOTH H934 and H375** — conflicted, blank them when their
+  batches come up. Davis (batch 02) was checked and is on H375 only, so his row stands.
+- **House Bill 951** funds childcare for state employees and first responders. That is targeted by
+  *occupation*, not by income, and no chair on the childcare ladder names an employer-provided
+  facility. Blank for Liu.
+- **House Bill 46** constrains future health-benefit mandates procedurally without saying who gets
+  covered; every healthcare chair is about coverage. Blank for Chesser.
+- **`medicare/aid` is blanked for White**, consistent with Ager and Reeder. She is primary sponsor on
+  several Medicaid rate and coverage improvements, but chair 3 reads "improve current programs
+  **while controlling costs**" and the cost-control clause is never evidenced. Note that the WI
+  Madison wave resolved this differently — it seated state-leg Medicaid expanders at chair 3 on the
+  reasoning that chair 2's Medicare clause is unreachable. **This campaign is stricter.** If that is
+  the wrong call, the fix is a ladder revision, not a per-row exception, and White, Ager and Reeder
+  should all be revisited together.
+
+### 🔴 Editions, resolved: the member list shows the CURRENT title, edition 1 shows the ORIGINAL text
+
+House Bill 437 makes this plain. The member list titles it `Drug-Free Zones/Unauthorized Public
+Camping`, but editions 1 **and** 2 are titled "Establish Drug-Free Homeless Service Zones" and contain
+no camping provisions at all. So a later edition added them, and **reading edition 1 can understate a
+bill**. The same shape explains H565 and H727. Where the later editions still do not show the current
+subject, the bill stays unresolved and the spoke stays blank — that is now three bills
+(H437, H565, H727) parked for a PDF read rather than guessed.
