@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 07 | 2026-08-24 | NC House districts 61-70 (+1 backfill) | 10 | **13** | 0 | `2026-08-24-nc-batch07.csv` | `written-batch07.json` |
 | 06 | 2026-08-24 | NC House districts 51-60 | 10 | **18** | 0 | `2026-08-24-nc-batch06.csv` | `written-batch06.json` |
 | 05 | 2026-08-24 | NC House districts 41-50 | 10 | **20** | 0 | `2026-08-24-nc-batch05.csv` | `written-batch05.json` |
 | 04 | 2026-08-24 | NC House districts 31-40 | 10 | **26** | 0 | `2026-08-24-nc-batch04.csv` | `written-batch04.json` |
@@ -376,3 +377,51 @@ only shows up on a read.
 the member has no housing appropriation anywhere; his record is building-code and inspection
 deregulation throughout, so the chair holds. Same test that separated Winslow (chair 4) from Ager,
 Dahle and Bell (chair 3).
+
+## Batch notes — batch 07, NC House districts 61-70 (2026-08-24)
+
+**13 rows across 7 people, one of them a backfill.** Five members seated nothing.
+
+| District | Member | Rows |
+|---|---|---|
+| 61 | Pricey Harrison | redistricting 1 · abortion 2 · data-centers 1 · campaign-finance 2 · civil-rights 2 · ai-regulation 3 |
+| 62 | John M. Blust | ai-regulation 3 |
+| 63-65, 68 | Ross, Riddell, Pyrtle, Willis | 0 |
+| 66 | Sarah Crawford | redistricting 1 · housing 3 |
+| 67 | Cody Huneycutt | ai-regulation 3 |
+| 69 | Dean Arp | childcare 4 |
+| 70 | Brian Biggs | **homelessness 4** |
+| 35 | Mike Schietzelt (backfill) | **homelessness 4** |
+
+Harrison is the campaign's widest single record so far at six rows, all from bills she primarily
+sponsored or cosponsored.
+
+### `homelessness` opens, and the chair turns on the enforcement mechanism
+
+House Bill 781 bars local governments from authorising camping or sleeping on public property. A
+council may set aside its own land for up to a year, but only after documenting that shelter beds are
+insufficient.
+
+- **Chair 5 is excluded** because enforcement is **civil, not criminal** — residents, business owners
+  or the Attorney General sue for an injunction. Chair 5 requires criminal penalties.
+- **Chair 3 is excluded** because it conditions *enforcement* on beds being available. This bill does
+  the reverse: it conditions *permission to allow camping* on beds being insufficient, and provides no
+  citation-to-services diversion.
+- **Chair 4 fits**: prohibiting encampments on public property, without criminal penalties.
+
+### Refusals
+
+- **House Bill 301** (Willis) is titled `Social Media & AI Safety` on the member list but is
+  "Social Media Protections for Minors Under 16" in the text — age verification and account limits
+  for under-16s, with nothing about how algorithms work or any AI duty. Blank.
+- **House Bill 31** (Ross, Biggs) makes Election Day a state holiday. No chair on the voting-rights
+  ladder names a holiday.
+
+### Edition theory confirmed again
+
+Biggs's member list gives House Bill 87's current short title as **"Educational Choice for Children
+Act (ECCA)"**, while the edition-1 text read during the pilot was a cell-phone-free education bill.
+That is the same pattern as House Bill 437: **the member list shows the current title, edition 1 shows
+the original text.** It also means the pilot's dropped `school-vouchers` row was dropped for the right
+reason — the vote cited was on the cell-phone text — but H87 in its current form may well be a voucher
+bill, and is worth a PDF read alongside H565, H727 and H437.

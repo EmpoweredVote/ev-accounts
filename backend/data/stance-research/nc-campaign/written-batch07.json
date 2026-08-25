@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+      "full_name": "Pricey Harrison",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "d81df43f-1f30-4c79-92ce-c61be7150a6e",
+      "full_name": "John M. Blust",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f",
+      "full_name": "Sarah Crawford",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f",
+      "full_name": "Sarah Crawford",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "92c1a1d9-644f-4691-85d9-4c26da5a7aa8",
+      "full_name": "Cody Huneycutt",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "17c741bd-42b9-4d9a-8cb0-c4d4505b5df1",
+      "full_name": "Dean Arp",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "27e79e89-a6cc-4cca-a85e-fe82ee8c0e8f",
+      "full_name": "Brian Biggs",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
+      "full_name": "Mike Schietzelt",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 4
+    }
+  ]
+}
