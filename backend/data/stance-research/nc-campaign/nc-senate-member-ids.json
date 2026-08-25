@@ -1,0 +1,267 @@
+{
+ "_comment": [
+  "NC SENATE district -> ncleg member ID, captured 2026-08-25 from /Members/MemberList/S.",
+  "JOIN BY DISTRICT, NEVER BY NAME.",
+  "",
+  "🔴 SESSION vs CURRENT: a bill's sponsor list names whoever held the seat WHEN IT WAS FILED.",
+  "S467 and S381 both list 'Meyer', but SD 23 is now held by Jonah Garson. Meyer's sponsorship",
+  "belongs to Meyer. NEVER attribute it to the current occupant -- that credits one member with",
+  "another's record. Any sponsor surname absent from this map is a FORMER member: skip it.",
+  "Member pages: /Members/Biography/S/<id>, /Members/IntroducedBills/S/<id>."
+ ],
+ "source": "https://www.ncleg.gov/Members/MemberList/S",
+ "captured": "2026-08-25",
+ "chamber": "NC Senate",
+ "members": [
+  {
+   "district": 1,
+   "ncleg_name": "Bobby Hanig",
+   "member_id": 435
+  },
+  {
+   "district": 2,
+   "ncleg_name": "Norman W. Sanderson",
+   "member_id": 375
+  },
+  {
+   "district": 3,
+   "ncleg_name": "Bob Brinson",
+   "member_id": 448
+  },
+  {
+   "district": 4,
+   "ncleg_name": "Buck Newton",
+   "member_id": 443
+  },
+  {
+   "district": 5,
+   "ncleg_name": "Kandie D. Smith",
+   "member_id": 447
+  },
+  {
+   "district": 6,
+   "ncleg_name": "Michael A. Lazzara",
+   "member_id": 426
+  },
+  {
+   "district": 7,
+   "ncleg_name": "Michael V. Lee",
+   "member_id": 387
+  },
+  {
+   "district": 8,
+   "ncleg_name": "Bill Rabon",
+   "member_id": 303
+  },
+  {
+   "district": 9,
+   "ncleg_name": "Brent Jackson",
+   "member_id": 281
+  },
+  {
+   "district": 10,
+   "ncleg_name": "Benton G. Sawrey",
+   "member_id": 445
+  },
+  {
+   "district": 11,
+   "ncleg_name": "Lisa S. Barnes",
+   "member_id": 427
+  },
+  {
+   "district": 12,
+   "ncleg_name": "Jim Burgin",
+   "member_id": 412
+  },
+  {
+   "district": 13,
+   "ncleg_name": "Lisa Grafstein",
+   "member_id": 439
+  },
+  {
+   "district": 14,
+   "ncleg_name": "Dan Blue",
+   "member_id": 268
+  },
+  {
+   "district": 15,
+   "ncleg_name": "Jay J. Chaudhuri",
+   "member_id": 395
+  },
+  {
+   "district": 16,
+   "ncleg_name": "Gale Adcock",
+   "member_id": 436
+  },
+  {
+   "district": 17,
+   "ncleg_name": "Sydney Batch",
+   "member_id": 434
+  },
+  {
+   "district": 18,
+   "ncleg_name": "Haseeb Fatmi",
+   "member_id": 1002
+  },
+  {
+   "district": 19,
+   "ncleg_name": "Val Applewhite",
+   "member_id": 440
+  },
+  {
+   "district": 20,
+   "ncleg_name": "Natalie S. Murdock",
+   "member_id": 422
+  },
+  {
+   "district": 21,
+   "ncleg_name": "Tom McInnis",
+   "member_id": 389
+  },
+  {
+   "district": 22,
+   "ncleg_name": "Sophia Chitlik",
+   "member_id": 452
+  },
+  {
+   "district": 23,
+   "ncleg_name": "Jonah Garson",
+   "member_id": 1001
+  },
+  {
+   "district": 24,
+   "ncleg_name": "Danny Earl Britt Jr.",
+   "member_id": 399
+  },
+  {
+   "district": 25,
+   "ncleg_name": "Amy S. Galey",
+   "member_id": 429
+  },
+  {
+   "district": 26,
+   "ncleg_name": "Phil Berger",
+   "member_id": 64
+  },
+  {
+   "district": 27,
+   "ncleg_name": "Michael Garrett",
+   "member_id": 414
+  },
+  {
+   "district": 28,
+   "ncleg_name": "Gladys A. Robinson",
+   "member_id": 364
+  },
+  {
+   "district": 29,
+   "ncleg_name": "David W. Craven Jr.",
+   "member_id": 423
+  },
+  {
+   "district": 30,
+   "ncleg_name": "Steve Jarvis",
+   "member_id": 430
+  },
+  {
+   "district": 31,
+   "ncleg_name": "Dana Jones",
+   "member_id": 449
+  },
+  {
+   "district": 32,
+   "ncleg_name": "Paul A. Lowe Jr.",
+   "member_id": 394
+  },
+  {
+   "district": 33,
+   "ncleg_name": "Carl Ford",
+   "member_id": 410
+  },
+  {
+   "district": 34,
+   "ncleg_name": "Chris Measmer",
+   "member_id": 455
+  },
+  {
+   "district": 35,
+   "ncleg_name": "Todd Johnson",
+   "member_id": 406
+  },
+  {
+   "district": 36,
+   "ncleg_name": "Eddie D. Settle",
+   "member_id": 446
+  },
+  {
+   "district": 37,
+   "ncleg_name": "Vickie Sawyer",
+   "member_id": 405
+  },
+  {
+   "district": 38,
+   "ncleg_name": "Mujtaba A. Mohammed",
+   "member_id": 417
+  },
+  {
+   "district": 39,
+   "ncleg_name": "DeAndrea Salvador",
+   "member_id": 431
+  },
+  {
+   "district": 40,
+   "ncleg_name": "Joyce Waddell",
+   "member_id": 393
+  },
+  {
+   "district": 41,
+   "ncleg_name": "Caleb Theodros",
+   "member_id": 451
+  },
+  {
+   "district": 42,
+   "ncleg_name": "Woodson Bradley",
+   "member_id": 454
+  },
+  {
+   "district": 43,
+   "ncleg_name": "Brad Overcash",
+   "member_id": 444
+  },
+  {
+   "district": 44,
+   "ncleg_name": "W. Ted Alexander",
+   "member_id": 416
+  },
+  {
+   "district": 45,
+   "ncleg_name": "Mark Hollo",
+   "member_id": 450
+  },
+  {
+   "district": 46,
+   "ncleg_name": "Warren Daniel",
+   "member_id": 295
+  },
+  {
+   "district": 47,
+   "ncleg_name": "Ralph Hise",
+   "member_id": 298
+  },
+  {
+   "district": 48,
+   "ncleg_name": "Timothy D. Moffitt",
+   "member_id": 438
+  },
+  {
+   "district": 49,
+   "ncleg_name": "Julie Mayfield",
+   "member_id": 432
+  },
+  {
+   "district": 50,
+   "ncleg_name": "Kevin Corbin",
+   "member_id": 433
+  }
+ ]
+}

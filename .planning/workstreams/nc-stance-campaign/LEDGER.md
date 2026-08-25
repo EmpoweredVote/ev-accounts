@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| S01 | 2026-08-25 | NC Senate — 3 chair-verified bills across the chamber | 50 | **22** | 0 | `2026-08-25-nc-senate01.csv` | `written-senate01.json` |
 | 12 | 2026-08-25 | NC House districts 111-120 | 10 | **16** | 0 | `2026-08-25-nc-batch12.csv` | `written-batch12.json` |
 | 11 | 2026-08-25 | NC House districts 101-110 | 10 | **14** | 0 | `2026-08-25-nc-batch11.csv` | `written-batch11.json` |
 | 10 | 2026-08-24 | NC House districts 91-100 | 10 | **15** | 0 | `2026-08-24-nc-batch10.csv` | `written-batch10.json` |
@@ -573,3 +574,39 @@ corroboration; two bills pointing at different chairs is a conflict.**
 | NC Senate, 50 seats | **next.** 1 stanced (Mayfield, pilot). Needs Senate bill sponsor lists: S467, S381, S439 are already chair-verified. |
 | Wave 2b locals, 32 | not started. **Probe Legistar/Granicus per body first** — Durham returned HTTP 500 on the obvious client slug. |
 | PDF-read queue | H565, H727, H437, H87 — served text and current title cannot be reconciled. H565 alone would seat `ai-regulation` for four members. |
+
+## Batch notes — Senate 01 (2026-08-25)
+
+**22 rows across 10 senators, from three sponsor lists and no member-by-member reading.** The Senate
+map (`nc-senate-member-ids.json`) is saved for all 50.
+
+| District | Senator | Rows |
+|---|---|---|
+| 5 | Kandie D. Smith | abortion 2 · civil-rights 2 |
+| 13 | Lisa Grafstein | civil-rights 2 |
+| 15 | Jay J. Chaudhuri | civil-rights 2 |
+| 19 | Val Applewhite | abortion 2 · civil-rights 2 · school-vouchers 1 |
+| 20 | Natalie S. Murdock | abortion 2 · civil-rights 2 · school-vouchers 1 |
+| 22 | Sophia Chitlik | abortion 2 · civil-rights 2 · school-vouchers 1 |
+| 27 | Michael Garrett | abortion 2 · school-vouchers 1 |
+| 39 | DeAndrea Salvador | abortion 2 · civil-rights 2 |
+| 40 | Joyce Waddell | abortion 2 · civil-rights 2 · school-vouchers 1 |
+| 41 | Caleb Theodros | abortion 2 · civil-rights 2 |
+
+### 🔴🔴 SESSION vs CURRENT: a sponsor list names who held the seat WHEN THE BILL WAS FILED
+
+Senate Bills 467 and 381 both list **Meyer** as a sponsor. **SD 23 is now held by Jonah Garson.**
+Meyer's sponsorship belongs to Meyer, and attributing it to Garson would credit one member with
+another's record — the exact error class the Oregon OLIS work spent 188 rows cleaning up.
+
+**Rule, now written into `nc-senate-member-ids.json`: any sponsor surname absent from the current
+member map is a FORMER member. Skip it.** This did not arise once across twelve House batches, which
+is precisely why it is worth recording — it is invisible until a seat changes hands mid-session.
+
+### What the Senate still needs
+
+These three bills only cover the abortion, civil-rights and school-vouchers axes, and only for
+members who signed them. The Senate has no equivalent yet for the bills that carried the House:
+redistricting (H20), housing (H1056), data-centers (H1189/H638), campaign-finance (H1229) and
+ai-regulation (H375). **Next Senate pass: find and chair-verify the Senate companions**, then read
+them across the map the same way.

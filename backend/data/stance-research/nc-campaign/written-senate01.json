@@ -1,0 +1,158 @@
+{
+  "rows": [
+    {
+      "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
+      "full_name": "Kandie D. Smith",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
+      "full_name": "Kandie D. Smith",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "92bd7516-5718-4613-a0a1-5a6f42fa40eb",
+      "full_name": "Lisa Grafstein",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "8a528e10-77a3-4bb0-894c-a9f0131f0e77",
+      "full_name": "Jay J. Chaudhuri",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+      "full_name": "Val Applewhite",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+      "full_name": "Val Applewhite",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+      "full_name": "Val Applewhite",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+      "full_name": "Natalie S. Murdock",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+      "full_name": "Natalie S. Murdock",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+      "full_name": "Natalie S. Murdock",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+      "full_name": "Sophia Chitlik",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+      "full_name": "Sophia Chitlik",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+      "full_name": "Sophia Chitlik",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab",
+      "full_name": "Michael Garrett",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab",
+      "full_name": "Michael Garrett",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "e91f21c8-43b5-4e33-a3eb-a8206817df78",
+      "full_name": "DeAndrea Salvador",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "e91f21c8-43b5-4e33-a3eb-a8206817df78",
+      "full_name": "DeAndrea Salvador",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+      "full_name": "Joyce Waddell",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+      "full_name": "Joyce Waddell",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+      "full_name": "Joyce Waddell",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "5080c1c2-b9ec-4d98-a066-cc8d11e58be5",
+      "full_name": "Caleb Theodros",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "5080c1c2-b9ec-4d98-a066-cc8d11e58be5",
+      "full_name": "Caleb Theodros",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    }
+  ]
+}
