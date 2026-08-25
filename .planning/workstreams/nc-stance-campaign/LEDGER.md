@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 05 | 2026-08-24 | NC House districts 41-50 | 10 | **20** | 0 | `2026-08-24-nc-batch05.csv` | `written-batch05.json` |
 | 04 | 2026-08-24 | NC House districts 31-40 | 10 | **26** | 0 | `2026-08-24-nc-batch04.csv` | `written-batch04.json` |
 | 03 | 2026-08-24 | NC House districts 21-30 (+3 backfills) | 10 | **17** | 0 | `2026-08-24-nc-batch03.csv` | `written-batch03.json` |
 | 02 | 2026-08-24 | NC House districts 11-20 | 10 | **10** | 0 | `2026-08-24-nc-batch02.csv` | `written-batch02.json` |
@@ -300,3 +301,52 @@ cosponsor of House Bill 934 only, and that bill pins nothing by itself.
 
 ⚠ **House Bill 1161 and House Bill 1177 are unread.** They may seat `ai-regulation` for members who
 are not on House Bill 934. Worth pulling both sponsor lists before the next AI-heavy batch.
+
+## Batch notes — batch 05, NC House districts 41-50 (2026-08-24)
+
+**20 rows across 9 of 10 members, on three new source reads.** The bill index carried the rest.
+
+| District | Member | Rows |
+|---|---|---|
+| 41 | Maria Cervania | redistricting 1 · housing 3 · data-centers 1 · campaign-finance 2 |
+| 42 | Mike Colvin | redistricting 1 |
+| 43 | Diane Wheatley | 0 |
+| 44 | Charles Smith | housing 3 |
+| 45 | Frances Jackson, PhD | redistricting 1 · housing 3 · ai-regulation 3 |
+| 46 | Brenden H. Jones | **civil-rights 5** |
+| 47 | John L. Lowery | **civil-rights 5** · ai-regulation 3 |
+| 48 | Garland E. Pierce | childcare 2 |
+| 49 | Cynthia Ball | redistricting 1 · abortion 2 · housing 3 |
+| 50 | Renée A. Price | redistricting 1 · abortion 2 · housing 3 · ai-regulation 3 |
+
+### 🔴 CORRECTION to batch 02's fifth ladder observation
+
+Batch 02 recorded that `civil-rights` chairs 4 and 5 were "close to unreachable" for a state
+legislator, on the strength of House Bill 799 seating nothing. **That was overstated.**
+
+House Bill 171 seats **chair 5** cleanly. It bars DEI programs *and* race-based consideration in
+hiring, contracting and admissions, across state agencies, local government, the UNC system,
+community colleges and any body receiving public funds — carving out only federal civil rights
+compliance, instruction, research and student organisations. Chair 5 reads "eliminate affirmative
+action **and all** race-based government programs" and both clauses are evidenced.
+
+So the restrictive side of this axis **is** reachable; it needs a comprehensive bill. H799 simply is
+not one. **Chair 4 remains unreachable**, because it is about limiting *federal* enforcement, which
+no state legislator can do — but that is one chair, not half a ladder.
+
+The `voting-rights` asymmetry from batch 01 still stands and was not affected by this: no chair on
+that ladder names reducing early voting.
+
+**The general lesson: do not call a chair unreachable after one bill fails to reach it.** Two bills
+of the same apparent kind can sit on opposite sides of the bar, and the difference is scope, which
+only shows up on a read.
+
+### Refusals
+
+- **House Bill 456** (Colvin) regulates surprise ambulance billing. The healthcare ladder is about
+  coverage architecture, so billing regulation seats nothing — same call as House Bill 434.
+- **House Bill 453** (Wheatley, White) raises Medicaid personal care and private duty nursing rates.
+  Still no evidence for chair 3's "while controlling costs" clause, so `medicare/aid` stays blank —
+  consistent with Ager, Reeder and White.
+- **House Bill 951** (Colvin) funds childcare for state employees and first responders: targeted by
+  occupation, not income, and no chair names an employer-provided facility.

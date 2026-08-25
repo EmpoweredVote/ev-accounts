@@ -1,0 +1,144 @@
+{
+  "rows": [
+    {
+      "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65",
+      "full_name": "Maria Cervania",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65",
+      "full_name": "Maria Cervania",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65",
+      "full_name": "Maria Cervania",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65",
+      "full_name": "Maria Cervania",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "0a63e6fe-e977-4166-8c7f-18017c725b2e",
+      "full_name": "Mike Colvin",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "60b7bab9-9e46-4cf4-9d9e-8e6592331e64",
+      "full_name": "Charles Smith",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "1ea857c4-5010-49bf-81f7-37d8f70f6537",
+      "full_name": "Frances Jackson, PhD",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "1ea857c4-5010-49bf-81f7-37d8f70f6537",
+      "full_name": "Frances Jackson, PhD",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "1ea857c4-5010-49bf-81f7-37d8f70f6537",
+      "full_name": "Frances Jackson, PhD",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "ba70a3c1-6533-41d7-94e1-78da5935c3f6",
+      "full_name": "Brenden H. Jones",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "c45a9aa3-7873-47c3-921d-96029b40c258",
+      "full_name": "John L. Lowery",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "c45a9aa3-7873-47c3-921d-96029b40c258",
+      "full_name": "John L. Lowery",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f14b8140-1fea-4378-b218-47caeeb06968",
+      "full_name": "Garland E. Pierce",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729",
+      "full_name": "Cynthia Ball",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729",
+      "full_name": "Cynthia Ball",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729",
+      "full_name": "Cynthia Ball",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+      "full_name": "Renée A. Price",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+      "full_name": "Renée A. Price",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+      "full_name": "Renée A. Price",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+      "full_name": "Renée A. Price",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    }
+  ]
+}
