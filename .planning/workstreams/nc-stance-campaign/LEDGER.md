@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 08 | 2026-08-24 | NC House districts 71-80 | 10 | **14** | 0 | `2026-08-24-nc-batch08.csv` | `written-batch08.json` |
 | 07 | 2026-08-24 | NC House districts 61-70 (+1 backfill) | 10 | **13** | 0 | `2026-08-24-nc-batch07.csv` | `written-batch07.json` |
 | 06 | 2026-08-24 | NC House districts 51-60 | 10 | **18** | 0 | `2026-08-24-nc-batch06.csv` | `written-batch06.json` |
 | 05 | 2026-08-24 | NC House districts 41-50 | 10 | **20** | 0 | `2026-08-24-nc-batch05.csv` | `written-batch05.json` |
@@ -425,3 +426,43 @@ That is the same pattern as House Bill 437: **the member list shows the current 
 the original text.** It also means the pilot's dropped `school-vouchers` row was dropped for the right
 reason — the vote cited was on the cell-phone text — but H87 in its current form may well be a voucher
 bill, and is worth a PDF read alongside H565, H727 and H437.
+
+## Batch notes — batch 08, NC House districts 71-80 (2026-08-24)
+
+**14 rows across 7 people.**
+
+| District | Member | Rows |
+|---|---|---|
+| 71 | Kanika Brown | redistricting 1 · abortion 2 · housing 3 · campaign-finance 2 |
+| 72 | Amber M. Baker | redistricting 1 · abortion 2 · housing 3 · taxes 1 |
+| 73 | Jonathan L. Almond | ai-regulation 3 |
+| 74 | Jeff Zenger | housing 4 |
+| 75 | Donny Lambeth | childcare 4 |
+| 76 | Harry Warren | ai-regulation 3 |
+| 77, 79, 80 | Howard, Kidwell, Watford | 0 |
+| 78 | Neal Jackson | civil-rights 5 · homelessness 4 |
+
+Zenger is blank on `ai-regulation` despite sponsoring two AI-titled bills: he is a primary sponsor of
+House Bill 934, which pins nothing, and House Bill 301, whose text is social-media age verification
+for under-16s with no AI duty at all.
+
+### 🔴 SEVENTH LADDER DEFECT: `abortion` has no rung for the modal restrictive position
+
+Kidwell and Moss primarily sponsor **House Bill 804, The Human Life Protection Act of 2025**. It bans
+abortion with an exception **only** where a physician finds a life-threatening physical condition, and
+it criminalises **providers** while stating explicitly that a pregnant person is not subject to
+criminal liability.
+
+- **Chair 5 is excluded**: it requires "no exceptions" **and** "criminal penalties for providers **and
+  patients**". The bill has an exception and deliberately exempts patients.
+- **Chair 4 is excluded**: it reads "only cases involving **rape, incest**, or serious threats to the
+  mother's life". The bill permits neither rape nor incest.
+
+Seating chair 4 would publish Kidwell as **more permissive than his own bill**. So the row is blank,
+and Kidwell seats nothing this batch.
+
+**This is a real gap, not a research failure.** "Ban with a life-of-the-mother exception only,
+providers liable, patients not" is the most common restrictive abortion statute in the United States,
+and this ladder has no rung for it — the jump from chair 4 to chair 5 skips over it entirely. Every NC
+member sponsoring a bill of that shape will blank on this axis. It belongs in the ADR 0004 queue with
+the `medicare/aid`, `same-sex-marriage` and `voting-rights` findings.
