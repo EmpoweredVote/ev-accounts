@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 06 | 2026-08-24 | NC House districts 51-60 | 10 | **18** | 0 | `2026-08-24-nc-batch06.csv` | `written-batch06.json` |
 | 05 | 2026-08-24 | NC House districts 41-50 | 10 | **20** | 0 | `2026-08-24-nc-batch05.csv` | `written-batch05.json` |
 | 04 | 2026-08-24 | NC House districts 31-40 | 10 | **26** | 0 | `2026-08-24-nc-batch04.csv` | `written-batch04.json` |
 | 03 | 2026-08-24 | NC House districts 21-30 (+3 backfills) | 10 | **17** | 0 | `2026-08-24-nc-batch03.csv` | `written-batch03.json` |
@@ -350,3 +351,28 @@ only shows up on a read.
   consistent with Ager, Reeder and White.
 - **House Bill 951** (Colvin) funds childcare for state employees and first responders: targeted by
   occupation, not income, and no chair names an employer-provided facility.
+
+## Batch notes — batch 06, NC House districts 51-60 (2026-08-24)
+
+**18 rows across 8 of 10, on three source reads.**
+
+| District | Member | Rows |
+|---|---|---|
+| 51 | John Sauls | 0 — four primary bills, none touching the 28 topics |
+| 52 | Ben T. Moss, Jr. | data-centers 2 |
+| 53 | Howard Penny, Jr. | 0 |
+| 54 | Robert T. Reives, II | redistricting 1 · abortion 2 · housing 3 |
+| 55 | Mark Brody | housing 4 |
+| 56 | Allen Buansi | redistricting 1 · abortion 2 · housing 3 · ai-regulation 3 · taxes 1 |
+| 57 | Tracy Clark | redistricting 1 · abortion 2 · housing 3 |
+| 58 | Amos L. Quick, III | redistricting 1 · housing 3 · data-centers 1 |
+| 59 | Jerry "Alan" Branson | ai-regulation 3 |
+| 60 | Amanda P. Cook | campaign-finance 2 |
+
+**Clark is blank on `ai-regulation` by the conflict rule** — he is on House Bill 375 and House Bill
+934. The index caught it without a fetch, which is exactly what it is for.
+
+**Brody's housing 4 needed a negative check, not a positive one.** House Bill 765 is chair 4 only if
+the member has no housing appropriation anywhere; his record is building-code and inspection
+deregulation throughout, so the chair holds. Same test that separated Winslow (chair 4) from Ager,
+Dahle and Bell (chair 3).

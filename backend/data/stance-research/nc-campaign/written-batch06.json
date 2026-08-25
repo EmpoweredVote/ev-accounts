@@ -1,0 +1,130 @@
+{
+  "rows": [
+    {
+      "politician_id": "a16b4745-7388-4818-abf4-ee50d4d4c520",
+      "full_name": "Ben T. Moss, Jr.",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "ab1cff7a-cfe8-411c-b832-0071fa9cf983",
+      "full_name": "Robert T. Reives, II",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "ab1cff7a-cfe8-411c-b832-0071fa9cf983",
+      "full_name": "Robert T. Reives, II",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "ab1cff7a-cfe8-411c-b832-0071fa9cf983",
+      "full_name": "Robert T. Reives, II",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "f6a9e3a7-cf2c-40e5-97b9-3af9b65b838f",
+      "full_name": "Mark Brody",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+      "full_name": "Allen Buansi",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+      "full_name": "Allen Buansi",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+      "full_name": "Allen Buansi",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+      "full_name": "Allen Buansi",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+      "full_name": "Allen Buansi",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96",
+      "full_name": "Tracy Clark",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96",
+      "full_name": "Tracy Clark",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96",
+      "full_name": "Tracy Clark",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "bce52b1d-a3cb-4463-a13a-da42fd216f75",
+      "full_name": "Amos L. Quick, III",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "bce52b1d-a3cb-4463-a13a-da42fd216f75",
+      "full_name": "Amos L. Quick, III",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "bce52b1d-a3cb-4463-a13a-da42fd216f75",
+      "full_name": "Amos L. Quick, III",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "62e8a3ab-caa7-44a2-adf0-7c503411f11a",
+      "full_name": "Jerry \"Alan\" Branson",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "6fd3274c-cfe3-49eb-a967-801612721185",
+      "full_name": "Amanda P. Cook",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    }
+  ]
+}
