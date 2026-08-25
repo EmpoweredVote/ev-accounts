@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16",
+      "full_name": "Eric Ager",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16",
+      "full_name": "Eric Ager",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16",
+      "full_name": "Eric Ager",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16",
+      "full_name": "Eric Ager",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 3
+    },
+    {
+      "politician_id": "650f9783-8295-4947-bd8a-0c1cbf3b4c16",
+      "full_name": "Eric Ager",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "chair_after": 1
+    },
+    {
+      "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07",
+      "full_name": "Julie Mayfield",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07",
+      "full_name": "Julie Mayfield",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "chair_after": 2
+    },
+    {
+      "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07",
+      "full_name": "Julie Mayfield",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "chair_after": 1
+    }
+  ]
+}

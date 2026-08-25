@@ -1,0 +1,60 @@
+{
+  "_comment": [
+    "Five quotes captured during the NC campaign pilot, held as DRAFTS and NOT inserted.",
+    "Every one was verified against the raw bytes of https://mattfordurham.com/platform with no model",
+    "in the loop, because WebFetch is a known quote-fabricator. All five are present and verbatim.",
+    "They are parked here rather than in essentials.quotes because Kopac seated NO stance rows in this",
+    "batch: all seven of his proposed chairs rested on a campaign platform page and named no",
+    "instrument. A quote is worth keeping; a chair pinned on a promise is not.",
+    "Season 2 owns promotion. Research CSVs are gitignored, so this file is the surviving record."
+  ],
+  "source_verified_against": "https://mattfordurham.com/platform",
+  "verified_on": "2026-08-24",
+  "politician": {
+    "full_name": "Matt Kopac",
+    "politician_id": "903de6c5-aee9-45db-b29e-dfd34b3ee298",
+    "seat": "Council Member, Ward 1 — Durham Citywide"
+  },
+  "quotes": [
+    {
+      "topic_key": "housing",
+      "proposed_value": "2",
+      "quote_text": "Identify public land and broker public-private partnerships to build more long-term affordable units",
+      "quote_deidentified": "Identify public land and broker public-private partnerships to build more long-term affordable units",
+      "editor_note": "This platform line commits to public land use and partnerships to fund affordable housing, matching the require-inclusion-and-publicly-fund position in stance 2; verbatim, no edits.",
+      "readrank_selected": false
+    },
+    {
+      "topic_key": "residential-zoning",
+      "proposed_value": "2",
+      "quote_text": "Produce more affordable units and missing middle housing through local revolving construction loan programs, streamlined permitting for pre-approved affordable designs, and a revised Unified Development Ordinance",
+      "quote_deidentified": "Produce more affordable units and missing middle housing through local revolving construction loan programs, streamlined permitting for pre-approved affordable designs, and a revised Unified Development Ordinance",
+      "editor_note": "This is his own platform language calling for modest density increases like missing-middle housing rather than a full zoning overhaul, matching stance 2; verbatim, no edits.",
+      "readrank_selected": false
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "proposed_value": "1",
+      "quote_text": "Maintain free bus service and expand local and regional transit to conveniently and affordably connect people from where they live to where they work and play",
+      "quote_deidentified": "Maintain free bus service and expand local and regional transit to conveniently and affordably connect people from where they live to where they work and play",
+      "editor_note": "This is a direct commitment to transit as the top transportation priority, matching stance 1's focus on transit, walking, and cycling investment; verbatim, no edits.",
+      "readrank_selected": false
+    },
+    {
+      "topic_key": "economic-development",
+      "proposed_value": "2",
+      "quote_text": "Develop an economic strategy that supports our local businesses and promotes environmental sustainability, while diversifying our tax base to take tax pressure off low-income and fixed-income homeowners",
+      "quote_deidentified": "Develop an economic strategy that supports [the local business community] and promotes environmental sustainability, while diversifying [the] tax base to take tax pressure off low-income and fixed-income homeowners",
+      "editor_note": "This platform line commits to supporting local businesses rather than large employer subsidies, matching stance 2; edited only to remove the first-person \"our\" so the community cannot be identified.",
+      "readrank_selected": false
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "proposed_value": "2",
+      "quote_text": "Grow the HEART program to bring compassionate alternatives to more situations that are non-violent",
+      "quote_deidentified": "Grow [a program similar to HEART] to bring compassionate alternatives to more situations that are non-violent",
+      "editor_note": "This platform line commits to expanding an unarmed co-responder program for non-violent calls, matching stance 2; edited to remove the specific program name since it identifies the city.",
+      "readrank_selected": false
+    }
+  ]
+}
