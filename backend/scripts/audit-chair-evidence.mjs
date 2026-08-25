@@ -14,7 +14,17 @@
  *   node scripts/audit-chair-evidence.mjs                     — report across all four migrations
  *   node scripts/audit-chair-evidence.mjs --check <file.json> — GATE: exit 1 if any listed row's
  *                                                               reasoning names no instrument
+ *   node scripts/audit-chair-evidence.mjs --csv <file.csv>   — GATE, PRE-WRITE: same test against a
+ *                                                               research CSV's `reasoning` column
  *   node scripts/audit-chair-evidence.mjs --worklist <out>    — emit the unevidenced rows by state
+ *
+ * Run it at BOTH ends of a batch: `--csv` before the push (so a bad row is fixed in the CSV, not in
+ * prod), and `--check` after it. `--check` reads the STORED reasoning, so pointing it at rows that do
+ * not exist yet passes vacuously — see the note on the CSV branch below.
+ *
+ * `--check` expects `{"rows": [{politician_id, topic_id, chair_after}]}`. A bare JSON ARRAY, or rows
+ * keyed `value` instead of `chair_after`, yields ZERO pairs and therefore a vacuous OK — so write the
+ * campaign's `written-<batch>.json` in that exact shape and it doubles as this gate's input.
  */
 import fs from 'node:fs';
 import pg from 'pg';
@@ -23,6 +33,7 @@ const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const CHECK = flag('--check');
 const WORKLIST = flag('--worklist');
+const CSV = flag('--csv');
 
 const DEFAULT_FILES = [
   ['1726', 'data/stance-retirement/2026-08-12-medicaid-misaligned-1726-rollback.json'],
@@ -80,11 +91,63 @@ for (const [mig, f] of files) {
 // 🔑 The point of the gate is that PASSING MEANS SOMETHING. All three widenings were paired with rows whose
 //    instruments had been read in the source document, and in each case the recorded proof is that the
 //    debt fell by exactly the number of rows touched — never more.
+// ⚠ WIDENED A FOURTH TIME (2026-08-24, NC stance campaign), for two FALSE NEGATIVES measured on the
+// three-person NC pilot — rows whose evidence was read at the source and confirmed, which this gate
+// nevertheless failed. Same discipline as the three widenings above: narrow, identifier-bearing, and
+// paired with rows already verified by reading the instrument.
+//   · `(House|Senate) Bill \d` — North Carolina numbers its bills `H 509` / `S 467`, not `HB 509`, so
+//     an NC citation written in house style was invisible here. The fix requires the CHAMBER WORD and
+//     the number rather than admitting a bare `H\d`, which would match far too much ordinary prose.
+//     Verified rows: H509 Right to Reproductive Freedom Act and H20 Fair Maps Act (operative text read
+//     on ncleg.gov), H1189 Datacenter Transparency Act (moratorium text read), H1229.
+//   · `S.L. 20NN-NNN` — a North Carolina SESSION LAW, the identifier an enacted bill carries after
+//     ratification. Verified row: Mayfield's Aye on H951/S.L. 2021-165.
+//   · CASE. The pattern was case-sensitive, so `Voted Aye` and `Senate Roll Call S-464` both failed
+//     while `voted AYE` and `roll call` passed. That is an accident of transcription, not a
+//     difference in evidence. Only the vote/roll-call alternatives are made case-tolerant — the whole
+//     regex is NOT given an `i` flag, because `\bAct\b` would then match the ordinary verb "act" and
+//     passing would stop meaning anything.
 const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|voted (YES|NO|Yea|Nay|AYE|NAY)|roll call|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted))/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted))/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;
+
+// --csv: GATE A RESEARCH CSV *BEFORE* IT IS WRITTEN.
+//
+// 🔑 Why this mode exists. `--check` reads the reasoning from the DATABASE, so it can only judge rows
+// that already exist. Run against a batch that has not been pushed yet, every pair misses
+// (`if (!r[0]) continue`) and it prints "OK: all 0 row(s)" and exits 0 — a VACUOUS PASS, the same
+// failure shape as a seated-count query that forgets `politician_id IS NOT NULL`. The NC campaign
+// plan called for exactly that run order, which is what surfaced this.
+//
+// Same pattern, same standard, applied to the CSV column instead of the stored column, so a row that
+// cannot name its instrument is fixed in the CSV rather than corrected in prod afterwards.
+//
+// ⚠ THIS GATE IS NECESSARY, NOT SUFFICIENT. It is a LEXICAL test: it asks whether the reasoning NAMES
+// an instrument, never whether that instrument establishes THAT CHAIR rather than merely a direction.
+// On the NC pilot it passed 10 of Ager's 15 rows while only 5 met the bar. A human still has to read
+// the chair text against the instrument. Passing here is the floor, not the finding.
+if (CSV) {
+  const { parse } = await import('csv-parse/sync');
+  const rows = parse(fs.readFileSync(CSV), { columns: true, skip_empty_lines: true });
+  const scored = rows
+    .filter((r) => String(r.value ?? '').trim() !== '')   // a blank spoke seats no chair, so it owes nothing
+    .map((r) => ({ ...r, ok: NAMES_INSTRUMENT.test(r.reasoning || '') }));
+  const bad = scored.filter((r) => !r.ok);
+  if (bad.length) {
+    console.error(`FAIL: ${bad.length} of ${scored.length} row(s) seat a chair on reasoning that names no instrument, act or vote.`);
+    for (const r of bad.slice(0, 20)) {
+      console.error(`  · ${r.full_name} / ${r.topic_key} → chair ${r.value}: ${(r.reasoning || '').slice(0, 90)}`);
+    }
+    if (bad.length > 20) console.error(`  … and ${bad.length - 20} more`);
+    console.error('\nA chair needs evidence describing THAT chair. Source it, or leave the spoke blank.');
+    process.exit(1);
+  }
+  console.log(`OK: all ${scored.length} valued row(s) name an instrument, act or vote.`);
+  console.log('Reminder: this is a lexical floor. It cannot tell a chair-shaped instrument from a directional one.');
+  process.exit(0);
+}
 
 const env = fs.readFileSync('C:/EV-Accounts/backend/.env', 'utf8');
 const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^DATABASE_URL=/, '').trim();
