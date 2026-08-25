@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 10 | 2026-08-24 | NC House districts 91-100 | 10 | **15** | 0 | `2026-08-24-nc-batch10.csv` | `written-batch10.json` |
 | 09 | 2026-08-24 | NC House districts 81-90 (+3 backfills) | 10 | **11** | 0 | `2026-08-24-nc-batch09.csv` | `written-batch09.json` |
 | 08 | 2026-08-24 | NC House districts 71-80 | 10 | **14** | 0 | `2026-08-24-nc-batch08.csv` | `written-batch08.json` |
 | 07 | 2026-08-24 | NC House districts 61-70 (+1 backfill) | 10 | **13** | 0 | `2026-08-24-nc-batch07.csv` | `written-batch07.json` |
@@ -501,3 +502,23 @@ operative text.
 
 She cosponsors House Bill 934 only, and that bill pins nothing. The index carried this without a
 fetch, as it did for Clark and Rubin.
+
+## Batch notes — batch 10, NC House districts 91-100 (2026-08-24)
+
+**15 rows across 7 people. House districts 1-100 are now swept.**
+
+| District | Member | Rows |
+|---|---|---|
+| 92 | Terry M. Brown Jr. | redistricting 1 · housing 3 · ai-regulation 3 |
+| 94 | Blair Eddins | civil-rights 5 |
+| 96 | Jay Adams | ai-regulation 3 |
+| 97 | Heather H. Rhyne | childcare 4 |
+| 98 | Beth Helfrich | redistricting 1 · abortion 2 |
+| 99 | Nasif Majeed | redistricting 1 · abortion 2 |
+| 100 | Julia Greenfield | redistricting 1 · abortion 2 · housing 3 · data-centers 1 · campaign-finance 2 |
+| 91, 93, 95 | K. Hall, Pickett, Carver | 0 |
+
+**House Bill 306 seats nothing, and the reason is worth keeping.** It is a *local* bill letting
+Blowing Rock, Boone and Watauga County build housing **exclusively for their own employees**. It
+appropriates nothing, and chair 1's "anyone who needs a home" is contradicted by the employees-only
+limit. A local enabling act for one employer is not a position on the state's role in housing.
