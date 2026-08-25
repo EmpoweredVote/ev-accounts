@@ -759,3 +759,94 @@ Asheville minutes before ~Dec 2025 are `drive.google.com/file/` PDFs that requir
 confirmed in a real browser, not only with curl. **The readable window is 2025-12-09 → 2026-06-23.**
 Twenty rows off eleven meetings is not a full read of this council's record; it is a full read of
 the seven months that are public.
+
+## Batch notes — locals 02-04: Durham City, Buncombe, Durham County (2026-08-25)
+
+**23 rows. The locals pass is complete: 43 rows across 21 of the 32 people.**
+Durham City 14 · Buncombe 7 · Durham County 2 · (Asheville 20, batch local 01).
+`check-stance-sources.mjs` re-run after the write: **745 rows, all four classes at baseline, the four
+must-be-0 classes at 0.** The 43 new rows added no violation.
+
+### What seated
+
+| Body | Topic | Chair | Instrument |
+|---|---|---|---|
+| Durham City ×7 | `data-centers` | 1 | **Ordinance #16683**, 2026-06-15 — extension bringing Durham to a twelve-month moratorium on development approvals for data centers and cryptocurrency mining, under N.C.G.S. 160D-107. Rist moved, Caballero seconded, **7-0**. Baker brought it forward; Williams said on the record that data centers create few jobs for heavy land and resource use. |
+| Durham City ×7 | `growth-and-development` | 2 | The **7-0 refusal** of the 4802 Cheek Road annexation, 2026-05-18 — 190 homes on 71 acres **outside the Urban Growth Boundary**, which staff said was inconsistent with the Comprehensive Plan. Recorded discussion names infrastructure capacity for schools, sewer and utility service. |
+| Buncombe ×7 | `housing` | 3 | Introduction of the **bond orders for $40M of GO bonds for affordable housing**, 2026-06-02. Moore moved, Wells seconded, unanimous, all seven present. |
+| Durham County ×2 | `public-safety-approach` | 2 (Allam), 3 (Jacobs) | **Capital Project Amendment No. 25CPA022**, 2025-01-13 — $16.5M for a Sheriff's Training Facility, passed **3-2**. |
+
+### 🔴 The Durham County pair is the best row in the whole campaign, and it is why cohort passes exist
+
+Allam and Jacobs cast the *same* No vote and land on **different chairs**, because each read a
+statement into the record naming a *mechanism*:
+
+- **Allam → 2.** She supports "a full expansion of all the services that HEART provides" and says the
+  Sheriff supports only a co-response model "where an armed officer is always responding". That is
+  chair 2's *unarmed* responder, named and contrasted.
+- **Jacobs → 3.** She describes the expansion as "a mental health professional accompanying CIT
+  trained deputies on calls they would be responding to normally", freeing law enforcement to focus on
+  violent crime, at a time of constrained revenue. Keep funding, add crisis teams — chair 3.
+
+**Burton, Lee and Valentine are BLANK, and the vote direction is not why.** All three also stated
+support for HEART expansion; none named a model. Their Aye also funded $16.5M of new capital, which
+contradicts chair 3's "keep current public safety funding", while chair 4's clauses — staffing,
+equipment, pay, response times, deterrence — appear nowhere in what they said. Two chairs half-fit, so
+neither is seated. ⚠ This leaves the two dissenters seated and the three-vote majority blank. **That
+asymmetry is an artefact of who explained themselves, not of who won**, and it should be stated
+whenever this batch is quoted.
+
+### 🔴 A fifth ladder defect: `residential-zoning` chair 5 cannot describe how anyone actually ends single-family zoning
+
+On 2025-08-05 Buncombe County adopted the zoning text amendment its own board called "**a significant
+milestone in the County's history, ending single family zoning in the County**" (Wells moved, Moore
+seconded, unanimous). It could not be seated.
+
+Chair 5 reads "Eliminate single-family-only zoning; **allow any housing type on any lot
+communitywide**". Buncombe ended mandatory single-family zoning by allowing **two dwelling units per
+lot** in the last district that forbade it. So chair 5's headline clause is met in the county's own
+words while its operative clause is not — and two units per lot is precisely chair 2's "modest density
+increases (duplexes, accessory units)", whose own qualifier ("strong design review and neighborhood
+input") is contradicted, because the amendment *removes* the holdover standards.
+
+This is not a Buncombe quirk. **Every real jurisdiction that has ended single-family-only zoning did it
+by allowing 2-4 units, not "any housing type"** — Minneapolis, Oregon HB 2001, California SB 9. As
+written, chair 5 is unreachable and chair 2 is contradicted by the same act, so the ladder cannot
+describe the single most common zoning reform in the country. → ADR 0004 / season 2 queue, alongside
+`medicare/aid`, `same-sex-marriage` and `voting-rights`.
+
+### 🔴 In Durham the MOVER IS A ROLE, so mover and seconder are not evidence
+
+Durham City minutes show the Mayor Pro Tempore moving nearly every general-business item, and a single
+pair moving and seconding thirty consecutive consent items at one timestamp. Reading "Council Member X
+moved" as a position would have manufactured a stance for whoever held the chair. **In Durham only the
+named tally counts** — the opposite of Asheville, where the mover genuinely chose the item. The
+seating rule has to be re-derived per body.
+
+### What the Durham County corpus actually is
+
+Legistar has no minutes for this board at all. The county's own site does, and they are excellent —
+verbatim statements plus named Ayes and Nays — at
+`dconc.gov/Board-of-Commissioners1/Archived-Agendas--Minutes/<YYYY>/<YYYYMMDD>{RS,WS,SS}Minutes.pdf`.
+🔴 **An absent document in one system is not an absent document.** But the archive stops after
+January 2025: 2024 in full, then exactly three 2025 files, then 404s. The current five commissioners
+were seated 2024-12-09, so **the whole current board is readable across four meetings**. Two rows off
+four meetings is the honest yield, not a failure of the search.
+
+### The eleven who seated nothing, and why
+
+- **6 administrative and law-enforcement officers** — Sheriff Birkhead and Sheriff Miller, Registers of
+  Deeds Davis and Reisinger, Clerks of Superior Court Thompson and Christy. They hold no vote in the
+  bodies whose minutes exist, and the 22 local topics ask about policy their offices do not set. This
+  is the documented zero the plan predicted; do not force it.
+- **Burton, Lee, Valentine** — reasoning above.
+- **Buncombe's `residential-zoning`** cost the other two nothing extra; every commissioner seated
+  `housing`.
+
+### Yield, measured
+
+**43 rows across 32 people, 21 of whom seated something — 1.3 rows per person, 2.0 per person who
+seated anything.** Against the assembly's 1.6 and 2.4. Councils are thinner than legislatures per head
+because one instrument seats a whole body at once: **three instruments carried Asheville's seven, two
+carried Durham's seven, one carried Buncombe's seven.** The binding constraint is not evidence per
+person, it is how many chair-shaped instruments a body voted on inside the readable window.

@@ -8,11 +8,11 @@ researching anyone*. This is that probe, and it changed two assumptions.
 | Body | People | System | Fetch | Narrative? |
 |---|---|---|---|---|
 | Durham City Council | 7 | CivicPlus AgendaCenter, `durhamnc.gov`, **catID 4** | `POST /AgendaCenter/UpdateCategoryList {year, catID}` → `/AgendaCenter/ViewFile/Minutes/_MMDDYYYY-<id>` PDFs | **Yes — the best of the four** |
-| Durham County BOC | 8 | **Legistar `durhamcounty`** | `webapi.legistar.com/v1/durhamcounty/events`, `.../events/{id}/eventitems?MinutesNote=1` | **No** — see below |
+| Durham County BOC | 8 | **Legistar `durhamcounty`** for agendas; **`dconc.gov` for minutes** | `webapi.legistar.com/v1/durhamcounty/events`; `dconc.gov/Board-of-Commissioners1/Archived-Agendas--Minutes/<YYYY>/<YYYYMMDD>{RS,WS,SS}Minutes.pdf` | **Yes, but only off dconc.gov, and only to Jan 2025** — see below |
 | Asheville City Council | 7 | WordPress custom post type `meeting` | `wp-json/wp/v2/meetings` → ACF `meeting_minutes` → `docs.google.com/document/d/<id>/export?format=txt` | **Yes** |
 | Buncombe County BOC | 10 | **CivicClerk, client `buncombeconc`**, categoryId **26** | `buncombeconc.api.civicclerk.com/v1/Events?$filter=categoryId eq 26` → `GetMeetingFileStream(fileId=N,plainText=false)` PDFs | **Yes** |
 
-Harvest + topic scan scripts, and the 195-document text corpus they produce, live in the session
+Harvest + topic scan scripts, and the 328-document text corpus they produce, live in the session
 scratchpad (`harvest_locals.py`, `scan_topics.py`, `corpus/`). They are re-runnable from scratch;
 the corpus itself is not committed because it is 13 MB of derived text.
 
@@ -20,18 +20,28 @@ the corpus itself is not committed because it is 13 MB of derived text.
 
 **1. "COUNTY minutes are action-only" is false as a rule — it is true of ONE county here.**
 Buncombe's minutes are fully narrative and attribute positions to named commissioners
-("Commissioner Sloan requested that the Board review and consider a draft letter…"). Durham
-County's are not. The property is per-body and has to be tested per body, not inferred from
-city-versus-county.
+("Commissioner Sloan requested that the Board review and consider a draft letter…"), and Durham
+County's own minutes carry each commissioner's statement verbatim. What differs is not city versus
+county — it is **which system the body publishes minutes in**, and that has to be tested per body.
 
-**Durham County is the weak one.** Legistar carries no minutes document at all for the Board of
-County Commissioners — `EventMinutesFile` is null on every event, and `EventItemRollCallFlag` is 0
-with no mover or seconder recorded, so there are **no per-member votes**. What exists is
-`EventItemMinutesNote`: clerk shorthand, attributed by initials, e.g.
-`MB - why membership going from 9 to 12` / `NA - concern around not being allowed to use nine months
-to define what data cen…`. That is a *lead* — it says which commissioner engaged which item — but it
-is not prose that can carry `reasoning`, and it is certainly not `quote_text`. Expect Durham County
-to yield near zero from this source and to need a second source per row.
+**Durham County: Legistar is not its minutes, and finding that out took a second look.** Legistar
+carries no minutes document at all for the Board of County Commissioners — `EventMinutesFile` is null
+on every event, and `EventItemRollCallFlag` is 0 with no mover or seconder recorded, so there are
+**no per-member votes there**. What Legistar has is `EventItemMinutesNote`: clerk shorthand attributed
+by initials, e.g. `MB - why membership going from 9 to 12`. That is a *lead* — it says which
+commissioner engaged which item — but it cannot carry `reasoning` and is certainly not a quote.
+
+🔴 **The county's own site publishes full narrative minutes, and they are excellent** — verbatim
+statements read into the record by each commissioner, and named Ayes/Nays. They live at
+`dconc.gov/Board-of-Commissioners1/Archived-Agendas--Minutes/<YYYY>/<YYYYMMDD>{RS,WS,SS}Minutes.pdf`,
+reachable only from `/Board-of-Commissioners/Meetings-and-Announcements/Archived-Agendas-and-Minutes`.
+**Concluding "Durham County has no usable minutes" from the Legistar probe alone would have been
+wrong** — an absent document in one system is not an absent document.
+
+⚠ **Coverage stops after January 2025.** The archive holds 2024 in full and exactly three 2025 files
+(01-06 WS, 01-13 RS, 01-27 RS); every later date 404s, and Legistar's minutes status is still `Draft`.
+The current five commissioners were seated by 2024-12-09, so **the usable window for the whole current
+board is four meetings**.
 
 **2. `webapi.legistar.com/v1/durham/` returning HTTP 500 is not Durham City being off Legistar.**
 Every wrong slug returns the same 500 with the body
@@ -65,7 +75,7 @@ client", not "server down".**
 | Body | Unique documents | Window |
 |---|---|---|
 | Durham City Council | 118 | 2024-01 → 2026-08 |
-| Durham County BOC | 114 (minutes notes only) | 2024-01 → 2026-08 |
+| Durham County BOC | 114 Legistar note files (2024-01 → 2026-08) + **34 narrative minutes off dconc.gov (2024-01 → 2025-01)** |  |
 | Buncombe County BOC | 51 | 2024-05 → 2026-08 |
 | Asheville City Council | 11 | 2025-12 → 2026-06 |
 
