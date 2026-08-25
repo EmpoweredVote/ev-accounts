@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| 09 | 2026-08-24 | NC House districts 81-90 (+3 backfills) | 10 | **11** | 0 | `2026-08-24-nc-batch09.csv` | `written-batch09.json` |
 | 08 | 2026-08-24 | NC House districts 71-80 | 10 | **14** | 0 | `2026-08-24-nc-batch08.csv` | `written-batch08.json` |
 | 07 | 2026-08-24 | NC House districts 61-70 (+1 backfill) | 10 | **13** | 0 | `2026-08-24-nc-batch07.csv` | `written-batch07.json` |
 | 06 | 2026-08-24 | NC House districts 51-60 | 10 | **18** | 0 | `2026-08-24-nc-batch06.csv` | `written-batch06.json` |
@@ -466,3 +467,37 @@ providers liable, patients not" is the most common restrictive abortion statute 
 and this ladder has no rung for it — the jump from chair 4 to chair 5 skips over it entirely. Every NC
 member sponsoring a bill of that shape will blank on this axis. It belongs in the ADR 0004 queue with
 the `medicare/aid`, `same-sex-marriage` and `voting-rights` findings.
+
+## Batch notes — batch 09, NC House districts 81-90 (2026-08-24)
+
+**11 rows: 8 for districts 81-90, plus 3 backfills.** Six members seated nothing — this stretch is
+heavy with education, healthcare-technical and local bills.
+
+| District | Member | Rows |
+|---|---|---|
+| 82 | Brian Echevarria | **religious-freedom 4** |
+| 84 | Jeffrey C. McNeely | ai-regulation 3 |
+| 85 | Dudley Greene | data-centers 2 |
+| 88 | Mary Belk | redistricting 1 · abortion 2 · housing 3 · data-centers 1 · campaign-finance 2 |
+| 81, 83, 86, 87, 89, 90 | Potts, Campbell, Blackwell, D. Hall, Setzer, Kiger | 0 |
+| 69 | Dean Arp (backfill) | religious-freedom 4 |
+| 78 | Neal Jackson (backfill) | religious-freedom 4 |
+| 52 | Ben T. Moss, Jr. (backfill) | religious-freedom 4 |
+
+### `religious-freedom` opens on a standard, not a subject
+
+House Bill 776 creates a strict-scrutiny test: the state may not burden religious exercise unless
+doing so is essential to a compelling interest and is the least restrictive means. Chair 4 reads
+"allow faith-based exemptions from laws that conflict with sincere religious beliefs" — which is what
+that standard produces. Chair 5 needs religious organisations to have **complete autonomy in
+operations and hiring**, which the bill does not grant, and chair 3 is a balance rather than a tilt
+toward exemption.
+
+Note the contrast already in the corpus: Mayfield sits at chair **2** on this axis, from Senate Bill
+381's narrow housing-only religious exemption. Same ladder, opposite ends, both from a statute's
+operative text.
+
+### Belk is blank on `ai-regulation` even though she is on an AI bill
+
+She cosponsors House Bill 934 only, and that bill pins nothing. The index carried this without a
+fetch, as it did for Clark and Rubin.
