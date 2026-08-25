@@ -5,6 +5,7 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| S02 | 2026-08-25 | NC Senate — housing companions | 3 | **3** | 0 | `2026-08-25-nc-senate02.csv` | `written-senate02.json` |
 | S01 | 2026-08-25 | NC Senate — 3 chair-verified bills across the chamber | 50 | **22** | 0 | `2026-08-25-nc-senate01.csv` | `written-senate01.json` |
 | 12 | 2026-08-25 | NC House districts 111-120 | 10 | **16** | 0 | `2026-08-25-nc-batch12.csv` | `written-batch12.json` |
 | 11 | 2026-08-25 | NC House districts 101-110 | 10 | **14** | 0 | `2026-08-25-nc-batch11.csv` | `written-batch11.json` |
@@ -610,3 +611,29 @@ members who signed them. The Senate has no equivalent yet for the bills that car
 redistricting (H20), housing (H1056), data-centers (H1189/H638), campaign-finance (H1229) and
 ai-regulation (H375). **Next Senate pass: find and chair-verify the Senate companions**, then read
 them across the map the same way.
+
+## Batch notes — Senate 02 (2026-08-25)
+
+**3 rows.** Senate Bill 736, the Foundation Act, seats `housing` 3 for Grafstein (13), Garrett (27)
+and Bradley (42).
+
+### Why chair 3 and not chair 2, when the bill has an inclusionary mandate
+
+Senate Bill 736 is the largest housing bill either chamber has produced this session: $50M a year to
+the Housing Trust Fund, $3M a year for first-time buyers, $10M a year for community land trusts, $30M
+a year in rental assistance, plus ADUs by right and higher density near transit — **and** a
+requirement that 20% of units in qualifying developments be affordable at 80% AMI.
+
+That mandate is chair 2's language. But chair 2 reads "**Use rent caps**, require new developments to
+include affordable units, and publicly fund new housing", and the bill explicitly contains no rent
+control. Chair 3's three clauses — subsidies for affordable projects, first-time buyer assistance,
+easier building permits — are **all** evidenced.
+
+Seating chair 2 would publish these senators as supporting rent caps they did not propose. Seating
+chair 3 understates the bill slightly but asserts nothing false. **Where one chair is fully evidenced
+and an adjacent one contains an unevidenced clause, take the fully evidenced chair** — the risk of a
+false statement outweighs the loss of nuance.
+
+⚠ Worth flagging for season 2: chair 2 bundles rent control with inclusionary zoning, which are
+distinct policies that often appear apart. A jurisdiction that mandates affordable units without rent
+control has no clean rung.
