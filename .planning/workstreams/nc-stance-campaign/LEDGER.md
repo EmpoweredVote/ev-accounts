@@ -5,6 +5,9 @@ wrote. Append one row per batch, in the same task that pushes it. Never backfill
 
 | Batch | Date | Cohort | People | Rows pushed | Quotes drafted | CSV | written-*.json |
 |---|---|---|---|---|---|---|---|
+| S05 | 2026-08-25 | NC Senate — correct sponsor lists | 3 | **3** | 0 | `2026-08-25-nc-senate05.csv` | `written-senate05.json` |
+| S04 | 2026-08-25 | NC Senate — Republican bills | 4 | **4** | 0 | `2026-08-25-nc-senate04.csv` | `written-senate04.json` |
+| S03 | 2026-08-25 | NC Senate — housing + AI companions | 12 | **12** | 0 | `2026-08-25-nc-senate03.csv` | `written-senate03.json` |
 | S02 | 2026-08-25 | NC Senate — housing companions | 3 | **3** | 0 | `2026-08-25-nc-senate02.csv` | `written-senate02.json` |
 | S01 | 2026-08-25 | NC Senate — 3 chair-verified bills across the chamber | 50 | **22** | 0 | `2026-08-25-nc-senate01.csv` | `written-senate01.json` |
 | 12 | 2026-08-25 | NC House districts 111-120 | 10 | **16** | 0 | `2026-08-25-nc-batch12.csv` | `written-batch12.json` |
@@ -637,3 +640,64 @@ false statement outweighs the loss of nuance.
 ⚠ Worth flagging for season 2: chair 2 bundles rent control with inclusionary zoning, which are
 distinct policies that often appear apart. A jurisdiction that mandates affordable units without rent
 control has no clean rung.
+
+## Batch notes — Senate 03-05 (2026-08-25)
+
+**19 rows. THE SENATE PASS IS COMPLETE: 18 of 50 senators stanced.** Campaign total for the NC
+General Assembly: **96 of 170 members, 234 rows.**
+
+New this pass: Mohammed (38), Robinson (28) and Murdock (20) on `housing`; **Mayfield's `housing`,
+held since the pilot, is now seated** — Senate Bill 446 is a clean $30M subsidy and pairs with her
+Senate Bill 495 ADU mandate exactly as Cunningham's pair did. Six senators take `ai-regulation` 3 from
+Senate Bill 735. And the Senate's first Republican rows: Lazzara (6), Overcash (43), Alexander (44)
+and Moffitt (48) at `homelessness` 5, Moffitt also at `housing` 4.
+
+### 🔴🔴 THE SPONSOR BLOCK ON THE TEXT PAGE IS NOT RELIABLE — three live rows were wrong
+
+The `/Sessions/.../HTML/` page's sponsor line silently folds cosponsors into what reads as "primary
+sponsors". **BillLookUp is authoritative.** This produced three wrong rows, all corrected in prod:
+
+| Row | Claimed | Actually |
+|---|---|---|
+| Alston / housing (batch 03) | primary sponsor of H1056 | cosponsor — Dahle is sole primary |
+| Garrett + Grafstein / housing (S02) | primary sponsors of S736 | cosponsors — Bradley is sole primary |
+| Alexander + Overcash / homelessness (S04) | primary sponsors of S724 | cosponsors — Lazzara is sole primary |
+
+The chairs were unaffected every time — cosponsorship supports the same chair — so only the sentence
+changed. But it is voter-facing text, and **the third instance also hid a missing row**: reading
+S724's real list revealed Moffitt as a cosponsor, which seated him.
+
+**Always read sponsorship from `/BillLookUp/2025/<bill>`, never from the text page.** Now recorded at
+the top of `chair-shaped-bills.json`.
+
+### The `homelessness` ladder discriminates on MECHANISM, and both chairs are now occupied
+
+- **House Bill 781 → chair 4.** Civil enforcement only, and a council may allow camping after
+  documenting a shelter shortage.
+- **Senate Bill 724 → chair 5.** Criminal penalties on a repeat offence (Class 3 misdemeanour), no
+  shelter condition at all, and it lets residents sue a city that fails to enforce.
+
+Same direction, different chairs, decided by what the statute actually does. That is the ladder
+working as designed.
+
+### Why only 18 of 50, and why that is the honest number
+
+I sampled eleven Republican senators' full bill lists. The chamber's majority files budget,
+insurance, local and technical bills; the chair-shaped policy bills are overwhelmingly minority-party
+measures. Six Senate title traps were caught and refused: `Safe Camps Act` (youth camps, not
+homelessness), `Access to Sports and Extracurriculars for All` (school access, not transgender
+eligibility), `Women's Safety and Protection Act` (restrooms, not sports), `Protecting Workers in the
+Age of AI Act` (a retraining fund, no AI duty), `Safeguard Fair Elections` (election administration),
+`Statewide Child Care Investment Act` (facility grants only).
+
+**The Senate has no counterpart at all** to the House bills that carried redistricting (H20),
+campaign-finance (H1229) or data-centers (H1189/H638). That is a fact about what the chamber filed,
+not a gap in the search.
+
+### One more compound-chair finding
+
+Senate Bill 457 is straight **automatic voter registration** — but chair 1 reads "automatically
+register all eligible citizens **and allow online voting**", and the bill says nothing about online
+voting. So `voting-rights` is compound at *both* ends: chair 1 bundles automatic registration with
+online voting, chair 2 bundles early voting with no-excuse mail-in. Every near-miss on that ladder
+this campaign has been a half-met compound chair.

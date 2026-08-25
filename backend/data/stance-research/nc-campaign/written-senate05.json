@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "politician_id": "f4300980-c1dc-41a1-9fcc-72c28818fc87",
+      "full_name": "Timothy D. Moffitt",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+      "full_name": "Sophia Chitlik",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    },
+    {
+      "politician_id": "5080c1c2-b9ec-4d98-a066-cc8d11e58be5",
+      "full_name": "Caleb Theodros",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "politician_id": "4d443bbf-b850-494c-bc37-760a660de4a1",
+      "full_name": "W. Ted Alexander",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "a7bf31bd-e2b4-481f-b93b-2f0d4838f2f0",
+      "full_name": "Brad Overcash",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "cd691bd1-b27e-4363-a7de-fb7e0e1c7258",
+      "full_name": "Michael A. Lazzara",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "chair_after": 5
+    },
+    {
+      "politician_id": "f4300980-c1dc-41a1-9fcc-72c28818fc87",
+      "full_name": "Timothy D. Moffitt",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "chair_after": 4
+    }
+  ]
+}
