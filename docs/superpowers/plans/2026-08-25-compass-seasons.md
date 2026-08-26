@@ -159,7 +159,7 @@ Still additive — every column is nullable, so no existing write breaks.
 - Consumes: `inform.seasons(id)`, `inform.compass_topic_revisions(id)`, `public.users(id)`.
 - Produces: `season_id`, `topic_revision_id`, `editor_id`, `created_at`, `updated_at` on both `inform.politician_answers` and `inform.politician_context`, all nullable.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 ```sql
 BEGIN;
@@ -204,7 +204,7 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run, confirm the rollback, take the number, apply, commit**
+- [x] **Step 2: Dry-run, confirm the rollback, take the number, apply, commit**
 
 Same procedure as Task 1, Steps 2-3. Expected slot: `CA_0018`.
 
