@@ -1,10 +1,13 @@
 /**
- * Redirect-target validation for the `?redirect=` parameter on the SSO login.
+ * Redirect-target validation for the `?redirect=` parameter on /login and /signup.
  *
- * SECURITY: any host accepted here is a host this app will send a logged-in
- * member to. Check the parsed hostname AND the protocol — never a string prefix.
+ * SECURITY: on a successful login the caller appends the member's access token
+ * to this value as a URL fragment. Any host accepted here therefore receives a
+ * working bearer token for that member. The allowlist is the only thing standing
+ * between a clicked link and a hijacked session, so it checks the parsed
+ * hostname AND the protocol — never a string prefix.
  *
- * Keep in sync with app/src/lib/redirect.ts. The two apps are separate npm
+ * Keep in sync with admin/src/lib/redirect.ts. The two apps are separate npm
  * projects with no shared package, so the core function is duplicated on
  * purpose; do not let the copies drift.
  */
@@ -27,7 +30,8 @@ export function validateRedirectUrl(raw: string | null | undefined): string | nu
     return null; // malformed, or relative with no base
   }
 
-  // https only. The hostname check alone accepted http:// until 2026-08-26.
+  // https only. A hostname check alone would accept http:// and downgrade the
+  // token handoff to plaintext.
   if (url.protocol !== 'https:') return null;
 
   // Exact host, or a subdomain. `endsWith` is safe only with the leading dot:
@@ -43,18 +47,4 @@ export function validateRedirectUrl(raw: string | null | undefined): string | nu
 export function getValidRedirect(): string | null {
   const raw = new URLSearchParams(window.location.search).get('redirect');
   return validateRedirectUrl(raw);
-}
-
-/**
- * Extract a human-readable app name from a redirect URL for the callout.
- */
-export function getAppNameFromRedirect(redirectUrl: string): string {
-  try {
-    const hostname = new URL(redirectUrl).hostname;
-    const subdomain = hostname.replace('.empowered.vote', '');
-    if (subdomain === 'empowered.vote' || subdomain === hostname) return 'Empowered Vote';
-    return subdomain.charAt(0).toUpperCase() + subdomain.slice(1);
-  } catch {
-    return 'Empowered Vote';
-  }
 }
