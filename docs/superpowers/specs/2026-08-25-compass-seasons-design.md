@@ -180,7 +180,8 @@ at the time of writing; re-verify with `npm run check:migrations` after `git fet
    `editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`**, confirmed by him
    on 2026-08-25. 🔴 **The inferred answer was wrong.** `public.users` carries no email, and the only
    user who had ever proposed or approved compass content was `chrisandrewsedu`
-   (`854fbc06-40fc-458d-b523-20ef8e5ad1b2`) — a *different* person sharing a first name. Behavioural
+   (`854fbc06-40fc-458d-b523-20ef8e5ad1b2`) — that is **Chris Andrews**, a teammate who works
+   primarily on On the Record and Read & Rank. A different person sharing a first name. Behavioural
    evidence looked like proof and was not. 33,164 answer rows, one statement.
 3. **Constrain.** Make the new columns `NOT NULL`, swap the primary keys, add the composite FK, tighten
    the politician value CHECK, add the immutability trigger.
@@ -217,7 +218,7 @@ revision plus a season boundary.
 - **Mid-season correction of a ladder.** Out of scope. A correction opens a revision that the next
   season picks up.
 - **ReadRank questions.** ADR 0004 §8 covers them with the same machinery. Seasons for ReadRank are a
-  separate decision.
+  separate decision, and **Chris Andrews owns Read & Rank** — it is his call, not this plan's.
 
 ## Open before implementation
 

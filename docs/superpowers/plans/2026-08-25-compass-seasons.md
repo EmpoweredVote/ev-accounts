@@ -228,9 +228,11 @@ The only large-DML task. 33,164 answer rows and their context rows.
 - [ ] **Step 1: Write the migration**
 
 `editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`** (confirmed by Chris on 2026-08-25: email
-chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `854fbc06…`, which is a
-different person who happens to share a first name and who authored the one `judicial-bail-pretrial`
-revision. Inferring the editor from "who has authored compass content" produced that wrong answer.
+chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `854fbc06…` — that is
+**Chris Andrews**, a teammate who works primarily on On the Record and Read & Rank, and who authored
+the one `judicial-bail-pretrial` revision. Inferring the editor from "who has authored compass
+content" produced that wrong answer. **Two Chrises work in this system; never resolve either by
+first name or by authorship.**
 
 ```sql
 BEGIN;
@@ -828,3 +830,4 @@ git commit -m "feat(compass): expose season number and a last-reviewed flag on t
 1. **Citizen import.** Blocked: `CA_0015`'s header records rung-map repointing as `REPOINTING_NOT_IMPLEMENTED`. Repointing must exist before the import rule (chosen rung *and its immediate neighbours* all map `identity`) can be evaluated. Also spans the essentials frontend for the "imported" disclosure.
 2. **The six ladder defects.** Once a second season can open, each becomes a revision plus a season boundary rather than an edit to live text.
 3. **Question-number drift warning.** The best-practice check from spec decision 4. Small; needs two seasons to exist before it can do anything.
+4. **Seasons for ReadRank questions.** ADR 0004 §8 already puts them on this machinery. **Chris Andrews owns Read & Rank** — that decision is his, and this plan deliberately does not pre-empt it.
