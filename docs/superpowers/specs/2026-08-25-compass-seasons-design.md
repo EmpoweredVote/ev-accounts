@@ -177,12 +177,11 @@ at the time of writing; re-verify with `npm run check:migrations` after `git fet
 2. **Backfill season 1.** Insert season 1 (`closed`). Populate `season_questions` from all 44 live
    topics, pinning each to its current revision, numbering them in the present display order.
    Set every existing answer and context row to season 1 and its topic's current revision.
-   ⚠ **`editor_id` for the backfill is unresolved.** `public.users` holds 21 rows and carries only
-   `display_name` — no email. The one candidate is `chrisandrewsedu`
-   (`854fbc06-40fc-458d-b523-20ef8e5ad1b2`), and that is **not proof**: attributing 33,164 rows to the
-   wrong person is precisely the failure the roster rules exist to prevent. Confirm the id before
-   step 2 runs, or backfill `editor_id` NULL and make it `NOT NULL` only for rows written after this
-   lands. 33,164 answer rows, one statement.
+   `editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`**, confirmed by him
+   on 2026-08-25. 🔴 **The inferred answer was wrong.** `public.users` carries no email, and the only
+   user who had ever proposed or approved compass content was `chrisandrewsedu`
+   (`854fbc06-40fc-458d-b523-20ef8e5ad1b2`) — a *different* person sharing a first name. Behavioural
+   evidence looked like proof and was not. 33,164 answer rows, one statement.
 3. **Constrain.** Make the new columns `NOT NULL`, swap the primary keys, add the composite FK, tighten
    the politician value CHECK, add the immutability trigger.
 4. **Read path.** Update the API to select the newest season in which a person has an answer, and to
@@ -222,10 +221,11 @@ revision plus a season boundary.
 
 ## Open before implementation
 
-1. **Whose `editor_id` does the season 1 backfill carry?** See step 2. Do not guess it.
-2. **Does `editor_id` become `NOT NULL`?** It cannot be, if the backfill leaves it null. Either resolve
-   (1) or accept a nullable column meaning "written before provenance existed" — which is honest, and
-   is what the 33,164 legacy rows actually are.
+1. ~~Whose `editor_id` does the backfill carry?~~ **Closed 2026-08-25: Chris Cantrell, `Kades`,
+   `4e6dde8f-2bd0-4054-824f-4164744165ea`.** Kept here because the *wrong* answer was reachable by
+   inference and looked convincing — see the migration path, step 2.
+2. **Does `editor_id` become `NOT NULL`?** Now it can, since the backfill fills every row. Decide
+   whether to enforce it in the constrain migration.
 3. **Which consumers join on `(politician_id, topic_id)` today?** They must all take a season before
    step 3 swaps the primary key. This needs an audit, not an assumption; it is the change's largest
    risk.

@@ -227,7 +227,10 @@ The only large-DML task. 33,164 answer rows and their context rows.
 
 - [ ] **Step 1: Write the migration**
 
-`editor_id` is left NULL deliberately — see the spec's *Open before implementation* #1. Do not guess an id.
+`editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`** (confirmed by Chris on 2026-08-25: email
+chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `854fbc06…`, which is a
+different person who happens to share a first name and who authored the one `judicial-bail-pretrial`
+revision. Inferring the editor from "who has authored compass content" produced that wrong answer.
 
 ```sql
 BEGIN;
@@ -259,14 +262,16 @@ SELECT s.id, t.id, r.id,
       WHERE sq.season_id = s.id AND sq.topic_id = t.id);
 
 UPDATE inform.politician_answers a
-   SET season_id = sq.season_id, topic_revision_id = sq.topic_revision_id
+   SET season_id = sq.season_id, topic_revision_id = sq.topic_revision_id,
+       editor_id = '4e6dde8f-2bd0-4054-824f-4164744165ea'   -- Chris Cantrell (Kades)
   FROM inform.season_questions sq
   JOIN inform.seasons s ON s.id = sq.season_id AND s.number = 1
  WHERE sq.topic_id = a.topic_id
    AND a.season_id IS NULL;
 
 UPDATE inform.politician_context c
-   SET season_id = sq.season_id, topic_revision_id = sq.topic_revision_id
+   SET season_id = sq.season_id, topic_revision_id = sq.topic_revision_id,
+       editor_id = '4e6dde8f-2bd0-4054-824f-4164744165ea'   -- Chris Cantrell (Kades)
   FROM inform.season_questions sq
   JOIN inform.seasons s ON s.id = sq.season_id AND s.number = 1
  WHERE sq.topic_id = c.topic_id
@@ -286,7 +291,10 @@ BEGIN
 
   SELECT count(*) INTO v_c FROM inform.politician_context WHERE season_id IS NULL;
   IF v_c <> 0 THEN
-    RAISE EXCEPTION '% context rows left without a season', v_c; END IF;
+    RAISE EXCEPTION '%% context rows left without a season', v_c; END IF;
+
+  IF EXISTS (SELECT 1 FROM inform.politician_answers WHERE editor_id IS NULL) THEN
+    RAISE EXCEPTION 'answers left without an editor'; END IF;
 
   -- Every answer must cite the revision its season actually pinned.
   IF EXISTS (
