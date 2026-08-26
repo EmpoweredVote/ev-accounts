@@ -462,7 +462,9 @@ router.post('/politicians/context', async (req, res): Promise<void> => {
     const context = await adminSetPoliticianContext(
       parsed.data.politician_id,
       parsed.data.topic_id,
-      { reasoning: parsed.data.reasoning, sources: parsed.data.sources }
+      { reasoning: parsed.data.reasoning, sources: parsed.data.sources },
+      // Editor of record — the same identity the audit log records below.
+      actorId(req)
     );
 
     await logAdminAction(actorId(req), 'compass:politician:context:update', null, {

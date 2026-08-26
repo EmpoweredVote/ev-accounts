@@ -82,6 +82,83 @@ export async function latestAnsweredSeason(
 }
 
 /**
+ * THE WRITE SHAPE, defined once.
+ *
+ * Every season-aware write needs three things the caller does not have: the open
+ * season, the ladder revision that season pins for this topic, and a matching
+ * `ON CONFLICT` target. Resolving those at each of the six call sites invites
+ * six slightly different answers, so they are defined here and imported.
+ *
+ * It is ONE statement on purpose. Reading the open season and then inserting
+ * would leave a window in which the season closes between the two, writing an
+ * answer into a season that is no longer open. Sourcing the INSERT from
+ * `season_questions JOIN seasons ... status='open'` closes that window: if no
+ * season is open the SELECT yields no rows and NOTHING is written.
+ *
+ * 🔴 Which means a caller MUST check that a row came back. Zero rows is not
+ * success, it is "no open season" or "this topic is not in the season's question
+ * set" — use `assertWritten`, which distinguishes them.
+ *
+ * `topic_revision_id` comes from the season's pin, never from the caller and
+ * never from "whatever is current". That is the entire point of the pin: the
+ * answer records which ladder text it was an answer to.
+ *
+ * Param order: $1 politician_id, $2 topic_id, $3 value, $4 editor_id.
+ */
+export const UPSERT_ANSWER_SQL = `
+  INSERT INTO inform.politician_answers
+    (politician_id, topic_id, season_id, topic_revision_id, value, editor_id, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, $3::numeric, $4::uuid, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET value = EXCLUDED.value, editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+/** Param order: $1 politician_id, $2 topic_id, $3 reasoning, $4 sources, $5 editor_id. */
+export const UPSERT_CONTEXT_SQL = `
+  INSERT INTO inform.politician_context
+    (politician_id, topic_id, season_id, topic_revision_id, reasoning, sources, editor_id, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, $3::text, $4::text[], $5::uuid, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources,
+        editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+/**
+ * Turn "no rows written" into an error that says which of the two causes it was.
+ *
+ * Both are silent no-ops without this, and they need different fixes: open a
+ * season, versus add the topic to the open season's question set.
+ */
+export async function assertWritten(rowCount: number, topicId: string): Promise<void> {
+  if (rowCount > 0) return;
+  const { rows } = await pool.query<{ open_seasons: string; pinned: string }>(
+    `SELECT (SELECT count(*) FROM inform.seasons WHERE status = 'open')      AS open_seasons,
+            (SELECT count(*) FROM inform.season_questions sq
+               JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+              WHERE sq.topic_id = $1)                                        AS pinned`,
+    [topicId],
+  );
+  const openSeasons = Number(rows[0]?.open_seasons ?? 0);
+  if (openSeasons === 0) {
+    throw new Error(
+      'no open season — nothing can be written until one is opened. ' +
+      "Set a row in inform.seasons to status='open' with an opened_at, and give " +
+      'it a season_questions row per topic pinning the ladder revision it asks.');
+  }
+  if (Number(rows[0]?.pinned ?? 0) === 0) {
+    throw new Error(
+      `topic ${topicId} is not in the open season's question set, so there is no ` +
+      'pinned ladder revision to record this answer against. Add an ' +
+      'inform.season_questions row for it, or write to a season that asks it.');
+  }
+  throw new Error(`write affected 0 rows for topic ${topicId} for an unknown reason`);
+}
+
+/**
  * The read shape, as a SQL fragment: newest answered season for one
  * politician/topic pair, as a LATERAL subquery.
  *

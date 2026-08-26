@@ -3,7 +3,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { currentSeasonId, latestAnsweredSeason } from './seasonService.js';
+import {
+  currentSeasonId, latestAnsweredSeason, assertWritten,
+  UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL,
+} from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -78,5 +81,69 @@ describe('latestAnsweredSeason', () => {
     mockQuery.mockResolvedValue({ rows: [] });
     await latestAnsweredSeason('pol-1', 'topic-1');
     expect(mockQuery.mock.calls[0][1]).toEqual(['pol-1', 'topic-1']);
+  });
+});
+
+describe('the write shape', () => {
+  // These SQL constants exist so six call sites cannot disagree. The tests pin
+  // the three properties that make them safe, because a future edit that breaks
+  // any one of them looks harmless in a diff.
+  it('takes the pin from the season, never from the caller', () => {
+    for (const sql of [UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL]) {
+      expect(sql).toMatch(/sq\.topic_revision_id/);
+      // No positional parameter may supply the revision.
+      expect(sql).not.toMatch(/topic_revision_id\s*=\s*\$/);
+    }
+  });
+
+  it('sources the season from status=open, so a closed season writes nothing', () => {
+    for (const sql of [UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL]) {
+      expect(sql).toMatch(/status\s*=\s*'open'/);
+    }
+  });
+
+  it('conflicts on the three-column key, not the bare pair', () => {
+    for (const sql of [UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL]) {
+      expect(sql).toMatch(/ON CONFLICT \(politician_id, topic_id, season_id\)/);
+    }
+  });
+
+  it('is one statement, so the season cannot close between read and write', () => {
+    for (const sql of [UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL]) {
+      expect(sql.match(/INSERT INTO/g)).toHaveLength(1);
+      expect(sql).not.toMatch(/;/);
+    }
+  });
+
+  it('stamps an editor and an updated_at', () => {
+    for (const sql of [UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL]) {
+      expect(sql).toMatch(/editor_id/);
+      expect(sql).toMatch(/updated_at\s*=\s*now\(\)/);
+    }
+  });
+});
+
+describe('assertWritten', () => {
+  it('does nothing when rows were written', async () => {
+    await expect(assertWritten(1, 'topic-1')).resolves.toBeUndefined();
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  // Zero rows has two causes needing opposite fixes. Collapsing them into one
+  // message would send the reader to the wrong place.
+  it('blames the missing open season when none is open', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '0', pinned: '0' }] });
+    await expect(assertWritten(0, 'topic-1')).rejects.toThrow('no open season');
+  });
+
+  it('blames the question set when a season is open but does not ask this topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '1', pinned: '0' }] });
+    await expect(assertWritten(0, 'topic-1'))
+      .rejects.toThrow(/not in the open season's question set/);
+  });
+
+  it('does not claim to know the cause when both look fine', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '1', pinned: '1' }] });
+    await expect(assertWritten(0, 'topic-1')).rejects.toThrow(/unknown reason/);
   });
 });

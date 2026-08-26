@@ -199,19 +199,24 @@ export async function resolveResearchReview(
     .map((e) => e.url);
   const allSources = [...new Set([...machineVerifiedUrls, ...humanVerifiedUrls])];
 
-  await pool.query(
-    `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-     VALUES ($1, $2, $3)
-     ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
-    [row.politicianId, row.topicId, finalValue],
-  );
-  await pool.query(
-    `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-     VALUES ($1, $2, $3, $4)
-     ON CONFLICT (politician_id, topic_id)
-     DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
-    [row.politicianId, row.topicId, finalReasoning, allSources],
-  );
+  // Imported dynamically, like db.js above and for the same reason: a STATIC
+  // import here pulls seasonService -> db.js in at module-eval time, before
+  // this file's tests can install their pool mock. It fails as a hoisting error
+  // about mockQuery, which reads as unrelated to seasons. Keep it dynamic.
+  const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten } =
+    await import('./seasonService.js');
+
+  // Season-aware write. The shape lives in seasonService so the six write sites
+  // cannot drift apart; it resolves the open season and that season's pinned
+  // ladder revision in the same statement, and writes NOTHING if none is open.
+  // assertWritten turns that silent no-op into an error naming the cause.
+  const ans = await pool.query(UPSERT_ANSWER_SQL,
+    [row.politicianId, row.topicId, finalValue, resolvedBy]);
+  await assertWritten(ans.rowCount ?? 0, row.topicId);
+
+  const ctx = await pool.query(UPSERT_CONTEXT_SQL,
+    [row.politicianId, row.topicId, finalReasoning, allSources, resolvedBy]);
+  await assertWritten(ctx.rowCount ?? 0, row.topicId);
 
   // Write human-verified URLs to politician_context_evidence so they appear in citations
   const batchId = `human-review-${id}`;
