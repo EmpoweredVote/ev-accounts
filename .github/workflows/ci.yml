@@ -19,6 +19,21 @@ name: CI
 # money is in per-push repetition: a job that costs a minute because of the MINIMUM costs it 494 times
 # a month, and a drift check whose own rationale is that data changes ON THE CALENDAR (see the
 # `schedule` note below) is charged per commit instead. Know both numbers before adding a tenth job.
+#
+# WHERE IT STANDS AFTER THE TWO FIXES BELOW (paths-ignore, plus `child-county` and
+# `readrank-question-unit` moved to schedule-only): ~2,800 minutes a month, ~800 over the allowance,
+# about $6/month. Down from ~$18.
+#
+# 🔴 THE TWO CHECKS THAT STAYED ON PUSH DID SO ON EVIDENCE, NOT ON HABIT — do not "finish the job" by
+# moving them too. Over the 90 days to 2026-08-26, `address-search reachability` accounts for EVERY ONE
+# of the 34 genuine live-DB failures, and three of them were open for 7, 7 and 15 minutes: 08-11 15:25,
+# and 08-19 01:24 and 01:49, each closed by the very next commit (`fix(ci): unbreak address-search
+# reachability`, `fix(ci): BAD_GEOMETRY must key on SPATIAL reachability`). A four-times-a-day schedule
+# samples a 7-minute window with about a 2% chance. These checks are not a drift monitor; they are a
+# feedback loop that works because the author is still at the keyboard. `stance sourcing` stays for the
+# same reason at a longer range: research campaigns are the fastest sessions in this repo — the NC pass
+# was ~20 pushes in one night writing 234 rows — and nightly-only would mean hearing about a bad
+# citation batch after all of it is written.
 on:
   # 📄 Docs-only changes do not run CI. Of 90 push/PR runs in the 8 days above, 18 (20%) changed
   # nothing but markdown or `.planning/` artefacts. No check in this file reads a .md file — the
@@ -284,9 +299,21 @@ jobs:
     # one time they failed for DIFFERENT reasons is precisely when the masking happened. Similar
     # subject matter is not a reason to couple failure reporting.
     #
-    # Same triggers and prod-drift reasoning as reachability: master pushes + the daily schedule, never
-    # on PRs.
-    if: github.event_name != 'pull_request'
+    # 💰 SCHEDULE ONLY SINCE 2026-08-26 — NOT ON PUSH. What makes this matview stale is a BOUNDARY
+    # LOAD: a script run against the database, which frequently carries no commit at all. Charging the
+    # check to all 429 pushes a month bought a minute each time for an event that pushes do not cause.
+    #
+    # Evidence for the move: across the 90 days to 2026-08-26 this job failed 5 times, all 5 inside the
+    # 2026-08-24 19:30-21:17 window in which ALL FOUR live-DB jobs went red together and recovered with
+    # no fix commit — a transient database problem, not a mapping defect. Zero genuine push catches
+    # since it got its own job on 08-14.
+    #
+    # ⚠ THE EVIDENCE WINDOW IS 12 DAYS, which is thin. What bounds the risk is the blast radius, not the
+    # sample: the failure mode is newly added cities sitting outside their county on the coverage
+    # dashboard, the correct value is 0, and the fix is one command. A day of a wrong dashboard is the
+    # worst case. If that stops being true — if anything starts READING this matview on a path a user
+    # can hit — put it back on push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     defaults:
       run:
         working-directory: backend
@@ -381,10 +408,17 @@ jobs:
     # the other live-DB checks (an editor's quote selection, not geometry or citations), so sharing a
     # job would let either one mask the other.
     #
-    # Same triggers and prod-drift reasoning as `reachability` / `child-county` / `stance-sources`:
-    # NOT on pull_request. What this guards is a DATA state an editor creates through the admin UI —
-    # no commit is involved, and a PR's SQL has not touched prod yet.
-    if: github.event_name != 'pull_request'
+    # 💰 SCHEDULE ONLY SINCE 2026-08-26 — NOT ON PUSH, and this one is the clearest case of the four.
+    # What it guards is a DATA state AN EDITOR CREATES THROUGH THE ADMIN UI. No commit is involved, so
+    # running it per push was checking 429 times a month for something a push cannot cause.
+    #
+    # Evidence: 5 failures in the 90 days to 2026-08-26, all 5 in the 2026-08-24 transient window where
+    # all four live-DB jobs went red together and recovered with no fix commit.
+    #
+    # Zero tolerance and a tiny surface — exactly one race/topic pair in prod (LA Mayor general,
+    # economic-development) can produce a violation at all — so a day's detection latency costs one
+    # race rendering one question twice, and only if an editor splits that topic in that window.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     defaults:
       run:
         working-directory: backend
