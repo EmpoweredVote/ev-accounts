@@ -42,7 +42,7 @@ Purely additive. Nothing reads these yet, so this task carries no risk to live r
 - Consumes: `inform.compass_topics(id)`, `inform.compass_topic_revisions(id)` — both live.
 - Produces: `inform.seasons(id, number, name, status, opened_at, closed_at, public_note)`; `inform.season_questions(season_id, topic_id, topic_revision_id, question_number, display_order)` with `UNIQUE (season_id, topic_id, topic_revision_id)` — later tasks depend on that unique constraint as a foreign-key target.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 ```sql
 BEGIN;
@@ -126,11 +126,11 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run against prod and confirm the rollback**
+- [x] **Step 2: Dry-run against prod and confirm the rollback**
 
 Wrap the body in `BEGIN; ... ROLLBACK;` and run it via the Supabase MCP (DDL cannot run as `ev_api`). Expected: the `RAISE NOTICE` fires, then after rollback `to_regclass('inform.seasons')` is `NULL` again. **Confirm that null before trusting the dry run.**
 
-- [ ] **Step 3: Take the number, apply, commit**
+- [x] **Step 3: Take the number, apply, commit**
 
 ```bash
 git fetch origin && npm run check:migrations --prefix backend
