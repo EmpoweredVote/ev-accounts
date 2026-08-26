@@ -1,7 +1,7 @@
 {
   "name": "empowered-accounts-backend",
   "version": "0.1.0",
-  "description": "Empowered Accounts backend API \u2014 foundational three-tier account infrastructure",
+  "description": "Empowered Accounts backend API — foundational three-tier account infrastructure",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -81,6 +81,6 @@
     "supertest": "^7.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
-    "vitest": "^2.1.0"
+    "vitest": "^3.2.7"
   }
 }
