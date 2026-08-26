@@ -350,7 +350,7 @@ A permanent check that starts **red** and turns green as Task 5 lands. This is t
 **Interfaces:**
 - Produces: `npm run check:answer-seasons --prefix backend`, exit 0 when every live consumer is season-aware.
 
-- [ ] **Step 1: Write the gate**
+- [x] **Step 1: Write the gate**
 
 ```javascript
 #!/usr/bin/env node
@@ -393,13 +393,39 @@ if (offenders.length) {
 console.log('answer-season consumers OK — every live consumer names a season.');
 ```
 
-- [ ] **Step 2: Run it and confirm it fails with the expected list**
+- [x] **Step 2: Run it and confirm it fails with the expected list**
 
 Run: `npm run check:answer-seasons --prefix backend`
-Expected: **FAIL**, listing the live consumers. As of 2026-08-25, 15 files under `backend/src` match. One is a test (`lib/compassStatsService.test.ts`, excluded by the glob) and one is generated (`types/database.types.ts`, regenerated not edited), leaving **13 hand-written consumers**:
-`lib/adminService.ts`, `lib/compassService.ts`, `lib/compassStatsService.ts`, `lib/coverageMapService.ts`, `lib/coverageService.ts`, `lib/electionsMapService.ts`, `lib/federalCoverage.ts`, `lib/researchEvidenceService.ts`, `lib/sourceVerificationService.ts`, `lib/stagingService.ts`, `routes/admin.ts`, `routes/compassAdmin.ts`, `routes/compassContributor.ts`.
+Expected: **FAIL**, listing the live consumers.
 
-- [ ] **Step 3: Wire it into package.json and CI**
+**MEASURED 2026-08-25, and it differs from this plan's first estimate — trust these numbers.**
+The gate reports **24 SQL literals across 11 files** under `backend/src`, plus **5 database
+functions**. The estimate was wrong in three ways, all now handled by the gate itself:
+
+- **The unit is the SQL literal, not the file.** `lib/compassService.ts` alone holds 6 offending
+  literals. A file-level check would have gone green after seasoning one of them.
+- **`routes/admin.ts` and `routes/compassAdmin.ts` are NOT consumers.** They contain the strings
+  `'update_politician_answers'` (an audit-log action name) and `'admin_update_politician_answers'`
+  (an RPC name). Neither queries the table. The gate requires a clause keyword or an `inform.`
+  prefix, so both are correctly excluded.
+- 🔴 **Five DATABASE FUNCTIONS are live consumers and no file under `backend/src` contains them.**
+  `connect.confirm_vq_stance`, `inform.admin_publish_topic_rewrite` and
+  `public.admin_update_politician_answers` each carry `ON CONFLICT (politician_id, topic_id)`;
+  `inform.admin_approve_rewrite_framing` and `public.admin_list_politicians` touch the tables
+  without naming a season. A repo-only gate would have green-lit the Task 6 key swap and broken the
+  admin compass write path at runtime. **Task 5 must therefore ship migrations, not just TypeScript.**
+
+**11 of the sites are `ON CONFLICT (politician_id, topic_id)`** — 7 in the repo, 4 in the database.
+These do not fan out; they raise **`42P10`** the instant the key changes. Verified with a
+scratch-table control: the clause works under the 2-column key, raises `42P10` under the 3-column
+key, and works again when it names the season.
+
+The 11 repo files: `lib/adminService.ts`, `lib/compassService.ts`, `lib/compassStatsService.ts`,
+`lib/coverageMapService.ts`, `lib/coverageService.ts`, `lib/electionsMapService.ts`,
+`lib/federalCoverage.ts`, `lib/researchEvidenceService.ts`, `lib/sourceVerificationService.ts`,
+`lib/stagingService.ts`, `routes/compassContributor.ts`.
+
+- [x] **Step 3: Wire it into package.json and CI**
 
 ```json
 "check:answer-seasons": "node scripts/check-answer-season-consumers.mjs"
@@ -407,7 +433,7 @@ Expected: **FAIL**, listing the live consumers. As of 2026-08-25, 15 files under
 
 Add a CI job mirroring the existing `stance sourcing` job in `.github/workflows/`. ⚠ Note it will be **red until Task 5 completes** — land Tasks 4 and 5 on the same branch so master never sees a failing gate.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add backend/scripts/check-answer-season-consumers.mjs backend/package.json
