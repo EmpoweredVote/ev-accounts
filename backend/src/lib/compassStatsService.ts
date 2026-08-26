@@ -82,12 +82,25 @@ const USER_COUNTS_SQL = `
 `;
 
 // politician_answers has no soft-delete column; every row is live.
+//
+// ONE ANSWER PER POLITICIAN PER TOPIC — THEIR LATEST. A plain COUNT(*) over the
+// table would count someone researched in two seasons twice, weighting them
+// double in the distribution and inflating every bar. The DISTINCT ON collapses
+// each politician/topic to the newest season they actually answered in, which is
+// also what the compass displays, so the chart and the profile agree.
 const POLITICIAN_COUNTS_SQL = `
+  WITH latest AS (
+    SELECT DISTINCT ON (a.politician_id, a.topic_id)
+           a.topic_id, a.value, a.write_in_text
+      FROM inform.politician_answers a
+      JOIN inform.seasons s ON s.id = a.season_id
+     ORDER BY a.politician_id, a.topic_id, s.number DESC
+  )
   SELECT topic_id::text AS topic_id,
          value::float8  AS value,
          COUNT(*)::int  AS n,
          (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
-  FROM inform.politician_answers
+  FROM latest
   GROUP BY topic_id, value
 `;
 
@@ -98,10 +111,20 @@ const USER_TOTALS_SQL = `
   WHERE deleted_at IS NULL
 `;
 
+// Same collapse as POLITICIAN_COUNTS_SQL, and for the same reason: `responses`
+// is a COUNT(*), so without it the total climbs every season on re-research
+// while no new position has been recorded.
 const POLITICIAN_TOTALS_SQL = `
+  WITH latest AS (
+    SELECT DISTINCT ON (a.politician_id, a.topic_id)
+           a.politician_id
+      FROM inform.politician_answers a
+      JOIN inform.seasons s ON s.id = a.season_id
+     ORDER BY a.politician_id, a.topic_id, s.number DESC
+  )
   SELECT COUNT(*)::int                       AS responses,
          COUNT(DISTINCT politician_id)::int  AS respondents
-  FROM inform.politician_answers
+  FROM latest
 `;
 
 interface TotalsRow {
