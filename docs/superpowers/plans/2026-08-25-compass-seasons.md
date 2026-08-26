@@ -543,6 +543,60 @@ git commit -m "feat(compass): make every live answer-table consumer season-aware
 
 ---
 
+### 🔴 FINDINGS FROM TASK 5 THAT CHANGE TASK 6 — read before touching Task 6
+
+Measured on 2026-08-25 by running things, not by reasoning about them.
+
+**1. The ordering in this plan is wrong for WRITES, and it is a hard failure.**
+Task 5's season-aware writes CANNOT work before Task 6. Proven: inserting a season-2 row for a
+pair that already has a season-1 row fails with **`23505`** on `politician_answers_pkey`, because
+the old 2-column key is still in force. Adding a unique index on the triple is **not sufficient** —
+the old PK must be *dropped*. So:
+
+- `ON CONFLICT (politician_id, topic_id, season_id)` raises **`42P10`** until Task 6 lands.
+- 🔴 **Apply Task 6's migration to prod BEFORE merging the Task 5 code.** Render auto-deploys
+  `master`, and migrations here are applied by hand and never by a deploy, so the order is yours to
+  control — but it is not optional. Merging first breaks every admin compass write.
+
+**2. Task 6 must also handle a dependent foreign key the plan does not mention.**
+`politician_context_pkey` cannot be dropped while this exists:
+
+```
+inform.politician_context_evidence.politician_context_evidence_politician_id_topic_id_fkey
+  FOREIGN KEY (politician_id, topic_id) REFERENCES inform.politician_context(politician_id, topic_id) ON DELETE CASCADE
+```
+
+Dropping the PK fails with `2BP01`. **`inform.politician_context_evidence` (183 rows) needs a
+`season_id` of its own** and the FK must be recreated on the triple — otherwise evidence attaches to
+a politician/topic across all seasons, and the citations read has nothing to align it to. This is a
+third table in scope, not mentioned anywhere in this plan.
+
+**3. Five database functions are live consumers.** See Task 4, Step 2. They need their own
+migration; `check:answer-seasons` reports them and stays red until they land. Two are worse than the
+gate can express:
+
+- 🔴 **`public.admin_update_politician_answers` contains an unseasoned `DELETE`:**
+  `DELETE FROM inform.politician_answers WHERE politician_id = $1 AND (v_topic_ids IS NULL OR topic_id != ALL(v_topic_ids))`.
+  After the swap, an admin editing season 2 **deletes that politician's season-1 answers** for every
+  topic absent from the payload. Silent cross-season destruction, far worse than `42P10`. It also
+  never touches `politician_context`, so it strands context rows — this is how `ORPHAN_CONTEXT`
+  grows at *runtime* rather than through a migration.
+- 🔴 **`inform.admin_approve_rewrite_framing` joins `politician_context` to `politician_answers` on
+  the bare pair** and seeds `topic_rewrite_stance_proposals` from the result. After the swap it seeds
+  **duplicate proposals**, silently.
+
+**4. Nothing in this plan ever OPENS a season.** Season 1 is `closed`; Tasks 6, 7 and 8 all assume
+an open one exists (Task 8 reads `SELECT number FROM inform.seasons WHERE status = 'open'`). Until a
+season is opened, every write path correctly refuses with "no open season". Opening one is an
+editorial act — it pins a question set to specific ladder revisions — so it is deliberately not
+invented here. **It needs its own task.**
+
+**5. The fan-out is real and was measured**, not argued. With two seasons, a bare-pair join between
+`politician_answers` and `politician_context` returned **2 rows for one politician/topic**, pairing a
+season-2 answer with season-1 reasoning. The season-aware join returned the correct 1.
+
+---
+
 ### Task 6: Constrain — the irreversible step
 
 Only after Task 5's gate is green.
