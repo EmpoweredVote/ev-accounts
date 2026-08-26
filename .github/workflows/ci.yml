@@ -1,10 +1,37 @@
 name: CI
 
+# 💰 THIS REPO IS PRIVATE, SO EVERY JOB IN THIS FILE IS BILLED, AND BILLED WITH A ONE-MINUTE MINIMUM
+# PER JOB — not per run, and not by actual seconds used. Measured 2026-08-18..26: ~703 billed minutes
+# over 8 days, ~2,540 per 30 days against a 2,000-minute free allowance. Most of that is the minimum,
+# not work: `migration numbering`, `answer-delete context guards` and `cal-access predicate tripwire`
+# each finish in 10-20 SECONDS and each bills a full minute on all 90 push/PR runs, so those three
+# alone account for ~40% of the bill. Splitting jobs is what this file does on purpose (see the rule
+# below) and it is worth its price — but the price is one minute per job per run, so know it before
+# adding a tenth job.
 on:
+  # 📄 Docs-only changes do not run CI. Of 90 push/PR runs in the 8 days above, 18 (20%) changed
+  # nothing but markdown or `.planning/` artefacts. No check in this file reads a .md file — the
+  # guards scan .sql and .ts, the rest query the live database — so those 18 runs could only ever
+  # come back green.
+  #
+  # GitHub skips a run only when EVERY changed path matches, so a commit touching one .ts file and
+  # forty .md files still runs the full set. A docs-only push to master also skips the four live-DB
+  # drift jobs for that push; the nightly schedule below still covers them that day.
+  #
+  # 🔴 DO NOT ADD SOURCE DIRECTORIES HERE. `docs/infra/**` is CDK TypeScript, not documentation. It is
+  # in the clear today only because `**/*.md` does not match it — ignoring `docs/**` wholesale would
+  # silently exempt real code the day someone wires a check to it. (No YAML anchor to share this list:
+  # GitHub Actions does not expand aliases in workflow files.)
   pull_request:
     branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
   push:
     branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
   # The live-DB jobs (`reachability`, `child-county`, `stance-sources`, `readrank-question-unit`) also
   # run on a schedule: their
   # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
@@ -13,6 +40,27 @@ on:
   schedule:
     - cron: '0 13 * * *'
   workflow_dispatch:
+
+# One run per event per ref; a newer push cancels the run it supersedes.
+#
+# ⚠ THIS SAVES NOTHING TODAY. Over the same 8 days, ZERO of 100 runs overlapped a newer run on the
+# same ref — the whole workflow finishes in about two minutes and pushes land minutes apart. It is
+# here as a ratchet, not a saving: it costs nothing to hold and starts paying the day a job gets slow
+# or two commits land inside a minute. Do not cite it as the fix for the Actions bill; the bill is the
+# per-job minimum above.
+#
+# Cancelling is safe on master, not only on PRs, because every static check here scans the WORKING
+# TREE (the migrations directory, one .ts file) rather than diffing against the previous commit, so
+# the surviving run still covers whatever the cancelled one would have seen. The live-DB jobs want the
+# newest run by definition.
+#
+# 🔑 `github.event_name` IS IN THE GROUP KEY ON PURPOSE. Push and schedule share `refs/heads/master`.
+# Without the event in the key, the 13:00 nightly could cancel an in-flight push run — and the nightly
+# does not run `backend`, the numbering check, the delete guards or the tripwire, so those four checks
+# would go unreported for that commit with nothing saying so.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 # 🔑 ONE INDEPENDENT DATA CHECK PER JOB. A failing step masks every step after it in the same job, and
 # the masked check reports "skipped" nowhere a human is looking — the job is just red for the first
