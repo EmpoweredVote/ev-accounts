@@ -135,6 +135,74 @@ describe('check-answer-season-consumers — it must pass', () => {
   });
 });
 
+// The escape hatch, modelled on CLAUDE.md's `-- @context-decision:` line. Some
+// questions really are about every season ("has this person EVER been
+// researched"), and narrowing those would make the query wrong to make the gate
+// quiet. But it must be a stated decision, never a silent pass.
+describe('check-answer-season-consumers — @season-scope: all-seasons', () => {
+  const REASON = 'coverage is "ever researched", and DISTINCT politician_id collapses the per-season rows';
+
+  it('accepts a declared cross-season READ with a reason', () => {
+    const r = run(q(
+      `SELECT 1 FROM (SELECT DISTINCT politician_id FROM inform.politician_answers) ans\n` +
+      `     -- @season-scope: all-seasons — ${REASON}`));
+    expect(r.code).toBe(0);
+  });
+
+  it('refuses a bare marker with no stated reason', () => {
+    const r = run(q(
+      'SELECT 1 FROM inform.politician_answers\n' +
+      '     -- @season-scope: all-seasons'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('no stated reason');
+  });
+
+  it('refuses a hand-wave too short to be a reason', () => {
+    const r = run(q(
+      'SELECT 1 FROM inform.politician_answers\n' +
+      '     -- @season-scope: all-seasons — needed'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('no stated reason');
+  });
+
+  // The hatch is for judgement calls about reads. A cross-season write is a bug,
+  // and no comment makes ON CONFLICT match an index that is not there.
+  it('refuses the marker on an UPDATE', () => {
+    const r = run(q(
+      `UPDATE inform.politician_context SET reasoning = $1 WHERE politician_id = $2\n` +
+      `     -- @season-scope: all-seasons — ${REASON}`));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('on a WRITE');
+  });
+
+  it('refuses the marker on a DELETE', () => {
+    const r = run(q(
+      `DELETE FROM inform.politician_answers WHERE politician_id = $1\n` +
+      `     -- @season-scope: all-seasons — ${REASON}`));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('on a WRITE');
+  });
+
+  it('refuses the marker on a stale ON CONFLICT, ahead of every other check', () => {
+    const r = run(q(
+      `INSERT INTO inform.politician_answers (politician_id, topic_id) VALUES ($1,$2) ` +
+      `ON CONFLICT (politician_id, topic_id) DO NOTHING\n` +
+      `     -- @season-scope: all-seasons — ${REASON}`));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('42P10');
+  });
+
+  // An escape hatch nobody can see is an escape hatch nobody reviews.
+  it('reports every declared exemption even on a green run', () => {
+    const r = run(q(
+      `SELECT 1 FROM (SELECT DISTINCT politician_id FROM inform.politician_answers) ans\n` +
+      `     -- @season-scope: all-seasons — ${REASON}`));
+    expect(r.code).toBe(0);
+    expect(r.out).toContain('declare @season-scope: all-seasons');
+    expect(r.out).toMatch(/subject\.ts:\d+/);
+  });
+});
+
 describe('check-answer-season-consumers — the skipped RPC half is visible', () => {
   it('says plainly that the database side went unchecked', () => {
     const r = run(q('SELECT value FROM inform.politician_answers WHERE politician_id = $1 AND season_id = $2'));

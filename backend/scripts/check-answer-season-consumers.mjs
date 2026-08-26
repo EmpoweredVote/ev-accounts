@@ -91,6 +91,47 @@ const SEASON_REF = /season_id|seasonId|current_season|currentSeason|season_quest
 const STALE_ON_CONFLICT =
   /on\s+conflict\s*\(\s*(?:\w+\.)?politician_id\s*,\s*(?:\w+\.)?topic_id\s*\)/i;
 
+/**
+ * A DELIBERATE cross-season read, declared in the literal and justified.
+ *
+ * Some questions are honestly about every season at once. "Has this person ever
+ * been researched" is the coverage map's question, and narrowing it to the open
+ * season would drop the map to near zero the day a season opens, reporting a
+ * loss of data that did not happen. Forcing a season predicate there would make
+ * the query wrong in order to make this gate quiet.
+ *
+ * So the escape hatch is a STATED DECISION, not a silent pass — the same shape
+ * as CLAUDE.md's `-- @context-decision:` line on answer deletes, enforced by
+ * check-answer-delete-guards. A bare marker is refused; it must carry a reason.
+ *
+ *   -- @season-scope: all-seasons — coverage is "ever researched", and DISTINCT
+ *   --   politician_id collapses the per-season rows so this cannot fan out.
+ *
+ * 🔴 IT IS REFUSED ON ANY WRITE. See `declaredAllSeasons`. A cross-season read
+ * is a judgement call; a cross-season INSERT, UPDATE or DELETE is a bug, and no
+ * comment makes `ON CONFLICT` match an index that is not there.
+ */
+const ALL_SEASONS_MARKER = /@season-scope:\s*all-seasons\s*(?:—|--|-|:)?\s*(\S.*)?/i;
+
+/** A literal that modifies rows. The marker must never excuse one. */
+const IS_WRITE = /\b(?:insert\s+into|update\s+inform\.|delete\s+from|on\s+conflict)\b/i;
+
+/**
+ * Does this literal carry a valid all-seasons declaration?
+ * Returns 'ok', 'no-reason', 'on-a-write', or null when absent.
+ *
+ * NOTE the marker is read from the RAW literal, before comment stripping — it
+ * lives in a comment by design, so stripping would erase it.
+ */
+function declaredAllSeasons(rawLiteral, strippedSql) {
+  const m = ALL_SEASONS_MARKER.exec(rawLiteral);
+  if (!m) return null;
+  if (IS_WRITE.test(strippedSql)) return 'on-a-write';
+  const reason = (m[1] ?? '').trim();
+  if (reason.length < 20) return 'no-reason';
+  return 'ok';
+}
+
 // ---------------------------------------------------------------------------
 // Static half — backend/src
 // ---------------------------------------------------------------------------
@@ -132,6 +173,7 @@ function templateLiterals(text) {
 
 function scanRepo(root) {
   const offenders = [];
+  const allSeasons = [];
   for (const path of sourceFiles(root)) {
     const raw = readFileSync(path, 'utf8');
     const rel = relative(root, path).split(sep).join('/');
@@ -140,10 +182,24 @@ function scanRepo(root) {
     for (const { body, line } of literals) {
       const sql = stripComments(body);
       if (!SQL_TABLE_REF.test(sql)) continue;
+
+      // Checked before the marker: no declaration excuses a stale upsert target.
       if (STALE_ON_CONFLICT.test(sql)) {
         offenders.push({ rel, line, why: 'ON CONFLICT (politician_id, topic_id) — breaks with 42P10 after the swap' });
         continue;
       }
+
+      const declared = declaredAllSeasons(body, sql);
+      if (declared === 'on-a-write') {
+        offenders.push({ rel, line, why: '@season-scope: all-seasons on a WRITE — a cross-season write is a bug, not a judgement call' });
+        continue;
+      }
+      if (declared === 'no-reason') {
+        offenders.push({ rel, line, why: '@season-scope: all-seasons with no stated reason — say why, in the literal' });
+        continue;
+      }
+      if (declared === 'ok') { allSeasons.push({ rel, line }); continue; }
+
       if (!SEASON_REF.test(sql)) {
         offenders.push({ rel, line, why: 'queries the answer tables without naming a season' });
       }
@@ -157,7 +213,7 @@ function scanRepo(root) {
       offenders.push({ rel, line: 0, why: 'table reference outside any template literal — read it by hand' });
     }
   }
-  return offenders;
+  return { offenders, allSeasons };
 }
 
 // ---------------------------------------------------------------------------
@@ -202,7 +258,7 @@ async function scanDatabase() {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  const repo = scanRepo('src');
+  const { offenders: repo, allSeasons } = scanRepo('src');
   const db = await scanDatabase();
 
   if (VERBOSE) {
@@ -228,6 +284,16 @@ async function main() {
         console.error(`    · ${rel}:${o.line} — ${o.why}`);
       }
     }
+  }
+
+  // Declared exemptions are REPORTED, always, pass or fail. An escape hatch
+  // nobody can see is an escape hatch nobody reviews.
+  if (allSeasons.length) {
+    console.error(
+      `
+answer-season consumers — ${allSeasons.length} literal(s) declare ` +
+      `@season-scope: all-seasons. These are deliberate cross-season READS:`);
+    for (const a of allSeasons) console.error(`    · ${a.rel}:${a.line}`);
   }
 
   if (db === null) {
