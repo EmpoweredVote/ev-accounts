@@ -128,6 +128,86 @@ export const UPSERT_CONTEXT_SQL = `
         editor_id = EXCLUDED.editor_id, updated_at = now()`;
 
 /**
+ * As UPSERT_ANSWER_SQL, plus `write_in_text`.
+ *
+ * A SEPARATE constant on purpose, rather than a fifth parameter on the other
+ * one. Its DO UPDATE overwrites `write_in_text`, and the contributor surface is
+ * the only caller that owns that column — folding it in would make a staging
+ * approval or a research resolution blank an existing write-in as a side effect
+ * of setting a value. Prod holds 0 write-ins today, so that would have been an
+ * invisible change waiting for the first one.
+ *
+ * Param order: $1 politician_id, $2 topic_id, $3 value, $4 editor_id, $5 write_in_text.
+ */
+export const UPSERT_ANSWER_WITH_WRITE_IN_SQL = `
+  INSERT INTO inform.politician_answers
+    (politician_id, topic_id, season_id, topic_revision_id, value, editor_id, write_in_text, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, $3::numeric, $4::uuid, $5::text, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET value = EXCLUDED.value, write_in_text = EXCLUDED.write_in_text,
+        editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+/**
+ * Sources only — it does NOT touch `reasoning`.
+ *
+ * The contributor source form supplies a URL and no prose. Reusing
+ * UPSERT_CONTEXT_SQL would set reasoning to '' and erase an editor's existing
+ * argument, and `reasoning` is voter-facing (essentials Citations.jsx).
+ *
+ * Param order: $1 politician_id, $2 topic_id, $3 sources, $4 editor_id.
+ */
+export const UPSERT_CONTEXT_SOURCES_SQL = `
+  INSERT INTO inform.politician_context
+    (politician_id, topic_id, season_id, topic_revision_id, reasoning, sources, editor_id, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, '', $3::text[], $4::uuid, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET sources = EXCLUDED.sources, editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+/**
+ * Read the row a write is about to replace, in the OPEN season.
+ *
+ * 🔴 NOT the newest answered season. This feeds audit diffs, and the write lands
+ * in the open season — so "previous value" must mean that season's value, or
+ * nothing if this is the first answer of the season. Diffing against season 1
+ * while writing season 2 reports "changed 3 → 3" for what is actually a new row.
+ *
+ * Param order: $1 politician_id, $2 topic_id(s).
+ */
+export const OPEN_SEASON_ANSWER_SQL = `
+  SELECT a.topic_id, a.value, a.write_in_text
+    FROM inform.politician_answers a
+    JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'
+   WHERE a.politician_id = $1`;
+
+/**
+ * Clear an answer in the OPEN season only.
+ *
+ * Unconstrained, this DELETE removes the person's answer to that topic in EVERY
+ * season — destroying a closed season's record, which is the one thing seasons
+ * exist to make impossible.
+ *
+ * ⚠ It leaves any `politician_context` row for the pair in place. That is
+ * pre-existing behaviour, not introduced here, and it is how gate-visible
+ * ORPHAN_CONTEXT rows appear at runtime rather than via a migration. CLAUDE.md
+ * requires a migration deleting answers to decide the context's fate; this code
+ * path never did. Worth fixing, but not silently and not as a side effect of
+ * making it season-aware — see the plan's open questions.
+ *
+ * Param order: $1 politician_id, $2 topic_id.
+ */
+export const DELETE_ANSWER_OPEN_SEASON_SQL = `
+  DELETE FROM inform.politician_answers a
+   USING inform.seasons s
+   WHERE s.id = a.season_id AND s.status = 'open'
+     AND a.politician_id = $1 AND a.topic_id = $2`;
+
+/**
  * Turn "no rows written" into an error that says which of the two causes it was.
  *
  * Both are silent no-ops without this, and they need different fixes: open a
