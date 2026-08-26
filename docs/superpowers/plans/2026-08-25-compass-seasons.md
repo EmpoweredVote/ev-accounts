@@ -225,7 +225,7 @@ The only large-DML task. 33,164 answer rows and their context rows.
 - Consumes: everything from Tasks 1 and 2.
 - Produces: exactly one row in `inform.seasons` (`number = 1`, `status = 'closed'`); 44 rows in `inform.season_questions`; every answer and context row carrying `season_id` and `topic_revision_id`.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 `editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`** (confirmed by Chris on 2026-08-25: email
 chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `854fbc06…` — that is
@@ -324,11 +324,11 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run against prod and read the NOTICE**
+- [x] **Step 2: Dry-run against prod and read the NOTICE**
 
 Expected: `44 questions pinned, 33164 answers, <n> contexts`. If the question count is not 44, a topic has no current published revision — stop and investigate rather than widening the join.
 
-- [ ] **Step 3: Confirm the rollback, take the number, apply, commit**
+- [x] **Step 3: Confirm the rollback, take the number, apply, commit**
 
 Expected slot: `CA_0019`.
 
