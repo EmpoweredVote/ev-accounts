@@ -1,0 +1,82 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
+vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
+
+import { currentSeasonId, latestAnsweredSeason } from './seasonService.js';
+
+beforeEach(() => mockQuery.mockReset());
+
+describe('currentSeasonId', () => {
+  it('returns the id of the one open season', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ id: 'season-2' }] });
+    expect(await currentSeasonId()).toBe('season-2');
+  });
+
+  // The whole point. Season 1 exists and is CLOSED, so this is the live state
+  // of production today, not a hypothetical. Picking the newest season instead
+  // would silently write season-2 answers into a closed season 1 and
+  // reintroduce exactly the ambiguity seasons exist to remove.
+  it('throws when no season is open, rather than falling back to the newest', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(currentSeasonId()).rejects.toThrow('no open season');
+  });
+
+  it('names the fix in the error, because a caller cannot open a season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(currentSeasonId()).rejects.toThrow(/inform\.seasons/);
+  });
+
+  // Guarded by the seasons_one_open partial unique index, so this is
+  // unreachable through the database. Asserted anyway: if the index is ever
+  // dropped, the failure must be loud here rather than an arbitrary pick.
+  it('throws when more than one season is open', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ id: 'a' }, { id: 'b' }] });
+    await expect(currentSeasonId()).rejects.toThrow('more than one open season');
+  });
+
+  it('resolves at read time — it does not cache across calls', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'season-1' }] });
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'season-2' }] });
+    expect(await currentSeasonId()).toBe('season-1');
+    expect(await currentSeasonId()).toBe('season-2');
+    expect(mockQuery).toHaveBeenCalledTimes(2);
+  });
+
+  it('asks the database for the open season, not for the highest number', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ id: 'season-2' }] });
+    await currentSeasonId();
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/status\s*=\s*'open'/);
+    expect(sql).not.toMatch(/ORDER BY\s+number/i);
+  });
+});
+
+describe('latestAnsweredSeason', () => {
+  it('returns the newest season in which this person answered this topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ season_id: 's2', number: 2 }] });
+    expect(await latestAnsweredSeason('pol-1', 'topic-1'))
+      .toEqual({ seasonId: 's2', number: 2 });
+  });
+
+  // A person may simply not have been researched this season. That is an
+  // absence, not an error — the read path falls back to what they last said.
+  it('returns null when this person has no answer on this topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    expect(await latestAnsweredSeason('pol-1', 'topic-1')).toBeNull();
+  });
+
+  it('orders by season number descending and takes exactly one row', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await latestAnsweredSeason('pol-1', 'topic-1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/ORDER BY\s+s\.number\s+DESC/i);
+    expect(sql).toMatch(/LIMIT 1/i);
+  });
+
+  it('passes both ids as parameters rather than interpolating them', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await latestAnsweredSeason('pol-1', 'topic-1');
+    expect(mockQuery.mock.calls[0][1]).toEqual(['pol-1', 'topic-1']);
+  });
+});
