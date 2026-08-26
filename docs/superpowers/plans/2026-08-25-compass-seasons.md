@@ -234,6 +234,14 @@ the one `judicial-bail-pretrial` revision. Inferring the editor from "who has au
 content" produced that wrong answer. **Two Chrises work in this system; never resolve either by
 first name or by authorship.**
 
+**DECISION, Chris, 2026-08-25 — `editor_id` for the season-1 rows.** The draft contained a
+contradiction: it stamped Kades onto all 33,164 rows and gated on no NULLs, while writing a
+`public_note` that said editors were null. Chris chose to **keep the stamp** and **fix the note**.
+He is the editor of record for the pre-seasons corpus. The `public_note` below now says that
+authorship was not recorded *per row*, and that the season is attributed to its editor of record —
+which is true, and does not claim he typed each row. The alternative considered and rejected was
+leaving `editor_id` NULL. Do not "fix" this back.
+
 ```sql
 BEGIN;
 
@@ -242,8 +250,9 @@ SELECT 1, 'Season 1', 'closed',
        '2025-01-01T00:00:00Z', now(),
        'The corpus as it stood before seasons existed. Every answer written up to '
        '2026-08-25 is recorded here, pinned to the ladder revision that was current '
-       'when seasons were introduced. Editors were not recorded at the time, so '
-       'editor_id is null for these rows.'
+       'when seasons were introduced. Per-row authorship was not recorded at the '
+       'time, so the whole season is attributed to its editor of record rather '
+       'than to whoever typed each individual row.'
 WHERE NOT EXISTS (SELECT 1 FROM inform.seasons WHERE number = 1);
 
 -- The season's question set: every live topic, pinned to its current revision,
