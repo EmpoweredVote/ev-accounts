@@ -1,13 +1,24 @@
 name: CI
 
 # 💰 THIS REPO IS PRIVATE, SO EVERY JOB IN THIS FILE IS BILLED, AND BILLED WITH A ONE-MINUTE MINIMUM
-# PER JOB — not per run, and not by actual seconds used. Measured 2026-08-18..26: ~703 billed minutes
-# over 8 days, ~2,540 per 30 days against a 2,000-minute free allowance. Most of that is the minimum,
-# not work: `migration numbering`, `answer-delete context guards` and `cal-access predicate tripwire`
-# each finish in 10-20 SECONDS and each bills a full minute on all 90 push/PR runs, so those three
-# alone account for ~40% of the bill. Splitting jobs is what this file does on purpose (see the rule
-# below) and it is worth its price — but the price is one minute per job per run, so know it before
-# adding a tenth job.
+# PER JOB — not per run, and not by actual seconds used. ev-accounts IS the org's Actions bill: 523 of
+# the 524 private-repo runs in the 30 days to 2026-08-26 were this repo.
+#
+# Measured over those 30 days (429 push, 65 PR, 27 schedule) at the per-event job times observed
+# 08-18..26: ~4,300 billed minutes against a 2,000-minute free allowance, so ~2,300 minutes of overage,
+# about $18/month. Where it goes:
+#
+#   ~40%  the four live-DB jobs, run on EVERY ONE of 429 pushes (4 min x 429)
+#   ~34%  `migration numbering` + `answer-delete context guards` + `cal-access predicate tripwire`,
+#         which each finish in 10-20 SECONDS and each bill a full minute, on all 494 push/PR runs
+#   ~23%  `backend` (the only job doing a minute's worth of real work)
+#   ~ 3%  the nightly schedule
+#
+# 🔑 TWO THINGS FOLLOW, AND NEITHER IS "CUT THE NIGHTLY". The nightly is 3% of the bill and is the only
+# drift coverage on a day with no code push; cutting it trades real coverage for pocket change. The
+# money is in per-push repetition: a job that costs a minute because of the MINIMUM costs it 494 times
+# a month, and a drift check whose own rationale is that data changes ON THE CALENDAR (see the
+# `schedule` note below) is charged per commit instead. Know both numbers before adding a tenth job.
 on:
   # 📄 Docs-only changes do not run CI. Of 90 push/PR runs in the 8 days above, 18 (20%) changed
   # nothing but markdown or `.planning/` artefacts. No check in this file reads a .md file — the
