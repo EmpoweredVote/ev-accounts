@@ -8,9 +8,12 @@ backend/dist/
 *.tsbuildinfo
 
 # Environment files
+# Covers bare `.env` plus every variant, including suffixed ones
+# like .env.bak and .env.save that exact-match rules miss.
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.*.example
 
 # OS / Editor
 .DS_Store
@@ -111,6 +114,9 @@ backend/data/stance-research/or-bend-stateleg/.olis-legislators.json
 # a single `git add -A` would have published them. Never committed — verified
 # across all refs — so this rule is prevention, not remediation.
 *.bak
+*.backup
+*.orig
+*~
 
 # Headshot pipeline working images (regenerable; the canonical copies live in the
 # politician_photos Storage bucket). Contact sheets are review aids, not artifacts.

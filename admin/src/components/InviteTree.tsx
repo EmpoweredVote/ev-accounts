@@ -10,7 +10,7 @@ import {
   type Edge,
 } from '@xyflow/react';
 import dagre from '@dagrejs/dagre';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { apiFetch } from '../lib/api';
 
 const TIER_COLORS: Record<string, string> = {

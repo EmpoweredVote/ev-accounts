@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
 import { useTheme } from '../hooks/useTheme';
@@ -1115,9 +1115,13 @@ export default function ProfilePage() {
                   <div className="divide-y divide-gray-800">
                     {roles.map((role) => {
                       const meta = ROLE_META[role.slug];
-                      const toolHref = meta
-                        ? (accessToken ? `${meta.href}#access_token=${accessToken}` : meta.href)
-                        : null;
+                      // Plain link, no token in the fragment. These point at
+                      // app.empowered.vote, which shares the ev_session cookie
+                      // with this app and resolves its own session on load.
+                      // Handing it a token in the URL is what made a fragment
+                      // token accepted there, and an accepted fragment token
+                      // lets any link choose who the visitor is signed in as.
+                      const toolHref = meta ? meta.href : null;
                       return (
                         <div key={role.id} className="py-4 first:pt-0 last:pb-0 space-y-1">
                           <div className="flex items-start justify-between gap-3">

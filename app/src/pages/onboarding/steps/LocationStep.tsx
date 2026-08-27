@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { apiFetch } from '../../../lib/api';
 import { AuthPageLayout } from '../../../components/AuthPageLayout';
 import { AuthCard } from '../../../components/AuthCard';

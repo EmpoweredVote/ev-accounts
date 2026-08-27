@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import { apiFetch } from '../lib/api';
+import { getValidRedirect } from '../lib/redirect';
 import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
@@ -14,14 +15,6 @@ const ERROR_MESSAGES: Record<string, string> = {
   EMAIL_DELIVERY_FAILED: 'Unable to send confirmation email right now. Please try again shortly.',
 };
 
-function getValidatedRedirectUrl(): string | null {
-  const raw = new URLSearchParams(window.location.search).get('redirect');
-  if (!raw) return null;
-  // Security: only allow https:// URLs to prevent open redirect attacks
-  if (!raw.startsWith('https://')) return null;
-  return raw;
-}
-
 export default function SignupPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -34,7 +27,7 @@ export default function SignupPage() {
   const [done, setDone] = useState(false);
 
   // Parse redirect URL once on mount — do NOT re-parse on every render
-  const redirectUrl = useMemo(() => getValidatedRedirectUrl(), []);
+  const redirectUrl = useMemo(() => getValidRedirect(), []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

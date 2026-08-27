@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { apiFetch } from '../lib/api';
+import { getValidRedirect } from '../lib/redirect';
 import { useAuthStore, type User } from '../store/authStore';
 import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
@@ -20,14 +21,6 @@ interface MeResponse {
   location_consent: boolean;
 }
 
-function getValidatedRedirectUrl(): string | null {
-  const raw = new URLSearchParams(window.location.search).get('redirect');
-  if (!raw) return null;
-  // Security: only allow https:// URLs to prevent open redirect attacks
-  if (!raw.startsWith('https://')) return null;
-  return raw;
-}
-
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +30,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   // Parse redirect URL once on mount — do NOT re-parse on every render
-  const redirectUrl = useMemo(() => getValidatedRedirectUrl(), []);
+  const redirectUrl = useMemo(() => getValidRedirect(), []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

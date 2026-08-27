@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel } from '@headlessui/react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 interface AccountTypesModalProps {
   open: boolean;

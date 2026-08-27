@@ -1,10 +1,63 @@
 name: CI
 
+# 💰 THIS REPO IS PRIVATE, SO EVERY JOB IN THIS FILE IS BILLED, AND BILLED WITH A ONE-MINUTE MINIMUM
+# PER JOB — not per run, and not by actual seconds used. ev-accounts IS the org's Actions bill: 523 of
+# the 524 private-repo runs in the 30 days to 2026-08-26 were this repo.
+#
+# Measured over those 30 days (429 push, 65 PR, 27 schedule) at the per-event job times observed
+# 08-18..26: ~4,300 billed minutes against a 2,000-minute free allowance, so ~2,300 minutes of overage,
+# about $18/month. Where it goes:
+#
+#   ~40%  the four live-DB jobs, run on EVERY ONE of 429 pushes (4 min x 429)
+#   ~34%  `migration numbering` + `answer-delete context guards` + `cal-access predicate tripwire`,
+#         which each finish in 10-20 SECONDS and each bill a full minute, on all 494 push/PR runs
+#   ~23%  `backend` (the only job doing a minute's worth of real work)
+#   ~ 3%  the nightly schedule
+#
+# 🔑 TWO THINGS FOLLOW, AND NEITHER IS "CUT THE NIGHTLY". The nightly is 3% of the bill and is the only
+# drift coverage on a day with no code push; cutting it trades real coverage for pocket change. The
+# money is in per-push repetition: a job that costs a minute because of the MINIMUM costs it 494 times
+# a month, and a drift check whose own rationale is that data changes ON THE CALENDAR (see the
+# `schedule` note below) is charged per commit instead. Know both numbers before adding a tenth job.
+#
+# WHERE IT STANDS AFTER THE TWO FIXES BELOW (paths-ignore, plus `child-county` and
+# `readrank-question-unit` moved to schedule-only): ~2,800 minutes a month, ~800 over the allowance,
+# about $6/month. Down from ~$18.
+#
+# 🔴 THE TWO CHECKS THAT STAYED ON PUSH DID SO ON EVIDENCE, NOT ON HABIT — do not "finish the job" by
+# moving them too. Over the 90 days to 2026-08-26, `address-search reachability` accounts for EVERY ONE
+# of the 34 genuine live-DB failures, and three of them were open for 7, 7 and 15 minutes: 08-11 15:25,
+# and 08-19 01:24 and 01:49, each closed by the very next commit (`fix(ci): unbreak address-search
+# reachability`, `fix(ci): BAD_GEOMETRY must key on SPATIAL reachability`). A four-times-a-day schedule
+# samples a 7-minute window with about a 2% chance. These checks are not a drift monitor; they are a
+# feedback loop that works because the author is still at the keyboard. `stance sourcing` stays for the
+# same reason at a longer range: research campaigns are the fastest sessions in this repo — the NC pass
+# was ~20 pushes in one night writing 234 rows — and nightly-only would mean hearing about a bad
+# citation batch after all of it is written.
 on:
+  # 📄 Docs-only changes do not run CI. Of 90 push/PR runs in the 8 days above, 18 (20%) changed
+  # nothing but markdown or `.planning/` artefacts. No check in this file reads a .md file — the
+  # guards scan .sql and .ts, the rest query the live database — so those 18 runs could only ever
+  # come back green.
+  #
+  # GitHub skips a run only when EVERY changed path matches, so a commit touching one .ts file and
+  # forty .md files still runs the full set. A docs-only push to master also skips the four live-DB
+  # drift jobs for that push; the nightly schedule below still covers them that day.
+  #
+  # 🔴 DO NOT ADD SOURCE DIRECTORIES HERE. `docs/infra/**` is CDK TypeScript, not documentation. It is
+  # in the clear today only because `**/*.md` does not match it — ignoring `docs/**` wholesale would
+  # silently exempt real code the day someone wires a check to it. (No YAML anchor to share this list:
+  # GitHub Actions does not expand aliases in workflow files.)
   pull_request:
     branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
   push:
     branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
   # The live-DB jobs (`reachability`, `child-county`, `stance-sources`, `readrank-question-unit`) also
   # run on a schedule: their
   # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
@@ -13,6 +66,27 @@ on:
   schedule:
     - cron: '0 13 * * *'
   workflow_dispatch:
+
+# One run per event per ref; a newer push cancels the run it supersedes.
+#
+# ⚠ THIS SAVES NOTHING TODAY. Over the same 8 days, ZERO of 100 runs overlapped a newer run on the
+# same ref — the whole workflow finishes in about two minutes and pushes land minutes apart. It is
+# here as a ratchet, not a saving: it costs nothing to hold and starts paying the day a job gets slow
+# or two commits land inside a minute. Do not cite it as the fix for the Actions bill; the bill is the
+# per-job minimum above.
+#
+# Cancelling is safe on master, not only on PRs, because every static check here scans the WORKING
+# TREE (the migrations directory, one .ts file) rather than diffing against the previous commit, so
+# the surviving run still covers whatever the cancelled one would have seen. The live-DB jobs want the
+# newest run by definition.
+#
+# 🔑 `github.event_name` IS IN THE GROUP KEY ON PURPOSE. Push and schedule share `refs/heads/master`.
+# Without the event in the key, the 13:00 nightly could cancel an in-flight push run — and the nightly
+# does not run `backend`, the numbering check, the delete guards or the tripwire, so those four checks
+# would go unreported for that commit with nothing saying so.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 # 🔑 ONE INDEPENDENT DATA CHECK PER JOB. A failing step masks every step after it in the same job, and
 # the masked check reports "skipped" nowhere a human is looking — the job is just red for the first
@@ -225,9 +299,21 @@ jobs:
     # one time they failed for DIFFERENT reasons is precisely when the masking happened. Similar
     # subject matter is not a reason to couple failure reporting.
     #
-    # Same triggers and prod-drift reasoning as reachability: master pushes + the daily schedule, never
-    # on PRs.
-    if: github.event_name != 'pull_request'
+    # 💰 SCHEDULE ONLY SINCE 2026-08-26 — NOT ON PUSH. What makes this matview stale is a BOUNDARY
+    # LOAD: a script run against the database, which frequently carries no commit at all. Charging the
+    # check to all 429 pushes a month bought a minute each time for an event that pushes do not cause.
+    #
+    # Evidence for the move: across the 90 days to 2026-08-26 this job failed 5 times, all 5 inside the
+    # 2026-08-24 19:30-21:17 window in which ALL FOUR live-DB jobs went red together and recovered with
+    # no fix commit — a transient database problem, not a mapping defect. Zero genuine push catches
+    # since it got its own job on 08-14.
+    #
+    # ⚠ THE EVIDENCE WINDOW IS 12 DAYS, which is thin. What bounds the risk is the blast radius, not the
+    # sample: the failure mode is newly added cities sitting outside their county on the coverage
+    # dashboard, the correct value is 0, and the fix is one command. A day of a wrong dashboard is the
+    # worst case. If that stops being true — if anything starts READING this matview on a path a user
+    # can hit — put it back on push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     defaults:
       run:
         working-directory: backend
@@ -332,6 +418,28 @@ jobs:
     #     misread as full coverage.
     # It is also on the nightly schedule: a function body can change in prod with no commit here.
     #
+    # 💰 THE NUMBERS, per the rule at the top of this file. This job runs on push,
+    # PR and schedule — 429 + 65 + 27 = ~521 runs a month. It finishes in ~18
+    # SECONDS and bills a full minute each time, so ~521 billed minutes, about
+    # $4/month on top of the ~$6 that remains after the paths-ignore and
+    # schedule-only fixes. That is the single largest per-job addition since
+    # those fixes, and it was taken deliberately, not by habit:
+    #
+    #   · PR + push, NOT PR-only, for exactly the reason `migration numbering`
+    #     gives above — this repo is worked by DIRECT PUSHES TO MASTER, so a
+    #     PR-only guard leaves the hole wide open. A season predicate lost on a
+    #     direct push is silent: reads fan out months later with nothing failing.
+    #   · Schedule kept because the RPC half is genuine drift coverage. A
+    #     SECURITY DEFINER body can change in prod with no commit in this repo,
+    #     and 27 runs is ~5% of the job's cost.
+    #   · NOT folded into an existing fast job, per the one-check-per-job rule —
+    #     that would trade $4 for the masking failure that cost two days on
+    #     2026-08-14.
+    #
+    # If the bill needs cutting again, the honest lever here is the ~18s runtime,
+    # not the triggers: the static half re-reads every .ts file under backend/src
+    # on every run and could be diffed against the base instead.
+    #
     # WHY IT EXISTS. Task 6 of the compass-seasons plan repoints the primary key of
     # inform.politician_answers to (politician_id, topic_id, season_id). After that, a read joined on
     # the bare pair FANS OUT once a second season exists — silently, no error, months later — and a
@@ -369,10 +477,17 @@ jobs:
     # the other live-DB checks (an editor's quote selection, not geometry or citations), so sharing a
     # job would let either one mask the other.
     #
-    # Same triggers and prod-drift reasoning as `reachability` / `child-county` / `stance-sources`:
-    # NOT on pull_request. What this guards is a DATA state an editor creates through the admin UI —
-    # no commit is involved, and a PR's SQL has not touched prod yet.
-    if: github.event_name != 'pull_request'
+    # 💰 SCHEDULE ONLY SINCE 2026-08-26 — NOT ON PUSH, and this one is the clearest case of the four.
+    # What it guards is a DATA state AN EDITOR CREATES THROUGH THE ADMIN UI. No commit is involved, so
+    # running it per push was checking 429 times a month for something a push cannot cause.
+    #
+    # Evidence: 5 failures in the 90 days to 2026-08-26, all 5 in the 2026-08-24 transient window where
+    # all four live-DB jobs went red together and recovered with no fix commit.
+    #
+    # Zero tolerance and a tiny surface — exactly one race/topic pair in prod (LA Mayor general,
+    # economic-development) can produce a violation at all — so a day's detection latency costs one
+    # race rendering one question twice, and only if an editor splits that topic in that window.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     defaults:
       run:
         working-directory: backend

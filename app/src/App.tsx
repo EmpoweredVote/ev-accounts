@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router';
 import { useEffect } from 'react';
 import { AuthGuard } from './components/AuthGuard';
 import { OnboardingGuard } from './components/OnboardingGuard';
@@ -30,36 +30,32 @@ function App() {
   const { setAuth, clearAuth, setLoading, accessToken } = useAuthStore();
 
   useEffect(() => {
-    // Check for token passed via hash fragment from accounts login
-    const hash = window.location.hash;
-    if (hash.includes('access_token=')) {
-      const params = new URLSearchParams(hash.substring(1)); // strip the #
-      const hashToken = params.get('access_token');
-      if (hashToken) {
-        // Clean the URL immediately (remove hash fragment with token)
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
-        // Set token in store so apiFetch picks it up
-        useAuthStore.setState({ accessToken: hashToken });
-        // Persist to localStorage
-        localStorage.setItem('ev_token', hashToken);
-        // Fetch user profile with this token
-        apiFetch<MeResponse>('/account/me')
-          .then((me) => {
-            const user: User = {
-              id: me.id,
-              email: me.email,
-              tier: me.tier,
-              displayName: me.display_name,
-              completedOnboarding: me.completed_onboarding,
-              locationConsent: me.location_consent,
-            };
-            setAuth(hashToken, user);
-          })
-          .catch(() => {
-            clearAuth();
-          });
-        return; // Skip localStorage check — we have a fresh token
-      }
+    // SECURITY: this app deliberately does NOT accept an access token from its
+    // own URL hash, and must not be changed to.
+    //
+    // A URL fragment carries no proof of who put it there, so accepting one
+    // lets a link decide who you are signed in as. A link of the form
+    //   https://app.empowered.vote/#access_token=<a token the sender holds>
+    // would silently sign the visitor into the SENDER's account, and anything
+    // they then entered — home address, compass answers, stances — would be
+    // written into an account that person can read at will.
+    //
+    // Nothing needs it here. This app gets its session from the ev_session
+    // cookie via the silent SSO check below, which is same-site to the API and
+    // is the documented mechanism (docs/INTEGRATION-GUIDE-v2.md 3.3). The one
+    // caller that used to hand a token to this app in a fragment — the
+    // contributor role links on the admin Profile page — was changed to a plain
+    // link in the same commit.
+    //
+    // Partner apps on other domains still use the documented fragment handoff.
+    // That is a separate question from this app, which shares a domain with the
+    // login and therefore shares the cookie.
+    //
+    // Strip a token someone put there anyway, so it does not linger in the
+    // address bar, history or a shared link. Only touch the hash when it
+    // carries a token, so ordinary #anchor links keep working.
+    if (window.location.hash.includes('access_token=')) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
 
     const token = getStoredToken();
