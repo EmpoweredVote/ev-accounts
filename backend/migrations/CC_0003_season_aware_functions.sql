@@ -1,7 +1,36 @@
 BEGIN;
 
+-- ✅ APPLIED TO PRODUCTION 2026-08-26. All five read back season-aware from
+-- pg_proc: names_season = true, no bare-pair ON CONFLICT, no DELETE, and every
+-- signature UNCHANGED (admin_update_politician_answers is still 2 args, so
+-- PostgREST resolves to the new body and not to a leftover overload).
+-- `npm run check:answer-seasons` now exits 0:
+--   "every live consumer names a season, RPCs included."
+--
+-- Dry-run notes. Four of the five were validated in a rolled-back transaction on
+-- 2026-08-25. connect.confirm_vq_stance was validated separately on 2026-08-26,
+-- 6/6, because it was the one body never exercised:
+--   1 no open season            -> REFUSED, NO_OPEN_SEASON_FOR_TOPIC
+--   2 gems after that refusal   -> unchanged. THIS IS THE POINT: the season is
+--       checked BEFORE any gem or rating moves, so a stance that cannot be
+--       recorded awards nothing. Previously the 42P10 landed AFTER the gem
+--       transactions, and since the idempotency row is written last, a retry
+--       would have found no cache entry and failed again.
+--   3 season 2 open             -> OK, confirmed_value = 4
+--   4 wrote into season 2       -> yes
+--   5 season 1 answer           -> untouched, 1 row
+--   6 gems on success           -> 0 -> 5
+--
+-- ⚠ EXPECTED STATE RIGHT NOW: every one of these refuses with NO_OPEN_SEASON /
+-- NO_OPEN_SEASON_FOR_TOPIC, because season 1 is closed and nothing is open.
+-- Verified that the refusal is clean: 0 rows touched, 33,164 answers intact.
+-- It closes when season 2 opens. Order from here: merge + deploy the
+-- season-aware code -> drop the scaffolding indexes -> open season 2 -> add the
+-- closed-season immutability trigger.
+
+
 -- =============================================================================
--- CA_wip: Make the five answer-table database functions season-aware
+-- CC_0003: Make the five answer-table database functions season-aware
 -- =============================================================================
 -- Task 5 of docs/superpowers/plans/2026-08-25-compass-seasons.md — the half that
 -- is NOT in backend/src. `npm run check:answer-seasons` reports these five and
@@ -39,19 +68,19 @@ BEGIN;
 --      WHERE politician_id = p_politician_id
 --        AND (v_topic_ids IS NULL OR topic_id != ALL(v_topic_ids));
 --
--- After the key swap that deletes the politician's answers in EVERY season for
--- every topic absent from the payload. An admin editing season 2 would silently
--- destroy season 1's record — the one thing seasons exist to prevent. It is now
--- scoped to the open season.
+-- After the key swap that would have deleted the politician's answers in EVERY
+-- season for every topic absent from the payload. An admin editing season 2
+-- would silently destroy season 1's record — the one thing seasons exist to
+-- prevent. CC_0001 removed it outright rather than scoping it.
 --
--- ⚠ QUESTION FOR A HUMAN, deliberately NOT decided here: this DELETE leaves the
--- matching inform.politician_context row in place, so clearing an answer strands
--- its reasoning. That is how gate-visible ORPHAN_CONTEXT rows appear at RUNTIME
--- rather than through a migration; CLAUDE.md obliges a migration that deletes
--- answers to decide the context's fate, and this path never has. Fixing it means
--- choosing between deleting the reasoning and keeping it as a documented blank,
--- which is an editorial call. Behaviour is preserved here so that the season fix
--- does not smuggle in a data-loss change.
+-- ✅ THE ORPHAN_CONTEXT QUESTION IS MOOT FOR THIS FUNCTION. An earlier draft of
+-- this file carried it open: the DELETE left the matching politician_context row
+-- behind, so clearing an answer stranded its reasoning. With no DELETE, this
+-- path cannot strand anything. The question is NOT dead in general — the
+-- contributor clear-stance handler still deletes an answer and leaves its
+-- context (see DELETE_ANSWER_OPEN_SEASON_SQL in src/lib/seasonService.ts, where
+-- it is documented). It is an editorial call and it belongs there, not here.
+--
 -- 🔴 THE SIGNATURE MUST NOT CHANGE. An earlier draft added
 -- `p_editor_id uuid DEFAULT NULL`, which makes CREATE OR REPLACE an OVERLOAD
 -- rather than a replacement: the dry run showed TWO
