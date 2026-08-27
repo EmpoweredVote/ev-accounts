@@ -100,6 +100,29 @@ export async function getCompassCompleteness(
 // Public reference data reads — use supabaseAnon (inform tables: public-read RLS)
 // ---------------------------------------------------------------------------
 
+/**
+ * The promoted set is empty — no season is open, or the open season asks
+ * nothing.
+ *
+ * 🔴 A SERVER STATE PROBLEM WEARING A CALLER'S CLOTHES. Every read of the
+ * promoted set turns this into "there are no topics", and every validator
+ * built on it turns it into "all of your topic ids are invalid". Both are
+ * false and both send the wrong person to debug the wrong thing. It carries a
+ * `code` so the routes can answer 503 — the request was fine; the service
+ * cannot serve it until a season is opened.
+ */
+export class NoPromotedTopicsError extends Error {
+  readonly code = 'NO_PROMOTED_TOPICS' as const;
+  constructor(message: string) {
+    super(message);
+    this.name = 'NoPromotedTopicsError';
+  }
+}
+
+export function isNoPromotedTopicsError(e: unknown): e is NoPromotedTopicsError {
+  return e instanceof NoPromotedTopicsError;
+}
+
 export interface PromotedTopic {
   id: string;
   topic_key: string;
@@ -163,7 +186,7 @@ export async function getPromotedTopics(): Promise<PromotedTopic[]> {
   );
 
   if (rows.length === 0) {
-    throw new Error(
+    throw new NoPromotedTopicsError(
       'no promoted compass topics — the open season asks nothing, or no season ' +
       "is open. Check inform.seasons for a row with status='open' and its " +
       'inform.season_questions rows. Refusing to report an empty compass as success.');
@@ -680,23 +703,38 @@ export async function getPoliticianContextAll(
 
 /**
  * validateTopicIds
- * Checks that all submitted topic IDs exist and are live.
+ * Checks that every submitted topic ID is one the voter may actually choose.
  * Returns the array of invalid IDs (empty array = all valid).
+ *
+ * PROMOTION, not answerability. This gates a VOTER'S SELECTION —
+ * `selected_topic_ids` — so the question is "do we ask this?", which is exactly
+ * what the promoted set means. It is NOT the politician-answer write gate; that
+ * one is `seasonService.writableTopicIds`, and the two must not be merged. They
+ * happen to resolve to the same 44 topics today and will diverge the first time
+ * a season retires a topic that still holds answers.
+ *
+ * It used to check `is_live = true`. That was the same defect as
+ * compassContributor's old pre-flight: a global boolean standing in for a
+ * per-season, eventually per-jurisdiction question, right for the wrong reason
+ * while 44/44 topics are live.
+ *
+ * 🔴 DERIVED FROM getPromotedTopics() RATHER THAN QUERYING SEPARATELY, on
+ * purpose. A voter must be allowed to select exactly what getCompassTopics
+ * offered them. Two queries answering that from different places is how a UI
+ * ends up showing a topic that the save endpoint then rejects. Sharing the
+ * resolver makes that impossible rather than merely unlikely, and it inherits
+ * the empty-set guard — so "no season is open" surfaces as NO_PROMOTED_TOPICS
+ * instead of reporting every id the caller sent as invalid.
+ *
+ * Reading all promoted rows to check a handful of ids is deliberate and cheap:
+ * the set is 44 rows, and correctness here is worth more than a narrower query.
  */
 export async function validateTopicIds(topicIds: string[]): Promise<string[]> {
   if (topicIds.length === 0) return [];
 
-  const { data, error } = await supabaseAnon
-    .schema('inform')
-    .from('compass_topics')
-    .select('id')
-    .in('id', topicIds)
-    .eq('is_live', true);
-
-  if (error) throw error;
-
-  const validIds = new Set((data ?? []).map(t => t.id));
-  return topicIds.filter(id => !validIds.has(id));
+  const promoted = await getPromotedTopics();
+  const promotedIds = new Set(promoted.map(t => t.id));
+  return topicIds.filter(id => !promotedIds.has(id));
 }
 
 /**

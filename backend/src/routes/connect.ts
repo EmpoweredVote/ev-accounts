@@ -473,6 +473,21 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
           });
           return;
         }
+        // The selected topics could not be validated because no season is open.
+        // A server-state problem, not a bad import — 503 so the caller knows to
+        // retry rather than to go and fix their payload.
+        //
+        // ⚠ This gates only `selectedTopics`. The CALIBRATIONS themselves are
+        // validated by validateCompassVersions, which reads the content view and
+        // stays permissive on purpose: an imported calibration may legitimately
+        // name a topic we no longer ask. Do not fold that one into the season.
+        if (e.code === 'NO_PROMOTED_TOPICS') {
+          res.status(503).json({
+            code: 'NO_PROMOTED_TOPICS',
+            message: 'Compass topics are unavailable right now — no season is open.',
+          });
+          return;
+        }
         throw importErr;
       }
     } else {

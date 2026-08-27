@@ -464,10 +464,32 @@ topics, 0 difference. A unit test pins the divergence that arrives with Season 2
 from the season is not writable even though it is still `is_live`, still exists, and still holds
 Season 1 answers.
 
-**Still to do — `validateTopicIds`.** It gates a **voter's** topic selection, so it is a *promotion*
-question, not a write question, and it still reads `is_live`. Same defect class, different view
-(`compass_topics_promoted`), and a separate change. `connectService.validateCompassVersions` is an
-**import** validator and correctly stays permissive on `compass_topics_current`.
+**Shipped — `validateTopicIds`.** It gates a **voter's** topic selection (`selected_topic_ids`), so it
+asks a *promotion* question — "do we ask this?" — and now reads the promoted set instead of
+`is_live`. Same defect class as the pre-flight, opposite answer: **these two must not be merged.**
+`writableTopicIds` asks what may be *recorded*; `validateTopicIds` asks what may be *selected*. They
+agree on 44 topics today and diverge the first time a season retires a topic that still holds
+answers.
+
+🔴 **It derives from `getPromotedTopics()` rather than running its own query.** A voter must be
+allowed to select exactly what `getCompassTopics` offered them; two queries answering that from
+different places is how a UI ends up showing a topic the save endpoint then rejects. Sharing the
+resolver makes that impossible rather than merely unlikely, and it inherits the empty-set guard.
+
+That guard matters here more than anywhere. With no open season the promoted set is empty, so a naive
+check reports **every id the voter submitted as invalid** — telling them their perfectly good
+selection is wrong when the server is the thing misconfigured. `getPromotedTopics` now throws a typed
+`NoPromotedTopicsError` carrying a `code`, and both routes map it to **503**: the request was fine,
+the service cannot serve it. `PUT /compass/selected-topics` returned 500 for this; the Connect import
+route returned 500 too.
+
+The 422 message also changed. It said topics were "invalid or not live"; a topic can exist, be
+perfectly live, and simply not be one this season asks.
+
+⚠️ **`connectService.validateCompassVersions` was deliberately left alone.** It validates an
+**import**, and an imported calibration may legitimately name a topic we no longer ask. It stays
+permissive on the content view. Folding it into the season would reject exactly the historical
+calibrations it exists to accept.
 
 ---
 

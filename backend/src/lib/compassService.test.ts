@@ -8,7 +8,10 @@ vi.mock('./supabase.js', () => ({
   adminRpc: vi.fn(),
 }));
 
-import { getPromotedTopics } from './compassService.js';
+import {
+  getPromotedTopics, validateTopicIds,
+  isNoPromotedTopicsError, NoPromotedTopicsError,
+} from './compassService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -67,5 +70,63 @@ describe('getPromotedTopics — promotion comes from the open season', () => {
     // Still in the response contract even though neither is in the view.
     expect(topics[0]).toHaveProperty('is_live');
     expect(topics[0]).toHaveProperty('office_scope');
+  });
+});
+
+// validateTopicIds gates a VOTER'S SELECTION (selected_topic_ids), so it asks a
+// PROMOTION question — "do we ask this?" — not the politician-answer write
+// question, which is seasonService.writableTopicIds. The two resolve to the same
+// 44 topics today and diverge the first time a season retires a topic that still
+// holds answers. They must not be merged.
+describe('validateTopicIds — a voter may select what the season asks', () => {
+  it('accepts ids in the promoted set', async () => {
+    mockQuery.mockResolvedValue({ rows: [row('t1', 'a'), row('t2', 'b')] });
+    expect(await validateTopicIds(['t1', 't2'])).toEqual([]);
+  });
+
+  it('returns exactly the ids that are not promoted', async () => {
+    mockQuery.mockResolvedValue({ rows: [row('t1', 'a'), row('t2', 'b')] });
+    expect(await validateTopicIds(['t1', 'nope', 't2', 'also-nope']))
+      .toEqual(['nope', 'also-nope']);
+  });
+
+  it('short-circuits an empty selection without querying', async () => {
+    expect(await validateTopicIds([])).toEqual([]);
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  // 🔴 The gate moved off is_live. A topic can exist, be perfectly live, and
+  // still not be one this season asks — that is what retirement means now.
+  it('does not gate on is_live', async () => {
+    mockQuery.mockResolvedValue({ rows: [row('t1', 'a')] });
+    await validateTopicIds(['t1']);
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.compass_topics_promoted');
+    expect(sql).not.toMatch(/WHERE[\s\S]*is_live\s*=\s*true/);
+  });
+
+  // 🔴 The failure that must not be blamed on the caller. With no open season
+  // the promoted set is empty, so a naive check reports every submitted id as
+  // invalid — telling the voter their perfectly good selection is wrong when the
+  // server is the thing that is misconfigured.
+  it('raises NO_PROMOTED_TOPICS instead of calling every id invalid', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    const err = await validateTopicIds(['t1', 't2']).catch((e: unknown) => e);
+
+    expect(isNoPromotedTopicsError(err)).toBe(true);
+    expect((err as NoPromotedTopicsError).code).toBe('NO_PROMOTED_TOPICS');
+  });
+
+  // The routes map on `code`, matching this codebase's existing error idiom.
+  it('carries a code the routes can map to 503', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    const err = await validateTopicIds(['t1']).catch((e: unknown) => e) as { code?: string };
+    expect(err.code).toBe('NO_PROMOTED_TOPICS');
+  });
+
+  it('does not mistake an unrelated error for an empty promoted set', () => {
+    expect(isNoPromotedTopicsError(new Error('connection terminated'))).toBe(false);
+    expect(isNoPromotedTopicsError(null)).toBe(false);
   });
 });

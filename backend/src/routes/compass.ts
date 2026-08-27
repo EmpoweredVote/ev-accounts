@@ -16,6 +16,7 @@ import {
   getPoliticianContext,
   getPoliticianContextAll,
   validateTopicIds,
+  isNoPromotedTopicsError,
   saveSelectedTopics,
   resetCompassAnswers,
   compareWithPoliticians,
@@ -782,7 +783,12 @@ router.put(
       if (invalidIds.length > 0) {
         res.status(422).json({
           code: 'INVALID_TOPIC_IDS',
-          message: `The following topic IDs are invalid or not live: ${invalidIds.join(', ')}`,
+          // "not live" was the old gate. The gate is now the open season's
+          // question set, so say that — a topic can exist, be perfectly live,
+          // and still not be one this season asks.
+          message:
+            'The following topic IDs are not among the questions this season asks: ' +
+            invalidIds.join(', '),
           invalid_ids: invalidIds,
         });
         return;
@@ -797,6 +803,18 @@ router.put(
 
       res.status(200).json(topic_ids);
     } catch (err) {
+      // No season is open, so there is nothing to validate the selection
+      // against. The request is fine; the service cannot serve it. 503, not the
+      // 500 this used to be — and definitely not a 422 blaming the caller's
+      // topic ids, which is what a naive "everything is invalid" check produces.
+      if (isNoPromotedTopicsError(err)) {
+        console.error('[PUT /compass/selected-topics] no promoted topics:', err.message);
+        res.status(503).json({
+          code: err.code,
+          message: 'Compass topics are unavailable right now — no season is open.',
+        });
+        return;
+      }
       console.error('[PUT /compass/selected-topics] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
