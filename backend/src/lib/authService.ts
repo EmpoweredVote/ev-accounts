@@ -18,6 +18,7 @@
  */
 
 import { supabaseAdmin } from './supabase.js';
+import { classifyToken } from './tokenIdentity.js';
 import { cache } from './cache.js';
 
 // ---------------------------------------------------------------------------
@@ -100,4 +101,21 @@ export async function signInWithEmail(email: string, password: string) {
  */
 export async function signOutUser(accessToken: string) {
   return supabaseAdmin.auth.admin.signOut(accessToken, 'global');
+}
+
+/**
+ * getRequestAuthUser — the auth.users record behind a request.
+ *
+ * Supabase-issued tokens: introspected via auth.getUser(token), unchanged.
+ * WorkOS-issued tokens (decision 0002 transition): Supabase Auth cannot
+ * introspect them; requireAuth already resolved the internal user id, so the
+ * row is fetched by id with the admin client instead.
+ */
+export async function getRequestAuthUser(accessToken: string, userId: string) {
+  if (classifyToken(accessToken) === 'workos') {
+    const { data, error } = await supabaseAdmin.auth.admin.getUserById(userId);
+    return { user: data?.user ?? null, error };
+  }
+  const { data, error } = await supabaseAdmin.auth.getUser(accessToken);
+  return { user: data?.user ?? null, error };
 }
