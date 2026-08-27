@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
-import { workosSignOut } from '../lib/workosAuth';
+import { workosSignOut, workosEnabled, hasWorkosSession } from '../lib/workosAuth';
 import { useTheme } from '../hooks/useTheme';
 import ConnectedExplainerModal from '../components/ConnectedExplainerModal';
 
@@ -422,6 +422,9 @@ function PostHistory() {
     if (afterCursor) url += `?cursor=${encodeURIComponent(afterCursor)}`;
     try {
       const res = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+      // fc cannot verify WorkOS-issued tokens until it gets the dual-issuer
+      // port (decision 0002) — its 401 says nothing about OUR session then.
+      if (res.status === 401 && workosEnabled && hasWorkosSession()) { setLoadState('error-generic'); return; }
       if (res.status === 401) { useAuthStore.getState().clearAuth(); return; }
       if (res.status === 403) { setLoadState('error-access'); return; }
       if (!res.ok) { setLoadState('error-generic'); return; }
