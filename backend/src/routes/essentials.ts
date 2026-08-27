@@ -316,8 +316,8 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
         o.title                 AS office_title,
         ct.id                   AS topic_id,
         ct.topic_key            AS topic_key,
-        ct.short_title          AS topic_title,
-        ct.question_text        AS topic_question
+        ctc.short_title         AS topic_title,
+        ctc.question_text       AS topic_question
       FROM essentials.quotes q
       JOIN essentials.politicians p ON p.id = q.politician_id AND ${whereSQL}
       LEFT JOIN LATERAL (
@@ -330,6 +330,11 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
         LIMIT 1
       ) o ON true
       LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+      -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
+      -- the current revision's wording, which CA_0012's freeze trigger means ct
+      -- itself can no longer receive. Voter-facing, so stale text here is a
+      -- content error rather than a cosmetic one.
+      LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
       ORDER BY p.full_name, q.topic_key
     `, queryParams);
 

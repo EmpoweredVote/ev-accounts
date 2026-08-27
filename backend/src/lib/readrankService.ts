@@ -625,11 +625,11 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
   }>(`
     SELECT q.id AS quote_id, q.deidentified_text, lower(q.topic_key) AS topic_key,
            q.politician_id, q.question_id,
-           ct.short_title AS topic_title,
+           ctc.short_title AS topic_title,
            -- Question resolves: the quote's own question -> per-race topic override
            -- -> Compass. A non-Compass topic has only the first source, so this
            -- COALESCE (not the title) has to stay in SQL: three tables, three joins.
-           COALESCE(rq.question_text, rtq.question_text, ct.question_text) AS topic_question,
+           COALESCE(rq.question_text, rtq.question_text, ctc.question_text) AS topic_question,
            r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc
@@ -642,6 +642,13 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
      AND q.readrank_selected = true
     LEFT JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key)
+    -- TEXT ONLY (ADR 0004). ct stays the matcher and the is_live kill switch;
+    -- ctc supplies title and question_text from the CURRENT revision. Splitting
+    -- them is what makes publishing a revision reach this surface: CA_0012 froze
+    -- compass_topics' own text columns, so reading ct.short_title here would show
+    -- the 2026-08-21 wording forever. Cannot fan out — one current revision per
+    -- topic, by the compass_topic_revisions_one_current partial unique index.
+    LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
     LEFT JOIN essentials.readrank_questions rq
       ON rq.id = q.question_id
     LEFT JOIN essentials.readrank_race_topic_questions rtq
@@ -649,14 +656,16 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
     WHERE r.id = $1
       -- See getPlayableRaces: the is_live kill switch lives here, not in the ON
       -- clause, so a retired Compass topic still disappears from the evaluation.
+      -- 🔴 It reads ct, NOT ctc. Promotion state is not in the content view, and
+      -- moving this onto ctc would silently delete the kill switch.
       AND (ct.topic_key IS NULL OR ct.is_live = true)
     -- Non-Compass topics have no short_title; order them by key so a race with
     -- several of them still comes back in a stable order rather than by chance.
     -- The trailing two keys order CARDS WITHIN a topic: ordering by topic title
     -- alone left the row order of a multi-question topic unspecified, which is
     -- how the merged card used to pick its question text by chance.
-    ORDER BY COALESCE(ct.short_title, lower(q.topic_key)),
-             COALESCE(rq.question_text, rtq.question_text, ct.question_text),
+    ORDER BY COALESCE(ctc.short_title, lower(q.topic_key)),
+             COALESCE(rq.question_text, rtq.question_text, ctc.question_text),
              q.question_id NULLS FIRST
   `, [raceId]);
 
@@ -721,11 +730,11 @@ export async function computeRaceMatch(
            q.question_id,
            q.deidentified_text, q.source_name, q.source_url,
            p.full_name, p.photo_origin_url AS photo,
-           o.title AS office_title, ct.short_title AS topic_title,
+           o.title AS office_title, ctc.short_title AS topic_title,
            -- Same three-source resolution as getRaceBlindQuotes. The reveal needs it
            -- because two sections of one topic share the topic short_title and are
            -- otherwise indistinguishable to the reader.
-           COALESCE(rq.question_text, rtq.question_text, ct.question_text) AS topic_question,
+           COALESCE(rq.question_text, rtq.question_text, ctc.question_text) AS topic_question,
            r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id IS NOT NULL
@@ -741,6 +750,10 @@ export async function computeRaceMatch(
       LIMIT 1
     ) o ON true
     LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
+    -- TEXT ONLY — see getRaceBlindQuotes. ct matches and gates; ctc supplies the
+    -- current revision's wording. The reveal and the blind payload must resolve
+    -- text the same way, or a quote's topic renames itself between the two.
+    LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
     LEFT JOIN essentials.readrank_questions rq
       ON rq.id = q.question_id
     LEFT JOIN essentials.readrank_race_topic_questions rtq
@@ -748,6 +761,7 @@ export async function computeRaceMatch(
     WHERE r.id = $1 AND q.id = ANY($2::uuid[])
       -- Kill switch in WHERE, not ON — see getPlayableRaces. The reveal must not
       -- resurrect a retired topic the evaluation payload already refused to show.
+      -- 🔴 ct, not ctc — the content view carries no is_live.
       AND (ct.topic_key IS NULL OR ct.is_live = true)
   `, [raceId, quoteIds]);
 

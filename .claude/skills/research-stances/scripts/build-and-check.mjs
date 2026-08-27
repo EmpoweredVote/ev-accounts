@@ -109,9 +109,26 @@ async function main() {
     if (stance === undefined) {
       stance = null;
       if (pid) {
+        // 🔴 THE ANSWER SUBQUERY MUST BE ORDERED AND LIMITED. It is a SCALAR
+        // subquery: with one season it returns one row, and with two it returns
+        // two and Postgres raises 21000, "more than one row returned by a
+        // subquery used as an expression". Loud, but only once a second season
+        // exists — so it looks fine right up until it isn't.
+        //
+        // The question here is "what does this person say on this topic", which
+        // follows the PERSON, not the calendar: take the newest season in which
+        // they actually answered, whichever that is. Someone not researched this
+        // season still has a stance, and asking the open season for it would
+        // blank a compass that has real content. Mirrors
+        // seasonService.newestAnswerLateral.
         const s = (await client.query(
           `SELECT t.question_text,
-             (SELECT a.value FROM inform.politician_answers a WHERE a.topic_id=t.id AND a.politician_id=$1::uuid) AS value,
+             (SELECT a.value
+                FROM inform.politician_answers a
+                JOIN inform.seasons ssn ON ssn.id = a.season_id
+               WHERE a.topic_id=t.id AND a.politician_id=$1::uuid
+               ORDER BY ssn.number DESC
+               LIMIT 1) AS value,
              (SELECT json_agg(json_build_object('v', s.value, 'text', s.text) ORDER BY s.value)
               FROM inform.compass_stances s WHERE s.topic_id=t.id) AS chairs
            FROM inform.compass_topics t WHERE t.topic_key=$2`, [pid, tk])).rows[0];

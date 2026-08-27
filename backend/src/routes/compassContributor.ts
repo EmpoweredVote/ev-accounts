@@ -42,7 +42,39 @@ import type { Request, Response } from 'express';
 import {
   UPSERT_ANSWER_WITH_WRITE_IN_SQL, UPSERT_CONTEXT_SOURCES_SQL,
   OPEN_SEASON_ANSWER_SQL, DELETE_ANSWER_OPEN_SEASON_SQL, assertWritten,
+  isSeasonWriteError, writableTopicIds,
 } from '../lib/seasonService.js';
+
+/**
+ * Answer a caught write error.
+ *
+ * A season refusal is NOT an internal error — it means the editorial calendar is
+ * not ready for this write, which an operator can fix. Serving it as a 500 with
+ * "an unexpected error occurred" hides the one sentence that says what to do,
+ * and hides it specifically from the person who could act on it.
+ *
+ * This is live right now, not hypothetical: season 1 is closed and no season is
+ * open, so EVERY stance write on this router currently takes this path.
+ *
+ * 409, not 400 — the request is well formed and the caller did nothing wrong.
+ * The server's state is what conflicts.
+ */
+function respondToWriteError(res: Response, err: unknown, context: string): void {
+  if (isSeasonWriteError(err)) {
+    console.warn(`[compassContributor] ${context} refused by the season gate:`, err.message);
+    res.status(409).json({
+      code: err.reason,
+      message: err.message,
+      topic_id: err.topicId,
+    });
+    return;
+  }
+  console.error(`[compassContributor] ${context} error:`, err);
+  res.status(500).json({
+    code: 'INTERNAL_ERROR',
+    message: 'An unexpected error occurred',
+  });
+}
 
 const router = Router();
 
@@ -184,19 +216,29 @@ router.put(
     try {
       await client.query('BEGIN');
 
-      // a. Verify ALL upsert topic_ids exist and are live
+      // a. Verify ALL upsert topic_ids may currently hold an answer.
+      //
+      // 🔴 THIS MUST ASK THE SAME QUESTION AS THE WRITE BELOW. It used to check
+      // `is_live = true`, which is promotion state and not the write gate at all
+      // — the upsert sources its INSERT from the open season's question set, and
+      // politician_answers_pin_fkey enforces that in the schema. The two agreed
+      // only by accident, because all 44 topics are both live and in season 1.
+      // The moment a season drops a topic they diverge, and this check would wave
+      // a write through to fail deeper down as an exception, past the point where
+      // the caller can be told which topic was the problem.
+      //
+      // writableTopicIds() reads the upsert's own FROM clause. See seasonService.
       if (topicIds.length > 0) {
-        const topicCheckResult = await client.query<{ id: string }>(
-          `SELECT id FROM inform.compass_topics WHERE id = ANY($1) AND is_live = true`,
-          [topicIds]
-        );
-        const validTopicIds = new Set(topicCheckResult.rows.map((r) => r.id));
-        const invalidTopicIds = topicIds.filter((id) => !validTopicIds.has(id));
+        const writable = await writableTopicIds(client, topicIds);
+        const invalidTopicIds = topicIds.filter((id) => !writable.has(id));
         if (invalidTopicIds.length > 0) {
           await client.query('ROLLBACK');
           res.status(422).json({
-            code: 'VALIDATION_ERROR',
-            message: `Invalid or non-live topic IDs: ${invalidTopicIds.join(', ')}`,
+            code: 'TOPIC_NOT_IN_SEASON',
+            message:
+              'These topics are not in the open season\'s question set, so there is no ' +
+              `pinned ladder revision to record an answer against: ${invalidTopicIds.join(', ')}`,
+            invalid_topic_ids: invalidTopicIds,
           });
           return;
         }
@@ -285,11 +327,7 @@ router.put(
       });
     } catch (err) {
       await client.query('ROLLBACK');
-      console.error('[compassContributor] bulk stance write error:', err);
-      res.status(500).json({
-        code: 'INTERNAL_ERROR',
-        message: 'An unexpected error occurred',
-      });
+      respondToWriteError(res, err, 'bulk stance write');
     } finally {
       client.release();
     }
@@ -377,16 +415,21 @@ router.put(
       );
       const prev = prevResult.rows[0] ?? null;
 
-      // b. Verify topic exists and is live
-      const topicResult = await client.query<{ id: string }>(
-        `SELECT id FROM inform.compass_topics WHERE id = $1 AND is_live = true`,
-        [topicId]
-      );
-      if (topicResult.rows.length === 0) {
+      // b. Verify the topic may currently hold an answer — the same question the
+      //    write asks. See the bulk handler above for why is_live was wrong here.
+      const writable = await writableTopicIds(client, [topicId]);
+      if (!writable.has(topicId)) {
         await client.query('ROLLBACK');
-        res.status(404).json({
-          code: 'NOT_FOUND',
-          message: 'Topic not found or not live',
+        // 422, not the 404 this used to return. The topic is not missing — it
+        // exists and may well hold answers from an earlier season. What is
+        // absent is this season's question about it, and "not found" sends the
+        // caller looking for a deleted topic that is sitting right there.
+        res.status(422).json({
+          code: 'TOPIC_NOT_IN_SEASON',
+          message:
+            'This topic is not in the open season\'s question set, so there is no ' +
+            'pinned ladder revision to record an answer against.',
+          invalid_topic_ids: [topicId],
         });
         return;
       }
@@ -423,11 +466,7 @@ router.put(
       });
     } catch (err) {
       await client.query('ROLLBACK');
-      console.error('[compassContributor] single stance write error:', err);
-      res.status(500).json({
-        code: 'INTERNAL_ERROR',
-        message: 'An unexpected error occurred',
-      });
+      respondToWriteError(res, err, 'single stance write');
     } finally {
       client.release();
     }
@@ -492,6 +531,30 @@ router.put(
     }
 
     try {
+      // This handler had NO topic pre-flight — it relied entirely on
+      // assertWritten firing mid-loop. That matters more here than on the other
+      // two paths, because this loop has no transaction around it: a refusal on
+      // the fourth source leaves the first three written and returns an error,
+      // so the caller cannot tell what landed. Checking every topic up front
+      // makes the common refusal happen before anything is written.
+      //
+      // ⚠ It does NOT make the loop atomic. A failure part-way through for any
+      // other reason still leaves earlier rows written. That is pre-existing and
+      // wants a transaction; this only removes the season gate as a cause.
+      const requestedTopicIds = parsed.data.sources.map((s) => s.topic_id);
+      const writable = await writableTopicIds(pool, requestedTopicIds);
+      const notInSeason = requestedTopicIds.filter((id) => !writable.has(id));
+      if (notInSeason.length > 0) {
+        res.status(422).json({
+          code: 'TOPIC_NOT_IN_SEASON',
+          message:
+            'These topics are not in the open season\'s question set, so there is no ' +
+            `pinned ladder revision to record sources against: ${notInSeason.join(', ')}`,
+          invalid_topic_ids: notInSeason,
+        });
+        return;
+      }
+
       for (const { topic_id, source_url } of parsed.data.sources) {
         const sources = source_url.trim() ? [source_url.trim()] : [];
         // Sources only — this shape deliberately does NOT touch `reasoning`,
@@ -503,8 +566,7 @@ router.put(
       }
       res.status(200).json({ updated: parsed.data.sources.length });
     } catch (err) {
-      console.error('[compassContributor] source write error:', err);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      respondToWriteError(res, err, 'source write');
     }
   }
 );

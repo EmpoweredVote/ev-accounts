@@ -495,10 +495,13 @@ export async function getSummaryByMeetingId(
   const { rows: topicRows } = await pool.query<{
     section_index: string; topic_key: string; status: string; title: string | null;
   }>(
-    `SELECT mt.section_index, mt.topic_key, mt.status, ct.short_title AS title
+    `SELECT mt.section_index, mt.topic_key, mt.status, ctc.short_title AS title
      FROM meetings.meeting_topics mt
      LEFT JOIN inform.compass_topics ct
        ON ct.topic_key = mt.topic_key AND ct.is_live = true
+     -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
+     -- the current revision's wording. CA_0012 froze ct's own text columns.
+     LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
      WHERE mt.meeting_id = $1`,
     [meetingId]
   );

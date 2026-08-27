@@ -118,11 +118,21 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     This line used to read "Chris → `CA_`" and was unresolvable; the initials read as Andrews while
     the usage was mostly Cantrell's.
   - **Chris Cantrell → `CC_`**, counting from `CC_0001` upward. He never reads the shared max again.
-  - **`CA_` IS HISTORICALLY MIXED AND IS CLOSED TO NEW WORK.** Measured 2026-08-26: Andrews wrote
-    `CA_0001-0003`, `CA_0011`, `CA_0012`, `CA_0015`, `CA_0016`; Cantrell wrote `CA_0004-CA_0010`
-    (the NC wave) and `CA_0017-CA_0019` (compass seasons). Nothing is retro-renamed — `CA_0012` is
-    embedded in 44 `compass_topic_revisions` rows and one column comment, so its number is load
-    bearing. Read an existing `CA_` slot as "whoever the git history says"; do not infer an author.
+  - **Chris Andrews → `CA_`**, counting from `CA_0020` upward. Decision 2026-08-27, superseding the
+    "closed to new work" line that stood here before — see below for what that line got wrong.
+  - ⚠ **`CA_`'s EXISTING SLOTS ARE HISTORICALLY MIXED. Its FUTURE slots are Andrews'.** Measured
+    2026-08-26: Andrews wrote `CA_0001-0003`, `CA_0011`, `CA_0012`, `CA_0015`, `CA_0016`; Cantrell
+    wrote `CA_0004-CA_0010` (the NC wave) and `CA_0017-CA_0019` (compass seasons). Nothing is
+    retro-renamed — `CA_0012` is embedded in 44 `compass_topic_revisions` rows and one column
+    comment, so its number is load bearing. **Read an existing `CA_` slot as "whoever the git
+    history says"; do not infer an author.** From `CA_0020` on, `CA_` means Andrews.
+  - 🔴 **DECIDE THE AUTHOR BEFORE THE NUMBER.** The mixture above happened because Cantrell's
+    sessions reached for `CA_` while Andrews' did too. The namespace is chosen by *who is doing the
+    work*, not by what the last migration in the directory happened to be called. If you cannot
+    establish which Chris you are working for, ask — do not read `ls` and copy the prefix.
+  - This block previously read "`CA_` IS CLOSED TO NEW WORK" while also telling Andrews nothing
+    about where to write instead. That gap is what sent a session looking for a prefix to copy.
+    Both authors now have a named, open namespace; neither needs to infer one.
   - **The plain `NNNN_` sequence stays as it is** for everyone else; keep taking the next free
     number there exactly as before.
   - Zero-pad `CA_` to four digits so `ls` sorts correctly. Leading zeros are stripped when
