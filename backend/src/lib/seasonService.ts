@@ -208,6 +208,43 @@ export const DELETE_ANSWER_OPEN_SEASON_SQL = `
      AND a.politician_id = $1 AND a.topic_id = $2`;
 
 /**
+ * Why a season-aware write wrote nothing.
+ *
+ *   NO_OPEN_SEASON — no season is open, so nothing may be written at all.
+ *   TOPIC_NOT_IN_SEASON — a season is open but does not ask this topic, so there
+ *                         is no pinned revision to record the answer against.
+ */
+export type SeasonWriteReason = 'NO_OPEN_SEASON' | 'TOPIC_NOT_IN_SEASON';
+
+/**
+ * A write refused by the season gate.
+ *
+ * 🔴 THIS IS NOT AN INTERNAL ERROR AND MUST NOT BE SERVED AS ONE. It means the
+ * editorial calendar is not ready for this write — a state an operator can fix
+ * (open a season, or add the topic to the open season's question set), and one
+ * they cannot fix if the API answers "an unexpected error occurred" and puts the
+ * only useful sentence in a server log they cannot read.
+ *
+ * Route handlers should map it to 409 and pass `message` through. It carries no
+ * user data — just the season state and the topic id — so it is safe to return.
+ */
+export class SeasonWriteError extends Error {
+  readonly reason: SeasonWriteReason;
+  readonly topicId: string;
+  constructor(reason: SeasonWriteReason, topicId: string, message: string) {
+    super(message);
+    this.name = 'SeasonWriteError';
+    this.reason = reason;
+    this.topicId = topicId;
+  }
+}
+
+/** Narrowing helper, so routes do not have to `instanceof` an imported class. */
+export function isSeasonWriteError(e: unknown): e is SeasonWriteError {
+  return e instanceof SeasonWriteError;
+}
+
+/**
  * Turn "no rows written" into an error that says which of the two causes it was.
  *
  * Both are silent no-ops without this, and they need different fixes: open a
@@ -224,17 +261,20 @@ export async function assertWritten(rowCount: number, topicId: string): Promise<
   );
   const openSeasons = Number(rows[0]?.open_seasons ?? 0);
   if (openSeasons === 0) {
-    throw new Error(
+    throw new SeasonWriteError('NO_OPEN_SEASON', topicId,
       'no open season — nothing can be written until one is opened. ' +
       "Set a row in inform.seasons to status='open' with an opened_at, and give " +
       'it a season_questions row per topic pinning the ladder revision it asks.');
   }
   if (Number(rows[0]?.pinned ?? 0) === 0) {
-    throw new Error(
+    throw new SeasonWriteError('TOPIC_NOT_IN_SEASON', topicId,
       `topic ${topicId} is not in the open season's question set, so there is no ` +
       'pinned ladder revision to record this answer against. Add an ' +
       'inform.season_questions row for it, or write to a season that asks it.');
   }
+  // Deliberately a plain Error. The two known causes are above; anything else
+  // really is unexpected, and dressing it as a SeasonWriteError would tell an
+  // operator to go open a season when a season is already open.
   throw new Error(`write affected 0 rows for topic ${topicId} for an unknown reason`);
 }
 

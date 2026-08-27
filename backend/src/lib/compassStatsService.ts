@@ -58,17 +58,28 @@ interface CountRow {
   write_ins: number;
 }
 
+// TEXT ONLY (ADR 0004). `t` stays the row source and the sole authority on
+// is_live — this endpoint REPORTS promotion state, so it must keep reading it —
+// while `tc`/`sc` supply the current revision's wording for topics and rungs.
+// CA_0012 froze compass_topics/compass_stances' own text columns, so without
+// this an admin looking at stats would never see a published revision land.
+// Neither join can fan out: one current revision per topic
+// (compass_topic_revisions_one_current), and the stance view is keyed on that
+// same revision, so it yields one row per (topic, value).
 const STANCES_SQL = `
   SELECT t.id::text       AS topic_id,
-         t.title,
-         t.short_title,
+         tc.title,
+         tc.short_title,
          t.is_live,
          s.id::text       AS stance_id,
          s.value::int     AS stance_value,
-         s.text           AS stance_text
+         sc.text          AS stance_text
   FROM inform.compass_topics t
+  JOIN inform.compass_topics_current tc ON tc.id = t.id
   LEFT JOIN inform.compass_stances s ON s.topic_id = t.id
-  ORDER BY t.title ASC, s.value ASC
+  LEFT JOIN inform.compass_stances_current sc
+    ON sc.topic_id = t.id AND sc.value = s.value
+  ORDER BY tc.title ASC, s.value ASC
 `;
 
 const USER_COUNTS_SQL = `

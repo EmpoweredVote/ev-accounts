@@ -44,13 +44,16 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
     topic_key: string; title: string | null; item_count: string; meeting_count: string;
   }>(
     `SELECT mt.topic_key,
-            ct.short_title AS title,
+            ctc.short_title AS title,
             COUNT(*) AS item_count,
             COUNT(DISTINCT mt.meeting_id) AS meeting_count
      FROM meetings.meeting_topics mt
      LEFT JOIN inform.compass_topics ct
        ON ct.topic_key = mt.topic_key AND ct.is_live = true
-     GROUP BY mt.topic_key, ct.short_title
+     -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
+     -- the current revision's wording. CA_0012 froze ct's own text columns.
+     LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
+     GROUP BY mt.topic_key, ctc.short_title
      ORDER BY item_count DESC, mt.topic_key`
   );
 
@@ -73,8 +76,13 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
 
 export async function getTopicByKey(topicKey: string): Promise<TopicDetail | null> {
   const { rows: titleRows } = await pool.query<{ title: string | null }>(
-    `SELECT short_title AS title FROM inform.compass_topics
-     WHERE topic_key = $1 AND is_live = true LIMIT 1`,
+    // TEXT ONLY (ADR 0004): ct gates on is_live, ctc supplies the current
+    // revision's wording. CA_0012 froze ct.short_title, so reading it here would
+    // pin this page to the 2026-08-21 text.
+    `SELECT ctc.short_title AS title
+       FROM inform.compass_topics ct
+       JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
+      WHERE ct.topic_key = $1 AND ct.is_live = true LIMIT 1`,
     [topicKey]
   );
 

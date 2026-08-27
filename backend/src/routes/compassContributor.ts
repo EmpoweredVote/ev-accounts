@@ -42,7 +42,39 @@ import type { Request, Response } from 'express';
 import {
   UPSERT_ANSWER_WITH_WRITE_IN_SQL, UPSERT_CONTEXT_SOURCES_SQL,
   OPEN_SEASON_ANSWER_SQL, DELETE_ANSWER_OPEN_SEASON_SQL, assertWritten,
+  isSeasonWriteError,
 } from '../lib/seasonService.js';
+
+/**
+ * Answer a caught write error.
+ *
+ * A season refusal is NOT an internal error — it means the editorial calendar is
+ * not ready for this write, which an operator can fix. Serving it as a 500 with
+ * "an unexpected error occurred" hides the one sentence that says what to do,
+ * and hides it specifically from the person who could act on it.
+ *
+ * This is live right now, not hypothetical: season 1 is closed and no season is
+ * open, so EVERY stance write on this router currently takes this path.
+ *
+ * 409, not 400 — the request is well formed and the caller did nothing wrong.
+ * The server's state is what conflicts.
+ */
+function respondToWriteError(res: Response, err: unknown, context: string): void {
+  if (isSeasonWriteError(err)) {
+    console.warn(`[compassContributor] ${context} refused by the season gate:`, err.message);
+    res.status(409).json({
+      code: err.reason,
+      message: err.message,
+      topic_id: err.topicId,
+    });
+    return;
+  }
+  console.error(`[compassContributor] ${context} error:`, err);
+  res.status(500).json({
+    code: 'INTERNAL_ERROR',
+    message: 'An unexpected error occurred',
+  });
+}
 
 const router = Router();
 
@@ -285,11 +317,7 @@ router.put(
       });
     } catch (err) {
       await client.query('ROLLBACK');
-      console.error('[compassContributor] bulk stance write error:', err);
-      res.status(500).json({
-        code: 'INTERNAL_ERROR',
-        message: 'An unexpected error occurred',
-      });
+      respondToWriteError(res, err, 'bulk stance write');
     } finally {
       client.release();
     }
@@ -423,11 +451,7 @@ router.put(
       });
     } catch (err) {
       await client.query('ROLLBACK');
-      console.error('[compassContributor] single stance write error:', err);
-      res.status(500).json({
-        code: 'INTERNAL_ERROR',
-        message: 'An unexpected error occurred',
-      });
+      respondToWriteError(res, err, 'single stance write');
     } finally {
       client.release();
     }
@@ -503,8 +527,7 @@ router.put(
       }
       res.status(200).json({ updated: parsed.data.sources.length });
     } catch (err) {
-      console.error('[compassContributor] source write error:', err);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      respondToWriteError(res, err, 'source write');
     }
   }
 );

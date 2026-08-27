@@ -15,6 +15,12 @@
  *
  *   node scripts/apply-migration-file.mjs migrations/1712_....sql
  */
+// dotenv, not a hardcoded path. This script previously read the connection string from
+// 'C:/EV-Accounts/backend/.env', which exists on exactly one machine and throws ENOENT on every
+// other — so the safe applier was unusable precisely where someone would reach for the unsafe
+// hand-pasted alternative. Same loading as scripts/dry-run-migration.mjs, so a migration is
+// rehearsed and applied against the same database by the same rule.
+import 'dotenv/config';
 import fs from 'node:fs';
 import pg from 'pg';
 
@@ -25,8 +31,8 @@ const raw = fs.readFileSync(file, 'utf8');
 const sql = raw.replace(/^\s*BEGIN\s*;/im, '').replace(/^\s*COMMIT\s*;/im, '');
 if (/\bDROP\s+(TABLE|SCHEMA|DATABASE)\b/i.test(sql)) { console.error('refusing: migration contains a DROP TABLE/SCHEMA/DATABASE'); process.exit(2); }
 
-const env = fs.readFileSync('C:/EV-Accounts/backend/.env', 'utf8');
-const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^DATABASE_URL=/, '').trim();
+const url = process.env.DATABASE_URL;
+if (!url) { console.error('refusing: DATABASE_URL is not set (backend/.env)'); process.exit(2); }
 const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: false } });
 const client = await pool.connect();
 

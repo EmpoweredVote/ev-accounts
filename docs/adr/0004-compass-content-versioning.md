@@ -563,6 +563,17 @@ count, dry-run against prod under `BEGIN; ... ROLLBACK;` first. House style.
 
 ### 12. CA_0013 revised: one view cannot answer three questions
 
+> 🔴 **CORRECTED 2026-08-27. Read this box before the section.** The three-way split below is
+> sound and survives. **Its answerability half is wrong**, and so is the paragraph in red at the
+> end of the section. Both were written without knowing that the season model had already shipped
+> in PR #177 — the same mistake, in the same place, that this ADR documents at length about
+> migration 061. The section is left standing rather than edited, because the reasoning is the
+> record of what we believed; the corrections are marked inline. See
+> [ADR 0005](0005-compass-question-seasons.md) for the model that actually exists.
+>
+> In one line: **answerability is not one question, and the half that governs writes is
+> season-gated by a foreign key.**
+
 I first wrote that seasons (ADR 0005) *blocked* `CA_0013`. That was wrong. What blocks it is that
 `compass_topics_live` answers two questions at once and pretends they are one. Split them and the
 migration is safe to ship now — seasons then change one view's **definition** and touch no caller.
@@ -574,7 +585,28 @@ because all 44 topics happen to be live:
 |---|---|---|
 | **Content** — what does this topic *say*? | `meetingsService`, `readrankService` (×4), `topicsService` (×2), `routes/essentials.ts`, `compassStatsService`, `adminService.adminListTopics` | **No.** One current revision per topic, globally. |
 | **Promotion** — should we *ask* this person? | `compassService.getCompassTopics`, the categories-with-topics query | **Yes.** |
-| **Answerability** — may an answer *exist* for this? | `validateTopicIds`, `connectService.validateCompassVersions`, `compassContributor` (×2) | **No — deliberately.** |
+| **Answerability** — may an answer *exist* for this? | `validateTopicIds`, `connectService.validateCompassVersions`, `compassContributor` (×2) | ~~**No — deliberately.**~~ **WRONG — see below.** |
+
+⚠️ **The answerability row is wrong twice over, and the second error is hidden by the first.**
+
+*First*, "may an answer exist" is two questions, and they have opposite answers:
+
+| | Season-dependent? |
+|---|---|
+| May an **existing** answer survive its topic leaving a season? | **No.** Untouched, forever. |
+| May a **new** answer be written for a topic outside the open season? | **Yes.** Refused. |
+
+*Second*, the readers listed in that row are not one kind of thing. Two of them
+(`compassContributor` ×2) validate a **write** and must follow the season gate — as a pre-flight
+that agrees with it, so the caller gets a clean 422 instead of an exception from deeper down.
+`connectService.validateCompassVersions` validates an **import** and must stay permissive: a
+calibration being imported may legitimately name a topic we no longer ask, and what matters there
+is whether the client's version matches, not whether the topic is still promoted.
+
+Lumping them together is what produced a single "answerable" view. Nothing is a suitable reader for
+one view that answers both, which is why `compass_topics_answerable` is dropped in `CA_0021` rather
+than redefined. The surviving read shape is `seasonService.newestAnswerLateral`; the surviving write
+rule is a foreign key.
 
 So:
 
@@ -585,18 +617,59 @@ CREATE VIEW inform.compass_topics_current AS ...
 
 -- Promotion: which topics to ASK. Today every topic (true: 44/44 are is_live).
 -- ADR 0005 changes THIS DEFINITION ONLY — no caller is repointed twice.
+-- ⚠️ CORRECTED: the prediction held, the definition did not. CA_0013 shipped it
+-- as `is_live = true`, which has the right name and the WRONG AUTHORITY —
+-- is_live can never notice a season dropping a topic. CA_0021 redefines it
+-- against the open season's question set. No caller was repointed twice, as
+-- promised, because no caller had been repointed at all.
 CREATE VIEW inform.compass_topics_promoted AS ...
 
 -- Answerability: which topics may hold an answer. Permissive by design.
+-- ⚠️ CORRECTED: never built as described. CA_0013 shipped it with NO WHERE
+-- CLAUSE AT ALL — a bare column-narrowed alias for compass_topics_current,
+-- returning all 44 topics. It named a rule and encoded none, which is worse
+-- than absent. DROPPED in CA_0021 and not replaced; see the correction above
+-- for why no single view can hold this question.
 CREATE VIEW inform.compass_topics_answerable AS ...
 ```
 
-🔴 **Answerability must stay permissive, and this is the subtle one.** `compassContributor` currently
+~~🔴 **Answerability must stay permissive, and this is the subtle one.** `compassContributor` currently
 refuses to seat a politician's stance unless `is_live = true`. If that became "unless it is in the
 current season", then a topic leaving a season would make it impossible to record stances on it — which
 contradicts §5's rule that retiring never deletes answers, and would block adding historical
 comparisons for topics already carrying 32,887 seated answers. **Promotion decides what we ASK. It must
-never decide what may be RECORDED.**
+never decide what may be RECORDED.**~~
+
+🔴 **OVERRULED BY THE SHIPPED MODEL. The conclusion is wrong; the fear behind it was already
+answered.** Kept struck through because a future reader deserves to see that permissive
+answerability was argued for, and on what grounds.
+
+**What it got right.** Retiring a topic must never delete answers. That still holds absolutely, and
+it is *not* what the season gate does. A season-1 answer stays readable forever, because reads
+follow the person and not the calendar: `seasonService.newestAnswerLateral` resolves the newest
+season in which *this person* answered *this topic*. Nothing about season 2 disturbs it. The
+32,887 seated answers named above are safe, and no historical comparison is blocked.
+
+**What it got wrong.** It concluded from that premise that *writes* must also stay unrestricted.
+They must not, and the reason is the pin. An answer records a rung *of a specific ladder text*.
+Outside a season there is no pinned revision, so an answer written there records a number against
+nothing — unreadable the moment the ladder is reworded, and unreadable in exactly the way
+CLAUDE.md's rule about chairs forbids. **Refusing that write is not "promotion deciding what may be
+recorded". It is refusing to record something we could not later interpret.**
+
+**And it is no longer a policy that code could choose to ignore.** The shipped model enforces it in
+the schema:
+
+- `politician_answers.season_id` and `.topic_revision_id` are both `NOT NULL`.
+- `politician_answers_pin_fkey` is a composite foreign key onto
+  `season_questions(season_id, topic_id, topic_revision_id)`.
+
+An answer to a topic the open season does not ask **has no pin and cannot be inserted**. No view can
+restore permissiveness, and a reader that appears to — as `compass_topics_answerable` did — only
+misleads the next person into thinking a check is being applied.
+
+**The corrected rule.** Promotion decides what we ASK. **The season decides what may be RECORDED
+NOW.** Neither decides what STAYS RECORDED — that is answered once, by reads following the person.
 
 The `compass_stances_live` view splits the same way, but only into content — a ladder has no promotion
 question of its own; it inherits its topic's.

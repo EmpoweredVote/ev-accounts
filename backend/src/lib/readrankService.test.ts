@@ -764,9 +764,14 @@ describe('getRaceBlindQuotes — resolved ranking question (override ?? compass)
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toContain('essentials.readrank_race_topic_questions');
     // The COALESCE gained a third, higher-priority source (rq = the quote's own
-    // readrank_question), because a topic with no Compass row has no ct.question_text
-    // to fall back to. The override-beats-compass ordering asserted here is unchanged.
-    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+    // readrank_question), because a topic with no Compass row has no Compass
+    // question_text to fall back to. The override-beats-compass ordering asserted
+    // here is unchanged.
+    // The Compass arm reads `ctc` (compass_topics_current), not `ct`: ADR 0004's
+    // content repoint moved question text onto the current revision, because
+    // CA_0012 froze compass_topics' own text columns. `ct` still matches the row
+    // and still carries the is_live kill switch — see the service.
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ctc\.question_text\s*\)/);
   });
 });
 
@@ -962,7 +967,7 @@ describe('getRaceBlindQuotes — topic with no live Compass topic', () => {
     await getRaceBlindQuotes('race-1');
 
     const sql = mockQuery.mock.calls[0][0] as string;
-    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ctc\.question_text\s*\)/);
     expect(sql).toContain('essentials.readrank_questions rq');
   });
 });
@@ -1149,7 +1154,7 @@ describe('getRaceBlindQuotes — one card per question', () => {
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(/q\.question_id/);
-    expect(sql).toMatch(/ORDER BY[\s\S]*COALESCE\(ct\.short_title, lower\(q\.topic_key\)\)[\s\S]*q\.question_id/);
+    expect(sql).toMatch(/ORDER BY[\s\S]*COALESCE\(ctc\.short_title, lower\(q\.topic_key\)\)[\s\S]*q\.question_id/);
   });
 });
 
@@ -1327,6 +1332,53 @@ describe('computeRaceMatch — the reveal is keyed by question', () => {
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(/q\.question_id/);
-    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ctc\.question_text\s*\)/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The content repoint split one alias into two: `ct` (inform.compass_topics)
+// still matches the row and carries `is_live`; `ctc`
+// (inform.compass_topics_current) carries the wording. That split is only safe
+// while the kill switch keeps reading `ct`.
+//
+// 🔴 THE FAILURE THESE GUARD AGAINST. compass_topics_current has NO is_live
+// column, so moving the kill switch onto `ctc` does not error — it silently
+// deletes the condition, and every retired Compass topic comes back into a
+// voter-facing surface. Nothing else in the suite would notice.
+// ---------------------------------------------------------------------------
+describe('content repoint — the is_live kill switch must stay on ct', () => {
+  const killSwitch = /\(\s*ct2?\.topic_key IS NULL OR ct2?\.is_live = true\s*\)/;
+
+  it('keeps the kill switch reading ct in the playable-races query', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getPlayableRacesResult();
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(killSwitch);
+    expect(sql).not.toMatch(/ctc\.is_live/);
+  });
+
+  it('keeps the kill switch on ct while taking text from ctc in the blind payload', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getRaceBlindQuotes('race-1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(killSwitch);
+    expect(sql).toContain('inform.compass_topics_current ctc');
+    expect(sql).not.toMatch(/ctc\.is_live/);
+  });
+
+  // The reveal and the blind payload must gate identically. If only one of them
+  // kept the kill switch, a retired topic would be hidden while a voter ranked
+  // and then reappear when the answers were shown.
+  it('keeps the kill switch on ct while taking text from ctc in the reveal', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(killSwitch);
+    expect(sql).toContain('inform.compass_topics_current ctc');
+    expect(sql).not.toMatch(/ctc\.is_live/);
   });
 });

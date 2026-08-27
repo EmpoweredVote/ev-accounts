@@ -6,6 +6,7 @@ vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 import {
   currentSeasonId, latestAnsweredSeason, assertWritten,
   UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL,
+  isSeasonWriteError, SeasonWriteError,
 } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -145,5 +146,43 @@ describe('assertWritten', () => {
   it('does not claim to know the cause when both look fine', async () => {
     mockQuery.mockResolvedValue({ rows: [{ open_seasons: '1', pinned: '1' }] });
     await expect(assertWritten(0, 'topic-1')).rejects.toThrow(/unknown reason/);
+  });
+});
+
+// A season refusal reaches an HTTP handler that has to choose a status code. It
+// can only choose correctly if the error is DISTINGUISHABLE from a genuine
+// failure — otherwise every refusal is a 500 saying "an unexpected error
+// occurred", which is what shipped and what hid the live outage from operators.
+describe('SeasonWriteError — refusals must be tellable from real failures', () => {
+  it('tags the no-open-season refusal with a reason and the topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '0', pinned: '0' }] });
+    const err = await assertWritten(0, 'topic-1').catch((e: unknown) => e);
+    expect(isSeasonWriteError(err)).toBe(true);
+    expect((err as SeasonWriteError).reason).toBe('NO_OPEN_SEASON');
+    expect((err as SeasonWriteError).topicId).toBe('topic-1');
+  });
+
+  it('tags the not-in-this-season refusal with its own distinct reason', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '1', pinned: '0' }] });
+    const err = await assertWritten(0, 'topic-9').catch((e: unknown) => e);
+    expect(isSeasonWriteError(err)).toBe(true);
+    expect((err as SeasonWriteError).reason).toBe('TOPIC_NOT_IN_SEASON');
+    expect((err as SeasonWriteError).topicId).toBe('topic-9');
+  });
+
+  // 🔴 The unknown case must NOT be tagged. Tagging it would tell an operator to
+  // go open a season while a season is already open, sending them to fix
+  // something that is not broken.
+  it('leaves the unknown-cause failure as a plain Error', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ open_seasons: '1', pinned: '1' }] });
+    const err = await assertWritten(0, 'topic-1').catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(Error);
+    expect(isSeasonWriteError(err)).toBe(false);
+  });
+
+  it('does not mistake an unrelated error for a season refusal', () => {
+    expect(isSeasonWriteError(new Error('connection terminated'))).toBe(false);
+    expect(isSeasonWriteError(null)).toBe(false);
+    expect(isSeasonWriteError({ reason: 'NO_OPEN_SEASON' })).toBe(false);
   });
 });
