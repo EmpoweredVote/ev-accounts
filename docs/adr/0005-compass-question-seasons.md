@@ -100,25 +100,51 @@ Rejected: **overlapping seasons with cohort assignment.** It would allow testing
 release, but it hits the same trap as ladder A/B — two people's compasses become non-comparable, and
 matching against politicians gets murkier because the topic *sets* differ, not just the wording.
 
-### 3. Lenses stay, as presentation *within* a season
+### 3. Lenses stay, as presentation *within* a season, and are curated per season and per jurisdiction
 
 A season decides the promoted set. A **lens** is a short curated slice of it — "8 questions to start" —
-and remains a distinct concept with a distinct job.
+and remains a distinct concept with a distinct job. The three live lenses (`federal`, `judicial`,
+`local`, 8 topics each, auto-selected by `auto_district_types`) keep working.
 
-The three live lenses (`federal`, `judicial`, `local`, 8 topics each, auto-selected by
-`auto_district_types`) keep working.
+**Which topics are in each lens is selected as part of defining a season**, and may also be adjusted per
+jurisdiction. So `compass_lens_topics` takes the same shape as season membership:
 
-🔴 **The invariant that makes two tables safe:** a lens may only contain topics that are in the active
-season **for that jurisdiction**. Otherwise a lens offers someone a calibration question that is not in
-their promoted set — a question they can answer but that does not belong to their compass. This must be
-a constraint or a checked gate, not a convention, because it is exactly the kind of drift that goes
-unnoticed until a voter sees something odd.
+```sql
+-- was: (lens_id, topic_id)
+ALTER TABLE inform.compass_lens_topics
+  ADD COLUMN season_id          UUID REFERENCES inform.compass_seasons(id),
+  ADD COLUMN jurisdiction_geoid TEXT,                                  -- NULL = the season's base lens
+  ADD COLUMN disposition        inform.season_disposition NOT NULL DEFAULT 'include';
+-- PK becomes (season_id, lens_id, topic_id, COALESCE(jurisdiction_geoid, ''))
+```
+
+🔴 **RESOLUTION ORDER, and it is the whole ballgame.** Two include/exclude layers now stack, so the
+order must be written down rather than inferred:
+
+1. Resolve the **season** for the jurisdiction: base includes − local excludes + local includes.
+2. Resolve the **lens** for the jurisdiction: lens base − local excludes + local includes.
+3. **Intersect.** The lens set is `lens_resolved ∩ season_resolved`.
+
+**The season always wins.** A lens must never be able to promote a question the season excluded for that
+place — otherwise the lens becomes a back door around the promoted set, and a voter gets asked something
+that is not part of their compass.
+
+🔴 **A lens-level include naming a topic the season excluded locally is a contradiction, not an input to
+be silently resolved.** Step 3 would swallow it — the topic simply vanishes — and the curator would
+never learn their instruction did nothing. That case must be *reported*, by a check or an admin warning,
+not absorbed.
+
+⚠️ **Accepted cost.** This was chosen over per-season-only lens membership, which would have had one
+layer instead of two. It buys full control over the onboarding slice everywhere; it costs a second rule
+layer, and rule systems get confusing at the third exception. Consequences to watch: a lens can resolve
+to fewer than 8 topics (a local exclusion removes one), so nothing downstream may assume a fixed count;
+and "why did Bedford get this question" now requires reading two layers plus an intersection. If lens
+overrides start being routine rather than exceptional, collapse this back to per-season-only.
 
 Considered and not chosen: folding lenses into seasons entirely. A lens *is* the same shape of thing —
 a named, curated, scoped subset — and the funnel baseline shows the lens system was used by roughly one
 person, so the migration cost would have been near zero. Keeping them is a deliberate bet that
-"promoted set" and "onboarding slice" are worth separating. If the invariant above proves annoying to
-maintain, revisit this.
+"promoted set" and "onboarding slice" are worth separating.
 
 ### 4. Answers record their season as well as their revision
 
@@ -143,11 +169,15 @@ a politician's evidenced stance. Matching may still use those answers where both
 | `compass_topic_roles` (84 rows) | Keep for now. It answers "which office levels can answer this", which is a property of the topic, not of a season. Revisit if season membership makes it redundant. |
 | `retired_at` on `compass_topics` | **Never applied** (ADR 0004's schema block promised it; `CA_0011` only created new tables). Probably never needed — retirement is season non-membership. |
 
-⚠️ **`inform.compass_topics_live` assumes one global current revision per topic.** That view is the
-compatibility surface ADR 0004 built for the read-path repoint (`CA_0013`, unwritten). Under seasons
-"live" is parameterised by jurisdiction, so the view either gains arguments (becoming a function) or is
-replaced. **Decide this before writing `CA_0013`** — repointing 13 files onto a view that seasons will
-invalidate is wasted work done twice.
+**`CA_0013` is NOT blocked by seasons** — corrected 2026-08-24. An earlier draft of this ADR said it
+was. What actually blocked it was `compass_topics_live` answering two questions at once. ADR 0004 §12
+splits it into three views — content, promotion, answerability — and only the **promotion** view is
+season-dependent. So `CA_0013` ships now against a promotion view that today means "every topic" (true:
+44/44 are `is_live`), and seasons later change that one definition without repointing a single caller.
+
+🔴 **Answerability must stay permissive**, which is the non-obvious half. Promotion decides what we ASK;
+it must never decide what may be RECORDED, or a topic leaving a season would block seating stances on
+it — contradicting "retiring never deletes answers". See ADR 0004 §12.
 
 ## Consequences
 
