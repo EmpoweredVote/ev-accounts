@@ -31,7 +31,10 @@ BEGIN;
 -- holds ALL 33,164 answers. Turn this on before another season is open and every
 -- edit path stops, because there is nowhere writable left. The sequence is:
 --   (a) drop the *_legacy_pair_scaffold indexes from CC_0002
---   (b) open season 2  (editorial: a name, a question set, a voter-facing note)
+--   (b) open season 2  🔴 NOT SETTLED as of 2026-08-27 — Chris Andrews is still
+--       solidifying the question list. Prepare it as a `draft` and iterate there:
+--       pins stay movable and no answer can land until it opens. Do NOT open a
+--       provisional list, because opening freezes every pin permanently.
 --   (c) THEN apply this
 --
 -- ⚠ ONE CONSEQUENCE TO ACCEPT DELIBERATELY, NOT DISCOVER. This blocks correcting

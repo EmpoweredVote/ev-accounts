@@ -64,11 +64,40 @@ it carries one editorial consequence about closed-season source corrections that
 **Also recommended, not yet built:** a tripwire asserting season 1 never falls below 33,164 answers
 / 33,818 context rows. A trigger can be dropped; a CI check notices.
 
-#### The default for step B, if Chris wants one
+#### 🔴 STEP B IS NOT OURS TO DEFAULT — the list is still being solidified
 
-Same 44 topics, pinned to their current revisions — identical to season 1's pins, since no ladder has
-changed since. Season 1 stays the sealed historical corpus; season 2 becomes where research happens.
-That is the low-risk reading and it needs only a name and a note.
+**Chris Cantrell relayed on 2026-08-27: Chris Andrews says season 2 is NOT settled and he is still
+solidifying the list.** An earlier draft of this section proposed "the same 44 topics pinned to their
+current revisions" as a low-risk default. **That is withdrawn.** It was a convenience for unblocking
+the sequence, not a judgement about what season 2 should ask, and leaving it here invites a future
+session to read it as a decision. The question set is editorial and it belongs to the person building
+it.
+
+Nothing provisional is in the database. Verified 2026-08-27: **exactly one season** (season 1,
+closed, 44 questions, 33,164 answers), zero drafts, zero open, and the scaffolding indexes still up.
+Every season 2 in this repo's history was a probe inside a rolled-back transaction.
+
+#### The schema already supports an unsettled list — use a DRAFT season
+
+Do **not** open a provisional season 2 to unblock writes. Pins freeze the moment a season leaves
+draft, so a temporary list would permanently bind answers to provisional ladder revisions. Prepare it
+as a `draft` instead. Measured against the live schema on 2026-08-27:
+
+| Action | Draft | Open |
+|---|---|---|
+| Move a pin (`topic_revision_id`) | **allowed** | **refused — `PIN_IMMUTABLE`** |
+| Add / remove a question | allowed | allowed *while that question has no answers* |
+| Reorder (`display_order`, `question_number`) | allowed | allowed — only the pin is frozen |
+| Write an answer into it | **impossible** (writes require `status='open'`) | allowed |
+| Coexist with the closed season 1 | yes | yes |
+
+So a draft season 2 can be iterated indefinitely, in the open, with zero risk: no answer can land in
+it and every pin stays movable. It only becomes binding at the moment it opens — and even then, only
+pins and answered questions lock; unanswered questions can still be added or dropped.
+
+⚠ One caveat measured above: removing a question that **already has an answer** is refused by the pin
+FK. That is correct — it would orphan the answer — but it means the list stops being freely editable
+per-question as soon as research starts against it.
 
 ---
 
