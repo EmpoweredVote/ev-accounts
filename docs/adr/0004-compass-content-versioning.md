@@ -113,8 +113,14 @@ Every write appends a row. Nothing is ever `UPDATE`d.
   what a reader cites: "Housing v3".
 
 Both are public. The record lists **every revision**, Wikipedia-style; `version` groups them into
-milestones so a reader has a stable thing to name. What the two-level numbering buys is not
-concealment — it is the difference between a name and an entry in a log.
+milestones so a reader has a stable thing to name.
+
+Neither number says anything about *whether the question is currently being asked*. That is a separate
+axis, decided in [ADR 0005](0005-compass-question-seasons.md) — a topic can be reworded many times while
+sitting in no active season, and can be carried into a new season without being reworded at all.
+
+What the two-level numbering buys is not concealment — it is the difference between a name and an entry
+in a log.
 
 The alternative considered and rejected was in-place `UPDATE` for editorial fixes with versions only
 for substantive change. It fails three ways: the version row stops being immutable, which is the only
@@ -408,7 +414,11 @@ The failure was loud rather than silent, which is the only reason it corrupted n
 ```sql
 -- ── Identity (existing table, columns REMOVED) ────────────────────────────────
 -- inform.compass_topics keeps: id, topic_key, office_scope, fc_community_slug,
---   judicial_role, created_at.  Gains: retired_at TIMESTAMPTZ.
+--   judicial_role, created_at.
+-- ⚠ CORRECTION: an earlier draft said this table "gains retired_at". It does NOT —
+--   CA_0011 only created new tables and never altered compass_topics, so the column
+--   does not exist. Under ADR 0005 (seasons) it is probably never needed, because
+--   retirement is expressed as absence from the active season, not a column.
 --   LOSES to revisions: title, short_title, question_text, version, is_live,
 --   is_active (GENERATED, must be dropped with is_live), went_live_at, updated_at.
 -- The id does NOT change. No FK anywhere is touched.
