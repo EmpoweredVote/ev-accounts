@@ -325,15 +325,46 @@ was already curated is a bigger deal than filling in a blank one — a prior run
 party-inferred value change (Hilton redistricting 4→2) that should have been held for a human. Pull
 the current values and compare:
 
+🔴 **DIFF AGAINST THE OPEN SEASON, NOT AGAINST EVERY SEASON.** The push in step 4c writes into the
+open season, and its `ON CONFLICT` replaces that season's row. So "what am I about to overwrite?" is
+a question about the open season alone. Without the `status = 'open'` join this query returns **one
+row per season per topic** the moment Season 2 exists — the same politician and topic listed twice
+with different values, which makes the guard that exists to prevent silent overwrites ambiguous
+exactly when it matters.
+
+`prior_value` is shown alongside, and it is **context, not the thing you are overwriting**: it is
+what this person last said in an *earlier* season. A row with a blank `existing_value` and a filled
+`prior_value` is a NEW answer for this season, not a change — treat it as NEW.
+
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT p.full_name, t.topic_key, a.value AS existing_value
-  FROM inform.politician_answers a
-  JOIN essentials.politicians p ON p.id = a.politician_id
-  JOIN inform.compass_topics t ON t.id = a.topic_id
+  SELECT p.full_name, t.topic_key,
+         open_a.value  AS existing_value,   -- the row step 4c will overwrite
+         prior.value   AS prior_value,      -- what they last said, earlier season
+         prior.number  AS prior_season
+  FROM essentials.politicians p
+  CROSS JOIN inform.compass_topics t
+  LEFT JOIN LATERAL (
+    SELECT a.value
+      FROM inform.politician_answers a
+      JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'
+     WHERE a.politician_id = p.id AND a.topic_id = t.id
+  ) open_a ON true
+  LEFT JOIN LATERAL (
+    -- Newest answered season that is NOT the open one. LATERAL … LIMIT 1, never
+    -- a plain join: joining on (politician_id, topic_id) returns a row per
+    -- season and fans the result out.
+    SELECT a.value, s.number
+      FROM inform.politician_answers a
+      JOIN inform.seasons s ON s.id = a.season_id AND s.status <> 'open'
+     WHERE a.politician_id = p.id AND a.topic_id = t.id
+     ORDER BY s.number DESC
+     LIMIT 1
+  ) prior ON true
   WHERE lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+    AND (open_a.value IS NOT NULL OR prior.value IS NOT NULL)
   ORDER BY p.full_name, t.topic_key
 \`, [process.argv.slice(2)]);
 console.log(JSON.stringify(rows, null, 2));
@@ -470,31 +501,58 @@ answer (`value`) and the context (`reasoning` + `sources`) **together** — this
 never lag the value. Confirm every row you push has a non-blank reasoning that matches its value
 before running the script. For each matched row, call the admin service functions:
 
+🔴 **A STANCE IS WRITTEN INTO A SEASON. DO NOT HAND-ROLL THIS SQL.** An answer records a rung *of a
+specific ladder text*, so `inform.politician_answers` carries a `season_id` and a
+`topic_revision_id`, both `NOT NULL`, and `politician_answers_pin_fkey` requires the pair to match a
+row in the open season's question set. Import the shared write shape from `seasonService` — it
+resolves the open season and that season's pinned revision **in the same statement**, so the season
+cannot close between reading it and writing.
+
+⚠️ **The block below replaced a bare `INSERT … (politician_id, topic_id, value)` that had worked for
+a year.** After the season model shipped, that INSERT failed against prod with
+`23502: null value in column "season_id" … violates not-null constraint` — both for the answer and
+for the context. It failed loudly and rolled back, so nothing was corrupted, but this whole step was
+dead until 2026-08-27. Its `ON CONFLICT (politician_id, topic_id)` was a second, quieter bug: the
+primary key is now `(politician_id, topic_id, season_id)`, and the bare pair still resolves only
+because a temporary scaffolding index is up. That index is dropped before Season 2 opens, and the
+old form then fails with `42P10`. **If you find yourself writing either of those, stop.**
+
+🔴 **`assertWritten` IS NOT OPTIONAL.** The upsert sources its `INSERT` from
+`season_questions JOIN seasons … status = 'open'`. If no season is open, the SELECT yields no rows,
+**nothing is written, and nothing raises.** A push that skips the row-count check reports success
+having saved nothing. `assertWritten` turns that silence into an error naming which of the two causes
+it was — no open season, or this topic is not in the open season's question set.
+
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
+import {
+  UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten,
+} from './src/lib/seasonService.js';
 
 const stances = JSON.parse(process.argv[2]);
+
+// The editor of record for this push. NULL is allowed by the schema, but a
+// stance with no attributable editor is a row nobody can be asked about later.
+// Pass the admin user id doing the research.
+const editorId = process.env.EV_EDITOR_ID ?? null;
 
 await pool.query('BEGIN');
 try {
   for (const s of stances) {
-    // Upsert politician answer
-    await pool.query(\`
-      INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-      VALUES (\$1, \$2, \$3)
-      ON CONFLICT (politician_id, topic_id)
-      DO UPDATE SET value = EXCLUDED.value
-    \`, [s.politician_id, s.topic_id, s.value]);
+    // Season-aware upsert. The pin comes from the season, never from us.
+    // Param order: politician_id, topic_id, value, editor_id.
+    const ans = await pool.query(UPSERT_ANSWER_SQL,
+      [s.politician_id, s.topic_id, s.value, editorId]);
+    await assertWritten(ans.rowCount ?? 0, s.topic_id);
 
-    // Upsert politician context (reasoning + sources)
+    // Answer and context are written together on purpose — reasoning is the
+    // public 'here's why' and must never lag the value.
+    // Param order: politician_id, topic_id, reasoning, sources, editor_id.
     const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
-    await pool.query(\`
-      INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-      VALUES (\$1, \$2, \$3, \$4)
-      ON CONFLICT (politician_id, topic_id)
-      DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
-    \`, [s.politician_id, s.topic_id, s.reasoning, sources]);
+    const ctx = await pool.query(UPSERT_CONTEXT_SQL,
+      [s.politician_id, s.topic_id, s.reasoning, sources, editorId]);
+    await assertWritten(ctx.rowCount ?? 0, s.topic_id);
   }
   await pool.query('COMMIT');
   console.log('Done: ' + stances.length + ' stances upserted');
@@ -506,6 +564,17 @@ try {
 await pool.end();
 " '[JSON_ARRAY_OF_RESOLVED_STANCES]'
 ```
+
+**Which season did this land in?** Whichever one is open. Today that is Season 1, so new research
+sits alongside the pre-seasons corpus with nothing in the row distinguishing the two. When Season 2
+opens, work pushed before the changeover stays in Season 1 and **remains readable** — reads follow
+the person, not the calendar — while new pushes go to Season 2. A politician researched in Season 1
+but not in Season 2 still shows their Season 1 stances. See
+[`docs/adr/0005-compass-question-seasons.md`](../../../docs/adr/0005-compass-question-seasons.md).
+
+⚠️ **`backend/scripts/apply-*-stances.ts` are NOT templates.** Around 158 of them still contain the
+old bare-pair upsert. They already ran, so they are harmless where they sit — but copying one gives
+you the broken form above. Copy from this block instead.
 
 ### 4d. Push quotes to essentials.quotes — as DRAFTS
 

@@ -212,3 +212,90 @@ describe('check-answer-season-consumers — the skipped RPC half is visible', ()
     expect(r.out).toContain('the RPC half was skipped');
   });
 });
+
+// ---------------------------------------------------------------------------
+// The runbook half.
+//
+// 🔴 WHY IT EXISTS. This gate reported "every live consumer names a season"
+// while .claude/skills/research-stances/SKILL.md step 4c held a bare
+// `INSERT INTO inform.politician_answers (politician_id, topic_id, value)`.
+// Measured against prod 2026-08-27: SQLSTATE 23502, null season_id — the
+// documented stance-push workflow was dead and the gate was green.
+//
+// A runbook is copied and run verbatim, which makes it as load bearing as code
+// and less likely to be noticed when it rots: nothing imports it, nothing
+// typechecks it.
+// ---------------------------------------------------------------------------
+
+/** Write a one-file skills tree beside a minimal src/, and run the gate. */
+function runSkill(markdown: string): { code: number; out: string } {
+  const dir = path.join(root, `skill-case-${++n}`);
+  mkdirSync(path.join(dir, 'backend', 'src', 'lib'), { recursive: true });
+  mkdirSync(path.join(dir, '.claude', 'skills', 'demo'), { recursive: true });
+  writeFileSync(path.join(dir, 'backend', 'src', 'lib', 'noop.ts'), 'export const x = 1;\n', 'utf8');
+  writeFileSync(path.join(dir, '.claude', 'skills', 'demo', 'SKILL.md'), markdown, 'utf8');
+  const env = { ...process.env };
+  delete env.DATABASE_URL;
+  const r = spawnSync('node', [SCRIPT], {
+    cwd: path.join(dir, 'backend'), encoding: 'utf8', env,
+  });
+  return { code: r.status ?? -1, out: `${r.stdout ?? ''}${r.stderr ?? ''}` };
+}
+
+const fence = (sql: string) => `# Demo\n\nSome prose.\n\n\`\`\`bash\n${sql}\n\`\`\`\n`;
+
+describe('check-answer-season-consumers — runbooks are consumers too', () => {
+  // The exact regression. This is the SQL that shipped in SKILL.md.
+  it('catches the bare-pair upsert that broke the stance-push workflow', () => {
+    const r = runSkill(fence(
+      'INSERT INTO inform.politician_answers (politician_id, topic_id, value) VALUES ($1,$2,$3) ' +
+      'ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('42P10');
+    expect(r.out).toContain('SKILL.md');
+  });
+
+  it('names a write as failing NOW, not eventually', () => {
+    const r = runSkill(fence(
+      'INSERT INTO inform.politician_answers (politician_id, topic_id, value) VALUES ($1,$2,$3)'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('23502');
+  });
+
+  // Reads break differently and later, so they must be described differently.
+  it('names an unseasoned read as a fan-out risk', () => {
+    const r = runSkill(fence('SELECT value FROM inform.politician_answers WHERE politician_id = $1'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('21000');
+  });
+
+  it('passes a runbook that names a season', () => {
+    const r = runSkill(fence(
+      'SELECT a.value FROM inform.politician_answers a ' +
+      'JOIN inform.seasons s ON s.id = a.season_id AND s.status = $1'));
+    expect(r.code).toBe(0);
+  });
+
+  // 🔴 THE FALSE POSITIVE THAT WOULD GET THIS GATE SWITCHED OFF. Documentation
+  // ABOUT the answer tables is not a query against them. If accurate prose
+  // fails the build, the next person deletes the check rather than the prose.
+  it('does NOT flag prose that merely mentions the tables', () => {
+    const r = runSkill(
+      '# Demo\n\n' +
+      'An answer lives in `inform.politician_answers` and carries a season_id.\n' +
+      'Never write INTO inform.politician_answers by hand — see seasonService.\n\n' +
+      'Another paragraph about inform.politician_context and its reasoning column.\n');
+    expect(r.code).toBe(0);
+  });
+
+  // A missing skills tree is a partial checkout, not a violation.
+  it('is silent when there is no skills directory at all', () => {
+    const dir = path.join(root, `skill-case-${++n}`);
+    mkdirSync(path.join(dir, 'src', 'lib'), { recursive: true });
+    writeFileSync(path.join(dir, 'src', 'lib', 'noop.ts'), 'export const x = 1;\n', 'utf8');
+    const env = { ...process.env };
+    delete env.DATABASE_URL;
+    const r = spawnSync('node', [SCRIPT], { cwd: dir, encoding: 'utf8', env });
+    expect(r.status).toBe(0);
+  });
+});

@@ -302,6 +302,41 @@ reinterpreted against the current set.
 editor, so the failure modes differ, and `compass_responses` has a soft-delete (`deleted_at`) that
 `politician_answers` does not.
 
+### 3.3a The runbooks were consumers, and the gate could not see them
+
+Found 2026-08-27, after everything above had shipped green. `check:answer-seasons` scanned
+`backend/src` and `pg_proc` and reported *"every live consumer names a season"* while
+`.claude/skills/research-stances/SKILL.md` step 4c held a bare
+`INSERT INTO inform.politician_answers (politician_id, topic_id, value)`.
+
+Measured against prod: **`SQLSTATE 23502`, null value in `season_id`**, for the answer *and* the
+context. The documented stance-push workflow had been dead since the key swap. It failed loudly and
+rolled back, so nothing was corrupted — but nothing detected it either.
+
+**A runbook is a consumer.** It is copied and run verbatim by whoever follows it, which makes it
+exactly as load bearing as the code, and *less* likely to be noticed when it rots: nothing imports
+it, nothing typechecks it.
+
+The gate now scans fenced code blocks under `.claude/skills`, and reads and writes are reported
+differently because they fail differently — a write is dead now (`23502`), a read survives until a
+second season exists and then fans out or raises `21000` from a scalar subquery. ⚠️ **Only fenced
+blocks, never prose.** Documentation *about* these tables is not a query against them, and a check
+that cannot tell the difference gets switched off the first time someone writes an accurate
+sentence. A test pins that.
+
+It immediately found two more, both real:
+
+- The **value-change guard** read every season at once. It exists to stop a silent overwrite of a
+  curated value, and with two seasons it would list the same politician and topic twice with
+  different values — ambiguous exactly when it matters. It now diffs against the **open** season,
+  which is the row the push will actually replace, and shows the prior season's value beside it as
+  labelled context.
+- `scripts/build-and-check.mjs` used a **scalar subquery** for a politician's answer. With one season
+  it returns one row; with two it raises `21000`. It now takes the newest answered season.
+
+⚠️ **`test:unit` was `vitest run src`, so `scripts/**` never ran in CI** — the gate was enforced
+while its own 21 tests sat dead. Now `vitest run src scripts`; 802 tests run, up from 726.
+
 ### 3.4 Retiring a topic must never delete answers
 
 🔴 Unchanged, and now enforced by construction — see §1.4. A topic dropping out of the active season

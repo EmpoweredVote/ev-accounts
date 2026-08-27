@@ -217,6 +217,109 @@ function scanRepo(root) {
 }
 
 // ---------------------------------------------------------------------------
+// Runbook half — fenced code blocks in skills and docs
+// ---------------------------------------------------------------------------
+//
+// 🔴 WHY THIS EXISTS. The gate scanned backend/src and pg_proc, and reported
+// "every live consumer names a season" while the documented stance-push workflow
+// was dead. `.claude/skills/research-stances/SKILL.md` step 4c carried a bare
+// `INSERT INTO inform.politician_answers (politician_id, topic_id, value)` with
+// `ON CONFLICT (politician_id, topic_id)`. Measured against prod 2026-08-27:
+// SQLSTATE 23502, null value in season_id, for both the answer and the context.
+//
+// A runbook is a consumer. It is copied and run verbatim by whoever follows it,
+// which makes it exactly as load bearing as the code — and less likely to be
+// noticed when it rots, because nothing imports it and nothing typechecks it.
+//
+// ⚠ ONLY FENCED CODE BLOCKS ARE SCANNED, never prose. Documentation ABOUT these
+// tables is not a query against them, and a gate that cannot tell the difference
+// gets disabled the first time someone writes an accurate sentence.
+
+/** Roots outside backend/src that hold runnable SQL. Paths are repo-relative. */
+const RUNBOOK_ROOTS = ['../.claude/skills'];
+
+function runbookFiles(root) {
+  let entries;
+  try {
+    entries = readdirSync(root, { recursive: true, encoding: 'utf8' });
+  } catch {
+    return []; // Root absent (a partial checkout, say) is not a failure.
+  }
+  return entries
+    .filter((f) => f.endsWith('.md') || f.endsWith('.mjs') || f.endsWith('.ts'))
+    .filter((f) => !f.endsWith('.test.ts'))
+    .map((f) => join(root, f));
+}
+
+/**
+ * Fenced code blocks in a markdown file, with the line each starts on.
+ *
+ * Inline single-backtick spans are NOT matched, on purpose: `inform.politician_answers`
+ * written mid-sentence is prose, and this very file's comments would trip it.
+ */
+function fencedBlocks(text) {
+  const out = [];
+  const re = /^```[^\n]*\n([\s\S]*?)^```/gm;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    out.push({ body: m[1], line: text.slice(0, m.index).split('\n').length });
+  }
+  return out;
+}
+
+function scanRunbooks() {
+  const offenders = [];
+  const allSeasons = [];
+
+  for (const root of RUNBOOK_ROOTS) {
+    for (const path of runbookFiles(root)) {
+      const raw = readFileSync(path, 'utf8');
+      const rel = relative('..', path).split(sep).join('/');
+
+      // Markdown contributes its fenced blocks; a script contributes whole.
+      const chunks = path.endsWith('.md')
+        ? fencedBlocks(raw)
+        : [{ body: raw, line: 1 }];
+
+      for (const { body, line } of chunks) {
+        const sql = stripComments(body);
+        if (!SQL_TABLE_REF.test(sql)) continue;
+
+        if (STALE_ON_CONFLICT.test(sql)) {
+          offenders.push({ rel, line, why: 'ON CONFLICT (politician_id, topic_id) — breaks with 42P10 after the swap' });
+          continue;
+        }
+
+        const declared = declaredAllSeasons(body, sql);
+        if (declared === 'on-a-write') {
+          offenders.push({ rel, line, why: '@season-scope: all-seasons on a WRITE — a cross-season write is a bug, not a judgement call' });
+          continue;
+        }
+        if (declared === 'no-reason') {
+          offenders.push({ rel, line, why: '@season-scope: all-seasons with no stated reason — say why, in the block' });
+          continue;
+        }
+        if (declared === 'ok') { allSeasons.push({ rel, line }); continue; }
+
+        if (!SEASON_REF.test(sql)) {
+          // Reads and writes fail in different ways here, and the fix differs
+          // too, so say which. A write is dead on arrival (23502, the NOT NULL
+          // season_id); a read survives until a second season exists and then
+          // fans out or raises 21000 from a scalar subquery.
+          offenders.push({
+            rel, line,
+            why: IS_WRITE.test(sql)
+              ? 'runbook WRITES the answer tables without naming a season — fails now with 23502 (season_id is NOT NULL)'
+              : 'runbook READS the answer tables without naming a season — fans out, or raises 21000, once a second season exists',
+          });
+        }
+      }
+    }
+  }
+  return { offenders, allSeasons };
+}
+
+// ---------------------------------------------------------------------------
 // Database half — SECURITY DEFINER RPCs
 // ---------------------------------------------------------------------------
 
@@ -258,11 +361,16 @@ async function scanDatabase() {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  const { offenders: repo, allSeasons } = scanRepo('src');
+  const { offenders: srcOffenders, allSeasons: srcAllSeasons } = scanRepo('src');
+  const { offenders: runbookOffenders, allSeasons: runbookAllSeasons } = scanRunbooks();
+  const repo = [...srcOffenders, ...runbookOffenders];
+  const allSeasons = [...srcAllSeasons, ...runbookAllSeasons];
   const db = await scanDatabase();
 
   if (VERBOSE) {
     console.log(`scanned ${sourceFiles('src').length} file(s) under src/`);
+    const runbookCount = RUNBOOK_ROOTS.reduce((n, r) => n + runbookFiles(r).length, 0);
+    console.log(`scanned ${runbookCount} runbook file(s) under ${RUNBOOK_ROOTS.join(', ')}`);
   }
 
   const byFile = new Map();
@@ -277,7 +385,7 @@ async function main() {
     failed = true;
     console.error(
       `\nanswer-season consumers — ${repo.length} SQL literal(s) in ${byFile.size} file(s) ` +
-      `under backend/src do not constrain the season:`);
+      `under backend/src and the runbooks do not constrain the season:`);
     for (const [rel, list] of [...byFile].sort()) {
       console.error(`  ${rel}`);
       for (const o of list.sort((a, b) => a.line - b.line)) {
