@@ -27,7 +27,13 @@ BEGIN;
 -- -----------------------------------------------------------------------------
 -- 1. public.admin_update_politician_answers — THE ADMIN COMPASS WRITE PATH
 -- -----------------------------------------------------------------------------
--- 🔴 THE DELETE WAS THE DANGEROUS PART, NOT THE UPSERT. Unseasoned, it reads:
+-- ⚠ THE DELETE IS GONE ENTIRELY — see CA_wip_answers_upsert_not_replace, which
+-- removes it ahead of this migration and explains why (measured: one admin-UI
+-- save destroyed 40 of a politician's 41 answers). Scoping it to the open season
+-- was this file's first answer and it was not good enough: it still let a
+-- single-topic save wipe the rest of that season. Do NOT reinstate it here.
+--
+-- The original, for the record:
 --
 --     DELETE FROM inform.politician_answers
 --      WHERE politician_id = p_politician_id
@@ -62,7 +68,6 @@ CREATE OR REPLACE FUNCTION public.admin_update_politician_answers(
 AS $function$
 DECLARE
   v_answer    jsonb;
-  v_topic_ids uuid[];
   v_season    uuid;
   v_editor    uuid := auth.uid();
 BEGIN
@@ -70,16 +75,6 @@ BEGIN
   IF v_season IS NULL THEN
     RAISE EXCEPTION 'NO_OPEN_SEASON: nothing can be written until a season is open';
   END IF;
-
-  SELECT array_agg((elem->>'topic_id')::uuid)
-    INTO v_topic_ids
-    FROM jsonb_array_elements(p_answers) AS elem;
-
-  -- Open season ONLY. See the note above.
-  DELETE FROM inform.politician_answers
-   WHERE politician_id = p_politician_id
-     AND season_id = v_season
-     AND (v_topic_ids IS NULL OR topic_id != ALL(v_topic_ids));
 
   FOR v_answer IN SELECT * FROM jsonb_array_elements(p_answers)
   LOOP

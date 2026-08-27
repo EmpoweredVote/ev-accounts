@@ -111,18 +111,23 @@ const UpdateStanceBatchSchema = z.object({
 });
 
 // New format: { answers: [{ topic_id, value }] }
+// .min(1): an empty array is a client bug, and it must not reach the RPC as a
+// silent success. Historically it was worse than silent — array_agg over zero
+// elements returns NULL, which selected the RPC's "delete everything for this
+// politician" branch. That branch is gone (CA_wip_answers_upsert_not_replace),
+// but the guard stays: an empty write should say so, not report ok.
 const PoliticianAnswersNewSchema = z.object({
   answers: z.array(z.object({
     topic_id: z.string().uuid(),
     value: z.number().multipleOf(0.5).min(0.5).max(5.5),
-  })),
+  })).min(1, 'answers must contain at least one entry'),
 });
 
 // Legacy format: flat array [{ topic_id, value }] (Go backend)
 const PoliticianAnswersLegacySchema = z.array(z.object({
   topic_id: z.string().uuid(),
   value: z.number(),
-}));
+})).min(1, 'answers must contain at least one entry');
 
 const PoliticianContextSchema = z.object({
   politician_id: z.string().uuid(),
