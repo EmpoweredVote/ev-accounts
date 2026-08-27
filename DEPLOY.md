@@ -45,6 +45,9 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
 | `GEMS_SERVICE_KEYS` | Shared secrets | Comma-separated `name:key` pairs for gem award service auth. Optional — absent means all `/award` requests get 401. |
+| `WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Public client id (`client_01…`). Setting it makes the API accept WorkOS AuthKit tokens as a **second** issuer alongside Supabase. Absent = Supabase-only, i.e. pre-migration behavior. See "WorkOS AuthKit" below. |
+| `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | **Secret** (`sk_test_…` staging / `sk_live_…` production). Used ONLY by `POST /api/auth/workos/provision`, to link brand-new AuthKit signups. Absent = that endpoint returns 503; token verification never uses it. |
+| `WORKOS_ISSUER`, `WORKOS_JWKS_URL` | Set manually | Optional overrides, only for a custom auth domain. Defaults derive from `WORKOS_CLIENT_ID`. |
 
 ### Database role (`ev_api` vs `postgres`)
 
@@ -70,6 +73,69 @@ DDL, role management, or access to `vault`/`auth`/other apps' schemas.
 | Variable | Source | Notes |
 |---|---|---|
 | `VITE_API_URL` | Set manually | Backend URL, e.g. `https://api.empoweredvote.com`. Must be set at build time, not runtime — Vite inlines `VITE_*` env vars during `npm run build`. Changing this value after the build requires a full rebuild and redeploy. |
+| `VITE_WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Same public client id as the backend's `WORKOS_CLIENT_ID`. Presence renders the AuthKit sign-in button and enables the WorkOS session path. Build-time, like `VITE_API_URL` — changing it needs a full rebuild. Absent = the login page shows only the classic form. |
+
+---
+
+## WorkOS AuthKit (migration in progress — ADR 0002)
+
+The API accepts **two** token issuers during the Supabase Auth → WorkOS migration.
+`backend/src/lib/tokenIdentity.ts` is the single place that maps either token to an
+internal user id: a Supabase token via `sub`, a WorkOS token via its `external_id`
+claim (the original `auth.users` UUID, written at import/provision time). The WorkOS
+`sub` (`user_01…`) is never used as a user id.
+
+### Services that need the client id
+
+Every service that verifies user JWTs itself needs `WORKOS_CLIENT_ID`; every frontend
+that offers the sign-in button needs `VITE_WORKOS_CLIENT_ID`:
+
+| Render service | Variable |
+|---|---|
+| `ev-accounts-api` | `WORKOS_CLIENT_ID` + `WORKOS_API_KEY` (provisioning) |
+| `ev-accounts` (admin static — serves login./accounts.empowered.vote) | `VITE_WORKOS_CLIENT_ID` |
+| `empowered-vote-app` (app.empowered.vote) | `VITE_WORKOS_CLIENT_ID` |
+| `empowered-validation-quests` (backend) | `WORKOS_CLIENT_ID` |
+| `validation-quests-frontend` | `VITE_WORKOS_CLIENT_ID` |
+| `focused-communities` | `WORKOS_CLIENT_ID` |
+| `civic-trivia-backend` | `WORKOS_CLIENT_ID` |
+| `empowered-listening` | `WORKOS_CLIENT_ID` |
+
+Not yet ported, so it rejects WorkOS tokens: `civic-spaces`.
+
+### Dashboard settings are PER ENVIRONMENT
+
+Staging and production are separate WorkOS environments and **share nothing**.
+Standing up production means redoing every one of these:
+
+- **JWT template** (Authentication → Sessions) must be
+  `{"role": "authenticated", "external_id": {{user.external_id}}}`. The API rejects a
+  WorkOS token without `role: "authenticated"`, and a token with no `external_id`
+  resolves to no account.
+- **Branding** (logo, colors, fonts).
+- **Redirect URIs** — one per app origin, each ending in `/login`.
+- **CORS allowed web origins** — the same origins, no path. Without these the hosted
+  page still loads but the in-browser code exchange fails.
+- **Login providers / self-serve sign-up** — on by default; deliberately switched off
+  in staging on 2026-08-27. Decide again for production.
+- **Users** — a fresh import: `backend/scripts/workos-export-users.ts` then
+  `workos-import-users.ts` (the import refuses a non-`sk_test_` key unless given
+  `--allow-live`).
+
+### Monitoring failed logins at cutover
+
+No app-level instrumentation is required — Render's own request logs carry the status
+code, and a 401 on the login path is tagged `level=warning`. Via the Render MCP:
+
+```
+list_logs  resource=[<ev-accounts-api service id>]  type=[request]
+           path=["/api/auth/login"]  statusCode=["401"]  startTime=<RFC3339>
+```
+
+⚠ **Baseline as of 2026-08-27 is ~0 human failures per week** — an 8-day window held
+3 successful logins and 1 failure, and that failure was a smoke test
+(`userAgent="node"`). At this volume "failed-login rate returns to baseline" is a weak
+gate: one confused tester doubles it. Read the raw entries, not a rate.
 
 ---
 
