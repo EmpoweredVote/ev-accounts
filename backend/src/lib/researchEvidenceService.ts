@@ -101,9 +101,18 @@ export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<voi
   const { pool } = await import('./db.js');
   for (const r of rows) {
     await pool.query(
+      // season_id comes from the context row this evidence supports. The FK from
+      // evidence to context has always required that row to exist, so this
+      // subselect cannot come up empty for a row that would have inserted before.
+      // Newest season, so evidence attaches to the current reading of the topic.
       `INSERT INTO inform.politician_context_evidence
-         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
-       VALUES ($1, $2, $3, $4, $5, $6)
+         (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
+       SELECT $1, $2, c.season_id, $3, $4, $5, $6
+         FROM inform.politician_context c
+         JOIN inform.seasons s ON s.id = c.season_id
+        WHERE c.politician_id = $1 AND c.topic_id = $2
+        ORDER BY s.number DESC
+        LIMIT 1
        ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
       [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id],
     );
@@ -222,9 +231,15 @@ export async function resolveResearchReview(
   const batchId = `human-review-${id}`;
   for (const url of humanVerifiedUrls) {
     await pool.query(
+      // Same season derivation as saveEvidenceRows above.
       `INSERT INTO inform.politician_context_evidence
-         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
-       VALUES ($1, $2, $3, $4, 0, $5)
+         (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
+       SELECT $1, $2, c.season_id, $3, $4, 0, $5
+         FROM inform.politician_context c
+         JOIN inform.seasons s ON s.id = c.season_id
+        WHERE c.politician_id = $1 AND c.topic_id = $2
+        ORDER BY s.number DESC
+        LIMIT 1
        ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
       [row.politicianId, row.topicId, url, '[Human verified during review]', batchId],
     );
