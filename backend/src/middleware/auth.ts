@@ -1,8 +1,15 @@
-import { jwtVerify, createRemoteJWKSet } from 'jose';
+import { jwtVerify, createRemoteJWKSet, type JWTPayload } from 'jose';
 import { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 import { isTokenRevoked } from '../lib/authService.js';
+import {
+  SUPABASE_ISSUER,
+  WORKOS_ISSUER,
+  WORKOS_JWKS_URL,
+  classifyToken,
+  resolveInternalUserId,
+} from '../lib/tokenIdentity.js';
 
 // Projects created before May 2025 use HS256 (symmetric key).
 // Projects created after May 2025 use ES256 (asymmetric, JWKS).
@@ -11,13 +18,51 @@ import { isTokenRevoked } from '../lib/authService.js';
 const SECRET_KEY = env.SUPABASE_JWT_SECRET
   ? new TextEncoder().encode(env.SUPABASE_JWT_SECRET)
   : null;
-const JWKS = SECRET_KEY
+const SUPABASE_JWKS = SECRET_KEY
   ? null
   : createRemoteJWKSet(new URL(`${env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`));
 
-async function verifyJwt(token: string, options: Parameters<typeof jwtVerify>[2]) {
+// Second accepted issuer during the Supabase → WorkOS migration window
+// (decision 0002). Absent WORKOS_CLIENT_ID = WorkOS tokens are rejected.
+const WORKOS_JWKS = WORKOS_JWKS_URL ? createRemoteJWKSet(new URL(WORKOS_JWKS_URL)) : null;
+
+async function verifySupabaseJwt(token: string) {
+  const options = { issuer: SUPABASE_ISSUER, audience: 'authenticated' };
   if (SECRET_KEY) return jwtVerify(token, SECRET_KEY, options);
-  return jwtVerify(token, JWKS!, options);
+  return jwtVerify(token, SUPABASE_JWKS!, options);
+}
+
+async function verifyWorkosJwt(token: string) {
+  // WorkOS access tokens carry no aud claim. The dashboard JWT template must
+  // set "role": "authenticated" (Supabase third-party auth contract) — its
+  // absence means the template is not applied, so reject.
+  const result = await jwtVerify(token, WORKOS_JWKS!, { issuer: WORKOS_ISSUER! });
+  if (result.payload.role !== 'authenticated') {
+    throw new Error('WorkOS token missing role=authenticated (JWT template not applied)');
+  }
+  return result;
+}
+
+/**
+ * verifyAccessToken — accepts a token from either issuer during the migration
+ * window and resolves the internal user id via tokenIdentity (the one place
+ * allowed to interpret token subjects). Returns null for anything invalid.
+ */
+async function verifyAccessToken(
+  token: string
+): Promise<{ payload: JWTPayload; userId: string } | null> {
+  const issuer = classifyToken(token);
+  if (issuer === null) return null;
+  if (issuer === 'workos' && WORKOS_JWKS === null) return null;
+  try {
+    const { payload } =
+      issuer === 'supabase' ? await verifySupabaseJwt(token) : await verifyWorkosJwt(token);
+    const userId = resolveInternalUserId(issuer, payload);
+    if (userId === null) return null;
+    return { payload, userId };
+  } catch {
+    return null;
+  }
 }
 
 export interface AuthenticatedRequest extends Request {
@@ -40,51 +85,43 @@ export async function requireAuth(
 
   const token = authHeader.slice(7);
 
-  try {
-    const { payload } = await verifyJwt(token, {
-      issuer: `${env.SUPABASE_URL}/auth/v1`,
-      audience: 'authenticated',
-    });
-
-    const userId = payload.sub;
-    if (!userId) {
-      res.status(401).json({ error: 'Invalid token: missing sub' });
-      return;
-    }
-
-    const tokenIat = typeof payload.iat === 'number' ? payload.iat : 0;
-    const tokenExp = typeof payload.exp === 'number' ? payload.exp : 0;
-
-    // Revocation check — rejects tokens issued before the user's last logout.
-    // Closes the ~1h window where a signed-out JWT remains cryptographically valid.
-    if (await isTokenRevoked(userId, tokenIat)) {
-      res.status(401).json({ error: 'Token has been revoked' });
-      return;
-    }
-
-    // Standing check — enforces suspension within JWT validity window.
-    // Uses supabaseAdmin for a trusted server-side internal check (not user-facing data).
-    const { data: profile } = await supabaseAdmin
-      .schema('connect')
-      .from('connected_profiles')
-      .select('account_standing')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    // Profile absence = Inform tier (no connected_profiles row) — allow through
-    if (profile && profile.account_standing !== 'active') {
-      res.status(403).json({ error: 'Account suspended' });
-      return;
-    }
-
-    (req as AuthenticatedRequest).userId = userId;
-    (req as AuthenticatedRequest).accessToken = token;
-    (req as AuthenticatedRequest).tokenIat = tokenIat;
-    (req as AuthenticatedRequest).tokenExp = tokenExp;
-    next();
-  } catch {
+  const verified = await verifyAccessToken(token);
+  if (!verified) {
     res.status(401).json({ error: 'Invalid or expired token' });
+    return;
   }
+  const { payload, userId } = verified;
+
+  const tokenIat = typeof payload.iat === 'number' ? payload.iat : 0;
+  const tokenExp = typeof payload.exp === 'number' ? payload.exp : 0;
+
+  // Revocation check — rejects tokens issued before the user's last logout.
+  // Closes the ~1h window where a signed-out JWT remains cryptographically valid.
+  if (await isTokenRevoked(userId, tokenIat)) {
+    res.status(401).json({ error: 'Token has been revoked' });
+    return;
+  }
+
+  // Standing check — enforces suspension within JWT validity window.
+  // Uses supabaseAdmin for a trusted server-side internal check (not user-facing data).
+  const { data: profile } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('account_standing')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  // Profile absence = Inform tier (no connected_profiles row) — allow through
+  if (profile && profile.account_standing !== 'active') {
+    res.status(403).json({ error: 'Account suspended' });
+    return;
+  }
+
+  (req as AuthenticatedRequest).userId = userId;
+  (req as AuthenticatedRequest).accessToken = token;
+  (req as AuthenticatedRequest).tokenIat = tokenIat;
+  (req as AuthenticatedRequest).tokenExp = tokenExp;
+  next();
 }
 
 /**
@@ -112,19 +149,11 @@ export async function optionalAuth(
 
   const token = authHeader.slice(7);
 
-  try {
-    const { payload } = await verifyJwt(token, {
-      issuer: `${env.SUPABASE_URL}/auth/v1`,
-      audience: 'authenticated',
-    });
-
-    const userId = payload.sub;
-    if (userId) {
-      (req as AuthenticatedRequest).userId = userId;
-      (req as AuthenticatedRequest).accessToken = token;
-    }
-  } catch {
-    // Invalid token — proceed as unauthenticated (do NOT return 401)
+  // Invalid token — proceed as unauthenticated (do NOT return 401)
+  const verified = await verifyAccessToken(token);
+  if (verified) {
+    (req as AuthenticatedRequest).userId = verified.userId;
+    (req as AuthenticatedRequest).accessToken = token;
   }
 
   next();

@@ -62,6 +62,16 @@ const envSchema = z.object({
   // LOGIN_URL: base URL of the login frontend. Used as the base for auth email
   // redirect URLs (confirmation, password reset). Defaults to production URL.
   LOGIN_URL: z.string().url().default('https://login.empowered.vote'),
+  // WorkOS AuthKit (Supabase Auth → WorkOS migration, decision 0002).
+  // WORKOS_CLIENT_ID enables acceptance of WorkOS-issued access tokens as a
+  // second issuer during the migration window. Absent = Supabase-only, today's
+  // behavior. The client id is public, not a secret; the WorkOS API key is NOT
+  // needed here — token verification uses the public JWKS.
+  WORKOS_CLIENT_ID: z.string().optional(),
+  // Overrides for custom auth domains. Defaults derive from WORKOS_CLIENT_ID
+  // (see src/lib/tokenIdentity.ts).
+  WORKOS_ISSUER: z.string().url().optional(),
+  WORKOS_JWKS_URL: z.string().url().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
