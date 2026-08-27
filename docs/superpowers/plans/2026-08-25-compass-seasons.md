@@ -30,6 +30,50 @@ This plan covers the **backend season model only**. Two pieces of the spec are d
 
 ---
 
+### ▶️ WHERE THIS STOPPED — 2026-08-27, resume here
+
+Tasks 1-6 are **DONE AND IN PRODUCTION**. PR #177 merged as `be6f5ee0` and deployed.
+Applied slots: `CA_0017`, `CA_0018`, `CA_0019`, `CC_0001`, `CC_0002`, `CC_0003`. Next free: `CC_0004`.
+
+`npm run check:answer-seasons` is **green** — every consumer names a season, RPCs included.
+
+**Production is stable, not half-migrated.** The `*_legacy_pair_scaffold` unique indexes from
+`CC_0002` are still up, so the database physically cannot hold two seasons: bare-pair
+`ON CONFLICT` still resolves and no join can fan out. Reads behave exactly as before. Answer
+**writes** refuse with `NO_OPEN_SEASON`, which is correct — season 1 is closed and nothing is open.
+**Nothing degrades by waiting here.**
+
+#### Three steps remain, and the order is load-bearing
+
+| # | Step | Blocked on |
+|---|---|---|
+| A | `DROP INDEX inform.politician_answers_legacy_pair_scaffold` and the `politician_context` one | nothing — but only do it immediately before B |
+| B | **Open season 2** | 🔴 **CHRIS.** Editorial: a name, the question set, and a `public_note` that voters read |
+| C | Apply `backend/migrations/CC_wip_closed_season_immutable.sql` | B |
+
+**A and B want to happen close together.** Between them, a write to an already-answered pair fails
+on the scaffolding's unique index; after B everything works. Doing A without B buys nothing and
+opens the fan-out window.
+
+**Step C is the answer to Chris's actual concern** — that destructive patterns should be
+*impossible*, not merely avoided. It is written and PROVEN (4 destructive paths refused on the live
+corpus, including an ad-hoc `psql` DELETE that no application fix can cover) but **NOT APPLIED**, and
+its own post-verify gate refuses to run while no season is open. Read its header before applying;
+it carries one editorial consequence about closed-season source corrections that a human must accept.
+
+**Also recommended, not yet built:** a tripwire asserting season 1 never falls below 33,164 answers
+/ 33,818 context rows. A trigger can be dropped; a CI check notices.
+
+#### The default for step B, if Chris wants one
+
+Same 44 topics, pinned to their current revisions — identical to season 1's pins, since no ladder has
+changed since. Season 1 stays the sealed historical corpus; season 2 becomes where research happens.
+That is the low-risk reading and it needs only a name and a note.
+
+---
+
+---
+
 ### Task 1: The `seasons` and `season_questions` tables
 
 Purely additive. Nothing reads these yet, so this task carries no risk to live reads.
