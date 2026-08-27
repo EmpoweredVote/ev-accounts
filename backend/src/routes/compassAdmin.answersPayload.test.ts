@@ -10,7 +10,7 @@ import { z } from 'zod';
 // admin_update_politician_answers, where `array_agg` over zero elements returns
 // NULL and selected the RPC's delete-everything branch — one request wiped every
 // answer a politician had. The RPC no longer deletes at all
-// (CA_wip_answers_upsert_not_replace), so this is now the outer of two
+// (CC_0001), so this is now the outer of two
 // independent guards. Both must hold; neither is allowed to be the only one.
 const AnswersNewSchema = z.object({
   answers: z.array(z.object({

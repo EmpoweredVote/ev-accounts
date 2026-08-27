@@ -114,7 +114,7 @@ const UpdateStanceBatchSchema = z.object({
 // .min(1): an empty array is a client bug, and it must not reach the RPC as a
 // silent success. Historically it was worse than silent — array_agg over zero
 // elements returns NULL, which selected the RPC's "delete everything for this
-// politician" branch. That branch is gone (CA_wip_answers_upsert_not_replace),
+// politician" branch. That branch is gone (CC_0001),
 // but the guard stays: an empty write should say so, not report ok.
 const PoliticianAnswersNewSchema = z.object({
   answers: z.array(z.object({

@@ -27,7 +27,7 @@ BEGIN;
 -- -----------------------------------------------------------------------------
 -- 1. public.admin_update_politician_answers — THE ADMIN COMPASS WRITE PATH
 -- -----------------------------------------------------------------------------
--- ⚠ THE DELETE IS GONE ENTIRELY — see CA_wip_answers_upsert_not_replace, which
+-- ⚠ THE DELETE IS GONE ENTIRELY — see CC_0001, which
 -- removes it ahead of this migration and explains why (measured: one admin-UI
 -- save destroyed 40 of a politician's 41 answers). Scoping it to the open season
 -- was this file's first answer and it was not good enough: it still let a
