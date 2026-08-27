@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { apiFetch } from '../lib/api';
 import { getValidRedirect } from '../lib/redirect';
 import { useAuthStore, type User } from '../store/authStore';

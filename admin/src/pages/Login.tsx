@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { useAuthStore } from '../store/authStore';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 import InformConstraintsModal from '../components/InformConstraintsModal';

@@ -26,7 +26,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router';
 import { apiFetch } from '../../lib/api';
 import { diffWords, hasChanged } from '../../lib/wordDiff';
 

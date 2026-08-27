@@ -1,5 +1,5 @@
 import { useState, FormEvent, Fragment } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import { Dialog, Transition } from '@headlessui/react';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 

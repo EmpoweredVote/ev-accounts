@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router';
 import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { PrimaryButton } from '../components/PrimaryButton';

@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 
 const API_BASE = import.meta.env.VITE_API_URL
