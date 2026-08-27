@@ -13,20 +13,38 @@
  *
  * Per-user errors are non-fatal — failures are logged and counted but do not
  * abort the job or affect other users.
+ *
+ * 🔴 A point that resolves to NOTHING is not a district change — see UNRESOLVED below.
  */
 
 import { adminRpc } from './supabase.js';
 import { pool } from './db.js';
+import {
+  GEO_FIELDS,
+  resolvedDistrictCount,
+  droppedDistricts,
+} from './jurisdictionPayload.js';
+
+export interface DistrictStalenessResult {
+  total: number;
+  updated: number;
+  unchanged: number;
+  /** The RPC succeeded but placed the point in no district at all. Nothing was written. */
+  unresolved: number;
+  failed: number;
+  durationMs: number;
+}
 
 // ---------------------------------------------------------------------------
 // runDistrictStalenessCheck
 // ---------------------------------------------------------------------------
 
-export async function runDistrictStalenessCheck(): Promise<void> {
+export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResult> {
   const jobStart = Date.now();
   let total = 0;
   let updated = 0;
   let unchanged = 0;
+  let unresolved = 0;
   let failed = 0;
 
   // Fetch all connected profiles with stored coordinates
@@ -64,6 +82,47 @@ export async function runDistrictStalenessCheck(): Promise<void> {
       }
 
       const jData = (jurisdictionData ?? {}) as Record<string, string | null>;
+
+      // ---------------------------------------------------------------------
+      // UNRESOLVED — the guard. Read this before removing it.
+      // ---------------------------------------------------------------------
+      // resolve_user_jurisdiction builds its payload with aggregates and no GROUP BY,
+      // so it returns exactly ONE row even when zero boundaries cover the point: every
+      // key NULL, and NO error raised. adminRpc can also hand back `data: null`.
+      //
+      // Both used to fall through to `?? {}` and read as "all five districts changed to
+      // NULL". The job then wrote NULL over all five geo_ids AND their names, and stamped
+      // districts_last_verified_at — so a wiped profile looked freshly verified. The
+      // trigger is any change that breaks the geo_id / mtfcc / district_type join in the
+      // RPC, and essentials.districts has no inbound FKs to make such a change loud.
+      //
+      // A point in no district is a fact we cannot act on, not a district change. Report
+      // it and leave the stored values alone. Removing a district must be a deliberate
+      // human action, never a side effect of this job.
+      const resolvedCount = resolvedDistrictCount(jData);
+
+      if (resolvedCount === 0) {
+        console.warn(
+          `[cron/district-staleness] UNRESOLVED — resolve_user_jurisdiction placed user ` +
+            `${user.user_id} in no district at all. Stored districts left untouched and ` +
+            `districts_last_verified_at NOT stamped.`
+        );
+        unresolved++;
+        continue;
+      }
+
+      // A partial drop IS real signal — redistricting can genuinely remove one seat — so
+      // it is still written. But it is also the shape a half-broken join takes, so name
+      // the dropped fields rather than letting them disappear quietly.
+      const dropped = droppedDistricts(user, jData);
+
+      if (dropped.length > 0) {
+        console.warn(
+          `[cron/district-staleness] partial drop for user ${user.user_id}: ` +
+            `${dropped.join(', ')} resolved to NULL while ${resolvedCount} of ` +
+            `${GEO_FIELDS.length} still resolved. Writing the removal.`
+        );
+      }
 
       // Compare the 5 geo_id fields returned by the RPC against stored values.
       // RPC returns keys without _geo_id suffix: congressional, state_senate, etc.
@@ -131,8 +190,18 @@ export async function runDistrictStalenessCheck(): Promise<void> {
       users_checked: total,
       users_updated: updated,
       users_unchanged: unchanged,
+      users_unresolved: unresolved,
       users_failed: failed,
       duration_ms: Date.now() - jobStart,
     })
   );
+
+  return {
+    total,
+    updated,
+    unchanged,
+    unresolved,
+    failed,
+    durationMs: Date.now() - jobStart,
+  };
 }

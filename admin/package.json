@@ -9,9 +9,13 @@
     "preview": "vite preview",
     "test": "vitest run"
   },
+  "overrides": {
+    "d3-color": "^3.1.0"
+  },
   "dependencies": {
     "@dagrejs/dagre": "^1.1.4",
     "@headlessui/react": "^2.2.10",
+    "@workos-inc/authkit-js": "^0.20.2",
     "@xyflow/react": "^12.11.3",
     "d3-geo": "^3.1.1",
     "react": "^18.3.1",

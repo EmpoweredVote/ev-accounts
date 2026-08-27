@@ -3,13 +3,16 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected, requireInform } from '../middleware/tierGuards.js';
-import { createUserClient, adminRpc } from '../lib/supabase.js';
+import { requestDb, adminRpc } from '../lib/supabase.js';
+import { getRequestAuthUser } from '../lib/authService.js';
 import { pool } from '../lib/db.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { getLocationConsent } from '../lib/connectService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 
-// All DB reads use createUserClient(req.accessToken) — RLS enforced.
+// All DB reads use requestDb(req.accessToken) — RLS enforced for Supabase
+// sessions; service-role + explicit userId scoping for WorkOS sessions during
+// the decision-0002 transition (see lib/supabase.ts requestDb).
 // Architecture rule: service role key must never be used in route handlers.
 
 const router = Router();
@@ -24,13 +27,13 @@ router.get('/me', requireAuth, async (req, res: Response) => {
   const authReq = req as AuthenticatedRequest;
 
   try {
-    const db = createUserClient(authReq.accessToken);
+    const db = requestDb(authReq.accessToken);
 
     // 1. Fetch email from Supabase Auth (source of truth for auth data)
-    const {
-      data: { user: authUser },
-      error: authError,
-    } = await db.auth.getUser();
+    const { user: authUser, error: authError } = await getRequestAuthUser(
+      authReq.accessToken,
+      authReq.userId
+    );
 
     if (authError || !authUser) {
       res.status(401).json({
@@ -426,7 +429,7 @@ router.patch(
         return;
       }
 
-      const db = createUserClient(authReq.accessToken);
+      const db = requestDb(authReq.accessToken);
       const now = new Date().toISOString();
 
       // 3. Build update payload for public.users
@@ -483,7 +486,7 @@ router.patch(
         return;
       }
 
-      const { data: authUserData } = await db.auth.getUser();
+      const { user: updatedAuthUser } = await getRequestAuthUser(authReq.accessToken, authReq.userId);
       const { data: updatedConnected } = await db
         .schema('connect')
         .from('connected_profiles')
@@ -591,7 +594,7 @@ router.patch(
 
       const meResponse: Record<string, unknown> = {
         id: updatedUser.id,
-        email: authUserData?.user?.email,
+        email: updatedAuthUser?.email,
         display_name: updatedUser.display_name,
         avatar_url: updatedUser.avatar_url,
         tier,

@@ -11,6 +11,7 @@ import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
 import { useAuthStore, getStoredToken, User } from './store/authStore';
 import { apiFetch } from './lib/api';
+import { workosEnabled, hasWorkosSession, refreshWorkosToken } from './lib/workosAuth';
 import ContributorLayout from './pages/contributor/ContributorLayout';
 import ContributorDashboard from './pages/contributor/ContributorDashboard';
 import CompassEditorPage from './pages/contributor/CompassEditorPage';
@@ -71,11 +72,37 @@ function App() {
             completedOnboarding: me.completed_onboarding,
             locationConsent: me.location_consent,
           };
-          setAuth(token, user);
+          // apiFetch may have refreshed the token (WorkOS sessions rotate
+          // every few minutes) — persist the store's current one.
+          setAuth(useAuthStore.getState().accessToken ?? token, user);
         })
         .catch(() => {
           clearAuth();
         });
+    } else if (workosEnabled && hasWorkosSession()) {
+      // WorkOS session restore (decision 0002 transition): no stored token,
+      // but the last login here came through AuthKit — ask the SDK before
+      // falling back to the classic cookie SSO or logged-out state.
+      refreshWorkosToken()
+        .then((workosToken) => {
+          if (!workosToken) {
+            setLoading(false);
+            return;
+          }
+          useAuthStore.setState({ accessToken: workosToken });
+          return apiFetch<MeResponse>('/account/me').then((me) => {
+            const user: User = {
+              id: me.id,
+              email: me.email,
+              tier: me.tier,
+              displayName: me.display_name,
+              completedOnboarding: me.completed_onboarding,
+              locationConsent: me.location_consent,
+            };
+            setAuth(workosToken, user);
+          });
+        })
+        .catch(() => clearAuth());
     } else {
       // Silent SSO check — inherit ev_session cookie from accounts.empowered.vote
       const silentSsoCheck = async (): Promise<{ access_token: string; refresh_token: string } | null> => {
@@ -154,6 +181,9 @@ function App() {
   // Cross-app logout sync — detect ev_session cookie cleared by another app
   useEffect(() => {
     if (!accessToken) return;
+    // WorkOS sessions have no ev_session cookie — polling would 401 and force
+    // a logout every 60s. The AuthKit SDK owns that session's lifecycle.
+    if (workosEnabled && hasWorkosSession()) return;
 
     const API_URL = import.meta.env.VITE_API_URL || '';
     const SESSION_URL = `${API_URL}/api/auth/session`;

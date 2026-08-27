@@ -25,11 +25,16 @@
     "check:readrank-question-unit:verbose": "node scripts/check-readrank-question-unit.mjs --verbose",
     "check:answer-seasons": "node scripts/check-answer-season-consumers.mjs",
     "check:answer-seasons:verbose": "node scripts/check-answer-season-consumers.mjs --verbose",
+    "check:season-floor": "node scripts/check-season-corpus-floor.mjs",
+    "check:season-floor:verbose": "node scripts/check-season-corpus-floor.mjs --verbose",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
     "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
     "sweep:fabricated-articles": "node scripts/sweep-fabricated-articles.mjs",
     "audit:district-urls": "node scripts/audit-district-urls.mjs"
+  },
+  "overrides": {
+    "qs": "^6.15.2"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",
@@ -57,7 +62,6 @@
     "shapefile": "^0.6.6",
     "unzipper": "^0.12.5",
     "winston": "^3.17.0",
-    "xlsx": "^0.18.5",
     "zod": "^3.23.0"
   },
   "devDependencies": {
@@ -83,6 +87,7 @@
     "supertest": "^7.0.0",
     "tsx": "^4.23.12",
     "typescript": "^5.6.0",
-    "vitest": "^3.2.7"
+    "vitest": "^3.2.7",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
 }

@@ -2,7 +2,9 @@ import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
-import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
+import { requireAuth, verifyWorkosAccessToken, type AuthenticatedRequest } from '../middleware/auth.js';
+import { classifyToken } from '../lib/tokenIdentity.js';
+import { provisionWorkosUser } from '../lib/workosProvisionService.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
@@ -460,11 +462,16 @@ router.post(
   async (req: Request, res: Response): Promise<void> => {
     const { userId, accessToken, tokenExp } = req as AuthenticatedRequest;
 
-    const { error } = await signOutUser(accessToken);
+    // Supabase-issued tokens get a server-side session revocation. WorkOS
+    // sessions end client-side via the AuthKit SDK's signOut() — passing a
+    // WorkOS token to Supabase would just log a spurious error here.
+    if (classifyToken(accessToken) === 'supabase') {
+      const { error } = await signOutUser(accessToken);
 
-    if (error) {
-      // Log but do not block — revocation record below still covers the token
-      console.error('[auth/logout] Supabase signOut error:', error.message);
+      if (error) {
+        // Log but do not block — revocation record below still covers the token
+        console.error('[auth/logout] Supabase signOut error:', error.message);
+      }
     }
 
     // Record logout time so requireAuth can reject this token immediately,
@@ -474,6 +481,52 @@ router.post(
     res.status(200).json({ message: 'Logged out successfully' });
   }
 );
+
+/**
+ * POST /api/auth/workos/provision
+ *
+ * Migration transition (decision 0002): a user who signed UP through WorkOS
+ * AuthKit has no external_id claim, so their token cannot resolve to an
+ * internal user id and every authenticated call 401s. This endpoint accepts
+ * that not-yet-linked token, verifies it against the WorkOS JWKS, and links
+ * the account: find-or-create the internal user, write its UUID back to
+ * WorkOS as external_id (see workosProvisionService). Idempotent — an
+ * already-linked user gets their existing id back.
+ *
+ * The client MUST refresh its access token after a 200 — the external_id
+ * claim only appears in tokens minted after the link.
+ */
+router.post('/workos/provision', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) {
+    res.status(401).json({ code: 'UNAUTHORIZED', message: 'Missing authorization header' });
+    return;
+  }
+
+  const payload = await verifyWorkosAccessToken(authHeader.slice(7));
+  if (!payload || typeof payload.sub !== 'string') {
+    res.status(401).json({ code: 'UNAUTHORIZED', message: 'Invalid or expired token' });
+    return;
+  }
+
+  try {
+    const result = await provisionWorkosUser(payload.sub);
+    if (!result.ok) {
+      if (result.code === 'NOT_CONFIGURED') {
+        res.status(503).json({ code: 'NOT_CONFIGURED', message: 'Account linking is not available' });
+      } else if (result.code === 'EMAIL_UNVERIFIED') {
+        res.status(403).json({ code: 'EMAIL_NOT_VERIFIED', message: 'Please verify your email before continuing' });
+      } else {
+        res.status(502).json({ code: 'PROVISION_FAILED', message: 'Account linking failed, please try again' });
+      }
+      return;
+    }
+    res.status(200).json({ user_id: result.userId, created: result.created });
+  } catch (err) {
+    console.error('[auth/workos/provision] unexpected error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 /**
  * POST /api/auth/complete-onboarding

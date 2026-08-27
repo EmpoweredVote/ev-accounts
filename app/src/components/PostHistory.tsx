@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useAuthStore } from '../store/authStore';
+import { workosEnabled, hasWorkosSession } from '../lib/workosAuth';
 
 interface FCPost {
   postId: string;
@@ -44,6 +45,13 @@ export default function PostHistory() {
       });
 
       if (res.status === 401) {
+        // fc cannot verify WorkOS-issued tokens until it gets the dual-issuer
+        // port (decision 0002) — its 401 says nothing about OUR session then,
+        // so never nuke the whole login over it.
+        if (workosEnabled && hasWorkosSession()) {
+          setState('error-generic');
+          return;
+        }
         useAuthStore.getState().clearAuth();
         return;
       }

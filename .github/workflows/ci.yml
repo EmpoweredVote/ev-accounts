@@ -522,3 +522,57 @@ jobs:
         run: npm run check:readrank-question-unit
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  season-corpus-floor:
+    name: season corpus floor
+    runs-on: ubuntu-latest
+    # Its own job per the rule at the top of this file. It fails for a reason no other live-DB check
+    # shares — published compass answers went MISSING — and that is the one failure here that must
+    # never be masked by a geometry or citation error ahead of it in a shared job.
+    #
+    # 💰 SCHEDULE ONLY, and the argument is the same one that moved `readrank-question-unit`, only
+    # stronger. What this guards is row COUNT in prod. The three ways it drops are an admin-UI save, an
+    # ad-hoc `psql` DELETE, and a hand-applied migration — and migrations here are applied ad hoc,
+    # never replayed by a deploy (CLAUDE.md), so a pushed .sql file has not touched prod yet. A commit
+    # cannot cause what this measures, so charging it per push would bill 429 minutes a month to watch
+    # for something pushes do not do.
+    #
+    # ⚠ IT FAILS WITHOUT DATABASE_URL INSTEAD OF SKIPPING, deliberately breaking this file's
+    # green-skip-for-forks convention. Every other live-DB check still means something when it cannot
+    # connect — it has a static half, or its absence is visible in a job that also does other work.
+    # This one is a single COUNT: with no connection it measures nothing, and a green "skip" from a
+    # tripwire is indistinguishable from a green "the corpus is intact". A source that never runs
+    # writes no row, and the failure count then reads healthy forever. Use --allow-skip locally.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # A per-topic "Save" posting a single-topic payload to a REPLACE-ALL RPC destroyed 40 of 41
+      # answers for one politician. CC_0001 fixed the caller/RPC mismatch, and
+      # CC_wip_closed_season_immutable.sql (written and proven, not yet applied — it needs an open
+      # season) makes the destructive shape refuse in the database, ad-hoc DELETEs included.
+      #
+      # This is the third layer, and it covers what neither of those can: A TRIGGER CAN BE DROPPED.
+      # politician_answers and politician_context carry NO TIMESTAMPS, so a deleted row cannot say
+      # when or how it went — the corpus size is the only continuous evidence season 1 is whole.
+      #
+      # Floors are committed in the script, measured against prod 2026-08-27: 33,164 answers /
+      # 33,818 context / 44 questions. They are floors, not equalities, so a documented closed-season
+      # correction that ADDS a row still passes. Raise a floor only deliberately; lowering one to get
+      # green is the exact event this exists to report.
+      - name: Check no closed season has lost answers
+        run: npm run check:season-floor -- --verbose
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

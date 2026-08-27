@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
+import { workosSignOut } from '../lib/workosAuth';
 import PostHistory from '../components/PostHistory';
 
 interface XP {
@@ -257,6 +258,13 @@ export default function DashboardPage() {
         credentials: 'include',
         headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : {},
       });
+    } catch {
+      // Ignore — always clear local state
+    }
+    // Ends the WorkOS session too when this login came through AuthKit
+    // (decision 0002 transition); no-op for classic sessions.
+    try {
+      await workosSignOut();
     } catch {
       // Ignore — always clear local state
     }

@@ -15,6 +15,10 @@ backend/dist/
 !.env.example
 !.env.*.example
 
+# WorkOS migration export files hold password hashes — never committed.
+# backend/scripts/workos-export-users.ts enforces this suffix on its output.
+*.workos-export.json
+
 # OS / Editor
 .DS_Store
 Thumbs.db

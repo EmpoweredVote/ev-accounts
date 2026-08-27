@@ -18,6 +18,7 @@ import { getVoterInfo } from '../lib/voterInfoService.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
+import { resolvedDistrictCount } from '../lib/jurisdictionPayload.js';
 
 /**
  * Build MTFCC-tagged (geo_id, mtfcc) pairs from a connected profile's typed
@@ -701,7 +702,15 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
         p_user_id: userId,
       }, 'connect');
 
-      if (!jError && jData) {
+      // 🔴 Path 1.5 exists to FILL empty geo_id columns. resolve_user_jurisdiction
+      // aggregates with no GROUP BY, so an unresolved point returns one all-NULL row and
+      // raises NO error — `!jError && jData` is true for it. There is then nothing to
+      // back-fill, and the UPDATE below is not merely pointless: the branch condition
+      // checks only congressional/state_senate(/county) while the UPDATE writes five or
+      // six columns, so it could null a stored school_district or municipality on a
+      // profile whose congressional and senate columns happened to be empty.
+      // Measured 2026-08-27: 0 profiles in that state, so nothing was lost. Guard anyway.
+      if (!jError && resolvedDistrictCount(jData as Record<string, string | null>) > 0) {
         const jd = jData as Record<string, string | null>;
 
         // Fire-and-forget write-back of 10 resolvable columns
@@ -841,7 +850,15 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
         p_user_id: userId,
       }, 'connect');
 
-      if (!jError && jData) {
+      // 🔴 Path 1.5 exists to FILL empty geo_id columns. resolve_user_jurisdiction
+      // aggregates with no GROUP BY, so an unresolved point returns one all-NULL row and
+      // raises NO error — `!jError && jData` is true for it. There is then nothing to
+      // back-fill, and the UPDATE below is not merely pointless: the branch condition
+      // checks only congressional/state_senate(/county) while the UPDATE writes five or
+      // six columns, so it could null a stored school_district or municipality on a
+      // profile whose congressional and senate columns happened to be empty.
+      // Measured 2026-08-27: 0 profiles in that state, so nothing was lost. Guard anyway.
+      if (!jError && resolvedDistrictCount(jData as Record<string, string | null>) > 0) {
         const jd = jData as Record<string, string | null>;
 
         // Fire-and-forget write-back of resolvable columns

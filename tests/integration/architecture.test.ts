@@ -35,8 +35,22 @@ const ALLOWED = [
   'middleware/tierGuards.ts',
   'middleware/requireVerified.ts',
   'middleware/requireAdmin.ts',
+  // Same class of use as requireAdmin, and the identical query: a membership lookup
+  // against public.admin_users whose result decides a 403 and never reaches the response
+  // body. It cannot use a user client — admin_users is not readable as the caller.
+  'middleware/requireCompassReviewer.ts',
   'routes/auth.ts',
 ];
+
+// 🔑 MIDDLEWARE IS ENUMERATED, NOT EXEMPT — the second test below scans ALL of backend/src,
+// so a new middleware file that touches supabaseAdmin turns this red until someone adds it
+// here. That friction IS the check: it forces one human read of whether the new file is an
+// authorisation gate (fine) or something that reads user rows into a response (not fine).
+// Do not "simplify" this by excluding src/middleware wholesale.
+//
+// A stale comment in requireAdmin.ts claiming middleware was excluded by design is what
+// left requireCompassReviewer.ts off this list on 2026-08-24, and master's suite was red
+// from then until 2026-08-27. That comment has been corrected.
 
 const rel = (file: string) => path.relative(BACKEND_SRC, file).split(path.sep).join('/');
 

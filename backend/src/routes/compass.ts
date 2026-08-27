@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { adminRpc } from '../lib/supabase.js';
 import { requireAuth, optionalAuth, type AuthenticatedRequest } from '../middleware/auth.js';
-import { createUserClient } from '../lib/supabase.js';
+import { requestDb } from '../lib/supabase.js';
 import {
   promoteCompassImportDraft,
   getCompassCompleteness,
@@ -207,7 +207,7 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
     // Lazy promotion — non-fatal if it fails (draft preserved for retry)
     await promoteCompassImportDraft(authReq.userId);
 
-    const db = createUserClient(authReq.accessToken);
+    const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
       .from('compass_responses')
@@ -249,7 +249,7 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
   }
 
   try {
-    const db = createUserClient(authReq.accessToken);
+    const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
       .from('compass_responses')
@@ -286,7 +286,7 @@ router.get(
     if (!authReq.userId) { res.status(200).json([]); return; }
 
     try {
-      const db = createUserClient(authReq.accessToken);
+      const db = requestDb(authReq.accessToken);
       const { data, error } = await db
         .schema('connect')
         .from('connected_profiles')

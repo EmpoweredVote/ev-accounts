@@ -21,6 +21,7 @@ import { requireAdmin } from '../middleware/requireAdmin.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
+import { resolvedDistrictCount } from '../lib/jurisdictionPayload.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -609,6 +610,26 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
 
     // Write jurisdiction GEO IDs + names + state + city to connected_profiles
     const jData = (jurisdictionData ?? {}) as Record<string, string | null>;
+
+    // ⚠ WRITING NULLS HERE IS CORRECT, AND THAT IS WHY IT NEEDED A WARNING.
+    // The address just CHANGED, so any stored districts belong to the old point and are
+    // definitively wrong — keeping them would show this person the representatives for
+    // where they used to live. So this write must proceed, nulls included. It is the
+    // opposite case to districtStalenessService, where the point did not move and an
+    // unresolved answer means "could not resolve" (see lib/jurisdictionPayload.ts).
+    //
+    // What was missing is any signal. resolve_user_jurisdiction aggregates with no GROUP BY,
+    // so an unresolved point returns one all-NULL row and raises NO error — the branch above
+    // never fires. A broken geo_id / mtfcc / district_type join therefore handed every new
+    // user an empty jurisdiction, silently, and the response body looked like a valid answer.
+    if (resolvedDistrictCount(jData) === 0) {
+      console.warn(
+        `[connect/set-location] UNRESOLVED — resolve_user_jurisdiction placed user ${userId} ` +
+          `in no district at all for a geocoded address (${city}, ${state}). Writing the ` +
+          `empty jurisdiction, because the previous one was for a different address. If this ` +
+          `fires for addresses that should be covered, suspect the RPC's join, not the address.`
+      );
+    }
     try {
       await pool.query(
         `UPDATE connect.connected_profiles
