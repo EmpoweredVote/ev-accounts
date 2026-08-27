@@ -290,31 +290,32 @@ export async function getCompassCategories() {
   const [promotedTopics, [catRes, topicCatRes, rolesRes]] = await Promise.all([
     getPromotedTopics(),
     Promise.all([
-    supabaseAnon
-      .schema('inform')
-      .from('compass_categories')
-      .select('id,title')
-      .order('title', { ascending: true }),
-    // The topic fields used to be embedded here as
-    // `compass_topics!inner(...)` filtered on is_live. Both halves had to go.
-    //
-    // PROMOTION: the filter is now the open season's question set, resolved by
-    // getPromotedTopics() below and applied as a Map lookup.
-    // CONTENT: the embedded columns came from compass_topics, whose text CA_0012
-    // froze — so this endpoint would never have shown a published revision.
-    //
-    // It also cannot be an embed any more: PostgREST infers embedding from a
-    // foreign key, and compass_topics_promoted is a VIEW with no FK to point at.
-    // So this query now fetches the join rows only, and the topic body comes from
-    // the promoted set.
-    supabaseAnon
-      .schema('inform')
-      .from('compass_topic_categories')
-      .select('category_id,topic_id'),
-    supabaseAnon
-      .schema('inform')
-      .from('compass_topic_roles')
-      .select('topic_id,role_scope'),
+      supabaseAnon
+        .schema('inform')
+        .from('compass_categories')
+        .select('id,title')
+        .order('title', { ascending: true }),
+      // The topic fields used to be embedded here as
+      // `compass_topics!inner(...)` filtered on is_live. Both halves had to go.
+      //
+      // PROMOTION: the filter is now the open season's question set, resolved by
+      // getPromotedTopics() above and applied as a Map lookup below.
+      // CONTENT: the embedded columns came from compass_topics, whose text
+      // CA_0012 froze — so this endpoint would never have shown a published
+      // revision.
+      //
+      // It also cannot be an embed any more: PostgREST infers embedding from a
+      // foreign key, and compass_topics_promoted is a VIEW with no FK to point
+      // at. So this query fetches the join rows only, and the topic body comes
+      // from the promoted set.
+      supabaseAnon
+        .schema('inform')
+        .from('compass_topic_categories')
+        .select('category_id,topic_id'),
+      supabaseAnon
+        .schema('inform')
+        .from('compass_topic_roles')
+        .select('topic_id,role_scope'),
     ]),
   ]);
 
