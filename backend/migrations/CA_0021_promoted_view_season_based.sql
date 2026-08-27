@@ -1,20 +1,31 @@
 BEGIN;
 
--- 🔴 NOT APPLIED. Written and dry-run 2026-08-27.
+-- ✅ APPLIED TO PRODUCTION 2026-08-27, after CA_0020 opened season 1.
 --
--- Its dependency is now SATISFIED: CA_0020 was applied 2026-08-27 21:10 UTC, so
--- season 1 is open and this migration's gate would pass (the season-based
--- promoted set reads 44). It is held back only because the promotion READ-PATH
--- REPOINT is not written yet, and there is no reason to change a view's shape in
--- prod before the callers that will use it exist.
+-- Verified after: promoted = 44 rows / 44 distinct topics (no fan-out),
+-- compass_topics_answerable gone, content views untouched at 44 topics and 220
+-- stances, and anon / authenticated / ev_api all hold SELECT.
 --
--- Dry-run evidence, both directions:
---   · chained after CA_0020 → OK. "promoted = 44 topics from the open season,
---     answerable dropped". 44 rows, 44 distinct topics (no fan-out), pins all
---     equal to the current revision, content views untouched at 44/220.
---   · alone, before CA_0020 → FAILED as designed:
---     "CA_0021: promoted view returns 0 rows — no season is open. Apply CA_0020
---     first." That refusal is the feature; see the gate at the foot of this file.
+-- 🔴 IT TOOK TWO APPLIES. THE FIRST ONE SILENTLY DROPPED TWO GRANTS.
+-- DROP VIEW takes the grants with it. The first apply recreated the view with
+-- ev_api's privileges intact (those come from ALTER DEFAULT PRIVILEGES) but lost
+-- the `anon` and `authenticated` SELECT that CA_0013 granted explicitly — and
+-- THE GATE PASSED, because counting 44 rows as the migrating superuser says
+-- nothing about who else can read them. Caught only by reading
+-- information_schema.role_table_grants back afterwards.
+--
+-- Nothing read the view yet, so nothing broke. But compassService's reference
+-- reads go out over PostgREST as `anon`, so the first caller repointed onto this
+-- view would have hit a permission error that looked like a code bug.
+--
+-- Fixed by the GRANTs below plus a gate that asserts all three roles can SELECT;
+-- the gate was mutation-tested (remove the anon grant → "CA_0021: anon cannot
+-- SELECT compass_topics_promoted") and the migration re-applied clean.
+--
+-- Dry-run evidence, both directions, before either apply:
+--   · with season 1 open → OK, 44 rows, pins all equal to the current revision.
+--   · with no season open → FAILED as designed: "promoted view returns 0 rows —
+--     no season is open. Apply CA_0020 first." That refusal is the feature.
 --
 -- =============================================================================
 -- CA_0021: Promotion comes from the open season, not from is_live.
@@ -118,6 +129,23 @@ CREATE VIEW inform.compass_topics_promoted AS
     JOIN inform.season_questions sq ON sq.topic_id = c.id
     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open';
 
+-- 🔴 RE-GRANT. DROP VIEW TAKES THE GRANTS WITH IT, AND NOTHING WARNS YOU.
+-- Found the hard way: the first apply of this migration (2026-08-27 21:2x UTC)
+-- recreated the view with ev_api's privileges intact — those come from ALTER
+-- DEFAULT PRIVILEGES — but SILENTLY LOST `anon` and `authenticated` SELECT,
+-- which CA_0013 had granted explicitly. Read back from
+-- information_schema.role_table_grants immediately after applying: ev_api only.
+--
+-- Nothing read the view yet, so nothing broke. But the compass reference reads
+-- go out over PostgREST as `anon` (supabaseAnon in compassService), so the first
+-- caller repointed onto this view would have got a permission error instead of
+-- 44 topics — and it would have looked like a code bug, not a migration one.
+--
+-- These match what CA_0013 granted, and the post-verify gate below now asserts
+-- them so this cannot silently regress again.
+GRANT SELECT ON inform.compass_topics_promoted TO anon;
+GRANT SELECT ON inform.compass_topics_promoted TO authenticated;
+
 COMMENT ON VIEW inform.compass_topics_promoted IS
   'Topics the OPEN season asks, resolved to their current content plus the '
   'season''s pinned revision. Empty when no season is open — that is honest, not '
@@ -129,7 +157,7 @@ COMMENT ON VIEW inform.compass_topics_promoted IS
 -- Post-verify gate.
 -- -----------------------------------------------------------------------------
 DO $$
-DECLARE v_promoted int; v_pinned int;
+DECLARE v_promoted int; v_pinned int; v_missing_grant text;
 BEGIN
   IF to_regclass('inform.compass_topics_answerable') IS NOT NULL THEN
     RAISE EXCEPTION 'CA_0021: compass_topics_answerable should be dropped';
@@ -165,7 +193,24 @@ BEGIN
       v_promoted, (SELECT count(DISTINCT id) FROM inform.compass_topics_promoted);
   END IF;
 
-  RAISE NOTICE 'CA_0021 OK — promoted = % topics from the open season, answerable dropped',
+  -- 🔴 THE GATE THAT WAS MISSING THE FIRST TIME. DROP VIEW discards grants, and
+  -- neither the row count nor the fan-out check notices — the view reads fine as
+  -- the migrating superuser while being unreadable to the roles that matter.
+  FOR v_missing_grant IN
+    SELECT r FROM unnest(ARRAY['anon', 'authenticated', 'ev_api']) AS r
+     WHERE NOT EXISTS (
+       SELECT 1 FROM information_schema.role_table_grants
+        WHERE table_schema = 'inform'
+          AND table_name   = 'compass_topics_promoted'
+          AND grantee      = r
+          AND privilege_type = 'SELECT')
+  LOOP
+    RAISE EXCEPTION
+      'CA_0021: % cannot SELECT compass_topics_promoted — DROP VIEW discarded the grant',
+      v_missing_grant;
+  END LOOP;
+
+  RAISE NOTICE 'CA_0021 OK — promoted = % topics from the open season, answerable dropped, grants intact',
     v_promoted;
 END $$;
 

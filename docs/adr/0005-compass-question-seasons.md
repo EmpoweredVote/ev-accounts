@@ -335,7 +335,22 @@ stay unused" is false and should not be trusted.
 
 All four were read by **zero** callers.
 
-### 4.2 Decision on each view (`CA_0021`)
+### 4.2 Decision on each view (`CA_0021`, applied)
+
+> ✅ **Applied to production 2026-08-27.** `compass_topics_promoted` returns the open season's 44
+> topics; `compass_topics_answerable` is gone; the content views are untouched at 44 and 220.
+>
+> ⚠️ **It took two applies, and the reason is worth keeping.** The first apply recreated the view
+> with `ev_api`'s privileges intact — those come from `ALTER DEFAULT PRIVILEGES` — but **silently
+> lost the `anon` and `authenticated` SELECT grants** that `CA_0013` had granted explicitly.
+> **`DROP VIEW` takes the grants with it and nothing warns you.** Nothing read the view yet, so
+> nothing broke; but the compass reference reads go out over PostgREST as `anon`, so the first
+> caller repointed onto it would have hit a permission error that looked like a code bug. Caught by
+> reading `information_schema.role_table_grants` back after applying — not by the migration's own
+> gate, which passed. The gate now asserts all three roles can `SELECT`, verified by mutation, and
+> the migration re-applied clean. **A post-verify gate that only counts rows will not notice that
+> the rows are unreadable by the roles that matter.**
+
 
 | View | Decision | Why |
 |---|---|---|
@@ -386,9 +401,37 @@ second join; every existing filter keeps reading `compass_topics`. `compass_topi
 condition** and resurrect retired topics into a voter-facing surface. Three regression tests in
 `readrankService.test.ts` guard this, and were confirmed to fail when the switch is removed.
 
-**Deferred — the promotion repoint.** `compassService.getCompassTopics` and the
-categories-with-topics query should read `compass_topics_promoted`. Blocked on `CA_0020`: until a
-season is open the view is empty, and repointing onto it blanks the compass for every voter.
+**Shipped — the promotion repoint.** `getCompassTopics` and `getCompassCategories` now resolve their
+topic set through one shared `getPromotedTopics()`, reading `compass_topics_promoted`. `is_live` is
+no longer the filter. It is still *selected*, because it remains in the endpoint's response
+contract; so is `office_scope`, which is dead (NULL on all 44) but whose removal is an API change
+that belongs in its own commit.
+
+Proved equivalent against prod before shipping: same 44 topics, 0 membership difference, 0 text
+difference, and the 52 category/topic pairs unchanged.
+
+🔴 **`getPromotedTopics()` throws on an empty result instead of returning `[]`.** This is the guard
+that makes the repoint safe. The old query could only return nothing if someone had un-lived all 44
+topics by hand; this one returns nothing whenever no season is open — a state that really happened,
+for a day. `[]` would render an empty compass to every voter and report success. A view cannot raise
+on an empty read, so the caller must.
+
+⚠️ **The categories query could no longer use a PostgREST embed.** It selected
+`compass_topics!inner(…)` filtered on `is_live`. Embedding is inferred from a foreign key, and
+`compass_topics_promoted` is a view with none — so the join rows are now fetched alone and the topic
+body comes from the promoted set by id. That also fixed a second latent problem there: the embedded
+columns came from `compass_topics`, whose text `CA_0012` froze, so **that endpoint could never have
+shown a published revision.**
+
+⚠️ **Found while verifying: the topic order was already unstable.** Both the old and new queries
+order by `created_at`, which holds only **28 distinct values across 44 topics** — two timestamps
+cover 10 and 8 rows. Postgres does not promise an order for ties, so those 18 topics could come back
+differently between requests. Pre-existing, not introduced here, and fixed with a `topic_key`
+tiebreaker; with it the new ordering matches the old exactly.
+
+`display_order` — the season's own ordering — was **deliberately not adopted.** `CA_0019` seeded it
+as `row_number() OVER (ORDER BY topic_key)`, and 43 of 44 positions differ from what voters see
+today. Switching is a product decision, not a side effect of a repoint.
 
 **Rewrite, do not merge — the write validators.** `compassContributor` (×2) must keep a pre-flight
 that *agrees with* the season gate, so the caller gets a clean 422. Widening it, as the WIP does, is

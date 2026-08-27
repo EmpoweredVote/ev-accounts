@@ -100,20 +100,83 @@ export async function getCompassCompleteness(
 // Public reference data reads — use supabaseAnon (inform tables: public-read RLS)
 // ---------------------------------------------------------------------------
 
+export interface PromotedTopic {
+  id: string;
+  topic_key: string;
+  title: string;
+  short_title: string | null;
+  question_text: string;
+  is_live: boolean;
+  version: number;
+  office_scope: string[] | null;
+  fc_community_slug: string | null;
+  judicial_role: string | null;
+}
+
+/**
+ * The promoted set: the topics the OPEN season asks, with the wording of the
+ * revision that season pinned.
+ *
+ * PROMOTION, not content and not answerability (ADR 0004 §12 as corrected).
+ * This replaced `compass_topics WHERE is_live = true`, which gave the right 44
+ * rows for the wrong reason — `is_live` is a global boolean that cannot notice a
+ * season dropping a topic, and cannot ever say *promoted where*.
+ *
+ * `is_live` and `office_scope` still come from `compass_topics`, because they are
+ * not in the view and both are still in this endpoint's response contract.
+ * `office_scope` is NULL on all 44 rows and ADR 0005 marks it dead; it is kept
+ * here rather than dropped silently, because removing a field is a change to the
+ * API's shape and belongs in its own commit.
+ *
+ * 🔴 IT THROWS ON AN EMPTY RESULT, AND THAT IS THE POINT. The old query could
+ * only return zero rows if someone had un-lived all 44 topics by hand. This one
+ * returns zero whenever no season is open — a state that really happened, for a
+ * day, in August 2026. Returning `[]` would render an empty compass to every
+ * voter and report success while doing it. Zero promoted topics is never a
+ * legitimate answer; it is a misconfiguration, and it must say so.
+ */
+export async function getPromotedTopics(): Promise<PromotedTopic[]> {
+  const { rows } = await pool.query<PromotedTopic>(
+    // pool.query, not supabaseAnon — the §12 views are not in the generated
+    // PostgREST types, matching getCompassLenses below.
+    `SELECT p.id::text AS id, p.topic_key, p.title, p.short_title, p.question_text,
+            p.version, p.fc_community_slug, p.judicial_role,
+            t.is_live, t.office_scope
+       FROM inform.compass_topics_promoted p
+       JOIN inform.compass_topics t ON t.id = p.id
+      -- ⚠ created_at, NOT p.display_order, and this is deliberate. display_order
+      -- is the season's own ordering and is the obviously "right" column to reach
+      -- for — but CA_0019 seeded it as row_number() OVER (ORDER BY topic_key),
+      -- which is not the order voters see today. Measured 2026-08-27: 43 of 44
+      -- positions differ. Switching would reorder the entire compass for every
+      -- voter as a side effect of a promotion repoint. Adopting display_order is
+      -- a product decision and needs its own change.
+      --
+      -- 🔴 topic_key IS A TIEBREAKER, NOT DECORATION. created_at is not unique:
+      -- 44 topics hold only 28 distinct values, and two timestamps cover 10 and 8
+      -- topics each (measured 2026-08-27). Ordering by it alone leaves those 18
+      -- rows in whatever order the plan happens to emit, so the compass could
+      -- present them differently between two requests. That was already true
+      -- before this repoint; it is fixed here because an unstable order makes
+      -- "did the repoint change anything?" unanswerable.
+      ORDER BY p.created_at, p.topic_key`
+  );
+
+  if (rows.length === 0) {
+    throw new Error(
+      'no promoted compass topics — the open season asks nothing, or no season ' +
+      "is open. Check inform.seasons for a row with status='open' and its " +
+      'inform.season_questions rows. Refusing to report an empty compass as success.');
+  }
+  return rows;
+}
+
 /**
  * getCompassTopics
- * Returns all live topics with nested stances, categories, and role scopes.
+ * Returns the promoted topics with nested stances, categories, and role scopes.
  */
 export async function getCompassTopics() {
-  const { data: topics, error: topicsError } = await supabaseAnon
-    .schema('inform')
-    .from('compass_topics')
-    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope,fc_community_slug,judicial_role')
-    .eq('is_live', true)
-    .order('created_at', { ascending: true });
-
-  if (topicsError) throw topicsError;
-  if (!topics || topics.length === 0) return [];
+  const topics = await getPromotedTopics();
 
   const topicIds = topics.map(t => t.id);
 
@@ -224,26 +287,46 @@ export async function getCompassLenses() {
  * second flat-topics lookup.
  */
 export async function getCompassCategories() {
-  const [catRes, topicCatRes, rolesRes] = await Promise.all([
+  const [promotedTopics, [catRes, topicCatRes, rolesRes]] = await Promise.all([
+    getPromotedTopics(),
+    Promise.all([
     supabaseAnon
       .schema('inform')
       .from('compass_categories')
       .select('id,title')
       .order('title', { ascending: true }),
+    // The topic fields used to be embedded here as
+    // `compass_topics!inner(...)` filtered on is_live. Both halves had to go.
+    //
+    // PROMOTION: the filter is now the open season's question set, resolved by
+    // getPromotedTopics() below and applied as a Map lookup.
+    // CONTENT: the embedded columns came from compass_topics, whose text CA_0012
+    // froze — so this endpoint would never have shown a published revision.
+    //
+    // It also cannot be an embed any more: PostgREST infers embedding from a
+    // foreign key, and compass_topics_promoted is a VIEW with no FK to point at.
+    // So this query now fetches the join rows only, and the topic body comes from
+    // the promoted set.
     supabaseAnon
       .schema('inform')
       .from('compass_topic_categories')
-      .select('category_id,compass_topics!inner(id,topic_key,title,short_title,question_text,is_live,office_scope)')
-      .eq('compass_topics.is_live', true),
+      .select('category_id,topic_id'),
     supabaseAnon
       .schema('inform')
       .from('compass_topic_roles')
       .select('topic_id,role_scope'),
+    ]),
   ]);
 
   if (catRes.error) throw catRes.error;
   if (topicCatRes.error) throw topicCatRes.error;
   if (rolesRes.error) throw rolesRes.error;
+
+  // The promoted set, by id. A compass_topic_categories row naming a topic the
+  // open season does not ask resolves to undefined here and is dropped — which
+  // is how "retired" is expressed now that it is season non-membership rather
+  // than an is_live flag.
+  const promotedById = new Map(promotedTopics.map(t => [t.id, t]));
 
   // Build a per-topic tier map so we can attach booleans without an extra join.
   // A topic with no rows defaults to all three tiers = true (cross-cutting),
@@ -274,15 +357,9 @@ export async function getCompassCategories() {
     topics: (topicCatRes.data ?? [])
       .filter(tc => tc.category_id === cat.id)
       .map(tc => {
-        const t = tc.compass_topics as {
-          id: string;
-          topic_key: string;
-          title: string;
-          short_title: string | null;
-          question_text: string;
-          is_live: boolean;
-          office_scope: string[] | null;
-        } | null;
+        // Was an embedded compass_topics row; now a lookup into the promoted set.
+        // undefined means this topic is not in the open season — drop it.
+        const t = promotedById.get(tc.topic_id);
         if (!t) return null;
         return {
           id: t.id,
