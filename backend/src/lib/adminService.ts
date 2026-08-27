@@ -20,6 +20,7 @@ import { pool } from './db.js';
 import { executeDemotion } from './empowerService.js';
 import { grantRole, revokeRole, getUserRoles } from './roleService.js';
 import { getXpHistory } from './xpService.js';
+import { UPSERT_CONTEXT_SQL, assertWritten } from './seasonService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -494,9 +495,12 @@ export async function adminUpdateStance(
     throw new Error('No fields to update');
   }
 
-  const updatePayload: Record<string, unknown> = {};
-  if (data.text !== undefined) updatePayload['text'] = data.text;
-  if (data.value !== undefined) updatePayload['value'] = data.value;
+  // Typed concretely rather than as Record<string, unknown>: postgrest-js
+  // guards .update() with RejectExcessProperties, which cannot prove an
+  // open index signature has no excess columns.
+  const updatePayload: { text?: string; value?: number } = {};
+  if (data.text !== undefined) updatePayload.text = data.text;
+  if (data.value !== undefined) updatePayload.value = data.value;
 
   const { data: row, error } = await supabaseAdmin
     .schema('inform')
@@ -559,17 +563,19 @@ export async function adminUpdatePoliticianAnswers(
 export async function adminSetPoliticianContext(
   politicianId: string,
   topicId: string,
-  data: { reasoning: string; sources?: string[] }
+  data: { reasoning: string; sources?: string[] },
+  editorId?: string | null
 ): Promise<Record<string, unknown>> {
+  // Season-aware write; shape defined once in seasonService. It writes into the
+  // OPEN season and stamps that season's pinned ladder revision, so the stored
+  // reasoning records which question text it was reasoning about.
   const { rows } = await pool.query<Record<string, unknown>>(
-    `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-     VALUES ($1, $2, $3, $4)
-     ON CONFLICT (politician_id, topic_id)
-     DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
-     RETURNING *`,
-    [politicianId, topicId, data.reasoning, data.sources ?? []]
+    `${UPSERT_CONTEXT_SQL} RETURNING *`,
+    [politicianId, topicId, data.reasoning, data.sources ?? [], editorId ?? null]
   );
-  if (rows.length === 0) throw new Error('Upsert failed');
+  // Zero rows means no open season, or this topic is not in its question set.
+  // 'Upsert failed' would have hidden both behind one unhelpful string.
+  await assertWritten(rows.length, topicId);
   return rows[0];
 }
 

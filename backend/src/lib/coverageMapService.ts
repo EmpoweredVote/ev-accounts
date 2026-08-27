@@ -223,6 +223,11 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
      JOIN essentials.offices   o ON o.id = och.office_id
      JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
+     -- @season-scope: all-seasons — coverage answers "has this person EVER been
+     --   researched". Narrowing it to the open season would report a loss of data
+     --   that did not happen: a stance from season 1 is still a stance we hold.
+     --   DISTINCT politician_id collapses the per-season rows, so this cannot fan
+     --   out when a second season exists.
      LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
             ON ans.politician_id = p.id
      WHERE p.is_active = true

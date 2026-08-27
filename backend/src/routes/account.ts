@@ -433,7 +433,14 @@ router.patch(
       const now = new Date().toISOString();
 
       // 3. Build update payload for public.users
-      const updateFields: Record<string, unknown> = {};
+      // Typed concretely rather than as Record<string, unknown>: postgrest-js
+      // guards .update() with RejectExcessProperties, which cannot prove an
+      // open index signature has no excess columns.
+      const updateFields: {
+        display_name?: string;
+        avatar_url?: string;
+        updated_at?: string;
+      } = {};
       if (result.data.display_name !== undefined) {
         updateFields.display_name = result.data.display_name;
       }

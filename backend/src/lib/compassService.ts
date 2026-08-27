@@ -319,10 +319,23 @@ export async function getCompassPoliticians() {
             COALESCE(o.representing_city, '') AS representing_city,
             COALESCE(d.label, '') AS district_label,
             COALESCE(d.district_type, '') AS district_type,
-            (SELECT COUNT(*)::int FROM inform.politician_answers
-             WHERE politician_id = p.id AND value != 0) AS answer_count,
-            (SELECT array_agg(topic_id) FROM inform.politician_answers
-             WHERE politician_id = p.id AND value != 0) AS answered_topic_ids
+            -- Collapsed to the newest season per topic before counting. A plain
+            -- COUNT(*) would double a re-researched politician's answer_count and
+            -- array_agg would repeat each topic id once per season.
+            (SELECT COUNT(*)::int FROM (
+               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+                 FROM inform.politician_answers a
+                 JOIN inform.seasons s ON s.id = a.season_id
+                WHERE a.politician_id = p.id
+                ORDER BY a.topic_id, s.number DESC
+             ) l WHERE l.value != 0) AS answer_count,
+            (SELECT array_agg(l.topic_id) FROM (
+               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+                 FROM inform.politician_answers a
+                 JOIN inform.seasons s ON s.id = a.season_id
+                WHERE a.politician_id = p.id
+                ORDER BY a.topic_id, s.number DESC
+             ) l WHERE l.value != 0) AS answered_topic_ids
      FROM essentials.politicians p
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
@@ -386,8 +399,15 @@ export async function getCandidates() {
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
         ELSE (
-          SELECT COUNT(*)::int FROM inform.politician_answers pa
-          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+          -- Newest season per topic before counting; a plain COUNT(*) doubles a
+          -- re-researched candidate's answer_count.
+          SELECT COUNT(*)::int FROM (
+            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+              FROM inform.politician_answers a
+              JOIN inform.seasons s ON s.id = a.season_id
+             WHERE a.politician_id = rc.politician_id
+             ORDER BY a.topic_id, s.number DESC
+          ) l WHERE l.value != 0
         )
       END AS answer_count,
       CASE
@@ -399,8 +419,14 @@ export async function getCandidates() {
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
         ELSE (
-          SELECT array_agg(pa.topic_id) FROM inform.politician_answers pa
-          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+          -- Same collapse; otherwise each topic id repeats once per season.
+          SELECT array_agg(l.topic_id) FROM (
+            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+              FROM inform.politician_answers a
+              JOIN inform.seasons s ON s.id = a.season_id
+             WHERE a.politician_id = rc.politician_id
+             ORDER BY a.topic_id, s.number DESC
+          ) l WHERE l.value != 0
         )
       END AS answered_topic_ids,
       CASE
@@ -501,9 +527,19 @@ export async function getCandidateAnswers(
 
   // Step 3: fall back to Path B — politician_answers (researched stances)
   const researchedRes = await pool.query<{ topic_id: string; value: number }>(
-    `SELECT topic_id, value
-     FROM inform.politician_answers
-     WHERE politician_id = $1 AND value != 0
+    // Newest season this person answered each topic in — DISTINCT ON collapses
+    // the per-season rows. Without it a re-researched politician returns each
+    // topic once per season, and the compass renders duplicate spokes.
+    // Filtering value != 0 AFTER the collapse is deliberate: if their newest
+    // answer is 0 they have no current position, even if an older season did.
+    `SELECT topic_id, value FROM (
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+         FROM inform.politician_answers a
+         JOIN inform.seasons s ON s.id = a.season_id
+        WHERE a.politician_id = $1
+        ORDER BY a.topic_id, s.number DESC
+     ) latest
+     WHERE value != 0
      ORDER BY topic_id ASC`,
     [politicianId]
   );
@@ -675,10 +711,17 @@ export async function compareWithPoliticians(
         value: string;
         full_name: string | null;
       }>(
-        `SELECT pa.topic_id, pa.value::text, ep.full_name
-         FROM inform.politician_answers pa
-         JOIN essentials.politicians ep ON ep.id = pa.politician_id
-         WHERE pa.politician_id = $1`,
+        // One row per topic — their newest season. This feeds the match score,
+        // so a duplicated topic would weight it twice.
+        `SELECT latest.topic_id, latest.value::text, ep.full_name
+         FROM (
+           SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id
+             FROM inform.politician_answers a
+             JOIN inform.seasons s ON s.id = a.season_id
+            WHERE a.politician_id = $1
+            ORDER BY a.topic_id, s.number DESC
+         ) latest
+         JOIN essentials.politicians ep ON ep.id = latest.politician_id`,
         [pid]
       );
       return { id: pid, rows };
@@ -770,9 +813,16 @@ export async function getBatchPoliticianAnswers(
   topicIds: string[]
 ): Promise<PoliticianAnswer[]> {
   const { rows } = await pool.query<{ topic_id: string; value: string }>(
-    `SELECT topic_id, value::text
-     FROM inform.politician_answers
-     WHERE politician_id = $1 AND topic_id = ANY($2::uuid[]) AND value <> 0`,
+    // Newest season per topic; see getCandidateAnswers for why the value <> 0
+    // filter is applied after the collapse rather than inside it.
+    `SELECT topic_id, value::text FROM (
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+         FROM inform.politician_answers a
+         JOIN inform.seasons s ON s.id = a.season_id
+        WHERE a.politician_id = $1 AND a.topic_id = ANY($2::uuid[])
+        ORDER BY a.topic_id, s.number DESC
+     ) latest
+     WHERE value <> 0`,
     [politicianId, topicIds]
   );
   return rows.map(r => ({
@@ -881,12 +931,36 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      FROM inform.politician_context_evidence pce
      JOIN inform.compass_topics ct
        ON ct.id = pce.topic_id AND ct.is_live = true
-     LEFT JOIN inform.politician_answers pa
-       ON pa.politician_id = pce.politician_id AND pa.topic_id = pce.topic_id
+     -- 🔴 THESE MUST BE LATERALs, AND pc MUST SHARE pa'S SEASON.
+     -- This query is voter-facing (essentials Citations.jsx renders the reasoning
+     -- under "Why this position?"). As plain bare-pair LEFT JOINs, each evidence
+     -- row multiplied out to one row per answer-season TIMES one per
+     -- context-season, and the cross terms paired a stance value from one season
+     -- with reasoning written against a DIFFERENT season's ladder text. That
+     -- displays a position the cited reasoning never argued for — the
+     -- confabulation failure mode, produced mechanically by a join.
+     LEFT JOIN LATERAL (
+       SELECT a.value, a.season_id
+         FROM inform.politician_answers a
+         JOIN inform.seasons s ON s.id = a.season_id
+        WHERE a.politician_id = pce.politician_id AND a.topic_id = pce.topic_id
+        ORDER BY s.number DESC
+        LIMIT 1
+     ) pa ON true
      LEFT JOIN inform.compass_stances cs
        ON cs.topic_id = pce.topic_id AND cs.value = pa.value
-     LEFT JOIN inform.politician_context pc
-       ON pc.politician_id = pce.politician_id AND pc.topic_id = pce.topic_id
+     LEFT JOIN LATERAL (
+       SELECT c.reasoning, c.sources
+         FROM inform.politician_context c
+         JOIN inform.seasons s ON s.id = c.season_id
+        WHERE c.politician_id = pce.politician_id AND c.topic_id = pce.topic_id
+          -- Same season as the value when there is one. When there is no answer
+          -- at all (the has_stance = false case) fall back to the newest
+          -- context, which is what this query showed before seasons existed.
+          AND (pa.season_id IS NULL OR c.season_id = pa.season_id)
+        ORDER BY s.number DESC
+        LIMIT 1
+     ) pc ON true
      WHERE pce.politician_id = $1
      ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,

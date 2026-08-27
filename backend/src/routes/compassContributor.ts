@@ -39,6 +39,10 @@ import {
 } from '../lib/stanceService.js';
 import { pool } from '../lib/db.js';
 import type { Request, Response } from 'express';
+import {
+  UPSERT_ANSWER_WITH_WRITE_IN_SQL, UPSERT_CONTEXT_SOURCES_SQL,
+  OPEN_SEASON_ANSWER_SQL, DELETE_ANSWER_OPEN_SEASON_SQL, assertWritten,
+} from '../lib/seasonService.js';
 
 const router = Router();
 
@@ -205,9 +209,11 @@ router.put(
         value: number;
         write_in_text: string | null;
       }>(
-        `SELECT topic_id, value, write_in_text
-         FROM inform.politician_answers
-         WHERE politician_id = $1 AND topic_id = ANY($2)`,
+        // The OPEN season's rows, not the newest answered. The upsert below lands
+        // in the open season, so "previous value" must mean that season's value —
+        // diffing against season 1 while writing season 2 logs "3 -> 3" for what
+        // is really a brand new row.
+        `${OPEN_SEASON_ANSWER_SQL} AND a.topic_id = ANY($2)`,
         [politicianId, allTopicIds]
       );
       const prevMap = new Map(prevResult.rows.map((r) => [r.topic_id, r]));
@@ -222,13 +228,10 @@ router.put(
 
         if (valueUnchanged && writeInTextUnchanged) continue;
 
-        await client.query(
-          `INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text)
-           VALUES ($1, $2, $3, $4)
-           ON CONFLICT (politician_id, topic_id)
-           DO UPDATE SET value = EXCLUDED.value, write_in_text = EXCLUDED.write_in_text`,
-          [politicianId, stance.topic_id, stance.value, stance.write_in_text ?? null]
+        const wrote = await client.query(UPSERT_ANSWER_WITH_WRITE_IN_SQL,
+          [politicianId, stance.topic_id, stance.value, actorId, stance.write_in_text ?? null]
         );
+        await assertWritten(wrote.rowCount ?? 0, stance.topic_id);
 
         await writeStanceAuditLog(client, {
           actorId,
@@ -252,11 +255,10 @@ router.put(
         const prev = prevMap.get(topicId) ?? null;
         if (!prev) continue; // Nothing to clear
 
-        await client.query(
-          `DELETE FROM inform.politician_answers
-           WHERE politician_id = $1 AND topic_id = $2`,
-          [politicianId, topicId]
-        );
+        // Open season ONLY. Unconstrained this clears the answer in EVERY season,
+        // destroying a closed season's record — the one thing seasons exist to
+        // make impossible.
+        await client.query(DELETE_ANSWER_OPEN_SEASON_SQL, [politicianId, topicId]);
 
         await writeStanceAuditLog(client, {
           actorId,
@@ -369,9 +371,8 @@ router.put(
         value: number;
         write_in_text: string | null;
       }>(
-        `SELECT value, write_in_text
-         FROM inform.politician_answers
-         WHERE politician_id = $1 AND topic_id = $2`,
+        // Open season only — see the batch handler above for why not newest.
+        `${OPEN_SEASON_ANSWER_SQL} AND a.topic_id = $2`,
         [politicianId, topicId]
       );
       const prev = prevResult.rows[0] ?? null;
@@ -391,13 +392,10 @@ router.put(
       }
 
       // c. Upsert stance
-      await client.query(
-        `INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text)
-         VALUES ($1, $2, $3, $4)
-         ON CONFLICT (politician_id, topic_id)
-         DO UPDATE SET value = EXCLUDED.value, write_in_text = EXCLUDED.write_in_text`,
-        [politicianId, topicId, value, write_in_text ?? null]
+      const wrote = await client.query(UPSERT_ANSWER_WITH_WRITE_IN_SQL,
+        [politicianId, topicId, value, actorId, write_in_text ?? null]
       );
+      await assertWritten(wrote.rowCount ?? 0, topicId);
 
       // d. Write audit log (inside transaction)
       await writeStanceAuditLog(client, {
@@ -496,13 +494,12 @@ router.put(
     try {
       for (const { topic_id, source_url } of parsed.data.sources) {
         const sources = source_url.trim() ? [source_url.trim()] : [];
-        await pool.query(
-          `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-           VALUES ($1, $2, '', $3)
-           ON CONFLICT (politician_id, topic_id)
-           DO UPDATE SET sources = EXCLUDED.sources`,
-          [politicianId, topic_id, sources]
+        // Sources only — this shape deliberately does NOT touch `reasoning`,
+        // which is voter-facing and belongs to whoever wrote it.
+        const wrote = await pool.query(UPSERT_CONTEXT_SOURCES_SQL,
+          [politicianId, topic_id, sources, actorId]
         );
+        await assertWritten(wrote.rowCount ?? 0, topic_id);
       }
       res.status(200).json({ updated: parsed.data.sources.length });
     } catch (err) {

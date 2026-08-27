@@ -142,14 +142,40 @@ export async function approveSourceVerification(
 
     if (shouldReplace) {
       if (existing.entity_type === 'compass_stance') {
-        // Replace sources[url_index] in inform.politician_context
+        // Replace sources[url_index] in inform.politician_context, in the NEWEST
+        // season whose array actually holds that URL at that index.
+        //
+        // Two guards, both load-bearing:
+        //   · season_id is named, so the patch cannot spray across every season.
+        //     Array POSITIONS differ per season, so an unconstrained UPDATE would
+        //     overwrite an unrelated citation at the same index elsewhere.
+        //   · sources[...] = $5 requires the slot to still contain the URL being
+        //     replaced. If an editor changed it since verification, this patches
+        //     nothing rather than clobbering their edit.
+        //
+        // With one season this is exactly the old behaviour. ⚠ OPEN QUESTION for
+        // a human: should correcting a dead or fabricated URL reach a CLOSED
+        // season at all? It edits a citation inside a sealed record. Left
+        // reachable here because a wrong source is a factual error and the
+        // repo's stance-source policy repoints rather than retires — but that is
+        // an editorial call, not one this function should be making silently.
         await client.query(
           `
-          UPDATE inform.politician_context
-          SET sources[$3::int + 1] = $4
-          WHERE politician_id = $1 AND topic_id = $2
+          UPDATE inform.politician_context c
+          SET sources[$3::int + 1] = $4, updated_at = now()
+          WHERE c.politician_id = $1 AND c.topic_id = $2
+            AND c.sources[$3::int + 1] = $5
+            AND c.season_id = (
+              SELECT c2.season_id
+                FROM inform.politician_context c2
+                JOIN inform.seasons s2 ON s2.id = c2.season_id
+               WHERE c2.politician_id = $1 AND c2.topic_id = $2
+                 AND c2.sources[$3::int + 1] = $5
+               ORDER BY s2.number DESC
+               LIMIT 1
+            )
           `,
-          [existing.politician_id, existing.topic_id, existing.url_index, newUrl]
+          [existing.politician_id, existing.topic_id, existing.url_index, newUrl, existing.url]
         );
       } else {
         // readrank_quote — single source_url column

@@ -22,7 +22,6 @@ async function refreshAccessToken(): Promise<string | null> {
           if (!res.ok) return null;
           const data = await res.json() as { access_token: string };
           useAuthStore.setState({ accessToken: data.access_token });
-          localStorage.setItem('ev_token', data.access_token);
           return data.access_token;
         })
   ).finally(() => { refreshPromise = null; });

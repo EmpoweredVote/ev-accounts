@@ -86,6 +86,11 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
        LEFT JOIN essentials.offices o ON o.id = r.office_id
        LEFT JOIN essentials.districts d ON d.id = o.district_id
        LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
+       -- @season-scope: all-seasons — coverage answers "has this person EVER been
+       --   researched". Narrowing it to the open season would report a loss of data
+       --   that did not happen: a stance from season 1 is still a stance we hold.
+       --   DISTINCT politician_id collapses the per-season rows, so this cannot fan
+       --   out when a second season exists.
        LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
               ON ans.politician_id = p.id
       WHERE e.state = $1 AND e.election_date = $2

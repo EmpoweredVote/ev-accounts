@@ -107,9 +107,9 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -147,11 +147,11 @@ jobs:
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
       # fetch-depth: 0 so the base branch is available to diff against.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -185,9 +185,9 @@ jobs:
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
       # Shallow checkout is enough: unlike the numbering check, this one never diffs against a base.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -217,9 +217,9 @@ jobs:
     # worked by direct pushes to master, so a PR-only check would miss most of what it guards.
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -233,11 +233,11 @@ jobs:
     # Same as above: compares files changed on the branch against the base.
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -261,9 +261,9 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -318,9 +318,9 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -366,9 +366,9 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -401,6 +401,75 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  answer-seasons:
+    name: answer-season consumers
+    runs-on: ubuntu-latest
+    # Its own job per the rule at the top of this file. It fails for a reason unlike every other
+    # check here — a query that forgot a season predicate — so sharing a job would let it mask, or be
+    # masked by, something unrelated.
+    #
+    # 🔴 RUNS ON pull_request, UNLIKE the other live-DB jobs, and the difference is deliberate. This
+    # gate is HALF static and half live:
+    #   · The static half reads backend/src. What it guards is CODE, which arrives by PR, so a PR is
+    #     exactly when it must run. Forks have no secrets and it needs none.
+    #   · The live half reads pg_proc for SECURITY DEFINER functions. Without DATABASE_URL it prints
+    #     a SKIP naming what went unchecked and exits 0, so a fork gets a green skip instead of a red
+    #     build it cannot fix — and the pass line itself says "repo only", so a skipped run cannot be
+    #     misread as full coverage.
+    # It is also on the nightly schedule: a function body can change in prod with no commit here.
+    #
+    # 💰 THE NUMBERS, per the rule at the top of this file. This job runs on push,
+    # PR and schedule — 429 + 65 + 27 = ~521 runs a month. It finishes in ~18
+    # SECONDS and bills a full minute each time, so ~521 billed minutes, about
+    # $4/month on top of the ~$6 that remains after the paths-ignore and
+    # schedule-only fixes. That is the single largest per-job addition since
+    # those fixes, and it was taken deliberately, not by habit:
+    #
+    #   · PR + push, NOT PR-only, for exactly the reason `migration numbering`
+    #     gives above — this repo is worked by DIRECT PUSHES TO MASTER, so a
+    #     PR-only guard leaves the hole wide open. A season predicate lost on a
+    #     direct push is silent: reads fan out months later with nothing failing.
+    #   · Schedule kept because the RPC half is genuine drift coverage. A
+    #     SECURITY DEFINER body can change in prod with no commit in this repo,
+    #     and 27 runs is ~5% of the job's cost.
+    #   · NOT folded into an existing fast job, per the one-check-per-job rule —
+    #     that would trade $4 for the masking failure that cost two days on
+    #     2026-08-14.
+    #
+    # If the bill needs cutting again, the honest lever here is the ~18s runtime,
+    # not the triggers: the static half re-reads every .ts file under backend/src
+    # on every run and could be diffed against the base instead.
+    #
+    # WHY IT EXISTS. Task 6 of the compass-seasons plan repoints the primary key of
+    # inform.politician_answers to (politician_id, topic_id, season_id). After that, a read joined on
+    # the bare pair FANS OUT once a second season exists — silently, no error, months later — and a
+    # write with ON CONFLICT on the bare pair raises 42P10 immediately. Verified on 2026-08-25 with a
+    # scratch-table control. This job is why neither can reach master.
+    #
+    # ⚠ EXPECTED RED until Task 5 of that plan lands. Tasks 4 and 5 ship on one branch so master
+    # never sees it failing. If you are reading this because it is red on master, Task 5 regressed.
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # A green run means "no consumer is still keyed on the bare pair". It reads text, not meaning:
+      # a query filtering on the WRONG season passes. Do not read it as "seasons are correct".
+      - name: Check every answer-table consumer names a season
+        run: npm run check:answer-seasons
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   readrank-question-unit:
     name: read & rank question unit
     runs-on: ubuntu-latest
@@ -423,9 +492,9 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -451,5 +520,59 @@ jobs:
       # Skips itself (exit 0) without DATABASE_URL, so forks get a green skip.
       - name: Check no race/topic serves quotes for more than one question
         run: npm run check:readrank-question-unit
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  season-corpus-floor:
+    name: season corpus floor
+    runs-on: ubuntu-latest
+    # Its own job per the rule at the top of this file. It fails for a reason no other live-DB check
+    # shares — published compass answers went MISSING — and that is the one failure here that must
+    # never be masked by a geometry or citation error ahead of it in a shared job.
+    #
+    # 💰 SCHEDULE ONLY, and the argument is the same one that moved `readrank-question-unit`, only
+    # stronger. What this guards is row COUNT in prod. The three ways it drops are an admin-UI save, an
+    # ad-hoc `psql` DELETE, and a hand-applied migration — and migrations here are applied ad hoc,
+    # never replayed by a deploy (CLAUDE.md), so a pushed .sql file has not touched prod yet. A commit
+    # cannot cause what this measures, so charging it per push would bill 429 minutes a month to watch
+    # for something pushes do not do.
+    #
+    # ⚠ IT FAILS WITHOUT DATABASE_URL INSTEAD OF SKIPPING, deliberately breaking this file's
+    # green-skip-for-forks convention. Every other live-DB check still means something when it cannot
+    # connect — it has a static half, or its absence is visible in a job that also does other work.
+    # This one is a single COUNT: with no connection it measures nothing, and a green "skip" from a
+    # tripwire is indistinguishable from a green "the corpus is intact". A source that never runs
+    # writes no row, and the failure count then reads healthy forever. Use --allow-skip locally.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # A per-topic "Save" posting a single-topic payload to a REPLACE-ALL RPC destroyed 40 of 41
+      # answers for one politician. CC_0001 fixed the caller/RPC mismatch, and
+      # CC_wip_closed_season_immutable.sql (written and proven, not yet applied — it needs an open
+      # season) makes the destructive shape refuse in the database, ad-hoc DELETEs included.
+      #
+      # This is the third layer, and it covers what neither of those can: A TRIGGER CAN BE DROPPED.
+      # politician_answers and politician_context carry NO TIMESTAMPS, so a deleted row cannot say
+      # when or how it went — the corpus size is the only continuous evidence season 1 is whole.
+      #
+      # Floors are committed in the script, measured against prod 2026-08-27: 33,164 answers /
+      # 33,818 context / 44 questions. They are floors, not equalities, so a documented closed-season
+      # correction that ADDS a row still passes. Raise a floor only deliberately; lowering one to get
+      # green is the exact event this exists to report.
+      - name: Check no closed season has lost answers
+        run: npm run check:season-floor -- --verbose
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}

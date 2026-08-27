@@ -113,8 +113,14 @@ Every write appends a row. Nothing is ever `UPDATE`d.
   what a reader cites: "Housing v3".
 
 Both are public. The record lists **every revision**, Wikipedia-style; `version` groups them into
-milestones so a reader has a stable thing to name. What the two-level numbering buys is not
-concealment — it is the difference between a name and an entry in a log.
+milestones so a reader has a stable thing to name.
+
+Neither number says anything about *whether the question is currently being asked*. That is a separate
+axis, decided in [ADR 0005](0005-compass-question-seasons.md) — a topic can be reworded many times while
+sitting in no active season, and can be carried into a new season without being reworded at all.
+
+What the two-level numbering buys is not concealment — it is the difference between a name and an entry
+in a log.
 
 The alternative considered and rejected was in-place `UPDATE` for editorial fixes with versions only
 for substantive change. It fails three ways: the version row stops being immutable, which is the only
@@ -408,7 +414,11 @@ The failure was loud rather than silent, which is the only reason it corrupted n
 ```sql
 -- ── Identity (existing table, columns REMOVED) ────────────────────────────────
 -- inform.compass_topics keeps: id, topic_key, office_scope, fc_community_slug,
---   judicial_role, created_at.  Gains: retired_at TIMESTAMPTZ.
+--   judicial_role, created_at.
+-- ⚠ CORRECTION: an earlier draft said this table "gains retired_at". It does NOT —
+--   CA_0011 only created new tables and never altered compass_topics, so the column
+--   does not exist. Under ADR 0005 (seasons) it is probably never needed, because
+--   retirement is expressed as absence from the active season, not a column.
 --   LOSES to revisions: title, short_title, question_text, version, is_live,
 --   is_active (GENERATED, must be dropped with is_live), went_live_at, updated_at.
 -- The id does NOT change. No FK anywhere is touched.
@@ -531,13 +541,17 @@ every remote-tracking ref.
    🔴 **Assert invariants, not literal counts.** `compass_change_history` went from 1,818 to 1,819 rows
    during the hour this ADR was drafted. The gate asserts "nothing left `NULL`" and "revision text
    equals source text", never a hardcoded number.
-3. **`CA_0013`** — 🔴 **first** `DROP` the two freeze triggers from `CA_0012`: they are
-   `UPDATE OF <column>` triggers holding references to the very columns this step removes, and
-   `DROP COLUMN` will not step over a dependent trigger. **Then** repoint the ~13 backend files to
-   `compass_topics_live` / `compass_stances_live`,
-   then drop `title`, `short_title`, `question_text`, `version`, `is_live`, `is_active`, `went_live_at`
-   from `inform.compass_topics`. `is_active` is `GENERATED ALWAYS AS (is_live)` and must be dropped
-   with it. **Ship the repoint before the drop**, in that order, in a shared-blast-radius schema.
+3. **`CA_0013`** — **revised 2026-08-24 after ADR 0005 (seasons); see §12.** In order:
+   a. 🔴 `DROP` the two freeze triggers from `CA_0012` **first** — they are `UPDATE OF <column>`
+      triggers holding references to the very columns this step removes, and `DROP COLUMN` will not
+      step over a dependent trigger.
+   b. Create **three** views, not one (§12): `compass_topics_current`,
+      `compass_topics_promoted`, `compass_topics_answerable`.
+   c. Repoint each of the ~13 backend readers to whichever one it actually needs (§12 classifies
+      them). This is not a blind swap — they ask three different questions.
+   d. Only then drop `title`, `short_title`, `question_text`, `version`, `is_live`, `is_active`,
+      `went_live_at` from `inform.compass_topics`. `is_active` is `GENERATED ALWAYS AS (is_live)` and
+      must be dropped with it. **Ship the repoint before the drop**, in a shared-blast-radius schema.
 4. **`CA_0014`** — the same split for `essentials.readrank_questions` (2,431 rows), keeping its `id` so
    `essentials.quotes.question_id` is untouched.
 5. Then, and only then, drop the superseded 061 machinery: `inform.topic_rewrites`,
@@ -546,6 +560,46 @@ every remote-tracking ref.
 
 Every migration idempotent, with a `DO $$ ... $$` post-verify gate that `RAISE EXCEPTION`s on a wrong
 count, dry-run against prod under `BEGIN; ... ROLLBACK;` first. House style.
+
+### 12. CA_0013 revised: one view cannot answer three questions
+
+I first wrote that seasons (ADR 0005) *blocked* `CA_0013`. That was wrong. What blocks it is that
+`compass_topics_live` answers two questions at once and pretends they are one. Split them and the
+migration is safe to ship now — seasons then change one view's **definition** and touch no caller.
+
+Classifying all 13 readers, they ask **three** distinct questions, and `is_live` conflates them only
+because all 44 topics happen to be live:
+
+| Question | Readers | Season-dependent? |
+|---|---|---|
+| **Content** — what does this topic *say*? | `meetingsService`, `readrankService` (×4), `topicsService` (×2), `routes/essentials.ts`, `compassStatsService`, `adminService.adminListTopics` | **No.** One current revision per topic, globally. |
+| **Promotion** — should we *ask* this person? | `compassService.getCompassTopics`, the categories-with-topics query | **Yes.** |
+| **Answerability** — may an answer *exist* for this? | `validateTopicIds`, `connectService.validateCompassVersions`, `compassContributor` (×2) | **No — deliberately.** |
+
+So:
+
+```sql
+-- Content: every topic, resolved to its current revision. No promotion semantics,
+-- no is_live literal, nothing jurisdiction-aware. Seasons never touch this.
+CREATE VIEW inform.compass_topics_current AS ...
+
+-- Promotion: which topics to ASK. Today every topic (true: 44/44 are is_live).
+-- ADR 0005 changes THIS DEFINITION ONLY — no caller is repointed twice.
+CREATE VIEW inform.compass_topics_promoted AS ...
+
+-- Answerability: which topics may hold an answer. Permissive by design.
+CREATE VIEW inform.compass_topics_answerable AS ...
+```
+
+🔴 **Answerability must stay permissive, and this is the subtle one.** `compassContributor` currently
+refuses to seat a politician's stance unless `is_live = true`. If that became "unless it is in the
+current season", then a topic leaving a season would make it impossible to record stances on it — which
+contradicts §5's rule that retiring never deletes answers, and would block adding historical
+comparisons for topics already carrying 32,887 seated answers. **Promotion decides what we ASK. It must
+never decide what may be RECORDED.**
+
+The `compass_stances_live` view splits the same way, but only into content — a ladder has no promotion
+question of its own; it inherits its topic's.
 
 ## Consequences
 
