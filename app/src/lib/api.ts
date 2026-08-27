@@ -1,4 +1,5 @@
 import { useAuthStore } from '../store/authStore';
+import { hasWorkosSession, refreshWorkosToken, workosEnabled } from './workosAuth';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -9,15 +10,25 @@ let refreshPromise: Promise<string | null> | null = null;
 
 async function refreshAccessToken(): Promise<string | null> {
   if (refreshPromise) return refreshPromise;
-  refreshPromise = fetch(`${API_BASE}/auth/session`, { credentials: 'include' })
-    .then(async (res) => {
-      if (!res.ok) return null;
-      const data = await res.json() as { access_token: string };
-      useAuthStore.setState({ accessToken: data.access_token });
-      localStorage.setItem('ev_token', data.access_token);
-      return data.access_token;
-    })
-    .finally(() => { refreshPromise = null; });
+  // A WorkOS session (decision 0002 transition) refreshes through the AuthKit
+  // SDK — the ev_session cookie belongs to the classic Supabase flow only.
+  refreshPromise = (workosEnabled && hasWorkosSession()
+    ? refreshWorkosToken().then((token) => {
+        if (token) {
+          useAuthStore.setState({ accessToken: token });
+          localStorage.setItem('ev_token', token);
+        }
+        return token;
+      })
+    : fetch(`${API_BASE}/auth/session`, { credentials: 'include' })
+        .then(async (res) => {
+          if (!res.ok) return null;
+          const data = await res.json() as { access_token: string };
+          useAuthStore.setState({ accessToken: data.access_token });
+          localStorage.setItem('ev_token', data.access_token);
+          return data.access_token;
+        })
+  ).finally(() => { refreshPromise = null; });
   return refreshPromise;
 }
 

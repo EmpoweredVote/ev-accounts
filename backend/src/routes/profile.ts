@@ -15,7 +15,7 @@
 import { Router } from 'express';
 import { requireAuth } from '../middleware/auth.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
-import { createUserClient } from '../lib/supabase.js';
+import { getRequestAuthUser } from '../lib/authService.js';
 import { getPublicProfile, getOwnerProfile, isValidUuid } from '../lib/profileService.js';
 
 const router = Router();
@@ -32,10 +32,12 @@ router.get('/me', requireAuth as any, async (req, res) => {
     const authedReq = req as AuthenticatedRequest;
     const userId = authedReq.userId;
 
-    // Resolve email via user-scoped Supabase client (RLS-enforced, JWT-bound).
-    // This mirrors the pattern in account.ts GET /me.
-    const db = createUserClient(authedReq.accessToken);
-    const { data: { user: authUser }, error: authError } = await db.auth.getUser();
+    // Resolve email for the request's user — issuer-aware during the
+    // decision-0002 transition. This mirrors the pattern in account.ts GET /me.
+    const { user: authUser, error: authError } = await getRequestAuthUser(
+      authedReq.accessToken,
+      userId
+    );
 
     if (authError || !authUser) {
       res.status(401).json({ error: 'Unable to verify identity' });

@@ -8,7 +8,7 @@
  * Uses only createUserClient (RLS-enforced) and supabaseAnon (public reads).
  */
 
-import { createUserClient, supabaseAnon, adminRpc, supabaseAdmin } from './supabase.js';
+import { requestDb, supabaseAnon, adminRpc, supabaseAdmin } from './supabase.js';
 import { pool } from './db.js';
 import { saveSelectedTopics, validateTopicIds } from './compassService.js';
 
@@ -42,7 +42,7 @@ export interface CalibrationItem {
  * Returns true if the user already has a connected_profiles row.
  */
 export async function hasConnectedProfile(accessToken: string, userId: string): Promise<boolean> {
-  const db = createUserClient(accessToken);
+  const db = requestDb(accessToken);
   const { data, error } = await db
     .schema('connect')
     .from('connected_profiles')
@@ -62,7 +62,7 @@ export async function getConnectedProfileVerificationStatus(
   accessToken: string,
   userId: string
 ): Promise<string | null> {
-  const db = createUserClient(accessToken);
+  const db = requestDb(accessToken);
   const { data, error } = await db
     .schema('connect')
     .from('connected_profiles')
@@ -86,7 +86,7 @@ export async function getVerificationSession(
   accessToken: string,
   userId: string
 ): Promise<VerificationSession | null> {
-  const db = createUserClient(accessToken);
+  const db = requestDb(accessToken);
   const { data, error } = await db
     .schema('connect')
     .from('verification_sessions')
@@ -106,7 +106,7 @@ export async function getVerificationSessionStep(
   accessToken: string,
   userId: string
 ): Promise<string | null> {
-  const db = createUserClient(accessToken);
+  const db = requestDb(accessToken);
   const { data, error } = await db
     .schema('connect')
     .from('verification_sessions')
@@ -185,7 +185,7 @@ export async function getVerificationSessionId(
   accessToken: string,
   userId: string
 ): Promise<string | null> {
-  const db = createUserClient(accessToken);
+  const db = requestDb(accessToken);
   const { data, error } = await db
     .schema('connect')
     .from('verification_sessions')

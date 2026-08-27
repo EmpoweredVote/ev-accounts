@@ -36,37 +36,53 @@ import PrivacyPage from './pages/PrivacyPage';
 import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
+import { workosEnabled, hasWorkosSession, refreshWorkosToken } from './lib/workosAuth';
 
 function App() {
   const { setAuth, clearAuth, setLoading, accessToken } = useAuthStore();
 
   useEffect(() => {
-    const token = sessionStorage.getItem('admin_token');
-    if (token) {
-      useAuthStore.setState({ accessToken: token });
+    const hydrateFromMe = (fallbackToken: string) =>
       apiFetch<{
         id: string;
         email: string;
         is_admin: boolean;
         tier: string;
         completed_onboarding: boolean;
-      }>('/account/me')
-        .then((me) => {
-          // Use the store's current token — apiFetch may have refreshed it since
-          // we read `token` from sessionStorage above.
-          const currentToken = useAuthStore.getState().accessToken ?? token;
-          setAuth(currentToken, {
-            id: me.id ?? '',
-            email: me.email ?? '',
-            isAdmin: me.is_admin ?? false,
-            tier: (me.tier as 'inform' | 'connected' | 'empowered') ?? 'inform',
-            completedOnboarding: me.completed_onboarding ?? false,
-          });
-        })
-        .catch(() => {
-          sessionStorage.removeItem('admin_token');
-          clearAuth();
+      }>('/account/me').then((me) => {
+        // Use the store's current token — apiFetch may have refreshed it since
+        // the caller read its token.
+        const currentToken = useAuthStore.getState().accessToken ?? fallbackToken;
+        setAuth(currentToken, {
+          id: me.id ?? '',
+          email: me.email ?? '',
+          isAdmin: me.is_admin ?? false,
+          tier: (me.tier as 'inform' | 'connected' | 'empowered') ?? 'inform',
+          completedOnboarding: me.completed_onboarding ?? false,
         });
+      });
+
+    const token = sessionStorage.getItem('admin_token');
+    if (token) {
+      useAuthStore.setState({ accessToken: token });
+      hydrateFromMe(token).catch(() => {
+        sessionStorage.removeItem('admin_token');
+        clearAuth();
+      });
+    } else if (workosEnabled && hasWorkosSession()) {
+      // WorkOS session restore (decision 0002 transition): a new tab or hard
+      // reload has no sessionStorage token — ask the AuthKit SDK before
+      // treating the visitor as logged out.
+      refreshWorkosToken()
+        .then((workosToken) => {
+          if (!workosToken) {
+            clearAuth();
+            return;
+          }
+          useAuthStore.setState({ accessToken: workosToken });
+          return hydrateFromMe(workosToken);
+        })
+        .catch(() => clearAuth());
     } else {
       setLoading(false);
     }

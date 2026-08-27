@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '../types/database.types.js';
 import { env } from './env.js';
+import { classifyToken } from './tokenIdentity.js';
 
 /**
  * Admin client — bypasses RLS.
@@ -76,4 +77,23 @@ export function createUserClient(accessToken: string) {
       },
     }
   );
+}
+
+/**
+ * Per-request client chosen by token issuer (decision 0002 transition).
+ *
+ * Supabase-issued tokens: the user-scoped client above — RLS enforced,
+ * behavior unchanged. WorkOS-issued tokens: PostgREST cannot verify a WorkOS
+ * JWT until Supabase third-party auth is configured and the auth.uid()
+ * policies are rewritten (both scheduled as Phase 4 of the migration), so
+ * WorkOS-session requests get the service-role client and the route-level
+ * .eq(userId) scoping — which every caller already applies — is the
+ * enforcement for them. requireAuth has verified the token and resolved
+ * userId before any route can call this.
+ *
+ * REMOVE in Phase 4: once policies read the internal id from the WorkOS
+ * token's external_id claim, WorkOS sessions switch back to the RLS path.
+ */
+export function requestDb(accessToken: string) {
+  return classifyToken(accessToken) === 'workos' ? supabaseAdmin : createUserClient(accessToken);
 }
