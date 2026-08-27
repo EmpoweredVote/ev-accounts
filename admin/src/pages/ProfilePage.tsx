@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
+import { workosSignOut } from '../lib/workosAuth';
 import { useTheme } from '../hooks/useTheme';
 import ConnectedExplainerModal from '../components/ConnectedExplainerModal';
 
@@ -623,6 +624,9 @@ export default function ProfilePage() {
 
   async function handleSignOut() {
     try { await apiFetch('/auth/logout', { method: 'POST' }); } catch { /* ignore */ }
+    // Ends the WorkOS session too when this login came through AuthKit
+    // (decision 0002 transition); no-op for classic sessions.
+    try { await workosSignOut(); } catch { /* ignore */ }
     clearAuth();
     sessionStorage.removeItem('admin_token');
     navigate('/login');

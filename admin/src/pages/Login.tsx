@@ -1,7 +1,13 @@
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, useRef, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router';
 import { useAuthStore } from '../store/authStore';
-import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
+import { getValidRedirect, getAppNameFromRedirect, validateRedirectUrl } from '../lib/redirect';
+import {
+  workosEnabled,
+  startWorkosSignIn,
+  completeWorkosLogin,
+  consumeWorkosRedirectState,
+} from '../lib/workosAuth';
 import InformConstraintsModal from '../components/InformConstraintsModal';
 
 const API_BASE = import.meta.env.VITE_API_URL
@@ -34,6 +40,79 @@ export default function Login() {
     ? `/forgot-password?email=${encodeURIComponent(email)}`
     : '/forgot-password';
 
+  // Shared post-login continuation for both flows: hydrate identity, persist
+  // the token, honor a validated redirect target or land on /profile.
+  async function finishLogin(token: string, redirectTarget: string | null, fallbackEmail = '') {
+    const meRes = await fetch(`${API_BASE}/account/me`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (!meRes.ok) {
+      throw new Error('Failed to load account information.');
+    }
+
+    const meData = await meRes.json();
+
+    setAuth(token, {
+      id: meData.id ?? '',
+      email: meData.email ?? fallbackEmail,
+      isAdmin: meData.is_admin ?? false,
+      tier: meData.tier ?? 'inform',
+      completedOnboarding: meData.completed_onboarding ?? false,
+    });
+
+    sessionStorage.setItem('admin_token', token);
+
+    // After login, honor an explicit (validated) redirect target; otherwise
+    // navigate to /profile on the CURRENT origin. Previously this hard-coded
+    // https://login.empowered.vote/profile, which threw users who logged in on
+    // another origin (e.g. accounts.empowered.vote) off-origin — their
+    // just-saved session lived in this origin's storage, not login's, so they
+    // landed logged-out and had to sign in a second time.
+    if (redirectTarget) {
+      window.location.href = redirectTarget;
+    } else {
+      navigate('/profile');
+    }
+  }
+
+  // WorkOS AuthKit return leg (decision 0002): the hosted page redirects back
+  // here with ?code=. The SDK exchanges it inside completeWorkosLogin; the
+  // redirect target round-trips through OAuth state and is UNTRUSTED, so it
+  // goes through the same allowlist as ?redirect=.
+  const [workosCompleting, setWorkosCompleting] = useState(
+    () => workosEnabled && new URLSearchParams(window.location.search).has('code')
+  );
+  const workosCallbackStarted = useRef(false);
+
+  useEffect(() => {
+    if (!workosCompleting || workosCallbackStarted.current) return;
+    workosCallbackStarted.current = true; // StrictMode re-runs effects — exchange once
+    (async () => {
+      try {
+        const state = await consumeWorkosRedirectState();
+        const token = await completeWorkosLogin();
+        const target = validateRedirectUrl(
+          typeof state?.redirect === 'string' ? state.redirect : null
+        );
+        await finishLogin(token, target);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Sign-in failed');
+        setWorkosCompleting(false);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function handleWorkosSignIn() {
+    setError(null);
+    try {
+      await startWorkosSignIn(validRedirect ? { redirect: validRedirect } : undefined);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not start sign-in');
+    }
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
@@ -56,39 +135,7 @@ export default function Login() {
       }
 
       const loginData = await loginRes.json();
-      const token: string = loginData.access_token;
-
-      const meRes = await fetch(`${API_BASE}/account/me`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      if (!meRes.ok) {
-        throw new Error('Failed to load account information.');
-      }
-
-      const meData = await meRes.json();
-
-      setAuth(token, {
-        id: meData.id ?? '',
-        email: meData.email ?? email,
-        isAdmin: meData.is_admin ?? false,
-        tier: meData.tier ?? 'inform',
-        completedOnboarding: meData.completed_onboarding ?? false,
-      });
-
-      sessionStorage.setItem('admin_token', token);
-
-      // After login, honor an explicit (validated) redirect target; otherwise
-      // navigate to /profile on the CURRENT origin. Previously this hard-coded
-      // https://login.empowered.vote/profile, which threw users who logged in on
-      // another origin (e.g. accounts.empowered.vote) off-origin — their
-      // just-saved session lived in this origin's storage, not login's, so they
-      // landed logged-out and had to sign in a second time.
-      if (validRedirect) {
-        window.location.href = validRedirect;
-      } else {
-        navigate('/profile');
-      }
+      await finishLogin(loginData.access_token, validRedirect, email);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
@@ -117,6 +164,12 @@ export default function Login() {
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
 
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Log in</h2>
+
+        {workosCompleting && (
+          <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
+            Completing sign-in…
+          </div>
+        )}
 
         {appName && (
           <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
@@ -182,6 +235,24 @@ export default function Login() {
             {isSubmitting ? 'Logging in…' : 'Log in'}
           </button>
         </form>
+
+        {workosEnabled && (
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
+              <span className="text-xs text-gray-400 dark:text-gray-600">or</span>
+              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
+            </div>
+            <button
+              type="button"
+              onClick={handleWorkosSignIn}
+              disabled={workosCompleting}
+              className="w-full py-3 px-4 bg-white dark:bg-gray-800 border border-ev-teal dark:border-ev-teal-light text-ev-teal dark:text-ev-teal-light hover:bg-ev-teal/5 dark:hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-xl text-sm transition-colors"
+            >
+              Sign in with the new login (beta)
+            </button>
+          </div>
+        )}
 
         <div className="space-y-3 pt-2">
           <button

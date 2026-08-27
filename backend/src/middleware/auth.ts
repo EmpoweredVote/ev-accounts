@@ -44,6 +44,23 @@ async function verifyWorkosJwt(token: string) {
 }
 
 /**
+ * verifyWorkosAccessToken — verifies a WorkOS token WITHOUT requiring it to
+ * resolve to an internal user id. Only the provisioning endpoint may use this:
+ * a fresh AuthKit signup has no external_id claim yet, which is precisely the
+ * state provisioning exists to fix. Everything else goes through requireAuth.
+ * Returns the verified payload, or null.
+ */
+export async function verifyWorkosAccessToken(token: string): Promise<JWTPayload | null> {
+  if (classifyToken(token) !== 'workos' || WORKOS_JWKS === null) return null;
+  try {
+    const { payload } = await verifyWorkosJwt(token);
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * verifyAccessToken — accepts a token from either issuer during the migration
  * window and resolves the internal user id via tokenIdentity (the one place
  * allowed to interpret token subjects). Returns null for anything invalid.

@@ -1,7 +1,13 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router';
 import { apiFetch } from '../lib/api';
-import { getValidRedirect } from '../lib/redirect';
+import { getValidRedirect, validateRedirectUrl } from '../lib/redirect';
+import {
+  workosEnabled,
+  startWorkosSignIn,
+  completeWorkosLogin,
+  consumeWorkosRedirectState,
+} from '../lib/workosAuth';
 import { useAuthStore, type User } from '../store/authStore';
 import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
@@ -31,6 +37,59 @@ export default function LoginPage() {
 
   // Parse redirect URL once on mount — do NOT re-parse on every render
   const redirectUrl = useMemo(() => getValidRedirect(), []);
+
+  // WorkOS AuthKit return leg (decision 0002): the hosted page redirects back
+  // here with ?code=. The redirect target round-trips through OAuth state and
+  // is UNTRUSTED, so it goes through the same allowlist as ?redirect=. Note:
+  // the WorkOS path never appends the #access_token fragment — that handoff
+  // belongs to the classic flow only.
+  const [workosCompleting, setWorkosCompleting] = useState(
+    () => workosEnabled && new URLSearchParams(window.location.search).has('code')
+  );
+  const workosCallbackStarted = useRef(false);
+
+  useEffect(() => {
+    if (!workosCompleting || workosCallbackStarted.current) return;
+    workosCallbackStarted.current = true; // StrictMode re-runs effects — exchange once
+    (async () => {
+      try {
+        const state = await consumeWorkosRedirectState();
+        const token = await completeWorkosLogin();
+        useAuthStore.setState({ accessToken: token });
+        const me = await apiFetch<MeResponse>('/account/me');
+        const user: User = {
+          id: me.id,
+          email: me.email,
+          tier: me.tier,
+          displayName: me.display_name,
+          completedOnboarding: me.completed_onboarding,
+          locationConsent: me.location_consent,
+        };
+        setAuth(useAuthStore.getState().accessToken ?? token, user);
+        const target = validateRedirectUrl(
+          typeof state?.redirect === 'string' ? state.redirect : null
+        );
+        if (target) {
+          window.location.href = target;
+        } else {
+          navigate('/');
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Sign-in failed');
+        setWorkosCompleting(false);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function handleWorkosSignIn() {
+    setError('');
+    try {
+      await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not start sign-in');
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -102,6 +161,24 @@ export default function LoginPage() {
               {loading ? 'Logging in…' : 'Log in'}
             </PrimaryButton>
           </form>
+
+          {workosEnabled && (
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="flex-1 h-px bg-gray-700" />
+                <span className="text-xs text-gray-500">or</span>
+                <div className="flex-1 h-px bg-gray-700" />
+              </div>
+              <button
+                type="button"
+                onClick={handleWorkosSignIn}
+                disabled={workosCompleting}
+                className="w-full py-3 px-4 bg-transparent border border-ev-teal-light text-ev-teal-light hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-lg text-sm transition-colors"
+              >
+                {workosCompleting ? 'Completing sign-in…' : 'Sign in with the new login (beta)'}
+              </button>
+            </div>
+          )}
 
           <p className="text-center text-sm text-gray-500">
             Don't have an account?{' '}
