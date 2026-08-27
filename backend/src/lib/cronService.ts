@@ -55,10 +55,33 @@ export async function runCalibrationLapseJob(): Promise<void> {
   let warned25 = 0, warned30 = 0, demoted = 0;
 
   try {
-    // Fetch all three thresholds via the updated get_calibration_lapsed_users RPC
-    const { data: day25Data } = await supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 25 });
-    const { data: day30Data } = await supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 30 });
-    const { data: day31Data } = await supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 31 });
+    // Fetch all three thresholds via the updated get_calibration_lapsed_users RPC.
+    //
+    // 🔴 THE ERROR IS LOAD-BEARING — do not go back to destructuring `data` alone.
+    // A failing RPC returns `data: null`, which `?? []` turns into zero lapsed users. The
+    // job then recorded warned_25=0, warned_30=0, demoted=0 and logged level:info: a dead
+    // detector and a healthy-looking run are the same signal. Nobody is wrongly demoted, so
+    // the direction is safe — the silence is the defect. Throwing hands the failure to the
+    // catch below, which writes cron_record_lapse_error instead of a clean zero row.
+    //
+    // An EMPTY array with NO error still means what it says: nobody lapsed today.
+    const [day25Res, day30Res, day31Res] = await Promise.all([
+      supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 25 }),
+      supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 30 }),
+      supabaseAdmin.rpc('get_calibration_lapsed_users', { p_days_threshold: 31 }),
+    ]);
+
+    for (const [threshold, res] of [[25, day25Res], [30, day30Res], [31, day31Res]] as const) {
+      if (res.error) {
+        throw new Error(
+          `get_calibration_lapsed_users(${threshold}) failed: ${res.error.message}`
+        );
+      }
+    }
+
+    const { data: day25Data } = day25Res;
+    const { data: day30Data } = day30Res;
+    const { data: day31Data } = day31Res;
 
     const day25Users: LapsedUser[] = day25Data ?? [];
     const day30Users: LapsedUser[] = day30Data ?? [];

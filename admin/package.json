@@ -9,6 +9,9 @@
     "preview": "vite preview",
     "test": "vitest run"
   },
+  "overrides": {
+    "d3-color": "^3.1.0"
+  },
   "dependencies": {
     "@dagrejs/dagre": "^1.1.4",
     "@headlessui/react": "^2.2.10",
