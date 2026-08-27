@@ -433,10 +433,41 @@ tiebreaker; with it the new ordering matches the old exactly.
 as `row_number() OVER (ORDER BY topic_key)`, and 43 of 44 positions differ from what voters see
 today. Switching is a product decision, not a side effect of a repoint.
 
-**Rewrite, do not merge — the write validators.** `compassContributor` (×2) must keep a pre-flight
-that *agrees with* the season gate, so the caller gets a clean 422. Widening it, as the WIP does, is
-the defect above. `connectService.validateCompassVersions` is an **import** validator and should be
-permissive; the WIP is correct there.
+**Shipped — the write validators.** `compassContributor`'s pre-flight now asks the same question the
+write asks. It checked `is_live = true`, which is promotion state and not the write gate at all; the
+two agreed only because all 44 topics are both live and in Season 1.
+
+The gate is defined **once**, as `WRITABLE_TOPIC_IDS_SQL` in `seasonService`, immediately beside
+`UPSERT_ANSWER_SQL` and sharing its `season_questions JOIN seasons … status='open'` clause. A test
+asserts both statements contain that same join, so tidying one breaks the build.
+
+⚠️ **It deliberately does not read `compass_topics_promoted`.** That view additionally inner-joins
+`compass_topics_current`, so a topic in the open season that lacked a current revision would be
+absent from the view while remaining perfectly writable — a validator rejecting a write the database
+would accept. The view answers *what do we ASK*; the pre-flight answers *what may be RECORDED*.
+
+Three consequences worth naming:
+
+- **A no-open-season refusal is no longer reported as "your topic ids are invalid."** Rejecting every
+  id because the server has no open season is not a caller error, and saying so sends them to debug a
+  correct request. `writableTopicIds` throws `SeasonWriteError` for that case, which the route
+  answers as 409; genuine per-topic problems stay 422 and name the ids.
+- **The single-write path returned 404 and now returns 422.** The topic is not missing — it exists and
+  may hold answers from an earlier season. What is absent is *this season's question about it*.
+- **The sources endpoint had no pre-flight at all**, relying on `assertWritten` firing mid-loop — and
+  that loop has no transaction, so a refusal on the fourth source left the first three written. It now
+  checks every topic before writing anything. ⚠️ This does **not** make the loop atomic; any other
+  mid-loop failure still leaves earlier rows written. That wants a transaction and is untouched here.
+
+Verified identical on today's data: the pre-flight and the old `is_live` check both accept all 44
+topics, 0 difference. A unit test pins the divergence that arrives with Season 2 — a topic dropped
+from the season is not writable even though it is still `is_live`, still exists, and still holds
+Season 1 answers.
+
+**Still to do — `validateTopicIds`.** It gates a **voter's** topic selection, so it is a *promotion*
+question, not a write question, and it still reads `is_live`. Same defect class, different view
+(`compass_topics_promoted`), and a separate change. `connectService.validateCompassVersions` is an
+**import** validator and correctly stays permissive on `compass_topics_current`.
 
 ---
 

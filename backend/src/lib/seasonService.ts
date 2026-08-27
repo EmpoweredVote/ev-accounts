@@ -170,6 +170,72 @@ export const UPSERT_CONTEXT_SOURCES_SQL = `
     SET sources = EXCLUDED.sources, editor_id = EXCLUDED.editor_id, updated_at = now()`;
 
 /**
+ * THE PRE-FLIGHT FORM OF THE WRITE GATE.
+ *
+ * 🔴 IT IS DEFINED HERE, BESIDE `UPSERT_ANSWER_SQL`, ON PURPOSE. A validator
+ * that answers "may I write this?" differently from the statement that does the
+ * writing is worse than no validator at all: it either rejects writes that would
+ * have succeeded, or waves through writes that then fail deeper down, past the
+ * point where the caller can be told anything useful. Its `FROM` clause is the
+ * same `season_questions JOIN seasons … status = 'open'` the upsert sources its
+ * INSERT from. Change one and you must change the other.
+ *
+ * ⚠ NOT `compass_topics_promoted`, and the difference is small but real. That
+ * view additionally inner-joins `compass_topics_current`, so a topic in the open
+ * season that somehow lacked a current revision would be missing from the view
+ * while remaining perfectly writable — a validator rejecting a write the
+ * database would have accepted. The view answers "what do we ASK"; this answers
+ * "what may be RECORDED". ADR 0004 §12, as corrected, is about exactly this.
+ *
+ * Param order: $1 topic_ids (uuid[]).
+ */
+export const WRITABLE_TOPIC_IDS_SQL = `
+  SELECT sq.topic_id::text AS id
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+   WHERE sq.topic_id = ANY($1::uuid[])`;
+
+/** Anything that can run a parameterised query — `pool`, or a transaction client. */
+export interface Queryable {
+  query<R extends import('pg').QueryResultRow = never>(
+    sql: string, params?: unknown[]): Promise<{ rows: R[]; rowCount: number | null }>;
+}
+
+/**
+ * Which of these topics may currently hold an answer.
+ *
+ * 🔴 Throws `SeasonWriteError` when NO season is open, rather than reporting
+ * every topic as invalid. Those are different failures and they read completely
+ * differently to whoever hit them: "these 3 topic ids are not in this season"
+ * is a caller problem, while "all 44 of your topic ids are invalid" is what a
+ * server misconfiguration looks like when a validator refuses to admit it is the
+ * one at fault. The second is what this code did before.
+ *
+ * Pass the transaction client when inside one, so the check sees the same
+ * snapshot as the write that follows it.
+ */
+export async function writableTopicIds(
+  runner: Queryable, topicIds: string[],
+): Promise<Set<string>> {
+  if (topicIds.length === 0) return new Set();
+
+  const { rows } = await runner.query<{ id: string }>(WRITABLE_TOPIC_IDS_SQL, [topicIds]);
+  if (rows.length > 0) return new Set(rows.map(r => r.id));
+
+  // Nothing came back. Distinguish "no season is open" from "none of these
+  // topics is in the open season's set" before blaming the caller.
+  const { rows: state } = await runner.query<{ open_seasons: string }>(
+    `SELECT count(*)::text AS open_seasons FROM inform.seasons WHERE status = 'open'`);
+  if (Number(state[0]?.open_seasons ?? 0) === 0) {
+    throw new SeasonWriteError('NO_OPEN_SEASON', topicIds[0] ?? '',
+      'no open season — no stance can be recorded until one is opened. ' +
+      "Set a row in inform.seasons to status='open' with an opened_at, and give " +
+      'it a season_questions row per topic pinning the ladder revision it asks.');
+  }
+  return new Set();
+}
+
+/**
  * Read the row a write is about to replace, in the OPEN season.
  *
  * 🔴 NOT the newest answered season. This feeds audit diffs, and the write lands
