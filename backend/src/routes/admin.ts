@@ -1157,7 +1157,9 @@ router.post('/compass/politicians/:id/context', async (req, res) => {
       return;
     }
 
-    const context = await adminSetPoliticianContext(id, topic_id, parsed.data);
+    // actorId(req) is the editor of record for this row — the same identity the
+    // audit log gets, so the two cannot disagree about who made the change.
+    const context = await adminSetPoliticianContext(id, topic_id, parsed.data, actorId(req));
     await logAdminAction(
       actorId(req),
       'update_politician_context',

@@ -22,6 +22,7 @@
  */
 
 import { pool } from './db.js';
+import { UPSERT_ANSWER_SQL, assertWritten } from './seasonService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -804,12 +805,13 @@ export async function reviewStance(
       );
     }
 
-    await pool.query(
-      `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-       VALUES ($1, $2, $3)
-       ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
-      [politicianId, record.topicId, approvalValue]
+    // Season-aware write; shape defined once in seasonService. Approving a
+    // staged stance writes it into the OPEN season, pinned to the ladder
+    // revision that season asks — never into a closed one.
+    const approved = await pool.query(UPSERT_ANSWER_SQL,
+      [politicianId, record.topicId, approvalValue, userId]
     );
+    await assertWritten(approved.rowCount ?? 0, record.topicId);
 
     const { rows } = await pool.query(
       `UPDATE staging.stances

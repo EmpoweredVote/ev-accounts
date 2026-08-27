@@ -42,7 +42,7 @@ Purely additive. Nothing reads these yet, so this task carries no risk to live r
 - Consumes: `inform.compass_topics(id)`, `inform.compass_topic_revisions(id)` — both live.
 - Produces: `inform.seasons(id, number, name, status, opened_at, closed_at, public_note)`; `inform.season_questions(season_id, topic_id, topic_revision_id, question_number, display_order)` with `UNIQUE (season_id, topic_id, topic_revision_id)` — later tasks depend on that unique constraint as a foreign-key target.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 ```sql
 BEGIN;
@@ -126,11 +126,11 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run against prod and confirm the rollback**
+- [x] **Step 2: Dry-run against prod and confirm the rollback**
 
 Wrap the body in `BEGIN; ... ROLLBACK;` and run it via the Supabase MCP (DDL cannot run as `ev_api`). Expected: the `RAISE NOTICE` fires, then after rollback `to_regclass('inform.seasons')` is `NULL` again. **Confirm that null before trusting the dry run.**
 
-- [ ] **Step 3: Take the number, apply, commit**
+- [x] **Step 3: Take the number, apply, commit**
 
 ```bash
 git fetch origin && npm run check:migrations --prefix backend
@@ -159,7 +159,7 @@ Still additive — every column is nullable, so no existing write breaks.
 - Consumes: `inform.seasons(id)`, `inform.compass_topic_revisions(id)`, `public.users(id)`.
 - Produces: `season_id`, `topic_revision_id`, `editor_id`, `created_at`, `updated_at` on both `inform.politician_answers` and `inform.politician_context`, all nullable.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 ```sql
 BEGIN;
@@ -204,7 +204,7 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run, confirm the rollback, take the number, apply, commit**
+- [x] **Step 2: Dry-run, confirm the rollback, take the number, apply, commit**
 
 Same procedure as Task 1, Steps 2-3. Expected slot: `CA_0018`.
 
@@ -225,7 +225,7 @@ The only large-DML task. 33,164 answer rows and their context rows.
 - Consumes: everything from Tasks 1 and 2.
 - Produces: exactly one row in `inform.seasons` (`number = 1`, `status = 'closed'`); 44 rows in `inform.season_questions`; every answer and context row carrying `season_id` and `topic_revision_id`.
 
-- [ ] **Step 1: Write the migration**
+- [x] **Step 1: Write the migration**
 
 `editor_id` is **Chris Cantrell — `Kades`, `4e6dde8f-2bd0-4054-824f-4164744165ea`** (confirmed by Chris on 2026-08-25: email
 chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `854fbc06…` — that is
@@ -233,6 +233,14 @@ chris@empowered.vote, username Kades). ⚠ It is **not** `chrisandrewsedu` / `85
 the one `judicial-bail-pretrial` revision. Inferring the editor from "who has authored compass
 content" produced that wrong answer. **Two Chrises work in this system; never resolve either by
 first name or by authorship.**
+
+**DECISION, Chris, 2026-08-25 — `editor_id` for the season-1 rows.** The draft contained a
+contradiction: it stamped Kades onto all 33,164 rows and gated on no NULLs, while writing a
+`public_note` that said editors were null. Chris chose to **keep the stamp** and **fix the note**.
+He is the editor of record for the pre-seasons corpus. The `public_note` below now says that
+authorship was not recorded *per row*, and that the season is attributed to its editor of record —
+which is true, and does not claim he typed each row. The alternative considered and rejected was
+leaving `editor_id` NULL. Do not "fix" this back.
 
 ```sql
 BEGIN;
@@ -242,8 +250,9 @@ SELECT 1, 'Season 1', 'closed',
        '2025-01-01T00:00:00Z', now(),
        'The corpus as it stood before seasons existed. Every answer written up to '
        '2026-08-25 is recorded here, pinned to the ladder revision that was current '
-       'when seasons were introduced. Editors were not recorded at the time, so '
-       'editor_id is null for these rows.'
+       'when seasons were introduced. Per-row authorship was not recorded at the '
+       'time, so the whole season is attributed to its editor of record rather '
+       'than to whoever typed each individual row.'
 WHERE NOT EXISTS (SELECT 1 FROM inform.seasons WHERE number = 1);
 
 -- The season's question set: every live topic, pinned to its current revision,
@@ -315,11 +324,11 @@ END $$;
 COMMIT;
 ```
 
-- [ ] **Step 2: Dry-run against prod and read the NOTICE**
+- [x] **Step 2: Dry-run against prod and read the NOTICE**
 
 Expected: `44 questions pinned, 33164 answers, <n> contexts`. If the question count is not 44, a topic has no current published revision — stop and investigate rather than widening the join.
 
-- [ ] **Step 3: Confirm the rollback, take the number, apply, commit**
+- [x] **Step 3: Confirm the rollback, take the number, apply, commit**
 
 Expected slot: `CA_0019`.
 
@@ -341,7 +350,7 @@ A permanent check that starts **red** and turns green as Task 5 lands. This is t
 **Interfaces:**
 - Produces: `npm run check:answer-seasons --prefix backend`, exit 0 when every live consumer is season-aware.
 
-- [ ] **Step 1: Write the gate**
+- [x] **Step 1: Write the gate**
 
 ```javascript
 #!/usr/bin/env node
@@ -384,13 +393,39 @@ if (offenders.length) {
 console.log('answer-season consumers OK — every live consumer names a season.');
 ```
 
-- [ ] **Step 2: Run it and confirm it fails with the expected list**
+- [x] **Step 2: Run it and confirm it fails with the expected list**
 
 Run: `npm run check:answer-seasons --prefix backend`
-Expected: **FAIL**, listing the live consumers. As of 2026-08-25, 15 files under `backend/src` match. One is a test (`lib/compassStatsService.test.ts`, excluded by the glob) and one is generated (`types/database.types.ts`, regenerated not edited), leaving **13 hand-written consumers**:
-`lib/adminService.ts`, `lib/compassService.ts`, `lib/compassStatsService.ts`, `lib/coverageMapService.ts`, `lib/coverageService.ts`, `lib/electionsMapService.ts`, `lib/federalCoverage.ts`, `lib/researchEvidenceService.ts`, `lib/sourceVerificationService.ts`, `lib/stagingService.ts`, `routes/admin.ts`, `routes/compassAdmin.ts`, `routes/compassContributor.ts`.
+Expected: **FAIL**, listing the live consumers.
 
-- [ ] **Step 3: Wire it into package.json and CI**
+**MEASURED 2026-08-25, and it differs from this plan's first estimate — trust these numbers.**
+The gate reports **24 SQL literals across 11 files** under `backend/src`, plus **5 database
+functions**. The estimate was wrong in three ways, all now handled by the gate itself:
+
+- **The unit is the SQL literal, not the file.** `lib/compassService.ts` alone holds 6 offending
+  literals. A file-level check would have gone green after seasoning one of them.
+- **`routes/admin.ts` and `routes/compassAdmin.ts` are NOT consumers.** They contain the strings
+  `'update_politician_answers'` (an audit-log action name) and `'admin_update_politician_answers'`
+  (an RPC name). Neither queries the table. The gate requires a clause keyword or an `inform.`
+  prefix, so both are correctly excluded.
+- 🔴 **Five DATABASE FUNCTIONS are live consumers and no file under `backend/src` contains them.**
+  `connect.confirm_vq_stance`, `inform.admin_publish_topic_rewrite` and
+  `public.admin_update_politician_answers` each carry `ON CONFLICT (politician_id, topic_id)`;
+  `inform.admin_approve_rewrite_framing` and `public.admin_list_politicians` touch the tables
+  without naming a season. A repo-only gate would have green-lit the Task 6 key swap and broken the
+  admin compass write path at runtime. **Task 5 must therefore ship migrations, not just TypeScript.**
+
+**11 of the sites are `ON CONFLICT (politician_id, topic_id)`** — 7 in the repo, 4 in the database.
+These do not fan out; they raise **`42P10`** the instant the key changes. Verified with a
+scratch-table control: the clause works under the 2-column key, raises `42P10` under the 3-column
+key, and works again when it names the season.
+
+The 11 repo files: `lib/adminService.ts`, `lib/compassService.ts`, `lib/compassStatsService.ts`,
+`lib/coverageMapService.ts`, `lib/coverageService.ts`, `lib/electionsMapService.ts`,
+`lib/federalCoverage.ts`, `lib/researchEvidenceService.ts`, `lib/sourceVerificationService.ts`,
+`lib/stagingService.ts`, `routes/compassContributor.ts`.
+
+- [x] **Step 3: Wire it into package.json and CI**
 
 ```json
 "check:answer-seasons": "node scripts/check-answer-season-consumers.mjs"
@@ -398,7 +433,7 @@ Expected: **FAIL**, listing the live consumers. As of 2026-08-25, 15 files under
 
 Add a CI job mirroring the existing `stance sourcing` job in `.github/workflows/`. ⚠ Note it will be **red until Task 5 completes** — land Tasks 4 and 5 on the same branch so master never sees a failing gate.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add backend/scripts/check-answer-season-consumers.mjs backend/package.json
@@ -505,6 +540,60 @@ Expected: `answer-season consumers OK — every live consumer names a season.`
 git add backend/src
 git commit -m "feat(compass): make every live answer-table consumer season-aware"
 ```
+
+---
+
+### 🔴 FINDINGS FROM TASK 5 THAT CHANGE TASK 6 — read before touching Task 6
+
+Measured on 2026-08-25 by running things, not by reasoning about them.
+
+**1. The ordering in this plan is wrong for WRITES, and it is a hard failure.**
+Task 5's season-aware writes CANNOT work before Task 6. Proven: inserting a season-2 row for a
+pair that already has a season-1 row fails with **`23505`** on `politician_answers_pkey`, because
+the old 2-column key is still in force. Adding a unique index on the triple is **not sufficient** —
+the old PK must be *dropped*. So:
+
+- `ON CONFLICT (politician_id, topic_id, season_id)` raises **`42P10`** until Task 6 lands.
+- 🔴 **Apply Task 6's migration to prod BEFORE merging the Task 5 code.** Render auto-deploys
+  `master`, and migrations here are applied by hand and never by a deploy, so the order is yours to
+  control — but it is not optional. Merging first breaks every admin compass write.
+
+**2. Task 6 must also handle a dependent foreign key the plan does not mention.**
+`politician_context_pkey` cannot be dropped while this exists:
+
+```
+inform.politician_context_evidence.politician_context_evidence_politician_id_topic_id_fkey
+  FOREIGN KEY (politician_id, topic_id) REFERENCES inform.politician_context(politician_id, topic_id) ON DELETE CASCADE
+```
+
+Dropping the PK fails with `2BP01`. **`inform.politician_context_evidence` (183 rows) needs a
+`season_id` of its own** and the FK must be recreated on the triple — otherwise evidence attaches to
+a politician/topic across all seasons, and the citations read has nothing to align it to. This is a
+third table in scope, not mentioned anywhere in this plan.
+
+**3. Five database functions are live consumers.** See Task 4, Step 2. They need their own
+migration; `check:answer-seasons` reports them and stays red until they land. Two are worse than the
+gate can express:
+
+- 🔴 **`public.admin_update_politician_answers` contains an unseasoned `DELETE`:**
+  `DELETE FROM inform.politician_answers WHERE politician_id = $1 AND (v_topic_ids IS NULL OR topic_id != ALL(v_topic_ids))`.
+  After the swap, an admin editing season 2 **deletes that politician's season-1 answers** for every
+  topic absent from the payload. Silent cross-season destruction, far worse than `42P10`. It also
+  never touches `politician_context`, so it strands context rows — this is how `ORPHAN_CONTEXT`
+  grows at *runtime* rather than through a migration.
+- 🔴 **`inform.admin_approve_rewrite_framing` joins `politician_context` to `politician_answers` on
+  the bare pair** and seeds `topic_rewrite_stance_proposals` from the result. After the swap it seeds
+  **duplicate proposals**, silently.
+
+**4. Nothing in this plan ever OPENS a season.** Season 1 is `closed`; Tasks 6, 7 and 8 all assume
+an open one exists (Task 8 reads `SELECT number FROM inform.seasons WHERE status = 'open'`). Until a
+season is opened, every write path correctly refuses with "no open season". Opening one is an
+editorial act — it pins a question set to specific ladder revisions — so it is deliberately not
+invented here. **It needs its own task.**
+
+**5. The fan-out is real and was measured**, not argued. With two seasons, a bare-pair join between
+`politician_answers` and `politician_context` returned **2 rows for one politician/topic**, pairing a
+season-2 answer with season-1 reasoning. The season-aware join returned the correct 1.
 
 ---
 

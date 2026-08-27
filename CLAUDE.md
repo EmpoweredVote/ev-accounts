@@ -108,12 +108,21 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
-- 🔴 **Per-author namespaces are IN USE. Chris's migrations are `CA_NNNN_snake_case.sql`.**
+- 🔴 **Per-author namespaces are IN USE. Chris Cantrell's migrations are `CC_NNNN_snake_case.sql`.**
   Two authors both taking the next free number *before either pushes* is not observable from any
   repo state — fetching does not help; this is the 1681 collision. So the shared sequence is now
   one namespace among several: `CA_1` and `1` are different slots, and each author counts only
   within their own.
-  - **Chris → `CA_`**, counting from `CA_0001` upward. He never reads the shared max again.
+  - 🔴 **NEVER RESOLVE A NAMESPACE BY THE FIRST NAME "CHRIS" — TWO PEOPLE HERE ARE CALLED CHRIS.**
+    Chris **Cantrell** (`Kades`, chris@empowered.vote) and Chris **Andrews** (`chrisandrewsedu`).
+    This line used to read "Chris → `CA_`" and was unresolvable; the initials read as Andrews while
+    the usage was mostly Cantrell's.
+  - **Chris Cantrell → `CC_`**, counting from `CC_0001` upward. He never reads the shared max again.
+  - **`CA_` IS HISTORICALLY MIXED AND IS CLOSED TO NEW WORK.** Measured 2026-08-26: Andrews wrote
+    `CA_0001-0003`, `CA_0011`, `CA_0012`, `CA_0015`, `CA_0016`; Cantrell wrote `CA_0004-CA_0010`
+    (the NC wave) and `CA_0017-CA_0019` (compass seasons). Nothing is retro-renamed — `CA_0012` is
+    embedded in 44 `compass_topic_revisions` rows and one column comment, so its number is load
+    bearing. Read an existing `CA_` slot as "whoever the git history says"; do not infer an author.
   - **The plain `NNNN_` sequence stays as it is** for everyone else; keep taking the next free
     number there exactly as before.
   - Zero-pad `CA_` to four digits so `ls` sorts correctly. Leading zeros are stripped when
@@ -123,7 +132,7 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     embedded in prod data and comments, and `CA_0001` vs a legacy `0001` is only unambiguous if the
     namespace travels with it.
   - Duplicates inside a namespace are still caught, by both checks.
-  - Do **not** retro-rename anything into `CA_`. Renaming an applied migration desyncs the filename
+  - Do **not** retro-rename anything into `CC_` (or out of `CA_`). Renaming an applied migration desyncs the filename
     from its apply order and from numbers already written to prod. The namespace starts now and
     applies going forward only.
   - Namespaced files sort after every numeric one. Harmless: nothing globs the directory
