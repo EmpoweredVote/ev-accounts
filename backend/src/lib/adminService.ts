@@ -495,9 +495,12 @@ export async function adminUpdateStance(
     throw new Error('No fields to update');
   }
 
-  const updatePayload: Record<string, unknown> = {};
-  if (data.text !== undefined) updatePayload['text'] = data.text;
-  if (data.value !== undefined) updatePayload['value'] = data.value;
+  // Typed concretely rather than as Record<string, unknown>: postgrest-js
+  // guards .update() with RejectExcessProperties, which cannot prove an
+  // open index signature has no excess columns.
+  const updatePayload: { text?: string; value?: number } = {};
+  if (data.text !== undefined) updatePayload.text = data.text;
+  if (data.value !== undefined) updatePayload.value = data.value;
 
   const { data: row, error } = await supabaseAdmin
     .schema('inform')
