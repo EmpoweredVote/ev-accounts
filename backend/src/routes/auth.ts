@@ -539,6 +539,22 @@ router.post('/workos/verify-email', authLimiter, async (req: Request, res: Respo
  * Returns 401 with no body if cookie is missing or token is invalid.
  */
 router.get('/session', async (req: Request, res: Response): Promise<void> => {
+  // WorkOS session takes precedence — a headless login stores its refresh token
+  // in ev_wos_session (decision 0002 headless-login). Refresh through WorkOS and
+  // rotate the cookie (WorkOS rotates refresh tokens like Supabase).
+  const wosRefresh = req.cookies?.[WOS_SESSION_COOKIE];
+  if (wosRefresh) {
+    const outcome = await refreshWorkosSession(wosRefresh);
+    if (outcome.status === 'authenticated') {
+      setWosSession(res, outcome.refreshToken);
+      res.status(200).json({ access_token: outcome.accessToken });
+      return;
+    }
+    res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+    res.status(401).end();
+    return;
+  }
+
   const refreshToken = req.cookies?.ev_session;
   if (!refreshToken) {
     res.status(401).end();

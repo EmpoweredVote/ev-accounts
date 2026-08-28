@@ -126,3 +126,28 @@ describe('POST /api/auth/workos/verify-email', () => {
     expect(res.body.code).toBe('INVALID_CODE');
   });
 });
+
+describe('GET /api/auth/session — WorkOS branch', () => {
+  it('refreshes and rotates the ev_wos_session cookie when present', async () => {
+    authSvc.refreshWorkosSession.mockResolvedValueOnce({
+      status: 'authenticated', accessToken: 'at_new', refreshToken: 'rt_new',
+    });
+    const res = await request(app).get('/api/auth/session').set('Cookie', 'ev_wos_session=rt_old');
+    expect(res.status).toBe(200);
+    expect(res.body.access_token).toBe('at_new');
+    expect(authSvc.refreshWorkosSession).toHaveBeenCalledWith('rt_old');
+    expect((res.get('Set-Cookie') ?? []).join(';')).toContain('ev_wos_session=rt_new');
+  });
+
+  it('clears the cookie and 401s when the WorkOS refresh fails', async () => {
+    authSvc.refreshWorkosSession.mockResolvedValueOnce({ status: 'error', code: 'WORKOS_ERROR' });
+    const res = await request(app).get('/api/auth/session').set('Cookie', 'ev_wos_session=rt_dead');
+    expect(res.status).toBe(401);
+    expect((res.get('Set-Cookie') ?? []).join(';')).toContain('ev_wos_session=;');
+  });
+
+  it('401s with no cookie at all', async () => {
+    const res = await request(app).get('/api/auth/session');
+    expect(res.status).toBe(401);
+  });
+});
