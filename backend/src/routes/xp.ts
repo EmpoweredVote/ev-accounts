@@ -19,7 +19,7 @@ const AwardXpBodySchema = z.object({
   source: z.enum(XP_SOURCES),
   amount: z.number().int().positive(),
   idempotency_key: z.string().min(1).max(255),
-  metadata: z.record(z.unknown()).optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
 });
 
 // Validation schema for GET /api/xp/me/history query params

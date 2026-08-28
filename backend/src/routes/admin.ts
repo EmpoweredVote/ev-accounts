@@ -251,7 +251,7 @@ const AccountsQuerySchema = z.object({
 });
 
 const DemoteSchema = z.object({
-  reason: z.record(z.unknown()).optional(),
+  reason: z.record(z.string(), z.unknown()).optional(),
 });
 
 const InviteCapSchema = z.object({

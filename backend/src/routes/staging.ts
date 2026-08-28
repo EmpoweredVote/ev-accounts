@@ -93,7 +93,7 @@ router.post('/politicians/:id/review', async (req: Request, res: Response): Prom
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -147,7 +147,7 @@ router.post('/politicians/:id/merge', async (req: Request, res: Response): Promi
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -203,7 +203,7 @@ router.post('/politicians', async (req: Request, res: Response): Promise<void> =
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -245,7 +245,7 @@ router.patch('/politicians/:id', async (req: Request, res: Response): Promise<vo
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -284,7 +284,7 @@ router.post('/stances/:id/review', async (req: Request, res: Response): Promise<
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -359,7 +359,7 @@ router.post('/stances', async (req: Request, res: Response): Promise<void> => {
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -389,7 +389,7 @@ router.patch('/stances/:id', async (req: Request, res: Response): Promise<void> 
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -427,7 +427,7 @@ router.post('/photos/:id/review', async (req: Request, res: Response): Promise<v
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 
@@ -470,7 +470,7 @@ router.post('/photos', async (req: Request, res: Response): Promise<void> => {
   });
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid request body', details: parsed.error.errors });
+    res.status(400).json({ error: 'Invalid request body', details: parsed.error.issues });
     return;
   }
 

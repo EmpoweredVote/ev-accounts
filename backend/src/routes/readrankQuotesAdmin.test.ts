@@ -38,8 +38,12 @@ const app = express();
 app.use(express.json());
 app.use('/api/admin/readrank-quotes', readrankRouter);
 
-const UUID = '11111111-1111-1111-1111-111111111111';
-const QUESTION_UUID = '22222222-2222-2222-2222-222222222222';
+// Version nibble 4 and variant nibble 8 are required: zod 4's .uuid() enforces the
+// RFC 4122 version+variant fields, which zod 3's did not. The all-1s / all-2s
+// fixtures parsed under zod 3 and 422 under zod 4. No stored id is affected —
+// every uuid in the database already conforms (checked 2026-08-27, 173,971 rows).
+const UUID = '11111111-1111-4111-8111-111111111111';
+const QUESTION_UUID = '22222222-2222-4222-8222-222222222222';
 
 beforeEach(() => {
   mockUpdate.mockReset();
