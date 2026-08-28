@@ -61,4 +61,10 @@ describe('authenticateWithPassword', () => {
     expect(out).toEqual({ status: 'error', code: 'NOT_CONFIGURED' });
     vi.doUnmock('./env.js');
   });
+
+  it('returns WORKOS_ERROR when fetch rejects with a network error', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('network down'));
+    const out = await authenticateWithPassword('a@b.com', 'pw');
+    expect(out).toEqual({ status: 'error', code: 'WORKOS_ERROR' });
+  });
 });
