@@ -20,7 +20,7 @@
 - **Headshots (SEXR-04):** 175 sourced/processed/uploaded (migrations 985-989, audit-only). 0 honest-skips: Josh Haeder (SD Treasurer), Phil McGrane (ID SoS) — no free-licensed portrait, Ballotpedia anti-bot-blocked.
 
 ## Honest-skips
-None � all 175 newly-seeded execs have a headshot (Haeder + McGrane resolved 2026-06-21 from user-supplied portraits).
+None — all 175 newly-seeded execs have a headshot (Haeder + McGrane resolved 2026-06-21 from user-supplied portraits).
 - `-4600005` Josh Haeder — South Dakota State Treasurer
 - `-1600004` Phil McGrane — Idaho Secretary of State
 

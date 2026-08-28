@@ -6,7 +6,7 @@
 -- when applied via psql or Supabase SQL editor.
 --
 -- Counts: 3 execs + 40 senators + 99 delegates + 13 federal = 155 rows
--- HD-20 (external_id -5120020, Michelle Maldonado) intentionally absent — is_vacant=true
+-- HD-20 (external_id -5120020, Michelle Maldonado) intentionally absent â€” is_vacant=true
 --
 -- Storage bucket: politician_photos
 -- CDN base: https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/
@@ -14,10 +14,10 @@
 -- Photo processing (all 155): crop to 4:5 ratio FIRST, then resize 600x750 Lanczos q90.
 -- politician_images.type = 'default' (UI filter: .find(img => img.type === 'default')).
 -- politician_images.url column (NOT storage_url).
--- No BEGIN/COMMIT — each INSERT is autocommit (matching migration 314 pattern).
+-- No BEGIN/COMMIT â€” each INSERT is autocommit (matching migration 314 pattern).
 --
 -- Special notes:
---   Jay Jones (AG, -510003): landscape 425x283 source, upscaled — human spot-check required
+--   Jay Jones (AG, -510003): landscape 425x283 source, upscaled â€” human spot-check required
 --   James Walkinshaw (VA-11, -5102011): walkinshaw.house.gov (not in unitedstates/images mirror)
 --   Senate anomalous keys: Mulchi9, Williams Graves21, Carroll Foy33, VanValkenburg16,
 --                          Bennett-Parker39, Craig19, DeSteph20, McDougle26, McPike29
@@ -27,7 +27,7 @@
 -- VA STATE EXECUTIVES (3 officials)
 -- ============================================================
 
--- Abigail Spanberger (-510001) — Governor of Virginia
+-- Abigail Spanberger (-510001) â€” Governor of Virginia
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -510001),
@@ -38,7 +38,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -510001)
 );
 
--- Ghazala Hashmi (-510002) — Lieutenant Governor of Virginia
+-- Ghazala Hashmi (-510002) â€” Lieutenant Governor of Virginia
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -510002),
@@ -49,7 +49,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -510002)
 );
 
--- Jay Jones (-510003) — Attorney General of Virginia
+-- Jay Jones (-510003) â€” Attorney General of Virginia
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -510003),
@@ -64,7 +64,7 @@ WHERE NOT EXISTS (
 -- VA STATE SENATORS (40 officials, SD-1 through SD-40)
 -- ============================================================
 
--- Timmy French (-5110001) — SD-1
+-- Timmy French (-5110001) â€” SD-1
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110001),
@@ -75,7 +75,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110001)
 );
 
--- Mark D. Obenshain (-5110002) — SD-2
+-- Mark D. Obenshain (-5110002) â€” SD-2
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110002),
@@ -86,7 +86,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110002)
 );
 
--- Christopher T. Head (-5110003) — SD-3
+-- Christopher T. Head (-5110003) â€” SD-3
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110003),
@@ -97,7 +97,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110003)
 );
 
--- David R. Suetterlein (-5110004) — SD-4
+-- David R. Suetterlein (-5110004) â€” SD-4
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110004),
@@ -108,7 +108,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110004)
 );
 
--- T. Travis Hackworth (-5110005) — SD-5
+-- T. Travis Hackworth (-5110005) â€” SD-5
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110005),
@@ -119,7 +119,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110005)
 );
 
--- Todd E. Pillion (-5110006) — SD-6
+-- Todd E. Pillion (-5110006) â€” SD-6
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110006),
@@ -130,7 +130,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110006)
 );
 
--- William M. Stanley Jr. (-5110007) — SD-7
+-- William M. Stanley Jr. (-5110007) â€” SD-7
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110007),
@@ -141,7 +141,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110007)
 );
 
--- Mark J. Peake (-5110008) — SD-8
+-- Mark J. Peake (-5110008) â€” SD-8
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110008),
@@ -152,7 +152,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110008)
 );
 
--- Tammy Brankley Mulchi (-5110009) — SD-9
+-- Tammy Brankley Mulchi (-5110009) â€” SD-9
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110009),
@@ -163,7 +163,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110009)
 );
 
--- Luther H. Cifers III (-5110010) — SD-10
+-- Luther H. Cifers III (-5110010) â€” SD-10
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110010),
@@ -174,7 +174,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110010)
 );
 
--- R. Creigh Deeds (-5110011) — SD-11
+-- R. Creigh Deeds (-5110011) â€” SD-11
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110011),
@@ -185,7 +185,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110011)
 );
 
--- Glen H. Sturtevant Jr. (-5110012) — SD-12
+-- Glen H. Sturtevant Jr. (-5110012) â€” SD-12
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110012),
@@ -196,7 +196,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110012)
 );
 
--- Lashrecse D. Aird (-5110013) — SD-13
+-- Lashrecse D. Aird (-5110013) â€” SD-13
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110013),
@@ -207,7 +207,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110013)
 );
 
--- Lamont Bagby (-5110014) — SD-14
+-- Lamont Bagby (-5110014) â€” SD-14
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110014),
@@ -218,7 +218,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110014)
 );
 
--- Michael J. Jones (-5110015) — SD-15
+-- Michael J. Jones (-5110015) â€” SD-15
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110015),
@@ -229,7 +229,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110015)
 );
 
--- Schuyler T. VanValkenburg (-5110016) — SD-16
+-- Schuyler T. VanValkenburg (-5110016) â€” SD-16
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110016),
@@ -240,7 +240,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110016)
 );
 
--- Emily M. Jordan (-5110017) — SD-17
+-- Emily M. Jordan (-5110017) â€” SD-17
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110017),
@@ -251,7 +251,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110017)
 );
 
--- L. Louise Lucas (-5110018) — SD-18
+-- L. Louise Lucas (-5110018) â€” SD-18
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110018),
@@ -262,7 +262,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110018)
 );
 
--- Christie New Craig (-5110019) — SD-19
+-- Christie New Craig (-5110019) â€” SD-19
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110019),
@@ -273,7 +273,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110019)
 );
 
--- Bill DeSteph (-5110020) — SD-20
+-- Bill DeSteph (-5110020) â€” SD-20
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110020),
@@ -284,7 +284,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110020)
 );
 
--- Angelia Williams Graves (-5110021) — SD-21
+-- Angelia Williams Graves (-5110021) â€” SD-21
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110021),
@@ -295,7 +295,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110021)
 );
 
--- Aaron R. Rouse (-5110022) — SD-22
+-- Aaron R. Rouse (-5110022) â€” SD-22
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110022),
@@ -306,7 +306,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110022)
 );
 
--- Mamie E. Locke (-5110023) — SD-23
+-- Mamie E. Locke (-5110023) â€” SD-23
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110023),
@@ -317,7 +317,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110023)
 );
 
--- J.D. Diggs (-5110024) — SD-24
+-- J.D. Diggs (-5110024) â€” SD-24
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110024),
@@ -328,7 +328,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110024)
 );
 
--- Richard H. Stuart (-5110025) — SD-25
+-- Richard H. Stuart (-5110025) â€” SD-25
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110025),
@@ -339,7 +339,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110025)
 );
 
--- Ryan T. McDougle (-5110026) — SD-26
+-- Ryan T. McDougle (-5110026) â€” SD-26
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110026),
@@ -350,7 +350,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110026)
 );
 
--- Tara A. Durant (-5110027) — SD-27
+-- Tara A. Durant (-5110027) â€” SD-27
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110027),
@@ -361,7 +361,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110027)
 );
 
--- Bryce E. Reeves (-5110028) — SD-28
+-- Bryce E. Reeves (-5110028) â€” SD-28
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110028),
@@ -372,7 +372,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110028)
 );
 
--- Jeremy S. McPike (-5110029) — SD-29
+-- Jeremy S. McPike (-5110029) â€” SD-29
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110029),
@@ -383,7 +383,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110029)
 );
 
--- Danica A. Roem (-5110030) — SD-30
+-- Danica A. Roem (-5110030) â€” SD-30
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110030),
@@ -394,7 +394,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110030)
 );
 
--- Russet W. Perry (-5110031) — SD-31
+-- Russet W. Perry (-5110031) â€” SD-31
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110031),
@@ -405,7 +405,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110031)
 );
 
--- Kannan Srinivasan (-5110032) — SD-32
+-- Kannan Srinivasan (-5110032) â€” SD-32
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110032),
@@ -416,7 +416,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110032)
 );
 
--- Jennifer D. Carroll Foy (-5110033) — SD-33
+-- Jennifer D. Carroll Foy (-5110033) â€” SD-33
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110033),
@@ -427,7 +427,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110033)
 );
 
--- Scott A. Surovell (-5110034) — SD-34
+-- Scott A. Surovell (-5110034) â€” SD-34
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110034),
@@ -438,7 +438,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110034)
 );
 
--- David W. Marsden (-5110035) — SD-35
+-- David W. Marsden (-5110035) â€” SD-35
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110035),
@@ -449,7 +449,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110035)
 );
 
--- Stella G. Pekarsky (-5110036) — SD-36
+-- Stella G. Pekarsky (-5110036) â€” SD-36
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110036),
@@ -460,7 +460,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110036)
 );
 
--- Saddam Azlan Salim (-5110037) — SD-37
+-- Saddam Azlan Salim (-5110037) â€” SD-37
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110037),
@@ -471,7 +471,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110037)
 );
 
--- Jennifer B. Boysko (-5110038) — SD-38
+-- Jennifer B. Boysko (-5110038) â€” SD-38
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110038),
@@ -482,7 +482,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110038)
 );
 
--- Elizabeth B. Bennett-Parker (-5110039) — SD-39
+-- Elizabeth B. Bennett-Parker (-5110039) â€” SD-39
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110039),
@@ -493,7 +493,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5110039)
 );
 
--- Barbara A. Favola (-5110040) — SD-40
+-- Barbara A. Favola (-5110040) â€” SD-40
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5110040),
@@ -508,7 +508,7 @@ WHERE NOT EXISTS (
 -- VA HOUSE OF DELEGATES (99 officials, HD-1..HD-100 minus HD-20)
 -- ============================================================
 
--- Patrick A. Hope (-5120001) — HD-1
+-- Patrick A. Hope (-5120001) â€” HD-1
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120001),
@@ -519,7 +519,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120001)
 );
 
--- Adele Y. McClure (-5120002) — HD-2
+-- Adele Y. McClure (-5120002) â€” HD-2
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120002),
@@ -530,7 +530,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120002)
 );
 
--- Alfonso H. Lopez (-5120003) — HD-3
+-- Alfonso H. Lopez (-5120003) â€” HD-3
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120003),
@@ -541,7 +541,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120003)
 );
 
--- Charniele L. Herring (-5120004) — HD-4
+-- Charniele L. Herring (-5120004) â€” HD-4
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120004),
@@ -552,7 +552,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120004)
 );
 
--- R. Kirk McPike (-5120005) — HD-5
+-- R. Kirk McPike (-5120005) â€” HD-5
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120005),
@@ -563,7 +563,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120005)
 );
 
--- Richard C. Sullivan, Jr. (-5120006) — HD-6
+-- Richard C. Sullivan, Jr. (-5120006) â€” HD-6
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120006),
@@ -574,7 +574,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120006)
 );
 
--- Karen Keys-Gamarra (-5120007) — HD-7
+-- Karen Keys-Gamarra (-5120007) â€” HD-7
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120007),
@@ -585,7 +585,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120007)
 );
 
--- Irene Shin (-5120008) — HD-8
+-- Irene Shin (-5120008) â€” HD-8
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120008),
@@ -596,7 +596,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120008)
 );
 
--- Karrie K. Delaney (-5120009) — HD-9
+-- Karrie K. Delaney (-5120009) â€” HD-9
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120009),
@@ -607,7 +607,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120009)
 );
 
--- Dan Helmer (-5120010) — HD-10
+-- Dan Helmer (-5120010) â€” HD-10
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120010),
@@ -618,7 +618,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120010)
 );
 
--- Gretchen M. Bulova (-5120011) — HD-11
+-- Gretchen M. Bulova (-5120011) â€” HD-11
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120011),
@@ -629,7 +629,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120011)
 );
 
--- Holly M. Seibold (-5120012) — HD-12
+-- Holly M. Seibold (-5120012) â€” HD-12
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120012),
@@ -640,7 +640,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120012)
 );
 
--- Marcus B. Simon (-5120013) — HD-13
+-- Marcus B. Simon (-5120013) â€” HD-13
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120013),
@@ -651,7 +651,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120013)
 );
 
--- Vivian E. Watts (-5120014) — HD-14
+-- Vivian E. Watts (-5120014) â€” HD-14
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120014),
@@ -662,7 +662,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120014)
 );
 
--- Laura Jane Cohen (-5120015) — HD-15
+-- Laura Jane Cohen (-5120015) â€” HD-15
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120015),
@@ -673,7 +673,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120015)
 );
 
--- Paul E. Krizek (-5120016) — HD-16
+-- Paul E. Krizek (-5120016) â€” HD-16
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120016),
@@ -684,7 +684,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120016)
 );
 
--- Garrett McGuire (-5120017) — HD-17
+-- Garrett McGuire (-5120017) â€” HD-17
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120017),
@@ -695,7 +695,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120017)
 );
 
--- Kathy KL Tran (-5120018) — HD-18
+-- Kathy KL Tran (-5120018) â€” HD-18
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120018),
@@ -706,7 +706,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120018)
 );
 
--- Rozia A. Henson, Jr. (-5120019) — HD-19
+-- Rozia A. Henson, Jr. (-5120019) â€” HD-19
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120019),
@@ -717,7 +717,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120019)
 );
 
--- Josh Thomas (-5120021) — HD-21
+-- Josh Thomas (-5120021) â€” HD-21
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120021),
@@ -728,7 +728,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120021)
 );
 
--- Elizabeth R. Guzman (-5120022) — HD-22
+-- Elizabeth R. Guzman (-5120022) â€” HD-22
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120022),
@@ -739,7 +739,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120022)
 );
 
--- Margaret Angela Franklin (-5120023) — HD-23
+-- Margaret Angela Franklin (-5120023) â€” HD-23
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120023),
@@ -750,7 +750,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120023)
 );
 
--- Luke E. Torian (-5120024) — HD-24
+-- Luke E. Torian (-5120024) â€” HD-24
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120024),
@@ -761,7 +761,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120024)
 );
 
--- Briana D. Sewell (-5120025) — HD-25
+-- Briana D. Sewell (-5120025) â€” HD-25
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120025),
@@ -772,7 +772,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120025)
 );
 
--- JJ Singh (-5120026) — HD-26
+-- JJ Singh (-5120026) â€” HD-26
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120026),
@@ -783,7 +783,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120026)
 );
 
--- Atoosa R. Reaser (-5120027) — HD-27
+-- Atoosa R. Reaser (-5120027) â€” HD-27
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120027),
@@ -794,7 +794,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120027)
 );
 
--- David A. Reid (-5120028) — HD-28
+-- David A. Reid (-5120028) â€” HD-28
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120028),
@@ -805,7 +805,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120028)
 );
 
--- Fernando J. Martinez (-5120029) — HD-29
+-- Fernando J. Martinez (-5120029) â€” HD-29
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120029),
@@ -816,7 +816,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120029)
 );
 
--- John C McAuliff (-5120030) — HD-30
+-- John C McAuliff (-5120030) â€” HD-30
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120030),
@@ -827,7 +827,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120030)
 );
 
--- Delores Oates (-5120031) — HD-31
+-- Delores Oates (-5120031) â€” HD-31
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120031),
@@ -838,7 +838,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120031)
 );
 
--- William D. Wiley (-5120032) — HD-32
+-- William D. Wiley (-5120032) â€” HD-32
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120032),
@@ -849,7 +849,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120032)
 );
 
--- Justin L. Pence (-5120033) — HD-33
+-- Justin L. Pence (-5120033) â€” HD-33
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120033),
@@ -860,7 +860,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120033)
 );
 
--- Tony O. Wilt (-5120034) — HD-34
+-- Tony O. Wilt (-5120034) â€” HD-34
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120034),
@@ -871,7 +871,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120034)
 );
 
--- Chris Runion (-5120035) — HD-35
+-- Chris Runion (-5120035) â€” HD-35
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120035),
@@ -882,7 +882,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120035)
 );
 
--- Ellen H. McLaughlin (-5120036) — HD-36
+-- Ellen H. McLaughlin (-5120036) â€” HD-36
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120036),
@@ -893,7 +893,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120036)
 );
 
--- Terry L. Austin (-5120037) — HD-37
+-- Terry L. Austin (-5120037) â€” HD-37
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120037),
@@ -904,7 +904,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120037)
 );
 
--- Sam Rasoul (-5120038) — HD-38
+-- Sam Rasoul (-5120038) â€” HD-38
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120038),
@@ -915,7 +915,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120038)
 );
 
--- Will P. Davis (-5120039) — HD-39
+-- Will P. Davis (-5120039) â€” HD-39
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120039),
@@ -926,7 +926,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120039)
 );
 
--- Joseph P. McNamara (-5120040) — HD-40
+-- Joseph P. McNamara (-5120040) â€” HD-40
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120040),
@@ -937,7 +937,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120040)
 );
 
--- Lily V. Franklin (-5120041) — HD-41
+-- Lily V. Franklin (-5120041) â€” HD-41
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120041),
@@ -948,7 +948,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120041)
 );
 
--- Jason S. Ballard (-5120042) — HD-42
+-- Jason S. Ballard (-5120042) â€” HD-42
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120042),
@@ -959,7 +959,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120042)
 );
 
--- James W. Morefield (-5120043) — HD-43
+-- James W. Morefield (-5120043) â€” HD-43
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120043),
@@ -970,7 +970,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120043)
 );
 
--- Israel D. O'Quinn (-5120044) — HD-44
+-- Israel D. O'Quinn (-5120044) â€” HD-44
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120044),
@@ -981,7 +981,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120044)
 );
 
--- Terry G. Kilgore (-5120045) — HD-45
+-- Terry G. Kilgore (-5120045) â€” HD-45
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120045),
@@ -992,7 +992,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120045)
 );
 
--- Mitchell Cornett (-5120046) — HD-46
+-- Mitchell Cornett (-5120046) â€” HD-46
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120046),
@@ -1003,7 +1003,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120046)
 );
 
--- Wren M. Williams (-5120047) — HD-47
+-- Wren M. Williams (-5120047) â€” HD-47
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120047),
@@ -1014,7 +1014,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120047)
 );
 
--- Eric J. Phillips (-5120048) — HD-48
+-- Eric J. Phillips (-5120048) â€” HD-48
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120048),
@@ -1025,7 +1025,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120048)
 );
 
--- Madison Whittle (-5120049) — HD-49
+-- Madison Whittle (-5120049) â€” HD-49
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120049),
@@ -1036,7 +1036,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120049)
 );
 
--- Thomas C. Wright, Jr. (-5120050) — HD-50
+-- Thomas C. Wright, Jr. (-5120050) â€” HD-50
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120050),
@@ -1047,7 +1047,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120050)
 );
 
--- Eric Zehr (-5120051) — HD-51
+-- Eric Zehr (-5120051) â€” HD-51
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120051),
@@ -1058,7 +1058,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120051)
 );
 
--- Wendell S. Walker (-5120052) — HD-52
+-- Wendell S. Walker (-5120052) â€” HD-52
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120052),
@@ -1069,7 +1069,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120052)
 );
 
--- Timothy P. Griffin (-5120053) — HD-53
+-- Timothy P. Griffin (-5120053) â€” HD-53
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120053),
@@ -1080,7 +1080,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120053)
 );
 
--- Katrina E. Callsen (-5120054) — HD-54
+-- Katrina E. Callsen (-5120054) â€” HD-54
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120054),
@@ -1091,7 +1091,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120054)
 );
 
--- Amy J. Laufer (-5120055) — HD-55
+-- Amy J. Laufer (-5120055) â€” HD-55
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120055),
@@ -1102,7 +1102,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120055)
 );
 
--- Thomas A. Garrett, Jr. (-5120056) — HD-56
+-- Thomas A. Garrett, Jr. (-5120056) â€” HD-56
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120056),
@@ -1113,7 +1113,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120056)
 );
 
--- May Nivar (-5120057) — HD-57
+-- May Nivar (-5120057) â€” HD-57
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120057),
@@ -1124,7 +1124,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120057)
 );
 
--- Rodney T. Willett (-5120058) — HD-58
+-- Rodney T. Willett (-5120058) â€” HD-58
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120058),
@@ -1135,7 +1135,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120058)
 );
 
--- Hyland F. Fowler, Jr. (-5120059) — HD-59
+-- Hyland F. Fowler, Jr. (-5120059) â€” HD-59
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120059),
@@ -1146,7 +1146,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120059)
 );
 
--- Scott A. Wyatt (-5120060) — HD-60
+-- Scott A. Wyatt (-5120060) â€” HD-60
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120060),
@@ -1157,7 +1157,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120060)
 );
 
--- Michael J. Webert (-5120061) — HD-61
+-- Michael J. Webert (-5120061) â€” HD-61
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120061),
@@ -1168,7 +1168,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120061)
 );
 
--- Karen Fleming Hamilton (-5120062) — HD-62
+-- Karen Fleming Hamilton (-5120062) â€” HD-62
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120062),
@@ -1179,7 +1179,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120062)
 );
 
--- Phillip A. Scott (-5120063) — HD-63
+-- Phillip A. Scott (-5120063) â€” HD-63
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120063),
@@ -1190,7 +1190,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120063)
 );
 
--- Stacey A. Carroll (-5120064) — HD-64
+-- Stacey A. Carroll (-5120064) â€” HD-64
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120064),
@@ -1201,7 +1201,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120064)
 );
 
--- Joshua G. Cole (-5120065) — HD-65
+-- Joshua G. Cole (-5120065) â€” HD-65
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120065),
@@ -1212,7 +1212,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120065)
 );
 
--- Nicole Cole (-5120066) — HD-66
+-- Nicole Cole (-5120066) â€” HD-66
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120066),
@@ -1223,7 +1223,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120066)
 );
 
--- Hillary Pugh Kent (-5120067) — HD-67
+-- Hillary Pugh Kent (-5120067) â€” HD-67
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120067),
@@ -1234,7 +1234,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120067)
 );
 
--- M. Keith Hodges (-5120068) — HD-68
+-- M. Keith Hodges (-5120068) â€” HD-68
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120068),
@@ -1245,7 +1245,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120068)
 );
 
--- Mark C. Downey (-5120069) — HD-69
+-- Mark C. Downey (-5120069) â€” HD-69
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120069),
@@ -1256,7 +1256,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120069)
 );
 
--- Shelly A. Simonds (-5120070) — HD-70
+-- Shelly A. Simonds (-5120070) â€” HD-70
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120070),
@@ -1267,7 +1267,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120070)
 );
 
--- Jessica L. Anderson (-5120071) — HD-71
+-- Jessica L. Anderson (-5120071) â€” HD-71
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120071),
@@ -1278,7 +1278,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120071)
 );
 
--- R. Lee Ware (-5120072) — HD-72
+-- R. Lee Ware (-5120072) â€” HD-72
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120072),
@@ -1289,7 +1289,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120072)
 );
 
--- Leslie Chambers Mehta (-5120073) — HD-73
+-- Leslie Chambers Mehta (-5120073) â€” HD-73
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120073),
@@ -1300,7 +1300,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120073)
 );
 
--- Mike A. Cherry (-5120074) — HD-74
+-- Mike A. Cherry (-5120074) â€” HD-74
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120074),
@@ -1311,7 +1311,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120074)
 );
 
--- Lindsey Dougherty (-5120075) — HD-75
+-- Lindsey Dougherty (-5120075) â€” HD-75
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120075),
@@ -1322,7 +1322,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120075)
 );
 
--- Debra D. Gardner (-5120076) — HD-76
+-- Debra D. Gardner (-5120076) â€” HD-76
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120076),
@@ -1333,7 +1333,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120076)
 );
 
--- Charles H. Schmidt, Jr. (-5120077) — HD-77
+-- Charles H. Schmidt, Jr. (-5120077) â€” HD-77
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120077),
@@ -1344,7 +1344,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120077)
 );
 
--- Betsy B. Carr (-5120078) — HD-78
+-- Betsy B. Carr (-5120078) â€” HD-78
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120078),
@@ -1355,7 +1355,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120078)
 );
 
--- Rae C. Cousins (-5120079) — HD-79
+-- Rae C. Cousins (-5120079) â€” HD-79
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120079),
@@ -1366,7 +1366,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120079)
 );
 
--- Destiny L. LeVere Bolling (-5120080) — HD-80
+-- Destiny L. LeVere Bolling (-5120080) â€” HD-80
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120080),
@@ -1377,7 +1377,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120080)
 );
 
--- Delores L. McQuinn (-5120081) — HD-81
+-- Delores L. McQuinn (-5120081) â€” HD-81
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120081),
@@ -1388,7 +1388,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120081)
 );
 
--- Kimberly Pope Adams (-5120082) — HD-82
+-- Kimberly Pope Adams (-5120082) â€” HD-82
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120082),
@@ -1399,7 +1399,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120082)
 );
 
--- Howard Otto Wachsmann, Jr. (-5120083) — HD-83
+-- Howard Otto Wachsmann, Jr. (-5120083) â€” HD-83
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120083),
@@ -1410,7 +1410,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120083)
 );
 
--- Nadarius E. Clark (-5120084) — HD-84
+-- Nadarius E. Clark (-5120084) â€” HD-84
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120084),
@@ -1421,7 +1421,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120084)
 );
 
--- Marcia S. Price (-5120085) — HD-85
+-- Marcia S. Price (-5120085) â€” HD-85
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120085),
@@ -1432,7 +1432,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120085)
 );
 
--- Virgil Gene Thornton, Sr. (-5120086) — HD-86
+-- Virgil Gene Thornton, Sr. (-5120086) â€” HD-86
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120086),
@@ -1443,7 +1443,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120086)
 );
 
--- Jeion A. Ward (-5120087) — HD-87
+-- Jeion A. Ward (-5120087) â€” HD-87
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120087),
@@ -1454,7 +1454,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120087)
 );
 
--- Don Scott (-5120088) — HD-88
+-- Don Scott (-5120088) â€” HD-88
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120088),
@@ -1465,7 +1465,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120088)
 );
 
--- Karen Robins Carnegie (-5120089) — HD-89
+-- Karen Robins Carnegie (-5120089) â€” HD-89
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120089),
@@ -1476,7 +1476,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120089)
 );
 
--- James A. Leftwich, Jr. (-5120090) — HD-90
+-- James A. Leftwich, Jr. (-5120090) â€” HD-90
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120090),
@@ -1487,7 +1487,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120090)
 );
 
--- C. E. Hayes, Jr. (-5120091) — HD-91
+-- C. E. Hayes, Jr. (-5120091) â€” HD-91
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120091),
@@ -1498,7 +1498,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120091)
 );
 
--- Bonita G. Anthony (-5120092) — HD-92
+-- Bonita G. Anthony (-5120092) â€” HD-92
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120092),
@@ -1509,7 +1509,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120092)
 );
 
--- Jackie Hope Glass (-5120093) — HD-93
+-- Jackie Hope Glass (-5120093) â€” HD-93
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120093),
@@ -1520,7 +1520,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120093)
 );
 
--- Phil M. Hernandez (-5120094) — HD-94
+-- Phil M. Hernandez (-5120094) â€” HD-94
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120094),
@@ -1531,7 +1531,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120094)
 );
 
--- Alex Q. Askew (-5120095) — HD-95
+-- Alex Q. Askew (-5120095) â€” HD-95
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120095),
@@ -1542,7 +1542,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120095)
 );
 
--- Kelly K. Convirs-Fowler (-5120096) — HD-96
+-- Kelly K. Convirs-Fowler (-5120096) â€” HD-96
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120096),
@@ -1553,7 +1553,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120096)
 );
 
--- Michael Feggans (-5120097) — HD-97
+-- Michael Feggans (-5120097) â€” HD-97
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120097),
@@ -1564,7 +1564,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120097)
 );
 
--- Andrew Rice (-5120098) — HD-98
+-- Andrew Rice (-5120098) â€” HD-98
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120098),
@@ -1575,7 +1575,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120098)
 );
 
--- Anne Ferrell H. Tata (-5120099) — HD-99
+-- Anne Ferrell H. Tata (-5120099) â€” HD-99
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120099),
@@ -1586,7 +1586,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5120099)
 );
 
--- Robert S. Bloxom, Jr. (-5120100) — HD-100
+-- Robert S. Bloxom, Jr. (-5120100) â€” HD-100
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5120100),
@@ -1601,7 +1601,7 @@ WHERE NOT EXISTS (
 -- VA FEDERAL OFFICIALS (13 officials: 2 US senators + 11 US reps)
 -- ============================================================
 
--- Mark Warner (-400080) — US Senator VA
+-- Mark Warner (-400080) â€” US Senator VA
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -400080),
@@ -1612,7 +1612,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -400080)
 );
 
--- Tim Kaine (-400079) — US Senator VA
+-- Tim Kaine (-400079) â€” US Senator VA
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -400079),
@@ -1623,7 +1623,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -400079)
 );
 
--- Rob Wittman (-5102001) — US Rep VA-1
+-- Rob Wittman (-5102001) â€” US Rep VA-1
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102001),
@@ -1634,7 +1634,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102001)
 );
 
--- Jen Kiggans (-5102002) — US Rep VA-2
+-- Jen Kiggans (-5102002) â€” US Rep VA-2
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102002),
@@ -1645,7 +1645,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102002)
 );
 
--- Bobby Scott (-5102003) — US Rep VA-3
+-- Bobby Scott (-5102003) â€” US Rep VA-3
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102003),
@@ -1656,7 +1656,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102003)
 );
 
--- Jennifer McClellan (-5102004) — US Rep VA-4
+-- Jennifer McClellan (-5102004) â€” US Rep VA-4
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102004),
@@ -1667,7 +1667,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102004)
 );
 
--- Ben Cline (-5102005) — US Rep VA-5
+-- Ben Cline (-5102005) â€” US Rep VA-5
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102005),
@@ -1678,7 +1678,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102005)
 );
 
--- Morgan Griffith (-5102006) — US Rep VA-6
+-- Morgan Griffith (-5102006) â€” US Rep VA-6
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102006),
@@ -1689,7 +1689,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102006)
 );
 
--- Eugene Vindman (-5102007) — US Rep VA-7
+-- Eugene Vindman (-5102007) â€” US Rep VA-7
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102007),
@@ -1700,7 +1700,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102007)
 );
 
--- Don Beyer (-5102008) — US Rep VA-8
+-- Don Beyer (-5102008) â€” US Rep VA-8
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102008),
@@ -1711,7 +1711,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102008)
 );
 
--- John McGuire (-5102009) — US Rep VA-9
+-- John McGuire (-5102009) â€” US Rep VA-9
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102009),
@@ -1722,7 +1722,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102009)
 );
 
--- Suhas Subramanyam (-5102010) — US Rep VA-10
+-- Suhas Subramanyam (-5102010) â€” US Rep VA-10
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102010),
@@ -1733,7 +1733,7 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -5102010)
 );
 
--- James Walkinshaw (-5102011) — US Rep VA-11
+-- James Walkinshaw (-5102011) â€” US Rep VA-11
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -5102011),

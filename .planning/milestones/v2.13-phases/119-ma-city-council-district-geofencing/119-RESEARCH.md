@@ -651,7 +651,7 @@ WHERE p.external_id BETWEEN -{city_min} AND -{city_max}
 
 | # | Claim | Section | Risk if Wrong |
 |---|-------|---------|---------------|
-| A1 | ~~X0014 availability~~ VERIFIED � grep backend/migrations and backend/scripts confirms X0014 appears only in load-boston-council-boundaries.ts registry comment ("Next available is X0014"), never in a migration | � | Resolved |
+| A1 | ~~X0014 availability~~ VERIFIED — grep backend/migrations and backend/scripts confirms X0014 appears only in load-boston-council-boundaries.ts registry comment ("Next available is X0014"), never in a migration | — | Resolved |
 | A2 | MassGIS WARDSPRECINCTS2022_POLY geometry is in 4326 when outSR=4326 specified | Import Script Strategy | Script inserts geometries with wrong SRID → Path 0 join fails silently |
 | A3 | Springfield Ward 1–8 in MassGIS aligns with Ward 1–8 in migration 352 councillor title strings | District Re-Linking | Wrong councillor linked to wrong ward → geofencing returns wrong representative |
 | A4 | Boston citywide LOCAL and LOCAL_EXEC rows (geo_id='2507000') do NOT yet have tiger_geoid set (migration 622 didn't include them) | Boston Backfill | If already set, migration 656 Step B/C are no-ops — safe but the backfill is harmless |
