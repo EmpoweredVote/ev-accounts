@@ -1,6 +1,6 @@
 import { Router, json } from 'express';
 import type { Request, Response } from 'express';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { z } from 'zod';
 import { submitFeedback, type FeedbackScreenshot } from '../lib/feedbackService.js';
 
@@ -32,7 +32,7 @@ const FeedbackBody = z.object({
 const feedbackLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   max: 5,
-  keyGenerator: (req) => req.ip ?? 'unknown',
+  keyGenerator: (req) => (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
   message: { code: 'RATE_LIMIT_EXCEEDED', message: 'Too many submissions. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,

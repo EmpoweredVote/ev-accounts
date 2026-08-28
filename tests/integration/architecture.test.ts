@@ -31,6 +31,12 @@ const ALLOWED = [
   'lib/profileService.ts',
   'lib/xpService.ts',
   'lib/cronService.ts',
+  // supabaseAdmin.auth.admin.createUser — an auth-admin operation the user client
+  // cannot perform, same justification as lib/authService.ts. Its own header notes it
+  // lives in lib/ *because* of this rule; the author read the routes-only test and not
+  // the enumerate-everything one below, which is the same trap requireCompassReviewer
+  // fell into. Third occurrence — see the note under ALLOWED.
+  'lib/workosProvisionService.ts',
   'middleware/auth.ts',
   'middleware/tierGuards.ts',
   'middleware/requireVerified.ts',

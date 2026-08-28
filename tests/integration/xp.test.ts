@@ -30,7 +30,7 @@ describe('POST /api/xp/award', () => {
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: 100,
         idempotency_key: 'idem-key-001',
@@ -44,7 +44,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'not-a-valid-service-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: 100,
         idempotency_key: 'idem-key-002',
@@ -68,7 +68,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-quest-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'not_a_valid_source',
         amount: 100,
         idempotency_key: 'idem-key-003',
@@ -98,7 +98,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-quest-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: -50,
         idempotency_key: 'idem-key-005',
@@ -113,7 +113,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-quest-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: 100,
       });
@@ -127,7 +127,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-quest-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: 0,
         idempotency_key: 'idem-key-006',
@@ -145,7 +145,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-quest-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'civic_trivia_championship_score',
         amount: 100,
         idempotency_key: 'idem-key-007',
@@ -162,7 +162,7 @@ describe('POST /api/xp/award', () => {
       .set('Content-Type', 'application/json')
       .set('X-Service-Key', 'test-trivia-key')
       .send({
-        user_id: '00000000-0000-0000-0000-000000000001',
+        user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
         amount: 100,
         idempotency_key: 'idem-key-008',
@@ -222,7 +222,7 @@ describe('GET /api/xp/:userId', () => {
   it('does not require an Authorization header (public endpoint)', async () => {
     // Should get past auth and either 400 (invalid UUID) or 404/500 (valid UUID, no DB)
     // We use a valid UUID format to verify no 401 is returned
-    const res = await request(app).get('/api/xp/00000000-0000-0000-0000-000000000001');
+    const res = await request(app).get('/api/xp/00000000-0000-4000-8000-000000000001');
     // Without live Supabase, this will error at DB level (500 or network error)
     // but NOT 401 — confirming the route requires no auth
     expect(res.status).not.toBe(401);

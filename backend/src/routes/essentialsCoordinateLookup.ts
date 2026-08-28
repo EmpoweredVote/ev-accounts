@@ -28,7 +28,7 @@
 
 import { Router } from 'express';
 import type { Request, Response } from 'express';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { optionalAuth } from '../middleware/auth.js';
 import { classifyCoordinate } from '../lib/coordinateValidation.js';
 import { getRepresentativesByCoordinate } from '../lib/essentialsService.js';
@@ -40,7 +40,7 @@ const router = Router();
 const coordinateLookupLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 30,
-  keyGenerator: (req) => req.ip ?? 'unknown',
+  keyGenerator: (req) => (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
   standardHeaders: true,
   legacyHeaders: false,
 });

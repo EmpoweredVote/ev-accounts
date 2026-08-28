@@ -31,7 +31,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import yaml from 'js-yaml';
+import { load as yamlLoad } from 'js-yaml';
 import { Pool } from 'pg';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -99,7 +99,7 @@ function loadTheirRecords(snapshotRoot, state) {
   if (!existsSync(dir)) return new Map();
   const byPlace = new Map();
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.yml'))) {
-    const parsed = yaml.load(readFileSync(path.join(dir, file), 'utf8'));
+    const parsed = yamlLoad(readFileSync(path.join(dir, file), 'utf8'));
     if (!Array.isArray(parsed)) continue;
     for (const rec of parsed) {
       const div = rec?.office?.division_ocdid;

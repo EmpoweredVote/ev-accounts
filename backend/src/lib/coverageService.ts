@@ -18,7 +18,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import yaml from 'js-yaml';
+import { load as yamlLoad } from 'js-yaml';
 import { pool } from './db.js';
 import { HAS_RENDERABLE_PHOTO_SQL } from './photoCoverage.js';
 
@@ -162,7 +162,7 @@ export function readCoverageFile(state: string): CoverageFile {
   if (!fs.existsSync(file)) {
     throw new Error(`No coverage file for state "${state}" (${file})`);
   }
-  const parsed = yaml.load(fs.readFileSync(file, 'utf8')) as CoverageFile;
+  const parsed = yamlLoad(fs.readFileSync(file, 'utf8')) as CoverageFile;
   if (!parsed || !Array.isArray(parsed.locations)) {
     throw new Error(`Malformed coverage file: ${file}`);
   }

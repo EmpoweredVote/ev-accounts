@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { z } from 'zod';
 import { createInviteCodes, getMyInviteCodes, claimInviteCode } from '../lib/inviteService.js';
 import { generateInviteCodeIfAllowed, getMyInvitees } from '../lib/inviteQuotaService.js';
@@ -18,7 +18,8 @@ const router = Router();
 const inviteSendLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
   max: 10,
-  keyGenerator: (req) => (req as AuthenticatedRequest).userId ?? req.ip ?? 'unknown',
+  keyGenerator: (req) =>
+    (req as AuthenticatedRequest).userId ?? (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
   message: { code: 'RATE_LIMIT_EXCEEDED', message: 'Invite limit reached for today' },
   standardHeaders: true,
   legacyHeaders: false,

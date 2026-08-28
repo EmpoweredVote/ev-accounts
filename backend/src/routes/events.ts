@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
 import { optionalAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -16,7 +16,8 @@ const TrackBody = z.object({
 const trackLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 10,
-  keyGenerator: (req) => (req as AuthenticatedRequest).userId ?? req.ip ?? 'unknown',
+  keyGenerator: (req) =>
+    (req as AuthenticatedRequest).userId ?? (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
   standardHeaders: true,
   legacyHeaders: false,
 });

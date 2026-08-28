@@ -111,7 +111,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -153,7 +156,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
 
       # No npm install: the check is dependency-free, so it runs straight off node.
       - name: Check for duplicate migration numbers
@@ -189,7 +195,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
 
       # Dependency-free, so it runs straight off node with no npm install.
       - name: Check answer deletes decide what happens to their context
@@ -221,7 +230,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
 
       # Dependency-free, so it runs straight off node with no npm install.
       - name: Check confirm-cal-access.ts has not been re-enabled with the broken predicate
@@ -239,7 +251,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
 
       # essentials.offices.politician_id was dropped (ADR 0002 phase 5), so referencing it is a
       # runtime 42703 undefined_column. Catch it here instead. Dependency-free, like the check above.
@@ -265,7 +280,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -322,7 +340,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -370,7 +391,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -456,7 +480,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -496,7 +523,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -552,7 +582,10 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
