@@ -79,3 +79,15 @@ export function authenticateWithPassword(
     user_agent: ctx?.userAgent,
   });
 }
+
+export function authenticateWithEmailCode(code: string, pendingToken: string): Promise<AuthOutcome> {
+  return callAuthenticate({
+    grant_type: 'urn:workos:oauth:grant-type:email-verification:code',
+    code,
+    pending_authentication_token: pendingToken,
+  });
+}
+
+export function refreshWorkosSession(refreshToken: string): Promise<AuthOutcome> {
+  return callAuthenticate({ grant_type: 'refresh_token', refresh_token: refreshToken });
+}

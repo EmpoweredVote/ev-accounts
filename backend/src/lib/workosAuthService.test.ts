@@ -4,7 +4,7 @@ vi.mock('./env.js', () => ({
   env: { WORKOS_CLIENT_ID: 'client_TEST', WORKOS_API_KEY: 'sk_test_123' },
 }));
 
-import { authenticateWithPassword } from './workosAuthService.js';
+import { authenticateWithPassword, authenticateWithEmailCode, refreshWorkosSession } from './workosAuthService.js';
 
 function okJson(body: unknown) {
   return { ok: true, status: 200, json: async () => body, text: async () => JSON.stringify(body) };
@@ -66,5 +66,47 @@ describe('authenticateWithPassword', () => {
     (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('network down'));
     const out = await authenticateWithPassword('a@b.com', 'pw');
     expect(out).toEqual({ status: 'error', code: 'WORKOS_ERROR' });
+  });
+});
+
+describe('authenticateWithEmailCode', () => {
+  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('sends the email-verification code grant with the pending token', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      okJson({ access_token: 'at2', refresh_token: 'rt2' })
+    );
+    const out = await authenticateWithEmailCode('123456', 'pat_1');
+    expect(out).toEqual({ status: 'authenticated', accessToken: 'at2', refreshToken: 'rt2' });
+    const sent = JSON.parse((fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body);
+    expect(sent).toMatchObject({
+      grant_type: 'urn:workos:oauth:grant-type:email-verification:code',
+      code: '123456',
+      pending_authentication_token: 'pat_1',
+    });
+  });
+});
+
+describe('refreshWorkosSession', () => {
+  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('sends the refresh_token grant and returns rotated tokens', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      okJson({ access_token: 'at3', refresh_token: 'rt3' })
+    );
+    const out = await refreshWorkosSession('rt_old');
+    expect(out).toEqual({ status: 'authenticated', accessToken: 'at3', refreshToken: 'rt3' });
+    const sent = JSON.parse((fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body);
+    expect(sent).toMatchObject({ grant_type: 'refresh_token', refresh_token: 'rt_old' });
+  });
+
+  it('surfaces a failed refresh as an error, not a throw', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      errJson(400, { code: 'invalid_grant' })
+    );
+    const out = await refreshWorkosSession('rt_dead');
+    expect(out.status === 'invalid_credentials' || out.status === 'error').toBe(true);
   });
 });
