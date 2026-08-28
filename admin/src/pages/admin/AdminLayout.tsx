@@ -13,6 +13,7 @@ const navItems = [
   { label: 'Roles', to: '/admin/roles' },
   { label: 'Role Audit', to: '/admin/role-audit' },
   { label: 'Topics', to: '/admin/topics' },
+  { label: 'Seasons', to: '/admin/seasons' },
   { label: 'Stance Breakdown', to: '/admin/stance-breakdown' },
   { label: 'Politicians', to: '/admin/politicians' },
   { label: 'Categories', to: '/admin/categories' },

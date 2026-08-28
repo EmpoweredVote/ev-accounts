@@ -1,0 +1,379 @@
+<!--
+  PROTOTYPE — THROWAWAY. Do not ship.
+
+  Question: what should the board-facing "Season 2 composition" visual look like?
+  Round 3: single dark-mode design (Chris's pick — C-style stats over the B bridge).
+  Every topic row is clickable and opens a detail popup: question, the five options,
+  and the REAL Season 1 answer distribution (inform.politician_answers, 2026-08-28,
+  33,164 answers from 4,070 politicians). Changed topics show the S1 → S2 diff.
+
+  Data honesty:
+    • Season 1 topics, questions, five options and answer distributions are REAL.
+    • The Bail & Pretrial → "Deference to Prosecutors" rename is REAL (rev 1 → 3).
+    • The drops, the three new topics (and their example ladders), and the
+      Healthcare wording change are an ILLUSTRATIVE SCENARIO, marked on the page.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Season 2 Composition — Board Mockup</title>
+<style>
+  :root {
+    --ev-red: #FF5740;
+    --ev-teal: #00657C;
+    --ev-teal-light: #59B0C4;
+    --ev-yellow: #FED12E;
+    --bg: #17181a;
+    --panel: #212226;
+    --panel2: #2a2b30;
+    --line: #35373d;
+    --text: #f3f4f6;
+    --dim: #9ca3af;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); padding-bottom: 60px;
+  }
+  .hidden { display: none !important; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 36px 24px 6px; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { color: var(--ev-yellow); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+  h1 { font-size: 32px; letter-spacing: -0.02em; margin: 8px 0 4px; }
+  .sub { color: var(--dim); font-size: 14px; max-width: 760px; }
+  .bigband { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 26px; }
+  .big { border-radius: 14px; padding: 18px 20px; }
+  .big .n { font-size: 46px; font-weight: 800; line-height: 1; }
+  .big .lbl { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-top: 8px; }
+  .big .hint { font-size: 12px; opacity: .75; margin-top: 4px; }
+  .c-carry { background: #0d3321; } .c-carry .n { color: #4ade80; }
+  .c-chg { background: #3d2c07; } .c-chg .n { color: var(--ev-yellow); }
+  .c-drop { background: #26282c; } .c-drop .n { color: var(--dim); }
+  .c-add { background: #04303c; } .c-add .n { color: var(--ev-teal-light); }
+  .equation { text-align: center; font-size: 15px; color: #d1d5db; margin: 22px 0 4px; }
+  .equation b { color: #fff; font-size: 18px; }
+
+  .scenario-note {
+    max-width: 1200px; margin: 18px auto 0; padding: 8px 14px;
+    background: #33290a; border: 1px dashed #a16207; border-radius: 8px;
+    font-size: 12.5px; color: #fde68a;
+  }
+
+  /* ---------- bridge ---------- */
+  .body-wrap { max-width: 1200px; margin: 22px auto 0; padding: 0 24px; }
+  .bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .season-col { border: 1px solid var(--line); background: var(--panel); border-radius: 14px; overflow: hidden; }
+  .season-col h2 { background: #000; color: #fff; padding: 12px 18px; font-size: 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .season-col h2 .count { font-size: 13px; font-weight: 500; opacity: .75; margin-left: auto; }
+  .st { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; padding: 2px 9px; border-radius: 999px; }
+  .st-open { background: var(--ev-teal-light); color: #05303c; }
+  .st-draft { background: var(--ev-yellow); color: #57430a; }
+  .colhint { font-size: 11.5px; color: var(--dim); padding: 7px 16px; border-bottom: 1px solid var(--line); background: var(--panel2); }
+  .topicrow {
+    padding: 7px 14px; font-size: 13.5px; border-bottom: 1px solid #2c2d32;
+    display: flex; align-items: center; gap: 9px; cursor: pointer;
+  }
+  .topicrow:hover { background: #313238; }
+  .topicrow:last-child { border-bottom: 0; }
+  .topicrow .num { color: #6b7280; font-variant-numeric: tabular-nums; width: 22px; text-align: right; flex-shrink: 0; }
+  .topicrow .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .r-drop .nm { color: #7c8087; text-decoration: line-through; }
+  .r-chg { background: #2e2609; } .r-chg:hover { background: #3a3010; }
+  .r-add { background: #0b3441; } .r-add:hover { background: #12414f; }
+  .r-add .nm { color: #bae6fd; font-weight: 600; }
+  .badge { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; border-radius: 4px; padding: 1px 6px; flex-shrink: 0; }
+  .b-drop { background: #3a3d42; color: #9ca3af; }
+  .b-chg { background: var(--ev-yellow); color: #57430a; }
+  .b-add { background: var(--ev-teal); color: #fff; }
+  .spark { display: flex; gap: 1px; margin-left: auto; flex-shrink: 0; width: 72px; height: 12px; border-radius: 2px; overflow: hidden; }
+  .spark div { height: 100%; }
+  .spark-empty { margin-left: auto; flex-shrink: 0; font-size: 10px; color: #6b7280; }
+  .legend { display: flex; gap: 16px; align-items: center; justify-content: center; margin: 16px 0 0; font-size: 11.5px; color: var(--dim); flex-wrap: wrap; }
+  .legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+
+  /* ---------- modal ---------- */
+  #overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 90;
+    display: flex; align-items: flex-start; justify-content: center; padding: 40px 16px;
+    overflow-y: auto;
+  }
+  #modal {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    max-width: 860px; width: 100%; padding: 26px 30px 30px; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  #modal .close { position: absolute; top: 14px; right: 16px; background: none; border: 0; color: var(--dim); font-size: 22px; cursor: pointer; padding: 4px 8px; border-radius: 8px; }
+  #modal .close:hover { background: var(--panel2); color: #fff; }
+  #modal .cat { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; border-radius: 5px; padding: 3px 9px; display: inline-block; margin-bottom: 10px; }
+  #modal h3 { font-size: 22px; margin-bottom: 2px; }
+  #modal .qn { color: var(--dim); font-size: 12.5px; margin-bottom: 14px; }
+  #modal .question { font-size: 16px; color: #e5e7eb; background: var(--panel2); border-left: 3px solid var(--ev-teal-light); border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; }
+  #modal .why { font-size: 13px; color: var(--dim); font-style: italic; margin-bottom: 16px; }
+  #modal .sec-lbl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); margin: 18px 0 10px; }
+  .opt { display: grid; grid-template-columns: 26px 1fr 210px; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid #2c2d32; }
+  .opt:last-child { border-bottom: 0; }
+  .opt .v { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #0b0c0e; }
+  .opt .t { font-size: 13.5px; color: #d1d5db; line-height: 1.45; }
+  .opt .bar { display: flex; align-items: center; gap: 8px; }
+  .opt .track { flex: 1; height: 14px; background: #33353b; border-radius: 4px; overflow: hidden; }
+  .opt .fill { height: 100%; border-radius: 4px 0 0 4px; }
+  .opt .pct { font-size: 12px; color: #e5e7eb; font-variant-numeric: tabular-nums; width: 78px; text-align: right; flex-shrink: 0; }
+  .dist-note { font-size: 12px; color: var(--dim); margin-top: 10px; }
+  .diffbox { background: var(--panel2); border: 1px solid #5a4a12; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; }
+  .diffbox .f { font-size: 12px; font-weight: 700; color: var(--ev-yellow); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .diffbox .pair { font-size: 15px; line-height: 1.8; }
+  .diff-del { background: #4c1d1d; color: #fca5a5; text-decoration: line-through; border-radius: 3px; padding: 0 3px; }
+  .diff-ins { background: #14432a; color: #86efac; border-radius: 3px; padding: 0 3px; }
+  .retirebox { background: #2c2d32; border: 1px solid #3a3d42; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; font-size: 13.5px; color: #c8cbd0; }
+  .newbox { background: #04303c; border: 1px solid #0e5468; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; font-size: 13.5px; color: #a5e3f2; }
+  .example-tag { font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #fde68a; background: #33290a; border: 1px dashed #a16207; border-radius: 4px; padding: 1px 6px; margin-left: 8px; vertical-align: 2px; }
+</style>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Empowered Compass · Board review</div>
+    <h1>Season 2: what’s changing</h1>
+    <div class="sub">Season 1 asked 44 questions of 4,070 politicians. Season 2 keeps what works, retires what didn’t, and adds what this cycle demands. <b style="color:#e5e7eb;">Click any topic</b> — even an unchanged one — to see its question, its five options, and how politicians actually answered in Season 1.</div>
+    <div class="bigband">
+      <div class="big c-carry"><div class="n" id="n-carried"></div><div class="lbl">Carried forward</div><div class="hint">same question, same ladder</div></div>
+      <div class="big c-chg"><div class="n" id="n-changed"></div><div class="lbl">Changed</div><div class="hint">carried with revised wording</div></div>
+      <div class="big c-drop"><div class="n" id="n-dropped"></div><div class="lbl">Retired</div><div class="hint">Season 1 only</div></div>
+      <div class="big c-add"><div class="n" id="n-added"></div><div class="lbl">New</div><div class="hint">first asked in Season 2</div></div>
+    </div>
+    <div class="equation" id="equation"></div>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <div class="scenario-note">⚠ Mockup: Season 1 content and answer data are real. The drops, the three new topics and the Healthcare wording change are an illustrative scenario.</div>
+  <div class="legend" style="margin-bottom:14px;">
+    <span>Season 1 answer mix per topic:</span>
+    <span><span class="sw" style="background:#2f6fb0;"></span>Option 1</span>
+    <span><span class="sw" style="background:#59B0C4;"></span>2</span>
+    <span><span class="sw" style="background:#9ca3af;"></span>3</span>
+    <span><span class="sw" style="background:#e0a63a;"></span>4</span>
+    <span><span class="sw" style="background:#FF5740;"></span>Option 5</span>
+  </div>
+  <div class="bridge">
+    <div class="season-col">
+      <h2>Season 1 <span class="st st-open">Open</span> <span class="count" id="s1-count"></span></h2>
+      <div class="colhint">Every question voters and politicians saw in Season 1 · the bar shows where politicians landed</div>
+      <div id="s1"></div>
+    </div>
+    <div class="season-col">
+      <h2>Season 2 <span class="st st-draft">Draft</span> <span class="count" id="s2-count"></span></h2>
+      <div class="colhint">The proposed Season 2 question set, pending board sign-off</div>
+      <div id="s2"></div>
+    </div>
+  </div>
+</div>
+
+<div id="overlay" class="hidden"><div id="modal"></div></div>
+
+<script>
+/* ---- REAL Season 1 data (inform schema, exported 2026-08-28) ---- */
+const S1 = [{"n":1,"short":"Abortion","title":"Reproductive Rights and Abortion Access","q":"What legal framework should govern abortion access?","id":"af2fdfd6-02c4-49df-b09c-cf8536f4773f"},{"n":2,"short":"AI Oversight","title":"Artificial Intelligence Oversight","q":"How much should government oversee artificial intelligence development and deployment?","id":"666bf03d-81fc-4138-ab15-69ae734c9023"},{"n":3,"short":"Campaign Finance","title":"Campaign Finance Reform","q":"What rules should govern money in political campaigns and elections?","id":"92730f69-ae57-401c-8ad1-2d07834a895d"},{"n":4,"short":"Childcare","title":"Childcare Affordability & Access","q":"How should government address the cost and availability of childcare?","id":"c1ac1330-47f7-44ec-baf3-c913d926b97c"},{"n":5,"short":"City Sanitation and Cleanliness","title":"City Sanitation and Cleanliness","q":"How should your community approach street cleanliness and sanitation?","id":"7687de4f-4d0b-462a-b803-bdfb23b16b42"},{"n":6,"short":"Civil Rights","title":"Civil Rights and Social Justice","q":"What role should government play in addressing racial and social inequality?","id":"0bc588c6-39e1-4084-b5de-cac909b8b762"},{"n":7,"short":"Climate Change","title":"Climate Change and Environmental Protection","q":"What priority should climate change receive in energy and economic policy?","id":"f1e44d66-5d27-4b51-b54f-b7ace86f6a3c"},{"n":8,"short":"Data Centers","title":"Data Center Development & Energy Costs","q":"How should government manage the growth of large-scale data centers?","id":"4559b513-0fd8-4ed1-babd-f3b554162f40"},{"n":9,"short":"Deportation","title":"Deportation Priorities","q":"Who should be deported, and how aggressively?","id":"44905f3b-e105-4f6c-afc7-5d223813dbac"},{"n":10,"short":"Economic Development Incentives","title":"Economic Development Incentives","q":"How should government attract businesses and support economic development?","id":"eb3d1247-0de1-4b7f-baec-7259861efd53"},{"n":11,"short":"Fossil Fuels","title":"Fossil Fuel Policy","q":"What role should fossil fuels play in the nation's energy future?","id":"a22215c3-6693-4bc2-b248-01aebba14570"},{"n":12,"short":"Growth and Development Pace","title":"Growth and Development Pace","q":"How should government manage population growth and new development?","id":"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4"},{"n":13,"short":"Healthcare","title":"Healthcare Access","q":"What role should government play in healthcare access?","id":"e8dad4a8-eb93-4931-91f5-d8fb5d7dd529"},{"n":14,"short":"Homelessness","title":"Criminalization of Homelessness","q":"How should government address people sleeping or camping in public spaces?","id":"4938766b-b45a-46e3-93bd-b8b30651271a"},{"n":15,"short":"Homelessness Response","title":"Homelessness Response","q":"What should be your community's primary strategy for addressing homelessness?","id":"6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f"},{"n":16,"short":"Housing","title":"Affordable Housing","q":"What role should government play in making sure people can afford housing?","id":"669cac97-66a6-4087-b036-936fbe62efb3"},{"n":17,"short":"Immigration","title":"Immigration and Treatment of Immigrants","q":"How welcoming or restrictive should government be toward immigrants?","id":"4e2c69ce-591e-4197-9cd5-7aceff79d390"},{"n":18,"short":"Jail Capacity","title":"Jail Capacity and Incarceration Alternatives","q":"How should government respond to jail overcrowding and criminal justice demand?","id":"c267e137-0ff9-4e7d-9d13-e3cea1756cd0"},{"n":19,"short":"Court Access","title":"Access to Justice","q":"Should it be easy or hard to take someone to court?","id":"9d45acaf-1ba4-4cb8-95e1-5ed985223b91"},{"n":20,"short":"Bail & Pretrial","title":"Bail and Pretrial Decisions","q":"Should a judge trust what prosecutors say, or watch them closely?","id":"1fab5edf-6151-4da0-9704-a7f2113ba54c"},{"n":21,"short":"Criminal Justice","title":"Criminal Justice Approach","q":"When someone breaks the law, what matters most?","id":"9db07b16-1076-4b7d-ad89-ebe7b51f4336"},{"n":22,"short":"Government Deference","title":"Judicial & Prosecutorial Discretion","q":"When government and a citizen clash, who gets the benefit of the doubt?","id":"e5e48f0e-8f3a-40e1-8080-889fea389603"},{"n":23,"short":"Interpretation","title":"Judicial Interpretation","q":"Does the law change with the times, or does it mean what it said when it was written?","id":"448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee"},{"n":24,"short":"Police Accountability","title":"Police Accountability","q":"When government employees do wrong, does the office defend them or hold them accountable?","id":"7bad33eb-e93e-4d94-8822-97212d49bde5"},{"n":25,"short":"Prosecution","title":"Prosecution Priorities","q":"Does the office try to put people away, or find better solutions?","id":"abb99d95-cbb1-4617-8f8b-f220ef6028ca"},{"n":26,"short":"Legal Transparency","title":"Transparency in Legal Proceedings","q":"How much should the public know about what happens in court?","id":"6674d87e-999d-433a-aab7-3f626f59fd5f"},{"n":27,"short":"Environmental Protection vs. Development","title":"Environmental Protection vs. Development","q":"How should your community balance new development with environmental preservation?","id":"1935979c-b290-42e4-baa5-8cb0138b4ffa"},{"n":28,"short":"Local Immigration Enforcement","title":"Local Immigration Enforcement","q":"How should your community's law enforcement relate to federal immigration enforcement?","id":"b9ccee94-ad96-4f10-b655-889d8e5abe92"},{"n":29,"short":"Medicare/aid","title":"Medicare / Medicaid","q":"How should Medicare and Medicaid be funded and structured?","id":"cab61e8a-64fe-4bbd-bc08-fe9914d0091b"},{"n":30,"short":"Misinformation","title":"Misinformation and the Role of Algorithms in Democracy","q":"What responsibility do platforms and government have in combating online misinformation?","id":"ddd65d64-9dc7-4208-a30f-59f4b9c0653d"},{"n":31,"short":"Public Safety Approach","title":"Public Safety Approach","q":"How should your community fund and operate public safety services?","id":"e9ebefcd-c496-45e8-b816-a79f8442ba85"},{"n":32,"short":"Redistricting","title":"State Redistricting and Gerrymandering","q":"Who should draw electoral district boundaries and how should they be determined?","id":"48cc9585-ec22-4f53-8d42-6839828dd36f"},{"n":33,"short":"Religious Freedom","title":"Religious Freedom","q":"What role should religion play in government, public institutions, and policymaking?","id":"6b9ba6d9-1001-43f5-b073-4d37130696fd"},{"n":34,"short":"Rent Regulation","title":"Rent Regulation","q":"What role should government play in regulating rents and protecting tenants?","id":"c308e8e8-caac-44f5-ab04-dbfecf40bbe2"},{"n":35,"short":"Residential Zoning","title":"Residential Zoning","q":"What should guide decisions about housing density and neighborhood character in your community?","id":"d4f18138-a2e0-4110-b925-7387d9d0d16d"},{"n":36,"short":"Same-Sex Marriage","title":"Same-Sex Marriage","q":"What legal recognition should same-sex marriages receive?","id":"c5ab4eab-702f-49b8-9277-8ea53f3835c6"},{"n":37,"short":"School Vouchers","title":"School Vouchers & Public Education Funding","q":"What role should vouchers and school choice play in the public education system?","id":"00b95a6a-75db-4521-b523-3326bba938de"},{"n":38,"short":"Social Security","title":"Social Security","q":"How should Social Security be funded and structured for the future?","id":"87d20824-a6e9-407b-983c-65440084a0ab"},{"n":39,"short":"Tariffs","title":"United States Tariff Policy","q":"How should trade policy balance domestic industry with global commerce?","id":"683c8084-2281-4920-a07c-18439b2dd413"},{"n":40,"short":"Taxes","title":"Taxation and Public Spending","q":"How should government balance what it collects in taxes against what it spends on public services?","id":"f7e5678d-dadd-4556-a2fc-446e24642ceb"},{"n":41,"short":"Trans Athletes","title":"Transgender Athletes","q":"How should sports leagues determine eligibility for transgender athletes?","id":"d1618b9c-0b9e-45af-b986-bb33d270b8e4"},{"n":42,"short":"Transportation Priorities","title":"Transportation Priorities","q":"Where should government focus its transportation investment?","id":"ba59337e-30e2-4aba-a39a-426b3366eb27"},{"n":43,"short":"Ukraine Support","title":"Ukraine - Russia Conflict","q":"What level of military and financial support should be provided to Ukraine?","id":"24e9212c-b011-422a-865c-093e35050901"},{"n":44,"short":"Voting Rights","title":"Voting Rights and Electoral Integrity","q":"How should voter access be balanced with election security?","id":"d1792200-1d3b-4955-a0b7-0e6980d7a7b2"}];
+const LADDERS = {"af2fdfd6-02c4-49df-b09c-cf8536f4773f":[{"value":1,"text":"ensure abortion is legal, accessible, and publicly funded at all stages of pregnancy."},{"value":2,"text":"keep abortion legal and accessible through the second trimester with rare exceptions afterward."},{"value":3,"text":"allow abortion in the first trimester and in cases of rape, incest, or maternal health risks."},{"value":4,"text":"restrict abortion to only cases involving rape, incest, or serious threats to the mother's life."},{"value":5,"text":"ban abortion completely with no exceptions and impose criminal penalties for providers and patients."}],"666bf03d-81fc-4138-ab15-69ae734c9023":[{"value":1,"text":"Allow AI companies to develop and deploy technology freely without government interference"},{"value":2,"text":"Suggest AI safety guidelines but let companies choose whether to follow them"},{"value":3,"text":"Require AI developers to disclose risks and be held responsible when their systems cause harm"},{"value":4,"text":"Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing"},{"value":5,"text":"Impose strict approval requirements and ban AI systems that could cause serious harm"}],"92730f69-ae57-401c-8ad1-2d07834a895d":[{"value":1,"text":"ban all private money in politics and publicly fund campaigns"},{"value":2,"text":"strictly limit corporate donations and dark money groups"},{"value":3,"text":"require full disclosure of all political donations"},{"value":4,"text":"reduce restrictions on political donations and spending"},{"value":5,"text":"eliminate all campaign finance laws and limits"}],"c1ac1330-47f7-44ec-baf3-c913d926b97c":[{"value":1,"text":"Establishing publicly funded universal childcare so that all families have access regardless of income"},{"value":2,"text":"Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"},{"value":3,"text":"Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"},{"value":4,"text":"Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families"},{"value":5,"text":"Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"}],"7687de4f-4d0b-462a-b803-bdfb23b16b42":[{"value":1,"text":"Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure"},{"value":2,"text":"Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness communitywide"},{"value":3,"text":"Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners"},{"value":4,"text":"Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible"},{"value":5,"text":"Privatize sanitation services and require residents and businesses to contract for cleanup directly"}],"0bc588c6-39e1-4084-b5de-cac909b8b762":[{"value":1,"text":"mandate racial equity requirements in all institutions and provide reparations"},{"value":2,"text":"strengthen civil rights enforcement and address systemic discrimination"},{"value":3,"text":"maintain current civil rights laws while promoting equal opportunity"},{"value":4,"text":"limit federal civil rights enforcement to clear cases of discrimination"},{"value":5,"text":"eliminate affirmative action and all race-based government programs"}],"f1e44d66-5d27-4b51-b54f-b7ace86f6a3c":[{"value":1,"text":"declare a climate emergency and ban all activities that increase carbon emissions"},{"value":2,"text":"rapidly transition to renewable energy and phase out fossil fuels by 2030"},{"value":3,"text":"invest in clean energy while gradually reducing reliance on fossil fuels"},{"value":4,"text":"let market forces drive any transition to cleaner energy sources"},{"value":5,"text":"reject climate change policies and focus on economic growth instead"}],"4559b513-0fd8-4ed1-babd-f3b554162f40":[{"value":1,"text":"Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"},{"value":2,"text":"Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers"},{"value":3,"text":"Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"},{"value":4,"text":"Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"},{"value":5,"text":"Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"}],"44905f3b-e105-4f6c-afc7-5d223813dbac":[{"value":1,"text":"Stop deportations entirely and protect undocumented residents from removal"},{"value":2,"text":"Only deport people convicted of serious violent crimes"},{"value":3,"text":"Focus deportation on recent arrivals while leaving long-term residents in place"},{"value":4,"text":"Deport everyone without legal status, starting with those who have criminal records"},{"value":5,"text":"Move quickly to deport all undocumented people regardless of how long they've lived here or family ties"}],"eb3d1247-0de1-4b7f-baec-7259861efd53":[{"value":1,"text":"No corporate tax incentives; invest in public services and infrastructure to attract business organically"},{"value":2,"text":"Small business support and local entrepreneur programs only; avoid large corporate subsidies"},{"value":3,"text":"Targeted incentives for specific industries with community benefit agreements and job quality requirements"},{"value":4,"text":"Compete actively for major employers with significant tax abatements and infrastructure investment"},{"value":5,"text":"Offer maximum incentives to attract any large employer; economic growth is the top priority"}],"a22215c3-6693-4bc2-b248-01aebba14570":[{"value":1,"text":"immediately ban all new fossil fuel drilling and extraction"},{"value":2,"text":"stop issuing new permits for fossil fuel drilling"},{"value":3,"text":"maintain current levels of fossil fuel production with existing environmental regulations"},{"value":4,"text":"expand fossil fuel drilling permits"},{"value":5,"text":"remove environmental restrictions and maximize fossil fuel extraction"}],"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4":[{"value":1,"text":"Impose growth limits; require voter approval for major annexations or large-scale developments"},{"value":2,"text":"Allow growth only where existing infrastructure can support it; slow approvals until capacity catches up"},{"value":3,"text":"Plan proactively — invest in infrastructure ahead of growth to support responsible expansion"},{"value":4,"text":"Streamline permitting, reduce fees, and actively recruit development to grow the tax base"},{"value":5,"text":"Remove regulatory barriers to development entirely; let market demand determine growth pace"}],"e8dad4a8-eb93-4931-91f5-d8fb5d7dd529":[{"value":1,"text":"Make healthcare free and available to everyone, paid for and run by the public sector"},{"value":2,"text":"Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance"},{"value":3,"text":"Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else"},{"value":4,"text":"Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"},{"value":5,"text":"Stay out of healthcare entirely and let private markets handle all coverage decisions"}],"4938766b-b45a-46e3-93bd-b8b30651271a":[{"value":1,"text":"Protecting the right to sleep in public spaces and redirecting enforcement budgets toward permanent supportive housing and mental health services"},{"value":2,"text":"Decriminalizing public sleeping while investing in shelter capacity, outreach workers, and voluntary service connections"},{"value":3,"text":"Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"},{"value":4,"text":"Prohibiting encampments on public property with graduated warnings and penalties, while requiring jurisdictions to maintain basic shelter options"},{"value":5,"text":"Banning public camping and sleeping with criminal penalties to maintain public safety and order, relying on existing social services for those who seek help"}],"6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f":[{"value":1,"text":"Housing-first: provide permanent supportive housing with no preconditions; avoid criminalization entirely"},{"value":2,"text":"Expand shelter capacity and services as the primary strategy; use enforcement only after services are offered"},{"value":3,"text":"Invest in outreach, shelter, and mental health services while enforcing reasonable public space rules"},{"value":4,"text":"Enforce anti-camping ordinances as the primary tool while maintaining basic outreach programs"},{"value":5,"text":"Prioritize strict enforcement of trespassing and camping bans; minimize public spending on homeless services"}],"669cac97-66a6-4087-b036-936fbe62efb3":[{"value":1,"text":"Directly build and operate public housing so anyone who needs a home can get one"},{"value":2,"text":"Use rent caps, require new developments to include affordable units, and publicly fund new housing"},{"value":3,"text":"Offer targeted help like subsidies for affordable projects, first-time buyer assistance, and easier building permits"},{"value":4,"text":"Cut regulations and zoning rules so private developers can build more housing"},{"value":5,"text":"Stay out of housing entirely and let the market decide prices and supply"}],"4e2c69ce-591e-4197-9cd5-7aceff79d390":[{"value":1,"text":"Make it easier for immigrants to come here legally, and let all immigrants — including undocumented residents — fully use public services"},{"value":2,"text":"Keep legal immigration open and let most residents use public services regardless of legal status"},{"value":3,"text":"Keep immigration levels and rules about where they are now"},{"value":4,"text":"Make it harder to immigrate legally and limit public services to people with legal status"},{"value":5,"text":"Stop most legal immigration and block public services for anyone without legal status"}],"c267e137-0ff9-4e7d-9d13-e3cea1756cd0":[{"value":1,"text":"Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"},{"value":2,"text":"Reducing the incarcerated population through pretrial diversion, bail reform, and treatment alternatives rather than building new capacity"},{"value":3,"text":"Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"},{"value":4,"text":"Building additional jail capacity to address overcrowding and facility deficiencies"},{"value":5,"text":"Expanding jail capacity and enforcement as the primary response to crime, prioritizing detention over alternatives"}],"9d45acaf-1ba4-4cb8-95e1-5ed985223b91":[{"value":1,"text":"Easy. Courts exist for everyone — not just people with expensive lawyers. Low barriers mean more access to justice."},{"value":2,"text":"Accessible. Some basic requirements are fine, but courts shouldn't be a maze that only the wealthy can navigate."},{"value":3,"text":"Reasonable standards that keep out frivolous cases without blocking legitimate ones."},{"value":4,"text":"Higher bars are fine. Too much litigation clogs the system and costs everyone money."},{"value":5,"text":"Hard. Most disputes should be settled privately. Courts should be a last resort, not a first option."}],"1fab5edf-6151-4da0-9704-a7f2113ba54c":[{"value":1,"text":"Watch closely. Prosecutors have enormous power and real incentives to win. A judge's job is to make sure that power is used fairly."},{"value":2,"text":"Be skeptical. Hold prosecution to strict standards — especially on evidence handling and plea deals."},{"value":3,"text":"Treat both sides equally and let the process work."},{"value":4,"text":"Give prosecutors reasonable deference. They're trained professionals representing the public."},{"value":5,"text":"Trust prosecutors. They represent the community and have already screened the case — judges shouldn't second-guess that judgment."}],"9db07b16-1076-4b7d-ad89-ebe7b51f4336":[{"value":1,"text":"Helping the person change their life and stay out of trouble in the future."},{"value":2,"text":"Giving the person a fair chance to make things right — through treatment, community service, or restitution."},{"value":3,"text":"A mix: some accountability, some support, depending on what happened."},{"value":4,"text":"Making sure others think twice before doing the same thing."},{"value":5,"text":"Punishing the behavior. Society needs to know that breaking the law has real consequences."}],"e5e48f0e-8f3a-40e1-8080-889fea389603":[{"value":1,"text":"The citizen, almost always. Government has lawyers, money, and power. Regular people need courts to level the playing field."},{"value":2,"text":"The citizen usually — unless the government has clear legal authority on its side."},{"value":3,"text":"Neither side automatically. Look at the facts and apply the law evenly."},{"value":4,"text":"The government usually — it represents everyone, and its decisions deserve respect unless clearly wrong."},{"value":5,"text":"The government, unless it has obviously overreached. Officials make decisions for good reasons — courts shouldn't second-guess them constantly."}],"448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee":[{"value":1,"text":"Courts should reconsider old rulings when we know more or society has changed. Keeping bad precedent alive is its own injustice."},{"value":2,"text":"Laws were written for a purpose. When the exact words don't fit a new situation, look at what the law was trying to accomplish."},{"value":3,"text":"Follow the text closely, but use some common sense about what lawmakers were trying to do."},{"value":4,"text":"The law means what it says. Use original intent to fill gaps, but don't stretch the meaning."},{"value":5,"text":"A judge's job is to apply the law as written — not rewrite it. If society has changed, pass a new law. That's what elections are for."}],"7bad33eb-e93e-4d94-8822-97212d49bde5":[{"value":1,"text":"Investigate independently. The office works for the public — not the officials it's supposed to keep accountable."},{"value":2,"text":"Settle valid claims quickly and pursue real accountability. Defending misconduct wastes money and public trust."},{"value":3,"text":"Represent the government fairly while acknowledging when claims have merit."},{"value":4,"text":"Defend government employees vigorously. That's the job. Settlements invite more lawsuits."},{"value":5,"text":"The client is the government. Defending its employees and decisions — aggressively when needed — is the core function."}],"abb99d95-cbb1-4617-8f8b-f220ef6028ca":[{"value":1,"text":"Prosecution should be a last resort. Connecting people to treatment, housing, or job programs does more good than a criminal record."},{"value":2,"text":"Use diversion when it's available and makes sense. Reserve prosecution for when community safety actually requires it."},{"value":3,"text":"Strong cases get prosecuted. Diversion is used when there's a clear benefit — it's a judgment call every time."},{"value":4,"text":"Prosecute all solid cases. Declination is the exception and needs a strong reason."},{"value":5,"text":"The office enforces the law — not social policy. If a case is prosecutable, prosecute it. Courts figure out the rest."}],"6674d87e-999d-433a-aab7-3f626f59fd5f":[{"value":1,"text":"Everything possible should be public — hearings, evidence, rulings, and the reasoning behind them. Secrecy breeds injustice."},{"value":2,"text":"Default to open proceedings. Sealing records or closing hearings requires a compelling, documented reason."},{"value":3,"text":"Balance openness with legitimate needs for privacy — protect victims, seal juvenile records, but keep the courtroom open as a rule."},{"value":4,"text":"Courts should protect sensitive information broadly — personal details, ongoing investigations, and anything that could prejudice a fair trial."},{"value":5,"text":"The law is complicated. Public access to proceedings can distort outcomes. Broad judicial discretion to limit access protects the integrity of the process."}],"1935979c-b290-42e4-baa5-8cb0138b4ffa":[{"value":1,"text":"Require significant green space, tree preservation, and environmental review before approving any development"},{"value":2,"text":"Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact"},{"value":3,"text":"Apply consistent environmental standards while giving developers reasonable flexibility on implementation"},{"value":4,"text":"Allow developers to pay fees in lieu of on-site preservation; prioritize economic activity over green space"},{"value":5,"text":"Remove local environmental restrictions beyond what state and federal law requires"}],"b9ccee94-ad96-4f10-b655-889d8e5abe92":[{"value":1,"text":"Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies"},{"value":2,"text":"Comply only with court-ordered detainers; protect undocumented crime victims and witnesses from referral"},{"value":3,"text":"Follow federal law as required but do not use local resources for proactive immigration enforcement"},{"value":4,"text":"Honor ICE detainers and share information proactively when federal agencies request it"},{"value":5,"text":"Direct local police to actively assist with immigration enforcement and support federal detention operations"}],"cab61e8a-64fe-4bbd-bc08-fe9914d0091b":[{"value":1,"text":"expand Medicare to cover everyone regardless of age"},{"value":2,"text":"lower Medicare age to 55 and expand Medicaid significantly"},{"value":3,"text":"improve current programs while controlling costs"},{"value":4,"text":"partially privatize Medicare and reduce Medicaid coverage"},{"value":5,"text":"phase out both programs and use private insurance only"}],"ddd65d64-9dc7-4208-a30f-59f4b9c0653d":[{"value":1,"text":"require platforms to remove all false information and regulate algorithms"},{"value":2,"text":"mandate fact-checking and transparency in how algorithms promote content"},{"value":3,"text":"encourage voluntary standards for combating misinformation online"},{"value":4,"text":"protect free speech online and prevent government censorship"},{"value":5,"text":"ban any government involvement in content moderation decisions"}],"e9ebefcd-c496-45e8-b816-a79f8442ba85":[{"value":1,"text":"Redirect a significant portion of the police budget to social services, mental health, and community programs"},{"value":2,"text":"Maintain current police staffing but shift non-violent calls to unarmed mental health co-responders"},{"value":3,"text":"Keep current public safety funding while adding crisis response teams for mental health and addiction calls"},{"value":4,"text":"Increase police staffing, equipment, and pay to improve response times and deter crime"},{"value":5,"text":"Make expanding the police budget the top spending priority over other services"}],"48cc9585-ec22-4f53-8d42-6839828dd36f":[{"value":1,"text":"independent citizens' commissions with no elected officials involved at any level."},{"value":2,"text":"independent redistricting commissions with equal representation from both major parties."},{"value":3,"text":"bipartisan legislative committees with strict rules requiring supermajority approval."},{"value":4,"text":"state legislatures with court oversight to prevent extreme partisan bias."},{"value":5,"text":"the party that controls the state legislature without outside interference."}],"6b9ba6d9-1001-43f5-b073-4d37130696fd":[{"value":1,"text":"strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws."},{"value":2,"text":"protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."},{"value":3,"text":"balance protecting religious practices with maintaining equal treatment under the law for all citizens."},{"value":4,"text":"protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."},{"value":5,"text":"strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."}],"c308e8e8-caac-44f5-ab04-dbfecf40bbe2":[{"value":1,"text":"Expand rent control to all rental units with strong tenant protections and just-cause eviction requirements"},{"value":2,"text":"Strengthen existing rent stabilization and extend coverage to more units"},{"value":3,"text":"Maintain current tenant protections while allowing market rents for new construction"},{"value":4,"text":"Limit rent regulations to subsidized units; allow market rents broadly"},{"value":5,"text":"Oppose rent control entirely; rents should be set by the market without government intervention"}],"d4f18138-a2e0-4110-b925-7387d9d0d16d":[{"value":1,"text":"Protect existing neighborhood character strictly; require community votes before any rezoning"},{"value":2,"text":"Allow modest density increases (duplexes, accessory units) with strong design review and neighborhood input"},{"value":3,"text":"Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"},{"value":4,"text":"Upzone broadly to allow multifamily by right; streamline approvals and reduce parking requirements"},{"value":5,"text":"Eliminate single-family-only zoning; allow any housing type on any lot communitywide"}],"c5ab4eab-702f-49b8-9277-8ea53f3835c6":[{"value":1,"text":"require all states to recognize same-sex marriages and provide full federal benefits and protections."},{"value":2,"text":"allow same-sex marriage nationwide while protecting some organizations' right to decline participation."},{"value":3,"text":"let each state decide its own same-sex marriage laws without federal interference."},{"value":4,"text":"recognize civil unions for same-sex couples but reserve marriage for opposite-sex couples."},{"value":5,"text":"make same-sex marriage illegal and define marriage as only between one man and one woman."}],"00b95a6a-75db-4521-b523-3326bba938de":[{"value":1,"text":"Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"},{"value":2,"text":"Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"},{"value":3,"text":"Funding public schools at current levels while allowing means-tested voucher programs with accountability requirements for participating private schools"},{"value":4,"text":"Expanding voucher eligibility to most families so parents can choose the school that best fits their child, while maintaining baseline public school funding"},{"value":5,"text":"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family"}],"87d20824-a6e9-407b-983c-65440084a0ab":[{"value":1,"text":"expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."},{"value":2,"text":"increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."},{"value":3,"text":"make small adjustments to both benefits and taxes to keep Social Security stable for future generations."},{"value":4,"text":"gradually raise the retirement age and reduce benefits for higher earners to save Social Security."},{"value":5,"text":"transition Social Security to private investment accounts that individuals control themselves."}],"683c8084-2281-4920-a07c-18439b2dd413":[{"value":1,"text":"eliminate all tariffs and pursue completely free trade with every country."},{"value":2,"text":"reduce most tariffs while keeping some on products that harm the environment."},{"value":3,"text":"use tariffs selectively to protect key American industries and jobs."},{"value":4,"text":"increase tariffs on countries that don't trade fairly with America."},{"value":5,"text":"impose high tariffs on all imports to bring manufacturing back to America."}],"f7e5678d-dadd-4556-a2fc-446e24642ceb":[{"value":1,"text":"Significantly raise taxes on wealthy people and large companies to fund more public services"},{"value":2,"text":"Moderately raise taxes on wealthy people and large companies to fund existing services"},{"value":3,"text":"Keep the current tax system mostly as-is with small adjustments to close unfair loopholes"},{"value":4,"text":"Cut taxes for everyone and scale back public services to match"},{"value":5,"text":"Drastically cut taxes and shrink government so people and businesses keep more of their money"}],"d1618b9c-0b9e-45af-b986-bb33d270b8e4":[{"value":1,"text":"allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."},{"value":2,"text":"should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."},{"value":3,"text":"create separate transgender divisions or allow case-by-case decisions based on individual circumstances and sport requirements."},{"value":4,"text":"require transgender athletes to compete only on teams matching their biological sex assigned at birth."},{"value":5,"text":"completely ban all transgender athletes from competing in any organized sports competitions."}],"ba59337e-30e2-4aba-a39a-426b3366eb27":[{"value":1,"text":"Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements communitywide"},{"value":2,"text":"Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects"},{"value":3,"text":"Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"},{"value":4,"text":"Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"},{"value":5,"text":"Prioritize highway access and abundant free parking as the foundation of local transportation policy"}],"24e9212c-b011-422a-865c-093e35050901":[{"value":1,"text":"significantly increase military aid to Ukraine and commit to supporting them until complete victory over Russia"},{"value":2,"text":"continue providing current levels of military and economic aid to help Ukraine defend itself."},{"value":3,"text":"provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."},{"value":4,"text":"reduce aid to Ukraine and focus American resources on domestic priorities instead."},{"value":5,"text":"end all aid to Ukraine immediately and stay completely out of the conflict."}],"d1792200-1d3b-4955-a0b7-0e6980d7a7b2":[{"value":1,"text":"automatically register all eligible citizens to vote and allow online voting"},{"value":2,"text":"expand early voting periods and make mail-in voting available to all voters without requiring an excuse"},{"value":3,"text":"standardize voter ID requirements while ensuring free IDs are available to all eligible citizens"},{"value":4,"text":"require photo ID for voting and regularly update voter rolls to remove inactive registrations"},{"value":5,"text":"mandate in-person voting with strict photo ID and eliminate mail-in voting except for military overseas"}]};   // topic_id -> [{value, text} x5]  (pinned revision)
+const DIST = {"00b95a6a-75db-4521-b523-3326bba938de":{"1":580,"2":84,"3":36,"4":298,"5":234},"0bc588c6-39e1-4084-b5de-cac909b8b762":{"1":210,"2":841,"3":48,"4":138,"5":340},"1935979c-b290-42e4-baa5-8cb0138b4ffa":{"1":67,"2":184,"3":95,"4":8,"5":3},"1fab5edf-6151-4da0-9704-a7f2113ba54c":{"2":4,"3":2},"24e9212c-b011-422a-865c-093e35050901":{"1":23,"2":264,"3":50,"4":84,"5":46},"448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee":{"1":10,"2":19,"3":4,"4":8,"5":30},"44905f3b-e105-4f6c-afc7-5d223813dbac":{"1":171,"2":540,"3":120,"4":415,"5":113},"4559b513-0fd8-4ed1-babd-f3b554162f40":{"1":50,"2":100,"3":90,"4":40,"5":11},"48cc9585-ec22-4f53-8d42-6839828dd36f":{"1":237,"2":243,"3":21,"4":96,"5":90},"4938766b-b45a-46e3-93bd-b8b30651271a":{"1":34,"2":291,"3":164,"4":123,"5":27},"4e2c69ce-591e-4197-9cd5-7aceff79d390":{"1":219,"2":675,"3":147,"4":503,"5":134},"666bf03d-81fc-4138-ab15-69ae734c9023":{"1":19,"2":123,"3":269,"4":186,"5":7},"6674d87e-999d-433a-aab7-3f626f59fd5f":{"1":4,"2":20,"3":6,"4":3,"5":1},"669cac97-66a6-4087-b036-936fbe62efb3":{"1":113,"2":757,"3":672,"4":229,"5":14},"683c8084-2281-4920-a07c-18439b2dd413":{"1":72,"2":142,"3":333,"4":108,"5":8},"6b9ba6d9-1001-43f5-b073-4d37130696fd":{"1":25,"2":192,"3":80,"4":229,"5":176},"6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f":{"1":29,"2":176,"3":164,"4":65,"5":6},"7687de4f-4d0b-462a-b803-bdfb23b16b42":{"1":6,"2":30,"3":50,"4":24,"5":3},"7bad33eb-e93e-4d94-8822-97212d49bde5":{"1":3,"2":5,"3":5,"4":3},"87d20824-a6e9-407b-983c-65440084a0ab":{"1":107,"2":208,"3":178,"4":98,"5":66},"92730f69-ae57-401c-8ad1-2d07834a895d":{"1":104,"2":506,"3":99,"4":122,"5":10},"9d45acaf-1ba4-4cb8-95e1-5ed985223b91":{"1":10,"2":32,"3":4,"4":2},"9db07b16-1076-4b7d-ad89-ebe7b51f4336":{"1":66,"2":112,"3":34,"4":46,"5":32},"a22215c3-6693-4bc2-b248-01aebba14570":{"1":49,"2":489,"3":229,"4":378,"5":198},"abb99d95-cbb1-4617-8f8b-f220ef6028ca":{"1":1,"2":10,"3":5,"4":3,"5":1},"af2fdfd6-02c4-49df-b09c-cf8536f4773f":{"1":522,"2":627,"3":104,"4":493,"5":198},"b9ccee94-ad96-4f10-b655-889d8e5abe92":{"1":226,"2":146,"3":80,"4":98,"5":12},"ba59337e-30e2-4aba-a39a-426b3366eb27":{"1":88,"2":189,"3":108,"4":58,"5":3},"c1ac1330-47f7-44ec-baf3-c913d926b97c":{"1":116,"2":496,"3":88,"4":85,"5":20},"c267e137-0ff9-4e7d-9d13-e3cea1756cd0":{"1":54,"2":104,"3":80,"4":58,"5":10},"c308e8e8-caac-44f5-ab04-dbfecf40bbe2":{"1":36,"2":141,"3":24,"4":29,"5":10},"c5ab4eab-702f-49b8-9277-8ea53f3835c6":{"1":494,"2":145,"3":28,"4":61,"5":173},"cab61e8a-64fe-4bbd-bc08-fe9914d0091b":{"1":256,"2":333,"3":290,"4":247,"5":19},"d1618b9c-0b9e-45af-b986-bb33d270b8e4":{"1":200,"2":160,"3":15,"4":413,"5":75},"d1792200-1d3b-4955-a0b7-0e6980d7a7b2":{"1":304,"2":576,"3":56,"4":521,"5":64},"d4f18138-a2e0-4110-b925-7387d9d0d16d":{"1":36,"2":109,"3":120,"4":166,"5":8},"ddd65d64-9dc7-4208-a30f-59f4b9c0653d":{"1":1,"2":144,"3":60,"4":130,"5":34},"e5e48f0e-8f3a-40e1-8080-889fea389603":{"1":7,"2":9,"3":4,"4":1,"5":1},"e8dad4a8-eb93-4931-91f5-d8fb5d7dd529":{"1":354,"2":846,"3":148,"4":325,"5":122},"e9ebefcd-c496-45e8-b816-a79f8442ba85":{"1":33,"2":229,"3":233,"4":310,"5":35},"eb3d1247-0de1-4b7f-baec-7259861efd53":{"1":40,"2":292,"3":234,"4":117,"5":16},"f1e44d66-5d27-4b51-b54f-b7ace86f6a3c":{"1":151,"2":601,"3":513,"4":288,"5":347},"f7e5678d-dadd-4556-a2fc-446e24642ceb":{"1":320,"2":622,"3":149,"4":713,"5":214},"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4":{"1":18,"2":113,"3":196,"4":96,"5":6}};         // topic_id -> {1: n, 2: n, ...}
+
+/* ---- illustrative Season 2 scenario ---- */
+const DROPPED = {
+  "Same-Sex Marriage":    "Settled law; little differentiation between candidates in Season 1 answers.",
+  "Ukraine Support":      "Time-bound to the 2024–25 news cycle; retire in favor of a durable foreign-policy topic.",
+  "Data Centers":         "Folded into the new Grid Reliability & Utility Costs topic.",
+};
+const CHANGED = {
+  "Bail & Pretrial": {
+    real: true, revFrom: 1, revTo: 3, field: "Title",
+    from: "Bail and Pretrial Decisions", to: "Deference to Prosecutors",
+    note: "Real revision 3 (published): renamed to match what the question actually asks. Question and five options unchanged.",
+  },
+  "Healthcare": {
+    real: false, revFrom: 1, revTo: 2, field: "Question",
+    from: "What role should government play in healthcare access?",
+    to: "What role should government play in healthcare access and affordability?",
+    note: "Example change, for illustration only.",
+  },
+};
+const ADDED = [
+  { short: "Grid Reliability", title: "Grid Reliability & Utility Costs",
+    q: "How should government balance grid reliability, utility costs and new demand for power?",
+    why: "Replaces Data Centers with the broader question voters actually face on their bills.",
+    ladder: [
+      "Treat power as a public utility: public ownership or strict control of generation, and government builds capacity directly",
+      "Aggressively regulate rates and require utilities to build reliability before approving large new loads like data centers",
+      "Balance new demand and consumer costs case by case, with incentives for grid investment",
+      "Streamline approval of new generation and let large customers negotiate their own supply, with light oversight",
+      "Let the market set prices and build capacity; government stays out of siting and rate decisions",
+    ]},
+  { short: "Short-Term Rentals", title: "Short-Term Rental Regulation",
+    q: "How should your community regulate short-term rentals like Airbnb?",
+    why: "Top locally-contested housing issue not covered by the Season 1 set.",
+    ladder: [
+      "Ban non-owner-occupied short-term rentals entirely to protect housing supply",
+      "Cap the number of permits citywide and limit rentals to primary residences",
+      "License and tax short-term rentals, with enforcement against problem properties",
+      "Allow them broadly with basic registration and safety rules only",
+      "No specific regulation; treat them like any other property use",
+    ]},
+  { short: "School Cell Phones", title: "Cell Phones in Schools",
+    q: "What limits, if any, should schools place on student cell phone use?",
+    why: "Live legislative question in 30+ states for the 2026–27 school year.",
+    ladder: [
+      "Statewide bell-to-bell ban: phones locked away for the entire school day, K-12",
+      "Ban phone use during class time statewide, with districts setting rules for breaks",
+      "Require every district to adopt a policy, but leave its content to local boards",
+      "Leave it to individual schools and teachers, with no state mandate",
+      "No restrictions; phone rules are a matter for students and families",
+    ]},
+];
+
+/* ---- derived ---- */
+const carried = S1.filter(t => !DROPPED[t.short] && !CHANGED[t.short]);
+const changed = S1.filter(t => CHANGED[t.short]);
+const dropped = S1.filter(t => DROPPED[t.short]);
+const s2Count = carried.length + changed.length + ADDED.length;
+const OPT_COLORS = ["#2f6fb0", "#59B0C4", "#9ca3af", "#e0a63a", "#FF5740"];
+
+function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+function wordDiff(a, b) {
+  const A = a.split(/\s+/), B = b.split(/\s+/);
+  let pre = 0;
+  while (pre < A.length && pre < B.length && A[pre] === B[pre]) pre++;
+  let sufA = A.length, sufB = B.length;
+  while (sufA > pre && sufB > pre && A[sufA-1] === B[sufB-1]) { sufA--; sufB--; }
+  const same = w => esc(w.join(" "));
+  const del = A.slice(pre, sufA), ins = B.slice(pre, sufB);
+  return same(A.slice(0, pre)) +
+    (del.length ? ' <span class="diff-del">' + same(del) + '</span>' : '') +
+    (ins.length ? ' <span class="diff-ins">' + same(ins) + '</span>' : '') +
+    ' ' + same(A.slice(sufA));
+}
+function distTotal(topicId) {
+  const d = DIST[topicId] || {};
+  return Object.values(d).reduce((a, b) => a + b, 0);
+}
+function sparkHTML(topicId) {
+  const d = DIST[topicId] || {};
+  const total = distTotal(topicId);
+  if (!total) return '<span class="spark-empty">no data</span>';
+  let html = '<span class="spark" title="Season 1 answer mix">';
+  for (let v = 1; v <= 5; v++) {
+    const pct = 100 * (d[v] || 0) / total;
+    if (pct > 0) html += `<div style="width:${pct}%; background:${OPT_COLORS[v-1]};"></div>`;
+  }
+  return html + '</span>';
+}
+
+/* ---- header ---- */
+document.getElementById("n-carried").textContent = carried.length;
+document.getElementById("n-changed").textContent = changed.length;
+document.getElementById("n-dropped").textContent = dropped.length;
+document.getElementById("n-added").textContent = ADDED.length;
+document.getElementById("equation").innerHTML =
+  `<b>44</b> questions in Season 1 &nbsp;−&nbsp; <b>${dropped.length}</b> retired &nbsp;+&nbsp; <b>${ADDED.length}</b> new &nbsp;=&nbsp; <b>${s2Count}</b> questions in Season 2`;
+document.getElementById("s1-count").textContent = S1.length + " questions";
+document.getElementById("s2-count").textContent = s2Count + " questions";
+
+/* ---- rows ---- */
+document.getElementById("s1").innerHTML = S1.map(t => {
+  const cls = DROPPED[t.short] ? "r-drop" : CHANGED[t.short] ? "r-chg" : "";
+  const badge = DROPPED[t.short] ? '<span class="badge b-drop">Retired</span>'
+              : CHANGED[t.short] ? '<span class="badge b-chg">Changed</span>' : "";
+  return `<div class="topicrow ${cls}" data-kind="s1" data-key="${esc(t.short)}">
+    <span class="num">${t.n}</span><span class="nm">${esc(t.title)}</span>${badge}${sparkHTML(t.id)}</div>`;
+}).join("");
+
+let n2 = 0;
+document.getElementById("s2").innerHTML =
+  S1.filter(t => !DROPPED[t.short]).map(t => {
+    n2++;
+    const c = CHANGED[t.short];
+    const title = c && c.field === "Title" ? c.to : t.title;
+    const cls = c ? "r-chg" : "";
+    const badge = c ? '<span class="badge b-chg">Changed</span>' : "";
+    return `<div class="topicrow ${cls}" data-kind="s2" data-key="${esc(t.short)}">
+      <span class="num">${n2}</span><span class="nm">${esc(title)}</span>${badge}</div>`;
+  }).join("") +
+  ADDED.map(t => { n2++; return `<div class="topicrow r-add" data-kind="add" data-key="${esc(t.short)}">
+      <span class="num">${n2}</span><span class="nm">${esc(t.title)}</span><span class="badge b-add">New</span></div>`; }).join("");
+
+/* ---- modal ---- */
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("modal");
+
+function optionsHTML(topicId, ladder, withDist) {
+  const d = DIST[topicId] || {};
+  const total = distTotal(topicId);
+  return ladder.map((text, i) => {
+    const v = i + 1;
+    const count = d[v] || 0;
+    const pct = total ? Math.round(1000 * count / total) / 10 : 0;
+    const bar = withDist && total ? `
+      <div class="bar"><div class="track"><div class="fill" style="width:${pct}%; background:${OPT_COLORS[i]};"></div></div>
+      <span class="pct">${pct}% · ${count.toLocaleString()}</span></div>` : "<div></div>";
+    return `<div class="opt"><div class="v" style="background:${OPT_COLORS[i]};">${v}</div>
+      <div class="t">${esc(text)}</div>${bar}</div>`;
+  }).join("");
+}
+
+function openModal(kind, key) {
+  const added = ADDED.find(t => t.short === key);
+  let html = '<button class="close" title="close">×</button>';
+
+  if (added) {
+    html += `<span class="cat" style="background:var(--ev-teal); color:#fff;">New in Season 2</span>
+      <h3>${esc(added.title)}<span class="example-tag">example topic</span></h3>
+      <div class="qn">Proposed for Season 2 — not asked before</div>
+      <div class="question">“${esc(added.q)}”</div>
+      <div class="why">${esc(added.why)}</div>
+      <div class="sec-lbl">Proposed five options</div>
+      ${optionsHTML(null, added.ladder, false)}
+      <div class="newbox" style="margin-top:16px; margin-bottom:0;">No Season 1 answer data — this question has never been asked. Distributions will appear once Season 2 opens and research begins.</div>`;
+  } else {
+    const t = S1.find(x => x.short === key);
+    const c = CHANGED[key];
+    const drop = DROPPED[key];
+    const ladder = (LADDERS[t.id] || []).map(o => o.text);
+    const total = distTotal(t.id);
+
+    if (drop) {
+      html += `<span class="cat" style="background:#3a3d42; color:#c8cbd0;">Retired after Season 1</span>`;
+    } else if (c) {
+      html += `<span class="cat" style="background:var(--ev-yellow); color:#57430a;">Changed for Season 2</span>`;
+    } else {
+      html += `<span class="cat" style="background:#14532d; color:#86efac;">Carried forward unchanged</span>`;
+    }
+
+    const title = c && c.field === "Title" && kind !== "s1" ? c.to : t.title;
+    html += `<h3>${esc(title)}${c && !c.real ? '<span class="example-tag">example change</span>' : ''}</h3>
+      <div class="qn">Season 1 · question ${t.n} of 44</div>`;
+
+    if (drop) html += `<div class="retirebox"><b>Why retire it:</b> ${esc(drop)}</div>`;
+
+    if (c) {
+      html += `<div class="diffbox"><div class="f">${esc(c.field)} — Season 1 → Season 2 (rev ${c.revFrom} → ${c.revTo})</div>
+        <div class="pair">${wordDiff(c.from, c.to)}</div>
+        <div style="font-size:12px; color:#b9a25a; margin-top:8px; font-style:italic;">${esc(c.note)}</div></div>`;
+    }
+
+    // For question-wording changes the diff box above already shows the change.
+    if (!(c && c.field === "Question")) html += `<div class="question">“${esc(t.q)}”</div>`;
+
+    html += `<div class="sec-lbl">The five options, and where ${total.toLocaleString()} politicians landed in Season 1</div>
+      ${optionsHTML(t.id, ladder, true)}
+      <div class="dist-note">Share of the politicians who have a recorded Season 1 answer on this topic${c ? " (answers were given against the Season 1 wording)" : ""}.</div>`;
+  }
+
+  modal.innerHTML = html;
+  modal.querySelector(".close").addEventListener("click", closeModal);
+  overlay.classList.remove("hidden");
+  overlay.scrollTop = 0;
+}
+function closeModal() { overlay.classList.add("hidden"); }
+overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+document.querySelectorAll(".topicrow").forEach(el =>
+  el.addEventListener("click", () => openModal(el.dataset.kind, el.dataset.key)));
+</script>
