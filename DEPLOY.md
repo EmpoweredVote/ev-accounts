@@ -46,8 +46,9 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
 | `GEMS_SERVICE_KEYS` | Shared secrets | Comma-separated `name:key` pairs for gem award service auth. Optional — absent means all `/award` requests get 401. |
 | `WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Public client id (`client_01…`). Setting it makes the API accept WorkOS AuthKit tokens as a **second** issuer alongside Supabase. Absent = Supabase-only, i.e. pre-migration behavior. See "WorkOS AuthKit" below. |
-| `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | **Secret** (`sk_test_…` staging / `sk_live_…` production). Used ONLY by `POST /api/auth/workos/provision`, to link brand-new AuthKit signups. Absent = that endpoint returns 503; token verification never uses it. |
+| `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | **Secret** (`sk_test_…` staging / `sk_live_…` production). Used by `POST /api/auth/workos/provision` and by WorkOS-first signup, both of which link accounts. Absent = those paths return 503; token verification never uses it. |
 | `WORKOS_ISSUER`, `WORKOS_JWKS_URL` | Set manually | Optional overrides, only for a custom auth domain. Defaults derive from `WORKOS_CLIENT_ID`. |
+| `AUTHKIT_PRIMARY` | Set manually | `'true'` moves NEW credential creation to WorkOS: `POST /api/auth/signup` creates the WorkOS user with the password and a passwordless Supabase shadow row. Default `'false'` = Supabase-path signup. Flip together with the frontends' `VITE_AUTHKIT_ONLY`. |
 
 ### Database role (`ev_api` vs `postgres`)
 
@@ -74,6 +75,7 @@ DDL, role management, or access to `vault`/`auth`/other apps' schemas.
 |---|---|---|
 | `VITE_API_URL` | Set manually | Backend URL, e.g. `https://api.empoweredvote.com`. Must be set at build time, not runtime — Vite inlines `VITE_*` env vars during `npm run build`. Changing this value after the build requires a full rebuild and redeploy. |
 | `VITE_WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Same public client id as the backend's `WORKOS_CLIENT_ID`. Presence renders the AuthKit sign-in button and enables the WorkOS session path. Build-time, like `VITE_API_URL` — changing it needs a full rebuild. Absent = the login page shows only the classic form. |
+| `VITE_AUTHKIT_ONLY` | Set manually | `'true'` hides the classic email/password form on `/login`, leaving AuthKit as the only way in. Build-time. Gated on `VITE_WORKOS_CLIENT_ID` — if that is absent the classic form stays, so a misconfig can't lock everyone out. The break-glass route `/login/classic` always shows the form. Set on the login-hub, app, and validation-quests frontends together. |
 
 ---
 
@@ -116,8 +118,19 @@ Standing up production means redoing every one of these:
 - **Redirect URIs** — one per app origin, each ending in `/login`.
 - **CORS allowed web origins** — the same origins, no path. Without these the hosted
   page still loads but the in-browser code exchange fails.
-- **Login providers / self-serve sign-up** — on by default; deliberately switched off
-  in staging on 2026-08-27. Decide again for production.
+- **Login providers / self-serve sign-up** — on by default; social providers were
+  switched off in staging on 2026-08-27, but **self-serve sign-up is still ON**.
+  Under `VITE_AUTHKIT_ONLY`, AuthKit's hosted sign-up IS the Inform signup path, so
+  you likely want it on; the invite-code Connected path stays on `/signup`, which
+  posts to `POST /api/auth/signup`. Decide providers again for production.
+
+### Break-glass classic login
+
+`/login/classic` always renders the classic Supabase email/password form, even under
+`VITE_AUTHKIT_ONLY`. It is unadvertised (no link points to it) and exists so an
+operator can still reach the Supabase path during an AuthKit outage. **It is slated
+for removal once Supabase Auth sign-ins are disabled** — at that point the classic
+form authenticates against nothing and the route should be deleted.
 - **Users** — a fresh import: `backend/scripts/workos-export-users.ts` then
   `workos-import-users.ts` (the import refuses a non-`sk_test_` key unless given
   `--allow-live`).

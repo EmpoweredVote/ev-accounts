@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
 import { requireAuth, verifyWorkosAccessToken, type AuthenticatedRequest } from '../middleware/auth.js';
 import { classifyToken } from '../lib/tokenIdentity.js';
-import { provisionWorkosUser } from '../lib/workosProvisionService.js';
+import { provisionWorkosUser, signUpWorkosFirst } from '../lib/workosProvisionService.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
@@ -77,9 +77,21 @@ const signUpBodySchema = z.object({
 /**
  * POST /api/auth/signup
  *
- * Creates a new Supabase auth user. When email confirmation is enabled
- * (the Supabase default), data.session will be null — this is success,
- * not failure. We check data.user for success, not data.session.
+ * Two credential paths, selected by env.AUTHKIT_PRIMARY (decision 0002):
+ *
+ * - 'false' (default): creates a Supabase auth user holding the password. When
+ *   email confirmation is enabled (the Supabase default), data.session will be
+ *   null — this is success, not failure. We check data.user, not data.session.
+ *
+ * - 'true' (post-cutover): the password goes to WorkOS and the internal
+ *   auth.users row is created WITHOUT one, so new accounts never hold a
+ *   Supabase credential. AuthKit owns email verification, so no confirmation
+ *   mail is sent from here and the success message changes accordingly.
+ *
+ * Everything after the branch is identical: display_name, the invite-code
+ * Connected path, and guest-state migration all key off the resolved `userId`.
+ * That is why the invite flow survives the cutover — AuthKit's hosted sign-up
+ * cannot collect an invite code, so this endpoint stays the Connected path.
  *
  * A trigger in Phase 1 automatically creates the public.users record
  * when a new auth user is created.
@@ -124,81 +136,107 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     }
   }
 
-  const { data, error } = await signUpWithEmail(
-    email,
-    password,
-    `${env.LOGIN_URL}/email-confirmed`,
-  );
+  // Where the new credential is created is the cutover switch. AUTHKIT_PRIMARY
+  // moves it to WorkOS and leaves the internal row passwordless; until then the
+  // Supabase path below is unchanged. Both branches converge on `userId`.
+  let userId: string;
+  let signupMessage = 'Check your email to confirm your account';
 
-  if (error) {
-    // Email already registered
-    if (
-      error.code === 'email_exists' ||
-      (error.message && error.message.toLowerCase().includes('already registered'))
-    ) {
+  if (env.AUTHKIT_PRIMARY === 'true') {
+    const result = await signUpWorkosFirst(email, password);
+    if (!result.ok) {
+      const failures = {
+        NOT_CONFIGURED: [503, 'NOT_CONFIGURED', 'Signup is temporarily unavailable'],
+        EMAIL_EXISTS: [409, 'EMAIL_EXISTS', 'An account with this email already exists'],
+        WEAK_PASSWORD: [422, 'VALIDATION_ERROR', 'Password is too weak'],
+        WORKOS_ERROR: [502, 'INTERNAL_ERROR', 'An unexpected error occurred'],
+        INTERNAL_ERROR: [500, 'INTERNAL_ERROR', 'An unexpected error occurred'],
+      } as const;
+      const [status, code, message] = failures[result.code];
+      res.status(status).json({ code, message });
+      return;
+    }
+    userId = result.userId;
+    // AuthKit challenges the address at first sign-in; Supabase sends no mail.
+    signupMessage = 'Account created — sign in to continue';
+  } else {
+    const { data, error } = await signUpWithEmail(
+      email,
+      password,
+      `${env.LOGIN_URL}/email-confirmed`,
+    );
+
+    if (error) {
+      // Email already registered
+      if (
+        error.code === 'email_exists' ||
+        (error.message && error.message.toLowerCase().includes('already registered'))
+      ) {
+        res.status(409).json({
+          code: 'EMAIL_EXISTS',
+          message: 'An account with this email already exists',
+        });
+        return;
+      }
+
+      // Password too weak (Supabase policy)
+      if (error.code === 'weak_password') {
+        res.status(422).json({
+          code: 'VALIDATION_ERROR',
+          message: 'Password is too weak',
+        });
+        return;
+      }
+
+      // Supabase email send rate limit (free tier: ~3 confirmation emails/hour)
+      if (error.code === 'over_email_send_rate_limit') {
+        res.status(429).json({
+          code: 'RATE_LIMIT_EXCEEDED',
+          message: 'Too many requests, please try again later',
+        });
+        return;
+      }
+
+      // SMTP misconfiguration or delivery failure
+      if (error.code === 'unexpected_failure') {
+        console.error('[auth/signup] SMTP delivery failure:', error.message);
+        res.status(503).json({
+          code: 'EMAIL_DELIVERY_FAILED',
+          message: 'Unable to send confirmation email. Please try again later.',
+        });
+        return;
+      }
+
+      console.error('[auth/signup] Supabase error:', error.code, error.message);
+      res.status(500).json({
+        code: 'INTERNAL_ERROR',
+        message: 'An unexpected error occurred',
+      });
+      return;
+    }
+
+    // data.user must exist for success. data.session may be null when email
+    // confirmation is enabled — that is expected and not an error.
+    if (!data.user) {
+      console.error('[auth/signup] No user returned and no error — unexpected Supabase response');
+      res.status(500).json({
+        code: 'INTERNAL_ERROR',
+        message: 'An unexpected error occurred',
+      });
+      return;
+    }
+
+    // Supabase returns status 200 (no error) for repeated signups when email confirmation
+    // is enabled — identities is an empty array in this case. Detect and surface as 409
+    // so the frontend can direct the user to sign in or reset their password.
+    if (!data.user.identities || data.user.identities.length === 0) {
       res.status(409).json({
         code: 'EMAIL_EXISTS',
         message: 'An account with this email already exists',
       });
       return;
     }
-
-    // Password too weak (Supabase policy)
-    if (error.code === 'weak_password') {
-      res.status(422).json({
-        code: 'VALIDATION_ERROR',
-        message: 'Password is too weak',
-      });
-      return;
-    }
-
-    // Supabase email send rate limit (free tier: ~3 confirmation emails/hour)
-    if (error.code === 'over_email_send_rate_limit') {
-      res.status(429).json({
-        code: 'RATE_LIMIT_EXCEEDED',
-        message: 'Too many requests, please try again later',
-      });
-      return;
-    }
-
-    // SMTP misconfiguration or delivery failure
-    if (error.code === 'unexpected_failure') {
-      console.error('[auth/signup] SMTP delivery failure:', error.message);
-      res.status(503).json({
-        code: 'EMAIL_DELIVERY_FAILED',
-        message: 'Unable to send confirmation email. Please try again later.',
-      });
-      return;
-    }
-
-    console.error('[auth/signup] Supabase error:', error.code, error.message);
-    res.status(500).json({
-      code: 'INTERNAL_ERROR',
-      message: 'An unexpected error occurred',
-    });
-    return;
-  }
-
-  // data.user must exist for success. data.session may be null when email
-  // confirmation is enabled — that is expected and not an error.
-  if (!data.user) {
-    console.error('[auth/signup] No user returned and no error — unexpected Supabase response');
-    res.status(500).json({
-      code: 'INTERNAL_ERROR',
-      message: 'An unexpected error occurred',
-    });
-    return;
-  }
-
-  // Supabase returns status 200 (no error) for repeated signups when email confirmation
-  // is enabled — identities is an empty array in this case. Detect and surface as 409
-  // so the frontend can direct the user to sign in or reset their password.
-  if (!data.user.identities || data.user.identities.length === 0) {
-    res.status(409).json({
-      code: 'EMAIL_EXISTS',
-      message: 'An account with this email already exists',
-    });
-    return;
+    userId = data.user.id;
   }
 
   // Phase 67: Inform signup path persists display_name onto public.users.
@@ -214,10 +252,10 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
            SET display_name = $2,
                updated_at = now()
          WHERE id = $1`,
-        [data.user.id, display_name]
+        [userId, display_name]
       );
     } catch (updateErr) {
-      console.error('[auth/signup] Failed to persist display_name for Inform user:', data.user.id, updateErr);
+      console.error('[auth/signup] Failed to persist display_name for Inform user:', userId, updateErr);
       // Intentionally non-fatal — proceed to 201 below.
     }
   }
@@ -241,7 +279,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       const { data: rpcResult, error: rpcError } = await adminRpc(
         'signup_with_invite',
         {
-          p_user_id: data.user.id,
+          p_user_id: userId,
           p_legal_name: legal_name,
           p_invite_code: invite_code,
           p_display_name: display_name,
@@ -285,7 +323,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   if (guest_state) {
     try {
       await adminRpc('migrate_guest_compass_state', {
-        p_user_id: data.user.id,
+        p_user_id: userId,
         p_answers: guest_state.answers ?? [],
         p_selected_topics: guest_state.selected_topics?.length ? guest_state.selected_topics : null,
       });
@@ -295,8 +333,8 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   }
 
   res.status(201).json({
-    id: data.user.id,
-    message: 'Check your email to confirm your account',
+    id: userId,
+    message: signupMessage,
   });
 });
 

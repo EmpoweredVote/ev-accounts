@@ -29,6 +29,17 @@ const API_BASE = import.meta.env.VITE_API_URL
 
 export const workosEnabled = Boolean(clientId);
 
+/**
+ * AuthKit-only mode (decision 0002 cutover). When set AND WorkOS is enabled,
+ * the login page hides the classic Supabase email/password form and presents
+ * AuthKit as the only way in. Gated on workosEnabled so a misconfiguration
+ * (flag on, client id absent) can never hide the only working path — it fails
+ * back to the classic form. The break-glass route /login/classic ignores this
+ * and always shows the form; it is unadvertised and slated for removal once
+ * Supabase Auth sign-ins are disabled.
+ */
+export const authkitOnly = workosEnabled && import.meta.env.VITE_AUTHKIT_ONLY === 'true';
+
 const PROVIDER_KEY = 'ev_auth_provider';
 
 export function hasWorkosSession(): boolean {

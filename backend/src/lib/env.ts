@@ -72,11 +72,24 @@ const envSchema = z.object({
   // (see src/lib/tokenIdentity.ts).
   WORKOS_ISSUER: z.string().url().optional(),
   WORKOS_JWKS_URL: z.string().url().optional(),
-  // WORKOS_API_KEY: server-side WorkOS secret. Needed ONLY by the new-signup
-  // provisioning endpoint (POST /api/auth/workos/provision), which writes
-  // external_id back to WorkOS. Absent = that endpoint returns 503; token
-  // verification never uses it. Lives in the Render dashboard, never in git.
+  // WORKOS_API_KEY: server-side WorkOS secret. Needed by the new-signup
+  // provisioning endpoint (POST /api/auth/workos/provision) and by WorkOS-first
+  // signup, both of which write external_id back to WorkOS. Absent = those
+  // paths return 503; token verification never uses it. Lives in the Render
+  // dashboard, never in git.
   WORKOS_API_KEY: z.string().optional(),
+  // AUTHKIT_PRIMARY: cutover switch for WHERE NEW CREDENTIALS ARE CREATED.
+  //   'false'/absent — POST /api/auth/signup creates a Supabase user holding
+  //     the password (today's behavior).
+  //   'true'  — signup creates the WorkOS user holding the password and a
+  //     Supabase shadow row whose only credential is a random unknowable hash
+  //     (Supabase writes one even with no password given; it is cleared by the
+  //     gated batch null step at cutover). New accounts hold no USABLE Supabase
+  //     credential (PRIVACY-ARCHITECTURE property A).
+  // Flip together with the frontends' VITE_AUTHKIT_ONLY: with this false and
+  // the UI AuthKit-only, new signups could not sign in; with this true and the
+  // UI classic-only, they could not either.
+  AUTHKIT_PRIMARY: z.enum(['true', 'false']).default('false'),
 });
 
 const parsed = envSchema.safeParse(process.env);

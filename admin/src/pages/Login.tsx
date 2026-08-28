@@ -4,6 +4,7 @@ import { useAuthStore } from '../store/authStore';
 import { getValidRedirect, getAppNameFromRedirect, validateRedirectUrl } from '../lib/redirect';
 import {
   workosEnabled,
+  authkitOnly,
   startWorkosSignIn,
   completeWorkosLogin,
   consumeWorkosRedirectState,
@@ -14,7 +15,14 @@ const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
   : '/api';
 
-export default function Login() {
+/**
+ * allowClassic — break-glass. The /login/classic route renders this with the
+ * classic email/password form forced visible even under AuthKit-only mode.
+ */
+export default function Login({ allowClassic = false }: { allowClassic?: boolean }) {
+  // Classic form shows unless AuthKit-only mode has hidden it — and always on
+  // the break-glass route.
+  const showClassic = allowClassic || !authkitOnly;
   const navigate = useNavigate();
   const { setAuth } = useAuthStore();
   const [email, setEmail] = useState('');
@@ -190,6 +198,7 @@ export default function Login() {
           </div>
         )}
 
+        {showClassic && (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
@@ -235,21 +244,28 @@ export default function Login() {
             {isSubmitting ? 'Logging in…' : 'Log in'}
           </button>
         </form>
+        )}
 
         {workosEnabled && (
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
-              <span className="text-xs text-gray-400 dark:text-gray-600">or</span>
-              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
-            </div>
+            {showClassic && (
+              <div className="flex items-center gap-3">
+                <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
+                <span className="text-xs text-gray-400 dark:text-gray-600">or</span>
+                <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
+              </div>
+            )}
             <button
               type="button"
               onClick={handleWorkosSignIn}
               disabled={workosCompleting}
-              className="w-full py-3 px-4 bg-white dark:bg-gray-800 border border-ev-teal dark:border-ev-teal-light text-ev-teal dark:text-ev-teal-light hover:bg-ev-teal/5 dark:hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-xl text-sm transition-colors"
+              className={
+                showClassic
+                  ? 'w-full py-3 px-4 bg-white dark:bg-gray-800 border border-ev-teal dark:border-ev-teal-light text-ev-teal dark:text-ev-teal-light hover:bg-ev-teal/5 dark:hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-xl text-sm transition-colors'
+                  : 'w-full py-3 px-4 bg-ev-teal dark:bg-ev-teal-light hover:bg-ev-teal/90 dark:hover:bg-ev-teal-light/90 disabled:opacity-60 text-white dark:text-ev-black font-semibold rounded-xl text-sm transition-colors'
+              }
             >
-              Sign in with the new login (beta)
+              {workosCompleting ? 'Signing in…' : showClassic ? 'Sign in with the new login (beta)' : 'Sign in'}
             </button>
           </div>
         )}

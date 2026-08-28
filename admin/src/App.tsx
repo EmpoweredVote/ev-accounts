@@ -98,6 +98,9 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      {/* Break-glass: classic Supabase form, always shown, unadvertised.
+          Slated for removal once Supabase Auth sign-ins are disabled (0002). */}
+      <Route path="/login/classic" element={<Login allowClassic />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signup/inform" element={<InformSignup />} />
       <Route path="/email-confirmed" element={<EmailConfirmed />} />
