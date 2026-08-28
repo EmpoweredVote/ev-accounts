@@ -354,3 +354,94 @@ function mapSummary(r: Record<string, unknown>): RevisionSummary {
     ladderChanged: Boolean(r.ladder_changed),
   };
 }
+
+// ---------------------------------------------------------------------------
+// Authoring (the revision editor)
+// ---------------------------------------------------------------------------
+
+export interface CurrentTopicContent {
+  topicKey: string;
+  title: string;
+  shortTitle: string | null;
+  questionText: string;
+  revision: number;
+  version: number;
+  ladder: { value: number; text: string }[];
+}
+
+/**
+ * The current published wording of one topic, for the editor's left column.
+ * Reads the §12 content views via pool — they are not in the PostgREST types.
+ */
+export async function getCurrentTopicContent(topicKey: string): Promise<CurrentTopicContent> {
+  const { rows } = await pool.query(
+    `SELECT c.topic_key, c.title, c.short_title, c.question_text, c.revision, c.version,
+            COALESCE(
+              (SELECT jsonb_agg(jsonb_build_object('value', s.value, 'text', s.text) ORDER BY s.value)
+                 FROM inform.compass_stances_current s
+                WHERE s.topic_id = c.id),
+              '[]'::jsonb
+            ) AS ladder
+       FROM inform.compass_topics_current c
+      WHERE c.topic_key = $1`,
+    [topicKey]
+  );
+  if (rows.length === 0) {
+    // Same NAMED_CODE: prefix contract as the RPCs, so the route maps it to 404.
+    throw new Error(`NO_SUCH_TOPIC: ${topicKey}`);
+  }
+  const r = rows[0];
+  return {
+    topicKey: r.topic_key,
+    title: r.title,
+    shortTitle: r.short_title ?? null,
+    questionText: r.question_text,
+    revision: Number(r.revision),
+    version: Number(r.version),
+    ladder: (r.ladder as { value: number; text: string }[]) ?? [],
+  };
+}
+
+export interface ProposeRevisionInput {
+  topicKey: string;
+  changeClass: ChangeClass;
+  title: string;
+  shortTitle: string | null;
+  questionText: string;
+  stances: { value: number; text: string }[];
+  rationale: string;
+  publicNote: string;
+  reviewRef: string | null;
+  /** Identity map when the ladder text changed; null when it did not. */
+  rungMap: Record<string, number | 'invalidated'> | null;
+}
+
+/**
+ * File a proposal into the review queue via the CA_0015/CA_0016 RPC. The RPC
+ * owns all content validation (BAD_LADDER, BAD_CHANGE_CLASS, ...); this wrapper
+ * rethrows its NAMED_CODE: message unchanged for the route to map.
+ */
+export async function proposeRevision(
+  input: ProposeRevisionInput,
+  actorId: string
+): Promise<{ revision_id: string }> {
+  const { data, error } = await adminRpc(
+    'admin_propose_topic_revision',
+    {
+      p_topic_key: input.topicKey,
+      p_actor_id: actorId,
+      p_change_class: input.changeClass,
+      p_title: input.title,
+      p_short_title: input.shortTitle,
+      p_question_text: input.questionText,
+      p_stances: input.stances,
+      p_rationale: input.rationale,
+      p_public_note: input.publicNote,
+      p_review_ref: input.reviewRef,
+      p_rung_map: input.rungMap,
+    },
+    'inform'
+  );
+  if (error) throw new Error(error.message);
+  return { revision_id: data as string };
+}
