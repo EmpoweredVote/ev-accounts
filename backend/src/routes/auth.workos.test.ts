@@ -151,3 +151,29 @@ describe('GET /api/auth/session — WorkOS branch', () => {
     expect(res.status).toBe(401);
   });
 });
+
+describe('WorkOS-aware logout + password reset (AUTHKIT_PRIMARY)', () => {
+  it('logout clears both session cookies', async () => {
+    const res = await request(app).post('/api/auth/logout').set('Cookie', 'ev_wos_session=rt');
+    expect(res.status).toBe(200);
+    const cookies = (res.get('Set-Cookie') ?? []).join(';');
+    expect(cookies).toContain('ev_session=;');
+    expect(cookies).toContain('ev_wos_session=;');
+  });
+
+  it('forgot-password routes to WorkOS and still always 200s', async () => {
+    authSvc.sendWorkosPasswordReset.mockResolvedValueOnce({ ok: true });
+    const res = await request(app).post('/api/auth/forgot-password').send({ email: 'a@b.com' });
+    expect(res.status).toBe(200);
+    expect(authSvc.sendWorkosPasswordReset).toHaveBeenCalledWith('a@b.com');
+  });
+
+  it('reset-password confirms through WorkOS', async () => {
+    authSvc.confirmWorkosPasswordReset.mockResolvedValueOnce({ ok: true });
+    const res = await request(app)
+      .post('/api/auth/reset-password')
+      .send({ token_hash: 'tok_1', password: 'newpassword1' });
+    expect(res.status).toBe(200);
+    expect(authSvc.confirmWorkosPasswordReset).toHaveBeenCalledWith('tok_1', 'newpassword1');
+  });
+});

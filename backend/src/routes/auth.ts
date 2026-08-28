@@ -612,6 +612,8 @@ router.post(
   // If JWT is expired, requireAuth returns 401 but cookie is already cleared.
   (req: Request, res: Response, next: NextFunction) => {
     res.clearCookie('ev_session', evSessionCookieOptions());
+    res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+    res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
     next();
   },
   requireAuth,
@@ -785,9 +787,13 @@ router.post('/forgot-password', authLimiter, async (req: Request, res: Response)
   }
 
   try {
-    await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
-      redirectTo: `${env.LOGIN_URL}/reset-password`,
-    });
+    if (env.AUTHKIT_PRIMARY === 'true') {
+      await sendWorkosPasswordReset(parsed.data.email);
+    } else {
+      await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+        redirectTo: `${env.LOGIN_URL}/reset-password`,
+      });
+    }
   } catch (err) {
     console.error('[auth/forgot-password] error:', err);
     // Never surface this — always 200 to prevent enumeration
@@ -817,6 +823,20 @@ router.post('/reset-password', authLimiter, async (req: Request, res: Response):
   }
 
   const { token_hash, password } = parsed.data;
+
+  if (env.AUTHKIT_PRIMARY === 'true') {
+    const outcome = await confirmWorkosPasswordReset(token_hash, password);
+    if (outcome.ok) {
+      res.status(200).json({ message: 'Password updated successfully' });
+      return;
+    }
+    if (outcome.code === 'WEAK_PASSWORD') {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Password is too weak' });
+      return;
+    }
+    res.status(422).json({ code: 'INVALID_RESET_TOKEN', message: 'Reset link is invalid or has expired' });
+    return;
+  }
 
   const { data: verifyData, error: verifyError } = await supabaseAdmin.auth.verifyOtp({
     token_hash,
