@@ -26,6 +26,10 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // Classic form shows unless AuthKit-only mode has hidden it — and always on
   // the break-glass route.
   const showClassic = allowClassic || !authkitOnly;
+  // When the embedded flag is on, the login form must be available even
+  // under AuthKit-only mode — it's our own form now, not the hidden classic
+  // Supabase one, so it isn't subject to authkitOnly's hide-the-form rule.
+  const showLoginForm = showClassic || embeddedAuthEnabled;
   const navigate = useNavigate();
   const { setAuth } = useAuthStore();
   const [email, setEmail] = useState('');
@@ -105,13 +109,16 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // Auto-forward (decision 0002): under AuthKit-only mode the classic form is
   // hidden and AuthKit's own hosted page already offers sign-in AND sign-up, so
   // this landing is a redundant click. Skip straight to AuthKit — EXCEPT on the
-  // break-glass route (allowClassic) and EXCEPT while completing a ?code=
-  // callback (that would loop). Invite-code signup has its own /signup entry, so
-  // nothing is lost by not rendering the landing.
+  // break-glass route (allowClassic), EXCEPT while completing a ?code=
+  // callback (that would loop), and EXCEPT when the embedded flag is on — the
+  // embedded flow renders our own form instead of bouncing to the hosted
+  // page, so authkitOnly must not auto-forward past it. Invite-code signup
+  // has its own /signup entry, so nothing is lost by not rendering the landing.
   const [autoForwarding, setAutoForwarding] = useState(
     () =>
       authkitOnly &&
       !allowClassic &&
+      !embeddedAuthEnabled &&
       !(workosEnabled && new URLSearchParams(window.location.search).has('code'))
   );
   const autoForwardStarted = useRef(false);
@@ -290,8 +297,8 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           </div>
         )}
 
-        {showClassic && !codeStep && (
-        <form onSubmit={embeddedAuthEnabled ? handleEmbeddedSubmit : handleSubmit} className="space-y-4">
+        {showLoginForm && !codeStep && (
+        <form onSubmit={embeddedAuthEnabled && !allowClassic ? handleEmbeddedSubmit : handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
               Email
@@ -338,7 +345,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
         </form>
         )}
 
-        {showClassic && codeStep && (
+        {showLoginForm && codeStep && (
         <form onSubmit={handleCodeSubmit} className="space-y-4">
           <div>
             <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
