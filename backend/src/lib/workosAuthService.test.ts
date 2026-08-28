@@ -4,7 +4,7 @@ vi.mock('./env.js', () => ({
   env: { WORKOS_CLIENT_ID: 'client_TEST', WORKOS_API_KEY: 'sk_test_123' },
 }));
 
-import { authenticateWithPassword, authenticateWithEmailCode, refreshWorkosSession } from './workosAuthService.js';
+import { authenticateWithPassword, authenticateWithEmailCode, refreshWorkosSession, sendWorkosPasswordReset, confirmWorkosPasswordReset } from './workosAuthService.js';
 
 function okJson(body: unknown) {
   return { ok: true, status: 200, json: async () => body, text: async () => JSON.stringify(body) };
@@ -108,5 +108,40 @@ describe('refreshWorkosSession', () => {
     );
     const out = await refreshWorkosSession('rt_dead');
     expect(out.status === 'invalid_credentials' || out.status === 'error').toBe(true);
+  });
+});
+
+describe('password reset', () => {
+  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('sends a reset using the API key in the Authorization header', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(okJson({ id: 'pwr_1' }));
+    const out = await sendWorkosPasswordReset('a@b.com');
+    expect(out).toEqual({ ok: true });
+    const [url, init] = (fetch as ReturnType<typeof vi.fn>).mock.calls[0];
+    expect(url).toBe('https://api.workos.com/user_management/password_reset');
+    expect((init as RequestInit).headers).toMatchObject({ Authorization: 'Bearer sk_test_123' });
+    expect(JSON.parse((init as RequestInit).body as string)).toEqual({ email: 'a@b.com' });
+  });
+
+  it('confirms a reset with token + new password', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(okJson({ user: { id: 'user_1' } }));
+    const out = await confirmWorkosPasswordReset('tok_1', 'newpassword1');
+    expect(out).toEqual({ ok: true });
+    const [url, init] = (fetch as ReturnType<typeof vi.fn>).mock.calls[0];
+    expect(url).toBe('https://api.workos.com/user_management/password_reset/confirm');
+    expect(JSON.parse((init as RequestInit).body as string)).toEqual({
+      token: 'tok_1',
+      new_password: 'newpassword1',
+    });
+  });
+
+  it('maps a bad/expired token to INVALID_TOKEN', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      errJson(400, { code: 'password_reset_token_invalid' })
+    );
+    const out = await confirmWorkosPasswordReset('tok_bad', 'newpassword1');
+    expect(out).toEqual({ ok: false, code: 'INVALID_TOKEN' });
   });
 });

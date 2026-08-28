@@ -91,3 +91,42 @@ export function authenticateWithEmailCode(code: string, pendingToken: string): P
 export function refreshWorkosSession(refreshToken: string): Promise<AuthOutcome> {
   return callAuthenticate({ grant_type: 'refresh_token', refresh_token: refreshToken });
 }
+
+export type ResetOutcome =
+  | { ok: true }
+  | { ok: false; code: 'NOT_CONFIGURED' | 'INVALID_TOKEN' | 'WEAK_PASSWORD' | 'WORKOS_ERROR' };
+
+function apiKeyHeaders() {
+  return { Authorization: `Bearer ${env.WORKOS_API_KEY}`, 'Content-Type': 'application/json' };
+}
+
+export async function sendWorkosPasswordReset(email: string): Promise<ResetOutcome> {
+  if (!env.WORKOS_API_KEY) return { ok: false, code: 'NOT_CONFIGURED' };
+  const res = await fetch(`${WORKOS_API}/user_management/password_reset`, {
+    method: 'POST',
+    headers: apiKeyHeaders(),
+    body: JSON.stringify({ email }),
+  });
+  // A 404 (no such user) is expected and must NOT leak — the caller always 200s.
+  if (!res.ok && res.status !== 404) {
+    console.error('[workosAuth] password_reset send failed:', res.status, await res.text());
+    return { ok: false, code: 'WORKOS_ERROR' };
+  }
+  return { ok: true };
+}
+
+export async function confirmWorkosPasswordReset(token: string, newPassword: string): Promise<ResetOutcome> {
+  if (!env.WORKOS_API_KEY) return { ok: false, code: 'NOT_CONFIGURED' };
+  const res = await fetch(`${WORKOS_API}/user_management/password_reset/confirm`, {
+    method: 'POST',
+    headers: apiKeyHeaders(),
+    body: JSON.stringify({ token, new_password: newPassword }),
+  });
+  if (res.ok) return { ok: true };
+  const body = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+  const disc = (body.code ?? body.error) as string | undefined;
+  if (disc && /token|expired|invalid/i.test(disc)) return { ok: false, code: 'INVALID_TOKEN' };
+  if (disc && /password/i.test(disc)) return { ok: false, code: 'WEAK_PASSWORD' };
+  console.error('[workosAuth] password_reset confirm failed:', res.status, JSON.stringify(body));
+  return { ok: false, code: 'WORKOS_ERROR' };
+}
