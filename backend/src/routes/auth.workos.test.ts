@@ -159,6 +159,7 @@ describe('WorkOS-aware logout + password reset (AUTHKIT_PRIMARY)', () => {
     const cookies = (res.get('Set-Cookie') ?? []).join(';');
     expect(cookies).toContain('ev_session=;');
     expect(cookies).toContain('ev_wos_session=;');
+    expect(cookies).toContain('ev_wos_pending=;');
   });
 
   it('forgot-password routes to WorkOS and still always 200s', async () => {

@@ -102,34 +102,44 @@ function apiKeyHeaders() {
 
 export async function sendWorkosPasswordReset(email: string): Promise<ResetOutcome> {
   if (!env.WORKOS_API_KEY) return { ok: false, code: 'NOT_CONFIGURED' };
-  const res = await fetch(`${WORKOS_API}/user_management/password_reset`, {
-    method: 'POST',
-    headers: apiKeyHeaders(),
-    body: JSON.stringify({ email }),
-  });
-  // A 404 (no such user) is expected and must NOT leak — the caller always 200s.
-  if (!res.ok && res.status !== 404) {
-    console.error('[workosAuth] password_reset send failed:', res.status, await res.text());
+  try {
+    const res = await fetch(`${WORKOS_API}/user_management/password_reset`, {
+      method: 'POST',
+      headers: apiKeyHeaders(),
+      body: JSON.stringify({ email }),
+    });
+    // A 404 (no such user) is expected and must NOT leak — the caller always 200s.
+    if (!res.ok && res.status !== 404) {
+      console.error('[workosAuth] password_reset send failed:', res.status, await res.text());
+      return { ok: false, code: 'WORKOS_ERROR' };
+    }
+    return { ok: true };
+  } catch (err) {
+    console.error('[workosAuth] password_reset send network error:', err instanceof Error ? err.message : String(err));
     return { ok: false, code: 'WORKOS_ERROR' };
   }
-  return { ok: true };
 }
 
 export async function confirmWorkosPasswordReset(token: string, newPassword: string): Promise<ResetOutcome> {
   if (!env.WORKOS_API_KEY) return { ok: false, code: 'NOT_CONFIGURED' };
-  const res = await fetch(`${WORKOS_API}/user_management/password_reset/confirm`, {
-    method: 'POST',
-    headers: apiKeyHeaders(),
-    body: JSON.stringify({ token, new_password: newPassword }),
-  });
-  if (res.ok) return { ok: true };
-  const body = (await res.json().catch(() => ({}))) as Record<string, unknown>;
-  const disc = (body.code ?? body.error) as string | undefined;
-  if (disc && /token|expired/i.test(disc)) return { ok: false, code: 'INVALID_TOKEN' };
-  if (disc && /invalid|password/i.test(disc)) {
-    // "invalid_password" → WEAK_PASSWORD; "password_reset_token_invalid" → already caught above by token check
-    return /password/i.test(disc) ? { ok: false, code: 'WEAK_PASSWORD' } : { ok: false, code: 'INVALID_TOKEN' };
+  try {
+    const res = await fetch(`${WORKOS_API}/user_management/password_reset/confirm`, {
+      method: 'POST',
+      headers: apiKeyHeaders(),
+      body: JSON.stringify({ token, new_password: newPassword }),
+    });
+    if (res.ok) return { ok: true };
+    const body = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+    const disc = (body.code ?? body.error) as string | undefined;
+    if (disc && /token|expired/i.test(disc)) return { ok: false, code: 'INVALID_TOKEN' };
+    if (disc && /invalid|password/i.test(disc)) {
+      // "invalid_password" → WEAK_PASSWORD; "password_reset_token_invalid" → already caught above by token check
+      return /password/i.test(disc) ? { ok: false, code: 'WEAK_PASSWORD' } : { ok: false, code: 'INVALID_TOKEN' };
+    }
+    console.error('[workosAuth] password_reset confirm failed:', res.status, JSON.stringify(body));
+    return { ok: false, code: 'WORKOS_ERROR' };
+  } catch (err) {
+    console.error('[workosAuth] password_reset confirm network error:', err instanceof Error ? err.message : String(err));
+    return { ok: false, code: 'WORKOS_ERROR' };
   }
-  console.error('[workosAuth] password_reset confirm failed:', res.status, JSON.stringify(body));
-  return { ok: false, code: 'WORKOS_ERROR' };
 }

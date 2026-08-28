@@ -156,4 +156,16 @@ describe('password reset', () => {
     const out = await confirmWorkosPasswordReset('tok_1', 'weak');
     expect(out).toEqual({ ok: false, code: 'WEAK_PASSWORD' });
   });
+
+  it('returns WORKOS_ERROR when the reset-send fetch rejects', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('network down'));
+    const out = await sendWorkosPasswordReset('a@b.com');
+    expect(out).toEqual({ ok: false, code: 'WORKOS_ERROR' });
+  });
+
+  it('returns WORKOS_ERROR when the reset-confirm fetch rejects', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('network down'));
+    const out = await confirmWorkosPasswordReset('tok_1', 'newpassword1');
+    expect(out).toEqual({ ok: false, code: 'WORKOS_ERROR' });
+  });
 });
