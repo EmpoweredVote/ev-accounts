@@ -188,8 +188,12 @@ This is the truth, not a defect — but FL-6 must not be judged as failing becau
 - 🔴 **THE TWO COUNTIES ALSO NAME THEIR AT-LARGE SEATS DIFFERENTLY.** Manatee: "District 6" and
   "District 7". Leon: "At Large, Group 1" and "At Large, Group 2". Follow the publisher; do not
   normalise.
-- **Palm Beach County has no city half**, and `buildingImages.js` is keyed by city, so its banner needs
-  a decision at FL-5 — a county key, or the Florida state banner as a fallback.
+- ✅ **DECIDED 2026-08-28 (Cantrell): Palm Beach County gets its OWN COUNTY KEY in
+  `buildingImages.js`.** It has no city half, and `buildingImages.js` is keyed by city, so the
+  alternative was to fall back to the Florida state banner. That was rejected: the state banner IS a
+  Miami skyline ("Miami Late Afternoon Skyline"), so reusing it here would **also collide with Miami's
+  own banner at FL-6**, where the adjacency rule already forbids another downtown skyline. Resolves
+  spec §8.3. ⚠ The key name and the composition are still to be chosen, at FL-7.
 - **Miami's banner cannot be a downtown skyline.** The Florida STATE banner already is one
   ("Miami Late Afternoon Skyline"), and the adjacency rule forbids repeating a composition.
 
@@ -455,6 +459,59 @@ organisational minutes would date all nine precisely.
   and FL-4 migrations is what proved (3) above was a live defect rather than a theoretical one.
 - **The party guard had to be widened.** FL-3 tested `\((R|D|NPA|I)\)`, which does **not** match
   `(DEM)` — and `(DEM)` is exactly what the Leon SOE prints beside all six constitutional officers.
+
+## ▶️ FL-5 — Palm Beach County: what is already measured
+
+**County only — there is no city half.** This is the one FL jurisdiction with no municipal wave, so it
+is a stage-4 wave on its own: commission layer + county officers, **offices and people in ONE
+migration** per spec §3.
+
+Measured against prod 2026-08-28, so do not re-derive:
+
+| Thing | State |
+| --- | --- |
+| Palm Beach County FIPS | **`12099`** |
+| County district (`12099`/`G4020`/`COUNTY`, label `Palm Beach County`) | **exists** — reuse, do not create |
+| County polygon (`12099`/`G4020`) | **exists** |
+| Offices on Palm Beach County | **ZERO** — greenfield |
+| Governments for `12099` | absent |
+| Next free migration slots | **`CC_0014`** onward |
+| Next free private MTFCC | **`X0039`** |
+| `external_id` band | `-(1240000 + n)`; **35 of 10,000 used** across FL-3 + FL-4, occupying `-1240056 … -1240001`. **FL-5 should take `n = 61` upward**, leaving a gap. |
+
+🔴 **`12099` COLLIDES WITH STATE HOUSE DISTRICT 99**, exactly like `12081`/HD-81 (Manatee) and
+`12073`/HD-73 (Leon). Measured while prepping this note: a query for "offices on `12099`" that omitted
+the `mtfcc` pairing returned **HD-99's Representative, Daryl Campbell** — and looked like a
+pre-existing county office. It is not. The county has none. **Pair `geo_id` with `mtfcc` AND
+`district_type`, in throwaway queries too.**
+
+### What FL-5 must measure before it can assert anything
+
+1. 🔴 **Palm Beach's charter status and its officer set, from the charter itself.** Do **not** inherit
+   either Manatee's five or Leon's six — FL-3 against FL-4 is the proof that the template varies
+   inside one state. Palm Beach is widely described as a charter county; confirm, and confirm whether
+   it elects a Superintendent of Schools (Leon does, Manatee has no such office).
+2. **The commission's shape.** Number of seats, and whether any are at-large. ⚠ If there are at-large
+   seats, check what the county CALLS them — Manatee says "District 6/7", Leon says "At Large,
+   Group 1/2".
+3. **A commission-district GIS layer**, and ideally a second independent digitization to cross-check,
+   as both Manatee and Leon happened to have.
+4. 🔴 **THE PROBE ANCHOR, which is a real open question here.** Every FL wave so far anchored on a city
+   hall. Palm Beach County has no city half, so there is no city seat to return and the four-answer
+   probe becomes a **three**-answer probe: county commissioner, state representative, state senator.
+   Pick an anchor deliberately — the county Governmental Center in West Palm Beach is the obvious
+   candidate, and `fl.md` already records West Palm Beach place `1276600` and its interior point.
+   **Record that the city slot is legitimately absent, so a later reader does not read it as a
+   failure** — the same care FL-2 needed for Miami's vacant HD-113.
+5. **The take-office rule(s)** for each body, which is how a published election year becomes a month.
+   Leon alone spanned five different rules.
+
+### Read these first
+
+`docs/superpowers/plans/2026-08-28-knight-fl-wave-4-tallahassee-leon.md` — its **"Deviations found
+during execution"** section, and FL-3's. Between them they carry the band-guard history (four wrong
+versions), the `seat_officeholder` NULL refusal, the dry-run recipe, and the rejected-PDF-parser
+lesson.
 
 ## Applied migrations
 
