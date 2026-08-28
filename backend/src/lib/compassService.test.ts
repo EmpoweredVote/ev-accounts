@@ -17,8 +17,8 @@ beforeEach(() => mockQuery.mockReset());
 
 const row = (id: string, key: string) => ({
   id, topic_key: key, title: 'T', short_title: 'T', question_text: 'Q?',
-  version: 1, fc_community_slug: null, judicial_role: null,
-  is_live: true, office_scope: null,
+  version: 1, effective_revision_id: `rev-${id}`, fc_community_slug: null,
+  judicial_role: null, is_live: true, office_scope: null,
 });
 
 // Promotion moved off `is_live` and onto the open season's question set
@@ -70,6 +70,24 @@ describe('getPromotedTopics — promotion comes from the open season', () => {
     // Still in the response contract even though neither is in the view.
     expect(topics[0]).toHaveProperty('is_live');
     expect(topics[0]).toHaveProperty('office_scope');
+  });
+
+  // 🔴 ADR 0006 (Option Y). Wording follows the VERSION the season pinned — the
+  // latest published/superseded revision of that version — NOT the global
+  // is_current text. This guards the resolver from silently reverting to
+  // is_current, which is the exact defect this repoint fixes (a season showing a
+  // major it never pinned).
+  it('resolves wording from the season-pinned version, not is_current', async () => {
+    mockQuery.mockResolvedValue({ rows: [row('t1', 'a')] });
+    await getPromotedTopics();
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('season_revision_id');                 // starts from the pin
+    expect(sql).toContain('inform.compass_topic_revisions');     // resolves a revision
+    expect(sql).toMatch(/status IN \('published', 'superseded'\)/); // that was live at some point
+    expect(sql).toContain('effective_revision_id');              // and carries it out for stances
+    // The outer query must not fall back to a global-current text source.
+    expect(sql).not.toContain('compass_topics_current');
   });
 });
 
