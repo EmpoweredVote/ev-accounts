@@ -12,6 +12,13 @@ import { sendEmail } from '../lib/emailService.js';
 import { pool } from '../lib/db.js';
 import type { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
+import {
+  authenticateWithPassword,
+  authenticateWithEmailCode,
+  refreshWorkosSession,
+  sendWorkosPasswordReset,
+  confirmWorkosPasswordReset,
+} from '../lib/workosAuthService.js';
 
 const router = Router();
 
@@ -24,6 +31,22 @@ function evSessionCookieOptions() {
     domain: env.COOKIE_DOMAIN ? env.COOKIE_DOMAIN : undefined,
     path: '/',
   };
+}
+
+const WOS_SESSION_COOKIE = 'ev_wos_session';
+const WOS_PENDING_COOKIE = 'ev_wos_pending';
+
+// The pending token is single-use and short-lived; hold it server-side in an
+// httpOnly cookie so it never touches browser JS (posture: no auth material in
+// JS storage).
+function wosPendingCookieOptions() {
+  return { ...evSessionCookieOptions(), maxAge: 15 * 60 * 1000 }; // 15 minutes
+}
+function setWosSession(res: Response, refreshToken: string) {
+  res.cookie(WOS_SESSION_COOKIE, refreshToken, {
+    ...evSessionCookieOptions(),
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+  });
 }
 
 /**
@@ -423,6 +446,48 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
       account_standing: 'active',
     },
   });
+});
+
+/**
+ * POST /api/auth/workos/authenticate
+ *
+ * Headless WorkOS login (decision 0002 headless-login project). Runs the WorkOS
+ * password grant SERVER-SIDE (it needs client_secret), stores the WorkOS refresh
+ * token in the ev_wos_session httpOnly cookie, and returns the access token.
+ * Pending states (email verification, MFA) stash the pending token in the
+ * ev_wos_pending cookie and report a status for the UI to resolve on the next call.
+ */
+router.post('/workos/authenticate', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = authBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: parsed.error.issues[0]?.message ?? 'Invalid request body' });
+    return;
+  }
+  const { email, password } = parsed.data;
+  const outcome = await authenticateWithPassword(email, password, {
+    ipAddress: req.ip,
+    userAgent: req.headers['user-agent'],
+  });
+
+  switch (outcome.status) {
+    case 'authenticated':
+      setWosSession(res, outcome.refreshToken);
+      res.status(200).json({ access_token: outcome.accessToken });
+      return;
+    case 'email_verification_required':
+    case 'mfa_required':
+      res.cookie(WOS_PENDING_COOKIE, outcome.pendingToken, wosPendingCookieOptions());
+      res.status(200).json({ status: outcome.status });
+      return;
+    case 'invalid_credentials':
+      res.status(401).json({ code: 'INVALID_CREDENTIALS', message: 'Invalid email or password' });
+      return;
+    default:
+      res.status(outcome.code === 'NOT_CONFIGURED' ? 503 : 502).json({
+        code: outcome.code, message: 'Sign-in is temporarily unavailable',
+      });
+      return;
+  }
 });
 
 /**
