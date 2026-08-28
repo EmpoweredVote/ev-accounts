@@ -34,6 +34,74 @@
 
 ---
 
+## 🔴 Deviations found during execution, 2026-08-28
+
+This plan was executed the same day it was written, and **applied**. Six things in it were wrong,
+missing, or too weak. They are recorded here rather than quietly corrected, because the same mistakes
+are available to every later slice.
+
+1. **`essentials.seat_officeholder()` REFUSES a NULL `term_start`.** Task 4 Step 6 assumed three
+   council members could be seated with a NULL start at `'unknown'` precision. The helper raises:
+   *"seat_officeholder requires a real term_start. If the source gives only a year, pass Jan 1 with
+   p_start_precision => 'year' rather than NULL."* CLAUDE.md's "open-ended term" means
+   **`term_end IS NULL`**, not an unbounded *start* — I read it the other way.
+   The schema does allow the honest record, and prod is full of it: **all 81,676 `unknown`-precision
+   `office_terms` rows carry `term_start IS NULL`**, written by the ADR 0002 phase-2 backfill by direct
+   insert. Only the helper refuses. `CC_0009` therefore routes dated rows through the helper and
+   inserts undated rows directly, **guarded on the office having zero existing term rows** — which is
+   precisely what makes skipping the two-step safe, because with no predecessor there is nothing to
+   close and the exclusion constraint cannot fire. Inventing a date was never an option: a too-late
+   `term_start` is a false statement about history and there is no `end_precision` to soften it.
+
+2. **The `external_id` band guard in Task 4 Steps 6 and 7 was a COUNT, which is both non-idempotent
+   and weaker than an allowlist.** "Assert the band holds N rows before this runs" means a re-run of an
+   applied migration counts its own rows and refuses — measured: *"expected 0 existing in-band
+   politician(s), found 17"*. Migrations in this repo are required to be idempotent. It is also weaker:
+   a foreign row that happened to make the count match would pass. Both migrations now assert that the
+   band holds **no row this wave does not own**, by naming the ids.
+
+3. **The same mistake in the post-verify counts gave `CC_0010` a hidden ORDERING DEPENDENCY on
+   `CC_0009`.** It asserted `cityPeople + countyPeople` in-band politicians, so applying the county
+   first would have failed for no real reason. Each migration now counts only its own ids.
+
+4. **Task 5 Step 3's combined dry-run recipe is DANGEROUS as written.** Stripping `BEGIN;`/`COMMIT;`
+   with `sed 's/^BEGIN;$//; s/^COMMIT;$//'` also matched the **outer** wrapper, so
+   `CC_0008`'s statements ran in **autocommit and committed to production**, and its `ON COMMIT DROP`
+   temp table vanished between statements (`relation "brad_seed" does not exist`). No data was harmed —
+   the structure migration's own gates all passed and its end state is exactly what it was meant to
+   produce — but the rollback rehearsal was lost, and for a few minutes prod held **6 Bradenton offices
+   with no term rows and no vacancy flag**, which is the invisible-office state this program exists to
+   avoid. It was closed by applying `CC_0009`.
+   ▶ **The correct recipe for one file: turn ITS OWN final `COMMIT` into `ROLLBACK` and leave its
+   `BEGIN` alone.** `sed 's/^COMMIT;$/ROLLBACK;/' migrations/X.sql | psql "$DATABASE_URL"`. Then check
+   the rollback reverted. Do not try to concatenate two migrations into one transaction.
+
+5. **Task 5 Step 7 said the probe should return 4 rows. It returns 12, and 12 is correct.** A city-hall
+   address legitimately also elects the Mayor citywide, both at-large commissioners and all five
+   constitutional officers. Expecting 4 would have read a correct result as a failure. The probe now
+   has a **1a** section that asserts the four required answers by name, so the row count never has to be
+   interpreted.
+
+6. **Task 1's tiling gate was right for a reason the plan understated, and the repair path mattered
+   more than expected.** **Four of the five ward polygons fail `ST_IsValid`** and needed
+   `ST_MakeValid`. Every gate in a loader runs on the **pre-repair** GeoJSON, so none of them can see
+   what the repair did — the output must be re-checked from the **database**. Verified afterwards: the
+   stored areas match the layer's own `ACRES` field to three decimals, the union is unchanged at
+   14.397 sq mi, self-overlap is 0.0000, and exactly one ward still covers city hall.
+
+Two things the plan got right that were worth the words: the `vacant_since` fallback was **not**
+needed — the vacancy is a **death** on a published date (2026-02-24, Commissioner Carol Ann Felts), so
+`vacant_since` is exact; and Task 3 Step 4's instruction to check for changes since the sources were
+edited is what surfaced that at all, since the Supervisor of Elections still lists her as sitting.
+
+One correction to the plan's framing rather than its steps: it treated a **county** vacancy as the same
+mechanism as FL-2's legislative ones. It is not. A county commission vacancy is filled by
+**gubernatorial appointment** (Fla. Const. art. IV §1(f)); a legislative vacancy is filled by
+**special election** (art. III §15(d)). So an appointee can appear in District 1 at any moment, with no
+election to watch for.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 Measured while planning, against production and against the publishers' own services. They are the

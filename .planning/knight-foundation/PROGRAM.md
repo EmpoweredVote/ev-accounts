@@ -18,7 +18,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 
 | # | State | Jurisdictions | 1 geo | 2 legis | 3 city | 4 county | 5 assets |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | — | — | — |
+| 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | WIP | WIP | — |
 | 2 | GA | Columbus, Macon, Milledgeville | — | — | — | — | — |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | — | — | — |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
@@ -36,6 +36,10 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 16 | MS | Biloxi | — | — | — | — | — |
 
 Order of execution is slice 1 → 16 as numbered (spec §3.1: grouped by state, largest group first).
+
+FL stages 3 and 4 are `WIP`, not `✅`: **Bradenton and Manatee County are seated and gated**, and
+Tallahassee/Leon, Palm Beach and Miami/Miami-Dade remain. Neither stage closes until all four Florida
+jurisdictions are in.
 
 ## Jurisdiction detail
 
@@ -131,7 +135,14 @@ reachable by address.
 | Long Beach county (LA) | 3 | 3 | 3 |
 | San José city | 1 | 1 | 1 |
 | San José county (Santa Clara) | 3 | 3 | 0 |
+| **Bradenton city** | **6** | **6** | **0** |
+| **Manatee County** | **12** | **11** | **0** |
 | every other jurisdiction | 0 | 0 | 0 |
+
+Bradenton and Manatee measured 2026-08-28 after FL-3. Manatee's twelfth office is Commission
+District 1, flagged vacant since 2026-02-24 — the incumbent died and the Governor left the seat empty,
+so it is on the 2026 ballot for a two-year unexpired term. **17 people, 0 headshots: that is the whole
+of FL-3's stage-5 debt so far.**
 
 ### Banners present
 
@@ -144,7 +155,14 @@ Wichita, Detroit, Charlotte (spec §8.1).
 | --- | --- | --- | --- |
 | FL | FL-2 structure | `CC_0006_fl_legislature_structure.sql` | 2026-08-28 |
 | FL | FL-2 occupancy | `CC_0007_fl_legislature_incumbents.sql` | 2026-08-28 |
-| — | — | next free is **`CC_0008`** | — |
+| FL | FL-3 city structure | `CC_0008_bradenton_structure.sql` | 2026-08-28 |
+| FL | FL-3 city occupancy | `CC_0009_bradenton_people.sql` | 2026-08-28 |
+| FL | FL-3 county (offices + people) | `CC_0010_manatee_county.sql` | 2026-08-28 |
+| — | — | next free is **`CC_0011`** | — |
+
+Private MTFCC allocations, which are a second sequence to take numbers from: `X0036` Bradenton wards,
+`X0037` Manatee commission districts. **Next free is `X0038`.** There is no central registry — each
+wave hardcodes its code in its own loader, so this table is the only place they are listed together.
 
 Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the number last.
 
@@ -155,3 +173,4 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 | 2026-08-28 | Program brainstormed and spec written. Production measured: 2,155 legislative seats owed, 12 states with no `place`/`sldu`/`sldl` polygons, 24 of 26 jurisdictions with zero local seats, 24 banners missing. | (done) |
 | 2026-08-28 | **FL-1 + FL-2 APPLIED.** Loaded 120 `sldl` + 40 `sldu` + 411 `place` polygons for FIPS 12; vintage confirmed against the enacted plans `H000H8013`/`S027S8058` (6 of 6 anchors). Seated the Florida Legislature: **160 offices, 155 people, 5 vacancies** (the plan had assumed 160/160). `CC_0006` + `CC_0007`. All gates green, no new reachability bucket, zero missing-terms drift. | Write the FL-3 plan: Bradenton + Manatee County. |
 | 2026-08-28 | **FL-3 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-3-bradenton-manatee.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-3-bradenton-manatee.md): 18 offices, 17 people, 1 vacancy. Measured while planning — the `geo_id` collision includes the COUNTY layer (`12081` is Manatee County **and** HD-81); Bradenton's ward layer is land-only, so the tiling gate goes against TIGER `AREALAND`, not the place polygon; Manatee's four district services are the same boundary to 0.000 sq mi; Commission District 1 is vacant and the Supervisor of Elections' own two pages disagree about it; Manatee is a **non-charter** county. | Execute FL-3 Task 1 (load `X0036` Bradenton wards). |
+| 2026-08-28 | **FL-3 APPLIED.** Loaded `X0036` (5 Bradenton wards) and `X0037` (5 Manatee commission districts), then seated **18 offices, 17 people, 1 vacancy** — `CC_0008`, `CC_0009`, `CC_0010`. The four-answer probe at Bradenton City Hall returns Ward 3, Commission District 3, HD-71 and SD-20. All gates green, no new reachability bucket, `offices_missing_terms` unflagged unchanged at 655 of a 699 threshold. Four corrections went into `fl.md`: the `geo_id` collision reaches the **county** layer (`12081` is Manatee County *and* HD-81); the child-county matview rule was too broad; `seat_officeholder()` refuses a NULL `term_start`; and an `external_id` band guard must be an **allowlist**, not a count, or the migration is not idempotent. | Write the FL-4 plan: Tallahassee + Leon County. Verify first whether Tallahassee's city commission is entirely at-large. |
