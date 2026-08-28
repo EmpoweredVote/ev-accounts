@@ -104,24 +104,34 @@ const LADDERS_SQL = `
    ORDER BY sr.value`;
 
 /**
- * Answer distribution for ONE named season (the open one). The season is a
- * parameter, never inferred from the pair — a bare (politician_id, topic_id)
- * read fans out the moment a second season exists (ADR 0005 §1.2).
+ * Answer distribution: each politician's NEWEST answer per topic, resolved by
+ * season number — the set form of seasonService.newestAnswerLateral. Reads
+ * follow the person, not the calendar (ADR 0005 §1.4): the first composition
+ * load after a changeover must show the answers politicians actually hold,
+ * not the empty set of a season nobody has been researched in yet. The
+ * DISTINCT ON names the season for each row, so a second season cannot fan
+ * this out (ADR 0005 §1.2).
  */
 const DISTRIBUTION_SQL = `
-  SELECT a.topic_id, a.value::int AS value, count(*)::int AS n
-    FROM inform.politician_answers a
-   WHERE a.season_id = $1::uuid
-   GROUP BY a.topic_id, a.value`;
+  SELECT x.topic_id, x.value::int AS value, count(*)::int AS n
+    FROM (
+      SELECT DISTINCT ON (a.politician_id, a.topic_id) a.topic_id, a.value
+        FROM inform.politician_answers a
+        JOIN inform.seasons s ON s.id = a.season_id
+       ORDER BY a.politician_id, a.topic_id, s.number DESC
+    ) x
+   GROUP BY x.topic_id, x.value`;
 
 export async function getComposition(): Promise<CompositionPayload> {
   const seasons = await listSeasons();
   const open = seasons.find((s) => s.status === 'open') ?? null;
   const draft = seasons.find((s) => s.status === 'draft') ?? null;
 
-  const { rows: matrix } = await pool.query(TOPIC_MATRIX_SQL, [
-    open?.id ?? null,
-    draft?.id ?? null,
+  // Independent reads; the distribution aggregate is the heavy one, so let it
+  // overlap the matrix instead of queueing behind it.
+  const [{ rows: matrix }, { rows: distRows }] = await Promise.all([
+    pool.query(TOPIC_MATRIX_SQL, [open?.id ?? null, draft?.id ?? null]),
+    pool.query(DISTRIBUTION_SQL),
   ]);
 
   const revisionIds = new Set<string>();
@@ -139,13 +149,10 @@ export async function getComposition(): Promise<CompositionPayload> {
   }
 
   const dist = new Map<string, Record<number, number>>();
-  if (open) {
-    const { rows: distRows } = await pool.query(DISTRIBUTION_SQL, [open.id]);
-    for (const row of distRows) {
-      const d = dist.get(row.topic_id) ?? {};
-      d[row.value] = row.n;
-      dist.set(row.topic_id, d);
-    }
+  for (const row of distRows) {
+    const d = dist.get(row.topic_id) ?? {};
+    d[row.value] = row.n;
+    dist.set(row.topic_id, d);
   }
 
   const content = (

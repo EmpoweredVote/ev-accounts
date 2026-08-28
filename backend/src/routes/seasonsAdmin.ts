@@ -82,6 +82,24 @@ function invalidId(res: Response, what: string): void {
   res.status(422).json({ code: 'VALIDATION_ERROR', message: `Invalid ${what}` });
 }
 
+/**
+ * Audit without masking. By the time these run, the RPC has COMMITTED — for
+ * open-season, irreversibly. Letting a failed admin_audit_log insert bubble
+ * into sendRpcError would report the changeover as a 500, the reviewer would
+ * retry, and the retry would answer NOT_DRAFT for a season that is in fact
+ * open. The mutation's outcome must reach the caller; the audit failure goes
+ * to the log it can still reach.
+ */
+async function audit(
+  actorId: string, action: string, details: Record<string, unknown>,
+): Promise<void> {
+  try {
+    await logAdminAction(actorId, action, null, details);
+  } catch (err) {
+    console.error(`[seasonsAdmin] audit log failed for ${action}:`, err);
+  }
+}
+
 router.get('/', async (_req: Request, res: Response): Promise<void> => {
   try {
     res.json({ seasons: await listSeasons() });
@@ -111,7 +129,7 @@ router.post('/draft', async (req: Request, res: Response): Promise<void> => {
   try {
     const out = await createDraftSeason(
       actorId, parsed.data.name, parsed.data.public_note, parsed.data.carry_from_open);
-    await logAdminAction(actorId, 'compass:season:create-draft', null, {
+    await audit(actorId, 'compass:season:create-draft', {
       season_id: out.season_id,
       number: out.number,
       question_count: out.question_count,
@@ -139,7 +157,7 @@ router.patch('/draft/:id', async (req: Request, res: Response): Promise<void> =>
   try {
     const out = await updateDraftSeason(
       id, actorId, parsed.data.name ?? null, parsed.data.public_note ?? null);
-    await logAdminAction(actorId, 'compass:season:update-draft', null, {
+    await audit(actorId, 'compass:season:update-draft', {
       season_id: id,
       capacity: reviewerCapacity(req),
     });
@@ -155,7 +173,7 @@ router.delete('/draft/:id', async (req: Request, res: Response): Promise<void> =
   const actorId = (req as AuthenticatedRequest).userId;
   try {
     const out = await deleteDraftSeason(id, actorId);
-    await logAdminAction(actorId, 'compass:season:delete-draft', null, {
+    await audit(actorId, 'compass:season:delete-draft', {
       season_id: id,
       question_count: out.question_count,
       capacity: reviewerCapacity(req),
@@ -180,7 +198,7 @@ router.post('/draft/:id/topics', async (req: Request, res: Response): Promise<vo
   const actorId = (req as AuthenticatedRequest).userId;
   try {
     const out = await addTopicToSeason(id, parsed.data.topic_id, actorId);
-    await logAdminAction(actorId, 'compass:season:add-topic', null, {
+    await audit(actorId, 'compass:season:add-topic', {
       season_id: id,
       topic_id: parsed.data.topic_id,
       pinned_revision_id: out.topic_revision_id,
@@ -200,7 +218,7 @@ router.delete('/draft/:id/topics/:topicId', async (req: Request, res: Response):
   const actorId = (req as AuthenticatedRequest).userId;
   try {
     const out = await removeTopicFromSeason(id, topicId, actorId);
-    await logAdminAction(actorId, 'compass:season:remove-topic', null, {
+    await audit(actorId, 'compass:season:remove-topic', {
       season_id: id,
       topic_id: topicId,
       capacity: reviewerCapacity(req),
@@ -219,7 +237,7 @@ router.post('/draft/:id/topics/:topicId/repin', async (req: Request, res: Respon
   const actorId = (req as AuthenticatedRequest).userId;
   try {
     const out = await repinTopic(id, topicId, actorId);
-    await logAdminAction(actorId, 'compass:season:repin-topic', null, {
+    await audit(actorId, 'compass:season:repin-topic', {
       season_id: id,
       topic_id: topicId,
       repinned: out.repinned,
@@ -239,7 +257,7 @@ router.post('/draft/:id/open', async (req: Request, res: Response): Promise<void
   const actorId = (req as AuthenticatedRequest).userId;
   try {
     const out = await openSeason(id, actorId);
-    await logAdminAction(actorId, 'compass:season:open', null, {
+    await audit(actorId, 'compass:season:open', {
       opened_season_id: out.opened_season_id,
       closed_season_id: out.closed_season_id,
       question_count: out.question_count,

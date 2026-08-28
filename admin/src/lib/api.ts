@@ -60,14 +60,17 @@ export async function apiFetch<T>(
     });
     if (!retry.ok) {
       const body = await retry.json().catch(() => ({ error: retry.statusText }));
-      throw new Error(body.error || `API error: ${retry.status}`);
+      throw new Error(body.error || body.message || `API error: ${retry.status}`);
     }
     return retry.json();
   }
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({ error: res.statusText }));
-    throw new Error(body.error || `API error: ${res.status}`);
+    // Some routers reply { code, message } rather than { error } — the message
+    // is written for a human (e.g. the season RPCs name the unblocking step),
+    // so it must not collapse to "API error: 409".
+    throw new Error(body.error || body.message || `API error: ${res.status}`);
   }
 
   return res.json();

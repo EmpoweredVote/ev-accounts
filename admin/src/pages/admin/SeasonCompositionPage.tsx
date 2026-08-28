@@ -143,11 +143,19 @@ function OptionList({ ladder, topic, withDist }: {
   );
 }
 
-/** Ladder diff for a changed/stale topic: rung-by-rung, word-level. */
+/**
+ * Ladder diff for a changed/stale topic: rung-by-rung, word-level. Rungs pair
+ * by VALUE, never by array position — the guard and the render must use the
+ * same pairing or a ladder that gained/lost a rung reads as "unchanged".
+ */
 function LadderDiff({ prev, next }: { prev: RevisionContent; next: RevisionContent }) {
-  const anyChanged = next.ladder.some((n, i) => hasChanged(prev.ladder[i]?.text ?? null, n.text));
+  const removed = prev.ladder.filter((p) => !next.ladder.some((n) => n.value === p.value));
+  const anyChanged =
+    removed.length > 0 ||
+    next.ladder.some((n) =>
+      hasChanged(prev.ladder.find((x) => x.value === n.value)?.text ?? null, n.text));
   if (!anyChanged) {
-    return <p className="text-sm italic text-gray-500 dark:text-gray-400">All five options are unchanged.</p>;
+    return <p className="text-sm italic text-gray-500 dark:text-gray-400">The options are unchanged.</p>;
   }
   return (
     <div>
@@ -169,6 +177,17 @@ function LadderDiff({ prev, next }: { prev: RevisionContent; next: RevisionConte
           </div>
         );
       })}
+      {removed.map((p) => (
+        <div key={p.value} className="grid grid-cols-[26px_1fr] items-start gap-3 border-b border-gray-100 py-2 last:border-0 dark:border-gray-800">
+          <span
+            className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-gray-950 opacity-50"
+            style={{ background: OPT_COLORS[p.value - 1] }}
+          >
+            {p.value}
+          </span>
+          <del className={`${DEL} text-sm leading-snug`}>{p.text}</del>
+        </div>
+      ))}
     </div>
   );
 }
@@ -241,13 +260,13 @@ function TopicDetailModal({ item, openSeason, onClose }: {
             <>
               <p className="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 {t.in_open && t.answer_total > 0
-                  ? `The five options, and where ${t.answer_total.toLocaleString()} politicians landed`
+                  ? `The five options, and where ${t.answer_total.toLocaleString()} politicians' most recent answers landed`
                   : 'The five options'}
               </p>
               <OptionList ladder={main.ladder} topic={t} withDist={Boolean(t.in_open && t.answer_total > 0)} />
               {!t.in_open && (
                 <p className="mt-3 rounded border border-ev-teal/40 bg-cyan-50 px-3 py-2 text-sm text-ev-teal dark:bg-cyan-950/40 dark:text-ev-teal-light">
-                  No answer data yet — this question has not been asked in an open season.
+                  No answer data yet — no politician has a recorded answer on this topic.
                 </p>
               )}
             </>
@@ -256,7 +275,7 @@ function TopicDetailModal({ item, openSeason, onClose }: {
           {isChanged && t.in_open && t.answer_total > 0 && (
             <>
               <p className="mb-2 mt-2 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Where {t.answer_total.toLocaleString()} politicians landed (answers given against the old wording)
+                Where {t.answer_total.toLocaleString()} politicians' most recent answers landed (given against the old wording)
               </p>
               <OptionList ladder={t.in_open.pin.ladder} topic={t} withDist />
             </>
@@ -392,6 +411,74 @@ function CreateDraftModal({ open, nextNumber, busy, error, onCreate, onClose }: 
   );
 }
 
+/** Edit a draft's name and public note (PATCH /admin/seasons/draft/:id). */
+function EditDraftModal({ open, draft, busy, error, onSave, onClose }: {
+  open: boolean;
+  draft: SeasonRow | null;
+  busy: boolean;
+  error: string | null;
+  onSave: (name: string, note: string) => void;
+  onClose: () => void;
+}) {
+  const [name, setName] = useState('');
+  const [note, setNote] = useState('');
+  useEffect(() => {
+    if (open && draft) {
+      setName(draft.name);
+      setNote(draft.public_note);
+    }
+  }, [open, draft]);
+  return (
+    <Dialog open={open} onClose={onClose} className="relative z-50">
+      <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
+      <div className="fixed inset-0 flex items-center justify-center p-4">
+        <DialogPanel className="w-full max-w-lg rounded-lg bg-white p-6 shadow-xl dark:bg-gray-900">
+          <DialogTitle className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+            Edit draft season
+          </DialogTitle>
+          <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            Name
+          </label>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mb-3 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+          />
+          <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            Public note
+          </label>
+          <textarea
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            rows={4}
+            className="mb-3 w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+          />
+          {error && (
+            <p role="alert" className="mb-4 rounded border border-amber-600 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-500 dark:bg-amber-950/50 dark:text-amber-100">
+              {error}
+            </p>
+          )}
+          <div className="flex justify-end gap-2">
+            <button
+              onClick={onClose}
+              className="rounded px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => onSave(name, note)}
+              disabled={busy || !name.trim() || !note.trim()}
+              className="rounded bg-ev-teal px-4 py-2 text-sm font-semibold text-white transition-colors hover:opacity-90 disabled:opacity-50"
+            >
+              {busy ? 'Saving…' : 'Save'}
+            </button>
+          </div>
+        </DialogPanel>
+      </div>
+    </Dialog>
+  );
+}
+
 /** Stat block shared by both modes (presentation renders it on dark). */
 function StatBand({ counts, dark }: {
   counts: { carried: number; changed: number; dropped: number; added: number };
@@ -431,6 +518,10 @@ export function SeasonCompositionPage() {
   const [actionError, setActionError] = useState<string | null>(null);
   const [detail, setDetail] = useState<Classified | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
+  // The RPC assigns max(number)+1 over ALL seasons; open.number+1 is wrong the
+  // moment history holds a closed season above the open one (CA_0020 happened).
+  const [nextNumber, setNextNumber] = useState<number | null>(null);
   const [confirm, setConfirm] = useState<MutationTarget>({ kind: null });
 
   const load = useCallback(async () => {
@@ -438,7 +529,15 @@ export function SeasonCompositionPage() {
     try {
       setData(await apiFetch<CompositionPayload>('/admin/seasons/composition'));
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load composition');
+      const message = err instanceof Error ? err.message : 'Failed to load composition';
+      // A failed RELOAD must not blank a working page: keep the (stale) data
+      // and surface the failure beside it. Only the initial load may take
+      // over the whole page.
+      setData((prev) => {
+        if (prev) setActionError(`Reload failed — showing possibly stale data. ${message}`);
+        else setError(message);
+        return prev;
+      });
     } finally {
       setLoading(false);
     }
@@ -458,6 +557,19 @@ export function SeasonCompositionPage() {
 
   const open = data?.open_season ?? null;
   const draft = data?.draft_season ?? null;
+
+  const openCreateModal = useCallback(async () => {
+    setActionError(null);
+    let next = (open?.number ?? 0) + 1;
+    try {
+      const { seasons } = await apiFetch<{ seasons: SeasonRow[] }>('/admin/seasons');
+      next = seasons.reduce((m, s) => Math.max(m, s.number), 0) + 1;
+    } catch {
+      // fall back to the open season's number; the RPC assigns the real one
+    }
+    setNextNumber(next);
+    setCreateOpen(true);
+  }, [open]);
   const classified = useMemo(
     () => classifyAll(data?.topics ?? [], Boolean(draft)),
     [data, draft],
@@ -529,8 +641,8 @@ export function SeasonCompositionPage() {
             {open
               ? `${open.name} asks ${open.question_count} questions. `
               : ''}
-            {draft
-              ? 'The draft keeps what works, retires what didn’t, and adds what this cycle demands. Click any topic — even an unchanged one — for its question, its five options, and how politicians actually answered.'
+            {draft?.public_note
+              ? draft.public_note + ' Click any topic — even an unchanged one — for its question, its five options, and how politicians actually answered.'
               : 'Click any topic for its question, its five options, and how politicians answered.'}
           </p>
 
@@ -579,7 +691,7 @@ export function SeasonCompositionPage() {
                   <span className={`truncate ${c.status === 'dropped' ? 'text-gray-500 line-through' : 'text-gray-200'}`}>
                     {c.topic.in_open?.pin.title}
                   </span>
-                  <StatusBadge status={c.status === 'added' ? '' : c.status} />
+                  <StatusBadge status={c.status} />
                   <SparkBar topic={c.topic} />
                 </button>
               ))}
@@ -604,7 +716,7 @@ export function SeasonCompositionPage() {
                     <span className={`truncate ${c.status === 'added' ? 'font-semibold text-cyan-200' : 'text-gray-200'}`}>
                       {c.topic.in_draft?.pin.title}
                     </span>
-                    <StatusBadge status={c.status === 'dropped' ? '' : c.status} />
+                    <StatusBadge status={c.status} />
                   </button>
                 ))}
               </section>
@@ -674,7 +786,17 @@ export function SeasonCompositionPage() {
                 <span className="ml-2 rounded-full bg-ev-yellow px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-yellow-950">Draft</span>
               </p>
               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{draftCount} questions · pending board sign-off</p>
+              <p className="mt-2 border-l-2 border-gray-300 pl-2 text-xs italic text-gray-500 dark:border-gray-600 dark:text-gray-400">
+                {draft.public_note}
+              </p>
               <div className="mt-3 flex gap-2">
+                <button
+                  onClick={() => { setActionError(null); setEditOpen(true); }}
+                  disabled={busy}
+                  className="rounded px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                >
+                  Edit name / note
+                </button>
                 <button
                   onClick={() => setConfirm({ kind: 'open-season' })}
                   disabled={busy}
@@ -697,11 +819,11 @@ export function SeasonCompositionPage() {
                 No draft yet. Composing one does not affect the open season.
               </p>
               <button
-                onClick={() => { setActionError(null); setCreateOpen(true); }}
+                onClick={() => { void openCreateModal(); }}
                 disabled={busy}
                 className="mt-3 rounded bg-ev-red px-3 py-1.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
               >
-                Start Season {(open?.number ?? 0) + 1} draft
+                Start a new season draft
               </button>
             </>
           )}
@@ -732,7 +854,7 @@ export function SeasonCompositionPage() {
                 <span className={`truncate ${c.status === 'dropped' ? 'text-gray-400 line-through' : 'text-gray-800 dark:text-gray-200'}`}>
                   {c.topic.in_open?.pin.title}
                 </span>
-                <StatusBadge status={c.status === 'added' ? '' : c.status} />
+                <StatusBadge status={c.status} />
                 <SparkBar topic={c.topic} />
               </button>
             ))}
@@ -767,7 +889,7 @@ export function SeasonCompositionPage() {
                       Re-pin rev {c.topic.current?.revision}
                     </button>
                   )}
-                  <StatusBadge status={c.status === 'dropped' ? '' : c.status} />
+                  <StatusBadge status={c.status} />
                   <button
                     onClick={() => dropTopic(c.topic.topic_id)}
                     disabled={busy}
@@ -838,7 +960,7 @@ export function SeasonCompositionPage() {
 
       <CreateDraftModal
         open={createOpen}
-        nextNumber={(open?.number ?? 0) + 1}
+        nextNumber={nextNumber ?? (open?.number ?? 0) + 1}
         busy={busy}
         error={actionError}
         onClose={() => setCreateOpen(false)}
@@ -847,6 +969,21 @@ export function SeasonCompositionPage() {
             method: 'POST',
             body: JSON.stringify({ name, public_note: note, carry_from_open: carry }),
           })).then((ok) => { if (ok) setCreateOpen(false); });
+        }}
+      />
+
+      <EditDraftModal
+        open={editOpen}
+        draft={draft}
+        busy={busy}
+        error={actionError}
+        onClose={() => setEditOpen(false)}
+        onSave={(name, note) => {
+          if (!draft) return;
+          void act(() => apiFetch(`/admin/seasons/draft/${draft.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ name, public_note: note }),
+          })).then((ok) => { if (ok) setEditOpen(false); });
         }}
       />
 

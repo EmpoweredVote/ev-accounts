@@ -57,15 +57,15 @@ describe('getComposition', () => {
         draft_pin_revision: 2, draft_pin_title: 'Healthcare Access',
         draft_pin_short_title: 'Healthcare', draft_pin_question: 'Q v2',
       }], rowCount: 1 })
-      // 3: ladders
-      .mockResolvedValueOnce({ rows: [
-        { topic_revision_id: revA, value: 1, text: 'old rung 1' },
-        { topic_revision_id: revB, value: 1, text: 'new rung 1' },
-      ], rowCount: 2 })
-      // 4: distribution
+      // 3: distribution (issued in the same Promise.all as the matrix)
       .mockResolvedValueOnce({ rows: [
         { topic_id: topicId, value: 1, n: 10 },
         { topic_id: topicId, value: 3, n: 5 },
+      ], rowCount: 2 })
+      // 4: ladders
+      .mockResolvedValueOnce({ rows: [
+        { topic_revision_id: revA, value: 1, text: 'old rung 1' },
+        { topic_revision_id: revB, value: 1, text: 'new rung 1' },
       ], rowCount: 2 });
 
     const c = await getComposition();
@@ -80,26 +80,28 @@ describe('getComposition', () => {
     expect(t.answer_total).toBe(15);
   });
 
-  it('skips the distribution query when no season is open', async () => {
+  it('still aggregates the distribution when no season is open (reads follow the person)', async () => {
     mockQuery
       .mockResolvedValueOnce({ rows: [DRAFT], rowCount: 1 })
+      .mockResolvedValueOnce({ rows: [], rowCount: 0 })
       .mockResolvedValueOnce({ rows: [], rowCount: 0 })
       .mockResolvedValueOnce({ rows: [], rowCount: 0 });
     const c = await getComposition();
     expect(c.open_season).toBeNull();
     expect(c.topics).toEqual([]);
-    expect(mockQuery).toHaveBeenCalledTimes(3);
+    expect(mockQuery).toHaveBeenCalledTimes(4);
   });
 
-  it('names the season explicitly in the distribution SQL (check:answer-seasons)', async () => {
+  it('resolves each answer to its newest season, never the bare pair (ADR 0005 §1.2)', async () => {
     mockQuery
       .mockResolvedValueOnce({ rows: [OPEN], rowCount: 1 })
       .mockResolvedValueOnce({ rows: [], rowCount: 0 })
       .mockResolvedValueOnce({ rows: [], rowCount: 0 })
       .mockResolvedValueOnce({ rows: [], rowCount: 0 });
     await getComposition();
-    const distCall = mockQuery.mock.calls[3];
-    expect(distCall[0]).toMatch(/season_id\s*=\s*\$1/);
+    const distSql = mockQuery.mock.calls[2][0] as string;
+    expect(distSql).toMatch(/DISTINCT ON \(a\.politician_id, a\.topic_id\)/);
+    expect(distSql).toMatch(/ORDER BY a\.politician_id, a\.topic_id, s\.number DESC/);
   });
 });
 
