@@ -870,7 +870,7 @@ export function SeasonCompositionPage() {
               {draftRows.map((c, i) => (
                 <div
                   key={c.topic.topic_id}
-                  className={`flex items-center gap-2 border-b border-gray-100 px-3 py-1 text-sm last:border-0 dark:border-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : c.status === 'added' ? 'bg-cyan-50 dark:bg-cyan-950/30' : ''}`}
+                  className={`flex items-center gap-2 border-b border-gray-100 px-3 py-1.5 text-sm last:border-0 dark:border-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : c.status === 'added' ? 'bg-cyan-50 dark:bg-cyan-950/30' : ''}`}
                 >
                   <span className="w-6 shrink-0 text-right text-xs tabular-nums text-gray-400">{i + 1}</span>
                   <button
@@ -906,7 +906,7 @@ export function SeasonCompositionPage() {
                     Retired from {open?.name}
                   </p>
                   {droppedRows.map((c) => (
-                    <div key={c.topic.topic_id} className="flex items-center gap-2 px-3 py-1 text-sm">
+                    <div key={c.topic.topic_id} className="flex items-center gap-2 px-3 py-1.5 text-sm">
                       <span className="w-6 shrink-0" />
                       <button
                         onClick={() => setDetail(c)}
@@ -932,7 +932,7 @@ export function SeasonCompositionPage() {
                     Topic pool — has a published ladder, not asked in either season
                   </p>
                   {poolRows.map((c) => (
-                    <div key={c.topic.topic_id} className="flex items-center gap-2 px-3 py-1 text-sm">
+                    <div key={c.topic.topic_id} className="flex items-center gap-2 px-3 py-1.5 text-sm">
                       <span className="w-6 shrink-0" />
                       <button
                         onClick={() => setDetail(c)}
