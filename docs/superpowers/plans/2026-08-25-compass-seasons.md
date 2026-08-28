@@ -37,23 +37,45 @@ Applied slots: `CA_0017`, `CA_0018`, `CA_0019`, `CC_0001`, `CC_0002`, `CC_0003`.
 
 `npm run check:answer-seasons` is **green** — every consumer names a season, RPCs included.
 
-**Production is stable, not half-migrated.** The `*_legacy_pair_scaffold` unique indexes from
-`CC_0002` are still up, so the database physically cannot hold two seasons: bare-pair
-`ON CONFLICT` still resolves and no join can fan out. Reads behave exactly as before. Answer
-**writes** refuse with `NO_OPEN_SEASON`, which is correct — season 1 is closed and nothing is open.
-**Nothing degrades by waiting here.**
+#### 🔴🔴 SEASON 1 WAS CLOSED TOO EARLY. IT IS OPEN AGAIN AND STAYS OPEN.
+
+**Decision, Chris Cantrell, 2026-08-28.** `CA_0019` closed season 1 on the assumption that season 2
+would follow within days. It could not — the question set is Chris Andrews's editorial call and it
+was not ready — so the platform sat with **no open season and every compass write refusing
+`NO_OPEN_SEASON`**. `CA_0020` (#196) reopened season 1 to end that. That reopening is now the
+**intended state, not a stopgap**:
+
+> Leave season 1 open until Chris Andrews is ready. Then close 1 and open 2 **together**, as one
+> move, and apply `CC_wip` after.
+
+Do not close season 1 on its own again. Closing it is only ever half of a transition, and the half
+that breaks writing.
+
+Verified against production 2026-08-28: **season 1 `open`**, 33,164 answers / 33,818 context, and
+both `*_legacy_pair_scaffold` unique indexes still up — so the database still cannot hold two
+seasons, bare-pair `ON CONFLICT` still resolves, and no join can fan out. Reads are unchanged.
 
 #### Three steps remain, and the order is load-bearing
 
 | # | Step | Blocked on |
 |---|---|---|
 | A | `DROP INDEX inform.politician_answers_legacy_pair_scaffold` and the `politician_context` one | nothing — but only do it immediately before B |
-| B | **Open season 2** | 🔴 **CHRIS.** Editorial: a name, the question set, and a `public_note` that voters read |
+| B | **Close season 1 and open season 2, in one move** | 🔴 **CHRIS ANDREWS.** Editorial: a name, the question set, and a `public_note` that voters read |
 | C | Apply `backend/migrations/CC_wip_closed_season_immutable.sql` | B |
 
 **A and B want to happen close together.** Between them, a write to an already-answered pair fails
 on the scaffolding's unique index; after B everything works. Doing A without B buys nothing and
 opens the fan-out window.
+
+⚠ **B IS NOW A CLOSE-AND-OPEN, NOT AN OPEN.** Earlier revisions of this plan listed it as "open
+season 2", because season 1 was already closed at the time. It is not any more. Closing 1 without
+opening 2 in the same move recreates the exact outage this section exists to record.
+
+⚠ **WHILE SEASON 1 IS OPEN, `CC_wip` PROTECTS NOTHING.** It makes a *closed* season immutable, and
+there is no closed season now. Applying it early is no longer dangerous — it is simply inert, and it
+becomes load-bearing the moment B lands. Until then the only thing standing between the 33,164-row
+corpus and a bad DELETE is `npm run check:season-floor`, a nightly CI row-count check. That is a
+detector, not a constraint: it reports loss the next morning, it cannot refuse it.
 
 **Step C is the answer to Chris's actual concern** — that destructive patterns should be
 *impossible*, not merely avoided. It is written and PROVEN (4 destructive paths refused on the live

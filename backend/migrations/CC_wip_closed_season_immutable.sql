@@ -27,14 +27,30 @@ BEGIN;
 -- Case 4 is the one that matters: no application-level fix covers a human at a
 -- psql prompt. That is the difference between a convention and a guarantee.
 --
--- 🔴 WHY THE ORDER MATTERS — DO NOT APPLY THIS EARLY. Season 1 is closed and
--- holds ALL 33,164 answers. Turn this on before another season is open and every
--- edit path stops, because there is nowhere writable left. The sequence is:
+-- 🔴🔴 UPDATED 2026-08-28 — SEASON 1 IS OPEN AGAIN, SO READ THIS BEFORE THE
+-- PARAGRAPH BELOW IT. CA_0019 closed season 1 assuming season 2 would follow in
+-- days. It could not, and the platform sat with NO open season and every compass
+-- write refusing NO_OPEN_SEASON. CA_0020 (#196) reopened season 1, and Chris
+-- Cantrell's decision on 2026-08-28 is that it STAYS open until Chris Andrews has
+-- the season 2 list — then 1 closes and 2 opens as ONE move.
+--
+-- What that changes here: applying this migration today is no longer dangerous,
+-- because it constrains CLOSED seasons and there is no closed season. It is
+-- simply INERT — it would protect zero rows. It becomes load-bearing the moment
+-- (b) below lands. There is therefore no reason to rush it, and no reason to fear
+-- it either; the reason to wait is that its post-verify gate has nothing to prove
+-- until a season is actually closed.
+--
+-- 🔴 WHY THE ORDER MATTERS. Season 1 holds ALL 33,164 answers. Turn this on
+-- while it is the CLOSED season and every edit path stops, because there is
+-- nowhere writable left. The sequence is:
 --   (a) drop the *_legacy_pair_scaffold indexes from CC_0002
---   (b) open season 2  🔴 NOT SETTLED as of 2026-08-27 — Chris Andrews is still
---       solidifying the question list. Prepare it as a `draft` and iterate there:
---       pins stay movable and no answer can land until it opens. Do NOT open a
---       provisional list, because opening freezes every pin permanently.
+--   (b) close season 1 AND open season 2, in one move  🔴 STILL NOT SETTLED as of
+--       2026-08-28 — Chris Andrews is solidifying the question list. Prepare it as
+--       a `draft` and iterate there: pins stay movable and no answer can land
+--       until it opens. Do NOT open a provisional list, because opening freezes
+--       every pin permanently. And do NOT close season 1 on its own — that is the
+--       half of the transition that breaks writing, and it is what went wrong.
 --   (c) THEN apply this
 --
 -- ⚠ ONE CONSEQUENCE TO ACCEPT DELIBERATELY, NOT DISCOVER. This blocks correcting
