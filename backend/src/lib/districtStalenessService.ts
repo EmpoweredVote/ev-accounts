@@ -41,7 +41,6 @@ export interface DistrictStalenessResult {
 
 export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResult> {
   const jobStart = Date.now();
-  let total = 0;
   let updated = 0;
   let unchanged = 0;
   let unresolved = 0;
@@ -62,7 +61,7 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
      WHERE encrypted_lat IS NOT NULL`
   );
 
-  total = users.length;
+  const total = users.length;
 
   for (const user of users) {
     try {

@@ -185,7 +185,9 @@ async function downloadZIP(): Promise<DownloadResult> {
     try {
       result = await doRequest(null);
     } catch (retryErr) {
-      throw new Error(`calAccessAdapter: downloadZIP retry failed: ${retryErr}`);
+      throw new Error(`calAccessAdapter: downloadZIP retry failed: ${retryErr}`, {
+        cause: retryErr,
+      });
     }
   }
 

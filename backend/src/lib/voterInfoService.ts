@@ -199,7 +199,7 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
   // Order locations nearest-first so the UI can surface the closest few.
   // Best-effort: if geocoding the address fails (PO box, geocoder down), we keep
   // the API's order rather than failing the whole request.
-  let origin: { lat: number; lng: number } | null = null;
+  let origin: { lat: number; lng: number } | null;
   try {
     const g = await geocodeAddress(address);
     origin = { lat: g.lat, lng: g.lng };

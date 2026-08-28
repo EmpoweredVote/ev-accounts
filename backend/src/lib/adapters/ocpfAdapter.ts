@@ -108,7 +108,8 @@ async function fetchOcpfReceipts(cpfId: string, externalSignal?: AbortSignal): P
     response = await fetch(url, { signal: requestSignal });
   } catch (err) {
     throw new Error(
-      `[ocpfAdapter] fetch error cpfId=${cpfId}: ${err instanceof Error ? err.message : String(err)}`
+      `[ocpfAdapter] fetch error cpfId=${cpfId}: ${err instanceof Error ? err.message : String(err)}`,
+      { cause: err }
     );
   }
 

@@ -602,7 +602,7 @@ export async function getPlayableRaces(
   }
 
   const allCountyGeoIds = [...new Set(races.flatMap((r) => r.countyGeoIds))];
-  let counties: Record<string, string> = {};
+  let counties: Record<string, string>;
   try {
     counties = await getCountyNames(allCountyGeoIds);
   } catch {

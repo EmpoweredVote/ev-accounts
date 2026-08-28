@@ -112,7 +112,7 @@ router.get(
 
     // Validate ?confidence
     const confidenceRaw = req.query.confidence as string | undefined;
-    let confidence: string | null = null;
+    let confidence: string | null;
     try {
       confidence = validateConfidence(confidenceRaw);
     } catch (err) {
@@ -170,7 +170,7 @@ router.get(
 
     // Validate ?confidence
     const confidenceRaw = req.query.confidence as string | undefined;
-    let confidence: string | null = null;
+    let confidence: string | null;
     try {
       confidence = validateConfidence(confidenceRaw);
     } catch (err) {
