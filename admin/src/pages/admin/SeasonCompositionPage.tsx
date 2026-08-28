@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../../lib/api';
-import { diffWords, hasChanged } from '../../lib/wordDiff';
+import { hasChanged } from '../../lib/wordDiff';
+import { DEL, InlineDiff, FieldDiff } from '../../components/wordDiffView';
 import {
   classifyAll,
   statCounts,
@@ -23,46 +24,6 @@ import {
  */
 
 const OPT_COLORS = ['#2f6fb0', '#59B0C4', '#9ca3af', '#e0a63a', '#FF5740'];
-
-const INS =
-  'bg-amber-200/80 text-gray-900 underline decoration-amber-700 decoration-1 ' +
-  'underline-offset-2 rounded-sm px-0.5 dark:bg-amber-500/30 dark:text-amber-50 ' +
-  'dark:decoration-amber-400';
-const DEL = 'line-through decoration-1 text-gray-500 dark:text-gray-400 px-0.5';
-
-function InlineDiff({ prev, next }: { prev: string | null; next: string | null }) {
-  const parts = useMemo(() => diffWords(prev, next), [prev, next]);
-  return (
-    <span>
-      {parts.map((p, i) =>
-        p.type === 'ins' ? (
-          <ins key={i} className={INS}>{p.text}</ins>
-        ) : p.type === 'del' ? (
-          <del key={i} className={DEL}>{p.text}</del>
-        ) : (
-          <span key={i}>{p.text}</span>
-        )
-      )}
-    </span>
-  );
-}
-
-function FieldDiff({ label, prev, next }: { label: string; prev: string | null; next: string | null }) {
-  const changed = hasChanged(prev, next);
-  return (
-    <div>
-      <div className="flex items-baseline gap-2">
-        <span className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-          {label}
-        </span>
-        {!changed && <span className="text-xs text-gray-400 dark:text-gray-500">unchanged</span>}
-      </div>
-      <p className="mt-1 leading-relaxed text-gray-900 dark:text-white">
-        {changed ? <InlineDiff prev={prev} next={next} /> : <span>{next || prev || '—'}</span>}
-      </p>
-    </div>
-  );
-}
 
 /** Five-segment mini bar of the open season's answer mix. */
 function SparkBar({ topic }: { topic: CompositionTopic }) {
@@ -200,10 +161,12 @@ const CATEGORY_CHIP: Record<string, { label: string; cls: string }> = {
   available: { label: 'In the topic pool (not asked)', cls: 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300' },
 };
 
-function TopicDetailModal({ item, openSeason, onClose }: {
+function TopicDetailModal({ item, openSeason, onClose, allowPropose }: {
   item: Classified | null;
   openSeason: SeasonRow | null;
   onClose: () => void;
+  /** Compose mode only — the presentation view is read-only for the board. */
+  allowPropose?: boolean;
 }) {
   if (!item) return <Dialog open={false} onClose={onClose} className="relative z-50"><span /></Dialog>;
   const t = item.topic;
@@ -281,7 +244,15 @@ function TopicDetailModal({ item, openSeason, onClose }: {
             </>
           )}
 
-          <div className="mt-5 text-right">
+          <div className="mt-5 flex items-center justify-end gap-2">
+            {allowPropose && (
+              <Link
+                to={`/admin/topics/${t.topic_key}/propose`}
+                className="rounded bg-ev-teal px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+              >
+                Propose revision
+              </Link>
+            )}
             <button
               onClick={onClose}
               className="rounded bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600"
@@ -956,7 +927,7 @@ export function SeasonCompositionPage() {
         )}
       </div>
 
-      <TopicDetailModal item={detail} openSeason={open} onClose={() => setDetail(null)} />
+      <TopicDetailModal item={detail} openSeason={open} onClose={() => setDetail(null)} allowPropose />
 
       <CreateDraftModal
         open={createOpen}
