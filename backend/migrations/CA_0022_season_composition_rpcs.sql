@@ -1,5 +1,15 @@
 BEGIN;
 
+-- ✅ APPLIED TO PRODUCTION 2026-08-28. Verified: all 7 functions live and
+-- SECURITY DEFINER, EXECUTE granted to service_role only (anon refused),
+-- post-verify gate passed, 1 season / 44 season_questions untouched.
+-- Dry-run first inside BEGIN…ROLLBACK, then a rolled-back behavioral probe,
+-- 16/16: carry pins compose-time revisions (Bail pinned rev 3, not S1's rev 1);
+-- DRAFT_EXISTS / NOT_IN_SEASON / ALREADY_IN_SEASON / NAME_REQUIRED /
+-- SCAFFOLD_INDEXES_PRESENT all raised; after simulating the scaffold drop,
+-- open_season closed S1, opened the draft, renumbered 1..44 contiguously,
+-- and NOT_DRAFT then protected pins and deletion.
+
 -- =============================================================================
 -- CA_0022: Season composition RPCs — author a draft season, then open it
 -- =============================================================================
