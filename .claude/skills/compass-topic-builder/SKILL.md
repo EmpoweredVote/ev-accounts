@@ -266,7 +266,7 @@ const topic = JSON.parse(process.argv[2]);
 
 // Create topic with stances via RPC
 const { rows: [created] } = await pool.query(\`
-  SELECT inform.admin_create_topic_with_stances(
+  SELECT public.admin_create_topic_with_stances(
     \$1::text, \$2::text, \$3::text, false, \$4::jsonb
   ) as result
 \`, [topic.title, topic.question_text, topic.short_title, JSON.stringify(topic.stances)]);
@@ -303,6 +303,34 @@ for (const level of topic.levels) {
 }
 
 console.log('Assigned role scopes:', topic.levels);
+
+// 🔴 REQUIRED: seed revision 1, or the topic is INVISIBLE. Everything reads
+// content through inform.compass_topics_current (ADR 0004 §12), which joins
+// compass_topic_revisions ON is_current — the legacy insert above does NOT
+// create that row (only the CA_0012 backfill did, once, for pre-existing
+// topics). Without it the topic never appears in the admin Topics list's
+// content views, the seasons topic pool, or the revision editor — and
+// nothing errors.
+const { rows: [rev] } = await pool.query(\`
+  INSERT INTO inform.compass_topic_revisions (
+    topic_id, revision, version, change_class, title, short_title, question_text,
+    rationale, public_note, status, is_current,
+    proposed_by, proposed_at, approved_by, approved_at, published_by, published_at
+  ) VALUES (
+    \$1, 1, 1, 'substantive', \$2, \$3, \$4,
+    \$5, 'First tracked version of this topic.', 'published', true,
+    \$6, now(), \$6, now(), \$6, now()
+  ) RETURNING id
+\`, [topicId, topic.title, topic.short_title, topic.question_text,
+     'Created via compass-topic-builder. ' + (topic.discovery?.policy_lever ?? ''),
+     actorId /* the admin running this — never a made-up uuid */]);
+for (const st of topic.stances) {
+  await pool.query(\`
+    INSERT INTO inform.compass_stance_revisions (topic_revision_id, value, text)
+    VALUES (\$1, \$2, \$3)
+  \`, [rev.id, st.value, st.text]);
+}
+console.log('Seeded revision 1:', rev.id);
 await pool.end();
 " '<JSON>'
 ```
