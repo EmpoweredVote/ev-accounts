@@ -276,15 +276,20 @@ console.log('Created topic:', topicId);
 
 // Set topic_key explicitly (trigger auto-derives from short_title if blank,
 // but we set it explicitly to match what quotes use)
-await pool.query(\\\`
-  UPDATE inform.compass_topics SET topic_key = \\\$1 WHERE id = \\\$2
-\\\`, [topic.topic_key, topicId]);
+await pool.query(\`
+  UPDATE inform.compass_topics SET topic_key = \$1 WHERE id = \$2
+\`, [topic.topic_key, topicId]);
 
 // Insert compass_topic_roles for each level
+// role_scope holds the LEVEL itself. The real values in production are
+// 'federal', 'state', 'local' and 'judicial' (verified 2026-08-28) — office
+// names like 'city_council' are NOT role scopes; a topic published with one
+// never appears on that scale, and nothing errors.
 const levelMap = {
-  'federal': ['us_congress', 'president'],
-  'state': ['state_legislature'],
-  'local': ['city_council']
+  'federal': ['federal'],
+  'state': ['state'],
+  'local': ['local'],
+  'judicial': ['judicial']
 };
 
 for (const level of topic.levels) {
