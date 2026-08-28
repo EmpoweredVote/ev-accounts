@@ -144,4 +144,16 @@ describe('password reset', () => {
     const out = await confirmWorkosPasswordReset('tok_bad', 'newpassword1');
     expect(out).toEqual({ ok: false, code: 'INVALID_TOKEN' });
   });
+
+  it('treats a 404 (user not found) as success to prevent email enumeration', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(errJson(404, { code: 'not_found' }));
+    const out = await sendWorkosPasswordReset('nonexistent@b.com');
+    expect(out).toEqual({ ok: true });
+  });
+
+  it('maps a weak password error to WEAK_PASSWORD', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(errJson(400, { code: 'invalid_password' }));
+    const out = await confirmWorkosPasswordReset('tok_1', 'weak');
+    expect(out).toEqual({ ok: false, code: 'WEAK_PASSWORD' });
+  });
 });

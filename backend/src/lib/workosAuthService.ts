@@ -125,8 +125,11 @@ export async function confirmWorkosPasswordReset(token: string, newPassword: str
   if (res.ok) return { ok: true };
   const body = (await res.json().catch(() => ({}))) as Record<string, unknown>;
   const disc = (body.code ?? body.error) as string | undefined;
-  if (disc && /token|expired|invalid/i.test(disc)) return { ok: false, code: 'INVALID_TOKEN' };
-  if (disc && /password/i.test(disc)) return { ok: false, code: 'WEAK_PASSWORD' };
+  if (disc && /token|expired/i.test(disc)) return { ok: false, code: 'INVALID_TOKEN' };
+  if (disc && /invalid|password/i.test(disc)) {
+    // "invalid_password" → WEAK_PASSWORD; "password_reset_token_invalid" → already caught above by token check
+    return /password/i.test(disc) ? { ok: false, code: 'WEAK_PASSWORD' } : { ok: false, code: 'INVALID_TOKEN' };
+  }
   console.error('[workosAuth] password_reset confirm failed:', res.status, JSON.stringify(body));
   return { ok: false, code: 'WORKOS_ERROR' };
 }
