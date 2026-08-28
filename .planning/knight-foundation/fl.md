@@ -16,7 +16,7 @@ Jurisdictions: **Bradenton** (Manatee), **Miami** (Miami-Dade), **Palm Beach Cou
 | FL-2 | Florida Legislature | ✅ applied 2026-08-28 — `CC_0006`, `CC_0007` |
 | FL-3 | Bradenton + Manatee County | ✅ applied 2026-08-28 — `CC_0008`, `CC_0009`, `CC_0010` |
 | FL-4 | Tallahassee + Leon County | ✅ applied 2026-08-28 — `CC_0011`, `CC_0012`, `CC_0013` |
-| FL-5 | Palm Beach County (county only) | — |
+| FL-5 | Palm Beach County (county only) | **planned 2026-08-28**, not applied — [plan](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-5-palm-beach-county.md) |
 | FL-6 | Miami + Miami-Dade County | — |
 | FL-7 | Florida assets (headshots + 3 banners) | — |
 
@@ -460,7 +460,13 @@ organisational minutes would date all nine precisely.
 - **The party guard had to be widened.** FL-3 tested `\((R|D|NPA|I)\)`, which does **not** match
   `(DEM)` — and `(DEM)` is exactly what the Leon SOE prints beside all six constitutional officers.
 
-## ▶️ FL-5 — Palm Beach County: what is already measured
+## ▶️ FL-5 — Palm Beach County: PLANNED 2026-08-28, not applied
+
+**Plan:** [`2026-08-28-knight-fl-wave-5-palm-beach-county.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-5-palm-beach-county.md)
+ — **12 offices, 12 people, 0 vacancies. ONE migration, `CC_0014`.** Read its
+"Facts measured" section rather than re-deriving anything below.
+
+### What was already measured before planning
 
 **County only — there is no city half.** This is the one FL jurisdiction with no municipal wave, so it
 is a stage-4 wave on its own: commission layer + county officers, **offices and people in ONE
@@ -485,26 +491,69 @@ the `mtfcc` pairing returned **HD-99's Representative, Daryl Campbell** — and 
 pre-existing county office. It is not. The county has none. **Pair `geo_id` with `mtfcc` AND
 `district_type`, in throwaway queries too.**
 
-### What FL-5 must measure before it can assert anything
+### The five open questions — ALL ANSWERED WHILE PLANNING, 2026-08-28
 
-1. 🔴 **Palm Beach's charter status and its officer set, from the charter itself.** Do **not** inherit
-   either Manatee's five or Leon's six — FL-3 against FL-4 is the proof that the template varies
-   inside one state. Palm Beach is widely described as a charter county; confirm, and confirm whether
-   it elects a Superintendent of Schools (Leon does, Manatee has no such office).
-2. **The commission's shape.** Number of seats, and whether any are at-large. ⚠ If there are at-large
-   seats, check what the county CALLS them — Manatee says "District 6/7", Leon says "At Large,
-   Group 1/2".
-3. **A commission-district GIS layer**, and ideally a second independent digitization to cross-check,
-   as both Manatee and Leon happened to have.
-4. 🔴 **THE PROBE ANCHOR, which is a real open question here.** Every FL wave so far anchored on a city
-   hall. Palm Beach County has no city half, so there is no city seat to return and the four-answer
-   probe becomes a **three**-answer probe: county commissioner, state representative, state senator.
-   Pick an anchor deliberately — the county Governmental Center in West Palm Beach is the obvious
-   candidate, and `fl.md` already records West Palm Beach place `1276600` and its interior point.
-   **Record that the city slot is legitimately absent, so a later reader does not read it as a
-   failure** — the same care FL-2 needed for Miami's vacant HD-113.
-5. **The take-office rule(s)** for each body, which is how a published election year becomes a month.
-   Leon alone spanned five different rules.
+Kept as a list of answers so a reader does not re-measure. Every one is evidenced in the plan.
+
+1. ✅ **Charter status and officer set.** Palm Beach IS a charter county (home rule charter effective
+   **1985**) and elects **FIVE** constitutional officers — Clerk of the Circuit Court & Comptroller,
+   Property Appraiser, Sheriff, Supervisor of Elections, Tax Collector. **No elected Superintendent of
+   Schools**; its school superintendent is appointed by the School Board.
+   🔴🔴 **SO CHARTER STATUS PREDICTS NOTHING.** Leon is chartered and elects six; Palm Beach is
+   chartered and elects five; Manatee is non-chartered and elects five. Three counties, three answers.
+   🔴 **The county's own page lists SEVEN "constitutional officers", including the State Attorney and
+   the Public Defender.** Those are **15th Judicial Circuit** offices, and they look countywide only
+   because that circuit is coterminous with Palm Beach — Leon's 2nd Circuit spans six counties, which
+   is why FL-4 never met the question. **Not seated.**
+   ▶ **Program-level open work:** circuit-elected offices (State Attorney, Public Defender) are a real
+   unmodelled class of countywide-elected official, and a `JUDICIAL` scale already exists.
+2. ✅ **The commission's shape: SEVEN single-member districts and NO at-large seat.** A third
+   convention in three counties — Manatee 5+2 ("District 6/7"), Leon 5+2 ("At Large, Group 1/2"),
+   Palm Beach **7+0**. So its countywide district carries **only the five officers**, where Leon's
+   carries 8 and Manatee's 7. **Mayor and Vice Mayor are annual commission-elected ROLES, not offices.**
+3. ✅ **A commission-district layer, plus two more.** Primary is
+   `services1.arcgis.com/ZWOoUZbtaYePLlPw/.../Commissioner_Districts/0`. `CountyCommission_2022` is the
+   independent cross-check — ⚠ **its service name says 2022 and its LAYER is named `CountyCommission_2026`**,
+   and it returns **eight** rows where the eighth is blank. `County_Commission_Districts` is a decoy: a
+   near-copy of the primary carrying a **four-year-stale roster** in `NAME`.
+   🔴 **THE SEVEN DISTRICTS DO NOT TILE THE TIGER COUNTY — 155.54 sq mi of `12099` IS THE ATLANTIC.**
+   Overhang is 0.0060 and self-overlap 0.012, but the uncovered area is one offshore part of 155.5209
+   sq mi. The cross-check service carries that same water as its blank row, matching to 0.2359 sq mi.
+   **Gate on structure ("exactly one large gap, and it is offshore"), never on a 156 sq mi tolerance.**
+   ⚠ A **third projection family**: NAD83(HARN) StatePlane Florida East, US survey feet.
+4. ✅ **The anchor is the county Governmental Center, 301 N Olive Ave, West Palm Beach** —
+   `-80.051906016174, 26.71529321541`, one clean Census match. Answers: **Commission District 7**
+   (Bobby Powell Jr.), **HD-87** (Emily Gregory), **SD-24** (Mack Bernard), plus the five officers.
+   🔴 **THE PROBE HAS THREE REQUIRED ANSWERS, NOT FOUR, AND THAT IS CORRECT.** The anchor sits inside
+   TIGER place `1276600`, West Palm Beach, which this program deliberately does not seat. The plan puts
+   that statement in the probe file itself.
+   🔴 **The collision demo here is the richest in the slice — THREE wrong rows in one query**: Monroe
+   County via HD-87's `sldl` polygon, HD-24 via SD-24's `sldu` polygon, and HD-99 via Palm Beach
+   County's own `G4020` polygon.
+5. ✅ **Take-office rules.** Commissioners are sworn in *"two weeks after being elected in the November
+   general election"* — the same instant as Leon's "2nd Tuesday after the General Election". The five
+   officers take office on the 1st Tuesday after the 1st Monday in January, and run on the
+   **presidential** cycle: the 2026 primary carried no constitutional-officer contest.
+
+### Three more findings the plan turned up, none of which was on the list
+
+- 🔴🔴 **THREE OF SEVEN COMMISSIONER BIO PAGES APPEND THE PREDECESSOR'S BIOGRAPHY, UNLABELLED.** A
+  regex for "elected in `<year>`" returns **Mack Bernard's 2016** on District 7's page and **Melissa
+  McKinlay's 2014** on District 6's. Right shape, right page, right district heading, wrong by eight
+  years. Read these by eye.
+- 🔴🔴 **BOBBY POWELL JR. AND MACK BERNARD TRADED SEATS, AND BERNARD IS ALREADY IN PROD** as
+  `-1230024`, State Senator SD-24, seated by FL-2. The stale `County_Commission_Districts` layer still
+  names him for District 7, so a name-reuse step would seat a sitting senator on the county commission.
+  Powell is a fresh insert. All twelve names checked: **that is the only near-collision.**
+- 🔴 **THE CLERK'S SEAT TURNED OVER TWICE IN FOURTEEN MONTHS AND IS HELD BY A CLERK AD INTERIM.**
+  Abruzzo (elected 2021-01-05) resigned June 2025 to become County Administrator; Caruso was appointed
+  and sworn 2025-08-19; **the Governor suspended Caruso on 2026-08-18 — suspended, not removed** — and
+  the Chief Judge of the 15th Circuit appointed the chief deputy clerk as **Clerk Ad Interim** the same
+  day. **The plan seats her, and does NOT flag the office vacant**, because someone is holding it; the
+  rejected alternative and its reasoning are recorded there. **Re-check this seat on the day of apply.**
+- **First Florida wave with TWO `appointed` starts and ZERO `unknown` precisions** (day 2, month 9,
+  year 1). ⚠ Four commission seats are on the November 2026 ballot and **Gregg Weiss is term-limited** —
+  re-check Palm Beach after the general, before FL-7.
 
 ### Read these first
 
