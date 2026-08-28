@@ -95,6 +95,33 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
     }
   }
 
+  // Auto-forward (decision 0002): under AuthKit-only the classic form is hidden
+  // and AuthKit's hosted page offers sign-in AND sign-up, so this landing is a
+  // redundant click. Skip straight to AuthKit — except on /login/classic
+  // (allowClassic) and except while completing a ?code= callback.
+  const [autoForwarding, setAutoForwarding] = useState(
+    () =>
+      authkitOnly &&
+      !allowClassic &&
+      !(workosEnabled && new URLSearchParams(window.location.search).has('code'))
+  );
+  const autoForwardStarted = useRef(false);
+
+  useEffect(() => {
+    if (!autoForwarding || autoForwardStarted.current) return;
+    autoForwardStarted.current = true;
+    (async () => {
+      try {
+        await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
+      } catch (err) {
+        // AuthKit unreachable — fall back to the full landing.
+        setError(err instanceof Error ? err.message : 'Could not start sign-in');
+        setAutoForwarding(false);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError('');
@@ -126,6 +153,14 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
     } finally {
       setLoading(false);
     }
+  }
+
+  if (autoForwarding) {
+    return (
+      <AuthPageLayout>
+        <p className="text-sm text-gray-400 text-center">Redirecting to sign in…</p>
+      </AuthPageLayout>
+    );
   }
 
   return (

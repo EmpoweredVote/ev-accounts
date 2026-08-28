@@ -93,6 +93,20 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   );
   const workosCallbackStarted = useRef(false);
 
+  // Auto-forward (decision 0002): under AuthKit-only mode the classic form is
+  // hidden and AuthKit's own hosted page already offers sign-in AND sign-up, so
+  // this landing is a redundant click. Skip straight to AuthKit — EXCEPT on the
+  // break-glass route (allowClassic) and EXCEPT while completing a ?code=
+  // callback (that would loop). Invite-code signup has its own /signup entry, so
+  // nothing is lost by not rendering the landing.
+  const [autoForwarding, setAutoForwarding] = useState(
+    () =>
+      authkitOnly &&
+      !allowClassic &&
+      !(workosEnabled && new URLSearchParams(window.location.search).has('code'))
+  );
+  const autoForwardStarted = useRef(false);
+
   useEffect(() => {
     if (!workosCompleting || workosCallbackStarted.current) return;
     workosCallbackStarted.current = true; // StrictMode re-runs effects — exchange once
@@ -120,6 +134,23 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
       setError(err instanceof Error ? err.message : 'Could not start sign-in');
     }
   }
+
+  useEffect(() => {
+    if (!autoForwarding || autoForwardStarted.current) return;
+    autoForwardStarted.current = true; // StrictMode re-runs effects — start once
+    (async () => {
+      try {
+        await startWorkosSignIn(validRedirect ? { redirect: validRedirect } : undefined);
+        // The page redirects to AuthKit; nothing further renders.
+      } catch (err) {
+        // AuthKit unreachable — fall back to the full landing so the user (and
+        // the /login/classic break-glass link) are never stranded on a spinner.
+        setError(err instanceof Error ? err.message : 'Could not start sign-in');
+        setAutoForwarding(false);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -158,6 +189,21 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
       body: JSON.stringify({ email }),
     }).catch(() => {});
     setResendSent(true);
+  }
+
+  // While auto-forwarding to AuthKit, show only a redirect notice — the full
+  // landing would flash for a frame before the page navigates away.
+  if (autoForwarding) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
+            empowered.vote
+          </h1>
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Redirecting to sign in…</p>
+      </div>
+    );
   }
 
   return (
