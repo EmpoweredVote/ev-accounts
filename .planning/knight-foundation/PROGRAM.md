@@ -137,6 +137,8 @@ reachable by address.
 | San José county (Santa Clara) | 3 | 3 | 0 |
 | **Bradenton city** | **6** | **6** | **0** |
 | **Manatee County** | **12** | **11** | **0** |
+| **Tallahassee city** | **5** | **5** | **0** |
+| **Leon County** | **13** | **13** | **0** |
 | every other jurisdiction | 0 | 0 | 0 |
 
 Bradenton and Manatee measured 2026-08-28 after FL-3. Manatee's twelfth office is Commission
@@ -158,10 +160,13 @@ Wichita, Detroit, Charlotte (spec §8.1).
 | FL | FL-3 city structure | `CC_0008_bradenton_structure.sql` | 2026-08-28 |
 | FL | FL-3 city occupancy | `CC_0009_bradenton_people.sql` | 2026-08-28 |
 | FL | FL-3 county (offices + people) | `CC_0010_manatee_county.sql` | 2026-08-28 |
-| — | — | next free is **`CC_0011`** | — |
+| FL | FL-4 city structure | `CC_0011_tallahassee_structure.sql` | 2026-08-28 |
+| FL | FL-4 city occupancy | `CC_0012_tallahassee_people.sql` | 2026-08-28 |
+| FL | FL-4 county (offices + people) | `CC_0013_leon_county.sql` | 2026-08-28 |
+| — | — | next free is **`CC_0014`** | — |
 
 Private MTFCC allocations, which are a second sequence to take numbers from: `X0036` Bradenton wards,
-`X0037` Manatee commission districts. **Next free is `X0038`.** There is no central registry — each
+`X0037` Manatee commission districts, `X0038` Leon commission districts. **Next free is `X0039`.** There is no central registry — each
 wave hardcodes its code in its own loader, so this table is the only place they are listed together.
 
 Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the number last.
@@ -175,3 +180,4 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 | 2026-08-28 | **FL-3 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-3-bradenton-manatee.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-3-bradenton-manatee.md): 18 offices, 17 people, 1 vacancy. Measured while planning — the `geo_id` collision includes the COUNTY layer (`12081` is Manatee County **and** HD-81); Bradenton's ward layer is land-only, so the tiling gate goes against TIGER `AREALAND`, not the place polygon; Manatee's four district services are the same boundary to 0.000 sq mi; Commission District 1 is vacant and the Supervisor of Elections' own two pages disagree about it; Manatee is a **non-charter** county. | Execute FL-3 Task 1 (load `X0036` Bradenton wards). |
 | 2026-08-28 | **FL-3 APPLIED.** Loaded `X0036` (5 Bradenton wards) and `X0037` (5 Manatee commission districts), then seated **18 offices, 17 people, 1 vacancy** — `CC_0008`, `CC_0009`, `CC_0010`. The four-answer probe at Bradenton City Hall returns Ward 3, Commission District 3, HD-71 and SD-20. All gates green, no new reachability bucket, `offices_missing_terms` unflagged unchanged at 655 of a 699 threshold. Four corrections went into `fl.md`: the `geo_id` collision reaches the **county** layer (`12081` is Manatee County *and* HD-81); the child-county matview rule was too broad; `seat_officeholder()` refuses a NULL `term_start`; and an `external_id` band guard must be an **allowlist**, not a count, or the migration is not idempotent. | Write the FL-4 plan: Tallahassee + Leon County. Verify first whether Tallahassee's city commission is entirely at-large. |
 | 2026-08-28 | **FL-4 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-4-tallahassee-leon.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-4-tallahassee-leon.md): 18 offices, 18 people, **0 vacancies**. Measured while planning — **Tallahassee's commission is entirely at-large** (the Mayor is Seat 4), which answers `fl.md`'s open question and means FL-4 needs only ONE boundary layer; **Leon is a CHARTER county and elects SIX constitutional officers** including the Superintendent of Schools, against Manatee's five; the two counties also name their at-large seats differently. Anchor is Tallahassee City Hall → Commission D5, HD-9, SD-3, and the SOE service `fl.md` already trusts carries both the commission-district layer and an independent City Limits layer. Zero name collisions among all 18. | Execute FL-4 Task 1 (load `X0038` Leon commission districts). |
+| 2026-08-28 | **FL-4 APPLIED.** Loaded `X0038` (5 Leon commission districts) and seated **18 offices, 18 people, 0 vacancies** — `CC_0011`, `CC_0012`, `CC_0013`. All four required answers PASS at Tallahassee City Hall (5 city commissioners, County D5, HD-9, SD-3); gates green; `offices_missing_terms` unchanged at 820/165/655. **Tallahassee's commission is entirely at-large** (Mayor = Seat 4), so the wave needed only ONE boundary loader and the probe asserts a count per answer. **Leon is a CHARTER county electing SIX constitutional officers** including the Superintendent of Schools, against Manatee's five. ⚠ Also fixed a latent defect FL-4 would have triggered: FL-3's band guard claimed the whole shared `-(1240000+n)` band, so FL-4's rows would have broken FL-3's re-run — both now scope to their own sub-range, and all six migrations re-run clean. | Write the FL-5 plan: Palm Beach County, county only. Its banner key is still undecided (spec §8.3). |

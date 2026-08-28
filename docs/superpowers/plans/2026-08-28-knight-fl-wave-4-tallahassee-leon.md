@@ -34,6 +34,49 @@ Everything in FL-3's Global Constraints still applies. These are the ones that c
 
 ---
 
+## 🔴 Deviations found during execution, 2026-08-28
+
+Executed and **applied** the same day it was written. The plan held up better than FL-3's — the
+measured facts were all correct and no gate had to be loosened — but four things are worth recording.
+
+1. **A LATENT DEFECT IN FL-3 THAT THIS WAVE WOULD HAVE TRIGGERED.** `CC_0009` and `CC_0010` asserted
+   that the whole `-(1240000 + n)` band held nothing they owned. That band is the **shared Florida
+   LOCAL band**, so as soon as FL-4 inserted its eighteen rows, re-running either FL-3 migration would
+   have seen them as foreign and refused — costing FL-3 its idempotency silently, days after it
+   applied. Both guards now assert only their own contiguous sub-range. **This is the fourth wrong
+   version of this guard** (count → count-in-post-verify → whole-band allowlist → own sub-range), and
+   it was found only by **re-running every applied migration in the slice, not just the new ones**.
+   Two applied migration files were edited in place; no data changed.
+
+2. **The party guard did not catch `(DEM)`.** FL-3's regex tested `\((R|D|NPA|I)\)`. The Leon
+   Supervisor of Elections prints **`(DEM)`** beside all six constitutional officers, which that regex
+   misses entirely. Widened in both generators.
+
+3. **Nine of eighteen people ended at `unknown` precision, and one source was rejected on purpose.**
+   Task 2 Step 2 expected the county history page to resolve the commissioners — it did, all seven.
+   But no reachable publisher dates the three remaining city commissioners or any of the six
+   constitutional officers. The SOE's certified-results PDFs *are* reachable (in-page `fetch` past the
+   TLS block) and their **race headers** are trustworthy — they gave the election-cycle inventory that
+   corroborates every start year. Their **candidate blocks are not**: a parser slicing them came out
+   **shifted by one race** and reported *"Mayor → Jeremy Matlow"* for 2018. It was discarded rather
+   than repaired, because a fragile parser producing confident dates is worse than an honest blank.
+
+4. **Task 4 Step 1's guess about the state `geo_id` padding was right, but only checking made it
+   knowable.** HD-9 is `12009` and SD-3 is `12003`. The plan told the executor to confirm with a query
+   rather than trust the padding, and that was the correct instruction to write.
+
+Two things the plan under-promised:
+
+- **The collision demo is richer than described.** The plan said `12073` is both Leon County and HD-73.
+  At this anchor the unpaired join actually returns **three** wrong rows, and one is in the **reverse
+  direction**: `12009` is HD-9's `sldl` polygon *and* SD-9's district, so an `sldl` polygon matches an
+  `sldu` district. `fl.md` had only ever recorded the other direction.
+- **All five Leon polygons landed `ST_IsValid` with no repair**, where four of five Bradenton wards
+  needed `ST_MakeValid`. The re-check from the database is still the right discipline; it just had
+  nothing to catch this time.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 ### 🔴 The open question from `fl.md` is ANSWERED: Tallahassee is entirely at-large

@@ -15,7 +15,7 @@ Jurisdictions: **Bradenton** (Manatee), **Miami** (Miami-Dade), **Palm Beach Cou
 | FL-1 | TIGER `place` + `sldu` + `sldl`, FIPS 12 | ✅ applied 2026-08-28 |
 | FL-2 | Florida Legislature | ✅ applied 2026-08-28 — `CC_0006`, `CC_0007` |
 | FL-3 | Bradenton + Manatee County | ✅ applied 2026-08-28 — `CC_0008`, `CC_0009`, `CC_0010` |
-| FL-4 | Tallahassee + Leon County | — |
+| FL-4 | Tallahassee + Leon County | ✅ applied 2026-08-28 — `CC_0011`, `CC_0012`, `CC_0013` |
 | FL-5 | Palm Beach County (county only) | — |
 | FL-6 | Miami + Miami-Dade County | — |
 | FL-7 | Florida assets (headshots + 3 banners) | — |
@@ -326,6 +326,136 @@ and were **re-elected** in November 2024; Kruse expires November 2028 but has se
   committed to prod**, and its `ON COMMIT DROP` temp table vanished between statements. To dry-run one
   file, turn **its own** final `COMMIT` into `ROLLBACK` and leave its `BEGIN` alone.
 
+## FL-4 — Tallahassee and Leon County (applied 2026-08-28)
+
+| | Offices | People | Vacant |
+| --- | --- | --- | --- |
+| Tallahassee — City Commission | 5 | 5 | 0 |
+| Leon — Board of County Commissioners | 7 | 7 | 0 |
+| Leon — Elected Officials | **6** | 6 | 0 |
+| **Total** | **18** | **18** | **0** |
+
+`external_id`: city `n = 31…35`, commission `n = 41…47`, officers `n = 51…56`, all in the shared
+`-(1240000 + n)` Florida LOCAL band. **35 of 10,000 slots used across FL-3 and FL-4.**
+
+Date precision: **month 9, unknown 9.** No appointments; no vacancies.
+
+`X0038` = the 5 Leon commission districts. **Next free is `X0039`.**
+
+### 🔴 Tallahassee is entirely at-large — the open question, answered
+
+The Leon SOE: *"City Commissioners and Mayor do not have districts."* Five seats, and **the Mayor is
+SEAT 4** inside that numbering. Consequences, all of which invert an FL-3 assumption:
+
+- **No city ward layer was needed** — one loader for the whole wave, not two.
+- **All five seats share the ONE citywide district** (`1270600` `G4110`, `num_officials = 5`), and the
+  structure gate asserts "**5 offices on one district, 5 distinct titles**" — the opposite shape from
+  Bradenton's "1 per ward".
+- **ONE chamber**, not two. Bradenton needed a separate `Office of the Mayor`; Tallahassee's mayor is
+  Seat 4 of the same body.
+- **No `voting_powers` ruling arises.** Tallahassee's mayor has a full, equal vote.
+- ⚠ **The probe's city answer is FIVE rows, not one.** The probe therefore asserts a **count per
+  required answer**; "at least one city commissioner" would pass with four of five missing.
+
+### 🔴 Leon is a CHARTER county with SIX constitutional officers
+
+Home Rule Charter in force since **2002-11-12**. The sixth office is the **Superintendent of
+Schools** — Manatee, non-charter, has five and no such office. So Leon's `Elected Officials` chamber
+is `official_count = 6` and its countywide district carries **8** offices (2 at-large + 6 officers),
+not 7. The gate asserts the Superintendent **by name**, because a count of 6 can be reached by
+duplicating another officer. **The school BOARD remains out of scope**, as Manatee's did.
+
+⚠ **The two counties also name their at-large seats differently:** Manatee "District 6 / District 7",
+Leon "**At Large, Group 1 / Group 2**". Both kept as published.
+
+⚠ **This wave spans FIVE take-office rules across three bodies:** city 13th day after the general;
+county commission and Superintendent 2nd Tuesday after the general; the other five officers 1st
+Tuesday after the 1st Monday in January.
+
+### The acceptance probe
+
+`scripts/verify-tallahassee-leon-probes.sql`. Anchor **Tallahassee City Hall, 300 S Adams St,
+`-84.2820030, 30.4395411`** — which geocodes cleanly, unlike Bradenton's ceremonial address.
+
+Four required answers, all PASS: **5 city commissioners · County District 5 (O'Keefe) · HD-9 (Tant) ·
+SD-3 (Simon)**. Negative control: Bradfordville, inside Leon County but outside the city, returns
+County District 4 and **no** city seat.
+
+🔴 **The collision demo is richer here than in FL-3 — THREE wrong rows, one of them in the REVERSE
+direction.** At this anchor an unpaired `geo_id` join returns:
+
+| label | matched through | why wrong |
+| --- | --- | --- |
+| State House District 3 | `12003` `G5210` | SD-3's polygon → HD-3 (Nathan Boyles) |
+| State House District 73 | `12073` `G4020` | **Leon County's polygon** → HD-73 (Fiona McFarland) |
+| State Senate District 9 | `12009` `G5220` | **HD-9's `sldl` polygon → an `sldu` DISTRICT** (Stan McClain) |
+
+The third is the direction `fl.md` did not previously record: not only does an `sldu` polygon match an
+`sldl` district, the reverse happens too. **Pair `geo_id` with `mtfcc` AND `district_type`, always.**
+
+### Geography findings
+
+- **Two independent digitizations of the commission districts agree to 0.0000 sq mi** on all five: the
+  SOE's `SOE_DistrictsCurrent_D_WM` layer 1 and the county GIS `TLC_OverlayCommissionDistrictFeature`
+  layer 0. The SOE service is the primary — `fl.md` already trusts it, because **layers 5 and 4 of the
+  same service are the FL House and Senate services the FL-1 vintage check used**.
+- **The five districts tile TIGER county `12073` to 0.0040 sq mi uncovered / 0.0006 overhang / 0.0000
+  self-overlap** — tighter than Manatee's.
+- **The SOE's layer 6 "City Limits" agrees with TIGER place `1270600` to 0.42 %** (105.456 vs 105.477
+  sq mi). This is an **independent control on the polygon all five city seats hang off**, which
+  Bradenton had no equivalent for. The load-bearing assertion is that TIGER covers city hall.
+- **All five polygons landed `ST_IsValid` with no repair** — unlike Bradenton, where four of five
+  needed `ST_MakeValid`.
+- ⚠ **`DISTRICT` is TEXT here (`'1'`…`'5'`), not the integer Manatee's service returns.** Proved by
+  substituting `Number.isInteger()`: it skips all five districts with a warning per row, then reports
+  "expected 5, got 0". ⚠ **`TOTALPOP20` is `0` on every row in both services** — a dead field.
+- Six positive controls, not one: city hall plus each district's centroid, every centroid verified to
+  fall inside its own district before being written down as a literal.
+
+### 🔴 Nine of eighteen have `start_precision = 'unknown'`, and one source was rejected
+
+**Dated (month precision, 9):** the seven commissioners, from the county's own published service-year
+ranges plus the commission's take-office rule; and Mayor Dailey and Commissioner Matlow, from their own
+city pages (both November 2018).
+⚠ **Dailey's earlier service was on the LEON COUNTY COMMISSION, District 3, 2006–2018** — a different
+office, so the mayoralty starts 2018. **Akin Akinyemi**, now Property Appraiser, was a commissioner
+2008–2012: another separate span. **Nick Maddox has held At Large Group 2 continuously since 2010** and
+did not move from a district.
+
+**Undated (9):** Porter, Richardson and Williams-Cox on the city side; all six constitutional officers.
+No reachable publisher gives a start.
+
+🔴 **THE CERTIFIED-RESULTS PDFs WERE REJECTED AS A DATE SOURCE, AND THE REASON IS THE LESSON.** The
+SOE publishes official certified results as PDFs, reachable by fetching from inside the browser
+context. Their **race headers extract reliably** and gave a trustworthy election-cycle inventory
+(city Seats 1–2 presidential, Seats 3/5 + Mayor midterm). But a parser slicing each race's **candidate
+block** came out **shifted by one race** and reported *"Mayor → Jeremy Matlow"* for 2018 — Dailey won
+the mayoralty, Matlow won Seat 3. **Plausible, wrong, and it would have seated two people on each
+other's dates.** It was discarded rather than repaired. ▶ Follow-up: the city and county clerks' January
+organisational minutes would date all nine precisely.
+
+### 🔴 Toolchain lessons
+
+- **`curl` gets a HARD 403 from `leonvotes.gov`, `cms.leoncountyfl.gov` and four of six officer sites**
+  — TLS-fingerprint blocking; a full browser header set does not help. **Use Playwright.** The ArcGIS
+  endpoints and `talgov.com` answer `curl` normally. A PDF behind the block can be fetched with an
+  in-page `fetch()` and base64'd out.
+- ⚠ **The SOE's Elected Officials page hides its content in COLLAPSED ACCORDIONS.** A plain
+  `innerText` of the body returns only the category headings. Locate each heading element and walk up
+  to its container.
+- 🔴 **AN `external_id` BAND GUARD MUST BE SCOPED TO THE WAVE'S OWN SUB-RANGE, not the whole band.**
+  Four versions of this guard were wrong: (1) "the band holds exactly N rows" — not idempotent, a
+  re-run counts its own rows; (2) the same count in the post-verify — created a false ordering
+  dependency between the two halves; (3) "the whole band holds nothing this wave owns" — correct within
+  one wave, but `-(1240000 + n)` is **shared across Florida waves**, so FL-4 saw FL-3's seventeen
+  legitimate rows as foreign, **and would have broken FL-3's own re-run**; (4) the fix — assert that
+  nothing inside `[min..max]` of *this wave's* ids is owned by anything else. `CC_0009` and `CC_0010`
+  were edited in place to match, which changed no data.
+- 🔴 **RE-RUN EVERY APPLIED MIGRATION IN THE SLICE, NOT JUST THE NEW ONES.** Re-running all six FL-3
+  and FL-4 migrations is what proved (3) above was a live defect rather than a theoretical one.
+- **The party guard had to be widened.** FL-3 tested `\((R|D|NPA|I)\)`, which does **not** match
+  `(DEM)` — and `(DEM)` is exactly what the Leon SOE prints beside all six constitutional officers.
+
 ## Applied migrations
 
 | Slot | File | Applied |
@@ -335,5 +465,13 @@ and were **re-elected** in November 2024; Kruse expires November 2028 but has se
 | `CC_0008` | `CC_0008_bradenton_structure.sql` | 2026-08-28 |
 | `CC_0009` | `CC_0009_bradenton_people.sql` | 2026-08-28 |
 | `CC_0010` | `CC_0010_manatee_county.sql` | 2026-08-28 |
+| `CC_0011` | `CC_0011_tallahassee_structure.sql` | 2026-08-28 |
+| `CC_0012` | `CC_0012_tallahassee_people.sql` | 2026-08-28 |
+| `CC_0013` | `CC_0013_leon_county.sql` | 2026-08-28 |
 
-Next free slot: **`CC_0011`**. Next free private MTFCC: **`X0038`**.
+Next free slot: **`CC_0014`**. Next free private MTFCC: **`X0039`**.
+
+⚠ `CC_0009` and `CC_0010` were **edited after being applied**, on 2026-08-28, to scope their
+`external_id` band guard to their own sub-range. No data changed — only a pre-flight guard. Without it,
+FL-4's eighteen rows in the same shared band would have made both FL-3 migrations refuse to re-run.
+See the FL-4 toolchain note below.
