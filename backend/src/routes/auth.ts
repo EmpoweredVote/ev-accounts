@@ -157,8 +157,10 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       return;
     }
     userId = result.userId;
-    // AuthKit challenges the address at first sign-in; Supabase sends no mail.
-    signupMessage = 'Account created — sign in to continue';
+    // signUpWorkosFirst sends a WorkOS verification email at this point, so the
+    // user gets one immediately (like the old confirm-email flow). They enter
+    // the code when they sign in through AuthKit.
+    signupMessage = 'Account created — check your email to verify, then sign in';
   } else {
     const { data, error } = await signUpWithEmail(
       email,
