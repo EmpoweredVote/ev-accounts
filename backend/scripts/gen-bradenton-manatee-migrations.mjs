@@ -515,30 +515,40 @@ function seedRowsSql(rows, tmp) {
 function occupancySql(rows, tmp, label, ownedIds) {
   const seated = rows.filter((r) => !r.isVacant);
   const owned = ownedIds.join(', ');
+  // The contiguous range this wave claims. Scoping the band guard to it lets
+  // neighbouring Florida waves share -(1240000 + n) without seeing each other
+  // as foreign, while still refusing an id somebody else already holds.
+  const ownedLo = Math.min(...ownedIds);
+  const ownedHi = Math.max(...ownedIds);
   return `
 -- --- Politician identity band ----------------------------------------------
--- 🔴 THE BAND MUST HOLD NOTHING THIS WAVE DOES NOT OWN. The obvious FL band was
--- TAKEN in FL-2: -(1210000 + n) collided with 166 existing rows, the 2026 US
--- House candidates, and ON CONFLICT DO NOTHING would have absorbed that in
--- silence and left seats held by whoever already owned those ids.
--- -1249999..-1240000 was measured EMPTY on 2026-08-28.
+-- 🔴 NOBODY ELSE MAY ALREADY OWN THE IDS THIS WAVE IS ABOUT TO INSERT. That is
+-- the FL-2 failure exactly: -(1210000 + n) collided with 166 existing rows, the
+-- 2026 US House candidates, and ON CONFLICT DO NOTHING would have absorbed the
+-- collision in silence and left seats held by whoever already owned those ids.
 --
--- ⚠ THIS IS AN ALLOWLIST, NOT A COUNT, AND THE DIFFERENCE IS TWO BUGS.
--- The first version asserted "the band holds exactly N rows before this runs".
--- That is NOT IDEMPOTENT -- a re-run of an applied migration counts its own rows
--- and refuses, which a migration in this repo is required not to do (measured:
--- it refused with "found 17"). It is also WEAKER: a foreign row that happened to
--- make the count match would pass. Naming the ids this wave owns fixes both.
+-- ⚠ THIS ASSERTION IS SCOPED TO THIS WAVE'S OWN SUB-RANGE, AND THAT MATTERS.
+-- Three versions of this guard were wrong before this one:
+--   1. "the band holds exactly N rows before this runs" -- NOT IDEMPOTENT: a
+--      re-run of an applied migration counts its own rows and refuses. Measured.
+--   2. The same count, in the post-verify -- gave the county migration a false
+--      ORDERING DEPENDENCY on the city one.
+--   3. "the whole band holds nothing this wave owns" -- correct within one wave,
+--      but -(1240000 + n) is the SHARED Florida LOCAL band, so FL-4 saw FL-3's
+--      seventeen legitimate rows as foreign and refused. It would also have
+--      broken FL-3's OWN re-run once FL-4 applied. Measured 2026-08-28.
+-- Scoping to [min..max] of this wave's ids catches the real risk -- an id already
+-- taken -- while letting neighbouring waves share the band, and stays idempotent.
 DO $$
 DECLARE v_n int; v_foreign text;
 BEGIN
   SELECT count(*), string_agg(external_id::text, ', ' ORDER BY external_id)
     INTO v_n, v_foreign
     FROM essentials.politicians
-   WHERE external_id BETWEEN ${BAND_LO} AND ${BAND_HI}
+   WHERE external_id BETWEEN ${ownedLo} AND ${ownedHi}
      AND external_id NOT IN (${owned});
   IF v_n <> 0 THEN
-    RAISE EXCEPTION '${label}: the external_id band ${BAND_LO}..${BAND_HI} holds % row(s) this wave does not own (%). The band was measured EMPTY on 2026-08-28 -- pick another band rather than colliding.', v_n, v_foreign;
+    RAISE EXCEPTION '${label}: % row(s) inside this wave''s id range ${ownedLo}..${ownedHi} are owned by something else (%). Pick another sub-range rather than colliding.', v_n, v_foreign;
   END IF;
 END $$;
 

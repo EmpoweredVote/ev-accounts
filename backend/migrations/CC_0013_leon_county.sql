@@ -1,11 +1,11 @@
--- CC_0010_manatee_county.sql
+-- CC_0013_leon_county.sql
 -- Knight Foundation cities program, wave FL-3.
 --
--- Creates Manatee County whole -- offices AND people in ONE migration, per spec section 3:
---   * 5 new COUNTY districts (mtfcc X0037); the countywide district ALREADY EXISTS
+-- Creates Leon County whole -- offices AND people in ONE migration, per spec section 3:
+--   * 5 new COUNTY districts (mtfcc X0038); the countywide district ALREADY EXISTS
 --   * 1 government, 2 chambers
---   * 12 offices -- 7 commissioners + 5 constitutional officers
---   * 11 politicians and 11 terms; District 1 is VACANT
+--   * 13 offices -- 7 commissioners + SIX constitutional officers
+--   * 13 politicians and 13 terms; NO vacancies
 --
 -- Spec:   docs/superpowers/specs/2026-08-28-knight-cities-program-design.md
 -- Plan:   docs/superpowers/plans/2026-08-28-knight-fl-wave-3-bradenton-manatee.md
@@ -31,45 +31,48 @@
 -- become a term_end without inventing a day.
 
 -- ---------------------------------------------------------------------------
--- 🔴 MANATEE IS A NON-CHARTER COUNTY, so Fla. Const. art. VIII sec. 1(d)
--- applies unmodified and the five constitutional officers are Sheriff, Tax
--- Collector, Property Appraiser, Supervisor of Elections and Clerk of the
--- Circuit Court. The county's own page agrees: "the Board of County
--- Commissioners, together with Manatee County's FIVE constitutional officers,
--- comprise Manatee County Government." A charter was still only being explored
--- as of January 2026.
--- ⚠ NOTHING here may be inherited by Leon, Palm Beach or Miami-Dade. Charter
--- counties vary, and those three are confirmed separately in FL-4, FL-5, FL-6.
+-- 🔴 LEON IS A CHARTER COUNTY AND ELECTS *SIX* CONSTITUTIONAL OFFICERS.
+-- Its Home Rule Charter has been in force since 2002-11-12 (the county's own
+-- "Leading the Way" page). The sixth office is the SUPERINTENDENT OF SCHOOLS,
+-- which the Supervisor of Elections lists under "Leon County Constitutional
+-- Offices" with its own four-year term.
+--
+-- ⚠ MANATEE, WHICH IS NON-CHARTER, ELECTS FIVE (CC_0010). This is the variation
+-- fl.md warns against inheriting, and it is a real seat rather than a naming
+-- difference. So the Elected Officials chamber is official_count 6 here, and the
+-- countywide district carries EIGHT offices, not seven.
+-- ⚠ NOTHING here may be inherited by Palm Beach or Miami-Dade. Miami-Dade is also
+-- a charter county and is read separately at FL-6.
+--
+-- ⚠ The school BOARD stays out of scope, as Manatee's did: a board is a separate
+-- legislative body, and spec section 3 stage 4 is "commission layer + county
+-- officers". ROSTERS.md ruling R2.
 --
 -- ---------------------------------------------------------------------------
--- 🔴 SEVEN COMMISSIONERS, FIVE POLYGONS. Districts 1-5 are single-member.
--- Districts 6 and 7 are elected COUNTYWIDE and hang off the PRE-EXISTING COUNTY
--- district for TIGER county 12081, together with all five constitutional
--- officers -- 7 offices on that one district. The at-large seats are numbered 6
--- and 7 by the Supervisor of Elections; the county's own board page labels both
--- rows merely "At Large District", with no number.
+-- 🔴 SEVEN COMMISSIONERS, FIVE POLYGONS. Districts 1-5 are single-member. The
+-- other two are elected COUNTYWIDE and hang off the PRE-EXISTING COUNTY district
+-- for TIGER county 12073, together with all six constitutional officers.
+--
+-- ⚠ LEON CALLS THEM "At Large, Group 1" AND "At Large, Group 2". MANATEE CALLS
+-- ITS TWO "District 6" AND "District 7". Two counties in one state, two
+-- conventions, both as published. Do not normalise either.
 --
 -- ---------------------------------------------------------------------------
--- 🔴 DISTRICT 1 IS VACANT, AND FLAGGING IT IS LOAD-BEARING TWICE OVER.
--- Commissioner Carol Ann Felts DIED on 2026-02-24 -- the county's own
--- announcement of that date. Governor DeSantis declared the vacancy by Executive
--- Order 26-76 and then left the seat empty, which is why it reaches the 2026
--- ballot as a TWO-YEAR unexpired term. Note that a county commission vacancy is
--- filled by GUBERNATORIAL APPOINTMENT (Fla. Const. art. IV sec. 1(f)), unlike a
--- LEGISLATIVE vacancy, which Florida fills by special election -- so FL-2's five
--- vacancies and this one are not the same mechanism.
+-- ⚠ NO VACANCY IN THIS WAVE, so nothing is flagged is_vacant -- which means every
+-- one of the 13 offices MUST end with a term row. The reachability baseline
+-- holds no fl| bucket in any check, so a single office with neither a term row nor
+-- a flag creates a NEW fl|COUNTY DEAD_GEOGRAPHY bucket and fails CI.
 --
---   1. check-address-reachability.mjs classifies DEAD_GEOGRAPHY as
---      reachable AND offices > 0 AND active_holders = 0 AND vacant_offices = 0.
---      The baseline holds NO fl| bucket in any check, so one unflagged empty
---      office creates a NEW fl|COUNTY bucket and fails CI.
---   2. essentials.offices_missing_terms counts only UNFLAGGED rows as drift.
---
--- ⚠ Felts' own closed term is deliberately NOT written, though every date for it
--- is known. FL-2 wrote no predecessor terms for any of its five legislative
--- vacancies, and doing it for one county seat here would leave Florida
--- internally inconsistent. ROSTERS.md records the evidence so all six can be
--- done together, deliberately.
+-- ---------------------------------------------------------------------------
+-- 🔴 FIVE DIFFERENT TAKE-OFFICE RULES SPAN THIS WAVE, and they are why the
+-- term_start months differ:
+--   City Commission          13th day after the General Election
+--   County Commission        2nd Tuesday after the General Election
+--   Superintendent           2nd Tuesday after the General Election
+--   The other five officers  1st Tuesday after the 1st Monday in January
+-- The commissioners' months come from the county's published service-year ranges
+-- plus the second rule. The six officers have NO published start at all and are
+-- written at 'unknown' precision -- see ROSTERS.md defect D5.
 
 BEGIN;
 
@@ -77,65 +80,65 @@ BEGIN;
 DO $$
 DECLARE v_n int;
 BEGIN
-  SELECT count(*) INTO v_n FROM essentials.geofence_boundaries WHERE mtfcc = 'X0037';
+  SELECT count(*) INTO v_n FROM essentials.geofence_boundaries WHERE mtfcc = 'X0038';
   IF v_n <> 5 THEN
-    RAISE EXCEPTION 'manatee county: expected 5 X0037 boundaries, found % -- run scripts/load-manatee-commission-boundaries.ts first', v_n;
+    RAISE EXCEPTION 'leon county: expected 5 X0038 boundaries, found % -- run scripts/load-leon-commission-boundaries.ts first', v_n;
   END IF;
 
   IF NOT EXISTS (
-    SELECT 1 FROM essentials.geofence_boundaries WHERE geo_id = '12081' AND mtfcc = 'G4020'
+    SELECT 1 FROM essentials.geofence_boundaries WHERE geo_id = '12073' AND mtfcc = 'G4020'
   ) THEN
-    RAISE EXCEPTION 'manatee county: TIGER county 12081/G4020 is missing';
+    RAISE EXCEPTION 'leon county: TIGER county 12073/G4020 is missing';
   END IF;
 
   -- The countywide district must ALREADY exist. This migration must not create a
   -- second one: 7 of its 12 offices hang off it.
   SELECT count(*) INTO v_n FROM essentials.districts
-   WHERE geo_id = '12081' AND mtfcc = 'G4020' AND district_type = 'COUNTY' AND lower(state) = 'fl';
+   WHERE geo_id = '12073' AND mtfcc = 'G4020' AND district_type = 'COUNTY' AND lower(state) = 'fl';
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'manatee county: expected exactly 1 pre-existing COUNTY district for 12081, found %', v_n;
+    RAISE EXCEPTION 'leon county: expected exactly 1 pre-existing COUNTY district for 12073, found %', v_n;
   END IF;
 END $$;
 
 -- --- 1. The five single-member commission districts ------------------------
 
 INSERT INTO essentials.districts (district_type, label, state, geo_id, mtfcc, num_officials)
-SELECT 'COUNTY', 'Manatee County Commissioner District 1', 'fl', 'manatee-fl-commissioner-district-1', 'X0037', 1
+SELECT 'COUNTY', 'Leon County Commissioner District 1', 'fl', 'leon-fl-commissioner-district-1', 'X0038', 1
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
-   WHERE geo_id = 'manatee-fl-commissioner-district-1' AND mtfcc = 'X0037' AND district_type = 'COUNTY'
+   WHERE geo_id = 'leon-fl-commissioner-district-1' AND mtfcc = 'X0038' AND district_type = 'COUNTY'
 );
 INSERT INTO essentials.districts (district_type, label, state, geo_id, mtfcc, num_officials)
-SELECT 'COUNTY', 'Manatee County Commissioner District 2', 'fl', 'manatee-fl-commissioner-district-2', 'X0037', 1
+SELECT 'COUNTY', 'Leon County Commissioner District 2', 'fl', 'leon-fl-commissioner-district-2', 'X0038', 1
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
-   WHERE geo_id = 'manatee-fl-commissioner-district-2' AND mtfcc = 'X0037' AND district_type = 'COUNTY'
+   WHERE geo_id = 'leon-fl-commissioner-district-2' AND mtfcc = 'X0038' AND district_type = 'COUNTY'
 );
 INSERT INTO essentials.districts (district_type, label, state, geo_id, mtfcc, num_officials)
-SELECT 'COUNTY', 'Manatee County Commissioner District 3', 'fl', 'manatee-fl-commissioner-district-3', 'X0037', 1
+SELECT 'COUNTY', 'Leon County Commissioner District 3', 'fl', 'leon-fl-commissioner-district-3', 'X0038', 1
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
-   WHERE geo_id = 'manatee-fl-commissioner-district-3' AND mtfcc = 'X0037' AND district_type = 'COUNTY'
+   WHERE geo_id = 'leon-fl-commissioner-district-3' AND mtfcc = 'X0038' AND district_type = 'COUNTY'
 );
 INSERT INTO essentials.districts (district_type, label, state, geo_id, mtfcc, num_officials)
-SELECT 'COUNTY', 'Manatee County Commissioner District 4', 'fl', 'manatee-fl-commissioner-district-4', 'X0037', 1
+SELECT 'COUNTY', 'Leon County Commissioner District 4', 'fl', 'leon-fl-commissioner-district-4', 'X0038', 1
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
-   WHERE geo_id = 'manatee-fl-commissioner-district-4' AND mtfcc = 'X0037' AND district_type = 'COUNTY'
+   WHERE geo_id = 'leon-fl-commissioner-district-4' AND mtfcc = 'X0038' AND district_type = 'COUNTY'
 );
 INSERT INTO essentials.districts (district_type, label, state, geo_id, mtfcc, num_officials)
-SELECT 'COUNTY', 'Manatee County Commissioner District 5', 'fl', 'manatee-fl-commissioner-district-5', 'X0037', 1
+SELECT 'COUNTY', 'Leon County Commissioner District 5', 'fl', 'leon-fl-commissioner-district-5', 'X0038', 1
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
-   WHERE geo_id = 'manatee-fl-commissioner-district-5' AND mtfcc = 'X0037' AND district_type = 'COUNTY'
+   WHERE geo_id = 'leon-fl-commissioner-district-5' AND mtfcc = 'X0038' AND district_type = 'COUNTY'
 );
 
 -- --- 2. Government ----------------------------------------------------------
 
 INSERT INTO essentials.governments (name, type, state, city, geo_id)
-SELECT 'Manatee County, Florida, US', 'County', 'FL', NULL, '12081'
+SELECT 'Leon County, Florida, US', 'County', 'FL', NULL, '12073'
 WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.governments WHERE geo_id = '12081' AND type = 'County'
+  SELECT 1 FROM essentials.governments WHERE geo_id = '12073' AND type = 'County'
 );
 
 -- --- 3. Chambers ------------------------------------------------------------
@@ -143,9 +146,9 @@ WHERE NOT EXISTS (
 
 INSERT INTO essentials.chambers
   (government_id, name, name_formal, official_count, policy_engagement_level)
-SELECT g.id, 'Board of County Commissioners', 'Manatee County Board of County Commissioners', 7, 'full'
+SELECT g.id, 'Board of County Commissioners', 'Leon County Board of County Commissioners', 7, 'full'
 FROM essentials.governments g
-WHERE g.geo_id = '12081' AND g.type = 'County'
+WHERE g.geo_id = '12073' AND g.type = 'County'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.chambers c
      WHERE c.government_id = g.id AND c.name = 'Board of County Commissioners'
@@ -153,9 +156,9 @@ WHERE g.geo_id = '12081' AND g.type = 'County'
 
 INSERT INTO essentials.chambers
   (government_id, name, name_formal, official_count, policy_engagement_level)
-SELECT g.id, 'Elected Officials', 'Manatee County Elected Officials', 5, 'full'
+SELECT g.id, 'Elected Officials', 'Leon County Elected Officials', 6, 'full'
 FROM essentials.governments g
-WHERE g.geo_id = '12081' AND g.type = 'County'
+WHERE g.geo_id = '12073' AND g.type = 'County'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.chambers c
      WHERE c.government_id = g.id AND c.name = 'Elected Officials'
@@ -170,10 +173,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = 'manatee-fl-commissioner-district-1' AND dd.mtfcc = 'X0037'
+   WHERE dd.geo_id = 'leon-fl-commissioner-district-1' AND dd.mtfcc = 'X0038'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 1'
@@ -185,10 +188,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = 'manatee-fl-commissioner-district-2' AND dd.mtfcc = 'X0037'
+   WHERE dd.geo_id = 'leon-fl-commissioner-district-2' AND dd.mtfcc = 'X0038'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 2'
@@ -200,10 +203,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = 'manatee-fl-commissioner-district-3' AND dd.mtfcc = 'X0037'
+   WHERE dd.geo_id = 'leon-fl-commissioner-district-3' AND dd.mtfcc = 'X0038'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 3'
@@ -215,10 +218,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = 'manatee-fl-commissioner-district-4' AND dd.mtfcc = 'X0037'
+   WHERE dd.geo_id = 'leon-fl-commissioner-district-4' AND dd.mtfcc = 'X0038'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 4'
@@ -230,43 +233,43 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = 'manatee-fl-commissioner-district-5' AND dd.mtfcc = 'X0037'
+   WHERE dd.geo_id = 'leon-fl-commissioner-district-5' AND dd.mtfcc = 'X0038'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 5'
   );
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state, representing_city, voting_powers)
-SELECT c.id, d.id, 'Commissioner, District 6 (At-Large)', 'FL', NULL, 'full'
+SELECT c.id, d.id, 'Commissioner, At Large Group 1', 'FL', NULL, 'full'
 FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
-    WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 6 (At-Large)'
+    WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, At Large Group 1'
   );
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state, representing_city, voting_powers)
-SELECT c.id, d.id, 'Commissioner, District 7 (At-Large)', 'FL', NULL, 'full'
+SELECT c.id, d.id, 'Commissioner, At Large Group 2', 'FL', NULL, 'full'
 FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Board of County Commissioners'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
-    WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, District 7 (At-Large)'
+    WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Commissioner, At Large Group 2'
   );
 INSERT INTO essentials.offices
   (chamber_id, district_id, title, representing_state, representing_city, voting_powers)
@@ -275,10 +278,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Elected Officials'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Sheriff'
@@ -290,10 +293,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Elected Officials'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Tax Collector'
@@ -305,10 +308,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Elected Officials'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Property Appraiser'
@@ -320,10 +323,10 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Elected Officials'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Supervisor of Elections'
@@ -335,81 +338,97 @@ FROM essentials.chambers c
 JOIN essentials.governments g ON g.id = c.government_id
 CROSS JOIN LATERAL (
   SELECT dd.id FROM essentials.districts dd
-   WHERE dd.geo_id = '12081' AND dd.mtfcc = 'G4020'
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
      AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
 ) d
-WHERE g.geo_id = '12081' AND g.type = 'County' AND c.name = 'Elected Officials'
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Clerk of the Circuit Court and Comptroller'
   );
+INSERT INTO essentials.offices
+  (chamber_id, district_id, title, representing_state, representing_city, voting_powers)
+SELECT c.id, d.id, 'Superintendent of Schools', 'FL', NULL, 'full'
+FROM essentials.chambers c
+JOIN essentials.governments g ON g.id = c.government_id
+CROSS JOIN LATERAL (
+  SELECT dd.id FROM essentials.districts dd
+   WHERE dd.geo_id = '12073' AND dd.mtfcc = 'G4020'
+     AND dd.district_type = 'COUNTY' AND lower(dd.state) = 'fl'
+) d
+WHERE g.geo_id = '12073' AND g.type = 'County' AND c.name = 'Elected Officials'
+  AND NOT EXISTS (
+    SELECT 1 FROM essentials.offices o
+    WHERE o.chamber_id = c.id AND o.district_id = d.id AND o.title = 'Superintendent of Schools'
+  );
 
--- --- 5. Flag District 1 vacant --------------------------------------------
--- Guarded UPDATE, so a re-run is a no-op and an appointee seated later is not
--- silently un-seated.
-UPDATE essentials.offices o
-   SET is_vacant = true,
-       vacant_since = '2026-02-24'::timestamptz
-  FROM essentials.districts d, essentials.chambers c
- WHERE d.id = o.district_id AND c.id = o.chamber_id
-   AND d.geo_id = 'manatee-fl-commissioner-district-1' AND d.mtfcc = 'X0037' AND d.district_type = 'COUNTY'
-   AND o.title = 'Commissioner, District 1'
-   AND o.is_vacant = false
-   AND NOT EXISTS (SELECT 1 FROM essentials.office_terms t WHERE t.office_id = o.id);
-
--- --- 6. Structure post-verify gate ----------------------------------------
+-- --- 5. Structure post-verify gate ----------------------------------------
 DO $$
 DECLARE v_gov uuid; v_n int; v_d text;
 BEGIN
   SELECT count(*) INTO v_n FROM essentials.districts
-   WHERE mtfcc = 'X0037' AND district_type = 'COUNTY' AND lower(state) = 'fl';
-  IF v_n <> 5 THEN RAISE EXCEPTION 'manatee county: expected 5 X0037 districts, got %', v_n; END IF;
+   WHERE mtfcc = 'X0038' AND district_type = 'COUNTY' AND lower(state) = 'fl';
+  IF v_n <> 5 THEN RAISE EXCEPTION 'leon county: expected 5 X0038 districts, got %', v_n; END IF;
 
-  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '12081' AND type = 'County';
-  IF v_gov IS NULL THEN RAISE EXCEPTION 'manatee county: the government row is missing'; END IF;
+  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '12073' AND type = 'County';
+  IF v_gov IS NULL THEN RAISE EXCEPTION 'leon county: the government row is missing'; END IF;
 
   SELECT count(*) INTO v_n FROM essentials.chambers WHERE government_id = v_gov;
-  IF v_n <> 2 THEN RAISE EXCEPTION 'manatee county: expected 2 chambers, got %', v_n; END IF;
+  IF v_n <> 2 THEN RAISE EXCEPTION 'leon county: expected 2 chambers, got %', v_n; END IF;
+
+  -- 🔴 SIX, NOT FIVE. Leon is a charter county and elects a Superintendent of
+  -- Schools. Manatee's equivalent assertion is 5.
+  SELECT count(*) INTO v_n FROM essentials.chambers
+   WHERE government_id = v_gov AND ((name = 'Board of County Commissioners' AND official_count = 7)
+                                 OR (name = 'Elected Officials' AND official_count = 6));
+  IF v_n <> 2 THEN RAISE EXCEPTION 'leon county: chamber names or official_counts are wrong -- Elected Officials must be 6, not 5'; END IF;
 
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov;
-  IF v_n <> 12 THEN RAISE EXCEPTION 'manatee county: expected 12 offices, got %', v_n; END IF;
+  IF v_n <> 13 THEN RAISE EXCEPTION 'leon county: expected 13 offices, got %', v_n; END IF;
 
   -- PER CHAMBER, not just in total.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov AND c.name = 'Board of County Commissioners';
-  IF v_n <> 7 THEN RAISE EXCEPTION 'manatee county: expected 7 commissioner offices, got %', v_n; END IF;
+  IF v_n <> 7 THEN RAISE EXCEPTION 'leon county: expected 7 commissioner offices, got %', v_n; END IF;
 
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov AND c.name = 'Elected Officials';
-  IF v_n <> 5 THEN RAISE EXCEPTION 'manatee county: expected 5 constitutional officer offices, got %', v_n; END IF;
+  IF v_n <> 6 THEN RAISE EXCEPTION 'leon county: expected 6 constitutional officer offices, got %', v_n; END IF;
+
+  -- The Superintendent specifically, because a count of 6 could be reached by
+  -- duplicating another officer.
+  SELECT count(*) INTO v_n FROM essentials.offices o
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+   WHERE c.government_id = v_gov AND o.title = 'Superintendent of Schools';
+  IF v_n <> 1 THEN RAISE EXCEPTION 'leon county: the Superintendent of Schools office is missing'; END IF;
 
   -- PER DISTRICT: one commissioner per single-member district...
-  FOR v_d IN SELECT 'manatee-fl-commissioner-district-' || g FROM generate_series(1,5) g LOOP
+  FOR v_d IN SELECT 'leon-fl-commissioner-district-' || g FROM generate_series(1,5) g LOOP
     SELECT count(*) INTO v_n FROM essentials.offices o
       JOIN essentials.districts d ON d.id = o.district_id
-     WHERE d.geo_id = v_d AND d.mtfcc = 'X0037' AND d.district_type = 'COUNTY';
-    IF v_n <> 1 THEN RAISE EXCEPTION 'manatee county: commission district % carries % offices, expected exactly 1', v_d, v_n; END IF;
+     WHERE d.geo_id = v_d AND d.mtfcc = 'X0038' AND d.district_type = 'COUNTY';
+    IF v_n <> 1 THEN RAISE EXCEPTION 'leon county: commission district % carries % offices, expected exactly 1', v_d, v_n; END IF;
   END LOOP;
 
-  -- ...and exactly 7 on the countywide district: 2 at-large + 5 officers.
+  -- ...and exactly 8 on the countywide district: 2 at-large + 6 officers.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.districts d ON d.id = o.district_id
     JOIN essentials.chambers c ON c.id = o.chamber_id
-   WHERE c.government_id = v_gov AND d.geo_id = '12081'
+   WHERE c.government_id = v_gov AND d.geo_id = '12073'
      AND d.mtfcc = 'G4020' AND d.district_type = 'COUNTY';
-  IF v_n <> 7 THEN RAISE EXCEPTION 'manatee county: expected 7 offices on the countywide district, got %', v_n; END IF;
+  IF v_n <> 8 THEN RAISE EXCEPTION 'leon county: expected 8 offices on the countywide district (2 at-large + 6 officers), got %', v_n; END IF;
 
-  -- 🔴 No office may have landed on a Manatee County in ANOTHER state, and none
-  -- may sit on a district with no boundary.
+  -- 🔴 No office may have landed on a Leon County in ANOTHER state, and none may
+  -- sit on a district with no boundary.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
     JOIN essentials.districts d ON d.id = o.district_id
    WHERE c.government_id = v_gov AND lower(d.state) <> 'fl';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county: % office(s) landed outside Florida', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county: % office(s) landed outside Florida', v_n; END IF;
 
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
@@ -417,9 +436,9 @@ BEGIN
    WHERE c.government_id = v_gov
      AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gb
                       WHERE gb.geo_id = d.geo_id AND gb.mtfcc = d.mtfcc);
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county: % office(s) sit on a district with no matching boundary', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county: % office(s) sit on a district with no matching boundary', v_n; END IF;
 
-  RAISE NOTICE 'manatee county structure OK: 5 new districts, 1 government, 2 chambers, 12 offices';
+  RAISE NOTICE 'leon county structure OK: 5 new districts, 1 government, 2 chambers, 13 offices';
 END $$;
 
 -- --- Politician identity band ----------------------------------------------
@@ -446,10 +465,10 @@ BEGIN
   SELECT count(*), string_agg(external_id::text, ', ' ORDER BY external_id)
     INTO v_n, v_foreign
     FROM essentials.politicians
-   WHERE external_id BETWEEN -1240025 AND -1240001
-     AND external_id NOT IN (-1240025, -1240024, -1240023, -1240022, -1240021, -1240016, -1240015, -1240014, -1240013, -1240012, -1240011, -1240006, -1240005, -1240004, -1240003, -1240002, -1240001);
+   WHERE external_id BETWEEN -1240056 AND -1240031
+     AND external_id NOT IN (-1240056, -1240055, -1240054, -1240053, -1240052, -1240051, -1240047, -1240046, -1240045, -1240044, -1240043, -1240042, -1240041, -1240035, -1240034, -1240033, -1240032, -1240031);
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'manatee county: % row(s) inside this wave''s id range -1240025..-1240001 are owned by something else (%). Pick another sub-range rather than colliding.', v_n, v_foreign;
+    RAISE EXCEPTION 'leon county: % row(s) inside this wave''s id range -1240056..-1240031 are owned by something else (%). Pick another sub-range rather than colliding.', v_n, v_foreign;
   END IF;
 END $$;
 
@@ -458,7 +477,7 @@ END $$;
 -- politician row, so all are fresh inserts and nothing is reused. A name-based
 -- guard is what seated a Wisconsin village trustee on the Nashville council.
 
-CREATE TEMP TABLE man_seed (
+CREATE TEMP TABLE leon_seed (
   geo_id          text,
   mtfcc           text,
   district_type   text,
@@ -476,54 +495,56 @@ CREATE TEMP TABLE man_seed (
   source          text
 ) ON COMMIT DROP;
 
-INSERT INTO man_seed VALUES
-  ('manatee-fl-commissioner-district-2', 'X0037', 'COUNTY', 'Commissioner, District 2', -1240011, 'Amanda Ballard', 'Amanda', 'Ballard', NULL, NULL, '{}'::text[], '2022-11-01'::date, 'month', 'elected', 'mymanatee-ballard-bio-2026-08-28'),
-  ('manatee-fl-commissioner-district-3', 'X0037', 'COUNTY', 'Commissioner, District 3', -1240012, 'Tal Siddique', 'Tal', 'Siddique', NULL, NULL, '{}'::text[], '2024-11-19'::date, 'day', 'elected', 'manatee-bocc-swearing-in-2024-11-19'),
-  ('manatee-fl-commissioner-district-4', 'X0037', 'COUNTY', 'Commissioner, District 4', -1240013, 'Mike Rahn', 'Mike', 'Rahn', NULL, NULL, '{}'::text[], '2022-11-01'::date, 'month', 'elected', 'mymanatee-rahn-bio-2026-08-28'),
-  ('manatee-fl-commissioner-district-5', 'X0037', 'COUNTY', 'Commissioner, District 5', -1240014, 'Dr. Bob McCann', 'Bob', 'McCann', NULL, NULL, ARRAY['Robert McCann', 'Bob McCann']::text[], '2024-11-19'::date, 'day', 'elected', 'manatee-bocc-swearing-in-2024-11-19'),
-  ('12081', 'G4020', 'COUNTY', 'Commissioner, District 6 (At-Large)', -1240015, 'Jason Bearden', 'Jason', 'Bearden', NULL, NULL, '{}'::text[], '2022-11-01'::date, 'month', 'elected', 'mymanatee-bearden-bio-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Commissioner, District 7 (At-Large)', -1240016, 'George Kruse', 'George', 'Kruse', NULL, NULL, '{}'::text[], '2020-11-01'::date, 'month', 'elected', 'mymanatee-kruse-bio-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Sheriff', -1240021, 'Charles R. "Rick" Wells', 'Charles', 'Wells', 'R', NULL, ARRAY['Rick Wells']::text[], '2017-01-03'::date, 'day', 'elected', 'manateesheriff-wells-bio-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Tax Collector', -1240022, 'Ken Burton, Jr.', 'Ken', 'Burton', NULL, 'Jr.', '{}'::text[], '1993-01-01'::date, 'year', 'elected', 'manatee-taxcollector-about-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Property Appraiser', -1240023, 'Charles E. Hackney', 'Charles', 'Hackney', 'E', NULL, '{}'::text[], '1993-01-01'::date, 'year', 'elected', 'manateepao-hackney-bio-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Supervisor of Elections', -1240024, 'Scott Farrington', 'Scott', 'Farrington', NULL, NULL, '{}'::text[], '2025-01-01'::date, 'month', 'elected', 'votemanatee-farrington-bio-2026-08-28'),
-  ('12081', 'G4020', 'COUNTY', 'Clerk of the Circuit Court and Comptroller', -1240025, 'Angelina "Angel" Colonneso', 'Angelina', 'Colonneso', NULL, NULL, ARRAY['Angel Colonneso']::text[], '2015-09-01'::date, 'month', 'appointed', 'manateeclerk-full-circle-blog-2026-08-28');
+INSERT INTO leon_seed VALUES
+  ('leon-fl-commissioner-district-1', 'X0038', 'COUNTY', 'Commissioner, District 1', -1240041, 'Bill Proctor', 'Bill', 'Proctor', NULL, NULL, '{}'::text[], '1996-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('leon-fl-commissioner-district-2', 'X0038', 'COUNTY', 'Commissioner, District 2', -1240042, 'Christian Caban', 'Christian', 'Caban', NULL, NULL, '{}'::text[], '2022-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('leon-fl-commissioner-district-3', 'X0038', 'COUNTY', 'Commissioner, District 3', -1240043, 'Rick Minor', 'Rick', 'Minor', NULL, NULL, '{}'::text[], '2018-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('leon-fl-commissioner-district-4', 'X0038', 'COUNTY', 'Commissioner, District 4', -1240044, 'Brian Welch', 'Brian', 'Welch', NULL, NULL, '{}'::text[], '2020-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('leon-fl-commissioner-district-5', 'X0038', 'COUNTY', 'Commissioner, District 5', -1240045, 'David O''Keefe', 'David', 'O''Keefe', NULL, NULL, '{}'::text[], '2022-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Commissioner, At Large Group 1', -1240046, 'Carolyn D. Cummings', 'Carolyn', 'Cummings', 'D', NULL, '{}'::text[], '2020-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Commissioner, At Large Group 2', -1240047, 'Nick Maddox', 'Nick', 'Maddox', NULL, NULL, '{}'::text[], '2010-11-01'::date, 'month', 'elected', 'leoncounty-leadingtheway-commissioners-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Sheriff', -1240051, 'Walt McNeil', 'Walt', 'McNeil', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Tax Collector', -1240052, 'Doris Maloy', 'Doris', 'Maloy', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Property Appraiser', -1240053, 'Akin Akinyemi', 'Akin', 'Akinyemi', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Supervisor of Elections', -1240054, 'Mark S. Earley', 'Mark', 'Earley', 'S', NULL, ARRAY['Mark Earley']::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Clerk of the Circuit Court and Comptroller', -1240055, 'Gwen Marshall', 'Gwen', 'Marshall', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('12073', 'G4020', 'COUNTY', 'Superintendent of Schools', -1240056, 'Rocky Hanna', 'Rocky', 'Hanna', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28');
 
 -- --- Payload guard ----------------------------------------------------------
 DO $$
 DECLARE v_n int; v_dup int;
 BEGIN
-  SELECT count(*) INTO v_n FROM man_seed;
-  IF v_n <> 11 THEN RAISE EXCEPTION 'manatee county payload: expected 11 rows, got %', v_n; END IF;
+  SELECT count(*) INTO v_n FROM leon_seed;
+  IF v_n <> 13 THEN RAISE EXCEPTION 'leon county payload: expected 13 rows, got %', v_n; END IF;
 
-  SELECT count(*) INTO v_dup FROM (SELECT ext_id FROM man_seed GROUP BY ext_id HAVING count(*) > 1) x;
-  IF v_dup <> 0 THEN RAISE EXCEPTION 'manatee county payload: % duplicate external_id(s)', v_dup; END IF;
+  SELECT count(*) INTO v_dup FROM (SELECT ext_id FROM leon_seed GROUP BY ext_id HAVING count(*) > 1) x;
+  IF v_dup <> 0 THEN RAISE EXCEPTION 'leon county payload: % duplicate external_id(s)', v_dup; END IF;
 
-  SELECT count(*) INTO v_n FROM man_seed WHERE ext_id NOT BETWEEN -1249999 AND -1240000;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county payload: % out-of-band external_id(s)', v_n; END IF;
+  SELECT count(*) INTO v_n FROM leon_seed WHERE ext_id NOT BETWEEN -1249999 AND -1240000;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county payload: % out-of-band external_id(s)', v_n; END IF;
 
   -- Every (geo_id, mtfcc, district_type, title) is a single seat in this wave.
   SELECT count(*) INTO v_dup FROM (
-    SELECT geo_id, mtfcc, district_type, office_title FROM man_seed
+    SELECT geo_id, mtfcc, district_type, office_title FROM leon_seed
     GROUP BY geo_id, mtfcc, district_type, office_title HAVING count(*) > 1
   ) x;
-  IF v_dup <> 0 THEN RAISE EXCEPTION 'manatee county payload: % duplicate seat key(s)', v_dup; END IF;
+  IF v_dup <> 0 THEN RAISE EXCEPTION 'leon county payload: % duplicate seat key(s)', v_dup; END IF;
 
-  -- A row with no term_start MUST declare 'unknown'. Three Bradenton council
-  -- members are in exactly this position: no publisher gives a start date, and
-  -- a guessed-late term_start is a false statement about history that no
-  -- end_precision exists to soften.
-  SELECT count(*) INTO v_n FROM man_seed WHERE term_start IS NULL AND start_precision <> 'unknown';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county payload: % row(s) have no term_start but claim a precision', v_n; END IF;
+  -- A row with no term_start MUST declare 'unknown'. Nine of this wave's
+  -- eighteen people are in exactly this position: no reachable publisher gives a
+  -- start date, and a guessed term_start is a false statement about history that
+  -- no end_precision exists to soften.
+  SELECT count(*) INTO v_n FROM leon_seed WHERE term_start IS NULL AND start_precision <> 'unknown';
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county payload: % row(s) have no term_start but claim a precision', v_n; END IF;
 
   -- And every seat named must resolve to exactly one office in prod.
-  SELECT count(*) INTO v_n FROM man_seed s
+  SELECT count(*) INTO v_n FROM leon_seed s
    WHERE (SELECT count(*) FROM essentials.offices o
             JOIN essentials.districts d ON d.id = o.district_id
            WHERE d.geo_id = s.geo_id AND d.mtfcc = s.mtfcc
              AND d.district_type = s.district_type AND lower(d.state) = 'fl'
              AND o.title = s.office_title) <> 1;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county payload: % seat(s) do not resolve to exactly one office -- run the structure half first', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county payload: % seat(s) do not resolve to exactly one office -- run the structure half first', v_n; END IF;
 END $$;
 
 -- --- Politicians ------------------------------------------------------------
@@ -533,7 +554,7 @@ INSERT INTO essentials.politicians
 SELECT s.ext_id, s.full_name, s.first_name, s.last_name,
        nullif(s.middle_initial, ''), nullif(s.name_suffix, ''),
        s.aliases, true, true, s.source
-FROM man_seed s
+FROM leon_seed s
 ON CONFLICT (external_id) DO NOTHING;
 
 -- --- Occupancy --------------------------------------------------------------
@@ -562,7 +583,7 @@ BEGIN
   FOR r IN
     SELECT s.term_start, s.start_precision, s.how_started, s.source,
            o.id AS office_id, p.id AS politician_id
-      FROM man_seed s
+      FROM leon_seed s
       JOIN essentials.districts d
         ON d.geo_id = s.geo_id AND d.mtfcc = s.mtfcc
        AND d.district_type = s.district_type AND lower(d.state) = 'fl'
@@ -580,11 +601,11 @@ BEGIN
       v_seated := v_seated + 1;
     ELSE
       IF r.start_precision <> 'unknown' THEN
-        RAISE EXCEPTION 'manatee county: office % has no term_start but claims precision % -- refusing', r.office_id, r.start_precision;
+        RAISE EXCEPTION 'leon county: office % has no term_start but claims precision % -- refusing', r.office_id, r.start_precision;
       END IF;
       SELECT count(*) INTO v_prior FROM essentials.office_terms t WHERE t.office_id = r.office_id;
       IF v_prior <> 0 THEN
-        RAISE EXCEPTION 'manatee county: office % already carries % term row(s), so an undated open term cannot be inserted directly -- close the predecessor and give this person a real date', r.office_id, v_prior;
+        RAISE EXCEPTION 'leon county: office % already carries % term row(s), so an undated open term cannot be inserted directly -- close the predecessor and give this person a real date', r.office_id, v_prior;
       END IF;
       INSERT INTO essentials.office_terms
         (office_id, politician_id, term_start, term_end, start_precision, how_started, source)
@@ -592,23 +613,21 @@ BEGIN
       v_blank := v_blank + 1;
     END IF;
   END LOOP;
-  RAISE NOTICE 'manatee county: seated % dated official(s) via the helper, % with an honest unknown start', v_seated, v_blank;
+  RAISE NOTICE 'leon county: seated % dated official(s) via the helper, % with an honest unknown start', v_seated, v_blank;
 END $$;
 
--- --- 7. Occupancy post-verify gate ----------------------------------------
+-- --- 6. Occupancy post-verify gate ----------------------------------------
 DO $$
-DECLARE v_gov uuid; v_pol int; v_seated int; v_vac int; v_appt int; v_n int; v_d text;
+DECLARE v_gov uuid; v_pol int; v_seated int; v_n int; v_d text;
 BEGIN
-  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '12081' AND type = 'County';
+  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '12073' AND type = 'County';
 
-  -- ⚠ COUNT THIS MIGRATION'S OWN IDS, NOT THE WHOLE BAND. The band version also
-  -- gave this migration a hidden ORDERING DEPENDENCY on CC_0009: it asserted the
-  -- city's six were already present, so applying the county first would have
-  -- failed for no real reason.
+  -- ⚠ THIS MIGRATION'S OWN IDS, not the band: a band count is non-idempotent and
+  -- would also give this migration a false ordering dependency on the city half.
   SELECT count(*) INTO v_pol FROM essentials.politicians
-   WHERE external_id IN (-1240011, -1240012, -1240013, -1240014, -1240015, -1240016, -1240021, -1240022, -1240023, -1240024, -1240025);
-  IF v_pol <> 11 THEN
-    RAISE EXCEPTION 'manatee county: expected 11 of this wave''s politicians, got %', v_pol;
+   WHERE external_id IN (-1240041, -1240042, -1240043, -1240044, -1240045, -1240046, -1240047, -1240051, -1240052, -1240053, -1240054, -1240055, -1240056);
+  IF v_pol <> 13 THEN
+    RAISE EXCEPTION 'leon county: expected 13 of this wave''s politicians, got %', v_pol;
   END IF;
 
   SELECT count(och.politician_id) INTO v_seated
@@ -616,57 +635,64 @@ BEGIN
     JOIN essentials.chambers c ON c.id = o.chamber_id
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
    WHERE c.government_id = v_gov;
-  IF v_seated <> 11 THEN RAISE EXCEPTION 'manatee county: expected 11 seated officials, found %', v_seated; END IF;
+  IF v_seated <> 13 THEN RAISE EXCEPTION 'leon county: expected 13 seated officials, found %', v_seated; END IF;
 
-  -- 🔴 EXACTLY ONE VACANCY, AND IT IS DISTRICT 1.
-  SELECT count(*) INTO v_vac FROM essentials.offices o
+  -- 🔴 NO VACANCY. Manatee's equivalent gate expects exactly 1; Leon expects 0,
+  -- which means every office must carry a term row.
+  SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov AND o.is_vacant = true;
-  IF v_vac <> 1 THEN RAISE EXCEPTION 'manatee county: expected 1 flagged vacancy, got %', v_vac; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county: % office(s) flagged vacant, expected 0', v_n; END IF;
 
-  SELECT count(*) INTO v_n FROM essentials.offices o
-    JOIN essentials.districts d ON d.id = o.district_id
-   WHERE d.geo_id = 'manatee-fl-commissioner-district-1' AND d.mtfcc = 'X0037'
-     AND d.district_type = 'COUNTY'
-     AND o.is_vacant = true AND o.vacant_since = '2026-02-24'::timestamptz;
-  IF v_n <> 1 THEN RAISE EXCEPTION 'manatee county: District 1 is not flagged vacant since 2026-02-24'; END IF;
-
-  -- One seated commissioner per single-member district, EXCEPT District 1.
-  FOR v_d IN SELECT 'manatee-fl-commissioner-district-' || g FROM generate_series(2,5) g LOOP
+  -- One seated commissioner per single-member district -- ALL FIVE, unlike
+  -- Manatee's loop which had to skip its vacant District 1.
+  FOR v_d IN SELECT 'leon-fl-commissioner-district-' || g FROM generate_series(1,5) g LOOP
     SELECT count(och.politician_id) INTO v_n
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
       LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-     WHERE d.geo_id = v_d AND d.mtfcc = 'X0037' AND d.district_type = 'COUNTY';
-    IF v_n <> 1 THEN RAISE EXCEPTION 'manatee county: commission district % has % seated member(s), expected 1', v_d, v_n; END IF;
+     WHERE d.geo_id = v_d AND d.mtfcc = 'X0038' AND d.district_type = 'COUNTY';
+    IF v_n <> 1 THEN RAISE EXCEPTION 'leon county: commission district % has % seated member(s), expected 1', v_d, v_n; END IF;
   END LOOP;
 
+  -- All eight countywide seats filled: 2 at-large + 6 officers.
   SELECT count(och.politician_id) INTO v_n
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-   WHERE d.geo_id = 'manatee-fl-commissioner-district-1' AND d.mtfcc = 'X0037'
-     AND d.district_type = 'COUNTY';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county: District 1 has % seated member(s), expected 0', v_n; END IF;
+   WHERE c.government_id = v_gov AND d.geo_id = '12073'
+     AND d.mtfcc = 'G4020' AND d.district_type = 'COUNTY';
+  IF v_n <> 8 THEN RAISE EXCEPTION 'leon county: expected 8 seated countywide officials, got %', v_n; END IF;
 
-  -- 🔴 THE CLERK'S APPOINTMENT MUST HAVE SURVIVED. Colonneso was sworn in by
-  -- appointment in September 2015 after her predecessor died in office; a
-  -- generator that defaulted how_started to 'elected' passes every count above.
-  SELECT count(*) INTO v_appt
+  -- 🔴 THE SIX HONEST BLANKS MUST STILL BE BLANK -- the constitutional officers,
+  -- for whom no publisher gives a start date. If a later pass invents dates, this
+  -- is where it shows up.
+  SELECT count(*) INTO v_n
     FROM essentials.office_terms t
     JOIN essentials.offices o ON o.id = t.office_id
     JOIN essentials.chambers c ON c.id = o.chamber_id
-   WHERE c.government_id = v_gov AND t.how_started = 'appointed';
-  IF v_appt <> 1 THEN RAISE EXCEPTION 'manatee county: expected 1 appointed term (the Clerk), got %', v_appt; END IF;
+   WHERE c.government_id = v_gov AND c.name = 'Elected Officials'
+     AND t.start_precision = 'unknown' AND t.term_start IS NULL;
+  IF v_n <> 6 THEN RAISE EXCEPTION 'leon county: expected 6 unknown-precision officer terms, got %', v_n; END IF;
+
+  -- And all seven commissioners dated at month precision, in November.
+  SELECT count(*) INTO v_n
+    FROM essentials.office_terms t
+    JOIN essentials.offices o ON o.id = t.office_id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+   WHERE c.government_id = v_gov AND c.name = 'Board of County Commissioners'
+     AND t.start_precision = 'month' AND extract(month FROM t.term_start) = 11;
+  IF v_n <> 7 THEN RAISE EXCEPTION 'leon county: expected 7 month-precision November commissioner terms, got %', v_n; END IF;
 
   -- No office with neither a term row nor a vacancy flag.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
     LEFT JOIN essentials.office_terms t ON t.office_id = o.id
    WHERE c.government_id = v_gov AND t.id IS NULL AND o.is_vacant = false;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'manatee county: % office(s) have no term row and no vacancy flag', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'leon county: % office(s) have no term row and no vacancy flag', v_n; END IF;
 
-  RAISE NOTICE 'manatee county OK: 12 offices, 11 seated, 1 vacant';
+  RAISE NOTICE 'leon county OK: 13 offices, 13 seated, 0 vacant, 6 unknown-precision officers';
 END $$;
 
 COMMIT;

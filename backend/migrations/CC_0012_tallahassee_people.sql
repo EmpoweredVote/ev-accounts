@@ -1,9 +1,9 @@
--- CC_0009_bradenton_people.sql
--- Knight Foundation cities program, wave FL-3. Companion: CC_0008_bradenton_structure.sql.
+-- CC_0012_tallahassee_people.sql
+-- Knight Foundation cities program, wave FL-3. Companion: CC_0011_tallahassee_structure.sql.
 --
--- Seats the 6 elected officials of the City of Bradenton:
---   * 6 politicians in the -(1240000 + n) band
---   * 6 office_terms rows via essentials.seat_officeholder()
+-- Seats the 5 elected officials of the City of Tallahassee:
+--   * 5 politicians in the -(1240000 + n) band
+--   * 5 office_terms rows, all on the ONE citywide district
 --
 -- Spec:   docs/superpowers/specs/2026-08-28-knight-cities-program-design.md
 -- Plan:   docs/superpowers/plans/2026-08-28-knight-fl-wave-3-bradenton-manatee.md
@@ -29,29 +29,26 @@
 -- become a term_end without inventing a day.
 
 -- ---------------------------------------------------------------------------
--- 🔴 term_start IS THE START OF CONTINUOUS OCCUPANCY, NOT OF THE CURRENT TERM,
--- AND A PUBLISHED EXPIRY IS NOT AN ELECTION DATE.
+-- 🔴 term_start IS THE START OF CONTINUOUS OCCUPANCY, NOT OF THE CURRENT TERM.
 --
--- Mayor Brown's term expires January 2029, and he "has served as Mayor since
--- January 2021" -- his own page. Kocher and Coachman also expire January 2029
--- and were RE-ELECTED in November 2024, per the city's own 2025-01-06 press
--- release. Deriving a start from an expiry would have been wrong for three of
--- these six people. The same reading error was wrong for 5 of 17 in the NC wave.
+-- Mayor Dailey's own page: "John was elected Mayor of the City of Tallahassee in
+-- 2018." Members take office on the 13th day after the General Election, so
+-- November 2018 at MONTH precision. ⚠ His EARLIER service was on the LEON COUNTY
+-- COMMISSION, District 3, 2006-2018 -- a different office, so the mayoralty starts
+-- in 2018, not 2006. Commissioner Matlow is dated the same way from his own page.
 --
--- TWO OF THE SIX WERE APPOINTED, NOT ELECTED:
---   Ward 2  Marianne Barnebey  appointed 2020-06-24, after four elected terms
---                              that ended when she resigned in 2012 -- so the
---                              GAP means continuous occupancy starts in 2020.
---   Ward 3  Kemp Schuessler    appointed 2025-07-23, filling the vacancy left
---                              when Councilman Josh Cramer became Chief of
---                              Police.
+-- 🔴 THREE OF THE FIVE HAVE start_precision 'unknown' AND NO term_start:
+-- Porter (Seat 1), Richardson (Seat 2) and Williams-Cox (Seat 5). No reachable
+-- publisher gives a start date -- their own city pages carry none, and the
+-- Supervisor of Elections publishes only a "next election" year.
 --
--- THREE HAVE start_precision 'unknown' AND NO term_start: Kocher, Moore and
--- Coachman. No publisher gives a start date, and the Supervisor of Elections'
--- results archive exposes only 2004-2007 outside its JavaScript file manager.
--- An open-ended term at 'unknown' precision is the honest record; a guessed
--- date is a false statement about history that no end_precision can soften.
--- ROSTERS.md carries the follow-up.
+-- ⚠ THE CERTIFIED-RESULTS PDFs WERE REJECTED AS A DATE SOURCE. A parser slicing
+-- each race's candidates came out SHIFTED BY ONE RACE and reported
+-- "Mayor -> Jeremy Matlow" for 2018, when Dailey won the mayoralty and Matlow won
+-- Seat 3. Plausible, wrong, and it would have seated two people on each other's
+-- dates. An honest blank beats a confident error, and there is no end_precision to
+-- soften a wrong start. ROSTERS.md defects D4 and D5 carry the detail and the
+-- follow-up (the city clerk's organisational minutes would date all three).
 
 BEGIN;
 
@@ -79,10 +76,10 @@ BEGIN
   SELECT count(*), string_agg(external_id::text, ', ' ORDER BY external_id)
     INTO v_n, v_foreign
     FROM essentials.politicians
-   WHERE external_id BETWEEN -1240025 AND -1240001
-     AND external_id NOT IN (-1240025, -1240024, -1240023, -1240022, -1240021, -1240016, -1240015, -1240014, -1240013, -1240012, -1240011, -1240006, -1240005, -1240004, -1240003, -1240002, -1240001);
+   WHERE external_id BETWEEN -1240056 AND -1240031
+     AND external_id NOT IN (-1240056, -1240055, -1240054, -1240053, -1240052, -1240051, -1240047, -1240046, -1240045, -1240044, -1240043, -1240042, -1240041, -1240035, -1240034, -1240033, -1240032, -1240031);
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'bradenton people: % row(s) inside this wave''s id range -1240025..-1240001 are owned by something else (%). Pick another sub-range rather than colliding.', v_n, v_foreign;
+    RAISE EXCEPTION 'tallahassee people: % row(s) inside this wave''s id range -1240056..-1240031 are owned by something else (%). Pick another sub-range rather than colliding.', v_n, v_foreign;
   END IF;
 END $$;
 
@@ -91,7 +88,7 @@ END $$;
 -- politician row, so all are fresh inserts and nothing is reused. A name-based
 -- guard is what seated a Wisconsin village trustee on the Nashville council.
 
-CREATE TEMP TABLE brad_seed (
+CREATE TEMP TABLE tlh_seed (
   geo_id          text,
   mtfcc           text,
   district_type   text,
@@ -109,49 +106,48 @@ CREATE TEMP TABLE brad_seed (
   source          text
 ) ON COMMIT DROP;
 
-INSERT INTO brad_seed VALUES
-  ('1207950', 'G4110', 'LOCAL', 'Mayor', -1240001, 'Gene Brown', 'Gene', 'Brown', NULL, NULL, '{}'::text[], '2021-01-01'::date, 'month', 'elected', 'cityofbradenton-brown-bio-2026-08-28'),
-  ('bradenton-fl-council-ward-1', 'X0036', 'LOCAL', 'Council Member, Ward 1', -1240002, 'Jayne Kocher', 'Jayne', 'Kocher', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'cityofbradenton-council-2026-08-28'),
-  ('bradenton-fl-council-ward-2', 'X0036', 'LOCAL', 'Council Member, Ward 2', -1240003, 'Marianne Barnebey', 'Marianne', 'Barnebey', NULL, NULL, '{}'::text[], '2020-06-24'::date, 'day', 'appointed', 'cityofbradenton-barnebey-bio-2026-08-28'),
-  ('bradenton-fl-council-ward-3', 'X0036', 'LOCAL', 'Council Member, Ward 3', -1240004, 'Kemp Schuessler', 'Kemp', 'Schuessler', NULL, NULL, '{}'::text[], '2025-07-23'::date, 'day', 'appointed', 'cityofbradenton-schuessler-bio-2026-08-28'),
-  ('bradenton-fl-council-ward-4', 'X0036', 'LOCAL', 'Council Member, Ward 4', -1240005, 'Lisa Gonzalez Moore', 'Lisa', 'Moore', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'cityofbradenton-council-2026-08-28'),
-  ('bradenton-fl-council-ward-5', 'X0036', 'LOCAL', 'Council Member, Ward 5', -1240006, 'Pam Coachman', 'Pam', 'Coachman', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'cityofbradenton-council-2026-08-28');
+INSERT INTO tlh_seed VALUES
+  ('1270600', 'G4110', 'LOCAL', 'City Commissioner, Seat 1', -1240031, 'Jacqueline "Jack" Porter', 'Jacqueline', 'Porter', NULL, NULL, ARRAY['Jack Porter']::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('1270600', 'G4110', 'LOCAL', 'City Commissioner, Seat 2', -1240032, 'Curtis Richardson', 'Curtis', 'Richardson', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28'),
+  ('1270600', 'G4110', 'LOCAL', 'City Commissioner, Seat 3', -1240033, 'Jeremy Matlow', 'Jeremy', 'Matlow', NULL, NULL, '{}'::text[], '2018-11-01'::date, 'month', 'elected', 'talgov-matlow-bio-2026-08-28'),
+  ('1270600', 'G4110', 'LOCAL', 'Mayor (Seat 4)', -1240034, 'John Dailey', 'John', 'Dailey', NULL, NULL, '{}'::text[], '2018-11-01'::date, 'month', 'elected', 'talgov-dailey-bio-2026-08-28'),
+  ('1270600', 'G4110', 'LOCAL', 'City Commissioner, Seat 5', -1240035, 'Dianne Williams-Cox', 'Dianne', 'Williams-Cox', NULL, NULL, '{}'::text[], NULL::date, 'unknown', 'elected', 'leonvotes-elected-officials-2026-08-28');
 
 -- --- Payload guard ----------------------------------------------------------
 DO $$
 DECLARE v_n int; v_dup int;
 BEGIN
-  SELECT count(*) INTO v_n FROM brad_seed;
-  IF v_n <> 6 THEN RAISE EXCEPTION 'bradenton people payload: expected 6 rows, got %', v_n; END IF;
+  SELECT count(*) INTO v_n FROM tlh_seed;
+  IF v_n <> 5 THEN RAISE EXCEPTION 'tallahassee people payload: expected 5 rows, got %', v_n; END IF;
 
-  SELECT count(*) INTO v_dup FROM (SELECT ext_id FROM brad_seed GROUP BY ext_id HAVING count(*) > 1) x;
-  IF v_dup <> 0 THEN RAISE EXCEPTION 'bradenton people payload: % duplicate external_id(s)', v_dup; END IF;
+  SELECT count(*) INTO v_dup FROM (SELECT ext_id FROM tlh_seed GROUP BY ext_id HAVING count(*) > 1) x;
+  IF v_dup <> 0 THEN RAISE EXCEPTION 'tallahassee people payload: % duplicate external_id(s)', v_dup; END IF;
 
-  SELECT count(*) INTO v_n FROM brad_seed WHERE ext_id NOT BETWEEN -1249999 AND -1240000;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'bradenton people payload: % out-of-band external_id(s)', v_n; END IF;
+  SELECT count(*) INTO v_n FROM tlh_seed WHERE ext_id NOT BETWEEN -1249999 AND -1240000;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'tallahassee people payload: % out-of-band external_id(s)', v_n; END IF;
 
   -- Every (geo_id, mtfcc, district_type, title) is a single seat in this wave.
   SELECT count(*) INTO v_dup FROM (
-    SELECT geo_id, mtfcc, district_type, office_title FROM brad_seed
+    SELECT geo_id, mtfcc, district_type, office_title FROM tlh_seed
     GROUP BY geo_id, mtfcc, district_type, office_title HAVING count(*) > 1
   ) x;
-  IF v_dup <> 0 THEN RAISE EXCEPTION 'bradenton people payload: % duplicate seat key(s)', v_dup; END IF;
+  IF v_dup <> 0 THEN RAISE EXCEPTION 'tallahassee people payload: % duplicate seat key(s)', v_dup; END IF;
 
-  -- A row with no term_start MUST declare 'unknown'. Three Bradenton council
-  -- members are in exactly this position: no publisher gives a start date, and
-  -- a guessed-late term_start is a false statement about history that no
-  -- end_precision exists to soften.
-  SELECT count(*) INTO v_n FROM brad_seed WHERE term_start IS NULL AND start_precision <> 'unknown';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'bradenton people payload: % row(s) have no term_start but claim a precision', v_n; END IF;
+  -- A row with no term_start MUST declare 'unknown'. Nine of this wave's
+  -- eighteen people are in exactly this position: no reachable publisher gives a
+  -- start date, and a guessed term_start is a false statement about history that
+  -- no end_precision exists to soften.
+  SELECT count(*) INTO v_n FROM tlh_seed WHERE term_start IS NULL AND start_precision <> 'unknown';
+  IF v_n <> 0 THEN RAISE EXCEPTION 'tallahassee people payload: % row(s) have no term_start but claim a precision', v_n; END IF;
 
   -- And every seat named must resolve to exactly one office in prod.
-  SELECT count(*) INTO v_n FROM brad_seed s
+  SELECT count(*) INTO v_n FROM tlh_seed s
    WHERE (SELECT count(*) FROM essentials.offices o
             JOIN essentials.districts d ON d.id = o.district_id
            WHERE d.geo_id = s.geo_id AND d.mtfcc = s.mtfcc
              AND d.district_type = s.district_type AND lower(d.state) = 'fl'
              AND o.title = s.office_title) <> 1;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'bradenton people payload: % seat(s) do not resolve to exactly one office -- run the structure half first', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'tallahassee people payload: % seat(s) do not resolve to exactly one office -- run the structure half first', v_n; END IF;
 END $$;
 
 -- --- Politicians ------------------------------------------------------------
@@ -161,7 +157,7 @@ INSERT INTO essentials.politicians
 SELECT s.ext_id, s.full_name, s.first_name, s.last_name,
        nullif(s.middle_initial, ''), nullif(s.name_suffix, ''),
        s.aliases, true, true, s.source
-FROM brad_seed s
+FROM tlh_seed s
 ON CONFLICT (external_id) DO NOTHING;
 
 -- --- Occupancy --------------------------------------------------------------
@@ -190,7 +186,7 @@ BEGIN
   FOR r IN
     SELECT s.term_start, s.start_precision, s.how_started, s.source,
            o.id AS office_id, p.id AS politician_id
-      FROM brad_seed s
+      FROM tlh_seed s
       JOIN essentials.districts d
         ON d.geo_id = s.geo_id AND d.mtfcc = s.mtfcc
        AND d.district_type = s.district_type AND lower(d.state) = 'fl'
@@ -208,11 +204,11 @@ BEGIN
       v_seated := v_seated + 1;
     ELSE
       IF r.start_precision <> 'unknown' THEN
-        RAISE EXCEPTION 'bradenton people: office % has no term_start but claims precision % -- refusing', r.office_id, r.start_precision;
+        RAISE EXCEPTION 'tallahassee people: office % has no term_start but claims precision % -- refusing', r.office_id, r.start_precision;
       END IF;
       SELECT count(*) INTO v_prior FROM essentials.office_terms t WHERE t.office_id = r.office_id;
       IF v_prior <> 0 THEN
-        RAISE EXCEPTION 'bradenton people: office % already carries % term row(s), so an undated open term cannot be inserted directly -- close the predecessor and give this person a real date', r.office_id, v_prior;
+        RAISE EXCEPTION 'tallahassee people: office % already carries % term row(s), so an undated open term cannot be inserted directly -- close the predecessor and give this person a real date', r.office_id, v_prior;
       END IF;
       INSERT INTO essentials.office_terms
         (office_id, politician_id, term_start, term_end, start_precision, how_started, source)
@@ -220,75 +216,73 @@ BEGIN
       v_blank := v_blank + 1;
     END IF;
   END LOOP;
-  RAISE NOTICE 'bradenton people: seated % dated official(s) via the helper, % with an honest unknown start', v_seated, v_blank;
+  RAISE NOTICE 'tallahassee people: seated % dated official(s) via the helper, % with an honest unknown start', v_seated, v_blank;
 END $$;
 
 -- --- Post-verify gate ------------------------------------------------------
 DO $$
-DECLARE v_gov uuid; v_pol int; v_seated int; v_appt int; v_unknown int; v_n int; v_d text;
+DECLARE v_gov uuid; v_pol int; v_seated int; v_unknown int; v_n int;
 BEGIN
-  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '1207950' AND type = 'City';
-  IF v_gov IS NULL THEN RAISE EXCEPTION 'bradenton people: the government row is missing -- apply the structure half first'; END IF;
+  SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '1270600' AND type = 'City';
+  IF v_gov IS NULL THEN RAISE EXCEPTION 'tallahassee people: the government row is missing -- apply the structure half first'; END IF;
 
-  -- ⚠ COUNT THIS MIGRATION'S OWN IDS, NOT THE WHOLE BAND. Counting the band
-  -- made this migration non-idempotent: once CC_0010 adds its eleven, a re-run
-  -- of this one saw 17 and refused. Measured 2026-08-28.
+  -- ⚠ COUNT THIS MIGRATION'S OWN IDS, NOT THE WHOLE BAND. Counting the band makes
+  -- the migration non-idempotent once a later wave adds to it, and it is weaker:
+  -- a foreign row that happens to make the count match would pass.
   SELECT count(*) INTO v_pol FROM essentials.politicians
-   WHERE external_id IN (-1240001, -1240002, -1240003, -1240004, -1240005, -1240006);
-  IF v_pol <> 6 THEN RAISE EXCEPTION 'bradenton people: expected 6 of this wave''s politicians, got %', v_pol; END IF;
+   WHERE external_id IN (-1240031, -1240032, -1240033, -1240034, -1240035);
+  IF v_pol <> 5 THEN RAISE EXCEPTION 'tallahassee people: expected 5 of this wave''s politicians, got %', v_pol; END IF;
 
-  -- count(och.politician_id), NOT count(*): office_current_holder LEFT JOINs
-  -- from offices, so a vacancy is a NULL politician_id, never an absent row,
-  -- and count(*) would pass vacuously.
+  -- count(och.politician_id), NOT count(*): office_current_holder LEFT JOINs from
+  -- offices, so a vacancy is a NULL politician_id and count(*) passes vacuously.
   SELECT count(och.politician_id) INTO v_seated
     FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
    WHERE c.government_id = v_gov;
-  IF v_seated <> 6 THEN RAISE EXCEPTION 'bradenton people: expected 6 seated officials, found %', v_seated; END IF;
+  IF v_seated <> 5 THEN RAISE EXCEPTION 'tallahassee people: expected 5 seated officials, found %', v_seated; END IF;
 
+  -- 🔴 ALL FIVE SEATED ON THE ONE CITYWIDE DISTRICT. An at-large body is only
+  -- correct if every seat resolves from the same polygon.
+  SELECT count(och.politician_id) INTO v_n
+    FROM essentials.districts d
+    JOIN essentials.offices o ON o.district_id = d.id
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+   WHERE d.geo_id = '1270600' AND d.mtfcc = 'G4110' AND d.district_type = 'LOCAL';
+  IF v_n <> 5 THEN RAISE EXCEPTION 'tallahassee people: the citywide district has % seated member(s), expected 5', v_n; END IF;
+
+  -- No vacancy anywhere in this wave.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov AND o.is_vacant = true;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'bradenton people: % Bradenton office(s) flagged vacant, expected 0', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'tallahassee people: % office(s) flagged vacant, expected 0', v_n; END IF;
 
-  -- One seated member per ward, counted PER WARD.
-  FOR v_d IN SELECT 'bradenton-fl-council-ward-' || g FROM generate_series(1,5) g LOOP
-    SELECT count(och.politician_id) INTO v_n
-      FROM essentials.districts d
-      JOIN essentials.offices o ON o.district_id = d.id
-      LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-     WHERE d.geo_id = v_d AND d.mtfcc = 'X0036' AND d.district_type = 'LOCAL';
-    IF v_n <> 1 THEN RAISE EXCEPTION 'bradenton people: ward % has % seated member(s), expected 1', v_d, v_n; END IF;
-  END LOOP;
-
-  -- 🔴 THE TWO APPOINTMENTS MUST HAVE SURVIVED. A generator that quietly
-  -- defaulted how_started to 'elected' passes every count above.
-  SELECT count(*) INTO v_appt
-    FROM essentials.office_terms t
-    JOIN essentials.offices o ON o.id = t.office_id
-    JOIN essentials.chambers c ON c.id = o.chamber_id
-   WHERE c.government_id = v_gov AND t.how_started = 'appointed';
-  IF v_appt <> 2 THEN RAISE EXCEPTION 'bradenton people: expected 2 appointed terms (Wards 2 and 3), got %', v_appt; END IF;
-
-  -- 🔴 AND THE THREE HONEST BLANKS MUST STILL BE BLANK. If a later pass
-  -- invents dates for them, this gate is where that shows up.
+  -- 🔴 THE THREE HONEST BLANKS MUST STILL BE BLANK. If a later pass invents dates
+  -- for Porter, Richardson or Williams-Cox, this gate is where that shows up.
   SELECT count(*) INTO v_unknown
     FROM essentials.office_terms t
     JOIN essentials.offices o ON o.id = t.office_id
     JOIN essentials.chambers c ON c.id = o.chamber_id
    WHERE c.government_id = v_gov AND t.start_precision = 'unknown' AND t.term_start IS NULL;
-  IF v_unknown <> 3 THEN RAISE EXCEPTION 'bradenton people: expected 3 unknown-precision open-ended terms, got %', v_unknown; END IF;
+  IF v_unknown <> 3 THEN RAISE EXCEPTION 'tallahassee people: expected 3 unknown-precision open-ended terms, got %', v_unknown; END IF;
 
-  -- No office in this government may lack a term row while unflagged: that is
-  -- the one failure mode CI cannot catch.
+  -- And the two dated ones must still be dated, at month precision.
+  SELECT count(*) INTO v_n
+    FROM essentials.office_terms t
+    JOIN essentials.offices o ON o.id = t.office_id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+   WHERE c.government_id = v_gov AND t.start_precision = 'month' AND t.term_start = DATE '2018-11-01';
+  IF v_n <> 2 THEN RAISE EXCEPTION 'tallahassee people: expected 2 month-precision 2018-11 terms (Mayor Dailey and Seat 3 Matlow), got %', v_n; END IF;
+
+  -- No office with neither a term row nor a vacancy flag: the one failure mode CI
+  -- cannot catch.
   SELECT count(*) INTO v_n FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id
     LEFT JOIN essentials.office_terms t ON t.office_id = o.id
    WHERE c.government_id = v_gov AND t.id IS NULL AND o.is_vacant = false;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'bradenton people: % office(s) have no term row and no vacancy flag', v_n; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'tallahassee people: % office(s) have no term row and no vacancy flag', v_n; END IF;
 
-  RAISE NOTICE 'bradenton people OK: 6 politicians, 6 seated, 2 appointed, 3 unknown-precision';
+  RAISE NOTICE 'tallahassee people OK: 5 politicians, 5 seated on one at-large district, 3 unknown-precision, 0 vacant';
 END $$;
 
 COMMIT;
