@@ -4,6 +4,7 @@ import { apiFetch } from '../lib/api';
 import { getValidRedirect, validateRedirectUrl } from '../lib/redirect';
 import {
   workosEnabled,
+  authkitOnly,
   startWorkosSignIn,
   completeWorkosLogin,
   consumeWorkosRedirectState,
@@ -27,7 +28,10 @@ interface MeResponse {
   location_consent: boolean;
 }
 
-export default function LoginPage() {
+// allowClassic — break-glass route /login/classic forces the classic form
+// visible even under AuthKit-only mode (decision 0002).
+export default function LoginPage({ allowClassic = false }: { allowClassic?: boolean }) {
+  const showClassic = allowClassic || !authkitOnly;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -136,6 +140,7 @@ export default function LoginPage() {
         <AuthCard>
           <h2 className="text-lg font-semibold text-white">Log in</h2>
 
+          {showClassic && (
           <form onSubmit={handleSubmit} className="space-y-4">
             <AuthInput
               label="Email"
@@ -161,21 +166,29 @@ export default function LoginPage() {
               {loading ? 'Logging in…' : 'Log in'}
             </PrimaryButton>
           </form>
+          )}
 
           {workosEnabled && (
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="flex-1 h-px bg-gray-700" />
-                <span className="text-xs text-gray-500">or</span>
-                <div className="flex-1 h-px bg-gray-700" />
-              </div>
+              {showClassic && (
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 h-px bg-gray-700" />
+                  <span className="text-xs text-gray-500">or</span>
+                  <div className="flex-1 h-px bg-gray-700" />
+                </div>
+              )}
+              {!showClassic && error && <p className="text-ev-red text-sm">{error}</p>}
               <button
                 type="button"
                 onClick={handleWorkosSignIn}
                 disabled={workosCompleting}
-                className="w-full py-3 px-4 bg-transparent border border-ev-teal-light text-ev-teal-light hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-lg text-sm transition-colors"
+                className={
+                  showClassic
+                    ? 'w-full py-3 px-4 bg-transparent border border-ev-teal-light text-ev-teal-light hover:bg-ev-teal-light/10 disabled:opacity-60 font-semibold rounded-lg text-sm transition-colors'
+                    : 'w-full py-3 px-4 bg-ev-teal-light text-ev-black hover:bg-ev-teal-light/90 disabled:opacity-60 font-semibold rounded-lg text-sm transition-colors'
+                }
               >
-                {workosCompleting ? 'Completing sign-in…' : 'Sign in with the new login (beta)'}
+                {workosCompleting ? 'Completing sign-in…' : showClassic ? 'Sign in with the new login (beta)' : 'Sign in'}
               </button>
             </div>
           )}

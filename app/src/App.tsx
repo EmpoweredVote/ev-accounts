@@ -213,6 +213,8 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      {/* Break-glass: classic Supabase form, always shown, unadvertised (0002). */}
+      <Route path="/login/classic" element={<LoginPage allowClassic />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/welcome" element={<WelcomeScreen />} />
 
