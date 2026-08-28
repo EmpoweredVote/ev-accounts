@@ -175,8 +175,19 @@ This is the truth, not a defect — but FL-6 must not be judged as failing becau
   consolidated city-county. Do not conflate them.
 - Miami-Dade's elected **Sheriff** was restored by constitutional amendment and filled recently.
   Confirm the office is elected before seeding it.
-- **Tallahassee's city commission may be entirely at-large.** If it is, no ward layer is needed and the
-  citywide `place` polygon (`1270600`) carries every seat.
+- ✅ **ANSWERED 2026-08-28 while planning FL-4: Tallahassee's city commission IS entirely at-large.**
+  The Leon SOE states it directly — "City Commissioners and Mayor do not have districts." Five seats,
+  and **the Mayor is SEAT 4**, inside the numbering rather than beside it. So **no ward layer is
+  needed**: the citywide `place` polygon `1270600` carries all five seats, and every Tallahassee
+  address returns all five commissioners. FL-4 plan:
+  [`2026-08-28-knight-fl-wave-4-tallahassee-leon.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-4-tallahassee-leon.md).
+- 🔴🔴 **LEON IS A CHARTER COUNTY AND ELECTS *SIX* CONSTITUTIONAL OFFICERS — MANATEE, NON-CHARTER,
+  ELECTS FIVE.** Leon has a Home Rule Charter since 2002-11-12 and elects a **Superintendent of
+  Schools** on top of the five-office state template. This is the strongest evidence yet for the rule
+  above: **never inherit the officer template.** Miami-Dade (FL-6) is also a charter county.
+- 🔴 **THE TWO COUNTIES ALSO NAME THEIR AT-LARGE SEATS DIFFERENTLY.** Manatee: "District 6" and
+  "District 7". Leon: "At Large, Group 1" and "At Large, Group 2". Follow the publisher; do not
+  normalise.
 - **Palm Beach County has no city half**, and `buildingImages.js` is keyed by city, so its banner needs
   a decision at FL-5 — a county key, or the Florida state banner as a fallback.
 - **Miami's banner cannot be a downtown skyline.** The Florida STATE banner already is one
