@@ -5,6 +5,7 @@ import { getValidRedirect, validateRedirectUrl } from '../lib/redirect';
 import {
   workosEnabled,
   authkitOnly,
+  embeddedAuthEnabled,
   startWorkosSignIn,
   completeWorkosLogin,
   consumeWorkosRedirectState,
@@ -14,6 +15,12 @@ import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 import { PrimaryButton } from '../components/PrimaryButton';
+
+// Under VITE_EMBEDDED_AUTH the headless form lives on the central login app,
+// not here — sign-in (and the auto-forward below) navigate there instead of
+// calling the hosted AuthKit SDK path. The shared `.empowered.vote` cookie
+// plus the existing `?redirect=` handoff bring the user back here logged in.
+const LOGIN_ORIGIN = 'https://login.empowered.vote';
 
 interface LoginResponse {
   access_token: string;
@@ -87,6 +94,11 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
   }, []);
 
   async function handleWorkosSignIn() {
+    if (embeddedAuthEnabled) {
+      const back = redirectUrl ?? window.location.origin;
+      window.location.href = `${LOGIN_ORIGIN}/login?redirect=${encodeURIComponent(back)}`;
+      return;
+    }
     setError('');
     try {
       await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
@@ -110,6 +122,11 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
   useEffect(() => {
     if (!autoForwarding || autoForwardStarted.current) return;
     autoForwardStarted.current = true;
+    if (embeddedAuthEnabled) {
+      const back = redirectUrl ?? window.location.origin;
+      window.location.href = `${LOGIN_ORIGIN}/login?redirect=${encodeURIComponent(back)}`;
+      return;
+    }
     (async () => {
       try {
         await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
