@@ -25,6 +25,7 @@ import rolesRouter from './routes/roles.js';
 import contributorRouter from './routes/contributor.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import seasonsAdminRouter from './routes/seasonsAdmin.js';
 import essentialsDiscoveryRouter from './routes/essentialsDiscovery.js';
 import stagingQueueAdminRouter from './routes/stagingQueueAdmin.js';
 import discoveryDashboardRouter from './routes/discoveryDashboard.js';
@@ -126,6 +127,9 @@ app.use('/api/referral', referralRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
+// Season composition (reviewer-gated). Mounted before the bare /api/admin
+// routers so nothing generic can shadow /api/admin/seasons/*.
+app.use('/api/admin/seasons', seasonsAdminRouter);
 // JWT-gated staging review endpoints for the browser admin UI (STAG-06).
 // Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
 // X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.

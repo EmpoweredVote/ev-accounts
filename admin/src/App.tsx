@@ -13,6 +13,7 @@ import { CronLogPage } from './pages/admin/CronLogPage';
 import { RolesPage } from './pages/admin/RolesPage';
 import { RoleAuditPage } from './pages/admin/RoleAuditPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
+import { SeasonCompositionPage } from './pages/admin/SeasonCompositionPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
 import { CoveragePage } from './pages/admin/CoveragePage';
@@ -129,6 +130,7 @@ function App() {
           <Route path="roles" element={<RolesPage />} />
           <Route path="role-audit" element={<RoleAuditPage />} />
           <Route path="topics" element={<TopicsPage />} />
+          <Route path="seasons" element={<SeasonCompositionPage />} />
           <Route path="stance-breakdown" element={<StanceBreakdownPage />} />
           <Route path="politicians" element={<PoliticiansPage />} />
           <Route path="categories" element={<CategoriesPage />} />
