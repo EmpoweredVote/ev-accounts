@@ -3,9 +3,9 @@
  *
  * Turns data/seed-bradenton-manatee-2026/ROSTERS.md into three migrations:
  *
- *   CC_wip_bradenton_structure.sql   districts + government + chambers + offices (city)
- *   CC_wip_bradenton_people.sql      politicians + occupancy (city)
- *   CC_wip_manatee_county.sql        districts + government + chambers + offices
+ *   CC_0008_bradenton_structure.sql   districts + government + chambers + offices (city)
+ *   CC_0009_bradenton_people.sql      politicians + occupancy (city)
+ *   CC_0010_manatee_county.sql        districts + government + chambers + offices
  *                                    + politicians + occupancy (county), in ONE
  *                                    migration per spec section 3
  *
@@ -127,6 +127,9 @@ const ALIASES = {
   'clerk-of-circuit-court': ['Angel Colonneso'],
   'commissioner-5': ['Robert McCann', 'Bob McCann'],
 };
+
+/** Filled by main() from the roster; see the band assertion in occupancySql(). */
+let ALL_OWNED_IDS = [];
 
 const VALID_PRECISION = new Set(['day', 'month', 'year', 'unknown']);
 const VALID_HOW_STARTED = new Set(['elected', 'appointed', 'succeeded', 'redistricted', 'unknown']);
@@ -309,8 +312,8 @@ function renderCityStructure(city, counts) {
   const parts = [];
 
   parts.push(HEADER(
-    'CC_wip_bradenton_structure.sql',
-    'CC_wip_bradenton_people.sql',
+    'CC_0008_bradenton_structure.sql',
+    'CC_0009_bradenton_people.sql',
     `Creates the geography-and-seats half of the City of Bradenton:\n--   * 6 LOCAL districts -- 1 citywide (TIGER place ${PLACE_GEO_ID}) + 5 wards (mtfcc ${CITY_MTFCC})\n--   * 1 government, 2 chambers\n--   * ${counts.cityOffices} offices -- 1 Mayor + 5 ward council members`,
   ));
 
@@ -509,22 +512,33 @@ function seedRowsSql(rows, tmp) {
   }).join(',\n');
 }
 
-function occupancySql(rows, tmp, label, bandExpectBefore) {
+function occupancySql(rows, tmp, label, ownedIds) {
   const seated = rows.filter((r) => !r.isVacant);
+  const owned = ownedIds.join(', ');
   return `
 -- --- Politician identity band ----------------------------------------------
--- 🔴 THE BAND MUST BE WHAT WE MEASURED. The obvious FL band was TAKEN in FL-2:
--- -(1210000 + n) collided with 166 existing rows, the 2026 US House candidates,
--- and ON CONFLICT DO NOTHING would have absorbed that in silence and left seats
--- held by whoever already owned those ids. -1249999..-1240000 was measured EMPTY
--- on 2026-08-28.
+-- 🔴 THE BAND MUST HOLD NOTHING THIS WAVE DOES NOT OWN. The obvious FL band was
+-- TAKEN in FL-2: -(1210000 + n) collided with 166 existing rows, the 2026 US
+-- House candidates, and ON CONFLICT DO NOTHING would have absorbed that in
+-- silence and left seats held by whoever already owned those ids.
+-- -1249999..-1240000 was measured EMPTY on 2026-08-28.
+--
+-- ⚠ THIS IS AN ALLOWLIST, NOT A COUNT, AND THE DIFFERENCE IS TWO BUGS.
+-- The first version asserted "the band holds exactly N rows before this runs".
+-- That is NOT IDEMPOTENT -- a re-run of an applied migration counts its own rows
+-- and refuses, which a migration in this repo is required not to do (measured:
+-- it refused with "found 17"). It is also WEAKER: a foreign row that happened to
+-- make the count match would pass. Naming the ids this wave owns fixes both.
 DO $$
-DECLARE v_n int;
+DECLARE v_n int; v_foreign text;
 BEGIN
-  SELECT count(*) INTO v_n FROM essentials.politicians
-   WHERE external_id BETWEEN ${BAND_LO} AND ${BAND_HI};
-  IF v_n <> ${bandExpectBefore} THEN
-    RAISE EXCEPTION '${label}: expected % existing in-band politician(s) before this migration, found % -- the band is not in the state this wave assumes', ${bandExpectBefore}, v_n;
+  SELECT count(*), string_agg(external_id::text, ', ' ORDER BY external_id)
+    INTO v_n, v_foreign
+    FROM essentials.politicians
+   WHERE external_id BETWEEN ${BAND_LO} AND ${BAND_HI}
+     AND external_id NOT IN (${owned});
+  IF v_n <> 0 THEN
+    RAISE EXCEPTION '${label}: the external_id band ${BAND_LO}..${BAND_HI} holds % row(s) this wave does not own (%). The band was measured EMPTY on 2026-08-28 -- pick another band rather than colliding.', v_n, v_foreign;
   END IF;
 END $$;
 
@@ -601,9 +615,28 @@ SELECT s.ext_id, s.full_name, s.first_name, s.last_name,
 FROM ${tmp} s
 ON CONFLICT (external_id) DO NOTHING;
 
--- --- Occupancy, via the helper ----------------------------------------------
+-- --- Occupancy --------------------------------------------------------------
+-- 🔴 TWO PATHS, AND THE SECOND ONE IS NOT A SHORTCUT.
+--
+-- essentials.seat_officeholder() REFUSES a NULL term_start outright: "pass Jan 1
+-- with p_start_precision => 'year' rather than NULL." Measured against prod
+-- 2026-08-28. But this wave has three people for whom NO publisher gives any
+-- start date at all, and inventing Jan 1 of a guessed year would be a false
+-- statement about history that no end_precision exists to soften.
+--
+-- The schema itself allows the honest record, and prod is full of it: all 81,676
+-- 'unknown'-precision office_terms rows carry term_start IS NULL, written by the
+-- ADR 0002 phase-2 backfill. Only the HELPER refuses it.
+--
+-- So the dated rows go through the helper, as the house rule requires, and the
+-- undated rows are inserted directly -- but ONLY into an office that has zero
+-- existing term rows. That condition is what makes bypassing the helper safe:
+-- the helper's two-step exists to close a predecessor before an open-ended range
+-- overlaps it, and with no predecessor there is nothing to close and the
+-- exclusion constraint cannot fire. The guard below refuses rather than guesses
+-- if that stops being true.
 DO $$
-DECLARE r record; v_seated int := 0;
+DECLARE r record; v_seated int := 0; v_blank int := 0; v_prior int;
 BEGIN
   FOR r IN
     SELECT s.term_start, s.start_precision, s.how_started, s.source,
@@ -619,12 +652,26 @@ BEGIN
         WHERE t.office_id = o.id AND t.politician_id = p.id
      )
   LOOP
-    PERFORM essentials.seat_officeholder(
-      r.office_id, r.politician_id, r.term_start, r.source, r.how_started, r.start_precision
-    );
-    v_seated := v_seated + 1;
+    IF r.term_start IS NOT NULL THEN
+      PERFORM essentials.seat_officeholder(
+        r.office_id, r.politician_id, r.term_start, r.source, r.how_started, r.start_precision
+      );
+      v_seated := v_seated + 1;
+    ELSE
+      IF r.start_precision <> 'unknown' THEN
+        RAISE EXCEPTION '${label}: office % has no term_start but claims precision % -- refusing', r.office_id, r.start_precision;
+      END IF;
+      SELECT count(*) INTO v_prior FROM essentials.office_terms t WHERE t.office_id = r.office_id;
+      IF v_prior <> 0 THEN
+        RAISE EXCEPTION '${label}: office % already carries % term row(s), so an undated open term cannot be inserted directly -- close the predecessor and give this person a real date', r.office_id, v_prior;
+      END IF;
+      INSERT INTO essentials.office_terms
+        (office_id, politician_id, term_start, term_end, start_precision, how_started, source)
+      VALUES (r.office_id, r.politician_id, NULL, NULL, 'unknown', r.how_started, r.source);
+      v_blank := v_blank + 1;
+    END IF;
   END LOOP;
-  RAISE NOTICE '${label}: seated % official(s)', v_seated;
+  RAISE NOTICE '${label}: seated % dated official(s) via the helper, % with an honest unknown start', v_seated, v_blank;
 END $$;
 `;
 }
@@ -632,10 +679,11 @@ END $$;
 // ── Migration 2: Bradenton people ──────────────────────────────────────────
 
 function renderCityPeople(city, counts) {
+  const cityIds = city.map((r) => r.externalId).filter(Boolean).join(', ');
   const parts = [];
   parts.push(HEADER(
-    'CC_wip_bradenton_people.sql',
-    'CC_wip_bradenton_structure.sql',
+    'CC_0009_bradenton_people.sql',
+    'CC_0008_bradenton_structure.sql',
     `Seats the ${counts.cityPeople} elected officials of the City of Bradenton:\n--   * ${counts.cityPeople} politicians in the -(1240000 + n) band\n--   * ${counts.cityPeople} office_terms rows via essentials.seat_officeholder()`,
   ));
 
@@ -666,7 +714,7 @@ function renderCityPeople(city, counts) {
 -- ROSTERS.md carries the follow-up.
 
 BEGIN;
-${occupancySql(city, 'brad_seed', 'bradenton people', 0)}
+${occupancySql(city, 'brad_seed', 'bradenton people', ALL_OWNED_IDS)}
 -- --- Post-verify gate ------------------------------------------------------
 DO $$
 DECLARE v_gov uuid; v_pol int; v_seated int; v_appt int; v_unknown int; v_n int; v_d text;
@@ -674,9 +722,12 @@ BEGIN
   SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '${PLACE_GEO_ID}' AND type = 'City';
   IF v_gov IS NULL THEN RAISE EXCEPTION 'bradenton people: the government row is missing -- apply the structure half first'; END IF;
 
+  -- ⚠ COUNT THIS MIGRATION'S OWN IDS, NOT THE WHOLE BAND. Counting the band
+  -- made this migration non-idempotent: once CC_0010 adds its eleven, a re-run
+  -- of this one saw 17 and refused. Measured 2026-08-28.
   SELECT count(*) INTO v_pol FROM essentials.politicians
-   WHERE external_id BETWEEN ${BAND_LO} AND ${BAND_HI};
-  IF v_pol <> ${counts.cityPeople} THEN RAISE EXCEPTION 'bradenton people: expected ${counts.cityPeople} in-band politicians, got %', v_pol; END IF;
+   WHERE external_id IN (${cityIds});
+  IF v_pol <> ${counts.cityPeople} THEN RAISE EXCEPTION 'bradenton people: expected ${counts.cityPeople} of this wave''s politicians, got %', v_pol; END IF;
 
   -- count(och.politician_id), NOT count(*): office_current_holder LEFT JOINs
   -- from offices, so a vacancy is a NULL politician_id, never an absent row,
@@ -740,11 +791,12 @@ COMMIT;
 // ── Migration 3: Manatee County, offices AND people ────────────────────────
 
 function renderCounty(county, counts) {
+  const countyIds = county.map((r) => r.externalId).filter(Boolean).join(', ');
   const commSeats = county.filter((s) => s.on === 'commdist');
   const parts = [];
 
   parts.push(HEADER(
-    'CC_wip_manatee_county.sql',
+    'CC_0010_manatee_county.sql',
     null,
     `Creates Manatee County whole -- offices AND people in ONE migration, per spec section 3:\n--   * 5 new COUNTY districts (mtfcc ${COUNTY_MTFCC}); the countywide district ALREADY EXISTS\n--   * 1 government, 2 chambers\n--   * ${counts.countyOffices} offices -- 7 commissioners + 5 constitutional officers\n--   * ${counts.countyPeople} politicians and ${counts.countyPeople} terms; District 1 is VACANT`,
   ));
@@ -944,17 +996,21 @@ BEGIN
 
   RAISE NOTICE 'manatee county structure OK: 5 new districts, 1 government, 2 chambers, ${counts.countyOffices} offices';
 END $$;
-${occupancySql(county, 'man_seed', 'manatee county', counts.cityPeople)}
+${occupancySql(county, 'man_seed', 'manatee county', ALL_OWNED_IDS)}
 -- --- 7. Occupancy post-verify gate ----------------------------------------
 DO $$
 DECLARE v_gov uuid; v_pol int; v_seated int; v_vac int; v_appt int; v_n int; v_d text;
 BEGIN
   SELECT id INTO v_gov FROM essentials.governments WHERE geo_id = '${COUNTY_GEO_ID}' AND type = 'County';
 
+  -- ⚠ COUNT THIS MIGRATION'S OWN IDS, NOT THE WHOLE BAND. The band version also
+  -- gave this migration a hidden ORDERING DEPENDENCY on CC_0009: it asserted the
+  -- city's six were already present, so applying the county first would have
+  -- failed for no real reason.
   SELECT count(*) INTO v_pol FROM essentials.politicians
-   WHERE external_id BETWEEN ${BAND_LO} AND ${BAND_HI};
-  IF v_pol <> ${counts.cityPeople + counts.countyPeople} THEN
-    RAISE EXCEPTION 'manatee county: expected ${counts.cityPeople + counts.countyPeople} in-band politicians after both waves, got %', v_pol;
+   WHERE external_id IN (${countyIds});
+  IF v_pol <> ${counts.countyPeople} THEN
+    RAISE EXCEPTION 'manatee county: expected ${counts.countyPeople} of this wave''s politicians, got %', v_pol;
   END IF;
 
   SELECT count(och.politician_id) INTO v_seated
@@ -1026,10 +1082,17 @@ function main() {
   const md = readFileSync(ROSTER, 'utf8');
   const { city, county, counts } = parseRosters(md);
 
+  // The full set of external_ids this wave owns, shared by both occupancy
+  // migrations so each can refuse a foreign row in the band while staying
+  // idempotent about its own.
+  ALL_OWNED_IDS = [...city, ...county]
+    .map((r) => r.externalId).filter(Boolean)
+    .map(Number).sort((a, b) => a - b);
+
   const files = [
-    ['CC_wip_bradenton_structure.sql', renderCityStructure(city, counts)],
-    ['CC_wip_bradenton_people.sql', renderCityPeople(city, counts)],
-    ['CC_wip_manatee_county.sql', renderCounty(county, counts)],
+    ['CC_0008_bradenton_structure.sql', renderCityStructure(city, counts)],
+    ['CC_0009_bradenton_people.sql', renderCityPeople(city, counts)],
+    ['CC_0010_manatee_county.sql', renderCounty(county, counts)],
   ];
   for (const [name, body] of files) {
     writeFileSync(join(MIGRATIONS, name), body.replace(/\n{3,}/g, '\n\n'));
