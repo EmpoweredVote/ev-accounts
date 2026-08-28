@@ -10,13 +10,15 @@
  * The map auto-frames the selected state from its county geometry, so selecting
  * a state via the US table (not just clicking the map) also zooms the map in.
  */
-import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import { useEffect, useMemo, useRef, useState, useCallback, type ReactNode } from 'react';
+import { GeoShape, ZoomPanGroup, useAlbersUsa, useTopoFeatures, useZoomPan, type MapFeature } from '../../components/GeoMap';
 import { completenessColor, NOT_STARTED } from './completenessColor';
 import { CompletenessLegend } from './CompletenessLegend';
 import { ElectionsTierLegend } from './ElectionsTierLegend';
 import { StateHoverCard, CountyHoverCard, FederalHoverCard } from './CoverageHoverCard';
 import type { StateScore, CountyScore, StateElection, CountyElection, Metric } from './coverageTypes';
+import type { GeoPath } from 'd3-geo';
+import type { FeatureCollection } from 'geojson';
 
 const STATES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 const COUNTIES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json';
@@ -46,6 +48,14 @@ function electionCountyColor(c: CountyElection | undefined): string {
   return scoreColor(c.coverage <= 0 ? 0.01 : c.coverage);
 }
 
+/** One projected shape: FIPS code, display name, and its SVG path data. */
+interface Shape { fips: string; name: string; d: string }
+
+function toShapes(features: MapFeature[] | null, path: GeoPath): Shape[] {
+  if (!features) return [];
+  return features.map((f) => ({ fips: String(f.id), name: f.properties.name, d: path(f) ?? '' }));
+}
+
 type Hover = { level: 'state' | 'county'; fips: string; name: string } | null;
 
 interface Props {
@@ -67,12 +77,27 @@ export function CoverageMap(props: Props) {
   const [center, setCenter] = useState<[number, number]>([-96, 38]);
   const [zoom, setZoom] = useState(1);
   const [hover, setHover] = useState<Hover>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const pathRef = useRef<any>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const projRef = useRef<any>(null);
+  const { projection, path } = useAlbersUsa(MAP_W, MAP_H);
   // Which state we've already framed — prevents re-fitting on every re-render.
   const framedFipsRef = useRef<string | null>(null);
+
+  // The counties topology is ~10 MB unparsed (256 KB over the wire), so it is
+  // only fetched once a state is picked. The federal lens always shows the
+  // whole US, so it stays on the state map.
+  const showCounties = Boolean(selected) && metric !== 'federal';
+  const stateFeatures = useTopoFeatures(showCounties ? null : STATES_TOPO);
+  const countyFeatures = useTopoFeatures(showCounties ? COUNTIES_TOPO : null);
+
+  const zoomPan = useZoomPan({ width: MAP_W, height: MAP_H, projection, center, zoom, minZoom: 1, maxZoom: 12 });
+
+  // Project each shape once per geometry change. Counties are narrowed to the
+  // selected state first, so we never build 3,000 unused path strings.
+  const stateShapes = useMemo(() => toShapes(stateFeatures, path), [stateFeatures, path]);
+  const countyGeos = useMemo(
+    () => (countyFeatures && selected ? countyFeatures.filter((f) => String(f.id).startsWith(selected.fips)) : []),
+    [countyFeatures, selected],
+  );
+  const countyShapes = useMemo(() => toShapes(countyGeos, path), [countyGeos, path]);
 
   // Hover-card positioning is done by direct DOM writes (no per-mousemove
   // setState) so dragging the cursor across thousands of counties stays smooth.
@@ -103,19 +128,16 @@ export function CoverageMap(props: Props) {
     positionCard();
   }, [positionCard]);
 
-  const fitToFeature = useCallback((geo: unknown) => {
-    const path = pathRef.current;
-    const proj = projRef.current;
-    if (!path || !proj) { setCenter([-96, 38]); setZoom(3); return; }
-    const [[x0, y0], [x1, y1]] = path.bounds(geo) as [[number, number], [number, number]];
+  const fitToFeature = useCallback((geo: FeatureCollection) => {
+    const [[x0, y0], [x1, y1]] = path.bounds(geo);
     const boxW = x1 - x0;
     const boxH = y1 - y0;
     if (!Number.isFinite(boxW) || !Number.isFinite(boxH) || boxW <= 0 || boxH <= 0) { setZoom(3); return; }
     const k = Math.min(MAP_W / boxW, MAP_H / boxH) * 0.85;
-    const inv = proj.invert?.([(x0 + x1) / 2, (y0 + y1) / 2]) as [number, number] | null;
+    const inv = projection.invert?.([(x0 + x1) / 2, (y0 + y1) / 2]);
     if (inv && Number.isFinite(inv[0]) && Number.isFinite(inv[1])) setCenter(inv);
     setZoom(Math.min(12, Math.max(1, k)));
-  }, []);
+  }, [path, projection]);
 
   // Reset framing + hover when the parent clears the selection (back to US),
   // or when the federal lens takes over (it always shows the whole US — there
@@ -128,6 +150,15 @@ export function CoverageMap(props: Props) {
       framedFipsRef.current = null;
     }
   }, [selected, metric]);
+
+  // Frame the selected state once its counties have loaded. This covers both
+  // clicking the map and picking the state from the US table.
+  useEffect(() => {
+    if (!selected || metric === 'federal') return;
+    if (framedFipsRef.current === selected.fips || countyGeos.length === 0) return;
+    framedFipsRef.current = selected.fips;
+    fitToFeature({ type: 'FeatureCollection', features: countyGeos });
+  }, [selected, metric, countyGeos, fitToFeature]);
 
   // Re-place the card whenever its contents change (hover enter / level switch),
   // using the last known cursor position.
@@ -208,75 +239,54 @@ export function CoverageMap(props: Props) {
           </div>
         )}
 
-        <ComposableMap projection="geoAlbersUsa" width={MAP_W} height={MAP_H} style={{ width: '100%', height: 'auto' }}>
-          <ZoomableGroup center={center} zoom={zoom} minZoom={1} maxZoom={12}>
-            {!selected || metric === 'federal' ? (
-              <Geographies geography={STATES_TOPO}>
-                {({ geographies, path, projection }) => {
-                  pathRef.current = path;
-                  projRef.current = projection;
-                  return geographies.map((geo) => {
-                    const sc = stateByFips.get(geo.id as string);
-                    const es = elecStatesByFips.get(geo.id as string);
-                    const fill =
-                      metric === 'elections' ? electionStateColor(es)
-                      : metric === 'federal' ? completenessColor(sc ? sc.federal.score : null)
-                      : completenessColor(sc?.score ?? null);
-                    const isSel = selected?.fips === geo.id;
-                    return (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        onMouseEnter={() => setHover({ level: 'state', fips: geo.id as string, name: geo.properties.name })}
-                        onMouseLeave={() => setHover(null)}
-                        onClick={() => { setHover(null); props.onSelectState(geo.id as string, geo.properties.name); }}
-                        style={{
-                          default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
-                          hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
-                          pressed: { fill, outline: 'none' },
-                        }}
-                      />
-                    );
-                  });
-                }}
-              </Geographies>
-            ) : (
-              <Geographies geography={COUNTIES_TOPO}>
-                {({ geographies, path, projection }) => {
-                  pathRef.current = path;
-                  projRef.current = projection;
-                  const stateGeos = geographies.filter((geo) => (geo.id as string).startsWith(selected.fips));
-                  // Frame the state once (covers both map-click and US-table selection).
-                  if (framedFipsRef.current !== selected.fips && stateGeos.length > 0) {
-                    framedFipsRef.current = selected.fips;
-                    const fc = { type: 'FeatureCollection', features: stateGeos };
-                    queueMicrotask(() => fitToFeature(fc));
-                  }
-                  return stateGeos.map((geo) => {
-                    const cs = countyByFips.get(geo.id as string);
-                    const ec = elecCountiesByFips.get(geo.id as string);
-                    const fill = metric === 'elections' ? electionCountyColor(ec) : completenessColor(cs?.score ?? null);
-                    const isSel = selectedCountyFips === geo.id;
-                    return (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        onMouseEnter={() => setHover({ level: 'county', fips: geo.id as string, name: geo.properties.name })}
-                        onMouseLeave={() => setHover(null)}
-                        onClick={() => props.onSelectCounty(geo.id as string)}
-                        style={{
-                          default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
-                          hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
-                          pressed: { fill, outline: 'none' },
-                        }}
-                      />
-                    );
-                  });
-                }}
-              </Geographies>
-            )}
-          </ZoomableGroup>
-        </ComposableMap>
+        <svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} style={{ width: '100%', height: 'auto' }}>
+          <ZoomPanGroup width={MAP_W} height={MAP_H} {...zoomPan}>
+            {showCounties
+              ? countyShapes.map((shape) => {
+                  const cs = countyByFips.get(shape.fips);
+                  const ec = elecCountiesByFips.get(shape.fips);
+                  const fill = metric === 'elections' ? electionCountyColor(ec) : completenessColor(cs?.score ?? null);
+                  const isSel = selectedCountyFips === shape.fips;
+                  return (
+                    <GeoShape
+                      key={shape.fips}
+                      d={shape.d}
+                      onMouseEnter={() => setHover({ level: 'county', fips: shape.fips, name: shape.name })}
+                      onMouseLeave={() => setHover(null)}
+                      onClick={() => props.onSelectCounty(shape.fips)}
+                      style={{
+                        default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
+                        hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
+                        pressed: { fill, outline: 'none' },
+                      }}
+                    />
+                  );
+                })
+              : stateShapes.map((shape) => {
+                  const sc = stateByFips.get(shape.fips);
+                  const es = elecStatesByFips.get(shape.fips);
+                  const fill =
+                    metric === 'elections' ? electionStateColor(es)
+                    : metric === 'federal' ? completenessColor(sc ? sc.federal.score : null)
+                    : completenessColor(sc?.score ?? null);
+                  const isSel = selected?.fips === shape.fips;
+                  return (
+                    <GeoShape
+                      key={shape.fips}
+                      d={shape.d}
+                      onMouseEnter={() => setHover({ level: 'state', fips: shape.fips, name: shape.name })}
+                      onMouseLeave={() => setHover(null)}
+                      onClick={() => { setHover(null); props.onSelectState(shape.fips, shape.name); }}
+                      style={{
+                        default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
+                        hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
+                        pressed: { fill, outline: 'none' },
+                      }}
+                    />
+                  );
+                })}
+          </ZoomPanGroup>
+        </svg>
       </div>
 
       {/* Elections readout + legends (completeness uses the in-map hover card + overlay legend) */}
