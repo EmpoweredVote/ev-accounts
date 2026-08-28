@@ -490,6 +490,41 @@ router.post('/workos/authenticate', authLimiter, async (req: Request, res: Respo
   }
 });
 
+const verifyEmailSchema = z.object({ code: z.string().min(4).max(10) });
+
+/**
+ * POST /api/auth/workos/verify-email
+ *
+ * Second leg of the on-page verification flow: the pending token lives in the
+ * ev_wos_pending httpOnly cookie (set by /workos/authenticate). We exchange the
+ * emailed code for a session, then clear the pending cookie.
+ */
+router.post('/workos/verify-email', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = verifyEmailSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'A verification code is required' });
+    return;
+  }
+  const pendingToken = req.cookies?.[WOS_PENDING_COOKIE];
+  if (!pendingToken) {
+    res.status(400).json({ code: 'NO_PENDING_AUTH', message: 'Start sign-in again to get a new code' });
+    return;
+  }
+
+  const outcome = await authenticateWithEmailCode(parsed.data.code, pendingToken);
+  if (outcome.status === 'authenticated') {
+    res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
+    setWosSession(res, outcome.refreshToken);
+    res.status(200).json({ access_token: outcome.accessToken });
+    return;
+  }
+  if (outcome.status === 'invalid_credentials') {
+    res.status(401).json({ code: 'INVALID_CODE', message: 'That code is incorrect or expired' });
+    return;
+  }
+  res.status(502).json({ code: 'WORKOS_ERROR', message: 'Verification is temporarily unavailable' });
+});
+
 /**
  * GET /api/auth/session
  *

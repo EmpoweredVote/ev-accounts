@@ -92,3 +92,37 @@ describe('POST /api/auth/workos/authenticate', () => {
     expect(res.status).toBe(422);
   });
 });
+
+describe('POST /api/auth/workos/verify-email', () => {
+  it('verifies the code from the pending cookie and starts a session', async () => {
+    authSvc.authenticateWithEmailCode.mockResolvedValueOnce({
+      status: 'authenticated', accessToken: 'at', refreshToken: 'rt',
+    });
+    const res = await request(app)
+      .post('/api/auth/workos/verify-email')
+      .set('Cookie', 'ev_wos_pending=pat_1')
+      .send({ code: '123456' });
+    expect(res.status).toBe(200);
+    expect(res.body.access_token).toBe('at');
+    expect(authSvc.authenticateWithEmailCode).toHaveBeenCalledWith('123456', 'pat_1');
+    const cookies = (res.get('Set-Cookie') ?? []).join(';');
+    expect(cookies).toContain('ev_wos_session=rt');
+    expect(cookies).toContain('ev_wos_pending=;'); // cleared
+  });
+
+  it('400s when there is no pending cookie', async () => {
+    const res = await request(app).post('/api/auth/workos/verify-email').send({ code: '123456' });
+    expect(res.status).toBe(400);
+    expect(res.body.code).toBe('NO_PENDING_AUTH');
+  });
+
+  it('401s on a wrong code', async () => {
+    authSvc.authenticateWithEmailCode.mockResolvedValueOnce({ status: 'invalid_credentials' });
+    const res = await request(app)
+      .post('/api/auth/workos/verify-email')
+      .set('Cookie', 'ev_wos_pending=pat_1')
+      .send({ code: '000000' });
+    expect(res.status).toBe(401);
+    expect(res.body.code).toBe('INVALID_CODE');
+  });
+});
