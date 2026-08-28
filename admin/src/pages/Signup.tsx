@@ -2,6 +2,8 @@ import { useState, FormEvent, Fragment } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { Dialog, Transition } from '@headlessui/react';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
+import { useAuthStore } from '../store/authStore';
+import { embeddedAuthEnabled, loginWithPassword, verifyEmailCode } from '../lib/workosAuth';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -9,6 +11,7 @@ const API_BASE = import.meta.env.VITE_API_URL
 
 export default function Signup() {
   const navigate = useNavigate();
+  const { setAuth } = useAuthStore();
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -31,6 +34,12 @@ export default function Signup() {
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Embedded WorkOS flow (flag-gated): a brand-new account's email is always
+  // unverified, so the signup response routes straight into the same
+  // on-page code step Login.tsx uses, instead of the "check your email" card.
+  const [codeStep, setCodeStep] = useState(false);
+  const [code, setCode] = useState('');
+
   // Request access modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [requestEmail, setRequestEmail] = useState('');
@@ -44,6 +53,37 @@ export default function Signup() {
       body: JSON.stringify({ email }),
     }).catch(() => {});
     setResendSent(true);
+  }
+
+  // Shared post-login continuation (mirrors Login.tsx's finishLogin): hydrate
+  // identity, persist the token, honor a validated redirect target or land on
+  // /profile.
+  async function finishLogin(token: string, redirectTarget: string | null, fallbackEmail = '') {
+    const meRes = await fetch(`${API_BASE}/account/me`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (!meRes.ok) {
+      throw new Error('Failed to load account information.');
+    }
+
+    const meData = await meRes.json();
+
+    setAuth(token, {
+      id: meData.id ?? '',
+      email: meData.email ?? fallbackEmail,
+      isAdmin: meData.is_admin ?? false,
+      tier: meData.tier ?? 'inform',
+      completedOnboarding: meData.completed_onboarding ?? false,
+    });
+
+    sessionStorage.setItem('admin_token', token);
+
+    if (redirectTarget) {
+      window.location.href = redirectTarget;
+    } else {
+      navigate('/profile');
+    }
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -74,7 +114,19 @@ export default function Signup() {
       });
 
       if (res.status === 201) {
-        setSuccess(true);
+        if (embeddedAuthEnabled) {
+          // Brand-new account, unverified email: this always comes back
+          // pending. Route straight into the on-page code step instead of
+          // the "check your email" card.
+          const result = await loginWithPassword(email, password);
+          if (result.status === 'authenticated') {
+            await finishLogin(result.token, validRedirect, email);
+          } else {
+            setCodeStep(true);
+          }
+        } else {
+          setSuccess(true);
+        }
         return;
       }
 
@@ -98,6 +150,20 @@ export default function Signup() {
       throw new Error(body.message || body.error || 'An unexpected error occurred');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleCodeSubmit(e: FormEvent) {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      const token = await verifyEmailCode(code);
+      await finishLogin(token, validRedirect, email);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Verification failed');
     } finally {
       setIsSubmitting(false);
     }
@@ -131,6 +197,65 @@ export default function Signup() {
       setRequestError(err instanceof Error ? err.message : 'An unexpected error occurred');
       setRequestStatus('idle');
     }
+  }
+
+  if (codeStep) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md">
+          <div className="flex justify-center mb-6">
+            <img
+              src="/Empowered_Vote_Logo_2026.png"
+              alt="Empowered Vote"
+              className="h-12 object-contain"
+            />
+          </div>
+
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Enter your code
+          </h1>
+
+          {error && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleCodeSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Verification code
+              </label>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                Enter the 6-digit verification code to continue.
+              </p>
+              <input
+                id="code"
+                type="text"
+                required
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                minLength={6}
+                maxLength={6}
+                pattern="[0-9]{6}"
+                value={code}
+                onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                placeholder="123456"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent text-center tracking-[0.5em] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-2 px-4 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-60 text-white font-medium rounded-md text-sm transition-colors"
+            >
+              {isSubmitting ? 'Verifying…' : 'Verify'}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
   }
 
   if (success) {
