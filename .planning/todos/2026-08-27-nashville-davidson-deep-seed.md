@@ -237,9 +237,15 @@ guarding on `full_name` alone would have seated a Utah senator on a North Caroli
 
 | Wave | Content | Slot | Gate |
 |---|---|---|---|
-| 1a-structure | `X0035` loader + 35 districts + government + 3 chambers + ~52 offices | `CC_0004` | structure only, no people |
+| 1a-structure | `X0035` loader + 35 districts + government + 2 chambers + 42 Metro offices | `CC_0004` | structure only, no people |
 | 1a-people | 42 Metro politicians + 42 terms | `CC_0005` | roster re-checked against both sources |
-| 1b | ~10 countywide officers + terms, `term_start` 2026-09-01 | `CC_0006` | **apply on or after 2026-09-01**, results certified |
+| 1b | `Countywide Elected Officials` chamber + ~10 officer offices + their people, `term_start` 2026-09-01 | `CC_0006` | **apply on or after 2026-09-01**, results certified |
+
+🔴 **Offices and their people ship in the same wave, per tier.** An earlier draft of this table put
+the officer *offices* in 1a and the officer *people* in 1b. That is wrong: an office with no
+`office_terms` row is invisible, and the split would push `essentials.offices_missing_terms` above
+its 699-unflagged baseline for the days between the two applies. Corrected 2026-08-27 while planning
+wave 1a. Plan: [`docs/superpowers/plans/2026-08-27-nashville-wave-1a.md`](../../docs/superpowers/plans/2026-08-27-nashville-wave-1a.md).
 | 1c | read-path change: render the note whenever present | admin + essentials repos | Vice Mayor note visible in the live render |
 | 1d | ~52 headshots, one batch contact sheet | — | press / official / public-domain only |
 | 1e | `cities/nashville.jpg` banner | essentials repo | certified in the 6:1 desktop band |
