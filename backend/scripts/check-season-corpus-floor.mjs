@@ -1,6 +1,32 @@
 #!/usr/bin/env node
 /**
- * CI tripwire: a CLOSED season's corpus may grow, but it must never SHRINK.
+ * CI tripwire: a season's corpus may grow, but it must never SHRINK.
+ *
+ * ⚠️ SEASON 1 IS OPEN AGAIN — corrected 2026-08-27, prose only, floors untouched.
+ * This file was written while season 1 was closed and says so in several places
+ * below. `CA_0020_reopen_season_one.sql` reopened it, because closing season 1
+ * before season 2 could be opened had left every compass write path refusing
+ * with NO_OPEN_SEASON since 2026-08-26 — the scaffolding interlock in `CC_0002`
+ * means season 2 cannot be opened until those indexes are dropped, so the
+ * intended brief handover became an open-ended outage.
+ *
+ * What that means HERE, and it is narrow: **the check still works and its
+ * numbers are still right.** It compares row counts and never reads
+ * `seasons.status`, so an open season 1 does not affect what it measures. What
+ * changes is the reading of a failure — and one specific misreading is now
+ * possible that was not before:
+ *
+ *   🔴 SEASON 1 NOW TAKES WRITES, SO ITS COUNTS WILL RISE LEGITIMATELY.
+ *   A floor is a floor, so growth still passes. But do NOT read the "season 1 is
+ *   closed, its answers should never be deleted" framing below as "any change to
+ *   season 1 is the data-loss event". New stance research lands in season 1
+ *   today. That is normal, and it means season 1's floor is now the kind that
+ *   moves upward over time — exactly as WHEN A FLOOR SHOULD MOVE describes, an
+ *   instruction written for season 2 that now applies to season 1 first.
+ *
+ * The floors are deliberately NOT re-measured here. Raising a floor to today's
+ * counts would silently absorb any loss that happened before today, which is the
+ * one thing this gate exists to refuse.
  *
  * WHY THIS EXISTS. On 2026-08-2x a per-topic "Save" in the admin compass editor posted a
  * single-topic payload to a REPLACE-ALL RPC. The RPC did exactly what it was written to do:
@@ -20,13 +46,15 @@
  *
  * WHAT IT ASSERTS, and why each is a FLOOR rather than an equality:
  *
- *   answers   >= 33164   Season 1 is closed. Its answers should never be deleted. A floor
- *   context   >= 33818   still permits a documented correction that ADDS a row, which the
- *   questions >= 44      closed-season editorial policy allows, while catching every delete.
+ *   answers   >= 33164   No season's answers should ever be deleted. A floor still permits
+ *   context   >= 33818   both a documented correction that ADDS a row and — now that season 1
+ *   questions >= 44      is open again — ordinary new research, while catching every delete.
  *
- * Measured against production on 2026-08-27: season 1, closed, 44 questions, 33,164 answers,
+ * Measured against production on 2026-08-27: season 1, 44 questions, 33,164 answers,
  * 33,818 context rows. These are the same numbers the compass-seasons plan records, taken
  * independently from the live database, not copied from the document.
+ * (Season 1 read `closed` when these were measured; it was reopened later the same day by
+ * `CA_0020`, which moved no rows — verified after applying: 33,164 answers, 33,818 context.)
  *
  * WHAT THIS CANNOT DO. It counts rows. It cannot tell a deleted answer from a replaced one:
  * a run that destroys 100 answers and writes 100 different ones passes. It proves the corpus
@@ -185,7 +213,11 @@ async function main() {
   }
 
   if (breaches.length > 0) {
-    console.error('\nseason corpus floor FAILED — a closed season LOST rows:\n');
+    // "a season", not "a closed season" — season 1 is open again, and this
+    // message is the first thing read during an incident. Naming the wrong
+    // precondition sends the reader looking for a write that should have been
+    // impossible, when the answer is simply that rows are gone.
+    console.error('\nseason corpus floor FAILED — a season LOST rows:\n');
     for (const b of breaches) {
       console.error(
         `    · season ${b.season} ${b.label}: ${b.actual.toLocaleString()} now, ` +
