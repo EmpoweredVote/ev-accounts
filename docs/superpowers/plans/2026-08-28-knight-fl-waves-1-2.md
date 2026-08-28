@@ -29,6 +29,34 @@
 
 ---
 
+## 🔴 Deviations found during execution, 2026-08-28
+
+This plan was executed the same day it was written. Three things in it were **wrong or missing**, and
+are recorded here rather than quietly corrected, because the same mistakes are available to every
+later slice.
+
+1. **The plan assumed 160 people for 160 offices. Florida has 155 people and 5 vacancies** — HD-55,
+   HD-78, HD-113, HD-116 and SD-39. Every count in Tasks 3 and 4 below that says 160 people should
+   read 155, and the structure migration must flag 5 offices `is_vacant`. Details in
+   `backend/data/seed-fl-legislature-2026/ROSTERS.md` and `.planning/knight-foundation/fl.md`.
+   Each chamber marks a vacancy **differently**: the House renders a separate "Pending Election" card
+   with no `MemberId` and no name, which a normal parser skips silently; the Senate puts the literal
+   word `Vacant` in the roster row's name cell.
+2. **Task 1 omitted the `geofence_child_county` matview refresh.** The loader prints an ACTION
+   REQUIRED notice for it, and `check:child-county` runs in CI on every push and fails without it.
+   It needs the `postgres` role, so it goes through the Supabase MCP:
+   `REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;`
+   **Every future slice must do this after any boundary load.**
+3. **Task 2 planned to take assumed-office dates from Ballotpedia.** The chambers' own member pages
+   are better and were used instead — but their "Legislative Service" line has **eleven phrasings**,
+   and an unrecognised one silently degrades a known date to `unknown`. Enumerate the phrasings across
+   every cached page before trusting the parser.
+
+One further correction, to the spec rather than this plan: **`check:reachability` is not a list of
+address probes.** It is a baseline keyed `check -> "state|district_type" -> count` that fires on
+growth or on any new bucket, so a correct wave adds no bucket automatically and there is no probe to
+write. The spec's §5 wording implies otherwise.
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 These were measured while planning. They are the reason this plan can assert counts instead of discovering them.

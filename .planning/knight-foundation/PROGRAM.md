@@ -5,6 +5,8 @@
 **Update this file at the end of every session.** It is the only place that knows where the program
 stands. `MEMORY.md` holds one pointer to it and nothing else.
 
+Per-state notes: [`fl.md`](./fl.md).
+
 Stage legend, from spec §3:
 `1` geography (TIGER place + sldu + sldl) · `2` legislature · `3` city waves · `4` county waves ·
 `5` assets (headshots + banner).
@@ -16,7 +18,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 
 | # | State | Jurisdictions | 1 geo | 2 legis | 3 city | 4 county | 5 assets |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | — | — | — | — | — |
+| 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | — | — | — |
 | 2 | GA | Columbus, Macon, Milledgeville | — | — | — | — | — |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | — | — | — |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
@@ -82,7 +84,7 @@ Re-measure rather than trust these once any wave has applied.
 | CO | 65/65 | 35/35 |
 | NC | 120/120 | 50/50 |
 | IN | 12/100 | 6/50 |
-| FL | 0/120 | 0/40 |
+| FL | **120/120** | **40/40** |
 | GA | 0/180 | 0/56 |
 | KS | 0/125 | 0/40 |
 | KY | 0/100 | 0/38 |
@@ -95,7 +97,7 @@ Re-measure rather than trust these once any wave has applied.
 | SC | 0/124 | 0/46 |
 | SD | 0/70 | 0/35 |
 
-Total owed: **2,155**.
+Total owed: **2,155**, of which **160 are now seated** (FL complete). Remaining: **1,995**.
 
 ### Geofence polygons present
 
@@ -105,7 +107,7 @@ Total owed: **2,155**.
 | CO | 65 | 35 | 272 | 64 |
 | IN | 100 | 50 | 566 | 92 |
 | NC | 120 | 50 | 552 | 100 |
-| FL | 0 | 0 | 0 | 67 |
+| FL | **120** | **40** | **411** | 67 |
 | GA | 0 | 0 | 0 | 159 |
 | KS | 0 | 0 | 0 | 105 |
 | KY | 0 | 0 | 0 | 120 |
@@ -140,7 +142,9 @@ Wichita, Detroit, Charlotte (spec §8.1).
 
 | Slice | Wave | Migration slots | Applied |
 | --- | --- | --- | --- |
-| — | — | next free is `CC_0006` (measured 2026-08-28) | — |
+| FL | FL-2 structure | `CC_0006_fl_legislature_structure.sql` | 2026-08-28 |
+| FL | FL-2 occupancy | `CC_0007_fl_legislature_incumbents.sql` | 2026-08-28 |
+| — | — | next free is **`CC_0008`** | — |
 
 Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the number last.
 
@@ -148,4 +152,5 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 
 | Date | Session did | Next action |
 | --- | --- | --- |
-| 2026-08-28 | Program brainstormed and spec written. Production measured: 2,155 legislative seats owed, 12 states with no `place`/`sldu`/`sldl` polygons, 24 of 26 jurisdictions with zero local seats, 24 banners missing. | Write the FL-1 + FL-2 implementation plan through the `writing-plans` skill. |
+| 2026-08-28 | Program brainstormed and spec written. Production measured: 2,155 legislative seats owed, 12 states with no `place`/`sldu`/`sldl` polygons, 24 of 26 jurisdictions with zero local seats, 24 banners missing. | (done) |
+| 2026-08-28 | **FL-1 + FL-2 APPLIED.** Loaded 120 `sldl` + 40 `sldu` + 411 `place` polygons for FIPS 12; vintage confirmed against the enacted plans `H000H8013`/`S027S8058` (6 of 6 anchors). Seated the Florida Legislature: **160 offices, 155 people, 5 vacancies** (the plan had assumed 160/160). `CC_0006` + `CC_0007`. All gates green, no new reachability bucket, zero missing-terms drift. | Write the FL-3 plan: Bradenton + Manatee County. |
