@@ -204,12 +204,22 @@ export async function getCompassTopics() {
   const topicIds = topics.map(t => t.id);
 
   const [stancesRes, catsRes, rolesRes] = await Promise.all([
-    supabaseAnon
-      .schema('inform')
-      .from('compass_stances')
-      .select('topic_id,id,value,text')
-      .in('topic_id', topicIds)
-      .order('value', { ascending: true }),
+    // ADR 0004 §12: stance LABELS follow the current revision, not the frozen
+    // legacy inform.compass_stances table (which publishing never updates).
+    // compass_stances_current is a §12 view, not in the generated PostgREST
+    // types, so this is pool.query — matching getPromotedTopics above.
+    // `upper(left(text,1)) || substr(text,2)` renders the lowercase, verb-first
+    // corpus text with a capital first letter: a voter-facing presentation rule
+    // applied at the read boundary, with no data migration and no stem to break
+    // (stance text is always shown standalone).
+    pool.query<{ topic_id: string; id: string; value: number; text: string }>(
+      `SELECT topic_id::text AS topic_id, id::text AS id, value,
+              upper(left(text, 1)) || substr(text, 2) AS text
+         FROM inform.compass_stances_current
+        WHERE topic_id = ANY($1::uuid[])
+        ORDER BY value ASC`,
+      [topicIds],
+    ),
     supabaseAnon
       .schema('inform')
       .from('compass_topic_categories')
@@ -222,7 +232,6 @@ export async function getCompassTopics() {
       .in('topic_id', topicIds),
   ]);
 
-  if (stancesRes.error) throw stancesRes.error;
   if (catsRes.error) throw catsRes.error;
   if (rolesRes.error) throw rolesRes.error;
 
@@ -252,7 +261,7 @@ export async function getCompassTopics() {
       applies_state,
       applies_local,
       applies_judicial,
-      stances: (stancesRes.data ?? [])
+      stances: stancesRes.rows
         .filter(s => s.topic_id === topic.id)
         .map(({ topic_id: _tid, ...s }) => s),
       categories: (catsRes.data ?? [])
@@ -1038,7 +1047,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        COALESCE(ct.question_text, ct.short_title)                    AS topic_title,
        ct.short_title                                                 AS topic_tension_name,
        pa.value                                                       AS stance_value,
-       cs.text                                                        AS stance_text,
+       upper(left(cs.text, 1)) || substr(cs.text, 2)                  AS stance_text,
        pc.reasoning,
        pce.source_url,
        pce.snippet,
@@ -1063,7 +1072,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         ORDER BY s.number DESC
         LIMIT 1
      ) pa ON true
-     LEFT JOIN inform.compass_stances cs
+     LEFT JOIN inform.compass_stances_current cs
        ON cs.topic_id = pce.topic_id AND cs.value = pa.value
      LEFT JOIN LATERAL (
        SELECT c.reasoning, c.sources
@@ -1088,8 +1097,9 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
 
   const topicKeys = blocks.map((b) => b.topic_key);
   const { rows: stanceRows } = await pool.query<{ topic_key: string; value: number; text: string }>(
-    `SELECT ct.topic_key, cs.value, cs.text
-     FROM inform.compass_stances cs
+    `SELECT ct.topic_key, cs.value,
+            upper(left(cs.text, 1)) || substr(cs.text, 2) AS text
+     FROM inform.compass_stances_current cs
      JOIN inform.compass_topics ct ON ct.id = cs.topic_id
      WHERE ct.topic_key = ANY($1)
      ORDER BY ct.topic_key, cs.value ASC`,
