@@ -172,6 +172,119 @@ re-aims an assertion proves less than it appears to.
 
 ---
 
+## 🔴 Deviations found during execution — Task 3, 2026-08-29
+
+`ROSTERS.md` is written: **6 city + 19 county offices, 25 people, 0 vacancies**, 25 distinct
+`external_id`s, **24 inside `-1240109 … -1240081`** and exactly one equal to **`-1212402`**. Every
+mechanical assertion in Step 7 passes; precision is **day 23 / month 2 / year 0 / unknown 0**; no
+party marking; no `Superintendent of Schools`, `State Attorney` or `Public Defender` in any row. The
+`how_started` and `start_precision` values were checked against the live CHECK constraints
+(`elected|appointed|succeeded|redistricted|unknown` and `day|month|year|unknown`). Six things went
+differently, and three of them were the plan being wrong.
+
+1. 🔴🔴 **`pdftotext -layout` MISASSIGNS EVERY ROW OF THE SOE PDF, AND IT WOULD HAVE MOVED THE
+   VACANCY.** The plan said to "read the SOE PDF pages 1–3" and did not say how. Read with `-layout`
+   — the obvious choice, and the one every earlier wave's habits point at — the *Elected Official*
+   column is offset from the *Office* column, so **every name lands on the wrong office**. The offset
+   is **not constant**: one row in the FEDERAL block, two in the MIAMI-DADE COUNTY block, because a
+   wrapped row absorbs a line. `-table` is correct.
+
+   | Office | `-layout` says | `-table` says (correct) |
+   | --- | --- | --- |
+   | Clerk of the Court and Comptroller | Rosanna "Rosie" Cordero-Stutz | **Juan Fernandez-Barquin** |
+   | Sheriff | Tomas Regalado | **Rosanna "Rosie" Cordero-Stutz** |
+   | Mayor | Oliver Gilbert | **Daniella Levine Cava** |
+   | Commissioner, District 1 | Marleine Bastien | **Oliver Gilbert** |
+   | **State House District 113** | Demi Busatta Cabrera | **Vacant** |
+
+   🔴 **Nothing errors, and every wrong answer is a real person in a real office** — Cordero-Stutz is
+   an elected Miami-Dade officer, Oliver Gilbert is on the page. Only the pairing is wrong. This is the
+   Nashville certified-results defect in a new medium.
+   🔴 **`-layout` puts *Vacant* on HD-112.** The wave's acceptance probe depends on **HD-113**. A
+   session that read the PDF the obvious way would have built probe A on the wrong seat **and it would
+   have passed.** ▶ The finding is recorded at the top of `ROSTERS.md`, not buried, for that reason.
+   ⚠ The `pdftotext` here is **Xpdf 4.00**, which has **no `-bbox`** (the usual coordinate escape
+   hatch). `-table` is the available correct reader. **Confirm the tool before trusting the text.**
+
+2. 🔴🔴 **`term_start` IS THE START OF CONTINUOUS OCCUPANCY, AND THE PLAN'S STEP 3 READS AS THOUGH IT
+   IS THE CURRENT TERM.** The plan asked for "the date the Commission appointed her", "the remaining
+   eleven commissioners … come from each district's own page", and gave the officers as a single
+   settled date — none of which distinguishes *this term* from *this tenure*. FL-5's committed roster
+   settles it: Ric L. Bradshaw is **2005-01-04** and Anne M. Gannon **2007-01-01**, both re-elected
+   many times since, and FL-5's own deviations corrected Maria Sachs from her re-election year to her
+   first. Consequences, all of which a current-term reading would have got wrong:
+   - **Christine King is `2021-11-10`, not 2025**, though she was re-elected 2025-11-04 with 84.4%.
+   - **Six county seats read 2020** though their holders were re-elected in 2024.
+   - **Two rows read `appointed` despite having been elected since** — see 3.
+
+3. 🔴🔴 **THE PLAN PREDICTED TWO APPOINTMENTS. THERE ARE FOUR, AND ONE IS BY THE GOVERNOR.** The plan
+   named D5 (Lopez) and D6 (Milian Orbis) — the two the SOE marks `Appointed` with a blank term end.
+   But under continuous occupancy two more spans *began* with an appointment and the SOE hides them,
+   because both holders have since won ordinary four-year terms and so display like any elected member:
+   - **D8 Danielle Cohen Higgins — appointed 2020-12-07**, 10–1, to serve the last two years of
+     Daniella Levine Cava's term when Levine Cava became Mayor. Elected 2022-08-23.
+   - **D11 Roberto J. Gonzalez — appointed 2022-11-23 by Gov. Ron DeSantis**, not by the Commission,
+     after Commissioner Joe Martinez was suspended on felony charges. Elected to a full term in 2024.
+   🔴 **"Appointed" does not imply the same appointing authority.** Three of the four are Commission
+   votes; one is a gubernatorial appointment under the Governor's power to fill county-office
+   vacancies. `ROSTERS.md` records who appointed, per row.
+   ▶ The `how_started` histogram is therefore **elected 21 / appointed 4**, not 23/2.
+
+4. 🔴 **THE TAKE-OFFICE RULE WAS DERIVABLE FROM A PRIMARY SOURCE, AND IT IS CORROBORATED IN BOTH
+   DIRECTIONS — so the county rows carry DAY precision where FL-5's carried month.** The county's own
+   candidate qualifying handbooks quote the Charter directly: *"The term for Board of County
+   Commissioners shall commence on the second Tuesday next succeeding the date of the General Election
+   in November (November 17, 2020)"* (**Art. 3 §3.01(A)**), and the Mayor's handbook carries the same
+   sentence at **§3.01(D)**. That yields 2020-11-17 / 2022-11-22 / 2024-11-19.
+   **Forwards** it reproduces the SOE PDF's own *Current Term Ends* exactly — 11/17/2026 for the 2022
+   cohort, 11/21/2028 for the 2024 cohort. **Backwards** it matches independently published
+   assumed-office dates for Gilbert, Regalado, McGhee (2020-11-17) and Steinberg (2022-11-22).
+   ⚠ **A derived day with two independent confirmations is not an invented date** — but the derivation
+   is stated in `ROSTERS.md` so a reader can reject it.
+   ⚠ **Miami city has NO uniform rule**, and that is itself the finding: its six were sworn on four
+   dates spanning seven months. **Do not derive a Miami date from a cycle.**
+
+5. ⚠ **THE PLAN'S "READ THE BIOS BY EYE" WARNING WAS NECESSARY, AND THE TRAP HERE IS A DIFFERENT ONE
+   FROM PALM BEACH'S.** Palm Beach's bios appended a predecessor's biography. Miami-Dade's instead
+   give the **election** date and call it election — *"elected … on August 23, 2022"* for both Bermudez
+   (D12) and Anthony Rodriguez (D10). **August 23 2022 is the primary**, which Miami-Dade's nonpartisan
+   commission races end outright when someone clears 50%. Read as a start date it is three months
+   early. Only **2 of 13** county bios carry any date at all, and the county Mayor's page says
+   *"re-elected in **August** 2024"* — the same trap on the wave's largest seat.
+
+6. ⚠ **THE DEDUP SWEEP'S ONE EXTRA HIT WAS INVISIBLE IN THE OBVIOUS SUMMARY.** All 25 names were
+   matched against `essentials.politicians` on NFD-normalised first+last. Two rows returned: Gilbert,
+   and — for **René Garcia** — `GARCIA FOR ARVIN CITY COUNCIL, RENE`, FEC ALLCAPS committee junk from
+   **Arvin, California**. Not a reuse. 🔴 It has a **NULL `external_id`**, so a `string_agg` of
+   `external_id || full_name` rendered NULL and the row read as "(none)" beside a count of 1. **Count
+   the rows; do not read the aggregate.**
+   ⚠ `essentials.politicians.external_id` is **`bigint`**, not text — a `coalesce(external_id,'(NULL)')`
+   fails outright with `invalid input syntax for type bigint`.
+
+Two things the plan got exactly right and should be reused:
+
+- **Every URL in Step 1 answered `curl`, including `www.miami.gov`**, which the plan correctly warned
+  returns 403 to WebFetch. ⚠ The reverse also held: the county's own D6 appointment release
+  (`/district06/releases/2025-05-06-com-orbis-appointment.asp`) **404s to both** `curl` and WebFetch
+  while still being indexed — its dated URL slug is now the only trace, and the date was confirmed
+  from reporting instead.
+- **The four in-wave surname pairs are real**, and the plan was right to call them out. The subtle one
+  is **`Fernandez` / `Fernandez-Barquin`** — a strict **prefix**, not an equality, so
+  `full_name ILIKE '%Fernandez%'` returns both, and both are constitutional officers of the same
+  county so no state or body filter separates them.
+
+⚠ **One Step 7 assertion could not be interpreted: "`n = 93` absent".** Nothing in the wave has 93
+rows, no `external_id` is 93, and no slug carries it. It is asserted nowhere. ▶ **Task 4 should either
+define it or drop it from the plan.**
+
+⚠ **The Clerk's title is published three ways** — `Clerk of the Circuit Court and Comptroller` (SOE),
+`Clerk of the Court and Comptroller` (county page **and** his own site), `Miami-Dade Clerk of the
+Courts` (his own site, informal). Chosen: **`Clerk of the Court and Comptroller`**, the officeholder's
+own formal name. It differs from Palm Beach's `Clerk of the Circuit Court & Comptroller` — **do not
+inherit a title across counties.**
+
+---
+
 ## Facts measured 2026-08-28/29 — do not re-derive these
 
 ### The shape of the wave
@@ -939,7 +1052,7 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
   `<!-- COUNTS: city_offices=6 city_people=6 county_offices=19 county_people=19 vacancies=0 -->`.
   **This is FL-4's two-table shape, not FL-5's one-table shape.**
 
-- [ ] **Step 1: Pull the sources — the SOE PDF first**
+- [x] **Step 1: Pull the sources — the SOE PDF first**
 
 ```bash
 cd <knight-worktree>/backend && mkdir -p data/seed-miami-dade-2026 && D=data/seed-miami-dade-2026 && \
@@ -957,14 +1070,21 @@ ls -la "$D"
 **Every one of these answers `curl`.** ⚠ `www.miami.gov/...` returns **403 to WebFetch but 200 to `curl`** — the opposite of Palm Beach's Clerk. Do not conclude a host is blocked from one tool's failure.
 ⚠ The Sheriff's and Tax Collector's own domains did not resolve on 2026-08-29 (`miamidadesheriff.gov` 404, `miamidadetaxcollector.gov` DNS failure). **The correct domains are `mdcsheriff.gov` / `mdctaxcollector.gov`** — confirm, or take those two from the SOE PDF plus the county page.
 
-- [ ] **Step 2: Read the SOE PDF pages 1–3 and take the structure from it**
+- [x] **Step 2: Read the SOE PDF pages 1–3 and take the structure from it**
+
+🔴🔴 **CORRECTED IN PLACE 2026-08-29: EXTRACT WITH `pdftotext -table`, NEVER `-layout`.** Under
+`-layout` the name column is offset from the office column by a varying number of rows and EVERY row
+is misassigned — plausibly, with real people in real offices. It puts *Vacant* on **HD-112**, and the
+acceptance probe depends on **HD-113**. See the Task 3 deviations section.
+⚠ The `pdftotext` on this machine is Xpdf 4.00, which has no `-bbox`. Confirm the tool before
+trusting the text.
 
 Pages 2–3 carry all 19 Miami-Dade seats. It is the only combined roster in the wave and it is authoritative for **office titles and structure**.
 
 ⚠ **It is dated "As of June 4, 2026" and it is stale for fast-churning occupancy** — it still lists Daniel Anthony Perez in HD-116, which prod records vacant since 2026-08-22. **Use it for structure; confirm every occupant against that office's own publisher.**
 ⚠ **It has NO municipal offices.** Miami's six come from `miami.gov`.
 
-- [ ] **Step 3: Establish `term_start` per person**
+- [x] **Step 3: Establish `term_start` per person**
 
 **The five officers are settled and identical:** `2025-01-07`, **`day`** precision, `how_started = 'elected'` — the day Amendment 10's five independent offices began. Cite the county's Constitutional Offices page.
 
@@ -986,7 +1106,7 @@ Pages 2–3 carry all 19 Miami-Dade seats. It is the only combined roster in the
 
 If a date cannot be sourced, write **`unknown`** precision. FL-5 reached zero unknowns; **that is not a target.**
 
-- [ ] **Step 4: Decide the name forms, and record every alternate**
+- [x] **Step 4: Decide the name forms, and record every alternate**
 
 This wave has more naming decisions than any earlier one.
 
@@ -1017,7 +1137,7 @@ const SURNAME_OVERRIDES = {
 
 ⚠ **And widen the suffix regex**, which FL-3's and FL-4's generators still get wrong — copy FL-5's `/,?\s+(Jr\.?|Sr\.?|II|III|IV)\s*$/i`.
 
-- [ ] **Step 5: Record the ONE reuse, explicitly and with its evidence**
+- [x] **Step 5: Record the ONE reuse, explicitly and with its evidence**
 
 `ROSTERS.md` must carry a dedicated section. The `external_id` column for `mdc-commissioner-1` is **`-1212402`**, not a `-12400xx` value, and that is the whole point.
 
@@ -1026,7 +1146,7 @@ Evidence to state: the prod row is `Oliver Gilbert`, `-1212402`, no office, race
 ⚠ **Do not change that row's `full_name`, `is_incumbent` or `data_source`.** The wave adds an `office_terms` row and nothing else. If the published form should be `Oliver G. Gilbert, III`, put it in `alternate_names` — **renaming a row another wave owns is out of scope.**
 ▶ **If he wins in November he resigns District 1.** Note it as live churn.
 
-- [ ] **Step 6: Re-check every seat, then write the file**
+- [x] **Step 6: Re-check every seat, then write the file**
 
 Two live situations plus the standing one:
 
@@ -1036,7 +1156,7 @@ Two live situations plus the standing one:
 
 Then write the two tables, the counts comment, and prose sections for: the reuse; the four in-wave surname pairs; the Higgins → Lopez → HD-113 chain; the two appointments; the three published Clerk titles and the rule chosen; the excluded offices including the ~60 Community Council seats; and the take-office rules per body.
 
-- [ ] **Step 7: Validate mechanically, then commit only `ROSTERS.md`**
+- [x] **Step 7: Validate mechanically, then commit only `ROSTERS.md`**
 
 Assert: 6 + 19 rows; 25 distinct `external_id`s; **24 inside `-1240109 … -1240081` and exactly one equal to `-1212402`**; `n = 93` absent; every precision in `day|month|year|unknown`; every `how_started` in the CHECK's set; no party marking; no `Superintendent of Schools`, `State Attorney` or `Public Defender`.
 
