@@ -179,7 +179,12 @@ export async function getRevisionForReview(
        FROM inform.compass_stance_revisions WHERE topic_revision_id = $2
      )
      SELECT COALESCE(c.value, p.value) AS value,
-            c.text AS current_text, p.text AS proposed_text,
+            -- Capitalize the first letter for display, matching the voter read
+            -- path (ADR 0006 / #217). Applied to both sides identically, so the
+            -- unchanged-vs-reworded comparison below is unaffected. Stored text
+            -- stays lowercase, verb-first.
+            upper(left(c.text, 1)) || substr(c.text, 2) AS current_text,
+            upper(left(p.text, 1)) || substr(p.text, 2) AS proposed_text,
             c.description AS current_description, p.description AS proposed_description
      FROM cur c
      FULL OUTER JOIN prop p ON p.value = c.value
