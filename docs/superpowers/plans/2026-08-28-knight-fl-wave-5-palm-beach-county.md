@@ -242,6 +242,35 @@ Jr., Emily Gregory and Mack Bernard exactly as measured during planning.
 
 ---
 
+## 🔴 Deviations found during execution — Task 5, 2026-08-28
+
+Ledger updated: `fl.md` carries a full `## FL-5 — Palm Beach County (applied 2026-08-28)` section
+(786 lines total, from 534 before the wave), and `PROGRAM.md` has the seats row, the migration-ledger
+row, the slice narrative, two jurisdiction-detail rows and the session-log row. **Next free is
+`CC_0015` / `X0040`.** Two things beyond what the plan asked for.
+
+1. **The FL-5 "PLANNED" session-log row contained a factual error, and it is annotated rather than
+   rewritten.** It told the executor to *"re-check the Clerk's seat and all four November-2026
+   commission seats"*. There are **three** — Districts 2, 4 and 6 — and Task 2 found that out via the
+   odd/even stagger. The row now carries an inline `(⚠ THAT COUNT WAS WRONG — it is THREE …)` marker.
+   **A session log records what a session believed, so erasing the error would lose the fact that it was
+   made**; but a reader could act on the wrong number, so it is corrected in place rather than left to
+   be caught by the next row.
+
+2. **Two jurisdiction-detail rows were stale, not one.** The plan's Task 5 named only Palm Beach's row.
+   **Tallahassee's still read "city commission may be entirely at-large — verify"** — a question FL-4
+   answered on 2026-08-28 and recorded in `fl.md`, but never struck from `PROGRAM.md`. Both rows now
+   state the seated counts and the resolved shape. ▶ **Whenever a wave closes, re-read the whole
+   jurisdiction-detail table, not just the row for the wave you just did.**
+
+The plan's Task 5 items all landed as written, including the ten `fl.md` findings in priority order and
+the FL-6 handoff. One addition to that handoff, promoted to the top: **find the Supervisor of Elections'
+candidate filing report first.** Miami-Dade runs the same VoterFocus platform, and for Palm Beach that
+single source settled the seat stagger, the officer cycle, three of seven commission dates and every
+officer's ballot name — and it is not on the SOE's own site.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 ### 🔴 There is no city half, and that changes the shape of the wave

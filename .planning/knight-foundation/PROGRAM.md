@@ -37,9 +37,10 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 
 Order of execution is slice 1 → 16 as numbered (spec §3.1: grouped by state, largest group first).
 
-FL stages 3 and 4 are `WIP`, not `✅`: **Bradenton and Manatee County are seated and gated**, and
-Tallahassee/Leon, Palm Beach and Miami/Miami-Dade remain. Neither stage closes until all four Florida
-jurisdictions are in.
+FL stages 3 and 4 are `WIP`, not `✅`: **Bradenton/Manatee, Tallahassee/Leon and Palm Beach County are
+seated and gated**; only **Miami and Miami-Dade County** remain. Neither stage closes until all four
+Florida jurisdictions are in — and note that **Palm Beach County has no city half**, so stage 3 has
+nothing to do for it.
 
 ## Jurisdiction detail
 
@@ -47,8 +48,8 @@ jurisdictions are in.
 | --- | --- | --- | --- |
 | Bradenton | FL | Manatee | smallest FL jurisdiction — the FL pipeline pilot |
 | Miami | FL | Miami-Dade | **not** consolidated; city and county are separate governments |
-| Palm Beach County | FL | — | county only, no city half. **Banner: own COUNTY key, decided 2026-08-28** (spec §8.3 resolved) |
-| Tallahassee | FL | Leon | city commission may be entirely at-large — verify |
+| Palm Beach County | FL | — | ✅ **SEATED 2026-08-28 (`CC_0014`): 12/12.** County only, no city half — 7 single-member commission seats, **no at-large**, 5 officers. **Banner: own COUNTY key, decided 2026-08-28** (spec §8.3 resolved); key name and composition still to choose at FL-7 |
+| Tallahassee | FL | Leon | ✅ **SEATED 2026-08-28 (`CC_0011`/`CC_0012`): 5/5.** Commission is **entirely at-large**, Mayor is Seat 4 — verified, so no ward layer was needed |
 | Columbus | GA | Muscogee | **consolidated city-county** |
 | Macon | GA | Bibb | **consolidated city-county** (Macon-Bibb) |
 | Milledgeville | GA | Baldwin | |
@@ -139,12 +140,18 @@ reachable by address.
 | **Manatee County** | **12** | **11** | **0** |
 | **Tallahassee city** | **5** | **5** | **0** |
 | **Leon County** | **13** | **13** | **0** |
+| **Palm Beach County** | **12** | **12** | **0** |
 | every other jurisdiction | 0 | 0 | 0 |
 
 Bradenton and Manatee measured 2026-08-28 after FL-3. Manatee's twelfth office is Commission
 District 1, flagged vacant since 2026-02-24 — the incumbent died and the Governor left the seat empty,
 so it is on the 2026 ballot for a two-year unexpired term. **17 people, 0 headshots: that is the whole
 of FL-3's stage-5 debt so far.**
+
+Re-measured 2026-08-28 after FL-5. **Florida now holds 48 local/county offices across five
+governments, 47 seated, 1 vacant** — plus 164 legislative offices. Palm Beach has **no city half**, so it
+is a county row with no municipal partner. **47 people across the four local/county jurisdictions, 0
+headshots: that is the whole of Florida's stage-5 debt.**
 
 ### Banners present
 
@@ -163,10 +170,11 @@ Wichita, Detroit, Charlotte (spec §8.1).
 | FL | FL-4 city structure | `CC_0011_tallahassee_structure.sql` | 2026-08-28 |
 | FL | FL-4 city occupancy | `CC_0012_tallahassee_people.sql` | 2026-08-28 |
 | FL | FL-4 county (offices + people) | `CC_0013_leon_county.sql` | 2026-08-28 |
-| — | — | next free is **`CC_0014`** | — |
+| FL | FL-5 county (offices + people) | `CC_0014_palm_beach_county.sql` | 2026-08-28 |
+| — | — | next free is **`CC_0015`** | — |
 
 Private MTFCC allocations, which are a second sequence to take numbers from: `X0036` Bradenton wards,
-`X0037` Manatee commission districts, `X0038` Leon commission districts. **Next free is `X0039`.** There is no central registry — each
+`X0037` Manatee commission districts, `X0038` Leon commission districts, `X0039` Palm Beach commission districts. **Next free is `X0040`.** There is no central registry — each
 wave hardcodes its code in its own loader, so this table is the only place they are listed together.
 
 Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the number last.
@@ -182,4 +190,5 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 | 2026-08-28 | **FL-4 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-4-tallahassee-leon.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-4-tallahassee-leon.md): 18 offices, 18 people, **0 vacancies**. Measured while planning — **Tallahassee's commission is entirely at-large** (the Mayor is Seat 4), which answers `fl.md`'s open question and means FL-4 needs only ONE boundary layer; **Leon is a CHARTER county and elects SIX constitutional officers** including the Superintendent of Schools, against Manatee's five; the two counties also name their at-large seats differently. Anchor is Tallahassee City Hall → Commission D5, HD-9, SD-3, and the SOE service `fl.md` already trusts carries both the commission-district layer and an independent City Limits layer. Zero name collisions among all 18. | Execute FL-4 Task 1 (load `X0038` Leon commission districts). |
 | 2026-08-28 | **FL-4 APPLIED.** Loaded `X0038` (5 Leon commission districts) and seated **18 offices, 18 people, 0 vacancies** — `CC_0011`, `CC_0012`, `CC_0013`. All four required answers PASS at Tallahassee City Hall (5 city commissioners, County D5, HD-9, SD-3); gates green; `offices_missing_terms` unchanged at 820/165/655. **Tallahassee's commission is entirely at-large** (Mayor = Seat 4), so the wave needed only ONE boundary loader and the probe asserts a count per answer. **Leon is a CHARTER county electing SIX constitutional officers** including the Superintendent of Schools, against Manatee's five. ⚠ Also fixed a latent defect FL-4 would have triggered: FL-3's band guard claimed the whole shared `-(1240000+n)` band, so FL-4's rows would have broken FL-3's re-run — both now scope to their own sub-range, and all six migrations re-run clean. | Write the FL-5 plan: Palm Beach County, county only. Its banner key is still undecided (spec §8.3). |
 | 2026-08-28 | **Session close.** FL-1 → FL-4 all applied and gated; all six FL-3/FL-4 migrations verified idempotent; branch pushed and in sync. **Decision (Cantrell): Palm Beach County gets its own COUNTY banner key**, not the Florida state banner — the state banner is a Miami skyline and would collide with Miami's at FL-6. Spec §8.3 resolved. `fl.md` now carries an **"FL-5 — what is already measured"** block: Palm Beach is FIPS `12099` (⚠ collides with HD-99), its county district and polygon already exist, it has **zero** offices, and the `external_id` band is 35/10,000 used so FL-5 should start at `n = 61`. | **Write the FL-5 plan: Palm Beach County, county only.** Read `fl.md`'s FL-5 block first — it lists the five things that still must be measured, including the probe anchor, which is a real open question because there is no city hall and the probe drops to THREE answers. |
-| 2026-08-28 | **FL-5 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-5-palm-beach-county.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-5-palm-beach-county.md): **12 offices, 12 people, 0 vacancies, ONE migration (`CC_0014`)** — no city half, so no city government, chamber or district, and the acceptance probe drops to **three** required answers with the city slot legitimately absent. Measured while planning — Palm Beach is a **charter** county electing **FIVE** officers against Leon's chartered **six**, so **charter status predicts nothing**; its own page lists the **State Attorney and Public Defender** as constitutional officers, but those are 15th Judicial Circuit offices that look countywide only because the circuit is coterminous with the county — not seated, and recorded as program-level open work; the commission is **7 single-member seats with no at-large seat at all**, a third convention in three counties; the seven districts **do not tile the TIGER county** because 155.54 sq mi of `12099` is the Atlantic, which the cross-check service carries as an unassigned blank row; **three of seven bio pages append the predecessor's biography unlabelled**, so a regex returns Mack Bernard's 2016 for Bobby Powell's seat; **Powell and Bernard traded seats** and Bernard is already in prod from FL-2; and **the Clerk was suspended on 2026-08-18** with a Clerk Ad Interim now holding the office. Zero name collisions among the twelve. | Execute FL-5 Task 1 (load `X0039`, the 7 Palm Beach commission districts). ⚠ Re-check the Clerk's seat and all four November-2026 commission seats on the day of apply. |
+| 2026-08-28 | **FL-5 PLANNED, not applied.** Wrote [`2026-08-28-knight-fl-wave-5-palm-beach-county.md`](../../docs/superpowers/plans/2026-08-28-knight-fl-wave-5-palm-beach-county.md): **12 offices, 12 people, 0 vacancies, ONE migration (`CC_0014`)** — no city half, so no city government, chamber or district, and the acceptance probe drops to **three** required answers with the city slot legitimately absent. Measured while planning — Palm Beach is a **charter** county electing **FIVE** officers against Leon's chartered **six**, so **charter status predicts nothing**; its own page lists the **State Attorney and Public Defender** as constitutional officers, but those are 15th Judicial Circuit offices that look countywide only because the circuit is coterminous with the county — not seated, and recorded as program-level open work; the commission is **7 single-member seats with no at-large seat at all**, a third convention in three counties; the seven districts **do not tile the TIGER county** because 155.54 sq mi of `12099` is the Atlantic, which the cross-check service carries as an unassigned blank row; **three of seven bio pages append the predecessor's biography unlabelled**, so a regex returns Mack Bernard's 2016 for Bobby Powell's seat; **Powell and Bernard traded seats** and Bernard is already in prod from FL-2; and **the Clerk was suspended on 2026-08-18** with a Clerk Ad Interim now holding the office. Zero name collisions among the twelve. | Execute FL-5 Task 1 (load `X0039`, the 7 Palm Beach commission districts). ⚠ Re-check the Clerk's seat and all four November-2026 commission seats on the day of apply. **(⚠ THAT COUNT WAS WRONG — it is THREE: Districts 2, 4, 6. See the next row and `fl.md`.)** |
+| 2026-08-28 | **FL-5 APPLIED.** Loaded `X0039` (7 Palm Beach commission districts) and seated **12 offices, 12 people, 0 vacancies** — `CC_0014`, one migration, because Palm Beach has no city half. All five probe assertions PASS at the county Governmental Center (Commission D7, HD-87, SD-24, all 5 officers, **and the city slot asserted at ZERO**); all seven FL local migrations re-run clean; gates green; `offices_missing_terms` unchanged at 820/165/655. 🔴🔴 **CHARTER STATUS PREDICTS NOTHING** — Manatee non-charter 5 officers, Leon charter **6**, Palm Beach charter **5**; and Palm Beach is **7 single-member seats with NO at-large commissioner**, a third convention in three counties. 🔴🔴 **STATE ATTORNEY AND PUBLIC DEFENDER ARE 15th-CIRCUIT OFFICES**, listed by the county only because that circuit is coterminous with it — not seated, and now program-level open work. 🔴 The 7 districts **do not tile** TIGER `12099`: 155.54 sq mi is the Atlantic, which the cross-check service carries as an unassigned blank row, so the gate asserts structure rather than a tolerance that could hide a missing district. 🔴 **Three of seven bio pages append the predecessor's biography unlabelled**; a regex returns Mack Bernard's 2016 for Bobby Powell's seat. 🔴 **Powell and Bernard traded seats** and Bernard was already in prod. 🔴 The **Clerk was suspended 2026-08-18** and a Clerk Ad Interim is seated. Also fixed FL-4's headers, which cited FL-3 throughout, and found that `splitName()` required a comma before a suffix. | **Write the FL-6 plan: Miami + Miami-Dade County.** Read `fl.md`'s FL-5 section first. 🔴 **FIND THE SOE CANDIDATE FILING REPORT FIRST** — Miami-Dade runs the same VoterFocus platform, and for Palm Beach it settled the seat stagger, the officer cycle, three commission dates and every ballot name; it is NOT on the SOE's own site. 🔴 Miami-Dade is a **CHARTER county — read its officer set from its charter, inherit nothing**. 🔴 Miami and Miami-Dade are **separate governments**. 🔴 **MIAMI HAS NO STATE REPRESENTATIVE while HD-113 is vacant**, so its probe can return only three of four answers — that is the truth, not a defect. 🔴 Miami's banner cannot be a downtown skyline. ⚠ **Widen `splitName()` before a suffixed name appears.** |
