@@ -1,5 +1,14 @@
 BEGIN;
 
+-- ✅ APPLIED TO PRODUCTION 2026-08-29. Both functions live, SECURITY DEFINER,
+-- EXECUTE granted to service_role only; post-verify gate passed. Dry-run first
+-- (BEGIN…ROLLBACK): pin-by-revision staged abortion v2 into Season 2, a rejected
+-- revision was refused (UNPINNABLE_STATUS), admin_open_season's loop selected the
+-- approved abortion pin and it published cleanly (v1 superseded). After apply,
+-- abortion v2 (revision 4, approved) was staged into Season 2 (draft) via
+-- admin_season_pin_revision — Season 1's abortion pin stays v1/published,
+-- Season 2's is now revision 4 (v2/approved), is_current unmoved at v1.
+
 -- =============================================================================
 -- CA_0024: A season may stage an approved revision; opening it publishes them
 -- =============================================================================
