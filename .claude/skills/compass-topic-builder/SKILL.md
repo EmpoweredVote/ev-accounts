@@ -1,6 +1,6 @@
 ---
 name: compass-topic-builder
-description: "Discover and create new compass topics with quality-checked stances. Use when the user wants to find new policy issues for a jurisdiction, create new compass topics, write stance scales, or expand the topic list beyond the current 21. Triggers on: 'new topic', 'new issue', 'discover issues', 'local issues', 'state issues', 'build topic', 'create stances', 'add compass topic'."
+description: "Discover and create new compass topics with quality-checked stances. Use when the user wants to find new policy issues for a jurisdiction, create new compass topics, write stance scales, or expand the topic list. Triggers on: 'new topic', 'new issue', 'discover issues', 'local issues', 'state issues', 'build topic', 'create stances', 'add compass topic'."
 argument-hint: "\"Jurisdiction\" [--level local|state|federal] [--issue \"issue name\"] [--count N]"
 ---
 
@@ -13,6 +13,77 @@ You are running the **compass-topic-builder** skill. Your job is to discover pol
 > **Related:** the `topic_key`/spectrum you build here is the shared unit between the Compass and
 > Read & Rank quotes. See `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` §7 (the quote↔stance
 > coupling model — same topics, not necessarily the same axis).
+
+---
+
+## READ THIS FIRST — the model has changed
+
+**Topics are versioned, and they go live through Seasons.** Do not push content straight to a
+live topic.
+
+- **Revision model (ADR 0004).** A topic's content lives in `inform.compass_topic_revisions` +
+  `compass_stance_revisions`, not just the legacy `compass_topics`/`compass_stances` tables. Editing
+  an existing topic = **propose a new revision** (`inform.admin_propose_topic_revision`) →
+  **approve** → **publish**. Never hand-edit the legacy tables (the admin "Topics panel" that does
+  is the thing to avoid). The immutability trigger blocks editing a revision in place, so to change
+  a draft you **reject it and propose a fresh one**.
+- **Seasons (ADR 0005/0006, "Model Q").** The live compass serves the **open season's bound
+  version** of each topic, not the global "current" one. A **major** (substantive) rewrite is
+  **staged into the next draft season** (`admin_season_pin_revision`) and goes live only when that
+  season **opens** (`admin_open_season` publishes staged approved revisions). A **minor**
+  (editorial/clarifying) edit flows into the current season on publish. So: for a real rewrite,
+  **approve — do not publish** — then stage into Season N+1.
+- **Display capitalizes the first letter** at the read boundary (voter + admin review). Corpus
+  convention was lowercase-verb-first; recent topics are stored **capitalized**. Match the
+  surrounding topics or ask.
+- **`topic_key` is load-bearing and frozen.** `essentials.quotes` joins on it. Renaming a topic's
+  display name is fine (revise `short_title`); the `topic_key` must **not** change or you orphan its
+  quotes. So a rename is a **revision**, never a new topic.
+
+### Revise vs. split vs. new topic — decide before authoring
+
+- **Revise** an existing topic when it's the same issue reworded/reframed (keeps `topic_key`,
+  quotes, and seated answers via an identity rung_map). A rename is always a revision.
+- **Split** when one topic secretly measures two independent axes (e.g. Climate → Clean Energy +
+  Fossil Fuels; Immigration → Legal Immigration + Border Security). Keep one as a revision of the
+  original (preserves its quotes); the other becomes a new topic.
+- **New topic** only for a genuinely new issue with no existing home. New topics **orphan no
+  existing quotes** (there are none) but must be created through the full revision model — see
+  STEP 4b (the legacy `admin_create_topic_with_stances` creates **no revision** and is insufficient).
+
+---
+
+## DESIGN PRINCIPLES — how to build an axis that a citizen can actually choose from
+
+The five stances are five **distinct chairs** a politician sits in, ordered along **one axis**.
+These are the failure modes to hunt for (learned the hard way across abortion, public safety,
+climate/energy, immigration):
+
+1. **One axis only.** If chair 1 measures funding and chair 2 measures who-responds, they're not two
+   points on a line — they're two lines. Pick the single axis the whole scale varies along and hold
+   it for all five rungs.
+2. **No effort-dials.** "significantly / moderately / a little / none," "some/most/all" — that's one
+   position said five ways, and a citizen can't feel the difference. Anchor each rung in a **distinct
+   real policy model/posture** (who does what), not a magnitude notch. *Exception:* a genuine
+   magnitude axis (e.g. abortion's gestational limit) is fine **if** each rung is a concrete,
+   recognizable threshold, not a vague quantifier.
+3. **No double-barrels — three kinds:**
+   - two independent positions joined by "and" (someone could hold one, not the other);
+   - an **off-axis limb** — a broadly-agreeable extra that doesn't discriminate between chairs (police
+     "better pay & equipment" on a centrality axis; "remove environmental restrictions" on a
+     production axis);
+   - **belief vs. policy mixing** — a topic named for a belief ("Climate Change → is it real?") but
+     scored on policy. Measure policy; rename the topic if the name invites the belief axis.
+4. **Label poles by real held positions, not strawmen.** "Open borders" and literal "abolish the
+   police" are attack labels almost nobody holds — a chair no one sits in is dead weight. Use the
+   real left/right pole (e.g. "civil, not criminal — a hearing for everyone").
+5. **Ground rungs in reality.** Each chair should seat real politicians with real legislation/actions
+   (a research pass earns this). If you can't name who sits in a chair, it's invented.
+6. **Watch for cross-topic overlap.** Before adding or revising, check the existing topics — two that
+   measure nearly the same thing (Climate/Fossil, the two Homelessness topics) should be split-clean
+   or merged, not left redundant.
+7. **Neutral, open question** that names the axis (not "fund **and** operate…" — itself a
+   double-barrel). Prefer "What approach should…", "How should the government handle…".
 
 ---
 
@@ -135,18 +206,22 @@ Create:
 
 ### 3b. Draft 5 stances
 
-Write 5 stances on a spectrum:
-- **Value 1** = most progressive/interventionist position
-- **Value 2** = moderate-progressive position
-- **Value 3** = centrist/balanced position
-- **Value 4** = moderate-conservative position
-- **Value 5** = most conservative/hands-off position
+First **name the single axis** (per the DESIGN PRINCIPLES above), then write 5 distinct chairs along
+it. Value 1 → 5 runs from one pole to the other:
+- **Value 1** = most interventionist / most government action *on this axis*
+- **Value 5** = the opposite pole (hands-off, or the other direction)
+- ⚠ Polarity is **not** universal — some ladders run the other way (AI Oversight, Tariffs), and some
+  are off-axis (Residential Zoning, Growth Pace). Decide the axis and its poles deliberately; don't
+  assume "1 = progressive."
 
-**Follow the pattern of existing stances.** Each stance should:
-- Start with a verb or action phrase
-- Be one sentence (two max if absolutely necessary)
-- Be specific enough to be meaningful but broad enough to apply at any government level
-- NOT reference a specific level of government (no "federal law", "state mandate", "city ordinance")
+Each stance should:
+- Be **one chair on the one axis** — a distinct real position, not an effort-dial notch (re-read the
+  DESIGN PRINCIPLES: no dials, no double-barrels, no off-axis limbs, no strawman poles).
+- Ideally seat a **real politician/bill** — a research pass (WebSearch) grounds the rungs in reality.
+- Start with a verb; be one sentence (two max).
+- Be broad enough to apply at any government level (no "federal law", "city ordinance").
+- **Capitalize the first letter** to match recent topics (display capitalizes anyway, but store it
+  capitalized).
 
 ### 3c. Run Quality Gates
 
@@ -251,56 +326,49 @@ Write the approved topic to `ev-accounts/backend/data/topic-drafts/YYYY-MM-DD-<t
 }
 ```
 
-### 4b. Optional DB push
+### 4b. Create the topic in the database (as a versioned migration)
 
-Ask the user:
-> "Would you like to push this topic to the database as a **draft** (is_live: false)? You can promote it to live later via the admin panel."
+🔴 **A new topic MUST be created through the full revision model.** The legacy
+`inform.admin_create_topic_with_stances` RPC writes only `compass_topics` + legacy `compass_stances`
+and creates **no `compass_topic_revisions`** — a topic made that way is invisible to the Option Y
+season read path and cannot be pinned into a season. Do **not** use it alone.
 
-If yes, create the topic via database:
+Create the topic as a **numbered migration** — house style: `backend/migrations/CA_NNNN_<slug>.sql`
+(your namespace; run `git fetch origin` then `npm run check:migrations` for the next free slot),
+idempotent, ending in a `DO $$…$$` post-verify gate, dry-run `BEGIN; … ROLLBACK;` against prod before
+applying. **Worked example: `backend/migrations/CA_0025_border_security_topic.sql`.** In one
+transaction the migration writes:
 
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
+1. **`inform.compass_topics`** — `title`, `short_title`, `question_text`, `is_live=false` (staged; it
+   shows on no voter surface until a Season pins it), `topic_key` set explicitly (must equal
+   `lower(replace(short_title,' ','-'))` — load-bearing: `essentials.quotes` joins on it).
+2. **`inform.compass_stances`** (legacy ladder, values 1–5) — parity only; not read by the season path.
+3. **The v1 revision** in `inform.compass_topic_revisions`: `revision=1, version=1,
+   change_class='substantive', status='published', is_current=true, rung_map=NULL`, non-empty
+   `rationale` and `public_note`, `approved_by/at` both NULL, `published_at=now()`. (Published+current
+   is required so a season can pin it; it still shows nowhere until pinned.)
+4. **The five rungs** in `inform.compass_stance_revisions` (values 1–5; capitalize the text to match
+   recent topics).
+5. **Role scopes** in `inform.compass_topic_roles` — one row per level. `role_scope` ∈
+   `('federal','state','local','judicial')` **ONLY** (NOT `us_congress`/`president`/`city_council` —
+   those are not valid values). Federal-only = one `federal` row. No rows at all defaults to
+   federal+state+local (never judicial).
 
-const topic = JSON.parse(process.argv[2]);
+Post-verify gate asserts: exactly one published/current revision; 5 distinct stance-revision values;
+5 legacy stances; the expected role rows; `topic_key` correct; and the topic is **not** in
+`inform.compass_topics_promoted` (nothing pins it yet).
 
-// Create topic with stances via RPC
-const { rows: [created] } = await pool.query(\`
-  SELECT inform.admin_create_topic_with_stances(
-    \$1::text, \$2::text, \$3::text, false, \$4::jsonb
-  ) as result
-\`, [topic.title, topic.question_text, topic.short_title, JSON.stringify(topic.stances)]);
+**Then, separately, when composing the season:** pin it in with the CA_0022 RPCs —
+`admin_season_add_topic(season_id, topic_id, actor)` on the draft Season N+1, and it goes live when
+`admin_open_season` runs.
 
-const topicId = created.result.topic.id;
-console.log('Created topic:', topicId);
-
-// Set topic_key explicitly (trigger auto-derives from short_title if blank,
-// but we set it explicitly to match what quotes use)
-await pool.query(\\\`
-  UPDATE inform.compass_topics SET topic_key = \\\$1 WHERE id = \\\$2
-\\\`, [topic.topic_key, topicId]);
-
-// Insert compass_topic_roles for each level
-const levelMap = {
-  'federal': ['us_congress', 'president'],
-  'state': ['state_legislature'],
-  'local': ['city_council']
-};
-
-for (const level of topic.levels) {
-  for (const roleScope of levelMap[level]) {
-    await pool.query(\`
-      INSERT INTO inform.compass_topic_roles (topic_id, role_scope, is_required)
-      VALUES (\$1, \$2, true)
-      ON CONFLICT DO NOTHING
-    \`, [topicId, roleScope]);
-  }
-}
-
-console.log('Assigned role scopes:', topic.levels);
-await pool.end();
-" '<JSON>'
-```
+> ⚠ **Editing an EXISTING topic is different — do NOT create a new topic.** Propose a revision:
+> `inform.admin_propose_topic_revision(topic_key, actor, change_class, title, short_title, question,
+> stances_jsonb, rationale, public_note, review_ref, rung_map)`. If a draft already exists, reject it
+> first (`admin_reject_topic_revision`) — one open revision per topic. Use an identity rung_map
+> (`{"1":1,…,"5":5}`) when the five rungs stay in place and are only reworded. Then **approve**; for a
+> **major** change **do not publish** — stage into the next season (`admin_season_pin_revision`) and
+> let `admin_open_season` publish it at the season boundary.
 
 ### 4c. Suggest categories
 
@@ -331,7 +399,8 @@ await pool.end();
 > - Levels: [federal, state, local]
 > - Categories: [assigned / none]
 >
-> To make it live, toggle `is_live` in the admin panel."
+> It shows on no voter surface yet. It goes live by being **pinned into the next season** and that
+> season opening — not by toggling `is_live`. (`is_live` does not gate the season read path.)"
 
 If there are more topics to author from the discovery list, loop back to STEP 3 for the next one.
 
