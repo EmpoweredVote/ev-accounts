@@ -197,6 +197,51 @@ Two places the plan under-specified, both tightened:
 
 ---
 
+## 🔴 Deviations found during execution — Task 4, 2026-08-28
+
+**`CC_0014` IS APPLIED.** 12 offices, 12 people, 0 vacancies. The dry run passed on the first attempt;
+all five probe assertions PASS; every gate is green; `offices_missing_terms` is **unchanged at
+820 / 165 / 655** against a 699 unflagged threshold; `check:reachability` reports **no new bucket**
+(BAD_GEOMETRY 5, DEAD_GEOGRAPHY 17, UNREACHABLE 38, all at baseline). All **seven** Florida local
+migrations re-run as clean no-ops. Four things worth recording.
+
+1. 🔴 **APOSTROPHES INSIDE `\echo` BREAK psql, AND THREE LINES HAD THEM.** `\echo` takes the rest of
+   the line raw, but psql still lexes quotes: `HD-87's`, `SD-24's` and `Leon's` each produced
+   `error: unterminated quoted string` and swallowed the following echo lines. psql **continues** past
+   it, so the probe still ran and still reported PASS — the damage is to the human-readable headings
+   that explain what the numbers mean, which is exactly what a probe file is for. FL-3's and FL-4's
+   probes happened to have no apostrophes in an `\echo`. Rewritten without them.
+   ▶ **Add to the FL-6 checklist:** grep the probe for `^\echo.*'` before running it.
+
+2. **The dry run needed no caveat, and that is the shape of the wave.** FL-4's plan had to warn that
+   `CC_wip_tallahassee_people` would fail on its own against untouched prod, because its offices did
+   not exist yet — and warn against concatenating the files to get around it, which is how FL-3
+   committed `CC_0008` to prod in autocommit. **One migration has no ordering problem to caveat.**
+
+3. **The probe grew three assertions beyond the plan, and one of them is the point of the wave.**
+   - **Answer 5 asserts the city seat count is ZERO.** The plan told the executor to *state* in a
+     comment that the city slot is legitimately absent. A comment is not a gate: if West Palm Beach
+     were ever seated by another wave, the anchor would silently start returning a fourth answer and
+     nothing would notice. It is now an assertion that must read `expected 0, got 0, PASS`.
+   - **Probe 3a asserts offices-per-district for all eight districts.** The 7/5 split is the failure
+     this wave is most exposed to, and seeing it per row beats inferring it from a total.
+   - **Probe 6a is a positive control far from the anchor** — Belle Glade, in the western Glades,
+     returns District 6 and the five officers and **no** District 7. The plan specified only the
+     negative control. A negative control alone cannot distinguish "correctly excluded" from "the
+     query cannot fire".
+
+4. **The rename was verified by regenerating, not by trusting `sed`.** After `git mv` and the
+   `CC_wip` → `CC_0014` substitution, re-running the generator reproduced the renamed file
+   **byte-for-byte**. That is the check the FL-4 header defect argues for: if a generator and its
+   emitted migration have drifted, the moment to find out is before the apply, not three waves later.
+
+Everything the plan predicted about the probe held: **8 correct rows and exactly 3 wrong ones** in the
+unpaired-join demonstration — Monroe County via HD-87's `sldl` polygon, HD-24 via SD-24's `sldu`
+polygon, and HD-99 via Palm Beach County's own `G4020` polygon — and the anchor returned Bobby Powell
+Jr., Emily Gregory and Mack Bernard exactly as measured during planning.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 ### 🔴 There is no city half, and that changes the shape of the wave

@@ -89,7 +89,7 @@ const PLAN = 'docs/superpowers/plans/2026-08-28-knight-fl-wave-5-palm-beach-coun
 const ROSTER_REL = 'data/seed-palm-beach-2026/ROSTERS.md';
 const GENERATOR = 'scripts/gen-palm-beach-migrations.mjs';
 
-const OUT_FILE = 'CC_wip_palm_beach_county.sql';
+const OUT_FILE = 'CC_0014_palm_beach_county.sql';
 
 const COUNTY_MTFCC = 'X0039';
 const COUNTY_GEO_ID = '12099'; // TIGER county, Palm Beach County (G4020). Pre-existing.
