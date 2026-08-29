@@ -28,10 +28,56 @@ Everything in FL-3's and FL-4's Global Constraints still applies. These are the 
 - 🔴 **Re-run every applied migration in the slice, not just the new one.** That means all seven of `CC_0008` … `CC_0014`. Re-running only the new file is what let FL-3's band-guard defect survive for a day.
 - **No party affiliation.** Discard it wherever it appears. The party guard regex must cover `(R)`, `(D)`, `(DEM)`, `(REP)`, `(NPA)`, `(I)` — FL-3's `\((R|D|NPA|I)\)` missed `(DEM)`, and Palm Beach's election-night feed prints `- REP` / `- DEM` suffixes on contest names.
 - **No `term_end`.** No `end_precision` exists.
-- **`districts.state` is lower case (`'fl'`); `governments.state` and `offices.representing_state` are UPPER (`'FL'`); `geofence_boundaries.state` is the 2-digit FIPS `'12'`.**
+- **`districts.state` is lower case (`'fl'`); `governments.state` and `offices.representing_state` are
+  UPPER (`'FL'`).** 🔴 **CORRECTED DURING TASK 1: `geofence_boundaries.state` is the 2-digit FIPS
+  `'12'` for TIGER layers, but every PRIVATE `X`-code layer in this slice carries `'fl'`** — measured,
+  `X0036`/`X0037`/`X0038` are all `'fl'`. Nothing joins on it for `X` codes
+  (`check-address-reachability.mjs` joins `geo_id` only), so **follow the slice: `X0039` is `'fl'`.**
 - **`outSR=4326` is load-bearing, and this service is a THIRD projection family.** Palm Beach publishes in **NAD83(HARN) StatePlane Florida East FIPS 0901, US survey feet** — not Manatee's EPSG:2237 and not Leon's EPSG:3857. Dropping `outSR` writes projected feet into a geographic column; nothing errors and every address probe simply comes back empty.
 - **`curl` works for almost everything here.** Only `mypalmbeachclerk.com` returns a hard 403 (a full browser header set does not help). Leon needed Playwright for six hosts; Palm Beach needs it for one. Use Playwright for the Clerk only.
 - **`cwd` resets between Bash calls.** Prefix every command with `cd /c/EV-Accounts/backend &&`.
+
+---
+
+## 🔴 Deviations found during execution — Task 1, 2026-08-28
+
+`X0039` is **loaded**: 7 districts, all valid, all SRID 4326, anchor resolves to District 7, loader
+re-runs as a clean no-op. `check:migrations`, `check:child-county` and `check:occupancy` all green;
+`check:child-county` unchanged at 7,245 children / 0 stale, confirming that an `X`-code load needs no
+matview refresh. Every measured literal in "Facts measured" held exactly. Four things are worth
+recording.
+
+1. 🔴 **THE PLAN HAD THE WRONG `geofence_boundaries.state` VALUE.** Global Constraints said `'12'`,
+   the 2-digit FIPS, which is correct for TIGER layers — county `12099`/`G4020` is `'12'`. But every
+   **private `X`-code** layer in this slice was written `'fl'`: `X0036`, `X0037` and `X0038` all are.
+   `X0039` follows the slice. Nothing joins on the column for `X` codes, so this changed no behaviour,
+   but a plan that contradicts three applied precedents is a plan that gets followed once and then
+   argued with. Corrected in place.
+
+2. 🔴 **THE GATE-5 FAILURE MODE DEPENDS ON WHETHER THE MISSING DISTRICT IS COASTAL, AND THE PLAN
+   PREDICTED ONLY HALF OF IT.** The plan said dropping a district would make the tiling gate report
+   **2 large gap parts**. Dropping **District 7** — which is coastal — does **not**: its area merges
+   into the ocean gap and the count stays at **1**. What caught it was the **area band**: the gap grew
+   to 208.1345 sq mi, outside the 150…160 window. Dropping **District 6**, which is landlocked, does
+   produce 2 parts and 1,749.72 sq mi uncovered.
+   **So the two assertions catch different failures and neither is redundant.** Had the gate carried
+   only the part count — the assertion the plan called "load-bearing" — a missing coastal district
+   would have passed. Both proofs are now in the plan's Step 6.
+
+3. ⚠ **The stored geometry type is `ST_MultiPolygon`, not `ST_Polygon`.** All seven fetch as
+   single-ring `Polygon`, but the insert wraps them in `ST_Multi()`, as Leon's loader does — and
+   `X0036`/`X0037`/`X0038` are all `ST_MultiPolygon` in prod. Step 7's expectation was wrong and would
+   have read as a failure. Corrected in place.
+
+4. ⚠ **Gate 6 measures 0.2187 sq mi where planning measured 0.2359.** Both are far inside the 1.0
+   tolerance. The difference is real and expected: planning compared the *whole* `ST_Difference` against
+   the blank row, while the loader compares the *dumped biggest part* after `ST_MakeValid`, which drops
+   the 0.0019-and-below noise slivers. The loader's number is the tighter one.
+
+One thing the plan under-promised: **all seven polygons landed `ST_IsValid` with one part each and
+needed no `ST_MakeValid`**, and the per-district areas matched the recorded literals to **0.00 %** on
+all seven — tighter than Leon's cross-check and far tighter than Bradenton, where four of five wards
+needed repair.
 
 ---
 
@@ -349,7 +395,7 @@ Palm Beach County School Board (7 elected, by district); State Attorney and Publ
 
 **Interfaces:**
 - Consumes: nothing from earlier tasks.
-- Produces: 7 rows in `essentials.geofence_boundaries`, `mtfcc = 'X0039'`, `state = '12'`,
+- Produces: 7 rows in `essentials.geofence_boundaries`, `mtfcc = 'X0039'`, `state = 'fl'`,
   `geo_id = 'palm-beach-fl-commissioner-district-' || n` for `n` in 1..7. Task 3's migration joins on
   exactly those three values and refuses to run if they are absent.
 
@@ -524,8 +570,14 @@ to work:
 
 1. Temporarily set `EXPECTED_SQ_MI['6']` to `1500` and confirm the area gate fails District 6 with a
    percentage in the message. Revert.
-2. Temporarily drop `'7'` from `DISTRICTS` and confirm **the tiling gate reports 2 large gap parts**,
-   not merely a smaller union. Revert.
+2. Temporarily drop a district from `DISTRICTS` and confirm the tiling gate refuses to write.
+   🔴 **WHICH assertion fires depends on whether the district is COASTAL — proved during Task 1.**
+   Removing **District 7** (coastal) merges its area into the ocean gap, so the part count stays at
+   **1** and the **area band** catches it (208.13 sq mi, outside 150…160). Removing **District 6**
+   (inland) produces a genuine second part and the **part-count** assertion catches it (2 parts,
+   1,749.72 sq mi uncovered). **Test one of each; both assertions are load-bearing and neither
+   alone is sufficient.** Revert. (Do this on a throwaway copy under `scripts/_gateproof-*.ts`
+   rather than editing the real loader, and delete the copies afterwards.)
 
 Then load for real:
 
@@ -547,7 +599,9 @@ SELECT geo_id,
  WHERE mtfcc = 'X0039' ORDER BY geo_id;"
 ```
 
-Expect 7 rows, every one `ST_Polygon`, `t`, `1`, **`4326`**, with areas matching the Step 4 table to
+Expect 7 rows, every one **`ST_MultiPolygon`** (🔴 **corrected during Task 1** — the insert wraps the
+geometry in `ST_Multi()`, as Leon's loader does; `X0036`/`X0037`/`X0038` are all `ST_MultiPolygon`
+too), `t`, `1` part, **`4326`**, with areas matching the Step 4 table to
 three decimals. 🔴 **`ST_SRID = 4326` is the check that catches a dropped `outSR`** — projected US
 survey feet would store without error and every probe would come back empty.
 
