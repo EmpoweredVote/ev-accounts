@@ -331,32 +331,85 @@ Write the approved topic to `ev-accounts/backend/data/topic-drafts/YYYY-MM-DD-<t
 🔴 **A new topic MUST be created through the full revision model.** The legacy
 `inform.admin_create_topic_with_stances` RPC writes only `compass_topics` + legacy `compass_stances`
 and creates **no `compass_topic_revisions`** — a topic made that way is invisible to the Option Y
-season read path and cannot be pinned into a season. Do **not** use it alone.
+season read path and cannot be pinned into a season. Do **not** use it.
 
-Create the topic as a **numbered migration** — house style: `backend/migrations/CA_NNNN_<slug>.sql`
-(your namespace; run `git fetch origin` then `npm run check:migrations` for the next free slot),
-idempotent, ending in a `DO $$…$$` post-verify gate, dry-run `BEGIN; … ROLLBACK;` against prod before
-applying. **Worked example: `backend/migrations/CA_0025_border_security_topic.sql`.** In one
-transaction the migration writes:
+**Canonical path — call `inform.admin_create_topic_with_revision` from a migration.** CA_0026 (applied
+to prod 2026-08-28) added a `SECURITY DEFINER` RPC that bootstraps a topic across **all five layers
+atomically** in one call — identity row, legacy 1..5 ladder, the founding v1 published/current
+revision, its five stance revisions, and the role scopes. You **no longer hand-write the layers**;
+you call the RPC. House style still applies: create a **numbered migration** —
+`backend/migrations/CA_NNNN_<slug>.sql` (your namespace; run `git fetch origin` then
+`npm run check:migrations` for the next free slot), idempotent, ending in a `DO $$…$$` post-verify
+gate, dry-run `BEGIN; … ROLLBACK;` against prod before applying. **Worked example:
+`backend/migrations/CA_0027_2020_election_topic.sql`.**
 
-1. **`inform.compass_topics`** — `title`, `short_title`, `question_text`, `is_live=false` (staged; it
-   shows on no voter surface until a Season pins it), `topic_key` set explicitly (must equal
-   `lower(replace(short_title,' ','-'))` — load-bearing: `essentials.quotes` joins on it).
-2. **`inform.compass_stances`** (legacy ladder, values 1–5) — parity only; not read by the season path.
+The RPC signature:
+
+```sql
+inform.admin_create_topic_with_revision(
+  p_title         text,     -- e.g. '2020 Presidential Election'
+  p_question_text text,     -- open-ended question
+  p_short_title   text,     -- e.g. '2020 Election'  ->  topic_key '2020-election'
+  p_is_live       boolean,  -- false = staged (shows on no voter surface until a Season pins it)
+  p_stances       jsonb,    -- exactly 5 rungs: [{"value":1,"text":"…"}, …], values 1–5, capitalized
+  p_actor_id      uuid,     -- author users.id, or NULL
+  p_role_scopes   jsonb     -- ['federal','state','local']; NULL defaults to federal+state+local
+) RETURNS jsonb             -- created topic id at  result->'topic'->>'id'
+```
+
+Call it **guarded by `IF NOT EXISTS` on `topic_key`** so a re-run is a no-op — the RPC raises
+`DUPLICATE_TOPIC_KEY` when the key already exists, so an unguarded re-run aborts the migration:
+
+```sql
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM inform.compass_topics WHERE topic_key = '<topic-key>') THEN
+    PERFORM inform.admin_create_topic_with_revision(
+      '<Title>', '<Open-ended question?>', '<Short Title>', false,
+      '[{"value":1,"text":"…"}, {"value":2,"text":"…"}, {"value":3,"text":"…"},
+        {"value":4,"text":"…"}, {"value":5,"text":"…"}]'::jsonb,
+      NULL, '["federal","state","local"]'::jsonb
+    );
+    RAISE NOTICE 'CA_NNNN: created topic <topic-key>';
+  ELSE
+    RAISE NOTICE 'CA_NNNN: topic <topic-key> already present — create skipped';
+  END IF;
+END $$;
+```
+
+What the RPC writes and the rules it enforces (so your post-verify gate knows what to assert):
+
+1. **`inform.compass_topics`** — identity row. `topic_key` is derived **and frozen** as
+   `lower(replace(short_title,' ','-'))` (load-bearing: `essentials.quotes` joins on it). `is_live`
+   defaults to `false`; it does **not** gate the season read path.
+2. **`inform.compass_stances`** (legacy ladder, values 1–5) — parity only; not read by the season
+   path. The RPC enforces **exactly 5 rungs, values 1–5 distinct, non-empty text** (`BAD_LADDER`
+   otherwise).
 3. **The v1 revision** in `inform.compass_topic_revisions`: `revision=1, version=1,
-   change_class='substantive', status='published', is_current=true, rung_map=NULL`, non-empty
-   `rationale` and `public_note`, `approved_by/at` both NULL, `published_at=now()`. (Published+current
-   is required so a season can pin it; it still shows nowhere until pinned.)
+   change_class='substantive', status='published', is_current=true, rung_map=NULL`,
+   `published_at=now()`, `approved_by/at` NULL. Published+current is required so a season can pin it;
+   it still shows nowhere until pinned.
 4. **The five rungs** in `inform.compass_stance_revisions` (values 1–5; capitalize the text to match
    recent topics).
-5. **Role scopes** in `inform.compass_topic_roles` — one row per level. `role_scope` ∈
-   `('federal','state','local','judicial')` **ONLY** (NOT `us_congress`/`president`/`city_council` —
-   those are not valid values). Federal-only = one `federal` row. No rows at all defaults to
-   federal+state+local (never judicial).
+5. **Role scopes** in `inform.compass_topic_roles` — from `p_role_scopes`, values ∈
+   `('federal','state','local','judicial')` **ONLY** (NOT `us_congress`/`president`/`city_council`).
+   Federal-only = `'["federal"]'`. `NULL`/empty defaults to federal+state+local (never judicial).
 
-Post-verify gate asserts: exactly one published/current revision; 5 distinct stance-revision values;
-5 legacy stances; the expected role rows; `topic_key` correct; and the topic is **not** in
-`inform.compass_topics_promoted` (nothing pins it yet).
+⚠ **The founding revision's `rationale` and `public_note` are auto-generated** — a generic "founding
+revision (v1)" summary, since a v1 needs no hand-written edit summary and the create UI passes none.
+The RPC has **no argument** for the real design rationale, so **put it in the migration's SQL
+comments**. `CA_0027` is the model: a long header comment records the axis, the polarity choice, the
+four rung thresholds, who seats each rung (a grounding pass), and why the topic departs from
+convention — everything a later maintainer would otherwise have to re-derive.
+
+Post-verify gate asserts: exactly one published/current v1 revision (`rung_map` NULL); 5 distinct
+stance-revision values; 5 legacy stances; the expected role rows; `topic_key` correct; and the topic
+is **not** in `inform.compass_topics_promoted` (nothing pins it yet). CA_0027's gate is the template.
+
+**Fallback — hand-writing the five layers.** Before the RPC existed, a topic migration wrote all five
+layers by hand; `backend/migrations/CA_0025_border_security_topic.sql` is that older worked example.
+You should not need it now — the RPC does the same inserts and enforces the invariants for you — but
+CA_0025 documents exactly what each layer contains if you ever must diverge from what the RPC does.
 
 **Then, separately, when composing the season:** pin it in with the CA_0022 RPCs —
 `admin_season_add_topic(season_id, topic_id, actor)` on the draft Season N+1, and it goes live when
