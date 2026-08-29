@@ -81,6 +81,73 @@ needed repair.
 
 ---
 
+## 🔴 Deviations found during execution — Task 2, 2026-08-28
+
+`ROSTERS.md` is written: **12 offices, 12 people, 0 vacancies**, precision **day 2 / month 9 / year 1 /
+unknown 0**, `how_started` **elected 10 / appointed 2** — the histogram the plan predicted, hit exactly.
+All twelve structural assertions pass. Four things went differently, and two of them were the plan
+being wrong.
+
+1. 🔴🔴 **THE PLAN HAD MARIA SACHS' START YEAR WRONG — 2022, actually 2020 — AND THE REASON IS A
+   STAGGER THE PLAN DID NOT KNOW ABOUT.** Palm Beach's seven seats are staggered **odd / even**:
+   Districts 1, 3, 5 and 7 are elected in **presidential** years, Districts 2, 4 and 6 in
+   **gubernatorial** years. Sachs holds an odd seat, was elected in 2020 succeeding the term-limited
+   Mary Lou Berger, and was **re-elected in 2024**.
+   The tell was on the page all along: **District 5's biography is stamped `*Revised 11/2020`**, two
+   years before the date the plan assumed she took office. **A page's own revision date can be worth
+   more than its prose.**
+   ▶ Knock-on correction: **THREE seats are on the November 2026 ballot, not four** — 2, 4 and 6.
+   District 5 is not up until 2028. Both statements are fixed in place above.
+
+2. 🔴🔴 **THE GANNON "CONTRADICTION" WAS THE PLAN'S OWN ARITHMETIC, AND ITS SUPPORTING ARGUMENT WAS
+   UNSOUND TWICE OVER.** The plan called Anne Gannon's page self-contradictory — *"Elected in 2006"*
+   plus *"currently serving her sixth term"* — on the ground that a four-year step from 2006 gives five
+   terms by 2026. On the **presidential** cycle her elections are 2006, then 2008, 2012, 2016, 2020 and
+   2024: **six**. Both statements are true; the plan's step was wrong.
+   Worse, the plan's evidence for the cycle was: *"the 2026 primary carried no constitutional-officer
+   contest, which confirms the presidential cycle."* **That does not follow.** Florida removes
+   **unopposed** races from the ballot entirely, so an unopposed officer appears in no primary feed
+   whatever the cycle — and Jacks and Gannon were **both unopposed in 2024**. The inference happened to
+   reach a true conclusion from a broken premise. **A results feed cannot answer "which offices are up";
+   a filing report can.**
+
+3. 🔴 **THE INSTRUMENT THAT SETTLED ALL OF IT IS NOT ON THE SUPERVISOR OF ELECTIONS' OWN SITE, AND
+   THE PLAN DID NOT NAME IT.** The plan was right that Palm Beach publishes no combined
+   elected-officials page, and right to send Task 2 to each officeholder's publisher. But the
+   **candidate filing report** — which dates every contested seat by cycle — lives at
+   `voterfocus.com/CampaignFinance/candidate_pr.php?c=palmbeach&el=<n>`, reachable only by reading the
+   `Announced-Candidates` page's DOM for its iframe `src`. The page renders no candidate data itself,
+   and the iframe URL **302s if fetched directly with `curl`**. Cycle is the `el` parameter: `9` = 2022,
+   `11` = 2024, `12` = 2026, `13` = 2028.
+   It resolved, in one place: the odd/even stagger, the officer cycle, three of the seven commission
+   dates, and every officer's **ballot name** (which is where `Ric L. Bradshaw` and `Anne M. Gannon`
+   come from). ▶ **Find this first in any later Florida county wave.**
+
+4. ⚠ **A press claim the filing record contradicts.** Reporting in this cycle described Sara Baxter
+   entering a congressional race and dropping her District 6 re-election bid. The SOE filing report
+   shows her **Active-Qualified for District 6**. `ROSTERS.md` records the filing record and does not
+   restate the congressional claim as fact. It changes nothing about this wave — she holds D6 either
+   way — but it is the second time in this wave that a secondary source lost to a primary one.
+
+Three things the plan got right and should be reused:
+
+- **"Read the bios by eye, not by regex" was necessary, exactly as written.** District 7's page yields
+  Mack Bernard's 2016 and District 6's yields Melissa McKinlay's 2014 to a regex for
+  `elected in (\d{4})`. Both traps are real, in the exact pages the plan named.
+- **The three bios the plan predicted would be undated were the three that were** — Flores, Sachs and
+  Baxter. The plan's expected values were right for Flores and Baxter and wrong only for Sachs.
+- **Mack Bernard was the only name collision among the twelve**, as measured during planning, and
+  Bobby Powell Jr. is a fresh insert. The `County_Commission_Districts` decoy layer still names Bernard
+  for District 7.
+
+One thing the plan under-promised: **the Clerk's seat needed no judgement call in the end.** The
+Clerk's own site states the appointment and its effective date outright — *"appointed to the position by
+Chief Judge Glenn Kelley effective August 18, 2026"* — so seating Shannon Ramsey-Chessman rests on a
+primary source, not on the plan's reasoning about what a voter needs. The reasoning is still recorded,
+because the **choice not to flag the office vacant** is still a choice.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 ### 🔴 There is no city half, and that changes the shape of the wave
@@ -136,7 +203,7 @@ Term limits: **two consecutive four-year terms** for commissioners; **none** for
 | District 2 | Gregg K. Weiss | `2018-11-01` | month | own bio: "elected to the District 2 seat … in November 2018 and was reelected in 2022" |
 | District 3 | Joel G. Flores | `2024-11-01` | month | ⚠ **NOT in his bio** — see below |
 | District 4 | Marci Woodward | `2022-11-01` | month | own bio: "elected in November 2022 … and currently serves as Vice Mayor" |
-| District 5 | Maria Sachs | `2022-11-01` | month | ⚠ **NOT in her bio** — see below |
+| District 5 | Maria Sachs | **`2020-11-01`** | month | 🔴 **CORRECTED IN TASK 2 — the plan said 2022.** Not in her bio; see the stagger note |
 | District 6 | Sara Baxter | `2022-11-01` | month | ⚠ **NOT in her bio** — see below |
 | District 7 | Bobby Powell Jr. | `2024-11-01` | month | own bio: "In November 2024, Bobby Powell Jr. was elected to the Palm Beach County Board of County Commissioners" |
 
@@ -146,7 +213,7 @@ Term limits: **two consecutive four-year terms** for commissioners; **none** for
 | --- | --- | --- | --- | --- | --- |
 | Clerk of the Circuit Court & Comptroller | **Shannon Ramsey-Chessman** | `2026-08-18` | **day** | **appointed** | the Clerk's own site: "Shannon Ramsey-Chessman Named Clerk Ad Interim" — see below |
 | Property Appraiser | Dorothy Jacks | `2017-01-01` | month | elected | own bio: "elected as Palm Beach County's Property Appraiser in 2016" |
-| Sheriff | Ric Bradshaw | `2005-01-04` | **day** | elected | own bio: "On January 4, 2005, Sheriff Bradshaw was sworn in as Sheriff of Palm Beach County" |
+| Sheriff | Ric L. Bradshaw | `2005-01-04` | **day** | elected | own bio: "On January 4, 2005, Sheriff Bradshaw was sworn in as Sheriff of Palm Beach County" |
 | Supervisor of Elections | Wendy Sartory Link | `2019-01-01` | year | **appointed** | own page: "First appointed in 2019, elected in 2020, and re-elected in 2024" |
 | Tax Collector | Anne M. Gannon | `2007-01-01` | month | elected | own bio: "Elected in 2006" — ⚠ see the contradiction below |
 
@@ -210,9 +277,18 @@ The reasoning, because a later reader will need it:
 
 ⚠ **One source contradiction to resolve, not to guess at.** Anne Gannon's page says *"Elected in 2006"* and also *"currently serving her sixth term"*; four-year terms from 2006 give five terms by 2026, not six. `fl.md` separately records, from Manatee, that **Florida county officers run on the presidential cycle**. The 2026 Palm Beach primary carried **no** constitutional-officer contest — measured from the county's own election-night feed, which listed only BCC Districts 2 and 6, two school-board seats and three special districts — and that confirms the presidential cycle for Palm Beach too. So "elected in 2006" is either a special election or a page error. **Write `2007-01-01` `month` only if Task 2 corroborates the start; otherwise write `unknown` rather than reconcile the arithmetic yourself.**
 
-### ⚠ Four of the seven commission seats are on the November 2026 ballot
+### ⚠ THREE of the seven commission seats are on the November 2026 ballot
 
-Measured from the county's own election-night feed for the 2026 primary: Districts **2** and **6** had contested primaries, and District 2's is a **Universal Primary Contest**, meaning that seat was decided in August. Districts 4 and 5 are also up (elected 2022) but drew no contested primary. **Gregg Weiss is term-limited** — 2018 plus 2022 is his two consecutive terms.
+🔴 **CORRECTED IN TASK 2: THREE, not four — Districts 2, 4 and 6.** The seven seats are
+staggered **odd / even**: Districts 1, 3, 5 and 7 are elected in presidential years, Districts 2, 4
+and 6 in gubernatorial years. District 5 is an odd seat and is not up until 2028, which is the same
+correction that moved Maria Sachs' start from 2022 to 2020. Confirmed against the Supervisor of
+Elections' candidate filing report for three cycles (2022, 2024, 2026).
+
+**Gregg K. Weiss (District 2) is term-limited** — 2018 plus 2022 — and does not appear among the 2026
+filings. No Republican qualified for District 2, so its August Democratic primary was a **Universal
+Primary Contest** and decided the seat: **District 2 changes hands in November 2026.** Woodward (D4)
+and Baxter (D6) are both qualified for re-election.
 
 This wave seats the **current** holders, which is correct. But the roster's shelf life is about ten weeks. ▶ Record in `fl.md` that Palm Beach needs a re-check after the November 2026 general, before FL-7 assets.
 
@@ -736,7 +812,7 @@ Two live situations, both of which must be re-confirmed on the day the migration
    Clerk's own site that she still holds it and that no gubernatorial appointment has superseded the
    administrative order. **If the situation has changed, the fix is one row in `ROSTERS.md` — never a
    generator edit.**
-2. ⚠ **Four commission seats are on the November 2026 ballot** — Districts 2, 4, 5 and 6 — and
+2. ⚠ **Three commission seats are on the November 2026 ballot** — Districts 2, 4 and 6 — and
    **Gregg Weiss (D2) is term-limited**, with District 2's August primary a Universal Primary Contest,
    which decides the seat outright. None of them changes before November, but confirm no resignation
    has intervened.
@@ -770,12 +846,12 @@ for the officers in the alphabetical order of their titles.
 | Commissioner, District 2 | commissioner-2 | Gregg K. Weiss | -1240062 | 2018-11-01 | month | elected | pbcgov-d2-bio |
 | Commissioner, District 3 | commissioner-3 | Joel G. Flores | -1240063 | 2024-11-01 | month | elected | <filled by Step 3> |
 | Commissioner, District 4 | commissioner-4 | Marci Woodward | -1240064 | 2022-11-01 | month | elected | pbcgov-d4-bio |
-| Commissioner, District 5 | commissioner-5 | Maria Sachs | -1240065 | 2022-11-01 | month | elected | <filled by Step 3> |
+| Commissioner, District 5 | commissioner-5 | Maria Sachs | -1240065 | 2020-11-01 | month | elected | pbc-soe-candidates-2024 |
 | Commissioner, District 6 | commissioner-6 | Sara Baxter | -1240066 | 2022-11-01 | month | elected | <filled by Step 3> |
 | Commissioner, District 7 | commissioner-7 | Bobby Powell Jr. | -1240067 | 2024-11-01 | month | elected | pbcgov-d7-bio |
 | Clerk of the Circuit Court & Comptroller | clerk-of-circuit-court | Shannon Ramsey-Chessman | -1240071 | 2026-08-18 | day | appointed | pbcclerk-ad-interim-announcement |
 | Property Appraiser | property-appraiser | Dorothy Jacks | -1240072 | 2017-01-01 | month | elected | pbcpao-dorothy-bio |
-| Sheriff | sheriff | Ric Bradshaw | -1240073 | 2005-01-04 | day | elected | pbso-sheriff-bio |
+| Sheriff | sheriff | Ric L. Bradshaw | -1240073 | 2005-01-04 | day | elected | pbso-sheriff-bio |
 | Supervisor of Elections | supervisor-of-elections | Wendy Sartory Link | -1240074 | 2019-01-01 | year | appointed | votepalmbeach-meet-your-supervisor |
 | Tax Collector | tax-collector | Anne M. Gannon | -1240075 | 2007-01-01 | month | elected | pbctax-about-us |
 
@@ -807,7 +883,8 @@ Then the prose the tables cannot carry, one short section each:
 - **The Gannon contradiction** and how Step 5 resolved it.
 - **The excluded offices** — State Attorney and Public Defender (15th Judicial Circuit, coterminous
   with the county), the School Board, the special districts.
-- **The four seats on the November 2026 ballot**, and that Weiss is term-limited.
+- **The three seats on the November 2026 ballot** (Districts 2, 4, 6 — the even, gubernatorial-cycle
+  seats), the odd/even stagger that fixes which they are, and that Weiss is term-limited.
 
 - [ ] **Step 7: Assert the counts in the file, then check them mechanically**
 
@@ -1302,7 +1379,8 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
      layer name disagree about vintage.
   9. ⚠ **Only one host 403s `curl`** here, against Leon's six.
   10. ⚠ **The Clerk title uses `&` where Leon's uses `and`** — publisher, not drift.
-  11. ⚠ **Four commission seats are on the November 2026 ballot; Weiss is term-limited.** Re-check
+  11. ⚠ **Three commission seats are on the November 2026 ballot (2, 4, 6); Weiss is term-limited.**
+      The seats stagger odd = presidential, even = gubernatorial. Re-check
       Palm Beach after the general, before FL-7.
 - Add Caruso and Abruzzo to the standing **"write predecessor terms for all Florida vacancies
   together"** item, alongside Felts and FL-2's five.
