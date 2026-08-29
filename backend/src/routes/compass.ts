@@ -24,6 +24,13 @@ import {
   getBatchPoliticianAnswers,
   getPoliticianCitations,
 } from '../lib/compassService.js';
+import {
+  getUserLenses,
+  replaceUserLenses,
+  findUnknownTopicIds,
+  getRecalibrationFlags,
+  isLensKeyConflictError,
+} from '../lib/compassUserLensService.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
 
@@ -69,6 +76,32 @@ const postAnswerSchema = z.object({
 
 const putSelectedTopicsSchema = z.object({
   topic_ids: z.array(z.string().uuid()).min(0).max(50),
+});
+
+// A user lens key is client-generated and GLOBALLY unique, so it can become a
+// share link without being rewritten (migration 1849). The `u_` prefix is
+// required for one concrete reason: keys from this table and keys from the
+// curated inform.compass_lenses table ('local', 'federal', 'judicial') are read
+// by the same client-side lens switcher, and a user lens named 'federal' would
+// shadow the editorial one. The prefix makes collision impossible rather than
+// unlikely.
+const userLensKeyRegex = /^u_[a-z0-9]{4,32}$/;
+
+const userLensSchema = z.object({
+  key: z.string().regex(userLensKeyRegex, 'Lens key must look like u_7f3a91'),
+  name: z.string().trim().min(1).max(60),
+  // Max 8 — the compass renders a radar chart and more than 8 axes is
+  // unreadable. A product decision, mirrored by a CHECK constraint in 1849.
+  // Min 0 — a lens is named before it is filled.
+  topic_ids: z.array(z.string().uuid()).min(0).max(8),
+  visibility: z.enum(['private', 'unlisted']).optional(),
+});
+
+const putMyLensesSchema = z.object({
+  // 20 is a payload guard, not a product ceiling. The whole set rides in one
+  // request (and, for guests, in the shared ev-context payload), so an unbounded
+  // array here is an unbounded payload there.
+  lenses: z.array(userLensSchema).min(0).max(20),
 });
 
 const compareSchema = z.object({
@@ -148,6 +181,129 @@ router.get('/lenses', optionalAuth, async (req: Request, res: Response): Promise
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /compass/lenses] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/my-lenses
+// Auth: optional — unauthenticated returns 200 []
+// The caller's own custom lenses, each with the topics they should recalibrate.
+//
+// Guests get [] and no DB access, matching every other optionalAuth route here.
+// That is not a degraded mode: a guest's lenses live client-side and ride in the
+// shared ev-context payload until sign-in promotes them via PUT.
+//
+// `needsRecalibration` is computed per lens rather than returned as one flat list
+// because the same topic can sit in several lenses and the prompt belongs next to
+// each of them. See compassUserLensService for the rule — in short, an editorial
+// or clarifying edit can never raise a flag (ADR 0006 §2 keeps the version
+// stable), and a substantive one only raises it when the rungs at or beside the
+// user's own answer actually moved.
+// ---------------------------------------------------------------------------
+
+router.get('/my-lenses', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json([]); return; }
+
+  try {
+    const lenses = await getUserLenses(authReq.userId);
+
+    // One flags query for the union of every lens's topics, then partitioned
+    // per lens. One round trip regardless of how many lenses the user has.
+    const allTopicIds = [...new Set(lenses.flatMap(l => l.topicIds))];
+    const flags = await getRecalibrationFlags(authReq.userId, allTopicIds);
+    const flagsByTopic = new Map(flags.map(f => [f.topicId, f]));
+
+    res.status(200).json(
+      lenses.map(lens => ({
+        ...lens,
+        needsRecalibration: lens.topicIds
+          .map(id => flagsByTopic.get(id))
+          .filter((f): f is NonNullable<typeof f> => f !== undefined),
+      }))
+    );
+  } catch (err) {
+    console.error('[GET /compass/my-lenses] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// PUT /api/compass/my-lenses
+// Auth: optional — unauthenticated returns 200 []
+// Replaces the caller's entire lens set. Body: { lenses: [...] }.
+//
+// Whole-set replace so a guest's local collection promotes in one atomic request
+// on sign-in. Lenses absent from the body are deleted.
+//
+// 🔴 THIS DOES NOT VALIDATE AGAINST THE OPEN SEASON, AND THE DIFFERENCE FROM
+// PUT /selected-topics IS DELIBERATE. That route 422s any topic outside the
+// season's question set, which is right for the live compass. Applying it here
+// would mean a season rollover empties a lens the user built and named — data
+// loss dressed as validation. A lens may hold a topic this season does not ask;
+// GET reports it as 'not_asked_this_season' and the user decides. What a lens may
+// not hold is an id that names no topic at all, which is what is checked here.
+// ---------------------------------------------------------------------------
+
+router.put('/my-lenses', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json([]); return; }
+
+  const parsed = putMyLensesSchema.safeParse(req.body);
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0];
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: firstIssue?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  const { lenses } = parsed.data;
+
+  // Zod validates each lens in isolation and cannot see a key repeated across
+  // two of them. Left unchecked the upsert loop would silently collapse them
+  // into one row and return fewer lenses than were sent, which reads as data
+  // loss to the caller.
+  const keys = lenses.map(l => l.key);
+  const duplicateKeys = [...new Set(keys.filter((k, i) => keys.indexOf(k) !== i))];
+  if (duplicateKeys.length > 0) {
+    res.status(422).json({
+      code: 'DUPLICATE_LENS_KEYS',
+      message: `Lens keys must be unique within a request: ${duplicateKeys.join(', ')}`,
+      duplicate_keys: duplicateKeys,
+    });
+    return;
+  }
+
+  try {
+    const unknownIds = await findUnknownTopicIds(lenses.flatMap(l => l.topic_ids));
+    if (unknownIds.length > 0) {
+      res.status(422).json({
+        code: 'UNKNOWN_TOPIC_IDS',
+        message: `The following topic IDs do not exist: ${unknownIds.join(', ')}`,
+        invalid_ids: unknownIds,
+      });
+      return;
+    }
+
+    const saved = await replaceUserLenses(authReq.userId, lenses);
+    res.status(200).json(saved);
+  } catch (err) {
+    // Someone else already holds one of these keys. 409, not 422: the body is
+    // well-formed and the caller did nothing wrong — the key is simply taken,
+    // and the client's move is to regenerate it and retry, which is a conflict's
+    // meaning and not a validation failure's.
+    if (isLensKeyConflictError(err)) {
+      res.status(409).json({
+        code: err.code,
+        message: 'One or more lens keys are already in use. Generate new keys and retry.',
+        conflicting_keys: err.keys,
+      });
+      return;
+    }
+    console.error('[PUT /compass/my-lenses] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
