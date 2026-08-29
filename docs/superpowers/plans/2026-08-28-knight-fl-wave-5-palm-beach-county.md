@@ -148,6 +148,55 @@ because the **choice not to flag the office vacant** is still a choice.
 
 ---
 
+## 🔴 Deviations found during execution — Task 3, 2026-08-28
+
+`scripts/gen-palm-beach-migrations.mjs` and its test are written; **19 tests pass**;
+`CC_wip_palm_beach_county.sql` is generated at **824 lines with 41 post-verify gates**. `tsc` clean,
+`check:migrations` green. All six safety greps pass, and every district lookup in the emitted SQL pairs
+`geo_id` with `mtfcc`. Three things went differently.
+
+1. 🔴🔴 **AN INHERITED DEFECT IN FL-4 THAT REACHED PROD: ITS `HEADER` TEMPLATE WAS NEVER
+   RE-POINTED.** FL-4 copied FL-3's generator and left the header literal untouched, so **all three of
+   `CC_0011`, `CC_0012` and `CC_0013` were APPLIED carrying `wave FL-3`, FL-3's plan path, FL-3's roster
+   path and FL-3's generator name.** A reader of `CC_0013_leon_county.sql` is pointed at the
+   Bradenton/Manatee plan and the Bradenton/Manatee roster.
+   Comment-only — no data, no numbering, no behaviour. But it is exactly the drift CLAUDE.md warns
+   about when migrations are copied: *"filenames, cross-references in comments, and migration numbers
+   embedded in data already written to prod"*.
+   FL-5's `HEADER` now interpolates `WAVE`, `PLAN`, `ROSTER_REL` and `GENERATOR` constants, so it cannot
+   recur. **The three applied FL-4 files are NOT edited here** — that is outside Task 3.
+   ▶ **Open, and it needs a decision:** fix the three headers in place (comment-only, the same class of
+   change FL-4 itself made to `CC_0009`/`CC_0010` after they applied), or leave them and record the
+   wrong pointers in `fl.md`.
+
+2. 🔴 **THE PLAN'S TEST FIXTURE WAS INVALID, AND THE GENERATOR WAS RIGHT TO REFUSE IT.** Step 6
+   sketched a fixture of "a handful of rows". `parseRosters()` asserts the **7 + 5 shape
+   unconditionally** — it has to, because a commission seat mapped `countywide` still totals twelve and
+   would put that one commissioner on **every** Palm Beach address — so a six-row fixture is rejected
+   with *"expected 7 commission seats, got 3"*. The fixture is now the full twelve rows, and the refusal
+   became its own test case rather than being worked around.
+
+3. 🔴 **`splitName()` HAD A REAL BUG THAT THIS ROSTER IS THE FIRST TO HIT.** FL-3's and FL-4's
+   regex required a **comma** before a suffix: `/,\s*(Jr\.?|Sr\.?|II|III|IV)\s*$/i`. It matches
+   Manatee's `Charles R. "Rick" Wells, Jr.` and does **not** match Palm Beach's **`Bobby Powell Jr.`**,
+   which has no comma. Left alone it would have produced `first_name = 'Bobby'`,
+   **`last_name = 'Jr.'`** and `middle_initial` empty with "Powell" discarded as a middle name — a
+   politician row whose surname is a suffix, inserted without error. Widened to `/,?\s+(…)$/i`, and the
+   test pins Bobby / Powell / Jr. ⚠ **FL-6 should re-check this the moment a name carries a suffix.**
+
+Two places the plan under-specified, both tightened:
+
+- **Step 4 asked for negative assertions on the three forbidden titles; the emitted gate also asserts
+  the positive five BY TITLE and, separately, that ZERO commissioner offices sit on the countywide
+  district.** The count-based version would pass if a commissioner were mapped countywide *and* an
+  officer were dropped. The direct assertion says the thing itself.
+- **The precision histogram is gated per bucket, not just "zero unknown"** — day 2, year 1, and seven
+  month-precision November commissioner terms. And the two appointments are asserted **by title**, not
+  only by count, because a count of two passes if an elected officer is mislabelled and an appointed one
+  is not.
+
+---
+
 ## Facts measured 2026-08-28 — do not re-derive these
 
 ### 🔴 There is no city half, and that changes the shape of the wave
