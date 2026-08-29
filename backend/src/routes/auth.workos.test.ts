@@ -177,4 +177,16 @@ describe('WorkOS-aware logout + password reset (AUTHKIT_PRIMARY)', () => {
     expect(res.status).toBe(200);
     expect(authSvc.confirmWorkosPasswordReset).toHaveBeenCalledWith('tok_1', 'newpassword1');
   });
+
+  it('reset-password success clears the WorkOS session cookies (a reset revokes all sessions)', async () => {
+    authSvc.confirmWorkosPasswordReset.mockResolvedValueOnce({ ok: true });
+    const res = await request(app)
+      .post('/api/auth/reset-password')
+      .set('Cookie', ['ev_wos_session=rt', 'ev_wos_pending=pat_1'])
+      .send({ token_hash: 'tok_1', password: 'newpassword1' });
+    expect(res.status).toBe(200);
+    const cookies = (res.get('Set-Cookie') ?? []).join(';');
+    expect(cookies).toContain('ev_wos_session=;');
+    expect(cookies).toContain('ev_wos_pending=;');
+  });
 });

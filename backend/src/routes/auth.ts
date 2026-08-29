@@ -827,6 +827,10 @@ router.post('/reset-password', authLimiter, async (req: Request, res: Response):
   if (env.AUTHKIT_PRIMARY === 'true') {
     const outcome = await confirmWorkosPasswordReset(token_hash, password);
     if (outcome.ok) {
+      // A WorkOS password reset revokes all of that user's sessions, so any
+      // WorkOS cookies held by THIS browser are now stale — clear them too.
+      res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+      res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
       res.status(200).json({ message: 'Password updated successfully' });
       return;
     }

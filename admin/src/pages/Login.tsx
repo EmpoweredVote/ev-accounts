@@ -209,8 +209,14 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
       const result = await loginWithPassword(email, password);
       if (result.status === 'authenticated') {
         await finishLogin(result.token, validRedirect, email);
+      } else if (result.status === 'email_verification_required') {
+        setCodeStep(true);
       } else {
-        setCodeStep(true); // email_verification_required or mfa_required
+        // mfa_required: the code step calls verify-email, which uses the
+        // email-verification grant and cannot satisfy an MFA challenge —
+        // advancing there would just fail on submit. MFA sign-in isn't wired
+        // up yet, so stop here with an explanation instead.
+        setError("Multi-factor sign-in isn't available yet. Please contact support.");
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign-in failed');

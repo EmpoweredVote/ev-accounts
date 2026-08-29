@@ -1,5 +1,5 @@
 import { useAuthStore } from '../store/authStore';
-import { hasWorkosSession, refreshWorkosToken, workosEnabled } from './workosAuth';
+import { embeddedAuthEnabled, hasWorkosSession, refreshWorkosToken, workosEnabled } from './workosAuth';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -12,7 +12,10 @@ async function refreshAccessToken(): Promise<string | null> {
   if (refreshPromise) return refreshPromise;
   // A WorkOS session (decision 0002 transition) refreshes through the AuthKit
   // SDK — the ev_session cookie belongs to the classic Supabase flow only.
-  refreshPromise = (workosEnabled && hasWorkosSession()
+  // When embedded auth is on, the WorkOS session itself is carried in the
+  // httpOnly ev_wos_session cookie, so /auth/session (Task 6) reads it
+  // instead — the SDK branch stays only for the non-embedded rollout window.
+  refreshPromise = (workosEnabled && hasWorkosSession() && !embeddedAuthEnabled
     ? refreshWorkosToken().then((token) => {
         if (token) {
           useAuthStore.setState({ accessToken: token });
