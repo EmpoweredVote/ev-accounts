@@ -17,7 +17,7 @@ Jurisdictions: **Bradenton** (Manatee), **Miami** (Miami-Dade), **Palm Beach Cou
 | FL-3 | Bradenton + Manatee County | ✅ applied 2026-08-28 — `CC_0008`, `CC_0009`, `CC_0010` |
 | FL-4 | Tallahassee + Leon County | ✅ applied 2026-08-28 — `CC_0011`, `CC_0012`, `CC_0013` |
 | FL-5 | Palm Beach County (county only) | ✅ applied 2026-08-28 — `CC_0014` |
-| FL-6 | Miami + Miami-Dade County | — |
+| FL-6 | Miami + Miami-Dade County | **planned 2026-08-29**, not applied — [plan](../../docs/superpowers/plans/2026-08-29-knight-fl-wave-6-miami-miami-dade.md) |
 | FL-7 | Florida assets (headshots + 3 banners) | — |
 
 ## Geography loaded (FL-1)
@@ -73,6 +73,13 @@ only one that disagrees, suspect the anchor before suspecting the load.
 The plan numbers also confirm the vintage: the operative maps are the **2022 apportionment**, and
 Florida redistricts decennially, so the next legislative remap is 2032. Only the congressional map was
 litigated after 2022.
+
+🔴 **CORRECTED 2026-08-29 while planning FL-6: that last sentence is true of the STATE maps and
+FALSE of a CITY map.** **Miami's own commission map was struck down TWICE by a federal court** — Judge
+K. Michael Moore held both the 2022 and the 2023 maps unconstitutionally racially gerrymandered in
+April 2024, and the map in force is the one the Commission adopted 4–1 in a **May 2024 settlement**,
+drawn by the plaintiffs and the ACLU of Florida. **A local map can be litigated even when the state
+maps are not; check per jurisdiction.**
 
 ## Target-city place GEOIDs (for FL-3 onward)
 
