@@ -35,6 +35,66 @@ Everything in FL-3's, FL-4's and FL-5's Global Constraints still applies. These 
 
 ---
 
+## 🔴 Deviations found during execution — Task 1, 2026-08-29
+
+`X0040` is **loaded**: 13 districts, all `ST_MultiPolygon`, all valid, all single-part, all SRID 4326,
+areas matching the recorded literals to **0.00 %** on all thirteen. The loader re-runs as a clean
+no-op. `check:migrations`, `check:occupancy` and `check:child-county` are all green;
+`check:child-county` is unchanged at **7,245 children / 0 stale**, confirming again that an `X`-code
+load needs no matview refresh. Every measured literal in the plan held exactly — tiling
+0.0315 / 0.0320 / 0.0000, vintage symmetric differences 126.132 / 67.718 / 16.339. Three things are
+worth recording.
+
+1. 🔴🔴 **THE VINTAGE GATE HAD TO MOVE TO THE FRONT, AND THE REASON IS STRONGER THAN THE PLAN KNEW.**
+   The plan placed the vintage gate at Step 5, after the control points and the area gate, and asked
+   Step 6 to *"confirm the vintage message appears"*. Written in that order it **cannot** appear.
+   Measured by pointing `PRIMARY_URL` at `CommissionDistrict2011`:
+   - **ALL 17 CONTROL POINTS PASS ON THE WRONG MAP** — every one of the 13 interior points and both
+     negative controls. The plan predicted this for District 1 only ("a spot check there would pass").
+     It is true of **every** control point. The districts moved, but never far enough to carry an
+     interior point out of its own district. **The point gates cannot discriminate between the
+     vintages at all.**
+   - The **area gate fires first**, on District 2 at 3.76 % — and its remedy text reads *"re-measure
+     deliberately and update `EXPECTED_SQ_MI` in the same commit, with the reason."* 🔴 **An editor who
+     follows that advice re-baselines the loader onto the 2011 map**, after which every gate agrees
+     with the wrong apportionment. District 1 is 0.21 % apart, **inside** the 1 % tolerance, so it
+     passes the area gate on the wrong map too.
+   ▶ **So "which map is this?" must be answered before any gate whose failure message invites
+   re-baselining.** The vintage gate is now **GATE 1**, ahead of the control points; the area gate is
+   GATE 4 and the tiling gate GATE 5. Both gates carry cross-references saying so, and the vintage
+   failure message now ends with an explicit *"DO NOT fix this by updating `EXPECTED_SQ_MI`"*.
+   ⚠ **Generalise this, it is not about Miami-Dade:** a gate that says *"update the expectation"* must
+   never be the first gate to fire, because the cheapest way to make it green is to accept the bad
+   input. Order gates so the diagnostic one speaks before the re-baselining one.
+
+2. ⚠ **Two of the three Step 6 proofs needed an earlier gate neutralised to reach their target, and
+   that is a finding about the proofs, not a workaround.** Dropping `'13'` from `DISTRICTS` aborts at
+   the **control-point** gate ("District 13 interior: expected D13, got none"), not at the tiling gate,
+   so the proof also had to drop District 13's control point — and keep `EXPECTED_COUNT` at 13, since
+   lowering it to 12 aborts at the fetch check instead. With both neutralised the tiling gate reports
+   **24.3539 sq mi uncovered**, ~97× the tolerance, exactly as the plan predicted. The area proof
+   needed nothing neutralised. ▶ **A gate proof that fires the wrong gate proves the wrong thing;
+   state which earlier gate you disabled and why.**
+
+3. ⚠ **The worktree is not a working environment on arrival, and Task 0 does not say so.** A fresh
+   `git worktree` carries tracked files only, so `/c/ev-accounts-knight/backend` had **no `.env` and no
+   `node_modules`**. `npx tsx` failed with `ERR_MODULE_NOT_FOUND: Cannot find package 'dotenv'` before
+   any gate could run. Fixed with `npm ci` (393 packages, 9 s) and by exporting `DATABASE_URL` from the
+   primary worktree's `.env` per command — `dotenv` does not override an already-set variable, so this
+   is equivalent and copies no secret into a second tree. ▶ **Add to Task 0:** after picking the
+   worktree, run `npm ci` and confirm `DATABASE_URL` resolves, before Task 1.
+
+Two things the plan got exactly right and should be reused:
+
+- **The two-digit key regex warning was necessary and correctly aimed.** `/^(1[0-3]|[1-9])$/` is in
+  place with the comment explaining why `/^[1-9]$/` fails *silently* — it would drop districts 10–13
+  and then report a count error that points at the count, not at the regex.
+- **The `TBLCOMMISSIONDISTRICT` probe is worth its lines.** Verified live: 13 features, **every one
+  `"geometry": null`**, and the payload still names `Jean Monestime` and `Sally A. Heyman`. It is the
+  roster-in-a-boundary-layer failure mode and the named-like-the-primary trap in one object.
+
+---
+
 ## Facts measured 2026-08-28/29 — do not re-derive these
 
 ### The shape of the wave
@@ -393,7 +453,7 @@ Hialeah is the control this wave most needs: a large incorporated city inside Mi
 
 🔴 **This task exists because the branch moved under the plan.** Skipping it is how a wave takes `CC_0006` when the real next free slot is `CC_0015`.
 
-- [ ] **Step 1: Find the worktree that is on the knight branch**
+- [x] **Step 1: Find the worktree that is on the knight branch**
 
 ```bash
 cd /c/EV-Accounts && git worktree list && git fetch origin
@@ -410,7 +470,7 @@ Pick one, in this order of preference:
 
 ⚠ **Do not `git checkout` over another session's branch on a hunch.** Two sessions have already swept each other's staged files in this repo.
 
-- [ ] **Step 2: Confirm the slots from the branch, not from a bare `ls`**
+- [x] **Step 2: Confirm the slots from the branch, not from a bare `ls`**
 
 ```bash
 cd <knight-worktree>/backend && npm run check:migrations && \
@@ -432,7 +492,7 @@ Expect the highest `CC_` slot to be **`CC_0014`** and the highest `X` code **`X0
 - Produces: 13 rows in `essentials.geofence_boundaries`, `mtfcc = 'X0040'`, `state = 'fl'`,
   `geo_id = 'miami-dade-fl-commissioner-district-' || n` for `n` in 1..13, all SRID 4326.
 
-- [ ] **Step 1: Copy FL-5's loader — NOT FL-4's**
+- [x] **Step 1: Copy FL-5's loader — NOT FL-4's**
 
 ```bash
 cd <knight-worktree>/backend && cp scripts/load-palm-beach-commission-boundaries.ts scripts/load-miami-dade-commission-boundaries.ts
@@ -440,7 +500,7 @@ cd <knight-worktree>/backend && cp scripts/load-palm-beach-commission-boundaries
 
 FL-5's is the one with the `ST_SRID` post-insert check and the blank-row skip. **Read it end to end**, then make the changes below. 🔴 **Its structural tiling gate is the one thing you must REPLACE, not re-point** — see Step 4.
 
-- [ ] **Step 2: Re-point the constants, and pick the primary deliberately**
+- [x] **Step 2: Re-point the constants, and pick the primary deliberately**
 
 ```ts
 const ORG = 'https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services';
@@ -481,7 +541,7 @@ const DISTRICTS = ['1','2','3','4','5','6','7','8','9','10','11','12','13'] as c
 
 🔴 **Do not read `COMMNAME`.** It is current today, and `CommissionDistrict2011` and `TBLCOMMISSIONDISTRICT` both prove the failure mode from the same publisher — they still name Jean Monestime and Sally A. Heyman. Request `ID` only.
 
-- [ ] **Step 3: Set the per-district area expectations and control points**
+- [x] **Step 3: Set the per-district area expectations and control points**
 
 ```ts
 /** Measured 2026-08-29 from the reprojected 4326 geometry via ::geography. */
@@ -521,7 +581,7 @@ const TILING_TOLERANCE_SQ_MI = 0.25;
 
 ⚠ **Percentage tolerance only.** District 9 is 1,111.772 sq mi and District 13 is 24.323 — a 46× range, wider than Palm Beach's 43×.
 
-- [ ] **Step 4: REPLACE FL-5's structural gate with a tight tiling gate**
+- [x] **Step 4: REPLACE FL-5's structural gate with a tight tiling gate**
 
 FL-5's gate demands *exactly one* uncovered part above 0.05 sq mi, offshore, sized 150–160 sq mi. **Miami-Dade has no such gap and would fail it.** Measured 2026-08-29: uncovered **0.0315**, overhang **0.0320**, self-overlap **0.0000** against TIGER `12086`, whose area the union matches to **0.001 sq mi**.
 
@@ -552,7 +612,12 @@ Fail if any exceeds `TILING_TOLERANCE_SQ_MI`. Put the reason in the message:
 
 🔴 **`c` must pair `geo_id` with `mtfcc`.** `12086` also matches a **New York ZIP code** in this table.
 
-- [ ] **Step 5: Add the vintage gate — the 2011 layer must DIFFER, on a district that moved**
+- [x] **Step 5: Add the vintage gate — the 2011 layer must DIFFER, on a district that moved**
+
+🔴 **CORRECTED IN PLACE 2026-08-29: THIS GATE RUNS *FIRST*, NOT FIFTH.** Written in the order below it
+can never speak — all 17 control points pass on the 2011 map, and the area gate fires first with a
+message that invites re-baselining onto it. It is GATE 1 in the loader, ahead of the control points.
+See the Task 1 deviations section.
 
 This is the gate no earlier wave needed, and Miami-Dade is the reason.
 
@@ -585,7 +650,7 @@ Assert, for each: `symdiff(primary[d], vintage2011[d]) >= minSqMi`. If any comes
 
 ⚠ **Also assert `TBLCOMMISSIONDISTRICT` is not usable as geometry**, once, as a documented probe: fetch it and confirm every feature has **no** geometry. It is named like the primary and returns 13 rows; a future editor will reach for it.
 
-- [ ] **Step 6: Dry-run, prove three gates can fail, then load**
+- [x] **Step 6: Dry-run, prove three gates can fail, then load**
 
 ```bash
 cd <knight-worktree>/backend && npx tsx scripts/load-miami-dade-commission-boundaries.ts --dry-run
@@ -603,7 +668,7 @@ Then load:
 cd <knight-worktree>/backend && npx tsx scripts/load-miami-dade-commission-boundaries.ts
 ```
 
-- [ ] **Step 7: Verify from the DATABASE**
+- [x] **Step 7: Verify from the DATABASE**
 
 ```bash
 cd <knight-worktree>/backend && psql "$DATABASE_URL" -At -F ' | ' -c "
@@ -616,7 +681,7 @@ Expect 13 rows, all `ST_MultiPolygon` (the insert wraps in `ST_Multi`, as every 
 
 ⚠ **`ORDER BY length(geo_id), geo_id`** — a plain lexical sort puts district 10 before district 2.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 Commit message:
 
