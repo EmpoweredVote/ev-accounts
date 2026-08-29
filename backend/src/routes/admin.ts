@@ -44,7 +44,7 @@ import {
   getDashboardStats,
   getCronLog,
   getAdminMe,
-  adminCreateTopicWithStances,
+  adminCreateTopicWithRevision,
   adminListTopics,
   adminCreatePolitician,
   adminUpdatePolitician,
@@ -824,6 +824,9 @@ const PoliticianContextSchema = z.object({
   sources: z.array(z.string()).optional(),
 });
 
+// A topic is created on the revision model (CA_0026): it needs a full 5-rung
+// ladder to display on the season read path and to be pinnable into a season,
+// so exactly 5 non-empty stances (values 1..5) are required at creation.
 const CreateTopicWithStancesSchema = z.object({
   title: z.string().min(1),
   question_text: z.string().min(1),
@@ -832,7 +835,7 @@ const CreateTopicWithStancesSchema = z.object({
   stances: z.array(z.object({
     value: z.number().int().min(1).max(5),
     text: z.string().min(1),
-  })).optional(),
+  })).length(5, 'exactly 5 stances (values 1..5) are required'),
 });
 
 const CreatePoliticianSchema = z.object({
@@ -888,7 +891,7 @@ router.post('/compass/topics', async (req, res) => {
       res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
       return;
     }
-    const result = await adminCreateTopicWithStances(parsed.data);
+    const result = await adminCreateTopicWithRevision({ ...parsed.data, actorId: actorId(req) });
     await logAdminAction(actorId(req), 'create_compass_topic', null, {
       topic_id: ((result as Record<string, unknown>).topic as Record<string, unknown>).id,
       title: parsed.data.title,
