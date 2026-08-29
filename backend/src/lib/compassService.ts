@@ -798,8 +798,15 @@ export async function resetCompassAnswers(
 /**
  * saveSelectedTopics
  * Saves validated topic IDs into connected_profiles.selected_topic_ids.
- * Uses createUserClient — RLS enforces owner-only update.
- * Returns false if the user has no connected_profiles row (NOT_CONNECTED).
+ *
+ * Returns false when the user has no connected_profiles row — the UPDATE matches
+ * nothing and NOTHING IS SAVED. Callers must treat false as a failed write; the
+ * route answers 409 NOT_CONNECTED. It previously answered 200 [], which told the
+ * caller their compass was stored when it had been discarded.
+ *
+ * Uses pool.query with explicit `WHERE user_id = $1` scoping, NOT createUserClient
+ * — the doc comment here claimed RLS enforcement long after the body stopped using
+ * it. The scoping is correct either way, but the stated rule was not the real one.
  */
 export async function saveSelectedTopics(
   accessToken: string,

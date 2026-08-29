@@ -43,7 +43,7 @@ import type { Request, Response } from 'express';
  *   - Owner-read routes (answers, selected-topics): createUserClient (RLS enforced)
  *   - Server-side computations (progress): compassService via RPC
  *   - Write routes (POST /answers): adminRpc (SECURITY DEFINER RPC)
- *   - Write routes (PUT /selected-topics): compassService (createUserClient)
+ *   - Write routes (PUT /selected-topics): compassService (pool, explicit user_id scoping)
  *
  * Route ordering: specific paths before parameterized paths to prevent
  * Express routing conflicts (e.g., /politicians before /politicians/:id).
@@ -912,7 +912,8 @@ router.post('/answers', optionalAuth, async (req: Request, res: Response): Promi
 // Auth: optional — unauthenticated returns 200 []
 // Saves the user's selected topic IDs after server-side validation.
 // Validates ALL submitted IDs exist and are live before storing.
-// Returns flat array (Go-parity response shape).
+// Returns the flat array on success (Go-parity response shape).
+// 409 NOT_CONNECTED when the account has no connected_profiles row to store it in.
 // ---------------------------------------------------------------------------
 
 router.put(
@@ -952,8 +953,55 @@ router.put(
 
       const connected = await saveSelectedTopics(authReq.accessToken, authReq.userId, topic_ids);
       if (!connected) {
-        // Go backend returns empty array, not 403
-        res.status(200).json([]);
+        // 🔴 THIS USED TO ANSWER 200 [] AND THAT WAS A LIE. The user's compass is
+        // stored on connect.connected_profiles, so a caller without that row has
+        // nowhere to put it: the UPDATE matches zero rows and nothing is saved.
+        // Reporting success for a write that did not happen is the worst of the
+        // available answers — the client believes its compass is safe, and the
+        // condition is invisible in logs and metrics.
+        //
+        // It was deliberate once: the Go backend returned [] rather than 403 and
+        // this preserved that. The Go backend is retired, so the parity argument
+        // is gone and only the lie remains.
+        //
+        // 409 rather than 403: the caller is properly authenticated and allowed
+        // to ask, but their account is not in a state that can hold a compass.
+        // That is a conflict with server state, not a permission failure — and it
+        // matches the LENS_KEY_TAKEN conflict on /my-lenses.
+        //
+        // ⚠ THIS IS NOT A BROKEN ACCOUNT — IT IS AN INFORM-TIER ONE, AND THAT IS
+        // THE DESIGNED STATE. `Profile absence = Inform tier` (middleware/auth.ts).
+        // Before Inform accounts existed every signup needed an invite code and
+        // went through Connect, so everyone had a profile; since then people can
+        // sign up without one and correctly land without a profile row.
+        //
+        // Measured against prod 2026-08-29: 9 of 23 accounts had no connected
+        // profile, and 2 of those had already answered compass questions. Their
+        // answers persisted — inform.compass_responses is not tier-gated — while
+        // their choice of WHICH questions silently did not. The compass is an
+        // Inform-tier feature whose storage was left on a Connected-tier table.
+        //
+        // 🔴 THE REAL FIX IS TO MOVE THE STORAGE, not to create a row here.
+        // selected_topic_ids belongs on inform.inform_profiles, which exists for
+        // every user (23/23) and sits in the same schema as the answers. Follow-up
+        // work; once it lands this branch should be nearly unreachable and stays
+        // only as a genuine-failure signal.
+        //
+        // Creating a connected_profiles row here would be actively wrong: it is a
+        // tier promotion, written by POST /connect/complete beside
+        // tier_promotion_log, and it would hand Connected tier — invite-gated — to
+        // a user who never had an invite, as a side effect of saving a compass.
+        console.warn(
+          `[PUT /compass/selected-topics] user ${authReq.userId} has no connected profile — ` +
+          `compass not saved`
+        );
+        res.status(409).json({
+          code: 'NOT_CONNECTED',
+          // Deliberately does not tell the caller to go and Connect. For an
+          // Inform-tier account that is the wrong advice — they are not missing a
+          // step, the compass is simply stored somewhere they do not have yet.
+          message: 'This account has no profile record to store a compass on.',
+        });
         return;
       }
 
