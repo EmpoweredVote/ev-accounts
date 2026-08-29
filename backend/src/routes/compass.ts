@@ -18,6 +18,7 @@ import {
   validateTopicIds,
   isNoPromotedTopicsError,
   saveSelectedTopics,
+  getSelectedTopics,
   resetCompassAnswers,
   compareWithPoliticians,
   getUserVerdicts,
@@ -430,8 +431,8 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
 // GET /api/compass/selected-topics
 // Auth: optional — unauthenticated returns 200 []
 // Returns flat array of topic IDs (Go-parity response shape).
-// Uses createUserClient — RLS enforces owner-only access to connected_profiles.
-// Returns empty array if user has not completed the Connect flow (no 403).
+// Reads inform.inform_profiles (migration 1850) — every user has a row, so this
+// serves Inform-tier and Connected-tier users alike. Empty array = no selection.
 // ---------------------------------------------------------------------------
 
 router.get(
@@ -442,27 +443,11 @@ router.get(
     if (!authReq.userId) { res.status(200).json([]); return; }
 
     try {
-      const db = requestDb(authReq.accessToken);
-      const { data, error } = await db
-        .schema('connect')
-        .from('connected_profiles')
-        .select('selected_topic_ids')
-        .eq('user_id', authReq.userId)
-        .maybeSingle();
-
-      if (error) {
-        console.error('[GET /compass/selected-topics] Supabase error:', error);
-        res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-        return;
-      }
-
-      // No connected profile — return empty array (Go backend returns [] for no selections)
-      if (!data) {
-        res.status(200).json([]);
-        return;
-      }
-
-      res.status(200).json(data.selected_topic_ids ?? []);
+      // inform.inform_profiles, not connect.connected_profiles — migration 1850.
+      // Every user has a row there, so an Inform-tier user reads their own compass
+      // instead of the empty array a missing Connected profile used to produce.
+      const topicIds = await getSelectedTopics(authReq.userId);
+      res.status(200).json(topicIds);
     } catch (err) {
       console.error('[GET /compass/selected-topics] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -951,7 +936,7 @@ router.put(
         return;
       }
 
-      const connected = await saveSelectedTopics(authReq.accessToken, authReq.userId, topic_ids);
+      const connected = await saveSelectedTopics(authReq.userId, topic_ids);
       if (!connected) {
         // 🔴 THIS USED TO ANSWER 200 [] AND THAT WAS A LIE. The user's compass is
         // stored on connect.connected_profiles, so a caller without that row has

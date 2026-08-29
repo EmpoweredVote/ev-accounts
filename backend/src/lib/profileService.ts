@@ -14,6 +14,7 @@
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { pool } from './db.js';
+import { getSelectedTopics } from './compassService.js';
 
 // ---------------------------------------------------------------------------
 // Internal types
@@ -146,7 +147,7 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
   const { data: connected, error: connectedError } = await supabaseAdmin
     .schema('connect')
     .from('connected_profiles')
-    .select('user_id, display_name, total_xp, selected_topic_ids, gem_balance_yellow, gem_balance_blue, gem_balance_red, location_consent')
+    .select('user_id, display_name, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, location_consent')
     .eq('user_id', userId)
     .maybeSingle();
 
@@ -211,8 +212,14 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
   };
 
   // Step 8: Add Connected-and-above fields
+  //
+  // The compass now lives on inform.inform_profiles (migration 1850), so the
+  // value is read from there rather than the Connected profile. WHO SEES IT is
+  // deliberately unchanged: still Connected-and-above only. Every user has a
+  // compass to expose now, but widening a public profile field is a product
+  // decision, not a side effect of moving storage.
   if (isConnected) {
-    base.selected_topic_ids = (connected?.selected_topic_ids ?? []) as string[];
+    base.selected_topic_ids = await getSelectedTopics(userId);
   }
 
   // Step 9: Add Empowered-specific fields

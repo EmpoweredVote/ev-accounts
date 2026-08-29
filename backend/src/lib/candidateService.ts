@@ -21,6 +21,7 @@
 
 import { supabaseAdmin } from './supabase.js';
 import { cache } from './cache.js';
+import { getSelectedTopics } from './compassService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -121,18 +122,10 @@ export async function getCandidateBySlug(slug: string): Promise<CandidateProfile
   if (error) throw new Error(error.message);
   if (!data) return null;
 
-  // Fetch selected_topic_ids from connected_profiles
-  const { data: connectedData } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .select('selected_topic_ids')
-    .eq('user_id', data.user_id)
-    .maybeSingle();
-
-  const selectedTopicIds: string[] =
-    connectedData?.selected_topic_ids && Array.isArray(connectedData.selected_topic_ids) && connectedData.selected_topic_ids.length > 0
-      ? (connectedData.selected_topic_ids as string[])
-      : [];
+  // The compass lives on inform.inform_profiles as of migration 1850, not on the
+  // Connected-tier profile. Reading the old column here would silently return []
+  // for any Inform-tier candidate — and for everyone else once it is dropped.
+  const selectedTopicIds: string[] = await getSelectedTopics(data.user_id);
 
   // Fetch public compass answers for selected topics
   let featuredStances: Array<{ topic_id: string; value: number; write_in_text?: string }> = [];

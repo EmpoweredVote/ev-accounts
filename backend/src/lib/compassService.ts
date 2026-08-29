@@ -797,30 +797,54 @@ export async function resetCompassAnswers(
 
 /**
  * saveSelectedTopics
- * Saves validated topic IDs into connected_profiles.selected_topic_ids.
+ * Saves validated topic IDs into inform.inform_profiles.selected_topic_ids.
  *
- * Returns false when the user has no connected_profiles row — the UPDATE matches
- * nothing and NOTHING IS SAVED. Callers must treat false as a failed write; the
- * route answers 409 NOT_CONNECTED. It previously answered 200 [], which told the
- * caller their compass was stored when it had been discarded.
+ * 🔴 inform_profiles, NOT connect.connected_profiles — see migration 1850. The
+ * compass used to be stored on the Connected-tier profile, which an Inform-tier
+ * user does not have (`Profile absence = Inform tier`, middleware/auth.ts), so
+ * their compass was silently discarded on every save. inform_profiles has a row
+ * for every user via migration 084's trigger, and sits in the same schema as the
+ * answers the selection belongs with.
  *
- * Uses pool.query with explicit `WHERE user_id = $1` scoping, NOT createUserClient
- * — the doc comment here claimed RLS enforcement long after the body stopped using
- * it. The scoping is correct either way, but the stated rule was not the real one.
+ * Upserts rather than updates. The trigger guarantees the row, but creating one
+ * here is harmless if it is ever missing — unlike connected_profiles, an
+ * inform_profiles row is not a tier marker, which is exactly why the storage
+ * moved here. account.ts already uses this idiom for location hints.
+ *
+ * Returns false only if the write somehow affected no row. With the upsert that
+ * should not happen; the route still answers 409 on false rather than assuming.
+ *
+ * Uses pool.query with explicit `WHERE user_id`/`user_id = $1` scoping, NOT
+ * createUserClient — this runs as the service role with no RLS, so the scoping is
+ * the enforcement.
  */
 export async function saveSelectedTopics(
-  accessToken: string,
   userId: string,
   topicIds: string[]
 ): Promise<boolean> {
-  const { rows } = await pool.query<{ id: string }>(
-    `UPDATE connect.connected_profiles
-     SET selected_topic_ids = $2::jsonb, updated_at = now()
-     WHERE user_id = $1
-     RETURNING id`,
+  const { rows } = await pool.query<{ user_id: string }>(
+    `INSERT INTO inform.inform_profiles (user_id, selected_topic_ids)
+     VALUES ($1, $2::jsonb)
+     ON CONFLICT (user_id) DO UPDATE
+       SET selected_topic_ids = EXCLUDED.selected_topic_ids
+     RETURNING user_id`,
     [userId, JSON.stringify(topicIds)]
   );
   return rows.length > 0;
+}
+
+/**
+ * getSelectedTopics
+ * The user's chosen compass, from inform.inform_profiles (migration 1850).
+ * Returns [] for a user with no row — they have made no selection.
+ */
+export async function getSelectedTopics(userId: string): Promise<string[]> {
+  const { rows } = await pool.query<{ selected_topic_ids: string[] | null }>(
+    `SELECT selected_topic_ids FROM inform.inform_profiles WHERE user_id = $1`,
+    [userId]
+  );
+  const value = rows[0]?.selected_topic_ids;
+  return Array.isArray(value) ? value : [];
 }
 
 // ---------------------------------------------------------------------------
