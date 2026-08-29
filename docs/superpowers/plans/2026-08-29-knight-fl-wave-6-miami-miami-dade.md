@@ -95,6 +95,83 @@ Two things the plan got exactly right and should be reused:
 
 ---
 
+## 🔴 Deviations found during execution — Task 2, 2026-08-29
+
+`X0041` is **loaded**: 5 districts, all `ST_MultiPolygon`, valid, single-part, SRID 4326, areas matching
+the recorded literals to **0.01 % or better**. The loader re-runs as a clean no-op.
+`check:migrations`, `check:occupancy` and `check:child-county` all green; `check:child-county`
+unchanged at **7,245 / 0 stale**. Every literal the plan recorded held exactly — cross-check symmetric
+differences 0.0096…0.0940, place `uncovered` 0.4428 / `overhang` 0.3056, and
+**`place_covers_cityhall = true`**, the load-bearing one. Four things went differently.
+
+1. 🔴🔴 **THE PLAN SAID MIAMI PUBLISHES TWO COMMISSION-DISTRICT LAYERS. IT PUBLISHES FOUR
+   CANDIDATES, AND ONE OF THEM IS A 2017 PRE-LITIGATION VINTAGE WITH IDENTICAL FIELD NAMES.**
+   Enumerated across all 185 services on the org, 2026-08-29:
+
+   | Service | Edited | Keys | What it is |
+   | --- | --- | --- | --- |
+   | `Commission_Districts` | schema 2024-07-08, data 2025-12-17 | `COMDISTID` 1–5 | **PRIMARY** — the settlement map |
+   | `Commission_Districts_New` | 2025-06-24 | `COMDISTID` 1–5 | **CROSS-CHECK** — same map, ⚠ *older* edit despite "_New" |
+   | `Enriched Commission Districts` | **2017-07-19** | `COMDISTID` 1–5 | 🔴 **PRE-LITIGATION VINTAGE** |
+   | `District_<32 hex>` | **2026-06-01** (newest) | `district` = neighbourhood name | 13 **NEIGHBOURHOODS**, not districts |
+
+   🔴 **`Enriched Commission Districts` carries the same `COMDISTID` / `COMNAME` / `ADDRESS` fields,
+   the same `esriGeometryPolygon` type and the same five keys as the primary. A loader pointed at it
+   parses perfectly and errors on nothing.** It dates to **2017 — five years before the first of the
+   two maps a federal court struck down.** Its `COMNAME` reads Wifredo (Willy) Gort, Ken Russell,
+   Frank Carollo, Francis Suarez, Keon Hardemon.
+   ▶ **So Task 2 needed a VINTAGE GATE too, which the plan did not specify** — the same gate class
+   Task 1 introduced for Miami-Dade, and here the stakes are higher: loading a superseded Miami map
+   does not publish stale lines, it publishes **a districting a federal judge held to be a racial
+   gerrymander**. Measured symmetric difference, primary vs 2017: D1 0.5269, D2 1.5454, D3 1.6569,
+   D4 1.7351, D5 0.7149. The gate checks **D4, D3 and D2** at 1.0 / 1.0 / 0.9 — ⚠ **not D1 or D5**,
+   whose 0.53 and 0.71 are barely twice the cross-check tolerance and are weak evidence.
+   ⚠ **`District_<hex>` is the quieter trap:** it holds the newest edit date on the server, so
+   "take the most recently edited district layer" gets you Wynwood and Overtown. Its field is
+   `district`, not `COMDISTID`, so a keyed loader returns nothing rather than something wrong — but
+   the count is **13**, which is also Miami-Dade's commission-district count.
+
+2. 🔴 **THE GATE ORDER FROM TASK 1 WAS APPLIED HERE, AND IT MATTERS MORE.** Both discriminating
+   gates run before the area gate: **GATE 1 vintage** (this is not the 2017 map), **GATE 2
+   cross-check** (an independent digitization agrees), then control points, then area, then the place
+   gate. The area gate's failure text still says "update `EXPECTED_SQ_MI`", and it now carries a
+   pointer saying gates 1 and 2 passed and must be re-enabled if they were disabled. Same rule as
+   Task 1: **a gate that invites re-baselining must never be the first to fire.**
+
+3. ⚠ **THE `ADDRESS` FABRICATION IS NINE YEARS OLD AND WAS INHERITED ACROSS BOTH STRUCK-DOWN MAPS.**
+   The plan flagged it on the primary: D1 `3500 Pan American Drive`, D2 `3501`, D3 `3502`, D4 `3503`,
+   D5 `3504` — City Hall's address incremented per district. **The 2017 layer carries the identical
+   sequence.** So this is not a recent data-entry slip; it is a placeholder that has survived two
+   redistrictings and two lawsuits. Neither `ADDRESS` nor `COMNAME` is requested.
+
+4. ⚠ **A LIVE SERVICE FAILURE MID-RUN, AND THE LOADER DIED WITH AN UNREADABLE ERROR.** The place
+   proof aborted on `SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON` — ArcGIS
+   answered a throttled request with an HTML page. The message names neither the service nor the
+   cause, and the run succeeded on a plain retry. `fetchDistricts()` now reads the body as text,
+   `JSON.parse`s it in a `try`, and on failure prints **which layer** and **the first 200 characters**,
+   with a line saying an HTML body normally means throttling and to retry before changing anything.
+   ▶ **`load-miami-dade-commission-boundaries.ts` (Task 1) still has the unguarded `.json()` and
+   should get the same treatment** — left alone here rather than re-touching a committed file.
+
+Two things the plan got right and should be reused:
+
+- **Hialeah is the correct negative control and it earns its place.** A large incorporated city
+  *inside* Miami-Dade that is not Miami. It returns zero city districts. The failure it guards against
+  — a city layer that has quietly become a county layer — would otherwise hand a Hialeah resident a
+  commissioner they cannot vote for.
+- **Gating against TIGER place `1245000`, not the county, with `ST_Covers` on the anchor.** Miami is
+  ~56 sq mi inside a ~2,389 sq mi county; a county-tiling gate would assert nothing. Dropping D2
+  (26.299 sq mi) drives `uncovered` to **26.5575** against the 1.0 tolerance — ~26× — so the gate
+  cannot be confused for slack.
+
+⚠ **The D2 proof needed two control points neutralised** (City Hall and "District 2 interior", both of
+which expect D2), for the reason Task 1 recorded: the control-point gate fires first otherwise. With
+City Hall removed, `CONTROL_POINTS[0]` became the MDC Government Center, so the *anchor* sub-assertion
+in that proof tested a different point than in the real run. Stated here because a proof that quietly
+re-aims an assertion proves less than it appears to.
+
+---
+
 ## Facts measured 2026-08-28/29 — do not re-derive these
 
 ### The shape of the wave
@@ -720,7 +797,12 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
 - Produces: 5 rows, `mtfcc = 'X0041'`, `state = 'fl'`,
   `geo_id = 'miami-fl-commission-district-' || n` for `n` in 1..5.
 
-- [ ] **Step 1: Copy Task 1's loader and re-point it**
+- [x] **Step 1: Copy Task 1's loader and re-point it**
+
+🔴 **CORRECTED IN PLACE 2026-08-29: FOUR SERVICES ON THIS ORG LOOK LIKE COMMISSION DISTRICTS, NOT TWO.**
+`Enriched Commission Districts` is a **2017 pre-litigation vintage with identical field names** and
+needs a VINTAGE GATE, run FIRST; `District_<32 hex>` is 13 neighbourhood polygons carrying the newest
+edit date on the server. See the Task 2 deviations section.
 
 ```ts
 const ORG = 'https://services1.arcgis.com/CvuPhqcTQpZPT9qY/arcgis/rest/services';
@@ -775,7 +857,7 @@ const PLACE_TOLERANCE_SQ_MI = 1.0;        // measured 0.4428 / 0.3056
 
 🔴 **Do NOT read `COMNAME`, and do NOT read `ADDRESS` for anything.** `ADDRESS` is **fabricated** — District 1 says `3500 Pan American Drive`, D2 `3501`, D3 `3502`, D4 `3503`, D5 `3504`, which is City Hall's address incremented per district. Request `COMDISTID` only.
 
-- [ ] **Step 2: Gate against the TIGER place polygon, not the county**
+- [x] **Step 2: Gate against the TIGER place polygon, not the county**
 
 Measured 2026-08-29: union 55.936 vs TIGER `1245000`'s 56.073 sq mi — **uncovered 0.4428, overhang 0.3056**. Two agencies' city boundaries differ by annexation timing, so:
 
@@ -790,7 +872,7 @@ Measured 2026-08-29: union 55.936 vs TIGER `1245000`'s 56.073 sq mi — **uncove
 
 ⚠ **Do NOT gate the city districts against the county polygon.** Miami is ~56 sq mi inside a 2,389 sq mi county; a county-tiling gate would be meaningless.
 
-- [ ] **Step 3: Record the litigation history in the file header**
+- [x] **Step 3: Record the litigation history in the file header**
 
 The loader's header must carry this, because the map's provenance is the least obvious thing about it:
 
@@ -807,7 +889,7 @@ The loader's header must carry this, because the map's provenance is the least o
    is true of the STATE maps and FALSE of Miami's city map.
 ```
 
-- [ ] **Step 4: Dry-run, prove two gates, load, verify from the database, commit**
+- [x] **Step 4: Dry-run, prove two gates, load, verify from the database, commit**
 
 Same discipline as Task 1. Prove (a) the area gate by perturbing `EXPECTED_SQ_MI['2']`, and (b) **the place gate by dropping `'2'` from `DISTRICTS`** — District 2 is 26.299 sq mi, so `uncovered` should jump to ~26 against a 1.0 tolerance.
 
