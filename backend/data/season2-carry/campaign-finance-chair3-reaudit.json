@@ -8,8 +8,8 @@
   "rung_text_v1": "require full disclosure of all political donations",
   "rung_text_v3": "Keep contribution limits at current levels",
   "decision_split": {
-    "chosen": "SPLIT (2026-08-30, Chris Andrews) — do not blank the 96 disclosure seatings; re-home them to a new Campaign Transparency topic on the disclosure axis.",
-    "transparency_topic_status": "HELD — not created yet; author not ready (2026-08-30). When created it is a DRAFT topic, NOT pinned to Season 2 until decided.",
+    "chosen": "SPLIT (2026-08-30, Chris Andrews) \u2014 do not blank the 96 disclosure seatings; re-home them to a new Campaign Transparency topic on the disclosure axis.",
+    "transparency_topic_status": "CREATED (CA_0042, applied 2026-08-30) as a dormant DRAFT: topic_id 24194b6a-acfa-4934-a5df-d687ba6325e9, is_live=false, pinned to NO season, 0 quotes. NOT pinned to Season 2 yet. To re-home the 96 here, pin it to Season 2 (admin_season_add_topic) before S2 assembly, then run the carry; if left unpinned at S2 open, the 96 blank instead.",
     "transparency_topic_design": {
       "title": "Campaign Finance Transparency",
       "short_title": "Campaign Transparency",
@@ -44,11 +44,12 @@
           "text": "Require no public disclosure of political donors"
         }
       ]
-    }
+    },
+    "transparency_topic_id": "24194b6a-acfa-4934-a5df-d687ba6325e9"
   },
   "generated_for": "Season-2 carry re-audit of CA_0041 (campaign-finance rev3 axis split; old option 3 disclosure -> keep-current-limits). Disposition applies to the Season-2 answer set at assembly; Season 1 is not touched.",
   "decision": "re-home disclosure rows to campaign-transparency rung 2; keep genuine current-limits rows at campaign-finance option 3; blank the rest. CITATION BAR: primary instrument only.",
-  "prerequisite": "🔴 Opening Season 2 requires this carry to run first (campaign-finance rev3 is pinned to S2 q3). Without it, the 96 disclosure answers would seat at \"keep current limits\", which is false.",
+  "prerequisite": "\ud83d\udd34 Opening Season 2 requires this carry to run first (campaign-finance rev3 is pinned to S2 q3). Without it, the 96 disclosure answers would seat at \"keep current limits\", which is false.",
   "summary": {
     "total": 99,
     "re_home_to_transparency": 96,
@@ -60,7 +61,7 @@
     {
       "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
       "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
-      "politician_name": "Aaron Márquez",
+      "politician_name": "Aaron M\u00e1rquez",
       "party": "Democratic",
       "flags": {
         "names_primary_instrument": true,
@@ -83,7 +84,7 @@
     {
       "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632",
       "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
-      "politician_name": "Adam Gómez",
+      "politician_name": "Adam G\u00f3mez",
       "party": "Democratic",
       "flags": {
         "names_primary_instrument": true,
@@ -160,7 +161,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Wahab authored SB 573 (2023-24) imposing one-year post-employment lobbying restrictions on legislative committee consultants under the Political Reform Act â an ethics/transparency measure but not a campaign finance bill. No bills specifically limiting corporate donations, dark money, or establishing public campaign funding were found in her legislative record. Her about page frames work as serving constituents over corporate interests, suggesting rhetorical support for reform, but evidence supports a moderate transparency position rather than a strong structural reform stance.",
+      "current_reasoning": "Wahab authored SB 573 (2023-24) imposing one-year post-employment lobbying restrictions on legislative committee consultants under the Political Reform Act \u00e2\u0080\u0094 an ethics/transparency measure but not a campaign finance bill. No bills specifically limiting corporate donations, dark money, or establishing public campaign funding were found in her legislative record. Her about page frames work as serving constituents over corporate interests, suggesting rhetorical support for reform, but evidence supports a moderate transparency position rather than a strong structural reform stance.",
       "sources": [
         "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB573",
         "https://aishawahab.com/about"
@@ -190,7 +191,7 @@
     {
       "politician_id": "91c72443-147f-4d1f-adab-ee415dab5ea6",
       "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
-      "politician_name": "André Carson",
+      "politician_name": "Andr\u00e9 Carson",
       "party": "Democratic",
       "flags": {
         "names_primary_instrument": true,
@@ -203,7 +204,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Cosponsored the DISCLOSE Act of 2026 (H.R. 7802) per his own congress.gov member activity record — a donor-disclosure and transparency bill for political spending — matching the full-disclosure chair rather than an outright ban or deregulation stance.",
+      "current_reasoning": "Cosponsored the DISCLOSE Act of 2026 (H.R. 7802) per his own congress.gov member activity record \u2014 a donor-disclosure and transparency bill for political spending \u2014 matching the full-disclosure chair rather than an outright ban or deregulation stance.",
       "sources": [
         "https://www.congress.gov/member/andre-carson/C001072"
       ]
@@ -775,7 +776,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Stern voted AYE on SB 1027 (2024) — a disclosure-only campaign finance transparency bill under the Political Reform Act — which passed 39-0-1. No bills sponsored to ban private campaign money or limit corporate donations were found. His vote reflects support for full disclosure of political donations rather than structural spending limits or public financing.",
+      "current_reasoning": "Stern voted AYE on SB 1027 (2024) \u2014 a disclosure-only campaign finance transparency bill under the Political Reform Act \u2014 which passed 39-0-1. No bills sponsored to ban private campaign money or limit corporate donations were found. His vote reflects support for full disclosure of political donations rather than structural spending limits or public financing.",
       "sources": [
         "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027"
       ]
@@ -861,7 +862,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Todd's page on foreign lobbying and campaign financing calls for transparency — 'Americans deserve to know who is funding political campaigns' — focused on disclosure of foreign and domestic funding sources rather than spending limits or deregulation.",
+      "current_reasoning": "Todd's page on foreign lobbying and campaign financing calls for transparency \u2014 'Americans deserve to know who is funding political campaigns' \u2014 focused on disclosure of foreign and domestic funding sources rather than spending limits or deregulation.",
       "sources": [
         "https://jeremy-todd.com/issue-6"
       ]
@@ -882,7 +883,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Co-sponsored the DISCLOSE Act expanding disclosure requirements for independent campaign expenditures; supported Shays-Meehan soft money reform; voted YES on lobbyist disclosure of bundled donations over $5,000. Also voted NO on restricting 527 independent political committees — supporting disclosure over contribution limits — placing him closer to full-disclosure than strict limits.",
+      "current_reasoning": "Co-sponsored the DISCLOSE Act expanding disclosure requirements for independent campaign expenditures; supported Shays-Meehan soft money reform; voted YES on lobbyist disclosure of bundled donations over $5,000. Also voted NO on restricting 527 independent political committees \u2014 supporting disclosure over contribution limits \u2014 placing him closer to full-disclosure than strict limits.",
       "sources": [
         "https://www.ontheissues.org/CA/Jim_Costa_Government_Reform.htm"
       ]
@@ -945,7 +946,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Co-sponsored the Sunlight Act (S.1963), which requires public disclosure of committee testimony, committee votes, and subjects the Governor's office to Public Records Law — a transparency/disclosure stance.",
+      "current_reasoning": "Co-sponsored the Sunlight Act (S.1963), which requires public disclosure of committee testimony, committee votes, and subjects the Governor's office to Public Records Law \u2014 a transparency/disclosure stance.",
       "sources": [
         "https://web.archive.org/web/20260510014603/https://actonmass.org/legislators/joan-lovely/",
         "https://actonmass.org/sunlight-act/"
@@ -1093,7 +1094,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "OTI records Thune supports banning soft money donations to political parties and supports Internet disclosure of earmarks, but voted to allow some lobbyist gifts to Congress. This mixed record — supporting some disclosure and contribution limits while opposing full public financing — aligns with requiring full transparency of donations without restricting all corporate spending.",
+      "current_reasoning": "OTI records Thune supports banning soft money donations to political parties and supports Internet disclosure of earmarks, but voted to allow some lobbyist gifts to Congress. This mixed record \u2014 supporting some disclosure and contribution limits while opposing full public financing \u2014 aligns with requiring full transparency of donations without restricting all corporate spending.",
       "sources": [
         "https://www.ontheissues.org/Senate/John_Thune.htm"
       ]
@@ -1222,7 +1223,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Udell pledges to refuse corporate PAC money and frames \"dark money in our elections\" as corruption, but his stated legislative ask is \"transparency, accountability, and ethics reforms\" — a disclosure-focused position rather than an explicit statutory ban on corporate donations/dark money groups or elimination of private money via public financing.",
+      "current_reasoning": "Udell pledges to refuse corporate PAC money and frames \"dark money in our elections\" as corruption, but his stated legislative ask is \"transparency, accountability, and ethics reforms\" \u2014 a disclosure-focused position rather than an explicit statutory ban on corporate donations/dark money groups or elimination of private money via public financing.",
       "sources": [
         "https://www.kentudellforcongress.com",
         "https://ballotpedia.org/Kent_Udell"
@@ -1310,7 +1311,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Her campaign's \"10-Point Good Government Plan\" calls for immediate public disclosure of all stock trades, campaign contributions, and lobbying contacts — a full-disclosure position matching chair 3. Her 2026 Citizens Count survey left the \"amendment to limit outside funding of campaigns\" question with \"No Response,\" so this rests on her own campaign-site platform language rather than a survey answer.",
+      "current_reasoning": "Her campaign's \"10-Point Good Government Plan\" calls for immediate public disclosure of all stock trades, campaign contributions, and lobbying contacts \u2014 a full-disclosure position matching chair 3. Her 2026 Citizens Count survey left the \"amendment to limit outside funding of campaigns\" question with \"No Response,\" so this rests on her own campaign-site platform language rather than a survey answer.",
       "sources": [
         "https://www.lilytangwilliams.com/congress/issues/"
       ]
@@ -1352,7 +1353,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Murkowski has a mixed record: she supports matching funds for small donors with debate requirements (2013) and voted YES on allowing lobbyist gifts to Congress (2006). Her 2010 write-in campaign showed independence from party structures. She has not championed full public financing nor opposed all campaign finance limits — her record reflects support for disclosure and some limits without full reform advocacy.",
+      "current_reasoning": "Murkowski has a mixed record: she supports matching funds for small donors with debate requirements (2013) and voted YES on allowing lobbyist gifts to Congress (2006). Her 2010 write-in campaign showed independence from party structures. She has not championed full public financing nor opposed all campaign finance limits \u2014 her record reflects support for disclosure and some limits without full reform advocacy.",
       "sources": [
         "https://www.ontheissues.org/Senate/Lisa_Murkowski.htm"
       ]
@@ -1396,7 +1397,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Co-sponsored the Sunlight Act, which is focused on legislative transparency and public records rather than campaign finance limits per se — indicating support for disclosure and accountability norms.",
+      "current_reasoning": "Co-sponsored the Sunlight Act, which is focused on legislative transparency and public records rather than campaign finance limits per se \u2014 indicating support for disclosure and accountability norms.",
       "sources": [
         "https://web.archive.org/web/20260510015050/https://actonmass.org/legislators/liz-miranda/"
       ]
@@ -1417,7 +1418,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Campaign site states commitment to 'campaign finance transparency.' Calling for transparency in donations — rather than banning private money or strictly limiting corporate donations — aligns with value 3: require full disclosure of all political donations.",
+      "current_reasoning": "Campaign site states commitment to 'campaign finance transparency.' Calling for transparency in donations \u2014 rather than banning private money or strictly limiting corporate donations \u2014 aligns with value 3: require full disclosure of all political donations.",
       "sources": [
         "https://www.lorenabrunerforcongress.com/"
       ]
@@ -1524,7 +1525,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "His \"FairShare Democracy\" platform calls for \"stronger transparency and disclosure requirements for political spending\" and \"clear reporting of outside political spending\" alongside expanded small-donor participation — a disclosure-centered reform rather than an explicit ban on private money or corporate donations.",
+      "current_reasoning": "His \"FairShare Democracy\" platform calls for \"stronger transparency and disclosure requirements for political spending\" and \"clear reporting of outside political spending\" alongside expanded small-donor participation \u2014 a disclosure-centered reform rather than an explicit ban on private money or corporate donations.",
       "sources": [
         "https://www.mark4wi.info/post/fairshare-democracy-restoring-balance-trust-and-representation-in-the-american-republic",
         "https://www.mark4wi.info/50x4"
@@ -1725,7 +1726,7 @@
     {
       "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1",
       "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
-      "politician_name": "Monique Limón",
+      "politician_name": "Monique Lim\u00f3n",
       "party": "Democratic",
       "flags": {
         "names_primary_instrument": true,
@@ -1738,7 +1739,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Limón voted Aye on SB 1027 (2024, Political Reform Act disclosures for AI-generated political ads) and authored SB 702 (gubernatorial appointments transparency). Her record emphasizes transparency and disclosure requirements rather than hard limits on corporate donations or public financing.",
+      "current_reasoning": "Lim\u00f3n voted Aye on SB 1027 (2024, Political Reform Act disclosures for AI-generated political ads) and authored SB 702 (gubernatorial appointments transparency). Her record emphasizes transparency and disclosure requirements rather than hard limits on corporate donations or public financing.",
       "sources": [
         "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027",
         "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB702"
@@ -1760,7 +1761,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Mannion's platform calls for campaign finance transparency and her campaign notes it is 'powered by people — not billionaires,' but the stated policy is transparency/disclosure rather than strict limits or a ban on private money.",
+      "current_reasoning": "Mannion's platform calls for campaign finance transparency and her campaign notes it is 'powered by people \u2014 not billionaires,' but the stated policy is transparency/disclosure rather than strict limits or a ban on private money.",
       "sources": [
         "https://www.nancymannion.com/priorities",
         "https://www.nancymannion.com"
@@ -1868,7 +1869,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Niello voted NO on SB-42 (public campaign financing / California Fair Elections Act of 2026 — establishing public funding for state elections), indicating he opposes public campaign finance. However, he voted YES on SB-900 (Political Reform Act: requiring disclosure of top contributors in political advertising). This pattern — opposing publicly funded campaigns but supporting contributor disclosure requirements — matches value 3 (require full disclosure of all political donations).",
+      "current_reasoning": "Niello voted NO on SB-42 (public campaign financing / California Fair Elections Act of 2026 \u2014 establishing public funding for state elections), indicating he opposes public campaign finance. However, he voted YES on SB-900 (Political Reform Act: requiring disclosure of top contributors in political advertising). This pattern \u2014 opposing publicly funded campaigns but supporting contributor disclosure requirements \u2014 matches value 3 (require full disclosure of all political donations).",
       "sources": [
         "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB42",
         "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB900"
@@ -1911,7 +1912,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Sponsored S.507 improving campaign finance reporting by state ballot question committees — a transparency and disclosure-focused approach rather than banning private money or drastically restricting donations.",
+      "current_reasoning": "Sponsored S.507 improving campaign finance reporting by state ballot question committees \u2014 a transparency and disclosure-focused approach rather than banning private money or drastically restricting donations.",
       "sources": [
         "https://malegislature.gov/Bills/194/S507"
       ]
@@ -2083,7 +2084,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "McComas sponsored the Election Law - Candidate Truthfulness - Oath bill addressing political honesty — procedural rather than structural campaign finance reform suggesting a moderate position.",
+      "current_reasoning": "McComas sponsored the Election Law - Candidate Truthfulness - Oath bill addressing political honesty \u2014 procedural rather than structural campaign finance reform suggesting a moderate position.",
       "sources": [
         "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccomas"
       ]
@@ -2146,7 +2147,7 @@
         "topic_key": "campaign-transparency",
         "value": 2
       },
-      "current_reasoning": "Gloria supported California SB 1439 (effective 2023) tightening disclosure requirements on campaign contributions and limiting late contributions. As mayor he implemented disclosure requirements for city contracts. He has accepted corporate and real estate PAC donations consistent with current law while supporting transparency requirements — disclosure and some limits but not full public financing.",
+      "current_reasoning": "Gloria supported California SB 1439 (effective 2023) tightening disclosure requirements on campaign contributions and limiting late contributions. As mayor he implemented disclosure requirements for city contracts. He has accepted corporate and real estate PAC donations consistent with current law while supporting transparency requirements \u2014 disclosure and some limits but not full public financing.",
       "sources": [
         "https://en.wikipedia.org/wiki/Todd_Gloria",
         "https://www.sandiego.gov/mayor"
