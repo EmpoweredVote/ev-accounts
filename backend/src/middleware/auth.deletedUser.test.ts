@@ -29,7 +29,7 @@ vi.mock('../lib/env.js', () => ({
   env: { SUPABASE_URL: 'http://localhost', SUPABASE_JWT_SECRET: 'x', SUPABASE_ANON_KEY: 'x' },
 }));
 
-import { requireAuth } from './auth.js';
+import { requireAuth, __clearAccountCache } from './auth.js';
 
 function makeRes() {
   const out: { code?: number; body?: { error?: string } } = {};
@@ -42,7 +42,12 @@ function makeRes() {
 
 const req = () => ({ headers: { authorization: 'Bearer token' } }) as never;
 
-beforeEach(() => vi.clearAllMocks());
+beforeEach(() => {
+  vi.clearAllMocks();
+  // The account lookup is memoized per process (see loadAccountState). Without
+  // this, the first case's account state leaks into every case after it.
+  __clearAccountCache();
+});
 
 /**
  * WHY THIS FILE EXISTS.
@@ -139,5 +144,110 @@ describe('requireAuth — a deleted account cannot authenticate', () => {
     const sql = String(poolQueryMock.mock.calls[0][0]);
     expect(sql).toContain('public.users');
     expect(sql).toContain('connected_profiles');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// optionalAuth
+// ---------------------------------------------------------------------------
+
+import { optionalAuth } from './auth.js';
+import { isTokenRevoked } from '../lib/authService.js';
+
+/**
+ * optionalAuth guards most of the compass — GET/POST /answers, /answers/batch,
+ * /selected-topics, /my-lenses. It used to stop at the signature: decode, set
+ * userId, next(). No deletion check, no suspension check, not even the revocation
+ * check requireAuth does.
+ *
+ * Confirmed against production on 2026-08-30: with the account soft-deleted,
+ * requireAuth routes answered 401 while /compass/answers and /compass/my-lenses
+ * both still answered 200.
+ *
+ * The failure mode here is GUEST, not 401 — that is what "optional" means, and
+ * these routes already return [] for an unauthenticated caller.
+ */
+describe('optionalAuth — a valid signature is not a usable account', () => {
+  const runOptional = async () => {
+    const req = { headers: { authorization: 'Bearer token' } } as never as {
+      userId?: string; headers: Record<string, string>;
+    };
+    await optionalAuth(req as never, {} as never, () => {});
+    return req;
+  };
+
+  beforeEach(() => {
+    __clearAccountCache();
+    vi.mocked(isTokenRevoked).mockResolvedValue(false);
+  });
+
+  it('drops a soft-deleted user to guest instead of authenticating them', async () => {
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: new Date(), account_standing: 'active' }],
+    });
+    expect((await runOptional()).userId).toBeUndefined();
+  });
+
+  it('drops a hard-deleted user to guest', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [] });
+    expect((await runOptional()).userId).toBeUndefined();
+  });
+
+  it('drops a suspended user to guest', async () => {
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: 'suspended' }],
+    });
+    expect((await runOptional()).userId).toBeUndefined();
+  });
+
+  it('drops a REVOKED (signed-out) token to guest, without querying the account', async () => {
+    vi.mocked(isTokenRevoked).mockResolvedValue(true);
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: 'active' }],
+    });
+
+    expect((await runOptional()).userId).toBeUndefined();
+    // Revocation short-circuits: no reason to ask the database about an account
+    // whose token is already dead.
+    expect(poolQueryMock).not.toHaveBeenCalled();
+  });
+
+  it('authenticates a live Inform-tier user', async () => {
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: null }],
+    });
+    expect((await runOptional()).userId).toBe('user-1');
+  });
+
+  it('authenticates a live Connected user', async () => {
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: 'active' }],
+    });
+    expect((await runOptional()).userId).toBe('user-1');
+  });
+
+  it('memoizes the account lookup across requests', async () => {
+    // The whole reason this is affordable on the compass hot path.
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: 'active' }],
+    });
+
+    await runOptional();
+    await runOptional();
+    await runOptional();
+
+    expect(poolQueryMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('still asks on every request whether the token was revoked', async () => {
+    // Deliberately NOT memoized: logout has to take effect immediately.
+    poolQueryMock.mockResolvedValue({
+      rows: [{ user_deleted_at: null, account_standing: 'active' }],
+    });
+
+    await runOptional();
+    await runOptional();
+
+    expect(vi.mocked(isTokenRevoked)).toHaveBeenCalledTimes(2);
   });
 });
