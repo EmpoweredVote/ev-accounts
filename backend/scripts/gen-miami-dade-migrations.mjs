@@ -3,9 +3,9 @@
  *
  * Turns data/seed-miami-dade-2026/ROSTERS.md into THREE migrations:
  *
- *   CC_wip_miami_structure.sql      city districts + government + chambers + offices
- *   CC_wip_miami_people.sql         city politicians + occupancy
- *   CC_wip_miami_dade_county.sql    county districts + government + chambers +
+ *   CC_0015_miami_structure.sql      city districts + government + chambers + offices
+ *   CC_0016_miami_people.sql         city politicians + occupancy
+ *   CC_0017_miami_dade_county.sql    county districts + government + chambers +
  *                                   offices + politicians + occupancy, in ONE file
  *
  * Reads NOTHING from the database. Everything it asserts comes from the roster
@@ -89,9 +89,9 @@ const ROSTER_REL = 'data/seed-miami-dade-2026/ROSTERS.md';
 const GENERATOR = 'scripts/gen-miami-dade-migrations.mjs';
 
 /** ⚠ _wip_ until Task 5 renames them. Take the migration NUMBER last. */
-const CITY_STRUCTURE_FILE = 'CC_wip_miami_structure.sql';
-const CITY_PEOPLE_FILE = 'CC_wip_miami_people.sql';
-const COUNTY_FILE = 'CC_wip_miami_dade_county.sql';
+const CITY_STRUCTURE_FILE = 'CC_0015_miami_structure.sql';
+const CITY_PEOPLE_FILE = 'CC_0016_miami_people.sql';
+const COUNTY_FILE = 'CC_0017_miami_dade_county.sql';
 
 const CITY_MTFCC = 'X0041';
 const COUNTY_MTFCC = 'X0040';
