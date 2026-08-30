@@ -61,10 +61,38 @@
  * did not shrink, never that its CONTENTS are unchanged. Read a green run as "no season-1 row
  * was lost", not as "season 1 is untouched".
  *
- * WHEN A FLOOR SHOULD MOVE. Only upward, and only deliberately: after a season opens and
- * takes answers, raise its floor with --floor-answers / --floor-context and commit the new
- * number with the reason. Lowering a floor to make this gate pass is the exact event the
- * gate exists to report. If rows are genuinely gone, find out why first.
+ * WHEN A FLOOR SHOULD MOVE. Deliberately, and with the reason committed beside the number:
+ * use --floor-answers / --floor-context. Raising is the ordinary case — a season opens and
+ * takes answers. Lowering a floor to make this gate pass is the exact event the gate exists
+ * to report. If rows are genuinely gone, find out why first.
+ *
+ * 🔴 BUT A DOCUMENTED-BLANK RETIREMENT LOWERS THE ANSWER FLOOR LEGITIMATELY, AND THIS FILE
+ * USED TO SAY FLOORS MOVE "ONLY UPWARD", WHICH LEFT NO BRANCH FOR IT. Retiring a seating to
+ * a documented blank DELETES the answer on purpose and REWRITES the context. That is the
+ * correct disposition under CLAUDE.md's answer-delete rule, and it makes the answer count
+ * fall. It is not loss, and the floor must follow it down.
+ *
+ * 🔴🔴 THE SIGNATURE TELLS THE TWO APART, AND IT IS THE ONE DIAGNOSTIC THIS GATE CAN OFFER:
+ *
+ *     answers FALL, context HOLDS  →  documented-blank retirement. Deliberate.
+ *                                     Verify the pairs, then lower the answer floor.
+ *     answers AND context fall together  →  rows are being destroyed. STOP.
+ *     answers fall, context RISES        →  also destruction, with a rewrite on top. STOP.
+ *
+ * To verify rather than assume: extract the (politician_id, topic_id) pairs from the
+ * migrations in the window and assert each has ZERO answers and ONE context row. If the
+ * count of such pairs equals the shortfall exactly, the reduction is fully accounted for.
+ * Confirm too that no migration in the window INSERTs answers — otherwise a net figure can
+ * hide extra deletions behind additions.
+ *
+ * ▶ LOWERING THE FLOOR IS THE BLANKING PR'S OWN JOB, NOT THE NEXT MORNING'S. This check runs
+ * on a SCHEDULE, not on pull requests, so a blanking migration merges green and the gate
+ * fails hours later against master — where the reduction has to be re-derived by someone who
+ * did not write it. If your migration retires N answers to documented blanks, lower the
+ * answers floor by N in the SAME pull request and cite the migration slot. Five such
+ * migrations landed inside one 24-hour window on 2026-08-29/30 (CA_0032, CA_0033, CA_0035,
+ * CA_0038, CA_0039, 32 answers between them) and none moved the floor, which is what made
+ * that morning's failure look like data loss.
  *
  * NO DATABASE_URL IS A FAILURE, NOT A SKIP. The database is the whole check — there is no
  * static half that still means something. A gate that quietly passes when it never ran reads
@@ -96,15 +124,29 @@ function flagInt(name, fallback) {
 }
 
 /**
- * Committed floors, per season number. Measured against production 2026-08-27.
- * Add an entry when a season opens; never lower one.
+ * Committed floors, per season number.
+ *
+ * Add an entry when a season opens. Lower one ONLY for an accounted-for reduction, with the
+ * migration slots named here — see WHEN A FLOOR SHOULD MOVE above for what "accounted for"
+ * has to mean before you touch a number.
  */
 const FLOORS = {
   1: {
-    answers: flagInt('floor-answers', 33164),
+    // 33,164 when measured 2026-08-27. Lowered by 32 on 2026-08-30 for five documented-blank
+    // retirements — CA_0032 (1), CA_0033 (9), CA_0035 (13), CA_0038 (7), CA_0039 (2) — each of
+    // which deleted a seating on purpose and rewrote the context.
+    //
+    // NOT taken from "what prod reads today". Every one of the 32 pairs was extracted from the
+    // migrations and verified in production to hold ZERO answers and ONE context row, and no
+    // migration in the window inserts answers, so the net cannot be hiding extra deletions.
+    // 33,164 − 32 = 33,132, which is the number below, derived rather than observed.
+    answers: flagInt('floor-answers', 33132),
+    // Untouched. A documented blank REWRITES its context, so this count did not move — and
+    // that it held at exactly 33,818 is what proved the answer loss was deliberate.
     context: flagInt('floor-context', 33818),
     questions: flagInt('floor-questions', 44),
     measured: '2026-08-27',
+    adjusted: '2026-08-30',
   },
 };
 
