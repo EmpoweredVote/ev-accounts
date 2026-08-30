@@ -1,7 +1,7 @@
 import { jwtVerify, createRemoteJWKSet, type JWTPayload } from 'jose';
 import { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
-import { supabaseAdmin } from '../lib/supabase.js';
+import { pool } from '../lib/db.js';
 import { isTokenRevoked } from '../lib/authService.js';
 import {
   SUPABASE_ISSUER,
@@ -119,22 +119,51 @@ export async function requireAuth(
     return;
   }
 
-  // Standing check — enforces suspension within JWT validity window.
-  // Uses supabaseAdmin for a trusted server-side internal check (not user-facing data).
+  // Account check — enforces deletion and suspension within the JWT validity
+  // window, i.e. for up to an hour after either happens.
   //
-  // ⚠ DELIBERATELY DOES NOT FILTER deleted_at, unlike the tier guards. This
-  // refuses a suspended account, so ignoring deleted_at fails CLOSED: a
-  // suspension survives even if the profile row is soft-deleted. Adding the
-  // filter here would turn soft-delete into a way to lift a suspension.
-  const { data: profile } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .select('account_standing')
-    .eq('user_id', userId)
-    .maybeSingle();
+  // One query, not two. This runs on every authenticated request, so the account
+  // state and the standing come back together rather than costing a second round
+  // trip. pool.query rather than PostgREST because it spans two schemas; it is a
+  // trusted server-side check, not a user-facing data read.
+  const { rows } = await pool.query<{
+    user_deleted_at: Date | null;
+    account_standing: string | null;
+  }>(
+    `SELECT u.deleted_at AS user_deleted_at, cp.account_standing
+       FROM public.users u
+       LEFT JOIN connect.connected_profiles cp ON cp.user_id = u.id
+      WHERE u.id = $1`,
+    [userId]
+  );
+  const account = rows[0];
 
-  // Profile absence = Inform tier (no connected_profiles row) — allow through
-  if (profile && profile.account_standing !== 'active') {
+  // 🔴 A DELETED ACCOUNT MUST NOT AUTHENTICATE. This is the check that makes
+  // deletion mean something: without it, a valid JWT issued before the deletion
+  // kept working, and each tier guard was left to re-litigate the question from
+  // the profile row — which is how a soft-deleted user could hold on to Connected
+  // access (fixed at the guard level in #231) and, once that was closed, still
+  // reach Inform-tier routes because their profile no longer "existed".
+  //
+  // Refusing at the door settles it for every route at once: deleted is deleted.
+  //
+  // No row at all means the user was HARD-deleted while holding a live token.
+  // Same answer, and it must stay 401 rather than falling through as an
+  // Inform-tier user, which is exactly what the previous PostgREST read did.
+  if (!account || account.user_deleted_at !== null) {
+    res.status(401).json({ error: 'Account no longer exists' });
+    return;
+  }
+
+  // Suspension. account_standing is NULL for an Inform-tier user (no
+  // connected_profiles row via the LEFT JOIN) — absence is not suspension, so
+  // only a present-and-non-active standing refuses.
+  //
+  // ⚠ DELIBERATELY IGNORES connected_profiles.deleted_at, unlike the tier guards.
+  // This clause REFUSES, so ignoring the column fails closed: a suspension
+  // survives even if the profile row is soft-deleted. Honouring it here would
+  // turn soft-delete into a way to lift a suspension.
+  if (account.account_standing !== null && account.account_standing !== 'active') {
     res.status(403).json({ error: 'Account suspended' });
     return;
   }
