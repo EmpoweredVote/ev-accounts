@@ -84,6 +84,10 @@ router.post(
         res.status(404).json({ error: 'User has no connected profile' });
         return;
       }
+      if (code === 'ACCOUNT_DELETED') {
+        res.status(404).json({ error: 'ACCOUNT_DELETED' });
+        return;
+      }
       if (code === 'INVALID_AMOUNT') {
         res.status(422).json({ error: 'INVALID_AMOUNT' });
         return;

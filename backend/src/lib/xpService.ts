@@ -232,10 +232,14 @@ export async function getPublicXpProfile(
     .from('connected_profiles')
     .select('total_xp')
     .eq('user_id', userId)
+    // This endpoint takes an arbitrary userId and needs no auth, so requireAuth's
+    // deleted-account refusal never runs for it. Without this filter a deleted
+    // account stays publicly readable by id forever.
+    .is('deleted_at', null)
     .maybeSingle();
 
   if (profileError) throw new Error(profileError.message);
-  if (!profile) return null; // user not found or not Connected
+  if (!profile) return null; // user not found, deleted, or not Connected
 
   // Compute level fields via calculate_level RPC (IMMUTABLE, cached by Postgres)
   const { data: levelData, error: levelError } = await adminRpc('calculate_level', {

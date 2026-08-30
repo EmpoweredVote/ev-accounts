@@ -25,7 +25,11 @@ export async function getReferralState(userId: string): Promise<ReferralState | 
        invitee.current_level AS invitee_level
      FROM connect.connected_profiles cp
      LEFT JOIN connect.invite_codes ic          ON ic.id = cp.referral_invite_id
-     LEFT JOIN connect.connected_profiles invitee ON invitee.user_id = ic.claimed_by
+     -- The invitee is somebody else, so no guard has vetted them. In the ON
+     -- clause, not the WHERE: a deleted invitee must read as invitee_level NULL
+     -- (the same as an unclaimed code), never remove the caller's own row.
+     LEFT JOIN connect.connected_profiles invitee
+            ON invitee.user_id = ic.claimed_by AND invitee.deleted_at IS NULL
      WHERE cp.user_id = $1`,
     [userId]
   );

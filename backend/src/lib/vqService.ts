@@ -176,7 +176,15 @@ export async function adjustVerificationRating(
       verification_rating: number;
       vq_hold_until: string | null;
     }>(
-      'SELECT verification_rating, vq_hold_until FROM connect.connected_profiles WHERE user_id = $1 FOR UPDATE',
+      // deleted_at IS NULL: /adjust-vr is a service-key route that names an
+      // arbitrary user_id in the body, so requireAuth's deleted-account refusal
+      // never runs. A deleted account falls out here as USER_NOT_FOUND, which is
+      // the refusal we want — unlike the tier check in gemService, dropping the
+      // row here cannot reclassify anyone, it only stops the write.
+      `SELECT verification_rating, vq_hold_until
+         FROM connect.connected_profiles
+        WHERE user_id = $1 AND deleted_at IS NULL
+          FOR UPDATE`,
       [params.userId]
     );
 

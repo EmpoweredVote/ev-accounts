@@ -139,6 +139,11 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     .from('users')
     .select('id, display_name, created_at')
     .eq('id', userId)
+    // public.users.deleted_at is the account-level truth — soft_delete_user sets
+    // it alongside connected_profiles.deleted_at. Filtering only the profile row
+    // below would still serve a deleted account as an Inform-tier profile,
+    // display_name and all.
+    .is('deleted_at', null)
     .maybeSingle();
 
   if (userError || !user) return null;
@@ -149,6 +154,10 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     .from('connected_profiles')
     .select('user_id, display_name, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, location_consent')
     .eq('user_id', userId)
+    // Matches the empowered_profiles read below, which has always filtered this.
+    // A public profile served by id has no requireAuth in front of it, so the
+    // deleted-account refusal has to happen here.
+    .is('deleted_at', null)
     .maybeSingle();
 
   if (connectedError) {
