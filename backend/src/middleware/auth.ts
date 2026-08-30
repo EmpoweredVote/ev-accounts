@@ -121,6 +121,11 @@ export async function requireAuth(
 
   // Standing check — enforces suspension within JWT validity window.
   // Uses supabaseAdmin for a trusted server-side internal check (not user-facing data).
+  //
+  // ⚠ DELIBERATELY DOES NOT FILTER deleted_at, unlike the tier guards. This
+  // refuses a suspended account, so ignoring deleted_at fails CLOSED: a
+  // suspension survives even if the profile row is soft-deleted. Adding the
+  // filter here would turn soft-delete into a way to lift a suspension.
   const { data: profile } = await supabaseAdmin
     .schema('connect')
     .from('connected_profiles')
