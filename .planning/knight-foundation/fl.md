@@ -17,8 +17,13 @@ Jurisdictions: **Bradenton** (Manatee), **Miami** (Miami-Dade), **Palm Beach Cou
 | FL-3 | Bradenton + Manatee County | ✅ applied 2026-08-28 — `CC_0008`, `CC_0009`, `CC_0010` |
 | FL-4 | Tallahassee + Leon County | ✅ applied 2026-08-28 — `CC_0011`, `CC_0012`, `CC_0013` |
 | FL-5 | Palm Beach County (county only) | ✅ applied 2026-08-28 — `CC_0014` |
-| FL-6 | Miami + Miami-Dade County | **planned 2026-08-29**, not applied — [plan](../../docs/superpowers/plans/2026-08-29-knight-fl-wave-6-miami-miami-dade.md) |
+| FL-6 | Miami + Miami-Dade County | ✅ applied 2026-08-30 — `CC_0015`, `CC_0016`, `CC_0017` |
 | FL-7 | Florida assets (headshots + 3 banners) | — |
+
+🔴 **STAGES 3 AND 4 ARE BOTH CLOSED.** All four Florida jurisdictions are seated: Bradenton,
+Tallahassee and Miami as cities, Manatee, Leon, Palm Beach and Miami-Dade as counties. Florida is the
+first slice in the program to close either stage. **73 local and county offices, 72 filled, 1 vacant**
+(Manatee District 1), across seven governments plus the state.
 
 ## Geography loaded (FL-1)
 
@@ -172,9 +177,12 @@ This is the truth, not a defect — but FL-6 must not be judged as failing becau
   confirmed per county from that county's charter, never inherited from the state. 🔴🔴 **AND CHARTER
   STATUS DOES NOT PREDICT THE SET — measured across three counties: Manatee non-charter 5, Leon charter
   **6**, Palm Beach charter **5**. Only Miami-Dade (FL-6) is left to read.** **Manatee is
-  ANSWERED (FL-3): it is a NON-charter county, so the state template applies unmodified.** Leon, Palm
-  Beach and Miami-Dade are still to be checked separately — Miami-Dade in particular IS a charter
-  county.
+  ANSWERED (FL-3): it is a NON-charter county, so the state template applies unmodified.**
+  ✅ **ALL FOUR ARE NOW ANSWERED (FL-6, 2026-08-30). Miami-Dade is a charter county and elects
+  FIVE** — the state template, not Leon's six. Final measured spread: Manatee non-charter **5**, Leon
+  charter **6**, Palm Beach charter **5**, Miami-Dade charter **5**. 🔴 **Charter status predicted
+  nothing in four counties out of four.** The one that differs is the non-obvious one: Leon, and it
+  differs by electing a Superintendent of Schools.
 - 🔴 **Florida county officers run on the PRESIDENTIAL cycle; county commissioners do not.** All five
   Manatee officers' terms expire **January 2029** — elected November 2024, next election 2028 — and
   none was on the 2026 ballot even though 2026 is a gubernatorial year. Commission terms expire in
@@ -183,7 +191,9 @@ This is the truth, not a defect — but FL-6 must not be judged as failing becau
 - **Miami-Dade County and the City of Miami are separate governments.** Miami-Dade is not a
   consolidated city-county. Do not conflate them.
 - Miami-Dade's elected **Sheriff** was restored by constitutional amendment and filled recently.
-  Confirm the office is elected before seeding it.
+  Confirm the office is elected before seeding it. ✅ **ANSWERED (FL-6): it is elected.** Amendment 10,
+  adopted 2018-11-06, forced five independently elected offices; Rosanna "Rosie" Cordero-Stutz took
+  office **2025-01-07** with the other four.
 - ✅ **ANSWERED 2026-08-28 while planning FL-4: Tallahassee's city commission IS entirely at-large.**
   The Leon SOE states it directly — "City Commissioners and Mayor do not have districts." Five seats,
   and **the Mayor is SEAT 4**, inside the numbering rather than beside it. So **no ward layer is
@@ -765,6 +775,255 @@ that an `X`-code load needs no matview refresh. `check:reachability` reports **n
   banner (which is a Miami skyline and would collide with Miami's at FL-6). Naming it and choosing the
   composition is FL-7.
 
+## FL-6 — Miami and Miami-Dade County (applied 2026-08-30)
+
+Plan: [`2026-08-29-knight-fl-wave-6-miami-miami-dade.md`](../../docs/superpowers/plans/2026-08-29-knight-fl-wave-6-miami-miami-dade.md).
+Roster evidence: `backend/data/seed-miami-dade-2026/ROSTERS.md`.
+**The largest wave in the slice by a factor of two**, and the one that closes stages 3 and 4.
+
+| | Offices | Seated | Chambers | Districts created |
+| --- | --- | --- | --- | --- |
+| **City of Miami** — City Commission | 5 | 5 | 1 | 5 × `X0041` |
+| **City of Miami** — Office of the Mayor | 1 | 1 | 1 | 1 citywide (`1245000` `G4110`) |
+| **Miami-Dade** — Board of County Commissioners | 13 | 13 | 1 | 13 × `X0040` |
+| **Miami-Dade** — Office of the Mayor | 1 | 1 | 1 | *(reuses `12086`)* |
+| **Miami-Dade** — Elected Officials | 5 | 5 | 1 | *(reuses `12086`)* |
+| **Total** | **25** | **25** | **5** | **18 new + 1 citywide** |
+
+**0 vacancies.** `external_id` band **`-1240109` … `-1240081`, 24 new rows** — 25 people, because one
+is reused. Date precision: **23 `day`, 2 `month`, 0 `year`, 0 `unknown`.** `how_started`:
+**21 `elected`, 4 `appointed`.**
+
+**Two governments, not one.** Miami-Dade is **not** a consolidated city-county — unlike
+Nashville/Davidson. Both governments name a chamber `Office of the Mayor`, and both use the office
+titles `Mayor` and `Commissioner, District 1`…`District 5`. 🔴 **Every chamber lookup must be scoped
+by `government_id` and every district lookup must pair `geo_id` with `mtfcc` AND `district_type`**, or
+the insert fans out silently.
+
+### 🔴🔴 The first REUSE in the slice — 215 people over four waves, then one
+
+**`Oliver Gilbert`, `external_id -1212402`**, was already in prod with no office, seeded by the FL 2026
+US House wave: he won the Democratic primary for FL-24 on 2026-08-18 while sitting as Miami-Dade
+Commissioner for District 1. FL-6 therefore writes **19 county terms from 18 new politician rows**.
+
+🔴 **Getting this wrong produces two Oliver Gilbert rows — one a candidate, one a commissioner — and
+nothing errors.** The gate asserts that exactly one politician row is named Oliver Gilbert and that
+`-1212402` holds Commission District 1.
+
+⚠ His politician row reads `is_incumbent = true` while his **race** row reads `is_incumbent = false`.
+Both are correct: a sitting officeholder, and a non-incumbent for the seat he is contesting. **Do not
+"fix" either.**
+
+⚠ **The band guard's shape changed, and the plan's version was wrong.** Its draft asserted that
+`-1240093` was "Gilbert's slot, deliberately left unused". The roster does not reserve a gap — it skips
+the reused person and continues, so `-1240093` is Keon Hardemon. The invariant that matters is
+**"exactly one id outside the new sub-range, and it is the declared reuse"**. Reserving a cosmetic gap
+is not the check.
+
+### 🔴🔴 Two anchors, because one of them cannot return four answers
+
+| | Miami City Hall | Miami-Dade Government Center |
+| --- | --- | --- |
+| Geocode | `-80.234992579394, 25.728661855119` | `-80.196332709513, 25.775078850443` |
+| City commissioner | **D2** — Damian Pardo | **D5** — Christine King |
+| County commissioner | **D7** — Raquel A. Regalado | **D5** — Vicki L. Lopez *(appointed)* |
+| Countywide | Mayor + 5 officers = **6** | Mayor + 5 officers = **6** |
+| State senator | **SD-38** — Alexis Calatayud | **SD-36** — Ileana Garcia |
+| State representative | **HD-113 — VACANT** | **HD-109** — Ashley Viola Gantt |
+| Answers | **3 of 4** | **4 of 4** |
+
+🔴 **HD-113 returns ZERO officials at Miami City Hall, and the probe asserts it AT ZERO.** It is the
+only assertion in the slice whose PASS condition is an empty result. Vicki Lopez resigned the seat in
+November 2025 and the SOE confirms it is filled at the **November 2026 general**, not by special
+election. FL-2 predicted this; asserting it makes the warning testable instead of remembered.
+
+⚠ **Do NOT drop City Hall and keep only the Government Center to make the numbers look better.** The
+vacancy is the truth about City Hall's address.
+
+### 🔴🔴 The chain reaction: one person's move explains three offices in this wave
+
+| Step | What |
+| --- | --- |
+| 1 | **Eileen Higgins** held Miami-Dade Commission **District 5**. |
+| 2 | She vacated it to run for **Mayor of Miami** and won the **2025-12-09** runoff with 59% — the first Democrat elected Miami mayor since 1997, and the first woman. |
+| 3 | The **Commission appointed Vicki L. Lopez** to District 5, on a **7–5 vote**. |
+| 4 | That vacated **HD-113**, which is Miami City Hall's state-house district and is still empty. |
+
+🔴 **A Miami-Dade Commission vacancy is filled by the COMMISSION'S OWN VOTE.** Palm Beach's and
+Manatee's run through Fla. Const. art. IV §1(f) — the Governor. **Never inherit the vacancy
+mechanism.**
+
+### 🔴🔴 FOUR appointments, not the two the plan predicted — and not one appointing authority
+
+The SOE roster marks **two** commissioners `Appointed` with a blank term end: D5 Lopez and D6 Natalie
+Milian Orbis. **Two more spans began with an appointment and the SOE hides them, because both holders
+have been elected since:**
+
+| Seat | Who | When | By whom |
+| --- | --- | --- | --- |
+| D5 | Vicki L. Lopez | 2025-11-19 | Commission, 7–5 |
+| D6 | Natalie Milian Orbis | 2025-05-06 | Commission |
+| **D8** | **Danielle Cohen Higgins** | **2020-12-07** | **Commission, 10–1** |
+| **D11** | **Roberto J. Gonzalez** | **2022-11-23** | **Gov. Ron DeSantis** |
+
+🔴 **"Appointed" does not imply the same appointing authority.** Three are Commission votes; one is a
+gubernatorial appointment. `ROSTERS.md` records who appointed, per row.
+🔴 **A roster's "Appointed" flag describes the CURRENT term, not how the occupancy began.** Reading it
+as the latter under-counts by half.
+▶ The gate asserts the **count AND the four titles**, because a count alone passes if an elected
+member is mislabelled.
+
+### 🔴🔴 `12086` collides with a NEW YORK ZIP CODE — a second failure shape
+
+`12086` is Miami-Dade County (`G4020`), **State House District 86** (`G5220`) **and ZIP code 12086 in
+New York** (`G6350`). Fourth Florida county in four waves with a `geo_id` collision, after
+12081/HD-81, 12073/HD-73 and 12099/HD-99 — and the first where one arm is **in another state**.
+Measured: **40 of Florida's 67 county `geo_id`s have a New York ZCTA twin** in `geofence_boundaries`.
+
+🔴 **The two failure shapes are different and the probe demonstrates both.** A `G5220`/`G4020` twin
+returns a **WRONG OFFICIAL**; the ZCTA polygon is 1,300 miles away, so `ST_Covers` yields **nothing**
+and the county vanishes **SILENTLY**. Unpaired, Miami City Hall returns three wrong rows: Santa Rosa
+County via the HD-113 polygon, HD-38 via the SD-38 polygon, and HD-86 via the county polygon.
+
+### 🔴🔴 Miami-Dade publishes FOUR polygon vintages and a geometry-less lookalike
+
+| Service | Rows | Geometry | Verdict |
+| --- | --- | --- | --- |
+| `CommissionDistrict_gdb/0` | 13 | polygon | ✅ **PRIMARY** — matches the county page |
+| `CommissionDistrict2011/0` | 13 | polygon, **same schema** | 🔴 **DECOY** — Monestime, Heyman, both long gone |
+| `CommissionDistrict2001_gdb`, `…1992_gdb` | 13 | polygon | historical |
+| `TBLCOMMISSIONDISTRICT/0` | 13 | **NONE — a table** | 🔴 **DECOY**, and a cross-check against it compares with nothing |
+
+🔴🔴 **A SPOT CHECK ON DISTRICT 1 WOULD PASS ON THE WRONG MAP.** Symmetric difference, current vs
+2011: **District 1 moved 0.136 sq mi; District 9 moved 126.1.** So a vintage gate must use a district
+that actually moved — 9, 8 or 7 — and carry all thirteen literals. **Any single district picked at
+random has a real chance of passing on a stale map.**
+
+⚠ **A service's name is not authority for its vintage — third wave running.** Miami's
+`Commission_Districts_New` holds the OLDER data edit (2025-06-24) than the primary (2025-12-17,
+refreshed right after the December runoff). Compare Palm Beach's `CountyCommission_2022` containing
+layer `CountyCommission_2026`.
+⚠ **`Commission_Districts.ADDRESS` IS FABRICATED** — D1 `3500 Pan American Drive`, D2 `3501`, D3
+`3502`, D4 `3503`, D5 `3504`, City Hall's address incremented per district. **Never read it.**
+
+### 🔴 Miami-Dade's districts tile the county EXACTLY — the opposite of Palm Beach
+
+| Quantity | Miami-Dade (13) | Palm Beach (7) |
+| --- | --- | --- |
+| Uncovered | **0.0315** sq mi | **155.5381** sq mi |
+| Overhang | 0.0320 sq mi | 0.0060 sq mi |
+| Self-overlap | **0.0000** sq mi | 0.012 sq mi |
+
+🔴 **FL-5's structural gate FAILS HERE ON CORRECT DATA.** It requires exactly one uncovered part above
+0.05 sq mi, offshore, in a 150–160 sq mi band. Miami-Dade leaves no such gap: its districts cover
+Biscayne Bay and the offshore water Palm Beach's stop short of. A Leon-style tight tolerance was used
+instead — uncovered, overhang and self-overlap each ≤ **0.25** sq mi.
+
+🔴 **Two adjacent counties, opposite conventions, and neither gate is portable. MEASURE THE TILING
+BEFORE CHOOSING THE GATE, EVERY TIME.**
+
+⚠ District 9 is **1,111 sq mi** and District 13 is **24.3** — a **46× range**. Percentage tolerance
+only.
+
+### The acceptance probe
+
+`backend/scripts/verify-miami-dade-probes.sql`. Eleven assertions across the two anchors, all PASS,
+plus the collision demonstration, the ZCTA arm, per-body seat counts, per-district office counts, the
+zero-offices-without-a-term check, a rulings block and three controls.
+
+**Hialeah — `-80.2781, 25.8576` — is the load-bearing control**: a large incorporated city inside
+Miami-Dade that is **not** the City of Miami. It must return **7 county offices and ZERO city ones**.
+It is the only check that would catch a city layer that has quietly become a county layer. Fort
+Lauderdale (Broward) and Key West (Monroe) return 0 and 0.
+
+⚠ **One ruling had to be SCOPED after it read 33 before the apply.** "Commissioner offices on the
+countywide district" is only zero *for this wave*: Leon and Manatee each seat two at-large
+commissioners countywide and Tallahassee five citywide, all correct. **An unscoped ruling counts other
+waves' legitimate rows and reads as a failure.** Run the probe BEFORE applying — that is what caught it.
+
+### 🔴 Publisher disagreements, and the rules chosen
+
+- **THREE published titles for one office, from three arms of the same county.** SOE roster
+  `Clerk of the Circuit Court and Comptroller`; county Constitutional Offices page and the Clerk's own
+  site `Clerk of the Court and Comptroller`. **Decision: prefer the OFFICE'S OWN site.** That makes
+  **four variants across four counties**. Nothing joins on `title`; the rule is recorded so the next
+  wave does not re-litigate it.
+- **All five constitutional officers share `term_start = 2025-01-07`**, at `day` precision — a single
+  published date for five people, which no earlier Florida wave had. Amendment 10 (adopted
+  2018-11-06) forced the five independently elected offices. ⚠ **"First elected" is true of some and
+  not others** — Sheriff, Tax Collector and Supervisor of Elections were created as elected offices;
+  Property Appraiser and Clerk already existed. **Do not write "first" into any field.**
+- **The commission page prints `Oliver G. Gilbert, III` and `René Garcia`; the SOE PDF prints
+  `Oliver Gilbert` and `Rene Garcia`** — two publishers, two forms, including a dropped accent. Decided
+  per person, alternates recorded as aliases.
+- 🔴 **FOUR REPEATED SURNAMES INSIDE THE WAVE'S OWN ROSTER**: Higgins (Eileen, Mayor of Miami / Danielle
+  Cohen Higgins, D8), Regalado (Tomas, Property Appraiser / Raquel A., D7), Garcia (Alina, Supervisor
+  of Elections / Rene, D13), Fernandez (Dariel, Tax Collector / Juan Fernandez-Barquin, Clerk). Two are
+  two-word surnames. **Name matching is unsafe WITHIN this wave, not only against prod.** Every
+  identity decision keys on `external_id`; the one reuse is justified by a verified biography, never by
+  a name match.
+
+### 🔴 The SOE roster PDF — authoritative for structure, stale for occupancy
+
+`https://www.miamidade.gov/elections/library/reports/elected-officials.pdf`, *"Elected Officials
+Information, As of June 4, 2026"*, 7 pages, `curl`-reachable.
+
+⚠ **It stops at the county line — there are NO municipal offices in it.** Miami's city roster comes
+from `miami.gov`.
+⚠ **Its as-of date is load-bearing.** It still lists Daniel Anthony Perez in HD-116, which prod records
+as vacant since 2026-08-22. **Authoritative for titles and structure; three months stale for
+fast-churning occupancy.**
+⚠ **`pdftotext` here is Xpdf 4.00, not Poppler — there is no `-bbox`. Use `-table`;** `-layout`
+misassigns every row of this PDF.
+
+### 🔴 State Attorney and Public Defender — FL-5's ruling confirmed, the other way round
+
+FL-5 excluded them as **circuit** offices over the objection of Palm Beach's own page, which lists them
+among its "constitutional officers". **Miami-Dade's publishers agree with FL-5**: the Constitutional
+Offices page lists five and neither of these, and the SOE PDF files `State Attorney — Katherine
+Fernandez Rundle` and `Public Defender — Carlos J. Martinez` under its **`STATE`** heading, beside the
+Governor.
+
+🔴 **The 11th Judicial Circuit is coterminous with Miami-Dade exactly as the 15th is with Palm Beach —
+same law, same geography, opposite publisher behaviour.** That is the strongest available evidence
+that FL-5 was right and Palm Beach's page was simply wrong. **Not seated here either.**
+
+### ▶ Out of scope, and the largest unmodelled block in the program
+
+🔴 **Miami-Dade's COMMUNITY COUNCILS** — an elected body no earlier Florida county had. The SOE roster
+lists **~60 seats** across Community Council Areas 02–16, by subarea plus at-large plus a Commission
+appointee per area, and **roughly a dozen are `Vacant`**. Excluded because they are neither a county
+commission nor a constitutional officer, and spec §3 stage 4 is "commission layer + county officers".
+**They are the largest single block of unmodelled elected local offices found anywhere in the program
+so far.**
+
+Also excluded: the School Board, Soil & Water, and every municipality in Miami-Dade other than Miami —
+Hialeah, Miami Beach, Coral Gables and 30-odd others.
+
+### Verification, 2026-08-30
+
+- **All ten Florida local migrations re-run clean**: every one reaches `COMMIT` with its post-verify
+  `NOTICE`, no `ERROR`, every occupancy loop reports `seated 0`, and the only non-zero `INSERT`s are
+  into temp seed tables.
+- **The rename was verified by regenerating and diffing all three files byte-for-byte** — FL-5's rule.
+- `tsc`, `check:occupancy`, `check:migrations`, `check:child-county` all green.
+- **`check:reachability` adds no new bucket** — 5 `BAD_GEOMETRY` / 17 `DEAD_GEOGRAPHY` /
+  38 `UNREACHABLE`, all at baseline.
+- **`offices_missing_terms` unchanged at 820 / 165 / 655.** The wave adds no vacancy and no unflagged
+  row.
+- ⚠ **The people half cannot be dry-run alone** — its offices do not exist until the structure half is
+  applied. It was proven by running structure and people as ONE transaction ending in `ROLLBACK`, with
+  the stream asserted to hold zero `COMMIT` first. **Do not simply concatenate the files**; that is
+  what committed FL-3's `CC_0008` to prod in autocommit.
+
+### ▶ Open, carried forward
+
+- **Re-check the six Florida vacancies** — five legislative plus Manatee D1 — and write their
+  predecessor terms together.
+- **Re-check Palm Beach D2/D4/D6 and Miami-Dade D5/D6/D8/D11 after the November 2026 general.**
+- 🔴 **If Oliver Gilbert wins FL-24 in November he resigns District 1**, which becomes another
+  Commission-appointed vacancy.
+
 ## Applied migrations
 
 | Slot | File | Applied |
@@ -778,8 +1037,12 @@ that an `X`-code load needs no matview refresh. `check:reachability` reports **n
 | `CC_0012` | `CC_0012_tallahassee_people.sql` | 2026-08-28 |
 | `CC_0013` | `CC_0013_leon_county.sql` | 2026-08-28 |
 | `CC_0014` | `CC_0014_palm_beach_county.sql` | 2026-08-28 |
+| `CC_0015` | `CC_0015_miami_structure.sql` | 2026-08-30 |
+| `CC_0016` | `CC_0016_miami_people.sql` | 2026-08-30 |
+| `CC_0017` | `CC_0017_miami_dade_county.sql` | 2026-08-30 |
 
-Next free slot: **`CC_0015`**. Next free private MTFCC: **`X0040`**.
+Next free slot: **`CC_0018`**. Next free private MTFCC: **`X0042`** — `X0040` is Miami-Dade's 13
+commission districts and `X0041` is Miami's 5.
 
 ⚠ `CC_0009` and `CC_0010` were **edited after being applied**, on 2026-08-28, to scope their
 `external_id` band guard to their own sub-range. No data changed — only a pre-flight guard. Without it,

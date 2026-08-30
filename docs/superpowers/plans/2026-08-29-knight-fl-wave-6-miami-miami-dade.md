@@ -2,8 +2,9 @@
 
 ## ▶️ WHERE THIS STOPPED — read this first (updated 2026-08-30)
 
-**Tasks 0–5 are DONE, APPLIED TO PROD and committed. Task 6 is next: the ledger, and closing
-Florida's stages 3 and 4.** Nothing in Task 6 touches the database.
+**✅ ALL SIX TASKS ARE DONE. FL-6 IS COMPLETE, APPLIED AND LEDGERED.**
+**Florida's stages 3 and 4 are CLOSED — the first slice in the program to close either.**
+**Next: FL-7, Florida assets.** See `PROGRAM.md`'s last session-log row for the handoff.
 
 **The wave is live.** 25 offices, 25 people, 0 vacancies, across two governments. Both anchors
 probe clean and every gate is green.
@@ -438,6 +439,54 @@ the wave has 93 rows and no id is 93. ▶ Drop it from the plan or define it.
 ⚠ **The three `CC_wip_*.sql` files are NOT committed.** Only the generator and its test are. The
 number is taken last (CLAUDE.md), so Task 5 renames, regenerates to verify byte-for-byte, applies and
 commits the numbered files.
+
+---
+
+## 🔴 Deviations found during execution — Task 5, 2026-08-30
+
+Applied to prod as `CC_0015`, `CC_0016`, `CC_0017`. All three reproduced **byte-for-byte** after the
+rename. All ten Florida local migrations re-run clean. Eleven probe assertions PASS across the two
+anchors; every gate green; `offices_missing_terms` unchanged at 820 / 165 / 655. **Four things went
+differently.**
+
+1. 🔴 **A PROBE RULING READ 33 BEFORE ANYTHING WAS APPLIED, AND THE PLAN'S WORDING INVITED IT.** Step 1
+   says to carry forward "commissioner offices on the countywide district (must be 0)" from FL-5. Taken
+   literally — chamber name plus `mtfcc` — it counts **every** government in the database, and Leon and
+   Manatee each seat two at-large commissioners countywide while Tallahassee seats five citywide. All
+   correct rows; the ruling read `33` and would have read `33` after the apply too.
+   ▶ **A ruling that names a shape must be scoped to the wave that owns it.** The FL-5 original was
+   safe only because it filtered `g.geo_id = '12099'`, and that filter is the load-bearing part, not
+   the chamber name.
+   ▶ **This is the argument for Step 2.** Running the probe BEFORE applying is what separated "my
+   assertion is wrong" from "the data is wrong". After the apply the same 33 would have been
+   ambiguous.
+
+2. 🔴 **THE PEOPLE HALF CANNOT BE DRY-RUN AT ALL, AND STEP 3 STOPS ONE MOVE SHORT.** The plan predicts
+   the failure (`6 seat(s) do not resolve to exactly one office`) and says to "apply the structure
+   first, then dry-run the people half". That trades a reversible check for an irreversible one: it
+   commits `CC_0015` to prod purely to make `CC_0016` testable.
+   ▶ **Done instead:** structure and people concatenated with **both `COMMIT`s stripped** and a single
+   trailing `ROLLBACK`, run as ONE transaction, with the generated stream asserted to contain
+   **1 `BEGIN`, 0 `COMMIT`, 1 `ROLLBACK`** before psql saw it. Both halves verified, nothing committed.
+   ⚠ **This is NOT the concatenation the plan forbids.** FL-3 committed `CC_0008` by piping files that
+   still held their own `COMMIT`. The distinction is the assertion on the stream, and it must be made
+   in the same command that builds it.
+
+3. ⚠ **`git mv` DOES NOT WORK HERE.** Step 5 uses it, but the three `CC_wip_*.sql` files are
+   deliberately **untracked** — that is the whole point of taking the number last — and `git mv`
+   refuses a file not under version control. Plain `mv`, then `git add` at commit time.
+
+4. ⚠ **The plan's own Task 6 text still said "two appointed commissioners"** in its Step 2 handoff
+   line and its ledger instructions, contradicting the Task 4 deviations directly above it. Written as
+   **four** — D5, D6, D8, D11 — in both ledgers. ▶ **A corrected fact must be pushed forward into every
+   downstream instruction in the same pass**, or the stale copy is what gets transcribed.
+
+⚠ **The `n = 93` assertion is now formally dropped**, per the Task 4 deviation. Nothing in the wave has
+93 rows, no `external_id` is 93, and no slug carries it. It was never implemented and must not be
+reintroduced.
+
+⚠ **`fl.md`'s FL-1 litigation note was already corrected** while FL-6 was being planned, so Step 1's
+third bullet needed no action. Verified rather than assumed.
 
 ---
 
@@ -1729,23 +1778,23 @@ Commit message opens with the counts, then leads on the reuse and the two anchor
 - Modify: `.planning/knight-foundation/fl.md`, `.planning/knight-foundation/PROGRAM.md`
 - Modify: this plan — add "Deviations found during execution" per task, as FL-5 did five times
 
-- [ ] **Step 1: `fl.md`**
+- [x] **Step 1: `fl.md`**
 
 - Wave table: FL-6 `✅ applied — CC_0015, CC_0016, CC_0017`. Next free `CC_0018`, `X0042`.
 - Add `## FL-6 — Miami and Miami-Dade County (applied …)` with the counts, the band ranges, the `X` allocations, both anchors and the date-precision histogram.
 - 🔴 **Correct the FL-1 note**: "only the congressional map was litigated after 2022" is true of the **state** maps and **false** of Miami's city map, which was struck down twice and replaced by a May 2024 settlement map.
-- Record, in this order: the **reuse** and the fifth band-guard shape; **two anchors** and why; **four vintages plus a geometry-less lookalike**, and that District 1 moved only 0.136 sq mi so a spot check would pass on the wrong map; **Miami-Dade tiles the county exactly, the opposite of Palm Beach** — measure before choosing the gate; **`12086` collides with a New York ZIP code, and 40 of 67 FL counties do**; **the SOE roster PDF** and that it stops at the county line and carries an as-of date; **two appointed commissioners and a Commission-appointed vacancy mechanism**; the **Higgins → Lopez → HD-113 chain**; **four in-wave surname pairs and two two-word surnames**; **four Clerk titles across four counties** and the office's-own-site rule; **State Attorney/Public Defender confirmed excluded by Miami-Dade's own publishers**; and **~60 Community Council seats** as the largest unmodelled block found so far.
+- Record, in this order: the **reuse** and the fifth band-guard shape; **two anchors** and why; **four vintages plus a geometry-less lookalike**, and that District 1 moved only 0.136 sq mi so a spot check would pass on the wrong map; **Miami-Dade tiles the county exactly, the opposite of Palm Beach** — measure before choosing the gate; **`12086` collides with a New York ZIP code, and 40 of 67 FL counties do**; **the SOE roster PDF** and that it stops at the county line and carries an as-of date; **FOUR appointed commissioners (D5, D6, D8, D11 — NOT the two this plan predicted), three by Commission vote and one by the Governor**; the **Higgins → Lopez → HD-113 chain**; **four in-wave surname pairs and two two-word surnames**; **four Clerk titles across four counties** and the office's-own-site rule; **State Attorney/Public Defender confirmed excluded by Miami-Dade's own publishers**; and **~60 Community Council seats** as the largest unmodelled block found so far.
 - Update "Sources for FL-3 onward": **all four Florida jurisdictions are now ANSWERED.**
 
-- [ ] **Step 2: `PROGRAM.md`**
+- [x] **Step 2: `PROGRAM.md`**
 
 - 🔴 **Slice status: FL stages 3 and 4 both go to `✅`** — all four Florida jurisdictions are in. This is the first slice to close either stage. Rewrite the narrative paragraph accordingly, keeping the note that Palm Beach has no city half.
 - Jurisdiction detail: Miami and Bradenton rows get their seated counts, like Tallahassee's and Palm Beach's.
 - Local/county seats: add Miami 6/6 and Miami-Dade 19/19; restate the Florida total.
 - Migration ledger: three rows; next free `CC_0018`; MTFCC next free `X0042`.
-- Session log: one row, and **`Next action: FL-7 — Florida assets. 72 people, 0 headshots, and three banners: Bradenton, Tallahassee and Miami, plus Palm Beach County's own COUNTY key whose name and composition are still unchosen. 🔴 Miami's banner CANNOT be a downtown skyline — the Florida state banner is "Miami Late Afternoon Skyline". ▶ Also re-check the six Florida vacancies (5 legislative + Manatee D1) and write their predecessor terms together; and re-check Palm Beach D2/D4/D6 and Miami-Dade D1/D5/D6 after the November 2026 general.`**
+- Session log: one row, and **`Next action: FL-7 — Florida assets. 72 people, 0 headshots, and three banners: Bradenton, Tallahassee and Miami, plus Palm Beach County's own COUNTY key whose name and composition are still unchosen. 🔴 Miami's banner CANNOT be a downtown skyline — the Florida state banner is "Miami Late Afternoon Skyline". ▶ Also re-check the six Florida vacancies (5 legislative + Manatee D1) and write their predecessor terms together; and re-check Palm Beach D2/D4/D6 and Miami-Dade D5/D6/D8/D11 after the November 2026 general.`**
 
-- [ ] **Step 3: Commit and push**
+- [x] **Step 3: Commit and push**
 
 ```bash
 cd <knight-worktree> && git fetch origin && git rev-list --left-right --count origin/docs/knight-cities-program...HEAD && git push origin docs/knight-cities-program
