@@ -32,8 +32,10 @@
  */
 import 'dotenv/config';
 import pg from 'pg';
-import { spawnSync } from 'node:child_process';
-import { writeFileSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+import { writeFileSync, readFileSync, statSync, mkdtempSync, rmSync, openSync, readSync, closeSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const argv = process.argv.slice(2);
 const stateIx = argv.indexOf('--state');
@@ -41,15 +43,27 @@ const jsonIx = argv.indexOf('--json');
 const ALL = argv.includes('--all');
 /** Restrict to values carrying no image extension -- the population most likely to be a page. */
 const NO_EXT_ONLY = argv.includes('--no-extension-only');
+/** The complement: only values that DO carry an image extension. A .jpg that 404s reads as
+ *  coverage exactly like a page URL does, and it is the larger population. */
+const EXT_ONLY = argv.includes('--extension-only');
 const CONCURRENCY = (() => { const i = argv.indexOf('--concurrency'); return i === -1 ? 8 : Number(argv[i + 1]); })();
 
 if (!ALL && stateIx === -1) {
-  console.error('usage: --all | --state <xx>   [--no-extension-only] [--json FILE] [--concurrency N]');
+  console.error('usage: --all | --state <xx>   [--no-extension-only | --extension-only] [--json FILE] [--concurrency N]');
   process.exit(2);
 }
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
 
 const MIN_BYTES = 2000;
+
+/**
+ * 🔴 A MISSING OBJECT IN OUR OWN BUCKET IS AN HTTP **400**, NOT A 404.
+ * Supabase Storage answers a missing key with HTTP 400 and a JSON body that itself claims
+ * {"statusCode":"404","error":"not_found","code":"NoSuchKey"}. Anything keying on 404 misses
+ * it. Seven Massachusetts legislators hold a politician_images row AND a photo_custom_url
+ * pointing at our bucket for a file that is not there. Checking the BYTES catches this;
+ * checking the status code does not.
+ */
 const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
 
 function imageKind(b) {
@@ -57,26 +71,69 @@ function imageKind(b) {
   if (b.length >= 8 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return 'PNG';
   if (b.length >= 3 && b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46) return 'GIF';
   if (b.length >= 12 && b.slice(0, 4).toString('latin1') === 'RIFF' && b.slice(8, 12).toString('latin1') === 'WEBP') return 'WEBP';
+  // 🔴 AVIF/HEIC ARE ISOBMFF, NOT A LEADING SIGNATURE -- the brand sits at bytes 4..11.
+  // We send a browser's Accept header, so hosts that content-negotiate WILL answer in a
+  // modern format: static.wixstatic.com returns AVIF for the very same URL that gives PNG
+  // to a bare request. Two working North Carolina portraits were reported BROKEN over this.
+  // A format we cannot name is not the same as "not an image".
+  if (b.length >= 12 && b.slice(4, 8).toString('latin1') === 'ftyp') {
+    const brand = b.slice(8, 12).toString('latin1');
+    if (brand === 'avif' || brand === 'avis') return 'AVIF';
+    if (brand.startsWith('hei') || brand.startsWith('mif')) return 'HEIC';
+  }
   return null;
 }
 
+/**
+ * 🔴 ASYNC spawn, NOT spawnSync. spawnSync BLOCKS THE EVENT LOOP, so a pool of
+ * "concurrent" workers built on it runs strictly serially and --concurrency silently
+ * means nothing. Measured: the first 513-row sweep was serial despite asking for 8.
+ *
+ * 🔴 THE BODY GOES TO A FILE, THE STATUS COMES BACK ON STDOUT.
+ * Mixing them was a real bug: capping retained stdout to bound memory threw away curl's
+ * -w trailer on any response bigger than the cap, so a 1.2MB PNG parsed as garbage and was
+ * reported BROKEN. Separating the two streams bounds memory AND keeps the trailer, and only
+ * the first bytes of the file are ever read -- a magic number needs no more than that.
+ * (Do not pass -o /dev/null on Windows: curl fails with "client returned ERROR on write".)
+ */
+const TMP = mkdtempSync(join(tmpdir(), 'photocheck-'));
+let seq = 0;
+
 function httpGet(url) {
-  const r = spawnSync('curl', [
-    '-sS', '-L', '--max-time', '30',
-    '-A', BROWSER_UA,
-    '-H', 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
-    '-w', '\\n%{http_code}\\n%{content_type}', url,
-  ], { maxBuffer: 64 * 1024 * 1024, encoding: 'buffer' });
-  if (r.error) throw r.error;
-  if (r.status !== 0) throw new Error((r.stderr?.toString() || `curl exit ${r.status}`).trim());
-  const out = r.stdout;
-  const nl2 = out.lastIndexOf(0x0a);
-  const nl1 = out.lastIndexOf(0x0a, nl2 - 1);
-  return {
-    status: Number(out.slice(nl1 + 1, nl2).toString('latin1')),
-    contentType: out.slice(nl2 + 1).toString('latin1').trim(),
-    body: out.slice(0, nl1),
-  };
+  const file = join(TMP, `b${seq++}.bin`);
+  return new Promise((resolve, reject) => {
+    const child = spawn('curl', [
+      '-sS', '-L', '--max-time', '30',
+      '-A', BROWSER_UA,
+      '-H', 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+      '-o', file,
+      '-w', '%{http_code}\n%{content_type}', url,
+    ]);
+    const out = [];
+    const err = [];
+    child.stdout.on('data', (d) => out.push(d));
+    child.stderr.on('data', (d) => err.push(d));
+    child.on('error', reject);
+    child.on('close', (code) => {
+      if (code !== 0) {
+        try { rmSync(file, { force: true }); } catch { /* best effort */ }
+        return reject(new Error(Buffer.concat(err).toString().trim() || `curl exit ${code}`));
+      }
+      const [status, ctype = ''] = Buffer.concat(out).toString('latin1').split('\n');
+      let head = Buffer.alloc(0);
+      let bytes = 0;
+      try {
+        bytes = statSync(file).size;
+        const fd = openSync(file, 'r');
+        const buf = Buffer.alloc(Math.min(64, bytes));
+        const n = readSync(fd, buf, 0, buf.length, 0);
+        closeSync(fd);
+        head = buf.subarray(0, n);
+      } catch { /* no body written */ }
+      try { rmSync(file, { force: true }); } catch { /* best effort */ }
+      resolve({ status: Number(status), contentType: ctype.trim(), head, bytes });
+    });
+  });
 }
 
 const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
@@ -104,8 +161,9 @@ const { rows } = await client.query(
 );
 await client.end();
 
-const targets = NO_EXT_ONLY
-  ? rows.filter((r) => !/\.(jpg|jpeg|png|webp|gif)(\?|$)/i.test(r.rendered))
+const HAS_EXT = (u) => /\.(jpg|jpeg|png|webp|gif)(\?|$)/i.test(u);
+const targets = NO_EXT_ONLY ? rows.filter((r) => !HAS_EXT(r.rendered))
+  : EXT_ONLY ? rows.filter((r) => HAS_EXT(r.rendered))
   : rows;
 
 console.log(`checking ${targets.length} rendered URL(s) with concurrency ${CONCURRENCY}\n`);
@@ -118,9 +176,9 @@ async function worker(queue) {
     if (!r) return;
     let verdict, ok = false, kind = null, status = null, ctype = null, bytes = 0;
     try {
-      const res = httpGet(r.rendered);
-      status = res.status; ctype = res.contentType; bytes = res.body.length;
-      kind = imageKind(res.body);
+      const res = await httpGet(r.rendered);
+      status = res.status; ctype = res.contentType; bytes = res.bytes;
+      kind = imageKind(res.head);
       if (!kind) verdict = `HTTP ${status}, ${bytes}B, ${ctype || 'no content-type'} -- NOT AN IMAGE`;
       else if (bytes < MIN_BYTES) verdict = `HTTP ${status}, ${kind} but only ${bytes}B`;
       else { ok = true; verdict = `${kind} ${bytes}B`; }
@@ -152,6 +210,8 @@ if (broken.length) {
   console.log('\nbroken by host:');
   for (const [h, n] of Object.entries(byHost).sort((a, b) => b[1] - a[1]).slice(0, 20)) console.log(`  ${String(n).padStart(4)}  ${h}`);
 }
+
+try { rmSync(TMP, { recursive: true, force: true }); } catch { /* best effort */ }
 
 if (jsonIx !== -1) {
   writeFileSync(argv[jsonIx + 1], JSON.stringify(results, null, 2));
