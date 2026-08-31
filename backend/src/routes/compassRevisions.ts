@@ -47,6 +47,8 @@ import {
   listOpenRevisions,
   getRevisionForReview,
   getTopicRevisionHistory,
+  getCurrentTopicContent,
+  proposeRevision,
   approveRevision,
   rejectRevision,
   publishRevision,
@@ -59,6 +61,24 @@ const TOPIC_KEY_RE = /^[a-z0-9-/]{1,80}$/;
 
 const rejectSchema = z.object({
   reason: z.string().trim().min(1, 'A reason is required').max(2000),
+});
+
+const proposeSchema = z.object({
+  topic_key: z.string().regex(TOPIC_KEY_RE, 'Invalid topic key'),
+  change_class: z.enum(['editorial', 'clarifying', 'substantive']),
+  title: z.string().trim().min(1).max(200),
+  short_title: z.string().trim().min(1).max(80).nullable(),
+  question_text: z.string().trim().min(1).max(500),
+  stances: z.array(z.object({
+    value: z.number().int().min(1).max(5),
+    text: z.string().trim().min(1).max(1000),
+  })).length(5),
+  rationale: z.string().trim().min(1).max(4000),
+  public_note: z.string().trim().min(1).max(4000),
+  review_ref: z.string().trim().min(1).max(500).nullable(),
+  // Identity map when the ladder changed, null when it did not. The RPC and
+  // is_valid_rung_map own the deeper validation; publish refuses moved rungs.
+  rung_map: z.record(z.string(), z.union([z.number().int(), z.literal('invalidated')])).nullable(),
 });
 
 /**
@@ -97,6 +117,91 @@ function sendRpcError(res: Response, err: unknown, where: string): void {
   console.error(`[${where}] unexpected error:`, err);
   res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
 }
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/revisions/current/:topicKey — the live wording, for the
+// revision editor's "what it says now" column.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/current/:topicKey',
+  requireAuth,
+  requireCompassReviewer,
+  async (req: Request, res: Response): Promise<void> => {
+    const topicKey = req.params.topicKey as string;
+    if (!TOPIC_KEY_RE.test(topicKey)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid topic key' });
+      return;
+    }
+    try {
+      res.json(await getCurrentTopicContent(topicKey));
+    } catch (err) {
+      sendRpcError(res, err, 'GET /compass/revisions/current/:topicKey');
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// POST /api/compass/revisions — file a proposal from the revision editor.
+//
+// This reverses the "authoring is not a route" decision recorded above, and
+// the reversal is deliberate: that decision predates seasons. The 061-era form
+// fed nothing, so nobody used it. This one feeds the review queue, and its
+// output is what the season composer re-pins — the editor is the missing first
+// step of a pipeline people now use daily. See docs/adr/0004 (§9) for the
+// review workflow it submits into.
+// ---------------------------------------------------------------------------
+
+router.post(
+  '/',
+  requireAuth,
+  requireCompassReviewer,
+  async (req: Request, res: Response): Promise<void> => {
+    const parsed = proposeSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: parsed.error.issues[0]?.message ?? 'Invalid body',
+      });
+      return;
+    }
+    const actorId = (req as AuthenticatedRequest).userId;
+    const b = parsed.data;
+    try {
+      const out = await proposeRevision(
+        {
+          topicKey: b.topic_key,
+          changeClass: b.change_class,
+          title: b.title,
+          shortTitle: b.short_title,
+          questionText: b.question_text,
+          stances: b.stances,
+          rationale: b.rationale,
+          publicNote: b.public_note,
+          reviewRef: b.review_ref,
+          rungMap: b.rung_map,
+        },
+        actorId
+      );
+      // Audit without masking: the proposal is already filed; a failed audit
+      // insert must not report it as failed (a retry would file a duplicate).
+      try {
+        await logAdminAction(actorId, 'compass:revision:propose', null, {
+          topic_key: b.topic_key,
+          revision_id: out.revision_id,
+          change_class: b.change_class,
+          ladder_changed: b.rung_map !== null,
+          capacity: reviewerCapacity(req),
+        });
+      } catch (auditErr) {
+        console.error('[POST /compass/revisions] audit log failed:', auditErr);
+      }
+      res.status(201).json(out);
+    } catch (err) {
+      sendRpcError(res, err, 'POST /compass/revisions');
+    }
+  }
+);
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/revisions/queue — open proposals awaiting review

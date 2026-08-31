@@ -210,3 +210,22 @@ this person holds, not a rating of how strongly they lean.
 **Gate:** `node scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
 carries reasoning that names no instrument, act or vote. Run it before committing any migration that
 sets a chair.
+
+### Rewording a chair that already holds seated politicians (ruling 2026-08-28, Chris Andrews)
+
+- A **clarifying** rewording — same position, clearer words — keeps existing seats. Nothing re-audits.
+- A **material** rewrite — a double-barrel split, a narrowed or widened claim — means the seats' evidence
+  was gathered against a sentence that no longer exists. Those rows need a **re-audit against the new
+  wording** (`audit-chair-evidence.mjs` is the tool), not a silent text update. State the seated-row
+  count in the proposal's rationale so the reviewer prices the re-audit before approving.
+- Seasons carry the mechanics: a season's pin never moves once open, so Season 1 rows keep asserting
+  exactly the wording they were evidenced against. The re-audit question is about what carries forward
+  into the NEXT season's research, not about rewriting history.
+
+### Scope is a per-rung question, not a per-topic one (ruling 2026-08-28, Chris Andrews)
+
+**A ladder is only valid at a level where its rungs are things an officeholder there can actually
+do.** Scopes were originally assigned per topic and never re-checked rung by rung — `voting-rights`
+fails 4 of 5 rungs at `local` (NC wave 2b memo). Before adding a `compass_topic_roles` row for a
+level, read every rung and ask: does an officeholder at this level hold a lever on this? A chair
+that can only be evidenced by opinion at that level is the exact shape the evidence standard refuses.
