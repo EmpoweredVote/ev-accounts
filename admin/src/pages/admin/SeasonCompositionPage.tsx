@@ -4,8 +4,8 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../../lib/api';
 import { hasChanged } from '../../lib/wordDiff';
 import { DEL, InlineDiff, FieldDiff } from '../../components/wordDiffView';
-import { LensClusters } from '../../components/LensClusters';
-import { useCompassLenses } from '../../hooks/useCompassLenses';
+import { LensDot } from '../../components/LensClusters';
+import { useCompassLenses, shortLensName, type CompassLens } from '../../hooks/useCompassLenses';
 import {
   classifyAll,
   statCounts,
@@ -26,6 +26,43 @@ import {
  */
 
 const OPT_COLORS = ['#2f6fb0', '#59B0C4', '#9ca3af', '#e0a63a', '#FF5740'];
+
+/** Bucket key for topics that sit in no curated lens. */
+const NO_LENS = '__no_lens__';
+
+/** Sub-header that opens a lens group inside a season column. */
+function LensGroupHeader({ lens, count }: { lens: CompassLens | null; count: number }) {
+  return (
+    <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-3 py-1 dark:border-gray-800 dark:bg-gray-800/40">
+      {lens ? (
+        <LensDot lens={lens} />
+      ) : (
+        <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full border border-gray-300 dark:border-gray-600" />
+      )}
+      <span className="text-[11px] font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+        {lens ? shortLensName(lens.name) : 'No lens'}
+      </span>
+      <span className="ml-auto text-[11px] tabular-nums text-gray-400">{count}</span>
+    </div>
+  );
+}
+
+/**
+ * A topic is grouped under its FIRST lens; any other lenses it belongs to show
+ * as small dots on the row so multi-lens membership is not hidden by the group.
+ */
+function ExtraLensDots({ topicLenses, primaryKey }: { topicLenses: CompassLens[]; primaryKey: string | null }) {
+  const extra = topicLenses.filter((l) => l.key !== primaryKey);
+  if (extra.length === 0) return null;
+  return (
+    <span
+      className="flex shrink-0 items-center gap-0.5"
+      title={`Also in ${extra.map((l) => shortLensName(l.name)).join(', ')}`}
+    >
+      {extra.map((l) => <LensDot key={l.key} lens={l} />)}
+    </span>
+  );
+}
 
 /** Five-segment mini bar of the open season's answer mix. */
 function SparkBar({ topic }: { topic: CompositionTopic }) {
@@ -563,42 +600,32 @@ export function SeasonCompositionPage() {
   const draftCount = draftRows.length;
 
   // System (curated) lenses — Local / Judicial / Federal, and a School lens
-  // once it is seeded. Clustered below the composition grid so a reviewer can
-  // see, per lens, which of its topics this season actually asks.
-  const { lenses, loading: lensesLoading, error: lensesError } = useCompassLenses();
-  const topicById = useMemo(() => {
-    const m = new Map<string, CompositionTopic>();
-    for (const t of data?.topics ?? []) m.set(t.topic_id, t);
+  // once it is seeded. Used to group each season column by lens instead of a
+  // separate block: a topic is bucketed under its FIRST lens, in the lens load
+  // order, with a trailing "No lens" bucket for topics in no lens.
+  const { lenses, byTopicId } = useCompassLenses();
+  const groupByLens = useCallback(
+    (rows: Classified[]): { lens: CompassLens | null; rows: Classified[] }[] => {
+      const buckets = new Map<string, { lens: CompassLens | null; rows: Classified[] }>();
+      for (const lens of lenses) buckets.set(lens.key, { lens, rows: [] });
+      buckets.set(NO_LENS, { lens: null, rows: [] });
+      for (const c of rows) {
+        const found = byTopicId.get(c.topic.topic_id);
+        const key = found && found.length > 0 ? found[0].key : NO_LENS;
+        buckets.get(key)!.rows.push(c);
+      }
+      return [...buckets.values()].filter((b) => b.rows.length > 0);
+    },
+    [lenses, byTopicId],
+  );
+  // The draft column shows the sequential number a topic WILL get on open
+  // (1..N over the display-order list). Grouping reorders the rows visually, so
+  // that number has to come from the ungrouped order, not the render index.
+  const draftSeq = useMemo(() => {
+    const m = new Map<string, number>();
+    draftRows.forEach((c, i) => m.set(c.topic.topic_id, i + 1));
     return m;
-  }, [data]);
-  const lensTitleFor = useCallback((id: string): string => {
-    const t = topicById.get(id);
-    if (!t) return 'Unknown topic';
-    return t.in_draft?.pin.title ?? t.in_open?.pin.title ?? t.current?.title ?? t.topic_key;
-  }, [topicById]);
-  const lensMetaFor = useCallback((id: string) => {
-    const t = topicById.get(id);
-    if (!t) return null;
-    if (t.in_open) {
-      return (
-        <span className="shrink-0 rounded bg-cyan-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ev-teal dark:bg-cyan-950/50 dark:text-ev-teal-light">
-          Open · Q{t.in_open.question_number}
-        </span>
-      );
-    }
-    if (t.in_draft) {
-      return (
-        <span className="shrink-0 rounded bg-ev-yellow px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-yellow-900">
-          Draft
-        </span>
-      );
-    }
-    return (
-      <span className="shrink-0 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gray-400 dark:bg-gray-800 dark:text-gray-500">
-        Not asked
-      </span>
-    );
-  }, [topicById]);
+  }, [draftRows]);
 
   /** Run a mutation, surface its server message, reload on success. */
   const act = useCallback(async (fn: () => Promise<unknown>) => {
@@ -853,21 +880,27 @@ export function SeasonCompositionPage() {
             {open?.name ?? 'No open season'} <span className="ml-1 font-normal text-gray-400">{openRows.length} questions</span>
           </h2>
           <div className="bg-white dark:bg-gray-900">
-            {openRows.map((c) => (
-              <button
-                key={c.topic.topic_id}
-                onClick={() => setDetail(c)}
-                className={`flex w-full items-center gap-2 border-b border-gray-100 px-3 py-1.5 text-left text-sm last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : ''}`}
-              >
-                <span className="w-6 shrink-0 text-right text-xs tabular-nums text-gray-400">
-                  {c.topic.in_open?.question_number}
-                </span>
-                <span className={`truncate ${c.status === 'dropped' ? 'text-gray-400 line-through' : 'text-gray-800 dark:text-gray-200'}`}>
-                  {c.topic.in_open?.pin.title}
-                </span>
-                <StatusBadge status={c.status} />
-                <SparkBar topic={c.topic} />
-              </button>
+            {groupByLens(openRows).map((g) => (
+              <div key={g.lens?.key ?? NO_LENS}>
+                <LensGroupHeader lens={g.lens} count={g.rows.length} />
+                {g.rows.map((c) => (
+                  <button
+                    key={c.topic.topic_id}
+                    onClick={() => setDetail(c)}
+                    className={`flex w-full items-center gap-2 border-b border-gray-100 px-3 py-1.5 text-left text-sm last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : ''}`}
+                  >
+                    <span className="w-6 shrink-0 text-right text-xs tabular-nums text-gray-400">
+                      {c.topic.in_open?.question_number}
+                    </span>
+                    <span className={`truncate ${c.status === 'dropped' ? 'text-gray-400 line-through' : 'text-gray-800 dark:text-gray-200'}`}>
+                      {c.topic.in_open?.pin.title}
+                    </span>
+                    <ExtraLensDots topicLenses={byTopicId.get(c.topic.topic_id) ?? []} primaryKey={g.lens?.key ?? null} />
+                    <StatusBadge status={c.status} />
+                    <SparkBar topic={c.topic} />
+                  </button>
+                ))}
+              </div>
             ))}
           </div>
         </section>
@@ -878,36 +911,44 @@ export function SeasonCompositionPage() {
               {draft.name} <span className="ml-1 font-normal text-gray-400">{draftCount} questions</span>
             </h2>
             <div className="bg-white dark:bg-gray-900">
-              {draftRows.map((c, i) => (
-                <div
-                  key={c.topic.topic_id}
-                  className={`flex items-center gap-2 border-b border-gray-100 px-3 py-1.5 text-sm last:border-0 dark:border-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : c.status === 'added' ? 'bg-cyan-50 dark:bg-cyan-950/30' : ''}`}
-                >
-                  <span className="w-6 shrink-0 text-right text-xs tabular-nums text-gray-400">{i + 1}</span>
-                  <button
-                    onClick={() => setDetail(c)}
-                    className="min-w-0 flex-1 truncate text-left text-gray-800 hover:underline dark:text-gray-200"
-                  >
-                    {c.topic.in_draft?.pin.title}
-                  </button>
-                  {c.pin_is_stale && (
-                    <button
-                      onClick={() => repin(c.topic.topic_id)}
-                      disabled={busy}
-                      title={`Pinned rev ${c.topic.in_draft?.pin.revision}; rev ${c.topic.current?.revision} is now current. Re-pin to pick it up.`}
-                      className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-amber-800 hover:bg-amber-200 disabled:opacity-50 dark:bg-amber-950/60 dark:text-amber-200 dark:hover:bg-amber-900"
+              {groupByLens(draftRows).map((g) => (
+                <div key={g.lens?.key ?? NO_LENS}>
+                  <LensGroupHeader lens={g.lens} count={g.rows.length} />
+                  {g.rows.map((c) => (
+                    <div
+                      key={c.topic.topic_id}
+                      className={`flex items-center gap-2 border-b border-gray-100 px-3 py-1.5 text-sm last:border-0 dark:border-gray-800 ${c.status === 'changed' ? 'bg-amber-50 dark:bg-amber-950/30' : c.status === 'added' ? 'bg-cyan-50 dark:bg-cyan-950/30' : ''}`}
                     >
-                      Re-pin rev {c.topic.current?.revision}
-                    </button>
-                  )}
-                  <StatusBadge status={c.status} />
-                  <button
-                    onClick={() => dropTopic(c.topic.topic_id)}
-                    disabled={busy}
-                    className="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold uppercase text-gray-400 hover:bg-red-50 hover:text-ev-red dark:hover:bg-red-950/40"
-                  >
-                    Drop
-                  </button>
+                      <span className="w-6 shrink-0 text-right text-xs tabular-nums text-gray-400">
+                        {draftSeq.get(c.topic.topic_id)}
+                      </span>
+                      <button
+                        onClick={() => setDetail(c)}
+                        className="min-w-0 flex-1 truncate text-left text-gray-800 hover:underline dark:text-gray-200"
+                      >
+                        {c.topic.in_draft?.pin.title}
+                      </button>
+                      <ExtraLensDots topicLenses={byTopicId.get(c.topic.topic_id) ?? []} primaryKey={g.lens?.key ?? null} />
+                      {c.pin_is_stale && (
+                        <button
+                          onClick={() => repin(c.topic.topic_id)}
+                          disabled={busy}
+                          title={`Pinned rev ${c.topic.in_draft?.pin.revision}; rev ${c.topic.current?.revision} is now current. Re-pin to pick it up.`}
+                          className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-amber-800 hover:bg-amber-200 disabled:opacity-50 dark:bg-amber-950/60 dark:text-amber-200 dark:hover:bg-amber-900"
+                        >
+                          Re-pin rev {c.topic.current?.revision}
+                        </button>
+                      )}
+                      <StatusBadge status={c.status} />
+                      <button
+                        onClick={() => dropTopic(c.topic.topic_id)}
+                        disabled={busy}
+                        className="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold uppercase text-gray-400 hover:bg-red-50 hover:text-ev-red dark:hover:bg-red-950/40"
+                      >
+                        Drop
+                      </button>
+                    </div>
+                  ))}
                 </div>
               ))}
 
@@ -966,22 +1007,6 @@ export function SeasonCompositionPage() {
           </section>
         )}
       </div>
-
-      <section className="mt-10">
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Lenses</h2>
-        <p className="mb-4 mt-1 max-w-3xl text-sm text-gray-500 dark:text-gray-400">
-          The curated per-office lens sets, each with its topics clustered. A marker shows whether the
-          {open ? ` open season (${open.name})` : ' open season'} asks it. Read-only — a topic joins or
-          leaves a lens through a migration.
-        </p>
-        <LensClusters
-          lenses={lenses}
-          titleFor={lensTitleFor}
-          metaFor={lensMetaFor}
-          loading={lensesLoading}
-          error={lensesError}
-        />
-      </section>
 
       <TopicDetailModal item={detail} openSeason={open} onClose={() => setDetail(null)} allowPropose />
 
