@@ -25,8 +25,10 @@ WHAT IT GETS RIGHT THAT A NAIVE IMPORTER DOES NOT
 USAGE (from C:/EV-Accounts/backend):
   py scripts/import-headshot-candidates.py --dry-run
   py scripts/import-headshot-candidates.py --exclude "Some Person"
+  py scripts/import-headshot-candidates.py --replace   # repair missing/placeholder objects
 """
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -37,18 +39,26 @@ import requests
 from dotenv import load_dotenv
 from PIL import Image
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from headshot_crop import crop_4x5  # noqa: E402
+
 load_dotenv()
 
 BUCKET = "politician_photos"
 CDN = f"https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/{BUCKET}/"
 UPLOAD = f"https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/{BUCKET}/"
 TARGET_W, TARGET_H = 600, 750
+CACHE = ".tmp-headshot-cache"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--exclude", nargs="*", default=[], help="names to skip")
 ap.add_argument("--only", nargs="*", default=[], help="import only these names")
 ap.add_argument("--dry-run", action="store_true")
+ap.add_argument("--replace", action="store_true",
+                help="repair a row that already has an image: re-upload and REPOINT it. Use only "
+                     "when the existing object is missing or a placeholder -- verify with "
+                     "scripts/verify-rendered-photo-urls.mjs first")
 ap.add_argument("--max-upscale", type=float, default=1.0,
                 help="enlarge up to this factor to reach 600x750; beyond it, store at native "
                      "cropped size instead (default 1.0 = never enlarge)")
@@ -74,33 +84,52 @@ for c in cands:
         problems.append(f"{c['name']}: no politician_id")
         continue
     cur.execute("SELECT 1 FROM essentials.politician_images WHERE politician_id = %s", (pid,))
-    if cur.fetchone():
+    has_row = cur.fetchone() is not None
+    # An existing image row normally means DONE, so a re-run is a no-op. But "has a row" is not
+    # the same as "has a picture": the row can point at an object that is not in the bucket, or
+    # at a placeholder. Seven Massachusetts legislators held a row AND a photo_custom_url for a
+    # file that returns NoSuchKey. --replace is for repairing exactly those; it is never the
+    # default, because overwriting a good portrait by accident is worse than skipping.
+    if has_row and not args.replace:
         skipped += 1
         print(f"  skip     {c['name']:<26} already has an image row")
         continue
     try:
-        raw = requests.get(c["url"], headers=UA, timeout=60).content
-        # Magic number, never the extension: a WAF page can arrive as HTTP 200.
-        if not (raw[:3] == b"\xff\xd8\xff" or raw[:4] == b"\x89PNG") or len(raw) < 2000:
+        # 🔴 CACHE-FIRST, SHARING THE PROOF SHEET'S CACHE. This is a correctness rule, not
+        # a speed one: the operator approved specific BYTES on the contact sheet, and a
+        # live refetch can return something else -- a WAF page, a 503, or a silently
+        # updated image. Reusing the cached bytes means what shipped is what was approved.
+        # It also stops the import re-hammering hosts the sheet already rate-limited:
+        # miami.gov 403s every non-browser client, so those came from the Wayback Machine,
+        # which then 503s under repeated fetches.
+        ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
+        if os.path.exists(ck) and os.path.getsize(ck) > 0:
+            raw = open(ck, "rb").read()
+        else:
+            raw = requests.get(c["url"], headers=UA, timeout=60).content
+        # 🔴 DECODABILITY, not a format whitelist. The rule that matters is "never trust the
+        # extension and never trust HTTP status -- a WAF page arrives as HTTP 200" -- and
+        # actually decoding the bytes enforces that MORE strictly than a magic-number
+        # allowlist did. The old allowlist was JPEG+PNG only, so it silently refused every
+        # WEBP: nine officials rendered on the proof sheet and would have vanished at import,
+        # including seven Leon County kiosk portraits.
+        try:
+            Image.open(BytesIO(raw)).verify()
+            decodable = True
+        except Exception:  # noqa: BLE001
+            decodable = False
+        if not decodable or len(raw) < 2000:
             failed += 1
             problems.append(f"{c['name']}: source did not return a usable image")
             continue
-        img = Image.open(BytesIO(raw))
-        # Flatten any alpha onto white FIRST -- convert('RGB') alone turns transparent
-        # pixels black, which is how a masked PNG becomes a circle on a black square.
-        if img.mode in ("RGBA", "LA", "P"):
-            img = img.convert("RGBA")
-            bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
-            img = Image.alpha_composite(bg, img)
-        img = img.convert("RGB")
-        w, h = img.size
-        ratio = TARGET_W / TARGET_H
-        if w / h > ratio:
-            kw, kh = int(h * ratio), h
-            img = img.crop(((w - kw) // 2, 0, (w - kw) // 2 + kw, h))
-        else:
-            kw, kh = w, int(w / ratio)
-            img = img.crop((0, (h - kh) // 2, w, (h - kh) // 2 + kh))
+        # ONE crop implementation, shared with the proof sheet (scripts/headshot_crop.py),
+        # so the operator approves exactly what ships. Alpha flattening onto white lives
+        # there too. A per-row "crop" override handles subjects the centre crop gets wrong
+        # -- someone standing beside a banner, inside a photo mat, or with their head at
+        # the top edge. Without it the default centre crop silently decapitates them.
+        src = Image.open(BytesIO(raw))
+        w, h = src.size                    # SOURCE size, reported in the log line
+        img, (kw, kh) = crop_4x5(src, **c.get("crop", {}))
 
         # NEVER ENLARGE, AND NEVER SKIP FOR BEING SMALL.
         # A source below 600x750 gets stored at its own cropped size instead of being
@@ -116,7 +145,11 @@ for c in cands:
             out_w, out_h = TARGET_W, TARGET_H
         else:
             out_w, out_h = kw, kh          # native cropped size, no enlargement
-        img = img.resize((out_w, out_h), Image.LANCZOS)
+        # Resample only when the size actually changes. crop_4x5 hands back the crop at its
+        # own size, so the native branch is now a straight save of the cropped pixels rather
+        # than an enlarge-to-600x750-then-shrink-back round trip.
+        if (out_w, out_h) != img.size:
+            img = img.resize((out_w, out_h), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=90)
         data = buf.getvalue()
@@ -137,14 +170,52 @@ for c in cands:
             failed += 1
             problems.append(f"{c['name']}: upload HTTP {up.status_code} {up.text[:100]}")
             continue
-        cur.execute(
-            """INSERT INTO essentials.politician_images (politician_id, url, type, photo_license)
-               SELECT %s, %s, 'default', %s
-                WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images WHERE politician_id = %s)""",
-            (pid, final, c["license"], pid))
+        if has_row and args.replace:
+            # REPOINT the existing row rather than inserting beside it. A second row of the
+            # SAME type would leave the read paths picking whichever sorts first -- possibly
+            # the dead one.
+            # 🔴 AND REPOINT ONLY THE 'default' ROW. politician_images.type is load-bearing:
+            # stanceService.ts reads WHERE type = 'default', and a second row is not always a
+            # mistake -- 191 people legitimately carry a 'thumb' beside their portrait.
+            # Without this predicate one --replace run pointed BOTH at the headshot and
+            # destroyed the thumbnail's URL.
+            cur.execute(
+                """UPDATE essentials.politician_images
+                      SET url = %s, photo_license = %s
+                    WHERE politician_id = %s AND type = 'default'""",
+                (final, c["license"], pid))
+        else:
+            cur.execute(
+                """INSERT INTO essentials.politician_images (politician_id, url, type, photo_license)
+                   SELECT %s, %s, 'default', %s
+                    WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images WHERE politician_id = %s)""",
+                (pid, final, c["license"], pid))
+        # 🔴 CREATING THE IMAGE ROW DOES NOT CHANGE WHAT A VOTER SEES.
+        # The address-search path (districtQueries.ts, DISTRICT_SELECT_FIELDS) builds its
+        # photo from COALESCE(photo_custom_url, photo_origin_url, '') and NEVER READS
+        # politician_images; essentialsBodiesService.ts reads it only third. So the mirrored
+        # copy has to be written to photo_custom_url or the person keeps rendering from
+        # whatever host they were hotlinked to. Florida's 155 legislators were imported
+        # without this and stayed on the chamber hotlink -- the exact thing the wave removed.
+        if args.replace:
+            # The stale value is the thing being repaired, so it must be overwritten, not
+            # preserved by an "only if empty" guard.
+            cur.execute("UPDATE essentials.politicians SET photo_custom_url = %s WHERE id = %s",
+                        (final, pid))
+        else:
+            cur.execute(
+                "UPDATE essentials.politicians SET photo_custom_url = %s "
+                " WHERE id = %s AND btrim(coalesce(photo_custom_url, '')) = ''",
+                (final, pid))
         # photo_origin_url records the SOURCE PAGE (provenance), not the image URL.
+        # It is also rewritten when it currently holds a RAW IMAGE URL: that value is the
+        # defect this pipeline exists to clear, and an IS NULL guard alone silently skipped
+        # all 155 Florida rows while still reporting them imported. A page URL somebody
+        # already recorded is left alone.
         cur.execute(
-            "UPDATE essentials.politicians SET photo_origin_url = %s WHERE id = %s AND photo_origin_url IS NULL",
+            "UPDATE essentials.politicians SET photo_origin_url = %s "
+            " WHERE id = %s AND (photo_origin_url IS NULL "
+            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp|gif)(\\?|$)')",
             (c["page"], pid))
         conn.commit()
         done += 1

@@ -4,13 +4,13 @@
     "layer_class": "tribal_metadata",
     "source_url": "https://maps.slc.gov/server/rest/services/Hosted/Boundaries/FeatureServer/13/query?where=1%3D1&outFields=name&f=geojson",
     "field_map": {
-      "district_num": "<N/A \u2014 metadata only>",
+      "district_num": "<N/A — metadata only>",
       "name": "name"
     },
     "mtfcc": "X0004",
     "geo_id_template": null,
     "status": "no_source",
-    "notes": "UGRC tribal-lands metadata FeatureServer for Wave 3 hybrid loader (D-05). Used by load-state-tiger-boundaries.ts aiannh post-insert UPDATE step. status=no_source because this record is metadata-only \u2014 TIGER provides the polygon. PROVENANCE: UGRC SGID political category was probed 2026-05-08 (no Indian/Tribal/Reservation entries found at gis.utah.gov/products/sgid/political/); substantive fallback located at SLC's hosted 'Utah Federal American Indian Reservation' FeatureServer (8 features: Ute Mountain, Paiute (UT), Kaibab, Uintah and Ouray, Northwestern Shoshone, Navajo Nation, Goshute, Skull Valley; last edit 2025-01-08). Research \u00a7'Sources Secondary' explicitly identified this layer as a viable alternate for the tribal polygon source path. Wave 3's loader should slugify `name` (e.g. 'Uintah and Ouray Reservation' \u2192 'uintah_and_ouray_reservation') and UPDATE matching geofence_boundaries rows where mtfcc='X0004'."
+    "notes": "UGRC tribal-lands metadata FeatureServer for Wave 3 hybrid loader (D-05). Used by load-state-tiger-boundaries.ts aiannh post-insert UPDATE step. status=no_source because this record is metadata-only — TIGER provides the polygon. PROVENANCE: UGRC SGID political category was probed 2026-05-08 (no Indian/Tribal/Reservation entries found at gis.utah.gov/products/sgid/political/); substantive fallback located at SLC's hosted 'Utah Federal American Indian Reservation' FeatureServer (8 features: Ute Mountain, Paiute (UT), Kaibab, Uintah and Ouray, Northwestern Shoshone, Navajo Nation, Goshute, Skull Valley; last edit 2025-01-08). Research §'Sources Secondary' explicitly identified this layer as a viable alternate for the tribal polygon source path. Wave 3's loader should slugify `name` (e.g. 'Uintah and Ouray Reservation' → 'uintah_and_ouray_reservation') and UPDATE matching geofence_boundaries rows where mtfcc='X0004'."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/county:salt_lake",
@@ -1022,7 +1022,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:holladay/ward:{N}",
     "status": "manual_geojson",
-    "notes": "VERIFIED 2026-06-01. Extracted from ArcGIS Hub web map d0cb510277ee4f0f989c9a5de4d0a6da (city-of-holladay-holladay.hub.arcgis.com) \u2014 inline featureCollection (shapefile upload), no hosted FeatureServer available. 5 district polygons; field D_STRICT (integer 1-5), Representa. Saved to backend/data/geo/holladay-wards-2022.geojson. District boundaries are 2022 redistricting. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source has no clean label: its only label field reads 'Proposed District 1 - 6,174' (a redistricting proposal with population). Synthesized instead."
+    "notes": "VERIFIED 2026-06-01. Extracted from ArcGIS Hub web map d0cb510277ee4f0f989c9a5de4d0a6da (city-of-holladay-holladay.hub.arcgis.com) — inline featureCollection (shapefile upload), no hosted FeatureServer available. 5 district polygons; field D_STRICT (integer 1-5), Representa. Saved to backend/data/geo/holladay-wards-2022.geojson. District boundaries are 2022 redistricting. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source has no clean label: its only label field reads 'Proposed District 1 - 6,174' (a redistricting proposal with population). Synthesized instead."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:honeyville",
@@ -1302,7 +1302,7 @@
     "mtfcc": "X0001",
     "geo_id_template": null,
     "status": "at_large",
-    "notes": "At-large council confirmed 2026-06-01: Lehi City has 5 council members elected at-large city-wide with staggered 4-year terms. No ward/district boundaries exist. Prior URL guess for LehiCouncilDistricts returned HTTP 400 (probed 2026-05-09) \u2014 confirmed no district structure."
+    "notes": "At-large council confirmed 2026-06-01: Lehi City has 5 council members elected at-large city-wide with staggered 4-year terms. No ward/district boundaries exist. Prior URL guess for LehiCouncilDistricts returned HTTP 400 (probed 2026-05-09) — confirmed no district structure."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:levan",
@@ -1519,7 +1519,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:millcreek/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-06-01 via Millcreek GIS org XRrSFvEwSsReIxuA. Millcreek_City_Council_Dist_2022 FeatureServer layer 2 (\"Millcreek City Council Districts 2022-2032 Polygons\"). 4 district polygons; field DIST (string \"District 1\"-\"District 4\") \u2014 use extract_int transform. COUNCILMEMBER name field. Item id: 5bf2141feb434742918a1c7b20f4b7e1. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source carries DIST='District N' (same field district_num reads with extract_int); switched to it."
+    "notes": "VERIFIED 2026-06-01 via Millcreek GIS org XRrSFvEwSsReIxuA. Millcreek_City_Council_Dist_2022 FeatureServer layer 2 (\"Millcreek City Council Districts 2022-2032 Polygons\"). 4 district polygons; field DIST (string \"District 1\"-\"District 4\") — use extract_int transform. COUNCILMEMBER name field. Item id: 5bf2141feb434742918a1c7b20f4b7e1. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source carries DIST='District N' (same field district_num reads with extract_int); switched to it."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:millville",
@@ -1622,7 +1622,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:murray/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-06-01 via Murray City GIS server (murraycemetery.org/web \u2014 Murray City shares hosting with Murray City Cemetery). 5 district polygons; field District (string \"1\"-\"5\"), Council_Member. Public_Base_Layers service layer 7."
+    "notes": "VERIFIED 2026-06-01 via Murray City GIS server (murraycemetery.org/web — Murray City shares hosting with Murray City Cemetery). 5 district polygons; field District (string \"1\"-\"5\"), Council_Member. Public_Base_Layers service layer 7."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:myton",
@@ -1745,7 +1745,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:ogden/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-05-29 via Ogden City GIS (data.ogdencity.com, AGO org 5bEsxSBu0dtu5rkP). FeatureServer/0 returns 8 features (4 districts + 3 at-large A/B/C + mayor DISTRICTID=0); the where clause filters to the 4 geographic districts. Fields DISTRICTID('1'-'4'), NAME('Municipal District N'), OFFICE, REPNAME. At-large + mayor surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/OgdenCouncilDistricts) was wrong org \u2014 400."
+    "notes": "VERIFIED 2026-05-29 via Ogden City GIS (data.ogdencity.com, AGO org 5bEsxSBu0dtu5rkP). FeatureServer/0 returns 8 features (4 districts + 3 at-large A/B/C + mayor DISTRICTID=0); the where clause filters to the 4 geographic districts. Fields DISTRICTID('1'-'4'), NAME('Municipal District N'), OFFICE, REPNAME. At-large + mayor surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/OgdenCouncilDistricts) was wrong org — 400."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:orangeville",
@@ -1775,7 +1775,7 @@
     "mtfcc": "X0001",
     "geo_id_template": null,
     "status": "at_large",
-    "notes": "At-large council confirmed 2026-06-01: Orem City has 6 council members all elected at-large since January 1, 1982 (per orem.gov/form-of-government). No ward/district boundaries exist. Prior URL guess for OremCouncilDistricts returned HTTP 400 (probed 2026-05-09) \u2014 confirmed no district structure."
+    "notes": "At-large council confirmed 2026-06-01: Orem City has 6 council members all elected at-large since January 1, 1982 (per orem.gov/form-of-government). No ward/district boundaries exist. Prior URL guess for OremCouncilDistricts returned HTTP 400 (probed 2026-05-09) — confirmed no district structure."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:panguitch",
@@ -2002,7 +2002,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:riverton/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-06-01 via Riverton City ArcGIS Enterprise (gis.rivertoncity.com). Council_Districts FeatureServer layer 0. 5 district polygons; field DIST_NAME (string \"D1\"-\"D5\") \u2014 use extract_int transform. NAME (council member). Source web map: Riverton Enterprise portal f0317b143d02464592d01775d7f461d9. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source carries LABEL='Council District #N'; switched to it."
+    "notes": "VERIFIED 2026-06-01 via Riverton City ArcGIS Enterprise (gis.rivertoncity.com). Council_Districts FeatureServer layer 0. 5 district polygons; field DIST_NAME (string \"D1\"-\"D5\") — use extract_int transform. NAME (council member). Source web map: Riverton Enterprise portal f0317b143d02464592d01775d7f461d9. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source carries LABEL='Council District #N'; switched to it."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:rockville",
@@ -2085,7 +2085,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:salt_lake_city/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED via gis-slcgov.opendata.arcgis.com hub search (2026-05-09); 7 features, fields CITYCOUNCIL_ID/CITYCOUNCIL_MEMBER/LABEL. Was reactively flipped to no_source in 132-04; corrected here. 2026-07-30: field_map.name moved CITYCOUNCIL_MEMBER -> LABEL (migration 1500). A boundary must not be named after its occupant: the person changes, the district does not, and the upstream layer is itself stale (it still lists Eva Lopez for district 4 and Darin Mano for district 5, both replaced in Jan 2026). LABEL carries 'Council District 1'..'7'. Matches the convention of its peers (west_valley_city uses LABEL, ogden uses NAME). Note the loader is ON CONFLICT (geo_id, mtfcc) DO NOTHING, so changing this field does NOT rewrite rows already imported \u2014 1500 does that."
+    "notes": "VERIFIED via gis-slcgov.opendata.arcgis.com hub search (2026-05-09); 7 features, fields CITYCOUNCIL_ID/CITYCOUNCIL_MEMBER/LABEL. Was reactively flipped to no_source in 132-04; corrected here. 2026-07-30: field_map.name moved CITYCOUNCIL_MEMBER -> LABEL (migration 1500). A boundary must not be named after its occupant: the person changes, the district does not, and the upstream layer is itself stale (it still lists Eva Lopez for district 4 and Darin Mano for district 5, both replaced in Jan 2026). LABEL carries 'Council District 1'..'7'. Matches the convention of its peers (west_valley_city uses LABEL, ogden uses NAME). Note the loader is ON CONFLICT (geo_id, mtfcc) DO NOTHING, so changing this field does NOT rewrite rows already imported — 1500 does that."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
@@ -2550,7 +2550,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:west_jordan/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-05-29 via West Jordan City GIS (AGO org yznraL2FyB2Sm732, layer WJC_Council_Boundary2022). 4 district polygons; fields District_Quad('1'-'4'), Council_Member. 3 at-large seats surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/WestJordanCouncilDistricts) was wrong org \u2014 400. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source has no label attribute at all (only District_Quad + areas). Synthesized instead."
+    "notes": "VERIFIED 2026-05-29 via West Jordan City GIS (AGO org yznraL2FyB2Sm732, layer WJC_Council_Boundary2022). 4 district polygons; fields District_Quad('1'-'4'), Council_Member. 3 at-large seats surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/WestJordanCouncilDistricts) was wrong org — 400. 2026-07-30 (migration 1501): field_map.name pointed at a COUNCILMEMBER field, so this boundary was named after its occupant. Source has no label attribute at all (only District_Quad + areas). Synthesized instead."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_point",
@@ -2573,7 +2573,7 @@
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:west_valley_city/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED 2026-05-29 via WVC City GIS (gisserver.wvc-ut.gov; found via the city's Experience Builder app on gisportal.wvc-ut.gov \u2192 web map e2a6525fb78540b5b6b8a07ebf80f077). 4 district polygons; fields DISTRICT(1-4 int), LABEL('District N'), HOLDER. 2 at-large (Christensen, Nordfelt) are attributes, not features \u2014 they surface via the whole-city G4110 geofence. NOTE: the alternate host gis.wvc-ut.gov (AGOL web map) is IP-restricted/unreachable; use gisserver.wvc-ut.gov. Prior UGRC guess was wrong org \u2014 400."
+    "notes": "VERIFIED 2026-05-29 via WVC City GIS (gisserver.wvc-ut.gov; found via the city's Experience Builder app on gisportal.wvc-ut.gov → web map e2a6525fb78540b5b6b8a07ebf80f077). 4 district polygons; fields DISTRICT(1-4 int), LABEL('District N'), HOLDER. 2 at-large (Christensen, Nordfelt) are attributes, not features — they surface via the whole-city G4110 geofence. NOTE: the alternate host gis.wvc-ut.gov (AGOL web map) is IP-restricted/unreachable; use gisserver.wvc-ut.gov. Prior UGRC guess was wrong org — 400."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:white_city_metro",
@@ -2637,5 +2637,18 @@
     "geo_id_template": "ocd-division/country:us/state:ut/sboe:{N}",
     "status": "active",
     "notes": "VERIFIED FeatureServer URL + DIST field via UGRC SGID page (2026-05-08)"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ca/place:monterey_park",
+    "layer_class": "city_ward",
+    "source_url": "https://services9.arcgis.com/ivAMP6vRMPA12GAA/arcgis/rest/services/City_Council_Redistricting/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": {
+      "district_num": "DISTRICT",
+      "name_template": "District {N}"
+    },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ca/place:monterey_park/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-08-31 via the City of Monterey Park GIS Hub. Reached through the operationalLayers of the published 'City Council Districts' web map (item d694e535a8d64fe395e2a7c5eff2afa2), the same route the Salt Lake County entry documents -- the Hub item is a Web Map, not a feature layer, so its /data?f=json must be read to get this URL. 5 polygons; field DISTRICT ('1'-'5', a STRING). The layer also carries CityCouncilMember, which independently confirmed CC_0020's seating (1 Wong, 2 Yang, 3 Sanchez, 4 Lo, 5 Ngo) against the council web page. Loaded by CC_0023, which embeds the geometry rather than calling the loader; this entry records the source for future refreshes. FIRST CA entry in this file."
   }
 ]
