@@ -46,7 +46,17 @@ const NO_EXT_ONLY = argv.includes('--no-extension-only');
 /** The complement: only values that DO carry an image extension. A .jpg that 404s reads as
  *  coverage exactly like a page URL does, and it is the larger population. */
 const EXT_ONLY = argv.includes('--extension-only');
-const CONCURRENCY = (() => { const i = argv.indexOf('--concurrency'); return i === -1 ? 8 : Number(argv[i + 1]); })();
+/** 🔴 A NON-NUMERIC VALUE HERE USED TO MEAN ZERO WORKERS, NOT AN ERROR. `--concurrency`
+ *  passed last, or as a word, gave NaN; Array.from({ length: NaN }) is [], so the sweep
+ *  checked nothing, printed "real images 0 - broken 0 of 0" and exited 0. A uniform answer
+ *  is a broken detector, and that one reads as a clean bill of health. */
+const CONCURRENCY = (() => {
+  const i = argv.indexOf('--concurrency');
+  if (i === -1) return 8;
+  const n = Number(argv[i + 1]);
+  if (!Number.isFinite(n) || n < 1) { console.error('--concurrency needs a positive integer'); process.exit(2); }
+  return Math.floor(n);
+})();
 
 if (!ALL && stateIx === -1) {
   console.error('usage: --all | --state <xx>   [--no-extension-only | --extension-only] [--json FILE] [--concurrency N]');
@@ -145,21 +155,43 @@ if (!ALL) { params.push(argv[stateIx + 1]); stateFilter = 'AND lower(d.state) = 
 
 const { rows } = await client.query(
   `WITH held AS (
-     SELECT DISTINCT och.politician_id AS pid, lower(d.state) AS st, d.district_type
+     -- DISTINCT ON THE PERSON, not on (person, state, type). 22 officeholders sit in two
+     -- district types at once -- Mike Cortese is Nashville council D4 AND the TN-04 row --
+     -- and a plain DISTINCT over the triple fetched each of them twice, doubling requests
+     -- against the rate-limited hosts this file warns about and inflating "real images N".
+     SELECT DISTINCT ON (och.politician_id)
+            och.politician_id AS pid, lower(d.state) AS st, d.district_type
        FROM essentials.offices o
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.office_current_holder och ON och.office_id = o.id
       WHERE och.politician_id IS NOT NULL ${stateFilter}
+      ORDER BY och.politician_id, lower(d.state), d.district_type
    )
+   -- 🔴 COMPOSE IT THE WAY THE READ PATH DOES, CHARACTER FOR CHARACTER.
+   -- districtQueries.ts (DISTRICT_SELECT_FIELDS) is a plain COALESCE with no NULLIF, so an
+   -- EMPTY-STRING photo_custom_url renders nothing at all. This query used to add
+   -- NULLIF(btrim(...), ''), fall through to photo_origin_url, byte-check a healthy JPEG and
+   -- report the person fine while the site showed a blank -- a blind spot over exactly the
+   -- population most likely to be broken. Zero rows are in that state today, and the count
+   -- printed below is what says so rather than an assumption.
    SELECT p.id, p.full_name, h.st, h.district_type,
-          COALESCE(NULLIF(btrim(p.photo_custom_url), ''), p.photo_origin_url, '') AS rendered
+          COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS rendered
      FROM held h
      JOIN essentials.politicians p ON p.id = h.pid
-    WHERE COALESCE(NULLIF(btrim(p.photo_custom_url), ''), p.photo_origin_url, '') LIKE 'http%'
+    WHERE COALESCE(p.photo_custom_url, p.photo_origin_url, '') LIKE 'http%'
     ORDER BY h.st, p.full_name`,
   params,
 );
+const { rows: blankRows } = await client.query(
+  `SELECT count(*)::int AS n FROM essentials.politicians
+    WHERE photo_custom_url IS NOT NULL AND btrim(photo_custom_url) = ''`);
 await client.end();
+
+if (blankRows[0].n > 0) {
+  console.log(
+    `WARNING: ${blankRows[0].n} politician(s) hold an EMPTY photo_custom_url. The read path ` +
+    'renders nothing for them, and this sweep cannot see them: they are absent from the counts below.');
+}
 
 const HAS_EXT = (u) => /\.(jpg|jpeg|png|webp|gif)(\?|$)/i.test(u);
 const targets = NO_EXT_ONLY ? rows.filter((r) => !HAS_EXT(r.rendered))

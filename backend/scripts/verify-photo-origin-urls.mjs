@@ -43,12 +43,24 @@ const dtypeIx = argv.indexOf('--district-type');
 /** Optional narrowing of --state to one tier. A state's local half and its legislature are
  *  different cohorts: for a hand-seeded local official photo_origin_url is correctly the SOURCE
  *  PAGE (HTML), which this check would call dead. Only run it where the field holds an image. */
-const DTYPES = dtypeIx === -1 ? null : argv[dtypeIx + 1].split(',').map((t) => t.trim());
+const DTYPES = (() => {
+  if (dtypeIx === -1) return null;
+  const v = argv[dtypeIx + 1];
+  if (!v || v.startsWith('--')) { console.error('--district-type needs a comma-separated value'); process.exit(2); }
+  return v.split(',').map((t) => t.trim());
+})();
 const EMIT_SQL = argv.includes('--fix-sql');
 const LIMIT = (() => { const i = argv.indexOf('--limit'); return i === -1 ? null : Number(argv[i + 1]); })();
 
 if (bandIx === -1 && stateIx === -1) {
   console.error('usage: --band <lo> <hi> | --state <xx> [--district-type A,B]   [--limit N] [--fix-sql]');
+  process.exit(2);
+}
+// --district-type narrows the --state query only. Accepting it silently beside --band would
+// sweep the whole band while the operator believes the run is scoped to one tier -- and with
+// --fix-sql that writes NULLs over rows they never meant to touch.
+if (DTYPES && bandIx !== -1) {
+  console.error('--district-type applies to --state only; it does not narrow --band.');
   process.exit(2);
 }
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
@@ -95,6 +107,17 @@ function imageKind(b) {
   if (b.length >= 8 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return 'PNG';
   if (b.length >= 3 && b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46) return 'GIF';
   if (b.length >= 12 && b.slice(0, 4).toString('latin1') === 'RIFF' && b.slice(8, 12).toString('latin1') === 'WEBP') return 'WEBP';
+  // 🔴 AVIF/HEIC ARE ISOBMFF, NOT A LEADING SIGNATURE -- the brand sits at bytes 4..11.
+  // This script sends a browser Accept header (below), so hosts that content-negotiate WILL
+  // answer in a modern format: static.wixstatic.com returns AVIF for the very same URL that
+  // gives PNG to a bare request. A format we cannot NAME is not the same as "not an image",
+  // and here that difference is destructive -- --fix-sql NULLs photo_origin_url for every
+  // row this function returns null for, so an unrecognised AVIF portrait would be erased.
+  if (b.length >= 12 && b.slice(4, 8).toString('latin1') === 'ftyp') {
+    const brand = b.slice(8, 12).toString('latin1');
+    if (brand === 'avif' || brand === 'avis') return 'AVIF';
+    if (brand.startsWith('hei') || brand.startsWith('mif')) return 'HEIC';
+  }
   return null;
 }
 

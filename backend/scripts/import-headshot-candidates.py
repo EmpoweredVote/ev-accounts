@@ -145,7 +145,11 @@ for c in cands:
             out_w, out_h = TARGET_W, TARGET_H
         else:
             out_w, out_h = kw, kh          # native cropped size, no enlargement
-        img = img.resize((out_w, out_h), Image.LANCZOS)
+        # Resample only when the size actually changes. crop_4x5 hands back the crop at its
+        # own size, so the native branch is now a straight save of the cropped pixels rather
+        # than an enlarge-to-600x750-then-shrink-back round trip.
+        if (out_w, out_h) != img.size:
+            img = img.resize((out_w, out_h), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=90)
         data = buf.getvalue()
@@ -167,12 +171,18 @@ for c in cands:
             problems.append(f"{c['name']}: upload HTTP {up.status_code} {up.text[:100]}")
             continue
         if has_row and args.replace:
-            # REPOINT the existing row rather than inserting beside it. Two rows for one person
-            # would leave the read paths picking whichever sorts first -- possibly the dead one.
+            # REPOINT the existing row rather than inserting beside it. A second row of the
+            # SAME type would leave the read paths picking whichever sorts first -- possibly
+            # the dead one.
+            # 🔴 AND REPOINT ONLY THE 'default' ROW. politician_images.type is load-bearing:
+            # stanceService.ts reads WHERE type = 'default', and a second row is not always a
+            # mistake -- 191 people legitimately carry a 'thumb' beside their portrait.
+            # Without this predicate one --replace run pointed BOTH at the headshot and
+            # destroyed the thumbnail's URL.
             cur.execute(
                 """UPDATE essentials.politician_images
                       SET url = %s, photo_license = %s
-                    WHERE politician_id = %s""",
+                    WHERE politician_id = %s AND type = 'default'""",
                 (final, c["license"], pid))
         else:
             cur.execute(
@@ -205,7 +215,7 @@ for c in cands:
         cur.execute(
             "UPDATE essentials.politicians SET photo_origin_url = %s "
             " WHERE id = %s AND (photo_origin_url IS NULL "
-            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp)(\\?|$)')",
+            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp|gif)(\\?|$)')",
             (c["page"], pid))
         conn.commit()
         done += 1

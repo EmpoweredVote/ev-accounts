@@ -90,13 +90,14 @@ for c in cands:
         w, h = src.size                    # SOURCE size, reported on the card
         img, (keep_w, keep_h) = crop_4x5(src, **c.get("crop", {}))
         upscale = max(TARGET_W / keep_w, TARGET_H / keep_h)
-        # SHOW WHAT SHIPS. crop_4x5 always returns 600x750, but the importer stores the
-        # NATIVE cropped size whenever reaching 600x750 would mean enlarging. Embedding the
-        # enlarged version here would show the operator detail the stored file will not have
-        # -- the same proof-sheet-vs-import drift headshot_crop.py exists to prevent. The
-        # card still lays out at 600x750; the browser scales it, exactly as the site does.
-        if upscale > ARGS.max_upscale:
-            img = img.resize((keep_w, keep_h), Image.LANCZOS)
+        # SHOW WHAT SHIPS. crop_4x5 hands back the crop at its NATIVE size, and the importer
+        # enlarges to 600x750 only when the upscale is within the ceiling. Mirror that branch
+        # exactly -- embedding an enlarged version of a file that will ship at native size
+        # shows the operator detail the stored image will not have, which is the
+        # proof-sheet-vs-import drift headshot_crop.py exists to prevent. The card still lays
+        # out at 600x750; the browser scales it, exactly as the site does.
+        if upscale <= ARGS.max_upscale:
+            img = img.resize((TARGET_W, TARGET_H), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=84, optimize=True)
         c["data"] = base64.b64encode(buf.getvalue()).decode()
@@ -118,7 +119,10 @@ json.dump({"rendered": [{k: v for k, v in c.items() if k != "data"} for c in ren
 # 7 KB with zero <img> and a Colorado title, and printed "rendered 68" while showing none.
 # A grouping key that must be edited per wave is a trap for the wave that forgets.
 # First-appearance order is kept, so the caller controls section order by ordering the JSON.
-COHORTS = list(dict.fromkeys(c["cohort"] for c in cands))
+# Read with .get() and derived from the rows that actually reach the page. This line runs
+# AFTER every fetch and after the manifest is written, so a candidate row missing the key
+# used to throw away a completed sweep and force the whole thing to be re-run.
+COHORTS = list(dict.fromkeys(c.get("cohort", "Uncategorised") for c in rendered + missing))
 flagged = [c for c in rendered if c["positional"] or c["upscale"] > 1.0]
 
 def card(c, n):
@@ -146,7 +150,7 @@ def card(c, n):
 sections = ""
 n = 0
 for co in COHORTS:
-    group = [c for c in rendered if c["cohort"] == co]
+    group = [c for c in rendered if c.get("cohort", "Uncategorised") == co]
     if not group:
         continue
     cards = ""
@@ -288,5 +292,5 @@ dialog .cap {{
 </script>'''
 
 open(ARGS.out, "w", encoding="utf-8").write(doc)
-print(f"\nwrote ../.tmp-cos-contactsheet.html  ({len(doc)//1024} KB)")
+print(f"\nwrote {ARGS.out}  ({len(doc)//1024} KB)")
 print(f"rendered {len(rendered)} · missing {len(missing)} · flagged {len(flagged)}")

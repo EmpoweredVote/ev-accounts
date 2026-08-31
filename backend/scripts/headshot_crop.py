@@ -7,6 +7,10 @@ transparency shipped white but was shown to the operator as a BLACK FRAME WITH N
 A proof sheet that differs from the import is worse than no proof sheet, because it buys
 false confidence. Both now import from here, so they cannot diverge again.
 
+Returns the crop AT ITS NATIVE SIZE together with the pixels kept, so the caller decides
+whether to scale it to TARGET. Do not resize here: a caller that stores native size would
+then resample twice and lose detail it never needed to lose.
+
 The default is a CENTRE 4:5 crop, which is right for a standard portrait. Per-person
 overrides live on the candidate row as a "crop" object and are needed whenever the subject
 is not centred: standing to one side of a banner, inside a white photo mat, a cutout on a
@@ -79,6 +83,11 @@ def crop_4x5(im, anchor_x=0.5, anchor_y=0.5, zoom=1.0, bbox=False, pad=0.22):
         top = int(round((h - nh) * anchor_y))
         box = (0, top, w, top + nh)
     kept = (box[2] - box[0], box[3] - box[1])
-    return im.crop(box).resize(TARGET, Image.LANCZOS), kept
+    # 🔴 RETURN THE CROP AT ITS OWN SIZE. This used to end `.resize(TARGET)`, which made
+    # every caller that stores the NATIVE cropped size resample twice: a 185x246 Senate
+    # portrait was enlarged to 600x750 and then shrunk back to 185x246, and the stored
+    # bytes came out measurably softer than the source. Resizing is the caller's decision
+    # because only the caller knows whether it is willing to enlarge.
+    return im.crop(box), kept
 
 
