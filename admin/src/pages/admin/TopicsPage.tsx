@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../../lib/api';
+import { LensClusters, LensChip, LensDot } from '../../components/LensClusters';
+import { useCompassLenses, type CompassLens } from '../../hooks/useCompassLenses';
 
 interface Stance {
   id: string;
@@ -58,6 +60,12 @@ export function TopicsPage() {
   const [error, setError] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const { lenses, byTopicId, loading: lensesLoading, error: lensesError } = useCompassLenses();
+  const titleById = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const t of topics) m.set(t.id, t.title);
+    return m;
+  }, [topics]);
 
   async function refreshTopics() {
     try {
@@ -118,7 +126,12 @@ export function TopicsPage() {
                     : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800'
                 }`}
               >
-                <span className="text-sm font-medium text-gray-900 dark:text-white truncate">{t.title}</span>
+                <div className="flex min-w-0 items-center gap-1.5">
+                  <span className="text-sm font-medium text-gray-900 dark:text-white truncate">{t.title}</span>
+                  {(byTopicId.get(t.id) ?? []).map((lens) => (
+                    <LensDot key={lens.key} lens={lens} />
+                  ))}
+                </div>
                 <LiveToggle topic={t} onUpdate={refreshTopics} />
               </div>
             ))}
@@ -126,9 +139,29 @@ export function TopicsPage() {
         )}
       </div>
 
-      {/* Right panel: detail */}
-      {selectedTopic && (
-        <TopicDetailPanel topic={selectedTopic} onUpdate={refreshTopics} />
+      {/* Right panel: topic detail when one is selected, otherwise the lens
+          overview — each curated lens (Local / Judicial / Federal, and School
+          once seeded) with its topics clustered so it is easy to scan which
+          topics belong to which lens. */}
+      {selectedTopic ? (
+        <TopicDetailPanel
+          topic={selectedTopic}
+          lenses={byTopicId.get(selectedTopic.id) ?? []}
+          onUpdate={refreshTopics}
+        />
+      ) : (
+        <div className="flex-1 overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900/40">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Lenses</h2>
+          <p className="mb-4 mt-1 text-sm text-gray-500 dark:text-gray-400">
+            Which topics are assigned to each per-office lens. Select a topic on the left for its stances.
+          </p>
+          <LensClusters
+            lenses={lenses}
+            titleFor={(id) => titleById.get(id) ?? 'Unknown topic'}
+            loading={lensesLoading}
+            error={lensesError}
+          />
+        </div>
       )}
 
       <CreateTopicModal
@@ -195,9 +228,11 @@ function SaveButton({
 
 function TopicDetailPanel({
   topic,
+  lenses,
   onUpdate,
 }: {
   topic: Topic;
+  lenses: CompassLens[];
   onUpdate: () => void;
 }) {
   const [stances, setStances] = useState<Stance[]>([]);
@@ -245,6 +280,22 @@ function TopicDetailPanel({
           )}
         </div>
         <LiveToggle topic={topic} onUpdate={onUpdate} />
+      </div>
+
+      {/* Assigned lenses */}
+      <div className="mb-6">
+        <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
+          Assigned lenses
+        </label>
+        {lenses.length === 0 ? (
+          <p className="text-sm text-gray-400 dark:text-gray-500">Not in any lens.</p>
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {lenses.map((lens) => (
+              <LensChip key={lens.key} lens={lens} />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Question text */}
