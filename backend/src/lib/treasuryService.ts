@@ -126,6 +126,10 @@ export interface TreasuryDataset {
   // PAINT. A pill that renders unmarked until a budget row loads is exactly the
   // mislabel window SCOPE-04 exists to close.
   derivation?: string | null;
+  // AUDIT-GRADE: what independent assurance stands behind the figure -- see
+  // TreasuryBudget. On the dataset entry for the same reason as `derivation`: the
+  // year/dataset picker must be able to say so at FIRST PAINT.
+  audit_grade?: string | null;
 }
 
 export interface TreasuryCity {
@@ -162,6 +166,18 @@ export interface TreasuryBudget {
   // on purpose -- total_governmental holds both MN/Ohio published rows and CA derived
   // ones, so the scope value alone cannot tell a reader which kind they are seeing.
   derivation?: string | null;
+  // AUDIT-GRADE: what level of independent assurance stands behind total_budget --
+  // 'audited_gaap' | 'audited_ocboa' | 'compiled_from_audited' |
+  // 'self_reported_unaudited' | 'unknown'.
+  //
+  // ⚠⚠ These are NOT a ranked ladder, and a consumer must not render them as one.
+  // `audited_ocboa` carries the SAME assurance as `audited_gaap` -- an independent
+  // opinion under Government Auditing Standards -- on a measurement basis that is
+  // not GAAP. Assurance and comparability are two different things.
+  //
+  // ⚠ `unknown` means NOBODY HAS LOOKED. It is an honesty marker, never a guess and
+  // never a judgement about the government, and it is the MAJORITY value.
+  audit_grade?: string | null;
   data_source: string | null;
   data_source_info: {
     displayName: string;
@@ -247,7 +263,7 @@ interface CityRow {
   // Joined from budgets — aggregated as JSON array
   available_datasets: Array<{
     fiscal_year: string; dataset_type: string; period_label: string | null; fund_scope: string;
-    basis: string; reporting_entity: string; derivation: string;
+    basis: string; reporting_entity: string; derivation: string; audit_grade: string;
   }> | null;
 }
 
@@ -262,6 +278,7 @@ interface BudgetRow {
   basis: string;        // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   reporting_entity: string; // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   derivation: string;   // SCOPE-04; NOT NULL with a 'published' default, so always present
+  audit_grade: string;  // AUDIT-GRADE; NOT NULL with a 'unknown' default, so always present
   data_source: string | null;
   source_url: string | null;   // municipal attribution (non-federal fallback)
   source_date: string | null;  // municipal attribution (non-federal fallback)
@@ -370,6 +387,7 @@ function mapCity(row: CityRow): TreasuryCity {
       basis: d.basis,
       reporting_entity: d.reporting_entity,
       derivation: d.derivation,
+      audit_grade: d.audit_grade,
     })),
   };
 }
@@ -386,6 +404,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     basis: row.basis,
     reporting_entity: row.reporting_entity,
     derivation: row.derivation,
+    audit_grade: row.audit_grade,
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url
       ? {
@@ -465,7 +484,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
                                  'period_label', b.period_label, 'fund_scope', b.fund_scope,
                                  'basis', b.basis, 'reporting_entity', b.reporting_entity,
-                                 'derivation', b.derivation)
+                                 'derivation', b.derivation, 'audit_grade', b.audit_grade)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -506,7 +525,7 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
                                  'period_label', b.period_label, 'fund_scope', b.fund_scope,
                                  'basis', b.basis, 'reporting_entity', b.reporting_entity,
-                                 'derivation', b.derivation)
+                                 'derivation', b.derivation, 'audit_grade', b.audit_grade)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -534,7 +553,7 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
               b.data_source, b.source_url, b.source_date,
               sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -555,7 +574,7 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -814,7 +833,7 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
