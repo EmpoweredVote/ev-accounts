@@ -28,7 +28,11 @@ OUTPUT: ../.tmp-cos-contactsheet.html, self-contained, ready to publish as an Ar
 USAGE (from C:/EV-Accounts/backend):
   py scripts/render-headshot-contact-sheet.py
 """
+import argparse
 import base64
+import hashlib
+import os
+import sys
 import html
 import json
 from io import BytesIO
@@ -36,10 +40,22 @@ from io import BytesIO
 import requests
 from PIL import Image
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from headshot_crop import crop_4x5  # noqa: E402
+
 TARGET_W, TARGET_H = 600, 750
+CACHE = ".tmp-headshot-cache"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-cands = json.load(open(".tmp-all-candidates.json", encoding="utf-8"))
+ap = argparse.ArgumentParser()
+ap.add_argument("--title", default="Headshot proof sheet",
+                help="page title and h1; name the wave so a later reader knows what they approved")
+ap.add_argument("--json", default=".tmp-all-candidates.json")
+ap.add_argument("--out", default="../.tmp-cos-contactsheet.html")
+ARGS = ap.parse_args()
+TITLE = ARGS.title
+
+cands = json.load(open(ARGS.json, encoding="utf-8"))
 
 rendered, missing = [], []
 for c in cands:
@@ -47,18 +63,29 @@ for c in cands:
         missing.append(c)
         continue
     try:
-        raw = requests.get(c["url"], headers=UA, timeout=40).content
-        img = Image.open(BytesIO(raw)).convert("RGB")
-        w, h = img.size
-        ratio = TARGET_W / TARGET_H
-        if w / h > ratio:
-            keep_w, keep_h = int(h * ratio), h
-            img = img.crop(((w - keep_w) // 2, 0, (w - keep_w) // 2 + keep_w, h))
+        # ⚠ CACHE THE BYTES ON DISK. Tuning crops means re-rendering repeatedly, and
+        # re-fetching 71 third-party URLs each time gets you rate-limited: the Wayback
+        # Machine and discover.pbc.gov both started refusing partway through, so the sheet
+        # lost a different handful of faces on every pass and no run was ever complete.
+        # Cache-first also means the operator is comparing identical bytes between passes.
+        # Delete .tmp-headshot-cache/ to force a refetch.
+        os.makedirs(CACHE, exist_ok=True)
+        ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
+        if os.path.exists(ck) and os.path.getsize(ck) > 0:
+            raw = open(ck, "rb").read()
         else:
-            keep_w, keep_h = w, int(w / ratio)
-            img = img.crop((0, (h - keep_h) // 2, w, (h - keep_h) // 2 + keep_h))
+            raw = requests.get(c["url"], headers=UA, timeout=40).content
+            try:                                   # cache anything that actually decodes,
+                Image.open(BytesIO(raw)).verify()  # which includes WEBP -- a JPEG/PNG
+                open(ck, "wb").write(raw)          # allowlist silently skipped nine rows
+            except Exception:                      # noqa: BLE001
+                pass                               # HTML error pages never reach the cache
+        # ONE crop implementation, shared with the importer (scripts/headshot_crop.py).
+        # A per-row "crop" override handles subjects the centre crop gets wrong.
+        src = Image.open(BytesIO(raw))
+        w, h = src.size                    # SOURCE size, reported on the card
+        img, (keep_w, keep_h) = crop_4x5(src, **c.get("crop", {}))
         upscale = max(TARGET_W / keep_w, TARGET_H / keep_h)
-        img = img.resize((TARGET_W, TARGET_H), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=84, optimize=True)
         c["data"] = base64.b64encode(buf.getvalue()).decode()
@@ -74,7 +101,13 @@ for c in cands:
 json.dump({"rendered": [{k: v for k, v in c.items() if k != "data"} for c in rendered],
            "missing": missing}, open(".tmp-contactsheet-manifest.json", "w"), indent=2)
 
-COHORTS = ["Colorado Springs", "El Paso County", "CO legislature"]
+# 🔴 COHORTS ARE DERIVED FROM THE DATA, NEVER HARDCODED. This list used to be
+# ["Colorado Springs", "El Paso County", "CO legislature"], so the Florida wave rendered
+# 68 faces and then filtered every one of them out at the section loop: the page came out
+# 7 KB with zero <img> and a Colorado title, and printed "rendered 68" while showing none.
+# A grouping key that must be edited per wave is a trap for the wave that forgets.
+# First-appearance order is kept, so the caller controls section order by ordering the JSON.
+COHORTS = list(dict.fromkeys(c["cohort"] for c in cands))
 flagged = [c for c in rendered if c["positional"] or c["upscale"] > 1.0]
 
 def card(c, n):
@@ -125,7 +158,7 @@ miss_block = f'''<section class="cohort missing">
   <ul class="misslist">{miss_rows}</ul>
 </section>''' if missing else ""
 
-doc = f'''<title>Colorado Springs Proof Sheet</title>
+doc = f'''<title>{html.escape(TITLE)}</title>
 <style>
 :root {{
   --ground:#EDEFF2; --panel:#F7F8FA; --ink:#171A1F; --ink-2:#4A525E; --ink-3:#79828F;
@@ -213,7 +246,7 @@ dialog .cap {{
 
 <div class="wrap">
   <header>
-    <h1>Colorado Springs proof sheet</h1>
+    <h1>{html.escape(TITLE)}</h1>
     <p>Every frame is the actual production render &mdash; 4:5, 600&times;750 &mdash; not the source
     image. Approve what ships. Click any frame to enlarge for a face check.</p>
   </header>
@@ -243,6 +276,6 @@ dialog .cap {{
   lb.addEventListener('click', () => lb.close());
 </script>'''
 
-open("../.tmp-cos-contactsheet.html", "w", encoding="utf-8").write(doc)
+open(ARGS.out, "w", encoding="utf-8").write(doc)
 print(f"\nwrote ../.tmp-cos-contactsheet.html  ({len(doc)//1024} KB)")
 print(f"rendered {len(rendered)} · missing {len(missing)} · flagged {len(flagged)}")

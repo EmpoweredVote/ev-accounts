@@ -27,6 +27,7 @@ USAGE (from C:/EV-Accounts/backend):
   py scripts/import-headshot-candidates.py --exclude "Some Person"
 """
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -37,12 +38,16 @@ import requests
 from dotenv import load_dotenv
 from PIL import Image
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from headshot_crop import crop_4x5  # noqa: E402
+
 load_dotenv()
 
 BUCKET = "politician_photos"
 CDN = f"https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/{BUCKET}/"
 UPLOAD = f"https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/{BUCKET}/"
 TARGET_W, TARGET_H = 600, 750
+CACHE = ".tmp-headshot-cache"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 ap = argparse.ArgumentParser()
@@ -79,28 +84,41 @@ for c in cands:
         print(f"  skip     {c['name']:<26} already has an image row")
         continue
     try:
-        raw = requests.get(c["url"], headers=UA, timeout=60).content
-        # Magic number, never the extension: a WAF page can arrive as HTTP 200.
-        if not (raw[:3] == b"\xff\xd8\xff" or raw[:4] == b"\x89PNG") or len(raw) < 2000:
+        # 🔴 CACHE-FIRST, SHARING THE PROOF SHEET'S CACHE. This is a correctness rule, not
+        # a speed one: the operator approved specific BYTES on the contact sheet, and a
+        # live refetch can return something else -- a WAF page, a 503, or a silently
+        # updated image. Reusing the cached bytes means what shipped is what was approved.
+        # It also stops the import re-hammering hosts the sheet already rate-limited:
+        # miami.gov 403s every non-browser client, so those came from the Wayback Machine,
+        # which then 503s under repeated fetches.
+        ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
+        if os.path.exists(ck) and os.path.getsize(ck) > 0:
+            raw = open(ck, "rb").read()
+        else:
+            raw = requests.get(c["url"], headers=UA, timeout=60).content
+        # 🔴 DECODABILITY, not a format whitelist. The rule that matters is "never trust the
+        # extension and never trust HTTP status -- a WAF page arrives as HTTP 200" -- and
+        # actually decoding the bytes enforces that MORE strictly than a magic-number
+        # allowlist did. The old allowlist was JPEG+PNG only, so it silently refused every
+        # WEBP: nine officials rendered on the proof sheet and would have vanished at import,
+        # including seven Leon County kiosk portraits.
+        try:
+            Image.open(BytesIO(raw)).verify()
+            decodable = True
+        except Exception:  # noqa: BLE001
+            decodable = False
+        if not decodable or len(raw) < 2000:
             failed += 1
             problems.append(f"{c['name']}: source did not return a usable image")
             continue
-        img = Image.open(BytesIO(raw))
-        # Flatten any alpha onto white FIRST -- convert('RGB') alone turns transparent
-        # pixels black, which is how a masked PNG becomes a circle on a black square.
-        if img.mode in ("RGBA", "LA", "P"):
-            img = img.convert("RGBA")
-            bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
-            img = Image.alpha_composite(bg, img)
-        img = img.convert("RGB")
-        w, h = img.size
-        ratio = TARGET_W / TARGET_H
-        if w / h > ratio:
-            kw, kh = int(h * ratio), h
-            img = img.crop(((w - kw) // 2, 0, (w - kw) // 2 + kw, h))
-        else:
-            kw, kh = w, int(w / ratio)
-            img = img.crop((0, (h - kh) // 2, w, (h - kh) // 2 + kh))
+        # ONE crop implementation, shared with the proof sheet (scripts/headshot_crop.py),
+        # so the operator approves exactly what ships. Alpha flattening onto white lives
+        # there too. A per-row "crop" override handles subjects the centre crop gets wrong
+        # -- someone standing beside a banner, inside a photo mat, or with their head at
+        # the top edge. Without it the default centre crop silently decapitates them.
+        src = Image.open(BytesIO(raw))
+        w, h = src.size                    # SOURCE size, reported in the log line
+        img, (kw, kh) = crop_4x5(src, **c.get("crop", {}))
 
         # NEVER ENLARGE, AND NEVER SKIP FOR BEING SMALL.
         # A source below 600x750 gets stored at its own cropped size instead of being
