@@ -1,7 +1,7 @@
 # Two stale rosters, found by a headshot repair — Monterey Park CA and Lawrence County IN
 
 **Found:** 2026-08-30, while repairing 10 officials whose photo was missing from our own bucket.
-**Status:** Monterey Park ✅ FIXED by `CC_0020` + `CC_0023` (boundaries). Lawrence County ⏸ deliberately unwritten (see below).
+**Status:** Monterey Park ✅ FIXED by `CC_0020` + `CC_0023` (boundaries). Lawrence County ✅ RESOLVED by `CC_0024` — see the 2026-08-31 update below; it turned out to be TWO seats, not one.
 Neither was a photo problem; both are occupancy/modelling problems.
 **Why it surfaced here:** going to a body's own roster for a portrait forces a read of who that body
 says is sitting. The headshot pass is a redundancy check on occupancy, and it caught two bodies.
@@ -57,6 +57,44 @@ that, the **November 2026 general resolves it**, and the winner can be seated fr
 inventing a date.
 
 Note the county publishes **no member photos at all**, so this body has no portrait source.
+
+### UPDATE 2026-08-31 (Cantrell): RESOLVED. Reading 1 was right. Written by `CC_0024`.
+
+The blocking question was "did Arnold take District 4 by caucus, and on what date". Both halves
+are now answered, and the answer did NOT come from minutes.
+
+🔴 **THE COUNTY PUBLISHES NO COUNCIL MINUTES.** Its AgendaCenter holds County Council
+documents for 2024 and 2025 only — one file in total — and none for 2026. The Archive Center is
+empty. Commissioners' agendas ARE posted for all of 2026, so the gap is this body, not the site.
+Council meetings exist only as video on the county's YouTube channel. Do not go looking again.
+
+What settled it instead:
+
+- **Lytton RESIGNED.** WBIW, 2026-01-08: he "resigned his post after moving his primary residence
+  to a different council district, rendering him ineligible to represent District 4." That single
+  fact kills reading 2 — the seat could not have stayed with him until 2026-12-31.
+- **A caucus was called to fill the remainder of his term, for Thursday 2026-01-22.**
+- **A second caucus, 2026-01-30**, filled Scott Smith's at-large seat.
+- **The Internet Archive brackets the roster change**, and it happened BEFORE the May primary:
+  2025-02-26 Lytton / Blackwell-Chase → 2026-01-05 Lytton / Scott Smith → today Arnold / Gabhart.
+  The county's search index dates that page edit to 2026-02-10 — after both caucuses, three
+  months before the primary.
+
+⚠ **STILL INFERRED, AND SAID PLAINLY IN THE MIGRATION HEADER:** no source reports who WON either
+caucus. The roster names them, and a party caucus is the only route into either seat before
+2027-01-01. To close that gap properly, ask the clerk for the two **CAN-12** filings.
+
+🔴 **IT WAS TWO SEATS, NOT ONE.** The third at-large seat
+(`5dcf1678-1996-448e-8933-39094ebe9326`) held NO ONE in our data: Scott Smith's term was already
+closed correctly (`term_end` 2025-12-28, `how_ended` 'died') and nobody replaced him. Reading one
+roster line carefully surfaced the seat next to it.
+
+🔴 **THE `end_precision` PROBLEM DID NOT GO AWAY — IT WAS DOCUMENTED INSTEAD.**
+`seat_officeholder` closes the predecessor the day before the successor starts, so Lytton's
+`term_end` reads 2026-01-21. His real last day is an unknown day before 2026-01-08. There is no
+column for that, so the migration header carries it, and `how_ended` is set to `'resigned'` — the
+part that IS known. A vacancy span was rejected: it needs a first vacant day we do not have.
+
 
 ---
 
