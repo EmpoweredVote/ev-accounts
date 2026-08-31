@@ -248,5 +248,24 @@ export async function signUpWorkosFirst(
     );
   }
 
+  // Send the verification email NOW, at signup. WorkOS only auto-sends for its
+  // OWN hosted signup form; a headless management-API create like ours does
+  // not trigger it, so without this the user gets nothing until they reach
+  // AuthKit sign-in (which surprised testers — it read as "signup failed").
+  // Sending here also makes a reachable email a gate on Connected accounts,
+  // which are meant to be real people. Non-fatal: if it fails, AuthKit still
+  // prompts and sends a code when the user signs in.
+  const verifyRes = await fetch(
+    `${WORKOS_API}/user_management/users/${workosUser.id}/email_verification/send`,
+    { method: 'POST', headers }
+  );
+  if (!verifyRes.ok) {
+    console.error(
+      '[workosSignup] verification email send failed (non-fatal):',
+      verifyRes.status,
+      await verifyRes.text()
+    );
+  }
+
   return { ok: true, userId };
 }

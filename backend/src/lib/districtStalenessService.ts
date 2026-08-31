@@ -58,7 +58,12 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
     `SELECT user_id, congressional_geo_id, state_senate_geo_id, state_house_geo_id,
             county_geo_id, school_district_geo_id
      FROM connect.connected_profiles
-     WHERE encrypted_lat IS NOT NULL`
+     WHERE encrypted_lat IS NOT NULL
+       -- A weekly cron over every row, with no request and therefore no
+       -- requireAuth in front of it. Re-resolving jurisdictions for deleted
+       -- accounts writes location data back onto a record the user asked us to
+       -- delete, and bills the geocoder for it.
+       AND deleted_at IS NULL`
   );
 
   const total = users.length;

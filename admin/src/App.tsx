@@ -38,7 +38,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
-import { workosEnabled, hasWorkosSession, refreshWorkosToken } from './lib/workosAuth';
+import { workosEnabled, hasWorkosSession, refreshWorkosToken, embeddedAuthEnabled } from './lib/workosAuth';
 
 function App() {
   const { setAuth, clearAuth, setLoading, accessToken } = useAuthStore();
@@ -71,6 +71,13 @@ function App() {
         sessionStorage.removeItem('admin_token');
         clearAuth();
       });
+    } else if (embeddedAuthEnabled) {
+      // Cookie-backed WorkOS session restore: a new tab or hard reload has no
+      // sessionStorage token. hydrateFromMe starts with no Authorization
+      // header, so apiFetch('/account/me') 401s and its own refresh path
+      // pulls a token from GET /api/auth/session (Task 6), which reads the
+      // httpOnly ev_wos_session cookie. No SDK, no localStorage hint.
+      hydrateFromMe('').catch(() => { clearAuth(); });
     } else if (workosEnabled && hasWorkosSession()) {
       // WorkOS session restore (decision 0002 transition): a new tab or hard
       // reload has no sessionStorage token — ask the AuthKit SDK before

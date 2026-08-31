@@ -1,0 +1,1451 @@
+{
+  "topic_key": "childcare",
+  "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+  "target_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+  "target_version": 2,
+  "chair": 4,
+  "chair_text_v1": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families",
+  "chair_text_v2": "Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else",
+  "generated_for": "Season-2 carry re-audit of CA_0036 substantive v2 (childcare option-4 double-barrel split)",
+  "decision": "re-source first, blank if none (2026-08-30, Chris Andrews). Do NOT edit Season 1 seatings: under v1 option 4 names the deregulation clause, so these rows are correctly seated in the open season. Disposition applies to the Season 2 answer set at assembly.",
+  "note": "flags are lexical heuristics, not verdicts; read sources before acting. axis_orphan = v2 drops the deregulation clause the seating rests on (a ceiling on the debt, not a verified count); thin_no_instrument = seated on inference/party-profile with no primary instrument (weak under v1 too, per the 2026-08-30 citation bar). rows[] is shaped so this file doubles as audit-chair-evidence --check input.",
+  "summary": {
+    "total": 85,
+    "axis_orphans": 12,
+    "thin_no_instrument": 14,
+    "likely_carry": 59
+  },
+  "rows": [
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Aaron Márquez",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Prime sponsor of HB4024 (2R, 2026), which amends A.R.S. 36-884 to exempt family child care programs certified by a branch of the U.S. Department of Defense or the U.S. Coast Guard from state child-care licensing requirements. This is a narrow but clear regulatory exemption aimed at increasing the supply of available child care for military families by removing a state licensing requirement, matching the chair on reducing regulations on providers to increase supply. Evidence is limited to this one carve-out, not a broad deregulation platform.",
+      "sources": [
+        "https://www.azleg.gov/legtext/57leg/2R/bills/HB4024P.pdf",
+        "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2355"
+      ]
+    },
+    {
+      "politician_id": "7b7540c8-f62f-4edd-a49a-19a3f883ebd8",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Christie New Craig",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Craig authored SB 170 (2025), which created a licensing exemption for out-of-school time programs (after-school, summer) that obtain Board of Education certification instead — reducing government oversight of childcare providers. While she was also a Senate conferee on HB 419 (2024), a bipartisan childcare funding reporting bill, her primary legislative action on childcare was deregulatory. This aligns with reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies for the lowest-income families.",
+      "sources": [
+        "https://legacylis.virginia.gov/cgi-bin/legp604.exe?ses=241&typ=bil&val=SB170",
+        "https://legacylis.virginia.gov/cgi-bin/legp604.exe?ses=241&typ=bil&val=HB419",
+        "https://apps.senate.virginia.gov/Senator/memberpage.php?id=S118"
+      ]
+    },
+    {
+      "politician_id": "17c741bd-42b9-4d9a-8cb0-c4d4505b5df1",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Dean Arp",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Arp is a primary sponsor of House Bill 412 (2025), Child Care Regulatory Reforms. It lowers the staffing requirement to one lead teacher for every two groups, widens who may qualify as a lead teacher, allows larger toddler group sizes, deems school buildings to have met sanitation, fire and building code requirements for after-school programs, and makes star ratings voluntary so that reimbursement no longer depends on them. It works by reducing what providers must do in order to increase supply, and leaves subsidy rates as they are.",
+      "sources": [
+        "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H412v1.html",
+        "https://www.ncleg.gov/BillLookUp/2025/H412"
+      ]
+    },
+    {
+      "politician_id": "45274204-828d-4292-8466-36f9681f99ec",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Donny Lambeth",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Lambeth is a primary sponsor of House Bill 412 (2025), Child Care Regulatory Reforms. It lowers the staffing requirement to one lead teacher for every two groups, widens who may qualify as a lead teacher, allows larger toddler group sizes, deems school buildings to have met sanitation, fire and building code requirements for after-school programs, and makes star ratings voluntary so that reimbursement no longer depends on them. It works by reducing what providers must do in order to increase supply, and leaves subsidy rates as they are.",
+      "sources": [
+        "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H412v1.html",
+        "https://www.ncleg.gov/BillLookUp/2025/H412"
+      ]
+    },
+    {
+      "politician_id": "91c8abbc-8c76-42f2-8607-47ee476a0a8e",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Erin Paré",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Pare is a primary sponsor of House Bill 412 (2025), Child Care Regulatory Reforms. It lowers the staffing requirement to one lead teacher for every two groups, widens who may qualify as a lead teacher, allows larger toddler group sizes, deems school buildings to have met sanitation, fire and building code requirements for after-school programs, and makes star ratings voluntary so that reimbursement no longer depends on them. It works by reducing what providers must do in order to increase supply, and leaves subsidy rates as they are.",
+      "sources": [
+        "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H412v1.html",
+        "https://www.ncleg.gov/BillLookUp/2025/H412"
+      ]
+    },
+    {
+      "politician_id": "c7a28684-7476-44a0-a446-9a77116be4b4",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Heather H. Rhyne",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Rhyne is a primary sponsor of House Bill 412 (2025), Child Care Regulatory Reforms. It lowers the staffing requirement to one lead teacher for every two groups, widens who may qualify as a lead teacher, allows larger toddler group sizes, deems school buildings to have met sanitation, fire and building code requirements for after-school programs, and makes star ratings voluntary so that reimbursement no longer depends on them. It works by reducing what providers must do in order to increase supply, and leaves subsidy rates as they are.",
+      "sources": [
+        "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H412v1.html",
+        "https://www.ncleg.gov/BillLookUp/2025/H412"
+      ]
+    },
+    {
+      "politician_id": "9e00a45b-30f4-4d84-a1fe-861e81eb30ea",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jake Johnson",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "In the same pledge to 'cut red tape ... and expand childcare options,' he frames childcare supply as a deregulatory issue to increase provider options rather than proposing new public subsidies, provider grants, or universal childcare funding.",
+      "sources": [
+        "https://jakejohnsonforcongress.com/priorities",
+        "https://jakejohnsonforcongress.com"
+      ]
+    },
+    {
+      "politician_id": "e79822a0-d968-4e00-b107-de54732134bf",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Julie Jackson",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "CORRECTION (was 2). Jackson's own words: she'll 'begin by removing regulation from child care centers to make child care more affordable' — a deregulation-to-increase-supply approach (value 4), not subsidy expansion.",
+      "sources": [
+        "https://www.sltrib.com/news/2026/06/07/former-teacher-policy-official/",
+        "https://www.juliejacksonforutah.com/priorities"
+      ]
+    },
+    {
+      "politician_id": "096ba968-82d5-46ce-86ab-4b387973978d",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Nancy Mace",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Mace stated \"D.C. has overregulated the childcare industry\" (Jul 2024), advocating for deregulation to increase supply and reduce costs. This aligns with stance 4 (reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies for the lowest-income families).",
+      "sources": [
+        "https://www.ontheissues.org/Nancy_Mace.htm"
+      ]
+    },
+    {
+      "politician_id": "81db75c5-8c48-40f3-8cb1-7220def31e72",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Russell J. Black",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Black's platform explicitly proposes expanding childcare access and affordability by loosening Maine's child-to-staff ratio regulations to match national norms, i.e., a deregulation-driven supply-side approach rather than direct public subsidy or universal funding. This matches the chair describing reduced regulation on providers to increase supply and lower costs.",
+      "sources": [
+        "https://www.russellblackformaine.com/"
+      ]
+    },
+    {
+      "politician_id": "70d45f9c-aef9-4cd7-be4c-5ae568e94f94",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Tara A. Durant",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Durant authored SB75 (2024) exempting military-affiliated childcare programs from Commonwealth licensure requirements, and SB76 (2024) exempting child day centers operated by religious institutions from licensure. Both bills reduce government regulation of childcare providers, aligning with value=4 (reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families). The military and religious institution exemptions represent targeted deregulation rather than blanket market reliance.",
+      "sources": [
+        "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB75",
+        "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB76",
+        "https://apps.senate.virginia.gov/Senator/memberpage.php?id=S120"
+      ]
+    },
+    {
+      "politician_id": "38cb6796-1539-48ac-92e6-00068aa5e339",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Wren M. Williams",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": true,
+        "names_primary_instrument": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): seated on a deregulation instrument that v2 option 4 drops; find a subsidy-floor/market stance or blank",
+      "current_reasoning": "Williams was chief patron of HB744 (2026), which would have exempted small 'light family day homes' (5-8 children) from full child care licensure while still requiring background checks, CPR/first aid, and basic safety reporting. This reflects a preference for reducing regulation on providers to expand supply and lower costs rather than expanding public subsidies.",
+      "sources": [
+        "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB744",
+        "https://www.vpap.org/legislators/331499-wren-williams/legislation/"
+      ]
+    },
+    {
+      "politician_id": "7de0d70b-81ba-484c-aa82-43dfb4dadd0a",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Brian Birdwell",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No childcare expansion legislation sponsored. Focuses on limiting government programs and reducing spending. Republican platform in TX Senate opposes federal-style childcare subsidy expansion. No evidence of supporting childcare subsidies beyond very limited assistance.",
+      "sources": [
+        "https://senate.texas.gov/member.php?d=22"
+      ]
+    },
+    {
+      "politician_id": "eb7ef2a7-d0bb-475e-b2de-d96e6931932c",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Charles Perry",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No childcare expansion legislation. Texas Republican focused on West Texas rural communities. Serves on Health and Human Services Committee (Vice-Chair) but record shows no childcare subsidy bills. Consistent with reducing regulations on childcare providers with limited subsidies reserved for lowest-income families.",
+      "sources": [
+        "https://senate.texas.gov/member.php?d=28"
+      ]
+    },
+    {
+      "politician_id": "02e74087-5a81-474b-9771-62451239007a",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Donna Campbell",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No legislation found expanding childcare subsidies or access. Senate priorities reflect Tea Party conservatism — deregulation, tax relief, gun rights — with no government childcare investment. Consistently opposes expansive government social services.",
+      "sources": [
+        "https://senate.texas.gov/member.php?d=25"
+      ]
+    },
+    {
+      "politician_id": "963af970-08b4-4880-abf2-eab8afe78e67",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Elise M. Stefanik",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No record of supporting universal or significantly subsidized childcare programs. Her general governing philosophy — opposing large spending increases and reducing regulations on businesses — aligns with a preference for reducing provider regulations and limiting subsidies to the lowest-income families rather than broad government intervention in childcare.",
+      "sources": [
+        "https://www.ontheissues.org/Elise_Stefanik.htm"
+      ]
+    },
+    {
+      "politician_id": "2b8d4b89-2d7c-4b67-a5a1-72bd7c766e1e",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "James Lankford",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No childcare-specific legislation found for Lankford. His consistent opposition to government spending programs, belief that private businesses and families drive economic growth better than government, and his fiscal austerity record (National Taxpayers Union top-ranked Taxpayers Friend) place him at reducing regulations on providers and limiting subsidies to lowest-income families rather than broad public investment.",
+      "sources": [
+        "https://lankford.senate.gov/about/",
+        "https://www.ontheissues.org/Senate/James_Lankford.htm"
+      ]
+    },
+    {
+      "politician_id": "18db5d61-6bce-4f55-ad45-bed01f329548",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jay Obernolte",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Obernolte voted against the American Rescue Plan (Mar 2021), which included the expanded Child Tax Credit and $39 billion in childcare provider funding. He has consistently opposed large federal spending programs and favors limited government intervention in social services. His record suggests he would support only narrowly targeted childcare subsidies for the lowest-income families, not broad federal programs.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Jay_Obernolte_Budget_+_Economy.htm",
+        "https://www.ontheissues.org/CA/Jay_Obernolte_Welfare_+_Poverty.htm",
+        "https://en.wikipedia.org/wiki/Jay_Obernolte"
+      ]
+    },
+    {
+      "politician_id": "023c6644-356e-4afb-925b-e20f9c32209b",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jim Banks",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Banks has not sponsored federal childcare subsidy legislation and consistently voted against expanding federal social spending (voted against COVID relief packages). As RSC chairman he championed limited-government fiscal policy. His December 2024 'Working Families First' memo focused on workforce training and apprenticeships rather than childcare subsidies.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jim_Banks",
+        "https://www.ontheissues.org/Senate/Jim_Banks.htm"
+      ]
+    },
+    {
+      "politician_id": "e1e4e88b-bfd0-4c16-8e95-72c51b59c1f4",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Katy Hall",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No childcare-specific legislation sponsored across three sessions (2023-2026). Voted with Republican caucus (97%) taking a regulatory-reform-only approach to childcare rather than large public investment. Consistent with market-based approach.",
+      "sources": [
+        "https://adambrown.info/p/research/utah_legislature/profile/hall_katy_0267"
+      ]
+    },
+    {
+      "politician_id": "183d6ca3-be06-4d4f-a727-103687f80e69",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Kevin Sparks",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Sparks is a fiscal conservative focused on government efficiency. No childcare expansion legislation found. His conservative Republican profile (oil and gas CEO, fiscal responsibility emphasis) supports limiting subsidies to lowest-income families and reducing regulations on providers. Assigning value 4.",
+      "sources": [
+        "https://www.senate.texas.gov/member.php?d=31"
+      ]
+    },
+    {
+      "politician_id": "ca3f3640-ac53-4617-8986-4a356d29bc0b",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Philip Harding",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Harding lists making childcare 'affordable and accessible' under his 'Strengthen Families' pillar via 'expand tax relief and financial support for families with children' and 'support flexible work policies.' The framing emphasizes reducing regulations on providers and targeted family tax relief rather than universal public subsidies.",
+      "sources": [
+        "https://www.philiphardingforcongress.com/issues"
+      ]
+    },
+    {
+      "politician_id": "540628fb-afea-4803-ab8e-abea3d4e603c",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Tan Parker",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "No direct childcare bill found; as a fiscal conservative who emphasizes market-based approaches and opposes government expansion he is consistent with reduced regulatory burdens rather than expanded subsidies.",
+      "sources": [
+        "https://senate.texas.gov/member.php?d=12"
+      ]
+    },
+    {
+      "politician_id": "0942f325-1180-4e1a-b1df-06438f1792a3",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Tom Cotton",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Cotton opposes large-scale federal childcare subsidies, consistent with his broader stance against expanding social programs. He supports targeted, limited assistance for lower-income families while opposing universal programs. His free-market social policy positions indicate preference for reducing regulations on providers over building new public subsidy systems.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Tom_Cotton.htm"
+      ]
+    },
+    {
+      "politician_id": "7affca4e-db2b-4f7e-b009-9acc6b493139",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Tommy Tuberville",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Tuberville voted against the American Rescue Plan ($1.9T) which included childcare subsidies, and his governing philosophy opposes federal government involvement in social programs. His platform prioritizes parental choice over government-funded childcare infrastructure, aligning with limited assistance for lowest-income families rather than broad public investment.",
+      "sources": [
+        "https://tuberville.senate.gov/issues/economy-fiscal-responsibility/",
+        "https://www.ontheissues.org/Tommy_Tuberville.htm"
+      ]
+    },
+    {
+      "politician_id": "504a0b06-6729-4fc5-93cd-7c43b1e153fe",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Young Kim",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": false
+      },
+      "disposition": "THIN: no primary instrument (party-profile/inference); re-source to a primary or blank — fails the 2026-08-30 citation bar under v1 too",
+      "current_reasoning": "Kim voted against the American Rescue Plan (Mar 2021) which included significant childcare funding expansion. Her platform emphasizes reducing federal mandates and local control over education. No documented support for universal or significantly expanded childcare subsidies; she supports limited assistance only for the lowest-income families.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Young_Kim.htm",
+        "https://en.wikipedia.org/wiki/Young_Kim"
+      ]
+    },
+    {
+      "politician_id": "ac47488f-8044-4f39-a33e-0e3ff1c450fb",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Alicia Collins",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Collins voted Nay on LD 1955, 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which the House passed 77-65 on 3/5/2026. Opposing this subsidy expansion indicates a preference for a more limited public role in childcare affordability, matching stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "65ce1f05-e156-4f5a-9e21-4241cc958c19",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Ann Fredericks",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on the March 5, 2026 motion to accept LD 1955 as amended, opposing expanded childcare-affordability subsidies.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "f6c97c43-41e3-45ae-bdaa-c339f2e6ed4d",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Ashley Moody",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Moody voted YES on H.R. 1 (One Big Beautiful Bill reconciliation, July 2025) which reduced childcare subsidy provisions and cut social spending broadly. Her conservative profile — law enforcement focus, pro-deregulation — aligns with reducing regulations on childcare providers and reserving limited subsidies only for the lowest-income families rather than broad public subsidies.",
+      "sources": [
+        "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00372.htm",
+        "https://en.wikipedia.org/wiki/Ashley_Moody"
+      ]
+    },
+    {
+      "politician_id": "ee45697c-6dc7-4789-bfe0-c97a34835e6e",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Benjamin Hymes",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Hymes voted Nay on 3/5/2026 against the amended committee report on LD 1955, \"An Act to Increase Child Care Affordability and Early Childhood Educator Stability,\" which passed the House over his objection before dying in the Senate at adjournment. Opposing this subsidy and provider-support expansion, absent other evidence of his views, is most consistent with favoring reduced regulation/limited, narrowly targeted subsidies over broad expansion.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "e365a1d4-2de3-4fb6-b416-d78227836553",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Blake Moore",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Moore cosponsored the Supporting Newborn Parents Act of 2026 providing a $2,000 per-newborn tax credit and introduced the Family First Act to enhance the Child Tax Credit; as a father he stated he brings 'Utah's values to the table' in supporting working families. His approach favors targeted tax credits and limited subsidies rather than universal childcare funding. — best matches stance 4 (reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://utahpolicy.com/news-release/73074-moore-introduces-legislation-to-enhance-the-child-tax-credit-and-provide-tax-relief-for-parents"
+      ]
+    },
+    {
+      "politician_id": "7e85ff40-5ad8-4374-81a9-c18e60fad8b0",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Bryan Hughes",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "No childcare expansion legislation authored or co-authored. Rated most conservative member of Texas Senate. Receives 'Defender of the American Dream' (AFP) award indicating consistent opposition to government spending expansions including childcare subsidies.",
+      "sources": [
+        "https://senate.texas.gov/member.php?d=1"
+      ]
+    },
+    {
+      "politician_id": "92bb2ff8-0967-41c3-a68a-efc7a072ead1",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Caldwell Jackson",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Jackson voted Nay on LD 1955, \"An Act to Increase Child Care Affordability and Early Childhood Educator Stability.\" Opposing this state childcare-subsidy/educator-stability expansion aligns with stance 4 (reduce regulations, limited subsidies only for the lowest-income families).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "ea7694f7-b2bb-4b53-8248-bae698545f24",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Charles Schwertner",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Authored SB 14 (87th session) restricting municipal regulation of employment benefits, reducing local childcare leave or subsidy mandates. No bills found expanding childcare subsidies or publicly funded childcare access. Senate priorities page emphasizes small business tax cuts and deregulation, consistent with market-based approach to childcare.",
+      "sources": [
+        "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB14",
+        "https://senate.texas.gov/member.php?d=5"
+      ]
+    },
+    {
+      "politician_id": "7119c7db-6909-4d05-8613-95d5dc9818de",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Daniel Webster",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Webster co-sponsored the Respect Parents' Childcare Choices Act (HR 2282, 2025), framed around reducing government mandates and expanding parental control. His broader record shows no support for universal subsidies or public childcare programs, consistent with reducing regulations while keeping limited subsidies for the lowest-income families.",
+      "sources": [
+        "https://api.congress.gov/v3/member/W000806/cosponsored-legislation?api_key=DEMO_KEY&limit=50&sort=updateDate+desc&offset=100"
+      ]
+    },
+    {
+      "politician_id": "14f6c68b-af34-495e-9179-9c767dd9f222",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "David Boyer",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Boyer (Poland) voted Nay on LD 1955, expanding child care affordability subsidies and educator stability funding (House 77-65, 3/5/2026). Opposing this expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "fe465340-16b2-43c4-8d0a-d748b201f3d5",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Dean Cray",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (House Roll Call #634, 3/5/2026), 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which passed 77-65 over his opposition. Opposing this subsidy/provider-support expansion reflects a preference for limiting new childcare subsidy programs.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "c31211fb-24d8-4698-b2f1-e6a26b562b35",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Donald Ardell",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Ardell voted Nay on the ought-to-pass-as-amended motions for LD 1955 (\"Increase Child Care Affordability and Early Childhood Educator Stability\", roll call 634, 3/5/2026), LD 1414 (\"Support and Sustain Maine's Child Care Workforce\", roll call 639, 3/10/2026), and LD 2066 (\"Establish the Child Care Employment Award\", roll call 635, 3/5/2026), opposing all three new childcare subsidy/workforce-support programs (all three passed anyway). This consistent opposition to new subsidy-expansion vehicles best matches favoring limited, targeted subsidies over broad public funding of childcare.",
+      "sources": [
+        "https://legislature.maine.gov/house/MemberProfiles/RollCallByMember?sessionId=16&selectedMemberCode=ARDEDJ",
+        "https://legislature.maine.gov/house/MemberProfiles/Details/1457"
+      ]
+    },
+    {
+      "politician_id": "80747346-be87-4d1b-9bf6-9ee80356ba7f",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Elizabeth Caruso",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (House Roll Call #634, 3/5/2026), 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which passed 77-65 over her opposition. Opposing this subsidy/provider-support expansion reflects a preference for limiting new childcare subsidy programs.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Erin Houchin",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Houchin voted for the One Big Beautiful Bill (H.R. 1, passed 218-214, July 2025), which expanded the employer-provided childcare tax credit from $150,000 to $500,000 and increased DCAP FSA limits from $5,000 to $7,500 — a market/tax credit approach rather than direct government childcare funding. She also introduced the bipartisan Foster Care Tax Credit Act (H.R. 2438, April 2025) providing an $850 annual refundable credit to foster families. Her record consistently favors tax incentives and employer-based solutions over government-funded childcare programs.",
+      "sources": [
+        "https://www.congress.gov/bill/119th-congress/house-bill/1/text",
+        "https://www.congress.gov/bill/119th-congress/house-bill/2438/text",
+        "https://www.ffyf.org/resources/2025/07/toplines-tax-package/"
+      ]
+    },
+    {
+      "politician_id": "2ccd34d7-ca08-45d1-bfe0-f64c63349e18",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Gus M. Bilirakis",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Bilirakis voted NO on four weeks of paid parental leave for federal employees (Jun 2009) and aligns with Republican Study Committee positions favoring reduced government mandates and subsidies for childcare. His fiscal conservatism and opposition to federal benefit expansion aligns with value 4 — reducing regulations on childcare providers with limited subsidies only for the lowest-income families.",
+      "sources": [
+        "https://www.ontheissues.org/FL/Gus_Bilirakis.htm"
+      ]
+    },
+    {
+      "politician_id": "7d67c63d-e895-4f2e-96f9-67939e065f01",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jeffrey Adams",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on the March 5, 2026 motion to accept LD 1955 as amended, opposing expanded childcare-affordability subsidies.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "f4c74fad-1aa0-46d3-98ea-f377f4e639ba",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jennifer Poirier",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (House Roll Call #634, 3/5/2026), 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which passed 77-65 over her opposition. Opposing this subsidy/provider-support expansion reflects a preference for limiting new childcare subsidy programs.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "3621bbef-a821-45fe-991c-e1744ad05203",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "John Boozman",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Boozman voted NO on expanding SCHIP (2009) and opposes broad federal social spending programs. His economic philosophy supports limited federal assistance only for those who cannot afford care, with preference for market-based solutions. No record of sponsoring expanded childcare subsidy legislation; his deregulatory posture aligns with reducing regulatory burdens on providers rather than expanding public programs.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/John_Boozman.htm",
+        "https://en.wikipedia.org/wiki/John_Boozman"
+      ]
+    },
+    {
+      "politician_id": "d8daeb9d-2437-4864-9efd-6031291fed86",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "John D. Johnson",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Johnson voted NO on SB258 (2023), which would have expanded Utah's UPSTART preschool program statewide. While he voted YES on HB100 (2025) providing free meals to students who qualified for reduced-price lunches, he expressed reservations about it, stating he has a hard time thinking all of his neighbors would qualify for free school lunches. His philosophy emphasizes local and parental control over government-provided programs.",
+      "sources": [
+        "https://freedomindex.us/ut/legislator/22074/",
+        "https://www.deseret.com/utah/2025/03/03/bill-calls-for-expanded-free-lunch-programs-in-utah-schools/"
+      ]
+    },
+    {
+      "politician_id": "dc6a829a-5501-4f63-9d34-fa5210b80fc2",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "John Ducharme",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (House Roll Call #634, 3/5/2026), 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which passed 77-65 over his opposition. Opposing this subsidy/provider-support expansion reflects a preference for limiting new childcare subsidy programs.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "289e568d-a9e5-4e9d-9626-3b11891cd12b",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "John Eder",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (3/5/2026, RC #634), the child care affordability and educator-stability subsidy expansion.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "d5740b38-9b65-431a-9e33-645d432dec61",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Jon Husted",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Husted's Upward Mobility Act of 2026 (S.3583) addresses benefits cliffs where families lose childcare subsidies as income rises, proposing to let states flexibly combine federal anti-poverty program funds to avoid penalizing work advancement. The approach focuses on reducing regulations on existing program structure and work incentives rather than expanding subsidies to new populations, with 'no additional cost to taxpayers.'",
+      "sources": [
+        "https://husted.senate.gov/legislation/upward-mobility-act/",
+        "https://en.wikipedia.org/wiki/Jon_Husted"
+      ]
+    },
+    {
+      "politician_id": "c25255ea-8e03-4f8b-ab14-3c67d2a04e12",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Joseph Underwood",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Underwood voted Nay on the ought-to-pass-as-amended motions for LD 1955 (\"Increase Child Care Affordability and Early Childhood Educator Stability\", roll call 634, 3/5/2026), LD 1414 (\"Support and Sustain Maine's Child Care Workforce\", roll call 639, 3/10/2026), and LD 2066 (\"Establish the Child Care Employment Award\", roll call 635, 3/5/2026), opposing all three new childcare subsidy/workforce-support programs (all three passed anyway). This consistent opposition to new subsidy-expansion vehicles best matches favoring limited, targeted subsidies over broad public funding of childcare.",
+      "sources": [
+        "https://legislature.maine.gov/house/MemberProfiles/RollCallByMember?sessionId=16&selectedMemberCode=UNDEJF",
+        "https://legislature.maine.gov/house/MemberProfiles/Details/1444"
+      ]
+    },
+    {
+      "politician_id": "98ea2b14-dfe7-4a4c-a755-a124a77a24eb",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Joshua Morris",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Morris voted Nay on LD 1955, expanding child care affordability subsidies (House 77-65, 3/5/2026). Opposing this expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "0ba1cecc-8493-495b-8d58-34d50bbacfba",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Katie Britt",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Britt is developing legislation on childcare affordability that emphasizes parental choice, affordability, and freedom for families — framing childcare as a market challenge to be addressed without forcing trade-offs. Her approach prioritizes family flexibility and access rather than a large-scale public subsidy program, aligning with expanding limited assistance while reducing regulatory burden.",
+      "sources": [
+        "https://www.britt.senate.gov/issues/education/",
+        "https://www.ontheissues.org/Senate/Katie_Britt.htm"
+      ]
+    },
+    {
+      "politician_id": "05b465cb-f538-4a17-bb47-a12e4409b62b",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Katrina Smith",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955, which expanded child-care subsidies and early-childhood educator stability funding (House Roll Call #634, 3/5/2026; passed 77-65 over her objection). Opposing expanded childcare subsidies aligns with stance 4 (reduce regulations, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Kelly A. Dooner",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Republican with no evidence of support for childcare subsidies or mandates. Sponsored bills focus on small business growth (S.175) and deregulation-oriented local measures. Consistent with reducing regulations and limiting subsidies to the lowest-income families.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/KAD0/Bills"
+      ]
+    },
+    {
+      "politician_id": "496cc607-2296-4a7c-b2a0-0d56210805fd",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Kimberly Pomerleau",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Pomerleau voted Nay on LD 1955, the child-care-affordability/educator-stability bill. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "c1b625df-6943-49e8-a0a7-c603c4718ac1",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Laurel Libby",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Libby voted Nay on LD 1955, expanding child care affordability subsidies (House 77-65, 3/5/2026). Opposing this expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "2db78ab9-242e-46cd-ba95-5c504a2c8892",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Lois Kolkhorst",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "No childcare expansion legislation co-sponsored by Kolkhorst. Her HHS committee work focuses on public health metrics (insulin caps, newborn screening) rather than universal childcare. Her overall conservative profile supports limited subsidies for lowest-income families with reduced provider regulations. Assigning value 4.",
+      "sources": [
+        "https://www.senate.texas.gov/member.php?d=18"
+      ]
+    },
+    {
+      "politician_id": "c0a1a251-feb5-4ec7-bbbf-7cf7d3da31a6",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Mark Blier",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (3/5/2026, RC #634), opposing the child care affordability/subsidy expansion.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "b695b4e2-ca56-470d-84d2-9912a483af16",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Mark Messmer",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Introduced the Empowering Employer Child and Elder Care Solutions Act (H.R. 2270), removing Fair Labor Standards Act mandates he argues discourage employers from offering dependent-care benefits, and led the Child Care Payment Integrity and Fraud Accountability Act (H.R. 7720, folded into H.R. 7726) to tighten oversight of existing federal child care subsidies rather than expand them -- a deregulation-focused approach aimed at increasing employer-provided supply, with subsidy reform limited to accountability rather than broader expansion.",
+      "sources": [
+        "https://messmer.house.gov/news/documentsingle.aspx?DocumentID=195",
+        "https://messmer.house.gov/news/documentsingle.aspx?DocumentID=314"
+      ]
+    },
+    {
+      "politician_id": "96e540d3-cf64-412e-8a09-bf28f6689d15",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Mark Walker",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Walker voted Nay on LD 1955, the child-care-affordability/educator-stability bill. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "26fa2e76-137e-4ace-b40a-fc49105c2a05",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Marygrace Cimino",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Cimino voted Nay on LD 1955, the child-care-affordability/educator-stability bill. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "6f9a255b-0f39-4907-8b96-682a59b91f39",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Michael Lance",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Lance voted Nay on passage of LD 1955 (An Act to Increase Child Care Affordability and Early Childhood Educator Stability), Roll Call 634 on 3/5/2026, opposing the targeted childcare-subsidy and provider-stability bill (which nonetheless passed the House before dying in the Senate at adjournment).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "78c675a3-137e-4d9c-bf85-38bdf7f45c51",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Michael Soboleski",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (House Roll Call #634, 3/5/2026), 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which passed 77-65 over his opposition. Opposing this subsidy/provider-support expansion reflects a preference for limiting new childcare subsidy programs.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "9e3164d5-ce71-4c50-9220-b969265ce551",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Mike Kennedy",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Kennedy introduced H.R. 7794, the Stop Child Care Funding Fraud Act (2026), focused exclusively on anti-fraud accountability measures within the existing CCDBG program — requiring states to report improper payments and face funding cuts for excessive error rates. He has not proposed expanding childcare subsidies or universal programs. His general approach is market-based with limited government subsidies reserved for preventing fraud. — best matches stance 4 (reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://www.quiverquant.com/news/New+Bill:+Representative+Mike+Kennedy+introduces+H.R.+7794:+Stop+Child+Care+Funding+Fraud+Act+of+2026"
+      ]
+    },
+    {
+      "politician_id": "4f62ca82-fda1-4386-9a4a-62dd84318f83",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Mike Lee",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Lee opposes centralized federal childcare programs, calling universal federal approaches policies that simply do not work. His Head Start Improvement Act would replace the program with block grants to states rather than expand it. He opposed the monthly child allowance as welfare that makes more Americans dependent on government, preferring a larger child tax credit. In February 2026 he cosponsored the Payment Integrity Act to cut federal childcare fraud.",
+      "sources": [
+        "https://www.lee.senate.gov/early-education-reform",
+        "https://www.lee.senate.gov/2026/2/lee-cosponsors-payment-integrity-act-to-prevent-childcare-fraud",
+        "https://www.ksl.com/article/50155974/why-sen-mike-lee-says-biden-child-allowance-plan-is-a-return-to-failed-welfare-policies"
+      ]
+    },
+    {
+      "politician_id": "ebd1c39c-73cc-4346-a7f3-55a4274045a3",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Nathan Carlow",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955 (3/5/2026, RC #634), opposing the child care affordability/subsidy expansion.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "7e248174-dd02-4fc2-8995-943206641385",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Nathan Wadsworth",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Wadsworth voted Nay on LD 1955, the child-care-affordability/educator-stability bill. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "a793b036-460a-4752-961f-53d460f8130a",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Paul Flynn",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955, which expanded child-care subsidies and early-childhood educator stability funding (House Roll Call #634, 3/5/2026; passed 77-65 over his objection). Opposing expanded childcare subsidies aligns with stance 4 (reduce regulations, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "c6b1a2ed-c20a-44ef-b9b0-58de24c5f837",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Peter Wood",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "On House Roll Call #634 (3/10/2026), Wood voted Nay on LD 1955, the child-care-affordability/educator-stability bill. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "233ca29f-b25c-4191-8cf4-3f529fb933e9",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Quentin Chapman",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Chapman voted Nay on LD 1955, expanding child care affordability subsidies (House 77-65, 3/5/2026). Opposing this expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "a37ec3f9-faa6-4c06-8856-92fa618a28ad",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Rachel Henderson",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Henderson voted Nay on passage of LD 1955 (An Act to Increase Child Care Affordability and Early Childhood Educator Stability), Roll Call 634 on 3/5/2026, opposing the targeted childcare-subsidy and provider-stability bill (which nonetheless passed the House before dying in the Senate at adjournment).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "85a1ae07-3743-4192-b516-b04f6035440a",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Randall Greenwood",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Greenwood voted Nay on LD 1955, 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which the House passed 77-65 on 3/5/2026. Opposing this subsidy expansion indicates a preference for a more limited public role in childcare affordability, matching stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "e8cbe890-b3ac-44b9-baf3-d4d988b7c1cc",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Randall Hall",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Hall voted Nay on passage of LD 1955 (An Act to Increase Child Care Affordability and Early Childhood Educator Stability), Roll Call 634 on 3/5/2026, opposing the targeted childcare-subsidy and provider-stability bill (which nonetheless passed the House before dying in the Senate at adjournment).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "b43d9033-090f-4fea-9000-7f7360dbd0e6",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Richard Mason",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955, \"An Act to Increase Child Care Affordability and Early Childhood Educator Stability\" (passed House 3/10/2026).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "e3c5cef5-08ff-4066-9fee-344733cb4137",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Robert E. Latta",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Latta voted NO on four weeks paid parental leave (2009) and consistently opposes government mandates on employers and federal spending on social programs. His general posture favors deregulation and limiting government intervention in private-sector decisions, aligning with reduced regulations on childcare providers rather than expanded subsidies.",
+      "sources": [
+        "https://www.ontheissues.org/OH/Bob_Latta.htm"
+      ]
+    },
+    {
+      "politician_id": "7a0017bb-cd74-43bb-9719-842aaa1bd383",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Robert Nutting",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955, which expanded child-care subsidies and early-childhood educator stability funding (House Roll Call #634, 3/5/2026; passed 77-65 over his objection). Opposing expanded childcare subsidies aligns with stance 4 (reduce regulations, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "775d8ed7-0f01-43e0-b7c3-cd7b7f80f9c2",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Rolf Olsen",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Olsen voted Nay on LD 1955, 'An Act to Increase Child Care Affordability and Early Childhood Educator Stability,' which the House passed 77-65 on 3/5/2026. Opposing this subsidy expansion matches stance 4.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "6ca03396-08d7-43ff-a101-f5a1aec11e3e",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Russell White",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "White voted Nay on LD 1955, \"An Act to Increase Child Care Affordability and Early Childhood Educator Stability\" (RC 634, 3/5/2026), opposing an expansion of child care subsidies and educator-stability funding sponsored by Senate President Daughtry.",
+      "sources": [
+        "https://legislature.maine.gov/house/MemberProfiles/RollCallByMember?sessionId=16&selectedMemberCode=WHITRP",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955&SessionID=16"
+      ]
+    },
+    {
+      "politician_id": "7a9ebcbf-d2fa-4ca0-a133-178fb0d6fce1",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Sheila Lyman",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Lyman voted Nay on passage of LD 1955 (An Act to Increase Child Care Affordability and Early Childhood Educator Stability), Roll Call 634 on 3/5/2026, opposing the targeted childcare-subsidy and provider-stability bill (which nonetheless passed the House before dying in the Senate at adjournment).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "60bf7e1e-583d-4838-a455-e39765db03e2",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Shelley Rudnicki",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on LD 1955, which expanded child-care subsidies and early-childhood educator stability funding (House Roll Call #634, 3/5/2026; passed 77-65 over her objection). Opposing expanded childcare subsidies aligns with stance 4 (reduce regulations, with limited subsidies reserved for the lowest-income families).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    },
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Steve Hilton",
+      "flags": {
+        "has_independent_subsidy_evidence": false,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Hilton's Golden Together \"Parent Empowerment and Home Visiting\" policy paper (May 2024) explicitly frames the goal as reducing demand for government by intervening early in families through decentralized, coach-delivered home visiting — not expanding subsidized childcare programs. The foreword states: \"Government's role is to facilitate rather than provide these human partnerships.\" This deregulation-and-limited-targeted-support approach matches value 4 (reduce regulations on providers, limited subsidies only for lowest-income families).",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/06/GT_Home-Visiting-3.pdf"
+      ]
+    },
+    {
+      "politician_id": "a5c70691-3834-48f8-aeca-79b95c131884",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Steven Bishop",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Bishop voted Nay on LD 1955, \"An Act to Increase Child Care Affordability and Early Childhood Educator Stability\" (RC 634, 3/5/2026), opposing an expansion of child care subsidies and educator-stability funding.",
+      "sources": [
+        "https://legislature.maine.gov/house/MemberProfiles/RollCallByMember?sessionId=16&selectedMemberCode=BISHSM",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955&SessionID=16"
+      ]
+    },
+    {
+      "politician_id": "b08821e4-7a92-498c-97f2-13138777e8ae",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Tammy Schmersal-Burgess",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Schmersal-Burgess voted Nay on passage of LD 1955 (An Act to Increase Child Care Affordability and Early Childhood Educator Stability), Roll Call 634 on 3/5/2026, opposing the targeted childcare-subsidy and provider-stability bill (which nonetheless passed the House before dying in the Senate at adjournment).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280099161&chamber=H&serialnumber=634"
+      ]
+    },
+    {
+      "politician_id": "b13ec962-0772-4fdd-8399-59c3bc7fa19a",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Thomas Lavigne",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on both House Roll Call #634 (3/5/2026, LD 1955, child care affordability/educator-stability subsidies) and House Roll Call #666 (3/24/2026, LD 2114, expanding public preschool for 3-year-olds) -- opposing expanded state subsidies and public preschool programs, matching stance 4's preference for reduced regulation and limited, targeted subsidies over broad public expansion.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280101155&chamber=House&serialnumber=666"
+      ]
+    },
+    {
+      "politician_id": "176c355c-b056-4131-8767-6805592af0d0",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Timothy Guerrette",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Guerrette voted Nay on the ought-to-pass-as-amended motions for LD 1955 (\"Increase Child Care Affordability and Early Childhood Educator Stability\", roll call 634, 3/5/2026), LD 1414 (\"Support and Sustain Maine's Child Care Workforce\", roll call 639, 3/10/2026), and LD 2066 (\"Establish the Child Care Employment Award\", roll call 635, 3/5/2026), opposing all three new childcare subsidy/workforce-support programs (all three passed anyway). This consistent opposition to new subsidy-expansion vehicles best matches favoring limited, targeted subsidies over broad public funding of childcare.",
+      "sources": [
+        "https://legislature.maine.gov/house/MemberProfiles/RollCallByMember?sessionId=16&selectedMemberCode=GUERTC",
+        "https://legislature.maine.gov/house/MemberProfiles/Details/1456"
+      ]
+    },
+    {
+      "politician_id": "6a008bbb-a2dd-4128-87cf-f2fe0278738b",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "chair_after": 4,
+      "politician_name": "Wayne Parry",
+      "flags": {
+        "has_independent_subsidy_evidence": true,
+        "has_deregulation_instrument": false,
+        "names_primary_instrument": true
+      },
+      "disposition": "CARRY: cites a subsidy-limiting/market stance that v2 option 4 still describes",
+      "current_reasoning": "Voted Nay on the March 5, 2026 motion to accept LD 1955 (\"An Act to Increase Child Care Affordability and Early Childhood Educator Stability\") as amended, opposing expanded childcare subsidies and educator-support funding.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099161&chamber=House&serialnumber=634",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1955"
+      ]
+    }
+  ]
+}

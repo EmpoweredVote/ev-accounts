@@ -1,0 +1,1498 @@
+{
+  "topic_key": "city-sanitation",
+  "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+  "target_version": 2,
+  "chairs_changed": [
+    1,
+    2,
+    3
+  ],
+  "chair_text": {
+    "1": {
+      "v1": "Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure",
+      "v2": "Significantly expand public sanitation services, treating cleanliness as the city's responsibility"
+    },
+    "2": {
+      "v1": "Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness communitywide",
+      "v2": "Concentrate sanitation resources on the most neglected, worst-served neighborhoods to close long-standing service gaps"
+    },
+    "3": {
+      "v1": "Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners",
+      "v2": "Maintain current public sanitation services and target enforcement at the businesses and large property owners who create the most waste"
+    }
+  },
+  "generated_for": "Season-2 carry re-audit of CA_0040 substantive v2 (city-sanitation chairs 1-3 de-barrel). Chairs 4-5 byte-identical to v1 and untouched.",
+  "decision": "re-source first, blank if none (2026-08-30, Chris Andrews). Do NOT edit Season 1 seatings: under v1 the chairs carry the pre-split wording, so these rows are correctly seated in the open season. Disposition applies to the Season 2 answer set at assembly.",
+  "note": "flags are lexical heuristics, not verdicts; read sources before acting. chair 2 axis_orphan = general-expansion seating with no equity/targeting signal that v2 chair 2 now requires (a ceiling on the debt, not a verified count). chair 1/3 changes preserve the position; orphan risk is low. thin_no_instrument = seated with no primary instrument named (weak under the 2026-08-30 citation bar). rows[] is shaped so this file doubles as audit-chair-evidence --check input.",
+  "summary": {
+    "total": 86,
+    "axis_orphans": 13,
+    "thin_no_instrument": 17,
+    "likely_carry": 56,
+    "per_chair": {
+      "1": {
+        "total": 6,
+        "axis_orphans": 0,
+        "thin_no_instrument": 3,
+        "likely_carry": 3
+      },
+      "2": {
+        "total": 30,
+        "axis_orphans": 13,
+        "thin_no_instrument": 5,
+        "likely_carry": 12
+      },
+      "3": {
+        "total": 50,
+        "axis_orphans": 0,
+        "thin_no_instrument": 9,
+        "likely_carry": 41
+      }
+    },
+    "authoritative_gate": {
+      "tool": "scripts/audit-chair-evidence.mjs --check",
+      "names_no_instrument": 75,
+      "total": 86,
+      "caveat": "gate regex is calibrated for state/federal bills/acts/votes and under-credits LOCAL instruments (budget lines, council initiatives, district programs, questionnaires); it flags real local instruments (e.g. Ishihara $1.2M program, Simmons Zero Waste Master Plan 2.0 $97,500) as thin. True thin-debt is between the lexical heuristic (17) and this gate (75). Debt is PRE-EXISTING under v1; CA_0040 writes no seatings and is not gated by it."
+    }
+  },
+  "rows": [
+    {
+      "politician_id": "0f6484bd-2fc1-4071-9648-d7b8a950d29c",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Aida Ashouri",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Advocates community-based approaches to sanitation rooted in environmental justice. Worked with Communities for a Better Environment on neighborhood health and pollution issues. Opposes criminalization of unhoused residents and favors addressing root causes of public space conditions.",
+      "sources": [
+        "https://aida4la.com",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-attorney"
+      ]
+    },
+    {
+      "politician_id": "b8c7510c-20d7-4bd7-a765-07b77d3a5b6c",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Edward M. Flynn",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: max-expand public-service evidence; fits v2 chair 1.",
+      "current_reasoning": "Introduced the concept of a \"rat czar\" pest management position in 2023 and formally introduced a resolution creating an Office of Pest Control with a dedicated director in January 2024; the council unanimously adopted the ordinance on January 31, 2024. He partnered with Councilor Liz Breadon on the proposal. This represents a proactive government-services approach to sanitation, treating the rat problem as a city services failure requiring dedicated institutional response.",
+      "sources": [
+        "https://www.wbur.org/news/2023/04/26/boston-rat-czar-ed-flynn-newsletter",
+        "https://en.wikipedia.org/wiki/Ed_Flynn_(politician)"
+      ]
+    },
+    {
+      "politician_id": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Faizah Malik",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Malik commits to clearing the backlog of over 50,000 sidewalk repair requests, improving crosswalks, and upgrading street safety infrastructure across District 11. She supports responsive city services and the activation of community spaces like Windward Plaza, reflecting a practical approach to urban cleanliness and public space maintenance.",
+      "sources": [
+        "https://web.archive.org/web/20260609024810/https://www.faizahforla.com/"
+      ]
+    },
+    {
+      "politician_id": "c3007368-5c5d-4933-8bb3-048d9df6a411",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Gabriela Coletta Zapata",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: max-expand public-service evidence; fits v2 chair 1.",
+      "current_reasoning": "Launched a multi-layered District 1 trash initiative in 2023 combining barrel expansion, civic education, and community cleanup events. Secured seasonal street cleaners (hokies), trash containerization to address rodents, and expanded pest control in the FY23 and FY26 budgets. Explicitly frames poor sanitation as a services failure requiring expanded city investment, coordinated contractor oversight, and multilingual civic education.",
+      "sources": [
+        "https://eastietimes.com/2023/05/17/coletta-announces-community-trash-initiative-in-district-1/",
+        "https://eastietimes.com/2024/05/09/coletta-advocates-priorities-during-budget-hearings/",
+        "https://eastietimes.com/2026/01/27/coletta-zapata-named-chair-of-government-operations-and-city-council-vice-president/"
+      ]
+    },
+    {
+      "politician_id": "0adaafe7-d821-4eaf-8fb6-f934adeb11e6",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Heidi Wegleitner",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Platform explicitly supports ending the criminalization of homelessness and services over enforcement",
+      "sources": [
+        "https://prodane.org/heidi-wegleitner"
+      ]
+    },
+    {
+      "politician_id": "5e24851a-2f6f-4c2a-ba41-20b5c1dca1d0",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 1,
+      "politician_name": "Kristen Ishihara",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: max-expand public-service evidence; fits v2 chair 1.",
+      "current_reasoning": "In her November 2025 State of the City address Ishihara announced a $1.2 million Texas A&M Forest Service grant to plant 5,000 trees in public and community spaces and led efforts to restart Longview's curbside recycling program after a facility fire — framing contamination reduction as a civic responsibility. The city received the 2026 Governor's Community Achievement Award (Keep Texas Beautiful) for Keep Longview Beautiful's 'Less Littered Longview' campaign. Her approach consistently treats poor sanitation conditions as a services and infrastructure challenge rather than an enforcement one.",
+      "sources": [
+        "https://news-journal.com/2025/11/06/longview-mayor-celebrates-years-successes-urges-residents-to-change-recycling-habits/",
+        "https://news-journal.com/2026/05/19/business-digest-city-of-longview-receives-state-beautification-award/",
+        "https://www.longviewtexas.gov/2264"
+      ]
+    },
+    {
+      "politician_id": "e30ddde5-a722-477b-837b-056fdc7e2d6b",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Adrin Nazarian",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Nazarian's platform mandates 100% diversion of organic waste from landfills, holds private haulers accountable, and pursues zero-waste and producer accountability policies. He advocates strengthening the Bureau of Sanitation's capacity. This goes beyond maintaining current systems (score 3) toward actively expanding city-led waste reduction programs, though it stops short of a fully public waste management takeover.",
+      "sources": [
+        "https://adrinnazarian.com/issues/"
+      ]
+    },
+    {
+      "politician_id": "7a1c5c1c-9ea7-4770-b44b-f6891ba718fa",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Alejandro Puy",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Puy has been actively engaged on illegal dumping and sanitation issues on the west side. He described the illegal dumping problem on 7200 West as \"overwhelming\" and supported the 2024 council decision to close that road section for two years to address it. He supported budget investment in the new Clean City Team for rapid response to illegal dumping, camping, and graffiti, while cautioning that \"revenues aren't growing at the same pace\" as service demands. He also flagged community engagement concerns before closing 200 South, stating: \"I worry that not engaging the neighbors would be a mistake.\"",
+      "sources": [
+        "https://www.ksl.com/article/51479898/why-salt-lake-city-wants-to-indefinitely-close-these-2-road-sections",
+        "https://www.slc.gov/council/salt-lake-city-council-adopts-annual-budget-focused-on-a-clean-safe-and-livable-city/"
+      ]
+    },
+    {
+      "politician_id": "f05ec762-9053-45a0-be1a-a4b173a06015",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Asaad Alnajjar",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Frames sanitation as a management and accountability issue — proposes a 90-day audit of homelessness and sanitation spending to eliminate waste and redirect funds to direct services. Advocates practical, results-based approaches to public space cleanliness.",
+      "sources": [
+        "https://lamayor2026.org",
+        "https://patch.com/california/los-angeles/meet-asaad-alnajjar-candidate-los-angeles-mayor"
+      ]
+    },
+    {
+      "politician_id": "10758208-c20b-4729-8cea-4340caf8243c",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Caity Maple",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": true
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): equity signal present but no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Maple's platform explicitly prioritizes reducing illegal dumping and improving sanitation response times across her North Sacramento / Del Paso Heights district, directing resources into underinvested communities and coupling sanitation improvements with neighborhood investment — a services-expansion approach consistent with increasing sanitation staffing and prioritizing underserved neighborhoods.",
+      "sources": [
+        "https://caitymaple.com/issues"
+      ]
+    },
+    {
+      "politician_id": "795c1726-d6f5-4d51-b785-c4c242ca3a61",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Chris Wharton",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "The FY26 budget that Wharton led as Council Chair created a new Clean City Team to \"quickly respond to illegal dumping, camping and graffiti violations\" and expanded neighborhood services for cleanliness and sanitation. His campaign highlights \"Sweet Streets\" safety and multi-modal street planning. He stated the budget \"delivers visible improvements for residents\" and \"keeps public spaces clean and safe.\" No evidence of a distinct stance outside mainstream incremental investment in city sanitation services.",
+      "sources": [
+        "https://www.slc.gov/council/salt-lake-city-council-adopts-annual-budget-focused-on-a-clean-safe-and-livable-city/",
+        "https://www.votechriswharton.com/issues"
+      ]
+    },
+    {
+      "politician_id": "f3f21e38-d8e6-41d2-9d74-0360a5f679b9",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Connie Chan",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "As Budget Committee chair, Chan has protected services funding including sanitation and community resources. In 2026 she stated 'It's enough cuts' when opposing further budget reductions that would have affected city services. Her approach emphasizes maintaining staffing and services rather than enforcement-led responses to cleanliness issues.",
+      "sources": [
+        "https://missionlocal.org/2026/05/connie-chan-budget-deficit-2026/",
+        "https://sfbos.archive.sf.gov/supervisor-chan-district-1"
+      ]
+    },
+    {
+      "politician_id": "00565708-5520-418d-afec-58a295d0d8ec",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "E. Denise Simmons",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Cambridge funded Zero Waste Master Plan 2.0 ($97,500, March 2025), a $6,000 DEP waste-reduction grant (January 2025), POR 2024 #128 (September 2024) directing the City Manager to address leaking DPW garbage trucks, and a MassDEP Universal Waste Shed grant ($5,000, March 2025). Simmons voted with these unanimous sanitation measures. Cambridge's approach treats poor sanitation as a services-delivery failure requiring increased capacity and equitable community access, aligning with stance 2. Sources: cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4577; cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4645",
+      "sources": [
+        "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4577",
+        "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4645"
+      ]
+    },
+    {
+      "politician_id": "100405fd-4ccc-427d-9ccd-962739d6d292",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Elmer Roldan",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Proposes utilizing idle district funds for sanitation cleanup and restoring illegal dumping teams to seven-day schedules. Focuses on equitable service delivery and expanding tree canopy coverage as a public health and climate measure.",
+      "sources": [
+        "https://elmerroldan.com",
+        "https://patch.com/california/los-angeles/meet-elmer-roldan-candidate-los-angeles-city-council-district-9"
+      ]
+    },
+    {
+      "politician_id": "92876cb7-9905-4be7-b349-2a4a4ff39846",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Estuardo Mazariegos",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Advocates equitable, community-based cleanup rooted in dignity for unhoused residents — opposing cleanup approaches that criminalize poverty. Focuses on reallocating resources toward real services rather than enforcement-based sanitation programs.",
+      "sources": [
+        "https://estuardo4la.com",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ]
+    },
+    {
+      "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Eunisses Hernandez",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Hernandez represents urban communities including Echo Park, Chinatown, Lincoln Heights, and Highland Park with significant sanitation needs. As a progressive council member who voted against the 2023 budget specifically because it prioritized LAPD over community services, she consistently advocates for expanding city services. Her resource-reallocation philosophy — redirecting funds from enforcement to services — places her at moderate expansion of sanitation services with equitable investment in underserved neighborhoods.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eunisses_Hernandez"
+      ]
+    },
+    {
+      "politician_id": "3bd4af01-0ce8-415f-87fa-09dc248ca6cc",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Henry Santana",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": true
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): equity signal present but no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Santana stated in his 2025 questionnaire that residents and businesses near Mass and Cass deserve safe clean streets and he supports immediate interventions for sanitation and needle cleanup while building long-term infrastructure for treatment and housing. His approach treats sanitation as a public health investment requiring city resources — consistent with value 2: increase sanitation investment and prioritize historically underserved areas.",
+      "sources": [
+        "https://www.dotnews.com/wp-content/uploads/2025/08/Henry-Santana.pdf",
+        "https://www.boston.gov/departments/city-council/henry-santana"
+      ]
+    },
+    {
+      "politician_id": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Holly J. Mitchell",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": true
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): equity signal present but no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Mitchell championed a Board motion to investigate 8.5 million gallons of untreated sewage entering county waterways and require steps to prevent future spills. Her broader community improvement work includes beautification partnerships and infrastructure investments in underserved areas of South LA.",
+      "sources": [
+        "https://mitchell.lacounty.gov/?s=sanitation"
+      ]
+    },
+    {
+      "politician_id": "02f88a57-ccf5-4fe1-a693-7fc949321fb1",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Jackie Fielder",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Fielder's homelessness approach focuses on services, housing, and harm reduction over enforcement sweeps. She pushed for a four-pillar drug strategy and has opposed punitive approaches to street homelessness without housing alternatives. No direct vote on sanitation enforcement was found, but her overall orientation favors services-based responses over enforcement as the primary tool.",
+      "sources": [
+        "https://missionlocal.org/2025/07/district-9-supervisor-jackie-fielder/"
+      ]
+    },
+    {
+      "politician_id": "ad060f52-145c-41e3-8bd1-c454ac1ed46c",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Jivan Sobrinho-Wheeler",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Sobrinho-Wheeler co-sponsored the March 2026 'snow corps' initiative and was quoted highlighting how the current system creates a 'patchwork' disproportionately affecting residents with mobility challenges, making the case for expanded city sanitation services for underserved areas. Aligns with stance 2: increase sanitation crews and prioritize historically underserved neighborhoods to equalize service citywide.",
+      "sources": [
+        "https://www.cambridgeday.com/2026/03/06/city-council-snow-corps/"
+      ]
+    },
+    {
+      "politician_id": "f3a27837-9be8-4734-a672-d6ba6de4b045",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Jorge Hernandez Rosas",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Hernandez Rosas proposes rapid-response cleanup teams dedicated to illegal dumping, graffiti removal, and bulky item pickup with minimal wait times. He calls for increased trash collection near schools, parks, transit stops, and commercial corridors, and includes sanitation crews as part of coordinated multi-agency response teams addressing encampments.",
+      "sources": [
+        "https://patch.com/california/los-angeles/meet-jorge-hernandez-rosas-candidate-los-angeles-city-council-district-9",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ]
+    },
+    {
+      "politician_id": "93613d15-1098-423b-9e18-81f125ac2408",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Jorge Nuño",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Nuño proposes a \"don't move, improve\" approach to street sanitation, emphasizing clean, walkable streets rather than displacing residents. He proposes designated dump zones that the city would empty regularly to combat illegal dumping, and rapid response teams to address emerging sanitation problems.",
+      "sources": [
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ]
+    },
+    {
+      "politician_id": "a25f862d-26f5-41f0-a32b-c4d59c7769c8",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Joseph M. Petty",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Worcester's goal is to be \"the cleanest Gateway City in the nation.\" The Quality of Life Team proactively addresses illegal dumping, needle removal, and neighborhood beautification in all neighborhoods. The Keep Worcester Clean initiative goes beyond the basics of municipal sanitation services with year-round multi-department coordination. The FY25-29 plan commits to a Zero Waste Master Plan.",
+      "sources": [
+        "https://www.worcesterma.gov/city-manager/quality-of-life-team",
+        "https://www.worcesterma.gov/keep-worcester-clean",
+        "https://www.worcesterma.gov/city-manager/strategic-plan"
+      ]
+    },
+    {
+      "politician_id": "91e24565-79b3-4473-9d7b-3ca72beceed2",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Justin Hurst",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": true
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): equity signal present but no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "In his January 2026 return-to-council priorities Hurst explicitly called out clean streets and clean parks as minimum expectations: We've got to get the little things right here in the city if taxes are going to keep going up and up and up — we need to make sure, at the very least, that folks are going to get the services that they rightfully deserve. He framed poor conditions as a service-delivery failure, reflecting a services-first investment approach.",
+      "sources": [
+        "https://www.wamc.org/news/2026-01-13/coming-going-incoming-springfield-city-councilors-talk-priorities-outgoing-councilors-reflect-on-work"
+      ]
+    },
+    {
+      "politician_id": "802f48ea-e397-4e72-9589-23aa5cee5a39",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Khrystian E. King",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "King filed a January 2026 order requesting the Commissioner of Public Works brief the City Council on strategies being implemented for snow operations to provide increased transparency to the public. He also co-signed a sidewalk installation request for Victoria Ave. adjacent to Greenwood Park. This reflects a service improvement and accountability orientation pushing for expanded sanitation services.",
+      "sources": [
+        "https://www.worcesterma.gov/city-council/standing-committees",
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf"
+      ]
+    },
+    {
+      "politician_id": "a8f48816-2ebc-4ae4-9667-a12d4c18f5ec",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Marc C. McGovern",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Co-sponsored snow corps exploration order (March 2026) to have city take responsibility for public sidewalk clearing: \"The current system isn't working.\" Favors expanding city sanitation staffing and services. Source: cambridgeday.com/2026/03/06/city-council-snow-corps/",
+      "sources": [
+        "https://cambridgeday.com/2026/03/06/city-council-snow-corps/"
+      ]
+    },
+    {
+      "politician_id": "d63def16-7510-4745-83d8-01901e450429",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Michelle Wu",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "The Wu administration has invested in sanitation improvements with an equity lens, prioritizing historically underserved neighborhoods. Her environmental justice framing across climate, heat resilience, and community clean air programs reflects a commitment to equalizing service levels across neighborhoods. Wu launched the Boston Residential Organic Composting Program and set zero-waste goals aligned with her climate agenda. This aligns with value 2: increasing sanitation investment and prioritizing underserved neighborhoods to equalize cleanliness citywide.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michelle_Wu",
+        "https://www.boston.gov/departments/mayors-office/michelle-wu",
+        "https://www.boston.gov/environment"
+      ]
+    },
+    {
+      "politician_id": "13673e69-91df-4d5b-a6af-36cc577f2487",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Moises M. Rodrigues",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Rodrigues made urban cleanliness and code enforcement a centerpiece of his 2025 mayoral campaign, pledging \"an aggressive code enforcement initiative\" to combat litter and illegal dumping. He stated: \"We will hold absentee landlords accountable for maintaining their properties and open spaces.\" This commitment to increasing enforcement targeted especially at property owners aligns with increasing sanitation enforcement and prioritizing historically neglected neighborhoods.",
+      "sources": [
+        "https://www.wgbh.org/news/politics/2025-11-06/five-things-to-know-about-moises-rodrigues-the-new-brockton-mayor",
+        "https://brockton.ma.us/government/mayors-office/"
+      ]
+    },
+    {
+      "politician_id": "63534729-c022-4305-bef1-e29d4464f719",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Natalie Pinkney",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "During her tenure on the South Salt Lake City Council Pinkney spearheaded a city-wide glass recycling program. As a county council candidate she supports enhancing recycling programs and expanding canyon protection. Her record reflects active investment in sanitation and recycling infrastructure through government-led initiatives.",
+      "sources": [
+        "https://www.kuer.org/politics-government/2024-10-11/2024-voter-guide-salt-lake-county-council-at-large-seat-c-rachelle-morris-natalie-pinkney"
+      ]
+    },
+    {
+      "politician_id": "26dbe16a-9dff-42c0-939f-5b5e529063ca",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Nithya Raman",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Raman authored CF 24-0906 (introduced August 6 2024; adopted 13-0-2 on August 13 2024), directing AB 1290 funds to the LA Conservation Corps for ongoing street beautification services in CD4 — a move explicitly framed as an equity investment in a historically underserved corridor. Her CD4 record touts a 54% reduction in encampments, linking sanitation improvements to housing-first outcomes rather than punitive enforcement. Her 2026 mayoral platform calls for restoring Bureau of Street Lighting (addressing 30,000+ dark streetlights), investing in sidewalk repair as equity infrastructure, and adding 600+ bus shelters before the 2028 Olympics — all framed as services-delivery failures requiring proactive city investment in underserved neighborhoods. This reflects value 2: increasing sanitation and maintenance crews and prioritizing historically underserved communities, rather than mere enforcement of anti-dumping laws (value 3).",
+      "sources": [
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=24-0906",
+        "https://www.nithyaforthecity.com/transportation",
+        "https://en.wikipedia.org/wiki/Nithya_Raman"
+      ]
+    },
+    {
+      "politician_id": "d2596e4d-f491-449e-b112-40be13418112",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Rafael Mandelman",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Secured funding for Street Crisis Response Teams as alternatives to police for behavioral health and quality-of-life calls. Authored behavioral health conservatorship legislation targeting severe cases causing public disorder. His 'A Place for All' ordinance (2022) established shelter-for-all policy. Approached street conditions as primarily a services failure requiring more outreach investment, consistent with increasing sanitation and outreach staffing.",
+      "sources": [
+        "https://www.sf.gov/profile--rafael-mandelman/",
+        "https://en.wikipedia.org/wiki/Rafael_Mandelman"
+      ]
+    },
+    {
+      "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Rashi Kesarwani",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Kesarwani lists 'Clean Public Spaces' as a top issue priority; she co-wrote a 2019 Berkeleyside op-ed titled 'We need a clean and healthy Berkeley for all'; she funded the Downtown Streets Team expansion to Gilman District for twice-weekly cleaning services; and she pursues encampment closures partly on public health grounds (Leptospirosis outbreak). She treats poor sanitation conditions as a services failure requiring active city response.",
+      "sources": [
+        "https://rashikesarwani.com",
+        "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+        "https://rashikesarwani.com/2026/01/jan-news-public-health-alert-lepto-at-harrison-encampments"
+      ]
+    },
+    {
+      "politician_id": "eab7b830-c831-45f9-bca8-11b079f42680",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Shamann Walton",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": true
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): equity signal present but no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Walton has focused on environmental justice and community services rather than enforcement-first sanitation. His D10 Public Safety Plan addresses neighborhood cleanliness through community engagement. He has opposed top-down enforcement without community input (e.g., the Bayview shelter controversy) and favors service investment in historically neglected districts. His stated goal is equitable resource distribution to districts historically isolated and disenfranchised.",
+      "sources": [
+        "https://sfbos.archive.sf.gov/supervisor-walton-district-10",
+        "https://missionlocal.org/2025/01/interview-supervisor-shamann-walton-wants-less-nuclear-waste-more-affordable-housing-in-district-10/"
+      ]
+    },
+    {
+      "politician_id": "34da113e-e5dc-4637-9be1-9d42a6feea93",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Tim Flaherty",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": false
+      },
+      "class": "axis_orphan",
+      "disposition": "RE-SOURCE (axis-orphan): v2 chair 2 keeps only the equity/targeting position; this seating shows general-expansion evidence with no underserved/neglected/disparity signal. Find a targeting stance or move to chair 1 / blank.",
+      "current_reasoning": "Expressed enthusiasm for the 2026 snow corps proposal: \"If this policy order incentivizes and encourages young people to get back to walking around the neighborhood with a shovel on their shoulder, I'm all for it.\" Community-engaged expansion of sanitation services. Source: cambridgeday.com/2026/03/06/city-council-snow-corps/",
+      "sources": [
+        "https://cambridgeday.com/2026/03/06/city-council-snow-corps/"
+      ]
+    },
+    {
+      "politician_id": "0b16443e-fec4-4f33-abbc-eb1331e3b42d",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Vivian Moreno",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "Moreno has organized 65+ dumpster drop-offs removing 230+ tons of debris, providing free community disposal to historically underserved D8 residents and reducing illegal dumping. She pushed to hire two dedicated graffiti abatement officers after D8 had the lowest graffiti removal services in the city, directly expanding sanitation staffing for underserved neighborhoods. Her work prioritizes equitable service distribution in South San Diego County, matching the stance 'Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness citywide.'",
+      "sources": [
+        "https://www.vivianmorenosd.com",
+        "https://www.vivianmorenosd.com/better"
+      ]
+    },
+    {
+      "politician_id": "e06e252e-b7f2-4289-9035-ed009987cc0b",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 2,
+      "politician_name": "Yemi Mobolade",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": true
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: equity/targeting evidence with a named instrument; fits v2 chair 2.",
+      "current_reasoning": "As mayor, Mobolade launched the \"Keep It Clean And Safe\" (KICAS) initiative in August 2026, directing $758,000 in new funding to trash removal and street outreach concentrated in the historically underserved South Nevada corridor rather than a citywide across-the-board increase or a shift to pure enforcement.",
+      "sources": [
+        "https://coloradosprings.gov/news/what-theyre-saying-community-leaders-keep-it-clean-and-safe-kicas-initiative"
+      ]
+    },
+    {
+      "politician_id": "40769774-6c39-42bd-8f4d-4f26a6c36770",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Anne Mahoney",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "On the April 6, 2026 sewer/discharge ordinance, Mahoney suggested and successfully moved an amendment to add written warnings as the first offense for discharge violations — a balanced enforcement-plus-education approach. During the March 2, 2026 snow operations review, she questioned pedestrian walkability around schools and bus stops and focused on improvement. Neither pure enforcement-first nor major sanitation staffing expansion; aligns with maintaining current services while enforcing anti-dumping laws.",
+      "sources": [
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_04_06.pdf",
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_03_02.pdf"
+      ]
+    },
+    {
+      "politician_id": "7b527446-d801-42c6-9233-053c2b02e128",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Anthony Tordillos",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Tordillos supported increased fines for blighted property owners and strengthened code enforcement against blighted buildings as part of his downtown economic revitalization agenda. He emphasized holding property owners accountable for blight through enforcement while supporting incentive programs for businesses. This reflects a code-enforcement approach to sanitation rather than expanded city crews or privatization.",
+      "sources": [
+        "https://sanjosespotlight.com/on-the-record-san-jose-district-3-special-election-candidate-anthony-tordillos/",
+        "https://sanjosespotlight.com/downtown-san-jose-councilmember-back-on-campaign-trail/"
+      ]
+    },
+    {
+      "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Bilal Mahmood",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Mahmood supports the Drug Market Agency Coordination Center (DMACC) model that coordinates DPW street cleaning alongside law enforcement, and his Mid-Market revitalization proposal combines enhanced sanitation with police patrols. He frames cleanliness as a public safety issue requiring inter-agency coordination, neither purely enforcement nor purely a services-first approach.",
+      "sources": [
+        "https://missionlocal.org/2025/02/sf-intro-interview-bilal-mahmood-district-5/",
+        "https://sfstandard.com/2026/02/19/san-francisco-theater-mid-market-bilal-mahmood/"
+      ]
+    },
+    {
+      "politician_id": "0379cbef-05d8-4fd7-ba51-92b7661a4bbc",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Bob Blumenfield",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Partnered with LA Conservation Corps and community groups including Overdue and LA River Walkers and Watchers for neighborhood litter reduction and environmental monitoring. Funded street tree trimming programs to address maintenance backlogs. Established voluntary storage programs for unhoused residents as part of homelessness response. Reflects standard city maintenance investment without major new sanitation policy.",
+      "sources": [
+        "https://www.bobblumenfield.com/parks-and-enviornment",
+        "https://www.bobblumenfield.com/homelessness"
+      ]
+    },
+    {
+      "politician_id": "116aace8-9440-498b-bf1d-ebb196727c85",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Cecilia Lunaparra",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Lunaparra's District 7 covers the Southside/Telegraph Avenue area near UC Berkeley campus, which has significant street cleanliness challenges. She was the sole NO vote on the encampment enforcement ordinance (Sep 24, 2024) which suggests she does not treat public space cleanliness primarily through enforcement. Her homelessness approach (shelter + services) implies treating sanitation through services rather than punitive action. No evidence of major sanitation-specific legislation.",
+      "sources": [
+        "https://berkeleyca.gov/city-council-regular-meeting-eagenda-september-24-2024",
+        "https://berkeleyca.gov/your-government/city-council/council-roster/cecilia-lunaparra"
+      ]
+    },
+    {
+      "politician_id": "8f59c9fd-03f9-4652-bc4a-418bd8764a1f",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Chyanne Chen",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Chen listed parks and street improvements as a campaign priority, reflecting a services approach to maintaining public spaces. She has not made enforcement-first statements about street cleanliness. Her background as a community organizer and labor advocate suggests a services-investment orientation, but no specific votes or statements on sanitation enforcement have been documented.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chyanne_Chen",
+        "https://missionlocal.org/2024/09/district-11-candidates-whats-up-in-the-omi/"
+      ]
+    },
+    {
+      "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Craig Hosmer",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Hosmer voiced support for strengthening Springfield's nuisance and housing code to target illegal signs on public property (June 2026), stating the city has needed to act on this for a long time. This reflects a code-enforcement approach to maintaining city cleanliness consistent with enforcing anti-dumping and property maintenance laws against property owners.",
+      "sources": [
+        "https://www.ksmu.org/news/2026-06-09/city-of-springfield-looks-to-strengthen-its-nuisance-and-housing-code-to-target-illegal-signs"
+      ]
+    },
+    {
+      "politician_id": "725d4081-e820-4064-83dc-3f8470bd7c2b",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Curren D. Price Jr.",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Price has no authored sanitation or street-cleaning legislation. He voted YES on all annual city budgets (FY 2021-22 through FY 2025-26), each of which maintained Bureau of Sanitation operations. No documented advocacy for expanded sanitation enforcement or contraction of services — a standard budget-support posture without directional initiative on sanitation policy.",
+      "sources": [
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0600",
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=24-0600"
+      ]
+    },
+    {
+      "politician_id": "708db738-2bf1-4a6f-b8a5-7ac23d171b33",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Daniel Lurie",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Lurie has launched a Hospitality Zone Task Force to increase cleanliness in tourism areas, modified street cleaning schedules to begin before school starts in the Mission, and launched a Street Safety executive directive coordinating city departments. His administration maintained existing sanitation services while directing them more strategically to problem areas. 73% approval ratings include praise for tackling city cleanliness. This fits stance 3 (maintain services while enforcing anti-dumping laws).",
+      "sources": [
+        "https://www.sf.gov/news-mayor-lurie-announces-san-francisco-has-reached-lowest-level-of-unsheltered-homelessness-in-15-years/",
+        "https://missionlocal.org/2026/02/sf-mission-district-bart-plazas-police-16th-24th-street/",
+        "https://en.wikipedia.org/wiki/Daniel_Lurie"
+      ]
+    },
+    {
+      "politician_id": "86c12b33-cb76-41da-bdf0-6b58a0cbbed6",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "David Chiu",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "As City Attorney, Chiu has pursued enforcement actions targeting problematic properties and businesses in the Tenderloin (2026) while also bringing quality-of-life lawsuits; he sued to shut down a corner store selling methamphetamine (May 2026) and has pursued nuisance abatement. This reflects a balanced approach — maintaining sanitation standards through law enforcement while not primarily relying on criminalization of residents.",
+      "sources": [
+        "https://www.sf.gov/cityattorney"
+      ]
+    },
+    {
+      "politician_id": "d8449201-38b4-4851-b8a7-40b1bcf40161",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Domenic J. Sarno",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "DPW manages systematic paving programs, single-stream recycling, bulk pickup, and 311-based issue reporting. The administration's messaging emphasizes resident and property-owner responsibility for contamination prevention and catch basin maintenance while maintaining regular municipal collection services. This reflects maintenance of current services with enforcement of anti-dumping rules rather than significant expansion or privatization.",
+      "sources": [
+        "https://www.springfield-ma.gov/dpw/"
+      ]
+    },
+    {
+      "politician_id": "2f3b7b91-581f-415a-9af2-3d0e05f2483d",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Erin Mendenhall",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Mendenhall's FY2026 budget created a new City Clean Team — a dedicated crew to address graffiti, abandoned property, trash, poor lighting, and neglected public spaces citywide. The team proactively patrols for problem areas in addition to responding to public reports. This represents a government-led, proactive sanitation investment approach rather than relying on existing general services.",
+      "sources": [
+        "https://www.slc.gov/mayor/2025/05/06/mayor-mendenhall-delivers-fiscal-year-2026-budget-for-salt-lake-city/",
+        "https://www.slc.gov/cleancity/",
+        "https://www.slc.gov/council/salt-lake-city-council-adopts-annual-budget-focused-on-a-clean-safe-and-livable-city/"
+      ]
+    },
+    {
+      "politician_id": "23052e57-ce98-439a-a6fe-c538f26ec959",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Gary Rosen",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Rosen is not a member of the Public Works Committee and has no authored sanitation orders in the public record. He voted yes with the full council (11-0) on Bergman's 311/snow plow reporting improvement order and the commercial snow removal report order. This pattern — supporting service improvement efforts by others without authoring expanded sanitation programs — is consistent with maintaining current services while enforcing anti-dumping laws.",
+      "sources": [
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-health-human-services/pending.pdf",
+        "https://www.worcesterma.gov/city-council/standing-committees"
+      ]
+    },
+    {
+      "politician_id": "0d81c306-514e-455c-988e-b0d04f7e0897",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Heather Ferbert",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Ferbert's ACE (Affirmative Civil Enforcement) Unit pursues nuisance enforcement actions including shutting down illegal massage parlors and unauthorized operations in public-facing spaces. Her office enforces the unsafe camping ordinance. Her approach reflects maintaining current sanitation services and enforcing anti-dumping and nuisance laws for businesses rather than significantly expanding sanitation staffing or privatizing services.",
+      "sources": [
+        "https://www.sandiego.gov/city-attorney",
+        "https://www.sandiego.gov/city-attorney/news"
+      ]
+    },
+    {
+      "politician_id": "29a8c85b-2572-463c-8034-8986615d7717",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Heather Hutt",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Hutt's campaign prominently features basic public services — 'Potholes. Not Politics.' — including fixing sidewalks, filling potholes, and planting trees. She voted YES on CF 25-0002-S15 (composting ordinance) and supported city budgets that fund Bureau of Sanitation operations. She has not authored major citywide sanitation legislation or called for sweeping new enforcement powers, placing her in a centrist service-delivery position.",
+      "sources": [
+        "https://www.heatherhutt.com/public-services",
+        "https://en.wikipedia.org/wiki/Heather_Hutt"
+      ]
+    },
+    {
+      "politician_id": "296b5d71-954a-46db-8055-17299abb86fa",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Henry L. Foster III",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Foster's campaign platform explicitly includes road repairs, community cleanups, and graffiti abatement as core infrastructure priorities. This reflects a maintain-current-services approach with community cleanup enforcement rather than major sanitation expansion or privatization.",
+      "sources": [
+        "https://henryfoster4sd.com/issues"
+      ]
+    },
+    {
+      "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Hugo Soto-Martinez",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Soto-Martinez has not authored major sanitation legislation and voted YES on the FY 2025-26 budget (CF 25-0600) and composting ordinance (CF 25-0002-S15, May 2025). His district work links sanitation to encampment resolution through housing-first methods rather than punitive enforcement. Insufficient evidence to place him outside the centrist range on this topic.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez"
+      ]
+    },
+    {
+      "politician_id": "d82a3080-0a11-4d73-bacb-a936e51c9fb3",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Imelda Padilla",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Padilla's CD6 priorities include being 'committed to keeping streets clean' through a Strike Team operating Monday through Friday, and her office contracted with Northeast Graffiti Busters for graffiti removal. This reflects a standard constituent-service approach to sanitation — active maintenance without either aggressive new enforcement programs or major expansion of sanitation resources.",
+      "sources": [
+        "https://cd6.lacity.gov/priorities"
+      ]
+    },
+    {
+      "politician_id": "c6d7ea83-d6ee-4d08-a183-effd36f6a2cc",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Jennifer Campbell",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Campbell chairs the Community and Neighborhood Services Committee which oversees sanitation and neighborhood cleanliness programs. Her April 2026 newsletter promotes constituent services including the Get It Done App for non-emergency concerns. No evidence of a strong position toward significant sanitation expansion or full privatization; her committee chair role reflects a service maintenance and anti-dumping enforcement posture.",
+      "sources": [
+        "https://www.sandiego.gov/citycouncil/cd2",
+        "https://app.indigov.com/pub/outreach/19e20f69-1be3-4410-875b-f233edabe55b"
+      ]
+    },
+    {
+      "politician_id": "11427932-a17e-4898-8258-ec8c8bf7709f",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "John Dugger",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Dugger negotiated waste hauler contract expansions to add mid-tier bulk pickup options (reducing costs from ~$1,200 to ~$400-500 per pickup), prioritizing affordability and service access over major staffing expansion or enforcement-only approaches. This aligns with maintaining current services with improved access, consistent with chair 3.",
+      "sources": [
+        "https://washcodems.org/2026/04/28/john-dugger-beaverton-city-council-position-5-candidate-interview/"
+      ]
+    },
+    {
+      "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "John Lee",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "No authored sanitation legislation was identified. Lee voted YES on the FY 2025-26 city budget (CF 25-0600, 15-0, June 2025), which maintains Bureau of Sanitation funding. His aggressive 41.18 encampment enforcement produces ancillary street-cleaning activity, but no evidence of authored motions to expand or restructure citywide sanitation services. His record reflects standard constituent-service-level engagement with existing sanitation programs.",
+      "sources": [
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0600"
+      ]
+    },
+    {
+      "politician_id": "2db4b15a-6d44-43ec-8b6e-d669351e1e29",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "John Logsdon",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Takes a moderate approach combining environmental sustainability with visible cleanliness. Proposes installing trash capture systems at river mouths and storm drains to protect ocean health, alongside expanded city cleanup operations.",
+      "sources": [
+        "https://logsdonforla.com",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-mayor"
+      ]
+    },
+    {
+      "politician_id": "bef00532-3286-456f-9668-ef5efe285270",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "John P. Fresolo",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Fresolo is a member of the Public Works Committee (covering streets, water, sewers, sanitation, snow removal). He personally submitted petitions for street resurfacing on Epworth St. and Puritan Ave. — constituent-service maintenance requests. No authored orders to expand sanitation staffing, target underserved neighborhoods specifically, or privatize services appear in the public record.",
+      "sources": [
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf",
+        "https://www.worcesterma.gov/city-council/standing-committees"
+      ]
+    },
+    {
+      "politician_id": "d18a85ec-abec-4a77-8d13-5b43059b6698",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Jose A. Rivera",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Rivera petitioned for \"No Dumping\" signage at Chatanika Ave./Cascade Park (May 5 2026) — an enforcement-of-anti-dumping approach — and filed sidewalk resurfacing requests at 5 and 15 Coombs Rd. (June 2 2026). He also petitioned for sidewalk installation on Clover St. and Pine View Ave. repair. These actions reflect maintaining current services while holding residents and property owners to anti-dumping standards.",
+      "sources": [
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf",
+        "https://www.worcesterma.gov/city-council/standing-committees"
+      ]
+    },
+    {
+      "politician_id": "21c9e711-fb18-4afb-884f-08acd2b598ba",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Karen Ruth Bass",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Bass has folded street cleanup into her Inside Safe homelessness program rather than mounting a standalone sanitation expansion. Inside Safe — funded at roughly $250 million in her first (FY2023-24) budget — resolves encampments by pairing cleanup with offers of shelter and services rather than relying on citations or privatized contracting. She has not proposed a major sanitation staffing increase beyond these homelessness-linked operations, nor moved toward privatization, consistent with stance 3: maintain existing services and address problem sites without a citywide staffing surge or an enforcement-first/privatized model.",
+      "sources": [
+        "https://mayor.lacity.gov/news/mayor-karen-bass-releases-her-first-proposed-city-budget",
+        "https://www.governing.com/finance/nearly-half-of-l-a-s-homelessness-funds-went-unused"
+      ]
+    },
+    {
+      "politician_id": "319d1e77-b214-4485-ab8b-b0ebd2703f22",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Kathleen M. Toomey",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Toomey's official city profile states her priority is \"maintaining safe streets, sidewalks, and infrastructure\" — language consistent with maintaining current sanitation services and enforcing maintenance standards. No evidence of proposals to significantly expand sanitation staffing or privatize services.",
+      "sources": [
+        "https://www.worcesterma.gov/city-council/councilors"
+      ]
+    },
+    {
+      "politician_id": "10678016-146d-4543-941c-00414b4c4ad2",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Katy Yaroslavsky",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Yaroslavsky's May 2025 revised budget explicitly prioritized restoring street cleaning, tree trimming, sidewalk repairs, and streetlight repairs as 'basic, everyday services.' She led a $65M Solar Surge initiative (March 2026) to fix streetlight outages citywide. Her approach emphasizes restoring and maintaining existing sanitation services rather than major new enforcement programs or radical expansion.",
+      "sources": [
+        "https://councildistrict5.lacity.gov/budget-chair-yaroslavsky-revised-budget-disciplined-collaborative-and-strengthens-delivery-core",
+        "https://councildistrict5.lacity.gov/los-angeles-city-council-approves-65-million-solar-surge-fix-streetlight-outages"
+      ]
+    },
+    {
+      "politician_id": "b0df471c-db3a-4f10-8817-f14c7e611593",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Lavar Click-Bruce",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "In April 2025 Click-Bruce raised concern about 15-30 non-functioning streetlights maintained by Eversource in Ward 5, arguing the city should not pay for non-operational lights. He also championed Resolution 8524 (April 2025) calling for a DPU investigation into utility rate increases harming residents. Both actions reflect maintaining and enforcing city service standards rather than expanding or contracting sanitation investment.",
+      "sources": [
+        "https://www.wamc.org/news/2025-04-12/springfield-city-council-questions-commission-re-appointments-oks-utility-bill-pricing-resolution"
+      ]
+    },
+    {
+      "politician_id": "8b47525c-5efe-45ec-ba37-c6e15f038b65",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Luis A. Ojeda",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "As Chair of the Urban Technologies, Innovation and Environment committee, Ojeda oversees environmental quality issues in Worcester. No specific sanitation petitions were found bearing his name; the committee pending agenda focuses on the Green Worcester Plan and accountability mechanisms. The UTIE committee role reflects consistent enforcement of environmental standards rather than significant service expansion or privatization.",
+      "sources": [
+        "https://www.worcesterma.gov/city-council/standing-committees",
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/urban-technologies-innovation-environment/pending.pdf"
+      ]
+    },
+    {
+      "politician_id": "83bc7737-c296-487a-aa3c-643c4ad6b7af",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Maggie McKee",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "As Ordinance Committee Chair, McKee led the sewer discharge enforcement ordinance process. At the April 6, 2026 committee she expressed concern that using \"shall\" in the enforcement language was \"a little bit worrisome\" due to unclear responsibility, and moved (unsuccessfully, 2-7) to change it to \"may.\" During the March 2 snow operations briefing she pushed for better interdepartmental communication, a centralized reporting system for sidewalk violations, and inclusion of Council on Aging services. This reflects maintaining enforcement of anti-dumping laws while adding procedural safeguards — the center of the scale.",
+      "sources": [
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_04_06.pdf",
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_03_02.pdf"
+      ]
+    },
+    {
+      "politician_id": "bd64253b-0bd1-4b9f-85b1-76180c760d07",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Margarita L. Rios",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Rios made 'Safe and Clean' her 2024 mayoral theme and lists 'safe and clean public spaces' among her top priorities, serving as a Neighborhood Watch Block Captain — a maintain-and-keep-orderly emphasis on public-space cleanliness.",
+      "sources": [
+        "https://norwalk.org/government/mayor_and_city_council/rios.php"
+      ]
+    },
+    {
+      "politician_id": "c3f1fad4-46cd-4f2f-8723-d7a3f99dca65",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Marni von Wilpert",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Von Wilpert has supported continued discussions about reforming San Diego's Peoples Ordinance regarding trash collection and her council record focuses on anti-dumping enforcement and neighborhood cleanliness. No evidence of advocating for significant sanitation expansion or privatization; her posture reflects maintaining current services while enforcing anti-dumping laws.",
+      "sources": [
+        "https://voiceofsandiego.org/2021/10/wow-trash-talk-picked-up-huh/",
+        "https://www.sandiego.gov/citycouncil/cd5"
+      ]
+    },
+    {
+      "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Marqueece Harris-Dawson",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Harris-Dawson's Wikipedia page notes 'clean streets' policies introduced during his tenure, and he voted YES on the FY 2025-26 budget (CF 25-0600, 15-0) that maintained Bureau of Sanitation funding. No major authored legislation to dramatically expand or contract sanitation programs was found. His approach reflects standard maintenance of city sanitation services linked to his broader homelessness/community revitalization work in South LA.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marqueece_Harris-Dawson",
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0600"
+      ]
+    },
+    {
+      "politician_id": "7c0d3bdd-a363-4d97-93a9-67034c6a0ead",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Monica Rodriguez",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Rodriguez's district (Pacoima, Sun Valley) has historically had sanitation inequities including illegal dumping and litter. She has introduced motions to improve street services in underserved areas. No evidence of dramatic expansion demands or privatization advocacy. Her approach appears to be maintaining and incrementally improving city services, consistent with stance 3.",
+      "sources": [
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S42"
+      ]
+    },
+    {
+      "politician_id": "022ec1b6-59e5-4227-95fc-45f2b7102a15",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Morris A. Bergman",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Bergman authored Item 9m (Feb 3, 2026, adopted 11-0) requesting a report on all 311 calls about snow plowing issues from January 2024 through January 2026. He co-sponsored Item 9q requesting whether there are time restrictions for commercial snow removal near residential properties. He also voted yes on WooBin trash receptacle installation in Tatnuck Square.",
+      "sources": [
+        "https://www.worcesterma.gov/city-council/standing-committees",
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf"
+      ]
+    },
+    {
+      "politician_id": "72621ac9-bcdb-4ea3-aeec-1b1f50c9f996",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Myrna Melgar",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Melgar secured district budget funding for graffiti abatement and community ambassadors stationed on West Portal and Irving Street commercial corridors. These represent neighborhood-level cleanliness investments using both service provision (ambassadors) and enforcement-adjacent deterrence (graffiti removal), indicating a balanced maintenance-and-community-presence approach rather than either aggressive enforcement sweeps or purely services-based strategy.",
+      "sources": [
+        "https://www.westsideobserver.com/25/11-overlooking-supervisor-melgar's-shortcomings-she's-a-keeper.php",
+        "https://www.sf.gov/profile--myrna-melgar/"
+      ]
+    },
+    {
+      "politician_id": "104cca89-3420-457b-a35d-b446be2d72ab",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Pamela Campos",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Campos was the sole dissenting vote (10-1) against a shopping cart retrieval service proposal in February 2025, questioning whether city workers would need to postpone existing priorities to implement new efforts. This reflects concern about resource allocation and existing service commitments rather than opposition to city sanitation services broadly.",
+      "sources": [
+        "https://sanjosespotlight.com/san-jose-wants-to-retrieve-thousands-of-abandoned-shopping-carts/"
+      ]
+    },
+    {
+      "politician_id": "a464cef9-de7f-45a3-8ff3-9bab20275db4",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Peter Ortiz",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Ortiz pushed to punish landlords who fail to maintain habitable living spaces, with fines that escalate for blighted property owners, and championed neighborhood investment in historically underinvested East San Jose. His approach holds businesses and property owners accountable for maintenance violations through enforcement while advocating for city investment in underserved areas.",
+      "sources": [
+        "https://sanjosespotlight.com/meet-the-candidates-running-for-district-5-san-jose-city-council/",
+        "https://sanjosespotlight.com/district-5-san-jose-candidates-speak-on-progressive-priorities/"
+      ]
+    },
+    {
+      "politician_id": "71124b00-549d-460c-8f84-41a01d99e037",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Raj Salwan",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Campaign platform identifies street cleanup, improving neighborhoods and commercial districts, and maintaining public facilities as explicit priorities. Salwan lists clean streets as a quality-of-life issue he intends to address. No evidence of a significantly expanded sanitation staffing plan or privatization stance. The approach suggests maintaining and improving current sanitation services with enforcement of anti-dumping laws as the primary tool.",
+      "sources": [
+        "https://rajsalwan.com/priorities"
+      ]
+    },
+    {
+      "politician_id": "f20601e0-0728-4c33-803c-28c88e170286",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Rick Jennings II",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Sacramento's IMT — supported by the council — removed approximately 10 million pounds of trash from encampments by September 2024. The city maintains current sanitation services while enforcing anti-dumping and encampment laws. Jennings's south Sacramento district has seen targeted cleanup efforts as part of the city's balanced enforcement approach.",
+      "sources": [
+        "https://sacramentocityexpress.com/2024/09/12/citys-incident-management-team-responding-to-homelessness-produces-significant-results-in-first-year/"
+      ]
+    },
+    {
+      "politician_id": "7921e8f3-2e6f-47f8-bc2b-95b81bab6516",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Rosemary Kamei",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Kamei secured $117,000 for tree trimming, organized trash pickups in her district, and allocated resources to clean up abandoned vehicles. She strengthened the city's wage theft policy and dispersed $75,000 for community services including housing assistance to vulnerable residents. Her sanitation approach maintains current services while enforcing anti-dumping measures for businesses and property owners.",
+      "sources": [
+        "https://sanjosespotlight.com/the-first-six-months-san-jose-vice-mayor-rosemary-kamei/"
+      ]
+    },
+    {
+      "politician_id": "22310534-2476-4338-986c-e0e349af29d1",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Satya B. Mitra",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "On January 20, 2026, Mitra voted YES (9-2) on Order 9o enforcing the city's sign ordinance on businesses along the Main South corridor. On February 3, 2026, he co-sponsored Order 9q on snow removal time restrictions for commercial properties and voted YES on trash receptacle installation. Actions reflect enforcing existing sanitation laws against businesses and property owners while supporting targeted service additions.",
+      "sources": [
+        "https://worcesterma.primegov.com/public/compiledDocument?id=13027",
+        "https://worcesterma.primegov.com/public/compiledDocument?id=12825"
+      ]
+    },
+    {
+      "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Sean Elo-Rivera",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Elo-Rivera co-sponsored Measure B in 2022 authorizing San Diego to charge residents for solid waste collection, which was subsequently challenged in court by homeowners. The measure reflects a maintain-current-services-with-cost-sharing approach to sanitation rather than major expansion or privatization.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sean_Elo-Rivera"
+      ]
+    },
+    {
+      "politician_id": "8cc1c412-fe14-4bc6-b1e2-02d95997fd47",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Shoshana O'Keefe",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "No direct evidence of O'Keefe sponsoring sanitation-specific ordinances. Berkeley maintains regular sanitation services and the council operates within a city-manager framework for most departmental services. Her homelessness shelter proposal (May 20, 2025) which addresses encampments and RV sites indirectly relates to sanitation by moving people into staffed sites. Insufficient direct evidence for a higher or lower score.",
+      "sources": [
+        "https://berkeleyca.gov/city-council-regular-meeting-eagenda-may-20-2025"
+      ]
+    },
+    {
+      "politician_id": "f86591f9-4341-4e3a-a9cb-f284887ccf74",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Stephen Whitburn",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Whitburn negotiated a 2026 settlement that resulted in reduced trash collection fees alongside the rollback of Balboa Park paid parking. His approach reflects maintaining sanitation services while opposing fee increases on residents and enforcing anti-dumping for businesses — consistent with value 3.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stephen_Whitburn",
+        "https://www.sandiego.gov/citycouncil/cd3"
+      ]
+    },
+    {
+      "politician_id": "9fb47aff-9128-4214-af78-a4d8321f9f83",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Thomas P. Koch",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Quincy's Department of Public Works provides trash collection, street sweeping, snow plowing, recycling, yard waste, and hazardous waste services to residents. The city emphasizes community cooperation in maintaining service quality. Koch has not articulated a transformative expansion or privatization stance on sanitation — the DPW operates in a standard municipal model. This fits maintaining current sanitation services while enforcing anti-dumping laws.",
+      "sources": [
+        "https://www.quincyma.gov/departments/public_works/index.php"
+      ]
+    },
+    {
+      "politician_id": "5cf02835-9024-4a00-80f7-bc2dcc3165df",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Tim McOsker",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "McOsker voted YES on the FY 2025-26 city budget (CF 25-0600, 15-0, Jun 2025) and YES on the composting/organic waste ordinance (CF 25-0002-S15, 14-0-1, May 2025). No authored sanitation legislation found. His port district generates significant industrial waste concerns, but his sanitation approach reflects mainstream constituency service rather than an ideologically distinct position.",
+      "sources": [
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0002-S15",
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0600"
+      ]
+    },
+    {
+      "politician_id": "2a77e3dc-24e2-40c9-a6fa-d134d59ede82",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Tony Economou",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "Economou chairs the Standing Committee on Public Works, whose pending docket includes the City Manager communication on \"Keep Worcester Clean,\" pothole-related 311 calls since program launch, and pavement restoration standards. He also authored a sidewalk repair order on Winifred Ave. near Duffy Field. This reflects maintaining current sanitation and infrastructure services with accountability tracking.",
+      "sources": [
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf",
+        "https://worcesterma.gov/elections/elected-officials"
+      ]
+    },
+    {
+      "politician_id": "d0977350-df68-4cfe-822e-816ba13f9213",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Traci Park",
+      "flags": {
+        "names_primary_instrument": false,
+        "has_equity_signal": null
+      },
+      "class": "thin_no_instrument",
+      "disposition": "RE-SOURCE (thin): no primary instrument named; weak under the citation bar. Re-source or blank.",
+      "current_reasoning": "Park has partnered with local organizations on coastal cleanup and wetlands restoration (Ballona Wetlands, Ballona Creek Trash Interceptor) and oversees encampment debris removal through 41.18 enforcement. She has not authored major citywide sanitation expansion legislation nor called for reduced services, reflecting a constituency-driven maintenance approach rather than a strong ideological position.",
+      "sources": [
+        "https://www.tracipark.com/",
+        "https://en.wikipedia.org/wiki/Traci_Park"
+      ]
+    },
+    {
+      "politician_id": "560e1838-9f8f-4227-baa4-060ea62d38c0",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "chair_after": 3,
+      "politician_name": "Ziqiang Yuan",
+      "flags": {
+        "names_primary_instrument": true,
+        "has_equity_signal": null
+      },
+      "class": "likely_carry",
+      "disposition": "CARRY: steady-service + enforcement evidence; both v2 chair 3 elements preserved.",
+      "current_reasoning": "In the April 6, 2026 Joint Public Works and Ordinance Committee, Yuan submitted an amendment to the FOG/sewer ordinance adding a \"City Responsibility and Fair Implementation\" section with written warnings before fines and multilingual educational outreach requirements. She opposed removing the written-warning step, arguing the first $2,500 fine without notice was too severe. She also raised snow removal enforcement with senior/disability exemptions (March 2 meeting). These positions represent maintaining enforcement while adding procedural fairness protections — aligns with maintaining current sanitation services while enforcing anti-dumping laws.",
+      "sources": [
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_04_06.pdf",
+        "https://cms7files1.revize.com/quincyma2024/Agendas%20and%20Minutes/City%20Council/City%20Council/Minutes/Council_Minutes_2026_03_02.pdf"
+      ]
+    }
+  ]
+}

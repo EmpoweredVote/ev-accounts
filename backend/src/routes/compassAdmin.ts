@@ -22,7 +22,7 @@ import { adminRpc } from '../lib/supabase.js';
 import { pool } from '../lib/db.js';
 import {
   logAdminAction,
-  adminCreateTopicWithStances,
+  adminCreateTopicWithRevision,
   adminUpdateTopic,
   adminUpdateStance,
   adminAssignTopicCategories,
@@ -162,7 +162,11 @@ router.post('/topics/create', async (req, res): Promise<void> => {
     // Normalize: legacy format sends categories: [{id}], new format sends category_ids: [uuid]
     const resolvedCategoryIds = category_ids ?? categories?.map((c) => c.id) ?? [];
 
-    const result = await adminCreateTopicWithStances(topicData);
+    // `level` is intentionally NOT forwarded as role_scopes: its CompassV2
+    // vocabulary is not guaranteed to be the valid federal|state|local|judicial
+    // set, and passing an invalid scope would abort the create. Omitting scope
+    // rows defaults the topic to federal+state+local (never judicial).
+    const result = await adminCreateTopicWithRevision({ ...topicData, actorId: actorId(req) });
 
     // Assign categories if provided
     if (resolvedCategoryIds.length > 0) {

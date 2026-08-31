@@ -131,6 +131,9 @@ export interface PromotedTopic {
   question_text: string;
   is_live: boolean;
   version: number;
+  // ADR 0006 (Option Y): the revision whose ladder this season serves — the latest
+  // published/superseded revision of the pinned version. Stances are fetched by it.
+  effective_revision_id: string;
   office_scope: string[] | null;
   fc_community_slug: string | null;
   judicial_role: string | null;
@@ -162,11 +165,32 @@ export async function getPromotedTopics(): Promise<PromotedTopic[]> {
   const { rows } = await pool.query<PromotedTopic>(
     // pool.query, not supabaseAnon — the §12 views are not in the generated
     // PostgREST types, matching getCompassLenses below.
-    `SELECT p.id::text AS id, p.topic_key, p.title, p.short_title, p.question_text,
-            p.version, p.fc_community_slug, p.judicial_role,
+    //
+    // ADR 0006 (Option Y): a season serves the wording of the VERSION it pinned,
+    // NOT the global is_current revision. The promoted view exposes the pin as
+    // p.season_revision_id; `eff` resolves it to the latest published/superseded
+    // revision of that pin's version. So title/short_title/question_text/version
+    // and the stance ladder (keyed on effective_revision_id below) all follow the
+    // season, not is_current. A minor update (same version, higher revision) is
+    // picked up here with no write to the pin; a major (new version) stays
+    // invisible until a season pins it. See ADR 0006 §3.
+    `SELECT p.id::text AS id, p.topic_key, eff.title, eff.short_title, eff.question_text,
+            eff.version, eff.id::text AS effective_revision_id,
+            p.fc_community_slug, p.judicial_role,
             t.is_live, t.office_scope
        FROM inform.compass_topics_promoted p
        JOIN inform.compass_topics t ON t.id = p.id
+       JOIN LATERAL (
+         SELECT e.id, e.title, e.short_title, e.question_text, e.version
+           FROM inform.compass_topic_revisions pin
+           JOIN inform.compass_topic_revisions e
+             ON e.topic_id = pin.topic_id
+            AND e.version  = pin.version
+            AND e.status IN ('published', 'superseded')
+          WHERE pin.id = p.season_revision_id
+          ORDER BY e.revision DESC
+          LIMIT 1
+       ) eff ON true
       -- ⚠ created_at, NOT p.display_order, and this is deliberate. display_order
       -- is the season's own ordering and is the obviously "right" column to reach
       -- for — but CA_0019 seeded it as row_number() OVER (ORDER BY topic_key),
@@ -202,14 +226,24 @@ export async function getCompassTopics() {
   const topics = await getPromotedTopics();
 
   const topicIds = topics.map(t => t.id);
+  // ADR 0006 (Option Y): stances follow the season's bound version, so they are
+  // keyed on each topic's effective revision (resolved in getPromotedTopics), not
+  // on topic_id / is_current. Categories and roles below stay keyed on topic_id.
+  const effIds = topics.map(t => t.effective_revision_id);
 
   const [stancesRes, catsRes, rolesRes] = await Promise.all([
-    supabaseAnon
-      .schema('inform')
-      .from('compass_stances')
-      .select('topic_id,id,value,text')
-      .in('topic_id', topicIds)
-      .order('value', { ascending: true }),
+    // The five rungs of the season-bound revision. `upper(left(text,1)) ||
+    // substr(text,2)` renders the lowercase, verb-first corpus text with a capital
+    // first letter: a voter-facing presentation rule applied at the read boundary,
+    // with no data migration and no stem to break (stance text is standalone).
+    pool.query<{ effective_revision_id: string; id: string; value: number; text: string }>(
+      `SELECT topic_revision_id::text AS effective_revision_id, id::text AS id, value,
+              upper(left(text, 1)) || substr(text, 2) AS text
+         FROM inform.compass_stance_revisions
+        WHERE topic_revision_id = ANY($1::uuid[])
+        ORDER BY value ASC`,
+      [effIds],
+    ),
     supabaseAnon
       .schema('inform')
       .from('compass_topic_categories')
@@ -222,7 +256,6 @@ export async function getCompassTopics() {
       .in('topic_id', topicIds),
   ]);
 
-  if (stancesRes.error) throw stancesRes.error;
   if (catsRes.error) throw catsRes.error;
   if (rolesRes.error) throw rolesRes.error;
 
@@ -252,9 +285,9 @@ export async function getCompassTopics() {
       applies_state,
       applies_local,
       applies_judicial,
-      stances: (stancesRes.data ?? [])
-        .filter(s => s.topic_id === topic.id)
-        .map(({ topic_id: _tid, ...s }) => s),
+      stances: stancesRes.rows
+        .filter(s => s.effective_revision_id === topic.effective_revision_id)
+        .map(({ effective_revision_id: _e, ...s }) => s),
       categories: (catsRes.data ?? [])
         .filter(c => c.topic_id === topic.id)
         .map(c => {
@@ -764,23 +797,54 @@ export async function resetCompassAnswers(
 
 /**
  * saveSelectedTopics
- * Saves validated topic IDs into connected_profiles.selected_topic_ids.
- * Uses createUserClient — RLS enforces owner-only update.
- * Returns false if the user has no connected_profiles row (NOT_CONNECTED).
+ * Saves validated topic IDs into inform.inform_profiles.selected_topic_ids.
+ *
+ * 🔴 inform_profiles, NOT connect.connected_profiles — see migration 1850. The
+ * compass used to be stored on the Connected-tier profile, which an Inform-tier
+ * user does not have (`Profile absence = Inform tier`, middleware/auth.ts), so
+ * their compass was silently discarded on every save. inform_profiles has a row
+ * for every user via migration 084's trigger, and sits in the same schema as the
+ * answers the selection belongs with.
+ *
+ * Upserts rather than updates. The trigger guarantees the row, but creating one
+ * here is harmless if it is ever missing — unlike connected_profiles, an
+ * inform_profiles row is not a tier marker, which is exactly why the storage
+ * moved here. account.ts already uses this idiom for location hints.
+ *
+ * Returns false only if the write somehow affected no row. With the upsert that
+ * should not happen; the route still answers 409 on false rather than assuming.
+ *
+ * Uses pool.query with explicit `WHERE user_id`/`user_id = $1` scoping, NOT
+ * createUserClient — this runs as the service role with no RLS, so the scoping is
+ * the enforcement.
  */
 export async function saveSelectedTopics(
-  accessToken: string,
   userId: string,
   topicIds: string[]
 ): Promise<boolean> {
-  const { rows } = await pool.query<{ id: string }>(
-    `UPDATE connect.connected_profiles
-     SET selected_topic_ids = $2::jsonb, updated_at = now()
-     WHERE user_id = $1
-     RETURNING id`,
+  const { rows } = await pool.query<{ user_id: string }>(
+    `INSERT INTO inform.inform_profiles (user_id, selected_topic_ids)
+     VALUES ($1, $2::jsonb)
+     ON CONFLICT (user_id) DO UPDATE
+       SET selected_topic_ids = EXCLUDED.selected_topic_ids
+     RETURNING user_id`,
     [userId, JSON.stringify(topicIds)]
   );
   return rows.length > 0;
+}
+
+/**
+ * getSelectedTopics
+ * The user's chosen compass, from inform.inform_profiles (migration 1850).
+ * Returns [] for a user with no row — they have made no selection.
+ */
+export async function getSelectedTopics(userId: string): Promise<string[]> {
+  const { rows } = await pool.query<{ selected_topic_ids: string[] | null }>(
+    `SELECT selected_topic_ids FROM inform.inform_profiles WHERE user_id = $1`,
+    [userId]
+  );
+  const value = rows[0]?.selected_topic_ids;
+  return Array.isArray(value) ? value : [];
 }
 
 // ---------------------------------------------------------------------------
@@ -1056,15 +1120,29 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      -- displays a position the cited reasoning never argued for — the
      -- confabulation failure mode, produced mechanically by a join.
      LEFT JOIN LATERAL (
-       SELECT a.value, a.season_id
+       SELECT a.value, a.season_id, a.topic_revision_id
          FROM inform.politician_answers a
          JOIN inform.seasons s ON s.id = a.season_id
         WHERE a.politician_id = pce.politician_id AND a.topic_id = pce.topic_id
         ORDER BY s.number DESC
         LIMIT 1
      ) pa ON true
-     LEFT JOIN inform.compass_stances cs
-       ON cs.topic_id = pce.topic_id AND cs.value = pa.value
+     -- ADR 0006 (Option Y): the displayed stance is the ladder of the revision the
+     -- ANSWER was recorded against — the latest published/superseded revision of the
+     -- version pinned when the answer was written (pa.topic_revision_id), not
+     -- is_current. A null pa (has_stance = false) yields a null stance_text.
+     LEFT JOIN LATERAL (
+       SELECT upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
+         FROM inform.compass_topic_revisions pin
+         JOIN inform.compass_topic_revisions eff
+           ON eff.topic_id = pin.topic_id AND eff.version = pin.version
+          AND eff.status IN ('published', 'superseded')
+         JOIN inform.compass_stance_revisions sr
+           ON sr.topic_revision_id = eff.id AND sr.value = pa.value
+        WHERE pin.id = pa.topic_revision_id
+        ORDER BY eff.revision DESC
+        LIMIT 1
+     ) cs ON true
      LEFT JOIN LATERAL (
        SELECT c.reasoning, c.sources
          FROM inform.politician_context c
@@ -1088,12 +1166,34 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
 
   const topicKeys = blocks.map((b) => b.topic_key);
   const { rows: stanceRows } = await pool.query<{ topic_key: string; value: number; text: string }>(
-    `SELECT ct.topic_key, cs.value, cs.text
-     FROM inform.compass_stances cs
-     JOIN inform.compass_topics ct ON ct.id = cs.topic_id
+    // ADR 0006 (Option Y): the full ladder shown under a citation must match the
+    // version the answer was recorded against, so the highlighted stance_value
+    // indexes the same rungs as stance_text above. Resolve, per topic, the version
+    // of this politician's latest-season answer; with no answer, fall back to the
+    // topic's current revision (the pre-seasons behavior).
+    `SELECT ct.topic_key, sr.value,
+            upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
+     FROM inform.compass_topics ct
+     JOIN LATERAL (
+       SELECT eff.id
+         FROM inform.compass_topic_revisions eff
+        WHERE eff.topic_id = ct.id
+          AND eff.status IN ('published', 'superseded')
+          AND eff.version = COALESCE(
+            (SELECT pin.version
+               FROM inform.politician_answers a
+               JOIN inform.seasons s ON s.id = a.season_id
+               JOIN inform.compass_topic_revisions pin ON pin.id = a.topic_revision_id
+              WHERE a.politician_id = $2 AND a.topic_id = ct.id
+              ORDER BY s.number DESC LIMIT 1),
+            (SELECT cur.version FROM inform.compass_topic_revisions cur
+              WHERE cur.topic_id = ct.id AND cur.is_current))
+        ORDER BY eff.revision DESC LIMIT 1
+     ) eff ON true
+     JOIN inform.compass_stance_revisions sr ON sr.topic_revision_id = eff.id
      WHERE ct.topic_key = ANY($1)
-     ORDER BY ct.topic_key, cs.value ASC`,
-    [topicKeys],
+     ORDER BY ct.topic_key, sr.value ASC`,
+    [topicKeys, politicianId],
   );
   const stancesByTopic = new Map<string, StanceOption[]>();
   for (const s of stanceRows) {

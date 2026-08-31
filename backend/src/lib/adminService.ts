@@ -591,27 +591,48 @@ export async function adminListPoliticians(): Promise<Record<string, unknown>[]>
 }
 
 /**
- * Create a new compass topic with optional stances atomically (two-pass RPC).
+ * Create a new compass topic on the REVISION model (ADR 0004 / ADR 0006).
+ *
+ * Calls inform.admin_create_topic_with_revision (CA_0026), which atomically
+ * writes the identity row, the legacy 5-rung ladder, a published + is_current
+ * v1 compass_topic_revisions row, its 5 compass_stance_revisions, and any
+ * requested scope rows. That published/current v1 is exactly what the season
+ * read path resolves display from and what inform.admin_season_add_topic
+ * requires to pin the topic — the legacy admin_create_topic_with_stances RPC
+ * (migration 029) wrote no revision, leaving new topics invisible and unpinnable.
+ *
+ * Editing an existing topic still goes through admin_propose_topic_revision, the
+ * append-only review path; this function is create-only.
  */
-export async function adminCreateTopicWithStances(data: {
+export async function adminCreateTopicWithRevision(data: {
   title: string;
   question_text: string;
   short_title?: string;
   is_live?: boolean;
   stances?: Array<{ value: number; text: string }>;
+  role_scopes?: string[];
+  actorId?: string | null;
 }): Promise<Record<string, unknown>> {
-  const { data: result, error } = await adminRpc('admin_create_topic_with_stances', {
-    p_title: data.title,
-    p_question_text: data.question_text,
-    p_short_title: data.short_title ?? null,
-    p_is_live: data.is_live ?? false,
-    p_stances: JSON.stringify(data.stances ?? []),
-  });
+  const { data: result, error } = await adminRpc(
+    'admin_create_topic_with_revision',
+    {
+      p_title: data.title,
+      p_question_text: data.question_text,
+      p_short_title: data.short_title ?? null,
+      p_is_live: data.is_live ?? false,
+      p_stances: JSON.stringify(data.stances ?? []),
+      p_actor_id: data.actorId ?? null,
+      p_role_scopes: data.role_scopes ? JSON.stringify(data.role_scopes) : null,
+    },
+    'inform',
+  );
 
   if (error) {
+    // Author-facing validation errors surface as 4xx; everything else is a 500.
     if (
-      error.message.startsWith('INVALID_STANCE_VALUE') ||
-      error.message.startsWith('INVALID_STANCE_TEXT')
+      /^(BAD_LADDER|DUPLICATE_TOPIC_KEY|INVALID_TITLE|INVALID_QUESTION|INVALID_TOPIC_KEY|INVALID_ROLE_SCOPE)/.test(
+        error.message,
+      )
     ) {
       throw Object.assign(new Error(error.message), { code: 'VALIDATION_ERROR' });
     }

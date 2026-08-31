@@ -1,0 +1,2179 @@
+{
+  "topic_key": "campaign-finance",
+  "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+  "migration": "CA_0041_campaign_finance_v3_axis_split.sql",
+  "target_revision": 3,
+  "target_version": 2,
+  "rung": 3,
+  "rung_text_v1": "require full disclosure of all political donations",
+  "rung_text_v3": "Keep contribution limits at current levels",
+  "decision_split": {
+    "chosen": "SPLIT (2026-08-30, Chris Andrews) \u2014 do not blank the 96 disclosure seatings; re-home them to a new Campaign Transparency topic on the disclosure axis.",
+    "transparency_topic_status": "CREATED (CA_0042, applied 2026-08-30) as a dormant DRAFT: topic_id 24194b6a-acfa-4934-a5df-d687ba6325e9, is_live=false, pinned to NO season, 0 quotes. NOT pinned to Season 2 yet. To re-home the 96 here, pin it to Season 2 (admin_season_add_topic) before S2 assembly, then run the carry; if left unpinned at S2 open, the 96 blank instead.",
+    "transparency_topic_design": {
+      "title": "Campaign Finance Transparency",
+      "short_title": "Campaign Transparency",
+      "topic_key": "campaign-transparency",
+      "question_text": "What should the public be able to know about who funds political campaigns?",
+      "levels": [
+        "federal",
+        "state",
+        "local"
+      ],
+      "category": "Governance, Democracy, and Institutional Reform",
+      "axis": "How much disclosure government mandates. 1 = maximum, 5 = none.",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require real-time public disclosure of every donor, including dark-money groups"
+        },
+        {
+          "value": 2,
+          "text": "Require full disclosure of all donations above a small threshold"
+        },
+        {
+          "value": 3,
+          "text": "Require disclosure of direct donations only"
+        },
+        {
+          "value": 4,
+          "text": "Reduce disclosure requirements to protect donor privacy"
+        },
+        {
+          "value": 5,
+          "text": "Require no public disclosure of political donors"
+        }
+      ]
+    },
+    "transparency_topic_id": "24194b6a-acfa-4934-a5df-d687ba6325e9"
+  },
+  "generated_for": "Season-2 carry re-audit of CA_0041 (campaign-finance rev3 axis split; old option 3 disclosure -> keep-current-limits). Disposition applies to the Season-2 answer set at assembly; Season 1 is not touched.",
+  "decision": "re-home disclosure rows to campaign-transparency rung 2; keep genuine current-limits rows at campaign-finance option 3; blank the rest. CITATION BAR: primary instrument only.",
+  "prerequisite": "\ud83d\udd34 Opening Season 2 requires this carry to run first (campaign-finance rev3 is pinned to S2 q3). Without it, the 96 disclosure answers would seat at \"keep current limits\", which is false.",
+  "summary": {
+    "total": 99,
+    "re_home_to_transparency": 96,
+    "stay_current_limits": 0,
+    "blank": 1,
+    "review": 2
+  },
+  "rows": [
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Aaron M\u00e1rquez",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Prime sponsor of HB2598 (2R, 2026) and its identical predecessor HB2622 (1R, 2025), both amending A.R.S. 16-937 to double late-filing penalties for campaign finance committees ($10 to $20 for the first 15 days, $25 to $50 thereafter) and add temporary/permanent suspension of a committee's operating authority for repeated non-filing. The bill strengthens compliance with existing disclosure filing requirements rather than touching contribution limits, matching the chair calling for full disclosure of political donations.",
+      "sources": [
+        "https://www.azleg.gov/legtext/57leg/2R/bills/HB2598P.pdf",
+        "https://www.azleg.gov/legtext/57leg/1R/bills/HB2622P.pdf",
+        "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2355"
+      ]
+    },
+    {
+      "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Adam G\u00f3mez",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor Sunlight Act or other transparency bills (all marked red X). However, Gomez stated he is a 'total proponent' of transparency and wants the public to understand how and why legislators vote. This rhetorical commitment without co-sponsorship aligns with a disclosure-focused position.",
+      "sources": [
+        "https://web.archive.org/web/20260212220607/https://actonmass.org/legislators/adam-gomez/",
+        "https://commonwealthbeacon.org/politics/new-senators-cronin-gomez-pledge-focus-on-equity/"
+      ]
+    },
+    {
+      "politician_id": "290ee018-6e9e-4a8c-9561-385cf5ef3d73",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Adrian C. Madaro",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Madaro did not co-sponsor campaign finance reform bills including the Sunlight Act. No documented position beyond current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20241031001618/https://actonmass.org/legislators/adrian-madaro/"
+      ]
+    },
+    {
+      "politician_id": "3498a850-4dfe-49d2-8af9-a11651adb3c2",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Adrian Smith",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Smith voted YES on requiring lobbyist disclosure of bundled donations (2007), indicating support for transparency measures but without strong restrictions on corporate donations or dark money; no evidence of broader reform advocacy.",
+      "sources": [
+        "https://www.ontheissues.org/Adrian_Smith.htm"
+      ]
+    },
+    {
+      "politician_id": "bec15428-f2c6-45a2-9bf0-ae91e6fabe70",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Aisha Wahab",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Wahab authored SB 573 (2023-24) imposing one-year post-employment lobbying restrictions on legislative committee consultants under the Political Reform Act \u00e2\u0080\u0094 an ethics/transparency measure but not a campaign finance bill. No bills specifically limiting corporate donations, dark money, or establishing public campaign funding were found in her legislative record. Her about page frames work as serving constituents over corporate interests, suggesting rhetorical support for reform, but evidence supports a moderate transparency position rather than a strong structural reform stance.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB573",
+        "https://aishawahab.com/about"
+      ]
+    },
+    {
+      "politician_id": "b0ada14c-dcb5-4f25-88d0-75e475af6e49",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Amanda Bell",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Bell's platform calls to reform campaign finance laws and increase transparency and accountability, most consistent with requiring full disclosure of political donations rather than an explicit ban on corporate/dark money or public campaign financing.",
+      "sources": [
+        "https://www.amandabellforcongress.org/platform"
+      ]
+    },
+    {
+      "politician_id": "91c72443-147f-4d1f-adab-ee415dab5ea6",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Andr\u00e9 Carson",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Cosponsored the DISCLOSE Act of 2026 (H.R. 7802) per his own congress.gov member activity record \u2014 a donor-disclosure and transparency bill for political spending \u2014 matching the full-disclosure chair rather than an outright ban or deregulation stance.",
+      "sources": [
+        "https://www.congress.gov/member/andre-carson/C001072"
+      ]
+    },
+    {
+      "politician_id": "060aa5ab-1d4a-4fd1-89cb-afc96cbc09cb",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Angelique Ashby",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "No specific campaign finance reform or dark money bills were found in Ashby's 2023-26 legislative record. Her SB-314 (2023-24, chaptered) creating an independent redistricting commission for Sacramento County reflects support for government accountability and transparency. As Senate Majority Leader operating within California's existing Political Reform Act framework, her record suggests requiring full disclosure of political donations while not pursuing structural bans on corporate spending.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB314",
+        "https://sd08.senate.ca.gov"
+      ]
+    },
+    {
+      "politician_id": "4f4b2bff-0054-475f-8687-e83f68085f15",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Angus S. King, Jr.",
+      "party": "Independent",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "King's official Senate page states he 'opposed the corrosive effect of unchecked money in politics' and he supports disclosure requirements and campaign finance restrictions; however he has not introduced legislation for full public financing or an outright corporate donation ban, placing him at full transparency requirements.",
+      "sources": [
+        "https://www.king.senate.gov/about/biography",
+        "https://www.ontheissues.org/Senate/Angus_King.htm"
+      ]
+    },
+    {
+      "politician_id": "15f59b0c-f71c-4199-b195-7b653a05a310",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Barry R. Finegold",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": false,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "REVIEW: names an instrument but neither clearly disclosure nor current-limits; read sources to place",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act. No evidence of campaign finance reform sponsorships. Moderate Democrat focused on economic development and technology policy.",
+      "sources": [
+        "https://web.archive.org/web/20260510013708/https://actonmass.org/legislators/barry-finegold/"
+      ]
+    },
+    {
+      "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Bob Archuleta",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": true,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "No campaign finance bills authored or clear public statements found. Archuleta focuses legislatively on veterans military public safety and energy infrastructure rather than political reform. As a standard California Democratic legislator his pattern is consistent with maintaining current disclosure requirements without strong advocacy for structural limits on corporate money aligning with value 3.",
+      "sources": [
+        "https://sd30.senate.ca.gov/legislation"
+      ]
+    },
+    {
+      "politician_id": "8aad9681-4dc3-4803-9ff1-7c004303b4ab",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Bobby Charles",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Charles publicly challenged opponents Hannah Pingree and Rick Bennett to pledge to reject money from Augusta lobbyists, Central Maine Power, and AI data center companies, framing it as an anti-corruption measure. He said opponents 'owe people favors' to lobbyists and utilities. His focus is on disclosure and anti-corruption rather than banning all private money, aligning with scale value 3: require full disclosure of all political donations.",
+      "sources": [
+        "https://www.themainewire.com/2026/06/bobby-charles-challenges-rivals-to-reject-lobbyist-cmp-and-ai-data-center-money/"
+      ]
+    },
+    {
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Brian Garcia",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Prime sponsor of HB4046 (2R 2026, co-sponsored with Sen. Kuby), which amends Arizona's campaign finance reporting statute (16-926) to require that candidate committee reports itemize and specifically label contributions from registered lobbyists alongside occupation/employer information. This is a targeted disclosure-expansion bill matching the 'require full disclosure of all political donations' stance.",
+      "sources": [
+        "https://www.azleg.gov/legtext/57leg/2R/bills/hb4046p.pdf",
+        "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2358"
+      ]
+    },
+    {
+      "politician_id": "1b776971-4c34-4453-ba38-6772f6783b1c",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Brian J. Mast",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "In a 2016 survey, Mast answered 'Yes' to regulating indirect campaign contributions from corporations and unions, indicating support for disclosure and regulation of dark money while not calling for full public funding or elimination of limits.",
+      "sources": [
+        "https://www.ontheissues.org/FL/Brian_Mast_Government_Reform.htm"
+      ]
+    },
+    {
+      "politician_id": "a5d68f92-d5e2-4fa1-a191-a64e8ebb2ada",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Brian K. Fitzpatrick",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-introduced the FAITH in Congress Act (2018) imposing a lifetime lobbyist ban and withholding pay if the budget fails, and co-sponsored the Restore Trust in Congress Act (2025) banning members and families from stock ownership and trading. His reform focus centers on transparency and conflict-of-interest disclosure, aligning with value 3 (require full disclosure of all political donations).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Brian_Fitzpatrick_(American_politician)"
+      ]
+    },
+    {
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Bruce E. Tarr",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Tarr co-sponsored a campaign finance task force bill (SD.2647) with Fattman to investigate integrity and accountability. He filed S.507 improving reporting requirements for ballot question committees (which received a favorable committee report and was substituted with S.2898). His approach favors disclosure and transparency rather than either banning private money or removing all limits.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S507",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+campaign+finance&Page=1"
+      ]
+    },
+    {
+      "politician_id": "5d23f98a-bf04-44c7-896b-d847936f804a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Bruce Westerman",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "OnTheIssues records Westerman as favoring disclosure requirements and contribution caps while not supporting unlimited spending, placing him in the middle position of requiring full disclosure of political donations.",
+      "sources": [
+        "https://www.ontheissues.org/House/Bruce_Westerman.htm"
+      ]
+    },
+    {
+      "politician_id": "21d1e18c-f192-4a1a-9dc0-36bd873a3daa",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Carl Tepper",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Carl Tepper authored a bill to strengthen requirements for local governments to post campaign finance reports online, directly motivated by a ProPublica/Texas Tribune investigation finding dozens of school districts non-compliant. This reflects a disclosure-focused, transparency-oriented stance rather than banning donations or eliminating limits.",
+      "sources": [
+        "https://www.texastribune.org/tag/carl-tepper/"
+      ]
+    },
+    {
+      "politician_id": "4baa73c2-d38b-4d07-894f-1577d5ba43a3",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Caroline Menjivar",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Menjivar authored SB-1027 (2024, enacted) modifying the Political Reform Act to require the Secretary of State to redact bank account numbers and authorized-person names from campaign committee filings before public disclosure. This is a narrow privacy-protection reform within the existing disclosure framework, not a structural limit on corporate donations or a public financing program, placing her at value 3 (require full disclosure of political donations).",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB1027"
+      ]
+    },
+    {
+      "politician_id": "b50ac669-318e-4b48-9d4f-efecde6cef65",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Chaney Mosley",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": false,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "BLANK: no primary instrument and not a disclosure position; documented blank at assembly",
+      "target": null,
+      "current_reasoning": "In his 2026 Ballotpedia Candidate Connection survey, Mosley calls for \"meaningful congressional reform...including reducing the influence of money in politics, strengthening ethics standards, and ensuring elected officials are focused on serving the people, not themselves.\"",
+      "sources": [
+        "https://ballotpedia.org/Chaney_Mosley#Campaign_themes"
+      ]
+    },
+    {
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Cheryl C. Kagan",
+      "party": "Democrat",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Kagan was lead sponsor of SB0633 (2025), enacted as Chapter 313, requiring political organizations to include disclaimers and disclosures on solicitations and authorizing the State Board to bar further solicitations or impose a civil penalty, and of SB0458 (2024), requiring disclosures by political organizations and prohibiting them from paying entities owned or controlled by certain individuals.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0633?ys=2025RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0458?ys=2024RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01"
+      ]
+    },
+    {
+      "politician_id": "5142fd11-149b-4a33-a50f-3006a5b263bb",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Chris Gleason",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Platform emphasizes mandatory CVV verification for online donations and real-time FEC reporting -- a transparency/fraud-disclosure focus rather than limiting or eliminating contribution rules.",
+      "sources": [
+        "https://chris4florida.com/issues-election-integrity.html"
+      ]
+    },
+    {
+      "politician_id": "d9ceca31-c557-4765-9d15-2e0391b937e4",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Chris Jones",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "His 2026 'Accountability For All' platform calls to 'establish finance reform in the process of campaigns, disclosing political spending accurately to voters,' emphasizing disclosure of donations/spending rather than banning private money or loosening rules, matching the chair-3 full-disclosure standard.",
+      "sources": [
+        "https://chrisjonesforcongress.com/accountability/"
+      ]
+    },
+    {
+      "politician_id": "5c4d4194-a7a1-4efa-80cb-af848e338b8d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Christopher Cabaldon",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Cabaldon voted Aye on SB-644 (2025-26), which extends California contribution limits to judicial, school district, and community college district candidates. No public financing or dark-money ban bill authored. His record supports requiring disclosure and extending contribution limits but does not yet reflect advocacy for strict corporate donation limits or public campaign funding.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB644",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB644"
+      ]
+    },
+    {
+      "politician_id": "725d4081-e820-4064-83dc-3f8470bd7c2b",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Curren D. Price Jr.",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "As a CA State Senator Price voted AYE on AB 481 (2011-12 DISCLOSE Act), a campaign finance transparency bill requiring identification of principal officers approving political activities, expanding disclosure to cover \"any advertisement\" supporting or opposing candidates, and strengthening late-contribution reporting requirements. The bill passed 38-0. This reflects a pro-disclosure stance focused on full transparency of political donations rather than banning private money or limiting corporate donations broadly.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201120120AB481"
+      ]
+    },
+    {
+      "politician_id": "248f76d7-e76a-49e5-88b7-dc43a3131329",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Cynthia F. Friedman",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": true,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "No co-sponsorship of the Sunlight Act or transparency-related bills on Act on Mass. Did not sign the transparency pledge. Absence of co-sponsorship on disclosure/dark money bills places her at maintaining current disclosure requirements without actively pushing stricter limits.",
+      "sources": [
+        "https://web.archive.org/web/20260510015519/https://actonmass.org/legislators/cindy-friedman/"
+      ]
+    },
+    {
+      "politician_id": "090cebbd-19b5-41ed-9c9a-5f537cdb5470",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Dan Helmer",
+      "party": "Democrat",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Helmer chiefly patronized HB 276 (2024) requiring disclosure of funding sources for campaign advertisements and independent expenditures - promoting transparency in political spending without imposing contribution limits.",
+      "sources": [
+        "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB276"
+      ]
+    },
+    {
+      "politician_id": "3d9354a8-e7ee-4381-b91a-a40d0a2e8d3a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Danielle W. Gregoire",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or other campaign finance bills. No evidence of support for stronger restrictions or eliminating limits. Scores at maintaining current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20250211013313/https://actonmass.org/legislators/danielle-gregoire/"
+      ]
+    },
+    {
+      "politician_id": "e0dc83f8-f72d-4869-8d79-532002408028",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Dave Cortese",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Cortese voted Aye on SB-1027 (2024, Political Reform Act disclosure requirements). No authored campaign finance bills targeting corporate donations or dark money were found in his 2021-2026 legislative record. His stance reflects support for full disclosure of political donations without advancing broader structural reforms, consistent with value 3.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027"
+      ]
+    },
+    {
+      "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "David A. LeBoeuf",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-sponsored the Sunlight Act and Public Records Law per Act on Mass tracker, indicating support for transparency in political spending rather than banning or drastically limiting private money.",
+      "sources": [
+        "https://web.archive.org/web/20251114014025/https://actonmass.org/legislators/david-leboeuf/"
+      ]
+    },
+    {
+      "politician_id": "03df7cce-7502-4089-acd5-139841002cbe",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Eleni Kounalakis",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "In 2018 Kounalakis called on fellow lieutenant governor candidates to back campaign finance reform and said \"I hope everybody up here agrees we need campaign finance reform,\" while simultaneously accepting major donations including from her developer father. Her stated support is primarily for reform and disclosure, not a full ban on private money.",
+      "sources": [
+        "https://calmatters.org/politics/2018/04/lt-gov-candidates-spar-over-whos-cleaner-in-messy-world-of-campaign-finance/"
+      ]
+    },
+    {
+      "politician_id": "79276956-dfa1-4bca-9820-ab7c78dd57c8",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Frank LaRose",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "LaRose authored legislation requiring electronic campaign finance filing for local candidates, signed into law in 2019 as a transparency and disclosure measure. This reflects support for disclosure requirements without banning private money or eliminating contribution limits.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frank_LaRose",
+        "https://ballotpedia.org/Frank_LaRose"
+      ]
+    },
+    {
+      "politician_id": "9c7e62aa-c793-4630-b58b-4eb219b91d30",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Gary J. Palmer",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Palmer stated he supports 'full disclosure of the source of contributions' and co-signed that 'Given that individual contributions must be disclosed, I support full disclosure of the source of contributions.' No documented position calling for eliminating limits or publicly funding campaigns, placing him at value=3 (require full disclosure of all political donations).",
+      "sources": [
+        "https://www.ontheissues.org/House/Gary_Palmer_Government_Reform.htm"
+      ]
+    },
+    {
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Henry Stern",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Stern voted AYE on SB 1027 (2024) \u2014 a disclosure-only campaign finance transparency bill under the Political Reform Act \u2014 which passed 39-0-1. No bills sponsored to ban private campaign money or limit corporate donations were found. His vote reflects support for full disclosure of political donations rather than structural spending limits or public financing.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027"
+      ]
+    },
+    {
+      "politician_id": "ccb7cc4c-2c8f-4590-a3a2-f8e4bfbd64d5",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jacob R. Oliveira",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or transparency-related bills on Act on Mass. Did not sign the transparency pledge. Absence of co-sponsorship places him at disclosure-only rather than actively limiting dark money or private political spending.",
+      "sources": [
+        "https://web.archive.org/web/20250613061730/https://actonmass.org/legislators/jacob-oliveira/"
+      ]
+    },
+    {
+      "politician_id": "037ad94f-d379-4f9c-baf1-a75742a46eac",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "James Graham",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Graham has called out 'billionaires controlling our government' and the 'swamp writing the rules,' signaling support for campaign finance reform. His platform mentions term limits legislation but lacks specific positions on dark money or donation caps, placing him in a disclosure/moderate reform position.",
+      "sources": [
+        "https://www.jimgrahamforcongress.com/",
+        "https://www.jimgrahamforcongress.com/what-i-stand-for"
+      ]
+    },
+    {
+      "politician_id": "bcda2b48-b064-42b5-a843-f6152b1f6456",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jeremy Moss",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Primary sponsor of SB 613 (Public Act 281, 2023), requiring Michigan public officers to file detailed annual financial disclosure reports covering income, assets, liabilities, and lobbyist gifts; also sponsored SB 814 (2026), modifying public officer disclosure deadlines. This record reflects a focus on transparency and full disclosure of officials' finances rather than corporate-donation limits specifically, most consistent with scale value 3 (require full disclosure). Could not confirm previously cited AI-disclosure bills (HB 5141/5143/5144) or SB 1197, so those claims were removed.",
+      "sources": [
+        "https://www.michiganvotes.org/2023-SB-613",
+        "https://www.michiganvotes.org/legislators/2025/senate/district-7/sponsorships"
+      ]
+    },
+    {
+      "politician_id": "cc08909a-99b4-47fe-a252-248fbc9a015b",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jeremy Todd",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Todd's page on foreign lobbying and campaign financing calls for transparency \u2014 'Americans deserve to know who is funding political campaigns' \u2014 focused on disclosure of foreign and domestic funding sources rather than spending limits or deregulation.",
+      "sources": [
+        "https://jeremy-todd.com/issue-6"
+      ]
+    },
+    {
+      "politician_id": "196e8502-0aab-49a8-a6a0-6626bf121f34",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jim Costa",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-sponsored the DISCLOSE Act expanding disclosure requirements for independent campaign expenditures; supported Shays-Meehan soft money reform; voted YES on lobbyist disclosure of bundled donations over $5,000. Also voted NO on restricting 527 independent political committees \u2014 supporting disclosure over contribution limits \u2014 placing him closer to full-disclosure than strict limits.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Jim_Costa_Government_Reform.htm"
+      ]
+    },
+    {
+      "politician_id": "09531f42-9724-4211-b33a-7f1af94b250e",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jim Jordan",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Jordan voted YES on requiring lobbyist disclosure of bundled donations (May 2007) and supports banning stock trading based on congressional insider knowledge (Nov 2011). This pattern of supporting transparency requirements without broader limits on private money aligns with value 3 -- require full disclosure of all political donations.",
+      "sources": [
+        "https://www.ontheissues.org/OH/Jim_Jordan.htm"
+      ]
+    },
+    {
+      "politician_id": "927cddfd-cda3-4f2f-a04b-c995bcd9c932",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Jim Torino",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Torino's survey pledges to \"fight for greater transparency, real campaign finance reform, responsible spending, and an end to the dysfunction that blocks meaningful progress\" and to be \"open and honest with voters.\"",
+      "sources": [
+        "https://ballotpedia.org/Jim_Torino#Campaign_themes"
+      ]
+    },
+    {
+      "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Joan B. Lovely",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-sponsored the Sunlight Act (S.1963), which requires public disclosure of committee testimony, committee votes, and subjects the Governor's office to Public Records Law \u2014 a transparency/disclosure stance.",
+      "sources": [
+        "https://web.archive.org/web/20260510014603/https://actonmass.org/legislators/joan-lovely/",
+        "https://actonmass.org/sunlight-act/"
+      ]
+    },
+    {
+      "politician_id": "973d60e2-fca7-4185-bd2a-84a686e925ab",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John C. Velis",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or sign the transparency pledge on Act on Mass. No evidence of support for stricter campaign finance limits or for loosening them. Consistent with maintaining current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20260510025006/https://actonmass.org/legislators/john-velis/"
+      ]
+    },
+    {
+      "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John F. Keenan",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": true,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or sign the transparency pledge on Act on Mass, despite co-sponsoring State House Union. Consistent with maintaining current disclosure requirements without pushing for stricter limits on private money.",
+      "sources": [
+        "https://web.archive.org/web/20260510021435/https://actonmass.org/legislators/john-keenan/"
+      ]
+    },
+    {
+      "politician_id": "ec72b7c5-635a-4590-a730-7e1bd62ce2f7",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John Hancock",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Campaign platform 'Liberty, Not Lobbyists' (via Ballotpedia): 'I'll push for crystal-clear records, end backroom schemes, and make sure your voice, not big money, calls the shots', with 'every deal and dollar wide open for all to see'; also pledges open records and unbiased declassification under 'Government Transparency'. Matches requiring full disclosure of all political donations; he proposes transparency rather than donation limits (rules out 2) and does not advocate eliminating campaign finance laws (rules out 5).",
+      "sources": [
+        "https://ballotpedia.org/John_Hancock_(Ohio)#Campaign_themes"
+      ]
+    },
+    {
+      "politician_id": "e6596b34-8d9f-4593-bf0c-4fe7fc17cd26",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John Hoeven",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Hoeven stated in 2004 that he supports limiting campaign contributions but opposes spending limits, a position that aligns with requiring disclosure and some restrictions without full public financing or elimination of all limits.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/John_Hoeven.htm"
+      ]
+    },
+    {
+      "politician_id": "ef888471-24a9-4a9f-9115-e530c16986ae",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John J. Cronin",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or sign the transparency pledge on Act on Mass. Consistent with maintaining current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20251211115807/https://actonmass.org/legislators/john-cronin/"
+      ]
+    },
+    {
+      "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John Laird",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Laird voted AYE on SB 1027 (2024) a Political Reform Act disclosure bill requiring greater transparency in political spending. No bills found banning private money or strictly limiting corporate donations in his authored legislation. His record aligns with value 3: requiring full disclosure of all political donations without seeking to ban or dramatically restrict private campaign contributions.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027"
+      ]
+    },
+    {
+      "politician_id": "661c0499-af4c-4cf9-a34b-eb0c20d5cd4b",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "John Thune",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "OTI records Thune supports banning soft money donations to political parties and supports Internet disclosure of earmarks, but voted to allow some lobbyist gifts to Congress. This mixed record \u2014 supporting some disclosure and contribution limits while opposing full public financing \u2014 aligns with requiring full transparency of donations without restricting all corporate spending.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/John_Thune.htm"
+      ]
+    },
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Josh Becker",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Becker voted Aye on SB 1027 (2024, disclosure requirements for political contributions). His authored bills address data privacy and transparency broadly but no bills directly limiting corporate donations or establishing public campaign financing were found. This pattern reflects support for disclosure and transparency standards without strong structural reform advocacy.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB362"
+      ]
+    },
+    {
+      "politician_id": "c4251d10-6fba-4a5a-b8a9-f4b2f4634f0d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Josh Gottheimer",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Gottheimer has not been a vocal campaign finance reform advocate; he was criticized for 326 stock trades with potential conflicts and pledged a blind trust he had not established as of 2024. His record shows no strong positions for or against campaign finance limits, placing him at requiring full disclosure without active advocacy for stricter donor limits or elimination of limits.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Josh_Gottheimer"
+      ]
+    },
+    {
+      "politician_id": "108e7bcc-554a-49d7-81f0-c3058f933a07",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Josh Hawley",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Hawley has advocated for disclosure requirements and ethics reform in campaign finance. He supported legislation banning members of Congress from trading individual stocks and introduced related anti-corruption measures. His record reflects a disclosure-focused approach requiring transparency of donations without fully restricting corporate spending or publicly financing campaigns.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Josh_Hawley.htm",
+        "https://en.wikipedia.org/wiki/Josh_Hawley"
+      ]
+    },
+    {
+      "politician_id": "122f1897-2dae-4f21-bee0-1c02c95e9e3a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Kathryn Barger",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Barger authored the creation of an independent LA County Ethics Commission in 2024, emphasizing \"Transparency and Accountability Don't Need to Wait.\" Her focus was on government ethics and accountability rather than limiting or expanding political donations specifically. This aligns with requiring full disclosure of political and government activity without strong restriction or expansion of donation limits.",
+      "sources": [
+        "https://kathrynbarger.lacounty.gov/?s=ethics+commission",
+        "https://kathrynbarger.lacounty.gov/?s=campaign+finance"
+      ]
+    },
+    {
+      "politician_id": "13d45047-8183-46bd-a04a-5f5420b710cc",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Kelly Ayotte",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Ayotte called for posting donations online and ending earmarks (Jul 2010), and also proposed public financing for federal campaigns via voter vouchers (Feb 2015) with a small-donor matching fund concept (Sep 2014). Her positions center on transparency and disclosure requirements.",
+      "sources": [
+        "https://www.ontheissues.org/Kelly_Ayotte.htm"
+      ]
+    },
+    {
+      "politician_id": "a7e29796-a928-49cc-b795-973a4f69fafe",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Kent Udell",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Udell pledges to refuse corporate PAC money and frames \"dark money in our elections\" as corruption, but his stated legislative ask is \"transparency, accountability, and ethics reforms\" \u2014 a disclosure-focused position rather than an explicit statutory ban on corporate donations/dark money groups or elimination of private money via public financing.",
+      "sources": [
+        "https://www.kentudellforcongress.com",
+        "https://ballotpedia.org/Kent_Udell"
+      ]
+    },
+    {
+      "politician_id": "645a79be-ad06-461f-b2d6-3f811a0c48ee",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Kevin Kiley",
+      "party": "Independent",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Stated \"No 'Third House': end lobbyist contributions and influence\" (Aug 2021, OnTheIssues) and explicitly refused to accept lobbyist contributions during his recall campaign (CalMatters 2021 recall profile). His anti-lobbyist stance aligns with requiring disclosure and limiting special-interest influence rather than eliminating all campaign finance laws.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Kevin_Kiley.htm",
+        "https://calmatters.org/tag/kevin-kiley/"
+      ]
+    },
+    {
+      "politician_id": "7778111f-551f-407f-87c7-e30268ea5e0a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Laurie Davies",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Voted AYE on SB 42 (public campaign financing reform, 75-0, 8/29/24) -- a near-unanimous bipartisan vote. Also AYE on AB 1170 (FPPC filing modernization, 1/29/24). No authored campaign finance bills; no strong directional signal beyond consensus votes.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB42",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1170"
+      ]
+    },
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lena Gonzalez",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Gonzalez authored SB 1349 (2026) requiring legislative review of corporate tax expenditures to ensure taxpayer dollars benefit working families -- a transparency and accountability measure targeting tax loopholes rather than a direct campaign finance bill. No bills specifically limiting corporate donations or establishing public financing were found, suggesting a transparency-focused stance rather than full structural reform.",
+      "sources": [
+        "https://sd33.senate.ca.gov/legislation",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1349"
+      ]
+    },
+    {
+      "politician_id": "d4ba1b87-b76b-458c-9cfd-5038d9831d80",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lily Tang Williams",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Her campaign's \"10-Point Good Government Plan\" calls for immediate public disclosure of all stock trades, campaign contributions, and lobbying contacts \u2014 a full-disclosure position matching chair 3. Her 2026 Citizens Count survey left the \"amendment to limit outside funding of campaigns\" question with \"No Response,\" so this rests on her own campaign-site platform language rather than a survey answer.",
+      "sources": [
+        "https://www.lilytangwilliams.com/congress/issues/"
+      ]
+    },
+    {
+      "politician_id": "20aa1064-bbe7-484c-b779-28d99e92e608",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lindsey Graham",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Graham called for a constitutional amendment to limit super PAC spending (Jun 2015) while also supporting higher direct contribution limits. He has backed disclosure requirements and expressed concern about dark money but stops short of banning private money or fully deregulating campaign spending.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Lindsey_Graham.htm"
+      ]
+    },
+    {
+      "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lisa Murkowski",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Murkowski has a mixed record: she supports matching funds for small donors with debate requirements (2013) and voted YES on allowing lobbyist gifts to Congress (2006). Her 2010 write-in campaign showed independence from party structures. She has not championed full public financing nor opposed all campaign finance limits \u2014 her record reflects support for disclosure and some limits without full reform advocacy.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Lisa_Murkowski.htm"
+      ]
+    },
+    {
+      "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lisa Subeck",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Lead Assembly author of AB 1235 (2026, companion SB 1158), which requires PACs, independent-expenditure committees, and any person spending $500 or more on a 'mass communication' to register and publicly report the spending, recipient, and amount within 24 hours. The Legislative Reference Bureau analysis confirms the bill creates disclosure/reporting obligations only and does not cap or restrict contributions from corporations or other groups, matching 'require full disclosure of all political donations' rather than a contribution-limiting chair. She was also a lead introducer of a similar mass-communications disclosure bill in the 2023 session (AB 911).",
+      "sources": [
+        "https://docs.legis.wisconsin.gov/2025/proposals/ab1235",
+        "https://docs.legis.wisconsin.gov/2025/related/proposals/ab1235",
+        "https://docs.legis.wisconsin.gov/2023/proposals/ab911"
+      ]
+    },
+    {
+      "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Liz Miranda",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-sponsored the Sunlight Act, which is focused on legislative transparency and public records rather than campaign finance limits per se \u2014 indicating support for disclosure and accountability norms.",
+      "sources": [
+        "https://web.archive.org/web/20260510015050/https://actonmass.org/legislators/liz-miranda/"
+      ]
+    },
+    {
+      "politician_id": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lorena Bruner",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Campaign site states commitment to 'campaign finance transparency.' Calling for transparency in donations \u2014 rather than banning private money or strictly limiting corporate donations \u2014 aligns with value 3: require full disclosure of all political donations.",
+      "sources": [
+        "https://www.lorenabrunerforcongress.com/"
+      ]
+    },
+    {
+      "politician_id": "11d73e67-bcd9-419a-8b0d-a26447eb0c0b",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Lydia M. Edwards",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Edwards co-sponsored Stop Corporate Offshoring (a progressive revenue bill) per Act on Mass but has not signed the transparency pledge. Her bill advocacy focuses on worker protections, housing, and labor rather than campaign finance specifically. No evidence of bills to ban private campaign money or strictly limit corporate donations. Stop Corporate Offshoring sponsorship signals support for closing corporate tax loopholes.",
+      "sources": [
+        "https://web.archive.org/web/20260412021327/https://actonmass.org/legislators/lydia-edwards/"
+      ]
+    },
+    {
+      "politician_id": "a8f48816-2ebc-4ae4-9667-a12d4c18f5ec",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Marc C. McGovern",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Questioned selective campaign finance restrictions targeting only real estate developers, asking for a more holistic approach covering all city contractors. Positioned toward disclosure and limits with broader scope. Source: cambridgeday.com/2025/10/18/coming-to-cambridge-city-council-utility-bills-license-plate-reading-tech-and-funded-elections/",
+      "sources": [
+        "https://cambridgeday.com/2025/10/18/coming-to-cambridge-city-council-utility-bills-license-plate-reading-tech-and-funded-elections/"
+      ]
+    },
+    {
+      "politician_id": "6e2d2c6d-b96e-4916-a7c8-51a8f46629ba",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Marie Alvarado-Gil",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Alvarado-Gil voted Aye on SB 1027 (2024, campaign finance disclosure) and SB 1439 (2024, Ashby -- campaign finance ethics). Both are disclosure/transparency measures rather than donation limits or public financing. Her record supports transparency requirements without evidence of broader structural reform positions, placing her at value 3 -- requiring full disclosure of all political donations.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1439"
+      ]
+    },
+    {
+      "politician_id": "f529c1d6-7a48-4607-b3aa-a96bea7f0d26",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Mario Diaz-Balart",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Voted YES on the Honest Leadership and Open Government Act requiring lobbyists to disclose bundled contributions over $5,000 (2007), and voted YES on regulating 527 organizations like standard political committees (2006). His support for disclosure and some spending restrictions, without calling for public financing or elimination of all limits, places him at the transparency/disclosure middle ground.",
+      "sources": [
+        "https://www.ontheissues.org/FL/Mario_Diaz-Balart_Government_Reform.htm",
+        "https://www.ontheissues.org/FL/Mario_Diaz-Balart.htm"
+      ]
+    },
+    {
+      "politician_id": "6fcf3c4c-4e78-4782-a277-f550a97b4f43",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Mark Scheffler",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "His \"FairShare Democracy\" platform calls for \"stronger transparency and disclosure requirements for political spending\" and \"clear reporting of outside political spending\" alongside expanded small-donor participation \u2014 a disclosure-centered reform rather than an explicit ban on private money or corporate donations.",
+      "sources": [
+        "https://www.mark4wi.info/post/fairshare-democracy-restoring-balance-trust-and-representation-in-the-american-republic",
+        "https://www.mark4wi.info/50x4"
+      ]
+    },
+    {
+      "politician_id": "60f2dcfe-1669-4dee-9c32-a285f4756569",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Melissa Bean",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Supported Shays-Meehan Campaign Finance Reform (2001), voted YES on lobbyist bundled donation disclosure (2007). 2026 platform calls for increasing campaign finance transparency and working to overturn Citizens United. Her reform focus centers on disclosure and transparency rather than banning private money outright; she voted NO on restricting independent grassroots committees (2006).",
+      "sources": [
+        "https://www.ontheissues.org/IL/Melissa_Bean.htm",
+        "https://www.melissabeanforcongress.com/issues"
+      ]
+    },
+    {
+      "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Melissa Hurtado",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Voted Aye on SB 644 (2023 campaign contribution limits bill by Glazer passed 34-0). NVR on SB 1027 (2024 campaign finance disclosure). Her stated priority of holding the powerful accountable and ethics reforms points to a transparency stance requiring full disclosure of political donations rather than banning private money or eliminating limits.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB644",
+        "https://sd16.senate.ca.gov/legislative-priorities"
+      ]
+    },
+    {
+      "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Michael D. Brady",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Did not co-sponsor the Sunlight Act or sign the transparency pledge on Act on Mass. Did co-sponsor State House Union (worker organization). Consistent with maintaining current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20250613074402/https://actonmass.org/legislators/michael-brady/"
+      ]
+    },
+    {
+      "politician_id": "9b3c9aa8-d22a-4761-93e3-8054c762f4a5",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Michael J. Moran",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Moran did not co-sponsor any campaign finance reform bills tracked by Act on Mass (including the Sunlight Act which covers disclosure). No other documented position. Default to current-system maintenance.",
+      "sources": [
+        "https://web.archive.org/web/20250124162119/https://actonmass.org/legislators/michael-moran/"
+      ]
+    },
+    {
+      "politician_id": "f865995d-ad3a-4d2d-827f-ed8a1a67af18",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Michael J. Rodrigues",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Rodrigues has sponsored S.507 on campaign finance reporting improvements for ballot question committees, indicating support for disclosure requirements as the core reform priority rather than more sweeping limits on private money.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored"
+      ]
+    },
+    {
+      "politician_id": "610a5a07-5633-428d-9c88-f0157414e902",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Michael K. Simpson",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Simpson voted YES on lobbyist disclosure of bundled donations and YES on banning soft money to national parties (2001), but voted NO on the broader 2002 McCain-Feingold campaign finance overhaul. His record centers on disclosure requirements rather than strict limits or elimination of private money.",
+      "sources": [
+        "https://www.ontheissues.org/House/Mike_Simpson_Government_Reform.htm"
+      ]
+    },
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Mike McGuire",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "McGuire authored SB 658 (2023-24 chaptered) requiring gubernatorial candidates to disclose tax returns and voted Aye on SB 1027 (2024) expanding disclosure under the Political Reform Act. His record centers on transparency and disclosure requirements rather than structural limits on corporate donations or public campaign funding.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB658",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027"
+      ]
+    },
+    {
+      "politician_id": "624e51ff-2f0f-45d0-bd57-1dfa8ad47013",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Mike Rounds",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Rounds favors limiting campaign contributions but opposes restrictions on spending, consistent with a disclosure-focused moderate position. He has not championed major campaign finance overhaul legislation, reflecting neither a ban on private money nor elimination of all limits.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Mike_Rounds.htm"
+      ]
+    },
+    {
+      "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Mindy Domb",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Domb did not co-sponsor the Sunlight Act, Public Records Law, Open Meeting Law, or State House Union. Her non-co-sponsorship of all transparency/sunlight bills is notable for a progressive member. Her position reflects current disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20250807044049/https://actonmass.org/legislators/mindy-domb/"
+      ]
+    },
+    {
+      "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Monique Lim\u00f3n",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Lim\u00f3n voted Aye on SB 1027 (2024, Political Reform Act disclosures for AI-generated political ads) and authored SB 702 (gubernatorial appointments transparency). Her record emphasizes transparency and disclosure requirements rather than hard limits on corporate donations or public financing.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1027",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB702"
+      ]
+    },
+    {
+      "politician_id": "dfc1bf98-c53a-4ecd-89fb-33b655d6c364",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Nancy Mannion",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Mannion's platform calls for campaign finance transparency and her campaign notes it is 'powered by people \u2014 not billionaires,' but the stated policy is transparency/disclosure rather than strict limits or a ban on private money.",
+      "sources": [
+        "https://www.nancymannion.com/priorities",
+        "https://www.nancymannion.com"
+      ]
+    },
+    {
+      "politician_id": "d5d6b2bd-376c-4cd5-800f-87509aa6f81c",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Neelam Perry",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Platform explicitly lists transparency in campaign finance as a government-reform priority, matching a full-disclosure standard rather than banning private money or deregulating it.",
+      "sources": [
+        "https://perryforfl.com/",
+        "https://www.civoren.com/candidate/neelam-perry"
+      ]
+    },
+    {
+      "politician_id": "963f2c91-9563-444e-9487-91822cd3e6cf",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Phil Scott",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "OnTheIssues records Scott supporting campaign donation restrictions (Apr 2008). No evidence of full public funding or elimination of all limits; a moderate disclosure/restriction position fits best.",
+      "sources": [
+        "https://www.ontheissues.org/Phil_Scott.htm"
+      ]
+    },
+    {
+      "politician_id": "5238b298-6004-4bcc-94c2-ee43a9c2999e",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Raul Ruiz",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "OnTheIssues documents Ruiz supporting 'full disclosure of campaign spending' (Mar 2013). The documented stance is disclosure-focused rather than advocating strict donor limits or a ban on private money.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Raul_Ruiz.htm"
+      ]
+    },
+    {
+      "politician_id": "951d32a1-8ff1-4c4f-be20-01efdf8f02dc",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Richard Hudson",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Hudson supports requiring full disclosure of political donations, called for eliminating 527 organizations to force full disclosure so the voters know who is paying for political advertisements, and describes this as true campaign finance reform. His position centers on transparency rather than spending limits or public funding.",
+      "sources": [
+        "https://www.ontheissues.org/NC/Richard_Hudson.htm",
+        "https://www.ontheissues.org/NC/Richard_Hudson_Government_Reform.htm"
+      ]
+    },
+    {
+      "politician_id": "22152e41-31b9-4700-9226-4e274c616f37",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Roger Niello",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Niello voted NO on SB-42 (public campaign financing / California Fair Elections Act of 2026 \u2014 establishing public funding for state elections), indicating he opposes public campaign finance. However, he voted YES on SB-900 (Political Reform Act: requiring disclosure of top contributors in political advertising). This pattern \u2014 opposing publicly funded campaigns but supporting contributor disclosure requirements \u2014 matches value 3 (require full disclosure of all political donations).",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB42",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB900"
+      ]
+    },
+    {
+      "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Ryan C. Fattman",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Fattman co-sponsored the campaign finance task force bill (SD.2647 with Tarr) to investigate the integrity and fairness of the campaign finance system, and co-sponsored S.395 on campaign finance during special elections. His approach targets disclosure and procedural integrity rather than banning private money or reducing restrictions.",
+      "sources": [
+        "https://malegislature.gov/Bills/Search?SearchTerms=Fattman+campaign+finance&Page=1"
+      ]
+    },
+    {
+      "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Sal N. DiDomenico",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Sponsored S.507 improving campaign finance reporting by state ballot question committees \u2014 a transparency and disclosure-focused approach rather than banning private money or drastically restricting donations.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S507"
+      ]
+    },
+    {
+      "politician_id": "fe96da99-4c28-42b7-841f-1d25b2c47406",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Sam Graves",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Graves voted YES on the Honest Leadership and Open Government Act (2007) requiring disclosure of lobbyist bundled contributions over $5,000, and YES on the 527 Reform Act (2006) regulating independent political committees. He initially supported and then opposed the Shays-Meehan soft money ban. His record most closely aligns with requiring full disclosure of political donations.",
+      "sources": [
+        "https://www.ontheissues.org/House/Samuel_Graves_Government_Reform.htm",
+        "https://www.ontheissues.org/House/Samuel_Graves.htm"
+      ]
+    },
+    {
+      "politician_id": "87560825-eced-4690-be06-88549f0f83cf",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Sarah Elfreth",
+      "party": "Democrat",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Elfreth's campaign platform lists \"campaign finance reform\" and banning congressional stock trading under \"Protecting Democracy,\" but in a 2024 interview about a super PAC spending on her behalf she said, \"I'm uncomfortable with dark money as well...I don't like it. But I'm not in a position to say no to people who want to amplify my message\" -- expressing discomfort without committing to a ban or strict limits, which best matches disclosure-oriented stance 3.",
+      "sources": [
+        "https://marylandmatters.org/2024/04/04/elfreth-foes-cry-foul-as-aipac-money-seeps-into-3rd-district-congressional-race/",
+        "https://elfrethformaryland.com/issues/"
+      ]
+    },
+    {
+      "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Sean Garballey",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "No co-sponsorship of the Sunlight Act or other campaign finance transparency bills tracked by Act on Mass. No evidence of support for stronger corporate money restrictions or public financing; no evidence of support for reducing restrictions. Scores as a maintain-current-disclosure moderate.",
+      "sources": [
+        "https://web.archive.org/web/20241031001535/https://actonmass.org/legislators/sean-garballey/"
+      ]
+    },
+    {
+      "politician_id": "b6c3620e-1ac1-460c-acb4-74854d59b334",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Seth Bodnar",
+      "party": "Independent",
+      "flags": {
+        "names_primary_instrument": false,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Bodnar's 'Reform Our Broken Politics' pillar calls for less partisan dysfunction but does not specifically address campaign finance limits or dark money. His campaign has accepted both independent expenditure support and diverse donor bases. No specific position on public financing, donation limits, or disclosure requirements is on record.",
+      "sources": [
+        "https://sethformontana.com/values"
+      ]
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Stephen Lynch",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Lynch has a mixed campaign finance record. He has generally supported disclosure requirements and voted for the For the People Act's campaign finance provisions. He accepts union PAC money but not corporate lobbyist PAC donations. He has supported the DISCLOSE Act for campaign finance transparency. However, he has been less vocal on campaign finance reform compared to progressive colleagues and has not been a leading sponsor of reform legislation.",
+      "sources": [
+        "https://www.opensecrets.org/members-of-congress/stephen-lynch/summary?cid=N00013620",
+        "https://www.govtrack.us/congress/votes/116-2019/h118"
+      ]
+    },
+    {
+      "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Steven \"Steve\" Choi",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Choi voted YES on SB 900 (2025-26), which strengthens disclosure requirements for top campaign contributors under the Political Reform Act. He abstained (NVR) on SB 1439 (2022), which restricted campaign contributions by agency officers. His support for disclosure while not actively pursuing stricter limits aligns with a transparency-focused but not heavily restrictive stance.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB900",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220SB1439"
+      ]
+    },
+    {
+      "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Steven C. Owens",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Co-sponsored the State House Union bill but not the Sunlight Act or other dark money/campaign finance transparency bills. No evidence of support for stronger corporate money restrictions. Scores at maintaining full disclosure requirements.",
+      "sources": [
+        "https://web.archive.org/web/20260212225827/https://actonmass.org/legislators/steve-owens/"
+      ]
+    },
+    {
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Susan K. McComas",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": false,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "REVIEW: names an instrument but neither clearly disclosure nor current-limits; read sources to place",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "McComas sponsored the Election Law - Candidate Truthfulness - Oath bill addressing political honesty \u2014 procedural rather than structural campaign finance reform suggesting a moderate position.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccomas"
+      ]
+    },
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Thomas \"T.J.\" Shope",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "In February 2025, Sen. Shope introduced his own bill requiring companies bidding on Arizona state contracts to disclose political campaign contributions made within the preceding five years, aimed at addressing pay-to-play concerns in state contracting. This is his own sponsored legislation mandating disclosure of political money tied to government business; the full article text could not be independently re-verified by fetch (azcentral.com is blocked to direct retrieval in this environment) but the specific bill description was corroborated via search snippet. Closest chair: full disclosure of all political donations, though his bill's scope (state contract bidders specifically) is narrower than the chair's general framing.",
+      "sources": [
+        "https://www.azcentral.com/story/news/politics/legislature/2025/02/05/arizona-republican-contract-bidders-disclose-political-donations/78217936007/"
+      ]
+    },
+    {
+      "politician_id": "30c32663-db0f-4ada-b85f-eaeed3766511",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Tim Walberg",
+      "party": "Republican",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Walberg voted YES on requiring lobbyist disclosure of bundled donations (May 2007) and YES on banning congressional insider stock trading (Nov 2011). These votes support transparency and disclosure requirements, placing him at stance 3 (require full disclosure of all political donations) rather than either eliminating finance laws or strictly limiting donations.",
+      "sources": [
+        "https://www.ontheissues.org/MI/Tim_Walberg.htm"
+      ]
+    },
+    {
+      "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Todd Gloria",
+      "party": null,
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Gloria supported California SB 1439 (effective 2023) tightening disclosure requirements on campaign contributions and limiting late contributions. As mayor he implemented disclosure requirements for city contracts. He has accepted corporate and real estate PAC donations consistent with current law while supporting transparency requirements \u2014 disclosure and some limits but not full public financing.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Todd_Gloria",
+        "https://www.sandiego.gov/mayor"
+      ]
+    },
+    {
+      "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician_name": "Val Hoyle",
+      "party": "Democratic",
+      "flags": {
+        "names_primary_instrument": true,
+        "is_disclosure_evidence": true,
+        "supports_current_limits": false,
+        "has_sources": true
+      },
+      "disposition": "RE-HOME: disclosure evidence -> campaign-transparency rung 2 (require full disclosure of all donations above a small threshold); carry reasoning+sources; refine to rung 1 if real-time/dark-money maximalist",
+      "target": {
+        "topic_key": "campaign-transparency",
+        "value": 2
+      },
+      "current_reasoning": "Hoyle was an original co-sponsor of the DISCLOSE Act in two consecutive Congresses, which would require organizations that spend on elections to disclose their large donors and report independent expenditures. Full disclosure is what that bill does; it does not cap or ban corporate and dark-money spending, so a stricter limiting position is not established by it. Her co-sponsorship of the Freedom to Vote Act touches small-dollar public financing, but an omnibus democracy bill does not establish a commitment to banning private money in politics outright.",
+      "sources": [
+        "https://www.govinfo.gov/content/pkg/BILLS-118hr1118ih/html/BILLS-118hr1118ih.htm",
+        "https://www.govinfo.gov/content/pkg/BILLS-119hr7802ih/html/BILLS-119hr7802ih.htm"
+      ]
+    }
+  ]
+}

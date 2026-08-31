@@ -5,6 +5,7 @@ import { getValidRedirect, validateRedirectUrl } from '../lib/redirect';
 import {
   workosEnabled,
   authkitOnly,
+  embeddedAuthEnabled,
   startWorkosSignIn,
   completeWorkosLogin,
   consumeWorkosRedirectState,
@@ -14,6 +15,12 @@ import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 import { PrimaryButton } from '../components/PrimaryButton';
+
+// Under VITE_EMBEDDED_AUTH the headless form lives on the central login app,
+// not here — sign-in (and the auto-forward below) navigate there instead of
+// calling the hosted AuthKit SDK path. The shared `.empowered.vote` cookie
+// plus the existing `?redirect=` handoff bring the user back here logged in.
+const LOGIN_ORIGIN = 'https://login.empowered.vote';
 
 interface LoginResponse {
   access_token: string;
@@ -87,6 +94,11 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
   }, []);
 
   async function handleWorkosSignIn() {
+    if (embeddedAuthEnabled) {
+      const back = redirectUrl ?? window.location.origin;
+      window.location.href = `${LOGIN_ORIGIN}/login?redirect=${encodeURIComponent(back)}`;
+      return;
+    }
     setError('');
     try {
       await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
@@ -94,6 +106,38 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
       setError(err instanceof Error ? err.message : 'Could not start sign-in');
     }
   }
+
+  // Auto-forward (decision 0002): under AuthKit-only the classic form is hidden
+  // and AuthKit's hosted page offers sign-in AND sign-up, so this landing is a
+  // redundant click. Skip straight to AuthKit — except on /login/classic
+  // (allowClassic) and except while completing a ?code= callback.
+  const [autoForwarding, setAutoForwarding] = useState(
+    () =>
+      authkitOnly &&
+      !allowClassic &&
+      !(workosEnabled && new URLSearchParams(window.location.search).has('code'))
+  );
+  const autoForwardStarted = useRef(false);
+
+  useEffect(() => {
+    if (!autoForwarding || autoForwardStarted.current) return;
+    autoForwardStarted.current = true;
+    if (embeddedAuthEnabled) {
+      const back = redirectUrl ?? window.location.origin;
+      window.location.href = `${LOGIN_ORIGIN}/login?redirect=${encodeURIComponent(back)}`;
+      return;
+    }
+    (async () => {
+      try {
+        await startWorkosSignIn(redirectUrl ? { redirect: redirectUrl } : undefined);
+      } catch (err) {
+        // AuthKit unreachable — fall back to the full landing.
+        setError(err instanceof Error ? err.message : 'Could not start sign-in');
+        setAutoForwarding(false);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -126,6 +170,14 @@ export default function LoginPage({ allowClassic = false }: { allowClassic?: boo
     } finally {
       setLoading(false);
     }
+  }
+
+  if (autoForwarding) {
+    return (
+      <AuthPageLayout>
+        <p className="text-sm text-gray-400 text-center">Redirecting to sign in…</p>
+      </AuthPageLayout>
+    );
   }
 
   return (

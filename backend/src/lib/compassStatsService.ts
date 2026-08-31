@@ -73,7 +73,9 @@ const STANCES_SQL = `
          t.is_live,
          s.id::text       AS stance_id,
          s.value::int     AS stance_value,
-         sc.text          AS stance_text
+         -- Capitalize the first letter for display, matching the voter read path
+         -- (ADR 0006 / #217). Stored text stays lowercase, verb-first.
+         upper(left(sc.text, 1)) || substr(sc.text, 2) AS stance_text
   FROM inform.compass_topics t
   JOIN inform.compass_topics_current tc ON tc.id = t.id
   LEFT JOIN inform.compass_stances s ON s.topic_id = t.id

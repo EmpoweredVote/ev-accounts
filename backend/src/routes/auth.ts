@@ -12,6 +12,13 @@ import { sendEmail } from '../lib/emailService.js';
 import { pool } from '../lib/db.js';
 import type { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
+import {
+  authenticateWithPassword,
+  authenticateWithEmailCode,
+  refreshWorkosSession,
+  sendWorkosPasswordReset,
+  confirmWorkosPasswordReset,
+} from '../lib/workosAuthService.js';
 
 const router = Router();
 
@@ -24,6 +31,22 @@ function evSessionCookieOptions() {
     domain: env.COOKIE_DOMAIN ? env.COOKIE_DOMAIN : undefined,
     path: '/',
   };
+}
+
+const WOS_SESSION_COOKIE = 'ev_wos_session';
+const WOS_PENDING_COOKIE = 'ev_wos_pending';
+
+// The pending token is single-use and short-lived; hold it server-side in an
+// httpOnly cookie so it never touches browser JS (posture: no auth material in
+// JS storage).
+function wosPendingCookieOptions() {
+  return { ...evSessionCookieOptions(), maxAge: 15 * 60 * 1000 }; // 15 minutes
+}
+function setWosSession(res: Response, refreshToken: string) {
+  res.cookie(WOS_SESSION_COOKIE, refreshToken, {
+    ...evSessionCookieOptions(),
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+  });
 }
 
 /**
@@ -157,8 +180,10 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       return;
     }
     userId = result.userId;
-    // AuthKit challenges the address at first sign-in; Supabase sends no mail.
-    signupMessage = 'Account created — sign in to continue';
+    // signUpWorkosFirst sends a WorkOS verification email at this point, so the
+    // user gets one immediately (like the old confirm-email flow). They enter
+    // the code when they sign in through AuthKit.
+    signupMessage = 'Account created — check your email to verify, then sign in';
   } else {
     const { data, error } = await signUpWithEmail(
       email,
@@ -424,6 +449,83 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
 });
 
 /**
+ * POST /api/auth/workos/authenticate
+ *
+ * Headless WorkOS login (decision 0002 headless-login project). Runs the WorkOS
+ * password grant SERVER-SIDE (it needs client_secret), stores the WorkOS refresh
+ * token in the ev_wos_session httpOnly cookie, and returns the access token.
+ * Pending states (email verification, MFA) stash the pending token in the
+ * ev_wos_pending cookie and report a status for the UI to resolve on the next call.
+ */
+router.post('/workos/authenticate', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = authBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: parsed.error.issues[0]?.message ?? 'Invalid request body' });
+    return;
+  }
+  const { email, password } = parsed.data;
+  const outcome = await authenticateWithPassword(email, password, {
+    ipAddress: req.ip,
+    userAgent: req.headers['user-agent'],
+  });
+
+  switch (outcome.status) {
+    case 'authenticated':
+      setWosSession(res, outcome.refreshToken);
+      res.status(200).json({ access_token: outcome.accessToken });
+      return;
+    case 'email_verification_required':
+    case 'mfa_required':
+      res.cookie(WOS_PENDING_COOKIE, outcome.pendingToken, wosPendingCookieOptions());
+      res.status(200).json({ status: outcome.status });
+      return;
+    case 'invalid_credentials':
+      res.status(401).json({ code: 'INVALID_CREDENTIALS', message: 'Invalid email or password' });
+      return;
+    default:
+      res.status(outcome.code === 'NOT_CONFIGURED' ? 503 : 502).json({
+        code: outcome.code, message: 'Sign-in is temporarily unavailable',
+      });
+      return;
+  }
+});
+
+const verifyEmailSchema = z.object({ code: z.string().min(4).max(10) });
+
+/**
+ * POST /api/auth/workos/verify-email
+ *
+ * Second leg of the on-page verification flow: the pending token lives in the
+ * ev_wos_pending httpOnly cookie (set by /workos/authenticate). We exchange the
+ * emailed code for a session, then clear the pending cookie.
+ */
+router.post('/workos/verify-email', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = verifyEmailSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'A verification code is required' });
+    return;
+  }
+  const pendingToken = req.cookies?.[WOS_PENDING_COOKIE];
+  if (!pendingToken) {
+    res.status(400).json({ code: 'NO_PENDING_AUTH', message: 'Start sign-in again to get a new code' });
+    return;
+  }
+
+  const outcome = await authenticateWithEmailCode(parsed.data.code, pendingToken);
+  if (outcome.status === 'authenticated') {
+    res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
+    setWosSession(res, outcome.refreshToken);
+    res.status(200).json({ access_token: outcome.accessToken });
+    return;
+  }
+  if (outcome.status === 'invalid_credentials') {
+    res.status(401).json({ code: 'INVALID_CODE', message: 'That code is incorrect or expired' });
+    return;
+  }
+  res.status(502).json({ code: 'WORKOS_ERROR', message: 'Verification is temporarily unavailable' });
+});
+
+/**
  * GET /api/auth/session
  *
  * SSO silent session check. Reads the ev_session httpOnly cookie,
@@ -437,6 +539,22 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
  * Returns 401 with no body if cookie is missing or token is invalid.
  */
 router.get('/session', async (req: Request, res: Response): Promise<void> => {
+  // WorkOS session takes precedence — a headless login stores its refresh token
+  // in ev_wos_session (decision 0002 headless-login). Refresh through WorkOS and
+  // rotate the cookie (WorkOS rotates refresh tokens like Supabase).
+  const wosRefresh = req.cookies?.[WOS_SESSION_COOKIE];
+  if (wosRefresh) {
+    const outcome = await refreshWorkosSession(wosRefresh);
+    if (outcome.status === 'authenticated') {
+      setWosSession(res, outcome.refreshToken);
+      res.status(200).json({ access_token: outcome.accessToken });
+      return;
+    }
+    res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+    res.status(401).end();
+    return;
+  }
+
   const refreshToken = req.cookies?.ev_session;
   if (!refreshToken) {
     res.status(401).end();
@@ -494,6 +612,8 @@ router.post(
   // If JWT is expired, requireAuth returns 401 but cookie is already cleared.
   (req: Request, res: Response, next: NextFunction) => {
     res.clearCookie('ev_session', evSessionCookieOptions());
+    res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+    res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
     next();
   },
   requireAuth,
@@ -667,9 +787,13 @@ router.post('/forgot-password', authLimiter, async (req: Request, res: Response)
   }
 
   try {
-    await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
-      redirectTo: `${env.LOGIN_URL}/reset-password`,
-    });
+    if (env.AUTHKIT_PRIMARY === 'true') {
+      await sendWorkosPasswordReset(parsed.data.email);
+    } else {
+      await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+        redirectTo: `${env.LOGIN_URL}/reset-password`,
+      });
+    }
   } catch (err) {
     console.error('[auth/forgot-password] error:', err);
     // Never surface this — always 200 to prevent enumeration
@@ -699,6 +823,24 @@ router.post('/reset-password', authLimiter, async (req: Request, res: Response):
   }
 
   const { token_hash, password } = parsed.data;
+
+  if (env.AUTHKIT_PRIMARY === 'true') {
+    const outcome = await confirmWorkosPasswordReset(token_hash, password);
+    if (outcome.ok) {
+      // A WorkOS password reset revokes all of that user's sessions, so any
+      // WorkOS cookies held by THIS browser are now stale — clear them too.
+      res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+      res.clearCookie(WOS_PENDING_COOKIE, evSessionCookieOptions());
+      res.status(200).json({ message: 'Password updated successfully' });
+      return;
+    }
+    if (outcome.code === 'WEAK_PASSWORD') {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Password is too weak' });
+      return;
+    }
+    res.status(422).json({ code: 'INVALID_RESET_TOKEN', message: 'Reset link is invalid or has expired' });
+    return;
+  }
 
   const { data: verifyData, error: verifyError } = await supabaseAdmin.auth.verifyOtp({
     token_hash,

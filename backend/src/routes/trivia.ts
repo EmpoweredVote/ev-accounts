@@ -101,6 +101,11 @@ router.get(
       // LEFT JOIN connect.connected_profiles to handle users who exist in
       // public.users but have not yet enrolled at Connected tier.
       // connected_profiles has no pseudonym column; current_level is stored directly.
+      //
+      // ⚠ deleted_at belongs in the ON clause, not the WHERE. In the WHERE it
+      // would turn the LEFT JOIN back into an inner join and drop the user row
+      // outright; in the ON it degrades a deleted profile to the same shape as a
+      // never-enrolled one, which is what the COALESCEs below already handle.
       const result = await pool.query(
         `SELECT
            u.id                           AS user_id,
@@ -109,7 +114,8 @@ router.get(
            COALESCE(cp.total_xp, 0)      AS total_xp,
            COALESCE(cp.current_level, 1) AS level
          FROM public.users u
-         LEFT JOIN connect.connected_profiles cp ON cp.user_id = u.id
+         LEFT JOIN connect.connected_profiles cp
+                ON cp.user_id = u.id AND cp.deleted_at IS NULL
          WHERE u.id = ANY($1::uuid[])`,
         [userIds]
       );

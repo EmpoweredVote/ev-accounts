@@ -338,9 +338,10 @@ function CreateTopicModal({
             title: form.title.trim(),
             question_text: form.question_text.trim(),
             short_title: form.short_title.trim() || undefined,
-            stances: form.stances
-              .map((text, i) => ({ value: i + 1, text: text.trim() }))
-              .filter((s) => s.text.length > 0),
+            // A new topic is created on the revision model — it needs a full
+            // 5-rung ladder to display in a season and to be pinnable — so send
+            // all five (the inputs are required, so none are blank).
+            stances: form.stances.map((text, i) => ({ value: i + 1, text: text.trim() })),
           }),
         },
       );
@@ -418,7 +419,8 @@ function CreateTopicModal({
             {/* Stances */}
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-2">
-                Stances
+                Stances <span className="text-red-500">*</span>{' '}
+                <span className="text-gray-400 font-normal">(all 5 required)</span>
               </label>
               <div className="flex flex-col gap-2">
                 {form.stances.map((text, i) => (
@@ -428,6 +430,7 @@ function CreateTopicModal({
                     </span>
                     <input
                       type="text"
+                      required
                       value={text}
                       onChange={(e) => setStance(i, e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-ev-yellow focus:border-ev-yellow dark:bg-gray-800 dark:border-gray-600 dark:text-white"

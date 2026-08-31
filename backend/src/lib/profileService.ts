@@ -14,6 +14,7 @@
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { pool } from './db.js';
+import { getSelectedTopics } from './compassService.js';
 
 // ---------------------------------------------------------------------------
 // Internal types
@@ -138,6 +139,11 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     .from('users')
     .select('id, display_name, created_at')
     .eq('id', userId)
+    // public.users.deleted_at is the account-level truth — soft_delete_user sets
+    // it alongside connected_profiles.deleted_at. Filtering only the profile row
+    // below would still serve a deleted account as an Inform-tier profile,
+    // display_name and all.
+    .is('deleted_at', null)
     .maybeSingle();
 
   if (userError || !user) return null;
@@ -146,8 +152,12 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
   const { data: connected, error: connectedError } = await supabaseAdmin
     .schema('connect')
     .from('connected_profiles')
-    .select('user_id, display_name, total_xp, selected_topic_ids, gem_balance_yellow, gem_balance_blue, gem_balance_red, location_consent')
+    .select('user_id, display_name, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, location_consent')
     .eq('user_id', userId)
+    // Matches the empowered_profiles read below, which has always filtered this.
+    // A public profile served by id has no requireAuth in front of it, so the
+    // deleted-account refusal has to happen here.
+    .is('deleted_at', null)
     .maybeSingle();
 
   if (connectedError) {
@@ -211,8 +221,14 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
   };
 
   // Step 8: Add Connected-and-above fields
+  //
+  // The compass now lives on inform.inform_profiles (migration 1850), so the
+  // value is read from there rather than the Connected profile. WHO SEES IT is
+  // deliberately unchanged: still Connected-and-above only. Every user has a
+  // compass to expose now, but widening a public profile field is a product
+  // decision, not a side effect of moving storage.
   if (isConnected) {
-    base.selected_topic_ids = (connected?.selected_topic_ids ?? []) as string[];
+    base.selected_topic_ids = await getSelectedTopics(userId);
   }
 
   // Step 9: Add Empowered-specific fields

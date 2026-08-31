@@ -242,16 +242,43 @@ async function awardInformYellowGem(params: AwardGemsParams): Promise<AwardGemsR
  * Tier-aware: Inform-tier users (no connected_profiles row) are routed to
  * awardInformYellowGem(). Blue/red gem requests for Inform-tier users throw
  * INFORM_TIER_NO_BLUE_RED.
+ *
+ * Deleted accounts throw ACCOUNT_DELETED at any tier, for any gem type.
  */
 export async function awardGems(params: AwardGemsParams): Promise<AwardGemsResult> {
   // Tier check: Inform-tier users (no connected_profiles row) go to inform-schema RPC.
   // Connected-tier users continue to the existing award_gems RPC.
-  const { rows: tierRows } = await pool.query<{ is_connected: boolean }>(
-    `SELECT EXISTS(
-       SELECT 1 FROM connect.connected_profiles WHERE user_id = $1
-     ) AS is_connected`,
+  //
+  // 🔴 DELETION IS ANSWERED SEPARATELY FROM TIER, AND MUST NOT BE FOLDED INTO THE
+  // EXISTS. This is the tierGuards trap in a different costume: the EXISTS reads
+  // ABSENCE as "Inform", so adding `AND deleted_at IS NULL` to it would make a
+  // deleted Connected account look Inform and quietly award it a yellow gem
+  // through the inform RPC. The right answer for a deleted account is to refuse,
+  // so it is asked as its own question — and asked of public.users, because an
+  // Inform-tier account has no connected_profiles row to carry a deleted_at.
+  //
+  // /gems/award is a service-key route naming an arbitrary user_id in the body,
+  // so requireAuth's deleted-account refusal never runs in front of it.
+  const { rows: tierRows } = await pool.query<{ is_deleted: boolean; is_connected: boolean }>(
+    `SELECT
+       EXISTS(
+         SELECT 1 FROM public.users u
+          WHERE u.id = $1 AND u.deleted_at IS NOT NULL
+       ) AS is_deleted,
+       EXISTS(
+         SELECT 1 FROM connect.connected_profiles
+          WHERE user_id = $1 AND deleted_at IS NULL
+       ) AS is_connected`,
     [params.userId]
   );
+
+  if (tierRows[0]?.is_deleted === true) {
+    throw Object.assign(
+      new Error('Account has been deleted'),
+      { code: 'ACCOUNT_DELETED' }
+    );
+  }
+
   const isConnected = tierRows[0]?.is_connected === true;
 
   if (!isConnected) {

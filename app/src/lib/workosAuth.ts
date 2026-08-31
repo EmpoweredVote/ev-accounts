@@ -40,6 +40,12 @@ export const workosEnabled = Boolean(clientId);
  */
 export const authkitOnly = workosEnabled && import.meta.env.VITE_AUTHKIT_ONLY === 'true';
 
+// VITE_EMBEDDED_AUTH turns on our own headless form instead of the hosted
+// AuthKit redirect. Requires VITE_WORKOS_CLIENT_ID (workosEnabled) so we never
+// lock everyone out of a build that has no WorkOS at all.
+export const embeddedAuthEnabled =
+  workosEnabled && import.meta.env.VITE_EMBEDDED_AUTH === 'true';
+
 const PROVIDER_KEY = 'ev_auth_provider';
 
 export function hasWorkosSession(): boolean {

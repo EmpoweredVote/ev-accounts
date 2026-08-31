@@ -1,0 +1,463 @@
+{
+  "topic_key": "religious-freedom",
+  "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+  "target_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+  "target_version": 2,
+  "chair": 1,
+  "chair_text_v2": "prohibit religious exemptions from civil rights and anti-discrimination laws.",
+  "generated_for": "Season-2 carry re-audit of CA_0030 substantive v2",
+  "decision": "re-source first, blank if none (2026-08-29, Chris Andrews)",
+  "note": "flags are lexical heuristics, not verdicts; read sources before acting. names_instrument mirrors the audit-chair-evidence lexical floor (a ceiling on the debt, not a verified count). rows[] is shaped so this file doubles as audit-chair-evidence --check input.",
+  "summary": {
+    "total": 25,
+    "axis_orphans": 5,
+    "thin_no_instrument": 9,
+    "likely_carry": 11
+  },
+  "rows": [
+    {
+      "politician_id": "960e5acd-c847-4c8b-9a00-980483647849",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Jared Huffman",
+      "flags": {
+        "has_axisB_exemption_evidence": false,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): separation-only; find a religious-exemptions stance or blank",
+      "current_reasoning": "Co-founded the Congressional Freethought Caucus to promote the separation of church and state and the use of evidence and reason in public policy. Publicly identifies as a humanist and has stated he does not believe in God. Named Humanist of the Year 2020 by the American Humanist Association. His documented view is strict separation of religion from public institutions.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jared_Huffman",
+        "https://www.ontheissues.org/CA/Jared_Huffman_Principles_+_Values.htm"
+      ]
+    },
+    {
+      "politician_id": "b658dc6c-aa28-49d8-9481-61ce64aeb9a2",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Jennifer Booker",
+      "flags": {
+        "has_axisB_exemption_evidence": false,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): separation-only; find a religious-exemptions stance or blank",
+      "current_reasoning": "Her campaign page lists \"explicit protection of human rights and core legal principles such as separation of powers, due process, and separation of church and state\" among her priorities, directly matching the scale's strict-separation chair.",
+      "sources": [
+        "https://www.jenbooker.com/about-1"
+      ]
+    },
+    {
+      "politician_id": "d36fc2e8-f76a-4f52-bc82-1ea16dacfd83",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "John Croisant",
+      "flags": {
+        "has_axisB_exemption_evidence": false,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): separation-only; find a religious-exemptions stance or blank",
+      "current_reasoning": "States he personally is a Christian but advocates \"separation of church and state\" and opposes government favoritism toward religions or promoting beliefs in public schools.",
+      "sources": [
+        "https://www.croisantforcongress.com/issues"
+      ]
+    },
+    {
+      "politician_id": "27e19bcf-9501-48b5-bc08-34097fcefc70",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Keith B. Goodenough",
+      "flags": {
+        "has_axisB_exemption_evidence": false,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): separation-only; find a religious-exemptions stance or blank",
+      "current_reasoning": "In his July 2026 capcity.news Q&A, Goodenough cited as a core problem that elected officials \"ignore their oath and advance their religious dogma in violation of constitutional principles\" — a strict separationist objection to religious influence overriding constitutional governance. Corroborated by his 2008 OnTheIssues.org position opposing public funding for church-run welfare services, together matching stance 1 (strictly separate religion from public institutions).",
+      "sources": [
+        "https://capcity.news/community/elections/2026/07/06/election-qa-keith-goodenough-for-us-house-of-representatives/",
+        "https://www.ontheissues.org/Senate/Keith_Goodenough.htm"
+      ]
+    },
+    {
+      "politician_id": "60d485a8-17c9-4092-a666-b06c011d66e8",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Rachel Fetty Anderson",
+      "flags": {
+        "has_axisB_exemption_evidence": false,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": true
+      },
+      "disposition": "RE-SOURCE (axis-orphan): separation-only; find a religious-exemptions stance or blank",
+      "current_reasoning": "Her Free Speech plank states that federal and state officials are \"acting in direct violation of the Constitution to establish specific religious texts in schools and funding religious institutions,\" reflecting a strict-separation view that opposes public funding of or entanglement with religion.",
+      "sources": [
+        "https://www.fettyandersonforsenate.com/issues"
+      ]
+    },
+    {
+      "politician_id": "ec0cfeae-a512-4ce2-a8f2-a25b00112b9b",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Abdul El-Sayed",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "El-Sayed has stated a commitment to 'strict separation of church and state' (OTI, Nov 2017). As a Muslim American running on a secular platform, he opposes religious exemptions that override civil rights laws, consistent with his 'Hard-Core Liberal' rating.",
+      "sources": [
+        "https://www.ontheissues.org/senate/Abdul_El-Sayed.htm"
+      ]
+    },
+    {
+      "politician_id": "48593795-6e01-4da0-99b3-ef522b906652",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Andy Ellis",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "The Green Party platform affirms the constitutionally mandated separation of government and religion and calls for removing religious symbols from government buildings, restoring the pre-1954 Pledge of Allegiance, opposing faith-based government initiatives, and prohibiting religious justifications from overriding civil rights laws. This aligns with scale value 1 (strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws).",
+      "sources": [
+        "https://www.gp.org/social_justice"
+      ]
+    },
+    {
+      "politician_id": "4fbdecd3-3161-49da-a610-9b9312e72507",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Janice D. Schakowsky",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Rated 7% by the Christian Coalition; opposes faith-based tax breaks, school prayer initiatives, and stated 'religious freedom means no religious registry'; consistent secular stance opposing religious exemptions in civil institutions. Aligns with stance 1: strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws.",
+      "sources": [
+        "https://www.ontheissues.org/IL/Jan_Schakowsky.htm"
+      ]
+    },
+    {
+      "politician_id": "eef42ac4-5573-47c7-8b41-f2f1e0769aec",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Jay Jones",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Jones's documented LGBTQ and civil rights record consistently places anti-discrimination protections above religious exemption claims. He supported transgender-inclusive school policies, backed bills prohibiting discrimination in health coverage based on gender identity, opposed the \"gay panic\" murder defense, and his AG platform prioritizes creating a Civil Rights Division to protect Virginians' basic rights. No statements supporting broad religious exemptions from anti-discrimination law were found.",
+      "sources": [
+        "https://www.washingtonblade.com/2025/09/25/va-statewide-candidates-differ-widely-on-lgbtq-rights/",
+        "https://ballotpedia.org/Jay_Jones_(Virginia)"
+      ]
+    },
+    {
+      "politician_id": "8a0696c4-5536-4309-9d02-b0ebb61de56b",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Kelly Morrison",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Morrison is a member of the Congressional Freethought Caucus, which was founded on principles of strict separation of church and state and opposing religious exemptions from civil rights laws; her membership in both this and the Equality Caucus is consistent with value=1 on this scale.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kelly_Morrison"
+      ]
+    },
+    {
+      "politician_id": "60f2dcfe-1669-4dee-9c32-a285f4756569",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Melissa Bean",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Rated 100% by Americans United for Separation of Church and State (AU); opposed school prayer. 2026 campaign pledges to protect LGBTQ+ civil rights in housing, employment, and healthcare with no religious exemption carve-outs mentioned. Her record consistently prioritizes strict separation of religion from public institutions and opposing religious exemptions from civil rights protections.",
+      "sources": [
+        "https://www.ontheissues.org/IL/Melissa_Bean.htm",
+        "https://www.melissabeanforcongress.com/issues"
+      ]
+    },
+    {
+      "politician_id": "8fad496d-d92d-4f68-bc25-93102a4612e8",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Nydia M. Velázquez",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Velázquez is rated 8% by the Christian Coalition, opposes school prayer, opposes religious organization tax breaks, and supports court review of religious references in public institutions. Her record reflects strict separation of religion from public institutions with no religious exemptions from civil rights law.",
+      "sources": [
+        "https://www.ontheissues.org/NY/Nydia_Velazquez.htm"
+      ]
+    },
+    {
+      "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Rob Bonta",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "Bonta has consistently opposed broad religious exemptions that conflict with civil rights protections. He defended California's elimination of nonmedical vaccine exemptions, urged narrowing the religious exemption for contraceptive coverage, and has not granted religious organizations broad autonomy to override anti-discrimination laws. His record prioritizes civil rights enforcement over religious exemption claims.",
+      "sources": [
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-national-effort-support-fundamental-right-lgbtq",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-multistate-coalition-support-lgbtq-americans-rights"
+      ]
+    },
+    {
+      "politician_id": "327298e7-e42c-4dfa-9f1d-55cfd48e0659",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Taylor J. Paden",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": false,
+        "separation_only": false
+      },
+      "disposition": "RE-SOURCE (thin): confirm chair-1 evidence names a vote/bill/act or blank",
+      "current_reasoning": "His platform calls for repealing Utah laws that restrict LGBTQ rights and expanding sanctuary protections; his framing explicitly opposes religious leaders having special policy influence ('this state belongs to all of us, not just religious leaders and tech executives'). Aligns with value 1 (strictly separate religion from public institutions; prohibit religious exemptions from civil rights laws).",
+      "sources": [
+        "https://www.padenforutah.com/platform",
+        "https://www.padenforutah.com/about"
+      ]
+    },
+    {
+      "politician_id": "8d4d216a-2d44-4565-b605-14b24e31207b",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Betty McCollum",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "McCollum opposes religious displays in public spaces, voted to prohibit religion-based immigration restrictions (NO BAN Act co-sponsor), and has a consistent record of rejecting faith-based exemptions from civil rights laws. Her stance aligns with strict separation of religion from public institutions.",
+      "sources": [
+        "https://www.ontheissues.org/House/Betty_McCollum_Civil_Rights.htm",
+        "https://www.ontheissues.org/House/Betty_McCollum.htm"
+      ]
+    },
+    {
+      "politician_id": "2763b8c4-a297-4e6e-9aee-5d2e7784f3d8",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Daniel Biss",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": true,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Biss's VoteMatch answer 'strongly opposes keeping God in public' institutions. He sponsored legislation banning conversion therapy for LGBTQ+ youth even when faith-based organizations objected. His positions consistently prioritize civil rights protections over religious exemptions. Stance 1 (strictly separate religion from all public institutions; no religious exemptions from civil rights laws) best matches his documented record.",
+      "sources": [
+        "https://www.ontheissues.org/Daniel_Biss.htm",
+        "https://www.ontheissues.org/Governor/Daniel_Biss_Civil_Rights.htm"
+      ]
+    },
+    {
+      "politician_id": "a89982a7-85d2-421f-9355-c255b898899c",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Drew Cox",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Cox's platform commits to fighting to pass the Equality Act, a bill specifically known for limiting the use of religious-liberty defenses (e.g., RFRA) against civil-rights and anti-discrimination claims, indicating a stance that civil rights protections should not be overridden by religious exemptions.",
+      "sources": [
+        "https://www.drewcox.org/freedom-and-autonomy"
+      ]
+    },
+    {
+      "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Joseline Peña-Melnyk",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Opposed religious exemptions that override anti-discrimination protections; voted against bills allowing discrimination against LGBTQ+ individuals on religious grounds.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ]
+    },
+    {
+      "politician_id": "a1fc524b-7c90-43c0-83a7-c76664293913",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Luz Maria Rivas",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Consistent pattern of voting for LGBTQ anti-discrimination protections without religious exemptions, including bills protecting gender-affirming care from out-of-state legal challenges. Supported prohibiting employer discrimination for reproductive choices (AB 569) and gender-neutral retail requirements. Her 98/100 progressive Courage Score reflects prioritizing civil rights over religious exemptions.",
+      "sources": [
+        "https://meetthefreshmen.marathonstrategies.com/meet-the-freshmen/824/luz-maria-rivas/",
+        "https://progressivevotersguide.com/california/2024/general/luz-rivas?language_content_entity=en",
+        "https://couragescore.org/representative/luz-rivas/"
+      ]
+    },
+    {
+      "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Mark Warner",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Warner cosponsored the Equality Act (S.1006, 115th Congress 2017; S.1503, 119th Congress 2025) — legislation that explicitly limits religious freedom exemptions from civil rights protections for LGBTQ individuals. He sponsored S.1114 (115th Congress, 2017) to nullify a Trump executive order 'laying a foundation for discrimination against LGBTQ individuals, women, religious minorities, and others under the pretext of religious freedom.' His record is consistently anti-discrimination over broad religious exemption.",
+      "sources": [
+        "https://www.congress.gov/bill/115th-congress/senate-bill/1006/cosponsors",
+        "https://www.congress.gov/bill/115th-congress/senate-bill/1114",
+        "https://www.congress.gov/bill/119th-congress/senate-bill/1503/text"
+      ]
+    },
+    {
+      "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Ricardo Lara",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Lara authored SB 31 (2017), the California Religious Freedom Act, restricting law enforcement from assisting in creating religious registries. SB 1146 (2015) required religious postsecondary institutions to publicly disclose anti-discrimination exemptions. SB 323 (2013) removed tax exemptions from discriminatory youth organizations. Consistently prioritizes anti-discrimination protections over religious organizational autonomy.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB31",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB1146",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140SB323"
+      ]
+    },
+    {
+      "politician_id": "6ffb9093-7489-4197-aebc-67065c239fc3",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Suzanne Bonamici",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Bonamici opposes using religious freedom as basis to deny services to LGBTQ+ people; voted YES on Equality Act (H.R. 5, 2021). https://clerk.house.gov/evs/2021/roll060.xml",
+      "sources": [
+        "https://clerk.house.gov/evs/2021/roll060.xml"
+      ]
+    },
+    {
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Sydney Kamlager-Dove",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Kamlager-Dove cosponsored the Equality Act (H.R. 15, 119th Congress), which prohibits discrimination based on sexual orientation and gender identity and explicitly excludes RFRA carve-outs, making civil rights protections non-negotiable over religious exemption claims. She also cosponsored the Global Respect Act (H.R. 6151), further reflecting a consistent prioritization of anti-discrimination protections over religious accommodation frameworks.",
+      "sources": [
+        "https://www.congress.gov/bill/119th-congress/house-bill/15",
+        "https://www.congress.gov/bill/118th-congress/house-bill/6151"
+      ]
+    },
+    {
+      "politician_id": "3a39c313-b994-447b-b3fd-592e4994769b",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Ted W. Lieu",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Authored California's conversion therapy ban despite religious objections. Supports the Equality Act prohibiting discrimination based on sexual orientation and gender identity without broad religious exemptions. Cosponsored H.Res.1058 (119th Congress) recognizing the duty to codify transgender rights. Consistently prioritizes civil rights over religious exemptions.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ted_Lieu",
+        "https://www.congress.gov/member/ted-lieu/L000582",
+        "https://justfacts.votesmart.org/candidate/political-courage-test/1516/ted-lieu"
+      ]
+    },
+    {
+      "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "chair_after": 1,
+      "politician_name": "Tim Kaine",
+      "flags": {
+        "has_axisB_exemption_evidence": true,
+        "has_axisA_separation_evidence": false,
+        "names_instrument_lexical": true,
+        "separation_only": false
+      },
+      "disposition": "LIKELY CARRY: exemption evidence + named instrument",
+      "current_reasoning": "Kaine cosponsored the Equality Act in the 118th (S.5) and 119th Congresses (S.1503), which explicitly limits religious exemptions as a defense against anti-discrimination protections for LGBTQ people. While personally Catholic, he has consistently voted to prioritize anti-discrimination protections over broad religious exemptions. He also vocally opposed Betsy DeVos's education agenda, which included religious school carve-outs from accountability requirements. His record places him firmly at the anti-discrimination end of this axis.",
+      "sources": [
+        "https://www.congress.gov/bill/118th-congress/senate-bill/5/text",
+        "https://www.congress.gov/bill/119th-congress/senate-bill/1503/text",
+        "https://ontheissues.org/Senate/Tim_Kaine.htm"
+      ]
+    }
+  ]
+}

@@ -25,8 +25,19 @@
  * `--check` expects `{"rows": [{politician_id, topic_id, chair_after}]}`. A bare JSON ARRAY, or rows
  * keyed `value` instead of `chair_after`, yields ZERO pairs and therefore a vacuous OK — so write the
  * campaign's `written-<batch>.json` in that exact shape and it doubles as this gate's input.
+ *
+ * ⚠ PATHS.
+ *   · The `--check` argument is resolved UNDER `backend/data/stance-retirement/` unless it already
+ *     starts with `data/` (a leading `backend/` is stripped first). So `--check foo.json` reads
+ *     `backend/data/stance-retirement/foo.json`, NOT `./foo.json` — pass a `data/...`-rooted path to
+ *     point elsewhere. This is a quirk of where the rollback fixtures live, not a general file arg.
+ *   · The connection string comes from `process.env.DATABASE_URL` first, then from `backend/.env`
+ *     resolved RELATIVE TO THIS SCRIPT (so cwd does not matter and no OS-specific absolute path is
+ *     baked in). The DB modes (`--check`, `--worklist`, default) need it; `--csv` never touches the
+ *     database.
  */
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 
 const argv = process.argv.slice(2);
@@ -149,8 +160,19 @@ if (CSV) {
   process.exit(0);
 }
 
-const env = fs.readFileSync('C:/EV-Accounts/backend/.env', 'utf8');
-const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^DATABASE_URL=/, '').trim();
+// The environment wins; otherwise read backend/.env RELATIVE TO THIS SCRIPT. This previously read
+// 'C:/EV-Accounts/backend/.env', which exists on exactly one machine and threw ENOENT on every
+// macOS/Linux checkout — the same fix already applied in scripts/apply-migration-file.mjs and
+// scripts/030-run-sweep.mjs.
+let url = process.env.DATABASE_URL;
+if (!url) {
+  const envPath = new URL('../.env', import.meta.url);   // .../backend/.env
+  let env;
+  try { env = fs.readFileSync(envPath, 'utf8'); }
+  catch { console.error(`refusing: DATABASE_URL is not set and ${fileURLToPath(envPath)} is not readable`); process.exit(2); }
+  url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l))?.replace(/^DATABASE_URL=/, '').trim();
+}
+if (!url) { console.error('refusing: DATABASE_URL is not set (backend/.env)'); process.exit(2); }
 const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: false } });
 
 const rows = [];

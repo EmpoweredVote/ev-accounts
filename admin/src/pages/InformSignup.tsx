@@ -1,12 +1,17 @@
 import { useState, FormEvent } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
+import { useAuthStore } from '../store/authStore';
+import { embeddedAuthEnabled, loginWithPassword, verifyEmailCode } from '../lib/workosAuth';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
   : '/api';
 
 export default function InformSignup() {
+  const navigate = useNavigate();
+  const { setAuth } = useAuthStore();
+
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +22,12 @@ export default function InformSignup() {
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [resendSent, setResendSent] = useState(false);
+
+  // Embedded WorkOS flow (flag-gated): a brand-new account's email is always
+  // unverified, so the signup response routes straight into the same
+  // on-page code step Login.tsx uses, instead of the "check your email" card.
+  const [codeStep, setCodeStep] = useState(false);
+  const [code, setCode] = useState('');
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -30,6 +41,37 @@ export default function InformSignup() {
       body: JSON.stringify({ email }),
     }).catch(() => {});
     setResendSent(true);
+  }
+
+  // Shared post-login continuation (mirrors Login.tsx's finishLogin): hydrate
+  // identity, persist the token, honor a validated redirect target or land on
+  // /profile.
+  async function finishLogin(token: string, redirectTarget: string | null, fallbackEmail = '') {
+    const meRes = await fetch(`${API_BASE}/account/me`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (!meRes.ok) {
+      throw new Error('Failed to load account information.');
+    }
+
+    const meData = await meRes.json();
+
+    setAuth(token, {
+      id: meData.id ?? '',
+      email: meData.email ?? fallbackEmail,
+      isAdmin: meData.is_admin ?? false,
+      tier: meData.tier ?? 'inform',
+      completedOnboarding: meData.completed_onboarding ?? false,
+    });
+
+    sessionStorage.setItem('admin_token', token);
+
+    if (redirectTarget) {
+      window.location.href = redirectTarget;
+    } else {
+      navigate('/profile');
+    }
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -52,7 +94,25 @@ export default function InformSignup() {
       });
 
       if (res.status === 201) {
-        setSuccess(true);
+        if (embeddedAuthEnabled) {
+          // Brand-new account, unverified email: this always comes back
+          // pending. Route straight into the on-page code step instead of
+          // the "check your email" card.
+          const result = await loginWithPassword(email, password);
+          if (result.status === 'authenticated') {
+            await finishLogin(result.token, validRedirect, email);
+          } else if (result.status === 'email_verification_required') {
+            setCodeStep(true);
+          } else {
+            // mfa_required: the code step calls verify-email, which uses the
+            // email-verification grant and cannot satisfy an MFA challenge —
+            // advancing there would just fail on submit. MFA sign-in isn't
+            // wired up yet, so stop here with an explanation instead.
+            setError("Multi-factor sign-in isn't available yet. Please contact support.");
+          }
+        } else {
+          setSuccess(true);
+        }
         return;
       }
 
@@ -76,6 +136,77 @@ export default function InformSignup() {
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  async function handleCodeSubmit(e: FormEvent) {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      const token = await verifyEmailCode(code);
+      await finishLogin(token, validRedirect, email);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Verification failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  if (codeStep) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
+        <div className="mb-8 text-center space-y-1">
+          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
+            empowered.vote
+          </h1>
+        </div>
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-ev-yellow/30 shadow-sm p-6 w-full max-w-sm space-y-5">
+          <span className="inline-block px-3 py-1 rounded-full bg-ev-yellow text-ev-black text-xs font-semibold tracking-wide">
+            Inform Account
+          </span>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Enter your code</h2>
+
+          {error && (
+            <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm">
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleCodeSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Verification code
+              </label>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1.5">
+                Enter the 6-digit verification code to continue.
+              </p>
+              <input
+                id="code"
+                type="text"
+                required
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                minLength={6}
+                maxLength={6}
+                pattern="[0-9]{6}"
+                value={code}
+                onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                placeholder="123456"
+                className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-yellow focus:border-transparent text-center tracking-[0.5em]"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-3 px-4 bg-ev-yellow hover:bg-ev-yellow/90 disabled:opacity-60 text-ev-black font-semibold rounded-xl text-sm transition-colors"
+            >
+              {isSubmitting ? 'Verifying…' : 'Verify'}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
   }
 
   if (success) {

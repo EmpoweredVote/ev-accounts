@@ -40,6 +40,12 @@ export const workosEnabled = Boolean(clientId);
  */
 export const authkitOnly = workosEnabled && import.meta.env.VITE_AUTHKIT_ONLY === 'true';
 
+// VITE_EMBEDDED_AUTH turns on our own headless form instead of the hosted
+// AuthKit redirect. Requires VITE_WORKOS_CLIENT_ID (workosEnabled) so we never
+// lock everyone out of a build that has no WorkOS at all.
+export const embeddedAuthEnabled =
+  workosEnabled && import.meta.env.VITE_EMBEDDED_AUTH === 'true';
+
 const PROVIDER_KEY = 'ev_auth_provider';
 
 export function hasWorkosSession(): boolean {
@@ -148,4 +154,47 @@ export async function workosSignOut(): Promise<void> {
   } catch {
     // No SDK session — nothing to end on the WorkOS side.
   }
+}
+
+/**
+ * Embedded login (decision 0002 headless variant, gated on embeddedAuthEnabled):
+ * our own email/password form posts straight to the backend instead of
+ * redirecting to the hosted AuthKit page. A pending status means the backend
+ * needs a follow-up step (email verification code, or MFA) before it will
+ * issue a token — the caller switches to the on-page code step.
+ */
+type EmbeddedResult =
+  | { status: 'authenticated'; token: string }
+  | { status: 'email_verification_required' }
+  | { status: 'mfa_required' };
+
+export async function loginWithPassword(email: string, password: string): Promise<EmbeddedResult> {
+  const res = await fetch(`${API_BASE}/auth/workos/authenticate`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+  });
+  const body = await res.json().catch(() => ({}));
+  if (res.status === 401) throw new Error(body.message || 'Invalid email or password');
+  if (!res.ok) throw new Error(body.message || 'Sign-in failed');
+  if (body.access_token) {
+    markWorkosSession();
+    return { status: 'authenticated', token: body.access_token };
+  }
+  return { status: body.status };
+}
+
+/** Completes the pending email-verification (or MFA) step of loginWithPassword. */
+export async function verifyEmailCode(code: string): Promise<string> {
+  const res = await fetch(`${API_BASE}/auth/workos/verify-email`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code }),
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(body.message || 'Verification failed');
+  markWorkosSession();
+  return body.access_token as string;
 }

@@ -272,7 +272,7 @@ export async function importCompassCalibrations(params: {
 
   // Save selected topics if provided and valid
   if (params.selectedTopics && params.selectedTopics.length > 0) {
-    await saveSelectedTopics(params.accessToken, params.userId, params.selectedTopics);
+    await saveSelectedTopics(params.userId, params.selectedTopics);
   }
 
   return { imported: params.calibrations.length, onboarding_complete: shouldCompleteOnboarding };
