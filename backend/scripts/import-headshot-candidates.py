@@ -25,6 +25,7 @@ WHAT IT GETS RIGHT THAT A NAIVE IMPORTER DOES NOT
 USAGE (from C:/EV-Accounts/backend):
   py scripts/import-headshot-candidates.py --dry-run
   py scripts/import-headshot-candidates.py --exclude "Some Person"
+  py scripts/import-headshot-candidates.py --replace   # repair missing/placeholder objects
 """
 import argparse
 import hashlib
@@ -54,6 +55,10 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--exclude", nargs="*", default=[], help="names to skip")
 ap.add_argument("--only", nargs="*", default=[], help="import only these names")
 ap.add_argument("--dry-run", action="store_true")
+ap.add_argument("--replace", action="store_true",
+                help="repair a row that already has an image: re-upload and REPOINT it. Use only "
+                     "when the existing object is missing or a placeholder -- verify with "
+                     "scripts/verify-rendered-photo-urls.mjs first")
 ap.add_argument("--max-upscale", type=float, default=1.0,
                 help="enlarge up to this factor to reach 600x750; beyond it, store at native "
                      "cropped size instead (default 1.0 = never enlarge)")
@@ -79,7 +84,13 @@ for c in cands:
         problems.append(f"{c['name']}: no politician_id")
         continue
     cur.execute("SELECT 1 FROM essentials.politician_images WHERE politician_id = %s", (pid,))
-    if cur.fetchone():
+    has_row = cur.fetchone() is not None
+    # An existing image row normally means DONE, so a re-run is a no-op. But "has a row" is not
+    # the same as "has a picture": the row can point at an object that is not in the bucket, or
+    # at a placeholder. Seven Massachusetts legislators held a row AND a photo_custom_url for a
+    # file that returns NoSuchKey. --replace is for repairing exactly those; it is never the
+    # default, because overwriting a good portrait by accident is worse than skipping.
+    if has_row and not args.replace:
         skipped += 1
         print(f"  skip     {c['name']:<26} already has an image row")
         continue
@@ -155,11 +166,20 @@ for c in cands:
             failed += 1
             problems.append(f"{c['name']}: upload HTTP {up.status_code} {up.text[:100]}")
             continue
-        cur.execute(
-            """INSERT INTO essentials.politician_images (politician_id, url, type, photo_license)
-               SELECT %s, %s, 'default', %s
-                WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images WHERE politician_id = %s)""",
-            (pid, final, c["license"], pid))
+        if has_row and args.replace:
+            # REPOINT the existing row rather than inserting beside it. Two rows for one person
+            # would leave the read paths picking whichever sorts first -- possibly the dead one.
+            cur.execute(
+                """UPDATE essentials.politician_images
+                      SET url = %s, photo_license = %s
+                    WHERE politician_id = %s""",
+                (final, c["license"], pid))
+        else:
+            cur.execute(
+                """INSERT INTO essentials.politician_images (politician_id, url, type, photo_license)
+                   SELECT %s, %s, 'default', %s
+                    WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images WHERE politician_id = %s)""",
+                (pid, final, c["license"], pid))
         # 🔴 CREATING THE IMAGE ROW DOES NOT CHANGE WHAT A VOTER SEES.
         # The address-search path (districtQueries.ts, DISTRICT_SELECT_FIELDS) builds its
         # photo from COALESCE(photo_custom_url, photo_origin_url, '') and NEVER READS
@@ -167,10 +187,16 @@ for c in cands:
         # copy has to be written to photo_custom_url or the person keeps rendering from
         # whatever host they were hotlinked to. Florida's 155 legislators were imported
         # without this and stayed on the chamber hotlink -- the exact thing the wave removed.
-        cur.execute(
-            "UPDATE essentials.politicians SET photo_custom_url = %s "
-            " WHERE id = %s AND btrim(coalesce(photo_custom_url, '')) = ''",
-            (final, pid))
+        if args.replace:
+            # The stale value is the thing being repaired, so it must be overwritten, not
+            # preserved by an "only if empty" guard.
+            cur.execute("UPDATE essentials.politicians SET photo_custom_url = %s WHERE id = %s",
+                        (final, pid))
+        else:
+            cur.execute(
+                "UPDATE essentials.politicians SET photo_custom_url = %s "
+                " WHERE id = %s AND btrim(coalesce(photo_custom_url, '')) = ''",
+                (final, pid))
         # photo_origin_url records the SOURCE PAGE (provenance), not the image URL.
         # It is also rewritten when it currently holds a RAW IMAGE URL: that value is the
         # defect this pipeline exists to clear, and an IS NULL guard alone silently skipped
