@@ -1,7 +1,7 @@
 # Two stale rosters, found by a headshot repair — Monterey Park CA and Lawrence County IN
 
 **Found:** 2026-08-30, while repairing 10 officials whose photo was missing from our own bucket.
-**Status:** Monterey Park ✅ FIXED by `CC_0020`. Lawrence County ⏸ deliberately unwritten (see below).
+**Status:** Monterey Park ✅ FIXED by `CC_0020` + `CC_0023` (boundaries). Lawrence County ⏸ deliberately unwritten (see below).
 Neither was a photo problem; both are occupancy/modelling problems.
 **Why it surfaced here:** going to a body's own roster for a portrait forces a read of who that body
 says is sitting. The headshot pass is a redundancy check on occupancy, and it caught two bodies.
@@ -116,8 +116,14 @@ District 1 Thomas Wong · District 2 **Elizabeth Yang** (new) · District 3 Jose
   place `geo_id`, as do ≥5 other CA cities. District rows WITHOUT geometry would make every seat
   **unreachable from an address**, strictly worse than the status quo. Verified after applying: a
   Monterey Park point returns all five, and the geofence polygon for 0648914 is present.
-- ▶️ **STILL OPEN: load Monterey Park's real council district boundaries.** Until then all five
-  seats answer citywide.
+- ✅ **BOUNDARIES LOADED by `CC_0023` (2026-08-31).** Source: the city's own ArcGIS Hub, reached
+  through the `operationalLayers` of its published *City Council Districts* web map (item
+  `d694e535a8d64fe395e2a7c5eff2afa2`) — the Hub item is a **Web Map, not a feature layer**, so its
+  `/data?f=json` has to be read to get the FeatureServer URL. Five polygons, populations
+  12,084–12,432. An interior point in each district now returns **exactly one** council member.
+  🔴 The layer's `CityCouncilMember` field **independently confirmed `CC_0020`'s seating** —
+  1 Wong, 2 Yang, 3 Sanchez, 4 Lo, 5 Ngo — against the council web page, a different source.
+  Recorded in `backend/data/arcgis_sources.json` (the file's first CA entry).
 
 ---
 
