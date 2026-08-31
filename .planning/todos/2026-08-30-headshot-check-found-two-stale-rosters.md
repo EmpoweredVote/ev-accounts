@@ -22,9 +22,38 @@ The county's own roster says **Larry Arnold**:
 ⚠ **A web search said Lytton still held the seat.** The body's own roster said otherwise. Same rule
 as Open States: a third-party index is a DETECTOR, not an ORACLE.
 
-**No headshot was uploaded for Lytton.** Putting a portrait on a wrong officeholder would have made
-the error look more authoritative, not less. What is needed is `essentials.seat_officeholder` for
-Arnold — blocked on a term start date the roster does not publish.
+**No headshot was uploaded for Lytton.** Putting a portrait on a wrong officeholder would have
+made the error look more authoritative, not less.
+
+### DECISION 2026-08-30 (Cantrell): WRITE NOTHING YET.
+
+🔴 **The roster is not enough, and the first read of it was too confident.** Further evidence:
+
+- Larry Arnold **filed 2026-01-16** and **won the Republican primary 2026-05-05** for District 4
+  (57.37%, 331 votes) over Brian Prince. **A primary win seats nobody** — the general is Nov 2026.
+- **Jeffrey Lytton ran in the DISTRICT 3 primary in 2026** and lost to David Holmes (52.84%).
+- No source says Arnold was appointed, or when. WBIW's primary-results article marks no incumbents.
+  (The only 2026 council caucus WBIW reports is an **At-Large** vacancy after Scott Smith died
+  2025-12-28 — a different seat.)
+
+So there are two readings and the evidence does not separate them:
+1. Arnold was caucused into D4 at some point and the roster is current — supported by Lytton
+   running in **D3** rather than D4.
+2. The county updated its Members list early to show the primary winner, and **Lytton holds the
+   seat until 2026-12-31**.
+
+🔴 **WHY THAT BLOCKS THE WRITE.** Closing Lytton's term needs a `term_end`, and
+`office_terms` has `start_precision` but **NO `end_precision`** — so any date written here is an
+unqualified claim a later reader will take as fact. Seating Arnold from a placeholder would
+assert Lytton left on 2026-08-29, which no source supports.
+
+**The one question to settle:** did Arnold take District 4 by caucus, and on what date? The county
+clerk can answer it directly; council minutes would show the meeting he first attended. Failing
+that, the **November 2026 general resolves it**, and the winner can be seated from a real
+**2027-01-01**.
+
+⚠ Until then Lytton stays on display and is probably wrong. That was chosen deliberately over
+inventing a date.
 
 Note the county publishes **no member photos at all**, so this body has no portrait source.
 
