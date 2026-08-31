@@ -105,6 +105,29 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // place is declared here but is NOT run in wave 1; waves 2 and 3 run it alone
   // so a city mistake never forces a re-run of 170 seats.
   NC: new Set(['sldu', 'sldl', 'place']),
+  // FL (Knight Foundation program, wave FL-1). sldu/sldl: Florida's operative
+  // legislative maps are the 2022 apportionment adopted after the 2020 census.
+  // Florida redistricts decennially, so the next legislative remap is 2032; only the
+  // CONGRESSIONAL map was litigated after 2022 and the House/Senate plans were not
+  // disturbed. TIGER 2024 carries LSY=2024 on both layers, i.e. the maps used for the
+  // 2024 elections, which are still current.
+  // Counts MEASURED against raw TIGER 2024 FIPS 12 on 2026-08-28 by reading the .dbf
+  // inside each zip directly: sldl 120, sldu 40, ZERO 'ZZZ' pseudo-districts in either
+  // file, so skipDistrictCodes removes nothing here.
+  // Florida is SINGLE-MEMBER in both chambers, so polygon count EQUALS seat count —
+  // unlike AZ/WA (and ND/SD in later Knight waves) where one sldl polygon covers two
+  // seats. Asserted in the FL pre-flight block below.
+  // 🔴 sldl and sldu GEOIDs BOTH start at 12001 — the geo_id collision is TOTAL for
+  // districts 1-40 ('12040' is both HD-40 and SD-40). Every downstream join must pair
+  // geo_id with mtfcc/district_type; see verify-fl-tiger-import.sql.
+  // county is EXCLUDED: all 67 FL counties already exist with geo_id and carry offices
+  // in later Knight waves — do not disturb them.
+  // place: 956 raw records = 411 G4110 incorporated municipalities + 545 G4210 CDPs.
+  // The G4110 filter in the pre-flight (same as OR/MD/VA/NV/AZ/WA/CO/NC) excludes the
+  // CDPs, so the 545 fake-municipality rows are never counted, let alone written.
+  // cousub is deliberately EXCLUDED — Florida is not a strong-MCD state, so its county
+  // subdivisions are statistical like CA/WA/CO. Do NOT add FL to COUSUB_FUNCSTAT_STATES.
+  FL: new Set(['sldu', 'sldl', 'place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -168,6 +191,21 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   // city resolves to GEOID 0816000, which is the geo_id the city district row keys on.
   CO: ['Colorado Springs city', 'Manitou Springs city', 'Fountain city',
        'Monument town', 'Green Mountain Falls town'],
+  // The four Knight Foundation Florida jurisdictions' municipalities, plus Palm Beach
+  // County's seat and the town it is named for. Every string verified present in raw
+  // TIGER 2024 FIPS 12 place (all G4110) by direct .dbf probe 2026-08-28 before wiring
+  // this gate — Bradenton city resolves to GEOID 1207950, Tallahassee city 1270600,
+  // Miami city 1245000, West Palm Beach city 1276600, Palm Beach town 1254025.
+  // ⚠ THIS GATE IS A SUBSTRING MATCH (`n.includes(city)`), SO IT IS WEAK FOR FL.
+  // 'Miami city' is satisfied by 'West Miami city', which FL also contains — so a run
+  // in which the real Miami city record was missing would still pass this gate. The
+  // gate is kept because it still catches a wholesale wrong-state or wrong-vintage
+  // file. The load-bearing check for the Knight municipalities is the EXACT geo_id
+  // query at the bottom of scripts/verify-fl-tiger-import.sql, which asserts
+  // 1207950 / 1245000 / 1254025 / 1270600 / 1276600 by id. Do not treat a green
+  // STATE_CITY_ASSERTIONS line as proof that Miami loaded.
+  FL: ['Bradenton city', 'Tallahassee city', 'Miami city', 'West Palm Beach city',
+       'Palm Beach town'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -1431,8 +1469,56 @@ async function processLayer(
     }
   }
 
+  // ── FL MTFCC pre-flight assertion (Knight program, wave FL-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 12 on 2026-08-28 by parsing the
+  // .dbf inside each zip directly, not inferred from statute:
+  //   sldl  120 records, 0 'ZZZ', LSY=2024, GEOID 12001..12120
+  //   sldu   40 records, 0 'ZZZ', LSY=2024, GEOID 12001..12040
+  //   place 956 records = 411 G4110 + 545 G4210 CDPs
+  // Florida is single-member in BOTH chambers, so these polygon counts ARE the seat
+  // counts (120 Representatives + 40 Senators). If either SLD count drifts, a
+  // legislative remap has happened and the FL roster builder's 120/40 assertions are
+  // wrong too — stop. Do NOT raise the number to get a green run.
+  if (fipsArg === '12') {
+    const EXPECTED_FL_MTFCC: Record<string, number> = {
+      sldl:  120,
+      sldu:   40,
+      place: 411, // 411 FL G4110 incorporated municipalities; the file's other 545
+                  // records are G4210 CDPs, filtered out below.
+    };
+    if (layer in EXPECTED_FL_MTFCC) {
+      const expected = EXPECTED_FL_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[FL MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 12 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] FL MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

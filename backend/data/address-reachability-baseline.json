@@ -1,13 +1,12 @@
 {
-  "_comment": "Baseline for check-address-reachability.mjs, keyed check -> \"state|district_type\" -> count. The gate fires on GROWTH in a bucket or on ANY new bucket. Shrink these numbers as the backlog is worked off; never raise one without saying why in the commit message. 2026-08-19: DEAD_GEOGRAPHY in|JUDICIAL (was 2) REMOVED, not lowered - those were the Kirsch D2 and Riley D4 Court of Appeals seats, whose holders had retired with no successor recorded. Migration 1835 seated Kenworthy and DeBoer, so the bucket is empty and any reappearance should fire as a NEW bucket.",
-  "_updated": "2026-08-19",
+  "_comment": "Baseline for check-address-reachability.mjs, keyed check -> \"state|district_type\" -> count. The gate fires on GROWTH in a bucket or on ANY new bucket. Shrink these numbers as the backlog is worked off; never raise one without saying why in the commit message. 2026-08-19: DEAD_GEOGRAPHY in|JUDICIAL (was 2) REMOVED, not lowered - those were the Kirsch D2 and Riley D4 Court of Appeals seats, whose holders had retired with no successor recorded. Migration 1835 seated Kenworthy and DeBoer, so the bucket is empty and any reappearance should fire as a NEW bucket. 2026-08-28: DEAD_GEOGRAPHY fl|NATIONAL_LOWER (was 1) REMOVED, not lowered - the entry was STALE, not fixed by that day's Knight FL work. Verified: all 28 FL NATIONAL_LOWER districts carry both a G5200 and a G5200V26 polygon and match ONLY G52* mtfccs, so the earlier congressional load (SL 2025-95 / G5200V26) had already resolved it and nobody shrank the baseline. Checked for the obvious trap first - a 5-char sldl/sldu or 7-char place geo_id colliding with a congressional one - and FL congressional geo_ids are 4 chars, so no collision is possible.",
+  "_updated": "2026-08-28",
   "counts": {
     "BAD_GEOMETRY": {
       "ca|LOCAL": 1,
       "ma|SCHOOL": 4
     },
     "DEAD_GEOGRAPHY": {
-      "fl|NATIONAL_LOWER": 1,
       "in|COUNTY": 4,
       "in|LOCAL": 12,
       "in|LOCAL_EXEC": 1
