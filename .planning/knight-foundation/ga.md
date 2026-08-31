@@ -6,7 +6,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 
 | Wave | Scope | Status |
 | --- | --- | --- |
-| GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ⏸ **measured, not loaded** — the vintage anchor check is not finished |
+| GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ⏸ **measured, vintage CLOSED, not loaded** — loader entry + apply remain |
 | GA-2 | Legislature: 180 House + 56 Senate | — |
 | GA-3..5 | Columbus, Macon, Milledgeville | — |
 
@@ -103,34 +103,71 @@ substring match, so it is weak either way. The load-bearing check stays an **exa
 | Macon | `1349008` | Macon-Bibb County | -83.6940595, 32.8089903 |
 | Milledgeville | `1351492` | Milledgeville city | -83.2406135, 33.0879449 |
 
-## ⏸ The vintage check — STARTED, NOT FINISHED. Do not load until it closes.
+## ✅ The vintage check — CLOSED 2026-08-31. All 236 districts, not three.
 
-Georgia's 2021 legislative maps were **struck down** by a federal court on 2023-10-26. Remedial House
-and Senate plans passed 2023-12-05, were signed 2023-12-08, and were approved by the trial court on
-2023-12-28. **The operative maps are the 2023 remedial plans, not the 2021 ones.** This is a sharper
-vintage risk than Florida's, where the legislative maps were never litigated.
+Georgia's 2021 legislative maps were **struck down** on 2023-10-26. Remedial House and Senate plans
+passed 2023-12-05, were signed 2023-12-08 and approved by the trial court 2023-12-28. **The operative
+maps are the 2023 remedial plans.** This is a sharper vintage risk than Florida, whose legislative
+maps were never litigated, so the check had to be geometric.
 
-`LSY = 2024` on all 236 records is consistent with the remedial plans — but `LSY` is a field, not
-proof. Florida's rule applies: confirm against the enacted plan itself, independently of TIGER.
+### The authority, and how to get it
 
-What TIGER 2024 answers at the three interior points, computed offline from the downloaded
-shapefiles by point-in-polygon:
+The General Assembly's own [Find Your Legislator](https://www.legis.ga.gov/find-my-legislator) page
+labels its layers **"Current Georgia House (2023)"** and **"Current Georgia Senate (2023)"** and loads
+each as a GeoJSON payload from its own API:
 
-| Anchor | TIGER House | TIGER Senate | Independent confirmation |
-| --- | --- | --- | --- |
-| Columbus `1319000` | **HD-137** | **SD-15** | ⏸ not yet |
-| Macon-Bibb `1349008` | **HD-145** | **SD-26** | ⏸ not yet |
-| Milledgeville `1351492` | **HD-149** | **SD-25** | ⏸ not yet |
+```
+/api/legislatormaps/GoogleMaps/House%20Map%202023     180 features
+/api/legislatormaps/GoogleMaps/Senate%20Map%202023      56 features
+```
 
-⚠ **DO NOT PICK A SERVICE BY ITS NAME.** A search for Georgia legislative services surfaces
+🔴 **BOTH ENDPOINTS RETURN HTTP 401 TO curl AND TO an in-page `fetch()`.** They carry a bearer
+token minted by `/api/authentication/token`. The way through is to let the page load them itself and
+read the response bodies out of the browser's network log — the same shape as the WAF lesson, by a
+different mechanism.
+
+### The result
+
+For **every** TIGER polygon, that polygon's own guaranteed-interior point (`INTPTLON`/`INTPTLAT`) was
+tested against the state's map:
+
+| Chamber | State features | TIGER polygons | Agree | Differ | Point in no state district |
+| --- | --- | --- | --- | --- | --- |
+| House | 180 | 180 | **180** | 0 | 0 |
+| Senate | 56 | 56 | **56** | 0 | 0 |
+
+TIGER 2024 FIPS 13 **is** the 2023 remedial plan. Load it.
+
+🔴🔴 **TEST EVERY DISTRICT WHEN THE STATE PUBLISHES THE WHOLE MAP — THREE ANCHORS CAN PASS
+ON THE WRONG MAP.** Florida used three anchor points because its plan services are queried one point
+at a time. Here the entire map arrives in one payload, so the complete comparison costs the same as
+three. A remap leaves many districts untouched, so three anchors that all happen to sit in unchanged
+districts would agree with the superseded map too. The three anchors this file first recorded
+(Columbus HD-137/SD-15, Macon-Bibb HD-145/SD-26, Milledgeville HD-149/SD-25) all matched — but they
+are now a subset of a stronger result, not the result.
+
+⚠ **DO NOT PICK A SERVICE BY ITS NAME.** A search for Georgia legislative geometry surfaces
 `services2.arcgis.com/StQaZGYzUARPnrpL/.../Georgia_Senate_District`, which is a **county
-government's** copy of the layer and is described as the **2022** adoption — i.e. the superseded
-map. The FL-6 rule stands: the service name is not authority for the vintage; the geometry is.
+government's** copy described as the **2022** adoption — the superseded map. It was not used.
 
-▶ **The state's own address→district tool is [`Find My Legislator`](https://www.legis.ga.gov/find-my-legislator).**
-The Reapportionment Office landing page (`/joint-office/reapportionment`) is a JavaScript shell and
-carries no plan-file links in its DOM. Next session: resolve the three anchors through Find My
-Legislator, or locate the Reapportionment Office's plan geometry, and only then load.
+## 🟢 The same payload is a GA-2 roster source, and maybe a GA-5 one
+
+Each feature carries the sitting member, not only geometry:
+
+```json
+{"District":154,"Name":"Gerald Greene","DateVacated":null,
+ "PortraitUrl":"https://www.legis.ga.gov/api/images/default-source/portraits/greene-gerald-115.jpg?size=mpSm",
+ "Url":"https://www.legis.ga.gov/members/house/115"}
+```
+
+- **236 of 236 districts carry a name**, and `DateVacated` is null on every one — the General Assembly
+  is claiming a full house. ⚠ That is ONE source. The wave anatomy needs **two**, and the
+  "check every seat for a change since the source was last edited" rule still applies: a payload that
+  reports no vacancies is exactly what a stale payload also looks like.
+- `Url` yields a stable member id (`/members/house/115`) — a better external key than a name.
+- `PortraitUrl` is present for all 236, but `?size=mpSm` is a **thumbnail**. Before stage 5 treats
+  these as headshots, test whether dropping or raising `size` returns the original — the Ballotpedia
+  `thumbs/200/300/` lesson in a different dress.
 
 ## Loader work GA-1 needs
 
