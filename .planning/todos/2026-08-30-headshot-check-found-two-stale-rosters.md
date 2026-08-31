@@ -1,7 +1,8 @@
 # Two stale rosters, found by a headshot repair — Monterey Park CA and Lawrence County IN
 
 **Found:** 2026-08-30, while repairing 10 officials whose photo was missing from our own bucket.
-**Status:** open. Neither is a photo problem; both are occupancy/modelling problems.
+**Status:** Monterey Park ✅ FIXED by `CC_0020`. Lawrence County ⏸ deliberately unwritten (see below).
+Neither was a photo problem; both are occupancy/modelling problems.
 **Why it surfaced here:** going to a body's own roster for a portrait forces a read of who that body
 says is sitting. The headshot pass is a redundancy check on occupancy, and it caught two bodies.
 
@@ -100,9 +101,23 @@ Four defects:
    seats exist; we hold three At-Large ones.
 4. Only 4 of 5 seats exist at all.
 
-**Do not fix by relabelling.** Districts 1–5 need real geography or the address path still cannot
-reach them, and a rotating mayoralty must not become a dated `office_terms` row that implies a
-four-year tenure.
+### ✅ FIXED by `CC_0020` (applied 2026-08-30)
+
+District 1 Thomas Wong · District 2 **Elizabeth Yang** (new) · District 3 Jose Sanchez
+**(Mayor Pro Tem)** · District 4 Henry Lo **(Mayor)** · District 5 Vinh Ngo.
+
+- The mayoralty is now a **parenthetical on the seat title**, the corpus's existing shape for a
+  role (`Council Member (Vice Mayor)`, `Commissioner (Chair)`). A role that turns over every ~9.5
+  months must never become a dated `office_terms` row implying a four-year tenure.
+- The four existing offices were **REPOINTED**, not recreated, so `office_id` never changed and
+  every open-ended `start_precision 'unknown'` term rode along. **No date was invented.**
+- 🔴 **The five district rows carry the PLACE `geo_id` 0648914, not council-district polygons.**
+  That is the house pattern, not a shortcut — Long Beach holds nine `District N` LOCAL rows on one
+  place `geo_id`, as do ≥5 other CA cities. District rows WITHOUT geometry would make every seat
+  **unreachable from an address**, strictly worse than the status quo. Verified after applying: a
+  Monterey Park point returns all five, and the geofence polygon for 0648914 is present.
+- ▶️ **STILL OPEN: load Monterey Park's real council district boundaries.** Until then all five
+  seats answer citywide.
 
 ---
 
