@@ -11,7 +11,7 @@ import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
 import { useAuthStore, getStoredToken, User } from './store/authStore';
 import { apiFetch } from './lib/api';
-import { workosEnabled, hasWorkosSession, refreshWorkosToken } from './lib/workosAuth';
+import { workosEnabled, hasWorkosSession, refreshWorkosToken, embeddedAuthEnabled } from './lib/workosAuth';
 import ContributorLayout from './pages/contributor/ContributorLayout';
 import ContributorDashboard from './pages/contributor/ContributorDashboard';
 import CompassEditorPage from './pages/contributor/CompassEditorPage';
@@ -79,6 +79,30 @@ function App() {
         .catch(() => {
           clearAuth();
         });
+    } else if (embeddedAuthEnabled) {
+      // Cookie-backed WorkOS session restore (mirrors admin/src/App.tsx, Task
+      // 10): a new tab or hard reload has no stored token. apiFetch starts
+      // with no Authorization header, so /account/me 401s and its own
+      // refresh path pulls a token from GET /api/auth/session, which reads
+      // the httpOnly ev_wos_session cookie. No SDK, no localStorage hint.
+      apiFetch<MeResponse>('/account/me')
+        .then((me) => {
+          const token = useAuthStore.getState().accessToken;
+          if (!token) {
+            clearAuth();
+            return;
+          }
+          const user: User = {
+            id: me.id,
+            email: me.email,
+            tier: me.tier,
+            displayName: me.display_name,
+            completedOnboarding: me.completed_onboarding,
+            locationConsent: me.location_consent,
+          };
+          setAuth(token, user);
+        })
+        .catch(() => clearAuth());
     } else if (workosEnabled && hasWorkosSession()) {
       // WorkOS session restore (decision 0002 transition): no stored token,
       // but the last login here came through AuthKit — ask the SDK before
@@ -182,8 +206,12 @@ function App() {
   useEffect(() => {
     if (!accessToken) return;
     // WorkOS sessions have no ev_session cookie — polling would 401 and force
-    // a logout every 60s. The AuthKit SDK owns that session's lifecycle.
-    if (workosEnabled && hasWorkosSession()) return;
+    // a logout every 60s. The AuthKit SDK owns that session's lifecycle. An
+    // embedded session is the exception: it IS cookie-backed (ev_wos_session,
+    // read by GET /api/auth/session — Task 6), so the poll below works for it
+    // and must not be skipped just because hasWorkosSession() is also true
+    // for embedded logins (see workosAuth.ts markWorkosSession).
+    if (workosEnabled && hasWorkosSession() && !embeddedAuthEnabled) return;
 
     const API_URL = import.meta.env.VITE_API_URL || '';
     const SESSION_URL = `${API_URL}/api/auth/session`;

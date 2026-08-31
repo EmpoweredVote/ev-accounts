@@ -48,7 +48,8 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Public client id (`client_01…`). Setting it makes the API accept WorkOS AuthKit tokens as a **second** issuer alongside Supabase. Absent = Supabase-only, i.e. pre-migration behavior. See "WorkOS AuthKit" below. |
 | `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | **Secret** (`sk_test_…` staging / `sk_live_…` production). Used by `POST /api/auth/workos/provision` and by WorkOS-first signup, both of which link accounts. Absent = those paths return 503; token verification never uses it. |
 | `WORKOS_ISSUER`, `WORKOS_JWKS_URL` | Set manually | Optional overrides, only for a custom auth domain. Defaults derive from `WORKOS_CLIENT_ID`. |
-| `AUTHKIT_PRIMARY` | Set manually | `'true'` moves NEW credential creation to WorkOS: `POST /api/auth/signup` creates the WorkOS user with the password and a passwordless Supabase shadow row. Default `'false'` = Supabase-path signup. Flip together with the frontends' `VITE_AUTHKIT_ONLY`. |
+| `AUTHKIT_PRIMARY` | Set manually | `'true'` moves NEW credential creation to WorkOS: `POST /api/auth/signup` creates the WorkOS user with the password and a passwordless Supabase shadow row. Default `'false'` = Supabase-path signup. Flip together with the frontends' `VITE_AUTHKIT_ONLY`. Also gates the headless-login endpoints: `'true'` routes `/api/auth/forgot-password` and `/api/auth/reset-password` to WorkOS instead of Supabase — see "Headless embedded login" below. |
+| `COOKIE_DOMAIN` | Set manually | Domain for all three httpOnly auth cookies (`ev_session`, `ev_wos_session`, `ev_wos_pending`). Set to `.empowered.vote` in prod so the cookie is shared across subdomains — cross-app SSO (both the existing Supabase SSO and the headless-login WorkOS SSO) depends on this. Optional; absent = host-only cookie. |
 
 ### Database role (`ev_api` vs `postgres`)
 
@@ -76,6 +77,7 @@ DDL, role management, or access to `vault`/`auth`/other apps' schemas.
 | `VITE_API_URL` | Set manually | Backend URL, e.g. `https://api.empoweredvote.com`. Must be set at build time, not runtime — Vite inlines `VITE_*` env vars during `npm run build`. Changing this value after the build requires a full rebuild and redeploy. |
 | `VITE_WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Same public client id as the backend's `WORKOS_CLIENT_ID`. Presence renders the AuthKit sign-in button and enables the WorkOS session path. Build-time, like `VITE_API_URL` — changing it needs a full rebuild. Absent = the login page shows only the classic form. |
 | `VITE_AUTHKIT_ONLY` | Set manually | `'true'` hides the classic email/password form on `/login`, leaving AuthKit as the only way in. Build-time. Gated on `VITE_WORKOS_CLIENT_ID` — if that is absent the classic form stays, so a misconfig can't lock everyone out. The break-glass route `/login/classic` always shows the form. Set on the login-hub, app, and validation-quests frontends together. |
+| `VITE_EMBEDDED_AUTH` | Set manually | `'true'` renders our OWN embedded email/password + on-page verification-code form instead of the hosted AuthKit auto-forward. Requires `VITE_WORKOS_CLIENT_ID` — the flag has no effect without it. Build-time, like `VITE_AUTHKIT_ONLY`. Applies to the login-hub, app, and validation-quests frontends, but — unlike `VITE_AUTHKIT_ONLY` — is rolled out **one origin at a time**, not simultaneously. See "Headless embedded login" below. |
 
 ---
 
@@ -134,6 +136,70 @@ form authenticates against nothing and the route should be deleted.
 - **Users** — a fresh import: `backend/scripts/workos-export-users.ts` then
   `workos-import-users.ts` (the import refuses a non-`sk_test_` key unless given
   `--allow-live`).
+
+### Headless embedded login (`VITE_EMBEDDED_AUTH`)
+
+Design: [`docs/HEADLESS-LOGIN-DESIGN.md`](docs/HEADLESS-LOGIN-DESIGN.md). Task plan:
+[`docs/superpowers/plans/2026-08-28-headless-workos-login.md`](docs/superpowers/plans/2026-08-28-headless-workos-login.md).
+
+`VITE_EMBEDDED_AUTH='true'` swaps the hosted-page auto-forward for our own embedded
+email/password form plus an on-page 6-digit verification-code step, served from
+`login.empowered.vote` (the admin build). It requires `VITE_WORKOS_CLIENT_ID` to already
+be set. Turning it on **supersedes** the hosted AuthKit auto-forward; `/login/classic`
+stays the break-glass classic-Supabase form regardless of this flag.
+
+Staged rollout, one origin at a time — bake each before flipping the next:
+
+| Order | Origin | Service |
+|---|---|---|
+| 1 | `login.empowered.vote` | `ev-accounts` (admin static) — the form itself lives here |
+| 2 | `app.empowered.vote` | `empowered-vote-app` — redirects its sign-in to `login.empowered.vote` instead of rendering its own form |
+| 3 | validation-quests | `validation-quests-frontend` (separate repo) — same one-line redirect change |
+
+⚠ Flipping `VITE_EMBEDDED_AUTH=true` on any production frontend is **STOP-AND-ASK** —
+present staging results (see "Open items" below) before flipping it, and keep the hosted
+redirect + `/login/classic` as fallbacks through the bake.
+
+#### New/changed `/api/auth/*` endpoints (ev-accounts-api)
+
+| Endpoint | Behavior |
+|---|---|
+| `POST /api/auth/workos/authenticate` | **New.** Headless WorkOS password grant, run server-side (needs `client_secret` = `WORKOS_API_KEY`). On success, sets the `ev_wos_session` httpOnly cookie and returns `{ access_token }`. On a pending state (`email_verification_required`, `mfa_required`) sets the `ev_wos_pending` httpOnly cookie and returns `{ status }` for the UI to resolve on the next call. Wrong email and wrong password both return 401 `INVALID_CREDENTIALS` (OWASP — no enumeration). Rate-limited by `authLimiter` (10 / 15 min per IP). |
+| `POST /api/auth/workos/verify-email` | **New.** Second leg of the on-page signup-verification flow: reads the `ev_wos_pending` cookie, exchanges the emailed code via WorkOS's email-verification-code grant, clears the pending cookie, sets `ev_wos_session`, returns `{ access_token }`. Rate-limited by `authLimiter`. |
+| `GET /api/auth/session` | **Changed.** Now checks the `ev_wos_session` cookie first — if present, refreshes through WorkOS (`grant_type=refresh_token`), rotates the cookie, and returns `{ access_token }`. Falls back to the existing Supabase `ev_session` path only when `ev_wos_session` is absent. Which cookie exists is the sole discriminator between the two issuers. |
+| `POST /api/auth/logout` | **Changed.** Now clears `ev_wos_session` and `ev_wos_pending`, in addition to `ev_session`, unconditionally before the auth check. |
+| `POST /api/auth/forgot-password` | **Changed.** Under `AUTHKIT_PRIMARY='true'`, sends WorkOS's `password_reset` email instead of Supabase's. Still always returns 200 (OWASP — no enumeration). |
+| `POST /api/auth/reset-password` | **Changed.** Under `AUTHKIT_PRIMARY='true'`, confirms the reset against WorkOS (`password_reset/confirm`) instead of verifying a Supabase recovery `token_hash`. A WorkOS reset revokes all of that user's active WorkOS sessions. |
+
+#### New cookies (httpOnly, domain = `COOKIE_DOMAIN`)
+
+| Cookie | Lifetime | Set by | Purpose |
+|---|---|---|---|
+| `ev_wos_session` | 30 days | `/workos/authenticate`, `/workos/verify-email`, `GET /session` (rotated on each refresh) | WorkOS refresh token — the session itself, for headless-login users. Never touches browser JS storage. |
+| `ev_wos_pending` | 15 minutes | `/workos/authenticate` (only on a pending status) | WorkOS pending-authentication token, single-use, consumed only by `/workos/verify-email`. |
+
+Cross-app SSO for WorkOS users (Task 11) depends on **`COOKIE_DOMAIN=.empowered.vote`**
+in prod (see the Backend env var table above) — the same requirement the existing
+Supabase `ev_session` cookie already has.
+
+#### Open items — confirm on staging before prod
+
+These are **not yet confirmed**. They are human-gated verification, not something to
+attempt from this doc-only pass:
+
+- **Exact WorkOS pending/error body field names.** `backend/src/lib/workosAuthService.ts`
+  reads the discriminator defensively (`code`, falling back to `error`) so a field-name
+  surprise degrades to a logged `WORKOS_ERROR` rather than a wrong success — but the real
+  staging shapes for a verified login, an unverified login, and a wrong password are
+  still unconfirmed. Adjust the matcher (and its unit test) if a name differs.
+- **The password-reset email link target.** Confirm it lands on
+  `login.empowered.vote/reset-password?token=…`. If WorkOS instead sends its own hosted
+  URL, set the reset redirect in the WorkOS dashboard, or switch to WorkOS Custom Emails.
+- **`COOKIE_DOMAIN` is `.empowered.vote` on the `ev-accounts-api` Render service in
+  prod.** Check the Render env; do not change it without approval.
+- **`app/src/pages/LoginPage.tsx`'s `LOGIN_ORIGIN` is hardcoded to prod**
+  (`https://login.empowered.vote`) — so a staging cross-app SSO test redirects to the
+  PRODUCTION login page unless this is adjusted for staging first.
 
 ### Monitoring failed logins at cutover
 

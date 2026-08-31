@@ -5,9 +5,12 @@ import { getValidRedirect, getAppNameFromRedirect, validateRedirectUrl } from '.
 import {
   workosEnabled,
   authkitOnly,
+  embeddedAuthEnabled,
   startWorkosSignIn,
   completeWorkosLogin,
   consumeWorkosRedirectState,
+  loginWithPassword,
+  verifyEmailCode,
 } from '../lib/workosAuth';
 import InformConstraintsModal from '../components/InformConstraintsModal';
 
@@ -23,6 +26,10 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // Classic form shows unless AuthKit-only mode has hidden it — and always on
   // the break-glass route.
   const showClassic = allowClassic || !authkitOnly;
+  // When the embedded flag is on, the login form must be available even
+  // under AuthKit-only mode — it's our own form now, not the hidden classic
+  // Supabase one, so it isn't subject to authkitOnly's hide-the-form rule.
+  const showLoginForm = showClassic || embeddedAuthEnabled;
   const navigate = useNavigate();
   const { setAuth } = useAuthStore();
   const [email, setEmail] = useState('');
@@ -32,6 +39,12 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   const [signupModalOpen, setSignupModalOpen] = useState(false);
   const [showUnverifiedResend, setShowUnverifiedResend] = useState(false);
   const [resendSent, setResendSent] = useState(false);
+
+  // Embedded WorkOS flow (flag-gated): a pending status from
+  // loginWithPassword switches the card to this on-page code step instead of
+  // the hosted AuthKit redirect.
+  const [codeStep, setCodeStep] = useState(false);
+  const [code, setCode] = useState('');
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -96,13 +109,16 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // Auto-forward (decision 0002): under AuthKit-only mode the classic form is
   // hidden and AuthKit's own hosted page already offers sign-in AND sign-up, so
   // this landing is a redundant click. Skip straight to AuthKit — EXCEPT on the
-  // break-glass route (allowClassic) and EXCEPT while completing a ?code=
-  // callback (that would loop). Invite-code signup has its own /signup entry, so
-  // nothing is lost by not rendering the landing.
+  // break-glass route (allowClassic), EXCEPT while completing a ?code=
+  // callback (that would loop), and EXCEPT when the embedded flag is on — the
+  // embedded flow renders our own form instead of bouncing to the hosted
+  // page, so authkitOnly must not auto-forward past it. Invite-code signup
+  // has its own /signup entry, so nothing is lost by not rendering the landing.
   const [autoForwarding, setAutoForwarding] = useState(
     () =>
       authkitOnly &&
       !allowClassic &&
+      !embeddedAuthEnabled &&
       !(workosEnabled && new URLSearchParams(window.location.search).has('code'))
   );
   const autoForwardStarted = useRef(false);
@@ -182,6 +198,47 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
     }
   }
 
+  // Embedded WorkOS flow: the classic form posts here instead of handleSubmit
+  // when embeddedAuthEnabled. A pending status (email verification or MFA)
+  // switches to the code step rather than treating it as a failure.
+  async function handleEmbeddedSubmit(e: FormEvent) {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      const result = await loginWithPassword(email, password);
+      if (result.status === 'authenticated') {
+        await finishLogin(result.token, validRedirect, email);
+      } else if (result.status === 'email_verification_required') {
+        setCodeStep(true);
+      } else {
+        // mfa_required: the code step calls verify-email, which uses the
+        // email-verification grant and cannot satisfy an MFA challenge —
+        // advancing there would just fail on submit. MFA sign-in isn't wired
+        // up yet, so stop here with an explanation instead.
+        setError("Multi-factor sign-in isn't available yet. Please contact support.");
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Sign-in failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleCodeSubmit(e: FormEvent) {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      const token = await verifyEmailCode(code);
+      await finishLogin(token, validRedirect, email);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Verification failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   async function handleResendConfirmation() {
     await fetch(`${API_BASE}/auth/resend-confirmation`, {
       method: 'POST',
@@ -217,7 +274,9 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
 
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
 
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Log in</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          {codeStep ? 'Enter your code' : 'Log in'}
+        </h2>
 
         {workosCompleting && (
           <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
@@ -244,8 +303,8 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           </div>
         )}
 
-        {showClassic && (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        {showLoginForm && !codeStep && (
+        <form onSubmit={embeddedAuthEnabled && !allowClassic ? handleEmbeddedSubmit : handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
               Email
@@ -292,7 +351,50 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
         </form>
         )}
 
-        {workosEnabled && (
+        {showLoginForm && codeStep && (
+        <form onSubmit={handleCodeSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              Verification code
+            </label>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-1.5">
+              Enter the 6-digit verification code to continue.
+            </p>
+            <input
+              id="code"
+              type="text"
+              required
+              inputMode="numeric"
+              autoComplete="one-time-code"
+              minLength={6}
+              maxLength={6}
+              pattern="[0-9]{6}"
+              value={code}
+              onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+              placeholder="123456"
+              className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-teal dark:focus:ring-ev-teal-light focus:border-transparent text-center tracking-[0.5em]"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full py-3 px-4 bg-ev-teal dark:bg-ev-teal-light hover:bg-ev-teal/90 dark:hover:bg-ev-teal-light/90 disabled:opacity-60 text-white dark:text-ev-black font-semibold rounded-xl text-sm transition-colors"
+          >
+            {isSubmitting ? 'Verifying…' : 'Verify'}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => { setCodeStep(false); setCode(''); setError(null); }}
+            className="w-full text-center text-xs text-ev-teal dark:text-ev-teal-light hover:underline"
+          >
+            Back to email and password
+          </button>
+        </form>
+        )}
+
+        {workosEnabled && !embeddedAuthEnabled && (
           <div className="space-y-3">
             {showClassic && (
               <div className="flex items-center gap-3">

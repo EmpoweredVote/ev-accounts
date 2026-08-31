@@ -1,5 +1,10 @@
 import { NavLink, Outlet, useNavigate } from 'react-router';
 import { useAuthStore } from '../../store/authStore';
+import { workosSignOut } from '../../lib/workosAuth';
+
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : '/api';
 
 const navItems = [
   { label: 'Dashboard', to: '/admin', exact: true },
@@ -27,9 +32,26 @@ export function AdminLayout() {
   const navigate = useNavigate();
   const { clearAuth } = useAuthStore();
 
-  function handleLogout() {
-    sessionStorage.removeItem('admin_token');
+  async function handleLogout() {
+    const token = useAuthStore.getState().accessToken;
+    // Mirrors ProfilePage.tsx's handleSignOut: end the session server-side
+    // (credentials: 'include' so the ev_wos_session/ev_wos_pending cookies are
+    // cleared too — see backend/src/routes/auth.ts POST /auth/logout) and end
+    // the WorkOS SDK session when this login came through AuthKit. Without
+    // the backend call, the 30-day ev_wos_session cookie survives and
+    // App.tsx's embedded-auth bootstrap silently restores the session on the
+    // next load. Resilient: local state is cleared and we navigate away even
+    // if either call fails.
+    try {
+      await fetch(`${API_BASE}/auth/logout`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+    } catch { /* ignore */ }
+    try { await workosSignOut(); } catch { /* ignore */ }
     clearAuth();
+    sessionStorage.removeItem('admin_token');
     navigate('/login');
   }
 
