@@ -29,25 +29,66 @@
  * Usage (from C:/EV-Accounts/backend):
  *   node scripts/verify-photo-origin-urls.mjs --band -829999 -810001
  *   node scripts/verify-photo-origin-urls.mjs --state co
+ *   node scripts/verify-photo-origin-urls.mjs --state fl --district-type STATE_LOWER,STATE_UPPER
  *   node scripts/verify-photo-origin-urls.mjs --band -849999 -810001 --fix-sql
  */
 import 'dotenv/config';
 import pg from 'pg';
+import { spawnSync } from 'node:child_process';
 
 const argv = process.argv.slice(2);
 const bandIx = argv.indexOf('--band');
 const stateIx = argv.indexOf('--state');
+const dtypeIx = argv.indexOf('--district-type');
+/** Optional narrowing of --state to one tier. A state's local half and its legislature are
+ *  different cohorts: for a hand-seeded local official photo_origin_url is correctly the SOURCE
+ *  PAGE (HTML), which this check would call dead. Only run it where the field holds an image. */
+const DTYPES = dtypeIx === -1 ? null : argv[dtypeIx + 1].split(',').map((t) => t.trim());
 const EMIT_SQL = argv.includes('--fix-sql');
 const LIMIT = (() => { const i = argv.indexOf('--limit'); return i === -1 ? null : Number(argv[i + 1]); })();
 
 if (bandIx === -1 && stateIx === -1) {
-  console.error('usage: --band <lo> <hi> | --state <xx>   [--limit N] [--fix-sql]');
+  console.error('usage: --band <lo> <hi> | --state <xx> [--district-type A,B]   [--limit N] [--fix-sql]');
   process.exit(2);
 }
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
 
 /** Minimum plausible portrait. Below this it is a spacer, an icon, or an error page. */
 const MIN_BYTES = 2000;
+
+/**
+ * 🔴 A BARE `Mozilla/5.0` IS ITSELF A DETECTOR FAULT.
+ * www.flhouse.gov sits behind an F5 BIG-IP WAF that answers a short UA with a
+ * 244-byte "Request Rejected" page — as HTTP 200, Content-Type text/html. Run
+ * with the short UA and ALL 116 Florida House portraits report dead; every one
+ * of them is alive and 67KB. A full, current browser UA is what gets through.
+ * The uniform verdict is the tell: a whole cohort failing identically means the
+ * checker is blocked, not that the cohort rotted. Confirm one row by hand before
+ * believing a sweep.
+ */
+const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
+
+/**
+ * Fetch through curl, not global fetch.
+ * Headers alone are not enough here: with the SAME Chrome UA and Accept, curl
+ * gets the 67KB JPEG and undici still gets the 244-byte rejection, so the WAF is
+ * fingerprinting below the header layer (TLS/JA3). Shelling out is the fix that
+ * actually works. Returns the body bytes plus the status curl reports.
+ */
+function httpGet(url) {
+  const r = spawnSync('curl', [
+    '-sS', '-L', '--max-time', '30',
+    '-A', BROWSER_UA,
+    '-H', 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+    '-H', 'Accept-Language: en-US,en;q=0.9',
+    '-w', '\n%{http_code}', url,
+  ], { maxBuffer: 64 * 1024 * 1024, encoding: 'buffer' });
+  if (r.error) throw r.error;
+  if (r.status !== 0) throw new Error((r.stderr?.toString() || `curl exit ${r.status}`).trim());
+  const out = r.stdout;
+  const nl = out.lastIndexOf(0x0a);
+  return { status: Number(out.slice(nl + 1).toString('latin1')), body: out.slice(0, nl) };
+}
 
 function imageKind(b) {
   if (b.length >= 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'JPEG';
@@ -66,7 +107,9 @@ const where = bandIx !== -1
         SELECT 1 FROM essentials.office_current_holder och
         JOIN essentials.offices o ON o.id = och.office_id
         JOIN essentials.districts d ON d.id = o.district_id
-        WHERE och.politician_id = p.id AND lower(d.state) = lower($1))`, params: [argv[stateIx + 1]] };
+        WHERE och.politician_id = p.id AND lower(d.state) = lower($1)
+          ${DTYPES ? 'AND d.district_type = ANY($2)' : ''})`,
+      params: DTYPES ? [argv[stateIx + 1], DTYPES] : [argv[stateIx + 1]] };
 
 const { rows } = await client.query(
   `SELECT p.id, p.full_name, p.photo_origin_url
@@ -87,8 +130,8 @@ let live = 0;
 for (const r of rows) {
   let verdict;
   try {
-    const res = await fetch(r.photo_origin_url, { headers: { 'user-agent': 'Mozilla/5.0' }, redirect: 'follow' });
-    const buf = Buffer.from(await res.arrayBuffer());
+    const res = httpGet(r.photo_origin_url);
+    const buf = res.body;
     const kind = imageKind(buf);
     if (!kind) verdict = `HTTP ${res.status}, ${buf.length}B, not an image`;
     else if (buf.length < MIN_BYTES) verdict = `HTTP ${res.status}, ${kind} but only ${buf.length}B`;

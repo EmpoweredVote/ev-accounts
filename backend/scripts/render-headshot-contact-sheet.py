@@ -52,6 +52,10 @@ ap.add_argument("--title", default="Headshot proof sheet",
                 help="page title and h1; name the wave so a later reader knows what they approved")
 ap.add_argument("--json", default=".tmp-all-candidates.json")
 ap.add_argument("--out", default="../.tmp-cos-contactsheet.html")
+ap.add_argument("--max-upscale", type=float, default=1.0,
+                help="mirror of the importer flag. A source too small to reach 600x750 is "
+                     "embedded at the size that will actually SHIP, not enlarged to fill the "
+                     "card, so the operator approves the real pixels")
 ARGS = ap.parse_args()
 TITLE = ARGS.title
 
@@ -86,6 +90,13 @@ for c in cands:
         w, h = src.size                    # SOURCE size, reported on the card
         img, (keep_w, keep_h) = crop_4x5(src, **c.get("crop", {}))
         upscale = max(TARGET_W / keep_w, TARGET_H / keep_h)
+        # SHOW WHAT SHIPS. crop_4x5 always returns 600x750, but the importer stores the
+        # NATIVE cropped size whenever reaching 600x750 would mean enlarging. Embedding the
+        # enlarged version here would show the operator detail the stored file will not have
+        # -- the same proof-sheet-vs-import drift headshot_crop.py exists to prevent. The
+        # card still lays out at 600x750; the browser scales it, exactly as the site does.
+        if upscale > ARGS.max_upscale:
+            img = img.resize((keep_w, keep_h), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=84, optimize=True)
         c["data"] = base64.b64encode(buf.getvalue()).decode()

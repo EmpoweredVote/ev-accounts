@@ -160,9 +160,26 @@ for c in cands:
                SELECT %s, %s, 'default', %s
                 WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images WHERE politician_id = %s)""",
             (pid, final, c["license"], pid))
-        # photo_origin_url records the SOURCE PAGE (provenance), not the image URL.
+        # 🔴 CREATING THE IMAGE ROW DOES NOT CHANGE WHAT A VOTER SEES.
+        # The address-search path (districtQueries.ts, DISTRICT_SELECT_FIELDS) builds its
+        # photo from COALESCE(photo_custom_url, photo_origin_url, '') and NEVER READS
+        # politician_images; essentialsBodiesService.ts reads it only third. So the mirrored
+        # copy has to be written to photo_custom_url or the person keeps rendering from
+        # whatever host they were hotlinked to. Florida's 155 legislators were imported
+        # without this and stayed on the chamber hotlink -- the exact thing the wave removed.
         cur.execute(
-            "UPDATE essentials.politicians SET photo_origin_url = %s WHERE id = %s AND photo_origin_url IS NULL",
+            "UPDATE essentials.politicians SET photo_custom_url = %s "
+            " WHERE id = %s AND btrim(coalesce(photo_custom_url, '')) = ''",
+            (final, pid))
+        # photo_origin_url records the SOURCE PAGE (provenance), not the image URL.
+        # It is also rewritten when it currently holds a RAW IMAGE URL: that value is the
+        # defect this pipeline exists to clear, and an IS NULL guard alone silently skipped
+        # all 155 Florida rows while still reporting them imported. A page URL somebody
+        # already recorded is left alone.
+        cur.execute(
+            "UPDATE essentials.politicians SET photo_origin_url = %s "
+            " WHERE id = %s AND (photo_origin_url IS NULL "
+            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp)(\\?|$)')",
             (c["page"], pid))
         conn.commit()
         done += 1
