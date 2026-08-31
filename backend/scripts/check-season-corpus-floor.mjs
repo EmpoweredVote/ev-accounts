@@ -92,7 +92,10 @@
  * answers floor by N in the SAME pull request and cite the migration slot. Five such
  * migrations landed inside one 24-hour window on 2026-08-29/30 (CA_0032, CA_0033, CA_0035,
  * CA_0038, CA_0039, 32 answers between them) and none moved the floor, which is what made
- * that morning's failure look like data loss.
+ * that morning's failure look like data loss. Four more landed on 2026-08-30/31 while this
+ * very fix was open (CA_0044, CA_0045, CA_0052, CA_0056, 94 answers between them), so the
+ * correction had to be re-derived a second time before it could merge. The rule above is
+ * what stops a third round.
  *
  * NO DATABASE_URL IS A FAILURE, NOT A SKIP. The database is the whole check — there is no
  * static half that still means something. A gate that quietly passes when it never ran reads
@@ -132,21 +135,25 @@ function flagInt(name, fallback) {
  */
 const FLOORS = {
   1: {
-    // 33,164 when measured 2026-08-27. Lowered by 32 on 2026-08-30 for five documented-blank
-    // retirements — CA_0032 (1), CA_0033 (9), CA_0035 (13), CA_0038 (7), CA_0039 (2) — each of
-    // which deleted a seating on purpose and rewrote the context.
+    // 33,164 when measured 2026-08-27, lowered twice for documented-blank retirements — each
+    // of which deleted a seating on purpose and rewrote its context as a blank:
     //
-    // NOT taken from "what prod reads today". Every one of the 32 pairs was extracted from the
-    // migrations and verified in production to hold ZERO answers and ONE context row, and no
-    // migration in the window inserts answers, so the net cannot be hiding extra deletions.
-    // 33,164 − 32 = 33,132, which is the number below, derived rather than observed.
-    answers: flagInt('floor-answers', 33132),
+    //   −32 on 2026-08-30: CA_0032 (1), CA_0033 (9), CA_0035 (13), CA_0038 (7), CA_0039 (2)
+    //   −94 on 2026-08-31: CA_0044 (31), CA_0045 (3), CA_0052 (2), CA_0056 (58)
+    //
+    // NOT taken from "what prod reads today" — reading it off prod is what would absorb a real
+    // loss silently. Each retirement count comes from the migration's own post-verify gate, and
+    // no migration in either window INSERTs answers, so the net cannot hide extra deletions
+    // behind additions. The context floor did not move across either window, which is the
+    // signature of deliberate blanking rather than destruction.
+    // 33,164 − 32 − 94 = 33,038, which is the number below, derived rather than observed.
+    answers: flagInt('floor-answers', 33038),
     // Untouched. A documented blank REWRITES its context, so this count did not move — and
     // that it held at exactly 33,818 is what proved the answer loss was deliberate.
     context: flagInt('floor-context', 33818),
     questions: flagInt('floor-questions', 44),
     measured: '2026-08-27',
-    adjusted: '2026-08-30',
+    adjusted: '2026-08-31',
   },
 };
 
