@@ -4,6 +4,8 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../../lib/api';
 import { hasChanged } from '../../lib/wordDiff';
 import { DEL, InlineDiff, FieldDiff } from '../../components/wordDiffView';
+import { LensClusters } from '../../components/LensClusters';
+import { useCompassLenses } from '../../hooks/useCompassLenses';
 import {
   classifyAll,
   statCounts,
@@ -560,6 +562,44 @@ export function SeasonCompositionPage() {
   const poolRows = useMemo(() => classified.filter((c) => c.status === 'available'), [classified]);
   const draftCount = draftRows.length;
 
+  // System (curated) lenses — Local / Judicial / Federal, and a School lens
+  // once it is seeded. Clustered below the composition grid so a reviewer can
+  // see, per lens, which of its topics this season actually asks.
+  const { lenses, loading: lensesLoading, error: lensesError } = useCompassLenses();
+  const topicById = useMemo(() => {
+    const m = new Map<string, CompositionTopic>();
+    for (const t of data?.topics ?? []) m.set(t.topic_id, t);
+    return m;
+  }, [data]);
+  const lensTitleFor = useCallback((id: string): string => {
+    const t = topicById.get(id);
+    if (!t) return 'Unknown topic';
+    return t.in_draft?.pin.title ?? t.in_open?.pin.title ?? t.current?.title ?? t.topic_key;
+  }, [topicById]);
+  const lensMetaFor = useCallback((id: string) => {
+    const t = topicById.get(id);
+    if (!t) return null;
+    if (t.in_open) {
+      return (
+        <span className="shrink-0 rounded bg-cyan-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ev-teal dark:bg-cyan-950/50 dark:text-ev-teal-light">
+          Open · Q{t.in_open.question_number}
+        </span>
+      );
+    }
+    if (t.in_draft) {
+      return (
+        <span className="shrink-0 rounded bg-ev-yellow px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-yellow-900">
+          Draft
+        </span>
+      );
+    }
+    return (
+      <span className="shrink-0 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gray-400 dark:bg-gray-800 dark:text-gray-500">
+        Not asked
+      </span>
+    );
+  }, [topicById]);
+
   /** Run a mutation, surface its server message, reload on success. */
   const act = useCallback(async (fn: () => Promise<unknown>) => {
     setBusy(true);
@@ -926,6 +966,22 @@ export function SeasonCompositionPage() {
           </section>
         )}
       </div>
+
+      <section className="mt-10">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Lenses</h2>
+        <p className="mb-4 mt-1 max-w-3xl text-sm text-gray-500 dark:text-gray-400">
+          The curated per-office lens sets, each with its topics clustered. A marker shows whether the
+          {open ? ` open season (${open.name})` : ' open season'} asks it. Read-only — a topic joins or
+          leaves a lens through a migration.
+        </p>
+        <LensClusters
+          lenses={lenses}
+          titleFor={lensTitleFor}
+          metaFor={lensMetaFor}
+          loading={lensesLoading}
+          error={lensesError}
+        />
+      </section>
 
       <TopicDetailModal item={detail} openSeason={open} onClose={() => setDetail(null)} allowPropose />
 
