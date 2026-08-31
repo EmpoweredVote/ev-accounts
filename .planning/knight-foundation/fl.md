@@ -18,7 +18,11 @@ Jurisdictions: **Bradenton** (Manatee), **Miami** (Miami-Dade), **Palm Beach Cou
 | FL-4 | Tallahassee + Leon County | ✅ applied 2026-08-28 — `CC_0011`, `CC_0012`, `CC_0013` |
 | FL-5 | Palm Beach County (county only) | ✅ applied 2026-08-28 — `CC_0014` |
 | FL-6 | Miami + Miami-Dade County | ✅ applied 2026-08-30 — `CC_0015`, `CC_0016`, `CC_0017` |
-| FL-7 | Florida assets (headshots + 3 banners) | — |
+| FL-7 | Florida assets (5 banners + 72 headshots) | ✅ applied 2026-08-30 |
+
+🔴🔴 **THE SLICE IS COMPLETE — ALL FIVE STAGES CLOSED (FL-7, 2026-08-30).** Florida is the first
+state slice in the program to finish. **72 of 72** local and county officials carry a headshot, and
+all five banner keys are live.
 
 🔴 **STAGES 3 AND 4 ARE BOTH CLOSED.** All four Florida jurisdictions are seated: Bradenton,
 Tallahassee and Miami as cities, Manatee, Leon, Palm Beach and Miami-Dade as counties. Florida is the
@@ -1023,6 +1027,85 @@ Hialeah, Miami Beach, Coral Gables and 30-odd others.
 - **Re-check Palm Beach D2/D4/D6 and Miami-Dade D5/D6/D8/D11 after the November 2026 general.**
 - 🔴 **If Oliver Gilbert wins FL-24 in November he resigns District 1**, which becomes another
   Commission-appointed vacancy.
+
+## FL-7 — Florida assets (applied 2026-08-30)
+
+Plan: [`2026-08-30-knight-fl-wave-7-florida-assets.md`](../../docs/superpowers/plans/2026-08-30-knight-fl-wave-7-florida-assets.md).
+**No migration.** Banners live in the essentials repo and Supabase Storage; headshots go in through
+`politician_images` via `scripts/import-headshot-candidates.py`.
+
+### 🔴🔴 The Miami skyline moved DOWN a tier, and that dissolved the adjacency conflict
+
+Florida's STATE banner was a Miami downtown skyline — which is also the only thing Miami's own banner
+could honestly be, and spec §8.1 forbids a city repeating its state's composition. Rather than work
+around it, the photograph became `cities/miami.jpg` and the state took a new frame:
+**Rookery Bay, Ten Thousand Islands** (`states/FL-v2.jpg`).
+
+🔴 **Versioned, never an overwrite.** `STATE_PANORAMA_FILES` exists because overwriting a storage
+path does not reliably purge the CDN — measured on TX 2026-08-18, where the old Austin skyline still
+served seconds after upload. The state banner renders for EVERY Florida address, so a stale cache
+would have been state-wide.
+
+⚠ Miami was recomposed from the **12869×3169 Commons original**, not from the shipped state asset:
+that one is **1700×419, off the documented 1700×540 spec**, and reusing it would have carried the
+defect down a tier.
+
+| Key | Subject | Licence |
+| --- | --- | --- |
+| `cities/miami.jpg` | Miami Late Afternoon Skyline | CC BY 4.0 |
+| `cities/tallahassee.jpg` | Old Capitol, east front | CC BY-SA 4.0 |
+| `cities/bradenton.jpg` | De Soto National Memorial | CC BY-SA 3.0 |
+| `counties/palm-beach-fl.jpg` | Whitehall, the Flagler Museum | CC BY-SA 3.0 (levelled −1.0°) |
+| `states/FL-v2.jpg` | Rookery Bay, Ten Thousand Islands | CC BY-SA 4.0 |
+
+### 🔴🔴 The banner LOOKUP was wrong, and Florida is the first slice to expose it
+
+`CURATED_LOCAL` matched city keys by **substring**. A `miami` key hands Miami's banner to **Miami
+Beach, Miami Gardens, Miami Lakes, Miami Shores, Miami Springs, North Miami and West Miami** — seven
+separate cities we do not seat — and `bradenton` takes **Bradenton Beach**. Long Beach and San José
+never hit it because their names have no local siblings.
+
+Fixed with two additive changes (essentials PR #108): **`match: 'exact'` opt-in per variant**, so
+every existing key keeps substring behaviour untouched, and a **`CURATED_COUNTY` tier keyed by county
+GEOID**. A county cannot be keyed by city label at all: `palm beach` matches West Palm Beach and
+Royal Palm Beach while matching **nothing** for Boca Raton or Jupiter, which are equally in the
+county. The API already returned `county: {geoid, name}` — only the hook dropped it.
+
+⚠ **The certification is a TWO-STAGE crop and the first attempt skipped stage one.** Production
+composes a **1700×540** asset, and the browser then crops THAT, centred: desktop 6:1 shows **52.5%**
+of its height, mobile 13:4 shows **96.9%**. Cropping a source straight to 6:1 takes ~17% of a 4:3
+photo's height, so the Capitol arrived as the middle of a tall building and the whole first set was
+rejected. **Compose the asset first, then preview both boxes.**
+
+### 🔴 Headshots: 72 of 72, and three pipeline defects found on the way
+
+Every one of the seven governments is at 100%. The wave began at 1 of 72.
+
+Three defects in the shared scripts, each of which would have shipped silently:
+
+1. 🔴🔴 **THE IMPORTER REFUSED EVERY WEBP.** Its check whitelisted JPEG and PNG magic numbers, so
+   **nine officials rendered on the proof sheet and would have vanished at import** — seven Leon
+   County kiosk portraits plus two campaign cutouts. Both scripts now test **decodability**, which
+   enforces "never trust the extension, never trust HTTP status" more strictly than an allowlist.
+2. 🔴 **THE RENDERER TURNED TRANSPARENT PIXELS BLACK** (bare `convert("RGB")`), while the importer
+   flattened onto white. A PNG cutout reached the operator as a black frame with no face. **A proof
+   sheet that differs from the import is worse than no proof sheet.** The crop now lives once, in
+   `scripts/headshot_crop.py`, imported by both.
+3. 🔴 **THE IMPORTER REFETCHED LIVE**, so it could ship different bytes than were approved. Both
+   scripts now share an on-disk cache and read it first.
+
+⚠ `COHORTS` was **hardcoded to Colorado Springs**, so the Florida wave rendered 68 faces, filtered
+every one out, and printed "rendered 68" over a 7 KB page with zero images. Cohorts now come from the
+data.
+
+⚠ **Nine of the 71 needed a per-person `crop` override** — someone standing beside a banner, inside a
+photo mat, or with their head at the top edge. The default centre crop decapitates them.
+
+🔴 **`miami.gov` 403s every non-browser client**, so its portraits are not directly fetchable. The
+durable answer was NOT the Wayback Machine (which then 503s under repeated fetches): **Christine
+King's official portrait is re-hosted on her FIU fellowship profile at `sipa.fiu.edu`, under the same
+filename**, and Rosado came from Ballotpedia's original. ▶ **When a city blocks fetching, look for an
+institution that re-hosts the same official portrait.**
 
 ## Applied migrations
 

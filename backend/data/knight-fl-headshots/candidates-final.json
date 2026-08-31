@@ -1,0 +1,750 @@
+[
+ {
+  "politician_id": "36771b52-7e86-4199-a3d7-ebc63489dedd",
+  "name": "Miguel Angel Gabela",
+  "office": "Commissioner, District 1",
+  "cohort": "City of Miami, Florida, US",
+  "url": "http://web.archive.org/web/20250918064517im_/https://www.miami.gov/files/sharedassets/public/v/1/head-shots/gabela-headshot2.jpg",
+  "page": "https://www.miami.gov/My-Government/City-Officials/District-1-Miguel-Angel-Gabela",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "fbb0d440-8838-4965-ad03-ca6cd7d61ef5",
+  "name": "Damian Pardo",
+  "office": "Commissioner, District 2",
+  "cohort": "City of Miami, Florida, US",
+  "url": "http://web.archive.org/web/20251223070729im_/https://www.miami.gov/files/sharedassets/public/v/1/head-shots/pardo-2.jpg",
+  "page": "https://www.miami.gov/My-Government/City-Officials/District-2-Commissioner-Damian-Pardo",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "e1385747-e3fb-4d30-aa7c-359faddadc0c",
+  "name": "Rolando Escalona",
+  "office": "Commissioner, District 3",
+  "cohort": "City of Miami, Florida, US",
+  "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Rolando_Escalona_20250928_063714.jpeg",
+  "page": "https://ballotpedia.org/Rolando_Escalona",
+  "license": "press_use",
+  "positional": false,
+  "crop": {
+   "zoom": 1.3,
+   "anchor_y": 0.28
+  }
+ },
+ {
+  "politician_id": "989996df-6af2-4fb3-95b8-99caea16bee5",
+  "name": "Ralph \"Rafael\" Rosado",
+  "office": "Commissioner, District 4",
+  "cohort": "City of Miami, Florida, US",
+  "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Ralph_Rosado.png",
+  "page": "https://ballotpedia.org/Ralph_Rosado",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "11f50757-0cfa-459b-a6cf-57af9e7eb50a",
+  "name": "Christine King",
+  "office": "Commissioner, District 5",
+  "cohort": "City of Miami, Florida, US",
+  "url": "https://sipa.fiu.edu/_assets/images/king-headshot.jpeg",
+  "page": "https://sipa.fiu.edu/people/fellows/profiles/christine-king.html",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "341a5784-4dde-4a4b-a84a-ec51d765cf55",
+  "name": "Eileen Higgins",
+  "office": "Mayor",
+  "cohort": "City of Miami, Florida, US",
+  "url": "http://web.archive.org/web/20260803104302im_/https://www.miami.gov/files/sharedassets/public/v/1/050526eileen_higgins290_v3.jpg?w=500&h=750",
+  "page": "https://www.miami.gov/My-Government/City-Officials/Mayor-Eileen-Higgins",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "3f0e8be4-0a63-47b3-a924-e750a16c48b6",
+  "name": "Juan Fernandez-Barquin",
+  "office": "Clerk of the Court and Comptroller",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidadeclerk.gov/resources-clerk/images/JuanBackground.jpg",
+  "page": "https://www.miamidadeclerk.gov/clerk/clerks-biography.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "d1404db5-02c6-4880-a8f5-3fe2c7d4d2d0",
+  "name": "Anthony Rodriguez",
+  "office": "Commissioner, District 10",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/commission/district10/rodriguez-headshot-home-page.jpg",
+  "page": "https://www.miamidade.gov/global/government/commission/district10/home.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "3e24904c-c172-40d3-ad27-fd65927927a2",
+  "name": "Roberto J. Gonzalez",
+  "office": "Commissioner, District 11",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://robertojgonzalez.org/wp-content/uploads/2024/02/roberto-profile-image.png",
+  "page": "https://www.robertojgonzalez.org/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "a4dd3e61-d742-40c2-a180-f781f4137cf1",
+  "name": "Juan Carlos \"JC\" Bermudez",
+  "office": "Commissioner, District 12",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "http://jcbermudez.com/wp-content/uploads/2026/02/JC-HEADSHOT.png",
+  "page": "http://jcbermudez.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "385f0162-a7ac-445a-9522-abe0491b65dd",
+  "name": "Ren\u00e9 Garcia",
+  "office": "Commissioner, District 13",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/commission/headshots/rene-garcia-headshot-1.jpg",
+  "page": "https://www.miamidade.gov/global/government/commission/district13/home.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "23950def-95e8-4282-b3b5-5d0a86e29b36",
+  "name": "Marleine Bastien",
+  "office": "Commissioner, District 2",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://reelectbastien.com/bastien-cutout.webp",
+  "page": "https://reelectbastien.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "5f074ffb-314c-4395-a2df-cdd37a7eb34f",
+  "name": "Keon Hardemon",
+  "office": "Commissioner, District 3",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://s3.amazonaws.com/ballotpedia-api4/files/KeonHardemon12.jpeg",
+  "page": "https://ballotpedia.org/Keon_Hardemon",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "237fe767-ea76-45d3-8ded-95e623dbce8f",
+  "name": "Micky Steinberg",
+  "office": "Commissioner, District 4",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/commission/district04/steinberg-headshot-home-page.jpg",
+  "page": "https://www.miamidade.gov/global/government/commission/district04/home.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "7bb3b4b3-20fa-44df-b4cc-fdef4b587c46",
+  "name": "Vicki L. Lopez",
+  "office": "Commissioner, District 5",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://vickiforflorida.com/assets/images/-m4a9696-1805x1203.jpeg",
+  "page": "https://vickiforflorida.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "8f68ac99-9e0b-4b08-9bf4-4bd59e3297a8",
+  "name": "Natalie Milian Orbis",
+  "office": "Commissioner, District 6",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/commission/district06/milian-orbis-headshot-home.jpg",
+  "page": "https://www.miamidade.gov/global/government/commission/district06/home.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "ab1cf05e-cb5e-461a-8723-7ee87adac518",
+  "name": "Raquel A. Regalado",
+  "office": "Commissioner, District 7",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://raquelregalado.com/wp-content/uploads/2025/04/IMG_1823-e1745969203443.jpg",
+  "page": "https://raquelregalado.com/meet-raquel/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "0d13108c-a1ad-4747-b8b4-5db47c0e6941",
+  "name": "Danielle Cohen Higgins",
+  "office": "Commissioner, District 8",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://dch.vote/wp-content/uploads/2026/02/Danielle-Cohen-Higgins-for-Commissioner-DCH.webp",
+  "page": "https://dch.vote/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "189fb6bd-55ed-4a4d-992a-ba86f8df1ead",
+  "name": "Kionne L. McGhee",
+  "office": "Commissioner, District 9",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/commission/headshots/kionne-mcghee-headshot-update.jpg",
+  "page": "https://www.miamidade.gov/global/government/commission/district09/home.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "e83d4e27-df48-445b-bd2d-5f371ecfed9a",
+  "name": "Daniella Levine Cava",
+  "office": "Mayor",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/mayor/mayor-bio-portait.jpg",
+  "page": "https://www.miamidade.gov/global/government/biographies/mayor.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "68b2866a-f427-4cad-8f2b-cf5a431b5f07",
+  "name": "Tomas Regalado",
+  "office": "Property Appraiser",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidadepa.gov/resources-pa/images/regalado.jpg",
+  "page": "https://www.miamidadepa.gov/pa/about/biography.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "5f19081b-e438-4654-b715-ba792f0b28cf",
+  "name": "Rosanna \"Rosie\" Cordero-Stutz",
+  "office": "Sheriff",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.miamidade.gov/resources/images/departments/police/sheriff-rosie-cordero-stutz-small-headshot.jpg",
+  "page": "https://www.miamidade.gov/global/government/biographies/police.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "4a6b8323-b563-4349-8090-9cb794dc40d1",
+  "name": "Alina Garcia",
+  "office": "Supervisor of Elections",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://www.votemiamidade.gov/resources-elections/images/alina-garcia-bio-page.jpg",
+  "page": "https://www.votemiamidade.gov/elections/about/biography.page",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "f8d82d6b-91f1-4fc3-80ad-7e51ab96ea13",
+  "name": "Dariel Fernandez",
+  "office": "Tax Collector",
+  "cohort": "Miami-Dade County, Florida, US",
+  "url": "https://s3.amazonaws.com/ballotpedia-api4/files/DarielFernandez2025.jpeg",
+  "page": "https://ballotpedia.org/Dariel_Fernandez",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "7f45cc7e-5404-411e-b685-51d28ae6d63b",
+  "name": "Gwen Marshall",
+  "office": "Clerk of the Circuit Court and Comptroller",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://leonclerk.com/images/clerk-headshot.png",
+  "page": "https://leonclerk.com/about/about-the-clerk/",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "c7d6c1bc-9349-4ba0-9987-d1693b29a49c",
+  "name": "Carolyn D. Cummings",
+  "office": "Commissioner, At Large Group 1",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/OKwUK73tCEiV0t4ZTYFAFQ/Image/Carolyn-Cummings-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/carolyn-d-cummings",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "dbc2f9d8-a7ce-4874-a4b7-10f053409046",
+  "name": "Nick Maddox",
+  "office": "Commissioner, At Large Group 2",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/v5CxHhe9QUWBMc9G8Wzhqg/Image/Nick-Maddox-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/nick-maddox",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "1711a389-bf8a-4cd5-b993-0513f256f947",
+  "name": "Bill Proctor",
+  "office": "Commissioner, District 1",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/Atw3gLEEskGh8-SdqFSYKA/Image/Bill-Proctor-CROP-1.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/bill-proctor",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "2610e93d-dadf-4ae5-9254-52c1bd96437d",
+  "name": "Christian Caban",
+  "office": "Commissioner, District 2",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/g-yzdihqkE6SXFAE833Esw/Image/Christian-Caban-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/christian-caban",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "dc74d16c-1bac-464f-9fbd-1d7e2e6f7bbb",
+  "name": "Rick Minor",
+  "office": "Commissioner, District 3",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/VIPnLcXuJUmFwhdnSBS5HA/Image/Rick-Minor-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/rick-minor",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "3a6030d7-049d-475d-b48c-cabf21720b57",
+  "name": "Brian Welch",
+  "office": "Commissioner, District 4",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/BCgZMaMPJkScczMwqWypKg/Image/Brian-Welch-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/brian-welch",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "c2d842e7-c5d5-4d3a-843b-14d6ae36da30",
+  "name": "David O'Keefe",
+  "office": "Commissioner, District 5",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://cms.leoncountyfl.gov/Portals/15/adam/Kiosk%20People/ZglO_JrJ406RJdASMaEjSg/Image/David-OKeefe-CROP.webp",
+  "page": "https://cms.leoncountyfl.gov/leadingtheway/County-Commissioners/Details/david-t-o-keefe",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "c5ca3774-67db-4674-9b9f-9002591af297",
+  "name": "Akin Akinyemi",
+  "office": "Property Appraiser",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://www.leonpa.gov/Portals/0/adam/People/c-Re8rrAsEmuP-wnsvoiQw/Image/headshot_akin.jpg",
+  "page": "https://www.leonpa.gov/Our-Office/About-Us/Meet-Akin",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "e19a23bd-f300-4c9b-87c7-db5ab9e1370c",
+  "name": "Walt McNeil",
+  "office": "Sheriff",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://www.leoncountyso.com/Portals/0/adam/Basic%20Content/64tNyzPsWUa17KvpKc0EzQ/Image/mcneilwalt-4546.jpg",
+  "page": "https://www.leoncountyso.com/about-us/meet-the-sheriff",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "2a4901c9-5491-4582-b893-e7ea78459cd6",
+  "name": "Rocky Hanna",
+  "office": "Superintendent of Schools",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://files.smartsites.parentsquare.com/10627/RockyRev_1757697931.jpeg",
+  "page": "https://www.leonschools.net/superintendent-rocky-hanna",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "518df864-1375-4de9-a068-fb9f4205f627",
+  "name": "Mark S. Earley",
+  "office": "Supervisor of Elections",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://www.leonvotes.gov/Portals/0/adam/Basic%20Content/o2KlRa-yRUiWIHgi61Gwkw/Text/Mark%20Earley%20Headshot%20-%202026-1.png",
+  "page": "https://www.leonvotes.gov/Your-Elections-Office/Meet-the-Supervisor",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "8177cd69-f53e-4e3c-8137-d021065c4978",
+  "name": "Doris Maloy",
+  "office": "Tax Collector",
+  "cohort": "Leon County, Florida, US",
+  "url": "https://floridataxcollectors.com/wp-content/uploads/2018/02/Doris-Maloy-02.16.18.jpg",
+  "page": "https://floridataxcollectors.com/florida-tax-collectors-association-highlights-black-history-month-focus-three-trailblazers/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "158b062f-8fee-4f04-b18a-289eb0c7e059",
+  "name": "Shannon Ramsey-Chessman",
+  "office": "Clerk of the Circuit Court & Comptroller",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://www.mypalmbeachclerk.com/home/showpublishedimage/2410/638907638446900000",
+  "page": "https://www.mypalmbeachclerk.com/about-us/about-clerk-ad-interim-shannon-ramsey-chessman",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "a9f3a6d4-6d1a-4687-b797-6dee01fed72d",
+  "name": "Maria G. Marino",
+  "office": "Commissioner, District 1",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://electmariamarino.com/web/wp-content/uploads/2019/04/maria-marino-microphone.jpg",
+  "page": "https://electmariamarino.com/get-to-know-maria/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "84b4e65b-ee92-44d7-86f3-b09c61c7e702",
+  "name": "Gregg K. Weiss",
+  "office": "Commissioner, District 2",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://weissforwpb.com/wp-content/uploads/2025/04/8AF158AE-3847-4C8E-8B2B-D9169703920FIMG_0769.png",
+  "page": "https://weissforwpb.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "2978bb25-4dfd-46b2-85ff-017d8610f7b7",
+  "name": "Joel G. Flores",
+  "office": "Commissioner, District 3",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://discover.pbc.gov/countycommissioners/SiteImages/portraits/d3.jpg",
+  "page": "https://discover.pbc.gov/countycommissioners/district3/Pages/Biography.aspx",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "67bf315c-4775-40c1-ab5c-4fa115e9c974",
+  "name": "Marci Woodward",
+  "office": "Commissioner, District 4",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://marciwoodward.com/wp-content/uploads/2026/08/marci-img.png",
+  "page": "https://marciwoodward.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "f48fe0d8-468e-4941-8a09-e140f37a0322",
+  "name": "Maria Sachs",
+  "office": "Commissioner, District 5",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://www.mariasachs.com/wp-content/uploads/2024/04/meet-maria-img.jpg",
+  "page": "https://www.mariasachs.com/",
+  "license": "campaign_use",
+  "positional": false,
+  "crop": {
+   "anchor_x": 0.14
+  }
+ },
+ {
+  "politician_id": "47217f23-4c31-430a-b794-ccecf24c8542",
+  "name": "Sara Baxter",
+  "office": "Commissioner, District 6",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://static.wixstatic.com/media/0b55aa_8d9e888c6d8f40b482521216e792af37~mv2.png",
+  "page": "https://www.votesarabaxter.com/",
+  "license": "campaign_use",
+  "positional": true,
+  "crop": {
+   "bbox": true,
+   "zoom": 1.75,
+   "anchor_y": 0.0
+  }
+ },
+ {
+  "politician_id": "ee01e78f-38c1-4c83-8f4e-e2c12a8b1bcf",
+  "name": "Bobby Powell Jr.",
+  "office": "Commissioner, District 7",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://discover.pbc.gov/countycommissioners/SiteImages/portraits/d7.jpg",
+  "page": "https://discover.pbc.gov/countycommissioners/district7/Pages/Biography.aspx",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "abda71bd-6c1d-4b18-9190-96cc192afb3a",
+  "name": "Dorothy Jacks",
+  "office": "Property Appraiser",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://pbcpao.gov/media/oldsite/portraits/dorothy-with-background-2019.jpg",
+  "page": "https://pbcpao.gov/dorothy-bio.htm",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "2bc57f81-1bea-4602-8e36-40a915f021f9",
+  "name": "Ric L. Bradshaw",
+  "office": "Sheriff",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://www.pbso.org/wp-content/uploads/2015/12/Sheriff-Bradshaw-30x37.jpg",
+  "page": "https://www.pbso.org/sheriff-ric-bradshaw",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "7c536709-cec2-4409-aff8-ccc0fb469d3d",
+  "name": "Wendy Sartory Link",
+  "office": "Supervisor of Elections",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://streamline.imgix.net/c37c1409-6382-4617-83b7-8195d7439051/0c3c9b01-d443-4803-a07f-5f01d9946f9c/Wendy%20Link%20Headshot_crop.jpg?ixlib=rb-1.1.0&w=2000&h=2000&fit=max&or=0&s=28f40421b390fc89ae1313e9d2010f2b",
+  "page": "https://www.myfloridaelections.com/wendy-sartory-link",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "419df08c-63fc-4245-b584-2613f9d53139",
+  "name": "Anne M. Gannon",
+  "office": "Tax Collector",
+  "cohort": "Palm Beach County, Florida, US",
+  "url": "https://www.pbctax.gov/wp-content/uploads/2024/10/new-anne-photot-for-tax-talk.png",
+  "page": "https://www.pbctax.gov/about-us/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "6a4f5751-a66f-4997-9678-0b3f1738fc90",
+  "name": "Jayne Kocher",
+  "office": "Council Member, Ward 1",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://cityofbradenton.com/vertical/Sites/%7B98CFEB92-7265-45CB-AF6F-7115C2CD7C81%7D/uploads/800x597_Web.jpg",
+  "page": "https://cityofbradenton.com/kocher",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "d3be3b8b-df3f-4878-9c13-af097d7d032b",
+  "name": "Marianne Barnebey",
+  "office": "Council Member, Ward 2",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://cityofbradenton.com/vertical/Sites/%7B98CFEB92-7265-45CB-AF6F-7115C2CD7C81%7D/uploads/800x596_Web.jpg",
+  "page": "https://cityofbradenton.com/barnebey",
+  "license": "press_use",
+  "positional": true,
+  "crop": {
+   "zoom": 1.6,
+   "anchor_y": 0.32
+  }
+ },
+ {
+  "politician_id": "a4e632ee-88fd-443a-bf8d-9d75221835dd",
+  "name": "Kemp Schuessler",
+  "office": "Council Member, Ward 3",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://zeta.creativecirclecdn.com/bradenton/original/20260310-173805-e90-Kemp_Schuessler.jpeg",
+  "page": "https://thebradentontimes.com/stories/council-corner-city-of-bradenton-ward-3,208971",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "5bf953c6-d159-42f9-9bf2-f5451a96809f",
+  "name": "Lisa Gonzalez Moore",
+  "office": "Council Member, Ward 4",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://cityofbradenton.com/vertical/Sites/%7B98CFEB92-7265-45CB-AF6F-7115C2CD7C81%7D/uploads/LM_resize_Web.jpg",
+  "page": "https://cityofbradenton.com/moore",
+  "license": "press_use",
+  "positional": true,
+  "crop": {
+   "zoom": 1.95,
+   "anchor_x": 1.0,
+   "anchor_y": 0.35
+  }
+ },
+ {
+  "politician_id": "e9e16972-9298-4ea8-afaa-f5e191c96c83",
+  "name": "Pam Coachman",
+  "office": "Council Member, Ward 5",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://cityofbradenton.com/vertical/Sites/%7B98CFEB92-7265-45CB-AF6F-7115C2CD7C81%7D/uploads/800x602_Web.jpg",
+  "page": "https://cityofbradenton.com/coachman",
+  "license": "press_use",
+  "positional": true,
+  "crop": {
+   "zoom": 2.6,
+   "anchor_x": 0.3,
+   "anchor_y": 0.62
+  }
+ },
+ {
+  "politician_id": "4a075943-d0df-46a2-beab-36675a5cd9e6",
+  "name": "Gene Brown",
+  "office": "Mayor",
+  "cohort": "City of Bradenton, Florida, US",
+  "url": "https://cityofbradenton.com/vertical/Sites/%7B98CFEB92-7265-45CB-AF6F-7115C2CD7C81%7D/uploads/mayor_desk_2-1_Web.jpg",
+  "page": "https://cityofbradenton.com/brown",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "34521ee7-a88d-4030-afb7-d098574b174f",
+  "name": "Jacqueline \"Jack\" Porter",
+  "office": "City Commissioner, Seat 1",
+  "cohort": "City of Tallahassee, Florida, US",
+  "url": "https://www.talgov.com/uploads/public/images/cityleadership/porter.jpg",
+  "page": "https://www.talgov.com/cityleadership/porter",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "5b9af6ce-da40-4171-b13c-4c45d2c6ec02",
+  "name": "Curtis Richardson",
+  "office": "City Commissioner, Seat 2",
+  "cohort": "City of Tallahassee, Florida, US",
+  "url": "https://www.talgov.com/uploads/public/images/cityleadership/richardson.jpg",
+  "page": "https://www.talgov.com/cityleadership/richardson",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "cfb2cfd1-8e68-4166-ae97-d27ac192f417",
+  "name": "Jeremy Matlow",
+  "office": "City Commissioner, Seat 3",
+  "cohort": "City of Tallahassee, Florida, US",
+  "url": "https://www.talgov.com/uploads/public/images/cityleadership/Commissioner-JeremyMatlow.jpg",
+  "page": "https://www.talgov.com/cityleadership/matlow",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "b66b8326-2578-4ae5-8240-c6768588df99",
+  "name": "Dianne Williams-Cox",
+  "office": "City Commissioner, Seat 5",
+  "cohort": "City of Tallahassee, Florida, US",
+  "url": "https://www.talgov.com/uploads/public/images/cityleadership/Commissioner-DianneWilliamsCox.jpg",
+  "page": "https://www.talgov.com/cityleadership/williams-cox",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "be040f10-f5a4-4661-835f-8e4604b89860",
+  "name": "John Dailey",
+  "office": "Mayor (Seat 4)",
+  "cohort": "City of Tallahassee, Florida, US",
+  "url": "https://www.talgov.com/uploads/public/images/cityleadership/Mayor-JohnDailey.jpg",
+  "page": "https://www.talgov.com/cityleadership/dailey",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "760efd50-9c39-4d3b-aca3-03ef26e92c8a",
+  "name": "Angelina \"Angel\" Colonneso",
+  "office": "Clerk of the Circuit Court and Comptroller",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.manateeclerk.com/media/1895/angel-1.jpg",
+  "page": "https://www.manateeclerk.com/about-us/meet-the-clerk/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "9a5ba4af-b368-45a3-aaa2-ccdc66197034",
+  "name": "Amanda Ballard",
+  "office": "Commissioner, District 2",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://amandaballard2026.com/images/headshot-clean.webp",
+  "page": "https://amandaballard2026.com/",
+  "license": "campaign_use",
+  "positional": false,
+  "crop": {
+   "anchor_y": 0.0
+  }
+ },
+ {
+  "politician_id": "232cf97b-09a9-4cf6-8913-e767b9d09a11",
+  "name": "Tal Siddique",
+  "office": "Commissioner, District 3",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.mymanatee.org/media/images/default-source/county-administrators-office/commissioners/tal-3.jpg",
+  "page": "https://www.mymanatee.org/government/government-information/board-of-county-commissioners",
+  "license": "press_use",
+  "positional": true
+ },
+ {
+  "politician_id": "ce28e398-7169-4a53-ad01-dd2afd00fce7",
+  "name": "Mike Rahn",
+  "office": "Commissioner, District 4",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://votemikerahn.com/wp-content/uploads/2026/03/Screenshot-2026-03-17-at-9.53.57-PM.png",
+  "page": "https://votemikerahn.com/",
+  "license": "campaign_use",
+  "positional": false,
+  "crop": {
+   "zoom": 1.45,
+   "anchor_y": 0.4
+  }
+ },
+ {
+  "politician_id": "8f1b66d0-68ef-4e21-9f66-45fced3d0b90",
+  "name": "Dr. Bob McCann",
+  "office": "Commissioner, District 5",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.mymanatee.org/media/images/default-source/county-administrators-office/commissioners/bob-mccann-district-5.jpg",
+  "page": "https://www.mymanatee.org/government/government-information/board-of-county-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "472543fd-e529-421e-9270-b0316358410a",
+  "name": "Jason Bearden",
+  "office": "Commissioner, District 6 (At-Large)",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.mymanatee.org/media/images/default-source/county-administrators-office/commissioners/bearden.jpg",
+  "page": "https://www.mymanatee.org/government/government-information/board-of-county-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "e831875e-c406-4b9e-9180-f420446622bf",
+  "name": "George Kruse",
+  "office": "Commissioner, District 7 (At-Large)",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.mymanatee.org/media/images/default-source/county-administrators-office/commissioners/kruse-web.jpg",
+  "page": "https://www.mymanatee.org/government/government-information/board-of-county-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "9647fef1-fd13-4406-9104-6619a2d4868c",
+  "name": "Charles E. Hackney",
+  "office": "Property Appraiser",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://charliehackney.com/wp-content/uploads/2024/07/Charles-Hackney-Hero.png",
+  "page": "https://charliehackney.com/",
+  "license": "campaign_use",
+  "positional": false
+ },
+ {
+  "politician_id": "9325fe3a-63e0-42f3-b7ca-cc23d05ecdc4",
+  "name": "Charles R. \"Rick\" Wells",
+  "office": "Sheriff",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://flsheriffs.org/wp-content/uploads/2024/03/Sheriff_Wells_Headshot_2021_.jpg",
+  "page": "https://flsheriffs.org/staff/sheriff-charles-r-wells/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "b6c533c4-66f1-4bff-bc02-ec4136f96538",
+  "name": "Scott Farrington",
+  "office": "Supervisor of Elections",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.votemanatee.gov/wp-content/uploads/2025/08/scott-farrington.jpg",
+  "page": "https://www.votemanatee.gov/meet-the-supervisor-of-elections/",
+  "license": "press_use",
+  "positional": false,
+  "crop": {
+   "zoom": 1.6,
+   "anchor_x": 0.1,
+   "anchor_y": 0.1
+  }
+ },
+ {
+  "politician_id": "01463105-eae5-4037-b5e7-a86e3ec9ced9",
+  "name": "Ken Burton, Jr.",
+  "office": "Tax Collector",
+  "cohort": "Manatee County, Florida, US",
+  "url": "https://www.taxcollector.com/assets/images/about/ken.jpg",
+  "page": "https://www.taxcollector.com/about.cfm",
+  "license": "press_use",
+  "positional": true
+ }
+]
