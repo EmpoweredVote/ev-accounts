@@ -137,4 +137,38 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/cities — contract', () => {
       }
     }
   });
+
+  // AUDIT-GRADE: available_datasets entries expose `audit_grade` -- what level of
+  // independent assurance stands behind the figure. Treasury Tracker has graded
+  // 88,820 rows across eight loading sessions and, until this key existed, a reader
+  // could see NONE of them.
+  //
+  // ⚠ `unknown` is the MAJORITY value (60,368 of 88,820 rows as of 2026-08-31) and
+  // is LEGAL and EXPECTED. It means nobody has looked yet -- an honesty marker, never
+  // a guess and never a judgement about the government. This test must never be
+  // "fixed" by asserting that unknown is absent.
+  //
+  // ⚠ The five values are NOT a ranked ladder. `audited_ocboa` carries the SAME
+  // independent-opinion assurance as `audited_gaap` on a different measurement
+  // basis, so the list order below is the CHECK-constraint order and nothing more.
+  it('available_datasets entries expose an audit_grade key with a legal value', async () => {
+    const LEGAL_GRADES = [
+      'audited_gaap', 'audited_ocboa', 'compiled_from_audited',
+      'self_reported_unaudited', 'unknown',
+    ];
+    const res = await request(app).get('/api/treasury/cities');
+    expect(res.status).toBe(200);
+    const cities = res.body as Array<Record<string, unknown>>;
+    if (cities.length === 0) return;
+    for (const city of cities) {
+      const datasets = (city['available_datasets'] as Array<Record<string, unknown>>) ?? [];
+      for (const ds of datasets) {
+        expect(ds, 'each dataset entry must carry audit_grade').toHaveProperty('audit_grade');
+        expect(
+          LEGAL_GRADES,
+          `audit_grade "${String(ds['audit_grade'])}" is outside the CHECK constraint on treasury.budgets`
+        ).toContain(ds['audit_grade']);
+      }
+    }
+  });
 });
