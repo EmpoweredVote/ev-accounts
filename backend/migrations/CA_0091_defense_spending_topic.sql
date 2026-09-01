@@ -1,7 +1,7 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0085: "Defense Spending" — a new compass topic (revision model)
+-- CA_0091: "Defense Spending" — a new compass topic (revision model)
 -- =============================================================================
 -- Created 2026-08-31 with Chris Andrews.
 --
@@ -119,9 +119,9 @@ BEGIN
       NULL,                                                  -- p_actor_id (users has no email/lookup key; see CA_0027)
       '["federal"]'::jsonb                                   -- p_role_scopes (federal only — budget is set by Congress)
     );
-    RAISE NOTICE 'CA_0085: created topic defense-spending';
+    RAISE NOTICE 'CA_0091: created topic defense-spending';
   ELSE
-    RAISE NOTICE 'CA_0085: topic defense-spending already present — create skipped';
+    RAISE NOTICE 'CA_0091: topic defense-spending already present — create skipped';
   END IF;
 END $$;
 
@@ -137,7 +137,7 @@ DECLARE
 BEGIN
   SELECT id INTO v_topic FROM inform.compass_topics WHERE topic_key = 'defense-spending';
   IF v_topic IS NULL THEN
-    RAISE EXCEPTION 'CA_0085: topic defense-spending is missing before season pin';
+    RAISE EXCEPTION 'CA_0091: topic defense-spending is missing before season pin';
   END IF;
 
   IF NOT EXISTS (
@@ -145,9 +145,9 @@ BEGIN
      WHERE season_id = v_season AND topic_id = v_topic
   ) THEN
     PERFORM inform.admin_season_add_topic(v_season, v_topic, NULL);
-    RAISE NOTICE 'CA_0085: pinned defense-spending into Season 2';
+    RAISE NOTICE 'CA_0091: pinned defense-spending into Season 2';
   ELSE
-    RAISE NOTICE 'CA_0085: defense-spending already pinned in Season 2 — pin skipped';
+    RAISE NOTICE 'CA_0091: defense-spending already pinned in Season 2 — pin skipped';
   END IF;
 END $$;
 
@@ -180,7 +180,7 @@ DECLARE
 BEGIN
   SELECT id INTO v_topic FROM inform.compass_topics WHERE topic_key = 'defense-spending';
   IF v_topic IS NULL THEN
-    RAISE EXCEPTION 'CA_0085: topic defense-spending is missing after create';
+    RAISE EXCEPTION 'CA_0091: topic defense-spending is missing after create';
   END IF;
 
   -- exactly one published/current v1 substantive revision, rung_map NULL
@@ -189,7 +189,7 @@ BEGIN
      AND revision = 1 AND version = 1 AND change_class = 'substantive'
      AND rung_map IS NULL;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_0085: expected 1 published/current v1 substantive revision (rung_map NULL), got %', v_n;
+    RAISE EXCEPTION 'CA_0091: expected 1 published/current v1 substantive revision (rung_map NULL), got %', v_n;
   END IF;
 
   -- five distinct stance-revision values on the current revision
@@ -198,32 +198,32 @@ BEGIN
     JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id
    WHERE r.topic_id = v_topic AND r.is_current;
   IF v_n <> 5 THEN
-    RAISE EXCEPTION 'CA_0085: expected 5 stance revisions, got %', v_n;
+    RAISE EXCEPTION 'CA_0091: expected 5 stance revisions, got %', v_n;
   END IF;
 
   -- five legacy stances (corpus 5:5 invariant)
   SELECT count(*) INTO v_n FROM inform.compass_stances WHERE topic_id = v_topic;
   IF v_n <> 5 THEN
-    RAISE EXCEPTION 'CA_0085: expected 5 legacy stances, got %', v_n;
+    RAISE EXCEPTION 'CA_0091: expected 5 legacy stances, got %', v_n;
   END IF;
 
   -- exactly one role row: federal (never state/local/judicial)
   SELECT count(*) INTO v_n FROM inform.compass_topic_roles WHERE topic_id = v_topic;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_0085: expected exactly 1 role row, got %', v_n;
+    RAISE EXCEPTION 'CA_0091: expected exactly 1 role row, got %', v_n;
   END IF;
   IF NOT EXISTS (SELECT 1 FROM inform.compass_topic_roles WHERE topic_id = v_topic AND role_scope = 'federal') THEN
-    RAISE EXCEPTION 'CA_0085: expected a federal role row';
+    RAISE EXCEPTION 'CA_0091: expected a federal role row';
   END IF;
   IF EXISTS (SELECT 1 FROM inform.compass_topic_roles
               WHERE topic_id = v_topic AND role_scope IN ('state','local','judicial')) THEN
-    RAISE EXCEPTION 'CA_0085: unexpected non-federal role row';
+    RAISE EXCEPTION 'CA_0091: unexpected non-federal role row';
   END IF;
 
   -- topic_key frozen exactly (essentials.quotes joins on it)
   IF NOT EXISTS (SELECT 1 FROM inform.compass_topics
                   WHERE id = v_topic AND topic_key = 'defense-spending') THEN
-    RAISE EXCEPTION 'CA_0085: topic_key drifted from defense-spending';
+    RAISE EXCEPTION 'CA_0091: topic_key drifted from defense-spending';
   END IF;
 
   -- polarity guard: value 1 is the "increase"/buildup pole, value 5 the "cut" pole.
@@ -237,7 +237,7 @@ BEGIN
     JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id
    WHERE r.topic_id = v_topic AND r.is_current AND sr.value = 5;
   IF v_t1 NOT ILIKE 'Increase%' OR v_t5 NOT ILIKE 'Cut%' THEN
-    RAISE EXCEPTION 'CA_0085: polarity check failed (v1=%, v5=%)', v_t1, v_t5;
+    RAISE EXCEPTION 'CA_0091: polarity check failed (v1=%, v5=%)', v_t1, v_t5;
   END IF;
 
   -- pinned into Season 2, on the current published revision
@@ -247,13 +247,13 @@ BEGIN
   SELECT count(*) INTO v_n FROM inform.season_questions
    WHERE season_id = v_season AND topic_id = v_topic AND topic_revision_id = v_rev;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_0085: expected 1 Season 2 pin on the current revision, got %', v_n;
+    RAISE EXCEPTION 'CA_0091: expected 1 Season 2 pin on the current revision, got %', v_n;
   END IF;
 
   -- must NOT be live yet: Season 2 is a DRAFT, so the season-gated promoted view
   -- (which serves the OPEN season) must not list it.
   IF EXISTS (SELECT 1 FROM inform.compass_topics_promoted WHERE id = v_topic) THEN
-    RAISE EXCEPTION 'CA_0085: topic leaked into the open season before Season 2 opened';
+    RAISE EXCEPTION 'CA_0091: topic leaked into the open season before Season 2 opened';
   END IF;
 
   -- assigned to the Foreign Policy and National Security category
@@ -262,10 +262,10 @@ BEGIN
      WHERE topic_id = v_topic
        AND category_id = 'f41cef76-e438-4a0a-a9f3-13beba247f73'
   ) THEN
-    RAISE EXCEPTION 'CA_0085: expected Foreign Policy and National Security category assignment';
+    RAISE EXCEPTION 'CA_0091: expected Foreign Policy and National Security category assignment';
   END IF;
 
-  RAISE NOTICE 'CA_0085 OK — defense-spending staged (1 published/current v1, 5 rungs, 5 legacy stances, 1 federal role, polarity 1=increase/5=cut, pinned into draft Season 2, category assigned, not promoted)';
+  RAISE NOTICE 'CA_0091 OK — defense-spending staged (1 published/current v1, 5 rungs, 5 legacy stances, 1 federal role, polarity 1=increase/5=cut, pinned into draft Season 2, category assigned, not promoted)';
 END $$;
 
 COMMIT;
