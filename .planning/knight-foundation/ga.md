@@ -7,7 +7,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | Wave | Scope | Status |
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
-| GA-2 | Legislature: 180 House + 56 Senate | — |
+| GA-2 | Legislature: 180 House + 56 Senate | ⏸ **sources reconciled, migrations not written** |
 | GA-3..5 | Columbus, Macon, Milledgeville | — |
 
 ---
@@ -216,6 +216,93 @@ Milledgeville  -> State House District 149 · State Senate District 25
 Supabase MCP. `REFRESH … CONCURRENTLY` cannot run inside a transaction block, and the MCP wrapped it
 without complaint. Per FL's correction, the refresh is required because this load wrote `place`
 (`G4110`); a wave that loads only `X` codes does not need it.
+
+## GA-2 — the roster, reconciled 2026-08-31
+
+### Two sources, and they are genuinely different records
+
+| # | Source | Endpoint | What it is |
+| --- | --- | --- | --- |
+| A | District **map** behind Find Your Legislator | `/api/legislatormaps/GoogleMaps/{House,Senate} Map 2023` | one feature per district, carrying the **sitting** member |
+| B | Member **list** behind `/members/{house,senate}` | `/api/members/list/1033?chamber={1,2}` | one row per **person**, including people who have left |
+
+Both are legis.ga.gov, but they are different endpoints over different records and they do not have
+the same shape. Payloads kept in `backend/data/seed-ga-2026/` (untracked).
+
+### The diff
+
+| Chamber | Seats | MAP districts | LIST rows | LIST districts | Rows with `dateVacated` | Districts absent from either | **Name disagreements** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| House | 180 | 180 | **186** | 180 | 6 | none | **0** |
+| Senate | 56 | 56 | **61** | 56 | 5 | none | **0** |
+
+🟢 **The two sources agree on all 236 sitting members, name for name.** Every district has
+exactly one non-vacated LIST row, and it matches the MAP feature.
+
+🔴 **THE LIST IS OVER-LONG FOR THE SAME REASON FLORIDA'S WAS — 11 SEATS CHANGED HANDS MID-TERM**,
+and the list keeps the departed member beside the sitting one. Unlike Florida, Georgia annotates it
+cleanly: the departed row carries `dateVacated` and the sitting row does not. Do not de-duplicate on
+name or on district alone; **filter on `dateVacated IS NULL`.**
+
+| Chamber | District | Departed | Vacated | Sitting now |
+| --- | --- | --- | --- | --- |
+| House | 23 | Mandi Ballinger | 2025-10-12 | Bill Fincher |
+| House | 94 | Karen Bennett | 2026-01-01 | Venola Mason |
+| House | 106 | Shelly Hutchinson | 2025-09-05 | Akbar Ali |
+| House | 121 | Marcus Wiedower | 2025-10-28 | Eric Gisler |
+| House | 130 | Lynn Heffner | 2026-01-05 | Sheila Nelson |
+| House | 177 | Dexter Sharper | 2026-03-09 | Alvin Payton |
+| Senate | 7 | Nabilah Parkes | 2026-03-13 | Adrienne White Carden |
+| Senate | 18 | John F. Kennedy | 2025-12-09 | Steven McNeel |
+| Senate | 21 | Brandon Beach | 2025-05-05 | Jason T. Dickerson |
+| Senate | 35 | Jason Esteves | 2025-09-10 | Jaha Howard |
+| Senate | 53 | Colton Moore | 2026-01-13 | Lanny Thomas |
+
+⚠ **THE MAP PAYLOAD'S "`DateVacated` NULL ON ALL 236" WAS NOT A STALENESS SIGNAL AFTER ALL.** It is
+null because that payload only ever carries the sitting member; departures live in the other endpoint.
+The suspicion was still right to raise — it is what made the second source non-optional — but the
+resolution is that the two agree, and the LIST is the one that documents the 11 predecessors.
+
+### 🔴 There is NO term_start to be had. Georgia publishes none.
+
+A member page carries name, district, party, city, capitol and district addresses, staff, birthday
+and spouse. It carries **no service-start of any kind** — no "elected in YYYY", no term window, no
+assumed-office date. Checked on a first-term member (Bill Fincher, House 23, arrived after a
+2025-10-12 vacancy): the entire About block is "Birthday / Spouse".
+
+So GA-2 cannot do what FL-2 did, which was to lift continuous occupancy from each member's own
+"Legislative Service" line. **The honest write is an open-ended term with
+`start_precision => 'unknown'`** — the NC pattern — for all 236. Do not derive a date from the
+2024 general election: that is the start of the current TERM, and `term_start` is the start of
+continuous occupancy, which re-election does not end.
+
+⚠ The 11 `dateVacated` values are the **predecessor's end**, not the successor's start. They are
+worth recording as prose, but they do not license a `term_start` for the person who replaced them.
+
+### 🟢 The portraits are full-resolution, and the state says so
+
+Every member page carries a **"High Resolution Photo"** link, and it is the portrait URL with the
+`?size=mpSm` query simply removed. Measured on `fincher-bill-5092.jpg`:
+
+| URL | Dimensions | Bytes |
+| --- | --- | --- |
+| `...jpg?size=mpSm` | 90 x 120 | 5,401 |
+| `...jpg` | **1688 x 2283** | 256,576 |
+
+That is 19x linear and 47x the bytes — the Ballotpedia `thumbs/200/300/` lesson in a different dress,
+and it was worth the two minutes to measure rather than assume. 1688x2283 is far above the 600x750
+headshot target, so stage 5 needs no upscaling for the legislature. The roster payloads give a
+portrait URL for all 236, so **GA's stage-5 legislative half is already sourced.**
+
+### What GA-2 still needs before it writes
+
+1. **A change-check for every seat**, against a date later than these payloads. Eleven seats turned
+   over in the last year, so the base rate of change here is high.
+2. Structure migration (236 offices on the districts loaded by GA-1), then occupancy migration
+   (236 people, open-ended terms). Take the migration number LAST, and re-count it against
+   `origin/master` rather than any file.
+3. `splitName()` behaviour on `Reynaldo "Rey" Martinez`, `Williams, Jr.`, `Regina Lewis-Ward` and
+   `Holly El-Mahdi` — four shapes in one roster that the FL/Nashville waves each had to widen for.
 
 ## Open questions for GA-3 onward
 
