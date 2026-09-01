@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 import { useAuthStore } from '../store/authStore';
 import { embeddedAuthEnabled, loginWithPassword, verifyEmailCode } from '../lib/workosAuth';
+import PasswordRequirements from '../components/PasswordRequirements';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -332,6 +333,7 @@ export default function InformSignup() {
               placeholder="At least 8 characters"
               className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-yellow focus:border-transparent"
             />
+            <PasswordRequirements password={password} />
           </div>
 
           <div>

@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 import { useAuthStore } from '../store/authStore';
 import { embeddedAuthEnabled, loginWithPassword, verifyEmailCode } from '../lib/workosAuth';
+import PasswordRequirements from '../components/PasswordRequirements';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -376,6 +377,7 @@ export default function Signup() {
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="At least 8 characters"
             />
+            <PasswordRequirements password={password} />
           </div>
 
           <div>
