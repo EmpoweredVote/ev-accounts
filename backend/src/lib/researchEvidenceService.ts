@@ -62,7 +62,10 @@ function snippetsForJsonb(verifiedSources: VerifiedRow['verifiedSources'], faile
       snippet_index: snip.snippet_index,
       snippet: snip.snippet,
       verdict: snip.verdict.verdict,
-      reason: snip.verdict.verdict === 'url_broken' ? snip.verdict.reason : undefined,
+      reason:
+        snip.verdict.verdict === 'url_broken' || snip.verdict.verdict === 'robots_disallowed'
+          ? snip.verdict.reason
+          : undefined,
     })),
   }));
 }

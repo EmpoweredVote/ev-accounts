@@ -24,9 +24,12 @@
  */
 
 import { chromium, type Browser } from 'playwright';
-import { renderPage, REALISTIC_UA } from './fetchPageContent.js';
+import { renderPage, EMPOWERED_VOTE_UA, EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
 
 const HTTP_TIMEOUT_MS = 12_000;
+const ROBOTS_TIMEOUT_MS = 8_000;
+/** How long a parsed robots.txt is trusted before we re-fetch it. */
+const ROBOTS_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
 /** Below this many chars a page is almost certainly a stub/challenge, not content. */
 export const MIN_REAL_PAGE_CHARS = 500;
@@ -79,13 +82,183 @@ export function looksLikeRealPage(text: string): boolean {
   return true;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// robots.txt — we fetch honestly (see EMPOWERED_VOTE_UA), so we also obey the
+// site's stated wishes. Before hitting a live page we check whether
+// EmpoweredVoteBot is disallowed for that path; if it is, we skip the live tiers
+// and fall back to an archived Wayback snapshot (which is not a fetch of the
+// live site), or record a distinct `robots_disallowed` outcome.
+//
+// This is a deliberately small parser, not a full RFC 9309 implementation. It
+// supports: per-user-agent groups, `*` groups, longest-match wins, Allow beats
+// Disallow on an equal-length tie, and the `*` / `$` path wildcards. That covers
+// what real newsroom robots.txt files use.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Thrown by a fetch session when robots.txt disallows the path AND no archived
+ * snapshot is available. Distinct from a generic fetch failure so the two can be
+ * COUNTED SEPARATELY — a policy "no" is not a broken URL. Callers detect it by
+ * the stable `code`, without importing this class.
+ */
+export class RobotsDisallowedError extends Error {
+  readonly code = 'robots_disallowed';
+  constructor(url: string) {
+    super('robots_disallowed: ' + url);
+    this.name = 'RobotsDisallowedError';
+  }
+}
+
+interface RobotsRule {
+  allow: boolean;
+  /** Length of the rule path excluding `*`/`$`, used as match specificity. */
+  specificity: number;
+  test: (path: string) => boolean;
+}
+
+/** Compile one Allow/Disallow value into a prefix matcher with `*`/`$` support. */
+function compileRule(allow: boolean, value: string): RobotsRule | null {
+  // An empty Disallow means "allow everything" — it contributes no constraint.
+  if (value === '') return null;
+  const specificity = value.replace(/[*$]/g, '').length;
+  // A trailing `$` anchors the match to the end of the path.
+  const anchored = value.endsWith('$');
+  const body = anchored ? value.slice(0, -1) : value;
+  const pattern = body
+    .replace(/[.+?^${}()|[\]\\]/g, '\\$&') // escape regex metachars, EXCEPT `*`…
+    .replace(/\*/g, '.*'); // …which is the robots wildcard → `.*`.
+  const rx = new RegExp('^' + pattern + (anchored ? '$' : ''));
+  return { allow, specificity, test: (path) => rx.test(path) };
+}
+
+/**
+ * Parse robots.txt and return the rule set that applies to `token`. Picks the
+ * most specific matching user-agent group (an exact/prefix token match beats the
+ * `*` group); returns `[]` when no group applies, i.e. fully allowed.
+ */
+export function parseRobotsForAgent(txt: string, token: string): RobotsRule[] {
+  const tok = token.toLowerCase();
+  // Group lines by their governing user-agent(s). Consecutive User-agent lines
+  // share the following rules.
+  const groups: { agents: string[]; rules: RobotsRule[] }[] = [];
+  let current: { agents: string[]; rules: RobotsRule[] } | null = null;
+  let expectingAgent = false;
+
+  for (const raw of txt.split(/\r?\n/)) {
+    const line = raw.replace(/#.*$/, '').trim();
+    if (!line) continue;
+    const idx = line.indexOf(':');
+    if (idx === -1) continue;
+    const field = line.slice(0, idx).trim().toLowerCase();
+    const value = line.slice(idx + 1).trim();
+
+    if (field === 'user-agent') {
+      if (!current || !expectingAgent) {
+        current = { agents: [], rules: [] };
+        groups.push(current);
+        expectingAgent = true;
+      }
+      current.agents.push(value.toLowerCase());
+    } else if (field === 'allow' || field === 'disallow') {
+      if (!current) continue; // rule before any user-agent — ignore
+      expectingAgent = false;
+      const rule = compileRule(field === 'allow', value);
+      if (rule) current.rules.push(rule);
+    }
+    // Other fields (Sitemap, Crawl-delay, …) are ignored.
+  }
+
+  // A group matches our token if any of its agents is `*` or a prefix of the
+  // token (case-insensitive), e.g. `empoweredvotebot` or `empoweredvote`.
+  const specific = groups.filter((g) =>
+    g.agents.some((a) => a !== '*' && (tok === a || tok.startsWith(a))),
+  );
+  if (specific.length) return specific.flatMap((g) => g.rules);
+  const star = groups.filter((g) => g.agents.includes('*'));
+  return star.flatMap((g) => g.rules);
+}
+
+/** Apply parsed rules to a path. Longest match wins; Allow breaks an even tie. */
+export function isPathAllowed(rules: RobotsRule[], path: string): boolean {
+  let best: RobotsRule | null = null;
+  for (const rule of rules) {
+    if (!rule.test(path)) continue;
+    if (
+      !best ||
+      rule.specificity > best.specificity ||
+      (rule.specificity === best.specificity && rule.allow && !best.allow)
+    ) {
+      best = rule;
+    }
+  }
+  return best ? best.allow : true; // no rule matched → allowed
+}
+
+interface RobotsCacheEntry {
+  rules: RobotsRule[];
+  expires: number;
+}
+const robotsCache = new Map<string, RobotsCacheEntry>();
+
+/** Test seam: drop the in-memory robots cache. */
+export function clearRobotsCache(): void {
+  robotsCache.clear();
+}
+
+/**
+ * Is EmpoweredVoteBot allowed to fetch `url`? Fetches and caches robots.txt per
+ * origin with a short TTL.
+ *
+ * Fail-open: if robots.txt is missing (404), unreachable, or errors, we treat
+ * the path as ALLOWED — we only ever honour an EXPLICIT Disallow we actually
+ * read. This keeps a flaky robots endpoint from silently blocking verification,
+ * and matches the RFC's "unavailable → no restrictions" for 4xx.
+ */
+export async function robotsAllows(url: string): Promise<boolean> {
+  let origin: string;
+  let path: string;
+  try {
+    const u = new URL(url);
+    if (u.protocol !== 'http:' && u.protocol !== 'https:') return true;
+    origin = u.origin;
+    path = u.pathname + u.search;
+  } catch {
+    return true; // not a URL we can reason about — don't block
+  }
+
+  const now = Date.now();
+  let entry = robotsCache.get(origin);
+  if (!entry || entry.expires <= now) {
+    const rules = await fetchRobotsRules(origin);
+    entry = { rules, expires: now + ROBOTS_TTL_MS };
+    robotsCache.set(origin, entry);
+  }
+  return isPathAllowed(entry.rules, path);
+}
+
+async function fetchRobotsRules(origin: string): Promise<RobotsRule[]> {
+  try {
+    const res = await fetch(origin + '/robots.txt', {
+      redirect: 'follow',
+      signal: AbortSignal.timeout(ROBOTS_TIMEOUT_MS),
+      headers: { 'user-agent': EMPOWERED_VOTE_UA },
+    });
+    // 4xx/404 → no robots file → no restrictions. Anything non-2xx → fail open.
+    if (!res.ok) return [];
+    const body = await res.text();
+    return parseRobotsForAgent(body, EMPOWERED_VOTE_UA_TOKEN);
+  } catch {
+    return []; // unreachable / timeout → fail open (allowed)
+  }
+}
+
 /** Tier 1 — plain HTTP fetch + strip. Throws on network error / non-2xx. */
 export async function fetchViaHttp(url: string): Promise<string> {
   const res = await fetch(url, {
     redirect: 'follow',
     signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
     headers: {
-      'user-agent': REALISTIC_UA,
+      'user-agent': EMPOWERED_VOTE_UA,
       accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'accept-language': 'en-US,en;q=0.9',
     },
@@ -116,7 +289,7 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
   try {
     const res = await fetch(snapUrl!, {
       signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
-      headers: { 'user-agent': REALISTIC_UA },
+      headers: { 'user-agent': EMPOWERED_VOTE_UA },
     });
     if (!res.ok) return null;
     return htmlToText(await res.text());
@@ -133,20 +306,55 @@ export interface VerificationFetchSession {
 }
 
 /**
+ * Injectable tiers. Defaults are the real network paths; tests override them to
+ * assert that a robots-disallowed URL never touches the live tiers.
+ */
+export interface VerificationFetchDeps {
+  /** robots.txt gate — is EmpoweredVoteBot allowed to fetch this URL live? */
+  robotsAllows?: (url: string) => Promise<boolean>;
+  /** Tier 1 — plain HTTP fetch. */
+  httpFetch?: (url: string) => Promise<string>;
+  /** Tier 2 — headless render. */
+  render?: (url: string) => Promise<string>;
+  /** Tier 3 — Wayback snapshot (archive, not a live-site fetch). */
+  wayback?: (url: string) => Promise<string | null>;
+}
+
+/**
  * Create a fetch session that reuses ONE headless browser across the batch.
  * Pass `session.fetch` to researchVerifier.createPageFetcher.
  */
-export function createVerificationFetchSession(): VerificationFetchSession {
+export function createVerificationFetchSession(
+  deps: VerificationFetchDeps = {},
+): VerificationFetchSession {
   let browser: Browser | null = null;
   const getBrowser = async () => (browser ??= await chromium.launch({ headless: true }));
 
+  const allowed = deps.robotsAllows ?? robotsAllows;
+  const httpFetch = deps.httpFetch ?? fetchViaHttp;
+  const render = deps.render ?? ((url: string) => getBrowser().then((b) => renderPage(b, url)));
+  const wayback = deps.wayback ?? fetchViaWayback;
+
   return {
     async fetch(url: string): Promise<string> {
+      // Tier 0 — respect robots.txt. If EmpoweredVoteBot is disallowed we do NOT
+      // fetch the live site: go straight to the archived snapshot, and if there
+      // is none, surface a distinct robots_disallowed outcome (not url_broken).
+      if (!(await allowed(url))) {
+        try {
+          const t = await wayback(url);
+          if (t) return t; // an archive.org copy is fair game even when the live site says no
+        } catch {
+          /* fall through to the distinct signal */
+        }
+        throw new RobotsDisallowedError(url);
+      }
+
       const candidates: string[] = [];
 
       // Tier 1 — plain HTTP
       try {
-        const t = await fetchViaHttp(url);
+        const t = await httpFetch(url);
         if (looksLikeRealPage(t)) return t;
         if (t) candidates.push(t);
       } catch {
@@ -155,7 +363,7 @@ export function createVerificationFetchSession(): VerificationFetchSession {
 
       // Tier 2 — headless Chromium (shared browser)
       try {
-        const t = await renderPage(await getBrowser(), url);
+        const t = await render(url);
         if (looksLikeRealPage(t)) return t;
         if (t) candidates.push(t);
       } catch {
@@ -164,7 +372,7 @@ export function createVerificationFetchSession(): VerificationFetchSession {
 
       // Tier 3 — Wayback snapshot
       try {
-        const t = await fetchViaWayback(url);
+        const t = await wayback(url);
         if (t && looksLikeRealPage(t)) return t;
         if (t) candidates.push(t);
       } catch {
