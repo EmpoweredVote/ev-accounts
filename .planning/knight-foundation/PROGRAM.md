@@ -46,6 +46,18 @@ Palm Beach County and Miami/Miami-Dade**. **73 local and county offices, 72 fill
 three city governments, not four. 🔴🔴 **STAGE 5 CLOSED 2026-08-30 — FLORIDA IS THE FIRST SLICE IN THE PROGRAM TO FINISH ALL FIVE
 STAGES.** 72 of 72 local and county officials carry a headshot, and five banner keys are live.
 
+🟢 **GEORGIA'S STAGES 3 AND 4 ARE OPEN, 1 JURISDICTION OF 3 (GA-3, 2026-09-01).** Milledgeville and
+Baldwin County are seated and gated: **18 offices, 18 people, 0 vacancies** across two governments,
+plus the state's 236 legislative offices. Both stages stay `WIP` until **Columbus/Muscogee and
+Macon-Bibb** land — and both of those are **CONSOLIDATED**, so their stage 4 drops the county
+commission and keeps only the separately elected county officers (spec §3.2).
+
+⚠ **GA-3 is the program's second slice to open stage 3 at all**, and the first outside Florida. The
+county-officer template it set — the four officers named in Ga. Const. Art. IX, Sec. I, Par. III plus
+Coroner and Surveyor — is what Columbus and Macon inherit, **but only as a starting question**: which
+officers a consolidated government still elects separately is confirmed from each charter, never
+inherited.
+
 ## Jurisdiction detail
 
 | Jurisdiction | State | Parent county | Note |
@@ -160,6 +172,16 @@ Re-measured 2026-08-30 after FL-6, which closed stages 3 and 4. **Florida now ho
 county offices across SEVEN governments, 72 seated, 1 vacant** — plus 164 legislative offices. Palm
 Beach has **no city half**, so it is a county row with no municipal partner. **All 72 now carry a headshot (FL-7, 2026-08-30) — the slice's stage-5 debt is CLEARED.**
 
+Measured 2026-09-01 after GA-3. **Georgia now holds 18 local and county offices across TWO
+governments, 18 seated, 0 vacant** — Milledgeville 7/7 and Baldwin County 11/11 — plus 236 legislative
+offices. 🔴 **18 people, 0 headshots: that is the whole of GA-3's stage-5 debt**, measured with the
+`HAS_RENDERABLE_PHOTO_SQL` predicate from `photoCoverage.ts` rather than by counting
+`politician_images` rows, because a `politician_images` row changes nothing a voter sees.
+
+⚠ **Baldwin is a FOURTH county convention in five counties**: 5 single-member seats, **no at-large
+member**, and the Chair elected by the Board from among the five. Against Manatee 5+2, Leon 5+2, Palm
+Beach 7 single-member and Miami-Dade 13 + a separate Mayor. **No county convention has repeated yet.**
+
 Miami-Dade is the largest single jurisdiction in the program so far at 19 offices — 13 single-member
 commission districts, a countywide Mayor who is not a Board member, and 5 constitutional officers.
 ⚠ Its **~60 Community Council seats are deliberately unmodelled**, and are the largest single block of
@@ -169,6 +191,11 @@ elected local offices found anywhere in the program.
 
 `long beach`, `san jose`, and — from FL-7 — `miami`, `tallahassee`, `bradenton` plus the program's
 first COUNTY key, `12099` Palm Beach. **20 cities still missing.**
+
+▶ **Milledgeville is now seated and therefore banner-eligible** (GA-3, 2026-09-01), and is one of
+those 20 — the count does not move until its banner is certified in stage 5. ⚠ **Baldwin County needs
+no county key**: unlike Palm Beach it has a city half, so the city banner covers the jurisdiction.
+Palm Beach took its own COUNTY key only because it had no municipal partner.
 
 🔴 **Miami's §8.1 conflict was resolved by MOVING the state banner, not by finding a different city
 photograph.** Florida's state banner WAS Miami's skyline; it is now `cities/miami.jpg`, and the state

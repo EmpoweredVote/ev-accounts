@@ -414,11 +414,11 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 | Macon-Bibb | HD-145 Tangie Herring | SD-26 David Lucas |
 | Milledgeville | HD-149 Floyd Griffin | SD-25 Rick Williams |
 
-### What is left before GA-3
+### ✅ What GA-2 needed before it wrote — all three satisfied, kept as the record
 
-### What is left before GA-2 applies
-
-### What GA-2 still needs before it writes
+⚠ This block previously carried **three** headers, two of them empty
+("What is left before GA-3", "What is left before GA-2 applies"), left behind when the GA-2 session
+rewrote around them. Collapsed 2026-09-01. An empty heading reads as an unfinished section.
 
 1. **A change-check for every seat**, against a date later than these payloads. Eleven seats turned
    over in the last year, so the base rate of change here is high.
@@ -428,7 +428,7 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 3. `splitName()` behaviour on `Reynaldo "Rey" Martinez`, `Williams, Jr.`, `Regina Lewis-Ward` and
    `Holly El-Mahdi` — four shapes in one roster that the FL/Nashville waves each had to widen for.
 
-## GA-3 — Milledgeville + Baldwin County, PLANNED 2026-09-01
+## GA-3 — Milledgeville + Baldwin County, ✅ APPLIED 2026-09-01
 
 Plan: [`2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md`](../../docs/superpowers/plans/2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md) ·
 Roster: [`backend/data/seed-milledgeville-2026/ROSTERS.md`](../../backend/data/seed-milledgeville-2026/ROSTERS.md)

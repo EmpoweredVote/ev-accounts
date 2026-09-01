@@ -1,6 +1,9 @@
 # Knight Program — Georgia Wave GA-3 (Milledgeville + Baldwin County) Implementation Plan
 
-**Status:** PLANNED, not applied. Written 2026-09-01.
+**Status:** ✅ **EXECUTED AND APPLIED 2026-09-01.** Written and executed the same day.
+`X0042`, `X0043`, `CC_0027`, `CC_0028`, `CC_0029` are all in production. **18 offices, 18 people,
+0 vacancies.** All four required answers pass at Milledgeville City Hall. Stage 5 (18 headshots and a
+Milledgeville banner) is the only part of this jurisdiction still owed.
 **Spec:** [`2026-08-28-knight-cities-program-design.md`](../specs/2026-08-28-knight-cities-program-design.md) ·
 **Tracker:** [`PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -264,9 +267,16 @@ it is a parenthetical inside the District 2 title, decided at write time — Law
    files, apply through `psql "$DATABASE_URL"`.
 4. Gates: `npm run check:migrations`, `check:occupancy`, `check:answer-delete-guards`,
    `check:child-county`, `check:reachability`.
-5. **Acceptance probe at Milledgeville City Hall — four answers, all four required.** Add a
-   `place:milledgeville` probe to the reachability gate. Assert a count per answer, scoped to this
-   wave: 1 council member, 1 county commissioner, 1 representative, 1 senator.
+5. **Acceptance probe at Milledgeville City Hall — four answers, all four required.** Assert a count
+   per answer, scoped to this wave: 1 council member, 1 county commissioner, 1 representative, 1
+   senator. Written as `scripts/verify-milledgeville-baldwin-probes.sql`.
+   🔴 **CORRECTED WHILE EXECUTING: there is no `place:<slug>` probe list to add to.**
+   `check:reachability` **sweeps every addressable district** and reads its MTFCC mapping out of
+   `src/lib/geoIdGuard.ts`; it takes no per-jurisdiction configuration. So "nothing regressed" cannot
+   by itself distinguish *swept and clean* from *not swept*, and the honest substitute is a
+   **per-district positive control** — every one of the 11 new districts tested at its own interior
+   point, asserting exactly 1 holder each. The spec's §5 wording ("a new probe scoped `place:<slug>`
+   is added") describes an intent the gate never implemented.
    ⚠ FL-6's lesson — **run the probe BEFORE the apply too.** It is what caught the at-large ruling
    that had been read against the wrong county.
 6. Re-run all three migrations to prove idempotence, then confirm
