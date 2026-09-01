@@ -19,7 +19,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | # | State | Jurisdictions | 1 geo | 2 legis | 3 city | 4 county | 5 assets |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | WIP | WIP | — |
+| 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | WIP | WIP | WIP |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | — | — | — |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
@@ -195,10 +195,21 @@ elected local offices found anywhere in the program.
 ### Banners present
 
 `long beach`, `san jose`, and — from FL-7 — `miami`, `tallahassee`, `bradenton` plus the program's
-first COUNTY key, `12099` Palm Beach. **20 cities still missing.**
+first COUNTY key, `12099` Palm Beach, and — from GA-3 — **`milledgeville`, the program's first Georgia key**. **19 cities still missing.**
 
-▶ **Milledgeville is now seated and therefore banner-eligible** (GA-3, 2026-09-01), and is one of
-those 20 — the count does not move until its banner is certified in stage 5.
+✅ **MILLEDGEVILLE'S BANNER IS LIVE (GA-3, 2026-09-01)**: the Old State Capitol / Georgia Military
+College across State House Square — Clifflandis, **CC0** — certified in BOTH boxes and registered
+`match:'exact'` in [essentials#112](https://github.com/EmpoweredVote/essentials/pull/112).
+
+🔴🔴 **A FRONTAL BUILDING PORTRAIT IS NOT A BANNER SUBJECT — THE BEND/FL-7 FAILURE IN A THIRD DRESS.**
+Milledgeville's signature building is the 1839 Old Governor's Mansion, and it FAILS the desktop box:
+from a ~1.42:1 source the 3.148:1 crop drops 55% of the rows and the band keeps 52.5% of the rest,
+about a quarter of the original. Swept at anchors 0.30/0.45/0.60 across TWO photographs, every result
+is a wall of windows. ▶ **Prefer a horizontally arranged subject, and a source already near 3:1.**
+
+🔴🔴 **TEST COLOUR, NOT ONLY LICENCE AND RATIO.** The two widest and most permissively licensed sources
+found — HABS federal work, public domain, 1.62:1, which would have survived the band better than
+anything else — measured **100% GREYSCALE**. No licence or aspect check catches that.
 
 🟢 **§8.1 ADJACENCY CLEARED FOR ALL THREE GEORGIA CITIES, measured 2026-09-01.** `states/GA.jpg` is
 **the Atlanta skyline** (Midtown, 1700x540, 3.148:1). Atlanta is in none of this slice's three

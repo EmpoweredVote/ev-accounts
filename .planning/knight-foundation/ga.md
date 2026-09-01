@@ -8,7 +8,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3 | **Milledgeville + Baldwin County** | ✅ **APPLIED 2026-09-01** (`X0042`, `X0043`, `CC_0027`–`CC_0029`): 18 offices, 18 people, 0 vacancies |
+| GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4..5 | Columbus, Macon | — |
 
 ---
@@ -659,7 +659,7 @@ in and the magistrate is out. The line is the constitution's, not ours.
 - ⚠ Does Georgia's Reapportionment Office publish certified **local** plans in fetchable form? It
   would give a second independent map for county commission districts, which Baldwin did not have.
 
-## GA-3 stage 5 — banner: candidates certified, AWAITING THE PICK (2026-09-01)
+## GA-3 stage 5 — banner: ✅ OPTION E APPLIED 2026-09-01
 
 Proof: [Milledgeville Banner Certification](https://claude.ai/code/artifact/d1cc601b-075a-4e38-8130-a87a51783c87).
 Every frame is the full 1700x540 asset in a CSS box at the production ratio with `object-fit: cover`,
@@ -680,8 +680,18 @@ so the browser performs the real crop. Composed assets are in `backend/.tmp-ga3-
 | **E** | Old State Capitol / GMC, State House Square | 4080x3072 (1.33:1) | **CC0**, Clifflandis |
 | **F** | Sanford & Napier Halls, Georgia College, W Greene St | 3715x1400 (**2.65:1**) | **CC BY-SA 2.0**, Ken Lund |
 
-Recommended **F**: its native ratio is closest to 3.148:1, so its desktop band is a real composition
-rather than a survivor of one. E's foreground is a wide expanse of dry winter grass under bare trees.
+✅ **Cantrell chose E.** Uploaded as `cities/milledgeville.jpg` (1700x540); the live object was verified
+**byte-identical** to the certified asset, not assumed. Registered in the **essentials** repo as the
+program's **first `GA`-scoped `CURATED_LOCAL` key**, `match:'exact'` — PR
+[essentials#112](https://github.com/EmpoweredVote/essentials/pull/112). Tests 23/23, ESLint clean.
+
+Resolution verified in both directions, negatives included: `Milledgeville GA` resolves;
+`Milledgeville IL`, `Milledgeville TN` and `Old Milledgeville GA` all resolve to **nothing**, so
+state-scoping and the exact-match guard both bite. Columbus and Macon correctly resolve to nothing.
+
+⚠ F (Georgia College, native 2.65:1) was the recommendation and remains the runner-up on record if E
+is ever revisited. Overwriting a bucket object does **not** purge the CDN, so any replacement must be
+**versioned**, as `states/FL-v2.jpg` was.
 
 ### 🔴🔴 THE OBVIOUS SUBJECT FAILS THIS BOX, AND AN ANCHOR SWEEP IS WHAT PROVED IT
 
