@@ -1,0 +1,449 @@
+{
+  "wave": "GA-3",
+  "jurisdictions": "Milledgeville (city) + Baldwin County, Georgia",
+  "measured": "2026-09-01",
+  "roster_doc": "backend/data/seed-milledgeville-2026/ROSTERS.md",
+  "plan_doc": "docs/superpowers/plans/2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md",
+  "notes": [
+    "18 offices, 18 people, 0 vacancies. Zero reuses: all 18 external_ids are fresh inserts, proven with a positive control.",
+    "Ruling R4: every term is open-ended at start_precision 'unknown'. Georgia publishes no service-start for these bodies, and term_start is the start of CONTINUOUS occupancy, which re-election does not end. Four of the seven city members are incumbents whose occupancy predates 2025. No date is invented.",
+    "Ruling R2: Chair (county D2), Vice Chair (county D5) and Mayor Pro-Tem (city D3) are roles the body elects from among its own members. They are NOT offices and appear nowhere in this file.",
+    "Party is deliberately absent. It lives on races.primary_party, never on a person or an office.",
+    "District types differ by tier and this was WRONG in the first draft: CITY districts are district_type 'LOCAL' (Bradenton CC_0008), COUNTY districts are 'COUNTY' (Manatee CC_0010). The countywide district is NOT created -- it already exists from the TIGER county load."
+  ],
+  "id_band": {
+    "min": -1331018,
+    "max": -1331001,
+    "rationale": "The range -1331999..-1331000 was measured EMPTY in production 2026-09-01. GA-2 consumed -1330256..-1330001. The guard is scoped to this wave's own sub-range, per the FL-4 correction."
+  },
+  "city": {
+    "government": {
+      "name": "City of Milledgeville, Georgia, US",
+      "type": "City",
+      "state": "GA",
+      "city": "Milledgeville",
+      "geo_id": "1351492"
+    },
+    "citywide_district": {
+      "label": "Milledgeville Citywide",
+      "geo_id": "1351492",
+      "mtfcc": "G4110",
+      "create": true,
+      "create_rationale": "GA-1 loaded the TIGER place BOUNDARY 1351492/G4110 but created no place DISTRICT, so the citywide district is created here -- as Bradenton created \"Bradenton Citywide\" in CC_0008."
+    },
+    "district_mtfcc": "X0042",
+    "district_label_prefix": "Milledgeville City Council District ",
+    "district_geo_id_prefix": "milledgeville-ga-council-district-",
+    "district_count": 6,
+    "chambers": [
+      {
+        "name": "City Council",
+        "name_formal": "Milledgeville City Council",
+        "official_count": 6
+      },
+      {
+        "name": "Office of the Mayor",
+        "name_formal": "Office of the Mayor of Milledgeville",
+        "official_count": 1
+      }
+    ],
+    "offices": [
+      {
+        "title": "Mayor",
+        "chamber": "Office of the Mayor",
+        "district_geo_id": "1351492",
+        "district_mtfcc": "G4110",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331001,
+          "full_name": "Mary Parham-Copelan",
+          "first_name": "Mary",
+          "last_name": "Parham-Copelan",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [
+            "Mary Parham Copelan"
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 1",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-1",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331002,
+          "full_name": "Collinda J. Lee",
+          "first_name": "Collinda",
+          "last_name": "Lee",
+          "middle_initial": "J.",
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 2",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-2",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331003,
+          "full_name": "Arlene Simmons",
+          "first_name": "Arlene",
+          "last_name": "Simmons",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 3",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-3",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331004,
+          "full_name": "Denese Ray Shinholster",
+          "first_name": "Denese",
+          "last_name": "Shinholster",
+          "middle_initial": "Ray",
+          "name_suffix": null,
+          "aliases": [
+            "Denese R. Shinholster"
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 4",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-4",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331005,
+          "full_name": "Morgan Pendergast",
+          "first_name": "Morgan",
+          "last_name": "Pendergast",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 5",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-5",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331006,
+          "full_name": "Shonya A. Mapp",
+          "first_name": "Shonya",
+          "last_name": "Mapp",
+          "middle_initial": "A.",
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      },
+      {
+        "title": "Council Member, District 6",
+        "chamber": "City Council",
+        "district_geo_id": "milledgeville-ga-council-district-6",
+        "district_mtfcc": "X0042",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331007,
+          "full_name": "Jeffery C. Wells",
+          "first_name": "Jeffery",
+          "last_name": "Wells",
+          "middle_initial": "C.",
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2025-11-04-municipal-general"
+        }
+      }
+    ],
+    "district_type": "LOCAL"
+  },
+  "county": {
+    "government": {
+      "name": "Baldwin County, Georgia, US",
+      "type": "County",
+      "state": "GA",
+      "city": null,
+      "geo_id": "13009"
+    },
+    "countywide_district": {
+      "label": "Baldwin County Countywide",
+      "geo_id": "13009",
+      "mtfcc": "G4020",
+      "create": false,
+      "create_rationale": "ALREADY EXISTS. The TIGER county load created 13009/G4020 as a COUNTY district, verified in production 2026-09-01. Manatee CC_0010 asserts it in the pre-flight and does NOT insert it. Creating a second row would be a duplicate district over the same ground."
+    },
+    "district_mtfcc": "X0043",
+    "district_label_prefix": "Baldwin County Commission District ",
+    "district_geo_id_prefix": "baldwin-ga-commission-district-",
+    "district_count": 5,
+    "chambers": [
+      {
+        "name": "Board of Commissioners",
+        "name_formal": "Baldwin County Board of Commissioners",
+        "official_count": 5
+      },
+      {
+        "name": "Elected Officials",
+        "name_formal": "Baldwin County Elected Officials",
+        "official_count": 6
+      }
+    ],
+    "offices": [
+      {
+        "title": "Commissioner, District 1",
+        "chamber": "Board of Commissioners",
+        "district_geo_id": "baldwin-ga-commission-district-1",
+        "district_mtfcc": "X0043",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331008,
+          "full_name": "Emily C. Davis",
+          "first_name": "Emily",
+          "last_name": "Davis",
+          "middle_initial": "C.",
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Commissioner, District 2",
+        "chamber": "Board of Commissioners",
+        "district_geo_id": "baldwin-ga-commission-district-2",
+        "district_mtfcc": "X0043",
+        "voting_powers": "full",
+        "description": "Elected from District 2. The Board elects its own Chairman from among the five district commissioners; Commissioner Butts currently holds that role, which is not a separate elected office.",
+        "person": {
+          "external_id": -1331009,
+          "full_name": "Kendrick B. Butts",
+          "first_name": "Kendrick",
+          "last_name": "Butts",
+          "middle_initial": "B.",
+          "name_suffix": null,
+          "aliases": [
+            "Kendrick Butts"
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Commissioner, District 3",
+        "chamber": "Board of Commissioners",
+        "district_geo_id": "baldwin-ga-commission-district-3",
+        "district_mtfcc": "X0043",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331010,
+          "full_name": "Sammy Hall",
+          "first_name": "Sammy",
+          "last_name": "Hall",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Commissioner, District 4",
+        "chamber": "Board of Commissioners",
+        "district_geo_id": "baldwin-ga-commission-district-4",
+        "district_mtfcc": "X0043",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331011,
+          "full_name": "Andrew Strickland",
+          "first_name": "Andrew",
+          "last_name": "Strickland",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Commissioner, District 5",
+        "chamber": "Board of Commissioners",
+        "district_geo_id": "baldwin-ga-commission-district-5",
+        "district_mtfcc": "X0043",
+        "voting_powers": "full",
+        "description": "Elected from District 5. The Board elects its own Vice Chairman from among the five district commissioners; Commissioner Little currently holds that role, which is not a separate elected office.",
+        "person": {
+          "external_id": -1331012,
+          "full_name": "Scott Little",
+          "first_name": "Scott",
+          "last_name": "Little",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Sheriff",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331013,
+          "full_name": "Bill Massee",
+          "first_name": "Bill",
+          "last_name": "Massee",
+          "middle_initial": null,
+          "name_suffix": "Jr.",
+          "aliases": [
+            "W.C. Massee, Jr.",
+            "W.C. \"Bill\" Massee, Jr."
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Clerk of Superior Court",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331014,
+          "full_name": "Wanda T. Paul",
+          "first_name": "Wanda",
+          "last_name": "Paul",
+          "middle_initial": "T.",
+          "name_suffix": null,
+          "aliases": [
+            "Wanda Paul"
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Probate Judge",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331015,
+          "full_name": "Todd A. Blackwell",
+          "first_name": "Todd",
+          "last_name": "Blackwell",
+          "middle_initial": "A.",
+          "name_suffix": null,
+          "aliases": [
+            "Todd Blackwell"
+          ],
+          "how_started": "elected",
+          "source": "baldwincountyga-directory-and-ballotpedia-2026-09-01"
+        }
+      },
+      {
+        "title": "Tax Commissioner",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331016,
+          "full_name": "Cathy Freeman Settle",
+          "first_name": "Cathy",
+          "last_name": "Settle",
+          "middle_initial": "Freeman",
+          "name_suffix": null,
+          "aliases": [
+            "Cathy Settle"
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Coroner",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331017,
+          "full_name": "John Gonzalez",
+          "first_name": "John",
+          "last_name": "Gonzalez",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      },
+      {
+        "title": "Surveyor",
+        "chamber": "Elected Officials",
+        "district_geo_id": "13009",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "description": null,
+        "person": {
+          "external_id": -1331018,
+          "full_name": "James E. Smith",
+          "first_name": "James",
+          "last_name": "Smith",
+          "middle_initial": "E.",
+          "name_suffix": "Jr.",
+          "aliases": [
+            "James E. Smith, Jr.",
+            "James Smith Jr."
+          ],
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05-general"
+        }
+      }
+    ],
+    "district_type": "COUNTY"
+  }
+}

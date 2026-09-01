@@ -181,11 +181,30 @@ Per wave:
 - `npm run check:reachability`.
 
 **Definition of done for one jurisdiction:** an address at city hall returns its council member, its
-county commissioner, its state representative and its state senator. Four answers, one probe. A new
-probe scoped `place:<slug>` is added to the reachability gate for each jurisdiction.
+county commissioner, its state representative and its state senator. Four answers, one probe.
 
 `check:reachability` is the **only** acceptance test. Every cheaper check passes vacuously when a term
 row is missing.
+
+🔴 **CORRECTED 2026-09-01 (GA-3). This paragraph used to end "a new probe scoped `place:<slug>` is
+added to the reachability gate for each jurisdiction". THAT IS NOT HOW THE GATE WORKS, and it had been
+carried unchallenged through eight waves.** `scripts/check-address-reachability.mjs` takes **no
+per-jurisdiction probe list**: it sweeps every district of an addressable `district_type` and reads its
+MTFCC mapping out of `src/lib/geoIdGuard.ts` at runtime, deliberately, so the mapping has exactly one
+definition. There is nothing to add.
+
+⚠ **The consequence matters, because it is a vacuous-pass risk.** A green
+`check:reachability` after a wave means "no district regressed"; it does **not** prove the wave's own
+districts were examined. So the acceptance evidence for a jurisdiction is two things, not one:
+
+1. the wave's own **probe file** (`scripts/verify-<jurisdiction>-probes.sql`), asserting the four
+   required answers at city hall — and a **second anchor** wherever two tiers number the same ground,
+   which is what catches a wave that crossed them; plus
+2. a **per-district positive control** — every new district tested at its own interior point,
+   asserting exactly one holder — which is what distinguishes *swept and clean* from *not swept*.
+
+GA-3 ran both: 4 of 4 at City Hall, a second anchor returning different numbers on both tiers, and
+11 of 11 districts resolving individually.
 
 ## 6. The ledger
 

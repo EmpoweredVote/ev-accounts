@@ -8,7 +8,8 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3..5 | Columbus, Macon, Milledgeville | — |
+| GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
+| GA-4..5 | Columbus, Macon | — |
 
 ---
 
@@ -413,11 +414,11 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 | Macon-Bibb | HD-145 Tangie Herring | SD-26 David Lucas |
 | Milledgeville | HD-149 Floyd Griffin | SD-25 Rick Williams |
 
-### What is left before GA-3
+### ✅ What GA-2 needed before it wrote — all three satisfied, kept as the record
 
-### What is left before GA-2 applies
-
-### What GA-2 still needs before it writes
+⚠ This block previously carried **three** headers, two of them empty
+("What is left before GA-3", "What is left before GA-2 applies"), left behind when the GA-2 session
+rewrote around them. Collapsed 2026-09-01. An empty heading reads as an unfinished section.
 
 1. **A change-check for every seat**, against a date later than these payloads. Eleven seats turned
    over in the last year, so the base rate of change here is high.
@@ -427,14 +428,183 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 3. `splitName()` behaviour on `Reynaldo "Rey" Martinez`, `Williams, Jr.`, `Regina Lewis-Ward` and
    `Holly El-Mahdi` — four shapes in one roster that the FL/Nashville waves each had to widen for.
 
+## GA-3 — Milledgeville + Baldwin County, ✅ APPLIED 2026-09-01
+
+Plan: [`2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md`](../../docs/superpowers/plans/2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md) ·
+Roster: [`backend/data/seed-milledgeville-2026/ROSTERS.md`](../../backend/data/seed-milledgeville-2026/ROSTERS.md)
+
+**18 offices, 18 people, 0 vacancies** — 7 city (Mayor at-large + 6 single-member districts) and
+11 county (5 single-member commission districts with **no at-large seat**, plus 6 officers).
+Two boundary loads `X0042`/`X0043`, three migrations `CC_0027`–`CC_0029`. Pre-state probe at
+Milledgeville City Hall scores **2 of 4** — HD-149 Floyd Griffin and SD-25 Rick Williams resolve;
+Baldwin County has zero offices and Georgia has **zero `LOCAL` districts**.
+
+🔴🔴 **THE OBVIOUS COUNCIL-DISTRICT SERVICE IS THE SUPERSEDED ONE, AND ONLY ONE DISTRICT SAYS SO.**
+The city's own `City Council Districts (2025)` layer is a post-2020 plan carrying `Pop`/`DX_DEV`.
+Baldwin County's `ElectionGeography` copy is 2021–2022. Tested at all six interior points, **five
+agree and District 4 does not** — its point falls in the county copy's District 1 — while the
+symmetric difference is non-zero on every district (D1 alone is 0.99 of ~20.4 sq mi). Three spot
+checks would have passed on the wrong map. **Load the city's layer.**
+
+🔴🔴 **A LAYER TITLED "(2025)" CAN STILL CARRY A PRE-2025 ROSTER.** That same city layer's
+`CouncilMem` field reads Walden / Reynolds / Chambers — the three predecessors. Geometry vintage and
+attribute vintage are different questions about the same row.
+
+🔴 **`EditDate` IS PER ROW, AND IT IS THE TELL.** The county's layer is correct on all 5 commissioners
+(edited 2026-04-21) and wrong on 3 of 6 city seats (edited 2021–2022). The same layer still names
+Joe Biden as President and carries two contradictory US House rows.
+
+🟢🟢 **THE SECRETARY OF STATE PUBLISHES CERTIFIED *MUNICIPAL* RESULTS, AND THEY SETTLED EVERY SEAT.**
+`results.sos.ga.gov/results/public/api/elections/baldwin-county-ga/{electionId}/data` carries the
+**November 4, 2025 Municipal General** as well as the 2024 general. ▶ **Look for this first in
+Columbus and Macon** — nothing in Florida used this route. The election ids come from
+`/api/jurisdictions/Georgia`; the county short name is `<county>-county-ga`; a county with no contest
+in an election returns **HTTP 204**, which is itself the proof that no runoff was held.
+
+⚠ **The Municode charter is codified through JANUARY 2014** and still says "MAYOR AND ALDERMEN" — it
+describes no six-district council. Two questions stay open because of it: whether the Mayor votes on
+the council, and why District 2 was seated on exactly 50.0% with no runoff (plurality is the likely
+answer, unconfirmed). Municode's API 401s curl **and** an in-page `fetch()`; render the SPA and read
+the DOM.
+
 ## ▶️ WHERE THIS STOPPED — read this first
 
 Stages 1 and 2 are **applied and merged**: `CC_0025` geography loader entry (GA-1 used the loader,
-not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`** —
-⚠ re-count it against `origin/master`, this file has been wrong before.
+not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`**, and next free
+private MTFCC is **`X0042`** — ⚠ re-count both against every remote ref, this file has been wrong before.
 
-**Next wave is GA-3: Milledgeville**, the small pilot as Bradenton was for Florida. Branch fresh
-from master; `knight/ga-legislature` is merged.
+**GA-3 TASKS 1 AND 2 ARE APPLIED.** Branch `knight/ga-3-milledgeville`. Both boundary layers are in
+production, loaded 2026-09-01, each idempotent (re-run inserts 0):
+
+| Code | Rows | Loader | Source |
+| --- | --- | --- | --- |
+| `X0042` | **6** Milledgeville council districts | `scripts/load-milledgeville-council-boundaries.ts` | the **CITY's** own 2025 plan |
+| `X0043` | **5** Baldwin commission districts | `scripts/load-baldwin-commission-boundaries.ts` | the county's `ElectionGeography` layer, single publisher |
+
+🟢 **BOTH TIERS NOW RESOLVE THROUGH OUR OWN ROWS, AND THE NUMBERS ARE UNRELATED OVER THE SAME GROUND:**
+
+| Address | City council | County commission |
+| --- | --- | --- |
+| Milledgeville City Hall, 119 E Hancock St | **D2** | **D3** |
+| Baldwin County Govt Building, 1601 N Columbia St | **D5** | **D1** |
+
+⚠ **Both buildings are inside the city limits.** Four different district numbers across two addresses
+a mile apart is the confusion this wave is most exposed to, so each address is a control point in
+BOTH loaders with the other tier's answer written beside it.
+
+🔴 **A MISLABELLED CONTROL POINT IS WORSE THAN A MISSING ONE — IT READS AS COVERED.** Task 1 shipped
+with a negative control labelled "Rural Baldwin County" at `(-83.12, 33.16)`. Resolved against TIGER
+`G4020` while measuring Task 2, that point is in **HANCOCK County `13141`**. The gate passed, and for a
+true reason — it is outside the city either way — but it was not testing its label, so the one case
+that actually discriminates a city layer from a county layer, *inside Baldwin and outside
+Milledgeville*, was never tested. Both loaders now carry every negative control **resolved against
+TIGER and labelled with the county it is really in**.
+
+🔴 **X0043 HAS ONE PUBLISHER, WHICH IS AN ACCEPTED LIMITATION.** The county's dedicated Commissioner
+Districts app resolves to `ElectionGeography_CommissionerDistrictsView` — a VIEW over the same rows —
+so Task 1's two-map comparison is impossible here. Three gated lines of evidence stand in its place:
+`CreationDate` **2022-02-08** on all five (on schedule for a 2020-cycle Georgia county redistricting)
+with `EditDate` **2026-04-21** (after the certified 2024 election); the five tile TIGER Baldwin to
+**0.0158 of 268.2759 sq mi**, 0.006%; and all five keyed districts returned a commissioner in the
+certified 2024 count. 🔴 **GATE 1 asserts freshness PER ROW, because in this very layer the city rows
+are wrong on 3 of 6 seats and the President is still Joe Biden.**
+
+⚠ **GATE 0 exists because the filter is load-bearing**: unfiltered, that layer returns **35 rows**
+spanning every office in the county. A dropped `WHERE` clause would sail through every later gate that
+only inspects districts keyed 1..5.
+
+Gates after both applies: `check:child-county` **stale 0** (children 7,782 — unchanged, confirming an
+`X` load needs no matview refresh); `check:reachability` **5/17/37** against baseline 5/17/38;
+`check:migrations` and `check:occupancy` green; `offices_missing_terms` **unchanged at 821/166/655**.
+⚠ No `districts` rows yet — GA still holds **0 `LOCAL` districts**. `CC_0027`/`CC_0029` create them.
+
+## GA-3 Task 3 — the generator, DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`scripts/gen-ga3-milledgeville-migrations.mjs` reads the committed
+`data/ga3-milledgeville-roster.json` and emits three `CC_wip_*.sql`. ⚠ **The `CC_wip_*` files stay
+UNTRACKED** — no `CC_wip` file has ever been committed in this repo; the convention is rename + apply
++ commit in one go, so they are regenerated at apply time.
+
+| Half | Emits | Dry run |
+| --- | --- | --- |
+| city structure | 1 government, 2 chambers, **7 districts**, **7 offices** | ✅ `7 district(s) created, 1 government, 2 chambers, 7 offices` |
+| city occupancy | **7 politicians, 7 terms**, all open-ended `'unknown'` | ✅ `7 politicians, 7 seated across 7 offices, 0 vacancies` |
+| Baldwin (one migration) | 1 government, 2 chambers, **5 districts**, **11 offices + 11 people + 11 terms** | ✅ `5 district(s) created … 11 offices`; `11 politicians, 11 seated, 0 vacancies` |
+
+⚠ **The city occupancy half cannot be dry-run alone** — its offices do not exist yet. Both city halves
+ran as ONE transaction, audited **before sending** to hold exactly one `BEGIN`, one `ROLLBACK` and
+**zero `COMMIT`**. Both rollbacks were then confirmed to have reverted: production still reads **0** GA
+`LOCAL` districts, **0** `X0042`/`X0043` districts, **0** rows in `-1331018..-1331001`, **0**
+governments and **0** offices.
+
+🔴🔴 **`district_type` DIFFERS BY TIER, AND THE FIRST DRAFT GOT THE COUNTY WRONG.** City districts are
+**`'LOCAL'`** (`CC_0008`); county districts are **`'COUNTY'`** (`CC_0010`). Reading the county
+precedent rather than generalising the city one is what caught it.
+
+🔴🔴 **THE WIDE DISTRICT IS CREATED FOR THE CITY AND ONLY *ASSERTED* FOR THE COUNTY.** GA-1 loaded the
+place **boundary** `1351492`/`G4110` but created no place **district**, so the citywide district is
+inserted here. The TIGER county load already created `13009`/`G4020` as a `COUNTY` district, so
+inserting it again would put a second district row over the same ground. The county pre-flight now
+fails hard if that row is missing — the six officers have nowhere to sit without it.
+
+🟢 The generator refuses before writing a line of SQL if the roster drifts: 18 offices, 18 unique ids
+matching the declared band exactly at both ends, every office naming a known chamber, no duplicate
+seat key, and **no party field anywhere** — a generator is exactly where party leaks back in.
+
+✅ **GA-3 APPLIED 2026-09-01 — `CC_0027`, `CC_0028`, `CC_0029`.** Numbers taken LAST: `CC_0026` was the
+highest slot across all 81 remote refs at apply time, `check:migrations` reported **3 added**, no collisions.
+
+| Migration | Applied |
+| --- | --- |
+| `CC_0027` city structure | 1 government, 2 chambers, **7 districts**, **7 offices** |
+| `CC_0028` city occupancy | **7 politicians, 7 terms**, all open-ended `'unknown'` |
+| `CC_0029` Baldwin County | 1 government, 2 chambers, **5 districts**, **11 offices + 11 people + 11 terms** |
+
+### Verified in production
+
+| Check | Result |
+| --- | --- |
+| Milledgeville City Council / Office of the Mayor | **6/6** and **1/1** |
+| Baldwin Board of Commissioners / Elected Officials | **5/5** and **6/6** |
+| `offices_missing_terms` | **unchanged at 821 / 166 / 655** |
+| `check:reachability` | **5/17/37** against baseline 5/17/38 |
+| GA local/county offices with no term row | **0** |
+| All three migrations re-run | clean, second pass seats **0** |
+
+🟢🟢 **ALL FOUR REQUIRED ANSWERS PASS AT MILLEDGEVILLE CITY HALL** — council D2 Arlene Simmons,
+commission D3 Sammy Hall, HD-149 Floyd Griffin, SD-25 Rick Williams. The probe scored **2 of 4**
+before the apply, which is why it was run first.
+
+🟢 **A SECOND ANCHOR IS WHAT PROVES THE TIERS WERE NOT CROSSED.** The Baldwin County Government
+Building is also inside the city and returns **city D5 / commission D1** — different numbers from
+City Hall's D2/D3 on *both* tiers. A wave that had crossed the two tiers would still pass probe 1a.
+
+🟢 **PER-DISTRICT POSITIVE CONTROL, BECAUSE A QUIET GATE IS NOT EVIDENCE.** `check:reachability`
+takes **no per-jurisdiction probe list** — it sweeps every addressable district, so "nothing
+regressed" cannot by itself distinguish *swept and clean* from *not swept*. All 11 district seats were
+therefore tested individually at their own interior point: **1 holder each, 11 of 11.**
+⚠ The plan said to "add a `place:milledgeville` probe to the reachability gate". That was wrong about
+the mechanism, and the correction is recorded rather than quietly dropped.
+
+⚠ **THE PROBE JOIN'S mtfcc PAIRING WAS DEMONSTRATED, NOT ASSERTED.** Run unpaired, City Hall returns
+three WRONG officials: **Todd Jones** (HD-25, reached through the SD-25 polygon), **Will Wade** (HD-9)
+and **Nikki Merritt** (SD-9), both reached through the **Baldwin County** polygon. Probe 2 of
+`scripts/verify-milledgeville-baldwin-probes.sql` keeps that visible in the log forever.
+
+🔴🔴 **`district_type` DIFFERS BY TIER, AND THE GENERATOR'S FIRST DRAFT GOT THE COUNTY WRONG.** City
+districts are `'LOCAL'` (`CC_0008`); county districts are `'COUNTY'` (`CC_0010`). Reading the county
+precedent instead of generalising the city one is what caught it.
+
+🔴🔴 **THE WIDE DISTRICT IS CREATED FOR A CITY BUT ONLY *ASSERTED* FOR A COUNTY.** GA-1 loaded the
+place **boundary** `1351492`/`G4110` and created no place **district**, so the citywide district is
+inserted. The TIGER county load already made `13009`/`G4020` a `COUNTY` district, so inserting it
+again would put a second district row over the same ground. `CC_0029`'s pre-flight fails hard if that
+row is missing — the six officers have nowhere to sit without it.
+
+**▶ NEXT: GA-3 stage 5 (assets)** — 18 headshots and one Milledgeville banner. Then **GA-4**:
+Columbus/Muscogee and Macon-Bibb, both CONSOLIDATED.
+▶ Carry forward: re-check the Milledgeville mayor's council vote and District 2's exactly-50.0% win
+if a current charter ever surfaces; both are recorded as open in `ROSTERS.md`, not resolved.
 
 What is already on disk and should NOT be re-fetched:
 
@@ -459,10 +629,93 @@ which is the payload URL with `?size=mpSm` removed.
 ⚠ **Re-check SD-12 before GA-5.** It is flagged vacant with a NULL `vacant_since`. A successor may
 be seated after the November 2026 general, and the seat then needs a real `term_start`.
 
-## Open questions for GA-3 onward
+## The Georgia county-officer template, ruled 2026-09-01 (Cantrell)
+
+Baldwin puts **thirteen** countywide offices on the ballot besides the commission. GA-3 seats six:
+
+| Seated | Why |
+| --- | --- |
+| Sheriff, Clerk of Superior Court, Probate Judge, Tax Commissioner | named as county officers in **Ga. Const. Art. IX, Sec. I, Par. III** |
+| Coroner, Surveyor | statutory county officers, and Baldwin genuinely elected both countywide in 2024 |
+
+| Excluded | Why |
+| --- | --- |
+| Solicitor General | a prosecutor — the **FL-5 rule** against Palm Beach's State Attorney |
+| Chief Magistrate | judicial branch, **Ga. Const. Art. VI**, as Florida excluded its county judges |
+| Ocmulgee Circuit DA + 5 Superior Court judges | **MULTI-COUNTY circuit**, the FL-5 ruling exactly |
+| School board, Piedmont Soil and Water supervisor | spec §11 |
+| GMC Board of Trustees (6 districts, same 2025 ballot) | a **state junior college's** board, not a city office |
+
+⚠ **Georgia's probate judge is a county officer, not a judicial-branch officer** — that is why it is
+in and the magistrate is out. The line is the constitution's, not ours.
+
+## Open questions for GA-4 / GA-5
 
 - Which county officers are **separately elected** in Columbus-Muscogee and Macon-Bibb. Spec §3.2
-  says consolidation merges the legislative body only, and names Sheriff, Clerk of Superior Court and
-  Tax Commissioner as the expected Georgia set — **confirm from each charter, inherit nothing.**
-- Council structure for all three: district vs at-large split, and whether the mayor sits on the body.
-- Milledgeville is the small pilot for this slice, as Bradenton was for Florida.
+  says consolidation merges the legislative body only — **confirm from each charter, inherit nothing**,
+  including from the Baldwin template above.
+- Council structure for both: district vs at-large split, and whether the mayor sits on the body.
+- ▶ Try the SOS certified-results API first for both. It answered every Milledgeville seat.
+- ⚠ Does Georgia's Reapportionment Office publish certified **local** plans in fetchable form? It
+  would give a second independent map for county commission districts, which Baldwin did not have.
+
+## GA-3 stage 5 — banner: ✅ OPTION E APPLIED 2026-09-01
+
+Proof: [Milledgeville Banner Certification](https://claude.ai/code/artifact/d1cc601b-075a-4e38-8130-a87a51783c87).
+Every frame is the full 1700x540 asset in a CSS box at the production ratio with `object-fit: cover`,
+so the browser performs the real crop. Composed assets are in `backend/.tmp-ga3-banner/` (untracked):
+`asset-E.jpg`, `asset-F.jpg`, `asset-A.jpg`, plus `_sources.json` with URL/licence/author per source.
+
+🔴 **THE BOX IS TWO BOXES, AND THE NUMBERS COME FROM `SectionBanner.jsx` BANNER_ASPECT** — not guessed:
+
+| Box | Ratio | Height | Asset visible |
+| --- | --- | --- | --- |
+| mobile | `13 / 4` | 120px @390 | **96.9%**, rows 8-531 of 540 |
+| desktop `md`+ | `6 / 1` | 216px @1296 | **52.5%**, rows **128-411** of 540 |
+
+### Shortlist
+
+| ID | Subject | Source | Licence |
+| --- | --- | --- | --- |
+| **E** | Old State Capitol / GMC, State House Square | 4080x3072 (1.33:1) | **CC0**, Clifflandis |
+| **F** | Sanford & Napier Halls, Georgia College, W Greene St | 3715x1400 (**2.65:1**) | **CC BY-SA 2.0**, Ken Lund |
+
+✅ **Cantrell chose E.** Uploaded as `cities/milledgeville.jpg` (1700x540); the live object was verified
+**byte-identical** to the certified asset, not assumed. Registered in the **essentials** repo as the
+program's **first `GA`-scoped `CURATED_LOCAL` key**, `match:'exact'` — PR
+[essentials#112](https://github.com/EmpoweredVote/essentials/pull/112). Tests 23/23, ESLint clean.
+
+Resolution verified in both directions, negatives included: `Milledgeville GA` resolves;
+`Milledgeville IL`, `Milledgeville TN` and `Old Milledgeville GA` all resolve to **nothing**, so
+state-scoping and the exact-match guard both bite. Columbus and Macon correctly resolve to nothing.
+
+⚠ F (Georgia College, native 2.65:1) was the recommendation and remains the runner-up on record if E
+is ever revisited. Overwriting a bucket object does **not** purge the CDN, so any replacement must be
+**versioned**, as `states/FL-v2.jpg` was.
+
+### 🔴🔴 THE OBVIOUS SUBJECT FAILS THIS BOX, AND AN ANCHOR SWEEP IS WHAT PROVED IT
+
+The **Old Governor's Mansion** is Milledgeville's signature building and the natural pick. Its source
+is 1.42:1, so the 3.148:1 crop already discards 55% of the rows and the desktop band keeps 52.5% of
+what remains — **about a quarter of the original**. Swept at anchors 0.30 / 0.45 / 0.60 on **two**
+different mansion photographs, every result is **a wall of windows**: pediment cropped off the top,
+ground off the bottom. That is the FL-7 failure exactly — composed straight to 6:1, a tall building
+renders as its own middle. ▶ **A frontal building portrait is not a banner subject. Prefer a
+horizontally arranged subject, and prefer a source already near 3:1.** This applies to Columbus and
+Macon next.
+
+### 🔴 The best-licensed sources were unusable for a reason no licence check catches
+
+The two widest, most permissive sources — Historic American Buildings Survey, federal work,
+unambiguously public domain, **1.62:1**, which would have survived the desktop band better than
+anything else found — measured **100% greyscale**. Archival black and white beside a shelf of colour
+banners reads as a fault, not a choice. **Test colour, not only licence and ratio.**
+
+### Where it ships, which is NOT this repo
+
+⚠ `CURATED_LOCAL` lives in **`src/lib/buildingImages.js` in the `essentials` repo** (branch `main`),
+so the banner is a **separate PR there** plus a `cities/milledgeville.jpg` upload to the shared bucket.
+⚠ **No key is scoped `GA` yet** — Milledgeville is the first, and it must be declared
+**`match:'exact'`**: FL-7 found substring matching handed one city's banner to seven others.
+⚠ Attribution travels in the registry comment, as the existing entries do. Overwriting a bucket object
+does **not** purge the CDN, so a replacement must be versioned.
