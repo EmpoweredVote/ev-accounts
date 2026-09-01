@@ -78,6 +78,7 @@ DDL, role management, or access to `vault`/`auth`/other apps' schemas.
 | `VITE_WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Same public client id as the backend's `WORKOS_CLIENT_ID`. Presence renders the AuthKit sign-in button and enables the WorkOS session path. Build-time, like `VITE_API_URL` — changing it needs a full rebuild. Absent = the login page shows only the classic form. |
 | `VITE_AUTHKIT_ONLY` | Set manually | `'true'` hides the classic email/password form on `/login`, leaving AuthKit as the only way in. Build-time. Gated on `VITE_WORKOS_CLIENT_ID` — if that is absent the classic form stays, so a misconfig can't lock everyone out. The break-glass route `/login/classic` always shows the form. Set on the login-hub, app, and validation-quests frontends together. |
 | `VITE_EMBEDDED_AUTH` | Set manually | `'true'` renders our OWN embedded email/password + on-page verification-code form instead of the hosted AuthKit auto-forward. Requires `VITE_WORKOS_CLIENT_ID` — the flag has no effect without it. Build-time, like `VITE_AUTHKIT_ONLY`. Applies to the login-hub, app, and validation-quests frontends, but — unlike `VITE_AUTHKIT_ONLY` — is rolled out **one origin at a time**, not simultaneously. See "Headless embedded login" below. |
+| `VITE_LOGIN_ORIGIN` | Set manually (optional) | Origin of the central login hub that the **app** build (`empowered-vote-app`) redirects sign-in to under `VITE_EMBEDDED_AUTH`. Build-time. Defaults to `https://login.empowered.vote`; set it only on a **staging** app build (e.g. the staging login hub) so cross-app SSO can be tested without bouncing to the production login. Leave unset in prod. |
 
 ---
 
@@ -192,14 +193,25 @@ attempt from this doc-only pass:
   surprise degrades to a logged `WORKOS_ERROR` rather than a wrong success — but the real
   staging shapes for a verified login, an unverified login, and a wrong password are
   still unconfirmed. Adjust the matcher (and its unit test) if a name differs.
-- **The password-reset email link target.** Confirm it lands on
-  `login.empowered.vote/reset-password?token=…`. If WorkOS instead sends its own hosted
-  URL, set the reset redirect in the WorkOS dashboard, or switch to WorkOS Custom Emails.
+- **The password-reset email link target — RESOLVED in code.** WorkOS's server-side
+  `password_reset` create does not auto-send an email and returns the raw
+  `password_reset_token`; `sendWorkosPasswordReset` ignores WorkOS's hosted
+  `password_reset_url` and emails **our own** link to
+  `login.empowered.vote/reset-password?token_hash=…` (via `emailService.sendEmail`,
+  no custom-domain add-on needed). Verify live in checklist step B6 — exercise
+  `/api/auth/forgot-password` on a deployed build and confirm the email you receive links
+  to our domain. (Note: the `workos-headless-smoke.mjs` script calls WorkOS directly, so
+  its Case 4 still prints WorkOS's hosted URL — that field is deliberately unused.)
 - **`COOKIE_DOMAIN` is `.empowered.vote` on the `ev-accounts-api` Render service in
   prod.** Check the Render env; do not change it without approval.
-- **`app/src/pages/LoginPage.tsx`'s `LOGIN_ORIGIN` is hardcoded to prod**
-  (`https://login.empowered.vote`) — so a staging cross-app SSO test redirects to the
-  PRODUCTION login page unless this is adjusted for staging first.
+- **Staging cross-app login origin.** `app/src/pages/LoginPage.tsx`'s `LOGIN_ORIGIN`
+  defaults to prod (`https://login.empowered.vote`) but now reads `VITE_LOGIN_ORIGIN`
+  (build-time). To test cross-app SSO on staging, set `VITE_LOGIN_ORIGIN` on the staging
+  app build to the staging login hub; otherwise a staging app bounces to the PRODUCTION
+  login page. Leave it unset in prod.
+
+See [`docs/HEADLESS-LOGIN-STAGING-CHECKLIST.md`](docs/HEADLESS-LOGIN-STAGING-CHECKLIST.md)
+for the full pre-flight + per-origin acceptance checklist that closes these items.
 
 ### Monitoring failed logins at cutover
 
