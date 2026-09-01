@@ -172,3 +172,113 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/cities — contract', () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// ?datasets=summary — the payload projection.
+//
+// ⚠⚠ WHY THIS MODE EXISTS. `available_datasets` carries ONE ENTRY PER BUDGET ROW
+// and is 97.1% of a 23.5 MB response that the Treasury Tracker frontend fetches
+// on every page load — to look up ONE id. It grows with every load: the Michigan
+// statewide sweep alone took it from 18.4 MB to 23.5 MB, and Michigan's
+// townships and villages would roughly double it again.
+//
+// The full per-(year, dataset_type, scope, basis, derivation, audit_grade)
+// detail is only needed for the ONE entity being viewed, which the frontend
+// fetches from /treasury/cities/:id. The list needs "does this entity have
+// data", which years, and which dataset types — for search, the browse grids and
+// the entity switcher.
+//
+// ⚠ OPT-IN, and the default response is UNCHANGED. Trimming by default would be
+// a silent breaking change for any consumer not in this repo.
+// ---------------------------------------------------------------------------
+describe.skipIf(!hasLiveDb)('GET /api/treasury/cities?datasets=summary — contract', () => {
+  it('replaces available_datasets with a compact dataset_summary', async () => {
+    const res = await request(app).get('/api/treasury/cities?datasets=summary');
+    expect(res.status).toBe(200);
+    const cities = res.body as Array<Record<string, unknown>>;
+    expect(Array.isArray(cities)).toBe(true);
+    if (cities.length === 0) return;
+
+    for (const city of cities) {
+      expect(city, 'summary mode must not ship the per-row array').not.toHaveProperty('available_datasets');
+      expect(city, 'every entity must carry dataset_summary').toHaveProperty('dataset_summary');
+      const s = city['dataset_summary'] as Record<string, unknown>;
+      expect(Array.isArray(s['years']), 'years must be an array').toBe(true);
+      expect(Array.isArray(s['dataset_types']), 'dataset_types must be an array').toBe(true);
+    }
+  });
+
+  // ⚠ The list is what decides whether an entity is offered at all. If summary
+  // mode disagreed with the full mode about WHICH entities have data, the browse
+  // grids and the search would quietly start hiding places that do.
+  it('agrees with the full response about which entities have data', async () => {
+    const [full, summary] = await Promise.all([
+      request(app).get('/api/treasury/cities'),
+      request(app).get('/api/treasury/cities?datasets=summary'),
+    ]);
+    expect(full.status).toBe(200);
+    expect(summary.status).toBe(200);
+    const a = full.body as Array<Record<string, unknown>>;
+    const b = summary.body as Array<Record<string, unknown>>;
+    expect(b.length).toBe(a.length);
+
+    const withDataFull = new Set(a
+      .filter((c) => ((c['available_datasets'] as unknown[]) ?? []).length > 0)
+      .map((c) => c['id'] as string));
+    const withDataSummary = new Set(b
+      .filter((c) => (((c['dataset_summary'] as Record<string, unknown>)?.['years'] as unknown[]) ?? []).length > 0)
+      .map((c) => c['id'] as string));
+    expect(withDataSummary.size).toBe(withDataFull.size);
+    expect([...withDataSummary].every((id) => withDataFull.has(id))).toBe(true);
+  });
+
+  // ⚠⚠ The years drive the year picker and the "FY2010-FY2025" ranges the browse
+  // grids print. A summary that lost a year would silently make a series look
+  // shorter than it is.
+  it('reproduces exactly the distinct years and dataset types of the full response', async () => {
+    const [full, summary] = await Promise.all([
+      request(app).get('/api/treasury/cities'),
+      request(app).get('/api/treasury/cities?datasets=summary'),
+    ]);
+    const byId = new Map((summary.body as Array<Record<string, unknown>>)
+      .map((c) => [c['id'] as string, c['dataset_summary'] as Record<string, unknown>]));
+
+    let checked = 0;
+    for (const city of full.body as Array<Record<string, unknown>>) {
+      const ds = (city['available_datasets'] as Array<Record<string, unknown>>) ?? [];
+      if (ds.length === 0) continue;
+      checked += 1;
+      const s = byId.get(city['id'] as string);
+      expect(s, `no summary for ${String(city['name'])}`).toBeDefined();
+      expect(new Set(s!['years'] as number[]))
+        .toEqual(new Set(ds.map((d) => d['fiscal_year'])));
+      expect(new Set(s!['dataset_types'] as string[]))
+        .toEqual(new Set(ds.map((d) => d['dataset_type'])));
+    }
+    // ⚠ A gate that can measure nothing must FAIL, not pass.
+    expect(checked, 'no entity with data was compared').toBeGreaterThan(0);
+  });
+
+  // The whole point: it has to actually be smaller.
+  it('is dramatically smaller than the full response', async () => {
+    const [full, summary] = await Promise.all([
+      request(app).get('/api/treasury/cities'),
+      request(app).get('/api/treasury/cities?datasets=summary'),
+    ]);
+    const a = JSON.stringify(full.body).length;
+    const b = JSON.stringify(summary.body).length;
+    expect(b, `summary ${b} vs full ${a}`).toBeLessThan(a / 5);
+  });
+
+  // ⚠ Any other value, including none, must behave exactly as before.
+  it('leaves the default response untouched', async () => {
+    for (const q of ['', '?datasets=full', '?datasets=nonsense']) {
+      const res = await request(app).get(`/api/treasury/cities${q}`);
+      expect(res.status, q).toBe(200);
+      const cities = res.body as Array<Record<string, unknown>>;
+      if (cities.length === 0) continue;
+      expect(cities[0], q).toHaveProperty('available_datasets');
+      expect(cities[0], q).not.toHaveProperty('dataset_summary');
+    }
+  });
+});

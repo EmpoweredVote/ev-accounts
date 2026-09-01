@@ -45,9 +45,14 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // ---------------------------------------------------------------------------
 
 // GET /api/treasury/cities
-router.get('/cities', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+// ⚠ `?datasets=summary` replaces the per-budget-row `available_datasets` array
+// with a compact `{ years, dataset_types }`. See getCities() for why. Any other
+// value — including none — returns the default response byte-for-byte unchanged,
+// because this endpoint is a cross-app contract and trimming it by default would
+// be a silent breaking change.
+router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const cities = await getCities();
+    const cities = await getCities(req.query['datasets'] === 'summary' ? 'summary' : 'full');
     res.status(200).json(cities);
   } catch (err) {
     console.error('[GET /treasury/cities] error:', err);
