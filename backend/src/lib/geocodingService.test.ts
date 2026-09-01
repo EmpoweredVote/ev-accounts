@@ -86,12 +86,64 @@ function urlOf(call: number): string {
   return String(fetchMock().mock.calls[call]![0]);
 }
 
-/** Census miss -> ZCTA extent -> NAD features. The full happy path, in order. */
+/** A county GeocodeServer candidate, shaped as Buncombe's actually returns them. */
+function locatorCandidate(
+  overrides: {
+    addrType?: string;
+    addNum?: string;
+    stName?: string;
+    score?: number;
+    x?: number;
+    y?: number;
+  } = {},
+) {
+  return {
+    address: '525 CITRINE LN',
+    score: overrides.score ?? 100,
+    location: { x: overrides.x ?? -82.57618578271, y: overrides.y ?? 35.472629603687 },
+    attributes: {
+      Addr_type: overrides.addrType ?? 'PointAddress',
+      AddNum: overrides.addNum ?? '525',
+      StName: overrides.stName ?? 'CITRINE',
+      StType: 'LN',
+      Match_addr: '525 CITRINE LN',
+      City: '',
+      Region: '',
+      Postal: '',
+    },
+  };
+}
+
+function locatorResponse(candidates: unknown[]) {
+  return { ok: true, status: 200, json: async () => ({ candidates }) };
+}
+
+/**
+ * Census miss -> county locator returns nothing -> ZCTA extent -> NAD features.
+ * ZIP 28704 matches a registered locator, so that call always happens first.
+ */
 function stubFallback(features: unknown[]) {
   fetchMock()
     .mockResolvedValueOnce(censusResponse([]))
     .mockResolvedValueOnce(zctaResponse())
+    .mockResolvedValueOnce(locatorResponse([]))
     .mockResolvedValueOnce(nadResponse(features));
+}
+
+/**
+ * Census miss -> the locator returns `candidate` -> NAD holds nothing.
+ *
+ * For the tests that assert a locator answer is REFUSED. The NAD leg is stubbed
+ * empty on purpose: rejecting the locator must fall through, so the only way the
+ * call can end in ADDRESS_NOT_FOUND is if the locator's answer was genuinely
+ * discarded rather than quietly accepted.
+ */
+function stubCensusThenLocator(candidate: unknown) {
+  fetchMock()
+    .mockResolvedValueOnce(censusResponse([]))
+    .mockResolvedValueOnce(zctaResponse())
+    .mockResolvedValueOnce(locatorResponse([candidate]))
+    .mockResolvedValueOnce(nadResponse([]));
 }
 
 describe('geocodeAddress — National Address Database fallback on a Census miss', () => {
@@ -135,9 +187,10 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
       state: 'NC',
       city: 'ARDEN',
     });
-    expect(fetchMock()).toHaveBeenCalledTimes(3);
+    expect(fetchMock()).toHaveBeenCalledTimes(4);
     expect(urlOf(1)).toContain('tigerweb.geo.census.gov');
-    expect(urlOf(2)).toContain('National_Address_Database');
+    expect(urlOf(2)).toContain('gis.buncombecounty.org');
+    expect(urlOf(3)).toContain('National_Address_Database');
   });
 
   it('scopes the NAD query by house number, ZIP, and the ZIP envelope', async () => {
@@ -147,7 +200,7 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
 
     // The hosted NAD view rejects a purely attribute query, so the envelope is
     // load-bearing, not an optimisation.
-    const nadUrl = decodeURIComponent(urlOf(2));
+    const nadUrl = decodeURIComponent(urlOf(3));
     expect(nadUrl).toContain('Add_Number=525');
     expect(nadUrl).toContain("Zip_Code='28704'");
     expect(nadUrl).toContain('esriGeometryEnvelope');
@@ -192,12 +245,135 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
     );
     fetchMock()
       .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(locatorResponse([]))
       .mockResolvedValueOnce(nadResponse([nadFeature('CITRINE')]));
 
     await expect(geocodeAddress(ARDEN)).resolves.toMatchObject({ state: 'NC' });
 
-    expect(fetchMock()).toHaveBeenCalledTimes(2);
-    expect(urlOf(1)).toContain('National_Address_Database');
+    // No TIGERweb call — the envelope came from cache.
+    expect(fetchMock()).toHaveBeenCalledTimes(3);
+    expect(urlOf(1)).toContain('gis.buncombecounty.org');
+    expect(urlOf(2)).toContain('National_Address_Database');
+  });
+
+  // ---- County locators, tried before the national database -----------------
+  // Measured from Render 2026-09-01: the county server answered in 421-644ms
+  // across six samples while the NAD ranged 1143-16868ms and blew the budget
+  // twice. Fast path first, national database only when it misses.
+
+  it('answers from the county locator without ever reaching the NAD', async () => {
+    fetchMock()
+      .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([locatorCandidate()]));
+
+    const result = await geocodeAddress(ARDEN);
+
+    expect(result).toEqual({
+      lat: 35.472629603687,
+      lng: -82.57618578271,
+      matchedAddress: '525 CITRINE LN, NC 28704',
+      state: 'NC',
+      // These servers return City empty; the Census path would have supplied it,
+      // but the Census already failed, so there is nothing to lose here.
+      city: '',
+    });
+    // Census, envelope, locator. The NAD is never reached.
+    expect(fetchMock()).toHaveBeenCalledTimes(3);
+    expect(urlOf(2)).toContain('gis.buncombecounty.org');
+  });
+
+  it('sends the raw address to the locator, which needs no parsing', async () => {
+    fetchMock()
+      .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([locatorCandidate()]));
+
+    await geocodeAddress(ARDEN);
+
+    // Read the param rather than string-matching the URL: URLSearchParams encodes
+    // spaces as "+", which decodeURIComponent does not turn back into spaces.
+    expect(new URL(urlOf(2)).searchParams.get('SingleLine')).toBe(ARDEN);
+  });
+
+  it('skips the locator for a ZIP outside its registered prefixes', async () => {
+    // 20500 is Washington DC — no registered locator, so straight to the NAD.
+    fetchMock()
+      .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(nadResponse([]));
+
+    await expect(geocodeAddress('1600 pennsylvania ave nw washington dc 20500')).rejects.toMatchObject({
+      code: 'ADDRESS_NOT_FOUND',
+    });
+    expect(fetchMock()).toHaveBeenCalledTimes(3);
+    expect(urlOf(1)).toContain('tigerweb.geo.census.gov');
+    expect(urlOf(2)).toContain('National_Address_Database');
+  });
+
+  it('falls through to the NAD when the locator has no candidates', async () => {
+    stubFallback([nadFeature('CITRINE')]);
+
+    await expect(geocodeAddress(ARDEN)).resolves.toMatchObject({ city: 'ARDEN' });
+  });
+
+  it('falls through to the NAD when the locator is slow or unreachable', async () => {
+    fetchMock()
+      .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockRejectedValueOnce(new Error('locator down'))
+      .mockResolvedValueOnce(nadResponse([nadFeature('CITRINE')]));
+
+    await expect(geocodeAddress(ARDEN)).resolves.toMatchObject({ state: 'NC' });
+  });
+
+  // A locator answer is held to the same bar as a NAD answer. A fast wrong point
+  // is still a wrong point, and resolves the wrong districts.
+
+  it('rejects a locator match that is not a real parcel', async () => {
+    // StreetAddress is interpolated along a segment — "somewhere on that street".
+    stubCensusThenLocator(locatorCandidate({ addrType: 'StreetAddress' }));
+
+    await expect(geocodeAddress(ARDEN)).rejects.toMatchObject({ code: 'ADDRESS_NOT_FOUND' });
+  });
+
+  it('rejects a locator match on a different house number', async () => {
+    stubCensusThenLocator(locatorCandidate({ addNum: '527' }));
+
+    await expect(geocodeAddress(ARDEN)).rejects.toMatchObject({ code: 'ADDRESS_NOT_FOUND' });
+  });
+
+  it('rejects a locator match on a street the user did not type', async () => {
+    stubCensusThenLocator(locatorCandidate({ stName: 'SAPPHIRE' }));
+
+    await expect(geocodeAddress(ARDEN)).rejects.toMatchObject({ code: 'ADDRESS_NOT_FOUND' });
+  });
+
+  it('ACCEPTS a structurally sound match despite a low ArcGIS score', async () => {
+    // Regression guard. A score threshold looks reasonable and is wrong here:
+    // measured against Buncombe on 2026-09-01, the same correct PointAddress
+    // scores 100 for "525 Citrine Ln" but 72.31 for the full address a real
+    // person types, because the server has no City/Region/Postal to match the
+    // trailing tokens against. Gating on score disables the fast path for every
+    // genuine signup while every mocked test still passes.
+    fetchMock()
+      .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([locatorCandidate({ score: 72.31 })]));
+
+    await expect(geocodeAddress(ARDEN)).resolves.toMatchObject({
+      lat: 35.472629603687,
+      state: 'NC',
+    });
+  });
+
+  it('rejects a locator match that lands outside the ZIP the user typed', async () => {
+    // A shared street name across a county line. The structural checks all pass —
+    // right house number, right street, real parcel — and only the envelope test
+    // catches that this is the wrong county's copy of the street.
+    stubCensusThenLocator(locatorCandidate({ x: -80.8431, y: 35.2271 })); // Charlotte
+
+    await expect(geocodeAddress(ARDEN)).rejects.toMatchObject({ code: 'ADDRESS_NOT_FOUND' });
   });
 
   // ---- Refusing to guess ---------------------------------------------------
@@ -261,6 +437,8 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
     // it does not make the primary answer unknown, so do not tell the user to retry.
     fetchMock()
       .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([]))
       .mockRejectedValueOnce(new Error('network down'));
 
     await expect(geocodeAddress(ARDEN)).rejects.toMatchObject({ code: 'ADDRESS_NOT_FOUND' });
@@ -278,6 +456,7 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
     fetchMock()
       .mockResolvedValueOnce(censusResponse([]))
       .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([]))
       .mockResolvedValueOnce({
         ok: true,
         status: 200,
@@ -291,6 +470,8 @@ describe('geocodeAddress — National Address Database fallback on a Census miss
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     fetchMock()
       .mockResolvedValueOnce(censusResponse([]))
+      .mockResolvedValueOnce(zctaResponse())
+      .mockResolvedValueOnce(locatorResponse([]))
       .mockRejectedValueOnce(new Error('network down'));
 
     await expect(geocodeAddress(ARDEN)).rejects.toThrow();

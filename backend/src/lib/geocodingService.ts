@@ -103,6 +103,92 @@ interface NadFeature {
 }
 
 // ---------------------------------------------------------------------------
+// Jurisdiction locators — county-operated ArcGIS GeocodeServers
+//
+// WHY THESE COME FIRST. The national services are reachable from Render but
+// erratic. Measured 2026-09-01 from the production box, six paced samples each,
+// all asking where 525 Citrine Ln, Arden NC is:
+//
+//   NAD (services.arcgis.com)      1143 · 1945 · 2533 · 4830 · 16029 · 16868 ms
+//   NC OneMap (statewide ArcGIS)   2955 · 4636 · 4649 · 5452 · 16122 · 1 error
+//   Buncombe County GeocodeServer   421 ·  524 ·  581 ·  587 ·   603 ·   644 ms
+//
+// Two of six NAD samples blew the whole fallback budget, and the statewide
+// service was no better — both are large multi-tenant hosted ArcGIS instances,
+// which is the trait that predicts the tail, not the operator. A county server
+// serving one county is a different class of thing: six samples spanning 223ms.
+//
+// So where a county publishes a locator, ask it first. It is faster, it is the
+// same authority that assigns the address in the first place, and it accepts a
+// single-line string, so none of the NAD's parsing applies.
+//
+// ADDING ONE. This mirrors how the Knight program already onboards a
+// jurisdiction — the same counties that publish boundary layers for
+// `essentials.geofence_boundaries` usually publish a GeocodeServer beside them.
+// Confirm `findAddressCandidates` returns `Addr_type: "PointAddress"` with a
+// populated `AddNum` and `StName`, then add a row.
+//
+// `zipPrefixes` is a cheap pre-filter, not a coverage claim. It is deliberately
+// generous — 287/288 pulls in neighbouring counties — because a locator asked
+// about an address it does not hold returns zero candidates, which costs one
+// sub-second call and falls through to the NAD. A prefix that is too narrow
+// silently loses the fast path; one that is too wide costs milliseconds.
+// ---------------------------------------------------------------------------
+
+interface JurisdictionLocator {
+  name: string;
+  /** Two-letter state, supplied from here because these servers return no region. */
+  state: string;
+  zipPrefixes: string[];
+  url: string;
+}
+
+const JURISDICTION_LOCATORS: JurisdictionLocator[] = [
+  {
+    name: 'Buncombe County, NC',
+    state: 'NC',
+    zipPrefixes: ['287', '288'],
+    url: 'https://gis.buncombecounty.org/arcgis/rest/services/AddressSearch2/GeocodeServer/findAddressCandidates',
+  },
+];
+
+/** Slice of the fallback budget a locator may use. Max observed is 644ms. */
+const LOCATOR_BUDGET_MS = 3000;
+
+/**
+ * NOTE ON `score`: it is deliberately NOT used as a gate.
+ *
+ * ArcGIS scores how much of the input it matched, and these county servers return
+ * City, Region and Postal as empty strings — they hold one county and do not index
+ * place names. So every token past the street is unmatchable and drags the score
+ * down. Measured against Buncombe on 2026-09-01, all four returning the SAME
+ * correct PointAddress for 525 Citrine Ln:
+ *
+ *     "525 Citrine Ln"                    score 100
+ *     "525 citrine lane"                  score 100
+ *     "525 citrine lane arden nc 28704"   score  72.31
+ *     "525 Citrine Ln, Arden, NC 28704"   score  70
+ *
+ * A threshold tuned on the first two rejects every real signup, which types the
+ * last two. The score measures how much of the string the server recognised, not
+ * whether the answer is right, so the gates below are structural instead: the
+ * exact house number, the street name appearing in what the user typed, a real
+ * parcel type, and the point landing inside the ZIP they gave.
+ */
+
+interface LocatorCandidate {
+  address?: string;
+  score?: number;
+  location?: { x: number; y: number } | null;
+  attributes?: {
+    Addr_type?: string;
+    AddNum?: string;
+    StName?: string;
+    Match_addr?: string;
+  };
+}
+
+// ---------------------------------------------------------------------------
 // PO Box detection
 // Matches: "PO Box", "P.O. Box", "POB" — case-insensitive
 // ---------------------------------------------------------------------------
@@ -123,7 +209,7 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 //
 // Implementation: US Census Geocoder (free, no API key required), with the USDOT
 // National Address Database as a fallback on a zero-match. Both are free and
-// unauthenticated; Phase 38's move off paid geocoding stands — see geocodeViaNad.
+// unauthenticated; Phase 38's move off paid geocoding stands — see geocodeViaFallback.
 // ---------------------------------------------------------------------------
 
 /**
@@ -223,6 +309,90 @@ function parseHouseNumberAndZip(address: string): { houseNumber: number; zip: st
   return { houseNumber: Number(house[1]), zip: zip[1] };
 }
 
+/**
+ * Ask a county's own GeocodeServer where an address is.
+ *
+ * Returns null for anything short of an exact rooftop hit, because the point of
+ * trying a locator first is speed, not a second opinion of lower quality. The
+ * checks are the same ones the NAD path makes, read off this server's fields:
+ *
+ *   - `Addr_type` must be `PointAddress` — a real parcel. StreetAddress and the
+ *     interpolated types are exactly the "somewhere on that street" answer that
+ *     resolves the wrong districts.
+ *   - `AddNum` must equal the house number the user typed. No snapping.
+ *   - `StName` must appear in the input as a whole word, so a server that
+ *     matched a different street cannot pass.
+ *   - the returned point must fall inside the ZIP's own envelope.
+ *
+ * That last check is what makes a generous `zipPrefixes` safe. A locator holds one
+ * county but the prefix spans several, so asking Buncombe about an address in a
+ * neighbouring county is expected. Usually it returns zero candidates — verified
+ * with a street that does not exist there — but a street name shared across the
+ * county line would otherwise return Buncombe's copy of it and seat the person in
+ * the wrong county. Requiring the point to land in the ZIP they actually typed
+ * closes that hole, and the envelope is already fetched for the NAD and cached for
+ * a month, so it costs nothing extra.
+ *
+ * `score` is not a gate — see the note above LOCATOR_BUDGET_MS.
+ */
+async function geocodeViaLocator(
+  locator: JurisdictionLocator,
+  address: string,
+  houseNumber: number,
+  zip: string,
+  extent: Extent,
+  remainingMs: number,
+): Promise<GeocodeResult | null> {
+  const url = new URL(locator.url);
+  url.searchParams.set('SingleLine', address);
+  url.searchParams.set('outSR', '4326');
+  url.searchParams.set('outFields', '*');
+  url.searchParams.set('f', 'json');
+
+  const data = await fetchJson<{ candidates?: LocatorCandidate[] }>(
+    url,
+    Math.min(remainingMs, LOCATOR_BUDGET_MS),
+    `locator:${locator.name}`,
+  );
+
+  const best = data?.candidates?.[0];
+  if (!best) return null;
+
+  const a = best.attributes ?? {};
+  if (a.Addr_type !== 'PointAddress') return null;
+  if (String(a.AddNum ?? '') !== String(houseNumber)) return null;
+
+  const street = normalizeForMatch(a.StName ?? '');
+  if (!street || !containsWholeWords(normalizeForMatch(address), street)) return null;
+
+  const point = best.location;
+  if (!point || typeof point.x !== 'number' || typeof point.y !== 'number') return null;
+
+  // The point must be in the ZIP the user typed, not merely somewhere this county
+  // holds. Without this a street name shared across the county line seats them in
+  // the wrong county entirely.
+  const inZip =
+    point.x >= extent.xmin && point.x <= extent.xmax &&
+    point.y >= extent.ymin && point.y <= extent.ymax;
+  if (!inZip) {
+    console.warn(`[geocoding] locator:${locator.name}: match fell outside the ZIP envelope`);
+    return null;
+  }
+
+  return {
+    lat: point.y,
+    lng: point.x,
+    matchedAddress: [a.Match_addr ?? best.address ?? '', `${locator.state} ${zip}`.trim()]
+      .filter(Boolean)
+      .join(', '),
+    state: locator.state,
+    // These servers return City/Region/Postal as empty strings, so there is no
+    // city to report. That is not a regression: this path runs only after the
+    // Census already failed, where the alternative is no location at all.
+    city: '',
+  };
+}
+
 /** Bounding box of a ZIP Code Tabulation Area. Cached — ZIP extents do not move. */
 async function getZipExtent(zip: string, remainingMs: number): Promise<Extent | null> {
   const cacheKey = `zcta:v1:${zip}`;
@@ -305,18 +475,43 @@ async function getZipExtent(zip: string, remainingMs: number): Promise<Extent | 
  * neither it nor the coordinates may reach a log line. The warnings here carry an
  * HTTP status or a candidate count and nothing else — keep it that way.
  */
-async function geocodeViaNad(address: string): Promise<GeocodeResult | null> {
+async function geocodeViaFallback(address: string): Promise<GeocodeResult | null> {
   const parsed = parseHouseNumberAndZip(address);
-  // No leading house number or no trailing ZIP means there is nothing to scope the
-  // NAD query with. That is a skip, not an error — the caller still says NOT_FOUND.
+  // No leading house number or no trailing ZIP means there is nothing to scope
+  // either source with. That is a skip, not an error — the caller says NOT_FOUND.
   if (!parsed) return null;
 
-  // One deadline for the whole second opinion, so two sequential calls cannot
+  // One deadline for the whole second opinion, so sequential calls cannot
   // multiply into a wait the person watching the button actually feels.
   const deadline = Date.now() + FALLBACK_BUDGET_MS;
 
+  // 1. The ZIP envelope, first, because BOTH sources need it — the locator to
+  //    confirm its answer is in the right ZIP, the NAD because its hosted view
+  //    refuses a non-spatial query. It caches for a month and measured 344-428ms
+  //    from Render, so on any repeat ZIP this leg is free.
   const extent = await getZipExtent(parsed.zip, deadline - Date.now());
   if (!extent) return null;
+
+  // 2. A county that publishes its own locator answers in well under a second and
+  //    is the authority that assigned the address. Try it before the national
+  //    service. A miss costs one sub-second call and falls through.
+  const locators = JURISDICTION_LOCATORS.filter((l) =>
+    l.zipPrefixes.some((prefix) => parsed.zip.startsWith(prefix)),
+  );
+  for (const locator of locators) {
+    const hit = await geocodeViaLocator(
+      locator,
+      address,
+      parsed.houseNumber,
+      parsed.zip,
+      extent,
+      deadline - Date.now(),
+    );
+    if (hit) return hit;
+  }
+
+  // 3. No registered locator held this address. Fall through to the national
+  //    database, tail and all — it is still better than failing outright.
 
   const url = new URL(NAD_QUERY_URL);
   url.searchParams.set('where', `Add_Number=${parsed.houseNumber} AND Zip_Code='${parsed.zip}'`);
@@ -431,11 +626,11 @@ export async function geocodeAddress(address: string): Promise<GeocodeResult> {
   // 7. Empty addressMatches = Census has no record of this address. Give it a second
   //    chance through the NAD before failing — TIGER's blind spot is new construction,
   //    and a real resident of a new street is exactly who we must not turn away.
-  //    geocodeViaNad returns null for every failure, so this stays a hard
+  //    geocodeViaFallback returns null for every failure, so this stays a hard
   //    ADDRESS_NOT_FOUND whenever the fallback is absent, broken, or imprecise.
   const matches = data?.result?.addressMatches;
   if (!matches || matches.length === 0) {
-    const fallback = await geocodeViaNad(address);
+    const fallback = await geocodeViaFallback(address);
     if (fallback) {
       await cache.set(cacheKey, fallback, 86400);
       return fallback;
