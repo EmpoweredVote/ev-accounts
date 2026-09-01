@@ -8,7 +8,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Tasks 1+2 ✅ boundaries applied; Task 3 ✅ generator written, all 3 migrations DRY-RUN CLEAN; Tasks 4–5 open |
+| GA-3 | **Milledgeville + Baldwin County** | ✅ **APPLIED 2026-09-01** (`X0042`, `X0043`, `CC_0027`–`CC_0029`): 18 offices, 18 people, 0 vacancies |
 | GA-4..5 | Columbus, Macon | — |
 
 ---
@@ -551,12 +551,60 @@ fails hard if that row is missing — the six officers have nowhere to sit witho
 matching the declared band exactly at both ends, every office naming a known chamber, no duplicate
 seat key, and **no party field anywhere** — a generator is exactly where party leaks back in.
 
-**▶ NEXT: Task 4** — apply. Re-generate, re-count the slot against every remote ref, rename to
-`CC_0027`/`CC_0028`/`CC_0029`, apply through `psql`, run the gates, add a `place:milledgeville` probe
-to `check:reachability` and assert **four of four** answers at City Hall. **`CC_0027` was verified free
-2026-09-01**: `CC_0026` is the highest slot across all 81 remote refs and `CC_0027`–`CC_0029` exist on
-none. ⚠ Re-count again at apply time and take the number LAST.
-⚠ Run the probe BEFORE the apply as well — that is what caught FL-6's mis-scoped at-large ruling.
+✅ **GA-3 APPLIED 2026-09-01 — `CC_0027`, `CC_0028`, `CC_0029`.** Numbers taken LAST: `CC_0026` was the
+highest slot across all 81 remote refs at apply time, `check:migrations` reported **3 added**, no collisions.
+
+| Migration | Applied |
+| --- | --- |
+| `CC_0027` city structure | 1 government, 2 chambers, **7 districts**, **7 offices** |
+| `CC_0028` city occupancy | **7 politicians, 7 terms**, all open-ended `'unknown'` |
+| `CC_0029` Baldwin County | 1 government, 2 chambers, **5 districts**, **11 offices + 11 people + 11 terms** |
+
+### Verified in production
+
+| Check | Result |
+| --- | --- |
+| Milledgeville City Council / Office of the Mayor | **6/6** and **1/1** |
+| Baldwin Board of Commissioners / Elected Officials | **5/5** and **6/6** |
+| `offices_missing_terms` | **unchanged at 821 / 166 / 655** |
+| `check:reachability` | **5/17/37** against baseline 5/17/38 |
+| GA local/county offices with no term row | **0** |
+| All three migrations re-run | clean, second pass seats **0** |
+
+🟢🟢 **ALL FOUR REQUIRED ANSWERS PASS AT MILLEDGEVILLE CITY HALL** — council D2 Arlene Simmons,
+commission D3 Sammy Hall, HD-149 Floyd Griffin, SD-25 Rick Williams. The probe scored **2 of 4**
+before the apply, which is why it was run first.
+
+🟢 **A SECOND ANCHOR IS WHAT PROVES THE TIERS WERE NOT CROSSED.** The Baldwin County Government
+Building is also inside the city and returns **city D5 / commission D1** — different numbers from
+City Hall's D2/D3 on *both* tiers. A wave that had crossed the two tiers would still pass probe 1a.
+
+🟢 **PER-DISTRICT POSITIVE CONTROL, BECAUSE A QUIET GATE IS NOT EVIDENCE.** `check:reachability`
+takes **no per-jurisdiction probe list** — it sweeps every addressable district, so "nothing
+regressed" cannot by itself distinguish *swept and clean* from *not swept*. All 11 district seats were
+therefore tested individually at their own interior point: **1 holder each, 11 of 11.**
+⚠ The plan said to "add a `place:milledgeville` probe to the reachability gate". That was wrong about
+the mechanism, and the correction is recorded rather than quietly dropped.
+
+⚠ **THE PROBE JOIN'S mtfcc PAIRING WAS DEMONSTRATED, NOT ASSERTED.** Run unpaired, City Hall returns
+three WRONG officials: **Todd Jones** (HD-25, reached through the SD-25 polygon), **Will Wade** (HD-9)
+and **Nikki Merritt** (SD-9), both reached through the **Baldwin County** polygon. Probe 2 of
+`scripts/verify-milledgeville-baldwin-probes.sql` keeps that visible in the log forever.
+
+🔴🔴 **`district_type` DIFFERS BY TIER, AND THE GENERATOR'S FIRST DRAFT GOT THE COUNTY WRONG.** City
+districts are `'LOCAL'` (`CC_0008`); county districts are `'COUNTY'` (`CC_0010`). Reading the county
+precedent instead of generalising the city one is what caught it.
+
+🔴🔴 **THE WIDE DISTRICT IS CREATED FOR A CITY BUT ONLY *ASSERTED* FOR A COUNTY.** GA-1 loaded the
+place **boundary** `1351492`/`G4110` and created no place **district**, so the citywide district is
+inserted. The TIGER county load already made `13009`/`G4020` a `COUNTY` district, so inserting it
+again would put a second district row over the same ground. `CC_0029`'s pre-flight fails hard if that
+row is missing — the six officers have nowhere to sit without it.
+
+**▶ NEXT: GA-3 stage 5 (assets)** — 18 headshots and one Milledgeville banner. Then **GA-4**:
+Columbus/Muscogee and Macon-Bibb, both CONSOLIDATED.
+▶ Carry forward: re-check the Milledgeville mayor's council vote and District 2's exactly-50.0% win
+if a current charter ever surfaces; both are recorded as open in `ROSTERS.md`, not resolved.
 
 What is already on disk and should NOT be re-fetched:
 
