@@ -6,7 +6,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 
 | Wave | Scope | Status |
 | --- | --- | --- |
-| GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ⏸ **measured, vintage CLOSED, not loaded** — loader entry + apply remain |
+| GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | — |
 | GA-3..5 | Columbus, Macon, Milledgeville | — |
 
@@ -169,19 +169,53 @@ Each feature carries the sitting member, not only geometry:
   these as headshots, test whether dropping or raising `size` returns the original — the Ballotpedia
   `thumbs/200/300/` lesson in a different dress.
 
-## Loader work GA-1 needs
+## ✅ GA-1 applied 2026-08-31
 
-`scripts/load-state-tiger-boundaries.ts` has **no `GA` entry**. Adding a state is a deliberate code
-change. GA needs:
+`scripts/load-state-tiger-boundaries.ts` had no `GA` entry. Adding a state is a deliberate code
+change, so GA got the full FL treatment: a layer allowlist entry, a `STATE_CITY_ASSERTIONS` entry and
+its own MTFCC pre-flight block, each carrying the measurement that justifies its numbers.
 
-1. `STATE_LAYER_ALLOWLIST.GA = new Set(['sldu', 'sldl', 'place'])` — the FL shape exactly, with the
-   three-way collision and the `FUNCSTAT` finding written into the comment.
-2. A `STATE_CITY_ASSERTIONS.GA` entry using the real TIGER strings: `'Columbus city'`,
-   `'Macon-Bibb County'`, `'Milledgeville city'`.
-3. After loading `place` (`G4110`), refresh `essentials.geofence_child_county` **`CONCURRENTLY`**
-   through the Supabase MCP — `ev_api` does not own the matview. `check:child-county` runs in CI on
-   every push and fails without it. (Per FL's correction: the refresh is needed after a `place` or
-   school-district load, not after every load.)
+```
+npx tsx scripts/load-state-tiger-boundaries.ts --state GA --fips 13 --layers sldu,sldl,place
+```
+
+| Layer | Boundaries | Districts | Skipped | Errors |
+| --- | --- | --- | --- | --- |
+| `sldu` `G5210` | 56 | 56 | 0 | 0 |
+| `sldl` `G5220` | 180 | 180 | 0 | 0 |
+| `place` `G4110` | 537 | 0 | **138 CDPs** | 0 |
+| **total** | **773** | **236** | 138 | 0 |
+
+Every gate passed on the dry run before any write: `GA MTFCC pre-flight` 56 / 180 / 537, and
+`STATE_CITY_ASSERTIONS` for all three cities.
+
+### Verified after the load
+
+| Check | Result |
+| --- | --- |
+| Boundaries by `mtfcc` | `G4110` 537, `G5210` 56, `G5220` 180 — and `G4020` 159, `G5200` 14, `G6350` 751 untouched |
+| Districts | `STATE_LOWER` **180**, `STATE_UPPER` **56**, every one with a `geo_id` |
+| The three places, by **exact `geo_id`** | `1319000` Columbus 221.011 sq mi · `1349008` Macon-Bibb 254.906 · `1351492` Milledgeville 20.420 |
+| Legislative `geo_id` ranges | `G5210` 13001–13056, `G5220` 13001–13180 — intact |
+| `check:child-county` | children 7,782 · mapped 7,782 · **stale 0** after the CONCURRENT refresh |
+
+The two consolidated places measure the same after loading as they did in the raw `.dbf`, and the
+same as their counties: Columbus 221.011 = Muscogee, Macon-Bibb 254.906 = Bibb.
+
+🟢 **The three-way collision does not bite, because the join is written correctly.** Resolving each
+anchor through our own polygons, pairing `geo_id` with `district_type`, returns **exactly two answers
+each** and they are the state's answers:
+
+```
+Columbus       -> State House District 137 · State Senate District 15
+Macon-Bibb     -> State House District 145 · State Senate District 26
+Milledgeville  -> State House District 149 · State Senate District 25
+```
+
+⚠ The matview refresh needs the `postgres` role — `ev_api` does not own it — so it went through the
+Supabase MCP. `REFRESH … CONCURRENTLY` cannot run inside a transaction block, and the MCP wrapped it
+without complaint. Per FL's correction, the refresh is required because this load wrote `place`
+(`G4110`); a wave that loads only `X` codes does not need it.
 
 ## Open questions for GA-3 onward
 

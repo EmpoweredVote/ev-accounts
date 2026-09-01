@@ -19,7 +19,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | # | State | Jurisdictions | 1 geo | 2 legis | 3 city | 4 county | 5 assets |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | GA | Columbus, Macon, Milledgeville | WIP | — | — | — | — |
+| 2 | GA | Columbus, Macon, Milledgeville | ✅ | — | — | — | — |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | — | — | — |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
@@ -117,7 +117,7 @@ Total owed: **2,155**, of which **160 are now seated** (FL complete). Remaining:
 | IN | 100 | 50 | 566 | 92 |
 | NC | 120 | 50 | 552 | 100 |
 | FL | **120** | **40** | **411** | 67 |
-| GA | 0 | 0 | 0 | 159 |
+| GA | **180** | **56** | **537** | 159 |
 | KS | 0 | 0 | 0 | 105 |
 | KY | 0 | 0 | 0 | 120 |
 | MI | 0 | 0 | 0 | 83 |
@@ -129,8 +129,8 @@ Total owed: **2,155**, of which **160 are now seated** (FL complete). Remaining:
 | SC | 0 | 0 | 0 | 46 |
 | SD | 0 | 0 | 0 | 66 |
 
-Every state except CA, CO, IN and NC needs a `place` + `sldu` + `sldl` load before any seat in it is
-reachable by address.
+Every state except CA, CO, IN, NC, FL and GA needs a `place` + `sldu` + `sldl` load before any seat
+in it is reachable by address. **Ten remain.**
 
 ### Local and county seats present
 
@@ -219,3 +219,4 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 | 2026-08-31 | **No wave. Branch maintenance.** Rebased 42 commits onto master (the branch was **92 behind**; zero files were touched on both sides, so the replay was clean and every branch-only file is byte-identical to before). Corrected the stale next-free slot in this file and in `fl.md`. 🔴🔴 **`CC_0006`–`CC_0017` ARE APPLIED TO PRODUCTION BUT STILL LIVE ONLY ON THIS BRANCH** — PR #212 has never been merged, and that is what let master claim seven slots out from under the ledger. | **Slice 2 — GA: Columbus, Macon, Milledgeville.** Unchanged. Re-count the free slot against `origin/master` first. |
 | 2026-08-31 | **GA-1 MEASURED, NOT LOADED.** Opened the slice and wrote [`ga.md`](./ga.md). Georgia is greenfield below the congressional layer: **no `place`, no `sldu`, no `sldl`**, and Baldwin/Bibb/Muscogee carry ZERO offices. Raw TIGER 2024 FIPS 13 measured from the `.dbf`: **180 `sldl` + 56 `sldu`, `LSY=2024`, 0 `ZZZ`**, and 675 place records of which **537 are `G4110`**. 🔴🔴 **THE `geo_id` COLLISION IS THREE-WAY** — all 56 `sldu` ids collide with `sldl`, and **89 of 159 county ids** fall inside the `sldl` range, so `13009` is Baldwin County AND HD-9. 🔴 **CONSOLIDATION MEASURED, NOT ASSUMED**: Columbus and Macon-Bibb place polygons equal their whole counties to 0.000 sq mi, and neither Payne City nor Bibb City survives in TIGER — no Nashville-style balance gap. 🔴 **TIGER MODELS GEORGIA'S CONSOLIDATED GOVERNMENTS TWO WAYS**: Augusta-Richmond and Athens-Clarke are `FUNCSTAT='F'` BALANCE records (they still contain satellite towns); Macon-Bibb is `'A'`. 🔴 TIGER calls it **`Macon-Bibb County`, not `Macon city`**. 🔴 **`Macon County` `13193` IS NOT MACON'S COUNTY** — Bibb `13021` is. ⏸ **STOPPED BEFORE LOADING ON PURPOSE**: Georgia's 2021 maps were STRUCK DOWN and the operative maps are the **2023 remedial plans**, so the vintage check matters more here than in Florida, and it is not closed. | **Close the vintage check, then load.** TIGER's own answers at the three interior points are Columbus HD-137/SD-15, Macon-Bibb HD-145/SD-26, Milledgeville HD-149/SD-25 — confirm all three independently via `legis.ga.gov/find-my-legislator` or the Reapportionment Office's plan geometry. ⚠ The `Georgia_Senate_District` service that a search surfaces is a COUNTY's copy of the **2022** map. Then add `GA` to `STATE_LAYER_ALLOWLIST` (`sldu`, `sldl`, `place`), load, and refresh `geofence_child_county` CONCURRENTLY. |
 | 2026-08-31 | **GA-1 VINTAGE CHECK CLOSED.** TIGER 2024 FIPS 13 **is** Georgia's 2023 remedial plan, proven geometrically: the General Assembly's own "Current Georgia House (2023)" / "Current Georgia Senate (2023)" GeoJSON was compared against **every** TIGER polygon at that polygon's own interior point — **180/180 House and 56/56 Senate agree, 0 differ, 0 unmatched.** 🔴🔴 **TEST EVERY DISTRICT WHEN THE WHOLE MAP IS AVAILABLE — THREE ANCHORS CAN PASS ON THE WRONG MAP**, because a remap leaves many districts untouched; the full comparison cost the same as three. 🔴 **THE STATE'S MAP ENDPOINTS 401 curl AND an in-page `fetch()`** (bearer token from `/api/authentication/token`); the way through is to let the page load them and read the bodies from the browser's network log. ⚠ The `Georgia_Senate_District` service a search surfaces is a COUNTY's copy of the **2022** map — not used. 🟢 **THE SAME PAYLOAD IS A GA-2 ROSTER**: 236 of 236 districts carry a member name, a stable member id and a portrait URL, with `DateVacated` null on every one — ONE source, and a no-vacancy payload is what a stale payload also looks like. | **Load GA-1.** Add `GA` to `STATE_LAYER_ALLOWLIST` (`sldu`, `sldl`, `place`) and `STATE_CITY_ASSERTIONS` (`Columbus city`, `Macon-Bibb County`, `Milledgeville city`), load 180 + 56 + 537, refresh `geofence_child_county` CONCURRENTLY via the Supabase MCP, then verify by `geo_id`. Then GA-2, with a SECOND roster source. |
+| 2026-08-31 | **GA-1 APPLIED — stage 1 closed for Georgia.** Added `GA` to the TIGER loader (allowlist, city assertions, and its own MTFCC pre-flight block, each carrying the measurement that justifies its numbers), then loaded **773 boundaries / 236 districts: 56 `sldu` + 180 `sldl` + 537 `place`, 138 CDPs skipped, 0 errors.** All gates passed on the dry run before any write. Verified after: `STATE_LOWER` 180 and `STATE_UPPER` 56 all carrying a `geo_id`; the three Knight places present by EXACT `geo_id`; legislative ranges 13001–13056 / 13001–13180 intact; `check:child-county` **stale 0** after the CONCURRENT refresh through the Supabase MCP. 🟢 **THE THREE-WAY `geo_id` COLLISION DOES NOT BITE WHEN THE JOIN PAIRS `geo_id` WITH `district_type`** — each of the three anchors resolves through our own polygons to EXACTLY TWO answers, and they are the state's answers (Columbus HD-137/SD-15, Macon-Bibb HD-145/SD-26, Milledgeville HD-149/SD-25). | **GA-2: the legislature, 180 + 56.** The state's own map payload is roster source #1 (name, stable member id, portrait per district, `DateVacated` null on all 236) — **find a SECOND source before writing anything**, and re-check every seat for a change since that payload was last edited. |
