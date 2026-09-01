@@ -8,7 +8,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Task 1 ✅ `X0042` applied 2026-09-01 (6 council districts); Tasks 2–5 open |
+| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Tasks 1+2 ✅ `X0042` (6 council) + `X0043` (5 commission) applied 2026-09-01; Tasks 3–5 open |
 | GA-4..5 | Columbus, Macon | — |
 
 ---
@@ -473,15 +473,55 @@ Stages 1 and 2 are **applied and merged**: `CC_0025` geography loader entry (GA-
 not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`**, and next free
 private MTFCC is **`X0042`** — ⚠ re-count both against every remote ref, this file has been wrong before.
 
-**GA-3 Task 1 is APPLIED.** Branch `knight/ga-3-milledgeville`. `X0042` holds the **6 Milledgeville
-council district boundaries**, loaded 2026-09-01 by `scripts/load-milledgeville-council-boundaries.ts`
-from the CITY's own 2025 plan. All seven gates passed on the dry run before any write; the loader is
-idempotent (re-run inserts 0); `check:child-county` **stale 0**; `check:reachability` at or below
-baseline (5/17/37 against 5/17/38); `offices_missing_terms` **unchanged at 821/166/655**.
-⚠ No `districts` rows yet — `CC_0027` creates those. GA still holds **0 `LOCAL` districts**.
+**GA-3 TASKS 1 AND 2 ARE APPLIED.** Branch `knight/ga-3-milledgeville`. Both boundary layers are in
+production, loaded 2026-09-01, each idempotent (re-run inserts 0):
 
-**▶ NEXT: Task 2** — load `X0043`, the 5 Baldwin County commission districts, from
-`ElectionGeography_dashboard_…/FeatureServer/2` filtered `electedoffice='County Commissioner'`.
+| Code | Rows | Loader | Source |
+| --- | --- | --- | --- |
+| `X0042` | **6** Milledgeville council districts | `scripts/load-milledgeville-council-boundaries.ts` | the **CITY's** own 2025 plan |
+| `X0043` | **5** Baldwin commission districts | `scripts/load-baldwin-commission-boundaries.ts` | the county's `ElectionGeography` layer, single publisher |
+
+🟢 **BOTH TIERS NOW RESOLVE THROUGH OUR OWN ROWS, AND THE NUMBERS ARE UNRELATED OVER THE SAME GROUND:**
+
+| Address | City council | County commission |
+| --- | --- | --- |
+| Milledgeville City Hall, 119 E Hancock St | **D2** | **D3** |
+| Baldwin County Govt Building, 1601 N Columbia St | **D5** | **D1** |
+
+⚠ **Both buildings are inside the city limits.** Four different district numbers across two addresses
+a mile apart is the confusion this wave is most exposed to, so each address is a control point in
+BOTH loaders with the other tier's answer written beside it.
+
+🔴 **A MISLABELLED CONTROL POINT IS WORSE THAN A MISSING ONE — IT READS AS COVERED.** Task 1 shipped
+with a negative control labelled "Rural Baldwin County" at `(-83.12, 33.16)`. Resolved against TIGER
+`G4020` while measuring Task 2, that point is in **HANCOCK County `13141`**. The gate passed, and for a
+true reason — it is outside the city either way — but it was not testing its label, so the one case
+that actually discriminates a city layer from a county layer, *inside Baldwin and outside
+Milledgeville*, was never tested. Both loaders now carry every negative control **resolved against
+TIGER and labelled with the county it is really in**.
+
+🔴 **X0043 HAS ONE PUBLISHER, WHICH IS AN ACCEPTED LIMITATION.** The county's dedicated Commissioner
+Districts app resolves to `ElectionGeography_CommissionerDistrictsView` — a VIEW over the same rows —
+so Task 1's two-map comparison is impossible here. Three gated lines of evidence stand in its place:
+`CreationDate` **2022-02-08** on all five (on schedule for a 2020-cycle Georgia county redistricting)
+with `EditDate` **2026-04-21** (after the certified 2024 election); the five tile TIGER Baldwin to
+**0.0158 of 268.2759 sq mi**, 0.006%; and all five keyed districts returned a commissioner in the
+certified 2024 count. 🔴 **GATE 1 asserts freshness PER ROW, because in this very layer the city rows
+are wrong on 3 of 6 seats and the President is still Joe Biden.**
+
+⚠ **GATE 0 exists because the filter is load-bearing**: unfiltered, that layer returns **35 rows**
+spanning every office in the county. A dropped `WHERE` clause would sail through every later gate that
+only inspects districts keyed 1..5.
+
+Gates after both applies: `check:child-county` **stale 0** (children 7,782 — unchanged, confirming an
+`X` load needs no matview refresh); `check:reachability` **5/17/37** against baseline 5/17/38;
+`check:migrations` and `check:occupancy` green; `offices_missing_terms` **unchanged at 821/166/655**.
+⚠ No `districts` rows yet — GA still holds **0 `LOCAL` districts**. `CC_0027`/`CC_0029` create them.
+
+**▶ NEXT: Task 3** — the generator, emitting `CC_0027` (city structure), `CC_0028` (city occupancy)
+and `CC_0029` (Baldwin, offices + people in ONE migration). **`CC_0027` was re-verified free
+2026-09-01**: `CC_0026` is the highest slot claimed across all 81 remote refs, and `CC_0027`–`CC_0029`
+exist on none of them. ⚠ Re-count again at apply time and take the number LAST.
 
 What is already on disk and should NOT be re-fetched:
 

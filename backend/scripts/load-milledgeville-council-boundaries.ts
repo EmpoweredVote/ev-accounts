@@ -204,9 +204,22 @@ const CONTROL_POINTS: Array<{ name: string; lon: number; lat: number; district: 
  * ⚠ Note the Baldwin County Government Building is INSIDE the city (District 5)
  *   and is therefore a control point above, not a negative control. The county
  *   seat's own HQ being in the city is exactly the trap this pair separates.
+ *
+ * 🔴 CORRECTED 2026-09-01 WHILE MEASURING TASK 2. The first version of this list
+ *    carried (-83.12, 33.16) labelled "Rural Baldwin County". Resolved against
+ *    TIGER G4020, that point is in HANCOCK COUNTY (13141), not Baldwin. The gate
+ *    still passed, and passed for a true reason — the point is outside the city
+ *    either way — but it was NOT testing what its label claimed, and so the one
+ *    case that actually discriminates a city layer from a county layer, a point
+ *    INSIDE Baldwin and OUTSIDE Milledgeville, was never tested at all.
+ *    A mislabelled control is worse than a missing one: it reads as covered.
+ *    Both points are now here, each verified against TIGER and each labelled
+ *    with the county it is really in.
  */
 const NEGATIVE_CONTROLS: Array<{ name: string; lon: number; lat: number }> = [
-  { name: 'Rural Baldwin County, NE of the city', lon: -83.12, lat: 33.16 },
+  // 🔴 THE DISCRIMINATING ONE: in Baldwin County (13009), in no TIGER place.
+  { name: 'Rural Baldwin County, in the county but OUTSIDE the city', lon: -83.153077, lat: 33.067385 },
+  { name: 'Hancock County (13141), adjacent', lon: -83.12, lat: 33.16 },
   { name: 'Macon-Bibb County (GA-4 jurisdiction)', lon: -83.6940595, lat: 32.8089903 },
   { name: 'Columbus city (GA-5 jurisdiction)', lon: -84.8749462, lat: 32.5101909 },
 ];
