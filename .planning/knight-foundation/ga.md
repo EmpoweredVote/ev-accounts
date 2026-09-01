@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` loaded (8 districts); Task 2 written and dry-run clean, NOT applied; 16 seats still to seat |
+| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` loaded (8 districts); Tasks 2+3 written and dry-run clean, NOT applied; Task 4 (5 county officers) left |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -957,6 +957,89 @@ own ballot record, not a gap. **Gate the structure, not full coverage.**
 `check:migrations` green — 0 added, 1810 slots across **87** refs; a `CC_wip_` file is invisible to it.
 `check:occupancy` green. **`CC_0030` is the max across all 87 remote refs, so Task 5 takes `CC_0031`
 — re-count it again at apply time.**
+
+
+
+### ✅ GA-4 Task 3 — city occupancy, WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`CC_wip_columbus_people.sql`, from the same generator and the same roster. **11 politicians, 11 terms,
+0 vacancies**, sub-range `-1331020 .. -1331030`.
+
+| Path | Rows |
+| --- | --- |
+| `essentials.seat_officeholder()` | **2** — Barnes `2026-05-26`, Cook `2026-07-14`, both `day` |
+| direct insert, open-ended at `'unknown'` | **9** — the helper refuses a NULL `term_start` |
+
+Dry run of **structure + occupancy as ONE transaction** ending in `ROLLBACK` (the occupancy half cannot
+be dry-run alone — its offices do not exist yet). Post-verify green on both halves, rollback confirmed
+to have reverted. Running both bodies twice in one transaction seats **0** on the second pass and still
+passes. `check:migrations` and `check:occupancy` green.
+
+#### 🟢 The change-check asked “has this person LEFT?”, and it was run LIVE
+
+`columbusga.gov/council/` and `/mayor/` were fetched **live on 2026-09-01** and read in **both**
+directions:
+
+| Direction | Result |
+| --- | --- |
+| all 11 holders present | ✅ 10 of 10 councilors on `/council/`, Skip Henderson on `/mayor/` |
+| the 3 departed absent | ✅ Byron Hickey, John Anker, Judy Thomas — none appears |
+| the 3 not-yet-seated absent | ✅ Isaiah Hugley, Sherrie Aaron, Rebecca Zajac — none appears |
+
+⚠ **The check is not uniform, and that is its own positive control**: `/council/` returns 10 of 11,
+because the Mayor is not a councilor. A uniform answer would have meant a broken detector. This is the
+check GA-3 ran against its *sources* instead of its *seats*, which put a retired coroner into production.
+
+#### 🔴 `how_started` for a SPECIAL election is `'elected'`
+
+The plan's Task 3 specifies `how_started = 'special election'` for Barnes and Cook. Measured against
+production: `essentials.office_terms` carries
+`CHECK how_started IN ('elected','appointed','succeeded','redistricted','unknown')`. That value cannot
+be written. A special election is an election; the **special** fact lives in the `source` string and
+the migration header. A generator assertion now refuses any illegal value, so the correction cannot be
+lost when the roster is edited.
+
+#### 🟢 Three gates were proved to bite, and one “failure” turned out to be correct behaviour
+
+| Negative control | Result |
+| --- | --- |
+| move Barnes' `term_start` to the certified election date `2026-05-19`, then re-run | ✅ raises — *“Simi Barnes (-1331021) does not hold exactly one open term starting 2026-05-26 at day precision, got 0”* |
+| add a 12th city office nobody seats | ✅ raises — *“1 city office(s) carry no office_terms row and are invisible”* |
+| delete a councilor's term row, then re-run | ⚠ **no error, and that is right** — the migration **re-seats** her (*“1 with an honest unknown start”*) and then passes. Self-healing, not a gap. |
+
+🔴 **Each dated row is asserted individually**, by `external_id`, against its exact date, precision,
+`how_started` and a NULL `term_end`. A count of “how many rows are dated” cannot see a date that
+**moved** — and the date most likely to be substituted here is the certified election date, which is
+precisely the wrong answer for this wave.
+
+#### 🟢 The acceptance probe was run INSIDE the dry-run transaction, before any apply
+
+| Probe | Result |
+| --- | --- |
+| per-district positive control, each district's own `ST_PointOnSurface` | **8 of 8**, one holder each, the right person each time |
+| citywide tier at the same point | exactly **3** — Mayor (`non_voting`) + Posts 9 and 10 |
+| **Fort Benning control** | inside the city ✓, inside Muscogee ✓, **inside 0 council districts** ✓ |
+| unpaired join, `geo_id` alone | **25 rows** |
+
+🔴🔴 **THE UNPAIRED JOIN WAS DEMONSTRATED, NOT ASSERTED, AND GEORGIA'S THREE-WAY COLLISION BIT.**
+Dropping `mtfcc` from the district join returns **Matthew Gambill, State House District 15** — measured
+to be in **Bartow County**, about 200 miles north-west — because `13015` is *State Senate District 15*
+(`G5210`, which does cover Columbus) **and** *State House District 15* (`G5220`, which does not). It
+also drags in nine U.S. Supreme Court justices and two Senate **candidates** on placeholder offices.
+**Pair `geo_id` with `mtfcc` and `district_type` in every join.**
+
+⚠ The Muscogee `COUNTY` district correctly contributes nothing yet: it exists, and it carries **zero
+offices** until Task 4.
+
+#### ⚠ Two harness notes for whoever runs Task 5
+
+- **`grep -ci commit` IS THE WRONG ASSERTION** for “zero `COMMIT` in the sent stream”. The occupancy
+  half legitimately contains the word twice — once in a comment and once in `ON COMMIT DROP`, which is
+  a temp-table clause, not a statement. Assert on `^\s*COMMIT\s*;` instead. A blunt substring count
+  reads as a red alarm on a correct file, and the danger is that it gets waved through next time.
+- **The temp table is `ON COMMIT DROP`**, so a double-apply test inside ONE transaction must
+  `DROP TABLE IF EXISTS col_seed;` between passes. That is a harness artifact and deliberately not in
+  the migration: each migration really is applied in its own transaction.
 
 
 ---

@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASK 2 WRITTEN AND DRY-RUN CLEAN 2026-09-01 (`CC_wip_columbus_structure.sql`) — NOT APPLIED. Tasks 3-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASKS 2 AND 3 WRITTEN AND DRY-RUN CLEAN 2026-09-01 (`CC_wip_columbus_structure.sql`, `CC_wip_columbus_people.sql`) — NOT APPLIED. Tasks 4-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -94,7 +94,7 @@ Gates before any write:
   both GIS layers return 8 polygons, which is the independent confirmation.
 - Post-verify refuses any office titled with *Mayor Pro Tem* (ruling R3).
 
-### Task 3 — city occupancy (`CC_wip_columbus_people.sql`)
+### Task 3 — city occupancy (`CC_wip_columbus_people.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 11 politicians, 11 terms. Band `-1331020 .. -1331030`.
 
