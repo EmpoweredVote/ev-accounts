@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: PLANNED AND MEASURED, NOT APPLIED.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: PLANNED AND MEASURED. Both blockers resolved 2026-09-01; Tasks 1-5 NOT YET APPLIED.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -16,11 +16,11 @@ city-county**.
 
 | # | Item | State |
 | --- | --- | --- |
-| B1 | **Ruling R4** — are the elected Municipal Court Clerk and Municipal Court Judge seated? | ⏸ **needs Cantrell.** My read: exclude both. Include ⇒ 18 offices, not 16 |
-| B2 | **`CC_wip_baldwin_coroner_succession.sql`** — GA-3 seated a coroner who retired 2026-05-01 | ✅ written, **dry-run clean**, not applied. Apply this FIRST; it claims `-1331019` |
+| B1 | **Ruling R4** — are the elected Municipal Court Clerk and Municipal Court Judge seated? | ✅ **RULED 2026-09-01 (Cantrell): exclude both.** The wave is **16 offices** |
+| B2 | **`CC_0030_baldwin_coroner_succession.sql`** — GA-3 seated a coroner who retired 2026-05-01 | ✅ **APPLIED 2026-09-01.** Chapple holds `-1331019`, so GA-4 starts at `-1331020` |
 
-Everything below assumes B2 is applied and B1 answered. If R4 says *include*, the only changes are
-two extra offices in Task 4 and an identity sub-range of `-1331020 .. -1331037`.
+**Both are now resolved, so Task 1 is unblocked.** The wave is 16 offices and the identity sub-range
+is `-1331020 .. -1331035`.
 
 ---
 

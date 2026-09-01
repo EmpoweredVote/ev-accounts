@@ -179,17 +179,20 @@ court, and consolidation cannot reach it. It appears on the certified 2024 ballo
 | Clerk of Council | appointed by the Council, Sec. 3-103(1) — not elected |
 | Marshal, Surveyor | **Muscogee elects neither.** Absent from every certified ballot examined |
 
-⏸ **OPEN — needs Cantrell.** Muscogee elects **Municipal Court Clerk** (Reginald Thompson) and
-**Municipal Court Judge** (Steven D. Smith) countywide; both are on the certified 2024 ballot.
+✅ **RULED 2026-09-01 (Cantrell): EXCLUDE BOTH.** Muscogee elects **Municipal Court Clerk** (Reginald
+Thompson) and **Municipal Court Judge** (Steven D. Smith) countywide, both on the certified 2024
+ballot. Neither is seated.
 
-- **My read: exclude both.** Baldwin excluded the Chief Magistrate as judicial-branch under Ga. Const.
-  Art. VI, and a municipal court is an Art. VI court. The Clerk of Superior Court is seated *because
-  Art. IX names it a county officer*; the Municipal Court Clerk is not in that list. Seating the clerk
-  of a court whose judge we exclude would also be incoherent.
-- **The argument the other way** is real and should be heard: both are offices the voters of Muscogee
-  actually elect countywide, and the program exists to show people who they elect.
+The line is the constitution's, not ours. Baldwin excluded the Chief Magistrate as judicial-branch
+under **Ga. Const. Art. VI**, and a municipal court is an Art. VI court. The Clerk of Superior Court is
+seated *because* **Art. IX, Sec. I, Par. III** names it a county officer; the Municipal Court Clerk is
+not in that list. Seating the clerk of a court whose judge is excluded would also be incoherent.
 
-**If Cantrell says include, the wave is 18 offices, not 16**, and the identity sub-range widens by two.
+⚠ The argument the other way was real and was heard: both are offices Muscogee voters genuinely elect
+countywide. It is recorded here rather than dropped, because the next consolidated city-county will
+raise it again — Macon-Bibb at GA-5, then Philadelphia and Lexington.
+
+**The wave is 16 offices.** The identity sub-range stays `-1331020 .. -1331035`.
 
 ---
 
@@ -320,9 +323,15 @@ roster is a redundancy check on occupancy** — the third time that has paid.
 only one.** Seven Milledgeville seats all present on the city site; five commissioners, Sheriff, Clerk,
 Probate Judge, Tax Commissioner and Surveyor all present in the county directory.
 
-**Migration `CC_wip_baldwin_coroner_succession.sql`** is written and **dry-run clean against
-production** (`BEGIN … ROLLBACK`, zero `COMMIT` in the sent stream; rollback confirmed to have
-reverted — 0 Chapple rows, Gonzalez still seated). It is **not applied**.
+✅ **`CC_0030_baldwin_coroner_succession.sql` APPLIED 2026-09-01.** The number was taken last and
+re-counted against **all 84 remote refs** (`CC_0029` was the max). Dry-run first (`BEGIN … ROLLBACK`,
+zero `COMMIT` in the sent stream, rollback confirmed to have reverted), then applied.
+
+Verified in production: the Coroner seat is held by **Steve Chapple** `-1331019`; Gonzalez's term
+carries `term_end 2026-05-01` and `how_ended 'retired'`; Chapple's is open-ended from `2026-05-02` at
+`month` precision with `how_started 'unknown'`. The migration **re-runs clean** — the second pass
+inserts 0, skips `seat_officeholder()`, and still passes its post-verify. `offices_missing_terms` is
+**unchanged at 821 / 166 / 655**.
 
 | What it writes | Value | Precision | Why |
 | --- | --- | --- | --- |

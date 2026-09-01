@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | ⏸ **MEASURED + PLANNED 2026-09-01, NOT APPLIED** — 16 seats, blocked on ruling R4 |
+| GA-4 | **Columbus + Muscogee County** | ⏸ **MEASURED + PLANNED 2026-09-01, NOT APPLIED** — 16 seats, R4 ruled: exclude both municipal-court offices |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -733,13 +733,18 @@ Brief: <https://claude.ai/code/artifact/3154e2c0-b658-4dcb-a253-3e99b432fa1d>
 Next free slots re-counted against all 82 remote refs at the start of the session: **`CC_0030`** and
 **`X0044`** (`X0043` is the max in production, checked against `geofence_boundaries`, not a file).
 
-### ⏸ Blocked on ONE ruling
+### ✅ RULING R4 DECIDED 2026-09-01 (Cantrell): EXCLUDE BOTH MUNICIPAL-COURT OFFICES
 
 Muscogee elects a **Municipal Court Clerk** (Reginald Thompson) and a **Municipal Court Judge**
-(Steven D. Smith) countywide, both on the certified 2024 ballot. **My read: exclude both** — Baldwin
-excluded the Chief Magistrate as judicial-branch under Ga. Const. Art. VI and a municipal court is an
-Art. VI court; the Clerk of Superior Court is seated only because Art. IX names it a *county officer*.
-Include ⇒ 18 offices, not 16.
+(Steven D. Smith) countywide, both on the certified 2024 ballot. **Neither is seated.** A municipal
+court is a **Ga. Const. Art. VI** court, which is the same line Baldwin drew when it excluded the Chief
+Magistrate; the Clerk of Superior Court is seated only because **Art. IX** names it a *county officer*
+and the Municipal Court Clerk is not in that list. **The wave is 16 offices**, sub-range
+`-1331020 .. -1331035`.
+
+⚠ The counter-argument — that these are offices Muscogee voters genuinely elect countywide — is
+recorded rather than dropped. **The next consolidated city-county will raise it again**: Macon-Bibb at
+GA-5, then Philadelphia and Lexington.
 
 ### 🔴🔴 THE CERTIFIED-RESULTS ROUTE RUNS OUT HERE, AND SILENTLY
 
@@ -840,8 +845,11 @@ check on occupancy** — third time it has paid.
 🟢 A full re-check of **all 18** GA-3 seats against live sources found the Coroner is **the only** stale
 one.
 
-`CC_wip_baldwin_coroner_succession.sql` is written and **dry-run clean** (zero `COMMIT` in the sent
-stream; rollback confirmed reverted — 0 Chapple rows, Gonzalez still seated). **Not applied.**
+✅ **`CC_0030_baldwin_coroner_succession.sql` APPLIED 2026-09-01.** Number taken last, re-counted
+against **all 84 remote refs**. Dry-run first (zero `COMMIT` in the sent stream; rollback confirmed
+reverted), then applied. Verified: Chapple `-1331019` holds the seat, Gonzalez closed 2026-05-01
+`retired`. **Re-runs clean** — second pass inserts 0 and skips the succession.
+`offices_missing_terms` **unchanged at 821 / 166 / 655**.
 Gonzalez `term_end` **2026-05-01** at `day` (stated outright); Chapple `term_start` 2026-05-02 at
 **`month`** ("Thursday morning" is not a date) and `how_started` **`unknown`** — the nearby "appointed
 the new coroner" sentence is about **Gonzalez** succeeding Wayne Brooks, not Chapple, and reading it as
