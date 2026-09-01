@@ -128,6 +128,30 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // cousub is deliberately EXCLUDED — Florida is not a strong-MCD state, so its county
   // subdivisions are statistical like CA/WA/CO. Do NOT add FL to COUSUB_FUNCSTAT_STATES.
   FL: new Set(['sldu', 'sldl', 'place']),
+  // GA. Knight program slice 2 (Columbus, Macon, Milledgeville). Counts MEASURED against
+  // raw TIGER 2024 FIPS 13 on 2026-08-31 by reading the .dbf directly; asserted in the GA
+  // pre-flight block below.
+  // 🔴 VINTAGE IS THE 2023 REMEDIAL PLAN, AND THAT WAS PROVEN, NOT ASSUMED. Georgia's 2021
+  // legislative maps were STRUCK DOWN on 2023-10-26; remedial House and Senate plans were
+  // signed 2023-12-08 and approved 2023-12-28. TIGER 2024 carries LSY=2024 on both layers,
+  // but LSY is a field, not proof. Every one of the 180 + 56 TIGER polygons was tested at
+  // its own interior point against the General Assembly's own 'Current Georgia House (2023)'
+  // and 'Current Georgia Senate (2023)' GeoJSON: 180/180 and 56/56 agree, 0 differ.
+  // 🔴 TEST EVERY DISTRICT WHEN THE STATE PUBLISHES THE WHOLE MAP. A remap leaves many
+  // districts untouched, so a three-anchor check can pass on the superseded map. See
+  // .planning/knight-foundation/ga.md.
+  // Georgia is single-member in BOTH chambers, so polygon count IS seat count: 180 + 56.
+  // 🔴 THE geo_id COLLISION IS THREE-WAY HERE, worse than Florida's. sldl runs 13001..13180,
+  // sldu 13001..13056, and 89 of the 159 county GEOIDs fall inside the sldl range — '13009'
+  // is Baldwin County AND House District 9. Every downstream join must pair geo_id with
+  // district_type or mtfcc; never match a district on label.
+  // county is EXCLUDED: all 159 GA counties already exist with geo_id and carry the county
+  // districts this slice hangs offices on — do not disturb them.
+  // place: 675 raw records = 537 G4110 incorporated municipalities + 138 G4210 CDPs. The
+  // G4110 filter in the pre-flight excludes the CDPs, as for FL/NC/CO/WA and the rest.
+  // cousub is deliberately EXCLUDED — Georgia is not a strong-MCD state, its county
+  // subdivisions are statistical militia districts. Do NOT add GA to COUSUB_FUNCSTAT_STATES.
+  GA: new Set(['sldu', 'sldl', 'place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -206,6 +230,16 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   // STATE_CITY_ASSERTIONS line as proof that Miami loaded.
   FL: ['Bradenton city', 'Tallahassee city', 'Miami city', 'West Palm Beach city',
        'Palm Beach town'],
+  // GA. Every string verified present in raw TIGER 2024 FIPS 13 place (all G4110) by direct
+  // .dbf probe 2026-08-31 before wiring this gate — Columbus city resolves to GEOID 1319000,
+  // Macon-Bibb County 1349008, Milledgeville city 1351492.
+  // 🔴 TIGER DOES NOT CALL IT 'Macon city'. Macon consolidated with Bibb County in 2014 and
+  // the place record is named 'Macon-Bibb County'. An entry of 'Macon city' would fail this
+  // gate on entirely correct data.
+  // ⚠ Same substring weakness as FL: this is `n.includes(city)`, so it catches a wholesale
+  // wrong-state or wrong-vintage file and nothing finer. The load-bearing check for the
+  // Knight municipalities is the EXACT geo_id query in scripts/verify-ga-tiger-import.sql.
+  GA: ['Columbus city', 'Macon-Bibb County', 'Milledgeville city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -1517,8 +1551,57 @@ async function processLayer(
     }
   }
 
+  // ── GA MTFCC pre-flight assertion (Knight program, wave GA-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 13 on 2026-08-31 by parsing the
+  // .dbf inside each zip directly, not inferred from statute:
+  //   sldl  180 records, 0 'ZZZ', LSY=2024, GEOID 13001..13180
+  //   sldu   56 records, 0 'ZZZ', LSY=2024, GEOID 13001..13056
+  //   place 675 records = 537 G4110 + 138 G4210 CDPs
+  // Georgia is single-member in BOTH chambers, so these polygon counts ARE the seat
+  // counts (180 Representatives + 56 Senators). If either SLD count drifts, a
+  // legislative remap has happened — and Georgia has already been remapped once
+  // mid-decade by court order, so treat a drift as real. Stop; do NOT raise the
+  // number to get a green run.
+  if (fipsArg === '13') {
+    const EXPECTED_GA_MTFCC: Record<string, number> = {
+      sldl:  180,
+      sldu:   56,
+      place: 537, // 537 GA G4110 incorporated municipalities; the file's other 138
+                  // records are G4210 CDPs, filtered out below.
+    };
+    if (layer in EXPECTED_GA_MTFCC) {
+      const expected = EXPECTED_GA_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[GA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 13 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] GA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
