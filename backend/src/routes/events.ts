@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
+import { createSharedRateLimitStore } from '../lib/rateLimitStore.js';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
 import { optionalAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -13,11 +14,13 @@ const TrackBody = z.object({
   event: z.enum(KNOWN_EVENTS),
 });
 
+const trackRateLimitStore = createSharedRateLimitStore('track');
 const trackLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 10,
   keyGenerator: (req) =>
     (req as AuthenticatedRequest).userId ?? (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
+  ...(trackRateLimitStore ? { store: trackRateLimitStore } : {}),
   standardHeaders: true,
   legacyHeaders: false,
 });

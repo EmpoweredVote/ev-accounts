@@ -1,6 +1,7 @@
 import { Router, json } from 'express';
 import type { Request, Response } from 'express';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
+import { createSharedRateLimitStore } from '../lib/rateLimitStore.js';
 import { z } from 'zod';
 import { submitFeedback, type FeedbackScreenshot } from '../lib/feedbackService.js';
 
@@ -29,10 +30,12 @@ const FeedbackBody = z.object({
  * Honeypot catches naive bots; rate limit catches everything else.
  * Keyed on IP since this endpoint is unauthenticated.
  */
+const feedbackRateLimitStore = createSharedRateLimitStore('feedback');
 const feedbackLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   max: 5,
   keyGenerator: (req) => (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
+  ...(feedbackRateLimitStore ? { store: feedbackRateLimitStore } : {}),
   message: { code: 'RATE_LIMIT_EXCEEDED', message: 'Too many submissions. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,

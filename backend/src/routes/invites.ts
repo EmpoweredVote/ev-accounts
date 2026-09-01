@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
+import { createSharedRateLimitStore } from '../lib/rateLimitStore.js';
 import { z } from 'zod';
 import { createInviteCodes, getMyInviteCodes, claimInviteCode } from '../lib/inviteService.js';
 import { generateInviteCodeIfAllowed, getMyInvitees } from '../lib/inviteQuotaService.js';
@@ -15,11 +16,13 @@ const router = Router();
  * Key is userId (not IP) — a single user on shared WiFi should not
  * have their send limit reduced by other users on the same IP.
  */
+const inviteRateLimitStore = createSharedRateLimitStore('invite');
 const inviteSendLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
   max: 10,
   keyGenerator: (req) =>
     (req as AuthenticatedRequest).userId ?? (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
+  ...(inviteRateLimitStore ? { store: inviteRateLimitStore } : {}),
   message: { code: 'RATE_LIMIT_EXCEEDED', message: 'Invite limit reached for today' },
   standardHeaders: true,
   legacyHeaders: false,
