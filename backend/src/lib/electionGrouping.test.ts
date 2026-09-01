@@ -98,8 +98,9 @@ describe('inferDistrictType', () => {
     expect(inferDistrictType('State Representative', 'state')).toBe('STATE_LOWER');
     expect(inferDistrictType('Governor', 'state')).toBe('STATE_EXEC');
   });
-  it('classifies State Board of Education as STATE_BOARD before SCHOOL catch-all', () => {
-    expect(inferDistrictType('State Board of Education District 4', 'state')).toBe('STATE_BOARD');
+  it('classifies State Board of Education as STATE_BOARD_EDUCATION before SCHOOL catch-all', () => {
+    expect(inferDistrictType('State Board of Education District 4', 'state')).toBe('STATE_BOARD_EDUCATION');
+    expect(inferDistrictType('SBOE Member (Ward 4)', 'state')).toBe('STATE_BOARD_EDUCATION');
   });
   it('maps local + county + school', () => {
     expect(inferDistrictType('Mayor', 'local')).toBe('LOCAL_EXEC');

@@ -106,11 +106,12 @@ export const GEOFENCE_DISTRICT_JOIN = `
         OR (gb.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
         -- DC ONLY: TIGER files DC's 8 wards as the SLDL layer (G5220, geo_id 11001..11008) because
         -- the DC Council IS DC's legislature. Its ward seats are typed CITY_COUNCIL and the SBOE's
-        -- SCHOOL_BOARD, so without this all 16 stay unreachable by address (migration 1485).
+        -- STATE_BOARD_EDUCATION (migration 1852 reclassified DC's board from SCHOOL_BOARD), so
+        -- without this all 16 stay unreachable by address (migrations 1485, 1852).
         -- SCOPED TO DC deliberately — unscoped, another state's state-house geofence could match a
         -- same-geo_id council district and surface the wrong officials.
         -- Keep in step with MTFCC_DISTRICT_TYPE_GUARD in src/lib/geoIdGuard.ts.
-        OR (gb.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
+        OR (gb.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','STATE_BOARD_EDUCATION'))
         OR (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
         OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
         -- PR ONLY: a municipio IS both the county-equivalent and the municipality. TIGER files all
@@ -124,7 +125,7 @@ export const GEOFENCE_DISTRICT_JOIN = `
         OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')
         OR (gb.mtfcc = 'X0001' AND d.district_type IN ('LOCAL', 'COUNTY'))
         OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
-        OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
+        OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD_EDUCATION')
         -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
         -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
         -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT here

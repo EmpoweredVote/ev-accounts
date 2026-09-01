@@ -62,11 +62,12 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
     -- DC ONLY: TIGER files DC's 8 wards as the SLDL layer (G5220, geo_id 11001..11008) because the
     -- DC Council IS DC's legislature. Its ward seats are typed CITY_COUNCIL, and the SBOE's ward
-    -- seats SCHOOL_BOARD, so without this clause all 16 stay unreachable by address (migration 1485).
+    -- seats STATE_BOARD_EDUCATION (migration 1852 reclassified DC's board from SCHOOL_BOARD), so
+    -- without this clause all 16 stay unreachable by address (migrations 1485, 1852).
     -- SCOPED TO DC deliberately: unscoped, any state's state-house geofence could match a
     -- same-geo_id council district and surface the wrong officials. G5220 geo_ids are
     -- state-FIPS-prefixed, so 1100N belongs to DC alone.
-    OR (gp.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
+    OR (gp.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','STATE_BOARD_EDUCATION'))
     OR (gp.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
     OR (gp.mtfcc = 'G4020' AND d.district_type IN ('COUNTY','JUDICIAL'))
     -- PR ONLY: a municipio IS both the county-equivalent and the municipality. TIGER files all 78
@@ -82,7 +83,7 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc IN ('G5400','G5410','G5420') AND d.district_type = 'SCHOOL')
     OR (gp.mtfcc = 'X0001' AND d.district_type IN ('LOCAL','COUNTY'))
     OR (gp.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
-    OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
+    OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD_EDUCATION')
     -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
     -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT rather
     -- than left to the X catch-all below, which admits only LOCAL/COUNTY and would therefore leave

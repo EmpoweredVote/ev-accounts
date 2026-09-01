@@ -113,9 +113,11 @@ export function inferDistrictType(positionName: string, jurisdictionLevel: strin
     return 'STATE_EXEC';
   // State Board of Education — elected by district but a state-level body. Must precede
   // the SCHOOL catch-all below, whose 'education'/'school' match would pull these into
-  // the Local tier (matches essentials.districts.district_type = 'STATE_BOARD').
-  if (p.includes('state board of education') || p.includes('state school board'))
-    return 'STATE_BOARD';
+  // the Local tier (matches essentials.districts.district_type = 'STATE_BOARD_EDUCATION',
+  // the dedicated education type; migration 1852 reclassified STATE_BOARD/SCHOOL_BOARD into it).
+  // 'sboe' covers DC's "SBOE Member (Ward N)" title style; the two long forms cover Utah's.
+  if (p.includes('state board of education') || p.includes('state school board') || p.includes('sboe'))
+    return 'STATE_BOARD_EDUCATION';
 
   // Local
   if (p.includes('mayor'))
