@@ -279,9 +279,10 @@ Anker and Hickey are predecessors we do not seat.
 
 ## Identity band
 
-GA-3 used **`-1331001 .. -1331018`** exactly (verified in production, 18 rows). GA-4 takes the next
-sub-range, **`-1331019 .. -1331034`** for 16 people — widening to `-1331036` if ruling R4 admits the
-two municipal-court offices.
+GA-3 used **`-1331001 .. -1331018`** exactly (verified in production, 18 rows). ⚠ **`-1331019` is now
+taken by Steve Chapple**, Baldwin's new Coroner — see the GA-3 correction below. GA-4 therefore takes
+**`-1331020 .. -1331035`** for 16 people, widening to `-1331037` if ruling R4 admits the two
+municipal-court offices.
 
 ⚠ Per the FL-4 correction, the band guard must claim **only this wave's sub-range**, never the whole
 shared band, or GA-4's rows break GA-3's re-run.
@@ -291,3 +292,44 @@ all different people: `David Cook` (TX), `Gary Davis`, `Gary Garrett` (UT), `Dav
 `Gregory Smith` (OR), `David K. Thompson` (WI), `Glenn Thompson` (PA). **No `Glenn Davis`, no
 `Cathy Cook`, no `David Britt` exists in production.** GA-2's lesson held: a name-based guard would
 have seated a Texan and a Utahn in Georgia.
+
+---
+
+## 🔴🔴 A GA-3 CORRECTION FOUND BY THIS SESSION: Baldwin's Coroner retired in May
+
+`CC_0029` seated **John Gonzalez** as Baldwin County Coroner from the Secretary of State's certified
+2024 return. That return is correct and remains correct — he won that election. **He then retired
+mid-term, on 2026-05-01**, and a certified result cannot report a change that postdates it.
+
+> *"Gonzalez officially retired as coroner on May 1."*
+> *"Chapple took the oath of office as the new county coroner during a special swearing-in ceremony
+> Thursday morning at the county courthouse."*
+> — The Union-Recorder, 2026-05-14
+
+**Steve Chapple** holds the seat. Baldwin County's own staff directory has already dropped Gonzalez.
+
+⚠ **This is the GA-2 SD-12 failure, and it reached production.** GA-3's change-check was run against
+the *sources* rather than against the *seats*: every source agreed, and all of them predated the
+retirement. A change-check has to ask "has this person left?", not "do my sources agree?".
+
+⚠ **It was found by the headshot pass, not by a gate.** The Coroner is one of the four Baldwin
+officials still owed a headshot; searching for his portrait surfaced the retirement notice. **A body's
+roster is a redundancy check on occupancy** — the third time that has paid.
+
+🟢 **A full re-check of all 18 GA-3 seats was then run against live sources, and the Coroner is the
+only one.** Seven Milledgeville seats all present on the city site; five commissioners, Sheriff, Clerk,
+Probate Judge, Tax Commissioner and Surveyor all present in the county directory.
+
+**Migration `CC_wip_baldwin_coroner_succession.sql`** is written and **dry-run clean against
+production** (`BEGIN … ROLLBACK`, zero `COMMIT` in the sent stream; rollback confirmed to have
+reverted — 0 Chapple rows, Gonzalez still seated). It is **not applied**.
+
+| What it writes | Value | Precision | Why |
+| --- | --- | --- | --- |
+| Gonzalez `term_end` | **2026-05-01** | `day` | stated outright by the source |
+| Chapple `term_start` | 2026-05-02 | **`month`** | "Thursday morning" is not a date. The day is a placeholder the precision disclaims, chosen so the helper closes Gonzalez on exactly 2026-05-01 |
+| Chapple `how_started` | **`unknown`** | — | the mechanism is never stated. The nearby "appointed the new coroner" sentence is about **Gonzalez** succeeding Wayne Brooks, not Chapple |
+| Gonzalez `how_ended` | `retired` | — | "decided recently to retire from office" |
+
+⚠ The inferred swearing-in date (2026-05-07 — the article ran Thursday 2026-05-14 and says "last
+Thursday") is recorded **in the migration header as prose, never as data**.
