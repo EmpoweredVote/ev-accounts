@@ -20,7 +20,9 @@ import { PrimaryButton } from '../components/PrimaryButton';
 // not here — sign-in (and the auto-forward below) navigate there instead of
 // calling the hosted AuthKit SDK path. The shared `.empowered.vote` cookie
 // plus the existing `?redirect=` handoff bring the user back here logged in.
-const LOGIN_ORIGIN = 'https://login.empowered.vote';
+// Defaults to the prod login hub; VITE_LOGIN_ORIGIN overrides it (build-time)
+// so a staging app can point at a staging login hub for cross-app SSO testing.
+const LOGIN_ORIGIN = import.meta.env.VITE_LOGIN_ORIGIN || 'https://login.empowered.vote';
 
 interface LoginResponse {
   access_token: string;
