@@ -156,28 +156,37 @@ const FALLBACK_BUDGET_MS = 12000;
 /** Identify ourselves to these public government services rather than arriving blank. */
 const FALLBACK_USER_AGENT = 'EmpoweredVote/1.0 (+https://empowered.vote)';
 
-/** One GET returning JSON, bounded by whatever is left of the fallback budget. */
-async function fetchJson<T>(url: URL, remainingMs: number): Promise<T | null> {
+/**
+ * One GET returning JSON, bounded by whatever is left of the fallback budget.
+ *
+ * `source` names which upstream this was, and it is not decoration. The fallback
+ * makes two calls to two unrelated operators, and when this said only "fallback
+ * source unavailable" a production failure could not be attributed to either one
+ * without a redeploy. Keep the label distinct.
+ */
+async function fetchJson<T>(url: URL, remainingMs: number, source: string): Promise<T | null> {
   if (remainingMs <= 0) {
-    console.warn('[geocoding] fallback budget exhausted before request');
+    console.warn(`[geocoding] ${source}: no budget left before request`);
     return null;
   }
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), remainingMs);
+  const started = Date.now();
   try {
     const response = await fetch(url.toString(), {
       signal: controller.signal,
       headers: { 'User-Agent': FALLBACK_USER_AGENT, Accept: 'application/json' },
     });
     if (!response.ok) {
-      console.warn(`[geocoding] fallback source returned HTTP ${response.status}`);
+      console.warn(`[geocoding] ${source}: HTTP ${response.status} after ${Date.now() - started}ms`);
       return null;
     }
     return (await response.json()) as T;
-  } catch {
+  } catch (err: unknown) {
     // AbortError = out of budget; anything else = network failure. Neither is fatal.
-    console.warn('[geocoding] fallback source unavailable (timeout or network error)');
+    const reason = (err as { name?: string })?.name === 'AbortError' ? 'timed out' : 'network error';
+    console.warn(`[geocoding] ${source}: ${reason} after ${Date.now() - started}ms (budget ${remainingMs}ms)`);
     return null;
   } finally {
     clearTimeout(timeout);
@@ -226,7 +235,7 @@ async function getZipExtent(zip: string, remainingMs: number): Promise<Extent | 
   url.searchParams.set('outSR', '4326');
   url.searchParams.set('f', 'json');
 
-  const data = await fetchJson<{ extent?: Extent }>(url, remainingMs);
+  const data = await fetchJson<{ extent?: Extent }>(url, remainingMs, 'ZCTA');
   const extent = data?.extent;
   if (
     !extent ||
@@ -320,7 +329,7 @@ async function geocodeViaNad(address: string): Promise<GeocodeResult | null> {
   url.searchParams.set('outSR', '4326');
   url.searchParams.set('f', 'json');
 
-  const data = await fetchJson<{ features?: NadFeature[]; error?: unknown }>(url, deadline - Date.now());
+  const data = await fetchJson<{ features?: NadFeature[]; error?: unknown }>(url, deadline - Date.now(), 'NAD');
   const features = data?.features;
   if (!features?.length) return null;
 
