@@ -29,6 +29,7 @@ export default function InformSignup() {
   // on-page code step Login.tsx uses, instead of the "check your email" card.
   const [codeStep, setCodeStep] = useState(false);
   const [code, setCode] = useState('');
+  const [codeResent, setCodeResent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -91,6 +92,9 @@ export default function InformSignup() {
           email,
           password,
           display_name: displayName,
+          // Embedded flow sends the verification code via the authenticate call
+          // below; tell signup not to also send one (avoids two codes).
+          defer_verification_email: embeddedAuthEnabled,
         }),
       });
 
@@ -153,6 +157,18 @@ export default function InformSignup() {
     }
   }
 
+  // Re-run sign-in to have WorkOS issue a fresh code (and pending cookie).
+  async function handleResendCode() {
+    setError(null);
+    setCodeResent(false);
+    try {
+      await loginWithPassword(email, password);
+      setCodeResent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not resend the code');
+    }
+  }
+
   if (codeStep) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
@@ -204,6 +220,15 @@ export default function InformSignup() {
             >
               {isSubmitting ? 'Verifying…' : 'Verify'}
             </button>
+
+            <div className="text-center">
+              <button type="button" onClick={handleResendCode} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+                Resend code
+              </button>
+              {codeResent && (
+                <p className="mt-1 text-xs text-green-600 dark:text-green-400">A new code is on its way.</p>
+              )}
+            </div>
           </form>
         </div>
       </div>

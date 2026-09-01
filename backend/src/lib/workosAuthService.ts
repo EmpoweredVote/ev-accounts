@@ -55,7 +55,15 @@ async function callAuthenticate(grant: Grant): Promise<AuthOutcome> {
         challengeId: (parsed.authentication_challenge_id as string | undefined) ?? null,
       };
     }
-    if (disc === 'invalid_credentials' || disc === 'password_incorrect' || res.status === 401) {
+    // `invalid_one_time_code` is WorkOS's rejection of a wrong/expired
+    // email-verification or MFA code; fold it into the same invalid outcome so
+    // callers surface a clean "that code is wrong" instead of a 502.
+    if (
+      disc === 'invalid_credentials' ||
+      disc === 'password_incorrect' ||
+      disc === 'invalid_one_time_code' ||
+      res.status === 401
+    ) {
       return { status: 'invalid_credentials' };
     }
 

@@ -88,6 +88,14 @@ describe('authenticateWithEmailCode', () => {
       pending_authentication_token: 'pat_1',
     });
   });
+
+  it('maps a wrong/expired code (invalid_one_time_code) to invalid_credentials, not an error', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      errJson(400, { code: 'invalid_one_time_code', message: 'Invalid one-time code' })
+    );
+    const out = await authenticateWithEmailCode('000000', 'pat_1');
+    expect(out).toEqual({ status: 'invalid_credentials' });
+  });
 });
 
 describe('refreshWorkosSession', () => {

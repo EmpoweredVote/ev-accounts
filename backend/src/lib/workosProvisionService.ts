@@ -170,7 +170,8 @@ export async function provisionWorkosUser(workosUserId: string): Promise<Provisi
  */
 export async function signUpWorkosFirst(
   email: string,
-  password: string
+  password: string,
+  opts?: { sendVerificationEmail?: boolean }
 ): Promise<WorkosSignupResult> {
   if (!env.WORKOS_API_KEY) return { ok: false, code: 'NOT_CONFIGURED' };
   const headers = {
@@ -248,23 +249,29 @@ export async function signUpWorkosFirst(
     );
   }
 
-  // Send the verification email NOW, at signup. WorkOS only auto-sends for its
-  // OWN hosted signup form; a headless management-API create like ours does
-  // not trigger it, so without this the user gets nothing until they reach
-  // AuthKit sign-in (which surprised testers — it read as "signup failed").
-  // Sending here also makes a reachable email a gate on Connected accounts,
-  // which are meant to be real people. Non-fatal: if it fails, AuthKit still
-  // prompts and sends a code when the user signs in.
-  const verifyRes = await fetch(
-    `${WORKOS_API}/user_management/users/${workosUser.id}/email_verification/send`,
-    { method: 'POST', headers }
-  );
-  if (!verifyRes.ok) {
-    console.error(
-      '[workosSignup] verification email send failed (non-fatal):',
-      verifyRes.status,
-      await verifyRes.text()
+  // Send the verification email at signup — but ONLY for flows that will not
+  // immediately call the headless authenticate grant. WorkOS does not auto-send
+  // for a management-API create, so without this a HOSTED-flow user gets nothing
+  // until they reach AuthKit sign-in (which surprised testers — it read as
+  // "signup failed"). The EMBEDDED flow, however, calls /workos/authenticate
+  // right after signup, and WorkOS emails a code as part of that
+  // `email_verification_required` step. Sending here as well would produce TWO
+  // codes — the newer one invalidates the older, so a user who enters the first
+  // email's code gets `invalid_one_time_code`. So the embedded signup passes
+  // sendVerificationEmail:false and lets authenticate be the single sender.
+  // Non-fatal either way.
+  if (opts?.sendVerificationEmail !== false) {
+    const verifyRes = await fetch(
+      `${WORKOS_API}/user_management/users/${workosUser.id}/email_verification/send`,
+      { method: 'POST', headers }
     );
+    if (!verifyRes.ok) {
+      console.error(
+        '[workosSignup] verification email send failed (non-fatal):',
+        verifyRes.status,
+        await verifyRes.text()
+      );
+    }
   }
 
   return { ok: true, userId };

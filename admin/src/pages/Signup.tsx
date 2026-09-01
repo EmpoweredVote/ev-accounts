@@ -40,6 +40,7 @@ export default function Signup() {
   // on-page code step Login.tsx uses, instead of the "check your email" card.
   const [codeStep, setCodeStep] = useState(false);
   const [code, setCode] = useState('');
+  const [codeResent, setCodeResent] = useState(false);
 
   // Request access modal state
   const [modalOpen, setModalOpen] = useState(false);
@@ -111,6 +112,9 @@ export default function Signup() {
           display_name: displayName,
           legal_name: legalName,
           invite_code: normalizedCode,
+          // Embedded flow sends the verification code via the authenticate call
+          // below; tell signup not to also send one (avoids two codes).
+          defer_verification_email: embeddedAuthEnabled,
         }),
       });
 
@@ -173,6 +177,18 @@ export default function Signup() {
       setError(err instanceof Error ? err.message : 'Verification failed');
     } finally {
       setIsSubmitting(false);
+    }
+  }
+
+  // Re-run sign-in to have WorkOS issue a fresh code (and pending cookie).
+  async function handleResendCode() {
+    setError(null);
+    setCodeResent(false);
+    try {
+      await loginWithPassword(email, password);
+      setCodeResent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not resend the code');
     }
   }
 
@@ -259,6 +275,15 @@ export default function Signup() {
             >
               {isSubmitting ? 'Verifying…' : 'Verify'}
             </button>
+
+            <div className="text-center">
+              <button type="button" onClick={handleResendCode} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+                Resend code
+              </button>
+              {codeResent && (
+                <p className="mt-1 text-xs text-green-600 dark:text-green-400">A new code is on its way.</p>
+              )}
+            </div>
           </form>
         </div>
       </div>
