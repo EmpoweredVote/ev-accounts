@@ -190,9 +190,11 @@ VERSIONED, never an overwrite: the CDN does not reliably purge.
 | FL | FL-6 city structure | `CC_0015_miami_structure.sql` | 2026-08-30 |
 | FL | FL-6 city occupancy | `CC_0016_miami_people.sql` | 2026-08-30 |
 | FL | FL-6 county (offices + people) | `CC_0017_miami_dade_county.sql` | 2026-08-30 |
-| — | — | next free is **`CC_0025`** | — |
+| GA | GA-2 structure | `CC_0025_ga_legislature_structure.sql` | 2026-09-01 |
+| GA | GA-2 occupancy | `CC_0026_ga_legislature_incumbents.sql` | 2026-09-01 |
+| — | — | next free is **`CC_0027`** | — |
 
-🔴🔴 **RE-COUNTED 2026-08-31: THE NEXT FREE SLOT JUMPED FROM `CC_0018` TO `CC_0025` WITHOUT A SINGLE KNIGHT WAVE RUNNING.** `CC_0018`–`CC_0024` were taken on **master**, by the headshot render sweep and by Lawrence County, while this branch sat unmerged. A Georgia wave that trusted the old line would have collided on its first migration. **Re-count against `origin/master` at the start of every wave, not against this file** — this file records what the last wave took, which is not the same question. The `X` sequence was checked at the same time and is unchanged: `X0042` is still free.
+🔴🔴 **THIS NUMBER GOES STALE BETWEEN WAVES, AND IT HAS DONE SO TWICE.** On 2026-08-31 it jumped from `CC_0018` to `CC_0025` without a single Knight wave running. `CC_0018`–`CC_0024` were taken on **master**, by the headshot render sweep and by Lawrence County, while this branch sat unmerged. A Georgia wave that trusted the old line would have collided on its first migration; GA-2 then consumed `CC_0025` and `CC_0026` the same day, so the line was stale again within hours. **Re-count against `origin/master` at the start of every wave, not against this file** — this file records what the last wave took, which is not the same question. The `X` sequence was checked at the same time and is unchanged: `X0042` is still free.
 
 Private MTFCC allocations, which are a second sequence to take numbers from: `X0036` Bradenton wards,
 `X0037` Manatee commission districts, `X0038` Leon commission districts, `X0039` Palm Beach commission districts, `X0040` Miami-Dade commission districts, `X0041` Miami city commission districts. **Next free is `X0042`.** There is no central registry — each

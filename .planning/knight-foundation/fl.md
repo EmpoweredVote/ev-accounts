@@ -1124,7 +1124,7 @@ institution that re-hosts the same official portrait.**
 | `CC_0016` | `CC_0016_miami_people.sql` | 2026-08-30 |
 | `CC_0017` | `CC_0017_miami_dade_county.sql` | 2026-08-30 |
 
-Next free slot: **`CC_0025`** (re-counted against `origin/master` 2026-08-31 — `CC_0018`–`CC_0024` were claimed on master while this branch sat unmerged; the old line said `CC_0018`). Next free private MTFCC: **`X0042`** — `X0040` is Miami-Dade's 13
+Next free slot: **`CC_0027`** as of 2026-09-01 — but ⚠ **DO NOT TRUST THIS LINE**, re-count against `origin/master`. It has been stale twice: it read `CC_0018` while master held `CC_0024`, and it read `CC_0025` for the few hours before GA-2 took `CC_0025` and `CC_0026`. Next free private MTFCC: **`X0042`** — `X0040` is Miami-Dade's 13
 commission districts and `X0041` is Miami's 5.
 
 ⚠ `CC_0009` and `CC_0010` were **edited after being applied**, on 2026-08-28, to scope their
