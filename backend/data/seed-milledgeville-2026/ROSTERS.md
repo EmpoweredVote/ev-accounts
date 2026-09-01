@@ -206,3 +206,78 @@ All 18 tested on `normalize(lower(first_name), NFD)` + `normalize(lower(last_nam
 control** was added — `Floyd Griffin`, seated by GA-2 — and it returns exactly 1, so the zero is real.
 A surname sweep found `Smith` 57 times in production and 4 times in Georgia, `Davis` 49/1 and
 `Strickland` 7/1; all six Georgia rows are GA-2 legislators, and none is one of ours.
+
+---
+
+## Stage 5 — headshots, 14 of 18 imported 2026-09-01
+
+Approved as a single batch contact sheet, never one dialog per person. Every frame on the
+sheet was the actual production crop, so what was approved is what shipped — the importer
+reads the same `.tmp-headshot-cache` bytes rather than refetching.
+
+| Cohort | Sourced | Source |
+| --- | --- | --- |
+| Milledgeville city | **7 of 7** | the city's own site, `milledgevillega.us` |
+| Baldwin commissioners | **5 of 5** | the county's own per-member directory pages |
+| Sheriff | **1 of 1** | his own office, `baldwinsheriff.com` |
+| Clerk of Superior Court | **1 of 1** | Georgia Superior Court Clerks' Cooperative Authority |
+| Probate Judge, Tax Commissioner, Coroner, Surveyor | **0 of 4** | nothing found |
+
+All 14 render from **`photo_custom_url`** and all 14 objects fetch from the bucket as real
+JPEGs (magic `ffd8ff`). 🔴 A `politician_images` row alone changes nothing a voter sees, and a
+missing object in our bucket returns **HTTP 400, not 404** — both were verified, not assumed.
+
+🔴 **THE FOUR WITHOUT A PHOTO CARRY A CLEAN SLATE**: `photo_custom_url` AND `photo_origin_url`
+are both NULL. A blank beats a link — a page URL in `photo_origin_url` counts as coverage under
+`HAS_RENDERABLE_PHOTO_SQL` and would hide the person behind a broken image.
+
+### 🔴 The off-by-one this cohort actually contained
+
+Baldwin County serves commissioner portraits as opaque `ImageRepository/Document?documentID=NNN`
+with no name anywhere in the URL. Each was isolated as the **one image unique to a directory page
+that names the person** — and the result is **not in district order**:
+
+| Seat | Person | documentID |
+| --- | --- | --- |
+| District 1 | Emily C. Davis | **239** |
+| District 2 | Kendrick B. Butts | **238** |
+| District 3 | Sammy Hall | 240 |
+| District 4 | Andrew Strickland | 241 |
+| District 5 | Scott Little | 242 |
+
+**Reading the roster page's images in order would have swapped District 1 and District 2.**
+
+⚠ The city has the same shape in a milder form: D2, D4 and D6 come from files named
+`Milledgeville-Staff-Photos`, `-1` and `-2`. They are the three members newly elected in November
+2025, uploaded 2026/04, and are three visibly distinct single-person portraits on one studio
+backdrop — but the seat assignment rests on the page's DOM order, so all three were flagged
+"verify face" on the contact sheet rather than presented as certain.
+
+### ⚠ A uniform answer was checked before it was trusted
+
+All seven city portraits returned **identical dimensions (2831x2796)** despite uploads dated 2013,
+2018, 2022, 2023 and 2026 — the shape of a host serving one fallback image. Hashing the cached
+bytes showed **14 distinct payloads across 14 candidates**, so the uniformity is the city's own
+template canvas. The detector was sound; it was not assumed to be.
+
+### Render quality, accepted knowingly
+
+Six sources are far below the 600x750 target and were stored at **native cropped size, never
+enlarged** (`--max-upscale 1.0`, ruling by Cantrell 2026-09-01): the five commissioners at
+200x200/200x236 and the Clerk at 220x192, i.e. 3.2–3.9x short. Soft in a 600x750 slot, but every
+pixel is real. ▶ A re-source pass could try county print originals, the Union-Recorder photo
+archive, the Georgia Sheriffs'/Probate Judges'/Tax Officials' associations, and January 2025
+swearing-in coverage.
+
+## ⚠ Open correction, NOT yet applied — Wanda T. Paul's `how_started`
+
+`CC_0029` records `how_started = 'elected'` for the Clerk of Superior Court. A 2024 press summary
+says she was **appointed** to the office earlier in 2024 and was then seeking her first full term.
+If that holds, continuous occupancy began by **appointment**, and `how_started` should be
+`'appointed'` — the Miami-Dade lesson inverted: a certified election describes the CURRENT term,
+not how the occupancy began.
+
+🔴 **Deliberately not changed on this evidence.** The claim rests on one search summary, not on a
+primary source. It needs the county's own appointment record or contemporaneous reporting before a
+migration touches the field. Recorded here so it is not lost, and not acted on so nothing
+unevidenced reaches production.

@@ -159,8 +159,8 @@ in it is reachable by address. **Ten remain.**
 | **Palm Beach County** | **12** | **12** | **12** |
 | **Miami city** | **6** | **6** | **6** |
 | **Miami-Dade County** | **19** | **19** | **19** |
-| **Milledgeville city** | **7** | **7** | **0** |
-| **Baldwin County** | **11** | **11** | **0** |
+| **Milledgeville city** | **7** | **7** | **7** |
+| **Baldwin County** | **11** | **11** | **7** |
 | every other jurisdiction | 0 | 0 | 0 |
 
 Bradenton and Manatee measured 2026-08-28 after FL-3. Manatee's twelfth office is Commission
@@ -174,9 +174,14 @@ Beach has **no city half**, so it is a county row with no municipal partner. **A
 
 Measured 2026-09-01 after GA-3. **Georgia now holds 18 local and county offices across TWO
 governments, 18 seated, 0 vacant** — Milledgeville 7/7 and Baldwin County 11/11 — plus 236 legislative
-offices. 🔴 **18 people, 0 headshots: that is the whole of GA-3's stage-5 debt**, measured with the
+offices. 🔴 **14 of 18 now carry a headshot (2026-09-01); 4 do not** — measured with the
 `HAS_RENDERABLE_PHOTO_SQL` predicate from `photoCoverage.ts` rather than by counting
 `politician_images` rows, because a `politician_images` row changes nothing a voter sees.
+The four without one are the **Probate Judge, Tax Commissioner, Coroner and Surveyor** — part-time
+county offices with no portrait on the county site, no Ballotpedia photo (their pages are stubs) and
+no county Democratic committee site in existence. 🔴 All four carry `photo_custom_url` **and**
+`photo_origin_url` NULL: a blank beats a link, because a page URL counts as coverage under
+`HAS_RENDERABLE_PHOTO_SQL` and would hide the person behind a broken image.
 
 ⚠ **Baldwin is a FOURTH county convention in five counties**: 5 single-member seats, **no at-large
 member**, and the Chair elected by the Board from among the five. Against Manatee 5+2, Leon 5+2, Palm
@@ -193,7 +198,18 @@ elected local offices found anywhere in the program.
 first COUNTY key, `12099` Palm Beach. **20 cities still missing.**
 
 ▶ **Milledgeville is now seated and therefore banner-eligible** (GA-3, 2026-09-01), and is one of
-those 20 — the count does not move until its banner is certified in stage 5. ⚠ **Baldwin County needs
+those 20 — the count does not move until its banner is certified in stage 5.
+
+🟢 **§8.1 ADJACENCY CLEARED FOR ALL THREE GEORGIA CITIES, measured 2026-09-01.** `states/GA.jpg` is
+**the Atlanta skyline** (Midtown, 1700x540, 3.148:1). Atlanta is in none of this slice's three
+jurisdictions, so **no state-banner move is needed** for Milledgeville, Columbus or Macon — unlike
+Miami, where the state banner WAS the city's own skyline, and unlike Wichita, Detroit and Charlotte,
+which still have that conflict ahead of them.
+
+⚠ **No `CURATED_LOCAL` key is scoped `GA` yet** — Milledgeville would be the program's first Georgia
+city banner. The registry is `src/lib/buildingImages.js` in the **essentials** repo (branch `main`),
+not this one, so the banner ships as a separate PR there.
+⚠ **`states/GA-v2.jpg` returns HTTP 400, not 404** — the missing-object signature, re-confirmed. ⚠ **Baldwin County needs
 no county key**: unlike Palm Beach it has a city half, so the city banner covers the jurisdiction.
 Palm Beach took its own COUNTY key only because it had no municipal partner.
 
