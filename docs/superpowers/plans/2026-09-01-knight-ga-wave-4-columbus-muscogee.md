@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). Tasks 2-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: ✅ COMPLETE — ALL FIVE TASKS APPLIED 2026-09-01.** `X0044` (8 boundaries) plus `CC_0034` structure, `CC_0035` people and `CC_0036` county: **16 offices, 16 people, 0 vacancies**, both anchors passing in production. ⚠ The three were written as `CC_0031`-`CC_0033` and **renumbered after apply** — a parallel session claimed `CC_0031` six minutes after the re-count. See `ga.md`. Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -81,31 +81,38 @@ Gates before any write:
 - the union is **146.24 sq mi**, and the county-minus-union gap agrees with the `N/A` combination area
   to within 1 sq mi. 🔴 **Do NOT gate on full coverage of the county — it fails on correct data.**
 
-### Task 2 — city structure (`CC_wip_columbus_structure.sql`)
+### Task 2 — city structure (`CC_wip_columbus_structure.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 1 government, 2 chambers, 9 districts (8 × `X0044` + 1 citywide), 11 offices.
 
 - Mayor: `voting_powers = 'non_voting'` **plus a `representation_note`** — required by CHECK, and both
-  read paths must render it. Charter Sec. 4-102: presides, has a voice, votes only to break a tie.
+  read paths must render it. Charter **Sec. 4-201(2) and 4-201(4)**: presides, has a voice, votes only
+  to break a tie. 🔴 **CITATION CORRECTED 2026-09-01 — this line said Sec. 4-102, which is
+  “General provisions concerning departments” and says nothing about the Mayor.** The note is
+  voter-facing prose, so the wrong number would have been published.
 - Posts 9 and 10 are titled as at-large and hang on the citywide district. **They have no geometry**;
   both GIS layers return 8 polygons, which is the independent confirmation.
 - Post-verify refuses any office titled with *Mayor Pro Tem* (ruling R3).
 
-### Task 3 — city occupancy (`CC_wip_columbus_people.sql`)
+### Task 3 — city occupancy (`CC_wip_columbus_people.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 11 politicians, 11 terms. Band `-1331020 .. -1331030`.
 
 - 9 terms open-ended at `start_precision 'unknown'` — Columbus publishes no service-start.
-- **Barnes `2026-05-26` and Cook `2026-07-14` at `day` precision**, both `how_started` =
-  *special election*. These are the only dated starts in the wave and both are twice-sourced.
+- **Barnes `2026-05-26` and Cook `2026-07-14` at `day` precision**, both `how_started` = **`'elected'`**.
+  These are the only dated starts in the wave and both are twice-sourced.
+  🔴 **CORRECTED 2026-09-01 — this line said `how_started` *special election*, which is NOT a legal
+  value.** `essentials.office_terms` carries `CHECK how_started IN ('elected','appointed','succeeded',
+  'redistricted','unknown')`. Both won **special** elections; that fact belongs in the `source` string
+  and the migration header, not in the column.
 - 🔴 The band guard claims **only `-1331020 .. -1331030`**, never the shared band — the FL-4 correction.
 
-### Task 4 — county officers (`CC_wip_muscogee_county.sql`)
+### Task 4 — county officers (`CC_wip_muscogee_county.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 1 chamber, 5 offices + 5 people + 5 terms, in **one** migration per spec §3. Band `-1331031 .. -1331035`.
-Britt at `2025-01-01` / `month`; the other four `unknown`.
+Britt at `2025-01-01` / `month`; the other four `unknown`. 🔴 **Names corrected by the live change-check 2026-09-01**: the Sheriff carries NO `Sr.`, the Clerk is `Danielle F. Forté` with the accent, and the Tax Commissioner is `David A. Britt II`.
 
-### Task 5 — dry-run, then take the numbers last
+### Task 5 — dry-run, then take the numbers last ✅ APPLIED 2026-09-01 (as `CC_0034`/`CC_0035`/`CC_0036` — see the collision note above)
 
 🔴 **The occupancy half cannot be dry-run alone** — its offices do not exist yet. Run structure +
 occupancy + county as **one transaction ending in `ROLLBACK`**, with the stream asserted to hold zero
@@ -127,7 +134,7 @@ pair:
 | Council district | exactly 1 councilor |
 | Council at-large | exactly 2 (Posts 9 and 10) |
 | County officers | exactly 5 |
-| State House | HD-137 Debbie Buckner |
+| State House | 🔴 **HD-140 Tremaine Teddy Reese** — corrected 2026-09-01. This line said HD-137 Debbie Buckner, copied from GA-1's verification, which probed the PLACE POLYGON'S OWN INTERIOR POINT (rural northern Muscogee). The Government Center is downtown. An anchor's expected answer is a property of the POINT, not of the jurisdiction |
 | State Senate | SD-15 Ed Harbison |
 
 **Anchor B — a second address in a different council district**, to prove the tiers were not crossed.

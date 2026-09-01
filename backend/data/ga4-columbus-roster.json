@@ -1,0 +1,436 @@
+{
+  "wave": "GA-4",
+  "jurisdictions": "Columbus Consolidated Government (consolidated city-county) + Muscogee County elected officers, Georgia",
+  "measured": "2026-09-01",
+  "roster_doc": "backend/data/seed-columbus-2026/ROSTERS.md",
+  "plan_doc": "docs/superpowers/plans/2026-09-01-knight-ga-wave-4-columbus-muscogee.md",
+  "notes": [
+    "16 offices, 16 people, 0 vacancies -- 11 city, 5 county. Zero reuses: all 16 external_ids are fresh inserts (production measured 2026-09-01, the sub-range holds 0 rows).",
+    "ONE government with THREE chambers. Columbus is the program's first consolidated city-county, so stage 4 drops the county commission -- the Council already is it -- and keeps only the separately elected county officers.",
+    "Ruling R1: the Council is 8 district councilors + 2 at-large (Posts 9 and 10), charter Sec. 3-100(2) and 3-100(3). Both GIS layers return 8 polygons, which independently confirms the at-large pair has no geometry. The city's roster page numbers all ten 'District N' and would have produced two districts that do not exist.",
+    "Ruling R2: the Mayor is voting_powers 'non_voting' with a required representation_note. CORRECTED CITATION -- the Mayor's powers are charter Sec. 4-201(2) and 4-201(4), NOT Sec. 4-102. Sec. 4-102 is 'General provisions concerning departments'. ROSTERS.md, ga.md and the plan all cite 4-102 and the charter text on disk does not support it.",
+    "Ruling R3: Mayor Pro Tem is a parenthetical, not an office. Sec. 3-103(1): the Council elects one of its own members by six votes, annually. The post-verify gate refuses any office titled with it.",
+    "Ruling R4: 5 county officers -- Sheriff, Clerk of Superior Court, Judge of Probate Court, Tax Commissioner, Coroner. Charter Art. VIII Ch. 1 'County Officers and Agencies' preserves four (Sec. 8-100, 8-101, 8-102, 8-103); the Clerk of Superior Court comes in via Ga. Const. Art. IX, Sec. I, Par. III. Muscogee elects no Marshal and no Surveyor, so Baldwin's six-officer template does NOT transfer. Both municipal-court offices are excluded (Cantrell, 2026-09-01).",
+    "how_started 'special election' IS NOT A LEGAL VALUE. essentials.office_terms carries CHECK how_started IN ('elected','appointed','succeeded','redistricted','unknown'). Barnes and Cook won SPECIAL elections, so how_started is 'elected' and the special-election fact is carried in the source string and the migration header, not in the column. The plan's Task 3 text says 'special election' and would fail that CHECK.",
+    "COUNTY CHANGE-CHECK, run live 2026-09-01, asked \"has this person LEFT?\" and produced FIVE name corrections and ONE evidence gap. Sheriff: his own office publishes 'Gregory D. Countryman' and NO 'Sr.' anywhere -- the suffix in the first draft was unsourced and is dropped. Clerk: her own office writes 'Danielle F. Forté' with the accent; the certified ballot writes the ASCII form, which is kept as an alias. Tax Commissioner: his own office publishes 'David A. Britt II, MBA, MPA'. Coroner: the Georgia Coroners Association directory names him 'Eddie Bryan' and Ballotpedia 'Eddie Lynwood Bryan' -- SAME PERSON, same seat, same office address; 'Buddy' is the ballot and press name and stays the full_name. ⚠ THE PROBATE JUDGE IS THE ONE SEAT WHOSE CHANGE-CHECK COULD NOT REACH 2026: newest positive evidence is his court's own fee schedule authored 2025-01-13. His court's website never names its judge (measured twice, including JS-rendered), gaprobate.gov's directory would not filter, and Ballotpedia has no Muscogee County officials page at all. Nothing anywhere reports a departure. Seated, with the limit stated -- not hidden.",
+    "⚠ 'Having served in the office for 25 years' on the Tax Commissioner's bio is service in the DEPARTMENT, not tenure in the elected seat. He became Tax Commissioner in 2025, succeeding Lula Huff. Reading it as occupancy would be the published-expiry error class.",
+    "Party is deliberately absent. It lives on races.primary_party, never on a person or an office.",
+    "District types differ by tier: CITY districts are district_type 'LOCAL', COUNTY districts are 'COUNTY'. The citywide LOCAL district IS created here; the countywide COUNTY district is only ASSERTED -- the TIGER county load already made 13215/G4020, verified in production 2026-09-01."
+  ],
+  "id_band": {
+    "min": -1331035,
+    "max": -1331020,
+    "rationale": "GA-3 consumed -1331001..-1331018 and CC_0030 took -1331019 for Baldwin's new Coroner. The range -1331020..-1331035 was measured EMPTY in production 2026-09-01. The guard is scoped to this wave's own sub-range, per the FL-4 correction."
+  },
+  "city": {
+    "government": {
+      "name": "Columbus Consolidated Government, Georgia, US",
+      "type": "City",
+      "state": "GA",
+      "city": "Columbus",
+      "geo_id": "1319000",
+      "rationale": "The charter's own corporate name is the bare 'Columbus, Georgia' (Sec. 1-100), which is not a usable row label. geo_id is the TIGER place 1319000 and NOT the county 13215, because -- unlike Nashville -- the Georgia place record is the WHOLE county, measured identical at 221.011 sq mi. There is no balance record and no satellite municipality to strand."
+    },
+    "district_type": "LOCAL",
+    "citywide_district": {
+      "label": "Columbus Citywide",
+      "geo_id": "1319000",
+      "mtfcc": "G4110",
+      "num_officials": 3,
+      "create": true,
+      "create_rationale": "GA-1 loaded the TIGER place BOUNDARY 1319000/G4110 and created no place DISTRICT, so the citywide district is created here -- as Bradenton, Tallahassee and Milledgeville each created theirs.",
+      "num_officials_rationale": "THREE seats are elected citywide: the Mayor and the two at-large councilors, Posts 9 and 10. Tallahassee wrote 5 because all five commissioners are at-large; Miami wrote 1 because only the Mayor is. num_officials counts officials elected on this district across chambers, not seats in one chamber."
+    },
+    "district_mtfcc": "X0044",
+    "district_label_prefix": "Columbus Council District ",
+    "district_geo_id_prefix": "columbus-ga-council-district-",
+    "district_count": 8,
+    "chambers": [
+      {
+        "name": "Columbus Council",
+        "name_formal": "Columbus Council",
+        "official_count": 10,
+        "rationale": "official_count is 10, not 11. Charter Sec. 3-100(2): 'The council shall consist of ten (10) members.' The Mayor is elected separately and is not one of the ten -- Sec. 3-103(3) makes quorum six of the ten councilors, which counts the Mayor out of the body. Nashville's Vice Mayor ruling exactly."
+      },
+      {
+        "name": "Office of the Mayor",
+        "name_formal": "Office of the Mayor of Columbus, Georgia",
+        "official_count": 1
+      }
+    ],
+    "offices": [
+      {
+        "title": "Mayor",
+        "chamber": "Office of the Mayor",
+        "district_geo_id": "1319000",
+        "district_mtfcc": "G4110",
+        "voting_powers": "non_voting",
+        "representation_note": "The Mayor of Columbus is elected countywide and presides over the ten-member Columbus Council. Under Section 4-201 of the Charter of Columbus, Georgia, the Mayor has a voice in the Council's proceedings but the right to vote only in the case of a tie, and is deemed a member of the Council for that purpose only. Six of the ten councilors form a quorum, which counts the Mayor out of the body. The Mayor is the official spokesperson and the official head of the consolidated government, and nominates the city manager and the city attorney, each nomination taking effect only when six members of the Council confirm it.",
+        "description": null,
+        "person": {
+          "external_id": -1331020,
+          "full_name": "B.H. \"Skip\" Henderson III",
+          "first_name": "B.H.",
+          "last_name": "Henderson",
+          "middle_initial": null,
+          "name_suffix": "III",
+          "aliases": ["Skip Henderson", "B.H. Henderson III", "Skip Henderson III"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 1",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-1",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331021,
+          "full_name": "Simi Barnes",
+          "first_name": "Simi",
+          "last_name": "Barnes",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2026-05-26",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "gasos-certified-2026-05-19-special-council-district-1 + wtvm-2026-05-27-sworn-in"
+        }
+      },
+      {
+        "title": "Council Member, District 2",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-2",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331022,
+          "full_name": "Glenn Davis",
+          "first_name": "Glenn",
+          "last_name": "Davis",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 3",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-3",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331023,
+          "full_name": "Bruce Huff",
+          "first_name": "Bruce",
+          "last_name": "Huff",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 4",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-4",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331024,
+          "full_name": "Toyia Tucker",
+          "first_name": "Toyia",
+          "last_name": "Tucker",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 5",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-5",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331025,
+          "full_name": "Charmaine Crabb",
+          "first_name": "Charmaine",
+          "last_name": "Crabb",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 6",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-6",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331026,
+          "full_name": "Gary Allen",
+          "first_name": "Gary",
+          "last_name": "Allen",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 7",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-7",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331027,
+          "full_name": "JoAnne Cogle",
+          "first_name": "JoAnne",
+          "last_name": "Cogle",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["Joanne Cogle"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, District 8",
+        "chamber": "Columbus Council",
+        "district_geo_id": "columbus-ga-council-district-8",
+        "district_mtfcc": "X0044",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331028,
+          "full_name": "Walker Garrett",
+          "first_name": "Walker",
+          "last_name": "Garrett",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      },
+      {
+        "title": "Council Member, Post 9 (At Large)",
+        "chamber": "Columbus Council",
+        "district_geo_id": "1319000",
+        "district_mtfcc": "G4110",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331029,
+          "full_name": "Cathy Cook",
+          "first_name": "Cathy",
+          "last_name": "Cook",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2026-07-14",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "gasos-certified-2026-06-16-special-council-post-9-runoff + wrbl-2026-07-14-sworn-in"
+        }
+      },
+      {
+        "title": "Council Member, Post 10 (At Large)",
+        "chamber": "Columbus Council",
+        "district_geo_id": "1319000",
+        "district_mtfcc": "G4110",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331030,
+          "full_name": "Travis L. Chambers",
+          "first_name": "Travis",
+          "last_name": "Chambers",
+          "middle_initial": "L.",
+          "name_suffix": null,
+          "aliases": ["Travis Chambers"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "ccg-council-roster-2026-09-01"
+        }
+      }
+    ]
+  },
+  "county": {
+    "shares_government_with": "city",
+    "district_type": "COUNTY",
+    "countywide_district": {
+      "label": "Muscogee County",
+      "geo_id": "13215",
+      "mtfcc": "G4020",
+      "create": false,
+      "create_rationale": "The TIGER county load already created 13215/G4020 as a COUNTY district -- verified in production 2026-09-01: 1 row, carrying 0 offices. Inserting it again would lay a second district over the same ground. The county migration's pre-flight FAILS HARD if it is missing: the five officers have nowhere to sit without it."
+    },
+    "chambers": [
+      {
+        "name": "Muscogee County Elected Officials",
+        "name_formal": "Muscogee County Elected Officials",
+        "official_count": 5
+      }
+    ],
+    "offices": [
+      {
+        "title": "Sheriff",
+        "chamber": "Muscogee County Elected Officials",
+        "district_geo_id": "13215",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331031,
+          "full_name": "Greg Countryman",
+          "first_name": "Greg",
+          "last_name": "Countryman",
+          "middle_initial": "D.",
+          "name_suffix": null,
+          "aliases": ["Gregory D. Countryman", "Gregory Countryman"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05 + muscogee-sheriff-office-live-2026-09-01"
+        }
+      },
+      {
+        "title": "Clerk of Superior Court",
+        "chamber": "Muscogee County Elected Officials",
+        "district_geo_id": "13215",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331032,
+          "full_name": "Danielle F. Forté",
+          "first_name": "Danielle",
+          "last_name": "Forté",
+          "middle_initial": "F.",
+          "name_suffix": null,
+          "aliases": ["Danielle F. Forte", "Danielle Forte", "Danielle Forté"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05 + muscogeecourts-biography-live-2026-09-01"
+        }
+      },
+      {
+        "title": "Judge of Probate Court",
+        "chamber": "Muscogee County Elected Officials",
+        "district_geo_id": "13215",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331033,
+          "full_name": "Marc D'Antonio",
+          "first_name": "Marc",
+          "last_name": "D'Antonio",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["Marc Eric D'Antonio"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05 + muscogee-probate-fee-schedule-2025-01-13-authored"
+        }
+      },
+      {
+        "title": "Tax Commissioner",
+        "chamber": "Muscogee County Elected Officials",
+        "district_geo_id": "13215",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331034,
+          "full_name": "David A. Britt II",
+          "first_name": "David",
+          "last_name": "Britt",
+          "middle_initial": "A.",
+          "name_suffix": "II",
+          "aliases": ["David Britt", "David A. Britt"],
+          "term_start": "2025-01-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05 + muscogee-tax-commissioner-office-live-2026-09-01"
+        }
+      },
+      {
+        "title": "Coroner",
+        "chamber": "Muscogee County Elected Officials",
+        "district_geo_id": "13215",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331035,
+          "full_name": "Buddy Bryan",
+          "first_name": "Buddy",
+          "last_name": "Bryan",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["Eddie Bryan", "Eddie Lynwood Bryan"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "gasos-certified-2024-11-05 + georgia-coroners-assoc-directory-live-2026-09-01 + wtvm-2026-08-31"
+        }
+      }
+    ]
+  }
+}
