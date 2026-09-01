@@ -16,18 +16,27 @@
 publish neutral, sourced information about elected officials and candidates so
 that voters can make informed decisions.
 
-`EmpoweredVoteBot` is the automated fetcher we use to **verify the citations
-behind that published information**. When we record a claim about where an
-official stands on an issue, we attach the source. Our bot re-fetches those
-source pages so we can confirm the quoted text is really there and has not
-changed. It is a verification tool, not a search engine and not a training
-crawler.
+`EmpoweredVoteBot` is the automated fetcher we use to **find and check the
+original sources behind that published information**. It does two things:
+
+1. It reads public pages to **find original sources** we can cite for a claim
+   about an official — for example, the news report or public record where the
+   official said or did something.
+2. It **re-fetches those source pages to verify them** — to confirm the quoted
+   text is really there and has not changed.
+
+In both cases the goal is the same: accurate, factual information, always
+published with a **link back to the original source**. It is not a search engine
+and not a training crawler.
 
 ## What the bot does
 
-- It requests public web pages that are **already cited** in our data.
-- It reads the visible text of a page to check that a quotation we attribute to
-  a source genuinely appears on that page.
+- It requests **public web pages** — both pages we are considering as a source
+  and pages we have **already cited**.
+- It reads the visible text of a page to find, or to confirm, a quotation we
+  attribute to that source.
+- Everything it helps us publish carries a **link back to the original source**,
+  so a reader can always go and check for themselves.
 - It runs at a **low volume** — roughly a few hundred to a thousand pages in a
   normal month.
 
