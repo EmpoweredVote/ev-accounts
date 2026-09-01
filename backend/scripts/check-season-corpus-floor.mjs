@@ -39,10 +39,17 @@
  *
  *   A TRIGGER CAN BE DROPPED. A CI CHECK NOTICES.
  *
- * `inform.politician_answers` and `inform.politician_context` carry NO TIMESTAMPS you can
- * use to ask "which batch wrote this row" — so once rows are gone, there is no way to learn
- * from the table when or how they went. The corpus size is therefore the only cheap,
- * continuous evidence that season 1 is intact. This check reads it and refuses a decrease.
+ * A DELETED ROW LEAVES NO TRACE. Once rows are gone there is no way to learn from the table
+ * when or how they went, so the corpus size is the only cheap, continuous evidence that
+ * season 1 is intact. This check reads it and refuses a decrease.
+ *
+ * ⚠ CORRECTED 2026-09-01. This paragraph used to say both tables "carry NO TIMESTAMPS you can
+ *   use to ask which batch wrote this row". That is false — `politician_answers` and
+ *   `politician_context` BOTH carry `created_at` and `updated_at`. The true limitation is
+ *   narrower and only applies in one direction: SURVIVING rows can be dated, DELETED ones
+ *   cannot. That distinction is not academic — it is how the −4 window below was diagnosed.
+ *   Dating the season-1 context rows that have no answer isolated the four retired pairs to a
+ *   single batch in minutes, where the overstated claim would have said not to bother looking.
  *
  * WHAT IT ASSERTS, and why each is a FLOOR rather than an equality:
  *
@@ -135,19 +142,34 @@ function flagInt(name, fallback) {
  */
 const FLOORS = {
   1: {
-    // 33,164 when measured 2026-08-27, lowered twice for documented-blank retirements — each
-    // of which deleted a seating on purpose and rewrote its context as a blank:
+    // 33,164 when measured 2026-08-27, lowered three times for documented-blank retirements —
+    // each of which deleted a seating on purpose and rewrote its context as a blank:
     //
     //   −32 on 2026-08-30: CA_0032 (1), CA_0033 (9), CA_0035 (13), CA_0038 (7), CA_0039 (2)
     //   −94 on 2026-08-31: CA_0044 (31), CA_0045 (3), CA_0052 (2), CA_0056 (58)
+    //   − 4 on 2026-09-01: CA_0097 (4)
     //
     // NOT taken from "what prod reads today" — reading it off prod is what would absorb a real
     // loss silently. Each retirement count comes from the migration's own post-verify gate, and
     // no migration in either window INSERTs answers, so the net cannot hide extra deletions
     // behind additions. The context floor did not move across either window, which is the
     // signature of deliberate blanking rather than destruction.
-    // 33,164 − 32 − 94 = 33,038, which is the number below, derived rather than observed.
-    answers: flagInt('floor-answers', 33038),
+    // 33,164 − 32 − 94 − 4 = 33,034, which is the number below, derived rather than observed.
+    //
+    // 🔴 THE −4 WINDOW WAS FOUND BY THIS GATE GOING RED, NOT BY THE PR THAT CAUSED IT — THE
+    //    THIRD TIME (32, then 94, now 4). CA_0097 retires four Police Accountability seatings
+    //    to documented blanks and is CORRECT work: it carries an @context-decision line, a
+    //    guard that refuses any blanked row whose reasoning still asserts a position, and it
+    //    INSERTs no answers, so its net cannot hide extra deletions. It simply did not drop
+    //    this floor in the same PR, and it is applied to production while PR #292 is still
+    //    open — so the drop had to land here on master or the nightly gate stays red.
+    //
+    //    The four pairs were verified individually before this number moved, which is what
+    //    the signature rule above requires: David Chiu, Shawn Robinson, Hydee Feldstein Soto
+    //    and Heather Ferbert, all on Police Accountability, all rewritten 2026-09-01 with
+    //    reasoning that documents what was read and why no chair is evidenced. Context held
+    //    at 33,818 across the window.
+    answers: flagInt('floor-answers', 33034),
     // Untouched. A documented blank REWRITES its context, so this count did not move — and
     // that it held at exactly 33,818 is what proved the answer loss was deliberate.
     context: flagInt('floor-context', 33818),
