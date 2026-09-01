@@ -31,7 +31,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // Supabase one, so it isn't subject to authkitOnly's hide-the-form rule.
   const showLoginForm = showClassic || embeddedAuthEnabled;
   const navigate = useNavigate();
-  const { setAuth } = useAuthStore();
+  const { setAuth, accessToken, isAuthenticated, isLoading } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -49,6 +49,8 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
+  const isCodeCallback = workosEnabled && new URLSearchParams(window.location.search).has('code');
+  const ssoHandledRef = useRef(false);
 
   const signupHref = validRedirect
     ? `/signup?redirect=${encodeURIComponent(validRedirect)}`
@@ -92,7 +94,11 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
     // just-saved session lived in this origin's storage, not login's, so they
     // landed logged-out and had to sign in a second time.
     if (redirectTarget) {
-      window.location.href = redirectTarget;
+      // Cross-app handoff: feature apps (compass, VQ, essentials, …) read the
+      // token from the URL HASH fragment — never a query param, so it stays out
+      // of server logs and history. Matches CompassV2's documented contract and
+      // the app build's handoff.
+      window.location.href = `${redirectTarget}#access_token=${encodeURIComponent(token)}`;
     } else {
       navigate('/profile');
     }
@@ -153,7 +159,9 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   }
 
   useEffect(() => {
-    if (!autoForwarding || autoForwardStarted.current) return;
+    // Wait for bootstrap; never auto-forward an already-signed-in user — the SSO
+    // effect below hands them off (or to /profile) instead.
+    if (isLoading || isAuthenticated || !autoForwarding || autoForwardStarted.current) return;
     autoForwardStarted.current = true; // StrictMode re-runs effects — start once
     (async () => {
       try {
@@ -167,7 +175,25 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLoading, isAuthenticated]);
+
+  // Silent cross-app SSO + already-signed-in handoff. Reuses the session App
+  // bootstrap already restored (a second /session call here would race the
+  // cookie rotation and could sign the user out). Once bootstrap resolves: if
+  // signed in, hand the token to the requesting feature app via the
+  // #access_token= fragment it expects, or land on /profile. Break-glass never
+  // auto-continues; a ?code= callback has its own effect.
+  useEffect(() => {
+    if (isLoading || allowClassic || isCodeCallback || ssoHandledRef.current) return;
+    if (!isAuthenticated || !accessToken) return; // signed out → show the form
+    ssoHandledRef.current = true;
+    if (validRedirect) {
+      window.location.href = `${validRedirect}#access_token=${encodeURIComponent(accessToken)}`;
+    } else {
+      navigate('/profile', { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading, isAuthenticated, accessToken]);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -260,6 +286,24 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
       body: JSON.stringify({ email }),
     }).catch(() => {});
     setResendSent(true);
+  }
+
+  // While bootstrap is still resolving the session — or we're about to hand an
+  // existing one back — show a brief notice instead of flashing the form.
+  // Break-glass always shows the form; a ?code= callback renders its own state.
+  const showResolving =
+    !allowClassic && !isCodeCallback && (isLoading || (isAuthenticated && !!accessToken));
+  if (showResolving) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
+            empowered.vote
+          </h1>
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400">One moment…</p>
+      </div>
+    );
   }
 
   // While auto-forwarding to AuthKit, show only a redirect notice — the full
