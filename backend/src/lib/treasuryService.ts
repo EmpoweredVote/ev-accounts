@@ -143,7 +143,13 @@ export interface TreasuryCity {
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
-  available_datasets: TreasuryDataset[];
+  /** Present in the default (full) mode only. */
+  available_datasets?: TreasuryDataset[];
+  /**
+   * Present ONLY when the caller asked for `?datasets=summary`. The compact
+   * alternative to `available_datasets` — see the note on getCities().
+   */
+  dataset_summary?: { years: number[]; dataset_types: string[] };
 }
 
 export interface TreasuryBudget {
@@ -265,6 +271,8 @@ interface CityRow {
     fiscal_year: string; dataset_type: string; period_label: string | null; fund_scope: string;
     basis: string; reporting_entity: string; derivation: string; audit_grade: string;
   }> | null;
+  // Only selected in summary mode; the two are mutually exclusive by construction.
+  dataset_summary: { years: Array<string | number> | null; dataset_types: string[] | null } | null;
 }
 
 interface BudgetRow {
@@ -367,7 +375,7 @@ interface TransactionRow {
 // Mappers (explicit camelCase — NEVER spread rows)
 // ---------------------------------------------------------------------------
 
-function mapCity(row: CityRow): TreasuryCity {
+function mapCity(row: CityRow, mode: DatasetsMode = 'full'): TreasuryCity {
   return {
     id: row.id,
     name: row.name,
@@ -379,16 +387,30 @@ function mapCity(row: CityRow): TreasuryCity {
     hero_image_url: row.hero_image_url,
     created_at: row.created_at,
     updated_at: row.updated_at,
-    available_datasets: (row.available_datasets ?? []).map((d) => ({
-      fiscal_year: Number(d.fiscal_year),
-      dataset_type: d.dataset_type,
-      period_label: d.period_label ?? null,
-      fund_scope: d.fund_scope,
-      basis: d.basis,
-      reporting_entity: d.reporting_entity,
-      derivation: d.derivation,
-      audit_grade: d.audit_grade,
-    })),
+    // ⚠ EXACTLY ONE of these is present. A response carrying both would let a
+    // consumer read whichever it happened to check and silently disagree with
+    // another consumer reading the other.
+    ...(mode === 'summary'
+      ? {
+        dataset_summary: {
+          // ⚠ node-postgres returns bigint as a string; the years drive a year
+          // picker and a `FY2010-FY2025` range label, so they must be numbers.
+          years: (row.dataset_summary?.years ?? []).map(Number).sort((a, b) => b - a),
+          dataset_types: [...(row.dataset_summary?.dataset_types ?? [])].sort(),
+        },
+      }
+      : {
+        available_datasets: (row.available_datasets ?? []).map((d) => ({
+          fiscal_year: Number(d.fiscal_year),
+          dataset_type: d.dataset_type,
+          period_label: d.period_label ?? null,
+          fund_scope: d.fund_scope,
+          basis: d.basis,
+          reporting_entity: d.reporting_entity,
+          derivation: d.derivation,
+          audit_grade: d.audit_grade,
+        })),
+      }),
   };
 }
 
@@ -475,11 +497,36 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
 /**
  * Fetch all cities ordered by name.
  */
-export async function getCities(): Promise<TreasuryCity[]> {
-  const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
-            m.created_at, m.updated_at,
-            COALESCE(
+/**
+ * The per-row `available_datasets` array, and the compact alternative.
+ *
+ * ── ⚠⚠ WHY A SUMMARY MODE EXISTS ───────────────────────────────────────────
+ *
+ * `available_datasets` carries ONE ENTRY PER BUDGET ROW. Measured 2026-09-01 it
+ * is 111,776 entries and **97.1% of a 23.5 MB response** — and this endpoint is
+ * fetched on every Treasury Tracker page load, largely to look up ONE id.
+ *
+ * It also grows with the database, so it is a tax on loading data: the Michigan
+ * statewide sweep took this response from 18.4 MB to 23.5 MB by itself, and
+ * Michigan's remaining townships and villages would roughly double it again.
+ * Every future statewide sweep pays the same toll.
+ *
+ * The full per-(year, dataset_type, scope, basis, derivation, audit_grade)
+ * detail is only needed for the ONE entity a reader is looking at, and that is
+ * `getCityById`, which returns it unchanged. What a LIST needs is: does this
+ * entity have data, which years, which dataset types.
+ *
+ * ⚠ SUMMARY MODE IS OPT-IN AND THE DEFAULT IS BYTE-FOR-BYTE UNCHANGED. Trimming
+ * by default would be a silent breaking change for any consumer outside this
+ * repo, and this response is a documented cross-app contract.
+ *
+ * ⚠ It does NOT weaken the first-paint guarantee that put `derivation` and
+ * `audit_grade` on these entries. That guarantee is about the entity being
+ * RENDERED; a caller in summary mode fetches that one entity in full.
+ */
+export type DatasetsMode = 'full' | 'summary';
+
+const DATASETS_FULL = `COALESCE(
               json_agg(
                 json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type,
                                  'period_label', b.period_label, 'fund_scope', b.fund_scope,
@@ -488,7 +535,22 @@ export async function getCities(): Promise<TreasuryCity[]> {
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
-            ) AS available_datasets
+            ) AS available_datasets`;
+
+// ⚠ DISTINCT inside the aggregate, not afterwards: an entity with two fund
+// scopes emits two rows per (year, dataset_type), and Michigan has 16 years of
+// them. Aggregating first and de-duplicating in JS would ship the very bytes
+// this mode exists to avoid.
+const DATASETS_SUMMARY = `json_build_object(
+              'years', COALESCE(json_agg(DISTINCT b.fiscal_year) FILTER (WHERE b.id IS NOT NULL), '[]'),
+              'dataset_types', COALESCE(json_agg(DISTINCT b.dataset_type) FILTER (WHERE b.id IS NOT NULL), '[]')
+            ) AS dataset_summary`;
+
+export async function getCities(mode: DatasetsMode = 'full'): Promise<TreasuryCity[]> {
+  const { rows } = await pool.query<CityRow>(
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
+            m.created_at, m.updated_at,
+            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      GROUP BY m.id
@@ -498,7 +560,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
             ))
      ORDER BY m.name`
   );
-  return rows.map(mapCity);
+  return rows.map((r) => mapCity(r, mode));
 }
 
 /**
