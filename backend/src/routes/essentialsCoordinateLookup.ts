@@ -29,6 +29,7 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
+import { createSharedRateLimitStore } from '../lib/rateLimitStore.js';
 import { optionalAuth } from '../middleware/auth.js';
 import { classifyCoordinate } from '../lib/coordinateValidation.js';
 import { getRepresentativesByCoordinate } from '../lib/essentialsService.js';
@@ -37,10 +38,12 @@ const router = Router();
 
 // T-213-06: modest abuse protection on an anonymous POST — mirrors
 // events.ts's trackLimiter shape (windowMs/max/keyGenerator on req.ip).
+const coordinateRateLimitStore = createSharedRateLimitStore('coord');
 const coordinateLookupLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 30,
   keyGenerator: (req) => (req.ip ? ipKeyGenerator(req.ip) : 'unknown'),
+  ...(coordinateRateLimitStore ? { store: coordinateRateLimitStore } : {}),
   standardHeaders: true,
   legacyHeaders: false,
 });

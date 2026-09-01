@@ -50,6 +50,11 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `WORKOS_ISSUER`, `WORKOS_JWKS_URL` | Set manually | Optional overrides, only for a custom auth domain. Defaults derive from `WORKOS_CLIENT_ID`. |
 | `AUTHKIT_PRIMARY` | Set manually | `'true'` moves NEW credential creation to WorkOS: `POST /api/auth/signup` creates the WorkOS user with the password and a passwordless Supabase shadow row. Default `'false'` = Supabase-path signup. Flip together with the frontends' `VITE_AUTHKIT_ONLY`. Also gates the headless-login endpoints: `'true'` routes `/api/auth/forgot-password` and `/api/auth/reset-password` to WorkOS instead of Supabase — see "Headless embedded login" below. |
 | `COOKIE_DOMAIN` | Set manually | Domain for all three httpOnly auth cookies (`ev_session`, `ev_wos_session`, `ev_wos_pending`). Set to `.empowered.vote` in prod so the cookie is shared across subdomains — cross-app SSO (both the existing Supabase SSO and the headless-login WorkOS SSO) depends on this. Optional; absent = host-only cookie. |
+| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | Upstash dashboard | Shared store for **all** `express-rate-limit` limiters (auth, feedback, event-track, invite-send, coordinate-lookup) — see `backend/src/lib/rateLimitStore.ts`. **Load-bearing on a multi-instance service:** the default MemoryStore counts per Node process, so with N instances the caps are really cap × N and effectively never trip. With these set, the count is shared across instances and the caps are real. Also used by the FEC limiter, so they are already set in prod. Absent = per-instance fallback (warned at startup). |
+
+### Rate limiting
+
+Auth and abuse limits use `express-rate-limit` with the Upstash-backed **shared store** above, keyed per limiter (namespaces `auth`, `feedback`, `track`, `invite`, `coord`). If Upstash is unset the limiters silently fall back to the per-instance MemoryStore, which does **not** enforce across Render's multiple instances — verify a 429 actually appears (e.g. >10 bad logins in 15 min from one IP) after any change to instance count or Redis config.
 
 ### Database role (`ev_api` vs `postgres`)
 

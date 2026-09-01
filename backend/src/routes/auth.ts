@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
+import { createSharedRateLimitStore } from '../lib/rateLimitStore.js';
 import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
 import { requireAuth, verifyWorkosAccessToken, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -55,11 +56,16 @@ function setWosSession(res: Response, refreshToken: string) {
  * Applied to signup and login only — logout is authenticated and already
  * rate-limited by JWT overhead.
  */
+// Shared across Render instances via Upstash Redis. Without this, the default
+// MemoryStore counts per process, so on a multi-instance service the cap below
+// is effectively max × instances and rarely trips (see rateLimitStore.ts).
+const authRateLimitStore = createSharedRateLimitStore('auth');
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 10, // 10 attempts per window per IP
   standardHeaders: true,
   legacyHeaders: false,
+  ...(authRateLimitStore ? { store: authRateLimitStore } : {}),
   message: { code: 'RATE_LIMIT_EXCEEDED', message: 'Too many requests, please try again later' },
 });
 
