@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). Tasks 2-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASK 2 WRITTEN AND DRY-RUN CLEAN 2026-09-01 (`CC_wip_columbus_structure.sql`) — NOT APPLIED. Tasks 3-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -81,12 +81,15 @@ Gates before any write:
 - the union is **146.24 sq mi**, and the county-minus-union gap agrees with the `N/A` combination area
   to within 1 sq mi. 🔴 **Do NOT gate on full coverage of the county — it fails on correct data.**
 
-### Task 2 — city structure (`CC_wip_columbus_structure.sql`)
+### Task 2 — city structure (`CC_wip_columbus_structure.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 1 government, 2 chambers, 9 districts (8 × `X0044` + 1 citywide), 11 offices.
 
 - Mayor: `voting_powers = 'non_voting'` **plus a `representation_note`** — required by CHECK, and both
-  read paths must render it. Charter Sec. 4-102: presides, has a voice, votes only to break a tie.
+  read paths must render it. Charter **Sec. 4-201(2) and 4-201(4)**: presides, has a voice, votes only
+  to break a tie. 🔴 **CITATION CORRECTED 2026-09-01 — this line said Sec. 4-102, which is
+  “General provisions concerning departments” and says nothing about the Mayor.** The note is
+  voter-facing prose, so the wrong number would have been published.
 - Posts 9 and 10 are titled as at-large and hang on the citywide district. **They have no geometry**;
   both GIS layers return 8 polygons, which is the independent confirmation.
 - Post-verify refuses any office titled with *Mayor Pro Tem* (ruling R3).
@@ -96,8 +99,12 @@ Gates before any write:
 11 politicians, 11 terms. Band `-1331020 .. -1331030`.
 
 - 9 terms open-ended at `start_precision 'unknown'` — Columbus publishes no service-start.
-- **Barnes `2026-05-26` and Cook `2026-07-14` at `day` precision**, both `how_started` =
-  *special election*. These are the only dated starts in the wave and both are twice-sourced.
+- **Barnes `2026-05-26` and Cook `2026-07-14` at `day` precision**, both `how_started` = **`'elected'`**.
+  These are the only dated starts in the wave and both are twice-sourced.
+  🔴 **CORRECTED 2026-09-01 — this line said `how_started` *special election*, which is NOT a legal
+  value.** `essentials.office_terms` carries `CHECK how_started IN ('elected','appointed','succeeded',
+  'redistricted','unknown')`. Both won **special** elections; that fact belongs in the `source` string
+  and the migration header, not in the column.
 - 🔴 The band guard claims **only `-1331020 .. -1331030`**, never the shared band — the FL-4 correction.
 
 ### Task 4 — county officers (`CC_wip_muscogee_county.sql`)

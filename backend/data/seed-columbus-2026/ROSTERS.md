@@ -13,7 +13,7 @@ county commission because the Council already is it.
 
 | # | Body | Source | Endpoint | What it is |
 | --- | --- | --- | --- | --- |
-| A | city | **Columbus Consolidated Government charter** | `resources.columbusga.gov/mayor/pdfs/city_charter.pdf` | **the structural authority.** Sec. 3-100, 3-103, 4-102, 6-101, Art. VIII |
+| A | city | **Columbus Consolidated Government charter** | `resources.columbusga.gov/mayor/pdfs/city_charter.pdf` | **the structural authority.** Sec. 3-100, 3-103, **4-201**, 6-101, Art. VIII |
 | B | city | Columbus Council roster | `columbusga.gov/council/` + ten `/council/District-N` pages | the city's own roster, 10 members with districts |
 | C | city + county | **Georgia Secretary of State, certified results** | `results.sos.ga.gov/results/public/api/elections/muscogee-county-ga/{id}/data` | certified. **Covers Columbus municipal contests ONLY from 2026** — see defect 1 |
 | D | city | Columbus GIS `Elections/Districts` layer **10** "Council Districts" | `ccggisprod.columbusga.org/server/rest/services/Elections/Districts/MapServer/10` | current ROSTER, **superseded GEOMETRY** — see defect 2 |
@@ -142,7 +142,9 @@ Posts 9 and 10 hang on the **citywide** district, like Tallahassee's at-large co
 
 ### R2 — The Mayor is `non_voting` with a required note
 
-Sec. 4-102 lists the Mayor's powers: *"To preside at all meetings of the Council and to have a voice
+Sec. **4-201** lists the Mayor's powers (🔴 **corrected 2026-09-01 — this said 4-102, which is
+“General provisions concerning departments” and says nothing about the Mayor; the note is voter-facing,
+so the wrong number would have shipped**): *"To preside at all meetings of the Council and to have a voice
 in its proceedings"* and *"To have the right to vote only in the case of a tie, and for such purpose
 only to be deemed [a member]"*.
 
@@ -203,7 +205,7 @@ raise it again — Macon-Bibb at GA-5, then Philadelphia and Lexington.
 | Seat | Holder | how_started | term_start | precision | Source |
 | --- | --- | --- | --- | --- | --- |
 | Mayor | B.H. "Skip" Henderson III | elected | — | `unknown` | B |
-| Council, District 1 | Simi Barnes | **special election** | **2026-05-26** | **`day`** | C, G |
+| Council, District 1 | Simi Barnes | `elected` (**special**) | **2026-05-26** | **`day`** | C, G |
 | Council, District 2 | Glenn Davis | elected | — | `unknown` | B, D |
 | Council, District 3 | Bruce Huff | elected | — | `unknown` | B, D, E |
 | Council, District 4 | Toyia Tucker | elected | — | `unknown` | B, D, E |
@@ -211,7 +213,7 @@ raise it again — Macon-Bibb at GA-5, then Philadelphia and Lexington.
 | Council, District 6 | Gary Allen | elected | — | `unknown` | B, D, E |
 | Council, District 7 | JoAnne Cogle | elected | — | `unknown` | B, D, E |
 | Council, District 8 | Walker Garrett | elected | — | `unknown` | B, D, E |
-| Council, Post 9 (At Large) | Cathy Cook | **special election** | **2026-07-14** | **`day`** | C, H |
+| Council, Post 9 (At Large) | Cathy Cook | `elected` (**special**) | **2026-07-14** | **`day`** | C, H |
 | Council, Post 10 (At Large) | Travis L. Chambers | elected | — | `unknown` | B |
 
 ### County officers — Muscogee County (5)
@@ -275,7 +277,10 @@ The two vacancies, from source I:
 - **D1** — Jerry "Pops" Barnes' seat; **Byron Hickey** was appointed and did not run for a full term.
   **Simi Barnes is his daughter**, and now holds the seat her father held for nearly twenty years.
 
-⚠ Neither current holder was appointed. **Both `how_started` values are `special election`**, and
+⚠ Neither current holder was appointed. **Both `how_started` values are `'elected'`** — 🔴 **corrected
+2026-09-01: `'special election'` is NOT a legal value.** `essentials.office_terms` carries
+`CHECK how_started IN ('elected','appointed','succeeded','redistricted','unknown')`. A special election is
+an election; the *special* fact lives in the `source` string and the migration header. And
 Anker and Hickey are predecessors we do not seat.
 
 ---
