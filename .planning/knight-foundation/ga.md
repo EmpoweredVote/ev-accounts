@@ -427,6 +427,38 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 3. `splitName()` behaviour on `Reynaldo "Rey" Martinez`, `Williams, Jr.`, `Regina Lewis-Ward` and
    `Holly El-Mahdi` — four shapes in one roster that the FL/Nashville waves each had to widen for.
 
+## ▶️ WHERE THIS STOPPED — read this first
+
+Stages 1 and 2 are **applied and merged**: `CC_0025` geography loader entry (GA-1 used the loader,
+not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`** —
+⚠ re-count it against `origin/master`, this file has been wrong before.
+
+**Next wave is GA-3: Milledgeville**, the small pilot as Bradenton was for Florida. Branch fresh
+from master; `knight/ga-legislature` is merged.
+
+What is already on disk and should NOT be re-fetched:
+
+| Path | What |
+| --- | --- |
+| `backend/data/seed-ga-2026/` | the TIGER zips, both state map payloads, both member-list payloads, and the probe scripts that produced every number in this file. Untracked, on purpose. |
+| `backend/data/ga-legislature-roster.json` | the reconciled 236, committed |
+| `scripts/build-ga-legislature-roster.mjs` | rebuilds it, `--check-openstates` runs the change-check |
+| `scripts/gen-ga-legislature-migrations.mjs` | regenerates both GA-2 migrations as `CC_wip_*` |
+
+🔴 **The two legis.ga.gov payload endpoints 401 both curl and an in-page `fetch()`.** To refresh
+them, load the page in a browser and read the response bodies out of the network log. The roster
+builder deliberately does not fetch.
+
+🔴 **Carry forward into GA-3/GA-4:** Columbus/Muscogee and Macon-Bibb are CONSOLIDATED, so stage 4
+drops the county commission and keeps the separately elected county officers — confirmed from each
+charter, inherited from nothing. Milledgeville is an ordinary city in Baldwin County.
+
+🟢 **Stage 5's legislative half is already sourced**: a full-resolution portrait URL for all 236,
+which is the payload URL with `?size=mpSm` removed.
+
+⚠ **Re-check SD-12 before GA-5.** It is flagged vacant with a NULL `vacant_since`. A successor may
+be seated after the November 2026 general, and the seat then needs a real `term_start`.
+
 ## Open questions for GA-3 onward
 
 - Which county officers are **separately elected** in Columbus-Muscogee and Macon-Bibb. Spec §3.2
