@@ -491,6 +491,11 @@ router.post('/workos/authenticate', authLimiter, async (req: Request, res: Respo
       res.cookie(WOS_PENDING_COOKIE, outcome.pendingToken, wosPendingCookieOptions());
       res.status(200).json({ status: outcome.status });
       return;
+    case 'session_expired':
+      // invalid_grant is a refresh-only verdict; a password grant never yields
+      // it. Handled for exhaustiveness — treat as a failed sign-in.
+      res.status(401).json({ code: 'INVALID_CREDENTIALS', message: 'Invalid email or password' });
+      return;
     case 'invalid_credentials':
       res.status(401).json({ code: 'INVALID_CREDENTIALS', message: 'Invalid email or password' });
       return;
@@ -562,8 +567,20 @@ router.get('/session', async (req: Request, res: Response): Promise<void> => {
       res.status(200).json({ access_token: outcome.accessToken });
       return;
     }
-    res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
-    res.status(401).end();
+    if (outcome.status === 'session_expired') {
+      // Terminal: the refresh token is spent/expired/revoked. Drop the cookie
+      // and 401 so the client re-authenticates.
+      res.clearCookie(WOS_SESSION_COOKIE, evSessionCookieOptions());
+      res.status(401).end();
+      return;
+    }
+    // Transient WorkOS/network failure (5xx, 429, timeout). Do NOT clear the
+    // cookie or end the session — WorkOS session-resilience guidance is to keep
+    // the session and retry, never sign out on a transient error. Clearing here
+    // would also clobber a valid token a concurrent /session call just rotated
+    // in (the multi-tab / two-app race). 503 tells the client to keep its
+    // current token and try again on the next poll.
+    res.status(503).json({ code: 'REFRESH_UNAVAILABLE' });
     return;
   }
 

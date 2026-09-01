@@ -112,12 +112,26 @@ describe('refreshWorkosSession', () => {
     expect(sent).toMatchObject({ grant_type: 'refresh_token', refresh_token: 'rt_old' });
   });
 
-  it('surfaces a failed refresh as an error, not a throw', async () => {
+  it('maps a spent/expired refresh token (invalid_grant) to the terminal session_expired', async () => {
     (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
       errJson(400, { code: 'invalid_grant' })
     );
     const out = await refreshWorkosSession('rt_dead');
-    expect(out.status === 'invalid_credentials' || out.status === 'error').toBe(true);
+    expect(out).toEqual({ status: 'session_expired' });
+  });
+
+  it('maps a transient WorkOS 5xx to WORKOS_ERROR, NOT session_expired (session must survive)', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
+      errJson(503, { code: 'internal_server_error' })
+    );
+    const out = await refreshWorkosSession('rt_live');
+    expect(out).toEqual({ status: 'error', code: 'WORKOS_ERROR' });
+  });
+
+  it('maps a network error on refresh to WORKOS_ERROR (transient, not terminal)', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('network down'));
+    const out = await refreshWorkosSession('rt_live');
+    expect(out).toEqual({ status: 'error', code: 'WORKOS_ERROR' });
   });
 });
 

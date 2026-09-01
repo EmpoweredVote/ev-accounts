@@ -139,11 +139,22 @@ describe('GET /api/auth/session — WorkOS branch', () => {
     expect((res.get('Set-Cookie') ?? []).join(';')).toContain('ev_wos_session=rt_new');
   });
 
-  it('clears the cookie and 401s when the WorkOS refresh fails', async () => {
-    authSvc.refreshWorkosSession.mockResolvedValueOnce({ status: 'error', code: 'WORKOS_ERROR' });
+  it('clears the cookie and 401s when the refresh token is terminally expired', async () => {
+    authSvc.refreshWorkosSession.mockResolvedValueOnce({ status: 'session_expired' });
     const res = await request(app).get('/api/auth/session').set('Cookie', 'ev_wos_session=rt_dead');
     expect(res.status).toBe(401);
     expect((res.get('Set-Cookie') ?? []).join(';')).toContain('ev_wos_session=;');
+  });
+
+  it('keeps the cookie and 503s on a TRANSIENT refresh failure (never sign out on a blip)', async () => {
+    // WorkOS 5xx/429/timeout collapses to WORKOS_ERROR. The session must survive
+    // it — clearing the cookie here would also clobber a token a concurrent
+    // /session call just rotated in (the multi-tab / two-app race).
+    authSvc.refreshWorkosSession.mockResolvedValueOnce({ status: 'error', code: 'WORKOS_ERROR' });
+    const res = await request(app).get('/api/auth/session').set('Cookie', 'ev_wos_session=rt_live');
+    expect(res.status).toBe(503);
+    // The cookie is untouched — no Set-Cookie that would erase ev_wos_session.
+    expect((res.get('Set-Cookie') ?? []).join(';')).not.toContain('ev_wos_session=;');
   });
 
   it('401s with no cookie at all', async () => {
