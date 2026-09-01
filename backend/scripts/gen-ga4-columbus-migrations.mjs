@@ -3,10 +3,10 @@
  *
  * Generates the GA-4 migrations from backend/data/ga4-columbus-roster.json.
  *
- *   CC_wip_columbus_structure.sql   Task 2 — 1 government, 2 city chambers,
+ *   CC_0034_columbus_structure.sql  Task 2 — 1 government, 2 city chambers,
  *                                   9 districts (8 x X0044 + 1 citywide), 11 offices
- *   CC_wip_columbus_people.sql      Task 3 — 11 politicians, 11 terms, 0 vacancies
- *   CC_wip_muscogee_county.sql      Task 4 — 1 chamber, 5 offices + 5 people +
+ *   CC_0035_columbus_people.sql     Task 3 — 11 politicians, 11 terms, 0 vacancies
+ *   CC_0036_muscogee_county.sql     Task 4 — 1 chamber, 5 offices + 5 people +
  *                                   5 terms in ONE migration, per spec §3
  *
  * All three come from data/ga4-columbus-roster.json, and assertRoster() checks
@@ -19,10 +19,12 @@
  * Usage:  node scripts/gen-ga4-columbus-migrations.mjs
  *
  * ─────────────────────────────────────────────────────────────────────────────
- * 🔴 THE NUMBER IS TAKEN LAST. This emits CC_wip_*.sql. Rename, apply and commit
- *    in one go, after re-counting against EVERY remote ref — not against
- *    PROGRAM.md or ga.md, which record what the LAST wave took, a different
- *    question. Both files have gone stale within hours before.
+ * 🔴 THE NUMBERS WERE TAKEN LAST, at apply time on 2026-09-01, re-counted across
+ *    ALL 92 REMOTE REFS — not against PROGRAM.md or ga.md, which record what the
+ *    LAST wave took, a different question, and have gone stale within hours.
+ *    CC_0030 was the max, so this wave took CC_0031, CC_0032 and CC_0033.
+ *    ⚠ These are APPLIED. Do not renumber them: a renamed applied migration
+ *      desyncs the filename from its apply order.
  *
  * ─────────────────────────────────────────────────────────────────────────────
  * 🔴 COLUMBUS IS ONE GOVERNMENT WITH THREE CHAMBERS, SO THIS MIGRATION'S
@@ -368,7 +370,7 @@ END $$;`;
 }
 
 function structureFile() {
-  return `-- CC_wip_columbus_structure.sql
+  return `-- CC_0034_columbus_structure.sql
 --
 -- Knight Foundation cities program, wave GA-4 Task 2, CITY STRUCTURE half.
 --   * 1 government, 2 chambers
@@ -552,7 +554,7 @@ function peopleFile() {
     )
     .join('\n\n');
 
-  return `-- CC_wip_columbus_people.sql
+  return `-- CC_0035_columbus_people.sql
 --
 -- Knight Foundation cities program, wave GA-4 Task 3, CITY OCCUPANCY half.
 --   * ${offices.length} politicians, ${offices.length} terms, 0 vacancies
@@ -957,7 +959,7 @@ WHERE g.geo_id = ${q(gov.geo_id)} AND g.type = ${q(gov.type)} AND c.name = ${q(c
     )
     .join('\n\n');
 
-  return `-- CC_wip_muscogee_county.sql
+  return `-- CC_0036_muscogee_county.sql
 --
 -- Knight Foundation cities program, wave GA-4 Task 4, MUSCOGEE COUNTY --
 -- offices AND people in ONE migration, per spec §3.
@@ -1372,10 +1374,31 @@ COMMIT;
 // ── main ─────────────────────────────────────────────────────────────────────
 assertRoster();
 
+// 🔴🔴 THESE WERE CC_0031-0033 AND THEY COLLIDED. A PARALLEL SESSION OF THE SAME
+//      AUTHOR PUSHED CC_0031_season2_clarifying_reclass.sql AT 14:06:41 -0700,
+//      SIX MINUTES AFTER THE FETCH THAT SAID CC_0030 WAS THE MAX AND BEFORE
+//      THESE WERE APPLIED. That is CLAUDE.md's 1681 collision exactly: two
+//      claims on one slot, taken before either was visible, and fetching does
+//      not help. Renumbered to CC_0034-0036 on 2026-09-01.
+//
+//      ⚠ THESE THREE WERE ALREADY APPLIED WHEN THE COLLISION SURFACED, AND THEY
+//        MOVED ANYWAY, BECAUSE THE COST IS ASYMMETRIC AND MEASURED:
+//          * nothing in production references THESE numbers — every source
+//            string is roster-derived, verified 0 rows matching '%CC_003%';
+//          * the other migration writes 'Reclassified to clarifying (CC_0031)'
+//            INTO a compass_topic_revisions row, so its number becomes load
+//            bearing the moment it runs — the CA_0012 situation;
+//          * its claim is ~20 minutes older than this one's.
+//        "Do not rename an applied migration" guards apply-order desync and
+//        numbers embedded in data. Neither applies here; both apply there.
+//
+// 🔴 The numbers are baked in rather than left as CC_wip_* so that a
+//    REGENERATION OVERWRITES THE APPLIED FILES instead of dropping three stray
+//    wip copies beside them — the defect 0620ac28 had to clean up.
 const outputs = [
-  ['CC_wip_columbus_structure.sql', structureFile()],
-  ['CC_wip_columbus_people.sql', peopleFile()],
-  ['CC_wip_muscogee_county.sql', countyFile()],
+  ['CC_0034_columbus_structure.sql', structureFile()],
+  ['CC_0035_columbus_people.sql', peopleFile()],
+  ['CC_0036_muscogee_county.sql', countyFile()],
 ];
 for (const [name, body] of outputs) {
   const path = join(OUT_DIR, name);

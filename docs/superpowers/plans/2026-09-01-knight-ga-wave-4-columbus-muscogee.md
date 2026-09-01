@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASKS 2, 3 AND 4 WRITTEN AND DRY-RUN CLEAN 2026-09-01 as ONE transaction — 16 offices, 16 people, 16 terms, both anchors passing — NOT APPLIED. Only Task 5, the apply, is left.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: ✅ COMPLETE — ALL FIVE TASKS APPLIED 2026-09-01.** `X0044` (8 boundaries) plus `CC_0034` structure, `CC_0035` people and `CC_0036` county: **16 offices, 16 people, 0 vacancies**, both anchors passing in production. ⚠ The three were written as `CC_0031`-`CC_0033` and **renumbered after apply** — a parallel session claimed `CC_0031` six minutes after the re-count. See `ga.md`. Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -112,7 +112,7 @@ Gates before any write:
 1 chamber, 5 offices + 5 people + 5 terms, in **one** migration per spec §3. Band `-1331031 .. -1331035`.
 Britt at `2025-01-01` / `month`; the other four `unknown`. 🔴 **Names corrected by the live change-check 2026-09-01**: the Sheriff carries NO `Sr.`, the Clerk is `Danielle F. Forté` with the accent, and the Tax Commissioner is `David A. Britt II`.
 
-### Task 5 — dry-run, then take the numbers last
+### Task 5 — dry-run, then take the numbers last ✅ APPLIED 2026-09-01 (as `CC_0034`/`CC_0035`/`CC_0036` — see the collision note above)
 
 🔴 **The occupancy half cannot be dry-run alone** — its offices do not exist yet. Run structure +
 occupancy + county as **one transaction ending in `ROLLBACK`**, with the stream asserted to hold zero

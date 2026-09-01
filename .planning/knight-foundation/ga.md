@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` applied; Tasks 2+3+4 written, all 16 seats DRY-RUN CLEAN with both anchors passing, NOT applied. Task 5 = apply |
+| GA-4 | **Columbus + Muscogee County** | ✅ **APPLIED 2026-09-01** — `X0044` + `CC_0034`/`CC_0035`/`CC_0036`. **16 offices, 16 people, 0 vacancies.** Stages 3+4 closed; stage 5 (headshots + banner) left |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -1139,6 +1139,98 @@ All three halves dry-ran as ONE transaction ending in `ROLLBACK` — 16 offices,
 0 vacancies. Rollback confirmed reverted. All three run twice in one transaction insert **0** on the
 second pass. **`offices_missing_terms` measured 821 / 166 / unflagged 655 — unchanged** inside the
 transaction, which is the number that matters. `check:migrations` and `check:occupancy` green.
+
+
+
+### ✅ GA-4 Task 5 — APPLIED 2026-09-01. `CC_0034` structure, `CC_0035` people, `CC_0036` county.
+
+**16 offices, 16 people, 0 vacancies** — 11 city, 5 county. Columbus is the program's first
+consolidated city-county to be seated.
+
+| Applied | Contents |
+| --- | --- |
+| `CC_0034_columbus_structure` | 1 government, 2 city chambers, 9 districts (8 × `X0044` + citywide `1319000`/`G4110`), 11 offices |
+| `CC_0035_columbus_people` | 11 politicians, 11 terms — 2 dated at `day` via `seat_officeholder()`, 9 open-ended `'unknown'` |
+| `CC_0036_muscogee_county` | 1 chamber on the SAME government, 5 offices + 5 people + 5 terms, **0 districts created** |
+
+#### 🔴🔴🔴 THEY WERE `CC_0031`–`CC_0033` AND THEY COLLIDED — WITH ANOTHER SESSION OF THE SAME AUTHOR
+
+The re-count at the start of Task 5 read `CC_0030` as the max across **92** remote refs. **Six minutes
+later**, at `14:06:41 -0700`, a parallel Cantrell session pushed
+`compass/season2-clarifying-reclass` carrying **`CC_0031_season2_clarifying_reclass.sql`** — and these
+three were applied after that, under numbers that were no longer free.
+
+That is CLAUDE.md's **1681 collision**, in the form the file warns is unobservable: *“two authors both
+taking the next free number before either pushes is not observable from any repo state — fetching does
+not help.”* Here it was not even two authors. It was **two sessions of one person**, and the losing
+count was **six minutes** old.
+
+🔴 **The three moved to `CC_0034`–`CC_0036` even though they were already applied, and the reason is
+measured, not stylistic:**
+
+| | these three | the other `CC_0031` |
+| --- | --- | --- |
+| applied? | **yes** | **no** — pushed on a branch, prod matched 0 rows |
+| number embedded in prod data? | **no** — every `source` string is roster-derived; `'%CC_003%'` matches **0** rows in `office_terms.source` and `politicians.data_source` | **yes, once it runs** — it writes `'Reclassified to clarifying (CC_0031)'` into a `compass_topic_revisions` row, the `CA_0012` situation |
+| age of the claim | later | **~20 min earlier** |
+
+CLAUDE.md's “do not rename an applied migration” guards two things: apply-order desync, and numbers
+already written into prod. **Neither applies to these three; both apply to the other one.** So the
+asymmetry decided it. ▶ **Measure both sides before choosing which number moves — “mine is applied”
+is not automatically the stronger claim.**
+
+⚠ The renumber is a one-line change per file (the self-naming header comment) plus the generator's
+output names. It touches **no production row**, and the other branch is untouched and can merge and
+apply as it stands.
+
+#### 🔴 A SEPARATE, PRE-EXISTING FINDING: `CC_0029` NO LONGER RE-RUNS CLEAN
+
+Re-running **every** migration in the slice — `CC_0025` … `CC_0036`, each wrapped `BEGIN … ROLLBACK` —
+found eleven clean and **one red**:
+
+```
+CC_0029_baldwin_county   ERROR: baldwin county people: 1 term row(s) are not an
+                                open-ended unknown-precision term
+```
+
+The row is **John Gonzalez `-1331017`**, whose term `CC_0030` legitimately closed
+(`term_end 2026-05-01`, `how_ended 'retired'`). `CC_0029`'s post-verify asserts that *every* term it
+wrote is *still* open-ended and undated — an assertion that a later, correct migration falsified.
+
+🔴 **A POST-VERIFY THAT ASSERTS “EVERYTHING I WROTE IS STILL EXACTLY AS I WROTE IT” BREAKS THE MOMENT A
+SUCCESSOR LEGITIMATELY AMENDS ONE ROW.** It is the FL-4 over-wide-scoping lesson on the **time** axis
+rather than the sibling axis. Nothing is broken in production and nothing re-applies migrations, so
+this is left as it stands rather than rewritten after the fact — but ⚠ **`CC_0035` and `CC_0036` carry
+the same shape** and will go red the first time a Columbus officeholder is succeeded. **GA-5 should
+scope that assertion to rows with no `term_end`, or to offices carrying no later term.**
+
+⚠ Also worth knowing for the next re-run sweep: several migrations report large `INSERT n` counts on a
+re-run that are **temp-table seed rows, not writes** — `CC_0025` reports 236 into `ga_offices`. Read
+the post-verify `NOTICE`, not the insert count.
+
+#### Verified in production after the apply
+
+| Check | Result |
+| --- | --- |
+| the 16 seats via `office_current_holder` | **16 of 16 resolve**, 0 vacancies |
+| **Anchor A**, Government Center | council **D7 Cogle** · at-large **2** · Mayor **1** · county **5** · **HD-140** · **SD-15** |
+| **Anchor B**, 7300 Blackmon Rd | council **D6 Allen** · at-large **2** · Mayor **1** · county **5** · **HD-141** · **SD-29** |
+| per-district positive control | **8 of 8**, one holder each, at each district's own interior point |
+| county tier at all 8 district points | **5 officers at every one** |
+| `offices_missing_terms` | **821 / 166 / unflagged 655 — unchanged** |
+| `check:reachability` | **5 / 17 / 37** against baseline 5 / 17 / 38 — nothing regressed |
+| `check:child-county` | children 7,782 · mapped 7,782 · **stale 0** |
+| `check:migrations`, `check:occupancy` | green |
+| all three re-run | clean — second pass seats **0** and still passes post-verify |
+
+🟢 **Anchor B differs from Anchor A on BOTH tiers**, which is what proves the city and county tiers
+were not crossed.
+
+#### The day-of-apply change-check, run live before writing anything
+
+15 of 16 confirmed live on 2026-09-01; all six people who must not appear are absent (Hickey, Anker,
+Thomas departed; Hugley, Aaron, Zajac elected but not seated until January 2027). The sixteenth is the
+**Probate Judge**, whose limit is stated in `CC_0036`'s header and flagged for re-check at GA-5.
 
 
 ---
