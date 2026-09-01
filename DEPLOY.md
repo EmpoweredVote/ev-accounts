@@ -188,6 +188,26 @@ Cross-app SSO for WorkOS users (Task 11) depends on **`COOKIE_DOMAIN=.empowered.
 in prod (see the Backend env var table above) — the same requirement the existing
 Supabase `ev_session` cookie already has.
 
+#### Cross-app token handoff (feature apps: compass, VQ, essentials, …)
+
+Feature apps that take a **bearer token** (not the cookie) redirect the user to
+`accounts.empowered.vote/login?redirect=<app-url>` and expect to come back with the
+token in the URL **hash** (`<app-url>#access_token=…`) — see CompassV2's
+`src/lib/auth.js`. The login hub (`admin/src/pages/Login.tsx`) fulfills this:
+
+- If the user **already has a session**, it hands the token back immediately (no form),
+  reusing the session App bootstrap restored — it does **not** make its own
+  `/api/auth/session` call, which would race the cookie rotation. A logged-in user who
+  lands on `/login` with no `?redirect=` is sent to `/profile` instead of re-seeing the form.
+- After a fresh login (embedded, classic, or the `?code=` return leg), `finishLogin`
+  appends `#access_token=` to a `?redirect=` target.
+
+**CompassV2 needs no change** — it already reads `#access_token`. **Validation-quests
+still needs a small change in its own repo**: its WorkOS return leg uses the hosted
+AuthKit SDK `?code=` callback, which the embedded hub does not produce; point its
+sign-in at `accounts.empowered.vote/login?redirect=…` and read `#access_token` (or adopt
+the shared-cookie `/api/auth/session`) instead. Until then VQ keeps using the hosted flow.
+
 #### Open items — confirm on staging before prod
 
 These are **not yet confirmed**. They are human-gated verification, not something to
