@@ -658,3 +658,54 @@ in and the magistrate is out. The line is the constitution's, not ours.
 - ▶ Try the SOS certified-results API first for both. It answered every Milledgeville seat.
 - ⚠ Does Georgia's Reapportionment Office publish certified **local** plans in fetchable form? It
   would give a second independent map for county commission districts, which Baldwin did not have.
+
+## GA-3 stage 5 — banner: candidates certified, AWAITING THE PICK (2026-09-01)
+
+Proof: [Milledgeville Banner Certification](https://claude.ai/code/artifact/d1cc601b-075a-4e38-8130-a87a51783c87).
+Every frame is the full 1700x540 asset in a CSS box at the production ratio with `object-fit: cover`,
+so the browser performs the real crop. Composed assets are in `backend/.tmp-ga3-banner/` (untracked):
+`asset-E.jpg`, `asset-F.jpg`, `asset-A.jpg`, plus `_sources.json` with URL/licence/author per source.
+
+🔴 **THE BOX IS TWO BOXES, AND THE NUMBERS COME FROM `SectionBanner.jsx` BANNER_ASPECT** — not guessed:
+
+| Box | Ratio | Height | Asset visible |
+| --- | --- | --- | --- |
+| mobile | `13 / 4` | 120px @390 | **96.9%**, rows 8-531 of 540 |
+| desktop `md`+ | `6 / 1` | 216px @1296 | **52.5%**, rows **128-411** of 540 |
+
+### Shortlist
+
+| ID | Subject | Source | Licence |
+| --- | --- | --- | --- |
+| **E** | Old State Capitol / GMC, State House Square | 4080x3072 (1.33:1) | **CC0**, Clifflandis |
+| **F** | Sanford & Napier Halls, Georgia College, W Greene St | 3715x1400 (**2.65:1**) | **CC BY-SA 2.0**, Ken Lund |
+
+Recommended **F**: its native ratio is closest to 3.148:1, so its desktop band is a real composition
+rather than a survivor of one. E's foreground is a wide expanse of dry winter grass under bare trees.
+
+### 🔴🔴 THE OBVIOUS SUBJECT FAILS THIS BOX, AND AN ANCHOR SWEEP IS WHAT PROVED IT
+
+The **Old Governor's Mansion** is Milledgeville's signature building and the natural pick. Its source
+is 1.42:1, so the 3.148:1 crop already discards 55% of the rows and the desktop band keeps 52.5% of
+what remains — **about a quarter of the original**. Swept at anchors 0.30 / 0.45 / 0.60 on **two**
+different mansion photographs, every result is **a wall of windows**: pediment cropped off the top,
+ground off the bottom. That is the FL-7 failure exactly — composed straight to 6:1, a tall building
+renders as its own middle. ▶ **A frontal building portrait is not a banner subject. Prefer a
+horizontally arranged subject, and prefer a source already near 3:1.** This applies to Columbus and
+Macon next.
+
+### 🔴 The best-licensed sources were unusable for a reason no licence check catches
+
+The two widest, most permissive sources — Historic American Buildings Survey, federal work,
+unambiguously public domain, **1.62:1**, which would have survived the desktop band better than
+anything else found — measured **100% greyscale**. Archival black and white beside a shelf of colour
+banners reads as a fault, not a choice. **Test colour, not only licence and ratio.**
+
+### Where it ships, which is NOT this repo
+
+⚠ `CURATED_LOCAL` lives in **`src/lib/buildingImages.js` in the `essentials` repo** (branch `main`),
+so the banner is a **separate PR there** plus a `cities/milledgeville.jpg` upload to the shared bucket.
+⚠ **No key is scoped `GA` yet** — Milledgeville is the first, and it must be declared
+**`match:'exact'`**: FL-7 found substring matching handed one city's banner to seven others.
+⚠ Attribution travels in the registry comment, as the existing entries do. Overwriting a bucket object
+does **not** purge the CDN, so a replacement must be versioned.
