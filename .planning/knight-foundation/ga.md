@@ -847,11 +847,27 @@ Gonzalez `term_end` **2026-05-01** at `day` (stated outright); Chapple `term_sta
 the new coroner" sentence is about **Gonzalez** succeeding Wayne Brooks, not Chapple, and reading it as
 Chapple's would be a misattributed citation. Chapple takes `-1331019`, so **GA-4 starts at `-1331020`**.
 
-### The four Baldwin headshots, three routes now exhausted
+### The four Baldwin headshots — FIVE routes tried, all dead. Leave them clean-null.
 
 Owed: Probate Judge **Todd A. Blackwell**, Tax Commissioner **Cathy Freeman Settle**, Surveyor
-**James E. Smith**, and the Coroner — **now Steve Chapple, not John Gonzalez**. All four clean nulls.
-Ballotpedia holds pages for all of them and **no portrait on any**; the county directory carries
-portraits only for the 5 commissioners plus 3 staff. ▶ Local press and the county party site are the
-routes left. 🟢 The directory's opaque `documentID`s independently re-confirm GA-3's off-by-one —
+**James E. Smith**, and the Coroner — **now Steve Chapple, not John Gonzalez**. All four clean nulls,
+which is the correct state: **a blank beats a link.**
+
+| Route | Result |
+| --- | --- |
+| Ballotpedia | pages exist for all four, **no portrait on any** |
+| County staff directory, aggregate | portraits only for the 5 commissioners + 3 staff officers |
+| County per-person pages `/directory-listing/<name>` | **404** — the path a search surfaces is stale |
+| County party sites (`baldwincountydems.org`, `baldwincountygagop.org`) | **do not resolve** |
+| The Union-Recorder, 2026-05-14 | **a real photo exists and is REFUSED** — see below |
+
+🔴 **THE ONE PHOTOGRAPH FOUND IS A LICENCE REFUSAL, NOT A WIN.** The coroner story carries
+`5-13-Chappel-sworn-in.jpg`, captioned *"Blackwell swears in Steve Chapple … "* — **two of the four
+owed officials in one frame**, and the unsized original is reachable by dropping `?resize=`. It is
+still refused: the photo carries **no photographer credit**, and the paper runs a **"Purchase Photos"
+storefront**, so its photography is a commercial product. The standing rule is that the **credit line
+is the licence test** — the absence of a permissive credit is not permission. Recorded so the next
+session does not re-find it and reason differently.
+
+🟢 The directory's opaque `documentID`s independently re-confirm GA-3's off-by-one —
 **Butts 238, Davis 239**, not district order.
