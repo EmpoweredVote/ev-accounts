@@ -43,7 +43,7 @@
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.45.0",
     "@types/unzipper": "^0.10.11",
-    "@upstash/redis": "^1.38.2",
+    "@upstash/redis": "^1.38.3",
     "adm-zip": "^0.6.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
