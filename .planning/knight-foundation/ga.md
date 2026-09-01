@@ -8,7 +8,8 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3..5 | Columbus, Macon, Milledgeville | — |
+| GA-3 | **Milledgeville + Baldwin County** | 📋 **PLANNED 2026-09-01, not applied** |
+| GA-4..5 | Columbus, Macon | — |
 
 ---
 
@@ -427,14 +428,53 @@ answers now resolve, which is what stage 2 exists to deliver before any city wav
 3. `splitName()` behaviour on `Reynaldo "Rey" Martinez`, `Williams, Jr.`, `Regina Lewis-Ward` and
    `Holly El-Mahdi` — four shapes in one roster that the FL/Nashville waves each had to widen for.
 
+## GA-3 — Milledgeville + Baldwin County, PLANNED 2026-09-01
+
+Plan: [`2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md`](../../docs/superpowers/plans/2026-09-01-knight-ga-wave-3-milledgeville-baldwin.md) ·
+Roster: [`backend/data/seed-milledgeville-2026/ROSTERS.md`](../../backend/data/seed-milledgeville-2026/ROSTERS.md)
+
+**18 offices, 18 people, 0 vacancies** — 7 city (Mayor at-large + 6 single-member districts) and
+11 county (5 single-member commission districts with **no at-large seat**, plus 6 officers).
+Two boundary loads `X0042`/`X0043`, three migrations `CC_0027`–`CC_0029`. Pre-state probe at
+Milledgeville City Hall scores **2 of 4** — HD-149 Floyd Griffin and SD-25 Rick Williams resolve;
+Baldwin County has zero offices and Georgia has **zero `LOCAL` districts**.
+
+🔴🔴 **THE OBVIOUS COUNCIL-DISTRICT SERVICE IS THE SUPERSEDED ONE, AND ONLY ONE DISTRICT SAYS SO.**
+The city's own `City Council Districts (2025)` layer is a post-2020 plan carrying `Pop`/`DX_DEV`.
+Baldwin County's `ElectionGeography` copy is 2021–2022. Tested at all six interior points, **five
+agree and District 4 does not** — its point falls in the county copy's District 1 — while the
+symmetric difference is non-zero on every district (D1 alone is 0.99 of ~20.4 sq mi). Three spot
+checks would have passed on the wrong map. **Load the city's layer.**
+
+🔴🔴 **A LAYER TITLED "(2025)" CAN STILL CARRY A PRE-2025 ROSTER.** That same city layer's
+`CouncilMem` field reads Walden / Reynolds / Chambers — the three predecessors. Geometry vintage and
+attribute vintage are different questions about the same row.
+
+🔴 **`EditDate` IS PER ROW, AND IT IS THE TELL.** The county's layer is correct on all 5 commissioners
+(edited 2026-04-21) and wrong on 3 of 6 city seats (edited 2021–2022). The same layer still names
+Joe Biden as President and carries two contradictory US House rows.
+
+🟢🟢 **THE SECRETARY OF STATE PUBLISHES CERTIFIED *MUNICIPAL* RESULTS, AND THEY SETTLED EVERY SEAT.**
+`results.sos.ga.gov/results/public/api/elections/baldwin-county-ga/{electionId}/data` carries the
+**November 4, 2025 Municipal General** as well as the 2024 general. ▶ **Look for this first in
+Columbus and Macon** — nothing in Florida used this route. The election ids come from
+`/api/jurisdictions/Georgia`; the county short name is `<county>-county-ga`; a county with no contest
+in an election returns **HTTP 204**, which is itself the proof that no runoff was held.
+
+⚠ **The Municode charter is codified through JANUARY 2014** and still says "MAYOR AND ALDERMEN" — it
+describes no six-district council. Two questions stay open because of it: whether the Mayor votes on
+the council, and why District 2 was seated on exactly 50.0% with no runoff (plurality is the likely
+answer, unconfirmed). Municode's API 401s curl **and** an in-page `fetch()`; render the SPA and read
+the DOM.
+
 ## ▶️ WHERE THIS STOPPED — read this first
 
 Stages 1 and 2 are **applied and merged**: `CC_0025` geography loader entry (GA-1 used the loader,
-not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`** —
-⚠ re-count it against `origin/master`, this file has been wrong before.
+not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`**, and next free
+private MTFCC is **`X0042`** — ⚠ re-count both against every remote ref, this file has been wrong before.
 
-**Next wave is GA-3: Milledgeville**, the small pilot as Bradenton was for Florida. Branch fresh
-from master; `knight/ga-legislature` is merged.
+**GA-3 is PLANNED and not applied.** Branch `knight/ga-3-milledgeville`, cut fresh from
+`origin/master` at `d980e56b`. Execute Task 1 of the plan (load `X0042`).
 
 What is already on disk and should NOT be re-fetched:
 
@@ -459,10 +499,32 @@ which is the payload URL with `?size=mpSm` removed.
 ⚠ **Re-check SD-12 before GA-5.** It is flagged vacant with a NULL `vacant_since`. A successor may
 be seated after the November 2026 general, and the seat then needs a real `term_start`.
 
-## Open questions for GA-3 onward
+## The Georgia county-officer template, ruled 2026-09-01 (Cantrell)
+
+Baldwin puts **thirteen** countywide offices on the ballot besides the commission. GA-3 seats six:
+
+| Seated | Why |
+| --- | --- |
+| Sheriff, Clerk of Superior Court, Probate Judge, Tax Commissioner | named as county officers in **Ga. Const. Art. IX, Sec. I, Par. III** |
+| Coroner, Surveyor | statutory county officers, and Baldwin genuinely elected both countywide in 2024 |
+
+| Excluded | Why |
+| --- | --- |
+| Solicitor General | a prosecutor — the **FL-5 rule** against Palm Beach's State Attorney |
+| Chief Magistrate | judicial branch, **Ga. Const. Art. VI**, as Florida excluded its county judges |
+| Ocmulgee Circuit DA + 5 Superior Court judges | **MULTI-COUNTY circuit**, the FL-5 ruling exactly |
+| School board, Piedmont Soil and Water supervisor | spec §11 |
+| GMC Board of Trustees (6 districts, same 2025 ballot) | a **state junior college's** board, not a city office |
+
+⚠ **Georgia's probate judge is a county officer, not a judicial-branch officer** — that is why it is
+in and the magistrate is out. The line is the constitution's, not ours.
+
+## Open questions for GA-4 / GA-5
 
 - Which county officers are **separately elected** in Columbus-Muscogee and Macon-Bibb. Spec §3.2
-  says consolidation merges the legislative body only, and names Sheriff, Clerk of Superior Court and
-  Tax Commissioner as the expected Georgia set — **confirm from each charter, inherit nothing.**
-- Council structure for all three: district vs at-large split, and whether the mayor sits on the body.
-- Milledgeville is the small pilot for this slice, as Bradenton was for Florida.
+  says consolidation merges the legislative body only — **confirm from each charter, inherit nothing**,
+  including from the Baldwin template above.
+- Council structure for both: district vs at-large split, and whether the mayor sits on the body.
+- ▶ Try the SOS certified-results API first for both. It answered every Milledgeville seat.
+- ⚠ Does Georgia's Reapportionment Office publish certified **local** plans in fetchable form? It
+  would give a second independent map for county commission districts, which Baldwin did not have.
