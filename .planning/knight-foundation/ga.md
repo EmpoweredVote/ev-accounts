@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | ✅ **APPLIED 2026-09-01** — `X0044` + `CC_0034`/`CC_0035`/`CC_0036`. **16 offices, 16 people, 0 vacancies.** Stages 3+4 closed; stage 5 (headshots + banner) left |
+| GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -1231,6 +1231,73 @@ were not crossed.
 15 of 16 confirmed live on 2026-09-01; all six people who must not appear are absent (Hickey, Anker,
 Thomas departed; Hugley, Aaron, Zajac elected but not seated until January 2027). The sixteenth is the
 **Probate Judge**, whose limit is stated in `CC_0036`'s header and flagged for re-check at GA-5.
+
+
+
+### ✅ GA-4 stage 5 — APPLIED 2026-09-01. 15 of 16 headshots, and the banner is live.
+
+**Columbus is Georgia's second jurisdiction complete across all five stages.**
+
+#### Headshots — 15 imported, 1 deliberate clean null
+
+All 15 render from **`photo_custom_url`**, verified: every object fetches back from the CDN as a real
+JPEG by magic number. The one gap is the **Judge of Probate Court**, whose court never names or
+pictures its judge — five routes dead. A blank beats a link.
+
+🔴🔴 **THE CMS HONOURS ANY REQUESTED SIZE BY UPSCALING, SO BIGGER DIMENSIONS ARE NOT EVIDENCE OF A
+BIGGER SOURCE.** Six seats are served as ~207×253 thumbnails. Asking
+`columbusga.gov/Portals/.../Councilor-2.jpg?w=2000&h=2500&mode=crop&scale=both` returns a **2000×2500**
+image at 334 KB — and a 1:1 crop of the face shows **no hair strands and no skin texture**. It is a
+9.7× enlargement of the thumbnail.
+
+⚠ **This is the exact shape of GA-2's win, inverted.** There, dropping `?size=mpSm` returned a genuine
+1688×2283 original. Here the same move returns a fake. **Measure the pixels, never the header.** My
+first two attempts to discriminate — edge-variance, then a round-trip difference — both failed to
+separate real detail from an upscale; **one look at a 1:1 crop settled it in seconds.**
+
+⚠ **AN HTTP 404 FROM ONE QUERY STRING IS NOT A MISSING ASSET.** The Tax Commissioner's portrait 404s
+at `Mr%20Britt.jpg?w=155&h=193&mode=crop&scale=both` and returns **1523×1753** bare. The flhouse.gov
+lesson in a new dress.
+
+🟢 **The four positional filenames were flagged and then cleared by evidence, not by assumption.**
+`Councilor-2/3-1/6/8.jpg` encode a seat, not a person. Each sits under its own page's content GUID,
+each page names the right person, and all four faces are visibly distinct. The Coroner's
+`Coroner.jpg` cleared itself differently — **the image has "Buddy Bryan" printed in it**, which is
+also why his render is the smallest here: the printed frame and name plate are cropped away.
+
+| Band | Count |
+| --- | --- |
+| at 600×750 after downscale | **9** |
+| stored at native size, 1.75–3.6× short | **6** |
+| clean null | **1** |
+
+#### 🔴🔴 The change-check paid again, and again it was the headshot pass that found it
+
+Searching for Bruce Huff's portrait surfaced *“Columbus City Councilor Bruce Huff announces
+retirement after 15 years”* (WTVM, 2026-01-28). Read carelessly that is a departure. The body says he
+**will not seek re-election** — he serves to January 2027, and Sherrie Aaron succeeds him. So it
+**confirms** the wave's central ruling rather than contradicting it, and it is a third independent
+witness that the 2026 winners are not yet seated. ⚠ **A retirement headline is not a vacancy.**
+
+#### Banner — `cities/columbus.jpg`, live
+
+The **Eagle & Phenix mill row above the Chattahoochee whitewater course**, from the west bank.
+CC BY-SA 4.0, Wikimedia Commons. Composed to 1700×540 **first**, then certified in both boxes: the
+desktop 6:1 band keeps only rows 128–411 of 540, and the crop puts the mills, the river and the rapids
+all inside it. Chroma **30.9** in that band — measured, because Milledgeville's best-licensed candidate
+turned out to be 100% greyscale. Registered as a `GA`-scoped `CURATED_LOCAL` key with `match:'exact'`
+in essentials `knight/ga-4-columbus-banner`.
+
+🔴🔴🔴 **THE BEST CANDIDATE WAS THE WRONG CITY AND IT NEARLY SHIPPED.** The largest, best-licensed,
+most banner-shaped image the search returned — *Downtown Columbus View from Main St Bridge*,
+**6188×4227, public domain, a Wikimedia FEATURED PICTURE** — is **COLUMBUS, OHIO**. Its own Commons
+categories say “Columbus, Ohio skylines”. **This wave met the same homonym twice**: first
+`gis.columbus.gov` for council geometry, now the banner. Ohio is the bigger Columbus, so it ranks
+first on every generic search. ▶ **Check the city, not the name — read the file's categories.**
+
+🟢 **`match:'exact'` was verified, not assumed.** Columbus GA resolves to the new key; **Columbus OH,
+Columbus MS, Columbusville GA and West Columbus GA all fall through to their state banner.**
+`buildingImages` tests 23/23.
 
 
 ---
