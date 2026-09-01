@@ -31,6 +31,8 @@ import dotenv from 'dotenv';
 import pg from 'pg';
 import { createClient } from '@supabase/supabase-js';
 
+import { EMPOWERED_VOTE_UA } from '../src/lib/fetchPageContent.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
@@ -122,7 +124,7 @@ function refererFor(url: string): string {
 async function fetchImage(url: string): Promise<{ bytes: Buffer; contentType: string; ext: string }> {
   const resp = await fetch(url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      'User-Agent': EMPOWERED_VOTE_UA,
       'Referer': refererFor(url),
       'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
     },

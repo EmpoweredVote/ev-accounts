@@ -60,7 +60,11 @@ export type SnippetVerdict =
   | { verdict: 'snippet_not_found' }
   | { verdict: 'snippet_too_short' }
   | { verdict: 'name_not_present' }
-  | { verdict: 'url_broken'; reason: string };
+  | { verdict: 'url_broken'; reason: string }
+  // The site's robots.txt disallows our bot and no archived snapshot exists.
+  // Distinct from url_broken so a policy "no" is counted separately from a
+  // genuinely broken link. See verificationFetch.RobotsDisallowedError.
+  | { verdict: 'robots_disallowed'; reason: string };
 
 /**
  * Verify a snippet is genuinely drawn from ONE passage of the page.
@@ -212,7 +216,9 @@ export function checkNameProximity(args: {
 
 export type PageFetchResult =
   | { ok: true; text: string }
-  | { ok: false; reason: string };
+  // `robotsDisallowed` distinguishes a policy block from a broken URL; the two
+  // are surfaced as different verdicts and counted separately.
+  | { ok: false; reason: string; robotsDisallowed?: boolean };
 
 export type PageFetcher = (url: string) => Promise<PageFetchResult>;
 
@@ -233,7 +239,12 @@ export function createPageFetcher(
       const text = await rawFetch(url);
       result = { ok: true, text };
     } catch (err: any) {
-      result = { ok: false, reason: err?.message ?? String(err) };
+      // Detect the robots-disallowed signal by its stable `code`, so we don't
+      // import verificationFetch here (keeps this module fetcher-agnostic).
+      const robotsDisallowed = err?.code === 'robots_disallowed';
+      result = robotsDisallowed
+        ? { ok: false, reason: 'robots_disallowed', robotsDisallowed: true }
+        : { ok: false, reason: err?.message ?? String(err) };
     }
     cache.set(url, result);
     return result;
@@ -330,7 +341,9 @@ export async function verifyEvidence(args: {
           judged.push({
             snippet: ev.snippet,
             snippet_index: ev.snippet_index,
-            verdict: { verdict: 'url_broken', reason: fetched.reason },
+            verdict: fetched.robotsDisallowed
+              ? { verdict: 'robots_disallowed', reason: fetched.reason }
+              : { verdict: 'url_broken', reason: fetched.reason },
           });
         }
       } else {

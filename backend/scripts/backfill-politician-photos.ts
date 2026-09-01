@@ -16,6 +16,8 @@
 import 'dotenv/config';
 import pg from 'pg';
 
+import { EMPOWERED_VOTE_UA } from '../src/lib/fetchPageContent.js';
+
 const WRITE = process.argv.includes('--write');
 const LIMIT_IDX = process.argv.indexOf('--limit');
 const LIMIT = LIMIT_IDX >= 0 ? parseInt(process.argv[LIMIT_IDX + 1] ?? '999999', 10) : 999999;
@@ -26,9 +28,12 @@ const BUCKET = 'politician_photos';
 
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
-// Some photo origins block scraper user-agents — use a browser-like UA.
+// Honest, contactable user-agent (see EMPOWERED_VOTE_UA / decision 0003 rung 0).
+// Verified 2026-09-01 that the government/CDN photo hosts in this corpus
+// (ncleg.gov, sboe.dc.gov, S3, Google Cloud Storage, Squarespace/Wix CDNs,
+// CivicEngine, Wikimedia) serve identical bytes under this UA and the old spoof.
 const FETCH_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'User-Agent': EMPOWERED_VOTE_UA,
   Accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
 };
 

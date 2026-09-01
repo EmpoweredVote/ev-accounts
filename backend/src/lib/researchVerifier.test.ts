@@ -201,6 +201,15 @@ describe('createPageFetcher', () => {
     await fetcher('https://x.example');
     expect(calls).toBe(1);
   });
+
+  it('maps a robots-disallowed error (by code) to a distinct result, not url_broken', async () => {
+    const robotsErr = Object.assign(new Error('robots_disallowed: https://blocked.example'), {
+      code: 'robots_disallowed',
+    });
+    const fetcher = createPageFetcher(async () => { throw robotsErr; });
+    const result = await fetcher('https://blocked.example');
+    expect(result).toEqual({ ok: false, reason: 'robots_disallowed', robotsDisallowed: true });
+  });
 });
 
 import { verifyEvidence, type StanceRow, type EvidenceRow } from './researchVerifier.js';
