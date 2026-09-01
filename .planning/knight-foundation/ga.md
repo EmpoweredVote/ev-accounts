@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | ⏸ **MEASURED + PLANNED 2026-09-01, NOT APPLIED** — 16 seats, R4 ruled: exclude both municipal-court offices |
+| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` loaded (8 districts); 16 seats still to seat |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -825,6 +825,40 @@ layer. Georgia's is `ccggisprod.columbusga.org`. The FEC-homonym class in GIS cl
 
 Near misses are all different people: `David Cook` (TX), `Gary Davis`, `Gary Garrett` (UT),
 `David Smith` (FL), `Gregory Smith` (OR), `David K. Thompson` (WI), `Glenn Thompson` (PA).
+
+
+### ✅ GA-4 Task 1 applied 2026-09-01 — `X0044`, the 8 council districts
+
+`scripts/load-columbus-council-boundaries.ts`. **8 boundaries, 0 errors**, all `ST_MultiPolygon`,
+SRID 4326, `state='ga'`. Union **146.2397 sq mi**. Re-runs clean (second pass inserts 0).
+`check:child-county` **stale 0** — an `X`-code load writes no `place`, so no `CONCURRENT` refresh was
+needed, exactly as GA-3 predicted.
+
+🟢 **Every gate passed on the dry run before any write.** Gate order puts the discriminator first
+(the FL-6 rule):
+
+| Gate | Result |
+| --- | --- |
+| 1 — agreement with the county's **ballot-building record** (layer 8) | **0.0000 sq mi on all eight** |
+| 2 — divergence from the superseded layer 10 | **12.2487 sq mi** — genuinely different maps |
+| 3 — control points, each district's own interior point | 8 of 8 |
+| 4 — negative controls, each with its **county asserted against TIGER** | 4 of 4, no district |
+| 5 — per-district area, ±2% | 8 of 8 at **0.00%** |
+| 6 — structure: union, overlaps, and the gap that should be there | union 146.2397, **0 overlaps**, gap-vs-N/A **0.0216** |
+| 7 — `X0044` unclaimed, and TIGER place `1319000` present | ✓ |
+
+🟢 **THE GAP TIGHTENED FROM 0.770 TO 0.0216 sq mi** once the loader staged geometry through
+`ST_MakeValid`. The 0.770 measured while planning was mostly sliver noise between two layers of one
+service, not real disagreement — worth knowing before anyone sets a tolerance from a raw measurement.
+
+🔴 **GATE 4 NOW ASSERTS EACH NEGATIVE CONTROL'S COUNTY INSTEAD OF LABELLING IT**, which is GA-3's
+Hancock defect turned into code: the loader resolves every control against TIGER `G4020` and fails if
+it lands in a county its label does not name. ⚠ **Columbus has no "outside the city" control available
+at all** — city and county are the same ground — so the discriminating control is the **Fort Benning
+gap**: inside Muscogee, inside the city, and inside no council district.
+
+⚠ `ccggisprod.columbusga.org` serves a **valid certificate**; `curl -k` while measuring was habit, not
+necessity, and Node's `fetch` reaches it unaided.
 
 ---
 

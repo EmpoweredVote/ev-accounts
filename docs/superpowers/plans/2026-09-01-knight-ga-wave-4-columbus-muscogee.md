@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: PLANNED AND MEASURED. Both blockers resolved 2026-09-01; Tasks 1-5 NOT YET APPLIED.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). Tasks 2-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -68,7 +68,7 @@ It is also why the acceptance probe must assert both tiers separately.
 
 ## 3. Tasks
 
-### Task 1 — load the 8 council districts as `X0044`
+### Task 1 — load the 8 council districts as `X0044` ✅ APPLIED 2026-09-01 (8 boundaries, all 7 gates green, re-runs clean)
 
 Source: `Elections/Districts` **layer 3**, `outSR=4326`, one polygon per `DISTRICTID` 001–008.
 **Not layer 10.** Model on `scripts/load-milledgeville-council-boundaries.ts`.
