@@ -1,6 +1,6 @@
 # GA-4 — Columbus + Muscogee County
 
-**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASKS 2 AND 3 WRITTEN AND DRY-RUN CLEAN 2026-09-01 (`CC_wip_columbus_structure.sql`, `CC_wip_columbus_people.sql`) — NOT APPLIED. Tasks 4-5 not yet written.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
+**Status: TASK 1 APPLIED 2026-09-01 (`X0044`, 8 boundaries). TASKS 2, 3 AND 4 WRITTEN AND DRY-RUN CLEAN 2026-09-01 as ONE transaction — 16 offices, 16 people, 16 terms, both anchors passing — NOT APPLIED. Only Task 5, the apply, is left.** Written 2026-09-01, branch `knight/ga-4-columbus-muscogee`.
 
 **Program tracker:** [`.planning/knight-foundation/PROGRAM.md`](../../../.planning/knight-foundation/PROGRAM.md) ·
 **State notes:** [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md) ·
@@ -107,10 +107,10 @@ Gates before any write:
   and the migration header, not in the column.
 - 🔴 The band guard claims **only `-1331020 .. -1331030`**, never the shared band — the FL-4 correction.
 
-### Task 4 — county officers (`CC_wip_muscogee_county.sql`)
+### Task 4 — county officers (`CC_wip_muscogee_county.sql`) ✅ WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
 
 1 chamber, 5 offices + 5 people + 5 terms, in **one** migration per spec §3. Band `-1331031 .. -1331035`.
-Britt at `2025-01-01` / `month`; the other four `unknown`.
+Britt at `2025-01-01` / `month`; the other four `unknown`. 🔴 **Names corrected by the live change-check 2026-09-01**: the Sheriff carries NO `Sr.`, the Clerk is `Danielle F. Forté` with the accent, and the Tax Commissioner is `David A. Britt II`.
 
 ### Task 5 — dry-run, then take the numbers last
 
@@ -134,7 +134,7 @@ pair:
 | Council district | exactly 1 councilor |
 | Council at-large | exactly 2 (Posts 9 and 10) |
 | County officers | exactly 5 |
-| State House | HD-137 Debbie Buckner |
+| State House | 🔴 **HD-140 Tremaine Teddy Reese** — corrected 2026-09-01. This line said HD-137 Debbie Buckner, copied from GA-1's verification, which probed the PLACE POLYGON'S OWN INTERIOR POINT (rural northern Muscogee). The Government Center is downtown. An anchor's expected answer is a property of the POINT, not of the jurisdiction |
 | State Senate | SD-15 Ed Harbison |
 
 **Anchor B — a second address in a different council district**, to prove the tiers were not crossed.

@@ -9,7 +9,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` loaded (8 districts); Tasks 2+3 written and dry-run clean, NOT applied; Task 4 (5 county officers) left |
+| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` applied; Tasks 2+3+4 written, all 16 seats DRY-RUN CLEAN with both anchors passing, NOT applied. Task 5 = apply |
 | GA-5 | Macon-Bibb | — |
 
 ---
@@ -1040,6 +1040,105 @@ offices** until Task 4.
 - **The temp table is `ON COMMIT DROP`**, so a double-apply test inside ONE transaction must
   `DROP TABLE IF EXISTS col_seed;` between passes. That is a harness artifact and deliberately not in
   the migration: each migration really is applied in its own transaction.
+
+
+
+### ✅ GA-4 Task 4 — Muscogee County officers, WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`CC_wip_muscogee_county.sql` — **1 chamber, 5 offices + 5 people + 5 terms in ONE migration** (spec §3),
+sub-range `-1331031 .. -1331035`. **0 districts created**: the countywide `13215`/`G4020` `COUNTY`
+district already exists from the TIGER county load and the pre-flight fails hard if it is missing.
+The chamber attaches to the **same government row** the structure half creates — one government,
+three chambers.
+
+⚠ Civic Spaces pushed three commits to master while this was being written. **They added no
+migrations**; `CC_0030` is still the max across all 92 remote refs, so Task 5 takes `CC_0031`–`CC_0033`
+— re-count again at apply.
+
+#### 🔴🔴 THE CHANGE-CHECK PRODUCED FIVE NAME CORRECTIONS AND ONE STATED GAP
+
+Run live on 2026-09-01, asking *“has this person left?”* rather than *“do my sources agree?”*.
+
+| Seat | Was | Is | Authority |
+| --- | --- | --- | --- |
+| Sheriff | Greg Countryman, **Sr.** | **Greg Countryman**, middle initial **D.** | his own office publishes “Sheriff Greg Countryman” and, once, “Gregory D. Countryman”. 🔴 **No “Sr.” anywhere** — the suffix was unsourced |
+| Clerk of Superior Court | Danielle F. Fort**e** | **Danielle F. Forté** | her own office: “Meet Danielle F. Forté”. The certified ballot's ASCII form is kept as an alias |
+| Tax Commissioner | David Britt | **David A. Britt II** | his own office: “David A. Britt II, MBA, MPA” |
+| Coroner | Buddy Bryan | Buddy Bryan, aliases **Eddie Bryan / Eddie Lynwood Bryan** | Georgia Coroners Association directory and Ballotpedia. Same person, same seat, same office address; “Buddy” is the ballot and press name |
+| Judge of Probate Court | Marc D'Antonio | unchanged, alias **Marc Eric D'Antonio** | ⚠ see the gap below |
+
+🟢 **The freshest occupancy evidence in the whole wave is the Coroner's**: Buddy Bryan pronounced a
+death on **2026-08-31**, yesterday. That is precisely what Baldwin's coroner lacked.
+
+#### ⚠ ONE SEAT'S CHANGE-CHECK COULD NOT REACH 2026, AND THAT IS STATED, NOT HIDDEN
+
+The **Judge of Probate Court**'s newest positive evidence is his court's own 2025 fee schedule,
+authored “Marc D'Antonio” and created **2025-01-13** — after he took office, and nothing since.
+Routes tried and measured dead:
+
+| Route | Result |
+| --- | --- |
+| `columbusga.gov/probate/` | **never names its judge** — measured twice, including JS-rendered via Playwright |
+| `gaprobate.gov` Probate Courts Directory | a filter UI; `?_county=Muscogee` does not filter, no judge rendered |
+| Ballotpedia “Muscogee County, Georgia” | **redirects to the city page**, which carries only federal, state and city seats — there is no Muscogee County officials page at all |
+| local news, 2026 | nothing on the probate court either way |
+
+Nothing anywhere reports a departure. 🔴 **That is not the same as currency** — it is the exact shape
+of the Baldwin coroner failure, where every source agreed and all of them predated the retirement.
+He is seated, the limit is written into the migration header, and **the seat is flagged for re-check
+at GA-5**.
+
+⚠ **Ballotpedia is a dead route for Georgia county officers, and it fails silently.** The cached
+`_bp-columbus.html` from the planning session is **0 bytes**. A plain `fetch` returns a body that
+strips to nothing; Playwright renders the page fine and it simply has no county officials on it. Two
+different failures wearing the same “absent” answer.
+
+#### ⚠ “25 years in the office” is not 25 years in the seat
+
+The Tax Commissioner's bio says he has “served in the office for 25 years”. That is service in the
+**department**. He became Tax Commissioner in **2025**, succeeding Lula Huff. Reading the 25 years as
+occupancy would be the published-expiry error class. His term stays `2025-01-01` at **`month`**: the
+month is sourced, the day is not.
+
+#### 🟢 A NEW GATE FOR CONSOLIDATED JURISDICTIONS: THE TIERS MUST NOT CROSS
+
+The citywide `LOCAL` district and the countywide `COUNTY` district cover the **same 221.011 sq mi**.
+So a county officer accidentally hung on the citywide district would still resolve at every Columbus
+address and look completely correct — only the tier label would be wrong, and nothing would error.
+
+The post-verify asserts every county office sits on `13215`/`G4020` `COUNTY`. **Proved to bite**:
+moving the Sheriff onto the citywide `LOCAL` district raises
+*“1 county office(s) do not sit on 13215/G4020 COUNTY — the tiers crossed”*.
+▶ Every consolidated jurisdiction left in the program needs this gate: Macon-Bibb, Philadelphia,
+Lexington.
+
+#### 🟢 ACCEPTANCE — both anchors pass, inside the dry-run transaction
+
+| | Anchor A, Government Center | Anchor B, 7300 Blackmon Rd |
+| --- | --- | --- |
+| council district | **1** — D7 JoAnne Cogle | **1** — D6 Gary Allen |
+| council at large | **2** — Posts 9 and 10 | **2** |
+| Mayor | **1**, `non_voting` | **1** |
+| county officers | **5** | **5** |
+| State House | **1** — HD-140 Tremaine Teddy Reese | **1** — HD-141 Carolyn Hugley |
+| State Senate | **1** — SD-15 Ed Harbison | **1** — SD-29 Randy Robertson |
+
+Anchor B differs from A on **both** tiers, which is what proves the tiers were not crossed. County
+tier checked at all 8 council-district interior points: **5 officers at every one**.
+
+⚠ **THE PLAN'S EXPECTED STATE HOUSE ANSWER FOR ANCHOR A WAS WRONG, AND IT IS THE PLAN THAT IS WRONG,
+NOT THE DATA.** It expected HD-137 Debbie Buckner, because it carried forward GA-1's verification —
+which probed the **place polygon's own interior point**, a rural point in northern Muscogee. The
+Government Center is downtown, in **HD-140**. Columbus spans several House districts. 🔴 **An anchor's
+expected answer is a property of the POINT, not of the jurisdiction**; do not copy one anchor's result
+onto a different address.
+
+#### Verification
+
+All three halves dry-ran as ONE transaction ending in `ROLLBACK` — 16 offices, 16 people, 16 terms,
+0 vacancies. Rollback confirmed reverted. All three run twice in one transaction insert **0** on the
+second pass. **`offices_missing_terms` measured 821 / 166 / unflagged 655 — unchanged** inside the
+transaction, which is the number that matters. `check:migrations` and `check:occupancy` green.
 
 
 ---

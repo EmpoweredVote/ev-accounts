@@ -12,6 +12,8 @@
     "Ruling R3: Mayor Pro Tem is a parenthetical, not an office. Sec. 3-103(1): the Council elects one of its own members by six votes, annually. The post-verify gate refuses any office titled with it.",
     "Ruling R4: 5 county officers -- Sheriff, Clerk of Superior Court, Judge of Probate Court, Tax Commissioner, Coroner. Charter Art. VIII Ch. 1 'County Officers and Agencies' preserves four (Sec. 8-100, 8-101, 8-102, 8-103); the Clerk of Superior Court comes in via Ga. Const. Art. IX, Sec. I, Par. III. Muscogee elects no Marshal and no Surveyor, so Baldwin's six-officer template does NOT transfer. Both municipal-court offices are excluded (Cantrell, 2026-09-01).",
     "how_started 'special election' IS NOT A LEGAL VALUE. essentials.office_terms carries CHECK how_started IN ('elected','appointed','succeeded','redistricted','unknown'). Barnes and Cook won SPECIAL elections, so how_started is 'elected' and the special-election fact is carried in the source string and the migration header, not in the column. The plan's Task 3 text says 'special election' and would fail that CHECK.",
+    "COUNTY CHANGE-CHECK, run live 2026-09-01, asked \"has this person LEFT?\" and produced FIVE name corrections and ONE evidence gap. Sheriff: his own office publishes 'Gregory D. Countryman' and NO 'Sr.' anywhere -- the suffix in the first draft was unsourced and is dropped. Clerk: her own office writes 'Danielle F. Forté' with the accent; the certified ballot writes the ASCII form, which is kept as an alias. Tax Commissioner: his own office publishes 'David A. Britt II, MBA, MPA'. Coroner: the Georgia Coroners Association directory names him 'Eddie Bryan' and Ballotpedia 'Eddie Lynwood Bryan' -- SAME PERSON, same seat, same office address; 'Buddy' is the ballot and press name and stays the full_name. ⚠ THE PROBATE JUDGE IS THE ONE SEAT WHOSE CHANGE-CHECK COULD NOT REACH 2026: newest positive evidence is his court's own fee schedule authored 2025-01-13. His court's website never names its judge (measured twice, including JS-rendered), gaprobate.gov's directory would not filter, and Ballotpedia has no Muscogee County officials page at all. Nothing anywhere reports a departure. Seated, with the limit stated -- not hidden.",
+    "⚠ 'Having served in the office for 25 years' on the Tax Commissioner's bio is service in the DEPARTMENT, not tenure in the elected seat. He became Tax Commissioner in 2025, succeeding Lula Huff. Reading it as occupancy would be the published-expiry error class.",
     "Party is deliberately absent. It lives on races.primary_party, never on a person or an office.",
     "District types differ by tier: CITY districts are district_type 'LOCAL', COUNTY districts are 'COUNTY'. The citywide LOCAL district IS created here; the countywide COUNTY district is only ASSERTED -- the TIGER county load already made 13215/G4020, verified in production 2026-09-01."
   ],
@@ -329,16 +331,16 @@
         "description": null,
         "person": {
           "external_id": -1331031,
-          "full_name": "Greg Countryman, Sr.",
+          "full_name": "Greg Countryman",
           "first_name": "Greg",
           "last_name": "Countryman",
-          "middle_initial": null,
-          "name_suffix": "Sr.",
-          "aliases": ["Greg Countryman", "Gregory Countryman"],
+          "middle_initial": "D.",
+          "name_suffix": null,
+          "aliases": ["Gregory D. Countryman", "Gregory Countryman"],
           "term_start": null,
           "start_precision": "unknown",
           "how_started": "elected",
-          "source": "gasos-certified-2024 + muscogee-sheriff-office-2026-09-01"
+          "source": "gasos-certified-2024-11-05 + muscogee-sheriff-office-live-2026-09-01"
         }
       },
       {
@@ -351,16 +353,16 @@
         "description": null,
         "person": {
           "external_id": -1331032,
-          "full_name": "Danielle F. Forte",
+          "full_name": "Danielle F. Forté",
           "first_name": "Danielle",
-          "last_name": "Forte",
+          "last_name": "Forté",
           "middle_initial": "F.",
           "name_suffix": null,
-          "aliases": ["Danielle Forte"],
+          "aliases": ["Danielle F. Forte", "Danielle Forte", "Danielle Forté"],
           "term_start": null,
           "start_precision": "unknown",
           "how_started": "elected",
-          "source": "gasos-certified-2024"
+          "source": "gasos-certified-2024-11-05 + muscogeecourts-biography-live-2026-09-01"
         }
       },
       {
@@ -378,11 +380,11 @@
           "last_name": "D'Antonio",
           "middle_initial": null,
           "name_suffix": null,
-          "aliases": [],
+          "aliases": ["Marc Eric D'Antonio"],
           "term_start": null,
           "start_precision": "unknown",
           "how_started": "elected",
-          "source": "gasos-certified-2024"
+          "source": "gasos-certified-2024-11-05 + muscogee-probate-fee-schedule-2025-01-13-authored"
         }
       },
       {
@@ -395,16 +397,16 @@
         "description": null,
         "person": {
           "external_id": -1331034,
-          "full_name": "David Britt",
+          "full_name": "David A. Britt II",
           "first_name": "David",
           "last_name": "Britt",
-          "middle_initial": null,
-          "name_suffix": null,
-          "aliases": [],
+          "middle_initial": "A.",
+          "name_suffix": "II",
+          "aliases": ["David Britt", "David A. Britt"],
           "term_start": "2025-01-01",
           "start_precision": "month",
           "how_started": "elected",
-          "source": "gasos-certified-2024 + press-succeeded-lula-huff"
+          "source": "gasos-certified-2024-11-05 + muscogee-tax-commissioner-office-live-2026-09-01"
         }
       },
       {
@@ -422,11 +424,11 @@
           "last_name": "Bryan",
           "middle_initial": null,
           "name_suffix": null,
-          "aliases": [],
+          "aliases": ["Eddie Bryan", "Eddie Lynwood Bryan"],
           "term_start": null,
           "start_precision": "unknown",
           "how_started": "elected",
-          "source": "gasos-certified-2024"
+          "source": "gasos-certified-2024-11-05 + georgia-coroners-assoc-directory-live-2026-09-01 + wtvm-2026-08-31"
         }
       }
     ]
