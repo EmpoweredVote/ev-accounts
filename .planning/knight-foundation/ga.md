@@ -7,7 +7,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | Wave | Scope | Status |
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
-| GA-2 | Legislature: 180 House + 56 Senate | ⏸ **written and dry-run clean; NOT applied** |
+| GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3..5 | Columbus, Macon, Milledgeville | — |
 
 ---
@@ -383,6 +383,37 @@ ROLLBACK
 
 Rollback confirmed to have reverted: production still reads 4 Georgia chambers, **0** legislative
 offices and **0** rows in the `-1330256..-1330001` band.
+
+### ✅ GA-2 applied 2026-09-01 — `CC_0025` structure, `CC_0026` occupancy
+
+Numbers taken LAST, re-counted against `origin/master` at apply time: `CC_0024` was the highest
+claimed across all 77 remote refs, so these are `CC_0025` and `CC_0026`. `check:migrations` green,
+2 added, no collisions.
+
+| Half | Applied |
+| --- | --- |
+| `CC_0025` structure | 2 chambers, **236 offices** (180 House, 56 Senate), SD-12 flagged `is_vacant` |
+| `CC_0026` occupancy | **233 new politicians + 2 reused**, **235 terms**, all open-ended at `'unknown'` |
+
+### Verified in production
+
+| Check | Result |
+| --- | --- |
+| Offices / seated | House **180 / 180**; Senate **56 / 55**, 1 flagged vacant |
+| `offices_missing_terms` | 820 → **821** total, 165 → **166** flagged, **unflagged unchanged at 655** — the whole point of flagging SD-12 in the structure half |
+| SD-12 | `is_vacant` true, `vacant_since` NULL, holder NULL |
+| The two reuses | Gaines `-131001` and Clark `-131301` each hold exactly **1** seat; no duplicate row created |
+
+🟢 **The acceptance probe returns a real person at all three Knight cities** — two of the four
+answers now resolve, which is what stage 2 exists to deliver before any city wave runs:
+
+| City | State House | State Senate |
+| --- | --- | --- |
+| Columbus | HD-137 Debbie Buckner | SD-15 Ed Harbison |
+| Macon-Bibb | HD-145 Tangie Herring | SD-26 David Lucas |
+| Milledgeville | HD-149 Floyd Griffin | SD-25 Rick Williams |
+
+### What is left before GA-3
 
 ### What is left before GA-2 applies
 
