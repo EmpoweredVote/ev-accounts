@@ -9,7 +9,8 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
-| GA-4..5 | Columbus, Macon | — |
+| GA-4 | **Columbus + Muscogee County** | 🔨 **IN PROGRESS 2026-09-01** — Task 1 `X0044` loaded (8 districts); 16 seats still to seat |
+| GA-5 | Macon-Bibb | — |
 
 ---
 
@@ -719,3 +720,196 @@ so the banner is a **separate PR there** plus a `cities/milledgeville.jpg` uploa
 **`match:'exact'`**: FL-7 found substring matching handed one city's banner to seven others.
 ⚠ Attribution travels in the registry comment, as the existing entries do. Overwriting a bucket object
 does **not** purge the CDN, so a replacement must be versioned.
+
+---
+
+## GA-4 — Columbus + Muscogee County, ⏸ MEASURED AND PLANNED 2026-09-01, NOT APPLIED
+
+Plan: [`2026-09-01-knight-ga-wave-4-columbus-muscogee.md`](../../docs/superpowers/plans/2026-09-01-knight-ga-wave-4-columbus-muscogee.md) ·
+Roster and every measurement: [`backend/data/seed-columbus-2026/ROSTERS.md`](../../backend/data/seed-columbus-2026/ROSTERS.md) ·
+Brief: <https://claude.ai/code/artifact/3154e2c0-b658-4dcb-a253-3e99b432fa1d>
+
+**16 offices, 16 people, 0 vacancies** — 11 city, 5 county. Branch `knight/ga-4-columbus-muscogee`.
+Next free slots re-counted against all 82 remote refs at the start of the session: **`CC_0030`** and
+**`X0044`** (`X0043` is the max in production, checked against `geofence_boundaries`, not a file).
+
+### ✅ RULING R4 DECIDED 2026-09-01 (Cantrell): EXCLUDE BOTH MUNICIPAL-COURT OFFICES
+
+Muscogee elects a **Municipal Court Clerk** (Reginald Thompson) and a **Municipal Court Judge**
+(Steven D. Smith) countywide, both on the certified 2024 ballot. **Neither is seated.** A municipal
+court is a **Ga. Const. Art. VI** court, which is the same line Baldwin drew when it excluded the Chief
+Magistrate; the Clerk of Superior Court is seated only because **Art. IX** names it a *county officer*
+and the Municipal Court Clerk is not in that list. **The wave is 16 offices**, sub-range
+`-1331020 .. -1331035`.
+
+⚠ The counter-argument — that these are offices Muscogee voters genuinely elect countywide — is
+recorded rather than dropped. **The next consolidated city-county will raise it again**: Macon-Bibb at
+GA-5, then Philadelphia and Lexington.
+
+### 🔴🔴 THE CERTIFIED-RESULTS ROUTE RUNS OUT HERE, AND SILENTLY
+
+GA-3's handoff said to try the SOS API first because it settled all 18 Milledgeville seats. It works
+for Muscogee and it is **incomplete**: Columbus municipal contests appear **only from 2026**, absent
+from 2018, 2020, 2022 and 2024, though the charter puts half the council on each of the 2022 and 2024
+ballots. Every ballot item in both 2022 payloads was listed by hand to be sure. **So the portal cannot
+seat the five even-numbered districts at all** — a wave inheriting Baldwin's experience would have
+called them vacant. ▶ Enumerate elections from `/api/jurisdictions/muscogee-county-ga` (36 back to
+2012); a **guessed slug returns HTTP 204**, indistinguishable from "no such contest".
+
+### 🔴🔴🔴 TWO COUNCIL-DISTRICT LAYERS THAT INVERT
+
+`[10] Council Districts` and `[3] Council/School Board Districts` both return 8 polygons and are
+**different maps** — District 8 differs by 3.639 sq mi, 41% of itself. The arbiter is `[8] Elections
+Combinations`, the precinct×district table the county builds ballots from: dissolved and compared, it
+matches **layer 3 at 0.000 sq mi on all eight** and layer 10 on none.
+
+But layer 3's roster names **Byron Hickey** in D1, the appointed predecessor gone since May, while
+layer 10 names **Simi Barnes**, who actually holds it. **THE LAYER WITH THE FRESH ROSTER HAS THE
+SUPERSEDED GEOMETRY.** GA-3 learned geometry vintage and attribute vintage are different questions
+about one row; here they **invert**, so either layer taken whole gets one answer wrong. Layer 10 is
+the trap — named more precisely, listed second, roster right, every boundary wrong.
+⚠ Layer 3's *school-board* field is fresh (2026 winners) while its *council* field is stale. Freshness
+is not a property of a layer, nor even of a row. **Read it per field.**
+
+### 🔴 74.79 sq mi of the county is in no council district, correctly
+
+Columbus city and Muscogee County are the same 221.011 sq mi. The 8 districts cover **146.24**. The gap
+is **one contiguous piece** plus 52 slivers ≤0.002 sq mi, and layer 8 carries **5 rows reading
+`Precinct N/A; … Council & School Board N/A`** totalling 74.767 sq mi — symmetric difference against
+the gap **0.770 sq mi**. The county itself records that ground as belonging to no precinct and no
+council district; it is Fort Benning. FL-5's Atlantic in a new dress, except the excluded ground is
+**land** and the authority is **the county's own ballot record**. 🔴 **Gate the structure, not full
+coverage** — a coverage gate fails on correct data.
+
+### 🔴🔴 FOUR OF THE SIX PEOPLE COLUMBUS ELECTED IN 2026 DO NOT HOLD THE OFFICE YET
+
+Charter Sec. 3-100(2): terms commence in **January following the election**, *except* that a councilor
+filling a vacancy serves only the remainder of the unexpired term. Two seats carried **both** a regular
+and a **special** contest on the same 2026 ballot, and only the special winners started early:
+
+| | Winner | Seated |
+| --- | --- | --- |
+| Mayor, D3, D7 (regular) | Hugley, Aaron, Zajac | **January 2027 — not seated** |
+| D1 **special** | Simi Barnes | **2026-05-26** |
+| D9 **special** | Cathy Cook | **2026-07-14** |
+
+Seating the certified winners would have installed a mayor four months early and replaced two sitting
+councilors. **A certified result is a fact about an election, not about who holds the seat today.**
+D9 fell vacant when Judy Thomas resigned and the Council appointed John Anker 6-3 over the Mayor's
+objection; D1 when the successor-by-appointment to Jerry "Pops" Barnes, Byron Hickey, chose not to run.
+Simi Barnes is Pops Barnes' daughter. **Neither current holder was appointed** — both are
+`special election`.
+
+### Charter rulings
+
+- **R1** — 10 members: **8 district + 2 at-large** (Posts 9, 10), Sec. 3-100(3). Both GIS layers
+  return 8 polygons, confirming the at-large pair has no geometry. ⚠ The city's roster page numbers all
+  ten "District N" and **would have produced two districts that do not exist**.
+- **R2** — the **Mayor is `non_voting` with a required note**: Sec. 4-102 gives power "to preside … and
+  to have a voice in its proceedings" but "the right to vote only in the case of a tie". Quorum is 6 of
+  the 10 councilors, counting the Mayor out of the body. The Nashville Vice Mayor ruling exactly.
+- **R3** — **Mayor Pro Tem is a parenthetical**, elected annually by the Council from its own members
+  (Sec. 3-103(1)). Lawrence County / Baldwin R2.
+- **R4** — **5 county officers.** Charter Art. VIII preserves four (Sheriff, Probate Judge, Tax
+  Commissioner, Coroner); the Clerk of Superior Court is not in Art. VIII **because it does not need to
+  be** — Art. IX names it a county officer and attaches it to a state court. 🔴 **Muscogee elects no
+  Marshal and no Surveyor**, so **Baldwin's six-officer template does NOT transfer** — which is exactly
+  what "confirm from the charter, inherit nothing" was there to catch.
+
+### 🔴 `gis.columbus.gov` is COLUMBUS, OHIO
+
+A search for Columbus council geometry surfaces it, with a plausible name and a live Redistricting
+layer. Georgia's is `ccggisprod.columbusga.org`. The FEC-homonym class in GIS clothing.
+
+### 🟢 Zero name collisions among all 16
+
+Near misses are all different people: `David Cook` (TX), `Gary Davis`, `Gary Garrett` (UT),
+`David Smith` (FL), `Gregory Smith` (OR), `David K. Thompson` (WI), `Glenn Thompson` (PA).
+
+
+### ✅ GA-4 Task 1 applied 2026-09-01 — `X0044`, the 8 council districts
+
+`scripts/load-columbus-council-boundaries.ts`. **8 boundaries, 0 errors**, all `ST_MultiPolygon`,
+SRID 4326, `state='ga'`. Union **146.2397 sq mi**. Re-runs clean (second pass inserts 0).
+`check:child-county` **stale 0** — an `X`-code load writes no `place`, so no `CONCURRENT` refresh was
+needed, exactly as GA-3 predicted.
+
+🟢 **Every gate passed on the dry run before any write.** Gate order puts the discriminator first
+(the FL-6 rule):
+
+| Gate | Result |
+| --- | --- |
+| 1 — agreement with the county's **ballot-building record** (layer 8) | **0.0000 sq mi on all eight** |
+| 2 — divergence from the superseded layer 10 | **12.2487 sq mi** — genuinely different maps |
+| 3 — control points, each district's own interior point | 8 of 8 |
+| 4 — negative controls, each with its **county asserted against TIGER** | 4 of 4, no district |
+| 5 — per-district area, ±2% | 8 of 8 at **0.00%** |
+| 6 — structure: union, overlaps, and the gap that should be there | union 146.2397, **0 overlaps**, gap-vs-N/A **0.0216** |
+| 7 — `X0044` unclaimed, and TIGER place `1319000` present | ✓ |
+
+🟢 **THE GAP TIGHTENED FROM 0.770 TO 0.0216 sq mi** once the loader staged geometry through
+`ST_MakeValid`. The 0.770 measured while planning was mostly sliver noise between two layers of one
+service, not real disagreement — worth knowing before anyone sets a tolerance from a raw measurement.
+
+🔴 **GATE 4 NOW ASSERTS EACH NEGATIVE CONTROL'S COUNTY INSTEAD OF LABELLING IT**, which is GA-3's
+Hancock defect turned into code: the loader resolves every control against TIGER `G4020` and fails if
+it lands in a county its label does not name. ⚠ **Columbus has no "outside the city" control available
+at all** — city and county are the same ground — so the discriminating control is the **Fort Benning
+gap**: inside Muscogee, inside the city, and inside no council district.
+
+⚠ `ccggisprod.columbusga.org` serves a **valid certificate**; `curl -k` while measuring was habit, not
+necessity, and Node's `fetch` reaches it unaided.
+
+---
+
+## 🔴🔴 GA-3 CORRECTION — Baldwin's Coroner retired on 2026-05-01 and GA-3 seated him anyway
+
+`CC_0029` seated **John Gonzalez** from the SOS certified 2024 return. That return is correct and stays
+correct. **He retired mid-term on 2026-05-01**; **Steve Chapple** holds the seat. Baldwin's own staff
+directory has already dropped Gonzalez.
+
+⚠ **This is the GA-2 SD-12 failure and it reached production.** GA-3's change-check was run against the
+**sources** rather than the **seats** — every source agreed, and all of them predated the retirement.
+**The check must ask "has this person left?", not "do my sources agree?"**
+
+⚠ **Found by the headshot pass, not by a gate.** The Coroner is one of the four Baldwin officials still
+owed a headshot; the portrait search surfaced the retirement notice. **A body's roster is a redundancy
+check on occupancy** — third time it has paid.
+
+🟢 A full re-check of **all 18** GA-3 seats against live sources found the Coroner is **the only** stale
+one.
+
+✅ **`CC_0030_baldwin_coroner_succession.sql` APPLIED 2026-09-01.** Number taken last, re-counted
+against **all 84 remote refs**. Dry-run first (zero `COMMIT` in the sent stream; rollback confirmed
+reverted), then applied. Verified: Chapple `-1331019` holds the seat, Gonzalez closed 2026-05-01
+`retired`. **Re-runs clean** — second pass inserts 0 and skips the succession.
+`offices_missing_terms` **unchanged at 821 / 166 / 655**.
+Gonzalez `term_end` **2026-05-01** at `day` (stated outright); Chapple `term_start` 2026-05-02 at
+**`month`** ("Thursday morning" is not a date) and `how_started` **`unknown`** — the nearby "appointed
+the new coroner" sentence is about **Gonzalez** succeeding Wayne Brooks, not Chapple, and reading it as
+Chapple's would be a misattributed citation. Chapple takes `-1331019`, so **GA-4 starts at `-1331020`**.
+
+### The four Baldwin headshots — FIVE routes tried, all dead. Leave them clean-null.
+
+Owed: Probate Judge **Todd A. Blackwell**, Tax Commissioner **Cathy Freeman Settle**, Surveyor
+**James E. Smith**, and the Coroner — **now Steve Chapple, not John Gonzalez**. All four clean nulls,
+which is the correct state: **a blank beats a link.**
+
+| Route | Result |
+| --- | --- |
+| Ballotpedia | pages exist for all four, **no portrait on any** |
+| County staff directory, aggregate | portraits only for the 5 commissioners + 3 staff officers |
+| County per-person pages `/directory-listing/<name>` | **404** — the path a search surfaces is stale |
+| County party sites (`baldwincountydems.org`, `baldwincountygagop.org`) | **do not resolve** |
+| The Union-Recorder, 2026-05-14 | **a real photo exists and is REFUSED** — see below |
+
+🔴 **THE ONE PHOTOGRAPH FOUND IS A LICENCE REFUSAL, NOT A WIN.** The coroner story carries
+`5-13-Chappel-sworn-in.jpg`, captioned *"Blackwell swears in Steve Chapple … "* — **two of the four
+owed officials in one frame**, and the unsized original is reachable by dropping `?resize=`. It is
+still refused: the photo carries **no photographer credit**, and the paper runs a **"Purchase Photos"
+storefront**, so its photography is a commercial product. The standing rule is that the **credit line
+is the licence test** — the absence of a permissive credit is not permission. Recorded so the next
+session does not re-find it and reason differently.
+
+🟢 The directory's opaque `documentID`s independently re-confirm GA-3's off-by-one —
+**Butts 238, Davis 239**, not district order.
