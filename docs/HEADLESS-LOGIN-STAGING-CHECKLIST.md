@@ -13,7 +13,7 @@ human-gated verification the design and plan defer to a real environment.
 |---|---|---|---|
 | A1 | `COOKIE_DOMAIN=.empowered.vote` on `ev-accounts-api` | Render → service → Environment | value is exactly `.empowered.vote` |
 | A2 | WorkOS response shapes match our parser | `node backend/scripts/workos-headless-smoke.mjs` (staging key + test users in env) | no `✗ MISMATCH` lines; verified→tokens, unverified→`email_verification_required` + `pending_authentication_token`, wrong password→`invalid_credentials`/401 |
-| A3 | Password-reset email link target | same script with `SMOKE_RESET_EMAIL`, then open the inbox | link is `login.empowered.vote/reset-password?token=…` (not a WorkOS-hosted URL) |
+| A3 | Password-reset email link — RESOLVED in code, verify at B6 | our backend emails its own `login.empowered.vote/reset-password?token_hash=…` link; the smoke script's Case 4 prints WorkOS's hosted URL, which we deliberately ignore | n/a pre-flight — confirmed live in B6 |
 | A4 | Staging login origin (only if testing cross-app on staging) | set `VITE_LOGIN_ORIGIN` on the staging **app** build to the staging login hub | `app` staging redirects to the staging login, not prod |
 
 If A2 shows a mismatch, fix the matcher in `backend/src/lib/workosAuthService.ts` and its unit

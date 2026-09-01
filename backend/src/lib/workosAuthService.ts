@@ -6,6 +6,7 @@
  * discriminated-union style.
  */
 import { env } from './env.js';
+import { sendEmail } from './emailService.js';
 
 const WORKOS_API = 'https://api.workos.com';
 const AUTH_URL = `${WORKOS_API}/user_management/authenticate`;
@@ -108,11 +109,37 @@ export async function sendWorkosPasswordReset(email: string): Promise<ResetOutco
       headers: apiKeyHeaders(),
       body: JSON.stringify({ email }),
     });
-    // A 404 (no such user) is expected and must NOT leak — the caller always 200s.
-    if (!res.ok && res.status !== 404) {
+    // A 404 (no such user) is expected and must NOT leak — send no email, but
+    // still report ok so the caller's OWASP always-200 response can't be used
+    // to enumerate accounts.
+    if (!res.ok) {
+      if (res.status === 404) return { ok: true };
       console.error('[workosAuth] password_reset send failed:', res.status, await res.text());
       return { ok: false, code: 'WORKOS_ERROR' };
     }
+
+    // Send OUR OWN reset email pointing at login.empowered.vote, built from the
+    // token WorkOS returns. We deliberately IGNORE the response's
+    // `password_reset_url` — it points at the hosted *.authkit.app page, the very
+    // foreign-domain link this project exists to avoid. WorkOS's API-initiated
+    // create does NOT send its own email, so there is no duplicate. The token is
+    // one-time and short-lived; `/reset-password` confirms it via
+    // `password_reset/confirm`. sendEmail never throws and no-ops without
+    // RESEND_API_KEY, so a delivery miss still returns ok (OWASP).
+    const body = (await res.json().catch(() => ({}))) as { password_reset_token?: string };
+    const token = body.password_reset_token;
+    if (!token) {
+      console.error('[workosAuth] password_reset send: response carried no token');
+      return { ok: true };
+    }
+    const link = `${env.LOGIN_URL}/reset-password?token_hash=${encodeURIComponent(token)}`;
+    await sendEmail({
+      to: email,
+      subject: 'Reset your Empowered Vote password',
+      html: `<p>We received a request to reset your Empowered Vote password.</p>
+             <p><a href="${link}">Reset your password</a></p>
+             <p>This link can be used once and expires soon. If you didn't request a reset, you can ignore this email — your password will not change.</p>`,
+    });
     return { ok: true };
   } catch (err) {
     console.error('[workosAuth] password_reset send network error:', err instanceof Error ? err.message : String(err));

@@ -193,9 +193,15 @@ attempt from this doc-only pass:
   surprise degrades to a logged `WORKOS_ERROR` rather than a wrong success — but the real
   staging shapes for a verified login, an unverified login, and a wrong password are
   still unconfirmed. Adjust the matcher (and its unit test) if a name differs.
-- **The password-reset email link target.** Confirm it lands on
-  `login.empowered.vote/reset-password?token=…`. If WorkOS instead sends its own hosted
-  URL, set the reset redirect in the WorkOS dashboard, or switch to WorkOS Custom Emails.
+- **The password-reset email link target — RESOLVED in code.** WorkOS's server-side
+  `password_reset` create does not auto-send an email and returns the raw
+  `password_reset_token`; `sendWorkosPasswordReset` ignores WorkOS's hosted
+  `password_reset_url` and emails **our own** link to
+  `login.empowered.vote/reset-password?token_hash=…` (via `emailService.sendEmail`,
+  no custom-domain add-on needed). Verify live in checklist step B6 — exercise
+  `/api/auth/forgot-password` on a deployed build and confirm the email you receive links
+  to our domain. (Note: the `workos-headless-smoke.mjs` script calls WorkOS directly, so
+  its Case 4 still prints WorkOS's hosted URL — that field is deliberately unused.)
 - **`COOKIE_DOMAIN` is `.empowered.vote` on the `ev-accounts-api` Render service in
   prod.** Check the Render env; do not change it without approval.
 - **Staging cross-app login origin.** `app/src/pages/LoginPage.tsx`'s `LOGIN_ORIGIN`

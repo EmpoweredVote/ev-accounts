@@ -155,10 +155,12 @@ async function main() {
     console.log(JSON.stringify(redact(body), null, 2));
     console.log(
       bold(
-        '  → Now open that inbox and confirm the reset LINK points to\n' +
-          '    https://login.empowered.vote/reset-password?token=…\n' +
-          '    If it points to a WorkOS-hosted URL, set the reset redirect in the\n' +
-          '    WorkOS dashboard, or switch to WorkOS Custom Emails.'
+        '  → NOTE: `password_reset_url` above is WorkOS\'s HOSTED (*.authkit.app) link.\n' +
+          '    That is expected — our backend IGNORES it. `sendWorkosPasswordReset`\n' +
+          '    (backend/src/lib/workosAuthService.ts) takes only `password_reset_token`\n' +
+          '    and emails OUR OWN link to login.empowered.vote/reset-password?token_hash=…\n' +
+          '    This raw WorkOS call cannot show that — verify our email in checklist B6\n' +
+          '    (exercise /api/auth/forgot-password on a deployed build and read the email).'
       )
     );
   } else {

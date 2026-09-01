@@ -1,10 +1,12 @@
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 vi.mock('./env.js', () => ({
-  env: { WORKOS_CLIENT_ID: 'client_TEST', WORKOS_API_KEY: 'sk_test_123' },
+  env: { WORKOS_CLIENT_ID: 'client_TEST', WORKOS_API_KEY: 'sk_test_123', LOGIN_URL: 'https://login.empowered.vote' },
 }));
+vi.mock('./emailService.js', () => ({ sendEmail: vi.fn() }));
 
 import { authenticateWithPassword, authenticateWithEmailCode, refreshWorkosSession, sendWorkosPasswordReset, confirmWorkosPasswordReset } from './workosAuthService.js';
+import { sendEmail } from './emailService.js';
 
 function okJson(body: unknown) {
   return { ok: true, status: 200, json: async () => body, text: async () => JSON.stringify(body) };
@@ -112,17 +114,25 @@ describe('refreshWorkosSession', () => {
 });
 
 describe('password reset', () => {
-  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  beforeEach(() => {
+    vi.stubGlobal('fetch', vi.fn());
+    vi.mocked(sendEmail).mockClear();
+  });
   afterEach(() => vi.unstubAllGlobals());
 
-  it('sends a reset using the API key in the Authorization header', async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(okJson({ id: 'pwr_1' }));
+  it('sends the reset via the API key and emails OUR OWN login.empowered.vote link', async () => {
+    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(okJson({ id: 'pwr_1', password_reset_token: 'prt_1' }));
     const out = await sendWorkosPasswordReset('a@b.com');
     expect(out).toEqual({ ok: true });
     const [url, init] = (fetch as ReturnType<typeof vi.fn>).mock.calls[0];
     expect(url).toBe('https://api.workos.com/user_management/password_reset');
     expect((init as RequestInit).headers).toMatchObject({ Authorization: 'Bearer sk_test_123' });
     expect(JSON.parse((init as RequestInit).body as string)).toEqual({ email: 'a@b.com' });
+    // We email our OWN link built from the returned token — never WorkOS's hosted URL.
+    expect(sendEmail).toHaveBeenCalledTimes(1);
+    const emailArg = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0][0];
+    expect(emailArg.to).toBe('a@b.com');
+    expect(emailArg.html).toContain('https://login.empowered.vote/reset-password?token_hash=prt_1');
   });
 
   it('confirms a reset with token + new password', async () => {
@@ -145,10 +155,11 @@ describe('password reset', () => {
     expect(out).toEqual({ ok: false, code: 'INVALID_TOKEN' });
   });
 
-  it('treats a 404 (user not found) as success to prevent email enumeration', async () => {
+  it('treats a 404 (user not found) as success AND sends no email (no enumeration)', async () => {
     (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce(errJson(404, { code: 'not_found' }));
     const out = await sendWorkosPasswordReset('nonexistent@b.com');
     expect(out).toEqual({ ok: true });
+    expect(sendEmail).not.toHaveBeenCalled();
   });
 
   it('maps a weak password error to WEAK_PASSWORD', async () => {
