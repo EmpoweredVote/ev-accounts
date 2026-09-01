@@ -11,9 +11,10 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),
   SUPABASE_JWT_SECRET: z.string().optional(),
-  // Geocoding was replaced by Census Geocoder in Phase 38, but this key is now
-  // reused as the fallback for the Civic Information API (see GOOGLE_CIVIC_API_KEY).
-  // Kept optional to avoid startup failures on environments without it.
+  // Geocoding was replaced by Census Geocoder in Phase 38 and does NOT use this key —
+  // its zero-match fallback is the USDOT National Address Database, which needs no key
+  // (see geocodingService.ts). This is now only the fallback for the Civic Information
+  // API (see GOOGLE_CIVIC_API_KEY). Kept optional to avoid startup failures without it.
   GOOGLE_MAPS_API_KEY: z.string().optional(),
   // GOOGLE_CIVIC_API_KEY: powers /api/essentials/voter-info (Google Civic
   // Information API voterInfoQuery — VIP voting locations + sample-ballot URLs).

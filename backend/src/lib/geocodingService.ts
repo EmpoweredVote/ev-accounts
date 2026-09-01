@@ -45,6 +45,63 @@ interface CensusGeocodeResponse {
   };
 }
 
+export interface GeocodeResult {
+  lat: number;
+  lng: number;
+  matchedAddress: string;
+  state: string;
+  city: string;
+}
+
+// ---------------------------------------------------------------------------
+// Fallback source — USDOT National Address Database (FREE, no API key)
+//
+// The NAD is the federal aggregation of the address points that states, counties
+// and tribes assign for E-911. That makes it the ORIGINAL authority: a county
+// assigns an address the day a house is platted, and TIGER absorbs it years later.
+// The record that unblocked this work reads AddAuth = "State of North Carolina".
+//
+// Two endpoints, both free and both unauthenticated:
+//   NAD  — the address points themselves, attribute-queried.
+//   ZCTA — TIGERweb ZIP Code Tabulation Areas, used only for a bounding box.
+//
+// The ZCTA call is not decoration. The NAD hosted view REJECTS a purely attribute
+// query ("Unable to perform query"), so every request must carry a spatial filter.
+// A ZIP the user already typed is the cheapest scope available, and ZIP extents
+// never move, so they cache for a month.
+// ---------------------------------------------------------------------------
+
+const NAD_QUERY_URL =
+  'https://services.arcgis.com/xOi1kZaI0eWDREZv/ArcGIS/rest/services/' +
+  'Address_Points_from_National_Address_Database_view/FeatureServer/0/query';
+
+// Layer 11 is the CURRENT ZCTA layer. Layers 1/4/7 in the same service are the
+// frozen "2020 Census" vintages — do not swap one in without re-checking BASENAME.
+const ZCTA_QUERY_URL =
+  'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/' +
+  'PUMA_TAD_TAZ_UGA_ZCTA/MapServer/11/query';
+
+const ZCTA_CACHE_TTL_SECONDS = 60 * 60 * 24 * 30; // a month; ZIP extents do not move
+
+interface Extent {
+  xmin: number;
+  ymin: number;
+  xmax: number;
+  ymax: number;
+}
+
+interface NadFeature {
+  attributes: {
+    Add_Number?: number | null;
+    St_Name?: string | null;
+    StNam_Full?: string | null;
+    Post_City?: string | null;
+    State?: string | null;
+    Zip_Code?: string | null;
+  };
+  geometry?: { x: number; y: number } | null;
+}
+
 // ---------------------------------------------------------------------------
 // PO Box detection
 // Matches: "PO Box", "P.O. Box", "POB" — case-insensitive
@@ -64,11 +121,252 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 //   - The address string is consumed here and discarded after this function
 //     returns — do not return or store it.
 //
-// Implementation: US Census Geocoder (free, no API key required)
-// Replaced Google Maps Geocoding API in Phase 38.
+// Implementation: US Census Geocoder (free, no API key required), with the USDOT
+// National Address Database as a fallback on a zero-match. Both are free and
+// unauthenticated; Phase 38's move off paid geocoding stands — see geocodeViaNad.
 // ---------------------------------------------------------------------------
 
-export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number; matchedAddress: string; state: string; city: string }> {
+/**
+ * Whole-fallback time budget, shared across BOTH of its calls.
+ *
+ * Not a per-call timeout, deliberately. The fallback makes up to two sequential
+ * requests, so per-call timeouts multiply into the worst case and the person watching
+ * the button pays the sum. One deadline bounds the entire second opinion instead:
+ * Census (5s) + this = the true ceiling on set-location.
+ *
+ * WHY IT IS THIS BIG. The NAD hosted view is reliable but has a punishing tail.
+ * Measured 2026-09-01 over 10 paced requests with a 30s ceiling and no early abort:
+ *
+ *     min 469ms · p50 1817ms · p90 12857ms · max 12857ms · 0 outright failures
+ *
+ * Nothing ever failed — slow requests simply took a long time. So a retry is the
+ * wrong instrument (it re-queues behind the same slow service, and an earlier
+ * 3s-timeout-plus-retry experiment still lost 4 of 10), and a small timeout fails
+ * exactly the cold, uncached lookups this fallback exists to serve. 12s covers most
+ * of that distribution; the slowest few percent still fail closed to ADDRESS_NOT_FOUND,
+ * where a retry by the user usually lands on a fast response — and by then the ZIP
+ * envelope is cached, so the retry is a single call.
+ *
+ * This tail is the strongest argument for eventually self-hosting the NAD extract:
+ * the same lookup against local PostGIS is a millisecond, with no third party in the
+ * request path at all.
+ */
+const FALLBACK_BUDGET_MS = 12000;
+
+/** Identify ourselves to these public government services rather than arriving blank. */
+const FALLBACK_USER_AGENT = 'EmpoweredVote/1.0 (+https://empowered.vote)';
+
+/** One GET returning JSON, bounded by whatever is left of the fallback budget. */
+async function fetchJson<T>(url: URL, remainingMs: number): Promise<T | null> {
+  if (remainingMs <= 0) {
+    console.warn('[geocoding] fallback budget exhausted before request');
+    return null;
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), remainingMs);
+  try {
+    const response = await fetch(url.toString(), {
+      signal: controller.signal,
+      headers: { 'User-Agent': FALLBACK_USER_AGENT, Accept: 'application/json' },
+    });
+    if (!response.ok) {
+      console.warn(`[geocoding] fallback source returned HTTP ${response.status}`);
+      return null;
+    }
+    return (await response.json()) as T;
+  } catch {
+    // AbortError = out of budget; anything else = network failure. Neither is fatal.
+    console.warn('[geocoding] fallback source unavailable (timeout or network error)');
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/**
+ * Reduce to lowercase words so a street name can be compared to raw user input.
+ * Everything that is not a letter or digit becomes a single space, which is what
+ * makes the whole-word test below safe without escaping: after this runs, no regex
+ * metacharacter can survive in either operand.
+ */
+function normalizeForMatch(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+/** True when `needle` appears in `haystack` as a complete word sequence. */
+function containsWholeWords(haystack: string, needle: string): boolean {
+  if (!needle) return false;
+  return new RegExp(`(?:^| )${needle}(?:$| )`).test(haystack);
+}
+
+/**
+ * Pull the two things the NAD needs out of a free-text address: the house number
+ * and the ZIP. Deliberately does NOT try to find where the street name ends —
+ * "525 citrine lane arden nc 28704" has no commas, and any rule for splitting
+ * street from city is wrong for some real address. The street is matched later,
+ * against candidates the NAD itself returns, which sidesteps the problem entirely.
+ */
+function parseHouseNumberAndZip(address: string): { houseNumber: number; zip: string } | null {
+  const house = /^\s*(\d{1,7})\b/.exec(address);
+  const zip = /\b(\d{5})(?:-\d{4})?\s*$/.exec(address.trim());
+  if (!house?.[1] || !zip?.[1]) return null;
+  return { houseNumber: Number(house[1]), zip: zip[1] };
+}
+
+/** Bounding box of a ZIP Code Tabulation Area. Cached — ZIP extents do not move. */
+async function getZipExtent(zip: string, remainingMs: number): Promise<Extent | null> {
+  const cacheKey = `zcta:v1:${zip}`;
+  const cached = await cache.get<Extent>(cacheKey);
+  if (cached) return cached;
+
+  const url = new URL(ZCTA_QUERY_URL);
+  url.searchParams.set('where', `BASENAME='${zip}'`);
+  url.searchParams.set('returnExtentOnly', 'true');
+  url.searchParams.set('outSR', '4326');
+  url.searchParams.set('f', 'json');
+
+  const data = await fetchJson<{ extent?: Extent }>(url, remainingMs);
+  const extent = data?.extent;
+  if (
+    !extent ||
+    typeof extent.xmin !== 'number' ||
+    typeof extent.ymin !== 'number' ||
+    typeof extent.xmax !== 'number' ||
+    typeof extent.ymax !== 'number'
+  ) {
+    return null;
+  }
+
+  await cache.set(cacheKey, extent, ZCTA_CACHE_TTL_SECONDS);
+  return extent;
+}
+
+/**
+ * Second-chance geocode through the USDOT National Address Database.
+ *
+ * WHY THIS EXISTS. The Census Geocoder reads TIGER's address-range files, and TIGER
+ * lags new construction by years. A house on a street platted after the last refresh
+ * returns zero matches — not "close", zero — while every neighbouring street resolves.
+ * Measured 2026-09-01 on a real signup: `525 Citrine Ln, Arden, NC 28704` missed on
+ * all three Census benchmarks (Current, Census2020, ACS2025) and in OpenStreetMap,
+ * yet a bbox query on TIGER's own local-roads layer returned dense coverage all around
+ * it. The NAD has it, attributed to the State of North Carolina. Before this fallback
+ * that person could not enter Civic Spaces at all, because set-location gates the
+ * entire Connect pillar.
+ *
+ * HOW THE MATCH IS MADE, and why it is done in this order:
+ *   1. Parse out the house number and ZIP only.
+ *   2. ZIP -> ZCTA bounding box, because the NAD view refuses a non-spatial query.
+ *   3. Ask the NAD for EVERY address point with that house number in that ZIP.
+ *   4. Keep the candidates whose own street name appears in what the user typed.
+ *
+ * Step 4 is the trick. Splitting "525 citrine lane arden nc 28704" into street and
+ * city needs a rule that is wrong for some real address, so instead the NAD supplies
+ * the street names and each is tested against the input. Multi-word names ("OLD
+ * SHOALS") work unchanged, and the test is whole-word, so "AR" cannot match inside
+ * "arden".
+ *
+ * PRECISION. The house number must match EXACTLY. There is no interpolation and no
+ * snapping to a neighbouring number: NAD points are rooftop, so a match is a real
+ * parcel or there is no match. Two candidates on different streets is an ambiguity,
+ * not a coin toss — it returns null. Seating someone on a guess resolves the WRONG
+ * districts and then shows them the wrong representatives, with nothing reporting an
+ * error. Same reasoning as the D-04/RSLV-04 boundary that keeps the one-line
+ * geocoder street-address-only (see locationSearchService.test.ts).
+ *
+ * SHAPE OF THE CONTRACT.
+ *  - Runs ONLY after Census returns zero matches, so the free primary stays the
+ *    default and this adds no latency to a normal lookup.
+ *  - Returns `null` for every failure — unparseable input, no ZIP, unknown ZIP, no
+ *    candidate, ambiguity, HTTP error, timeout. The caller turns that back into the
+ *    same ADDRESS_NOT_FOUND it threw before this existed, so a broken or unreachable
+ *    fallback degrades to exactly the old behaviour, never to a new failure mode.
+ *  - A Census OUTAGE never reaches here. That is GEOCODER_UNAVAILABLE, thrown
+ *    upstream; only a definitive zero-match deserves a second opinion.
+ *  - No API key, no account, no billing. That is the point: Phase 38 left Google for
+ *    cost, and this keeps that decision intact.
+ *
+ * COVERAGE CAVEAT. The NAD is a compilation of what states and counties submit, and
+ * participation is uneven — strong in some states, partial in others. It is a net
+ * gain over TIGER everywhere and a complete answer nowhere. Expect to re-check it as
+ * new states are onboarded.
+ *
+ * PRIVACY. Same contract as the caller: the address is consumed and discarded, and
+ * neither it nor the coordinates may reach a log line. The warnings here carry an
+ * HTTP status or a candidate count and nothing else — keep it that way.
+ */
+async function geocodeViaNad(address: string): Promise<GeocodeResult | null> {
+  const parsed = parseHouseNumberAndZip(address);
+  // No leading house number or no trailing ZIP means there is nothing to scope the
+  // NAD query with. That is a skip, not an error — the caller still says NOT_FOUND.
+  if (!parsed) return null;
+
+  // One deadline for the whole second opinion, so two sequential calls cannot
+  // multiply into a wait the person watching the button actually feels.
+  const deadline = Date.now() + FALLBACK_BUDGET_MS;
+
+  const extent = await getZipExtent(parsed.zip, deadline - Date.now());
+  if (!extent) return null;
+
+  const url = new URL(NAD_QUERY_URL);
+  url.searchParams.set('where', `Add_Number=${parsed.houseNumber} AND Zip_Code='${parsed.zip}'`);
+  url.searchParams.set('geometry', `${extent.xmin},${extent.ymin},${extent.xmax},${extent.ymax}`);
+  url.searchParams.set('geometryType', 'esriGeometryEnvelope');
+  url.searchParams.set('inSR', '4326');
+  url.searchParams.set('spatialRel', 'esriSpatialRelIntersects');
+  url.searchParams.set('outFields', 'Add_Number,St_Name,StNam_Full,Post_City,State,Zip_Code');
+  url.searchParams.set('returnGeometry', 'true');
+  url.searchParams.set('outSR', '4326');
+  url.searchParams.set('f', 'json');
+
+  const data = await fetchJson<{ features?: NadFeature[]; error?: unknown }>(url, deadline - Date.now());
+  const features = data?.features;
+  if (!features?.length) return null;
+
+  const haystack = normalizeForMatch(address);
+  const matches = features.filter((f) => {
+    const street = normalizeForMatch(f.attributes?.St_Name ?? '');
+    return street !== '' && containsWholeWords(haystack, street);
+  });
+
+  if (matches.length === 0) return null;
+
+  // More than one street matched — the input is genuinely ambiguous against the
+  // authoritative data, so refuse rather than pick. Identical street names are not
+  // ambiguous (unit-level rows sit on the same parcel); take the first of those.
+  const distinctStreets = new Set(
+    matches.map((f) => normalizeForMatch(f.attributes?.St_Name ?? '')),
+  );
+  if (distinctStreets.size > 1) {
+    console.warn(`[geocoding] fallback found ${distinctStreets.size} candidate streets — refusing to guess`);
+    return null;
+  }
+
+  const best = matches[0]!;
+  const point = best.geometry;
+  if (!point || typeof point.x !== 'number' || typeof point.y !== 'number') return null;
+
+  const a = best.attributes;
+  const streetFull = a?.StNam_Full ?? a?.St_Name ?? '';
+  const city = a?.Post_City ?? '';
+  const state = a?.State ?? '';
+  const zip = a?.Zip_Code ?? '';
+
+  return {
+    lat: point.y,
+    lng: point.x,
+    // Rebuilt from the authoritative record, not echoed from user input, so the
+    // stored label matches what the address authority actually publishes.
+    matchedAddress: [`${a?.Add_Number ?? ''} ${streetFull}`.trim(), city, `${state} ${zip}`.trim()]
+      .filter(Boolean)
+      .join(', '),
+    state,
+    city,
+  };
+}
+
+export async function geocodeAddress(address: string): Promise<GeocodeResult> {
   // 1. PO Box check — before any network call
   if (PO_BOX_PATTERN.test(address)) {
     throw new GeocodingError(
@@ -121,9 +419,18 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
     throw new GeocodingError('GEOCODER_UNAVAILABLE', 'Address lookup temporarily unavailable.');
   }
 
-  // 7. Empty addressMatches = no match for this address
+  // 7. Empty addressMatches = Census has no record of this address. Give it a second
+  //    chance through the NAD before failing — TIGER's blind spot is new construction,
+  //    and a real resident of a new street is exactly who we must not turn away.
+  //    geocodeViaNad returns null for every failure, so this stays a hard
+  //    ADDRESS_NOT_FOUND whenever the fallback is absent, broken, or imprecise.
   const matches = data?.result?.addressMatches;
   if (!matches || matches.length === 0) {
+    const fallback = await geocodeViaNad(address);
+    if (fallback) {
+      await cache.set(cacheKey, fallback, 86400);
+      return fallback;
+    }
     throw new GeocodingError(
       'ADDRESS_NOT_FOUND',
       "We couldn't find that address. Please double-check and try again.",
