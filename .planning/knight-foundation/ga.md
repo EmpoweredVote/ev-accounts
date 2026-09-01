@@ -8,7 +8,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3 | **Milledgeville + Baldwin County** | 📋 **PLANNED 2026-09-01, not applied** |
+| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Task 1 ✅ `X0042` applied 2026-09-01 (6 council districts); Tasks 2–5 open |
 | GA-4..5 | Columbus, Macon | — |
 
 ---
@@ -473,8 +473,15 @@ Stages 1 and 2 are **applied and merged**: `CC_0025` geography loader entry (GA-
 not a migration), `CC_0025`/`CC_0026` the legislature. Next free slot is **`CC_0027`**, and next free
 private MTFCC is **`X0042`** — ⚠ re-count both against every remote ref, this file has been wrong before.
 
-**GA-3 is PLANNED and not applied.** Branch `knight/ga-3-milledgeville`, cut fresh from
-`origin/master` at `d980e56b`. Execute Task 1 of the plan (load `X0042`).
+**GA-3 Task 1 is APPLIED.** Branch `knight/ga-3-milledgeville`. `X0042` holds the **6 Milledgeville
+council district boundaries**, loaded 2026-09-01 by `scripts/load-milledgeville-council-boundaries.ts`
+from the CITY's own 2025 plan. All seven gates passed on the dry run before any write; the loader is
+idempotent (re-run inserts 0); `check:child-county` **stale 0**; `check:reachability` at or below
+baseline (5/17/37 against 5/17/38); `offices_missing_terms` **unchanged at 821/166/655**.
+⚠ No `districts` rows yet — `CC_0027` creates those. GA still holds **0 `LOCAL` districts**.
+
+**▶ NEXT: Task 2** — load `X0043`, the 5 Baldwin County commission districts, from
+`ElectionGeography_dashboard_…/FeatureServer/2` filtered `electedoffice='County Commissioner'`.
 
 What is already on disk and should NOT be re-fetched:
 

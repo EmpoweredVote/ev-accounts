@@ -174,15 +174,36 @@ already saved to `backend/data/seed-milledgeville-2026/_mv-council-districts-202
 `outSR=4326`). District number is `DIST_ID` (integer 1–6); `DIST_NAME` and `District` both read `D<n>`.
 
 1. Write the loader following `X0041` (Miami city commission districts) as the closest precedent.
-2. `geo_id` scheme: `1351492<n>` — the TIGER place id with the district number appended, so it cannot
-   collide with the three-way legislative/county collision at `13009`.
-3. Pre-flight gate, asserted **before any write**: exactly 6 features; `DIST_ID` is exactly {1..6};
-   the union is within **0.5%** of TIGER `1351492`'s 20.420 sq mi; and no existing boundary carries
-   `mtfcc = 'X0042'`.
-4. Create 6 `LOCAL` districts, `state = 'ga'`, each with its `geo_id`.
+2. ⚠ **CORRECTED 2026-09-01 against precedent.** `geo_id` is a **slug**, not a numeric scheme:
+   `milledgeville-ga-council-district-1` … `-6`, as `bradenton-fl-council-ward-1` and
+   `miami-fl-commission-district-1`. A slug is also immune to Georgia's three-way numeric collision
+   outright, which a `1351492<n>` scheme only dodges by luck. `state = 'ga'`, not FIPS `'13'`.
+3. ⚠ **CORRECTED: the loader writes ONLY `essentials.geofence_boundaries`.** `CC_0027` creates the
+   `districts` rows — including a `Milledgeville Citywide` `LOCAL` district on TIGER `1351492`/`G4110`
+   for the Mayor, which needs no new boundary because GA-1 already loaded that polygon.
+4. Gates, all asserted **before any write**, discriminating ones first (the FL-6 ordering rule — a
+   gate whose failure message invites re-baselining must never fire first):
+   - **GATE 1, vintage.** The county's `ElectionGeography` copy is the **negative control** and MUST
+     DIFFER: at least one interior point must disagree, and per-district symmetric difference must
+     exceed a floor. Measured: D4's point lands in the county copy's D1; symdiff 0.09–0.99 sq mi.
+   - **GATE 2, plan integrity.** `White + Black + Other = Pop` in every district, and every
+     `|Pop_DVP| <= 10%`. Measured: exact in all six, worst deviation +7.54%.
+   - **GATE 3**, control points: each district's own interior point, plus City Hall.
+   - **GATE 4**, negative controls: a point in Baldwin County outside the city, and a point in another
+     Georgia city, must fall in **no** district.
+   - **GATE 5**, per-district area against the 2026-09-01 measurement.
+   - **GATE 6**, union vs TIGER place `1351492` (20.420 sq mi) within tolerance — **not** against the
+     county, since the city is 20 sq mi inside a 268 sq mi county.
 5. ⚠ **`REFRESH MATERIALIZED VIEW CONCURRENTLY geofence_child_county` is NOT required** — per the FL
    correction, the refresh is needed only when a load writes `place` (`G4110`). This writes `X0042`.
    Confirm with `npm run check:child-county` afterwards regardless.
+
+⚠ **The plan's population universe is 14,796, which is 86.7% of Milledgeville's 17,070 in the 2020
+census.** The 2,274 gap is unexplained; the likeliest cause is an excluded institutional group-quarters
+population (the city hosts Central State Hospital), and District 4 is 97.2% voting-age, which is the
+signature of the Georgia College campus. **Not confirmed, and deliberately NOT gated on** — the gate
+asserts internal balance and consistency, which are properties the layer asserts about itself. The
+geometry's vintage is established by GATE 1 and GATE 6 independently of any population figure.
 
 ## Task 2 — load the 5 Baldwin commission districts as `X0043`
 
