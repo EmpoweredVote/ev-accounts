@@ -8,7 +8,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | --- | --- | --- |
 | GA-1 | TIGER `place` + `sldu` + `sldl`, FIPS 13 | ✅ **APPLIED 2026-08-31** |
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
-| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Tasks 1+2 ✅ `X0042` (6 council) + `X0043` (5 commission) applied 2026-09-01; Tasks 3–5 open |
+| GA-3 | **Milledgeville + Baldwin County** | 🚧 **IN PROGRESS** — Tasks 1+2 ✅ boundaries applied; Task 3 ✅ generator written, all 3 migrations DRY-RUN CLEAN; Tasks 4–5 open |
 | GA-4..5 | Columbus, Macon | — |
 
 ---
@@ -518,10 +518,45 @@ Gates after both applies: `check:child-county` **stale 0** (children 7,782 — u
 `check:migrations` and `check:occupancy` green; `offices_missing_terms` **unchanged at 821/166/655**.
 ⚠ No `districts` rows yet — GA still holds **0 `LOCAL` districts**. `CC_0027`/`CC_0029` create them.
 
-**▶ NEXT: Task 3** — the generator, emitting `CC_0027` (city structure), `CC_0028` (city occupancy)
-and `CC_0029` (Baldwin, offices + people in ONE migration). **`CC_0027` was re-verified free
-2026-09-01**: `CC_0026` is the highest slot claimed across all 81 remote refs, and `CC_0027`–`CC_0029`
-exist on none of them. ⚠ Re-count again at apply time and take the number LAST.
+## GA-3 Task 3 — the generator, DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`scripts/gen-ga3-milledgeville-migrations.mjs` reads the committed
+`data/ga3-milledgeville-roster.json` and emits three `CC_wip_*.sql`. ⚠ **The `CC_wip_*` files stay
+UNTRACKED** — no `CC_wip` file has ever been committed in this repo; the convention is rename + apply
++ commit in one go, so they are regenerated at apply time.
+
+| Half | Emits | Dry run |
+| --- | --- | --- |
+| city structure | 1 government, 2 chambers, **7 districts**, **7 offices** | ✅ `7 district(s) created, 1 government, 2 chambers, 7 offices` |
+| city occupancy | **7 politicians, 7 terms**, all open-ended `'unknown'` | ✅ `7 politicians, 7 seated across 7 offices, 0 vacancies` |
+| Baldwin (one migration) | 1 government, 2 chambers, **5 districts**, **11 offices + 11 people + 11 terms** | ✅ `5 district(s) created … 11 offices`; `11 politicians, 11 seated, 0 vacancies` |
+
+⚠ **The city occupancy half cannot be dry-run alone** — its offices do not exist yet. Both city halves
+ran as ONE transaction, audited **before sending** to hold exactly one `BEGIN`, one `ROLLBACK` and
+**zero `COMMIT`**. Both rollbacks were then confirmed to have reverted: production still reads **0** GA
+`LOCAL` districts, **0** `X0042`/`X0043` districts, **0** rows in `-1331018..-1331001`, **0**
+governments and **0** offices.
+
+🔴🔴 **`district_type` DIFFERS BY TIER, AND THE FIRST DRAFT GOT THE COUNTY WRONG.** City districts are
+**`'LOCAL'`** (`CC_0008`); county districts are **`'COUNTY'`** (`CC_0010`). Reading the county
+precedent rather than generalising the city one is what caught it.
+
+🔴🔴 **THE WIDE DISTRICT IS CREATED FOR THE CITY AND ONLY *ASSERTED* FOR THE COUNTY.** GA-1 loaded the
+place **boundary** `1351492`/`G4110` but created no place **district**, so the citywide district is
+inserted here. The TIGER county load already created `13009`/`G4020` as a `COUNTY` district, so
+inserting it again would put a second district row over the same ground. The county pre-flight now
+fails hard if that row is missing — the six officers have nowhere to sit without it.
+
+🟢 The generator refuses before writing a line of SQL if the roster drifts: 18 offices, 18 unique ids
+matching the declared band exactly at both ends, every office naming a known chamber, no duplicate
+seat key, and **no party field anywhere** — a generator is exactly where party leaks back in.
+
+**▶ NEXT: Task 4** — apply. Re-generate, re-count the slot against every remote ref, rename to
+`CC_0027`/`CC_0028`/`CC_0029`, apply through `psql`, run the gates, add a `place:milledgeville` probe
+to `check:reachability` and assert **four of four** answers at City Hall. **`CC_0027` was verified free
+2026-09-01**: `CC_0026` is the highest slot across all 81 remote refs and `CC_0027`–`CC_0029` exist on
+none. ⚠ Re-count again at apply time and take the number LAST.
+⚠ Run the probe BEFORE the apply as well — that is what caught FL-6's mis-scoped at-large ruling.
 
 What is already on disk and should NOT be re-fetched:
 

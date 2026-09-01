@@ -233,6 +233,21 @@ Follow `CC_0008`/`CC_0009`/`CC_0010` (Bradenton + Manatee) — the closest struc
 the Miami ones. Every migration idempotent, ending in a `DO $$ … $$` post-verify gate that
 `RAISE EXCEPTION`s on a wrong count. `chambers.slug` is GENERATED and cannot be inserted.
 
+🔴 **TWO CORRECTIONS FOUND WHILE EXECUTING TASK 3, both from reading `CC_0010` rather than assuming
+the city pattern generalised:**
+
+1. **`district_type` DIFFERS BY TIER.** City districts are **`'LOCAL'`** (Bradenton `CC_0008`);
+   county districts are **`'COUNTY'`** (Manatee `CC_0010`). The first draft of the generator wrote
+   `'LOCAL'` for both. It is now a per-tier field in the roster JSON, and only one hardcoded
+   `'LOCAL'` survives in the generator — inside a comment.
+2. **THE WIDE DISTRICT IS CREATED FOR THE CITY AND ONLY *ASSERTED* FOR THE COUNTY.** GA-1 loaded the
+   TIGER place **boundary** `1351492`/`G4110` but created no place **district**, so the citywide
+   district must be inserted — as Bradenton inserted `Bradenton Citywide`. But the TIGER county load
+   already created `13009`/`G4020` as a `COUNTY` district, verified in production. `CC_0010` asserts
+   it in the pre-flight and inserts nothing. Creating it again would put a second district row over
+   the same ground. The county pre-flight now **fails hard** if that row is absent, because the six
+   county officers have nowhere to sit without it.
+
 Titles: `Mayor`; `Council Member, District 1..6`; `Commissioner, District 1..5`; then `Sheriff`,
 `Clerk of Superior Court`, `Probate Judge`, `Tax Commissioner`, `Coroner`, `Surveyor`.
 ⚠ Per R2, **no Chairman, Vice Chairman or Mayor Pro-Tem office**. If the chair is to be visible at all
