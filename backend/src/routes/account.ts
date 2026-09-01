@@ -149,6 +149,9 @@ router.get('/me', requireAuth, async (req, res: Response) => {
           jurisdiction_city: string | null;
           city_council_geo_id: string | null;
           city_council_district_name: string | null;
+          city_geo_id: string | null;
+          state_geo_id: string | null;
+          nation_geo_id: string | null;
         }>(
           `SELECT congressional_geo_id, congressional_district_name,
                   state_senate_geo_id, state_senate_district_name,
@@ -156,7 +159,8 @@ router.get('/me', requireAuth, async (req, res: Response) => {
                   county_geo_id, county_name,
                   school_district_geo_id, school_district_name,
                   jurisdiction_state, jurisdiction_city,
-                  city_council_geo_id, city_council_district_name
+                  city_council_geo_id, city_council_district_name,
+                  city_geo_id, state_geo_id, nation_geo_id
            FROM connect.connected_profiles WHERE user_id = $1`,
           [authReq.userId]
         );
@@ -177,6 +181,13 @@ router.get('/me', requireAuth, async (req, res: Response) => {
             city: j.jurisdiction_city,
             city_council_district: j.city_council_geo_id,
             city_council_district_name: j.city_council_district_name,
+            // 🔴 Census FIPS geoids, and deliberately NOT named `state` / `city`.
+            // Those two keys are already taken, by the geocoded USPS code ('NC') and
+            // place name ('ASHEVILLE') just above. Civic Spaces keys a slice on the
+            // geoid; reusing the names would have handed it 'NC' as a slice id.
+            state_geoid: j.state_geo_id,
+            city_geoid: j.city_geo_id,
+            nation_geoid: j.nation_geo_id,
           };
         }
       } catch (jErr) {
@@ -304,6 +315,9 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
       school_district_name: string | null;
       jurisdiction_state: string | null;
       jurisdiction_city: string | null;
+      city_geo_id: string | null;
+      state_geo_id: string | null;
+      nation_geo_id: string | null;
       city_council_geo_id: string | null;
       city_council_district_name: string | null;
     }>(
@@ -313,7 +327,8 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
               county_geo_id, county_name,
               school_district_geo_id, school_district_name,
               jurisdiction_state, jurisdiction_city,
-              city_council_geo_id, city_council_district_name
+              city_council_geo_id, city_council_district_name,
+              city_geo_id, state_geo_id, nation_geo_id
        FROM connect.connected_profiles WHERE user_id = $1`,
       [authReq.userId]
     );
@@ -335,6 +350,11 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
         city: j?.jurisdiction_city ?? null,
         city_council_district: j?.city_council_geo_id ?? null,
         city_council_district_name: j?.city_council_district_name ?? null,
+        // See the note on the same three keys in GET /me: geoids, not the geocoded
+        // state code and city name that `state` and `city` already carry.
+        state_geoid: j?.state_geo_id ?? null,
+        city_geoid: j?.city_geo_id ?? null,
+        nation_geoid: j?.nation_geo_id ?? null,
       },
     });
   } catch (err) {
@@ -546,6 +566,9 @@ router.patch(
             jurisdiction_city: string | null;
             city_council_geo_id: string | null;
             city_council_district_name: string | null;
+            city_geo_id: string | null;
+            state_geo_id: string | null;
+            nation_geo_id: string | null;
           }>(
             `SELECT congressional_geo_id, congressional_district_name,
                     state_senate_geo_id, state_senate_district_name,
@@ -553,7 +576,8 @@ router.patch(
                     county_geo_id, county_name,
                     school_district_geo_id, school_district_name,
                     jurisdiction_state, jurisdiction_city,
-                    city_council_geo_id, city_council_district_name
+                    city_council_geo_id, city_council_district_name,
+                    city_geo_id, state_geo_id, nation_geo_id
              FROM connect.connected_profiles WHERE user_id = $1`,
             [authReq.userId]
           );
@@ -574,6 +598,10 @@ router.patch(
               city: j.jurisdiction_city,
               city_council_district: j.city_council_geo_id,
               city_council_district_name: j.city_council_district_name,
+              // Geoids, not the geocoded `state` / `city` pair above. See GET /me.
+              state_geoid: j.state_geo_id,
+              city_geoid: j.city_geo_id,
+              nation_geoid: j.nation_geo_id,
             };
           }
         } catch (jErr) {

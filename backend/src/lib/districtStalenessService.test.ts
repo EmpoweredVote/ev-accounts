@@ -154,6 +154,30 @@ describe('district staleness — a resolved point still updates', () => {
     expect(result).toMatchObject({ unchanged: 1, unresolved: 0 });
   });
 
+  it('writes a place geoid that moved while every district stayed put', async () => {
+    // Annexation moves a point inside city limits without touching a district line.
+    // The five district comparisons cannot see that, so place needs its own.
+    withProfile(
+      { ...SEATED_PROFILE, city_geo_id: null, state_geo_id: '41', nation_geo_id: 'US' },
+      {
+        ...RESOLVED_NOTHING,
+        congressional: SEATED_PROFILE.congressional_geo_id,
+        state_senate: SEATED_PROFILE.state_senate_geo_id,
+        state_house: SEATED_PROFILE.state_house_geo_id,
+        county: SEATED_PROFILE.county_geo_id,
+        school_district: SEATED_PROFILE.school_district_geo_id,
+        city: '4105800',
+        state: '41',
+        nation: 'US',
+      }
+    );
+
+    const result = await runDistrictStalenessCheck();
+
+    expect(updateStatements()[0]).toContain('city_geo_id');
+    expect(result).toMatchObject({ updated: 1, unchanged: 0, unresolved: 0 });
+  });
+
   it('still resolves a profile that legitimately holds no districts', async () => {
     // Nothing stored and nothing resolved: there is nothing to protect, but the point
     // is genuinely unresolved, so it must be reported as such rather than as verified.

@@ -54,9 +54,13 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
     state_house_geo_id: string | null;
     county_geo_id: string | null;
     school_district_geo_id: string | null;
+    city_geo_id: string | null;
+    state_geo_id: string | null;
+    nation_geo_id: string | null;
   }>(
     `SELECT user_id, congressional_geo_id, state_senate_geo_id, state_house_geo_id,
-            county_geo_id, school_district_geo_id
+            county_geo_id, school_district_geo_id,
+            city_geo_id, state_geo_id, nation_geo_id
      FROM connect.connected_profiles
      WHERE encrypted_lat IS NOT NULL
        -- A weekly cron over every row, with no request and therefore no
@@ -137,10 +141,24 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
         (jData.county ?? null) !== user.county_geo_id ||
         (jData.school_district ?? null) !== user.school_district_geo_id;
 
-      if (geoChanged) {
+      // Place geoids move for reasons districts do not — annexation puts a point inside
+      // city limits without touching a single district line — so they need their own
+      // comparison. They are still gated by the resolvedCount check above: this only
+      // runs when the districts join proved itself healthy, which is what makes a null
+      // city here trustworthy enough to write.
+      // Both sides are normalised: a column absent from the row reads as undefined,
+      // and `undefined !== null` would report every profile as changed forever.
+      const placeChanged =
+        (jData.city ?? null) !== (user.city_geo_id ?? null) ||
+        (jData.state ?? null) !== (user.state_geo_id ?? null) ||
+        (jData.nation ?? null) !== (user.nation_geo_id ?? null);
+
+      if (geoChanged || placeChanged) {
         // Update all geo_id + name columns AND stamp the verified timestamp.
         // Does NOT touch jurisdiction_state or jurisdiction_city — those come
-        // from geocoding (set-location), not from jurisdiction resolution.
+        // from geocoding (set-location), not from jurisdiction resolution. The
+        // *_geo_id columns below are the resolved Census FIPS and are a different
+        // thing from that geocoded pair despite the similar names.
         await pool.query(
           `UPDATE connect.connected_profiles
            SET congressional_geo_id = $2,
@@ -153,6 +171,9 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
                county_name = $9,
                school_district_geo_id = $10,
                school_district_name = $11,
+               city_geo_id = $12,
+               state_geo_id = $13,
+               nation_geo_id = $14,
                districts_last_verified_at = now(),
                updated_at = now()
            WHERE user_id = $1`,
@@ -168,6 +189,9 @@ export async function runDistrictStalenessCheck(): Promise<DistrictStalenessResu
             jData.county_name ?? null,
             jData.school_district ?? null,
             jData.school_district_name ?? null,
+            jData.city ?? null,
+            jData.state ?? null,
+            jData.nation ?? null,
           ]
         );
         updated++;
