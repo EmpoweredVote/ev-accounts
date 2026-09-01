@@ -87,6 +87,10 @@ const signUpBodySchema = z.object({
   display_name: z.string().min(1).max(100),
   legal_name: z.string().min(1).max(200).optional(),
   invite_code: z.string().min(9).max(9).optional(),
+  // Embedded flow only: it calls /workos/authenticate right after signup, which
+  // is what sends the verification code. Set true so signup does NOT also send
+  // one (two codes → the older is invalidated → invalid_one_time_code).
+  defer_verification_email: z.boolean().optional(),
   guest_state: z.object({
     answers: z.array(z.object({
       topic_id: z.string().uuid(),
@@ -166,7 +170,9 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   let signupMessage = 'Check your email to confirm your account';
 
   if (env.AUTHKIT_PRIMARY === 'true') {
-    const result = await signUpWorkosFirst(email, password);
+    const result = await signUpWorkosFirst(email, password, {
+      sendVerificationEmail: !parsed.data.defer_verification_email,
+    });
     if (!result.ok) {
       const failures = {
         NOT_CONFIGURED: [503, 'NOT_CONFIGURED', 'Signup is temporarily unavailable'],

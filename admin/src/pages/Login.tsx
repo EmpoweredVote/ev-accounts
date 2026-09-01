@@ -45,6 +45,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // the hosted AuthKit redirect.
   const [codeStep, setCodeStep] = useState(false);
   const [code, setCode] = useState('');
+  const [codeResent, setCodeResent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -239,6 +240,19 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
     }
   }
 
+  // Re-run sign-in to have WorkOS issue a fresh code (and a fresh pending
+  // cookie) when the first didn't arrive or expired.
+  async function handleResendCode() {
+    setError(null);
+    setCodeResent(false);
+    try {
+      await loginWithPassword(email, password);
+      setCodeResent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not resend the code');
+    }
+  }
+
   async function handleResendConfirmation() {
     await fetch(`${API_BASE}/auth/resend-confirmation`, {
       method: 'POST',
@@ -384,9 +398,18 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
             {isSubmitting ? 'Verifying…' : 'Verify'}
           </button>
 
+          <div className="text-center">
+            <button type="button" onClick={handleResendCode} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+              Resend code
+            </button>
+            {codeResent && (
+              <p className="mt-1 text-xs text-green-600 dark:text-green-400">A new code is on its way.</p>
+            )}
+          </div>
+
           <button
             type="button"
-            onClick={() => { setCodeStep(false); setCode(''); setError(null); }}
+            onClick={() => { setCodeStep(false); setCode(''); setError(null); setCodeResent(false); }}
             className="w-full text-center text-xs text-ev-teal dark:text-ev-teal-light hover:underline"
           >
             Back to email and password
