@@ -1912,3 +1912,39 @@ the Mayor 1, Bibb County Elected Officials 5) · 10 districts created (9 × `X00
 ▶ **Macon-Bibb is now complete across stages 1–4. Stage 5 (headshots + banner) is what remains** — and
 the county's voter-facing GIS layer already carries a `photo` URL for all nine commissioners, which is
 a candidate source to test rather than a solved problem.
+
+### ⏸ GA-4 CARRY-OVER RE-CHECKED 2026-09-02 — the Muscogee Probate Judge. NO DEPARTURE, STILL NO CURRENCY, AND ONE NEW DATE
+
+The GA-4 handoff owed a re-check of **Marc D'Antonio**, Judge of the Muscogee County Probate Court,
+whose newest positive evidence stopped at **2025-01-13**. Done, and it produced three separate results.
+
+1. 🔴 **HIS OWN COURT STILL DOES NOT NAME ITS JUDGE.** `columbusga.gov/probate/` re-fetched today
+   yields **1,459 characters** of text containing neither "Judge" nor "D'Antonio". GA-4 measured this
+   twice, including JS-rendered; the measurement holds a wave later.
+2. 🟢 **A BALLOTPEDIA *PERSON* PAGE EXISTS** — `Marc_Eric_D'Antonio` — and carries real tenure history:
+   "first served the court as an **appointed associate judge from 2009** until being **elected judge in
+   2012** to replace Julia W. Lumpkin", and "won a second term in the partisan general election on
+   **November 8, 2016**".
+   ⚠ **THIS DOES NOT CONTRADICT GA-4.** GA-4 recorded that Ballotpedia has no Muscogee *county
+   officials* page — a different URL, which still redirects to the city page. A person page is a
+   route GA-4's search did not reach.
+3. 🔴🔴 **THE PAGE'S CONTENT STOPS AT 2016, SO THE RE-CHECK STILL CANNOT REACH 2026.** It describes him
+   in the present tense as "the judge of the Muscogee County Probate Court" and carries **no
+   `Assumed office` infobox and no 2020 or 2024 election**. Present-tense prose on a page whose newest
+   fact is nine years old is **not currency** — that is precisely the shape of the Baldwin coroner
+   failure, where every source agreed and all of them predated the retirement.
+   ⚠ A "3 terms" figure surfaced in a search summary and is **NOT on the Ballotpedia page**
+   (`terms as Probate` is absent); it traces to a **data broker** and is not used.
+
+**Verdict: no departure was found, and no departure has been established either.** The seat stays as
+`CC_0036` wrote it, with the limit still stated rather than hidden.
+
+⏸ **BUT THERE IS NOW A SOURCED START DATE, AND IT IS A GA-4 CORRECTION RATHER THAN GA-5 WORK.**
+`CC_0036` seated him open-ended at `start_precision 'unknown'` because no start was known. Elected in
+2012, and Georgia county officers take office the following January, so his occupancy of **the
+judgeship** begins **2013-01-01 at `year`** — the identical shape as Bibb's Davis and Harris in
+`CC_0047`. ⚠ **The 2009 appointment was to a different office** (associate judge), so it is not the
+start of this occupancy.
+
+▶ **Flagged, not applied.** Writing it would mean a new migration against a seat this wave does not
+own, and the honest change is one column on one row. Decide it as a GA-4 amendment.
