@@ -130,9 +130,27 @@ function addedFiles(base) {
   ])];
 }
 
-/** Every remote-tracking ref, minus the trailing-HEAD symrefs that just alias another entry. */
-function remoteRefs() {
-  const out = tryGit(["for-each-ref", "--format=%(refname)", "refs/remotes/"]);
+/**
+ * Every ref worth scanning, minus the trailing-HEAD symrefs that just alias another entry.
+ *
+ * 🔴 refs/heads/ IS NOT OPTIONAL, AND LEAVING IT OUT COST US CC_0045 AND CC_0046.
+ * This scanned `refs/remotes/` alone until 2026-09-02. That is blind to any
+ * branch that has not been pushed — and this repo is checked out as SEVERAL GIT
+ * WORKTREES (EV-Accounts, ev-accounts-coverage, ev-accounts-knight), each
+ * sitting on its own local branch, all sharing one object store. Work commits in
+ * one worktree and is invisible here until someone pushes it.
+ *
+ * That is exactly what happened: `knight/ga-5-macon-bibb` took CC_0045/0046/0047
+ * at 08:13 in the knight worktree and was never pushed; the compass stream took
+ * CC_0045 fifteen minutes later and merged it to master. This script reported
+ * "Migration numbering OK" the whole time, with two slots duplicated and BOTH
+ * SIDES ALREADY APPLIED TO PROD.
+ *
+ * Local refs are cheap to include and the label() helper below already strips
+ * the refs/heads/ prefix — the enumeration was the only thing missing.
+ */
+function scannableRefs() {
+  const out = tryGit(["for-each-ref", "--format=%(refname)", "refs/heads/", "refs/remotes/"]);
   if (!out) return [];
   return out.split("\n").filter(Boolean).filter((r) => !r.endsWith("/HEAD"));
 }
@@ -149,7 +167,7 @@ const label = (ref) => ref.replace(/^refs\/remotes\//, "").replace(/^refs\/heads
  * Returns null if no ref could be read at all, so callers can fall back to the tree scan alone.
  */
 function claimedSlots(base) {
-  const refs = [...new Set([...(base ? [base] : []), ...remoteRefs()])];
+  const refs = [...new Set([...(base ? [base] : []), ...scannableRefs()])];
   const map = new Map();
   let read = false;
   for (const ref of refs) {
@@ -276,7 +294,7 @@ if (!claimed) {
     problems.push("", `Next free number in ${ns ? `namespace ${ns}` : "the shared sequence"} is ${next}. Rename and re-run this check.`);
   } else if (!problems.length) {
     const allowed = Object.keys(KNOWN_DUPLICATES).length;
-    const refCount = new Set([...(base ? [base] : []), ...remoteRefs()]).size;
+    const refCount = new Set([...(base ? [base] : []), ...scannableRefs()]).size;
     console.log(
       `Migration numbering OK — ${added.length} added vs ${base}; ` +
       `${claimed.size} slots claimed across ${refCount} ref(s); tree scan clean ` +
