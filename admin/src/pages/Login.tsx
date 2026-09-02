@@ -474,7 +474,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           >
             Create an Account
           </button>
-          <p className="text-center text-xs text-gray-500 dark:text-gray-500">
+          <p className="text-center text-xs text-gray-600 dark:text-gray-400">
             Have an invite code?{' '}
             <Link to={signupHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
               Create a Connected Account
@@ -482,7 +482,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           </p>
         </div>
 
-        <p className="text-center text-xs text-gray-400 dark:text-gray-600">
+        <p className="text-center text-xs text-gray-500 dark:text-gray-400">
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
         </p>
       </div>

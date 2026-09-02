@@ -5,6 +5,7 @@ import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 import { useAuthStore } from '../store/authStore';
 import { embeddedAuthEnabled, loginWithPassword, verifyEmailCode } from '../lib/workosAuth';
 import PasswordRequirements from '../components/PasswordRequirements';
+import AuthShell from '../components/AuthShell';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -224,20 +225,7 @@ export default function Signup() {
 
   if (codeStep) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
-        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md">
-          <div className="flex justify-center mb-6">
-            <img
-              src="/Empowered_Vote_Logo_2026.png"
-              alt="Empowered Vote"
-              className="h-12 object-contain"
-            />
-          </div>
-
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            Enter your code
-          </h1>
-
+      <AuthShell width="md" heading="Enter your code">
           {error && (
             <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
               {error}
@@ -285,24 +273,15 @@ export default function Signup() {
               )}
             </div>
           </form>
-        </div>
-      </div>
+      </AuthShell>
     );
   }
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
-        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md text-center">
-          <div className="flex justify-center mb-6">
-            <img
-              src="/Empowered_Vote_Logo_2026.png"
-              alt="Empowered Vote"
-              className="h-12 object-contain"
-            />
-          </div>
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Check your email</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+      <AuthShell width="md" heading="Check your email">
+        <div className="text-center">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">
             We sent a confirmation link to <strong>{email}</strong>. Click it to activate your
             account.
           </p>
@@ -327,25 +306,13 @@ export default function Signup() {
             </button>
           </p>
         </div>
-      </div>
+      </AuthShell>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md">
-        <div className="flex justify-center mb-6">
-          <img
-            src="/Empowered_Vote_Logo_2026.png"
-            alt="Empowered Vote"
-            className="h-12 object-contain"
-          />
-        </div>
-
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-          Create your Connected Account
-        </h1>
-
+    <>
+    <AuthShell width="md" heading="Create your Connected Account">
         {appName && (
           <div className="mb-4 p-3 bg-ev-teal/10 border border-ev-teal/20 rounded text-sm text-ev-teal text-center">
             You'll be returned to {appName} after signing in
@@ -500,11 +467,11 @@ export default function Signup() {
               Sign in
             </Link>
           </p>
-          <p className="text-sm text-gray-400 dark:text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
           </p>
         </div>
-      </div>
+      </AuthShell>
 
       {/* Request Access Modal */}
       <Transition appear show={modalOpen} as={Fragment}>
@@ -582,6 +549,6 @@ export default function Signup() {
           </div>
         </Dialog>
       </Transition>
-    </div>
+    </>
   );
 }

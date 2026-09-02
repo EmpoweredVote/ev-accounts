@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 
 interface AuthShellProps {
+  /** Optional tier/context badge shown centered above the heading (e.g. the Inform pill). */
+  badge?: ReactNode;
   /** Card title, e.g. "Log in" or "Enter your code". Omit for none. */
   heading?: string;
   /** Optional short line under the heading (e.g. reset instructions). */
@@ -16,7 +18,7 @@ interface AuthShellProps {
  * and the theme-aware Empowered Vote logo. Presentational only — pages own all
  * form state, handlers, and links and pass them as `children`.
  */
-export default function AuthShell({ heading, subheading, width = 'sm', children }: AuthShellProps) {
+export default function AuthShell({ badge, heading, subheading, width = 'sm', children }: AuthShellProps) {
   return (
     <div className="auth-bg min-h-screen flex items-center justify-center px-4 py-12">
       <div
@@ -39,6 +41,8 @@ export default function AuthShell({ heading, subheading, width = 'sm', children 
           />
         </div>
 
+        {badge && <div className="flex justify-center mb-3">{badge}</div>}
+
         {heading && (
           <h1 className="text-xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
             {heading}
@@ -50,7 +54,7 @@ export default function AuthShell({ heading, subheading, width = 'sm', children 
           </p>
         )}
 
-        <div className={heading || subheading ? 'mt-6' : ''}>{children}</div>
+        <div className={heading || subheading || badge ? 'mt-6' : ''}>{children}</div>
       </div>
     </div>
   );
