@@ -1,4 +1,4 @@
--- CC_0045_macon_bibb_structure.sql
+-- CC_0049_macon_bibb_structure.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 2, CITY STRUCTURE half.
 --   * 1 government, 2 chambers

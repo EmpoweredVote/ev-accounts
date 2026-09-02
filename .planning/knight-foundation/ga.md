@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ✅ **STAGES 1–4 APPLIED 2026-09-02** — `X0045`, `CC_0045`–`CC_0047`, **15 seats** (10 city, 5 county), 0 vacancies. All probes pass. ▶ Stage 5 (headshots + banner) remains |
+| GA-5 | **Macon-Bibb** | ✅ **STAGES 1–4 APPLIED 2026-09-02** — `X0045`, **`CC_0049`–`CC_0051`** (renumbered from `CC_0045`–`CC_0047` after a collision), **15 seats** (10 city, 5 county), 0 vacancies. All probes pass. ▶ Stage 5 (headshots + banner) remains |
 
 ---
 
@@ -1948,3 +1948,55 @@ start of this occupancy.
 
 ▶ **Flagged, not applied.** Writing it would mean a new migration against a seat this wave does not
 own, and the honest change is one column on one row. Decide it as a GA-4 amendment.
+
+### 🔴🔴🔴 GA-5 RENUMBERED AFTER APPLY — `CC_0045`–`CC_0047` COLLIDED WITH A MERGED COMPASS CHAIN. NOW `CC_0049`–`CC_0051`
+
+**This is the third migration-number collision in the program, and the second in two consecutive
+Knight waves.** Flagged by the operator, from a parallel Compass session, mid-session on 2026-09-02.
+
+The collision, measured across all remote refs:
+
+| Slot | Also claimed by | Where |
+| --- | --- | --- |
+| `CC_0045` | `CC_0045_compass_responses_season_aware.sql` | **`origin/master`** + 2 branches |
+| `CC_0046` | `CC_0046_compass_responses_season_stage2.sql` | **`origin/master`** + 2 branches |
+| `CC_0047` | nobody | — |
+| `CC_0048` | `CC_0048_seasons_grant_for_invoker_view.sql` | **`origin/master`** |
+
+🔴 **THE RE-COUNTS WERE NOT WRONG — THE WINDOW IS SMALLER THAN THE APPLY.** `CC_0044` was measured as
+the max across 98 refs **immediately before the rename**, `0045/46/47` were confirmed claimed by nobody,
+and the **post-apply re-count came back clean too**. The Compass chain merged to master in the minutes
+after that. GA-4's collision was six minutes wide; this one fits inside a verification that ran both
+before *and* after. **A re-count cannot close this window. Only pushing early, or a lock, can.**
+
+#### The renumber decision was measured on both sides, not assumed
+
+GA-4's rule is that **"mine is applied" is not automatically the stronger claim**. Both sides were
+measured and every criterion pointed the same way:
+
+| | GA-5 (mine) | Compass (theirs) |
+| --- | --- | --- |
+| Numbers embedded in **prod data** | **0 rows** — `office_terms.source`, `politicians.data_source` and `geofence_boundaries.source` all return 0 for `%CC_004%`; provenance strings are `maconbibb-us-…`, never a migration number | their numbers cross-reference **each other**: `CC_0046` cites `CC_0045`, `CC_0048` cites `CC_0046`, and each embeds its own |
+| Git standing | an **unpushed local branch** | **merged to `origin/master`** |
+| Chain length | 3 independent files | a **3-file dependent chain** |
+
+So GA-5 renumbered. The operator's read, relayed from the Compass session, was correct.
+
+#### What the renumber did and did not touch
+
+- **The SQL content is byte-identical apart from the filename comment in each header.** Only the
+  filenames and self-references moved, so the applied state in production is untouched and correct.
+- **All three re-run clean under the new names**, and `verify-macon-bibb-probes.sql` still passes
+  end-to-end.
+- ⚠ **`X0045` WAS NOT TOUCHED.** The private MTFCC for the nine commission districts is a different
+  namespace that merely looks similar; a careless `CC_0045` → `CC_0049` sweep across the tree would have
+  renamed the boundary code too and silently detached every district from its polygons.
+- The generator emits the new names, so regenerating reproduces the applied files.
+
+🔴 **AND THIS IS EXACTLY WHY `CC_wip_` EXISTS.** The wave was written and dry-run entirely under
+`CC_wip_` names and took numbers only at apply time — that part worked. What failed is that *any*
+number taken from a shared sequence is stale the moment it is taken. ▶ **The durable fix is not a
+better count. It is Cantrell's own `CC_` namespace being shared with parallel Cantrell sessions** —
+`MEMORY.md` says "He never reads the shared max again", and that is no longer true of `CC_` itself.
+Consider a per-session or per-wave sub-band (e.g. Knight waves reserve `CC_01xx`) so that two Cantrell
+sessions cannot contend at all.

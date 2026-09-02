@@ -1,4 +1,4 @@
--- CC_0046_macon_bibb_people.sql
+-- CC_0050_macon_bibb_people.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 3, CITY OCCUPANCY half.
 --   * 10 politicians, 10 terms, 0 vacancies

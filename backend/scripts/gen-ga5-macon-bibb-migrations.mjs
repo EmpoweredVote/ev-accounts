@@ -3,12 +3,12 @@
  *
  * Generates the GA-5 migrations from backend/data/ga5-macon-bibb-roster.json.
  *
- *   CC_0045_macon_bibb_structure.sql  Task 2 — 1 government, 2 city chambers,
+ *   CC_0049_macon_bibb_structure.sql  Task 2 — 1 government, 2 city chambers,
  *                                     10 districts (9 x X0045 + 1 citywide),
  *                                     10 offices
- *   CC_0046_macon_bibb_people.sql     Task 3 — 10 politicians, 10 terms,
+ *   CC_0050_macon_bibb_people.sql     Task 3 — 10 politicians, 10 terms,
  *                                     0 vacancies, ALL via seat_officeholder()
- *   CC_0047_bibb_county.sql           Task 4 — 1 chamber, 5 offices + 5 people
+ *   CC_0051_bibb_county.sql           Task 4 — 1 chamber, 5 offices + 5 people
  *                                     + 5 terms in ONE migration, per spec §3
  *
  * Everything comes from data/ga5-macon-bibb-roster.json, and the roster is
@@ -31,7 +31,7 @@
  *    said) through CC_0040 (what the GA-4 handoff warned) to CC_0044
  *    (measured) — and CC_0044 sits on a colleague's UNMERGED branch, which is
  *    exactly why the sweep covers every remote ref and not just master. So this
- *    wave took CC_0045, CC_0046 and CC_0047.
+ *    wave took CC_0049, CC_0050 and CC_0051.
  *    ⚠ Once APPLIED, do not renumber these: a renamed applied migration
  *      desyncs the filename from its apply order.
  *
@@ -400,7 +400,7 @@ END $$;`;
 }
 
 function structureFile() {
-  return `-- CC_0045_macon_bibb_structure.sql
+  return `-- CC_0049_macon_bibb_structure.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 2, CITY STRUCTURE half.
 --   * 1 government, 2 chambers
@@ -615,7 +615,7 @@ function peopleFile() {
     )
     .join('\n\n');
 
-  return `-- CC_0046_macon_bibb_people.sql
+  return `-- CC_0050_macon_bibb_people.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 3, CITY OCCUPANCY half.
 --   * ${offices.length} politicians, ${offices.length} terms, 0 vacancies
@@ -1114,7 +1114,7 @@ WHERE g.geo_id = ${q(gov.geo_id)} AND g.type = ${q(gov.type)} AND c.name = ${q(c
     )
     .join('\n\n');
 
-  return `-- CC_0047_bibb_county.sql
+  return `-- CC_0051_bibb_county.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 4, BIBB COUNTY --
 -- offices AND people AND terms in ONE migration, per spec §3.
@@ -1622,7 +1622,7 @@ COMMIT;
 
 // ── emit ─────────────────────────────────────────────────────────────────────
 
-const structOut = join(OUT_DIR, 'CC_0045_macon_bibb_structure.sql');
+const structOut = join(OUT_DIR, 'CC_0049_macon_bibb_structure.sql');
 writeFileSync(structOut, structureFile(), 'utf8');
 console.log(`wrote ${structOut}`);
 console.log(
@@ -1630,7 +1630,7 @@ console.log(
     `(${city.district_count} x ${city.district_mtfcc} + 1 citywide), ${city.offices.length} offices`,
 );
 
-const peopleOut = join(OUT_DIR, 'CC_0046_macon_bibb_people.sql');
+const peopleOut = join(OUT_DIR, 'CC_0050_macon_bibb_people.sql');
 writeFileSync(peopleOut, peopleFile(), 'utf8');
 console.log(`wrote ${peopleOut}`);
 {
@@ -1643,7 +1643,7 @@ console.log(`wrote ${peopleOut}`);
       `${appointed.length} appointed, ALL via seat_officeholder()`,
   );
 }
-const countyOut = join(OUT_DIR, 'CC_0047_bibb_county.sql');
+const countyOut = join(OUT_DIR, 'CC_0051_bibb_county.sql');
 writeFileSync(countyOut, countyFile(), 'utf8');
 console.log(`wrote ${countyOut}`);
 {
@@ -1655,6 +1655,6 @@ console.log(`wrote ${countyOut}`);
       `${dated.length} dated at year, ${undated.length} open-ended unknown`,
   );
 }
-console.log('  🔴 CC_0045/0046/0047 — taken LAST on 2026-09-02, re-counted across all 98 remote refs (CC_0044 was the max, on an UNMERGED branch).');
+console.log('  🔴 CC_0049/0046/0047 — taken LAST on 2026-09-02, re-counted across all 98 remote refs (CC_0044 was the max, on an UNMERGED branch).');
 console.log('  ⚠ Neither the occupancy nor the county half can be dry-run alone.');
 console.log('  ⚠ Run all THREE as ONE transaction ending in ROLLBACK, asserting zero ^\\s*COMMIT\\s*; beforehand.');

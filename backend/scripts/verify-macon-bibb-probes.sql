@@ -8,7 +8,7 @@
 -- Slice:  .planning/knight-foundation/ga.md
 --
 -- Usage, INSIDE the dry-run transaction, before anything is applied:
---     BEGIN; <CC_0045> <CC_0046> <CC_0047> \i scripts/verify-macon-bibb-probes.sql ROLLBACK;
+--     BEGIN; <CC_0049> <CC_0050> <CC_0051> \i scripts/verify-macon-bibb-probes.sql ROLLBACK;
 -- and again after the apply, on its own.
 --
 -- ─────────────────────────────────────────────────────────────────────────────

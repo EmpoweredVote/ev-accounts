@@ -1,4 +1,4 @@
--- CC_0047_bibb_county.sql
+-- CC_0051_bibb_county.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 4, BIBB COUNTY --
 -- offices AND people AND terms in ONE migration, per spec §3.
