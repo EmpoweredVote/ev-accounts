@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | Macon-Bibb | — |
+| GA-5 | **Macon-Bibb** | ⏸ **MEASURED 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete, **nothing written to production** |
 
 ---
 
@@ -1353,3 +1353,161 @@ session does not re-find it and reason differently.
 
 🟢 The directory's opaque `documentID`s independently re-confirm GA-3's off-by-one —
 **Butts 238, Davis 239**, not district order.
+
+---
+
+## GA-5 — Macon-Bibb County, ⏸ MEASURED 2026-09-01, NOTHING WRITTEN TO PRODUCTION
+
+Roster and every measurement: [`backend/data/seed-macon-bibb-2026/ROSTERS.md`](../../backend/data/seed-macon-bibb-2026/ROSTERS.md).
+Branch `knight/ga-5-macon-bibb`, cut fresh from master. **15 offices, 15 people, 0 vacancies** —
+10 city, 5 county, one government, three chambers. Georgia's third jurisdiction and the program's
+**second consolidated city-county**.
+
+Slots verified free at measurement time and **to be taken LAST**: `X0045` for the nine commission
+districts, `external_id` sub-range **`-1331036 .. -1331050`** (Columbus claimed through `-1331035`).
+
+### Starting position, measured against production
+
+| What | Bibb holds |
+| --- | --- |
+| `districts` | Bibb County `13021`/`G4020`, 254.906 sq mi, **zero offices**, `num_officials` NULL |
+| `geofence_boundaries` | place `1349008`/`G4110` 254.906 · county `13021`/`G4020` 254.906 · `G5210`, `G5220`, `G6350` |
+| **No district row for the place** | GA-1 loaded the place BOUNDARY only — identical to Columbus. GA-5 creates it |
+
+⚠ **The three-way `geo_id` collision bit during measurement.** A query for districts matching
+`geo_id IN ('13021','1349008')` without pairing `district_type` returned **State House District 21 and
+State Senate District 21** alongside Bibb County. Georgia's collision, caught live, exactly as the
+GA-1 note warns.
+
+### 🔴🔴 THE CERTIFIED-RESULTS ROUTE IS NOW DEAD FOR THE CITY HALF, TWICE RUNNING, AND WORSE HERE
+
+GA-4 found the SOS portal carried Columbus municipal contests only from 2026. **Bibb carries no
+Macon-Bibb Mayor or Commission contest in ANY year.** All 36 elections were enumerated from
+`/api/jurisdictions/bibb-county-ga` and every ballot item in the four plausible payloads was listed by
+hand. 2024's general carries four county officers; **2020's carries none at all** — though Sheriff
+Davis was elected that November and the county's own qualifying list shows a full local ballot.
+
+▶ **Stop trying the portal first for a Georgia consolidated city-county.** Two for two. Its Bibb
+coverage is not late, it is **patchy per election**, which is the failure mode that reads as "no
+contest" rather than as "no data". A wave that trusted it would have called the whole commission vacant.
+
+### 🔴🔴 FIVE LAYERS, FOUR IDENTICAL — AND MACON-BIBB DOES *NOT* INVERT
+
+Columbus taught that the layer with the fresh roster can carry the superseded geometry. **Bibb had to
+be measured to find out it is not like that**, and the measurement is the point.
+
+Per-district symmetric difference against the county's voter-facing layer, after `ST_MakeValid`:
+the **adopted 2022 redistricting plan**, `County_Commissioners_2020` and `County_Commission` all agree
+at **0.0000 sq mi on all nine**; the **Board of Elections** copy differs by **0.0914 total** (~0.01 per
+district, sliver noise); and **`CountyDistrict` is a different map by 145.72 sq mi**, with a union
+0.46 sq mi too large.
+
+🔴 **`CountyDistrict` IS LISTED FIRST IN THE COUNTY'S OWN WEB MAP, MODIFIED 2026-02-19.** A live 2026
+map ships the superseded layer next to the current one. ⚠ And **the names are backwards**:
+`County_Commissioners_2020` sounds stale and is current (its *layer* is named "County Commissioners
+2024"); `CountyDistrict` sounds current and is the old plan.
+
+🟢 **THE ARBITER WAS THE COUNTY'S OWN VOTER-FACING WIDGET, FOUND BY READING THE IFRAME.** Bibb
+publishes no `Elections Combinations` table, so GA-4's arbiter does not exist here. What replaced it:
+`maconbibb.us/commissioners/` embeds a "Find Your Commissioner" iframe pointing at a **different
+portal** — `maconbibb.spatialitics.net`, not the ArcGIS Online org — serving
+`Hosted/CountyCommissioners2024`. **That is the map the county tells voters to use**, and it is the
+only layer whose roster names all nine current members, Andrea Cooke included.
+▶ **When there is no ballot-building table, ask what the jurisdiction's own lookup tool queries.**
+
+### 🔴 FULL COVERAGE IS CORRECT IN BIBB — THE COLUMBUS GATE INVERTS
+
+Charter Sec. 9(a) excluded **the City of Payne City** from the original districting plan, so if Payne
+City still existed the nine districts would not tile the county. Measured: union **254.9060** vs TIGER
+county **254.906**, symmetric difference **0.0280 sq mi** — far below Payne City's footprint, which
+appears nowhere in TIGER 2024. The carve-out is spent, **and the geometry proves it rather than
+assuming it**.
+
+🔴 So where GA-4 said "gate the structure, not full coverage" (Fort Benning, 74.79 sq mi in no
+district), **GA-5 must gate full coverage** — a structure-only gate would pass on a map that had lost a
+district. **The right gate is a property of the jurisdiction, not of the program.**
+
+### Charter rulings — Ga. L. 2012, p. 5595/HB 1171, read in the sections themselves
+
+- **M1** — **nine single-member districts, NO at-large** (Sec. 9(a), 9(c)); all five GIS layers return
+  nine polygons. So the citywide district carries `num_officials = 1`, the Mayor alone — **not
+  Columbus's 3**. ⚠ Sec. 5 ("a mayor and nine commissioners") and Sec. 9(c) ("shall consist of nine
+  members") contradict each other; **9(c) governs**, and it is what the body operates under.
+- **M2** — the **Mayor is `non_voting` with a required note**, Sec. 9(c): presides, "shall not be a
+  voting member", "may cast a vote … to break a tie". 🟢 **Proved by two roll calls**: mayor pro tem
+  elected **5–4 among nine** in January 2025 and **5–3 among eight** on 2026-01-06 with D5 vacant.
+  Both totals are the commissioner count, never that plus one.
+- **M3** — **Mayor Pro Tem is a parenthetical** (Sec. 9(f), elected annually from members). It moved
+  from Clark to **Valerie Wynn** on 2026-01-06.
+- **M4** — **5 county officers.** Charter Sec. 8 preserves **four** (sheriff, tax commissioner,
+  coroner, clerk of superior court); the **Probate Judge** enters via **Ga. Const. Art. IX** — the
+  mirror image of Muscogee, where the charter named the probate judge and the *clerk* came in by
+  Art. IX. 🟢 Confirmed by the county's own officers, who acted **jointly as "Bibb County
+  constitutional officers"** in Dec 2025 to change the legal organ: Davis, Harris, Woodford **and
+  McCord** are inside that group and the Solicitor of State Court is not.
+  ⚠ **Neither Baldwin's six nor Muscogee's five transfers** — Bibb elects no Marshal and no Surveyor,
+  and its five arrive by a different legal route. Confirm from the charter, inherit nothing. Again.
+- **M5** — 🟢 **GA-4'S MUNICIPAL-COURT QUESTION DOES NOT ARISE.** GA-4 predicted Macon-Bibb would
+  raise ruling R4 again. It does not: charter Sec. 7 fills the Municipal Court judgeship **by
+  appointment of the mayor**, so there is no elected municipal-court office at all, confirmed by the
+  ballot enumeration. **The question stays live for Philadelphia and Lexington.**
+- **M6** — **vacancies** (Sec. 15): special election, **unless within 12 months of expiry**, when the
+  commission may appoint within 20 days. This is what makes `how_started` differ seat by seat.
+
+### 🔴🔴 THE CHANGE-CHECK PAID ON THE ONE SEAT THAT MATTERED, AND FOUR OF FIVE MAPS MISSED IT
+
+**Seth Clark (D5) resigned 2026-01-05** to run for Lieutenant Governor. Special election 2026-03-17,
+runoff won by **Andrea Cooke** 746–313, **sworn in 2026-04-20**. Only the county's voter-facing layer
+knows she exists. Source `CountyDistrict` still names **Lucas, Clark and Tillman — three people who
+have all left** — so a roster read from the first-listed layer would have seated three departed
+officials and missed the only 2026 arrival.
+
+🟢 The five county officers are the freshest cohort in the wave: the **Coroner was working in July
+2026**, which is precisely the currency Baldwin's coroner lacked in GA-3.
+
+### 🔴 THREE SOURCE DEFECTS THAT EACH WOULD HAVE SEATED SOMEONE WRONG
+
+1. **The county's own farewell post puts Donice Bryant in District 5. She is District 8.** D5 is the
+   very seat that then fell vacant and went to Cooke — the one district where the collision was live.
+2. **WGXA lists Stanley Stewart among "re-elected officials".** He was not re-elected; he won Lucas'
+   open seat and was **appointed** to its remainder two months earlier. The two errors point in
+   opposite directions and neither is visible from the other source.
+3. **Two oath dates are wrong by construction.** WGXA dates Stewart's swearing-in to the day the
+   commission *voted to appoint* him (2024-10-01); the county reports the oath on **2024-10-15** — 14
+   days later. And one outlet dates Cooke to April 21, a **Tuesday**, while the article says "sworn in
+   Monday" and "first commission meeting is Tuesday". **The oath is the occupancy, not the vote**, and
+   **the weekday arbitrates**.
+
+⚠ Also: two press accounts say the **Mayor** appointed Bailey to D9. **Charter Sec. 15(b) gives that
+power to the commission**, and the tally was a 5–3 commission vote. `how_started` is `'appointed'`
+either way, but the voter-facing prose must not repeat the error.
+
+### ⏸ ONE OPEN DECISION FOR CANTRELL — the precision on four rows, not their date
+
+Miller, Bronson, Wilder and Howell all began on **2021-01-01**. No source quotes that date. It is the
+charter's own commencement rule (Sec. 9(c), Sec. 10(b): "shall take office on the **first day of
+January** immediately following the date of the election") applied to a sourced 2020 election, and the
+county states the identical rule as fact for the 2025 cohort ("begins at 12:00 a.m. on January 1,
+2025"). **My read: write it at `day`, with the derivation in the `source` string.**
+
+That is a *legal rule applied to a sourced election*, not the GA-4 Chapple case (a date inferred from
+vague prose, correctly refused and written `unknown`). If the ruling goes the other way it is one
+column: `year`, or open-ended `unknown`.
+
+🟢 **Incumbency itself is not in doubt** — a contemporaneous 2020 qualifying list marks which
+candidates were sitting commissioners, and **the count closes on itself twice**: 2020 produced exactly
+four new commissioners, and the four term-limited in 2024 are exactly the four who had served since the
+2014 merger. Wynn is written at **`month`** (2018 special election, no oath date published) and the
+three county officers with no published start are **open-ended `unknown`** — as Columbus wrote nine of
+eleven.
+
+### What GA-5 will write
+
+1 government (keyed on place `1349008`), **3 chambers on that one government**, **10 districts created**
+(9 × `X0045` + the citywide `1349008`/`G4110`), Bibb `13021`/`G4020` **asserted never inserted**,
+**15 offices / 15 people / 15 terms / 0 vacancies**.
+
+🔴 Inherited from GA-4 and **not optional**: the **tier-crossing gate** (city `LOCAL` and county
+`COUNTY` over identical ground), and **every structure post-verify scoped to the two CITY chambers** —
+the county chamber joins the same government row, so a government-wide count passes on the day it
+applies and fails forever after.
