@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ▶ **IN PROGRESS 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete. **Task 1 APPLIED (`X0045`, 9 districts); Task 2 WRITTEN AND DRY-RUN CLEAN, not applied.** Tasks 3–4 not written |
+| GA-5 | **Macon-Bibb** | ▶ **IN PROGRESS 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete. **Task 1 APPLIED (`X0045`, 9 districts); Tasks 2 and 3 WRITTEN AND DRY-RUN CLEAN as one transaction, not applied.** Task 4 not written |
 
 ---
 
@@ -1633,3 +1633,91 @@ A bare `git add -A` can no longer pick it up.
 ⚠ **THE REMOTE MOVED DURING THIS TASK**: `check:migrations` read **1821 slots across 97 refs** at the
 start and **1823 across 99** at the end. Nothing collided because no number has been taken — which is
 the whole argument for `CC_wip_`.
+
+### ✅ GA-5 Task 3 — city occupancy, WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`CC_wip_macon_bibb_people.sql`. **10 politicians, 10 terms, 0 vacancies**, sub-range
+`-1331036 .. -1331045`. Structure + occupancy ran as **ONE transaction ending in `ROLLBACK`**; both
+post-verifies green; **rollback confirmed to have reverted**; production re-measured untouched and
+`offices_missing_terms` unchanged at **821 / 166 / 655**. `check:migrations` and `check:occupancy` green.
+
+🟢 **ALL TEN GO THROUGH `seat_officeholder()`, WHICH COLUMBUS COULD NOT DO.** The helper refuses a NULL
+`term_start`, so GA-4 had to direct-insert **nine of eleven** Columbus rows — Columbus publishes no
+service-start of any kind. Macon-Bibb publishes enough that every one of the ten carries a real date,
+so this migration hand-rolls nothing and the house rule is followed in full.
+⚠ The refusal branch is kept anyway, unreachable today (the payload guard proves 0 undated rows), so
+that editing the roster to add an undated person cannot silently bypass the helper. An undated
+open-ended term is a legitimate record — the ADR 0002 phase-2 backfill wrote 81,676 — but it must be a
+decision, not a side effect.
+
+#### 🔴🔴 THE DATES ARE NOT UNIFORM, AND THE SENTENCE MOST LIKELY TO CORRUPT THIS MIGRATION IS ONE THE COUNTY PUBLISHED
+
+| Seat | Holder | term_start | precision | how_started |
+| --- | --- | --- | --- | --- |
+| Mayor | Lester Miller | 2021-01-01 | `day` | elected |
+| D1 | Valerie Wynn | 2018-06-01 | **`month`** | elected (2018 special) |
+| D2 | Paul Bronson | 2021-01-01 | `day` | elected |
+| D3 | Stanley Stewart | **2024-10-15** | `day` | **appointed** |
+| D4 | Joey Hulett | 2025-01-01 | `day` | elected |
+| D5 | Andrea Cooke | **2026-04-20** | `day` | elected (2026 special) |
+| D6 | Raymond Wilder | 2021-01-01 | `day` | elected |
+| D7 | Bill Howell | 2021-01-01 | `day` | elected |
+| D8 | Donice Bryant | 2025-01-01 | `day` | elected |
+| D9 | Brendalyn Bailey | **2024-01-17** | `day` | **appointed** |
+
+🔴 **THE PAYLOAD GUARD ASSERTS THE EXACT `(external_id, term_start, start_precision, how_started)`
+TUPLE SET IN SQL**, not a count — restating in the migration what the roster validator checks in JS,
+because that is the guard which refuses the one substitution this wave invites.
+
+🟢 **AND IT WAS PROVED, WITH THE MOST INFORMATIVE FAILURE MESSAGE OF THE WAVE.** Setting every city
+seat to the county's published `2025-01-01` raises **`8 row(s) do not match the sourced tuple`** —
+**eight, not ten**, because the published sentence is genuinely correct for Hulett and Bryant. The
+guard flags precisely the eight it should and passes the two it should.
+
+#### 🟢 TEN NEGATIVE CONTROLS, EVERY ONE FIRING ON THE GATE IT AIMED AT
+
+| Control | Fired on |
+| --- | --- |
+| Every seat given the published **2025-01-01** | the tuple guard — **8 of 10** flagged |
+| Cooke dated to the **certified special** (2026-03-17), not the oath | the tuple guard |
+| Stewart dated to the **appointment vote** (2024-10-01), not the oath | the tuple guard |
+| Wynn **"tidied"** from `month` to a day that invents her oath | the tuple guard |
+| Bailey's appointment relabelled **`elected`** | the tuple guard |
+| `how_started 'special election'` | the tuple guard |
+| …**and again with the tuple guard satisfied** | the `how_started` **enum** guard |
+| Wynn's `month` precision removed, **tuple guard satisfied** | the month-precision guard |
+| A seat resolving to **no office** | "do not resolve to exactly one office" |
+| A **`term_end`** written on the Mayor's term | "carry a term_end — none may" |
+
+⚠ **TWO GUARDS WERE ONLY REACHABLE BY SATISFYING THE ONE IN FRONT OF THEM.** The tuple guard runs
+first and catches almost everything, so the dedicated `how_started` enum check and the
+month-precision check would have gone untested. Each was re-run with the expected tuple mutated to
+match, and both then fired on their own terms. **A gate you cannot reach has not been tested** —
+third time this wave, after Task 1's `CommDist` casing and Task 2's vanished offices.
+
+🟢 **ONE THING THAT DID *NOT* RAISE, AND THAT IS CORRECT.** Deleting a seated term row mid-transaction
+and re-running the occupancy half makes the migration **re-seat that one person** (`seated 1`) and pass.
+Self-healing, not a gap — GA-4 recorded the same, and it is why a deletion is not a valid control.
+
+#### 🔴 Four derived dates, and the derivation is in the source string rather than dressed as a quotation
+
+Miller, Bronson, Wilder and Howell all begin **2021-01-01**. No source quotes it. It is the charter's own
+commencement rule (Sec. 9(c), Sec. 10(b)) applied to a **sourced** 2020 election, and the county states
+that identical rule as fact for the 2025 cohort. Ruling recorded 2026-09-01 (Cantrell): write it at
+`day`, derivation in `source`. ⚠ **That is not the GA-4 Chapple case**, where a swearing-in date inferred
+from "Thursday morning" was correctly refused and written `unknown`. A legal rule applied to a sourced
+election is a different thing from a guess dressed as a date.
+
+**Wynn stays `month`.** The runoff was 2018-06-19 and reporting says she "could be sworn in by Friday" —
+no source states the oath date, so the day is not written. Control 4 exists to stop a later pass tidying
+it into 2018-06-19.
+
+#### ⚠ Harness notes
+
+- **`grep -ci commit` REPORTS 5 IN THIS FILE**; the anchored `^\s*COMMIT\s*;` reports **1**. The word
+  appears in comments and in `ON COMMIT DROP`, which is a temp-table clause and not a statement. Every
+  stream was asserted with the anchored form and proved **0 before being sent**. A blunt substring count
+  raises a red alarm on a correct file, and the real risk is that the alarm then gets waved through.
+- The seed temp table is `ON COMMIT DROP`, so the **double-apply test inside one transaction must
+  `DROP TABLE mb_seed;` between passes**. Harness only, never in the migration. Second pass: structure
+  **23 × `INSERT 0 0`**, politicians `INSERT 0 0`, **`seated 0`**, both post-verifies still green.
