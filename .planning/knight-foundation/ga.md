@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ▶ **IN PROGRESS 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete. **Task 1 APPLIED (`X0045`, 9 districts); Tasks 2 and 3 WRITTEN AND DRY-RUN CLEAN as one transaction, not applied.** Task 4 not written |
+| GA-5 | **Macon-Bibb** | ⏸ **READY TO APPLY 2026-09-02** — 15 seats (10 city, 5 county). **Task 1 APPLIED (`X0045`, 9 districts); Tasks 2, 3 and 4 ALL WRITTEN AND DRY-RUN CLEAN AS ONE TRANSACTION, not applied.** Next: take the `CC_` numbers LAST and apply |
 
 ---
 
@@ -1721,3 +1721,99 @@ it into 2018-06-19.
 - The seed temp table is `ON COMMIT DROP`, so the **double-apply test inside one transaction must
   `DROP TABLE mb_seed;` between passes**. Harness only, never in the migration. Second pass: structure
   **23 × `INSERT 0 0`**, politicians `INSERT 0 0`, **`seated 0`**, both post-verifies still green.
+
+### ✅ GA-5 Task 4 — Bibb County officers, WRITTEN 2026-09-02. ALL FIFTEEN SEATS NOW DRY-RUN CLEAN AS ONE TRANSACTION, NOT APPLIED
+
+`CC_wip_bibb_county.sql`: **1 chamber, 5 offices + 5 people + 5 terms in ONE migration** (spec §3),
+`-1331046 .. -1331050`, **0 districts created** — the countywide `13021`/`G4020` already exists and the
+pre-flight fails hard if it does not. The chamber attaches to the **same government row** as the two
+city chambers.
+
+Structure + occupancy + county ran as **ONE transaction ending in `ROLLBACK`**: **10 districts,
+1 government, 3 chambers, 15 offices, 15 people, 15 terms, 0 vacancies**; rollback confirmed reverted;
+production re-measured untouched; **`offices_missing_terms` unchanged at 821 / 166 / 655**.
+`check:migrations` and `check:occupancy` green.
+
+**All three re-run clean in one transaction**: pass 2 gives structure 23 × `INSERT 0 0`, county
+6 × `INSERT 0 0`, `seated 0` on both halves, and all three post-verifies still green.
+
+#### 🔴🔴🔴 GA-4'S "INVISIBLE BREAK" IS NOW DEMONSTRATED IN THREE LEGS, NOT ASSERTED
+
+GA-4 warned that a government-wide count in the structure migration "would pass on the day it applies
+and fail forever afterwards". That was the right call and it had never been shown. It is now:
+
+| | Result |
+| --- | --- |
+| **1a** — structure with its office count **un-scoped** to the government, applied FIRST | **NO ERROR.** It passes, because the county chamber does not exist yet |
+| **1b** — the **same un-scoped** migration, re-run after the county half has run | **FAILS: `expected 10 city offices, got 15`** |
+| **1c** — the **real, correctly-scoped** migration, re-run in the identical position | **passes**, as it must |
+
+🔴 **THE FIRST ATTEMPT AT THIS CONTROL "DID NOT RAISE", AND THAT WAS THE FINDING.** Running the
+un-scoped migration in its normal position proves nothing, because the defect is invisible on apply
+day by construction. **A control has to be placed where the defect can express itself** — which is a
+third variation on this wave's recurring lesson, after Task 1's field-name casing and Tasks 2–3's
+gates that fired before the one under test.
+
+#### 🔴 Ruling M4 — five officers, by the MIRROR IMAGE of Muscogee's route
+
+Charter Sec. 8 preserves **four** by name — sheriff, tax commissioner, coroner, clerk of the superior
+court. The **Judge of Probate Court** is not in Sec. 8 and enters via **Ga. Const. Art. IX, Sec. I,
+Par. III**. At Muscogee it was the other way round: the charter named the probate judge and the
+**clerk** arrived by Art. IX. **The count matches at five by coincidence, not by inheritance** — and
+Bibb elects no Marshal and no Surveyor, where Baldwin elected both and was seated with six.
+
+🟢 **THE COUNTY'S OWN OFFICERS CONFIRM THE SET.** In December 2025 the sheriff, probate judge, clerk of
+court "along with tax commissioner Wade McCord, **another constitutional officer**" acted **jointly**
+to change the county's legal organ effective 2026-01-01 — an act only constitutional officers perform.
+The probate judge is inside that group; the Solicitor of State Court is not.
+
+✅ **M5 CONFIRMED IN CODE: GA-4's municipal-court question does not arise.** Charter Sec. 7 fills the
+Municipal Court judgeship **by appointment of the mayor**, so there is no elected office to include or
+exclude, and no municipal-court contest appears in any Bibb ballot payload. **It stays live for
+Philadelphia and Lexington.**
+
+#### 🟢 Six more negative controls, and one that had to be repositioned
+
+| Control | Fired on |
+| --- | --- |
+| The Coroner hung on the **citywide `LOCAL`** district | the payload's tier gate ✅ |
+| The countywide district **duplicated** | "expected exactly 1 … got 2" ✅ |
+| An open-ended officer **"tidied"** to a plausible January | the tuple guard ✅ |
+| A `'year'` row **promoted to `'day'`** | the tuple guard first… |
+| …**and again with the tuple guard satisfied** | the **year-precision** guard ✅ |
+| The county half run **alone**, with no government row | the pre-flight ✅ |
+| Structure **un-scoped** | see the three-leg table above |
+
+#### 🔴 THIS HALF NEEDS BOTH SEATING PATHS, WHERE TASK 3 NEEDED ONLY ONE
+
+All ten city officials carry a real `term_start`, so Task 3 puts every one through
+`seat_officeholder()`. Here **3 of 5** have no published start of any kind and the helper refuses a
+NULL, so **2 go through the helper and 3 are direct-inserted** — but only into an office with **zero**
+existing term rows, which is what makes bypassing the helper safe: the helper's two-step exists to
+close a predecessor before an open-ended range overlaps it, and with no predecessor there is nothing
+to close. **That difference is a fact about what Macon-Bibb publishes, not a choice.**
+
+⚠ **Woodford, McCord and Jones stay open-ended `unknown` deliberately.** All three are confirmed in
+office. Coroner Jones has "been elected six times" with a term ending 2028, which would arithmetically
+place him in office from 2005 — **that is arithmetic on a press phrase, not a source, and it is not
+written.** Columbus wrote nine of eleven this way.
+
+🔴 **THE TWO DATED ROWS ARE `year`, NOT `day`.** Davis was "first elected Sheriff … in November of 2012"
+and Harris elected unopposed in 2012; Georgia county officers take office the following January, so
+2013 is sourced and the day is not. ⚠ Harris succeeded a **retired** judge, which leaves open whether
+she first filled a remainder by appointment — a second reason the day is not written.
+
+#### ⚠ Two name decisions, in opposite directions
+
+- **`Eric Woodford` IS NOT KEPT AS AN ALIAS.** The 41NBC 2020 qualifying list spells the Clerk that
+  way; her own office writes **Erica Woodford**. A dropped letter is a **typo, not an alternative
+  rendering**, and an alias that is a typo can match the wrong person.
+- **GA-4 kept the opposite call, correctly.** Muscogee's ballot wrote `Danielle F. Forte` where her
+  office writes `Forté`; a **diacritic-stripped form is a legitimate rendering** of the same name and
+  was kept. The test is whether the variant is a *way of writing the name* or a *mistake*.
+- `S. Wade McCord` and `Samuel Wade McCord` are both kept — the county publishes the first, court
+  captions the second.
+
+⚠ The Sheriff's own bio still reads "re-elected to his **third** term in November of 2020" and has not
+been updated for 2024 — **a stale sentence on a maintained site**. It is used only for the first
+election, and the change-check is what establishes he is still in office.
