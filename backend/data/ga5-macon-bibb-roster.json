@@ -1,0 +1,423 @@
+{
+  "wave": "GA-5",
+  "jurisdictions": "Macon-Bibb County (consolidated city-county) + Bibb County elected officers, Georgia",
+  "measured": "2026-09-01",
+  "roster_doc": "backend/data/seed-macon-bibb-2026/ROSTERS.md",
+  "slice_doc": ".planning/knight-foundation/ga.md",
+  "notes": [
+    "15 offices, 15 people, 0 vacancies -- 10 city, 5 county. Zero reuses: all 15 external_ids are fresh inserts (production measured 2026-09-01, the sub-range holds 0 rows).",
+    "ONE government with THREE chambers. Macon-Bibb is the program's SECOND consolidated city-county, after Columbus/Muscogee. Stage 4 drops the county commission -- the Commission already is it -- and keeps only the separately elected county officers.",
+    "Ruling M1: NINE single-member districts and NO at-large seats. Charter Sec. 9(a) creates 'nine election districts ... Commission Districts 1 through 9'; Sec. 9(c) elects the members 'from the nine districts ... by a majority of electors voting in such election from such district'. All five GIS layers return exactly nine polygons, which is the independent confirmation. So the citywide district carries num_officials 1 -- the Mayor alone -- NOT Columbus's 3.",
+    "⚠ Ruling M1 rests on a CONTRADICTION INSIDE THE CHARTER. Sec. 5 says the commission is 'composed of a mayor and nine commissioners' and then defines every member as a 'commissioner'; Sec. 9(c) says 'The commission shall consist of nine members.' Sec. 9(c) is the provision that sets membership and voting, and it is what the body demonstrably operates under -- see the two roll calls in Ruling M2. official_count on the Commission chamber is therefore 9, not 10.",
+    "Ruling M2: the Mayor is voting_powers 'non_voting' with a required representation_note, charter Sec. 9(c): 'The mayor shall be the presiding officer of the commission but shall not be a voting member of the commission; provided, however, that the mayor may cast a vote on any matter before the commission to break a tie.' PROVED BY TWO ROLL CALLS, not asserted: the mayor pro tem was elected 5-4 among NINE in January 2025 and 5-3 among EIGHT on 2026-01-06 with District 5 vacant. Both totals are the commissioner count, never that plus one.",
+    "Ruling M3: Mayor Pro Tem is a parenthetical, not an office. Sec. 9(f): the Commission elects one of its own members annually, in January. It moved from Seth Clark to Valerie Wynn (District 1) on 2026-01-06. The post-verify gate refuses any office titled with it.",
+    "Ruling M4: 5 county officers -- Sheriff, Tax Commissioner, Coroner, Clerk of Superior Court, Judge of Probate Court. Charter Sec. 8 preserves FOUR as county officers by name; the Judge of Probate Court comes in via Ga. Const. Art. IX, Sec. I, Par. III. This is the MIRROR IMAGE of Muscogee, where the charter named the probate judge and the CLERK arrived by Art. IX. Confirmed independently: the county's own officers acted jointly as 'Bibb County constitutional officers' in December 2025 to change the county's legal organ, and Davis, Harris, Woodford and McCord are all inside that group. Bibb elects NO Marshal and NO Surveyor, so neither Baldwin's six-officer template nor Muscogee's five transfers -- the count matches Muscogee by coincidence, not by inheritance.",
+    "Ruling M5: GA-4's municipal-court question DOES NOT ARISE in Bibb. Charter Sec. 7 fills the office of judge of the Municipal Court of Macon-Bibb County 'by appointment of the mayor', so there is no elected municipal-court office to include or exclude. Confirmed by the ballot enumeration: no municipal-court contest appears in any Bibb payload. The question stays live for Philadelphia and Lexington.",
+    "Ruling M6: vacancies. Charter Sec. 15(a) orders a SPECIAL ELECTION for the balance of the unexpired term; Sec. 15(b) allows the Commission to APPOINT within 20 days if the vacancy falls within 12 months of the term's expiry. This is what makes how_started differ seat by seat, and it is load-bearing: Bailey and Stewart are 'appointed', Wynn and Cooke won specials.",
+    "how_started 'special election' IS NOT A LEGAL VALUE. essentials.office_terms carries CHECK how_started IN ('elected','appointed','succeeded','redistricted','unknown'). Wynn and Cooke won SPECIAL elections, so how_started is 'elected' and the special-election fact is carried in the source string and the migration header, not in the column. This is the GA-4 Task 3 correction, restated so it cannot be lost when the roster is edited.",
+    "⚠ TWO PRESS ACCOUNTS SAY THE MAYOR APPOINTED BAILEY TO DISTRICT 9. Charter Sec. 15(b) gives that power to 'the commission or those remaining', and the reported tally was a 5-3 COMMISSION vote with Lucas, Bronson and Watkins opposed. how_started is 'appointed' either way, but the source string must not repeat the error.",
+    "⚠ term_start IS CONTINUOUS OCCUPANCY, NOT THE CURRENT TERM. The county published 'The four-year term of office for each of these officials begins at 12:00 a.m. on January 1, 2025' and listed all ten. That date is correct ONLY for Hulett and Bryant. Seven others were already serving, two of them seated mid-2024 by appointment, and one since 2018. Taking the published sentence at face value would have back-dated three people and forward-dated five.",
+    "⚠ THE OATH IS THE OCCUPANCY, NOT THE VOTE. WGXA headlines Stewart 'sworn in early' on 2024-10-01, the day the Commission voted to appoint him; the county's own post reports the oath on Tuesday 2024-10-15, with his first Commission meeting that evening. And one outlet dates Cooke's oath to April 21 2026, a TUESDAY, while the article says 'sworn in Monday' and 'first commission meeting is Tuesday' -- so 2026-04-20. The weekday arbitrates.",
+    "⚠ RULING RECORDED 2026-09-01 (Cantrell): the four rows that begin 2021-01-01 are written at start_precision 'day', with the derivation in the source string and never as a quotation. No source quotes the date. It is the charter's own commencement rule -- Sec. 9(c) and Sec. 10(b), 'shall take office on the first day of January immediately following the date of the election' -- applied to a sourced 2020 election, and the county states that identical rule as fact for the 2025 cohort. This is a legal rule applied to a sourced election, NOT the GA-4 Chapple case, where a date inferred from vague prose was correctly refused and written 'unknown'.",
+    "⚠ WYNN IS 'month' DELIBERATELY. Gary Bechtel resigned District 1 to run for the state House; the special election was 2018-05-22 and the runoff 2018-06-19, which she won 677-582. No source examined states the oath date, so the day is not written.",
+    "⚠ WOODFORD, McCORD AND JONES ARE OPEN-ENDED 'unknown' DELIBERATELY. All three are confirmed in office, but no source examined states when their occupancy began. Coroner Jones has 'been elected six times' with a term ending 2028, which would arithmetically place him in office from 2005 -- that is arithmetic on a press phrase, not a source, and it is not written. Columbus wrote nine of eleven this way.",
+    "Party is deliberately absent. It lives on races.primary_party, never on a person or an office. ⚠ The county's voter-facing GIS layer carries a party1 field reading 'Non-Partisan' for all nine; it is not read.",
+    "District types differ by tier: CITY districts are district_type 'LOCAL', COUNTY districts are 'COUNTY'. The citywide LOCAL district IS created here; the countywide COUNTY district is only ASSERTED -- the TIGER county load already made 13021/G4020, verified in production 2026-09-01 as 1 row carrying 0 offices.",
+    "🔴 Georgia's geo_id collision is THREE-WAY and it bit live while measuring this wave: 13021 is Bibb County AND State House District 21 AND State Senate District 21. Every join must pair geo_id with district_type or mtfcc. Never match on label.",
+    "🔴 'Macon County' is NOT Macon's county. Production holds both 13021 Bibb County, which contains the city of Macon, and 13193 Macon County, a rural county some 60 miles away. Bibb is the parent. 13193 is carried as a standing negative control in the boundary loader."
+  ],
+  "id_band": {
+    "min": -1331050,
+    "max": -1331036,
+    "rationale": "GA-3 consumed -1331001..-1331018, CC_0030 took -1331019 for Baldwin's new Coroner, and GA-4 consumed -1331020..-1331035. The range -1331036..-1331050 was measured EMPTY in production 2026-09-01. The guard is scoped to this wave's own sub-range, per the FL-4 correction."
+  },
+  "city": {
+    "government": {
+      "name": "Macon-Bibb County Government, Georgia, US",
+      "type": "City",
+      "state": "GA",
+      "city": "Macon",
+      "geo_id": "1349008",
+      "rationale": "The charter's own corporate name is the bare 'Macon-Bibb County' (Sec. 1(a)), which is not a usable row label. geo_id is the TIGER place 1349008 and NOT the county 13021, because -- as at Columbus and unlike Nashville -- the Georgia place record is the WHOLE county, measured identical at 254.906 sq mi. FUNCSTAT is 'A', not 'F': there is no balance record and no satellite municipality to strand. Payne City, which the charter's Sec. 9(a) carved out of the districting plan, dissolved into the consolidated government and appears nowhere in the TIGER 2024 place file."
+    },
+    "district_type": "LOCAL",
+    "citywide_district": {
+      "label": "Macon-Bibb Citywide",
+      "geo_id": "1349008",
+      "mtfcc": "G4110",
+      "num_officials": 1,
+      "create": true,
+      "create_rationale": "GA-1 loaded the TIGER place BOUNDARY 1349008/G4110 and created no place DISTRICT -- verified in production 2026-09-01 as 0 rows -- so the citywide district is created here, as Bradenton, Tallahassee, Milledgeville and Columbus each created theirs.",
+      "num_officials_rationale": "ONE seat is elected citywide: the Mayor. Macon-Bibb has NO at-large commissioners, so this is 1 and not Columbus's 3. num_officials counts officials elected on this district across chambers, not seats in one chamber."
+    },
+    "district_mtfcc": "X0045",
+    "district_label_prefix": "Macon-Bibb County Commission District ",
+    "district_geo_id_prefix": "macon-bibb-ga-commission-district-",
+    "district_count": 9,
+    "chambers": [
+      {
+        "name": "Macon-Bibb County Commission",
+        "name_formal": "Macon-Bibb County Commission",
+        "official_count": 9,
+        "rationale": "official_count is 9, not 10. Charter Sec. 9(c): 'The commission shall consist of nine members.' The Mayor is elected separately and is not one of the nine -- Sec. 9(c) makes him the presiding officer and expressly not a voting member. ⚠ Sec. 5 describes the body as 'a mayor and nine commissioners', which contradicts this; Sec. 9(c) governs, and the two mayor pro tem roll calls (5-4 of nine, then 5-3 of eight with a seat vacant) show which one the body follows."
+      },
+      {
+        "name": "Office of the Mayor",
+        "name_formal": "Office of the Mayor of Macon-Bibb County, Georgia",
+        "official_count": 1
+      }
+    ],
+    "offices": [
+      {
+        "title": "Mayor",
+        "chamber": "Office of the Mayor",
+        "district_geo_id": "1349008",
+        "district_mtfcc": "G4110",
+        "voting_powers": "non_voting",
+        "representation_note": "The Mayor of Macon-Bibb County is elected countywide and presides over the nine-member Macon-Bibb County Commission. Under Section 9(c) of the Charter of Macon-Bibb County, the Mayor is the presiding officer of the Commission but is not a voting member of it, and may cast a vote on a matter before the Commission only to break a tie. The Mayor may propose ordinances in the same manner as a commissioner. Macon-Bibb County is a strong-mayor government, so the Mayor is also its chief executive, responsible for carrying out its laws and policies. If the office of Mayor becomes vacant, Section 15(c) makes the mayor pro tempore the acting mayor.",
+        "description": null,
+        "person": {
+          "external_id": -1331036,
+          "full_name": "Lester Miller",
+          "first_name": "Lester",
+          "last_name": "Miller",
+          "middle_initial": "M.",
+          "name_suffix": null,
+          "aliases": ["Lester M. Miller"],
+          "term_start": "2021-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "maconbibb-us-mayorlestermiller-live-2026-09-01 + 41nbc-2020-qualifying-list ('a different mayor for the first time since 2007') + macon-newsroom-2025-01 ('Miller's plan from four years ago'); date derived from charter Sec. 10(b), which commences the term on the first day of January following the election -- the county states that same rule as fact for the 2025 cohort. NOT a quoted date."
+        }
+      },
+      {
+        "title": "Commissioner, District 1",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-1",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331037,
+          "full_name": "Valerie Wynn",
+          "first_name": "Valerie",
+          "last_name": "Wynn",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2018-06-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "source": "SPECIAL election under charter Sec. 15(a) after Gary Bechtel resigned to run for the state House; special 2018-05-22, runoff 2018-06-19 won 677-582 over Lynn Wood. No source examined states the oath date, so the day is not written. Confirmed a sitting commissioner by the 41nbc 2020 qualifying list ('Commissioner Valerie Wynn runs against John Adams') and serving as mayor pro tem 2026-01-06."
+        }
+      },
+      {
+        "title": "Commissioner, District 2",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-2",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331038,
+          "full_name": "Paul Bronson",
+          "first_name": "Paul",
+          "last_name": "Bronson",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2021-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "41nbc-2020-qualifying-list ('Paul Bronson and Weston Stroud run for Schlesinger's vacant seat' -- new, not an incumbent) + maconbibb-us-commissioners-live-2026-09-01; date derived from charter Sec. 9(c), which commences the term on the first day of January following the election. NOT a quoted date."
+        }
+      },
+      {
+        "title": "Commissioner, District 3",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-3",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331039,
+          "full_name": "Stanley Stewart",
+          "first_name": "Stanley",
+          "last_name": "Stewart",
+          "middle_initial": "B.",
+          "name_suffix": null,
+          "aliases": ["Stanley B. Stewart"],
+          "term_start": "2024-10-15",
+          "start_precision": "day",
+          "how_started": "appointed",
+          "source": "APPOINTED under charter Sec. 15(b) after Elaine Lucas stepped down to run for the Macon Water Authority; the Commission voted to appoint on 2024-10-01 and he took the oath on Tuesday 2024-10-15, per the county's own post 'Stanley Stewart sworn in as District 3 Commissioner' (2024-10-25), which also records his first Commission meeting that evening. He had already won the seat for the term beginning 2025-01-01, so occupancy is continuous from the oath. ⚠ WGXA's headline dates this to the appointment vote, 14 days early."
+        }
+      },
+      {
+        "title": "Commissioner, District 4",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-4",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331040,
+          "full_name": "Joey Hulett",
+          "first_name": "Joey",
+          "last_name": "Hulett",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["Joseph Hulett"],
+          "term_start": "2025-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "maconbibb-us-mayor-commissioners-get-sworn-in ('The four-year term of office for each of these officials begins at 12:00 a.m. on January 1, 2025') + wgxa-2024-12-17, which names him one of only TWO new commissioners. Ran unopposed for Mallory Jones' term-limited seat."
+        }
+      },
+      {
+        "title": "Commissioner, District 5",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-5",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331041,
+          "full_name": "Andrea Cooke",
+          "first_name": "Andrea",
+          "last_name": "Cooke",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["Andrea Carrima Cooke"],
+          "term_start": "2026-04-20",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "SPECIAL election under charter Sec. 15(a) after Seth Clark resigned on 2026-01-05 to run for Lieutenant Governor; special 2026-03-17 (49.5%, no majority), runoff won 746-313 over Edward C. Foster, sworn in Monday 2026-04-20 per WPGA/Atlanta News First, published that evening, with her first Commission meeting the Tuesday. ⚠ One outlet dates the oath to April 21, a Tuesday; the weekday arbitrates. 🔴 FOUR OF THE FIVE GIS LAYERS DO NOT KNOW SHE EXISTS."
+        }
+      },
+      {
+        "title": "Commissioner, District 6",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-6",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331042,
+          "full_name": "Raymond Wilder",
+          "first_name": "Raymond",
+          "last_name": "Wilder",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2021-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "41nbc-2020-qualifying-list (District 6 lists Abbott, Druitt and Wilder with no incumbent marker -- new) + maconbibb-us-7921commissionerrecognition, which recognised Bronson, Howell and Wilder together as newly Certified County Commissioners in July 2021; date derived from charter Sec. 9(c). NOT a quoted date."
+        }
+      },
+      {
+        "title": "Commissioner, District 7",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-7",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331043,
+          "full_name": "Bill Howell",
+          "first_name": "Bill",
+          "last_name": "Howell",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2021-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "41nbc-2020-qualifying-list (District 7 lists Howell, Rivers and Thompson with no incumbent marker -- new) + maconbibb-us-7921commissionerrecognition, which quotes 'District 7 Commissioner Howell' on becoming a Certified County Commissioner in July 2021; date derived from charter Sec. 9(c). NOT a quoted date. ⚠ No middle or long form of 'Bill' is published by his own body, so none is invented as an alias."
+        }
+      },
+      {
+        "title": "Commissioner, District 8",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-8",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331044,
+          "full_name": "Donice Bryant",
+          "first_name": "Donice",
+          "last_name": "Bryant",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2025-01-01",
+          "start_precision": "day",
+          "how_started": "elected",
+          "source": "maconbibb-us-mayor-commissioners-get-sworn-in ('begins at 12:00 a.m. on January 1, 2025') + wgxa-2024-12-17, which names her one of only TWO new commissioners. Won Virgil Watkins' term-limited seat with 66%. 🔴 THE COUNTY'S OWN FAREWELL POST CALLS HER 'District 5 Commissioner'. She is District 8 -- sources B, C, E, G, O and Watkins' departure from District 8 all agree, and District 5 is the seat that then fell vacant to Cooke."
+        }
+      },
+      {
+        "title": "Commissioner, District 9",
+        "chamber": "Macon-Bibb County Commission",
+        "district_geo_id": "macon-bibb-ga-commission-district-9",
+        "district_mtfcc": "X0045",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331045,
+          "full_name": "Brendalyn Bailey",
+          "first_name": "Brendalyn",
+          "last_name": "Bailey",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2024-01-17",
+          "start_precision": "day",
+          "how_started": "appointed",
+          "source": "APPOINTED under charter Sec. 15(b) after Al Tillman resigned effective immediately on 2024-01-09, inside 12 months of the term's expiry; the county's post 'Brendalyn Bailey to serve as District 9 Commissioner' (2024-01-19) cites the charter's 20-day rule, and she was sworn in 2024-01-17 on a 5-3 vote with Lucas, Bronson and Watkins opposed. She then won the seat outright in the May 2024 primary, so occupancy is continuous from the appointment. ⚠ Two press accounts credit the appointment to the MAYOR; Sec. 15(b) gives it to the Commission, and the 5-3 tally is a Commission vote."
+        }
+      }
+    ]
+  },
+  "county": {
+    "shares_government_with": "city",
+    "district_type": "COUNTY",
+    "countywide_district": {
+      "label": "Bibb County",
+      "geo_id": "13021",
+      "mtfcc": "G4020",
+      "create": false,
+      "create_rationale": "The TIGER county load already created 13021/G4020 as a COUNTY district -- verified in production 2026-09-01: 1 row, carrying 0 offices. Inserting it again would lay a second district over the same ground. The county migration's pre-flight FAILS HARD if it is missing: the five officers would otherwise have nowhere to hang. ⚠ It covers IDENTICAL ground to the citywide LOCAL district, 254.906 sq mi each, which is correct under consolidation -- same ground, two tiers -- and is why the acceptance probe must assert each tier separately."
+    },
+    "chambers": [
+      {
+        "name": "Bibb County Elected Officials",
+        "name_formal": "Bibb County Elected Officials",
+        "official_count": 5
+      }
+    ],
+    "offices": [
+      {
+        "title": "Sheriff",
+        "chamber": "Bibb County Elected Officials",
+        "district_geo_id": "13021",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331046,
+          "full_name": "David Davis",
+          "first_name": "David",
+          "last_name": "Davis",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": "2013-01-01",
+          "start_precision": "year",
+          "how_started": "elected",
+          "source": "bibbsheriff-us-live-2026-09-01 ('He was first elected Sheriff of Bibb County in November of 2012'), Georgia county officers taking office the following January + 41nbc-2020-qualifying-list ('Sheriff David Davis') + macon-community-reporter-2025-12, which names him among the Bibb County constitutional officers changing the legal organ. ⚠ His own bio still reads 're-elected to his third term in November of 2020' and has not been updated for 2024 -- a stale sentence on a maintained site, used only for the FIRST election."
+        }
+      },
+      {
+        "title": "Clerk of Superior Court",
+        "chamber": "Bibb County Elected Officials",
+        "district_geo_id": "13021",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331047,
+          "full_name": "Erica Woodford",
+          "first_name": "Erica",
+          "last_name": "Woodford",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "maconbibb-us-clerk-of-superior-court-live-2026-09-01 (her own office) + gasos-certified-2024-11-05 (Clerk of Superior Court on the Bibb ballot) + macon-community-reporter-2025-12 (Bibb County constitutional officers). ⚠ The 41nbc 2020 qualifying list spells her 'Eric Woodford'; that is a typo and is deliberately NOT carried as an alias, because a dropped letter is not an alternative rendering and could match the wrong person."
+        }
+      },
+      {
+        "title": "Tax Commissioner",
+        "chamber": "Bibb County Elected Officials",
+        "district_geo_id": "13021",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331048,
+          "full_name": "Wade McCord",
+          "first_name": "Wade",
+          "last_name": "McCord",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": ["S. Wade McCord", "Samuel Wade McCord"],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "maconbibb-us-taxcommissioner121622 (quotes 'Tax Commissioner Wade McCord') + maconbibb-us-227taxreliefseminar ('Tax Commissioner, S. Wade McCord') + gasos-certified-2024-11-05 + 41nbc-2020-qualifying-list + macon-community-reporter-2025-12 ('tax commissioner Wade McCord, another constitutional officer'). He succeeded Thomas W. Tedders, Jr., but no source examined states when, so the start is left unwritten."
+        }
+      },
+      {
+        "title": "Judge of Probate Court",
+        "chamber": "Bibb County Elected Officials",
+        "district_geo_id": "13021",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331049,
+          "full_name": "Sarah S. Harris",
+          "first_name": "Sarah",
+          "last_name": "Harris",
+          "middle_initial": "S.",
+          "name_suffix": null,
+          "aliases": ["Sarah Harris", "Sarah Stevenson Harris"],
+          "term_start": "2013-01-01",
+          "start_precision": "year",
+          "how_started": "elected",
+          "source": "maconbibb-us-probate-court-live-2026-09-01 ('Sarah S. Harris, Judge of the Probate Court') + macon-community-reporter-2024-08, which reports her 're-elected to her fourth term' and succeeding retired Judge William J. Self, having been elected unopposed in 2012 + 41nbc-2020-qualifying-list ('Judge of Probate Court: Sarah Stevenson Harris'). ⚠ Succeeding a RETIRED judge leaves open whether she first filled a remainder by appointment, so the day is not written -- only the year."
+        }
+      },
+      {
+        "title": "Coroner",
+        "chamber": "Bibb County Elected Officials",
+        "district_geo_id": "13021",
+        "district_mtfcc": "G4020",
+        "voting_powers": "full",
+        "representation_note": null,
+        "description": null,
+        "person": {
+          "external_id": -1331050,
+          "full_name": "Leon Jones",
+          "first_name": "Leon",
+          "last_name": "Jones",
+          "middle_initial": null,
+          "name_suffix": null,
+          "aliases": [],
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": "elected",
+          "source": "maconbibb-us-coroners-office-live-2026-09-01 + 41nbc-2020-qualifying-list ('Coroner: Leon Jones') + macon-community-reporter-2026-03 ('elected six times', current term ends 2028) + wgxa-2026-07, reporting him working a scene. 🟢 THE FRESHEST OCCUPANCY EVIDENCE IN THE WAVE, and precisely what Baldwin's coroner lacked in GA-3. ⚠ 'Elected six times' would arithmetically place him in office from 2005; that is arithmetic on a press phrase, not a source, and it is not written."
+        }
+      }
+    ]
+  }
+}

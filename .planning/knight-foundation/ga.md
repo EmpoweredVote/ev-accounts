@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | Macon-Bibb | — |
+| GA-5 | **Macon-Bibb** | ✅ **STAGES 1–4 APPLIED 2026-09-02** — `X0045`, **`CC_0049`–`CC_0051`** (renumbered from `CC_0045`–`CC_0047` after a collision), **15 seats** (10 city, 5 county), 0 vacancies. All probes pass. ▶ Stage 5 (headshots + banner) remains |
 
 ---
 
@@ -1353,3 +1353,650 @@ session does not re-find it and reason differently.
 
 🟢 The directory's opaque `documentID`s independently re-confirm GA-3's off-by-one —
 **Butts 238, Davis 239**, not district order.
+
+---
+
+## GA-5 — Macon-Bibb County, ⏸ MEASURED 2026-09-01, NOTHING WRITTEN TO PRODUCTION
+
+Roster and every measurement: [`backend/data/seed-macon-bibb-2026/ROSTERS.md`](../../backend/data/seed-macon-bibb-2026/ROSTERS.md).
+Branch `knight/ga-5-macon-bibb`, cut fresh from master. **15 offices, 15 people, 0 vacancies** —
+10 city, 5 county, one government, three chambers. Georgia's third jurisdiction and the program's
+**second consolidated city-county**.
+
+Slots verified free at measurement time and **to be taken LAST**: `X0045` for the nine commission
+districts, `external_id` sub-range **`-1331036 .. -1331050`** (Columbus claimed through `-1331035`).
+
+### Starting position, measured against production
+
+| What | Bibb holds |
+| --- | --- |
+| `districts` | Bibb County `13021`/`G4020`, 254.906 sq mi, **zero offices**, `num_officials` NULL |
+| `geofence_boundaries` | place `1349008`/`G4110` 254.906 · county `13021`/`G4020` 254.906 · `G5210`, `G5220`, `G6350` |
+| **No district row for the place** | GA-1 loaded the place BOUNDARY only — identical to Columbus. GA-5 creates it |
+
+⚠ **The three-way `geo_id` collision bit during measurement.** A query for districts matching
+`geo_id IN ('13021','1349008')` without pairing `district_type` returned **State House District 21 and
+State Senate District 21** alongside Bibb County. Georgia's collision, caught live, exactly as the
+GA-1 note warns.
+
+### 🔴🔴 THE CERTIFIED-RESULTS ROUTE IS NOW DEAD FOR THE CITY HALF, TWICE RUNNING, AND WORSE HERE
+
+GA-4 found the SOS portal carried Columbus municipal contests only from 2026. **Bibb carries no
+Macon-Bibb Mayor or Commission contest in ANY year.** All 36 elections were enumerated from
+`/api/jurisdictions/bibb-county-ga` and every ballot item in the four plausible payloads was listed by
+hand. 2024's general carries four county officers; **2020's carries none at all** — though Sheriff
+Davis was elected that November and the county's own qualifying list shows a full local ballot.
+
+▶ **Stop trying the portal first for a Georgia consolidated city-county.** Two for two. Its Bibb
+coverage is not late, it is **patchy per election**, which is the failure mode that reads as "no
+contest" rather than as "no data". A wave that trusted it would have called the whole commission vacant.
+
+### 🔴🔴 FIVE LAYERS, FOUR IDENTICAL — AND MACON-BIBB DOES *NOT* INVERT
+
+Columbus taught that the layer with the fresh roster can carry the superseded geometry. **Bibb had to
+be measured to find out it is not like that**, and the measurement is the point.
+
+Per-district symmetric difference against the county's voter-facing layer, after `ST_MakeValid`:
+the **adopted 2022 redistricting plan**, `County_Commissioners_2020` and `County_Commission` all agree
+at **0.0000 sq mi on all nine**; the **Board of Elections** copy differs by **0.0914 total** (~0.01 per
+district, sliver noise); and **`CountyDistrict` is a different map by 145.72 sq mi**, with a union
+0.46 sq mi too large.
+
+🔴 **`CountyDistrict` IS LISTED FIRST IN THE COUNTY'S OWN WEB MAP, MODIFIED 2026-02-19.** A live 2026
+map ships the superseded layer next to the current one. ⚠ And **the names are backwards**:
+`County_Commissioners_2020` sounds stale and is current (its *layer* is named "County Commissioners
+2024"); `CountyDistrict` sounds current and is the old plan.
+
+🟢 **THE ARBITER WAS THE COUNTY'S OWN VOTER-FACING WIDGET, FOUND BY READING THE IFRAME.** Bibb
+publishes no `Elections Combinations` table, so GA-4's arbiter does not exist here. What replaced it:
+`maconbibb.us/commissioners/` embeds a "Find Your Commissioner" iframe pointing at a **different
+portal** — `maconbibb.spatialitics.net`, not the ArcGIS Online org — serving
+`Hosted/CountyCommissioners2024`. **That is the map the county tells voters to use**, and it is the
+only layer whose roster names all nine current members, Andrea Cooke included.
+▶ **When there is no ballot-building table, ask what the jurisdiction's own lookup tool queries.**
+
+### 🔴 FULL COVERAGE IS CORRECT IN BIBB — THE COLUMBUS GATE INVERTS
+
+Charter Sec. 9(a) excluded **the City of Payne City** from the original districting plan, so if Payne
+City still existed the nine districts would not tile the county. Measured: union **254.9060** vs TIGER
+county **254.906**, symmetric difference **0.0280 sq mi** — far below Payne City's footprint, which
+appears nowhere in TIGER 2024. The carve-out is spent, **and the geometry proves it rather than
+assuming it**.
+
+🔴 So where GA-4 said "gate the structure, not full coverage" (Fort Benning, 74.79 sq mi in no
+district), **GA-5 must gate full coverage** — a structure-only gate would pass on a map that had lost a
+district. **The right gate is a property of the jurisdiction, not of the program.**
+
+### Charter rulings — Ga. L. 2012, p. 5595/HB 1171, read in the sections themselves
+
+- **M1** — **nine single-member districts, NO at-large** (Sec. 9(a), 9(c)); all five GIS layers return
+  nine polygons. So the citywide district carries `num_officials = 1`, the Mayor alone — **not
+  Columbus's 3**. ⚠ Sec. 5 ("a mayor and nine commissioners") and Sec. 9(c) ("shall consist of nine
+  members") contradict each other; **9(c) governs**, and it is what the body operates under.
+- **M2** — the **Mayor is `non_voting` with a required note**, Sec. 9(c): presides, "shall not be a
+  voting member", "may cast a vote … to break a tie". 🟢 **Proved by two roll calls**: mayor pro tem
+  elected **5–4 among nine** in January 2025 and **5–3 among eight** on 2026-01-06 with D5 vacant.
+  Both totals are the commissioner count, never that plus one.
+- **M3** — **Mayor Pro Tem is a parenthetical** (Sec. 9(f), elected annually from members). It moved
+  from Clark to **Valerie Wynn** on 2026-01-06.
+- **M4** — **5 county officers.** Charter Sec. 8 preserves **four** (sheriff, tax commissioner,
+  coroner, clerk of superior court); the **Probate Judge** enters via **Ga. Const. Art. IX** — the
+  mirror image of Muscogee, where the charter named the probate judge and the *clerk* came in by
+  Art. IX. 🟢 Confirmed by the county's own officers, who acted **jointly as "Bibb County
+  constitutional officers"** in Dec 2025 to change the legal organ: Davis, Harris, Woodford **and
+  McCord** are inside that group and the Solicitor of State Court is not.
+  ⚠ **Neither Baldwin's six nor Muscogee's five transfers** — Bibb elects no Marshal and no Surveyor,
+  and its five arrive by a different legal route. Confirm from the charter, inherit nothing. Again.
+- **M5** — 🟢 **GA-4'S MUNICIPAL-COURT QUESTION DOES NOT ARISE.** GA-4 predicted Macon-Bibb would
+  raise ruling R4 again. It does not: charter Sec. 7 fills the Municipal Court judgeship **by
+  appointment of the mayor**, so there is no elected municipal-court office at all, confirmed by the
+  ballot enumeration. **The question stays live for Philadelphia and Lexington.**
+- **M6** — **vacancies** (Sec. 15): special election, **unless within 12 months of expiry**, when the
+  commission may appoint within 20 days. This is what makes `how_started` differ seat by seat.
+
+### 🔴🔴 THE CHANGE-CHECK PAID ON THE ONE SEAT THAT MATTERED, AND FOUR OF FIVE MAPS MISSED IT
+
+**Seth Clark (D5) resigned 2026-01-05** to run for Lieutenant Governor. Special election 2026-03-17,
+runoff won by **Andrea Cooke** 746–313, **sworn in 2026-04-20**. Only the county's voter-facing layer
+knows she exists. Source `CountyDistrict` still names **Lucas, Clark and Tillman — three people who
+have all left** — so a roster read from the first-listed layer would have seated three departed
+officials and missed the only 2026 arrival.
+
+🟢 The five county officers are the freshest cohort in the wave: the **Coroner was working in July
+2026**, which is precisely the currency Baldwin's coroner lacked in GA-3.
+
+### 🔴 THREE SOURCE DEFECTS THAT EACH WOULD HAVE SEATED SOMEONE WRONG
+
+1. **The county's own farewell post puts Donice Bryant in District 5. She is District 8.** D5 is the
+   very seat that then fell vacant and went to Cooke — the one district where the collision was live.
+2. **WGXA lists Stanley Stewart among "re-elected officials".** He was not re-elected; he won Lucas'
+   open seat and was **appointed** to its remainder two months earlier. The two errors point in
+   opposite directions and neither is visible from the other source.
+3. **Two oath dates are wrong by construction.** WGXA dates Stewart's swearing-in to the day the
+   commission *voted to appoint* him (2024-10-01); the county reports the oath on **2024-10-15** — 14
+   days later. And one outlet dates Cooke to April 21, a **Tuesday**, while the article says "sworn in
+   Monday" and "first commission meeting is Tuesday". **The oath is the occupancy, not the vote**, and
+   **the weekday arbitrates**.
+
+⚠ Also: two press accounts say the **Mayor** appointed Bailey to D9. **Charter Sec. 15(b) gives that
+power to the commission**, and the tally was a 5–3 commission vote. `how_started` is `'appointed'`
+either way, but the voter-facing prose must not repeat the error.
+
+### ⏸ ONE OPEN DECISION FOR CANTRELL — the precision on four rows, not their date
+
+Miller, Bronson, Wilder and Howell all began on **2021-01-01**. No source quotes that date. It is the
+charter's own commencement rule (Sec. 9(c), Sec. 10(b): "shall take office on the **first day of
+January** immediately following the date of the election") applied to a sourced 2020 election, and the
+county states the identical rule as fact for the 2025 cohort ("begins at 12:00 a.m. on January 1,
+2025"). **My read: write it at `day`, with the derivation in the `source` string.**
+
+That is a *legal rule applied to a sourced election*, not the GA-4 Chapple case (a date inferred from
+vague prose, correctly refused and written `unknown`). If the ruling goes the other way it is one
+column: `year`, or open-ended `unknown`.
+
+🟢 **Incumbency itself is not in doubt** — a contemporaneous 2020 qualifying list marks which
+candidates were sitting commissioners, and **the count closes on itself twice**: 2020 produced exactly
+four new commissioners, and the four term-limited in 2024 are exactly the four who had served since the
+2014 merger. Wynn is written at **`month`** (2018 special election, no oath date published) and the
+three county officers with no published start are **open-ended `unknown`** — as Columbus wrote nine of
+eleven.
+
+### What GA-5 will write
+
+1 government (keyed on place `1349008`), **3 chambers on that one government**, **10 districts created**
+(9 × `X0045` + the citywide `1349008`/`G4110`), Bibb `13021`/`G4020` **asserted never inserted**,
+**15 offices / 15 people / 15 terms / 0 vacancies**.
+
+🔴 Inherited from GA-4 and **not optional**: the **tier-crossing gate** (city `LOCAL` and county
+`COUNTY` over identical ground), and **every structure post-verify scoped to the two CITY chambers** —
+the county chamber joins the same government row, so a government-wide count passes on the day it
+applies and fails forever after.
+
+### ✅ GA-5 Task 1 applied 2026-09-01 — `X0045`, the nine commission districts
+
+`scripts/load-macon-bibb-commission-boundaries.ts`. **9 boundaries, 0 errors**, all `ST_MultiPolygon`,
+SRID 4326, `state='ga'`. Union **254.9060 sq mi**. Re-runs clean (second pass inserts 0).
+`check:child-county` **stale 0** — an `X`-code load writes no `place`, so no `CONCURRENT` refresh was
+needed, as GA-3 predicted and GA-4 confirmed. Nothing references `X0045` yet, so the boundaries are
+**inert until the structure migration**, and `offices_missing_terms` is unchanged at **821 / 166 / 655**.
+
+🟢 **Every gate passed on the dry run before any write.** Gate order puts the discriminator first
+(the FL-6 rule):
+
+| Gate | Result |
+| --- | --- |
+| 1 — agreement with the **adopted 2022 redistricting plan** | **0.0000 sq mi on all nine** |
+| 2 — divergence from the superseded `CountyDistrict` | **145.7215 sq mi** — genuinely different maps |
+| 3 — control points, each district's own interior point | 9 of 9 |
+| 4 — negative controls, each with its **county asserted against TIGER** | 6 of 6, no district |
+| 5 — per-district area, ±2% | 9 of 9 at **0.00%** |
+| 6 — 🔴 **FULL COVERAGE** — union, overlaps, uncovered, beyond | union 254.9060, county 254.9059, **uncovered 0.0139**, beyond 0.0140, **0 overlaps** |
+| 7 — `X0045` unclaimed, and TIGER place `1349008` present | ✓ |
+
+🟢 **GATE 1 WAS PROVED TO BITE, WITH A NEGATIVE CONTROL.** A copy of the loader pointed at the
+superseded `CountyDistrict` layer as its *primary* fails GATE 1 at **worst 33.6839 sq mi** — and it
+fails **before GATE 5 can run**, which is the whole reason the discriminator is first. GATE 5 would
+have reported nine areas "0.00% from expected" against re-baselined constants and invited exactly the
+wrong repair.
+
+⚠ **The negative control ALSO exposed a real trap on the way**: ArcGIS field names are case-sensitive
+in GeoJSON properties, and the superseded layer uses `CommDist` where the primary uses `commdist`. The
+first attempt failed at *keying* (0 of 9 keyed) rather than at GATE 1, which looks like a passing test
+and is not one. **A gate you cannot reach has not been tested.** The key reader takes a field list for
+this reason.
+
+🟢 **THE ARBITER IS THE ADOPTED PLAN, BECAUSE BIBB HAS NO BALLOT-BUILDING TABLE.** GA-4's
+`Elections Combinations` layer has no Bibb equivalent. `2022_Bibb_County_Commission_Redistricted`
+carries per-district deviations and `IDEAL_VALU` 17,483 (× 9 = 157,347, Bibb's 2020 population), and it
+is **independent of the county's operational GIS** — which is what makes it an arbiter and not a second
+copy. ⚠ It carries a **tenth feature keyed 0 / "Unassigned"** that is dropped on purpose; the count
+check is what proves exactly one row was dropped and not a real district.
+
+🔴 **GATE 6 IS THE COLUMBUS GATE INVERTED, AND THE FAILURE MESSAGE SAYS SO.** Columbus had to gate
+structure rather than coverage because Fort Benning legitimately sits in no council district. Bibb's
+nine districts tile the county, so **a hole is a defect here**. The message names Payne City explicitly
+so that a future reader does not "fix" a real hole by re-enabling a carve-out that is spent.
+
+⚠ `maconbibb.spatialitics.net` is an **ArcGIS Enterprise portal**, separate from the county's ArcGIS
+Online org, and it serves `f=geojson` and a valid certificate. No TLS workaround is needed.
+
+### ✅ GA-5 Task 2 — city structure, WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`CC_wip_macon_bibb_structure.sql`, generated by `scripts/gen-ga5-macon-bibb-migrations.mjs` from
+`backend/data/ga5-macon-bibb-roster.json`. **1 government** (keyed on TIGER place `1349008`),
+**2 city chambers**, **10 districts** (9 × `X0045` + the citywide `1349008`/`G4110`), **10 offices**.
+
+Dry run against production: **23 `INSERT 0 1`** (10 districts + 1 government + 2 chambers + 10
+offices), post-verify green, `ROLLBACK`, and **the rollback was confirmed to have reverted** — all five
+target counts re-read as 0 afterwards. Re-running the body **twice in one transaction** inserts
+**23 × `INSERT 0 0`** on the second pass and still passes post-verify. `check:migrations` green
+(0 added — a `CC_wip_` file is invisible to it), `check:occupancy` green.
+
+🟢 **THE GENERATOR DOES NOT CARRY A SECOND COPY OF THE ROSTER RULES.** It shells out to
+`scripts/assert-ga5-macon-bibb-roster.mjs` and refuses to emit if it fails, so the rules have exactly
+one definition — the same reason `check-address-reachability.mjs` keeps its MTFCC mapping in one place.
+
+🔴🔴 **EIGHT GATES WERE PROVED TO BITE ON THEIR OWN TERMS. THREE MORE DEFECTS WERE CAUGHT BY A
+DIFFERENT GATE THAN THE ONE AIMED AT — AND THAT DISTINCTION IS THE POINT.**
+
+| Control | Fired on |
+| --- | --- |
+| Mayor written `'full'` with **no note** — legal SQL, legal CHECK | the Mayor gate ✅ |
+| Note kept but the **Sec. 9(c) citation removed** | the citation gate ✅ |
+| `official_count` set to **10** (reading Sec. 5 instead of Sec. 9(c)) | the chamber gate ✅ |
+| A district seat **retitled "Mayor Pro Tem"**, count still 10 | ruling M3's gate ✅ |
+| A **full-voting** seat given a `representation_note` | the hidden-prose gate ✅ |
+| Pre-flight expects a **slug the boundaries do not carry** | the identity check ✅ (matched 8) |
+| Pre-flight expects **10 boundaries** when 9 are loaded | the count check ✅ |
+| County district looked up on the **LOCAL** tier | the county-tier check ✅ (got 0) |
+| Two commissioners hung on the **citywide** district (the Columbus shape) | the office-**count** gate (9), not the citywide gate |
+| District 1's seat hung on the **COUNTY** district | the **per-district** gate (0 offices), not the tier gate |
+| A district created with **no polygon** | the office-**count** gate (9) |
+
+⚠ **A CONTROL THAT RAISES FOR THE WRONG REASON HAS NOT TESTED ITS GATE**, and my first pass had three
+of them: one mutation produced a *syntax* error (`INSERT has more target columns than expressions`)
+rather than reaching the Mayor gate at all, and two made an office **vanish** — the `CROSS JOIN LATERAL`
+returns no row when `geo_id` and `mtfcc` disagree, so the insert silently produces nothing and the
+total-count gate fires first. Each had to be rebuilt to leave the counts intact so that only the aimed-at
+gate could fire. **This is the same lesson Task 1's `CommDist`/`commdist` control taught, in SQL.**
+
+🟢 **THE OVERLAP IS DELIBERATE, NOT WASTE.** The last three rows above are defects the layered counts
+catch even when the specific gate does not get the chance. What matters is knowing *which* is which.
+
+🔴 **THE THREE-WAY `geo_id` COLLISION IS NOW ASSERTED, NOT NARRATED.** It is live in `districts`, not
+only in boundaries — measured in production: bare `13021` matches **three** rows (`COUNTY` Bibb County,
+`STATE_LOWER` House 21, `STATE_UPPER` Senate 21). The pre-flight resolves the county district with
+`geo_id` + `mtfcc` + `district_type`, requires exactly one row, and **`RAISE NOTICE`s the unpaired count
+so a reader sees the collision instead of taking it on trust**. Control K proved the paired lookup is
+load-bearing: asking for `13021`/`G4020` on the `LOCAL` tier returns **0**.
+
+🔴 **THE CITYWIDE SEAT COUNT IS WHERE COLUMBUS MUST NOT BE COPIED.** Columbus expects **3** offices on
+its citywide district — Mayor plus at-large Posts 9 and 10. Macon-Bibb expects **1**, because it has no
+at-large seats, and `num_officials` is **1** rather than Columbus's 3. Tallahassee wrote 5 (all at-large),
+Miami 1. The column counts officials elected on the district **across chambers**.
+
+🔴 **A NEW TIER GATE, THE MIRROR OF THE ONE TASK 4 WILL NEED.** The citywide `LOCAL` district and Bibb's
+`COUNTY` district cover the **same 254.906 sq mi**, so a city office hung on the county tier would still
+resolve at every address in Macon and look right. The post-verify asserts every city office sits on a
+`LOCAL` district. Task 4 asserts the reverse for its five officers.
+
+⚠ **`grep -ci commit` IS STILL THE WRONG DRY-RUN ASSERTION** and the rule was applied: every stream was
+checked with an anchored `^\s*COMMIT\s*;` and asserted to be **0 before being sent**. (This file happens
+to contain the word zero times, which is precisely why a substring count would have looked reassuring
+for the wrong reason.)
+
+🟢 **`CC_wip_*.sql` IS NOW GITIGNORED**, alongside the existing `backend/migrations/_*.sql` scratch rule.
+The wip file is regenerable and the durable record is the generator plus the renamed file — and
+committing one is what left the stray duplicate `0620ac28` had to delete after the `CC_0030` rename.
+A bare `git add -A` can no longer pick it up.
+
+⚠ **THE REMOTE MOVED DURING THIS TASK**: `check:migrations` read **1821 slots across 97 refs** at the
+start and **1823 across 99** at the end. Nothing collided because no number has been taken — which is
+the whole argument for `CC_wip_`.
+
+### ✅ GA-5 Task 3 — city occupancy, WRITTEN AND DRY-RUN CLEAN 2026-09-01, NOT APPLIED
+
+`CC_wip_macon_bibb_people.sql`. **10 politicians, 10 terms, 0 vacancies**, sub-range
+`-1331036 .. -1331045`. Structure + occupancy ran as **ONE transaction ending in `ROLLBACK`**; both
+post-verifies green; **rollback confirmed to have reverted**; production re-measured untouched and
+`offices_missing_terms` unchanged at **821 / 166 / 655**. `check:migrations` and `check:occupancy` green.
+
+🟢 **ALL TEN GO THROUGH `seat_officeholder()`, WHICH COLUMBUS COULD NOT DO.** The helper refuses a NULL
+`term_start`, so GA-4 had to direct-insert **nine of eleven** Columbus rows — Columbus publishes no
+service-start of any kind. Macon-Bibb publishes enough that every one of the ten carries a real date,
+so this migration hand-rolls nothing and the house rule is followed in full.
+⚠ The refusal branch is kept anyway, unreachable today (the payload guard proves 0 undated rows), so
+that editing the roster to add an undated person cannot silently bypass the helper. An undated
+open-ended term is a legitimate record — the ADR 0002 phase-2 backfill wrote 81,676 — but it must be a
+decision, not a side effect.
+
+#### 🔴🔴 THE DATES ARE NOT UNIFORM, AND THE SENTENCE MOST LIKELY TO CORRUPT THIS MIGRATION IS ONE THE COUNTY PUBLISHED
+
+| Seat | Holder | term_start | precision | how_started |
+| --- | --- | --- | --- | --- |
+| Mayor | Lester Miller | 2021-01-01 | `day` | elected |
+| D1 | Valerie Wynn | 2018-06-01 | **`month`** | elected (2018 special) |
+| D2 | Paul Bronson | 2021-01-01 | `day` | elected |
+| D3 | Stanley Stewart | **2024-10-15** | `day` | **appointed** |
+| D4 | Joey Hulett | 2025-01-01 | `day` | elected |
+| D5 | Andrea Cooke | **2026-04-20** | `day` | elected (2026 special) |
+| D6 | Raymond Wilder | 2021-01-01 | `day` | elected |
+| D7 | Bill Howell | 2021-01-01 | `day` | elected |
+| D8 | Donice Bryant | 2025-01-01 | `day` | elected |
+| D9 | Brendalyn Bailey | **2024-01-17** | `day` | **appointed** |
+
+🔴 **THE PAYLOAD GUARD ASSERTS THE EXACT `(external_id, term_start, start_precision, how_started)`
+TUPLE SET IN SQL**, not a count — restating in the migration what the roster validator checks in JS,
+because that is the guard which refuses the one substitution this wave invites.
+
+🟢 **AND IT WAS PROVED, WITH THE MOST INFORMATIVE FAILURE MESSAGE OF THE WAVE.** Setting every city
+seat to the county's published `2025-01-01` raises **`8 row(s) do not match the sourced tuple`** —
+**eight, not ten**, because the published sentence is genuinely correct for Hulett and Bryant. The
+guard flags precisely the eight it should and passes the two it should.
+
+#### 🟢 TEN NEGATIVE CONTROLS, EVERY ONE FIRING ON THE GATE IT AIMED AT
+
+| Control | Fired on |
+| --- | --- |
+| Every seat given the published **2025-01-01** | the tuple guard — **8 of 10** flagged |
+| Cooke dated to the **certified special** (2026-03-17), not the oath | the tuple guard |
+| Stewart dated to the **appointment vote** (2024-10-01), not the oath | the tuple guard |
+| Wynn **"tidied"** from `month` to a day that invents her oath | the tuple guard |
+| Bailey's appointment relabelled **`elected`** | the tuple guard |
+| `how_started 'special election'` | the tuple guard |
+| …**and again with the tuple guard satisfied** | the `how_started` **enum** guard |
+| Wynn's `month` precision removed, **tuple guard satisfied** | the month-precision guard |
+| A seat resolving to **no office** | "do not resolve to exactly one office" |
+| A **`term_end`** written on the Mayor's term | "carry a term_end — none may" |
+
+⚠ **TWO GUARDS WERE ONLY REACHABLE BY SATISFYING THE ONE IN FRONT OF THEM.** The tuple guard runs
+first and catches almost everything, so the dedicated `how_started` enum check and the
+month-precision check would have gone untested. Each was re-run with the expected tuple mutated to
+match, and both then fired on their own terms. **A gate you cannot reach has not been tested** —
+third time this wave, after Task 1's `CommDist` casing and Task 2's vanished offices.
+
+🟢 **ONE THING THAT DID *NOT* RAISE, AND THAT IS CORRECT.** Deleting a seated term row mid-transaction
+and re-running the occupancy half makes the migration **re-seat that one person** (`seated 1`) and pass.
+Self-healing, not a gap — GA-4 recorded the same, and it is why a deletion is not a valid control.
+
+#### 🔴 Four derived dates, and the derivation is in the source string rather than dressed as a quotation
+
+Miller, Bronson, Wilder and Howell all begin **2021-01-01**. No source quotes it. It is the charter's own
+commencement rule (Sec. 9(c), Sec. 10(b)) applied to a **sourced** 2020 election, and the county states
+that identical rule as fact for the 2025 cohort. Ruling recorded 2026-09-01 (Cantrell): write it at
+`day`, derivation in `source`. ⚠ **That is not the GA-4 Chapple case**, where a swearing-in date inferred
+from "Thursday morning" was correctly refused and written `unknown`. A legal rule applied to a sourced
+election is a different thing from a guess dressed as a date.
+
+**Wynn stays `month`.** The runoff was 2018-06-19 and reporting says she "could be sworn in by Friday" —
+no source states the oath date, so the day is not written. Control 4 exists to stop a later pass tidying
+it into 2018-06-19.
+
+#### ⚠ Harness notes
+
+- **`grep -ci commit` REPORTS 5 IN THIS FILE**; the anchored `^\s*COMMIT\s*;` reports **1**. The word
+  appears in comments and in `ON COMMIT DROP`, which is a temp-table clause and not a statement. Every
+  stream was asserted with the anchored form and proved **0 before being sent**. A blunt substring count
+  raises a red alarm on a correct file, and the real risk is that the alarm then gets waved through.
+- The seed temp table is `ON COMMIT DROP`, so the **double-apply test inside one transaction must
+  `DROP TABLE mb_seed;` between passes**. Harness only, never in the migration. Second pass: structure
+  **23 × `INSERT 0 0`**, politicians `INSERT 0 0`, **`seated 0`**, both post-verifies still green.
+
+### ✅ GA-5 Task 4 — Bibb County officers, WRITTEN 2026-09-02. ALL FIFTEEN SEATS NOW DRY-RUN CLEAN AS ONE TRANSACTION, NOT APPLIED
+
+`CC_wip_bibb_county.sql`: **1 chamber, 5 offices + 5 people + 5 terms in ONE migration** (spec §3),
+`-1331046 .. -1331050`, **0 districts created** — the countywide `13021`/`G4020` already exists and the
+pre-flight fails hard if it does not. The chamber attaches to the **same government row** as the two
+city chambers.
+
+Structure + occupancy + county ran as **ONE transaction ending in `ROLLBACK`**: **10 districts,
+1 government, 3 chambers, 15 offices, 15 people, 15 terms, 0 vacancies**; rollback confirmed reverted;
+production re-measured untouched; **`offices_missing_terms` unchanged at 821 / 166 / 655**.
+`check:migrations` and `check:occupancy` green.
+
+**All three re-run clean in one transaction**: pass 2 gives structure 23 × `INSERT 0 0`, county
+6 × `INSERT 0 0`, `seated 0` on both halves, and all three post-verifies still green.
+
+#### 🔴🔴🔴 GA-4'S "INVISIBLE BREAK" IS NOW DEMONSTRATED IN THREE LEGS, NOT ASSERTED
+
+GA-4 warned that a government-wide count in the structure migration "would pass on the day it applies
+and fail forever afterwards". That was the right call and it had never been shown. It is now:
+
+| | Result |
+| --- | --- |
+| **1a** — structure with its office count **un-scoped** to the government, applied FIRST | **NO ERROR.** It passes, because the county chamber does not exist yet |
+| **1b** — the **same un-scoped** migration, re-run after the county half has run | **FAILS: `expected 10 city offices, got 15`** |
+| **1c** — the **real, correctly-scoped** migration, re-run in the identical position | **passes**, as it must |
+
+🔴 **THE FIRST ATTEMPT AT THIS CONTROL "DID NOT RAISE", AND THAT WAS THE FINDING.** Running the
+un-scoped migration in its normal position proves nothing, because the defect is invisible on apply
+day by construction. **A control has to be placed where the defect can express itself** — which is a
+third variation on this wave's recurring lesson, after Task 1's field-name casing and Tasks 2–3's
+gates that fired before the one under test.
+
+#### 🔴 Ruling M4 — five officers, by the MIRROR IMAGE of Muscogee's route
+
+Charter Sec. 8 preserves **four** by name — sheriff, tax commissioner, coroner, clerk of the superior
+court. The **Judge of Probate Court** is not in Sec. 8 and enters via **Ga. Const. Art. IX, Sec. I,
+Par. III**. At Muscogee it was the other way round: the charter named the probate judge and the
+**clerk** arrived by Art. IX. **The count matches at five by coincidence, not by inheritance** — and
+Bibb elects no Marshal and no Surveyor, where Baldwin elected both and was seated with six.
+
+🟢 **THE COUNTY'S OWN OFFICERS CONFIRM THE SET.** In December 2025 the sheriff, probate judge, clerk of
+court "along with tax commissioner Wade McCord, **another constitutional officer**" acted **jointly**
+to change the county's legal organ effective 2026-01-01 — an act only constitutional officers perform.
+The probate judge is inside that group; the Solicitor of State Court is not.
+
+✅ **M5 CONFIRMED IN CODE: GA-4's municipal-court question does not arise.** Charter Sec. 7 fills the
+Municipal Court judgeship **by appointment of the mayor**, so there is no elected office to include or
+exclude, and no municipal-court contest appears in any Bibb ballot payload. **It stays live for
+Philadelphia and Lexington.**
+
+#### 🟢 Six more negative controls, and one that had to be repositioned
+
+| Control | Fired on |
+| --- | --- |
+| The Coroner hung on the **citywide `LOCAL`** district | the payload's tier gate ✅ |
+| The countywide district **duplicated** | "expected exactly 1 … got 2" ✅ |
+| An open-ended officer **"tidied"** to a plausible January | the tuple guard ✅ |
+| A `'year'` row **promoted to `'day'`** | the tuple guard first… |
+| …**and again with the tuple guard satisfied** | the **year-precision** guard ✅ |
+| The county half run **alone**, with no government row | the pre-flight ✅ |
+| Structure **un-scoped** | see the three-leg table above |
+
+#### 🔴 THIS HALF NEEDS BOTH SEATING PATHS, WHERE TASK 3 NEEDED ONLY ONE
+
+All ten city officials carry a real `term_start`, so Task 3 puts every one through
+`seat_officeholder()`. Here **3 of 5** have no published start of any kind and the helper refuses a
+NULL, so **2 go through the helper and 3 are direct-inserted** — but only into an office with **zero**
+existing term rows, which is what makes bypassing the helper safe: the helper's two-step exists to
+close a predecessor before an open-ended range overlaps it, and with no predecessor there is nothing
+to close. **That difference is a fact about what Macon-Bibb publishes, not a choice.**
+
+⚠ **Woodford, McCord and Jones stay open-ended `unknown` deliberately.** All three are confirmed in
+office. Coroner Jones has "been elected six times" with a term ending 2028, which would arithmetically
+place him in office from 2005 — **that is arithmetic on a press phrase, not a source, and it is not
+written.** Columbus wrote nine of eleven this way.
+
+🔴 **THE TWO DATED ROWS ARE `year`, NOT `day`.** Davis was "first elected Sheriff … in November of 2012"
+and Harris elected unopposed in 2012; Georgia county officers take office the following January, so
+2013 is sourced and the day is not. ⚠ Harris succeeded a **retired** judge, which leaves open whether
+she first filled a remainder by appointment — a second reason the day is not written.
+
+#### ⚠ Two name decisions, in opposite directions
+
+- **`Eric Woodford` IS NOT KEPT AS AN ALIAS.** The 41NBC 2020 qualifying list spells the Clerk that
+  way; her own office writes **Erica Woodford**. A dropped letter is a **typo, not an alternative
+  rendering**, and an alias that is a typo can match the wrong person.
+- **GA-4 kept the opposite call, correctly.** Muscogee's ballot wrote `Danielle F. Forte` where her
+  office writes `Forté`; a **diacritic-stripped form is a legitimate rendering** of the same name and
+  was kept. The test is whether the variant is a *way of writing the name* or a *mistake*.
+- `S. Wade McCord` and `Samuel Wade McCord` are both kept — the county publishes the first, court
+  captions the second.
+
+⚠ The Sheriff's own bio still reads "re-elected to his **third** term in November of 2020" and has not
+been updated for 2024 — **a stale sentence on a maintained site**. It is used only for the first
+election, and the change-check is what establishes he is still in office.
+
+### ✅ GA-5 Task 5 — APPLIED 2026-09-02. `CC_0045` structure, `CC_0046` people, `CC_0047` county
+
+**15 offices, 15 people, 15 terms, 0 vacancies** in production — 10 city, 5 county, one government,
+three chambers. All three re-run clean. `offices_missing_terms` **unchanged at 821 / 166 / 655**, so
+the wave added no invisible office.
+
+| Gate | Result |
+| --- | --- |
+| `check:migrations` | 3 added, 1825 slots across 98 refs, tree scan clean |
+| `check:occupancy` | green, no writes to the dropped column |
+| `check:child-county` | children 7782 · mapped 7782 · **stale 0** · orphaned 0 |
+| `check:reachability` | **OK — nothing regressed.** `UNREACHABLE` **37 against a baseline of 38** |
+| GA-3 + GA-4 migrations re-run | `CC_0034`, `CC_0035`, `CC_0036` all still pass |
+
+🟢 **`UNREACHABLE` CAME IN ONE BELOW BASELINE.** The gate only asserts "at or below", so this passes
+either way, but the number moved in the right direction rather than standing still.
+
+#### 🔴🔴 THE NUMBER-TAKING WAS THE RISKIEST STEP, AND THE CEILING HAD MOVED SEVEN SLOTS
+
+| Source | Said the next free slot was |
+| --- | --- |
+| `MEMORY.md` | `CC_0037` |
+| the GA-4 handoff row | "reached **`CC_0040`** within the same hour" |
+| **measured across all 98 remote refs, 2026-09-02** | max is **`CC_0044`** → took **0045/0046/0047** |
+
+🔴 **`CC_0044` SITS ON A COLLEAGUE'S UNMERGED BRANCH** (`origin/compass/closed-season-immutability`).
+A count against `origin/master` alone would have read the max as much lower and collided — **which is
+precisely why the sweep covers every remote ref**, and why GA-4's numbers collided six minutes after
+its own re-count. Re-counted **immediately before** the rename and **again after** the apply: still
+`CC_0044`, and `0045/46/47` claimed by nobody else. The repo's own checker agreed at both points.
+
+#### ✅ The change-check was re-run LIVE on the day of apply, in both directions
+
+**14 of 15 confirmed present** on their own body's live pages (the Tax Commissioner's county page is a
+stub that names nobody — McCord is established by the county's other pages and by the December 2025
+joint act of the constitutional officers). **8 of 8 departed officials confirmed absent**: Clark,
+Lucas, Tillman, Jones, Watkins, Bechtel, Schlesinger, Bivins. The county's voter-facing GIS layer
+re-read live still names all nine, with **District 5 last edited 2026-03-23** — Cooke's arrival — and
+the other eight 2026-02-26.
+
+🟢 **Nobody had left.** This is the check GA-3 ran against its *sources* rather than its *seats*, which
+put a retired coroner into production; asking it again on apply day is cheap and it is the only thing
+that catches a departure between measurement and write.
+
+#### 🟢 THE ACCEPTANCE PROBE RAN INSIDE THE DRY-RUN TRANSACTION, BEFORE ANY APPLY — AND AGAIN AFTER
+
+`scripts/verify-macon-bibb-probes.sql`, and it is a tracked artifact rather than a session artefact,
+because `check:reachability` **takes no per-jurisdiction probe list**: green there means "no district
+regressed", never "these nine were examined".
+
+| Probe | Result |
+| --- | --- |
+| **0** — the anchor is where its label says | City Hall in county **13021**, asserted against TIGER |
+| **1** — **the definition of done, four answers at one address** | District 2's commissioner, Mayor **Lester Miller**, **5** county officers (Sheriff **David Davis**), 1 state rep, 1 state senator |
+| **2** — **the second anchor** | commission answer **changed D2 → D6** while the Mayor and Sheriff **held constant** |
+| **3** — per-district positive control | **9 of 9** resolve individually to exactly one holder |
+| **4** — the unpaired-join hazard, demonstrated | dropping `mtfcc` returns **30** office rows at City Hall against 8 paired |
+| **5** — nothing vacant, nothing invisible | **15** seated across 3 chambers, 0 offices without a term |
+
+🔴 **THE CITY HALL COORDINATE WAS GEOCODED, NOT GUESSED.** "700 Poplar Street, Macon, GA 31201" through
+the US Census geocoder (`Public_AR_Current`) returns `-83.631827184, 32.836028193173`, and the geocoder
+**independently placed it in County 13021 Bibb** — which PROBE 0 then re-asserts against TIGER rather
+than trusting the label. GA-3 shipped a control labelled "Rural Baldwin County" that was really in
+Hancock: it passed, for a true reason, while testing nothing it claimed to test.
+
+🔴 **PROBE 1 DELIBERATELY DOES NOT ASSERT THE LEGISLATIVE DISTRICT NUMBERS**, only that there is
+exactly one of each and it is non-NULL. An anchor's expected answer is a property of the point, not of
+the jurisdiction — the GA-4 plan expected Columbus's downtown in HD-137 because it had copied GA-1's
+verification, which probed the place polygon's interior point out in rural northern Muscogee. Downtown
+was HD-140.
+
+🟢 **PROBE 2 IS THE ONE THAT CAN SEE A CROSSED TIER, AND A SINGLE ANCHOR CANNOT.** The citywide `LOCAL`
+district and Bibb's `COUNTY` district cover the same 254.906 sq mi, so an office on the wrong tier
+resolves at every Macon address and looks right. What distinguishes them is that the **commission
+district must change between two anchors while the citywide and county answers must not** — and the
+probe refuses a second anchor that lands in the same district as the first, because such an anchor
+would be decorative.
+
+🟢 **PROBE 4 MEASURES THE COLLISION RATHER THAN WARNING ABOUT IT**: 30 rows unpaired against 8 paired,
+and it **raises** if the unpaired count ever drops to the paired one — so if Georgia's three-way
+collision genuinely goes away, that is a finding to re-measure, not a silent relaxation.
+
+#### What is in production
+
+1 government keyed on TIGER place `1349008` · 3 chambers (Commission `official_count` **9**, Office of
+the Mayor 1, Bibb County Elected Officials 5) · 10 districts created (9 × `X0045` + citywide
+`1349008`/`G4110`) · Bibb `13021`/`G4020` **asserted, not inserted** · 15 offices · `external_id`
+`-1331036 .. -1331050` · Mayor `non_voting` with a `representation_note` citing charter Sec. 9(c) ·
+**no `term_end` on any of the fifteen** · 9 `day`, 1 `month`, 2 `year`, 3 open-ended `unknown`,
+2 `appointed`.
+
+▶ **Macon-Bibb is now complete across stages 1–4. Stage 5 (headshots + banner) is what remains** — and
+the county's voter-facing GIS layer already carries a `photo` URL for all nine commissioners, which is
+a candidate source to test rather than a solved problem.
+
+### ⏸ GA-4 CARRY-OVER RE-CHECKED 2026-09-02 — the Muscogee Probate Judge. NO DEPARTURE, STILL NO CURRENCY, AND ONE NEW DATE
+
+The GA-4 handoff owed a re-check of **Marc D'Antonio**, Judge of the Muscogee County Probate Court,
+whose newest positive evidence stopped at **2025-01-13**. Done, and it produced three separate results.
+
+1. 🔴 **HIS OWN COURT STILL DOES NOT NAME ITS JUDGE.** `columbusga.gov/probate/` re-fetched today
+   yields **1,459 characters** of text containing neither "Judge" nor "D'Antonio". GA-4 measured this
+   twice, including JS-rendered; the measurement holds a wave later.
+2. 🟢 **A BALLOTPEDIA *PERSON* PAGE EXISTS** — `Marc_Eric_D'Antonio` — and carries real tenure history:
+   "first served the court as an **appointed associate judge from 2009** until being **elected judge in
+   2012** to replace Julia W. Lumpkin", and "won a second term in the partisan general election on
+   **November 8, 2016**".
+   ⚠ **THIS DOES NOT CONTRADICT GA-4.** GA-4 recorded that Ballotpedia has no Muscogee *county
+   officials* page — a different URL, which still redirects to the city page. A person page is a
+   route GA-4's search did not reach.
+3. 🔴🔴 **THE PAGE'S CONTENT STOPS AT 2016, SO THE RE-CHECK STILL CANNOT REACH 2026.** It describes him
+   in the present tense as "the judge of the Muscogee County Probate Court" and carries **no
+   `Assumed office` infobox and no 2020 or 2024 election**. Present-tense prose on a page whose newest
+   fact is nine years old is **not currency** — that is precisely the shape of the Baldwin coroner
+   failure, where every source agreed and all of them predated the retirement.
+   ⚠ A "3 terms" figure surfaced in a search summary and is **NOT on the Ballotpedia page**
+   (`terms as Probate` is absent); it traces to a **data broker** and is not used.
+
+**Verdict: no departure was found, and no departure has been established either.** The seat stays as
+`CC_0036` wrote it, with the limit still stated rather than hidden.
+
+⏸ **BUT THERE IS NOW A SOURCED START DATE, AND IT IS A GA-4 CORRECTION RATHER THAN GA-5 WORK.**
+`CC_0036` seated him open-ended at `start_precision 'unknown'` because no start was known. Elected in
+2012, and Georgia county officers take office the following January, so his occupancy of **the
+judgeship** begins **2013-01-01 at `year`** — the identical shape as Bibb's Davis and Harris in
+`CC_0047`. ⚠ **The 2009 appointment was to a different office** (associate judge), so it is not the
+start of this occupancy.
+
+▶ **Flagged, not applied.** Writing it would mean a new migration against a seat this wave does not
+own, and the honest change is one column on one row. Decide it as a GA-4 amendment.
+
+### 🔴🔴🔴 GA-5 RENUMBERED AFTER APPLY — `CC_0045`–`CC_0047` COLLIDED WITH A MERGED COMPASS CHAIN. NOW `CC_0049`–`CC_0051`
+
+**This is the third migration-number collision in the program, and the second in two consecutive
+Knight waves.** Flagged by the operator, from a parallel Compass session, mid-session on 2026-09-02.
+
+The collision, measured across all remote refs:
+
+| Slot | Also claimed by | Where |
+| --- | --- | --- |
+| `CC_0045` | `CC_0045_compass_responses_season_aware.sql` | **`origin/master`** + 2 branches |
+| `CC_0046` | `CC_0046_compass_responses_season_stage2.sql` | **`origin/master`** + 2 branches |
+| `CC_0047` | nobody | — |
+| `CC_0048` | `CC_0048_seasons_grant_for_invoker_view.sql` | **`origin/master`** |
+
+🔴 **THE RE-COUNTS WERE NOT WRONG — THE WINDOW IS SMALLER THAN THE APPLY.** `CC_0044` was measured as
+the max across 98 refs **immediately before the rename**, `0045/46/47` were confirmed claimed by nobody,
+and the **post-apply re-count came back clean too**. The Compass chain merged to master in the minutes
+after that. GA-4's collision was six minutes wide; this one fits inside a verification that ran both
+before *and* after. **A re-count cannot close this window. Only pushing early, or a lock, can.**
+
+#### The renumber decision was measured on both sides, not assumed
+
+GA-4's rule is that **"mine is applied" is not automatically the stronger claim**. Both sides were
+measured and every criterion pointed the same way:
+
+| | GA-5 (mine) | Compass (theirs) |
+| --- | --- | --- |
+| Numbers embedded in **prod data** | **0 rows** — `office_terms.source`, `politicians.data_source` and `geofence_boundaries.source` all return 0 for `%CC_004%`; provenance strings are `maconbibb-us-…`, never a migration number | their numbers cross-reference **each other**: `CC_0046` cites `CC_0045`, `CC_0048` cites `CC_0046`, and each embeds its own |
+| Git standing | an **unpushed local branch** | **merged to `origin/master`** |
+| Chain length | 3 independent files | a **3-file dependent chain** |
+
+So GA-5 renumbered. The operator's read, relayed from the Compass session, was correct.
+
+#### What the renumber did and did not touch
+
+- **The SQL content is byte-identical apart from the filename comment in each header.** Only the
+  filenames and self-references moved, so the applied state in production is untouched and correct.
+- **All three re-run clean under the new names**, and `verify-macon-bibb-probes.sql` still passes
+  end-to-end.
+- ⚠ **`X0045` WAS NOT TOUCHED.** The private MTFCC for the nine commission districts is a different
+  namespace that merely looks similar; a careless `CC_0045` → `CC_0049` sweep across the tree would have
+  renamed the boundary code too and silently detached every district from its polygons.
+- The generator emits the new names, so regenerating reproduces the applied files.
+
+🔴 **AND THIS IS EXACTLY WHY `CC_wip_` EXISTS.** The wave was written and dry-run entirely under
+`CC_wip_` names and took numbers only at apply time — that part worked. What failed is that *any*
+number taken from a shared sequence is stale the moment it is taken. ▶ **The durable fix is not a
+better count. It is Cantrell's own `CC_` namespace being shared with parallel Cantrell sessions** —
+`MEMORY.md` says "He never reads the shared max again", and that is no longer true of `CC_` itself.
+Consider a per-session or per-wave sub-band (e.g. Knight waves reserve `CC_01xx`) so that two Cantrell
+sessions cannot contend at all.

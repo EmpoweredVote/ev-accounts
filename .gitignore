@@ -75,6 +75,14 @@ __pycache__/
 backend/scripts/_*
 backend/migrations/_*.sql
 
+# Migrations still awaiting their number. The house rule is TAKE THE NUMBER LAST:
+# generate as CC_wip_*.sql, then rename, apply and commit in one go. They are
+# regenerable from their generator, so the durable record is the generator plus
+# the renamed file — never the wip copy. Committing one is what left the stray
+# duplicate that 0620ac28 had to delete after the CC_0030 rename.
+backend/migrations/CC_wip_*.sql
+backend/migrations/CA_wip_*.sql
+
 # Stance-research working scratch (chunked SQL, agent prompts, wave topic dumps)
 backend/data/stance-research/_*
 backend/data/stance-research/**/_*
