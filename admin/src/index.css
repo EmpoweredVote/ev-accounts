@@ -14,3 +14,15 @@
   /* v2.0 Civic Account Experience */
   --color-ev-blue: #3B82F6;       /* v2.0 primary CTA / focus ring */
 }
+
+/* Auth pages: subtle brand-tinted background wash (see AuthShell.tsx) */
+.auth-bg {
+  background:
+    radial-gradient(1100px 600px at 50% -10%, rgba(0, 101, 124, 0.08), transparent 60%),
+    #f7f9fa;
+}
+.dark .auth-bg {
+  background:
+    radial-gradient(1100px 600px at 50% -10%, rgba(89, 176, 196, 0.10), transparent 60%),
+    #141414;
+}
