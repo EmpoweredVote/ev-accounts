@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ⏸ **MEASURED 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete, **nothing written to production** |
+| GA-5 | **Macon-Bibb** | ▶ **IN PROGRESS 2026-09-01** — 15 seats (10 city, 5 county), roster + charter rulings complete. **Task 1 APPLIED: `X0045`, the 9 commission districts.** Tasks 2–4 not written |
 
 ---
 
@@ -1511,3 +1511,51 @@ eleven.
 `COUNTY` over identical ground), and **every structure post-verify scoped to the two CITY chambers** —
 the county chamber joins the same government row, so a government-wide count passes on the day it
 applies and fails forever after.
+
+### ✅ GA-5 Task 1 applied 2026-09-01 — `X0045`, the nine commission districts
+
+`scripts/load-macon-bibb-commission-boundaries.ts`. **9 boundaries, 0 errors**, all `ST_MultiPolygon`,
+SRID 4326, `state='ga'`. Union **254.9060 sq mi**. Re-runs clean (second pass inserts 0).
+`check:child-county` **stale 0** — an `X`-code load writes no `place`, so no `CONCURRENT` refresh was
+needed, as GA-3 predicted and GA-4 confirmed. Nothing references `X0045` yet, so the boundaries are
+**inert until the structure migration**, and `offices_missing_terms` is unchanged at **821 / 166 / 655**.
+
+🟢 **Every gate passed on the dry run before any write.** Gate order puts the discriminator first
+(the FL-6 rule):
+
+| Gate | Result |
+| --- | --- |
+| 1 — agreement with the **adopted 2022 redistricting plan** | **0.0000 sq mi on all nine** |
+| 2 — divergence from the superseded `CountyDistrict` | **145.7215 sq mi** — genuinely different maps |
+| 3 — control points, each district's own interior point | 9 of 9 |
+| 4 — negative controls, each with its **county asserted against TIGER** | 6 of 6, no district |
+| 5 — per-district area, ±2% | 9 of 9 at **0.00%** |
+| 6 — 🔴 **FULL COVERAGE** — union, overlaps, uncovered, beyond | union 254.9060, county 254.9059, **uncovered 0.0139**, beyond 0.0140, **0 overlaps** |
+| 7 — `X0045` unclaimed, and TIGER place `1349008` present | ✓ |
+
+🟢 **GATE 1 WAS PROVED TO BITE, WITH A NEGATIVE CONTROL.** A copy of the loader pointed at the
+superseded `CountyDistrict` layer as its *primary* fails GATE 1 at **worst 33.6839 sq mi** — and it
+fails **before GATE 5 can run**, which is the whole reason the discriminator is first. GATE 5 would
+have reported nine areas "0.00% from expected" against re-baselined constants and invited exactly the
+wrong repair.
+
+⚠ **The negative control ALSO exposed a real trap on the way**: ArcGIS field names are case-sensitive
+in GeoJSON properties, and the superseded layer uses `CommDist` where the primary uses `commdist`. The
+first attempt failed at *keying* (0 of 9 keyed) rather than at GATE 1, which looks like a passing test
+and is not one. **A gate you cannot reach has not been tested.** The key reader takes a field list for
+this reason.
+
+🟢 **THE ARBITER IS THE ADOPTED PLAN, BECAUSE BIBB HAS NO BALLOT-BUILDING TABLE.** GA-4's
+`Elections Combinations` layer has no Bibb equivalent. `2022_Bibb_County_Commission_Redistricted`
+carries per-district deviations and `IDEAL_VALU` 17,483 (× 9 = 157,347, Bibb's 2020 population), and it
+is **independent of the county's operational GIS** — which is what makes it an arbiter and not a second
+copy. ⚠ It carries a **tenth feature keyed 0 / "Unassigned"** that is dropped on purpose; the count
+check is what proves exactly one row was dropped and not a real district.
+
+🔴 **GATE 6 IS THE COLUMBUS GATE INVERTED, AND THE FAILURE MESSAGE SAYS SO.** Columbus had to gate
+structure rather than coverage because Fort Benning legitimately sits in no council district. Bibb's
+nine districts tile the county, so **a hole is a defect here**. The message names Payne City explicitly
+so that a future reader does not "fix" a real hole by re-enabling a carve-out that is spent.
+
+⚠ `maconbibb.spatialitics.net` is an **ArcGIS Enterprise portal**, separate from the county's ArcGIS
+Online org, and it serves `f=geojson` and a valid certificate. No TLS workaround is needed.
