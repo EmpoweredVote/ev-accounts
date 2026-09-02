@@ -279,7 +279,7 @@ export async function getRecalibrationFlags(
             eff.id::text                AS effective_revision_id,
             eff.version                 AS effective_version,
             eff.public_note             AS public_note
-       FROM inform.compass_responses r
+       FROM inform.compass_responses_current r
        LEFT JOIN inform.compass_topic_revisions ar ON ar.id = r.answered_revision_id
        LEFT JOIN inform.compass_topics_promoted p  ON p.id = r.topic_id
        LEFT JOIN LATERAL (

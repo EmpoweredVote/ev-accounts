@@ -89,7 +89,7 @@ const USER_COUNTS_SQL = `
          value::float8  AS value,
          COUNT(*)::int  AS n,
          (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
-  FROM inform.compass_responses
+  FROM inform.compass_responses_current
   WHERE deleted_at IS NULL
   GROUP BY topic_id, value
 `;
@@ -120,7 +120,7 @@ const POLITICIAN_COUNTS_SQL = `
 const USER_TOTALS_SQL = `
   SELECT COUNT(*)::int                 AS responses,
          COUNT(DISTINCT user_id)::int  AS respondents
-  FROM inform.compass_responses
+  FROM inform.compass_responses_current
   WHERE deleted_at IS NULL
 `;
 

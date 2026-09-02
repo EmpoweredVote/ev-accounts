@@ -81,8 +81,19 @@ const VERBOSE = process.argv.includes('--verbose');
  * keyword alternative requires real whitespace and the bare-substring case
  * never fires. An earlier draft listed both files as offenders — they are not.
  */
+// 🔴 compass_responses WAS NOT COVERED HERE UNTIL CC_0046, AND THAT IS WHY THE
+// USER SIDE DRIFTED. This gate was written for the politician tables during the
+// CC_0002 key swap and never extended, so when `inform.compass_responses` got
+// the identical treatment — season_id, a three-column key, the same fan-out and
+// the same 42P10 on ON CONFLICT — nothing was watching. Both failure modes in
+// the header apply to it verbatim.
+//
+// ⚠ `\b` after the table name is what keeps `inform.compass_responses_current`
+// out of this: `_` is a word character, so the boundary fails and the view does
+// NOT match. That is deliberate — the view IS the season-aware read path, so
+// matching it would flag every correct call site.
 const SQL_TABLE_REF =
-  /\binform\.politician_(?:answers|context)\b|\b(?:from|join|into|update|table)\s+(?:inform\.)?politician_(?:answers|context)\b/i;
+  /\binform\.(?:politician_(?:answers|context)|compass_responses)\b|\b(?:from|join|into|update|table)\s+(?:inform\.)?(?:politician_(?:answers|context)|compass_responses)\b/i;
 
 /** Any mention of a season. Deliberately generous — see "WHAT THIS CANNOT DO". */
 const SEASON_REF = /season_id|seasonId|current_season|currentSeason|season_questions|seasons\b/i;

@@ -133,7 +133,7 @@ export async function getCandidateBySlug(slug: string): Promise<CandidateProfile
   if (selectedTopicIds.length > 0) {
     const { data: answersData } = await supabaseAdmin
       .schema('inform')
-      .from('compass_responses')
+      .from('compass_responses_current')
       .select('topic_id, value, write_in_text')
       .eq('user_id', data.user_id)
       .in('topic_id', selectedTopicIds)
@@ -210,7 +210,7 @@ export async function getCandidateAnswers(
   // Fetch public compass answers for the requested topic IDs
   const { data: answersData, error: answersError } = await supabaseAdmin
     .schema('inform')
-    .from('compass_responses')
+    .from('compass_responses_current')
     .select('topic_id, value, write_in_text')
     .eq('user_id', userId)
     .in('topic_id', topicIds)
