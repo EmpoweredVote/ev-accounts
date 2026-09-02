@@ -13,6 +13,7 @@ import {
   verifyEmailCode,
 } from '../lib/workosAuth';
 import InformConstraintsModal from '../components/InformConstraintsModal';
+import AuthShell from '../components/AuthShell';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -295,14 +296,9 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
     !allowClassic && !isCodeCallback && (isLoading || (isAuthenticated && !!accessToken));
   if (showResolving) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
-            empowered.vote
-          </h1>
-        </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400">One moment…</p>
-      </div>
+      <AuthShell>
+        <p className="text-sm text-center text-gray-500 dark:text-gray-400">One moment…</p>
+      </AuthShell>
     );
   }
 
@@ -310,31 +306,16 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
   // landing would flash for a frame before the page navigates away.
   if (autoForwarding) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
-            empowered.vote
-          </h1>
-        </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400">Redirecting to sign in…</p>
-      </div>
+      <AuthShell>
+        <p className="text-sm text-center text-gray-500 dark:text-gray-400">Redirecting to sign in…</p>
+      </AuthShell>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
-          empowered.vote
-        </h1>
-      </div>
-
-      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
-
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-          {codeStep ? 'Enter your code' : 'Log in'}
-        </h2>
+    <>
+    <AuthShell heading={codeStep ? 'Enter your code' : 'Log in'}>
+      <div className="space-y-5">
 
         {workosCompleting && (
           <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
@@ -505,6 +486,7 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
         </p>
       </div>
+    </AuthShell>
 
       <InformConstraintsModal
         open={signupModalOpen}
@@ -518,6 +500,6 @@ export default function Login({ allowClassic = false }: { allowClassic?: boolean
           navigate(signupHref);
         }}
       />
-    </div>
+    </>
   );
 }
