@@ -3,11 +3,13 @@
  *
  * Generates the GA-5 migrations from backend/data/ga5-macon-bibb-roster.json.
  *
- *   CC_wip_macon_bibb_structure.sql   Task 2 — 1 government, 2 city chambers,
+ *   CC_0045_macon_bibb_structure.sql  Task 2 — 1 government, 2 city chambers,
  *                                     10 districts (9 x X0045 + 1 citywide),
  *                                     10 offices
- *
- * Tasks 3 (city occupancy) and 4 (Bibb County officers) are not emitted yet.
+ *   CC_0046_macon_bibb_people.sql     Task 3 — 10 politicians, 10 terms,
+ *                                     0 vacancies, ALL via seat_officeholder()
+ *   CC_0047_bibb_county.sql           Task 4 — 1 chamber, 5 offices + 5 people
+ *                                     + 5 terms in ONE migration, per spec §3
  *
  * Everything comes from data/ga5-macon-bibb-roster.json, and the roster is
  * validated by scripts/assert-ga5-macon-bibb-roster.mjs — which this script RUNS
@@ -22,12 +24,16 @@
  * Usage:  node scripts/gen-ga5-macon-bibb-migrations.mjs
  *
  * ─────────────────────────────────────────────────────────────────────────────
- * 🔴 TAKE THE MIGRATION NUMBER LAST. The file is emitted as CC_wip_*, and the
- *    rename happens at apply time, re-counted across EVERY remote ref — not
- *    against PROGRAM.md or ga.md, which record what the LAST wave took, a
- *    different question, and have gone stale within hours. GA-4's own numbers
- *    collided with a parallel session of the SAME author SIX MINUTES after its
- *    re-count. Re-count immediately before the rename, and again after.
+ * 🔴 THE NUMBERS WERE TAKEN LAST, at apply time on 2026-09-02, re-counted
+ *    across ALL 98 REMOTE REFS — not against PROGRAM.md or ga.md, which record
+ *    what the LAST wave took, a different question, and have gone stale within
+ *    hours. This session watched the ceiling move from CC_0037 (what memory
+ *    said) through CC_0040 (what the GA-4 handoff warned) to CC_0044
+ *    (measured) — and CC_0044 sits on a colleague's UNMERGED branch, which is
+ *    exactly why the sweep covers every remote ref and not just master. So this
+ *    wave took CC_0045, CC_0046 and CC_0047.
+ *    ⚠ Once APPLIED, do not renumber these: a renamed applied migration
+ *      desyncs the filename from its apply order.
  *
  * ─────────────────────────────────────────────────────────────────────────────
  * 🔴 MACON-BIBB IS ONE GOVERNMENT WITH THREE CHAMBERS, SO THIS MIGRATION'S
@@ -394,7 +400,7 @@ END $$;`;
 }
 
 function structureFile() {
-  return `-- CC_wip_macon_bibb_structure.sql
+  return `-- CC_0045_macon_bibb_structure.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 2, CITY STRUCTURE half.
 --   * 1 government, 2 chambers
@@ -407,10 +413,13 @@ function structureFile() {
 -- data/ga5-macon-bibb-roster.json -- edit the roster and regenerate, do not
 -- hand-edit this file.
 --
--- 🔴 TAKE THE MIGRATION NUMBER LAST. This file is CC_wip_ on purpose. Re-count
---    across EVERY remote ref at rename time, and again after: GA-4's numbers
---    collided with a parallel session of the SAME author six minutes after its
---    re-count, and were renumbered after being applied.
+-- 🔴 THE NUMBER WAS TAKEN LAST, at apply time on 2026-09-02, re-counted across
+--    all 98 remote refs. CC_0044 was the max and it sits on a colleague's
+--    UNMERGED branch, which is why the sweep covers every remote ref rather than
+--    just master. GA-4's numbers collided with a parallel session of the SAME
+--    author six minutes after its re-count and had to be renumbered post-apply.
+--    ⚠ Once APPLIED, do not renumber: a renamed applied migration desyncs the
+--      filename from its apply order.
 --
 -- ---------------------------------------------------------------------------
 -- 🔴 MACON-BIBB IS THE PROGRAM'S SECOND CONSOLIDATED CITY-COUNTY, AND THE
@@ -606,7 +615,7 @@ function peopleFile() {
     )
     .join('\n\n');
 
-  return `-- CC_wip_macon_bibb_people.sql
+  return `-- CC_0046_macon_bibb_people.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 3, CITY OCCUPANCY half.
 --   * ${offices.length} politicians, ${offices.length} terms, 0 vacancies
@@ -620,7 +629,13 @@ function peopleFile() {
 -- data/ga5-macon-bibb-roster.json -- edit the roster and regenerate, do not
 -- hand-edit this file.
 --
--- 🔴 TAKE THE MIGRATION NUMBER LAST. CC_wip_ on purpose.
+-- 🔴 THE NUMBER WAS TAKEN LAST, at apply time on 2026-09-02, re-counted across
+--    all 98 remote refs. CC_0044 was the max and it sits on a colleague's
+--    UNMERGED branch, which is why the sweep covers every remote ref rather than
+--    just master. GA-4's numbers collided with a parallel session of the SAME
+--    author six minutes after its re-count and had to be renumbered post-apply.
+--    ⚠ Once APPLIED, do not renumber: a renamed applied migration desyncs the
+--      filename from its apply order.
 --
 -- ⚠ THIS HALF CANNOT BE DRY-RUN ALONE -- its offices do not exist until the
 --   structure half runs. Run both as ONE transaction ending in ROLLBACK and
@@ -1099,7 +1114,7 @@ WHERE g.geo_id = ${q(gov.geo_id)} AND g.type = ${q(gov.type)} AND c.name = ${q(c
     )
     .join('\n\n');
 
-  return `-- CC_wip_bibb_county.sql
+  return `-- CC_0047_bibb_county.sql
 --
 -- Knight Foundation cities program, wave GA-5 Task 4, BIBB COUNTY --
 -- offices AND people AND terms in ONE migration, per spec §3.
@@ -1114,7 +1129,13 @@ WHERE g.geo_id = ${q(gov.geo_id)} AND g.type = ${q(gov.type)} AND c.name = ${q(c
 -- data/ga5-macon-bibb-roster.json -- edit the roster and regenerate, do not
 -- hand-edit this file.
 --
--- 🔴 TAKE THE MIGRATION NUMBER LAST. CC_wip_ on purpose.
+-- 🔴 THE NUMBER WAS TAKEN LAST, at apply time on 2026-09-02, re-counted across
+--    all 98 remote refs. CC_0044 was the max and it sits on a colleague's
+--    UNMERGED branch, which is why the sweep covers every remote ref rather than
+--    just master. GA-4's numbers collided with a parallel session of the SAME
+--    author six minutes after its re-count and had to be renumbered post-apply.
+--    ⚠ Once APPLIED, do not renumber: a renamed applied migration desyncs the
+--      filename from its apply order.
 --
 -- ⚠ THIS HALF CANNOT BE DRY-RUN ALONE -- its chamber hangs off a government the
 --   structure half creates. Run all THREE halves as ONE transaction ending in
@@ -1601,7 +1622,7 @@ COMMIT;
 
 // ── emit ─────────────────────────────────────────────────────────────────────
 
-const structOut = join(OUT_DIR, 'CC_wip_macon_bibb_structure.sql');
+const structOut = join(OUT_DIR, 'CC_0045_macon_bibb_structure.sql');
 writeFileSync(structOut, structureFile(), 'utf8');
 console.log(`wrote ${structOut}`);
 console.log(
@@ -1609,7 +1630,7 @@ console.log(
     `(${city.district_count} x ${city.district_mtfcc} + 1 citywide), ${city.offices.length} offices`,
 );
 
-const peopleOut = join(OUT_DIR, 'CC_wip_macon_bibb_people.sql');
+const peopleOut = join(OUT_DIR, 'CC_0046_macon_bibb_people.sql');
 writeFileSync(peopleOut, peopleFile(), 'utf8');
 console.log(`wrote ${peopleOut}`);
 {
@@ -1622,7 +1643,7 @@ console.log(`wrote ${peopleOut}`);
       `${appointed.length} appointed, ALL via seat_officeholder()`,
   );
 }
-const countyOut = join(OUT_DIR, 'CC_wip_bibb_county.sql');
+const countyOut = join(OUT_DIR, 'CC_0047_bibb_county.sql');
 writeFileSync(countyOut, countyFile(), 'utf8');
 console.log(`wrote ${countyOut}`);
 {
@@ -1634,6 +1655,6 @@ console.log(`wrote ${countyOut}`);
       `${dated.length} dated at year, ${undated.length} open-ended unknown`,
   );
 }
-console.log('  🔴 All three files are CC_wip_ on purpose — take the numbers LAST, re-counted across every remote ref.');
+console.log('  🔴 CC_0045/0046/0047 — taken LAST on 2026-09-02, re-counted across all 98 remote refs (CC_0044 was the max, on an UNMERGED branch).');
 console.log('  ⚠ Neither the occupancy nor the county half can be dry-run alone.');
 console.log('  ⚠ Run all THREE as ONE transaction ending in ROLLBACK, asserting zero ^\\s*COMMIT\\s*; beforehand.');

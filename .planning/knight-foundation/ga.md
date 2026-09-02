@@ -10,7 +10,7 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ⏸ **READY TO APPLY 2026-09-02** — 15 seats (10 city, 5 county). **Task 1 APPLIED (`X0045`, 9 districts); Tasks 2, 3 and 4 ALL WRITTEN AND DRY-RUN CLEAN AS ONE TRANSACTION, not applied.** Next: take the `CC_` numbers LAST and apply |
+| GA-5 | **Macon-Bibb** | ✅ **STAGES 1–4 APPLIED 2026-09-02** — `X0045`, `CC_0045`–`CC_0047`, **15 seats** (10 city, 5 county), 0 vacancies. All probes pass. ▶ Stage 5 (headshots + banner) remains |
 
 ---
 
@@ -1817,3 +1817,98 @@ she first filled a remainder by appointment — a second reason the day is not w
 ⚠ The Sheriff's own bio still reads "re-elected to his **third** term in November of 2020" and has not
 been updated for 2024 — **a stale sentence on a maintained site**. It is used only for the first
 election, and the change-check is what establishes he is still in office.
+
+### ✅ GA-5 Task 5 — APPLIED 2026-09-02. `CC_0045` structure, `CC_0046` people, `CC_0047` county
+
+**15 offices, 15 people, 15 terms, 0 vacancies** in production — 10 city, 5 county, one government,
+three chambers. All three re-run clean. `offices_missing_terms` **unchanged at 821 / 166 / 655**, so
+the wave added no invisible office.
+
+| Gate | Result |
+| --- | --- |
+| `check:migrations` | 3 added, 1825 slots across 98 refs, tree scan clean |
+| `check:occupancy` | green, no writes to the dropped column |
+| `check:child-county` | children 7782 · mapped 7782 · **stale 0** · orphaned 0 |
+| `check:reachability` | **OK — nothing regressed.** `UNREACHABLE` **37 against a baseline of 38** |
+| GA-3 + GA-4 migrations re-run | `CC_0034`, `CC_0035`, `CC_0036` all still pass |
+
+🟢 **`UNREACHABLE` CAME IN ONE BELOW BASELINE.** The gate only asserts "at or below", so this passes
+either way, but the number moved in the right direction rather than standing still.
+
+#### 🔴🔴 THE NUMBER-TAKING WAS THE RISKIEST STEP, AND THE CEILING HAD MOVED SEVEN SLOTS
+
+| Source | Said the next free slot was |
+| --- | --- |
+| `MEMORY.md` | `CC_0037` |
+| the GA-4 handoff row | "reached **`CC_0040`** within the same hour" |
+| **measured across all 98 remote refs, 2026-09-02** | max is **`CC_0044`** → took **0045/0046/0047** |
+
+🔴 **`CC_0044` SITS ON A COLLEAGUE'S UNMERGED BRANCH** (`origin/compass/closed-season-immutability`).
+A count against `origin/master` alone would have read the max as much lower and collided — **which is
+precisely why the sweep covers every remote ref**, and why GA-4's numbers collided six minutes after
+its own re-count. Re-counted **immediately before** the rename and **again after** the apply: still
+`CC_0044`, and `0045/46/47` claimed by nobody else. The repo's own checker agreed at both points.
+
+#### ✅ The change-check was re-run LIVE on the day of apply, in both directions
+
+**14 of 15 confirmed present** on their own body's live pages (the Tax Commissioner's county page is a
+stub that names nobody — McCord is established by the county's other pages and by the December 2025
+joint act of the constitutional officers). **8 of 8 departed officials confirmed absent**: Clark,
+Lucas, Tillman, Jones, Watkins, Bechtel, Schlesinger, Bivins. The county's voter-facing GIS layer
+re-read live still names all nine, with **District 5 last edited 2026-03-23** — Cooke's arrival — and
+the other eight 2026-02-26.
+
+🟢 **Nobody had left.** This is the check GA-3 ran against its *sources* rather than its *seats*, which
+put a retired coroner into production; asking it again on apply day is cheap and it is the only thing
+that catches a departure between measurement and write.
+
+#### 🟢 THE ACCEPTANCE PROBE RAN INSIDE THE DRY-RUN TRANSACTION, BEFORE ANY APPLY — AND AGAIN AFTER
+
+`scripts/verify-macon-bibb-probes.sql`, and it is a tracked artifact rather than a session artefact,
+because `check:reachability` **takes no per-jurisdiction probe list**: green there means "no district
+regressed", never "these nine were examined".
+
+| Probe | Result |
+| --- | --- |
+| **0** — the anchor is where its label says | City Hall in county **13021**, asserted against TIGER |
+| **1** — **the definition of done, four answers at one address** | District 2's commissioner, Mayor **Lester Miller**, **5** county officers (Sheriff **David Davis**), 1 state rep, 1 state senator |
+| **2** — **the second anchor** | commission answer **changed D2 → D6** while the Mayor and Sheriff **held constant** |
+| **3** — per-district positive control | **9 of 9** resolve individually to exactly one holder |
+| **4** — the unpaired-join hazard, demonstrated | dropping `mtfcc` returns **30** office rows at City Hall against 8 paired |
+| **5** — nothing vacant, nothing invisible | **15** seated across 3 chambers, 0 offices without a term |
+
+🔴 **THE CITY HALL COORDINATE WAS GEOCODED, NOT GUESSED.** "700 Poplar Street, Macon, GA 31201" through
+the US Census geocoder (`Public_AR_Current`) returns `-83.631827184, 32.836028193173`, and the geocoder
+**independently placed it in County 13021 Bibb** — which PROBE 0 then re-asserts against TIGER rather
+than trusting the label. GA-3 shipped a control labelled "Rural Baldwin County" that was really in
+Hancock: it passed, for a true reason, while testing nothing it claimed to test.
+
+🔴 **PROBE 1 DELIBERATELY DOES NOT ASSERT THE LEGISLATIVE DISTRICT NUMBERS**, only that there is
+exactly one of each and it is non-NULL. An anchor's expected answer is a property of the point, not of
+the jurisdiction — the GA-4 plan expected Columbus's downtown in HD-137 because it had copied GA-1's
+verification, which probed the place polygon's interior point out in rural northern Muscogee. Downtown
+was HD-140.
+
+🟢 **PROBE 2 IS THE ONE THAT CAN SEE A CROSSED TIER, AND A SINGLE ANCHOR CANNOT.** The citywide `LOCAL`
+district and Bibb's `COUNTY` district cover the same 254.906 sq mi, so an office on the wrong tier
+resolves at every Macon address and looks right. What distinguishes them is that the **commission
+district must change between two anchors while the citywide and county answers must not** — and the
+probe refuses a second anchor that lands in the same district as the first, because such an anchor
+would be decorative.
+
+🟢 **PROBE 4 MEASURES THE COLLISION RATHER THAN WARNING ABOUT IT**: 30 rows unpaired against 8 paired,
+and it **raises** if the unpaired count ever drops to the paired one — so if Georgia's three-way
+collision genuinely goes away, that is a finding to re-measure, not a silent relaxation.
+
+#### What is in production
+
+1 government keyed on TIGER place `1349008` · 3 chambers (Commission `official_count` **9**, Office of
+the Mayor 1, Bibb County Elected Officials 5) · 10 districts created (9 × `X0045` + citywide
+`1349008`/`G4110`) · Bibb `13021`/`G4020` **asserted, not inserted** · 15 offices · `external_id`
+`-1331036 .. -1331050` · Mayor `non_voting` with a `representation_note` citing charter Sec. 9(c) ·
+**no `term_end` on any of the fifteen** · 9 `day`, 1 `month`, 2 `year`, 3 open-ended `unknown`,
+2 `appointed`.
+
+▶ **Macon-Bibb is now complete across stages 1–4. Stage 5 (headshots + banner) is what remains** — and
+the county's voter-facing GIS layer already carries a `photo` URL for all nine commissioners, which is
+a candidate source to test rather than a solved problem.
