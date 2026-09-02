@@ -253,9 +253,17 @@ router.delete('/topics/delete/:id', async (req, res): Promise<void> => {
   }
 
   try {
-    // Guard: reject deletion if users have already responded to this topic
+    // Guard: reject deletion if users have already responded to this topic.
     const countResult = await pool.query<{ count: string }>(
-      'SELECT COUNT(*)::text AS count FROM inform.compass_responses WHERE topic_id = $1',
+      `-- @season-scope: all-seasons — this is a delete GUARD, so it must see
+       --   every response that has ever existed, in every season and
+       --   soft-deleted included. Narrowing it to the open season (or to
+       --   compass_responses_current) would let a topic be deleted because the
+       --   only people who answered it did so in a closed season, destroying
+       --   exactly the history the season model exists to keep. COUNT(*)
+       --   fanning out across seasons cannot weaken the guard: it only ever
+       --   makes the count larger, and the guard trips on > 0.
+       SELECT COUNT(*)::text AS count FROM inform.compass_responses WHERE topic_id = $1`,
       [id]
     );
     const responseCount = parseInt(countResult.rows[0]?.count ?? '0', 10);

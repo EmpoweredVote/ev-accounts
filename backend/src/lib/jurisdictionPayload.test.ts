@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   GEO_FIELDS,
+  PLACE_FIELDS,
   resolvedDistrictCount,
   droppedDistricts,
 } from './jurisdictionPayload.js';
@@ -91,5 +92,50 @@ describe('droppedDistricts — which stored districts a payload would erase', ()
       'county_geo_id',
       'school_district_geo_id',
     ]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// PLACE_FIELDS
+// ---------------------------------------------------------------------------
+
+describe('PLACE_FIELDS — the place geoids a slice is keyed on', () => {
+  it('carries city, state and nation', () => {
+    const keys = PLACE_FIELDS.map((c) => c.rpcKey);
+    expect(keys).toContain('city');
+    expect(keys).toContain('state');
+    expect(keys).toContain('nation');
+  });
+
+  it('maps each key to its own column', () => {
+    const byKey = Object.fromEntries(PLACE_FIELDS.map((c) => [c.rpcKey, c.column]));
+    expect(byKey['city']).toBe('city_geo_id');
+    expect(byKey['state']).toBe('state_geo_id');
+    expect(byKey['nation']).toBe('nation_geo_id');
+  });
+
+  it('is disjoint from GEO_FIELDS', () => {
+    // 🔴 The whole point of the split. resolvedDistrictCount() counts GEO_FIELDS to
+    // answer "did the RPC resolve anything", and that question is really "is the
+    // essentials.districts join healthy". city/state/nation are read straight off
+    // geofence_boundaries and never touch that join, so they cannot witness its
+    // health: a broken join still resolves a state and a nation, and a count of 2
+    // would read as success and let districtStalenessService write NULLs over
+    // districts that are still correct. That is the defect that already shipped.
+    const geo = new Set<string>(GEO_FIELDS.map((f) => f.rpcKey));
+    for (const f of PLACE_FIELDS) {
+      expect(geo.has(f.rpcKey)).toBe(false);
+    }
+  });
+
+  it('leaves resolvedDistrictCount at zero for a payload that resolved only place', () => {
+    // The exact shape of a broken districts join: every district null, but the
+    // point is still in a state and in the US.
+    expect(resolvedDistrictCount({ city: '3702140', state: '37', nation: 'US' })).toBe(0);
+  });
+
+  it('leaves droppedDistricts blind to place columns', () => {
+    const stored = { congressional_geo_id: 'cd-5' } as Record<string, string | null>;
+    expect(droppedDistricts(stored, { congressional: 'cd-5', city: null })).toEqual([]);
   });
 });

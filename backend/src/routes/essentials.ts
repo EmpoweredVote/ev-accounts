@@ -726,13 +726,17 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
                county_name                 = $9,
                school_district_geo_id      = $10,
                school_district_name        = $11,
+               city_geo_id                 = $12,
+               state_geo_id                = $13,
+               nation_geo_id               = $14,
                updated_at                  = now()
            WHERE user_id = $1`,
           [userId, jd.congressional ?? null, jd.congressional_name ?? null,
            jd.state_senate ?? null, jd.state_senate_name ?? null,
            jd.state_house ?? null, jd.state_house_name ?? null,
            jd.county ?? null, jd.county_name ?? null,
-           jd.school_district ?? null, jd.school_district_name ?? null]
+           jd.school_district ?? null, jd.school_district_name ?? null,
+           jd.city ?? null, jd.state ?? null, jd.nation ?? null]
         ).catch((e: Error) => console.error('[representatives/me] Path 1.5 write-back error:', e.message));
 
         // Only serve if at least one geo_id resolved — otherwise fall through to Path 2
@@ -875,6 +879,9 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
                school_district_geo_id      = $10,
                school_district_name        = $11,
                municipality_geo_id         = $12,
+               city_geo_id                 = $13,
+               state_geo_id                = $14,
+               nation_geo_id               = $15,
                updated_at                  = now()
            WHERE user_id = $1`,
           [userId, jd.congressional ?? null, jd.congressional_name ?? null,
@@ -882,7 +889,8 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
            jd.state_house ?? null, jd.state_house_name ?? null,
            jd.county ?? null, jd.county_name ?? null,
            jd.school_district ?? null, jd.school_district_name ?? null,
-           jd.municipality ?? null]
+           jd.municipality ?? null,
+           jd.city ?? null, jd.state ?? null, jd.nation ?? null]
         ).catch((e: Error) => console.error('[elections/me] Path 1.5 write-back error:', e.message));
 
         if (jd.congressional || jd.state_senate || jd.county) {

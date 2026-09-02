@@ -310,7 +310,7 @@ export async function getCompassLenses() {
   // Raw SQL (pool.query) — compass_lenses/compass_lens_topics are not in the
   // generated PostgREST types, matching how essentials-schema reads work here.
   const { rows } = await pool.query(
-    `SELECT l.key, l.name, l.description, l.color, l.icon,
+    `SELECT l.key, l.name, l.description, l.color, l.icon, l.sort_order,
             COALESCE(l.auto_district_types, ARRAY[]::text[]) AS auto_district_types,
             COALESCE(
               array_agg(lt.topic_id::text ORDER BY lt.sort_order)
@@ -320,8 +320,19 @@ export async function getCompassLenses() {
      FROM inform.compass_lenses l
      LEFT JOIN inform.compass_lens_topics lt ON lt.lens_id = l.id
      WHERE l.is_active = true
-     GROUP BY l.id, l.key, l.name, l.description, l.color, l.icon, l.auto_district_types
-     ORDER BY l.key`
+     GROUP BY l.id, l.key, l.name, l.description, l.color, l.icon, l.sort_order, l.auto_district_types
+     -- ⚠ sort_order, NOT key. This used to be ORDER BY l.key — alphabetical,
+     -- which is not an order anyone chose. It happened to read federal,
+     -- judicial, local, and the moment the Education Lens row was added it led
+     -- the row, ahead of the three chips users already know. CC_0043 added the
+     -- column so the decision lives here, in the one place both Compass and
+     -- Essentials already read, instead of being repeated as a constant in each.
+     --
+     -- 🔴 key IS A TIEBREAKER, NOT DECORATION. sort_order is not unique and
+     -- defaults to 100, so every lens added without an explicit value collides.
+     -- Ordering on it alone would let two lenses swap places between requests.
+     -- Same reasoning as the p.created_at, p.topic_key tiebreak above.
+     ORDER BY l.sort_order, l.key`
   );
 
   return rows.map((r: any) => ({
@@ -330,6 +341,10 @@ export async function getCompassLenses() {
     description: r.description,
     color: r.color,
     icon: r.icon,
+    // Exposed as well as applied. The array already arrives in order, but a
+    // consumer that MERGES this list with another (Compass splices in user
+    // lenses and Best Match) has to re-sort, and re-sorting needs the number.
+    sortOrder: r.sort_order,
     autoDistrictTypes: r.auto_district_types ?? [],
     topicIds: r.topic_ids ?? [],
   }));
@@ -528,7 +543,10 @@ export async function getCandidates() {
         WHEN EXISTS (
           SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
         ) THEN (
-          SELECT COUNT(*)::int FROM inform.compass_responses cr
+          -- compass_responses_current collapses to the newest season the user
+          -- answered each topic in (CC_0046). The base table would count an
+          -- Empowered candidate who re-answered in a new season twice.
+          SELECT COUNT(*)::int FROM inform.compass_responses_current cr
           JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
@@ -548,7 +566,8 @@ export async function getCandidates() {
         WHEN EXISTS (
           SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
         ) THEN (
-          SELECT array_agg(cr.topic_id) FROM inform.compass_responses cr
+          -- Same collapse; otherwise a topic id repeats once per season answered.
+          SELECT array_agg(cr.topic_id) FROM inform.compass_responses_current cr
           JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
@@ -591,6 +610,9 @@ export async function getCandidates() {
       AND rc.politician_id IS NOT NULL
       AND rc.is_incumbent = false
       AND (
+        -- ⚠ The base table is fine here and the collapse is not needed: EXISTS
+        -- asks only whether any row qualifies, and duplicates across seasons
+        -- cannot change a boolean. Left as-is so the planner can short-circuit.
         EXISTS (
           SELECT 1 FROM empower.empowered_profiles ep
           JOIN inform.compass_responses cr ON cr.user_id = ep.user_id
@@ -650,8 +672,11 @@ export async function getCandidateAnswers(
   if (profileRes.rows.length > 0) {
     const userId = profileRes.rows[0].user_id;
     const answersRes = await pool.query<{ topic_id: string; value: number }>(
+      // Newest season per topic (CC_0046). deleted_at is filtered by the view's
+      // consumer rather than inside the collapse, so a tombstone in a newer
+      // season correctly hides the older answer instead of being skipped over.
       `SELECT topic_id, value
-       FROM inform.compass_responses
+       FROM inform.compass_responses_current
        WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
        ORDER BY topic_id ASC`,
       [userId]
@@ -874,8 +899,12 @@ export async function compareWithPoliticians(
 ): Promise<CompareResult[]> {
   // Fetch user's non-deleted answers once; reuse across all politicians
   const { rows: userAnswerRows } = await pool.query<{ topic_id: string; value: string }>(
+    // 🔴 THE COLLAPSE MATTERS MOST HERE. These rows go straight into a Map keyed
+    // on topic_id, so two season rows for one topic would silently let whichever
+    // the planner returned last decide the user's position in every alignment
+    // score. Not a double-count — a wrong answer, non-deterministically.
     `SELECT topic_id, value::text
-     FROM inform.compass_responses
+     FROM inform.compass_responses_current
      WHERE user_id = $1 AND deleted_at IS NULL`,
     [userId]
   );

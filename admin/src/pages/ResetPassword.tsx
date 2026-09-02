@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router';
+import AuthShell from '../components/AuthShell';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -20,30 +21,20 @@ export default function ResetPassword() {
 
   if (!tokenHash) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">empowered.vote</h1>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm text-center space-y-4">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            This reset link is invalid or has expired.
-          </p>
+      <AuthShell heading="Reset link expired" subheading="This reset link is invalid or has expired.">
+        <div className="text-center">
           <Link to="/login" className="text-ev-teal dark:text-ev-teal-light hover:underline text-sm font-medium">
             Back to login
           </Link>
         </div>
-      </div>
+      </AuthShell>
     );
   }
 
   if (done) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">empowered.vote</h1>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm text-center space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Password updated</h2>
+      <AuthShell heading="Password updated">
+        <div className="text-center space-y-4">
           <p className="text-sm text-gray-600 dark:text-gray-400">You can now sign in with your new password.</p>
           <button
             onClick={() => navigate('/login')}
@@ -52,7 +43,7 @@ export default function ResetPassword() {
             Sign in
           </button>
         </div>
-      </div>
+      </AuthShell>
     );
   }
 
@@ -83,12 +74,8 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">empowered.vote</h1>
-      </div>
-      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Set a new password</h2>
+    <AuthShell heading="Set a new password">
+      <div className="space-y-5">
 
         {error && (
           <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm">
@@ -150,10 +137,10 @@ export default function ResetPassword() {
           </button>
         </form>
 
-        <p className="text-center text-xs text-gray-400 dark:text-gray-600">
+        <p className="text-center text-xs text-gray-500 dark:text-gray-400">
           <Link to="/login" className="hover:underline">Back to login</Link>
         </p>
       </div>
-    </div>
+    </AuthShell>
   );
 }

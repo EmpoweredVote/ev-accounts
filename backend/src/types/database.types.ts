@@ -814,6 +814,7 @@ export type Database = {
           created_at: string
           deleted_at: string | null
           inverted: boolean
+          season_id: string
           topic_id: string
           updated_at: string
           user_id: string
@@ -825,6 +826,7 @@ export type Database = {
           created_at?: string
           deleted_at?: string | null
           inverted?: boolean
+          season_id?: string
           topic_id: string
           updated_at?: string
           user_id: string
@@ -1126,7 +1128,22 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      compass_responses_current: {
+        Row: {
+          answered_revision_id: string | null
+          created_at: string
+          deleted_at: string | null
+          inverted: boolean
+          season_id: string
+          topic_id: string
+          updated_at: string
+          user_id: string
+          value: number
+          visibility: string
+          write_in_text: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never

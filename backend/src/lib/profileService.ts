@@ -236,7 +236,7 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     // Fetch compass answers
     const { data: answers, error: answersError } = await supabaseAdmin
       .schema('inform')
-      .from('compass_responses')
+      .from('compass_responses_current')
       .select('topic_id, value, write_in_text, inverted, updated_at')
       .eq('user_id', userId)
       .is('deleted_at', null);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../store/authStore';
+import AuthShell from '../components/AuthShell';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -56,12 +57,8 @@ export default function EmailConfirmed() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">empowered.vote</h1>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-4 text-center">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Email confirmed!</h2>
+      <AuthShell heading="Email confirmed!">
+        <div className="space-y-4 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Your email is verified. Please log in to continue.
           </p>
@@ -72,13 +69,13 @@ export default function EmailConfirmed() {
             Log in
           </a>
         </div>
-      </div>
+      </AuthShell>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black">
-      <p className="text-sm text-gray-500 dark:text-gray-400">Confirming your email…</p>
-    </div>
+    <AuthShell>
+      <p className="text-sm text-center text-gray-500 dark:text-gray-400">Confirming your email…</p>
+    </AuthShell>
   );
 }
