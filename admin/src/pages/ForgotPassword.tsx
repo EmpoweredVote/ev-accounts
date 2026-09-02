@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import AuthShell from '../components/AuthShell';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -24,19 +25,11 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
-
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
-          empowered.vote
-        </h1>
-      </div>
-
-      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
+    <AuthShell heading={sent ? 'Check your email' : 'Reset your password'}>
+      <div className="space-y-5">
 
         {sent ? (
           <>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Check your email</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               If <strong className="text-gray-900 dark:text-white">{email}</strong> is registered,
               a password reset link is on its way. Check your spam folder if it doesn't arrive
@@ -51,12 +44,9 @@ export default function ForgotPassword() {
           </>
         ) : (
           <>
-            <div>
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Reset your password</h2>
-              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                Enter your email and we'll send you a reset link.
-              </p>
-            </div>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Enter your email and we'll send you a reset link.
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -84,7 +74,7 @@ export default function ForgotPassword() {
               </button>
             </form>
 
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-center text-sm text-gray-600 dark:text-gray-400">
               Remember it?{' '}
               <Link to="/login" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
                 Back to login
@@ -93,6 +83,6 @@ export default function ForgotPassword() {
           </>
         )}
       </div>
-    </div>
+    </AuthShell>
   );
 }
