@@ -1,0 +1,2913 @@
+{
+  "generated_at": "2026-09-02T00:13:15.276Z",
+  "note": "Frozen sample for extraction-quality measurement (decision 0003 rung 1). Read-only; snippets are public citation data.",
+  "slices": {
+    "stance": {
+      "source": "inform.politician_context_evidence",
+      "minWords": 25,
+      "minCoverage": 0.6,
+      "items": [
+        {
+          "url": "https://calmatters.org/housing/homelessness/2023/07/los-angeles-homeless-encampments/",
+          "snippets": [
+            {
+              "snippet": "L.A.'s new homeless solution clears camps but struggles to house people",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://campaignlegal.org/update/campaign-legal-center-continues-fight-fair-maps-utah",
+          "snippets": [
+            {
+              "snippet": "A group of plaintiffs including U.S. Representatives Celeste Maloy and Burgess Owens and several local elected officials filed a new lawsuit on February 2, 2026, in federal district court. They claimed that the new, fair map was enacted in violation of the federal elections clause. Their arguments that a redistricting plan is not subject to normal review by state courts relied on a dangerous concept called the independent state legislature theory, which was resoundingly rejected by the U.S. Supreme Court in 2023.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://cowboystatedaily.com/2024/11/18/wyoming-delegation-urges-mountain-west-conf-to-ban-males-from-womens-sports/",
+          "snippets": [
+            {
+              "snippet": "The other signatures belong to Republican Reps. Burgess Owens (Utah), Russ Fulcher (Idaho), Mike Simpson (Idaho), John Curtis (Utah), Celeste Maloy (Utah) and Blake Moore (Utah); and Republican Sens. Mike Crapo (Idaho), Mitt Romney (Utah) and Mike Lee (Utah).",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://dailybruin.com/2023/05/27/proposed-la-city-budget-aims-to-address-homelessness-fund-police-expansion",
+          "snippets": [
+            {
+              "snippet": "Nearly a quarter of the budget – $3.2 billion – was approved for policing",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Blake_Moore",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/League_of_Women_Voters_v._Utah_State_Legislature",
+          "snippets": [
+            {
+              "snippet": "On February 20, 2026, the Utah Supreme Court declined to take up the appeal. Three days later, a three-judge panel in federal court rejected sitting Representatives Celeste Maloy and Burgess Owens's request to block the new map.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://ironcountytoday.com/2025/02/11/rep-maloy-introduces-west-act-to-overturn-illegal-conservation-and-landscape-health-rule/",
+          "snippets": [
+            {
+              "snippet": "Congresswoman Celeste Maloy (UT-02) and Congressman Russ Fulcher (ID-01) introduced the Western Economic Security Today (WEST) Act, legislation designed to repeal the Bureau of Land Management's Conservation and Landscape Health final rule. \"BLM's rule shows just how broken our bureaucracy really is. Congress directed BLM to manage public lands for multiple uses and sustained yield. This rule eliminates multiple use, locking out Utahns who have relied on these lands for ranching, grazing, recreation, and more for generations. My bill ensures that these lands remain in the stewardship of local communities and are managed in compliance with federal law.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://ksltv.com/local-news/signatures-gathered-to-put-prop-4/878409/",
+          "snippets": [
+            {
+              "snippet": "The constitution requires that the legislature draw the maps, but under the current Proposition 4, the legislature is not able to do that, and that the judge has imposed a map that is highly democratic leaning, and it's not representative of Utah. Chris Null, a volunteer signature gatherer and Republican candidate for Salt Lake County Council District Five, provided this statement about the petition.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            }
+          ]
+        },
+        {
+          "url": "https://kutv.com/news/local/salt-lake-county-da-among-39-us-prosecutors-demanding-police-reform",
+          "snippets": [
+            {
+              "snippet": "Salt Lake County District Attorney Sim Gill joined 39 other prosecutors to condemn the death of George Floyd and demand police reforms. He stated: \"Justice, fairness, equality, and truth are not mere words but are instead the ideals and promises of a free American society.\" He emphasized: \"Only by working actively to rid our society and systems of structural racism will we be able to meaningfully start down the path of justice for our most alienated brothers and sisters.\" He further said: \"Whether we are talking about the use of force, whether we are talking about the way that we charge individuals, the way that the criminal justice system is applied, needs to be looked at in a reform.\"",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://kutv.com/news/local/salt-lake-county-da-joins-79-prosecutors-leaders-to-defend-daca-program",
+          "snippets": [
+            {
+              "snippet": "Gill joined 79 prosecutors defending DACA, arguing against deportation of law-abiding recipients: \"When the law pushes individuals into the shadows, it creates opportunities for abuse, fear, and exploitation. The humane thing for the hundreds of thousands of DACA-eligible individuals who have committed no crimes and are otherwise law-abiding members of our communities is to give them the certainty of status so they can live without fear.\" The brief argued that removing DACA and deporting recipients would jeopardize public safety and eliminate public trust in law enforcement.",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            },
+            {
+              "snippet": "Salt Lake County District Attorney Sim Gill joined 79 sitting prosecutors and law enforcement leaders to defend the Deferred Action for Childhood Arrivals (DACA) program, filing a friend-of-the-court brief at the U.S. Supreme Court. Gill stated: \"When the law pushes individuals into the shadows, it creates opportunities for abuse, fear, and exploitation. The humane thing for the hundreds of thousands of DACA-eligible individuals who have committed no crimes and are otherwise law-abiding members of our communities is to give them the certainty of status so they can live without fear.\" The brief argued DACA promotes public safety by encouraging cooperation between immigrants and law enforcement.",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://laist.com/news/housing-homelessness/los-angeles-ed1-mayor-karen-bass-executive-directive-affordable-housing-city-ceqa-appeals-environmental-review-sawtelle",
+          "snippets": [
+            {
+              "snippet": "\"CEQA should not be used as a strategy to block affordable housing\" — Bass office; ED1 exempts 100% affordable projects from CEQA environmental impact review",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://larchmontbuzz.com/larchmont-village-news/mayor-karen-bass-requests-veto-on-sb-79/",
+          "snippets": [
+            {
+              "snippet": "SB 79 would \"erode local control, diminish community input on planning and zoning, and disproportionately impact low-resource neighborhoods\" — Mayor Karen Bass letter to Governor Newsom",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/InsideSafe",
+          "snippets": [
+            {
+              "snippet": "A bold city-wide, voluntary, proactive housing-led strategy to bring people inside from tents and encampments",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/news/making-la-more-affordable-mayor-bass-enacts-new-tenant-protections-caps-rent-apartment-units",
+          "snippets": [
+            {
+              "snippet": "\"No parent should have to choose between buying groceries or paying the rent, or live in fear of eviction because they have welcomed a child into their family\" — Mayor Karen Bass",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/news/mayor-bass-directs-permitting-reforms-streamline-housing-and-business-development-across-los",
+          "snippets": [
+            {
+              "snippet": "ED7 targets 25-30% reduction in permitting timelines across all housing and business development",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/news/mayor-bass-introduces-metro-motion-promote-ridership-expand-service-and-improve-regional",
+          "snippets": [
+            {
+              "snippet": "Bass as Metro Board Chair introduced motion to promote ridership and expand service ahead of Olympics 2028 and World Cup 2026",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/news/mayor-bass-issues-executive-directive-4-support-small-business-creation-development-and-growth",
+          "snippets": [
+            {
+              "snippet": "ED4 targets small business development with emphasis on minority-owned businesses, reducing barriers, paired with living-wage job creation requirements (Olympic Wage: $30/hr)",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/news/mayor-bass-signs-executive-directive-17-bolstering-las-defense-against-escalating-ice-raids",
+          "snippets": [
+            {
+              "snippet": "Executive Directive 17 bans use of city property as ICE staging areas and directs LAPD to preserve evidence of federal enforcement activities",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://mayor.lacity.gov/ShineLA",
+          "snippets": [
+            {
+              "snippet": "Shine LA: monthly community beautification initiative focused on streets and neighborhoods that have been underserved, expanding sanitation staffing and service frequency",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://ontheissues.org/House/Blake_Moore_Abortion.htm",
+          "snippets": [
+            {
+              "snippet": "We need to build national policies that reflect the Utah way of life. Supporting families isn't just about being pro-life, it's about being pro-adoption. We need to continue to promote abstinence, provide education to help people avoid unplanned pregnancies, and identify sensible options.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://owens.house.gov/posts/owens-fights-for-election-integrity",
+          "snippets": [
+            {
+              "snippet": "Burgess Owens backed legislation to uphold and strengthen existing law, ensuring that only American citizens can vote in U.S. elections. The SAVE Act requires states to obtain proof of citizenship in person before registering an individual to vote in an election. Owens stated: 'The right to vote is sacred—it belongs to American citizens. Under the Biden administration, millions of illegal immigrants were allowed into our country, while far-left states like California made it illegal to verify citizenship before handing out ballots—creating a perfect storm for rampant voter fraud.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://owens.house.gov/posts/owens-supports-legislation-to-boost-domestic-energy-production",
+          "snippets": [
+            {
+              "snippet": "Congressman Burgess Owens (UT-04) co-sponsored The Lower Energy Costs Act, legislation to boost domestic energy production by cutting red-tape regulations and investing in American energy infrastructure. Owens stated: 'America is stronger when we are energy independent, yet the Biden Administration has waged war on domestic production, raising costs for hardworking families and increasing our dependence on hostile adversaries.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://owens.house.gov/resources/immigration-and-border-security",
+          "snippets": [
+            {
+              "snippet": "Congressman Burgess Owens has stated he will continue working to restore security at the southern border, end illegal immigration, stop the deadly flow of fentanyl, and prioritize the safety of all Americans. He co-sponsored and voted for H.R. 2, the Secure the Border Act of 2023, describing it as legislation that would 'finish the wall, end catch and release, increase the number of Border Patrol agents, halt the flow of deadly fentanyl, protect innocent children from human traffickers, and put the safety of the American people first.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://politicit.com/the-politics-behind-the-save-act/",
+          "snippets": [
+            {
+              "snippet": "Utah Congressman Mike Kennedy recently argued that Americans must show ID to do things like drive a car, board an airplane, or cash a paycheck. Those activities involve proving identity in a single transaction. Voting, however, works differently. Elections operate through a registration system where voter qualifications are already established.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://reproductivefreedomforall.org/lawmaker/blake-moore/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://rollcall.com/2021/06/28/utah-rep-burgess-owens-fined-by-fec-for-undisclosed-contributions/",
+          "snippets": [
+            {
+              "snippet": "Utah Rep. Burgess Owens has been ordered to pay a nearly $4,000 fine to the Federal Election Commission for failing to report $34,000 in last-minute contributions to his 2020 campaign. The campaign failed to file three separate reports required under federal law in the final 20 days before an election, according to FEC documents released last week. Owens, a former Fox News commentator, had already attracted FEC scrutiny in August 2020 for accepting two campaign contributions that totaled $8,400 and exceeded legal limits during his 2020 campaign.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://rollcall.com/2025/04/09/as-republicans-defend-trade-agenda-trump-changes-course/",
+          "snippets": [
+            {
+              "snippet": "My question here is, what are the consequences for American power and national security if they were able to retaliate and restrict access to American services in their market? Because we've chosen to restrict goods in their market. Moore (R-Utah) expressed worry about whether other countries might withdraw their non-retaliation commitments if tariffs persist over time.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://senate.utah.gov/president-adams-and-speaker-schultz-respond-to-utah-supreme-court-decision-2/",
+          "snippets": [
+            {
+              "snippet": "President Adams and Speaker Schultz Respond to Utah Supreme Court Decision. August 1, 2024. President J. Stuart Adams and Speaker Mike Schultz issue the following statement regarding the Utah Supreme Court's decision: \"The U.S. Supreme Court's landmark Dobbs decision reinstated the authority of our state to regulate abortion policy. The Utah Legislature thoughtfully acted to ensure the state had a strong policy in place to protect both the unborn and the life of the mother. We are deeply disappointed by the Utah Supreme Court's ruling today preventing our state's abortion law from taking effect more than two years after the Dobbs decision. Through this ruling, the Utah Supreme Court is undermining the constitutional authority of the Legislature to enact laws as elected representatives of the people of Utah.\"",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://senate.utah.gov/tax-cuts-for-all-utahns-at-every-stage-of-life/",
+          "snippets": [
+            {
+              "snippet": "\"Once again, we are prioritizing caring for seniors on fixed incomes, supporting young families and championing upward mobility for all Utahns,\" said Senate President J. Stuart Adams. \"Thanks to Utah's robust economy and our steadfast conservative policies, we're putting money back where it belongs—with the people who earned it. By cutting taxes for the fifth year in a row, we're ensuring more of Utahns' hard-earned dollars stay in their pockets, all while maintaining our commitment to essential services and fostering long-term economic growth for future generations.\"",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://senate.utah.gov/utah-leaders-celebrate-landmark-energy-legislation-to-power-utahs-future/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://sheriffnickroberts.com/vision",
+          "snippets": [
+            {
+              "snippet": "I have been and always will be a conservative republican who believes in the constitution of the United States and the rights and protections of our citizens. I will unite city, state, and federal agencies to strengthen law enforcement across Salt Lake Valley. My priority is simple: dangerous offenders stay in custody, and every resident stays safe.",
+              "snippet_index": 0,
+              "full_name": "Nicholas Roberts",
+              "last_name": "Roberts"
+            }
+          ]
+        },
+        {
+          "url": "https://smdp.com/government-politics-2/copy-of-a-multi-million-dollar-cleanup-budget-and-la-still-looks-like-a-dump/",
+          "snippets": [
+            {
+              "snippet": "\"I'm not sure if you guys noticed this, but we don't really have street cleaning anymore\" — Mayor Bass acknowledging the service gap she is reversing through staffing expansion",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://texasinsider.org/articles/sen-cruz-introduces-universal-school-choice-act",
+          "snippets": [
+            {
+              "snippet": "Companion legislation was introduced by U.S. House Republican Rep. Burgess Owens (R-Utah-4) and Rep. Byron Donalds. Owens, a former NFL player and Super Bowl Champion, stated: 'Every child, not just the lucky few in the right zip code, deserves access to a world-class education that meets their unique needs.' He further commented that the bill 'empowers parents to choose the educational environment that best suits their child's needs and abilities – it's an expanded opportunity for all Americans to invest directly in the future of our children. It delivers a robust wish list to those who believe in parental choice, and I'm grateful to Senator Cruz for his partnership.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://therealdeal.com/la/2023/11/08/las-karen-bass-directs-city-to-streamline-housing-projects/",
+          "snippets": [
+            {
+              "snippet": "Bass directs city to \"slash city hall red tape in developing housing for all income levels\"; ED1 requires 60-day approvals; 14,000+ affordable units accelerated",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://traci4countycouncil.com/",
+          "snippets": [
+            {
+              "snippet": "Salt Lake County should remain a safe, affordable place where families can thrive, seniors can age with dignity, and working residents can build their lives free of government bureaucracy and unfair taxes. I'm the only candidate with a proven record of advancing local conservative solutions–keeping taxes low, fighting for funding for the south end of the valley, and preserving neighborhood connections.",
+              "snippet_index": 0,
+              "full_name": "Traci Crockett",
+              "last_name": "Crockett"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/65290-owens-backs-legislation-to-make-republican-tax-cuts-permanent",
+          "snippets": [
+            {
+              "snippet": "'The Tax Cuts and Jobs Act provided sweeping tax cuts for low and middle-income Americans and helped our nation achieve historic economic growth. Thanks to President Biden's out-of-touch economic policies and Washington's over-spending, families and small businesses are struggling with four-decade high inflation, shrinking paychecks, and soaring costs. The TCJA Permanency Act will deliver much-needed relief by permanently lowering tax rates for individuals and families and allowing Americans to keep more of their hard-earned money.' — Rep. Burgess Owens, co-sponsoring the TCJA Permanency Act.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/68596-owens-co-sponsors-bill-to-support-retired-public-servants",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens (UT-04) co-sponsored the Social Security Fairness Act, legislation to eliminate the Windfall Elimination Provision (WEP) and the Government Pension Offset (GPO), two provisions of the Social Security Act that unfairly reduce or eliminate Social Security benefits for millions of Americans who have devoted much of their careers to public service, including federal employees, police officers, firefighters, and educators. The WEP impacts approximately 2 million Social Security beneficiaries, and the GPO impacts nearly 800,000 retirees.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "From teachers and librarians to police officers and firefighters, public servants in Utah and across the nation have devoted their careers to helping others,\" said Rep. Owens. \"I've heard from constituent after constituent that unfair, bureaucratic WEP and GPO provisions have slashed their hard-earned retirement benefits. I'm proud to support the bipartisan Social Security Fairness Act to eliminate these senseless penalties and help our public employees receive the full benefits they've earned.\"",
+              "snippet_index": 1,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/73074-moore-introduces-legislation-to-enhance-the-child-tax-credit-and-provide-tax-relief-for-parents",
+          "snippets": [
+            {
+              "snippet": "Today, Congressman Blake Moore introduced the Family First Act to support working American families with an updated and enhanced Child Tax Credit (CTC), tax relief for parents with young children, and a new tax credit for pregnant mothers.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/75994-maloy-and-auchincloss-introduce-deepfake-liability-act",
+          "snippets": [
+            {
+              "snippet": "\"Abusive deepfakes and cyberstalking are harming people across the country, and victims deserve real help. Our bill creates a straightforward duty of care and a reliable process to remove harmful content when victims ask for help. Companies that take this seriously will keep their protections under the law. Those that do nothing will be held accountable.\" Representatives Celeste Maloy (R-UT) and Jake Auchincloss (D-MA) introduced legislation addressing nonconsensual deepfake pornography. The bill conditions platform liability protections on meeting duty-of-care standards.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/76329-kent-davis-announces-run-for-salt-lake-county-district-attorney",
+          "snippets": [
+            {
+              "snippet": "Announcing his run, Kent highlighted the urgent need for a new leader for the chief law enforcement entity in Utah's most populous county, one who will focus on building back trust, transparency, and accountability for the people of Salt Lake County. He witnessed firsthand the importance of transparent and principled decision-making that prioritizes both responsiveness to victims and respect for the rights of the accused.",
+              "snippet_index": 0,
+              "full_name": "Kent Davis",
+              "last_name": "Davis"
+            },
+            {
+              "snippet": "Davis emphasizes the need for a new leader for the chief law enforcement entity in Utah's most populous county, one who will focus on building back trust, transparency, and accountability. His stated priorities include: ensuring trust and fairness in the criminal justice system; modernizing the county's legal enforcement approach to address evolving technology; efficient use of public resources; applying justice consistently and transparently. Davis contends that Public trust in our legal processes and law enforcement is a cornerstone of a healthy democracy.",
+              "snippet_index": 1,
+              "full_name": "Kent Davis",
+              "last_name": "Davis"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/76604-moore-introduces-legislation-to-reform-budget-process",
+          "snippets": [
+            {
+              "snippet": "The Constitution grants Congress the power of the purse to allocate taxpayer dollars in the interests of the American people. Yet Congress has slowly surrendered this role to mandatory or 'autopilot' spending programs that account for almost 75% of the budget and are renewed without any Congressional oversight.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/76848-salt-lake-county-council-votes-to-explore-child-care-options",
+          "snippets": [
+            {
+              "snippet": "Many Salt Lake County families, including those affected by the recent decision to close county-operated childcare centers, struggle to find affordable childcare solutions during summer months when school is not in session. We care about all families in the county and want to ensure parents have high quality options and programming for their kids. Councilmember Johnson sponsored the summertime programming legislative intent alongside Suzanne Harrison.",
+              "snippet_index": 0,
+              "full_name": "Jiro Johnson",
+              "last_name": "Johnson"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolicy.com/news-release/77132-moore-introduces-bill-to-protect-the-tax-exempt-status-of-religious-organizations",
+          "snippets": [
+            {
+              "snippet": "Congressman Blake Moore introduced legislation designed to protect religious beliefs and practices and preserve the tax-exempt status of faith-based organizations. The Fair Treatment of Religious Organizations Act ensures faith-based organizations can continue applying religious standards to employees without jeopardizing their eligibility for federal funding and contracts. The legislation prevents federal agencies from conditioning tax benefits or funding eligibility on a religious organization's willingness to modify its positions on marriage, sexual conduct standards, or gender identity policies.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://utahpolitics.news/putin-started-the-war-utah-republican-defies-trump-on-ukraine/",
+          "snippets": [
+            {
+              "snippet": "Utah Republican Congressman Mike Kennedy broke with President Donald Trump on Wednesday night, rejecting Trump's assertion that Ukraine was responsible for starting its war with Russia. Earlier that day, Trump had claimed Ukraine \"should have never allowed\" the conflict to begin, telling reporters, \"You should have never started it. You could have made a deal.\" At a town hall meeting attended by about 150 people, Kennedy addressed Trump's comments when asked about them, according to video footage provided to Utah Political Watch. \"I don't know if the president said that,\" Kennedy said to derisive laughter from the crowd.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            },
+            {
+              "snippet": "Kennedy was also asked about continued American funding for Ukraine's defense. Kennedy acknowledged he's been supportive in the past, but expressed growing reservations. \"I'm tired of sending money over there with no consequence and no result. This is Europe's backyard and Europe should take account for this. I'm tired of our dollars and our people being sent all over the world,\" Kennedy said. \"I think this war needs to come to an end. I think it's an unwinnable war for Zelensky. But as far as I can tell, Vladimir Putin started the war.\"",
+              "snippet_index": 1,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://votechrisnull.com/",
+          "snippets": [
+            {
+              "snippet": "Chris Null is a dedicated conservative who believes that government works best when it's closest to the people. As a longtime advocate for local control and responsible governance, Chris has been on the front lines fighting against top-down mandates that threaten our Utah way of life. Chris' core beliefs begin with keeping housing affordable, protecting taxpayers through lower taxes and responsible county spending, and limiting the size and reach of government. He supports parental rights in education, public safety and the rule of law, free enterprise and small businesses, and the protection of individual liberties—including the sanctity of life and Second Amendment rights—while advocating for personal responsibility, economic opportunity, secure borders, and a strong national defense.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "Public Safety: I will strengthen cooperation among all levels of law enforcement to keep our county safe. Including support for cooperating with U.S. Immigration and Customs Enforcement to ensure safe operations.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "What I Want to Accomplish: My priorities if elected to County Council. Reduce Taxes: I will lower taxes through responsible spending and by consolidating duplicate services under city control to eliminate double taxation. Public Safety: I will strengthen cooperation among all levels of law enforcement to keep our county safe. Including support for cooperating with U.S. Immigration and Customs Enforcement to ensure safe operations. Shrink Government: As cities grow, the county should shrink. SLCo is the county's fourth-largest employer; we must reduce bureaucracy and empower cities to lead, bringing government closer to the people.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "Chris Null will fully support our law enforcement officers and cooperate with federal agencies like ICE to keep our communities safe. He will strengthen cooperation among all levels of law enforcement to keep the county safe, including support for cooperating with U.S. Immigration and Customs Enforcement to ensure safe operations. While county leadership has resisted working with the federal government, Chris understands that public safety is not a political game. When we refuse to partner with ICE, we are choosing ideology over the safety of Salt Lake County families — and taxpayers foot the bill for that decision.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "Chris will fully support our law enforcement officers and cooperate with federal agencies like ICE to keep our communities safe. While county leadership has resisted working with the federal government, Chris understands that public safety is not a political game. When we refuse to partner with ICE, we are choosing ideology over the safety of Salt Lake County families — and taxpayers foot the bill for that decision.",
+              "snippet_index": 1,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "Chris Null shares this commitment to fiscal responsibility and taxpayer protection. At a time when the Salt Lake County Mayor proposed a nearly 20% property tax increase—the largest in decades—we need leaders who will push back on government expansion and fight for working families, seniors on fixed incomes, and small business owners who are already stretched thin. Chris has the background to deliver. As former Chair of the Salt Lake County Republican Party and current Treasurer of the Utah Republican Party, he understands conservative governance and party platform principles.",
+              "snippet_index": 1,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            },
+            {
+              "snippet": "Chris will fully support our law enforcement officers and cooperate with federal agencies like ICE to keep our communities safe. While county leadership has resisted working with the federal government, Chris understands that public safety is not a political game. When we refuse to partner with ICE, we are choosing ideology over the safety of Salt Lake County families — and taxpayers foot the bill for that decision. Chris also brings the fiscal discipline our county desperately needs. His \"Stop Paying Twice\" plan will eliminate duplicate services and return hard-earned tax dollars to the people of District 5.",
+              "snippet_index": 1,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            }
+          ]
+        },
+        {
+          "url": "https://www.advocates4cre.org/blog/congressman-begich-leads-legislation-to-lower-energy-costs-introduces-house-version-of-the-data-act",
+          "snippets": [
+            {
+              "snippet": "Congressman Burgess Owens (R-UT) is one of the co-introducers of the DATA Act of 2026 alongside Congressmen Begich and Crenshaw. His verbatim quote regarding the legislation is: 'America is the land of innovation and technological progress. The DATA Act is a commonsense bill that will ensure America stays the leader in the AI race and modernizes our regulatory structure to let businesses that require a lot of power create their own supply. This is a win-win scenario where industry has a reliable flow of power, and residents and communities won't see an increase in their rates.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Congressman Burgess Owens (R-UT) co-introduced the DATA Act of 2026 to modernize regulatory structure and allow businesses to develop their own power supply. His statement emphasizes removing regulatory barriers: 'The DATA Act is a commonsense bill that will ensure America stays the leader in the AI race and modernizes our regulatory structure to let businesses that require a lot of power create their own supply.' The bill deregulates the power sector for technology companies rather than imposing new safety requirements.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.aha.org/news/headline/2026-04-21-rep-blake-moore-discusses-health-care-affordability",
+          "snippets": [
+            {
+              "snippet": "Rep. Blake Moore, R-Utah, vice chair, House Republican Conference and member of the House Ways and Means Committee and its Subcommittee on Health, joined Bill Gassen, president and CEO of Sanford Health and AHA chair-elect, for a fireside chat. While the conversation covered topics including health care access and regulation, the overarching theme was making health care more affordable for both patients and hospitals and health systems.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.cachevalleydaily.com/news/local/u-s-rep-blake-moore-defends-his-support-for-95-3-billion-foreign-aid-package/article_f534e246-073c-11ef-a0e7-73ee34cde3b6.html",
+          "snippets": [
+            {
+              "snippet": "WASHINGTON, D.C. – U.S. Rep. Blake Moore (R-UT) is pulling out all the stops to clear-up any misconceptions that his constituents in the 1st Congressional District might have about his support of a controversial $95.3 billion foreign aid package signed by President Joe Biden last week.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            },
+            {
+              "snippet": "As China and Russia seek to undermine our economic prosperity and security,\" Moore explained on April 26, \"(this package) is squarely in our national interest because it allows us to improve our supply chains and industrial base; modernize our weapons; and encourages our European partners to increase their own defense budgets as well as overall burden sharing.\"",
+              "snippet_index": 1,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.cachevalleydaily.com/news/u-s-rep-blake-moore-proposes-legislation-to-ban-toys-with-artificial-intelligence-in-u/article_43800807-313d-466b-a97a-8312487c02af.html",
+          "snippets": [
+            {
+              "snippet": "U.S. Rep. Blake Moore introduced the \"AI Children's Toy Safety Act\" to Congress on April 20, 2026. Moore stated: \"The AI Children's Toy Safety Act draws a line in the sand. AI companies shouldn't be using children's toys as a vessel for data collection or influence on minors.\" On balancing innovation with ethics, Moore added: \"America will continue to compete, innovate and strive to break barriers in AI development. But we must prioritize basic ethics and restrain these tools where they will negatively impact human activity when it comes to privacy, safety, human development and addiction.\"",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.cbsnews.com/losangeles/news/mayor-karen-bass-signs-executive-directive-prohibiting-ice-immigrations-agents-city-property/",
+          "snippets": [
+            {
+              "snippet": "\"Let me be clear, we will never allow our city to be divided. We will never allow ICE to continue doing what it's doing.\" — Mayor Karen Bass",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://www.davis4da.com/policies",
+          "snippets": [
+            {
+              "snippet": "Restore Public Safety & Accountability: Prioritize prosecuting violent crime, supporting law enforcement, and ensuring our neighborhoods are safe for families and businesses. Fair & Consistent Justice for Everyone: Apply the law equally, focus resources on serious offenders, and prioritize solutions that reduce repeat crime and strengthen outcomes.",
+              "snippet_index": 0,
+              "full_name": "Kent Davis",
+              "last_name": "Davis"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/2018/7/21/20649537/utah-state-courts-lack-diversity-among-judges/",
+          "snippets": [
+            {
+              "snippet": "Race needs to be looked at. Gender needs to be looked at. Sexual orientation needs to be looked at. Background needs to be looked at because that's part of who you are. When they see the other side of the bar — the attorneys, the judges, the staff — they don't see themselves represented. They do not trust that system, and that's problematic.",
+              "snippet_index": 0,
+              "full_name": "Jiro Johnson",
+              "last_name": "Johnson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/2019/1/28/20664583/utah-lawmakers-intend-to-fight-voter-approved-medicaid-expansion",
+          "snippets": [
+            {
+              "snippet": "Senate President Stuart Adams, R-Layton, said Monday that none of the bills that have surfaced so far have the backing of Republican legislative leadership. Instead, he said, they're working on an alternative with Gov. Gary Herbert's office. Their goal, the newly installed Senate leader told reporters, is to provide coverage to the same population as called for by the ballot initiative also beginning April 1, but \"in a fiscally prudent way.\"",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/2022/3/4/22962671/transgender-athlete-ban-utah-legislature-substitute-bill-final-hours-sports/",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Whip Luz Escamilla, D-Salt Lake City, questioned what will happen to girls who aren't transgender but who are \"outliers\" in size and strength for their age if they get challenged about their gender, asking \"What protection are we giving to those children and their families?\" She also stated, \"You're opening the door for children to be questioned based on their look, based on their size and strength.\" Escamilla called the bill an \"attack on children.\" The substituted bill passed 16-13, with Escamilla and other Democratic senators opposed during the final hours of the 2022 legislative session on March 4, 2022.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            },
+            {
+              "snippet": "Senate Minority Whip Luz Escamilla, D-Salt Lake City, questioned what will happen to girls who aren't transgender but who are \"outliers\" in size and strength for their age if they get challenged about their gender. \"What protection are we giving to those children and their families?\" she asked.",
+              "snippet_index": 1,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/2023/7/24/23791698/celeste-maloy-the-country-girl-running-for-congress/",
+          "snippets": [
+            {
+              "snippet": "Her website indicates she will \"fight to secure our border, protect our religious freedoms, defend the 2nd amendment, stop out of control spending, rein in inflation, and fight the abortion agenda.\" Maloy worked as Stewart's chief legal counsel from 2019 to June 2023, assisting him on legislation like the Fairness for All Act, a bill attempting to balance LGBTQ rights and religious freedom.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/2024/2/6/24062645/rep-burgess-owens-rep-celeste-maloy-118-billion-border-bill/",
+          "snippets": [
+            {
+              "snippet": "Maloy said Congress needs \"to focus on solutions,\" with the bill \"appears to be going nowhere.\" She emphasized: \"Securing the border should be a top priority, not an afterthought. It is clear that we are dealing with a historic national security and humanitarian crisis at our southern border.\" Maloy, representing Utah's 2nd District, joined fellow Republican representatives Burgess Owens and John Curtis in opposing the $118 billion bipartisan border security bill released in February 2024.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "Maloy, representing Utah's 2nd District, joined fellow Republican representatives Burgess Owens and John Curtis in opposing the $118 billion bipartisan border security bill released in February 2024. She emphasized: \"Securing the border should be a top priority, not an afterthought. It is clear that we are dealing with a historic national security and humanitarian crisis at our southern border.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/opinion/2025/05/15/utah-families-need-child-care-development-block-grant-funding/",
+          "snippets": [
+            {
+              "snippet": "As a child care provider I have also seen the good that comes when we interrupt generational patterns and choose to support families, which is why I'm asking Rep. Celeste Maloy to sign Rep. Burgess Owens' appropriations letter asking for robust funding for CCDBG. CCDBG can help me as a small-business owner keep my door open while promoting parent choice and ensuring more parents can find and afford the care they need.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2024/04/20/utah-delegation-votes-on-house-foreign-aid-ukraine-israel-tiktok/",
+          "snippets": [
+            {
+              "snippet": "Maloy voted against the Ukraine supplemental aid package. She stated: \"I have always supported arming the Ukrainians, but while America is in debt over $34 trillion, and without certainty our funds will reach the Ukrainian war effort, I voted against sending billions of additional taxpayer dollars to Ukraine.\" She said she is more comfortable with \"military aid\" and \"tech and weapons and bullets than...cash.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2024/07/10/save-act-passes-house-proof-of-citizenship-for-voting-in-federal-elections/",
+          "snippets": [
+            {
+              "snippet": "Maloy, representing Utah's 2nd District, supported the House passage of the Safeguard American Voter Eligibility (SAVE) Act. \"The act respects state control and rebalances federalism by correcting a poorly designed law that prevented states from determining citizenship.\" \"Removing that barrier and sharing data empowers states and safeguards the intent of the Constitution,\" she said. The measure passed 221-198, with all Utah's congressional delegation voting in favor, including Maloy.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2024/08/01/utah-supreme-court-ruling-abortion-reactions/",
+          "snippets": [
+            {
+              "snippet": "Utah Senate President J. Stuart Adams and House Speaker Mike Schultz said in a joint statement regarding the Utah Supreme Court's decision, \"The U.S. Supreme Court's landmark Dobbs decision reinstated the authority of our state to regulate abortion policy. The Utah Legislature thoughtfully acted to ensure the state had a strong policy in place to protect both the unborn and the life of the mother. We are deeply disappointed by the Utah Supreme Court's ruling today preventing our state's abortion law from taking effect more than two years after the Dobbs decision.\"",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2024/10/24/utah-burgess-owens-debate-2024/",
+          "snippets": [
+            {
+              "snippet": "Owens said he agreed with Fallick-Wang that restricting abortion is not the role of the federal government. But he expressed strong support for Utah's abortion law that prohibits all elective abortions with exceptions for rape, incest and conditions threatening the life of the mother. Debates over abortion should remain at the state level, Owens said. If residents disagree with their state's abortion restrictions, 'you can always move.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Owens, who has represented the state's 4th Congressional District since 2021, said he supported a national ban on biological boys who are transgender playing in girls sports. Former President Donald Trump proposed a similar blanket ban during an all-female town hall last week. The question comes down to enforcing fairness for female athletes and affirming the traditional definitions of male and female, Owens said. 'Let's not force something that is not common sense on the rest of us and think that we're going to take it,' Owens said.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Owens called Russia 'an evil actor' and said there is a place for American support of Ukraine as long as Ukraine explains exactly how U.S. tax dollars are spent and how they plan to conclude the conflict. 'The key is how can we bring somebody into place, President Trump, that understands the threat and begins to alleviate that threat in the fastest way possible.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/01/08/house-laken-riley-act-pass-senate-democrats-split/",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens, R-Utah, in a post on X, criticized the Biden White House for allowing migrants to 'victimize and terrorize innocent Americans with zero accountability.' 'With President Trump and Tom Homan's zero-tolerance law-and-order approach back in the White House, we will ensure that families never have to pay the devastating price of open borders lawlessness again.' All four Utah GOP Representatives backed the bill, which would require ICE to take undocumented immigrants into custody if charged with certain crimes.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/02/25/sen-escamillas-sb284-would-expand-medicaid-doula-services/",
+          "snippets": [
+            {
+              "snippet": "Utah Senate Minority Leader Luz Escamilla, D-Salt Lake City, has championed children and health this legislative session — her initiatives ranging from universal school lunches to expanded child care facilities. SB284, or \"Medicaid Doula Services,\" would add doula services to that docket. The bill went before the Senate Health and Human Services Committee last Thursday, where it passed unanimously. This is not Escamilla's first experience with doulas and Medicaid — in 2023 and 2024 she released similar bills, neither of which was approved by both the House and the Senate. Escamilla pointed to House Republicans' budget concerns as an impediment to the bill's passage. \"We are a family friendly state, and I think we should invest on practices that help women be more successful when raising their families and their children,\" said Escamilla.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/03/06/utah-legislature-cuts-income-tax-and-social-security-tax/",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Leader Luz Escamilla, D-Salt Lake City, supported expanding child tax credits but felt that inserting them in the income tax bill was unfair and put big business over budget needs. \"Combining them with an income tax cut is a coercive and unfair move that mirrors a Washington, D.C., style of political tactics,\" Escamilla said.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/04/04/utah-responds-to-trump-tariffs/",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens did not immediately respond to requests for comment by the Deseret News. However, previous statements posted on social media indicate the Utah Republican may be in support of reciprocal tariffs — and he has previously praised Trump as an entrepreneur who understands these decisions. \"The Art of the Reciprocal Tariff,\" Owens wrote in a post on X last month. \"No more free access to American markets. If you tariff us, we will tariff you.\" \"WOW!!! 'Reciprocal Tariffs' … a boom for America's Middle Class,\" he wrote in another post.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Rep. Mike Kennedy echoed similar sentiments to other Utah Republicans and, although he did not go so far as to fully endorse the tariff package, told the Deseret News: \"We need fair trade agreements that enable all parties to prosper and operate effectively.\"",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/04/18/utah-rep-kennedy-visits-el-salvador-prison/",
+          "snippets": [
+            {
+              "snippet": "Many of these dangerous criminals have crossed into our country and committed heinous crimes taking the lives of innocent Americans and the Trump administration is doing what the Biden administration would not — enforcing the law, restoring order, and protecting our citizens. We were face-to-face with prisoners that have committed horrific and unimaginable crimes.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/07/02/medicaid-cuts-senate-big-beautiful-bill/",
+          "snippets": [
+            {
+              "snippet": "\"From reining in over $700 billion in wasteful Medicaid spending, including benefits going to illegal immigrants, to enforcing work requirements and eliminating fraud, the One Big Beautiful Bill protects and strengthens Medicaid for those in Utah and across the nation who truly need it,\" Owens stated. The Utah representative expressed his belief that these reforms will safeguard the program for individuals who genuinely require assistance.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/07/03/utah-lawmakers-react-to-big-beautiful-bill/",
+          "snippets": [
+            {
+              "snippet": "I'm grateful that key provisions from my Ensuring Medicaid Eligibility Act of 2025 were secured in this landmark legislation — helping ensure support reaches those who qualify and rely on it. The One Big Beautiful Bill proves we don't have to choose. We can protect those in need and stop the waste.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/08/18/utah-congressmen-blake-moore-and-mike-kennedy-defend-trump-deportations-as-consequence-of-biden-border-policy/",
+          "snippets": [
+            {
+              "snippet": "If you're not going to come legally, then the enforcement prosecution efforts of the law of the United States of America will be dropped on your head. Kennedy said Congress is unlikely to pursue legal pathways for unauthorized immigrants as Republicans focus on enforcing the country's laws after four years of historic levels of illegal immigration.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2025/12/03/reps-maloy-and-auchincloss-introduce-deepfake-liability-act/",
+          "snippets": [
+            {
+              "snippet": "Rep. Celeste Maloy introduced the Deepfake Liability Act alongside Rep. Jake Auchincloss to address nonconsensual AI-generated sexual imagery and cyberstalking. Maloy stated: \"Abusive deepfakes and cyberstalking are harming people across the country, and victims deserve real help.\" She outlined the legislation's core approach: \"Our bill creates a straightforward duty of care and a reliable process to remove harmful content when victims ask for help. Companies that take this seriously will keep their protections under the law. Those that do nothing will be held accountable.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2026/01/06/what-hyde-amendment-how-stalling-health-care-talks/",
+          "snippets": [
+            {
+              "snippet": "When we talk about abortion, I'm entirely pro-life,\" Rep. Mike Kennedy, R-Utah, told the Deseret News in an interview. \"In my political work, I'm always looking for what is possible, not what is perfect. … But I'm entirely pro-life and want to see us promoting that in our policies.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2026/01/23/trump-endorses-utah-republican-initiative-to-repeal-redistricting-law/",
+          "snippets": [
+            {
+              "snippet": "3rd District Rep. Mike Kennedy expressed his appreciation for the GOP's initiative, and shared that he had given his signature to support it. A campaign spokesperson for Kennedy said the congressman's family is actively working to circulate sign-up sheets for the initiative. The former state senator believes map-drawing responsibility belongs to the Legislature, his spokesperson said. \"He supports placing this issue on the ballot so voters can decide after seeing Proposition 4 in practice.\"",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2026/04/25/rep-mike-kennedy-wins-gop-nomination-congressional-district-4/",
+          "snippets": [
+            {
+              "snippet": "I have voted over and over to keep men out of women's locker rooms, men out of women's bathrooms and men out of women's sports. During his state legislature tenure, he had the privilege to run the bill to ban transgender surgeries on minors in this state. Biological males should not be allowed to participate in women's sports.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/politics/2026/05/13/burgess-owens-restrict-dei-initiatives-in-schools/",
+          "snippets": [
+            {
+              "snippet": "Owens said in a statement: 'That is real civics education, not the propaganda and subtle indoctrination that the left used to prioritize ideology over education by funneling taxpayer dollars to promote divisive and debunked racial falsehoods, radical gender ideology, and political activism. We're putting an end to that once and for all with the CHARLIE Act.' The article explains that Owens introduced the Civics and History Advancement to Restore Learning, Integrity, and Education Act, which would block federal funding for curriculum involving gender identity education and teachings about systemic racism or diversity initiatives.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2019/9/24/20881853/salt-lake-candidate-escamilla-announces-green-policies-unveils-support-from-former-primary-opponent/",
+          "snippets": [
+            {
+              "snippet": "Escamilla stated: \"We know that clean energy is more cost-effective than fossil fuels and it's also cleaner.\" On implementation she said: \"So with careful implementation, we can avoid excessive increase in cost and the city will also push against any false premiums for clean energy and be a leader that stands strong on this process.\" Escamilla also said it was \"feasible and possible\" to exert leverage with Rocky Mountain Power regarding a goal to transition to 100% clean energy.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2022/12/8/23499239/house-passes-respect-marriage-act-utah-republican-vote-religious-liberty/",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens voted present, making him the only representative to do so. 'While today is undoubtedly a giant step toward religious liberty, my lone 'present' vote signals a warning beacon that the war is far from won.' 'Religious freedom cannot prevail until and unless individuals and small business owners practicing their sincere religious beliefs have explicit protection under the law,' he said. 'By protecting churches and religious organizations, we are only scratching the surface of the full scope of our First Amendment rights.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2022/3/25/22996277/you-belong-salt-lake-city-leaders-tell-utah-transgender-youth-veto-override-lgbt-politics-sports-ban/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2022/5/12/23068647/disinformation-governance-board-burgess-owens-defund-ministry-of-truth-joe-biden-misinformation/",
+          "snippets": [
+            {
+              "snippet": "Utah Republican Congressman Burgess Owens signed on to legislation to immediately defund the Department of Homeland Security's Disinformation Governance Board, which he called a 'political tool for so-called experts to referee free speech.' 'The Biden Administration's Disinformation Governance Board is a political tool for so-called experts to referee free speech,' Owens said in a statement on Tuesday. 'I'm proud to support this commonsense legislation to prevent Utahns' hard-earned taxpayer dollars from funding the obstruction of their First Amendment rights.' HR7648 is sponsored by Rep. Mike Johnson, R-La., and has 69 co-sponsors — all Republicans. Owens is the only member of Utah's delegation to join the effort.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2022/8/12/23302914/utah-republican-house-vote-inflation-reduction-act-climate-change-health-care-democrats-biden/",
+          "snippets": [
+            {
+              "snippet": "After Friday's vote, Owens said in a statement that Biden's economic agenda has steered the country into a recession, and the Democrats are trying to spend their way out. He called the bill a 'scam' that fails to reduce inflation, slash prices or crack down on wealthy tax cheats. 'Instead of working to provide relief, the 'Inflation, Recession, and IRS Army Act' increases inflation, raises taxes on Americans earning less than $200,000 per year, and weaponizes the IRS by bankrolling 87,000 new agents to audit all income levels,' he said.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2023/1/25/23569355/utah-senate-approves-choice-scholarship-teacher-compensation-bill/",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Leader Luz Escamilla, D-Salt Lake City, proposed an amendment over concerns about potential discriminatory acts at private schools, which are prohibited under federal law at any school that accepts federal funding. \"I don't think we want our state monies to have anything to do with discrimination against children,\" she said.",
+              "snippet_index": 1,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2023/3/3/23624526/utah-bill-to-close-abortion-clinics-passes-legislature/",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Leader Luz Escamilla, D-Salt Lake City, proposed a substitute that would repeal language allowing hospitals to decline to provide abortions — even in cases exempted from Utah's abortion ban — due to religious or moral reasons. Because HB467 requires hospitals to perform abortions, Escamilla expressed concern that rape victims and young children in rural areas would be unable to access abortion care if the only hospital in their area declined to perform legal abortions. Escamilla stated: \"I am not touching the policy,\" while noting that she \"100% disagrees\" with the abortion ban, but is simply trying to work around the edges to protect pregnant people. She continued: \"I just want to make sure that as we are limiting this scope of practice that especially children will never have to have a situation where ... they can't get care.\"",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2024/03/02/utah-legislature-approves-another-tax-cut/",
+          "snippets": [
+            {
+              "snippet": "Senate President Stuart Adams stated: \"I think we're trying to reduce the income tax to be competitive with other states. I've said forever, if there is a way, we'd like to try to actually remove the income tax.\" He added: \"if we can't get there, that's great. But we're going to do it in a reasonable and rational way.\" The state income tax rate was cut from 4.65% to 4.55%, resulting in approximately $170 million in savings. This marks the fourth consecutive year of tax reductions.",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            },
+            {
+              "snippet": "Senate President Stuart Adams, R-Layton, said work will continue on the income tax with an eye toward eventually joining the handful of states that don't have an income tax. \"I don't want to speak for the entire (Senate). We haven't had discussions,\" Adams said. \"But I can't imagine we won't continue with what we've done in the past with the same effort. I think we're trying to reduce the income tax to be competitive with other states. I've said forever, if there is a way, we'd like to try to actually remove the income tax.\"",
+              "snippet_index": 1,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2024/05/29/utah-teacher-union-sues-over-school-choice/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2024/05/31/mike-kennedy-is-running-to-replace-john-curtis-in-utah-to-reform-federal-health-programs/",
+          "snippets": [
+            {
+              "snippet": "I know Medicare and Medicaid and how there are — over and over again — systems that I see as either redundant or unnecessary that are costing our taxpayers billions of dollars. Kennedy proposes block grants to states instead of open-ended federal matching funds, allowing states to distribute funds more carefully.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2024/1/11/24025471/utah-legislature-republican-supermajority-priorities-2024-session/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.deseret.com/utah/2025/03/06/doula-medicaid-bill/",
+          "snippets": [
+            {
+              "snippet": "SB284, sponsored by Senate Minority Leader Luz Escamilla, D-Salt Lake City, will require the state to apply to expand its Medicaid plan to cover doula services. The bill passed through the Senate by unanimous vote last week, and on Wednesday, the House passed the bill with 55 yes votes and 16 no votes. The bill will now go to Gov. Spencer Cox for his signature. Escamilla has been working on getting this bill through passed for years, and was successful in 2025. She stated: \"The doula becomes the coach, and it helps you, it educates you.\" Escamilla said that not only are doulas cost effective, but having a doula helps provide a better health outcome for both the mother and the child.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fox13now.com/news/politics/judge-rules-utah-fits-all-voucher-program-is-unconstitutional",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.heraldextra.com/news/2025/aug/19/rep-blake-moore-defends-big-beautiful-law-as-not-just-for-billionaires/",
+          "snippets": [
+            {
+              "snippet": "\"There's a lot out there, that … this is just tax breaks for the billionaires on the backs of the working class. And it's fundamentally false,\" Moore said during a forum hosted by the Sutherland Institute, a conservative think tank, at the University of Utah's Hinckley Institute of Politics in Salt Lake City on Monday. \"It's a good line to be able to spew, but it's not accurate.\"",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            },
+            {
+              "snippet": "U.S. Rep. Blake Moore, R-Utah, on Monday repeatedly pushed back on criticisms that the \"big, beautiful\" law will benefit billionaires more than low- and middle-income earners — and he predicted fewer Americans will lose health care coverage than has been estimated.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            },
+            {
+              "snippet": "U.S. Rep. Blake Moore, R-Utah, on Monday repeatedly pushed back on criticisms that the \"big, beautiful\" law will benefit billionaires more than low- and middle-income earners — and he predicted fewer Americans will lose health care coverage than has been estimated. \"There's a lot out there, that … this is just tax breaks for the billionaires on the backs of the working class. And it's fundamentally false,\" Moore said during a forum hosted by the Sutherland Institute, a conservative think tank, at the University of Utah's Hinckley Institute of Politics in Salt Lake City on Monday.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.heraldextra.com/news/2026/apr/27/republicans-must-be-more-thoughtful-members-around-solar-energy-moore-tells-developers/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.heraldextra.com/news/local/2025/jan/10/utah-legislature-poised-to-cut-taxes-for-5th-year-in-a-row-but-how/",
+          "snippets": [
+            {
+              "snippet": "There's another tax cut option that top legislative leaders say they will not be pursuing: removing the state's portion of sales tax on food. That's something low-income advocates have long called for, and it's a proposal that Senate Minority Leader Luz Escamilla, D-Salt Lake City, said she and other Democrats continue to support. \"We're still going to continue to fight,\" Escamilla said, arguing that repealing the food tax should \"stand on its own as good public policy, a progressive tax cut.\" Escamilla urged \"caution,\" saying \"I don't know that we should be cutting anymore\" given the past four legislative sessions have culminated in more than $1 billion in tax cuts. However, she said she's more in favor of repealing the state's portion of sales tax on food and the governor's Social Security proposal.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.heraldextra.com/news/local/2025/jul/04/utah-republicans-celebrate-big-beautiful-bill-passage-health-advocates-dismayed/",
+          "snippets": [
+            {
+              "snippet": "That was one of the wins Utah Republican Rep. Celeste Maloy celebrated Thursday. \"While no bill is perfect, the One Big, Beautiful Bill reflects the promises made and kept by President Trump and House Republicans,\" Maloy said in a statement. Called downwinders, people who got cancer or other diseases from above-ground nuclear tests were eligible for federal payments — but not everyone in Utah was covered, despite evidence showing nuclear fallout blanketed the state in the 1950s and 1960s.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "That was one of the wins Utah Republican Rep. Celeste Maloy celebrated Thursday. \"While no bill is perfect, the One Big, Beautiful Bill reflects the promises made and kept by President Trump and House Republicans,\" Maloy said in a statement. According to Utah House Democrats, Utah's Medicaid budget totals $5.5 billion, and under this bill, nearly $1 billion, or approximately 20% of that funding, will be slashed.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "That was one of the wins Utah Republican Rep. Celeste Maloy celebrated Thursday. \"While no bill is perfect, the One Big, Beautiful Bill reflects the promises made and kept by President Trump and House Republicans,\" Maloy said in a statement. The One Big Beautiful Bill Act was signed into law on July 4, 2025. The bill passed the House on July 3, 2025, by a vote of 218-214.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/46485207/gov-herbert-signs-prop-3-medicaid-expansion-replacement-into-law",
+          "snippets": [
+            {
+              "snippet": "Senate President Stuart Adams, R-Layton, said voters had \"significant input\" on the issue. Adams said had voters not approved Proposition 3, many lawmakers would have not approved Medicaid expansion.",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50195658/why-the-fec-ordered-utah-gop-rep-burgess-owens-to-pay-a-4000-fine",
+          "snippets": [
+            {
+              "snippet": "The Federal Election Commission has fined Utah Rep. Burgess Owens nearly $4,000 for failing to timely report $34,000 in contributions to his 2020 campaign. Owens, a freshman Republican, failed to file 48-hour notices for 20 donations last October, ranging from $1,000 to $2,800. A New York Times analysis reported that Owens refunded the excess donation, but found other cases in which contributions totaling $135,500 exceeded legal limits.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50361572/utah-legislature-passes-last-minute-ban-on-transgender-female-athletes-gov-says-hell-veto",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Whip Luz Escamilla, D-Salt Lake City, questioned what will happen to girls who aren't transgender but who are \"outliers\" in size and strength for their age if they get challenged about their gender. \"What protection are we giving to those children and their families?\" she asked.",
+              "snippet_index": 1,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50439640/uncertainty-swirls-around-how-utah-will-enforce-its-trigger-abortion-ban",
+          "snippets": [
+            {
+              "snippet": "Sim Gill expressed concern about the broader implications of enforcing Utah's abortion trigger law. \"I'm genuinely curious about how these investigations are going to go about,\" he said. \"I cannot be blind to the fact that it is going to create unnecessary burdens for victims who are undergoing a really traumatic time in their life, to be subjected to this.\" Gill stated he was \"genuinely concerned about revictimizations\" of rape victims, and the \"collateral consequences\" of requiring them to go to law enforcement, adding: \"There will be collateral attacks made on victims, and that does not make me feel good about that process.\"",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50529357/being-homeless-is-not-a-crime-salt-lake-officials-discuss-shift-in-response-to-homelessness",
+          "snippets": [
+            {
+              "snippet": "Salt Lake County District Attorney Sim Gill stated: \"We have looked to the criminal justice system to be our crisis managers and what we have learned is that we will never be able to arrest our way out of this situation.\" He emphasized: \"The goal here is that nobody who has a public health issue or personal health issue or mental health issues, or out of whatever circumstances finds themselves homeless, looks to our criminal justice system as the answer.\" Gill also said: \"Getting out of our silos, recognizing the interdependent mess that we have with each other and recognizing that as a public prosecutor, the jail and the prosecution is not a solution to this issue.\"",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50535320/house-passes-marriage-equality-bill-with-religious-freedom-protections-how-did-utah-reps-vote",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens voted present, the only representative to do so. While Owens voted for the bill without religious liberty protections in summer, he said Thursday, 'While today is undoubtedly a giant step toward religious liberty, my lone 'present' vote signals a warning beacon that the war is far from won.' 'Religious freedom cannot prevail until and unless individuals and small business owners practicing their sincere religious beliefs have explicit protection under the law,' he said. 'By protecting churches and religious organizations, we are only scratching the surface of the full scope of our First Amendment rights.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Rep. Burgess Owens voted present, the only representative to do so. While Owens voted for the bill without religious liberty protections in summer, he said Thursday, 'While today is undoubtedly a giant step toward religious liberty, my lone 'present' vote signals a warning beacon that the war is far from won.' 'Religious freedom cannot prevail until and unless individuals and small business owners practicing their sincere religious beliefs have explicit protection under the law,' he said. 'By protecting churches and religious organizations, we are only scratching the surface of the full scope of our First Amendment rights.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50565362/utah-senate-approves-choice-scholarship-teacher-compensation-bill-on-2nd-reading",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Leader Luz Escamilla, D-Salt Lake City, proposed an amendment over concerns about potential discriminatory acts at private schools, which are prohibited under federal law if they receive federal funding. Most private schools do not receive federal funding so they are not subject to the same regulations as public schools, she said. \"I don't think we want our state monies to have anything to do with discrimination against children,\" she said.",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50591382/utah-bill-to-close-abortion-clinics-passes-senate",
+          "snippets": [
+            {
+              "snippet": "Senate Minority Leader Luz Escamilla, D-Salt Lake City, proposed a substitute amendment to repeal language allowing hospitals to decline providing abortions based on religious or moral reasons. She expressed concern that rape victims and young children in rural areas would lack abortion access if their only local hospital refused to provide legal abortions. \"I am not touching the policy,\" Escamilla said, noting that she \"100% disagrees\" with the abortion ban. \"I just want to make sure that as we are limiting this scope of practice that especially children will never have to have a situation where ... they can't get care.\"",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/50937164/the-utah-legislature-approved-another-tax-cut-heres-what-taxpayers-need-to-know",
+          "snippets": [
+            {
+              "snippet": "Not everyone agrees that income tax cuts are a good idea. Democrats in both the House and Senate opposed another round of income tax reductions this year, saying the money should instead be used for more pressing needs in the state, such as child care and improving accessibility to social services programs. \"Most Utahns would agree,\" said Senate Minority Leader Luz Escamilla, D-Salt Lake City, especially given how much the majority of the state residents would see in tax savings. \"Obviously, we had a wish list. I can mention 100 things that I felt needed to be funded.\"",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51148691/utahs-delegation-wants-to-change-assumptions-about-republicans-and-conservation",
+          "snippets": [
+            {
+              "snippet": "Rep. Celeste Maloy, R-Utah, attended Curtis' summit last year, when she was first running for her seat in Utah's 2nd Congressional District, and admitted to being afraid to participate due to potential backlash from her core voters. From the other side, she said there is an \"assumption\" that Western conservatives \"just want to rape and pillage the resources\" from public lands. \"For me, it's kind of scary to be involved in anything called 'conservative climate caucus,' because as soon as you use the word climate, those of us that fall into the natural resources bucket start to get nervous,\" she said.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "Rep. Celeste Maloy, R-Utah, attended Curtis' summit last year, when she was first running for her seat in Utah's 2nd Congressional District, and admitted to being afraid to participate due to potential backlash from her core voters. \"For me, it's kind of scary to be involved in anything called 'conservative climate caucus,' because as soon as you use the word climate, those of us that fall into the natural resources bucket start to get nervous,\" she said. This year, Maloy said those fears have lessened, thanks to the growing conversation around climate and natural resources.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51163128/get-to-know-3rd-congressional-district-candidates-mike-kennedy-glenn-wright",
+          "snippets": [
+            {
+              "snippet": "Kennedy stated: \"It's a disaster\" regarding current immigration policy and expressed his goal to \"work on innovations to secure our border No. 1, and then improve legal immigration.\" He seeks to \"reform immigration to make it easier to enter the country legally while increasing border security.\" Kennedy describes himself as a \"common-sense prescription for Washington\" and believes his medical background will help address waste in Medicare and Medicaid programs. He noted: \"I know Medicare and Medicaid and how there are — over and over again — systems that I see as either redundant or unnecessary that are costing our taxpayers billions of dollars.\" Kennedy wants to reduce incentives for states to expand Medicaid enrollment and proposes the federal government provide funds through block grants.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            },
+            {
+              "snippet": "Kennedy notes: \"I know Medicare and Medicaid and how there are — over and over again — systems that I see as either redundant or unnecessary that are costing our taxpayers billions of dollars.\" Kennedy wants to reduce incentives for states to expand Medicaid enrollment and proposes the federal government provide funds through block grants he says will be distributed more carefully.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51289226/heres-how-utahs-congressional-delegation-is-responding-to-trumps-tariffs",
+          "snippets": [
+            {
+              "snippet": "Rep. Celeste Maloy expressed support for reciprocal tariffs as a negotiating tool. \"For decades, our trade partners have imposed tariffs on us at higher rates, which has hurt our competitive edge. The American people voted for President Trump because he promised to upend the status quo. The idea behind reciprocal tariffs is to invite our trade partners to the bargaining table and correct the current trade imbalance.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51339353/trumps-sweeping-tax-cut-and-spending-bill-wins-congressional-approval",
+          "snippets": [
+            {
+              "snippet": "\"This bill is how we save our country and secure its future,\" added Rep. Mike Kennedy. Republicans said the legislation will lower taxes for Americans across the income spectrum and spur economic growth.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51442265/reps-owens-maloy-take-utahs-redistricting-battle-to-federal-court",
+          "snippets": [
+            {
+              "snippet": "In February 2026, Maloy and Rep. Owens filed a federal lawsuit seeking to overturn a court-ordered congressional map and restore the legislature-drawn map. Maloy stated: \"This map was wholly created by a group that holds no accountability to Utah voters. As a Utah voter and an elected official, it is my responsibility to allow Utah voters a choice on how they would like their representatives chosen.\" She argued the new map \"did not follow the process outlined in Prop 4\" because \"the new electoral boundaries never passed through the redistricting commission or the legislature, as required by Prop 4.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51448919/gop-chairman-says-enough-signatures-gathered-to-put-prop-4-repeal-on-ballot",
+          "snippets": [
+            {
+              "snippet": "The Constitution requires that the Legislature draw the maps, but under the current Proposition 4, the Legislature is not able to do that, and that the judge has imposed a map that is highly democratic leaning, and it's not representative of Utah. Chris Null, a volunteer signature gatherer and Republican candidate for Salt Lake County Council District Five, explained his approach to voters about the initiative's purpose during the signature-gathering process.",
+              "snippet_index": 0,
+              "full_name": "Chris Null",
+              "last_name": "Null"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksl.com/article/51505297/watch-live-celeste-maloy-phil-lyman-debate-ahead-of-gop-primary",
+          "snippets": [
+            {
+              "snippet": "\"We have to make sure we're deporting the people who need to be deported and fixing the legal immigration system so that people who want to come here, live the American dream and become Americans have a way to do that that makes sense.\" The congresswoman advocated for additional beds for federal immigration detainees, including the proposed ICE detention center in Salt Lake City.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "\"We have to make sure we're deporting the people who need to be deported and fixing the legal immigration system so that people who want to come here, live the American dream and become Americans have a way to do that that makes sense.\" The congresswoman advocated for additional beds for federal immigration detainees, including the proposed ICE detention center in Salt Lake City, while emphasizing the nation must simultaneously address deportations and reform legal immigration pathways.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "\"On paper, Utah is a perfect place to build data centers. Unfortunately, data centers aren't built on paper, and states are made up of people, and the people in Utah have questions, and they want those questions answered.\" Maloy said she supports building data centers in Utah \"when the people of Utah support them\" and that future projects should be built \"where people want them\" and should \"match our resources,\" and that could include prioritizing projects that are cooled by air instead of water, given the scarcity of water in Utah.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ksltv.com/local-news/salt-lake-county-council-reelection/862518/",
+          "snippets": [
+            {
+              "snippet": "The other Salt Lake County Council seat on the ballot this year is held by Jiro Johnson, a Democrat who took office earlier this year after longtime councilman Arlyn Bradshaw resigned to take a new job. Johnson told KSL he plans to soon file his candidacy to seek a full four-year term. I'm running again because I want to continue building a Salt Lake County that doesn't leave our residents behind and provides the basis for people to grow up, live in, and enjoy everything that makes this county great, Johnson said.",
+              "snippet_index": 0,
+              "full_name": "Jiro Johnson",
+              "last_name": "Johnson"
+            },
+            {
+              "snippet": "The other Salt Lake County Council seat on the ballot this year is held by Jiro Johnson, a Democrat who took office earlier this year after longtime councilman Arlyn Bradshaw resigned to take a new job. Johnson told KSL he plans to soon file his candidacy to seek a full four-year term. I'm running again because I want to continue building a Salt Lake County that doesn't leave our residents behind and provides the basis for people to grow up, live in, and enjoy everything that makes this county great, Johnson said.",
+              "snippet_index": 0,
+              "full_name": "Jiro Johnson",
+              "last_name": "Johnson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/health/2025-07-02/medicaid-snap-cuts-worry-utah-advocates-as-the-gops-budget-bill-nears-passage",
+          "snippets": [
+            {
+              "snippet": "Rep. Burgess Owens supported the budget bill. His office provided a statement: 'From reining in over $700 billion in wasteful Medicaid spending, including benefits going to illegal immigrants, to enforcing work requirements and eliminating fraud, the One Big Beautiful Bill protects and strengthens Medicaid for those in Utah and across the nation who truly need it.' The article clarifies that federal Medicaid coverage is already unavailable to undocumented immigrants — only Emergency Medicaid reimburses hospitals for emergency care.",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            },
+            {
+              "snippet": "Rep. Burgess Owens supported the budget bill. His office provided a statement saying he backed measures 'From reining in over $700 billion in wasteful Medicaid spending, including benefits going to illegal immigrants, to enforcing work requirements and eliminating fraud, the One Big Beautiful Bill protects and strengthens Medicaid for those in Utah and across the nation who truly need it.'",
+              "snippet_index": 0,
+              "full_name": "Burgess Owens",
+              "last_name": "Owens"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/justice/2020-07-17/salt-lake-county-da-says-when-it-comes-to-use-of-force-change-should-start-with-the-law",
+          "snippets": [
+            {
+              "snippet": "Gill released 22 proposed changes to Utah's deadly force law, framing the issue as structural: \"If we want different outcomes, then we need to go to the source of this issue, because that will impact practices. It will impact procedures. It will impact training.\" He stated that current law is \"more generous to law enforcement officers than to other members of our community\" and argued that if officers contribute to creating the emergency that justifies force, \"then maybe that shouldn't be available\" as a legal defense.",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/politics-government/2022-03-25/utah-legislature-overrides-transgender-sports-ban-veto",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "J. Stuart Adams",
+              "last_name": "Adams"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/politics-government/2024-02-02/as-lawmakers-chart-utahs-energy-future-dems-want-a-seat-at-the-table",
+          "snippets": [
+            {
+              "snippet": "Like Blouin, Senate Minority Leader Luz Escamilla says there is more than one solution for the state's energy needs, especially on distribution. \"We want to see more investment in infrastructure for the grid,\" she said at a Jan. 16 news conference. \"Our grid is old and it's not sustainable if we continue that process, so we want to see a little bit of everything in the conversation.\"",
+              "snippet_index": 0,
+              "full_name": "Luz Escamilla",
+              "last_name": "Escamilla"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/politics-government/2024-05-31/2024-gop-primary-voter-guide-cd2-colby-jenkins-celeste-maloy",
+          "snippets": [
+            {
+              "snippet": "I believe in the sanctity of life and see every life as valuable and worth protecting. The government has a role in protecting the rights of every individual, including the unborn.\" She also supports providing resources for women facing difficult circumstances through improved healthcare access and adoption services.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kuer.org/politics-government/2024-10-04/wanna-talk-about-climate-change-toss-out-the-litmus-test-says-rep-john-curtis",
+          "snippets": [
+            {
+              "snippet": "\"I was here last year, I just won a primary, I was facing a general election, and I was scared to get on the stage,\" Maloy said. \"Now I'm here one year later, I just won a primary, I'm facing a general and I'm a lot less scared.\" Representative Celeste Maloy described her evolving comfort level engaging in climate discussions at the Conservative Climate Summit at Utah Valley University.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.lataco.com/transportation-karen-bass/",
+          "snippets": [
+            {
+              "snippet": "\"I support the move towards fareless transit\" and commits to expanding \"L.A.'s network of protected bike lanes\" and Vision Zero implementation",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://www.lukeforcountycouncil.com/platform/",
+          "snippets": [
+            {
+              "snippet": "Childcare is already far too expensive for Salt Lake County Families. Unfortunately, County Republicans like Aimee Winder Newton want to make childcare even more expensive by cutting funding for affordable childcare. I will fight to restore and expand affordable childcare services in Salt Lake County.",
+              "snippet_index": 0,
+              "full_name": "Luke Maynes",
+              "last_name": "Maynes"
+            }
+          ]
+        },
+        {
+          "url": "https://www.moabtimes.com/articles/5-republicans-vie-for-utahs-empty-seat-in-congress-here-are-their-views-on-abortion-immigration-and-water/",
+          "snippets": [
+            {
+              "snippet": "I'm proudly pro-life and have championed and supported legislation in Utah that saves lives, supports women, and strengthens families. While a national abortion ban is unlikely to pass in the current climate, there are crucial and common-sense steps we can take. We should eliminate taxpayer funding for elective abortions, ban dangerous \"abortion-by-mail\" pills that lack proper medical oversight and harm women, and pass legislation that responsibly advances the pro-life cause. By focusing on these achievable goals, we can make significant progress in protecting life, supporting women, and strengthening families across America.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.nbclosangeles.com/news/local/la-mayor-signs-rent-stabilization-ordinance-capping-hikes-at-4/3820169/",
+          "snippets": [
+            {
+              "snippet": "First major overhaul of the Rent Stabilization Ordinance in 40 years, capping annual increases at 1-4% (down from 3-8%), removing utility pass-throughs",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ontheissues.org/House/Blake_Moore.htm",
+          "snippets": [
+            {
+              "snippet": "Oppose expanding voter registration and voter access. (Mar 2021) Don't impeach President Trump for events of Jan. 6. (Jan 2021) No statehood for Washington D.C. (Apr 2021) Don't restrict presidential power; don't help whistleblowers. (Dec 2021)",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            },
+            {
+              "snippet": "Health Care: Need to do more at federal level to address mental health. (Dec 2020) Replace Obama Care with market-driven health care. (Dec 2020) Anti-ObamaCare, according to PVS survey. (Sep 2020)",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.qsaltlake.com/news/2026/04/20/utah-stonewall-democrats-endorsements/",
+          "snippets": [
+            {
+              "snippet": "Shawn Robinson is a longtime prosecutor with extensive experience in criminal justice. His campaign focuses on public safety reform, alternatives to incarceration, victim advocacy, and ensuring accountability and fairness in the justice system. Robinson will go up against incumbent Salt Lake District Attorney Sim Gill in the June primary.",
+              "snippet_index": 0,
+              "full_name": "Shawn Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "Shawn Robinson is a longtime prosecutor with extensive experience in criminal justice. His campaign focuses on public safety reform, alternatives to incarceration, victim advocacy, and ensuring accountability and fairness in the justice system. Robinson will face incumbent Salt Lake District Attorney Sim Gill in the June primary.",
+              "snippet_index": 0,
+              "full_name": "Shawn Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "Shawn Robinson is a longtime prosecutor with extensive experience in criminal justice. His campaign focuses on public safety reform, alternatives to incarceration, victim advocacy, and ensuring accountability and fairness in the justice system.",
+              "snippet_index": 0,
+              "full_name": "Shawn Robinson",
+              "last_name": "Robinson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.quiverquant.com/news/New+Bill:+Representative+Mike+Kennedy+introduces+H.R.+7794:+Stop+Child+Care+Funding+Fraud+Act+of+2026",
+          "snippets": [
+            {
+              "snippet": "The legislation aims to amend the Child Care and Development Block Grant Act of 1990 to improve transparency and accountability in how Federal child care funds are administered by the States. States must submit annual reports detailing improper payment rates and measures to reduce fraud. Penalty Structure: Improper payments exceeding 6% but under 8%: 5% funding reduction.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.quiverquant.com/news/Press+Release:+Utah+Rep.+Mike+Kennedy+Introduces+Algorithm+Accountability+Act+to+Enhance+Online+Family+Safety",
+          "snippets": [
+            {
+              "snippet": "Representatives Mike Kennedy (UT-03) and April McClain Delaney (MD-06) have introduced the Algorithm Accountability Act, aimed at holding social media companies accountable for harmful content attributed to their algorithms. This bill intends to modernize Section 230 of the Communications Decency Act. The proposed legislation mandates that social media platforms must design, maintain, and operate their algorithms responsibly to prevent foreseeable harm, allowing individuals to seek legal recourse if exposed to dangerous content.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            },
+            {
+              "snippet": "Representatives Mike Kennedy (UT-03) and April McClain Delaney (MD-06) have introduced the Algorithm Accountability Act, aimed at holding social media companies accountable for harmful content attributed to their algorithms. The proposed legislation mandates that social media platforms must design, maintain, and operate their algorithms responsibly to prevent foreseeable harm, allowing individuals to seek legal recourse if exposed to dangerous content. Kennedy highlighted the need for accountability from tech companies in light of health concerns associated with their platforms.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.realestatelanduseandenvironmentallaw.com/los-angeles-mayor-signs-new-legislation-exempting-affordable-housing-projects-from-site-plan-review.html",
+          "snippets": [
+            {
+              "snippet": "Mayor Bass signed legislation exempting affordable housing projects from site plan review and environmental impact studies; new noise thresholds shorten CEQA timelines",
+              "snippet_index": 1,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://www.saltlakecounty.gov/newsroom/council-leadership-for-2026--new-page/",
+          "snippets": [
+            {
+              "snippet": "I'm excited to be named the new Minority Leader of the Salt Lake County Democratic Caucus. I look forward to working with Mayor Wilson to advance priorities in economic strategy and criminal justice, and to collaborating with my colleagues to deliver excellent public service.",
+              "snippet_index": 0,
+              "full_name": "Jiro Johnson",
+              "last_name": "Johnson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.sengov.com/moore-blake-d/",
+          "snippets": [
+            {
+              "snippet": "[Human verified during review]",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.shawnforda.com/",
+          "snippets": [
+            {
+              "snippet": "After sixteen years under one administration, it's time for a fresh perspective in the DA's office. I believe that the District Attorney's office has a special responsibility to victims. The office is understaffed and overworked, and if I am elected, I will ensure that the DA's office is fully staffed during my first year in office. I will prioritize victim advocacy and ensure that victims are given the chance to advocate for themselves at trials and hearings.",
+              "snippet_index": 0,
+              "full_name": "Shawn Robinson",
+              "last_name": "Robinson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.sierraclub.org/press-releases/2025/05/rep-blake-moore-votes-take-away-jobs-and-raise-costs-utahns",
+          "snippets": [
+            {
+              "snippet": "Representative Moore's vote is deeply disappointing, and does a disservice to Utahns. It blocks economic opportunity, puts good-paying jobs out of reach, and makes it harder for families to afford home energy upgrades that lower monthly bills and improve quality of life. Rep. Blake Moore voted to advance the House Ways and Means Committee's budget reconciliation proposal that cuts clean energy, vehicle, and manufacturing tax credits from the Inflation Reduction Act.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.slcountydems.com/2026candidates",
+          "snippets": [
+            {
+              "snippet": "Sara Cimmers is running for County Council because she refuses to accept a system that leaves people behind. A mother, lifelong Utahn, and community advocate, she's committed to affordable child care, family and child health, housing security, and government that shows up for people. Sara believes needing support is human, helping each other is a gift, and leaders should stand beside residents, not above them.",
+              "snippet_index": 0,
+              "full_name": "Sara Cimmers",
+              "last_name": "Cimmers"
+            },
+            {
+              "snippet": "Zach Robinson is a lifelong Salt Lake County resident, former firefighter and paramedic, and proven public servant running for County Council At-Large. He served two terms on the Sandy City Council, where he earned a reputation for working across differences and delivering results for his community. He is running to bring service-driven, Democratic leadership back to the County Council, focused on lowering the cost of living, protecting our communities' natural spaces, and investing in the programs families rely on, like child care and senior centers.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "Zach Robinson is a lifelong Salt Lake County resident, former firefighter and paramedic, and proven public servant running for County Council At-Large. He served two terms on the Sandy City Council, where he earned a reputation for working across differences and delivering results for his community. He is running to bring service-driven, Democratic leadership back to the County Council, focused on lowering the cost of living, protecting our communities' natural spaces, and investing in the programs families rely on, like child care and senior centers.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "Sara Cimmers is running for County Council because she refuses to accept a system that leaves people behind. A mother, lifelong Utahn, and community advocate, she knows what it means to juggle the impossible. She's committed to affordable child care, family and child health, housing security, and government that shows up for people.",
+              "snippet_index": 0,
+              "full_name": "Sara Cimmers",
+              "last_name": "Cimmers"
+            },
+            {
+              "snippet": "Zach Robinson is running to bring service-driven, Democratic leadership back to the County Council, focused on lowering the cost of living, protecting our communities' natural spaces, and investing in the programs families rely on, like child care and senior centers.",
+              "snippet_index": 1,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "Zach Robinson is a lifelong Salt Lake County resident, former firefighter and paramedic, and proven public servant running for County Council At-Large. He served two terms on the Sandy City Council, where he earned a reputation for working across differences and delivering results for his community. He is running to bring service-driven, Democratic leadership back to the County Council, focused on lowering the cost of living, protecting our communities' natural spaces, and investing in the programs families rely on, like child care and senior centers.",
+              "snippet_index": 1,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.slcountydems.com/post/meet-zach-robinson-democratic-nominee-for-county-council-6",
+          "snippets": [
+            {
+              "snippet": "He will focus on issues on the following issues as your Salt Lake County District 6 Councilmember: government transparency, efficient delivery of services, preserving open space, strengthening the economy, and public safety.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "He will focus on issues on the following issues as your Salt Lake County District 6 Councilmember: government transparency, efficient delivery of services, preserving open space, strengthening the economy, and public safety.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            },
+            {
+              "snippet": "He will focus on issues on the following issues as your Salt Lake County District 6 Councilmember: government transparency, efficient delivery of services, preserving open space, strengthening the economy, and public safety.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.standard.net/news/2025/jul/04/utah-republicans-celebrate-big-beautiful-bill-passage-health-advocates-dismayed/",
+          "snippets": [
+            {
+              "snippet": "That was one of the wins Utah Republican Rep. Celeste Maloy celebrated Thursday. \"While no bill is perfect, the One Big, Beautiful Bill reflects the promises made and kept by President Trump and House Republicans,\" Maloy said in a statement. The One Big Beautiful Bill Act creates new administrative requirements and conditions on eligibility (including work requirements) for patients seeking to enroll in or maintain Medicaid coverage.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "That was one of the wins Utah Republican Rep. Celeste Maloy celebrated Thursday. \"While no bill is perfect, the One Big, Beautiful Bill reflects the promises made and kept by President Trump and House Republicans,\" Maloy said in a statement. The news was met with mixed reactions from advocates who generally opposed the \"big beautiful bill,\" but were happy to see RECA expanded.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.uscannenbergmedia.com/2023/04/18/karen-bass-increases-lapd-budget-by-63/",
+          "snippets": [
+            {
+              "snippet": "Karen Bass increases LAPD budget by 6.3%, toward a goal of hiring 1,000 new officers targeting 9,084 sworn officers",
+              "snippet_index": 0,
+              "full_name": "Karen Ruth Bass",
+              "last_name": "Bass"
+            }
+          ]
+        },
+        {
+          "url": "https://www.uschamber.com/taxes/u-s-chamber-chamberwest-host-u-s-representative-celeste-maloy-for-roundtable-on-tax-reform",
+          "snippets": [
+            {
+              "snippet": "Congresswoman Maloy participated in a roundtable on the One Big Beautiful Bill Act's pro-growth tax provisions. She stated: \"The Trump Tax Cuts are about empowering hardworking families and putting more money back in their pockets.\" She highlighted that \"Small businesses also gain relief through a now-permanent 199A deduction, and workers no longer have to pay taxes on tips or overtime pay up to $25,000,\" framing these measures as providing \"greater financial freedom and breathing room.\"",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.uschamber.com/taxes/u-s-chamber-rep-blake-moore-a-leader-on-tax-reform-fighting-for-local-businesses",
+          "snippets": [
+            {
+              "snippet": "WASHINGTON, D.C. -- Today, the U.S. Chamber of Commerce released the following statement thanking U.S. Representative Blake Moore (UT-01) for his leadership and commitment to supporting American businesses through pro-growth tax reforms. Rep. Moore is working to ensure American businesses and workers won't face the largest automatic tax increase in American history at the end of this year, when many provisions of President Trump's 2017 Tax Cuts and Jobs Act (TCJA) are set to expire.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            },
+            {
+              "snippet": "The U.S. Chamber of Commerce thanks Rep. Moore for being a leader and fighting for small businesses,\" said Neil Bradley, Executive Vice President and Chief Policy Officer at the U.S. Chamber of Commerce. \"In Rep. Moore's district, 55,070 small and pass-through businesses will see an increase of approximately $90,276,450 in their qualified business income deduction through passage of the One Big Beautiful Bill Act.\"",
+              "snippet_index": 1,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.uschamber.com/taxes/u-s-chamber-south-valley-chamber-host-u-s-representative-mike-kennedy-for-roundtable-on-tax-reform",
+          "snippets": [
+            {
+              "snippet": "The U.S. Chamber of Commerce and South Valley Chamber convened a roundtable discussion featuring U.S. Representative Mike Kennedy (R-UT-03) focused on extending pro-growth business tax provisions before portions of President Trump's 2017 Tax Cuts and Jobs Act expire at year-end. Rep. Kennedy remarked: \"By implementing President Trump's tax cuts — such as eliminating taxes on tips, exempting Social Security income from taxation, and renewing small businesses tax cuts, we are empowering Americans to regain control over their hard-earned money and achieve prosperity.\"",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.westernenergyalliance.org/2026/05/14/u-s-house-committee-advances-key-public-lands-permitting-bill/",
+          "snippets": [
+            {
+              "snippet": "License to Drill Act (H.R. 7831) introduced by Rep. Mike Kennedy (UT-03), which reauthorizes the bipartisan Permitting Project Improvement Fund and funds BLM field offices overseeing leasing, permitting, and production. The U.S. House Committee on Natural Resources passed the License to Drill Act. The fund is 100 percent paid for by the fees on oil and natural gas drilling permits. We're thankful for the leadership of Rep. Kennedy and Natural Resources Committee Chairman Bruce Westerman.",
+              "snippet_index": 0,
+              "full_name": "Mike Kennedy",
+              "last_name": "Kennedy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.yahoo.com/entertainment/tame-first-debate-candidates-vying-054630130.html",
+          "snippets": [
+            {
+              "snippet": "On the Respect for Marriage Act, which gives federal recognition to a marriage between two people as long as it's recognized in a U.S. state, and includes religious freedom protections, only three of the candidates — Maloy, Edwards and Kathleen Anderson — said they would have supported the bill, while the others either said it did not go far enough in protecting religious liberty or it is an issue that should be left up to the states.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.yahoo.com/news/articles/rep-blake-moore-speaks-box-234703744.html",
+          "snippets": [
+            {
+              "snippet": "Congressman Blake Moore, who represents Box Elder County, broke his silence on the proposed data center in a statement to the Deseret News on Thursday. His Republican primary opponent also spoke out amid public backlash over approval of the data center after concerns were raised about water consumption in a state in the midst of a drought.",
+              "snippet_index": 0,
+              "full_name": "Blake Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.yahoo.com/news/reflects-americans-voted-utah-leaders-203748813.html",
+          "snippets": [
+            {
+              "snippet": "\"It reflects what Americans voted for in November – a return to common sense and accountability. It protects every citizen from the largest tax increase in American history by providing tax relief for working families. It secures our border and strengthens our national security, restores American energy independence, and invests in rural communities,\" Maloy said in a statement about the One Big Beautiful Bill.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            },
+            {
+              "snippet": "\"It reflects what Americans voted for in November – a return to common sense and accountability. It protects every citizen from the largest tax increase in American history by providing tax relief for working families. It secures our border and strengthens our national security, restores American energy independence, and invests in rural communities,\" Maloy said in a statement about the One Big Beautiful Bill.",
+              "snippet_index": 0,
+              "full_name": "Celeste Maloy",
+              "last_name": "Maloy"
+            }
+          ]
+        },
+        {
+          "url": "https://www.zachforcouncil.com/priorities",
+          "snippets": [
+            {
+              "snippet": "Expand affordable public transportation options. Address rising utility costs. Work to develop responsible canyon transportation solutions. Salt Lake County should be a place where residents can not only afford to live but also thrive. Zach is committed to making Salt Lake County more affordable for all residents.",
+              "snippet_index": 0,
+              "full_name": "Zach Robinson",
+              "last_name": "Robinson"
+            }
+          ]
+        }
+      ]
+    },
+    "quote": {
+      "source": "essentials.quotes (readrank_selected, >=12 words, longest per URL)",
+      "minWords": 8,
+      "minCoverage": 0.6,
+      "items": [
+        {
+          "url": "https://ballotpedia.org/Melissa_Chaudhry",
+          "snippets": [
+            {
+              "snippet": "I do not take money from defense contractors or AIPAC-aligned entities. I am not beholden to high-stake donors and so I'm capable of genuinely representing the people of CD9 in all our beautiful, rich diversity.",
+              "snippet_index": 0,
+              "full_name": "Melissa Chaudhry",
+              "last_name": "Chaudhry"
+            }
+          ]
+        },
+        {
+          "url": "https://ballotpedia.org/Wendell_Walker",
+          "snippets": [
+            {
+              "snippet": "I am pro-life and pro family, and believe life begins at conception and ends at natural death.",
+              "snippet_index": 0,
+              "full_name": "Wendell S. Walker",
+              "last_name": "Walker"
+            }
+          ]
+        },
+        {
+          "url": "https://ltgov.georgia.gov/press-releases/2026-04-29/lt-governor-burt-jones-issues-statement-scotus-redistricting-decision",
+          "snippets": [
+            {
+              "snippet": "I commend the Supreme Court for its decision in the Louisiana redistricting case. I agree that in a society built on the equal protection of law, no state should be directed to draw legislative maps on the basis of race.",
+              "snippet_index": 0,
+              "full_name": "Burt Jones",
+              "last_name": "Jones"
+            }
+          ]
+        },
+        {
+          "url": "https://mainerighttolife.org/wp-content/uploads/2025/07/2025-132nd-Senate-Roll-Call.pdf",
+          "snippets": [
+            {
+              "snippet": "These are deeply personal medical decisions that should be made by patients, their families and their doctors — not politicians.",
+              "snippet_index": 0,
+              "full_name": "Timothy E. Nangle",
+              "last_name": "Nangle"
+            }
+          ]
+        },
+        {
+          "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3md7aaz5il225",
+          "snippets": [
+            {
+              "snippet": "Deeply saddened by the killing of ICU nurse Alex Pretti, 37, shot by federal agents in Minneapolis amid immigration enforcement. Condemn this tragedy and the reckless tactics causing it. Demand accountability and reform. STOP ICE and Border Patrol!",
+              "snippet_index": 0,
+              "full_name": "Andrew Beck",
+              "last_name": "Beck"
+            }
+          ]
+        },
+        {
+          "url": "https://www.donavanforcongress.com/priorities",
+          "snippets": [
+            {
+              "snippet": "I think everybody has a right to healthcare in this country. We live in the wealthiest country in the world, and we're sending money overseas to do God knows what, but we don't have enough to make sure that people have the care they need here. I think it's absurd.",
+              "snippet_index": 0,
+              "full_name": "Donavan McKinney",
+              "last_name": "McKinney"
+            }
+          ]
+        },
+        {
+          "url": "https://www.senatorwithrow.com/energy",
+          "snippets": [
+            {
+              "snippet": "Fossil fuels are obsolete...Building for the future based on resources we know will run out is beyond foolish.",
+              "snippet_index": 0,
+              "full_name": "Adam Withrow",
+              "last_name": "Withrow"
+            }
+          ]
+        },
+        {
+          "url": "https://www.noahforkansas.com/platform",
+          "snippets": [
+            {
+              "snippet": "I don't trade stocks or own crypto. I won't take corporate PAC money.",
+              "snippet_index": 0,
+              "full_name": "Noah Taylor",
+              "last_name": "Taylor"
+            }
+          ]
+        },
+        {
+          "url": "https://matthewhayesforcongress.com/Issues",
+          "snippets": [
+            {
+              "snippet": "In the Age of The Internet and Cable News, Disinformation presents a Clear and Present Danger to our Democracy... We must be vigilant in choosing reliable sources for our news and health information... Please reject all lies and falsehoods!",
+              "snippet_index": 0,
+              "full_name": "Matthew Hayes",
+              "last_name": "Hayes"
+            }
+          ]
+        },
+        {
+          "url": "https://www.lcv.org/congressional-scorecard/moc/shontel-brown",
+          "snippets": [
+            {
+              "snippet": "I am committed to aggressive action on climate change with net-zero emissions by 2050 and a carbon-free power sector by 2035.",
+              "snippet_index": 0,
+              "full_name": "Shontel M. Brown",
+              "last_name": "Brown"
+            }
+          ]
+        },
+        {
+          "url": "https://lawrencekstimes.com/2024/10/18/meet-dgcocomm-4-candidates-24/",
+          "snippets": [
+            {
+              "snippet": "I pledge I will turn in a revenue neutral budget and call for a vote on ending the county food sales tax.",
+              "snippet_index": 0,
+              "full_name": "Steven Jacob",
+              "last_name": "Jacob"
+            }
+          ]
+        },
+        {
+          "url": "https://ballotpedia.org/Cassie_Easley",
+          "snippets": [
+            {
+              "snippet": "Anything that falls outside of the Constitutional boundaries should not be funded.",
+              "snippet_index": 0,
+              "full_name": "Cassie Easley",
+              "last_name": "Easley"
+            }
+          ]
+        },
+        {
+          "url": "https://larrymarker.com/secure-new-mexico-borders/",
+          "snippets": [
+            {
+              "snippet": "State policies that block meaningful cooperation with federal immigration authorities make it harder to remove dangerous offenders and easier for criminal networks to keep operating.",
+              "snippet_index": 0,
+              "full_name": "Larry E. Marker",
+              "last_name": "Marker"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mainesenate.org/maine-legislature-passes-sen-talbot-ross-bill-to-seal-criminal-history-record-information-for-low-level-offenses/",
+          "snippets": [
+            {
+              "snippet": "This bill, if signed by Gov. Mills, will be a step in the right direction in recognizing Mainers who have paid their debt to society and wish to claim their lives back without fear of being penalized for life.",
+              "snippet_index": 0,
+              "full_name": "Rachel Talbot Ross",
+              "last_name": "Ross"
+            }
+          ]
+        },
+        {
+          "url": "https://www.lpm.org/news/2019-03-14/ky-legislature-passes-abortion-discrimination-bill-aclu-says-its-suing",
+          "snippets": [
+            {
+              "snippet": "House Bill 5 would hold the abortionist accountable for performing an abortion for a specific reason: because the baby is a boy or a girl, because the baby is a particular race or because they might be born with a known or suspected disability.",
+              "snippet_index": 0,
+              "full_name": "Ralph Alvarado",
+              "last_name": "Alvarado"
+            }
+          ]
+        },
+        {
+          "url": "https://www.change.org/p/lisa-murkowski-endorse-jim-mcdermott-for-u-s-congress",
+          "snippets": [
+            {
+              "snippet": "If I'm elected, I will champion cyber schools, home schools, public/charter schools, vouchers, choice.",
+              "snippet_index": 0,
+              "full_name": "James C. \"Jim\" McDermott",
+              "last_name": "McDermott"
+            }
+          ]
+        },
+        {
+          "url": "https://kutv.com/news/local/salt-lake-county-da-joins-79-prosecutors-leaders-to-defend-daca-program",
+          "snippets": [
+            {
+              "snippet": "When the law pushes individuals into the shadows, it creates opportunities for abuse, fear, and exploitation. The humane thing for the hundreds of thousands of DACA-eligible individuals who have committed no crimes and are otherwise law-abiding members of our communities is to give them the certainty of status so they can live without fear.",
+              "snippet_index": 0,
+              "full_name": "Sim Gill",
+              "last_name": "Gill"
+            }
+          ]
+        },
+        {
+          "url": "https://mainemorningstar.com/2024/02/22/seeking-full-enforcement-of-maine-civil-rights-act-talbot-ross-proposes-new-unit-in-ags-office/",
+          "snippets": [
+            {
+              "snippet": "This is not just a matter of reorganizing state government for the sake of expansion or improved functioning. This is a moment in which we can uphold our promise to Mainers now and in the future that we will do everything in our power to protect their rights as Americans and Mainers and to ensure that justice is done.",
+              "snippet_index": 0,
+              "full_name": "Rachel Talbot Ross",
+              "last_name": "Ross"
+            }
+          ]
+        },
+        {
+          "url": "https://voteforjillian.com/people-powered-elections",
+          "snippets": [
+            {
+              "snippet": "Our democracy isn't just broken, it's been sold to the highest bidder.",
+              "snippet_index": 0,
+              "full_name": "Jillian Gilchrest",
+              "last_name": "Gilchrest"
+            }
+          ]
+        },
+        {
+          "url": "https://ncdoj.gov/2026/04/",
+          "snippets": [
+            {
+              "snippet": "We have over 100,000 military servicemembers in North Carolina. I am one of them. Under current law, we can request and receive absentee ballots up until the day before the election, which matters because deployments can happen fast.",
+              "snippet_index": 0,
+              "full_name": "Jeff Jackson",
+              "last_name": "Jackson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.longislandpress.com/2025/07/08/salt-deduction-grows/",
+          "snippets": [
+            {
+              "snippet": "\"Just the SALT provision alone means that a Long Island family earning $250,000 and paying $18,000 in property taxes will get $5,000 more back when they file their 2025 taxes– real relief I fought tooth and nail to deliver.\"",
+              "snippet_index": 0,
+              "full_name": "Nick LaLota",
+              "last_name": "LaLota"
+            }
+          ]
+        },
+        {
+          "url": "https://www.heraldmailmedia.com/story/news/local/2024/04/01/democratic-candidates-weigh-in-on-western-marylands-top-priorities/73144386007/",
+          "snippets": [
+            {
+              "snippet": "I will invest in the EPA, support a key piece of legislation like the Clean Air Act and the Clean Water Act, and support our wildlife and national parks.",
+              "snippet_index": 0,
+              "full_name": "April McClain Delaney",
+              "last_name": "Delaney"
+            }
+          ]
+        },
+        {
+          "url": "https://ballotpedia.org/Andres_Valleza",
+          "snippets": [
+            {
+              "snippet": "Ensuring a fair playing field and safe locker rooms for women and girls.",
+              "snippet_index": 0,
+              "full_name": "Andres Valleza",
+              "last_name": "Valleza"
+            }
+          ]
+        },
+        {
+          "url": "https://littleforcongress.com/key-issues/fighting-for-anti-corruption-policies/",
+          "snippets": [
+            {
+              "snippet": "My campaign is powered by people, not AIPAC, not super PACs, health insurance PACs, and certainly not corporate PACs like big oil and big pharma.",
+              "snippet_index": 0,
+              "full_name": "Matt Little",
+              "last_name": "Little"
+            }
+          ]
+        },
+        {
+          "url": "https://indianacapitalchronicle.com/2025/12/05/indiana-house-approves-redistricting-bill-sending-issue-to-state-senate/",
+          "snippets": [
+            {
+              "snippet": "These maps have a very profound impact on the minority voters of Marion County and up in Lake County.",
+              "snippet_index": 0,
+              "full_name": "Matt Pierce",
+              "last_name": "Pierce"
+            }
+          ]
+        },
+        {
+          "url": "https://www.gov.ca.gov/2021/09/27/governor-newsom-signs-legislation-making-california-a-permanent-vote-by-mail-state/",
+          "snippets": [
+            {
+              "snippet": "California is now a permanent vote-by-mail state. Every registered voter will receive a ballot at home. Voting should be easy, accessible, and secure — and California is leading the way.",
+              "snippet_index": 0,
+              "full_name": "Gavin Newsom",
+              "last_name": "Newsom"
+            }
+          ]
+        },
+        {
+          "url": "https://www.latimes.com/politics/story/2025-01-21/schiff-opposes-trump-mass-deportation-policy",
+          "snippets": [
+            {
+              "snippet": "These mass deportation raids are un-American. They are tearing families apart, instilling fear in immigrant communities, and undermining the values that define us as a nation. Due process is not optional — it is a constitutional guarantee.",
+              "snippet_index": 0,
+              "full_name": "Adam B. Schiff",
+              "last_name": "Schiff"
+            }
+          ]
+        },
+        {
+          "url": "https://mesenategop.com/2026/03/10/sen-stewart-proposes-legislation-to-address-mainecare-integrity-and-sustainability-concerns/",
+          "snippets": [
+            {
+              "snippet": "MaineCare has a serious sustainability problem. It's incumbent upon the Legislature to rein in this program by both reducing fraud and making sure healthy adults on the program can better themselves and get off taxpayer-funded healthcare.",
+              "snippet_index": 0,
+              "full_name": "Trey L. Stewart",
+              "last_name": "Stewart"
+            }
+          ]
+        },
+        {
+          "url": "https://votevdo.com/issues/taxes",
+          "snippets": [
+            {
+              "snippet": "I also support making the Tax Cuts and Jobs Act provisions permanent, eliminating the SALT cap...The goal is simple: let families keep more of what they earn.",
+              "snippet_index": 0,
+              "full_name": "Victor Orlando",
+              "last_name": "Orlando"
+            }
+          ]
+        },
+        {
+          "url": "https://ballotpedia.org/Tomas_Scheel",
+          "snippets": [
+            {
+              "snippet": "Pass legislation to build an efficient, cost-effective, patient-focused, physician-led universal single-payer healthcare system for which ALL Americans can participate in, regardless of ability to pay.",
+              "snippet_index": 0,
+              "full_name": "Tomas Scheel",
+              "last_name": "Scheel"
+            }
+          ]
+        },
+        {
+          "url": "https://stefanyshaheen.com/issues",
+          "snippets": [
+            {
+              "snippet": "Get Dark Money Out: Overturn Citizens United and demand that anyone who wants to spend money on political ads or contribute to political candidates must do it in their own name, just like the rest of us.",
+              "snippet_index": 0,
+              "full_name": "Stefany Shaheen",
+              "last_name": "Shaheen"
+            }
+          ]
+        },
+        {
+          "url": "https://law.georgia.gov/press-releases/2026-01-13/carr-joins-republican-ags-fight-protect-womens-sports",
+          "snippets": [
+            {
+              "snippet": "Girls shouldn't be forced to compete against boys. It's basic science, it's common sense, and it's the law.",
+              "snippet_index": 0,
+              "full_name": "Chris Carr",
+              "last_name": "Carr"
+            }
+          ]
+        },
+        {
+          "url": "https://www.paigefornh.com/issues",
+          "snippets": [
+            {
+              "snippet": "\"Abolish ICE and hold those involved accountable.\"; \"I work with communities who are being affected by ICE to make sure that their families get support.\"",
+              "snippet_index": 0,
+              "full_name": "Paige Beauchemin",
+              "last_name": "Beauchemin"
+            }
+          ]
+        },
+        {
+          "url": "https://carson.house.gov/issues/homeland-security",
+          "snippets": [
+            {
+              "snippet": "not supporting the criminalization of immigrant communities, militarizing our boarder, and separating families or detaining children",
+              "snippet_index": 0,
+              "full_name": "André Carson",
+              "last_name": "Carson"
+            }
+          ]
+        },
+        {
+          "url": "https://bowenforcongress.com/",
+          "snippets": [
+            {
+              "snippet": "Fight inflation, confront the debt crisis, end wasteful spending habits, and restore policies that reward productive work and saving.",
+              "snippet_index": 0,
+              "full_name": "Carlton E. Bowen",
+              "last_name": "Bowen"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ktoo.org/2024/08/29/peltola-and-begich-square-off-in-their-first-forum-of-the-year/",
+          "snippets": [
+            {
+              "snippet": "in the Congress, there will be no better friend to the oil and gas industry in Alaska than I",
+              "snippet_index": 0,
+              "full_name": "Nicholas J. Begich III",
+              "last_name": "III"
+            }
+          ]
+        },
+        {
+          "url": "https://ocpathink.org/post/analysis/the-sky-wont-fall-when-oklahoma-empowers-parents",
+          "snippets": [
+            {
+              "snippet": "[School vouchers] are a way to defund public education and they are a rural school killer.",
+              "snippet_index": 0,
+              "full_name": "Jena Nelson",
+              "last_name": "Nelson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.votetimva.com/fair-shot-agenda",
+          "snippets": [
+            {
+              "snippet": "Give every voter publicly funded 'democracy dollars' — $500 voucher you can choose to spend on federal candidates",
+              "snippet_index": 0,
+              "full_name": "Tim Cywinski",
+              "last_name": "Cywinski"
+            }
+          ]
+        },
+        {
+          "url": "https://www.maine.gov/housedems/news/house-advances-bipartisan-zager-bill-require-health-insurance-coverage-biomarker-testing",
+          "snippets": [
+            {
+              "snippet": "Mainers who are facing a difficult health situation deserve to have the most effective and least harmful treatment for their specific version of a disease.",
+              "snippet_index": 0,
+              "full_name": "Samuel Zager",
+              "last_name": "Zager"
+            }
+          ]
+        },
+        {
+          "url": "https://petercrosbyforcongress.org/policies",
+          "snippets": [
+            {
+              "snippet": "[The bill] significantly cuts access to healthcare by reducing payments to Medicare starting in 2026 ... These cuts hit hardest in rural communities like those here in Northern Utah, and will make it more expensive to get access to medical care.",
+              "snippet_index": 0,
+              "full_name": "Peter Crosby",
+              "last_name": "Crosby"
+            }
+          ]
+        },
+        {
+          "url": "https://smarter.vote/races/ky-house-06-2026/pete-lynch/",
+          "snippets": [
+            {
+              "snippet": "Healthcare is a human right. Provide universal healthcare coverage for all Americans, eliminate out-of-pocket costs for essential services and prescriptions, simplify administration, and ensure care is accessible in rural and underserved areas.",
+              "snippet_index": 0,
+              "full_name": "Pete Lynch",
+              "last_name": "Lynch"
+            }
+          ]
+        },
+        {
+          "url": "https://marquitabradshaw.com/issues",
+          "snippets": [
+            {
+              "snippet": "As your Senator, I will fight to ensure Tennesseans going bankrupt from seeking needed Medical Care is a thing of the past.",
+              "snippet_index": 0,
+              "full_name": "Marquita Bradshaw",
+              "last_name": "Bradshaw"
+            }
+          ]
+        },
+        {
+          "url": "https://law.georgia.gov/press-releases/2026-05-26/carr-us-supreme-court-one-city-cannot-set-energy-policy-whole-country",
+          "snippets": [
+            {
+              "snippet": "The Left's obsession with climate warfare will only lead to higher costs and lost jobs.",
+              "snippet_index": 0,
+              "full_name": "Chris Carr",
+              "last_name": "Carr"
+            }
+          ]
+        },
+        {
+          "url": "https://www.in.gov/gov/newsroom/2025/01/governor-braun-signs-executive-order-protecting-life/",
+          "snippets": [
+            {
+              "snippet": "Today I signed an executive order ensuring Indiana continues to be a state that protects life. We will not waver in our commitment to defending the unborn and supporting mothers and families across our state.",
+              "snippet_index": 0,
+              "full_name": "Mike Braun",
+              "last_name": "Braun"
+            }
+          ]
+        },
+        {
+          "url": "https://johnpaultorresforcongress.com/issues",
+          "snippets": [
+            {
+              "snippet": "Every American deserves the freedom to be who they are and love who they love without fear of discrimination, violence, or government interference.",
+              "snippet_index": 0,
+              "full_name": "John Paul Torres",
+              "last_name": "Torres"
+            }
+          ]
+        },
+        {
+          "url": "https://www.gov.ca.gov/2022/09/16/governor-newsom-signs-sweeping-climate-legislation-unprecedented-in-its-scope/",
+          "snippets": [
+            {
+              "snippet": "This is the most significant package of climate legislation in the history of the United States. California is setting the tone for the rest of the world.",
+              "snippet_index": 0,
+              "full_name": "Gavin Newsom",
+              "last_name": "Newsom"
+            }
+          ]
+        },
+        {
+          "url": "https://www.ydutah.com/endorsements2026/peter-crosby",
+          "snippets": [
+            {
+              "snippet": "restore ACA subsidies while we work to create an effective single payer system for healthcare",
+              "snippet_index": 0,
+              "full_name": "Peter Crosby",
+              "last_name": "Crosby"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=gPfi_eDKkYE&t=1303s",
+          "snippets": [
+            {
+              "snippet": "You've got to look at the whole picture. I agree that this shouldn't be a burden on businesses. But who's going to pay for single-payer? That's a massive tax. I was in the UK government. We have the National Health Service in the UK, and that is single-payer. It's a massive component of the budget. It's a nightmare, a massive bureaucracy. People are very unhappy with a lot of the outcomes. The outcomes are much worse. I nearly died as a result of the failings of a single-payer health care system. The idea that single-payer healthcare is some perfect nirvana is just absolutely not true.",
+              "snippet_index": 0,
+              "full_name": "Steve Hilton",
+              "last_name": "Hilton"
+            }
+          ]
+        },
+        {
+          "url": "https://ltgov.ca.gov/2020/09/30/lt-governor-kounalakis-statement-on-governor-newsoms-signing-of-reparations-task-force-legislation/",
+          "snippets": [
+            {
+              "snippet": "The reparations task force is a critical step toward acknowledging the truth of our history and beginning to address the lasting harms of slavery and systemic racism. California is showing the nation that reconciliation is possible.",
+              "snippet_index": 0,
+              "full_name": "Eleni Kounalakis",
+              "last_name": "Kounalakis"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mattgromlichforcongress.com/q-a",
+          "snippets": [
+            {
+              "snippet": "Matt believes that we need both secure borders and a functional immigration system. One that respects the dignity of the people coming here and recognizes their desire to contribute and be productive members of our society.",
+              "snippet_index": 0,
+              "full_name": "Matt Gromlich",
+              "last_name": "Gromlich"
+            }
+          ]
+        },
+        {
+          "url": "http://kevincraig.us/social_security.htm",
+          "snippets": [
+            {
+              "snippet": "allow young workers to redirect their payroll taxes to individually owned, privately invested retirement accounts",
+              "snippet_index": 0,
+              "full_name": "Kevin Craig",
+              "last_name": "Craig"
+            }
+          ]
+        },
+        {
+          "url": "https://treasurer.ks.gov/",
+          "snippets": [
+            {
+              "snippet": "From the farmhouse to the statehouse, I'm always looking for ways to increase efficiency and eliminate waste.",
+              "snippet_index": 0,
+              "full_name": "Steven Johnson",
+              "last_name": "Johnson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mcclainforsc.com/issues/your-issue-title-here8",
+          "snippets": [
+            {
+              "snippet": "Ensure dignity and due process by increasing funding to the immigration court system to ensure counsel for all, especially children and asylum-seekers.",
+              "snippet_index": 0,
+              "full_name": "Courtney McClain",
+              "last_name": "McClain"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=-_LHkpd7PcM&t=3142s",
+          "snippets": [
+            {
+              "snippet": "on artificial intelligence, we want to make sure that when artificial intelligence is based here, and it should be based here because this is the home of artificial intelligence, that it is doing more than just taking care of its own needs. It is helping take care of the needs of communities that are in California because it is an industry that is going to offer us great opportunity. At the same time, we want to make sure we're offering the protections that our families need, our children, our workers. We have to make sure that as we harness AI, we do it before AI harnesses us. And so, that means taking advantage of working with them to establish a clear set of rules on how they will operate.",
+              "snippet_index": 0,
+              "full_name": "Xavier Becerra",
+              "last_name": "Becerra"
+            }
+          ]
+        },
+        {
+          "url": "https://www.indystar.com/story/news/politics/2019/11/20/braun-opposes-indiana-medicaid-expansion/",
+          "snippets": [
+            {
+              "snippet": "We need to focus on making healthcare more affordable for Hoosiers, not simply expanding government programs that are already unsustainable. Medicaid expansion without reforms is not the answer.",
+              "snippet_index": 0,
+              "full_name": "Mike Braun",
+              "last_name": "Braun"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mckayforussenate.com/right-direction/",
+          "snippets": [
+            {
+              "snippet": "committed to addressing responsible immigration and enforcement policies that consider the best interest of Rhode Islanders and Americans First",
+              "snippet_index": 0,
+              "full_name": "Raymond McKay",
+              "last_name": "McKay"
+            }
+          ]
+        },
+        {
+          "url": "https://libertyfirst.org/2026-candidates-patrick-mcauley-r-indiana-7th-congressional-district/",
+          "snippets": [
+            {
+              "snippet": "I would vote for the Save America Act if I were in the Senate today.",
+              "snippet_index": 0,
+              "full_name": "Patrick Mcauley",
+              "last_name": "Mcauley"
+            }
+          ]
+        },
+        {
+          "url": "https://www.vincegeorgeforcongress.com/issues",
+          "snippets": [
+            {
+              "snippet": "I also believe in a free market that allows renewable energy to expand in West Virginia if that's what businesses want to do. This would create more jobs and lower electrical costs.",
+              "snippet_index": 0,
+              "full_name": "Vince George",
+              "last_name": "George"
+            }
+          ]
+        },
+        {
+          "url": "https://terrideboer.com/priorities",
+          "snippets": [
+            {
+              "snippet": "Secure the border and enforce immigration laws. Stop illegal immigration and human exploitation.",
+              "snippet_index": 0,
+              "full_name": "Terri DeBoer",
+              "last_name": "DeBoer"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=zeD5gpUG-p0&t=1000s",
+          "snippets": [
+            {
+              "snippet": "I would like to see us tax billionaires at 7% of their wealth. You tax a billionaire 7, 8%, you know what they still are? Still a billionaire.",
+              "snippet_index": 0,
+              "full_name": "Abdul El-Sayed",
+              "last_name": "El-Sayed"
+            }
+          ]
+        },
+        {
+          "url": "https://www.traci4countycouncil.com/issues",
+          "snippets": [
+            {
+              "snippet": "\"Fiscal responsibility means focusing on core services, avoiding unnecessary expansion, and regularly reviewing programs to make sure they're actually delivering value.\"",
+              "snippet_index": 0,
+              "full_name": "Traci Crockett",
+              "last_name": "Crockett"
+            }
+          ]
+        },
+        {
+          "url": "https://montanatalks.com/attacks-on-christians-on-the-rise-we-see-it-in-montana-too/",
+          "snippets": [
+            {
+              "snippet": "We talked about how Left-leaning Western governments took advantage of the powers of COVID-19 to shut down churches, all the while leaving abortion mills and strip clubs open.",
+              "snippet_index": 0,
+              "full_name": "Aaron Flint",
+              "last_name": "Flint"
+            }
+          ]
+        },
+        {
+          "url": "https://mesenategop.com/2025/02/16/republicans-stand-ready-to-make-tough-budget-decisions/",
+          "snippets": [
+            {
+              "snippet": "Republicans also introduced amendments aimed at returning MaineCare back to the program it was meant to be – a safety net to help Maine's most needy residents.",
+              "snippet_index": 0,
+              "full_name": "Susan Bernard",
+              "last_name": "Bernard"
+            }
+          ]
+        },
+        {
+          "url": "https://www.williamsforky.com/housing",
+          "snippets": [
+            {
+              "snippet": "Invest in communities around America to incentivize construction of 4 million affordable starter homes within five years.",
+              "snippet_index": 0,
+              "full_name": "John \"Drew\" Williams",
+              "last_name": "Williams"
+            }
+          ]
+        },
+        {
+          "url": "https://ag.louisiana.gov/News",
+          "snippets": [
+            {
+              "snippet": "Louisiana and Missouri secure federal consent decree with the Trump administration, barring the federal government from using Biden-era coercion tactics to force social media companies into censoring the speech of the American people.",
+              "snippet_index": 0,
+              "full_name": "Liz Murrill",
+              "last_name": "Murrill"
+            }
+          ]
+        },
+        {
+          "url": "https://www.indystar.com/story/news/politics/2020/01/16/braun-votes-yes-usmca-trade-deal/4487568002/",
+          "snippets": [
+            {
+              "snippet": "I voted yes on the USMCA. It is a better deal for Indiana farmers and workers. We need to update these trade agreements to reflect the modern economy and protect American jobs.",
+              "snippet_index": 0,
+              "full_name": "Mike Braun",
+              "last_name": "Braun"
+            }
+          ]
+        },
+        {
+          "url": "https://news.delaware.gov/2026/01/23/ag-jennings-colleagues-demand-action-from-xai-over-groks-creation-of-nonconsensual-sexual-content/",
+          "snippets": [
+            {
+              "snippet": "The Delaware Department of Justice is both a civil and criminal enforcement agency with broad jurisdiction — we can, and regularly do, use our full authority to protect Delaware's children.",
+              "snippet_index": 0,
+              "full_name": "Kathy Jennings",
+              "last_name": "Jennings"
+            }
+          ]
+        },
+        {
+          "url": "https://www.insidenova.com/news/loudoun/three-way-race-to-determine-gop-challenger-for-subramanyam-s-10th-district-seat/article_af2200d5-1bbc-41a6-843a-813a84055459.html",
+          "snippets": [
+            {
+              "snippet": "I have seen too many school officials waste federal dollars...on corruption, administrative bloat, DEI programs and overspending on lawyers to cover up their corruption.",
+              "snippet_index": 0,
+              "full_name": "Julie Perry",
+              "last_name": "Perry"
+            }
+          ]
+        },
+        {
+          "url": "https://www.alreporter.com/2021/04/rogers-brooks-moore-and-aderholt-call-for-vote-on-born-alive-survivors-protection-act/",
+          "snippets": [
+            {
+              "snippet": "I strongly believe babies born alive through a botched abortion deserve medical care.",
+              "snippet_index": 0,
+              "full_name": "Barry Moore",
+              "last_name": "Moore"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1wbrjc25WP8&t=1228s",
+          "snippets": [
+            {
+              "snippet": "The most important thing we can do is stabilize. Not just the price, but stabilize the supply and stabilize the distribution of gas. Because if you can provide some predictability, you won't see the spikes in the price of gas the way you see now. … What we have to do is make sure we've got the refinery capacity, we've got the distribution capacity, and the last thing we need to do is be importing oil into California.",
+              "snippet_index": 0,
+              "full_name": "Xavier Becerra",
+              "last_name": "Becerra"
+            }
+          ]
+        },
+        {
+          "url": "https://wilsonwv.com",
+          "snippets": [
+            {
+              "snippet": "Marshall will fight to unleash West Virginia's energy economy, cut regulations that strangle small businesses, and put hard-working Mountain State families first.",
+              "snippet_index": 0,
+              "full_name": "S. Marshall Wilson",
+              "last_name": "Wilson"
+            }
+          ]
+        },
+        {
+          "url": "https://tedbrown.org",
+          "snippets": [
+            {
+              "snippet": "Repeal the income tax, abolish the IRS, and replace them with nothing.",
+              "snippet_index": 0,
+              "full_name": "Ted Brown",
+              "last_name": "Brown"
+            }
+          ]
+        },
+        {
+          "url": "https://www.themainewire.com/2025/02/there-is-no-increased-risk-to-the-public-maine-democrat-wants-to-repeal-the-crime-of-violating-bail-to-reduce-case-backlog/",
+          "snippets": [
+            {
+              "snippet": "There is no increased risk to the public if this bill is passed. But what there is for the public is a significant lightening of the court's criminal dockets.",
+              "snippet_index": 0,
+              "full_name": "David Sinclair",
+              "last_name": "Sinclair"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mtpr.org/montana-news/2026-04-17/patrick-mccracken-interview",
+          "snippets": [
+            {
+              "snippet": "the way that Trump enacted the tariffs was strong-handed and didn't leave a lot of room for our trading partners to adjust in a timely fashion",
+              "snippet_index": 0,
+              "full_name": "Patrick McCracken",
+              "last_name": "McCracken"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=CKu9rBJTNYw&t=3056s",
+          "snippets": [
+            {
+              "snippet": "We should try to get to a Medicare for all program. And while we are continuing to work in that direction, we should make sure we are expanding coverage, because the most important thing we have to do is give people peace of mind that they can afford their healthcare, and that we will continue to give it to more families.",
+              "snippet_index": 0,
+              "full_name": "Xavier Becerra",
+              "last_name": "Becerra"
+            }
+          ]
+        },
+        {
+          "url": "https://chaplainstevenstjohnforcongress.com/Solutions.html",
+          "snippets": [
+            {
+              "snippet": "Seniors who worked all their lives should not be pushed into hardship. Social Security and pensions are not handouts — they are promises and earned benefits.",
+              "snippet_index": 0,
+              "full_name": "Steven St John",
+              "last_name": "John"
+            }
+          ]
+        },
+        {
+          "url": "https://sos.wyo.gov/Media/2025/SoS_Release_2025-08-04.pdf",
+          "snippets": [
+            {
+              "snippet": "\"For far too long, when we've tried to advance efforts to stop illegal immigration, we've been told by the liberal media and the liberal insiders the worn-out slogan that 'nothing's happening here.'\"",
+              "snippet_index": 0,
+              "full_name": "Chuck Gray",
+              "last_name": "Gray"
+            }
+          ]
+        },
+        {
+          "url": "https://www.laurenforkansas.com/priorities",
+          "snippets": [
+            {
+              "snippet": "common-sense immigration reform that secures our borders while providing a fair path to citizenship",
+              "snippet_index": 0,
+              "full_name": "Lauren Reinhold",
+              "last_name": "Reinhold"
+            }
+          ]
+        },
+        {
+          "url": "https://www.indystar.com/story/news/politics/2024/06/08/micah-beckwith-indiana-lt-governor-convention-pastor/73984253007/",
+          "snippets": [
+            {
+              "snippet": "I am unashamedly pro-life. Life begins at conception, and it is the government's job to protect innocent human life. Indiana has been a leader in protecting the unborn, and I will continue that work as Lieutenant Governor.",
+              "snippet_index": 0,
+              "full_name": "Micah Beckwith",
+              "last_name": "Beckwith"
+            }
+          ]
+        },
+        {
+          "url": "https://ag.ny.gov/resources/individuals/reproductive-rights",
+          "snippets": [
+            {
+              "snippet": "I was just elected and I was faced with the decision of whether to have an abortion or not, and I chose to have an abortion. I walked proudly into Planned Parenthood, and I make no apologies to anyone.",
+              "snippet_index": 0,
+              "full_name": "Letitia James",
+              "last_name": "James"
+            }
+          ]
+        },
+        {
+          "url": "https://www.sltrib.com/news/2026/06/07/former-teacher-policy-official/",
+          "snippets": [
+            {
+              "snippet": "I'll protect the independent redistricting commission. It is a conflict of interest for the legislature to draw its own maps and directly undermine the voice of the people.",
+              "snippet_index": 0,
+              "full_name": "Julie Jackson",
+              "last_name": "Jackson"
+            }
+          ]
+        },
+        {
+          "url": "https://www.dittmerforcongress.com/priorities/immigration",
+          "snippets": [
+            {
+              "snippet": "I support serious immigration reform that strengthens border security, treats people with dignity, and attracts hardworking talent to the United States.",
+              "snippet_index": 0,
+              "full_name": "Mallory Dittmer",
+              "last_name": "Dittmer"
+            }
+          ]
+        },
+        {
+          "url": "https://www.davidredkey4congress.com/fights-for-reproductive-rights",
+          "snippets": [
+            {
+              "snippet": "I believe every woman has the absolute right to decide what happens to her own body, her health, and her future—free from political or governmental interference.",
+              "snippet_index": 0,
+              "full_name": "David Redkey",
+              "last_name": "Redkey"
+            }
+          ]
+        },
+        {
+          "url": "https://munterforcongress.substack.com/p/illegal-immigration-solutions",
+          "snippets": [
+            {
+              "snippet": "victims of human trafficking (defined as involving fraud, force, or coercion) working there can be given the choice to receive visas as victims to work in legitimate enterprises or accept deportation if undocumented",
+              "snippet_index": 0,
+              "full_name": "John Munter",
+              "last_name": "Munter"
+            }
+          ]
+        },
+        {
+          "url": "https://decioforcongress.com/decio-announcement-speech/",
+          "snippets": [
+            {
+              "snippet": "To help Indiana businesses—mom and pop shops in Goshen, manufacturers in Elkhart and Warsaw, entrepreneurs in South Bend—deal with the volatility of tariffs, so they can grow and generate good-paying jobs.",
+              "snippet_index": 0,
+              "full_name": "Jamee Decio",
+              "last_name": "Decio"
+            }
+          ]
+        },
+        {
+          "url": "https://bobbykhanforcongress.com/solutions/",
+          "snippets": [
+            {
+              "snippet": "Bobby supports unleashing American energy—oil, natural gas, and nuclear—so we can drive down utility bills, gas prices, and inflation",
+              "snippet_index": 0,
+              "full_name": "Bobby Khan",
+              "last_name": "Khan"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kellythompsonforcongress.com/policies/healthcare/healthcare",
+          "snippets": [
+            {
+              "snippet": "A study done by the Koch Brothers at The Mercatus Center has shown that the proposal moving us to an all-in system would save Americans $2 Trillion.",
+              "snippet_index": 0,
+              "full_name": "Kelly Thompson",
+              "last_name": "Thompson"
+            }
+          ]
+        },
+        {
+          "url": "http://www.mcdermott4congress4alaska.com/issues.html",
+          "snippets": [
+            {
+              "snippet": "I believe we ought to allow for a more free flow of immigration (work-visa) for those who can find work & contribute to our society.",
+              "snippet_index": 0,
+              "full_name": "James C. \"Jim\" McDermott",
+              "last_name": "McDermott"
+            }
+          ]
+        },
+        {
+          "url": "https://mainehousegop.org/newsroom/maines-housing-situation-changed-drastically-in-5-years/",
+          "snippets": [
+            {
+              "snippet": "General assistance was designed to meet the basic needs of community residents, not accommodate large numbers of people shipped here from the southern border.",
+              "snippet_index": 0,
+              "full_name": "Jennifer Poirier",
+              "last_name": "Poirier"
+            }
+          ]
+        },
+        {
+          "url": "https://carl4congress.com/position-on-immigration/",
+          "snippets": [
+            {
+              "snippet": "We should deport as many illegal entrants as possible, focusing on criminals, recent arrivals, and those who refuse to assimilate.",
+              "snippet_index": 0,
+              "full_name": "Carl Boyanton",
+              "last_name": "Boyanton"
+            }
+          ]
+        },
+        {
+          "url": "https://votewaynerussell.com/healthcare/",
+          "snippets": [
+            {
+              "snippet": "Restore, improve and pay tax credits for Affordable Care Act while working toward universal health care.",
+              "snippet_index": 0,
+              "full_name": "Wayne Russell",
+              "last_name": "Russell"
+            }
+          ]
+        },
+        {
+          "url": "https://www.padenforutah.com/platform",
+          "snippets": [
+            {
+              "snippet": "Housing is a human right, and we must keep District 13 a place where everyone can live, work, and thrive",
+              "snippet_index": 0,
+              "full_name": "Taylor J. Paden",
+              "last_name": "Paden"
+            }
+          ]
+        },
+        {
+          "url": "https://olszewski.house.gov/media/press-releases/olszewski-issues-statement-ahead-no-vote-ice-funding",
+          "snippets": [
+            {
+              "snippet": "I refuse to support legislation that allows ICE to continue operating without accountability.",
+              "snippet_index": 0,
+              "full_name": "Johnny Olszewski",
+              "last_name": "Olszewski"
+            }
+          ]
+        },
+        {
+          "url": "https://nataliefleming.info/just-a-few-issues/",
+          "snippets": [
+            {
+              "snippet": "We will end the corporate stranglehold by overturning Citizens United, reforming campaign finance, and restoring transparency.",
+              "snippet_index": 0,
+              "full_name": "Natalie M Fleming",
+              "last_name": "Fleming"
+            }
+          ]
+        },
+        {
+          "url": "https://nebraskaexaminer.com/voter-guides/contests/2026-primary-u-s-house-district-3/",
+          "snippets": [
+            {
+              "snippet": "make it easier for immigrants to get a work visa, then a pathway to U.S. citizenship if they are not criminals.",
+              "snippet_index": 0,
+              "full_name": "David Else",
+              "last_name": "Else"
+            }
+          ]
+        },
+        {
+          "url": "https://www.marquitabradshaw.com/issues",
+          "snippets": [
+            {
+              "snippet": "We should always be the beacon for families looking for better opportunities to find refuge from oppression, tyranny, violence, and prosecution.",
+              "snippet_index": 0,
+              "full_name": "Marquita Bradshaw",
+              "last_name": "Bradshaw"
+            }
+          ]
+        },
+        {
+          "url": "https://moforcongress.com/issues",
+          "snippets": [
+            {
+              "snippet": "Affordability is the biggest issue... Places like Arlington and Alexandria have among the highest childcare costs in the country, which puts significant pressure on families.",
+              "snippet_index": 0,
+              "full_name": "Mo Seifeldein",
+              "last_name": "Seifeldein"
+            }
+          ]
+        },
+        {
+          "url": "https://baumforwisconsin.com/my-platform/",
+          "snippets": [
+            {
+              "snippet": "Support zoning reform that gives communities the flexibility to build workforce housing, starter homes, and accessory dwelling units without unnecessary barriers, while keeping land use decisions at the local level where they belong.",
+              "snippet_index": 0,
+              "full_name": "Niina Baum",
+              "last_name": "Baum"
+            }
+          ]
+        },
+        {
+          "url": "https://www.maine.gov/housedems/news/skold-introduces-bill-increase-voting-access-mainers",
+          "snippets": [
+            {
+              "snippet": "This bill would improve voter access by giving working Mainers an opportunity to vote on the weekend.",
+              "snippet_index": 0,
+              "full_name": "Charles Skold",
+              "last_name": "Skold"
+            }
+          ]
+        },
+        {
+          "url": "https://www.mattschultzforalaska.com/news",
+          "snippets": [
+            {
+              "snippet": "I'm pro-choice because of my faith, not in spite of it. Politics don't belong in the exam room.",
+              "snippet_index": 0,
+              "full_name": "Matt Schultz",
+              "last_name": "Schultz"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

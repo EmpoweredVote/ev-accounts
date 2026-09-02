@@ -1,0 +1,3861 @@
+{
+  "extractor": "readability",
+  "tier2": "disabled (matches production: no browser)",
+  "sample_path": "data/stance-research/extraction-sample-2026-09-01.json",
+  "started_at": "2026-09-02T00:31:39.122Z",
+  "finished_at": "2026-09-02T00:32:54.428Z",
+  "per_slice": {
+    "stance": {
+      "urls": 139,
+      "snippets": 183,
+      "verified": 131,
+      "median_extracted_chars": 4876,
+      "by_verdict": {
+        "snippet_too_short": 24,
+        "verified": 131,
+        "snippet_not_found": 24,
+        "name_not_present": 4
+      },
+      "by_tier": {
+        "http": 126,
+        "wayback": 13
+      }
+    },
+    "quote": {
+      "urls": 100,
+      "snippets": 100,
+      "verified": 22,
+      "median_extracted_chars": 2996,
+      "by_verdict": {
+        "snippet_not_found": 32,
+        "verified": 22,
+        "name_not_present": 34,
+        "url_broken": 12
+      },
+      "by_tier": {
+        "http": 82,
+        "wayback": 6,
+        "none": 12
+      }
+    }
+  },
+  "urls": [
+    {
+      "slice": "stance",
+      "url": "https://calmatters.org/housing/homelessness/2023/07/los-angeles-homeless-encampments/",
+      "tier": "http",
+      "extracted_chars": 13778,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://campaignlegal.org/update/campaign-legal-center-continues-fight-fair-maps-utah",
+      "tier": "http",
+      "extracted_chars": 5136,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://cowboystatedaily.com/2024/11/18/wyoming-delegation-urges-mountain-west-conf-to-ban-males-from-womens-sports/",
+      "tier": "http",
+      "extracted_chars": 8418,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://dailybruin.com/2023/05/27/proposed-la-city-budget-aims-to-address-homelessness-fund-police-expansion",
+      "tier": "http",
+      "extracted_chars": 4530,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://en.wikipedia.org/wiki/Blake_Moore",
+      "tier": "http",
+      "extracted_chars": 16728,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://en.wikipedia.org/wiki/League_of_Women_Voters_v._Utah_State_Legislature",
+      "tier": "http",
+      "extracted_chars": 10307,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://ironcountytoday.com/2025/02/11/rep-maloy-introduces-west-act-to-overturn-illegal-conservation-and-landscape-health-rule/",
+      "tier": "http",
+      "extracted_chars": 2682,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://ksltv.com/local-news/signatures-gathered-to-put-prop-4/878409/",
+      "tier": "http",
+      "extracted_chars": 3749,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://kutv.com/news/local/salt-lake-county-da-among-39-us-prosecutors-demanding-police-reform",
+      "tier": "http",
+      "extracted_chars": 13655,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://kutv.com/news/local/salt-lake-county-da-joins-79-prosecutors-leaders-to-defend-daca-program",
+      "tier": "http",
+      "extracted_chars": 2978,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-ed1-mayor-karen-bass-executive-directive-affordable-housing-city-ceqa-appeals-environmental-review-sawtelle",
+      "tier": "http",
+      "extracted_chars": 11967,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://larchmontbuzz.com/larchmont-village-news/mayor-karen-bass-requests-veto-on-sb-79/",
+      "tier": "wayback",
+      "extracted_chars": 3765,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/InsideSafe",
+      "tier": "wayback",
+      "extracted_chars": 3917,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/news/making-la-more-affordable-mayor-bass-enacts-new-tenant-protections-caps-rent-apartment-units",
+      "tier": "wayback",
+      "extracted_chars": 2603,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/news/mayor-bass-directs-permitting-reforms-streamline-housing-and-business-development-across-los",
+      "tier": "wayback",
+      "extracted_chars": 5073,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/news/mayor-bass-introduces-metro-motion-promote-ridership-expand-service-and-improve-regional",
+      "tier": "wayback",
+      "extracted_chars": 11026,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/news/mayor-bass-issues-executive-directive-4-support-small-business-creation-development-and-growth",
+      "tier": "wayback",
+      "extracted_chars": 6577,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/news/mayor-bass-signs-executive-directive-17-bolstering-las-defense-against-escalating-ice-raids",
+      "tier": "wayback",
+      "extracted_chars": 15244,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://mayor.lacity.gov/ShineLA",
+      "tier": "wayback",
+      "extracted_chars": 2937,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://ontheissues.org/House/Blake_Moore_Abortion.htm",
+      "tier": "http",
+      "extracted_chars": 4846,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://owens.house.gov/posts/owens-fights-for-election-integrity",
+      "tier": "http",
+      "extracted_chars": 1186,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://owens.house.gov/posts/owens-supports-legislation-to-boost-domestic-energy-production",
+      "tier": "http",
+      "extracted_chars": 1344,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://owens.house.gov/resources/immigration-and-border-security",
+      "tier": "http",
+      "extracted_chars": 578,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://politicit.com/the-politics-behind-the-save-act/",
+      "tier": "http",
+      "extracted_chars": 5428,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://reproductivefreedomforall.org/lawmaker/blake-moore/",
+      "tier": "http",
+      "extracted_chars": 13243,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://rollcall.com/2021/06/28/utah-rep-burgess-owens-fined-by-fec-for-undisclosed-contributions/",
+      "tier": "http",
+      "extracted_chars": 2820,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://rollcall.com/2025/04/09/as-republicans-defend-trade-agenda-trump-changes-course/",
+      "tier": "http",
+      "extracted_chars": 6357,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://senate.utah.gov/president-adams-and-speaker-schultz-respond-to-utah-supreme-court-decision-2/",
+      "tier": "http",
+      "extracted_chars": 809,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://senate.utah.gov/tax-cuts-for-all-utahns-at-every-stage-of-life/",
+      "tier": "http",
+      "extracted_chars": 3658,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://senate.utah.gov/utah-leaders-celebrate-landmark-energy-legislation-to-power-utahs-future/",
+      "tier": "http",
+      "extracted_chars": 4229,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://sheriffnickroberts.com/vision",
+      "tier": "http",
+      "extracted_chars": 1013,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Nicholas Roberts",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://smdp.com/government-politics-2/copy-of-a-multi-million-dollar-cleanup-budget-and-la-still-looks-like-a-dump/",
+      "tier": "http",
+      "extracted_chars": 10458,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://texasinsider.org/articles/sen-cruz-introduces-universal-school-choice-act",
+      "tier": "http",
+      "extracted_chars": 3211,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://therealdeal.com/la/2023/11/08/las-karen-bass-directs-city-to-streamline-housing-projects/",
+      "tier": "wayback",
+      "extracted_chars": 3148,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://traci4countycouncil.com/",
+      "tier": "http",
+      "extracted_chars": 626,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Traci Crockett",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/65290-owens-backs-legislation-to-make-republican-tax-cuts-permanent",
+      "tier": "http",
+      "extracted_chars": 2631,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/68596-owens-co-sponsors-bill-to-support-retired-public-servants",
+      "tier": "http",
+      "extracted_chars": 1845,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/73074-moore-introduces-legislation-to-enhance-the-child-tax-credit-and-provide-tax-relief-for-parents",
+      "tier": "http",
+      "extracted_chars": 7646,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/75994-maloy-and-auchincloss-introduce-deepfake-liability-act",
+      "tier": "http",
+      "extracted_chars": 2865,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/76329-kent-davis-announces-run-for-salt-lake-county-district-attorney",
+      "tier": "http",
+      "extracted_chars": 2281,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Kent Davis",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Kent Davis",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/76604-moore-introduces-legislation-to-reform-budget-process",
+      "tier": "http",
+      "extracted_chars": 3385,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/76848-salt-lake-county-council-votes-to-explore-child-care-options",
+      "tier": "http",
+      "extracted_chars": 1919,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jiro Johnson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolicy.com/news-release/77132-moore-introduces-bill-to-protect-the-tax-exempt-status-of-religious-organizations",
+      "tier": "http",
+      "extracted_chars": 9295,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://utahpolitics.news/putin-started-the-war-utah-republican-defies-trump-on-ukraine/",
+      "tier": "http",
+      "extracted_chars": 2554,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://votechrisnull.com/",
+      "tier": "http",
+      "extracted_chars": 3037,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Chris Null",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.advocates4cre.org/blog/congressman-begich-leads-legislation-to-lower-energy-costs-introduces-house-version-of-the-data-act",
+      "tier": "http",
+      "extracted_chars": 2045,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.aha.org/news/headline/2026-04-21-rep-blake-moore-discusses-health-care-affordability",
+      "tier": "http",
+      "extracted_chars": 1240,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.cachevalleydaily.com/news/local/u-s-rep-blake-moore-defends-his-support-for-95-3-billion-foreign-aid-package/article_f534e246-073c-11ef-a0e7-73ee34cde3b6.html",
+      "tier": "http",
+      "extracted_chars": 3644,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.cachevalleydaily.com/news/u-s-rep-blake-moore-proposes-legislation-to-ban-toys-with-artificial-intelligence-in-u/article_43800807-313d-466b-a97a-8312487c02af.html",
+      "tier": "wayback",
+      "extracted_chars": 2947,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.cbsnews.com/losangeles/news/mayor-karen-bass-signs-executive-directive-prohibiting-ice-immigrations-agents-city-property/",
+      "tier": "http",
+      "extracted_chars": 3215,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.davis4da.com/policies",
+      "tier": "http",
+      "extracted_chars": 2142,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Kent Davis",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/2018/7/21/20649537/utah-state-courts-lack-diversity-among-judges/",
+      "tier": "http",
+      "extracted_chars": 8100,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jiro Johnson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/2019/1/28/20664583/utah-lawmakers-intend-to-fight-voter-approved-medicaid-expansion",
+      "tier": "http",
+      "extracted_chars": 10159,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/2022/3/4/22962671/transgender-athlete-ban-utah-legislature-substitute-bill-final-hours-sports/",
+      "tier": "http",
+      "extracted_chars": 11313,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/2023/7/24/23791698/celeste-maloy-the-country-girl-running-for-congress/",
+      "tier": "http",
+      "extracted_chars": 14149,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/2024/2/6/24062645/rep-burgess-owens-rep-celeste-maloy-118-billion-border-bill/",
+      "tier": "http",
+      "extracted_chars": 5324,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/opinion/2025/05/15/utah-families-need-child-care-development-block-grant-funding/",
+      "tier": "http",
+      "extracted_chars": 2507,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2024/04/20/utah-delegation-votes-on-house-foreign-aid-ukraine-israel-tiktok/",
+      "tier": "http",
+      "extracted_chars": 10155,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2024/07/10/save-act-passes-house-proof-of-citizenship-for-voting-in-federal-elections/",
+      "tier": "http",
+      "extracted_chars": 5345,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2024/08/01/utah-supreme-court-ruling-abortion-reactions/",
+      "tier": "http",
+      "extracted_chars": 10584,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2024/10/24/utah-burgess-owens-debate-2024/",
+      "tier": "http",
+      "extracted_chars": 7397,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/01/08/house-laken-riley-act-pass-senate-democrats-split/",
+      "tier": "http",
+      "extracted_chars": 4623,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/02/25/sen-escamillas-sb284-would-expand-medicaid-doula-services/",
+      "tier": "http",
+      "extracted_chars": 3437,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/03/06/utah-legislature-cuts-income-tax-and-social-security-tax/",
+      "tier": "http",
+      "extracted_chars": 4026,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/04/04/utah-responds-to-trump-tariffs/",
+      "tier": "http",
+      "extracted_chars": 6720,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/04/18/utah-rep-kennedy-visits-el-salvador-prison/",
+      "tier": "http",
+      "extracted_chars": 4940,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/07/02/medicaid-cuts-senate-big-beautiful-bill/",
+      "tier": "http",
+      "extracted_chars": 11442,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/07/03/utah-lawmakers-react-to-big-beautiful-bill/",
+      "tier": "http",
+      "extracted_chars": 4876,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/08/18/utah-congressmen-blake-moore-and-mike-kennedy-defend-trump-deportations-as-consequence-of-biden-border-policy/",
+      "tier": "http",
+      "extracted_chars": 7114,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2025/12/03/reps-maloy-and-auchincloss-introduce-deepfake-liability-act/",
+      "tier": "http",
+      "extracted_chars": 5342,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2026/01/06/what-hyde-amendment-how-stalling-health-care-talks/",
+      "tier": "http",
+      "extracted_chars": 5439,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2026/01/23/trump-endorses-utah-republican-initiative-to-repeal-redistricting-law/",
+      "tier": "http",
+      "extracted_chars": 8036,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2026/04/25/rep-mike-kennedy-wins-gop-nomination-congressional-district-4/",
+      "tier": "http",
+      "extracted_chars": 2369,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/politics/2026/05/13/burgess-owens-restrict-dei-initiatives-in-schools/",
+      "tier": "http",
+      "extracted_chars": 4598,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2019/9/24/20881853/salt-lake-candidate-escamilla-announces-green-policies-unveils-support-from-former-primary-opponent/",
+      "tier": "http",
+      "extracted_chars": 6171,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2022/12/8/23499239/house-passes-respect-marriage-act-utah-republican-vote-religious-liberty/",
+      "tier": "http",
+      "extracted_chars": 6991,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2022/3/25/22996277/you-belong-salt-lake-city-leaders-tell-utah-transgender-youth-veto-override-lgbt-politics-sports-ban/",
+      "tier": "http",
+      "extracted_chars": 21108,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2022/5/12/23068647/disinformation-governance-board-burgess-owens-defund-ministry-of-truth-joe-biden-misinformation/",
+      "tier": "http",
+      "extracted_chars": 2855,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2022/8/12/23302914/utah-republican-house-vote-inflation-reduction-act-climate-change-health-care-democrats-biden/",
+      "tier": "http",
+      "extracted_chars": 8009,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2023/1/25/23569355/utah-senate-approves-choice-scholarship-teacher-compensation-bill/",
+      "tier": "http",
+      "extracted_chars": 9129,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2023/3/3/23624526/utah-bill-to-close-abortion-clinics-passes-legislature/",
+      "tier": "http",
+      "extracted_chars": 8146,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2024/03/02/utah-legislature-approves-another-tax-cut/",
+      "tier": "http",
+      "extracted_chars": 6624,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2024/05/29/utah-teacher-union-sues-over-school-choice/",
+      "tier": "http",
+      "extracted_chars": 8535,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2024/05/31/mike-kennedy-is-running-to-replace-john-curtis-in-utah-to-reform-federal-health-programs/",
+      "tier": "http",
+      "extracted_chars": 8590,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2024/1/11/24025471/utah-legislature-republican-supermajority-priorities-2024-session/",
+      "tier": "http",
+      "extracted_chars": 9571,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.deseret.com/utah/2025/03/06/doula-medicaid-bill/",
+      "tier": "http",
+      "extracted_chars": 5126,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.fox13now.com/news/politics/judge-rules-utah-fits-all-voucher-program-is-unconstitutional",
+      "tier": "http",
+      "extracted_chars": 5974,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.heraldextra.com/news/2025/aug/19/rep-blake-moore-defends-big-beautiful-law-as-not-just-for-billionaires/",
+      "tier": "http",
+      "extracted_chars": 7675,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.heraldextra.com/news/2026/apr/27/republicans-must-be-more-thoughtful-members-around-solar-energy-moore-tells-developers/",
+      "tier": "http",
+      "extracted_chars": 3934,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.heraldextra.com/news/local/2025/jan/10/utah-legislature-poised-to-cut-taxes-for-5th-year-in-a-row-but-how/",
+      "tier": "http",
+      "extracted_chars": 7358,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.heraldextra.com/news/local/2025/jul/04/utah-republicans-celebrate-big-beautiful-bill-passage-health-advocates-dismayed/",
+      "tier": "http",
+      "extracted_chars": 7202,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/46485207/gov-herbert-signs-prop-3-medicaid-expansion-replacement-into-law",
+      "tier": "http",
+      "extracted_chars": 7469,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50195658/why-the-fec-ordered-utah-gop-rep-burgess-owens-to-pay-a-4000-fine",
+      "tier": "http",
+      "extracted_chars": 2527,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50361572/utah-legislature-passes-last-minute-ban-on-transgender-female-athletes-gov-says-hell-veto",
+      "tier": "http",
+      "extracted_chars": 8345,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50439640/uncertainty-swirls-around-how-utah-will-enforce-its-trigger-abortion-ban",
+      "tier": "http",
+      "extracted_chars": 21418,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50529357/being-homeless-is-not-a-crime-salt-lake-officials-discuss-shift-in-response-to-homelessness",
+      "tier": "http",
+      "extracted_chars": 4813,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50535320/house-passes-marriage-equality-bill-with-religious-freedom-protections-how-did-utah-reps-vote",
+      "tier": "http",
+      "extracted_chars": 7570,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50565362/utah-senate-approves-choice-scholarship-teacher-compensation-bill-on-2nd-reading",
+      "tier": "http",
+      "extracted_chars": 8558,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50591382/utah-bill-to-close-abortion-clinics-passes-senate",
+      "tier": "http",
+      "extracted_chars": 8446,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/50937164/the-utah-legislature-approved-another-tax-cut-heres-what-taxpayers-need-to-know",
+      "tier": "http",
+      "extracted_chars": 7034,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51148691/utahs-delegation-wants-to-change-assumptions-about-republicans-and-conservation",
+      "tier": "http",
+      "extracted_chars": 6615,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51163128/get-to-know-3rd-congressional-district-candidates-mike-kennedy-glenn-wright",
+      "tier": "http",
+      "extracted_chars": 4866,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51289226/heres-how-utahs-congressional-delegation-is-responding-to-trumps-tariffs",
+      "tier": "http",
+      "extracted_chars": 7423,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51339353/trumps-sweeping-tax-cut-and-spending-bill-wins-congressional-approval",
+      "tier": "http",
+      "extracted_chars": 5566,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51442265/reps-owens-maloy-take-utahs-redistricting-battle-to-federal-court",
+      "tier": "http",
+      "extracted_chars": 8154,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51448919/gop-chairman-says-enough-signatures-gathered-to-put-prop-4-repeal-on-ballot",
+      "tier": "http",
+      "extracted_chars": 3920,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Null",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksl.com/article/51505297/watch-live-celeste-maloy-phil-lyman-debate-ahead-of-gop-primary",
+      "tier": "http",
+      "extracted_chars": 5911,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ksltv.com/local-news/salt-lake-county-council-reelection/862518/",
+      "tier": "http",
+      "extracted_chars": 2600,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jiro Johnson",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Jiro Johnson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/health/2025-07-02/medicaid-snap-cuts-worry-utah-advocates-as-the-gops-budget-bill-nears-passage",
+      "tier": "http",
+      "extracted_chars": 3691,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Burgess Owens",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/justice/2020-07-17/salt-lake-county-da-says-when-it-comes-to-use-of-force-change-should-start-with-the-law",
+      "tier": "http",
+      "extracted_chars": 5278,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/politics-government/2022-03-25/utah-legislature-overrides-transgender-sports-ban-veto",
+      "tier": "http",
+      "extracted_chars": 3266,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "J. Stuart Adams",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/politics-government/2024-02-02/as-lawmakers-chart-utahs-energy-future-dems-want-a-seat-at-the-table",
+      "tier": "http",
+      "extracted_chars": 4090,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luz Escamilla",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/politics-government/2024-05-31/2024-gop-primary-voter-guide-cd2-colby-jenkins-celeste-maloy",
+      "tier": "http",
+      "extracted_chars": 16933,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.kuer.org/politics-government/2024-10-04/wanna-talk-about-climate-change-toss-out-the-litmus-test-says-rep-john-curtis",
+      "tier": "http",
+      "extracted_chars": 4106,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.lataco.com/transportation-karen-bass/",
+      "tier": "http",
+      "extracted_chars": 1609,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.lukeforcountycouncil.com/platform/",
+      "tier": "http",
+      "extracted_chars": 2011,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Luke Maynes",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.moabtimes.com/articles/5-republicans-vie-for-utahs-empty-seat-in-congress-here-are-their-views-on-abortion-immigration-and-water/",
+      "tier": "http",
+      "extracted_chars": 21449,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.nbclosangeles.com/news/local/la-mayor-signs-rent-stabilization-ordinance-capping-hikes-at-4/3820169/",
+      "tier": "http",
+      "extracted_chars": 3090,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.ontheissues.org/House/Blake_Moore.htm",
+      "tier": "http",
+      "extracted_chars": 3982,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.qsaltlake.com/news/2026/04/20/utah-stonewall-democrats-endorsements/",
+      "tier": "http",
+      "extracted_chars": 7947,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Shawn Robinson",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Shawn Robinson",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Shawn Robinson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.quiverquant.com/news/New+Bill:+Representative+Mike+Kennedy+introduces+H.R.+7794:+Stop+Child+Care+Funding+Fraud+Act+of+2026",
+      "tier": "http",
+      "extracted_chars": 4517,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.quiverquant.com/news/Press+Release:+Utah+Rep.+Mike+Kennedy+Introduces+Algorithm+Accountability+Act+to+Enhance+Online+Family+Safety",
+      "tier": "http",
+      "extracted_chars": 3010,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.realestatelanduseandenvironmentallaw.com/los-angeles-mayor-signs-new-legislation-exempting-affordable-housing-projects-from-site-plan-review.html",
+      "tier": "wayback",
+      "extracted_chars": 2119,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 1,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.saltlakecounty.gov/newsroom/council-leadership-for-2026--new-page/",
+      "tier": "wayback",
+      "extracted_chars": 2015,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jiro Johnson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.sengov.com/moore-blake-d/",
+      "tier": "http",
+      "extracted_chars": 16063,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.shawnforda.com/",
+      "tier": "http",
+      "extracted_chars": 2628,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Shawn Robinson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.sierraclub.org/press-releases/2025/05/rep-blake-moore-votes-take-away-jobs-and-raise-costs-utahns",
+      "tier": "wayback",
+      "extracted_chars": 2795,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.slcountydems.com/2026candidates",
+      "tier": "http",
+      "extracted_chars": 637,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sara Cimmers",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Sara Cimmers",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Zach Robinson",
+          "verdict": "snippet_not_found"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Zach Robinson",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.slcountydems.com/post/meet-zach-robinson-democratic-nominee-for-county-council-6",
+      "tier": "http",
+      "extracted_chars": 1764,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.standard.net/news/2025/jul/04/utah-republicans-celebrate-big-beautiful-bill-passage-health-advocates-dismayed/",
+      "tier": "http",
+      "extracted_chars": 7202,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.uscannenbergmedia.com/2023/04/18/karen-bass-increases-lapd-budget-by-63/",
+      "tier": "http",
+      "extracted_chars": 4577,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Karen Ruth Bass",
+          "verdict": "snippet_too_short"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.uschamber.com/taxes/u-s-chamber-chamberwest-host-u-s-representative-celeste-maloy-for-roundtable-on-tax-reform",
+      "tier": "http",
+      "extracted_chars": 2927,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.uschamber.com/taxes/u-s-chamber-rep-blake-moore-a-leader-on-tax-reform-fighting-for-local-businesses",
+      "tier": "http",
+      "extracted_chars": 2478,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 1,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.uschamber.com/taxes/u-s-chamber-south-valley-chamber-host-u-s-representative-mike-kennedy-for-roundtable-on-tax-reform",
+      "tier": "http",
+      "extracted_chars": 2374,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.westernenergyalliance.org/2026/05/14/u-s-house-committee-advances-key-public-lands-permitting-bill/",
+      "tier": "http",
+      "extracted_chars": 2611,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Kennedy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.yahoo.com/entertainment/tame-first-debate-candidates-vying-054630130.html",
+      "tier": "http",
+      "extracted_chars": 8757,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.yahoo.com/news/articles/rep-blake-moore-speaks-box-234703744.html",
+      "tier": "http",
+      "extracted_chars": 5284,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Blake Moore",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.yahoo.com/news/reflects-americans-voted-utah-leaders-203748813.html",
+      "tier": "http",
+      "extracted_chars": 5765,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        },
+        {
+          "snippet_index": 0,
+          "full_name": "Celeste Maloy",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "stance",
+      "url": "https://www.zachforcouncil.com/priorities",
+      "tier": "http",
+      "extracted_chars": 3099,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Zach Robinson",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ballotpedia.org/Melissa_Chaudhry",
+      "tier": "http",
+      "extracted_chars": 157,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Melissa Chaudhry",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ballotpedia.org/Wendell_Walker",
+      "tier": "http",
+      "extracted_chars": 157,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Wendell S. Walker",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ltgov.georgia.gov/press-releases/2026-04-29/lt-governor-burt-jones-issues-statement-scotus-redistricting-decision",
+      "tier": "http",
+      "extracted_chars": 868,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Burt Jones",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://mainerighttolife.org/wp-content/uploads/2025/07/2025-132nd-Senate-Roll-Call.pdf",
+      "tier": "http",
+      "extracted_chars": 246792,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Timothy E. Nangle",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3md7aaz5il225",
+      "tier": "http",
+      "extracted_chars": 605,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Andrew Beck",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.donavanforcongress.com/priorities",
+      "tier": "http",
+      "extracted_chars": 14975,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Donavan McKinney",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.senatorwithrow.com/energy",
+      "tier": "http",
+      "extracted_chars": 615,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Adam Withrow",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.noahforkansas.com/platform",
+      "tier": "wayback",
+      "extracted_chars": 2391,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Noah Taylor",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://matthewhayesforcongress.com/Issues",
+      "tier": "http",
+      "extracted_chars": 1212,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Matthew Hayes",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.lcv.org/congressional-scorecard/moc/shontel-brown",
+      "tier": "http",
+      "extracted_chars": 15316,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Shontel M. Brown",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://lawrencekstimes.com/2024/10/18/meet-dgcocomm-4-candidates-24/",
+      "tier": "http",
+      "extracted_chars": 15476,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Steven Jacob",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ballotpedia.org/Cassie_Easley",
+      "tier": "wayback",
+      "extracted_chars": 22205,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Cassie Easley",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://larrymarker.com/secure-new-mexico-borders/",
+      "tier": "http",
+      "extracted_chars": 4329,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Larry E. Marker",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mainesenate.org/maine-legislature-passes-sen-talbot-ross-bill-to-seal-criminal-history-record-information-for-low-level-offenses/",
+      "tier": "http",
+      "extracted_chars": 2271,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Rachel Talbot Ross",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.lpm.org/news/2019-03-14/ky-legislature-passes-abortion-discrimination-bill-aclu-says-its-suing",
+      "tier": "http",
+      "extracted_chars": 2969,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Ralph Alvarado",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.change.org/p/lisa-murkowski-endorse-jim-mcdermott-for-u-s-congress",
+      "tier": "http",
+      "extracted_chars": 2684,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "James C. \"Jim\" McDermott",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://kutv.com/news/local/salt-lake-county-da-joins-79-prosecutors-leaders-to-defend-daca-program",
+      "tier": "http",
+      "extracted_chars": 2978,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Sim Gill",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://mainemorningstar.com/2024/02/22/seeking-full-enforcement-of-maine-civil-rights-act-talbot-ross-proposes-new-unit-in-ags-office/",
+      "tier": "wayback",
+      "extracted_chars": 7472,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Rachel Talbot Ross",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://voteforjillian.com/people-powered-elections",
+      "tier": "wayback",
+      "extracted_chars": 2081,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jillian Gilchrest",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ncdoj.gov/2026/04/",
+      "tier": "http",
+      "extracted_chars": 4957,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jeff Jackson",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.longislandpress.com/2025/07/08/salt-deduction-grows/",
+      "tier": "http",
+      "extracted_chars": 4686,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Nick LaLota",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.heraldmailmedia.com/story/news/local/2024/04/01/democratic-candidates-weigh-in-on-western-marylands-top-priorities/73144386007/",
+      "tier": "http",
+      "extracted_chars": 9788,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "April McClain Delaney",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ballotpedia.org/Andres_Valleza",
+      "tier": "http",
+      "extracted_chars": 157,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Andres Valleza",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://littleforcongress.com/key-issues/fighting-for-anti-corruption-policies/",
+      "tier": "wayback",
+      "extracted_chars": 1957,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Matt Little",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://indianacapitalchronicle.com/2025/12/05/indiana-house-approves-redistricting-bill-sending-issue-to-state-senate/",
+      "tier": "wayback",
+      "extracted_chars": 6720,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Matt Pierce",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.gov.ca.gov/2021/09/27/governor-newsom-signs-legislation-making-california-a-permanent-vote-by-mail-state/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.gov.ca.gov/2021/09/27/governor-newsom-signs-legislation-making-california-a-permanent-vote-by-mail-state/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Gavin Newsom",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.gov.ca.gov/2021/09/27/governor-newsom-signs-legislation-making-california-a-permanent-vote-by-mail-state/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.latimes.com/politics/story/2025-01-21/schiff-opposes-trump-mass-deportation-policy",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.latimes.com/politics/story/2025-01-21/schiff-opposes-trump-mass-deportation-policy",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Adam B. Schiff",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.latimes.com/politics/story/2025-01-21/schiff-opposes-trump-mass-deportation-policy"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://mesenategop.com/2026/03/10/sen-stewart-proposes-legislation-to-address-mainecare-integrity-and-sustainability-concerns/",
+      "tier": "http",
+      "extracted_chars": 2461,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Trey L. Stewart",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://votevdo.com/issues/taxes",
+      "tier": "http",
+      "extracted_chars": 303,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Victor Orlando",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ballotpedia.org/Tomas_Scheel",
+      "tier": "http",
+      "extracted_chars": 157,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Tomas Scheel",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://stefanyshaheen.com/issues",
+      "tier": "http",
+      "extracted_chars": 16602,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Stefany Shaheen",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://law.georgia.gov/press-releases/2026-01-13/carr-joins-republican-ags-fight-protect-womens-sports",
+      "tier": "http",
+      "extracted_chars": 2472,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Carr",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.paigefornh.com/issues",
+      "tier": "http",
+      "extracted_chars": 6346,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Paige Beauchemin",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://carson.house.gov/issues/homeland-security",
+      "tier": "http",
+      "extracted_chars": 5806,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "André Carson",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://bowenforcongress.com/",
+      "tier": "http",
+      "extracted_chars": 1148,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Carlton E. Bowen",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.ktoo.org/2024/08/29/peltola-and-begich-square-off-in-their-first-forum-of-the-year/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.ktoo.org/2024/08/29/peltola-and-begich-square-off-in-their-first-forum-of-the-year/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Nicholas J. Begich III",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.ktoo.org/2024/08/29/peltola-and-begich-square-off-in-their-first-forum-of-the-year/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ocpathink.org/post/analysis/the-sky-wont-fall-when-oklahoma-empowers-parents",
+      "tier": "http",
+      "extracted_chars": 6992,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jena Nelson",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.votetimva.com/fair-shot-agenda",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.votetimva.com/fair-shot-agenda",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Tim Cywinski",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.votetimva.com/fair-shot-agenda"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.maine.gov/housedems/news/house-advances-bipartisan-zager-bill-require-health-insurance-coverage-biomarker-testing",
+      "tier": "http",
+      "extracted_chars": 1875,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Samuel Zager",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://petercrosbyforcongress.org/policies",
+      "tier": "http",
+      "extracted_chars": 12141,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Peter Crosby",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://smarter.vote/races/ky-house-06-2026/pete-lynch/",
+      "tier": "http",
+      "extracted_chars": 6864,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Pete Lynch",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://marquitabradshaw.com/issues",
+      "tier": "http",
+      "extracted_chars": 669,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Marquita Bradshaw",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://law.georgia.gov/press-releases/2026-05-26/carr-us-supreme-court-one-city-cannot-set-energy-policy-whole-country",
+      "tier": "http",
+      "extracted_chars": 1716,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chris Carr",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.in.gov/gov/newsroom/2025/01/governor-braun-signs-executive-order-protecting-life/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.in.gov/gov/newsroom/2025/01/governor-braun-signs-executive-order-protecting-life/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Braun",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.in.gov/gov/newsroom/2025/01/governor-braun-signs-executive-order-protecting-life/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://johnpaultorresforcongress.com/issues",
+      "tier": "http",
+      "extracted_chars": 7008,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "John Paul Torres",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.gov.ca.gov/2022/09/16/governor-newsom-signs-sweeping-climate-legislation-unprecedented-in-its-scope/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.gov.ca.gov/2022/09/16/governor-newsom-signs-sweeping-climate-legislation-unprecedented-in-its-scope/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Gavin Newsom",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.gov.ca.gov/2022/09/16/governor-newsom-signs-sweeping-climate-legislation-unprecedented-in-its-scope/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.ydutah.com/endorsements2026/peter-crosby",
+      "tier": "http",
+      "extracted_chars": 2605,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Peter Crosby",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.youtube.com/watch?v=gPfi_eDKkYE&t=1303s",
+      "tier": "http",
+      "extracted_chars": 259,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Steve Hilton",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ltgov.ca.gov/2020/09/30/lt-governor-kounalakis-statement-on-governor-newsoms-signing-of-reparations-task-force-legislation/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://ltgov.ca.gov/2020/09/30/lt-governor-kounalakis-statement-on-governor-newsoms-signing-of-reparations-task-force-legislation/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Eleni Kounalakis",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://ltgov.ca.gov/2020/09/30/lt-governor-kounalakis-statement-on-governor-newsoms-signing-of-reparations-task-force-legislation/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mattgromlichforcongress.com/q-a",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.mattgromlichforcongress.com/q-a",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Matt Gromlich",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.mattgromlichforcongress.com/q-a"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "http://kevincraig.us/social_security.htm",
+      "tier": "http",
+      "extracted_chars": 9520,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Kevin Craig",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://treasurer.ks.gov/",
+      "tier": "http",
+      "extracted_chars": 451,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Steven Johnson",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mcclainforsc.com/issues/your-issue-title-here8",
+      "tier": "http",
+      "extracted_chars": 1182,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Courtney McClain",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.youtube.com/watch?v=-_LHkpd7PcM&t=3142s",
+      "tier": "http",
+      "extracted_chars": 269,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Xavier Becerra",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.indystar.com/story/news/politics/2019/11/20/braun-opposes-indiana-medicaid-expansion/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.indystar.com/story/news/politics/2019/11/20/braun-opposes-indiana-medicaid-expansion/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Braun",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.indystar.com/story/news/politics/2019/11/20/braun-opposes-indiana-medicaid-expansion/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mckayforussenate.com/right-direction/",
+      "tier": "http",
+      "extracted_chars": 5179,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Raymond McKay",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://libertyfirst.org/2026-candidates-patrick-mcauley-r-indiana-7th-congressional-district/",
+      "tier": "http",
+      "extracted_chars": 2742,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Patrick Mcauley",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.vincegeorgeforcongress.com/issues",
+      "tier": "http",
+      "extracted_chars": 3264,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Vince George",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://terrideboer.com/priorities",
+      "tier": "http",
+      "extracted_chars": 1342,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Terri DeBoer",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.youtube.com/watch?v=zeD5gpUG-p0&t=1000s",
+      "tier": "http",
+      "extracted_chars": 229,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Abdul El-Sayed",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.traci4countycouncil.com/issues",
+      "tier": "http",
+      "extracted_chars": 18770,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Traci Crockett",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://montanatalks.com/attacks-on-christians-on-the-rise-we-see-it-in-montana-too/",
+      "tier": "http",
+      "extracted_chars": 2263,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Aaron Flint",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://mesenategop.com/2025/02/16/republicans-stand-ready-to-make-tough-budget-decisions/",
+      "tier": "http",
+      "extracted_chars": 5148,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Susan Bernard",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.williamsforky.com/housing",
+      "tier": "http",
+      "extracted_chars": 5132,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "John \"Drew\" Williams",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ag.louisiana.gov/News",
+      "tier": "http",
+      "extracted_chars": 6155,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Liz Murrill",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.indystar.com/story/news/politics/2020/01/16/braun-votes-yes-usmca-trade-deal/4487568002/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://www.indystar.com/story/news/politics/2020/01/16/braun-votes-yes-usmca-trade-deal/4487568002/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mike Braun",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://www.indystar.com/story/news/politics/2020/01/16/braun-votes-yes-usmca-trade-deal/4487568002/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://news.delaware.gov/2026/01/23/ag-jennings-colleagues-demand-action-from-xai-over-groks-creation-of-nonconsensual-sexual-content/",
+      "tier": "http",
+      "extracted_chars": 6249,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Kathy Jennings",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.insidenova.com/news/loudoun/three-way-race-to-determine-gop-challenger-for-subramanyam-s-10th-district-seat/article_af2200d5-1bbc-41a6-843a-813a84055459.html",
+      "tier": "http",
+      "extracted_chars": 3747,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Julie Perry",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.alreporter.com/2021/04/rogers-brooks-moore-and-aderholt-call-for-vote-on-born-alive-survivors-protection-act/",
+      "tier": "http",
+      "extracted_chars": 3712,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Barry Moore",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.youtube.com/watch?v=1wbrjc25WP8&t=1228s",
+      "tier": "http",
+      "extracted_chars": 258,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Xavier Becerra",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://wilsonwv.com",
+      "tier": "http",
+      "extracted_chars": 7732,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "S. Marshall Wilson",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://tedbrown.org",
+      "tier": "http",
+      "extracted_chars": 80,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Ted Brown",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.themainewire.com/2025/02/there-is-no-increased-risk-to-the-public-maine-democrat-wants-to-repeal-the-crime-of-violating-bail-to-reduce-case-backlog/",
+      "tier": "http",
+      "extracted_chars": 6712,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "David Sinclair",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mtpr.org/montana-news/2026-04-17/patrick-mccracken-interview",
+      "tier": "http",
+      "extracted_chars": 4821,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Patrick McCracken",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.youtube.com/watch?v=CKu9rBJTNYw&t=3056s",
+      "tier": "http",
+      "extracted_chars": 212,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Xavier Becerra",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://chaplainstevenstjohnforcongress.com/Solutions.html",
+      "tier": "http",
+      "extracted_chars": 4438,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Steven St John",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://sos.wyo.gov/Media/2025/SoS_Release_2025-08-04.pdf",
+      "tier": "http",
+      "extracted_chars": 191728,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Chuck Gray",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.laurenforkansas.com/priorities",
+      "tier": "http",
+      "extracted_chars": 1279,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Lauren Reinhold",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.indystar.com/story/news/politics/2024/06/08/micah-beckwith-indiana-lt-governor-convention-pastor/73984253007/",
+      "tier": "http",
+      "extracted_chars": 3780,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Micah Beckwith",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://ag.ny.gov/resources/individuals/reproductive-rights",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://ag.ny.gov/resources/individuals/reproductive-rights",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Letitia James",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://ag.ny.gov/resources/individuals/reproductive-rights"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.sltrib.com/news/2026/06/07/former-teacher-policy-official/",
+      "tier": "http",
+      "extracted_chars": 209,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Julie Jackson",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.dittmerforcongress.com/priorities/immigration",
+      "tier": "http",
+      "extracted_chars": 445,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mallory Dittmer",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.davidredkey4congress.com/fights-for-reproductive-rights",
+      "tier": "http",
+      "extracted_chars": 587,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "David Redkey",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://munterforcongress.substack.com/p/illegal-immigration-solutions",
+      "tier": "http",
+      "extracted_chars": 4290,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "John Munter",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://decioforcongress.com/decio-announcement-speech/",
+      "tier": "http",
+      "extracted_chars": 7104,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jamee Decio",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://bobbykhanforcongress.com/solutions/",
+      "tier": "http",
+      "extracted_chars": 11987,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Bobby Khan",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.kellythompsonforcongress.com/policies/healthcare/healthcare",
+      "tier": "http",
+      "extracted_chars": 1426,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Kelly Thompson",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "http://www.mcdermott4congress4alaska.com/issues.html",
+      "tier": "http",
+      "extracted_chars": 16242,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "James C. \"Jim\" McDermott",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://mainehousegop.org/newsroom/maines-housing-situation-changed-drastically-in-5-years/",
+      "tier": "http",
+      "extracted_chars": 4688,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Jennifer Poirier",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://carl4congress.com/position-on-immigration/",
+      "tier": "http",
+      "extracted_chars": 3216,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Carl Boyanton",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://votewaynerussell.com/healthcare/",
+      "tier": "http",
+      "extracted_chars": 502,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Wayne Russell",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.padenforutah.com/platform",
+      "tier": "http",
+      "extracted_chars": 10495,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Taylor J. Paden",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://olszewski.house.gov/media/press-releases/olszewski-issues-statement-ahead-no-vote-ice-funding",
+      "tier": "http",
+      "extracted_chars": 1184,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Johnny Olszewski",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://nataliefleming.info/just-a-few-issues/",
+      "tier": "http",
+      "extracted_chars": 7260,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Natalie M Fleming",
+          "verdict": "name_not_present"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://nebraskaexaminer.com/voter-guides/contests/2026-primary-u-s-house-district-3/",
+      "tier": "none",
+      "extracted_chars": 0,
+      "robots_disallowed": false,
+      "fetch_error": "all fetch tiers failed for https://nebraskaexaminer.com/voter-guides/contests/2026-primary-u-s-house-district-3/",
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "David Else",
+          "verdict": "url_broken",
+          "reason": "all fetch tiers failed for https://nebraskaexaminer.com/voter-guides/contests/2026-primary-u-s-house-district-3/"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.marquitabradshaw.com/issues",
+      "tier": "http",
+      "extracted_chars": 669,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Marquita Bradshaw",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://moforcongress.com/issues",
+      "tier": "http",
+      "extracted_chars": 4743,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Mo Seifeldein",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://baumforwisconsin.com/my-platform/",
+      "tier": "http",
+      "extracted_chars": 3014,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Niina Baum",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.maine.gov/housedems/news/skold-introduces-bill-increase-voting-access-mainers",
+      "tier": "http",
+      "extracted_chars": 1917,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Charles Skold",
+          "verdict": "verified"
+        }
+      ]
+    },
+    {
+      "slice": "quote",
+      "url": "https://www.mattschultzforalaska.com/news",
+      "tier": "http",
+      "extracted_chars": 196,
+      "robots_disallowed": false,
+      "fetch_error": null,
+      "snippets": [
+        {
+          "snippet_index": 0,
+          "full_name": "Matt Schultz",
+          "verdict": "snippet_not_found"
+        }
+      ]
+    }
+  ]
+}

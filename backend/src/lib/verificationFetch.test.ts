@@ -1,14 +1,22 @@
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
   htmlToText,
+  extractArticleText,
   looksLikeRealPage,
   MIN_REAL_PAGE_CHARS,
+  MIN_ARTICLE_CHARS,
   parseRobotsForAgent,
   isPathAllowed,
   createVerificationFetchSession,
   RobotsDisallowedError,
 } from './verificationFetch.js';
 import { EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
+
+const boilerplateFixture = readFileSync(
+  new URL('./fixtures/article-with-boilerplate.html', import.meta.url),
+  'utf8',
+);
 
 describe('htmlToText', () => {
   it('strips tags and collapses whitespace', () => {
@@ -30,6 +38,45 @@ describe('htmlToText', () => {
 
   it('keeps text that spans inline tags contiguous (space-separated)', () => {
     expect(htmlToText('<b>SB 79</b> would erode local control')).toBe('SB 79 would erode local control');
+  });
+});
+
+describe('extractArticleText (Readability)', () => {
+  const article = extractArticleText(boilerplateFixture, 'https://chronicle.example/levy');
+
+  it('keeps the real article body', () => {
+    expect(article).toContain('voted 5 to 2 on Tuesday to approve a new library funding levy');
+    expect(article).toContain('This levy keeps our branches open');
+    expect(article.length).toBeGreaterThan(MIN_ARTICLE_CHARS);
+  });
+
+  it('drops navigation links', () => {
+    expect(article).not.toContain('Subscribe now');
+    expect(article).not.toContain('Sign in');
+  });
+
+  it('drops the cookie / consent banner', () => {
+    expect(article.toLowerCase()).not.toContain('cookie');
+    expect(article.toLowerCase()).not.toContain('accept all cookies');
+  });
+
+  it('drops footer, related-stories and inline scripts', () => {
+    expect(article.toLowerCase()).not.toContain('all rights reserved');
+    expect(article).not.toContain('Ten things to do this weekend');
+    expect(article).not.toContain('dataLayer');
+  });
+
+  it('falls back to htmlToText when Readability finds too little text', () => {
+    const thin = '<html><body><p>Just a stub.</p></body></html>';
+    // Readability cannot reach MIN_ARTICLE_CHARS here, so we get the legacy result.
+    expect(extractArticleText(thin, 'https://x.example/p')).toBe(htmlToText(thin));
+  });
+
+  it('falls back to htmlToText for non-article (PDF) URLs, boilerplate and all', () => {
+    const asPdf = extractArticleText(boilerplateFixture, 'https://chronicle.example/levy.pdf');
+    expect(asPdf).toBe(htmlToText(boilerplateFixture));
+    // Proof it took the legacy path: legacy keeps the nav text Readability strips.
+    expect(asPdf).toContain('Subscribe now');
   });
 });
 

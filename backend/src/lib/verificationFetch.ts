@@ -24,6 +24,8 @@
  */
 
 import { chromium, type Browser } from 'playwright';
+import { Readability } from '@mozilla/readability';
+import { parseHTML } from 'linkedom';
 import { renderPage, EMPOWERED_VOTE_UA, EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
 
 const HTTP_TIMEOUT_MS = 12_000;
@@ -33,6 +35,13 @@ const ROBOTS_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
 /** Below this many chars a page is almost certainly a stub/challenge, not content. */
 export const MIN_REAL_PAGE_CHARS = 500;
+
+/**
+ * Below this many chars, Readability's result is too thin to trust (a title-only
+ * parse, or a page it could not find an article in) — fall back to the legacy
+ * stripper so a hard-to-parse page is never worse off than before.
+ */
+export const MIN_ARTICLE_CHARS = 200;
 
 /** Substrings that betray a bot-challenge / JS-required interstitial. */
 const CHALLENGE_MARKERS = [
@@ -68,6 +77,51 @@ export function htmlToText(html: string): string {
     out = out.split(entity).join(replacement);
   }
   return out.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Extract the main article text from raw HTML with Mozilla Readability — the
+ * same algorithm Firefox's Reader View uses — running on linkedom, a small,
+ * pure-JS DOM. No jsdom (heavy, Alpine-hostile) and no native build.
+ *
+ * Readability drops navigation, cookie/consent banners, "related stories",
+ * comment threads and footers that the legacy regex stripper leaves in, so the
+ * deterministic snippet matcher sees the real article instead of boilerplate.
+ *
+ * Fails SAFE: if Readability throws, or returns less than {@link MIN_ARTICLE_CHARS}
+ * of text (a title-only or unparseable page), fall back to {@link htmlToText}.
+ * htmlToText therefore stays the floor — this can only add article text, never
+ * remove the old behaviour.
+ *
+ * @param url only used to skip non-article documents (PDF/spreadsheet URLs that
+ *   slipped past the caller's content-type check); Readability derives the text
+ *   from the HTML itself.
+ */
+export function extractArticleText(html: string, url: string): string {
+  // A direct PDF / office-doc URL has no article DOM to grab — don't waste a
+  // parse; the legacy stripper's whitespace collapse is the right handling.
+  if (/\.(pdf|docx?|xlsx?|pptx?|csv|json|xml)(?:$|[?#])/i.test(url)) return htmlToText(html);
+  try {
+    const { document } = parseHTML(html);
+    const article = new Readability(document as unknown as Document).parse();
+    const text = (article?.textContent ?? '').replace(/\s+/g, ' ').trim();
+    if (text.length >= MIN_ARTICLE_CHARS) return text;
+  } catch {
+    // Malformed / unparseable DOM — fall through to the legacy stripper.
+  }
+  return htmlToText(html);
+}
+
+/**
+ * Choose the HTML→text extractor by the EXTRACTOR env var, read at CALL TIME so
+ * it can be flipped by a redeploy env change (or a test) without touching code:
+ *   EXTRACTOR=readability → {@link extractArticleText} (article body only)
+ *   anything else / unset (default) → the legacy {@link htmlToText} stripper
+ */
+function htmlToArticleOrText(html: string, url: string): string {
+  return (process.env.EXTRACTOR ?? 'legacy').toLowerCase() === 'readability'
+    ? extractArticleText(html, url)
+    : htmlToText(html);
 }
 
 /**
@@ -266,7 +320,7 @@ export async function fetchViaHttp(url: string): Promise<string> {
   if (!res.ok) throw new Error('HTTP ' + res.status);
   const body = await res.text();
   const ctype = res.headers.get('content-type') ?? '';
-  return ctype.includes('html') ? htmlToText(body) : body.replace(/\s+/g, ' ').trim();
+  return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
 
 /** Tier 3 — closest Wayback Machine snapshot, or null if none/usable. */
@@ -292,7 +346,9 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
       headers: { 'user-agent': EMPOWERED_VOTE_UA },
     });
     if (!res.ok) return null;
-    return htmlToText(await res.text());
+    // Pass the ORIGINAL url (not the archive.org wrapper) so the non-article
+    // guard in extractArticleText reasons about the real document.
+    return htmlToArticleOrText(await res.text(), url);
   } catch {
     return null;
   }
