@@ -367,7 +367,7 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
     const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
-      .from('compass_responses')
+      .from('compass_responses_current')
       .select('topic_id, value, write_in_text, visibility, inverted, created_at, updated_at')
       .is('deleted_at', null);
 
@@ -409,7 +409,7 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
     const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
-      .from('compass_responses')
+      .from('compass_responses_current')
       .select('topic_id, value, write_in_text')
       .in('topic_id', parsed.data.ids)
       .is('deleted_at', null);
