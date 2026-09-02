@@ -648,6 +648,9 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
              city_council_geo_id = $14,
              city_council_district_name = $15,
              municipality_geo_id = $16,
+             city_geo_id = $17,
+             state_geo_id = $18,
+             nation_geo_id = $19,
              updated_at = now()
          WHERE user_id = $1`,
         [
@@ -667,6 +670,13 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
           jData.city_council ?? null,
           jData.city_council_name ?? null,
           jData.municipality ?? null,
+          // Place geoids. NOT the same as jurisdiction_state / jurisdiction_city above:
+          // those are the geocoder's USPS code and place NAME ('NC', 'ASHEVILLE'), these
+          // are Census FIPS ('37', '3702140'). Civic Spaces keys a slice on the geoid;
+          // it cannot key one on a name.
+          jData.city ?? null,
+          jData.state ?? null,
+          jData.nation ?? null,
         ]
       );
     } catch (e) {

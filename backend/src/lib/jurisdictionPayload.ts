@@ -28,7 +28,13 @@
  * decides what to do about it. Do not add a policy here.
  */
 
-/** The five district columns, paired with the RPC key that fills each one. */
+/**
+ * The five DISTRICT columns, paired with the RPC key that fills each one.
+ *
+ * 🔴 This list is not just a mapping table — `resolvedDistrictCount` counts it, and four
+ * call sites branch on that count. Adding a key here changes what "the RPC resolved
+ * nothing" means. See PLACE_FIELDS below for why city/state/nation are NOT in this list.
+ */
 export const GEO_FIELDS = [
   { column: 'congressional_geo_id', rpcKey: 'congressional' },
   { column: 'state_senate_geo_id', rpcKey: 'state_senate' },
@@ -37,11 +43,41 @@ export const GEO_FIELDS = [
   { column: 'school_district_geo_id', rpcKey: 'school_district' },
 ] as const;
 
+/**
+ * The three PLACE columns — the geoids a Civic Spaces slice is keyed on.
+ *
+ * 🔴 DELIBERATELY NOT PART OF GEO_FIELDS, and this is load bearing.
+ *
+ * `resolvedDistrictCount` counts GEO_FIELDS to answer "did the RPC resolve anything",
+ * but the question underneath it is narrower: "is the essentials.districts join healthy".
+ * That join is what silently broke and wiped profiles, and it is what the count detects.
+ *
+ * These three bypass essentials.districts entirely — they are read straight off
+ * essentials.geofence_boundaries by mtfcc, because that table reuses geo_ids across
+ * layers. So they CANNOT witness the join's health. Fold them in and a wholly broken
+ * join still resolves a state and a nation: the count reads 2 instead of 0, every guard
+ * reads that as success, and districtStalenessService goes back to writing NULLs over
+ * districts that were never wrong.
+ *
+ * city_council_geo_id and municipality_geo_id are outside GEO_FIELDS for the same reason
+ * and set the precedent: a column written from this payload is not thereby a district.
+ *
+ * `city` is null for unincorporated addresses. That is an answer, not a failure.
+ */
+export const PLACE_FIELDS = [
+  { column: 'city_geo_id', rpcKey: 'city' },
+  { column: 'state_geo_id', rpcKey: 'state' },
+  { column: 'nation_geo_id', rpcKey: 'nation' },
+] as const;
+
 /** A jurisdiction payload as it arrives: possibly null, possibly all-NULL, never trusted. */
 export type JurisdictionPayload = Record<string, string | null> | null | undefined;
 
 /** The stored geo_id columns, as read from connect.connected_profiles. */
 export type StoredDistricts = Partial<Record<(typeof GEO_FIELDS)[number]['column'], string | null>>;
+
+/** The stored place geoid columns, as read from connect.connected_profiles. */
+export type StoredPlaces = Partial<Record<(typeof PLACE_FIELDS)[number]['column'], string | null>>;
 
 /**
  * How many of the five districts this payload actually names.
