@@ -16,6 +16,12 @@ export type AuthOutcome =
   | { status: 'email_verification_required'; pendingToken: string }
   | { status: 'mfa_required'; pendingToken: string; challengeId: string | null }
   | { status: 'invalid_credentials' }
+  // Terminal for a refresh grant: the refresh token is spent (replayed past
+  // WorkOS's 30s rotation grace), expired, or revoked. The session is genuinely
+  // over — the caller must clear it and re-authenticate. Kept DISTINCT from the
+  // transient `error` below, which must NOT end a session. See WorkOS "Session
+  // resilience": destroy a session only on a terminal invalid_grant.
+  | { status: 'session_expired' }
   | { status: 'error'; code: 'NOT_CONFIGURED' | 'WORKOS_ERROR' };
 
 type Grant = Record<string, string | undefined>;
@@ -65,6 +71,12 @@ async function callAuthenticate(grant: Grant): Promise<AuthOutcome> {
       res.status === 401
     ) {
       return { status: 'invalid_credentials' };
+    }
+    // `invalid_grant` (HTTP 400) is WorkOS's terminal verdict on a refresh token
+    // that is spent, expired or revoked. Report it distinctly so the /session
+    // route ends the session ONLY here — never on the transient failure below.
+    if (disc === 'invalid_grant') {
+      return { status: 'session_expired' };
     }
 
     console.error('[workosAuth] authenticate failed:', res.status, JSON.stringify(parsed));

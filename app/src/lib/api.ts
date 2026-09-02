@@ -25,7 +25,13 @@ async function refreshAccessToken(): Promise<string | null> {
       })
     : fetch(`${API_BASE}/auth/session`, { credentials: 'include' })
         .then(async (res) => {
-          if (!res.ok) return null;
+          // 401 is terminal — the session is genuinely over; the caller clears it.
+          if (res.status === 401) return null;
+          // 503/5xx is a transient WorkOS blip. Keep the session and signal the
+          // caller to retry instead of signing out (WorkOS session-resilience
+          // guidance). Throwing — rather than returning null — is what separates
+          // "retry" from "log out" in apiFetch below.
+          if (!res.ok) throw new Error('refresh_unavailable');
           const data = await res.json() as { access_token: string };
           useAuthStore.setState({ accessToken: data.access_token });
           localStorage.setItem('ev_token', data.access_token);
@@ -51,7 +57,15 @@ export async function apiFetch<T>(
   });
 
   if (res.status === 401) {
-    const newToken = await refreshAccessToken();
+    let newToken: string | null;
+    try {
+      newToken = await refreshAccessToken();
+    } catch {
+      // Transient refresh failure (WorkOS 5xx/timeout). Do NOT clear the
+      // session — keep it and let the caller retry (WorkOS guidance). Only
+      // this one request fails.
+      throw new Error('Session temporarily unavailable, please try again');
+    }
     if (!newToken) {
       useAuthStore.getState().clearAuth();
       throw new Error('Session expired');
