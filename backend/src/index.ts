@@ -60,6 +60,17 @@ import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import feedbackRouter from './routes/feedback.js';
 import eventsRouter from './routes/events.js';
+// Civic Trivia Championships (CTC) sub-app — folded in (engine consolidation, Phase 1).
+// See src/trivia/app.ts for the seam and rationale.
+import {
+  ctcGameRouter,
+  ctcProfileRouter,
+  ctcHealthRouter,
+  ctcAdminRouter,
+  ctcFeedbackRouter,
+  ctcLeaderboardRouter,
+  initTrivia,
+} from './trivia/app.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -202,6 +213,21 @@ app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
 app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
 app.use('/api/events', eventsRouter);   // CTA event telemetry
 
+// === Civic Trivia Championships (CTC) — folded in (engine consolidation, Phase 1) ===
+// Each router is mounted under BOTH the /ctc/... alias (byte-for-byte with the old
+// civic-trivia-backend so the CTC frontend cuts over with one env var) and the tidy
+// /api/trivia/... path (adopted in Phase 1c after the old service is retired).
+//
+// These sub-paths do not collide with the existing triviaRouter above, which only
+// serves the literals /api/trivia/collections and /api/trivia/leaderboard-profiles.
+// CTC's /health is NOT under /api, so its alias is /ctc/health (tidy: /api/trivia/health).
+app.use(['/ctc/api/game', '/api/trivia/game'], ctcGameRouter);
+app.use(['/ctc/api/users/profile', '/api/trivia/users/profile'], ctcProfileRouter);
+app.use(['/ctc/api/admin', '/api/trivia/admin'], ctcAdminRouter);
+app.use(['/ctc/api/feedback', '/api/trivia/feedback'], ctcFeedbackRouter);
+app.use(['/ctc/api/leaderboard', '/api/trivia/leaderboard'], ctcLeaderboardRouter);
+app.use(['/ctc/health', '/api/trivia/health'], ctcHealthRouter);
+
 export { app }; // For testing
 
 const port = parseInt(env.PORT, 10);
@@ -216,6 +242,15 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
       await campaignFinanceInit();
     } catch (e) {
       console.warn('[startup] campaign-finance schema unreachable — continuing anyway:', e);
+    }
+
+    // CTC (trivia) session storage + session manager. Non-fatal: initTrivia degrades to
+    // in-memory storage if TRIVIA_REDIS_URL is unset/unreachable, so a Redis blip must
+    // not stop the engine from starting.
+    try {
+      await initTrivia();
+    } catch (e) {
+      console.warn('[startup] trivia sub-app init failed — continuing anyway:', e);
     }
 
     const server = app.listen(port, () => {
