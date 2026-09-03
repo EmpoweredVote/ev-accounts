@@ -18,10 +18,11 @@
 // so there is no boot init and no schema grant to apply. VQ's own dual-issuer auth
 // (middleware/auth.ts here) is kept as-is; the engine's middleware/auth.ts is untouched.
 //
-// NOT folded in Phase 2: VQ's cron scheduler (consensus every 5 min, rotation daily) and
-// its BullMQ worker. The old service owns those during the parallel window; running them
-// here too would double-execute. services/questRotation.ts is present only because a route
-// imports it — nothing here schedules it.
+// VQ's cron scheduler (consensus every 5 min, rotation daily) IS now folded in, but gated
+// OFF behind VQ_CRONS_ENABLED (see startVqCrons below): the standalone service still owns
+// them during the parallel window, so running them here too would double-execute. Its
+// finalization callbacks (confirm-stance, adjust-vr, xp) run in-process — no service key.
+// VQ's BullMQ worker was never deployed and is not folded (G4).
 
 import { Router, type Request, type Response, type NextFunction } from 'express';
 import { logger } from './lib/logger.js';
@@ -36,6 +37,7 @@ import notificationsRouter from './routes/notifications.js';
 import notificationPreferencesRouter from './routes/notificationPreferences.js';
 import profileRouter from './routes/profile.js';
 import adminRouter from './routes/admin.js';
+import { startConsensusScheduler, startRotationScheduler } from './scheduler.js';
 
 export const validationQuestsRouter = Router();
 
@@ -61,6 +63,26 @@ validationQuestsRouter.use('/admin', adminRouter);
 // VQ's own error handler (from its index.ts), scoped to VQ routes via this router so it
 // returns VQ's JSON error shape ({ error: 'Internal server error' }) without adding a
 // global error handler to the engine.
+/**
+ * Start VQ's cron jobs (consensus every 5 min, quest rotation daily 04:00 UTC) — but ONLY
+ * when VQ_CRONS_ENABLED === 'true'. They are OFF by default because the standalone
+ * empowered-validation-quests service still runs them during the parallel window; running
+ * them here too would double-execute (double consensus writes, double rotation). Flip the
+ * flag on at the same moment the old service is retired (gate G7). The consensus job's
+ * finalization callbacks now run in-process (see jobs/consensusBatchJob.ts) — no service key.
+ */
+export function startVqCrons(): void {
+  if (process.env.VQ_CRONS_ENABLED !== 'true') {
+    console.info(
+      '[vq] crons disabled (set VQ_CRONS_ENABLED=true to run them here) — the standalone service still owns them during the parallel run'
+    );
+    return;
+  }
+  startConsensusScheduler();
+  startRotationScheduler();
+  console.info('[vq] consensus + rotation crons started in-engine');
+}
+
 validationQuestsRouter.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal server error' });
