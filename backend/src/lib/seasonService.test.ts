@@ -7,7 +7,7 @@ import {
   currentSeasonId, latestAnsweredSeason, assertWritten,
   UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL,
   isSeasonWriteError, SeasonWriteError,
-  WRITABLE_TOPIC_IDS_SQL, writableTopicIds,
+  WRITABLE_TOPIC_IDS_SQL, writableTopicIds, OPEN_SEASON_ANSWER_SQL,
 } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -260,5 +260,25 @@ describe('writableTopicIds — the pre-flight must not drift from the write', ()
 
     expect(writable.has('kept')).toBe(true);
     expect(writable.has('dropped-but-still-live')).toBe(false);
+  });
+});
+
+// 🔴 THIS LITERAL IS CONCATENATED, NOT PARAMETERISED. Both callers in
+// routes/compassContributor.ts build `${OPEN_SEASON_ANSWER_SQL} AND a.topic_id =
+// ANY($2)`, so anything appended lands on the literal's LAST line. A `--`
+// comment there would swallow the caller's predicate — silently widening an
+// audit-diff read from one topic to every topic the politician holds, with no
+// syntax error to catch it. The zero-scope note therefore sits at the top.
+describe('OPEN_SEASON_ANSWER_SQL — callers append to it', () => {
+  it('ends on the WHERE clause, with no comment to swallow what follows', () => {
+    const lastLine = OPEN_SEASON_ANSWER_SQL.trimEnd().split('\n').pop()!;
+    expect(lastLine).not.toContain('--');
+    expect(lastLine.trimEnd()).toMatch(/WHERE a\.politician_id = \$1$/);
+  });
+
+  it('still names the open season once a predicate is appended', () => {
+    const composed = `${OPEN_SEASON_ANSWER_SQL} AND a.topic_id = ANY($2)`;
+    expect(composed).toContain("s.status = 'open'");
+    expect(composed.trimEnd().endsWith('ANY($2)')).toBe(true);
   });
 });

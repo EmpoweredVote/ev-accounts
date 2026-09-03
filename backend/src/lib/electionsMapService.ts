@@ -91,6 +91,16 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
        --   that did not happen: a stance from season 1 is still a stance we hold.
        --   DISTINCT politician_id collapses the per-season rows, so this cannot fan
        --   out when a second season exists.
+       -- @zero-scope: counts-blanks — as the coverage rollups: a blanked answer
+       --   (value 0) still means this person WAS researched. Blanking says the
+       --   ladder moved out from under a position, not that the reading was
+       --   undone.
+       -- ⚠ The column this feeds is called stanced_count, and "ever researched"
+       --   is broader than "has a stance to show" — the two diverge exactly when
+       --   someone's every answer is blank. The NAME is kept on purpose:
+       --   classifyRaceTier, its tests and the map payload all key on "stanced",
+       --   so renaming it for accuracy would ripple past this file for no
+       --   behavioural gain. Read the comment, not the column name.
        LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
               ON ans.politician_id = p.id
       WHERE e.state = $1 AND e.election_date = $2
