@@ -244,8 +244,19 @@ export async function writableTopicIds(
  * while writing season 2 reports "changed 3 → 3" for what is actually a new row.
  *
  * Param order: $1 politician_id, $2 topic_id(s).
+ *
+ * 🔴 CALLERS APPEND TO THIS STRING (`${OPEN_SEASON_ANSWER_SQL} AND a.topic_id =
+ * ANY($2)`), so nothing may be added after the WHERE clause — a trailing `--`
+ * comment would swallow the caller's predicate. The zero note below sits at the
+ * top of the literal for that reason.
  */
 export const OPEN_SEASON_ANSWER_SQL = `
+  -- @zero-scope: counts-blanks — a 0 MUST come back, and this is the one site
+  --   where filtering it would be actively destructive. These rows are the
+  --   "previous value" for the audit diff, so a blank is precisely the state the
+  --   next write needs to see. Hide it and re-seating a blanked politician logs
+  --   as a first-time answer, erasing the fact that an editor had blanked the
+  --   row — the audit trail would show the position appearing from nowhere.
   SELECT a.topic_id, a.value, a.write_in_text
     FROM inform.politician_answers a
     JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'

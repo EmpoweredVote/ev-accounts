@@ -228,6 +228,14 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
      --   that did not happen: a stance from season 1 is still a stance we hold.
      --   DISTINCT politician_id collapses the per-season rows, so this cannot fan
      --   out when a second season exists.
+     -- @zero-scope: counts-blanks — a blanked answer (value 0) still counts here,
+     --   for the same reason. Blanking means the ladder moved out from under a
+     --   position, not that the research was undone: the reading happened, the
+     --   sources stand, and there is simply no rung left that states what this
+     --   person holds. Excluding blanks would report a coverage loss no editor
+     --   caused. Measured 2026-09-02: every politician holding a blank holds at
+     --   least 7 other answers, so this count is identical either way today —
+     --   the note is here so the next reader does not "fix" it.
      LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
             ON ans.politician_id = p.id
      WHERE p.is_active = true

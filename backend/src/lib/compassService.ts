@@ -486,6 +486,16 @@ export async function getCompassPoliticians() {
                 ORDER BY a.topic_id, s.number DESC
              ) l WHERE l.value != 0) AS answered_topic_ids
      FROM essentials.politicians p
+     -- @zero-scope: counts-blanks — this join is the "does this person have a
+     --   compass at all" gate, and it is deliberately NOT guarded on value,
+     --   unlike getCandidates' equivalent EXISTS below ("pa.value != 0"). The
+     --   asymmetry is intentional, not an oversight. Someone we researched whose
+     --   every answer has since been blanked should still be listed: their
+     --   profile then shows blank spokes, which CLAUDE.md states is the correct
+     --   render, and dropping them would hide research we actually did. The two
+     --   counts above ARE zero-guarded, so such a person gets an honest empty
+     --   compass rather than a wrong one. Measured 2026-09-02: nobody is in that
+     --   state — every politician holding a blank holds at least 7 other answers.
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id

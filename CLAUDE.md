@@ -211,6 +211,39 @@ this person holds, not a rating of how strongly they lean.
 carries reasoning that names no instrument, act or vote. Run it before committing any migration that
 sets a chair.
 
+### A blank is `value = 0`, and `-- @zero-scope:` records who counts it
+
+When a ladder changes so that no rung states what a politician holds, the answer is **blanked**
+rather than guessed or deleted: the row stays, carrying `value = 0`. Season 1 keeps the old rung as
+history; the new season shows a blank spoke. (Ruling 2026-09-02: *"If there is nowhere for them to
+go, they can be blanked. We will remember the difference between seasons 1 and 2."*)
+
+So **every read of `politician_answers.value` has to decide what a 0 means to it**, and the two
+right answers point opposite ways:
+
+- **Anything that displays or averages a position must exclude it.** A 0 is not rung 0. Left in, it
+  scores as maximum disagreement in `compareWithPoliticians`, opens a bar no ladder text can label
+  in the stats distribution, and makes `has_stance` true with nothing to name.
+- **Anything asking whether research HAPPENED must keep it.** Blanking says the ladder moved out
+  from under a position, not that the reading was undone — the coverage rollups would otherwise
+  report a loss no editor caused.
+
+A site that keeps blanks says so in the query, in the same shape as `-- @season-scope:`:
+
+```sql
+-- @zero-scope: counts-blanks — coverage is "ever researched", and the research happened.
+```
+
+**⚠ Unlike `@season-scope`, this marker is NOT enforced by a gate.** It is documentation, and
+`grep -rn "@zero-scope" backend/src` is how you find every site that has been judged. A read with no
+marker has not necessarily been thought about — check it before trusting it.
+
+**Guard placement is the part that goes wrong.** Put the filter OUTSIDE the newest-season collapse,
+never inside it. Inside, a blank in the newest season is skipped and the query silently falls back
+to an older season's rung — serving a position the politician no longer holds, against a ladder it
+was never an answer to. That is the same failure the season collapse exists to prevent, one layer
+down, and it is what the tests in `compassService.test.ts` pin.
+
 ### Rewording a chair that already holds seated politicians (ruling 2026-08-28, Chris Andrews)
 
 - A **clarifying** rewording — same position, clearer words — keeps existing seats. Nothing re-audits.
