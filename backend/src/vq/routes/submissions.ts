@@ -51,9 +51,11 @@ import type { VerificationQuest } from '../types/database.types.js';
 import { logger } from '../lib/logger.js';
 import { invalidateFeedCache } from '../services/feedScoring.js';
 // Engine consolidation, Phase 4: now that VQ runs inside the engine, call the engine's
-// verification-rating service in-process instead of looping back over HTTP to
-// /api/vq/adjust-vr with a service key. Same logic and idempotency, no key.
+// verification-rating and XP services in-process instead of looping back over HTTP to
+// /api/vq/adjust-vr and /api/xp/award with service keys. Same logic and idempotency, no key.
 import { adjustVerificationRating } from '../../lib/vqService.js';
+import { awardXp } from '../../lib/xpService.js';
+import { unlockReferralCode, maybeRefreshReferralForInvitee } from '../../lib/referralService.js';
 
 const router = Router();
 
@@ -591,30 +593,31 @@ router.post(
       if (isCorrect) {
         xpAwarded = 50;
         if (process.env.ENABLE_XP_AWARDS === 'true') {
+          // In-process XP award (Phase 4). Replicates the /api/xp/award endpoint,
+          // including its post-award referral side-effects (idempotent, level 2+ only).
+          // Non-fatal: a failure is logged and does not block the submission response.
           try {
-            const xpRes = await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
-              method: 'POST',
-              headers: {
-                'X-Service-Key': process.env.QUEST_SERVICE_KEY!,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                user_id: userId,
-                source: 'validation_quest_completion',
-                amount: 50,
-                idempotency_key: `vq-submit-${submissionId}-${userId}`,
-                metadata: { questId: quest_id, submissionId },
-              }),
+            const xpResult = await awardXp({
+              userId,
+              source: 'validation_quest_completion',
+              amount: 50,
+              idempotencyKey: `vq-submit-${submissionId}-${userId}`,
+              metadata: { questId: quest_id, submissionId },
             });
-            if (!xpRes.ok) {
-              logger.warn('XP award at submission failed — non-fatal', {
-                userId,
-                questId: quest_id,
-                status: xpRes.status,
-              });
+            if (!xpResult.is_duplicate && xpResult.level >= 2) {
+              void unlockReferralCode(userId).catch((e) =>
+                logger.warn('referral unlock after quest XP failed — non-fatal', { userId, error: String(e) })
+              );
+              void maybeRefreshReferralForInvitee(userId).catch((e) =>
+                logger.warn('referral refresh after quest XP failed — non-fatal', { userId, error: String(e) })
+              );
             }
           } catch (err) {
-            logger.warn('XP award at submission threw — non-fatal', { userId, error: String(err) });
+            logger.warn('XP award at submission failed — non-fatal', {
+              userId,
+              questId: quest_id,
+              error: String(err),
+            });
           }
         }
       }
