@@ -15,7 +15,7 @@ import { z } from 'zod';
 const AnswersNewSchema = z.object({
   answers: z.array(z.object({
     topic_id: z.string().uuid(),
-    value: z.number().multipleOf(0.5).min(0.5).max(5.5),
+    value: z.number().multipleOf(0.5).min(0).max(5.5),
   })).min(1, 'answers must contain at least one entry'),
 });
 
@@ -73,12 +73,84 @@ describe('answers payload — real payloads still pass', () => {
   it('still enforces the value range', () => {
     expect(AnswersNewSchema.safeParse({ answers: [{ topic_id: UUID, value: 9 }] }).success)
       .toBe(false);
-    expect(AnswersNewSchema.safeParse({ answers: [{ topic_id: UUID, value: 0 }] }).success)
+    expect(AnswersNewSchema.safeParse({ answers: [{ topic_id: UUID, value: -1 }] }).success)
       .toBe(false);
+  });
+
+  // 🔴 THIS ASSERTION USED TO READ `value: 0 -> false`. It was not testing a
+  // rule; it was pinning the gap that made a blank inexpressible. A blanked
+  // answer IS value 0 — the politician was researched and the ladder moved out
+  // from under them — so refusing it here meant blanks could only ever be
+  // written by migration, never maintained through the editor.
+  it('ACCEPTS value 0 — that is a blank, not a bad request', () => {
+    expect(AnswersNewSchema.safeParse({ answers: [{ topic_id: UUID, value: 0 }] }).success)
+      .toBe(true);
   });
 
   it('still enforces topic_id being a uuid', () => {
     expect(AnswersNewSchema.safeParse({ answers: [{ topic_id: 'nope', value: 3 }] }).success)
       .toBe(false);
+  });
+});
+
+// 🔴 THE SCHEMA ABOVE IS A COPY, AND A COPY CAN DRIFT. It is re-declared rather
+// than imported because the route module pulls in the pg pool at import time —
+// which means this file could keep passing against a stale mirror while the real
+// route rejects the payload. That is not hypothetical: FOUR separate zod schemas
+// across three route files guard a write into inform.politician_answers, and
+// every one of them independently blocked value 0.
+//
+// So this reads the sources. Each entry names a site and the exact text that must
+// be there. Change a schema and this fails, naming the file — which is the point:
+// the next person is told there are four, not one.
+describe('every answer-value schema permits a blank', () => {
+  const SITES = [
+    {
+      file: 'src/routes/compassAdmin.ts',
+      what: 'PoliticianAnswersNewSchema — PUT /compass/politicians/:id/answers',
+      expect: 'value: z.number().multipleOf(0.5).min(0).max(5.5),',
+    },
+    {
+      file: 'src/routes/compassContributor.ts',
+      what: 'singleStanceSchema + bulkStanceSchema — the contributor research surface',
+      expect: 'value: z.number().int().min(0).max(5),',
+      times: 2,
+    },
+    {
+      file: 'src/routes/admin.ts',
+      what: 'PoliticianAnswersSchema — PUT /admin/compass/politicians/:id/answers',
+      expect: 'value: z.number().int().min(0).max(5),',
+    },
+  ];
+
+  for (const site of SITES) {
+    it(`${site.file} — ${site.what}`, async () => {
+      const { readFileSync } = await import('node:fs');
+      const src = readFileSync(site.file, 'utf8');
+      const found = src.split(site.expect).length - 1;
+      expect(found, `expected ${site.times ?? 1}x "${site.expect}" in ${site.file}`)
+        .toBe(site.times ?? 1);
+    });
+  }
+
+  // The mirror at the top of this file must say what the route says.
+  it('the mirrored schema in this file matches the route it mirrors', async () => {
+    const { readFileSync } = await import('node:fs');
+    const route = readFileSync('src/routes/compassAdmin.ts', 'utf8');
+    const mirror = readFileSync('src/routes/compassAdmin.answersPayload.test.ts', 'utf8');
+    const line = 'value: z.number().multipleOf(0.5).min(0).max(5.5),';
+    expect(route).toContain(line);
+    expect(mirror).toContain(line);
+  });
+
+  // 🔴 A LADDER RUNG IS NOT AN ANSWER. compass_stance_revisions holds the five
+  // rungs a topic offers, and there is no rung 0 — a blank is the ABSENCE of a
+  // rung, not one of them. If a find-and-replace ever loosens these the same way,
+  // a topic could be authored with a rung nothing can render.
+  it('but the LADDER schemas still refuse 0', async () => {
+    const { readFileSync } = await import('node:fs');
+    for (const f of ['src/routes/compassRevisions.ts', 'src/routes/topicRewrites.ts']) {
+      expect(readFileSync(f, 'utf8')).toContain('value: z.number().int().min(1).max(5),');
+    }
   });
 });

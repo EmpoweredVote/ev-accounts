@@ -119,7 +119,10 @@ const UpdateStanceBatchSchema = z.object({
 const PoliticianAnswersNewSchema = z.object({
   answers: z.array(z.object({
     topic_id: z.string().uuid(),
-    value: z.number().multipleOf(0.5).min(0.5).max(5.5),
+    // min(0), not min(0.5): 0 is a BLANK, not an out-of-range answer. See
+    // CLAUDE.md, "A blank is value = 0". The table CHECK is the inner guard
+    // and is stricter than this schema — it takes whole 0..5 only.
+    value: z.number().multipleOf(0.5).min(0).max(5.5),
   })).min(1, 'answers must contain at least one entry'),
 });
 
@@ -504,10 +507,17 @@ router.post('/politicians/context', async (req, res): Promise<void> => {
 
 /**
  * PUT /api/compass/politicians/:id/answers
- * Full replacement of all politician answers for a given politician.
- * Deletes all existing answers then inserts the provided set atomically
- * via the admin_update_politician_answers RPC (updated in Plan 01 migration).
- * Body: { answers: [{ topic_id: string, value: number (0.5 steps, 0.5–5.5) }] }
+ *
+ * ⚠ NOT a full replacement, despite the verb and despite what this comment used
+ * to say. It claimed the RPC "deletes all existing answers then inserts the
+ * provided set" — that branch was removed by CC_0001 and the function body now
+ * carries "No DELETE. do not reinstate." It is an UPSERT LOOP: a topic
+ * absent from the payload keeps whatever it had. The stale wording read as a
+ * hazard it is not, and cost a reader real time during the Season 2 read audit.
+ *
+ * Upserts into the OPEN season only, stamping that season's pinned revision.
+ * Body: { answers: [{ topic_id: string, value: number (0.5 steps, 0–5.5) }] }
+ * value 0 is a BLANK — see CLAUDE.md, "A blank is value = 0".
  */
 router.put('/politicians/:id/answers', async (req, res): Promise<void> => {
   const id = req.params.id as string;

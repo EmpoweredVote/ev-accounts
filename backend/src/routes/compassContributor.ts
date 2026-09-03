@@ -94,7 +94,11 @@ function isUUID(s: string): boolean {
 // ---------------------------------------------------------------------------
 
 const singleStanceSchema = z.object({
-  value: z.number().int().min(1).max(5),
+  // min(0), not min(1): 0 is a BLANK — the politician was researched and the
+  // ladder moved out from under them, so no rung states what they hold. It is a
+  // different fact from an absent row, which means "not researched". See
+  // CLAUDE.md, "A blank is value = 0".
+  value: z.number().int().min(0).max(5),
   write_in_text: z.string().max(500).optional(),
 });
 
@@ -103,7 +107,10 @@ const bulkStanceSchema = z.object({
     .array(
       z.object({
         topic_id: z.string().uuid(),
-        value: z.number().int().min(1).max(5),
+        // min(0) — a blank. Note this is NOT clear_topic_ids below: clearing
+        // DELETES the open-season row, so the read falls back to the previous
+        // season's answer. Blanking says "no position now" and shadows it.
+        value: z.number().int().min(0).max(5),
         write_in_text: z.string().max(500).optional(),
       })
     )
