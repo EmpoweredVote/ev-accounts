@@ -814,7 +814,9 @@ const PoliticianAnswersSchema = z.object({
   answers: z.array(
     z.object({
       topic_id: z.string().uuid(),
-      value: z.number().int().min(1).max(5),
+      // min(0): 0 is a BLANK. Note UpdateStanceSchema above keeps min(1) —
+      // that one is a LADDER RUNG, and there is no rung 0.
+      value: z.number().int().min(0).max(5),
     })
   ),
 });
