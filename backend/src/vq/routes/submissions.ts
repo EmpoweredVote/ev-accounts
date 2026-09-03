@@ -50,6 +50,10 @@ import { normalizeAnswer, answersMatch } from '../services/normalization.js';
 import type { VerificationQuest } from '../types/database.types.js';
 import { logger } from '../lib/logger.js';
 import { invalidateFeedCache } from '../services/feedScoring.js';
+// Engine consolidation, Phase 4: now that VQ runs inside the engine, call the engine's
+// verification-rating service in-process instead of looping back over HTTP to
+// /api/vq/adjust-vr with a service key. Same logic and idempotency, no key.
+import { adjustVerificationRating } from '../../lib/vqService.js';
 
 const router = Router();
 
@@ -554,42 +558,28 @@ router.post(
       }
 
       const delta = isCorrect ? 3 : -10;
+      // In-process VR adjustment (Phase 4). Idempotency key and non-fatal semantics
+      // are preserved: a failure logs and leaves new_vr unset, exactly as the old
+      // HTTP path did on a non-2xx or a throw.
       try {
-        const vrRes = await fetch(`${ACCOUNTS_URL}/api/vq/adjust-vr`, {
-          method: 'POST',
-          headers: {
-            'X-Service-Key': process.env.VQ_SERVICE_KEY!,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            user_id: userId,
-            delta,
-            idempotency_key: `vq-yellow-${submissionId}-${userId}`,
-            reason: isCorrect ? 'yellow_quest_correct' : 'yellow_quest_incorrect',
-          }),
+        const vrData = await adjustVerificationRating({
+          userId,
+          delta,
+          idempotencyKey: `vq-yellow-${submissionId}-${userId}`,
+          reason: isCorrect ? 'yellow_quest_correct' : 'yellow_quest_incorrect',
         });
-        if (vrRes.ok) {
-          const vrData = await vrRes.json() as { new_rating: number; delta_applied: number };
-          yellowQuestResult = {
-            outcome: isCorrect ? 'correct' : 'incorrect',
-            correct_answer: questRow.correct_answer,
-            vr_delta: delta,
-            new_vr: vrData.new_rating,
-          };
-        } else {
-          logger.warn('adjust-vr for Yellow quest failed — non-fatal', {
-            userId,
-            questId: quest_id,
-            status: vrRes.status,
-          });
-          yellowQuestResult = {
-            outcome: isCorrect ? 'correct' : 'incorrect',
-            correct_answer: questRow.correct_answer,
-            vr_delta: delta,
-          };
-        }
+        yellowQuestResult = {
+          outcome: isCorrect ? 'correct' : 'incorrect',
+          correct_answer: questRow.correct_answer,
+          vr_delta: delta,
+          new_vr: vrData.new_rating,
+        };
       } catch (err) {
-        logger.warn('adjust-vr for Yellow quest threw — non-fatal', { userId, error: String(err) });
+        logger.warn('adjust-vr for Yellow quest failed — non-fatal', {
+          userId,
+          questId: quest_id,
+          error: String(err),
+        });
         yellowQuestResult = {
           outcome: isCorrect ? 'correct' : 'incorrect',
           correct_answer: questRow.correct_answer,
