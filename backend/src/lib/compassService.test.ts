@@ -12,6 +12,7 @@ import {
   getPromotedTopics, validateTopicIds,
   isNoPromotedTopicsError, NoPromotedTopicsError,
   getPoliticianAnswers, getPoliticianContext, getPoliticianContextAll,
+  compareWithPoliticians, getPoliticianCitations,
 } from './compassService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -234,5 +235,68 @@ describe('getPoliticianContextAll — one row per topic', () => {
     const rows = [{ topic_id: 't1', reasoning: 'r', sources: ['u'] }];
     mockQuery.mockResolvedValue({ rows });
     await expect(getPoliticianContextAll('p1')).resolves.toEqual(rows);
+  });
+});
+
+// 🔴 THE HEADLINE MATCH PERCENTAGE. compareWithPoliticians was season-collapsed
+// but guarded on neither side, so a blanked answer entered
+// `1 - |user - politician| / 5` as rung 0 — scoring a user on rung 5 at 0% for a
+// topic on which the politician simply has no seat on the new ladder.
+describe('compareWithPoliticians — a blank is not a position', () => {
+  const empty = { rows: [] };
+
+  it('excludes value 0 from the politician answers, after the collapse', async () => {
+    mockQuery.mockResolvedValue(empty);
+    await compareWithPoliticians('u1', ['p1']);
+
+    const sql = mockQuery.mock.calls
+      .map((c) => c[0] as string)
+      .find((s) => s.includes('inform.politician_answers'))!;
+
+    expect(sql).toMatch(/value\s*<>\s*0/);
+    const collapseEnd = sql.indexOf(') latest');
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(sql.search(/value\s*<>\s*0/)).toBeGreaterThan(collapseEnd);
+  });
+
+  // The user side reads compass_responses_current, whose deleted_at filter is a
+  // different idea from value 0. Six sibling queries in this file already filter
+  // both; this one filtered neither zero.
+  it('excludes value 0 from the user answers too', async () => {
+    mockQuery.mockResolvedValue(empty);
+    await compareWithPoliticians('u1', ['p1']);
+
+    const sql = mockQuery.mock.calls
+      .map((c) => c[0] as string)
+      .find((s) => s.includes('compass_responses_current'))!;
+
+    expect(sql).toContain('deleted_at IS NULL');
+    expect(sql).toMatch(/value\s*(<>|!=)\s*0/);
+  });
+
+  // The guard has to be in SQL, not in the scoring loop: a 0 that reaches
+  // `sharedTopics` is already counted in the denominator.
+  it('scores only the topics both sides actually hold', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ topic_id: 't1', value: '5' }] })
+      .mockResolvedValueOnce({ rows: [{ topic_id: 't1', value: '5', full_name: 'A' }] });
+
+    const [result] = await compareWithPoliticians('u1', ['p1']);
+    expect(result.alignment_score).toBe(100);
+    expect(result.topics).toHaveLength(1);
+  });
+});
+
+// A blanked answer has no rung, so `cs` finds no stance text and stance_text is
+// null — but groupCitationRows reads has_stance as `stance_value != null`, and 0
+// is not null. The block rendered as "has a stance" with nothing to name, under
+// reasoning that argues the position they no longer hold.
+describe('getPoliticianCitations — a blanked stance reads as no stance', () => {
+  it('nulls a zero stance value so has_stance goes false', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/NULLIF\(\s*pa\.value\s*,\s*0\s*\)/);
   });
 });

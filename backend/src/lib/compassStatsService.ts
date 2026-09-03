@@ -94,13 +94,21 @@ const USER_COUNTS_SQL = `
   GROUP BY topic_id, value
 `;
 
-// politician_answers has no soft-delete column; every row is live.
+// politician_answers has no soft-delete column, so `deleted_at` must never
+// appear in these queries — but a row is not automatically a position. A BLANKED
+// answer is value 0: the politician was researched, and the ladder they were
+// seated on changed under them so that no rung states what they hold.
 //
 // ONE ANSWER PER POLITICIAN PER TOPIC — THEIR LATEST. A plain COUNT(*) over the
 // table would count someone researched in two seasons twice, weighting them
 // double in the distribution and inflating every bar. The DISTINCT ON collapses
 // each politician/topic to the newest season they actually answered in, which is
 // also what the compass displays, so the chart and the profile agree.
+//
+// 🔴 AND value IS THE GROUP KEY, so an unfiltered 0 becomes its own bucket — a
+// bar on the public distribution that no ladder text can label. The guard sits
+// OUTSIDE the CTE on purpose: filtering inside it would skip the newest season
+// and count an older answer the person no longer holds.
 const POLITICIAN_COUNTS_SQL = `
   WITH latest AS (
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
@@ -114,6 +122,7 @@ const POLITICIAN_COUNTS_SQL = `
          COUNT(*)::int  AS n,
          (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
   FROM latest
+  WHERE value <> 0
   GROUP BY topic_id, value
 `;
 
@@ -124,13 +133,18 @@ const USER_TOTALS_SQL = `
   WHERE deleted_at IS NULL
 `;
 
-// Same collapse as POLITICIAN_COUNTS_SQL, and for the same reason: `responses`
-// is a COUNT(*), so without it the total climbs every season on re-research
-// while no new position has been recorded.
+// Same collapse and same zero guard as POLITICIAN_COUNTS_SQL, for the same two
+// reasons: `responses` is a COUNT(*), so without the collapse the total climbs
+// every season on re-research while no new position has been recorded, and
+// without the guard a blank counts as a position that was never stated.
+//
+// The CTE carries `value` only so the guard can be applied after the collapse.
+// `respondents` is deliberately counted after it too: someone whose every answer
+// is blank has no stance to show, and counting them would overstate the corpus.
 const POLITICIAN_TOTALS_SQL = `
   WITH latest AS (
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
-           a.politician_id
+           a.politician_id, a.value
       FROM inform.politician_answers a
       JOIN inform.seasons s ON s.id = a.season_id
      ORDER BY a.politician_id, a.topic_id, s.number DESC
@@ -138,6 +152,7 @@ const POLITICIAN_TOTALS_SQL = `
   SELECT COUNT(*)::int                       AS responses,
          COUNT(DISTINCT politician_id)::int  AS respondents
   FROM latest
+  WHERE value <> 0
 `;
 
 interface TotalsRow {

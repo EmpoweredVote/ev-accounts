@@ -135,3 +135,26 @@ describe('mutations', () => {
     expect(out.closed_season_id).toBe('y');
   });
 });
+
+// The admin composition grid keys `distribution` on the answer value and sums it
+// into `answer_total`. A blanked answer is value 0, which has no rung in
+// LADDERS_SQL — so it would arrive as a bucket the UI cannot label, on the one
+// screen an editor uses to judge whether a ladder change is safe.
+describe('getComposition — blanked answers are not in the distribution', () => {
+  it('excludes value 0, after the collapse', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getComposition();
+
+    const sql = mockQuery.mock.calls
+      .map((c) => c[0] as string)
+      .find((s) => s.includes('inform.politician_answers'));
+
+    expect(sql).toBeDefined();
+    expect(sql!).toMatch(/value\s*<>\s*0/);
+    // The DISTINCT ON is the inner `x`; the guard belongs outside it, so a blank
+    // in the newest season suppresses rather than falling through to an older one.
+    const collapseEnd = sql!.indexOf(') x');
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(sql!.search(/value\s*<>\s*0/)).toBeGreaterThan(collapseEnd);
+  });
+});
