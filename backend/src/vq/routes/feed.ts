@@ -46,10 +46,10 @@ import type {
   EarnedBounty,
   CompletedSlot,
 } from '../types/custom.js';
+// Engine consolidation, Phase 4: build the /api/account/me composite in-process.
+import { getAccountMe } from '../../lib/accountMeService.js';
 
 const router = Router();
-
-const ACCOUNTS_URL = process.env.ACCOUNTS_URL ?? 'https://ev-accounts-api.onrender.com';
 
 // Apply full auth chain to all feed routes
 router.use(requireAuth, requireNotSuspended, requireConnected);
@@ -71,44 +71,41 @@ router.get('/', async (req: any, res: any) => {
   let redGemQuestsUnlocked = true; // default open for backwards compatibility
   let userLevel = 1;
   try {
-    const meRes = await fetch(`${ACCOUNTS_URL}/api/account/me`, {
-      headers: { Authorization: req.headers.authorization ?? '' },
-    });
-    if (meRes.ok) {
-      const meData = await meRes.json() as {
-        jurisdiction?: {
-          congressional_district_name: string | null;
-          state_senate_district_name: string | null;
-          state_house_district_name: string | null;
-          county_name: string | null;
-          school_district_name: string | null;
-        } | null;
-        vq_hold_active?: boolean;
-        vq_hold_until?: string | null;
-        red_gem_quests_unlocked?: boolean;
-        verification_rating?: number | null;
-        xp?: { level: number } | null;
-      };
+    // In-process (Phase 4): build the account composite directly instead of an HTTP
+    // loopback to /api/account/me. Fail open on errors (defaults above stay).
+    const meData = await getAccountMe(req.accessToken, req.userId) as {
+      jurisdiction?: {
+        congressional_district_name: string | null;
+        state_senate_district_name: string | null;
+        state_house_district_name: string | null;
+        county_name: string | null;
+        school_district_name: string | null;
+      } | null;
+      vq_hold_active?: boolean;
+      vq_hold_until?: string | null;
+      red_gem_quests_unlocked?: boolean;
+      verification_rating?: number | null;
+      xp?: { level: number } | null;
+    };
 
-      // VQ hold check — MUST come before cache read
-      if (meData.vq_hold_active === true) {
-        return res.status(403).json({
-          error: 'Verification hold active',
-          code: 'VQ_HOLD_ACTIVE',
-          hold_until: meData.vq_hold_until ?? null,
-        });
-      }
-
-      if (meData.jurisdiction) {
-        hasLocation = true;
-        userDistricts = Object.values(meData.jurisdiction).filter(Boolean) as string[];
-      }
-      verificationRating = meData.verification_rating ?? null;
-      redGemQuestsUnlocked = meData.red_gem_quests_unlocked ?? true;
-      userLevel = meData.xp?.level ?? 1;
+    // VQ hold check — MUST come before cache read
+    if (meData.vq_hold_active === true) {
+      return res.status(403).json({
+        error: 'Verification hold active',
+        code: 'VQ_HOLD_ACTIVE',
+        hold_until: meData.vq_hold_until ?? null,
+      });
     }
+
+    if (meData.jurisdiction) {
+      hasLocation = true;
+      userDistricts = Object.values(meData.jurisdiction).filter(Boolean) as string[];
+    }
+    verificationRating = meData.verification_rating ?? null;
+    redGemQuestsUnlocked = meData.red_gem_quests_unlocked ?? true;
+    userLevel = meData.xp?.level ?? 1;
   } catch (err) {
-    logger.warn('Failed to fetch /api/account/me for jurisdiction', { userId, error: String(err) });
+    logger.warn('getAccountMe for feed failed', { userId, error: String(err) });
   }
 
   // --------------------------------------------------------
@@ -402,29 +399,25 @@ router.post('/initialize', async (req: any, res: any) => {
   let userDistricts: string[] | null = null;
   let redGemQuestsUnlocked = true;
   try {
-    const meRes = await fetch(`${ACCOUNTS_URL}/api/account/me`, {
-      headers: { Authorization: req.headers.authorization ?? '' },
-    });
-    if (meRes.ok) {
-      const meData = await meRes.json() as {
-        jurisdiction?: {
-          congressional_district_name: string | null;
-          state_senate_district_name: string | null;
-          state_house_district_name: string | null;
-          county_name: string | null;
-          school_district_name: string | null;
-        } | null;
-        red_gem_quests_unlocked?: boolean;
-        xp?: { level: number } | null;
-      };
-      if (meData.jurisdiction) {
-        userDistricts = Object.values(meData.jurisdiction).filter(Boolean) as string[];
-      }
-      redGemQuestsUnlocked = meData.red_gem_quests_unlocked ?? true;
-      userLevel = meData.xp?.level ?? 1;
+    // In-process (Phase 4): build the account composite directly. Fail open.
+    const meData = await getAccountMe(req.accessToken, req.userId) as {
+      jurisdiction?: {
+        congressional_district_name: string | null;
+        state_senate_district_name: string | null;
+        state_house_district_name: string | null;
+        county_name: string | null;
+        school_district_name: string | null;
+      } | null;
+      red_gem_quests_unlocked?: boolean;
+      xp?: { level: number } | null;
+    };
+    if (meData.jurisdiction) {
+      userDistricts = Object.values(meData.jurisdiction).filter(Boolean) as string[];
     }
+    redGemQuestsUnlocked = meData.red_gem_quests_unlocked ?? true;
+    userLevel = meData.xp?.level ?? 1;
   } catch (err) {
-    logger.warn('Failed to fetch /api/account/me in session initialize', { userId, error: String(err) });
+    logger.warn('getAccountMe in session initialize failed', { userId, error: String(err) });
   }
 
   // Check for existing active assignments — zero means first session

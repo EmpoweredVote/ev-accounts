@@ -57,10 +57,9 @@ import { adjustVerificationRating } from '../../lib/vqService.js';
 import { awardXp } from '../../lib/xpService.js';
 import { unlockReferralCode, maybeRefreshReferralForInvitee } from '../../lib/referralService.js';
 import { creditGems } from '../../lib/gemService.js';
+import { getAccountMe } from '../../lib/accountMeService.js';
 
 const router = Router();
-
-const ACCOUNTS_URL = process.env.ACCOUNTS_URL ?? 'https://ev-accounts-api.onrender.com';
 
 // ============================================================
 // POST / — Submit or update an answer
@@ -79,24 +78,21 @@ router.post(
     // Fail open on errors (hold is a protection, not a security gate).
     // --------------------------------------------------------
     try {
-      const meRes = await fetch(`${ACCOUNTS_URL}/api/account/me`, {
-        headers: { Authorization: req.headers.authorization ?? '' },
-      });
-      if (meRes.ok) {
-        const meData = await meRes.json() as {
-          vq_hold_active?: boolean;
-          vq_hold_until?: string | null;
-        };
-        if (meData.vq_hold_active === true) {
-          return res.status(403).json({
-            error: 'Verification hold active',
-            code: 'VQ_HOLD_ACTIVE',
-            hold_until: meData.vq_hold_until ?? null,
-          });
-        }
+      // In-process (Phase 4): build the account composite directly instead of an HTTP
+      // loopback to /api/account/me. Fail open on errors (hold is a protection, not a gate).
+      const meData = await getAccountMe(req.accessToken, req.userId) as {
+        vq_hold_active?: boolean;
+        vq_hold_until?: string | null;
+      };
+      if (meData.vq_hold_active === true) {
+        return res.status(403).json({
+          error: 'Verification hold active',
+          code: 'VQ_HOLD_ACTIVE',
+          hold_until: meData.vq_hold_until ?? null,
+        });
       }
     } catch (err) {
-      logger.warn('Failed to fetch /api/account/me for VQ hold check — proceeding', {
+      logger.warn('getAccountMe for VQ hold check failed — proceeding', {
         userId,
         error: String(err),
       });
