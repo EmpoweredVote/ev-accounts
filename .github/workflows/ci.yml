@@ -88,14 +88,26 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
-# 🔑 ONE INDEPENDENT DATA CHECK PER JOB. A failing step masks every step after it in the same job, and
-# the masked check reports "skipped" nowhere a human is looking — the job is just red for the first
-# reason. That cost two days on 2026-08-14: a stale matview failed ahead of the stance check, which
-# therefore never ran, hiding an ORPHAN_CONTEXT regression through 19 red runs. Jobs run in parallel,
-# so the only price of splitting is a duplicated `npm ci`, and similar subject matter is NOT a reason
-# to couple failure reporting. If you add a check that can fail for its own reasons, give it its own
-# job. (`backend` is the deliberate exception: lint → typecheck → test is one pipeline over one commit,
-# where the run order IS the fix order.)
+# 🔑 ONE INDEPENDENT DATA CHECK PER JOB — with two deliberate exceptions, one of them guarded. A
+# failing step masks every step after it in the same job, and the masked check reports "skipped"
+# nowhere a human is looking — the job is just red for the first reason. That cost two days on
+# 2026-08-14: a stale matview failed ahead of the stance check, which therefore never ran, hiding an
+# ORPHAN_CONTEXT regression through 19 red runs. So the LIVE-DB checks each keep their own job: jobs
+# run in parallel, the only price of splitting is a duplicated `npm ci`, and similar subject matter is
+# NOT a reason to couple failure reporting. If you add a check that talks to the database, give it its
+# own job.
+#
+# EXCEPTION 1 — `static guards`: the four dependency-free static checks (no `npm ci` at all, each ~10-20s)
+# are merged into one job so they pay the one-minute-per-job MINIMUM once instead of four times. They
+# each fail for a DIFFERENT reason, so the masking trap is real — and it is defused MECHANICALLY, not
+# waved away: every check step there carries `if: ${{ !cancelled() }}`, so each one RUNS and reports
+# its own pass/fail even after an earlier step has failed. Nothing is skipped behind a red step, so the
+# 2026-08-14 failure cannot recur; the only thing given up is four status-check NAMES collapsing into
+# one, with each guard still visible as a step. A new guard added there MUST be dependency-free and
+# carry the same `if:` — otherwise it belongs in its own job.
+#
+# EXCEPTION 2 — `backend`: lint → typecheck → test is one pipeline over one commit, where the run order
+# IS the fix order, so it deliberately stops on the first failure.
 jobs:
   backend:
     name: backend lint · typecheck · test
@@ -132,24 +144,33 @@ jobs:
       - name: Unit tests
         run: npm run test:unit
 
-  migration-numbering:
-    name: migration numbering
+  static-guards:
+    name: static guards
     runs-on: ubuntu-latest
-    # Runs on PRs AND on pushes to master.
+    # 💰 THE FOUR CHEAP STATIC GUARDS, MERGED to pay the one-minute-per-job MINIMUM once instead of four
+    # times. Each is dependency-free (it runs straight off node, NO `npm ci`) and finishes in 10-20
+    # SECONDS, yet each billed a full minute as its own job — ~34% of the Actions bill for work that
+    # takes seconds. Folding them into one job saves ~1,050 billed minutes a month. The members were the
+    # separate jobs `migration numbering`, `answer-delete context guards`, `cal-access predicate
+    # tripwire` and `office occupancy (ADR 0002)`; each is now a STEP below, keeping its own name.
     #
-    # 🔴 It was PR-only until 2026-08-10, on the reasoning that it "compares files added on the branch
-    # against the base" and so has nothing to say outside a PR. That was true of the old check and it
-    # left the real hole wide open: this repo is worked by DIRECT PUSHES TO MASTER (autoDeploy is on
-    # for master), and on 2026-08-10 two parallel sessions each pushed a migration numbered 1681
-    # without a PR between them. CI never ran this job for either push, so nothing objected.
+    # 🔴 THE MASKING TRAP IS DEFUSED, NOT ACCEPTED. These four fail for genuinely DIFFERENT reasons — a
+    # duplicate migration number, an answer deleted without a context decision, a re-enabled broken
+    # predicate, a read of the dropped politician_id column — so under GitHub's default
+    # stop-on-first-failure a red early step would hide the checks after it. That is exactly the defect
+    # that cost two days on 2026-08-14. Every CHECK step below therefore carries `if: ${{ !cancelled() }}`:
+    # it RUNS and reports its own pass/fail even after an earlier step has already failed. The job is red
+    # if ANY guard fails, and each guard's real status shows on its own step — nothing is skipped behind
+    # a red step. If you add a fifth guard here it MUST be dependency-free and carry the same `if:`;
+    # otherwise give it its own job.
     #
-    # The check now also scans the migrations directory for duplicate numbers outright, which is
-    # meaningful on any event — so the trigger is widened to match. On a push there is no base_ref;
-    # BASE_REF is left unset and the script resolves origin/master itself, or falls back to the tree
-    # scan alone if it cannot.
+    # TRIGGER is the UNION of the four originals: push + PR. Three ran on push+PR already. `office
+    # occupancy` was PR-only; on a push its base resolves to origin/master (== HEAD after the push), so
+    # it scans an empty diff and is a harmless no-op there — full coverage on PRs, unchanged. `fetch-depth:
+    # 0` is the superset the numbering and occupancy diffs need; harmless for the other two.
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
-      # fetch-depth: 0 so the base branch is available to diff against.
+      # fetch-depth: 0 so the base branch is available to the numbering and occupancy diffs.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -161,107 +182,49 @@ jobs:
           # boot (2026-08-28). The two must not be able to drift again.
           node-version-file: backend/.node-version
 
-      # No npm install: the check is dependency-free, so it runs straight off node.
-      - name: Check for duplicate migration numbers
+      # --- migration numbering ---------------------------------------------------------------------
+      # Scans the migrations directory for duplicate numbers outright (meaningful on any event) and, on
+      # a PR, also diffs files added on the branch against the base. Was PR-only until 2026-08-10, when
+      # two parallel DIRECT PUSHES to master both took 1681 with no PR between them and CI never ran. On
+      # a push there is no base_ref; BASE_REF is left unset and the script resolves origin/master
+      # itself, or falls back to the tree scan alone. Dependency-free.
+      - name: migration numbering
+        if: ${{ !cancelled() }}
         run: node backend/scripts/check-migration-numbers.mjs
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
-  answer-delete-guards:
-    name: answer-delete context guards
-    runs-on: ubuntu-latest
-    # Split from the numbering check on 2026-08-14, the same day it was written. The two share a
-    # subject (migration hygiene) and nothing else: a duplicate number and a missing context guard are
-    # unrelated failures, so pairing them would let a numbering collision mask this — the exact defect
-    # this check exists to prevent, reproduced in the job that hosts it.
-    #
-    # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
-    # (1735, 1738, 1739 and the four Maryland passes). Every decision about the ANSWER was correct;
-    # none of them made a decision about the CONTEXT, so each silently created ORPHAN_CONTEXT
-    # violations. The gate went 50 -> 224 and CI stayed red for 19 runs before anyone looked.
-    #
-    # This is a LINT, not a constraint, and deliberately so: an FK requiring every context row to have
-    # an answer would be wrong, because 404 rows are context-without-answer by design (documented
-    # blanks). The property being enforced is "whoever removed an answer thought about the context" --
-    # a property of the change, not of the data.
-    #
-    # Static: no DATABASE_URL, so it runs on forks too. Same trigger as the numbering check, and for
-    # the same reason -- this repo is worked by direct pushes to master, so a PR-only guard would miss
-    # most of what it guards.
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
-    steps:
-      # Shallow checkout is enough: unlike the numbering check, this one never diffs against a base.
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
-          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
-          # boot (2026-08-28). The two must not be able to drift again.
-          node-version-file: backend/.node-version
-
-      # Dependency-free, so it runs straight off node with no npm install.
-      - name: Check answer deletes decide what happens to their context
+      # --- answer-delete context guards ------------------------------------------------------------
+      # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
+      # (1735, 1738, 1739 and the four Maryland passes), silently creating ORPHAN_CONTEXT violations —
+      # the gate went 50 -> 224 and CI stayed red for 19 runs. This is a LINT on the change ("whoever
+      # removed an answer thought about the context"), NOT an FK: 404 rows are context-without-answer by
+      # design (documented blanks). Static, no DATABASE_URL, so it runs on forks too.
+      - name: answer-delete context guards
+        if: ${{ !cancelled() }}
         run: node backend/scripts/check-answer-delete-guards.mjs
 
-  cal-access-predicate:
-    name: cal-access predicate tripwire
-    runs-on: ubuntu-latest
-    # `confirm-cal-access.ts` matches Cal-Access committees to politicians on the LAST
-    # SPACE-DELIMITED TOKEN of full_name, ignoring the `last_name` column on the same row. Audited
-    # 2026-08-16: 7,853 links across 578 active politicians, 7,836 of them auto-confirmed, $42.3M
-    # displayed. "Gracey Van Der Mark" becomes "mark" and claims 391 committees bearing the given
-    # name Mark; "Jesse Avila Jr" becomes "jr" and claims 116.
-    #
-    # The script is inert only by ACCIDENT: migration 1463 dropped `essentials.offices.politician_id`,
-    # which it still joins on, so it throws at runtime. Repairing that join is a one-line change that
-    # would re-run the identical predicate at full scale. A comment cannot stop that; this can.
-    #
-    # A RATCHET, not a freeze: it fails only on the single combination that re-creates the defect --
-    # the in-script abort removed while the last-token rule is still there. Replace the predicate and
-    # the check lets you drop the abort. It tests code with comments stripped, because the tripwire
-    # block quotes the defective rule and matching raw text would jam the ratchet shut forever.
-    #
-    # Static: no DATABASE_URL, so it runs on forks. Same trigger as the guards above -- this repo is
-    # worked by direct pushes to master, so a PR-only check would miss most of what it guards.
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
-          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
-          # boot (2026-08-28). The two must not be able to drift again.
-          node-version-file: backend/.node-version
-
-      # Dependency-free, so it runs straight off node with no npm install.
-      - name: Check confirm-cal-access.ts has not been re-enabled with the broken predicate
+      # --- cal-access predicate tripwire -----------------------------------------------------------
+      # `confirm-cal-access.ts` matches Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
+      # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claims 391 committees. It is
+      # inert only by ACCIDENT (migration 1463 dropped the column it joins on, so it throws), and
+      # repairing that join is a one-line change that would re-run the defect at full scale. A RATCHET:
+      # it fails only on the single combination that re-creates the defect, and tests code with comments
+      # stripped so the tripwire's own quoted rule does not jam it shut. Static, runs on forks.
+      - name: cal-access predicate tripwire
+        if: ${{ !cancelled() }}
         run: node backend/scripts/check-cal-access-predicate.mjs
 
-  occupancy:
-    name: office occupancy (ADR 0002)
-    runs-on: ubuntu-latest
-    # Same as above: compares files changed on the branch against the base.
-    if: github.event_name == 'pull_request'
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v7
-        with:
-          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
-          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
-          # boot (2026-08-28). The two must not be able to drift again.
-          node-version-file: backend/.node-version
-
-      # essentials.offices.politician_id was dropped (ADR 0002 phase 5), so referencing it is a
-      # runtime 42703 undefined_column. Catch it here instead. Dependency-free, like the check above.
-      - name: Check nothing writes occupancy to essentials.offices
+      # --- office occupancy (ADR 0002) -------------------------------------------------------------
+      # essentials.offices.politician_id was dropped (ADR 0002 phase 5), so referencing it is a runtime
+      # 42703 undefined_column. This catches it in the diff instead. BASE_REF is empty on push (the
+      # script falls back to origin/master and scans an empty diff), origin/<base> on a PR.
+      # Dependency-free.
+      - name: office occupancy (ADR 0002)
+        if: ${{ !cancelled() }}
         run: node backend/scripts/check-office-occupancy.mjs
         env:
-          BASE_REF: origin/${{ github.base_ref }}
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
   reachability:
     name: address-search reachability
