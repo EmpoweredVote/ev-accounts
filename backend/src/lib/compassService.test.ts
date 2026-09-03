@@ -11,6 +11,7 @@ vi.mock('./supabase.js', () => ({
 import {
   getPromotedTopics, validateTopicIds,
   isNoPromotedTopicsError, NoPromotedTopicsError,
+  getPoliticianAnswers, getPoliticianContext, getPoliticianContextAll,
 } from './compassService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -146,5 +147,92 @@ describe('validateTopicIds — a voter may select what the season asks', () => {
   it('does not mistake an unrelated error for an empty promoted set', () => {
     expect(isNoPromotedTopicsError(new Error('connection terminated'))).toBe(false);
     expect(isNoPromotedTopicsError(null)).toBe(false);
+  });
+});
+
+// 🔴 THESE THREE WERE POSTGREST BUILDER CALLS WITH NO SEASON PREDICATE, on
+// public routes, and `npm run check:answer-seasons` could not see them — it
+// matches SQL text and a builder call is not SQL text. The tests below pin the
+// season collapse itself, not the mechanism, so they keep holding if the SQL is
+// rewritten again.
+describe('getPoliticianAnswers — one row per topic, newest season', () => {
+  it('collapses to the newest season instead of returning a row per season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianAnswers('p1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/DISTINCT ON \(\s*a\.topic_id\s*\)/);
+    expect(sql).toContain('inform.seasons');
+    expect(sql).toMatch(/ORDER BY\s+a\.topic_id,\s*s\.number DESC/);
+  });
+
+  // The failure that made this urgent. Blanking writes value 0 into the NEW
+  // season; filtering before the collapse would drop that row and let the OLD
+  // season's rung survive, so the person keeps showing a position they no longer
+  // hold — read against a ladder it was never an answer to.
+  it('filters value 0 AFTER the collapse, so a blank in the newest season wins', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianAnswers('p1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const collapseEnd = sql.indexOf(') latest');
+    const zeroFilter = sql.search(/value\s*<>\s*0/);
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(zeroFilter).toBeGreaterThan(collapseEnd);
+  });
+
+  // The route serves this array straight to the client, and the builder call it
+  // replaces emitted JSON numbers. A string here would reach the compass as
+  // `"3"` and change the wire contract.
+  it('returns value as a number, as the builder call did', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ topic_id: 't1', value: '3' }] });
+    const out = await getPoliticianAnswers('p1');
+    expect(out).toEqual([{ topic_id: 't1', value: 3 }]);
+  });
+});
+
+describe('getPoliticianContext — the newest season, never two rows', () => {
+  // This one did not degrade quietly: `.maybeSingle()` THROWS on two rows, and
+  // politician_context's PK is (politician_id, topic_id, season_id). Carrying
+  // context into season 2 — step 1 of the rollout — would have 500'd the
+  // voter-facing "why this position?" panel for every carried pair.
+  it('takes one row by season order rather than assuming one exists', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContext('p1', 't1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.seasons');
+    expect(sql).toMatch(/ORDER BY\s+s\.number DESC/);
+    expect(sql).toMatch(/LIMIT 1/);
+  });
+
+  it('returns the newest row when the pair has one', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'] });
+  });
+
+  // The route turns null into a 404, which is the documented contract for a
+  // politician with no context on a topic. It must stay null, not undefined.
+  it('returns null — not undefined — when there is no context', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toBeNull();
+  });
+});
+
+describe('getPoliticianContextAll — one row per topic', () => {
+  it('collapses per topic to the newest season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContextAll('p1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/DISTINCT ON \(\s*c\.topic_id\s*\)/);
+    expect(sql).toContain('inform.seasons');
+    expect(sql).toMatch(/ORDER BY\s+c\.topic_id,\s*s\.number DESC/);
+  });
+
+  it('passes the rows through unchanged', async () => {
+    const rows = [{ topic_id: 't1', reasoning: 'r', sources: ['u'] }];
+    mockQuery.mockResolvedValue({ rows });
+    await expect(getPoliticianContextAll('p1')).resolves.toEqual(rows);
   });
 });

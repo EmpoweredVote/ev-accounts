@@ -709,36 +709,92 @@ export async function getCandidateAnswers(
 
 /**
  * getPoliticianAnswers
- * Returns a politician's stances on all topics they have answered.
+ * Returns a politician's stances on all topics they have answered — one row per
+ * topic, from the newest season they answered it in.
+ *
+ * 🔴 THIS WAS A POSTGREST BUILDER CALL AND NAMED NO SEASON AT ALL. It filtered
+ * `value != 0` and nothing else, so the day a second season exists it returns a
+ * row per season per topic. Two failures, both on a public route:
+ *
+ *   · THE BLANK FAILS TO BLANK. A blanked answer is value 0 in the NEW season.
+ *     Filtered at the table, that row disappears and the OLD season's rung
+ *     survives — so the politician keeps showing a position, now read against a
+ *     ladder on which that rung means something they never said. Collapsing
+ *     FIRST and filtering after is what makes a newer blank beat an older answer.
+ *   · THE WRONG SEASON CAN WIN. The rows go into `polValues[a.topic_id] = v` in
+ *     CombinedPage, so with two rows per topic the last one the planner emits
+ *     decides what the voter sees. Not a duplicate spoke — a non-deterministic
+ *     one.
+ *
+ * PostgREST cannot express the fix: there is no `DISTINCT ON`, so the read has
+ * to be SQL. pool.query is also what every other politician-answer read in this
+ * file already uses (getCandidateAnswers, getBatchPoliticianAnswers,
+ * getPoliticianCitations) — this call was the odd one out.
+ *
+ * Leaving supabaseAnon EXPOSES NOTHING NEW, which is the question a reviewer
+ * should ask. Both tables carry an unrestricted `public read` RLS policy granted
+ * to anon, so every row was already readable on the anon key, and the three
+ * routes are `optionalAuth` — public by design. The move changes which client
+ * runs the query, not who may see the answer.
+ *
+ * `value::text` then parseFloat, not `value::float8`: the builder call emitted
+ * JSON numbers and the route serves this array straight to the client, so the
+ * wire contract has to survive the move.
  */
-export async function getPoliticianAnswers(politicianId: string) {
-  const { data, error } = await supabaseAnon
-    .schema('inform')
-    .from('politician_answers')
-    .select('topic_id,value')
-    .eq('politician_id', politicianId)
-    .neq('value', 0)
-    .order('topic_id', { ascending: true });
-
-  if (error) throw error;
-  return data ?? [];
+export async function getPoliticianAnswers(
+  politicianId: string
+): Promise<PoliticianAnswer[]> {
+  const { rows } = await pool.query<{ topic_id: string; value: string }>(
+    `SELECT topic_id, value::text FROM (
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+         FROM inform.politician_answers a
+         JOIN inform.seasons s ON s.id = a.season_id
+        WHERE a.politician_id = $1
+        ORDER BY a.topic_id, s.number DESC
+     ) latest
+     WHERE value <> 0
+     ORDER BY topic_id ASC`,
+    [politicianId]
+  );
+  return rows.map(r => ({
+    topic_id: r.topic_id,
+    value: parseFloat(r.value),
+  }));
 }
 
 /**
  * getPoliticianContext
- * Returns reasoning and sources for a politician's stance on a topic, or null if absent.
+ * Returns reasoning and sources for a politician's newest-season stance on a
+ * topic, or null if absent.
+ *
+ * 🔴 THIS ONE DID NOT DEGRADE QUIETLY — IT 500s. It was a builder call ending in
+ * `.maybeSingle()`, which THROWS when more than one row comes back, against a
+ * table whose primary key is (politician_id, topic_id, season_id). The moment a
+ * pair has context in two seasons there are two rows and the call raises; the
+ * route catches it and serves INTERNAL_ERROR to `ComparePanel`, the voter-facing
+ * "why this position?" panel.
+ *
+ * Carrying context forward is step 1 of the Season 2 rollout, so this would have
+ * fired for every carried pair on the first write, not gradually.
+ *
+ * The season order is the point of the query, not decoration: reasoning is
+ * written against one season's ladder text, so serving the older one under the
+ * newer one's stance argues a position the politician was never recorded as
+ * holding.
  */
 export async function getPoliticianContext(politicianId: string, topicId: string) {
-  const { data, error } = await supabaseAnon
-    .schema('inform')
-    .from('politician_context')
-    .select('reasoning,sources')
-    .eq('politician_id', politicianId)
-    .eq('topic_id', topicId)
-    .maybeSingle();
-
-  if (error) throw error;
-  return data ?? null;
+  const { rows } = await pool.query<{ reasoning: string; sources: string[] }>(
+    `SELECT c.reasoning, c.sources
+       FROM inform.politician_context c
+       JOIN inform.seasons s ON s.id = c.season_id
+      WHERE c.politician_id = $1 AND c.topic_id = $2
+      ORDER BY s.number DESC
+      LIMIT 1`,
+    [politicianId, topicId]
+  );
+  // The route turns null into a 404 — the documented contract for "no context on
+  // this topic". rows[0] is undefined when empty, so the coalesce is load-bearing.
+  return rows[0] ?? null;
 }
 
 /**
@@ -749,14 +805,18 @@ export async function getPoliticianContext(politicianId: string, topicId: string
 export async function getPoliticianContextAll(
   politicianId: string
 ): Promise<{ topic_id: string; reasoning: string; sources: string[] }[]> {
-  const { data, error } = await supabaseAnon
-    .schema('inform')
-    .from('politician_context')
-    .select('topic_id,reasoning,sources')
-    .eq('politician_id', politicianId);
-
-  if (error) throw error;
-  return (data ?? []) as { topic_id: string; reasoning: string; sources: string[] }[];
+  // Same missing season predicate as getPoliticianContext, without the
+  // maybeSingle() that made that one loud: this returned a row per season per
+  // topic and the contributor editor pre-filled from whichever arrived first.
+  const { rows } = await pool.query<{ topic_id: string; reasoning: string; sources: string[] }>(
+    `SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources
+       FROM inform.politician_context c
+       JOIN inform.seasons s ON s.id = c.season_id
+      WHERE c.politician_id = $1
+      ORDER BY c.topic_id, s.number DESC`,
+    [politicianId]
+  );
+  return rows;
 }
 
 /**
