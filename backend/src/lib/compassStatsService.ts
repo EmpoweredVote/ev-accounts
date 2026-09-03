@@ -1,4 +1,5 @@
 import { pool } from './db.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 
 export interface StanceCount {
   id: string; // inform.compass_stances.id — stable handle for per-stance references
@@ -114,7 +115,7 @@ const POLITICIAN_COUNTS_SQL = `
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
            a.topic_id, a.value, a.write_in_text
       FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id
+      JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
      ORDER BY a.politician_id, a.topic_id, s.number DESC
   )
   SELECT topic_id::text AS topic_id,
@@ -146,7 +147,7 @@ const POLITICIAN_TOTALS_SQL = `
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
            a.politician_id, a.value
       FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id
+      JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
      ORDER BY a.politician_id, a.topic_id, s.number DESC
   )
   SELECT COUNT(*)::int                       AS responses,

@@ -55,6 +55,50 @@ export interface AnsweredSeason {
 }
 
 /**
+ * A DRAFT SEASON'S ROWS ARE NOT PUBLISHED DATA.
+ *
+ * 🔴 WHY THIS EXISTS, AND IT IS NOT THEORETICAL. Every season-aware read
+ * collapses to the newest season by `s.number DESC`. Nothing in that ordering
+ * asks whether the season is open — so the moment a draft season holds a row it
+ * wins the collapse and reaches the public API.
+ *
+ * That would be survivable if the rest of the product followed it. It does not.
+ * The ladder TEXT comes from `inform.compass_topics_promoted`, which follows the
+ * OPEN season's pin. So the value jumps to the draft season while the words stay
+ * on the open one: a politician stored on Housing rung 2 renders as rung 3
+ * against Season 1's wording. Measured on prod 2026-09-03 against a rolled-back
+ * copy of the Season 2 re-pointing — 2,685 answers would have changed what they
+ * display while the ladder beside them did not move, and the 757 shown on
+ * Housing rung 2 would have dropped to 0 on the public distribution.
+ *
+ * It breaks citations the same way. `getPoliticianCitations` resolves stance text
+ * through the answer's pinned revision, and a draft season pins a revision that
+ * is still `approved`; the LATERAL requires `published` or `superseded`, finds
+ * nothing, and the block renders a stance with no text.
+ *
+ * WHY `<> 'draft'` AND NOT `= 'open'`. A CLOSED season must still show through —
+ * that is ADR 0005 §1.4's "reads follow the person, not the calendar": after a
+ * changeover, someone answered only in Season 1 must still display that answer
+ * rather than vanish. Draft is the one status that was never published.
+ *
+ * ⚠ THIS IS THE READ GATE. `s.status = 'open'` is the WRITE gate (see
+ * UPSERT_ANSWER_SQL) and they answer different questions: a write must land in
+ * the season being researched; a read must not show a season nobody published.
+ *
+ * ⚠ ONE DELIBERATE EXCEPTION, in seasonCompositionService — the admin compose
+ * screen exists to show what the draft season would look like. It says so.
+ *
+ * ⚠ NOT FIXED HERE, AND KNOWN: `inform.compass_responses_current` is the same
+ * shape — DISTINCT ON (user_id, topic_id) ORDER BY s.number DESC, no status
+ * filter. It cannot bite today, because nothing can put a USER answer in a draft
+ * season: `compass_responses_assign_season` fills season_id from the OPEN season
+ * and all four write RPCs go through it. Fixing it means a migration to redefine
+ * the view, which does not belong in a code-only change. Do it if the user side
+ * ever gains a path that writes into a draft season.
+ */
+export const SEASON_IS_PUBLISHED = `s.status <> 'draft'`;
+
+/**
  * The newest season in which this person answered this topic, or null if they
  * never have.
  *
@@ -71,7 +115,7 @@ export async function latestAnsweredSeason(
   const { rows } = await pool.query<{ season_id: string; number: number }>(
     `SELECT a.season_id, s.number
        FROM inform.politician_answers a
-       JOIN inform.seasons s ON s.id = a.season_id
+       JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE a.politician_id = $1 AND a.topic_id = $2
       ORDER BY s.number DESC
       LIMIT 1`,
@@ -378,7 +422,7 @@ export function newestAnswerLateral(
   return `LEFT JOIN LATERAL (
     SELECT a.value, a.season_id, a.topic_revision_id, s.number AS season_number
       FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id
+      JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
      WHERE a.politician_id = ${politicianExpr}
        AND a.topic_id = ${topicExpr}
      ORDER BY s.number DESC

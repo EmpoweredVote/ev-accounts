@@ -101,7 +101,12 @@ export function buildReviewRowForInsert(args: {
  */
 export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<void> {
   if (rows.length === 0) return;
+  // Imported lazily alongside pool, NOT at module scope. This module is loaded
+  // by tests that mock './db.js', and a static import of seasonService pulls
+  // db.js in before the mock is installed — which broke collection of
+  // researchEvidenceService.test.ts the first time this predicate was added.
   const { pool } = await import('./db.js');
+  const { SEASON_IS_PUBLISHED } = await import('./seasonService.js');
   for (const r of rows) {
     await pool.query(
       // season_id comes from the context row this evidence supports. The FK from
@@ -112,7 +117,7 @@ export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<voi
          (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
        SELECT $1, $2, c.season_id, $3, $4, $5, $6
          FROM inform.politician_context c
-         JOIN inform.seasons s ON s.id = c.season_id
+         JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE c.politician_id = $1 AND c.topic_id = $2
         ORDER BY s.number DESC
         LIMIT 1
@@ -194,7 +199,10 @@ export async function resolveResearchReview(
   valueOverride?: number | null,
   reasoningOverride?: string,
 ): Promise<void> {
+  // Lazy, for the same reason as accumulateEvidence above: a static import of
+  // seasonService drags db.js in before the test mock is installed.
   const { pool } = await import('./db.js');
+  const { SEASON_IS_PUBLISHED } = await import('./seasonService.js');
   const row = await getResearchReviewById(id);
   if (!row) throw Object.assign(new Error('Not found'), { code: 'NOT_FOUND' });
 
@@ -239,7 +247,7 @@ export async function resolveResearchReview(
          (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
        SELECT $1, $2, c.season_id, $3, $4, 0, $5
          FROM inform.politician_context c
-         JOIN inform.seasons s ON s.id = c.season_id
+         JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE c.politician_id = $1 AND c.topic_id = $2
         ORDER BY s.number DESC
         LIMIT 1
