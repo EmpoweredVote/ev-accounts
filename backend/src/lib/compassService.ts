@@ -1,5 +1,6 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 
 // ---------------------------------------------------------------------------
 // Types for compare and verdicts service functions
@@ -474,14 +475,14 @@ export async function getCompassPoliticians() {
             (SELECT COUNT(*)::int FROM (
                SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
                  FROM inform.politician_answers a
-                 JOIN inform.seasons s ON s.id = a.season_id
+                 JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
                 WHERE a.politician_id = p.id
                 ORDER BY a.topic_id, s.number DESC
              ) l WHERE l.value != 0) AS answer_count,
             (SELECT array_agg(l.topic_id) FROM (
                SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
                  FROM inform.politician_answers a
-                 JOIN inform.seasons s ON s.id = a.season_id
+                 JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
                 WHERE a.politician_id = p.id
                 ORDER BY a.topic_id, s.number DESC
              ) l WHERE l.value != 0) AS answered_topic_ids
@@ -566,7 +567,7 @@ export async function getCandidates() {
           SELECT COUNT(*)::int FROM (
             SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
               FROM inform.politician_answers a
-              JOIN inform.seasons s ON s.id = a.season_id
+              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
              WHERE a.politician_id = rc.politician_id
              ORDER BY a.topic_id, s.number DESC
           ) l WHERE l.value != 0
@@ -586,7 +587,7 @@ export async function getCandidates() {
           SELECT array_agg(l.topic_id) FROM (
             SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
               FROM inform.politician_answers a
-              JOIN inform.seasons s ON s.id = a.season_id
+              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
              WHERE a.politician_id = rc.politician_id
              ORDER BY a.topic_id, s.number DESC
           ) l WHERE l.value != 0
@@ -704,7 +705,7 @@ export async function getCandidateAnswers(
     `SELECT topic_id, value FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
          FROM inform.politician_answers a
-         JOIN inform.seasons s ON s.id = a.season_id
+         JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
      ) latest
@@ -758,7 +759,7 @@ export async function getPoliticianAnswers(
     `SELECT topic_id, value::text FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
          FROM inform.politician_answers a
-         JOIN inform.seasons s ON s.id = a.season_id
+         JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
      ) latest
@@ -796,7 +797,7 @@ export async function getPoliticianContext(politicianId: string, topicId: string
   const { rows } = await pool.query<{ reasoning: string; sources: string[] }>(
     `SELECT c.reasoning, c.sources
        FROM inform.politician_context c
-       JOIN inform.seasons s ON s.id = c.season_id
+       JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE c.politician_id = $1 AND c.topic_id = $2
       ORDER BY s.number DESC
       LIMIT 1`,
@@ -821,7 +822,7 @@ export async function getPoliticianContextAll(
   const { rows } = await pool.query<{ topic_id: string; reasoning: string; sources: string[] }>(
     `SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources
        FROM inform.politician_context c
-       JOIN inform.seasons s ON s.id = c.season_id
+       JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE c.politician_id = $1
       ORDER BY c.topic_id, s.number DESC`,
     [politicianId]
@@ -1008,7 +1009,7 @@ export async function compareWithPoliticians(
          FROM (
            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id
              FROM inform.politician_answers a
-             JOIN inform.seasons s ON s.id = a.season_id
+             JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
             WHERE a.politician_id = $1
             ORDER BY a.topic_id, s.number DESC
          ) latest
@@ -1110,7 +1111,7 @@ export async function getBatchPoliticianAnswers(
     `SELECT topic_id, value::text FROM (
        SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
          FROM inform.politician_answers a
-         JOIN inform.seasons s ON s.id = a.season_id
+         JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1 AND a.topic_id = ANY($2::uuid[])
         ORDER BY a.topic_id, s.number DESC
      ) latest
@@ -1246,7 +1247,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      LEFT JOIN LATERAL (
        SELECT a.value, a.season_id, a.topic_revision_id
          FROM inform.politician_answers a
-         JOIN inform.seasons s ON s.id = a.season_id
+         JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = pce.politician_id AND a.topic_id = pce.topic_id
         ORDER BY s.number DESC
         LIMIT 1
@@ -1270,7 +1271,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      LEFT JOIN LATERAL (
        SELECT c.reasoning, c.sources
          FROM inform.politician_context c
-         JOIN inform.seasons s ON s.id = c.season_id
+         JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE c.politician_id = pce.politician_id AND c.topic_id = pce.topic_id
           -- Same season as the value when there is one. When there is no answer
           -- at all (the has_stance = false case) fall back to the newest
@@ -1306,7 +1307,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
           AND eff.version = COALESCE(
             (SELECT pin.version
                FROM inform.politician_answers a
-               JOIN inform.seasons s ON s.id = a.season_id
+               JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
                JOIN inform.compass_topic_revisions pin ON pin.id = a.topic_revision_id
               WHERE a.politician_id = $2 AND a.topic_id = ct.id
               ORDER BY s.number DESC LIMIT 1),

@@ -126,6 +126,14 @@ const LADDERS_SQL = `
 // in this payload. Surfacing it needs a field here, in the admin's mirrored type
 // and in the grid itself, so it is left for the change that also renders it —
 // shipping a field nothing displays would not answer the question.
+// 🔴 @draft-scope: INCLUDES-DRAFT — the one deliberate exception to
+//   seasonService.SEASON_IS_PUBLISHED, which every other season collapse in
+//   backend/src now carries. This is the ADMIN COMPOSE SCREEN, and its entire
+//   job is to show an editor what the DRAFT season would look like before they
+//   publish it. Hiding draft rows here would blank the one view that exists to
+//   inspect them — an editor would re-point 2,685 answers and see no change.
+//   Every OTHER consumer must not see them, because the ladder text they are
+//   rendered beside follows the OPEN season and would disagree.
 const DISTRIBUTION_SQL = `
   SELECT x.topic_id, x.value::int AS value, count(*)::int AS n
     FROM (
