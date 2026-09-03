@@ -71,6 +71,9 @@ import {
   ctcLeaderboardRouter,
   initTrivia,
 } from './trivia/app.js';
+// Validation Quests (VQ) sub-app — folded in (engine consolidation, Phase 2).
+// See src/vq/app.ts for the seam and rationale.
+import { validationQuestsRouter } from './vq/app.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -227,6 +230,15 @@ app.use(['/ctc/api/admin', '/api/trivia/admin'], ctcAdminRouter);
 app.use(['/ctc/api/feedback', '/api/trivia/feedback'], ctcFeedbackRouter);
 app.use(['/ctc/api/leaderboard', '/api/trivia/leaderboard'], ctcLeaderboardRouter);
 app.use(['/ctc/health', '/api/trivia/health'], ctcHealthRouter);
+
+// === Validation Quests (VQ) — folded in (engine consolidation, Phase 2) ===
+// One parent router (src/vq/app.ts) holds all 11 VQ routers in their load-bearing
+// order plus VQ's own error handler, mounted under BOTH the /vq/api alias (byte-for-byte
+// with the old service, for a one-env-var frontend cutover) and the tidy /api/vq path.
+// Mounted AFTER the engine's own /api/vq router above (line ~124), whose two literal
+// routes (/confirm-stance, /adjust-vr) therefore keep precedence; everything else under
+// /api/vq falls through to the folded VQ routes.
+app.use(['/vq/api', '/api/vq'], validationQuestsRouter);
 
 export { app }; // For testing
 
