@@ -7,6 +7,9 @@ import { supabaseAdmin } from '../config/supabase.js';
 import { db } from '../db/index.js';
 import { playerStats } from '../db/schema.js';
 import { sql } from 'drizzle-orm';
+// Engine consolidation, Phase 4: award gems in-process via the engine's gem service
+// instead of an HTTP loopback to /api/gems/award carrying TRIVIA_GEMS_KEY.
+import { awardGems } from '../../lib/gemService.js';
 
 export const GEM_SCORE_THRESHOLD = 600;
 
@@ -109,31 +112,19 @@ export async function awardPlatformGems(
   amount: number,
   idempotencyKey: string
 ): Promise<{ confirmed: boolean; error?: string }> {
-  const accountsUrl = process.env.EMPOWERED_ACCOUNTS_API_URL;
-  const gemsKey = process.env.TRIVIA_GEMS_KEY;
-
-  if (!accountsUrl || !gemsKey) {
-    console.warn('[progressionService] EMPOWERED_ACCOUNTS_API_URL or TRIVIA_GEMS_KEY not set — skipping gem award');
-    return { confirmed: false, error: 'Missing env vars' };
-  }
-
+  // In-process gem award (Phase 4). awardGems is idempotent on idempotencyKey, so a
+  // replay returns is_duplicate without a double-credit — same guarantee the HTTP path
+  // had. Yellow is the only gem type CTC awards. Never throws to the caller.
   try {
-    const resp = await fetch(`${accountsUrl}/api/gems/award`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Service-Key': gemsKey,
-      },
-      body: JSON.stringify({ user_id: userId, gem_type: 'yellow', amount, idempotency_key: idempotencyKey }),
+    await awardGems({
+      userId,
+      gemType: 'yellow',
+      amount,
+      idempotencyKey,
     });
-    if (!resp.ok) {
-      const error = await resp.text();
-      console.warn(`[progressionService] gem award API returned ${resp.status}: ${error}`);
-      return { confirmed: false, error };
-    }
     return { confirmed: true };
   } catch (err: any) {
-    console.warn('[progressionService] gem award API call failed:', err?.message);
+    console.warn('[progressionService] gem award failed:', err?.message);
     return { confirmed: false, error: err?.message };
   }
 }

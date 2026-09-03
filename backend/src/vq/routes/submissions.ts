@@ -56,6 +56,7 @@ import { invalidateFeedCache } from '../services/feedScoring.js';
 import { adjustVerificationRating } from '../../lib/vqService.js';
 import { awardXp } from '../../lib/xpService.js';
 import { unlockReferralCode, maybeRefreshReferralForInvitee } from '../../lib/referralService.js';
+import { creditGems } from '../../lib/gemService.js';
 
 const router = Router();
 
@@ -626,46 +627,26 @@ router.post(
       // Two separate calls with distinct transaction_types so the gem ledger shows WHY each gem was earned.
       // Non-fatal: failures are logged but do NOT block the submission response.
       if (isCorrect) {
+        // In-process gem credit (Phase 4) via the engine's gem service — same
+        // connect.credit_gems RPC, same descriptive transaction types, non-fatal.
         try {
-          const { error: gemAnswerError } = await supabaseService
-            .schema('connect')
-            .rpc('credit_gems', {
-              p_user_id: userId,
-              p_gem_type: 'yellow',
-              p_amount: 1,
-              p_transaction_type: 'yellow_quest_correct_answer',
-              p_source_ref: submissionId,
-            });
-          if (gemAnswerError) {
-            logger.warn('Yellow gem award (answer) failed — non-fatal', {
-              userId,
-              questId: quest_id,
-              error: gemAnswerError.message,
-            });
-          }
+          await creditGems(userId, 'yellow', 1, 'yellow_quest_correct_answer', submissionId ?? undefined);
         } catch (err) {
-          logger.warn('Yellow gem award (answer) threw — non-fatal', { userId, error: String(err) });
+          logger.warn('Yellow gem award (answer) failed — non-fatal', {
+            userId,
+            questId: quest_id,
+            error: String(err),
+          });
         }
 
         try {
-          const { error: gemSourceError } = await supabaseService
-            .schema('connect')
-            .rpc('credit_gems', {
-              p_user_id: userId,
-              p_gem_type: 'yellow',
-              p_amount: 2,
-              p_transaction_type: 'yellow_quest_valid_source',
-              p_source_ref: submissionId,
-            });
-          if (gemSourceError) {
-            logger.warn('Yellow gem award (source) failed — non-fatal', {
-              userId,
-              questId: quest_id,
-              error: gemSourceError.message,
-            });
-          }
+          await creditGems(userId, 'yellow', 2, 'yellow_quest_valid_source', submissionId ?? undefined);
         } catch (err) {
-          logger.warn('Yellow gem award (source) threw — non-fatal', { userId, error: String(err) });
+          logger.warn('Yellow gem award (source) failed — non-fatal', {
+            userId,
+            questId: quest_id,
+            error: String(err),
+          });
         }
 
         if (yellowQuestResult) {
