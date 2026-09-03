@@ -143,3 +143,48 @@ describe('getStanceBreakdown', () => {
     expect(out.topics[0].politicianAnswers).toBe(0);
   });
 });
+
+// 🔴 A BLANKED ANSWER IS value 0, AND value IS THE GROUP KEY HERE. Ungrouped it
+// would open a rung-0 bucket in the public distribution — a bar the ladder has
+// no text for — and count into `responses` as though a position were held. Both
+// queries must drop it, and must drop it AFTER the collapse: a blank in the
+// newest season means "no current position", not "fall back to the older one".
+describe('getStanceBreakdown — blanked answers are not positions', () => {
+  beforeEach(() => { mockQuery.mockReset(); });
+
+  it('excludes value 0 from both politician queries', async () => {
+    mockRows({ stanceRows: stanceRowsA });
+    await getStanceBreakdown();
+    const sqls = (mockQuery.mock.calls.map((c) => c[0] as string))
+      .filter((s) => s.includes('inform.politician_answers'));
+
+    expect(sqls).toHaveLength(2);
+    for (const sql of sqls) expect(sql).toMatch(/value\s*<>\s*0/);
+  });
+
+  it('drops the zero after the collapse, not inside it', async () => {
+    mockRows({ stanceRows: stanceRowsA });
+    await getStanceBreakdown();
+    const sqls = (mockQuery.mock.calls.map((c) => c[0] as string))
+      .filter((s) => s.includes('inform.politician_answers'));
+
+    for (const sql of sqls) {
+      // The DISTINCT ON lives in a `latest` CTE; the guard must sit outside it.
+      const cteEnd = sql.indexOf('FROM latest');
+      expect(cteEnd).toBeGreaterThan(-1);
+      expect(sql.search(/value\s*<>\s*0/)).toBeGreaterThan(cteEnd);
+    }
+  });
+
+  // The user cohort reads a view that already hides tombstones, but value 0 is a
+  // separate idea from deleted_at and every sibling query in compassService
+  // filters both. Left unfiltered here it would skew the user bars the same way.
+  it('still excludes soft-deleted rows for the user cohort', async () => {
+    mockRows({ stanceRows: stanceRowsA });
+    await getStanceBreakdown();
+    const sqls = (mockQuery.mock.calls.map((c) => c[0] as string))
+      .filter((s) => s.includes('inform.compass_responses'));
+
+    for (const sql of sqls) expect(sql).toContain('deleted_at IS NULL');
+  });
+});

@@ -963,9 +963,13 @@ export async function compareWithPoliticians(
     // on topic_id, so two season rows for one topic would silently let whichever
     // the planner returned last decide the user's position in every alignment
     // score. Not a double-count — a wrong answer, non-deterministically.
+    //
+    // `value != 0` is a SEPARATE idea from deleted_at, and this query filtered
+    // neither zero while six sibling queries in this file filter both. A 0 means
+    // "no position", so it must not reach the score — see the politician side.
     `SELECT topic_id, value::text
      FROM inform.compass_responses_current
-     WHERE user_id = $1 AND deleted_at IS NULL`,
+     WHERE user_id = $1 AND deleted_at IS NULL AND value != 0`,
     [userId]
   );
   const userMap = new Map<string, number>(
@@ -982,6 +986,14 @@ export async function compareWithPoliticians(
       }>(
         // One row per topic — their newest season. This feeds the match score,
         // so a duplicated topic would weight it twice.
+        //
+        // 🔴 AND A BLANK MUST NOT SCORE AT ALL. A blanked answer is value 0, and
+        // the formula below is `1 - |user - politician| / 5` — so a 0 does not
+        // drop out, it scores as rung 0. A user on rung 5 would be told they
+        // agree 0% with someone who merely has no seat on the new ladder, and
+        // the topic would still count in the denominator. Filtered AFTER the
+        // collapse: a blank in the newest season means they hold no position
+        // now, not that an older season's answer should stand in for one.
         `SELECT latest.topic_id, latest.value::text, ep.full_name
          FROM (
            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id
@@ -990,7 +1002,8 @@ export async function compareWithPoliticians(
             WHERE a.politician_id = $1
             ORDER BY a.topic_id, s.number DESC
          ) latest
-         JOIN essentials.politicians ep ON ep.id = latest.politician_id`,
+         JOIN essentials.politicians ep ON ep.id = latest.politician_id
+         WHERE latest.value <> 0`,
         [pid]
       );
       return { id: pid, rows };
@@ -1190,7 +1203,19 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        ct.topic_key                                                   AS topic_key,
        COALESCE(ct.question_text, ct.short_title)                    AS topic_title,
        ct.short_title                                                 AS topic_tension_name,
-       pa.value                                                       AS stance_value,
+       -- 🔴 NULLIF, NOT A FILTER ON pa. A blanked answer is value 0, and
+       -- groupCitationRows reads has_stance as "stance_value != null" — 0 is not
+       -- null, so the block rendered as "has a stance" with nothing to name:
+       -- cs joins sr.value = pa.value and no ladder has a rung 0, so stance_text
+       -- came back null underneath reasoning that argues the position they no
+       -- longer hold. Nulling the value here makes has_stance false, which is
+       -- the honest reading — we researched this person, and they hold no
+       -- position on the current ladder.
+       --
+       -- It must NOT be a predicate inside the pa LATERAL: that would skip the
+       -- newest season and serve the previous season's rung instead, which is
+       -- the mismeaning the collapse exists to prevent.
+       NULLIF(pa.value, 0)                                            AS stance_value,
        cs.text                                                        AS stance_text,
        pc.reasoning,
        pce.source_url,

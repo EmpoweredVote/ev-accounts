@@ -112,6 +112,20 @@ const LADDERS_SQL = `
  * DISTINCT ON names the season for each row, so a second season cannot fan
  * this out (ADR 0005 §1.2).
  */
+// 🔴 A BLANKED ANSWER IS NOT A RUNG. value 0 means the politician was researched
+// and the ladder moved out from under them, leaving no rung that states what
+// they hold. `distribution` is keyed on the value and LADDERS_SQL has no rung 0,
+// so an unfiltered blank arrives at the compose grid as a bucket the UI cannot
+// label — on the one screen an editor uses to judge whether a ladder change is
+// safe to publish. It would also inflate `answer_total`.
+//
+// The guard is OUTSIDE the collapse: a blank in the newest season suppresses the
+// answer, it does not fall through to the previous season's rung.
+//
+// ⚠ How many were blanked is a number an editor genuinely wants, and it is NOT
+// in this payload. Surfacing it needs a field here, in the admin's mirrored type
+// and in the grid itself, so it is left for the change that also renders it —
+// shipping a field nothing displays would not answer the question.
 const DISTRIBUTION_SQL = `
   SELECT x.topic_id, x.value::int AS value, count(*)::int AS n
     FROM (
@@ -120,6 +134,7 @@ const DISTRIBUTION_SQL = `
         JOIN inform.seasons s ON s.id = a.season_id
        ORDER BY a.politician_id, a.topic_id, s.number DESC
     ) x
+   WHERE x.value <> 0
    GROUP BY x.topic_id, x.value`;
 
 export async function getComposition(): Promise<CompositionPayload> {
