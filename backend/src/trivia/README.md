@@ -27,16 +27,24 @@ These do not collide with the engine's existing `routes/trivia.ts` (`/api/trivia
 
 ## What is and is not folded
 
-- **Folded:** the runtime import closure of the six routers (41 files) — routes, the
+- **Folded (routes):** the runtime import closure of the six routers — routes, the
   services and quality-rules they reach, the drizzle models, CTC's own auth, its pg pool
-  and supabase client, session storage. Traced statically; `scripts/`, the embeddings /
-  OpenAI pipeline, and `services/generation/CollectionHierarchy|GapAnalyzer` are **not**
-  reached by request handlers and are not folded.
-- **NOT folded:** CTC's **cron scheduler** (expiration sweep, election detection,
-  pipeline). The old `civic-trivia-backend` keeps running during the parallel window and
-  owns those jobs; running them here too would double-execute them (double LLM spend,
-  races). They transfer when the old service is retired (G6). `cron/electionDetection.ts`
-  is present only because `routes/admin.ts` reads its `lastCronRun`; it schedules nothing.
+  and supabase client, session storage. Traced statically.
+- **Folded (crons), gated OFF:** CTC's three cron jobs and their import closure —
+  `cron/{expirationSweep,pipelineCron,poolRegulator,replacementGenerator,startCron}.ts`,
+  the `scripts/international/` RSS pipeline, `scripts/content-generation/{question-schema,
+  prompts/system-prompt}.ts` + the whole `locale-configs/` data set, and
+  `services/embeddings/{OpenAIEmbeddingService,SemanticDupDetector}.ts`. They register
+  **only** when `TRIVIA_CRONS_ENABLED === 'true'` (`startTriviaCrons()` in `app.ts`,
+  called from `src/index.ts`). Default **OFF**: the old `civic-trivia-backend` still owns
+  these jobs during the parallel window, and running them here too would double-execute
+  them (double expiration/archival writes, double election + pipeline generation spend).
+  Flip the flag on at the moment the old service is retired (G6) — same pattern as VQ's
+  `VQ_CRONS_ENABLED`. `cron/electionDetection.ts` was already present (it carries both the
+  side-effecting `runElectionDetection` and the `lastCronRun` value `routes/admin.ts`
+  reads); it schedules nothing until `startTriviaCrons()` wires it.
+- **Schedules (preserved verbatim):** expiration sweep hourly at `:00`; election detection
+  daily `06:00 America/New_York`; pipeline daily `02:00 America/New_York`.
 
 ## Data access
 
@@ -74,7 +82,15 @@ The engine's `middleware/auth.ts` is **not** touched. CTC's own dual-issuer auth
   the parallel run (Phase 4 makes these in-process). `SUPABASE_URL`,
   `SUPABASE_SERVICE_ROLE_KEY`, `DATABASE_URL` are already set and shared.
 
-No new migration. No change to the Render **build command** (`npm install && npx tsc`).
+- **`TRIVIA_CRONS_ENABLED`:** leave **unset** (or not `true`) until gate G6. Flipping it to
+  `true` starts the three crons in-engine — do this only at the moment `civic-trivia-backend`
+  is suspended, so the jobs never run in both places. When enabling: `ANTHROPIC_API_KEY` is
+  required (election + pipeline + replacement generation call Claude), and `OPENAI_API_KEY`
+  is **optional** — set it to enable the replacement-generator's semantic-dedup pass; unset
+  ⇒ that step is skipped (non-fatal, logged).
+
+Four new npm dependencies came with the cron closure: `compromise`, `rss-parser`, `cheerio`,
+`openai`. No new migration. No change to the Render **build command** (`npm install && npx tsc`).
 
 ## CTC frontend cutover (one env var, then rebuild — do NOT change code)
 

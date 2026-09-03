@@ -70,6 +70,7 @@ import {
   ctcFeedbackRouter,
   ctcLeaderboardRouter,
   initTrivia,
+  startTriviaCrons,
 } from './trivia/app.js';
 // Validation Quests (VQ) sub-app — folded in (engine consolidation, Phase 2).
 // See src/vq/app.ts for the seam and rationale.
@@ -276,6 +277,7 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
     startReapStaleRunsCron();
     startSqsWorker();
     startVqCrons();  // VQ consensus + rotation — no-op unless VQ_CRONS_ENABLED=true (see vq/app.ts)
+    startTriviaCrons();  // CTC expiration + election-detection + pipeline — no-op unless TRIVIA_CRONS_ENABLED=true (see trivia/app.ts)
 
     // A restart is precisely what strands ingestion_runs rows in 'running' (this
     // service auto-deploys on every push to master, and the FEC burst runs 33+

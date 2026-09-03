@@ -13,14 +13,22 @@
 // unchanged so behaviour is identical to the standalone service. The engine's
 // middleware/auth.ts is NOT touched.
 //
-// NOT folded in Phase 1: CTC's cron scheduler (expiration sweep, election detection,
-// pipeline). The old civic-trivia-backend keeps running during the parallel window and
-// owns those jobs; running them here too would double-execute them. They transfer when
-// the old service is retired (gate G6). cron/electionDetection.ts is present only
-// because routes/admin.ts reads its `lastCronRun` value; it schedules nothing on import.
+// CTC's cron scheduler (expiration sweep hourly, election detection daily 06:00 ET,
+// pipeline daily 02:00 ET) IS now folded in, but gated OFF behind TRIVIA_CRONS_ENABLED
+// (see startTriviaCrons below): the standalone civic-trivia-backend still owns them during
+// the parallel window, so running them here too would double-execute (double expiration
+// writes, double generation spend). Flip the flag on at the same moment the old service is
+// retired (gate G6). cron/electionDetection.ts already carries the real side-effecting
+// runElectionDetection AND the lastCronRun value routes/admin.ts reads; importing it still
+// schedules nothing on its own.
 
 import { storageFactory } from './config/redis.js';
 import { initializeSessionManager } from './services/sessionService.js';
+import {
+  startExpirationCron,
+  startElectionDetectionCron,
+  startPipelineCron,
+} from './cron/startCron.js';
 
 export { router as ctcGameRouter } from './routes/game.js';
 export { router as ctcProfileRouter } from './routes/profile.js';
@@ -41,4 +49,28 @@ export async function initTrivia(): Promise<void> {
   console.info(
     `[trivia] session storage: ${storageFactory.isDegradedMode() ? 'in-memory (TRIVIA_REDIS_URL unset or unreachable)' : 'redis'}`
   );
+}
+
+/**
+ * Start CTC's cron jobs — but ONLY when TRIVIA_CRONS_ENABLED === 'true'. They are OFF by
+ * default because the standalone civic-trivia-backend service still runs them during the
+ * parallel window; running them here too would double-execute (double expiration/archival
+ * writes, double election + pipeline generation spend). Flip the flag on at the same moment
+ * the old service is retired (gate G6). Schedules and timezones are preserved verbatim from
+ * the standalone service:
+ *   - expiration sweep: hourly at :00
+ *   - election detection: daily 06:00 America/New_York
+ *   - pipeline: daily 02:00 America/New_York
+ */
+export function startTriviaCrons(): void {
+  if (process.env.TRIVIA_CRONS_ENABLED !== 'true') {
+    console.info(
+      '[trivia] crons disabled (set TRIVIA_CRONS_ENABLED=true to run them here) — the standalone service still owns them during the parallel run'
+    );
+    return;
+  }
+  startExpirationCron();
+  startElectionDetectionCron();
+  startPipelineCron();
+  console.info('[trivia] expiration + election-detection + pipeline crons started in-engine');
 }
