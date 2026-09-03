@@ -61,7 +61,7 @@ describe('check-answer-season-consumers — it must fail', () => {
       q('SELECT value FROM inform.politician_answers WHERE politician_id = $1 AND season_id = $2') +
       q('SELECT value FROM inform.politician_context WHERE politician_id = $1'));
     expect(r.code).toBe(1);
-    expect(r.out).toMatch(/1 SQL literal\(s\)/);
+    expect(r.out).toMatch(/1 site\(s\)/);
   });
 
   // Mentioning a season does not make a stale upsert target safe: ON CONFLICT
@@ -297,5 +297,72 @@ describe('check-answer-season-consumers — runbooks are consumers too', () => {
     delete env.DATABASE_URL;
     const r = spawnSync('node', [SCRIPT], { cwd: dir, encoding: 'utf8', env });
     expect(r.status).toBe(0);
+  });
+});
+
+// 🔴 THE BLIND SPOT THAT LET THREE PUBLIC ENDPOINTS THROUGH. The gate matched
+// SQL text, so a PostgREST builder call — `.from('politician_answers')` — read
+// the table without matching anything and the run reported "every live consumer
+// names a season". Three season-blind readers shipped behind that green.
+//
+// A builder call cannot be fixed by adding a predicate: PostgREST has no
+// DISTINCT ON, so newest-season-wins is not expressible in it at all. The only
+// repair is to move the read into SQL, which is what the message must say.
+describe('check-answer-season-consumers — PostgREST builder calls', () => {
+  const builder = (table: string) =>
+    `import { supabaseAnon } from './supabase.js';\n` +
+    `export const f = (id: string) => supabaseAnon.schema('inform')\n` +
+    `  .from('${table}').select('topic_id,value').eq('politician_id', id);\n`;
+
+  it('fails on a builder read of politician_answers', () => {
+    const r = run(builder('politician_answers'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('PostgREST builder');
+  });
+
+  it('fails on a builder read of politician_context', () => {
+    const r = run(builder('politician_context'));
+    expect(r.code).toBe(1);
+  });
+
+  it('fails on a builder read of compass_responses', () => {
+    const r = run(builder('compass_responses'));
+    expect(r.code).toBe(1);
+  });
+
+  it('names the file and a real line, so the site is findable', () => {
+    const r = run(builder('politician_answers'));
+    expect(r.out).toMatch(/subject\.ts:3/);
+  });
+
+  // A builder call names no season and never can, so a season mentioned
+  // elsewhere in the file must not clear it — the same literal-not-file rule the
+  // SQL half already enforces.
+  it('is not excused by a seasoned SQL query in the same file', () => {
+    const r = run(
+      q('SELECT value FROM inform.politician_answers WHERE politician_id = $1 AND season_id = $2') +
+      builder('politician_context'));
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('PostgREST builder');
+  });
+
+  // compass_responses_current is the view that DOES the newest-season collapse.
+  // Reading it through the builder is the recommended fix, not a violation, and
+  // flagging it would push people back onto the base table.
+  it('passes a builder read of the compass_responses_current view', () => {
+    const r = run(builder('compass_responses_current'));
+    expect(r.code).toBe(0);
+  });
+
+  it('passes a builder read of an unrelated table', () => {
+    const r = run(builder('compass_topics'));
+    expect(r.code).toBe(0);
+  });
+
+  it('does NOT flag a builder call written in a comment', () => {
+    const r = run(
+      `// was: .from('politician_answers') — now collapsed in SQL, see below\n` +
+      'export const f = () => 1;\n');
+    expect(r.code).toBe(0);
   });
 });

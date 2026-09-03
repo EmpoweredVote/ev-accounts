@@ -95,6 +95,28 @@ const VERBOSE = process.argv.includes('--verbose');
 const SQL_TABLE_REF =
   /\binform\.(?:politician_(?:answers|context)|compass_responses)\b|\b(?:from|join|into|update|table)\s+(?:inform\.)?(?:politician_(?:answers|context)|compass_responses)\b/i;
 
+/**
+ * A PostgREST builder read of one of the tables — `.from('politician_answers')`.
+ *
+ * 🔴 THIS IS WHY THREE PUBLIC ENDPOINTS SHIPPED SEASON-BLIND. `SQL_TABLE_REF`
+ * matches SQL text, and a builder call is not SQL text: it names the table
+ * inside a quoted argument, with no clause keyword and no `inform.` prefix. The
+ * gate read `getPoliticianAnswers`, `getPoliticianContext` and
+ * `getPoliticianContextAll`, matched nothing, and reported "every live consumer
+ * names a season" while all three read every season at once.
+ *
+ * A builder call CANNOT be repaired by adding a predicate. Newest-season-wins
+ * needs `DISTINCT ON` (or a LATERAL, or the `_current` view) and PostgREST
+ * expresses none of them, so there is no season-aware form of this call and no
+ * `@season-scope` hatch for it. The only fix is to move the read into SQL.
+ *
+ * The closing quote is a backreference, which is what keeps
+ * `compass_responses_current` out: that view does the collapse itself, so
+ * reading it through the builder is the recommended fix, not a violation.
+ */
+const POSTGREST_TABLE_REF =
+  /\.\s*from\s*\(\s*(['"`])(politician_(?:answers|context)|compass_responses)\1/gi;
+
 /** Any mention of a season. Deliberately generous — see "WHAT THIS CANNOT DO". */
 const SEASON_REF = /season_id|seasonId|current_season|currentSeason|season_questions|seasons\b/i;
 
@@ -165,6 +187,19 @@ function stripComments(text) {
 }
 
 /**
+ * As stripComments, but every removed character becomes a space rather than the
+ * whole comment becoming one. Offsets — and so line numbers — survive, which the
+ * builder scan needs in order to report a line the reader can jump to.
+ */
+function blankComments(text) {
+  const blank = (m) => m.replace(/[^\n]/g, ' ');
+  return text
+    .replace(/\/\*[\s\S]*?\*\//g, blank)
+    .replace(/--[^\n]*/g, blank)
+    .replace(/\/\/[^\n]*/g, blank);
+}
+
+/**
  * Every backtick literal in the file, with the line it starts on.
  *
  * A template literal nested inside a `${...}` of another one will be split at
@@ -222,6 +257,22 @@ function scanRepo(root) {
     for (const { body } of literals) residue = residue.replace(body, ' ');
     if (SQL_TABLE_REF.test(stripComments(residue))) {
       offenders.push({ rel, line: 0, why: 'table reference outside any template literal — read it by hand' });
+    }
+
+    // Builder calls, which neither check above can see. Scanned over the whole
+    // file rather than the residue: a builder call is not SQL and never lives in
+    // a template literal, so there is nothing to blank out first.
+    const blanked = blankComments(raw);
+    POSTGREST_TABLE_REF.lastIndex = 0;
+    let hit;
+    while ((hit = POSTGREST_TABLE_REF.exec(blanked)) !== null) {
+      offenders.push({
+        rel,
+        line: blanked.slice(0, hit.index).split('\n').length,
+        why: `PostgREST builder read of ${hit[2]} — it cannot name a season, and `
+          + 'PostgREST has no DISTINCT ON. Move the read into SQL (pool.query) and '
+          + 'collapse to the newest season',
+      });
     }
   }
   return { offenders, allSeasons };
@@ -395,7 +446,7 @@ async function main() {
   if (repo.length) {
     failed = true;
     console.error(
-      `\nanswer-season consumers — ${repo.length} SQL literal(s) in ${byFile.size} file(s) ` +
+      `\nanswer-season consumers — ${repo.length} site(s) in ${byFile.size} file(s) ` +
       `under backend/src and the runbooks do not constrain the season:`);
     for (const [rel, list] of [...byFile].sort()) {
       console.error(`  ${rel}`);
