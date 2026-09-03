@@ -2,8 +2,12 @@ import { Request, Response, NextFunction } from 'express';
 import { jwtVerify, createRemoteJWKSet, decodeJwt, type JWTPayload } from 'jose';
 import { supabaseAdmin } from '../config/supabase.js';
 
-// Extend Express Request with auth properties
+// Extend Express Request with auth properties.
+// Augmenting a third-party global interface (Express.Request) requires namespace
+// merging — there is no ES-module-syntax equivalent — so the no-namespace rule is
+// disabled for this one declaration.
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       userId?: string;       // Internal UUID — Supabase sub, or external_id on a WorkOS token

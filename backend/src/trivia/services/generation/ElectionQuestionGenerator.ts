@@ -439,7 +439,8 @@ export async function generateElectionQuestions(
     parsed = JSON.parse(jsonMatch[0]);
   } catch (err) {
     throw new Error(
-      `Failed to parse JSON from Claude response: ${err instanceof Error ? err.message : err}`
+      `Failed to parse JSON from Claude response: ${err instanceof Error ? err.message : err}`,
+      { cause: err }
     );
   }
 
