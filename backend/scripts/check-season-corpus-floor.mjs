@@ -82,9 +82,30 @@
  * 🔴🔴 THE SIGNATURE TELLS THE TWO APART, AND IT IS THE ONE DIAGNOSTIC THIS GATE CAN OFFER:
  *
  *     answers FALL, context HOLDS  →  documented-blank retirement. Deliberate.
- *                                     Verify the pairs, then lower the answer floor.
- *     answers AND context fall together  →  rows are being destroyed. STOP.
- *     answers fall, context RISES        →  also destruction, with a rewrite on top. STOP.
+ *                                     Verify the pairs, then lower the ANSWER floor.
+ *     answers AND context fall by the SAME amount, and named pairs account for it exactly
+ *                                  →  a WITHDRAWAL. Deliberate.
+ *                                     Verify the pairs, then lower BOTH floors.
+ *     answers AND context fall, UNACCOUNTED  →  rows are being destroyed. STOP.
+ *     answers fall, context RISES            →  also destruction, with a rewrite on top. STOP.
+ *
+ * 🔴 THE WITHDRAWAL BRANCH WAS MISSING UNTIL 2026-09-02, AND ITS ABSENCE MADE CORRECT WORK
+ * READ AS DATA LOSS. This table used to say, flatly, "answers AND context fall together →
+ * rows are being destroyed. STOP." CLAUDE.md's answer-delete rule has always had TWO
+ * dispositions and they are opposites: rewrite the context as a documented blank when the
+ * topic genuinely applies, or DELETE the context when it does not. The second one takes both
+ * rows down together, by construction — and it had no branch here, exactly as this file once
+ * said floors move "only upward" and left no branch for the first one.
+ *
+ * `CC_0037` is the worked example. Twelve of Jeff Gonzalez's seatings were evidenced against
+ * a DIFFERENT PERSON, so both the answer and the context were removed: the context was the
+ * thing that was wrong, and a documented blank would have asserted something about Gonzalez
+ * that nobody had tested. −12 / −12 is what a correct withdrawal looks like.
+ *
+ * ⚠ THE BRANCH IS NOT "THEY FELL BY THE SAME NUMBER". Equal deltas are the CHEAP HALF of the
+ * test, and a coincidence can produce them. The branch is only taken once NAMED pairs account
+ * for the shortfall exactly, each verified to hold zero answers AND zero context. Without
+ * that, equal deltas are just as consistent with destruction.
  *
  * To verify rather than assume: extract the (politician_id, topic_id) pairs from the
  * migrations in the window and assert each has ZERO answers and ONE context row. If the
@@ -149,12 +170,17 @@ const FLOORS = {
     //   −94 on 2026-08-31: CA_0044 (31), CA_0045 (3), CA_0052 (2), CA_0056 (58)
     //   − 4 on 2026-09-01: CA_0097 (4)
     //
+    // and once for a WITHDRAWAL, which is the other disposition and takes the CONTEXT floor
+    // down with it — the first time this floor pair has moved together:
+    //
+    //   −12 / −12 on 2026-09-02: CC_0037 (12 answers AND 12 context rows), PR #320
+    //
     // NOT taken from "what prod reads today" — reading it off prod is what would absorb a real
     // loss silently. Each retirement count comes from the migration's own post-verify gate, and
     // no migration in either window INSERTs answers, so the net cannot hide extra deletions
     // behind additions. The context floor did not move across either window, which is the
     // signature of deliberate blanking rather than destruction.
-    // 33,164 − 32 − 94 − 4 = 33,034, which is the number below, derived rather than observed.
+    // 33,164 − 32 − 94 − 4 − 12 = 33,022, which is the number below, derived rather than observed.
     //
     // 🔴 THE −4 WINDOW WAS FOUND BY THIS GATE GOING RED, NOT BY THE PR THAT CAUSED IT — THE
     //    THIRD TIME (32, then 94, now 4). CA_0097 retires four Police Accountability seatings
@@ -169,13 +195,18 @@ const FLOORS = {
     //    and Heather Ferbert, all on Police Accountability, all rewritten 2026-09-01 with
     //    reasoning that documents what was read and why no chair is evidenced. Context held
     //    at 33,818 across the window.
-    answers: flagInt('floor-answers', 33034),
-    // Untouched. A documented blank REWRITES its context, so this count did not move — and
-    // that it held at exactly 33,818 is what proved the answer loss was deliberate.
-    context: flagInt('floor-context', 33818),
+    answers: flagInt('floor-answers', 33022),
+    // 33,818 when measured, and it held across all three documented-blank windows — a blank
+    // REWRITES its context, so those never moved it, and that it held is what proved each of
+    // those answer losses deliberate.
+    //
+    // 🔴 CC_0037 IS THE FIRST THING TO MOVE IT, AND THAT IS CORRECT, NOT A BREACH. A
+    //    withdrawal deletes the context because the context is the thing that is wrong.
+    //    33,818 − 12 = 33,806, derived the same way as the answer floor.
+    context: flagInt('floor-context', 33806),
     questions: flagInt('floor-questions', 44),
     measured: '2026-08-27',
-    adjusted: '2026-08-31',
+    adjusted: '2026-09-02',
   },
 };
 
@@ -296,11 +327,20 @@ async function main() {
       );
     }
     console.error(
-      '\n  These tables carry no timestamps, so the rows cannot tell you when or how they ' +
-        'went. Do NOT lower the floor to make this pass.\n' +
-        '  Check, in this order: (1) a REPLACE-ALL RPC reached from a partial payload — the ' +
-        'defect CC_0001 fixed; (2) an ad-hoc psql DELETE; (3) a migration that deleted ' +
-        'answers without deciding what happened to the matching context rows.\n' +
+      '\n  Do NOT lower the floor to make this pass. Account for the rows first.\n' +
+        '  READ THE SIGNATURE: answers falling while context HOLDS is a documented-blank ' +
+        'retirement; answers and context falling by the SAME amount is a withdrawal ' +
+        '(@context-decision: deleted-with-context). Both are deliberate — and both are ' +
+        'confirmed only once NAMED pairs account for the shortfall exactly, each verified to ' +
+        'hold zero answers and zero context.\n' +
+        '  Anything else — unequal falls, context rising, or no migration that owns it — is ' +
+        'destruction. Check: (1) a REPLACE-ALL RPC reached from a partial payload, the defect ' +
+        'CC_0001 fixed; (2) an ad-hoc psql DELETE; (3) a migration that deleted answers ' +
+        'without deciding what happened to the matching context rows.\n' +
+        '  DATING: `updated_at` is real and is the diagnostic that works. `created_at` is a ' +
+        'BACKFILL CONSTANT — every row carries 2026-08-26 03:46:19 — so it cannot say when a ' +
+        'row was written, and a query filtered on it returns 0 for reasons that have nothing ' +
+        'to do with the question. A DELETED row leaves neither.\n' +
         '  If the loss is real, restore from a backup before anything else writes.\n'
     );
     process.exit(1);
