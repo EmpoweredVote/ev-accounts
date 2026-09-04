@@ -79,8 +79,10 @@
  *
  * WHEN A FLOOR SHOULD MOVE. Deliberately, and with the reason committed beside the number:
  * use --floor-answers-s<season> / --floor-context-s<season>. Raising is the ordinary case — a
- * season opens and takes answers. Lowering a floor to make this gate pass is the exact event
- * the gate exists to report. If rows are genuinely gone, find out why first.
+ * season opens and takes answers — but the two directions do NOT share a schedule: see the two
+ * ▶ paragraphs below, which are a matched pair and disagree about when the floor moves relative
+ * to the migration. Lowering a floor to make this gate pass is the exact event the gate exists
+ * to report. If rows are genuinely gone, find out why first.
  *
  * ⚠ THE OVERRIDE FLAGS NAME THEIR SEASON AS OF 2026-09-04, AND THE OLD BARE FORM NOW REFUSES.
  * `--floor-answers=N` was unambiguous while season 1 was the only floored season. With two, a
@@ -140,6 +142,32 @@
  * very fix was open (CA_0044, CA_0045, CA_0052, CA_0056, 94 answers between them), so the
  * correction had to be re-derived a second time before it could merge. The rule above is
  * what stops a third round.
+ *
+ * ▶ RAISING THE FLOOR IS THE APPLYING SESSION'S JOB, AND ITS ORDER IS THE OPPOSITE ONE.
+ * "Raising is the ordinary case" said nothing about WHEN, and read as though the two directions
+ * shared a rule. They do not, and the asymmetry follows from the same fact — migrations here are
+ * applied ad hoc and never replayed by a deploy (CLAUDE.md):
+ *
+ *     LOWERING  the rows are gone the moment the migration is APPLIED, and the file may merge
+ *               long after. Drop the floor in the migration's own PR, or the nightly reddens
+ *               against master with nobody left who can derive the number.
+ *     RAISING   the rows do not exist until the migration is APPLIED, and the file usually
+ *               merges FIRST. Raise the floor after applying — never in the merging PR.
+ *
+ * Get that backwards and the gate fails for the mirror-image reason: a floor of 2,689 committed
+ * against a corpus that still holds 2,685 reports "4 MISSING" every night until someone applies
+ * the migration, and the message says rows were LOST when in fact they were never written. That
+ * is the worst possible false positive for this particular check, because its whole job is to be
+ * believed when it says that.
+ *
+ * `CC_0074` is the worked example, and it carries the same note in its own header: it inserts
+ * four answers and four context rows, its post-verify asserts the totals the floors must become,
+ * and it is explicit that the raise waits for the apply.
+ *
+ * ⚠ SO A RAISE IS NOT URGENT AND A DROP IS. An unraised floor after an apply leaves the new rows
+ * merely unprotected — the gate still guards everything that came before, and still passes. An
+ * undropped floor after a blanking apply is a red gate. When in doubt about ordering, that is the
+ * asymmetry to reason from.
  *
  * NO DATABASE_URL IS A FAILURE, NOT A SKIP. The database is the whole check — there is no
  * static half that still means something. A gate that quietly passes when it never ran reads
