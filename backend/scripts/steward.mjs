@@ -35,6 +35,17 @@ import dotenv from "dotenv";
 import { historicalSlots } from "./lib/migration-slots.mjs";
 import { slotsToSeed } from "./lib/steward-seed.mjs";
 import { parseScope, containmentWarnings, chooseScope, SKIP_BLOCKED } from "./lib/steward-claims.mjs";
+import { canonicalWorktreeScope, worktreeNotices } from "./lib/steward-worktree.mjs";
+
+/**
+ * How long a worktree marker stays on the board.
+ *
+ * ⚠ A GUESS, LIKE THE 8-HOUR LEASE, AND THE TRADE-OFF RUNS BOTH WAYS. Too short and a session
+ *   that has genuinely been running all day drops off the board, so "nobody is in that
+ *   directory" becomes wrong. Too long and last night's finished sessions look present. A
+ *   working day is the compromise: it spans one, and it clears overnight.
+ */
+const WORKTREE_MARKER_HOURS = 12;
 
 const backendDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(backendDir, "..");
@@ -100,8 +111,8 @@ async function cmdWho() {
     return 0;
   }
   try {
-    const { rows: claims } = await client.query(`
-      SELECT scope, label, holder, machine, expires_at
+    const { rows: rows } = await client.query(`
+      SELECT scope, label, holder, machine, started_at, expires_at
         FROM steward.claims
        WHERE released_at IS NULL AND expires_at > now()
        ORDER BY started_at`);
@@ -111,16 +122,33 @@ async function cmdWho() {
        WHERE state = 'reserved'
        ORDER BY namespace, num`);
 
-    if (!claims.length && !mine.length) {
+    // 🔴 WORKTREE MARKERS ARE LISTED SEPARATELY AND SAY "SEEN", NOT "EXPIRES". Mixed in with
+    //    jurisdiction leases they would outnumber them — one per session start — and drown the
+    //    thing the board exists to show. And they are not leases: nothing releases one when a
+    //    terminal closes, so the only honest word for the timestamp is when a session was last
+    //    seen there. Calling it an expiry would assert a session is running that may have ended
+    //    hours ago.
+    const claims = rows.filter((r) => !r.scope.startsWith("worktree:"));
+    const trees = rows.filter((r) => r.scope.startsWith("worktree:"));
+
+    if (!rows.length && !mine.length) {
       console.log("Steward · no active claims, no outstanding reservations");
     } else {
-      console.log(`Steward · ${claims.length} active claim(s)`);
+      const parts = [`${claims.length} jurisdiction claim(s)`];
+      if (trees.length) parts.push(`${trees.length} worktree(s) seen`);
+      if (mine.length) parts.push(`${mine.length} slot(s) reserved`);
+      console.log(`Steward · ${parts.join(" · ")}`);
       for (const c of claims) {
         const when = new Date(c.expires_at).toISOString().slice(11, 16);
         console.log(`  ${c.scope.padEnd(18)} ${(c.label ?? "").padEnd(22)} ${c.holder}  ${c.machine}  expires ${when}Z`);
       }
       for (const s of mine) {
         console.log(`  reserved ${pad(s.namespace, s.num)}  ${s.purpose}`);
+      }
+      for (const t of trees) {
+        const seen = new Date(t.started_at).toISOString().slice(11, 16);
+        console.log(`  ~ ${t.scope.slice("worktree:".length).padEnd(24)} ${(t.label ?? "detached").padEnd(34)} `
+          + `${t.holder}  ${t.machine}  seen ${seen}Z`);
       }
     }
     return 0;
@@ -481,7 +509,95 @@ async function cmdExtend() {
   }
 }
 
-const COMMANDS = { who: cmdWho, sync: cmdSync, slot: cmdSlot, claim: cmdClaim, release: cmdRelease, extend: cmdExtend };
+/* ── worktree ────────────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Record that a session started in this directory, and report what moved since the last one.
+ *
+ * 🔴 THIS IS A MARKER, NOT A LEASE, AND THE DIFFERENCE IS THE WHOLE DESIGN. Nothing releases
+ *    it when a terminal closes, so a live row means "a session STARTED here at T" and never "a
+ *    session is running here now". The board therefore prints LAST SEEN, and registration takes
+ *    the marker over unconditionally — the newest session really is the newest thing to have
+ *    started there, so there is no holder whose work is being displaced.
+ *
+ *    That is the opposite of `claim`, where `--if-held warn` refuses to steal. The fact being
+ *    recorded is different: for a jurisdiction it is "I am working here, don't"; here it is
+ *    "who most recently started". What would otherwise be lost — that another session was there,
+ *    on another branch — is REPORTED rather than discarded.
+ */
+async function cmdWorktree() {
+  const top = (() => {
+    try {
+      return execFileSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+    } catch { return null; }
+  })();
+  // Not a git worktree at all. Nothing to record, and nothing worth saying about it.
+  if (!top) return 0;
+
+  let branch = null;
+  try {
+    branch = execFileSync("git", ["rev-parse", "--abbrev-ref", "HEAD"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+  } catch { /* no HEAD yet */ }
+  if (branch === "HEAD") branch = null;             // detached; a name would be a lie
+
+  const scope = canonicalWorktreeScope(top);
+  const { who, machine } = identity();
+  const hours = hoursOpt(WORKTREE_MARKER_HOURS);
+
+  const client = await connectOrWarn("worktree");
+  if (!client) return 0;
+  try {
+    const { rows: prevRows } = await client.query(
+      `SELECT id, holder, machine, label, started_at
+         FROM steward.claims
+        WHERE scope = $1 AND released_at IS NULL AND expires_at > now()
+        ORDER BY started_at DESC LIMIT 1`, [scope]);
+    const previous = prevRows[0] ?? null;
+    const notices = worktreeNotices({ who, holder: who, machine, branch }, previous);
+
+    await client.query("BEGIN");
+    if (previous) {
+      await client.query(
+        `UPDATE steward.claims SET released_at = now(), notes = concat_ws(' | ', notes, $2::text)
+          WHERE id = $1`,
+        [previous.id, `superseded by ${who} on ${machine}`]);
+    }
+    await client.query(
+      `INSERT INTO steward.claims (scope, label, holder, machine, session_ref, expires_at, notes)
+       VALUES ($1, $2, $3, $4, $5, now() + make_interval(hours => $6), $7)`,
+      [scope, branch, who, machine, process.env.CLAUDE_SESSION_ID ?? null, hours,
+        "session-start worktree marker"]);
+    await client.query("COMMIT");
+
+    for (const n of notices) {
+      const seen = new Date(n.previous.started_at).toISOString().slice(0, 16).replace("T", " ");
+      if (n.kind === "head-moved") {
+        console.warn(`  🔴 HEAD MOVED in ${scope.slice("worktree:".length)} — it was on `
+          + `${n.was} when a session last started here (${seen}Z), and is now on ${n.now}. `
+          + "If that was not you, another session may be mid-task on this checkout.");
+      } else {
+        console.warn(`  ⚠ another session was last seen in ${scope.slice("worktree:".length)} at `
+          + `${seen}Z — ${n.previous.holder} on ${n.previous.machine}`
+          + `${n.previous.label ? ` (branch ${n.previous.label})` : ""}. `
+          + "Do not checkout or switch here; make your own worktree.");
+      }
+    }
+    console.log(scope);
+    return 0;
+  } catch (e) {
+    await client.query("ROLLBACK").catch(() => {});
+    // 🔴 FAIL OPEN. A session must never fail to start because a marker could not be written.
+    console.warn(`steward worktree: could not record this worktree (${e.message}). Continuing.`);
+    return 0;
+  } finally {
+    await client.end();
+  }
+}
+
+const COMMANDS = {
+  who: cmdWho, sync: cmdSync, slot: cmdSlot,
+  claim: cmdClaim, release: cmdRelease, extend: cmdExtend, worktree: cmdWorktree,
+};
 
 const run = COMMANDS[cmd];
 if (!run) {
@@ -496,9 +612,12 @@ if (!run) {
     + "        --takeover                    displace a live lease, recorded on the row it displaces\n"
     + "  release <scope> [--force]        end your lease early (--force: somebody else's)\n"
     + "  extend <scope> [--hours N]       push your lease out, 4h by default\n"
+    + "  worktree                         record that a session started here, and report what moved\n"
     + "\n"
     + "  A scope is place:<geoid> | county:<fips> | state:<usps>. Exact collisions are refused by\n"
-    + "  the database; a city inside a claimed county is a WARNING, because the strings differ.");
+    + "  the database; a city inside a claimed county is a WARNING, because the strings differ.\n"
+    + "  worktree:<path> is a 12h MARKER, not a lease — it says a session started there, not that\n"
+    + "  one is running. The SessionStart hook records it for you.");
   process.exit(2);
 }
 run().then((code) => process.exit(code ?? 0)).catch((e) => {

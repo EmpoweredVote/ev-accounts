@@ -246,7 +246,17 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
   2026-09-04 it was the entire reason two concurrent sessions never touched.
   - **Never `checkout` or `switch` in a worktree you did not create.** Moving HEAD under a
     running session is the failure — `C:\EV-Accounts` changed branch three times under one
-    session that day. If you need another branch, make another worktree.
+    session that day, and again the same evening. If you need another branch, make another
+    worktree.
+  - 🟢 **THE BOARD NOW WATCHES THIS RULE.** The SessionStart hook runs `steward worktree`,
+    which records the directory and branch and then tells you what moved:
+    **`🔴 HEAD MOVED in <path> — it was on X …, and is now on Y`**, or **`⚠ another session was
+    last seen in <path> at T`**. Read those two lines before you touch anything.
+    - ⚠ **A WORKTREE ROW IS A MARKER, NOT A LEASE.** Nothing releases it when a terminal
+      closes, so it means *a session started here at T* — never *a session is running here*.
+      That is why `who` lists it under `~` and prints **seen**, not "expires". Registering
+      takes the marker over unconditionally; the displaced session is reported, not protected.
+      This is the opposite of a jurisdiction claim, because the fact is different.
 - 🔴 **COMMIT WITH AN EXPLICIT PATHSPEC**: `git commit -F msg -- <path>`. Staging carefully is
   not enough, because it is the *other* session's `git add -A` that sweeps your files in.
 - **Before deleting a worktree or branch**, check all four: untracked-and-ignored count is zero,

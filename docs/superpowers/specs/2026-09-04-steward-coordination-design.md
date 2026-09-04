@@ -300,7 +300,7 @@ Ordered so value lands early and risk lands late. No step is a cutover.
 5. ✅ **Flip `check:migrations` to fail** on unreserved slots. Landed as a separate job and
    script, `check:reservations`, because `check:migrations` runs in the dependency-free
    `static guards` job and this one needs `pg`.
-6. **`worktree:` claims** (§9), if still worth it by then.
+6. ✅ **`worktree:` claims** (§9). It was still worth it — see below.
 
 ### What step 5 actually had to resolve
 
@@ -335,6 +335,61 @@ Three things surfaced only by building it:
   and watching the count stay at 1,038. Widening it picked up 11 files and 198 tests (1,236 in 96
   files, from 1,038 in 85), all green — after excluding one that needs a live database and had
   never been in `test:unit` either.
+
+### Step 6 was worth it, but not in the form it was written
+
+§6 hedged: `worktree:` claims *"if still worth it by then"*. The evidence arrived unprompted —
+while steps 4 and 5 were being built, `C:\EV-Accounts` changed branch again, from
+`fix/federal-cohort-definition` to `feat/verify-politician-id-column`. That is collision **B**,
+on the same day the rule against it was written into CLAUDE.md, for the fourth time. A rule that
+is written down and still broken needs an observer.
+
+**But a `claim worktree:<path>` you must remember to type would have been useless.** Whoever
+forgets the §9 rule forgets the command too, and the design's own argument against social
+protocol applies to its own commands: being careful is not a fix. So this resolves §10's third
+open decision — *whether the SessionStart hook should also record the session's worktree and
+branch* — as **yes**, and that is the only form shipped. `steward worktree` runs in the hook, in
+0.4s, and nobody has to remember anything.
+
+**The row is the mechanism; the WARNING is the product.** At session start, before anything is
+touched:
+
+```
+🔴 HEAD MOVED in c:/ev-accounts-steward — it was on fix/federal-cohort-definition when a
+   session last started here (2026-09-04 20:22Z), and is now on feat/steward-…
+⚠  another session was last seen in c:/ev-accounts at 20:23Z — candrews@… on MBP-2
+   (branch knight/ca-2). Do not checkout or switch here; make your own worktree.
+```
+
+#### It is a marker, not a lease, and saying otherwise would make the board lie
+
+Nothing releases a worktree row when a terminal closes — there is no hook for that. So a live row
+means **"a session started here at T"**, never "a session is running here now". Three consequences,
+each deliberate:
+
+- `who` lists these under `~` and prints **seen**, not "expires". An expiry would assert liveness
+  the row cannot support.
+- Registration **takes the marker over unconditionally**. This inverts the rule governing
+  jurisdiction claims, where `--if-held warn` refuses to steal — because the fact is different.
+  For a jurisdiction the holder's *work* is what is being protected; here the fact is *who most
+  recently started*, so the newest writer is simply correct. What would otherwise be lost is
+  reported instead of discarded.
+- The 12-hour marker is another guess, and the trade-off runs both ways: too short and a session
+  running all day drops off the board, so "nobody is there" becomes wrong; too long and last
+  night's finished sessions look present. A working day spans one and clears overnight.
+
+#### Path canonicalisation is the one thing that had to be right
+
+The exclusion constraint compares scope **strings**. Two sessions in one directory registering
+`worktree:C:/EV-Accounts` and `worktree:/c/ev-accounts` do not collide, do not warn, and the
+feature does nothing while appearing to work. This machine spells its own paths three ways —
+Git Bash `/c/ev-accounts`, PowerShell `C:\EV-Accounts`, `git rev-parse --show-toplevel`
+`C:/EV-Accounts` — and all three reach the function.
+
+⚠ **Case is folded only for a drive-letter path.** NTFS is case-insensitive, so on Windows two
+spellings are one directory. POSIX paths are case-*sensitive*: folding `/home/Chris` and
+`/home/chris` together would merge two real worktrees into one scope — the inverse error, and
+just as silent.
 
 ### Containment is not computed with `ST_Covers`
 
@@ -416,14 +471,23 @@ on 2026-09-04, where `C:\EV-Accounts` changed branch three times under a running
 These belong in `CLAUDE.md`. The `worktree:` claim scope in §6 step 6 would make them visible
 rather than merely written down, which is why it is sequenced last rather than never.
 
+> **As built (2026-09-04):** step 6 shipped, and rule 2 above now has an observer. The
+> SessionStart hook records the directory and branch, and reports **`🔴 HEAD MOVED in <path>`**
+> or **`⚠ another session was last seen in <path>`** before anything is touched. It is a marker,
+> not a lease — see §6. Rules 1, 3 and 4 remain rules; nothing watches them.
+
 ---
 
 ## 10. Open decisions
 
-- **Lease duration.** Eight hours is a guess. It wants to be longer than a working session and
-  shorter than a weekend.
-- **Whether `--if-held=skip` needs a jurisdiction work queue** to pick "the next unclaimed
-  jurisdiction" from, or whether the caller supplies the candidate list. The latter is simpler
-  and is assumed here.
-- **Whether the SessionStart hook should also record the session's worktree and branch**
-  immediately, which would deliver §9's visibility earlier than step 6.
+- **Lease duration — still a guess, now two of them.** Eight hours for a jurisdiction claim; 12
+  for a worktree marker. A lease wants to be longer than a working session and shorter than a
+  weekend; §6 states the marker's trade-off, which runs in both directions.
+- ✅ **RESOLVED — the caller supplies the candidate list.** *Whether `--if-held=skip` needs a
+  jurisdiction work queue.* It takes a list of scopes and returns the first one free, printing
+  every one it passed over. No queue exists and none was needed.
+- ✅ **RESOLVED, YES — and it is the only form step 6 shipped in.** *Whether the SessionStart
+  hook should also record the session's worktree and branch.* A `worktree:` claim you must
+  remember to type would be useless: whoever forgets the §9 rule forgets the command too. The
+  hook records it in 0.4s and reports what moved. See "Step 6 was worth it, but not in the form
+  it was written" in §6.
