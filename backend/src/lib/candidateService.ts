@@ -127,13 +127,18 @@ export async function getCandidateBySlug(slug: string): Promise<CandidateProfile
   // for any Inform-tier candidate — and for everyone else once it is dropped.
   const selectedTopicIds: string[] = await getSelectedTopics(data.user_id);
 
-  // Fetch public compass answers for selected topics
+  // Fetch public compass answers for selected topics.
+  //
+  // 🔴 compass_responses_effective (CC_0062): these are a candidate's stances as
+  // shown to voters, so an answer whose rung moved or was invalidated must not
+  // appear. Showing a voter a position the candidate never took is worse than
+  // showing them one fewer topic.
   let featuredStances: Array<{ topic_id: string; value: number; write_in_text?: string }> = [];
 
   if (selectedTopicIds.length > 0) {
     const { data: answersData } = await supabaseAdmin
       .schema('inform')
-      .from('compass_responses_current')
+      .from('compass_responses_effective')
       .select('topic_id, value, write_in_text')
       .eq('user_id', data.user_id)
       .in('topic_id', selectedTopicIds)
@@ -207,10 +212,11 @@ export async function getCandidateAnswers(
 
   const userId = profileData.user_id as string;
 
-  // Fetch public compass answers for the requested topic IDs
+  // Fetch public compass answers for the requested topic IDs.
+  // Same effective view, same reason as getCandidateProfile above (CC_0062).
   const { data: answersData, error: answersError } = await supabaseAdmin
     .schema('inform')
-    .from('compass_responses_current')
+    .from('compass_responses_effective')
     .select('topic_id, value, write_in_text')
     .eq('user_id', userId)
     .in('topic_id', topicIds)

@@ -242,6 +242,18 @@ describe('getPoliticianContextAll — one row per topic', () => {
 // but guarded on neither side, so a blanked answer entered
 // `1 - |user - politician| / 5` as rung 0 — scoring a user on rung 5 at 0% for a
 // topic on which the politician simply has no seat on the new ladder.
+/**
+ * The user-answer query out of compareWithPoliticians' several calls.
+ *
+ * Located by the view name, so it moves when the view does — which is the point:
+ * the suppression test below asserts on which view this is.
+ */
+function userAnswersSql(): string {
+  return mockQuery.mock.calls
+    .map((c) => c[0] as string)
+    .find((s) => s.includes('compass_responses_effective'))!;
+}
+
 describe('compareWithPoliticians — a blank is not a position', () => {
   const empty = { rows: [] };
 
@@ -259,19 +271,33 @@ describe('compareWithPoliticians — a blank is not a position', () => {
     expect(sql.search(/value\s*<>\s*0/)).toBeGreaterThan(collapseEnd);
   });
 
-  // The user side reads compass_responses_current, whose deleted_at filter is a
-  // different idea from value 0. Six sibling queries in this file already filter
-  // both; this one filtered neither zero.
+  // The user side's deleted_at filter is a different idea from value 0. Six
+  // sibling queries in this file already filter both; this one filtered neither
+  // zero.
   it('excludes value 0 from the user answers too', async () => {
     mockQuery.mockResolvedValue(empty);
     await compareWithPoliticians('u1', ['p1']);
 
-    const sql = mockQuery.mock.calls
-      .map((c) => c[0] as string)
-      .find((s) => s.includes('compass_responses_current'))!;
+    const sql = userAnswersSql();
 
     expect(sql).toContain('deleted_at IS NULL');
     expect(sql).toMatch(/value\s*(<>|!=)\s*0/);
+  });
+
+  // 🔴 A SUPPRESSED ANSWER MUST NOT SCORE, for the same reason a 0 must not.
+  // CC_0061 calls an answer 'moved' or 'invalidated' when the rung it sits on
+  // is no longer that rung — so the stored number points at a different
+  // position, and `1 - |user - politician| / 5` computes a distance from a
+  // coordinate the user never chose while the topic still counts in the
+  // denominator. compass_responses_effective (CC_0062) is where that is dropped.
+  it('reads the effective view, so a suppressed answer cannot score', async () => {
+    mockQuery.mockResolvedValue(empty);
+    await compareWithPoliticians('u1', ['p1']);
+
+    const sql = userAnswersSql();
+
+    expect(sql).toContain('inform.compass_responses_effective');
+    expect(sql).not.toContain('compass_responses_current');
   });
 
   // The guard has to be in SQL, not in the scoring loop: a 0 that reaches

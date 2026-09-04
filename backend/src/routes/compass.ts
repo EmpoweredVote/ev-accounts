@@ -357,6 +357,14 @@ router.delete(
 // Returns user's own compass responses including the inverted field.
 // Triggers lazy promotion of compass_import_draft on first call (non-fatal).
 // Uses createUserClient — RLS enforces owner-only access to compass_responses.
+//
+// 🔴 READS compass_responses_effective, WHICH IS THE ROUTE THE USER SEES. It is
+// the newest-season collapse (CC_0046) minus the answers CC_0061 calls moved or
+// invalidated (CC_0062) — a value whose rung moved no longer points where they
+// put it, so it is withheld rather than rendered as their position. The answer
+// is not deleted: GET /my-lenses reports it as needing recalibration, and a
+// selected-but-unanswered topic already renders as an uncalibrated spoke, so
+// suppression shows the blank for free.
 // ---------------------------------------------------------------------------
 
 router.get('/answers', optionalAuth, async (req: Request, res: Response): Promise<void> => {
@@ -370,7 +378,7 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
     const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
-      .from('compass_responses_current')
+      .from('compass_responses_effective')
       .select('topic_id, value, write_in_text, visibility, inverted, created_at, updated_at')
       .is('deleted_at', null);
 
@@ -393,6 +401,11 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
 // Returns answers for a specific list of topic IDs.
 // Body: { ids: string[] } — array of topic UUID strings (1-100 items).
 // Uses createUserClient — RLS enforces owner-only access.
+//
+// ⚠ THE SAME EFFECTIVE VIEW AS GET /answers, NOT AN OPTIMISATION DETAIL. These
+// two routes return the same rows in different shapes, so suppressing in one and
+// not the other would make a suppressed answer visible or hidden depending on
+// which endpoint the client happened to call.
 // ---------------------------------------------------------------------------
 
 router.post('/answers/batch', optionalAuth, async (req: Request, res: Response): Promise<void> => {
@@ -412,7 +425,7 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
     const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
-      .from('compass_responses_current')
+      .from('compass_responses_effective')
       .select('topic_id, value, write_in_text')
       .in('topic_id', parsed.data.ids)
       .is('deleted_at', null);

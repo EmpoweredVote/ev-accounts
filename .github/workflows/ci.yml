@@ -194,6 +194,19 @@ jobs:
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
+      # --- suppressed-answer reads -----------------------------------------------------------------
+      # CC_0062 put answer suppression in `inform.compass_responses_effective`; eleven reads in
+      # backend/src had to switch to it. A twelfth read reaching for `compass_responses_current` out of
+      # habit is INVISIBLE IN REVIEW: until the season changeover the two views return byte-identical
+      # rows, so it compiles, passes its tests, and only starts showing somebody a stance on a rung
+      # they never chose once a season opens. Six of the eleven were PostgREST builder calls, which a
+      # SQL-text scan cannot see at all — the same blind spot #349 found in the season gate. Static, no
+      # DATABASE_URL, dependency-free.
+      - name: suppressed-answer reads
+        if: ${{ !cancelled() }}
+        working-directory: backend
+        run: node scripts/check-suppressed-answer-reads.mjs
+
       # --- answer-delete context guards ------------------------------------------------------------
       # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
       # (1735, 1738, 1739 and the four Maryland passes), silently creating ORPHAN_CONTEXT violations —

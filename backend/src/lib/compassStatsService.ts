@@ -85,12 +85,18 @@ const STANCES_SQL = `
   ORDER BY tc.title ASC, s.value ASC
 `;
 
+// 🔴 THE EFFECTIVE VIEW, NOT _current, AND FOR THE SAME REASON THE POLITICIAN
+// SIDE GUARDS ZERO. An answer whose rung moved or was invalidated (CC_0061) is
+// not a position anybody holds on the current ladder, so counting it in a public
+// distribution attributes to the corpus a stance nobody stated. These are
+// aggregates with no user identity attached, so there is nothing to be gained by
+// keeping the row and a real misreport if we do.
 const USER_COUNTS_SQL = `
   SELECT topic_id::text AS topic_id,
          value::float8  AS value,
          COUNT(*)::int  AS n,
          (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
-  FROM inform.compass_responses_current
+  FROM inform.compass_responses_effective
   WHERE deleted_at IS NULL
   GROUP BY topic_id, value
 `;
@@ -127,10 +133,14 @@ const POLITICIAN_COUNTS_SQL = `
   GROUP BY topic_id, value
 `;
 
+// Same view and same reasoning as USER_COUNTS_SQL: `responses` is a COUNT(*),
+// and a suppressed answer would inflate the corpus total with a position that no
+// longer exists. `respondents` is unaffected unless every one of somebody's
+// answers is suppressed, in which case they genuinely have no stance to show.
 const USER_TOTALS_SQL = `
   SELECT COUNT(*)::int                 AS responses,
          COUNT(DISTINCT user_id)::int  AS respondents
-  FROM inform.compass_responses_current
+  FROM inform.compass_responses_effective
   WHERE deleted_at IS NULL
 `;
 
