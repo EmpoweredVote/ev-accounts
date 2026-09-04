@@ -341,8 +341,18 @@ const FLOORS = {
     //    A cleanup that deletes them would be a REGRESSION, not a retirement. If some future
     //    season gives that federalism position a rung again, the 28 get re-seated by a migration
     //    that raises this floor, and the movement is visible here either way.
-    answers: flagInt('floor-answers', 2, 2685),
-    context: flagInt('floor-context', 2, 2657),
+    //   +4 / +4 on 2026-09-04: CC_0074, applied. The Senate research pilot's first
+    //   four answers — Padilla and Schiff on gun-policy and minimum-wage — each with
+    //   its context row, so both floors move together by the same amount. That is the
+    //   signature of ordinary research landing, and it is the first time either of
+    //   these numbers has moved for a reason other than the season opening.
+    //
+    //   Derived from CC_0074's own post-verify, which RAISES unless the totals read
+    //   exactly 2,689 and 2,661 — and raised only AFTER the apply, per the ordering
+    //   rule above. Committing 2,689 while prod still held 2,685 would have reported
+    //   "4 MISSING" nightly until somebody applied it.
+    answers: flagInt('floor-answers', 2, 2689),
+    context: flagInt('floor-context', 2, 2661),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
     // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
     questions: flagInt('floor-questions', 2, 60),
