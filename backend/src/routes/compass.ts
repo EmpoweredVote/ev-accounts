@@ -24,6 +24,7 @@ import {
   getUserVerdicts,
   getBatchPoliticianAnswers,
   getPoliticianCitations,
+  getSelectedTopicRecalibrationFlags,
 } from '../lib/compassService.js';
 import {
   getUserLenses,
@@ -350,6 +351,42 @@ router.delete(
     }
   }
 );
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/recalibration-flags
+// Auth: optional — unauthenticated returns 200 []
+// The flags for the topics on the caller's OWN compass, lens or no lens.
+//
+// 🔴 THIS IS WHAT KEEPS SUPPRESSION FROM BEING AN UNEXPLAINED DISAPPEARANCE.
+// GET /answers withholds an answer whose rung moved or was invalidated (CC_0062),
+// so the spoke goes blank. Until this route existed the only source of flags was
+// GET /my-lenses, and the client narrowed it further still to the ACTIVE custom
+// lens — so the explanation reached a user who owned a lens, had put the affected
+// topic in it, and had it selected at that moment. Of the 6 users holding one of
+// the 7 answers suppressed at the changeover, one owns a lens.
+//
+// Each flag carries `disposition`, which is what says whether the value was
+// withheld: `reworded` kept it, `moved` and `invalidated` did not. `reason` is
+// the same `question_revised` for reworded and moved, so it cannot be used for
+// that decision.
+//
+// Separate from /my-lenses rather than folded into it: a lens flag belongs beside
+// each lens that holds the topic, and these belong to the compass itself. Reusing
+// one payload for both would force the client to guess which it was looking at.
+// ---------------------------------------------------------------------------
+
+router.get('/recalibration-flags', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json([]); return; }
+
+  try {
+    const flags = await getSelectedTopicRecalibrationFlags(authReq.userId);
+    res.status(200).json(flags);
+  } catch (err) {
+    console.error('[GET /compass/recalibration-flags] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/answers
