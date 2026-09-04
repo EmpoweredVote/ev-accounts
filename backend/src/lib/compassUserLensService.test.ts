@@ -15,7 +15,6 @@ vi.mock('./db.js', () => ({
 }));
 
 import {
-  rungNeighbourhood,
   getRecalibrationFlags,
   replaceUserLenses,
   findUnknownTopicIds,
@@ -28,43 +27,33 @@ import {
 const USER = 'user-1';
 const TOPIC = '11111111-1111-4111-8111-111111111111';
 
-/** An answer stamped against v1 while the open season now serves v2. */
-function staleCandidate(over: Record<string, unknown> = {}) {
+/**
+ * One row of inform.compass_answer_dispositions, joined to the two revisions for
+ * their versions and editorial's note.
+ *
+ * ⚠ THE DISPOSITION IS AN INPUT HERE, NOT SOMETHING THIS SERVICE DERIVES.
+ * CC_0061 owns the editorial rule; this file owns only the translation of its
+ * four words into the wire contract. A test here that asserted on rung text or
+ * rung_map would be re-testing SQL through a mock — that proof lives in the
+ * migration's own probe (fresh=78 reworded=89 moved=6 invalidated=1).
+ */
+function dispositionRow(over: Record<string, unknown> = {}) {
   return {
     topic_id: TOPIC,
-    value: 3,
+    // numeric arrives from pg as a string; the service must normalise it.
+    value: '3',
+    disposition: 'reworded',
     answered_revision_id: 'rev-v1',
-    answered_version: 1,
     effective_revision_id: 'rev-v2',
+    answered_version: 1,
     effective_version: 2,
     public_note: 'We rewrote this question to better reflect the trade-off.',
     ...over,
   };
 }
 
-/** One rung, same on both sides. */
-function rung(value: number, over: Record<string, unknown> = {}) {
-  return {
-    value,
-    old_text: `stance ${value}`,
-    new_text: `stance ${value}`,
-    old_description: null,
-    new_description: null,
-    mapped: String(value),
-    ...over,
-  };
-}
-
-/**
- * getRecalibrationFlags issues the candidate query first, then one rung
- * comparison per topic that survived the version check. Dispatching on the SQL
- * keeps the tests from depending on call order.
- */
-function mockQueries(candidates: unknown[], rungs: unknown[]) {
-  poolQueryMock.mockImplementation(async (sql: string) => {
-    if (sql.includes('compass_stance_revisions')) return { rows: rungs };
-    return { rows: candidates };
-  });
+function mockRows(rows: unknown[]) {
+  poolQueryMock.mockResolvedValue({ rows });
 }
 
 beforeEach(() => {
@@ -72,61 +61,41 @@ beforeEach(() => {
 });
 
 // ---------------------------------------------------------------------------
-// rungNeighbourhood
+// getRecalibrationFlags — it reads the rule, it does not reimplement it
 // ---------------------------------------------------------------------------
 
-describe('rungNeighbourhood — which rungs bear on an answer', () => {
-  it('takes the rung either side of a whole-number answer', () => {
-    expect(rungNeighbourhood(3)).toEqual([2, 3, 4]);
+describe('recalibration — one source of truth', () => {
+  it('asks the disposition view, scoped to the one user', async () => {
+    mockRows([]);
+
+    await getRecalibrationFlags(USER, [TOPIC]);
+
+    const [sql, params] = poolQueryMock.mock.calls[0] ?? [];
+    expect(String(sql)).toContain('inform.compass_answer_dispositions');
+    expect(String(sql)).toContain('user_id = $1');
+    expect(params).toEqual([USER, [TOPIC]]);
   });
 
-  it('spans both rungs a write-in sits between, plus their neighbours', () => {
-    // 2.5 is a write-in BETWEEN rungs 2 and 3, so both are "their answer" and
-    // the neighbours sit outside them.
-    expect(rungNeighbourhood(2.5)).toEqual([1, 2, 3, 4]);
+  it('never compares rungs itself — CC_0061 owns that', async () => {
+    // 🔴 The regression this guards. Two implementations of one editorial rule
+    // is how the suppression path and the prompt path come to disagree about
+    // the same answer. One query, and it never touches the stance snapshots.
+    mockRows([dispositionRow()]);
+
+    await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(poolQueryMock).toHaveBeenCalledTimes(1);
+    const issued = poolQueryMock.mock.calls.map(c => String(c[0])).join('\n');
+    expect(issued).not.toContain('compass_stance_revisions');
+    expect(issued).not.toContain('rung_map');
   });
 
-  it('clamps at the bottom of the ladder', () => {
-    expect(rungNeighbourhood(1)).toEqual([1, 2]);
-    expect(rungNeighbourhood(0.5)).toEqual([1, 2]);
-  });
+  it('de-duplicates the topic list it was handed', async () => {
+    mockRows([]);
 
-  it('clamps at the top of the ladder', () => {
-    expect(rungNeighbourhood(5)).toEqual([4, 5]);
-    expect(rungNeighbourhood(5.5)).toEqual([4, 5]);
-  });
+    await getRecalibrationFlags(USER, [TOPIC, TOPIC]);
 
-  it('falls back to the whole ladder when there is no value to centre on', () => {
-    expect(rungNeighbourhood(null)).toEqual([1, 2, 3, 4, 5]);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// getRecalibrationFlags — the rule
-// ---------------------------------------------------------------------------
-
-describe('recalibration — an unchanged question never prompts', () => {
-  it('says nothing when the version did not move', async () => {
-    // The editorial/clarifying case. ADR 0006 §2: those do not bump version, so
-    // they resolve to the same version the answer was stamped against and can
-    // never raise a flag.
-    mockQueries([staleCandidate({ answered_version: 2, effective_version: 2 })], []);
-
-    expect(await getRecalibrationFlags(USER, [TOPIC])).toEqual([]);
-  });
-
-  it('says nothing across a version bump when the nearby rungs are untouched', async () => {
-    // The narrowing Chris asked for: a substantive revision elsewhere on the
-    // ladder does not invalidate a calibration made at rung 3.
-    mockQueries([staleCandidate()], [rung(2), rung(3), rung(4)]);
-
-    expect(await getRecalibrationFlags(USER, [TOPIC])).toEqual([]);
-  });
-
-  it('does not nag an answer that was never stamped with a revision', async () => {
-    mockQueries([staleCandidate({ answered_revision_id: null, answered_version: null })], []);
-
-    expect(await getRecalibrationFlags(USER, [TOPIC])).toEqual([]);
+    expect(poolQueryMock.mock.calls[0]?.[1]).toEqual([USER, [TOPIC]]);
   });
 
   it('asks for nothing when the lens is empty', async () => {
@@ -135,12 +104,31 @@ describe('recalibration — an unchanged question never prompts', () => {
   });
 });
 
-describe('recalibration — a changed question prompts, and says why', () => {
-  it('flags a reworded rung the user is sitting on', async () => {
-    mockQueries(
-      [staleCandidate()],
-      [rung(2), rung(3, { new_text: 'stance 3, rewritten' }), rung(4)]
-    );
+describe('recalibration — fresh is silent', () => {
+  it('says nothing when the answer still means what it meant', async () => {
+    mockRows([dispositionRow({ disposition: 'fresh' })]);
+
+    expect(await getRecalibrationFlags(USER, [TOPIC])).toEqual([]);
+  });
+
+  it('says nothing about an answer that was never stamped with a revision', async () => {
+    // CC_0061 resolves an unstamped answer to 'fresh' itself. Nagging someone
+    // because of a NULL we wrote is worse than missing a genuine revision.
+    mockRows([
+      dispositionRow({
+        disposition: 'fresh',
+        answered_revision_id: null,
+        answered_version: null,
+      }),
+    ]);
+
+    expect(await getRecalibrationFlags(USER, [TOPIC])).toEqual([]);
+  });
+});
+
+describe('recalibration — the four dispositions, translated', () => {
+  it('flags a reworded question and keeps the value', async () => {
+    mockRows([dispositionRow({ disposition: 'reworded' })]);
 
     const flags = await getRecalibrationFlags(USER, [TOPIC]);
 
@@ -148,59 +136,92 @@ describe('recalibration — a changed question prompts, and says why', () => {
     expect(flags[0]).toMatchObject({
       topicId: TOPIC,
       reason: 'question_revised',
+      disposition: 'reworded',
       currentValue: 3,
       answeredVersion: 1,
       effectiveVersion: 2,
     });
   });
 
-  it('flags a change to the rung beside their answer, not just their own', async () => {
-    mockQueries(
-      [staleCandidate()],
-      [rung(2), rung(3), rung(4, { new_text: 'stance 4, rewritten' })]
-    );
+  it('flags a moved rung as a revision, and carries the word that suppresses it', async () => {
+    // moved and reworded share a reason on the wire but NOT a fate: the caller
+    // suppresses on `disposition`, so it has to survive the translation.
+    mockRows([dispositionRow({ disposition: 'moved' })]);
 
     const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]).toMatchObject({ reason: 'question_revised', disposition: 'moved' });
+  });
+
+  it('reports a rung that no longer exists as an invalidated answer', async () => {
+    mockRows([dispositionRow({ disposition: 'invalidated' })]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]).toMatchObject({ reason: 'answer_invalidated', disposition: 'invalidated' });
+  });
+
+  it('never calls a reworded answer invalidated', async () => {
+    // 🔴 CC_0061 bug 1, held shut from this side too. The old rule reported
+    // 'invalidated' when ANY rung in the neighbourhood was invalidated, not the
+    // user's own — telling someone their stated view no longer exists when
+    // their own rung was untouched. Only the word 'invalidated' may say that.
+    mockRows([dispositionRow({ disposition: 'reworded' })]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
     expect(flags).toHaveLength(1);
-    expect(flags[0]?.reason).toBe('question_revised');
+    expect(flags[0]?.reason).not.toBe('answer_invalidated');
   });
 
   it("carries editorial's own words so the UI need not invent them", async () => {
-    mockQueries([staleCandidate()], [rung(3, { new_text: 'moved' })]);
+    mockRows([dispositionRow()]);
 
     const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
     expect(flags[0]?.publicNote).toBe(
       'We rewrote this question to better reflect the trade-off.'
     );
   });
 
-  it('distinguishes a rung that no longer exists from one that was reworded', async () => {
-    mockQueries([staleCandidate()], [rung(3, { mapped: 'invalidated' })]);
+  it('reports an absent note as an empty string, not null', async () => {
+    mockRows([dispositionRow({ public_note: null })]);
 
-    const flags = await getRecalibrationFlags(USER, [TOPIC]);
-    expect(flags[0]?.reason).toBe('answer_invalidated');
-  });
-
-  it('treats a rung that moved position as a change even when its words did not', async () => {
-    // rung_map is the only thing that can see this; the text is identical.
-    mockQueries([staleCandidate()], [rung(3, { mapped: '4' })]);
-
-    const flags = await getRecalibrationFlags(USER, [TOPIC]);
-    expect(flags[0]?.reason).toBe('question_revised');
+    expect((await getRecalibrationFlags(USER, [TOPIC]))[0]?.publicNote).toBe('');
   });
 
   it('reports a topic the open season does not ask, rather than dropping it', async () => {
-    mockQueries(
-      [staleCandidate({ effective_revision_id: null, effective_version: null, public_note: null })],
-      []
-    );
+    // The view LEFT JOINs the season's pins, so a dropped topic arrives with no
+    // effective revision — and 'fresh', because nothing changed under them. It
+    // is simply not on the board, and that must be said rather than inferred.
+    mockRows([
+      dispositionRow({
+        disposition: 'fresh',
+        effective_revision_id: null,
+        effective_version: null,
+        public_note: null,
+      }),
+    ]);
 
     const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
     expect(flags).toHaveLength(1);
     expect(flags[0]).toMatchObject({
       reason: 'not_asked_this_season',
       effectiveVersion: null,
     });
+  });
+
+  it('normalises a null value rather than coercing it to zero', async () => {
+    mockRows([dispositionRow({ value: null, disposition: 'reworded' })]);
+
+    expect((await getRecalibrationFlags(USER, [TOPIC]))[0]?.currentValue).toBeNull();
+  });
+
+  it('keeps a write-in half value intact', async () => {
+    mockRows([dispositionRow({ value: '2.5' })]);
+
+    expect((await getRecalibrationFlags(USER, [TOPIC]))[0]?.currentValue).toBe(2.5);
   });
 });
 

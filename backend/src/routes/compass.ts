@@ -197,10 +197,13 @@ router.get('/lenses', optionalAuth, async (req: Request, res: Response): Promise
 //
 // `needsRecalibration` is computed per lens rather than returned as one flat list
 // because the same topic can sit in several lenses and the prompt belongs next to
-// each of them. See compassUserLensService for the rule — in short, an editorial
-// or clarifying edit can never raise a flag (ADR 0006 §2 keeps the version
-// stable), and a substantive one only raises it when the rungs at or beside the
-// user's own answer actually moved.
+// each of them. The rule itself is CC_0061 — `inform.compass_answer_dispositions`
+// — read through compassUserLensService, which only translates it. Each flag
+// carries the `disposition` that decides whether the value is still shown:
+// `reworded` keeps it and prompts, `moved` and `invalidated` suppress it.
+//
+// ⚠ THIS IS STILL THE ONLY ROUTE THAT SURFACES FLAGS, so they reach custom-lens
+// owners only. Surfacing them for a user's SELECTED topics is a separate change.
 // ---------------------------------------------------------------------------
 
 router.get('/my-lenses', optionalAuth, async (req: Request, res: Response): Promise<void> => {
