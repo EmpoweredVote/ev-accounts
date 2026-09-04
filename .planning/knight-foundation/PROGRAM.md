@@ -20,7 +20,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | CA | Long Beach, San José | ✅ | ✅ | WIP | WIP | — |
+| 3 | CA | Long Beach, San José | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
@@ -81,8 +81,8 @@ inherited.
 | Columbus | GA | Muscogee | **consolidated city-county** |
 | Macon | GA | Bibb | **consolidated city-county** (Macon-Bibb). ✅ **SEATED 2026-09-02 (`CC_0049`/`CC_0050`/`CC_0051` — renumbered post-apply from 0045-0047 after colliding with a MERGED Compass chain): 15 offices, 15 people, 0 vacancies** — 10 city (Mayor + **9 single-member districts, NO at-large**) + 5 county. Mayor is `non_voting` (charter Sec. 9(c)), **proved by two mayor-pro-tem roll calls**. 🔴 The nine districts **tile the whole county** (254.9060 vs 254.906), so **full coverage IS the right gate here — the Columbus/Fort Benning rule inverts**. 🔴 The SOS certified-results portal carries **no Macon-Bibb mayor or commission contest in any year**. 🔴 Five GIS layers: four identical, `CountyDistrict` superseded by **145.72 sq mi** and listed **first** in the county's own 2026 web map |
 | Milledgeville | GA | Baldwin | ✅ **SEATED 2026-09-01 (`CC_0027`/`CC_0028`): 7/7**, and **Baldwin County 11/11** (`CC_0029`): 7 city + 11 county = 18 offices, 18 people, 0 vacancies. Ordinary city (20.420 sq mi) in an ordinary county (268.276). Council is 6 single-member districts + at-large Mayor, **not staggered**. Baldwin is **5 single-member commission seats, NO at-large**, Chair elected by the Board. 🔴 The city's own `City Council Districts (2025)` layer supersedes the county's copy — only District 4 reveals it |
-| Long Beach | CA | Los Angeles | ✅ **REPAIRED 2026-09-02 (`CC_0053`/`CC_0054`): 13/13**, and **Los Angeles County 8/8** already correct from migration 1635, re-verified against the county's own tenure sheet (REV. 08/07/26). 🔴 The nine council districts EXISTED but all shared the city place polygon `0643000`, so every Long Beach address returned **all nine councilmembers**; repointed onto `X0046`. 🔴 All 13 occupancy rows were UNDATED vendor-sourced backfill; now day-precision from the city's own Legistar. ⚠ **District 7 hands over to Vivian Malauulu on 2026-12-15** — Uranga is term-limited, she won outright in June, and she is NOT written |
-| San José | CA | Santa Clara | ▶ **CA-2.** Measured 2026-09-02: the 10 council districts and the Mayor **all exist and are seated**, on REAL per-district polygons (`X0010`, `sj-council-district-N`), and the spatial probe returns exactly one councilmember — the tracker line that said they were absent was wrong. What is owed: all 11 carry **undated** backfill occupancy and need the change-check, and **Santa Clara County has NO Board of Supervisors at all** — 3 countywide officers seated (0 headshots), 5 supervisor seats and 5 polygons still to seat |
+| Long Beach | CA | Los Angeles | ✅ **REPAIRED 2026-09-02 (`CC_0053`/`CC_0054`, `X0046`): 13/13**, all dated, 13/13 headshots, and **Los Angeles County 8/8** already correct from migration 1635, re-verified against the county's own tenure sheet (REV. 08/07/26). 🔴 A REPAIR, not a seed — the nine council districts EXISTED but all shared the city place polygon `0643000`, so every Long Beach address returned **all nine councilmembers**; repointed onto `X0046`. 🔴 All 13 occupancy rows were UNDATED vendor-sourced backfill; now day-precision from the city's own Legistar. ⚠ **District 7 hands over to Vivian Malauulu on 2026-12-15** — Uranga is term-limited, she won outright in June, and she is NOT written |
+| San José | CA | Santa Clara | 🟡 **BOARD OF SUPERVISORS SEATED 2026-09-03 (`CC_0056`, `X0047`): 5/5**, 3 at `day` and 2 at `year` precision. City is **11/11 seated AND 11/11 DATED** (`CC_0059`, all at `day`) on REAL per-district polygons (`X0010`, `sj-council-district-N`) — the spatial probe returns exactly one councilmember, so the earlier "absent" tracker line was wrong. County officers 3/3. 🔴 The county publishes FIVE competing supervisor layers and the freshest edit date carries the 2011 map — arbitrated via the Board's own "Find My Supervisor" app. ✅ **stage 5 done: 8/8 portraits**, all from the county's own Elected Officials page |
 | Fort Wayne | IN | Allen | IN legislature is 12/100 + 6/50 — polygons already loaded |
 | Gary | IN | Lake | |
 | Duluth | MN | St. Louis | |
@@ -181,7 +181,7 @@ in it is reachable by address. **Ten remain.**
 | **Long Beach city** | **13** | **13** | **13** |
 | **Los Angeles County** | **8** | **8** | **8** |
 | **San José city** | **11** | **11** | **11** |
-| Santa Clara County | 3 | 3 | **0** |
+| **Santa Clara County** | **8** | **8** | **8** |
 | **Bradenton city** | **6** | **6** | **6** |
 | **Manatee County** | **12** | **11** | **11** |
 | **Tallahassee city** | **5** | **5** | **5** |
