@@ -92,15 +92,37 @@ function parseCsv(text) {
   return rows;
 }
 
+/**
+ * Two accepted shapes. The 8-column one leads with `politician_id` and is what
+ * cohort-worksheet.mjs emits; the 7-column one is the original and still works.
+ *
+ * 🔴 WHY THE ID COLUMN EXISTS: full_name IS NOT UNIQUE, AND THE COLLISION IS REAL.
+ * Two active people are named "Alex Padilla" — California's U.S. Senator and an
+ * Inglewood city councilmember. Name-keyed rows for him resolve to 2 politicians
+ * and are refused, which is the correct outcome and also an unfixable one: the
+ * 7-column format has no way to say which person is meant. One of the 100 sitting
+ * senators collides today, and the number only grows as local rosters load.
+ *
+ * The refusal is the point. A name that silently matched the FIRST row would put a
+ * senator's stance on a city councilmember's compass, and nothing downstream would
+ * ever notice — the row is well-formed, well-sourced and about the wrong person.
+ */
+const COLS_7 = ['full_name', 'topic_key', 'value', 'reasoning', 'source_url_1', 'source_url_2', 'source_url_3'];
+const COLS_8 = ['politician_id', ...COLS_7];
+
 const parsed = parseCsv(readFileSync(file, 'utf8'));
-const header = parsed[0];
-const EXPECT = ['full_name', 'topic_key', 'value', 'reasoning', 'source_url_1', 'source_url_2', 'source_url_3'];
-if (header.join(',') !== EXPECT.join(',')) {
+const header = parsed[0].map((h) => h.trim());
+const shape = header.join(',') === COLS_8.join(',') ? COLS_8
+            : header.join(',') === COLS_7.join(',') ? COLS_7
+            : null;
+if (!shape) {
   console.error(`FAIL header: got ${header.join(',')}`);
+  console.error(`  expected either:\n    ${COLS_8.join(',')}\n    ${COLS_7.join(',')}`);
   process.exit(1);
 }
-const rows = parsed.slice(1).map((r) => Object.fromEntries(EXPECT.map((k, i) => [k, (r[i] ?? '').trim()])));
-console.log(`parsed ${rows.length} row(s), ${header.length} columns\n`);
+const rows = parsed.slice(1).map((r) => Object.fromEntries(shape.map((k, i) => [k, (r[i] ?? '').trim()])));
+const KEYED_BY_ID = shape === COLS_8;
+console.log(`parsed ${rows.length} row(s), ${header.length} columns — keyed by ${KEYED_BY_ID ? 'politician_id' : 'full_name'}\n`);
 
 // stopwords so "the/and/city" are not treated as distinctive claim terms
 const STOP = new Set(('the a an and or of to in on at for with by from as is was were be been it its this that '
@@ -117,20 +139,62 @@ for (const r of rows) {
   const v = Number(r.value);
   if (!Number.isInteger(v) || v < 1 || v > 5) { console.log(`  🔴 FAIL value not a discrete 1-5: ${r.value}`); failures++; }
 
-  const { rows: pol } = await pool.query(
-    `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title, d.ocd_id,
+  // Keyed by id, one politician can still have several office_terms rows, so that
+  // path collapses to the CURRENT seat (open term first, then latest start) rather
+  // than counting rows. Keyed by name, the row count IS the ambiguity check and
+  // stays exactly as it was.
+  const SELECT_POL = `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title, d.ocd_id,
             ${COMPASS_TIER_SQL} AS tier
        FROM essentials.politicians p
        LEFT JOIN essentials.office_terms ot ON ot.politician_id = p.id
        LEFT JOIN essentials.offices o  ON o.id = ot.office_id
        LEFT JOIN essentials.districts d ON d.id = o.district_id
        LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
-       LEFT JOIN essentials.governments g ON g.id = c.government_id
-      WHERE lower(p.full_name) = lower($1)`,
-    [r.full_name],
-  );
-  if (pol.length !== 1) { console.log(`  🔴 FAIL politician resolves to ${pol.length} rows`); failures++; }
-  else console.log(`  politician ${pol[0].id}  ${pol[0].government} — ${pol[0].title}  tier=${pol[0].tier ?? '(unresolved)'}`);
+       LEFT JOIN essentials.governments g ON g.id = c.government_id`;
+
+  const byId = KEYED_BY_ID && r.politician_id;
+  let pol = [];
+  if (byId) {
+    if (!/^[0-9a-f-]{36}$/i.test(r.politician_id)) {
+      console.log(`  🔴 FAIL politician_id is not a uuid: ${r.politician_id}`);
+      failures++;
+    } else {
+      // Current seat first: an open term, then the latest start. Several rows here
+      // are one person's term history, not an ambiguity, so they collapse rather
+      // than fail — which is the whole reason the id column is safer than the name.
+      ({ rows: pol } = await pool.query(
+        `${SELECT_POL} WHERE p.id = $1::uuid
+          ORDER BY (ot.term_end IS NULL) DESC, ot.term_start DESC NULLS LAST`,
+        [r.politician_id],
+      ));
+      if (pol.length === 0) { console.log('  🔴 FAIL politician_id matches no politician'); failures++; }
+      else if (pol.length > 1) {
+        console.log(`  ⚠ ${pol.length} office terms for this person — using the current seat`);
+        pol = [pol[0]];
+      }
+    }
+  } else {
+    ({ rows: pol } = await pool.query(`${SELECT_POL} WHERE lower(p.full_name) = lower($1)`, [r.full_name]));
+    if (pol.length !== 1) {
+      console.log(`  🔴 FAIL politician resolves to ${pol.length} rows`);
+      if (pol.length > 1) {
+        console.log('     full_name is not unique, and no name can disambiguate it — re-emit this CSV with the');
+        console.log('     8-column politician_id shape (cohort-worksheet.mjs produces it). Candidates:');
+        for (const c of pol) console.log(`       ${c.id}  ${c.title ?? '(no office)'}  ${c.ocd_id ?? ''}`);
+      }
+      failures++;
+    }
+  }
+
+  if (pol.length === 1) {
+    console.log(`  politician ${pol[0].id}  ${pol[0].government} — ${pol[0].title}  tier=${pol[0].tier ?? '(unresolved)'}`);
+    // The id decides who the row is about; the name is then a cross-check on the
+    // row having been assembled correctly, and a mismatch means it was not.
+    if (byId && r.full_name && r.full_name.toLowerCase() !== (pol[0].full_name ?? '').toLowerCase()) {
+      console.log(`  🔴 FAIL name/id mismatch — id is "${pol[0].full_name}", row says "${r.full_name}"`);
+      failures++;
+    }
+  }
 
   // The declared cohort wins: the operator knows which set they assembled, and a quarter of the
   // corpus has no district to resolve from. Disagreement is worth saying out loud either way.

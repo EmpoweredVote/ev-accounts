@@ -197,13 +197,18 @@ try {
   }
   writeFileSync(path.join(outdir, 'ladders.md'), md.join('\n'), 'utf8');
 
+  // politician_id leads, because full_name is NOT unique: two active people are
+  // named "Alex Padilla" (a U.S. Senator and an Inglewood city councilmember), and
+  // a name-keyed row for either is refused by the verifier with no way to fix it
+  // inside the file. The name stays as a human-readable cross-check, which the
+  // verifier enforces against the id.
   const esc = (s) => (/[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s);
-  const csv = ['full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3'];
+  const csv = ['politician_id,full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3'];
   let owed = 0;
   for (const p of people) {
     for (const t of inTier) {
       if (alreadyHeld.has(`${p.id}|${t.topic_id}`)) continue;
-      csv.push(`${esc(p.full_name)},${t.topic_key},,,,,`);
+      csv.push(`${p.id},${esc(p.full_name)},${t.topic_key},,,,,`);
       owed++;
     }
   }
