@@ -65,6 +65,7 @@
  */
 import { execFileSync } from "node:child_process";
 import { readdirSync } from "node:fs";
+import { slotOf } from "./lib/migration-slots.mjs";
 import path from "node:path";
 
 const FLOOR = 1419;
@@ -72,7 +73,6 @@ const MIGRATIONS_DIR = "backend/migrations";
 // Optional `NS_` author namespace, then the number. The namespace group must start with a letter so
 // that `1516_222_fairview_...` still reads as slot 1516, and `generate_md_house.ps1` still reads as
 // nothing at all.
-const NUMBERED = /^(?:([A-Za-z][A-Za-z0-9]{0,7})_)?(\d+)_/;
 const LIST_ONLY = process.argv.includes("--list-duplicates");
 
 /**
@@ -96,14 +96,6 @@ const tryGit = (args) => {
   }
 };
 
-/** {ns, num, key} for a migration filename, or null if it is not a numbered migration. */
-function slotOf(file) {
-  const m = NUMBERED.exec(path.basename(file));
-  if (!m) return null;
-  const ns = m[1] ? m[1].toUpperCase() : "";
-  const num = m[2].replace(/^0+(?=\d)/, "");   // '047' and '47' are the same slot
-  return { ns, num, key: ns ? `${ns}_${num}` : num };
-}
 const prefixOf = (file) => slotOf(file)?.key ?? null;
 /** Slots below FLOOR are legacy and unchecked by the tree scan — but only un-namespaced ones. */
 const belowFloor = (slot) => slot.ns === "" && Number(slot.num) < FLOOR;
