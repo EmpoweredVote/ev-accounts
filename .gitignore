@@ -25,10 +25,13 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Claude Code — ignore everything except skills and agents
+# Claude Code — ignore everything except skills, agents, and shared settings.
+# settings.json is TRACKED so repo-wide hooks travel to every machine; personal
+# overrides (plugins, permissions) belong in settings.local.json, which stays ignored.
 .claude/*
 !.claude/skills/
 !.claude/agents/
+!.claude/settings.json
 
 # Logs
 *.log
