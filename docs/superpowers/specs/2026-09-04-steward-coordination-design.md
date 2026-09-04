@@ -3,8 +3,11 @@
 **Status:** approved design, 2026-09-04
 **Scope:** coordination between concurrent sessions, machines and people working in
 `ev-accounts`. Two contended resources: **migration slot numbers** and **jurisdiction work
-areas**. One new `steward` schema, one CLI, one session-start hook, one change to
-`check:migrations`.
+areas**. One new `steward` schema, one CLI, one session-start hook, and one new CI check.
+
+> **As built (2026-09-04):** the last item is a *new* script and job, `check:reservations`, not a
+> change to `check:migrations` — that one runs in the dependency-free `static guards` job and
+> cannot open a database connection. `check:migrations` is untouched. See §5 and §6.
 **Out of scope:** cross-repo coordination (Read & Rank and the other product repos stay
 untouched), database-level write blocking, a web interface, and hierarchical scope containment
 in the constraint. Onboarding Chris Andrews to Essentials data entry is separate work that this
@@ -329,7 +332,9 @@ Three things surfaced only by building it:
 - **`test:unit` ran nothing under `scripts/lib/`.** vitest positionals are path substring
   filters, and the script read `src scripts/check-`. Every steward test merged in step 3 — the
   seeder, the slot parser, the ref scanner — had never once run in CI. Found by adding 18 tests
-  and watching the count stay at 1,038. Widening it picked up 12 files and 216 tests, all green.
+  and watching the count stay at 1,038. Widening it picked up 11 files and 198 tests (1,236 in 96
+  files, from 1,038 in 85), all green — after excluding one that needs a live database and had
+  never been in `test:unit` either.
 
 ### Containment is not computed with `ST_Covers`
 

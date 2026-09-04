@@ -147,12 +147,20 @@ jobs:
       # in that directory was silently outside CI — including the steward's own: the allocator
       # seeder, the slot parser and the ref scanner were merged with tests that had never once
       # been run by this job. Found on 2026-09-04 by adding 18 tests and watching the count stay
-      # at 1,038. Widening it to `scripts` picked up 12 files and 216 tests, ALL GREEN on the
-      # first run, and cost about a third of a second.
+      # at 1,038. Widening it to `scripts` picked up 11 files and 198 tests, and cost about a
+      # third of a second.
+      #
+      # 🔴 ONE FILE IS EXCLUDED BY NAME, AND IT IS EXCLUDED BECAUSE IT NEEDS A DATABASE.
+      # `ingest-gazetteer-places-counties.test.ts` imports src/lib/db.ts, which imports
+      # src/lib/env.ts, which THROWS at import time when DATABASE_URL is absent. It passed on
+      # the author's machine (a local .env) and failed here on the first run — CI has no .env, so
+      # the file collapses before a single test runs. It was outside `test:unit` before this
+      # widening too, so excluding it keeps the baseline: the change is purely additive.
+      # Giving it a live database belongs with the `../tests/**` integration suite, not here.
       #
       # ⚠ A TEST OUTSIDE CI IS NOT A TEST, AND IT LOOKS EXACTLY LIKE ONE. There is nothing in a
       # green run that says which files it chose, which is why this went unnoticed. If you narrow
-      # this filter again, say what it excludes and why.
+      # this filter again, say what it excludes and why — as the line above does.
       - name: Unit tests
         run: npm run test:unit
 
