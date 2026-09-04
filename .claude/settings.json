@@ -1,11 +1,22 @@
 {
+  "_steward_hook": [
+    "Records this worktree, then prints the board. Design: docs/superpowers/specs/2026-09-04-steward-coordination-design.md",
+    "🔴 `worktree 2>&1 1>/dev/null` IS DELIBERATE AND THE ORDER MATTERS. stderr carries the",
+    "NOTICES (HEAD moved here since the last session; another session was last seen here), which",
+    "are the entire point of the marker. stdout carries only the canonical scope, which exists for",
+    "scripting and which `who` prints on the next line anyway. `2>&1` first duplicates stderr onto",
+    "the terminal, THEN `1>/dev/null` silences stdout. Writing `>/dev/null 2>&1` instead throws the",
+    "notices away and leaves a hook that does nothing visible.",
+    "⚠ Both commands fail open and the whole thing is `|| true`: a session must never fail to start",
+    "because the steward was unreachable. 5s timeout covers two ~0.4s round trips."
+  ],
   "hooks": {
     "SessionStart": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "[ -d backend/node_modules ] && node backend/scripts/steward.mjs who 2>&1 || true",
+            "command": "[ -d backend/node_modules ] && { node backend/scripts/steward.mjs worktree 2>&1 1>/dev/null; node backend/scripts/steward.mjs who 2>&1; } || true",
             "timeout": 5,
             "statusMessage": "Checking the steward board"
           }

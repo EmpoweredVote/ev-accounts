@@ -3,8 +3,11 @@
 **Status:** approved design, 2026-09-04
 **Scope:** coordination between concurrent sessions, machines and people working in
 `ev-accounts`. Two contended resources: **migration slot numbers** and **jurisdiction work
-areas**. One new `steward` schema, one CLI, one session-start hook, one change to
-`check:migrations`.
+areas**. One new `steward` schema, one CLI, one session-start hook, and one new CI check.
+
+> **As built (2026-09-04):** the last item is a *new* script and job, `check:reservations`, not a
+> change to `check:migrations` — that one runs in the dependency-free `static guards` job and
+> cannot open a database connection. `check:migrations` is untouched. See §5 and §6.
 **Out of scope:** cross-repo coordination (Read & Rank and the other product repos stay
 untouched), database-level write blocking, a web interface, and hierarchical scope containment
 in the constraint. Onboarding Chris Andrews to Essentials data entry is separate work that this
@@ -261,11 +264,18 @@ ref?* It will also ask *is this slot reserved, and by whom?*
 | --- | --- |
 | Reserved by the committing author | pass |
 | Reserved by someone else | **fail** — the collision, caught before merge |
-| Not reserved at all | warn during rollout, fail after |
+| Not reserved at all | **fail above the namespace's grandfather ceiling**; pass at or below it |
 
-The last row **must** start as a warning. Every branch currently in flight has unreserved slots;
-turning it straight to a failure would fail PRs that did nothing wrong. It flips once reserved
-slots are the norm.
+⚠ **THE LAST ROW SAID "warn during rollout, fail after", AND THAT RAMP WAS NEVER BUILT.** Step 3
+shipped the allocator without the warn-mode check, so nothing warned about anything. It went
+straight to failing — safely, because the ramp turned out to be the wrong shape: a warning period
+does not retire the hand-picked number on a branch cut last week. A per-namespace ceiling does,
+because it asks *was the allocator available when this number was chosen?* rather than *what is
+the date?* See "What step 5 actually had to resolve" in §6.
+
+`check:migrations` is not the job that asks this. It runs in the dependency-free `static guards`
+job — no `npm ci`, so no `pg` — and this question needs the database. It is a separate script and
+its own CI job, `check:reservations`. **The existing ref scan is unchanged.**
 
 **The existing ref scan stays.** It is an independent detector: it needs no network and it
 catches anyone who bypassed the steward. The steward is the *allocator*; the scan remains the
@@ -280,14 +290,132 @@ catches anyone who bypassed the steward. The steward is the *allocator*; the sca
 
 Ordered so value lands early and risk lands late. No step is a cutover.
 
-1. **Schema, function, seed.** Invisible; no behaviour changes.
-2. **`steward who` and the SessionStart hook.** Read-only, immediately useful, cannot break
+1. ✅ **Schema, function, seed.** Invisible; no behaviour changes. `CC_0070`, seeded 1,852 rows.
+2. ✅ **`steward who` and the SessionStart hook.** Read-only, immediately useful, cannot break
    anything. This step alone would have prevented most of 2026-09-04.
-3. **`steward slot`, and `check:migrations` in warn mode.** The allocator becomes available;
-   nothing fails yet.
-4. **`claim` / `release` for jurisdictions.** The habit forms while the net is soft.
-5. **Flip `check:migrations` to fail** on unreserved slots.
-6. **`worktree:` claims** (§9), if still worth it by then.
+3. ✅ **`steward slot`.** The allocator became available. ⚠ The second half of this step — the
+   warn-mode reservation check — was **never built**; see the note under step 5.
+4. ✅ **`claim` / `release` for jurisdictions.** The habit forms while the net is soft. Shipped
+   with `extend`, `--takeover` and `--if-held warn|fail|skip`.
+5. ✅ **Flip `check:migrations` to fail** on unreserved slots. Landed as a separate job and
+   script, `check:reservations`, because `check:migrations` runs in the dependency-free
+   `static guards` job and this one needs `pg`.
+6. ✅ **`worktree:` claims** (§9). It was still worth it — see below.
+
+### What step 5 actually had to resolve
+
+**There was no warn mode to flip.** Step 3 shipped the allocator and stopped; nothing in CI ever
+asked whether a slot was reserved. So step 5 was not a switch — the check had to be written, and
+the warn-then-fail ramp §5 relies on had never run.
+
+**A calendar flip could not have been safe anyway.** The ramp exists because branches in flight
+carry hand-picked numbers, and a branch cut last week still carries one today. Waiting does not
+retire them.
+
+So the ramp is **structural instead of temporal**: a per-namespace grandfather ceiling, set to
+`max(num)` at the moment of the seed — `shared 1852 · CA 103 · CC 72`. At or below it, a slot
+predates the allocator and passes; above it, the author had `steward slot` available. Measured
+across every local and remote ref before flipping: **zero slots sat above those ceilings**, so
+the flip failed nothing that already existed, and needed no warning period to establish that.
+
+Three things surfaced only by building it:
+
+- **The shared `NNNN_` sequence had no way to be allocated.** Its namespace is the empty string
+  and `steward slot ""` failed argument validation, so enforcing it would have been a wall with
+  no door. `slot shared` is the door. CLAUDE.md's "keep taking the next free number there
+  exactly as before" is superseded — 1681 happened in that sequence.
+- **Exact email equality would have shipped a false failure.** A reservation records
+  `git config user.email`; the commit CI reads can carry GitHub's noreply form of the same
+  person. 171 migration commits in this repo are authored by
+  `34817036+chrisandrewsedu@users.noreply.github.com`. `holdersMatch` folds that one domain and
+  nothing wider.
+- **`test:unit` ran nothing under `scripts/lib/`.** vitest positionals are path substring
+  filters, and the script read `src scripts/check-`. Every steward test merged in step 3 — the
+  seeder, the slot parser, the ref scanner — had never once run in CI. Found by adding 18 tests
+  and watching the count stay at 1,038. Widening it picked up 11 files and 198 tests (1,236 in 96
+  files, from 1,038 in 85), all green — after excluding one that needs a live database and had
+  never been in `test:unit` either.
+
+### Step 6 was worth it, but not in the form it was written
+
+§6 hedged: `worktree:` claims *"if still worth it by then"*. The evidence arrived unprompted —
+while steps 4 and 5 were being built, `C:\EV-Accounts` changed branch again, from
+`fix/federal-cohort-definition` to `feat/verify-politician-id-column`. That is collision **B**,
+on the same day the rule against it was written into CLAUDE.md, for the fourth time. A rule that
+is written down and still broken needs an observer.
+
+**But a `claim worktree:<path>` you must remember to type would have been useless.** Whoever
+forgets the §9 rule forgets the command too, and the design's own argument against social
+protocol applies to its own commands: being careful is not a fix. So this resolves §10's third
+open decision — *whether the SessionStart hook should also record the session's worktree and
+branch* — as **yes**, and that is the only form shipped. `steward worktree` runs in the hook, in
+0.4s, and nobody has to remember anything.
+
+**The row is the mechanism; the WARNING is the product.** At session start, before anything is
+touched:
+
+```
+🔴 HEAD MOVED in c:/ev-accounts-steward — it was on fix/federal-cohort-definition when a
+   session last started here (2026-09-04 20:22Z), and is now on feat/steward-…
+⚠  another session was last seen in c:/ev-accounts at 20:23Z — candrews@… on MBP-2
+   (branch knight/ca-2). Do not checkout or switch here; make your own worktree.
+```
+
+#### It is a marker, not a lease, and saying otherwise would make the board lie
+
+Nothing releases a worktree row when a terminal closes — there is no hook for that. So a live row
+means **"a session started here at T"**, never "a session is running here now". Three consequences,
+each deliberate:
+
+- `who` lists these under `~` and prints **seen**, not "expires". An expiry would assert liveness
+  the row cannot support.
+- Registration **takes the marker over unconditionally**. This inverts the rule governing
+  jurisdiction claims, where `--if-held warn` refuses to steal — because the fact is different.
+  For a jurisdiction the holder's *work* is what is being protected; here the fact is *who most
+  recently started*, so the newest writer is simply correct. What would otherwise be lost is
+  reported instead of discarded.
+- The 12-hour marker is another guess, and the trade-off runs both ways: too short and a session
+  running all day drops off the board, so "nobody is there" becomes wrong; too long and last
+  night's finished sessions look present. A working day spans one and clears overnight.
+
+#### Path canonicalisation is the one thing that had to be right
+
+The exclusion constraint compares scope **strings**. Two sessions in one directory registering
+`worktree:C:/EV-Accounts` and `worktree:/c/ev-accounts` do not collide, do not warn, and the
+feature does nothing while appearing to work. This machine spells its own paths three ways —
+Git Bash `/c/ev-accounts`, PowerShell `C:\EV-Accounts`, `git rev-parse --show-toplevel`
+`C:/EV-Accounts` — and all three reach the function.
+
+⚠ **Case is folded only for a drive-letter path.** NTFS is case-insensitive, so on Windows two
+spellings are one directory. POSIX paths are case-*sensitive*: folding `/home/Chris` and
+`/home/chris` together would merge two real worktrees into one scope — the inverse error, and
+just as silent.
+
+### Containment is not computed with `ST_Covers`
+
+§3.2 said the hierarchical warning would come from `geofence_boundaries` via `ST_Covers`. It
+does not, and the substitution is the better answer rather than a shortcut: state⊃county and
+state⊃place fall out of the FIPS prefix with no query at all, and county⊃place is exactly what
+`essentials.geofence_child_county` already holds — the persisted result of that same derivation,
+with `check:child-county` in CI keeping it from lagging its source. An ad-hoc query would create
+a second answer to "which county is this city in", answerable differently from the one the rest
+of the repo serves.
+
+A place missing from that mapping reports **`unknown`**, never "unrelated". The matview leaves
+`county_geo_id` NULL for children it could not place; answering "you are clear" for a city we
+cannot locate is how a broken detector reads as a clean result.
+
+### `--if-held warn` does not steal the lease
+
+§4.4's table says warn "names the holder, proceeds", which reads two ways: proceed to claim, or
+proceed with the work. Claiming means writing `released_at` onto somebody else's live row, and a
+tool that does that by default makes the board lie about who holds what — the one thing it is
+for. So warn names the holder and claims nothing; `--takeover` is the deliberate act, recorded
+on the row it displaces.
+
+Relatedly, `skip` is blocked **only by an exact claim**. Treating containment as blocking would
+let one `state:CA` claim starve a queue of all 88 LA cities, and the caller would then report
+"nothing to do" — indistinguishable from an empty work list.
 
 ---
 
@@ -343,14 +471,23 @@ on 2026-09-04, where `C:\EV-Accounts` changed branch three times under a running
 These belong in `CLAUDE.md`. The `worktree:` claim scope in §6 step 6 would make them visible
 rather than merely written down, which is why it is sequenced last rather than never.
 
+> **As built (2026-09-04):** step 6 shipped, and rule 2 above now has an observer. The
+> SessionStart hook records the directory and branch, and reports **`🔴 HEAD MOVED in <path>`**
+> or **`⚠ another session was last seen in <path>`** before anything is touched. It is a marker,
+> not a lease — see §6. Rules 1, 3 and 4 remain rules; nothing watches them.
+
 ---
 
 ## 10. Open decisions
 
-- **Lease duration.** Eight hours is a guess. It wants to be longer than a working session and
-  shorter than a weekend.
-- **Whether `--if-held=skip` needs a jurisdiction work queue** to pick "the next unclaimed
-  jurisdiction" from, or whether the caller supplies the candidate list. The latter is simpler
-  and is assumed here.
-- **Whether the SessionStart hook should also record the session's worktree and branch**
-  immediately, which would deliver §9's visibility earlier than step 6.
+- **Lease duration — still a guess, now two of them.** Eight hours for a jurisdiction claim; 12
+  for a worktree marker. A lease wants to be longer than a working session and shorter than a
+  weekend; §6 states the marker's trade-off, which runs in both directions.
+- ✅ **RESOLVED — the caller supplies the candidate list.** *Whether `--if-held=skip` needs a
+  jurisdiction work queue.* It takes a list of scopes and returns the first one free, printing
+  every one it passed over. No queue exists and none was needed.
+- ✅ **RESOLVED, YES — and it is the only form step 6 shipped in.** *Whether the SessionStart
+  hook should also record the session's worktree and branch.* A `worktree:` claim you must
+  remember to type would be useless: whoever forgets the §9 rule forgets the command too. The
+  hook records it in 0.4s and reports what moved. See "Step 6 was worth it, but not in the form
+  it was written" in §6.

@@ -65,7 +65,11 @@
  */
 import { execFileSync } from "node:child_process";
 import { readdirSync } from "node:fs";
-import { slotOf } from "./lib/migration-slots.mjs";
+import {
+  slotOf,
+  resolveBase as libResolveBase,
+  addedMigrationFiles,
+} from "./lib/migration-slots.mjs";
 import path from "node:path";
 
 const FLOOR = 1419;
@@ -100,27 +104,12 @@ const prefixOf = (file) => slotOf(file)?.key ?? null;
 /** Slots below FLOOR are legacy and unchecked by the tree scan — but only un-namespaced ones. */
 const belowFloor = (slot) => slot.ns === "" && Number(slot.num) < FLOOR;
 
-function resolveBase() {
-  if (process.env.BASE_REF) return process.env.BASE_REF;
-  for (const ref of ["origin/master", "origin/main", "master", "main"]) {
-    if (tryGit(["rev-parse", "--verify", "--quiet", ref])) return ref;
-  }
-  return null;
-}
-
-function addedFiles(base) {
-  const mergeBase = tryGit(["merge-base", base, "HEAD"]) || base;
-  const out = tryGit(["diff", "--diff-filter=A", "--name-only", `${mergeBase}..HEAD`, "--", MIGRATIONS_DIR]);
-  const committed = out ? out.split("\n").filter(Boolean) : [];
-  // ...plus anything staged or untracked, so the check is useful before you commit.
-  const staged = tryGit(["diff", "--cached", "--diff-filter=A", "--name-only", "--", MIGRATIONS_DIR]);
-  const untracked = tryGit(["ls-files", "--others", "--exclude-standard", "--", MIGRATIONS_DIR]);
-  return [...new Set([
-    ...committed,
-    ...(staged ? staged.split("\n").filter(Boolean) : []),
-    ...(untracked ? untracked.split("\n").filter(Boolean) : []),
-  ])];
-}
+// resolveBase and addedFiles now live in lib/migration-slots.mjs, so that this scan and the
+// reservation check in check-migration-reservations.mjs cannot disagree about which files are
+// "new" — one of them counting untracked files while the other did not would leave a slot that
+// each believed the other was looking at.
+const resolveBase = () => libResolveBase(repoRoot);
+const addedFiles = (base) => addedMigrationFiles(repoRoot, base);
 
 /**
  * Every ref worth scanning, minus the trailing-HEAD symrefs that just alias another entry.

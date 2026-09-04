@@ -70,6 +70,51 @@ const label = (ref) => ref.replace(/^refs\/remotes\//, "").replace(/^refs\/heads
  * `num` is a Number because the allocator compares and increments it; `slotOf` returns it as
  * a string because the checker uses it as a map key.
  */
+/**
+ * The base ref to diff against: BASE_REF if CI set it, else the first of these that exists.
+ * Returns null when none can be read, so callers can fall back to a tree scan alone.
+ */
+export function resolveBase(repoRoot) {
+  if (process.env.BASE_REF) return process.env.BASE_REF;
+  for (const ref of ["origin/master", "origin/main", "master", "main"]) {
+    if (tryGit(repoRoot, ["rev-parse", "--verify", "--quiet", ref])) return ref;
+  }
+  return null;
+}
+
+/**
+ * Migration files ADDED on this branch: committed since the merge base, plus anything staged
+ * or merely untracked, so the check is useful before you commit.
+ *
+ * 🔴 EXTRACTED SO THE TWO CHECKS CANNOT DISAGREE ABOUT WHAT "NEW" MEANS. The collision scan
+ *    and the reservation check both answer questions about newly added files. If one of them
+ *    counted untracked files and the other did not, a slot could be reserved-by-someone-else
+ *    and reported by neither — each believing the other was looking.
+ */
+export function addedMigrationFiles(repoRoot, base) {
+  const mergeBase = tryGit(repoRoot, ["merge-base", base, "HEAD"]) || base;
+  const committed = tryGit(repoRoot, ["diff", "--diff-filter=A", "--name-only", `${mergeBase}..HEAD`, "--", MIGRATIONS_DIR]);
+  const staged = tryGit(repoRoot, ["diff", "--cached", "--diff-filter=A", "--name-only", "--", MIGRATIONS_DIR]);
+  const untracked = tryGit(repoRoot, ["ls-files", "--others", "--exclude-standard", "--", MIGRATIONS_DIR]);
+  const split = (out) => (out ? out.split("\n").filter(Boolean) : []);
+  return [...new Set([...split(committed), ...split(staged), ...split(untracked)])];
+}
+
+/**
+ * Who added this file: the author of the commit that introduced it, or — for a file that is
+ * only staged or untracked — whoever is about to commit it.
+ *
+ * ⚠ THE COMMIT AUTHOR IS NOT NECESSARILY `git config user.email`. On a squash merge, or
+ *   anything committed through the GitHub UI, it is the noreply form of that person. Callers
+ *   compare with `holdersMatch`, not with `===`, for exactly that reason.
+ */
+export function authorOfAddedFile(repoRoot, base, file) {
+  const mergeBase = tryGit(repoRoot, ["merge-base", base, "HEAD"]) || base;
+  const out = tryGit(repoRoot, ["log", "--diff-filter=A", "--format=%ae", "-1", `${mergeBase}..HEAD`, "--", file]);
+  if (out) return out.split("\n")[0].trim();
+  return tryGit(repoRoot, ["config", "user.email"]) || null;
+}
+
 export function historicalSlots(repoRoot) {
   const bySlot = new Map();
   for (const ref of scannableRefs(repoRoot)) {
