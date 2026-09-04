@@ -2,7 +2,16 @@
 /**
  * CI tripwire: a season's corpus may grow, but it must never SHRINK.
  *
+ * ⚠️ SEASON 1 IS CLOSED AGAIN AND SEASON 2 IS OPEN — corrected 2026-09-04, prose only.
+ * Season 2 opened at 14:31Z and season 1 closed in the same transaction, which ends the
+ * reopened-season-1 window the next paragraph describes. Season 1's floors are untouched by
+ * that; what changes is that season 1 no longer takes writes, so its counts should now HOLD
+ * rather than rise, and season 2 is the season whose numbers move. Season 2 has its own FLOORS
+ * entry as of this change — before it, its 2,685 answers were measured by nothing.
+ *
  * ⚠️ SEASON 1 IS OPEN AGAIN — corrected 2026-08-27, prose only, floors untouched.
+ * (Superseded by the 2026-09-04 note above; kept because the paragraph below is written in its
+ * voice and reads as current otherwise.)
  * This file was written while season 1 was closed and says so in several places
  * below. `CA_0020_reopen_season_one.sql` reopened it, because closing season 1
  * before season 2 could be opened had left every compass write path refusing
@@ -69,9 +78,16 @@
  * was lost", not as "season 1 is untouched".
  *
  * WHEN A FLOOR SHOULD MOVE. Deliberately, and with the reason committed beside the number:
- * use --floor-answers / --floor-context. Raising is the ordinary case — a season opens and
- * takes answers. Lowering a floor to make this gate pass is the exact event the gate exists
- * to report. If rows are genuinely gone, find out why first.
+ * use --floor-answers-s<season> / --floor-context-s<season>. Raising is the ordinary case — a
+ * season opens and takes answers. Lowering a floor to make this gate pass is the exact event
+ * the gate exists to report. If rows are genuinely gone, find out why first.
+ *
+ * ⚠ THE OVERRIDE FLAGS NAME THEIR SEASON AS OF 2026-09-04, AND THE OLD BARE FORM NOW REFUSES.
+ * `--floor-answers=N` was unambiguous while season 1 was the only floored season. With two, a
+ * bare flag moves BOTH — so adjusting season 2 by hand would have dropped season 1's floor to
+ * the same number and blinded the gate to a loss in the older corpus. Any script, runbook or
+ * habit still passing the bare form gets a hard error naming the replacement, not a silent
+ * change of meaning.
  *
  * 🔴 BUT A DOCUMENTED-BLANK RETIREMENT LOWERS THE ANSWER FLOOR LEGITIMATELY, AND THIS FILE
  * USED TO SAY FLOORS MOVE "ONLY UPWARD", WHICH LEFT NO BRANCH FOR IT. Retiring a seating to
@@ -142,13 +158,36 @@ import pg from 'pg';
 const VERBOSE = process.argv.includes('--verbose');
 const ALLOW_SKIP = process.argv.includes('--allow-skip');
 
-/** Read a --flag=N override, or fall back to the committed baseline. */
-function flagInt(name, fallback) {
-  const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
+/**
+ * Read a `--<name>-s<season>=N` override, or fall back to the committed baseline.
+ *
+ * 🔴 THE OVERRIDE NAMES ITS SEASON, AND THE BARE FORM IS REFUSED. While season 1 was the only
+ * floored season, `--floor-answers=N` was unambiguous and this function took no season at all.
+ * With season 2 floored it is no longer safe: ONE bare flag would move EVERY season's floor at
+ * once, so an operator adjusting season 2 by hand would silently drop season 1's floor to the
+ * same number — blinding the gate to a real loss in the corpus it was built to protect, in the
+ * exact motion of someone who thought they were touching the other season.
+ *
+ * Refusing the bare form is deliberate. Defaulting it to season 1, or to "all seasons", both
+ * fail the same way this file's other defaults would: quietly, and in the direction of a
+ * green run that measured less than the reader thinks.
+ */
+function flagInt(name, season, fallback) {
+  if (process.argv.some((a) => a.startsWith(`--${name}=`))) {
+    console.error(
+      `check-season-corpus-floor: --${name} must name the season it moves — use ` +
+        `--${name}-s<number>=N (e.g. --${name}-s${season}=N). A bare --${name} would move ` +
+        `every season's floor at once, which is how an override meant for one season blinds ` +
+        `this gate to another season's loss.`
+    );
+    process.exit(1);
+  }
+  const flag = `--${name}-s${season}`;
+  const hit = process.argv.find((a) => a.startsWith(`${flag}=`));
   if (!hit) return fallback;
   const n = Number.parseInt(hit.split('=')[1], 10);
   if (!Number.isInteger(n) || n < 0) {
-    console.error(`check-season-corpus-floor: --${name} needs a non-negative integer.`);
+    console.error(`check-season-corpus-floor: ${flag} needs a non-negative integer.`);
     process.exit(1);
   }
   return n;
@@ -195,7 +234,7 @@ const FLOORS = {
     //    and Heather Ferbert, all on Police Accountability, all rewritten 2026-09-01 with
     //    reasoning that documents what was read and why no chair is evidenced. Context held
     //    at 33,818 across the window.
-    answers: flagInt('floor-answers', 33022),
+    answers: flagInt('floor-answers', 1, 33022),
     // 33,818 when measured, and it held across all three documented-blank windows — a blank
     // REWRITES its context, so those never moved it, and that it held is what proved each of
     // those answer losses deliberate.
@@ -203,10 +242,49 @@ const FLOORS = {
     // 🔴 CC_0037 IS THE FIRST THING TO MOVE IT, AND THAT IS CORRECT, NOT A BREACH. A
     //    withdrawal deletes the context because the context is the thing that is wrong.
     //    33,818 − 12 = 33,806, derived the same way as the answer floor.
-    context: flagInt('floor-context', 33806),
-    questions: flagInt('floor-questions', 44),
+    context: flagInt('floor-context', 1, 33806),
+    questions: flagInt('floor-questions', 1, 44),
     measured: '2026-08-27',
     adjusted: '2026-09-02',
+  },
+  2: {
+    // Season 2 opened 2026-09-04 14:31Z with 60 questions, and took no answers of its own at
+    // the open: every row below was written by ONE re-research batch on 2026-09-03 20:16Z,
+    // while season 2 was still `draft` and season 1 still held the open slot.
+    //
+    //   Affordable Housing    1,785 answers / 1,785 context
+    //   Same-Sex Marriage       900 answers /   872 context
+    //   -------------------------------------------------
+    //                         2,685 answers / 2,657 context
+    //
+    // Derived from the per-topic counts of that batch, not read off `SELECT count(*)` — the
+    // same discipline season 1's numbers were set with, and for the same reason: a floor taken
+    // from "what prod reads today" silently absorbs whatever was already lost.
+    //
+    // 🔴 THE 28-ROW ANSWER/CONTEXT GAP IS KNOWN AND IS NOT YET EXPLAINED. Season 1's tables
+    //    lean the other way — 784 MORE context rows than answers, which is what documented
+    //    blanks look like (context that reasons about a topic, no answer asserted). Season 2
+    //    leans the wrong way: 28 Same-Sex Marriage answers carry NO context row at all, and
+    //    every one of them holds `value = '0.0'`.
+    //
+    //    That value should not exist. `scripts/verify-reresearch-rows.mjs` requires a discrete
+    //    integer 1–5 and says so in its own header, because the column CHECK permits 0.5 steps
+    //    and cannot enforce it; `0.0` appears nowhere in season 1's 33,022 answers. So these 28
+    //    are an unsourced position at a value the pipeline forbids, and they are seated on a
+    //    topic the batch otherwise researched properly.
+    //
+    //    They are counted in the floor anyway, ON PURPOSE. Setting the answer floor at 2,657 to
+    //    pre-absorb their deletion would authorise, in advance, a 28-row delete nobody has yet
+    //    decided on — and would let it happen without the gate ever mentioning it. At 2,685 the
+    //    deletion has to be deliberate: whoever retires these rows lowers this floor by 28 in
+    //    the SAME pull request and names the disposition, exactly as the blanking rule above
+    //    requires. A floor is cheap to lower on purpose and expensive to lower by accident.
+    answers: flagInt('floor-answers', 2, 2685),
+    context: flagInt('floor-context', 2, 2657),
+    // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
+    // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
+    questions: flagInt('floor-questions', 2, 60),
+    measured: '2026-09-04',
   },
 };
 
@@ -304,14 +382,47 @@ async function main() {
     }
   }
 
-  // A season with no committed floor is a gap in the gate, not a pass. Report it — but do
-  // not fail: a brand-new draft season legitimately has nothing to protect yet.
+  // A season with no committed floor is a gap in the gate, not a pass.
+  //
+  // 🔴 IT USED TO ONLY WARN, AND THAT IS HOW SEASON 2 WENT A FULL DAY UNMEASURED. The batch of
+  // 2026-09-03 wrote 2,685 answers into season 2; the season opened the next morning; the
+  // nightly gate printed one line saying they were unprotected and exited GREEN. Nothing was
+  // wrong with the rows — but had they been destroyed that night, this check, the layer that
+  // exists precisely because a deleted row leaves no trace, would have reported healthy.
+  //
+  // So the warning now has a floor of its own: a season that is PAST DRAFT and holds answers
+  // must be floored. Draft seasons and empty ones still only warn, which keeps the original
+  // reading intact — a season being scaffolded genuinely has nothing to protect yet. The
+  // effect is that the PR which opens a season is the PR that must commit its floor, the same
+  // rule the blanking case learned three times over.
+  const unprotected = unfloored.filter((s) => s.status !== 'draft' && s.answers > 0);
+
   for (const s of unfloored) {
     console.warn(
       `season corpus floor: season ${s.number} ("${s.name}", ${s.status}) has NO committed ` +
         `floor — ${s.answers.toLocaleString()} answers and ${s.context.toLocaleString()} ` +
         `context rows are currently UNPROTECTED. Add an entry to FLOORS once it takes answers.`
     );
+  }
+
+  if (unprotected.length > 0) {
+    console.error('\nseason corpus floor FAILED — a live season is holding answers no floor covers:\n');
+    for (const s of unprotected) {
+      console.error(
+        `    · season ${s.number} ("${s.name}", ${s.status}): ${s.answers.toLocaleString()} ` +
+          `answers, ${s.context.toLocaleString()} context, ${s.questions} questions — NO FLOOR`
+      );
+    }
+    console.error(
+      '\n  This is not a claim that rows were lost. It is that a loss here could not be seen:\n' +
+        '  an unfloored season is compared against nothing, so it reads green whatever happens\n' +
+        '  to it.\n' +
+        '  Add an entry to FLOORS keyed by the season number. DERIVE the numbers from the\n' +
+        '  batches that wrote the rows — a floor copied from `SELECT count(*)` silently\n' +
+        '  absorbs anything already gone, which is the one failure this gate cannot recover\n' +
+        '  from. See the season 2 entry for the shape, and WHEN A FLOOR SHOULD MOVE above.\n'
+    );
+    process.exit(1);
   }
 
   if (breaches.length > 0) {
