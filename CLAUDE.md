@@ -224,8 +224,20 @@ npm run steward --prefix backend -- release place:0642468        # when you are 
 npm run steward --prefix backend -- extend  place:0642468 --hours 4
 ```
 
-- Scopes are `place:<geoid>` · `county:<fips>` · `state:<usps>`. A lease is **8 hours** by
-  default, so an abandoned session does not hold Lomita forever.
+- Scopes are `place:<geoid>` · `county:<fips>` · `state:<usps>`. A lease is **24 hours** —
+  **measured, not chosen**: across 52 real session transcripts, an 8h lease expired during
+  **60%** of working sessions (median span 10.2h, p90 18.8h). 24h expires during 6%; 48h would
+  no longer be "shorter than a weekend". Constants and the method:
+  `backend/scripts/lib/steward-lease.mjs`.
+  - 🔴 **A LEASE THAT LAPSES MID-SESSION FAILS SILENTLY** — the row simply stops matching and
+    nobody is warned. So the residual 6% is made loud instead: `who` prints
+    **`⏳ EXPIRES IN 39m — extend it`** while you can still act, and keeps a lapsed claim on the
+    board for 12h as **`✗ LAPSED 40m ago — free to take, check first`**. `claim` repeats that
+    warning for the scope you are taking. **A lapsed lease never blocks** — it has freed the
+    scope, and blocking would stall an `--if-held skip` queue behind a session that ended
+    yesterday.
+  - `extend` **RENEWS from now**; it does not add to the old expiry. Adding made a lease
+    unbounded — three calls put it three days out, straight through the weekend bound.
 - ⚠ **CLAIMS ARE ADVISORY, AND ONLY THE EXACT STRING IS STRUCTURAL.** The database refuses two
   live claims on one scope. It cannot see that `place:0642468` sits inside `county:06037` —
   the strings differ — so **containment is a WARNING**, printed at claim time. Read it. The LA
