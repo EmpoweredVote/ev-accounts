@@ -90,13 +90,36 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 
 ## Migrations
 
-- Live in `backend/migrations/`, numbered `NNNN_snake_case.sql`. **Take the next free number** and
-  verify with `npm run check:migrations --prefix backend` (also CI-enforced on PRs).
-- 🔴 **`git fetch origin` before you read the max.** A stale worktree is the single most common
-  source of a collision: one has read 1424 when upstream was at 1464, and 1825 when it was at 1848.
-  The check compares against **every remote-tracking ref**, not just the base branch, so a number
-  claimed on a colleague's pushed-but-unmerged branch fails too — but only if you have fetched it.
-  `--list-duplicates` also reports slots claimed by different filenames on different refs.
+- Live in `backend/migrations/`, numbered `NNNN_snake_case.sql`.
+- 🟢 **ASK THE ALLOCATOR FOR THE NUMBER. DO NOT COUNT.**
+
+  ```bash
+  npm run steward --prefix backend -- slot CC --purpose "what this migration does"
+  #  -> CC_0073
+  ```
+
+  It reserves the slot atomically in `steward.migration_slots`, whose `PRIMARY KEY
+  (namespace, num)` makes double allocation *impossible*; callers serialise on an advisory
+  lock. Proven on prod: two simultaneous calls returned `CC_0071` and `CC_0072`.
+  **Name the file that number straight away.** The old `CC_wip_` draft-then-rename-then-recount
+  dance existed only because counting was unreliable. It is no longer needed.
+- 🔴 **COUNTING BY HAND IS NOT A FALLBACK — IT IS THE BUG.** A number another session has
+  *decided* to use is invisible until it pushes, so no scan can ever see it. That is the 1681
+  collision, and on 2026-09-04 two of Cantrell's sessions came within one step of it **twice**
+  with the correct procedure followed both times. If the allocator is unreachable, **stop and
+  fix that** rather than reading the max.
+  Design: [`docs/superpowers/specs/2026-09-04-steward-coordination-design.md`](docs/superpowers/specs/2026-09-04-steward-coordination-design.md).
+- Reserving a number you never use is harmless — set its `state` to `abandoned`. The number is a
+  filename label for humans, not a dense sequence, so holes cost nothing.
+- **`npm run check:migrations --prefix backend` is still the auditor**, still CI-enforced, and is
+  deliberately kept: it scans every local and remote ref, catches anyone who bypassed the
+  allocator, and needs no database — so it still works when the steward does not.
+  - 🔴 **`git fetch origin` before trusting it.** A stale worktree is the single most common
+    source of a collision: one has read 1424 when upstream was at 1464, and 1825 when it was at
+    1848. It compares against **every remote-tracking ref**, not just the base branch, so a
+    number claimed on a colleague's pushed-but-unmerged branch fails too — but only if you have
+    fetched it. `--list-duplicates` also reports slots claimed by different filenames on
+    different refs.
 - **There is no `schema_migrations` table and no number-ordered runner.** Each migration is applied
   **once, ad hoc**; the number is a filename label for humans. Migrations are never replayed by a
   deploy — so a column drop cannot break historical migrations, but nothing re-applies them either.
@@ -117,7 +140,7 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     Chris **Cantrell** (`Kades`, chris@empowered.vote) and Chris **Andrews** (`chrisandrewsedu`).
     This line used to read "Chris → `CA_`" and was unresolvable; the initials read as Andrews while
     the usage was mostly Cantrell's.
-  - **Chris Cantrell → `CC_`**, counting from `CC_0001` upward. He never reads the shared max again.
+  - **Chris Cantrell → `CC_`**. Allocated, not counted: `steward slot CC`.
   - **Chris Andrews → `CA_`**, counting from `CA_0020` upward. Decision 2026-08-27, superseding the
     "closed to new work" line that stood here before — see below for what that line got wrong.
   - ⚠ **`CA_`'s EXISTING SLOTS ARE HISTORICALLY MIXED. Its FUTURE slots are Andrews'.** Measured
@@ -126,7 +149,9 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     retro-renamed — `CA_0012` is embedded in 44 `compass_topic_revisions` rows and one column
     comment, so its number is load bearing. **Read an existing `CA_` slot as "whoever the git
     history says"; do not infer an author.** From `CA_0020` on, `CA_` means Andrews.
-  - 🔴 **DECIDE THE AUTHOR BEFORE THE NUMBER.** The mixture above happened because Cantrell's
+  - 🔴 **DECIDE THE AUTHOR BEFORE THE NUMBER** — it is the namespace argument you pass the
+    allocator (`slot CC` vs `slot CA`), so getting it wrong still puts your migration in
+    someone else's sequence. The mixture above happened because Cantrell's
     sessions reached for `CA_` while Andrews' did too. The namespace is chosen by *who is doing the
     work*, not by what the last migration in the directory happened to be called. If you cannot
     establish which Chris you are working for, ask — do not read `ls` and copy the prefix.
@@ -163,6 +188,29 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   nor seeks, **delete** the context (a blank would assert an untested absence); if the topic genuinely
   applies and the record was read, **rewrite it as a documented blank**. Never make rows fall out by
   widening the carve-out regex in `check-stance-sources.mjs`.
+
+## Working alongside other sessions
+
+Several sessions and machines write into this repo at once, and two of the four ways they
+collide cannot be fixed by any convention — those are the steward's job (migration slots, and
+jurisdiction claims). The other two need a shared working directory to happen, so they are
+rules. All four are described in the design linked above; these are the two you must follow.
+
+- 🔴 **ONE SESSION OWNS A WORKTREE.** If you are going to commit, work in your own:
+  `git worktree add -b <branch> /c/ev-accounts-<topic> origin/master`. It costs seconds. On
+  2026-09-04 it was the entire reason two concurrent sessions never touched.
+  - **Never `checkout` or `switch` in a worktree you did not create.** Moving HEAD under a
+    running session is the failure — `C:\EV-Accounts` changed branch three times under one
+    session that day. If you need another branch, make another worktree.
+- 🔴 **COMMIT WITH AN EXPLICIT PATHSPEC**: `git commit -F msg -- <path>`. Staging carefully is
+  not enough, because it is the *other* session's `git add -A` that sweeps your files in.
+- **Before deleting a worktree or branch**, check all four: untracked-and-ignored count is zero,
+  the branch is fully merged into `origin/master`, the merged content is byte-identical, and the
+  repo's stash count is unchanged (stashes are shared and are usually someone else's).
+  🔴 **Run a positive control on any detector that reports "nothing found."** Two such detectors
+  were silently broken on 2026-09-04 and only a control exposed them: a file-mtime scan whose
+  threshold predated the checkout, and a `curl` sweep where the host had begun 403-ing every
+  request, turning "this file does not exist" into "you are being blocked".
 
 ## Repo facts worth knowing
 
