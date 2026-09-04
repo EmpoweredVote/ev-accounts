@@ -279,35 +279,40 @@ interface DispositionRow {
 }
 
 /**
- * Which topics in this set the owner should recalibrate, and what to do with
- * each stored value.
+ * Which of the owner's answers need recalibrating, and what to do with each
+ * stored value.
  *
- * 🔴 THE RULE IS CC_0061, NOT THIS FUNCTION. All this does is read
+ * 🔴 THE RULE IS CC_0061, NOT THIS FUNCTION. All it does is read
  * `inform.compass_answer_dispositions` and translate its four words into the
  * wire contract. It used to derive the rule itself, in `compareRungs`, and that
  * is deleted: two implementations of one editorial rule is how the suppression
  * path and the prompt path come to disagree about the same answer, and the
  * disagreement would be a person's stated view vanishing without explanation.
  *
- * Only topics the user has actually ANSWERED can be flagged — the view is built
- * on `compass_responses_current`, so an unanswered topic in a lens simply is not
- * in the result. An unanswered topic is a gap to fill, not a stale calibration,
- * and the two must not be confused in the UI.
+ * ⚠ ONE QUERY, ONE TRANSLATION, AND A FILTER THAT IS EITHER THERE OR NOT.
+ * `topicIds === null` means every answer the user holds. The scoped and
+ * unscoped reads share this body precisely so they cannot drift — the same
+ * argument as above, one level down.
+ *
+ * Only topics the user has actually ANSWERED can be flagged: the view is built
+ * on `compass_responses_current`, so an unanswered topic simply is not in the
+ * result. An unanswered topic is a gap to fill, not a stale calibration, and the
+ * two must not be confused in the UI.
  */
-export async function getRecalibrationFlags(
+async function queryRecalibrationFlags(
   ownerId: string,
-  topicIds: string[]
+  topicIds: string[] | null
 ): Promise<RecalibrationFlag[]> {
-  if (topicIds.length === 0) return [];
-
-  const unique = [...new Set(topicIds)];
-
   // The view already resolves the effective revision through the open season's
   // pins (ADR 0006 Option Y) and already excludes soft-deleted answers. What it
   // does not carry is the two versions and editorial's note, so they are joined
   // back on here — a LEFT JOIN on each side, because a topic the open season
   // dropped has no effective revision at all and must survive as NULL rather
   // than disappearing from the flags.
+  // The predicate is named rather than inlined so the template literal holds no
+  // escapes: an escaped newline in here is how this shipped broken once.
+  const topicFilter = topicIds === null ? '' : ' AND d.topic_id = ANY($2::uuid[])';
+
   const { rows } = await pool.query<DispositionRow>(
     `SELECT d.topic_id::text             AS topic_id,
             d.value                      AS value,
@@ -320,9 +325,8 @@ export async function getRecalibrationFlags(
        FROM inform.compass_answer_dispositions d
        LEFT JOIN inform.compass_topic_revisions ar  ON ar.id  = d.answered_revision_id
        LEFT JOIN inform.compass_topic_revisions eff ON eff.id = d.effective_revision_id
-      WHERE d.user_id = $1
-        AND d.topic_id = ANY($2::uuid[])`,
-    [ownerId, unique]
+      WHERE d.user_id = $1${topicFilter}`,
+    topicIds === null ? [ownerId] : [ownerId, topicIds]
   );
 
   const flags: RecalibrationFlag[] = [];
@@ -365,6 +369,41 @@ export async function getRecalibrationFlags(
   }
 
   return flags;
+}
+
+/**
+ * The flags for a specific set of topics — a lens's topics, in practice.
+ *
+ * An empty set asks nothing of the database: a lens with no topics has no
+ * staleness question, and `ANY('{}')` would be a round trip for a guaranteed
+ * empty result.
+ */
+export async function getRecalibrationFlags(
+  ownerId: string,
+  topicIds: string[]
+): Promise<RecalibrationFlag[]> {
+  if (topicIds.length === 0) return [];
+
+  return queryRecalibrationFlags(ownerId, [...new Set(topicIds)]);
+}
+
+/**
+ * The flags for EVERY answer the owner holds.
+ *
+ * 🔴 WHY THE UNSCOPED READ EXISTS. Scoping the compass's flags to the SELECTED
+ * topics covered only 12 of the 96 non-fresh answers at the changeover —
+ * `invalidated` 0 of 1, `moved` 2 of 6, `reworded` 10 of 89. The remaining 84
+ * sit on topics the user answered but does not currently show, and an answer set
+ * aside off-screen is still an answer set aside: it is missing from
+ * `compass_responses_effective` for scoring and for every other reader, and the
+ * user would find out only by happening to put that topic back on their compass.
+ *
+ * The caller decides how loudly each one speaks — see `disposition`.
+ */
+export async function getAllRecalibrationFlags(
+  ownerId: string
+): Promise<RecalibrationFlag[]> {
+  return queryRecalibrationFlags(ownerId, null);
 }
 
 // ---------------------------------------------------------------------------
