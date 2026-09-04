@@ -1,0 +1,20 @@
+{
+  "note": "CA_0096 homelessness chair-4 re-audit: the 14 rows moved 4->5 (criminal-penalty camping bans). --check reads STORED reasoning post-apply and tests that each names an instrument. Keepers whose prose names a real ordinance/vote but not in the gate's lexical form are documented false-negatives (see migration header).",
+  "topic_key": "homelessness",
+  "rows": [
+    {"politician_id": "f886f6da-d08f-4294-81bc-faf4a1eaad4d", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Kathy Kimberlin"},
+    {"politician_id": "7db82a3d-5aa2-4150-996e-b170b50b47fe", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Yang Shao"},
+    {"politician_id": "42e95c4c-4e02-4d60-805c-6a3d857dd95a", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Raymond Liu"},
+    {"politician_id": "fecd31b9-fc2e-4d90-80f2-15ac89fb0eff", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Teresa Keng"},
+    {"politician_id": "d6d492b6-cbaf-4398-9301-4fbd10da571f", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Yajing Zhang"},
+    {"politician_id": "71124b00-549d-460c-8f84-41a01d99e037", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Raj Salwan"},
+    {"politician_id": "50682ef1-360a-4597-9e1a-eaf43c50673d", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Dan H. Stewart"},
+    {"politician_id": "99d43f01-4b07-471f-bacf-e89d2a1c36b2", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Jim Seebock"},
+    {"politician_id": "e0e02e79-583b-4db8-86a0-6674faa0f090", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "David Leinweber"},
+    {"politician_id": "3a5875b4-4eeb-4c1f-b69c-1446f7955b43", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Brandy Williams"},
+    {"politician_id": "41949a2b-563a-4608-91c6-951c63252a91", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Matt Mahan"},
+    {"politician_id": "2b4b35a8-1498-46ad-aa9b-04650b454262", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Aurelio Mattucci"},
+    {"politician_id": "3dfd7349-e0e2-486d-8767-8dfc203ca986", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "George Chen"},
+    {"politician_id": "83474f06-c501-416d-a870-65d75f0cec9d", "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a", "chair_after": 5, "name": "Nathan Hochman"}
+  ]
+}
