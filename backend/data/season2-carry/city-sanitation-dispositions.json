@@ -1,0 +1,414 @@
+{
+  "topic_key": "city-sanitation",
+  "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+  "target_version": 2,
+  "scope": "targeted (30 at-risk rows: 13 axis_orphans + 17 thin_no_instrument). 56 likely_carry accepted as carry.",
+  "reaudited_by": "Chris Andrews (session 2026-08-31)",
+  "method": "re-sourced ambiguous/blank-candidate rows via WebSearch (local officials); instrument-evidenced moves/carries judged from existing sources. Dispositions apply to the SEASON 2 answer set at assembly; Season 1 untouched.",
+  "rows": [
+    {
+      "politician_id": "0f6484bd-2fc1-4071-9648-d7b8a950d29c",
+      "politician_name": "Aida Ashouri",
+      "chair_before": 1,
+      "disposition": "move",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "City Attorney candidate; sanitation lever is prosecution. Platform reopens the Environmental Crimes Unit to target polluters — matches chair-3 'target enforcement at the businesses and large property owners who create the most waste'. No service-expansion instrument (chair 1).",
+      "reaudit_sources": [
+        "https://lapublicpress.org/2026/03/la-city-attorney-election-2026/"
+      ]
+    },
+    {
+      "politician_id": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+      "politician_name": "Faizah Malik",
+      "chair_before": 1,
+      "disposition": "carry",
+      "chair_after": 1,
+      "class": "thin_no_instrument",
+      "justification": "Re-source found a concrete provision instrument: proposes non-punitive 'spot cleaning' (routine trash collection + waste disposal at encampments) plus clearing a 50,000 sidewalk-repair backlog district-wide. Expand/provide services = chair 1.",
+      "reaudit_sources": [
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-11"
+      ]
+    },
+    {
+      "politician_id": "0adaafe7-d821-4eaf-8fb6-f934adeb11e6",
+      "politician_name": "Heidi Wegleitner",
+      "chair_before": 1,
+      "disposition": "blank",
+      "chair_after": null,
+      "class": "thin_no_instrument",
+      "justification": "Re-source found only committee seats (Health & Human Needs) and a homelessness services-over-enforcement stance. No city-sanitation instrument on any chair. Blank per 're-source first, blank if none'.",
+      "reaudit_sources": [
+        "https://prodane.org/heidi-wegleitner"
+      ]
+    },
+    {
+      "politician_id": "e30ddde5-a722-477b-837b-056fdc7e2d6b",
+      "politician_name": "Adrin Nazarian",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "100% organic-waste diversion, zero-waste + producer-accountability, strengthen the Bureau of Sanitation's capacity = significantly expand public sanitation services (chair 1). No worst-served concentration policy (chair 2).",
+      "reaudit_sources": [
+        "https://adrinnazarian.com/issues/"
+      ]
+    },
+    {
+      "politician_id": "7a1c5c1c-9ea7-4770-b44b-f6891ba718fa",
+      "politician_name": "Alejandro Puy",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Supported FY-budget funding for the new Clean City Team (rapid-response dumping/graffiti) = expansion (chair 1). West-side dumping work is constituent response, not a stated citywide worst-served-concentration policy. Borderline 1/2.",
+      "reaudit_sources": [
+        "https://www.slc.gov/council/salt-lake-city-council-adopts-annual-budget-focused-on-a-clean-safe-and-livable-city/"
+      ]
+    },
+    {
+      "politician_id": "795c1726-d6f5-4d51-b785-c4c242ca3a61",
+      "politician_name": "Chris Wharton",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "As Council Chair led the FY26 budget that CREATED a new Clean City Team for waste removal/illegal dumping/graffiti on city property = expand public sanitation services (chair 1).",
+      "reaudit_sources": [
+        "https://www.slc.gov/council/salt-lake-city-council-adopts-annual-budget-focused-on-a-clean-safe-and-livable-city/"
+      ]
+    },
+    {
+      "politician_id": "f3f21e38-d8e6-41d2-9d74-0360a5f679b9",
+      "politician_name": "Connie Chan",
+      "chair_before": 2,
+      "disposition": "blank",
+      "chair_after": null,
+      "class": "axis_orphan",
+      "justification": "Record is defend-existing-funding ('enough cuts') + sponsored unwinding Prop B's separate Sanitation Dept, and opposes enforcement-led responses. That is maintain-services BUT explicitly anti-enforcement, so it contradicts chair-3's enforcement clause and is not expansion (1) or worst-served concentration (2). No clean v2 chair fits.",
+      "reaudit_sources": [
+        "https://sfstandard.com/politics/city-hall/garbage-out-supervisors-seek-to-sweep-away-new-street-cleaning-department"
+      ]
+    },
+    {
+      "politician_id": "02f88a57-ccf5-4fe1-a693-7fc949321fb1",
+      "politician_name": "Jackie Fielder",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Re-source: seeks to expand Public Works' street-cleaning budget for the Mission with 'sustainable, permanent funding' = expand public sanitation services (chair 1). Rescued from blank.",
+      "reaudit_sources": [
+        "https://missionlocal.org/2025/05/lurie-brings-in-former-rival-billionaire-donors-to-fund-street-cleaning-initiative/"
+      ]
+    },
+    {
+      "politician_id": "f3a27837-9be8-4734-a672-d6ba6de4b045",
+      "politician_name": "Jorge Hernandez Rosas",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Proposes rapid-response cleanup teams and increased trash collection near schools/parks/transit/commercial corridors = expand public sanitation services (chair 1).",
+      "reaudit_sources": [
+        "https://patch.com/california/los-angeles/meet-jorge-hernandez-rosas-candidate-los-angeles-city-council-district-9",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ]
+    },
+    {
+      "politician_id": "93613d15-1098-423b-9e18-81f125ac2408",
+      "politician_name": "Jorge Nuño",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Proposes city-emptied designated dump zones and rapid-response teams = new/expanded city provision (chair 1).",
+      "reaudit_sources": [
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ]
+    },
+    {
+      "politician_id": "a25f862d-26f5-41f0-a32b-c4d59c7769c8",
+      "politician_name": "Joseph M. Petty",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Quality of Life Team, year-round Keep Worcester Clean multi-department coordination, and a Zero Waste Master Plan = significantly expand public sanitation services (chair 1).",
+      "reaudit_sources": [
+        "https://www.worcesterma.gov/city-manager/quality-of-life-team",
+        "https://www.worcesterma.gov/keep-worcester-clean",
+        "https://www.worcesterma.gov/city-manager/strategic-plan"
+      ]
+    },
+    {
+      "politician_id": "802f48ea-e397-4e72-9589-23aa5cee5a39",
+      "politician_name": "Khrystian E. King",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 3,
+      "class": "axis_orphan",
+      "justification": "Record is efficient delivery of existing basic services (audits, briefing requests) and opposing the regressive trash-bag fee = maintain current services (chair 3). Enforcement-at-business clause not evidenced (flag). Not expansion (1) or worst-served concentration (2).",
+      "reaudit_sources": [
+        "https://patch.com/massachusetts/worcester/worcester-patch-candidate-profile-khrystian-king-mayor-city-councilor-large"
+      ]
+    },
+    {
+      "politician_id": "a8f48816-2ebc-4ae4-9667-a12d4c18f5ec",
+      "politician_name": "Marc C. McGovern",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Co-sponsored the snow-corps exploration order to have the city take over public-sidewalk clearing ('the current system isn't working') = expand city sanitation responsibility (chair 1).",
+      "reaudit_sources": [
+        "https://cambridgeday.com/2026/03/06/city-council-snow-corps/"
+      ]
+    },
+    {
+      "politician_id": "63534729-c022-4305-bef1-e29d4464f719",
+      "politician_name": "Natalie Pinkney",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Spearheaded a city-wide glass-recycling program and supports expanding recycling infrastructure = expand public sanitation services (chair 1).",
+      "reaudit_sources": [
+        "https://www.kuer.org/politics-government/2024-10-11/2024-voter-guide-salt-lake-county-council-at-large-seat-c-rachelle-morris-natalie-pinkney"
+      ]
+    },
+    {
+      "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+      "politician_name": "Rashi Kesarwani",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "axis_orphan",
+      "justification": "Funded the Downtown Streets Team expansion to Gilman for twice-weekly cleaning and frames poor conditions as a services failure requiring active city response = expand public sanitation services (chair 1).",
+      "reaudit_sources": [
+        "https://rashikesarwani.com",
+        "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+        "https://rashikesarwani.com/2026/01/jan-news-public-health-alert-lepto-at-harrison-encampments"
+      ]
+    },
+    {
+      "politician_id": "34da113e-e5dc-4637-9be1-9d42a6feea93",
+      "politician_name": "Tim Flaherty",
+      "chair_before": 2,
+      "disposition": "blank",
+      "chair_after": null,
+      "class": "axis_orphan",
+      "justification": "Only sanitation evidence is a single quote of enthusiasm for someone else's snow-corps proposal; re-source found no sanitation platform. A soft endorsement is not an instrument that seats a chair. Blank.",
+      "reaudit_sources": [
+        "https://cambridgeday.com/2026/03/06/city-council-snow-corps/"
+      ]
+    },
+    {
+      "politician_id": "10758208-c20b-4729-8cea-4340caf8243c",
+      "politician_name": "Caity Maple",
+      "chair_before": 2,
+      "disposition": "carry",
+      "chair_after": 2,
+      "class": "thin_no_instrument",
+      "justification": "Platform directs sanitation resources into underinvested communities and prioritizes reducing illegal dumping in North Sacramento / Del Paso Heights = concentrate resources on the most neglected neighborhoods (chair 2). Equity direction matches v2.",
+      "reaudit_sources": [
+        "https://caitymaple.com/issues"
+      ]
+    },
+    {
+      "politician_id": "3bd4af01-0ce8-415f-87fa-09dc248ca6cc",
+      "politician_name": "Henry Santana",
+      "chair_before": 2,
+      "disposition": "carry",
+      "chair_after": 2,
+      "class": "thin_no_instrument",
+      "justification": "2025 questionnaire targets clean streets and needle cleanup for the high-need Mass & Cass area with city resources = concentrate on the worst-served (chair 2). Equity direction matches v2.",
+      "reaudit_sources": [
+        "https://www.dotnews.com/wp-content/uploads/2025/08/Henry-Santana.pdf",
+        "https://www.boston.gov/departments/city-council/henry-santana"
+      ]
+    },
+    {
+      "politician_id": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+      "politician_name": "Holly J. Mitchell",
+      "chair_before": 2,
+      "disposition": "blank",
+      "chair_after": null,
+      "class": "thin_no_instrument",
+      "justification": "Concrete sanitation instrument is a Board motion on untreated-sewage spills (regional environmental oversight, off the neighborhood-cleanliness axis); the underserved-South-LA beautification language is not a worst-served sanitation-resource-concentration instrument. No clean v2 chair fits.",
+      "reaudit_sources": [
+        "https://mitchell.lacounty.gov/wp-content/uploads/2025/03/Supervisor-HollyJ.Mitchell_Bio_2025.pdf"
+      ]
+    },
+    {
+      "politician_id": "91e24565-79b3-4473-9d7b-3ca72beceed2",
+      "politician_name": "Justin Hurst",
+      "chair_before": 2,
+      "disposition": "move",
+      "chair_after": 1,
+      "class": "thin_no_instrument",
+      "justification": "Signature position is eliminating/pausing the trash fee (free access) framed as services residents 'rightfully deserve' = expand public sanitation access as a city responsibility (chair 1). Universal services-first, not worst-served concentration.",
+      "reaudit_sources": [
+        "https://www.wwlp.com/news/local-news/hampden-county/springfield-city-council-passes-resolution-to-eliminate-trash-fees/"
+      ]
+    },
+    {
+      "politician_id": "eab7b830-c831-45f9-bca8-11b079f42680",
+      "politician_name": "Shamann Walton",
+      "chair_before": 2,
+      "disposition": "carry",
+      "chair_after": 2,
+      "class": "thin_no_instrument",
+      "justification": "Stated goal is equitable resource distribution to districts 'historically isolated and disenfranchised', service investment in historically neglected areas = concentrate on the worst-served (chair 2). Equity direction matches v2.",
+      "reaudit_sources": [
+        "https://sfbos.archive.sf.gov/supervisor-walton-district-10",
+        "https://missionlocal.org/2025/01/interview-supervisor-shamann-walton-wants-less-nuclear-waste-more-affordable-housing-in-district-10/"
+      ]
+    },
+    {
+      "politician_id": "11427932-a17e-4898-8258-ec8c8bf7709f",
+      "politician_name": "John Dugger",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Negotiated a hauler contract adding affordable mid-tier bulk pickup = maintain/improve access to current services (chair 3).",
+      "reaudit_sources": [
+        "https://washcodems.org/2026/04/28/john-dugger-beaverton-city-council-position-5-candidate-interview/"
+      ]
+    },
+    {
+      "politician_id": "bef00532-3286-456f-9668-ef5efe285270",
+      "politician_name": "John P. Fresolo",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Public Works Committee member; constituent street-resurfacing petitions, no expansion/privatization = maintain current services (chair 3).",
+      "reaudit_sources": [
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-works/pending.pdf",
+        "https://www.worcesterma.gov/city-council/standing-committees"
+      ]
+    },
+    {
+      "politician_id": "8b47525c-5efe-45ec-ba37-c6e15f038b65",
+      "politician_name": "Luis A. Ojeda",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Environment-committee chair overseeing the Green Worcester Plan and environmental-standards enforcement rather than service expansion = maintain + enforce (chair 3).",
+      "reaudit_sources": [
+        "https://www.worcesterma.gov/city-council/standing-committees",
+        "https://www12.worcesterma.gov/agendas-minutes/standing-committees/urban-technologies-innovation-environment/pending.pdf"
+      ]
+    },
+    {
+      "politician_id": "bd64253b-0bd1-4b9f-85b1-76180c760d07",
+      "politician_name": "Margarita L. Rios",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "'Safe and Clean' theme, clean public spaces as a maintain-and-keep-orderly priority = maintain current services (chair 3).",
+      "reaudit_sources": [
+        "https://norwalk.org/government/mayor_and_city_council/rios.php"
+      ]
+    },
+    {
+      "politician_id": "71124b00-549d-460c-8f84-41a01d99e037",
+      "politician_name": "Raj Salwan",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Maintain/improve current services with anti-dumping enforcement as the primary tool = chair 3 (maintain + enforcement).",
+      "reaudit_sources": [
+        "https://rajsalwan.com/priorities"
+      ]
+    },
+    {
+      "politician_id": "f20601e0-0728-4c33-803c-28c88e170286",
+      "politician_name": "Rick Jennings II",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Backed the Incident Management Team removing encampment trash while enforcing anti-dumping/encampment laws = maintain + enforce (chair 3).",
+      "reaudit_sources": [
+        "https://sacramentocityexpress.com/2024/09/12/citys-incident-management-team-responding-to-homelessness-produces-significant-results-in-first-year/"
+      ]
+    },
+    {
+      "politician_id": "f86591f9-4341-4e3a-a9cb-f284887ccf74",
+      "politician_name": "Stephen Whitburn",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Negotiated reduced trash fees, maintains services and opposes fee increases while enforcing anti-dumping for businesses = chair 3 (maintain + business enforcement).",
+      "reaudit_sources": [
+        "https://en.wikipedia.org/wiki/Stephen_Whitburn",
+        "https://www.sandiego.gov/citycouncil/cd3"
+      ]
+    },
+    {
+      "politician_id": "9fb47aff-9128-4214-af78-a4d8321f9f83",
+      "politician_name": "Thomas P. Koch",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Standard municipal DPW model, no expansion or privatization stance = maintain current services (chair 3).",
+      "reaudit_sources": [
+        "https://www.quincyma.gov/departments/public_works/index.php"
+      ]
+    },
+    {
+      "politician_id": "d0977350-df68-4cfe-822e-816ba13f9213",
+      "politician_name": "Traci Park",
+      "chair_before": 3,
+      "disposition": "carry",
+      "chair_after": 3,
+      "class": "thin_no_instrument",
+      "justification": "Constituency-driven maintenance plus 41.18 debris-removal enforcement, no expansion legislation = maintain + enforce (chair 3).",
+      "reaudit_sources": [
+        "https://www.tracipark.com/",
+        "https://en.wikipedia.org/wiki/Traci_Park"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 30,
+    "by_disposition": {
+      "move→3": 2,
+      "carry→1": 1,
+      "blank": 4,
+      "move→1": 11,
+      "carry→2": 3,
+      "carry→3": 9
+    },
+    "blanks": [
+      "Heidi Wegleitner",
+      "Connie Chan",
+      "Tim Flaherty",
+      "Holly J. Mitchell"
+    ],
+    "moves": [
+      "Aida Ashouri 1→3",
+      "Adrin Nazarian 2→1",
+      "Alejandro Puy 2→1",
+      "Chris Wharton 2→1",
+      "Jackie Fielder 2→1",
+      "Jorge Hernandez Rosas 2→1",
+      "Jorge Nuño 2→1",
+      "Joseph M. Petty 2→1",
+      "Khrystian E. King 2→3",
+      "Marc C. McGovern 2→1",
+      "Natalie Pinkney 2→1",
+      "Rashi Kesarwani 2→1",
+      "Justin Hurst 2→1"
+    ],
+    "carries": 13
+  }
+}
