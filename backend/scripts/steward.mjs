@@ -188,9 +188,17 @@ async function cmdSync() {
 
 /* ── slot ────────────────────────────────────────────────────────────────────────────── */
 async function cmdSlot() {
-  const ns = (argv[1] || "").toUpperCase();
+  const nsArg = (argv[1] || "").toUpperCase();
   const purpose = opt("--purpose");
-  if (!ns || ns.startsWith("--")) { console.error("steward slot: name a namespace, e.g. CC"); return 2; }
+  if (!nsArg || nsArg.startsWith("--")) {
+    console.error("steward slot: name a namespace, e.g. CC — or `shared` for the plain NNNN_ sequence");
+    return 2;
+  }
+  // 🔴 THE SHARED SEQUENCE NEEDS A NAME YOU CAN TYPE. Its namespace is the EMPTY STRING, and
+  //    `steward slot ""` fails the argument check above, so before this word existed there was
+  //    no way to allocate 1853 — while the reservation check enforces that sequence like any
+  //    other. A check that demands something the tool cannot do is just a wall.
+  const ns = nsArg === "SHARED" ? "" : nsArg;
   if (!purpose) { console.error("steward slot: --purpose is required"); return 2; }
 
   const { who, machine } = identity();
@@ -480,7 +488,7 @@ if (!run) {
   console.error("usage: steward <who|sync|slot|claim|release|extend> [...]\n"
     + "  who                              show active claims and outstanding reservations\n"
     + "  sync --seed [--dry-run]          reconcile git history into steward.migration_slots\n"
-    + "  slot <NS> --purpose \"...\"        reserve the next free migration number\n"
+    + "  slot <NS|shared> --purpose \"...\"  reserve the next free migration number (shared == the plain NNNN_ sequence)\n"
     + "  claim <scope> [<scope>...]       take a jurisdiction lease (8h by default)\n"
     + "        --label \"...\"                 what you are doing there, for the board\n"
     + "        --hours N                     lease length, 1-168\n"

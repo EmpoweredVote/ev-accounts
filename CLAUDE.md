@@ -109,6 +109,22 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   with the correct procedure followed both times. If the allocator is unreachable, **stop and
   fix that** rather than reading the max.
   Design: [`docs/superpowers/specs/2026-09-04-steward-coordination-design.md`](docs/superpowers/specs/2026-09-04-steward-coordination-design.md).
+- 🔴 **CI NOW FAILS A MIGRATION WHOSE SLOT NOBODY RESERVED** — job "migration reservations",
+  `npm run check:reservations --prefix backend`. Every migration file added on a branch must sit
+  in a slot reserved by *its own author*; reserved by someone else is the collision, caught
+  before merge.
+  - **This applies to the shared `NNNN_` sequence too.** Ask for one with
+    `npm run steward --prefix backend -- slot shared --purpose "..."`. The line that used to say
+    "keep taking the next free number there exactly as before" is gone: 1681 happened *in that
+    sequence*, so exempting it would be enforcement theatre.
+  - **Slots at or below these ceilings are grandfathered** and need no reservation:
+    `shared 1852 · CA 103 · CC 72`. They are `max(num)` per namespace at the moment of the seed,
+    so everything above them was numbered while the allocator was available. **The ceilings do
+    not move** — raising one grandfathers a number somebody took by hand.
+  - An **abandoned** slot is not reusable: ask for a fresh one. A number nobody can explain the
+    abandonment of is worse than a hole, and holes are free.
+  - It **skips green without `DATABASE_URL`** (forks) and **degrades green** if the steward is
+    unreachable, printing why in both cases. The ref scan below still runs, and needs no database.
 - Reserving a number you never use is harmless — set its `state` to `abandoned`. The number is a
   filename label for humans, not a dense sequence, so holes cost nothing.
 - **`npm run check:migrations --prefix backend` is still the auditor**, still CI-enforced, and is
@@ -158,8 +174,11 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   - This block previously read "`CA_` IS CLOSED TO NEW WORK" while also telling Andrews nothing
     about where to write instead. That gap is what sent a session looking for a prefix to copy.
     Both authors now have a named, open namespace; neither needs to infer one.
-  - **The plain `NNNN_` sequence stays as it is** for everyone else; keep taking the next free
-    number there exactly as before.
+  - **The plain `NNNN_` sequence stays open** to everyone else — but it is **allocated now, not
+    counted**: `npm run steward --prefix backend -- slot shared --purpose "..."`. This
+    superseded "keep taking the next free number there exactly as before" on 2026-09-04, when CI
+    began failing unreserved slots. That sequence is where the 1681 collision happened and it is
+    still live (1852 was taken 2026-08-31), so it gets the same allocator as `CC_` and `CA_`.
   - Zero-pad `CA_` to four digits so `ls` sorts correctly. Leading zeros are stripped when
     comparing, so `CA_0001` and `CA_1` are the *same* slot — the checker prints the stripped form
     (`CA_1`) in collision messages, the same way it prints `47` for `047`.
@@ -195,6 +214,32 @@ Several sessions and machines write into this repo at once, and two of the four 
 collide cannot be fixed by any convention — those are the steward's job (migration slots, and
 jurisdiction claims). The other two need a shared working directory to happen, so they are
 rules. All four are described in the design linked above; these are the two you must follow.
+
+**The board tells you where everyone is.** `steward who` runs on session start, so you begin
+knowing what is claimed. Before working a jurisdiction, take the lease:
+
+```bash
+npm run steward --prefix backend -- claim place:0642468 --label "Lomita occupancy"
+npm run steward --prefix backend -- release place:0642468        # when you are done
+npm run steward --prefix backend -- extend  place:0642468 --hours 4
+```
+
+- Scopes are `place:<geoid>` · `county:<fips>` · `state:<usps>`. A lease is **8 hours** by
+  default, so an abandoned session does not hold Lomita forever.
+- ⚠ **CLAIMS ARE ADVISORY, AND ONLY THE EXACT STRING IS STRUCTURAL.** The database refuses two
+  live claims on one scope. It cannot see that `place:0642468` sits inside `county:06037` —
+  the strings differ — so **containment is a WARNING**, printed at claim time. Read it. The LA
+  County audit covered 88 cities plus the county; a second session taking one of those cities
+  would have been told nothing before this existed.
+- `--if-held warn` (default) **names the holder and claims nothing** — it does not steal the
+  lease. `--takeover` is the deliberate act and is recorded on the row it displaces.
+  `--if-held fail` stops; `--if-held skip <scope> <scope> …` takes the first free candidate and
+  **prints every one it passed over** (exit 3 when all are held).
+- 🔴 **A LEASE BELONGS TO (EMAIL, MACHINE), NOT TO A PERSON.** One author's desktop and laptop
+  are as likely to collide with each other as with a second person, so your desktop cannot
+  `release` or `extend` your laptop's lease without `--force`.
+- Unreachable steward ⇒ **warns and continues** for every claim command. The exception is
+  `claim --if-held fail`, whose whole purpose is not to guess.
 
 - 🔴 **ONE SESSION OWNS A WORKTREE.** If you are going to commit, work in your own:
   `git worktree add -b <branch> /c/ev-accounts-<topic> origin/master`. It costs seconds. On

@@ -141,6 +141,18 @@ jobs:
 
       # Unit tests only. Integration tests (../tests/**) need a live database
       # and secrets; run those separately, not on every PR.
+      #
+      # 🔴 THE FILTER USED TO BE `src scripts/check-`, WHICH RAN NOTHING UNDER scripts/lib/ AT
+      # ALL. vitest positional arguments are substring filters on the file path, so every test
+      # in that directory was silently outside CI — including the steward's own: the allocator
+      # seeder, the slot parser and the ref scanner were merged with tests that had never once
+      # been run by this job. Found on 2026-09-04 by adding 18 tests and watching the count stay
+      # at 1,038. Widening it to `scripts` picked up 12 files and 216 tests, ALL GREEN on the
+      # first run, and cost about a third of a second.
+      #
+      # ⚠ A TEST OUTSIDE CI IS NOT A TEST, AND IT LOOKS EXACTLY LIKE ONE. There is nothing in a
+      # green run that says which files it chose, which is why this went unnoticed. If you narrow
+      # this filter again, say what it excludes and why.
       - name: Unit tests
         run: npm run test:unit
 
@@ -237,6 +249,72 @@ jobs:
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-office-occupancy.mjs
         env:
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
+
+  migration-reservations:
+    name: migration reservations
+    runs-on: ubuntu-latest
+    # 🔴 THIS CANNOT JOIN `static guards`, AND THAT JOB SAYS SO ITSELF: a guard added there must be
+    # DEPENDENCY-FREE, because it runs straight off node with no `npm ci`. This one talks to
+    # Postgres through `pg`, so it pays its own job minute. Its own job also gives it its own
+    # status-check name, which matters more here than for a static lint — a red wall from this
+    # check means "go and ask the allocator", and that instruction should not arrive buried in
+    # another job's step list.
+    #
+    # WHY IT EXISTS: check-migration-numbers.mjs scans every ref and names its own blind spot —
+    # a number another session has DECIDED to use is invisible until it pushes, so no scan can
+    # ever see it. That is the 1681 collision, and on 2026-09-04 two of one author's sessions
+    # came within one step of it TWICE with the correct procedure followed both times. The
+    # steward closes the hole by making the reservation the observable event; this check is what
+    # makes reserving compulsory, since an allocator nobody has to ask is opt-in.
+    #
+    # ⚠ IT DOES NOT REPLACE THE REF SCAN. That one needs no network and no credentials, so it
+    #   works when the steward does not, and it catches anyone who bypassed the steward
+    #   altogether. Allocator plus auditor; two independent detectors is what keeps the steward
+    #   from becoming a single point of failure. Both stay.
+    #
+    # SKIPS GREEN without DATABASE_URL (forks get no secrets) and DEGRADES green if the steward
+    # is unreachable — a credential rotation must not red-wall every PR in the organisation. Both
+    # paths print WHY on stdout, because a check that passes silently is the shape of a detector
+    # that has quietly stopped working.
+    #
+    # 💰 THE PRICE, STATED BECAUSE THIS FILE'S HEADER REQUIRES IT ("Know both numbers before adding
+    # a tenth job"). This is the tenth job. It runs on push and PR — ~494 runs a month at the
+    # ONE-MINUTE MINIMUM, so ~494 billed minutes, about $4/month at the overage rate the header
+    # measures. It finishes in seconds and exits early when no migration was added, but the
+    # minimum is per job, not per second, so early exit saves nothing.
+    #
+    # Two cheaper shapes were considered and rejected. Folding it into `static guards` is
+    # forbidden by that job's own rule: a guard there must be dependency-free, and this one needs
+    # `pg`. Folding it into `backend` would couple a database check to a lint/typecheck/test
+    # pipeline that deliberately stops on first failure — the masking defect that cost two days
+    # on 2026-08-14. PR-only would halve it, but 1681 was two DIRECT PUSHES to master with no PR
+    # between them and CI never ran, which is why `migration numbering` is push+PR; a slot check
+    # that skips direct pushes misses the very event that motivated it.
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      # fetch-depth: 0 — the check diffs added files against the merge base, and reads the
+      # AUTHOR of the commit that added each one. A shallow clone has neither.
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check every added migration sits in a slot its author reserved
+        run: npm run check:reservations -- --verbose
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
   reachability:

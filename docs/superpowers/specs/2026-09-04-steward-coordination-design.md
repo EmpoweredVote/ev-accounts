@@ -261,11 +261,18 @@ ref?* It will also ask *is this slot reserved, and by whom?*
 | --- | --- |
 | Reserved by the committing author | pass |
 | Reserved by someone else | **fail** — the collision, caught before merge |
-| Not reserved at all | warn during rollout, fail after |
+| Not reserved at all | **fail above the namespace's grandfather ceiling**; pass at or below it |
 
-The last row **must** start as a warning. Every branch currently in flight has unreserved slots;
-turning it straight to a failure would fail PRs that did nothing wrong. It flips once reserved
-slots are the norm.
+⚠ **THE LAST ROW SAID "warn during rollout, fail after", AND THAT RAMP WAS NEVER BUILT.** Step 3
+shipped the allocator without the warn-mode check, so nothing warned about anything. It went
+straight to failing — safely, because the ramp turned out to be the wrong shape: a warning period
+does not retire the hand-picked number on a branch cut last week. A per-namespace ceiling does,
+because it asks *was the allocator available when this number was chosen?* rather than *what is
+the date?* See "What step 5 actually had to resolve" in §6.
+
+`check:migrations` is not the job that asks this. It runs in the dependency-free `static guards`
+job — no `npm ci`, so no `pg` — and this question needs the database. It is a separate script and
+its own CI job, `check:reservations`. **The existing ref scan is unchanged.**
 
 **The existing ref scan stays.** It is an independent detector: it needs no network and it
 catches anyone who bypassed the steward. The steward is the *allocator*; the scan remains the
@@ -280,14 +287,75 @@ catches anyone who bypassed the steward. The steward is the *allocator*; the sca
 
 Ordered so value lands early and risk lands late. No step is a cutover.
 
-1. **Schema, function, seed.** Invisible; no behaviour changes.
-2. **`steward who` and the SessionStart hook.** Read-only, immediately useful, cannot break
+1. ✅ **Schema, function, seed.** Invisible; no behaviour changes. `CC_0070`, seeded 1,852 rows.
+2. ✅ **`steward who` and the SessionStart hook.** Read-only, immediately useful, cannot break
    anything. This step alone would have prevented most of 2026-09-04.
-3. **`steward slot`, and `check:migrations` in warn mode.** The allocator becomes available;
-   nothing fails yet.
-4. **`claim` / `release` for jurisdictions.** The habit forms while the net is soft.
-5. **Flip `check:migrations` to fail** on unreserved slots.
+3. ✅ **`steward slot`.** The allocator became available. ⚠ The second half of this step — the
+   warn-mode reservation check — was **never built**; see the note under step 5.
+4. ✅ **`claim` / `release` for jurisdictions.** The habit forms while the net is soft. Shipped
+   with `extend`, `--takeover` and `--if-held warn|fail|skip`.
+5. ✅ **Flip `check:migrations` to fail** on unreserved slots. Landed as a separate job and
+   script, `check:reservations`, because `check:migrations` runs in the dependency-free
+   `static guards` job and this one needs `pg`.
 6. **`worktree:` claims** (§9), if still worth it by then.
+
+### What step 5 actually had to resolve
+
+**There was no warn mode to flip.** Step 3 shipped the allocator and stopped; nothing in CI ever
+asked whether a slot was reserved. So step 5 was not a switch — the check had to be written, and
+the warn-then-fail ramp §5 relies on had never run.
+
+**A calendar flip could not have been safe anyway.** The ramp exists because branches in flight
+carry hand-picked numbers, and a branch cut last week still carries one today. Waiting does not
+retire them.
+
+So the ramp is **structural instead of temporal**: a per-namespace grandfather ceiling, set to
+`max(num)` at the moment of the seed — `shared 1852 · CA 103 · CC 72`. At or below it, a slot
+predates the allocator and passes; above it, the author had `steward slot` available. Measured
+across every local and remote ref before flipping: **zero slots sat above those ceilings**, so
+the flip failed nothing that already existed, and needed no warning period to establish that.
+
+Three things surfaced only by building it:
+
+- **The shared `NNNN_` sequence had no way to be allocated.** Its namespace is the empty string
+  and `steward slot ""` failed argument validation, so enforcing it would have been a wall with
+  no door. `slot shared` is the door. CLAUDE.md's "keep taking the next free number there
+  exactly as before" is superseded — 1681 happened in that sequence.
+- **Exact email equality would have shipped a false failure.** A reservation records
+  `git config user.email`; the commit CI reads can carry GitHub's noreply form of the same
+  person. 171 migration commits in this repo are authored by
+  `34817036+chrisandrewsedu@users.noreply.github.com`. `holdersMatch` folds that one domain and
+  nothing wider.
+- **`test:unit` ran nothing under `scripts/lib/`.** vitest positionals are path substring
+  filters, and the script read `src scripts/check-`. Every steward test merged in step 3 — the
+  seeder, the slot parser, the ref scanner — had never once run in CI. Found by adding 18 tests
+  and watching the count stay at 1,038. Widening it picked up 12 files and 216 tests, all green.
+
+### Containment is not computed with `ST_Covers`
+
+§3.2 said the hierarchical warning would come from `geofence_boundaries` via `ST_Covers`. It
+does not, and the substitution is the better answer rather than a shortcut: state⊃county and
+state⊃place fall out of the FIPS prefix with no query at all, and county⊃place is exactly what
+`essentials.geofence_child_county` already holds — the persisted result of that same derivation,
+with `check:child-county` in CI keeping it from lagging its source. An ad-hoc query would create
+a second answer to "which county is this city in", answerable differently from the one the rest
+of the repo serves.
+
+A place missing from that mapping reports **`unknown`**, never "unrelated". The matview leaves
+`county_geo_id` NULL for children it could not place; answering "you are clear" for a city we
+cannot locate is how a broken detector reads as a clean result.
+
+### `--if-held warn` does not steal the lease
+
+§4.4's table says warn "names the holder, proceeds", which reads two ways: proceed to claim, or
+proceed with the work. Claiming means writing `released_at` onto somebody else's live row, and a
+tool that does that by default makes the board lie about who holds what — the one thing it is
+for. So warn names the holder and claims nothing; `--takeover` is the deliberate act, recorded
+on the row it displaces.
+
+Relatedly, `skip` is blocked **only by an exact claim**. Treating containment as blocking would
+let one `state:CA` claim starve a queue of all 88 LA cities, and the caller would then report
+"nothing to do" — indistinguishable from an empty work list.
 
 ---
 
