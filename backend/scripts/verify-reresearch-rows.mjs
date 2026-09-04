@@ -2,20 +2,75 @@
 //  1. it parses into exactly the expected 7 columns
 //  2. value is a discrete integer 1-5 (never fractional — the CHECK permits 0.5 steps, so the guard
 //     has to live outside the schema)
-//  3. the politician resolves to exactly one essentials.politicians row, and the topic_key to one live
-//     compass topic whose compass_topic_roles admit the officeholder's tier
+//  3. the politician resolves to exactly one essentials.politicians row, and the topic_key to one
+//     topic the OPEN SEASON asks, whose compass_topic_roles admit THAT politician's tier
 //  4. every cited URL is fetched and every distinctive claim term in the reasoning appears in its RAW
 //     HTML — the standard migration 1542 established after a row cited a CRS summary for a claim the
 //     bill text did not carry
+//
+// 🔴 CHECK 3 USED TO REFUSE EVERY NON-LOCAL ROW, AND EVERY SEASON 2 TOPIC. Corrected 2026-09-04.
+// This script was written for a local roster and had both halves of check 3 hardcoded to that
+// cohort. Neither failure was visible while it was only ever pointed at local CSVs:
+//
+//   · TIER. It asserted `scopes.includes('local')` — literally "would never display" for any topic
+//     that excludes the local tier. Border Security, Defense Spending, Foreign Military
+//     Intervention and U.S. Military Aid to Israel are federal-only, so a federal batch failed
+//     every row with a message claiming the TOPIC was misconfigured. The check now resolves the
+//     politician's own tier and asks whether the topic admits it, which is what the message
+//     always claimed to be testing.
+//
+//   · LIVENESS. It gated on `compass_topics.is_live`, and 17 of the 60 topics season 2 asks carry
+//     is_live = false — every new season 2 topic, including all four federal-only ones. This is
+//     the same defect `CC_0066` fixed in `upsert_compass_answer`: a global boolean cannot notice
+//     a season. compassService names it twice, CC_0066 was its third instance, and this script was
+//     the fourth. The gate is now membership of `inform.compass_topics_promoted` — the set the
+//     read path serves. is_live and is_active are still PRINTED, because they are useful context,
+//     but they no longer decide anything.
+//
+// ⚠ TIER RESOLUTION IS OCD-STRUCTURAL and mirrors the classification federalCoverage.ts documents:
+// /cd: and the bare-country division are federal, a bare-state division is federal only for a
+// U.S. Senate title and otherwise state, /sldu: and /sldl: are state, county/place/school are
+// local, and is_judicial wins over all of it. It does NOT resolve for a politician with no
+// district — about a quarter of the researched corpus — so pass --tier=<federal|state|local|
+// judicial> to declare the batch's cohort. A row whose tier cannot be established FAILS rather
+// than passing unchecked; a declared tier that disagrees with the resolved one WARNS and the
+// declared value wins, since the operator knows which cohort they assembled.
 import 'dotenv/config';
 import { readFileSync } from 'fs';
 import { Pool } from 'pg';
 import { crawlSite } from './lib/site-crawl.mjs';
 
-const file = process.argv[2];
+const TIERS = ['federal', 'state', 'local', 'judicial'];
+
+const args = process.argv.slice(2);
+const file = args.find((a) => !a.startsWith('--'));
 if (!file) {
-  console.error('usage: node scripts/_tmp-verify-reresearch-csv.mjs <csv>');
+  console.error('usage: node scripts/verify-reresearch-rows.mjs <csv> [--tier=federal|state|local|judicial]');
   process.exit(1);
+}
+
+/** The cohort's tier, declared by the operator. Null means "resolve it per row". */
+const declaredTier = (() => {
+  const hit = args.find((a) => a.startsWith('--tier='));
+  if (!hit) return null;
+  const t = hit.slice('--tier='.length);
+  if (!TIERS.includes(t)) {
+    console.error(`verify-reresearch-rows: --tier must be one of ${TIERS.join(', ')} — got "${t}".`);
+    process.exit(1);
+  }
+  return t;
+})();
+
+/**
+ * Does a topic's compass_topic_roles admit this tier?
+ *
+ * The no-rows fallback is NOT symmetric, and copying that asymmetry from compassService is the
+ * point: a topic with no role rows is cross-cutting across federal/state/local, but judicial is
+ * false, because existing cross-cutting topics must never appear on a judicial profile.
+ */
+function admitsTier(scopes, tier) {
+  if (!scopes || scopes.length === 0) return tier !== 'judicial';
+  return scopes.includes(tier);
 }
 
 function parseCsv(text) {
@@ -63,31 +118,63 @@ for (const r of rows) {
   if (!Number.isInteger(v) || v < 1 || v > 5) { console.log(`  🔴 FAIL value not a discrete 1-5: ${r.value}`); failures++; }
 
   const { rows: pol } = await pool.query(
-    `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title
+    `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title, d.ocd_id,
+            CASE
+              WHEN d.is_judicial THEN 'judicial'
+              WHEN d.ocd_id LIKE '%/cd:%' THEN 'federal'
+              WHEN d.ocd_id = 'ocd-division/country:us' THEN 'federal'
+              WHEN d.ocd_id ~ '^ocd-division/country:us/(state|district|territory):[a-z]{2}$'
+                   AND (o.title = 'Senator' OR o.title ~ '^U\\.S\\. Senate') THEN 'federal'
+              WHEN d.ocd_id ~ '^ocd-division/country:us/(state|district|territory):[a-z]{2}$' THEN 'state'
+              WHEN d.ocd_id LIKE '%/sldu:%' OR d.ocd_id LIKE '%/sldl:%' THEN 'state'
+              WHEN d.ocd_id LIKE '%/county:%' OR d.ocd_id LIKE '%/place:%' OR d.ocd_id LIKE '%school%'
+                   THEN 'local'
+            END AS tier
        FROM essentials.politicians p
        LEFT JOIN essentials.office_terms ot ON ot.politician_id = p.id
        LEFT JOIN essentials.offices o  ON o.id = ot.office_id
+       LEFT JOIN essentials.districts d ON d.id = o.district_id
        LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
        LEFT JOIN essentials.governments g ON g.id = c.government_id
       WHERE lower(p.full_name) = lower($1)`,
     [r.full_name],
   );
   if (pol.length !== 1) { console.log(`  🔴 FAIL politician resolves to ${pol.length} rows`); failures++; }
-  else console.log(`  politician ${pol[0].id}  ${pol[0].government} — ${pol[0].title}`);
+  else console.log(`  politician ${pol[0].id}  ${pol[0].government} — ${pol[0].title}  tier=${pol[0].tier ?? '(unresolved)'}`);
+
+  // The declared cohort wins: the operator knows which set they assembled, and a quarter of the
+  // corpus has no district to resolve from. Disagreement is worth saying out loud either way.
+  const resolvedTier = pol.length === 1 ? pol[0].tier : null;
+  if (declaredTier && resolvedTier && declaredTier !== resolvedTier) {
+    console.log(`  ⚠ --tier=${declaredTier} but this politician resolves to ${resolvedTier} — using ${declaredTier}`);
+  }
+  const tier = declaredTier ?? resolvedTier;
 
   const { rows: topic } = await pool.query(
     `SELECT t.id, t.title, t.is_live, t.is_active,
-            (SELECT array_agg(role_scope) FROM inform.compass_topic_roles WHERE topic_id = t.id) AS scopes
+            (SELECT array_agg(role_scope) FROM inform.compass_topic_roles WHERE topic_id = t.id) AS scopes,
+            EXISTS (SELECT 1 FROM inform.compass_topics_promoted pr WHERE pr.id = t.id) AS promoted
        FROM inform.compass_topics t WHERE t.topic_key = $1`,
     [r.topic_key],
   );
   if (topic.length !== 1) { console.log(`  🔴 FAIL topic_key resolves to ${topic.length} rows`); failures++; }
   else {
     const t = topic[0];
-    console.log(`  topic ${t.id}  ${t.title}  live=${t.is_live} active=${t.is_active} tiers=${(t.scopes || []).join('+') || '(all)'}`);
-    if (!t.is_live || !t.is_active) { console.log('  🔴 FAIL topic not live/active'); failures++; }
-    const local = !t.scopes || t.scopes.includes('local');
-    if (!local) { console.log('  🔴 FAIL topic excludes the local tier — would never display'); failures++; }
+    console.log(`  topic ${t.id}  ${t.title}  promoted=${t.promoted} (live=${t.is_live} active=${t.is_active}) tiers=${(t.scopes || []).join('+') || '(all)'}`);
+    // The open season's question set, not is_live — see the header. A topic the season does not
+    // ask is not served, whatever the boolean says; a topic it does ask is served even when the
+    // boolean is false, which is true of all 17 new season 2 topics.
+    if (!t.promoted) {
+      console.log('  🔴 FAIL topic is not in the open season — nothing would serve this answer');
+      failures++;
+    }
+    if (!tier) {
+      console.log('  🔴 FAIL cannot establish this politician\'s tier (no district) — pass --tier=<federal|state|local|judicial> to declare the batch cohort');
+      failures++;
+    } else if (!admitsTier(t.scopes, tier)) {
+      console.log(`  🔴 FAIL topic excludes the ${tier} tier — would never display for this politician`);
+      failures++;
+    }
     const { rows: existing } = await pool.query(
       'SELECT value FROM inform.politician_answers WHERE politician_id = $1 AND topic_id = $2',
       [pol[0]?.id, t.id],
