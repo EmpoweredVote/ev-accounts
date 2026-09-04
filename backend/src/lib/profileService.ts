@@ -233,10 +233,14 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
 
   // Step 9: Add Empowered-specific fields
   if (isEmpowered && empowered) {
-    // Fetch compass answers
+    // Fetch compass answers.
+    //
+    // compass_responses_effective (CC_0062) — this block is read-only output on
+    // an Empowered profile payload, so suppression here withholds a stale value
+    // and cannot cost the user anything on a later write.
     const { data: answers, error: answersError } = await supabaseAdmin
       .schema('inform')
-      .from('compass_responses_current')
+      .from('compass_responses_effective')
       .select('topic_id, value, write_in_text, inverted, updated_at')
       .eq('user_id', userId)
       .is('deleted_at', null);

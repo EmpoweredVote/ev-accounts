@@ -554,10 +554,13 @@ export async function getCandidates() {
         WHEN EXISTS (
           SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
         ) THEN (
-          -- compass_responses_current collapses to the newest season the user
-          -- answered each topic in (CC_0046). The base table would count an
-          -- Empowered candidate who re-answered in a new season twice.
-          SELECT COUNT(*)::int FROM inform.compass_responses_current cr
+          -- compass_responses_effective wraps the newest-season collapse
+          -- (CC_0046) and then drops the answers that no longer stand (CC_0062).
+          -- The base table would count an Empowered candidate who re-answered in
+          -- a new season twice; the plain _current view would count a stance
+          -- whose rung has moved, and answer_count would then disagree with the
+          -- compass the voter is actually shown.
+          SELECT COUNT(*)::int FROM inform.compass_responses_effective cr
           JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
@@ -578,7 +581,7 @@ export async function getCandidates() {
           SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
         ) THEN (
           -- Same collapse; otherwise a topic id repeats once per season answered.
-          SELECT array_agg(cr.topic_id) FROM inform.compass_responses_current cr
+          SELECT array_agg(cr.topic_id) FROM inform.compass_responses_effective cr
           JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
           WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
         )
@@ -683,11 +686,17 @@ export async function getCandidateAnswers(
   if (profileRes.rows.length > 0) {
     const userId = profileRes.rows[0].user_id;
     const answersRes = await pool.query<{ topic_id: string; value: number }>(
-      // Newest season per topic (CC_0046). deleted_at is filtered by the view's
-      // consumer rather than inside the collapse, so a tombstone in a newer
-      // season correctly hides the older answer instead of being skipped over.
+      // Newest season per topic (CC_0046), minus the answers CC_0061 calls
+      // moved or invalidated (CC_0062). 🔴 THIS IS AN EMPOWERED CANDIDATE'S
+      // COMPASS AS SHOWN TO VOTERS, so a value whose rung moved under it must
+      // not appear here: it would read as a position the candidate never took.
+      //
+      // deleted_at is still filtered after the collapse rather than inside it,
+      // so a tombstone in a newer season correctly hides the older answer
+      // instead of being skipped over — the effective view applies it in that
+      // same position, which leaves the predicate below redundant but true.
       `SELECT topic_id, value
-       FROM inform.compass_responses_current
+       FROM inform.compass_responses_effective
        WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
        ORDER BY topic_id ASC`,
       [userId]
@@ -978,8 +987,16 @@ export async function compareWithPoliticians(
     // `value != 0` is a SEPARATE idea from deleted_at, and this query filtered
     // neither zero while six sibling queries in this file filter both. A 0 means
     // "no position", so it must not reach the score — see the politician side.
+    //
+    // 🔴 AND A SUPPRESSED ANSWER MUST NOT SCORE, for the identical reason the
+    // zero must not. compass_responses_effective drops the answers whose rung
+    // moved or was invalidated (CC_0062): the stored number now points at a
+    // different position, so scoring it computes `1 - |user - politician| / 5`
+    // between a real stance and a stale coordinate, and the topic still lands in
+    // the denominator. Withholding it costs a shared topic; keeping it reports a
+    // percentage that is simply wrong.
     `SELECT topic_id, value::text
-     FROM inform.compass_responses_current
+     FROM inform.compass_responses_effective
      WHERE user_id = $1 AND deleted_at IS NULL AND value != 0`,
     [userId]
   );

@@ -1144,6 +1144,27 @@ export type Database = {
         }
         Relationships: []
       }
+      // compass_responses_current minus the answers CC_0061 calls moved or
+      // invalidated (CC_0062). Identical Row shape by construction — the view
+      // selects the same eleven columns and only drops rows — so a consumer
+      // switching to it needs no other change. `deleted_at` stays nullable to
+      // mirror the source even though the view filters it to NULL.
+      compass_responses_effective: {
+        Row: {
+          answered_revision_id: string | null
+          created_at: string
+          deleted_at: string | null
+          inverted: boolean
+          season_id: string
+          topic_id: string
+          updated_at: string
+          user_id: string
+          value: number
+          visibility: string
+          write_in_text: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
