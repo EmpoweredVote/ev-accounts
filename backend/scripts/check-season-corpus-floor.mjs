@@ -148,8 +148,30 @@
  *
  * RUN: npm run check:season-floor --prefix backend
  *      npm run check:season-floor:verbose --prefix backend
- * CI:  master-push and daily cron (it needs DATABASE_URL — use the session pooler string,
- *      which is IPv4; the direct host is IPv6-only).
+ *
+ * CI:  ⚠ THE NIGHTLY CRON AND MANUAL DISPATCH ONLY — NOT master-push, NOT pull requests. This
+ *      line said "master-push and daily cron" until 2026-09-04 and that was never true of the
+ *      job: `season-corpus-floor` in ci.yml carries
+ *
+ *          if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+ *
+ *      deliberately, on a cost argument written beside it — a commit cannot cause what this
+ *      measures, so billing it per push watches for something pushes do not do.
+ *
+ *      🔴 THE STALE LINE POINTED THE WRONG WAY AT THE ONE MOMENT IT IS READ. Someone changing a
+ *      floor reads this to learn how the change gets checked, concludes that merging to master
+ *      runs it, sees a green master, and is wrong — the number is not measured until 13:00 UTC.
+ *      That is the same shape as the paragraph above, which already warns that a blanking PR
+ *      merges green and fails hours later; this line quietly denied it.
+ *
+ *      TO VERIFY A FLOOR CHANGE NOW, do one of these — do not wait for the cron and do not read
+ *      a green PR as evidence:
+ *        · run it locally against prod (the floors are prod numbers; the run above needs only
+ *          DATABASE_URL), or
+ *        · `gh workflow run ci.yml --ref master`, which is what workflow_dispatch is for.
+ *
+ *      It needs DATABASE_URL either way — use the session pooler string, which is IPv4; the
+ *      direct host is IPv6-only.
  */
 
 import 'dotenv/config';
