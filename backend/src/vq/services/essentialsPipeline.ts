@@ -1,27 +1,34 @@
 /**
  * essentialsPipeline.ts
  * Feature-flagged service for writing verified officeholder answers
- * to Empowered Vote's Essentials data layer (inform schema).
+ * to Empowered Vote's Essentials data layer.
  *
  * Gated by ESSENTIALS_PIPELINE_ENABLED env var (default: false).
  * Non-fatal: any failure logs a warning and returns without throwing.
+ *
+ * Engine consolidation (VQ fold-in): this used to POST to
+ * ACCOUNTS_URL/api/essentials/ingest/quest-verified carrying X-Service-Key: VQ_SERVICE_KEY.
+ * VQ now runs inside the engine, so it writes in-process via ingestQuestVerifiedFact — the
+ * same validation, idempotency, and table the HTTP route uses — with no network hop and no
+ * service key.
  */
 
 import { logger } from '../lib/logger.js';
-
-const ACCOUNTS_URL = process.env.ACCOUNTS_URL ?? 'https://accounts.empowered.vote';
-const ESSENTIALS_PIPELINE_URL = `${ACCOUNTS_URL}/api/essentials/ingest/quest-verified`;
+import {
+  ingestQuestVerifiedFact,
+  EssentialsIngestValidationError,
+} from '../../lib/essentialsIngestService.js';
 
 export interface EssentialsPipelineInput {
   questId: string;
   questType: string;
   questionText: string;
   consensusAnswer: string;
-  confidenceLevel: string;   // internal string ('high') — mapped to number before sending
+  confidenceLevel: string;   // internal string ('high') — mapped to number before storing
   totalSubmissions: number;
   consensusRecordId: string;
   jurisdictionName: string | null;
-  politicianId?: string | null;   // add this field
+  politicianId?: string | null;
 }
 
 /**
@@ -56,102 +63,40 @@ export async function writeToEssentials(input: EssentialsPipelineInput): Promise
   const confidenceLevelNum = confidenceLevelMap[input.confidenceLevel] ?? 0.6;
 
   try {
-    const res = await fetch(ESSENTIALS_PIPELINE_URL, {
-      method: 'POST',
-      headers: {
-        'X-Service-Key': process.env.VQ_SERVICE_KEY ?? '',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        quest_id: input.questId,
-        question_text: input.questionText,
-        verified_answer: input.consensusAnswer,
-        confidence_level: confidenceLevelNum,
-        total_submissions: input.totalSubmissions,
-        consensus_record_id: `vq-consensus-${input.consensusRecordId}`,
-        jurisdiction_name: input.jurisdictionName,
-        ...(input.politicianId ? { politician_id: input.politicianId } : {}),
-      }),
+    const result = await ingestQuestVerifiedFact({
+      quest_id: input.questId,
+      question_text: input.questionText,
+      verified_answer: input.consensusAnswer,
+      confidence_level: confidenceLevelNum,
+      total_submissions: input.totalSubmissions,
+      consensus_record_id: `vq-consensus-${input.consensusRecordId}`,
+      jurisdiction_name: input.jurisdictionName,
+      ...(input.politicianId ? { politician_id: input.politicianId } : {}),
     });
 
-    if (res.status >= 400 && res.status < 500) {
-      // 4xx: log and return immediately, no retry
-      const body = await res.text().catch(() => '(unreadable)');
-      logger.warn('Essentials pipeline: 4xx from endpoint — non-fatal, no retry', {
-        questId: input.questId,
-        status: res.status,
-        body: body.substring(0, 200),
-      });
-      return;
-    }
-
-    if (res.status >= 500) {
-      // 5xx: one retry after ~1 second
-      const body = await res.text().catch(() => '(unreadable)');
-      logger.warn('Essentials pipeline: 5xx from endpoint — retrying once', {
-        questId: input.questId,
-        status: res.status,
-        body: body.substring(0, 200),
-      });
-      await new Promise((r) => setTimeout(r, 1000));
-      try {
-        const retryRes = await fetch(ESSENTIALS_PIPELINE_URL, {
-          method: 'POST',
-          headers: {
-            'X-Service-Key': process.env.VQ_SERVICE_KEY ?? '',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            quest_id: input.questId,
-            question_text: input.questionText,
-            verified_answer: input.consensusAnswer,
-            confidence_level: confidenceLevelNum,
-            total_submissions: input.totalSubmissions,
-            consensus_record_id: `vq-consensus-${input.consensusRecordId}`,
-            jurisdiction_name: input.jurisdictionName,
-            ...(input.politicianId ? { politician_id: input.politicianId } : {}),
-          }),
-        });
-        if (!retryRes.ok) {
-          const retryBody = await retryRes.text().catch(() => '(unreadable)');
-          logger.warn('Essentials pipeline: retry also failed — non-fatal', {
-            questId: input.questId,
-            status: retryRes.status,
-            body: retryBody.substring(0, 200),
-          });
-          return;
-        }
-        const retryData = await retryRes.json().catch(() => ({}));
-        if ((retryData as any).is_duplicate) {
-          logger.info('Essentials pipeline: retry — already ingested (is_duplicate)', {
-            questId: input.questId,
-          });
-          return;
-        }
-        logger.info('Essentials pipeline: retry succeeded', { questId: input.questId });
-      } catch (retryErr) {
-        logger.warn('Essentials pipeline: retry threw — non-fatal', {
-          questId: input.questId,
-          error: String(retryErr),
-        });
-      }
-      return;
-    }
-
-    // 2xx success
-    const data = await res.json().catch(() => ({}));
-    if ((data as any).is_duplicate) {
+    if (result.is_duplicate) {
       logger.info('Essentials pipeline: already ingested (is_duplicate) — non-fatal', {
         questId: input.questId,
       });
       return;
     }
+
     logger.info('Essentials pipeline: ingest succeeded', {
       questId: input.questId,
-      response: data,
+      id: result.id,
     });
   } catch (err) {
-    logger.warn('Essentials pipeline: fetch threw — non-fatal', {
+    // Validation failures and DB errors are both non-fatal here — the same posture the
+    // old HTTP path had toward a 4xx/5xx from the endpoint.
+    if (err instanceof EssentialsIngestValidationError) {
+      logger.warn('Essentials pipeline: validation rejected the fact — non-fatal', {
+        questId: input.questId,
+        message: err.message,
+        fields: err.fields,
+      });
+      return;
+    }
+    logger.warn('Essentials pipeline: ingest threw — non-fatal', {
       questId: input.questId,
       error: String(err),
     });
