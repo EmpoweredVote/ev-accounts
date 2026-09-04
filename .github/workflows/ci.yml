@@ -574,14 +574,20 @@ jobs:
       # season) makes the destructive shape refuse in the database, ad-hoc DELETEs included.
       #
       # This is the third layer, and it covers what neither of those can: A TRIGGER CAN BE DROPPED.
-      # politician_answers and politician_context carry NO TIMESTAMPS, so a deleted row cannot say
-      # when or how it went — the corpus size is the only continuous evidence season 1 is whole.
+      # A SURVIVING row can be dated — both tables carry created_at and updated_at — but a DELETED
+      # one leaves nothing at all, so the corpus size is the only continuous evidence the seasons
+      # are whole. (This comment used to say the tables carry NO timestamps. That was wrong, and the
+      # script's own header corrected it on 2026-09-01: dating the surviving rows is what isolated
+      # the CA_0097 window in minutes.)
       #
-      # Floors are committed in the script, measured against prod 2026-08-27: 33,164 answers /
-      # 33,818 context / 44 questions. They are floors, not equalities, so a documented closed-season
-      # correction that ADDS a row still passes. Raise a floor only deliberately; lowering one to get
-      # green is the exact event this exists to report.
-      - name: Check no closed season has lost answers
+      # Floors are committed in the script, per season, and DERIVED from the batches that wrote the
+      # rows rather than read off prod: season 1 at 33,022 answers / 33,806 context / 44 questions,
+      # season 2 at 2,685 / 2,657 / 60 since it opened 2026-09-04. They are floors, not equalities,
+      # so a documented correction that ADDS a row still passes. Raise a floor only deliberately;
+      # lowering one to get green is the exact event this exists to report. A live season holding
+      # answers that no floor covers now FAILS here — an unmeasured season reads green no matter
+      # what happens to it, which is how season 2 spent its first day unprotected.
+      - name: Check no season has lost answers
         run: npm run check:season-floor -- --verbose
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
