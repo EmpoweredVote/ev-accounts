@@ -24,13 +24,13 @@ import {
   getUserVerdicts,
   getBatchPoliticianAnswers,
   getPoliticianCitations,
-  getSelectedTopicRecalibrationFlags,
 } from '../lib/compassService.js';
 import {
   getUserLenses,
   replaceUserLenses,
   findUnknownTopicIds,
   getRecalibrationFlags,
+  getAllRecalibrationFlags,
   isLensKeyConflictError,
 } from '../lib/compassUserLensService.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
@@ -355,7 +355,8 @@ router.delete(
 // ---------------------------------------------------------------------------
 // GET /api/compass/recalibration-flags
 // Auth: optional — unauthenticated returns 200 []
-// The flags for the topics on the caller's OWN compass, lens or no lens.
+// Every answer of the caller's that no longer stands as given — lens or no lens,
+// on the compass or off it.
 //
 // 🔴 THIS IS WHAT KEEPS SUPPRESSION FROM BEING AN UNEXPLAINED DISAPPEARANCE.
 // GET /answers withholds an answer whose rung moved or was invalidated (CC_0062),
@@ -370,6 +371,14 @@ router.delete(
 // the same `question_revised` for reworded and moved, so it cannot be used for
 // that decision.
 //
+// ⚠ EVERY ANSWERED TOPIC, NOT JUST THE SELECTED ONES. Scoping this to the
+// selection covered only 12 of the 96 non-fresh answers at the changeover —
+// `invalidated` 0 of 1, `moved` 2 of 6 — because most answers are not on the
+// user's current spokes. An answer set aside off-screen is still set aside: it is
+// already missing from compass_responses_effective for scoring and for every
+// other reader, and the user would otherwise find out only by happening to put
+// that topic back. The client decides how loudly each one speaks.
+//
 // Separate from /my-lenses rather than folded into it: a lens flag belongs beside
 // each lens that holds the topic, and these belong to the compass itself. Reusing
 // one payload for both would force the client to guess which it was looking at.
@@ -380,7 +389,7 @@ router.get('/recalibration-flags', optionalAuth, async (req: Request, res: Respo
   if (!authReq.userId) { res.status(200).json([]); return; }
 
   try {
-    const flags = await getSelectedTopicRecalibrationFlags(authReq.userId);
+    const flags = await getAllRecalibrationFlags(authReq.userId);
     res.status(200).json(flags);
   } catch (err) {
     console.error('[GET /compass/recalibration-flags] error:', err);

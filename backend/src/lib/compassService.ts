@@ -1,6 +1,5 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
-import { getRecalibrationFlags, type RecalibrationFlag } from './compassUserLensService.js';
 import { SEASON_IS_PUBLISHED } from './seasonService.js';
 
 // ---------------------------------------------------------------------------
@@ -951,39 +950,6 @@ export async function getSelectedTopics(userId: string): Promise<string[]> {
   );
   const value = rows[0]?.selected_topic_ids;
   return Array.isArray(value) ? value : [];
-}
-
-/**
- * The recalibration flags for the topics on the user's own compass.
- *
- * 🔴 WITHOUT THIS, SUPPRESSION IS AN ANSWER VANISHING WITH NO EXPLANATION.
- * CC_0062 withholds an answer whose rung moved or was invalidated, so the spoke
- * renders as uncalibrated. The only thing that has ever surfaced a flag is
- * GET /compass/my-lenses, and the client narrows it further — it builds its flag
- * map from the ACTIVE custom lens alone. Measured against prod at a simulated
- * changeover: of the 5 users holding one of the 7 suppressed answers, that path
- * reaches none of them.
- *
- * A user's SELECTED topics are the spokes they are looking at, so that is the set
- * the flags must cover. Lens flags are unchanged and still come back on
- * /compass/my-lenses; this is the compass's own set, not a replacement.
- *
- * ⚠ IT LIVES HERE RATHER THAN IN compassUserLensService BECAUSE OF WHICH WAY THE
- * DEPENDENCY POINTS. That module imports `pool` and nothing else, and reaching
- * into it for `getSelectedTopics` dragged the Supabase clients — and env.ts's
- * exit-on-invalid startup check — into a test that had no need of either. This
- * file already owns the selection read, so the composition belongs here and
- * `getRecalibrationFlags` is imported the light way round.
- */
-export async function getSelectedTopicRecalibrationFlags(
-  userId: string
-): Promise<RecalibrationFlag[]> {
-  const topicIds = await getSelectedTopics(userId);
-  // getRecalibrationFlags short-circuits an empty list without querying, but
-  // returning here makes that guarantee local and testable.
-  if (topicIds.length === 0) return [];
-
-  return getRecalibrationFlags(userId, topicIds);
 }
 
 // ---------------------------------------------------------------------------

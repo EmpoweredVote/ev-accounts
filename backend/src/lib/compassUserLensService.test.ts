@@ -16,6 +16,7 @@ vi.mock('./db.js', () => ({
 
 import {
   getRecalibrationFlags,
+  getAllRecalibrationFlags,
   replaceUserLenses,
   findUnknownTopicIds,
 } from './compassUserLensService.js';
@@ -101,6 +102,69 @@ describe('recalibration — one source of truth', () => {
   it('asks for nothing when the lens is empty', async () => {
     expect(await getRecalibrationFlags(USER, [])).toEqual([]);
     expect(poolQueryMock).not.toHaveBeenCalled();
+  });
+});
+
+describe('getAllRecalibrationFlags — every answer, not just the ones on screen', () => {
+  // 🔴 WHY THIS EXISTS. Scoping flags to the SELECTED topics covered only 12 of
+  // the 96 non-fresh answers at the changeover — `invalidated` 0 of 1, `moved` 2
+  // of 6. The other 84 sit on topics the user answered but does not currently
+  // show, and an answer set aside off-screen is still an answer set aside.
+  it('asks the view for the whole user, with no topic filter', async () => {
+    mockRows([]);
+
+    await getAllRecalibrationFlags(USER);
+
+    const [sql, params] = poolQueryMock.mock.calls[0] ?? [];
+    expect(String(sql)).toContain('inform.compass_answer_dispositions');
+    expect(String(sql)).toContain('user_id = $1');
+    // No ANY($2) — the whole point is the absence of the topic predicate.
+    expect(String(sql)).not.toContain('topic_id = ANY');
+    expect(params).toEqual([USER]);
+  });
+
+  it('translates the dispositions exactly as the scoped read does', async () => {
+    mockRows([dispositionRow({ disposition: 'moved' })]);
+
+    const flags = await getAllRecalibrationFlags(USER);
+
+    expect(flags[0]).toMatchObject({
+      topicId: TOPIC,
+      reason: 'question_revised',
+      disposition: 'moved',
+      currentValue: 3,
+    });
+  });
+
+  it('is still silent about a fresh answer', async () => {
+    mockRows([dispositionRow({ disposition: 'fresh' })]);
+    expect(await getAllRecalibrationFlags(USER)).toEqual([]);
+  });
+
+  it('still reports a topic the season does not ask', async () => {
+    mockRows([
+      dispositionRow({
+        disposition: 'fresh',
+        effective_revision_id: null,
+        effective_version: null,
+      }),
+    ]);
+
+    expect((await getAllRecalibrationFlags(USER))[0]?.reason).toBe('not_asked_this_season');
+  });
+
+  // The two reads must not drift: one query, one translation, one filter that
+  // is either present or absent.
+  it('shares its translation with the scoped read', async () => {
+    const row = dispositionRow({ disposition: 'invalidated' });
+
+    mockRows([row]);
+    const all = await getAllRecalibrationFlags(USER);
+    vi.clearAllMocks();
+    mockRows([row]);
+    const scoped = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(all).toEqual(scoped);
   });
 });
 
