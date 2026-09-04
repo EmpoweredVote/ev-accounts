@@ -173,9 +173,15 @@ CREATE TABLE steward.claims (
 );
 ```
 
-Claims are **leases**. The default eight-hour expiry means an abandoned session does not hold
-Lomita forever. Releasing early is one command; taking over an expired claim is ordinary;
-taking over a live one is possible and records who did it.
+Claims are **leases**. The default expiry means an abandoned session does not hold Lomita
+forever. Releasing early is one command; taking over an expired claim is ordinary; taking over a
+live one is possible and records who did it.
+
+> **As built:** the default is **24 hours**, not the 8 in the snippet above (`CC_0075`). Eight
+> was the guess §10 recorded; measured against 52 real session transcripts it expired during 60%
+> of working sessions. See "The lease durations were measured, and the guess was wrong" in §6 —
+> which also covers why a lapsed lease is reported for 12 hours rather than dropped, and why
+> `extend` renews from now instead of adding.
 
 `scope` is a plain string and is not a foreign key, because `geo_id` is **not unique** —
 5,790 distinct values across 7,684 `essentials.districts` rows as of 2026-09-04.
@@ -391,6 +397,61 @@ spellings are one directory. POSIX paths are case-*sensitive*: folding `/home/Ch
 `/home/chris` together would merge two real worktrees into one scope — the inverse error, and
 just as silent.
 
+### The lease durations were measured, and the guess was wrong
+
+§10 recorded 8 hours honestly as a guess: *"It wants to be longer than a working session and
+shorter than a weekend."* Both halves of that are measurable, and nobody had measured them.
+
+**Method.** 52 real session transcripts for this project (`~/.claude/projects/C--EV-Accounts/*.jsonl`),
+taking each session's wall-clock span from its first message to its last.
+
+| a lease of | sessions ≥200 messages that outlive it (n=47) |
+| --- | --- |
+| **8h** (shipped) | **28/47 — 60%** |
+| 12h (the shipped worktree marker) | 17/47 — 36% |
+| 16h | 13/47 — 28% |
+| 20h | 4/47 — 9% ← the overnight cliff |
+| **24h** (chosen) | **3/47 — 6%** |
+| 48h | 0/47 — 0%, but no longer "shorter than a weekend" |
+
+Median span 10.2h; p90 18.8h; p95 24.0h. **The 8-hour lease expired during 60% of real working
+sessions**, and the 12-hour worktree marker during 36% — so a live session's own directory read
+as free. The distribution has a sharp cliff between 16h and 20h, which is the overnight boundary;
+24h sits past it and still clears the weekend bound.
+
+**Wall-clock span, not active time**, deliberately. Excluding idle gaps over an hour gives a much
+smaller figure — p50 3.3h, max 9.05h — against which 8 hours looks nearly right. But a session
+that pauses for lunch still owns Lomita, so the lease has to cover the span from claim to last
+touch, not the time spent typing.
+
+⚠ **Measured on one author's sessions, on this project only.** Andrews' sessions and the laptop's
+scan runs are not in the sample. Re-measure if either becomes a normal case.
+
+#### The number is not the fix, because the two failure modes are not symmetric
+
+- Too **long** fails *visibly*: the board names the holder and the timestamp, a stale claim reads
+  as stale, and `--takeover` is one command.
+- Too **short** fails *silently*: the row stops matching, nothing warns anybody, and two sessions
+  write one jurisdiction believing they are alone — the exact failure the claims table exists to
+  prevent.
+
+So the residual 6% is made **loud** rather than tuned away. `who` prints `⏳ EXPIRES IN 39m —
+extend it` while the holder can still act, and keeps a lapsed claim on the board for 12 hours as
+`✗ LAPSED 40m ago — free to take, check first`; `claim` repeats that warning for the scope being
+taken. **A lapsed lease never blocks** — it has freed the scope by design, and blocking on it
+would stall an `--if-held skip` queue behind a session that ended yesterday. Both facts are
+stated, neither implied.
+
+Worktree markers now print an **age** (`seen 3h ago`) rather than a clock time, so a ghost from
+last night judges itself without the reader doing arithmetic.
+
+#### One latent bug the measurement exposed
+
+`extend` **added** to the existing expiry. That made a lease unbounded: three calls on a fresh
+24-hour lease would put it three days out, straight through the "shorter than a weekend" bound
+the duration is measured against, with nothing saying so. It now **renews from now**, so a lease
+is never more than one measured lease away from lapsing however many times it is renewed.
+
 ### Containment is not computed with `ST_Covers`
 
 §3.2 said the hierarchical warning would come from `geofence_boundaries` via `ST_Covers`. It
@@ -480,9 +541,9 @@ rather than merely written down, which is why it is sequenced last rather than n
 
 ## 10. Open decisions
 
-- **Lease duration — still a guess, now two of them.** Eight hours for a jurisdiction claim; 12
-  for a worktree marker. A lease wants to be longer than a working session and shorter than a
-  weekend; §6 states the marker's trade-off, which runs in both directions.
+- ✅ **RESOLVED BY MEASUREMENT — 24 hours, both of them.** *Lease duration.* See "The lease
+  durations were measured, and the guess was wrong" in §6. `CC_0075` moved the schema default
+  from 8h; `scripts/lib/steward-lease.mjs` holds the constants and the method.
 - ✅ **RESOLVED — the caller supplies the candidate list.** *Whether `--if-held=skip` needs a
   jurisdiction work queue.* It takes a list of scopes and returns the first one free, printing
   every one it passed over. No queue exists and none was needed.

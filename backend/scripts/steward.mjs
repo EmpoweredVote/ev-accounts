@@ -10,7 +10,7 @@
  *   npm run steward -- slot CC --purpose "what it is for"
  *   npm run steward -- claim place:0642468 --label "Lomita occupancy"
  *   npm run steward -- release place:0642468
- *   npm run steward -- extend place:0642468 --hours 4
+ *   npm run steward -- extend place:0642468 --hours 4     # renews FROM NOW, never adds
  *
  * 🔴 FAILURE BEHAVIOUR IS NOT UNIFORM, AND THAT IS DELIBERATE.
  *   `slot` FAILS CLOSED — it will never invent a number it cannot verify, because the
@@ -36,16 +36,9 @@ import { historicalSlots } from "./lib/migration-slots.mjs";
 import { slotsToSeed } from "./lib/steward-seed.mjs";
 import { parseScope, containmentWarnings, chooseScope, SKIP_BLOCKED } from "./lib/steward-claims.mjs";
 import { canonicalWorktreeScope, worktreeNotices } from "./lib/steward-worktree.mjs";
-
-/**
- * How long a worktree marker stays on the board.
- *
- * ⚠ A GUESS, LIKE THE 8-HOUR LEASE, AND THE TRADE-OFF RUNS BOTH WAYS. Too short and a session
- *   that has genuinely been running all day drops off the board, so "nobody is in that
- *   directory" becomes wrong. Too long and last night's finished sessions look present. A
- *   working day is the compromise: it spans one, and it clears overnight.
- */
-const WORKTREE_MARKER_HOURS = 12;
+import {
+  LEASE_HOURS, MARKER_HOURS, EXPIRED_GRACE_HOURS, humanAge, partitionBoard,
+} from "./lib/steward-lease.mjs";
 
 const backendDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(backendDir, "..");
@@ -111,11 +104,7 @@ async function cmdWho() {
     return 0;
   }
   try {
-    const { rows: rows } = await client.query(`
-      SELECT scope, label, holder, machine, started_at, expires_at
-        FROM steward.claims
-       WHERE released_at IS NULL AND expires_at > now()
-       ORDER BY started_at`);
+    const { blocking: rows, lapsed } = await board(client);
     const { rows: mine } = await client.query(`
       SELECT namespace, num, purpose
         FROM steward.migration_slots
@@ -131,24 +120,40 @@ async function cmdWho() {
     const claims = rows.filter((r) => !r.scope.startsWith("worktree:"));
     const trees = rows.filter((r) => r.scope.startsWith("worktree:"));
 
-    if (!rows.length && !mine.length) {
+    if (!rows.length && !mine.length && !lapsed.length) {
       console.log("Steward · no active claims, no outstanding reservations");
     } else {
       const parts = [`${claims.length} jurisdiction claim(s)`];
       if (trees.length) parts.push(`${trees.length} worktree(s) seen`);
       if (mine.length) parts.push(`${mine.length} slot(s) reserved`);
+      if (lapsed.length) parts.push(`${lapsed.length} lapsed`);
       console.log(`Steward · ${parts.join(" · ")}`);
       for (const c of claims) {
         const when = new Date(c.expires_at).toISOString().slice(11, 16);
-        console.log(`  ${c.scope.padEnd(18)} ${(c.label ?? "").padEnd(22)} ${c.holder}  ${c.machine}  expires ${when}Z`);
+        // 🔴 A LEASE ABOUT TO LAPSE IS ANNOUNCED WHILE ITS HOLDER CAN STILL ACT. `extend` is one
+        //    command, but only if you know you need it — and the measurement says even a 24h
+        //    lease runs out inside 6% of real sessions.
+        const soon = c.status === "expiring-soon"
+          ? `  ⏳ EXPIRES IN ${humanAge(new Date(c.expires_at).getTime() - Date.now())} — extend it` : "";
+        console.log(`  ${c.scope.padEnd(18)} ${(c.label ?? "").padEnd(22)} ${c.holder}  ${c.machine}  expires ${when}Z${soon}`);
       }
       for (const s of mine) {
         console.log(`  reserved ${pad(s.namespace, s.num)}  ${s.purpose}`);
       }
       for (const t of trees) {
-        const seen = new Date(t.started_at).toISOString().slice(11, 16);
+        // Age, not just a clock time: "seen 3h ago" judges itself, where "seen 09:12Z" needs the
+        // reader to do the arithmetic before they can tell a live session from last night's.
+        const ago = humanAge(Date.now() - new Date(t.started_at).getTime());
         console.log(`  ~ ${t.scope.slice("worktree:".length).padEnd(24)} ${(t.label ?? "detached").padEnd(34)} `
-          + `${t.holder}  ${t.machine}  seen ${seen}Z`);
+          + `${t.holder}  ${t.machine}  seen ${ago} ago`);
+      }
+      // Lapsed last, and labelled as free: the scope IS available, and the previous holder may
+      // nonetheless still be working. Both facts, neither implied.
+      for (const c of lapsed) {
+        const ago = humanAge(Date.now() - new Date(c.expires_at).getTime());
+        const what = c.scope.startsWith("worktree:") ? c.scope.slice("worktree:".length) : c.scope;
+        console.log(`  ✗ ${what.padEnd(18)} ${(c.label ?? "").padEnd(22)} ${c.holder}  ${c.machine}  `
+          + `LAPSED ${ago} ago — free to take, check first`);
       }
     }
     return 0;
@@ -267,14 +272,29 @@ async function connectOrWarn(what) {
   }
 }
 
-/** Live claims: not released, not expired. An expired lease is free to take, by design. */
-async function liveClaims(client) {
+/**
+ * The board: claims still holding, plus claims whose lease lapsed recently.
+ *
+ * 🔴 ONE QUERY, TWO MEANINGS, AND THE SPLIT IS LOAD BEARING. `blocking` is what the exclusion
+ *    logic may refuse on; `lapsed` is advisory only. An expired lease frees the scope — that is
+ *    the point of an expiry — so blocking on it would let a session that ended yesterday stall a
+ *    `--if-held skip` queue. But dropping it silently is the failure the measurement exposed:
+ *    an 8h lease ran out during 60% of real working sessions, and the next session was told
+ *    nothing at all. So it warns instead.
+ */
+async function board(client) {
   const { rows } = await client.query(`
     SELECT id, scope, label, holder, machine, started_at, expires_at, notes
       FROM steward.claims
-     WHERE released_at IS NULL AND expires_at > now()
-     ORDER BY started_at`);
-  return rows;
+     WHERE released_at IS NULL
+       AND expires_at > now() - make_interval(hours => $1)
+     ORDER BY started_at`, [EXPIRED_GRACE_HOURS]);
+  return partitionBoard(rows, Date.now());
+}
+
+/** Just the claims that still hold. */
+async function liveClaims(client) {
+  return (await board(client)).blocking;
 }
 
 /**
@@ -344,7 +364,7 @@ async function cmdClaim() {
       + "one command takes one lease.");
     return 2;
   }
-  const hours = hoursOpt(null);
+  const hours = hoursOpt(LEASE_HOURS);
   const label = opt("--label");
   const notes = opt("--notes");
   const takeover = has("--takeover");
@@ -356,7 +376,7 @@ async function cmdClaim() {
     return mode === "fail" ? 1 : 0;
   }
   try {
-    const live = await liveClaims(client);
+    const { blocking: live, lapsed } = await board(client);
     const candidates = scopeArgs.map(parseScope);
     const childCounty = await childCountyFor(client, [...candidates, ...live.map((c) => {
       try { return parseScope(c.scope); } catch { return { kind: "other" }; }
@@ -384,6 +404,20 @@ async function cmdClaim() {
     if (picked.warnings.length) {
       console.warn(`steward claim: ${scope.canonical} overlaps ${picked.warnings.length} live claim(s):`);
       printWarnings(picked.warnings);
+    }
+
+    // 🔴 A LEASE THAT LAPSED WHILE ITS HOLDER WAS STILL WORKING IS THE RESIDUAL FAILURE, AND
+    //    THIS IS WHERE IT IS MADE AUDIBLE. Measured against 52 session transcripts, even a
+    //    24-hour lease runs out inside 6% of real working sessions — so the scope is free to
+    //    take, and the last person on it may nonetheless still be mid-task. Taking it anyway is
+    //    allowed and is not blocked; being told nothing is what would not be.
+    const stale = containmentWarnings(scope, lapsed, childCounty);
+    for (const w of stale) {
+      const ago = humanAge(Date.now() - new Date(w.claim.expires_at).getTime());
+      console.warn(`  ⚠ ${w.claim.scope} — ${w.claim.holder}'s lease LAPSED ${ago} ago `
+        + `${w.relation === "same" ? "on this exact scope" : `(${RELATION_PROSE[w.relation]})`}`
+        + `${w.claim.label ? `, "${w.claim.label}"` : ""}. The scope is free, but they may still `
+        + "be working. Check before you write.");
     }
 
     if (exact && !takeover) {
@@ -420,7 +454,7 @@ async function cmdClaim() {
       `INSERT INTO steward.claims (scope, label, holder, machine, session_ref, expires_at, notes)
        VALUES ($1, $2, $3, $4, $5, now() + make_interval(hours => $6), $7)
        RETURNING id, expires_at`,
-      [scope.canonical, label, who, machine, process.env.CLAUDE_SESSION_ID ?? null, hours ?? 8, notes]);
+      [scope.canonical, label, who, machine, process.env.CLAUDE_SESSION_ID ?? null, hours, notes]);
     await client.query("COMMIT");
 
     // stdout carries the scope alone, so `--if-held skip` is scriptable; the human line
@@ -481,7 +515,7 @@ async function cmdExtend() {
   const scopeArg = argv[1];
   if (!scopeArg || scopeArg.startsWith("--")) { console.error("steward extend: name a scope"); return 2; }
   const scope = parseScope(scopeArg);
-  const hours = hoursOpt(4);
+  const hours = hoursOpt(LEASE_HOURS);
   const { who, machine } = identity();
 
   const client = await connectOrWarn("extend");
@@ -489,9 +523,15 @@ async function cmdExtend() {
   try {
     // An EXPIRED lease is not extended, it is re-claimed. Extending one would resurrect a
     // scope that the board has already shown as free, possibly to somebody else.
+    //
+    // 🔴 IT RENEWS FROM NOW; IT DOES NOT ADD TO THE OLD EXPIRY. Adding made the lease
+    //    UNBOUNDED — three `extend` calls on a fresh lease put it three days out, straight
+    //    through the "shorter than a weekend" bound the duration was measured against, and
+    //    nothing said so. Renewing means a lease is never more than one measured lease away
+    //    from lapsing, however many times it is renewed.
     const { rows } = await client.query(
       `UPDATE steward.claims
-          SET expires_at = expires_at + make_interval(hours => $4)
+          SET expires_at = now() + make_interval(hours => $4)
         WHERE scope = $1 AND released_at IS NULL AND expires_at > now()
           AND holder = $2 AND machine = $3
         RETURNING expires_at`,
@@ -502,7 +542,7 @@ async function cmdExtend() {
       return 1;
     }
     const until = new Date(rows[0].expires_at).toISOString().slice(0, 16).replace("T", " ");
-    console.error(`steward: ${scope.canonical} extended by ${hours}h, now until ${until}Z`);
+    console.error(`steward: ${scope.canonical} renewed for ${hours}h, now until ${until}Z`);
     return 0;
   } finally {
     await client.end();
@@ -542,7 +582,7 @@ async function cmdWorktree() {
 
   const scope = canonicalWorktreeScope(top);
   const { who, machine } = identity();
-  const hours = hoursOpt(WORKTREE_MARKER_HOURS);
+  const hours = hoursOpt(MARKER_HOURS);
 
   const client = await connectOrWarn("worktree");
   if (!client) return 0;
@@ -605,7 +645,7 @@ if (!run) {
     + "  who                              show active claims and outstanding reservations\n"
     + "  sync --seed [--dry-run]          reconcile git history into steward.migration_slots\n"
     + "  slot <NS|shared> --purpose \"...\"  reserve the next free migration number (shared == the plain NNNN_ sequence)\n"
-    + "  claim <scope> [<scope>...]       take a jurisdiction lease (8h by default)\n"
+    + "  claim <scope> [<scope>...]       take a jurisdiction lease (24h by default, measured)\n"
     + "        --label \"...\"                 what you are doing there, for the board\n"
     + "        --hours N                     lease length, 1-168\n"
     + "        --if-held warn|fail|skip      held: name the holder (default) | stop | try the next candidate\n"
@@ -616,7 +656,7 @@ if (!run) {
     + "\n"
     + "  A scope is place:<geoid> | county:<fips> | state:<usps>. Exact collisions are refused by\n"
     + "  the database; a city inside a claimed county is a WARNING, because the strings differ.\n"
-    + "  worktree:<path> is a 12h MARKER, not a lease — it says a session started there, not that\n"
+    + "  worktree:<path> is a 24h MARKER, not a lease — it says a session started there, not that\n"
     + "  one is running. The SessionStart hook records it for you.");
   process.exit(2);
 }
