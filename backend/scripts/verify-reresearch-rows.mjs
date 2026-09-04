@@ -27,20 +27,20 @@
 //     read path serves. is_live and is_active are still PRINTED, because they are useful context,
 //     but they no longer decide anything.
 //
-// ⚠ TIER RESOLUTION IS OCD-STRUCTURAL and mirrors the classification federalCoverage.ts documents:
-// /cd: and the bare-country division are federal, a bare-state division is federal only for a
-// U.S. Senate title and otherwise state, /sldu: and /sldl: are state, county/place/school are
-// local, and is_judicial wins over all of it. It does NOT resolve for a politician with no
-// district — about a quarter of the researched corpus — so pass --tier=<federal|state|local|
-// judicial> to declare the batch's cohort. A row whose tier cannot be established FAILS rather
-// than passing unchecked; a declared tier that disagrees with the resolved one WARNS and the
-// declared value wins, since the operator knows which cohort they assembled.
+// ⚠ TIER RESOLUTION LIVES IN scripts/lib/office-tiers.mjs and is NOT restated here. This script
+// held its own copy for exactly one commit, which was already one more copy than the rule can
+// survive — office-tiers.mjs exists because the same CASE kept being re-derived slightly
+// differently, most consequentially over the two title formats sitting U.S. senators carry.
+// It does NOT resolve for a politician with no district — about a quarter of the researched
+// corpus — so pass --tier=<federal|state|local|judicial> to declare the batch's cohort. A row
+// whose tier cannot be established FAILS rather than passing unchecked; a declared tier that
+// disagrees with the resolved one WARNS and the declared value wins, since the operator knows
+// which cohort they assembled.
 import 'dotenv/config';
 import { readFileSync } from 'fs';
 import { Pool } from 'pg';
 import { crawlSite } from './lib/site-crawl.mjs';
-
-const TIERS = ['federal', 'state', 'local', 'judicial'];
+import { COMPASS_TIER_SQL, COMPASS_TIERS as TIERS } from './lib/office-tiers.mjs';
 
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith('--'));
@@ -119,17 +119,7 @@ for (const r of rows) {
 
   const { rows: pol } = await pool.query(
     `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title, d.ocd_id,
-            CASE
-              WHEN d.is_judicial THEN 'judicial'
-              WHEN d.ocd_id LIKE '%/cd:%' THEN 'federal'
-              WHEN d.ocd_id = 'ocd-division/country:us' THEN 'federal'
-              WHEN d.ocd_id ~ '^ocd-division/country:us/(state|district|territory):[a-z]{2}$'
-                   AND (o.title = 'Senator' OR o.title ~ '^U\\.S\\. Senate') THEN 'federal'
-              WHEN d.ocd_id ~ '^ocd-division/country:us/(state|district|territory):[a-z]{2}$' THEN 'state'
-              WHEN d.ocd_id LIKE '%/sldu:%' OR d.ocd_id LIKE '%/sldl:%' THEN 'state'
-              WHEN d.ocd_id LIKE '%/county:%' OR d.ocd_id LIKE '%/place:%' OR d.ocd_id LIKE '%school%'
-                   THEN 'local'
-            END AS tier
+            ${COMPASS_TIER_SQL} AS tier
        FROM essentials.politicians p
        LEFT JOIN essentials.office_terms ot ON ot.politician_id = p.id
        LEFT JOIN essentials.offices o  ON o.id = ot.office_id

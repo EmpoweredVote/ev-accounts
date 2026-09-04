@@ -110,6 +110,16 @@ export type FederalTier = 'senate' | 'house' | 'governor' | 'statewide' | 'state
  * Order matters — 'candidate' must win over everything (challengers sit at the
  * same districts as the seats they contest), and shadow senators must be caught
  * before the generic /cd: house branch.
+ *
+ * ⚠ THERE IS A SIBLING: `scripts/lib/office-tiers.mjs` maps the same people to
+ * the COMPASS vocabulary (federal | state | local | judicial) that
+ * compass_topic_roles uses, because a research batch asks "does this topic
+ * display for this person", not "how covered is this state". It is derived from
+ * the rules below rather than being a second opinion — in particular it carries
+ * the same two sitting-senator title formats. **Change both together.** It goes
+ * further in three places this module has no reason to: President and Vice
+ * President (bare country division, NULL here), district/territory divisions,
+ * and a judicial branch.
  */
 export const TIER_CASE_SQL = `CASE
     WHEN o.title ILIKE 'candidate for%' THEN 'candidate'
