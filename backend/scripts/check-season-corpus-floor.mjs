@@ -279,28 +279,40 @@ const FLOORS = {
     //   -------------------------------------------------
     //                         2,685 answers / 2,657 context
     //
-    // Derived from the per-topic counts of that batch, not read off `SELECT count(*)` — the
-    // same discipline season 1's numbers were set with, and for the same reason: a floor taken
-    // from "what prod reads today" silently absorbs whatever was already lost.
+    // These are not counted off prod. They are `CC_0058`'s OWN post-verify constants — the
+    // migration raises unless it wrote exactly 2,685 answers and 2,657 context rows, and its
+    // closing NOTICE prints both. That is the strongest provenance a floor can have: the number
+    // the writing migration refused to finish without.
     //
-    // 🔴 THE 28-ROW ANSWER/CONTEXT GAP IS KNOWN AND IS NOT YET EXPLAINED. Season 1's tables
-    //    lean the other way — 784 MORE context rows than answers, which is what documented
-    //    blanks look like (context that reasons about a topic, no answer asserted). Season 2
-    //    leans the wrong way: 28 Same-Sex Marriage answers carry NO context row at all, and
-    //    every one of them holds `value = '0.0'`.
+    // ⚠ THE 28-ROW DIFFERENCE IS THE BLANKS, AND IT IS REQUIRED — NOT A GAP TO INVESTIGATE.
+    //    An earlier version of this comment called it "not yet explained" and read the 28 as
+    //    unsourced rows at a forbidden value. That was wrong in both halves, and wrong in the
+    //    direction that costs the most: it invited someone to "fix" a ruling by re-researching
+    //    or deleting rows that are correct.
     //
-    //    That value should not exist. `scripts/verify-reresearch-rows.mjs` requires a discrete
-    //    integer 1–5 and says so in its own header, because the column CHECK permits 0.5 steps
-    //    and cannot enforce it; `0.0` appears nowhere in season 1's 33,022 answers. So these 28
-    //    are an unsourced position at a value the pipeline forbids, and they are seated on a
-    //    topic the batch otherwise researched properly.
+    //    `CC_0057` widened the CHECK to `value IN (0,1,2,3,4,5)` so the schema could say
+    //    "researched, and no rung states what they hold" — a fact distinct from an absent row
+    //    (never researched) and from a deleted one (which, under seasons, blanks nobody: the
+    //    read falls back to season 1). The season 2 Same-Sex Marriage ladder (`CA_0074`) retires
+    //    old rung 3, "let each state decide"; its rung_map marks that rung `invalidated`. The 28
+    //    politicians who sat there have nowhere to go on the new ladder, and Chris ruled on
+    //    2026-09-02: blank them, and keep season 1's rung-3 answer as the historical record.
     //
-    //    They are counted in the floor anyway, ON PURPOSE. Setting the answer floor at 2,657 to
-    //    pre-absorb their deletion would authorise, in advance, a 28-row delete nobody has yet
-    //    decided on — and would let it happen without the gate ever mentioning it. At 2,685 the
-    //    deletion has to be deliberate: whoever retires these rows lowers this floor by 28 in
-    //    the SAME pull request and names the disposition, exactly as the blanking rule above
-    //    requires. A floor is cheap to lower on purpose and expensive to lower by accident.
+    //    Their having NO season 2 context is likewise deliberate and enforced. Their season 1
+    //    reasoning argues federalism — a position the season 2 row no longer records — so
+    //    carrying it would put prose arguing a stance under a spoke that shows none.
+    //    `CC_0058` §3f RAISES if any blanked answer carries season 2 reasoning, and again if any
+    //    non-blank reaches season 2 without it. The 28-row difference between these two floors
+    //    is that invariant, expressed in row counts.
+    //
+    //    So: 2,685 − 2,657 = 28 is the CORRECT relationship between these numbers, and a future
+    //    reader who finds them equal should ask what happened to the blanks. Season 1 leaning
+    //    the other way — 784 MORE context than answers — is the older blank idiom (context, no
+    //    answer) and does not apply here; season 2's blank is a row that says 0.
+    //
+    //    A cleanup that deletes them would be a REGRESSION, not a retirement. If some future
+    //    season gives that federalism position a rung again, the 28 get re-seated by a migration
+    //    that raises this floor, and the movement is visible here either way.
     answers: flagInt('floor-answers', 2, 2685),
     context: flagInt('floor-context', 2, 2657),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
