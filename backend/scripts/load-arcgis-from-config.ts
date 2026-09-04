@@ -173,7 +173,10 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
         (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
       VALUES (
         $1, $2, $3, $4, $5,
-        public.ST_SetSRID(public.ST_Force2D(public.ST_GeomFromGeoJSON($6)), 4326),
+        -- ST_MakeValid repairs ring self-intersections / bowties from upstream ArcGIS
+        -- sources so invalid geometry can never land (an invalid polygon turns the
+        -- address-search reachability job red — MCCSC D3 and sacramento-council-district-6).
+        public.ST_MakeValid(public.ST_SetSRID(public.ST_Force2D(public.ST_GeomFromGeoJSON($6)), 4326)),
         $7,
         now()
       )
@@ -193,17 +196,25 @@ async function runChecks(client: pg.PoolClient, records: SourceRecord[]): Promis
   for (const rec of records) {
     if (rec.status !== 'active' && rec.status !== 'manual_geojson') continue;
     const prefix = (rec.geo_id_template ?? '').replace('{N}', '');
-    const { rows } = await client.query<{ c: string }>(
-      `SELECT COUNT(*)::text AS c FROM essentials.geofence_boundaries
+    const { rows } = await client.query<{ c: string; invalid: string }>(
+      `SELECT COUNT(*)::text AS c,
+              COUNT(*) FILTER (WHERE geometry IS NOT NULL AND NOT public.ST_IsValid(geometry))::text AS invalid
+         FROM essentials.geofence_boundaries
         WHERE mtfcc = $1 AND geo_id LIKE $2`,
       [rec.mtfcc, `${prefix}%`],
     );
     const c = parseInt(rows[0].c, 10);
+    const invalid = parseInt(rows[0].invalid, 10);
     if (c === 0) {
       console.error(`[132-arcgis] CHECK FAIL ${rec.jurisdiction_id}: 0 rows for mtfcc=${rec.mtfcc} prefix=${prefix}`);
       failures++;
+    } else if (invalid > 0) {
+      // Inserts ST_MakeValid, so this should be 0; assert it so bad geometry can never
+      // silently reach the address-search reachability job.
+      console.error(`[132-arcgis] CHECK FAIL ${rec.jurisdiction_id}: ${invalid}/${c} rows INVALID (mtfcc=${rec.mtfcc})`);
+      failures++;
     } else {
-      console.error(`[132-arcgis] CHECK PASS ${rec.jurisdiction_id}: ${c} rows`);
+      console.error(`[132-arcgis] CHECK PASS ${rec.jurisdiction_id}: ${c} rows, all valid`);
     }
   }
   if (failures > 0) process.exitCode = 2;
