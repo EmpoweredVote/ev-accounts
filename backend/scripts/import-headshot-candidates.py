@@ -52,6 +52,10 @@ CACHE = ".tmp-headshot-cache"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 ap = argparse.ArgumentParser()
+ap.add_argument("--json", default=".tmp-all-candidates.json",
+                help="the approved candidates file, matching render-headshot-contact-sheet.py's "
+                     "--json. Pass the SAME path that was rendered: writing a wave's list over "
+                     "the shared default would clobber another wave's in-flight approval")
 ap.add_argument("--exclude", nargs="*", default=[], help="names to skip")
 ap.add_argument("--only", nargs="*", default=[], help="import only these names")
 ap.add_argument("--dry-run", action="store_true")
@@ -68,7 +72,7 @@ key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 conn = psycopg2.connect(os.environ["DATABASE_URL"], sslmode="require")
 cur = conn.cursor()
 
-cands = [c for c in json.load(open(".tmp-all-candidates.json", encoding="utf-8")) if c.get("url")]
+cands = [c for c in json.load(open(args.json, encoding="utf-8")) if c.get("url")]
 if args.only:
     cands = [c for c in cands if c["name"] in args.only]
 cands = [c for c in cands if c["name"] not in args.exclude]

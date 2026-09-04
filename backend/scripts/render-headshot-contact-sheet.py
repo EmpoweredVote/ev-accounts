@@ -56,6 +56,10 @@ ap.add_argument("--max-upscale", type=float, default=1.0,
                 help="mirror of the importer flag. A source too small to reach 600x750 is "
                      "embedded at the size that will actually SHIP, not enlarged to fill the "
                      "card, so the operator approves the real pixels")
+ap.add_argument("--embed-width", type=int, default=0,
+                help="downsample the EMBEDDED copy to this width (height follows 4:5). 0 "
+                     "keeps the full 600px render. Only for waves too large for the 16 MB "
+                     "Artifact cap -- it changes the sheet, never the crop or the import")
 ARGS = ap.parse_args()
 TITLE = ARGS.title
 
@@ -98,6 +102,16 @@ for c in cands:
         # out at 600x750; the browser scales it, exactly as the site does.
         if upscale <= ARGS.max_upscale:
             img = img.resize((TARGET_W, TARGET_H), Image.LANCZOS)
+        # ⚠ EMBED SIZE IS A TRANSPORT CONCERN, NOT A CROP ONE. A published Artifact is
+        # capped at 16 MB, and a wave large enough to matter blows through it: the 233-face
+        # Georgia sheet came to 36.5 MB at full 600x750. Downsampling the EMBED keeps one
+        # sheet and one approval -- which is the whole point of a contact sheet -- while the
+        # crop, the upscale badge and everything the importer does stay untouched. Splitting
+        # into four sheets would preserve pixels the operator does not need and cost the
+        # side-by-side comparison that catches wrong-person errors.
+        if ARGS.embed_width and ARGS.embed_width < img.size[0]:
+            eh = round(img.size[1] * ARGS.embed_width / img.size[0])
+            img = img.resize((ARGS.embed_width, eh), Image.LANCZOS)
         buf = BytesIO()
         img.save(buf, "JPEG", quality=84, optimize=True)
         c["data"] = base64.b64encode(buf.getvalue()).decode()

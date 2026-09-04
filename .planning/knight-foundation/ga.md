@@ -10,7 +10,8 @@ Jurisdictions: **Columbus** (Muscogee), **Macon** (Bibb), **Milledgeville** (Bal
 | GA-2 | Legislature: 180 House + 56 Senate | ✅ **APPLIED 2026-09-01** (`CC_0025`, `CC_0026`) |
 | GA-3 | **Milledgeville + Baldwin County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0042`/`X0043`, `CC_0027`–`CC_0029`, 18 seats, 14/18 headshots, banner live |
 | GA-4 | **Columbus + Muscogee County** | ✅ **ALL 5 STAGES 2026-09-01** — `X0044`, `CC_0034`–`CC_0036`, **16 seats**, **15/16 headshots**, banner live. Georgia's second complete jurisdiction |
-| GA-5 | **Macon-Bibb** | ✅ **STAGES 1–4 APPLIED 2026-09-02** — `X0045`, **`CC_0049`–`CC_0051`** (renumbered from `CC_0045`–`CC_0047` after a collision), **15 seats** (10 city, 5 county), 0 vacancies. All probes pass. ▶ Stage 5 (headshots + banner) remains |
+| GA-5 | **Macon-Bibb** | ✅ **ALL 5 STAGES 2026-09-02** — `X0045`, **`CC_0049`–`CC_0051`** (renumbered from `CC_0045`–`CC_0047` after a collision), **15 seats** (10 city, 5 county), 0 vacancies, 14/15 headshots, banner live. All probes pass |
+| GA-6 | **The legislature's portraits** | ✅ **APPLIED 2026-09-02** — **233 imported**, no migration. GA is now **239/239** seated legislators and statewide officers with a renderable portrait |
 
 ---
 
@@ -2000,3 +2001,176 @@ better count. It is Cantrell's own `CC_` namespace being shared with parallel Ca
 `MEMORY.md` says "He never reads the shared max again", and that is no longer true of `CC_` itself.
 Consider a per-session or per-wave sub-band (e.g. Knight waves reserve `CC_01xx`) so that two Cantrell
 sessions cannot contend at all.
+
+---
+
+## GA-6 — the legislature's 233 portraits, ✅ APPLIED 2026-09-02. No migration.
+
+**Georgia's legislative half of stage 5 was the slice's last real debt, and the tracker never
+counted it.** `ga.md` and `PROGRAM.md` both described stage 5 as "headshots + banner" for the
+*jurisdiction*, so the 236 legislative seats sat outside every stage-5 tally. Measured against
+production: **233 of 239** seated members and statewide officers had no renderable portrait, against
+Florida's **159 of 159**. Florida had set the precedent a slice earlier and nobody had matched it.
+
+🔴 **THE TRACKER WAS WRONG IN THE OTHER DIRECTION TOO.** It said GA-5 stage 5 remained. Production
+disagreed: the Macon banner was already merged in the essentials repo (PR #116, key `macon`,
+`match: 'exact'`) and Macon-Bibb already carried **14 of 15** hosted headshots. Only Coroner Leon
+Jones was blank. **Re-measure before believing a status column** — this is the Long Beach lesson
+(a baseline claiming 9 absent council districts that all existed) in a second dress.
+
+### The portraits were already sourced — this is a resolver, not a search
+
+GA-2 cached a full-resolution portrait URL for all 236 members in
+`backend/data/ga-legislature-roster.json` (the member page's "High Resolution Photo" link, which is
+the portrait URL with `?size=mpSm` removed — 1688x2283 against the thumbnail's 90x120). So the only
+real question was **which production row each portrait belongs to**.
+
+🔴 **RESOLVED BY OFFICE, NEVER BY NAME.** The key is (chamber → MTFCC, district `geo_id`):
+`STATE_LOWER` → `G5220`, `STATE_UPPER` → `G5210`. Georgia's `sldl` and `sldu` `geo_id`s **both start
+at 13001**, so `13040` is HD-40 *and* SD-40 — pairing `geo_id` with `mtfcc` is what keeps a senator's
+face off a representative. The name rides along only as a **redundancy check**; a disagreement is
+reported and skipped, never resolved by guessing.
+
+**233 resolved · 0 unresolved seats · 0 name conflicts · 233 byte-distinct images.** The distinctness
+count is not decoration: had the state served one placeholder for members without a portrait, every
+copy would be byte-identical, and a single repeated hash is what would have exposed it.
+
+### 🔴🔴 legis.ga.gov TRUNCATES A BODY AT EXACTLY 1 MiB AND RETURNS IT AS A CLEAN 200
+
+Two portraits came back as **exactly 1,048,576 bytes** with a valid JPEG `SOI`, a `Content-Length`
+header agreeing with the short body, and **no `EOI` marker**. The status agrees. The length agrees
+with itself. The magic number agrees. **Every cheap test passes and only a full decode fails.**
+
+⚠ **MY OWN PROBE ACCEPTED BOTH**, because it tested the first three bytes. **The header is not the
+file.** This is the "a WAF rejection can arrive as HTTP 200" rule with the failure mode moved: the
+body is not *wrong*, it is *short*, and nothing in the response says so.
+
+> **The only honest test of an image is a full decode.** `Image.verify()` checks the header and will
+> pass a truncated file; `Image.load()` is what fails. Both were run over all 233 cached bodies:
+> **231 decode cleanly, 0 undecodable, 2 capped.**
+
+⚠ **Seven files end without an `EOI` marker and decode perfectly** — trailing bytes after the end
+marker. A "no EOI" test alone would have condemned seven good portraits; it is a *hint* that earns a
+decode, not a verdict.
+
+🟢 **`?size=mpLg` IS A VARIANT NOBODY HAD RECORDED** — 261x348, between the 90x120 `mpSm` thumbnail
+and the full-resolution original. It is the largest variant that decodes for the two capped members,
+so **Tyler Paul Smith (HD-18) and Yasmin Neal (HD-79) ship at 2.30x upscale**, with the derivation
+written into their candidate rows. There is no better source on the state's own site. The full
+`?width=` / `?w=` / `?maxwidth=` family all return the same truncated 1 MiB body.
+
+### ⚠ 600x750 IS A CEILING, NOT A CONTRACT
+
+The importer enlarges only within `--max-upscale` (default 1.0), so a source below target ships at
+its **native 4:5 size** rather than being blown up — which is what the proof sheet displayed and what
+was approved. **A verifier asserting the exact 600x750 condemns nine correct rows**, and mine did on
+its first pass. Assert the **shape** and the **ceiling**.
+
+Nine sources sit below target: Tyler Paul Smith and Yasmin Neal at 2.30x, then Trey Rhodes 1.97,
+Alan Powell 1.89, Lee Hawkins 1.63, David Lucas 1.51, Deborah Silcox 1.39, Chuck Martin 1.25, and
+Elena Parent 1.03 — whose source is **landscape** (1024x731), so its 4:5 crop is tight.
+
+### Two shared scripts gained one flag each, both defaulting to today's behaviour
+
+- **`render-headshot-contact-sheet.py --embed-width`.** A published Artifact is capped at **16 MB**
+  and the 233-face sheet came to **36.5 MB** at full render. Downsampling the *embed* keeps **one
+  sheet and one approval** — which is the entire point of a contact sheet — while the crop, the
+  upscale badge and the import stay untouched. Four sheets would have preserved pixels nobody needed
+  and cost the side-by-side comparison that catches wrong-person errors. GA shipped at 300px, 11.4 MB.
+- **`import-headshot-candidates.py --json`**, mirroring the renderer's. The candidate path was
+  hardcoded to `.tmp-all-candidates.json`, so a wave had to write its list **over the shared default**
+  and clobber any other wave's in-flight approval.
+
+### Verified in production — end state, not delta
+
+| Chamber | Offices | Seated | Renderable | `photo_custom_url` | `politician_images` |
+| --- | --- | --- | --- | --- | --- |
+| Georgia House of Representatives | 180 | 180 | **180** | 180 | 180 |
+| Georgia State Senate | 56 | 55 | **55** | 55 | 55 |
+| Governor / Lt Gov / AG / SoS | 4 | 4 | **4** | 4 | 4 |
+
+**239 of 239 seated.** The one empty seat is **SD-12**, correctly vacant. Every row carries **both**
+`photo_custom_url` — the thing that actually renders — **and** a `politician_images` row; a
+`politician_images` row alone changes nothing a voter sees.
+
+🟢 **AND THE OBJECTS WERE FETCHED BACK.** All 235 seated legislators' stored URLs were re-fetched from
+the CDN, decoded, and checked for 4:5 within the ceiling: **235 render, 0 broken, 0 blank.** A
+database row is a claim about the database; this is the claim about what a browser gets, and
+`HAS_RENDERABLE_PHOTO_SQL` accepts anything URL-shaped, so a 404 would have counted as coverage.
+⚠ **A positive control ran alongside** — a bogus object key that had to fail, and did (HTTP 400). A
+verifier that passes everything is indistinguishable from one that tests nothing.
+
+### ✅ GA-7 — the two stragglers, CLOSED 2026-09-02
+
+**1. Leon Jones (Bibb Coroner) HAS A PORTRAIT. Macon-Bibb is now 15/15.**
+Macon Magazine, *Heroes among us* (Oct/Nov 2021) — a **first-person feature BY Jones**, credit
+**"Photography by Matt Odom"**, 1707x2560.
+
+⚠ **THE DEFAULT CROP WAS NOT USABLE, AND ONLY LOOKING AT IT SHOWED THAT.** The centre 4:5 crop puts
+a **"STOP THE KILLING / Bibb County Coroner's Office" advocacy sign across the lower half of the
+frame.** It is a prop shot, and it would put a slogan on a voter-facing profile beside plain
+headshots. Nothing in the metadata says so — the source is a legitimate press portrait at ample
+resolution, and every automatic check passes.
+
+🟢 **THE TIGHTENED CROP FIXED IT AND SETTLED IDENTITY AT THE SAME TIME.** Approved as Option B —
+`{"zoom": 2.0, "anchor_x": 0.433, "anchor_y": 0.183}` — head and shoulders, sign excluded,
+0.70x (a downscale, no upscale). At that magnification **the badge reads `LEON JONES / CHIEF
+CORONER / MACON-BIBB`**: the photograph identifies its own subject, which is stronger evidence than
+any filename. ▶ **A per-person `crop` override is the tool for this**, and it lives on the candidate
+row; `headshot_crop.py` documents it.
+
+**2. Marc D'Antonio (Muscogee Probate Judge) STAYS CLEAN-NULL. Seven routes, all dead.**
+
+| Route | Result |
+| --- | --- |
+| `columbusga.gov/probate/` — his own court | still does not name its judge (now measured **three** times, across GA-4, GA-5 and GA-7) |
+| Ballotpedia person page | no photograph |
+| Ballotpedia 2024 candidate page | silhouette placeholder |
+| `branch.vote` candidate page | no image; links only to Facebook and LinkedIn |
+| `dantoniolaw.net` | **DNS no longer resolves** |
+| Council of Probate Court Judges of Georgia | no portrait |
+| Web search | nothing |
+
+His only portraits are on Facebook and LinkedIn, which the standing rule excludes. **A blank beats
+a link.** Georgia's local and county headshots close at **44 of 49** — Baldwin's four plus D'Antonio.
+
+⚠ **I PROBED GUESSED `wp-content/uploads` FILENAMES FOR JONES BEFORE FINDING THE REAL SOURCE.** 42
+URLs, 0 hits, and it was the wrong move regardless: a guessed image URL is the off-by-one class by
+construction, because nothing ties the bytes to the person. **Find the page, then read the `<img>`.**
+
+### ✅ `CC_0055` — the D'Antonio start date, APPLIED 2026-09-02
+
+`CC_0036` seated him open-ended at `start_precision 'unknown'` because no start was then known.
+Ballotpedia's person page, re-read **rendered** on 2026-09-02: *"elected judge in 2012 to replace
+Julia W. Lumpkin"*. Georgia county officers take office the following January, so the judgeship
+begins **2013-01-01**.
+
+🔴 **PRECISION IS `year`, NOT `day`.** The year is sourced; **the day is a rule applied to it**, and
+no source publishes an oath date. Identical to Bibb's **David Davis** and **Sarah S. Harris** in
+`CC_0051` — both `2013-01-01` at `year`, both from the same rule — and matched to them deliberately.
+⚠ It is **not** the shape of Macon-Bibb's commissioners at `day`, whose **charter states the
+commencement rule in terms** (Sec. 9(c), Sec. 10(b)).
+⚠ **The 2009 appointment was to ASSOCIATE judge, a different office.** Not written.
+
+🔴 **THE MIGRATION DECIDES NOTHING ABOUT WHETHER HE IS STILL THERE.** GA-5 established no departure
+*and* no currency. **A start date is a claim about when a tenure BEGAN; it asserts nothing about
+today.**
+
+🟢 **THE GATE ASSERTS THE BLAST RADIUS, NOT JUST THE CHANGE.** Columbus held **13 undated rows of
+16**; exactly one was to move, so the gate requires **12 still undated**. A widened `WHERE` fails
+there instead of silently dating twelve people from one source.
+
+⚠ **IDEMPOTENCE WAS TESTED BY RUNNING THE BODY TWICE INSIDE THE TRANSACTION, AND IT MATTERED MORE
+THAN IT LOOKED: the `source` column APPENDS.** An unguarded re-run would concatenate the derivation
+onto itself. Source length held at 388 across both runs. The `BEGIN … ROLLBACK` dry-run read the row
+**before, inside and after**, so the rollback was confirmed rather than assumed.
+
+⚠ **`UPDATE … FROM` CANNOT REFERENCE THE TARGET TABLE INSIDE A JOIN'S `ON`.** `JOIN politicians p ON
+p.id = ot.politician_id` is a parse error, not a filter that quietly matches nothing. Match the
+person with `EXISTS` instead.
+
+### ▶ What is still open in Georgia
+
+1. **Baldwin's four** — Probate Judge, Tax Commissioner, Coroner, Surveyor. Five routes tried, all
+   dead. **Leave them clean-null: a blank beats a link.**
+2. **Marc D'Antonio's portrait**, above — seven routes, all dead. Same disposition.

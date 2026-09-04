@@ -19,7 +19,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | # | State | Jurisdictions | 1 geo | 2 legis | 3 city | 4 county | 5 assets |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | ✅ | ✅ | WIP |
+| 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | WIP | WIP | — |
 | 4 | IN | Fort Wayne, Gary | ✅ | — | — | — | — |
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
@@ -46,11 +46,23 @@ Palm Beach County and Miami/Miami-Dade**. **73 local and county offices, 72 fill
 three city governments, not four. 🔴🔴 **STAGE 5 CLOSED 2026-08-30 — FLORIDA IS THE FIRST SLICE IN THE PROGRAM TO FINISH ALL FIVE
 STAGES.** 72 of 72 local and county officials carry a headshot, and five banner keys are live.
 
-🟢 **GEORGIA'S STAGES 3 AND 4 ARE OPEN, 1 JURISDICTION OF 3 (GA-3, 2026-09-01).** Milledgeville and
-Baldwin County are seated and gated: **18 offices, 18 people, 0 vacancies** across two governments,
-plus the state's 236 legislative offices. Both stages stay `WIP` until **Columbus/Muscogee and
-Macon-Bibb** land — and both of those are **CONSOLIDATED**, so their stage 4 drops the county
-commission and keeps only the separately elected county officers (spec §3.2).
+🔴🔴 **GEORGIA IS COMPLETE ACROSS ALL FIVE STAGES (2026-09-02) — the program's second
+slice to finish, after Florida.** All three jurisdictions are seated and gated: **Milledgeville/Baldwin
+18/18, Columbus/Muscogee 16/16, Macon-Bibb 15/15** — **49 local and county offices across three
+governments, 49 seated, 0 vacancies** — plus the state's 240 legislative and statewide offices,
+239 seated with **SD-12 correctly vacant**. Three banner keys are live: `milledgeville`, `columbus`,
+`macon`.
+
+🔴 **STAGE 5 HELD A DEBT THE STAGE COLUMN COULD NOT SEE.** "Assets" was tracked per
+*jurisdiction*, so the **236 legislative seats sat outside every stage-5 tally** — Georgia was at
+**6 of 239** renderable portraits while the column read `WIP` for reasons having nothing to do with it.
+Florida had quietly set the precedent one slice earlier at 159 of 159. **GA-6 closed it: 233 imported,
+239/239, no migration.** ▶ **Every later slice inherits this — count the legislature's portraits
+inside stage 5, not beside it.**
+
+⚠ **AND THE COLUMN WAS WRONG THE OTHER WAY.** It said GA-5 stage 5 remained; production already
+held the Macon banner and **14 of 15** Macon-Bibb headshots. **Re-measure before believing a status
+column** — the same shape as Long Beach's "absent" council districts, which all existed.
 
 ⚠ **GA-3 is the program's second slice to open stage 3 at all**, and the first outside Florida. The
 county-officer template it set — the four officers named in Ga. Const. Art. IX, Sec. I, Par. III plus
@@ -120,6 +132,24 @@ Re-measure rather than trust these once any wave has applied.
 
 Total owed: **2,155**, of which **395 are now seated** (FL complete; GA 235 of 236, SD-12 vacant). Remaining: **1,760**.
 
+🔴 **SEATED IS NOT THE SAME QUESTION AS PORTRAITED, AND ONLY THIS TABLE WAS BEING WATCHED.**
+Measured 2026-09-02 across the five states with a seated legislature. The read path is
+`COALESCE(photo_custom_url, photo_origin_url, '')`, so the split below is what a voter actually gets:
+
+| State | Seated | Renders from a **hosted** object | Falls back to `photo_origin_url` | Nothing renders |
+| --- | --- | --- | --- | --- |
+| FL | 159 | **159** | 0 | 0 |
+| GA | 239 | **239** (after GA-6) | 0 | 0 |
+| CA | 137 | 136 | 0 | 1 |
+| CO | 105 | **20** | **84** | 1 |
+| NC | 175 | **6** | **163** | 6 |
+
+⚠ **CO AND NC READ AS COVERED WITHOUT HOLDING A PORTRAIT WE CONTROL.** 247 rows between them render
+off a third-party `photo_origin_url`, which `HAS_RENDERABLE_PHOTO_SQL` accepts because it is
+URL-shaped. Some of those are portraits; some are the roster page the portrait sat on. **Neither
+state has had this wave's treatment**, and their coverage will fall the day a source re-organises.
+Do not read CO or NC as done.
+
 ### Geofence polygons present
 
 | State | sldl | sldu | place | county |
@@ -161,6 +191,8 @@ in it is reachable by address. **Ten remain.**
 | **Miami-Dade County** | **19** | **19** | **19** |
 | **Milledgeville city** | **7** | **7** | **7** |
 | **Baldwin County** | **11** | **11** | **7** |
+| **Columbus Consolidated** | **16** | **16** | **15** |
+| **Macon-Bibb** | **15** | **15** | **15** |
 | every other jurisdiction | 0 | 0 | 0 |
 
 Bradenton and Manatee measured 2026-08-28 after FL-3. Manatee's twelfth office is Commission
@@ -172,9 +204,14 @@ Re-measured 2026-08-30 after FL-6, which closed stages 3 and 4. **Florida now ho
 county offices across SEVEN governments, 72 seated, 1 vacant** — plus 164 legislative offices. Palm
 Beach has **no city half**, so it is a county row with no municipal partner. **All 72 now carry a headshot (FL-7, 2026-08-30) — the slice's stage-5 debt is CLEARED.**
 
-Measured 2026-09-01 after GA-3. **Georgia now holds 18 local and county offices across TWO
-governments, 18 seated, 0 vacant** — Milledgeville 7/7 and Baldwin County 11/11 — plus 236 legislative
-offices. 🔴 **14 of 18 now carry a headshot (2026-09-01); 4 do not** — measured with the
+Re-measured 2026-09-02 after GA-6, which closed the slice. **Georgia holds 49 local and county
+offices across THREE governments, 49 seated, 0 vacant** — Milledgeville 7/7 + Baldwin County 11/11,
+Columbus Consolidated 16/16, Macon-Bibb 15/15 — plus 240 legislative and statewide offices, 239
+seated. **44 of the 49 carry a headshot; 5 do not** — Baldwin's four, plus the Muscogee Probate Judge.
+The Bibb Coroner was closed by GA-7 from a Macon Magazine portrait, using a per-person crop override
+to exclude an advocacy sign the default crop included. **The legislature is 239 of 239.**
+
+The 2026-09-01 reading below stands as written, for the record. 🔴 **14 of 18 now carry a headshot (2026-09-01); 4 do not** — measured with the
 `HAS_RENDERABLE_PHOTO_SQL` predicate from `photoCoverage.ts` rather than by counting
 `politician_images` rows, because a `politician_images` row changes nothing a voter sees.
 The four without one are the **Probate Judge, Tax Commissioner, Coroner and Surveyor** — part-time
@@ -195,7 +232,8 @@ elected local offices found anywhere in the program.
 ### Banners present
 
 `long beach`, `san jose`, and — from FL-7 — `miami`, `tallahassee`, `bradenton` plus the program's
-first COUNTY key, `12099` Palm Beach, and — from GA-3 — **`milledgeville`, the program's first Georgia key**. **19 cities still missing.**
+first COUNTY key, `12099` Palm Beach, and — from GA-3/GA-4/GA-5 — **`milledgeville`, `columbus` and
+`macon`**, which complete Georgia. **17 cities still missing.**
 
 ✅ **MILLEDGEVILLE'S BANNER IS LIVE (GA-3, 2026-09-01)**: the Old State Capitol / Georgia Military
 College across State House Square — Clifflandis, **CC0** — certified in BOTH boxes and registered
