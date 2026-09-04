@@ -16,6 +16,42 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 
 ---
 
+## Consolidated platform engine (2026-09)
+
+`ev-accounts-api` is now the **single always-on backend** for the platform. Two apps that used to run
+as their own Render web services were folded in as modules and their old services retired:
+
+| Folded app | Engine mounts | Old Render service |
+|---|---|---|
+| Civic Trivia Championships | `/api/trivia/…` **and** `/ctc/api/…` | `civic-trivia-backend` — **suspended 2026-09-04** |
+| Validation Quests | `/api/vq/…` **and** `/vq/api/…` | `empowered-validation-quests` — **suspended 2026-09-04** |
+
+Each app is served from BOTH its tidy `/api/<app>/…` path and a short `/<alias>/api/…` path, so a
+frontend cuts over with **one env var (`VITE_API_URL`) and no code change**. The frontends now point at
+`https://api.empowered.vote/ctc` (Civic Trivia) and `https://api.empowered.vote/vq` (Validation Quests).
+
+**Folded crons.** Each app's scheduled jobs run inside the engine, behind an **OFF-by-default flag** so
+they never double-run against a still-live old service:
+
+- `VQ_CRONS_ENABLED=true` → VQ consensus (every 5 min) + quest rotation (daily 04:00 UTC).
+- `TRIVIA_CRONS_ENABLED=true` → CTC expiration sweep (hourly), election detection (daily 06:00 ET),
+  pipeline (daily 02:00 ET).
+
+Flip a flag ON only at the moment its old service is suspended — **suspend the old service first, then
+set the flag** — otherwise both processes run the same cron.
+
+**Database access.** Civic Trivia queries the `trivia` schema with its **own** pg pool
+(`search_path=trivia`); the engine's `ev_api` role was granted access by migration
+`CA_0102_grant_trivia_schema_to_ev_api.sql` — **re-run it if the database is ever rebuilt**. Validation
+Quests uses PostgREST (supabase-js) against `validation_quests` / `connect` / `empower` — no pg grant,
+but those schemas must be PostgREST-exposed (see Step 1b).
+
+The old services are **suspended, not deleted** — fully reversible. Delete only after a soak confirms
+the engine's folded crons and both apps are healthy. Express note: the engine runs **Express 5** (both
+folded apps were already on Express 5).
+
+---
+
 ## Prerequisites
 
 - Access to Supabase Dashboard for the production project
@@ -40,11 +76,15 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `DATABASE_URL` | Supabase (scoped role `ev_api`) | **Runtime uses the least-privilege `ev_api` role, NOT `postgres`** (see "Database role" below). Session pooler, port 5432. Format: `postgresql://ev_api.<ref>:<pwd>@<pooler-host>:5432/postgres`. Do NOT use the transaction pooler (port 6543) — multi-statement queries fail there. |
 | `REDIS_URL` | Upstash Console | `rediss://...` (TLS URL) |
 | `CORS_ORIGIN` | Set manually | Frontend origin, e.g. `https://empoweredvote.com` |
-| `QUEST_SERVICE_KEY` | Shared secret | Used by Validation Quests service to authenticate against accounts API |
-| `TRIVIA_SERVICE_KEY` | Shared secret | Used by CTC service to authenticate against accounts API |
+| `QUEST_SERVICE_KEY` | Shared secret | Historically authenticated the standalone Validation Quests service against this API. VQ is now folded in and most calls run in-process; still read by the consensus job's XP/callback path until Phase 4 finishes converting it. |
+| `TRIVIA_SERVICE_KEY` | Shared secret | Historically authenticated the standalone CTC service. CTC is now folded in; the XP-award path still uses it until Phase 4 completes. |
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
-| `GEMS_SERVICE_KEYS` | Shared secrets | Comma-separated `name:key` pairs for gem award service auth. Optional — absent means all `/award` requests get 401. |
+| `GEMS_SERVICE_KEYS` | Shared secrets | JSON map `{"<key>":["<gem-type>",…]}` for gem-award auth (NOT a bare string — a bare value makes the engine `JSON.parse` exit at boot). Optional — absent means all `/award` requests get 401. |
+| `VQ_CRONS_ENABLED` | Set manually | `'true'` runs Validation Quests' consensus (5 min) + rotation (daily 04:00 UTC) crons **inside the engine**. Default OFF. Turn ON only when the old `empowered-validation-quests` service is suspended, to avoid double-execution. |
+| `TRIVIA_CRONS_ENABLED` | Set manually | `'true'` runs Civic Trivia's expiration (hourly), election-detection (06:00 ET) + pipeline (02:00 ET) crons **inside the engine**. Default OFF. Turn ON only when the old `civic-trivia-backend` service is suspended. |
+| `TRIVIA_REDIS_URL` | Upstash (TCP) | node-redis (TCP) URL for Civic Trivia game sessions. Do **not** reuse `REDIS_URL` (that is Upstash REST/HTTPS; node-redis needs TCP). Unset = in-memory sessions (fine on a single instance). |
+| `EMPOWERED_ACCOUNTS_URL` / `EMPOWERED_ACCOUNTS_API_URL` | Set manually | Base URL the folded CTC/VQ code uses for any remaining tier/XP/gem loopback calls — set to the engine's own URL (`https://ev-accounts-api.onrender.com`); it loops back to itself. Graceful-degrades if unset. |
 | `WORKOS_CLIENT_ID` | WorkOS Dashboard → API Keys | Public client id (`client_01…`). Setting it makes the API accept WorkOS AuthKit tokens as a **second** issuer alongside Supabase. Absent = Supabase-only, i.e. pre-migration behavior. See "WorkOS AuthKit" below. |
 | `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | **Secret** (`sk_test_…` staging / `sk_live_…` production). Used by `POST /api/auth/workos/provision` and by WorkOS-first signup, both of which link accounts. Absent = those paths return 503; token verification never uses it. |
 | `WORKOS_ISSUER`, `WORKOS_JWKS_URL` | Set manually | Optional overrides, only for a custom auth domain. Defaults derive from `WORKOS_CLIENT_ID`. |
@@ -282,6 +322,19 @@ NOTIFY pgrst, 'reload config';
 This is required for any RPC or table in the connect/empower/inform schemas to be callable
 via the Supabase JS client. Without it, calls to connect.award_gems, connect.promote_to_connected,
 etc. will return 404.
+
+**Folded apps (consolidation).** The folded Validation Quests code reaches the `validation_quests`
+schema over PostgREST, so add it to the exposed list if it is not already present:
+
+```sql
+ALTER ROLE authenticator SET pgrst.db_schemas TO 'public, connect, empower, inform, validation_quests';
+NOTIFY pgrst, 'reload config';
+```
+
+Civic Trivia does **not** use PostgREST — it reaches the `trivia` schema through the engine's `ev_api`
+pool role, granted by `backend/migrations/CA_0102_grant_trivia_schema_to_ev_api.sql`. That migration
+also sets `ALTER DEFAULT PRIVILEGES` so future `trivia` tables auto-grant `ev_api`. Re-run CA_0102 if
+the database is rebuilt.
 
 ---
 
