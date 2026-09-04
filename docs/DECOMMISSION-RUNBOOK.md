@@ -262,8 +262,8 @@ These items are not required for the cutover to be complete, but should be done 
 - **CTC Render service:** Check for any `ev-accounts-api.onrender.com` env vars (noted in Section 1 pre-flight). Update each to `https://accounts.empowered.vote`.
 
 - **trivia_service Supavisor registration (Phase 41 open blocker):** CTC is currently using the postgres superuser connection. To switch to the scoped `trivia_service` role:
-  1. Supabase Dashboard > Database > Roles > find `trivia_service` > Reset Password > set to `***REMOVED-SECRET***`
-  2. Update CTC's `DATABASE_URL` to: `postgresql://trivia_service.kxsdzaojfaibhuzmclfq:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres`
+  1. Supabase Dashboard > Database > Roles > find `trivia_service` > Reset Password. Choose a new strong password and store it in the team secret manager — never write it into this runbook or any file in the repo.
+  2. Update CTC's `DATABASE_URL` to: `postgresql://trivia_service.kxsdzaojfaibhuzmclfq:<PASSWORD>@aws-0-us-west-1.pooler.supabase.com:5432/postgres`
 
 - **Delete EV-Backend Render service (optional, T+1 month):** After one month with no issues and the GitHub repo archived, delete the `ev-backend` Render service entirely. This stops any Render billing for the suspended service if applicable.
 
