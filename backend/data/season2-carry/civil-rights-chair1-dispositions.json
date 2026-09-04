@@ -1,0 +1,538 @@
+{
+  "_file": "civil-rights-chair1-dispositions.json",
+  "_intended_path": "backend/data/season2-carry/civil-rights-chair1-dispositions.json",
+  "_created": "2026-09-01",
+  "_by": "Chris Cantrell (4e6dde8f-2bd0-4054-824f-4164744165ea)",
+  "_topic": "civil-rights",
+  "_chair": 1,
+  "_rows": 209,
+  "_status": "COMPLETE 2026-09-01 — all 209 dispositioned, rescue pass done. Ready to write the migration.",
+  "_what_this_is": [
+    "A keyword-derived bucketing of all 210 chair-1 seatings against the v2 chair-1 wording",
+    "('mandate racial equity requirements in all institutions', reparations clause removed).",
+    "Every row was read once. Bucket assignment is reproducible from the SQL in _method,",
+    "but it is a SORTING PASS, not a decision. Each row still needs confirming before any",
+    "migration is written — see _known_false_negatives for proof the sorting is imperfect."
+  ],
+  "_headline_finding": {
+    "summary": "The reparations clause is NOT the main problem with this chair.",
+    "detail": [
+      "115 of 210 seatings (55%) rest on evidence that describes CHAIR 2 verbatim —",
+      "'strengthen civil rights enforcement and address systemic discrimination'. Hate-crime",
+      "bill co-sponsorship, CROWN Act co-sponsorship, Equality Act votes, anti-discrimination",
+      "bills and police reform are enforcement, not a mandate that institutions meet equity",
+      "requirements. A further 30 name no instrument at all.",
+      "",
+      "Only 14 rows depend on the reparations clause the rewrite removes — the question that",
+      "prompted this audit is the smallest of the four problems found.",
+      "",
+      "This is the CA_0056 pattern: evidence that establishes DIRECTION but not a specific",
+      "chair. It is wrong under the v1 wording too, which is why both precedents applied their",
+      "corrections in place to open Season 1 rather than waiting for the season boundary."
+    ]
+  },
+  "buckets": {
+    "A_carry_1": {
+      "n": 25,
+      "disposition": "CARRY at chair 1",
+      "criterion": "names an equity MANDATE — affirmative action, DEI requirements, hiring or admissions preferences, a racial-equity framework/commission with mandate force",
+      "confidence": "medium — confirm each; see false negatives",
+      "names": [
+        "Andy Ellis",
+        "Angie Nixon",
+        "Bernie Sanders",
+        "Bobby Scott",
+        "Charles Booker",
+        "Chris Rabb",
+        "Clyde Shabazz",
+        "Cori Bush",
+        "Danny K. Davis",
+        "Darrell Odom",
+        "E. Denise Simmons",
+        "Edward J. Markey",
+        "Greg Wims",
+        "Isaac G. Bryan",
+        "Jeff Gonzalez",
+        "Julia M. Mejia",
+        "Julian Beaudion",
+        "Larry Foy",
+        "Michael Dublin",
+        "Ron Reynolds",
+        "Shamann Walton",
+        "Shirley N. Weber",
+        "Steven Welzer",
+        "Tony Cardenas",
+        "William Gates"
+      ]
+    },
+    "B_move_to_2": {
+      "n": 115,
+      "disposition": "MOVE to chair 2",
+      "criterion": "evidence is enforcement/anti-discrimination only: hate-crime bills, CROWN Act, Equality Act, LGBTQ+ protections, police reform, fair housing",
+      "confidence": "high as a class — chair 2's wording describes this evidence exactly",
+      "note": "This is the bulk of the work and the bulk of the correction. Moving 115 rows from 1 to 2 changes the Civil Rights distribution from 210/841/48/138/340 to roughly 95/956/48/138/340.",
+      "names": [
+        "Abdul El-Sayed",
+        "Abigail Spanberger",
+        "Adam Gómez",
+        "Adrian C. Madaro",
+        "Adrianne P. Ramos",
+        "Adrienne A. Jones",
+        "Andrea Fletcher Harrison",
+        "Andres X. Vargas",
+        "Anne Healey",
+        "Anthony G. Brown",
+        "Antonio F. Cabral",
+        "Antonio Hayes",
+        "Aruna Miller",
+        "Ashanti Martinez",
+        "Ben Barnes",
+        "Bill Ferguson",
+        "Bonnie Watson Coleman",
+        "Brandy Fluker-Reid",
+        "Brooke Lierman",
+        "C. T. Wilson",
+        "Chao Wu",
+        "Cheryl E. Pasteur",
+        "Christopher J. Worrell",
+        "Chynah Tyler",
+        "Clarence K. Lam",
+        "Connie Chan",
+        "Cory V. McCray",
+        "Courtney Watson",
+        "Cynthia S. Creem",
+        "Dalya Attar",
+        "Dana Jones",
+        "Dana Stein",
+        "Daniel F. Cahill",
+        "Daniel J. Hunt",
+        "David A. LeBoeuf",
+        "David Biele",
+        "Dawne Shand",
+        "Debra Davis",
+        "Denise Roberts",
+        "Diana DiZoglio",
+        "Diana M. Fennell",
+        "Dylan A. Fernandes",
+        "Edith J. Patterson",
+        "Frank A. Moran",
+        "Freddy Puza",
+        "Gabriel M. Moreno",
+        "Ghazala Hashmi",
+        "Guy Guzzone",
+        "Harry Bhandari",
+        "Heather Bagnall",
+        "Jackie Goldberg",
+        "James B. Eldridge",
+        "Jamila J. Woods",
+        "Jason M. Lewis",
+        "Jay Livingstone",
+        "Jeff Prang",
+        "Jen Terrasa",
+        "Jennifer McClellan",
+        "Jessica A. Giannino",
+        "Jessica Feldmark",
+        "Joan B. Lovely",
+        "Joe Vogel",
+        "John Heilman",
+        "Jon S. Cardin",
+        "Joseline Peña-Melnyk",
+        "Judith A. Garcia",
+        "Julian A. Cyr",
+        "Julian Ivey",
+        "Karen Toles",
+        "Kate Donaghue",
+        "Kent Roberson",
+        "Kim Driscoll",
+        "Kim Ross",
+        "Kris Fair",
+        "Kym Taylor",
+        "Liz Miranda",
+        "Luke Clippinger",
+        "Lydia M. Edwards",
+        "Malcolm Augustine",
+        "Manny Cruz",
+        "Marjorie C. Decker",
+        "Mark S. Chang",
+        "Mark Warner",
+        "Marvin E. Holmes, Jr.",
+        "Mary A. Lehman",
+        "Mary S. Keefe",
+        "Mary Washington",
+        "Maura Healey",
+        "Michelle M. DuBois",
+        "N. Scott Phillips",
+        "Nancy J. King",
+        "Natalie Higgins",
+        "Natalie Ziegler",
+        "Nicole A. Williams",
+        "Pam Lanman Guzzone",
+        "Pamela Beidle",
+        "Patricia D. Jehlen",
+        "Pavel M. Payano",
+        "Peggy Flanagan",
+        "Rebecca L. Rausch",
+        "Russell E. Holmes",
+        "Ryan M. Hamilton",
+        "Sally P. Kerans",
+        "Samantha Montaño",
+        "Shelly Hettleman",
+        "Suzanne Bonamici",
+        "Sydney Kamlager-Dove",
+        "Tackey Chan",
+        "Terri L. Hill",
+        "Tiffany T. Alston",
+        "Tim Kaine",
+        "Tricia Farley-Bouvier",
+        "Vanna Howard",
+        "Veronica Turner",
+        "Wes Moore"
+      ]
+    },
+    "C_reparations_dependent": {
+      "n": 14,
+      "disposition": "RE-SOURCE, then carry or move",
+      "criterion": "cites reparations and no separate equity mandate — the limb the v2 wording drops",
+      "confidence": "medium — several of these have a second limb that may carry them at 1 or 2",
+      "note": "The original reason this audit was opened. It is 14 rows, not 210.",
+      "names": [
+        "Ayanna Pressley",
+        "Cory Booker",
+        "Dennis Clark",
+        "Holly J. Mitchell",
+        "Janice Hahn",
+        "Jason Brown II",
+        "Malcolm P. Ruff",
+        "Maxine Waters",
+        "Moshe Landman",
+        "Nadarius E. Clark",
+        "Pete Aguilar",
+        "Royal Webster",
+        "Tina S. McKinnor",
+        "Yasmine-Imani McMorrin"
+      ]
+    },
+    "D_other_instrument": {
+      "n": 26,
+      "disposition": "READ INDIVIDUALLY",
+      "criterion": "names a real instrument, but one that is neither an equity mandate nor civil-rights enforcement",
+      "note": "Contains clear off-axis seatings — a gender-neutral town charter amendment, a blasphemy-law repeal, a menopause accommodation bill. Several are BLANK candidates.",
+      "names": [
+        "Alice H. Peisch",
+        "Andrew C. Pruski",
+        "Brian J. Feldman",
+        "Brian M. Crosby",
+        "Bridget M. Plouffe",
+        "Bud L. Williams",
+        "Carlos González",
+        "Charlotte Crutchfield",
+        "David Moon",
+        "Dawn Gile",
+        "Dennis C. Gallagher",
+        "Derrick Coley",
+        "Edward R. Philips",
+        "Emily Shetty",
+        "Francisco E. Paulino",
+        "Jheanelle K. Wilkins",
+        "Joan Meschino",
+        "Joshua Tarsky",
+        "Kriselda Valderrama",
+        "Lorig Charkoudian",
+        "Mary-Dulany James",
+        "Orlando Ramos",
+        "Rita A. Mendes",
+        "Sandra Hollins",
+        "Tommy Vitolo",
+        "Tram T. Nguyen"
+      ]
+    },
+    "E_no_instrument": {
+      "n": 30,
+      "disposition": "BLANK unless rescued by research",
+      "criterion": "no bill, vote, roll call or authored instrument named anywhere in the reasoning",
+      "note": "Includes generic 'backed civil rights and anti-discrimination legislation' with nothing cited, and genuinely off-axis material (student-newspaper censorship, rally attendance, a school-funding partnership). This is the rescue-pass population.",
+      "names": [
+        "Abdel-Rahman Elnoubi",
+        "Abdulahi Abdalla",
+        "Aletheia McCaskill",
+        "Andrea Joy Campbell",
+        "Christopher Harris",
+        "Craig J. Zucker",
+        "Deborah B. Goldberg",
+        "Donna Kenley",
+        "Elizabeth Embry",
+        "Estela A. Reyes",
+        "Gabriel Acevero",
+        "Hilda L. Solis",
+        "Jackie Addison",
+        "Jackie Fielder",
+        "Jay Jones",
+        "Jeffrie E. Long, Jr.",
+        "Karen Kwan",
+        "Karen Lewis Young",
+        "Karen Simpson",
+        "Lesley J. Lopez",
+        "Manohar Raju",
+        "Marlon Amprey",
+        "Melissa Wells",
+        "Michelle Rief",
+        "Regina T. Boyce",
+        "Rex Richardson",
+        "Samuel I. Rosenberg",
+        "Sheila Ruth",
+        "Sheree Sample-Hughes",
+        "Stephanie Smith"
+      ]
+    }
+  },
+  "_known_false_negatives": [
+    {
+      "name": "Rex Richardson",
+      "sorted_into": "E_no_instrument",
+      "belongs_in": "A_carry_1",
+      "why": "Authored and led the city's Racial Equity and Reconciliation Initiative — an equity-driven framework. The pattern required 'racial equity' adjacent to framework/initiative; the intervening 'and Reconciliation' defeated it. Proof the sorting needs per-row confirmation."
+    }
+  ],
+  "_data_bugs_found": [
+    {
+      "severity": "high",
+      "name": "Jeff Gonzalez",
+      "issue": "The politician_context.reasoning attached to Jeff Gonzalez describes a DIFFERENT PERSON — it opens 'Smallwood-Cuevas is a career civil rights and labor activist who authored SCR 89...'. The seating is evidenced against someone else's record.",
+      "action": "Fix independently of this re-audit. Check whether the same mis-attachment exists on other topics for either person."
+    }
+  ],
+  "_next_steps": [
+    "READY TO WRITE THE MIGRATION: 175 value updates (1 -> 2), 14 answer+context deletions, 20 rows unchanged.",
+    "Re-source the 7 weak carries (Sanders, Scott, Booker, Davis, Beaudion, Ellis, Walton) — OnTheIssues/Wikipedia-based.",
+    "VERIFY Connie Chan's authorship of SF File #190547 before crediting or discrediting.",
+    "Re-check the next free CC_ number — CC_0037 is taken by the Gonzalez fix.",
+    "Blanking deletes from OPEN Season 1; 14 deletions is the live-data cost."
+  ],
+  "_method": {
+    "source": "inform.politician_answers JOIN inform.politician_context WHERE topic_key='civil-rights' AND value=1",
+    "equity_mandate": "reasoning ~* '(affirmative action|DEI|equity requirement|mandat\\w* .{0,30}equity|racial equity (commission|framework|initiative|agenda)|hire more|admissions preference|set-aside)'",
+    "reparations": "reasoning ~* 'reparation'",
+    "enforcement": "reasoning ~* '(hate crime|CROWN Act|Equality Act|anti-?discrimination|antidiscrimination|police reform|Safe Communities|LGBTQ|transgender|fair housing)'",
+    "names_instrument": "reasoning ~* '(H\\.?B\\.?[0-9]|S\\.?B\\.?[0-9]|H\\.[0-9]|S\\.[0-9]|A\\.?B\\.?[ ]?[0-9]|H\\.R\\.|roll ?call|SCR |SJ )'",
+    "precedence": "A (equity mandate) > C (reparations) > B (enforcement) > D (other instrument) > E (none)"
+  },
+  "_note_209": "Jeff Gonzalez removed by CC_0037 — his chair-1 seating was evidenced against Lola Smallwood-Cuevas. 210 -> 209.",
+  "phase1_confirmed_A_and_C": {
+    "reviewed": 38,
+    "result": {
+      "carry_at_1": 13,
+      "move_to_2": 22,
+      "blank": 3
+    },
+    "carry_strong_primary_instrument": {
+      "n": 6,
+      "names": [
+        "Isaac G. Bryan",
+        "Shirley N. Weber",
+        "Julia M. Mejia",
+        "E. Denise Simmons",
+        "Janice Hahn",
+        "Tina S. McKinnor"
+      ],
+      "why": [
+        "Bryan: AB 7, college admissions preferences for descendants of enslaved people.",
+        "Weber: ACA 5 reinstating affirmative action (Prop 16, 2020).",
+        "Mejia: Fair Chance Act establishing a Chief Diversity Officer; Office of Black Male Advancement.",
+        "Simmons: cannabis licensing pathways reserved for women and minority entrepreneurs.",
+        "Hahn: co-authored the Anti-Racist and Diversity Initiative (ARDI) — strengthened on full read, was mis-sorted into C.",
+        "McKinnor: AB 57 reserved allocation for descendants — a set-aside, not a reparations payment."
+      ]
+    },
+    "carry_but_needs_resourcing": {
+      "n": 7,
+      "names": [
+        "Bernie Sanders",
+        "Bobby Scott",
+        "Charles Booker",
+        "Danny K. Davis",
+        "Julian Beaudion",
+        "Andy Ellis",
+        "Shamann Walton"
+      ],
+      "why": "On-axis (affirmative action / DEI / hiring mandates) but asserted via OnTheIssues, isidewith, Wikipedia or a party platform rather than an instrument the member authored or voted on. Same evidence class CA_0056 rejected for Social Security."
+    },
+    "move_to_2": {
+      "n": 22,
+      "why": "Evidence is enforcement, or reparations with no separate institutional mandate. Chair 2 describes it.",
+      "names": [
+        "Ayanna Pressley",
+        "Chris Rabb",
+        "Clyde Shabazz",
+        "Cori Bush",
+        "Cory Booker",
+        "Darrell Odom",
+        "Edward J. Markey",
+        "Greg Wims",
+        "Holly J. Mitchell",
+        "Larry Foy",
+        "Malcolm P. Ruff",
+        "Maxine Waters",
+        "Michael Dublin",
+        "Moshe Landman",
+        "Nadarius E. Clark",
+        "Pete Aguilar",
+        "Ron Reynolds",
+        "Royal Webster",
+        "Steven Welzer",
+        "Tony Cardenas",
+        "Yasmine-Imani McMorrin",
+        "Angie Nixon"
+      ]
+    },
+    "blank": {
+      "n": 3,
+      "names": [
+        "Dennis Clark",
+        "William Gates",
+        "Jason Brown II"
+      ],
+      "why": "Nothing survives once the reparations clause is removed. Gates's own reasoning concedes it is 'rhetorical rather than a detailed institutional mandate'."
+    },
+    "implication": [
+      "Bucket A was the STRONGEST bucket and only 46% of it holds at chair 1.",
+      "Only 6 of 209 seatings so far rest on a primary instrument that mandates equity of institutions.",
+      "If that retention rate holds, the defensible chair-1 population is well under 20 — not the 25 the",
+      "first-pass triage suggested, and far from the 209 currently seated."
+    ]
+  },
+  "phase2_confirmed_B": {
+    "reviewed": 115,
+    "result": {
+      "move_to_2": 74,
+      "blank_candidate_needs_rescue": 41
+    },
+    "criterion_move": "reasoning names a real instrument — a bill number, or an Act/Ordinance/Resolution by title",
+    "criterion_blank": "pure assertion: 'Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills' with no instrument named",
+    "notes": [
+      "Bucket B was NOT homogeneous — sampling would have missed this. 41 of 115 name nothing.",
+      "17 of the 115 carry Maryland roster boilerplate ('Maryland lists every sponsor on the bill page,",
+      "and this member's name appears on each') — an explicit admission the evidence is roster",
+      "membership rather than a demonstrated position. Same class CA_0056 rejected for Social Security.",
+      "The 41 DO have sources, but the sources are legislator profile pages (mgaleg.maryland.gov,",
+      "ballotpedia.org) that evidence existence, not a position. Only 1 of 115 cites a URL inline.",
+      "5 pairs inside chair 1 share byte-identical reasoning across different people (e.g. Kent Roberson",
+      "/ Kym Taylor; Karen Toles / Tiffany T. Alston) — small in volume but confirms templating."
+    ],
+    "false_alarm_recorded": {
+      "claim": "369 texts shared across 1,596 rows table-wide, one by 54 politicians",
+      "verdict": "NOT A PROBLEM — these are shared roll-call votes and co-sponsorships. 54 legislators voting Yes on the same Wisconsin joint resolution SHOULD share identical reasoning. Raised and withdrawn; do not re-chase."
+    }
+  },
+  "running_totals": {
+    "reviewed": 153,
+    "carry_at_chair_1": 13,
+    "move_to_chair_2": 96,
+    "blank_or_rescue": 44,
+    "unreviewed_D_plus_E": 56,
+    "projection": [
+      "D and E are the weakest buckets by construction, so most of the remaining 56 should blank.",
+      "Chair 1 looks likely to land somewhere near 13-20 seatings, down from 209.",
+      "Civil Rights distribution would move from 209/841/48/138/340 to roughly 15/940/48/138/340.",
+      "That is a large, user-visible change to the topic — not a quiet data cleanup."
+    ]
+  },
+  "phase3_confirmed_D_and_E": {
+    "reviewed": 56,
+    "result": {
+      "carry_at_1": 4,
+      "move_to_2": 42,
+      "blank": 10
+    },
+    "carry": {
+      "names": [
+        "Rex Richardson",
+        "Brian J. Feldman",
+        "Carlos González",
+        "Joan Meschino"
+      ],
+      "why": [
+        "Richardson: authored the city's Racial Equity and Reconciliation Initiative — the false negative flagged in the first pass, now confirmed.",
+        "Feldman: County Board Member Antibias Training Act (SB0293) REQUIRING antibias training — an institutional requirement.",
+        "González: H.485, state grants targeting minority communities — a targeted allocation.",
+        "Meschino: H.1889 'An Act to eliminate disparate impact' plus bias-free child removal bills."
+      ]
+    },
+    "blank_off_axis": {
+      "names": [
+        "Abdel-Rahman Elnoubi",
+        "Abdulahi Abdalla",
+        "Christopher Harris",
+        "Donna Kenley",
+        "Michelle Rief",
+        "Jackie Fielder",
+        "Deborah B. Goldberg",
+        "Dennis C. Gallagher",
+        "Joshua Tarsky",
+        "Tommy Vitolo"
+      ],
+      "why": [
+        "Two are the same ACPS student-newspaper censorship story — a free-speech dispute, not racial or social inequality.",
+        "Kenley: attending a 'No Kings' rally. Attendance is not a position.",
+        "Harris: a school-board pledge to create 'a safe, caring inclusive environment'.",
+        "Rief: a letter asking the city to preserve a $350k schools partnership.",
+        "Gallagher / Vitolo: gender-neutral wording in a town charter, and name choice after marriage.",
+        "Tarsky: repealing the criminalisation of blasphemy — religious speech, a different axis."
+      ]
+    }
+  },
+  "FINAL": {
+    "rows": 209,
+    "carry_at_chair_1": 20,
+    "move_to_chair_2": 175,
+    "blank_deleted": 14,
+    "distribution": {
+      "before": "209 / 841 / 48 / 138 / 340",
+      "after": "20 / 1016 / 48 / 138 / 340",
+      "rows_deleted": 14
+    },
+    "note": "The rescue pass cut deletions from 54 to 14 — a far less destructive outcome than the pre-rescue projection. Chair 1 still loses 90% of its population, which is the correct result: the chair means 'mandate racial equity requirements in all institutions', and only 20 of 209 have evidence of that."
+  },
+  "rescue_pass": {
+    "method": "The 41 bucket-B blanks split by OFFICE TYPE, which turned out to be the predictor. Executives with order-making power impose equity requirements on institutions (chair 1); rank-and-file legislators co-sponsor enforcement bills (chair 2). 11 executives researched individually; 30 boilerplate legislators settled as chair 2 by class, because their destination does not depend on which bill is found.",
+    "carry_at_1": {
+      "n": 3,
+      "Maura Healey": "EO 612 instituting equity assessment GOVERNMENT-WIDE — all Executive Department agencies must perform ongoing equity assessments. Chair 1's wording almost verbatim. Also EO 630, Advisory Council on Black Empowerment. mass.gov primary.",
+      "Wes Moore": "Executive orders requiring 70 state agencies to report minority business enterprise goals and benchmarks; procurement reform expanding participation for disadvantaged businesses. governor.maryland.gov primary.",
+      "Kim Driscoll": "As Salem mayor created the city's first DEI Director and the Race Equity Commission, charged with implementing a Race Equity Action Plan and designing hiring/recruitment policies. salemma.gov primary."
+    },
+    "move_to_2": {
+      "n": 7,
+      "names": [
+        "Anthony G. Brown",
+        "Brooke Lierman",
+        "Aruna Miller",
+        "John Heilman",
+        "Jeff Prang",
+        "Abdul El-Sayed",
+        "Connie Chan"
+      ],
+      "notes": [
+        "Brown: created an Office of Equity and won 2023 Civil Rights Division legislation, but his stated agenda is civil rights ENFORCEMENT — chair 2.",
+        "Lierman: enforcing EXISTING MBE rules via the Board of Public Works; much of it campaign-stage rather than enacted.",
+        "Miller: ENOUGH Act and Community Investment Venture Fund are investments, and are Moore-Miller administration initiatives rather than her instruments.",
+        "Heilman: authored West Hollywood's HIV/AIDS and gender-identity anti-discrimination ordinances — real, but anti-discrimination is chair 2.",
+        "El-Sayed: Detroit health-equity programmes address disparities without mandating anything of institutions."
+      ]
+    },
+    "flagged_do_not_credit": {
+      "Connie Chan": "SF File #190547 requires city departments to produce Racial Equity Action Plans and designate racial equity leaders — textbook chair 1. But it dates to 2019 and Chan took office December 2020, so she almost certainly did not author it. Search only said it 'appears to be associated' with her. Placed at chair 2 on her departmental-accountability work. VERIFY AUTHORSHIP before any chair-1 claim."
+    },
+    "blank": {
+      "n": 1,
+      "names": [
+        "Freddy Puza"
+      ],
+      "why": "First openly LGBTQ+ mayor of Culver City and diversity rhetoric, but no ordinance or instrument found."
+    },
+    "settled_by_class": {
+      "n": 30,
+      "disposition": "move to chair 2",
+      "why": "Boilerplate Maryland/Massachusetts legislators. Any civil-rights bill places them at chair 2, and chair 2 is the destination regardless of which bill it is — so per-member research could not change the answer."
+    }
+  }
+}
