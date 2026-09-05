@@ -30,6 +30,7 @@
     "check:answer-seasons:verbose": "node scripts/check-answer-season-consumers.mjs --verbose",
     "check:federal-cohort": "node scripts/federal-cohort.mjs --check",
     "cohort:federal": "node scripts/federal-cohort.mjs",
+    "leads:congress": "node scripts/congress-sponsorship-leads.mjs",
     "check:season-floor": "node scripts/check-season-corpus-floor.mjs",
     "check:season-floor:verbose": "node scripts/check-season-corpus-floor.mjs --verbose",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
