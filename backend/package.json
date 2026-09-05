@@ -14,6 +14,8 @@
     "typecheck": "tsc --noEmit",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
     "check:reservations": "node scripts/check-migration-reservations.mjs",
+    "check:deletable": "node scripts/check-worktree-deletable.mjs",
+    "install:hooks": "git -C .. config core.hooksPath .githooks",
     "check:answer-delete-guards": "node scripts/check-answer-delete-guards.mjs",
     "check:answer-delete-guards:list": "node scripts/check-answer-delete-guards.mjs --list",
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
