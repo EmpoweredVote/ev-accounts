@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# §9 rules 1 and 3 — see docs/superpowers/specs/2026-09-04-steward-coordination-design.md
+#
+#   1. One session owns a worktree.
+#   3. Always commit with an explicit pathspec: git commit -F msg -- <path>
+#
+# 🔴 THIS HOOK NEVER FAILS A COMMIT. `|| true` is deliberate and load bearing: a coordination
+#    tool that can wedge a commit gets deleted within the day, and then the rule has no observer
+#    at all. CLAUDE.md forbids --no-verify, so the only honest way to keep that promise is to
+#    never be worth bypassing.
+#
+# Skips silently where node_modules is absent (a fresh clone, CI), exactly like the SessionStart
+# hook. Install with:  git config core.hooksPath .githooks
+[ -d backend/node_modules ] && node backend/scripts/steward-precommit.mjs || true
+exit 0

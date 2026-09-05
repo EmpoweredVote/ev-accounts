@@ -562,10 +562,32 @@ on 2026-09-04, where `C:\EV-Accounts` changed branch three times under a running
 These belong in `CLAUDE.md`. The `worktree:` claim scope in §6 step 6 would make them visible
 rather than merely written down, which is why it is sequenced last rather than never.
 
-> **As built (2026-09-04):** step 6 shipped, and rule 2 above now has an observer. The
-> SessionStart hook records the directory and branch, and reports **`🔴 HEAD MOVED in <path>`**
-> or **`⚠ another session was last seen in <path>`** before anything is touched. It is a marker,
-> not a lease — see §6. Rules 1, 3 and 4 remain rules; nothing watches them.
+> **As built (2026-09-04):** step 6 shipped, and rule 2 gained an observer — the SessionStart
+> hook records the directory and branch and reports **`🔴 HEAD MOVED in <path>`** or
+> **`⚠ another session was last seen in <path>`** before anything is touched. It is a marker,
+> not a lease — see §6.
+>
+> **All four now have one.** Rules 1 and 3 share a `pre-commit` hook, because they are one
+> signal: rule 3 exists *because* of rule 1, so the warning is graded — a note when you are
+> alone, **`🔴 COMMITTED WITHOUT A PATHSPEC IN A SHARED WORKTREE`** naming the other session
+> when someone else has been in this checkout within 12 hours. Rule 4 is `check:deletable`.
+>
+> Two things this cost, both worth stating:
+>
+> - 🔴 **Rule 4 as written can never pass.** "Untracked-and-ignored count is zero" is false for
+>   every worktree this repo makes — `node_modules` and a `.env` copy are always there. A
+>   checklist whose first item always fails is one people stop reading, which is why it was run
+>   by hand three times rather than automated. The check asks what the rule *means*: is anything
+>   here that exists nowhere else? A `.env` counts as a copy **only once byte-compared**.
+> - 🔴 **The positive control earned itself on its first run.** `git status --ignored` returns
+>   ~1.4 MB here, overflowing `execFileSync`'s 1 MB default with `ENOBUFS`; the error handler
+>   swallowed it into an empty result, and the verdict would have read **"0 untracked, SAFE TO
+>   DELETE"** for a worktree full of files. The control caught it before it could answer once.
+>
+> ⚠ **A hook cannot be pushed to anyone.** `core.hooksPath` is local config, so rules 1 and 3
+> are observed only for a clone that has run `npm run install:hooks`. Rule 4's check is a
+> command, so it has no such limit — and no automatic trigger either, since deletion is not
+> hookable. Neither observer blocks anything.
 
 ---
 

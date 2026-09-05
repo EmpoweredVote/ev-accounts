@@ -281,13 +281,42 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
       This is the opposite of a jurisdiction claim, because the fact is different.
 - 🔴 **COMMIT WITH AN EXPLICIT PATHSPEC**: `git commit -F msg -- <path>`. Staging carefully is
   not enough, because it is the *other* session's `git add -A` that sweeps your files in.
-- **Before deleting a worktree or branch**, check all four: untracked-and-ignored count is zero,
-  the branch is fully merged into `origin/master`, the merged content is byte-identical, and the
-  repo's stash count is unchanged (stashes are shared and are usually someone else's).
-  🔴 **Run a positive control on any detector that reports "nothing found."** Two such detectors
-  were silently broken on 2026-09-04 and only a control exposed them: a file-mtime scan whose
-  threshold predated the checkout, and a `curl` sweep where the host had begun 403-ing every
-  request, turning "this file does not exist" into "you are being blocked".
+  - 🟢 **A PRE-COMMIT HOOK NOW WATCHES THIS.** Install it once per clone:
+    `npm run install:hooks --prefix backend` (sets `core.hooksPath` to `.githooks`).
+    It grades the warning, because rule 3 only matters when rule 1 is broken: a note when you
+    are alone, and **`🔴 COMMITTED WITHOUT A PATHSPEC IN A SHARED WORKTREE`**, naming the other
+    session, when someone else has been in this checkout in the last 12 hours.
+  - ⚠ **IT NEVER BLOCKS A COMMIT**, on any path, including a dead database or its own crash.
+    A hook that can wedge a commit gets deleted, and then the rule has no observer at all.
+    A hook cannot be pushed to anyone — it is opt-in per clone, so a colleague who has not run
+    the installer is unobserved.
+- **Before deleting a worktree or branch**, run the four checks — as **one command**:
+
+  ```bash
+  npm run check:deletable --prefix backend -- /c/ev-accounts-<topic>
+  #   exit 0 = safe, and it prints the exact removal commands
+  #   exit 1 = do not delete, with every blocker named
+  ```
+
+  It checks: fully merged into `origin/master`; merged content byte-identical **for the paths
+  this branch touched** (a whole-repo diff would report everyone else's merges); stash count
+  unchanged (pass `STASH_BASELINE=<n>`; stashes are shared and usually someone else's); and
+  nothing untracked that exists **nowhere else**.
+  - ⚠ **"Untracked count is zero" can never be true here** — every worktree carries
+    `node_modules` and a `.env` copy. The check asks what the rule *means*: `node_modules` is
+    regenerable, and a `.env` is a copy **only once it has been byte-compared**. An unverified
+    `.env` counts as unique, because it could hold a credential that exists nowhere else.
+  - 🔴 **It plants its own positive control** — writes a file, confirms its scan sees it,
+    removes it — and **refuses to give a verdict if the scan came back blind**. That is not
+    ceremony: on its first run the scan was blind, because `git status --ignored` returns
+    ~1.4 MB here and overflowed `execFileSync`'s 1 MB default with `ENOBUFS`, which the error
+    handler swallowed into an empty result. Without the control it would have said
+    **"0 untracked, SAFE TO DELETE"** for a worktree full of files.
+  - 🔴 **Run a positive control on any detector that reports "nothing found"** — the rule this
+    encodes. Two detectors were silently broken on 2026-09-04 and only a control exposed them:
+    a file-mtime scan whose threshold predated the checkout, and a `curl` sweep where the host
+    had begun 403-ing every request, turning "this file does not exist" into "you are being
+    blocked".
 
 ## Repo facts worth knowing
 
