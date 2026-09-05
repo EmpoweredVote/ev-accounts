@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   LEASE_HOURS, MARKER_HOURS, EXPIRED_GRACE_HOURS, EXPIRY_WARN_HOURS,
-  leaseStatus, humanAge,
+  leaseStatus, humanAge, humanAgo,
 } from './steward-lease.mjs';
 
 // The design left lease duration open: "Eight hours is a guess. It wants to be longer than a
@@ -109,5 +109,21 @@ describe('humanAge', () => {
     expect(humanAge(0)).toBe('just now');
     expect(humanAge(-5000)).toBe('just now');
     expect(humanAge(20000)).toBe('just now');
+  });
+});
+
+describe('humanAgo', () => {
+  // 🔴 THE REGRESSION THIS PINS WAS VISIBLE ON THE LIVE BOARD: "seen just now ago". Three call
+  //    sites each wrote `${humanAge(x)} ago`, and "just now" is the one value that already
+  //    carries its own tense. The suffix belongs here, not at the callers.
+  it('does not say "just now ago"', () => {
+    expect(humanAgo(0)).toBe('just now');
+    expect(humanAgo(1000)).toBe('just now');
+  });
+
+  it('suffixes every other age', () => {
+    expect(humanAgo(40 * 60000)).toBe('40m ago');
+    expect(humanAgo(3.5 * 3.6e6)).toBe('3h 30m ago');
+    expect(humanAgo(26 * 3.6e6)).toBe('1d 2h ago');
   });
 });
