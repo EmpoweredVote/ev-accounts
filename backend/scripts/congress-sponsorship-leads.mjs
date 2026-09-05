@@ -142,6 +142,30 @@ async function fetchAll(bioguideId, kind) {
     const batch = json[kind === 'sponsored-legislation' ? 'sponsoredLegislation' : 'cosponsoredLegislation'] ?? [];
     items.push(...batch);
     if (batch.length < LIMIT) return { items, complete: true };
+
+    // ── Stop once the record is older than we asked for ──────────────────────
+    //
+    // The endpoint returns newest-first, so once a WHOLE page falls before
+    // --since, every remaining page does too and fetching them is pure waste.
+    // This is the difference between a sweep that finishes and one that does
+    // not: Markey carries 11,680 bills (47 pages per endpoint) and only the
+    // first handful are in scope, and it was members like him — not rate
+    // limits, which never fired — that stalled the cohort run at 31 of 100.
+    //
+    // ⚠ THE TEST IS A WHOLE PAGE, NOT THE FIRST OLD ITEM, on purpose. Stopping
+    //    at the first pre-cutoff date would trust the ordering to be perfect;
+    //    requiring every item on a 250-row page to be old tolerates local
+    //    disorder while still cutting the tail. With --since=0 nothing is
+    //    skipped and the walk is exhaustive, exactly as before.
+    if (SINCE) {
+      const newest = batch
+        .map((it) => Number.parseInt((it.introducedDate ?? '').slice(0, 4), 10))
+        .filter(Number.isInteger);
+      if (newest.length === batch.length && Math.max(...newest) < SINCE) {
+        return { items, complete: true };
+      }
+    }
+
     offset += LIMIT;
     await sleep(250);
   }
