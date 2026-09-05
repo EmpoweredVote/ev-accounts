@@ -1,9 +1,16 @@
 # `trivia/` — Civic Trivia Championships, folded into the engine
 
+> ✅ **CANONICAL — this is the source of truth for the Civic Trivia backend.** Engine
+> consolidation is complete: the standalone `civic-trivia-backend` Render service is
+> **retired** (suspended 2026-09-04) and the `Civic-Trivia-Championships` repo backend
+> is **FROZEN** (see that repo's `backend/FROZEN.md`). Production `/ctc` + `/api/trivia`
+> traffic is served from **here**. Make Civic Trivia backend changes in this directory.
+> See **ev-cto decision 0013** (freeze folded backends; engine canonical).
+
 Engine consolidation, **Phase 1**. This directory is the Civic Trivia Championships
 (CTC) backend, ported from `Civic-Trivia-Championships/backend/src` and mounted inside
-`ev-accounts-api`. It runs **in parallel** with the still-live `civic-trivia-backend`
-Render service until that service is retired (gate G6, a later phase).
+`ev-accounts-api`. It was a copy of that repo's runtime code; that repo's backend is now
+frozen, so this is the only maintained copy.
 
 ## How it is mounted
 
