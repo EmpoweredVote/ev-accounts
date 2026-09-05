@@ -64,6 +64,32 @@ const bioguide = flag('bioguide');
 const outFile = flag('out');
 const ALL_BILLS = args.includes('--all-bills');
 
+/**
+ * Only bills introduced in or after this year become leads. Default 2023 — the
+ * 118th and 119th Congresses.
+ *
+ * 🔴 WITHOUT THIS THE OUTPUT IS UNUSABLE, AND NOT BY A LITTLE. A member's record
+ * runs their whole career: Schiff alone returns 234 leads reaching back to 2003,
+ * so a 100-senator sweep is roughly twenty thousand rows, most of them House-era
+ * matches from Congresses that no longer describe anybody's current position.
+ *
+ * ⚠ IT IS A DEFAULT, NOT A RULE. The methodology says recent actions outrank old
+ * ones "unless the older action is more definitive" — a career-defining vote from
+ * 2013 can still be the best evidence there is. `--since=0` returns everything;
+ * the count of what was filtered is always printed, so the old rows are never
+ * silently gone.
+ */
+const SINCE = (() => {
+  const raw = flag('since');
+  if (raw === null) return 2023;
+  const n = Number.parseInt(raw, 10);
+  if (!Number.isInteger(n) || n < 0 || n > 2999) {
+    console.error(`leads: --since must be a year (or 0 for all) — got "${raw}"`);
+    process.exit(1);
+  }
+  return n;
+})();
+
 if (!cohort && !bioguide) {
   console.error('usage: congress-sponsorship-leads.mjs (--cohort=senate | --bioguide=XNNNNNN) [--all-bills] [--out=leads.csv]');
   process.exit(1);
@@ -153,6 +179,7 @@ try {
 
   const leads = [];
   let incomplete = 0;
+  let filtered = 0;
 
   for (const p of people) {
     let sponsored, cosponsored;
@@ -173,6 +200,10 @@ try {
     const hits = [];
     for (const it of tagged) {
       const title = it.title ?? '';
+      // Year off introducedDate; an item with no date is KEPT, because dropping it
+      // would hide a lead for a reason that has nothing to do with its age.
+      const year = Number.parseInt((it.introducedDate ?? '').slice(0, 4), 10);
+      if (SINCE && Number.isInteger(year) && year < SINCE) { filtered++; continue; }
       for (const topic of matchTopics(title)) {
         hits.push({ topic, role: it.role, bill: billLabel(it), title, date: it.introducedDate ?? '' });
         leads.push({
@@ -194,6 +225,9 @@ try {
   }
 
   console.log(`\n${leads.length} lead(s) for ${people.length} member(s).`);
+  if (SINCE) {
+    console.log(`${filtered} bill(s) skipped as introduced before ${SINCE} — --since=0 keeps them.`);
+  }
   if (incomplete) {
     console.warn(`⚠ ${incomplete} member(s) hit the page ceiling — their records are INCOMPLETE and a`);
     console.warn('  missing lead here is indistinguishable from a member who never touched the topic.');
