@@ -290,6 +290,36 @@ catches anyone who bypassed the steward. The steward is the *allocator*; the sca
 `steward sync` reconciles: reservations that now have a matching file on a ref become
 `written`; reservations older than fourteen days with no file are flagged for cleanup.
 
+> **As built (2026-09-04, late).** This half shipped last, and only after its absence showed:
+> `sync --seed` was insert-only, so a reservation stayed `reserved` for ever and **`CC_0074` sat
+> on the board as an outstanding reservation while its migration was merged to master.** A board
+> whose whole value is being true cannot carry a permanent false entry — that is how people learn
+> to skim it.
+>
+> `steward sync` is now **read-only by default**; `--apply` is required to write. It answers five
+> questions, and only the first two are ever written:
+>
+> | finding | action |
+> | --- | --- |
+> | reserved, and the file now exists | **write** `state='written'` + filename |
+> | written, but the row never recorded a filename | **write** the filename |
+> | reserved, no file, older than 14 days | **report** |
+> | written, and git names a different file | **report** |
+> | abandoned, yet a file occupies the slot | **report** |
+>
+> 🔴 **The seeder's rule — "a slot already present is never rewritten" — is satisfied, not
+> waived.** It exists because a row might be a live reservation someone is relying on. A
+> promotion happens *only when a file exists for that slot*, which is proof the reservation was
+> used and is no longer live. Everything without that proof is reported and never written.
+>
+> Nothing is abandoned on a timer. Fourteen days is a **reporting** threshold: several branches
+> here live for weeks, reserving a number and never using it is explicitly harmless, and the cost
+> of a false flag is one sentence of output against a lost migration for a wrong write.
+>
+> The last row is the highest-signal one. `check:reservations` fails a reused abandoned slot only
+> for a file **added on a branch**; a file that reached master another way is invisible to it.
+> `sync` sees it, which makes the two checks complementary rather than redundant.
+
 ---
 
 ## 6. Rollout

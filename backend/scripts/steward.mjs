@@ -6,7 +6,8 @@
  * Schema: backend/migrations/CC_0070_steward_schema.sql
  *
  *   npm run steward -- who
- *   npm run steward -- sync --seed [--dry-run]
+ *   npm run steward -- sync [--apply]                     # reconcile against git
+ *   npm run steward -- sync --seed [--dry-run]            # one-time bootstrap
  *   npm run steward -- slot CC --purpose "what it is for"
  *   npm run steward -- claim place:0642468 --label "Lomita occupancy"
  *   npm run steward -- release place:0642468
@@ -34,10 +35,11 @@ import dotenv from "dotenv";
 
 import { historicalSlots } from "./lib/migration-slots.mjs";
 import { slotsToSeed } from "./lib/steward-seed.mjs";
+import { reconcile, STALE_DAYS } from "./lib/steward-sync.mjs";
 import { parseScope, containmentWarnings, chooseScope, SKIP_BLOCKED } from "./lib/steward-claims.mjs";
 import { canonicalWorktreeScope, worktreeNotices } from "./lib/steward-worktree.mjs";
 import {
-  LEASE_HOURS, MARKER_HOURS, EXPIRED_GRACE_HOURS, humanAge, partitionBoard,
+  LEASE_HOURS, MARKER_HOURS, EXPIRED_GRACE_HOURS, humanAge, humanAgo, partitionBoard,
 } from "./lib/steward-lease.mjs";
 
 const backendDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -143,17 +145,17 @@ async function cmdWho() {
       for (const t of trees) {
         // Age, not just a clock time: "seen 3h ago" judges itself, where "seen 09:12Z" needs the
         // reader to do the arithmetic before they can tell a live session from last night's.
-        const ago = humanAge(Date.now() - new Date(t.started_at).getTime());
+        const ago = humanAgo(Date.now() - new Date(t.started_at).getTime());
         console.log(`  ~ ${t.scope.slice("worktree:".length).padEnd(24)} ${(t.label ?? "detached").padEnd(34)} `
-          + `${t.holder}  ${t.machine}  seen ${ago} ago`);
+          + `${t.holder}  ${t.machine}  seen ${ago}`);
       }
       // Lapsed last, and labelled as free: the scope IS available, and the previous holder may
       // nonetheless still be working. Both facts, neither implied.
       for (const c of lapsed) {
-        const ago = humanAge(Date.now() - new Date(c.expires_at).getTime());
+        const ago = humanAgo(Date.now() - new Date(c.expires_at).getTime());
         const what = c.scope.startsWith("worktree:") ? c.scope.slice("worktree:".length) : c.scope;
         console.log(`  ✗ ${what.padEnd(18)} ${(c.label ?? "").padEnd(22)} ${c.holder}  ${c.machine}  `
-          + `LAPSED ${ago} ago — free to take, check first`);
+          + `LAPSED ${ago} — free to take, check first`);
       }
     }
     return 0;
@@ -162,12 +164,109 @@ async function cmdWho() {
   }
 }
 
+/* ── sync ────────────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Reconcile steward.migration_slots against what git actually holds.
+ *
+ * 🔴 READ-ONLY BY DEFAULT. `--apply` is required to write anything, and even then only two
+ *    things are ever written: a reservation whose FILE NOW EXISTS becomes `written`, and a
+ *    `written` row missing its filename gets one. Both are facts git can prove.
+ *
+ *    Stale reservations, filename disagreements and reused-abandoned slots are REPORTED and
+ *    never written, because each has a reading in which the right answer is to leave it alone
+ *    and ask somebody. Reserving a number and never using it is explicitly harmless; a wrong
+ *    write here costs a migration.
+ */
+async function cmdReconcile() {
+  const apply = has("--apply");
+  const historical = historicalSlots(repoRoot);
+  if (!historical.length) {
+    console.error("steward sync: git reported NO migration slots at all. Refusing to reconcile "
+      + "against an empty scan — every reservation would look unused. Check you are in a repo with refs.");
+    return 1;
+  }
+
+  const client = await connect();
+  try {
+    const { rows } = await client.query(
+      "SELECT namespace, num, state, claimed_by, purpose, filename, claimed_at FROM steward.migration_slots");
+    const r = reconcile(historical, rows, Date.now());
+
+    console.log(`git knows ${historical.length} slot(s); table holds ${rows.length}.`);
+
+    for (const p of r.promote) console.log(`  → promote ${pad(p.namespace, p.num)} reserved → written  (${p.filename})`);
+    for (const f of r.fillFilename) console.log(`  → filename ${pad(f.namespace, f.num)} = ${f.filename}`);
+
+    // Report-only findings, loudest first.
+    for (const c of r.conflict) {
+      console.warn(`  🔴 ${pad(c.namespace, c.num)} was ABANDONED by ${c.claimed_by}, yet ${c.filename} `
+        + `occupies it on ${c.refs.slice(0, 3).join(", ")}. Somebody reused a dead number — `
+        + "check:reservations only sees files ADDED on a branch, so this is the path it cannot watch.");
+    }
+    for (const d of r.drift) {
+      console.warn(`  ⚠ ${pad(d.namespace, d.num)} is recorded as ${d.was} but git says ${d.now}. `
+        + "Either an applied migration was renamed (CLAUDE.md forbids it — the number is embedded "
+        + "in prod data) or two files share the slot. NOT overwritten; decide and fix by hand.");
+    }
+    for (const st of r.stale) {
+      console.warn(`  ⚠ ${pad(st.namespace, st.num)} reserved by ${st.claimed_by} `
+        + `${Math.floor(st.ageDays)} days ago with no file anywhere: "${st.purpose}". `
+        + "Ask them; if it is dead, set its state to abandoned. NOT done automatically — a long "
+        + "branch is a normal reason for this.");
+    }
+
+    const writes = r.promote.length + r.fillFilename.length;
+    const reports = r.conflict.length + r.drift.length + r.stale.length;
+    if (!writes && !reports) {
+      console.log("steward sync: in step with git; nothing to reconcile.");
+      return 0;
+    }
+    if (!apply) {
+      console.log(`steward sync: ${writes} change(s) to write, ${reports} to look at. `
+        + "Nothing written — pass --apply.");
+      return 0;
+    }
+    if (!writes) {
+      console.log(`steward sync: nothing to write; ${reports} finding(s) above need a human.`);
+      return 0;
+    }
+
+    // 🔴 GUARDED UPDATES. Each WHERE re-states the state it expects, so a row that changed
+    //    between the read and the write is skipped rather than clobbered — the same reason the
+    //    seeder uses ON CONFLICT DO NOTHING.
+    await client.query("BEGIN");
+    let promoted = 0;
+    for (const p of r.promote) {
+      const res = await client.query(
+        `UPDATE steward.migration_slots SET state = 'written', filename = $3
+          WHERE namespace = $1 AND num = $2 AND state = 'reserved'`,
+        [p.namespace, p.num, p.filename]);
+      promoted += res.rowCount;
+    }
+    let named = 0;
+    for (const f of r.fillFilename) {
+      const res = await client.query(
+        `UPDATE steward.migration_slots SET filename = $3
+          WHERE namespace = $1 AND num = $2 AND state = 'written' AND filename IS NULL`,
+        [f.namespace, f.num, f.filename]);
+      named += res.rowCount;
+    }
+    await client.query("COMMIT");
+    console.log(`steward sync: promoted ${promoted}/${r.promote.length}, named ${named}/${r.fillFilename.length}`
+      + (reports ? `; ${reports} finding(s) above still need a human.` : "."));
+    return 0;
+  } catch (e) {
+    await client.query("ROLLBACK").catch(() => {});
+    throw e;
+  } finally {
+    await client.end();
+  }
+}
+
 /* ── sync --seed ─────────────────────────────────────────────────────────────────────── */
 async function cmdSync() {
-  if (!has("--seed")) {
-    console.error("steward sync: pass --seed (reconcile git history into the table)");
-    return 2;
-  }
+  if (!has("--seed")) return cmdReconcile();
   const dryRun = has("--dry-run");
   const historical = historicalSlots(repoRoot);
   if (!historical.length) {
@@ -413,8 +512,8 @@ async function cmdClaim() {
     //    allowed and is not blocked; being told nothing is what would not be.
     const stale = containmentWarnings(scope, lapsed, childCounty);
     for (const w of stale) {
-      const ago = humanAge(Date.now() - new Date(w.claim.expires_at).getTime());
-      console.warn(`  ⚠ ${w.claim.scope} — ${w.claim.holder}'s lease LAPSED ${ago} ago `
+      const ago = humanAgo(Date.now() - new Date(w.claim.expires_at).getTime());
+      console.warn(`  ⚠ ${w.claim.scope} — ${w.claim.holder}'s lease LAPSED ${ago} `
         + `${w.relation === "same" ? "on this exact scope" : `(${RELATION_PROSE[w.relation]})`}`
         + `${w.claim.label ? `, "${w.claim.label}"` : ""}. The scope is free, but they may still `
         + "be working. Check before you write.");
@@ -643,7 +742,10 @@ const run = COMMANDS[cmd];
 if (!run) {
   console.error("usage: steward <who|sync|slot|claim|release|extend> [...]\n"
     + "  who                              show active claims and outstanding reservations\n"
-    + "  sync --seed [--dry-run]          reconcile git history into steward.migration_slots\n"
+    + "  sync [--apply]                   reconcile the table against git — promote reservations\n"
+    + "                                   whose file now exists; report stale ones, filename drift\n"
+    + "                                   and reused-abandoned slots. READ-ONLY without --apply\n"
+    + "  sync --seed [--dry-run]          one-time bootstrap: insert every slot git knows about\n"
     + "  slot <NS|shared> --purpose \"...\"  reserve the next free migration number (shared == the plain NNNN_ sequence)\n"
     + "  claim <scope> [<scope>...]       take a jurisdiction lease (24h by default, measured)\n"
     + "        --label \"...\"                 what you are doing there, for the board\n"

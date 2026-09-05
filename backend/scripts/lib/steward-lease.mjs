@@ -134,3 +134,17 @@ export function humanAge(ms) {
   const rem = hours % 24;
   return rem ? `${days}d ${rem}h` : `${days}d`;
 }
+
+/**
+ * The same age as a phrase: "3h 30m ago", or "just now".
+ *
+ * 🔴 THREE CALL SITES EACH WROTE `${humanAge(x)} ago`, AND ALL THREE PRINTED "just now ago" ON
+ *    A FRESH ROW. Seen on the live board the first time a worktree registered itself. The bug
+ *    is not the wording, it is that the suffix lived at the call sites: "just now" is the one
+ *    value that already carries its own tense, so every caller had to remember an exception and
+ *    none did. One function, one place to be wrong.
+ */
+export function humanAgo(ms) {
+  const age = humanAge(ms);
+  return age === "just now" ? age : `${age} ago`;
+}

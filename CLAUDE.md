@@ -125,6 +125,16 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     abandonment of is worse than a hole, and holes are free.
   - It **skips green without `DATABASE_URL`** (forks) and **degrades green** if the steward is
     unreachable, printing why in both cases. The ref scan below still runs, and needs no database.
+- **`npm run steward --prefix backend -- sync` keeps the board honest.** Read-only; `--apply`
+  writes. It promotes a reservation to `written` once its file exists on a ref — without it a
+  used reservation shows as outstanding for ever, which is how `CC_0074` sat on the board while
+  its migration was already on master. Worth running after a merge.
+  - It **reports and never writes** three things: a reservation over 14 days old with no file,
+    a filename that disagrees with git, and 🔴 **a file occupying an `abandoned` slot** — someone
+    reused a dead number. `check:reservations` only sees files *added on a branch*, so that last
+    one is the path CI cannot watch.
+  - Nothing is abandoned on a timer. 14 days is a **reporting** threshold; long branches are
+    normal here, and a wrong write costs a migration.
 - Reserving a number you never use is harmless — set its `state` to `abandoned`. The number is a
   filename label for humans, not a dense sequence, so holes cost nothing.
 - **`npm run check:migrations --prefix backend` is still the auditor**, still CI-enforced, and is
