@@ -39,3 +39,69 @@ export function matchTopics(title) {
     .filter(([, re]) => re.test(title))
     .map(([topic]) => topic);
 }
+
+/**
+ * topic_key → title pattern for the LOCAL ladders a county or city legislates on.
+ *
+ * ── WHY THIS IS A SEPARATE MAP, NOT MORE ENTRIES ABOVE ───────────────────────
+ *
+ * A federal bill carries a persuasive short title ("Raise the Wage Act"). A
+ * county resolution carries a 300-word operative sentence in block capitals
+ * ("RESOLUTION APPROVING TERMS OF A DECLARATION OF RESTRICTIVE COVENANT ON THE
+ * ADRIENNE ARSHT CENTER..."). The words that identify the subject are different
+ * words, so the patterns are different patterns. Matching local text against the
+ * federal map finds almost nothing.
+ *
+ * 🔴 THE SEASON'S LOCAL SET IS 35 TOPICS AND THIS MAP IS SMALLER ON PURPOSE.
+ * Only ladders a county or city actually holds a lever on are here. The eight
+ * `education-*` ladders are absent from this map: in Florida the schools are run
+ * by a separately elected School Board, so a county commissioner has no rung to
+ * stand on — and CLAUDE.md's ruling is that scope is a per-rung question, not a
+ * per-topic one. A jurisdiction whose council DOES run its schools needs those
+ * patterns added deliberately, not inherited.
+ *
+ * ⚠ `abortion`, `trans-athletes`, `religious-freedom` and `2020-election` carry a
+ * local role in the season but are omitted here too. They surface in local
+ * legislation as resolutions of position rather than by subject vocabulary, and
+ * a pattern broad enough to catch them matches most of the ceremonial calendar.
+ * Find those by reading, not by grep.
+ */
+export const LOCAL_TOPIC_PATTERNS = {
+  'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8|housing voucher/i,
+  'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
+  'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
+  'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management/i,
+  'local-environment':        /wetland|environmentally endangered|tree canopy|conservation (land|easement)|biscayne bay|water quality|septic|sea level rise|resilien|mangrove|preservation area/i,
+  'climate-change':           /climate|greenhouse gas|carbon|renewable energy|solar|energy efficiency|electric vehicle|\bEV charging\b|net zero/i,
+  'fossil-fuels':             /natural gas|petroleum|fossil fuel|pipeline|drilling|fuel terminal/i,
+  'transportation-priorities':/transit|bus rapid|metrorail|metromover|bicycle|pedestrian|sidewalk|complete streets|road capacity|traffic|parking requirement|\bSMART plan\b|rail corridor/i,
+  'economic-development':     /economic development|tax increment|\bTIF\b|community redevelopment|incentive|job creation|targeted jobs|enterprise zone|opportunity zone|business grant/i,
+  'homelessness':             /public camping|encampment|sleeping in public|panhandl|loitering|vagrancy/i,
+  'homelessness-response':    /homeless(ness)? (trust|services|assistance|program|shelter)|continuum of care|emergency shelter|permanent supportive housing|\bhomeless\b/i,
+  'public-safety-approach':   /police (budget|staffing|department|funding)|law enforcement (budget|staffing)|crisis intervention|co-responder|mental health response|community policing|body[- ]worn camera/i,
+  'jail-capacity':            /corrections (facility|department)|jail|pretrial|bail|bond schedule|diversion program|incarcerat|detention facility/i,
+  'local-immigration':        /\bICE\b|immigration detainer|287\(g\)|sanctuary|immigration enforcement|undocumented|federal immigration/i,
+  'city-sanitation':          /solid waste|garbage|refuse collection|litter|illegal dumping|recycling|sanitation|street sweeping/i,
+  'data-centers':             /data cent(er|re)|hyperscale|server farm|utility rate|ratepayer/i,
+  'childcare':                /child care|childcare|early (childhood|learning)|pre[- ]?k\b|head start/i,
+  'cannabis-policy':          /cannabis|marijuana|hemp|civil citation.{0,30}possession/i,
+  'gun-policy':               /firearm|\bgun\b|ghost gun|shooting range|weapons? (ban|ordinance)/i,
+  'minimum-wage':             /minimum wage|living wage|wage (floor|theft)|responsible wage/i,
+  'civil-rights':             /civil rights|discrimination|human rights ordinance|equity|disparit|minority[- ]owned|\bMBE\b|\bDBE\b/i,
+  'campaign-finance':         /campaign (finance|contribution)|lobbyist|ethics (ordinance|commission)|public financing/i,
+  'ranked-choice-voting':     /ranked[- ]choice|instant runoff|election method|runoff election/i,
+};
+
+/**
+ * Every LOCAL topic whose pattern the text hints at.
+ *
+ * Pass the operative title, not the short subject line — a county subject line
+ * is an abbreviation ("SOLID WASTE COLLECTION") while the title carries the verbs.
+ * Passing both concatenated is fine and is what the extractor does.
+ */
+export function matchLocalTopics(text) {
+  if (!text) return [];
+  return Object.entries(LOCAL_TOPIC_PATTERNS)
+    .filter(([, re]) => re.test(text))
+    .map(([topic]) => topic);
+}
