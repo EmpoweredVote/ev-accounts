@@ -52,7 +52,7 @@
  * hundreds. Free instant key: https://api.data.gov/signup/
  */
 import 'dotenv/config';
-import { writeFileSync } from 'fs';
+import { writeFileSync, appendFileSync, readFileSync, existsSync } from 'fs';
 import pg from 'pg';
 import { SITTING_SENATOR_SQL } from './lib/office-tiers.mjs';
 import { TOPIC_PATTERNS, matchTopics } from './lib/topic-lead-patterns.mjs';
@@ -63,6 +63,7 @@ const cohort = flag('cohort');
 const bioguide = flag('bioguide');
 const outFile = flag('out');
 const ALL_BILLS = args.includes('--all-bills');
+const RESUME = args.includes('--resume');
 
 /**
  * Only bills introduced in or after this year become leads. Default 2023 — the
@@ -91,7 +92,8 @@ const SINCE = (() => {
 })();
 
 if (!cohort && !bioguide) {
-  console.error('usage: congress-sponsorship-leads.mjs (--cohort=senate | --bioguide=XNNNNNN) [--all-bills] [--out=leads.csv]');
+  console.error('usage: congress-sponsorship-leads.mjs (--cohort=senate | --bioguide=XNNNNNN)\n'
+    + '         [--since=YYYY|0] [--all-bills] [--out=leads.csv] [--resume]');
   process.exit(1);
 }
 if (!process.env.DATABASE_URL) { console.error('leads: DATABASE_URL is not set.'); process.exit(1); }
@@ -175,9 +177,37 @@ try {
     process.exit(1);
   }
 
+  // ── Resume, and write as we go ──────────────────────────────────────────────
+  //
+  // 🔴 A COHORT SWEEP IS LONG ENOUGH THAT IT WILL BE INTERRUPTED, AND THE FIRST
+  //    ONE WAS. Buffering every lead in memory and writing once at the end meant
+  //    a run stopped after 24 of 100 senators produced NOTHING — twenty-odd
+  //    minutes of API calls discarded because the write step was never reached.
+  //    The record is large (Schumer alone returns 10,568 bills, Grassley 10,082),
+  //    so this is the normal case, not bad luck.
+  //
+  //    Each member's leads are now appended the moment that member is done, and
+  //    --resume skips anyone already in the file. An interrupted sweep costs the
+  //    member in flight, never the ones already paid for.
+  const doneIds = new Set();
+  if (outFile && RESUME && existsSync(outFile)) {
+    for (const line of readFileSync(outFile, 'utf8').split('\n').slice(1)) {
+      const id = line.split(',')[0];
+      if (id) doneIds.add(id);
+    }
+    const before = people.length;
+    people = people.filter((p) => !doneIds.has(p.id));
+    console.log(`resuming: ${doneIds.size} member(s) already recorded in ${outFile}; `
+      + `${before - people.length} skipped, ${people.length} to go\n`);
+  }
+
+  const CSV_HEADER = 'politician_id,full_name,bioguide_id,topic_key,role,bill,introduced,title';
+  const esc = (s) => (/[",\n]/.test(String(s)) ? `"${String(s).replace(/"/g, '""')}"` : String(s));
+  if (outFile && !(RESUME && existsSync(outFile))) writeFileSync(outFile, `${CSV_HEADER}\n`, 'utf8');
+
   console.log(`${people.length} member(s); matching titles against ${Object.keys(TOPIC_PATTERNS).length} topics\n`);
 
-  const leads = [];
+  let leadCount = 0;
   let incomplete = 0;
   let filtered = 0;
 
@@ -206,12 +236,18 @@ try {
       if (SINCE && Number.isInteger(year) && year < SINCE) { filtered++; continue; }
       for (const topic of matchTopics(title)) {
         hits.push({ topic, role: it.role, bill: billLabel(it), title, date: it.introducedDate ?? '' });
-        leads.push({
-          politician_id: p.id, full_name: p.full_name, bioguide_id: p.bioguide_id,
-          topic_key: topic, role: it.role, bill: billLabel(it),
-          introduced: it.introducedDate ?? '', title,
-        });
       }
+    }
+    leadCount += hits.length;
+
+    // Appended per member, not buffered to the end — see the note above.
+    if (outFile) {
+      const rows = hits.map((h) => [p.id, p.full_name, p.bioguide_id, h.topic, h.role, h.bill, h.date, h.title]
+        .map(esc).join(','));
+      // A member with zero hits still needs a mark, or --resume re-does them
+      // every run. The sentinel row carries no topic and is trivially filtered.
+      if (!rows.length) rows.push([p.id, p.full_name, p.bioguide_id, '', '', '', '', ''].map(esc).join(','));
+      appendFileSync(outFile, `${rows.join('\n')}\n`, 'utf8');
     }
 
     const byTopic = new Set(hits.map((h) => h.topic));
@@ -224,7 +260,7 @@ try {
     }
   }
 
-  console.log(`\n${leads.length} lead(s) for ${people.length} member(s).`);
+  console.log(`\n${leadCount} lead(s) for ${people.length} member(s) this run.`);
   if (SINCE) {
     console.log(`${filtered} bill(s) skipped as introduced before ${SINCE} — --since=0 keeps them.`);
   }
@@ -235,16 +271,7 @@ try {
   console.log('\n🔴 These are LEADS, not evidence. A title match is not a chair — open the bill,');
   console.log('   read what it does, and seat the chair from the instrument.');
 
-  if (outFile) {
-    const esc = (s) => (/[",\n]/.test(s) ? `"${String(s).replace(/"/g, '""')}"` : s);
-    const csv = ['politician_id,full_name,bioguide_id,topic_key,role,bill,introduced,title'];
-    for (const l of leads) {
-      csv.push([l.politician_id, l.full_name, l.bioguide_id, l.topic_key, l.role, l.bill, l.introduced, l.title]
-        .map((v) => esc(v ?? '')).join(','));
-    }
-    writeFileSync(outFile, `${csv.join('\n')}\n`, 'utf8');
-    console.log(`\nwrote ${outFile}`);
-  }
+  if (outFile) console.log(`\nappended to ${outFile} (--resume continues where this stopped)`);
 } finally {
   await pool.end();
 }
