@@ -17,10 +17,15 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 | `transportation-priorities` | 3 | Regalado |
 | `residential-zoning` | 3 | Regalado |
 
-**Five whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+**Six whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
-`residential-zoning` (49, 1 seated / 13 refused) and `rent-regulation` (**0 seated** / 14 refused —
-and the ladder does not apply in Florida at all, see below).
+`residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
+not apply in Florida at all, see below) and `city-sanitation` (43, **0 seated** / 14 refused).
+
+🔴 **PRICE THE YIELD BEFORE CHOOSING A TOPIC: six whole-Board passes have produced two rows.** That
+is not pessimism, it is measured — see "this Board legislates by directive-and-report" below. Expect
+the refusals file to be the main product, and treat a dense lead count as a poor predictor of a
+seatable one.
 
 Every refusal and its reason is in `backend/data/stance-research/2026-09-07-miamidade-refusals.md`.
 **Read that before re-researching anybody.**
@@ -44,7 +49,7 @@ gate → push. Gate the CSV **before** pushing: `node scripts/audit-chair-eviden
 ⚠ That link **404s as HTTP 200 with 2,625 bytes of "Web Error" HTML** for some matters (`260174`,
 `252269`, `261065` so far); always fetch a known-good one in the same run as a control.
 
-## 🔴 TEST THE AXIS BEFORE STARTING A TOPIC — FOUR OF FIVE PASSES NEEDED IT
+## 🔴 TEST THE AXIS BEFORE STARTING A TOPIC — FOUR OF SIX PATTERNS WERE MIS-SPECIFIED
 
 1. Read the five rungs. Write down the **one question** they all answer.
 2. Read twenty lead titles. If they answer a *different* question, stop and retune first.
@@ -58,13 +63,32 @@ gate → push. Gate the CSV **before** pushing: `node scripts/audit-chair-eviden
 `housing` matched "SECTION 8-9 OF THE CODE" · `local-environment` asked about the health of the bay
 and matched `RESILIENT AQUARIUM LLC` · `residential-zoning` matched a submerged-lands lease on
 "LAND USE PLAN" and could not see the Rapid Transit Zone · `rent-regulation` was **23 of 23 false
-positives**, all county property leases, all from bare `landlord`. **Assume the pattern is wrong
-until measured.**
+positives**, all county property leases, all from bare `landlord`. 🟢 **`city-sanitation` was
+SOUND and was left alone** — the first one that needed nothing, and that is a result too, not an
+oversight. **Assume the pattern is wrong until measured, then say which way the measurement went.**
 
 🟢 **MEASURE PER-ALTERNATIVE, NOT JUST OVERALL.** Running each alternative of `rent-regulation`
 separately showed `landlord` scoring 30 and every other term scoring **0**, so the fix was one word
 rather than a rewrite. `--grep` one alternative at a time; it takes a minute and it turns a guess
 into a measurement.
+
+## 🔴 THIS BOARD LEGISLATES BY DIRECTIVE-AND-REPORT, WHICH IS WHY THE YIELD IS LOW
+
+Measured over the unfiltered corpus of **1,785 distinct matters**:
+
+| shape | matters | share |
+| --- | --- | --- |
+| "DIRECTING THE COUNTY MAYOR…" | **363** | 20% |
+| terminating in "PROVIDE A REPORT" / "REQUIRING A REPORT" | **119** | 6.7% |
+| "URGING" the Legislature or Congress | **68** | 3.8% |
+
+**One matter in five is a directive to the administration**, and a large share of those end in a
+report that binds nobody; the urging resolutions bind nobody by construction. Under this program's
+standard — **a study directive is not a chair** — a substantial fraction of what a commissioner
+personally initiates cannot seat one, however on-topic it is.
+
+That is the explanation for two rows from six passes, and it is a *prediction* as well as a
+description. When scoping a topic, look at the shape of its leads, not just the count.
 
 ## 🔴🔴 A LADDER CAN BE LEGALLY UNAVAILABLE AT THIS LEVEL — AND THE FAILURE MODE IS A FALSE ROW
 
@@ -112,10 +136,13 @@ per-state dimension, so the refusals file is the only place this can be recorded
 
 ## Cheapest next steps
 
-- **`city-sanitation`** — 61 leads, the densest untouched ladder; Regalado 17, Bastien 11.
-  **Run the axis test first.**
-- **`jail-capacity` (13) · `climate-change` (9) · `homelessness-response` (9)** — thin, and worth an
-  axis test before any reading; on current form at least one of them is mis-specified.
+- **`jail-capacity` (13) · `climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5)
+  · `homelessness` (5)** — all thin. Axis-test each before reading; on current form roughly two of
+  three patterns are mis-specified, and a thin count is as likely to be a broken detector as a
+  quiet record.
+- ⚠ **Before starting any of them, read the directive-and-report finding below.** A topic whose
+  leads are mostly "DIRECTING THE COUNTY MAYOR … AND PROVIDE A REPORT" will refuse, however dense.
+- ✅ **`city-sanitation` is CLOSED** — 0 seated. Its pattern is sound; do not retune it.
 - ✅ **`rent-regulation` is CLOSED and should not be re-attempted in Florida** — state preemption,
   above. Its pattern is fixed (30 leads → 0, which is the true answer).
 - **Steinberg, Garcia, Lopez on housing** — each needs one substantive own instrument.

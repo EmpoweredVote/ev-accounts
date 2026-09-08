@@ -839,3 +839,125 @@ Nothing to attribute. No commissioner sponsored a rent-control, rent-stabilizati
 rights, just-cause-eviction or rent-increase-notice instrument in the window; the terms return zero
 across all 1,785 matters. The fourteen are refused as a body rather than individually, because the
 reason is the same for every one of them and it is not about their records.
+
+## `city-sanitation` across the whole Board — 43 matters read, 0 seated, 14 refused
+
+Sixth topic pass, 2026-09-08.
+
+🟢 **THE PATTERN IS SOUND. IT IS THE FIRST ONE THAT WAS.** Four of the five ladders worked before
+this needed a retune; `city-sanitation` did not, and saying so is as much a result as the four
+fixes. Its vocabulary — `solid waste|garbage|refuse collection|litter|illegal dumping|recycling|
+sanitation|street sweeping` — produced 61 leads over 43 matters, of which roughly ten are off-axis
+(waste-to-energy siting, transfer stations, an annexation, a biosolids MOU). **Do not retune it.**
+
+The ladder asks how a community should approach **street cleanliness and sanitation**:
+
+| rung | position |
+| --- | --- |
+| 1 | Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure |
+| 2 | Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness communitywide |
+| 3 | Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners |
+| 4 | Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible |
+| 5 | Privatize sanitation services and require residents and businesses to contract for cleanup directly |
+
+### Every rung's discriminating clause was searched, and four of the five return ZERO
+
+| clause | term searched | matters |
+| --- | --- | --- |
+| rungs 1–2, staffing | `sanitation (crew\|staffing\|worker)` | **0** |
+| rung 1, cleaning frequency | `street sweeping` | **0** |
+| rungs 3–4, enforcement | `anti-dumping` · `property maintenance` | **0** · **0** |
+| rungs 3–4, enforcement | `illegal dumping` · `code enforcement` | 2 · 1 (same item) |
+| rung 4, littering | `littering` | 1 |
+| rung 5, privatization | `privatiz` | **0** |
+| rung 5, contracting out | `public-private partnership` | 2 |
+
+Positive control fired at 2,543 on every one of those runs, so the zeros are measurements rather
+than silence.
+
+- **The one enforcement item is `261371`/`261121`, Bastien's** — "DEVELOP AN ILLEGAL DUMPING AND
+  ENCAMPMENT PLAN FOR ... DISTRICT 2; AND REQUIRING A REPORT". It is **Amended, not adopted**, it is
+  a plan-and-report directive, and it covers one district.
+- **Neither "P3" item is a privatization position.** `250273` (Bermudez) directs the Mayor to
+  "explore and analyze available funding sources and technologies, including public-private
+  partnerships, federal tax credits, and grants" — a funding-options study, and **withdrawn**.
+  `250298` (Gonzalez, in committee) directs **reports disclosing proposals** the administration
+  receives about a new waste-to-energy facility — a transparency measure, and if anything the
+  opposite of advocating privatization.
+
+### NOT SEATED — Regalado, and the reason names a bias rather than her record
+
+She has the densest record again: six own-initiative adopted items, all hers as Prime.
+
+- **R-197-25** — develop **and implement** recycling of tires and mattresses throughout the county,
+  and recommend conforming Chapter 15 changes.
+- **R-191-25** — **examine the feasibility of** expanding cardboard disposal to all 13 trash and
+  recycling centres year-round, plus seasonal drop-off sites at libraries and community centres, and
+  fold it into the Zero Waste Master Plan.
+- **R-193-25** — develop a closed-loop recycling plan **for the Aviation Department and PortMiami**.
+- **R-189-25** — **review** the solid waste bond ordinance and recommend restructuring.
+- **R-559-25** — study solid waste output at vacation rentals. **R-884-25** — a biosolids hauling MOU.
+- Pending: **`261036`**, repealing the CPI escalator on the solid waste assessment and reaffirming
+  that every rate adjustment needs annual Board authorisation.
+
+Direction is unmistakable — expand what residents can drop off and divert, with **no** enforcement
+instrument anywhere in her record — so rungs 3, 4 and 5 are contradicted. But rung 1 is a compound
+chair and only one of its three clauses has anything behind it: staffing and cleaning frequency are
+**absent for the entire Board**, and the disposal-access clause rests on one implementation directive
+covering **tires and mattresses** plus a **feasibility study** on cardboard. Rung 2 has nothing at
+all — no crews, no equity targeting.
+
+⚠ **`261036` also cuts the other way** and is recorded rather than glossed: repealing an automatic
+CPI escalator restrains the revenue that funds the service, which is not what rung 1 implies.
+
+🔴 **THE REAL REASON THIS IS A REFUSAL, STATED PLAINLY: Regalado is already seated on three ladders
+in this program, and that creates a pull toward seating her on a fourth.** Gilbert was refused on
+transportation and Bermudez on local-environment for exactly this evidence shape — a directive to
+study and report. Seating her here on three feasibility studies and one narrow implementation would
+apply a looser standard to the person the program has been kindest to. **What would seat her:** an
+adopted instrument that expands collection frequency, staffing, or countywide free drop-off — the
+cardboard programme actually established rather than examined.
+
+### 🔴 THE STRUCTURAL FINDING: THIS BOARD LEGISLATES BY DIRECTIVE-AND-REPORT
+
+Measured across the unfiltered corpus of **1,785 distinct matters**:
+
+| shape | matters | share |
+| --- | --- | --- |
+| "DIRECTING THE COUNTY MAYOR…" | **363** | 20% |
+| terminating in "PROVIDE A REPORT" / "REQUIRING A REPORT" | **119** | 6.7% |
+| "URGING" the Legislature or Congress | **68** | 3.8% |
+| "EXAMINE / EVALUATE THE FEASIBILITY", "CONDUCT A STUDY" | 12 | 0.7% |
+
+**One matter in five is a directive to the administration, and a large share of those terminate in a
+report that binds nobody.** Add the urging resolutions, which bind nobody by construction, and a
+substantial fraction of what a Miami-Dade commissioner personally initiates cannot, under this
+program's standard, seat a chair.
+
+That is not a complaint about the Board — directing staff and lobbying Tallahassee are real work. It
+is the explanation for the yield, and it should be priced in before choosing the next topic: **five
+whole-Board passes have produced two rows.** Expect topics to refuse, expect the refusal file to be
+the main product, and treat a dense lead count as a poor predictor of a seatable one.
+
+⚠ **A mild axis note, not worth a retune.** The ladder asks about **street cleanliness**; this
+county's record is overwhelmingly **waste management** — collection, disposal, facility siting, fees
+and recycling. They overlap at rung 1's "free community disposal access" and rung 5's "privatize
+sanitation services", which is why the pattern still works, but it is why a large, genuine, on-topic
+record still pins nobody.
+
+### The rest of the Board
+
+- **Bastien** — three adopted own-initiative items, all studies or reporting requirements (waste
+  diversion incentives feasibility, a solid waste study, a reporting requirement), plus the unadopted
+  District 2 dumping plan. ⚠ Her **R-877-25** is the item the `economic-development` refusal already
+  records as a false positive there: "INCENTIVE-BASED PROGRAMS" is pay-as-you-throw and waste rebates.
+- **Bermudez** — waste-to-energy facility siting and a resolution to engage Broward and Palm Beach on
+  regional capacity. Disposal infrastructure, not street cleanliness, and the P3 item is withdrawn.
+- **Gilbert** — **R-187-25**, a littering curriculum with the public schools. Education is the one
+  genuinely on-axis own-initiative instrument on the enforcement side of the ladder, and a curriculum
+  is not "rely primarily on enforcement". One item, and it pins nothing.
+- **Garcia** — **26-46** creates a solid waste advisory board. Procedural.
+- **Rodriguez** — co-prime with Bermudez on the WTE facility item only.
+- **Gonzalez** — the WTE proposal-disclosure resolution, in committee.
+- **Eileen Higgins** — `251728`, the composting ordinance, and she has left the Board.
+- **Cohen Higgins, Hardemon, Lopez, McGhee, Milian Orbis, Steinberg** — nothing on this ladder.
