@@ -363,8 +363,28 @@ const FLOORS = {
     //       apply picks the stragglers up, which is why 2,689 + 45 reaches 2,744 rather
     //       than 2,734. Confirmed against prod 2026-09-08: season 2 holds 2,744 / 2,716.
     //   2,744 − 2,716 = 28, still the blanks invariant above.
-    answers: flagInt('floor-answers', 2, 2744),
-    context: flagInt('floor-context', 2, 2716),
+    //
+    //   +51 / +51 on 2026-09-08, to 2,795 / 2,767. Also two components, and the second
+    //   is the same straggler effect as the entry above:
+    //     · CC_0079 (+49 / +49), applied — the Senate gun-policy rung 4 batch. 49
+    //       senators who sponsor or cosponsor the Constitutional Concealed Carry
+    //       Reciprocity Act, 47 off S. 65 and 2 off S. 214, each with its context row.
+    //       They were seatable only because CA_0104 reworded rung 4 EARLIER THE SAME
+    //       DAY; under the old wording no rung described them and CC_0078 deliberately
+    //       wrote no row for any of them.
+    //     · +2 / +2 of local-tier research that had landed above the floor since the
+    //       raise above. Prod read 2,746 / 2,718 immediately before this apply against
+    //       a floor of 2,744 / 2,716, which is why 2,744 + 49 reaches 2,795 and not
+    //       2,793. A floor sitting below the live corpus is safe, not a bug.
+    //
+    //   Derived from CC_0079's closing NOTICE, after the apply, per the ordering rule
+    //   above. That NOTICE prints the LIVE totals precisely because the file asserts
+    //   its own DELTA rather than a total — CC_0078 shipped absolute totals and they
+    //   went stale before a human had finished reviewing its chairs, which is the
+    //   failure this pair of numbers should never depend on again.
+    //   2,795 − 2,767 = 28, still the blanks invariant above.
+    answers: flagInt('floor-answers', 2, 2795),
+    context: flagInt('floor-context', 2, 2767),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
     // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
     questions: flagInt('floor-questions', 2, 60),
