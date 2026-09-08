@@ -15,13 +15,30 @@
  * driven by a live cohort and the open season instead, so it can be pointed at
  * the Season 2 federal pass without editing a worklist file.
  *
- * 🔴 THE LADDER MUST COME FROM THE SEASON'S PINNED REVISION, NOT is_current.
- * ADR 0006 (Option Y): a season serves the wording of the version it pinned, so
- * a researcher placing someone against `compass_stances_current` can be reading
- * rungs the open season does not serve. compass_stance_revisions keyed by
- * season_questions.topic_revision_id is the set actually shown to voters. This
- * is the same trap compassService documents at length; a worksheet that got it
- * wrong would produce placements against text nobody sees.
+ * 🔴 THE LADDER MUST COME FROM THE SEASON'S BOUND VERSION, RESOLVED — not from
+ * is_current, and NOT from the pinned revision id either. ADR 0006 (Option Y): a
+ * season is bound to a VERSION and serves the LATEST PUBLISHED REVISION OF IT, so
+ * the resolution takes two steps and this file used to take one.
+ *
+ * ⚠ IT KEYED STRAIGHT OFF season_questions.topic_revision_id AND THAT WAS WRONG.
+ * The guard above was written against one direction of the trap — a researcher
+ * reading `compass_stances_current` when the season pins something older — and it
+ * held for that. It missed the other direction. A CLARIFYING revision keeps the
+ * version and bumps the revision, and the pin is deliberately frozen, so the
+ * season pins revision N while serving revision N+1.
+ *
+ * Measured 2026-09-08, the day CA_0104 made this live: Season 2 pins gun-policy
+ * revision 2 and serves revision 3, whose rung 4 reads "add no new restrictions,
+ * and at most loosen rules on carrying, such as honoring permits across state
+ * lines" where revision 2 read "keep current gun laws, adding no new
+ * restrictions". This file printed revision 2. The two texts admit DIFFERENT
+ * PEOPLE — the old rung is a status-quo position no bill can evidence, the new
+ * one seats 49 senators who cosponsor carry reciprocity — so a researcher working
+ * from the old print would have refused rows the ladder now has a home for.
+ *
+ * The `eff` LATERAL below is copied from compassService.getPromotedTopics rather
+ * than re-derived, because a second spelling of this resolution is how the two
+ * drift apart again.
  *
  * ⚠ IT WRITES NO VALUES, AND THAT IS NOT A LIMITATION TO BE FIXED. Every row is
  * a claim about a real person that a voter will read, and the pipeline behind it
@@ -105,7 +122,11 @@ const pool = new pg.Pool({
 /** Topics the OPEN season asks that admit this tier. No role rows = all but judicial. */
 const TOPICS_SQL = `
   SELECT q.topic_id, q.topic_revision_id, q.question_number,
-         pr.topic_key, pr.title, pr.question_text,
+         pr.topic_key,
+         -- Title, question and ladder all follow the RESOLVED revision, so a
+         -- clarifying rewrite of any of them shows up here without a pin write.
+         eff.id AS effective_revision_id, eff.revision AS effective_revision,
+         eff.title, eff.question_text,
          (SELECT array_agg(role_scope ORDER BY role_scope)
             FROM inform.compass_topic_roles r WHERE r.topic_id = q.topic_id) AS scopes,
          NOT EXISTS (
@@ -115,6 +136,17 @@ const TOPICS_SQL = `
     FROM inform.season_questions q
     JOIN inform.seasons s ON s.id = q.season_id AND s.status = 'open'
     JOIN inform.compass_topics_promoted pr ON pr.id = q.topic_id
+    JOIN LATERAL (
+      SELECT e.id, e.revision, e.title, e.question_text
+        FROM inform.compass_topic_revisions pin
+        JOIN inform.compass_topic_revisions e
+          ON e.topic_id = pin.topic_id
+         AND e.version  = pin.version
+         AND e.status IN ('published', 'superseded')
+       WHERE pin.id = q.topic_revision_id
+       ORDER BY e.revision DESC
+       LIMIT 1
+    ) eff ON true
    ORDER BY q.question_number`;
 
 const PEOPLE_SQL = `
@@ -143,13 +175,14 @@ try {
     process.exit(1);
   }
 
-  // The ladder each topic's season pinned — never compass_stances_current.
+  // The ladder of each topic's RESOLVED revision — not the pinned id, and never
+  // compass_stances_current. See the header for what keying on the pin cost.
   const { rows: rungs } = await pool.query(
     `SELECT sr.topic_revision_id, sr.value, sr.text
        FROM inform.compass_stance_revisions sr
       WHERE sr.topic_revision_id = ANY($1::uuid[])
       ORDER BY sr.topic_revision_id, sr.value`,
-    [inTier.map((t) => t.topic_revision_id)],
+    [inTier.map((t) => t.effective_revision_id)],
   );
 
   // Any answer in any PUBLISHED season stands and displays — see the header. A
@@ -190,7 +223,7 @@ try {
     md.push('');
     md.push(`_tiers: ${(t.scopes || []).join(', ') || 'all (cross-cutting)'}_`);
     md.push('');
-    for (const r of rungs.filter((r) => r.topic_revision_id === t.topic_revision_id)) {
+    for (const r of rungs.filter((r) => r.topic_revision_id === t.effective_revision_id)) {
       md.push(`- **${r.value}** — ${r.text}`);
     }
     md.push('');
