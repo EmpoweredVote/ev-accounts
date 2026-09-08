@@ -1,0 +1,299 @@
+politician_id,full_name,topic_key,verdict,on_axis,off_axis,non_operative,best_role,best_bill,best_introduced,best_title
+00abc782-e86b-40f2-be0d-f07fad802688,Ron Johnson,border-security,settleable,2,3,1,cosponsor,S. 286,2025-01-28,Stop Human Trafficking of Unaccompanied Migrant Children Act of 2025
+00abc782-e86b-40f2-be0d-f07fad802688,Ron Johnson,gun-policy,settleable,4,0,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+00abc782-e86b-40f2-be0d-f07fad802688,Ron Johnson,israel-military-aid,settleable,4,0,4,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+023c6644-356e-4afb-925b-e20f9c32209b,Jim Banks,border-security,settleable,1,3,1,cosponsor,S. 5371,2026-08-07,Stopping Border Surges Act
+023c6644-356e-4afb-925b-e20f9c32209b,Jim Banks,gun-policy,settleable,4,2,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+023c6644-356e-4afb-925b-e20f9c32209b,Jim Banks,israel-military-aid,settleable,3,5,4,sponsor,S. 2216,2025-07-09,"Weapons Resupply, Stockpile, and Alliance–Israel Act"
+059dab9f-a79a-4664-b4cf-26b0655c596f,Tammy Duckworth,border-security,settleable,4,0,2,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+059dab9f-a79a-4664-b4cf-26b0655c596f,Tammy Duckworth,gun-policy,settleable,6,21,5,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+059dab9f-a79a-4664-b4cf-26b0655c596f,Tammy Duckworth,israel-military-aid,non-operative-only,0,0,5,,,,
+0942f325-1180-4e1a-b1df-06438f1792a3,Tom Cotton,border-security,settleable,5,4,1,sponsor,S. 3488,2025-12-16,Asylum Reform and Loophole Closure Act
+0942f325-1180-4e1a-b1df-06438f1792a3,Tom Cotton,gun-policy,settleable,4,6,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+0942f325-1180-4e1a-b1df-06438f1792a3,Tom Cotton,israel-military-aid,settleable,6,1,6,sponsor,S. 4337,2024-05-15,Israel Security Assistance Support Act
+0ba1cecc-8493-495b-8d58-34d50bbacfba,Katie Britt,border-security,settleable,4,4,1,sponsor,S. 348,2023-02-09,Asylum Abuse Reduction Act
+0ba1cecc-8493-495b-8d58-34d50bbacfba,Katie Britt,gun-policy,settleable,4,3,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+0ba1cecc-8493-495b-8d58-34d50bbacfba,Katie Britt,israel-military-aid,settleable,4,1,12,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+0dd5daa6-87cf-43a7-a1ee-25349ae35e27,Bill Hagerty,border-security,settleable,2,5,0,cosponsor,S. 2905,2023-09-21,No Asylum for CCP Spies Act
+0dd5daa6-87cf-43a7-a1ee-25349ae35e27,Bill Hagerty,gun-policy,settleable,4,6,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+0dd5daa6-87cf-43a7-a1ee-25349ae35e27,Bill Hagerty,israel-military-aid,settleable,2,0,7,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+0eabc969-c1a1-47b7-8d34-6113b723a170,Jeff Merkley,border-security,settleable,3,1,0,cosponsor,S. 3702,2026-02-03,Dignity for Detained Immigrants Act
+0eabc969-c1a1-47b7-8d34-6113b723a170,Jeff Merkley,gun-policy,settleable,5,11,3,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+0eabc969-c1a1-47b7-8d34-6113b723a170,Jeff Merkley,israel-military-aid,settleable,10,0,5,cosponsor,SJRES. 32,2026-04-15,A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.
+0f06ced9-84c7-4020-98fd-82ac25d49027,Patty Murray,border-security,settleable,4,3,1,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+0f06ced9-84c7-4020-98fd-82ac25d49027,Patty Murray,gun-policy,settleable,4,2,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+0f06ced9-84c7-4020-98fd-82ac25d49027,Patty Murray,israel-military-aid,non-operative-only,0,0,1,,,,
+0fd03798-714d-4976-a9b6-448aa22d8a68,Ruben Gallego,border-security,settleable,2,3,2,cosponsor,S. 1965,2025-12-09,Protect Vulnerable Immigrant Youth Act
+0fd03798-714d-4976-a9b6-448aa22d8a68,Ruben Gallego,gun-policy,settleable,4,2,4,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+0fd03798-714d-4976-a9b6-448aa22d8a68,Ruben Gallego,israel-military-aid,off-axis-only,0,3,3,,,,
+100de02f-b44d-4587-9b90-19aa5081708c,Brian Schatz,border-security,settleable,2,0,0,cosponsor,S. 1965,2025-06-05,Protect Vulnerable Immigrant Youth Act
+100de02f-b44d-4587-9b90-19aa5081708c,Brian Schatz,gun-policy,settleable,4,12,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+100de02f-b44d-4587-9b90-19aa5081708c,Brian Schatz,israel-military-aid,settleable,1,0,2,cosponsor,SJRES. 111,2024-09-25,A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.
+102b239c-0a3d-44b9-ae32-88d8179197e2,Todd Young,border-security,settleable,1,3,1,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+102b239c-0a3d-44b9-ae32-88d8179197e2,Todd Young,gun-policy,settleable,4,0,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+102b239c-0a3d-44b9-ae32-88d8179197e2,Todd Young,israel-military-aid,settleable,1,0,7,cosponsor,SRES. 682,2024-05-09,A resolution condemning the decision by the Biden Administration to halt the shipment of United States made ammunition and weapons to the State of Israel.
+108e7bcc-554a-49d7-81f0-c3058f933a07,Josh Hawley,border-security,settleable,2,6,0,cosponsor,S. 2905,2023-09-21,No Asylum for CCP Spies Act
+108e7bcc-554a-49d7-81f0-c3058f933a07,Josh Hawley,gun-policy,settleable,4,3,0,cosponsor,S. 5172,2024-09-25,"A bill to amend the National Child Protection Act of 1993 to ensure that businesses and organizations that work with vulnerable populations are able to request background checks for their contractors who work with those populations, as well as for individuals that the businesses or organizations license or certify to provide care for those populations."
+108e7bcc-554a-49d7-81f0-c3058f933a07,Josh Hawley,israel-military-aid,settleable,5,2,4,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+129c2764-370c-4385-ad64-4cb5744c3541,Rick Scott,border-security,settleable,5,9,3,sponsor,S. 4771,2026-06-11,Protecting Asylum Integrity Act
+129c2764-370c-4385-ad64-4cb5744c3541,Rick Scott,gun-policy,settleable,4,6,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+129c2764-370c-4385-ad64-4cb5744c3541,Rick Scott,israel-military-aid,settleable,6,4,10,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+130591ca-bfd1-4691-916b-3570341b04fb,Joni Ernst,border-security,settleable,1,4,0,cosponsor,S. 685,2023-03-07,Stopping Border Surges Act
+130591ca-bfd1-4691-916b-3570341b04fb,Joni Ernst,gun-policy,settleable,4,2,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+130591ca-bfd1-4691-916b-3570341b04fb,Joni Ernst,israel-military-aid,settleable,4,0,8,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+17f7729f-22a2-4346-9434-e5f545cfe8b4,Angela Alsobrooks,border-security,non-operative-only,0,0,1,,,,
+17f7729f-22a2-4346-9434-e5f545cfe8b4,Angela Alsobrooks,gun-policy,settleable,3,8,4,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+17f7729f-22a2-4346-9434-e5f545cfe8b4,Angela Alsobrooks,israel-military-aid,no-lead,0,0,0,,,,
+1d877e4d-8aaf-4db8-be5b-2a3de0a98783,Jeanne Shaheen,border-security,off-axis-only,0,2,0,,,,
+1d877e4d-8aaf-4db8-be5b-2a3de0a98783,Jeanne Shaheen,gun-policy,settleable,4,5,3,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+1d877e4d-8aaf-4db8-be5b-2a3de0a98783,Jeanne Shaheen,israel-military-aid,non-operative-only,0,0,4,,,,
+20aa1064-bbe7-484c-b779-28d99e92e608,Lindsey Graham,border-security,no-lead,0,0,0,,,,
+20aa1064-bbe7-484c-b779-28d99e92e608,Lindsey Graham,gun-policy,settleable,1,3,0,cosponsor,S. 65,2026-07-28,Constitutional Concealed Carry Reciprocity Act of 2025
+20aa1064-bbe7-484c-b779-28d99e92e608,Lindsey Graham,israel-military-aid,off-axis-only,0,1,0,,,,
+2147281e-e1b1-4416-a5d9-dae9d4f31be0,Ron Wyden,border-security,settleable,1,0,2,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+2147281e-e1b1-4416-a5d9-dae9d4f31be0,Ron Wyden,gun-policy,settleable,6,11,3,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+2147281e-e1b1-4416-a5d9-dae9d4f31be0,Ron Wyden,israel-military-aid,off-axis-only,0,1,5,,,,
+2249e92f-8064-4c9e-b109-d56c0c5bb1b8,Bernie Moreno,border-security,settleable,1,1,0,cosponsor,S. 112,2025-01-21,Make the Migrant Protection Protocols Mandatory Act of 2025
+2249e92f-8064-4c9e-b109-d56c0c5bb1b8,Bernie Moreno,gun-policy,settleable,1,0,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+2249e92f-8064-4c9e-b109-d56c0c5bb1b8,Bernie Moreno,israel-military-aid,non-operative-only,0,0,1,,,,
+24109768-01ad-4bab-b833-b7bc1d8f437d,Steve Daines,border-security,settleable,4,8,1,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+24109768-01ad-4bab-b833-b7bc1d8f437d,Steve Daines,gun-policy,settleable,4,16,3,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+24109768-01ad-4bab-b833-b7bc1d8f437d,Steve Daines,israel-military-aid,settleable,4,2,6,sponsor,S. 3081,2023-10-18,Fortify Israel Act
+2717ff94-f7e8-4b39-b6ec-fc3e30f3d46f,Alex Padilla,border-security,settleable,3,9,3,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+2717ff94-f7e8-4b39-b6ec-fc3e30f3d46f,Alex Padilla,israel-military-aid,off-axis-only,0,1,1,,,,
+274c286d-a292-4e3f-b570-6c2d7ae9c209,Eric Schmitt,border-security,settleable,1,1,1,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+274c286d-a292-4e3f-b570-6c2d7ae9c209,Eric Schmitt,gun-policy,settleable,4,2,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+274c286d-a292-4e3f-b570-6c2d7ae9c209,Eric Schmitt,israel-military-aid,settleable,2,0,4,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+27d57833-842f-427c-bedd-aa1695fe550f,Ben Ray Luján,border-security,settleable,2,4,1,cosponsor,S. 1965,2025-06-17,Protect Vulnerable Immigrant Youth Act
+27d57833-842f-427c-bedd-aa1695fe550f,Ben Ray Luján,gun-policy,settleable,4,1,2,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+27d57833-842f-427c-bedd-aa1695fe550f,Ben Ray Luján,israel-military-aid,non-operative-only,0,0,3,,,,
+2971d4f9-1433-4dcd-aaa7-193241ef3c95,Mike Crapo,border-security,settleable,2,6,2,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+2971d4f9-1433-4dcd-aaa7-193241ef3c95,Mike Crapo,gun-policy,settleable,4,14,2,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+2971d4f9-1433-4dcd-aaa7-193241ef3c95,Mike Crapo,israel-military-aid,settleable,4,2,9,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+2a6693c7-9149-4e71-85fe-003746f7d23d,John Hickenlooper,border-security,no-lead,0,0,0,,,,
+2a6693c7-9149-4e71-85fe-003746f7d23d,John Hickenlooper,gun-policy,settleable,4,2,2,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+2a6693c7-9149-4e71-85fe-003746f7d23d,John Hickenlooper,israel-military-aid,non-operative-only,0,0,5,,,,
+2b022ce1-6272-40db-9332-015a057ec9f8,John Cornyn,border-security,settleable,1,14,3,cosponsor,S. 2824,2023-09-18,Secure the Border Act of 2023
+2b022ce1-6272-40db-9332-015a057ec9f8,John Cornyn,gun-policy,settleable,4,8,1,sponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+2b022ce1-6272-40db-9332-015a057ec9f8,John Cornyn,israel-military-aid,settleable,2,3,8,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+2b8d4b89-2d7c-4b67-a5a1-72bd7c766e1e,James Lankford,border-security,off-axis-only,0,16,2,,,,
+2b8d4b89-2d7c-4b67-a5a1-72bd7c766e1e,James Lankford,gun-policy,settleable,4,8,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+2b8d4b89-2d7c-4b67-a5a1-72bd7c766e1e,James Lankford,israel-military-aid,settleable,4,3,7,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+2c3372a7-dadc-4622-944c-1783abe57b56,Richard Durbin,border-security,settleable,2,2,0,cosponsor,S. 1965,2025-06-05,Protect Vulnerable Immigrant Youth Act
+2c3372a7-dadc-4622-944c-1783abe57b56,Richard Durbin,gun-policy,settleable,7,27,4,sponsor,S. 5172,2024-09-25,"A bill to amend the National Child Protection Act of 1993 to ensure that businesses and organizations that work with vulnerable populations are able to request background checks for their contractors who work with those populations, as well as for individuals that the businesses or organizations license or certify to provide care for those populations."
+2c3372a7-dadc-4622-944c-1783abe57b56,Richard Durbin,israel-military-aid,non-operative-only,0,0,3,,,,
+2f52b4b6-f167-4452-be9b-d37a5b667e69,Jerry Moran,border-security,settleable,3,2,0,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+2f52b4b6-f167-4452-be9b-d37a5b667e69,Jerry Moran,gun-policy,settleable,4,1,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+2f52b4b6-f167-4452-be9b-d37a5b667e69,Jerry Moran,israel-military-aid,settleable,2,2,5,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+3149d855-8d85-4080-b0d6-fb83be500533,Deb Fischer,border-security,settleable,2,2,1,cosponsor,S. 2905,2023-09-27,No Asylum for CCP Spies Act
+3149d855-8d85-4080-b0d6-fb83be500533,Deb Fischer,gun-policy,settleable,4,5,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+3149d855-8d85-4080-b0d6-fb83be500533,Deb Fischer,israel-military-aid,settleable,4,1,8,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+3621bbef-a821-45fe-991c-e1744ad05203,John Boozman,border-security,settleable,1,4,1,cosponsor,S. 348,2023-02-09,Asylum Abuse Reduction Act
+3621bbef-a821-45fe-991c-e1744ad05203,John Boozman,gun-policy,settleable,4,3,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+3621bbef-a821-45fe-991c-e1744ad05203,John Boozman,israel-military-aid,settleable,3,0,5,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+3bb72269-7f3b-42a5-bf48-4e1963844391,Tim Sheehy,border-security,settleable,1,1,0,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+3bb72269-7f3b-42a5-bf48-4e1963844391,Tim Sheehy,gun-policy,settleable,2,6,0,sponsor,S. 5208,2026-08-03,Special Operations Forces Concealed Carry Act
+3bb72269-7f3b-42a5-bf48-4e1963844391,Tim Sheehy,israel-military-aid,non-operative-only,0,0,1,,,,
+3cc5cece-cec0-4490-8faa-37a6b66231c7,Bernie Sanders,border-security,settleable,2,4,0,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+3cc5cece-cec0-4490-8faa-37a6b66231c7,Bernie Sanders,gun-policy,settleable,7,8,1,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+3cc5cece-cec0-4490-8faa-37a6b66231c7,Bernie Sanders,israel-military-aid,settleable,25,0,2,sponsor,SJRES. 138,2026-03-19,A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.
+3d51cca6-7206-413b-ab8d-3199a58a6767,Amy Klobuchar,border-security,off-axis-only,0,3,1,,,,
+3d51cca6-7206-413b-ab8d-3199a58a6767,Amy Klobuchar,gun-policy,settleable,7,10,5,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+3d51cca6-7206-413b-ab8d-3199a58a6767,Amy Klobuchar,israel-military-aid,non-operative-only,0,0,3,,,,
+401f1fab-c996-4b1a-92f7-2817c5dd4619,Ted Budd,border-security,settleable,3,7,2,cosponsor,S. 4771,2026-06-15,Protecting Asylum Integrity Act
+401f1fab-c996-4b1a-92f7-2817c5dd4619,Ted Budd,gun-policy,settleable,4,11,2,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+401f1fab-c996-4b1a-92f7-2817c5dd4619,Ted Budd,israel-military-aid,settleable,4,5,10,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+463f8a89-e12c-4b92-8df1-0fed43dc4441,Kirsten Gillibrand,border-security,settleable,1,7,0,cosponsor,S. 1885,2023-06-20,Protect Vulnerable Immigrant Youth Act
+463f8a89-e12c-4b92-8df1-0fed43dc4441,Kirsten Gillibrand,gun-policy,settleable,7,14,1,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+463f8a89-e12c-4b92-8df1-0fed43dc4441,Kirsten Gillibrand,israel-military-aid,off-axis-only,0,4,6,,,,
+4cc6f4af-a528-430e-975b-bd5a86382a13,Rand Paul,border-security,non-operative-only,0,0,1,,,,
+4cc6f4af-a528-430e-975b-bd5a86382a13,Rand Paul,gun-policy,settleable,1,1,0,cosponsor,SJRES. 20,2023-03-15,"A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Justice and the Bureau of Alcohol, Tobacco, Firearms and Explosives relating to ""Factoring Criteria for Firearms With Attached 'Stabilizing Braces'""."
+4cc6f4af-a528-430e-975b-bd5a86382a13,Rand Paul,israel-military-aid,non-operative-only,0,0,3,,,,
+4d83f985-9248-4905-a9b6-5742e2df77a8,Cindy Hyde-Smith,border-security,settleable,2,7,2,cosponsor,S. 112,2025-01-22,Make the Migrant Protection Protocols Mandatory Act of 2025
+4d83f985-9248-4905-a9b6-5742e2df77a8,Cindy Hyde-Smith,gun-policy,settleable,4,15,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+4d83f985-9248-4905-a9b6-5742e2df77a8,Cindy Hyde-Smith,israel-military-aid,settleable,2,0,5,cosponsor,S. 4337,2024-05-15,Israel Security Assistance Support Act
+4f411143-634b-4e11-ab61-78acaf22ddfb,Dave McCormick,border-security,no-lead,0,0,0,,,,
+4f411143-634b-4e11-ab61-78acaf22ddfb,Dave McCormick,gun-policy,settleable,1,2,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+4f411143-634b-4e11-ab61-78acaf22ddfb,Dave McCormick,israel-military-aid,settleable,1,1,2,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+4f4b2bff-0054-475f-8687-e83f68085f15,"Angus S. King, Jr.",border-security,settleable,2,4,1,cosponsor,S. 1965,2025-07-24,Protect Vulnerable Immigrant Youth Act
+4f4b2bff-0054-475f-8687-e83f68085f15,"Angus S. King, Jr.",gun-policy,settleable,2,1,0,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+4f4b2bff-0054-475f-8687-e83f68085f15,"Angus S. King, Jr.",israel-military-aid,non-operative-only,0,0,2,,,,
+4f62ca82-fda1-4386-9a4a-62dd84318f83,Mike Lee,border-security,settleable,3,5,1,sponsor,S. 5371,2026-08-07,Stopping Border Surges Act
+4f62ca82-fda1-4386-9a4a-62dd84318f83,Mike Lee,gun-policy,settleable,4,3,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+4f62ca82-fda1-4386-9a4a-62dd84318f83,Mike Lee,israel-military-aid,settleable,5,0,4,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+4fa06009-8f67-40f6-a8b3-d2d62712240d,Martin Heinrich,border-security,off-axis-only,0,5,0,,,,
+4fa06009-8f67-40f6-a8b3-d2d62712240d,Martin Heinrich,gun-policy,settleable,5,5,4,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+4fa06009-8f67-40f6-a8b3-d2d62712240d,Martin Heinrich,israel-military-aid,non-operative-only,0,0,2,,,,
+535591bf-7151-48ba-81b4-e8d9983def72,Michael Bennet,border-security,off-axis-only,0,1,2,,,,
+535591bf-7151-48ba-81b4-e8d9983def72,Michael Bennet,gun-policy,settleable,4,0,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+535591bf-7151-48ba-81b4-e8d9983def72,Michael Bennet,israel-military-aid,non-operative-only,0,0,5,,,,
+5fe0fed0-05b0-49e4-b7e2-99d2c8463a0d,Raphael Warnock,border-security,non-operative-only,0,0,1,,,,
+5fe0fed0-05b0-49e4-b7e2-99d2c8463a0d,Raphael Warnock,gun-policy,settleable,4,0,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+5fe0fed0-05b0-49e4-b7e2-99d2c8463a0d,Raphael Warnock,israel-military-aid,non-operative-only,0,0,4,,,,
+6160a29a-d896-4061-801a-e5c3d9f06c99,Jon Ossoff,border-security,off-axis-only,0,5,0,,,,
+6160a29a-d896-4061-801a-e5c3d9f06c99,Jon Ossoff,gun-policy,settleable,4,0,0,cosponsor,S. 3214,2026-01-14,Background Check Expansion Act
+6160a29a-d896-4061-801a-e5c3d9f06c99,Jon Ossoff,israel-military-aid,off-axis-only,0,1,3,,,,
+61a601c2-7faa-4889-abf2-bbb0066ce448,Chris Van Hollen,border-security,off-axis-only,0,1,1,,,,
+61a601c2-7faa-4889-abf2-bbb0066ce448,Chris Van Hollen,gun-policy,settleable,7,11,4,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+61a601c2-7faa-4889-abf2-bbb0066ce448,Chris Van Hollen,israel-military-aid,settleable,3,0,5,cosponsor,SJRES. 138,2026-03-19,A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.
+624e51ff-2f0f-45d0-bd57-1dfa8ad47013,Mike Rounds,border-security,settleable,3,5,1,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+624e51ff-2f0f-45d0-bd57-1dfa8ad47013,Mike Rounds,gun-policy,settleable,4,6,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+624e51ff-2f0f-45d0-bd57-1dfa8ad47013,Mike Rounds,israel-military-aid,settleable,3,2,3,cosponsor,S. 1521,2025-10-07,Stand with Israel Act
+661c0499-af4c-4cf9-a34b-eb0c20d5cd4b,John Thune,border-security,settleable,2,3,0,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+661c0499-af4c-4cf9-a34b-eb0c20d5cd4b,John Thune,gun-policy,settleable,4,6,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+661c0499-af4c-4cf9-a34b-eb0c20d5cd4b,John Thune,israel-military-aid,settleable,3,1,7,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+675778b0-7e6f-45ef-96b2-7bcb5d7e0af7,Tim Scott,border-security,settleable,1,5,0,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+675778b0-7e6f-45ef-96b2-7bcb5d7e0af7,Tim Scott,gun-policy,settleable,4,2,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+675778b0-7e6f-45ef-96b2-7bcb5d7e0af7,Tim Scott,israel-military-aid,settleable,4,0,8,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+6b817122-f196-4b72-b0b4-2d9763c4be47,Susan M. Collins,border-security,settleable,1,6,1,sponsor,S. 255,2023-02-02,Asylum Seeker Work Authorization Act of 2023
+6b817122-f196-4b72-b0b4-2d9763c4be47,Susan M. Collins,gun-policy,no-lead,0,0,0,,,,
+6b817122-f196-4b72-b0b4-2d9763c4be47,Susan M. Collins,israel-military-aid,settleable,3,4,8,cosponsor,S. 1521,2025-06-12,Stand with Israel Act
+6ca6aabe-6a7f-46b7-b51d-620a7f5c9913,Shelley Moore Capito,border-security,off-axis-only,0,1,2,,,,
+6ca6aabe-6a7f-46b7-b51d-620a7f5c9913,Shelley Moore Capito,gun-policy,settleable,4,5,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+6ca6aabe-6a7f-46b7-b51d-620a7f5c9913,Shelley Moore Capito,israel-military-aid,settleable,3,1,7,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+750717e7-1f22-42a7-86fd-e065caf343de,Maria Cantwell,border-security,no-lead,0,0,0,,,,
+750717e7-1f22-42a7-86fd-e065caf343de,Maria Cantwell,gun-policy,settleable,4,2,2,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+750717e7-1f22-42a7-86fd-e065caf343de,Maria Cantwell,israel-military-aid,non-operative-only,0,0,2,,,,
+7affca4e-db2b-4f7e-b009-9acc6b493139,Tommy Tuberville,border-security,settleable,3,4,0,cosponsor,S. 5371,2026-08-07,Stopping Border Surges Act
+7affca4e-db2b-4f7e-b009-9acc6b493139,Tommy Tuberville,gun-policy,settleable,4,2,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+7affca4e-db2b-4f7e-b009-9acc6b493139,Tommy Tuberville,israel-military-aid,settleable,3,0,5,cosponsor,SRES. 682,2024-05-09,A resolution condemning the decision by the Biden Administration to halt the shipment of United States made ammunition and weapons to the State of Israel.
+7b77ec48-f6d0-4b10-84bf-d15607fcbd2d,Gary Peters,border-security,off-axis-only,0,9,1,,,,
+7b77ec48-f6d0-4b10-84bf-d15607fcbd2d,Gary Peters,gun-policy,settleable,4,0,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+7b77ec48-f6d0-4b10-84bf-d15607fcbd2d,Gary Peters,israel-military-aid,off-axis-only,0,5,4,,,,
+7e1e1044-a98b-4c69-910e-73de8e818c48,Mark Kelly,border-security,off-axis-only,0,8,1,,,,
+7e1e1044-a98b-4c69-910e-73de8e818c48,Mark Kelly,gun-policy,settleable,3,0,1,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+7e1e1044-a98b-4c69-910e-73de8e818c48,Mark Kelly,israel-military-aid,non-operative-only,0,0,1,,,,
+7e434dbf-80d1-4813-9b43-af30429c8290,Jim Justice,border-security,off-axis-only,0,1,0,,,,
+7e434dbf-80d1-4813-9b43-af30429c8290,Jim Justice,gun-policy,settleable,1,4,3,cosponsor,S. 65,2025-02-10,Constitutional Concealed Carry Reciprocity Act of 2025
+7e434dbf-80d1-4813-9b43-af30429c8290,Jim Justice,israel-military-aid,settleable,1,2,2,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+808ab926-365f-4b8a-a42e-628f11ecc48e,Marsha Blackburn,border-security,settleable,5,15,2,sponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+808ab926-365f-4b8a-a42e-628f11ecc48e,Marsha Blackburn,gun-policy,settleable,4,11,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+808ab926-365f-4b8a-a42e-628f11ecc48e,Marsha Blackburn,israel-military-aid,settleable,6,2,9,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+85d27350-e1b6-45b8-aee3-509ca88c5af4,Mark Warner,border-security,off-axis-only,0,2,0,,,,
+85d27350-e1b6-45b8-aee3-509ca88c5af4,Mark Warner,gun-policy,settleable,4,3,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+85d27350-e1b6-45b8-aee3-509ca88c5af4,Mark Warner,israel-military-aid,off-axis-only,0,1,3,,,,
+872f60a5-7ded-473b-87a8-a904d6ca4d6e,Cory Booker,border-security,settleable,2,3,2,sponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+872f60a5-7ded-473b-87a8-a904d6ca4d6e,Cory Booker,gun-policy,settleable,8,32,6,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+872f60a5-7ded-473b-87a8-a904d6ca4d6e,Cory Booker,israel-military-aid,off-axis-only,0,1,4,,,,
+88c06231-8e34-43ff-befb-8868b44383e6,Kevin Cramer,border-security,settleable,1,8,2,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+88c06231-8e34-43ff-befb-8868b44383e6,Kevin Cramer,gun-policy,settleable,4,14,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+88c06231-8e34-43ff-befb-8868b44383e6,Kevin Cramer,israel-military-aid,settleable,3,2,8,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+8a27a8b7-88b4-4f79-bbcf-d1d0e70d4032,Adam B. Schiff,border-security,settleable,2,2,1,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+8a27a8b7-88b4-4f79-bbcf-d1d0e70d4032,Adam B. Schiff,israel-military-aid,off-axis-only,0,6,6,,,,
+8cffe7a0-b56c-42fe-adbf-f57d63589973,Tim Kaine,border-security,off-axis-only,0,2,0,,,,
+8cffe7a0-b56c-42fe-adbf-f57d63589973,Tim Kaine,gun-policy,settleable,6,10,5,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+8cffe7a0-b56c-42fe-adbf-f57d63589973,Tim Kaine,israel-military-aid,off-axis-only,0,3,6,,,,
+91f87a53-13bc-4d35-b3c8-49227ae80faa,Catherine Cortez Masto,border-security,settleable,2,8,2,sponsor,S. 1965,2025-06-05,Protect Vulnerable Immigrant Youth Act
+91f87a53-13bc-4d35-b3c8-49227ae80faa,Catherine Cortez Masto,gun-policy,settleable,3,2,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+91f87a53-13bc-4d35-b3c8-49227ae80faa,Catherine Cortez Masto,israel-military-aid,off-axis-only,0,1,4,,,,
+9a41971c-1e38-41b8-a6ec-bec6055a00b3,James Risch,border-security,settleable,2,6,2,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+9a41971c-1e38-41b8-a6ec-bec6055a00b3,James Risch,gun-policy,settleable,4,14,3,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+9a41971c-1e38-41b8-a6ec-bec6055a00b3,James Risch,israel-military-aid,settleable,4,1,5,sponsor,S. 1521,2025-04-30,Stand with Israel Act
+9a9874ab-159f-4ffb-b88e-f058df02d5fa,Peter Welch,border-security,settleable,4,4,0,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+9a9874ab-159f-4ffb-b88e-f058df02d5fa,Peter Welch,gun-policy,settleable,7,15,5,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+9a9874ab-159f-4ffb-b88e-f058df02d5fa,Peter Welch,israel-military-aid,settleable,13,0,4,sponsor,SRES. 797,2026-06-24,A resolution requesting information on Israel's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.
+9df12eb2-bc9a-4083-8004-1af4167342ea,Roger Marshall,border-security,settleable,2,3,2,cosponsor,S. 2905,2023-09-21,No Asylum for CCP Spies Act
+9df12eb2-bc9a-4083-8004-1af4167342ea,Roger Marshall,gun-policy,settleable,5,11,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+9df12eb2-bc9a-4083-8004-1af4167342ea,Roger Marshall,israel-military-aid,settleable,6,0,3,sponsor,S. 3210,2023-11-02,"Israel Security Supplemental Appropriations Act, 2024"
+a8017fcc-f4c0-4b7d-a0fa-9d76ea3d56f6,Tina Smith,border-security,settleable,1,0,0,cosponsor,S. 1885,2023-09-11,Protect Vulnerable Immigrant Youth Act
+a8017fcc-f4c0-4b7d-a0fa-9d76ea3d56f6,Tina Smith,gun-policy,settleable,5,7,1,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+a8017fcc-f4c0-4b7d-a0fa-9d76ea3d56f6,Tina Smith,israel-military-aid,non-operative-only,0,0,2,,,,
+a8bda21a-a5ca-4c15-9612-10fad5d5c9d6,Ted Cruz,border-security,settleable,3,12,3,sponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+a8bda21a-a5ca-4c15-9612-10fad5d5c9d6,Ted Cruz,gun-policy,settleable,4,4,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+a8bda21a-a5ca-4c15-9612-10fad5d5c9d6,Ted Cruz,israel-military-aid,settleable,4,2,8,cosponsor,S. 4337,2024-05-15,Israel Security Assistance Support Act
+a97678bc-8844-4560-87b1-5ef4f8013d96,Dan Sullivan,border-security,settleable,1,4,1,cosponsor,S. 2824,2023-09-29,Secure the Border Act of 2023
+a97678bc-8844-4560-87b1-5ef4f8013d96,Dan Sullivan,gun-policy,settleable,4,2,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+a97678bc-8844-4560-87b1-5ef4f8013d96,Dan Sullivan,israel-military-aid,settleable,3,2,9,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+abbe5ec0-94fb-4230-bc7c-4b890e4e6387,Alan Armstrong,border-security,no-lead,0,0,0,,,,
+abbe5ec0-94fb-4230-bc7c-4b890e4e6387,Alan Armstrong,gun-policy,no-lead,0,0,0,,,,
+abbe5ec0-94fb-4230-bc7c-4b890e4e6387,Alan Armstrong,israel-military-aid,no-lead,0,0,0,,,,
+ac7faadb-52c2-4e13-9073-3a607a4f8e57,Tammy Baldwin,border-security,off-axis-only,0,2,0,,,,
+ac7faadb-52c2-4e13-9073-3a607a4f8e57,Tammy Baldwin,gun-policy,settleable,6,7,4,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+ac7faadb-52c2-4e13-9073-3a607a4f8e57,Tammy Baldwin,israel-military-aid,non-operative-only,0,0,3,,,,
+af01a7ec-9318-4862-ba78-553e5908182c,Chuck Schumer,border-security,off-axis-only,0,2,0,,,,
+af01a7ec-9318-4862-ba78-553e5908182c,Chuck Schumer,gun-policy,settleable,4,8,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+af01a7ec-9318-4862-ba78-553e5908182c,Chuck Schumer,israel-military-aid,non-operative-only,0,0,3,,,,
+afd8d31b-9f88-4eb9-8a88-46e5ef914267,Jack Reed,border-security,no-lead,0,0,0,,,,
+afd8d31b-9f88-4eb9-8a88-46e5ef914267,Jack Reed,gun-policy,settleable,7,20,3,sponsor,S. 3677,2024-01-25,A bill to permanently authorize the Undetectable Firearms Act of 1988.
+afd8d31b-9f88-4eb9-8a88-46e5ef914267,Jack Reed,israel-military-aid,non-operative-only,0,0,1,,,,
+b700099a-8cab-44b6-81b8-d678d646ae88,Christopher Murphy,border-security,off-axis-only,0,1,0,,,,
+b700099a-8cab-44b6-81b8-d678d646ae88,Christopher Murphy,gun-policy,settleable,6,22,3,sponsor,S. 3214,2025-11-19,Background Check Expansion Act
+b700099a-8cab-44b6-81b8-d678d646ae88,Christopher Murphy,israel-military-aid,non-operative-only,0,0,4,,,,
+b87583fe-2348-4bf3-aba5-12f5f88d3606,John Curtis,border-security,off-axis-only,0,3,0,,,,
+b87583fe-2348-4bf3-aba5-12f5f88d3606,John Curtis,gun-policy,settleable,4,4,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+b87583fe-2348-4bf3-aba5-12f5f88d3606,John Curtis,israel-military-aid,settleable,1,4,5,cosponsor,HR. 6118,2023-10-30,Stand with Israel Act
+bd630c8f-14da-4149-b95c-6da7eddaab8f,Richard Blumenthal,border-security,off-axis-only,0,6,1,,,,
+bd630c8f-14da-4149-b95c-6da7eddaab8f,Richard Blumenthal,gun-policy,settleable,8,34,4,sponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+bd630c8f-14da-4149-b95c-6da7eddaab8f,Richard Blumenthal,israel-military-aid,off-axis-only,0,2,6,,,,
+c19c488e-ae48-4ed2-ba7c-3092b847c192,Sheldon Whitehouse,border-security,off-axis-only,0,2,1,,,,
+c19c488e-ae48-4ed2-ba7c-3092b847c192,Sheldon Whitehouse,gun-policy,settleable,8,18,2,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+c19c488e-ae48-4ed2-ba7c-3092b847c192,Sheldon Whitehouse,israel-military-aid,non-operative-only,0,0,3,,,,
+cc873a93-cb47-405a-93b0-bb2848fdd57e,Lisa Murkowski,border-security,settleable,1,1,0,cosponsor,S. 255,2023-05-15,Asylum Seeker Work Authorization Act of 2023
+cc873a93-cb47-405a-93b0-bb2848fdd57e,Lisa Murkowski,gun-policy,settleable,1,1,0,cosponsor,SJRES. 83,2024-06-17,"A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Alcohol, Tobacco, Firearms, and Explosives relating to ""Definition of 'Engaged in the Business' as a Dealer in Firearms""."
+cc873a93-cb47-405a-93b0-bb2848fdd57e,Lisa Murkowski,israel-military-aid,settleable,1,2,4,cosponsor,SRES. 682,2024-05-09,A resolution condemning the decision by the Biden Administration to halt the shipment of United States made ammunition and weapons to the State of Israel.
+d01ea902-317a-4a66-b346-8b29a91fcd25,Pete Ricketts,border-security,settleable,4,6,0,cosponsor,S. 348,2023-10-25,Asylum Abuse Reduction Act
+d01ea902-317a-4a66-b346-8b29a91fcd25,Pete Ricketts,gun-policy,settleable,4,12,2,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+d01ea902-317a-4a66-b346-8b29a91fcd25,Pete Ricketts,israel-military-aid,settleable,5,2,8,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+d04b548f-8655-40f6-8d27-9989f473a828,Cynthia Lummis,border-security,settleable,2,8,1,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+d04b548f-8655-40f6-8d27-9989f473a828,Cynthia Lummis,gun-policy,settleable,4,10,2,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+d04b548f-8655-40f6-8d27-9989f473a828,Cynthia Lummis,israel-military-aid,settleable,6,0,4,cosponsor,S. 1521,2025-09-29,Stand with Israel Act
+d53cbad2-d166-4f8d-87a2-f7e5ddc7a237,Roger Wicker,border-security,off-axis-only,0,3,2,,,,
+d53cbad2-d166-4f8d-87a2-f7e5ddc7a237,Roger Wicker,gun-policy,settleable,4,4,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+d53cbad2-d166-4f8d-87a2-f7e5ddc7a237,Roger Wicker,israel-military-aid,settleable,2,1,5,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+d5740b38-9b65-431a-9e33-645d432dec61,Jon Husted,border-security,no-lead,0,0,0,,,,
+d5740b38-9b65-431a-9e33-645d432dec61,Jon Husted,gun-policy,settleable,1,0,0,cosponsor,S. 65,2025-02-03,Constitutional Concealed Carry Reciprocity Act of 2025
+d5740b38-9b65-431a-9e33-645d432dec61,Jon Husted,israel-military-aid,non-operative-only,0,0,1,,,,
+dc92c805-4734-4d4b-8ceb-597e59b0e268,Mazie Hirono,border-security,off-axis-only,0,4,2,,,,
+dc92c805-4734-4d4b-8ceb-597e59b0e268,Mazie Hirono,gun-policy,settleable,7,28,6,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+dc92c805-4734-4d4b-8ceb-597e59b0e268,Mazie Hirono,israel-military-aid,non-operative-only,0,0,4,,,,
+dd08c9de-076d-40ee-ab27-9298bbb72d1a,Elizabeth Warren,border-security,settleable,3,3,2,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+dd08c9de-076d-40ee-ab27-9298bbb72d1a,Elizabeth Warren,gun-policy,settleable,7,24,0,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+dd08c9de-076d-40ee-ab27-9298bbb72d1a,Elizabeth Warren,israel-military-aid,non-operative-only,0,0,2,,,,
+dd5d3f6d-fc82-4774-b510-287ec47cbd84,Chuck Grassley,border-security,settleable,3,4,0,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+dd5d3f6d-fc82-4774-b510-287ec47cbd84,Chuck Grassley,gun-policy,settleable,6,5,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+dd5d3f6d-fc82-4774-b510-287ec47cbd84,Chuck Grassley,israel-military-aid,settleable,2,2,7,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+e3a590be-1816-46bc-98f0-6a911dec9d9d,Jacky Rosen,border-security,settleable,1,3,1,cosponsor,S. 1965,2025-06-05,Protect Vulnerable Immigrant Youth Act
+e3a590be-1816-46bc-98f0-6a911dec9d9d,Jacky Rosen,gun-policy,settleable,4,2,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+e3a590be-1816-46bc-98f0-6a911dec9d9d,Jacky Rosen,israel-military-aid,settleable,1,4,9,cosponsor,S. 2216,2025-07-09,"Weapons Resupply, Stockpile, and Alliance–Israel Act"
+e4b27d5e-59de-4e71-a8a7-28e7b9a80807,John Barrasso,border-security,settleable,2,3,1,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+e4b27d5e-59de-4e71-a8a7-28e7b9a80807,John Barrasso,gun-policy,settleable,4,3,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+e4b27d5e-59de-4e71-a8a7-28e7b9a80807,John Barrasso,israel-military-aid,settleable,4,1,8,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+e6596b34-8d9f-4593-bf0c-4fe7fc17cd26,John Hoeven,border-security,settleable,1,4,2,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+e6596b34-8d9f-4593-bf0c-4fe7fc17cd26,John Hoeven,gun-policy,settleable,4,10,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+e6596b34-8d9f-4593-bf0c-4fe7fc17cd26,John Hoeven,israel-military-aid,settleable,4,4,7,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+e7c985f0-7804-485e-8ad7-8e71c0129a00,Andy Kim,border-security,settleable,1,2,0,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+e7c985f0-7804-485e-8ad7-8e71c0129a00,Andy Kim,gun-policy,settleable,6,18,2,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+e7c985f0-7804-485e-8ad7-8e71c0129a00,Andy Kim,israel-military-aid,off-axis-only,0,2,6,,,,
+e89abbed-b93c-4a07-a1b1-fe33060ebec7,John Fetterman,border-security,non-operative-only,0,0,1,,,,
+e89abbed-b93c-4a07-a1b1-fe33060ebec7,John Fetterman,gun-policy,settleable,5,8,2,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+e89abbed-b93c-4a07-a1b1-fe33060ebec7,John Fetterman,israel-military-aid,off-axis-only,0,2,4,,,,
+eaab08fa-c93d-44de-ad8e-06275658dddc,Chris Coons,border-security,off-axis-only,0,1,0,,,,
+eaab08fa-c93d-44de-ad8e-06275658dddc,Chris Coons,gun-policy,settleable,6,7,1,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+eaab08fa-c93d-44de-ad8e-06275658dddc,Chris Coons,israel-military-aid,off-axis-only,0,1,5,,,,
+ebe10065-0025-46e5-897e-7a81e4c77ecf,Elissa Slotkin,border-security,off-axis-only,0,3,0,,,,
+ebe10065-0025-46e5-897e-7a81e4c77ecf,Elissa Slotkin,gun-policy,settleable,4,5,2,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+ebe10065-0025-46e5-897e-7a81e4c77ecf,Elissa Slotkin,israel-military-aid,off-axis-only,0,3,7,,,,
+ec0aeea4-afb2-46b1-be2c-c226188cfbaa,Maggie Hassan,border-security,off-axis-only,0,9,0,,,,
+ec0aeea4-afb2-46b1-be2c-c226188cfbaa,Maggie Hassan,gun-policy,settleable,4,0,1,cosponsor,S. 3214,2025-11-19,Background Check Expansion Act
+ec0aeea4-afb2-46b1-be2c-c226188cfbaa,Maggie Hassan,israel-military-aid,off-axis-only,0,1,3,,,,
+eff33c8a-38f6-421f-a8de-24518c52d650,Bill Cassidy,border-security,settleable,1,8,2,cosponsor,S. 348,2023-02-09,Asylum Abuse Reduction Act
+eff33c8a-38f6-421f-a8de-24518c52d650,Bill Cassidy,gun-policy,settleable,4,13,1,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+eff33c8a-38f6-421f-a8de-24518c52d650,Bill Cassidy,israel-military-aid,settleable,2,0,8,cosponsor,S. 5303,2024-11-13,Stand with Israel Act
+f1271c9d-fad4-4e1e-9c22-e6e2333a8a3e,Thom Tillis,border-security,settleable,3,9,3,cosponsor,S. 112,2025-01-16,Make the Migrant Protection Protocols Mandatory Act of 2025
+f1271c9d-fad4-4e1e-9c22-e6e2333a8a3e,Thom Tillis,gun-policy,settleable,4,7,0,cosponsor,S. 65,2025-01-09,Constitutional Concealed Carry Reciprocity Act of 2025
+f1271c9d-fad4-4e1e-9c22-e6e2333a8a3e,Thom Tillis,israel-military-aid,settleable,4,0,9,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+f6c97c43-41e3-45ae-bdaa-c339f2e6ed4d,Ashley Moody,border-security,settleable,1,1,0,cosponsor,S. 286,2025-10-14,Stop Human Trafficking of Unaccompanied Migrant Children Act of 2025
+f6c97c43-41e3-45ae-bdaa-c339f2e6ed4d,Ashley Moody,gun-policy,settleable,1,1,0,cosponsor,S. 65,2025-10-14,Constitutional Concealed Carry Reciprocity Act of 2025
+f6c97c43-41e3-45ae-bdaa-c339f2e6ed4d,Ashley Moody,israel-military-aid,settleable,1,1,1,cosponsor,S. 1521,2025-04-30,Stand with Israel Act
+f8d6555b-faea-4746-b8d8-27c41e08f4c4,Mitch McConnell,border-security,settleable,1,1,0,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+f8d6555b-faea-4746-b8d8-27c41e08f4c4,Mitch McConnell,gun-policy,settleable,3,0,0,cosponsor,SJRES. 83,2024-05-15,"A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Alcohol, Tobacco, Firearms, and Explosives relating to ""Definition of 'Engaged in the Business' as a Dealer in Firearms""."
+f8d6555b-faea-4746-b8d8-27c41e08f4c4,Mitch McConnell,israel-military-aid,settleable,1,0,4,cosponsor,SRES. 682,2024-05-09,A resolution condemning the decision by the Biden Administration to halt the shipment of United States made ammunition and weapons to the State of Israel.
+f9abc9e1-e1d5-4cd9-9983-a403dc94a5fc,Lisa Blunt Rochester,border-security,non-operative-only,0,0,1,,,,
+f9abc9e1-e1d5-4cd9-9983-a403dc94a5fc,Lisa Blunt Rochester,gun-policy,settleable,5,5,4,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+f9abc9e1-e1d5-4cd9-9983-a403dc94a5fc,Lisa Blunt Rochester,israel-military-aid,non-operative-only,0,0,3,,,,
+faf86b5b-5add-4afb-a8e2-96b3e8be4b78,Edward J. Markey,border-security,settleable,2,4,2,cosponsor,S. 3702,2026-01-27,Dignity for Detained Immigrants Act
+faf86b5b-5add-4afb-a8e2-96b3e8be4b78,Edward J. Markey,gun-policy,settleable,7,23,3,cosponsor,S. 3458,2025-12-11,Background Check Completion Act of 2025
+faf86b5b-5add-4afb-a8e2-96b3e8be4b78,Edward J. Markey,israel-military-aid,off-axis-only,0,2,5,,,,
+ffe3816f-4923-4e10-b71c-8b2590a8f377,John Kennedy,border-security,settleable,1,4,2,cosponsor,S. 2824,2023-09-14,Secure the Border Act of 2023
+ffe3816f-4923-4e10-b71c-8b2590a8f377,John Kennedy,gun-policy,settleable,5,1,0,sponsor,S. 827,2023-03-15,"A bill to provide that no Federal funds may be used to implement, administer, or enforce the rule of the Department of Justice entitled ""Factoring Criteria for Firearms with Attached 'Stabilizing Braces'""."
+ffe3816f-4923-4e10-b71c-8b2590a8f377,John Kennedy,israel-military-aid,settleable,3,0,5,cosponsor,S. 5303,2024-11-13,Stand with Israel Act

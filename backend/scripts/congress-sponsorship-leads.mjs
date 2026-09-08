@@ -234,6 +234,7 @@ try {
   let leadCount = 0;
   let incomplete = 0;
   let filtered = 0;
+  let undated = 0;
 
   for (const p of people) {
     let sponsored, cosponsored;
@@ -254,11 +255,44 @@ try {
     const hits = [];
     for (const it of tagged) {
       const title = it.title ?? '';
-      // Year off introducedDate; an item with no date is KEPT, because dropping it
-      // would hide a lead for a reason that has nothing to do with its age.
+      // Year off introducedDate.
+      //
+      // 🔴 AN UNDATED ITEM IS DROPPED WHEN --since IS SET, AND IT USED TO BE KEPT.
+      // The old comment here reasoned that dropping it "would hide a lead for a
+      // reason that has nothing to do with its age". The 2026-09-05 Senate sweep
+      // falsified that: ALL 17 undated leads it produced are old, and provably so
+      // without needing the date at all. Every one is an HR/HJRES/HCONRES/HRES —
+      // a HOUSE measure — carried by one of the two members with a long House
+      // career, and a House bill cannot postdate the House service that produced
+      // it. Grassley left the House in 1981, Markey in 2013.
+      //
+      // What the missing date actually marks is the Congress API's thin coverage
+      // of pre-1990 records, which is to say age is EXACTLY the reason. Three of
+      // the 17 are 1980s resolutions imploring the USSR to let named refuseniks
+      // emigrate to Israel; the pattern files them under israel-military-aid, and
+      // a researcher opening that lead learns nothing about a 2026 senator's view
+      // on military aid.
+      //
+      // ⚠ THEY ARE COUNTED AND PRINTED SEPARATELY, never silently discarded. The
+      // concern in the old comment was real — a lead lost for a bookkeeping reason
+      // must not vanish quietly — so the answer is visibility, not retention.
+      // --since=0 keeps them, as it keeps everything.
       const year = Number.parseInt((it.introducedDate ?? '').slice(0, 4), 10);
-      if (SINCE && Number.isInteger(year) && year < SINCE) { filtered++; continue; }
+      if (SINCE && !Number.isInteger(year)) { undated++; continue; }
+      if (SINCE && year < SINCE) { filtered++; continue; }
       for (const topic of matchTopics(title)) {
+        // ⚠ `date` IS THE MEMBER'S OWN ACTION DATE, NOT ALWAYS THE BILL'S. For a sponsor
+        // or an ORIGINAL cosponsor the two coincide, so the column reads like a bill
+        // date and was long assumed to be one. For a member who signs on later it is
+        // the day THEY joined: S. 1531 was introduced 2025-04-30 with 41 signatures,
+        // and the sweep carries it at 2025-07-23 for Schatz and 2025-05-05 for Ossoff.
+        //
+        // This is the right semantic for --since, which asks what a member has done
+        // lately rather than which bills are recent. It is a trap for anything that
+        // joins a lead to the bill's own text: govinfo's "Introduced in Senate" print
+        // names only the signatures the bill had ON INTRODUCTION, so a later cosponsor
+        // is genuinely absent from it and a surname check against it will — correctly —
+        // refuse to confirm them.
         hits.push({ topic, role: it.role, bill: billLabel(it), title, date: it.introducedDate ?? '' });
       }
     }
@@ -287,6 +321,10 @@ try {
   console.log(`\n${leadCount} lead(s) for ${people.length} member(s) this run.`);
   if (SINCE) {
     console.log(`${filtered} bill(s) skipped as introduced before ${SINCE} — --since=0 keeps them.`);
+    if (undated) {
+      console.log(`${undated} bill(s) skipped as UNDATED — the API carries no introducedDate for them.`);
+      console.log('  These are pre-1990 House records in every case seen so far, not modern bills.');
+    }
   }
   if (incomplete) {
     console.warn(`⚠ ${incomplete} member(s) hit the page ceiling — their records are INCOMPLETE and a`);
