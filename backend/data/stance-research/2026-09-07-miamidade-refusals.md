@@ -272,12 +272,30 @@ which is a condition on the county's own deals rather than a rule on the market.
 
 **Refusals worth their reasons:**
 
-- 🔴 **Rodriguez — two substantive items pointing at ADJACENT chairs.** He prime-sponsored ordinance
-  **26-59**, creating Code §8-9 and requiring a **same-day permitting programme** for certain
-  residential projects — rung 5's "cut the regulations … that block private building" — *and*
-  **R-549-26**, limiting extensions to developers of conveyed county land and directing enforcement of
-  the county's **reversionary interest** — rung 4's subsidy-with-teeth. Both his, both adopted, and
-  they do not resolve to one rung. Refused.
+- 🔴 **Rodriguez — REFUSED, and the first reason given here was wrong.** It said his two substantive
+  items pointed at adjacent chairs, with ordinance **26-59** standing as rung-5 deregulation. Reading
+  26-59 destroyed that: **it is not deregulation and it is not a housing instrument.** It creates Code
+  §8-9 for a same-day permitting programme covering *minor residential work only* — fences under six
+  feet, gates, driveways, pools, windows, re-roofing, kitchen and bathroom remodels, prefab sheds,
+  minor non-structural repairs, MEP repairs — and **expressly excludes** anything needing structural
+  review, historic-district properties, properties with open code-enforcement cases and projects
+  legalising violations. The Florida Building Code review still happens, on the same day. It adds
+  county obligations rather than removing requirements: six-monthly reports, and **fee reductions when
+  the delay was the department's fault**. Nothing is deregulated and nothing touches housing supply.
+  I had read the label and inferred the shape.
+
+  🔴 **It was never a housing matter at all.** It entered the corpus because the pattern's bare
+  `section 8` matched "SECTION 8-9 OF THE CODE". Eighteen of the 123 housing matters arrived that way
+  — building-official qualifications, boats and waterways, delivery robot systems, feeding feral cats
+  — and only two of the twenty bare matches were real vouchers. Pattern fixed and pinned by a test;
+  recounting afterwards flips no decision, and Rodriguez falls from 2 own-initiative housing items to
+  **1**.
+
+  So he is refused for a better reason: **his only substantive own housing instrument is R-549-26**,
+  a policy limiting extensions to developers of conveyed county land and enforcing the county's
+  reversionary interest. That shows he works inside the land-conveyance model and wants it enforced.
+  It does not establish a position on whether the county should be subsidising housing at all, which
+  is what rung 4 asserts. One enforcement policy is not a chair.
 - **Garcia — no substantive housing instrument at all.** Six of his eight adopted prime items are
   **Tourist Development Council grant** awards, which the lead pattern caught on "surtax" and which are
   tourism, not housing. His own **R-317-25** sets a Board policy that housing legislation citing Area

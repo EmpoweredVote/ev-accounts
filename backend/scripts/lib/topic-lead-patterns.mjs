@@ -67,7 +67,12 @@ export function matchTopics(title) {
  * Find those by reading, not by grep.
  */
 export const LOCAL_TOPIC_PATTERNS = {
-  'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8|housing voucher/i,
+  // 🔴 `section 8` MUST be qualified. Bare, it matched "SECTION 8-9 OF THE CODE"
+  // and pulled 18 of 123 housing matters in as junk — a same-day permitting
+  // ordinance, building-official qualifications, boats and waterways, delivery
+  // robots, feeding feral cats. Miami-Dade ordinances say "Section 8-N of the
+  // Code" constantly. Only two of the twenty were real vouchers.
+  'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8 (housing|voucher|program|tenan)|housing choice voucher|housing voucher/i,
   'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
   'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
   'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,

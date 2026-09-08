@@ -232,6 +232,21 @@ describe('matchLocalTopics', () => {
     expect(hits).not.toContain('economic-development');
   });
 
+  it('🔴 does not read "Section 8-9 of the Code" as Section 8 housing', () => {
+    // Verbatim from ordinance 26-59. Bare `section 8` pulled 18 of 123 housing
+    // matters in as junk — a permitting ordinance, building-official
+    // qualifications, boats and waterways, delivery robots, feral cats — because
+    // Miami-Dade ordinances say "Section 8-N of the Code" constantly.
+    const t = 'ORDINANCE CREATING SECTION 8-9 OF THE CODE OF MIAMI-DADE COUNTY, FLORIDA; '
+      + 'REQUIRING A SAME-DAY PERMITTING PROGRAM FOR CERTAIN RESIDENTIAL PROJECTS';
+    expect(matchLocalTopics(t)).not.toContain('housing');
+  });
+
+  it('still reads a real Section 8 voucher item as housing', () => {
+    expect(matchLocalTopics('SECTION 8 HOUSING VOUCHER SERVICES')).toContain('housing');
+    expect(matchLocalTopics('SECTION 8 HOUSING')).toContain('housing');
+  });
+
   it('stays quiet on the ceremonial calendar', () => {
     expect(matchLocalTopics('RESOLUTION CONGRATULATING THE MIAMI HEAT')).toEqual([]);
     expect(matchLocalTopics('PROCLAMATION DECLARING DELTA DAY AT MIAMI-DADE COUNTY')).toEqual([]);
