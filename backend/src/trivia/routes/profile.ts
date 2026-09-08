@@ -4,6 +4,7 @@ import { db } from '../db/index.js';
 import { playerStats, playerPrefs } from '../db/schema.js';
 import { eq } from 'drizzle-orm';
 import { supabaseAdmin } from '../config/supabase.js';
+import { readBobits } from '../services/bobitProgressService.js';
 
 export const router = Router();
 
@@ -16,6 +17,23 @@ router.use(requireAuth);
  */
 router.get('/identity', (req: Request, res: Response): void => {
   res.json({ user_id: req.userId });
+});
+
+/**
+ * GET /bobits - Every collection bobit this player has earned, grouped by collection slug.
+ *
+ * The read half of CTC's bobit collection mechanic (Stage 4); the write half rides on the
+ * answer submission itself. Writes are recorded server-side, so this is the only endpoint
+ * the client needs.
+ */
+router.get('/bobits', async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json({ bobits: await readBobits(req.userId!) });
+  } catch {
+    // An empty crowd is a correct degradation -- gameplay must never block on it -- and a
+    // 500 here would be a strictly worse answer to "what has this player earned?".
+    res.json({ bobits: {} });
+  }
 });
 
 /**

@@ -6,6 +6,7 @@ import { storageFactory } from '../config/redis.js';
 import { selectQuestionsForGame, getCollectionMetadata, getFederalCollectionId, createAdaptiveSession, transformSingleDBQuestion, TOTAL_QUESTIONS } from '../services/questionService.js';
 import { getNextQuestionTier, selectNextAdaptiveQuestion } from '../services/gameModes.js';
 import { recordQuestionTelemetry } from '../services/telemetryService.js';
+import { grantBobit, revokeBobit, progressKey } from '../services/bobitProgressService.js';
 import { db } from '../db/index.js';
 import { collections, collectionQuestions, questions } from '../db/schema.js';
 import { and, eq, sql, isNull, or, gt } from 'drizzle-orm';
@@ -285,6 +286,16 @@ router.post('/answer', async (req: Request, res: Response) => {
 
     // Fire-and-forget telemetry -- do not await, do not block response
     recordQuestionTelemetry(questionId, wasCorrect).catch(() => {});
+
+    // Bobit progress (CTC Stage 4). Fire-and-forget for the same reason the telemetry above
+    // is: the crowd is cosmetic and must never delay or fail an answer. Signed-out sessions
+    // keep their progress in the browser instead, so 'anonymous' writes nothing.
+    if (session.userId && session.userId !== 'anonymous') {
+      const write = wasCorrect
+        ? grantBobit(session.userId, progressKey(session.collectionSlug), questionId)
+        : revokeBobit(session.userId, questionId);
+      write.catch(() => {});
+    }
 
     // Adaptive next question selection
     let nextQuestionStripped: Omit<Question, 'correctAnswer'> | undefined;
