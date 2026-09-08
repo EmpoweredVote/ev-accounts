@@ -351,12 +351,24 @@ const FLOORS = {
     //   exactly 2,689 and 2,661 — and raised only AFTER the apply, per the ordering
     //   rule above. Committing 2,689 while prod still held 2,685 would have reported
     //   "4 MISSING" nightly until somebody applied it.
-    answers: flagInt('floor-answers', 2, 2689),
-    context: flagInt('floor-context', 2, 2661),
+    //
+    //   +55 / +55 on 2026-09-08, to 2,744 / 2,716. Two batches, not one:
+    //     · CC_0078 (+45 / +45), applied — the Senate gun-policy pass, 42 senators at
+    //       chair 2 off an Assault Weapons Ban and 3 at chair 3 off the Background Check
+    //       Expansion Act, each with its context row. Raised to the totals its closing
+    //       NOTICE printed, after the apply, per the ordering rule above.
+    //     · the Miami-Dade stance pass (PR #401, +10 / +10), which had landed between
+    //       CC_0074 and this and never moved the floor. A floor may sit below the live
+    //       corpus, so that was safe, not a bug — but a raise measured against prod on
+    //       apply picks the stragglers up, which is why 2,689 + 45 reaches 2,744 rather
+    //       than 2,734. Confirmed against prod 2026-09-08: season 2 holds 2,744 / 2,716.
+    //   2,744 − 2,716 = 28, still the blanks invariant above.
+    answers: flagInt('floor-answers', 2, 2744),
+    context: flagInt('floor-context', 2, 2716),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
     // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
     questions: flagInt('floor-questions', 2, 60),
-    measured: '2026-09-04',
+    measured: '2026-09-08',
   },
 };
 
