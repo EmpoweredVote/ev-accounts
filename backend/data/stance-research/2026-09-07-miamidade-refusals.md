@@ -236,3 +236,62 @@ housing and vote to loosen the boundary.
 
 **NOT SEATED — Hardemon and Gonzalez** (absent: no evidence) and **Lopez** (not serving: no evidence,
 and her CDMZ record correctly starts later, at 39 matters).
+
+## Housing across the Board — 123 matters read, 4 seated, 9 refused
+
+All 123 distinct housing matters were opened and their **own** Sponsors field read, using the new
+`miamidade-matter-detail.mjs`. Twenty carry more than one sponsor, which is why this step is not
+optional.
+
+🔴 **THE DISCRIMINATOR TURNED OUT TO BE `requester`, NOT VOLUME.** An item a department asked for and
+a commissioner carried is weaker evidence of that commissioner's own position than one they
+originated. Splitting adopted, prime-sponsored housing items that way changes who is seatable:
+
+| commissioner | own initiative | dept requested | outcome |
+| --- | --- | --- | --- |
+| Hardemon | **11** | 8 | seated 4 |
+| Bastien | **8** | 12 | seated 4 (earlier) |
+| McGhee | **7** | 2 | seated 4 |
+| Regalado | **5** | 2 | seated 4 |
+| Rodriguez | 2 | 2 | refused — adjacent chairs |
+| Gilbert | 2 | 5 | refused |
+| Garcia | 2 | 6 | refused |
+| Milian Orbis · Gonzalez · Lopez | 1 | 0–1 | refused |
+| Bermudez | 1 | 4 | refused |
+| Steinberg | 0 | 0 | refused |
+| Cohen Higgins | 0 | 1 | refused |
+
+**The four seated all sit at rung 4**, and that is not laziness — it is what the county's housing
+machinery is. Land conveyances under Fla. Stat. 125.379, documentary-surtax awards, Housing Finance
+Authority bonds and ground leases: public land and public money to private and non-profit builders.
+None of the four has sponsored a rent cap, an inclusionary requirement on private developments, or
+county-built housing. Rungs 1, 2, 3 and 5 are each **contradicted** by that record, not merely
+unsupported. Regalado is seated on the same rung by a different route — R-446-25 requires a
+standardised master development agreement in every county-property affordable housing solicitation,
+which is a condition on the county's own deals rather than a rule on the market.
+
+**Refusals worth their reasons:**
+
+- 🔴 **Rodriguez — two substantive items pointing at ADJACENT chairs.** He prime-sponsored ordinance
+  **26-59**, creating Code §8-9 and requiring a **same-day permitting programme** for certain
+  residential projects — rung 5's "cut the regulations … that block private building" — *and*
+  **R-549-26**, limiting extensions to developers of conveyed county land and directing enforcement of
+  the county's **reversionary interest** — rung 4's subsidy-with-teeth. Both his, both adopted, and
+  they do not resolve to one rung. Refused.
+- **Garcia — no substantive housing instrument at all.** Six of his eight adopted prime items are
+  **Tourist Development Council grant** awards, which the lead pattern caught on "surtax" and which are
+  tourism, not housing. His own **R-317-25** sets a Board policy that housing legislation citing Area
+  Median Income must print the dollar figures — a transparency rule, not a housing position.
+- **Gilbert — five of seven were department requests**, and the two he originated are a utility-easement
+  execution and a water-and-sewer regulation item. No policy choice of his own is visible.
+- **Bermudez** — his one own-initiative item, **R-438-25**, *declines* an unsolicited proposal and
+  redirects it as a lease application. Procedural.
+- **Steinberg, Cohen Higgins, Gonzalez, Lopez, Milian Orbis** — nothing, or a single item. Steinberg
+  and Cohen Higgins appear on housing only as **co-sponsors** of Rodriguez's two, which cannot seat a
+  chair the prime sponsor's own record fails to pin.
+
+⚠ **A citation error caught by control, worth recording.** Writing these rows I filled seven source
+URLs from memory of the reference numbers rather than looking up the matter ids, and **five were
+wrong**. A control that re-read every cited id and asserted it names its own subject as prime sponsor
+caught all of them; after correction, 12 of 12 verify. **Never write an identifier you did not look
+up**, and check citations mechanically rather than by eye.
