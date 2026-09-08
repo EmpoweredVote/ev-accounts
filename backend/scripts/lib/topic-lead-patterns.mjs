@@ -70,12 +70,27 @@ export const LOCAL_TOPIC_PATTERNS = {
   'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8|housing voucher/i,
   'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
   'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
-  'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management/i,
+  'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,
   'local-environment':        /wetland|environmentally endangered|tree canopy|conservation (land|easement)|biscayne bay|water quality|septic|sea level rise|resilien|mangrove|preservation area/i,
   'climate-change':           /climate|greenhouse gas|carbon|renewable energy|solar|energy efficiency|electric vehicle|\bEV charging\b|net zero/i,
   'fossil-fuels':             /natural gas|petroleum|fossil fuel|pipeline|drilling|fuel terminal/i,
   'transportation-priorities':/transit|bus rapid|metrorail|metromover|bicycle|pedestrian|sidewalk|complete streets|road capacity|traffic|parking requirement|\bSMART plan\b|rail corridor/i,
-  'economic-development':     /economic development|tax increment|\bTIF\b|community redevelopment|incentive|job creation|targeted jobs|enterprise zone|opportunity zone|business grant/i,
+  // 🔴 NARROWED 2026-09-07 after reading all 24 of Bastien's leads and seating
+  // none. It carried bare `incentive` and `community redevelopment`, and in a
+  // Florida county the CRA vocabulary swamps everything: 24 leads, 0 chairs, and
+  // two outright wrong subjects — "INCENTIVE-BASED PROGRAMS" turned out to be
+  // recycling rebates. The ladder asks how to ATTRACT BUSINESSES, so the pattern
+  // now asks for that vocabulary. Redevelopment-area financing is a different
+  // question and rides on growth-and-development below.
+  // ⚠ AND THEN WIDENED BACK, ONCE, IN THE SAME PASS. The first narrowing dropped
+  // R-345-26 — directing enforcement of the JOB REQUIREMENT in the restrictions
+  // on a county land conveyance to Amazon "for economic development purposes",
+  // with legal action if unmet. That is the single most on-axis instrument in the
+  // corpus, and it is rung 3's conditionality almost verbatim. It was lost
+  // because the pattern asked for "job creation" and the county wrote "job
+  // requirement". Narrowing a detector needs its own positive control: re-match
+  // the stored corpus and read what stopped matching.
+  'economic-development':     /economic development (incentive|agreement|grant|purpose)|business incentive|tax abatement|ad valorem tax exemption|targeted jobs|job creation|jobs? requirement|hiring requirement|wage requirement|community benefits? agreement|enterprise zone|opportunity zone|beacon council|attract (business|employer|industr)|major employer|corporate headquarters|clawback/i,
   'homelessness':             /public camping|encampment|sleeping in public|panhandl|loitering|vagrancy/i,
   'homelessness-response':    /homeless(ness)? (trust|services|assistance|program|shelter)|continuum of care|emergency shelter|permanent supportive housing|\bhomeless\b/i,
   'public-safety-approach':   /police (budget|staffing|department|funding)|law enforcement (budget|staffing)|crisis intervention|co-responder|mental health response|community policing|body[- ]worn camera/i,

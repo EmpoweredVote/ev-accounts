@@ -200,6 +200,38 @@ describe('matchLocalTopics', () => {
     expect(matchLocalTopics('RESOLUTION URGING THE SCHOOL BOARD TO REVIEW ITS LIBRARY MATERIALS POLICY')).not.toContain('education-library-books');
   });
 
+  it('🔴 catches the conditioned-incentive instrument the first narrowing lost', () => {
+    // R-345-26, verbatim. Rung 3's conditionality almost word for word, and the
+    // most on-axis item in the whole corpus. A pattern asking for "job creation"
+    // missed it because the county wrote "JOB REQUIREMENT".
+    const t = 'RESOLUTION DIRECTING THE COUNTY MAYOR TO ENFORCE THE TERMS OF THE DECLARATION OF '
+      + 'RESTRICTIONS, INCLUDING THE JOB REQUIREMENT, IN CONNECTION WITH THE PAST CONVEYANCE OF '
+      + 'PROPERTY TO AMAZON.COM SERVICES, LLC FOR ECONOMIC DEVELOPMENT PURPOSES';
+    expect(matchLocalTopics(t)).toContain('economic-development');
+  });
+
+  it('🔴 does not read a recycling rebate as economic development', () => {
+    // R-877-25, verbatim-ish. It matched only on the bare word "incentive" and
+    // sent a reader through 24 leads for nothing.
+    const t = 'RESOLUTION DIRECTING THE COUNTY MAYOR TO EVALUATE THE FEASIBILITY OF IMPLEMENTING '
+      + 'INCENTIVE-BASED PROGRAMS TO ENCOURAGE WASTE DIVERSION AND RECYCLING COLLECTION, INCLUDING '
+      + 'PAY-AS-YOU-THROW AND WASTE REDUCTION REBATE PROGRAMS';
+    const hits = matchLocalTopics(t);
+    expect(hits).toContain('city-sanitation');
+    expect(hits).not.toContain('economic-development');
+  });
+
+  it('files redevelopment-area financing under growth, not business attraction', () => {
+    // A CRA reinvests incremental property tax inside a designated area. It is
+    // not a company-specific incentive, and the economic-development ladder has
+    // no rung for it.
+    const t = 'RESOLUTION APPROVING THE FY2025-26 BUDGET OF THE N.W. 79TH STREET CORRIDOR '
+      + 'COMMUNITY REDEVELOPMENT AGENCY AND ITS TAX INCREMENT FINANCING';
+    const hits = matchLocalTopics(t);
+    expect(hits).toContain('growth-and-development');
+    expect(hits).not.toContain('economic-development');
+  });
+
   it('stays quiet on the ceremonial calendar', () => {
     expect(matchLocalTopics('RESOLUTION CONGRATULATING THE MIAMI HEAT')).toEqual([]);
     expect(matchLocalTopics('PROCLAMATION DECLARING DELTA DAY AT MIAMI-DADE COUNTY')).toEqual([]);
