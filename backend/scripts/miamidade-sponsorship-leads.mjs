@@ -36,6 +36,15 @@
  *     as ones they sponsored, so `notes_flag_no_sponsor` is surfaced per item and
  *     ATTRIBUTION MUST BE CHECKED ON THE ITEM PAGE, never inherited from the
  *     report you asked for.
+ *
+ *     🔴🔴 AND `notes_flag_no_sponsor` UNDER-DETECTS — IT IS NECESSARY, NOT
+ *     SUFFICIENT. Measured 2026-09-07 while reading Bastien's housing leads:
+ *     matter 261305, SAME DAY PERMIT PROGRAM, sits in HER report with the flag
+ *     FALSE, and its matter page reads "Sponsors: Anthony Rodriguez, Prime
+ *     Sponsor". The flag only fires when a clerk happened to type "no sponsor"
+ *     in the notes. **The only thing that settles attribution is the Sponsors
+ *     field on the matter page**, which also states who is PRIME sponsor. Never
+ *     seat a chair on a lead whose Sponsors field you have not read.
  *   · a title that matches a pattern but whose substance is orthogonal — a
  *     "density" match is as often a plat correction as a housing policy
  *   · sponsoring an item is not holding its chair: a commissioner may sponsor the
@@ -80,6 +89,20 @@
  *
  * ⚠ 39 of 598 leads (7%) carry `notes_flag_no_sponsor`, and 406 (73%) carry
  * `text_has_lost_characters`. Both are per-item flags, both need a human.
+ *
+ * ── READING A LEAD: THE ITEM PAGE NEEDS THREE EXTRA PARAMS ──────────────────
+ *
+ * `source_url` is the stable, citable form and it is the one to publish. But
+ * fetching it gives a 302 to a JavaScript bounce page — 492 bytes containing
+ * only `window.open` — so a naive fetch of a matter looks like an empty record.
+ * The report itself wants the params back on the original path, with a year
+ * folder derived from the matter number's first two digits:
+ *
+ *   matter.asp?matter=251003&file=false&fileAnalysis=false&yearFolder=Y2025
+ *
+ * That page carries what the sweep cannot: **Sponsors** (with "Prime Sponsor"),
+ * Requester, the full Title, the Reference (the enacted R- or O- number) and a
+ * Legislative History table with a Pass/Fail column.
  *
  * RUN: node scripts/miamidade-sponsorship-leads.mjs --since=2025-01-01
  *      node scripts/miamidade-sponsorship-leads.mjs --name="Keon Hardemon"
