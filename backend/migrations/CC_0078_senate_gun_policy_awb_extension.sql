@@ -90,6 +90,13 @@ BEGIN;
 --        is the signature of a bioguide that did not resolve, not of a senator with
 --        no record. Worth checking before either blank is read as meaningful.
 --
+-- 🔴 CORRECTED 2026-09-08, AFTER THIS FILE WAS APPLIED: the claim about Alan
+-- Armstrong above is WRONG. A000383 resolves to a real sitting senator — Republican,
+-- Oklahoma, currentMember true, Senate term in the 119th Congress beginning 2026. His
+-- zero leads are the ordinary consequence of a six-month record, not an unresolved
+-- bioguide. The prose is left as applied and the correction lives in
+-- data/federal-pass/2026-09-08-senate-gun-policy-remainder.md.
+--
 -- ── THREE ROWS THAT NEARLY WENT MISSING ──────────────────────────────────────
 --
 -- Schatz, Ossoff and Cortez Masto are real cosponsors who are ABSENT from the bill

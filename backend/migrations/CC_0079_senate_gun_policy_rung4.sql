@@ -93,6 +93,13 @@ BEGIN;
 --                               signature of a bioguide that did not resolve
 --                               rather than a senator with no record.
 --
+-- 🔴 CORRECTED 2026-09-08, AFTER THIS FILE WAS APPLIED: the claim about Alan
+-- Armstrong above is WRONG. A000383 resolves to a real sitting senator — Republican,
+-- Oklahoma, currentMember true, Senate term in the 119th Congress beginning 2026. His
+-- zero leads are the ordinary consequence of a six-month record, not an unresolved
+-- bioguide. The prose is left as applied and the correction lives in
+-- data/federal-pass/2026-09-08-senate-gun-policy-remainder.md.
+--
 -- ── PROVENANCE ───────────────────────────────────────────────────────────────
 --
 -- 🔴 editor_id IS NULL ON BOTH TABLES, DELIBERATELY, for CC_0074's reason: the
