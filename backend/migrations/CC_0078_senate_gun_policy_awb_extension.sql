@@ -135,11 +135,11 @@ CREATE TEMPORARY TABLE _cc0078_basis (
 ) ON COMMIT DROP;
 
 INSERT INTO _cc0078_basis VALUES
-  ('awb-2025', 2, 'A bill to regulate assault weapons and to ensure that the right to keep and bear arms is not unlimited. It is unlawful to import, sell, manufacture, transfer, or possess a semiautomatic assault weapon or large capacity ammunition feeding device; a firearm specified in Appendix A is exempt.',
+  ('awb-2025', 2, 'The Assault Weapons Ban of 2025, a bill to regulate assault weapons and to ensure that the right to keep and bear arms is not unlimited. It is unlawful to import, sell, manufacture, transfer, or possess a semiautomatic assault weapon or large capacity ammunition feeding device; a firearm specified in Appendix A is exempt.',
    ARRAY['https://www.govinfo.gov/content/pkg/BILLS-119s1531is/html/BILLS-119s1531is.htm']),
-  ('bce-2025', 3, 'A bill to require a background check for every firearm sale. It is unlawful for a person who is not a licensed importer, licensed manufacturer, or licensed dealer to transfer a firearm to another person who is not so licensed, unless a licensee has first taken possession of the firearm for the purpose of complying with the background check requirements.',
+  ('bce-2025', 3, 'The Background Check Expansion Act, a bill to require a background check for every firearm sale. It is unlawful for a person who is not a licensed importer, licensed manufacturer, or licensed dealer to transfer a firearm to another person who is not so licensed, unless a licensee has first taken possession of the firearm for the purpose of complying with the background check requirements.',
    ARRAY['https://www.govinfo.gov/content/pkg/BILLS-119s3214is/html/BILLS-119s3214is.htm']),
-  ('awb-2023', 2, 'A bill to regulate assault weapons and to ensure that the right to keep and bear arms is not unlimited. It is unlawful to import, sell, manufacture, transfer, or possess a semiautomatic assault weapon or large capacity ammunition feeding device; a firearm specified in Appendix A is exempt.',
+  ('awb-2023', 2, 'The Assault Weapons Ban of 2023, a bill to regulate assault weapons and to ensure that the right to keep and bear arms is not unlimited. It is unlawful to import, sell, manufacture, transfer, or possess a semiautomatic assault weapon or large capacity ammunition feeding device; a firearm specified in Appendix A is exempt.',
    ARRAY['https://www.govinfo.gov/content/pkg/BILLS-118s25is/html/BILLS-118s25is.htm']);
 
 -- -----------------------------------------------------------------------------
