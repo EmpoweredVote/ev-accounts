@@ -6,6 +6,21 @@ const envSchema = z.object({
   SUPABASE_URL: z.string().url(),
   SUPABASE_ANON_KEY: z.string().min(1),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
+  // SUPABASE_PUBLISHABLE_KEY: the sb_publishable_... replacement for the legacy
+  // anon key. Optional during the migration — supabaseAnon and createUserClient
+  // prefer it and fall back to SUPABASE_ANON_KEY, so this can be set in Render
+  // before the legacy anon key is disabled and no deploy has to line up with it.
+  // Legacy anon and service_role keys are removed by Supabase in late 2026.
+  SUPABASE_PUBLISHABLE_KEY: z.string().optional(),
+  // READRANK_TOKEN_SECRET: HMAC secret for the Read & Rank blind candidateToken.
+  // REQUIRED, and deliberately not optional: it previously fell back to
+  // SUPABASE_SERVICE_ROLE_KEY, which is an API key, is readable by every member
+  // of the Supabase organisation, and was publicly leaked (ev-cto watchlist #38).
+  // Anyone holding it could compute every candidate token and de-anonymise the
+  // blind ballot without playing it. This must be an independent random secret
+  // with no other job. Rotating it only changes tokens issued from then on --
+  // computeRaceMatch matches on quote_id and never reads the token.
+  READRANK_TOKEN_SECRET: z.string().min(1),
   DATABASE_URL: z.string().min(1),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),

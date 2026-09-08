@@ -17,7 +17,8 @@ import { USPS_TO_FIPS } from './usStateCodes.js';
  */
 
 const ESSENTIALS_BASE = 'https://essentials.empowered.vote';
-const TOKEN_SECRET = process.env.READRANK_TOKEN_SECRET || env.SUPABASE_SERVICE_ROLE_KEY;
+// Independent HMAC secret. NEVER fall back to an API key here -- see env.ts.
+const TOKEN_SECRET = env.READRANK_TOKEN_SECRET;
 
 /** Opaque, deterministic per-candidate token, scoped to a race. Not reversible client-side. */
 function candidateToken(raceId: string, politicianId: string): string {
