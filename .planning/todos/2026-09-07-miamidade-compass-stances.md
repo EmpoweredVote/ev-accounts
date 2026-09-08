@@ -17,6 +17,10 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 | `transportation-priorities` | 3 | Regalado |
 | `residential-zoning` | 3 | Regalado |
 
+⚠ **`housing` was re-opened 2026-09-08 for Steinberg, Garcia and Lopez — all three refusals CONFIRMED**,
+this time with a missed-instrument control over their full unfiltered records rather than a lead
+count. Steinberg has **zero** prime-sponsored housing instruments in 187 matters.
+
 **Six whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
 `residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
@@ -48,6 +52,31 @@ gate → push. Gate the CSV **before** pushing: `node scripts/audit-chair-eviden
 `legistarfiles/Matters/Y<year>/<matter>.pdf` — recitals *and* operative sections.
 ⚠ That link **404s as HTTP 200 with 2,625 bytes of "Web Error" HTML** for some matters (`260174`,
 `252269`, `261065` so far); always fetch a known-good one in the same run as a control.
+
+## 🔴🔴 READ THE LADDER FROM THE SEASON PIN — `compass_stances` IS FROZEN AT v1
+
+**`CA_0012` deliberately froze `compass_topics`' and `compass_stances`' text columns when content
+versioning came in (ADR 0004).** The live wording lives in `inform.compass_stance_revisions`, keyed
+by the `topic_revision_id` the season pins. **29 of the 60 topics in the open season disagree between
+the two, 16 of them on all five rungs** — including `housing`, `growth-and-development`,
+`economic-development`, `gun-policy` and all six `judicial-*`.
+
+```sql
+-- 🟢 CORRECT
+SELECT sr.value, sr.text
+  FROM inform.season_questions sq
+  JOIN inform.seasons se ON se.id = sq.season_id AND se.status = 'open'
+  JOIN inform.compass_topics t ON t.id = sq.topic_id AND t.topic_key = $1
+  JOIN inform.compass_stance_revisions sr ON sr.topic_revision_id = sq.topic_revision_id
+ ORDER BY sr.value;
+-- 🔴 WRONG, and silent: SELECT value, text FROM inform.compass_stances WHERE topic_id = …
+```
+
+🟢 **Not a product defect** — every voter-facing read already uses the versioned source
+(`compassService.ts`, `seasonCompositionService.ts`, `adminService.ts`). It is a **research-tooling
+trap**: the frozen table returns a complete, plausible five-rung ladder on the right subject, with
+`housing`'s *question text identical* while every rung differs. **A wrong ladder and a right ladder
+look the same until you diff them.** Diff them.
 
 ## 🔴 TEST THE AXIS BEFORE STARTING A TOPIC — FOUR OF SIX PATTERNS WERE MIS-SPECIFIED
 

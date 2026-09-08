@@ -961,3 +961,189 @@ record still pins nobody.
 - **Gonzalez** — the WTE proposal-disclosure resolution, in committee.
 - **Eileen Higgins** — `251728`, the composting ordinance, and she has left the Board.
 - **Cohen Higgins, Hardemon, Lopez, McGhee, Milian Orbis, Steinberg** — nothing on this ladder.
+
+## 🔴🔴 `inform.compass_stances` IS STALE FOR 29 OF THE 60 TOPICS IN THE OPEN SEASON
+
+**Found 2026-09-08, and it invalidates the rung tables printed in two sections of this file.**
+Recorded before the research it interrupted, because it is the more important result.
+
+A season pins a **topic revision**, and the ladder text that revision carries lives in
+**`inform.compass_stance_revisions`**, keyed by `topic_revision_id`.
+
+🟢 **THIS IS NOT A PRODUCT DEFECT, AND THAT MATTERS.** `CA_0012` **deliberately froze**
+`compass_topics`' and `compass_stances`' own text columns when content versioning came in (ADR 0004)
+— the comment saying so is at `src/lib/compassStatsService.ts:65`. The row and its `id` remain a
+stable handle; only the *text* is frozen at v1. Every voter-facing read path already goes through the
+versioned source: `compassService.ts`, `seasonCompositionService.ts` and `adminService.ts` all read
+`compass_stance_revisions`, and the stats endpoint joins `compass_stances_current` precisely so "an
+admin looking at stats would never see a published revision land" cannot happen.
+
+**So the ladder voters see is correct. The trap is purely for research tooling** — a query written
+against the obvious-looking table gets v1 wording with no error, and for nearly half the open
+season's topics that is the wrong ladder.
+
+```sql
+-- 🟢 THE CORRECT READ. Always join through season_questions to the pinned revision.
+SELECT sr.value, sr.text
+  FROM inform.season_questions sq
+  JOIN inform.seasons se ON se.id = sq.season_id AND se.status = 'open'
+  JOIN inform.compass_topics t ON t.id = sq.topic_id AND t.topic_key = $1
+  JOIN inform.compass_stance_revisions sr ON sr.topic_revision_id = sq.topic_revision_id
+ ORDER BY sr.value;
+```
+
+```sql
+-- 🔴 WHAT I DID ALL DAY. Looks right, is right for 31 topics, silently wrong for 29.
+SELECT s.value, s.text FROM inform.compass_stances s
+  JOIN inform.compass_topics t ON t.id = s.topic_id AND t.topic_key = $1;
+```
+
+Measured: **29 of 60 topics differ**, 16 of them on **all five rungs** — `housing`,
+`growth-and-development`, `economic-development`, `gun-policy`, `climate-change`, `voting-rights`,
+`campaign-finance`, `deportation`, `homelessness-response`, `same-sex-marriage` and all six
+`judicial-*` topics. Partial divergence hits `city-sanitation` and `local-environment` (3 of 5 each),
+`rent-regulation`, `civil-rights`, `childcare` and others (1 of 5).
+
+**How it hid:** `compass_stances` returns a complete, plausible five-rung ladder on the right subject.
+Nothing errors, nothing is empty, and the question text is often identical — `housing`'s question
+matches word for word while every single rung differs. **A wrong ladder and a right ladder look the
+same until you diff them.** This is the same shape as the county's Legistar answering HTTP 200 with
+data frozen at 2018.
+
+### What survived, and what did not
+
+🟢 **The two seated rows from 2026-09-08 are SAFE.** `transportation-priorities` and
+`residential-zoning` show **0 of 5 rungs differing**, so Regalado's chairs at 3 were evidenced
+against exactly the text Season 2 serves.
+
+🟢 **The 2026-09-07 rows are SAFE, and the reason is that the earlier pass read the RIGHT source.**
+Its refusal text quotes the pinned wording verbatim — economic-development rung 3 as *"Offer
+incentives to attract businesses, but only if they commit to good wages and local hiring — and pay
+the money back if they don't deliver"*, growth rung 4 as *"cut red tape … while keeping basic
+guardrails"*. Those are `compass_stance_revisions` strings, not `compass_stances` strings. The
+earlier session did this correctly and I did not.
+
+⚠ **AND THE HOUSING ROWS ARE VINDICATED BY THE PIN, NOT BY THE STALE TABLE.** Reading the stale text
+I briefly believed five published rows were mis-seated: stale rung 3 is *"Offer targeted help like
+subsidies for affordable projects"*, which is precisely what those rows' reasoning argues, while they
+sit at 4. Under the **pinned** wording the rungs are different and the rows are right:
+
+| rung | PINNED (what Season 2 asks) |
+| --- | --- |
+| 1 | Make government the main provider — build and operate public housing so everyone is guaranteed a home. |
+| 2 | Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm. |
+| 3 | Build no public housing, but set **binding rules on the private market** like rent caps or required affordable units. |
+| 4 | Set **no binding rules**, but offer **subsidies and tax breaks** so more affordable housing gets built. |
+| 5 | Rely on the market — at most, cut the regulations and zoning limits that block private building. |
+
+Public land on a 99-year lease, documentary-surtax awards and HFA bonds, with no rule imposed on the
+private market, is rung 4 under this wording exactly as the earlier pass argued. **Nothing needs
+changing. The near-miss is recorded because the next reader will hit the same table.**
+
+### Corrections to this file
+
+**`local-environment` — the rung table printed above is the STALE text.** The pinned rungs 1, 2 and 4
+actually read:
+
+> 1 = Make environmental protection the overriding priority — block or sharply limit development that would harm the local environment
+> 2 = Lean strongly toward protection — put the burden on development to prove it will not damage the environment before it can proceed
+> 4 = Lean toward development — treat environmental cost as a manageable trade-off and approve projects with clear economic benefit
+
+🟢 **The refusal stands and the axis finding is STRENGTHENED.** The pinned text is even more plainly
+about development-versus-protection than the stale text was, so filing Biscayne Bay water quality
+under it was more wrong, not less, and the retune was right.
+
+⚠ **But one judgment gets closer and must be reopened by whoever resumes.** Bermudez's mitigation-bank
+recital — *"projects that would greatly benefit the local community and local economy might not be
+able to move forward"* — is close to pinned rung 4's *"treat environmental cost as a manageable
+trade-off and approve projects with clear economic benefit"*, closer than it was to the stale rung 4
+I judged it against. **He is still refused, on the ground that does not depend on wording: R-1170-25
+directs an evaluation and a report and commits the county to nothing.** If `250607` or `261179` is
+adopted, re-read him against the pinned rung 4 first.
+
+**`city-sanitation` — the rung table printed above is the STALE text.** Pinned rungs 1, 2 and 3 read:
+
+> 1 = Significantly expand public sanitation services, treating cleanliness as the city's responsibility
+> 2 = Concentrate sanitation resources on the most neglected, worst-served neighborhoods to close long-standing service gaps
+> 3 = Maintain current public sanitation services and target enforcement at the businesses and large property owners who create the most waste
+
+🔴 **This partly dissolves my stated reason for refusing Regalado.** I refused her because stale rung
+1 was a **compound** chair — "staffing, cleaning frequency, and free community disposal access" — of
+which only one clause had support. **Pinned rung 1 is not compound.** It is a single claim:
+significantly expand public sanitation services.
+
+**Re-tested against the pinned wording, the refusal holds, on narrower ground.** Rung 3 fails because
+it needs enforcement targeted at businesses and large property owners and she has none. Rung 2 fails
+for want of any equity targeting. Rung 1 now turns on the single word **"significantly"**: her
+adopted own-initiative record expands one waste stream countywide (tires and mattresses, R-197-25)
+and *examines the feasibility* of another (cardboard, R-191-25), while her pending `261036` repeals
+the CPI escalator that funds the service. One implemented stream plus feasibility studies is not
+"significantly expand", and the study-directive standard that refused Gilbert and Bermudez applies
+unchanged. **What would seat her at 1 is unchanged: the cardboard programme established rather than
+examined, or any adopted expansion of collection frequency or staffing.**
+
+**`rent-regulation` — pinned rung 1 is narrower than the stale text**, reading simply *"Expand rent
+control to cover all rental units communitywide"* without the stale text's "with strong tenant
+protections and just-cause eviction requirements". 🟢 **This strengthens that refusal too:** pinned
+rung 1 is purely rent control, which is exactly what Fla. Stat. 125.0103(2) forbids, so the
+preemption argument applies to it cleanly rather than to a compound clause half of which is lawful.
+
+---
+
+## `housing` revisited for Steinberg, Garcia and Lopez — all three refusals CONFIRMED
+
+Re-run 2026-09-08 against the **pinned** ladder above, because the original refusals rested on "no
+substantive housing instrument" — and that is precisely the claim the leads file cannot support.
+
+🟢 **The missed-instrument control was run this time.** Rather than trusting the housing lead pattern,
+the three members' **full unfiltered records** (187, 378 and 79 matters) were grepped for the
+vocabulary the pinned ladder turns on — public provision, binding rules, inclusionary, ground lease,
+125.379/125.35, surtax, HFA, SHIP, RAD, tax exemption, down payment, first-time buyer, density bonus.
+Positive control: 640. It surfaced **eight matters the housing pattern never produced**, and every
+one of them fails on attribution rather than on subject:
+
+| matter | what it is | why it seats nobody here |
+| --- | --- | --- |
+| `261111` / 26-49 | ordinance limiting developer extensions under the **Infill Housing Initiative Program** | **Rodriguez** is Prime; Steinberg and Garcia are co-sponsors |
+| `260671` | the same ordinance, earlier file | same |
+| `252007` / R-1175-25 | reaffirming HUD directives under R-753-13 | **Regalado** Prime; Garcia co-sponsor |
+| `251269` / R-769-24 | report on the homebuyer down-payment assistance programme | **Gonzalez** Prime; Garcia co-sponsor |
+| `260937` / R-669-26 | 18-month extension for Housing Programs, Inc. | **Bastien** Prime; Lopez co-sponsor |
+| `260787` / R-633-26 | $750k SHIP homebuyer education awards | Lopez **co-sponsor only**, and department-requested |
+| `260836` | urging the Legislature to phase homestead reassessment for **first-time homebuyers** | Garcia Prime, but **In Draft** and an "urging" resolution |
+
+**Steinberg — ZERO prime-sponsored housing instruments in 187 matters.** Not "thin": none. She
+appears on this ladder only as a co-sponsor of Rodriguez's two, and a co-sponsorship cannot seat a
+chair the prime's own record pins. This is now a measurement with a positive control behind it rather
+than an inference from a lead count.
+
+**Garcia — two adopted own instruments, and both are about PROCESS rather than housing.** `26-24`
+amends the Board's Rules of Procedure to require public meetings for housing projects including
+public-housing redevelopment; **R-317-25** requires any legislation citing Area Median Income to
+print the dollar figures. Both are real and both are good government, and neither says what role
+government should play in affordability — they say how the Board should transact. ▶️ **What would
+seat him: `260836` adopted.** A delayed homestead reassessment for first-time buyers is a tax break
+to help people buy, which is pinned rung 4's own mechanism. It is currently In Draft and it only
+urges Tallahassee, so it evidences nothing yet.
+
+**Lopez — one adopted own instrument, and it is a transaction rather than a position.** **R-500-26**
+is a 99-year amended ground lease with an RUDG affiliate for the RAD conversion of Gallery at Lummus
+Parc, with a consulting agreement of about $354.5m and authority to negotiate phase two without
+returning to the Board. Its recitals are substantive and were read: the county is converting 7,718
+public housing units under a HUD RAD portfolio award, "modernizing their public housing units by
+leveraging additional financing from public and private sources", one-for-one replacement with a
+right to return, 439 affordable, workforce and market-rate units, and the developer intends to seek a
+real-estate tax exemption.
+
+That is a clean **rung 4** instrument — public land and tax relief, no binding rule on the private
+market — and rungs 1, 2, 3 and 5 are each contradicted by it.
+
+🔴 **Refused anyway, and the distinction is worth keeping.** Rodriguez was seated on housing from a
+*single* instrument, so single-instrument seating has precedent here — but **his was a POLICY**
+(R-549-26 set extension limits, debarment and reversion for every developer taking county land) whose
+recitals stated the county's position. **Lopez's is a PROJECT**, carried forward under a framework the
+Board set in 2022 by R-809-22, before she took her seat. Its recitals name **the county's** method,
+not a position she originated. Every other commissioner seated on housing has either multiple
+own-initiative items (Hardemon 11, Bastien 8, McGhee 7, Regalado 5) or one policy instrument.
+▶️ **What would seat her:** a second own-initiative housing item, or one that sets a rule rather than
+approving a deal.
