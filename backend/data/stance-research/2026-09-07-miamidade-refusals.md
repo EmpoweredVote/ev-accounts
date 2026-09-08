@@ -329,3 +329,170 @@ URLs from memory of the reference numbers rather than looking up the matter ids,
 wrong**. A control that re-read every cited id and asserted it names its own subject as prime sponsor
 caught all of them; after correction, 12 of 12 verify. **Never write an identifier you did not look
 up**, and check citations mechanically rather than by eye.
+
+## `transportation-priorities` across the whole Board — 83 matters read, 1 seated, 13 refused
+
+Second topic worked, 2026-09-08. 117 leads, 83 distinct matters, every one opened and its **own**
+Sponsors field read. The ladder asks where government should focus transportation investment:
+
+| rung | position |
+| --- | --- |
+| 1 | Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements communitywide |
+| 2 | Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects |
+| 3 | Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it |
+| 4 | Focus on road capacity and traffic flow; transportation investment should serve the majority who drive |
+| 5 | Prioritize highway access and abundant free parking as the foundation of local transportation policy |
+
+**SEATED — Regalado at 3.** She has by far the densest record: 29 leads, 7 own-initiative adopted
+prime sponsorships, 9 department items she carried. 🔴 **THE LABELS POINTED AT RUNG 1 AND THE
+INSTRUMENTS PUT HER AT 3.** Two whole clusters inverted on reading:
+
+- **`VKB MICRO MOBILITY` (26-51) is not cycling investment — it is restriction-enabling.** Its
+  recitals do say the Board "supports the safe use of low-cost, energy-efficient micromobility
+  devices on County roads". Its operative §2-98.3(1) says the opposite: the intent is to "authorize
+  municipalities to regulate the operation of micromobility devices, electric bicycles, and
+  motorized scooters upon County-maintained roads and sidewalks in the incorporated areas", and
+  "Adoption of this section shall not be relied upon as a determination that the operation ... on
+  roads or public sidewalks is safe or advisable." Enforcement is by civil penalty. **The recital and
+  the operative section point opposite ways, and the operative section governs.**
+- **R-689-26, the Key Biscayne `EBIKES/SCOOTERS` interlocal, is the same shape** — an agreement "for
+  the regulation of" micromobility on county roads within the Village.
+
+What survives is targeted and density-conditioned, which is rung 3's discriminator verbatim:
+
+- **R-551-26** (`260764`, adopted 2026, her prime sponsorship, confirmed in the instrument's own
+  closing line) directs a CDMP amendment creating a density bonus for property "directly adjacent
+  to, or within 500 feet of" the **Rapid Transit Corridor Bicycle and Pedestrian Area** — defined at
+  §33C-2(A)(3) as the county land under the Metrorail guideway, "an urban mobility corridor
+  consisting of trails, greenways, and other open space amenities" — for developments that proffer
+  public benefits to "improve and maintain the RTCBPA". Pedestrian and cycling infrastructure paid
+  for by adjacent density.
+- **R-992-25** (`251750`) directs analysis and alignment of the county's first-and-last-mile transit
+  and municipal circulator routes for seamless transfers across county, municipal and Tri-Rail
+  systems, and makes documented coordination a condition of the **Charter County Transportation
+  Surtax** funds municipalities receive. Its recitals name "walking, bicycling, using municipal
+  circulators and micromobility services" as "alternatives to driving a personal vehicle".
+- Station-area subzones are quarter-mile (`252269`, Coral Gables/University) and half-mile radii.
+
+Rung 1 fails **twice**: no instrument anywhere in the 2025-01-01 → 2026-09-05 corpus reduces parking
+requirements countywide, and the cycling instruments regulate rather than build. Rungs 4 and 5 are
+contradicted — she initiated no road-capacity, highway or parking-supply measure. Rung 2's
+discriminator, a bike-lane and sidewalk mandate on all new road projects, does not exist, and
+"invest equally in roads" misdescribes a record with no road investment initiative.
+
+⚠ **Stated, not hidden:** `251387` would require a $3.50 fare on MetroConnect micro-transit, which is
+currently free to pass holders. It is **in committee**, not adopted, so it is not cited in the
+voter-facing reasoning. It is a transit-finance position rather than a road-capacity one, and it does
+not move the chair — but the next reader should know it is there.
+
+### 🔴 A RAPID TRANSIT ZONE SUBZONE ORDINANCE IS PARCEL-LEVEL ZONING, NOT TRANSPORTATION INVESTMENT
+
+This is the single largest false-positive class on this topic, and it is what removed three
+commissioners who looked seatable from their lead counts alone. The recurring form is "AMENDING THE
+METROMOVER SUBZONE OF THE RAPID TRANSIT ZONE **TO ADD CERTAIN PRIVATE PROPERTY**". That is a
+landowner's application which the district commissioner sponsors — the same instrument class as a
+rezoning, and procedural either way. It says nothing about where the county should spend.
+
+- **NOT SEATED — Lopez.** All five of her own-initiative adopted items are RTZ parcel additions
+  (`261391`, `261063`, `260562`, `251673` co-prime with Gilbert, plus withdrawn duplicates). Her
+  record on this ladder is zoning, not investment.
+- **NOT SEATED — Hardemon.** `261078` is an RTZ parcel addition and still in committee. His other
+  items are a Metromover station renaming and three department-requested easements and beacons.
+- **NOT SEATED — Bastien.** `260837` is an RTZ parcel addition near NW 37 Avenue. Her four remaining
+  items are department-requested FDOT tri-party rail agreements and a parcel acquisition, and she is
+  a co-sponsor rather than prime on SMART Plan funding.
+
+### The other ten, and why each is a refusal rather than a gap
+
+- **Gilbert — direction without magnitude.** **R-1223-25** directs the Mayor to "prepare a plan
+  detailing **possible** funding mechanisms" for the SMART Plan rapid transit corridors and report.
+  A study directive is not a chair. **R-478-26** adopts the department's own 10-year Transit
+  Development Plan and was requested by the Transportation and Finance Committee. **24-33** modifies
+  the maximum duration of administratively approved transit fare and service changes — procedural.
+  ⚠ And he cast the **only non-Yes vote in the entire Transportation Committee record**: No on
+  `260966`, the CEI services contract for The Underline, the bike and pedestrian trail. A No on a
+  professional-services procurement does not read as a position on the mode, so it is
+  `direction_is_unread` and is not used against him either. **What would seat him:** a funding
+  mechanism he actually proposes, rather than a study of possible ones.
+- **Garcia — genuinely mixed, and the two instruments point at opposite ends.** **R-300-25**
+  (co-prime with Cabrera) develops the HIA-Line, a linear trail under the Metrorail in Hialeah.
+  **R-381-25**, his own, adds to the federal legislative package an appropriation request for an
+  I-75 Project Development & Environment study for **potential new interchanges and traffic relief
+  measures**. One trail and one highway interchange study is the closest thing on the Board to rung
+  2, but rung 2's discriminator — bike lanes and sidewalks required on all new road projects — is
+  absent, and two items pointing opposite ways pin nothing. `252161`, the transitway
+  emergency-vehicle policy, is **Eileen Higgins'** prime sponsorship; he is a co-sponsor.
+- **Rodriguez — nothing on this axis.** `261104` MENTAL HEALTH CENTER is his and is not
+  transportation; two are Aviation Department development lease agreements at Miami Executive
+  Airport; two are Office of Management and Budget transit drawdowns; one is a department-requested
+  on-demand service in Westchester.
+- **Gonzalez — four Aviation Department lease agreements and nothing else.** No own-initiative item.
+- **Bermudez — zero own-initiative adopted items.** Four department requests across Water & Sewer,
+  Transportation and Public Works and Regulatory and Economic Resources.
+- **Steinberg — one department-requested easement to FDOT.** Her `260600` report directive is
+  amended and not adopted.
+- **Cohen Higgins — `261050` is Naranja Lakes CRA pothole resurfacing.** CRA housekeeping, and it is
+  the same cluster flagged on `growth-and-development` above.
+- **McGhee — three surplus-property donations and a lease.** Not transportation positions.
+- **Milian Orbis — `SUPPORT ROADMAP FOR A FREE CUBA` and an easement.** The first is a lead-pattern
+  false positive.
+- **Levine Cava — the Mayor sponsors nothing**, as the sweep's header already records.
+
+### 🟢 SPONSORSHIP IS THE RIGHT INSTRUMENT FOR THIS TOPIC — THE EXACT INVERSE OF GROWTH
+
+`growth-and-development` was refused for Cohen Higgins because the decisive decisions are
+**applications** a commissioner votes on and never sponsors. Transportation is the opposite:
+commissioners initiate the transit policy, and the committee record adds almost nothing.
+
+`--body=TRNS`, 2025-01-01 → 2026-09-05: only five commissioners sit on it, and the tallies are
+Bermudez 108 Yes / 0 No, Bastien 126 / 0, Regalado 117 / 0, Garcia 32 / 0, Gilbert 52 / 1.
+**One non-Yes vote in 435.** By the standing rule a uniform answer is a broken detector until
+controlled — here the control is that the one No exists and was found, so the report does
+discriminate and the committee is simply consensual. Do not pay for this report again on this topic.
+
+⚠ **And the summary line disagreed with the stored rows**, which cost a detour: the run printed
+`Gilbert [Yes=52 No=1]` while a scan of `votes[].vote` found zero. The vote lives at
+`votes[].actions[].voted`, not `votes[].vote`. The data was right and the query was wrong. Check the
+shape before believing a contradiction between a tool's summary and its own output.
+
+### 🔴 THE MATTER PAGE ADVERTISES A LEGISLATIVE-TEXT PDF THAT DOES NOT ALWAYS EXIST
+
+`matter.asp?...&file=true` links `legistarfiles/Matters/Y<year>/<matter>.pdf`, which carries the full
+ordinance or resolution — recitals and operative sections, which is the only way to catch an
+instrument like 26-51 whose title inverts its effect. For `260174` and `252269` that link returns
+**HTTP 200 with 2,625 bytes of "Web Error - Miami-Dade County" HTML**. A naive fetch stores it as a
+PDF and `pdftotext` then reports a damaged file.
+
+🟢 **The positive control is what makes this readable as absence rather than a block:** `261016`,
+`260764` and `251750` fetched as real multi-megabyte PDFs from the same host in the same run, with
+correct `%PDF` magic and 11, 6 and 9 pages that fully decoded. So the host is serving us; those two
+files are simply not published. **Never record a fetch limit without a same-run control** — a block
+and a genuine absence look identical.
+
+### 🔴 A CROSS-TOPIC CITATION ERROR, FOUND IN ALREADY-PUBLISHED PROSE
+
+Regalado's `housing` reasoning, pushed 2026-09-07, stated she prime-sponsored **R-992-25**,
+"modifying the interlocal agreements through which municipalities receive county **housing** surtax
+funds". R-992-25 says "housing" **zero times**. Every one of its four surtax references is the
+**Charter County Transportation Surtax**, and the instrument is first-and-last-mile transit
+coordination. The housing lead pattern's bare `surtax` term pulled a transit matter into the housing
+corpus, and the write-up inherited the mistake.
+
+The chair still holds at 4 and the value did not move: R-992-25 was **named in the prose but never
+cited as a source**, and the three URLs actually cited — R-446-25 (`250425`), R-972-25 (`251736`) and
+R-340-26 (`260331`) — were re-read and all three verify as her own prime sponsorships conveying
+public land and public money to private builders. The false clause was removed and the two remaining
+instruments described from their verified titles. **A wrong sentence in `reasoning` is voter-facing,
+so it is a defect even when the number it explains is right.**
+
+🟢 **Controlled across the corpus:** all 10 attributed open-season rows were scanned for
+`housing surtax` and for `992-25`. The defect is isolated to that one row. The other nine name only
+instruments belonging to their own topic.
+
+⚠ **Two stale-cache facts for the next reader.** First, `miamidade-sponsorship-leads.jsonl` as
+committed **predates the `section 8` pattern fix** — matter `261305` still carries `housing` in it
+for five commissioners, so its housing counts (155 leads) are the pre-fix ones. The
+`transportation-priorities` pattern is byte-identical to the sweep commit, so those leads are
+current. Second, the todo file's "Hardemon `growth-and-development` — 21 leads" was wrong: 21 is
+**Cohen Higgins'** count, and Hardemon has **5** growth leads and 22 housing leads. Re-measure a
+baseline before spending on it.
