@@ -247,6 +247,60 @@ describe('matchLocalTopics', () => {
     expect(matchLocalTopics('SECTION 8 HOUSING')).toContain('housing');
   });
 
+it('🔴 does not read Biscayne Bay water quality as the development-vs-preservation ladder', () => {
+    // The local-environment ladder asks how to balance NEW DEVELOPMENT against ENVIRONMENTAL
+    // PRESERVATION. Bay health is a real subject and a real part of this county's work, but no
+    // rung of that ladder can be evidenced by it. 32 of the 43 leads the old pattern produced
+    // were this, and they seated nobody.
+    expect(matchLocalTopics('RESOLUTION URGING THE FLORIDA LEGISLATURE TO FUND BISCAYNE BAY WATER QUALITY ANALYTICS')).not.toContain('local-environment');
+    expect(matchLocalTopics('RESOLUTION URGING FDEP TO FUND SEPTIC TO SEWER CONVERSION')).not.toContain('local-environment');
+    expect(matchLocalTopics('RESOLUTION URGING A FLOOD RESILIENCY STUDY')).not.toContain('local-environment');
+  });
+
+  it('🔴 does not match a company whose name happens to contain "Resilient"', () => {
+    // Verbatim shape of R-1177-25. `resilien` matched RESILIENT AQUARIUM LLC, the assignee on a
+    // Seaquarium ground lease, and filed a property transaction under the environment ladder.
+    // A uniform-looking stem is not a topic.
+    const t = 'RESOLUTION AUTHORIZING AND APPROVING ASSIGNMENT OF LEASE FROM MS LEISURE COMPANY, INC. '
+      + 'TO RESILIENT AQUARIUM LLC';
+    expect(matchLocalTopics(t)).not.toContain('local-environment');
+  });
+
+  it('🔴 does not read a board appointment as an environmental position', () => {
+    expect(matchLocalTopics('RESOLUTION APPOINTING SAM ACCURSIO TO THE BISCAYNE BAY WATERSHED MANAGEMENT ADVISORY BOARD')).not.toContain('local-environment');
+  });
+
+  it('🔴 finds the zoning-AND-environmental-protection ordinance the old pattern could not see', () => {
+    // 25-105, verbatim-ish. Miami-Dade regulates this axis through Chapter 33 (zoning),
+    // Chapter 24 (environmental protection) and Chapter 15 (trees and landscaping) at once.
+    // The old pattern matched none of it, which is why a whole-Board pass found no instrument.
+    const t = 'ORDINANCE RELATING TO ZONING AND ENVIRONMENTAL PROTECTION; AMENDING SECTIONS 33-1, '
+      + '33-36.1, 24-5, 24-18, 15-1 AND 15-17 OF THE CODE OF MIAMI-DADE COUNTY, FLORIDA; REVISING '
+      + 'PROVISIONS RELATED TO ZONING ADMINISTRATIVE ADJUSTMENTS TO INCLUDE CERTAIN SETBACKS; '
+      + 'CREATING PROVISIONS RELATED TO COMPOSTING FACILITIES AND ENVIRONMENTAL CONTROL PLAN';
+    expect(matchLocalTopics(t)).toContain('local-environment');
+  });
+
+  it('🔴 finds a mitigation bank, which is rung 4 fee-in-lieu by name', () => {
+    // R-1170-25, verbatim-ish. A wetlands mitigation bank is how a developer pays to offset an
+    // impact instead of preserving on site — the ladder's own rung-4 mechanism. Invisible before.
+    const t = 'RESOLUTION DIRECTING THE COUNTY MAYOR TO EVALUATE THE FEASIBILITY OF UTILIZING '
+      + 'MIAMI-DADE COUNTY PARKS AS LAND FOR A COUNTY-OWNED MITIGATION BANK';
+    expect(matchLocalTopics(t)).toContain('local-environment');
+  });
+
+  it('keeps the land-preservation vocabulary that was already right', () => {
+    expect(matchLocalTopics('RESOLUTION APPROVING THE MODIFIED ENVIRONMENTALLY ENDANGERED LANDS ACQUISITION LIST')).toContain('local-environment');
+    expect(matchLocalTopics('RESOLUTION ACCEPTING A DEED CONVEYING A PARCEL IN THE PINE ROCKLAND PRESERVATION AREA FOR CONSERVATION PURPOSES')).toContain('local-environment');
+    expect(matchLocalTopics('RESOLUTION DISBURSING FUNDS FROM THE TREE TRUST FUND TO INCREASE THE TREE CANOPY')).toContain('local-environment');
+  });
+
+  it('does not read a grounds-maintenance contract as a landscaping standard', () => {
+    // JIREH LANDSCAPING, CORP. mows the airport. Bare `landscap` would file that here, so the
+    // pattern asks for a requirement, ordinance, standard or code.
+    expect(matchLocalTopics('RESOLUTION APPROVING AWARD OF CONTRACT TO JIREH LANDSCAPING, CORP. FOR GROUNDS MAINTENANCE SERVICES FOR MIAMI INTERNATIONAL AIRPORT')).not.toContain('local-environment');
+  });
+
   it('stays quiet on the ceremonial calendar', () => {
     expect(matchLocalTopics('RESOLUTION CONGRATULATING THE MIAMI HEAT')).toEqual([]);
     expect(matchLocalTopics('PROCLAMATION DECLARING DELTA DAY AT MIAMI-DADE COUNTY')).toEqual([]);

@@ -496,3 +496,148 @@ for five commissioners, so its housing counts (155 leads) are the pre-fix ones. 
 current. Second, the todo file's "Hardemon `growth-and-development` — 21 leads" was wrong: 21 is
 **Cohen Higgins'** count, and Hardemon has **5** growth leads and 22 housing leads. Re-measure a
 baseline before spending on it.
+
+## `local-environment` across the whole Board — 43 matters read, 0 seated, 14 refused
+
+Third topic pass, 2026-09-08. **Nobody is seated, and the pass is still worth its cost**: it found
+the lead pattern for this ladder was asking the wrong question, and fixed it.
+
+The ladder asks **how to balance new development against environmental preservation**:
+
+| rung | position |
+| --- | --- |
+| 1 | Require significant green space, tree preservation, and environmental review before approving any development |
+| 2 | Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact |
+| 3 | Apply consistent environmental standards while giving developers reasonable flexibility on implementation |
+| 4 | Allow developers to pay fees in lieu of on-site preservation; prioritize economic activity over green space |
+| 5 | Remove local environmental restrictions beyond what state and federal law requires |
+
+Every rung is a **rule imposed on development**. That is the axis, and almost nothing the Board did
+in this window is on it.
+
+### 🔴 THE PATTERN WAS ASKING ABOUT THE HEALTH OF THE BAY, NOT ABOUT DEVELOPMENT
+
+Of the 43 matters it produced, **32 were Biscayne Bay water quality, septic-to-sewer conversion,
+flood resilience, marine vessels, seawalls, mooring buoys and BOARD APPOINTMENTS.** Steinberg's 16
+leads — the densest untouched person-topic pair on the Board, and the reason this topic was chosen —
+are almost entirely that. Her four own-initiative items are three resolutions *urging the state
+legislature* to fund bay analytics, septic-to-sewer and a flood-resiliency study, plus one titled
+`ELIMINATE FOUR BUDGETED VACANCIES`.
+
+Bay restoration is real work and it is a real part of what this county does. **It simply cannot
+evidence any rung of this ladder.** Direction was never the problem; the axis was — the same shape
+as Bastien's `economic-development` refusal two sections above, and the same fix.
+
+⚠ The worst single term was `resilien`, which matched **`RESILIENT AQUARIUM LLC`** — a company name,
+in a Seaquarium ground-lease assignment. A property transaction was filed under the environment
+ladder because of an assignee's trade name.
+
+### 🔴 AND IT WAS BLIND TO THE INSTRUMENTS THAT DO SIT ON THIS AXIS
+
+Miami-Dade regulates this through **Chapter 24** (environmental protection), **Chapter 33** (zoning)
+and **Chapter 15** (trees and landscaping), usually amending them together. The pattern matched none
+of that vocabulary, so a whole-Board pass could conclude "no instrument exists" when the instruments
+were simply invisible.
+
+🟢 **THE CONTROL THAT FOUND THEM, AND WHY THE LEADS FILE COULD NEVER HAVE.** The leads file stores
+only matters a pattern already matched, so "the pattern found nothing" and "nothing exists" are
+indistinguishable in it. Re-fetching every commissioner's **full, unfiltered** sponsor report —
+**2,559 (member, matter) rows, 1,785 distinct matters** — and grepping the raw titles for the
+ladder's own vocabulary surfaced two the pattern had never seen:
+
+- **`251728` / 25-105** (adopted) — "RELATING TO ZONING AND ENVIRONMENTAL PROTECTION", amending
+  §§33-1, 33-36.1, 33-279, 24-5, 24-18, 24-43.1, 15-1, 15-17, 15-17.1, 15-18 and creating §24-47.1.
+  Zoning, environmental protection and the tree code in one ordinance. **Prime sponsor is Eileen
+  Higgins, who no longer sits on the Board**; Cohen Higgins, Regalado, Garcia and Steinberg are
+  co-sponsors, and a co-sponsorship cannot seat a chair the prime's own record does not pin.
+- **`252162` / R-1170-25** (adopted, Bermudez prime) — county parks as a wetlands **mitigation
+  bank**, which is rung 4's fee-in-lieu mechanism by name.
+
+🔴 **RUN A POSITIVE CONTROL ON THE CONTROL.** The sweep also counted the words "resolution" and
+"ordinance": **2,543 hits in 2,559 rows.** Without that, a zero on the axis vocabulary would have
+been unreadable — a blind scan and a genuine absence look identical.
+
+### Bermudez — the one coherent direction, and still a refusal
+
+He is the only commissioner with a consistent on-axis position, across three of his own prime
+sponsorships:
+
+- **R-1170-25** (adopted) — evaluate using county parks as a county-owned wetlands mitigation bank.
+- **`250607`** (in committee, department-requested) — authorise **administrative approval of septic
+  systems that do not meet minimum setback distances**, and of boat slips by Class I permit.
+- **`261179`** (in committee) — allow **non-recorded institutional controls** for "No Further Action
+  With Conditions" closures of contaminated sites.
+
+All three keep the standard and move the *implementation* — rung 3's language. R-1170-25's recitals
+state the reasoning plainly: mitigation credits are scarce in the county, and "projects that would
+greatly benefit the local community and local economy might not be able to move forward" without
+them; a county bank would also fund restoration of park wetlands.
+
+🔴 **REFUSED ANYWAY, AND THE REASON IS CONSISTENCY.** R-1170-25's operative sections direct the Mayor
+to *evaluate the feasibility* and *place a report on an agenda*. It commits the county to nothing.
+That is the identical shape refused for **Gilbert on `transportation-priorities` one section above** —
+"a study directive is not a chair" — and the other two instruments are still in committee. Seating
+Bermudez here while refusing Gilbert there would be applying two standards to the same evidence
+shape, in the same pass, for no reason but wanting a row.
+
+**What would seat him:** adoption of `250607` or `261179`, or Board action on the mitigation-bank
+report when it returns. Also worth asking whether pollution permitting — septic setbacks,
+contaminated-site closure — belongs on this ladder at all, or is a third axis again.
+
+### The other thirteen
+
+- **Steinberg** — bay and resilience, as above. Her one on-axis instrument, `260199` creating
+  §24-48.27 for sea turtle nesting protection, is **in committee** and is a wildlife rule rather than
+  a development-vs-preservation one.
+- **Regalado** — two own-initiative items: urging the state to fund EEL, and the Seaquarium lease.
+  Her six others are department requests.
+- **Cohen Higgins** — her two on-axis items are both **DERM requests**: the EEL acquisition list, and
+  `252337`, which **disburses** up to $250,000 from the Tree Trust Fund to plant trees in Cutler Bay.
+  ⚠ That one looked decisive and is not: it *spends* the fund, it does not set or change the
+  fee-in-lieu rule that fills it. Spending is not a position on the rule.
+- **McGhee** — three EEL and wetlands items, **all DERM requests**; the Pine Rockland deed is deferred.
+- **Bastien, Milian Orbis** — "urging" resolutions and department requests.
+- **Garcia, Lopez, Gonzalez, Hardemon, Gilbert, Rodriguez** — no own-initiative on-axis instrument.
+  Gilbert's three Risk & Resilience Tech Hub items are all unadopted and off-axis besides.
+- **Levine Cava** — the Mayor sponsors nothing.
+
+**Every EEL item in the corpus is a Department of Environmental Resources Management request.** Land
+acquisition is also not a rule on developers: the county buying land is a different question from
+what it requires of someone building on theirs.
+
+### What was changed, and what it cost
+
+`LOCAL_TOPIC_PATTERNS['local-environment']` retuned and pinned by seven tests in
+`miamidade-sponsorship-parse.test.ts`. Measured on the unfiltered sweep: **57 leads / 43 matters
+before, 23 leads / 13 matters after.** Every one of the 32 dropped matters was read and is off-axis;
+both gained are on-axis.
+
+⚠ **THE COST, STATED RATHER THAN BURIED:** bay water quality, septic-to-sewer and sea-level-rise
+resilience now match **no topic at all**. That is correct only if no ladder asks about them, and none
+currently does — `climate-change` carries neither `sea level rise` nor `resilien`. Whoever next reads
+the climate-change ladder should decide whether they belong there. **Do not add them back here**;
+this ladder has no rung they could evidence.
+
+### 🟢 THE COMMITTED LEADS CACHE WAS REGENERATED, AND THE DIFF IS THE CONTROL
+
+The cache predated both the `section 8` fix and this retune. Re-run over the identical window
+(2025-01-01 → 2026-09-05), total leads went **580 → 522**, and only three topics moved:
+
+| topic | before | after | why |
+| --- | --- | --- | --- |
+| `housing` | 155 | 122 | the `section 8` fix, applied at last |
+| `local-environment` | 57 | 23 | this retune |
+| `rent-regulation` | 27 | 30 | **not a pattern change — see below** |
+
+🔴 **THE +3 IS NOT A PATTERN EFFECT, AND CHECKING RATHER THAN ASSUMING IS THE POINT.** All three are
+matter `261389`, a lease of a county room to Suited for Success, Inc. It was already in the old cache
+**for Hardemon alone**; Bastien, Gonzalez and Lopez have been added as sponsors since. **The county's
+record is live: the same query over the same window returns more (member, matter) pairs later**, as
+sponsors are added to a matter after filing. A diff between two runs is therefore not purely a
+measure of your own change, and a count that moved is not proof you moved it.
+
+⚠ Two smaller facts from the same item, recorded but **not acted on**, because neither was measured:
+`261389` matches `rent-regulation` on the words **"AS LANDLORD"** — the county leasing a room to a
+non-profit is not a rent-regulation position, and `landlord` looks like the same false-positive class
+this file keeps finding. And its agenda date is **10/6/2026**, later than the `until` bound, so the
+report's date filter is not on the agenda date.

@@ -76,7 +76,31 @@ export const LOCAL_TOPIC_PATTERNS = {
   'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
   'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
   'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,
-  'local-environment':        /wetland|environmentally endangered|tree canopy|conservation (land|easement)|biscayne bay|water quality|septic|sea level rise|resilien|mangrove|preservation area/i,
+  // 🔴 RETUNED 2026-09-08 after reading all 43 leads across 11 commissioners and seating NOBODY.
+  // The ladder asks how to balance NEW DEVELOPMENT against ENVIRONMENTAL PRESERVATION — its five
+  // rungs turn on green space, tree preservation, environmental review before approval, full
+  // offsets, and fees in lieu of on-site preservation. The old pattern asked about the health of
+  // the bay instead, and in a coastal Florida county that vocabulary swamps everything: of 43
+  // matters it found, 32 were Biscayne Bay water quality, septic-to-sewer, flood resilience,
+  // marine vessels, seawalls, mooring buoys and BOARD APPOINTMENTS. Direction was never the
+  // problem; the axis was. Same failure as `economic-development` above, same fix.
+  // ⚠ `resilien` was the worst of them and is gone: it matched `Resilient Aquarium LLC`, a COMPANY
+  //   NAME in a Seaquarium ground-lease assignment. A stem that loose cannot be qualified usefully.
+  // 🔴 AND IT WAS MISSING THE INSTRUMENTS THAT DO SIT ON THIS AXIS. Miami-Dade regulates this
+  //   through Chapter 24 (environmental protection), Chapter 33 (zoning) and Chapter 15 (trees and
+  //   landscaping), and the old pattern saw none of it. A control over the UNFILTERED 2,559-matter
+  //   sweep — not the leads file, which only holds what a pattern already matched — surfaced
+  //   `251728` (zoning AND environmental protection, amending 33-1, 24-5 and 15-17 together) and
+  //   `252162` (county parks as a wetlands MITIGATION BANK, which is rung 4's fee-in-lieu
+  //   mechanism by name). Both are now found; both were invisible before.
+  // Measured on that sweep: 57 leads / 43 matters before, 23 leads / 13 matters after. Every one
+  // of the 32 dropped matters was read and is off-axis; both gained are on-axis.
+  // ⚠ COST, STATED: bay water quality, septic-to-sewer and sea-level-rise resilience now match NO
+  //   topic at all. That is correct only if no ladder asks about them, and none currently does —
+  //   `climate-change` below carries neither `sea level rise` nor `resilien`. Whoever next reads
+  //   the climate-change ladder should decide whether they belong there; do not add them back
+  //   here, because this ladder has no rung they could evidence.
+  'local-environment':        /wetland|environmentally endangered|\bEEL\b|tree (canopy|removal|preservation|protection|ordinance|trust fund)|conservation (land|easement|purpose)|mangrove|preservation area|natural forest|pine rockland|mitigation (bank|credit)|fee(s)? in[- ]lieu|environmental review|environmental impact statement|green space|open space requirement|landscap\w* (requirement|ordinance|standard|code)|environmental control plan/i,
   'climate-change':           /climate|greenhouse gas|carbon|renewable energy|solar|energy efficiency|electric vehicle|\bEV charging\b|net zero/i,
   'fossil-fuels':             /natural gas|petroleum|fossil fuel|pipeline|drilling|fuel terminal/i,
   'transportation-priorities':/transit|bus rapid|metrorail|metromover|bicycle|pedestrian|sidewalk|complete streets|road capacity|traffic|parking requirement|\bSMART plan\b|rail corridor/i,
