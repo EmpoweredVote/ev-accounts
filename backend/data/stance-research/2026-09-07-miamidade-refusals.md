@@ -291,11 +291,27 @@ which is a condition on the county's own deals rather than a rule on the market.
   recounting afterwards flips no decision, and Rodriguez falls from 2 own-initiative housing items to
   **1**.
 
-  So he is refused for a better reason: **his only substantive own housing instrument is R-549-26**,
-  a policy limiting extensions to developers of conveyed county land and enforcing the county's
-  reversionary interest. That shows he works inside the land-conveyance model and wants it enforced.
-  It does not establish a position on whether the county should be subsidising housing at all, which
-  is what rung 4 asserts. One enforcement policy is not a chair.
+  🟢 **AND THEN R-549-26 WAS READ, AND IT SEATS HIM AT 4.** The line that stood here said "one
+  enforcement policy is not a chair" — written before reading the instrument, on its title. The full
+  text states the county's method in its own recitals: the Board "has authorized the conveyance and
+  leasing of County-owned property **to private developers** for the purpose of developing affordable
+  housing" under Fla. Stat. 125.35, 125.379 and 125.38, and does so "to promote the timely development
+  of affordable housing units to address the County's ongoing housing affordability crisis". His
+  policy exists to make that method deliver: two extensions maximum per developer per property, one
+  year each; a third only for a declared emergency, on written justification and a two-thirds vote;
+  **debarment** of any developer that previously took county land and failed to build, unless it shows
+  expertise and financial capacity; and on expiry, **reversion of the property or termination of the
+  lease**.
+
+  That is rung 4 on both halves. The subsidy is endorsed — he is protecting its output, not ending it
+  — and every obligation binds a developer who accepted public land, not the wider market. Rung 3 is
+  excluded for the same reason it was for Bastien; rung 5 is contradicted by his directing public land
+  to affordable housing at all; rungs 1 and 2 are contradicted by the recitals, which say private
+  developers build.
+
+  ⚠ **It is a single instrument, and that is stated rather than hidden.** It suffices because its own
+  recitals name the position and its operative terms confirm the mechanism — not because one item is
+  normally enough. The change of outcome came from reading the document, not from a change of view.
 - **Garcia — no substantive housing instrument at all.** Six of his eight adopted prime items are
   **Tourist Development Council grant** awards, which the lead pattern caught on "surtax" and which are
   tourism, not housing. His own **R-317-25** sets a Board policy that housing legislation citing Area
