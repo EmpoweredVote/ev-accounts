@@ -193,14 +193,42 @@ what the instruments say.
 
 **SEATED — Cohen Higgins at 2**, see above.
 
-**NOT SEATED — Steinberg and Garcia**, though they voted the same way as Cohen Higgins. A shared No
-gives shared direction, not a shared chair, and each has **their own UDB instruments that have not
-been read**: both sponsored `260967` *CDMP APPLICATION RE UDB TEXT AMENDMENT* (R-678-26, adopted),
-whose direction the title does not give. Garcia has six more, including `261141` on vertical farming
-and `260879` amending the CDMP for commercial vehicle storage, which **Failed**. Reading somebody's
-chair off a colleague's ordinance would be inferring it from company kept. Those rows wait.
+**SEATED — Steinberg and Garcia at 2**, after reading R-678-26. ⚠ **The paragraph that stood here was
+wrong twice and is corrected rather than quietly replaced.** It said they had "their own UDB
+instruments" and that both "sponsored" R-678-26. R-678-26 is **Raquel Regalado's** prime sponsorship;
+they are **co-sponsors**. I asserted sponsorship from an item appearing in their sponsor reports — the
+exact error this file already documents two sections above, made by the person who documented it.
 
-**NOT SEATED — the six other Yes voters.** 🔴 A Yes on 25-59 is a vote on **Rodriguez's** initiative,
+🔴 **AND THE TOOL WAS HIDING THE ANSWER.** The scratch reader captured only the FIRST sponsor, because
+each sponsor sits in its own `<tr>`/`<font>` after the "Sponsors:" label. R-191-26 actually carries
+**four**: Cohen Higgins as Prime, and **Garcia, Lopez and Steinberg as Co-Sponsors**. Every
+attribution made before the fix showed a single name. All four rows already seated were re-verified
+after fixing it and every one holds — each cited source names its subject as Prime or Co-Prime — but
+the near miss is the lesson: **a sponsor field that returns exactly one name every time is a uniform
+answer, and uniform answers are broken detectors until controlled.**
+
+What seats them, on three consistent instruments each:
+
+- **voted No on 25-59**, against lowering the jobs-to-housing ratio and dropping the first-phase
+  density requirement — capacity tests, which is rung 2's mechanism
+- **co-sponsors of R-191-26**, opposing HB 399's state study of the UDB and its preemption of local
+  vote requirements on plan amendments
+- **co-sponsors of R-678-26**, directing a plan amendment to address text amendments that may
+  facilitate urban land uses **outside** the boundary — closing a route around the UDB
+
+Rung 1 stays out for both: zero cap or referendum instruments in either record. Garcia's `261040`,
+which the growth pattern also surfaced, is a **fire prevention code** ordinance and bears on nothing
+here.
+
+**NOT SEATED — Regalado, whose record is genuinely mixed.** She voted **Yes** on 25-59, loosening the
+criteria, and is the **prime sponsor** of R-678-26, closing the text-amendment route around the
+boundary. Those are compatible — expansion should go through the proper gate, and the gate should be
+more flexible — but compatible is not the same as pinned, and they point at different rungs. Refused.
+
+**NOT SEATED — Lopez**, co-sponsor of R-191-26 and nothing else here; she was not on the Board for
+25-59. One co-sponsorship is not a chair.
+
+**NOT SEATED — the five remaining Yes voters.** 🔴 A Yes on 25-59 is a vote on **Rodriguez's** initiative,
 filed by county staff under a directive the Board had already adopted. It carries far less than his
 sponsorship does, and on its own cannot separate rung 3 from rung 4. Bastien voting Yes here is also
 a caution against reading her housing row across to growth: the same person can subsidise affordable
