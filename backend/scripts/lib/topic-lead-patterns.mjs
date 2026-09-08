@@ -74,7 +74,34 @@ export const LOCAL_TOPIC_PATTERNS = {
   // Code" constantly. Only two of the twenty were real vouchers.
   'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8 (housing|voucher|program|tenan)|housing choice voucher|housing voucher/i,
   'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
-  'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
+  // 🔴 RETUNED 2026-09-08, in the same pass as `local-environment` above and for both of its
+  // reasons at once — a false positive that swamped the leads, and a blind spot over the county's
+  // actual instrument.
+  // ⚠ THE FALSE POSITIVE: bare `land use plan` matched a STATE SUBMERGED-LANDS LEASE (matter
+  //   261104, an amendment to Lease 4653 with the Board of Trustees of the Internal Improvement
+  //   Trust Fund and its "associated LAND USE PLAN"). One matter, and it appeared in NINE
+  //   commissioners' zoning leads. `plan` is dropped; a comprehensive-plan amendment is already
+  //   caught by `comprehensive development master plan` and `CDMP`. Bare `single family` went the
+  //   same way — it was matching `HFA SINGLE FAMILY MORTGAGE` and solid-waste collection studies,
+  //   so it now requires the zoning sense (`single-family only|zoning|zone|district|lot`), which
+  //   is what rung 5 actually argues about.
+  // 🔴 THE BLIND SPOT: MIAMI-DADE'S PRINCIPAL DENSITY INSTRUMENT IS THE RAPID TRANSIT ZONE, and
+  //   not one RTZ ordinance matched this ladder. They were reaching `transportation-priorities`
+  //   only — including `261065`, whose title literally opens "ORDINANCE RELATING TO ZONING" and
+  //   which streamlines LIVE LOCAL ACT covenants inside transit-oriented developments. Chapter 33C
+  //   is how this county upzones, so a zoning ladder that cannot see it is not measuring the
+  //   question. Also newly visible: `250899`, RESOLUTION ESTABLISHING COUNTY POLICY RE ZONING
+  //   APPLICATIONS, and `251944`, DOWNTOWN KENDALL URBAN CENTER ZONING.
+  // ⚠ A MATTER CAN AND SHOULD CARRY BOTH TOPICS. An RTZ subzone ordinance is procedural for
+  //   transportation (it adds named parcels) and on-axis for zoning (it upzones them). Dual
+  //   tagging is the correct answer, not a collision — matchLocalTopics returns every match.
+  // Measured on the unfiltered 2,559-matter sweep (scripts/miamidade-axis-control.mjs):
+  // 70 leads / 45 matters before, 58 / 49 after — FEWER leads over MORE matters, which is the
+  // shape a good retune has: junk removed, real instruments added.
+  // ⚠ KNOWN RESIDUAL, measured and accepted: four Housing Finance Authority bond items still match
+  //   on `multifamily`. They are financings rather than zoning decisions, but `multifamily` is rung
+  //   3 and 4 vocabulary and qualifying it risks losing real hits. Read past them.
+  'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district|code)|land use (change|amendment)|comprehensive development master plan|\bCDMP\b|density|dwelling units per|accessory dwelling|single[- ]family (only|zoning|zone|district|lot)|multifamily|upzon|by right|parking (minimum|requirement)|rapid transit zone|\bRTZ\b|transit[- ]oriented|\bTOD\b|live local|urban center|neighborhood character|duplex|triplex/i,
   'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,
   // 🔴 RETUNED 2026-09-08 after reading all 43 leads across 11 commissioners and seating NOBODY.
   // The ladder asks how to balance NEW DEVELOPMENT against ENVIRONMENTAL PRESERVATION — its five

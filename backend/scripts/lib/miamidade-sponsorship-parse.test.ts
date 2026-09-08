@@ -301,6 +301,53 @@ it('🔴 does not read Biscayne Bay water quality as the development-vs-preserva
     expect(matchLocalTopics('RESOLUTION APPROVING AWARD OF CONTRACT TO JIREH LANDSCAPING, CORP. FOR GROUNDS MAINTENANCE SERVICES FOR MIAMI INTERNATIONAL AIRPORT')).not.toContain('local-environment');
   });
 
+it('🔴 does not read a submerged-lands lease as a zoning matter', () => {
+    // Matter 261104, verbatim shape. Bare \`land use plan\` matched the "associated LAND USE PLAN"
+    // of a state lease with the Board of Trustees of the Internal Improvement Trust Fund — ONE
+    // matter that then appeared in NINE commissioners' residential-zoning leads.
+    const t = 'RESOLUTION AUTHORIZING THE COUNTY MAYOR TO NEGOTIATE AND EXECUTE AN AMENDMENT TO '
+      + 'LEASE NUMBER 4653 AND ASSOCIATED LAND USE PLAN WITH THE BOARD OF TRUSTEES OF THE INTERNAL '
+      + 'IMPROVEMENT TRUST FUND OF THE STATE OF FLORIDA';
+    expect(matchLocalTopics(t)).not.toContain('residential-zoning');
+  });
+
+  it('🔴 does not read a single-family MORTGAGE programme as single-family ZONING', () => {
+    // Rung 5 argues about single-family-ONLY ZONING. Bare \`single family\` was pulling Housing
+    // Finance Authority bond items and solid-waste collection studies onto that ladder.
+    expect(matchLocalTopics('HFA SINGLE FAMILY MORTGAGE REVENUE BONDS')).not.toContain('residential-zoning');
+    expect(matchLocalTopics('RESOLUTION DIRECTING A STUDY OF SOLID WASTE COLLECTION AT SINGLE FAMILY HOMES')).not.toContain('residential-zoning');
+    // …but the zoning sense still lands.
+    expect(matchLocalTopics('ORDINANCE ELIMINATING SINGLE-FAMILY ONLY ZONING')).toContain('residential-zoning');
+  });
+
+  it('🔴 files a Rapid Transit Zone ordinance under BOTH zoning and transportation', () => {
+    // Chapter 33C is how Miami-Dade upzones, and not one RTZ ordinance reached the zoning ladder
+    // before 2026-09-08. It is procedural for transportation (it adds named parcels) and on-axis
+    // for zoning (it upzones them), so both tags are correct — this is not a collision.
+    const t = 'ORDINANCE RELATING TO THE RAPID TRANSIT SYSTEM-DEVELOPMENT ZONE; AMENDING SECTION '
+      + '33C-2 OF THE CODE; AMENDING THE METROMOVER SUBZONE OF THE RAPID TRANSIT ZONE TO ADD '
+      + 'CERTAIN PRIVATE PROPERTY';
+    const hits = matchLocalTopics(t);
+    expect(hits).toContain('residential-zoning');
+    expect(hits).toContain('transportation-priorities');
+  });
+
+  it('🔴 finds the Live Local ordinance whose title literally opens "RELATING TO ZONING"', () => {
+    // 26-47. It reached transportation only, because the pattern wanted "zoning amendment" and the
+    // county wrote "RELATING TO ZONING". Streamlining approvals is rung 4 vocabulary; it has to be
+    // visible for a reader to weigh it.
+    const t = 'ORDINANCE RELATING TO ZONING; CREATING SECTION 33-39.5 OF THE CODE; PROVIDING FOR '
+      + 'ADMINISTRATIVE ACCEPTANCE AND APPROVAL OF COVENANTS RELATING TO THE LIVE LOCAL ACT IN '
+      + 'CONNECTION WITH PROPOSED DEVELOPMENTS LOCATED WITHIN TRANSIT-ORIENTED DEVELOPMENTS';
+    expect(matchLocalTopics(t)).toContain('residential-zoning');
+  });
+
+  it('keeps the plain zoning vocabulary it always had', () => {
+    expect(matchLocalTopics('ORDINANCE APPROVING A REZONING TO PERMIT 240 DWELLING UNITS PER ACRE')).toContain('residential-zoning');
+    expect(matchLocalTopics('RESOLUTION APPROVING CDMP APPLICATION NO. CDMP20240020')).toContain('residential-zoning');
+    expect(matchLocalTopics('ORDINANCE RELATING TO THE DOWNTOWN KENDALL URBAN CENTER DISTRICT')).toContain('residential-zoning');
+  });
+
   it('stays quiet on the ceremonial calendar', () => {
     expect(matchLocalTopics('RESOLUTION CONGRATULATING THE MIAMI HEAT')).toEqual([]);
     expect(matchLocalTopics('PROCLAMATION DECLARING DELTA DAY AT MIAMI-DADE COUNTY')).toEqual([]);

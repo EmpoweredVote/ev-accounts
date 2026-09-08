@@ -641,3 +641,109 @@ measure of your own change, and a count that moved is not proof you moved it.
 non-profit is not a rent-regulation position, and `landlord` looks like the same false-positive class
 this file keeps finding. And its agenda date is **10/6/2026**, later than the `until` bound, so the
 report's date filter is not on the agenda date.
+
+## `residential-zoning` across the whole Board — 49 matters read, 1 seated, 13 refused
+
+Fourth topic pass, 2026-09-08. The axis test now runs **before** the reading, and it earned its
+place twice here: this pattern had a false positive that swamped the leads *and* was blind to the
+county's principal density instrument.
+
+The ladder asks what should guide decisions about **housing density and neighbourhood character**:
+
+| rung | position |
+| --- | --- |
+| 1 | Protect existing neighborhood character strictly; require community votes before any rezoning |
+| 2 | Allow modest density increases (duplexes, accessory units) with strong design review and neighborhood input |
+| 3 | Allow multifamily and mixed-use near commercial corridors while protecting most residential zones |
+| 4 | Upzone broadly to allow multifamily by right; streamline approvals and reduce parking requirements |
+| 5 | Eliminate single-family-only zoning; allow any housing type on any lot communitywide |
+
+### 🔴 ONE LEASE APPEARED IN NINE COMMISSIONERS' ZONING LEADS
+
+Matter `261104` is an amendment to **Lease 4653 with the Board of Trustees of the Internal
+Improvement Trust Fund** — a state submerged-lands lease — and its "associated **LAND USE PLAN**".
+Bare `land use plan` matched it, and because nine commissioners co-sponsor the item it produced nine
+leads. Dropped: a comprehensive-plan amendment is already caught by `comprehensive development
+master plan` and `CDMP`. Bare `single family` went the same way — it was pulling **HFA SINGLE FAMILY
+MORTGAGE** bonds and solid-waste collection studies onto a ladder whose rung 5 argues about
+single-family **zoning**.
+
+### 🔴 AND IT COULD NOT SEE THE RAPID TRANSIT ZONE, WHICH IS HOW THIS COUNTY UPZONES
+
+Not one RTZ ordinance reached this ladder. They were matching `transportation-priorities` **only** —
+including `261065`, whose title opens **"ORDINANCE RELATING TO ZONING"** and which streamlines Live
+Local Act covenants inside transit-oriented developments. The pattern wanted `zoning amendment` and
+the county wrote `RELATING TO ZONING`. Also newly visible: `250899` (county policy on zoning
+applications) and `251944` (Downtown Kendall Urban Center zoning).
+
+🟢 **A matter can and should carry both topics.** An RTZ subzone ordinance is *procedural* for
+transportation — it adds named parcels — and *on-axis* for zoning, because it upzones them. Dual
+tagging is the right answer, not a collision.
+
+Retune measured on the unfiltered sweep: **70 leads / 45 matters before, 58 / 49 after.** Fewer
+leads over **more** matters, which is the shape a good retune has. Pinned by five tests.
+
+⚠ **Known residual, measured and accepted:** four Housing Finance Authority bond items still match on
+`multifamily`. They are financings, not zoning decisions, but `multifamily` is rung 3 and 4
+vocabulary and qualifying it risks losing real hits. Read past them.
+
+🟢 **THE CONTROL IS NOW A COMMITTED TOOL.** `scripts/miamidade-axis-control.mjs` caches the unfiltered
+sweep and greps it by regex or by live topic pattern. It **refuses to report a zero** unless its own
+positive control ("resolution"/"ordinance") fires first, because a blind scan and a genuine absence
+look identical. Two topics in one day needed this by hand; it is a tool now.
+
+### SEATED — Regalado at 3
+
+Four adopted own-initiative instruments, every one **geographically bounded**, which is what puts her
+at 3 rather than 4:
+
+- **25-90** (`252269`) creates the Coral Gables/University Station subzone of the Rapid Transit Zone,
+  bringing property within a **quarter mile** of the Metrorail station under county zoning
+  jurisdiction and its standards.
+- **26-47** (`261065`) allows the county to accept and approve **Live Local Act covenants
+  administratively** for developments inside transit-oriented areas.
+- **R-551-26** (`260764`) directs a CDMP amendment creating a density bonus for property within
+  **500 feet** of the trail and greenway corridor beneath the Metrorail.
+- **R-678-26** (`260967`) directs a plan amendment addressing text amendments that could facilitate
+  urban land uses **outside** the Urban Development Boundary — the "protecting most residential
+  zones" half of rung 3, and the reason rungs 4 and 5 are contradicted rather than merely unsupported.
+
+Rung 4 needs upzoning **broadly**; every instrument here is bounded to a named station area, corridor
+or urban centre, and nothing reduces parking requirements. Rung 5 needs the elimination of
+single-family zoning communitywide — absent. Rung 2 is contradicted: at the Downtown Kendall Core she
+is easing height and floorplate limits for "very intense mixed uses" (`251944`, in committee), not
+enabling duplexes. Rung 1 is contradicted by 26-47, which makes an approval **administrative** where
+rung 1 wants a community vote.
+
+⚠ **R-551-26 is cited on two ladders** — here and on `transportation-priorities`. That is legitimate
+because it answers both questions (where investment goes; how density is allocated) and each row's
+reasoning argues its own ladder. It is **not** the "same source → two chairs pins none" case, which is
+about two chairs on ONE ladder.
+
+### Refused, and why
+
+- **Lopez — four adopted own-initiative RTZ parcel additions and nothing else.** For transportation
+  these were procedural; here they genuinely upzone. But the ladder asks what should **guide**
+  decisions, and four landowner applications a district commissioner carried are decisions, not a
+  guide. **Consistency:** the same instruments were refused for her one topic earlier. **What would
+  seat her:** a subzone she creates with its own standards, as Regalado did with 25-90, or a stated
+  policy on where density belongs.
+- **Cohen Higgins — between 1 and 2, each missing a clause.** Her **R-337-26** and **R-1173-25** are
+  neighbourhood planning exercises with publicised community meetings, toward a **character-based
+  thematic zoning district**. Rung 1 wants **community votes before any rezoning** — she used
+  meetings, which is input, not a referendum, the same gap her `growth-and-development` refusal
+  recorded. Rung 2's "strong design review and neighborhood input" fits, but its first clause —
+  **allow modest density increases, duplexes, accessory units** — has no instrument. Two adjacent
+  chairs, so the spoke stays blank.
+- **Eileen Higgins is the prime sponsor of the two most on-axis policy instruments in the corpus** —
+  `250899`, establishing county policy on zoning applications, and `251728` / 25-105 — **and she no
+  longer sits on the Board.** The sitting members are co-sponsors, which cannot seat a chair the
+  prime's own record does not pin.
+- **Gilbert** — a motion referencing another file, an RTZ parcel addition co-primed with Lopez, and a
+  container-stacking authorisation. **Rodriguez** — community exercises on the Horse Country area and
+  a deferred CDMP application about truck parking. **Garcia** — three CDMP amendments, all about
+  **truck parking and commercial vehicle storage**, one failed and two unadopted; non-residential
+  land use. **Gonzalez** — one unadopted CDMP amendment about **vertical farming**. **Bastien** — a
+  SMART corridor parcel addition plus four Housing Finance Authority bond items she carried.
+  **McGhee, Milian Orbis, Bermudez, Hardemon, Steinberg** — one item each or none, all procedural,
+  department-requested or unadopted.
