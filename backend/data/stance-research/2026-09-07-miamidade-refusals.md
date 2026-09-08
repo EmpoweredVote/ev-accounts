@@ -87,3 +87,56 @@ conditions only, and does **not** claim local hiring.
 
 **What would close the gap:** a first-source-hiring or resident-preference term in a county
 incentive she sponsors, or a stated position on adding one.
+
+## Danielle Cohen Higgins (District 8) — `growth-and-development` — REFUSED 2026-09-07
+
+**21 leads read, 5 on-axis instruments confirmed as hers. Direction is clear; the chair is not.**
+This is the "two adjacent chairs fit, so skip" case, and it is worth reading because it exposes a
+limit of the sponsorship method rather than a gap in her record.
+
+Her position is unmistakable in direction. Four adopted resolutions, all prime-sponsored:
+
+- **R-191-26** (Mar 2026) — opposes HB 399, which would preempt local governing-board vote
+  requirements on comprehensive-plan amendments and **require the state to study the Urban
+  Development Boundary in Miami-Dade County**
+- **R-1183-25** (Dec 2025) — urges the Legislature to narrow SB 180's restrictions on local planning
+  and land-use authority, "at least in part to facilitate … proposed increases in **educational
+  facility impact fees**"
+- **R-337-26** / **R-1173-25** (Apr 2026, Dec 2025) — neighbourhood planning exercises with
+  publicised community meetings, inside the UDB, toward a **character-based thematic zoning district**
+
+Growth, on this record, should be constrained and shaped locally: an intact urban boundary, a high
+bar for plan amendments, development paying for school capacity, neighbourhood-scale planning.
+
+**But that under-determines the rung, and the two candidates each have one clause evidenced and one
+missing:**
+
+| rung | evidenced | missing |
+| --- | --- | --- |
+| **1** — cap major new development, and let residents vote directly on the largest projects | the UDB defence is support for a cap | **no direct resident vote.** She defended *governing-board* vote thresholds and used *community meetings* — input, not a referendum |
+| **2** — allow growth only as fast as infrastructure can handle; make development wait for capacity | the school impact-fee push is exactly this | the boundary and character items are not capacity-timing arguments |
+
+Rungs 3, 4 and 5 are contradicted rather than unsupported: she resists state deregulation and
+preemption, and wants development to pay more, while rung 3 wants expansion "not held back".
+
+Choosing between 1 and 2 here means reaching for the least extreme option the reasoning supports.
+CLAUDE.md names that a **tiebreaker, not evidence**, and says reaching for it is the signal the row
+is not yet evidenced. So the spoke stays blank.
+
+🔴 **WHAT THIS EXPOSES: SPONSORSHIP IS THE WRONG INSTRUMENT CLASS FOR GROWTH TOPICS.** A sponsorship
+report finds what a commissioner *initiates*. Miami-Dade's decisive growth decisions are
+**applications** — UDB moves and comprehensive-plan amendments brought by landowners — which a
+commissioner **votes on** and never sponsors. Her one CDMP item, `251426` creating an Evaluation and
+Appraisal Report task force, was **deferred** and is procedural either way.
+
+**What would seat this topic:** her recorded votes on UDB and CDMP amendment applications. That is a
+different report on the same portal — `ReportMenu.asp?ReportName=Votingrecord.asp`, which gives the
+matter, the enacted number, the action taken and **the vote on each item**. It is the obvious next
+tool, and `growth-and-development` and `residential-zoning` are the two ladders that need it most.
+
+⚠ **A cost I introduced the same day:** widening `growth-and-development` to take `CRA`,
+`community redevelopment` and `tax increment` moved the CRA work here, and for this commissioner
+that means **14 of her 21 growth leads are Naranja Lakes CRA housekeeping** — board appointments,
+budgets, pothole resurfacing, landscaping. The move was right (a CRA is not business attraction) but
+CRA *administration* should probably be separated from CRA *creation and expansion*. Not changed
+again in the same pass; recorded so the next reader knows why the cluster looks like that.
