@@ -214,6 +214,21 @@ jobs:
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
+      # --- frozen ladder text ----------------------------------------------------------------------
+      # CA_0012 froze compass_topics/compass_stances' TEXT columns when content versioning came in
+      # (ADR 0004); the live wording is in compass_stance_revisions, keyed by the topic_revision_id a
+      # SEASON pins. Measured 2026-09-08: 29 of the 60 topics in the open season disagree with the
+      # frozen text, 16 of them on ALL FIVE RUNGS. The frozen table returns a complete, plausible
+      # five-rung ladder on the right subject — for `housing` the QUESTION TEXT is even identical — so
+      # a query that reads it neither errors nor looks wrong. A stance pass that day read it for six
+      # topics and briefly concluded five PUBLISHED rows were mis-seated. Voter read paths were never
+      # affected; this guards research and reporting queries, which is where it happened. Baseline is
+      # generated (--update-baseline), fails only on a RISE, and must never be raised to pass.
+      # Static, no DATABASE_URL, dependency-free.
+      - name: frozen ladder text
+        if: ${{ !cancelled() }}
+        run: node backend/scripts/check-ladder-text-reads.mjs
+
       # --- suppressed-answer reads -----------------------------------------------------------------
       # CC_0062 put answer suppression in `inform.compass_responses_effective`; eleven reads in
       # backend/src had to switch to it. A twelfth read reaching for `compass_responses_current` out of

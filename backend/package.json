@@ -40,7 +40,8 @@
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
     "sweep:fabricated-articles": "node scripts/sweep-fabricated-articles.mjs",
     "audit:district-urls": "node scripts/audit-district-urls.mjs",
-    "steward": "node scripts/steward.mjs"
+    "steward": "node scripts/steward.mjs",
+    "check:ladder-text": "node scripts/check-ladder-text-reads.mjs"
   },
   "overrides": {
     "qs": "^6.15.2"
