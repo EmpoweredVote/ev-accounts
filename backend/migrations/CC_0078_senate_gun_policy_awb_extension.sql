@@ -154,6 +154,10 @@ CREATE TEMPORARY TABLE _cc0078_rows (
   basis         text NOT NULL REFERENCES _cc0078_basis(basis)
 ) ON COMMIT DROP;
 
+-- The corpus size as this transaction found it, so section 4 can assert the
+-- DELTA rather than a number typed days earlier. See 4e for why that matters.
+CREATE TEMPORARY TABLE _cc0078_before (answers int NOT NULL, context int NOT NULL) ON COMMIT DROP;
+
 INSERT INTO _cc0078_rows VALUES
   ('91f87a53-13bc-4d35-b3c8-49227ae80faa', 'Catherine Cortez Masto', 'awb-2023'),
   ('3d51cca6-7206-413b-ab8d-3199a58a6767', 'Amy Klobuchar', 'awb-2025'),
@@ -285,7 +289,13 @@ BEGIN
     RAISE EXCEPTION 'CC_0078: expected exactly 45 rows, found %', (SELECT count(*) FROM _cc0078_rows);
   END IF;
 
+  INSERT INTO _cc0078_before
+  SELECT (SELECT count(*) FROM inform.politician_answers WHERE season_id = v_s2),
+         (SELECT count(*) FROM inform.politician_context WHERE season_id = v_s2);
+
   RAISE NOTICE 'CC_0078 preconditions OK: Season 2 open, 45 rows, names match ids, gun-policy promoted and federal, no prior answers.';
+  RAISE NOTICE 'CC_0078 baseline: Season 2 holds % answers / % context before this file.',
+    (SELECT answers FROM _cc0078_before), (SELECT context FROM _cc0078_before);
 END $$;
 
 -- -----------------------------------------------------------------------------
@@ -402,23 +412,35 @@ BEGIN
     RAISE EXCEPTION 'CC_0078: % blanked answer(s) carry Season 2 reasoning', v_n;
   END IF;
 
-  -- 4e. the corpus grew by exactly 45 and 45.
+  -- 4e. the corpus grew by exactly 45 and 45 — ASSERTED AS A DELTA, NOT A TOTAL.
   --
-  -- 🔴 RAISE THE SEASON 2 FLOORS TO 2734 / 2706 ONLY AFTER THIS IS APPLIED,
-  --    AND NOT IN THE PR THAT MERGES THIS FILE — the ordering CC_0074 sets out. The
-  --    same-PR rule in check-season-corpus-floor.mjs is about LOWERING; raising
-  --    inverts it, because at merge time these rows do not exist yet and a floor
-  --    above the live corpus fails the nightly gate. Apply first, then raise.
+  -- 🔴 THIS ASSERT USED TO NAME ABSOLUTE TOTALS AND IT WAS WRONG TO. Written on
+  --    2026-09-05 against a corpus of 2689/2661, it asserted 2734/2706. Two days
+  --    later, and before this file had been reviewed, the Miami-Dade stance pass
+  --    (PR #401) seated 10 answers and the totals moved to 2699/2671 — so the
+  --    assert would have failed on apply, on a file whose own rows were fine.
+  --
+  --    An absolute total is a claim about the WHOLE CORPUS at a moment, and a
+  --    migration that waits for a human to review 45 published claims about named
+  --    senators cannot know when that moment will be. The delta is the thing this
+  --    file is actually responsible for, and it still catches everything the total
+  --    did: a row that failed to insert, a duplicate, or a trigger adding more.
+  --
+  -- ⚠ THE FLOORS ARE STILL RAISED BY HAND, AND STILL ONLY AFTER APPLYING. The
+  --    NOTICE below prints the resulting totals; use those numbers. Raising in the
+  --    PR that merges this file fails the nightly gate, because at merge time
+  --    these rows do not exist yet — the same-PR rule in
+  --    check-season-corpus-floor.mjs is about LOWERING, and raising inverts it.
   SELECT count(*) INTO v_answers FROM inform.politician_answers WHERE season_id = v_s2;
   SELECT count(*) INTO v_context FROM inform.politician_context WHERE season_id = v_s2;
-  IF v_answers <> 2734 THEN
-    RAISE EXCEPTION 'CC_0078: Season 2 holds % answers, expected 2734 (2689 + 45)', v_answers;
+  IF v_answers - (SELECT answers FROM _cc0078_before) <> 45 THEN
+    RAISE EXCEPTION 'CC_0078: Season 2 answers grew by %, expected 45', v_answers - (SELECT answers FROM _cc0078_before);
   END IF;
-  IF v_context <> 2706 THEN
-    RAISE EXCEPTION 'CC_0078: Season 2 holds % context rows, expected 2706 (2661 + 45)', v_context;
+  IF v_context - (SELECT context FROM _cc0078_before) <> 45 THEN
+    RAISE EXCEPTION 'CC_0078: Season 2 context rows grew by %, expected 45', v_context - (SELECT context FROM _cc0078_before);
   END IF;
 
-  RAISE NOTICE 'CC_0078 OK: 45 answers + 45 context into Season 2 (42 at chair 2, 3 at chair 3). Season 2 now % answers / % context. Raise the floors to match.',
+  RAISE NOTICE 'CC_0078 OK: 45 answers + 45 context into Season 2 (42 at chair 2, 3 at chair 3). Season 2 now % answers / % context — RAISE THE FLOORS TO THESE NUMBERS, in a separate PR, now that the file is applied.',
     v_answers, v_context;
 END $$;
 
