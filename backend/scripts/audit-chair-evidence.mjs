@@ -118,8 +118,26 @@ for (const [mig, f] of files) {
 //     difference in evidence. Only the vote/roll-call alternatives are made case-tolerant — the whole
 //     regex is NOT given an `i` flag, because `\bAct\b` would then match the ordinary verb "act" and
 //     passing would stop meaning anything.
+// ⚠ WIDENED A FIFTH TIME (2026-09-08, Senate gun-policy pass), for a whole COHORT of false negatives:
+// U.S. SENATE bills. The pattern had `\bH\.R\.` from the start but never its Senate sibling, and named
+// a federal statute only when the title carried the word `Act`. So every row citing a Senate bill by
+// number, and every named federal statute whose title is a `Ban of <year>` rather than an `Act`,
+// scored "directional only" — including the LIVE CC_0074 rows (Padilla, Schiff, "the Assault Weapons
+// Ban of 2025") and all 42 Assault Weapons Ban rows of CC_0078, each verified at source by
+// verify-reresearch-rows (every distinctive term present in the cited bill text). Two additions, both
+// narrow and identifier-bearing, both paired with rows already verified by reading the instrument:
+//   · `S. <number>` — a U.S. Senate bill, the sibling of `\bH\.R\.`. The negative lookbehind
+//     `(?<![A-Za-z]\.)` keeps it from firing on a preceding initialism or middle initial, so
+//     `U.S. 2024` and `Angus S. King` do NOT match while `S. 1531` and `S.1531` do. A digit is
+//     required, exactly so a bare middle initial cannot pass. Verified rows: CC_0078's S. 1531 / S. 25
+//     / S. 3214 cohort.
+//   · `Ban of <year>` — a named federal statute whose short title ends in a ban and a year rather
+//     than "Act", e.g. "Assault Weapons Ban of 2025" (S. 1531) and "Assault Weapons Ban of 2023"
+//     (S. 25). The capitalised `Ban` and the four-digit year are both required, so ordinary prose
+//     ("a ban of some kind") cannot satisfy it. Verified rows: the same cohort, whose reasoning names
+//     the ban by its exact short title, present in the cited bill text.
 const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted))/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;
