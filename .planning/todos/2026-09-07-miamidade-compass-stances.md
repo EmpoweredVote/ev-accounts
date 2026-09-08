@@ -17,9 +17,10 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 | `transportation-priorities` | 3 | Regalado |
 | `residential-zoning` | 3 | Regalado |
 
-**Four whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
-(83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused) and
-`residential-zoning` (49, 1 seated / 13 refused).
+**Five whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+(83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
+`residential-zoning` (49, 1 seated / 13 refused) and `rent-regulation` (**0 seated** / 14 refused —
+and the ladder does not apply in Florida at all, see below).
 
 Every refusal and its reason is in `backend/data/stance-research/2026-09-07-miamidade-refusals.md`.
 **Read that before re-researching anybody.**
@@ -43,7 +44,7 @@ gate → push. Gate the CSV **before** pushing: `node scripts/audit-chair-eviden
 ⚠ That link **404s as HTTP 200 with 2,625 bytes of "Web Error" HTML** for some matters (`260174`,
 `252269`, `261065` so far); always fetch a known-good one in the same run as a control.
 
-## 🔴 TEST THE AXIS BEFORE STARTING A TOPIC — THREE OF FOUR PASSES NEEDED IT
+## 🔴 TEST THE AXIS BEFORE STARTING A TOPIC — FOUR OF FIVE PASSES NEEDED IT
 
 1. Read the five rungs. Write down the **one question** they all answer.
 2. Read twenty lead titles. If they answer a *different* question, stop and retune first.
@@ -56,8 +57,32 @@ gate → push. Gate the CSV **before** pushing: `node scripts/audit-chair-eviden
 **Scorecard so far:** `economic-development` carried bare `incentive` and CRA vocabulary ·
 `housing` matched "SECTION 8-9 OF THE CODE" · `local-environment` asked about the health of the bay
 and matched `RESILIENT AQUARIUM LLC` · `residential-zoning` matched a submerged-lands lease on
-"LAND USE PLAN" and could not see the Rapid Transit Zone. **Assume the pattern is wrong until
-measured.**
+"LAND USE PLAN" and could not see the Rapid Transit Zone · `rent-regulation` was **23 of 23 false
+positives**, all county property leases, all from bare `landlord`. **Assume the pattern is wrong
+until measured.**
+
+🟢 **MEASURE PER-ALTERNATIVE, NOT JUST OVERALL.** Running each alternative of `rent-regulation`
+separately showed `landlord` scoring 30 and every other term scoring **0**, so the fix was one word
+rather than a rewrite. `--grep` one alternative at a time; it takes a minute and it turns a guess
+into a measurement.
+
+## 🔴🔴 A LADDER CAN BE LEGALLY UNAVAILABLE AT THIS LEVEL — AND THE FAILURE MODE IS A FALSE ROW
+
+**Fla. Stat. § 125.0103(2)** forbids any Florida county from adopting or maintaining "any law,
+ordinance, rule, or other measure that would have the effect of imposing controls on rents", and the
+old housing-emergency exception is gone from the current text. So on `rent-regulation`:
+
+- rungs 1 and 2 are things a commissioner **may not lawfully do**;
+- rungs 3 and 4 both describe the preempted baseline and separate nobody;
+- 🔴🔴 **rung 5 — "oppose rent control entirely" — is an accurate description of STATE LAW and of
+  nobody's stated position.** Work backwards from the outcome and you seat all thirteen at 5, having
+  recorded a preemption as thirteen personal beliefs.
+
+**The danger of a mis-scoped ladder is not a blank spoke; it is a confident wrong row.** Before any
+new topic, ask whether the rungs are things this officeholder can actually do — the per-rung scope
+ruling in CLAUDE.md. ⚠ `rent-regulation` is NOT invalid in general: it carries `local` and `state`
+roles and 237 answers exist elsewhere. The defect is jurisdictional, and `compass_topic_roles` has no
+per-state dimension, so the refusals file is the only place this can be recorded.
 
 ## What the work taught, in priority order
 
@@ -87,9 +112,12 @@ measured.**
 
 ## Cheapest next steps
 
-- **`city-sanitation`** — 61 leads, untouched; Regalado 17, Bastien 11. **Run the axis test first.**
-- **`rent-regulation`** — ⚠ **looks mis-specified and was NOT touched.** `landlord` matches the county
-  leasing a room to a non-profit (`261389`). Measure with the axis-control tool before spending.
+- **`city-sanitation`** — 61 leads, the densest untouched ladder; Regalado 17, Bastien 11.
+  **Run the axis test first.**
+- **`jail-capacity` (13) · `climate-change` (9) · `homelessness-response` (9)** — thin, and worth an
+  axis test before any reading; on current form at least one of them is mis-specified.
+- ✅ **`rent-regulation` is CLOSED and should not be re-attempted in Florida** — state preemption,
+  above. Its pattern is fixed (30 leads → 0, which is the true answer).
 - **Steinberg, Garcia, Lopez on housing** — each needs one substantive own instrument.
 - **Lopez on residential-zoning** — needs a subzone she creates with standards, not parcel additions.
 - **Gilbert on transportation** — needs a funding mechanism he proposes, not a study of possible ones.

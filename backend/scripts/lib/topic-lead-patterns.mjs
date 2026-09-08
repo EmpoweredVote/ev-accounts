@@ -73,7 +73,28 @@ export const LOCAL_TOPIC_PATTERNS = {
   // robots, feeding feral cats. Miami-Dade ordinances say "Section 8-N of the
   // Code" constantly. Only two of the twenty were real vouchers.
   'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8 (housing|voucher|program|tenan)|housing choice voucher|housing voucher/i,
-  'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
+  // 🔴 RETUNED 2026-09-08. Bare `landlord` caused 23 of 23 false positives in Miami-Dade and every
+  // other alternative fired ZERO times — measured per-alternative, not guessed. A county is a
+  // LANDLORD constantly: airport development leases, an office lease, the Haulover restaurant, a
+  // fire station, a legacy donor lease, the Seaquarium. Every one of those says "THE COUNTY, AS
+  // LANDLORD", and not one is a position on regulating rents. The lease sense is removed and the
+  // regulatory sense kept as `landlord-tenant`; `tenants bill of rights` is added because that is
+  // what a Florida county can actually adopt.
+  // Verified both ways before landing: 7 real instruments (rent stabilization, repealing rent
+  // control, a tenants bill of rights, a rent-increase notice, just-cause eviction, a
+  // landlord-tenant code amendment, tenant protections) still match; 3 county leases no longer do.
+  // The Miami-Dade corpus drops from 30 leads to 0 — which is the true answer, see below.
+  //
+  // 🔴🔴 READ THIS BEFORE SEATING ANY FLORIDA OFFICIAL ON THIS LADDER. Fla. Stat. 125.0103(2):
+  //   "A municipality, county, or other entity of local government may not adopt or maintain in
+  //   effect any law, ordinance, rule, or other measure that would have the effect of imposing
+  //   controls on rents." The housing-emergency exception that used to exist is GONE from the
+  //   current text. So rungs 1 and 2 are not things a Florida county may lawfully do, and rung 5
+  //   — "oppose rent control entirely; rents set by the market" — is the STATE-IMPOSED BASELINE,
+  //   not a position anyone holds. **Seating a Florida official at 5 records a preemption as a
+  //   personal stance.** That is the per-rung scope question CLAUDE.md rules on, and this ladder
+  //   fails it at `local` scope in Florida while remaining valid where rent control is lawful.
+  'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord[- ]tenant|tenants? bill of rights/i,
   // 🔴 RETUNED 2026-09-08, in the same pass as `local-environment` above and for both of its
   // reasons at once — a false positive that swamped the leads, and a blind spot over the county's
   // actual instrument.

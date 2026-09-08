@@ -348,6 +348,31 @@ it('🔴 does not read a submerged-lands lease as a zoning matter', () => {
     expect(matchLocalTopics('ORDINANCE RELATING TO THE DOWNTOWN KENDALL URBAN CENTER DISTRICT')).toContain('residential-zoning');
   });
 
+it('🔴 does not read the county signing a lease as a position on rent regulation', () => {
+    // Bare \`landlord\` caused 23 of 23 false positives on this ladder, and every other
+    // alternative fired zero times. A county is a landlord constantly, and none of it is a
+    // position on regulating rents.
+    const leases = [
+      'RESOLUTION APPROVING A LEASE BETWEEN MIAMI-DADE COUNTY, AS LANDLORD, AND SUITED FOR SUCCESS, INC., AS TENANT',
+      'DEVELOPMENT LEASE AGREEMENT WITH KASE LLC IN WHICH THE COUNTY IS LANDLORD',
+      'HAULOVER RESTAURANT LEASE WITH THE COUNTY AS LANDLORD',
+    ];
+    for (const t of leases) expect(matchLocalTopics(t)).not.toContain('rent-regulation');
+  });
+
+  it('still reads every real rent-regulation instrument', () => {
+    const real = [
+      'ORDINANCE ESTABLISHING RENT STABILIZATION FOR MULTIFAMILY UNITS',
+      'ORDINANCE REPEALING RENT CONTROL',
+      'ORDINANCE CREATING A TENANTS BILL OF RIGHTS',
+      'ORDINANCE REQUIRING 60 DAYS NOTICE OF A RENT INCREASE OVER FIVE PERCENT',
+      'ORDINANCE ESTABLISHING JUST CAUSE EVICTION REQUIREMENTS',
+      'ORDINANCE AMENDING THE LANDLORD-TENANT PROVISIONS OF THE CODE',
+      'RESOLUTION ESTABLISHING TENANT PROTECTIONS IN COUNTY-ASSISTED HOUSING',
+    ];
+    for (const t of real) expect(matchLocalTopics(t)).toContain('rent-regulation');
+  });
+
   it('stays quiet on the ceremonial calendar', () => {
     expect(matchLocalTopics('RESOLUTION CONGRATULATING THE MIAMI HEAT')).toEqual([]);
     expect(matchLocalTopics('PROCLAMATION DECLARING DELTA DAY AT MIAMI-DADE COUNTY')).toEqual([]);
