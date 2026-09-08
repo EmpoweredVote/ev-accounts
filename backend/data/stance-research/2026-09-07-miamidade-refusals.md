@@ -52,3 +52,38 @@ None exists in the 2025-01-01 → 2026-09-05 window.
 ⚠ The lead pattern is what mislead here, not the reading. See the same-day tightening of
 `LOCAL_TOPIC_PATTERNS['economic-development']`, which was carrying bare `incentive` and
 `community redevelopment`.
+
+## Danielle Cohen Higgins (District 8) — `economic-development` — SEATED at 3, with one clause unevidenced
+
+Recorded here because the gap should travel with the row rather than be rediscovered.
+
+Rung 3 reads: *"Offer incentives to attract businesses, but only if they commit to good wages **and
+local hiring** — and pay the money back if they don't deliver."* It is a compound chair, and the
+house rule is that compound chairs need every clause evidenced.
+
+Evidenced, from the instrument's own recitals in R-345-26:
+
+- **the incentive** — the county conveyed 13200 SW 272 Street to Amazon.com Services "for economic
+  development purposes", and she moves to enforce rather than repudiate that bargain
+- **good wages** — the Declaration of Restrictions requires a minimum of **325 full-time or
+  full-time-equivalent permanent jobs on the property**, at an average annual salary of no less than
+  the greater of **$32,000** and the then-current **Living Wage** under county code Sec. 2-8.9, and
+  requires Amazon to *maintain* it
+- **pay it back if undelivered** — the resolution directs a status report in 30 days and directs the
+  County Attorney "to take any and all necessary legal action". R-365-25, which she co-prime
+  sponsored, carries the same mechanism at Miami International Airport: a twelve-year concession
+  extension against minimum investment amounts and deadlines, with locations **clawed back** to the
+  county if investment is not timely.
+
+⚠ **NOT evidenced: local hiring.** Searched the full item record for `local`, `resident`,
+`Miami-Dade resident`, `first source`, `hire`, `apprentice` — **zero hits**. The condition is jobs
+sited on the property at a wage floor; it is not a hiring preference for county residents.
+
+Seated at 3 anyway, and the reason is stated rather than glossed: the clause that *distinguishes*
+rung 3 from rungs 4 and 5 is conditionality with recovery, and that is fully evidenced, while rungs
+1, 2 and 5 are each contradicted by the same record. "Local hiring" is the rung's illustration of the
+conditions, not its discriminator. The stored public reasoning claims wages and investment
+conditions only, and does **not** claim local hiring.
+
+**What would close the gap:** a first-source-hiring or resident-preference term in a county
+incentive she sponsors, or a stated position on adding one.
