@@ -166,3 +166,45 @@ that means **14 of her 21 growth leads are Naranja Lakes CRA housekeeping** — 
 budgets, pothole resurfacing, landscaping. The move was right (a CRA is not business attraction) but
 CRA *administration* should probably be separated from CRA *creation and expansion*. Not changed
 again in the same pass; recorded so the next reader knows why the cluster looks like that.
+
+## Ordinance 25-59 across the whole Board — who is and is not seatable from it
+
+`25-59` (matter 241888, adopted 2025-06-26) loosened three LU-8H criteria for expanding the Urban
+Development Boundary. It is the county's central growth question, contested, dated and recorded, so
+one vote table covers thirteen commissioners at once. **It does not seat thirteen rows, and the
+reason each person is or is not seatable is the useful part.**
+
+| vote | commissioners |
+| --- | --- |
+| **No** | Cohen Higgins (D8) · Steinberg (D4) · Garcia (D13) |
+| **Yes** | Rodriguez (D10) · Bermudez (D12) · McGhee (D9) · Bastien (D2) · Milian Orbis (D6) · Gilbert (D1) · Regalado (D7) |
+| Absent | Hardemon (D3) · Gonzalez (D11) |
+| Not yet on the Board | Lopez (D5) |
+
+**SEATED — Rodriguez at 4.** The vote is the least of his evidence. He prime-sponsored all three
+steps: **R-44-24** (Jan 2024) directing the Mayor to file an out-of-cycle application *on an expedited
+basis* to modify LU-8H's requirements for the concurrent zoning applications a UDB expansion
+applicant must file; **R-1036-24** (Nov 2024) transmitting it to the state; **25-59** (Jun 2025)
+adopting it. Eighteen months, one policy, his name on every step. He has **no** cap, referendum or
+capacity instrument anywhere in his 25 leads, so rungs 1 and 2 are contradicted; rung 3's mechanism
+(public investment ahead of demand) is absent from his record; rung 5 is out because he did not
+repeal LU-8H and left a 1:1 floor. Rung 4 — *"cut red tape … while keeping basic guardrails"* — is
+what the instruments say.
+
+**SEATED — Cohen Higgins at 2**, see above.
+
+**NOT SEATED — Steinberg and Garcia**, though they voted the same way as Cohen Higgins. A shared No
+gives shared direction, not a shared chair, and each has **their own UDB instruments that have not
+been read**: both sponsored `260967` *CDMP APPLICATION RE UDB TEXT AMENDMENT* (R-678-26, adopted),
+whose direction the title does not give. Garcia has six more, including `261141` on vertical farming
+and `260879` amending the CDMP for commercial vehicle storage, which **Failed**. Reading somebody's
+chair off a colleague's ordinance would be inferring it from company kept. Those rows wait.
+
+**NOT SEATED — the six other Yes voters.** 🔴 A Yes on 25-59 is a vote on **Rodriguez's** initiative,
+filed by county staff under a directive the Board had already adopted. It carries far less than his
+sponsorship does, and on its own cannot separate rung 3 from rung 4. Bastien voting Yes here is also
+a caution against reading her housing row across to growth: the same person can subsidise affordable
+housing and vote to loosen the boundary.
+
+**NOT SEATED — Hardemon and Gonzalez** (absent: no evidence) and **Lopez** (not serving: no evidence,
+and her CDMZ record correctly starts later, at 39 matters).
