@@ -211,6 +211,21 @@ export const userCollectionMutes = triviaSchema.table('user_collection_mutes', {
   userIdx: index('idx_user_collection_mutes_user').on(table.userId),
 }));
 
+// Bobit progress -- one row per question a player has a collection bobit for.
+// Slug-keyed on purpose: the session's collection_id is null for the Federal default while
+// the frontend calls that same collection 'federal-civics', so keying on the id would split
+// a Federal player's crowd across two keys. See progressKey() in bobitProgressService.
+export const bobitProgress = triviaSchema.table('bobit_progress', {
+  userId: uuid('user_id').notNull(),
+  collectionSlug: text('collection_slug').notNull(),
+  questionExternalId: text('question_external_id').notNull(),
+  earnedAt: timestamp('earned_at', { withTimezone: true }).defaultNow().notNull(),
+}, (table) => ({
+  pk: primaryKey({ columns: [table.userId, table.questionExternalId] }),
+  userCollectionIdx: index('idx_bobit_progress_user_collection')
+    .on(table.userId, table.collectionSlug),
+}));
+
 // Export TypeScript types
 export type Collection = typeof collections.$inferSelect;
 export type NewCollection = typeof collections.$inferInsert;
@@ -240,4 +255,5 @@ export type GenerationJob = typeof generationJobs.$inferSelect;
 export type NewGenerationJob = typeof generationJobs.$inferInsert;
 
 export type UserCollectionMute = typeof userCollectionMutes.$inferSelect;
+export type BobitProgressRow = typeof bobitProgress.$inferSelect;
 export type NewUserCollectionMute = typeof userCollectionMutes.$inferInsert;
