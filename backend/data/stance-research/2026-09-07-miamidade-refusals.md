@@ -88,7 +88,33 @@ conditions only, and does **not** claim local hiring.
 **What would close the gap:** a first-source-hiring or resident-preference term in a county
 incentive she sponsors, or a stated position on adding one.
 
-## Danielle Cohen Higgins (District 8) — `growth-and-development` — REFUSED 2026-09-07
+## Danielle Cohen Higgins (District 8) — `growth-and-development` — REFUSED, then SEATED at 2 the same day
+
+🟢 **SUPERSEDED. The refusal below stood for about an hour and is kept because it was right when
+written.** It named the missing discriminator — her votes on CDMP applications — the voting-record
+reader was built to get them, and one document read then settled it. That is the loop working, so
+the record of it is worth more than a tidy file.
+
+**What closed it:** CDMP Policy LU-8H, read verbatim, is the gate for expanding the Urban
+Development Boundary. Its criteria require a mix of housing types at a minimum of 10 du/acre (b),
+that the minimum density and FAR be accomplished in the FIRST PHASE under a recordable instrument
+(d), and a jobs-to-housing ratio of at least 1.5:1 within five miles (g). Ordinance **25-59**
+(June 2025) loosened all three — dropping the first-phase requirement and lowering the ratio to the
+local Minor Statistical Area's, floor 1:1. **She voted No**, and the Board adopted it anyway, as
+filed and without its own staff's recommended changes.
+
+So she approves growth but voted to keep the capacity tests it must pass — rung 2, *"allow growth
+only as fast as current infrastructure can handle"*. Rung 1 stays out: she has proposed no cap and
+no referendum. Rung 3 is contradicted, because *"so expansion isn't held back"* is the opposite of
+that No vote and of her school impact-fee resolution.
+
+⚠ Her 104 Yes votes out of 106 on that body are **NOT** used as evidence in either direction. Most
+carry `direction_is_unread`: an "Adopted" CDMP disposition ordinance may be adopting a DENIAL, so
+the tally cannot be read as 104 approvals of development.
+
+---
+
+### The refusal as originally written, 2026-09-07
 
 **21 leads read, 5 on-axis instruments confirmed as hers. Direction is clear; the chair is not.**
 This is the "two adjacent chairs fit, so skip" case, and it is worth reading because it exposes a
