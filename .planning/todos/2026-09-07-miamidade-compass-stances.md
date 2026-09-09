@@ -162,6 +162,13 @@ per-state dimension, so the refusals file is the only place this can be recorded
 10. **Never write an identifier you did not look up.** Five of seven source URLs from memory were wrong.
 11. **Which report fits depends on the topic.** Growth decisions are *applications* nobody sponsors;
     transportation, environment and zoning policy is *initiated*. Decide before paying for a report.
+12. 🔴🔴 **A CITED-ID CONTROL RUNS ONE DIRECTION. RUN IT BOTH WAYS.** "Every cited id resolves,
+    names the instrument the prose names, and carries the right prime sponsor" is *sources → reality*.
+    It cannot see an instrument the prose **names** that no source points at. Regalado's two rows pass
+    the one-way control on all five citations — and `residential-zoning` asserted ordinance 26-47
+    (`261065`) with no URL for it, fixed by `CC_0081`. **List every instrument the reasoning names,
+    then check that list against `sources`.** `reasoning` is voter-facing: an uncited named instrument
+    is a claim rendered beside links that do not carry it.
 
 ## Cheapest next steps
 
