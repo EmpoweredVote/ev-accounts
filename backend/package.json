@@ -18,6 +18,7 @@
     "install:hooks": "git -C .. config core.hooksPath .githooks",
     "check:answer-delete-guards": "node scripts/check-answer-delete-guards.mjs",
     "check:answer-delete-guards:list": "node scripts/check-answer-delete-guards.mjs --list",
+    "check:lens-freshness": "node scripts/check-lens-freshness.mjs",
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:season-scaffold": "node scripts/check-season-scaffold.mjs",
