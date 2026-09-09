@@ -73,10 +73,82 @@ export const LOCAL_TOPIC_PATTERNS = {
   // robots, feeding feral cats. Miami-Dade ordinances say "Section 8-N of the
   // Code" constantly. Only two of the twenty were real vouchers.
   'housing':                  /affordable housing|workforce housing|housing trust|surtax|\bSHIP\b|housing assistance|inclusionary|rental assistance|public housing|section 8 (housing|voucher|program|tenan)|housing choice voucher|housing voucher/i,
-  'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord/i,
-  'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district)|land use (change|amendment|plan)|density|dwelling units per|accessory dwelling|single[- ]family|multifamily|comprehensive development master plan|\bCDMP\b/i,
+  // 🔴 RETUNED 2026-09-08. Bare `landlord` caused 23 of 23 false positives in Miami-Dade and every
+  // other alternative fired ZERO times — measured per-alternative, not guessed. A county is a
+  // LANDLORD constantly: airport development leases, an office lease, the Haulover restaurant, a
+  // fire station, a legacy donor lease, the Seaquarium. Every one of those says "THE COUNTY, AS
+  // LANDLORD", and not one is a position on regulating rents. The lease sense is removed and the
+  // regulatory sense kept as `landlord-tenant`; `tenants bill of rights` is added because that is
+  // what a Florida county can actually adopt.
+  // Verified both ways before landing: 7 real instruments (rent stabilization, repealing rent
+  // control, a tenants bill of rights, a rent-increase notice, just-cause eviction, a
+  // landlord-tenant code amendment, tenant protections) still match; 3 county leases no longer do.
+  // The Miami-Dade corpus drops from 30 leads to 0 — which is the true answer, see below.
+  //
+  // 🔴🔴 READ THIS BEFORE SEATING ANY FLORIDA OFFICIAL ON THIS LADDER. Fla. Stat. 125.0103(2):
+  //   "A municipality, county, or other entity of local government may not adopt or maintain in
+  //   effect any law, ordinance, rule, or other measure that would have the effect of imposing
+  //   controls on rents." The housing-emergency exception that used to exist is GONE from the
+  //   current text. So rungs 1 and 2 are not things a Florida county may lawfully do, and rung 5
+  //   — "oppose rent control entirely; rents set by the market" — is the STATE-IMPOSED BASELINE,
+  //   not a position anyone holds. **Seating a Florida official at 5 records a preemption as a
+  //   personal stance.** That is the per-rung scope question CLAUDE.md rules on, and this ladder
+  //   fails it at `local` scope in Florida while remaining valid where rent control is lawful.
+  'rent-regulation':          /rent control|rent stabiliz|rent increase|tenant.{0,20}(right|protection)|eviction|just cause|landlord[- ]tenant|tenants? bill of rights/i,
+  // 🔴 RETUNED 2026-09-08, in the same pass as `local-environment` above and for both of its
+  // reasons at once — a false positive that swamped the leads, and a blind spot over the county's
+  // actual instrument.
+  // ⚠ THE FALSE POSITIVE: bare `land use plan` matched a STATE SUBMERGED-LANDS LEASE (matter
+  //   261104, an amendment to Lease 4653 with the Board of Trustees of the Internal Improvement
+  //   Trust Fund and its "associated LAND USE PLAN"). One matter, and it appeared in NINE
+  //   commissioners' zoning leads. `plan` is dropped; a comprehensive-plan amendment is already
+  //   caught by `comprehensive development master plan` and `CDMP`. Bare `single family` went the
+  //   same way — it was matching `HFA SINGLE FAMILY MORTGAGE` and solid-waste collection studies,
+  //   so it now requires the zoning sense (`single-family only|zoning|zone|district|lot`), which
+  //   is what rung 5 actually argues about.
+  // 🔴 THE BLIND SPOT: MIAMI-DADE'S PRINCIPAL DENSITY INSTRUMENT IS THE RAPID TRANSIT ZONE, and
+  //   not one RTZ ordinance matched this ladder. They were reaching `transportation-priorities`
+  //   only — including `261065`, whose title literally opens "ORDINANCE RELATING TO ZONING" and
+  //   which streamlines LIVE LOCAL ACT covenants inside transit-oriented developments. Chapter 33C
+  //   is how this county upzones, so a zoning ladder that cannot see it is not measuring the
+  //   question. Also newly visible: `250899`, RESOLUTION ESTABLISHING COUNTY POLICY RE ZONING
+  //   APPLICATIONS, and `251944`, DOWNTOWN KENDALL URBAN CENTER ZONING.
+  // ⚠ A MATTER CAN AND SHOULD CARRY BOTH TOPICS. An RTZ subzone ordinance is procedural for
+  //   transportation (it adds named parcels) and on-axis for zoning (it upzones them). Dual
+  //   tagging is the correct answer, not a collision — matchLocalTopics returns every match.
+  // Measured on the unfiltered 2,559-matter sweep (scripts/miamidade-axis-control.mjs):
+  // 70 leads / 45 matters before, 58 / 49 after — FEWER leads over MORE matters, which is the
+  // shape a good retune has: junk removed, real instruments added.
+  // ⚠ KNOWN RESIDUAL, measured and accepted: four Housing Finance Authority bond items still match
+  //   on `multifamily`. They are financings rather than zoning decisions, but `multifamily` is rung
+  //   3 and 4 vocabulary and qualifying it risks losing real hits. Read past them.
+  'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district|code)|land use (change|amendment)|comprehensive development master plan|\bCDMP\b|density|dwelling units per|accessory dwelling|single[- ]family (only|zoning|zone|district|lot)|multifamily|upzon|by right|parking (minimum|requirement)|rapid transit zone|\bRTZ\b|transit[- ]oriented|\bTOD\b|live local|urban center|neighborhood character|duplex|triplex/i,
   'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,
-  'local-environment':        /wetland|environmentally endangered|tree canopy|conservation (land|easement)|biscayne bay|water quality|septic|sea level rise|resilien|mangrove|preservation area/i,
+  // 🔴 RETUNED 2026-09-08 after reading all 43 leads across 11 commissioners and seating NOBODY.
+  // The ladder asks how to balance NEW DEVELOPMENT against ENVIRONMENTAL PRESERVATION — its five
+  // rungs turn on green space, tree preservation, environmental review before approval, full
+  // offsets, and fees in lieu of on-site preservation. The old pattern asked about the health of
+  // the bay instead, and in a coastal Florida county that vocabulary swamps everything: of 43
+  // matters it found, 32 were Biscayne Bay water quality, septic-to-sewer, flood resilience,
+  // marine vessels, seawalls, mooring buoys and BOARD APPOINTMENTS. Direction was never the
+  // problem; the axis was. Same failure as `economic-development` above, same fix.
+  // ⚠ `resilien` was the worst of them and is gone: it matched `Resilient Aquarium LLC`, a COMPANY
+  //   NAME in a Seaquarium ground-lease assignment. A stem that loose cannot be qualified usefully.
+  // 🔴 AND IT WAS MISSING THE INSTRUMENTS THAT DO SIT ON THIS AXIS. Miami-Dade regulates this
+  //   through Chapter 24 (environmental protection), Chapter 33 (zoning) and Chapter 15 (trees and
+  //   landscaping), and the old pattern saw none of it. A control over the UNFILTERED 2,559-matter
+  //   sweep — not the leads file, which only holds what a pattern already matched — surfaced
+  //   `251728` (zoning AND environmental protection, amending 33-1, 24-5 and 15-17 together) and
+  //   `252162` (county parks as a wetlands MITIGATION BANK, which is rung 4's fee-in-lieu
+  //   mechanism by name). Both are now found; both were invisible before.
+  // Measured on that sweep: 57 leads / 43 matters before, 23 leads / 13 matters after. Every one
+  // of the 32 dropped matters was read and is off-axis; both gained are on-axis.
+  // ⚠ COST, STATED: bay water quality, septic-to-sewer and sea-level-rise resilience now match NO
+  //   topic at all. That is correct only if no ladder asks about them, and none currently does —
+  //   `climate-change` below carries neither `sea level rise` nor `resilien`. Whoever next reads
+  //   the climate-change ladder should decide whether they belong there; do not add them back
+  //   here, because this ladder has no rung they could evidence.
+  'local-environment':        /wetland|environmentally endangered|\bEEL\b|tree (canopy|removal|preservation|protection|ordinance|trust fund)|conservation (land|easement|purpose)|mangrove|preservation area|natural forest|pine rockland|mitigation (bank|credit)|fee(s)? in[- ]lieu|environmental review|environmental impact statement|green space|open space requirement|landscap\w* (requirement|ordinance|standard|code)|environmental control plan/i,
   'climate-change':           /climate|greenhouse gas|carbon|renewable energy|solar|energy efficiency|electric vehicle|\bEV charging\b|net zero/i,
   'fossil-fuels':             /natural gas|petroleum|fossil fuel|pipeline|drilling|fuel terminal/i,
   'transportation-priorities':/transit|bus rapid|metrorail|metromover|bicycle|pedestrian|sidewalk|complete streets|road capacity|traffic|parking requirement|\bSMART plan\b|rail corridor/i,
