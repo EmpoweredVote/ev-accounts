@@ -177,6 +177,18 @@ per-state dimension, so the refusals file is the only place this can be recorded
     corridor — and funds *enhancements to existing stops*, not "a new park-and-ride facility". It was
     deliberately left out. Padding a source list with adjacent instruments is how it stops meaning
     anything.
+    🔴🔴 **MEASURED ACROSS A WHOLE TOPIC 2026-09-09: 3 OF 5 `housing` ROWS WERE SHORT, 13 INSTRUMENTS
+    IN ALL.** Hardemon named 9 and cited 3; Bastien 8 and 3; McGhee 5 and 3. Rodriguez (1/1) and
+    Regalado (3/3) were complete. All 13 were verified live — every one Adopted, every one SOLE prime
+    sponsor of the row's subject — and cited by `CC_0083`, which also fixed McGhee's array into prose
+    order. **The one-way control passed 13 of 13 on the same rows**, so it is not a substitute.
+    → So expect roughly half the rows written before 2026-09-08 to name something uncited. Sweep a
+    topic at a time, oldest pass first, and read the prose for instrument names rather than trusting
+    the citation count.
+    🟢 **The lookup route, when a named instrument is not in the corpus:** run
+    `miamidade-sponsorship-leads.mjs --name="<member>"` and grep its report for the reference number —
+    that is how R-664-26/R-665-26/R-497-25/R-498-25 were found (`261171`, `261172`, `250903`, `250906`).
+    Then open every matter before citing it; the report is a lead, not proof.
 
 ## Cheapest next steps
 
