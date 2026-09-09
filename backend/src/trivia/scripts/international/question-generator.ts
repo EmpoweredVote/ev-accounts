@@ -242,6 +242,11 @@ export async function writePassingQuestions(
   let nextIdNum = (maxIdResult[0]?.maxId ? parseInt(maxIdResult[0].maxId, 10) : 0) + 1;
 
   // ── Insert each passing question ────────────────────────────────────────────
+  // Write-time answer-position guard: generator prompts show the model
+  // "correctAnswer": 0 and it copies it, so position is normalised here rather than
+  // being asked for. Seeded on externalId so regenerating a question does not move it.
+  const { placeAnswer } = await import('../../services/questionQuality/answerPlacement.js');
+
   const results: QuestionWriteResult[] = [];
   const primarySource = claim.sourceArticles[0];
 
@@ -249,13 +254,15 @@ export async function writePassingQuestions(
     const externalId = `${externalIdPrefix}-${String(nextIdNum).padStart(4, '0')}`;
     nextIdNum++;
 
+    const placed = placeAnswer(q.options, q.correctAnswer, externalId);
+
     const inserted = await db
       .insert(questionsTable)
       .values({
         externalId,
         text: q.text,
-        options: q.options,
-        correctAnswer: q.correctAnswer,
+        options: placed.options,
+        correctAnswer: placed.correctAnswer,
         explanation: q.explanation,
         difficulty: q.difficulty,
         topicId,
