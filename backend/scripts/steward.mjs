@@ -35,7 +35,7 @@ import dotenv from "dotenv";
 
 import { historicalSlots } from "./lib/migration-slots.mjs";
 import { slotsToSeed } from "./lib/steward-seed.mjs";
-import { reconcile, STALE_DAYS } from "./lib/steward-sync.mjs";
+import { reconcile, describeDrift, STALE_DAYS } from "./lib/steward-sync.mjs";
 import { parseScope, containmentWarnings, chooseScope, SKIP_BLOCKED } from "./lib/steward-claims.mjs";
 import { canonicalWorktreeScope, worktreeNotices } from "./lib/steward-worktree.mjs";
 import {
@@ -205,9 +205,7 @@ async function cmdReconcile() {
         + "check:reservations only sees files ADDED on a branch, so this is the path it cannot watch.");
     }
     for (const d of r.drift) {
-      console.warn(`  ⚠ ${pad(d.namespace, d.num)} is recorded as ${d.was} but git says ${d.now}. `
-        + "Either an applied migration was renamed (CLAUDE.md forbids it — the number is embedded "
-        + "in prod data) or two files share the slot. NOT overwritten; decide and fix by hand.");
+      console.warn(`  ⚠ ${pad(d.namespace, d.num)} ${describeDrift(d)}`);
     }
     for (const st of r.stale) {
       console.warn(`  ⚠ ${pad(st.namespace, st.num)} reserved by ${st.claimed_by} `

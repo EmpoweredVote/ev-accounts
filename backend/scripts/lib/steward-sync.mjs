@@ -107,9 +107,52 @@ export function reconcile(gitSlots, tableRows, nowMs) {
     } else if (row.filename !== git.filename) {
       // Either a rename of an applied migration — which CLAUDE.md forbids, because the number
       // is embedded in production data — or two files sharing a slot. Both want a human.
-      out.drift.push({ ...base, was: row.filename, now: git.filename, refs: git.refs });
+      //
+      // ⚠ THE TWO CASES READ THE SAME FROM HERE AND NEED DIFFERENT ACTIONS, so `names` and
+      //   `onBase` travel with the finding. If the recorded name is one of several the slot
+      //   carries, this is a collision whose loser is on the board — a filename correction. If
+      //   the slot carries ONE name and the board holds a different one, a file really was
+      //   renamed. And `onBase: false` means no base ref carries the slot at all, so the name
+      //   git offers is a fallback rather than a shared fact.
+      out.drift.push({
+        ...base,
+        was: row.filename,
+        now: git.filename,
+        refs: git.refs,
+        names: git.names ?? [],
+        onBase: git.onBase ?? false,
+        wasIsAlsoClaimed: (git.names ?? []).some((n) => n.filename === row.filename),
+      });
     }
   }
 
   return out;
+}
+
+/**
+ * The sentence a drift finding deserves — extracted from steward.mjs so it can be tested.
+ *
+ * 🔴 THE WORDING IS THE WHOLE VALUE OF THIS FINDING, so it is logic and not decoration. The
+ *    single text this replaced said "either an applied migration was renamed … or two files
+ *    share the slot", which is both causes at once and neither action. A reader who hit it on
+ *    CA_0077 went looking for a forbidden rename; the real answer was a collision resolved in
+ *    git a week earlier, whose loser was still on the board, and the fix was one filename.
+ */
+export function describeDrift(d) {
+  const where = d.onBase ? "the base ref carries" : "no base ref carries this slot; git offers";
+  let why;
+  if (d.wasIsAlsoClaimed) {
+    const others = (d.names ?? [])
+      .filter((n) => n.filename !== d.now)
+      .map((n) => `${n.filename} on ${n.refs.length} ref(s)`)
+      .join("; ");
+    why = "TWO OR MORE FILES CLAIM THIS SLOT and the board holds one that "
+      + `${d.onBase ? "the base ref does not" : "git did not pick"}: ${others}. `
+      + "If the collision was already resolved, correct the filename on the row. If it was "
+      + "not, resolve it first.";
+  } else {
+    why = "The slot carries exactly one name in git, so an applied migration was renamed — "
+      + "CLAUDE.md forbids that, because the number is embedded in prod data and in comments.";
+  }
+  return `is recorded as ${d.was} but ${where} ${d.now}. ${why} NOT overwritten; decide and fix by hand.`;
 }

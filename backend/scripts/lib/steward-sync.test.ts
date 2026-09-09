@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { reconcile, STALE_DAYS } from './steward-sync.mjs';
+import { reconcile, describeDrift, STALE_DAYS } from './steward-sync.mjs';
 
 // §5 of the design: "`steward sync` reconciles: reservations that now have a matching file on a
 // ref become `written`; reservations older than fourteen days with no file are flagged for
@@ -88,6 +88,46 @@ describe('reconcile', () => {
     expect(r.fillFilename).toEqual([]);
   });
 
+  // ⚠ THE TWO CAUSES OF DRIFT NEED OPPOSITE ACTIONS, so the finding has to say which it is.
+  //    A slot carrying ONE name in git, differing from the board, is the forbidden rename. A
+  //    slot carrying SEVERAL, with the board holding one of the losers, is a collision already
+  //    resolved in git — the row's filename is what needs correcting, not the migration.
+  //    Measured on the real board 2026-09-09: CA_0077 was exactly the second case, and the
+  //    single warning text sent the reader looking for a rename that never happened.
+  it('marks drift where the recorded name is another file claiming the same slot', () => {
+    const git = {
+      ...gitSlot('CC', 74, 'CC_0074_winner.sql'),
+      onBase: true,
+      names: [
+        { filename: 'CC_0074_winner.sql', refs: ['master', 'origin/master'] },
+        { filename: 'CC_0074_loser.sql', refs: ['old-branch'] },
+      ],
+    };
+    const r = reconcile([git], [row({ state: 'written', filename: 'CC_0074_loser.sql' })], now);
+    expect(r.drift).toHaveLength(1);
+    expect(r.drift[0].wasIsAlsoClaimed).toBe(true);
+    expect(r.drift[0].onBase).toBe(true);
+    expect(r.drift[0].names).toHaveLength(2);
+  });
+
+  it('marks drift as a rename when git knows only one name for the slot', () => {
+    const git = {
+      ...gitSlot('CC', 74, 'CC_0074_renamed.sql'),
+      onBase: true,
+      names: [{ filename: 'CC_0074_renamed.sql', refs: ['master'] }],
+    };
+    const r = reconcile([git], [row({ state: 'written', filename: 'CC_0074_original.sql' })], now);
+    expect(r.drift[0].wasIsAlsoClaimed).toBe(false);
+  });
+
+  it('defaults names/onBase for a git slot from an older caller', () => {
+    const r = reconcile([gitSlot('CC', 74, 'CC_0074_renamed.sql')],
+      [row({ state: 'written', filename: 'CC_0074_original.sql' })], now);
+    expect(r.drift[0].names).toEqual([]);
+    expect(r.drift[0].onBase).toBe(false);
+    expect(r.drift[0].wasIsAlsoClaimed).toBe(false);
+  });
+
   // 🔴 THE HIGHEST-SIGNAL FINDING HERE. A slot deliberately abandoned that now carries a file
   //    means somebody reused a dead number — check:reservations fails that at PR time, but only
   //    for a file ADDED on a branch. A file that reached master another way is invisible to it.
@@ -129,5 +169,50 @@ describe('reconcile', () => {
   it('carries the holder through, so a report can name who to ask', () => {
     const r = reconcile([], [row({ claimed_at: daysAgo(30), claimed_by: 'candrews@empowered.vote' })], now);
     expect(r.stale[0].claimed_by).toBe('candrews@empowered.vote');
+  });
+});
+
+// A POSITIVE CONTROL ON THE WORDING. `sync` needs a DATABASE_URL to print this, so the message
+// went untested and said both causes at once for as long as it existed. These pin the two
+// halves that tell a reader what to DO.
+describe('describeDrift', () => {
+  const collision = {
+    namespace: 'CA', num: 77, was: 'CA_0077_pin_education_topics_season2.sql',
+    now: 'CA_0077_growth_and_development_chairs_45_refork_substantive.sql',
+    onBase: true,
+    names: [
+      { filename: 'CA_0077_pin_education_topics_season2.sql', refs: new Array(67).fill('r') },
+      { filename: 'CA_0077_growth_and_development_chairs_45_refork_substantive.sql', refs: new Array(33).fill('r') },
+    ],
+    wasIsAlsoClaimed: true,
+  };
+
+  it('names the collision, the base ref and the loser still on the board', () => {
+    const m = describeDrift(collision);
+    expect(m).toContain('TWO OR MORE FILES CLAIM THIS SLOT');
+    expect(m).toContain('the base ref carries');
+    expect(m).toContain('CA_0077_pin_education_topics_season2.sql on 67 ref(s)');
+    expect(m).toContain('correct the filename on the row');
+    expect(m).not.toContain('was renamed');           // the wrong lead for this case
+  });
+
+  it('calls a single-name disagreement the forbidden rename, and cites why', () => {
+    const m = describeDrift({
+      ...collision, wasIsAlsoClaimed: false,
+      names: [{ filename: collision.now, refs: ['master'] }],
+    });
+    expect(m).toContain('an applied migration was renamed');
+    expect(m).toContain('embedded in prod data');
+    expect(m).not.toContain('TWO OR MORE FILES');
+  });
+
+  it('says plainly when no base ref carries the slot', () => {
+    const m = describeDrift({ ...collision, onBase: false });
+    expect(m).toContain('no base ref carries this slot; git offers');
+    expect(m).toContain('git did not pick');
+  });
+
+  it('always ends by refusing to have written anything', () => {
+    expect(describeDrift(collision)).toContain('NOT overwritten; decide and fix by hand.');
   });
 });
