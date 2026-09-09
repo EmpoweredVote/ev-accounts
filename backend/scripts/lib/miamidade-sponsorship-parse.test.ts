@@ -221,15 +221,50 @@ describe('matchLocalTopics', () => {
     expect(hits).not.toContain('economic-development');
   });
 
-  it('files redevelopment-area financing under growth, not business attraction', () => {
-    // A CRA reinvests incremental property tax inside a designated area. It is
-    // not a company-specific incentive, and the economic-development ladder has
-    // no rung for it.
+  // 🔴 REFINED 2026-09-09 by the growth-and-development retune. The rule this test
+  // protects is unchanged and still asserted below: a CRA is not a company-specific
+  // incentive, so it never files under business attraction. What changed is the
+  // disposition of a CRA's ANNUAL BUDGET. Filing budgets and board appointments under
+  // growth put 43 housekeeping items in a 68-matter corpus that yielded two chairs; a
+  // budget approval evidences no rung on any ladder. Financing POLICY still files under
+  // growth — that is the half worth keeping, and it is pinned here so a future narrowing
+  // cannot quietly take it.
+  it('files a CRA annual budget under NOTHING — it is housekeeping, not a growth decision', () => {
     const t = 'RESOLUTION APPROVING THE FY2025-26 BUDGET OF THE N.W. 79TH STREET CORRIDOR '
       + 'COMMUNITY REDEVELOPMENT AGENCY AND ITS TAX INCREMENT FINANCING';
+    expect(matchLocalTopics(t)).toEqual([]);
+  });
+
+  it('files redevelopment-area financing POLICY under growth, not business attraction', () => {
+    // A CRA reinvests incremental property tax inside a designated area. It is
+    // not a company-specific incentive, and the economic-development ladder has
+    // no rung for it. Verbatim from 250514, which a `vice` substring bug in the
+    // first draft of the carve-out wrongly dropped — it matched "serVICEs".
+    const t = 'RESOLUTION URGING THE FLORIDA LEGISLATURE TO ENACT HB 363 OR SIMILAR '
+      + 'LEGISLATION THAT WOULD AUTHORIZE COMMUNITY REDEVELOPMENT AGENCIES TO USE A PORTION '
+      + 'OF TAX INCREMENT FINANCING FUNDS FOR CERTAIN BUSINESS SUPPORT SERVICES';
     const hits = matchLocalTopics(t);
     expect(hits).toContain('growth-and-development');
     expect(hits).not.toContain('economic-development');
+  });
+
+  it('files CRA creation — and its prohibition — under growth', () => {
+    // The decisions the housekeeping flood was burying. 250695 is the clearest
+    // growth-policy instrument in the CRA corpus and the old pattern lost it in noise.
+    const necessity = 'RESOLUTION ACCEPTING THE FINDING OF NECESSITY FOR THE N.W. 7TH AVENUE '
+      + 'CORRIDOR COMMUNITY REDEVELOPMENT AREA';
+    const prohibit = 'ORDINANCE TO PROHIBIT THE CREATION OF COMMUNITY REDEVELOPMENT AGENCIES '
+      + 'IN MIAMI-DADE COUNTY';
+    expect(matchLocalTopics(necessity)).toContain('growth-and-development');
+    expect(matchLocalTopics(prohibit)).toContain('growth-and-development');
+  });
+
+  it('🔴 excludes a chair designation but NOT a title merely containing "services"', () => {
+    // The two substring traps the carve-out audit found. `vice` matched "serVICEs";
+    // `designat` matched "coDESIGNATion". `chair` alone does the real work.
+    const designation = 'RESOLUTION DESIGNATING JAMES E. MCDONALD AS VICE CHAIRMAN OF THE '
+      + 'NARANJA LAKES COMMUNITY REDEVELOPMENT AGENCY';
+    expect(matchLocalTopics(designation)).not.toContain('growth-and-development');
   });
 
   it('🔴 does not read "Section 8-9 of the Code" as Section 8 housing', () => {

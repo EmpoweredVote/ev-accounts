@@ -279,15 +279,44 @@ co-sponsorships. Rung 1 stays out on the absence of any cap or referendum instru
 ⚠ **What would reopen it:** a source recording the final tally, or one substantive own instrument of his
 **on the boundary**. Neither exists today.
 
-#### 🔴 PATTERN DEFECT FOUND, NOT YET FIXED: `growth-and-development` misses "CDMP AMENDMENT"
+#### ✅ PATTERN RETUNED 2026-09-09: `growth-and-development` was wrong in BOTH directions
 
-The pattern returns 84 leads / 68 distinct matters and is dominated by CRA appointments and budgets, while
-**five CDMP amendment matters fell outside it** (`251393`, `251903`, `252447`, `260879`, `261141`). The
-scorecard above gains a line: this pattern is **wrong in both directions** — CRA noise in, CDMP amendments
-out. The leads cache was regenerated the same day; 3 members gained 1 matter each (the record is live,
-finding 9) but **zero new topic leads**, so the miss is the pattern, not the cache. Retune before the next
-growth pass, and measure per-alternative.
+Measured per-alternative on the unfiltered 2,560-row sweep — the only way the shape was visible:
 
+| alternative | leads / matters |
+| --- | --- |
+| `community redevelopment` | **60 / 54** — the flood |
+| `CRA` | **41 / 35** — the flood |
+| `urban development boundary` | 12 / 6 |
+| `UDB` · `impact fee` · `moratorium` | 3/1 · 3/3 · 2/2 |
+| `concurrency` · `infrastructure capacity` · `development order` · `planned development` · `growth management` · `TIF` | **all zero** |
+
+**84 leads / 68 matters → 61 / 42.** 43 housekeeping items out (CRA budgets, appointments, chair
+designations, Naranja Lakes potholes and landscaping); 16 real ones in — the five CDMP amendments,
+plus `250695` PROHIBIT THE CREATION OF COMMUNITY REDEVELOPMENT and `251426` CREATING THE EAR TASK FORCE.
+
+- 🟢 **The zero-scoring alternatives were KEPT.** `concurrency` and `infrastructure capacity` are rung
+  2's own words. A zero costs no false positives; deleting it would be tidying, not tuning.
+- 🔴 **The carve-out is scoped to the CRA branch, and that is load bearing.** Applied globally it
+  suppressed `252187` and `260291` — **Cohen Higgins' two cited sources for her seated chair 2.** A
+  carve-out that reaches the on-axis branch takes live rows with it.
+- 🔴🔴 **TWO SUBSTRING TRAPS, FOUND ONLY BY AUDITING EACH CARVE-OUT TERM AGAINST REAL TEXT.** `vice`
+  matched "business support ser**VICE**s" and wrongly dropped `250514`; `designat` matched
+  "co**DESIGNAT**ion" street namings. Both removed — `chair` alone still excludes the chair and
+  vice-chair designations. **A bare substring is not a word.**
+- 🔴 **The old pattern also missed `250695` because it asked for `community redevelopment (agency|area)`
+  and the county wrote "AGENC**IES**".** The bare phrase now matches.
+- ⚠ **A CRA annual budget now matches NOTHING, deliberately.** `economic-development`'s note says
+  redevelopment financing "rides on growth-and-development" — financing **policy** still does, and that
+  is pinned by a test. A budget approval evidences no rung on any ladder.
+- ⚠ **Residual, accepted:** the added CDMP items include truck-parking and vertical-farming amendments
+  that are off-axis for this ladder. Correct **leads**, wrong **chairs** — read past them.
+- 🔴 **`241888` IS NOT IN THE LEADS CORPUS AT ALL.** The sponsor-report cache is windowed and ordinance
+  25-59 falls outside it, so no pattern can reach the county's central growth instrument. **A researcher
+  working from leads alone would never see LU-8H.**
+
+Four tests added in `miamidade-sponsorship-parse.test.ts`; **three were watched failing against the old
+pattern first.** The fourth is a preservation guard and passes under both by design.
 
 ## Cheapest next steps
 

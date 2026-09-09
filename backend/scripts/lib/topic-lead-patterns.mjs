@@ -123,7 +123,38 @@ export const LOCAL_TOPIC_PATTERNS = {
   //   on `multifamily`. They are financings rather than zoning decisions, but `multifamily` is rung
   //   3 and 4 vocabulary and qualifying it risks losing real hits. Read past them.
   'residential-zoning':       /rezoning|rezone|zoning (change|amendment|district|code)|land use (change|amendment)|comprehensive development master plan|\bCDMP\b|density|dwelling units per|accessory dwelling|single[- ]family (only|zoning|zone|district|lot)|multifamily|upzon|by right|parking (minimum|requirement)|rapid transit zone|\bRTZ\b|transit[- ]oriented|\bTOD\b|live local|urban center|neighborhood character|duplex|triplex/i,
-  'growth-and-development':   /urban development boundary|\bUDB\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|community redevelopment (agency|area)|\bCRA\b|tax increment|\bTIF\b|finding of necessity/i,
+  // 🔴 RETUNED 2026-09-09 after the Garcia re-audit, and it was wrong in BOTH directions:
+  //   CRA housekeeping IN, CDMP amendments OUT. Measured per-alternative on the unfiltered
+  //   2,560-row sweep, which is the only way this was visible:
+  //     community redevelopment 60/54 · CRA 41/35   <- the flood, all budgets and appointments
+  //     urban development boundary 12/6 · UDB 3/1 · impact fee 3/3 · moratorium 2/2
+  //     concurrency · infrastructure capacity · development order · planned development ·
+  //       growth management · TIF ..................... ALL ZERO
+  //   84 leads / 68 matters before, 61 / 42 after: 43 housekeeping items out, 16 real ones in.
+  // 🟢 ZERO-SCORING ALTERNATIVES ARE DELIBERATELY KEPT. `concurrency` and `infrastructure
+  //   capacity` are rung 2's own words. A zero costs no false positives and guards the day the
+  //   county files one; deleting them would be tidying, not tuning.
+  // 🔴 THE CARVE-OUT IS SCOPED TO THE CRA BRANCH, AND THAT IS NOT COSMETIC. Applied globally it
+  //   suppressed 5 core matters including 252187 and 260291 — Cohen Higgins' two cited sources
+  //   for her seated chair 2. A carve-out that reaches the on-axis branch takes live rows with it.
+  // 🔴 TWO SUBSTRING TRAPS FOUND BY AUDITING EVERY CARVE-OUT TERM AGAINST THE CORPUS:
+  //   `vice` matched "business support serVICEs" and wrongly dropped 250514 (TIF for business
+  //   support — on-axis for economic-development, which rides on this pattern). `designat`
+  //   matched "coDESIGNATion" street namings. Both removed; `chair` alone still excludes the
+  //   chair/vice-chair designations, verified on 250386 and 250391. **Audit a carve-out term
+  //   against real text before trusting it — a bare substring is not a word.**
+  // 🟢 WHAT THE RETUNE ADDS: five CDMP amendment matters the old pattern could not see (251393,
+  //   251903, 252447, 260879, 261141), plus 250695 PROHIBIT THE CREATION OF COMMUNITY
+  //   REDEVELOPMENT and 251426 CREATING THE EAR TASK FORCE. The CDMP is how this county changes
+  //   growth policy; the pattern was blind to its own subject's name.
+  // ⚠ KNOWN RESIDUAL, measured and accepted: the added CDMP items include truck-parking and
+  //   vertical-farming amendments that are off-axis for THIS ladder (260879's page mentions the
+  //   UDB zero times). They are correct LEADS and wrong CHAIRS — read past them. Judging them is
+  //   the per-rung scope question, not the pattern's job.
+  // ⚠ 241888 (ordinance 25-59, the county's central growth instrument) is NOT IN THE CACHE AT
+  //   ALL — the sponsor-report corpus is windowed and it falls outside. No pattern can reach it.
+  //   A researcher working from leads alone would never see LU-8H.
+  'growth-and-development':   /(urban development boundary|\bUDB\b|LU-8H|comprehensive development master plan|\bCDMP\b|impact fee|concurrency|infrastructure capacity|moratorium|development order|planned (area )?development|growth management|neighborhood planning|planning exercise)|^(?!.*(budget|appoint|chair|roadside|pothole|policing|cleanup|landscaping|fiscal year|bond issuance)).*(community redevelopment|\bCRA\b|tax increment|\bTIF\b|finding of necessity)/i,
   // 🔴 RETUNED 2026-09-08 after reading all 43 leads across 11 commissioners and seating NOBODY.
   // The ladder asks how to balance NEW DEVELOPMENT against ENVIRONMENTAL PRESERVATION — its five
   // rungs turn on green space, tree preservation, environmental review before approval, full
