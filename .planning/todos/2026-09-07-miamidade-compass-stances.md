@@ -6,7 +6,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 
 ## Where it stands
 
-**Twelve rows live in Season 2**, seven of thirteen commissioners:
+**Thirteen rows live in Season 2** (12 + `jail-capacity` Rodriguez at 2, added 2026-09-09), seven of thirteen commissioners:
 
 | topic | value | who |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 this time with a missed-instrument control over their full unfiltered records rather than a lead
 count. Steinberg has **zero** prime-sponsored housing instruments in 187 matters.
 
-**Six whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+**Seven whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
 `residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
 not apply in Florida at all, see below) and `city-sanitation` (43, **0 seated** / 14 refused).
@@ -334,10 +334,17 @@ pattern first.** The fourth is a preservation guard and passes under both by des
   under the WASD decree; `consent decree AND (jail|correction)` returns **zero**. Miami-Dade's jail
   decree is real but this corpus does not name it. 🔴 **Bare `diversion` rejected too** — 34/13, the
   extras are WASTE diversion. Qualified instead.
-  ▶️ **NOT YET READ.** The corpus is now worth a pass. Start with `260843` PRETRIAL RELEASE ON
-  NONMONETARY CONDITIONS and `261019` COMPETENCY RESTORATION TGK/CHS, then the MHC cluster — but
-  ⚠ `261093` is a **lease and land-use amendment** (Rodriguez prime, **Withdrawn**), so the cluster
-  may be property administration rather than a position. Read the operative section.
+  ✅ **READ 2026-09-09 — 20 matters, 1 seated: Anthony Rodriguez at 2** on R-558-26 (`261104`, the
+  Mental Health Center as a Designated Receiving System facility) and R-556-26 (`261019`, competency
+  restoration through MDCR), both adopted, both his own initiative, neither adding capacity.
+  ⚠ **A ONE-INSTRUMENT CHAIR, said plainly in the refusals file** — `261019` reads as rung 3 as easily
+  as rung 2, and only `261104` reads one way.
+  🔴 **The most tempting row in the corpus is a REFUSAL:** R-328-23 (`260843`) "strongly opposing" any
+  pretrial-release reform is prime-sponsored by **Cabrera, who has left the Board**, and co-sponsored by
+  **Bermudez, Garcia and Gonzalez**. It binds nobody and gives direction without magnitude — it argues
+  against rung 2 but reaches neither 4 nor 5. Do not re-research it as new.
+  ⚠ Rung 2 names **bail reform, which a county commission cannot do**. The rung survives here on its
+  other two mechanisms; a row resting on the bail clause alone would be the per-rung scope error.
   ⚠ The frozen/pinned ladders **AGREE** for this topic — the `CA_0012` trap is per-topic, not universal.
 - **`climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5) · `homelessness` (5)** —
   still unmeasured. Axis-test each before reading; on current form the count is as likely to be a

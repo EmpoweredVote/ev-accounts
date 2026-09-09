@@ -1147,3 +1147,79 @@ not a position she originated. Every other commissioner seated on housing has ei
 own-initiative items (Hardemon 11, Bastien 8, McGhee 7, Regalado 5) or one policy instrument.
 ▶️ **What would seat her:** a second own-initiative housing item, or one that sets a rule rather than
 approving a deal.
+
+## `jail-capacity` across the whole Board — 20 matters read, 1 seated, and the count was a lie
+
+🔴🔴 **THIS TOPIC WAS RECORDED AS "13 LEADS — THIN". IT WAS A BROKEN DETECTOR, TWICE.** Retuned
+2026-09-09 to **44 leads / 20 matters**. Two of the old eight were substring artefacts — bare `bail`
+matched "**BAIL**ES COMMONS" (a property conveyance) and "JUDGE MELVIA **BAIL**EY-GREEN TERRACE" (a
+street co-designation) — and `corrections (facility|department)` scored **zero** while bare
+`corrections` scored 5, because the county writes "Corrections and Rehabilitation". Worse, the pattern
+was blind to **rung 1's own subject**: the Mental Health Center cluster and the misdemeanor diversion
+items. **A thin count is not evidence of a quiet record until the pattern has been measured.**
+
+⚠ Two terms were measured and REJECTED rather than added. `consent decree` returns 40/39 and **every
+one is a water and sewer construction contract** under the WASD decree — `consent decree AND
+(jail|correction)` returns zero. Bare `diversion` returns 34/13 and the extras are **waste** diversion.
+
+### SEATED — Anthony Rodriguez at 2
+
+Two adopted measures, both his own initiative (`requester` NONE), both routing people to treatment
+rather than to jail beds:
+
+- **R-558-26** (`261104`, adopted 6/16/2026, 8 co-sponsors) — amends the state lease for the Mental
+  Health Center at 2200 NW 7th Avenue **and the county's Designated Receiving System Plan**, with
+  Thriving Mind South Florida, DCF, the Sheriff and the chiefs of police. That is the arrangement under
+  which an officer takes a person in crisis to a receiving facility instead of to jail.
+- **R-556-26** (`261019`, adopted 6/16/2026, **sole** prime) — directs MDCR to make competency
+  restoration treatment available to certain incarcerated individuals, and to report.
+
+Rungs 4 and 5 are out: no measure of his adds capacity. Rung 1 is out: he has not moved corrections
+funding into community programs to shrink the system. **Rung 3 is the close call and is out on its own
+mechanism** — rung 3 is about *upgrading jail facilities*, and no facility upgrade appears anywhere in
+his record.
+
+⚠ **STATED PLAINLY: THIS IS A ONE-INSTRUMENT CHAIR.** `261019` operates *inside* the jail through MDCR
+and competency restoration is constitutionally required, so that instrument reads as rung 3 as easily
+as rung 2. Only `261104` can be read one way. Without it this would be a refusal.
+⚠ It also cuts against a prior — Rodriguez is seated at **growth 4** for driving the LU-8H loosening.
+Read on its own evidence.
+
+### 🔴 The only explicit jail-policy POSITION in the corpus belongs to a departed member
+
+**R-328-23** (`260843`, adopted as amended 4/4/2023) — *"STRONGLY OPPOSING ANY REFORMS TO BAIL AND BOND
+SCHEDULES OR PRETRIAL RELEASE PROGRAMS … that would automatically grant pretrial release on nonmonetary
+conditions."* Prime is **Kevin Marino Cabrera, no longer on the Board**; the co-sponsors are
+**Bermudez, Garcia and Gonzalez, all sitting.**
+
+**REFUSED for all three.** It is an *opposing* resolution addressed to the Eleventh Judicial Circuit and
+binds nobody, and it establishes **direction without magnitude**: it argues against rung 2 but neither
+rung 4 nor rung 5, both of which need capacity the three have never proposed. Direction alone is not a
+chair. 🔴 **Do not re-research this as though it were new — it is the most tempting row in the corpus
+and it is a refusal.**
+
+### Refused, and why
+
+- **The eight co-sponsors of R-558-26** — Bastien, Bermudez, Gilbert, Cohen Higgins, Lopez, McGhee,
+  Regalado, Steinberg. A near-unanimous authorization separates nobody, for the same reason a Yes on
+  25-59 seats no one.
+- **Regalado** — `261088`, `260425`, `260201`, `250513` are the MHC combined items, all **Deferred or In
+  Draft** and all **Community Services Department requests**. A department item a member carried, never
+  adopted, is not a chair.
+- **Rodriguez's `261006`** (R-505-26) — directs document production and an independent evaluation by
+  Jackson's CEO. Oversight. Not a chair, and deliberately not cited in his row.
+- **Hardemon** (`250794`, `252312`) and **Bermudez** (`251876`) — Strategic Procurement items:
+  misdemeanor-services and inmate-meal contracts. Operations.
+- **McGhee** — `250119` accepts an $850,000 DOJ Second Chance Act reentry grant (**OMB request**), and
+  `250330` is a Corrections & Rehabilitation Department request. Accepting a federal grant the
+  administration applied for is not a position.
+- **Gonzalez** — `260404` urges Congress to reauthorize the Second Chance Act. Urging binds nobody.
+- **Steinberg** — `250053`, a $1/year fleet vehicle lease to CHI, **Deferred**.
+- **Bastien** — `250429`, a donation to a prison and jail ministry.
+- **Milian Orbis** (`261512`, a facilities hearing application) and **Garcia** (`252422`, Axon tasers,
+  County Attorney request) — off-axis for capacity.
+
+⚠ **Scope note for whoever reads this ladder elsewhere:** rung 2 names *bail reform*, and a county
+commission cannot reform bail — that is the court's. The Board's levers are diversion and treatment.
+The rung is still answerable here because its other two mechanisms are county powers, but a row resting
+on the bail clause alone would be the per-rung scope error.
