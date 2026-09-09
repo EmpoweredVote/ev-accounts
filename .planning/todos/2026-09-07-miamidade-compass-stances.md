@@ -6,7 +6,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 
 ## Where it stands
 
-**Twelve rows live in Season 2**, seven of thirteen commissioners:
+**Thirteen rows live in Season 2** (12 + `jail-capacity` Rodriguez at 2, added 2026-09-09), seven of thirteen commissioners:
 
 | topic | value | who |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 this time with a missed-instrument control over their full unfiltered records rather than a lead
 count. Steinberg has **zero** prime-sponsored housing instruments in 187 matters.
 
-**Six whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+**Eleven whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
 `residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
 not apply in Florida at all, see below) and `city-sanitation` (43, **0 seated** / 14 refused).
@@ -226,31 +226,162 @@ byte for byte**, which is the only check that proves nothing else in 1,200 words
 🔴 **AND IT IS THE RECITAL/OPERATIVE RULE IN A NEW COSTUME:** a narrative summary of a meeting is not
 the vote record, and the tally next to the motion you are reading may belong to a different motion.
 
-### ▶️ OPEN RE-AUDIT: does Garcia's `growth-and-development` chair 2 still fit?
+### ✅ CLOSED 2026-09-09: Garcia's `growth-and-development` chair 2 STANDS — no row moved
 
-Raised by `CC_0087`, decided by nobody yet. The 6/26/2025 record shows Garcia voted No on the motion to
-approve the 1-to-1 ratio **and then moved to reconsider it** — his motion passed 10-0, and the Board went
-on to adopt the amendment. His row now states this.
+Raised by `CC_0087`. Settled from the primary record (`241888`, `260879`, each fetched with a
+Web-Error control in the same run), not from the narrative summary above.
 
-- **For keeping 2:** he prime-sponsored nothing that loosens LU-8H, and co-sponsored R-191-26 (opposing
-  HB 399) and R-678-26 (UDB text amendments), both boundary-protective and both cited. Under most rules
-  only a member on the PREVAILING side may move to reconsider, and his side prevailed when the motion
-  failed — so the motion may be procedural courtesy after the County Attorney corrected the vote
-  threshold, and say nothing about his position.
-- **Against:** the reconsideration is what let the amendment pass, and no source records how he voted on
-  the untallied final vote. A reader could reasonably read the sequence either way.
-- 🔴 **The honest tie-breaker is NOT "the least extreme option"** — that is the signal the row is
-  under-evidenced. If the sequence genuinely under-determines the chair, the answer is a blank spoke,
-  not a chair chosen for comfort.
-- **What would settle it:** the minutes or video of the final vote, if any record of the tally exists;
-  or one substantive own instrument of his on the boundary.
+🔴🔴 **THE PREMISE WAS WRONG: THIS WAS NEVER A GARCIA-SPECIFIC QUESTION.** Garcia and Steinberg cite the
+**identical three sources** — `241888`, `260228`, `260967`. Only the reconsideration could separate them,
+and the record says it cannot:
+
+> "Senator Garcia moved to reconsider the foregoing application. **This motion was seconded by
+> Commissioner Steinberg**; and upon being put to a vote, **passed 10-0**."
+
+**Steinberg seconded the very act the re-audit treated as Garcia's differentiator**, and all four No
+voters sit inside the 10-0. Were it a position rather than a procedure, it would unseat Cohen Higgins and
+Steinberg on the same record. It followed ACA Schwaderer Raurell's advice that **7 votes were needed**, so
+the 6-4 was a threshold artifact, not a defeat on the merits. **A unanimous procedural motion states
+nobody's position.** The final adoption is still untallied — "the Board voted to reject staff's
+recommendation and approve the application as presented", no numbers, no names. `CC_0087`'s wording stands.
+
+#### 🔴🔴 AND THE AXIS CONTROL OVERTURNED THE FIRST ANSWER — HE DOES HAVE OWN INSTRUMENTS
+
+This section first said "no own instrument exists either way", read off his **6 pattern leads**. That was a
+detector reporting nothing found. Grepping all 2,560 cached rows for
+`URBAN DEVELOPMENT BOUNDARY|UDB|LU-8H|CDMP` returned 17 matters, 8 of them Garcia's — and **five the growth
+pattern never surfaced.** Three are his own:
+
+| matter | ref | status | role | what it does |
+| --- | --- | --- | --- | --- |
+| `251903` | — | Amended | **Prime** | CDMP amendment: flexibility in the **minimum acreage requirement for commercial vehicle storage** |
+| `252447` | — | In Draft | **Prime** | same initiative, original item |
+| `260879` | — | **Failed** 7/21/2026 | **Prime** | same, plus a report on vacant county parcels and a limited enforcement stay |
+| `251393` | R-687-25 | Adopted | Co-Sponsor | container stacking with commercial vehicle storage (Gilbert Prime) |
+| `261141` | — | Before the Board | Co-Sponsor | CDMP allowances inside urbanized areas (Gonzalez Prime) |
+
+**They do not move the chair, and the reason is the per-rung scope rule, not their outcome.** `260879`'s
+full page mentions the Urban Development Boundary **zero times** — no `UDB`, no `LU-8H`, no "outside the".
+It is where trucks may be parked. The pinned rung 2 asks whether growth waits for **infrastructure
+capacity**; a sectoral acreage standard does not answer that question either way. Off-axis evidence must
+not dilute on-axis evidence — that is what "scope is a per-rung question" means.
+
+⚠ **This is NOT the Regalado case.** Hers was mixed **on the same axis** — voted Yes to loosen the UDB and
+prime-sponsored closing a route around it — so it pointed at two rungs and pinned neither. Garcia is
+boundary-protective on-axis and deregulatory off-axis. Different test, different answer.
+⚠ Note also that all three of his own are unadopted, and `260879` is partly a **report directive** — either
+would be enough on its own under this program's standard.
+
+**So the chair rests where it did:** a recorded No against lowering LU-8H's jobs-to-housing ratio and
+first-phase density — *capacity tests, rung 2's mechanism verbatim* — plus two boundary-protective
+co-sponsorships. Rung 1 stays out on the absence of any cap or referendum instrument. **No migration.**
+
+⚠ **What would reopen it:** a source recording the final tally, or one substantive own instrument of his
+**on the boundary**. Neither exists today.
+
+#### ✅ PATTERN RETUNED 2026-09-09: `growth-and-development` was wrong in BOTH directions
+
+Measured per-alternative on the unfiltered 2,560-row sweep — the only way the shape was visible:
+
+| alternative | leads / matters |
+| --- | --- |
+| `community redevelopment` | **60 / 54** — the flood |
+| `CRA` | **41 / 35** — the flood |
+| `urban development boundary` | 12 / 6 |
+| `UDB` · `impact fee` · `moratorium` | 3/1 · 3/3 · 2/2 |
+| `concurrency` · `infrastructure capacity` · `development order` · `planned development` · `growth management` · `TIF` | **all zero** |
+
+**84 leads / 68 matters → 61 / 42.** 43 housekeeping items out (CRA budgets, appointments, chair
+designations, Naranja Lakes potholes and landscaping); 16 real ones in — the five CDMP amendments,
+plus `250695` PROHIBIT THE CREATION OF COMMUNITY REDEVELOPMENT and `251426` CREATING THE EAR TASK FORCE.
+
+- 🟢 **The zero-scoring alternatives were KEPT.** `concurrency` and `infrastructure capacity` are rung
+  2's own words. A zero costs no false positives; deleting it would be tidying, not tuning.
+- 🔴 **The carve-out is scoped to the CRA branch, and that is load bearing.** Applied globally it
+  suppressed `252187` and `260291` — **Cohen Higgins' two cited sources for her seated chair 2.** A
+  carve-out that reaches the on-axis branch takes live rows with it.
+- 🔴🔴 **TWO SUBSTRING TRAPS, FOUND ONLY BY AUDITING EACH CARVE-OUT TERM AGAINST REAL TEXT.** `vice`
+  matched "business support ser**VICE**s" and wrongly dropped `250514`; `designat` matched
+  "co**DESIGNAT**ion" street namings. Both removed — `chair` alone still excludes the chair and
+  vice-chair designations. **A bare substring is not a word.**
+- 🔴 **The old pattern also missed `250695` because it asked for `community redevelopment (agency|area)`
+  and the county wrote "AGENC**IES**".** The bare phrase now matches.
+- ⚠ **A CRA annual budget now matches NOTHING, deliberately.** `economic-development`'s note says
+  redevelopment financing "rides on growth-and-development" — financing **policy** still does, and that
+  is pinned by a test. A budget approval evidences no rung on any ladder.
+- ⚠ **Residual, accepted:** the added CDMP items include truck-parking and vertical-farming amendments
+  that are off-axis for this ladder. Correct **leads**, wrong **chairs** — read past them.
+- 🔴 **`241888` IS NOT IN THE LEADS CORPUS AT ALL.** The sponsor-report cache is windowed and ordinance
+  25-59 falls outside it, so no pattern can reach the county's central growth instrument. **A researcher
+  working from leads alone would never see LU-8H.**
+
+Four tests added in `miamidade-sponsorship-parse.test.ts`; **three were watched failing against the old
+pattern first.** The fourth is a preservation guard and passes under both by design.
 
 ## Cheapest next steps
 
-- **`jail-capacity` (13) · `climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5)
-  · `homelessness` (5)** — all thin. Axis-test each before reading; on current form roughly two of
-  three patterns are mis-specified, and a thin count is as likely to be a broken detector as a
-  quiet record.
+- ✅ **`jail-capacity` RETUNED 2026-09-09 — AND IT WAS NEVER THIN.** "13 leads" was a broken
+  detector, not a quiet record: **13 / 8 → 44 / 20.** Two of the old eight matters were substring
+  artefacts (bare `bail` matched "**BAIL**ES COMMONS" and "JUDGE MELVIA **BAIL**EY-GREEN TERRACE"),
+  and `corrections (facility|department)` scored **zero** while bare `corrections` scored 5 — the
+  county writes "Corrections and Rehabilitation".
+  🟢 **What it could not see is the heart of the topic:** the **Mental Health Center** cluster
+  (`261104` `261093` `261088` `260425` `260201` `250513` `261006`), **MISDEMEANOR DIVERSION**
+  (`250837` `250794` `252312`) and `250119` SECOND CHANCE ACT COMMUNITY-BASED REENTRY. Rung 1 is
+  *"redirecting incarceration funding into community-based mental health … to shrink the jail
+  system"* — the pattern was blind to its own rung 1.
+  🔴🔴 **`consent decree` MEASURED AND REJECTED: 40 / 39, every one a WATER AND SEWER contract**
+  under the WASD decree; `consent decree AND (jail|correction)` returns **zero**. Miami-Dade's jail
+  decree is real but this corpus does not name it. 🔴 **Bare `diversion` rejected too** — 34/13, the
+  extras are WASTE diversion. Qualified instead.
+  ✅ **READ 2026-09-09 — 20 matters, 1 seated: Anthony Rodriguez at 2** on R-558-26 (`261104`, the
+  Mental Health Center as a Designated Receiving System facility) and R-556-26 (`261019`, competency
+  restoration through MDCR), both adopted, both his own initiative, neither adding capacity.
+  ⚠ **A ONE-INSTRUMENT CHAIR, said plainly in the refusals file** — `261019` reads as rung 3 as easily
+  as rung 2, and only `261104` reads one way.
+  🔴 **The most tempting row in the corpus is a REFUSAL:** R-328-23 (`260843`) "strongly opposing" any
+  pretrial-release reform is prime-sponsored by **Cabrera, who has left the Board**, and co-sponsored by
+  **Bermudez, Garcia and Gonzalez**. It binds nobody and gives direction without magnitude — it argues
+  against rung 2 but reaches neither 4 nor 5. Do not re-research it as new.
+  ⚠ Rung 2 names **bail reform, which a county commission cannot do**. The rung survives here on its
+  other two mechanisms; a row resting on the bail clause alone would be the per-rung scope error.
+  ⚠ The frozen/pinned ladders **AGREE** for this topic — the `CA_0012` trap is per-topic, not universal.
+- ✅ **`climate-change` CLOSED 2026-09-09 — 6 matters read, 0 seated.** 🔴🔴 **The pattern was aimed at
+  the FROZEN ladder.** Frozen asks about climate policy generally ("declare a climate emergency", "phase
+  out fossil fuels"); the **pinned** ladder asks *"How much should government do to expand clean
+  energy?"* — `climate|greenhouse gas|carbon` is the frozen question's vocabulary. **Diff the ladders
+  before writing a PATTERN, not just before writing a row.**
+  🔴🔴 **Fla. Stat. § 366.032 makes rung 1 largely unavailable and rung 4 the STATE'S position** — a
+  county may not restrict the fuel sources a utility supplies; the carve-out reaches only a government
+  that owns its own utility (Miami-Dade does not); and any such policy predating 1 Jul 2021 is **void**.
+  Seating anyone at 4 from an empty record publishes a preemption as a belief — the `rent-regulation`
+  failure in a new topic. Rungs 2 and 3 (investment, permitting) are real county levers; nobody used them.
+  ⚠ **This settles the `local-environment` open question: bay water quality, septic-to-sewer and
+  sea-level-rise resilience DO NOT belong here.** The pinned ladder is about expanding clean energy, not
+  adaptation. `resilien` returns 16/14 and answers none of it. **No open-season ladder asks it.**
+  🟢 **This time the thin record is REAL** — but only provable after 25 terms were measured. `energy`
+  (16/11) is waste-to-energy siting and `FPL` (18/18) is utility easements; both rejected. Two more
+  semantic traps found: `carbon` matched **CALCIUM CARBONATE**, `interconnection` matched **EMERGENCY
+  WATER INTERCONNECTION**.
+- ✅ **`homelessness-response` · `homelessness` · `civil-rights` ALL CLOSED 2026-09-09 — 17 matters
+  read, 0 seated.** All three pinned ladders disagree with the frozen table.
+  - **`homelessness-response` 9/9 → 23/15.** 🔴🔴 **Bastien is prime on 11 of 14 and that is her
+    Homeless Trust role, not a position** — 9 carry `requester = Miami-Dade Homeless Trust`. Her own
+    items are a **$62.5M HUD CoC grant acceptance** and two **urging** resolutions. ⚠ **Rungs 1 and 2
+    cannot be separated here**: the 1% food and beverage tax already IS "dedicated, permanent public
+    funding", and `251914` spends $21.1M/yr FY26-28 "with targeted increases" — rung 1's mechanism
+    doing rung 2's job. Two adjacent chairs ⇒ refuse.
+  - **`homelessness` — 🔴🔴 Fla. Stat. § 125.0231 writes most of the ladder.** A county "may not
+    authorize or otherwise allow" public camping; a designated site needs **DCF certification** proving
+    insufficient shelter beds. **Rungs 1 and 2 are unavailable; rung 4 is what the state REQUIRES.**
+    Third instance of this failure mode in one day. Whole corpus = one Bastien plan-and-report item
+    filed twice, never adopted. Pattern measured and **deliberately left alone**.
+  - **`civil-rights` 5/4 → 2/1 — 🔴🔴 three of the old four were PROPER NOUNS.** `equity` matched
+    **"ELITE EQUITY"** (a developer) twice and `DBE` matched **"DBE MISS USA, LLC"** (a pageant).
+    **A word boundary does not save you from a company name.** Every other term scored zero. The one
+    real item — Garcia urging a veto of the anti-DEI bill SB 1134 — is a refusal: urging binds nobody,
+    and it gives direction without magnitude. ⚠ Rung 4 names **federal** enforcement, unavailable here.
+- ▶️ **NO CHEAP TOPICS REMAIN.** Every topic named in this list has now been measured and read.
 - ⚠ **Before starting any of them, read the directive-and-report finding below.** A topic whose
   leads are mostly "DIRECTING THE COUNTY MAYOR … AND PROVIDE A REPORT" will refuse, however dense.
 - ✅ **`city-sanitation` is CLOSED** — 0 seated. Its pattern is sound; do not retune it.

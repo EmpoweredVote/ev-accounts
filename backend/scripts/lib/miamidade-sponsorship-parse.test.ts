@@ -221,15 +221,138 @@ describe('matchLocalTopics', () => {
     expect(hits).not.toContain('economic-development');
   });
 
-  it('files redevelopment-area financing under growth, not business attraction', () => {
-    // A CRA reinvests incremental property tax inside a designated area. It is
-    // not a company-specific incentive, and the economic-development ladder has
-    // no rung for it.
+  // 🔴 REFINED 2026-09-09 by the growth-and-development retune. The rule this test
+  // protects is unchanged and still asserted below: a CRA is not a company-specific
+  // incentive, so it never files under business attraction. What changed is the
+  // disposition of a CRA's ANNUAL BUDGET. Filing budgets and board appointments under
+  // growth put 43 housekeeping items in a 68-matter corpus that yielded two chairs; a
+  // budget approval evidences no rung on any ladder. Financing POLICY still files under
+  // growth — that is the half worth keeping, and it is pinned here so a future narrowing
+  // cannot quietly take it.
+  it('files a CRA annual budget under NOTHING — it is housekeeping, not a growth decision', () => {
     const t = 'RESOLUTION APPROVING THE FY2025-26 BUDGET OF THE N.W. 79TH STREET CORRIDOR '
       + 'COMMUNITY REDEVELOPMENT AGENCY AND ITS TAX INCREMENT FINANCING';
+    expect(matchLocalTopics(t)).toEqual([]);
+  });
+
+  it('files redevelopment-area financing POLICY under growth, not business attraction', () => {
+    // A CRA reinvests incremental property tax inside a designated area. It is
+    // not a company-specific incentive, and the economic-development ladder has
+    // no rung for it. Verbatim from 250514, which a `vice` substring bug in the
+    // first draft of the carve-out wrongly dropped — it matched "serVICEs".
+    const t = 'RESOLUTION URGING THE FLORIDA LEGISLATURE TO ENACT HB 363 OR SIMILAR '
+      + 'LEGISLATION THAT WOULD AUTHORIZE COMMUNITY REDEVELOPMENT AGENCIES TO USE A PORTION '
+      + 'OF TAX INCREMENT FINANCING FUNDS FOR CERTAIN BUSINESS SUPPORT SERVICES';
     const hits = matchLocalTopics(t);
     expect(hits).toContain('growth-and-development');
     expect(hits).not.toContain('economic-development');
+  });
+
+  it('files CRA creation — and its prohibition — under growth', () => {
+    // The decisions the housekeeping flood was burying. 250695 is the clearest
+    // growth-policy instrument in the CRA corpus and the old pattern lost it in noise.
+    const necessity = 'RESOLUTION ACCEPTING THE FINDING OF NECESSITY FOR THE N.W. 7TH AVENUE '
+      + 'CORRIDOR COMMUNITY REDEVELOPMENT AREA';
+    const prohibit = 'ORDINANCE TO PROHIBIT THE CREATION OF COMMUNITY REDEVELOPMENT AGENCIES '
+      + 'IN MIAMI-DADE COUNTY';
+    expect(matchLocalTopics(necessity)).toContain('growth-and-development');
+    expect(matchLocalTopics(prohibit)).toContain('growth-and-development');
+  });
+
+  // ── civil-rights and homelessness-response, retuned 2026-09-09 ────────────────
+  it('🔴 does not read a COMPANY NAME as civil-rights vocabulary', () => {
+    // Three of the old pattern's four matters were proper nouns. A word boundary
+    // does not save you from a company name.
+    const elite = 'INFILL HOUSING CONVEYANCE - ELITE EQUITY HABITAT FOR HUMANITY';
+    const pageant = 'ALLOCATING TOURIST DEVELOPMENT TAX SURPLUS TO DBE MISS USA, LLC D/B/A '
+      + 'MISS USA ORGANIZATION FOR THE 2026 MISS USA COMPETITION';
+    expect(matchLocalTopics(elite)).not.toContain('civil-rights');
+    expect(matchLocalTopics(pageant)).not.toContain('civil-rights');
+  });
+
+  it('still matches a real diversity, equity and inclusion item', () => {
+    const dei = 'RESOLUTION URGING GOVERNOR RON DESANTIS TO VETO SENATE BILL 1134, A BILL '
+      + 'PROHIBITING LOCAL GOVERNMENTS FROM FUNDING OR PROMOTING OR TAKING OFFICIAL ACTION '
+      + 'RELATING TO DIVERSITY, EQUITY, AND INCLUSION';
+    expect(matchLocalTopics(dei)).toContain('civil-rights');
+  });
+
+  it('matches homelessness in running prose and by provider name', () => {
+    // The old pattern needed `homeless` to be followed by trust/services/etc or to
+    // stand alone, so it missed both of these.
+    expect(matchLocalTopics('HOUSING FOR LOW-INCOME FAMILIES EXPERIENCING HOMELESSNESS'))
+      .toContain('homelessness-response');
+    expect(matchLocalTopics('CHAPMAN PARTNERSHIP RAPID RE-HOUSING'))
+      .toContain('homelessness-response');
+  });
+
+  // ── climate-change, retuned 2026-09-09 ────────────────────────────────────────
+  it('🔴 does not read CALCIUM CARBONATE or WATER INTERCONNECTION as climate policy', () => {
+    // Both were live matches. 251161 is a lagoon and softeners at the Alexander Orr
+    // water treatment plant; 250347 is an emergency water main with North Miami Beach.
+    const lagoon = 'OPERATIONAL AND RESILIENCY IMPROVEMENTS TO THE CALCIUM CARBONATE LAGOON '
+      + 'AND SOFTENERS AT ALEXANDER ORR WATER TREATMENT PLANT';
+    const water = 'INTERLOCAL AGREEMENT WITH THE CITY OF NORTH MIAMI BEACH REGARDING '
+      + 'EMERGENCY WATER INTERCONNECTION AND BILLING OF SANITARY SEWER SERVICE CHARGES';
+    expect(matchLocalTopics(lagoon)).not.toContain('climate-change');
+    expect(matchLocalTopics(water)).not.toContain('climate-change');
+  });
+
+  it('still matches real carbon and grid language', () => {
+    expect(matchLocalTopics('RESOLUTION SETTING A CARBON EMISSIONS REDUCTION TARGET'))
+      .toContain('climate-change');
+    expect(matchLocalTopics('SMALL GENERATOR INTERCONNECTION AGREEMENT WITH FLORIDA POWER & LIGHT'))
+      .toContain('climate-change');
+  });
+
+  it('🔴 does not read WASTE-TO-ENERGY siting as clean energy', () => {
+    // `energy` returns 16/11 and is almost entirely the Doral incinerator. The
+    // pinned ladder asks how much to expand CLEAN energy; an incinerator siting fight
+    // is solid-waste policy.
+    expect(matchLocalTopics('SITE SELECTION NEW WASTE TO ENERGY FACILITY OTHER THAN DORAL'))
+      .not.toContain('climate-change');
+  });
+
+  // ── jail-capacity, retuned 2026-09-09 ──────────────────────────────────────────
+  it('🔴 does not read "BAILES" or "BAILEY" as bail reform', () => {
+    // Both were real matters in the old pattern's 8: a property conveyance and a
+    // street co-designation for a judge. Bare `bail` found them; `bail` does not.
+    const conveyance = 'CONVEYANCE OF PROPERTY BAILES COMMONS SECOND ADDITION';
+    const street = 'CODESIGNATION - JUDGE MELVIA BAILEY-GREEN TERRACE';
+    expect(matchLocalTopics(conveyance)).not.toContain('jail-capacity');
+    expect(matchLocalTopics(street)).not.toContain('jail-capacity');
+    expect(matchLocalTopics('PRETRIAL RELEASE ON NONMONETARY CONDITIONS')).toContain('jail-capacity');
+  });
+
+  it('files the Mental Health Center and misdemeanor diversion under jail-capacity', () => {
+    // Rung 1 is "redirecting incarceration funding into community-based mental health
+    // ... to shrink the jail system". The old pattern could not see rung 1's own subject.
+    expect(matchLocalTopics('MENTAL HEALTH CENTER')).toContain('jail-capacity');
+    expect(matchLocalTopics('MISDEMEANOR DIVERSION SERVICES')).toContain('jail-capacity');
+    expect(matchLocalTopics('SECOND CHANCE ACT COMMUNITY-BASED REENTRY PROGRAM'))
+      .toContain('jail-capacity');
+  });
+
+  it('🔴 does not read WASTE diversion as criminal-justice diversion', () => {
+    // Bare `diversion` scored 34/13 and the extras were recycling. The term is qualified.
+    const waste = 'RESOLUTION DIRECTING MAYOR TO EVALUATE INCENTIVE-BASED PROGRAMS TO '
+      + 'ENCOURAGE WASTE DIVERSION';
+    expect(matchLocalTopics(waste)).not.toContain('jail-capacity');
+  });
+
+  it('matches how the county actually writes its jail department', () => {
+    // `corrections (facility|department)` scored ZERO; the county writes
+    // "Corrections and Rehabilitation".
+    expect(matchLocalTopics('MIAMI-DADE CORRECTIONS AND REHABILITATION INMATE MEAL SERVICE'))
+      .toContain('jail-capacity');
+  });
+
+  it('🔴 excludes a chair designation but NOT a title merely containing "services"', () => {
+    // The two substring traps the carve-out audit found. `vice` matched "serVICEs";
+    // `designat` matched "coDESIGNATion". `chair` alone does the real work.
+    const designation = 'RESOLUTION DESIGNATING JAMES E. MCDONALD AS VICE CHAIRMAN OF THE '
+      + 'NARANJA LAKES COMMUNITY REDEVELOPMENT AGENCY';
+    expect(matchLocalTopics(designation)).not.toContain('growth-and-development');
   });
 
   it('🔴 does not read "Section 8-9 of the Code" as Section 8 housing', () => {

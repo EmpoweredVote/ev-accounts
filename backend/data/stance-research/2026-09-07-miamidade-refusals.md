@@ -1147,3 +1147,214 @@ not a position she originated. Every other commissioner seated on housing has ei
 own-initiative items (Hardemon 11, Bastien 8, McGhee 7, Regalado 5) or one policy instrument.
 ▶️ **What would seat her:** a second own-initiative housing item, or one that sets a rule rather than
 approving a deal.
+
+## `jail-capacity` across the whole Board — 20 matters read, 1 seated, and the count was a lie
+
+🔴🔴 **THIS TOPIC WAS RECORDED AS "13 LEADS — THIN". IT WAS A BROKEN DETECTOR, TWICE.** Retuned
+2026-09-09 to **44 leads / 20 matters**. Two of the old eight were substring artefacts — bare `bail`
+matched "**BAIL**ES COMMONS" (a property conveyance) and "JUDGE MELVIA **BAIL**EY-GREEN TERRACE" (a
+street co-designation) — and `corrections (facility|department)` scored **zero** while bare
+`corrections` scored 5, because the county writes "Corrections and Rehabilitation". Worse, the pattern
+was blind to **rung 1's own subject**: the Mental Health Center cluster and the misdemeanor diversion
+items. **A thin count is not evidence of a quiet record until the pattern has been measured.**
+
+⚠ Two terms were measured and REJECTED rather than added. `consent decree` returns 40/39 and **every
+one is a water and sewer construction contract** under the WASD decree — `consent decree AND
+(jail|correction)` returns zero. Bare `diversion` returns 34/13 and the extras are **waste** diversion.
+
+### SEATED — Anthony Rodriguez at 2
+
+Two adopted measures, both his own initiative (`requester` NONE), both routing people to treatment
+rather than to jail beds:
+
+- **R-558-26** (`261104`, adopted 6/16/2026, 8 co-sponsors) — amends the state lease for the Mental
+  Health Center at 2200 NW 7th Avenue **and the county's Designated Receiving System Plan**, with
+  Thriving Mind South Florida, DCF, the Sheriff and the chiefs of police. That is the arrangement under
+  which an officer takes a person in crisis to a receiving facility instead of to jail.
+- **R-556-26** (`261019`, adopted 6/16/2026, **sole** prime) — directs MDCR to make competency
+  restoration treatment available to certain incarcerated individuals, and to report.
+
+Rungs 4 and 5 are out: no measure of his adds capacity. Rung 1 is out: he has not moved corrections
+funding into community programs to shrink the system. **Rung 3 is the close call and is out on its own
+mechanism** — rung 3 is about *upgrading jail facilities*, and no facility upgrade appears anywhere in
+his record.
+
+⚠ **STATED PLAINLY: THIS IS A ONE-INSTRUMENT CHAIR.** `261019` operates *inside* the jail through MDCR
+and competency restoration is constitutionally required, so that instrument reads as rung 3 as easily
+as rung 2. Only `261104` can be read one way. Without it this would be a refusal.
+⚠ It also cuts against a prior — Rodriguez is seated at **growth 4** for driving the LU-8H loosening.
+Read on its own evidence.
+
+### 🔴 The only explicit jail-policy POSITION in the corpus belongs to a departed member
+
+**R-328-23** (`260843`, adopted as amended 4/4/2023) — *"STRONGLY OPPOSING ANY REFORMS TO BAIL AND BOND
+SCHEDULES OR PRETRIAL RELEASE PROGRAMS … that would automatically grant pretrial release on nonmonetary
+conditions."* Prime is **Kevin Marino Cabrera, no longer on the Board**; the co-sponsors are
+**Bermudez, Garcia and Gonzalez, all sitting.**
+
+**REFUSED for all three.** It is an *opposing* resolution addressed to the Eleventh Judicial Circuit and
+binds nobody, and it establishes **direction without magnitude**: it argues against rung 2 but neither
+rung 4 nor rung 5, both of which need capacity the three have never proposed. Direction alone is not a
+chair. 🔴 **Do not re-research this as though it were new — it is the most tempting row in the corpus
+and it is a refusal.**
+
+### Refused, and why
+
+- **The eight co-sponsors of R-558-26** — Bastien, Bermudez, Gilbert, Cohen Higgins, Lopez, McGhee,
+  Regalado, Steinberg. A near-unanimous authorization separates nobody, for the same reason a Yes on
+  25-59 seats no one.
+- **Regalado** — `261088`, `260425`, `260201`, `250513` are the MHC combined items, all **Deferred or In
+  Draft** and all **Community Services Department requests**. A department item a member carried, never
+  adopted, is not a chair.
+- **Rodriguez's `261006`** (R-505-26) — directs document production and an independent evaluation by
+  Jackson's CEO. Oversight. Not a chair, and deliberately not cited in his row.
+- **Hardemon** (`250794`, `252312`) and **Bermudez** (`251876`) — Strategic Procurement items:
+  misdemeanor-services and inmate-meal contracts. Operations.
+- **McGhee** — `250119` accepts an $850,000 DOJ Second Chance Act reentry grant (**OMB request**), and
+  `250330` is a Corrections & Rehabilitation Department request. Accepting a federal grant the
+  administration applied for is not a position.
+- **Gonzalez** — `260404` urges Congress to reauthorize the Second Chance Act. Urging binds nobody.
+- **Steinberg** — `250053`, a $1/year fleet vehicle lease to CHI, **Deferred**.
+- **Bastien** — `250429`, a donation to a prison and jail ministry.
+- **Milian Orbis** (`261512`, a facilities hearing application) and **Garcia** (`252422`, Axon tasers,
+  County Attorney request) — off-axis for capacity.
+
+⚠ **Scope note for whoever reads this ladder elsewhere:** rung 2 names *bail reform*, and a county
+commission cannot reform bail — that is the court's. The Board's levers are diversion and treatment.
+The rung is still answerable here because its other two mechanisms are county powers, but a row resting
+on the bail clause alone would be the per-rung scope error.
+
+## `climate-change` across the whole Board — 6 matters read, 0 seated, and the ladder is half unavailable here
+
+### 🔴🔴 THE PATTERN WAS AIMED AT THE FROZEN LADDER, NOT THE PINNED ONE
+
+The two texts ask **different questions**, and this is the clearest example yet of the `CA_0012` trap:
+
+| source | question |
+| --- | --- |
+| **frozen** `compass_stances` | climate policy generally — "declare a climate emergency", "phase out fossil fuels by 2030" |
+| **pinned** (live) | **"How much should government do to expand clean energy?"** — mandates · subsidies · permitting and the grid · neutrality · repeal |
+
+`climate|greenhouse gas|carbon` is the **frozen** question's vocabulary. Against the pinned ladder it is
+off-axis, and it produced a plausible six-matter corpus that answers the wrong question. **Diff the two
+before writing a pattern, not just before writing a row.**
+
+⚠ **This also settles the open question left by the `local-environment` retune.** Bay water quality,
+septic-to-sewer and sea-level-rise resilience were removed from `local-environment` and the note said
+"whoever reads the climate-change ladder should decide". **They do not belong here either** — the pinned
+ladder asks about expanding clean energy, not adaptation. `resilien` returns 16/14 and none of it answers
+this question. No ladder in the open season asks it.
+
+### 🔴🔴 SCOPE: Fla. Stat. § 366.032 MAKES RUNG 1 LARGELY UNAVAILABLE AND RUNG 4 THE STATE'S POSITION
+
+Read from the statute, not from memory:
+
+- **(1)** a *county* "may not enact or enforce a resolution, ordinance, rule, code, or policy or take any
+  action that restricts or prohibits … the types or fuel sources of energy production which may be used,
+  delivered, converted, or supplied" by a public or electric utility;
+- **(2)** extends the same bar to appliances, except as needed to enforce the Building and Fire codes;
+- **(3)** the carve-out reaches only a government that **owns and directly controls** its own electric or
+  gas utility — **Miami-Dade does not; FPL serves it**;
+- **(5)** any such county policy existing on or before **1 July 2021 is VOID**.
+
+So **rung 1 — "require a shift to clean energy through mandates and firm deadlines" — is preempted**
+community-wide; only county-operations procurement survives, which is a far smaller thing than the rung
+describes. And 🔴🔴 **rung 4 — "stay neutral on energy and let the market choose" — is the posture state
+law imposes.** Seat anyone there from an empty record and you have published a preemption as a personal
+belief, thirteen times over. That is exactly the `rent-regulation` failure in a new topic.
+🟢 **Rungs 2 and 3 remain genuine county levers** — public investment, and permitting. Nobody used them.
+
+### The six, and why each is a refusal
+
+- **`252309` R-1221-25 · `260946` R-661-26 — Steinberg, both DERM requests.** The Southeast Florida
+  Regional Climate Change Compact cost-share. `252309` *reduces* the contribution and shortens the term
+  to terminate 30 Sep 2026; `260946` funds FY27-29. Department items, and the Compact is regional
+  adaptation coordination — it does not answer how much to expand clean energy.
+- **`252468` R-62-26 · `252175` — Gonzalez and Milian Orbis, own initiative.** The same item twice:
+  directing a **written report** on the EV fleet's performance and a disposition plan for the vehicles and
+  batteries at end of life. **A study directive is not a chair**, and the framing is as easily read as
+  scepticism about the fleet as support for it.
+- **`251531` R-784-25 — Steinberg, own.** **URGING** the Legislature to reinstate the 95 Express toll
+  exemption for hybrids and EVs. Binds nobody, and it asks the state to act.
+- **`251654` R-868-25 — Regalado, WASD request.** Ratifies a small-generator interconnection agreement
+  with FPL for the South District Wastewater Treatment Plant. Plant operations.
+
+### What was measured and rejected rather than added
+
+`energy` returns **16 / 11** and is almost entirely **WASTE-TO-ENERGY** incinerator siting — solid
+waste, not clean energy. `FPL|florida power` returns **18 / 18** and is almost entirely **utility
+easements** across county property. Either would have been the `landlord` shape.
+🔴 Two semantic traps were live in the old pattern: bare `carbon` matched **CALCIUM CARBONATE** at the
+Alexander Orr plant, and bare `interconnection` matched **EMERGENCY WATER INTERCONNECTION**. Both qualified.
+
+**The pinned ladder's own vocabulary scores ZERO across all 2,560 rows** — `clean energy`, `solar`,
+`photovoltaic`, `net metering`, `renewable energy`, `energy efficiency`, `charging station`, `electrif`,
+`emissions`, `microgrid`, `battery storage`, `net zero`, `property assessed clean energy`. Kept in the
+pattern anyway; a zero costs nothing and this is the corpus, not the detector, being empty. **This time
+the thin record is real — and it was only provable after 25 terms were measured.**
+
+## `homelessness-response`, `homelessness` and `civil-rights` — 17 matters read, 0 seated
+
+Three topics closed 2026-09-09. All three pinned ladders **disagree** with the frozen table.
+
+### `homelessness-response` — 15 matters, 0 seated, and volume was the trap
+
+Pattern retuned **9 / 9 → 23 / 15**: the old one required `homeless` to be followed by
+trust/services/assistance/program/shelter or to stand alone, so it missed `homelessness` in running
+prose and every provider-named item — including a **$5M Bezos Day 1 Families Fund** grant (`250072`)
+and **Chapman Partnership rapid re-housing** (`252155`).
+
+🔴🔴 **BASTIEN IS PRIME ON 11 OF THE 14, AND THAT IS HER HOMELESS TRUST ROLE, NOT A POSITION.** Nine
+carry `requester = Miami-Dade Homeless Trust`. **`requester` is the discriminator, not volume** — the
+same rule that caught "Hardemon growth, 21 leads" being Cohen Higgins'. Her three own-initiative items
+are `261178` (authorising receipt of **$62.5M** in HUD Continuum of Care funds — a federal grant
+acceptance, the same shape refused for McGhee on jail-capacity), `250301` (**urging** the Legislature to
+appropriate funds) and `252381` (**urging**, and still **In Draft**).
+
+⚠ **AND THE LADDER CANNOT SEPARATE RUNGS 1 AND 2 HERE, BECAUSE OF WHAT MIAMI-DADE ALREADY HAS.** Rung 1
+is *"guarantee … through dedicated, permanent public funding"* and rung 2 is *"expand … by increasing
+public funding"*. The county's **1% food and beverage tax** already IS dedicated permanent funding, and
+`251914` spends **$21.1M annually across FY2025-26 to 2027-28 "with targeted increases … to maintain and
+increase capacity"** — which is rung 1's mechanism being used to do rung 2's thing. Two adjacent chairs
+fit, so the row is a refusal. 🔴 `251914` is also a Homeless Trust request.
+
+### `homelessness` — 1 matter (filed twice), 0 seated, and the state writes most of the ladder
+
+🔴🔴 **Fla. Stat. § 125.0231(2): a county "may not authorize or otherwise allow any person to regularly
+engage in public camping or sleeping on any public property."** (3) allows a designated site for up to a
+year **only with Department of Children and Families certification**, which requires proving there are
+not sufficient shelter beds.
+
+- **rung 1** — "protecting the right to sleep and shelter in public spaces, with no penalties of any
+  kind" — **unavailable**.
+- **rung 2** — "decriminalizing public sleeping and camping" — **unavailable**.
+- **rung 3** — enforcement only where beds are adequate, citations diverting to services — the closest
+  thing the statute permits, because (3) turns on bed sufficiency.
+- 🔴🔴 **rung 4** — "prohibiting encampments on public property" — **is what state law REQUIRES.** Seat
+  anyone there from an empty record and you have published a statute as thirteen personal beliefs.
+
+**Third instance of this failure mode in one day**, after `rent-regulation` and § 366.032 on
+`climate-change`. ⚠ Whole corpus: `261371` / `261121`, the same Bastien item twice, **Amended and never
+adopted** — "ILLEGAL DUMPING AND ENCAMPMENT PLAN FOR DISTRICT 2; AND REQUIRING A REPORT". A plan-and-report
+directive, paired with illegal dumping rather than with shelter. Not a chair.
+🟢 The pattern was measured and **left alone** — `encampment` 5/2, and `public camping`, `sleeping in
+public`, `panhandl`, `loitering`, `vagrancy`, `public sleeping` and `trespass` all zero. That is a sound
+pattern over an empty record, and saying so is a result.
+
+### `civil-rights` — 1 matter, 0 seated, and three of the old four were PROPER NOUNS
+
+Pattern retuned **5 / 4 → 2 / 1**. 🔴🔴 Bare `equity` matched **"ELITE EQUITY Habitat for Humanity"**
+(`260962`) and **"ELITE EQUITY DEV. INC."** (`251893`) — an infill-housing developer. Bare `DBE`
+matched **"DBE MISS USA, LLC"** (`261139`), a tourist-tax grant to a beauty pageant. **A word boundary
+does not save you from a company name.**
+
+Every other alternative scored **zero** across 2,560 rows: `civil rights`, `discrimination`,
+`human rights ordinance`, `disparit`, `minority-owned`, `MBE`, `disadvantaged business enterprise`.
+
+**REFUSED — Garcia on `260492` / R-246-26**, adopted: urging the Governor to veto SB 1134, which would bar
+local governments from funding or promoting diversity, equity and inclusion. It is the most on-axis
+civil-rights item on the Board and it is still a refusal: an **urging** resolution binds nobody, and
+opposing a preemption bill gives **direction without magnitude** — it cannot separate rung 1 ("mandate
+racial equity requirements in all institutions") from rung 2.
+⚠ **Per-rung scope:** rung 4 says "limit **FEDERAL** civil rights enforcement", which no county officer
+can do. That rung is unavailable at this level regardless of evidence.
