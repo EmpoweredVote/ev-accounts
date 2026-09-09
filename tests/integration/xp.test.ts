@@ -8,7 +8,9 @@ process.env['SUPABASE_URL'] = 'https://test.supabase.co';
 process.env['SUPABASE_ANON_KEY'] = 'test-anon-key';
 process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-service-role-key';
 process.env['DATABASE_URL'] = 'postgresql://postgres:password@localhost:5432/postgres';
-process.env['QUEST_SERVICE_KEY'] = 'test-quest-key';
+// QUEST_SERVICE_KEY retired 2026-09-09: VQ XP is awarded in-process now, so
+// validation_quest_completion is no longer awardable over HTTP by any service key.
+// These route tests use the still-live TRIVIA key instead.
 process.env['TRIVIA_SERVICE_KEY'] = 'test-trivia-key';
 process.env['ADMIN_SERVICE_KEY'] = 'test-admin-key';
 
@@ -56,7 +58,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({});
     expect(res.status).toBe(422);
     expect(res.body).toHaveProperty('code', 'VALIDATION_ERROR');
@@ -66,7 +68,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({
         user_id: '00000000-0000-4000-8000-000000000001',
         source: 'not_a_valid_source',
@@ -81,7 +83,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({
         user_id: 'not-a-uuid',
         source: 'validation_quest_completion',
@@ -96,7 +98,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({
         user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
@@ -111,7 +113,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({
         user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
@@ -125,7 +127,7 @@ describe('POST /api/xp/award', () => {
     const res = await request(app)
       .post('/api/xp/award')
       .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
+      .set('X-Service-Key', 'test-trivia-key')
       .send({
         user_id: '00000000-0000-4000-8000-000000000001',
         source: 'validation_quest_completion',
@@ -134,24 +136,6 @@ describe('POST /api/xp/award', () => {
       });
     expect(res.status).toBe(422);
     expect(res.body).toHaveProperty('code', 'VALIDATION_ERROR');
-  });
-
-  it('returns 422 when a valid key attempts an unauthorized source (SOURCE_NOT_PERMITTED)', async () => {
-    // test-quest-key is authorized only for validation_quest_completion.
-    // Using it with civic_trivia_championship_score must be rejected at the
-    // source-authorization layer (after auth passes), not the schema layer.
-    const res = await request(app)
-      .post('/api/xp/award')
-      .set('Content-Type', 'application/json')
-      .set('X-Service-Key', 'test-quest-key')
-      .send({
-        user_id: '00000000-0000-4000-8000-000000000001',
-        source: 'civic_trivia_championship_score',
-        amount: 100,
-        idempotency_key: 'idem-key-007',
-      });
-    expect(res.status).toBe(422);
-    expect(res.body).toHaveProperty('code', 'SOURCE_NOT_PERMITTED');
   });
 
   it('returns 422 when trivia key attempts quest source (cross-key scope violation)', async () => {
