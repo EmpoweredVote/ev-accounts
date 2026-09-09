@@ -269,11 +269,20 @@ export async function generateReplacement(
     const { db: db3 } = await import('../db/index.js');
     const { questions: questionsTable2, collectionQuestions: collectionQuestionsTable2 } = await import('../db/schema.js');
 
+    // Write-time answer-position guard -- the output example in the prompt above says
+    // correctAnswer: 0, and the model copies it. Seeded on externalId for determinism.
+    const { placeAnswer } = await import('../services/questionQuality/answerPlacement.js');
+    const placedReplacement = placeAnswer(
+      parsedQuestion.options,
+      parsedQuestion.correctAnswer,
+      parsedQuestion.externalId
+    );
+
     const newQuestion = {
       externalId: parsedQuestion.externalId,
       text: parsedQuestion.text,
-      options: parsedQuestion.options,
-      correctAnswer: parsedQuestion.correctAnswer,
+      options: placedReplacement.options,
+      correctAnswer: placedReplacement.correctAnswer,
       explanation: parsedQuestion.explanation,
       difficulty: parsedQuestion.difficulty,
       topicId,
