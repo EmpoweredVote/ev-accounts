@@ -24,12 +24,32 @@ import 'dotenv/config';
 import fs from 'node:fs';
 import pg from 'pg';
 
+import { stripOwnTransaction, unsafeDropTargets } from './lib/migration-file-guards.mjs';
+
 const file = process.argv[2];
 if (!file) { console.error('usage: node scripts/apply-migration-file.mjs <migration.sql>'); process.exit(2); }
 
 const raw = fs.readFileSync(file, 'utf8');
-const sql = raw.replace(/^\s*BEGIN\s*;/im, '').replace(/^\s*COMMIT\s*;/im, '');
-if (/\bDROP\s+(TABLE|SCHEMA|DATABASE)\b/i.test(sql)) { console.error('refusing: migration contains a DROP TABLE/SCHEMA/DATABASE'); process.exit(2); }
+const sql = stripOwnTransaction(raw);
+
+// 🔴 THE DROP GUARD USED TO REFUSE THE HOUSE STYLE, AND THAT SENT PEOPLE BACK TO HAND-PASTING.
+//
+// It was /DROP\s+(TABLE|SCHEMA|DATABASE)/ over the whole file. A post-verify gate takes its
+// before-snapshot in a CREATE TEMP TABLE and drops it at the end, so the guard refused 15 of this
+// repo's migrations — 13 of them wrongly, including CC_0081..CC_0084. This script exists so nobody
+// pastes a migration body through another channel; refusing a correct file is the same failure with
+// extra steps, and it is what happened on 2026-09-09.
+//
+// The line it now draws is TEMP vs REAL: a DROP TABLE is allowed only when every name is
+// unqualified and the file creates it as a TEMP table. DROP SCHEMA/DATABASE is never allowed.
+// Measured against the corpus, that refuses exactly 1818 and 1819 — the two that drop
+// app_auth.sessions and app_auth.users. See scripts/lib/migration-file-guards.mjs.
+const unsafe = unsafeDropTargets(raw);
+if (unsafe.length) {
+  console.error(`refusing: ${file} drops ${unsafe.length} object(s) that are not its own temp tables`);
+  for (const u of unsafe) console.error(`  DROP ${u.kind} ${u.target} — ${u.reason}`);
+  process.exit(2);
+}
 
 const url = process.env.DATABASE_URL;
 if (!url) { console.error('refusing: DATABASE_URL is not set (backend/.env)'); process.exit(2); }
