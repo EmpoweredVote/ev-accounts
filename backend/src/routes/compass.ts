@@ -426,6 +426,15 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
       .schema('inform')
       .from('compass_responses_effective')
       .select('topic_id, value, write_in_text, visibility, inverted, created_at, updated_at')
+      // Scope to the caller. This is the enforcement on the WorkOS-token path,
+      // where requestDb returns the service-role client and RLS does NOT apply
+      // (see requestDb in lib/supabase.ts). Without it the service-role client
+      // reads every user's rows — a cross-user leak — and the disposition join
+      // in compass_responses_effective degrades to O(rows²) over the whole
+      // table (~3.7s for 200 rows; ~350ms once scoped to one user). On the
+      // Supabase-token path RLS already restricts to the caller, so this
+      // predicate is redundant there, not wrong.
+      .eq('user_id', authReq.userId)
       .is('deleted_at', null);
 
     if (error) {
@@ -473,6 +482,11 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
       .schema('inform')
       .from('compass_responses_effective')
       .select('topic_id, value, write_in_text')
+      // Scope to the caller — same reason as GET /answers: the service-role
+      // (WorkOS-token) path bypasses RLS, so the .in('topic_id') filter alone
+      // would return those topics' answers for every user. RLS covers the
+      // Supabase-token path; this predicate makes both paths owner-only.
+      .eq('user_id', authReq.userId)
       .in('topic_id', parsed.data.ids)
       .is('deleted_at', null);
 
