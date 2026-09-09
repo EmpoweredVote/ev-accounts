@@ -88,14 +88,37 @@ const NAMED_ON_AXIS = {
     /^background check expansion act/i,
     /^constitutional concealed carry reciprocity act/i,
   ],
+  // 🔴 FOUR ENTRIES WERE REMOVED FROM THIS LIST ON 2026-09-08 BECAUSE SOMEBODY
+  // FINALLY READ THE BILLS. Every one had been added on the strength of its short
+  // title, which is precisely the mistake the warning above describes — and the
+  // largest of them carried 40 of the 100 senators, so a rung-1 extension off it
+  // would have published 40 claims sourced to a bill about United Nations dues.
+  //
+  //   "Stand with Israel Act" (S. 1521)  — amends the UN Participation Act to
+  //     prohibit US CONTRIBUTIONS TO THE UNITED NATIONS related to discrimination
+  //     against Israel. Not US military aid to Israel in any sense. 40 senators.
+  //   "Weapons Resupply, Stockpile, and Alliance-Israel Act" (S. 2216) — extends
+  //     war reserves stockpile authority from 2027 to 2029. A two-year authority
+  //     extension sets no level and imposes no condition.
+  //   "Ensuring Peace Through Strength in Israel Act" (S. 1504) — requires a DoD
+  //     ASSESSMENT of precision-guided munitions quantities. A report.
+  //   "Expediting Israeli Aerial Refueling Act" (S. 510) — requires the Air Force
+  //     to TRAIN Israeli personnel on KC-46 operation. Security cooperation, the
+  //     same class as the anti-tunnel and joint-R&D bills already off-axis.
+  //
+  // ⚠ AN ENTRY HERE NOW REQUIRES THAT ITS STATED PURPOSE BE QUOTED BELOW. That is
+  // the only thing that would have caught any of the four, and a title that sounds
+  // like an aid bill is not evidence that it is one.
   'israel-military-aid': [
-    /^stand with israel act/i,
+    // "To provide for the expeditious delivery of defense articles and defense
+    //  services for Israel" — S. 4337
     /^israel security assistance support act/i,
+    // "To provide for congressional oversight of proposed changes to arms sales
+    //  to Israel" — S. 4537
     /^maintaining our ironclad commitment to israel/i,
-    /^weapons resupply, stockpile, and alliance/i,
+    // "To authorize additional assistance to Israel using assets confiscated from
+    //  Iran" — S. 3081
     /^fortify israel act/i,
-    /^ensuring peace through strength in israel act/i,
-    /^expediting israeli aerial refueling act/i,
   ],
   'border-security': [
     /^secure the border act/i,
@@ -115,8 +138,15 @@ const ON_AXIS = {
 
   // "What level of military aid should the U.S. provide to Israel?" — the flow of
   // money and weapons, and any condition placed on it.
+  //
+  // ⚠ `resupply` WAS HERE AND WAS REMOVED 2026-09-08. It matched exactly one bill,
+  // the "Weapons Resupply, Stockpile, and Alliance-Israel Act" (S. 2216), which
+  // turns out to extend war reserves stockpile authority from 2027 to 2029 — an
+  // authority extension that sets no level and imposes no condition. The word was
+  // doing no other work, and a genuine resupply measure still matches on
+  // `munitions`, `ammunition` or `arms transfer`.
   'israel-military-aid':
-    /arms sale|arms transfer|foreign military sale|foreign military financing|defense articles|defense services|major defense equipment|munitions|ammunition|security assistance|security supplemental|supplemental appropriations|military aid|502B|human rights practices|halt the shipment|resupply/i,
+    /arms sale|arms transfer|foreign military sale|foreign military financing|defense articles|defense services|major defense equipment|munitions|ammunition|security assistance|security supplemental|supplemental appropriations|military aid|502B|human rights practices|halt the shipment/i,
 
   // "How should the government handle people who cross the border?" — every rung
   // is an asylum posture.
