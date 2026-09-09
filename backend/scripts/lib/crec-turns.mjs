@@ -97,6 +97,42 @@ export function recordSurname(fullName) {
  */
 export const isSenateGranule = (granuleId) => /-PgS/.test(String(granuleId));
 
+/**
+ * The granule id inside a Congressional Record citation, or null if the URL is not
+ * one. Citations point at the public page, which is the same bytes a verifier
+ * fetches:
+ *   https://www.govinfo.gov/content/pkg/CREC-2024-05-22/html/CREC-2024-05-22-pt1-PgS3844.htm
+ *
+ * ⚠ MATCHED ON THE PATH, NOT ON THE WORD "CREC" ANYWHERE IN THE URL. A press
+ * release that happens to link the Record, or a query string carrying the id, is
+ * not a Record citation and must not be treated as one.
+ */
+export function crecGranuleId(url) {
+  const m = /^https?:\/\/(?:www\.)?govinfo\.gov\/content\/pkg\/(CREC-\d{4}-\d{2}-\d{2})\/html\/(CREC-[\w.-]+)\.htm$/i
+    .exec(String(url || '').trim());
+  return m ? m[2] : null;
+}
+
+/**
+ * Tag-stripped text that KEEPS LINE BREAKS.
+ *
+ * ⚠ THE NEWLINES ARE NOT COSMETIC. A turn opens at the start of a line, so the
+ * whitespace-collapsing `rawOf` the verifier uses for claim terms destroys every
+ * attribution boundary — run it after the split, never before.
+ */
+export const plainLines = (html) => String(html || '')
+  .replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/&nbsp;|&#160;/g, ' ')
+  .replace(/&#8217;|&rsquo;/g, "'")
+  .replace(/&#8220;|&#8221;|&ldquo;|&rdquo;/g, '"')
+  .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+  .replace(/[ \t]+/g, ' ');
+
+/** Every surname that speaks in a granule — the diagnostic when attribution fails. */
+export const speakersIn = (text) => [...new Set(turns(text).map((t) => t.surname))];
+
 /** Turns spoken by one member, with an on-axis flag. */
 export function turnsBy(text, surname, axis = SPEECH_AXIS) {
   const want = String(surname).toUpperCase();
