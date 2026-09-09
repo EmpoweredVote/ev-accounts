@@ -7,6 +7,17 @@
 //  4. every cited URL is fetched and every distinctive claim term in the reasoning appears in its RAW
 //     HTML — the standard migration 1542 established after a row cited a CRS summary for a claim the
 //     bill text did not carry
+//  5. a Congressional Record citation is ATTRIBUTED: the granule must contain a speaking turn by
+//     this politician, and only THEIR turns count toward check 4 on that page
+//
+// 🔴 WHY CHECK 5 HAD TO EXIST. Check 4 is strong for bill text because something else already
+// ties the person to the document: the extend-by-bill pattern requires their bioguide id in the
+// BILLSTATUS sponsor/cosponsor roll. THE CONGRESSIONAL RECORD HAS NO SUCH TIE. A CREC page carries
+// every member who spoke on it, so a row could cite a real page, satisfy every claim term in its raw
+// HTML, and be quoting a DIFFERENT SENATOR — check 4 would pass it and a voter would read the wrong
+// person's words under this politician's spoke. Measured on the 2026-09-08 border sweep, Padilla's
+// surname and "asylum" co-occurred in 90 granules and he spoke in 6 of them; co-occurrence is not
+// attribution, and only a speaking turn is.
 //
 // 🔴 CHECK 3 USED TO REFUSE EVERY NON-LOCAL ROW, AND EVERY SEASON 2 TOPIC. Corrected 2026-09-04.
 // This script was written for a local roster and had both halves of check 3 hardcoded to that
@@ -40,7 +51,8 @@ import 'dotenv/config';
 import { readFileSync } from 'fs';
 import { Pool } from 'pg';
 import { crawlSite } from './lib/site-crawl.mjs';
-import { COMPASS_TIER_SQL, COMPASS_TIERS as TIERS } from './lib/office-tiers.mjs';
+import { COMPASS_TIER_SQL, COMPASS_TIERS as TIERS, SITTING_SENATOR_SQL } from './lib/office-tiers.mjs';
+import { crecGranuleId, plainLines, turnsBy, speakersIn, isSenateGranule, recordSurname } from './lib/crec-turns.mjs';
 
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith('--'));
@@ -143,8 +155,12 @@ for (const r of rows) {
   // path collapses to the CURRENT seat (open term first, then latest start) rather
   // than counting rows. Keyed by name, the row count IS the ambiguity check and
   // stays exactly as it was.
+  // `is_senator` comes from office-tiers' own predicate rather than a title test here.
+  // "Senator" is not a federal title — 453 people hold it and most sit in state
+  // senates — so any local re-derivation of this would admit them.
   const SELECT_POL = `SELECT p.id, p.full_name, g.name AS government, g.type AS gov_type, o.title, d.ocd_id,
-            ${COMPASS_TIER_SQL} AS tier
+            ${COMPASS_TIER_SQL} AS tier,
+            ${SITTING_SENATOR_SQL} AS is_senator
        FROM essentials.politicians p
        LEFT JOIN essentials.office_terms ot ON ot.politician_id = p.id
        LEFT JOIN essentials.offices o  ON o.id = ot.office_id
@@ -264,7 +280,55 @@ for (const r of rows) {
       failures++;
       continue;
     }
-    const raw = res.pages.map((p) => rawOf(p.html)).join(' ');
+    let raw = res.pages.map((p) => rawOf(p.html)).join(' ');
+
+    // ── check 5: a Record citation must be attributed ───────────────────────
+    // On a CREC page the page is NOT the unit of evidence — the speaking turn is.
+    // So this narrows the page's contribution to what this politician actually
+    // said, and check 4 then does the rest of the work unchanged: a row quoting
+    // somebody else fails because its claim terms are no longer on any cited page.
+    const granuleId = crecGranuleId(u);
+    if (granuleId) {
+      const who = pol.length === 1 ? pol[0] : null;
+      if (!who) {
+        console.log(`  🔴 FAIL ${u} is a Congressional Record citation and the politician did not resolve — cannot attribute`);
+        failures++;
+        continue;
+      }
+      if (!who.is_senator) {
+        // Fail-closed on purpose. The attribution gate only knows the Senate
+        // section today; admitting a House or Extensions granule would mean
+        // attributing "Mr. SMITH" with no way to exclude the member of the OTHER
+        // chamber who shares the surname. Widen this deliberately, with the
+        // chamber predicate alongside SITTING_SENATOR_SQL — never by loosening it.
+        console.log(`  🔴 FAIL ${u} is a Congressional Record citation, but this politician is not a sitting U.S. senator`);
+        console.log('     Record attribution is only implemented for the Senate section. Cite the underlying');
+        console.log('     measure instead, or extend lib/crec-turns.mjs with a House predicate first.');
+        failures++;
+        continue;
+      }
+      if (!isSenateGranule(granuleId)) {
+        console.log(`  🔴 FAIL ${granuleId} is not the Senate section (-PgS)`);
+        console.log('     A CREC package covers both chambers and Extensions of Remarks, and SMITH, SCOTT,');
+        console.log('     JOHNSON and YOUNG all sit in both — so a name here cannot be told from its twin.');
+        failures++;
+        continue;
+      }
+      const surname = recordSurname(who.full_name);
+      const text = plainLines(res.pages.map((pg) => pg.html).join('\n'));
+      const mine = turnsBy(text, surname);
+      if (!mine.length) {
+        console.log(`  🔴 FAIL ${granuleId} carries no speaking turn by ${surname}`);
+        console.log(`     speakers on this page: ${speakersIn(text).join(', ') || '(none — is this a Record page?)'}`);
+        console.log('     If the surname above is wrong rather than absent, add it to RECORD_SURNAME in');
+        console.log('     lib/crec-turns.mjs — a name that derives wrongly fails SILENTLY by matching nobody.');
+        failures++;
+        continue;
+      }
+      raw = rawOf(mine.map((t) => t.body).join(' '));
+      console.log(`  \u2696 ${granuleId}: ${mine.length} turn(s) by ${surname}, ${raw.length}c — only these count`);
+    }
+
     allRaw.push(raw);
     const miss = terms.filter((t) => !raw.includes(t));
     console.log(`  ${miss.length ? '⚠' : '✅'} ${u}  raw=${raw.length}c  terms ${terms.length - miss.length}/${terms.length}`);
