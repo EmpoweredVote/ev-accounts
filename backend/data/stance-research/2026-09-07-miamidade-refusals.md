@@ -1223,3 +1223,72 @@ and it is a refusal.**
 commission cannot reform bail — that is the court's. The Board's levers are diversion and treatment.
 The rung is still answerable here because its other two mechanisms are county powers, but a row resting
 on the bail clause alone would be the per-rung scope error.
+
+## `climate-change` across the whole Board — 6 matters read, 0 seated, and the ladder is half unavailable here
+
+### 🔴🔴 THE PATTERN WAS AIMED AT THE FROZEN LADDER, NOT THE PINNED ONE
+
+The two texts ask **different questions**, and this is the clearest example yet of the `CA_0012` trap:
+
+| source | question |
+| --- | --- |
+| **frozen** `compass_stances` | climate policy generally — "declare a climate emergency", "phase out fossil fuels by 2030" |
+| **pinned** (live) | **"How much should government do to expand clean energy?"** — mandates · subsidies · permitting and the grid · neutrality · repeal |
+
+`climate|greenhouse gas|carbon` is the **frozen** question's vocabulary. Against the pinned ladder it is
+off-axis, and it produced a plausible six-matter corpus that answers the wrong question. **Diff the two
+before writing a pattern, not just before writing a row.**
+
+⚠ **This also settles the open question left by the `local-environment` retune.** Bay water quality,
+septic-to-sewer and sea-level-rise resilience were removed from `local-environment` and the note said
+"whoever reads the climate-change ladder should decide". **They do not belong here either** — the pinned
+ladder asks about expanding clean energy, not adaptation. `resilien` returns 16/14 and none of it answers
+this question. No ladder in the open season asks it.
+
+### 🔴🔴 SCOPE: Fla. Stat. § 366.032 MAKES RUNG 1 LARGELY UNAVAILABLE AND RUNG 4 THE STATE'S POSITION
+
+Read from the statute, not from memory:
+
+- **(1)** a *county* "may not enact or enforce a resolution, ordinance, rule, code, or policy or take any
+  action that restricts or prohibits … the types or fuel sources of energy production which may be used,
+  delivered, converted, or supplied" by a public or electric utility;
+- **(2)** extends the same bar to appliances, except as needed to enforce the Building and Fire codes;
+- **(3)** the carve-out reaches only a government that **owns and directly controls** its own electric or
+  gas utility — **Miami-Dade does not; FPL serves it**;
+- **(5)** any such county policy existing on or before **1 July 2021 is VOID**.
+
+So **rung 1 — "require a shift to clean energy through mandates and firm deadlines" — is preempted**
+community-wide; only county-operations procurement survives, which is a far smaller thing than the rung
+describes. And 🔴🔴 **rung 4 — "stay neutral on energy and let the market choose" — is the posture state
+law imposes.** Seat anyone there from an empty record and you have published a preemption as a personal
+belief, thirteen times over. That is exactly the `rent-regulation` failure in a new topic.
+🟢 **Rungs 2 and 3 remain genuine county levers** — public investment, and permitting. Nobody used them.
+
+### The six, and why each is a refusal
+
+- **`252309` R-1221-25 · `260946` R-661-26 — Steinberg, both DERM requests.** The Southeast Florida
+  Regional Climate Change Compact cost-share. `252309` *reduces* the contribution and shortens the term
+  to terminate 30 Sep 2026; `260946` funds FY27-29. Department items, and the Compact is regional
+  adaptation coordination — it does not answer how much to expand clean energy.
+- **`252468` R-62-26 · `252175` — Gonzalez and Milian Orbis, own initiative.** The same item twice:
+  directing a **written report** on the EV fleet's performance and a disposition plan for the vehicles and
+  batteries at end of life. **A study directive is not a chair**, and the framing is as easily read as
+  scepticism about the fleet as support for it.
+- **`251531` R-784-25 — Steinberg, own.** **URGING** the Legislature to reinstate the 95 Express toll
+  exemption for hybrids and EVs. Binds nobody, and it asks the state to act.
+- **`251654` R-868-25 — Regalado, WASD request.** Ratifies a small-generator interconnection agreement
+  with FPL for the South District Wastewater Treatment Plant. Plant operations.
+
+### What was measured and rejected rather than added
+
+`energy` returns **16 / 11** and is almost entirely **WASTE-TO-ENERGY** incinerator siting — solid
+waste, not clean energy. `FPL|florida power` returns **18 / 18** and is almost entirely **utility
+easements** across county property. Either would have been the `landlord` shape.
+🔴 Two semantic traps were live in the old pattern: bare `carbon` matched **CALCIUM CARBONATE** at the
+Alexander Orr plant, and bare `interconnection` matched **EMERGENCY WATER INTERCONNECTION**. Both qualified.
+
+**The pinned ladder's own vocabulary scores ZERO across all 2,560 rows** — `clean energy`, `solar`,
+`photovoltaic`, `net metering`, `renewable energy`, `energy efficiency`, `charging station`, `electrif`,
+`emissions`, `microgrid`, `battery storage`, `net zero`, `property assessed clean energy`. Kept in the
+pattern anyway; a zero costs nothing and this is the corpus, not the detector, being empty. **This time
+the thin record is real — and it was only provable after 25 terms were measured.**

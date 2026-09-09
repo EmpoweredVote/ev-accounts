@@ -21,7 +21,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 this time with a missed-instrument control over their full unfiltered records rather than a lead
 count. Steinberg has **zero** prime-sponsored housing instruments in 187 matters.
 
-**Seven whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+**Eight whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
 `residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
 not apply in Florida at all, see below) and `city-sanitation` (43, **0 seated** / 14 refused).
@@ -346,9 +346,25 @@ pattern first.** The fourth is a preservation guard and passes under both by des
   ⚠ Rung 2 names **bail reform, which a county commission cannot do**. The rung survives here on its
   other two mechanisms; a row resting on the bail clause alone would be the per-rung scope error.
   ⚠ The frozen/pinned ladders **AGREE** for this topic — the `CA_0012` trap is per-topic, not universal.
-- **`climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5) · `homelessness` (5)** —
-  still unmeasured. Axis-test each before reading; on current form the count is as likely to be a
-  broken detector as a quiet record — jail-capacity just proved it twice over.
+- ✅ **`climate-change` CLOSED 2026-09-09 — 6 matters read, 0 seated.** 🔴🔴 **The pattern was aimed at
+  the FROZEN ladder.** Frozen asks about climate policy generally ("declare a climate emergency", "phase
+  out fossil fuels"); the **pinned** ladder asks *"How much should government do to expand clean
+  energy?"* — `climate|greenhouse gas|carbon` is the frozen question's vocabulary. **Diff the ladders
+  before writing a PATTERN, not just before writing a row.**
+  🔴🔴 **Fla. Stat. § 366.032 makes rung 1 largely unavailable and rung 4 the STATE'S position** — a
+  county may not restrict the fuel sources a utility supplies; the carve-out reaches only a government
+  that owns its own utility (Miami-Dade does not); and any such policy predating 1 Jul 2021 is **void**.
+  Seating anyone at 4 from an empty record publishes a preemption as a belief — the `rent-regulation`
+  failure in a new topic. Rungs 2 and 3 (investment, permitting) are real county levers; nobody used them.
+  ⚠ **This settles the `local-environment` open question: bay water quality, septic-to-sewer and
+  sea-level-rise resilience DO NOT belong here.** The pinned ladder is about expanding clean energy, not
+  adaptation. `resilien` returns 16/14 and answers none of it. **No open-season ladder asks it.**
+  🟢 **This time the thin record is REAL** — but only provable after 25 terms were measured. `energy`
+  (16/11) is waste-to-energy siting and `FPL` (18/18) is utility easements; both rejected. Two more
+  semantic traps found: `carbon` matched **CALCIUM CARBONATE**, `interconnection` matched **EMERGENCY
+  WATER INTERCONNECTION**.
+- **`homelessness-response` (9) · `civil-rights` (5) · `homelessness` (5)** — still unmeasured.
+  Axis-test each before reading, **and read the pinned ladder before writing the pattern.**
 - ⚠ **Before starting any of them, read the directive-and-report finding below.** A topic whose
   leads are mostly "DIRECTING THE COUNTY MAYOR … AND PROVIDE A REPORT" will refuse, however dense.
 - ✅ **`city-sanitation` is CLOSED** — 0 seated. Its pattern is sound; do not retune it.

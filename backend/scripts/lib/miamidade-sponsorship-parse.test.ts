@@ -259,6 +259,33 @@ describe('matchLocalTopics', () => {
     expect(matchLocalTopics(prohibit)).toContain('growth-and-development');
   });
 
+  // ── climate-change, retuned 2026-09-09 ────────────────────────────────────────
+  it('🔴 does not read CALCIUM CARBONATE or WATER INTERCONNECTION as climate policy', () => {
+    // Both were live matches. 251161 is a lagoon and softeners at the Alexander Orr
+    // water treatment plant; 250347 is an emergency water main with North Miami Beach.
+    const lagoon = 'OPERATIONAL AND RESILIENCY IMPROVEMENTS TO THE CALCIUM CARBONATE LAGOON '
+      + 'AND SOFTENERS AT ALEXANDER ORR WATER TREATMENT PLANT';
+    const water = 'INTERLOCAL AGREEMENT WITH THE CITY OF NORTH MIAMI BEACH REGARDING '
+      + 'EMERGENCY WATER INTERCONNECTION AND BILLING OF SANITARY SEWER SERVICE CHARGES';
+    expect(matchLocalTopics(lagoon)).not.toContain('climate-change');
+    expect(matchLocalTopics(water)).not.toContain('climate-change');
+  });
+
+  it('still matches real carbon and grid language', () => {
+    expect(matchLocalTopics('RESOLUTION SETTING A CARBON EMISSIONS REDUCTION TARGET'))
+      .toContain('climate-change');
+    expect(matchLocalTopics('SMALL GENERATOR INTERCONNECTION AGREEMENT WITH FLORIDA POWER & LIGHT'))
+      .toContain('climate-change');
+  });
+
+  it('🔴 does not read WASTE-TO-ENERGY siting as clean energy', () => {
+    // `energy` returns 16/11 and is almost entirely the Doral incinerator. The
+    // pinned ladder asks how much to expand CLEAN energy; an incinerator siting fight
+    // is solid-waste policy.
+    expect(matchLocalTopics('SITE SELECTION NEW WASTE TO ENERGY FACILITY OTHER THAN DORAL'))
+      .not.toContain('climate-change');
+  });
+
   // ── jail-capacity, retuned 2026-09-09 ──────────────────────────────────────────
   it('🔴 does not read "BAILES" or "BAILEY" as bail reform', () => {
     // Both were real matters in the old pattern's 8: a property conveyance and a

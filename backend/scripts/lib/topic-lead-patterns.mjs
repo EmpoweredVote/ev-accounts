@@ -180,7 +180,37 @@ export const LOCAL_TOPIC_PATTERNS = {
   //   the climate-change ladder should decide whether they belong there; do not add them back
   //   here, because this ladder has no rung they could evidence.
   'local-environment':        /wetland|environmentally endangered|\bEEL\b|tree (canopy|removal|preservation|protection|ordinance|trust fund)|conservation (land|easement|purpose)|mangrove|preservation area|natural forest|pine rockland|mitigation (bank|credit)|fee(s)? in[- ]lieu|environmental review|environmental impact statement|green space|open space requirement|landscap\w* (requirement|ordinance|standard|code)|environmental control plan/i,
-  'climate-change':           /climate|greenhouse gas|carbon|renewable energy|solar|energy efficiency|electric vehicle|\bEV charging\b|net zero/i,
+  // 🔴🔴 RETUNED 2026-09-09, AND THE PATTERN WAS AIMED AT THE WRONG LADDER. The frozen
+  //   `compass_stances` text asks about climate policy in general — "declare a climate emergency",
+  //   "phase out fossil fuels" — and `climate|greenhouse gas|carbon` is that question's vocabulary.
+  //   The SEASON-PINNED ladder asks something much narrower: **"How much should government do to
+  //   expand clean energy?"** — mandates, subsidies, permitting and the grid, neutrality, repeal.
+  //   This is the `CA_0012` trap producing a plausible pattern on the wrong question. Read the pin.
+  // 🔴 TWO SEMANTIC TRAPS, both found by reading what actually matched:
+  //   bare `carbon` matched "CALCIUM CARBONATE lagoon and softeners" at the Alexander Orr water
+  //   treatment plant (251161); bare `interconnection` matched "EMERGENCY WATER INTERCONNECTION"
+  //   with North Miami Beach (250347). Both are now qualified. That is three substring/semantic
+  //   traps in one day across three topics — `bail`/BAILEY, `vice`/serVICEs, `carbon`/CARBONATE.
+  // 🟢 THE PINNED LADDER'S OWN VOCABULARY SCORES ZERO, AND THAT IS THE ANSWER, NOT A BUG:
+  //   `clean energy` · `solar` · `photovoltaic` · `net metering` · `renewable energy` ·
+  //   `energy efficiency` · `charging station` · `electrif` · `emissions` · `microgrid` ·
+  //   `battery storage` · `net zero` · `property assessed clean energy` — ALL ZERO across 2,560
+  //   rows. Kept anyway: they are the rungs' words and cost no false positives.
+  // 🔴 `\benergy\b` AND `\bFPL\b` WERE MEASURED AND REJECTED. `energy` returns 16/11 and is almost
+  //   entirely WASTE-TO-ENERGY incinerator siting (solid waste, not clean energy). `FPL` returns
+  //   18/18 and is almost entirely UTILITY EASEMENTS across county property. Both would be pure
+  //   noise, the `rent-regulation`/`landlord` shape.
+  // 🔴🔴 SCOPE — READ THIS BEFORE SEATING ANYONE IN FLORIDA. Fla. Stat. s. 366.032(1) forbids a
+  //   county from enacting or enforcing any resolution, ordinance, rule, code or policy that
+  //   restricts or prohibits "the types or fuel sources of energy production" a utility may supply;
+  //   (2) extends that to appliances; (3)'s carve-out reaches only a government that OWNS AND
+  //   DIRECTLY CONTROLS its own electric utility, which Miami-Dade does not (FPL serves it); and
+  //   (5) VOIDS any such county policy that existed on or before 1 July 2021. So **rung 1 is
+  //   largely unavailable** community-wide, and **rung 4 — "stay neutral and let the market choose"
+  //   — is the posture STATE LAW IMPOSES**, so seating anyone there from inaction records a
+  //   preemption as a personal belief. That is the `rent-regulation` failure in a new topic.
+  //   Rungs 2 (public investment) and 3 (permitting) remain genuine county levers.
+  'climate-change':           /climate|greenhouse gas|carbon (emission|neutral|footprint|reduction|tax)|decarboniz|renewable energy|clean energy|solar|photovoltaic|net metering|property assessed clean energy|energy efficiency|electric vehicle|\bEV charging\b|charging station|electrif|emissions|microgrid|battery storage|net zero|(generator|grid|solar|distributed) interconnection/i,
   'fossil-fuels':             /natural gas|petroleum|fossil fuel|pipeline|drilling|fuel terminal/i,
   'transportation-priorities':/transit|bus rapid|metrorail|metromover|bicycle|pedestrian|sidewalk|complete streets|road capacity|traffic|parking requirement|\bSMART plan\b|rail corridor/i,
   // 🔴 NARROWED 2026-09-07 after reading all 24 of Bastien's leads and seating
