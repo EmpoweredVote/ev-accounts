@@ -120,12 +120,36 @@ const NAMED_ON_AXIS = {
     //  Iran" — S. 3081
     /^fortify israel act/i,
   ],
+  // 🔴 TWO ENTRIES WERE REMOVED FROM THIS LIST ON 2026-09-08, FOR THE SAME
+  // REASON AS THE FOUR ABOVE, AND THEY WERE THE 2ND AND 3RD LARGEST CLUSTERS ON
+  // THIS TOPIC. Both are real immigration bills. Neither takes an asylum posture,
+  // which is the only thing these five rungs measure.
+  //
+  //   "Protect Vulnerable Immigrant Youth Act" (S. 1965, S. 1885) — exempts
+  //     SPECIAL IMMIGRANT JUVENILE visas from annual numerical caps. SIJ status is
+  //     for children ALREADY IN the United States who were abused, abandoned or
+  //     neglected by a parent. It is a visa cap, and it says nothing about people
+  //     who cross the border. 24 senator-rows across the two Congresses.
+  //   "Dignity for Detained Immigrants Act" (S. 3702, S. 1208, H.R. 2760) — sets
+  //     DETENTION FACILITY STANDARDS: ABA civil detention standards, unannounced
+  //     OIG inspections, 24-hour death reporting, an end to private detention
+  //     contracts. Conditions of confinement, not who may claim asylum.
+  //     21 senator-rows.
+  //
+  // The three that survive were read the same way and hold. Their stated purpose is
+  // quoted, per the rule above.
   'border-security': [
+    // "This bill addresses issues regarding immigration and border security,
+    //  including by IMPOSING LIMITS TO ASYLUM ELIGIBILITY" — S. 2824. Limits asylum
+    //  to those arriving at a port of entry and bars processing between them.
     /^secure the border act/i,
+    // "To close loopholes in the immigration laws that serve as incentives to
+    //  aliens to attempt to enter the United States unlawfully" — S. 5371, S. 685.
+    //  Raises the credible-fear standard and repatriates unaccompanied children.
     /^stopping border surges act/i,
+    // "This bill places restrictions on non-U.S. nationals seeking asylum" —
+    //  S. 348. Requires a consular pre-interview and bars third-country transit.
     /^asylum abuse reduction act/i,
-    /^protect vulnerable immigrant youth act/i,
-    /^dignity for detained immigrants act/i,
   ],
 };
 
@@ -150,8 +174,17 @@ const ON_AXIS = {
 
   // "How should the government handle people who cross the border?" — every rung
   // is an asylum posture.
+  //
+  // ⚠ `detention`, `detained`, `unaccompanied` and `immigrant youth` WERE HERE AND
+  // WERE REMOVED 2026-09-08, alongside the two named entries above. They matched on
+  // SUBJECT MATTER rather than on posture, and every bill they reached on their own
+  // turned out to be about something the rungs do not measure: facility standards
+  // for people already detained, sponsor background checks before a child is placed
+  // (Stop Human Trafficking of Unaccompanied Migrant Children Act, S. 286, S. 1461),
+  // and the SIJ visa cap. A measure that genuinely changes asylum detention still
+  // matches on `asylum`, `credible fear` or `expedited removal`.
   'border-security':
-    /asylum|refugee|credible fear|expedited removal|\bparole\b|detention|detained|unaccompanied|immigrant youth|deportation|removal proceedings|remain in mexico|migrant protection protocols|inadmissib|withholding of removal/i,
+    /asylum|refugee|credible fear|expedited removal|\bparole\b|deportation|removal proceedings|remain in mexico|migrant protection protocols|inadmissib|withholding of removal/i,
 };
 
 /**
