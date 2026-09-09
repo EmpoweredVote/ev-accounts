@@ -165,10 +165,18 @@ per-state dimension, so the refusals file is the only place this can be recorded
 12. 🔴🔴 **A CITED-ID CONTROL RUNS ONE DIRECTION. RUN IT BOTH WAYS.** "Every cited id resolves,
     names the instrument the prose names, and carries the right prime sponsor" is *sources → reality*.
     It cannot see an instrument the prose **names** that no source points at. Regalado's two rows pass
-    the one-way control on all five citations — and `residential-zoning` asserted ordinance 26-47
-    (`261065`) with no URL for it, fixed by `CC_0081`. **List every instrument the reasoning names,
-    then check that list against `sources`.** `reasoning` is voter-facing: an uncited named instrument
-    is a claim rendered beside links that do not carry it.
+    the one-way control on all five citations — and **both rows named an instrument nothing cited**:
+    `residential-zoning` asserted ordinance 26-47 (`261065`), fixed by `CC_0081`; `transportation-priorities`
+    asserted "the state grant agreements funding bus operations and a new park-and-ride facility on the
+    South Dade Transitway" — R-279-25 (`250457`), R-210-26 (`260354`) and R-267-26 (`260527`), all three
+    sole-prime hers and all `requester = Transportation and Public Works` — fixed by `CC_0082`. Both rows
+    now cite every instrument they name. **List every instrument the reasoning names, then check that
+    list against `sources`.** `reasoning` is voter-facing: an uncited named instrument is a claim
+    rendered beside links that do not carry it.
+    ⚠ **CITE THE CLAIM, NOT THE THEME.** R-281-25 (`250461`) is also hers, also adopted, also on that
+    corridor — and funds *enhancements to existing stops*, not "a new park-and-ride facility". It was
+    deliberately left out. Padding a source list with adjacent instruments is how it stops meaning
+    anything.
 
 ## Cheapest next steps
 
