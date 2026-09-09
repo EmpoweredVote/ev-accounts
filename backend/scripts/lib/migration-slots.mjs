@@ -115,6 +115,56 @@ export function authorOfAddedFile(repoRoot, base, file) {
   return tryGit(repoRoot, ["config", "user.email"]) || null;
 }
 
+/** Every basename slot `key` carries on `ref`, as a Map key -> basename. */
+function slotNamesOn(repoRoot, ref) {
+  const seen = new Map();
+  if (!ref) return seen;
+  const out = tryGit(repoRoot, ["ls-tree", "--name-only", "-r", ref, `${MIGRATIONS_DIR}/`]);
+  if (out === null) return seen;
+  for (const file of out.split("\n").filter(Boolean)) {
+    const slot = slotOf(file);
+    if (slot && !seen.has(slot.key)) seen.set(slot.key, path.basename(file));
+  }
+  return seen;
+}
+
+/**
+ * 🔴 WHICH NAME A SLOT REPORTS MUST NOT DEPEND ON REF SCAN ORDER.
+ *
+ * This used to keep the FIRST basename it met per slot. `for-each-ref` lists refs sorted by
+ * refname with heads before remotes, so for a slot whose file was renamed, the winner was
+ * whichever branch happened to sort first — a property of local branch NAMES, not of the
+ * repository's history.
+ *
+ * That put a wrong name on the board and made `sync` disagree with itself across machines.
+ * Measured 2026-09-09: CA_0077 was recorded as `CA_0077_pin_education_topics_season2.sql`,
+ * the loser of a collision that PR #367 had already resolved in master's favour, because the
+ * seed ran where a stale branch sorted first. `sync` then reported drift on one checkout and
+ * nothing on another, for the same row.
+ *
+ * So the base ref decides: it is the tree everyone shares, and it is what "this slot is that
+ * file" means. Only when no base ref carries the slot — a number claimed solely on branches —
+ * is there nothing authoritative to read, and then the fallback is still deterministic: the
+ * name the most refs carry, ties broken by name.
+ *
+ * 🔴 THE FALLBACK IS NOT THE FIX, AND MUST NOT BE READ AS ONE. Measured on this repo the same
+ *    day: CA_0077's retired name sits on 67 refs and the name master carries on 33, because
+ *    stale branches outnumber live ones and every one of them predates the rename. A popularity
+ *    rule would have chosen the wrong file too — just stably. It earns its place only where
+ *    there is no base-ref answer at all, and `onBase: false` marks every row that used it.
+ *
+ * ⚠ THE ALTERNATIVES ARE KEPT, NOT DISCARDED. `names` lists every basename with the refs
+ *   behind it, so a caller can say WHICH other file claims the slot instead of only that one
+ *   does. `onBase` says whether `filename` was read from the base ref or picked by fallback,
+ *   because those two deserve different wording in a warning.
+ */
+function chooseName(names, baseName) {
+  if (baseName && names.has(baseName)) return { filename: baseName, onBase: true };
+  const ranked = [...names.entries()].sort((a, b) =>
+    b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  return { filename: ranked[0]?.[0] ?? null, onBase: false };
+}
+
 export function historicalSlots(repoRoot) {
   const bySlot = new Map();
   for (const ref of scannableRefs(repoRoot)) {
@@ -128,15 +178,31 @@ export function historicalSlots(repoRoot) {
           namespace: slot.ns,
           num: Number(slot.num),
           key: slot.key,
-          filename: path.basename(file),
+          filename: null,      // decided below, from the base ref
+          onBase: false,
+          names: new Map(),    // basename -> refs carrying it
           refs: [],
         });
       }
       const row = bySlot.get(slot.key);
       const l = label(ref);
       if (!row.refs.includes(l)) row.refs.push(l);
+      const name = path.basename(file);
+      if (!row.names.has(name)) row.names.set(name, []);
+      if (!row.names.get(name).includes(l)) row.names.get(name).push(l);
     }
   }
+
+  const baseNames = slotNamesOn(repoRoot, resolveBase(repoRoot));
+  for (const row of bySlot.values()) {
+    const { filename, onBase } = chooseName(row.names, baseNames.get(row.key));
+    row.filename = filename;
+    row.onBase = onBase;
+    row.names = [...row.names.entries()]
+      .map(([name, refs]) => ({ filename: name, refs }))
+      .sort((a, b) => b.refs.length - a.refs.length || a.filename.localeCompare(b.filename));
+  }
+
   return [...bySlot.values()].sort((a, b) =>
     a.namespace === b.namespace ? a.num - b.num : a.namespace.localeCompare(b.namespace));
 }
