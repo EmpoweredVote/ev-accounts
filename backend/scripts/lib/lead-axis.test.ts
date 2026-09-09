@@ -113,12 +113,35 @@ describe('classifyLead — border-security', () => {
     // why NAMED_ON_AXIS exists and why every entry in it has to be read by a person.
     expect(classifyLead(lead('border-security', 'S. 2824', 'Secure the Border Act of 2023'))).toBe('on-axis');
     expect(classifyLead(lead('border-security', 'S. 1473', 'Asylum Abuse Reduction Act'))).toBe('on-axis');
+    expect(classifyLead(lead('border-security', 'S. 5371', 'Stopping Border Surges Act'))).toBe('on-axis');
+    // These reach the axis on their own words rather than through the named list.
+    expect(classifyLead(lead('border-security', 'S. 112', 'Make the Migrant Protection Protocols Mandatory Act of 2025'))).toBe('on-axis');
+    expect(classifyLead(lead('border-security', 'S. 3488', 'Asylum Reform and Loophole Closure Act'))).toBe('on-axis');
   });
 
   it('puts interdiction and reporting off the axis', () => {
     // Both are about the border. The ladder is about the people who cross it.
     expect(classifyLead(lead('border-security', 'S. 987', 'Stop Fentanyl Border Crossings Act'))).toBe('off-axis');
     expect(classifyLead(lead('border-security', 'S. 2409', 'Southern Border Transparency Act of 2023'))).toBe('off-axis');
+  });
+
+  it('puts the immigration bills that take no asylum posture off the axis', () => {
+    // The two named entries removed on 2026-09-08. Both are real immigration
+    // bills; neither says anything about who may claim asylum, which is the only
+    // thing this ladder's five rungs measure. Together they carried 45 senator-rows.
+    expect(classifyLead(lead('border-security', 'S. 1965', 'Protect Vulnerable Immigrant Youth Act'))).toBe('off-axis');
+    expect(classifyLead(lead('border-security', 'S. 1885', 'Protect Vulnerable Immigrant Youth Act'))).toBe('off-axis');
+    expect(classifyLead(lead('border-security', 'S. 3702', 'Dignity for Detained Immigrants Act'))).toBe('off-axis');
+    expect(classifyLead(lead('border-security', 'S. 1208', 'Dignity for Detained Immigrants Act of 2023'))).toBe('off-axis');
+    // And the sponsor-vetting bills the bare word `unaccompanied` used to reach.
+    expect(classifyLead(lead('border-security', 'S. 286', 'Stop Human Trafficking of Unaccompanied Migrant Children Act of 2025'))).toBe('off-axis');
+    expect(classifyLead(lead('border-security', 'S. 1461', 'Stop Human Trafficking of Unaccompanied Migrant Children Act of 2023'))).toBe('off-axis');
+  });
+
+  it('still reaches a detention measure that changes asylum itself', () => {
+    // Dropping `detention` cost nothing the axis needs: a measure that detains
+    // ASYLUM SEEKERS still matches, on the word that carries the posture.
+    expect(classifyLead(lead('border-security', 'S. 0000', 'A bill to require the detention of asylum seekers pending a credible fear determination.'))).toBe('on-axis');
   });
 
   it('discards anniversaries and heritage months', () => {
