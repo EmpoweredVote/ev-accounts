@@ -320,10 +320,28 @@ pattern first.** The fourth is a preservation guard and passes under both by des
 
 ## Cheapest next steps
 
-- **`jail-capacity` (13) · `climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5)
-  · `homelessness` (5)** — all thin. Axis-test each before reading; on current form roughly two of
-  three patterns are mis-specified, and a thin count is as likely to be a broken detector as a
-  quiet record.
+- ✅ **`jail-capacity` RETUNED 2026-09-09 — AND IT WAS NEVER THIN.** "13 leads" was a broken
+  detector, not a quiet record: **13 / 8 → 44 / 20.** Two of the old eight matters were substring
+  artefacts (bare `bail` matched "**BAIL**ES COMMONS" and "JUDGE MELVIA **BAIL**EY-GREEN TERRACE"),
+  and `corrections (facility|department)` scored **zero** while bare `corrections` scored 5 — the
+  county writes "Corrections and Rehabilitation".
+  🟢 **What it could not see is the heart of the topic:** the **Mental Health Center** cluster
+  (`261104` `261093` `261088` `260425` `260201` `250513` `261006`), **MISDEMEANOR DIVERSION**
+  (`250837` `250794` `252312`) and `250119` SECOND CHANCE ACT COMMUNITY-BASED REENTRY. Rung 1 is
+  *"redirecting incarceration funding into community-based mental health … to shrink the jail
+  system"* — the pattern was blind to its own rung 1.
+  🔴🔴 **`consent decree` MEASURED AND REJECTED: 40 / 39, every one a WATER AND SEWER contract**
+  under the WASD decree; `consent decree AND (jail|correction)` returns **zero**. Miami-Dade's jail
+  decree is real but this corpus does not name it. 🔴 **Bare `diversion` rejected too** — 34/13, the
+  extras are WASTE diversion. Qualified instead.
+  ▶️ **NOT YET READ.** The corpus is now worth a pass. Start with `260843` PRETRIAL RELEASE ON
+  NONMONETARY CONDITIONS and `261019` COMPETENCY RESTORATION TGK/CHS, then the MHC cluster — but
+  ⚠ `261093` is a **lease and land-use amendment** (Rodriguez prime, **Withdrawn**), so the cluster
+  may be property administration rather than a position. Read the operative section.
+  ⚠ The frozen/pinned ladders **AGREE** for this topic — the `CA_0012` trap is per-topic, not universal.
+- **`climate-change` (9) · `homelessness-response` (9) · `civil-rights` (5) · `homelessness` (5)** —
+  still unmeasured. Axis-test each before reading; on current form the count is as likely to be a
+  broken detector as a quiet record — jail-capacity just proved it twice over.
 - ⚠ **Before starting any of them, read the directive-and-report finding below.** A topic whose
   leads are mostly "DIRECTING THE COUNTY MAYOR … AND PROVIDE A REPORT" will refuse, however dense.
 - ✅ **`city-sanitation` is CLOSED** — 0 seated. Its pattern is sound; do not retune it.

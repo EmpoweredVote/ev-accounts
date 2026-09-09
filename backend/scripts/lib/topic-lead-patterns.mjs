@@ -202,7 +202,35 @@ export const LOCAL_TOPIC_PATTERNS = {
   'homelessness':             /public camping|encampment|sleeping in public|panhandl|loitering|vagrancy/i,
   'homelessness-response':    /homeless(ness)? (trust|services|assistance|program|shelter)|continuum of care|emergency shelter|permanent supportive housing|\bhomeless\b/i,
   'public-safety-approach':   /police (budget|staffing|department|funding)|law enforcement (budget|staffing)|crisis intervention|co-responder|mental health response|community policing|body[- ]worn camera/i,
-  'jail-capacity':            /corrections (facility|department)|jail|pretrial|bail|bond schedule|diversion program|incarcerat|detention facility/i,
+  // 🔴 RETUNED 2026-09-09. The old pattern returned 13 leads / 8 matters and was quoted as
+  //   evidence this topic was THIN. It was not: the count was a broken detector. 44 / 20 now.
+  // 🔴🔴 TWO OF THE OLD PATTERN'S EIGHT MATTERS WERE SUBSTRING ARTEFACTS. Bare `bail` matched
+  //   "BAILES COMMONS" and "JUDGE MELVIA BAILEY-GREEN TERRACE" — a property conveyance and a
+  //   street co-designation. `\bbail\b` returns the one real matter. This is the same trap as
+  //   `vice` in "serVICEs" over in growth-and-development; audit a term against real text.
+  // 🔴 `corrections (facility|department)` SCORED ZERO while bare `corrections` scored 5/4 — the
+  //   qualifier killed it. The county writes "Corrections and Rehabilitation". Now
+  //   `corrections\b|correctional`; bare singular `correction` is left out (scrivener's corrections).
+  // 🟢 WHAT THE OLD PATTERN COULD NOT SEE, and it is the heart of the topic: the MENTAL HEALTH
+  //   CENTER cluster — 261104, 261093, 261088, 260425, 260201, 250513, plus 261006 — and the
+  //   MISDEMEANOR DIVERSION items 250837, 250794, 252312, and 250119 SECOND CHANCE ACT
+  //   COMMUNITY-BASED REENTRY. Rung 1 is "redirecting incarceration funding into community-based
+  //   mental health … to shrink the jail system". The pattern was blind to rung 1's own subject.
+  // 🔴🔴 `consent decree` WAS MEASURED AND REJECTED: 40 leads / 39 matters, EVERY ONE a water and
+  //   sewer construction contract under the WASD decree, and `(?=.*consent decree)(?=.*(jail|
+  //   correction))` returns ZERO. Miami-Dade's jail consent decree is real, but this corpus does
+  //   not name it. Adding the term would have been `rent-regulation`'s `landlord` again.
+  // 🔴 BARE `diversion` IS ALSO REJECTED — 34/13, and the extras are WASTE diversion (252009,
+  //   251068, 251585). The term is qualified instead: jail/misdemeanor/pretrial/criminal/court
+  //   diversion, or diversion program/service/project. A word can be on-axis in one policy
+  //   vocabulary and noise in another.
+  // 🟢 ZERO-SCORING LADDER VOCABULARY KEPT: `overcrowd`, `restorative justice`,
+  //   `detention (facility|center)`, `nonmonetary`. These are the rungs' own words; a zero costs
+  //   no false positives.
+  // ⚠ RESIDUAL, measured and accepted: 252422 AXON (TASERS), 251876 INMATE MEAL SERVICE, 250330
+  //   COMMUNITY PARTNERS and 261512 GOVERNMENT FACILITIES HEARING are corrections-department
+  //   operations rather than capacity policy. Correct leads, wrong chairs — read past them.
+  'jail-capacity':            /\bjails?\b|corrections\b|correctional|\bMDCR\b|turner guilford|\bTGK\b|inmate|incarcerat|detention (facility|center)|pretrial|\bbail\b|bond schedule|nonmonetary|non-monetary|(jail|misdemeanor|pretrial|criminal|court) diversion|diversion (program|service|project)|misdemeanor|competency restoration|re-?entry|second chance|mental health center|\bMHC\b|overcrowd|restorative justice/i,
   'local-immigration':        /\bICE\b|immigration detainer|287\(g\)|sanctuary|immigration enforcement|undocumented|federal immigration/i,
   'city-sanitation':          /solid waste|garbage|refuse collection|litter|illegal dumping|recycling|sanitation|street sweeping/i,
   'data-centers':             /data cent(er|re)|hyperscale|server farm|utility rate|ratepayer/i,

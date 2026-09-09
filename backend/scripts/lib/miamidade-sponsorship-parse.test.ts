@@ -259,6 +259,40 @@ describe('matchLocalTopics', () => {
     expect(matchLocalTopics(prohibit)).toContain('growth-and-development');
   });
 
+  // ── jail-capacity, retuned 2026-09-09 ──────────────────────────────────────────
+  it('🔴 does not read "BAILES" or "BAILEY" as bail reform', () => {
+    // Both were real matters in the old pattern's 8: a property conveyance and a
+    // street co-designation for a judge. Bare `bail` found them; `bail` does not.
+    const conveyance = 'CONVEYANCE OF PROPERTY BAILES COMMONS SECOND ADDITION';
+    const street = 'CODESIGNATION - JUDGE MELVIA BAILEY-GREEN TERRACE';
+    expect(matchLocalTopics(conveyance)).not.toContain('jail-capacity');
+    expect(matchLocalTopics(street)).not.toContain('jail-capacity');
+    expect(matchLocalTopics('PRETRIAL RELEASE ON NONMONETARY CONDITIONS')).toContain('jail-capacity');
+  });
+
+  it('files the Mental Health Center and misdemeanor diversion under jail-capacity', () => {
+    // Rung 1 is "redirecting incarceration funding into community-based mental health
+    // ... to shrink the jail system". The old pattern could not see rung 1's own subject.
+    expect(matchLocalTopics('MENTAL HEALTH CENTER')).toContain('jail-capacity');
+    expect(matchLocalTopics('MISDEMEANOR DIVERSION SERVICES')).toContain('jail-capacity');
+    expect(matchLocalTopics('SECOND CHANCE ACT COMMUNITY-BASED REENTRY PROGRAM'))
+      .toContain('jail-capacity');
+  });
+
+  it('🔴 does not read WASTE diversion as criminal-justice diversion', () => {
+    // Bare `diversion` scored 34/13 and the extras were recycling. The term is qualified.
+    const waste = 'RESOLUTION DIRECTING MAYOR TO EVALUATE INCENTIVE-BASED PROGRAMS TO '
+      + 'ENCOURAGE WASTE DIVERSION';
+    expect(matchLocalTopics(waste)).not.toContain('jail-capacity');
+  });
+
+  it('matches how the county actually writes its jail department', () => {
+    // `corrections (facility|department)` scored ZERO; the county writes
+    // "Corrections and Rehabilitation".
+    expect(matchLocalTopics('MIAMI-DADE CORRECTIONS AND REHABILITATION INMATE MEAL SERVICE'))
+      .toContain('jail-capacity');
+  });
+
   it('🔴 excludes a chair designation but NOT a title merely containing "services"', () => {
     // The two substring traps the carve-out audit found. `vice` matched "serVICEs";
     // `designat` matched "coDESIGNATion". `chair` alone does the real work.
