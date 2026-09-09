@@ -9,9 +9,6 @@ export interface ServiceKeyRequest extends Request {
 // Keys are env var values; values are arrays of permitted source types.
 // If an env var is undefined/empty, it is not added to the map.
 const SERVICE_KEY_MAP: Record<string, string[]> = {};
-if (env.QUEST_SERVICE_KEY) {
-  SERVICE_KEY_MAP[env.QUEST_SERVICE_KEY] = ['validation_quest_completion'];
-}
 if (env.TRIVIA_SERVICE_KEY) {
   SERVICE_KEY_MAP[env.TRIVIA_SERVICE_KEY] = ['civic_trivia_championship_score'];
 }
@@ -23,9 +20,6 @@ if (env.LISTENING_XP_KEY) {
   }
 if (env.ESSENTIALS_SERVICE_KEY) {
   SERVICE_KEY_MAP[env.ESSENTIALS_SERVICE_KEY] = ['essentials-rep-lookup'];
-}
-if (env.VQ_SERVICE_KEY) {
-  SERVICE_KEY_MAP[env.VQ_SERVICE_KEY] = ['vq_ingest'];
 }
 
 /**

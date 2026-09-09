@@ -43,7 +43,6 @@ import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js';
 import essentialsCoordinateLookupRouter from './routes/essentialsCoordinateLookup.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
-import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
@@ -178,7 +177,6 @@ app.use('/api/candidates', candidatesRouter);
 // GET /api/essentials/chambers/:id
 // GET /api/essentials/districts/:id
 // NOTE: /candidates, /politicians, /browse mounts must come BEFORE /essentials to prevent path capture
-app.use('/api/essentials/ingest', essentialsIngestRouter);
 app.use('/api/essentials/browse', essentialsBrowseRouter);
 app.use('/api/essentials/bodies', essentialsBodiesRouter);
 // Phase 212-05: place-name resolver + national-fallback floor. Must be

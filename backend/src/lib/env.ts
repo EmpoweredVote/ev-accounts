@@ -41,14 +41,10 @@ const envSchema = z.object({
   // XP service keys — one per feature repo. Optional: undefined key = not in
   // SERVICE_KEY_MAP = 401 on all requests from that repo. Kept optional so
   // existing integration tests (health, auth, account) don't break at startup.
-  QUEST_SERVICE_KEY: z.string().optional(),
   TRIVIA_SERVICE_KEY: z.string().optional(),
   LISTENING_XP_KEY: z.string().optional(),
   ADMIN_SERVICE_KEY: z.string().optional(),
   ESSENTIALS_SERVICE_KEY: z.string().optional(),
-  // VQ_SERVICE_KEY: used by Validation Quests to POST crowd-verified officeholder
-  // data to /api/essentials/ingest/quest-verified. Optional: absent = 401 on ingest.
-  VQ_SERVICE_KEY: z.string().optional(),
   // Gem service keys — JSON map: { "key": ["yellow"] }. Optional: absent = no gem award endpoints active.
   GEMS_SERVICE_KEYS: z.string().optional(),
   // Campaign finance adapter keys — all optional; absent = feature degraded but server still starts.

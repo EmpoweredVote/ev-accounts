@@ -76,7 +76,6 @@ folded apps were already on Express 5).
 | `DATABASE_URL` | Supabase (scoped role `ev_api`) | **Runtime uses the least-privilege `ev_api` role, NOT `postgres`** (see "Database role" below). Session pooler, port 5432. Format: `postgresql://ev_api.<ref>:<pwd>@<pooler-host>:5432/postgres`. Do NOT use the transaction pooler (port 6543) — multi-statement queries fail there. |
 | `REDIS_URL` | Upstash Console | `rediss://...` (TLS URL) |
 | `CORS_ORIGIN` | Set manually | Frontend origin, e.g. `https://empoweredvote.com` |
-| `QUEST_SERVICE_KEY` | Shared secret | Historically authenticated the standalone Validation Quests service against this API. VQ is now folded in and most calls run in-process; still read by the consensus job's XP/callback path until Phase 4 finishes converting it. |
 | `TRIVIA_SERVICE_KEY` | Shared secret | Historically authenticated the standalone CTC service. CTC is now folded in; the XP-award path still uses it until Phase 4 completes. |
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
