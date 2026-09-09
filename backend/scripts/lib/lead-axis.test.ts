@@ -73,10 +73,32 @@ describe('classifyLead — israel-military-aid', () => {
       "A resolution requesting information on Israel's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961."))).toBe('on-axis');
   });
 
-  it('keeps arms-sale disapprovals and aid bills', () => {
+  it('keeps arms-sale disapprovals', () => {
     expect(classifyLead(lead('israel-military-aid', 'SJRES. 111',
       'A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.'))).toBe('on-axis');
-    expect(classifyLead(lead('israel-military-aid', 'S. 4392', 'Stand with Israel Act'))).toBe('on-axis');
+  });
+
+  it('rejects the four bills whose short titles fooled an earlier draft', () => {
+    // Each was in NAMED_ON_AXIS until somebody read it. The first carried 40 of
+    // 100 senators, so a rung-1 extension off it would have published 40 claims
+    // sourced to a bill about United Nations dues.
+    expect(classifyLead(lead('israel-military-aid', 'S. 1521', 'Stand with Israel Act'))).toBe('off-axis');
+    expect(classifyLead(lead('israel-military-aid', 'S. 2216', 'Weapons Resupply, Stockpile, and Alliance-Israel Act'))).toBe('off-axis');
+    expect(classifyLead(lead('israel-military-aid', 'S. 1504', 'Ensuring Peace Through Strength in Israel Act'))).toBe('off-axis');
+    expect(classifyLead(lead('israel-military-aid', 'S. 510', 'Expediting Israeli Aerial Refueling Act of 2023'))).toBe('off-axis');
+  });
+
+  it('keeps the three named bills whose purpose was actually read', () => {
+    expect(classifyLead(lead('israel-military-aid', 'S. 4337', 'Israel Security Assistance Support Act'))).toBe('on-axis');
+    expect(classifyLead(lead('israel-military-aid', 'S. 4537', "Maintaining Our Ironclad Commitment to Israel's Security Act"))).toBe('on-axis');
+    expect(classifyLead(lead('israel-military-aid', 'S. 3081', 'Fortify Israel Act'))).toBe('on-axis');
+  });
+
+  it('keeps a specific arms-sale disapproval, the rung 3 instrument', () => {
+    // S.J.Res. 138 prohibits a named FMS: 12,000 BLU-110A/B 1,000-pound bomb
+    // bodies. Offensive ordnance, not missile defense.
+    expect(classifyLead(lead('israel-military-aid', 'SJRES. 138',
+      'A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.'))).toBe('on-axis');
   });
 
   it('puts joint R&D off the axis — cooperation is not an aid level', () => {
@@ -110,7 +132,7 @@ describe('classifyPair', () => {
     const { verdict, counts } = classifyPair([
       lead('israel-military-aid', 'SRES. 417', 'A resolution standing with Israel against terrorism.'),
       lead('israel-military-aid', 'SRES. 90', 'A resolution celebrating the 75th anniversary of the founding of the State of Israel, and for other purposes.'),
-      lead('israel-military-aid', 'S. 4392', 'Stand with Israel Act'),
+      lead('israel-military-aid', 'S. 4337', 'Israel Security Assistance Support Act'),
     ]);
     expect(verdict).toBe('settleable');
     expect(counts).toEqual({ 'on-axis': 1, 'off-axis': 0, 'non-operative': 2 });
