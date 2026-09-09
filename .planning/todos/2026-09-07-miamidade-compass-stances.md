@@ -189,6 +189,37 @@ per-state dimension, so the refusals file is the only place this can be recorded
     `miamidade-sponsorship-leads.mjs --name="<member>"` and grep its report for the reference number —
     that is how R-664-26/R-665-26/R-497-25/R-498-25 were found (`261171`, `261172`, `250903`, `250906`).
     Then open every matter before citing it; the report is a lead, not proof.
+    ✅ **SWEEP CLOSED 2026-09-09. All twelve Season 2 rows checked both ways; SIX carried the defect.**
+    residential-zoning 1/1 (`CC_0081`) · transportation-priorities 1/1 (`CC_0082`) · housing 3 of 5
+    (`CC_0083`) · growth-and-development 1 of 4 (`CC_0084`, Cohen Higgins: R-1173-25 `252187` and
+    R-337-26 `260291`, both sole-prime hers, both "community-specific thematic zoning district") ·
+    economic-development 0 of 1. **26 of 26 citations passed the one-way control throughout.**
+    Rows now carry 52 citations, up from 30. 🔴 **Half a corpus is the base rate for prose written
+    before the control existed — assume it for Nashville and any other pre-2026-09-08 pass.**
+
+## 🔴 OPEN, NEEDS A HUMAN: four rows describe the LU-8H vote more precisely than the record does
+
+Found while reading `241888` in full to check the vote claims. **Not a citation gap and not fixable in
+a `sources` migration** — it is voter-facing prose, so it wants a reviewed edit.
+
+The page's legislative history for 6/26/2025 records, in order: Chairman Rodriguez moved to **reject
+staff's recommendation and approve the 1:1 ratio**; that motion **FAILED 6-4** (Steinberg, Cohen
+Higgins, Garcia and McGhee voted "no"; Gonzalez, Hardemon and Higgins absent); the County Attorney
+advised **7 votes were needed**; Garcia moved to reconsider, **passed 10-0**; Rodriguez restated the
+motion; and then "the Board voted to reject staff's recommendation and approve the application as
+presented" — **with no tally recorded at all.**
+
+- **Rodriguez's row says "The Board adopted it 7 votes to 3."** No source shows that tally. 7 is the
+  number of votes the County Attorney said were REQUIRED, which is the likeliest origin of the error.
+- **Cohen Higgins, Steinberg and Garcia's rows say each "voted No" and the Board "adopted it anyway."**
+  Their No is real and points the right way — against loosening LU-8H — but it is on the failed
+  pre-reconsideration motion. The adoption vote is untallied, so **no source shows how any member voted
+  on adoption.**
+
+⚠ **No chair moves either way**: Rodriguez's 4 rests on sponsoring R-44-24, R-1036-24 and 25-59, and
+the other three rest on the No vote plus their own resolutions. The fix is wording, not evidence.
+🔴 **AND IT IS THE RECITAL/OPERATIVE RULE IN A NEW COSTUME:** a narrative summary of a meeting is not
+the vote record, and the tally next to the motion you are reading may belong to a different motion.
 
 ## Cheapest next steps
 
