@@ -133,14 +133,63 @@ export const plainLines = (html) => String(html || '')
 /** Every surname that speaks in a granule — the diagnostic when attribution fails. */
 export const speakersIn = (text) => [...new Set(turns(text).map((t) => t.surname))];
 
-/** Turns spoken by one member, with an on-axis flag. */
+/**
+ * Where a turn stops being SPEECH and becomes a printed document.
+ *
+ * 🔴 A SENATOR WHO ASKS THAT A BILL BE PRINTED IN THE RECORD "SPEAKS" THE WHOLE
+ * BILL. Durbin's 2023-05-15 turn is 24,000 characters and almost all of it is the
+ * text of S. 1600, because he asked unanimous consent to insert it. The attribution
+ * is CORRECT — it is his bill and his request — and the turn is still not something
+ * he said. Left alone, any bill text can masquerade as a floor statement: its words
+ * sit inside his turn, so they pass the verifier's attribution check, and a chair
+ * could be published on legislative language nobody spoke.
+ *
+ * The formula that opens the insert is fixed, which is what makes this cuttable.
+ *
+ * \u26a0 EVERY GAP IS `\\s+`, NOT A LITERAL SPACE. The Record wraps at about 72
+ * columns, so any of these phrases can be split across a newline mid-sentence. A
+ * first version used literal spaces and silently failed on the very granule that
+ * motivated it — "the text of the bill was ordered to be printed" was wrapped, so
+ * only the `be it enacted` alternative fired and the cut landed late.
+ */
+const PRINTED_TEXT =
+  /there\s+being\s+no\s+objection[\s\S]{0,160}?ordered\s+to\s+be\s+printed\s+in\s+the\s+record|be\s+it\s+enacted\s+by\s+the\s+senate\s+and\s+house/i;
+
+/**
+ * The spoken part of a turn: everything before the first printed insert.
+ *
+ * Truncating rather than discarding keeps the real sentence — "I ask unanimous
+ * consent that the text of the bill be printed" is preceded often enough by actual
+ * argument to be worth keeping. Anything the member says AFTER the insert is lost,
+ * which is the conservative direction: less evidence, never borrowed evidence.
+ */
+export function spokenPart(body) {
+  const m = PRINTED_TEXT.exec(String(body || ''));
+  return m ? String(body).slice(0, m.index) : String(body || '');
+}
+
+/** Does this turn carry a printed insert at all? */
+export const hasPrintedText = (body) => PRINTED_TEXT.test(String(body || ''));
+
+/**
+ * Turns spoken by one member, with an on-axis flag.
+ *
+ * \u26a0 `body` IS THE SPOKEN PART, NOT THE RAW TURN, and the axis test runs on it.
+ * A bill full of the word "asylum" inserted into the Record must not make its
+ * sponsor look like they argued an asylum posture on the floor.
+ */
 export function turnsBy(text, surname, axis = SPEECH_AXIS) {
   const want = String(surname).toUpperCase();
   return turns(text)
     .filter((t) => t.surname === want)
-    .map((t) => ({
-      ...t,
-      onAxis: axis.test(t.body),
-      asylumMentions: (t.body.match(/asylum/gi) || []).length,
-    }));
+    .map((t) => {
+      const body = spokenPart(t.body);
+      return {
+        ...t,
+        body,
+        printedTextStripped: body.length !== t.body.length,
+        onAxis: axis.test(body),
+        asylumMentions: (body.match(/asylum/gi) || []).length,
+      };
+    });
 }
