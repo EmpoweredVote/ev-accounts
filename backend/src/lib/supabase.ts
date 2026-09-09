@@ -17,11 +17,12 @@ export const supabaseAdmin = createClient<Database>(
       autoRefreshToken: false,
       persistSession: false,
     },
-    global: {
-      headers: {
-        Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY.trim()}`,
-      },
-    },
+    // No `global.headers.Authorization` override. supabase-js already sends the
+    // key, and the new sb_secret_... keys are NOT JWTs -- passing one as
+    // `Authorization: Bearer` makes the platform try to parse it as a JWT and
+    // reject the request. It belongs on the `apikey` header, which the client
+    // sets itself. The override was redundant for legacy JWT keys and becomes a
+    // hard failure the moment this value is a new-format key.
   }
 );
 
@@ -42,13 +43,27 @@ export async function adminRpc(fn: string, args?: Record<string, unknown>, schem
 }
 
 /**
+ * Public key used by the RLS-enforcing clients below.
+ *
+ * Prefers SUPABASE_PUBLISHABLE_KEY (sb_publishable_...) and falls back to the
+ * legacy SUPABASE_ANON_KEY. Both work at the same time on the project, so the
+ * publishable key can be set in Render whenever, independently of any deploy;
+ * when it is present it simply wins. Legacy anon is removed by Supabase in late
+ * 2026, at which point the fallback stops being reachable.
+ *
+ * Note this key is public either way -- it is compiled into browser bundles.
+ * It is not a secret and is not what enforces access; RLS and the user's JWT are.
+ */
+const PUBLIC_API_KEY = (env.SUPABASE_PUBLISHABLE_KEY ?? env.SUPABASE_ANON_KEY).trim();
+
+/**
  * Anon client — uses the public anon key, RLS enforced.
  * Use for reading public reference data (inform schema) that is accessible
  * to any role (anon or authenticated). Never use for user-owned data.
  */
 export const supabaseAnon = createClient<Database>(
   env.SUPABASE_URL.trim(),
-  env.SUPABASE_ANON_KEY.trim(),
+  PUBLIC_API_KEY,
   {
     auth: {
       autoRefreshToken: false,
@@ -64,7 +79,7 @@ export const supabaseAnon = createClient<Database>(
 export function createUserClient(accessToken: string) {
   return createClient<Database>(
     env.SUPABASE_URL,
-    env.SUPABASE_ANON_KEY,
+    PUBLIC_API_KEY,
     {
       global: {
         headers: {

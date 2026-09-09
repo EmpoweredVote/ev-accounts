@@ -12,6 +12,7 @@ vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 vi.mock('./env.js', () => ({
   env: {
     SUPABASE_SERVICE_ROLE_KEY: 'test-secret',
+    READRANK_TOKEN_SECRET: 'test-readrank-secret',
     SUPABASE_URL: 'https://test.supabase.co',
     SUPABASE_ANON_KEY: 'test-anon',
     DATABASE_URL: 'postgres://test',
