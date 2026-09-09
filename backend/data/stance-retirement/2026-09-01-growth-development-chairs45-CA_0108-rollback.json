@@ -1,0 +1,9 @@
+{
+  "migration": "CA_0108",
+  "note": "chair-4/5 re-audit for the CA_0077 re-fork; rows whose chair value this migration SETS (the three 5->4 moves). Confirms are unchanged and blanks seat no chair, so neither is in the gate set.",
+  "rows": [
+    {"politician_id":"50682ef1-360a-4597-9e1a-eaf43c50673d","topic_id":"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4","chair_after":4,"name":"Dan H. Stewart"},
+    {"politician_id":"4bbafa07-020e-4f89-8a72-6f427d47c069","topic_id":"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4","chair_after":4,"name":"David DeGroot"},
+    {"politician_id":"99d43f01-4b07-471f-bacf-e89d2a1c36b2","topic_id":"fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4","chair_after":4,"name":"Jim Seebock"}
+  ]
+}
