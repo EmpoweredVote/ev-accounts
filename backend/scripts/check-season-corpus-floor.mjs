@@ -404,8 +404,30 @@ const FLOORS = {
     //   preconditions rather than an absolute total, so the NOTICE prints live totals
     //   and the file could not go stale while its 47 chairs sat in human review.
     //   2,842 − 2,814 = 28, still the blanks invariant above.
-    answers: flagInt('floor-answers', 2, 2842),
-    context: flagInt('floor-context', 2, 2814),
+    //
+    //   +12 / +12 on 2026-09-08, to 2,854 / 2,826. CC_0085, applied - the Senate
+    //   border-security batch, and the FIRST rows in this corpus sourced to the
+    //   Congressional Record rather than to bill sponsorship. 9 at chair 3, 3 at
+    //   chair 2, each with its context row.
+    //
+    //   ⚠ NOBODY SITS ON CHAIR 1, AND THAT IS A RULING RATHER THAN A GAP. Hirono
+    //   was drafted at chair 1 and moved to 2 on review: opposing one restrictive
+    //   bill does not reach "give everyone who crosses a fair asylum hearing". A
+    //   future reader who finds chair 1 empty on this topic should not treat it as
+    //   missing research.
+    //
+    //   No stragglers again: prod read exactly 2,842 / 2,814 before the apply, so
+    //   this raise is the migration's own delta. Two of the last three raises have
+    //   been clean this way and the two before them were not - do not infer a rule
+    //   from either run.
+    //
+    //   Derived from CC_0085's closing NOTICE, after the apply, per the ordering
+    //   rule above. Like CC_0079 and CC_0080 it asserts its own DELTA against a
+    //   baseline captured in its preconditions, so it cannot go stale while its
+    //   chairs sit in human review.
+    //   2,854 - 2,826 = 28, still the blanks invariant above.
+    answers: flagInt('floor-answers', 2, 2854),
+    context: flagInt('floor-context', 2, 2826),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
     // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
     questions: flagInt('floor-questions', 2, 60),
