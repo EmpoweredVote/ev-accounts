@@ -630,6 +630,22 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # 💰 A STEP IN AN EXISTING SCHEDULE-ONLY JOB, NOT A TENTH JOB. This file is
+      # already ~800 minutes a month over the allowance and says to know the numbers
+      # before adding one; a step here costs seconds on a run that is already paying
+      # its minimum. It also has no claim to isolation the way `season corpus floor`
+      # does — a masked lens-drift warning costs a stale spoke, not lost answers.
+      #
+      # `immigration` sat in the Federal Lens from the day Season 2 opened, unasked
+      # and unrenderable, and was found by hand on 2026-09-08 rather than by any
+      # check. A lens is curated data that a season rollover can invalidate without
+      # touching a line of code, which is the definition of what a schedule catches
+      # and a push cannot.
+      - name: Check curated lenses still hold topics this season asks
+        run: npm run check:lens-freshness
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   season-corpus-floor:
     name: season corpus floor
     runs-on: ubuntu-latest
