@@ -45,8 +45,6 @@ const envSchema = z.object({
   LISTENING_XP_KEY: z.string().optional(),
   ADMIN_SERVICE_KEY: z.string().optional(),
   ESSENTIALS_SERVICE_KEY: z.string().optional(),
-  // Gem service keys — JSON map: { "key": ["yellow"] }. Optional: absent = no gem award endpoints active.
-  GEMS_SERVICE_KEYS: z.string().optional(),
   // Campaign finance adapter keys — all optional; absent = feature degraded but server still starts.
   // FEC_API_KEY: register free at api.data.gov/signup/ for 1000 req/hr limit.
   FEC_API_KEY: z.string().optional(),

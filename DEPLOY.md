@@ -79,7 +79,6 @@ folded apps were already on Express 5).
 | `TRIVIA_SERVICE_KEY` | Shared secret | Historically authenticated the standalone CTC service. CTC is now folded in; the XP-award path still uses it until Phase 4 completes. |
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
-| `GEMS_SERVICE_KEYS` | Shared secrets | JSON map `{"<key>":["<gem-type>",…]}` for gem-award auth (NOT a bare string — a bare value makes the engine `JSON.parse` exit at boot). Optional — absent means all `/award` requests get 401. |
 | `VQ_CRONS_ENABLED` | Set manually | `'true'` runs Validation Quests' consensus (5 min) + rotation (daily 04:00 UTC) crons **inside the engine**. Default OFF. Turn ON only when the old `empowered-validation-quests` service is suspended, to avoid double-execution. |
 | `TRIVIA_CRONS_ENABLED` | Set manually | `'true'` runs Civic Trivia's expiration (hourly), election-detection (06:00 ET) + pipeline (02:00 ET) crons **inside the engine**. Default OFF. Turn ON only when the old `civic-trivia-backend` service is suspended. |
 | `TRIVIA_REDIS_URL` | Upstash (TCP) | node-redis (TCP) URL for Civic Trivia game sessions. Do **not** reuse `REDIS_URL` (that is Upstash REST/HTTPS; node-redis needs TCP). Unset = in-memory sessions (fine on a single instance). |
