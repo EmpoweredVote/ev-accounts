@@ -30,6 +30,8 @@ import 'dotenv/config';
 import { readFileSync } from 'node:fs';
 import { Pool } from 'pg';
 
+import { stripOwnTransaction } from './lib/migration-file-guards.mjs';
+
 const argv = process.argv.slice(2);
 const vi = argv.indexOf('--verify');
 const verifyArg = vi === -1 ? null : argv[vi + 1];
@@ -42,9 +44,9 @@ if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.
 const verifySql = verifyArg === '-' ? readFileSync(0, 'utf8') : verifyArg ? readFileSync(verifyArg, 'utf8') : null;
 
 // The migration manages its own transaction; we need to manage it instead so the rollback is ours.
-const sql = readFileSync(file, 'utf8')
-  .replace(/^\s*BEGIN\s*;/im, '')
-  .replace(/^\s*COMMIT\s*;/im, '');
+// Shared with apply-migration-file.mjs so a file is rehearsed and applied by the same rule — the
+// two had this regex pair duplicated inline until 2026-09-09.
+const sql = stripOwnTransaction(readFileSync(file, 'utf8'));
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 const client = await pool.connect();
