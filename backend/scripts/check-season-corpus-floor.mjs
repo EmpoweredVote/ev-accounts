@@ -383,8 +383,29 @@ const FLOORS = {
     //   went stale before a human had finished reviewing its chairs, which is the
     //   failure this pair of numbers should never depend on again.
     //   2,795 − 2,767 = 28, still the blanks invariant above.
-    answers: flagInt('floor-answers', 2, 2795),
-    context: flagInt('floor-context', 2, 2767),
+    //
+    //   +47 / +47 on 2026-09-08, to 2,842 / 2,814. CC_0080, applied — the Senate
+    //   israel-military-aid batch. 43 senators at chair 1 (42 off S.Res. 682, which
+    //   condemns halting arms shipments and demands the Administration keep filling
+    //   Israel's requests, and 1 off its House companion H.R. 8369) and 4 at chair 3
+    //   off S.J.Res. 138, the disapproval of a named sale of 12,000 BLU-110A/B bomb
+    //   bodies. Each carries its context row, so both floors move by the same amount.
+    //
+    //   ⚠ NO STRAGGLERS THIS TIME, WHICH IS ITSELF WORTH RECORDING. Prod read exactly
+    //   2,795 / 2,767 immediately before the apply — the committed floor, to the row —
+    //   so 2,795 + 47 reaches 2,842 with nothing picked up on the way. The two entries
+    //   above both absorbed research that had landed above the floor since their raise
+    //   (+10 Miami-Dade, then +2 local), so a reader comparing the three should not
+    //   conclude that a raise normally equals the migration's own delta. It happens to
+    //   here because nothing landed in between.
+    //
+    //   Derived from CC_0080's closing NOTICE, after the apply, per the ordering rule
+    //   above. Like CC_0079 it asserts its own DELTA against a baseline captured in its
+    //   preconditions rather than an absolute total, so the NOTICE prints live totals
+    //   and the file could not go stale while its 47 chairs sat in human review.
+    //   2,842 − 2,814 = 28, still the blanks invariant above.
+    answers: flagInt('floor-answers', 2, 2842),
+    context: flagInt('floor-context', 2, 2814),
     // 60 questions: 43 carried from season 1, 17 new, 1 dropped (Immigration and Treatment of
     // Immigrants). A season's question set is fixed once it opens, so this floor should hold.
     questions: flagInt('floor-questions', 2, 60),
