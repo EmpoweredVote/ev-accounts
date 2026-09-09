@@ -185,6 +185,23 @@ export async function getRewriteDetail(rewriteId: string): Promise<unknown> {
   );
   if (rewriteRows.length === 0) return null;
 
+  // 🔴 THESE FOUR READS TAKE THE FROZEN v1 TEXT, AND THAT IS NOT ENDORSED — IT IS UNJUDGED.
+  // `CA_0012` froze compass_topics'/compass_stances' text columns at the introduction of content
+  // versioning (ADR 0004); the live wording lives in compass_stance_revisions. Measured 2026-09-08,
+  // 29 of the 60 topics in the open season disagree with the frozen text, 16 on all five rungs.
+  //
+  // They are NOT given a `@ladder-text: frozen-ok` marker, deliberately. A marker is a positive claim
+  // that v1 wording is the thing you want, and this workflow has **never run**: `inform.topic_rewrites`
+  // held ZERO rows when this was checked, so there is no behaviour to infer intent from. Plan D
+  // creates a separate NEW TOPIC ROW per rewrite, which predates and was superseded by the
+  // revision-and-season model that actually shipped. Claiming an intent here would silence the gate on
+  // a justification nobody can stand behind, which is worse than leaving it counted.
+  //
+  // ▶️ IF YOU REVIVE THIS WORKFLOW, decide the source FIRST: a rewrite that diffs "the old wording"
+  // wants the old topic's *pinned* revision, not whatever v1 happened to say. Then either fix the
+  // query or add the marker with a reason that is true.
+  //
+  // Counted in scripts/lib/ladder-text-baseline.json. Leave it counted until it is decided.
   const { rows: oldStances } = await pool.query(
     `SELECT value, text FROM inform.compass_stances WHERE topic_id = $1 ORDER BY value`,
     [rewriteRows[0].old_topic_id],
