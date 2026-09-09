@@ -218,8 +218,32 @@ presented" — **with no tally recorded at all.**
 
 ⚠ **No chair moves either way**: Rodriguez's 4 rests on sponsoring R-44-24, R-1036-24 and 25-59, and
 the other three rest on the No vote plus their own resolutions. The fix is wording, not evidence.
+✅ **FIXED 2026-09-09 by `CC_0087`** (approved wording: minimal correction). Rodriguez's row now says
+the Board adopted it as filed "with no tally recorded for that vote"; the other three say each voted No
+"on the motion to reject staff's recommendation and approve the 1-to-1 ratio, which failed 6 votes to 4".
+Chairs and sources untouched. The post-verify asserts that **reversing the edit reproduces the original
+byte for byte**, which is the only check that proves nothing else in 1,200 words of prose moved.
 🔴 **AND IT IS THE RECITAL/OPERATIVE RULE IN A NEW COSTUME:** a narrative summary of a meeting is not
 the vote record, and the tally next to the motion you are reading may belong to a different motion.
+
+### ▶️ OPEN RE-AUDIT: does Garcia's `growth-and-development` chair 2 still fit?
+
+Raised by `CC_0087`, decided by nobody yet. The 6/26/2025 record shows Garcia voted No on the motion to
+approve the 1-to-1 ratio **and then moved to reconsider it** — his motion passed 10-0, and the Board went
+on to adopt the amendment. His row now states this.
+
+- **For keeping 2:** he prime-sponsored nothing that loosens LU-8H, and co-sponsored R-191-26 (opposing
+  HB 399) and R-678-26 (UDB text amendments), both boundary-protective and both cited. Under most rules
+  only a member on the PREVAILING side may move to reconsider, and his side prevailed when the motion
+  failed — so the motion may be procedural courtesy after the County Attorney corrected the vote
+  threshold, and say nothing about his position.
+- **Against:** the reconsideration is what let the amendment pass, and no source records how he voted on
+  the untallied final vote. A reader could reasonably read the sequence either way.
+- 🔴 **The honest tie-breaker is NOT "the least extreme option"** — that is the signal the row is
+  under-evidenced. If the sequence genuinely under-determines the chair, the answer is a blank spoke,
+  not a chair chosen for comfort.
+- **What would settle it:** the minutes or video of the final vote, if any record of the tally exists;
+  or one substantive own instrument of his on the boundary.
 
 ## Cheapest next steps
 
