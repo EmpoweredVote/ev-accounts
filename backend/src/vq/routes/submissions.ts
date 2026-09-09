@@ -535,7 +535,7 @@ router.post(
     // XP is awarded per quest type: 50 XP for correct yellow quests (below), 75 XP for correct red quests (at consensus).
     let xpAwarded = 0;
 
-    // Yellow quest immediate grading — POST /api/vq/adjust-vr via Accounts API
+    // Yellow quest immediate grading — in-process VR adjustment (Phase 4, see below)
     let yellowQuestResult: YellowQuestResult | undefined;
     if (questRow.gem_quest_type === 'yellow' && questRow.correct_answer) {
       const isCorrect = answersMatch(answer_text, questRow.correct_answer);

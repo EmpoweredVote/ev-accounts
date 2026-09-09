@@ -815,12 +815,12 @@ async function finalizeConsensus(
   // Two paths depending on whether the quest is a politician stance quest:
   //
   //   Stance quest (politician_id + topic_id + confirmed_value all present):
-  //     → POST /api/vq/confirm-stance (accounts API)
+  //     → confirmVqStance() in-process (lib/vqService.ts)
   //       Atomically: awards Red gems, adjusts VR for all, writes politician stance to compass.
   //       awardRedGem / credit_gems MUST NOT run alongside this — double-award risk.
   //
   //   Non-stance quest (any of the three fields absent):
-  //     → POST /api/vq/adjust-vr per human submitter (accounts API)
+  //     → adjustVerificationRating() in-process, per human submitter (lib/vqService.ts)
   //       VR adjustment only. Red gems are not awarded for non-stance quests at consensus.
   //
   // Early bonus (5 Red gems for early submitters) runs as a supplemental award
@@ -849,10 +849,10 @@ async function finalizeConsensus(
     // ----------------------------------------------------------
     // Stance quest: confirm-stance handles Red gems + VR atomically
     // ----------------------------------------------------------
-    // TODO: accounts team should update confirm-stance to use the 1+2 split
-    // (1 gem for correct_answer + 2 gems for valid_source) instead of a flat gems_amount.
-    // Until then, confirm-stance awards gems as a flat amount; VQ cannot control the split
-    // for stance quests without an accounts-side API change.
+    // TODO: confirmVqStance (lib/vqService.ts) awards gems as a flat gems_amount, not the
+    // 1+2 split (1 gem for correct_answer + 2 gems for valid_source) used elsewhere. Moving
+    // it to the split is a follow-up in that in-process service; the stance path cannot
+    // control the split until then.
     try {
       const stanceData = await confirmVqStance({
         // isStanceQuest (above) guarantees these three are non-null; TS just can't
