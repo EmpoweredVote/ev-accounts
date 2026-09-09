@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { turns, turnsBy, recordSurname, isSenateGranule, SPEECH_AXIS, crecGranuleId, plainLines, speakersIn } from './crec-turns.mjs';
+import { turns, turnsBy, recordSurname, isSenateGranule, SPEECH_AXIS, crecGranuleId, plainLines, speakersIn, spokenPart, hasPrintedText } from './crec-turns.mjs';
 
 const RECORD = `
   Mr. PADILLA. Mr. President, this bill practically eliminates the right to seek
@@ -112,5 +112,41 @@ describe('plainLines', () => {
 describe('speakersIn', () => {
   it('lists who spoke, for the diagnostic when a name is not among them', () => {
     expect(speakersIn(RECORD)).toEqual(['PADILLA', 'LANKFORD']);
+  });
+});
+
+describe('spokenPart', () => {
+  // Durbin, 2023-05-15: he asked unanimous consent that S. 1600 be printed, so the
+  // Record attributes 24,000 characters of bill text to him.
+  const INSERT = `Madam President, I ask unanimous consent that the text of the bill be printed in the Record. Our asylum backlog is the reason. There being no objection, the text of the bill was ordered to be printed in the Record, as follows: S. 1600 Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. asylum asylum asylum`;
+
+  it('keeps what was said and drops what was inserted', () => {
+    const spoken = spokenPart(INSERT);
+    expect(spoken).toContain('Our asylum backlog is the reason');
+    expect(spoken).not.toContain('Be it enacted');
+    expect(spoken).not.toContain('SHORT TITLE');
+  });
+
+  it('leaves an ordinary turn untouched', () => {
+    const plain = 'Mr. President, the asylum system is broken and we should fix it.';
+    expect(spokenPart(plain)).toBe(plain);
+    expect(hasPrintedText(plain)).toBe(false);
+  });
+
+  it('does not let inserted text carry the axis', () => {
+    // The bill text says "asylum" three times. None of it was spoken, so none of it
+    // may make the member look like they argued an asylum posture.
+    const record = `\n  Mr. DURBIN. ${INSERT}\n`;
+    const [turn] = turnsBy(record, 'DURBIN');
+    expect(turn.printedTextStripped).toBe(true);
+    expect(turn.asylumMentions).toBe(1);
+    expect(turn.body).not.toContain('Be it enacted');
+  });
+
+  it('drops a turn that is ONLY an insert below the axis', () => {
+    const record = '\n  Mr. DURBIN. There being no objection, the text of the bill was ordered to be printed in the Record, as follows: asylum asylum asylum\n';
+    const [turn] = turnsBy(record, 'DURBIN');
+    expect(turn.onAxis).toBe(false);
+    expect(turn.asylumMentions).toBe(0);
   });
 });
