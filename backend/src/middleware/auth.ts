@@ -11,25 +11,24 @@ import {
   resolveInternalUserId,
 } from '../lib/tokenIdentity.js';
 
-// Projects created before May 2025 use HS256 (symmetric key).
-// Projects created after May 2025 use ES256 (asymmetric, JWKS).
-// SUPABASE_JWT_SECRET is set → use symmetric HS256 verification.
-// Otherwise fall back to JWKS for ES256/RS256.
-const SECRET_KEY = env.SUPABASE_JWT_SECRET
-  ? new TextEncoder().encode(env.SUPABASE_JWT_SECRET)
-  : null;
-const SUPABASE_JWKS = SECRET_KEY
-  ? null
-  : createRemoteJWKSet(new URL(`${env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`));
+// Supabase issues asymmetric (ES256/RS256) JWTs; verify via JWKS (public-key
+// rotation safe). The legacy symmetric HS256 / SUPABASE_JWT_SECRET path was
+// removed: it verified EXCLUSIVELY when the secret was set, so a stray env var
+// could silently disable JWKS and reject every current token. JWKS is now the
+// only Supabase verification path (mirrors vq/middleware/auth.ts).
+const SUPABASE_JWKS = createRemoteJWKSet(
+  new URL(`${env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`)
+);
 
 // Second accepted issuer during the Supabase → WorkOS migration window
 // (decision 0002). Absent WORKOS_CLIENT_ID = WorkOS tokens are rejected.
 const WORKOS_JWKS = WORKOS_JWKS_URL ? createRemoteJWKSet(new URL(WORKOS_JWKS_URL)) : null;
 
 async function verifySupabaseJwt(token: string) {
-  const options = { issuer: SUPABASE_ISSUER, audience: 'authenticated' };
-  if (SECRET_KEY) return jwtVerify(token, SECRET_KEY, options);
-  return jwtVerify(token, SUPABASE_JWKS!, options);
+  return jwtVerify(token, SUPABASE_JWKS, {
+    issuer: SUPABASE_ISSUER,
+    audience: 'authenticated',
+  });
 }
 
 async function verifyWorkosJwt(token: string) {
