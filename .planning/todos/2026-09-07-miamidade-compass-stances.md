@@ -226,24 +226,68 @@ byte for byte**, which is the only check that proves nothing else in 1,200 words
 🔴 **AND IT IS THE RECITAL/OPERATIVE RULE IN A NEW COSTUME:** a narrative summary of a meeting is not
 the vote record, and the tally next to the motion you are reading may belong to a different motion.
 
-### ▶️ OPEN RE-AUDIT: does Garcia's `growth-and-development` chair 2 still fit?
+### ✅ CLOSED 2026-09-09: Garcia's `growth-and-development` chair 2 STANDS — no row moved
 
-Raised by `CC_0087`, decided by nobody yet. The 6/26/2025 record shows Garcia voted No on the motion to
-approve the 1-to-1 ratio **and then moved to reconsider it** — his motion passed 10-0, and the Board went
-on to adopt the amendment. His row now states this.
+Raised by `CC_0087`. Settled from the primary record (`241888`, `260879`, each fetched with a
+Web-Error control in the same run), not from the narrative summary above.
 
-- **For keeping 2:** he prime-sponsored nothing that loosens LU-8H, and co-sponsored R-191-26 (opposing
-  HB 399) and R-678-26 (UDB text amendments), both boundary-protective and both cited. Under most rules
-  only a member on the PREVAILING side may move to reconsider, and his side prevailed when the motion
-  failed — so the motion may be procedural courtesy after the County Attorney corrected the vote
-  threshold, and say nothing about his position.
-- **Against:** the reconsideration is what let the amendment pass, and no source records how he voted on
-  the untallied final vote. A reader could reasonably read the sequence either way.
-- 🔴 **The honest tie-breaker is NOT "the least extreme option"** — that is the signal the row is
-  under-evidenced. If the sequence genuinely under-determines the chair, the answer is a blank spoke,
-  not a chair chosen for comfort.
-- **What would settle it:** the minutes or video of the final vote, if any record of the tally exists;
-  or one substantive own instrument of his on the boundary.
+🔴🔴 **THE PREMISE WAS WRONG: THIS WAS NEVER A GARCIA-SPECIFIC QUESTION.** Garcia and Steinberg cite the
+**identical three sources** — `241888`, `260228`, `260967`. Only the reconsideration could separate them,
+and the record says it cannot:
+
+> "Senator Garcia moved to reconsider the foregoing application. **This motion was seconded by
+> Commissioner Steinberg**; and upon being put to a vote, **passed 10-0**."
+
+**Steinberg seconded the very act the re-audit treated as Garcia's differentiator**, and all four No
+voters sit inside the 10-0. Were it a position rather than a procedure, it would unseat Cohen Higgins and
+Steinberg on the same record. It followed ACA Schwaderer Raurell's advice that **7 votes were needed**, so
+the 6-4 was a threshold artifact, not a defeat on the merits. **A unanimous procedural motion states
+nobody's position.** The final adoption is still untallied — "the Board voted to reject staff's
+recommendation and approve the application as presented", no numbers, no names. `CC_0087`'s wording stands.
+
+#### 🔴🔴 AND THE AXIS CONTROL OVERTURNED THE FIRST ANSWER — HE DOES HAVE OWN INSTRUMENTS
+
+This section first said "no own instrument exists either way", read off his **6 pattern leads**. That was a
+detector reporting nothing found. Grepping all 2,560 cached rows for
+`URBAN DEVELOPMENT BOUNDARY|UDB|LU-8H|CDMP` returned 17 matters, 8 of them Garcia's — and **five the growth
+pattern never surfaced.** Three are his own:
+
+| matter | ref | status | role | what it does |
+| --- | --- | --- | --- | --- |
+| `251903` | — | Amended | **Prime** | CDMP amendment: flexibility in the **minimum acreage requirement for commercial vehicle storage** |
+| `252447` | — | In Draft | **Prime** | same initiative, original item |
+| `260879` | — | **Failed** 7/21/2026 | **Prime** | same, plus a report on vacant county parcels and a limited enforcement stay |
+| `251393` | R-687-25 | Adopted | Co-Sponsor | container stacking with commercial vehicle storage (Gilbert Prime) |
+| `261141` | — | Before the Board | Co-Sponsor | CDMP allowances inside urbanized areas (Gonzalez Prime) |
+
+**They do not move the chair, and the reason is the per-rung scope rule, not their outcome.** `260879`'s
+full page mentions the Urban Development Boundary **zero times** — no `UDB`, no `LU-8H`, no "outside the".
+It is where trucks may be parked. The pinned rung 2 asks whether growth waits for **infrastructure
+capacity**; a sectoral acreage standard does not answer that question either way. Off-axis evidence must
+not dilute on-axis evidence — that is what "scope is a per-rung question" means.
+
+⚠ **This is NOT the Regalado case.** Hers was mixed **on the same axis** — voted Yes to loosen the UDB and
+prime-sponsored closing a route around it — so it pointed at two rungs and pinned neither. Garcia is
+boundary-protective on-axis and deregulatory off-axis. Different test, different answer.
+⚠ Note also that all three of his own are unadopted, and `260879` is partly a **report directive** — either
+would be enough on its own under this program's standard.
+
+**So the chair rests where it did:** a recorded No against lowering LU-8H's jobs-to-housing ratio and
+first-phase density — *capacity tests, rung 2's mechanism verbatim* — plus two boundary-protective
+co-sponsorships. Rung 1 stays out on the absence of any cap or referendum instrument. **No migration.**
+
+⚠ **What would reopen it:** a source recording the final tally, or one substantive own instrument of his
+**on the boundary**. Neither exists today.
+
+#### 🔴 PATTERN DEFECT FOUND, NOT YET FIXED: `growth-and-development` misses "CDMP AMENDMENT"
+
+The pattern returns 84 leads / 68 distinct matters and is dominated by CRA appointments and budgets, while
+**five CDMP amendment matters fell outside it** (`251393`, `251903`, `252447`, `260879`, `261141`). The
+scorecard above gains a line: this pattern is **wrong in both directions** — CRA noise in, CDMP amendments
+out. The leads cache was regenerated the same day; 3 members gained 1 matter each (the record is live,
+finding 9) but **zero new topic leads**, so the miss is the pattern, not the cache. Retune before the next
+growth pass, and measure per-alternative.
+
 
 ## Cheapest next steps
 
