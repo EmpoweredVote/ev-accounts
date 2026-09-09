@@ -74,7 +74,10 @@ export function isValidUuid(value: string): boolean {
  * Excludes: gems, tolerance_rating, legal_name (at root), email, location_consent.
  */
 export async function getPublicProfile(userId: string): Promise<PublicProfileBase | null> {
-  const internal = await fetchInternalProfile(userId);
+  // publicOnly=true: this endpoint is unauthenticated and served for an
+  // arbitrary :userId, so the compass block must expose only answers the owner
+  // marked public — see fetchInternalProfile.
+  const internal = await fetchInternalProfile(userId, true);
   if (!internal) return null;
 
   // Strip internal-only fields before returning public shape
@@ -101,7 +104,9 @@ export async function getPublicProfile(userId: string): Promise<PublicProfileBas
  * the caller is authenticated.
  */
 export async function getOwnerProfile(userId: string, email: string): Promise<OwnerProfile | null> {
-  const internal = await fetchInternalProfile(userId);
+  // publicOnly=false: the caller IS the owner (requireAuth on GET /me), so the
+  // owner sees every one of their own answers regardless of visibility.
+  const internal = await fetchInternalProfile(userId, false);
   if (!internal) return null;
 
   const {
@@ -133,7 +138,10 @@ export async function getOwnerProfile(userId: string, email: string): Promise<Ow
  * shape including owner-only fields (gems, location_consent) so getOwnerProfile
  * can access them without a second round-trip.
  */
-async function fetchInternalProfile(userId: string): Promise<InternalProfileData | null> {
+async function fetchInternalProfile(
+  userId: string,
+  publicOnly: boolean
+): Promise<InternalProfileData | null> {
   // Step 1: Fetch public.users row
   const { data: user, error: userError } = await supabaseAdmin
     .from('users')
@@ -238,12 +246,26 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     // compass_responses_effective (CC_0062) — this block is read-only output on
     // an Empowered profile payload, so suppression here withholds a stale value
     // and cannot cost the user anything on a later write.
-    const { data: answers, error: answersError } = await supabaseAdmin
+    //
+    // 🔴 visibility gate: the answer's `visibility` defaults to 'private' and is
+    // flipped to 'public' only by the empowerment RPC, so an answer written after
+    // empowerment is private. On the public path (publicOnly) we must therefore
+    // filter to visibility='public' — exactly as the voter-facing candidate page
+    // does (candidateService) — or an unauthenticated caller reading an arbitrary
+    // :userId would see that user's private-visibility stances. On the owner path
+    // the caller is the owner, so every answer is returned.
+    let answersQuery = supabaseAdmin
       .schema('inform')
       .from('compass_responses_effective')
       .select('topic_id, value, write_in_text, inverted, updated_at')
       .eq('user_id', userId)
       .is('deleted_at', null);
+
+    if (publicOnly) {
+      answersQuery = answersQuery.eq('visibility', 'public');
+    }
+
+    const { data: answers, error: answersError } = await answersQuery;
 
     if (answersError) {
       console.error('[profileService] error fetching compass_responses:', answersError);
