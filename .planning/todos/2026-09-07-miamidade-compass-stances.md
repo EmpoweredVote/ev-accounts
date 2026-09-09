@@ -21,7 +21,7 @@ stances" — `docs/superpowers/specs/2026-08-28-knight-cities-program-design.md:
 this time with a missed-instrument control over their full unfiltered records rather than a lead
 count. Steinberg has **zero** prime-sponsored housing instruments in 187 matters.
 
-**Eight whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
+**Eleven whole-Board topic passes are done:** `housing` (123 matters), `transportation-priorities`
 (83, 1 seated / 13 refused), `local-environment` (43, **0 seated** / 14 refused),
 `residential-zoning` (49, 1 seated / 13 refused), `rent-regulation` (**0 seated** — the ladder does
 not apply in Florida at all, see below) and `city-sanitation` (43, **0 seated** / 14 refused).
@@ -363,8 +363,25 @@ pattern first.** The fourth is a preservation guard and passes under both by des
   (16/11) is waste-to-energy siting and `FPL` (18/18) is utility easements; both rejected. Two more
   semantic traps found: `carbon` matched **CALCIUM CARBONATE**, `interconnection` matched **EMERGENCY
   WATER INTERCONNECTION**.
-- **`homelessness-response` (9) · `civil-rights` (5) · `homelessness` (5)** — still unmeasured.
-  Axis-test each before reading, **and read the pinned ladder before writing the pattern.**
+- ✅ **`homelessness-response` · `homelessness` · `civil-rights` ALL CLOSED 2026-09-09 — 17 matters
+  read, 0 seated.** All three pinned ladders disagree with the frozen table.
+  - **`homelessness-response` 9/9 → 23/15.** 🔴🔴 **Bastien is prime on 11 of 14 and that is her
+    Homeless Trust role, not a position** — 9 carry `requester = Miami-Dade Homeless Trust`. Her own
+    items are a **$62.5M HUD CoC grant acceptance** and two **urging** resolutions. ⚠ **Rungs 1 and 2
+    cannot be separated here**: the 1% food and beverage tax already IS "dedicated, permanent public
+    funding", and `251914` spends $21.1M/yr FY26-28 "with targeted increases" — rung 1's mechanism
+    doing rung 2's job. Two adjacent chairs ⇒ refuse.
+  - **`homelessness` — 🔴🔴 Fla. Stat. § 125.0231 writes most of the ladder.** A county "may not
+    authorize or otherwise allow" public camping; a designated site needs **DCF certification** proving
+    insufficient shelter beds. **Rungs 1 and 2 are unavailable; rung 4 is what the state REQUIRES.**
+    Third instance of this failure mode in one day. Whole corpus = one Bastien plan-and-report item
+    filed twice, never adopted. Pattern measured and **deliberately left alone**.
+  - **`civil-rights` 5/4 → 2/1 — 🔴🔴 three of the old four were PROPER NOUNS.** `equity` matched
+    **"ELITE EQUITY"** (a developer) twice and `DBE` matched **"DBE MISS USA, LLC"** (a pageant).
+    **A word boundary does not save you from a company name.** Every other term scored zero. The one
+    real item — Garcia urging a veto of the anti-DEI bill SB 1134 — is a refusal: urging binds nobody,
+    and it gives direction without magnitude. ⚠ Rung 4 names **federal** enforcement, unavailable here.
+- ▶️ **NO CHEAP TOPICS REMAIN.** Every topic named in this list has now been measured and read.
 - ⚠ **Before starting any of them, read the directive-and-report finding below.** A topic whose
   leads are mostly "DIRECTING THE COUNTY MAYOR … AND PROVIDE A REPORT" will refuse, however dense.
 - ✅ **`city-sanitation` is CLOSED** — 0 seated. Its pattern is sound; do not retune it.

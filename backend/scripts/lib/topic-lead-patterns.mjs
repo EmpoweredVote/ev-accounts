@@ -229,8 +229,33 @@ export const LOCAL_TOPIC_PATTERNS = {
   // requirement". Narrowing a detector needs its own positive control: re-match
   // the stored corpus and read what stopped matching.
   'economic-development':     /economic development (incentive|agreement|grant|purpose)|business incentive|tax abatement|ad valorem tax exemption|targeted jobs|job creation|jobs? requirement|hiring requirement|wage requirement|community benefits? agreement|enterprise zone|opportunity zone|beacon council|attract (business|employer|industr)|major employer|corporate headquarters|clawback/i,
+  // 🔴🔴 SCOPE, 2026-09-09 — FLORIDA DICTATES MOST OF THIS LADDER. Fla. Stat. s. 125.0231(2): a
+  //   county "may not authorize or otherwise allow any person to regularly engage in public camping
+  //   or sleeping on any public property". (3) permits a designated site for up to a year ONLY with
+  //   Department of Children and Families certification, which requires proving there are not
+  //   sufficient shelter beds. So **rung 1 ("no penalties of any kind") and rung 2 ("decriminalizing")
+  //   are legally unavailable**, and **rung 4 ("prohibiting encampments") is what state law REQUIRES** —
+  //   seat anyone there from an empty record and you publish a statute as a personal belief. Rung 3
+  //   is the closest thing to what the statute permits, because (3) turns on shelter-bed sufficiency.
+  //   Third instance of this failure mode in one day: rent-regulation, s. 366.032, and now this.
+  // 🟢 Pattern left ALONE — measured 2026-09-09 and it is sound. `encampment` 5/2; `public camping`,
+  //   `sleeping in public`, `panhandl`, `loitering`, `vagrancy`, `public sleeping`, `trespass` all
+  //   ZERO. Bare `camping` adds 1 and would risk recreational camping; not worth it.
+  // ⚠ The whole corpus is ONE item, filed twice (261371 / 261121, both Amended, never adopted):
+  //   Bastien's "ILLEGAL DUMPING AND ENCAMPMENT PLAN FOR DISTRICT 2; AND REQUIRING A REPORT".
+  //   A plan-and-report directive, and paired with illegal dumping rather than with shelter.
   'homelessness':             /public camping|encampment|sleeping in public|panhandl|loitering|vagrancy/i,
-  'homelessness-response':    /homeless(ness)? (trust|services|assistance|program|shelter)|continuum of care|emergency shelter|permanent supportive housing|\bhomeless\b/i,
+  // 🔴 RETUNED 2026-09-09: 9 leads / 9 matters -> 23 / 15. The old pattern required `homeless` to be
+  //   followed by trust/services/assistance/program/shelter, or to stand alone as a whole word, so it
+  //   missed `homelessness` in running prose and every provider-named item. Six real matters were
+  //   outside it: 251708, 260313, 251336, 250072 (a $5M Bezos Day 1 Families Fund grant), 252155
+  //   (Chapman Partnership rapid re-housing) and 261104.
+  // 🟢 261104 (the Mental Health Center) now tags BOTH this topic and jail-capacity. That is correct
+  //   multi-tagging, not a collision — matchLocalTopics returns every match.
+  // ⚠ WHAT THE LEADS CANNOT TELL YOU, and it decided the whole pass: **Bastien is prime on 11 of the
+  //   14 matters, and that is her Homeless Trust role, not a position.** Nine carry
+  //   `requester = Miami-Dade Homeless Trust`. `requester` is the discriminator, not volume.
+  'homelessness-response':    /homeless|continuum of care|\bCoC\b|emergency shelter|permanent supportive housing|transitional housing|rapid re-?housing|housing first|shelter bed|unsheltered|chapman partnership|food and beverage tax/i,
   'public-safety-approach':   /police (budget|staffing|department|funding)|law enforcement (budget|staffing)|crisis intervention|co-responder|mental health response|community policing|body[- ]worn camera/i,
   // 🔴 RETUNED 2026-09-09. The old pattern returned 13 leads / 8 matters and was quoted as
   //   evidence this topic was THIN. It was not: the count was a broken detector. 44 / 20 now.
@@ -268,7 +293,21 @@ export const LOCAL_TOPIC_PATTERNS = {
   'cannabis-policy':          /cannabis|marijuana|hemp|civil citation.{0,30}possession/i,
   'gun-policy':               /firearm|\bgun\b|ghost gun|shooting range|weapons? (ban|ordinance)/i,
   'minimum-wage':             /minimum wage|living wage|wage (floor|theft)|responsible wage/i,
-  'civil-rights':             /civil rights|discrimination|human rights ordinance|equity|disparit|minority[- ]owned|\bMBE\b|\bDBE\b/i,
+  // 🔴🔴 RETUNED 2026-09-09 — 5 leads / 4 matters -> 2 / 1, and THREE OF THE FOUR WERE COMPANY NAMES.
+  //   Bare `equity` matched "ELITE EQUITY Habitat for Humanity" (260962) and "ELITE EQUITY DEV. INC."
+  //   (251893) — an infill-housing developer. Bare `\bDBE\b` matched "DBE MISS USA, LLC" (261139), a
+  //   tourist-tax grant to a beauty pageant. A word-boundary does not save you from a PROPER NOUN.
+  // 🔴 EVERY OTHER ALTERNATIVE SCORED ZERO across 2,560 rows: `civil rights`, `discrimination`,
+  //   `human rights ordinance`, `disparit`, `minority-owned`, `\bMBE\b`,
+  //   `disadvantaged business enterprise`. The real corpus is ONE matter.
+  // ⚠ That one is 260492 / R-246-26, Garcia, adopted: URGING the Governor to veto SB 1134, which would
+  //   bar local governments from funding or promoting diversity, equity and inclusion. It is the most
+  //   on-axis civil-rights item on the Board and it is still a REFUSAL — an urging resolution binds
+  //   nobody, and opposing a preemption bill gives direction without magnitude: it cannot separate
+  //   rung 1 ("mandate racial equity requirements in all institutions") from rung 2.
+  // ⚠ PER-RUNG SCOPE: rung 4 says "limit FEDERAL civil rights enforcement", which no county officer
+  //   can do. Read the scope ruling before seating anyone here at any level.
+  'civil-rights':             /civil rights|discrimination|human rights ordinance|racial equity|equity (plan|office|program|initiative|act)|diversity, equity|\bDEI\b|disparit|minority[- ]owned|\bMBE\b|disadvantaged business enterprise|affirmative action|equal opportunity/i,
   'campaign-finance':         /campaign (finance|contribution)|lobbyist|ethics (ordinance|commission)|public financing/i,
   'ranked-choice-voting':     /ranked[- ]choice|instant runoff|election method|runoff election/i,
 };

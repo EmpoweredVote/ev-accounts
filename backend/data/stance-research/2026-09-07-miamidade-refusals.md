@@ -1292,3 +1292,69 @@ Alexander Orr plant, and bare `interconnection` matched **EMERGENCY WATER INTERC
 `emissions`, `microgrid`, `battery storage`, `net zero`, `property assessed clean energy`. Kept in the
 pattern anyway; a zero costs nothing and this is the corpus, not the detector, being empty. **This time
 the thin record is real — and it was only provable after 25 terms were measured.**
+
+## `homelessness-response`, `homelessness` and `civil-rights` — 17 matters read, 0 seated
+
+Three topics closed 2026-09-09. All three pinned ladders **disagree** with the frozen table.
+
+### `homelessness-response` — 15 matters, 0 seated, and volume was the trap
+
+Pattern retuned **9 / 9 → 23 / 15**: the old one required `homeless` to be followed by
+trust/services/assistance/program/shelter or to stand alone, so it missed `homelessness` in running
+prose and every provider-named item — including a **$5M Bezos Day 1 Families Fund** grant (`250072`)
+and **Chapman Partnership rapid re-housing** (`252155`).
+
+🔴🔴 **BASTIEN IS PRIME ON 11 OF THE 14, AND THAT IS HER HOMELESS TRUST ROLE, NOT A POSITION.** Nine
+carry `requester = Miami-Dade Homeless Trust`. **`requester` is the discriminator, not volume** — the
+same rule that caught "Hardemon growth, 21 leads" being Cohen Higgins'. Her three own-initiative items
+are `261178` (authorising receipt of **$62.5M** in HUD Continuum of Care funds — a federal grant
+acceptance, the same shape refused for McGhee on jail-capacity), `250301` (**urging** the Legislature to
+appropriate funds) and `252381` (**urging**, and still **In Draft**).
+
+⚠ **AND THE LADDER CANNOT SEPARATE RUNGS 1 AND 2 HERE, BECAUSE OF WHAT MIAMI-DADE ALREADY HAS.** Rung 1
+is *"guarantee … through dedicated, permanent public funding"* and rung 2 is *"expand … by increasing
+public funding"*. The county's **1% food and beverage tax** already IS dedicated permanent funding, and
+`251914` spends **$21.1M annually across FY2025-26 to 2027-28 "with targeted increases … to maintain and
+increase capacity"** — which is rung 1's mechanism being used to do rung 2's thing. Two adjacent chairs
+fit, so the row is a refusal. 🔴 `251914` is also a Homeless Trust request.
+
+### `homelessness` — 1 matter (filed twice), 0 seated, and the state writes most of the ladder
+
+🔴🔴 **Fla. Stat. § 125.0231(2): a county "may not authorize or otherwise allow any person to regularly
+engage in public camping or sleeping on any public property."** (3) allows a designated site for up to a
+year **only with Department of Children and Families certification**, which requires proving there are
+not sufficient shelter beds.
+
+- **rung 1** — "protecting the right to sleep and shelter in public spaces, with no penalties of any
+  kind" — **unavailable**.
+- **rung 2** — "decriminalizing public sleeping and camping" — **unavailable**.
+- **rung 3** — enforcement only where beds are adequate, citations diverting to services — the closest
+  thing the statute permits, because (3) turns on bed sufficiency.
+- 🔴🔴 **rung 4** — "prohibiting encampments on public property" — **is what state law REQUIRES.** Seat
+  anyone there from an empty record and you have published a statute as thirteen personal beliefs.
+
+**Third instance of this failure mode in one day**, after `rent-regulation` and § 366.032 on
+`climate-change`. ⚠ Whole corpus: `261371` / `261121`, the same Bastien item twice, **Amended and never
+adopted** — "ILLEGAL DUMPING AND ENCAMPMENT PLAN FOR DISTRICT 2; AND REQUIRING A REPORT". A plan-and-report
+directive, paired with illegal dumping rather than with shelter. Not a chair.
+🟢 The pattern was measured and **left alone** — `encampment` 5/2, and `public camping`, `sleeping in
+public`, `panhandl`, `loitering`, `vagrancy`, `public sleeping` and `trespass` all zero. That is a sound
+pattern over an empty record, and saying so is a result.
+
+### `civil-rights` — 1 matter, 0 seated, and three of the old four were PROPER NOUNS
+
+Pattern retuned **5 / 4 → 2 / 1**. 🔴🔴 Bare `equity` matched **"ELITE EQUITY Habitat for Humanity"**
+(`260962`) and **"ELITE EQUITY DEV. INC."** (`251893`) — an infill-housing developer. Bare `DBE`
+matched **"DBE MISS USA, LLC"** (`261139`), a tourist-tax grant to a beauty pageant. **A word boundary
+does not save you from a company name.**
+
+Every other alternative scored **zero** across 2,560 rows: `civil rights`, `discrimination`,
+`human rights ordinance`, `disparit`, `minority-owned`, `MBE`, `disadvantaged business enterprise`.
+
+**REFUSED — Garcia on `260492` / R-246-26**, adopted: urging the Governor to veto SB 1134, which would bar
+local governments from funding or promoting diversity, equity and inclusion. It is the most on-axis
+civil-rights item on the Board and it is still a refusal: an **urging** resolution binds nobody, and
+opposing a preemption bill gives **direction without magnitude** — it cannot separate rung 1 ("mandate
+racial equity requirements in all institutions") from rung 2.
+⚠ **Per-rung scope:** rung 4 says "limit **FEDERAL** civil rights enforcement", which no county officer
+can do. That rung is unavailable at this level regardless of evidence.

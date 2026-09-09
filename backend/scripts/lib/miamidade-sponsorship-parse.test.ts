@@ -259,6 +259,33 @@ describe('matchLocalTopics', () => {
     expect(matchLocalTopics(prohibit)).toContain('growth-and-development');
   });
 
+  // ── civil-rights and homelessness-response, retuned 2026-09-09 ────────────────
+  it('🔴 does not read a COMPANY NAME as civil-rights vocabulary', () => {
+    // Three of the old pattern's four matters were proper nouns. A word boundary
+    // does not save you from a company name.
+    const elite = 'INFILL HOUSING CONVEYANCE - ELITE EQUITY HABITAT FOR HUMANITY';
+    const pageant = 'ALLOCATING TOURIST DEVELOPMENT TAX SURPLUS TO DBE MISS USA, LLC D/B/A '
+      + 'MISS USA ORGANIZATION FOR THE 2026 MISS USA COMPETITION';
+    expect(matchLocalTopics(elite)).not.toContain('civil-rights');
+    expect(matchLocalTopics(pageant)).not.toContain('civil-rights');
+  });
+
+  it('still matches a real diversity, equity and inclusion item', () => {
+    const dei = 'RESOLUTION URGING GOVERNOR RON DESANTIS TO VETO SENATE BILL 1134, A BILL '
+      + 'PROHIBITING LOCAL GOVERNMENTS FROM FUNDING OR PROMOTING OR TAKING OFFICIAL ACTION '
+      + 'RELATING TO DIVERSITY, EQUITY, AND INCLUSION';
+    expect(matchLocalTopics(dei)).toContain('civil-rights');
+  });
+
+  it('matches homelessness in running prose and by provider name', () => {
+    // The old pattern needed `homeless` to be followed by trust/services/etc or to
+    // stand alone, so it missed both of these.
+    expect(matchLocalTopics('HOUSING FOR LOW-INCOME FAMILIES EXPERIENCING HOMELESSNESS'))
+      .toContain('homelessness-response');
+    expect(matchLocalTopics('CHAPMAN PARTNERSHIP RAPID RE-HOUSING'))
+      .toContain('homelessness-response');
+  });
+
   // ── climate-change, retuned 2026-09-09 ────────────────────────────────────────
   it('🔴 does not read CALCIUM CARBONATE or WATER INTERCONNECTION as climate policy', () => {
     // Both were live matches. 251161 is a lagoon and softeners at the Alexander Orr
