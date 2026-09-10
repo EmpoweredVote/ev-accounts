@@ -242,6 +242,19 @@ jobs:
         working-directory: backend
         run: node scripts/check-suppressed-answer-reads.mjs
 
+      # --- auth client isolation -------------------------------------------------------------------
+      # A session-establishing GoTrue call (signInWithPassword, signUp, refreshSession, verifyOtp, ...)
+      # on a shared DATA client leaves that user's session on the singleton; supabase-js then sends the
+      # user's token on every later .rpc()/.from() instead of the API key, so the shared client stops
+      # authenticating as service_role. That is the 2026-09-10 compass-write outage (PR #453): every
+      # adminRpc() after a login ran as `authenticated` and was denied EXECUTE on the write RPCs. The
+      # one-word wrong-client is invisible in review and only bites at runtime after a login. Static, no
+      # DATABASE_URL, dependency-free.
+      - name: auth client isolation
+        if: ${{ !cancelled() }}
+        working-directory: backend
+        run: node scripts/check-auth-client-isolation.mjs
+
       # --- answer-delete context guards ------------------------------------------------------------
       # Between 2026-08-12 and 08-13, SEVEN passes deleted stance answers and left the reasoning behind
       # (1735, 1738, 1739 and the four Maryland passes), silently creating ORPHAN_CONTEXT violations —
