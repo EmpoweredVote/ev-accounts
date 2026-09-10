@@ -216,6 +216,26 @@ export async function runNightlyPipeline(
       );
     }
 
+    // A total feed blackout is the pipeline's most likely failure mode — the
+    // feed set is three, and feed rot is silent. `fetchAllFeeds` does not
+    // throw when individual feeds fail, it reports per-feed `error` fields, so
+    // every-feed-failed produces zero articles, zero clusters, and
+    // clustersAttempted === 0, which the systemic-cluster check below skips by
+    // its own guard. Without this the run finalises as 'success' with zero
+    // questions — indistinguishable from a quiet news night, and `status` is
+    // the only detection surface anything reads.
+    //
+    // The `feedResults.length > 0` guard matters: a fatal throw inside
+    // `fetchAllFeeds` leaves feedResults empty and has already set
+    // pipelineStatus/fatalError above, so this must not double-report it.
+    if (feedResults.length > 0 && feedsFailed === feedResults.length) {
+      pipelineStatus = 'failed';
+      fatalError ??= `All ${feedsFailed} feeds failed`;
+      console.error(
+        `[run-pipeline] Every feed failed (${feedsFailed}/${feedResults.length}) — marking run failed`,
+      );
+    }
+
     const allArticles = feedResults.flatMap(r => r.articles);
     const clusters = clusterArticles(allArticles);
     clusterCount = clusters.length;
