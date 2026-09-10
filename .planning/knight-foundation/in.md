@@ -219,3 +219,79 @@ passed a new congressional map 57–41 on 2025-12-05 and **the Senate rejected i
 own published GeoJSON against every TIGER polygon at its own interior point — 180/180 and 56/56.
 Indiana has **not** had that treatment. It is a task in this wave, before 132 offices are written
 onto those polygons, not an assumption to carry.
+
+## ✅ THE VINTAGE IS PROVED, NOT ARGUED — 150 / 150 AT GA-1 GRADE
+
+`scripts/verify-in-legislative-vintage.mjs`. The General Assembly draws its own district overlay
+on Find Your Legislator from two KMZ files it publishes itself:
+
+```
+/publications/maps/senate-districts/senate_2021.kmz    50 placemarks, KML dated 2022-04-29
+/publications/maps/house-districts/house_2021.kmz     100 placemarks, KML dated 2022-04-29
+```
+
+Every one of the 150 TIGER polygons was tested at its own `ST_PointOnSurface`, against those
+placemarks, with holes honoured:
+
+```
+House  100 / 100 agree
+Senate  50 /  50 agree
+total  150 / 150 agree, 0 disagree
+```
+
+Four planted controls passed first, including the one that matters most here:
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | nothing | 0 |
+| 2 | HD-45 geometry removed | 1 |
+| 3 | **SD-17 and SD-18 swapped** — the layer-inversion failure | 2 |
+| 4 | HD-99 given HD-100's geometry as well — ambiguity, not absence | 1 |
+
+Control 3 is the Knight rule "TWO GIS LAYERS CAN INVERT" planted deliberately, so a detector that
+merely counts coverage cannot pass this suite.
+
+### 🔴🔴 THE SAME HOST SERVES JSON TO curl AND A REACT SHELL TO curl, AND BOTH ARE HTTP 200
+
+`getLegislators` answers curl with real JSON. `getLegislatorDetails` and **both KMZ URLs** answer
+curl with **HTTP 200 and 691 bytes of `<!doctype html>`** — with a browser user agent, with a
+`Referer`, and with `X-Requested-With`. The same KMZ URLs answer an in-page `fetch()` with
+**1,694,603** and **2,430,264** bytes beginning `PK\x03\x04`.
+
+A script that trusted `%{http_code}` would have written a 691-byte file called `senate_2021.kmz`
+and moved on. **Only a full decode catches it** — check the magic bytes and the length, never
+`r.ok`, and never the status line. This is the WAF lesson, but it is not a WAF: it is the SPA's own
+catch-all route answering for a path it does not recognise.
+
+## ✅ THE ROSTER IS LOCKED — `data/in-legislature-roster.json`
+
+`scripts/build-in-legislature-roster.mjs --self-test`. 150 seats, 100 House + 50 Senate, every
+`geo_id` of the form `18` + three digits, every one resolving to a TIGER polygon in production:
+
+| | Count |
+| --- | --- |
+| Roster seats | **150** |
+| With a TIGER polygon | **150** |
+| With a `districts` row already | **18** |
+| District rows still to create | **132** |
+
+Party is dropped at the roster boundary — it lives on `races.primary_party`, never on a person or
+an office. `openstates_image` is carried for stage 5 only, and is **unmeasured**: the IGA API
+publishes no portrait at all, so that column is the wave's only lead and has to be profiled before
+it is trusted.
+
+## ▶ WHAT REMAINS FOR IN-2
+
+1. `ROSTERS.md` for the wave, with the `## Sources`, `## Source defects found` and
+   `## Charter rulings` sections the house style requires.
+2. **Structure migration** — 2 chambers (`Indiana House of Representatives` 100,
+   `Indiana State Senate` 50); repoint the 18 existing offices; normalise their titles; create 132
+   districts + 132 offices; delete the 18 emptied pseudo-chambers.
+3. **Occupancy migration** — 47 new people, 92 reused `indiana_discovery` rows, 18 reused
+   `ballotready` rows; 132 new terms, all open-ended at `unknown`.
+4. Dry run through `psql` as one `BEGIN … ROLLBACK`, and confirm the rollback reverted.
+5. Gates: `check:migrations` after `git fetch`, `check:occupancy`, `check:reachability`, plus this
+   wave's own probe file and a per-district positive control.
+
+⚠ **Migration slots are NOT yet allocated.** Ask the allocator when the files are ready:
+`npm run steward --prefix backend -- slot CC --purpose "..."`. Do not count.
