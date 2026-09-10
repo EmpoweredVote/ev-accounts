@@ -29,6 +29,7 @@ export const INTERNATIONAL_FEEDS = [
   { name: 'NPR', url: 'https://feeds.npr.org/1004/rss.xml' },
   { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
   { name: 'DW', url: 'https://rss.dw.com/rdf/rss-en-world' },
+  { name: 'NPR National', url: 'https://feeds.npr.org/1003/rss.xml' },
 ] as const;
 
 // ─── Utilities ────────────────────────────────────────────────────────────────

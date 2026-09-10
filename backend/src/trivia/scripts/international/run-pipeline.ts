@@ -1,110 +1,132 @@
+// The nightly news pipeline: ingest once, route each story to exactly one
+// lane, then generate per lane.
+//
 // Usage:
-//   npx tsx src/scripts/international/run-pipeline.ts --collection world-news --prefix wrld
-//   npx tsx src/scripts/international/run-pipeline.ts --collection world-news --prefix wrld --dry-run
+//   npx tsx src/trivia/scripts/international/run-pipeline.ts
+//   npx tsx src/trivia/scripts/international/run-pipeline.ts --dry-run
 
 import 'dotenv/config';
 import { fileURLToPath } from 'url';
 import { fetchAllFeeds, INTERNATIONAL_FEEDS, type FeedResult } from './rss-ingestor.js';
 import { clusterArticles, extractClaim } from './claim-extractor.js';
-import { generateQuestions, writePassingQuestions, type Volatility } from './question-generator.js';
+import {
+  generateQuestions,
+  writePassingQuestions,
+  type GeneratedQuestion,
+} from './question-generator.js';
+import type { Lane } from './lanes.js';
+import { fingerprintClaim } from './claimFingerprint.js';
+import { makeClaimGuard } from './claimGuard.js';
+import { makeNearDuplicateCheck } from './nearDuplicate.js';
+import {
+  createFingerprintStore,
+  createSimilarityProbe,
+  pruneClaimFingerprints,
+} from './claimStore.js';
+import { INTERNATIONAL_LANES, type LaneTarget } from './laneTargets.js';
 
-// ─── CLI Argument Parsing ─────────────────────────────────────────────────────
+// ─── Per-lane counters ────────────────────────────────────────────────────────
 
-function parseArgs(argv: string[]): {
-  collection: string;
-  prefix: string;
-  dryRun: boolean;
-} {
-  const args = argv.slice(2);
-  let collection = '';
-  let prefix = '';
-  let dryRun = false;
-
-  for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--collection' && args[i + 1]) {
-      collection = args[++i];
-    } else if (args[i] === '--prefix' && args[i + 1]) {
-      prefix = args[++i];
-    } else if (args[i] === '--dry-run') {
-      dryRun = true;
-    }
-  }
-
-  if (!collection) {
-    console.error('Error: --collection <slug> is required');
-    process.exit(1);
-  }
-  if (!prefix) {
-    console.error('Error: --prefix <prefix> is required');
-    process.exit(1);
-  }
-
-  return { collection, prefix, dryRun };
+interface LaneStats {
+  generated: number;
+  blocked: number;
+  duplicates: number;
+  contradictions: number;
+  nearDuplicates: number;
+  degenerate: number;
 }
 
-// ─── Config Interface ─────────────────────────────────────────────────────────
-
-export interface InternationalLocaleConfig {
-  collectionSlug: string;
-  prefix: string;
-  volatility: Volatility;
-  maxQuestions?: number;
+function emptyStats(): LaneStats {
+  return {
+    generated: 0,
+    blocked: 0,
+    duplicates: 0,
+    contradictions: 0,
+    nearDuplicates: 0,
+    degenerate: 0,
+  };
 }
 
 // ─── Pipeline ─────────────────────────────────────────────────────────────────
 
-export async function runPipeline(
-  collectionSlug: string,
-  prefix: string,
-  options: { dryRun?: boolean; volatility?: Volatility; maxQuestions?: number } = {},
+export async function runNightlyPipeline(
+  targets: readonly LaneTarget[],
+  options: { dryRun?: boolean; maxQuestionsPerLane?: number } = {},
 ): Promise<void> {
-  const { dryRun = false, volatility = 'fast', maxQuestions } = options;
+  const { dryRun = false, maxQuestionsPerLane } = options;
 
-  console.log(`[run-pipeline] Starting pipeline for collection: ${collectionSlug} (prefix: ${prefix})`);
-  if (dryRun) {
-    console.log('[run-pipeline] DRY RUN mode — no DB writes, no Claude calls');
+  console.log(`[run-pipeline] Nightly run — ${targets.length} lane(s)${dryRun ? ' (DRY RUN)' : ''}`);
+
+  if (targets.length === 0) {
+    console.log('[run-pipeline] No lanes registered — nothing to do');
+    return;
   }
 
   // ── Lazy DB imports (ESM pattern) ────────────────────────────────────────
   const { db } = await import('../../db/index.js');
   const { generationJobs, collections } = await import('../../db/schema.js');
-  const { eq, sql } = await import('drizzle-orm');
+  const { eq, inArray, sql } = await import('drizzle-orm');
 
-  // ── Verify collection exists ─────────────────────────────────────────────
-  const [collection] = await db
-    .select({ id: collections.id })
+  // ── Resolve every lane's collection up front ─────────────────────────────
+  const slugs = targets.map(t => t.collectionSlug);
+  const rows = await db
+    .select({ id: collections.id, slug: collections.slug })
     .from(collections)
-    .where(eq(collections.slug, collectionSlug))
-    .limit(1);
+    .where(inArray(collections.slug, slugs));
 
-  if (!collection) {
-    throw new Error(`Collection not found in DB: ${collectionSlug}`);
+  const idBySlug = new Map(rows.map(r => [r.slug, r.id]));
+
+  // A lane whose collection does not exist yet is skipped, not fatal: three of
+  // the four lanes' collections are created in a later plan, and throwing here
+  // would abort the whole run and take the working lanes down with it.
+  const servedTargets = targets.filter(t => idBySlug.has(t.collectionSlug));
+  const missingLanes: Array<Record<string, unknown>> = [];
+
+  for (const t of targets) {
+    if (!idBySlug.has(t.collectionSlug)) {
+      console.warn(
+        `[run-pipeline] Collection not found, skipping lane=${t.lane} slug=${t.collectionSlug}`,
+      );
+      missingLanes.push({
+        reason: 'missing-collection',
+        lane: t.lane,
+        collectionSlug: t.collectionSlug,
+      });
+    }
   }
 
-  // ── Create generation_jobs record ────────────────────────────────────────
-  let jobId: number | null = null;
+  if (servedTargets.length === 0) {
+    throw new Error(
+      `No lane collections found in DB — nothing to serve (checked: ${slugs.join(', ')})`,
+    );
+  }
 
+  const targetByLane = new Map(servedTargets.map(t => [t.lane, t]));
+  const allCollectionIds = servedTargets.map(t => idBySlug.get(t.collectionSlug)!);
+
+  // ── One generation_jobs row per served lane ──────────────────────────────
+  const jobIdByLane = new Map<Lane, number>();
   if (!dryRun) {
-    const [job] = await db
-      .insert(generationJobs)
-      .values({
-        collectionSlug,
-        status: 'running',
-        questionsGenerated: 0,
-        questionsFlagged: 0,
-        questionsActivated: 0,
-        feedsFailed: 0,
-      })
-      .returning({ id: generationJobs.id });
-
-    jobId = job.id;
-    console.log(`[run-pipeline] Created generation_jobs record: id=${jobId}`);
+    for (const t of servedTargets) {
+      const [job] = await db
+        .insert(generationJobs)
+        .values({
+          collectionSlug: t.collectionSlug,
+          status: 'running',
+          questionsGenerated: 0,
+          questionsFlagged: 0,
+          questionsActivated: 0,
+          feedsFailed: 0,
+        })
+        .returning({ id: generationJobs.id });
+      jobIdByLane.set(t.lane, job.id);
+      console.log(`[run-pipeline] lane=${t.lane}: generation_jobs id=${job.id}`);
+    }
   }
 
-  // ── Fetch all feeds ──────────────────────────────────────────────────────
+  // ── Ingest ONCE ──────────────────────────────────────────────────────────
   let feedResults: FeedResult[] = [];
   let pipelineStatus: 'success' | 'failed' = 'success';
-
   try {
     feedResults = await fetchAllFeeds(INTERNATIONAL_FEEDS);
   } catch (err) {
@@ -113,119 +135,163 @@ export async function runPipeline(
     pipelineStatus = 'failed';
   }
 
-  // ── Compute stats ────────────────────────────────────────────────────────
   const feedsFailed = feedResults.filter(r => r.error).length;
-  const totalArticles = feedResults.reduce((sum, r) => sum + r.articles.length, 0);
-
-  // Per-feed summary log
   for (const result of feedResults) {
-    if (result.error) {
-      console.log(`[${result.feedName}] FAILED (${result.feedUrl}): ${result.error}`);
-    } else {
-      console.log(`[${result.feedName}] ${result.articles.length} articles ready`);
-    }
+    console.log(
+      result.error
+        ? `[${result.feedName}] FAILED (${result.feedUrl}): ${result.error}`
+        : `[${result.feedName}] ${result.articles.length} articles ready`,
+    );
   }
 
-  console.log(
-    `[run-pipeline] Feed summary: ${feedResults.length} feeds, ${feedsFailed} failed, ${totalArticles} articles total`,
-  );
-
-  // ── Claim extraction + question generation ───────────────────────────────
   const allArticles = feedResults.flatMap(r => r.articles);
   const clusters = clusterArticles(allArticles);
-  console.log(
-    `[Pipeline] ${allArticles.length} articles → ${clusters.length} clusters after dedup`,
-  );
+  console.log(`[Pipeline] ${allArticles.length} articles → ${clusters.length} clusters`);
 
-  const limitedClusters = maxQuestions !== undefined
-    ? clusters.slice(0, maxQuestions)
-    : clusters;
+  // ── Guards ───────────────────────────────────────────────────────────────
+  const guard = makeClaimGuard(createFingerprintStore());
+  const checkNearDuplicate = makeNearDuplicateCheck(createSimilarityProbe());
 
-  if (maxQuestions !== undefined && limitedClusters.length < clusters.length) {
-    console.log(`[Pipeline] Capped to ${limitedClusters.length} clusters (maxQuestions=${maxQuestions})`);
-  }
+  const stats = new Map<Lane, LaneStats>(servedTargets.map(t => [t.lane, emptyStats()]));
+  const rejections: Array<Record<string, unknown>> = [];
 
-  let lowConfidenceSkipped = 0;
-  let totalGenerated = 0;
-  let totalBlocked = 0;
-  const blockReasons: string[] = [];
+  for (const cluster of clusters) {
+    const claimResult = dryRun ? null : await extractClaim(cluster);
+    if (!claimResult) {
+      if (dryRun) console.log(`[DryRun] cluster: "${cluster.representativeTitle}"`);
+      continue;
+    }
 
-  if (!dryRun) {
-    for (const cluster of limitedClusters) {
-      const claimResult = await extractClaim(cluster);
-      if (!claimResult) {
-        lowConfidenceSkipped++;
+    const target = targetByLane.get(claimResult.lane);
+    if (!target) {
+      console.log(`[Pipeline] No target registered for lane=${claimResult.lane} — skipping`);
+      rejections.push({ reason: 'no-target', lane: claimResult.lane, subject: claimResult.subject });
+      continue;
+    }
+
+    const laneStats = stats.get(target.lane)!;
+    if (maxQuestionsPerLane !== undefined && laneStats.generated >= maxQuestionsPerLane) {
+      continue;
+    }
+
+    // ── Layer 1: claim fingerprint ─────────────────────────────────────────
+    const keys = fingerprintClaim(claimResult);
+
+    // A blank subject/attribute/value is schema-compliant but fingerprints to
+    // topicKey "|" and valueKey "". Recording one would make every later
+    // malformed claim read as a duplicate of it, so reject before the guard.
+    if (keys.topicKey.replace('|', '').trim() === '' || keys.valueKey.trim() === '') {
+      laneStats.degenerate++;
+      console.warn(`[Dedup] degenerate claim (blank subject/attribute/value) — skipping: "${claimResult.claim}"`);
+      rejections.push({ reason: 'degenerate-claim', lane: target.lane, claim: claimResult.claim });
+      continue;
+    }
+
+    const verdict = await guard.check(keys);
+
+    if (verdict.kind === 'duplicate') {
+      laneStats.duplicates++;
+      console.log(`[Dedup] duplicate of ${verdict.existing.questionExternalId ?? '(unknown)'} — "${claimResult.subject} / ${claimResult.attribute}"`);
+      rejections.push({
+        reason: 'duplicate-claim', lane: target.lane, topicKey: keys.topicKey,
+        valueKey: keys.valueKey, existing: verdict.existing.questionExternalId,
+      });
+      continue;
+    }
+
+    if (verdict.kind === 'contradiction') {
+      laneStats.contradictions++;
+      console.warn(`[Dedup] CONTRADICTION: "${keys.topicKey}" was ${verdict.existing.valueKey} (${verdict.existing.questionExternalId ?? 'unknown'}), now ${keys.valueKey} — skipping`);
+      rejections.push({
+        reason: 'contradiction', lane: target.lane, topicKey: keys.topicKey,
+        newValue: keys.valueKey, existingValue: verdict.existing.valueKey,
+        existing: verdict.existing.questionExternalId,
+      });
+      continue;
+    }
+
+    // ── Generate ───────────────────────────────────────────────────────────
+    const candidates = await generateQuestions(claimResult);
+    const failing = candidates.filter(q => !q.qualityGate.passed);
+    laneStats.blocked += failing.length;
+
+    let passing = candidates.filter(q => q.qualityGate.passed);
+
+    // ── Layer 2: trigram net, per candidate ────────────────────────────────
+    const survivors: GeneratedQuestion[] = [];
+    for (const q of passing) {
+      const hit = await checkNearDuplicate(q.text, allCollectionIds);
+      if (hit) {
+        laneStats.nearDuplicates++;
+        console.log(`[Dedup] near-duplicate of ${hit.externalId} (sim=${hit.similarity.toFixed(2)}) — skipping`);
+        rejections.push({
+          reason: 'near-duplicate', lane: target.lane,
+          existing: hit.externalId, similarity: hit.similarity,
+        });
         continue;
       }
-
-      const questions = await generateQuestions(claimResult);
-      const passing = questions.filter(q => q.qualityGate.passed);
-      const failing = questions.filter(q => !q.qualityGate.passed);
-
-      totalBlocked += failing.length;
-      blockReasons.push(...failing.map(q => q.qualityGate.reason));
-
-      if (passing.length > 0 && jobId !== null) {
-        const written = await writePassingQuestions(
-          passing,
-          claimResult,
-          collection.id,
-          jobId,
-          prefix,
-          volatility,
-        );
-        totalGenerated += written.length;
-      }
+      survivors.push(q);
     }
-  } else {
-    // Dry-run: cluster and log only — no Claude calls, no DB writes
-    for (const cluster of limitedClusters) {
-      console.log(
-        `[DryRun] Would process cluster: "${cluster.representativeTitle}" (${cluster.articles.length} articles)`,
+    passing = survivors;
+
+    const jobId = jobIdByLane.get(target.lane);
+    if (passing.length > 0 && jobId !== undefined) {
+      const written = await writePassingQuestions(
+        passing, claimResult, idBySlug.get(target.collectionSlug)!,
+        jobId, target.prefix, target.volatility,
       );
-      totalGenerated += 1; // Estimate: 1 question per cluster in dry-run
+      laneStats.generated += written.length;
+
+      // Recorded only when something was actually published: a claim whose
+      // candidates were all rejected is deliberately not remembered, so a
+      // transient failure does not suppress the story permanently.
+      await guard.record(keys, target.lane, written[0]?.externalId ?? null, jobId);
     }
   }
 
-  console.log(
-    `[Pipeline] Run complete: ${totalGenerated} questions generated, ${totalBlocked} blocked, ${lowConfidenceSkipped} low-confidence skipped`,
-  );
+  // ── Finalise each lane's job row ─────────────────────────────────────────
+  if (!dryRun) {
+    for (const t of servedTargets) {
+      const s = stats.get(t.lane)!;
+      const jobId = jobIdByLane.get(t.lane)!;
+      console.log(
+        `[Pipeline] lane=${t.lane}: ${s.generated} generated, ${s.blocked} blocked, ` +
+        `${s.duplicates} duplicate, ${s.contradictions} contradiction, ` +
+        `${s.nearDuplicates} near-duplicate, ${s.degenerate} degenerate`,
+      );
+      await db
+        .update(generationJobs)
+        .set({
+          status: pipelineStatus,
+          questionsGenerated: s.generated,
+          questionsFlagged: s.blocked,
+          questionsActivated: s.generated,
+          feedsFailed,
+          notes: {
+            feedStats: feedResults.map(r => ({
+              feedUrl: r.feedUrl,
+              articlesFound: r.articles.length,
+              articlesSkipped: r.articlesSkipped,
+              ...(r.error ? { error: r.error } : {}),
+            })),
+            laneDistribution: Object.fromEntries(
+              [...stats.entries()].map(([lane, v]) => [lane, v.generated]),
+            ),
+            dedup: {
+              duplicates: s.duplicates,
+              contradictions: s.contradictions,
+              nearDuplicates: s.nearDuplicates,
+              degenerate: s.degenerate,
+            },
+            rejections: [...missingLanes, ...rejections.filter(r => r.lane === t.lane)],
+          } as never,
+          updatedAt: sql`NOW()`,
+        })
+        .where(eq(generationJobs.id, jobId));
+    }
 
-  // Build notes JSON for generation_jobs
-  const notes = {
-    feedStats: feedResults.map(r => ({
-      feedUrl: r.feedUrl,
-      articlesFound: r.articles.length,
-      articlesSkipped: r.articlesSkipped,
-      ...(r.error ? { error: r.error } : {}),
-    })),
-    clusters: clusters.length,
-    lowConfidenceSkipped,
-    questionsGenerated: totalGenerated,
-    questionsBlocked: totalBlocked,
-    blockReasons,
-    ...(dryRun ? { dryRun: true } : {}),
-  };
-
-  // ── Update generation_jobs record ────────────────────────────────────────
-  if (!dryRun && jobId !== null) {
-    await db
-      .update(generationJobs)
-      .set({
-        status: pipelineStatus,
-        feedsFailed,
-        questionsGenerated: totalGenerated,
-        questionsFlagged: totalBlocked,
-        questionsActivated: totalGenerated,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        notes: notes as any,
-        updatedAt: sql`NOW()`,
-      })
-      .where(eq(generationJobs.id, jobId));
-
-    console.log(
-      `[run-pipeline] Updated generation_jobs id=${jobId}: status=${pipelineStatus}, generated=${totalGenerated}, blocked=${totalBlocked}`,
-    );
+    const pruned = await pruneClaimFingerprints(30);
+    console.log(`[Pipeline] Pruned ${pruned} fingerprints older than 30 days`);
   }
 
   console.log('[run-pipeline] Pipeline complete.');
@@ -240,9 +306,9 @@ const isDirectRun = process.argv[1] && (
   process.argv[1].endsWith('/run-pipeline.js')
 );
 if (isDirectRun) {
-  const { collection, prefix, dryRun } = parseArgs(process.argv);
-  runPipeline(collection, prefix, { dryRun }).catch((err) => {
-    console.error('[run-pipeline] Unhandled error:', err);
+  const dryRun = process.argv.includes('--dry-run');
+  runNightlyPipeline(INTERNATIONAL_LANES, { dryRun }).catch((err) => {
+    console.error('[run-pipeline] Fatal:', err);
     process.exit(1);
   });
 }
