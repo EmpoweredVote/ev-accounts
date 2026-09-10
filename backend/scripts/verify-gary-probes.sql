@@ -3,17 +3,19 @@
 --
 --   psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f scripts/verify-gary-probes.sql
 --
--- ⚠ GARY SCORES 2 OF 4 AT CITY HALL, AND THE PROBE ASSERTS EXACTLY THAT.
+-- ⚠ GARY SCORES 3 OF 4 AT CITY HALL (was 2 of 4 before IN-6), AND THE PROBE ASSERTS EXACTLY THAT.
 -- The four-answer test is council member + county commissioner + state representative + state
--- senator. Gary returns the state rep and state senator, plus its Mayor, Clerk, City Judge and
--- three at-large council members -- but NO district council member and NO county commissioner:
+-- senator. Gary returns the state rep, the state senator and -- since IN-6 -- ALL THREE Lake
+-- County commissioners, plus its Mayor, Clerk, City Judge and three at-large council members.
 --
---   * the six DISTRICT council seats are DEFERRED (the 2023 settlement map is published only as
---     PDF; the City's own GeoJSON repo is the 2014 map). See ROSTERS.md.
---   * Lake County is stage 4 and has not run.
+-- The missing answer is the DISTRICT council member, and it is missing TWICE over:
+--   * Gary's six CITY council district seats are deferred (the 2023 settlement map is PDF-only;
+--     the City's own GeoJSON repo is the 2014 map). See ROSTERS.md.
+--   * Lake County's seven COUNCIL district seats are deferred for the same reason -- Lake
+--     publishes every map as PDF and its open-data org carries no electoral layer.
 --
--- Both absences are asserted at ZERO on purpose. A wave that quietly scored 2 of 4 would be
--- indistinguishable from one that broke two tiers.
+-- Both deferrals are asserted at ZERO on purpose. A wave that quietly scored 3 of 4 would be
+-- indistinguishable from one that broke a tier.
 
 \echo ''
 \echo '=== 1. CONTROL ON THE PROBE ITSELF: does the anchor land in Gary? ==='
@@ -43,7 +45,7 @@ ORDER BY d.district_type, o.title, p.full_name;
 DO $$
 DECLARE
   v_place text; v_atlarge int; v_mayor int; v_clerk int; v_judge int;
-  v_rep int; v_sen int; v_countyoff int; v_districtseats int; v_spencer_offices int; v_spencer_gary int;
+  v_rep int; v_sen int; v_countyoff int; v_countycomm int; v_lakecouncil int; v_districtseats int; v_spencer_offices int; v_spencer_gary int;
 BEGIN
   SELECT gb.geo_id INTO v_place FROM essentials.geofence_boundaries gb
    WHERE gb.mtfcc='G4110' AND gb.state='18'
@@ -83,11 +85,39 @@ BEGIN
     RAISE EXCEPTION 'IN-4 probe: % Gary district council office(s) exist; they are deferred until the 2023 settlement map is obtained', v_districtseats;
   END IF;
 
+  -- 🟢 UPDATED 2026-09-10 BY IN-6. This read "expected 0 Lake County offices (stage 4 has not
+  -- run)" and FIRED the moment CC_0095 applied, reporting 12 -- which is what asserting an
+  -- absence is for. Lake now carries 12 countywide offices: 3 commissioners + 9 officers.
+  -- ⚠ Its SEVEN council district seats remain deferred for want of geometry, so Gary still does
+  -- not get a county council answer, and that absence is asserted separately below.
   SELECT count(*) INTO v_countyoff FROM essentials.offices o
    JOIN essentials.districts d ON d.id = o.district_id
    WHERE d.geo_id = '18089' AND d.district_type = 'COUNTY';
-  IF v_countyoff <> 0 THEN
-    RAISE EXCEPTION 'IN-4 probe: expected 0 Lake County offices (stage 4 has not run), found %', v_countyoff;
+  IF v_countyoff <> 12 THEN
+    RAISE EXCEPTION 'IN-4 probe: expected 12 countywide Lake County offices, found %', v_countyoff;
+  END IF;
+
+  -- 🔴 All THREE commissioners must reach a Gary address -- Indiana elects them county-wide.
+  SELECT count(och.politician_id) INTO v_countycomm
+  FROM essentials.geofence_boundaries gb
+  JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
+  JOIN essentials.offices o ON o.district_id = d.id
+  JOIN essentials.chambers c ON c.id = o.chamber_id
+  LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+  WHERE gb.mtfcc = 'G4020' AND gb.state = '18'
+    AND ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint(-87.33780, 41.60360), 4326))
+    AND c.name = 'Board of Commissioners';
+  IF v_countycomm <> 3 THEN
+    RAISE EXCEPTION 'IN-4 probe: Gary City Hall returns % county commissioner(s), expected 3', v_countycomm;
+  END IF;
+
+  -- The seven Lake County Council district seats are still deferred.
+  SELECT count(*) INTO v_lakecouncil FROM essentials.offices o
+   JOIN essentials.chambers c ON c.id = o.chamber_id
+   JOIN essentials.governments g ON g.id = c.government_id
+   WHERE g.name = 'Lake County, Indiana, US' AND c.name = 'Lake County Council';
+  IF v_lakecouncil <> 0 THEN
+    RAISE EXCEPTION 'IN-4 probe: % Lake County Council office(s) exist; all seven are deferred until district geometry is obtained', v_lakecouncil;
   END IF;
 
   -- 🔴 Mark Spencer left Gary's at-large seat for SD-3. He must hold exactly ONE office, and it
@@ -115,5 +145,5 @@ BEGIN
     RAISE EXCEPTION 'IN-4 probe: Mark Spencer holds a Gary office as well as SD-3 -- the same man on two live seats';
   END IF;
 
-  RAISE NOTICE 'IN-4 PROBE PASSED: anchor validated; City Hall returns mayor + clerk + CITY JUDGE + 3 at-large + 1 rep + 1 senator; district seats and Lake County both asserted at 0; Mark Spencer holds SD-3 only';
+  RAISE NOTICE 'IN-4 PROBE PASSED: anchor validated; City Hall returns mayor + clerk + CITY JUDGE + 3 at-large + 1 rep + 1 senator; district seats deferred; Lake County 12 countywide incl 3 commissioners; Mark Spencer holds SD-3 only';
 END $$;
