@@ -53,6 +53,7 @@ function baseNormalize(raw: string): string {
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
+    // strip a trailing possessive 's so "Canada's" collides with "Canada"
     .replace(/[’']s\b/g, '')
     .replace(/[’']/g, '')
     .replace(/[^a-z0-9.%\s-]/g, ' ')
@@ -72,9 +73,18 @@ function stripNoise(text: string): string {
 /**
  * Normalise a claim's value. Thousands separators are removed before
  * punctuation stripping so "1,287" becomes "1287" rather than "1 287".
+ *
+ * The lookahead requires the comma to be followed by one or more complete
+ * three-digit groups with no trailing digit, rather than capturing exactly
+ * three digits as part of the match. Because the digits after the comma are
+ * matched by lookahead (zero-width) instead of being consumed, each comma is
+ * removed independently and the next comma is still visible to the regex on
+ * the following match attempt. That makes multi-group numbers collapse in
+ * one pass: "1,234,567" becomes "1234567", not the single-group-only
+ * "1234,567" a consuming capture group would leave behind.
  */
 export function normalizeValue(raw: string): string {
-  const digitsJoined = raw.replace(/(\d),(\d{3})\b/g, '$1$2');
+  const digitsJoined = raw.replace(/(\d),(?=(?:\d{3})+(?!\d))/g, '$1');
   return stripNoise(baseNormalize(digitsJoined));
 }
 

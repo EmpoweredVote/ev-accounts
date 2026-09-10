@@ -10,6 +10,10 @@ describe('normalizeValue', () => {
     expect(normalizeValue('1,287 people')).toBe(normalizeValue('1287'));
   });
 
+  it('strips multiple comma groups in one pass', () => {
+    expect(normalizeValue('1,234,567')).toBe(normalizeValue('1234567'));
+  });
+
   it('strips approximation hedges', () => {
     expect(normalizeValue('approximately 5,000 people')).toBe(normalizeValue('over 5000'));
   });
@@ -77,6 +81,12 @@ describe('fingerprintClaim', () => {
   it('does not collide unrelated stories dated the same day (wiran-1630 / wiran-1635)', () => {
     const a = fingerprintClaim({ subject: 'UK sanctions on Israeli settlements', attribute: 'date announced', value: 'September 8, 2026' });
     const b = fingerprintClaim({ subject: "Canada's retaliatory tariffs on US goods", attribute: 'date took effect', value: 'September 8, 2026' });
+    expect(a.topicKey).not.toBe(b.topicKey);
+  });
+
+  it('does not collide unrelated stories sharing a month (wiran-1639 / wiran-1665, both "August 2026")', () => {
+    const a = fingerprintClaim({ subject: 'Meta CSAM advertisements peak month', attribute: 'month', value: 'August 2026' });
+    const b = fingerprintClaim({ subject: 'Russia jet-powered Geran drone daily attacks on Ukraine', attribute: 'month began', value: 'August 2026' });
     expect(a.topicKey).not.toBe(b.topicKey);
   });
 
