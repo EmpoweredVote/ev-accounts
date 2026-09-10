@@ -707,36 +707,58 @@ Dates: **17 year + 1 month + 1 unknown**. Kerley is `month`, not `day`, because 
 is published — the Gary rule. Richard Beck has no Ballotpedia page under any slug tried, so
 `unknown`.
 
-# IN-6 — Lake County: RESEARCHED, NOT APPLIED
+# IN-6 — Lake County (applied 2026-09-10)
 
-**Nothing was written.** Stopped deliberately; see below.
+**Lake elects 19 offices. This wave seated 12.** `CC_0095`, one migration carrying offices *and*
+people. The seven County Council district seats are **deferred**, as Gary's six were.
+`offices_missing_terms` unmoved at **821 / 166 / 655**. No boundary layer was needed — everything
+seated hangs on `18089`/`G4020`, already in production.
+Roster: [`backend/data/seed-lake-county-2026/ROSTERS.md`](../../backend/data/seed-lake-county-2026/ROSTERS.md).
 
-| | Finding |
-| --- | --- |
-| Commissioners | 3 — **Barry Shullanberger, James Williams, Mark Albertson** — countywide, same Indiana rule as Allen |
-| County Council | reported as **7 single-member districts, no at-large** — ⚠ **NOT confirmed**, and it differs from Allen's 4 + 3 |
-| Officers | Assessor, Auditor, Clerk, Coroner, Prosecutor, Recorder, Sheriff, Surveyor, Treasurer (9) |
-| Confirmed names | Auditor **Peggy Holinga Katona**, Recorder **Gina Pimentel**, Treasurer **John Petalas** |
-| Council geometry | ❌ **PDF only.** Lake publishes all maps as "printable PDF files"; its open-data org (`lakecountyod`, 174 layers) is cadastral and physical — **no council or commissioner district layer** |
+## 🔴🔴 AN AGGREGATED SEARCH GAVE ME THREE WRONG COMMISSIONERS
 
-▶ **Expected shape:** the Gary pattern. Seat the **12 countywide** offices (3 commissioners +
-9 officers) on `18089`/`G4020`, which already exists, and **defer the 7 council district seats**
-until the geometry is obtained. No new boundary layer is needed for the countywide half.
+It returned **"Barry Shullanberger, James Williams, Mark Albertson"**, and a Clerk who was also
+*"Recorder, Auditor, Public Administrator and Surveyor"* — **a combined office no Indiana county
+has**. Those belong to a **Lake County in another state**. The county's own department pages give
+**Kyle W. Allen Sr., Jerry Tippy, Michael C. Repay**.
 
-## 🔴 WHY I STOPPED: THE SOURCES BLENDED JURISDICTIONS
+▶ **For a generically named county, an aggregated source is a JURISDICTION-collision risk, not just
+a staleness risk.** There are Lake Counties in at least twelve states. This is the Georgia
+name-collision failure with the *jurisdiction* colliding rather than the person — and stopping the
+previous session rather than seating from that source is what caught it.
 
-A roster search returned *"Kendra Steele holds the combined position of Clerk and Recorder, Auditor,
-Public Administrator and Surveyor"* — **that is a Lake County in another state**, not Indiana; no
-Indiana county combines those offices. The results mixed **Lake County, Oregon** and a
-Colorado-style structure into Lake County, Indiana.
+## 🔴 TEN IDENTICAL ANSWERS FROM THE COUNTY'S OWN SITE, AND THEY WERE ALL THE NAV BAR
 
-Six of the nine officer names are still unconfirmed, and the one source that offered them had
-already demonstrably blended counties. Seating people from it would be the GA name-collision failure
-(2 of 4 hits were a Colorado senator and a Utah treasurer) with the jurisdiction, not the person,
-as the thing that collided.
+My first extraction keyed on a regex that matched a navigation item present on every page, so all
+ten offices returned `"Superior Court Elected Officials — Assessor"`. **Ten identical answers is a
+broken detector, not a finding.** Stripping nav/header/footer and keying on each page's "Our Team"
+block returned ten distinct names — and the distinctness is the evidence the fix worked.
 
-▶ **Next action:** take the roster from **Lake County's own department pages** on `lakecountyin.gov`,
-one office at a time, and confirm the council is 7 single-member districts before writing anything.
+## 🔴 LAKE'S COUNCIL IS SEVEN SINGLE-MEMBER DISTRICTS; ALLEN'S IS FOUR PLUS THREE AT LARGE
+
+Two Indiana counties in one slice, two different councils. All seven of Lake's are **deferred**:
+Lake publishes every map as **PDF only**, and its open-data organisation (`lakecountyod`, 174
+layers) is cadastral and physical with **no electoral district layer**. Offices without geometry are
+unreachable, so the gate asserts their absence.
+
+🔴 **Ronald G. Brewer Sr. — who left Gary's at-large seat in IN-4 — sits on Lake County Council
+District 2**, a deferred seat. The probe asserts he holds **no** office, so a later wave cannot
+double-seat him. **Two people have now moved between jurisdictions mid-term in this slice**: Mark
+Spencer (Gary at-large → SD-3) and Brewer.
+
+🔴 **All 12 terms are `unknown`.** Ballotpedia 404s for all thirteen Lake officials tried — not a
+broken method: the same batch returned **14/19 for Allen** and **9/9 for Fort Wayne** minutes
+earlier. It simply does not cover Lake County, as it does not cover Gary.
+
+## ✅ Probe and controls
+
+A Gary address returns **12 county answers**: 3 commissioners + 9 officers.
+Gary's own probe was updated — its Lake assertion **fired** on apply, and **Gary now scores 3 of 4**.
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | one Lake commissioner unseated (**scoped to Lake**, after the Allen over-broad plant) | `returns 2 commissioner(s), expected 3` — `DELETE 1` |
+| 2 | a Lake County Council office created | `1 Lake County Council office(s) exist; all seven are deferred` |
 
 ## ▶ WHAT REMAINS FOR INDIANA
 
