@@ -556,44 +556,92 @@ planted nothing and "passed".
 
 `check:reachability`: nothing regressed, no new `in|` bucket.
 
-# IN-4 — Gary: groundwork only, NOTHING APPLIED
+# IN-4 — Gary (applied 2026-09-10)
 
-Started 2026-09-10. **No boundary layer loaded, no migration written, no slot allocated.**
-Recorded so the next session does not repeat the research.
+**Gary elects TWELVE offices. This wave seated SIX.** `CC_0092` structure, `CC_0093` occupancy.
+6 offices, 6 people, 0 vacancies. `offices_missing_terms` unmoved at **821 / 166 / 655**.
+Roster: [`backend/data/seed-gary-2026/ROSTERS.md`](../../backend/data/seed-gary-2026/ROSTERS.md).
 
-## What is established
+## 🔴🔴 GARY ELECTS A JUDGE AND FORT WAYNE DOES NOT — TWELVE OFFICES AGAINST ELEVEN
 
-| | Finding |
+Fort Wayne Code § 31.01 ends at City Clerk. Gary additionally elects a **Judge of the City Court**:
+Indiana second-class cities *may* have a city court (IC 36-4-9), and the Lake County certified 2023
+results carry a `Judge of the City Court` race, won unopposed by **Deidre L Monroe**.
+
+**Inheriting Fort Wayne's answer would have silently dropped an entire elected judgeship**, and no
+count-based check would have noticed, because 11 offices is a perfectly plausible number. This is
+the DESCRIBE-REAL-POWERS rule paying for itself one wave after the rule was restated.
+
+## 🔴🔴 THE SIX DISTRICT SEATS ARE DEFERRED, AND THE REASON IS A PERFECT-LOOKING STALE MAP
+
+Gary **missed the statutory redistricting deadline of 2022-12-31**, was sued in federal court —
+total district deviation measured at about **24%** — and under a settlement the Council **adopted a
+new map on 2023-02-10**, governing from the 2023 primary.
+
+| Candidate source | Verdict |
 | --- | --- |
-| **Mayor** | **Eddie Melton**, assumed office **2024-01-01**, elected 2023-11-07 (Wikipedia) |
-| **Council** | **9 members — 6 district + 3 at-large**, same split as Fort Wayne |
-| **Roster** (`garycommoncouncil.gov/council-members/`) | D1 Lori Latham · D2 Dwayne Halliburton · D3 Mary Brown · D4 Marian Ivey · D5 **Linda Barnes-Caldwell (President)** · D6 Dwight A Williams · At-large: Myles Tolliver, Kenneth Whisenton, **Darren Washington (Vice President)** |
-| **Production** | Greenfield — no government, no districts, no offices for Gary or Lake County |
-| **Boundaries present** | TIGER place `1827000` (50.663 sq mi) and county `18089` (626.629 sq mi) |
+| `github.com/cityofgary/administrative-boundaries` — the City's own repo: 6 districts, EPSG 4326 GeoJSON, correctly named, from the Gary Sanitary District GIS Department | 🔴 **REJECTED. One commit, 2014-07-21; repo unpushed since 2014-08-13** — nine years older than the settlement map, and older than the 2020 census |
+| City of Gary live GIS (`GaryINsight`, 15 items, updated 2026-09) | ❌ **no council-district layer at all** |
+| Lake County council-district maps, updated 2026-06-10 | ❌ **PDF and JPG only** |
+| ArcGIS Online | ❌ nothing for Lake County precincts or Gary districts |
 
-## 🔴 What is NOT established, and must not be inherited from Fort Wayne
+**The 2014 layer is the trap and it is a very good one** — city-published, right format, right
+projection, right names, six features. Only the commit date gives it away. That is the CA-2 failure
+in another dress: the most convenient, correctly-named layer is the wrong map.
 
-1. **Does Gary elect a City Judge?** Fort Wayne's § 31.01 ends at City Clerk, so Fort Wayne is 11
-   offices. Indiana second-class cities *may* have a **city court** with an elected judge
-   (IC 36-4-9), and Gary historically has one. **If it does, Gary is 12 offices, not 11.**
-   This is exactly the DESCRIBE-REAL-POWERS rule — do not copy Fort Wayne's answer.
-2. **Who is the City Clerk?** Not yet identified.
-3. **Are the at-large seats numbered?** Fort Wayne's are not. Confirm Gary's separately.
-4. **The council-district GIS layer.** Not found yet. Allen County's Election Board service
-   (`gis1.acimap.us`) covered Fort Wayne; **Lake County has its own** and it has not been located.
-5. **Dates.** Only the Mayor is dated. Every council member needs an occupancy start, and the
-   Fort Wayne lesson applies: a term span is not an occupancy start for anyone re-elected.
+### Why the six offices were not created empty
 
-## ⚠ Traps already hit while looking
+Six offices with no geometry are six offices **no address can ever reach**, and nothing errors.
+That is exactly the defect this slice measured at **671** offices in `indiana_discovery`, three days
+ago. The structure gate therefore **asserts the six district offices are ABSENT**, so a later wave
+that obtains the map has to add them deliberately rather than finding them half-made.
 
-- **Municode 403s to WebFetch** (`library.municode.com/in/gary/...`) and loads in Playwright — but
-  its content sits behind a language-selector widget, so `innerText` returns the translation menu.
-  Target the content container, not the body.
-- **TWO council sites exist**: `garycommoncouncil.gov` (current) and `garycommoncouncil.org`.
-  A search snippet named **Tai A. Adkins** as Council President; the `.gov` site says
-  **Linda Barnes-Caldwell**. Prefer the `.gov`, and treat the snippet as stale.
-- **Ballotpedia's Gary page is a stub** — it lists federal and state officials, not city
-  officeholders. It is not a usable source B here, unlike for Fort Wayne.
+▶ Lake County's GIS page offers *"Request GIS Map or Data"* — request the 2023 settlement map.
+**Do not georeference the PDFs.**
+
+## 🔴🔴 THE SAME MAN WAS ABOUT TO BE SEATED TWICE, IN TWO WAVES, THREE DAYS APART
+
+Four of Gary's twelve seats have changed since the 2023 election:
+
+| Seat | 2023 | Now | What happened |
+| --- | --- | --- | --- |
+| At Large | **Mark Spencer** | Kenneth Whisenton | Spencer won **Indiana Senate District 3**, sworn **2024-11-19** |
+| At Large | Ronald G Brewer Sr | *(chain)* | left; Marian Ivey took an at-large seat |
+| District 4 | Tai Adkins | Marian Ivey | Adkins became **Calumet Township trustee**; Ivey won the D4 caucus **2025-02-19** on the county chairman's tie-break |
+| At Large | *(Ivey's seat)* | Myles Tolliver | caucus Friday **2025-03-21** |
+
+🔴 **Mark Spencer is the man `CC_0089` seated in SD-3 three days ago.** A wave that read Gary's 2023
+certified results as current would have put him on **two live offices at once**. The probe asserts
+he holds **exactly one** Indiana `STATE_UPPER` seat and **no** Gary office — and a planted control
+confirms that guard fires rather than passing vacuously.
+
+## 🔴 BALLOTPEDIA WAS DECISIVE FOR FORT WAYNE AND IS EMPTY FOR GARY
+
+IN-3 dated five Fort Wayne councilmembers from Ballotpedia tenure fields. For Gary, **ten of twelve
+officials return HTTP 404** — Fort Wayne is a top-100 city and Gary is not. The council's own member
+pages are prose biographies with no tenure data.
+
+So three of six terms are **`unknown`**, which is the honest answer, not a gap in the work — the
+GA-2 position, where all 235 Georgia legislative terms are `unknown`.
+
+⚠ **The two `month` rows are dated from the CAUCUS, not the swearing-in**, which is a different
+event days later and is not published. 1 day + 2 month + 3 unknown, asserted by the gate.
+
+## ✅ Probe and controls
+
+Gary City Hall returns **eight** answers: Mayor Eddie Melton, Clerk Suzette Raggs, **Judge Deidre L
+Monroe**, three at-large members, HD-3 Ragen Hatcher and **SD-3 Mark Spencer**.
+
+⚠ **Gary scores 2 of 4 and the probe asserts both absences at zero** — no district councilmember
+(deferred) and no county commissioner (stage 4).
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | City Judge removed | `City Hall returns 0 city judge(s) … Gary elects one and Fort Wayne does not` |
+| 2 | **Mark Spencer put back on a Gary at-large seat** | `Mark Spencer holds a Gary office as well as SD-3 — the same man on two live seats` |
+| 3 | a Gary District 1 office created | `1 Gary district council office(s) exist; they are deferred…` |
+
+`check:reachability`: nothing regressed.
 
 ## ▶ WHAT REMAINS FOR INDIANA
 
