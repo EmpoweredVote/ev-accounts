@@ -21,7 +21,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 1 | FL | Bradenton, Miami, Palm Beach County, Tallahassee | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | IN | Fort Wayne, Gary | ✅ | WIP | — | — | — |
+| 4 | IN | Fort Wayne, Gary | ✅ | ✅ | — | — | — |
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
@@ -116,7 +116,7 @@ Re-measure rather than trust these once any wave has applied.
 | CA | 80/80 | 40/40 |
 | CO | 65/65 | 35/35 |
 | NC | 120/120 | 50/50 |
-| IN | 12/100 | 6/50 |
+| IN | **100/100** | **50/50** |
 | FL | **120/120** | **40/40** |
 | GA | **180/180** | **55/56** |
 | KS | 0/125 | 0/40 |
@@ -130,7 +130,9 @@ Re-measure rather than trust these once any wave has applied.
 | SC | 0/124 | 0/46 |
 | SD | 0/70 | 0/35 |
 
-Total owed: **2,155**, of which **395 are now seated** (FL complete; GA 235 of 236, SD-12 vacant). Remaining: **1,760**.
+Total owed: **2,155**, of which **545 are now seated** (FL complete; GA 235 of 236, SD-12 vacant; **IN complete, 150 of 150, no vacancy**). Remaining: **1,610**.
+
+🔴 **INDIANA'S 18 PRE-EXISTING SEATS WERE NEVER IN THE 395** — they sat outside this table because the row read "12/100 + 6/50" and nothing summed it. IN-2 added **132** seats and repaired **18**, so the seated total moves by 150, not by 132. ▶ **A partially-seated state is invisible to a table that only counts finished ones.**
 
 🔴 **SEATED IS NOT THE SAME QUESTION AS PORTRAITED, AND ONLY THIS TABLE WAS BEING WATCHED.**
 Measured 2026-09-02 across the five states with a seated legislature. The read path is
@@ -308,6 +310,9 @@ wave hardcodes its code in its own loader, so this table is the only place they 
 
 Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the number last.
 
+| IN | IN-2 structure | `CC_0088_in_legislature_structure.sql` | 2026-09-10 |
+| IN | IN-2 occupancy | `CC_0089_in_legislature_incumbents.sql` | 2026-09-10 |
+
 ## Session log
 
 | Date | Session did | Next action |
@@ -358,3 +363,4 @@ Append a row per applied migration. Namespace is `CC_` (Cantrell). Take the numb
 
 ⚠ Any state-banner replacement must be **VERSIONED** (`states/CA-v2.jpg`), never an overwrite — the CDN does not reliably purge. Assets live in the **essentials** repo (`src/lib/buildingImages.js`, branch `main`), so a remedy ships as a separate PR there. |
 | 2026-09-10 | **IN-2 MEASURED, ROSTERED AND VINTAGE-PROVED — NOT APPLIED. Nothing was written to production.** Opened slice 4 and wrote [`in.md`](./in.md). 🔴🔴 **INDIANA IS THE PROGRAM'S FIRST PARTIALLY-SEATED LEGISLATURE, AND THE COUNT WAS THE LEAST OF IT.** Its 18 existing seats hang on **18 pseudo-chambers**, one per district with `official_count` 0 — swept across every state, **Indiana is the only one where a legislative chamber count exceeds 2** — and nothing but its own offices references those 18 rows. 🔴🔴 **BENEATH IT, 671 UNREACHABLE OFFICES**: 672 politicians sourced `indiana_discovery`, 671 holding an office with no district, no chamber and no government — 305 `Indiana Elected Official`, 231 `State Representative`, 102 `State Senator` — measured at full size for the first time. **92 of the 150 sitting legislators are in that cohort**, each matching exactly one row, carrying **zero stances and zero photographs** between them. Rulings (Cantrell): **full repair of the 18**, and **reuse the 92** while recording the orphan offices as a debt rather than cleaning a seventh of them. ⚠ After IN-2 those 92 people each hold **two** offices — the real one and the orphan; that is expected, not drift. ✅ Roster locked **150/150** (100 House + 50 Senate) from the General Assembly's own API and Open States, **0 disagreements**, put through three planted defects first. 🔴 **SOURCE A IS OVER-LONG BY ONE AND THE MARKER IS A NULL DISTRICT, NOT A VACATE DATE** — Andy Zay, who resigned 2026-01-08 to chair the IURC; McKinley took SD-17 on 2026-02-09, which also dates both sources. 🔴 **NO `term_start` EXISTS ANYWHERE IN INDIANA'S API**, so every term is open-ended at `unknown`, as Georgia's 235 are. ✅ **VINTAGE PROVED 150/150 AT GA-1 GRADE** against the General Assembly's own `house_2021.kmz` / `senate_2021.kmz`, every district at its own interior point, with **SD-17 and SD-18 swapped as a planted control** so a coverage-counting detector cannot pass. The 2025–26 redistricting fight was **congressional only and the Senate killed it 31–19**; no legislative map moved. 🔴🔴 **BOTH KMZ URLS AND `getLegislatorDetails` ANSWER curl WITH HTTP 200 AND 691 BYTES OF REACT SHELL** — a browser UA, a `Referer` and `X-Requested-With` change nothing — and answer an in-page `fetch()` with 1,694,603 and 2,430,264 bytes of real ZIP. **Only a full decode catches it**; `%{http_code}` reports success on the failing path. | Write `ROSTERS.md`, then the structure and occupancy migrations — **allocate the slots, do not count** |
+| 2026-09-10 | **IN-2 APPLIED — THE INDIANA LEGISLATURE IS SEATED AND ITS STRUCTURAL DEFECT IS GONE. `CC_0088` structure, `CC_0089` occupancy. 150 offices, 150 seated, 0 vacancies** — House 100/100, Senate 50/50 — and the count of distinct chambers over Indiana's legislative offices falls from **18 to 2**. 🔴🔴 **THIS WAS A REPAIR AS MUCH AS A SEED**: the 18 pre-existing seats hung on 18 pseudo-chambers, `official_count` 0, spread over **18 separate `State of Indiana` government rows** — Indiana was the ONLY state where a legislative chamber count exceeded 2. All 18 offices were repointed and retitled and the 18 emptied chambers deleted under an emptiness guard; **17 government rows now hold no chamber at all**, exactly as predicted pre-apply. 🟢 **`offices_missing_terms` DID NOT MOVE — 821/166/655 before and after** — which is why the two migrations are one unit: between them 132 offices exist with no term. ✅ **PROBE PASSED**: Fort Wayne City Hall → HD-82 Kyle Miller + SD-16 Justin Busch; Gary City Hall → HD-3 Ragen Hatcher + SD-3 Mark Spencer; **150/150 districts resolve to exactly one holder at their own interior point**; 2 chambers; 0 pseudo-chambers. ⚠ **INDIANA SCORES 2 OF 4 AND THE PROBE ASSERTS THAT** — stages 3 and 4 have not run, so the city and county slots are asserted at **ZERO**, the FL-5 pattern; a wave quietly scoring 2 of 4 is otherwise indistinguishable from one that broke two tiers. 🔴 **THE 150/150 IS A UNIFORM ANSWER, SO THE CONTROL WAS PLANTED THREE TIMES** inside `BEGIN … ROLLBACK`: HD-82 unseated (caught by the anchor), **HD-50 unseated away from both anchors — catchable ONLY by the per-district sweep**, and HD-50 given a second seated office, the Long Beach fan-out in miniature; the message distinguishes *several* from *none*. 🔴🔴 **AND THE THIRD CONTROL PASSED FOR THE WRONG REASON ON ITS FIRST RUN**: it seated the plant on `external_id = -1332001`, which exists for nobody — that id maps to HD-1, a *reuse*, and only the 48 genuinely new seats carry a band id. The insert hit **zero rows**, nothing was planted, and the probe reported PASSED. **The tell was `INSERT 0 0`, not the verdict.** ▶ **A control is not a control until you have seen its plant take effect — check the row count of the plant, not only the result that follows it.** ✅ `check:reachability` **nothing regressed**, and two buckets came in BELOW baseline (`BAD_GEOMETRY` 4 vs 5, `UNREACHABLE` 37 vs 38); no new `in\|` bucket. 🔴 **INDIANA'S 18 OLD SEATS WERE NEVER IN THE SEATED TOTAL** — the table read "12/100 + 6/50" and nothing summed it, so the total moves by **150, not 132**: 545 of 2,155, remaining 1,610. **A partially-seated state is invisible to a table that only counts finished ones.** | Indiana stage 3 (Fort Wayne, Gary), then stage 4 (Allen, Lake). 🔴 Count the legislature's **150** portraits INSIDE stage 5 — and Indiana's API publishes **no portrait at all**; the Open States `image` column is the only lead and is UNMEASURED |

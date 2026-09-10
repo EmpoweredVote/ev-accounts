@@ -371,14 +371,93 @@ The run above is the one that ends in an explicit `ROLLBACK` with exit 0.
 | `check:reservations` | OK — both slots reserved by their own author |
 | `check:occupancy` | OK — 6 files scanned, no writes to the dropped `offices.politician_id` |
 
-## ▶ WHAT REMAINS FOR IN-2
+## ✅ IN-2 APPLIED 2026-09-10 — THE INDIANA LEGISLATURE IS SEATED AND THE DEFECT IS GONE
 
-1. **Apply** `CC_0088` then `CC_0089` through `psql`, in that order — they are one unit.
-2. Write and run `scripts/verify-in-legislature-probes.sql`: the four-answer probe at **Fort Wayne**
-   and **Gary** city halls, plus a **per-district positive control** — all 150 districts resolving
-   individually. 🔴 `check:reachability` green means "nothing regressed", **not** "your districts
-   were swept"; it takes no probe list.
-3. Re-measure `essentials.offices_missing_terms` — the unflagged count must not move.
-4. Update `PROGRAM.md`: stage 2 ✅, and the legislature's portraits belong **inside** stage 5, not
-   beside it (the GA-6 lesson). Indiana's 150 have **no portrait in the API at all**; the Open
-   States `image` column is the only lead and is unmeasured.
+`CC_0088` then `CC_0089`, in that order, through `psql`. Both committed, exit 0, both post-verify
+gates green on the real apply.
+
+| | Before | After |
+| --- | --- | --- |
+| House districts / offices / seated | 12 / 12 / 12 | **100 / 100 / 100** |
+| Senate districts / offices / seated | 6 / 6 / 6 | **50 / 50 / 50** |
+| Distinct chambers over IN legislative offices | **18** | **2** |
+| Pseudo-chambers | **18** | **0** |
+| `official_count` on the House chamber | (none existed) | **100** |
+| `State of Indiana` rows holding no chamber | 0 | **17** |
+
+🟢 **`offices_missing_terms` DID NOT MOVE: 821 total / 166 flagged / 655 unflagged, before and
+after.** That is the number CI watches, and it is why the two migrations are one unit — between
+them, 132 offices exist with no term, and the window is closed by applying `CC_0089` immediately.
+
+🟢 **17 government rows are now empty**, exactly as predicted before the apply. They are the
+artefact R3 declined to consolidate, and they are now visibly inert rather than merely duplicated.
+
+## ✅ THE PROBE PASSES, AND THE CONTROL WAS WATCHED FAILING FIRST
+
+`scripts/verify-in-legislature-probes.sql`. Read-only.
+
+```
+Fort Wayne City Hall  -> State House District 82   Kyle Miller     unknown
+Fort Wayne City Hall  -> State Senate District 16  Justin Busch    unknown
+Gary City Hall        -> State House District 3    Ragen Hatcher   unknown
+Gary City Hall        -> State Senate District 3   Mark Spencer    unknown
+
+IN-2 PROBE PASSED: 2 anchors validated, 2 of 2 state answers at each, city/county
+asserted at 0, 150/150 districts resolve to exactly one holder, 2 chambers, 0 pseudo-chambers
+```
+
+⚠ **Indiana scores 2 of 4, deliberately, and the probe asserts that rather than hiding it.** Stages
+3 and 4 have not run, so Fort Wayne and Gary have no city or county seats. Section 3 asserts those
+slots at **zero** — the FL-5 pattern, where Palm Beach's city slot was asserted at zero because it
+had no city half. A wave that quietly scored 2 of 4 would otherwise be indistinguishable from a
+wave that broke two tiers.
+
+### 🔴 150/150 IS A UNIFORM ANSWER, SO THE CONTROL WAS PLANTED THREE TIMES
+
+Each plant ran inside `BEGIN … ROLLBACK` against production.
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | HD-82 unseated — Fort Wayne's own district | `Fort Wayne City Hall returns 0 representative(s) and 1 senator(s)` |
+| 2 | HD-50 unseated — **away from both anchors** | `1 of 150 districts … (0 return several, 1 return none)` |
+| 3 | HD-50 given a **second seated office** | `1 of 150 districts … (1 return several, 0 return none)` |
+
+Control 2 is the one that matters: it is invisible to both anchors, so **only the per-district
+sweep can catch it**. Control 3 is the Long Beach fan-out in miniature — one address returning
+several holders — and the message distinguishes *several* from *none*, so the two failure modes
+cannot be confused.
+
+### 🔴🔴 CONTROL 3 PASSED FOR THE WRONG REASON ON ITS FIRST RUN, AND THE TELL WAS `INSERT 0 0`
+
+The first version seated the planted office on `external_id = -1332001`. **No such politician
+exists**: that id maps to HD-1, which was a *reuse*, so only the 48 genuinely new seats carry a
+band id at all. The insert silently affected **zero rows**, nothing was planted, and the probe
+duly reported `IN-2 PROBE PASSED` — a green that meant nothing.
+
+The tell was the `INSERT 0 0` line, not the probe result. ▶ **A control is not a control until you
+have seen its plant take effect** — check the row count of the plant itself, not only the verdict
+that follows it.
+
+## ✅ GATES AFTER THE APPLY
+
+| Gate | Result |
+| --- | --- |
+| `check:migrations` | OK — 2 added vs `origin/master`, tree scan clean |
+| `check:reservations` | OK — both slots reserved by their own author |
+| `check:occupancy` | OK — no writes to the dropped `offices.politician_id` |
+| `check:reachability` | **OK — nothing regressed.** `BAD_GEOMETRY` 4 (baseline 5), `DEAD_GEOGRAPHY` 17 (17), `UNREACHABLE` 37 (baseline 38) |
+
+Two buckets came in **below** baseline. No new `in|` bucket appeared, which is the thing a
+newly-seated state could plausibly have caused.
+
+## ▶ WHAT REMAINS FOR INDIANA
+
+Stage 2 is **closed**. Still open:
+
+1. **Stage 3** — Fort Wayne and Gary city waves. Both currently return 2 of 4 at city hall.
+2. **Stage 4** — Allen and Lake county waves.
+3. **Stage 5** — headshots and banners. 🔴 **Count the legislature's 150 portraits INSIDE stage 5,
+   not beside it** (the GA-6 lesson). Indiana's API publishes **no portrait at all**; the Open
+   States `image` column is the only lead and is **unmeasured** — profile it before quoting a yield.
+4. **The 671 orphan offices**, and the **21 surplus government rows**, both recorded as debts by
+   R2 and R3. Neither is Knight work; both now have a measured size.
