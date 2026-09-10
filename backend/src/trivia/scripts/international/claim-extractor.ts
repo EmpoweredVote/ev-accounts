@@ -1,6 +1,7 @@
 import nlp from 'compromise';
 import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
 import type { ParsedArticle } from './rss-ingestor.js';
+import { resolveLane, type Lane } from './lanes.js';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -15,6 +16,10 @@ export interface ClaimResult {
   factSnapshot: string;
   confidenceTier: 'high' | 'medium' | 'low';
   sourceArticles: ParsedArticle[];
+  lane: Lane;
+  subject: string;
+  attribute: string;
+  value: string;
 }
 
 // ─── Named-Entity Extraction ──────────────────────────────────────────────────
@@ -169,8 +174,23 @@ const CLAIM_EXTRACTION_SCHEMA = {
       type: 'string' as const,
       enum: ['high', 'medium', 'low'],
     },
+    topics: {
+      type: 'array' as const,
+      items: { type: 'string' as const, enum: ['iran', 'climate', 'us', 'world'] },
+    },
+    subject: { type: 'string' as const },
+    attribute: { type: 'string' as const },
+    value: { type: 'string' as const },
   },
-  required: ['claim', 'fact_snapshot', 'confidence_tier'] as string[],
+  required: [
+    'claim',
+    'fact_snapshot',
+    'confidence_tier',
+    'topics',
+    'subject',
+    'attribute',
+    'value',
+  ] as string[],
   additionalProperties: false,
 };
 
@@ -181,7 +201,20 @@ Rules:
 - The claim must be directly stated in at least two of the provided sources (not inferred)
 - Avoid claims about motive, intent, blame, or future predictions
 - Assign confidence_tier: "high" for concrete facts directly stated with numbers/dates, "medium" for well-supported characterizations, "low" for predictions or contested framing
-- fact_snapshot: A brief sentence capturing the factual state at time of publication`;
+- fact_snapshot: A brief sentence capturing the factual state at time of publication
+- topics: every tag that applies, from ["iran", "climate", "us", "world"]. Tag
+  "iran" for the Iran conflict or Iranian state action; "climate" for climate
+  science, emissions, energy transition, or climate policy and litigation; "us"
+  for United States domestic affairs; "world" for everything else. Multiple tags
+  are expected and correct — a US strike on Iran is ["us", "iran"]. Do not try
+  to pick one; tag what is true and the pipeline decides where it lands.
+- subject, attribute, value: decompose the claim into what it is about, which
+  property of it, and the answer. For "Norway observed 13 days of national
+  mourning after King Harald V's death": subject "Norway national mourning for
+  King Harald V", attribute "duration in days", value "13". Keep subject stable
+  across days for the same story — it is used to detect that a fact has already
+  been covered, so name the entity and the event, not the day's angle.
+- value must be the bare answer, not a sentence.`;
 
 /**
  * Run Claude Call 1: extract the single most verifiable factual claim from a story cluster.
@@ -225,6 +258,10 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult |
       claim: string;
       fact_snapshot: string;
       confidence_tier: 'high' | 'medium' | 'low';
+      topics: string[];
+      subject: string;
+      attribute: string;
+      value: string;
     };
 
     // Low-confidence skip
@@ -233,11 +270,20 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult |
       return null;
     }
 
+    const lane = resolveLane(parsed.topics ?? []);
+    console.log(
+      `[ClaimExtractor] lane=${lane} topics=[${(parsed.topics ?? []).join(',')}] "${parsed.subject} / ${parsed.attribute}"`,
+    );
+
     return {
       claim: parsed.claim,
       factSnapshot: parsed.fact_snapshot,
       confidenceTier: parsed.confidence_tier,
       sourceArticles: cluster.articles,
+      lane,
+      subject: parsed.subject,
+      attribute: parsed.attribute,
+      value: parsed.value,
     };
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
