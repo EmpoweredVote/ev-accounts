@@ -643,6 +643,101 @@ Monroe**, three at-large members, HD-3 Ragen Hatcher and **SD-3 Mark Spencer**.
 
 `check:reachability`: nothing regressed.
 
+# IN-5 — Allen County (applied 2026-09-10)
+
+**19 offices, 19 people, 0 vacancies.** `X0049` (4 county council districts), `CC_0094` — **one**
+migration carrying offices *and* people, per spec §3. `offices_missing_terms` unmoved at
+**821 / 166 / 655**.
+Roster: [`backend/data/seed-allen-county-2026/ROSTERS.md`](../../backend/data/seed-allen-county-2026/ROSTERS.md).
+
+## 🔴🔴 COMMISSIONERS ARE ELECTED COUNTYWIDE, AND THE DISTRICT POLYGONS ARE THE TRAP
+
+Under Indiana law a county commissioner **must reside in a district but is elected by the entire
+county** — every voter elects all three. The Election Board publishes `Comm_Dist_1/2/3`: three neat,
+correct, inviting layers. **Hanging the offices on them would show a voter one of the three
+commissioners they actually elect.** So they are not loaded, and the three offices sit on the county
+polygon `18003`, with `description` recording that the district is a residency rule.
+
+⚠ **This is the exact inverse of the Long Beach failure.** There, nine councilmembers shared one
+polygon and every address wrongly returned all nine. Here every county address **should** return all
+three. **The same shape is wrong in one case and right in the other, and only the statute tells you
+which.** A coverage or fan-out check cannot distinguish them.
+
+🟢 The **County Council is genuinely different**: 4 elected **by district** (`X0049`) + 3 **at large**
+countywide. And unlike Fort Wayne's six city districts, these four **do tile their parent** —
+660.0234 vs 659.9832 sq mi — so this loader requires **closure** where the city loader could only
+**bound** the gap.
+
+## 🔴🔴 THE COUNTY'S OWN DIRECTORY WAS THE STALE SOURCE
+
+`allencounty.in.gov`'s directory lists **Josh L. Hale** on County Council District 1. The county
+party page said **Kyle Kerley**. Settled from the news record: **Hale resigned effective
+2026-01-15**; **Kerley won the GOP caucus at noon 2026-01-16**.
+
+▶ **The body's own roster is usually the check, and here it was the thing that was wrong.** The
+change-check has to ask *has this person left?* of **every** source, the official one included.
+
+⚠ The same article named a **second** caucus the next morning — Fort Wayne City Clerk, Keesling to
+McGauley. That is the IN-3 change, found again independently.
+
+## 🟢 AN ASSERTED ABSENCE DID ITS JOB
+
+IN-3's probe asserted **0 Allen County offices** with the comment *"so the day it lands, someone
+looks"*. It **fired the moment `CC_0094` applied**, reporting 15. That is what asserting an absence
+is for. The probe now asserts presence — and asserts **three** commissioners, not one.
+
+**Fort Wayne is now 4 of 4.**
+
+## ✅ Probe and controls
+
+A Fort Wayne address returns **16 county answers**: 3 commissioners, 1 council district member,
+3 at-large, 9 officers.
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | one commissioner unseated | `returns 2 commissioner(s), expected 3 — Indiana elects all three county-wide` |
+| 2 | County Council D4 unseated (the anchor's own) | `returns 0 county council DISTRICT member(s)` |
+| 3 | County Council D1 unseated, **away from the anchor** | `1 of 4 … (0 several, 1 none)` |
+
+⚠ **Control 1's plant was broader than intended** — `title = 'Commissioner, District 2'` matched
+other counties too and deleted 14 rows before rolling back. The probe caught it and nothing
+persisted, but the plant was sloppier than its label; **scope a planted control to the jurisdiction**.
+
+Dates: **17 year + 1 month + 1 unknown**. Kerley is `month`, not `day`, because only the caucus date
+is published — the Gary rule. Richard Beck has no Ballotpedia page under any slug tried, so
+`unknown`.
+
+# IN-6 — Lake County: RESEARCHED, NOT APPLIED
+
+**Nothing was written.** Stopped deliberately; see below.
+
+| | Finding |
+| --- | --- |
+| Commissioners | 3 — **Barry Shullanberger, James Williams, Mark Albertson** — countywide, same Indiana rule as Allen |
+| County Council | reported as **7 single-member districts, no at-large** — ⚠ **NOT confirmed**, and it differs from Allen's 4 + 3 |
+| Officers | Assessor, Auditor, Clerk, Coroner, Prosecutor, Recorder, Sheriff, Surveyor, Treasurer (9) |
+| Confirmed names | Auditor **Peggy Holinga Katona**, Recorder **Gina Pimentel**, Treasurer **John Petalas** |
+| Council geometry | ❌ **PDF only.** Lake publishes all maps as "printable PDF files"; its open-data org (`lakecountyod`, 174 layers) is cadastral and physical — **no council or commissioner district layer** |
+
+▶ **Expected shape:** the Gary pattern. Seat the **12 countywide** offices (3 commissioners +
+9 officers) on `18089`/`G4020`, which already exists, and **defer the 7 council district seats**
+until the geometry is obtained. No new boundary layer is needed for the countywide half.
+
+## 🔴 WHY I STOPPED: THE SOURCES BLENDED JURISDICTIONS
+
+A roster search returned *"Kendra Steele holds the combined position of Clerk and Recorder, Auditor,
+Public Administrator and Surveyor"* — **that is a Lake County in another state**, not Indiana; no
+Indiana county combines those offices. The results mixed **Lake County, Oregon** and a
+Colorado-style structure into Lake County, Indiana.
+
+Six of the nine officer names are still unconfirmed, and the one source that offered them had
+already demonstrably blended counties. Seating people from it would be the GA name-collision failure
+(2 of 4 hits were a Colorado senator and a Utah treasurer) with the jurisdiction, not the person,
+as the thing that collided.
+
+▶ **Next action:** take the roster from **Lake County's own department pages** on `lakecountyin.gov`,
+one office at a time, and confirm the council is 7 single-member districts before writing anything.
+
 ## ▶ WHAT REMAINS FOR INDIANA
 
 1. **IN-4 — Gary** (Lake County). Not started. Council is 6 districts + 3 at-large, Mayor Eddie
