@@ -26,8 +26,11 @@ import {
 import {
   INTERNATIONAL_LANES,
   isDegenerate,
+  isSystemicClusterFailure,
+  partitionRejections,
   partitionTargets,
   type LaneTarget,
+  type Rejection,
 } from './laneTargets.js';
 
 // ─── Per-lane counters ────────────────────────────────────────────────────────
@@ -111,7 +114,7 @@ export async function runNightlyPipeline(
     new Set(idBySlug.keys()),
   );
 
-  const missingLanes: Array<Record<string, unknown>> = missingTargets.map(t => {
+  const missingLanes: Rejection[] = missingTargets.map(t => {
     console.warn(
       `[run-pipeline] Collection not found, skipping lane=${t.lane} slug=${t.collectionSlug}`,
     );
@@ -176,7 +179,7 @@ export async function runNightlyPipeline(
   }
 
   const stats = new Map<Lane, LaneStats>(servedTargets.map(t => [t.lane, emptyStats()]));
-  const rejections: Array<Record<string, unknown>> = [];
+  const rejections: Rejection[] = [];
   let feedResults: FeedResult[] = [];
   let feedsFailed = 0;
   let clusterCount = 0;
@@ -392,14 +395,9 @@ export async function runNightlyPipeline(
       }
     }
 
-    // A cluster-level throw is caught and counted above, so a fully systemic
-    // failure (every attempted cluster errored) would otherwise never reach
-    // this function's own catch and pipelineStatus would stay 'success' —
-    // visible only as a large clusterErrors count buried in notes. Only
-    // "every attempted cluster threw" counts as systemic: a run where, say,
-    // 20 clusters were rejected as duplicates and 1 threw is still a success
-    // with 1 cluster error, not a failure.
-    if (clustersAttempted > 0 && clusterErrors >= clustersAttempted) {
+    // See isSystemicClusterFailure for why "every attempted cluster threw" is
+    // the bar, and why zero attempts is not a failure.
+    if (isSystemicClusterFailure(clustersAttempted, clusterErrors)) {
       pipelineStatus = 'failed';
       fatalError = fatalError ?? (
         `All ${clustersAttempted} attempted cluster(s) errored — systemic failure, not isolated per-cluster faults`
@@ -422,10 +420,9 @@ export async function runNightlyPipeline(
         `${lowConfidenceSkipped} low-confidence skipped, ${clusterErrors} cluster error(s)`,
       );
 
-      // Rejections that belong to no served lane — `no-target` entries exist
-      // precisely BECAUSE their lane is unserved, so a per-lane filter can
-      // never match them. Without this they vanished from every job row.
-      const unroutable = rejections.filter(r => !stats.has(r.lane as Lane));
+      // Rejections that belong to no served lane are spliced into every
+      // served lane's notes, so nothing is dropped — see partitionRejections.
+      const partitioned = partitionRejections(rejections, new Set(stats.keys()));
 
       for (const t of servedTargets) {
         const s = stats.get(t.lane)!;
@@ -480,8 +477,8 @@ export async function runNightlyPipeline(
                 blockReasons: s.blockReasons,
                 rejections: [
                   ...missingLanes,
-                  ...unroutable,
-                  ...rejections.filter(r => r.lane === t.lane),
+                  ...partitioned.unroutable,
+                  ...partitioned.forLane(t.lane),
                 ],
               } as never,
               updatedAt: sql`NOW()`,

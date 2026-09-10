@@ -73,3 +73,66 @@ export function partitionTargets(
 
   return { served, missing };
 }
+
+/** One entry in `generation_jobs.notes.rejections`. Shape varies by reason;
+ *  only `lane` is read here, and it is absent on cluster errors thrown before
+ *  a lane was resolved. */
+export type Rejection = Record<string, unknown>;
+
+/**
+ * Split rejections into per-lane buckets plus the ones belonging to no served
+ * lane.
+ *
+ * Nothing may be dropped. `no-target` rejections exist precisely BECAUSE
+ * their lane is unserved, so a per-lane filter can never match them, and a
+ * cluster that threw before its lane was resolved has no lane at all. Both
+ * classes are `unroutable` and get spliced into every served lane's notes —
+ * without that they vanished from every job row, which is the invariant four
+ * separate development-round violations were about.
+ */
+export function partitionRejections(
+  rejections: readonly Rejection[],
+  servedLanes: ReadonlySet<Lane>,
+): { unroutable: Rejection[]; forLane(lane: Lane): Rejection[] } {
+  const unroutable: Rejection[] = [];
+  const byLane = new Map<Lane, Rejection[]>();
+
+  for (const rejection of rejections) {
+    const lane = rejection.lane as Lane | undefined;
+    if (lane === undefined || !servedLanes.has(lane)) {
+      unroutable.push(rejection);
+      continue;
+    }
+    const bucket = byLane.get(lane);
+    if (bucket) {
+      bucket.push(rejection);
+    } else {
+      byLane.set(lane, [rejection]);
+    }
+  }
+
+  return {
+    unroutable,
+    forLane: (lane: Lane) => byLane.get(lane) ?? [],
+  };
+}
+
+/**
+ * True when every attempted cluster errored — a systemic failure, not a quiet
+ * night.
+ *
+ * A cluster-level throw is caught and counted per cluster, so a fully
+ * systemic failure would otherwise never reach the pipeline's own catch and
+ * the run would finalise as 'success' with the damage visible only as a large
+ * `clusterErrors` count buried in notes.
+ *
+ * `attempted === 0` is not a failure: no clusters attempted means the feeds
+ * were quiet (or the run was skipped upstream), and the feed-blackout check
+ * owns that case. Only "every attempted cluster threw" counts: 20 clusters
+ * rejected as duplicates plus one throw is a success with one cluster error.
+ * `>=` rather than `===` is defensive — errors should never exceed attempts,
+ * but if they ever do that is still systemic.
+ */
+export function isSystemicClusterFailure(attempted: number, errors: number): boolean {
+  return attempted > 0 && errors >= attempted;
+}
