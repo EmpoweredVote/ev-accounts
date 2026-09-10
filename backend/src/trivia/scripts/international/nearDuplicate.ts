@@ -7,7 +7,19 @@
  * becomes a skipped duplicate rather than a visible one.
  */
 
-/** Tuned against the spec's regression fixtures. */
+/**
+ * Measured via `extensions.similarity` on 8 fixture pairs (2026-09-10):
+ * duplicates ranged 0.2759-0.8850, distincts (coincidental same-answer
+ * pairs) ranged 0.1438-0.1776 — the ranges do not overlap. But Layer 2
+ * (this file) isn't responsible for all 5 duplicates: Layer 1 (claim
+ * fingerprint) already catches 4 of them, leaving only the wiran-1578/
+ * 1661 paraphrase ("89" vs "89 years old") at 0.5873 as Layer 2's actual
+ * requirement. So the binding window is just (0.1776, 0.5873] — catch
+ * 0.5873, never fire on 0.1776. 0.55 sits inside it with margin both
+ * ways; dropping it to ~0.25 to also catch pairs Layer 1 already owns
+ * would trade a solved problem for false positives on unrelated
+ * questions that share topic vocabulary.
+ */
 export const NEAR_DUP_THRESHOLD = 0.55;
 export const NEAR_DUP_WINDOW_DAYS = 14;
 
