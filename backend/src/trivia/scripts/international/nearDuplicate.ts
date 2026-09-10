@@ -5,6 +5,11 @@
  * structured the same fact differently on two nights. Scoped across every
  * featured lane's collection ids, not one lane, so a routing misclassification
  * becomes a skipped duplicate rather than a visible one.
+ *
+ * The comparison pool is bounded by collection and status only — never by
+ * time. Curated evergreen questions are the oldest rows in a lane's
+ * collection and carry no claim fingerprints, so they are the one thing only
+ * Layer 2 can see; any age bound here would hide precisely them.
  */
 
 /**
@@ -21,7 +26,6 @@
  * questions that share topic vocabulary.
  */
 export const NEAR_DUP_THRESHOLD = 0.55;
-export const NEAR_DUP_WINDOW_DAYS = 14;
 
 export interface SimilarityHit {
   externalId: string;
@@ -29,10 +33,10 @@ export interface SimilarityHit {
 }
 
 export interface SimilarityProbe {
+  /** Most similar question in the given collections, across all of time. */
   mostSimilar(
     text: string,
     collectionIds: readonly number[],
-    since: Date,
   ): Promise<SimilarityHit | null>;
 }
 
@@ -43,14 +47,12 @@ export interface SimilarityProbe {
 export function makeNearDuplicateCheck(
   probe: SimilarityProbe,
   threshold: number = NEAR_DUP_THRESHOLD,
-  now: () => Date = () => new Date(),
 ) {
   return async function check(
     text: string,
     collectionIds: readonly number[],
   ): Promise<SimilarityHit | null> {
-    const since = new Date(now().getTime() - NEAR_DUP_WINDOW_DAYS * 24 * 60 * 60 * 1000);
-    const hit = await probe.mostSimilar(text, collectionIds, since);
+    const hit = await probe.mostSimilar(text, collectionIds);
     if (!hit) return null;
     return hit.similarity >= threshold ? hit : null;
   };

@@ -77,7 +77,6 @@ export function createSimilarityProbe(): SimilarityProbe {
     async mostSimilar(
       text: string,
       collectionIds: readonly number[],
-      since: Date,
     ): Promise<SimilarityHit | null> {
       if (collectionIds.length === 0) return null;
 
@@ -96,13 +95,23 @@ export function createSimilarityProbe(): SimilarityProbe {
       // expands a raw JS array chunk into a parenthesized, bound parameter
       // list (`IN ($1, $2, ...)`), so this stays fully parameterized without
       // needing a `sql.raw(...)::int[]` string-built ARRAY literal.
+      //
+      // Deliberately NOT bounded by q.created_at. Generated questions expire
+      // in ~4 days and are archived, so the only questions older than a
+      // couple of weeks in a lane's collection are the hand-written evergreen
+      // ones (the curated wiran-00** spine, and the curated Climate Change
+      // set to come). A created_at window therefore blinded Layer 2 to
+      // exactly the questions Layer 1 cannot cover either — curated questions
+      // have no fingerprint rows — leaving a structural blind spot at the
+      // curated/generated boundary. The query stays bounded by collection and
+      // status; at ~100 questions per collection the extra similarity()
+      // evaluations are negligible.
       const result = await db.execute(sql`
         SELECT q.external_id AS external_id,
                extensions.similarity(q.text, ${text}) AS sim
         FROM trivia.questions q
         JOIN trivia.collection_questions cq ON cq.question_id = q.id
         WHERE cq.collection_id IN ${collectionIds}
-          AND q.created_at >= ${since.toISOString()}
           AND q.status IN ('active', 'expired')
         ORDER BY sim DESC
         LIMIT 1
