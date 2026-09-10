@@ -17,7 +17,7 @@
  * happens in the route handler, not here.
  */
 
-import { supabaseAdmin } from './supabase.js';
+import { supabaseAdmin, supabaseAuth } from './supabase.js';
 import { classifyToken } from './tokenIdentity.js';
 import { cache } from './cache.js';
 
@@ -72,9 +72,14 @@ export async function isTokenRevoked(userId: string, tokenIat: number): Promise<
  * When email confirmation is enabled (Supabase default), the returned
  * data.session will be null — this is NOT an error. Route handlers must
  * check data.user (not data.session) to determine success.
+ *
+ * Runs on supabaseAuth, NOT supabaseAdmin: signUp can return a session (when
+ * auto-confirm is on), which supabase-js would then store on the client and
+ * attach to every later PostgREST call. See the supabaseAuth comment in
+ * lib/supabase.ts (2026-09-10 outage).
  */
 export async function signUpWithEmail(email: string, password: string, emailRedirectTo?: string) {
-  return supabaseAdmin.auth.signUp({ email, password, options: { emailRedirectTo } });
+  return supabaseAuth.auth.signUp({ email, password, options: { emailRedirectTo } });
 }
 
 /**
@@ -83,9 +88,14 @@ export async function signUpWithEmail(email: string, password: string, emailRedi
  * On success, data.session contains access_token, refresh_token, expires_in,
  * and expires_at. On failure, error.code identifies the type of failure
  * (e.g., 'invalid_credentials', 'email_not_confirmed').
+ *
+ * Runs on supabaseAuth, NOT supabaseAdmin. signInWithPassword stores the new
+ * session on the client; on supabaseAdmin that made every later adminRpc() run
+ * as the just-logged-in user and denied the compass write RPCs. See the
+ * supabaseAuth comment in lib/supabase.ts (2026-09-10 outage).
  */
 export async function signInWithEmail(email: string, password: string) {
-  return supabaseAdmin.auth.signInWithPassword({ email, password });
+  return supabaseAuth.auth.signInWithPassword({ email, password });
 }
 
 /**
