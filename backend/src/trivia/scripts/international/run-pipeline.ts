@@ -456,6 +456,22 @@ export async function runNightlyPipeline(
         `[run-pipeline] Every attempted cluster errored (${clusterErrors}/${clustersAttempted}) — marking run failed`,
       );
     }
+
+    // Extractor-side twin of the feed-blackout guard above. `extractClaim`
+    // reports a failure as a discriminated reason counted into `claimSkips`
+    // — it does not throw — so an Anthropic API outage lands entirely in
+    // `claimSkips['api-error']` and never touches `clusterErrors`. Without
+    // this, the guard above never fires and the run finalises as 'success'
+    // with zero questions generated: the exact failure this file's other
+    // systemic-failure guard exists to catch, just reached from the other
+    // counter.
+    if (isSystemicClusterFailure(clustersAttempted, claimSkips['api-error'])) {
+      pipelineStatus = 'failed';
+      fatalError ??= `All ${clustersAttempted} clusters failed extraction with api-error`;
+      console.error(
+        `[run-pipeline] Every attempted cluster failed extraction with api-error (${claimSkips['api-error']}/${clustersAttempted}) — marking run failed`,
+      );
+    }
   } catch (err) {
     fatalError = err instanceof Error ? err.message : String(err);
     pipelineStatus = 'failed';
