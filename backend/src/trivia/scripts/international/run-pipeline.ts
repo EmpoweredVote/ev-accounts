@@ -8,7 +8,12 @@
 import 'dotenv/config';
 import { fileURLToPath } from 'url';
 import { fetchAllFeeds, INTERNATIONAL_FEEDS, type FeedResult } from './rss-ingestor.js';
-import { clusterArticles, extractClaim } from './claim-extractor.js';
+import {
+  CLAIM_SKIP_REASONS,
+  clusterArticles,
+  extractClaim,
+  type ClaimSkipReason,
+} from './claim-extractor.js';
 import {
   generateQuestions,
   writePassingQuestions,
@@ -183,9 +188,20 @@ export async function runNightlyPipeline(
   let feedResults: FeedResult[] = [];
   let feedsFailed = 0;
   let clusterCount = 0;
-  let lowConfidenceSkipped = 0;
   let clusterErrors = 0;
   let clustersAttempted = 0;
+
+  // One counter per reason a cluster yielded no claim. A single
+  // `lowConfidenceSkipped` conflated a low-confidence tier, an unexpected
+  // content-block type, a JSON parse failure and an API error — so the notes
+  // could not tell "the feeds gave us nothing usable" from "the Anthropic
+  // call is failing", which is the first thing anyone will need to know.
+  const claimSkips: Record<ClaimSkipReason, number> = {
+    'low-confidence': 0,
+    'unexpected-content-block': 0,
+    'unparseable-response': 0,
+    'api-error': 0,
+  };
 
   // Everything from here on is wrapped: the job rows already exist, so they
   // must be finalised even if the run dies half way. Before this was in a
@@ -260,20 +276,20 @@ export async function runNightlyPipeline(
         // has a real denominator.
         clustersAttempted++;
 
-        const claimResult = dryRun ? null : await extractClaim(cluster);
-        if (!claimResult) {
-          if (dryRun) {
-            console.log(`[DryRun] cluster: "${cluster.representativeTitle}"`);
-          } else {
-            // The one number that separates "the feeds gave us nothing usable"
-            // from "the extractor is rejecting everything".
-            lowConfidenceSkipped++;
-            console.log(
-              `[Pipeline] No usable claim (low confidence or unparseable) — skipping cluster: "${cluster.representativeTitle}"`,
-            );
-          }
+        if (dryRun) {
+          console.log(`[DryRun] cluster: "${cluster.representativeTitle}"`);
           continue;
         }
+
+        const extraction = await extractClaim(cluster);
+        if (!extraction.ok) {
+          claimSkips[extraction.reason]++;
+          console.log(
+            `[Pipeline] No usable claim (${extraction.reason}) — skipping cluster: "${cluster.representativeTitle}"`,
+          );
+          continue;
+        }
+        const claimResult = extraction.claim;
 
         laneForCluster = claimResult.lane;
 
@@ -415,9 +431,12 @@ export async function runNightlyPipeline(
   } finally {
     // ── Finalise each lane's job row ───────────────────────────────────────
     if (!dryRun) {
+      const claimSkipTotal = CLAIM_SKIP_REASONS.reduce((n, r) => n + claimSkips[r], 0);
       console.log(
         `[Pipeline] ${clusterCount} clusters, ${clustersAttempted} attempted, ` +
-        `${lowConfidenceSkipped} low-confidence skipped, ${clusterErrors} cluster error(s)`,
+        `${claimSkipTotal} with no usable claim ` +
+        `(${CLAIM_SKIP_REASONS.map(r => `${r}=${claimSkips[r]}`).join(', ')}), ` +
+        `${clusterErrors} cluster error(s)`,
       );
 
       // Rejections that belong to no served lane are spliced into every
@@ -460,7 +479,7 @@ export async function runNightlyPipeline(
                   ...(r.error ? { error: r.error } : {}),
                 })),
                 clusters: clusterCount,
-                lowConfidenceSkipped,
+                claimSkips,
                 clusterErrors,
                 clustersAttempted,
                 laneDistribution: Object.fromEntries(

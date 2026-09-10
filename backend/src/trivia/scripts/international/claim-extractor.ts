@@ -217,13 +217,48 @@ Rules:
 - value must be the bare answer, not a sentence.`;
 
 /**
- * Run Claude Call 1: extract the single most verifiable factual claim from a story cluster.
- *
- * Returns null if:
- * - confidence_tier is "low" (cost-saving skip)
- * - Claude call fails
+ * Why a cluster produced no claim. One counter for all of these could not
+ * tell "the feeds gave us nothing usable" from "the Anthropic call is
+ * failing" — the distinction the run notes exist to draw.
  */
-export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult | null> {
+export type ClaimSkipReason =
+  /** confidence_tier was "low" — a cost-saving skip, and a healthy outcome. */
+  | 'low-confidence'
+  /** The first content block was not text. */
+  | 'unexpected-content-block'
+  /** Structured output did not parse as JSON. */
+  | 'unparseable-response'
+  /** The Anthropic call itself threw. */
+  | 'api-error';
+
+export type ClaimExtraction =
+  | { ok: true; claim: ClaimResult }
+  | { ok: false; reason: ClaimSkipReason; detail?: string };
+
+export const CLAIM_SKIP_REASONS: readonly ClaimSkipReason[] = [
+  'low-confidence',
+  'unexpected-content-block',
+  'unparseable-response',
+  'api-error',
+] as const;
+
+/**
+ * Run Claude Call 1: extract the single most verifiable factual claim from a
+ * story cluster.
+ *
+ * Returns `{ ok: false, reason }` for each of the four ways a cluster can
+ * yield nothing, so the caller can count them apart.
+ *
+ * Note the narrow try: it wraps the API call only. Anything that throws after
+ * a response is in hand is a broken structured-output contract, not an API
+ * failure, and must not be laundered into one — it propagates to the caller's
+ * per-cluster containment, which counts it as `cluster-error` and puts the
+ * message in the run notes. That is why `parsed.topics` gets no `?? []`
+ * fallback: an absent `topics` would otherwise route every story to the
+ * `world` sink, which is a named spec risk, arriving with no signal at all.
+ * Same reasoning as subject/attribute/value, which have never had fallbacks.
+ */
+export async function extractClaim(cluster: StoryCluster): Promise<ClaimExtraction> {
   // Build user message — concatenate article bodies
   const articleTexts = cluster.articles
     .map(
@@ -235,8 +270,9 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult |
     )
     .join('\n\n');
 
+  let response;
   try {
-    const response = await client.messages.create({
+    response = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
       system: CLAIM_EXTRACTION_SYSTEM_PROMPT,
@@ -244,38 +280,58 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult |
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       output_config: { format: { type: 'json_schema', schema: CLAIM_EXTRACTION_SCHEMA } } as any,
     });
-
-    const contentBlock = response.content[0];
-    if (contentBlock.type !== 'text') {
-      console.error(
-        `[ClaimExtractor] Unexpected response type: ${contentBlock.type} for cluster: "${cluster.representativeTitle}"`,
-      );
-      return null;
-    }
-
-    // Guaranteed valid JSON when using structured output
-    const parsed = JSON.parse(contentBlock.text) as {
-      claim: string;
-      fact_snapshot: string;
-      confidence_tier: 'high' | 'medium' | 'low';
-      topics: string[];
-      subject: string;
-      attribute: string;
-      value: string;
-    };
-
-    // Low-confidence skip
-    if (parsed.confidence_tier === 'low') {
-      console.log(`[ClaimExtractor] Low-confidence claim skipped: "${parsed.claim}"`);
-      return null;
-    }
-
-    const lane = resolveLane(parsed.topics ?? []);
-    console.log(
-      `[ClaimExtractor] lane=${lane} topics=[${(parsed.topics ?? []).join(',')}] "${parsed.subject} / ${parsed.attribute}"`,
+  } catch (err) {
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    console.error(
+      `[ClaimExtractor] Anthropic call failed for cluster "${cluster.representativeTitle}": ${errorMsg}`,
     );
+    return { ok: false, reason: 'api-error', detail: errorMsg };
+  }
 
-    return {
+  const contentBlock = response.content[0];
+  if (contentBlock.type !== 'text') {
+    console.error(
+      `[ClaimExtractor] Unexpected response type: ${contentBlock.type} for cluster: "${cluster.representativeTitle}"`,
+    );
+    return { ok: false, reason: 'unexpected-content-block', detail: contentBlock.type };
+  }
+
+  // Should be valid JSON when using structured output — counted separately
+  // from an API error precisely so "the model stopped honouring the schema"
+  // is distinguishable from "the API is down".
+  let parsed: {
+    claim: string;
+    fact_snapshot: string;
+    confidence_tier: 'high' | 'medium' | 'low';
+    topics: string[];
+    subject: string;
+    attribute: string;
+    value: string;
+  };
+  try {
+    parsed = JSON.parse(contentBlock.text);
+  } catch (err) {
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    console.error(
+      `[ClaimExtractor] Unparseable response for cluster "${cluster.representativeTitle}": ${errorMsg}`,
+    );
+    return { ok: false, reason: 'unparseable-response', detail: errorMsg };
+  }
+
+  // Low-confidence skip
+  if (parsed.confidence_tier === 'low') {
+    console.log(`[ClaimExtractor] Low-confidence claim skipped: "${parsed.claim}"`);
+    return { ok: false, reason: 'low-confidence' };
+  }
+
+  const lane = resolveLane(parsed.topics);
+  console.log(
+    `[ClaimExtractor] lane=${lane} topics=[${parsed.topics.join(',')}] "${parsed.subject} / ${parsed.attribute}"`,
+  );
+
+  return {
+    ok: true,
+    claim: {
       claim: parsed.claim,
       factSnapshot: parsed.fact_snapshot,
       confidenceTier: parsed.confidence_tier,
@@ -284,12 +340,6 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimResult |
       subject: parsed.subject,
       attribute: parsed.attribute,
       value: parsed.value,
-    };
-  } catch (err) {
-    const errorMsg = err instanceof Error ? err.message : String(err);
-    console.error(
-      `[ClaimExtractor] Error extracting claim for cluster "${cluster.representativeTitle}": ${errorMsg}`,
-    );
-    return null;
-  }
+    },
+  };
 }
