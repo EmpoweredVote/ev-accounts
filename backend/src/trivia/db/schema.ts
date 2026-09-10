@@ -1,4 +1,4 @@
-import { pgSchema, serial, text, integer, boolean, timestamp, jsonb, index, primaryKey, unique, uuid, real } from 'drizzle-orm/pg-core';
+import { pgSchema, serial, bigserial, text, integer, boolean, timestamp, jsonb, index, primaryKey, unique, uuid, real } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
 // Define the trivia schema (renamed from civic_trivia for v1.8 shared Supabase project)
@@ -89,6 +89,19 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
   reason: text('reason'),  // populated for 'skipped' and 'failed' rows; null otherwise
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
+});
+
+// Claim fingerprints table — dedup ledger for the nightly news pipeline
+export const claimFingerprints = triviaSchema.table('claim_fingerprints', {
+  id: bigserial('id', { mode: 'number' }).primaryKey(),
+  topicKey: text('topic_key').notNull(),
+  valueKey: text('value_key').notNull(),
+  lane: text('lane').notNull(),
+  questionExternalId: text('question_external_id'),
+  generationJobId: integer('generation_job_id').references(() => generationJobs.id, {
+    onDelete: 'set null',
+  }),
+  firstSeenAt: timestamp('first_seen_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
 // Questions table
