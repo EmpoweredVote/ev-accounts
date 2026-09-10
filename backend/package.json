@@ -30,6 +30,7 @@
     "check:readrank-question-unit:verbose": "node scripts/check-readrank-question-unit.mjs --verbose",
     "check:answer-seasons": "node scripts/check-answer-season-consumers.mjs",
     "check:suppressed-reads": "node scripts/check-suppressed-answer-reads.mjs",
+    "check:auth-isolation": "node scripts/check-auth-client-isolation.mjs",
     "check:answer-seasons:verbose": "node scripts/check-answer-season-consumers.mjs --verbose",
     "check:federal-cohort": "node scripts/federal-cohort.mjs --check",
     "cohort:federal": "node scripts/federal-cohort.mjs",
