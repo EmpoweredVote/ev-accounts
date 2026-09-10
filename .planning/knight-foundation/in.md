@@ -556,6 +556,45 @@ planted nothing and "passed".
 
 `check:reachability`: nothing regressed, no new `in|` bucket.
 
+# IN-4 — Gary: groundwork only, NOTHING APPLIED
+
+Started 2026-09-10. **No boundary layer loaded, no migration written, no slot allocated.**
+Recorded so the next session does not repeat the research.
+
+## What is established
+
+| | Finding |
+| --- | --- |
+| **Mayor** | **Eddie Melton**, assumed office **2024-01-01**, elected 2023-11-07 (Wikipedia) |
+| **Council** | **9 members — 6 district + 3 at-large**, same split as Fort Wayne |
+| **Roster** (`garycommoncouncil.gov/council-members/`) | D1 Lori Latham · D2 Dwayne Halliburton · D3 Mary Brown · D4 Marian Ivey · D5 **Linda Barnes-Caldwell (President)** · D6 Dwight A Williams · At-large: Myles Tolliver, Kenneth Whisenton, **Darren Washington (Vice President)** |
+| **Production** | Greenfield — no government, no districts, no offices for Gary or Lake County |
+| **Boundaries present** | TIGER place `1827000` (50.663 sq mi) and county `18089` (626.629 sq mi) |
+
+## 🔴 What is NOT established, and must not be inherited from Fort Wayne
+
+1. **Does Gary elect a City Judge?** Fort Wayne's § 31.01 ends at City Clerk, so Fort Wayne is 11
+   offices. Indiana second-class cities *may* have a **city court** with an elected judge
+   (IC 36-4-9), and Gary historically has one. **If it does, Gary is 12 offices, not 11.**
+   This is exactly the DESCRIBE-REAL-POWERS rule — do not copy Fort Wayne's answer.
+2. **Who is the City Clerk?** Not yet identified.
+3. **Are the at-large seats numbered?** Fort Wayne's are not. Confirm Gary's separately.
+4. **The council-district GIS layer.** Not found yet. Allen County's Election Board service
+   (`gis1.acimap.us`) covered Fort Wayne; **Lake County has its own** and it has not been located.
+5. **Dates.** Only the Mayor is dated. Every council member needs an occupancy start, and the
+   Fort Wayne lesson applies: a term span is not an occupancy start for anyone re-elected.
+
+## ⚠ Traps already hit while looking
+
+- **Municode 403s to WebFetch** (`library.municode.com/in/gary/...`) and loads in Playwright — but
+  its content sits behind a language-selector widget, so `innerText` returns the translation menu.
+  Target the content container, not the body.
+- **TWO council sites exist**: `garycommoncouncil.gov` (current) and `garycommoncouncil.org`.
+  A search snippet named **Tai A. Adkins** as Council President; the `.gov` site says
+  **Linda Barnes-Caldwell**. Prefer the `.gov`, and treat the snippet as stale.
+- **Ballotpedia's Gary page is a stub** — it lists federal and state officials, not city
+  officeholders. It is not a usable source B here, unlike for Fort Wayne.
+
 ## ▶ WHAT REMAINS FOR INDIANA
 
 1. **IN-4 — Gary** (Lake County). Not started. Council is 6 districts + 3 at-large, Mayor Eddie
