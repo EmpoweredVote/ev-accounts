@@ -131,27 +131,50 @@ export async function runNightlyPipeline(
   const targetByLane = new Map(servedTargets.map(t => [t.lane, t]));
   const allCollectionIds = servedTargets.map(t => idBySlug.get(t.collectionSlug)!);
 
+  // ── Run-level state, visible to the finally block ────────────────────────
+  // Declared before job-row creation (below) so a DB error partway through
+  // that loop can mark the run failed and still be seen by finalisation.
+  let pipelineStatus: 'success' | 'failed' = 'success';
+  let fatalError: string | null = null;
+
   // ── One generation_jobs row per served lane ──────────────────────────────
   const jobIdByLane = new Map<Lane, number>();
   if (!dryRun) {
-    for (const t of servedTargets) {
-      const [job] = await db
-        .insert(generationJobs)
-        .values({
-          collectionSlug: t.collectionSlug,
-          status: 'running',
-          questionsGenerated: 0,
-          questionsFlagged: 0,
-          questionsActivated: 0,
-          feedsFailed: 0,
-        })
-        .returning({ id: generationJobs.id });
-      jobIdByLane.set(t.lane, job.id);
-      console.log(`[run-pipeline] lane=${t.lane}: generation_jobs id=${job.id}`);
+    try {
+      for (const t of servedTargets) {
+        const [job] = await db
+          .insert(generationJobs)
+          .values({
+            collectionSlug: t.collectionSlug,
+            status: 'running',
+            questionsGenerated: 0,
+            questionsFlagged: 0,
+            questionsActivated: 0,
+            feedsFailed: 0,
+          })
+          .returning({ id: generationJobs.id });
+        jobIdByLane.set(t.lane, job.id);
+        console.log(`[run-pipeline] lane=${t.lane}: generation_jobs id=${job.id}`);
+      }
+    } catch (err) {
+      // A transient DB error partway through this loop must not leave the
+      // rows already created stuck at status='running' while pipelineCron's
+      // catch inserts competing 'failed' rows for the same lanes — that's
+      // the exact duplicate-contradictory-rows defect this pipeline was just
+      // fixed for, reached by a different route. The finally block below
+      // finalises every row jobIdByLane actually holds (see its lookup
+      // there); anything after this point that expected a lane to have a
+      // job simply skips that lane. Deliberately not rethrown, same as the
+      // fatal-error path further down: rethrowing is what causes the cron to
+      // duplicate rows.
+      fatalError = err instanceof Error ? err.message : String(err);
+      pipelineStatus = 'failed';
+      console.error(
+        `[run-pipeline] Fatal error creating generation_jobs rows — finalising the ${jobIdByLane.size} row(s) already created: ${fatalError}`,
+      );
     }
   }
 
-  // ── Run-level state, visible to the finally block ────────────────────────
   const stats = new Map<Lane, LaneStats>(servedTargets.map(t => [t.lane, emptyStats()]));
   const rejections: Array<Record<string, unknown>> = [];
   let feedResults: FeedResult[] = [];
@@ -159,8 +182,7 @@ export async function runNightlyPipeline(
   let clusterCount = 0;
   let lowConfidenceSkipped = 0;
   let clusterErrors = 0;
-  let pipelineStatus: 'success' | 'failed' = 'success';
-  let fatalError: string | null = null;
+  let clustersAttempted = 0;
 
   // Everything from here on is wrapped: the job rows already exist, so they
   // must be finalised even if the run dies half way. Before this was in a
@@ -169,12 +191,20 @@ export async function runNightlyPipeline(
   // already been written and committed.
   try {
     // ── Ingest ONCE ────────────────────────────────────────────────────────
-    try {
-      feedResults = await fetchAllFeeds(INTERNATIONAL_FEEDS);
-    } catch (err) {
-      fatalError = err instanceof Error ? err.message : String(err);
-      console.error(`[run-pipeline] Fatal error during feed fetch: ${fatalError}`);
-      pipelineStatus = 'failed';
+    if (pipelineStatus === 'failed') {
+      // generation_jobs row creation already failed fatally (see above) —
+      // nothing to route or generate for. feedResults stays [], so clusters
+      // below resolves to 0 and the cluster loop is a no-op; execution falls
+      // straight through to finalising whatever rows were actually created.
+      console.log('[run-pipeline] Skipping feed ingest — generation_jobs row creation already failed');
+    } else {
+      try {
+        feedResults = await fetchAllFeeds(INTERNATIONAL_FEEDS);
+      } catch (err) {
+        fatalError = err instanceof Error ? err.message : String(err);
+        console.error(`[run-pipeline] Fatal error during feed fetch: ${fatalError}`);
+        pipelineStatus = 'failed';
+      }
     }
 
     feedsFailed = feedResults.filter(r => r.error).length;
@@ -201,6 +231,12 @@ export async function runNightlyPipeline(
       let laneForCluster: Lane | undefined;
 
       try {
+        // Counted here, at the point the per-cluster try block is entered —
+        // not at successful completion — so it measures attempts, and the
+        // systemic-failure check below (clusterErrors >= clustersAttempted)
+        // has a real denominator.
+        clustersAttempted++;
+
         const claimResult = dryRun ? null : await extractClaim(cluster);
         if (!claimResult) {
           if (dryRun) {
@@ -335,6 +371,23 @@ export async function runNightlyPipeline(
         });
       }
     }
+
+    // A cluster-level throw is caught and counted above, so a fully systemic
+    // failure (every attempted cluster errored) would otherwise never reach
+    // this function's own catch and pipelineStatus would stay 'success' —
+    // visible only as a large clusterErrors count buried in notes. Only
+    // "every attempted cluster threw" counts as systemic: a run where, say,
+    // 20 clusters were rejected as duplicates and 1 threw is still a success
+    // with 1 cluster error, not a failure.
+    if (clustersAttempted > 0 && clusterErrors >= clustersAttempted) {
+      pipelineStatus = 'failed';
+      fatalError = fatalError ?? (
+        `All ${clustersAttempted} attempted cluster(s) errored — systemic failure, not isolated per-cluster faults`
+      );
+      console.error(
+        `[run-pipeline] Every attempted cluster errored (${clusterErrors}/${clustersAttempted}) — marking run failed`,
+      );
+    }
   } catch (err) {
     fatalError = err instanceof Error ? err.message : String(err);
     pipelineStatus = 'failed';
@@ -345,8 +398,8 @@ export async function runNightlyPipeline(
     // ── Finalise each lane's job row ───────────────────────────────────────
     if (!dryRun) {
       console.log(
-        `[Pipeline] ${clusterCount} clusters, ${lowConfidenceSkipped} low-confidence skipped, ` +
-        `${clusterErrors} cluster error(s)`,
+        `[Pipeline] ${clusterCount} clusters, ${clustersAttempted} attempted, ` +
+        `${lowConfidenceSkipped} low-confidence skipped, ${clusterErrors} cluster error(s)`,
       );
 
       // Rejections that belong to no served lane — `no-target` entries exist
@@ -356,7 +409,15 @@ export async function runNightlyPipeline(
 
       for (const t of servedTargets) {
         const s = stats.get(t.lane)!;
-        const jobId = jobIdByLane.get(t.lane)!;
+        const jobId = jobIdByLane.get(t.lane);
+        if (jobId === undefined) {
+          // Row creation itself failed for this lane before it ever got a
+          // generation_jobs row (see the try/catch around that loop above)
+          // — there is nothing to finalise, and nothing left running for
+          // pipelineCron's catch to collide with.
+          console.warn(`[run-pipeline] lane=${t.lane}: no generation_jobs row was created — nothing to finalise`);
+          continue;
+        }
         console.log(
           `[Pipeline] lane=${t.lane}: ${s.generated} generated, ${s.blocked} blocked, ` +
           `${s.duplicates} duplicate, ${s.contradictions} contradiction, ` +
@@ -384,6 +445,7 @@ export async function runNightlyPipeline(
                 clusters: clusterCount,
                 lowConfidenceSkipped,
                 clusterErrors,
+                clustersAttempted,
                 laneDistribution: Object.fromEntries(
                   [...stats.entries()].map(([lane, v]) => [lane, v.generated]),
                 ),
