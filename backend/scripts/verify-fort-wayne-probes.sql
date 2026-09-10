@@ -7,11 +7,14 @@
 -- regressed", not "this wave's districts were examined". The acceptance evidence is the probe
 -- below plus a per-district positive control across all six council districts.
 --
--- ⚠ FORT WAYNE SCORES 3 OF 4, AND THE PROBE ASSERTS THAT RATHER THAN HIDING IT. The four-answer
--- test is council member + county commissioner + state representative + state senator. IN-3 is
--- stage 3; Allen County (stage 4) has not run, so the county slot is asserted at ZERO on purpose
--- -- the FL-5 pattern. A wave that quietly scored 3 of 4 would look identical to one that broke
--- the county tier.
+-- 🟢 UPDATED 2026-09-10 BY IN-5: FORT WAYNE NOW SCORES 4 OF 4.
+-- This header used to read "FORT WAYNE SCORES 3 OF 4" and the county slot was asserted at ZERO,
+-- because Allen County (stage 4) had not run. That assertion FIRED the moment CC_0094 applied,
+-- reporting 15 -- which is exactly what asserting an absence is for. It now asserts presence.
+--
+-- 🔴 AND IT ASSERTS THREE COMMISSIONERS, NOT ONE. Indiana elects county commissioners
+-- COUNTY-WIDE; the district is a residency rule for the candidate. If a Fort Wayne address ever
+-- returns one commissioner instead of three, somebody has put them on district polygons.
 
 \echo ''
 \echo '=== 1. CONTROL ON THE PROBE ITSELF: does the anchor land in Fort Wayne? ==='
@@ -43,7 +46,7 @@ ORDER BY d.district_type, o.title;
 DO $$
 DECLARE
   v_place text; v_ward int; v_atlarge int; v_mayor int; v_clerk int;
-  v_rep int; v_sen int; v_county int; v_bad int; v_multi int; v_zero int; v_districts int;
+  v_rep int; v_sen int; v_county int; v_countycomm int; v_bad int; v_multi int; v_zero int; v_districts int;
 BEGIN
   -- 3a. the anchor
   SELECT gb.geo_id INTO v_place FROM essentials.geofence_boundaries gb
@@ -76,13 +79,28 @@ BEGIN
   IF v_rep <> 1 THEN RAISE EXCEPTION 'IN-3 probe: City Hall returns % state rep(s), expected 1', v_rep; END IF;
   IF v_sen <> 1 THEN RAISE EXCEPTION 'IN-3 probe: City Hall returns % state senator(s), expected 1', v_sen; END IF;
 
-  -- Allen County (stage 4) has not run. Assert the absence so the day it lands, someone looks.
+  -- Allen County landed in IN-5. 15 countywide offices: 3 commissioners + 3 at-large council +
+  -- 9 elected officers. The 4 council-district offices sit on X0049 and are not counted here.
   SELECT count(*) INTO v_county
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '18003' AND d.district_type = 'COUNTY';
-  IF v_county <> 0 THEN
-    RAISE EXCEPTION 'IN-3 probe: expected 0 Allen County offices (stage 4 has not run), found %', v_county;
+  IF v_county <> 15 THEN
+    RAISE EXCEPTION 'IN-3 probe: expected 15 countywide Allen County offices, found %', v_county;
+  END IF;
+
+  -- 🔴 THE FOURTH ANSWER: all THREE commissioners must reach a Fort Wayne address.
+  SELECT count(och.politician_id) INTO v_countycomm
+  FROM essentials.geofence_boundaries gb
+  JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
+  JOIN essentials.offices o ON o.district_id = d.id
+  JOIN essentials.chambers c ON c.id = o.chamber_id
+  LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+  WHERE gb.mtfcc = 'G4020' AND gb.state = '18'
+    AND ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint(-85.13937, 41.07937), 4326))
+    AND c.name = 'Board of County Commissioners';
+  IF v_countycomm <> 3 THEN
+    RAISE EXCEPTION 'IN-3 probe: City Hall returns % county commissioner(s), expected 3 -- Indiana elects all three county-wide', v_countycomm;
   END IF;
 
   -- 3c. per-district positive control across all six council districts
@@ -111,5 +129,5 @@ BEGIN
       v_bad, v_multi, v_zero;
   END IF;
 
-  RAISE NOTICE 'IN-3 PROBE PASSED: anchor validated; City Hall returns 1 district member + 3 at-large + mayor + clerk + 1 rep + 1 senator; county asserted at 0; 6/6 districts resolve to exactly one holder';
+  RAISE NOTICE 'IN-3 PROBE PASSED: anchor validated; City Hall returns 1 district member + 3 at-large + mayor + clerk + 1 rep + 1 senator; 4 OF 4 with all 3 county commissioners; 6/6 districts resolve to exactly one holder';
 END $$;
