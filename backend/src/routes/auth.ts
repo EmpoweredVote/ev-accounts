@@ -7,7 +7,7 @@ import { requireAuth, verifyWorkosAccessToken, type AuthenticatedRequest } from 
 import { classifyToken } from '../lib/tokenIdentity.js';
 import { provisionWorkosUser, signUpWorkosFirst } from '../lib/workosProvisionService.js';
 import { completeOnboarding } from '../lib/enrollService.js';
-import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
+import { adminRpc, supabaseAdmin, supabaseAuth } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
 import { sendEmail } from '../lib/emailService.js';
 import { pool } from '../lib/db.js';
@@ -591,7 +591,10 @@ router.get('/session', async (req: Request, res: Response): Promise<void> => {
   }
 
   try {
-    const { data, error } = await supabaseAdmin.auth.refreshSession({
+    // supabaseAuth, NOT supabaseAdmin: refreshSession stores the refreshed
+    // session on the client, which would then ride on every later adminRpc()
+    // as the user's token. See supabaseAuth in lib/supabase.ts (2026-09-10 outage).
+    const { data, error } = await supabaseAuth.auth.refreshSession({
       refresh_token: refreshToken,
     });
 
@@ -871,7 +874,11 @@ router.post('/reset-password', authLimiter, async (req: Request, res: Response):
     return;
   }
 
-  const { data: verifyData, error: verifyError } = await supabaseAdmin.auth.verifyOtp({
+  // supabaseAuth, NOT supabaseAdmin: verifyOtp returns and stores a session on
+  // the client, which would then ride on every later adminRpc() as that user's
+  // token. See supabaseAuth in lib/supabase.ts (2026-09-10 outage). The password
+  // update below stays on supabaseAdmin — auth.admin.* stores no session.
+  const { data: verifyData, error: verifyError } = await supabaseAuth.auth.verifyOtp({
     token_hash,
     type: 'recovery',
   });

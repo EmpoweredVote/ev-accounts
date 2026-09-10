@@ -27,6 +27,44 @@ export const supabaseAdmin = createClient<Database>(
 );
 
 /**
+ * supabaseAuth — a SEPARATE client dedicated to GoTrue session operations
+ * (signInWithPassword, signUp, refreshSession, verifyOtp).
+ *
+ * WHY THIS EXISTS — the 2026-09-10 compass-write outage:
+ *   supabase-js stores the session returned by a sign-in / refresh / verify on
+ *   the CLIENT that made the call. After that, every PostgREST request from that
+ *   client sends the stored user's access_token as `Authorization` instead of
+ *   the API key — the session token wins over the key in the client's own
+ *   `_getAccessToken()`. Running these auth calls on `supabaseAdmin` therefore
+ *   turned the shared admin singleton into a user-scoped client for the rest of
+ *   the process: every `adminRpc()` after a login ran as the last-logged-in user
+ *   (role `authenticated`), which lacks EXECUTE on the service-role-only write
+ *   RPCs (upsert_compass_answer, reset_compass_answers, promote_compass_import_draft)
+ *   -> "permission denied for function". It stayed hidden while supabaseAdmin
+ *   carried a forced `Authorization: Bearer <service key>` header (which overrode
+ *   the polluting session); removing that header unmasked it.
+ *
+ * The fix is isolation, not a header trick: sign-in / refresh / verify run HERE,
+ * and this client is NEVER used for `.from()` / `.rpc()`, so the session it
+ * accumulates is inert. supabaseAdmin stays pristine and always authenticates as
+ * service_role. Admin GoTrue calls (`auth.admin.*`) and token introspection
+ * (`auth.getUser(token)`) do NOT store a session, so they stay on supabaseAdmin.
+ *
+ * Uses the service key so behaviour is otherwise identical to the previous
+ * supabaseAdmin path; the only change is that the session lives off to the side.
+ */
+export const supabaseAuth = createClient<Database>(
+  env.SUPABASE_URL.trim(),
+  env.SUPABASE_SERVICE_ROLE_KEY.trim(),
+  {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  }
+);
+
+/**
  * adminRpc — call a SECURITY DEFINER RPC function via supabaseAdmin.
  *
  * Used for functions registered in migrations that are not yet reflected in
