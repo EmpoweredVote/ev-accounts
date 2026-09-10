@@ -24,12 +24,17 @@ export interface FeedResult {
 
 // ─── Feed Configuration ───────────────────────────────────────────────────────
 
+// NPR ('NPR' world feed and 'NPR National') removed 2026-09-10: both fed
+// through the same extractArticleText() body-fetch path, and www.npr.org
+// black-holes every non-browser User-Agent — including the honest, properly
+// identified one below (15s timeout, zero bytes; a browser UA gets a 200 in
+// ~110ms). We deliberately do not spoof a browser UA to get past that. See
+// the rss-ingestor UA-fix commit for the measured per-feed article counts
+// that led to dropping these two entries.
 export const INTERNATIONAL_FEEDS = [
   { name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
-  { name: 'NPR', url: 'https://feeds.npr.org/1004/rss.xml' },
   { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
   { name: 'DW', url: 'https://rss.dw.com/rdf/rss-en-world' },
-  { name: 'NPR National', url: 'https://feeds.npr.org/1003/rss.xml' },
 ] as const;
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
@@ -47,7 +52,7 @@ export function wordCount(text: string): number {
 export async function extractArticleText(url: string): Promise<string | null> {
   try {
     const response = await fetch(url, {
-      headers: { 'User-Agent': 'CivicTriviaBot/1.0' },
+      headers: { 'User-Agent': 'CivicTriviaBot/1.0 (+https://empowered.vote)' },
       signal: AbortSignal.timeout(15000),
     });
 
