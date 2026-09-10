@@ -131,6 +131,14 @@ export async function runNightlyPipeline(
   });
 
   if (servedTargets.length === 0) {
+    // Effectively unreachable from the cron: it preflights every lane's
+    // collection and returns early when none is eligible, so it only ever
+    // calls this with lanes whose collections it has already resolved. This
+    // exists for the CLI path, where a throw is the only way to say "nothing
+    // at all resolved" — it is NOT a reinstatement of the
+    // abort-on-any-missing-lane behaviour a correction deliberately removed.
+    // A lane whose collection is missing is still skipped with a warning and
+    // a `missing-collection` note; only ZERO served lanes throws.
     throw new Error(
       `No lane collections found in DB — nothing to serve (checked: ${slugs.join(', ')})`,
     );
@@ -399,6 +407,11 @@ export async function runNightlyPipeline(
         passing = survivors;
 
         const jobId = jobIdByLane.get(target.lane);
+        // `jobId !== undefined` is belt-and-braces: it is unreachable here.
+        // The only route to a lane without a job id is the job-creation catch
+        // above, which sets pipelineStatus = 'failed', which skips feed
+        // ingest, which leaves this cluster loop a no-op. Kept so the code is
+        // safe if that coupling is ever broken — no need to re-derive it.
         if (passing.length > 0 && jobId !== undefined) {
           const written = await writePassingQuestions(
             passing, claimResult, idBySlug.get(target.collectionSlug)!,
@@ -406,8 +419,13 @@ export async function runNightlyPipeline(
           );
           laneStats.generated += written.length;
 
-          // Recorded only when something was actually published: a claim whose
-          // candidates were all rejected is deliberately not remembered, so a
+          // Recorded whenever at least one candidate survived the gates
+          // (`passing.length > 0`) — not strictly when a row was written. If
+          // every insert hits an external_id conflict, `written` is empty and
+          // the fingerprint is still recorded, with questionExternalId: null.
+          // That is benign: a conflict means the id already exists, so the
+          // content IS present. What is deliberately not remembered is a
+          // claim whose candidates were ALL rejected by the gates, so a
           // transient failure does not suppress the story permanently.
           await guard.record(keys, target.lane, written[0]?.externalId ?? null, jobId);
         }
