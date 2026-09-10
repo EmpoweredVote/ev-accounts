@@ -80,14 +80,14 @@ function emptyStats(): LaneStats {
 export async function runNightlyPipeline(
   targets: readonly LaneTarget[],
   options: { dryRun?: boolean; maxQuestionsPerLane?: number } = {},
-): Promise<void> {
+): Promise<{ status: 'success' | 'failed' }> {
   const { dryRun = false, maxQuestionsPerLane } = options;
 
   console.log(`[run-pipeline] Nightly run — ${targets.length} lane(s)${dryRun ? ' (DRY RUN)' : ''}`);
 
   if (targets.length === 0) {
     console.log('[run-pipeline] No lanes registered — nothing to do');
-    return;
+    return { status: 'success' };
   }
 
   // ── Lazy DB imports (ESM pattern) ────────────────────────────────────────
@@ -486,6 +486,7 @@ export async function runNightlyPipeline(
   }
 
   console.log(`[run-pipeline] Pipeline complete (status=${pipelineStatus}).`);
+  return { status: pipelineStatus };
 }
 
 // ─── Entry Point ──────────────────────────────────────────────────────────────

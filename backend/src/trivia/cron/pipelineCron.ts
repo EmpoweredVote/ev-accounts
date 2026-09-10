@@ -18,7 +18,10 @@
  * Auto-throttle: if a lane's collection has > 20 draft (status='draft')
  * questions, skip that lane for this run — it is left out of the pipeline call.
  *
- * Hard cap: maxQuestionsPerLane: 8 is passed to runNightlyPipeline().
+ * Soft cap: maxQuestionsPerLane: 8 is passed to runNightlyPipeline(). It is
+ * checked before a cluster is generated, not after, so a lane sitting at 7
+ * can still accept a whole batch and finish at 9 or 10 — treat it as a
+ * per-run ceiling target, not a hard limit.
  */
 
 import { db } from '../db/index.js';
@@ -135,10 +138,22 @@ export async function runPipelineCron(): Promise<void> {
 
   // ── One ingest, one pass, all eligible lanes ───────────────────────────────
   try {
-    await runNightlyPipeline(eligible, { maxQuestionsPerLane: MAX_QUESTIONS_PER_RUN });
-    console.log(
-      `[pipelineCron] Completed lanes: ${eligible.map(t => t.lane).join(', ')}`,
-    );
+    const result = await runNightlyPipeline(eligible, { maxQuestionsPerLane: MAX_QUESTIONS_PER_RUN });
+    if (result.status === 'success') {
+      console.log(
+        `[pipelineCron] Completed lanes: ${eligible.map(t => t.lane).join(', ')}`,
+      );
+    } else {
+      // The pipeline records its own fatal error on the job rows it already
+      // wrote and deliberately does not rethrow (rethrowing here is what
+      // caused pipelineCron to duplicate those rows with a competing
+      // 'failed' insert) — so this is not the catch block below, and
+      // "Completed lanes" would otherwise print even on a run that failed
+      // internally.
+      console.warn(
+        `[pipelineCron] Pipeline finished with status=failed — lanes: ${eligible.map(t => t.lane).join(', ')} (see generation_jobs for per-lane detail)`,
+      );
+    }
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
     console.error(`[pipelineCron] Pipeline run failed: ${errorMsg}`);
