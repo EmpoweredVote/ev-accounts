@@ -450,14 +450,121 @@ that follows it.
 Two buckets came in **below** baseline. No new `in|` bucket appeared, which is the thing a
 newly-seated state could plausibly have caused.
 
+# IN-3 — Fort Wayne (applied 2026-09-10)
+
+**11 offices, 11 people, 0 vacancies.** `X0048` (6 council districts), `CC_0090` structure,
+`CC_0091` occupancy. Stage 3 is now open for Indiana.
+Roster: [`backend/data/seed-fort-wayne-2026/ROSTERS.md`](../../backend/data/seed-fort-wayne-2026/ROSTERS.md).
+
+🟢 `offices_missing_terms` unmoved at **821 / 166 / 655**.
+
+## 🔴 ELEVEN OFFICES IS WHAT THE CODE SAYS, NOT WHAT INDIANA CITIES "USUALLY" HAVE
+
+Fort Wayne Code **§ 31.01 ELECTED OFFICIALS** reads (A) Mayor, (B) Common Council — *"six district
+members and three at-large members"* — and (C) City Clerk. **The section ends at (C).** Fort Wayne
+elects **no city judge**. The Council Attorney named on every agenda is **appointed** and is not
+modelled. 1 + 9 + 1 = 11.
+
+⚠ The ordinance page returns **HTTP 403 to WebFetch** and loads fine in Playwright — the documented
+403-with-a-browser-UA case, hit again.
+
+## 🔴 THE THREE AT-LARGE SEATS ARE NOT NUMBERED, AND THE MIGRATION REFUSES TO NUMBER THEM
+
+Georgia creates numbered posts, so Columbus carries `Council Member, Post 9 (At Large)`. **Indiana
+does not**: all three run in one citywide race and the top three win. So all three offices carry the
+**identical** voter-facing title `Council Member, At Large`.
+
+That left them indistinguishable for the occupancy join. The discriminator lives in
+`offices.description`, spelled out as an **internal ordinal** that is *"not a ballot designation"* —
+because inventing "Seat 1/2/3" would describe a power Fort Wayne does not have. The post-verify gate
+asserts the three at-large seats hold **three distinct people**, which is what a loose join would break.
+
+## 🔴 THE SAME DOCUMENT GIVES A DAY FOR THREE MEMBERS AND THE WRONG DATE FOR FIVE
+
+The Council's own agenda prints *"Elected to a 4-year term: 1/1/24 – 12/31/27"*. That is the **term**.
+
+- For **Bender, Hartman and Myers** — new in 2024 — the term start *is* the start of continuous
+  occupancy. Written `2024-01-01` at `day`.
+- For **Ensley (2016), Jehl (2012), Paddock (2012), Chambers (2020), Freistroffer (2016)** the same
+  sentence is **not** their occupancy start. They were re-elected in 2023, and **re-election does
+  not end an occupancy**. Ballotpedia publishes only a year, so they are written at `year`
+  precision — **not** back-filled to a January 1st no source states.
+
+**6 day + 5 year, asserted by the gate.** One document, opposite meanings, decided per person.
+
+## 🔴 TWO SEATS CHANGED HANDS MID-TERM, AND MY FIRST READING OF ONE WAS WRONG
+
+| Seat | Change | Date |
+| --- | --- | --- |
+| **City Clerk** | Lana Keesling resigned on becoming Indiana GOP chair; **John McGauley** won the caucus and was sworn in that morning | resigned **2026-01-06**, sworn **2026-01-17** |
+| **District 6** | Sharon Tucker left on becoming Mayor; **Rohli Booker** won the Democratic caucus 2024-05-18 | sworn **2024-05-21** |
+
+⚠ **I assumed Scott Myers (D4) replaced Tucker. He did not.** Myers **won D4 at the 2023 election**,
+the seat having opened when **Jason Arp** left to run for mayor. Tucker's seat was **D6**. Assigning
+Myers a mid-term caucus date would have put a sourced-looking but false date on a real person — the
+error would have survived every count-based check, because the count was right either way.
+
+## 🔴 THE SIX DISTRICTS DO NOT TILE THE CITY, AND THAT IS CORRECT
+
+| Measure | sq mi |
+| --- | --- |
+| TIGER place `1825000` | 112.0932 |
+| Union of the six districts | 111.0025 |
+| Place **not** covered | **1.2524** |
+| Districts outside the place | 0.1617 |
+
+The uncovered ground is essentially **one piece of 1.1340 sq mi** at `(-85.04700, 41.02744)`. The
+Election Board's **own precinct layer** reports that point as precinct `ADAMS G`,
+`City_Dist = 'COUNTY'` — unincorporated Allen County with no Fort Wayne council representation.
+
+So it is a disagreement between **TIGER's place polygon** and **the county's city limits**, not a
+hole in the council map. The loader **bounds** the gap rather than requiring closure: the
+Columbus/Fort Benning situation, not the Macon-Bibb one.
+
+## 🔴 A BOUNDARY LAYER CARRIED A ROSTER FIELD AND IT WAS EMPTY
+
+`FW_City_Cncl_Dist_1..6` each carry `FW_Council_Rep`. Districts 1, 2, 4, 5 and 6 return `""`;
+district 3 returns `null`. **Not one is populated.**
+
+Santa Clara's vintage test — compare the layer's roster field against the verified roster to prove
+the layer is maintained — **is unavailable here**. A field that looks like a source and holds
+nothing invites the sentence *"the Election Board confirms the roster"*. It does not. GATE 2 asserts
+the field stays **empty**, so the day it is populated the loader fails and someone decides.
+
+🟢 **A DIFFERENT INDEPENDENT RECORD DID THE JOB INSTEAD.** The same service's precinct layer carries
+`City_Dist` per precinct — 187 of 278 precincts are `FW 1`–`FW 6`. Every district was tested at its
+own interior point: **6 of 6 agree, each returning a DIFFERENT value**, and the gap point returns a
+seventh (`COUNTY`). The loader asserts that **distinctness**, not merely the agreement — a field
+returning one value everywhere would agree with anything.
+
+## ✅ Probe and controls
+
+Fort Wayne City Hall returns **eight** answers: District 5 Geoff Paddock, three at-large members,
+Mayor Sharon Tucker, City Clerk John McGauley, HD-82 Kyle Miller and SD-16 Justin Busch.
+
+⚠ **Fort Wayne scores 3 of 4 and the probe asserts it** — Allen County is stage 4 and has not run,
+so the county slot is asserted at **zero**, the FL-5 pattern.
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | District 5 unseated — City Hall's own | `City Hall returns 0 district council member(s)` |
+| 2 | District 2 unseated — **away from the anchor** | `1 of 6 council districts … (0 several, 1 none)` |
+| 3 | one at-large holder removed | `City Hall returns 2 at-large member(s), expected 3` |
+
+Every plant printed `DELETE 1` before the probe ran — the IN-2 lesson applied, where a control
+planted nothing and "passed".
+
+`check:reachability`: nothing regressed, no new `in|` bucket.
+
 ## ▶ WHAT REMAINS FOR INDIANA
 
-Stage 2 is **closed**. Still open:
-
-1. **Stage 3** — Fort Wayne and Gary city waves. Both currently return 2 of 4 at city hall.
-2. **Stage 4** — Allen and Lake county waves.
-3. **Stage 5** — headshots and banners. 🔴 **Count the legislature's 150 portraits INSIDE stage 5,
-   not beside it** (the GA-6 lesson). Indiana's API publishes **no portrait at all**; the Open
-   States `image` column is the only lead and is **unmeasured** — profile it before quoting a yield.
-4. **The 671 orphan offices**, and the **21 surplus government rows**, both recorded as debts by
-   R2 and R3. Neither is Knight work; both now have a measured size.
+1. **IN-4 — Gary** (Lake County). Not started. Council is 6 districts + 3 at-large, Mayor Eddie
+   Melton, plus a City Clerk; **confirm from Gary's own charter, do not inherit Fort Wayne's answer.**
+   ⚠ Gary's Municode page returns **403 to WebFetch** — use Playwright.
+   ⚠ Two council sites exist, `garycommoncouncil.gov` and `.org`; the `.gov` is current and a stale
+   search snippet named a different Council President.
+2. **Stage 4** — Allen and Lake counties. Allen's structure is already visible in the Election
+   Board's layer list: **3 County Commissioner districts + 4 County Council districts** (plus
+   at-large county council seats — confirm the count).
+3. **Stage 5** — headshots and banners, counting the legislature's **150** portraits inside it.
+4. The **671 orphan offices** and **21 surplus government rows**, both recorded debts.
