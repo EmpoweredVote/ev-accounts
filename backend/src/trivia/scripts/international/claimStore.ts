@@ -37,6 +37,19 @@ export function createFingerprintStore(): FingerprintStore {
       const { db } = await import('../../db/index.js');
       const { claimFingerprints } = await import('../../db/schema.js');
 
+      // Upsert, not `onConflictDoNothing`. The unique index is on
+      // (topic_key, value_key); the Layer 1 check window is 14 days
+      // (CLAIM_WINDOW_DAYS) and the prune horizon is 30. With DO NOTHING a
+      // claim first seen on day 0 falls out of findByTopicKey's window on
+      // day 15, so check() calls it `new`, a question is generated, and
+      // record() then silently does nothing — leaving first_seen_at at day 0
+      // and repeating the same regeneration every night until the day-30
+      // prune. Refreshing the row restarts the window instead, so a
+      // re-covered claim is remembered from the night it was re-covered.
+      //
+      // Within-run idempotence is preserved: these are separate statements,
+      // so the second record of an identical claim in one run updates the
+      // row it just inserted rather than adding a second one.
       await db
         .insert(claimFingerprints)
         .values({
@@ -47,7 +60,14 @@ export function createFingerprintStore(): FingerprintStore {
           generationJobId: row.generationJobId,
           firstSeenAt: row.firstSeenAt,
         })
-        .onConflictDoNothing();
+        .onConflictDoUpdate({
+          target: [claimFingerprints.topicKey, claimFingerprints.valueKey],
+          set: {
+            firstSeenAt: row.firstSeenAt,
+            questionExternalId: row.questionExternalId,
+            generationJobId: row.generationJobId,
+          },
+        });
     },
   };
 }
