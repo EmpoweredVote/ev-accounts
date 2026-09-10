@@ -203,6 +203,21 @@ export async function runNightlyPipeline(
     'api-error': 0,
   };
 
+  // Where the router actually sent each story, counted at lane resolution and
+  // covering EVERY lane — including lanes this run does not serve.
+  //
+  // `laneDistribution` in the notes means "questions generated, per served
+  // lane", which is a different thing: with one served lane, a night where 60
+  // of 68 stories routed to `world` shows up as `{iran: 2}` plus 60
+  // individual `no-target` rejection entries. Recoverable, but not
+  // summarised. This is the histogram the spec's mitigation for "routing
+  // misclassifies a story class systematically" — log lane distribution per
+  // run, review after the first week — actually needs.
+  //
+  // Written as a literal rather than derived from LANE_PRECEDENCE so tsc
+  // fails here if a lane is ever added to the union.
+  const routedByLane: Record<Lane, number> = { iran: 0, climate: 0, us: 0, world: 0 };
+
   // Everything from here on is wrapped: the job rows already exist, so they
   // must be finalised even if the run dies half way. Before this was in a
   // `finally`, one throwing cluster stranded every lane's row at
@@ -292,6 +307,7 @@ export async function runNightlyPipeline(
         const claimResult = extraction.claim;
 
         laneForCluster = claimResult.lane;
+        routedByLane[claimResult.lane]++;
 
         const target = targetByLane.get(claimResult.lane);
         if (!target) {
@@ -482,9 +498,12 @@ export async function runNightlyPipeline(
                 claimSkips,
                 clusterErrors,
                 clustersAttempted,
+                // Questions GENERATED, per SERVED lane. `routedByLane` is the
+                // routing histogram — all lanes, counted at resolution.
                 laneDistribution: Object.fromEntries(
                   [...stats.entries()].map(([lane, v]) => [lane, v.generated]),
                 ),
+                routedByLane,
                 dedup: {
                   duplicates: s.duplicates,
                   contradictions: s.contradictions,
@@ -499,7 +518,7 @@ export async function runNightlyPipeline(
                   ...partitioned.unroutable,
                   ...partitioned.forLane(t.lane),
                 ],
-              } as never,
+              },
               updatedAt: sql`NOW()`,
             })
             .where(eq(generationJobs.id, jobId));

@@ -77,6 +77,13 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
   questionsGenerated: integer('questions_generated').notNull().default(0),
   questionsFlagged: integer('questions_flagged').notNull().default(0),
   questionsActivated: integer('questions_activated').notNull().default(0),
+  // The primary observability surface for a pipeline run — nothing else reads
+  // generation_jobs, so this and `status` are all an operator has. Typed in
+  // full rather than reached through a cast: `as never` on the one payload a
+  // human has to read is a type-safety hole exactly where it hurts.
+  //
+  // Only feedStats is required; a run that dies before the cluster loop
+  // writes a subset, so the rest are optional.
   notes: jsonb('notes').$type<{
     feedStats: Array<{
       feedUrl: string;
@@ -84,6 +91,36 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
       articlesSkipped: number;
       error?: string;
     }>;
+    /** Story clusters formed from the ingested articles. */
+    clusters?: number;
+    /** Clusters the generation loop actually entered (the denominator for
+     *  clusterErrors). */
+    clustersAttempted?: number;
+    /** Clusters that yielded no claim, by reason — a low-confidence tier, an
+     *  unexpected content-block type, an unparseable response, an API error. */
+    claimSkips?: Record<string, number>;
+    /** Clusters that threw and were contained per-cluster. */
+    clusterErrors?: number;
+    /** Questions GENERATED, per SERVED lane. */
+    laneDistribution?: Record<string, number>;
+    /** Stories ROUTED to each lane, counted at lane resolution, covering
+     *  every lane including ones this run does not serve. */
+    routedByLane?: Record<string, number>;
+    dedup?: {
+      duplicates: number;
+      contradictions: number;
+      nearDuplicates: number;
+      degenerate: number;
+    };
+    /** Clusters skipped because the lane was already at maxQuestionsPerLane. */
+    capped?: number;
+    maxQuestionsPerLane?: number;
+    /** One quality-gate reason per blocked candidate. */
+    blockReasons?: string[];
+    /** Every skipped candidate: per-lane rejections, plus `missing-collection`
+     *  lanes and rejections belonging to no served lane, which are spliced
+     *  into every served lane's row. Shape varies by `reason`. */
+    rejections?: Array<Record<string, unknown>>;
   }>(),
   feedsFailed: integer('feeds_failed').notNull().default(0),
   reason: text('reason'),  // populated for 'skipped' and 'failed' rows; null otherwise
