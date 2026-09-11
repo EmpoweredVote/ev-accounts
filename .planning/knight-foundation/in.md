@@ -765,8 +765,11 @@ Gary's own probe was updated — its Lake assertion **fired** on apply, and **Ga
 **186 of 198 Indiana officials now carry a renderable portrait, from 18.** 168 imported, 18 skipped
 (they already had one), 0 failed. No migration — headshots are storage objects plus
 `photo_custom_url`. Legislature **150/150**, Fort Wayne **11/11**, Gary 4/6, Allen 12/19, Lake 9/12.
-Both city banners are uploaded and byte-verified; [essentials#133](https://github.com/EmpoweredVote/essentials/pull/133)
-registers them, and **stage 5 stays WIP until that merges**.
+Both city banners are uploaded, byte-verified and **registered — [essentials#133](https://github.com/EmpoweredVote/essentials/pull/133)
+merged 2026-09-11 08:22Z as `e5ab4d9f`**, and the live bundle serves both keys. **Stage 5 is CLOSED.**
+
+⚠ **That does not complete Indiana.** Stage 3 remains WIP: Gary elects twelve offices and holds six, its six
+district seats deferred until the 2023 settlement map exists. Indiana is four stages of five.
 
 Contact sheet (198 cards, 12 of them blanks carrying their reason):
 <https://claude.ai/code/artifact/b4ef0597-0eb0-4bf4-99e8-9854e877d30e>
@@ -942,11 +945,10 @@ string replace that matches nothing is a no-op that looks exactly like success.
 
 ## ▶ WHAT REMAINS FOR INDIANA
 
-Stages 1-4 are closed. Stage 5 is applied and waits only on a merge.
+Stages 1, 2, 4 and 5 are closed. **Stage 3 is the only one open**, and one thing holds it.
 
-1. **Merge [essentials#133](https://github.com/EmpoweredVote/essentials/pull/133)** — the banner
-   registry entries. The assets are already live and byte-verified; on merge, stage 5 closes and
-   **Indiana is complete across all five stages**, the program's fourth slice after FL, GA and CA.
+1. **Gary's six district council seats** — the one thing between Indiana and a complete slice.
+   Stage 3 cannot close without the 2023 settlement map, which is why stage 3 alone still reads WIP.
 2. **The two deferred geometries**, both to be **REQUESTED from the county, never georeferenced from
    a PDF**: Gary's **2023 settlement map** (6 council district seats) and **Lake County Council's
    seven districts**. Lake County GIS offers a "Request GIS Map or Data" form. Until they exist the
