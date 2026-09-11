@@ -22,6 +22,34 @@ describe('normalizeValue', () => {
     expect(normalizeValue('43.8%')).not.toBe(normalizeValue('44%'));
   });
 
+  /**
+   * The wiran-1667 / wiran-1671 case. `km` is in NOISE_WORDS, but stripNoise
+   * filters whole space-delimited tokens, so "75km" was one token and survived
+   * intact while "75 km" became "75". Value equality gates the entire dedup
+   * rule, so this predicate failing meant nothing downstream could fire.
+   */
+  it('strips a unit glued to its number so 75km and 75 collide', () => {
+    expect(normalizeValue('75km')).toBe(normalizeValue('75'));
+  });
+
+  it('strips a glued unit the same way as a spaced one', () => {
+    expect(normalizeValue('75km')).toBe(normalizeValue('75 km'));
+  });
+
+  it('does not merge a letter-then-digit designation into its number', () => {
+    // "F35" is an identity, not a quantity with a unit. It must not become "35".
+    expect(normalizeValue('F35')).not.toBe(normalizeValue('35'));
+  });
+
+  it('leaves an unrecognised glued suffix alone rather than dropping it', () => {
+    // "mw" is not a known noise word; splitting must not silently discard it.
+    expect(normalizeValue('100mw')).not.toBe(normalizeValue('100'));
+  });
+
+  it('still keeps distinct numbers distinct when units are glued', () => {
+    expect(normalizeValue('75km')).not.toBe(normalizeValue('76km'));
+  });
+
   it('normalises date spelling but not date identity', () => {
     expect(normalizeValue('September 8, 2026')).toBe(normalizeValue('september 8 2026'));
     expect(normalizeValue('September 8, 2026')).not.toBe(normalizeValue('September 7, 2026'));

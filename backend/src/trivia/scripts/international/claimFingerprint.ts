@@ -61,6 +61,26 @@ function baseNormalize(raw: string): string {
     .trim();
 }
 
+/**
+ * Put a space between a number and a unit glued to it, so `stripNoise` can see
+ * the unit as its own token: "75km" -> "75 km" -> "75".
+ *
+ * MEASURED, NOT HYPOTHETICAL. `km` has always been in NOISE_WORDS, but
+ * stripNoise filters whole space-delimited tokens, so "75km" was a single token
+ * that matched nothing and survived intact. Two runs 90 seconds apart emitted
+ * "75km" and "75" for the same fact; value equality gates the whole dedup rule,
+ * so it short-circuited before any other signal was consulted and a duplicate
+ * question shipped (wiran-1671 duplicating wiran-1667).
+ *
+ * Splits digit-then-letters ONLY, never letters-then-digit: "F35" is an
+ * identity, not a quantity, and must not collapse to "35". A suffix that is not
+ * a known noise word is split but then kept, so "100mw" stays distinct from
+ * "100" — this widens what stripNoise can see, it does not discard anything.
+ */
+function splitGluedUnits(text: string): string {
+  return text.replace(/(\d)([a-z]+)/g, '$1 $2');
+}
+
 /** Drop noise words and re-join. Preserves numbers, including decimals. */
 function stripNoise(text: string): string {
   return text
@@ -85,7 +105,7 @@ function stripNoise(text: string): string {
  */
 export function normalizeValue(raw: string): string {
   const digitsJoined = raw.replace(/(\d),(?=(?:\d{3})+(?!\d))/g, '$1');
-  return stripNoise(baseNormalize(digitsJoined));
+  return stripNoise(splitGluedUnits(baseNormalize(digitsJoined)));
 }
 
 /** Normalise a subject or attribute. Same rules, kept separate for clarity. */

@@ -44,10 +44,18 @@
  * tolerate a moving set. Jaccard overlap with a floor does; equality does
  * not.
  *
- * Values do stay exact. `normalizeValue` in claimFingerprint.ts already
- * absorbs the drift that matters there (units, thousands separators,
- * approximation hedges: "75km" and "75" both become "75"), so a residual
- * difference in the value is a real difference in the fact.
+ * Values do stay exact. `normalizeValue` in claimFingerprint.ts absorbs the
+ * drift that matters there (units, thousands separators, approximation hedges:
+ * "75km" and "75" both become "75"), so a residual difference in the value is a
+ * real difference in the fact.
+ *
+ * That parenthetical was asserted here as settled fact before it was true.
+ * `stripNoise` filters whole space-delimited tokens, so "75km" was one token
+ * that matched nothing and normalised to itself — and since this module checks
+ * values before it ever looks at entities, the rule short-circuited on the very
+ * case it was written for. `splitGluedUnits` fixes it and
+ * claimFingerprint.test.ts pins it. Do not restate a predicate's behaviour here
+ * without a test on the other side proving it.
  */
 
 /**
