@@ -3,30 +3,73 @@
  * verifier. The goal is to recover the real, human-visible text of a cited page
  * so the deterministic snippet matcher (researchVerifier) can run, WITHOUT
  * falling back to an expensive re-research LLM agent just because a site is
- * unfriendly to a naive headless fetch.
+ * unfriendly to a naive fetch.
  *
  * Ladder (cheap → expensive; stop at the first tier that returns a "real" page):
  *   1. Plain HTTP fetch + HTML→text  — static / server-rendered pages (.gov,
- *      congress.gov, most newspapers). No browser cost.
- *   2. Headless Chromium (shared browser, reused across the batch) — JS-rendered
- *      pages and basic bot checks.
- *   3. Wayback Machine snapshot       — archive.org serves clean static HTML that
+ *      most newspapers). No browser cost.
+ *   3. Wayback Machine snapshot      — archive.org serves clean static HTML that
  *      is immune to the live site's bot protection / paywall. Rescues the case
- *      where the live page is a Cloudflare challenge or empty shell.
+ *      where the live page is a challenge page or an empty shell.
  *
- * No LLM anywhere. The only "cost" is HTTP/browser latency, and the net effect
- * is FEWER re-research dispatches (the only token-expensive path), so this
- * lowers overall token usage rather than raising it.
+ * The numbering keeps a gap at 2: a headless-browser rung once sat there. It was
+ * removed (knowledge/decisions/0003-scraping-toolchain.md) — it could not run on
+ * the Alpine/musl deployment and was unexercised. The Wayback rung keeps its
+ * historical "tier 3" name so log lines and outcome codes do not shift meaning.
+ * Restoring a middle rung — an anti-bot fetch for pages a plain fetch cannot
+ * reach (e.g. congress.gov, ballotpedia) — is decision 0003 rung 2, tracked
+ * separately.
+ *
+ * No LLM anywhere. The only "cost" is HTTP latency, and the net effect is FEWER
+ * re-research dispatches (the only token-expensive path), so this lowers overall
+ * token usage rather than raising it.
  *
  * The verifier consumes this through researchVerifier.createPageFetcher, which
  * adds per-URL caching and the {ok|reason} envelope. createVerificationFetchSession
- * owns the shared browser; close() it when the batch is done.
+ * is a thin batch wrapper; close() remains for callers but is now a no-op.
  */
 
-import { chromium, type Browser } from 'playwright';
 import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
-import { renderPage, EMPOWERED_VOTE_UA, EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
+
+/**
+ * Honest user-agent. Names Empowered Vote, links a public policy page, and
+ * gives a contact address so a publisher can reach us or ask to be excluded.
+ *
+ * The product token `EmpoweredVoteBot` is what a site's robots.txt matches on
+ * (see the robots parser below), so it must stay stable — do not reword it.
+ *
+ * Rationale: decision knowledge/decisions/0003-scraping-toolchain.md (rung 0).
+ * From 15 Sep 2026 Cloudflare's defaults classify an unlabelled fetcher that
+ * pretends to be a desktop browser as "evasive". An honest, contactable UA is
+ * both more defensible and more likely to be allowed.
+ *
+ * Contact address confirmed by the founders (Chris, 2026-09-01): info@empowered.vote.
+ *
+ * Also re-exported by fetchPageContent.js so existing importers (backend/scripts/*,
+ * tests) that pull it from there keep working.
+ */
+export const EMPOWERED_VOTE_UA =
+  'EmpoweredVoteBot/1.0 (+https://empowered.vote/crawler; nonprofit civic citation verification; contact info@empowered.vote)';
+
+/**
+ * The robots.txt product token for {@link EMPOWERED_VOTE_UA}. Matching is
+ * case-insensitive; kept as a named constant so the fetcher and the UA cannot
+ * drift apart.
+ */
+export const EMPOWERED_VOTE_UA_TOKEN = 'EmpoweredVoteBot';
+
+/**
+ * DEPRECATED — a spoofed desktop Chrome user-agent. Kept, exported and UNUSED
+ * only so its removal is a deliberate, reviewed act rather than a silent one.
+ *
+ * 🔴 Do NOT reintroduce this into any live fetch path without a founder
+ * decision. Pretending to be a browser is exactly the profile Cloudflare's
+ * 15 Sep 2026 defaults target, and it is indefensible for a civic-trust
+ * nonprofit bound by a radical-transparency clause. Use {@link EMPOWERED_VOTE_UA}.
+ */
+export const LEGACY_BROWSER_UA =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
 const HTTP_TIMEOUT_MS = 12_000;
 const ROBOTS_TIMEOUT_MS = 8_000;
@@ -357,7 +400,7 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
 export interface VerificationFetchSession {
   /** Fetch the best available text for a URL via the ladder. Throws only when every tier fails. */
   fetch(url: string): Promise<string>;
-  /** Close the shared browser (call once the batch is done). */
+  /** No-op, retained for API compatibility (there is no browser to close). */
   close(): Promise<void>;
 }
 
@@ -370,25 +413,22 @@ export interface VerificationFetchDeps {
   robotsAllows?: (url: string) => Promise<boolean>;
   /** Tier 1 — plain HTTP fetch. */
   httpFetch?: (url: string) => Promise<string>;
-  /** Tier 2 — headless render. */
-  render?: (url: string) => Promise<string>;
   /** Tier 3 — Wayback snapshot (archive, not a live-site fetch). */
   wayback?: (url: string) => Promise<string | null>;
 }
 
 /**
- * Create a fetch session that reuses ONE headless browser across the batch.
- * Pass `session.fetch` to researchVerifier.createPageFetcher.
+ * Create a fetch session over the browser-free ladder (tier 1 plain fetch →
+ * tier 3 Wayback). Pass `session.fetch` to researchVerifier.createPageFetcher.
+ *
+ * `close()` is retained for callers (createPageFetcher / fetchForVerification
+ * call it) but is now a no-op — there is no browser to tear down.
  */
 export function createVerificationFetchSession(
   deps: VerificationFetchDeps = {},
 ): VerificationFetchSession {
-  let browser: Browser | null = null;
-  const getBrowser = async () => (browser ??= await chromium.launch({ headless: true }));
-
   const allowed = deps.robotsAllows ?? robotsAllows;
   const httpFetch = deps.httpFetch ?? fetchViaHttp;
-  const render = deps.render ?? ((url: string) => getBrowser().then((b) => renderPage(b, url)));
   const wayback = deps.wayback ?? fetchViaWayback;
 
   return {
@@ -417,16 +457,8 @@ export function createVerificationFetchSession(
         /* fall through */
       }
 
-      // Tier 2 — headless Chromium (shared browser)
-      try {
-        const t = await render(url);
-        if (looksLikeRealPage(t)) return t;
-        if (t) candidates.push(t);
-      } catch {
-        /* fall through */
-      }
-
-      // Tier 3 — Wayback snapshot
+      // Tier 3 — Wayback snapshot (the headless-browser rung that once sat
+      // between tier 1 and tier 3 was removed; see the module header + decision 0003).
       try {
         const t = await wayback(url);
         if (t && looksLikeRealPage(t)) return t;
@@ -441,12 +473,8 @@ export function createVerificationFetchSession(
       throw new Error('all fetch tiers failed for ' + url);
     },
 
-    async close() {
-      if (browser) {
-        await browser.close();
-        browser = null;
-      }
-    },
+    // Retained for API compatibility; there is no browser to close.
+    async close() {},
   };
 }
 
