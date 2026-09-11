@@ -46,7 +46,7 @@
     "check:ladder-text": "node scripts/check-ladder-text-reads.mjs"
   },
   "overrides": {
-    "qs": "^6.15.2"
+    "qs": "^6.16.0"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.122.0",
