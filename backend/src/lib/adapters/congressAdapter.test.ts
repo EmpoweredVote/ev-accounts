@@ -41,4 +41,23 @@ describe('parseCongressUrl', () => {
     expect(parseCongressUrl('https://example.com/bill/119th-congress/house-bill/1')).toBeNull();
     expect(parseCongressUrl('not a url')).toBeNull();
   });
+
+  it('returns null for adversarial bill-type slugs matching Object.prototype members', () => {
+    expect(parseCongressUrl('https://www.congress.gov/bill/119th-congress/constructor/1234')).toBeNull();
+    expect(parseCongressUrl('https://www.congress.gov/bill/119th-congress/__proto__/1234')).toBeNull();
+  });
+
+  it('returns null for a non-numeric bill number', () => {
+    expect(parseCongressUrl('https://www.congress.gov/bill/119th-congress/house-bill/abc')).toBeNull();
+  });
+
+  it('is case-insensitive on the host', () => {
+    expect(parseCongressUrl('https://WWW.CONGRESS.GOV/bill/119th-congress/house-bill/1'))
+      .toEqual({ kind: 'bill', congress: 119, billType: 'hr', number: 1 });
+  });
+
+  it('parses a bill overview URL with a trailing slash', () => {
+    expect(parseCongressUrl('https://www.congress.gov/bill/119th-congress/house-bill/1234/'))
+      .toEqual({ kind: 'bill', congress: 119, billType: 'hr', number: 1234 });
+  });
 });

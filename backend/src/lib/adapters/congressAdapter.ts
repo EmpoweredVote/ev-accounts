@@ -15,16 +15,16 @@ export type CongressRef =
   | { kind: 'member'; bioguideId: string };
 
 /** congress.gov bill-type URL slug → api.congress.gov bill-type code. */
-const BILL_TYPE_MAP: Record<string, string> = {
-  'house-bill': 'hr',
-  'senate-bill': 's',
-  'house-resolution': 'hres',
-  'senate-resolution': 'sres',
-  'house-joint-resolution': 'hjres',
-  'senate-joint-resolution': 'sjres',
-  'house-concurrent-resolution': 'hconres',
-  'senate-concurrent-resolution': 'sconres',
-};
+const BILL_TYPE_MAP: Map<string, string> = new Map([
+  ['house-bill', 'hr'],
+  ['senate-bill', 's'],
+  ['house-resolution', 'hres'],
+  ['senate-resolution', 'sres'],
+  ['house-joint-resolution', 'hjres'],
+  ['senate-joint-resolution', 'sjres'],
+  ['house-concurrent-resolution', 'hconres'],
+  ['senate-concurrent-resolution', 'sconres'],
+]);
 
 const BIOGUIDE_RE = /^[A-Z]\d{6}$/;
 
@@ -49,7 +49,7 @@ export function parseCongressUrl(url: string): CongressRef | null {
   // /bill/<congress-slug>/<type-slug>/<number>[/<subpath>...]
   if (seg[0] === 'bill' && seg.length >= 4) {
     const congress = parseInt(seg[1], 10); // "119th-congress" → 119
-    const billType = BILL_TYPE_MAP[seg[2]];
+    const billType = BILL_TYPE_MAP.get(seg[2]);
     const number = parseInt(seg[3], 10);
     if (Number.isFinite(congress) && billType && Number.isFinite(number)) {
       return { kind: 'bill', congress, billType, number };
