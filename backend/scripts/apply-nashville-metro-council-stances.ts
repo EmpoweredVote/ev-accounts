@@ -31,8 +31,13 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY = process.argv.includes('--dry-run');
-const CSV = path.join(__dirname, '..', 'data', 'stance-research',
-                      '2026-09-11-nashville-metro-council-pilot.csv');
+// Optional CSV path arg so later passes over the same city reuse this applier rather than
+// forking it -- a fork is how the other ~148 drifted out of sync with the schema.
+const ARG = process.argv.slice(2).find((a) => !a.startsWith('--'));
+const CSV = ARG
+  ? path.resolve(ARG)
+  : path.join(__dirname, '..', 'data', 'stance-research',
+              '2026-09-11-nashville-metro-council-pilot.csv');
 
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
