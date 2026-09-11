@@ -17,6 +17,7 @@
 
 import { pool } from './db.js';
 import type { EventKind } from './eventKinds.js';
+import { publicMeetingStatusClause } from './meetingVisibility.js';
 
 export const SEARCH_PAGE_SIZE = 25;
 
@@ -101,10 +102,16 @@ export async function searchSegments(opts: {
   const { q, city, speaker, page } = opts;
   const offset = (page - 1) * SEARCH_PAGE_SIZE;
 
-  // No meeting-status filter: the on-the-record pipeline (sole writer) only
-  // inserts segments for meetings it publishes — the same invariant the
-  // transcript endpoint relies on. Revisit if another ingest path appears.
-  const conditions: string[] = [`s.tsv @@ websearch_to_tsquery('english', $1)`];
+  // Public status gate (ev-cto decision 0017): the "pipeline only inserts
+  // segments for published meetings" invariant NO LONGER HOLDS — the House-floor
+  // weekly automation writes draft meetings WITH transcript segments for human
+  // review. Full-text search is the highest-risk leak (a draft's transcript text
+  // would be searchable), so gate every hit on the parent meeting's status. The
+  // gate is joined below via `meetings.meetings m`.
+  const conditions: string[] = [
+    `s.tsv @@ websearch_to_tsquery('english', $1)`,
+    publicMeetingStatusClause('m.status'),
+  ];
   const params: unknown[] = [q];
   if (speaker !== undefined) {
     params.push(speaker);

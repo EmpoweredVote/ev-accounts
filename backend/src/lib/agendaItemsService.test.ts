@@ -7,6 +7,10 @@ import {
   getAgendaItemsByMeetingId,
   getAgendaItemById,
 } from './agendaItemsService.js';
+import {
+  publicMeetingStatusClause,
+  publicMeetingExistsClause,
+} from './meetingVisibility.js';
 
 const MEETING_ID = '11111111-1111-4111-8111-111111111111';
 const ITEM_ID = '22222222-2222-4222-8222-222222222222';
@@ -306,5 +310,27 @@ describe('getAgendaItemById', () => {
       itemNumber: '7A',
       meetingDate: '2026-07-22',
     });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Public status gate (ev-cto decision 0017): a draft meeting's agenda items —
+// and single agenda-item permalinks — must be invisible to public callers.
+// (Floor drafts produce no agenda items today; this is defense in depth.)
+// ---------------------------------------------------------------------------
+
+describe('agenda-item status gate — public reads exclude drafts', () => {
+  it('getAgendaItemsByMeetingId gates the list on the parent meeting', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getAgendaItemsByMeetingId(MEETING_ID);
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingExistsClause('$1'));
+  });
+
+  it('getAgendaItemById gates the meeting join on the allowlist', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getAgendaItemById(ITEM_ID);
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingStatusClause('m.status'));
   });
 });

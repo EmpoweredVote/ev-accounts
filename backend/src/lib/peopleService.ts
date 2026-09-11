@@ -13,6 +13,7 @@
 
 import { pool } from './db.js';
 import type { EventKind } from './eventKinds.js';
+import { publicMeetingStatusClause } from './meetingVisibility.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -134,7 +135,10 @@ const PERSON_SELECT = `
     ARRAY_AGG(DISTINCT m.city)                                               AS cities,
     MAX(m.date)::text                                                        AS last_spoke_date
   FROM meetings.speakers sp
-  JOIN meetings.meetings m ON m.id = sp.meeting_id
+  -- Public status gate (ev-cto decision 0017): the roster and its aggregates
+  -- (meeting_count, last_spoke_date, cities) count only publicly-visible
+  -- meetings, so a draft floor meeting's speakers never inflate a live profile.
+  JOIN meetings.meetings m ON m.id = sp.meeting_id AND ${publicMeetingStatusClause('m.status')}
   JOIN essentials.politicians p ON p.id = sp.politician_id
   LEFT JOIN LATERAL (
     SELECT o.title AS office_title, d.label AS district, g.name AS jurisdiction
@@ -205,7 +209,9 @@ export async function getAppearancesById(politicianId: string): Promise<Appearan
      FROM meetings.segments s
      JOIN meetings.speakers sp ON sp.id = s.speaker_id
      JOIN meetings.meetings m ON m.id = s.meeting_id
-     WHERE sp.politician_id = $1
+     -- Public status gate (ev-cto decision 0017): a draft floor meeting's
+     -- transcript segments must not surface as appearances on a live people page.
+     WHERE sp.politician_id = $1 AND ${publicMeetingStatusClause('m.status')}
      ORDER BY m.date DESC, s.meeting_id, s.segment_index`,
     [politicianId]
   );
