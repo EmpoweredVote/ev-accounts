@@ -1,5 +1,9 @@
 # Indiana — the four debts, and how to pick them up cold
 
+**▶ Debt 4 is HALF CLOSED (2026-09-11): the six Gary portraits are imported, stage 5 is 192/204.
+The remaining 12 blanks are all settled by ruling or by absence of any source. Debts 1, 2 and 3 are
+untouched. Next cheapest is Debt 2, the 17 empty government rows.**
+
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
 These are four things the slice measured, recorded and deliberately did not do. Ruling
 (Cantrell, 2026-09-11): **clear this debt before opening slice 5 (MN).**
@@ -146,14 +150,15 @@ WHERE g.name LIKE '%Indiana, US' GROUP BY 1 ORDER BY 2 DESC;
 
 | jurisdiction | blanks | who |
 | --- | --- | --- |
-| Gary | **8** | Clerk Suzette Raggs, Judge Deidre L Monroe, **and the six district members IN-8 just seated** |
+| Gary | ~~8~~ **2** | Clerk Suzette Raggs, Judge Deidre L Monroe. ✅ **The six district members were imported 2026-09-11** from the council's own page |
 | Allen County | 7 | Hammond, Armstrong, Fries, Kerley, Lagemann, Keesling; McAlexander (monochrome) |
 | Lake County | 3 | Sheriff Oscar Martinez (placeholder); Petalas, Katona (monochrome) |
 | Fort Wayne | 0 | — |
 
-⚠ **The stage-5 figure moves from 186/198 to 186/204.** IN-8 added six seats and no portraits, so
-the slice's headline coverage number is now stale wherever it appears. **Fix the number when you
-fix the portraits, not before.**
+✅ **CLOSED 2026-09-11 — stage 5 is now 192 of 204.** IN-8 added six seats and no portraits, taking
+coverage to 186/204; importing the six took it to **192/204**. All six render from
+`photo_custom_url`, all six objects re-fetch as real JPEGs, and a bogus object in the same bucket
+returns HTTP 400. **12 blanks remain**, all of them settled: see the list below.
 
 ### 🟢 The six new Gary blanks are the easy ones, and the source is already known
 
@@ -184,12 +189,12 @@ The other twelve are settled and should stay blank unless a ruling changes:
 
 | # | debt | why here | size |
 | --- | --- | --- | --- |
-| 1 | **Six Gary portraits** | source known, no ruling needed, closes debt IN-8 created | small |
+| 1 | ~~Six Gary portraits~~ ✅ **DONE 2026-09-11** | source was the council's own page | small |
 | 2 | **17 empty government rows** | references nothing; verify per row, delete | small |
 | 3 | **Lake County Council** | needs a hunt and a vintage gate; may end in a data request | medium |
 | 4 | **671 orphan offices** | needs its own ruling on disposition before any SQL | large |
 
-Doing 1 first also means the stage-5 number is true again before anyone quotes it.
+Doing 1 first made the stage-5 number true again before anyone quoted it: **192 of 204**.
 
 ## Before touching any of it
 
