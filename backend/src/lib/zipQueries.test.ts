@@ -39,7 +39,7 @@ describe('ZCTA_CTE', () => {
     expect(ZCTA_CTE).toContain('geo_id = $1');
   });
   it('carries the polygon area so share is one CTE evaluation, not one per row', () => {
-    expect(ZCTA_CTE).toContain('public.ST_Area(geometry) AS a');
+    expect(ZCTA_CTE).toContain('ST_Area(geometry) AS a');
   });
 });
 
@@ -48,12 +48,12 @@ describe('ZIP_AREA_SPATIAL_PREDICATE', () => {
     // Verified 2026-08-18: Index Scan using idx_geofence_boundaries_geometry.
     // An OR of mixed spatial predicates cannot use the index — that was the
     // 2026-07-01 browse-stall regression (4,286ms Parallel Seq Scan).
-    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('OPERATOR(public.&&)');
+    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('&&');
   });
 
   it('requires genuine interior overlap, not a shared border', () => {
-    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('public.ST_Intersects');
-    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('NOT public.ST_Touches');
+    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('ST_Intersects');
+    expect(ZIP_AREA_SPATIAL_PREDICATE).toContain('NOT ST_Touches');
   });
 
   it('excludes other ZIP polygons from the overlap work', () => {
@@ -79,7 +79,7 @@ describe('ZIP_AREA_SPATIAL_PREDICATE', () => {
 
 describe('ZIP_SHARE_EXPR', () => {
   it('is a ratio of intersection area to ZIP area', () => {
-    expect(ZIP_SHARE_EXPR).toContain('public.ST_Area(public.ST_Intersection');
+    expect(ZIP_SHARE_EXPR).toContain('ST_Area(ST_Intersection');
     expect(ZIP_SHARE_EXPR).toContain('SELECT a FROM zcta');
   });
   it('guards against division by zero', () => {
@@ -150,7 +150,7 @@ describe('buildZipStatesQuery', () => {
   });
 
   it('is index-driven', () => {
-    expect(sql).toContain('OPERATOR(public.&&)');
+    expect(sql).toContain('&&');
   });
 
   it('excludes zero-area boundary touches', () => {
@@ -158,7 +158,7 @@ describe('buildZipStatesQuery', () => {
     // an intersection. It cannot clear the 1% floor on its own, but excluding
     // it keeps this query consistent with ZIP_AREA_SPATIAL_PREDICATE rather
     // than relying on the floor to mask it.
-    expect(sql).toContain('NOT public.ST_Touches');
+    expect(sql).toContain('NOT ST_Touches');
   });
 
   it('de-duplicates, because a state has many congressional districts', () => {
@@ -174,7 +174,7 @@ describe('buildZipCountyQuery', () => {
 
   it('returns the single county covering most of the ZIP', () => {
     expect(sql).toContain("gb.mtfcc = 'G4020'");
-    expect(sql).toContain('ORDER BY public.ST_Area(public.ST_Intersection');
+    expect(sql).toContain('ORDER BY ST_Area(ST_Intersection');
     expect(sql).toContain('DESC');
     expect(sql).toContain('LIMIT 1');
   });

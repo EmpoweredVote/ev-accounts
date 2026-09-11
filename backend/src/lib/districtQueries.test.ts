@@ -7,10 +7,10 @@ import { buildDistrictQuery, buildStatewideQuery } from './districtQueries.js';
 // idiom as browseResolution.test.ts.
 
 describe('buildDistrictQuery', () => {
-  const base = { spatialPredicate: 'public.ST_Covers(gb.geometry, $1)' };
+  const base = { spatialPredicate: 'ST_Covers(gb.geometry, $1)' };
 
   it('places the spatial predicate in the WHERE clause', () => {
-    expect(buildDistrictQuery(base)).toContain('WHERE public.ST_Covers(gb.geometry, $1)');
+    expect(buildDistrictQuery(base)).toContain('WHERE ST_Covers(gb.geometry, $1)');
   });
 
   it('keeps G6350 excluded from the catch-all clause', () => {

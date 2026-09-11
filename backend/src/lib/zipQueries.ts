@@ -34,7 +34,7 @@ export function normalizeZip(raw: string | null | undefined): string | null {
  * Index Scan using idx_geofence_boundaries_geometry, 43ms for 46220.
  */
 export const ZCTA_CTE = `WITH zcta AS (
-    SELECT geometry AS g, public.ST_Area(geometry) AS a
+    SELECT geometry AS g, ST_Area(geometry) AS a
     FROM essentials.geofence_boundaries
     WHERE mtfcc = 'G6350' AND geo_id = $1
   )`;
@@ -69,9 +69,9 @@ export const ZCTA_CTE = `WITH zcta AS (
  */
 export const ZIP_AREA_SPATIAL_PREDICATE = `gb.mtfcc <> 'G6350'
     AND gb.mtfcc <> 'G4000'
-    AND gb.geometry OPERATOR(public.&&) (SELECT g FROM zcta)
-    AND public.ST_Intersects(gb.geometry, (SELECT g FROM zcta))
-    AND NOT public.ST_Touches(gb.geometry, (SELECT g FROM zcta))`;
+    AND gb.geometry && (SELECT g FROM zcta)
+    AND ST_Intersects(gb.geometry, (SELECT g FROM zcta))
+    AND NOT ST_Touches(gb.geometry, (SELECT g FROM zcta))`;
 
 /**
  * Fraction of the ZIP's area that a district covers.
@@ -84,7 +84,7 @@ export const ZIP_AREA_SPATIAL_PREDICATE = `gb.mtfcc <> 'G6350'
  * which anon can write and we cannot revoke — re-opening an accepted risk. Keep this planar
  * (fixed SRID 4326, no ST_Transform / ::geography). CI guards it (check-postgis-spatial-ref-guard.mjs).
  */
-export const ZIP_SHARE_EXPR = `public.ST_Area(public.ST_Intersection(gb.geometry, (SELECT g FROM zcta)))
+export const ZIP_SHARE_EXPR = `ST_Area(ST_Intersection(gb.geometry, (SELECT g FROM zcta)))
                      / NULLIF((SELECT a FROM zcta), 0)`;
 
 /**
@@ -162,9 +162,9 @@ export function buildZipStatesQuery(): string {
     FROM essentials.geofence_boundaries gb
     WHERE gb.mtfcc = 'G5200'
       AND gb.state IS NOT NULL
-      AND gb.geometry OPERATOR(public.&&) (SELECT g FROM zcta)
-      AND public.ST_Intersects(gb.geometry, (SELECT g FROM zcta))
-      AND NOT public.ST_Touches(gb.geometry, (SELECT g FROM zcta))
+      AND gb.geometry && (SELECT g FROM zcta)
+      AND ST_Intersects(gb.geometry, (SELECT g FROM zcta))
+      AND NOT ST_Touches(gb.geometry, (SELECT g FROM zcta))
       AND ${ZIP_SHARE_EXPR} >= ${MULTI_STATE_SHARE_FLOOR}
     ORDER BY 1`;
 }
@@ -178,9 +178,9 @@ export function buildZipCountyQuery(): string {
     SELECT gb.geo_id AS geoid, gb.name
     FROM essentials.geofence_boundaries gb
     WHERE gb.mtfcc = 'G4020'
-      AND gb.geometry OPERATOR(public.&&) (SELECT g FROM zcta)
-      AND public.ST_Intersects(gb.geometry, (SELECT g FROM zcta))
-    ORDER BY public.ST_Area(public.ST_Intersection(gb.geometry, (SELECT g FROM zcta))) DESC
+      AND gb.geometry && (SELECT g FROM zcta)
+      AND ST_Intersects(gb.geometry, (SELECT g FROM zcta))
+    ORDER BY ST_Area(ST_Intersection(gb.geometry, (SELECT g FROM zcta))) DESC
     LIMIT 1`;
 }
 
