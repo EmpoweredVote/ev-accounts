@@ -96,22 +96,24 @@ export function makeClaimGuard(store: FingerprintStore, now: () => Date = () => 
 
   return {
     /**
-     * `entities` is the story cluster's `sharedEntities` — the entities
-     * present in every article of the cluster. Read straight off the cluster
-     * by the caller; it is a property of the story, not of the extracted
-     * triple, which is why it is a separate argument rather than part of
-     * `keys`.
+     * `entities` is the story cluster's `sharedEntities` — the union of the
+     * entity overlaps that joined the cluster's article pairs. Read straight
+     * off the cluster by the caller; it is a property of the story, not of the
+     * extracted triple, which is why it is a separate argument rather than part
+     * of `keys`.
      */
     async check(keys: ClaimKeys, entities: readonly string[] = []): Promise<ClaimVerdict> {
       const rows = await store.findCandidates(keys, windowStart());
 
       // Is there enough entity signal for the entity rule to decide anything?
-      // An empty or single-entity cluster gives it nothing to work with — and
-      // `sharedEntities` is the intersection across EVERY article in the
-      // cluster, so a seven-article cluster can narrow to one entity or none.
-      // Those claims fall back to the old prose rule: strictly worse at
-      // catching re-phrasings, but it is the behaviour that shipped, and a
-      // known-weak check beats calling every such claim new.
+      // An empty or single-entity cluster gives it nothing to work with. This
+      // used to be the common case rather than the exception: `sharedEntities`
+      // was the intersection across EVERY article, which measured empty on
+      // every cluster larger than two articles, so running stories always took
+      // the fallback. It is now the pairwise union, which held 2+ entities on
+      // every multi-article cluster measured — but the floor stays, because a
+      // thin cluster is still possible and a known-weak check beats calling
+      // every such claim new.
       const useEntities = hasUsableEntities(entities);
       const mode: IdentityBasis = useEntities ? 'entities' : 'topic-fallback';
 

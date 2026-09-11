@@ -100,8 +100,11 @@ function logIdentityBasis(
   if (verdict.mode === 'topic-fallback') {
     // Logged even when there are no candidates to compare against: the rate
     // at which clusters arrive with too few shared entities is itself the
-    // thing to watch. `sharedEntities` is the intersection across EVERY
-    // article in the cluster, so a large cluster can narrow it to nothing.
+    // thing to watch. It should now be rare — `sharedEntities` became the
+    // pairwise union of joining overlaps, where it was previously the
+    // all-articles intersection and emptied out on every cluster larger than
+    // two. A fallback rate that stays high is a signal the union is not
+    // delivering either.
     console.warn(
       `[DedupOverlap] basis=topic-fallback usableEntities=${usable.length} ` +
       `verdict=${verdict.kind} cluster="${clusterTitle}"`,

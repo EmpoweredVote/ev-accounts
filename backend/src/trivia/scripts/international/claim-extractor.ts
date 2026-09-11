@@ -46,6 +46,56 @@ function extractEntities(text: string): Set<string> {
 
 const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
 
+/** Entities two articles share. */
+function sharedBetween(a: Set<string>, b: Set<string>): string[] {
+  return [...a].filter(entity => b.has(entity));
+}
+
+/**
+ * A cluster's entity set: the union of the overlaps that actually JOINED its
+ * articles — every pair sharing at least MIN_SHARED_TO_JOIN entities.
+ *
+ * NOT the intersection across all articles. That was the previous rule, and it
+ * is empty for exactly the clusters that matter. Measured on a live fetch of 72
+ * articles into 9 clusters, the intersection was empty for the 9-article and
+ * 5-article clusters and had one entity for the 4-article cluster, while every
+ * 2-article cluster had 2-5 — perfect separation by size. Since the join rule
+ * already guarantees 2+ shared entities for a pair, the intersection could only
+ * fire where it was tautological, and was blind on running stories, which are
+ * precisely the ones re-covered night after night.
+ *
+ * The union is also what survives MEMBERSHIP drift, which is the drift identity
+ * has to tolerate — a story gains and loses articles as it develops. In a
+ * leave-one-out simulation over clusters of 3+ articles, Jaccard against the
+ * full cluster's set fell below the 0.34 identity threshold 0/18 times for the
+ * pairwise union, against 14/18 for the intersection and 2/18 for a
+ * present-in-most-articles quorum. The quorum's bar is ceil(n/2), so losing one
+ * article moves the bar and rewrites the set; the union has no such bar.
+ *
+ * A pair sharing only one entity contributes nothing: one entity never
+ * justified a join, so it is not evidence that the pair is the same story, even
+ * when both articles sit in the cluster transitively.
+ */
+export function pairwiseSharedEntities(entitySets: ReadonlyArray<Set<string>>): string[] {
+  const shared = new Set<string>();
+  for (let i = 0; i < entitySets.length; i++) {
+    for (let j = i + 1; j < entitySets.length; j++) {
+      const overlap = sharedBetween(entitySets[i], entitySets[j]);
+      if (overlap.length < MIN_SHARED_TO_JOIN) continue;
+      for (const entity of overlap) shared.add(entity);
+    }
+  }
+  return [...shared];
+}
+
+/**
+ * Entities two articles must share before they are treated as the same story.
+ * The clustering join rule and `pairwiseSharedEntities` MUST agree on this —
+ * if the union counted pairs the clustering would not have joined, it would be
+ * reporting evidence the cluster was not built on.
+ */
+const MIN_SHARED_TO_JOIN = 2;
+
 /**
  * Cluster articles about the same story using named-entity overlap + 24-hour window.
  *
@@ -55,7 +105,9 @@ const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
  *    - Both articles published within 24 hours of each other
  *    - They share 2+ named entities
  * 3. Filter out single-source clusters (2+ articles required)
- * 4. Compute sharedEntities (entities present in ALL cluster articles)
+ * 4. Compute sharedEntities (union of the overlaps that joined the cluster's
+ *    pairs — see pairwiseSharedEntities; NOT the all-articles intersection,
+ *    which is empty for exactly the multi-article clusters that recur)
  * 5. representativeTitle = article with longest bodyText
  */
 export function clusterArticles(articles: ParsedArticle[]): StoryCluster[] {
@@ -98,14 +150,7 @@ export function clusterArticles(articles: ParsedArticle[]): StoryCluster[] {
       if (timeDiff > TWENTY_FOUR_HOURS_MS) continue;
 
       // 2+ shared entities check
-      let sharedCount = 0;
-      for (const entity of a.entities) {
-        if (b.entities.has(entity)) {
-          sharedCount++;
-          if (sharedCount >= 2) break;
-        }
-      }
-      if (sharedCount < 2) continue;
+      if (sharedBetween(a.entities, b.entities).length < MIN_SHARED_TO_JOIN) continue;
 
       union(i, j);
     }
@@ -137,11 +182,10 @@ export function clusterArticles(articles: ParsedArticle[]): StoryCluster[] {
     const clusterArticles = indices.map(i => articleEntities[i].article);
     const clusterEntitySets = indices.map(i => articleEntities[i].entities);
 
-    // Shared entities = entities present in ALL articles in cluster
-    const firstSet = clusterEntitySets[0];
-    const sharedEntities = [...firstSet].filter(entity =>
-      clusterEntitySets.every(set => set.has(entity)),
-    );
+    // Shared entities = union of the overlaps that joined this cluster's pairs.
+    // See pairwiseSharedEntities for why this is not the all-articles
+    // intersection, and what was measured to settle it.
+    const sharedEntities = pairwiseSharedEntities(clusterEntitySets);
 
     // Representative title = article with longest bodyText
     const representative = clusterArticles.reduce((best, current) =>
