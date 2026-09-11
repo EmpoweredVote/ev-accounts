@@ -778,6 +778,11 @@ async function resolveOfficialsAtPoint(
   //
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
+  //
+  // ⚠ ev-cto decision 0006: this and every spatial predicate below pin SRID 4326 and use ST_SetSRID +
+  // ST_Covers, which read NO coordinate-system table — so the anon write grant on public.spatial_ref_sys
+  // (which we cannot revoke) stays harmless. Introducing ST_Transform or a ::geography cast here would
+  // read spatial_ref_sys and re-open that accepted risk; get sign-off. CI guards it (check-postgis-spatial-ref-guard.mjs).
   const districtQueryText = buildDistrictQuery({
     // geofence_name feeds pickCountyFromDistrictRows — the county's real name,
     // as opposed to district_label, which is a seat label ("At-Large").

@@ -79,6 +79,10 @@ export const ZIP_AREA_SPATIAL_PREDICATE = `gb.mtfcc <> 'G6350'
  * Planar area in EPSG:4326 is correct here BECAUSE IT IS A RATIO: numerator and
  * denominator suffer the same degree-to-metre distortion at the same latitude, so
  * it cancels. A geography cast would cost time and change nothing.
+ *
+ * ⚠ ev-cto decision 0006: a `::geography` cast here would ALSO read public.spatial_ref_sys,
+ * which anon can write and we cannot revoke — re-opening an accepted risk. Keep this planar
+ * (fixed SRID 4326, no ST_Transform / ::geography). CI guards it (check-postgis-spatial-ref-guard.mjs).
  */
 export const ZIP_SHARE_EXPR = `public.ST_Area(public.ST_Intersection(gb.geometry, (SELECT g FROM zcta)))
                      / NULLIF((SELECT a FROM zcta), 0)`;

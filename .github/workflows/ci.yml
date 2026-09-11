@@ -287,6 +287,21 @@ jobs:
         env:
           BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
+      # --- postgis spatial_ref_sys guard (ev-cto decision 0006) ------------------------------------
+      # PostGIS sits in `public`, which we cannot change (the extension is owned by supabase_admin), so
+      # `anon` holds an un-revocable write grant on public.spatial_ref_sys. Decision 0006 ACCEPTS that
+      # only because nothing load-bearing reads the table: the live district lookups pin SRID 4326 and
+      # use ST_SetSRID + ST_Covers/ST_Contains, none of which touch it. Two patterns break that premise —
+      # `ST_Transform` and a `::geography` cast, both of which read spatial_ref_sys — so this fails the
+      # build if either enters backend/src, supabase/migrations or backend/migrations. Two historical
+      # one-shot area casts in backend/migrations are grandfathered by the script; comments are blanked
+      # before matching, so the pointer comments that NAME these patterns do not trip it. Reintroducing
+      # either in live SQL re-opens decision 0006 and needs sign-off. Static, no DATABASE_URL,
+      # dependency-free — so it belongs here and carries the same `if:` as its neighbours.
+      - name: postgis spatial_ref_sys guard
+        if: ${{ !cancelled() }}
+        run: node backend/scripts/check-postgis-spatial-ref-guard.mjs
+
   migration-reservations:
     name: migration reservations
     runs-on: ubuntu-latest
@@ -719,5 +734,48 @@ jobs:
       # what happens to it, which is how season 2 spent its first day unprotected.
       - name: Check no season has lost answers
         run: npm run check:season-floor -- --verbose
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  spatial-ref-baseline:
+    name: spatial_ref_sys baseline
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is exactly the 2026-08-14 defect), and it cannot join `static
+    # guards` — that job is dependency-free and this one needs `pg`. It watches public.spatial_ref_sys
+    # for tampering: `anon` holds INSERT/UPDATE/DELETE/TRUNCATE on it that we cannot revoke (the grantor
+    # is supabase_admin — ev-cto decision 0006), so a row-count change means someone used that grant.
+    # The baseline and what a move means live in scripts/check-spatial-ref-baseline.mjs.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # This is the cheap kind the header blesses: ~30 billed minutes a month (one nightly run at the
+    # one-minute minimum). What it measures is a row count in PROD, which drifts on the CALENDAR, not on
+    # our commits — a push cannot change this table — so charging it per push would bill ~494 minutes a
+    # month to watch for something pushes never cause. Same reasoning as `child-county` and
+    # `season-corpus-floor`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks — a count of nothing is not a tamper signal.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check public.spatial_ref_sys has not been tampered with
+        run: npm run check:spatial-ref
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
