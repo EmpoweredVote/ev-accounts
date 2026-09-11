@@ -961,6 +961,52 @@ Stages 1, 2, 4 and 5 are closed. **Stage 3 is the only one open**, and one thing
    The request is no longer "do you have a map" but *"please export the council-district feature
    class behind GARY CITY COUNCIL DISTRICTS 3X5.pdf, created 2024-03-01"*.
 
+### 🟢🟢 GARY IS UNBLOCKED — THE CURRENT PRECINCT LAYER IS PUBLIC, AND IT WAS TWO CLICKS AWAY
+
+Found 2026-09-11 from the county's own GIS index page, behind the link **"Request GIS Map or Data"**:
+
+```
+https://services5.arcgis.com/8CXRnvSfSpwdf0R6/arcgis/rest/services/Selectable_Features/FeatureServer/4
+   layer 4 "Election Precincts"  --  342 polygons, public, queryable, one field: P26
+```
+
+It belongs to the **Lake County Surveyor's Office GIS Hub** (`lakecountyhub-lakeingispro`), which is a
+**different ArcGIS organisation** from the `lakecountyod` open-data org IN-6 swept and correctly
+found to hold no electoral layer. **IN-6's finding was true of the org it looked in.**
+
+**47 Gary precincts, six districts**, the district encoded as the leading digit of `P26`
+(`G1 03` … `G6 18`), including the oddity `G5 24 NV`.
+
+| | D1 | D2 | D3 | D4 | D5 | D6 | total |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| precincts | 7 | 7 | 8 | 7 | 10 | 8 | **47** |
+| sq mi | 20.00 | 11.27 | 7.20 | 4.71 | 10.62 | 3.34 | **57.14** |
+
+✅ **CLOSURE**: 57.14 sq mi against Gary's expected 49.75 land + 7.47 water = **57.22**, a 0.14%
+difference. The precincts tile the city, water included.
+
+✅ **VINTAGE PROVED ON THE THREE PRECINCTS THAT FAILED TIGER.** `G4 01`, `G5 22` and `G5 28` are all
+present in this layer and all printed on the county's 2024 PDF; TIGER 2020 has none of them and puts
+those precinct numbers in districts 2/5, 1/4 and 4. Rendered side by side, this layer reproduces the
+PDF's colouring — including the east-centre block that TIGER paints District 4 and both the PDF and
+this layer paint District 5.
+
+⚠ **`P26` is READ AS "precincts, 2026" AND THAT IS AN INFERENCE, NOT A SOURCED FACT.** One label
+differs from my reading of the 2024 PDF (the PDF appears to show `G4 14`, which this layer does not
+carry), and precinct counts fall from TIGER's 52 to 47 — both consistent with precincts being
+consolidated between 2020 and 2026. **This does not move a district boundary** unless a consolidation
+crossed one, which the dissolve test must confirm. Confirm the field's meaning with the county before
+seating.
+
+▶ **Gary's six district seats are now a seating wave, not a data request.** What IN-8 must still do:
+dissolve the 47 by leading digit, assert each district is a single connected polygon, gate that the
+union equals the place polygon, load as `X00NN`, then seat the six members already identified in
+IN-4 (Latham D1, Halliburton D2, Brown D3, Ivey D4, Barnes-Caldwell D5, Williams D6).
+
+🔴 **LAKE COUNTY COUNCIL IS STILL BLOCKED.** The same org has no council-district layer, and `P26`
+encodes the *city* council district, not the county one, so the seven county seats cannot be
+dissolved from it. That deferral stands.
+
 ### 🔴🔴 THE PRECINCT-DISSOLVE SHORTCUT WAS TESTED AND IT FAILS — TIGER 2020 IS THE PRE-SETTLEMENT MAP
 
 The map labels each precinct `G<district> <precinct>`, and Census publishes
