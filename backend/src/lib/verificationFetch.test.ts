@@ -9,6 +9,7 @@ import {
   parseRobotsForAgent,
   isPathAllowed,
   createVerificationFetchSession,
+  fetchViaWayback,
   RobotsDisallowedError,
 } from './verificationFetch.js';
 import { EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
@@ -232,5 +233,121 @@ describe('ladder is browser-free (tier 1 → Wayback)', () => {
     expect(src).not.toMatch(/playwright/i);
     expect(src).not.toMatch(/chromium/i);
     expect(src).not.toMatch(/renderPage/);
+  });
+});
+
+describe('fetchViaWayback — /available first, CDX on miss', () => {
+  // A minimal fake `fetch` that records requested URLs and answers from a router.
+  // Injecting it proves the ORDER (/available first) and that CDX builds the id_
+  // raw-snapshot URL as the second chance — without touching the live network.
+  function makeFetch(router: (url: string) => Response) {
+    const requested: string[] = [];
+    const fetchImpl = async (input: string): Promise<Response> => {
+      requested.push(String(input));
+      return router(String(input));
+    };
+    return { fetchImpl, requested };
+  }
+
+  const CDX_HEADER = ['urlkey', 'timestamp', 'original', 'mimetype', 'statuscode', 'digest', 'length'];
+  const cdxRow = (timestamp: string, original: string) =>
+    ['gov,example)/x', timestamp, original, 'text/html', '200', 'DIGEST' + timestamp, '1000'];
+  const json = (value: unknown) =>
+    new Response(JSON.stringify(value), { status: 200, headers: { 'content-type': 'application/json' } });
+  const html = (body: string) =>
+    new Response(body, { status: 200, headers: { 'content-type': 'text/html' } });
+  // Long enough to pass looksLikeRealPage (≥ MIN_REAL_PAGE_CHARS, no challenge markers).
+  const realPage = (marker: string) => (marker + ' — the board approved the measure on Tuesday. ').repeat(20);
+
+  it('uses the /available snapshot and does NOT query CDX when /available has a real copy', async () => {
+    const url = 'https://www.example-news.test/story';
+    const availSnap = 'http://web.archive.org/web/20240101000000/https://www.example-news.test/story';
+    const archived = realPage('via the available endpoint');
+    const { fetchImpl, requested } = makeFetch((u) => {
+      if (u.includes('/wayback/available')) {
+        return json({ archived_snapshots: { closest: { status: '200', available: true, url: availSnap, timestamp: '20240101000000' } } });
+      }
+      if (u === availSnap) return html('<p>' + archived + '</p>');
+      // CDX could answer, but it must never be reached when /available is real:
+      if (u.includes('/cdx/search/cdx')) return json([CDX_HEADER, cdxRow('20250101000000', url)]);
+      return new Response('unexpected: ' + u, { status: 404 });
+    });
+
+    const text = await fetchViaWayback(url, { fetchImpl });
+
+    expect(text).toContain('via the available endpoint');
+    // /available produced a real page, so the (slower) CDX index is never queried:
+    expect(requested.some((u) => u.includes('/cdx/search/cdx'))).toBe(false);
+  });
+
+  it('falls back to CDX and fetches the id_ raw snapshot of the newest 200 capture when /available misses', async () => {
+    const original = 'https://www.example-news.test/article';
+    const article = realPage('recovered by CDX');
+    const idUrl = 'https://web.archive.org/web/20240202000000id_/' + original;
+    const { fetchImpl, requested } = makeFetch((url) => {
+      if (url.includes('/wayback/available')) return json({ archived_snapshots: {} }); // /available miss
+      if (url.includes('/cdx/search/cdx')) {
+        // Header + two rows, deliberately NOT newest-last, to prove the newest
+        // (max-timestamp) row is the one that gets fetched.
+        return json([CDX_HEADER, cdxRow('20240202000000', original), cdxRow('20230101000000', original)]);
+      }
+      if (url === idUrl) return html('<article><p>' + article + '</p></article>');
+      return new Response('unexpected: ' + url, { status: 404 });
+    });
+
+    const text = await fetchViaWayback(original, { fetchImpl });
+
+    expect(text).toContain('recovered by CDX');
+    // It tried /available first, then built the id_ URL from the NEWEST capture:
+    expect(requested.some((u) => u.includes('/wayback/available'))).toBe(true);
+    expect(requested).toContain(idUrl);
+  });
+
+  it('gives CDX its second chance when /available returns a non-real page (challenge/thin)', async () => {
+    // /available returns a snapshot that extracts to a short challenge shell —
+    // it fails looksLikeRealPage, so CDX must still be tried.
+    const original = 'https://www.example-news.test/blocked';
+    const availSnap = 'http://web.archive.org/web/20200101000000/' + original;
+    const idUrl = 'https://web.archive.org/web/20230303000000id_/' + original;
+    const good = realPage('the real archived article');
+    const { fetchImpl, requested } = makeFetch((u) => {
+      if (u.includes('/wayback/available')) {
+        return json({ archived_snapshots: { closest: { status: '200', available: true, url: availSnap, timestamp: '20200101000000' } } });
+      }
+      if (u === availSnap) return html('<p>Just a moment... checking your browser.</p>'); // thin challenge
+      if (u.includes('/cdx/search/cdx')) return json([CDX_HEADER, cdxRow('20230303000000', original)]);
+      if (u === idUrl) return html('<article><p>' + good + '</p></article>');
+      return new Response('unexpected: ' + u, { status: 404 });
+    });
+
+    const text = await fetchViaWayback(original, { fetchImpl });
+
+    expect(text).toContain('the real archived article');
+    expect(requested).toContain(idUrl);
+  });
+
+  it('still recovers via CDX when the /available request itself errors', async () => {
+    const original = 'https://www.example-news.test/story2';
+    const article = realPage('recovered despite an /available outage');
+    const idUrl = 'https://web.archive.org/web/20210202000000id_/' + original;
+    const { fetchImpl } = makeFetch((u) => {
+      if (u.includes('/wayback/available')) throw new Error('available 503');
+      if (u.includes('/cdx/search/cdx')) return json([CDX_HEADER, cdxRow('20210202000000', original)]);
+      if (u === idUrl) return html('<p>' + article + '</p>');
+      return new Response('unexpected: ' + u, { status: 404 });
+    });
+
+    expect(await fetchViaWayback(original, { fetchImpl })).toContain('recovered despite an /available outage');
+  });
+
+  it('returns null when neither /available nor CDX has a usable snapshot', async () => {
+    const url = 'https://www.example-news.test/missing';
+    const { fetchImpl } = makeFetch((u) => {
+      if (u.includes('/wayback/available')) return json({ archived_snapshots: {} }); // no closest
+      if (u.includes('/cdx/search/cdx')) return json([CDX_HEADER]); // no captures
+      return new Response('unexpected: ' + u, { status: 404 });
+    });
+
+    expect(await fetchViaWayback(url, { fetchImpl })).toBeNull();
   });
 });
