@@ -1,11 +1,12 @@
 # Indiana — the four debts, and how to pick them up cold
 
-**▶ STATUS 2026-09-11 — two of four are closed.**
+**▶ STATUS 2026-09-11 — three of four are closed.**
 **Debt 2 CLOSED** (`CC_0098`): the 17 unreferenced `State of Indiana` rows are gone, 5 remain.
 **Debt 4 half closed**: the six Gary portraits are imported, stage 5 is **192/204**, and the
 remaining 12 blanks are all settled by ruling or by absence of any source.
-**Debt 3's hunt is CLOSED 2026-09-11** — the geometry is found and vintage-proved; what remains of it
-is a seating wave. **Debt 1 is untouched** and needs a disposition ruling before any SQL. A fifth item was found while closing Debt 2;
+**Debt 3 CLOSED 2026-09-11** (`CC_0099` + `CC_0100`): the geometry was found, vintage-proved and the
+seven members seated. **Lake County is 19 of 19.** **Debt 1 is untouched** and needs a disposition
+ruling before any SQL. A fifth item was found while closing Debt 2;
 it is at the bottom of this file.
 
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
@@ -118,7 +119,7 @@ remove **16, not 17**, and the planted row survived.
 
 ---
 
-## Debt 3 — ✅ UNBLOCKED 2026-09-11. The geometry exists, is public, and is vintage-proved
+## Debt 3 — ✅ CLOSED 2026-09-11 (`CC_0099` + `CC_0100`). Seven seats live, Lake County 19 of 19
 
 **The seven districts are `WAYEO_WebMap_WFL1` layer 8, "County Council Districts".**
 
@@ -199,18 +200,40 @@ is what the county map draws, and Crown Point's annexation history is why. The t
 reach no address (checked against the county's 201,149 address points; the same query finds 194 in
 a downtown Crown Point box, which is the control).
 
-### What is left of Debt 3
+### What was done
 
-The hunt is over; the **seating wave** is not. Still to do:
+| step | artefact |
+| --- | --- |
+| boundaries | `scripts/load-lake-county-council-boundaries.ts` → `X0051`, 7 rows. Seven gates; GATE 6 re-checks the frozen 2022 comparison on every run |
+| structure | `CC_0099` — 7 `COUNTY` districts, 7 offices in the existing (and until now EMPTY) `Lake County Council` chamber |
+| people | `CC_0100` — 7 people, 7 open terms, all `start_precision = 'unknown'` |
+| acceptance | `scripts/verify-lake-council-probes.sql` — 7 anchors → 7 distinct districts → 7 correct holders; a Fort Wayne point returns 0 |
 
-- load the 7 polygons as districts (`X00NN`), gated on the five checks above;
-- create the 7 offices and seat the seven members recorded in
-  [`backend/data/seed-lake-county-2026/ROSTERS.md`](../../backend/data/seed-lake-county-2026/ROSTERS.md)
-  — **re-verify that roster against the council's own page first**: IN-6 read it, and a
-  change-check asks "has this person *left*?", which only the body's own roster answers;
-- 🔴 **Ronald G. Brewer Sr** left Gary's at-large seat for Lake County Council District 2 —
-  assert he holds **exactly one** office, as `CC_0097` does for Marian Ivey. `office_terms_no_overlap`
-  forbids two people on one office; it **cannot** see one person on two.
+**Change-check before seating:** the council's own page and its **seven per-district pages**
+(`council-1stdist` … `council-7thdist`) were read live 2026-09-11. All seven still serve, on the
+same districts. 🟢 **The per-district pages are the stronger evidence**: IN-6 read the aggregate
+"Our Team" block, and a block can be mis-ordered without looking wrong — seven separately
+addressed pages cannot be. **Prefer the per-item page to the aggregate list when a MAPPING is
+what you need.**
+
+🔴 **Ronald G. Brewer Sr. holds exactly one office, asserted by the gate.** Measured first: no
+Brewer row existed at all, so he was created rather than reused. ⚠ **Randy Niemeyer (Council D7)
+and Rick Niemeyer (Indiana Senate) are different people**, as are Charlie Brown (D3) and
+Michael A. Brown (Clerk).
+
+⚠ **The name searches returned SEVEN IDENTICAL "NO MATCH" ANSWERS, which is the shape of a broken
+detector, so three positive controls were added** — Michael A. Brown, Rick Niemeyer, Mary Brown.
+All three were found, so the seven absences are real. An earlier pass of the same search was
+useless for the opposite reason: `%Cid%` matched SALCIDO and PLACIDO, `%Hamm%` matched Hammond and
+Hammer. **A substring is not a name.**
+
+### Gates after
+
+| gate | before | after |
+| --- | --- | --- |
+| `check:reachability` | BAD_GEOMETRY 4 · DEAD_GEOGRAPHY 17 · UNREACHABLE 37 | **4 · 17 · 37**, all at or below baseline |
+| `essentials.offices_missing_terms` | 822 / 167 / 655 | **822 / 167 / 655** — unchanged, because the offices and their terms were written by the same pair |
+| `check:occupancy` · `check:migrations` · `check:reservations` | — | green |
 
 ## Debt 4 — 18 portrait blanks, and **IN-8 made six of them**
 
@@ -268,8 +291,8 @@ The other twelve are settled and should stay blank unless a ruling changes:
 | # | debt | why here | size |
 | --- | --- | --- | --- |
 | 1 | ~~Six Gary portraits~~ ✅ **DONE 2026-09-11** | source was the council's own page | small |
-| 2 | **17 empty government rows** | references nothing; verify per row, delete | small |
-| 3 | **Lake County Council** | needs a hunt and a vintage gate; may end in a data request | medium |
+| 2 | ~~17 empty government rows~~ ✅ **DONE 2026-09-11** | references nothing; verified per row, deleted | small |
+| 3 | ~~Lake County Council~~ ✅ **DONE 2026-09-11** | the hunt ended in a state layer, not a data request | medium |
 | 4 | **671 orphan offices** | needs its own ruling on disposition before any SQL | large |
 
 Doing 1 first made the stage-5 number true again before anyone quoted it: **192 of 204**.

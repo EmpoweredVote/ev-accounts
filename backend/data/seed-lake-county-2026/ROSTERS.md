@@ -2,8 +2,9 @@
 
 Wave **IN-6**, slice 4, **stage 4**. City half: Gary, partially seated by IN-4.
 
-**Lake County elects 19 offices. This wave seats 12.** The seven County Council district seats are
-**deferred**, exactly as Gary's six city district seats were, and for the same reason.
+**Lake County elects 19 offices. CC_0095 seated 12; IN-9 seated the remaining 7 (below).**
+The seven County Council district seats were deferred through IN-4, IN-6 and IN-8 for want of a
+boundary layer; the layer was found on 2026-09-11 and they are now live.
 
 Migration: `CC_0095` — one migration carrying offices *and* people, per spec §3.
 No boundary layer was needed: everything seated here hangs on `18089`/`G4020`, already in production.
@@ -66,19 +67,44 @@ officials tried — and that is *not* a broken method: the same batch returned *
 County and **9 of 9** for Fort Wayne minutes earlier. Ballotpedia does not cover Lake County, as it
 does not cover Gary. The county publishes no tenure. GA-2's position: no date is invented.
 
-## The seven deferred
+## The seven council districts — ✅ SEATED 2026-09-11 (IN-9, `CC_0099` + `CC_0100`)
 
-D1 David Hamm · D2 **Ronald G. Brewer Sr.** · D3 Charlie Brown · D4 Pete Lindemulder ·
-D5 Christine Cid (President) · D6 Ted Bilski · D7 Randy Niemeyer
+D1 David Hamm · D2 **Ronald G. Brewer Sr.** (Vice President) · D3 Charlie Brown ·
+D4 Pete Lindemulder · D5 **Christine Cid** (President) · D6 Ted Bilski · D7 Randy Niemeyer
 
-🔴 **Ronald G. Brewer Sr. is the man who left Gary's at-large council seat.** IN-4's change-check
-found that vacancy but not where he went; he went here. **This slice has now seen two people move
-between jurisdictions mid-term** — Mark Spencer (Gary at-large → Senate District 3) and Brewer. The
-probe asserts Brewer holds **no** office yet; when the council seats are written, check first
-whether he already holds a Gary one.
+**Lake County is now 19 of 19.** The boundaries are `X0051`, loaded by
+`scripts/load-lake-county-council-boundaries.ts` from the Indiana GIO's statewide WAYEO layer —
+the Secretary of State's own "Who Are Your Elected Officials" service, which
+`lakecountyin.gov/departments/council/find-my-council-district` names in prose as the county's
+answer to "which council district am I in". 🟢🟢 **The source was never going to be a county
+layer, and the county's own page said so.** Vintage-gated 339/339 precincts against the county
+Board of Elections & Registration's `CC_District_Map3X5.pdf` (2022-01-26). Full record:
+[`.planning/knight-foundation/in-debt.md`](../../../.planning/knight-foundation/in-debt.md).
 
-⚠ **Charlie Brown (Council D3) and Michael A. Brown (Clerk) are different people.** Same surname,
-different offices, and one of them is deferred.
+🟢 **THE ROSTER WAS RE-READ FROM SEVEN SEPARATE PAGES, NOT THE ONE BLOCK.** IN-6 took these names
+from the council landing page's aggregate "Our Team" list — and a block can be mis-ordered without
+looking wrong. The county also publishes `departments/council-1stdist` … `council-7thdist`, each
+naming exactly ONE member. All seven agree with the block. **Prefer the per-item page to the
+aggregate list whenever a mapping is what you need**, which is the same lesson as the wrong-state
+commissioners above, one notch finer.
 
-▶ **Next action:** Lake County's GIS page offers *"Request GIS Map or Data"*. Request the County
-Council district geometry, then add the seven seats. **Do not georeference the PDFs.**
+🔴 **Ronald G. Brewer Sr. is the man who left Gary's at-large seat**, and `CC_0100`'s gate asserts
+he holds **exactly one** office. Measured 2026-09-11: no Brewer person row existed at all, so he
+was created here rather than reused — the assertion is kept for the day someone reuses the row.
+`office_terms_no_overlap` forbids two people on one office; it cannot see one person on two.
+
+⚠ **Charlie Brown (Council D3) and Michael A. Brown (Clerk) are different people.**
+⚠ **Randy Niemeyer (Council D7) and Rick Niemeyer (Indiana Senate, `indiana_discovery`) are
+different people.**
+
+🔴 **All seven terms are `unknown`**, for the same reason as the other twelve: Ballotpedia 404s for
+Lake County, and all seven district pages carry a name, a title and a phone number and nothing
+else. No date was invented.
+
+## Acceptance
+
+`scripts/verify-lake-council-probes.sql` — seven anchors, one per district, each an interior point
+of a municipal polygon from the county Surveyor's own `Cities` layer. All seven return the right
+member; a Fort Wayne point returns zero, which is the negative control.
+⚠ **District 2 has no wholly-contained municipality** — Gary, Highland and Griffith are all split —
+so its anchor is a measured interior point of Griffith. That is a fact about the map.

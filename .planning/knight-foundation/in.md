@@ -710,7 +710,8 @@ is published — the Gary rule. Richard Beck has no Ballotpedia page under any s
 # IN-6 — Lake County (applied 2026-09-10)
 
 **Lake elects 19 offices. This wave seated 12.** `CC_0095`, one migration carrying offices *and*
-people. The seven County Council district seats are **deferred**, as Gary's six were.
+people. The seven County Council district seats were **deferred**, as Gary's six were — ✅ **IN-9
+seated them on 2026-09-11 (`CC_0099` + `CC_0100`); Lake County is now 19 of 19.**
 `offices_missing_terms` unmoved at **821 / 166 / 655**. No boundary layer was needed — everything
 seated hangs on `18089`/`G4020`, already in production.
 Roster: [`backend/data/seed-lake-county-2026/ROSTERS.md`](../../backend/data/seed-lake-county-2026/ROSTERS.md).
@@ -759,6 +760,11 @@ Gary's own probe was updated — its Lake assertion **fired** on apply, and **Ga
 | --- | --- | --- |
 | 1 | one Lake commissioner unseated (**scoped to Lake**, after the Allen over-broad plant) | `returns 2 commissioner(s), expected 3` — `DELETE 1` |
 | 2 | a Lake County Council office created | `1 Lake County Council office(s) exist; all seven are deferred` |
+
+⚠ **That second control's assertion was RETIRED by IN-9**, which created those seven offices on
+purpose. An assertion that something is ABSENT has a shelf life exactly as long as the deferral it
+records — when the deferral ends, the assertion must be replaced, not deleted quietly.
+`scripts/verify-lake-council-probes.sql` is its replacement and asserts the opposite.
 
 # IN-7 — stage 5, assets (applied 2026-09-11)
 
@@ -1079,9 +1085,22 @@ dissolve the 47 by leading digit, assert each district is a single connected pol
 union equals the place polygon, load as `X00NN`, then seat the six members already identified in
 IN-4 (Latham D1, Halliburton D2, Brown D3, Ivey D4, Barnes-Caldwell D5, Williams D6).
 
-🔴 **LAKE COUNTY COUNCIL IS STILL BLOCKED.** The same org has no council-district layer, and `P26`
-encodes the *city* council district, not the county one, so the seven county seats cannot be
-dissolved from it. That deferral stands.
+✅ **LAKE COUNTY COUNCIL IS UNBLOCKED — IN-9, 2026-09-11.** The Surveyor's org really does hold no
+council-district layer (enumerated to exhaustion: 149 services, 234 layers), and `P26` really does
+encode the *city* council district. Both facts are true and both are beside the point: **the county
+does not publish the county-council map at all. The STATE does.** The districts are the Indiana
+GIO's statewide WAYEO layer, behind the Secretary of State's "Who Are Your Elected Officials"
+lookup — which `lakecountyin.gov/departments/council/find-my-council-district` names in PROSE as
+the county's own answer.
+
+🔴🔴 **IN-8's lesson was "a negative result is only ever true of the place you looked". The sharper
+one, which IN-9 paid for a second time: READ THE HUMAN-FACING PAGE BEFORE SWEEPING THE
+MACHINE-FACING ONE.** Three waves searched ArcGIS orgs for a *layer*. The answer was a *sentence*,
+on a page the debt file had already named.
+
+Vintage-gated 339/339 precincts against the county's own 2022-01-26 Board of Elections map; all 342
+current precincts nest wholly inside one district; the seven close against the county polygon at
+626.6373 sq mi against 626.6286. Full record: [`in-debt.md`](./in-debt.md).
 
 ### 🔴🔴 THE PRECINCT-DISSOLVE SHORTCUT WAS TESTED AND IT FAILS — TIGER 2020 IS THE PRE-SETTLEMENT MAP
 
@@ -1113,10 +1132,10 @@ glance. **Only three specific labels give it away.**
 swatches at hardcoded coordinates, hit white, and reported districts 1, 2, 3 and 4 as holding
 **exactly 24.2%** each. Four identical numbers is the tell. Nothing was concluded from it; the
 verdict rests on the three named precincts.
-2. **The two deferred geometries**, both to be **REQUESTED from the county, never georeferenced from
-   a PDF**: Gary's **2023 settlement map** (6 council district seats) and **Lake County Council's
-   seven districts**. Lake County GIS offers a "Request GIS Map or Data" form. Until they exist the
-   13 offices stay absent, asserted so by both probes.
+2. ✅ **BOTH DEFERRED GEOMETRIES ARE NOW RESOLVED, AND NEITHER NEEDED A DATA REQUEST.** Gary's six
+   came from the Lake County Surveyor's precinct layer (IN-8); Lake County Council's seven came
+   from the State's WAYEO layer (IN-9). Both were public the whole time, in places nobody had
+   looked. **Neither PDF was georeferenced.**
 3. **The twelve portrait blanks** — see the table above. The six Allen officials are blank by
    ruling, not for want of looking; Gary's City Court judge has no published page at all.
 4. The recorded debts: **671 unreachable offices** in `indiana_discovery` and **21 surplus
