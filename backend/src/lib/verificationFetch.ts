@@ -366,12 +366,94 @@ export async function fetchViaHttp(url: string): Promise<string> {
   return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
 
-/** Tier 3 — closest Wayback Machine snapshot, or null if none/usable. */
-export async function fetchViaWayback(url: string): Promise<string | null> {
+/** How many of the newest CDX captures to consider (we pick the most recent). */
+const CDX_LOOKUP_LIMIT = 5;
+
+/** A `fetch`-shaped seam. Global `fetch` satisfies it; tests pass a fake. */
+type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
+
+/**
+ * Injectable seam for the Wayback tier. The default is the real global `fetch`;
+ * tests pass a fake so they can assert the id_ raw-snapshot URL is built and
+ * that /available is a genuine fallback — without touching the live network.
+ */
+export interface WaybackDeps {
+  fetchImpl?: FetchLike;
+}
+
+/**
+ * CDX lookup — ask archive.org's index for the MOST RECENT HTTP-200 capture of
+ * `url`. This is more complete than the /available endpoint, which
+ * intermittently reports "no snapshot" for a URL that is in fact archived
+ * (measured on congress.gov bill pages). Returns `{timestamp, original}` of the
+ * newest 200 capture, or null when the index has none.
+ *
+ * `limit=-N` returns the N newest captures (verified against web.archive.org);
+ * we still take the max timestamp so an ordering quirk can never pick a stale
+ * row. `collapse=digest` drops consecutive byte-identical captures.
+ */
+async function cdxLatest200(
+  url: string,
+  fetchImpl: FetchLike,
+): Promise<{ timestamp: string; original: string } | null> {
+  const noProto = url.replace(/^https?:\/\//, '');
+  const cdxUrl =
+    'https://web.archive.org/cdx/search/cdx?url=' +
+    encodeURIComponent(noProto) +
+    '&output=json&filter=statuscode:200&collapse=digest&limit=-' +
+    CDX_LOOKUP_LIMIT;
+  const res = await fetchImpl(cdxUrl, { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
+  if (!res.ok) return null;
+  const rows: unknown = await res.json();
+  // CDX json is [header, ...rows]; the header names the columns. Fewer than two
+  // rows means "no captures".
+  if (!Array.isArray(rows) || rows.length < 2 || !Array.isArray(rows[0])) return null;
+  const header = (rows[0] as unknown[]).map(String);
+  const tsIdx = header.indexOf('timestamp');
+  const origIdx = header.indexOf('original');
+  if (tsIdx === -1 || origIdx === -1) return null;
+  let best: { timestamp: string; original: string } | null = null;
+  for (const row of rows.slice(1)) {
+    if (!Array.isArray(row)) continue;
+    const timestamp = String(row[tsIdx] ?? '');
+    const original = String(row[origIdx] ?? '');
+    if (!/^\d{14}$/.test(timestamp) || !original) continue;
+    if (!best || timestamp > best.timestamp) best = { timestamp, original };
+  }
+  return best;
+}
+
+/**
+ * CDX path — find the newest 200 capture, then fetch its RAW archived response.
+ * The `id_` suffix on the timestamp returns the original bytes without the
+ * archive.org toolbar/rewrite wrapper, so the extractor sees the real document.
+ * Returns null on any miss or failure (the caller has already tried /available).
+ */
+async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<string | null> {
+  const hit = await cdxLatest200(url, fetchImpl);
+  if (!hit) return null;
+  const snapUrl = 'https://web.archive.org/web/' + hit.timestamp + 'id_/' + hit.original;
+  const res = await fetchImpl(snapUrl, {
+    signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+    headers: { 'user-agent': EMPOWERED_VOTE_UA },
+  });
+  if (!res.ok) return null;
+  // Pass the ORIGINAL url (not the archive wrapper) so the non-article guard in
+  // the extractor reasons about the real document.
+  const text = htmlToArticleOrText(await res.text(), url);
+  return text || null;
+}
+
+/**
+ * The /available lookup — tier 3's first, cheap attempt (this is exactly the
+ * pre-CDX production behaviour). CDX runs only when this does not return a real
+ * page, so /available stays the fast common path.
+ */
+async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Promise<string | null> {
   const noProto = url.replace(/^https?:\/\//, '');
   let snapUrl: string | undefined;
   try {
-    const avail = await fetch(
+    const avail = await fetchImpl(
       'https://archive.org/wayback/available?url=' + encodeURIComponent(noProto),
       { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) },
     );
@@ -384,7 +466,7 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
     return null;
   }
   try {
-    const res = await fetch(snapUrl!, {
+    const res = await fetchImpl(snapUrl!, {
       signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
       headers: { 'user-agent': EMPOWERED_VOTE_UA },
     });
@@ -395,6 +477,41 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
   } catch {
     return null;
   }
+}
+
+/**
+ * Tier 3 — closest Wayback Machine snapshot, or null if none/usable.
+ *
+ * Order: the /available endpoint FIRST (fast — median ~3s on a live sample),
+ * then the CDX index only when /available did not yield a real page. This keeps
+ * the common recovery path at its old cost while still closing the gap where
+ * /available intermittently reports "no snapshot" for a URL that IS archived:
+ * a flaky /available miss is still a miss, and CDX catches it (measured to
+ * recover archived ballotpedia / congress.gov pages /available dropped). It only
+ * ever ADDS recoveries and never removes one. Same 12s timeout, no extra
+ * concurrency — one /available call, then at most one CDX index + one raw-
+ * snapshot fetch.
+ *
+ * (Order chosen from a 200-URL before/after measurement: CDX-first added ~9s of
+ * latency on the tier-1-miss path when archive.org's CDX server was slow, for
+ * the identical recovery. See ev-cto task 2026-09-11-wayback-cdx-tier3.)
+ */
+export async function fetchViaWayback(url: string, deps: WaybackDeps = {}): Promise<string | null> {
+  const fetchImpl: FetchLike = deps.fetchImpl ?? fetch;
+  // /available first — cheap, and enough for most archived pages.
+  const viaAvailable = await fetchViaWaybackAvailable(url, fetchImpl);
+  if (viaAvailable && looksLikeRealPage(viaAvailable)) return viaAvailable;
+  // /available missed or returned a non-real page (the flaky endpoint, or an
+  // archived challenge shell) — give the more complete CDX index its chance.
+  let viaCdx: string | null = null;
+  try {
+    viaCdx = await fetchViaWaybackCdx(url, fetchImpl);
+  } catch {
+    /* CDX unreachable / malformed — fall through to /available's best effort. */
+  }
+  // Prefer a CDX recovery; else return /available's best-effort text (may be thin —
+  // the ladder's looksLikeRealPage gate decides whether to keep it), or null.
+  return viaCdx ?? viaAvailable ?? null;
 }
 
 export interface VerificationFetchSession {
