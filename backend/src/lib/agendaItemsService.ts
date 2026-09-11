@@ -7,6 +7,11 @@
 // - Number() every numeric — pg returns them as strings.
 import { pool } from './db.js';
 import { toIsoStringOrNull } from './pgIso.js';
+import {
+  publicMeetingStatusClause,
+  publicMeetingExistsClause,
+  type MeetingViewerOptions,
+} from './meetingVisibility.js';
 
 export interface AgendaItem {
   id: string;
@@ -173,12 +178,18 @@ function mapAgendaItem(row: AgendaItemRow): AgendaItem {
 }
 
 export async function getAgendaItemsByMeetingId(
-  meetingId: string
+  meetingId: string,
+  opts?: MeetingViewerOptions
 ): Promise<AgendaItem[]> {
+  // Gate on the parent meeting's status so a draft meeting's agenda items stay
+  // invisible to public callers.
+  const meetingGate = opts?.includeAllStatuses
+    ? ''
+    : `AND ${publicMeetingExistsClause('$1')}`;
   const { rows } = await pool.query<AgendaItemRow>(
     `SELECT ${ITEM_COLS}
      FROM meetings.agenda_items
-     WHERE meeting_id = $1
+     WHERE meeting_id = $1 ${meetingGate}
      ORDER BY position ASC`,
     [meetingId]
   );
@@ -269,8 +280,14 @@ async function getSpeakersInSpan(
 }
 
 export async function getAgendaItemById(
-  id: string
+  id: string,
+  opts?: MeetingViewerOptions
 ): Promise<AgendaItemDetail | null> {
+  // Public callers only see items whose meeting is allowlisted; a draft meeting's
+  // agenda-item permalink resolves to null (404).
+  const statusGate = opts?.includeAllStatuses
+    ? ''
+    : `AND ${publicMeetingStatusClause('m.status')}`;
   const { rows } = await pool.query<AgendaItemDetailRow>(
     `SELECT ${ITEM_COLS_QUALIFIED},
             m.id AS m_id, m.title AS m_title, m.date::text AS m_date,
@@ -282,7 +299,7 @@ export async function getAgendaItemById(
      JOIN meetings.meetings m ON m.id = ai.meeting_id
      LEFT JOIN meetings.agenda_items cf ON cf.id = ai.continued_from_item_id
      LEFT JOIN meetings.meetings cfm ON cfm.id = cf.meeting_id
-     WHERE ai.id = $1`,
+     WHERE ai.id = $1 ${statusGate}`,
     [id]
   );
   if (rows.length === 0) return null;
