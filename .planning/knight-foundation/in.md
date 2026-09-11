@@ -943,12 +943,84 @@ string replace that matches nothing is a no-op that looks exactly like success.
 
 ▶ The builder and the harvester now **assert their own edits are present on disk after writing**.
 
+# IN-8 — Gary's six district seats (applied 2026-09-11)
+
+**Gary is complete: 12 offices, 12 people, 0 vacancies.** `CC_0096` structure, `CC_0097` occupancy,
+`X0050` boundaries. **Stage 3 closes, and INDIANA IS COMPLETE ACROSS ALL FIVE STAGES** — the
+program's fourth slice after FL, GA and CA. `offices_missing_terms` unmoved at **822 / 167 / 655**.
+
+The six districts are a **dissolve** of the Lake County Surveyor's precinct layer on the leading
+digit of `P26`. 47 precincts; each district dissolves to **one connected valid polygon**; **zero**
+pairwise overlap; union 57.22 sq mi against Gary's 49.75 land + 7.47 water; 0.105 sq mi of the
+place polygon uncovered (0.21%, six slivers and one compact 5-acre piece) against Fort Wayne's
+1.2524. Six gates in the loader, and GATE 2 is the vintage assertion.
+
+## 🟢 THE ASSERTED ABSENCE DID ITS JOB, FOR THE SECOND TIME IN THIS SLICE
+
+`CC_0092` ended with *"the six district seats MUST NOT exist yet... this assertion is what makes
+that a decision rather than an accident"*. It fired the moment `CC_0096` applied. IN-5's probe did
+the same thing to IN-3's "0 Allen County offices". **Both times the absence was the thing that made
+the next wave deliberate.** `CC_0092`'s gate is now updated rather than deleted, so a seventh
+district office is still a defect and the file still re-runs clean.
+
+## 🔴🔴 GA-5's "INVISIBLE BREAK" HIT THREE GATES AT ONCE, AND ONLY A RE-RUN FOUND IT
+
+`CC_0092` and `CC_0093` counted **every Gary office** and expected 6; `CC_0093`'s precision tuple
+counted every Gary term and expected 1 day / 2 month / 3 unknown. All three were correct on apply
+day and **all three broke the moment IN-8 added six offices to the same government** — reading 12
+offices and 1/3/8. GA-5 demonstrated this defect deliberately in three legs; here it arrived on its
+own, in a slice written by the same hand a day earlier.
+
+▶ **The fix is to SCOPE the gate to what the migration creates** — here, to the citywide district
+`1827000` — never to widen the expected number. All five Indiana waves now re-run clean.
+
+⚠ **`CC_0097`'s own pre-flight broke its second run**: it asserted the external_id band was empty,
+which is false once it has applied. It now accepts 0 **or exactly our six, verified by name** —
+because the reason to check a band at all is that a collision seats the wrong person silently.
+
+## 🔴 MY CONTROL WAS BROKEN BY THE EXACT TRAP THE REPO ALREADY DOCUMENTS
+
+Control 1 unseated District 3 and then reported the district still returning **1** councilmember, as
+if the probe were blind. The plant was fine and the data was fine: **`office_current_holder` LEFT
+JOINs from `offices`, so an unseated office still returns a row with a NULL `politician_id`**, and
+the control used `count(*)`. `count(och.politician_id)` reads 0.
+
+The probe itself was never wrong — it inner-joins `politicians`, which drops the NULL row. ▶ **A
+control is code too, and it fails the same ways the thing it checks does.**
+
+## 🟢 THE SCHEMA REFUSED CONTROL 3, AND THAT IS THE FINDING
+
+Planting "Marian Ivey holds her old at-large seat as well as District 4" was **rejected by
+`office_terms_no_overlap`**: an open-ended term is an infinite range, so the database already makes
+**two people on one office** impossible. It cannot see **one person on two offices** — the Mark
+Spencer failure — which is exactly why `CC_0097` gates that in SQL rather than trusting a
+constraint. The plant had to vacate the at-large seat first.
+
+## ✅ Probe and controls
+
+Gary City Hall returns **7 city answers** (mayor, clerk, judge, 3 at-large, **1 district member**),
+12 county, 8 state — **Gary scores 4 of 4**. All six districts resolve to exactly one councilmember
+at their own interior point.
+
+| Control | Planted | Reported |
+| --- | --- | --- |
+| 1 | District 3 unseated, away from the anchor | `District 3 interior point now returns 0 councilmember(s)` |
+| 2 | District 6 moved onto the CITYWIDE polygon | `Gary City Hall now returns 2 district councilmember(s)` — the Long Beach defect |
+| 3 | at-large seat vacated, then Ivey double-seated | `Marian Ivey now holds 2 Gary offices` |
+
+The loader's vintage gate was also watched failing: `GARY_VINTAGE_CONTROL=1` injects `G4 22`, a
+precinct that exists only in TIGER 2020's pre-settlement assignment, and GATE 2 refuses the load.
+
+Gates after the apply: `check:occupancy` green, `check:migrations` 10 added / 1886 slots / 136 refs,
+`check:reservations` green, `check:reachability` **nothing regressed**, with `BAD_GEOMETRY` 4
+(baseline 5) and `UNREACHABLE` 37 (baseline 38) — both below baseline.
+
 ## ▶ WHAT REMAINS FOR INDIANA
 
-Stages 1, 2, 4 and 5 are closed. **Stage 3 is the only one open**, and one thing holds it.
+**All five stages are closed.** What follows is debt, not scope.
 
-1. **Gary's six district council seats** — the one thing between Indiana and a complete slice.
-   Stage 3 cannot close without the 2023 settlement map, which is why stage 3 alone still reads WIP.
+1. ✅ **DONE — Gary's six district council seats were seated by IN-8 on 2026-09-11.**
+   Stage 3 is closed and Indiana is complete across all five stages.
 
    ✅ **The current map has been FOUND, and it is not loadable.** Lake County publishes
    `GARY CITY COUNCIL DISTRICTS 3X5.pdf` under `departments/voters/maps-gis/CITY-COUNCIL-DISTRICT-MAPS/`:

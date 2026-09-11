@@ -99,14 +99,19 @@ BEGIN
   SELECT count(*) INTO v_people FROM essentials.politicians WHERE external_id BETWEEN -1332167 AND -1332162;
   IF v_people <> 6 THEN RAISE EXCEPTION 'IN-4 occupancy: % people in the band, expected 6', v_people; END IF;
 
+  -- 🔴 SCOPED TO THE CITYWIDE OFFICES THIS MIGRATION SEATS, NOT TO THE GOVERNMENT.
+  -- This counted every Gary office and expected 6. It passed on apply day and broke the moment
+  -- IN-8 added the six district seats to the same government -- GA-5's "invisible break",
+  -- demonstrated again. A migration's gate must count what IT creates.
   SELECT count(o.id), count(och.politician_id) INTO v_off, v_seated
   FROM essentials.offices o
   JOIN essentials.chambers c ON c.id = o.chamber_id
   JOIN essentials.governments g ON g.id = c.government_id
+  JOIN essentials.districts d ON d.id = o.district_id
   LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
-  WHERE g.name = 'City of Gary, Indiana, US';
+  WHERE g.name = 'City of Gary, Indiana, US' AND d.geo_id = '1827000';
   IF v_off <> 6 OR v_seated <> 6 THEN
-    RAISE EXCEPTION 'IN-4 occupancy: expected 6 offices all seated, got % offices / % seated', v_off, v_seated;
+    RAISE EXCEPTION 'IN-4 occupancy: expected 6 CITYWIDE offices all seated, got % offices / % seated', v_off, v_seated;
   END IF;
 
   SELECT count(*) INTO v_dupe FROM (
@@ -127,7 +132,10 @@ BEGIN
   JOIN essentials.offices o ON o.id = ot.office_id
   JOIN essentials.chambers c ON c.id = o.chamber_id
   JOIN essentials.governments g ON g.id = c.government_id
-  WHERE g.name = 'City of Gary, Indiana, US';
+  -- 🔴 SCOPED, for the same reason as the count above: unscoped, IN-8's six district terms
+  -- (1 month + 5 unknown) shifted this tuple to 1/3/8 and broke a migration that was correct.
+  JOIN essentials.districts d ON d.id = o.district_id
+  WHERE g.name = 'City of Gary, Indiana, US' AND d.geo_id = '1827000';
   IF v_day <> 1 OR v_month <> 2 OR v_unknown <> 3 THEN
     RAISE EXCEPTION 'IN-4 occupancy: expected 1 day / 2 month / 3 unknown, got % / % / %', v_day, v_month, v_unknown;
   END IF;

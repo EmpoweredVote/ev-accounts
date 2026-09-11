@@ -123,10 +123,16 @@ BEGIN
    JOIN essentials.governments g ON g.id = c.government_id WHERE g.name = 'City of Gary, Indiana, US';
   IF v_ch <> 4 THEN RAISE EXCEPTION 'IN-4 structure: % chambers, expected 4 (the fourth is the City Court)', v_ch; END IF;
 
+  -- 🔴 SCOPED TO THE CITYWIDE OFFICES THIS MIGRATION CREATES, NOT TO THE GOVERNMENT.
+  -- This counted every Gary office and expected 6. It passed on apply day and broke the moment
+  -- IN-8 added the six district seats to the same government -- GA-5's "invisible break",
+  -- demonstrated again. A migration's gate must count what IT creates.
   SELECT count(*) INTO v_off FROM essentials.offices o
    JOIN essentials.chambers c ON c.id = o.chamber_id
-   JOIN essentials.governments g ON g.id = c.government_id WHERE g.name = 'City of Gary, Indiana, US';
-  IF v_off <> 6 THEN RAISE EXCEPTION 'IN-4 structure: % offices, expected 6', v_off; END IF;
+   JOIN essentials.governments g ON g.id = c.government_id
+   JOIN essentials.districts d ON d.id = o.district_id
+   WHERE g.name = 'City of Gary, Indiana, US' AND d.geo_id = '1827000';
+  IF v_off <> 6 THEN RAISE EXCEPTION 'IN-4 structure: % CITYWIDE offices, expected 6', v_off; END IF;
 
   SELECT count(*) INTO v_atlarge FROM essentials.offices o
    JOIN essentials.chambers c ON c.id = o.chamber_id
@@ -144,12 +150,18 @@ BEGIN
 
   -- 🔴 The six district seats MUST NOT exist yet. If a later wave adds geometry it must add these
   -- deliberately; this assertion is what makes that a decision rather than an accident.
+  --
+  -- 🟢 AND IT DID ITS JOB. It read `<> 0` until 2026-09-11, when IN-8 found the settlement map in
+  -- the Lake County SURVEYOR's ArcGIS org and added the six seats on X0050 (CC_0096/CC_0097).
+  -- The assertion is UPDATED rather than deleted, so this file still re-runs clean and so the
+  -- number stays gated: a seventh district office is still a defect. THE DECISION IS RECORDED
+  -- HERE BECAUSE THIS IS WHERE THE NEXT READER WILL LOOK.
   SELECT count(*) INTO v_districtseats FROM essentials.offices o
    JOIN essentials.chambers c ON c.id = o.chamber_id
    JOIN essentials.governments g ON g.id = c.government_id
    WHERE g.name = 'City of Gary, Indiana, US' AND o.title LIKE 'Council Member, District%';
-  IF v_districtseats <> 0 THEN
-    RAISE EXCEPTION 'IN-4 structure: % Gary district council office(s) exist. They are deferred until the 2023 settlement map is obtained in machine-readable form -- see ROSTERS.md.', v_districtseats;
+  IF v_districtseats NOT IN (0, 6) THEN
+    RAISE EXCEPTION 'IN-4 structure: % Gary district council office(s) exist; expected 0 before IN-8 or exactly 6 after it.', v_districtseats;
   END IF;
 
   -- Every Gary district that DOES exist must have geometry.
@@ -158,7 +170,7 @@ BEGIN
      AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gb WHERE gb.geo_id = d.geo_id AND gb.mtfcc = d.mtfcc);
   IF v_nogeom <> 0 THEN RAISE EXCEPTION 'IN-4 structure: the Gary citywide district has no boundary'; END IF;
 
-  RAISE NOTICE 'IN-4 structure OK: 1 government, 4 chambers, 1 citywide district, 6 offices (3 at-large); 6 district seats correctly absent';
+  RAISE NOTICE 'IN-4 structure OK: 1 government, 4 chambers, 1 citywide district, 6 citywide offices (3 at-large); district seats 0 before IN-8 / 6 after';
 END $$;
 
 COMMIT;

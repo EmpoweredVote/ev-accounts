@@ -131,3 +131,42 @@ seated offices are what exists today. A count of 3 would assert Gary has a three
 
 The single district row is `LOCAL` on TIGER place **`1827000`**, labelled **Gary Citywide** — the
 Columbus/Bradenton convention, and the same shape Fort Wayne's citywide row takes.
+
+---
+
+# IN-8 — the six district seats, seated 2026-09-11
+
+**Gary is complete: 12 offices, 12 people, 0 vacancies.** `CC_0096` structure, `CC_0097` occupancy,
+boundaries on `X0050` by `scripts/load-gary-council-boundaries.ts`.
+
+| District | Member | `term_start` | Precision | Source for the date |
+| --- | --- | --- | --- | --- |
+| 1 | Lori Latham | — | `unknown` | nothing covering Gary publishes a tenure start |
+| 2 | Dwayne Halliburton | — | `unknown` | as above |
+| 3 | Mary Brown | — | `unknown` | as above |
+| 4 | Marian Ivey | 2025-02-01 | `month` | won the D4 caucus 2025-02-19 on the county chairman's tie-break; swearing-in day not published |
+| 5 | Linda Barnes-Caldwell (Council President) | — | `unknown` | as above |
+| 6 | Dwight A Williams | — | `unknown` | as above |
+
+Roster source: `garycommoncouncil.gov/council-members/`, which pairs each member with their district
+in its own text. **Change-check re-run live on the day of apply**: all six still named, all six on
+the same district, no unexplained name on the page.
+
+## 🔴🔴 THE BOUNDARY THAT IN-4 AND IN-6 COULD NOT FIND WAS PUBLIC
+
+IN-4 deferred these seats and IN-6 recorded that Lake County's open-data org (`lakecountyod`, 174
+layers) holds no electoral layer. Both were true of what they searched. The precinct layer is
+public in a **different ArcGIS organisation** — the Lake County **Surveyor's** hub — linked from
+the county's own *"Request GIS Map or Data"* button.
+
+▶ **A NEGATIVE RESULT IS ONLY EVER TRUE OF THE PLACE YOU LOOKED.**
+
+The six districts are a **dissolve** of that precinct layer on the leading digit of `P26`
+(`G1 03` … `G6 18`). 47 precincts; each district dissolves to ONE connected valid polygon; zero
+pairwise overlap; union 57.22 sq mi against Gary's 49.75 land + 7.47 water.
+
+⚠ **Two wrong maps were rejected first** — the City's own 2014 GeoJSON repo, and Census
+`tl_2020_18_vtd20`, which carries all 52 Gary precincts under the same naming scheme and dissolves
+into a map that looks right. Three precincts separate the vintages, and the loader's GATE 2 asserts
+all three: **`G4 01`, `G5 22`, `G5 28`** are in this layer and on the Board of Elections' own
+2024-03-01 map, and in none of TIGER's corresponding districts.

@@ -76,13 +76,18 @@ BEGIN
   IF v_rep <> 1 THEN RAISE EXCEPTION 'IN-4 probe: City Hall returns % state rep(s), expected 1', v_rep; END IF;
   IF v_sen <> 1 THEN RAISE EXCEPTION 'IN-4 probe: City Hall returns % state senator(s), expected 1', v_sen; END IF;
 
-  -- The two DELIBERATE absences.
+  -- 🟢 UPDATED 2026-09-11 BY IN-8. This read "expected 0 -- deferred until the 2023 settlement
+  -- map is obtained" and was the assertion that made adding these six a DECISION rather than an
+  -- accident. It fired the moment CC_0096 applied. The map was found in the Lake County
+  -- SURVEYOR's ArcGIS org -- a different organisation from the open-data org IN-6 swept -- and
+  -- the six districts are a dissolve of its precinct layer on the leading digit of P26.
+  -- The probe now asserts PRESENCE, and asserts each seat is SEPARATELY reachable below.
   SELECT count(*) INTO v_districtseats FROM essentials.offices o
    JOIN essentials.chambers c ON c.id = o.chamber_id
    JOIN essentials.governments g ON g.id = c.government_id
    WHERE g.name = 'City of Gary, Indiana, US' AND o.title LIKE 'Council Member, District%';
-  IF v_districtseats <> 0 THEN
-    RAISE EXCEPTION 'IN-4 probe: % Gary district council office(s) exist; they are deferred until the 2023 settlement map is obtained', v_districtseats;
+  IF v_districtseats <> 6 THEN
+    RAISE EXCEPTION 'IN-8 probe: % Gary district council office(s), expected 6', v_districtseats;
   END IF;
 
   -- 🟢 UPDATED 2026-09-10 BY IN-6. This read "expected 0 Lake County offices (stage 4 has not
@@ -145,5 +150,68 @@ BEGIN
     RAISE EXCEPTION 'IN-4 probe: Mark Spencer holds a Gary office as well as SD-3 -- the same man on two live seats';
   END IF;
 
-  RAISE NOTICE 'IN-4 PROBE PASSED: anchor validated; City Hall returns mayor + clerk + CITY JUDGE + 3 at-large + 1 rep + 1 senator; district seats deferred; Lake County 12 countywide incl 3 commissioners; Mark Spencer holds SD-3 only';
+  RAISE NOTICE 'IN-4 PROBE PASSED: anchor validated; City Hall returns mayor + clerk + CITY JUDGE + 3 at-large + 1 rep + 1 senator; 6 DISTRICT SEATS NOW SEATED (IN-8); Lake County 12 countywide incl 3 commissioners; Mark Spencer holds SD-3 only';
+END $$;
+
+\echo ''
+\echo '=== IN-8. Each of the six council districts resolves to exactly one member, at its own interior point ==='
+-- 🔴 THE LONG BEACH TEST, PER DISTRICT. Long Beach's nine councilmembers all sat on the TIGER
+-- place polygon, so one address returned all nine and check:reachability could not see it --
+-- its own header names 0643000 as a legitimate shared geo_id. A green gate means "nothing
+-- regressed", never "this jurisdiction was examined". So each district is probed individually
+-- at a point inside ITSELF.
+DO $$
+DECLARE r record; v_n int; v_bad int := 0; v_holder text;
+BEGIN
+  FOR r IN
+    SELECT d.geo_id, d.id AS district_id, gb.geometry
+      FROM essentials.districts d
+      JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id AND gb.mtfcc = d.mtfcc
+     WHERE d.mtfcc = 'X0050' ORDER BY d.geo_id
+  LOOP
+    SELECT count(*), min(p.full_name) INTO v_n, v_holder
+      FROM essentials.geofence_boundaries g2
+      JOIN essentials.districts d2 ON d2.geo_id = g2.geo_id AND d2.mtfcc = g2.mtfcc
+      JOIN essentials.offices o ON o.district_id = d2.id
+      JOIN essentials.office_current_holder och ON och.office_id = o.id
+      JOIN essentials.politicians p ON p.id = och.politician_id
+     WHERE g2.mtfcc = 'X0050'
+       AND ST_Covers(g2.geometry, ST_PointOnSurface(r.geometry));
+    IF v_n <> 1 THEN
+      RAISE WARNING 'IN-8 probe: % returns % councilmember(s) at its own interior point, expected exactly 1', r.geo_id, v_n;
+      v_bad := v_bad + 1;
+    ELSE
+      RAISE NOTICE '  % -> % ', r.geo_id, v_holder;
+    END IF;
+  END LOOP;
+  IF v_bad <> 0 THEN
+    RAISE EXCEPTION 'IN-8 probe: % of 6 Gary districts do not resolve to exactly one councilmember', v_bad;
+  END IF;
+  RAISE NOTICE 'IN-8 probe: 6 of 6 districts resolve to exactly one councilmember at their own interior point';
+END $$;
+
+\echo ''
+\echo '=== IN-8. Gary City Hall now scores 4 of 4 ==='
+DO $$
+DECLARE v_city int; v_dist int; v_county int; v_state int;
+BEGIN
+  SELECT count(*) FILTER (WHERE g.name = 'City of Gary, Indiana, US'),
+         count(*) FILTER (WHERE o.title LIKE 'Council Member, District%'),
+         count(*) FILTER (WHERE g.name = 'Lake County, Indiana, US'),
+         count(*) FILTER (WHERE g.name = 'State of Indiana')
+    INTO v_city, v_dist, v_county, v_state
+    FROM essentials.geofence_boundaries gb
+    JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
+    JOIN essentials.offices o ON o.district_id = d.id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+    JOIN essentials.governments g ON g.id = c.government_id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+   WHERE ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint(-87.33780, 41.60360), 4326));
+  IF v_dist <> 1 THEN
+    RAISE EXCEPTION 'IN-8 probe: Gary City Hall returns % district councilmember(s), expected exactly 1', v_dist;
+  END IF;
+  IF v_county < 12 THEN RAISE EXCEPTION 'IN-8 probe: % Lake County answers, expected >= 12', v_county; END IF;
+  IF v_state < 2 THEN RAISE EXCEPTION 'IN-8 probe: % state answers, expected >= 2', v_state; END IF;
+  RAISE NOTICE 'IN-8 probe: City Hall -> % city (incl. % district), % county, % state -- Gary scores 4 of 4',
+    v_city, v_dist, v_county, v_state;
 END $$;
