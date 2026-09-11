@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import { parseCongressUrl, fetchCongressPageText } from './congressAdapter.js';
 import { matchSnippet, checkNameProximity } from '../researchVerifier.js';
 
@@ -86,6 +86,16 @@ function routedFetch(routes: Array<[string, unknown]>): (url: string) => Promise
 describe('fetchCongressPageText', () => {
   const KEY = 'test-key';
 
+  beforeAll(() => {
+    // This suite drives many getJson() calls across its cases, and each one
+    // consumes a slot from the shared in-process apiDataGovRateLimiter budget
+    // (15/minute default). Raise it for this suite only so its own call
+    // volume never trips real throttling and turns a shape-guard bug into a
+    // spurious 30s test timeout instead of the TypeError/rejection it should
+    // surface.
+    process.env.API_DATA_GOV_RATE_LIMIT_PER_MINUTE = '1000';
+  });
+
   it('returns null when the URL is not a congress.gov bill/member', async () => {
     const r = await fetchCongressPageText('https://example.com/x', { apiKey: KEY, fetchImpl: routedFetch([]) });
     expect(r).toBeNull();
@@ -167,5 +177,25 @@ describe('fetchCongressPageText', () => {
     const text = await fetchCongressPageText('https://www.congress.gov/member/ayanna-pressley/P000617', { apiKey: KEY, fetchImpl });
     expect(text).toContain('Ayanna Pressley');
     expect(text).toContain('Massachusetts');
+  });
+
+  it('best-effort /text: a non-array textVersions body does not throw (still resolves to the composite)', async () => {
+    const fetchImpl = routedFetch([
+      ['/bill/119/hr/6?', { bill: { title: 'Malformed Text Versions Act of 2025', sponsors: [{ fullName: 'Rep. Test Sponsor' }] } }],
+      ['/bill/119/hr/6/text', { textVersions: {} }], // object, not array — must not crash the iterator
+      // no /summaries, /cosponsors, /actions routes → 404 (swallowed)
+    ]);
+    const text = await fetchCongressPageText('https://www.congress.gov/bill/119th-congress/house-bill/6', { apiKey: KEY, fetchImpl });
+    expect(text).toContain('Malformed Text Versions Act of 2025');
+  });
+
+  it('best-effort /cosponsors: a null cosponsor element does not throw (still resolves to the composite)', async () => {
+    const fetchImpl = routedFetch([
+      ['/bill/119/hr/7?', { bill: { title: 'Null Cosponsor Element Act of 2025', sponsors: [{ fullName: 'Rep. Test Sponsor' }] } }],
+      ['/bill/119/hr/7/cosponsors', { cosponsors: [null] }], // null element — must not crash the map
+      // no /summaries, /actions, /text routes → 404 (swallowed)
+    ]);
+    const text = await fetchCongressPageText('https://www.congress.gov/bill/119th-congress/house-bill/7', { apiKey: KEY, fetchImpl });
+    expect(text).toContain('Null Cosponsor Element Act of 2025');
   });
 });

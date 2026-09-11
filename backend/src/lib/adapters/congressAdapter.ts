@@ -103,18 +103,21 @@ async function getJson(path: string, apiKey: string, fetchImpl: FetchLike): Prom
 async function fetchBillText(
   base: string, apiKey: string, fetchImpl: FetchLike,
 ): Promise<string | null> {
-  const data = await getJson(`${base}/text`, apiKey, fetchImpl);
-  const versions: any[] = data?.textVersions ?? [];
-  // Prefer a "Formatted Text" (HTML) format; else the first format with a URL.
-  let target: string | undefined;
-  for (const v of versions) {
-    const formats: any[] = v?.formats ?? [];
-    const html = formats.find((f) => /formatted text/i.test(f?.type ?? '') && f?.url);
-    if (html) { target = html.url; break; }
-    if (!target && formats[0]?.url) target = formats[0].url;
-  }
-  if (!target) return null;
+  // Wrapped end-to-end: a 200 response with an unexpected shape (e.g.
+  // textVersions not an array) must degrade to "no bill text", never throw
+  // out of the composite.
   try {
+    const data = await getJson(`${base}/text`, apiKey, fetchImpl);
+    const versions: any[] = Array.isArray(data?.textVersions) ? data.textVersions : [];
+    // Prefer a "Formatted Text" (HTML) format; else the first format with a URL.
+    let target: string | undefined;
+    for (const v of versions) {
+      const formats: any[] = Array.isArray(v?.formats) ? v.formats : [];
+      const html = formats.find((f) => /formatted text/i.test(f?.type ?? '') && f?.url);
+      if (html) { target = html.url; break; }
+      if (!target && formats[0]?.url) target = formats[0].url;
+    }
+    if (!target) return null;
     await acquireApiDataGovSlot('congress');
     const res = await fetchImpl(target);
     if (!res.ok) return null;
@@ -137,21 +140,24 @@ async function buildBillText(
   const parts: string[] = [];
   if (bill.title) parts.push(String(bill.title));
   if (bill.policyArea?.name) parts.push(`Policy area: ${bill.policyArea.name}`);
-  const sponsors: any[] = bill.sponsors ?? [];
-  if (sponsors.length) parts.push('Sponsor: ' + sponsors.map((s) => s.fullName).filter(Boolean).join(', '));
+  const sponsors: any[] = Array.isArray(bill.sponsors) ? bill.sponsors : [];
+  if (sponsors.length) parts.push('Sponsor: ' + sponsors.map((s) => s?.fullName).filter(Boolean).join(', '));
   if (bill.latestAction?.text) parts.push('Latest action: ' + bill.latestAction.text);
 
   const summaries = await getJson(`${base}/summaries`, apiKey, fetchImpl);
-  for (const s of (summaries?.summaries ?? [])) {
+  const summaryList: any[] = Array.isArray(summaries?.summaries) ? summaries.summaries : [];
+  for (const s of summaryList) {
     if (s?.text) parts.push(htmlToText(String(s.text)));
   }
 
   const cosponsors = await getJson(`${base}/cosponsors`, apiKey, fetchImpl);
-  const coNames = (cosponsors?.cosponsors ?? []).map((c: any) => c.fullName).filter(Boolean);
+  const cosponsorList: any[] = Array.isArray(cosponsors?.cosponsors) ? cosponsors.cosponsors : [];
+  const coNames = cosponsorList.map((c: any) => c?.fullName).filter(Boolean);
   if (coNames.length) parts.push('Cosponsors: ' + coNames.join(', '));
 
   const actions = await getJson(`${base}/actions`, apiKey, fetchImpl);
-  const actionTexts = (actions?.actions ?? []).slice(0, MAX_ACTIONS).map((a: any) => a.text).filter(Boolean);
+  const actionList: any[] = Array.isArray(actions?.actions) ? actions.actions : [];
+  const actionTexts = actionList.slice(0, MAX_ACTIONS).map((a: any) => a?.text).filter(Boolean);
   if (actionTexts.length) parts.push('Actions: ' + actionTexts.join(' '));
 
   const billText = await fetchBillText(base, apiKey, fetchImpl); // best-effort
@@ -170,10 +176,12 @@ async function buildMemberText(
   const parts: string[] = [];
   const name = m.directOrderName ?? m.invertedOrderName ?? m.name;
   if (name) parts.push(String(name));
-  const party = (m.partyHistory ?? []).map((p: any) => p.partyName).filter(Boolean).join(', ');
+  const partyHistory: any[] = Array.isArray(m.partyHistory) ? m.partyHistory : [];
+  const party = partyHistory.map((p: any) => p?.partyName).filter(Boolean).join(', ');
   if (party) parts.push(`Party: ${party}`);
   if (m.state) parts.push(`State: ${m.state}`);
-  const chambers = (m.terms ?? []).map((t: any) => t.chamber).filter(Boolean);
+  const terms: any[] = Array.isArray(m.terms) ? m.terms : [];
+  const chambers = terms.map((t: any) => t?.chamber).filter(Boolean);
   if (chambers.length) parts.push(`Chamber: ${[...new Set(chambers)].join(', ')}`);
   const out = parts.join('\n\n').trim();
   return out || null;
