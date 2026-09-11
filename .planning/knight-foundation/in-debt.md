@@ -4,8 +4,8 @@
 **Debt 2 CLOSED** (`CC_0098`): the 17 unreferenced `State of Indiana` rows are gone, 5 remain.
 **Debt 4 half closed**: the six Gary portraits are imported, stage 5 is **192/204**, and the
 remaining 12 blanks are all settled by ruling or by absence of any source.
-**Debts 1 and 3 are untouched** and both want a fresh context window — Debt 1 needs a disposition
-ruling before any SQL, Debt 3 is an open-ended hunt. A fifth item was found while closing Debt 2;
+**Debt 3's hunt is CLOSED 2026-09-11** — the geometry is found and vintage-proved; what remains of it
+is a seating wave. **Debt 1 is untouched** and needs a disposition ruling before any SQL. A fifth item was found while closing Debt 2;
 it is at the bottom of this file.
 
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
@@ -118,40 +118,99 @@ remove **16, not 17**, and the planted row survived.
 
 ---
 
-## Debt 3 — Lake County Council's seven district seats
+## Debt 3 — ✅ UNBLOCKED 2026-09-11. The geometry exists, is public, and is vintage-proved
 
-Still deferred, and **IN-8's solution does not transfer.**
+**The seven districts are `WAYEO_WebMap_WFL1` layer 8, "County Council Districts".**
 
-Gary's six were unblocked because the Lake County Surveyor's precinct layer encodes the **city**
-council district in the leading digit of `P26`. It does **not** encode the **county** council
-district, so the seven county seats cannot be dissolved from it. The Surveyor's org carries no
-council-district layer (searched 2026-09-11: `council district` returns 0 results).
+```
+https://services6.arcgis.com/3BIBAkkTYicFwv1e/arcgis/rest/services/WAYEO_WebMap_WFL1/FeatureServer/8
+   398 polygons statewide, public, queryable.  Lake = 7 rows, councildistrictid '089-District N'.
+   item 92242dc49492424f8378103b52bfa480, owner Prem_GIO_Broadband (Indiana GIO).
+   dataLastEditDate 2025-02-03; the item says "Updates Feb 2025: County Council".
+```
 
-The seven members were identified in IN-6 and are recorded in
-[`backend/data/seed-lake-county-2026/ROSTERS.md`](../../backend/data/seed-lake-county-2026/ROSTERS.md).
-🔴 **Ronald G. Brewer Sr sits on Lake County Council District 2** and left Gary's at-large seat —
-whoever seats these must assert he holds exactly one office, as `CC_0097` does for Marian Ivey.
+**WAYEO = "Who Are Your Elected Officials"**, the Secretary of State's own address lookup
+(`in.wayeo.us`). 🟢🟢 **The county's own page told us where it was the whole time.**
+`lakecountyin.gov/departments/council/find-my-council-district` says, in prose: *"please refer to
+the 'Who Are Your Elected Officials' interactive map from IN.gov … filter to the County level …
+Scroll down to determine your Council Member/District."* No layer to find — the county delegates
+the lookup to the state, so the geometry was never going to be in the county's own ArcGIS org.
 
-### Where to look next, in order
+🔴🔴 **THE THREE PLACES THIS FILE TOLD YOU TO LOOK WERE ALL THE WRONG KIND OF PLACE**, and two of
+them were swept to exhaustion before the prose was read:
 
-1. **`lakecountyin.gov/departments/voters/maps-gis/COUNTY-DISTRICT-MAPS/`** — the folder exists and
-   is the county analogue of the folder that held Gary's map. Its file list is rendered
-   client-side, so **fetch it with Playwright and a real UA**, not `requests`.
-2. **The Surveyor's hub itself** — `https://services5.arcgis.com/8CXRnvSfSpwdf0R6/arcgis/rest/services?f=json`
-   — enumerate every service rather than searching by keyword. `Selectable_Features` layer 3 is
-   `Political Township`, which is NOT the council district.
-3. **Ask the Board of Elections**, as IN-4 planned to.
+- The Surveyor's org was enumerated in full — **149 services, 234 layers** — and holds no
+  council-district layer. That negative is now real rather than keyword-shaped (`Election
+  Precincts` was found by the same scan, which is what proves the scan was not blind).
+- `COUNTY-DISTRICT-MAPS/CO-COUNCIL/` is a **PDF folder**, as IN-6 said.
+- ArcGIS Online at large has no Lake County council layer: the only Indiana county-council
+  feature services published by their own counties are **Vigo** and **Wayne**.
 
-🔴🔴 **The lesson that unblocked Gary applies here too: a negative result is only ever true of the
-place you looked.** IN-6 concluded the geometry did not exist after sweeping one ArcGIS org; it was
-public in another. Before concluding again, enumerate.
+▶ **The lesson is not "enumerate harder".** IN-6 and this session both searched for a *layer*.
+The answer was a *sentence*, on the county page that the debt file already named. **Read the
+human-facing page before sweeping the machine-facing one.**
 
-🔴🔴 **And two wrong maps were rejected for Gary before the right one was found.** Any Lake County
-council layer must be **vintage-gated against a published county map**, the way
-`load-gary-council-boundaries.ts` GATE 2 is gated on `G4 01` / `G5 22` / `G5 28`. A layer with the
-right county, the right count and the right naming can still be the wrong year.
+### The vintage gate — 339 of 339 precincts, against the county's own map
 
----
+The county publishes `departments/council/CC_District_Map3X5.pdf`: seven districts, prepared by
+the **Lake County Board of Elections & Registration**, **Esri ArcMap 10.8.1, created 2022-01-26** —
+the post-2020-census redistricting map. Like Gary's it is `FOR REFERENCE ONLY` and carries no
+extractable district geometry, **but its precinct labels are live text with coordinates** (2129
+words), which turns it from a picture into a checkable source.
+
+| gate | result |
+| --- | --- |
+| Lake is the **only** Indiana county with 7 rows in the layer; `089` is its FIPS | ✅ matches the known seat count |
+| all **342** current precincts nest wholly inside exactly one district | ✅ 0 split, 0 outside |
+| **339 of 339** precincts get the same district from the 2022 PDF as from WAYEO | ✅ **0 disagreements** |
+| area closes: 625.76 sq mi over seven districts | ✅ vs the county's ~627 (499 land + 128 water) |
+| districts overlap nowhere | ✅ every sampled point is in exactly one |
+
+🔴 **THE FIRST TWO RUNS OF THAT COMPARISON WERE BOTH WRONG, IN OPPOSITE DIRECTIONS.**
+
+1. A vertex-based nesting test reported **153 of 342 precincts straddling two districts**. It was
+   measuring nothing: precinct vertices lie **exactly on** district edges, where point-in-polygon
+   is undefined. Fixed by sampling **strictly interior** points.
+2. Sampling the PDF's colour **around each precinct's label** gave 311/320 and nine disagreements
+   — every one of them a label sitting on a border, two of them (`SJ 13`, `SJ 19`) simply swapped
+   with each other. Fixed by fitting an affine georeference from the 320 matched labels and
+   sampling **inside each precinct's own polygon**: 339/339, no disagreements.
+
+🟢 **Both fixes were checked by a control that had to fail first**, and both controls did:
+   - the interior-sampling detector must still report a **genuinely** split municipality — it
+     returns Gary 2/3, Hammond 5/1, Hobart 3/6, Crown Point 6/7/4, exactly as the map shows;
+   - the PDF comparison must **collapse** when aimed wrongly — shifting the georeference takes
+     339/339 to 81% at 60pt and **51.5% at 200pt**, and label-adjacent sampling scores 37.9%.
+   - the legend swatches are read by locating the seven legend *words* and scanning left, then
+     asserting **seven distinct non-white colours**. ⚠ The earlier Gary attempt sampled swatches
+     at hardcoded coordinates, hit white, and reported four districts at *exactly 24.2%* each.
+
+### Four detached fragments, all islands inside District 6 — two real, two empty
+
+| fragment | addresses | the 2022 PDF says | verdict |
+| --- | --- | --- | --- |
+| D7, 0.0387 sq mi | **28** | D7 on **1494 of 1494** colour-bearing samples | ✅ **real** — an unincorporated pocket inside Crown Point |
+| D7, 0.0077 sq mi | **1** | D7 on **1586 of 1586** | ✅ **real** — same pattern |
+| D3, 0.00095 sq mi | 0 | **no district colour at all**, 0 of 5235 samples | ⚠ artefact, over a road corridor; coincides with `GR 19 NV`, a no-voter strip 25 m x 130 m |
+| D4, 0.00120 sq mi | 0 | **no district colour at all**, 0 of 4129 samples | ⚠ artefact, same shape |
+
+⚠ **Do not "clean" the two real ones.** A 28-address island of District 7 sitting inside District 6
+is what the county map draws, and Crown Point's annexation history is why. The two empty artefacts
+reach no address (checked against the county's 201,149 address points; the same query finds 194 in
+a downtown Crown Point box, which is the control).
+
+### What is left of Debt 3
+
+The hunt is over; the **seating wave** is not. Still to do:
+
+- load the 7 polygons as districts (`X00NN`), gated on the five checks above;
+- create the 7 offices and seat the seven members recorded in
+  [`backend/data/seed-lake-county-2026/ROSTERS.md`](../../backend/data/seed-lake-county-2026/ROSTERS.md)
+  — **re-verify that roster against the council's own page first**: IN-6 read it, and a
+  change-check asks "has this person *left*?", which only the body's own roster answers;
+- 🔴 **Ronald G. Brewer Sr** left Gary's at-large seat for Lake County Council District 2 —
+  assert he holds **exactly one** office, as `CC_0097` does for Marian Ivey. `office_terms_no_overlap`
+  forbids two people on one office; it **cannot** see one person on two.
 
 ## Debt 4 — 18 portrait blanks, and **IN-8 made six of them**
 
