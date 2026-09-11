@@ -1019,6 +1019,10 @@ Gates after the apply: `check:occupancy` green, `check:migrations` 10 added / 18
 
 **All five stages are closed.** What follows is debt, not scope.
 
+▶ **The debts have their own file — [`in-debt.md`](./in-debt.md)** — with every number
+re-measured 2026-09-11 and a suggested order. Three of the figures below drifted from what earlier
+notes said, and the portrait debt is LARGER than it was: IN-8 seated six members with no portraits.
+
 1. ✅ **DONE — Gary's six district council seats were seated by IN-8 on 2026-09-11.**
    Stage 3 is closed and Indiana is complete across all five stages.
 

@@ -22,6 +22,8 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 2 | GA | Columbus, Macon, Milledgeville | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3 | CA | Long Beach, San José | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 4 | IN | Fort Wayne, Gary | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+🟢 **INDIANA IS COMPLETE ACROSS ALL FIVE STAGES (2026-09-11), the program's fourth slice.** ▶ **Its four measured debts are NOT closed, and the ruling (Cantrell, 2026-09-11) is to clear them BEFORE opening slice 5 (MN).** They have their own file with re-measured numbers and a suggested order: [`in-debt.md`](./in-debt.md).
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
