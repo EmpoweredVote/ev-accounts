@@ -31,6 +31,7 @@
 
 import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
+import { fetchCongressPageText } from './adapters/congressAdapter.js';
 
 /**
  * Honest user-agent. Names Empowered Vote, links a public policy page, and
@@ -532,6 +533,8 @@ export interface VerificationFetchDeps {
   httpFetch?: (url: string) => Promise<string>;
   /** Tier 3 — Wayback snapshot (archive, not a live-site fetch). */
   wayback?: (url: string) => Promise<string | null>;
+  /** Source-specific tier — congress.gov official API. Runs before the generic tiers. */
+  congressAdapter?: (url: string) => Promise<string | null>;
 }
 
 /**
@@ -547,9 +550,22 @@ export function createVerificationFetchSession(
   const allowed = deps.robotsAllows ?? robotsAllows;
   const httpFetch = deps.httpFetch ?? fetchViaHttp;
   const wayback = deps.wayback ?? fetchViaWayback;
+  const congressAdapter = deps.congressAdapter ?? fetchCongressPageText;
 
   return {
     async fetch(url: string): Promise<string> {
+      // Source-specific tier — congress.gov official API (before the generic
+      // tiers). It calls api.congress.gov under our own key: an authorized
+      // official API, not a fetch of the live congress.gov site, so it precedes
+      // the robots gate. A null result (not congress.gov, unparseable, no key, or
+      // no API match) falls through to today's ladder unchanged.
+      try {
+        const t = await congressAdapter(url);
+        if (t && looksLikeRealPage(t)) return t;
+      } catch {
+        /* fall through to the generic ladder */
+      }
+
       // Tier 0 — respect robots.txt. If EmpoweredVoteBot is disallowed we do NOT
       // fetch the live site: go straight to the archived snapshot, and if there
       // is none, surface a distinct robots_disallowed outcome (not url_broken).

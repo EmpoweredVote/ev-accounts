@@ -48,6 +48,11 @@ const envSchema = z.object({
   // Campaign finance adapter keys — all optional; absent = feature degraded but server still starts.
   // FEC_API_KEY: register free at api.data.gov/signup/ for 1000 req/hr limit.
   FEC_API_KEY: z.string().optional(),
+  // CONGRESS_GOV_API_KEY: free api.data.gov key (register at https://api.congress.gov)
+  // for the congress.gov official-API verification tier (congressAdapter). Optional —
+  // absent = the adapter is a no-op and congress.gov URLs fall through to the fetch
+  // ladder (tier 1 → Wayback), today's behavior. Lives in the Render dashboard, never in git.
+  CONGRESS_GOV_API_KEY: z.string().optional(),
   // ADMIN_INGEST_TOKEN: pre-shared token for POST /admin/ingest/:adapter.
   ADMIN_INGEST_TOKEN: z.string(),
   // SQS_INGEST_QUEUE_URL: optional SQS queue URL for EventBridge-triggered ingestion.

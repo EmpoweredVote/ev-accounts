@@ -351,3 +351,33 @@ describe('fetchViaWayback — /available first, CDX on miss', () => {
     expect(await fetchViaWayback(url, { fetchImpl })).toBeNull();
   });
 });
+
+describe('createVerificationFetchSession — congress.gov adapter tier', () => {
+  const longPage = 'Affordable Childcare Act. ' + 'grant program expands access to affordable childcare for working families. '.repeat(20);
+
+  it('returns the congress adapter result ahead of tier 1', async () => {
+    let httpCalled = false;
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => longPage,
+      robotsAllows: async () => true,
+      httpFetch: async () => { httpCalled = true; return 'tier1'; },
+      wayback: async () => null,
+    });
+    const out = await session.fetch('https://www.congress.gov/bill/119th-congress/house-bill/1234');
+    expect(out).toBe(longPage);
+    expect(httpCalled).toBe(false);
+  });
+
+  it('falls through to the ladder when the adapter returns null', async () => {
+    let httpCalled = false;
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => null,
+      robotsAllows: async () => true,
+      httpFetch: async () => { httpCalled = true; return longPage; },
+      wayback: async () => null,
+    });
+    const out = await session.fetch('https://www.congress.gov/bill/119th-congress/house-bill/1234');
+    expect(out).toBe(longPage);
+    expect(httpCalled).toBe(true);
+  });
+});
