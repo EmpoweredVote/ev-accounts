@@ -74,8 +74,12 @@ function fakeRes(body: unknown, ok = true): Response {
 }
 
 /** Route a fake api.congress.gov client by URL substring. Unlisted → 404. */
-function routedFetch(routes: Array<[string, unknown]>): (url: string) => Promise<Response> {
-  return async (url: string) => {
+function routedFetch(
+  routes: Array<[string, unknown]>,
+  onCall?: (url: string, init?: RequestInit) => void,
+): (url: string, init?: RequestInit) => Promise<Response> {
+  return async (url: string, init?: RequestInit) => {
+    onCall?.(url, init);
     for (const [needle, body] of routes) {
       if (url.includes(needle)) return fakeRes(body);
     }
@@ -197,5 +201,58 @@ describe('fetchCongressPageText', () => {
     ]);
     const text = await fetchCongressPageText('https://www.congress.gov/bill/119th-congress/house-bill/7', { apiKey: KEY, fetchImpl });
     expect(text).toContain('Null Cosponsor Element Act of 2025');
+  });
+
+  it('bounds every api.congress.gov fetch with an AbortSignal timeout', async () => {
+    const calls: Array<{ url: string; init?: RequestInit }> = [];
+    const fetchImpl = routedFetch(
+      [
+        ['/bill/119/hr/1234?', { bill: {
+          title: 'Timeout Wiring Act of 2025',
+          sponsors: [{ fullName: 'Rep. Test Sponsor' }],
+        } }],
+        ['/bill/119/hr/1234/summaries', { summaries: [] }],
+        ['/bill/119/hr/1234/cosponsors', { cosponsors: [] }],
+        ['/bill/119/hr/1234/actions', { actions: [] }],
+        ['/bill/119/hr/1234/text', { textVersions: [] }],
+      ],
+      (url, init) => calls.push({ url, init }),
+    );
+
+    const text = await fetchCongressPageText(
+      'https://www.congress.gov/bill/119th-congress/house-bill/1234',
+      { apiKey: KEY, fetchImpl },
+    );
+    expect(text).toContain('Timeout Wiring Act of 2025');
+    // Every api.congress.gov GET made by this bill fetch must carry an
+    // AbortSignal — a stalled host must not be able to hang the composite.
+    expect(calls.length).toBeGreaterThan(0);
+    for (const call of calls) {
+      expect(call.init?.signal).toBeInstanceOf(AbortSignal);
+    }
+  });
+
+  it('skips the text hop (but keeps the composite) when the bill-text version URL is not https', async () => {
+    const calls: string[] = [];
+    const fetchImpl = routedFetch(
+      [
+        ['/bill/119/hr/8?', { bill: {
+          title: 'Http Text Version Guard Act of 2025',
+          sponsors: [{ fullName: 'Rep. Test Sponsor' }],
+        } }],
+        ['/bill/119/hr/8/text', { textVersions: [{
+          formats: [{ type: 'Formatted Text', url: 'http://www.govinfo.gov/insecure-bill-text' }],
+        }] }],
+      ],
+      (url) => calls.push(url),
+    );
+
+    const text = await fetchCongressPageText(
+      'https://www.congress.gov/bill/119th-congress/house-bill/8',
+      { apiKey: KEY, fetchImpl },
+    );
+    expect(text).toContain('Http Text Version Guard Act of 2025');
+    // The insecure text-version URL must never be fetched.
+    expect(calls.some((u) => u.includes('insecure-bill-text'))).toBe(false);
   });
 });

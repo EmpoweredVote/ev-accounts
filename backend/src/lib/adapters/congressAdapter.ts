@@ -8,6 +8,13 @@
  * (researchVerifier) can run. It returns null — a clean fall-through to the
  * generic ladder — for anything it does not handle (non-congress host,
  * unparseable path, missing key, or no API match).
+ *
+ * This module and verificationFetch.ts import from each other (htmlToText is
+ * used here inside the adapter's text-building functions; fetchCongressPageText
+ * is used there inside session.fetch). That is an intentional CALL-TIME-ONLY
+ * cycle — each side only invokes the other's export at call time, never at
+ * module-top-level — and must not be "fixed" into a shared-module or
+ * lazy-import shape.
  */
 
 import { htmlToText } from '../verificationFetch.js';
@@ -80,6 +87,10 @@ export interface CongressDeps {
 const API_BASE = 'https://api.congress.gov/v3';
 /** How many of the newest actions to include (latest action is already shown). */
 const MAX_ACTIONS = 15;
+/** Bound every outbound fetch so a stalled host cannot hang a verification
+ * (a bill composite makes up to ~6 serial calls). Matches the generic ladder's
+ * HTTP_TIMEOUT_MS in verificationFetch.ts (not exported, so redefined here). */
+const HTTP_TIMEOUT_MS = 12_000;
 
 /**
  * GET a v3 JSON resource with the key + format appended. Acquires a rate-limit
@@ -91,7 +102,7 @@ async function getJson(path: string, apiKey: string, fetchImpl: FetchLike): Prom
   const url = `${API_BASE}${path}${sep}format=json&api_key=${encodeURIComponent(apiKey)}`;
   try {
     await acquireApiDataGovSlot('congress');
-    const res = await fetchImpl(url);
+    const res = await fetchImpl(url, { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -118,8 +129,19 @@ async function fetchBillText(
       if (!target && formats[0]?.url) target = formats[0].url;
     }
     if (!target) return null;
-    await acquireApiDataGovSlot('congress');
-    const res = await fetchImpl(target);
+    // `target` is a bill-text version URL on govinfo/congress.gov static
+    // hosting, NOT an api.data.gov endpoint — no acquireApiDataGovSlot here
+    // (that budget is reserved for the api.congress.gov calls in getJson).
+    // https-only guardrail: this is a best-effort hop to an API-supplied URL
+    // with default redirect-follow, so refuse anything but https.
+    let targetUrl: URL;
+    try {
+      targetUrl = new URL(target);
+    } catch {
+      return null;
+    }
+    if (targetUrl.protocol !== 'https:') return null;
+    const res = await fetchImpl(target, { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
     if (!res.ok) return null;
     const body = await res.text();
     const text = htmlToText(body);
