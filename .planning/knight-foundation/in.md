@@ -760,15 +760,199 @@ Gary's own probe was updated — its Lake assertion **fired** on apply, and **Ga
 | 1 | one Lake commissioner unseated (**scoped to Lake**, after the Allen over-broad plant) | `returns 2 commissioner(s), expected 3` — `DELETE 1` |
 | 2 | a Lake County Council office created | `1 Lake County Council office(s) exist; all seven are deferred` |
 
+# IN-7 — stage 5, assets (applied 2026-09-11)
+
+**186 of 198 Indiana officials now carry a renderable portrait, from 18.** 168 imported, 18 skipped
+(they already had one), 0 failed. No migration — headshots are storage objects plus
+`photo_custom_url`. Legislature **150/150**, Fort Wayne **11/11**, Gary 4/6, Allen 12/19, Lake 9/12.
+Both city banners are uploaded and byte-verified; [essentials#133](https://github.com/EmpoweredVote/essentials/pull/133)
+registers them, and **stage 5 stays WIP until that merges**.
+
+Contact sheet (198 cards, 12 of them blanks carrying their reason):
+<https://claude.ai/code/artifact/b4ef0597-0eb0-4bf4-99e8-9854e877d30e>
+Banner certification: <https://claude.ai/code/artifact/16f94d4f-a16c-4c84-9104-eea5733790b8>
+
+## 🔴🔴 THE LEGISLATURE'S PORTRAITS WERE ON A HOST THE API DOES NOT ADVERTISE
+
+IN-2 recorded that Indiana's General Assembly API publishes **no portrait**, which was true and was
+read as "Indiana publishes none". Its **website** publishes one per member:
+
+```
+https://iga.in.gov/images/legislators/124/2026/{house|senate}/{iga_lpid}.jpg
+```
+
+The path is built entirely from `iga_lpid`, which the locked roster already held for all 150. It is
+**600x798** where the Open States column gives 200x300, and it covers the **two** members Open
+States has no image for at all. **The API's silence was not the site's.**
+
+### 🔴🔴 PLAYWRIGHT IS NOT THE FIX ON THIS HOST — THE USER AGENT IS
+
+Same HTTP-200 decoy shape IN-2 met on the KMZ downloads, opposite cure. Measured on one URL:
+
+| client | result |
+| --- | --- |
+| `curl`, any UA | 691 B React shell, `text/html` |
+| headless Chromium, Playwright's default `HeadlessChrome` UA | 691 B shell — **and the page's own `<img>` does not load either** |
+| headless Chromium + a full Chrome UA | **120,801 B JPEG** |
+| headed Chromium | 120,801 B JPEG |
+
+Timing, `waitUntil` and a warm-up were each tested and changed nothing. ⚠ The tell that it is a UA
+block rather than a broken fetch: the page's own `<img>` renders in one browser and not the other,
+on the same DOM.
+
+### 🔴🔴 A NEGATIVE CONTROL ALONE CERTIFIED A TOTALLY BLOCKED SWEEP
+
+The first sweep shipped one control: *a legislator who does not exist must not return an image.* It
+**passed** — while **all 150 real members returned the 691-byte shell**. The control was satisfied
+precisely because nothing worked. This is IN-2's `INSERT 0 0` in another dress.
+
+▶ **Pair every negative control with a positive one taken in the same breath**, and **run the pair
+again after the sweep**, so a block that begins midway is told apart from a source that genuinely
+lacks those members. An `IGA_UA=HeadlessChrome` override exists so the pair can be **watched
+failing** before it is trusted.
+
+Result, with both controls green at both ends: **150 of 150 decoded, 150 distinct sha256.**
+
+### 🔴 THE URL, THE EXTENSION AND THE CONTENT-TYPE ALL LIE
+
+All 150 arrive from a `.jpg` URL served as `image/jpeg`. **147 are JPEG, 2 are PNG, 1 is WEBP.**
+Both PNGs carry alpha — which the renderer paints **black** and the importer flattens **white**, the
+FL-7 defect. Sniff the magic number. Six files are camera originals up to 15.8 MB at 4160x6240.
+
+## 🔴🔴 `cdn.zephyrcms.com` UPSCALES ON DEMAND, AND ITS OWN `stretch/off` IS IGNORED
+
+Asking the Senate Republican CDN for Vaneta Becker at 2400x3600 returns a 422 KB file at exactly
+that size, with `-/stretch/off/` present — the directive whose entire purpose is to forbid
+enlarging. It is an enlargement: its 1200x1800 differs from **my own bicubic upscale of its own
+200x300** by **RMS 4.8 of 255**, under 2%, and carries no more high-frequency detail (19.8 against
+16.2 for my upscale). Her own Senate page serves the same 200x300.
+
+**So 38 Senate Republicans are really 200x300, and no bigger file exists.** A bigger number is not a
+better source.
+
+🟢 **The opposite case, same day:** Vernon Smith's caucus page serves him from Squarespace, whose
+`?format=` parameter **caps**. `1500w`, `2500w` and `original` all return the identical 273,088
+bytes at **1200x1499**. That refusal to go further is what a genuine original looks like — and it
+took him from IGA's 155x208 to the best portrait in the set.
+
+⚠ **The House Republican site publishes no large portraits at all**: Clere's own member page tops
+out at 308x462 for a solo image and 182x235 for the rest, its larger files being two-person event
+photos. Karickhoff, Clere and Lehman stay at 255x255, at their publisher's ceiling.
+
+## 🔴🔴 `geo_id` COLLIDES ACROSS CHAMBERS — HD-1 AND SD-1 ARE BOTH `18001`
+
+Joining the contact sheet's candidate rows to production on `geo_id` alone paired **63
+representatives with senators**: Carolyn Jackson's row took Dan Dernulc's portrait. Keyed on
+**(chamber, geo_id)** it matches 150 of 150 with none unmatched, and the 16 remaining name
+differences are all renderings of the same person (`Dale DeVon`/`Dale Devon`, `Bob`/`Robert`).
+
+**A wrong-person defect produced by a join, not by a source.**
+
+## 🔴🔴 TWO RENDERABLE FILES WERE NOT PORTRAITS, AND BOTH MATCHED ON A NAME
+
+- **Oscar Martinez, Lake County Sheriff** — `lakecountyin.gov/images/user-icon-placeholder.png`, a
+  blue silhouette, with "Oscar Martinez Sheriff" beside it.
+- **Suzette Raggs, Gary City Clerk** — a 1920x600 photograph of the clerk's counter, her name on the
+  office signage.
+
+Both would have counted as coverage. **A name beside an image proves the image belongs to that
+entry; it does not prove the image is a picture of the person.** ⚠ Ballotpedia's "Oscar Martinez"
+page is not the Indiana one — the same collision, caught by checking the page named Indiana.
+
+## ⚠ MY MONOCHROME DETECTOR WAS WRONG, AND ONLY CONTROLS CAUGHT IT
+
+A channel-spread metric flagged six legislators as possible greyscale. Three **known colour**
+portraits pushed through the same metric scored no better — Todd Huston at 11.19 against a flagged
+9.04. Re-measured on HSV saturation the six sit at 24–49 mean, one of them above a control.
+**They are muted palettes, not greyscale. No monochrome in the 150**, and the standing skip rule
+dropped nobody it should not have.
+
+Three county officers **are** genuinely black-and-white — Petalas, McAlexander, Katona — and are
+blank under that rule.
+
+## 🔴 ALLEN COUNTY PUBLISHES NO MEMBER PORTRAITS AT ALL
+
+Verified rather than assumed: the County Council page names all five missing members and carries
+**12 images, every one site chrome** — logo, search icon, five social icons, Google Translate. The
+Recorder page has an office seal and a photograph of the office. Ballotpedia's pages for Lagemann
+and Keesling are stubs.
+
+The only source holding their faces is the county party site. **Ruling (Cantrell, 2026-09-11): do
+not take it — leave all six blank.** A blank beats a link, as with Baldwin's four in GA-3.
+
+## The twelve blanks
+
+| Jurisdiction | Who | Why |
+| --- | --- | --- |
+| Allen | Hammond, Armstrong, Fries, Kerley, Lagemann, Keesling | no portrait published; party page refused by ruling |
+| Gary | Suzette Raggs | only image is the clerk's counter |
+| Gary | Deidre L Monroe | no page exists for the City Court; Ballotpedia 404s |
+| Lake | Oscar Martinez | county serves a placeholder silhouette |
+| Lake | Petalas, Katona | monochrome |
+| Allen | McAlexander | monochrome |
+
+## Banners — certified in the band, not the frame
+
+| | Fort Wayne | Gary |
+| --- | --- | --- |
+| subject | confluence of the St Marys and St Joseph, Columbia Street Bridge | City Hall colonnade and the Lake County Superior Courthouse dome |
+| credit | Momoneymoproblemz, CC BY-SA 3.0 | Nyttend, **public domain** |
+| source | 4896x1992 | 2816x1584 |
+| anchor_y | 0.25 | 0.35 |
+| saturation | 68.6 | 63.8 |
+| band luminance | 84.8 | 123.1 |
+| people | none at 3x | none at 3x |
+
+Indiana already carried two compositions to differentiate against — the **elevated** Indianapolis
+state panorama and Bloomington's **street corridor** — and the comparison is camera height and
+subject scale, never the subject noun.
+
+### 🔴🔴 A CATEGORY NAME IS NOT A JURISDICTION, AND I PROVED IT ON MYSELF
+
+Sweeping `Category:Maumee River` for Fort Wayne returned **Defiance, Ohio** — Fort Amanda, Pontiac
+Park, the Auglaize confluence. The Indiana Dunes categories returned **Porter County** for Gary.
+This is the IN-6 Lake County collision, reintroduced by my own choice of search root.
+
+Fixed with a check this repo can actually make: every candidate coordinate tested against the city's
+own TIGER place polygon. **21 rejected for Fort Wayne, 38 for Gary.** Gary's chosen file lands
+**60 m from the City Hall point IN-4's own probe uses**. Fort Wayne's carries no coordinates and was
+cleared instead by its uploader's description naming the Three Rivers Water Filtration Plant.
+
+### 🔴🔴 GARY'S COMMONS COVERAGE IS DOMINATED BY RUIN PHOTOGRAPHY
+
+Five of the six best candidates by size and aspect are the derelict City Methodist Church and
+abandoned buildings — every one wide, sharp, in-city, daylight and correctly licensed. **Ranking on
+measurements alone puts a collapsed church on the banner of a city whose mayor and council this
+slice seated.** Sorting Fort Wayne the same way puts three derelict parking garages on top.
+**Aspect is not merit.**
+
+⚠ Refused and worth recording: the **Allen County Courthouse**, Fort Wayne's strongest civic
+subject. Its dome sits too near the top edge to be centred in the band without discarding the
+building's width — the Milledgeville frontal-building failure exactly. And
+*"Marquette Park — Gates and **Chicago Skyline**"* was refused outright: another city's skyline.
+
+## ⚠ A PATCH THAT DID NOT APPLY COST THE HARVEST TWICE
+
+A change meant to make the portrait harvester merge rather than overwrite was written and reported
+as done. **Two of its three string replaces matched nothing**, so the script kept overwriting, and a
+transient timeout on three Allen pages destroyed the other seventeen pages' results — twice. A
+string replace that matches nothing is a no-op that looks exactly like success.
+
+▶ The builder and the harvester now **assert their own edits are present on disk after writing**.
+
 ## ▶ WHAT REMAINS FOR INDIANA
 
-1. **IN-4 — Gary** (Lake County). Not started. Council is 6 districts + 3 at-large, Mayor Eddie
-   Melton, plus a City Clerk; **confirm from Gary's own charter, do not inherit Fort Wayne's answer.**
-   ⚠ Gary's Municode page returns **403 to WebFetch** — use Playwright.
-   ⚠ Two council sites exist, `garycommoncouncil.gov` and `.org`; the `.gov` is current and a stale
-   search snippet named a different Council President.
-2. **Stage 4** — Allen and Lake counties. Allen's structure is already visible in the Election
-   Board's layer list: **3 County Commissioner districts + 4 County Council districts** (plus
-   at-large county council seats — confirm the count).
-3. **Stage 5** — headshots and banners, counting the legislature's **150** portraits inside it.
-4. The **671 orphan offices** and **21 surplus government rows**, both recorded debts.
+Stages 1-4 are closed. Stage 5 is applied and waits only on a merge.
+
+1. **Merge [essentials#133](https://github.com/EmpoweredVote/essentials/pull/133)** — the banner
+   registry entries. The assets are already live and byte-verified; on merge, stage 5 closes and
+   **Indiana is complete across all five stages**, the program's fourth slice after FL, GA and CA.
+2. **The two deferred geometries**, both to be **REQUESTED from the county, never georeferenced from
+   a PDF**: Gary's **2023 settlement map** (6 council district seats) and **Lake County Council's
+   seven districts**. Lake County GIS offers a "Request GIS Map or Data" form. Until they exist the
+   13 offices stay absent, asserted so by both probes.
+3. **The twelve portrait blanks** — see the table above. The six Allen officials are blank by
+   ruling, not for want of looking; Gary's City Court judge has no published page at all.
+4. The recorded debts: **671 unreachable offices** in `indiana_discovery` and **21 surplus
+   `State of Indiana` government rows**, 17 of which now hold no chamber. Neither is drift from this
+   slice; both predate it and are their own wave.
