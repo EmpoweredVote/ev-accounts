@@ -1,8 +1,12 @@
 # Indiana — the four debts, and how to pick them up cold
 
-**▶ Debt 4 is HALF CLOSED (2026-09-11): the six Gary portraits are imported, stage 5 is 192/204.
-The remaining 12 blanks are all settled by ruling or by absence of any source. Debts 1, 2 and 3 are
-untouched. Next cheapest is Debt 2, the 17 empty government rows.**
+**▶ STATUS 2026-09-11 — two of four are closed.**
+**Debt 2 CLOSED** (`CC_0098`): the 17 unreferenced `State of Indiana` rows are gone, 5 remain.
+**Debt 4 half closed**: the six Gary portraits are imported, stage 5 is **192/204**, and the
+remaining 12 blanks are all settled by ruling or by absence of any source.
+**Debts 1 and 3 are untouched** and both want a fresh context window — Debt 1 needs a disposition
+ruling before any SQL, Debt 3 is an open-ended hunt. A fifth item was found while closing Debt 2;
+it is at the bottom of this file.
 
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
 These are four things the slice measured, recorded and deliberately did not do. Ruling
@@ -81,7 +85,9 @@ actual rows:
 
 ---
 
-## Debt 2 — 22 `State of Indiana` government rows, 17 of them empty
+## Debt 2 — ✅ CLOSED 2026-09-11 (`CC_0098`)
+
+**17 unreferenced rows deleted, 5 remain.** What follows is the record of what it actually took.
 
 ```sql
 SELECT count(*) AS govs,
@@ -94,8 +100,21 @@ IN-2 repointed Indiana's 18 legislative offices off 18 pseudo-chambers and delet
 chambers, which left their government rows behind holding nothing. ⚠ Earlier notes say **21**; it
 is **22**, with **17** empty.
 
-This is the cheapest debt: the 17 empty rows reference nothing. **Confirm emptiness per row before
-deleting** — the five non-empty ones are load-bearing and one of them is the real Indiana.
+🔴 **"EMPTY OF CHAMBERS" WAS NOT THE RIGHT PREDICATE, AND THIS FILE HAD IT WRONG.**
+`essentials.governments` has exactly **one** inbound foreign key and it is **not** from chambers:
+`districts.government_id`, `ON DELETE NO ACTION`. Of the three rows carrying a single chamber, one
+is *also* referenced by a district. The delete therefore guards on **no chambers AND no districts**,
+which is still 17 — but the count agreeing was luck, not confirmation.
+
+⚠ **Five rows survive and two are large** — 16 chambers / 20 offices, and 11 chambers / 165 offices.
+**Which is "the real Indiana" is not settled**, and consolidating them would move offices between
+governments. That is a different decision with a different blast radius, deliberately not taken.
+
+🟢 **A control was watched firing**: planting a chamber on one of the 17 made the guarded delete
+remove **16, not 17**, and the planted row survived.
+
+✅ Applied, re-runs as `DELETE 0`, `CC_0088`/`CC_0089` still pass, all four CI gates green with
+`UNREACHABLE` and `BAD_GEOMETRY` still below baseline.
 
 ---
 
@@ -206,3 +225,27 @@ Doing 1 first made the stage-5 number true again before anyone quoted it: **192 
   `BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 37.
 - `essentials.offices_missing_terms` sits at **822 / 167 / 655**. The unflagged 655 is the number
   that matters.
+
+---
+
+## Debt 5 (new, found 2026-09-11 while closing Debt 2) — a chamber pointing at nothing
+
+🔴 **`essentials.chambers.government_id` HAS NO FOREIGN KEY.** The only inbound FK on
+`essentials.governments` is `districts.government_id`. So a chamber can reference a government row
+that does not exist, and one does:
+
+```sql
+SELECT c.id, c.name, c.official_count,
+       (SELECT count(*) FROM essentials.offices o WHERE o.chamber_id = c.id) AS offices
+FROM essentials.chambers c
+WHERE NOT EXISTS (SELECT 1 FROM essentials.governments g WHERE g.id = c.government_id);
+```
+
+One row: a chamber named **`Mayor`**, `official_count` 1, **0 offices**, `government_id`
+`d50caa4b-592f-42d8-8619-4ec82d9ac4ac`, which is not in `governments`. **It is not Indiana's** and
+predates this work — `CC_0098` neither caused it nor fixed it, and its gate asserts the orphan count
+is *unchanged* rather than zero for exactly that reason.
+
+Small, but it means **no count of "governments and their chambers" is safe without an existence
+check**, and it suggests the same shape may exist elsewhere. Worth one sweep: are there orphaned
+offices, districts or terms by the same mechanism?
