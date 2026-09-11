@@ -21,7 +21,8 @@ import {
 } from './question-generator.js';
 import type { Lane } from './lanes.js';
 import { fingerprintClaim } from './claimFingerprint.js';
-import { makeClaimGuard } from './claimGuard.js';
+import { makeClaimGuard, type ClaimVerdict } from './claimGuard.js';
+import { MIN_ENTITY_OVERLAP, normalizeEntities } from './claimIdentity.js';
 import { makeNearDuplicateCheck } from './nearDuplicate.js';
 import {
   createFingerprintStore,
@@ -47,6 +48,12 @@ interface LaneStats {
   contradictions: number;
   nearDuplicates: number;
   degenerate: number;
+  /**
+   * Claims decided by the prose fallback because the cluster carried fewer
+   * than two usable shared entities. The count that tells us whether the
+   * entity rule is actually reaching most claims — see logIdentityBasis.
+   */
+  identityFallbacks: number;
   /** Clusters routed here after the lane had already hit maxQuestionsPerLane. */
   capped: number;
   /** One quality-gate reason per blocked candidate, so a lane that blocks
@@ -62,9 +69,53 @@ function emptyStats(): LaneStats {
     contradictions: 0,
     nearDuplicates: 0,
     degenerate: 0,
+    identityFallbacks: 0,
     capped: 0,
     blockReasons: [],
   };
+}
+
+/**
+ * Emit the identity evidence for one claim check, on one grep-able tag.
+ *
+ * MIN_ENTITY_OVERLAP is a hypothesis, not a measurement — there were no
+ * cross-day entity measurements to tune it against when it was set. These
+ * lines are how it gets tuned: every value match is logged with its computed
+ * overlap whether it passed or missed, so a week of real runs yields the
+ * distribution of near-misses and matches. `grep '\[DedupOverlap\]'` over the
+ * run logs is the whole analysis.
+ *
+ * A near-miss is the interesting record: a value matched and the overlap did
+ * not clear the floor, so a question was generated that may or may not have
+ * been a duplicate. A cluster of near-misses at 0.30 says the floor is too
+ * high; matches bunched at 0.99 say it could be raised.
+ */
+function logIdentityBasis(
+  verdict: ClaimVerdict,
+  entities: readonly string[],
+  clusterTitle: string,
+): void {
+  const usable = normalizeEntities(entities);
+
+  if (verdict.mode === 'topic-fallback') {
+    // Logged even when there are no candidates to compare against: the rate
+    // at which clusters arrive with too few shared entities is itself the
+    // thing to watch. `sharedEntities` is the intersection across EVERY
+    // article in the cluster, so a large cluster can narrow it to nothing.
+    console.warn(
+      `[DedupOverlap] basis=topic-fallback usableEntities=${usable.length} ` +
+      `verdict=${verdict.kind} cluster="${clusterTitle}"`,
+    );
+  }
+
+  for (const o of verdict.overlaps) {
+    console.log(
+      `[DedupOverlap] basis=${o.basis} overlap=${o.overlap.toFixed(3)} ` +
+      `threshold=${MIN_ENTITY_OVERLAP} matched=${o.matched} ` +
+      `usableEntities=${usable.length} existingEntities=${o.existing.entities.length} ` +
+      `valueKey="${o.existing.valueKey}" existing=${o.existing.questionExternalId ?? 'unknown'}`,
+    );
+  }
 }
 
 // ─── Pipeline ─────────────────────────────────────────────────────────────────
@@ -358,14 +409,24 @@ export async function runNightlyPipeline(
           continue;
         }
 
-        const verdict = await guard.check(keys);
+        // `cluster.sharedEntities` is read straight off the cluster rather
+        // than threaded through ClaimResult: the entities describe the story,
+        // not the extracted triple, and the cluster is in scope here.
+        const verdict = await guard.check(keys, cluster.sharedEntities);
+        logIdentityBasis(verdict, cluster.sharedEntities, cluster.representativeTitle);
+        if (verdict.mode === 'topic-fallback') laneStats.identityFallbacks++;
 
         if (verdict.kind === 'duplicate') {
           laneStats.duplicates++;
-          console.log(`[Dedup] duplicate of ${verdict.existing.questionExternalId ?? '(unknown)'} — "${claimResult.subject} / ${claimResult.attribute}"`);
+          console.log(
+            `[Dedup] duplicate of ${verdict.existing.questionExternalId ?? '(unknown)'} ` +
+            `(basis=${verdict.basis} overlap=${verdict.overlap.toFixed(3)}) — ` +
+            `"${claimResult.subject} / ${claimResult.attribute}"`,
+          );
           rejections.push({
             reason: 'duplicate-claim', lane: target.lane, topicKey: keys.topicKey,
             valueKey: keys.valueKey, existing: verdict.existing.questionExternalId,
+            basis: verdict.basis, overlap: verdict.overlap,
           });
           continue;
         }
@@ -427,7 +488,9 @@ export async function runNightlyPipeline(
           // content IS present. What is deliberately not remembered is a
           // claim whose candidates were ALL rejected by the gates, so a
           // transient failure does not suppress the story permanently.
-          await guard.record(keys, target.lane, written[0]?.externalId ?? null, jobId);
+          await guard.record(
+            keys, cluster.sharedEntities, target.lane, written[0]?.externalId ?? null, jobId,
+          );
         }
       } catch (err) {
         // One bad cluster must not cost every lane the rest of the run.
@@ -508,7 +571,7 @@ export async function runNightlyPipeline(
           `[Pipeline] lane=${t.lane}: ${s.generated} generated, ${s.blocked} blocked, ` +
           `${s.duplicates} duplicate, ${s.contradictions} contradiction, ` +
           `${s.nearDuplicates} near-duplicate, ${s.degenerate} degenerate, ` +
-          `${s.capped} over-cap`,
+          `${s.capped} over-cap, ${s.identityFallbacks} prose-fallback`,
         );
 
         try {

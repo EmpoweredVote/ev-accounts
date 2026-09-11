@@ -133,6 +133,18 @@ export const claimFingerprints = triviaSchema.table('claim_fingerprints', {
   id: bigserial('id', { mode: 'number' }).primaryKey(),
   topicKey: text('topic_key').notNull(),
   valueKey: text('value_key').notNull(),
+  /**
+   * The story cluster's shared named entities. Identity is now
+   * value-equality + entity-overlap, not composite-key equality — see
+   * claimIdentity.ts. Empty array means "no entity data": rows written
+   * before this column existed, and rows recorded while the prose fallback
+   * was in force.
+   *
+   * REQUIRES A MIGRATION. The column does not exist in the database until
+   * the accompanying DDL is applied; until then every read of this table
+   * fails.
+   */
+  entities: text('entities').array().notNull().default(sql`'{}'::text[]`),
   lane: text('lane').notNull(),
   questionExternalId: text('question_external_id'),
   generationJobId: integer('generation_job_id').references(() => generationJobs.id, {
