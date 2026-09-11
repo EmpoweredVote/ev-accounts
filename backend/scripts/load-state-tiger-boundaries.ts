@@ -152,6 +152,43 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // cousub is deliberately EXCLUDED — Georgia is not a strong-MCD state, its county
   // subdivisions are statistical militia districts. Do NOT add GA to COUSUB_FUNCSTAT_STATES.
   GA: new Set(['sldu', 'sldl', 'place']),
+  // TN. Knight program — unblocks the Nashville landing chip's State band. Migration 1855
+  // seeded the 132 General Assembly offices (99 House + 33 Senate) but TN had ZERO G5210/G5220
+  // geofences, so no address or chip could reach a single legislator: browsing Nashville
+  // returned only the Governor while the same call for Columbus GA returned 5 HD + 2 SD.
+  // This entry is what lets those polygons load. Counts MEASURED against raw TIGER 2024
+  // FIPS 47 on 2026-09-11 by reading the .dbf directly; asserted in the TN pre-flight below.
+  // 🔴 VINTAGE IS THE 2022 PLANS, AND THAT WAS PROVEN, NOT ASSUMED. Tennessee redistricted
+  // MID-DECADE in May 2026 — but CONGRESSIONAL ONLY: HB 7002 repealed the mid-decade
+  // prohibition and HB 7003 enacted the new congressional map, both signed 2026-05-07. The
+  // legislative maps are untouched: House HB 1035 and Senate SB 780, both signed 2022-02-06.
+  // A trial court struck the Senate map in Nov 2023, but the Tennessee Supreme Court REVERSED
+  // on 2025-12-10 (House challenge rejected on the merits, Senate on standing), so the 2022
+  // plans remain operative. The General Assembly's own member directory still links its
+  // district maps under capitol.tn.gov/DistrictMaps/2022/.
+  // TIGER 2024 carries LSY=2024 on both layers — but LSY is a field, not proof. Following the
+  // GA precedent, EVERY polygon was tested: all 99 + 33 TIGER interior points (INTPTLAT/
+  // INTPTLON) were probed against the State of Tennessee's own ArcGIS service
+  // (tnmap.tn.gov/arcgis/rest/services/ADMINISTRATIVE_BOUNDARIES/LEGISLATIVE_DISTRICTS,
+  // layer 0 Senate / layer 1 House, which the state publishes as current boundaries and whose
+  // own feature counts are 33 and 99). Result: 132/132 agree, 0 differ.
+  // Tennessee is single-member in BOTH chambers, so polygon count IS seat count: 99 + 33.
+  // Art. II §5 fixes the House at ninety-nine; §6 caps the Senate at one-third of that and the
+  // apportionment act sets 33. This is NOT the AZ/WA multi-member shape.
+  // ⚠ TN HOUSE DISTRICTS DO NOT NEST INSIDE SENATE DISTRICTS, despite the exact 3:1 ratio that
+  // invites the assumption. Measured 2026-09-11 against the loaded polygons: only 28 of 99
+  // House districts fall wholly within a single Senate district, and there are 200 HD×SD
+  // overlaps above 0.1% of HD area. Same conclusion as Colorado — a resident's Senate district
+  // CANNOT be derived from their House district; both layers must be resolved independently by
+  // ST_Covers, which is what address search already does.
+  // 🔴 THE geo_id COLLISION IS THREE-WAY HERE, like Georgia's. sldl runs 47001..47099, sldu
+  // 47001..47033, and TN's 95 county GEOIDs (47001..47189) overlap both — '47037' is Davidson
+  // County AND House District 37. Every downstream join must pair geo_id with district_type or
+  // mtfcc; never match a district on geo_id alone.
+  // Neither SLD file carries a 'ZZZ' pseudo-district, so skipDistrictCodes removes nothing.
+  // place/county are deliberately EXCLUDED: this entry exists to wire legislative routing, and
+  // TN's counties already exist and carry the Nashville offices — do not disturb them.
+  TN: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1600,8 +1637,55 @@ async function processLayer(
     }
   }
 
+  // ── TN MTFCC pre-flight assertion (Knight program — Nashville State band) ───
+  // Counts MEASURED against raw TIGER 2024 FIPS 47 on 2026-09-11 by parsing the
+  // .dbf inside each zip directly, not inferred from statute:
+  //   sldl  99 records, 0 'ZZZ', LSY=2024, MTFCC G5220, GEOID 47001..47099
+  //   sldu  33 records, 0 'ZZZ', LSY=2024, MTFCC G5210, GEOID 47001..47033
+  // Tennessee is single-member in BOTH chambers, so these polygon counts ARE the
+  // seat counts (99 Representatives + 33 Senators) — not the AZ/WA shape where one
+  // SLDL polygon carries two seats. They also match, exactly, the 99 + 33 district
+  // rows migration 1855 seeded and the 99 + 33 feature counts the State of
+  // Tennessee's own ArcGIS service reports for its House and Senate layers.
+  // If either count drifts, a legislative remap has happened. Tennessee has already
+  // redistricted mid-decade once (congressional, May 2026) and the legislative maps
+  // survived a state supreme court challenge in Dec 2025, so treat a drift as real:
+  // stop and re-verify the vintage against the state's own map. Do NOT raise the
+  // number to get a green run.
+  if (fipsArg === '47') {
+    const EXPECTED_TN_MTFCC: Record<string, number> = {
+      sldl: 99, // 99 TN House districts (HB 1035, signed 2022-02-06) — measured 2026-09-11, no 'ZZZ' row
+      sldu: 33, // 33 TN Senate districts (SB 780, signed 2022-02-06) — measured 2026-09-11, no 'ZZZ' row
+    };
+    if (layer in EXPECTED_TN_MTFCC) {
+      const expected = EXPECTED_TN_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[TN MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 47 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] TN MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
