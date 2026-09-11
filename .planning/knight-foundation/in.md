@@ -949,6 +949,48 @@ Stages 1, 2, 4 and 5 are closed. **Stage 3 is the only one open**, and one thing
 
 1. **Gary's six district council seats** — the one thing between Indiana and a complete slice.
    Stage 3 cannot close without the 2023 settlement map, which is why stage 3 alone still reads WIP.
+
+   ✅ **The current map has been FOUND, and it is not loadable.** Lake County publishes
+   `GARY CITY COUNCIL DISTRICTS 3X5.pdf` under `departments/voters/maps-gis/CITY-COUNCIL-DISTRICT-MAPS/`:
+   six districts, **prepared by the Lake County Board of Elections & Registration**, **created in
+   Esri ArcMap 10.8.1 on 2024-03-01** — thirteen months after the settlement map was adopted, and a
+   decade after the 2014 GitHub layer IN-4 rejected. It is **7 raster images with ZERO vector path
+   operations** and is stamped *"FOR REFERENCE ONLY"*, so there is no geometry in it to extract.
+
+   ▶ **But its metadata names the source**: the layer exists in ArcMap at the Board of Elections.
+   The request is no longer "do you have a map" but *"please export the council-district feature
+   class behind GARY CITY COUNCIL DISTRICTS 3X5.pdf, created 2024-03-01"*.
+
+### 🔴🔴 THE PRECINCT-DISSOLVE SHORTCUT WAS TESTED AND IT FAILS — TIGER 2020 IS THE PRE-SETTLEMENT MAP
+
+The map labels each precinct `G<district> <precinct>`, and Census publishes
+`tl_2020_18_vtd20.zip` — **all 52 Gary precincts, same naming scheme, including the odd `5-24NV`**.
+That looked like a way to build the six districts by dissolving precincts, with no georeferencing
+and no data request. Rendering the 52 TIGER polygons coloured by the district their own name
+encodes produces a map that looks **strikingly like** the county's: orange 2nd top-left, purple 1st
+along the lake, mint 3rd west, pink 4th centre, blue 5th, yellow 6th south.
+
+**It is wrong, and three named precincts prove it.** Read off the county's 2024 map at 6x zoom:
+
+| county 2024 map prints | TIGER 2020 puts that precinct number in district |
+| --- | --- |
+| `G4 01` | 2 and 5 — **not 4** |
+| `G5 22` | 1 and 4 — **not 5** |
+| `G5 28` | 4 — **not 5** |
+
+TIGER's district 4 is `03 05 10 14 16 22 23 25 28`; its district 5 is `01 02 03 04 06 13 14 16 19
+24NV`. The 2023 settlement reassigned precincts between districts, and **the district number is
+part of the precinct's name**, so there is no stable key linking a 2020 precinct to a 2024 one.
+Dissolving TIGER would have produced six correctly-shaped, correctly-named, **wrong** districts.
+
+🔴 **This is the 2014-layer trap one vintage later, and far better disguised** — a federal source,
+the right city, the right precinct count, the right naming scheme, and a picture that matches at a
+glance. **Only three specific labels give it away.**
+
+⚠ **A colour-area comparison was attempted first and was a BROKEN DETECTOR** — it sampled legend
+swatches at hardcoded coordinates, hit white, and reported districts 1, 2, 3 and 4 as holding
+**exactly 24.2%** each. Four identical numbers is the tell. Nothing was concluded from it; the
+verdict rests on the three named precincts.
 2. **The two deferred geometries**, both to be **REQUESTED from the county, never georeferenced from
    a PDF**: Gary's **2023 settlement map** (6 council district seats) and **Lake County Council's
    seven districts**. Lake County GIS offers a "Request GIS Map or Data" form. Until they exist the
