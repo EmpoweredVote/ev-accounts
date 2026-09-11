@@ -15,6 +15,19 @@ export const pool = new Pool({
   ssl: { rejectUnauthorized: false },
 });
 
+// On every new connection, resolve unqualified spatial functions and operators via
+// the search_path so PostGIS can move out of `public` (ev-cto decision 0006, Option B)
+// without changing any query text. `public` MUST stay in the list during the
+// transition: PostGIS lives there today, so ST_ / && resolve via `public` now and via
+// `extensions` once support relocates the extension. `"$user"` keeps the role's own
+// schema first, matching the postgres role default. Mirrors the trivia pool's connect
+// hook (src/trivia/config/database.ts); SET is more reliable than the `options`
+// connection parameter, which Supavisor may not forward on new connections.
+pool.on('connect', (client) => {
+  client.query('SET search_path TO "$user", public, extensions')
+    .catch((err: Error) => console.error('[pool] failed to set search_path:', err.message));
+});
+
 pool.on('error', (err) => {
   console.error('[pool] idle client error:', err.message);
 });

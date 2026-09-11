@@ -33,8 +33,8 @@ describe('overlap resolution captures county + school, not just legislative', ()
       expect(list).toContain(code);
     }
     // ...and that branch resolves by real interior overlap, not a boundary touch.
-    expect(BROWSE).toMatch(/public\.ST_Intersects/);
-    expect(BROWSE).toMatch(/AND\s+NOT\s+public\.ST_Touches/);
+    expect(BROWSE).toMatch(/ST_Intersects/);
+    expect(BROWSE).toMatch(/AND\s+NOT\s+ST_Touches/);
   });
 
   it('exposes a multi-seed resolver and a government-geofence resolver', () => {

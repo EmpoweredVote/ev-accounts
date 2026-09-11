@@ -341,9 +341,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       LIMIT 1
     ) gb ON true
     WHERE gb.geometry IS NOT NULL
-      AND public.ST_Covers(
+      AND ST_Covers(
         gb.geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
       AND ${ELECTION_VISIBILITY_WINDOW}
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
@@ -354,9 +354,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     SELECT DISTINCT d.state
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
-    WHERE public.ST_Covers(
+    WHERE ST_Covers(
       gb.geometry,
-      public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
     )
     AND d.state IS NOT NULL
     LIMIT 1

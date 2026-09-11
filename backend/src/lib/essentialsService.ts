@@ -787,9 +787,9 @@ async function resolveOfficialsAtPoint(
     // geofence_name feeds pickCountyFromDistrictRows — the county's real name,
     // as opposed to district_label, which is a seat label ("At-Large").
     extraSelect: ', gb.name AS geofence_name',
-    spatialPredicate: `public.ST_Covers(
+    spatialPredicate: `ST_Covers(
       gb.geometry,
-      public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
     )`,
     includeChallengers,
   });
@@ -802,9 +802,9 @@ async function resolveOfficialsAtPoint(
     SELECT geo_id, name
     FROM essentials.geofence_boundaries
     WHERE mtfcc = 'X0004'
-      AND public.ST_Covers(
+      AND ST_Covers(
         geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
     LIMIT 1
   `;
@@ -816,9 +816,9 @@ async function resolveOfficialsAtPoint(
     SELECT geo_id, name
     FROM essentials.geofence_boundaries
     WHERE mtfcc IN ('G4110', 'G4120')
-      AND public.ST_Covers(
+      AND ST_Covers(
         geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
     LIMIT 1
   `;
@@ -830,9 +830,9 @@ async function resolveOfficialsAtPoint(
     SELECT geo_id, name
     FROM essentials.geofence_boundaries
     WHERE mtfcc = 'G4020'
-      AND public.ST_Covers(
+      AND ST_Covers(
         geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
     LIMIT 1
   `;
@@ -1091,9 +1091,9 @@ async function deriveStateAbbrevForPoint(lng: number, lat: number): Promise<stri
         (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
         OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
       )
-    WHERE public.ST_Covers(
+    WHERE ST_Covers(
       gb.geometry,
-      public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
     )
     `,
     [lng, lat],
@@ -1116,9 +1116,9 @@ async function deriveStateAbbrevForPoint(lng: number, lat: number): Promise<stri
     SELECT geo_id
     FROM essentials.geofence_boundaries
     WHERE mtfcc = 'G4000'
-      AND public.ST_Covers(
+      AND ST_Covers(
         geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
     LIMIT 1
     `,
@@ -1142,9 +1142,9 @@ async function findCoveringCdGeoId(lng: number, lat: number): Promise<string | n
     SELECT geo_id
     FROM essentials.geofence_boundaries
     WHERE mtfcc = 'G5200'
-      AND public.ST_Covers(
+      AND ST_Covers(
         geometry,
-        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+        ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
       )
     LIMIT 1
     `,
