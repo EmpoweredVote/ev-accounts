@@ -153,15 +153,10 @@ describe('robots.txt parsing', () => {
 describe('createVerificationFetchSession — robots gate', () => {
   it('skips the live tiers and returns robots_disallowed when disallowed and no snapshot', async () => {
     let httpCalls = 0;
-    let renderCalls = 0;
     const session = createVerificationFetchSession({
       robotsAllows: async () => false,
       httpFetch: async () => {
         httpCalls++;
-        return 'x'.repeat(MIN_REAL_PAGE_CHARS + 100);
-      },
-      render: async () => {
-        renderCalls++;
         return 'x'.repeat(MIN_REAL_PAGE_CHARS + 100);
       },
       wayback: async () => null, // no archived snapshot
@@ -170,9 +165,8 @@ describe('createVerificationFetchSession — robots gate', () => {
     await expect(session.fetch('https://blocked.example/story')).rejects.toBeInstanceOf(
       RobotsDisallowedError,
     );
-    // The live tiers must never run for a disallowed path.
+    // The live tier must never run for a disallowed path.
     expect(httpCalls).toBe(0);
-    expect(renderCalls).toBe(0);
   });
 
   it('serves the archived snapshot when disallowed but Wayback has a copy', async () => {
@@ -184,7 +178,6 @@ describe('createVerificationFetchSession — robots gate', () => {
         httpCalls++;
         return 'live';
       },
-      render: async () => 'live',
       wayback: async () => archived,
     });
 
@@ -201,11 +194,43 @@ describe('createVerificationFetchSession — robots gate', () => {
         httpCalls++;
         return real;
       },
-      render: async () => 'unused',
       wayback: async () => null,
     });
 
     expect(await session.fetch('https://ok.example/story')).toBe(real);
     expect(httpCalls).toBe(1);
+  });
+});
+
+describe('ladder is browser-free (tier 1 → Wayback)', () => {
+  it('reaches Wayback after a tier-1 miss, with no browser rung in between', async () => {
+    let httpCalls = 0;
+    let waybackCalls = 0;
+    const archived = 'The council approved the levy on Tuesday. '.repeat(30);
+    // Note: no `render`/browser dep is provided — and none exists on the deps type.
+    const session = createVerificationFetchSession({
+      robotsAllows: async () => true,
+      httpFetch: async () => {
+        httpCalls++;
+        return 'too short'; // not a real page → must escalate
+      },
+      wayback: async () => {
+        waybackCalls++;
+        return archived;
+      },
+    });
+
+    expect(await session.fetch('https://ok.example/x')).toBe(archived);
+    expect(httpCalls).toBe(1);
+    expect(waybackCalls).toBe(1);
+    // close() must remain callable (a no-op now) for existing callers.
+    await expect(session.close()).resolves.toBeUndefined();
+  });
+
+  it('the ladder source references no browser (no Playwright / Chromium / renderPage)', () => {
+    const src = readFileSync(new URL('./verificationFetch.ts', import.meta.url), 'utf8');
+    expect(src).not.toMatch(/playwright/i);
+    expect(src).not.toMatch(/chromium/i);
+    expect(src).not.toMatch(/renderPage/);
   });
 });
