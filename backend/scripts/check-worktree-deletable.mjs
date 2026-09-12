@@ -69,30 +69,69 @@ const git = (cwd, args, allowFail = false, { raw = false } = {}) => {
   }
 };
 
-const branch = git(wt, ["rev-parse", "--abbrev-ref", "HEAD"], true);
+// `--abbrev-ref HEAD` answers the STRING "HEAD" on a detached checkout, which is not a branch
+// name. Passing it through produced the advice `git push origin --delete HEAD` — a command that
+// names no branch anyone meant to delete. A detached worktree has no branch advice to give.
+const branchRaw = git(wt, ["rev-parse", "--abbrev-ref", "HEAD"], true);
+const branch = branchRaw === "HEAD" ? null : branchRaw;
 const head = git(wt, ["rev-parse", "HEAD"], true);
 if (!head) { console.error(`${wt}: not a git worktree`); process.exit(2); }
 
 git(wt, ["fetch", "origin", "--quiet"], true);
 
-// 1. Fully merged into origin/master?
-const merged = git(wt, ["merge-base", "--is-ancestor", head, "origin/master"], true) !== null;
+// 1. Is this work upstream — BY EITHER ROUTE?
+//
+// 🔴 ANCESTRY IS ONLY ONE ROUTE, AND NOT THE ONE THIS REPO USES. A squash merge replays the whole
+//    branch as ONE NEW COMMIT, so a fully and permanently merged branch's tip is never an ancestor
+//    of master. `merge-base --is-ancestor` answers NO for it. Minutes after PR #486 was squashed
+//    onto master, this check refused to let go of #486's own worktree for exactly that reason —
+//    and the three merges before it were squashes too. A false "you would drop commits" on the
+//    common case teaches people to pass --force, which is how the check stops being read at all.
+const isAncestor = git(wt, ["merge-base", "--is-ancestor", head, "origin/master"], true) !== null;
 
-// 2. Merged content byte-identical? Compare the branch tip's tree against origin/master for
-//    the paths this branch actually touched — a diff over the whole repo would report every
-//    OTHER change merged since, which is not this branch's business.
-let identicalContent = true;
+// 2. Content comparison — ALWAYS MEASURED.
+//
+// 🔴 THIS USED TO SIT INSIDE `if (merged)`, so when ancestry said NO it never ran, and its
+//    variable kept the initial `true`. The report then printed `content identical : yes` for a
+//    comparison that had not happened. That is worse than the wrong verdict above it: it is a
+//    reassuring answer from a test nobody performed. Now it is a tri-state, and 'unknown' BLOCKS.
+//
+//    Compare only the paths this branch TOUCHED. A whole-repo diff would report every other
+//    change merged since, which is not this branch's business.
+const base = git(wt, ["merge-base", head, "origin/master"], true);
+let contentState = "unknown";
 let differing = [];
-if (merged) {
-  const base = git(wt, ["merge-base", head, "origin/master"], true);
+let comparedCount = 0;
+if (base) {
   const touched = git(wt, ["diff", "--name-only", `${base}..${head}`], true);
-  const files = touched ? touched.split("\n").filter(Boolean) : [];
-  if (files.length) {
-    const out = git(wt, ["diff", "--name-only", head, "origin/master", "--", ...files], true);
-    differing = out ? out.split("\n").filter(Boolean) : [];
-    identicalContent = differing.length === 0;
+  if (touched !== null) {
+    const files = touched.split("\n").filter(Boolean);
+    comparedCount = files.length;
+    if (files.length === 0) {
+      contentState = "same";   // the branch changed nothing; there is nothing to lose
+    } else {
+      const out = git(wt, ["diff", "--name-only", head, "origin/master", "--", ...files], true);
+      if (out !== null) {
+        differing = out.split("\n").filter(Boolean);
+        contentState = differing.length === 0 ? "same" : "differs";
+      }
+    }
   }
 }
+
+// `git cherry` compares by PATCH-ID. It catches a single-commit branch that was squashed, but NOT
+// a multi-commit one — squashing three commits produces a patch that equals none of them. So it is
+// corroboration for the REPORT, never the gate. The gate is the content comparison above, which
+// answers the question that actually matters: does master already carry what this branch wrote?
+let patchUpstream = false;
+if (!isAncestor) {
+  const cherry = git(wt, ["cherry", "origin/master", head], true);
+  if (cherry !== null) {
+    const lines = cherry.split("\n").filter(Boolean);
+    patchUpstream = lines.length > 0 && lines.every((l) => l.startsWith("-"));
+  }
+}
+const upstream = isAncestor ? "ancestor" : (contentState === "same" ? "squash" : "none");
 
 // 3. Stash count. Stashes are SHARED across worktrees and are usually somebody else's, so the
 //    honest measure is whether the count moved while this branch existed. Without a recorded
@@ -134,12 +173,21 @@ try {
 if (!untracked.some((p) => /(^|[\\/])\.env$/.test(p))) envIdentical = true;  // none present: moot
 
 const v = verdictFor({
-  merged, identicalContent, stashDelta, untracked, modified, envIdentical, controlPassed,
+  upstream, contentState, stashDelta, untracked, modified, envIdentical, controlPassed,
 });
 
 console.log(`${wt}  [${branch ?? "detached"}]`);
-console.log(`  merged into origin/master : ${merged ? "yes" : "NO"}`);
-console.log(`  content identical         : ${identicalContent ? "yes" : `NO (${differing.slice(0, 5).join(", ")})`}`);
+const upstreamNote = {
+  ancestor: "yes — origin/master contains this commit",
+  squash: `yes — not an ancestor, but master already carries this branch's content${
+    patchUpstream ? " (and its patch is upstream)" : ""}. This is what a squash merge leaves`,
+  none: "NO",
+}[upstream];
+console.log(`  work is upstream          : ${upstreamNote}`);
+console.log(`  content identical         : ${
+  contentState === "same" ? `yes (${comparedCount} path(s) compared)`
+  : contentState === "differs" ? `NO (${differing.slice(0, 5).join(", ")})`
+  : "UNKNOWN — the comparison could not be made, so this blocks"}`);
 console.log(`  stash count               : ${stashCount}${baseline === null
   ? "  (no STASH_BASELINE given — not compared; set it to check the delta)" : `  (baseline ${baseline}, delta ${stashDelta})`}`);
 console.log(`  untracked scan control    : ${controlPassed ? "PASSED — the scan can see a planted file" : "FAILED — the scan is blind"}`);
@@ -149,7 +197,17 @@ console.log(`  tracked, uncommitted edits: ${modified.length} file(s)`);
 if (v.safe) {
   console.log("\nSAFE TO DELETE. Nothing here exists only here.");
   console.log(`  git worktree remove --force ${wt}   # --force is for node_modules/.env, checked above`);
-  if (branch) console.log(`  git branch -d ${branch} && git push origin --delete ${branch}`);
+  if (branch) {
+    // `git branch -d` refuses a squash-merged branch — its tip is not an ancestor, which is the
+    // very thing this check now looks past. Advising -d there sends people into an error they
+    // resolve with -D anyway, having lost the reason it was safe. Say -D, and say why.
+    const flag = upstream === "squash" ? "-D" : "-d";
+    const note = upstream === "squash"
+      ? "   # -D because the tip is not an ancestor; the content check above is why that is safe"
+      : "";
+    console.log(`  git branch ${flag} ${branch}${note}`);
+    console.log(`  git push origin --delete ${branch}   # optional — this repo keeps merged branches`);
+  }
   process.exit(0);
 }
 

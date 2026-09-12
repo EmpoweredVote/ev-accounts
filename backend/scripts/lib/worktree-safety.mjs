@@ -112,8 +112,12 @@ export function unquotePath(raw) {
 
 /**
  * @param {object} facts
- * @param {boolean} facts.merged            branch fully contained in origin/master
- * @param {boolean} facts.identicalContent  merged tree matches this branch's tip byte for byte
+ * @param {'ancestor'|'squash'|'none'} facts.upstream  HOW the work reached master. Ancestry is
+ *        only one route: a squash merge replays the branch as one new commit, so a fully merged
+ *        branch's tip is NOT an ancestor. Absent is read as 'none'.
+ * @param {'same'|'differs'|'unknown'} facts.contentState  result of comparing the paths this
+ *        branch touched against master. 'unknown' means the comparison could not be made and
+ *        BLOCKS — it must never be inherited as a pass. Absent is read as 'unknown'.
  * @param {number}  facts.stashDelta        change in the repo-wide stash count during the work
  * @param {string[]} facts.untracked        untracked-and-ignored paths present
  * @param {string[]} facts.modified         TRACKED paths carrying uncommitted changes
@@ -135,16 +139,29 @@ export function verdictFor(facts) {
     else unique.push(path);
   }
 
-  if (!facts.merged) {
+  // 🔴 ABSENT IS NOT PERMISSION. Both of these read a MISSING fact as the blocking value, because
+  //    the bug they replace was exactly a fact that went unmeasured and kept a passing default.
+  const upstream = facts.upstream ?? "none";
+  const contentState = facts.contentState ?? "unknown";
+
+  if (upstream === "none") {
     blockers.push({
       kind: "not-merged",
-      why: "the branch is not fully contained in origin/master — deleting it would drop commits",
+      why: "master contains this work by neither route — not by ancestry, and not as a squash "
+        + "whose patch is already upstream. Deleting it would drop commits",
     });
   }
-  if (!facts.identicalContent) {
+  if (contentState === "differs") {
     blockers.push({
       kind: "content-differs",
-      why: "what merged is not byte-identical to this branch's tip; something did not land",
+      why: "what is on master is not byte-identical to this branch's tip; something did not land",
+    });
+  }
+  if (contentState === "unknown") {
+    blockers.push({
+      kind: "content-unknown",
+      why: "the content comparison could not be made, so nothing is known about whether the work "
+        + "landed. An unmeasured check is not a passing one — it used to print 'identical: yes'",
     });
   }
   if (facts.stashDelta !== 0) {
@@ -178,5 +195,5 @@ export function verdictFor(facts) {
     });
   }
 
-  return { safe: blockers.length === 0, blockers, ignored };
+  return { safe: blockers.length === 0, blockers, ignored, upstream, contentState };
 }
