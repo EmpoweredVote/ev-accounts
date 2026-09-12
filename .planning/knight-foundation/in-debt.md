@@ -1,12 +1,12 @@
 # Indiana — the four debts, and how to pick them up cold
 
-**▶ STATUS 2026-09-11 — three of four are closed.**
+**▶ STATUS 2026-09-12 — ALL FOUR ARE CLOSED.** (Debt 5, the orphaned `Mayor` chamber, is still open
+and is not Indiana's.)
 **Debt 2 CLOSED** (`CC_0098`): the 17 unreferenced `State of Indiana` rows are gone, 5 remain.
 **Debt 4 half closed**: the six Gary portraits are imported, stage 5 is **192/204**, and the
 remaining 12 blanks are all settled by ruling or by absence of any source.
 **Debt 3 CLOSED 2026-09-11** (`CC_0099` + `CC_0100`): the geometry was found, vintage-proved and the
-seven members seated. **Lake County is 19 of 19.** **Debt 1 is RULED and half applied**: `CC_0101` flipped the flags on 587 rows; retiring the
-offices is step 2. A fifth item was found while closing Debt 2;
+seven members seated. **Lake County is 19 of 19.** **Debt 1 CLOSED** across `CC_0101`-`CC_0104`: flags, identity merge, then both halves of the retirement. A fifth item was found while closing Debt 2;
 it is at the bottom of this file.
 
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
@@ -143,14 +143,62 @@ discriminating the migration refuses to run.
 ▶ The end-to-end assertion is **in the gate**: it runs the search endpoint's own query shape for
 Aaron Freeman and requires exactly 1 row.
 
-### ▶ Step 2b — the remaining 587 orphan offices
+### ✅ Step 2b — the remaining 587 retired 2026-09-12 (`CC_0104`)
 
-Not written. Class B and C: people who hold **no** real seat, so for them the orphan office is the
-only office on the record. That is a different argument from class A and deserves its own pass.
-`CC_0102` has already moved the 55 finance links off the class B rows, so those orphan offices now
-carry nothing at all.
+**587 orphan offices deleted with their 587 placeholder terms. The cohort is closed: Indiana holds
+ZERO placeholder occupancies.** System-wide the count falls 77,001 → **76,330**, all CalAccess.
 
-⚠ Still open from the review: **Ronald Turpin** (ruled *unsure*) and the **13 ruled different**.
+This was the harder half and the reason is worth keeping. Class A was a duplicate of a better row.
+**These 587 people hold no other office at all**, so the delete leaves them with none. It is still
+right, because the row is FALSE for every one of them: for a former officeholder — Pence, Holcomb,
+Connie Lawson, Rebecca Skillman, Jon Ford — it asserts the office in the **present tense**, and it
+carries no dates, so it does not record that they once held it; for a losing candidate it is simply
+wrong. ▶ **The title records the office SOUGHT, not one held.**
+
+⚠ **Nothing in the row tells the two apart** — no `total_years_in_office`, no `bio_text` on all but
+three, no `valid_from`, every term the undated phase-2 backfill. Which is exactly why one
+disposition fits both: unreachable, undated and untrue either way.
+
+🟢 **WHAT SURVIVED IS THE PART WORTH KEEPING.** The FK on `politician_sources` is to the PERSON:
+
+| | kept |
+| --- | --- |
+| people | **672**, all of them, deactivated |
+| candidate-committee sources | **537** on the 588 who now hold nothing, **84** on the class A people = 621 |
+| researched stance answers | **79**, across 7 people, including Jon Ford's 11 |
+
+**Deleting an office loses no research.** If a later roster wave seats any of them properly, their
+stances and finance record come with them.
+
+🟢 **The control changed shape between the two steps, on purpose.** `CC_0103`'s clause was "the
+holder ALSO holds a real seat" (84 of 671). Afterwards every remaining orphan is held by an
+INACTIVE person — measured 587 inactive, **0 active** — so `CC_0104` asserts both halves. An active
+holder appearing in that set means a class A row has come back, and it refuses to run.
+
+⚠ **The gate that actually proved nothing was lost was the TABLE-WIDE one**: `politician_sources`
+and `politician_answers` totals captured before the delete and compared after. A cohort-scoped
+count would not have caught collateral damage elsewhere — and an ad-hoc check written afterwards
+read 621 against an expected 536 purely because it was measuring a superset.
+
+### Debt 1 — ✅ CLOSED 2026-09-12
+
+| step | migration | result |
+| --- | --- | --- |
+| 1 — flags | `CC_0101` | 587 orphan-only people deactivated |
+| identity merge | `CC_0102` | 55 committee sources repointed to the seated officeholder |
+| 2a — class A | `CC_0103` | 84 duplicate offices retired; Aaron Freeman returns 1 row, not 2 |
+| 2b — class B/C | `CC_0104` | 587 orphan offices retired; the cohort is closed |
+
+**Indiana browse count: 1,252 → 665 → 581 → 581.** `offices_missing_terms` unchanged throughout at
+822 / 655 — these offices always carried a term, so the view never listed them.
+
+▶ **Two things remain, and neither is the cohort.**
+1. **Ronald Turpin**, the single *unsure* from the review — the orphan said State Senator, the seat
+   is an Allen County commissioner. His office is retired with the rest; the identity question is open.
+2. **The `DISTINCT` itself.** `CC_0103` removed the 84 Indiana rows that were exercising the
+   politician-rooted fan-out. **The fan-out is still there** — anyone holding a genuine second seat
+   still returns twice from `GET /api/essentials/politicians?q=`, and `getPoliticianById` still takes
+   `rows[0]` of an unordered join. That is a live-endpoint behaviour change and wants its own decision.
 
 ### 🔴🔴 A GUARANTEE IN CLAUDE.md IS HALF TRUE, AND IT LICENSED THE BUG
 

@@ -61,9 +61,9 @@ WHERE p.source = 'indiana_discovery'
   AND o.chamber_id IS NULL
   AND nullif(btrim(coalesce(o.representing_city, '')), '') IS NULL
   AND EXISTS (
-    SELECT 1 FROM essentials.office_current_holder o2
-     JOIN essentials.offices oo ON oo.id = o2.office_id
-    WHERE o2.politician_id = p.id AND oo.district_id IS NOT NULL);
+    SELECT 1 FROM essentials.office_current_holder och2
+     JOIN essentials.offices oo ON oo.id = och2.office_id
+    WHERE och2.politician_id = p.id AND oo.district_id IS NOT NULL);
 
 -- ─── Pre-flight ──────────────────────────────────────────────────────────────
 
