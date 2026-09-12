@@ -133,8 +133,13 @@ port. Full logs captured; key signals:
 
 ## Verification
 
-- `npm run build` — passes.
-- `npm run test:unit` — 123 files, 1599 tests, all pass (includes
-  `src/jobs/registry.test.ts`). Integration tests under `../tests/**` need real secrets
-  this checkout lacks; this change cannot affect them — the `index.ts` edits are all inside
-  the `NODE_ENV !== 'test'` guard, and `env.ts` only adds one optional field.
+- `npm run build` — passes. `tsc` type-checks the registry: each entry is a named import of
+  a real run-function, so a renamed or removed job export fails the build.
+- `npm run test:unit` — passes. No unit test imports the job registry: importing it pulls in
+  the env-validating chain (`supabase.ts` → `env.ts`, which exits at import when secrets are
+  absent), and CI's unit step runs without secrets — `ci.yml` documents this rule and
+  excludes another such file by name. The registry wiring is guarded by `tsc` above and by
+  the runtime proofs below.
+- Integration tests under `../tests/**` need real secrets and are unaffected: the `index.ts`
+  edits are all inside the `NODE_ENV !== 'test'` guard, and `env.ts` only adds one optional
+  field.
