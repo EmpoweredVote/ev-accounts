@@ -108,15 +108,59 @@ measure of what step 2 is for.**
 those 587 left campaign-finance search. That makes Indiana consistent with CalAccess's 76,330,
 which were already excluded the same way.
 
-### ▶ Step 2 — retire the 671 orphan offices
+### ✅ Step 2a — class A retired 2026-09-12 (`CC_0103`)
 
-Not yet written. The mechanical cost is low and was measured: `essentials.offices` has exactly two
-inbound FKs — `office_terms` (CASCADE) and `races` (NO ACTION) — **0 races reference these**, and
-**0** legacy `politicians.office_id` snapshots point at them. The 671 people, their 79 stance
-answers and 92 photos all survive, because those hang off the person.
+**84 duplicate offices deleted, with their 84 placeholder terms.** No person deleted, no flag
+touched, and the other 587 orphan offices untouched.
 
-**Class A is the highest-value part and needs no ruling**: 84 pure duplicates of a seat the person
-already holds, and retiring them is what finally fixes the two-row search result.
+The bar for a DELETE was met by showing the row asserts nothing: no district, no chamber, no
+government, no city; a term from the phase-2 backfill with no dates and `precision 'unknown'`;
+**0 races** referencing it and **0** legacy `politicians.office_id` snapshots pointing at it. And
+the title is the same seat, measured across all 84 rather than assumed:
+
+| orphan title | real seat | n |
+| --- | --- | --- |
+| `State Representative` | Representative | 33 |
+| `Indiana Elected Official` | Representative | 23 |
+| `State Senator` | Senator | 18 |
+| `Indiana Elected Official` | Senator | 10 |
+
+**Not one contradicts.** Nobody holds a House seat plus an orphan "Governor".
+
+🟢 **A control was watched firing, and then kept in the migration.** The broad predicate (any
+orphan office held by an `indiana_discovery` person) selects **671**; adding "holder also holds a
+real seat" selects **84**. The pre-flight asserts both, so the day the restriction stops
+discriminating the migration refuses to run.
+
+| | before | after |
+| --- | --- | --- |
+| "Aaron Freeman" rows from the search query shape | **2** | **1** |
+| Indiana browse count | 665 | **581** — the figure `CC_0101` predicted |
+| orphan offices | 671 | **587** |
+| `indiana_discovery` people | 672 | **672** |
+| `offices_missing_terms` | 822 / 655 | **822 / 655**, unchanged |
+
+▶ The end-to-end assertion is **in the gate**: it runs the search endpoint's own query shape for
+Aaron Freeman and requires exactly 1 row.
+
+### ▶ Step 2b — the remaining 587 orphan offices
+
+Not written. Class B and C: people who hold **no** real seat, so for them the orphan office is the
+only office on the record. That is a different argument from class A and deserves its own pass.
+`CC_0102` has already moved the 55 finance links off the class B rows, so those orphan offices now
+carry nothing at all.
+
+⚠ Still open from the review: **Ronald Turpin** (ruled *unsure*) and the **13 ruled different**.
+
+### 🔴🔴 A GUARANTEE IN CLAUDE.md IS HALF TRUE, AND IT LICENSED THE BUG
+
+`CLAUDE.md` line 28 says the view is *"exactly one row per office … so it cannot fan a result set
+out"* and then shows **both** join directions under that one guarantee. The claim holds joining
+FROM offices. It does **not** hold joining FROM politicians: a person with two offices yields two
+rows, which is what made `GET /api/essentials/politicians?q=` return two Aaron Freemans.
+`office_terms`' exclusion constraint forbids two people on one office; **it cannot see one person
+on two.** The same sentence is repeated in `check-office-occupancy.mjs` (twice) and
+`essentialsService.ts` (twice, above the two queries that actually fan out).
 
 ### ✅ Class B — REVIEWED AND MERGED 2026-09-12 (`CC_0102`)
 
