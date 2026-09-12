@@ -5,7 +5,7 @@
 **Update this file at the end of every session.** It is the only place that knows where the program
 stands. `MEMORY.md` holds one pointer to it and nothing else.
 
-Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md).
+Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md) · [`mn.md`](./mn.md).
 
 Stage legend, from spec §3:
 `1` geography (TIGER place + sldu + sldl) · `2` legislature · `3` city waves · `4` county waves ·
@@ -24,7 +24,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 4 | IN | Fort Wayne, Gary | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 🟢 **INDIANA IS COMPLETE ACROSS ALL FIVE STAGES (2026-09-11), the program's fourth slice.** ✅ **AND ALL FIVE OF ITS MEASURED DEBTS ARE CLOSED (2026-09-12), which the ruling (Cantrell, 2026-09-11) required before opening slice 5 (MN). MN IS CLEAR TO OPEN.** Debt 1 the 671-office orphan cohort (`CC_0101`-`CC_0105`), debt 2 the surplus government rows (`CC_0098`), debt 3 Lake County Council's seven seats — found, vintage-proved and seated, **Lake is 19/19** (`CC_0099`/`CC_0100`, `X0051`) — debt 4 portraits at 192/204, debt 5 the orphaned chamber (`CC_0106`). Two endpoint defects the work exposed are fixed too: the `office_current_holder` fan-out claim that was half true in CLAUDE.md and four other places, and the missing `DISTINCT` it licensed (**26 people nationally, not just Indiana's 84**). Full record: [`in-debt.md`](./in-debt.md).
-| 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
+| 5 | MN | Duluth, Saint Paul | WIP | — | — | — | — |
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
 | 8 | OH | Akron | — | — | — | — | — |
@@ -87,8 +87,8 @@ inherited.
 | San José | CA | Santa Clara | 🟡 **BOARD OF SUPERVISORS SEATED 2026-09-03 (`CC_0056`, `X0047`): 5/5**, 3 at `day` and 2 at `year` precision. City is **11/11 seated AND 11/11 DATED** (`CC_0059`, all at `day`) on REAL per-district polygons (`X0010`, `sj-council-district-N`) — the spatial probe returns exactly one councilmember, so the earlier "absent" tracker line was wrong. County officers 3/3. 🔴 The county publishes FIVE competing supervisor layers and the freshest edit date carries the 2011 map — arbitrated via the Board's own "Find My Supervisor" app. ✅ **stage 5 done: 8/8 portraits**, all from the county's own Elected Officials page |
 | Fort Wayne | IN | Allen | ✅ **SEATED 2026-09-10 (`CC_0090`/`CC_0091`, `X0048`): 11/11** — Mayor + 9 Council (6 district + **3 UNNUMBERED at-large**) + City Clerk, per Code § 31.01 which **ends at (C)**: no city judge. 🔴 The 6 districts **do not tile the city** (111.00 vs 112.09 sq mi) and that is CORRECT — the uncovered 1.13 sq mi is unincorporated county by the Election Board's own precinct record. 🔴 Two mid-term changes: Clerk (Keesling→McGauley 2026-01-17) and D6 (Tucker→Booker 2024-05-21) — **Myers did NOT replace Tucker**. 6 day + 5 year precision from ONE document. 🔴 **IN-2 IS A REPAIR, NOT A SEED (measured 2026-09-10).** The legislature is 12/100 + 6/50, and those 18 seats hang on **18 pseudo-chambers**, one per district, `official_count` 0 — a defect **no other state carries**. Beneath it: **672 `indiana_discovery` politicians, 671 holding an office with NO district and NO chamber**, unreachable by any address; **92 of the 150 sitting legislators are in that cohort**. Roster locked 150/150 from two sources, 0 disagreements. Polygon vintage **proved 150/150** against the General Assembly's own KMZ. See [`in.md`](./in.md) |
 | Gary | IN | Lake — ✅ **12/19 SEATED (`CC_0095`)**, 7 council district seats deferred | 🟡 **PARTIALLY SEATED 2026-09-10 (`CC_0092`/`CC_0093`): 6 of 12** — Mayor, City Clerk, **Judge of the City Court** and 3 at-large. 🔴🔴 **GARY ELECTS A JUDGE AND FORT WAYNE DOES NOT — 12 offices against 11.** 🔴🔴 **THE 6 DISTRICT SEATS ARE DEFERRED**: the 2023 settlement map is PDF-only, and the city's own GeoJSON repo has ONE COMMIT dated **2014-07-21**. Offices without geometry are unreachable, so the gate asserts their ABSENCE. 🔴 Mark Spencer left the at-large seat for SD-3 and is seated there by `CC_0089` — the probe asserts he holds exactly one seat |
-| Duluth | MN | St. Louis | |
-| Saint Paul | MN | Ramsey | |
+| Duluth | MN | St. Louis | ▶ **MN-1 OPEN 2026-09-12.** TIGER place **`2717000`**, confirmed on two TIGERweb vintages. Parent county `27137` already present |
+| Saint Paul | MN | Ramsey | ▶ **MN-1 OPEN 2026-09-12.** TIGER place **`2758000`** — TIGER names it **`St. Paul`**, so a `Saint Paul` search returns NOTHING and `%St. Paul%` returns FIVE cities. 🔴 Production already holds a government row **`City of Saint Paul, Texas, US`**. **Match on `geo_id`, never on name.** Parent county `27123` already present |
 | Philadelphia | PA | — | **consolidated city-county**, coterminous |
 | State College | PA | Centre | borough, not a city |
 | Columbia | SC | Richland | |
