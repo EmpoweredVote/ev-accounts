@@ -23,7 +23,7 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 3 | CA | Long Beach, San José | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 4 | IN | Fort Wayne, Gary | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-🟢 **INDIANA IS COMPLETE ACROSS ALL FIVE STAGES (2026-09-11), the program's fourth slice.** ▶ **Its four measured debts are NOT closed, and the ruling (Cantrell, 2026-09-11) is to clear them BEFORE opening slice 5 (MN).** They have their own file with re-measured numbers and a suggested order: [`in-debt.md`](./in-debt.md).
+🟢 **INDIANA IS COMPLETE ACROSS ALL FIVE STAGES (2026-09-11), the program's fourth slice.** ✅ **AND ALL FIVE OF ITS MEASURED DEBTS ARE CLOSED (2026-09-12), which the ruling (Cantrell, 2026-09-11) required before opening slice 5 (MN). MN IS CLEAR TO OPEN.** Debt 1 the 671-office orphan cohort (`CC_0101`-`CC_0105`), debt 2 the surplus government rows (`CC_0098`), debt 3 Lake County Council's seven seats — found, vintage-proved and seated, **Lake is 19/19** (`CC_0099`/`CC_0100`, `X0051`) — debt 4 portraits at 192/204, debt 5 the orphaned chamber (`CC_0106`). Two endpoint defects the work exposed are fixed too: the `office_current_holder` fan-out claim that was half true in CLAUDE.md and four other places, and the missing `DISTINCT` it licensed (**26 people nationally, not just Indiana's 84**). Full record: [`in-debt.md`](./in-debt.md).
 | 5 | MN | Duluth, Saint Paul | — | — | — | — | — |
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
