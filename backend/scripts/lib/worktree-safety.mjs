@@ -41,11 +41,82 @@ export const IGNORABLE = [
 ];
 
 /**
+ * Parse `git status --porcelain [-uall --ignored]` into the two facts the verdict needs.
+ *
+ * 🔴 A LEADING SPACE IN PORCELAIN IS DATA, NOT PADDING. The status field is exactly two columns
+ *    wide and either may be a space: ` M path` is "tracked, modified in the worktree", `M  path`
+ *    is "tracked, modified in the index". The runner used to `.trim()` the whole captured output
+ *    and then take `slice(3)` of every line, which ate the leading space of the FIRST line only
+ *    and therefore the first character of its path. On 2026-09-12 a real verdict named
+ *    `ackend/data/seed-in-local-headshots-2026/harvest.json` — a file that does not exist.
+ *    Never trim porcelain. Slice the columns.
+ *
+ * 🔴 UNTRACKED AND DIRTY-TRACKED ARE DIFFERENT FACTS. `??`/`!!` mean the path is not in git at
+ *    all, so the FILE is what would be lost. Any other code means the file IS in git and the
+ *    uncommitted EDIT is what would be lost. Folding the second into the first made the checker
+ *    report a tracked file under "these exist nowhere else", which is not true of the file and
+ *    understates what recovery would cost.
+ *
+ * @param {string} out raw, UNTRIMMED porcelain output
+ * @returns {{untracked:string[], modified:string[]}}
+ */
+export function parsePorcelain(out) {
+  const untracked = [];
+  const modified = [];
+  for (const line of String(out ?? "").split("\n")) {
+    // "XY " plus at least one path character.
+    if (line.length < 4) continue;
+    const code = line.slice(0, 2);
+    if (code.trim() === "") continue;
+    let rest = line.slice(3);
+    if (code === "??" || code === "!!") {
+      untracked.push(unquotePath(rest));
+      continue;
+    }
+    // A rename or copy prints "old -> new"; the new name is the one on disk.
+    if (code.includes("R") || code.includes("C")) {
+      const arrow = rest.lastIndexOf(" -> ");
+      if (arrow !== -1) rest = rest.slice(arrow + 4);
+    }
+    modified.push(unquotePath(rest));
+  }
+  return { untracked, modified };
+}
+
+/**
+ * Undo git's C-style quoting. Git wraps a path in double quotes and octal-escapes its bytes
+ * whenever it contains a control character, a quote, a backslash or (without core.quotePath=off)
+ * anything non-ASCII, so a path with an accent arrives octal-escaped as `"caf\303\251.png"`.
+ * UTF-8; decoding per character would mangle every accented filename.
+ */
+export function unquotePath(raw) {
+  if (raw.length < 2 || raw[0] !== '"' || raw[raw.length - 1] !== '"') return raw;
+  const body = raw.slice(1, -1);
+  const bytes = [];
+  const simple = { n: 10, t: 9, r: 13, b: 8, f: 12, v: 11, a: 7, '"': 34, "\\": 92 };
+  for (let i = 0; i < body.length; i += 1) {
+    if (body[i] !== "\\") {
+      for (const b of new TextEncoder().encode(body[i])) bytes.push(b);
+      continue;
+    }
+    const next = body[i += 1];
+    if (next >= "0" && next <= "7") {
+      bytes.push(parseInt(body.slice(i, i + 3), 8));
+      i += 2;
+    } else {
+      bytes.push(simple[next] ?? next.charCodeAt(0));
+    }
+  }
+  return new TextDecoder().decode(new Uint8Array(bytes));
+}
+
+/**
  * @param {object} facts
  * @param {boolean} facts.merged            branch fully contained in origin/master
  * @param {boolean} facts.identicalContent  merged tree matches this branch's tip byte for byte
  * @param {number}  facts.stashDelta        change in the repo-wide stash count during the work
  * @param {string[]} facts.untracked        untracked-and-ignored paths present
+ * @param {string[]} facts.modified         TRACKED paths carrying uncommitted changes
  * @param {boolean} facts.envIdentical      a .env here was compared and matched
  * @param {boolean} facts.controlPassed     the untracked scan proved it can detect a planted file
  * @returns {{safe:boolean, blockers:Array, ignored:string[]}}
@@ -88,6 +159,15 @@ export function verdictFor(facts) {
       kind: "unique-files",
       files: unique,
       why: "these exist nowhere else and deleting them is unrecoverable",
+    });
+  }
+  const dirty = (facts.modified ?? []).map((p) => String(p).replace(/\\/g, "/"));
+  if (dirty.length) {
+    blockers.push({
+      kind: "dirty-tracked",
+      files: dirty,
+      why: "these tracked files carry uncommitted changes. The FILE is in git; the EDIT is not, "
+        + "and deleting the worktree drops it",
     });
   }
   if (!facts.controlPassed) {
