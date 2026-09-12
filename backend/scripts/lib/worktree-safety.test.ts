@@ -15,8 +15,8 @@ import { verdictFor, IGNORABLE, parsePorcelain } from './worktree-safety.mjs';
 //    main worktree's is a copy, and neither is unique content.
 
 const ok = {
-  merged: true,
-  identicalContent: true,
+  upstream: 'ancestor',
+  contentState: 'same',
   stashDelta: 0,
   untracked: [],
   envIdentical: true,
@@ -31,13 +31,13 @@ describe('verdictFor', () => {
   });
 
   it('refuses an unmerged branch', () => {
-    const v = verdictFor({ ...ok, merged: false });
+    const v = verdictFor({ ...ok, upstream: 'none' });
     expect(v.safe).toBe(false);
     expect(v.blockers.map((b) => b.kind)).toContain('not-merged');
   });
 
   it('refuses when the merged content is not byte-identical', () => {
-    const v = verdictFor({ ...ok, identicalContent: false });
+    const v = verdictFor({ ...ok, contentState: 'differs' });
     expect(v.safe).toBe(false);
     expect(v.blockers.map((b) => b.kind)).toContain('content-differs');
   });
@@ -83,7 +83,7 @@ describe('verdictFor', () => {
   });
 
   it('reports every blocker at once, not just the first', () => {
-    const v = verdictFor({ merged: false, identicalContent: false, stashDelta: 2,
+    const v = verdictFor({ upstream: 'none', contentState: 'differs', stashDelta: 2,
       untracked: ['a.txt'], envIdentical: true, controlPassed: false });
     expect(v.blockers).toHaveLength(5);
   });
@@ -157,5 +157,68 @@ describe('verdictFor — uncommitted tracked edits', () => {
 
   it('is quiet when there are no tracked modifications', () => {
     expect(verdictFor({ ...ok, modified: [] }).safe).toBe(true);
+  });
+});
+
+// ── SQUASH MERGES, AND THE VACUOUS "yes" ─────────────────────────────────────────────────────
+//
+// 🔴 ANCESTRY IS NOT THE ONLY WAY WORK REACHES MASTER, AND IT IS NOT THE WAY THIS REPO USES.
+//    A squash merge replays the branch as ONE NEW COMMIT, so the branch tip is never an ancestor
+//    of master. `merge-base --is-ancestor` therefore answers NO for a branch that is fully,
+//    permanently merged — and the check blocked deletion of #486's own worktree minutes after
+//    #486 landed. The last three merges before it were all squashes. This is the common case.
+//
+// 🔴 AND THE SECOND FAILURE WAS WORSE, BECAUSE IT REASSURED. The content comparison lived inside
+//    `if (merged)`, so when ancestry said NO it never ran — and `identicalContent` kept its
+//    initial `true`. The report printed `content identical : yes` for a test that had not been
+//    performed. A measurement that cannot be made must say so; it must never inherit a pass.
+//    Hence `contentState` is a TRI-STATE and 'unknown' BLOCKS.
+
+describe('verdictFor — how the work reached master', () => {
+  it('clears a branch that master contains by ancestry', () => {
+    expect(verdictFor({ ...ok, upstream: 'ancestor' }).safe).toBe(true);
+  });
+
+  it('clears a SQUASH-merged branch, whose tip is deliberately not an ancestor', () => {
+    const v = verdictFor({ ...ok, upstream: 'squash' });
+    expect(v.safe).toBe(true);
+    expect(v.blockers).toEqual([]);
+  });
+
+  it('refuses a branch whose work is upstream by neither route', () => {
+    const v = verdictFor({ ...ok, upstream: 'none' });
+    expect(v.safe).toBe(false);
+    expect(v.blockers.map((b) => b.kind)).toContain('not-merged');
+  });
+});
+
+describe('verdictFor — content comparison is never inherited', () => {
+  it('accepts a measured match', () => {
+    expect(verdictFor({ ...ok, contentState: 'same' }).safe).toBe(true);
+  });
+
+  it('refuses a measured mismatch', () => {
+    const v = verdictFor({ ...ok, contentState: 'differs' });
+    expect(v.blockers.map((b) => b.kind)).toContain('content-differs');
+  });
+
+  it('🔴 BLOCKS when the comparison could not be made, rather than passing it', () => {
+    const v = verdictFor({ ...ok, contentState: 'unknown' });
+    expect(v.safe).toBe(false);
+    expect(v.blockers.map((b) => b.kind)).toContain('content-unknown');
+  });
+
+  it('🔴 treats an ABSENT contentState as unknown, never as a pass', () => {
+    const { contentState, ...withoutIt } = ok;
+    const v = verdictFor(withoutIt);
+    expect(v.safe).toBe(false);
+    expect(v.blockers.map((b) => b.kind)).toContain('content-unknown');
+  });
+
+  it('🔴 treats an ABSENT upstream as none, never as a pass', () => {
+    const { upstream, ...withoutIt } = ok;
+    const v = verdictFor(withoutIt);
+    expect(v.safe).toBe(false);
+    expect(v.blockers.map((b) => b.kind)).toContain('not-merged');
   });
 });
