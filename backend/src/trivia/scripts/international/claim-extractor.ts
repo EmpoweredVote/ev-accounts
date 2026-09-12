@@ -2,6 +2,7 @@ import nlp from 'compromise';
 import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
 import type { ParsedArticle } from './rss-ingestor.js';
 import { resolveLane, type Lane } from './lanes.js';
+import { normalizeEntities } from './claimIdentity.js';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -46,6 +47,44 @@ function extractEntities(text: string): Set<string> {
 
 const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
 
+/**
+ * Entities two articles must share before they are treated as the same story.
+ * The clustering join rule and `pairwiseSharedEntities` MUST agree on this —
+ * if the union counted pairs the clustering would not have joined, it would be
+ * reporting evidence the cluster was not built on.
+ *
+ * RAISED FROM 2 TO 3, measured on 73 live articles 2026-09-12. At 2, transitive
+ * union chained eight unrelated stories into one cluster — Ukraine's winter, a
+ * Nigerian romance scam, the BRICS summit, Australian aged care — and that
+ * cluster produced the aged-care/oil-price mashup behind the wiran-1685 /
+ * wiran-1688 duplicate. At 3 every cluster on that day was coherent and no
+ * cluster fell below the usable-entity floor. 4 over-fragments: 3 clusters,
+ * largest down to 6 articles.
+ *
+ * This breaks weak links; it does not bound transitivity. A chain of 3-entity
+ * overlaps can still form. If that appears, the fix is requiring overlap with
+ * the cluster as a whole rather than with one member — not climbing to 4.
+ */
+export const MIN_SHARED_TO_JOIN = 3;
+
+/**
+ * The entity set a cluster join is computed over.
+ *
+ * Normalisation happens HERE, before the join, not only downstream. compromise
+ * returns "yemen" from one article and "yemen's" from another, and "iran,"
+ * with the comma attached; clustering compared raw lowercased strings, so
+ * those were different entities and the joins they should have carried never
+ * happened.
+ *
+ * DO NOT apply this without also raising MIN_SHARED_TO_JOIN. The two are
+ * coupled, and normalisation alone is far worse than the bug it fixes: at a
+ * 2-entity bar it collapsed 27 of 73 live articles into a single cluster,
+ * because more entities match and transitive chaining runs riot.
+ */
+export function clusterEntitySet(raw: Iterable<string>): Set<string> {
+  return new Set(normalizeEntities([...raw]));
+}
+
 /** Entities two articles share. */
 function sharedBetween(a: Set<string>, b: Set<string>): string[] {
   return [...a].filter(entity => b.has(entity));
@@ -60,7 +99,8 @@ function sharedBetween(a: Set<string>, b: Set<string>): string[] {
  * articles into 9 clusters, the intersection was empty for the 9-article and
  * 5-article clusters and had one entity for the 4-article cluster, while every
  * 2-article cluster had 2-5 — perfect separation by size. Since the join rule
- * already guarantees 2+ shared entities for a pair, the intersection could only
+ * already guarantees MIN_SHARED_TO_JOIN shared entities for a pair, the
+ * intersection could only
  * fire where it was tautological, and was blind on running stories, which are
  * precisely the ones re-covered night after night.
  *
@@ -76,12 +116,15 @@ function sharedBetween(a: Set<string>, b: Set<string>): string[] {
  * justified a join, so it is not evidence that the pair is the same story, even
  * when both articles sit in the cluster transitively.
  */
-export function pairwiseSharedEntities(entitySets: ReadonlyArray<Set<string>>): string[] {
+export function pairwiseSharedEntities(
+  entitySets: ReadonlyArray<Set<string>>,
+  threshold: number = MIN_SHARED_TO_JOIN,
+): string[] {
   const shared = new Set<string>();
   for (let i = 0; i < entitySets.length; i++) {
     for (let j = i + 1; j < entitySets.length; j++) {
       const overlap = sharedBetween(entitySets[i], entitySets[j]);
-      if (overlap.length < MIN_SHARED_TO_JOIN) continue;
+      if (overlap.length < threshold) continue;
       for (const entity of overlap) shared.add(entity);
     }
   }
@@ -89,21 +132,14 @@ export function pairwiseSharedEntities(entitySets: ReadonlyArray<Set<string>>): 
 }
 
 /**
- * Entities two articles must share before they are treated as the same story.
- * The clustering join rule and `pairwiseSharedEntities` MUST agree on this —
- * if the union counted pairs the clustering would not have joined, it would be
- * reporting evidence the cluster was not built on.
- */
-const MIN_SHARED_TO_JOIN = 2;
-
-/**
  * Cluster articles about the same story using named-entity overlap + 24-hour window.
  *
  * Algorithm:
- * 1. Extract entities for each article
+ * 1. Extract entities per article and NORMALISE them (clusterEntitySet) — the
+ *    join compares normalised strings, so "yemen" and "yemen's" are one entity
  * 2. Greedy union-find: pair (i, j) joins same cluster if:
  *    - Both articles published within 24 hours of each other
- *    - They share 2+ named entities
+ *    - They share MIN_SHARED_TO_JOIN (3) named entities
  * 3. Filter out single-source clusters (2+ articles required)
  * 4. Compute sharedEntities (union of the overlaps that joined the cluster's
  *    pairs — see pairwiseSharedEntities; NOT the all-articles intersection,
@@ -113,11 +149,13 @@ const MIN_SHARED_TO_JOIN = 2;
 export function clusterArticles(articles: ParsedArticle[]): StoryCluster[] {
   if (articles.length === 0) return [];
 
-  // Extract entities for each article
+  // Extract and normalise entities for each article
   const articleEntities: Array<{ article: ParsedArticle; entities: Set<string> }> =
     articles.map(article => ({
       article,
-      entities: extractEntities(article.title + ' ' + article.bodyText.slice(0, 2000)),
+      entities: clusterEntitySet(
+        extractEntities(article.title + ' ' + article.bodyText.slice(0, 2000)),
+      ),
     }));
 
   // Union-Find structures
@@ -149,7 +187,7 @@ export function clusterArticles(articles: ParsedArticle[]): StoryCluster[] {
       const timeDiff = Math.abs(a.article.pubDate.getTime() - b.article.pubDate.getTime());
       if (timeDiff > TWENTY_FOUR_HOURS_MS) continue;
 
-      // 2+ shared entities check
+      // MIN_SHARED_TO_JOIN shared entities check
       if (sharedBetween(a.entities, b.entities).length < MIN_SHARED_TO_JOIN) continue;
 
       union(i, j);
