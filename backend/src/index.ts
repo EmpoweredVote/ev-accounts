@@ -45,6 +45,7 @@ import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
+import internalJobsRouter from './routes/internalJobs.js';
 import councilFilesRouter from './routes/councilFiles.js';
 import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import { requireAuth } from './middleware/auth.js';
@@ -202,6 +203,11 @@ app.use('/api/campaign-finance', campaignFinanceAdminRouter);
 // (no /api/campaign-finance prefix). Auth via X-Admin-Token (not JWT).
 // Used by SQS workers, EventBridge, curl, and manual one-off triggers.
 app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
+// Internal job trigger: POST /internal/jobs/:name (X-Admin-Token). Mounted on the request
+// path so it is served under EV_ROLE=api. Lets Supabase Cron — which can only run SQL or
+// make an HTTP call (pg_net), never exec a Node CLI — start the light/frequent jobs that the
+// per-job runner (dist/jobs/run.js) runs for the Render crons. Job/API split Move 2.
+app.use('/internal', internalJobsRouter);
 app.use('/api/council-files', councilFilesRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/agenda-items', agendaItemsRouter);
