@@ -5,8 +5,8 @@
 **Debt 4 half closed**: the six Gary portraits are imported, stage 5 is **192/204**, and the
 remaining 12 blanks are all settled by ruling or by absence of any source.
 **Debt 3 CLOSED 2026-09-11** (`CC_0099` + `CC_0100`): the geometry was found, vintage-proved and the
-seven members seated. **Lake County is 19 of 19.** **Debt 1 is untouched** and needs a disposition
-ruling before any SQL. A fifth item was found while closing Debt 2;
+seven members seated. **Lake County is 19 of 19.** **Debt 1 is RULED and half applied**: `CC_0101` flipped the flags on 587 rows; retiring the
+offices is step 2. A fifth item was found while closing Debt 2;
 it is at the bottom of this file.
 
 **Status 2026-09-11: all five Knight stages are CLOSED for Indiana.** Nothing here is stage work.
@@ -23,66 +23,121 @@ earlier one-line versions of these numbers were wrong in four places.
 
 ---
 
-## Debt 1 — the `indiana_discovery` orphan cohort
+## Debt 1 — the `indiana_discovery` orphan cohort · **STEP 1 APPLIED 2026-09-12 (`CC_0101`)**
 
 **671 people hold 755 offices; 671 of those offices have no district, no chamber and no
-government.** They are unreachable by any address, and nothing errors.
+government.** Ruling (Cantrell, 2026-09-12): **flags first, retirement second.** Step 1 is applied.
 
-```sql
-SELECT count(DISTINCT p.id) AS people, count(DISTINCT o.id) AS offices,
-       count(*) FILTER (WHERE o.district_id IS NULL) AS orphaned
-FROM essentials.politicians p
-JOIN essentials.office_current_holder och ON och.politician_id = p.id
-JOIN essentials.offices o ON o.id = och.office_id
-WHERE p.source = 'indiana_discovery';
-```
+### 🔴🔴 WHAT THE COHORT ACTUALLY IS: A CAMPAIGN-FINANCE SWEEP, NOT A ROSTER
 
-| orphan office title | count |
+Every one of the 671 came from a candidate-committee filing
+(`transparent_motivations.politician_sources`, `source_type = 'candidate_committee'`). Every orphan
+term is the same thing — the ADR 0002 phase-2 backfill, `start_precision = 'unknown'`, no start, no
+end. **The office title records the seat the person SOUGHT OR HELD, and nothing distinguishes the
+two.**
+
+▶ **The diagnostic title is `Governor`, which holds TEN people.** Pence, Holcomb and Braun — three
+different real governors — plus McCormick, Melton, Myers, Owens and three more who only ran. Read
+that table and the cohort explains itself; read the count alone and it does not.
+
+⚠ **NO FIELD IN THE ROW SEPARATES A FORMER GOVERNOR FROM A FAILED CANDIDATE.**
+`total_years_in_office` null on all 671, `bio_text` null on 668, `valid_from` null on all 671,
+`is_incumbent` **true on all 671**. The database holds no signal. Do not go looking for one.
+
+### 🔴🔴 THE READ PATHS ARE NOT BROKEN. THE FLAGS WERE.
+
+Production holds **77,001** placeholder occupancies, and they split by the script that made them:
+
+| source | placeholder rows | `is_active` | `is_incumbent` |
+| --- | --- | --- | --- |
+| `cal_access_discovery` | 76,330 | **0** | **0** |
+| `indiana_discovery` | **671** | **671** | **671** |
+
+Every politician-rooted read path guards on `is_active` and/or `is_incumbent`, so California's
+76,330 pass through harmlessly. Indiana's leaked, because
+`scripts/discover-indiana-candidates.ts:407-408` inserts both true where the CalAccess script
+inserts both false.
+
+🔴 **THE FIRST ANSWER WAS THE WRONG ONE, AND IT WAS THE EXPENSIVE KIND OF WRONG.** A sweep of
+`backend/src` found `is_placeholder_occupancy` referenced **zero times** and concluded that all
+77,001 were exposed and five join sites needed a filter. **Comparing the two cohorts' flags
+overturned that**: the guards already work for 99.1% of the population. ▶ **When a defect looks
+systemic, find the population that DOESN'T have it and ask what is different about them.**
+
+### What leaked, measured rather than inferred
+
+- Indiana's browse-page officeholder count read **1,252**. Real figure **581**. 54% inflated, and
+  **Indiana was the only state affected** — `essentialsBrowseService.getStatesWithData` is the one
+  rollup rooted at `offices` instead of `districts`.
+- `GET /api/essentials/politicians?q=` returns **two rows** for a person holding two offices.
+  ⚠ **The code comment above that join (`essentialsService.ts:517-519`) says "One row per office,
+  so this cannot fan out."** True joining FROM offices; false joining FROM politicians, which is
+  what that query does. A guarantee written for one direction, relied on in the other.
+- `getPoliticianById` reads `o.title` off `rows[0]` of an unordered join, so a profile can render
+  **"Governor" for someone who is not the governor**.
+
+### The three classes
+
+| class | count | what it is | disposition |
+| --- | --- | --- | --- |
+| **A** | **84** | the SAME person row holds a real seat *and* an orphan duplicate of it (Aaron Freeman: real Senator + orphan "State Senator") | retire the orphan office only — **never the flags**, they are sitting legislators |
+| **B** | ~66 | a SEPARATE row for someone already seated in Indiana (Michael Braun / Mike Braun) | identity merge, deferred — see below |
+| **C** | ~521 | no Indiana seat under any name: former officeholders, losing candidates, never-helds | flags, then retire |
+
+### ✅ Step 1 — `CC_0101`, applied 2026-09-12
+
+Sets `is_active = false, is_incumbent = false` on the **587 orphan-ONLY** people (B + C). Deletes
+nothing. 🔴 **The `NOT EXISTS` clause is the whole safety property** — a control was watched firing
+on prod in a rolled-back transaction: without it the predicate selects **671** and the first person
+it deactivates is **Aaron Freeman, a sitting Indiana state senator.**
+
+🟢 **THE POST-VERIFY GATE CAUGHT ITS OWN AUTHOR.** It asserted the browse count would fall to 581;
+the dry run returned **665**. The 84 dual-holders stay active by design, so their orphan offices
+stay in that count. 1252 − 587 = 665, and 665 − 84 = 581 after step 2. **The residual 84 is the
+measure of what step 2 is for.**
+
+| after step 1 | |
 | --- | --- |
-| `Indiana Elected Official` | 305 |
-| `State Representative` | 231 |
-| `State Senator` | 102 |
-| `Governor` | 10 |
-| `Secretary of State` | 10 |
-| `Lieutenant Governor` | 6 |
+| Indiana browse count | 1,252 → **665** |
+| `Governor` orphans reachable by name search | 10 → **0** |
+| rows deleted | **0** (672 people still present) |
+| dual-holders still active | **84**, untouched |
+| ❌ "Aaron Freeman" search rows | **still 2** — he is one of the 84 |
 
-⚠ **Earlier notes said "671 unreachable offices". The count of 671 is PEOPLE and orphan offices;
-the cohort spans 755 offices in total.** The extra 84 are real seats — see below.
+⚠ **WHAT IT COST, RULED ACCEPTABLE:** `campaignFinanceSearchService` filters `p.is_active`, so
+those 587 left campaign-finance search. That makes Indiana consistent with CalAccess's 76,330,
+which were already excluded the same way.
 
-### 🔴🔴 84 of these people ALSO hold a real seat, and deleting them would unseat a sitting legislator
+### ▶ Step 2 — retire the 671 orphan offices
 
-IN-2 reused 84 existing `indiana_discovery` person rows rather than creating duplicates, so those
-84 people now hold **two** offices: the real one IN-2 gave them, and their old orphan. That is
-expected and was ruled correct (Cantrell, ruling R2, 2026-09-10).
+Not yet written. The mechanical cost is low and was measured: `essentials.offices` has exactly two
+inbound FKs — `office_terms` (CASCADE) and `races` (NO ACTION) — **0 races reference these**, and
+**0** legacy `politicians.office_id` snapshots point at them. The 671 people, their 79 stance
+answers and 92 photos all survive, because those hang off the person.
 
-```sql
--- the 84: people holding BOTH an orphan and a real office
-SELECT count(*) FROM (
-  SELECT p.id FROM essentials.politicians p
-  JOIN essentials.office_current_holder och ON och.politician_id = p.id
-  JOIN essentials.offices o ON o.id = och.office_id
-  WHERE p.source = 'indiana_discovery'
-  GROUP BY p.id HAVING bool_or(o.district_id IS NOT NULL) AND bool_or(o.district_id IS NULL)) s;
-```
+**Class A is the highest-value part and needs no ruling**: 84 pure duplicates of a seat the person
+already holds, and retiring them is what finally fixes the two-row search result.
 
-⚠ Earlier notes say **92**; it is **84**. in.md records why the number moved during IN-2's seat
-resolution. Re-measure before acting.
+### Class B — deferred on purpose, and the list is on a page
 
-### What the work actually is
+🔴🔴 **NO RULE SEPARATES THESE, AND THE ATTEMPT IS INSTRUCTIVE.** Matching exact full name gives
+**2**. Surname + first initial gives **110**. Surname alone gives **297**. Restricted to
+Indiana-seated rows, **66**. ▶ **The predicate's shape decided the answer, so none of those numbers
+is "the number of duplicates".**
 
-**Retiring the 671 orphan OFFICES, not the people.** 🔴 **Never delete these people** — the
-standing rule is that `office_current_holder` is mostly candidates and non-officeholders, and
-deleting them destroys real records. The question to answer first, with a `GROUP BY` and a read of
-actual rows:
+Reading the rows shows it is **dirty and incomplete at once**:
 
-- Which orphans are historical officeholders, which are candidates, which are duplicates of a
-  person now seated properly?
-- 🔴 **`districts` has NO inbound FKs**, so deleting a district orphans its offices. Repoint,
-  never delete.
-- The 305 `Indiana Elected Official` rows are the least specific and probably need their own
-  treatment.
+- **Dirty** — surname+initial paired Amy Adams with a North Carolina congresswoman, James Baker
+  with a Florida representative, and 🔴 **Frank Mrvan with his own SON** (Frank Mrvan Sr. served in
+  the Indiana Senate, which is what the orphan title says; Frank J. Mrvan Jr. holds IN-1).
+- **Incomplete** — it misses **Elizabeth Brown / Liz Brown** (Senate District 15) because E and L
+  differ on the first initial. Every Liz/Elizabeth, Bob/Robert, Bill/William, Jack/John and
+  Peggy/Margaret pair is invisible to it. **66 is a floor, not a total.**
 
-▶ **This is its own wave with its own ruling.** Do not fold it into anything else.
+▶ **The 69 candidate pairs are on a private review page, with a verdict control per row whose
+answers persist:** https://claude.ai/code/artifact/12a02219-0d48-413c-a6d4-97a6c5708bb6
+Unanswered pairs default to *different*, which is the safe reading — it retires the orphan office
+without asserting that two records are one human.
 
 ---
 
