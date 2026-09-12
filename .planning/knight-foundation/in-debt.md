@@ -193,8 +193,12 @@ read 621 against an expected 536 purely because it was measuring a superset.
 822 / 655 — these offices always carried a term, so the view never listed them.
 
 ▶ **Two things remain, and neither is the cohort.**
-1. **Ronald Turpin**, the single *unsure* from the review — the orphan said State Senator, the seat
-   is an Allen County commissioner. His office is retired with the rest; the identity question is open.
+1. ✅ **Ronald Turpin — RESOLVED 2026-09-12 (`CC_0105`).** Ruling (Cantrell): *"Ronald Turpin is
+   Allen County Commissioner — not state senator."* Same man; his committee source is repointed to
+   the seated row, as `CC_0102` did for the other 55.
+   ▶ **The doubt was the office mismatch, and that signal was worthless here** — the placeholder
+   title records an office SOUGHT for *every* row in the cohort, so it is the population's defining
+   property, not a discriminator. **A signal shared by every row cannot separate rows.**
 2. ✅ **The `DISTINCT` — FIXED 2026-09-12.** `CC_0103` only removed the 84 Indiana rows that were
    exercising the fan-out; **26 people system-wide hold more than one office**, so it was never
    Indiana's alone. `getPoliticiansFlatList` now dedupes with `DISTINCT ON (p.id)` inside a wrapper
@@ -503,24 +507,27 @@ Doing 1 first made the stage-5 number true again before anyone quoted it: **192 
 
 ---
 
-## Debt 5 (new, found 2026-09-11 while closing Debt 2) — a chamber pointing at nothing
+## Debt 5 — ✅ CLOSED 2026-09-12 (`CC_0106`)
 
-🔴 **`essentials.chambers.government_id` HAS NO FOREIGN KEY.** The only inbound FK on
-`essentials.governments` is `districts.government_id`. So a chamber can reference a government row
-that does not exist, and one does:
+The one `essentials.chambers` row whose `government_id` pointed at a government that does not
+exist — named `Mayor`, `official_count` 1, **0 offices** — is deleted. Chambers: 1176 → 1175, and
+zero orphans remain.
 
-```sql
-SELECT c.id, c.name, c.official_count,
-       (SELECT count(*) FROM essentials.offices o WHERE o.chamber_id = c.id) AS offices
-FROM essentials.chambers c
-WHERE NOT EXISTS (SELECT 1 FROM essentials.governments g WHERE g.id = c.government_id);
-```
+🔴🔴 **`essentials.chambers.government_id` HAS NO FOREIGN KEY, WHICH IS HOW IT EXISTED.** Found
+while closing debt 2, whose guard had been written as "governments holding no chamber". Reading
+`pg_constraint` showed `essentials.governments` has exactly ONE inbound FK and it is not from
+chambers — it is `districts.government_id`. ▶ **A COUNT OF CHILDREN IS NOT A COUNT OF REFERENCES
+UNTIL YOU HAVE READ `pg_constraint`.** Debt 2's guard was corrected to "no chambers AND no
+districts" before it ran, and the count was the same either way — luck, not confirmation.
 
-One row: a chamber named **`Mayor`**, `official_count` 1, **0 offices**, `government_id`
-`d50caa4b-592f-42d8-8619-4ec82d9ac4ac`, which is not in `governments`. **It is not Indiana's** and
-predates this work — `CC_0098` neither caused it nor fixed it, and its gate asserts the orphan count
-is *unchanged* rather than zero for exactly that reason.
+Safe because it was reachable from nothing. Three tables reference `chambers`, and **two of the
+three would not even have blocked the delete**, so their silence had to be asserted rather than
+assumed: `meetings.meetings` (NO ACTION — 0 rows, and a row here would have been *evidence the
+chamber is real* and wants repointing), `discovered_sources` and `source_outlets` (both ON DELETE
+SET NULL — 0 rows each, and either would have been silently blanked).
 
-Small, but it means **no count of "governments and their chambers" is safe without an existence
-check**, and it suggests the same shape may exist elsewhere. Worth one sweep: are there orphaned
-offices, districts or terms by the same mechanism?
+⚠ **Seven other chambers hold no offices and are untouched.** Their governments exist: they are
+empty, not orphaned. The gate asserts that count stays at 7.
+
+⚠ Not Indiana's, and it predated the slice. `CC_0098`'s gate deliberately asserted the orphan count
+was *unchanged* rather than zero, so this row would still be here to deal with on purpose.
