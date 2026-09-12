@@ -27,7 +27,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import path from "node:path";
 
-import { verdictFor } from "./lib/worktree-safety.mjs";
+import { parsePorcelain, verdictFor } from "./lib/worktree-safety.mjs";
 
 const target = process.argv[2];
 if (!target || target.startsWith("--")) {
@@ -48,11 +48,21 @@ if (!existsSync(wt)) { console.error(`${wt}: no such directory`); process.exit(2
  *    could give a wrong answer. That is the whole argument for the control in one incident:
  *    a broken detector and a clean worktree are indistinguishable from the output alone.
  */
-const git = (cwd, args, allowFail = false) => {
+const git = (cwd, args, allowFail = false, { raw = false } = {}) => {
   try {
-    return execFileSync("git", args, {
+    const out = execFileSync("git", args, {
       cwd, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 64 * 1024 * 1024,
-    }).trim();
+    });
+    /**
+     * 🔴 `raw` IS LOAD BEARING FOR PORCELAIN, AND ITS ABSENCE CORRUPTED A REAL VERDICT.
+     *    `git status --porcelain` puts the status in two fixed columns and EITHER MAY BE A
+     *    SPACE — ` M path` is "tracked, modified in the worktree". Trimming the whole captured
+     *    output removes the leading space of the FIRST line only, after which `slice(3)` eats
+     *    the first character of that path. On 2026-09-12 this printed
+     *    `ackend/data/seed-in-local-headshots-2026/harvest.json` as a blocker: a real file,
+     *    named wrongly, under a heading that did not describe it. Never trim porcelain.
+     */
+    return raw ? out : out.trim();
   } catch (e) {
     if (allowFail) return null;
     throw e;
@@ -94,20 +104,24 @@ const baseline = baselineRaw === undefined ? null : Number(baselineRaw);
 const stashDelta = baseline === null || Number.isNaN(baseline) ? 0 : stashCount - baseline;
 
 // 4. Untracked-and-ignored, WITH a positive control.
-const scan = () => {
-  const out = git(wt, ["status", "--porcelain", "-uall", "--ignored"], true) ?? "";
-  return out.split("\n").filter(Boolean).map((l) => l.slice(3).trim());
-};
+const scan = () => parsePorcelain(
+  git(wt, ["status", "--porcelain", "-uall", "--ignored"], true, { raw: true }) ?? "",
+);
 const CONTROL = "_deletable-scan-control.tmp";
 const controlPath = path.join(wt, CONTROL);
 let controlPassed = false;
 try {
   writeFileSync(controlPath, "positive control for the untracked scan; safe to delete\n");
-  controlPassed = scan().some((p) => p.replace(/\\/g, "/").endsWith(CONTROL));
+  controlPassed = scan().untracked.some((p) => p.replace(/\\/g, "/").endsWith(CONTROL));
 } finally {
   rmSync(controlPath, { force: true });
 }
-const untracked = scan().filter((p) => !p.replace(/\\/g, "/").endsWith(CONTROL));
+const status = scan();
+const untracked = status.untracked.filter((p) => !p.replace(/\\/g, "/").endsWith(CONTROL));
+// A tracked file with uncommitted edits is a DIFFERENT fact from an untracked one: the file is
+// in git and recoverable, the edit is not. Folding it into `untracked` reported it as something
+// that "exists nowhere else", which understated the loss and mislabelled the fix.
+const modified = status.modified;
 
 // The .env carve-out is conditional on actually comparing it.
 const envHere = path.join(wt, "backend", ".env");
@@ -119,7 +133,9 @@ try {
 } catch { envIdentical = false; }
 if (!untracked.some((p) => /(^|[\\/])\.env$/.test(p))) envIdentical = true;  // none present: moot
 
-const v = verdictFor({ merged, identicalContent, stashDelta, untracked, envIdentical, controlPassed });
+const v = verdictFor({
+  merged, identicalContent, stashDelta, untracked, modified, envIdentical, controlPassed,
+});
 
 console.log(`${wt}  [${branch ?? "detached"}]`);
 console.log(`  merged into origin/master : ${merged ? "yes" : "NO"}`);
@@ -128,6 +144,7 @@ console.log(`  stash count               : ${stashCount}${baseline === null
   ? "  (no STASH_BASELINE given — not compared; set it to check the delta)" : `  (baseline ${baseline}, delta ${stashDelta})`}`);
 console.log(`  untracked scan control    : ${controlPassed ? "PASSED — the scan can see a planted file" : "FAILED — the scan is blind"}`);
 console.log(`  ignorable, not unique     : ${v.ignored.length} path(s)`);
+console.log(`  tracked, uncommitted edits: ${modified.length} file(s)`);
 
 if (v.safe) {
   console.log("\nSAFE TO DELETE. Nothing here exists only here.");
