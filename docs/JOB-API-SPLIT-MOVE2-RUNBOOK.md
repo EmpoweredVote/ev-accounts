@@ -60,6 +60,16 @@ All: runtime `node`, repo `EmpoweredVote/ev-accounts@master`, region `oregon`, e
   any required var crash-loops at import — the env group is what prevents that.
 - Created with `notifyOnFail: default` — the MCP cannot set failure notifications. **OWED:** turn
   them on per cron in the dashboard (the ev-cto safety net).
+- 🔴 **Build gotcha (found + fixed 2026-09-12): the env group carries `NODE_ENV=production`, which
+  Render also applies at BUILD, so `npm install` omits devDependencies and `npx tsc` fails**
+  (`Cannot find module 'vitest'`, `@types/express`, `aws-lambda`, …). The first build worked only
+  because it ran *before* the env group was linked; every auto-deploy after linking `build_failed`
+  (the cron kept running its first good image, but new code could not deploy). **Fix applied:**
+  set `NPM_CONFIG_INCLUDE=dev` on each cron (service-level env), which forces devDeps in even
+  under `NODE_ENV=production`; one clear-cache rebuild repopulates the cache with devDeps, then
+  normal cached builds pass. Longer-term alternatives: put `NPM_CONFIG_INCLUDE=dev` in the env
+  group itself (one place), change the build to `npm ci --include=dev && npx tsc`, or exclude
+  `*.test.ts` from the build tsconfig.
 - The DST note stands: Render cron is UTC-only, so the two trivia jobs (originally ET) run at
   `0 7` / `0 11` UTC and drift one hour across US daylight time. Harmless.
 - `trivia-pipeline` and `trivia-election-detection` run as **Render crons** (LLM spend, kept off
@@ -202,3 +212,7 @@ revert.
   Supabase/Render connectors must be a *local* scheduled task, not a cloud routine.
 - **`get_service` (Render MCP) does not return env values** by design — you cannot read secrets
   back through it; provision cron env via an env group in the dashboard.
+- **An env group copied from the API brings `NODE_ENV=production`, which breaks a `npx tsc` build**
+  (npm omits devDeps at build). Set `NPM_CONFIG_INCLUDE=dev` on the build, or the build command
+  installs no `typescript`/`@types`. This is silent until the *next* deploy after the group is
+  linked — the create-time build passes, so watch the first post-link auto-deploy.
