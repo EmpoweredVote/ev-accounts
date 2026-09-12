@@ -73,13 +73,52 @@ BEGIN;
 --
 --   * IT MUST BE REACHABLE. Rung 1 is not hypothetical — San Francisco, Boston and
 --     Portland have each banned municipal face recognition.
---     ⚠ BUT CHECK STATE PREEMPTION BEFORE SPENDING A RESEARCH PASS IN ANY STATE.
+--     ⚠ STILL CHECK STATE PREEMPTION BEFORE SPENDING A PASS IN A NEW STATE.
 --     This is the `rent-regulation` trap: Washington preempts local rent control, so
 --     the most tenant-protective vote a WA local official can physically cast
 --     evidences no chair at all. If a state forbids its cities from restricting
 --     police surveillance technology, rungs 1-2 are out of bounds there and a pass
---     will return nothing. Tennessee specifically was NOT verified when this
---     migration was written — verify it before the Nashville re-mining pass.
+--     will return nothing.
+--
+--     ✅ TENNESSEE: VERIFIED 2026-09-12. NOT PREEMPTED — RUNGS 1-2 ARE REACHABLE.
+--     Established from ENACTED TEXT, not from the absence of a statute. Nashville has
+--     already exercised both powers, in Metro Code 13.08.080(G) via BL2021-961
+--     (Johnston, passed 2022-02-01, 22-14):
+--       - ACQUISITION GATE: a department "wishing to acquire or enter into an
+--         agreement to acquire" LPR "shall comply with" a published usage-and-privacy
+--         policy. That is rung 2's instrument, almost verbatim.
+--       - "An LPR system authorized under this section shall not be capable of facial
+--         recognition." A local facial-recognition PROHIBITION — rung 1's instrument.
+--       - A 10-DAY RETENTION CAP, against the STATE's 90-day cap in TCA 55-10-302.
+--         This is the cleanest disproof available: a locality legislating STRICTER
+--         than the state provision, and standing since 2022, settles that the statute
+--         is a ceiling on retention and not a floor barring stricter local rules.
+--       - plus sharing limited to law-enforcement agencies on written request with
+--         Custodian approval, annual audits, a 3-year audit trail readable by the DA /
+--         Public Defender / COB chair, and race-and-ethnicity recording on LPR stops.
+--
+--     🔴 ONE REAL BOUNDARY, AND IT IS ABOUT IMMIGRATION, NOT SURVEILLANCE.
+--     Tenn. Code Ann. Title 7, ch. 68, pt. 101 et seq. (the 2018 anti-sanctuary Act)
+--     bars a local policy limiting cooperation with federal agencies "to verify or
+--     report the immigration status of any alien". BL2022-1115 (passed 2022-08-16)
+--     excluded immigration enforcement as an allowed LPR use, and Metro Legal's own
+--     agenda analysis says it "could be interpreted by the State as a sanctuary
+--     policy" — costing eligibility for any state ECD grant contract until repealed,
+--     plus exposure to a resident's Chancery Court complaint. Council passed it anyway,
+--     after an Aug 2 amendment carving out cooperation "to verify or report the
+--     immigration status of a person" — tracking the Act's own words to mitigate.
+--     ⚠ So seating someone at rung 2 on the strength of an IMMIGRATION-sharing
+--     restriction specifically means seating them on a CONTESTED provision. Rung 2's
+--     other instruments — council gate, published use policy, retention limit — are
+--     clean and uncontested.
+--
+--     🔑 SOURCE: nashville.legistar.com has an OPEN REST API, no key, no WAF.
+--     webapi.legistar.com/v1/nashville/matters/{id}/versions gives text ids, then
+--     .../matters/{id}/texts/{textId} returns MatterTextPlain — the full enacted text
+--     AND the Metro Legal agenda analysis quoted above. (.../texts with no id returns
+--     405, not a list; read the JSON as UTF-8 explicitly.) There are 7 passed LPR
+--     measures 2021-2023, BL2023-71 among them inside the CURRENT council term — the
+--     instrument-rich path to seating officials on this topic.
 --
 -- ROLE SCOPES: local + state. The question is community-framed ("your community"),
 -- like public-safety-approach and local-immigration, which are both local-only. state
