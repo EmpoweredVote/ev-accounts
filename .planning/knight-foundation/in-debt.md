@@ -118,26 +118,62 @@ answers and 92 photos all survive, because those hang off the person.
 **Class A is the highest-value part and needs no ruling**: 84 pure duplicates of a seat the person
 already holds, and retiring them is what finally fixes the two-row search result.
 
-### Class B — deferred on purpose, and the list is on a page
+### ✅ Class B — REVIEWED AND MERGED 2026-09-12 (`CC_0102`)
 
-🔴🔴 **NO RULE SEPARATES THESE, AND THE ATTEMPT IS INSTRUCTIVE.** Matching exact full name gives
-**2**. Surname + first initial gives **110**. Surname alone gives **297**. Restricted to
-Indiana-seated rows, **66**. ▶ **The predicate's shape decided the answer, so none of those numbers
-is "the number of duplicates".**
+All 69 candidate pairs were read by hand (Cantrell) on the review page and the answers read back
+from its store: **55 same · 13 different · 1 unsure**. Consistency held — 55 distinct people, no
+orphan merged into two targets, and each of the three double-matched orphans resolved to exactly
+one target.
 
-Reading the rows shows it is **dirty and incomplete at once**:
+▶ **The review page, with every verdict still on it:**
+https://claude.ai/code/artifact/12a02219-0d48-413c-a6d4-97a6c5708bb6
 
-- **Dirty** — surname+initial paired Amy Adams with a North Carolina congresswoman, James Baker
-  with a Florida representative, and 🔴 **Frank Mrvan with his own SON** (Frank Mrvan Sr. served in
-  the Indiana Senate, which is what the orphan title says; Frank J. Mrvan Jr. holds IN-1).
-- **Incomplete** — it misses **Elizabeth Brown / Liz Brown** (Senate District 15) because E and L
-  differ on the first initial. Every Liz/Elizabeth, Bob/Robert, Bill/William, Jack/John and
-  Peggy/Margaret pair is invisible to it. **66 is a floor, not a total.**
+🔴🔴 **THE CANDIDATE LIST WAS DIRTY AND INCOMPLETE, AND BOTH FAILURES SHOWED UP IN THE ANSWERS.**
+Matching exact full name gives 2, surname+initial 110, surname alone 297, Indiana-restricted 66 —
+**the predicate's shape decided the answer**, so none of those was ever "the number of duplicates".
+The hand review excluded **Frank Mrvan**, whom the matcher paired with his own son, and included
+**Elizabeth Brown / Liz Brown**, whom it could not see because E and L differ on the first initial.
 
-▶ **The 69 candidate pairs are on a private review page, with a verdict control per row whose
-answers persist:** https://claude.ai/code/artifact/12a02219-0d48-413c-a6d4-97a6c5708bb6
-Unanswered pairs default to *different*, which is the safe reading — it retires the orphan office
-without asserting that two records are one human.
+⚠ **THE FORD ROWS ARE WHY THE REVIEW BEATS THE ANNOTATION.** A note on the page argued Jonathan
+Ford was the likelier match for J.D. Ford, reasoning from initials. Wrong: **J.D. Ford is JAMES
+Ford**, senator for District 29; **JON Ford** is a former senator for District 38 who now heads the
+Office of Energy Development. Two independent facts agree with the ruling — this list separately
+pairs Gregory Goode with Greg Goode, who holds District 38 now, and James Ford's committee is named
+*"Friends to Elect JD Ford"*. ▶ **Reason from the SEAT, not from the initials.**
+
+### 🔴🔴 CC_0101 STRANDED 54 OFFICEHOLDERS' FINANCE DATA, AND THE COST STATEMENT HID IT
+
+The merges turned out to carry no photo, no stances and no race rows — the seated targets already
+had photos. They carried exactly one thing: a candidate-committee link, on all 55. And only **1 of
+the 55** seated rows had one of its own. So after `CC_0101` deactivated the orphans, **54 sitting
+Indiana legislators' campaign finance was reachable only through a deactivated row.**
+
+The cost *was* stated before the ruling — "these leave campaign-finance search" — and accepted on
+that framing. ▶ **A COST STATED AT THE LEVEL OF A COHORT CAN HIDE A DIFFERENT COST INSIDE IT.**
+"587 candidate rows leave finance search" and "54 sitting legislators lose their finance link" are
+the same sentence at two resolutions, and only the second is decidable. **State the sharper one.**
+
+✅ **`CC_0102` repoints all 55** from the duplicate row to the seated officeholder, appending
+provenance to `notes` rather than overwriting it. Applied 2026-09-12. Nothing created, nothing
+deleted, no person row merged, no flag touched. **181 seated Indiana officeholders now carry a
+committee source** — for 54 of them, on their real record for the first time.
+
+🟢 **AN INDEPENDENT CONTROL, FROM A FIELD THE MATCHER NEVER TOUCHED.** Each source row's `notes`
+carries the committee's own name. Across the 55: **28** name the seated form and not the orphan's
+("MIKE BRAUN FOR INDIANA, INC." on the row called Michael Braun), **10** are surname-only and carry
+no signal ("Barrett Election Committee"), **2** carry the legal name against the roster's informal
+one (Michael/Mike Aylesworth, Stephen/Steve Bartels). **Not one points at a different person.**
+
+⚠ **`politician_sources.essentials_politician_id` is FK'd `ON DELETE RESTRICT`.** That protection
+moved with the row: it now sits on the officeholder, and the emptied orphan rows are free.
+
+⚠ Still open from the review: **Ronald Turpin** (ruled *unsure* — the orphan says State Senator,
+the seat is an Allen County commissioner) and the **13 ruled different**, which stay deactivated
+and are retired with the rest in step 2.
+
+⚠ **591 committee sources still sit on deactivated `indiana_discovery` rows** — the ~532
+orphan-only people with no seated counterpart. That is the accepted cost, not a defect: they are
+candidates and former officeholders, and there is no better record to attach them to.
 
 ---
 
