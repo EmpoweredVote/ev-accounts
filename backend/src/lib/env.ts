@@ -105,6 +105,20 @@ const envSchema = z.object({
   // the UI AuthKit-only, new signups could not sign in; with this true and the
   // UI classic-only, they could not either.
   AUTHKIT_PRIMARY: z.enum(['true', 'false']).default('false'),
+  // EV_ROLE selects what THIS process does (job/API split — ev-cto decision 0002 /
+  // hosting-decision-followup step 5). The always-on jobs used to run in the login API
+  // process; that mix blocks a second API copy and caused the 2026-07-22 P1.
+  //   unset (default) — today's exact behaviour: Express + every cron + SQS worker +
+  //                     boot recovery. Nothing changes until someone sets EV_ROLE=api.
+  //   'api'           — Express only: no crons, no SQS worker, no boot recovery.
+  //   'worker'        — the SQS ingestion long-poll loop only, no HTTP listener.
+  // Per-job runs use a SEPARATE entry (src/jobs/run.ts) and never read this var.
+  // An empty/whitespace value is treated as UNSET (default behaviour) rather than an
+  // error — a blank EV_ROLE in the dashboard must not brick the login API.
+  EV_ROLE: z.preprocess(
+    (v) => (typeof v === 'string' && v.trim() === '' ? undefined : v),
+    z.enum(['api', 'worker']).optional()
+  ),
 });
 
 const parsed = envSchema.safeParse(process.env);
