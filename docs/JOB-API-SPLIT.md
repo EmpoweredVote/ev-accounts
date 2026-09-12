@@ -110,6 +110,56 @@ for Move 2+.**
      own boolean and could run concurrently (double Anthropic spend, double writes).
      **Action:** replace with a shared (Redis) lock.
 
+## `EV_ROLE=api` rollout (Move 2 — NOT done in this PR)
+
+Move 1 ships the code with `EV_ROLE` **unset** (today's behaviour). Flipping the API to
+`api` is a later, founder-gated, costs-money step. Order matters: the API currently runs
+every job, so turning it request-only must not leave a job with **no** home (a gap) or
+**two** homes at once (double writes / double spend).
+
+**Pre-conditions**
+
+1. This PR is merged and deployed to `ev-accounts-api` with `EV_ROLE` unset — no behaviour
+   change, so it can ship ahead of the cutover.
+2. Every job has a new home created (see the manifest above), each with the **same env** as
+   the API (`DATABASE_URL`, `SUPABASE_*`, `FEC_API_KEY`, `ANTHROPIC_API_KEY`, …). Start
+   commands, same Docker image:
+   - Render cron (heavy): `node dist/jobs/run.js fec-burst` (`0 6 * * *`),
+     `… la-county-netfile` (`0 3 1 * *`), `… ocpf` (`0 4 1 * *`).
+   - Ingestion drain: confirm the Lambda SQS event-source mapping is live **and delete the
+     loop**, or run a worker service `EV_ROLE=worker node --dns-result-order=ipv4first
+     dist/index.js` with `SQS_INGEST_QUEUE_URL` set **on the worker only**.
+   - Supabase Cron (light/frequent): `vq-consensus` (`*/5`), `trivia-expiration` (hourly),
+     and the light daily/weekly — `calibration-lapse`, `district-staleness`,
+     `reap-stale-ingestion-runs`, `vq-rotation`, `trivia-election-detection`,
+     `trivia-pipeline`.
+
+**Cutover**
+
+3. Create the job homes but leave their schedules **paused**.
+4. Set `EV_ROLE=api` on `ev-accounts-api` and redeploy. This atomically stops the API from
+   running any cron, the SQS loop, and boot recovery. (`TRIVIA_CRONS_ENABLED` /
+   `VQ_CRONS_ENABLED` become irrelevant on the API — they only gate the in-`index` starters,
+   which `api` never calls; the per-job runner ignores them.)
+5. Confirm the API still answers `/api/health` and normal traffic, and its logs show the
+   `EV_ROLE=api` banner and **zero** cron/SQS/boot lines.
+6. **Enable** the job-home schedules. Run each once on demand and confirm its "proof it ran"
+   signal (from the manifest) advances. Watch one full cycle of the frequent jobs
+   (`vq-consensus`, `trivia-expiration`).
+
+Pausing until after the flip means no job runs in two places at once; enabling right after
+keeps the gap to minutes. FEC ingestion is the exception — its Redis lock already serialises
+across processes, so brief overlap there is safe.
+
+**Rollback (one step):** unset `EV_ROLE` on `ev-accounts-api` and redeploy → the API resumes
+running everything in-process exactly as today; pause the new job homes. The default path is
+preserved precisely to make this a single-variable revert.
+
+**Watch after cutover:** `fec-burst` may exceed Render's 12-hour cap (measure; if so, move
+that one job to Render Workflows / Cloud Run Jobs); `trivia-pipeline` and
+`trivia-election-detection` are LLM spend (measure). And before a **second** API copy, clear
+the "blocks two copies" list above.
+
 ## Proof of the three run modes (hermetic, bogus DB — never touched prod)
 
 Built `dist/` run from a directory with no `.env`, dummy env, `DATABASE_URL` at a refused
