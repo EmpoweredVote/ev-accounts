@@ -29,8 +29,47 @@ const INTERNATIONAL_COLLECTIONS: InternationalLocaleConfig[] = [
   { collectionSlug: 'climate-agreements', prefix: 'clima', volatility: 'medium' },
 ];
 
-const DRAFT_THROTTLE_LIMIT = 20;
-const MAX_QUESTIONS_PER_RUN = 8;
+export const DRAFT_THROTTLE_LIMIT = 20;
+
+/**
+ * Clusters processed per collection per run — NOT questions.
+ *
+ * Renamed from MAX_QUESTIONS_PER_RUN, which was what it claimed to be and not
+ * what it did: run-pipeline slices `clusters`, and each cluster yields roughly
+ * two questions, so a "cap" of 8 produced 13 questions on 2026-09-12
+ * (generation_jobs id=282). Behaviour is unchanged here; only the name and the
+ * claim are now true.
+ */
+const MAX_CLUSTERS_PER_RUN = 8;
+
+/**
+ * Why this registered collection must not generate tonight, or null to proceed.
+ *
+ * Pulled out of the loop so the judgement is testable without a database.
+ *
+ * The `is_active` check exists because retiring a collection in the database
+ * did not stop the cron: `climate-agreements` was switched off on 2026-09-10
+ * and the nightly run added ten more questions to it on 2026-09-12, because
+ * the registry is a hardcoded array and nothing consulted the row. DB state is
+ * now authoritative — switching a collection off stops the spend.
+ *
+ * Inactive is reported ahead of the throttle deliberately: a throttle reason
+ * means "come back tomorrow", which is the wrong thing to record about a
+ * collection that has been retired.
+ */
+export function skipReasonFor(input: {
+  isActive: boolean;
+  draftCount: number;
+  draftLimit: number;
+}): string | null {
+  if (!input.isActive) {
+    return 'inactive: collection is switched off (is_active = false)';
+  }
+  if (input.draftCount > input.draftLimit) {
+    return `auto-throttle: ${input.draftCount} pending review questions exceeds limit of ${input.draftLimit}`;
+  }
+  return null;
+}
 
 export async function runPipelineCron(): Promise<void> {
   const startTime = Date.now();
@@ -48,7 +87,7 @@ export async function runPipelineCron(): Promise<void> {
     try {
       // ── Resolve collection ID ──────────────────────────────────────────────
       const [collectionRow] = await db
-        .select({ id: collections.id })
+        .select({ id: collections.id, isActive: collections.isActive })
         .from(collections)
         .where(eq(collections.slug, collectionSlug))
         .limit(1);
@@ -74,10 +113,14 @@ export async function runPipelineCron(): Promise<void> {
 
       const draftCount = draftCountResult[0]?.count ?? 0;
 
-      if (draftCount > DRAFT_THROTTLE_LIMIT) {
-        console.log(
-          `[pipelineCron] Throttle: ${collectionSlug} has ${draftCount} drafts > ${DRAFT_THROTTLE_LIMIT} — skipping`,
-        );
+      const skipReason = skipReasonFor({
+        isActive: collectionRow.isActive,
+        draftCount,
+        draftLimit: DRAFT_THROTTLE_LIMIT,
+      });
+
+      if (skipReason !== null) {
+        console.log(`[pipelineCron] Skipping ${collectionSlug} — ${skipReason}`);
 
         await db.insert(generationJobs).values({
           collectionSlug,
@@ -86,7 +129,7 @@ export async function runPipelineCron(): Promise<void> {
           questionsFlagged: 0,
           questionsActivated: 0,
           feedsFailed: 0,
-          reason: `auto-throttle: ${draftCount} pending review questions exceeds limit of ${DRAFT_THROTTLE_LIMIT}`,
+          reason: skipReason,
         });
 
         continue;
@@ -101,7 +144,7 @@ export async function runPipelineCron(): Promise<void> {
       }
 
       // ── Run pipeline (handles its own generation_jobs row) ─────────────────
-      await runPipeline(collectionSlug, prefix, { volatility, maxQuestions: MAX_QUESTIONS_PER_RUN });
+      await runPipeline(collectionSlug, prefix, { volatility, maxQuestions: MAX_CLUSTERS_PER_RUN });
 
       console.log(`[pipelineCron] Completed: ${collectionSlug}`);
     } catch (err) {
