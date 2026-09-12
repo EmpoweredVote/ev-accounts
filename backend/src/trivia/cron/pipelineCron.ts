@@ -31,7 +31,40 @@ import { regulatePool } from './poolRegulator.js';
 import { runNightlyPipeline } from '../scripts/international/run-pipeline.js';
 import { INTERNATIONAL_LANES, type LaneTarget } from '../scripts/international/laneTargets.js';
 
-const DRAFT_THROTTLE_LIMIT = 20;
+export const DRAFT_THROTTLE_LIMIT = 20;
+
+/**
+ * Why this lane must not generate tonight, or null to proceed.
+ *
+ * Pulled out of the preflight loop so the judgement is testable without a
+ * database.
+ *
+ * The `is_active` check exists because retiring a collection in the database
+ * did not stop the cron. `climate-agreements` was switched off on 2026-09-10
+ * and the nightly run added ten more questions to it on 2026-09-12
+ * (generation_jobs id=283): preflight resolved the collection by slug, selected
+ * only its `id`, and nothing consulted the row. Lane routing removed that
+ * collection from the registry, which closed the specific leak but not the
+ * defect — `laneTargets.ts` has no `is_active` reference either, so switching
+ * off `war-in-iran` would repeat it. The database is now authoritative.
+ *
+ * Inactive is reported ahead of the throttle deliberately: a throttle reason
+ * means "come back tomorrow", which is the wrong thing to record about a
+ * collection that has been retired.
+ */
+export function skipReasonFor(input: {
+  isActive: boolean;
+  draftCount: number;
+  draftLimit: number;
+}): string | null {
+  if (!input.isActive) {
+    return 'inactive: collection is switched off (is_active = false)';
+  }
+  if (input.draftCount > input.draftLimit) {
+    return `auto-throttle: ${input.draftCount} pending review questions exceeds limit of ${input.draftLimit}`;
+  }
+  return null;
+}
 const MAX_QUESTIONS_PER_RUN = 8;
 
 export async function runPipelineCron(): Promise<void> {
@@ -53,7 +86,7 @@ export async function runPipelineCron(): Promise<void> {
     try {
       // ── Resolve collection ID ──────────────────────────────────────────────
       const [collectionRow] = await db
-        .select({ id: collections.id })
+        .select({ id: collections.id, isActive: collections.isActive })
         .from(collections)
         .where(eq(collections.slug, collectionSlug))
         .limit(1);
@@ -83,10 +116,14 @@ export async function runPipelineCron(): Promise<void> {
 
       const draftCount = draftCountResult[0]?.count ?? 0;
 
-      if (draftCount > DRAFT_THROTTLE_LIMIT) {
-        console.log(
-          `[pipelineCron] Throttle: ${collectionSlug} has ${draftCount} drafts > ${DRAFT_THROTTLE_LIMIT} — skipping`,
-        );
+      const skipReason = skipReasonFor({
+        isActive: collectionRow.isActive,
+        draftCount,
+        draftLimit: DRAFT_THROTTLE_LIMIT,
+      });
+
+      if (skipReason !== null) {
+        console.log(`[pipelineCron] Skipping lane=${lane} ${collectionSlug} — ${skipReason}`);
 
         await db.insert(generationJobs).values({
           collectionSlug,
@@ -95,7 +132,7 @@ export async function runPipelineCron(): Promise<void> {
           questionsFlagged: 0,
           questionsActivated: 0,
           feedsFailed: 0,
-          reason: `auto-throttle: ${draftCount} pending review questions exceeds limit of ${DRAFT_THROTTLE_LIMIT}`,
+          reason: skipReason,
         });
 
         continue;
