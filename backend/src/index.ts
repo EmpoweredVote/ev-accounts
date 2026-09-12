@@ -243,52 +243,89 @@ const port = parseInt(env.PORT, 10);
 
 const isLambda = !!process.env.AWS_LAMBDA_FUNCTION_NAME;
 
+// EV_ROLE splits what this process does (job/API split — ev-cto decision 0002 /
+// hosting-decision-followup step 5). See src/lib/env.ts for the full contract.
+//   unset (default) — today's EXACT behaviour: Express + every cron + SQS worker + boot
+//                     recovery. This branch is unchanged so nothing breaks until a later
+//                     move sets EV_ROLE=api.
+//   'api'           — Express only: no crons, no SQS worker, no boot recovery.
+//   'worker'        — the SQS ingestion long-poll loop only, no HTTP listener. Kept
+//                     because the Lambda SQS event-source mapping is NOT confirmed
+//                     deployed (docs/infra/lib/infra-stack.ts is wired by no CI).
+// Per-job runs use a separate entry (src/jobs/run.ts) and never reach this file.
+const role = env.EV_ROLE;
+
 if (env.NODE_ENV !== 'test' && !isLambda) {
-  void (async () => {
-    // Non-fatal startup check — pg-pool can timeout intermittently at deploy time.
-    // A timeout here must not prevent the server from starting.
-    try {
-      await campaignFinanceInit();
-    } catch (e) {
-      console.warn('[startup] campaign-finance schema unreachable — continuing anyway:', e);
-    }
+  if (role === 'worker') {
+    void (async () => {
+      // The worker drains the campaign-finance ingestion queue. Warm the schema
+      // (non-fatal) exactly as the always-on process did, then start the loop.
+      try {
+        await campaignFinanceInit();
+      } catch (e) {
+        console.warn('[startup] campaign-finance schema unreachable — continuing anyway:', e);
+      }
+      console.info('[server] EV_ROLE=worker — SQS ingestion worker only; no HTTP listener, no crons, no boot recovery');
+      startSqsWorker();
+      // A worker binds no port; on SIGTERM just end the process.
+      process.once('SIGTERM', () => process.exit(0));
+    })();
+  } else {
+    void (async () => {
+      // Non-fatal startup check — pg-pool can timeout intermittently at deploy time.
+      // A timeout here must not prevent the server from starting.
+      try {
+        await campaignFinanceInit();
+      } catch (e) {
+        console.warn('[startup] campaign-finance schema unreachable — continuing anyway:', e);
+      }
 
-    // CTC (trivia) session storage + session manager. Non-fatal: initTrivia degrades to
-    // in-memory storage if TRIVIA_REDIS_URL is unset/unreachable, so a Redis blip must
-    // not stop the engine from starting.
-    try {
-      await initTrivia();
-    } catch (e) {
-      console.warn('[startup] trivia sub-app init failed — continuing anyway:', e);
-    }
+      // CTC (trivia) session storage + session manager. Non-fatal: initTrivia degrades to
+      // in-memory storage if TRIVIA_REDIS_URL is unset/unreachable, so a Redis blip must
+      // not stop the engine from starting.
+      try {
+        await initTrivia();
+      } catch (e) {
+        console.warn('[startup] trivia sub-app init failed — continuing anyway:', e);
+      }
 
-    const server = app.listen(port, () => {
-      console.info(`[server] listening on port ${port}`);
-      console.info(`[server] environment: ${env.NODE_ENV}`);
-    });
-    startCalibrationLapseCron();
-    startCampaignFinanceCron();
-    startDistrictStalenessCron();
-    startDiscoverySweepCron();   // Phase 7 — weekly candidate discovery sweep
-    startReapStaleRunsCron();
-    startSqsWorker();
-    startVqCrons();  // VQ consensus + rotation — no-op unless VQ_CRONS_ENABLED=true (see vq/app.ts)
-    startTriviaCrons();  // CTC expiration + election-detection + pipeline — no-op unless TRIVIA_CRONS_ENABLED=true (see trivia/app.ts)
+      const server = app.listen(port, () => {
+        console.info(`[server] listening on port ${port}`);
+        console.info(`[server] environment: ${env.NODE_ENV}`);
+      });
 
-    // A restart is precisely what strands ingestion_runs rows in 'running' (this
-    // service auto-deploys on every push to master, and the FEC burst runs 33+
-    // minutes), so sweep once at boot rather than waiting for 05:30. Non-fatal.
-    void reapStaleIngestionRuns().catch((e) =>
-      console.warn('[startup] stale ingestion-run reap failed — continuing anyway:', e)
-    );
-    maybeResumeBackfillOnBoot();  // self-heals the FEC historical backfill across dyno restarts (gated by FEC_BACKFILL_AUTORESUME)
-    maybeResumeFecBurstOnBoot();  // finishes a DAILY burst this restart cut short (see fecBurstResume.ts)
+      if (role === 'api') {
+        // Requests only. The always-on jobs run from their own entry points now
+        // (src/jobs/run.ts, EV_ROLE=worker) — not in the process that serves logins.
+        console.info('[server] EV_ROLE=api — serving requests only; no crons, no SQS worker, no boot recovery');
+      } else {
+        // Default (EV_ROLE unset): today's exact behaviour — every cron + the SQS worker
+        // + boot recovery, all in this process.
+        startCalibrationLapseCron();
+        startCampaignFinanceCron();
+        startDistrictStalenessCron();
+        startDiscoverySweepCron();   // Phase 7 — weekly candidate discovery sweep
+        startReapStaleRunsCron();
+        startSqsWorker();
+        startVqCrons();  // VQ consensus + rotation — no-op unless VQ_CRONS_ENABLED=true (see vq/app.ts)
+        startTriviaCrons();  // CTC expiration + election-detection + pipeline — no-op unless TRIVIA_CRONS_ENABLED=true (see trivia/app.ts)
 
-    // Graceful shutdown — Render sends SIGTERM before replacing instances.
-    // Without this, the pg pool and cron job keep the event loop alive and
-    // Render marks deploys as "Timed Out" after the grace period.
-    process.once('SIGTERM', () => {
-      server.close(() => process.exit(0));
-    });
-  })();
+        // A restart is precisely what strands ingestion_runs rows in 'running' (this
+        // service auto-deploys on every push to master, and the FEC burst runs 33+
+        // minutes), so sweep once at boot rather than waiting for 05:30. Non-fatal.
+        void reapStaleIngestionRuns().catch((e) =>
+          console.warn('[startup] stale ingestion-run reap failed — continuing anyway:', e)
+        );
+        maybeResumeBackfillOnBoot();  // self-heals the FEC historical backfill across dyno restarts (gated by FEC_BACKFILL_AUTORESUME)
+        maybeResumeFecBurstOnBoot();  // finishes a DAILY burst this restart cut short (see fecBurstResume.ts)
+      }
+
+      // Graceful shutdown — Render sends SIGTERM before replacing instances.
+      // Without this, the pg pool and cron job keep the event loop alive and
+      // Render marks deploys as "Timed Out" after the grace period.
+      process.once('SIGTERM', () => {
+        server.close(() => process.exit(0));
+      });
+    })();
+  }
 }
