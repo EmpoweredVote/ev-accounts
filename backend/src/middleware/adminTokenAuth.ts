@@ -1,11 +1,12 @@
 /**
  * adminTokenAuth — X-Admin-Token middleware for batch ingest endpoint.
  *
- * Purpose: Authenticates requests to POST /admin/ingest/:adapter using a
- * pre-shared token in the X-Admin-Token header. This is separate from the
- * JWT requireAuth/requireAdmin middleware — it is used exclusively on the
- * batch ingest route which must be callable by SQS workers, EventBridge,
- * and curl without a user session.
+ * Purpose: Authenticates requests to POST /admin/ingest/:adapter and
+ * POST /internal/jobs/:name using a pre-shared token in the X-Admin-Token
+ * header. This is separate from the JWT requireAuth/requireAdmin middleware —
+ * it is used on the machine-callable routes (batch ingest, and the job/API
+ * split Move 2 job trigger) that must be callable by SQS workers, EventBridge,
+ * Supabase Cron, and curl without a user session.
  *
  * Security: If ADMIN_INGEST_TOKEN is not set in the environment, ALL requests
  * are rejected (returns 401). The endpoint is never silently open.
