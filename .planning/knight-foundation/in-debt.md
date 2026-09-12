@@ -195,10 +195,20 @@ read 621 against an expected 536 purely because it was measuring a superset.
 ▶ **Two things remain, and neither is the cohort.**
 1. **Ronald Turpin**, the single *unsure* from the review — the orphan said State Senator, the seat
    is an Allen County commissioner. His office is retired with the rest; the identity question is open.
-2. **The `DISTINCT` itself.** `CC_0103` removed the 84 Indiana rows that were exercising the
-   politician-rooted fan-out. **The fan-out is still there** — anyone holding a genuine second seat
-   still returns twice from `GET /api/essentials/politicians?q=`, and `getPoliticianById` still takes
-   `rows[0]` of an unordered join. That is a live-endpoint behaviour change and wants its own decision.
+2. ✅ **The `DISTINCT` — FIXED 2026-09-12.** `CC_0103` only removed the 84 Indiana rows that were
+   exercising the fan-out; **26 people system-wide hold more than one office**, so it was never
+   Indiana's alone. `getPoliticiansFlatList` now dedupes with `DISTINCT ON (p.id)` inside a wrapper
+   (its own ORDER BY would otherwise fight the caller's `ORDER BY full_name` and the pagination —
+   which also means `LIMIT 50` was counting duplicates and could return fewer than 50 people), and
+   `getPoliticianById` now has a deterministic `ORDER BY … LIMIT 1` instead of an arbitrary `rows[0]`.
+
+   🔴🔴 **THE FIRST DRAFT OF THAT ORDERING WAS WORSE THAN THE BUG.** Preferring "a real seat — has a
+   district, then a chamber" picked the **migration-196 `Candidate for …` placeholders**, which carry
+   a district AND a chamber, so the detail view reported **Harriet Hageman and Angie Craig — both
+   sitting U.S. Representatives — as Senate candidates.** The missing rule is the one the list query
+   already encodes in its `incumbentFilter`: **a seat HELD beats a seat SOUGHT.** With it, all 26
+   resolve to a held office. ▶ **A tiebreak that falls through to a UUID is not deterministic in any
+   sense that matters — it is just silent.**
 
 ### 🔴🔴 A GUARANTEE IN CLAUDE.md IS HALF TRUE, AND IT LICENSED THE BUG
 
