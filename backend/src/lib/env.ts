@@ -22,6 +22,15 @@ const envSchema = z.object({
   // computeRaceMatch matches on quote_id and never reads the token.
   READRANK_TOKEN_SECRET: z.string().min(1),
   DATABASE_URL: z.string().min(1),
+  // CIVIC_SPACES_DATABASE_URL: connection string for the folded Civic Spaces slice-assignment
+  // module (engine consolidation — ev-cto decision 0018). It authenticates as a DEDICATED,
+  // least-privilege Postgres role `civic_spaces_app` that holds grants on ONLY the three
+  // civic_spaces tables it writes — NOT the broad engine key. This walls the module off from
+  // identity (connected_profiles.user_id joins to identity; PRIVACY-ARCHITECTURE property A).
+  // Optional so the engine still boots without it: absent = POST /api/civic-spaces/assign
+  // returns 500 (misconfigured) but nothing else is affected. Lives in the Render dashboard,
+  // never in git. See src/civic_spaces/config/database.ts and migration CA_0111.
+  CIVIC_SPACES_DATABASE_URL: z.string().optional(),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),
