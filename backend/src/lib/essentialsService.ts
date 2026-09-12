@@ -515,7 +515,14 @@ export async function getPoliticiansFlatList(
     FROM essentials.politicians p
     -- ADR 0002 phase 3: which office this person holds NOW, via
     -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
-    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    -- term takes effect on its own date.
+    -- 🔴 THIS JOIN IS POLITICIAN-ROOTED AND CAN FAN OUT, and the comment here used to say it
+    -- could not. The view is one row per OFFICE, so joining FROM offices is safe; joining FROM
+    -- politicians returns one row PER OFFICE THE PERSON HOLDS. The office_terms exclusion
+    -- constraint forbids two people on one office and cannot see one person on two — and people
+    -- do hold two, whether a duplicate row from a discovery sweep or a genuine second seat.
+    -- There is no DISTINCT below: a person holding two offices yields two result rows. That is
+    -- what returned two "Aaron Freeman"s until CC_0103 removed the duplicate office (2026-09-12).
     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
     LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -1426,7 +1433,14 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     FROM essentials.politicians p
     -- ADR 0002 phase 3: which office this person holds NOW, via
     -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
-    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    -- term takes effect on its own date.
+    -- 🔴 THIS JOIN IS POLITICIAN-ROOTED AND CAN FAN OUT, and the comment here used to say it
+    -- could not. The view is one row per OFFICE, so joining FROM offices is safe; joining FROM
+    -- politicians returns one row PER OFFICE THE PERSON HOLDS. The office_terms exclusion
+    -- constraint forbids two people on one office and cannot see one person on two — and people
+    -- do hold two, whether a duplicate row from a discovery sweep or a genuine second seat.
+    -- There is no DISTINCT below: a person holding two offices yields two result rows. That is
+    -- what returned two "Aaron Freeman"s until CC_0103 removed the duplicate office (2026-09-12).
     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
     LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -1514,6 +1528,9 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     return null;
   }
 
+  // ⚠ The query above is politician-rooted and has no DISTINCT and no ORDER BY, so for a person
+  // holding more than one office this picks an ARBITRARY one and reports its title as theirs.
+  // Until CC_0103 that could render "Governor" for someone who merely ran for governor.
   const row = baseResult.rows[0];
 
   const committees = committeesResult.rows.map((r) => ({
