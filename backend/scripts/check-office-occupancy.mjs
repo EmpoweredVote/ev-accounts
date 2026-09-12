@@ -211,7 +211,8 @@ if (SCAN_ALL) {
   for (const v of gates) console.log(`    ${v.rel}:${v.line}`);
 
   console.log("\nTo port:  JOIN essentials.office_current_holder och ON och.office_id = o.id");
-  console.log("          (one row per office, so it cannot fan out; COUNT() skips a vacancy's NULL)");
+  console.log("          (one row per office, so THIS direction cannot fan out; COUNT() skips a");
+  console.log("           vacancy's NULL. Joining from politicians instead CAN fan out — see above.)");
   // Deliberately exit 0. This is an INVENTORY, not a gate — the branch-scoped default is the gate.
   // A permanently-red command is a command people learn to ignore, and every hit below is a
   // legitimately-unfixed historical artifact until someone actually needs to re-run it.
@@ -230,7 +231,9 @@ if (violations.length > 0) {
   console.error("\nTo READ who holds a seat:");
   console.error("  JOIN essentials.office_current_holder och ON och.office_id = o.id   -- or");
   console.error("  JOIN essentials.office_current_holder och ON och.politician_id = p.id");
-  console.error("  (one row per office, so it cannot fan out)");
+  console.error("  (one row per OFFICE — so the first cannot fan out, and the SECOND CAN: a person");
+  console.error("   may hold two offices, and office_terms' exclusion constraint cannot see that.");
+  console.error("   Politician-rooted reads need DISTINCT ON (p.id) or a deliberately chosen office.)");
   console.error("\nTo SEAT someone (closes the predecessor's term, idempotent):");
   console.error("  SELECT essentials.seat_officeholder(office_id, politician_id, term_start, source);");
   console.error("To VACATE a seat with no successor:");
