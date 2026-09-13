@@ -1749,8 +1749,13 @@ async function processLayer(
   // raise the number to get a green run.
   if (fipsArg === '27') {
     const EXPECTED_MN_MTFCC: Record<string, number> = {
-      sldu: 67,  // 67 MN Senate districts (plan L2022, ordered 2022-02-15) — measured 2026-09-12, no 'ZZZ' row
-      sldl: 134, // 134 MN House districts, 67 A + 67 B — measured 2026-09-12, no 'ZZZ' row
+      sldu: 67,   // 67 MN Senate districts (plan L2022, ordered 2022-02-15) — measured 2026-09-12, no 'ZZZ' row
+      sldl: 134,  // 134 MN House districts, 67 A + 67 B — measured 2026-09-12, no 'ZZZ' row
+      place: 855, // measured 2026-09-12 from the raw .dbf: 915 raw records = 855 G4110 incorporated
+                  // places + 60 G4210 CDPs, which the G4110 filter below excludes. ⚠ TIGERweb's
+                  // Incorporated Places layer reports 856 for MN — it is a NEWER vintage (BAS 2026)
+                  // than the TIGER 2024 file this loader fetches. The one-row gap is a vintage
+                  // difference, not an error; assert against the file being loaded.
     };
     if (layer in EXPECTED_MN_MTFCC) {
       const expected = EXPECTED_MN_MTFCC[layer];
@@ -1759,6 +1764,12 @@ async function processLayer(
         if (layerDef.filterByStatefp) {
           const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
           if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          // Count only incorporated places, matching what the upsert writes. The CDPs are
+          // statistical, not elected — same filter as MD/FL/GA/NC/CO/WA.
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
         }
         if (layerDef.districtNumField) {
           const fpKey = resolveColumn(props, layerDef.districtNumField);
