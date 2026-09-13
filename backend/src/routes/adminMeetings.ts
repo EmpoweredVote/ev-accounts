@@ -115,4 +115,33 @@ router.get('/:id', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
+// PATCH /api/admin/meetings/:id — promote (published) / archive (archived) / back to draft.
+router.patch('/:id', async (req: Request, res: Response): Promise<void> => {
+  const id = req.params.id as string;
+  if (!UUID_REGEX.test(id)) {
+    res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+    return;
+  }
+  const status = (req.body ?? {}).status;
+  if (typeof status !== 'string' || !ADMIN_STATUSES.has(status)) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: 'status must be one of: draft, published, archived',
+    });
+    return;
+  }
+  try {
+    const current = await getMeetingById(id, VIEW);
+    if (!current) { res.status(404).json({ code: 'NOT_FOUND', message: 'Meeting not found' }); return; }
+    const updated = await updateMeeting(id, { status });
+    await logAdminAction(actorId(req), 'meeting_status_change', null, {
+      meetingId: id, from: current.status, to: status,
+    });
+    res.status(200).json(updated);
+  } catch (err) {
+    console.error('[PATCH /admin/meetings/:id] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
 export default router;

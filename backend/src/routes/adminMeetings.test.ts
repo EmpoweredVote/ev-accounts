@@ -126,3 +126,51 @@ describe('GET /api/admin/meetings/:id/transcript', () => {
     expect(mockGetTranscriptByMeetingId).toHaveBeenCalledWith(MEETING_ID, 2, { includeAllStatuses: true });
   });
 });
+
+describe('PATCH /api/admin/meetings/:id', () => {
+  it('promotes a draft to published and logs the action', async () => {
+    mockGetMeetingById.mockResolvedValueOnce({ id: MEETING_ID, status: 'draft' });
+    mockUpdateMeeting.mockResolvedValueOnce({ id: MEETING_ID, status: 'published' });
+
+    const res = await request(app)
+      .patch(`/api/admin/meetings/${MEETING_ID}`)
+      .send({ status: 'published' });
+
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe('published');
+    expect(mockUpdateMeeting).toHaveBeenCalledWith(MEETING_ID, { status: 'published' });
+    expect(mockLogAdminAction).toHaveBeenCalledWith(
+      'admin-1',
+      'meeting_status_change',
+      null,
+      { meetingId: MEETING_ID, from: 'draft', to: 'published' }
+    );
+  });
+
+  it('archives a draft', async () => {
+    mockGetMeetingById.mockResolvedValueOnce({ id: MEETING_ID, status: 'draft' });
+    mockUpdateMeeting.mockResolvedValueOnce({ id: MEETING_ID, status: 'archived' });
+    const res = await request(app)
+      .patch(`/api/admin/meetings/${MEETING_ID}`)
+      .send({ status: 'archived' });
+    expect(res.status).toBe(200);
+    expect(mockUpdateMeeting).toHaveBeenCalledWith(MEETING_ID, { status: 'archived' });
+  });
+
+  it('422s an unsupported status', async () => {
+    const res = await request(app)
+      .patch(`/api/admin/meetings/${MEETING_ID}`)
+      .send({ status: 'deleted' });
+    expect(res.status).toBe(422);
+    expect(mockUpdateMeeting).not.toHaveBeenCalled();
+  });
+
+  it('404s when the meeting does not exist', async () => {
+    mockGetMeetingById.mockResolvedValueOnce(null);
+    const res = await request(app)
+      .patch(`/api/admin/meetings/${MEETING_ID}`)
+      .send({ status: 'published' });
+    expect(res.status).toBe(404);
+    expect(mockUpdateMeeting).not.toHaveBeenCalled();
+  });
+});
