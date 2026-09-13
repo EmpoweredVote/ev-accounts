@@ -1,7 +1,7 @@
 /**
  * Apply the Nashville Metro Council stance pass (Banner 2023 Voter's Guide questionnaires).
  *
- *   npx tsx scripts/apply-nashville-metro-council-stances.ts [--dry-run]
+ *   npx tsx scripts/apply-nashville-metro-council-stances.ts [csv] [--season N] [--dry-run]
  *
  * CSV columns: politician_id,topic_id,topic_key,value,notes,source_url
  *
@@ -34,6 +34,15 @@ const DRY = process.argv.includes('--dry-run');
 // Optional CSV path arg so later passes over the same city reuse this applier rather than
 // forking it -- a fork is how the other ~148 drifted out of sync with the schema.
 const ARG = process.argv.slice(2).find((a) => !a.startsWith('--'));
+// --season <number> targets a season other than the open one. Needed because a
+// topic pinned only into a DRAFT season (surveillance-technology is pinned into
+// Season 3, never into the open Season 2) can ONLY take answers carrying that
+// season's id -- politician_answers_pin_fkey references season_questions, so the
+// open season's id is rejected outright for such a topic.
+const SEASON_ARG = (() => {
+  const i = process.argv.indexOf('--season');
+  return i !== -1 && process.argv[i + 1] ? Number(process.argv[i + 1]) : null;
+})();
 const CSV = ARG
   ? path.resolve(ARG)
   : path.join(__dirname, '..', 'data', 'stance-research',
@@ -51,11 +60,19 @@ async function main() {
   const bad = rows.filter((r) => !/^[1-5]$/.test(r.value) || !r.source_url || !r.politician_id);
   if (bad.length) throw new Error(`${bad.length} malformed row(s); first: ${JSON.stringify(bad[0])}`);
 
-  const { rows: seasons } = await pool.query(
-    `SELECT id, name FROM inform.seasons WHERE status = 'open'`);
-  if (seasons.length !== 1) throw new Error(`expected exactly 1 open season, got ${seasons.length}`);
+  const { rows: seasons } = SEASON_ARG === null
+    ? await pool.query(`SELECT id, name, status FROM inform.seasons WHERE status = 'open'`)
+    : await pool.query(`SELECT id, name, status FROM inform.seasons WHERE number = $1`, [SEASON_ARG]);
+  if (seasons.length !== 1) {
+    throw new Error(SEASON_ARG === null
+      ? `expected exactly 1 open season, got ${seasons.length}`
+      : `no season numbered ${SEASON_ARG}`);
+  }
   const seasonId = seasons[0].id as string;
-  console.log(`season: ${seasons[0].name} (${seasonId})`);
+  console.log(`season: ${seasons[0].name} (${seasonId}) [${seasons[0].status}]`);
+  if (seasons[0].status === 'closed') {
+    throw new Error(`season ${SEASON_ARG} is closed; its answers are immutable`);
+  }
   console.log(`${rows.length} rows for ${new Set(rows.map((r) => r.politician_id)).size} politicians`);
 
   if (DRY) { console.log('DRY RUN — nothing written.'); await pool.end(); return; }
