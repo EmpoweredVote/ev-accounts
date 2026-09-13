@@ -151,6 +151,70 @@ and the separately elected county officers.
 
 ---
 
+## 🔴🔴 MN-1 IS BLOCKED AT TASK 4: the loader collapses A/B districts in `ocd_id`
+
+Found 2026-09-12 during the Task 3 dry run. **The dry run itself passed** — 67 and 134 records, both
+pre-flight assertions green, no DB writes — and the defect is invisible in its output.
+
+`load-state-tiger-boundaries.ts` derives `ocd_id` for both SLD layers with:
+
+```ts
+case 'sldu':
+case 'sldl': {
+  const dn = parseInt(districtNum ?? '0', 10);
+  ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, String(dn));
+```
+
+`parseInt('08A', 10)` is **8**. The letter is dropped, so `08A` and `08B` both become
+`ocd-division/country:us/state:mn/sldl:8`.
+
+**Measured against the real TIGER file: 134 House districts collapse to 67 distinct `ocd_id`s. All
+67 pairs collide.** `geo_id` is unaffected — 134 of 134 stay distinct, because `geoIdSource` is the
+raw `GEOID` (`2708A`), which keeps the letter.
+
+### Why nothing would have caught it
+
+- **`ocd_id` carries no unique constraint.** `essentials.districts` has unique indexes on `id` and
+  `external_id` only. The duplicates would be written **silently**.
+- **The wave's own acceptance test would pass.** Address search uses `geo_id`, never `ocd_id`
+  (`ocd_id` ROLLS UP, `geo_id` LOOKS UP), so `check:reachability` and every anchor would be green.
+- The pre-flight assertions count records. They cannot see a field derived per row.
+
+### It is already in production, for Maryland
+
+| State | `sldl` rows | distinct `ocd_id` | rows sharing one | `geo_id` ending in a letter |
+| --- | --- | --- | --- | --- |
+| **MD** | 71 | 47 | **24** | 42 |
+
+Maryland's delegate districts are `1A`, `1B`, `1C`, `2A`… — the same shape, already loaded, already
+collapsed. MD is currently the **only** affected state. Minnesota would add **67** more, tripling it.
+
+▶ **North Dakota (slice 12) and South Dakota (slice 15) both hit this too** — PROGRAM.md already
+records SD's `26A`/`26B`/`28A`/`28B` subdistricts. This is not a Minnesota problem.
+
+### What it actually breaks
+
+`ocd_id` keys the coverage map's aggregation in `src/lib/coverageMapService.ts`
+(`stats.get(ocd_id)`, `map.set(loc.ocd_id, …)`). Two districts sharing one `ocd_id` have their
+coverage stats merged into a single bucket — Minnesota would render as **67** House districts rather
+than 134, each conflating a pair. Address search is unaffected.
+
+### The fix, and why it is safe
+
+Strip leading zeros exactly as now, but keep any alpha suffix:
+
+```ts
+const m = /^0*(\d+)([A-Za-z]*)$/.exec(districtNum ?? '0');
+const suffix = m ? m[1] + m[2].toUpperCase() : String(parseInt(districtNum ?? '0', 10));
+ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, suffix);
+```
+
+Byte-equivalent for every purely numeric code — `'043'` → `43`, `'008'` → `8` — so the 19 states
+already loaded through this path are unchanged. Only codes carrying a letter change.
+
+⚠ **Repairing Maryland's 24 existing rows is a separate migration**, not part of MN-1. Writing MN
+correctly does not fix MD, and MD's wrong `ocd_id`s are already embedded in whatever has read them.
+
 ## Open questions, carried into MN-1
 
 1. **Does TIGER's `sldu`/`sldl` for MN carry L2022?** A record count of 67/134 proves nothing about
