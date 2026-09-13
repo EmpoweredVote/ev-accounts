@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 // This suite exercises only the pure taxonomy exports, but importing sliceAssigner pulls in
 // config/database → lib/env, whose top-level validation calls process.exit(1) when the app's
@@ -7,7 +7,12 @@ import { describe, it, expect, vi } from 'vitest'
 // tokenIdentity.test.ts). No DB connection is opened at import time.
 vi.mock('../../lib/env.js', () => ({ env: {} }))
 
-import { SLICE_CAPACITY, SLICE_ASSIGNMENTS } from './sliceAssigner.js'
+// The connected-profile guard test drives upsertConnectedProfile, which calls pool.query. Mock
+// the module's pool so no real connection is opened. Hoisted so the factory can reference it.
+const { queryMock } = vi.hoisted(() => ({ queryMock: vi.fn() }))
+vi.mock('../config/database.js', () => ({ pool: { query: queryMock } }))
+
+import { SLICE_CAPACITY, SLICE_ASSIGNMENTS, upsertConnectedProfile } from './sliceAssigner.js'
 import type { AccountData } from './accountsApi.js'
 
 type Jurisdiction = NonNullable<AccountData['jurisdiction']>
@@ -129,5 +134,25 @@ describe('slice assignment invariants', () => {
     // into one.
     const read = SLICE_ASSIGNMENTS.map((a) => a.geoid(PLANO)).filter((v): v is string => !!v)
     expect(new Set(read).size).toBe(read.length)
+  })
+})
+
+describe('upsertConnectedProfile display_name guard', () => {
+  beforeEach(() => queryMock.mockReset())
+
+  it('coalesces a blank name to a non-blank pseudonym', async () => {
+    // The target column civic_spaces.connected_profiles.display_name is NOT NULL — a blank
+    // must never reach it (watchlist #70).
+    queryMock.mockResolvedValue({ rows: [] })
+    await upsertConnectedProfile('user-123', '   ', 'active')
+    const params = queryMock.mock.calls[0][1] as unknown[]
+    expect(params[1]).toMatch(/^[A-Z][a-z]+[A-Z][a-z]+$/) // deterministic AdjectiveAnimal
+  })
+
+  it('passes a real name through unchanged', async () => {
+    queryMock.mockResolvedValue({ rows: [] })
+    await upsertConnectedProfile('user-123', 'Explorer', 'active')
+    const params = queryMock.mock.calls[0][1] as unknown[]
+    expect(params[1]).toBe('Explorer')
   })
 })

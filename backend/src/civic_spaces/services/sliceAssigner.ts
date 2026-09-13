@@ -1,5 +1,6 @@
 import { pool } from '../config/database.js'
 import { AccountData } from './accountsApi.js'
+import { firstNonBlank, deterministicAutoName } from '../../lib/displayName.js'
 
 // Data layer for slice assignment. Folded from civic-spaces services/slice-assignment
 // (ev-cto decision 0018). The standalone reached the DB through @supabase/supabase-js and a
@@ -184,6 +185,10 @@ async function upsertConnectedProfile(
   displayName: string,
   accountStanding: string
 ): Promise<void> {
+  // Second guard behind getAccountMe (watchlist #70): the target column is NOT NULL, so a
+  // blank must never reach it even if a caller passes one. getAccountMe already guarantees a
+  // non-blank name; this keeps upsertConnectedProfile safe on its own too.
+  const safeName = firstNonBlank(displayName) ?? deterministicAutoName(userId)
   // updated_at is maintained by the trg_connected_profiles_updated_at BEFORE UPDATE trigger,
   // so it is deliberately not set here (matches the standalone's supabase upsert).
   await pool.query(
@@ -192,7 +197,7 @@ async function upsertConnectedProfile(
      ON CONFLICT (user_id) DO UPDATE
        SET display_name = EXCLUDED.display_name,
            account_standing = EXCLUDED.account_standing`,
-    [userId, displayName, accountStanding]
+    [userId, safeName, accountStanding]
   )
 }
 
