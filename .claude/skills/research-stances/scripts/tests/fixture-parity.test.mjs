@@ -6,10 +6,12 @@ import { dirname, resolve } from 'node:path';
 import { checkQuoteRow } from '../build-and-check.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
-// scripts/tests -> ev-accounts root is 5 up; sibling on-the-record holds the fixtures.
-// OTR_ROOT overrides this default when the on-the-record checkout isn't at the plain
-// sibling path (e.g. this worktree layout, where it lives under a nested worktree).
-const OTR = process.env.OTR_ROOT || resolve(here, '..', '..', '..', '..', '..', 'on-the-record');
+// scripts/tests -> ev-accounts root is 5 up; sibling on-the-record is 6 up (one more
+// level than the ev-accounts root, since the sibling sits beside the ev-accounts root
+// itself, at the root's PARENT). OTR_ROOT overrides this default when the on-the-record
+// checkout isn't at the plain sibling path (e.g. this worktree layout, where it lives
+// under a nested worktree).
+const OTR = process.env.OTR_ROOT || resolve(here, '..', '..', '..', '..', '..', '..', 'on-the-record');
 const FIX = resolve(OTR, 'docs/quote-curation/fixtures/mechanical-checks.json');
 
 test('build-and-check matches the shared fixture contract', () => {
