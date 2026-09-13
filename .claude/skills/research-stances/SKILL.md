@@ -12,9 +12,10 @@ You are running the **research-stances** skill. Your job is to research politici
 > follow the curation principles in `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` (the
 > checks + the §4 judgment rules — the working rulebook) and
 > `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` (editing/de-id mechanics), and hand
-> quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical
-> `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` referenced by those skills is not in the tree — use
-> CHECKS.md §4 as the rulebook until it lands.
+> quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical source is
+> the on-the-record corpus, docs/quote-curation/PRINCIPLES.md (sibling checkout:
+> ../on-the-record/docs/quote-curation/PRINCIPLES.md) — read it alongside CHECKS.md §4 as the
+> rulebook.
 
 > **Quotes are pushed as DRAFTS, then audited, then promoted.** This skill never sets a quote live
 > in the same step it inserts it. The flow is: research → pre-push QA → insert as drafts
