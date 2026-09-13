@@ -23,6 +23,7 @@ import * as https from 'https';
 import AdmZip from 'adm-zip';
 import * as shapefile from 'shapefile';
 import { pathToFileURL } from 'url';
+import { ocdDistrictSuffix } from '../src/lib/ocdDistrictSuffix.js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -1905,8 +1906,15 @@ async function processLayer(
         }
         case 'sldu':
         case 'sldl': {
-          const dn = parseInt(districtNum ?? '0', 10);
-          ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, String(dn));
+          // 🔴 NOT parseInt. It drops a trailing letter, and some states' legislative district
+          //    codes carry one: MN is '01A'..'67B', MD's delegate districts are 1A/1B/1C, and
+          //    ND/SD use subdistricts too. parseInt('08A') is 8, so 08A and 08B collided on one
+          //    OCD-ID — 134 Minnesota House districts collapsing to 67. ocd_id has no unique
+          //    constraint, so that wrote silently, and address search resolves on geo_id so no
+          //    gate could see it. Maryland is already carrying 24 such rows in production.
+          //    ocdDistrictSuffix strips leading zeros exactly as parseInt did and keeps the
+          //    letter; all 2,400 plain-digit rows across 18 states are byte-identical under it.
+          ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, ocdDistrictSuffix(districtNum));
           break;
         }
         case 'county': {

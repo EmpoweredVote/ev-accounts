@@ -151,9 +151,12 @@ and the separately elected county officers.
 
 ---
 
-## 🔴🔴 MN-1 IS BLOCKED AT TASK 4: the loader collapses A/B districts in `ocd_id`
+## ✅ RESOLVED — the loader collapsed A/B districts in `ocd_id` (found and fixed 2026-09-12)
 
-Found 2026-09-12 during the Task 3 dry run. **The dry run itself passed** — 67 and 134 records, both
+**Fixed before any Minnesota row was written** — `src/lib/ocdDistrictSuffix.ts`, 13 tests, wired
+into the loader. Maryland's 24 existing rows are NOT repaired by it; that is still owed.
+
+Found during the Task 3 dry run. **The dry run itself passed** — 67 and 134 records, both
 pre-flight assertions green, no DB writes — and the defect is invisible in its output.
 
 `load-state-tiger-boundaries.ts` derives `ocd_id` for both SLD layers with:
