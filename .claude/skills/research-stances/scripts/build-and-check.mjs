@@ -7,26 +7,26 @@
  * the deterministic mechanical checks BEFORE anything is inserted, so the orchestrator
  * can fix problems in the CSV instead of in the DB. Mirrors the mechanical pass of the
  * audit-quotes skill (note-missing, note-too-long, note-section-ref, deid-missing,
- * trailing-ellipsis, partisan-tell, source-tier-4).
+ * trailing-ellipsis, partisan-tell, source-tier-4, invalid-source, unquotable-source,
+ * scorecard-source, stance-label).
  *
  *   cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
  *      --csv data/stance-research/2026-07-12-ca-gov-becerra-otr.csv
  *   # writes <csv>.bundle.json and prints findings. --out overrides the bundle path.
  *
  * Reads DATABASE_URL from ev-accounts/backend/.env; resolves pg + csv-parse from
- * backend/node_modules (so it runs no matter the cwd).
+ * backend/node_modules (so it runs no matter the cwd). Those two requires are LAZY
+ * (loaded inside main()) so that importing this module and calling the pure
+ * checkQuoteRow(row) needs no node_modules at all — that's what the Node parity test
+ * (tests/fixture-parity.test.mjs) relies on.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
-import { createRequire } from 'node:module';
 
 const here = dirname(fileURLToPath(import.meta.url));            // .../research-stances/scripts
 const evRoot = resolve(here, '..', '..', '..', '..');           // .../ev-accounts
 const backend = join(evRoot, 'backend');
-const require = createRequire(join(backend, 'package.json'));
-const { Client } = require('pg');
-const { parse } = require('csv-parse/sync');
 
 function parseArgs(argv) {
   const a = {};
@@ -52,39 +52,71 @@ const PARTISAN = /\b(Democrat|Democrats|Democratic|Republican|Republicans|GOP|MA
 const PARTY_PHRASE = /\b(?:my|our) party\b/i;
 const SENTENCE_END = /[.!?](\s|$)/g;
 const CAMPAIGN_SITE = /(for[a-z]+\d{2,4}|20\d\d|campaign)\.(com|org)|(vote|elect)[a-z]+\.(com|org)/i;
+// Secondary aggregators / encyclopedias — NOT valid sources (checks.py: AGGREGATOR_SOURCE).
+const AGGREGATOR_SOURCE = /ontheissues\.org|wikipedia\.org/i;
+// Quiz / questionnaire comparison sites — categorically unquotable (checks.py: QUIZ_SOURCE).
+const QUIZ_SOURCE = /isidewith\.com/i;
+// Legislative scorecards — votes/ratings, never utterances (checks.py: SCORECARD_SOURCE).
+const SCORECARD_SOURCE = /\/(?:[a-z]+-)?scorecards?\//i;
+// A quote this short states a topic, not a position (checks.py: STANCE_LABEL_MAX_WORDS).
+const WORD = /[A-Za-z0-9][A-Za-z0-9'’-]*/g;
+const STANCE_LABEL_MAX_WORDS = 4;
 
-function checkQuote(q) {
+/**
+ * Pure, deterministic mechanical checks over one row. No DB, no I/O — mirrors
+ * audit-quotes/scripts/checks.py's QUOTE_CHECKS. Accepts either the DB-shaped row
+ * (topic_key/candidate/id) or the CSV-bundle row (same field names), and the shared
+ * fixture row shape (docs/quote-curation/fixtures/mechanical-checks.json).
+ */
+export function checkQuoteRow(r) {
   const out = [];
-  const base = { topic_key: q.topic_key, candidate: q.candidate, quote_id: q.id };
-  const note = (q.editor_note || '').trim();
+  const base = { topic_key: r.topic_key, race_id: r.race_id, candidate: r.candidate, quote_id: r.id };
+  const note = (r.editor_note || '').trim();
   if (!note) out.push({ ...base, check_id: 'note-missing', severity: 'high',
     what: 'editor_note is empty (essentials.quotes requires one; the audit hard-fails without it).' });
   else {
     if (/§/.test(note) || /\btier-?\d\b/i.test(note)) out.push({ ...base, check_id: 'note-section-ref', severity: 'medium',
       what: 'editor_note cites internal section numbers / jargon; rewrite human-readable.' });
-    if ((note.match(SENTENCE_END) || []).length > 2) out.push({ ...base, check_id: 'note-too-long', severity: 'low',
-      what: 'editor_note is longer than 2 sentences.' });
+    if ((note.match(SENTENCE_END) || []).length > 3) out.push({ ...base, check_id: 'note-too-long', severity: 'low',
+      what: 'editor_note is longer than 3 sentences.' });
   }
-  if (!(q.deidentified_text || '').trim()) out.push({ ...base, check_id: 'deid-missing', severity: 'high',
+  if (!(r.deidentified_text || '').trim()) out.push({ ...base, check_id: 'deid-missing', severity: 'high',
     what: 'deidentified_text is blank; row is not admin-selectable and has no blind card.' });
-  const qt = (q.quote_text || '').replace(/\s+$/, '');
+  const qt = (r.quote_text || '').replace(/\s+$/, '');
   if (qt.endsWith('…') || qt.endsWith('...')) out.push({ ...base, check_id: 'trailing-ellipsis', severity: 'low',
     what: 'quote_text ends with a trailing ellipsis (strip it).' });
-  const blind = q.deidentified_text || '';
+  const blind = r.deidentified_text || '';
   if (!(DEM.test(blind) && REP.test(blind))) {           // symmetric mention of both parties reveals no side
     const m = blind.match(PARTISAN) || blind.match(PARTY_PHRASE);
     if (m) out.push({ ...base, check_id: 'partisan-tell', severity: 'high',
       what: `blind text contains a partisan/side tell: '${m[0]}'.` });
   }
-  const url = q.source_url || '';
+  const url = r.source_url || '';
   if (!/youtube\.com|youtu\.be/.test(url) && CAMPAIGN_SITE.test(url)) out.push({ ...base, check_id: 'source-tier-4', severity: 'medium',
     what: `source looks like a campaign/written page (tier 4): ${url}` });
+  if (AGGREGATOR_SOURCE.test(url)) out.push({ ...base, check_id: 'invalid-source', severity: 'high',
+    what: `source is a secondary aggregator, not an original: ${url}` });
+  if (QUIZ_SOURCE.test(url)) out.push({ ...base, check_id: 'unquotable-source', severity: 'high',
+    what: `source is a quiz/questionnaire site (no quotable row): ${url}` });
+  if (SCORECARD_SOURCE.test(url)) out.push({ ...base, check_id: 'scorecard-source', severity: 'high',
+    what: `source is a legislative scorecard (votes/ratings, not utterances): ${url}` });
+  const words = ((r.quote_text || '').match(WORD) || []).length;
+  if (words > 0 && words <= STANCE_LABEL_MAX_WORDS) out.push({ ...base, check_id: 'stance-label', severity: 'medium',
+    what: `quote is ${words} word(s) — a stance label, not a rankable statement.` });
   return out;
 }
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (!args.csv) { console.error('Usage: build-and-check.mjs --csv <path> [--out <bundle.json>]'); process.exit(2); }
+
+  // Lazy requires: only main() (the DB/CSV-bundle path) needs pg + csv-parse, so
+  // importing this module for checkQuoteRow alone needs no node_modules.
+  const { createRequire } = await import('node:module');
+  const require = createRequire(join(backend, 'package.json'));
+  const { Client } = require('pg');
+  const { parse } = require('csv-parse/sync');
+
   const csvPath = resolve(args.csv);
   const rows = parse(readFileSync(csvPath, 'utf8'), { columns: true, skip_empty_lines: true });
 
@@ -151,7 +183,7 @@ async function main() {
   }
   await client.end();
 
-  const findings = quotes.flatMap(checkQuote);
+  const findings = quotes.flatMap(checkQuoteRow);
   const outPath = args.out ? resolve(args.out) : csvPath.replace(/\.csv$/, '') + '.bundle.json';
   writeFileSync(outPath, JSON.stringify(bundle, null, 2));
 
@@ -166,4 +198,6 @@ async function main() {
   process.exit(bySev.high > 0 ? 1 : 0);
 }
 
-main().catch(e => { console.error('FATAL:', e.message); process.exit(2); });
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(e => { console.error('FATAL:', e.message); process.exit(2); });
+}
