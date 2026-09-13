@@ -22,6 +22,7 @@
 import { supabaseAdmin } from './supabase.js';
 import { pool } from './db.js';
 import { env } from './env.js';
+import { generateUniqueAutoName } from './displayName.js';
 
 const WORKOS_API = 'https://api.workos.com';
 
@@ -99,10 +100,19 @@ export async function provisionWorkosUser(workosUserId: string): Promise<Provisi
     if (created) {
       // Best-effort display name from the AuthKit signup form. Non-fatal —
       // the profile page can set it later (same policy as the signup route).
-      const displayName = [workosUser.first_name, workosUser.last_name]
+      let displayName = [workosUser.first_name, workosUser.last_name]
         .filter(Boolean)
         .join(' ')
         .trim();
+      if (!displayName) {
+        // No name from AuthKit: mint a best-effort-unique pseudonym so the account never
+        // reaches Connected tier nameless (watchlist #70). Non-fatal.
+        try {
+          displayName = await generateUniqueAutoName(pool);
+        } catch (err) {
+          console.error('[workosProvision] auto-name generation failed (non-fatal):', err);
+        }
+      }
       if (displayName) {
         try {
           await pool.query(
