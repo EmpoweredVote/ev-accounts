@@ -11,9 +11,9 @@ You are running the **compass-topic-builder** skill. Your job is to discover pol
 **Key principle:** Stances must be level-agnostic — broad enough that a city council member and a U.S. senator could both land somewhere on the same 5-point scale. Each stance must be a single, non-double-barreled policy position.
 
 > **Related:** the `topic_key`/spectrum you build here is the shared unit between the Compass and
-> Read & Rank quotes. See the on-the-record corpus, docs/quote-curation/PRINCIPLES.md (sibling
-> checkout: ../on-the-record/docs/quote-curation/PRINCIPLES.md), `#coupling-model` (the quote↔stance
-> coupling model — same topics, not necessarily the same axis).
+> Read & Rank quotes. See the quote↔stance coupling model — same topics, not necessarily the same
+> axis — at `docs/quote-curation/PRINCIPLES.md#coupling-model` in the on-the-record corpus
+> (resolves to `../on-the-record/docs/quote-curation/PRINCIPLES.md` from a sibling checkout).
 
 ---
 

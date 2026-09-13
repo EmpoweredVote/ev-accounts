@@ -18,6 +18,6 @@ test('build-and-check matches the shared fixture contract', () => {
   const cases = JSON.parse(readFileSync(FIX, 'utf8'));
   for (const c of cases) {
     const got = new Set(checkQuoteRow(c.row).map(f => f.check_id));
-    assert.deepEqual([...got].sort(), [...c.expect].sort(), `${c.name}: ${[...got]} != ${c.expect}`);
+    assert.deepStrictEqual([...got].sort(), [...c.expect].sort(), `${c.name}: ${[...got]} != ${c.expect}`);
   }
 });
