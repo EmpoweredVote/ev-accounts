@@ -74,12 +74,10 @@ export function checkQuoteRow(r) {
   const note = (r.editor_note || '').trim();
   if (!note) out.push({ ...base, check_id: 'note-missing', severity: 'high',
     what: 'editor_note is empty (essentials.quotes requires one; the audit hard-fails without it).' });
-  else {
-    if (/§/.test(note) || /\btier-?\d\b/i.test(note)) out.push({ ...base, check_id: 'note-section-ref', severity: 'medium',
-      what: 'editor_note cites internal section numbers / jargon; rewrite human-readable.' });
-    if ((note.match(SENTENCE_END) || []).length > 3) out.push({ ...base, check_id: 'note-too-long', severity: 'low',
-      what: 'editor_note is longer than 3 sentences.' });
-  }
+  else if (/§/.test(note) || /\btier-?\d\b/i.test(note)) out.push({ ...base, check_id: 'note-section-ref', severity: 'medium',
+    what: 'editor_note cites internal section numbers / jargon; rewrite human-readable.' });
+  else if ((note.match(SENTENCE_END) || []).length > 3) out.push({ ...base, check_id: 'note-too-long', severity: 'low',
+    what: 'editor_note is longer than 3 sentences.' });
   if (!(r.deidentified_text || '').trim()) out.push({ ...base, check_id: 'deid-missing', severity: 'high',
     what: 'deidentified_text is blank; row is not admin-selectable and has no blind card.' });
   const qt = (r.quote_text || '').replace(/\s+$/, '');
