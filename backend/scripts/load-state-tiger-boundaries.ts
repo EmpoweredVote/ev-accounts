@@ -189,6 +189,53 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // place/county are deliberately EXCLUDED: this entry exists to wire legislative routing, and
   // TN's counties already exist and carry the Nashville offices — do not disturb them.
   TN: new Set(['sldu', 'sldl']),
+  // MN. Knight program slice 5 — Duluth and Saint Paul. Production held ZERO G5210/G5220
+  // geofences and ZERO state legislative offices for Minnesota before this entry (measured
+  // 2026-09-12), so no Minnesota address could reach a legislator at all.
+  // Counts MEASURED 2026-09-12 by parsing the .dbf inside each TIGER 2024 FIPS 27 zip
+  // directly, not inferred from statute: sldu 67, sldl 134, place 915 (855 G4110 + 60 G4210).
+  // 🔴 VINTAGE IS L2022 AND THAT WAS PROVEN, NOT ASSUMED — AND A COUNT COULD NEVER PROVE IT.
+  // Minnesota's 2012 plan ALSO had 67 Senate and 134 House districts with the SAME A/B
+  // labelling, so 67/134 distinguishes the two plans not at all. LSY=2024 on both layers, but
+  // LSY is a field, not proof (the TN precedent). The discriminator is a RENUMBERED district:
+  // Duluth's Senate seat was District 7 under the 2012 plan and is District 8 under L2022 —
+  // Jen McEwen served District 7 from 2021 to 2023 and was re-elected in the renumbered
+  // District 8 in Nov 2022. Against Duluth City Hall (46.7828, -92.1057): TIGER's SD 008
+  // interior point lies 10.0 km away and is the NEAREST of all 67, while SD 007 is 82.8 km;
+  // HD 08A is 5.9 km and the NEAREST of all 134. Both agree with the Minnesota Legislative
+  // Coordinating Commission's own point service, which returns SD 08 / HD 08A there.
+  // ⚠ Interior-point proximity is strong pre-flight evidence, NOT point-in-polygon containment.
+  // The proof is the post-load ST_Covers anchor check — see backend/data/seed-mn-2026/
+  // anchors-L2022.json, which carries four anchors including a 64A/64B pair.
+  // 🔴 THE TWO SLD LAYERS ARE PADDED DIFFERENTLY, AND A THIRD FORM EXISTS UPSTREAM.
+  // SLDUST is THREE characters, zero-padded: '008'. SLDLST is two digits plus a letter: '08A'.
+  // GEOIDs are therefore '27008' and '2708A'. The LCC service returns a fourth-of-a-kind '08'.
+  // Normalise deliberately; do not assume a shared format between the chambers.
+  // 🔴 A MINNESOTA HOUSE DISTRICT IS NOT AN INTEGER. Every SLDLST ends in A or B — measured
+  // 67 A and 67 B, and all 67 senate-number groups contain exactly 2 members. Never cast, sort
+  // or join one as a number: lexical order puts 10A before 2A.
+  // ⚠ THE A/B PAIRING ABOVE IS LABEL STRUCTURE, NOT GEOMETRY. Whether each House district
+  // actually falls inside its own Senate district must be measured with ST_Covers after the
+  // load. Tennessee's 3:1 ratio invited exactly this assumption and only 28 of 99 nested;
+  // Colorado behaves the same way. Do not infer containment from the numbering.
+  // 🔴 geo_id COLLIDES WITH COUNTIES ON THE SENATE SIDE. sldu runs 27001..27067 and MN's 87
+  // county GEOIDs run 27001..27173 — 34 of them fall inside the sldu range, so '27001' is
+  // Aitkin County AND Senate District 1. Same shape as GA and TN. Every downstream join must
+  // pair geo_id with district_type or mtfcc. sldl is safe by construction: '2708A' ends in a
+  // letter and cannot collide with a numeric county GEOID.
+  // Neither SLD file carries a 'ZZZ' pseudo-district, so skipDistrictCodes removes nothing.
+  // place: Minnesota's incorporated cities are elected governments. The G4110 filter in the
+  // pre-flight excludes the 60 G4210 CDPs, as for FL/GA/NC/CO/WA and the rest. This slice needs
+  // Duluth 2717000 and St. Paul 2758000 — both G4110, FUNCSTAT 'A'. ⚠ TIGER names the capital
+  // 'St. Paul', so a search for 'Saint Paul' matches NOTHING while '%St. Paul%' matches five
+  // Minnesota cities. Match the GEOID, never the name.
+  // cousub is deliberately EXCLUDED even though Minnesota IS a strong-MCD state whose townships
+  // are elected governments — that is a real future need, but it is out of scope for slice 5 and
+  // would add ~1,800 rows this wave cannot verify. Do NOT add MN to COUSUB_FUNCSTAT_STATES
+  // without loading cousub. cd/county are EXCLUDED because production already holds all 8
+  // Minnesota congressional districts and all 87 counties; reloading them is not idempotent
+  // progress, it is a second chance to introduce a conflicting geo_id.
+  MN: new Set(['sldu', 'sldl', 'place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1684,8 +1731,55 @@ async function processLayer(
     }
   }
 
+  // ── MN MTFCC pre-flight assertion (Knight program, wave MN-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 27 on 2026-09-12 by parsing the
+  // .dbf inside each zip directly, not inferred from statute:
+  //   sldu   67 records, 0 'ZZZ', LSY=2024, MTFCC G5210, SLDUST '001'..'067', GEOID 27001..27067
+  //   sldl  134 records, 0 'ZZZ', LSY=2024, MTFCC G5220, SLDLST '01A'..'67B', GEOID 2701A..2767B
+  // Minnesota is single-member in both chambers, so these polygon counts ARE the
+  // seat counts: 67 Senators + 134 Representatives. Each Senate district is divided
+  // into exactly two House districts, A and B — measured as 67 A, 67 B, with all 67
+  // senate-number groups of size 2.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR. 67/134 is ALSO the shape of Minnesota's
+  // 2012 plan, so these numbers cannot by themselves tell you which map you have —
+  // see the vintage proof in the MN allowlist comment above, which turns on Duluth's
+  // Senate seat being renumbered from 7 to 8. If a count drifts, a remap has happened:
+  // stop, and re-prove the vintage against the Legislature's own point service. Do NOT
+  // raise the number to get a green run.
+  if (fipsArg === '27') {
+    const EXPECTED_MN_MTFCC: Record<string, number> = {
+      sldu: 67,  // 67 MN Senate districts (plan L2022, ordered 2022-02-15) — measured 2026-09-12, no 'ZZZ' row
+      sldl: 134, // 134 MN House districts, 67 A + 67 B — measured 2026-09-12, no 'ZZZ' row
+    };
+    if (layer in EXPECTED_MN_MTFCC) {
+      const expected = EXPECTED_MN_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[MN MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 27 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] MN MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

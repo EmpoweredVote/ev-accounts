@@ -171,12 +171,45 @@ districts and all 87 counties (measured 2026-09-12). Loading them again is not i
 it is a second chance to introduce a conflicting `geo_id`. `cousub` and `unsd` are out of scope for
 this slice.
 
-- [ ] **Step 3: Typecheck**
+- [ ] **Step 2b: Add the MN pre-flight assertion block**
+
+The allowlist is only half the entry. Every state also has a `fipsArg === '<fips>'` pre-flight block
+in the loader body that asserts its expected record counts and **aborts before any DB write** on a
+mismatch. Copy the TN block's shape, and add `MN` to the "every per-state pre-flight assertion above"
+list in the comment below it.
+
+⚠ **Measure the counts from the raw `.dbf`, do not take them from statute.** The TN block says so
+explicitly. For MN this was done on 2026-09-12 by reading the DBF header record count inside each
+TIGER 2024 FIPS 27 zip: **sldu 67, sldl 134, place 915 (855 `G4110` + 60 `G4210` CDPs)**.
+
+- [ ] **Step 3: Verify the entry — NOT with `tsc`**
+
+🔴 **`npm run typecheck` DOES NOT CHECK THIS FILE, AND WILL PASS NO MATTER WHAT YOU WRITE.**
+`backend/tsconfig.json` sets `include: ['src*']`, so everything under `scripts/` is outside the
+TypeScript project; `lint` is `eslint src`, so nothing lints it either. This was found on 2026-09-12
+by planting `ZZ_CONTROL_PLANT: 12345` into `STATE_LAYER_ALLOWLIST` — a `Record<string, Set<string>>`
+— and watching `tsc --noEmit` report **0 errors**. An earlier draft of this plan asked for that
+typecheck as the verification step. It was a vacuous check.
+
+Verify through the CLI instead, which actually exercises the entry. All three must pass:
 
 ```bash
-cd /c/EV-Accounts/backend && npx tsc --noEmit
+cd /c/EV-Accounts/backend
+# 1. MN is registered and the entry parses — expect the --layers demand, not "unknown state"
+npx tsx scripts/load-state-tiger-boundaries.ts --state MN --fips 27
+#    -> --layers required: specify a comma-separated subset of MN's allowlist
+
+# 2. NEGATIVE CONTROL — an unknown state is refused, and MN appears in the known list
+npx tsx scripts/load-state-tiger-boundaries.ts --state ZZ --fips 99
+#    -> unknown state: ZZ. Known: CA, TX, UT, IN, MA, ME, OR, MD, VA, NV, AZ, WI, WA, CO, DC, NC, FL, GA, TN, MN
+
+# 3. The deliberate EXCLUSIONS actually bite — not merely documented in a comment
+npx tsx scripts/load-state-tiger-boundaries.ts --state MN --fips 27 --layers cousub
+#    -> layer 'cousub' not in allowlist for MN. Allowed: sldu, sldl, place
 ```
-Expected: no new errors.
+
+▶ **This gap is wider than MN-1.** No script under `backend/scripts/` is typechecked or linted by
+CI, and that is most of this program's tooling. Worth raising separately; it is not MN-1's to fix.
 
 - [ ] **Step 4: Commit**
 
