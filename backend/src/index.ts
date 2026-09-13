@@ -51,6 +51,7 @@ import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import { requireAuth } from './middleware/auth.js';
 import { requireAdmin } from './middleware/requireAdmin.js';
 import meetingsRouter from './routes/meetings.js';
+import adminMeetingsRouter from './routes/adminMeetings.js';
 import agendaItemsRouter from './routes/agendaItems.js';
 import peopleRouter from './routes/people.js';
 import searchRouter from './routes/search.js';
@@ -143,6 +144,9 @@ app.use('/api/social', socialRouter);
 // Season composition (reviewer-gated). Mounted before the bare /api/admin
 // routers so nothing generic can shadow /api/admin/seasons/*.
 app.use('/api/admin/seasons', seasonsAdminRouter);
+// Project-2 House-floor review panel (authenticated). Mounted before the bare
+// /api/admin routers so the specific prefix is not shadowed.
+app.use('/api/admin/meetings', adminMeetingsRouter);
 // JWT-gated staging review endpoints for the browser admin UI (STAG-06).
 // Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
 // X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
