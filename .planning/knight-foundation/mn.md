@@ -229,7 +229,7 @@ correctly does not fix MD, and MD's wrong `ocd_id`s are already embedded in what
 
 ---
 
-# MN-2 — the legislature (written and dry-run clean 2026-09-14, NOT APPLIED)
+# MN-2 — the legislature (APPLIED 2026-09-14)
 
 Branch `knight/mn-2-legislature`, worktree `/c/ev-accounts-mn`, lease `state:mn`.
 Migrations **`CC_0107`** (structure) and **`CC_0108`** (occupancy) — both slots **reserved from the
@@ -371,11 +371,98 @@ than added, leaving the count right.
 
 ## ▶ Owed, carried forward
 
-1. **Apply.** Both migrations are dry-run clean and **not applied**. Re-run the change-check first
-   if more than a few days have passed.
-2. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
+1. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
    still unmeasured. Ramsey's `OpenData/OpenData` MapServer layer 2 is `Commissioner Districts` —
    found during MN-1 and noted then for stage 4.
-3. Still owed from MN-1: Maryland's 24 collided `ocd_id` rows; a second geographic source for the
+2. Still owed from MN-1: Maryland's 24 collided `ocd_id` rows; a second geographic source for the
    Duluth anchor, since St. Louis County GIS was never actually searched; `backend/scripts/` is
    unlinted and untypechecked.
+
+## ✅ MN-2 APPLIED 2026-09-14 — THE MINNESOTA LEGISLATURE IS SEATED
+
+`CC_0107` then `CC_0108`, both exit 0, both gates green on the way in.
+
+```
+CC_0107: INSERT 0 1 · INSERT 0 1 · INSERT 0 201 · vacate_office -> f
+NOTICE:  MN-2 structure OK: 2 chambers, 134 House + 67 Senate offices, 1 vacant (21A since 2026-06-22)
+CC_0108: INSERT 0 195 · SET · INSERT 0 3 · SET · INSERT 0 200
+NOTICE:  MN-2 occupancy OK: 198 people in band, 201 offices, 200 seated, 200 terms, 0 dated, 0 ended, 21A vacant
+```
+
+Measured from OUTSIDE the migrations, before and after:
+
+| | Before | After | Expected |
+| --- | --- | --- | --- |
+| MN legislative offices | 0 | **201** | 201 |
+| MN chambers on the government row | 4 | **6** | 4 executives + 2 |
+| People in band `-2732201..-2732001` | 0 | **198** | 198 |
+| MN legislative terms | 0 | **200** | 200 |
+| MN legislative **seated** (`count(och.politician_id)`) | 0 | **200** | 200 |
+| `politicians` total | 86,926 | **87,124** | +198 exactly |
+| `offices_missing_terms` total | 822 | **823** | +1, the vacant 21A |
+| `offices_missing_terms` **unflagged** | 655 | **655** | unmoved — 21A is flagged |
+
+### ✅ The three dispositions landed as written
+
+- **21A**: `is_vacant` true, `vacant_since` **2026-06-22**, **0** terms, **0** holders. No span written.
+- **The two reused rows** keep their MN-02 race edge *and* gain one term each — Kaela Berg on
+  House 55B, Eric Pratt on Senate 54. No duplicate person was created.
+- **The three namesake pairs are six distinct rows**, and only the Minnesota one of each holds a
+  Minnesota seat: Steven Jacob (MN 20B) beside Steven Jacob (KS candidate, no office); Tom Murphy
+  (MN 9B) beside Tom Murphy (Mayor, Sahuarita AZ); Erin P. Murphy (MN Senate 64) beside
+  Erin J. Murphy (City Councillor, Boston).
+
+### ✅ END-TO-END PROBE — and it matches a THIRD, INDEPENDENT authority
+
+The only reliable detector is whether an address returns a legislator. All four MN-1 anchors were
+run point → `geofence_boundaries` → `districts` → `offices` → `office_terms` → `politicians`:
+
+| Point | Senate | House |
+| --- | --- | --- |
+| Duluth City Hall | SD-8 **Jennifer A. McEwen** | HD-8A **Pete Johnson** |
+| Saint Paul City Hall | SD-65 **Sandra L. Pappas** | HD-65B **María Isa Pérez-Vega** |
+| 235 Marshall Ave | SD-64 **Erin P. Murphy** | HD-64A **Meg Luger-Nikolai** |
+| 1200 Montreal Ave | SD-64 **Erin P. Murphy** | HD-64B **Dave Pinto** |
+
+🟢 **THE NAMES ARE THE POINT, NOT THE DISTRICT NUMBERS.** MN-1 recorded what the *state's own*
+"Who Represents Me" tool returned at Duluth and Saint Paul City Hall — McEwen, Johnson, Pappas,
+Perez-Vega. Those names came from `gis.lcc.mn.gov`, not from either chamber's roster and not from
+Open States. The seeded chain reproduces all four. That is a third authority agreeing, not a
+restatement of the sources the roster was built from.
+
+🟢 Two further things fall out of the same table. **`María Isa Pérez-Vega` renders with its
+accents**, so the HTML-decoder fix reached production. And **64A and 64B resolve to different
+people inside one Senate district** — the only test that catches a collapsed or swapped A/B half.
+64A returns **Meg Luger-Nikolai**, the successor the House's own Leadership tab still gets wrong.
+
+⚠ **The probe was controlled.** Eight OK out of eight is a uniform answer. Re-running it with
+Duluth's expectation set to the **2012 plan's** `7`/`7A` reported `*** WRONG DISTRICT ***` on
+exactly those two rows and left the other six OK.
+
+### ✅ PER-DISTRICT CONTROL — green is not a claim about districts unless you count them
+
+| Layer | Districts | With exactly 1 office | With exactly 1 holder | Unseated | Anomalies |
+| --- | --- | --- | --- | --- | --- |
+| `STATE_LOWER` | 134 | **134** | 133 | 1 — `2721A` | none |
+| `STATE_UPPER` | 67 | **67** | **67** | 0 | none |
+
+The single unseated district is **named**, not merely counted, and it is the expected one. No
+Minnesota legislator holds two Minnesota legislative seats.
+
+### ✅ Idempotent, proved by re-running both
+
+Both migrations were applied a second time. Every write into `essentials.*` reported `INSERT 0 0`,
+both post-verify gates passed unchanged, and the four counts afterwards were identical —
+201 offices, 198 people, 200 terms, 87,124 politicians.
+
+### ✅ Gates after the apply
+
+| Gate | Result |
+| --- | --- |
+| `check:reachability` | **OK — nothing regressed**, and TWO buckets fell: `BAD_GEOMETRY` 4 (baseline 5), `UNREACHABLE` 37 (baseline 38). `DEAD_GEOGRAPHY` unmoved at 17. |
+| `check:migrations` | OK |
+| `check:reservations` | OK |
+| `check:occupancy` | OK |
+
+▶ **Next: stage 3** — Duluth and Saint Paul city councils. Neither council's district layer has
+been measured yet.
