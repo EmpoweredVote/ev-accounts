@@ -226,3 +226,156 @@ correctly does not fix MD, and MD's wrong `ocd_id`s are already embedded in what
    exposes no documented REST endpoint. GA-5's route — read the iframe on the jurisdiction's own page
    and find what it actually calls — is the precedent.
 3. **Do Duluth and Saint Paul publish council-district layers?** Unmeasured; stage 3's problem.
+
+---
+
+# MN-2 — the legislature (written and dry-run clean 2026-09-14, NOT APPLIED)
+
+Branch `knight/mn-2-legislature`, worktree `/c/ev-accounts-mn`, lease `state:mn`.
+Migrations **`CC_0107`** (structure) and **`CC_0108`** (occupancy) — both slots **reserved from the
+allocator**, not counted. Roster:
+[`backend/data/seed-mn-legislature-2026/ROSTERS.md`](../../backend/data/seed-mn-legislature-2026/ROSTERS.md).
+
+**201 offices — 134 House + 67 Senate. 200 seated, 1 vacant. 198 people created, 2 reused.**
+
+Baseline re-measured against production 2026-09-14, and it matched what stage 1 left: **67 + 134
+districts present, ZERO legislative offices, ZERO legislative chambers**, and exactly **one**
+`State of Minnesota` government row (`b610e3f3-…`). Indiana's 22 indistinguishable governments do
+not recur here, and that was measured rather than hoped.
+
+## 🔴🔴 A ROSTER LIST PAGE IS NOT A CHANGE-CHECK — AND THIS IS THE FINDING OF THE WAVE
+
+`house.mn.gov/members/` listed **Joe Schomacker for 21A on 2026-09-14**, three months after he
+resigned. Neither chamber publishes a vacancy marker: a case-insensitive search for `vacan` over
+the House list page and over the Senate API returns **nothing at all**. The only in-band signal is
+a banner on the member's own profile page — *"Resigning effective 11:59 p.m. Sunday, June 21st
+2026"*.
+
+So the change-check is **all 201 individual member pages**, not the two roster pages. It found
+exactly one status note in 201, and its own positive controls — a resignation banner, a vacancy
+wording, a death wording and a successor wording, each planted into a copy of SD-35 — all fired.
+
+The House's own Session Daily settles the disposition: *"No special election will be called to fill
+the remainder of his term."* **HD-21A is vacant**, first vacant day **2026-06-22**, filled at the
+2026-11-03 general.
+
+▶ **Disposition follows Georgia's SD-12, with one difference.** The office is created and flagged
+through `essentials.vacate_office()`, which with no open term writes **no span** and sets
+`is_vacant` + `vacant_since`. Georgia left `vacant_since` NULL because only the *announcement* was
+documented; **Minnesota's date is documented, so it is written.** No person row is created for
+Schomacker — this wave seats who holds a seat today.
+
+## 🔴 THE HOUSE'S OWN LEADERSHIP TAB IS STALE, AND THE OTHER FOUR TABS ARE NOT
+
+One document, five tabs, and they do not all agree. Leadership lists **Amanda Hemmingsen-Jaeger
+(47A)** and **Kaohly Vang Her (64A)**; Alphabetical, District Order, Republican and DFL all list
+the successors **Shelley Buck** and **Meg Luger-Nikolai**, and Open States agrees with those four.
+Hemmingsen-Jaeger is now the **senator for district 47** — she moved chamber, and one tab did not
+notice.
+
+⚠ The two caucus tabs carry **67 each**, not 134. An absence from the Republican tab is a fact
+about party, not a disagreement; the builder asserts that GOP and DFL *partition* the House
+instead. A first draft treated the absences as 128 disagreements.
+
+## 🔴 EIGHT MEMBER NAMES ARE HTML-ENCODED
+
+`Mar&#237;a Isa P&#233;rez-Vega` is one of them. A raw regex capture writes mojibake into a
+voter-facing field. `extract-house-tabs.mjs` decodes, and **refuses to run if it finds no encoded
+name to decode** — a decoder that is never exercised has proved nothing.
+
+## 🔴 FIVE NAME COLLISIONS, SPLITTING TWO WAYS — AND THE FIFTH WAS INVISIBLE
+
+Production holds an **active** politician row with the same `(first_name, last_name)` for five of
+the 200 members, which `essentials.politician_name_duplicate_guard` refuses. Each was read before
+it was classified.
+
+| Seat | Roster | Existing row | Verdict |
+| --- | --- | --- | --- |
+| 55B | Kaela Berg | Kaela Berg, candidate MN-02 | ♻ same person — reuse |
+| 54 | Eric R. Pratt | Eric Pratt, candidate MN-02 | ♻ same person — reuse |
+| 20B | Steven Jacob | Steven Jacob, candidate **KS**-01, a Libertarian from Lawrence | ✂ different |
+| 9B | Tom Murphy | Tom Murphy, **Mayor of Sahuarita, AZ** | ✂ different |
+| 64 | Erin P. Murphy | Erin **J.** Murphy, **Boston City Councillor** | ✂ different |
+
+⚠ **The guard is lifted for three rows, not for the migration.** `CC_0108` inserts the 195
+collision-free rows with the trigger **armed**, so a collision nobody anticipated still stops it;
+only then is `essentials.allow_duplicate_name` set to `'on'` for the three, and back to `'off'`
+immediately afterwards.
+
+🟢 **THE FIFTH COLLISION WAS INVISIBLE UNTIL A DIFFERENT BUG WAS FIXED.** An early draft of the
+roster builder took `full_name` from the chamber and `first_name` from Open States, writing
+**"Steven Jacob"** with `first_name` **"Steve"**. The guard keys on `(first_name, last_name)`, so
+the mismatch hid the Kansas Steven Jacob from the reuse search entirely — the exact-match query
+returned **four** collisions, not five.
+▶ **A FIELD PAIR THAT A CONSTRAINT READS MUST COME FROM ONE SOURCE.**
+
+## 🔴 THERE IS NO `term_start` TO BE HAD, AND NONE IS INVENTED
+
+The richest per-member pages either chamber publishes give an election **year** and an ordinal —
+"Elected: 2010 / Term: 8th" (House), "re-elected 2020, 2022 / Term: 4th" (Senate). The Legislative
+Reference Library's legislator database gives **biennia** ("House 1971-72"). Neither is a date.
+
+At least six sitting members took their seats at a **2025 special election** rather than at the
+start of the biennium, so the constitutional first-Monday-in-January date would be positively
+wrong for them and is not a fact about anyone else either. Every term is written **open-ended at
+`start_precision = 'unknown'`** — the GA-2 and IN-2 pattern. `seat_officeholder()` is not used; it
+refuses a NULL `term_start` by design.
+
+## 🔴 ALL 201 SEATS ARE ON THE 2026-11-03 BALLOT
+
+Every Minnesota House seat is elected every two years, and the Senate class elected in 2022 serves
+through 2026. ▶ **Re-run the change-check immediately before applying** if this slips past early
+November. A certified result is not a fact about who holds the seat; only a *special*-election
+winner starts early.
+
+## ✅ Dry run — both migrations as ONE transaction, and the rollback was verified
+
+```
+INSERT 0 1 · INSERT 0 1 · INSERT 0 201 · vacate_office -> f
+NOTICE:  MN-2 structure OK: 2 chambers, 134 House + 67 Senate offices, 1 vacant (21A since 2026-06-22)
+INSERT 0 195 · SET · INSERT 0 3 · SET · INSERT 0 200
+NOTICE:  MN-2 occupancy OK: 198 people in band, 201 offices, 200 seated, 200 terms, 0 dated, 0 ended, 21A vacant
+ROLLBACK
+```
+
+`vacate_office` returning **`f`** is correct: there was no open term to close, and the flag is
+still set. Production was re-measured afterwards and is **untouched** — 0 legislative offices, 4
+chambers (the pre-existing executives), 0 people in the reserved band, no 21A office. The rollback
+reverted, confirmed rather than assumed.
+
+### 🔴 EVERY GATE WAS WATCHED FAILING FIRST
+
+A gate that passes can pass for the wrong reason. Five defects were planted into copies of the dry
+run (`backend/data/seed-mn-legislature-2026/gate-controls.sh`), and each aborted with a
+**distinguishable** exception:
+
+| Control | Reported |
+| --- | --- |
+| one office short | `expected 134 House / 67 Senate offices, got 134 / 66` |
+| vacancy never flagged | `expected 1 vacant Minnesota legislative office(s), got 0` |
+| one term short | `expected 200 seated Minnesota legislative offices, got 199` |
+| a term carries a date | `200 dated and 0 ended terms; every Minnesota term is open-ended and unknown` |
+| the vacant seat seated | `expected 200 seated Minnesota legislative offices, got 201` |
+
+⚠ The last one aborts at the **seated-count** gate, which fires before the dedicated 21A gate. The
+21A gate is still there and still needed — it catches the case where a seat is *swapped* rather
+than added, leaving the count right.
+
+## ✅ Gates green
+
+| Gate | Result |
+| --- | --- |
+| `check:migrations` | OK — 2 added vs `origin/master`, 1905 slots across 148 refs, tree scan clean |
+| `check:reservations` | OK — both slots reserved by their own author |
+| `check:occupancy` | OK — 4 files scanned, no writes to the dropped `offices.politician_id` |
+
+## ▶ Owed, carried forward
+
+1. **Apply.** Both migrations are dry-run clean and **not applied**. Re-run the change-check first
+   if more than a few days have passed.
+2. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
+   still unmeasured. Ramsey's `OpenData/OpenData` MapServer layer 2 is `Commissioner Districts` —
+   found during MN-1 and noted then for stage 4.
+3. Still owed from MN-1: Maryland's 24 collided `ocd_id` rows; a second geographic source for the
+   Duluth anchor, since St. Louis County GIS was never actually searched; `backend/scripts/` is
+   unlinted and untypechecked.
