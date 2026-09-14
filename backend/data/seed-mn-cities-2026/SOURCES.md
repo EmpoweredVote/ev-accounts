@@ -4,8 +4,9 @@ Wave: Knight slice 5, stage 3. Opened **2026-09-14**. Leases `place:2717000` and
 held by chris@empowered.vote on DESKTOP-G6KDNN2. Slice notes:
 [`.planning/knight-foundation/mn.md`](../../../.planning/knight-foundation/mn.md).
 
-**Status: boundary sources found and validated; office lists read from both charters; rosters
-identified; migrations NOT yet written.**
+**Status: boundary sources validated, office lists read from both charters, and the
+**change-check is done** — all 18 members, each with a dated term start. Migrations NOT yet
+written.**
 
 ---
 
@@ -183,23 +184,119 @@ surname-only sweep returns 130 rows and is **noise** — 27 Johnsons alone, in 1
 
 ---
 
-## ▶ What MN-3 still owes
+---
 
-1. **A per-member change-check.** The roster above comes from two sources per city, but MN-2's
-   finding was that a list page is not a change-check. Each of the 18 needs their own page read.
-   🔴 **One lead is already open: Duluth's council was "accepting applications for the District 2
-   seat" in July 2025**, so Diane Desotelle may have been **appointed** rather than elected, which
-   changes `how_started`. Read it before writing the term.
-2. **Term dates, per seat.** Saint Paul has real ones — the mayor from **2026-01-02** (`day`), and
-   councilmembers elected in 2023 whose terms the 2024 charter amendment **extended through the
-   end of 2028** when city elections moved to presidential years. Duluth's are staggered: the 2023
-   election filled two at-large seats and districts 1, 3, 4 and 5; the 2025 election filled
-   districts 2 and 4 and two at-large seats. Duluth's mayor is documented only to the month
-   ("January 2024"), which `start_precision => 'month'` records honestly.
-3. **A boundary loader run** for each city (an `X` slot), with the migrations' pre-flight failing
-   hard if the polygons are absent.
-4. **Structure and occupancy migrations**, two per city or two in total — slots to be reserved
-   from the allocator.
-5. **An address probe per city**, with a per-district control: Duluth City Hall and Saint Paul
-   City Hall both already have geocoded points in
-   [`../seed-mn-2026/anchors-L2022.json`](../seed-mn-2026/anchors-L2022.json).
+# The change-check — done 2026-09-14
+
+All **18** member pages fetched and read: 18/18 HTTP 200, **18/18 name the person the roster says
+holds the seat**. Roster written to
+[`backend/data/mn-cities-roster.json`](../mn-cities-roster.json) with a dated
+`term_start` for every one of the 18 — **no seat is written open-ended**, unlike MN-2.
+
+## 🔴🔴 THE WORD SCANNER WAS BLIND TO THE ONLY REAL DEFECT
+
+[`sweep-member-pages.mjs`](./sweep-member-pages.mjs) looks for
+*words* — resigned, vacant, appointed, sworn in, stepping down, interim — because that is what
+caught Joe Schomacker in MN-2. It ran clean: **one hit across 18 pages**, and that one was a
+biographical line about Nelsie Yang's first term in 2020.
+
+**It was still blind.** Duluth's real defect is a **date in the past**:
+
+> Terese Tomanek — **Term Expires: January 5, 2026**
+
+read on **2026-09-14**, eight months later. Nothing on the page is *worded* as a problem. No
+scanner looking for language can see it.
+
+▶ **A CITY COUNCIL'S CHANGE-CHECK SIGNAL IS AN EXPIRED DATE, NOT A BANNER.** The state legislature
+publishes a resignation notice; a city publishes a term-expiry field and lets it rot.
+[`read-duluth-terms.mjs`](./read-duluth-terms.mjs) extracts it
+and compares it to today.
+
+⚠ **The scanner's six positive controls all fired** — resignation, vacancy, appointment, successor,
+stepping down and interim, each planted into a copy of a real page. It was working correctly and
+was still the wrong instrument. **A control proves a detector is not broken. It cannot prove the
+detector is looking at the right thing.**
+
+## 🔴 FOUR IDENTICAL EXPIRED DATES ARE A UNIFORM ANSWER, AND THEY WERE WRONG
+
+All **four** Duluth at-large pages state the same expired date, `2026-01-05`. The distribution is
+what gave it away — Duluth staggers its council, so its expiries must **not** be uniform:
+
+| Expiry stated | Seats |
+| --- | --- |
+| 2026-01-05 | **4** — every at-large seat 🔴 |
+| 2028-01-03 | 3 — districts 1, 3, 5 |
+| 2030-01-07 | 2 — districts 2, 4 |
+
+Settled against the election record, and the pages are **stale, not the roster**:
+
+- **November 2023** elected **two** at-large — Arik Forsman and Lynn Marie Nephew. Terms to 2028.
+- **November 2025** elected **two** at-large — Terese Tomanek (re-elected, 10,504 votes) and
+  Jordon Johnson (newcomer, 8,515). Terms to 2030.
+
+Jordon Johnson's page states an expiry that **predates his own term**. The four names are right —
+the GIS layer and the council index agree — and all four dates are wrong.
+
+## 🟢 THE DISTRICT PAGES ARE MAINTAINED, AND THEY PROVE THE TERM BOUNDARY
+
+Every stated district expiry is a **first Monday in January**: 2028-01-03, 2030-01-07. So is
+2026-01-05. The charter uses the same boundary in ch. II s 4, where an appointee serves *"until the
+first Monday in January after the next municipal election, when the office shall be filled by
+election for the unexpired term."* That gives Duluth a `day`-precision `term_start` — **2024-01-01**
+for the 2023 winners and **2026-01-05** for the 2025 winners — derived from the city's own
+published dates plus the charter's four-year term, not invented.
+
+## 🔴 THREE SEATS TURNED OVER MID-TERM, AND EACH NEEDED READING
+
+| Seat | What happened |
+| --- | --- |
+| **Duluth District 2** | Mike Mayou resigned end of June 2025 — he moved out of the district and could not find a house inside it. **Deborah DeLuca** was appointed interim by unanimous council vote. **Diane Desotelle** won the November general with **80%**. The interim holder is not modelled; this wave seats who holds the seat today. |
+| **Duluth District 4** | Appeared in **both** the 2023 and 2025 election listings, which read as a contradiction until it was read: Renee Van Nett left, **Tara Swenson** won a special election to the unexpired **partial** term, and **David Clanaugh** beat Swenson in November 2025, 53% to 46%. |
+| **Saint Paul Ward 4** | Council President **Mitra Jalali** announced her resignation in January 2025 citing health, effective **2025-03-08**. **Molly Coleman** won the special election of **2025-08-12** with 52.36% and was sworn in **2025-08-27**. |
+
+⚠ **SAINT PAUL'S COUNCIL INDEX IS WRONG FOR WARD 4.** It states flatly that *"Councilmembers were
+elected to a 4-year term in 2023"*. Coleman was elected in **2025**, at a special election, and
+took office in August. One sentence covering seven seats is right for six of them — which is the
+MN-2 lesson in a second dress.
+
+## 🔴 A 404 BODY IS STILL A FULL PAGE, AND A SURNAME TEST PASSES ON IT
+
+Saint Paul's ward URLs are **not uniform**: wards 1–6 are `/ward-N`, but ward 7 is
+`/ward-7-cheniqua-johnson`. The guessed `/ward-7` returns **HTTP 404 with a 110 KB body** that
+mentions "Johnson" twice — so the identity check passed it on a surname match. The sweep now
+**checks status before content**, on the principle that a clean-looking body proves nothing about
+whether the request succeeded.
+
+⚠ A slug that embeds the member's name **breaks when the member changes**, and Saint Paul already
+demonstrates it: the old ward-4 sub-pages still sit under `/ward-4-councilmember-mitra-jalali/`
+six months after she left. These URLs are re-derived from the council index, never remembered.
+
+## Term starts, all 18, all dated
+
+| | Seats | `term_start` | Why |
+| --- | --- | --- | --- |
+| Duluth, elected Nov 2023 | 6 | **2024-01-01** | first Monday in January |
+| Duluth, elected Nov 2025 | 4 | **2026-01-05** | first Monday in January |
+| Saint Paul council, elected Nov 2023 | 6 | **2024-01-09** | sworn in at the Ordway Center |
+| Saint Paul Ward 4 | 1 | **2025-08-27** | sworn in after the 2025-08-12 special |
+| Saint Paul Mayor | 1 | **2026-01-02** | sworn in as 56th mayor |
+
+**No `term_end` is written** — a future `term_end` makes a seat silently self-vacate. The stated
+expiries are recorded in the roster as `page_states_term_expires` for the audit trail and are not
+loaded.
+
+## ⚠ Duluth's four at-large offices will be indistinguishable by title
+
+The charter creates **four seats elected from the city at large** in one citywide race — they are
+not numbered, and numbering them would describe a power Duluth does not have. All four offices
+therefore carry the identical title `Councilor, At Large`, which is Fort Wayne's situation exactly.
+The occupancy migration needs an **INTERNAL** discriminator in `description`, labelled as such, so
+seating is deterministic without asserting a seat name that no ballot carries.
+
+## ▶ Still owed
+
+1. Boundary loader runs for both cities (`X` slots), with a migration pre-flight that fails hard if
+   the polygons are absent.
+2. Structure and occupancy migrations — slots to be reserved from the allocator.
+3. An address probe per city with a per-district control. Both city halls already have geocoded
+   points in [`../seed-mn-2026/anchors-L2022.json`](../seed-mn-2026/anchors-L2022.json).
