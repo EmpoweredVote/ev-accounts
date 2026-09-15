@@ -293,10 +293,99 @@ therefore carry the identical title `Councilor, At Large`, which is Fort Wayne's
 The occupancy migration needs an **INTERNAL** discriminator in `description`, labelled as such, so
 seating is deterministic without asserting a seat name that no ballot carries.
 
+---
+
+# The migrations — written and dry-run clean 2026-09-14, NOT APPLIED
+
+| | |
+| --- | --- |
+| Boundaries | [`scripts/load-mn-city-council-boundaries.ts`](../../scripts/load-mn-city-council-boundaries.ts) — **X0052** (5 Duluth districts), **X0053** (7 Saint Paul wards) |
+| Structure | **`CC_0109`** — 2 governments, 4 chambers, 14 districts, **18 offices** |
+| Occupancy | **`CC_0110`** — **18 people, 18 dated terms, 0 vacancies** |
+
+Both migration slots were **reserved from the allocator**. Both `X` codes were checked free in
+production *and* by grepping **every** git ref, since an `X` code is not a steward slot.
+
+## 🟢 Every term is dated, which is unusual for this program
+
+MN-2 wrote all 200 legislative terms open-ended at `unknown` because neither chamber publishes a
+date. Both cities do:
+
+| `term_start` | Seats | Source |
+| --- | --- | --- |
+| 2024-01-01 | 6 | Duluth, elected Nov 2023 — first Monday in January |
+| 2026-01-05 | 4 | Duluth, elected Nov 2025 — first Monday in January |
+| 2024-01-09 | 6 | Saint Paul council, sworn in at the Ordway Center |
+| 2025-08-27 | 1 | Saint Paul Ward 4, after the 2025-08-12 special |
+| 2026-01-02 | 1 | Saint Paul Mayor, sworn in as the 56th mayor |
+
+**No `term_end` is written.** A future `term_end` self-vacates a seat. The gate asserts **0 undated
+and 0 ended** — the opposite of MN-2's, which asserted 200 undated.
+
+## ✅ Dry run — the WHOLE chain in one transaction, and the rollback was verified
+
+CC_0109's pre-flight refuses to run without the twelve boundaries, so the migrations cannot be
+dry-run alone — and loading them for real first would be a production write. **A dry run that
+requires a production write is not a dry run.** [`build-dryrun.mjs`](./build-dryrun.mjs) emits the
+boundary inserts the loader would make, with the same `source` string the pre-flight inspects,
+inside the same transaction that is then rolled back.
+
+```
+INSERT 0 12 (boundaries) · INSERT 0 2 (governments) · INSERT 0 4 (chambers)
+INSERT 0 14 (districts)  · INSERT 0 18 (offices)
+NOTICE:  MN-3 structure OK: 2 governments, 4 chambers, 12 council districts, 18 offices (Duluth at-large 4 distinct)
+INSERT 0 18 (people)     · INSERT 0 18 (terms)
+NOTICE:  MN-3 occupancy OK: 18 people, 18 offices, 18 seated (10 Duluth + 8 Saint Paul), 18 terms, 0 undated, 0 ended, 4 distinct at-large
+ROLLBACK
+```
+
+Production was re-measured afterwards and is **untouched**: 0 X0052/X0053 boundaries, 0 city
+governments, 0 people in the band — and the **Texas** Saint Paul row still intact at 1.
+
+## 🔴 Every gate was watched failing first — sixteen of them
+
+**The loader**, against deliberately wrong inputs
+(`load-mn-city-council-boundaries.ts --control`):
+
+| Control | Result |
+| --- | --- |
+| GATE 1 a district removed | refused — 4 features against 5 |
+| GATE 2 a councilor renamed | refused — layer "Zzz Control" vs roster "Wendy Durrwachter" |
+| GATE 2 one name on every district | refused — 1 distinct value, so it discriminates nothing |
+| GATE 2 the **superseded** 2012 service | refused — its layer carries no `Councilor` field at all |
+| GATE 3 the **superseded** 2012 map | refused — covers **89.176%**, leaving **8.6776 sq mi** with no councilor |
+| GATE 3 the **current** map | **passes** — 99.984% |
+
+**The migrations**, against eight planted defects ([`gate-controls.sh`](./gate-controls.sh),
+[`plant-controls.py`](./plant-controls.py)):
+
+| Control | Reported |
+| --- | --- |
+| no boundaries loaded — *today's production state* | `X0052 holds 0 Duluth council boundaries, expected 5` |
+| boundaries from the superseded map | `it may be the superseded 2012 map` |
+| one Duluth district missing | `X0052 holds 4 Duluth council boundaries, expected 5` |
+| at-large ordinals not distinct | `Duluth at-large is 4 office(s) with 1 distinct description(s)` |
+| Saint Paul given an at-large seat | `its charter creates none` |
+| a term with no start date | `1 term(s) carry no term_start; both cities publish one` |
+| a term given a `term_end` | `18 term(s) carry a term_end; a future term_end self-vacates the seat` |
+| two at-large seats, one person | `Duluth at-large seats hold 3 distinct people, expected 4` |
+
+🔴 **TWO CONTROLS PLANTED SOMETHING OTHER THAN WHAT THEY CLAIMED, AND BOTH LOOKED LIKE PASSES.**
+A greedy regex deleted **three** Duluth boundary inserts instead of one, and the gate correctly
+reported 2 — the gate was right and the *control* was lying. And the "two seats, one person"
+control first duplicated a **person** row, so the unique index on `external_id` aborted the run
+before the gate was ever reached. ▶ **A control that aborts for the wrong reason proves nothing.**
+Every control now asserts what it planted before the file is written.
+
+## ✅ Gates green
+
+`check:migrations` (4 added vs `origin/master`, 1907 slots across 151 refs) · `check:reservations`
+(all four in slots their own author reserved) · `check:occupancy` (9 files scanned).
+
 ## ▶ Still owed
 
-1. Boundary loader runs for both cities (`X` slots), with a migration pre-flight that fails hard if
-   the polygons are absent.
-2. Structure and occupancy migrations — slots to be reserved from the allocator.
-3. An address probe per city with a per-district control. Both city halls already have geocoded
-   points in [`../seed-mn-2026/anchors-L2022.json`](../seed-mn-2026/anchors-L2022.json).
+1. **Run the loader, then apply `CC_0109` and `CC_0110`.**
+2. An address probe per city with a per-district control — Duluth City Hall and Saint Paul City
+   Hall both have geocoded points in [`../seed-mn-2026/anchors-L2022.json`](../seed-mn-2026/anchors-L2022.json).
+   Expect **eight** answers at Saint Paul City Hall: ward, mayor, SD-65, HD-65B, and the federal rows.
+3. `check:reachability` after the apply.
