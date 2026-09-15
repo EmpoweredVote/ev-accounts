@@ -551,7 +551,81 @@ planted before the file is written.
 🟢 No matview refresh was needed, and that was checked: `geofence_child_county` is defined over
 `G4110` and mentions no `X00` code.
 
+## ✅ MN-4 APPLIED 2026-09-15 — BOTH COUNTY BOARDS ARE SEATED
+
+**19 offices, 19 seated, 0 vacancies.** St. Louis 10, Ramsey 9 — `CC_0111` (structure) and
+`CC_0112` (occupancy), on `X0054` and `X0055`. Full record:
+[`backend/data/seed-mn-counties-2026/SOURCES.md`](../../backend/data/seed-mn-counties-2026/SOURCES.md).
+
+### 🔴🔴 THE TWO COUNTIES DO NOT ELECT THE SAME OFFICES, AND NEITHER MATCHES THE GENERAL RULE
+
+§ 382.01 says auditor, treasurer, sheriff, recorder, attorney, coroner. **Ramsey elects a board,
+a sheriff and an attorney** (§ 383A.20 — Minnesota's only home rule charter county makes the other
+four appointive). **St. Louis elects those plus an Auditor/Treasurer** (§ 383C.136 abolished the
+treasurer in 1969 and gave its duties to the auditor). Neither elects a coroner. The migration's
+post-verify asserts 4+3 chambers and 10+9 offices, and refuses a Ramsey auditor by name.
+
+### 🔴🔴 A SINGLE PERCENTAGE IS NOT A GATE, MEASURED IN BOTH DIRECTIONS
+
+Ramsey tiles its county at **100.000%**; St. Louis covers **98.220%** and is **correct** — the gap
+is one 120.593 sq mi edge wedge of Lake Superior plus 912 slivers, holding no incorporated place.
+MN-3's `minCoverPct: 99.9` would have refused it.
+
+But the number chosen instead would have failed the other way: a control that removes Duluth's own
+district still scores **97.682%**, above the 97% backstop. **What refused it was decomposing the
+gap** — a 157.597 sq mi piece that contains Duluth — and GATE 3P, which asks the reachability
+question directly: every incorporated place in the county must sit in exactly one district (27 in
+St. Louis, 15 in Ramsey). ▶ Neither threshold, on its own, was the gate.
+
+⚠ Area ratios mislead in both directions here and that is why they are not the main gate. Duluth's
+place polygon is only **96.077%** covered (its own polygon overhangs the lake) and White Bear Lake
+**99.118%** (it straddles the Washington County line). Both are correct.
+
+### 🔴 GATE 4's TOLERANCE IS A PROPERTY OF THE COUNTY, NOT A CONSTANT
+
+St. Louis's layer self-overlaps on **11 pairs totalling 0.022856 sq mi**; Ramsey's on **zero**.
+MN-3's flat 0.001 refused a correct layer. Tolerances are now measured per county and each was
+watched refusing a planted 8 sq mi overlap. ⚠ The loader also had to be made to **print the
+measurement beside the verdict** — it first said *"no overlapping district pairs"* about a layer
+with eleven of them.
+
+### 🔴🔴 A CONTROL CAN PLANT A REAL CHANGE IN THE WRONG PLACE, AND IT LOOKS LIKE A PASS
+
+MN-3 ended on *a control that aborts for the wrong reason proves nothing*. The next form of it:
+the coverage control removed **St. Louis district 1** to orphan Duluth — **Duluth is in district
+3** — and **Ramsey district 4** to orphan Saint Paul — **Saint Paul is in district 5**. Both gates
+passed, correctly, on a control that had orphaned nobody. Both now assert the place sits in **0**
+districts before judging. ▶ **Assert the consequence you planted, not the action you took.**
+
+### 🔴 THE ROSTER CONTRADICTED ITS OWN PROSE, AND THE PROSE WAS RIGHT
+
+Three Ramsey commissioners carried `2023-01-02` at **`day`** — § 382.01's first Monday, which
+governs the **constitutional officers** and not the board (§ 375.01 gives no day, which is why St.
+Louis's two expiry cohorts land on a Monday and a Tuesday). No page states a day. Corrected to
+`month`, making the mix **5 `day` · 7 `month` · 7 `year`** — the five being exactly the five
+constitutional officers, as the notes had claimed all along. `CC_0112` asserts the mix *and* that
+no commissioner carries a day.
+
+### ✅ 52 gate verdicts, and the probe
+
+24 loader verdicts (12 controls, each asserting what it planted) and **28 migration gates**, run by
+splitting each migration at its post-verify banner so the real gate text judges a broken state.
+Dry-run as one transaction with the rollback verified; both applied; both re-run idempotent.
+
+**Duluth City Hall returns 13 answers, Saint Paul 8, Hibbing 7** — councilor, legislators and
+county officers together, three waves stacking. Per-district control **14 of 14**.
+
+⚠ **MN-3's offshore control point does not transfer** — 20 km out in Lake Superior returns a
+commissioner, correctly, because it is inside St. Louis County. A negative control must be outside
+the thing being tested, not outside the last thing that was tested.
+
 ## ▶ Next
 
-**Stage 4** — the St. Louis and Ramsey county boards. Ramsey's `OpenData/OpenData` MapServer layer
-2 is `Commissioner Districts`, found during MN-1 and noted then for exactly this.
+**Slice 5 is complete: stages 1-4 all applied.** Nothing is owed within Minnesota.
+
+Carried forward beyond this slice:
+
+1. **Maryland's 24 collided `ocd_id` rows** are still unrepaired — `ocdDistrictSuffix.ts` fixed the
+   loader before any Minnesota row was written, but MD was already in production. ND (slice 12) and
+   SD (slice 15) will hit the same shape.
+2. `backend/scripts/` is unlinted.

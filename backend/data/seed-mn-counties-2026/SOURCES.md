@@ -4,9 +4,9 @@ Wave: Knight slice 5, stage 4. Opened **2026-09-15**. Leases `county:27137` and 
 held by chris@empowered.vote on DESKTOP-G6KDNN2. Slice notes:
 [`.planning/knight-foundation/mn.md`](../../../.planning/knight-foundation/mn.md).
 
-**Status:** office lists settled from statute, both boundary layers found, and the
-**change-check is done** — all 19 officers, each with a term start. The coverage gates and the
-migrations are **not** done.
+**Status: ✅ APPLIED 2026-09-15.** All 19 offices created and seated — `X0054`/`X0055` boundaries
+loaded, `CC_0111` and `CC_0112` applied and re-run idempotent, **52 gate verdicts with every gate
+watched failing first**, probe green. See the record at the foot of this file.
 
 ---
 
@@ -188,8 +188,26 @@ whose pages say "began her term in January 2025" and give no day), and only the 
 officers get **`day`**. CLAUDE.md sanctions exactly this: a source that gives only a year is passed
 as January 1 at `year` precision rather than guessed to a day.
 
-⚠ **The resulting precision mix is 8 `day` · 4 `month` · 7 `year`, and its unevenness is the
+⚠ **The resulting precision mix is 5 `day` · 7 `month` · 7 `year`, and its unevenness is the
 point.** MN-3's 18 were all `day`; flattening these 19 to match would have been a fabrication.
+
+### 🔴🔴 THE PROSE ABOVE AND THE ROSTER DISAGREED, AND THE PROSE WAS RIGHT (corrected 2026-09-15)
+
+This line first read **8 `day` · 4 `month` · 7 `year`**, and the roster JSON matched it: Ramsey's
+**Moran, Ortega and Xiong** each carried `2023-01-02` at **`day`**. That is § 382.01's first Monday
+in January — **the date the paragraph immediately above rules out for the board.** § 375.01 gives a
+commissioner four years *"and until their successors qualify"*, which is why St. Louis's own two
+expiry cohorts land on a **Monday** and a **Tuesday**. None of the three pages states a day; each
+was read again to confirm it, and none does.
+
+So the three are written **`2023-01-01` at `month`** — the month is certain, the day was not — and
+the mix is **5 · 7 · 7**. The five `day` rows are now **exactly the five constitutional officers**,
+which is what this section's own sentence claimed all along.
+
+▶ **A migration is where a roster's internal contradiction gets spent.** The defect was invisible
+in every count the wave had taken (19 officers, 19 seated, 0 undated) and visible only in the
+sentence next to it. `CC_0112`'s post-verify now asserts the mix **and** that no commissioner
+carries a day, so it cannot come back.
 
 ## 🔴 Three pages state a FIRST swearing-in, and it reads exactly like a term start
 
@@ -235,68 +253,101 @@ inferred once and copied.
 Their four-year terms end in January 2027. The standing rule applies: seat who holds the seat
 today, and re-run this check if the wave slips past early November.
 
-## ▶ Still owed
+## ✅ ALL THREE DELIVERED — MN-4 APPLIED 2026-09-15
 
-1. Two `X` codes, checked free in production **and** across every git ref, and two migration slots.
-2. Structure and occupancy migrations, dry-run as one transaction with every gate watched failing.
-3. An address probe per county: Duluth City Hall should now also return a St. Louis commissioner,
-   Saint Paul City Hall a Ramsey one.
+1. **`X0054` (St. Louis) and `X0055` (Ramsey)**, checked free in production *and* across all **154
+   git refs**, the ref scan positive-controlled against `X0052`/`X0053` (12 and 14 hits) so its
+   zero was a real zero. Slots **`CC_0111`** (structure) and **`CC_0112`** (occupancy), both
+   reserved from the allocator and named that number straight away.
+2. Both migrations dry-run as **one transaction**, and the rollback verified: 2 governments, 7
+   chambers, 14 districts, 19 offices, 19 people and 19 seats inside the transaction — **every one
+   of them back to 0 after the `ROLLBACK`**, with the 14 boundary rows left intact. Both then
+   applied, and **both re-run to prove idempotence**: every real `INSERT` returned 0 the second time.
+3. **The probe is green** — see below.
 
 ---
 
-# The coverage measurement — run 2026-09-15
+# ✅ Applied — what is in production
 
-| County | Districts union | County polygon | **Covered** | Uncovered |
-| --- | --- | --- | --- | --- |
-| **Ramsey** | 170.013 sq mi | 170.013 sq mi | **100.000%** | 0.0000 sq mi |
-| **St. Louis** | 6,738.734 sq mi | 6,860.543 sq mi | **98.220%** | **122.149 sq mi** |
+| | St. Louis (`27137`) | Ramsey (`27123`) |
+| --- | --- | --- |
+| Government | `St. Louis County, Minnesota, US` | `Ramsey County, Minnesota, US` |
+| Chambers | **4** — Board, Sheriff, County Attorney, **Auditor** | **3** — Board, Sheriff, County Attorney |
+| Commissioner districts | 7 on `X0054` | 7 on `X0055` |
+| Offices / seated | **10 / 10** | **9 / 9** |
 
-**Ramsey's seven districts tile the county exactly**, the way Saint Paul's seven wards tile the
-city. Nothing to explain.
+Terms: **19 dated, 0 undated, 0 with a `term_end`**, precision **5 `day` · 7 `month` · 7 `year`**.
 
-## 🔴🔴 ST. LOUIS SCORES 98.220%, AND MN-3's THRESHOLD WOULD HAVE REJECTED IT WRONGLY
+## ✅ 52 gate verdicts, and every gate was watched failing first
 
-MN-3's loader gate is `minCoverPct: 99.9`, which is what refused Duluth's superseded map at
-89.176%. **Copying that number into MN-4 would make the loader refuse St. Louis County — and the
-layer is correct.** A fresh session reusing the MN-3 template without measuring first would likely
-have concluded it had the wrong map, which is the opposite of the truth.
+**24 loader verdicts** (`scripts/load-mn-county-commissioner-boundaries.ts --control`, 12 controls
+each asserting what it planted) and **28 migration gates**
+(`control-mn4-migration-gates.mjs`, which splits each migration at its post-verify banner so the
+gate text being judged is the real one, letter for letter).
 
-The number alone cannot decide it. **Where the gap is, decides it:**
+## 🔴🔴 TWO OF MY OWN CONTROLS PLANTED THE WRONG THING, AND BOTH LOOKED LIKE PASSES
 
-| | |
-| --- | --- |
-| Pieces the gap breaks into | **924** |
-| Pieces under 0.01 sq mi | **912** — boundary digitisation noise between two agencies' line work |
-| Largest single piece | **120.593 sq mi — 98.7% of the whole gap** |
-| Its interior point | (-91.8825, 46.8566) |
-| Incorporated places containing that point | **none** |
-| Nearest Minnesota incorporated place | **Duluth, 3.98 km away** |
-| Distance to the county's outer boundary | **6.60 km** |
+MN-3 ended on *a control that aborts for the wrong reason proves nothing*. This wave produced the
+next form of it: **a control that plants a real change in the wrong place.**
 
-So the gap is a **single wedge of Lake Superior**, lying between where the commissioner districts
-stop and where the county's boundary runs out into the lake — plus 912 slivers. It is an **edge
-wedge, not an interior hole**, and no inhabited land is uncovered.
+- The St. Louis coverage control removed **district 1** to orphan Duluth — the county's largest
+  city, and district 1 reads like the first one. **Duluth is in DISTRICT 3.** GATE 3 and GATE 3P
+  both passed, because Duluth's interior point was still covered.
+- The Ramsey control removed **district 4** to orphan Saint Paul. **Saint Paul is in DISTRICT 5**;
+  district 4 lies wholly inside the city and holds no place interior point at all.
 
-⚠ Duluth's own place polygon overhangs the lake by 11.16 sq mi (measured in MN-3), which is why
-the nearest "place" to a point 6.6 km inside the county's lake boundary is Duluth itself.
+Both now **measure which district actually holds the place** and assert the place is in **0**
+districts before any gate is allowed to judge. ▶ **Assert the consequence you planted, not the
+action you took.**
 
-⚠ **Minnesota's legislative districts DO cover that water** — the point falls inside SD-8 (`27008`)
-and HD-8B (`2708B`). Two Minnesota agencies disagree about how far out to draw. That is a fact
-about line work, not evidence the county layer is stale.
+## 🔴🔴 THE HOLED MAP STILL SCORED 97.682% — THE PERCENTAGE NEVER WOULD HAVE CAUGHT IT
 
-## ▶ The gate MN-4 needs is NOT the gate MN-3 used
+With Duluth's district removed, St. Louis covers **97.682%** — a 0.5-point drop from 98.220%, and
+*above* the 97% backstop. The clause that refused it was the decomposition: a **157.597 sq mi** gap
+piece that **contains Duluth**. GATE 3P said the same thing in one line: *1 of 27 incorporated
+places sits in 0 commissioner districts.*
 
-Requiring near-total coverage is wrong for a county whose polygon includes its share of a Great
-Lake. The Fort Wayne rule applies instead — **bound the gap and explain it, rather than require
-closure**:
+▶ This is the measured proof of the section above. **A single percentage is not a gate**, and the
+one that would have been copied from MN-3 (99.9%) and the one chosen here (97%) would *both* have
+got this wrong — one by refusing a correct map, the other by accepting a broken one.
 
-1. the uncovered area must be **one** piece above a sliver threshold, not several;
-2. that piece must contain **no incorporated place**;
-3. the slivers must each stay under ~0.01 sq mi;
-4. Ramsey, which genuinely tiles, keeps a strict threshold.
+## 🔴 ST. LOUIS'S LAYER SELF-OVERLAPS, AND MN-3's GATE 4 REFUSED IT
 
-▶ **A single percentage is not a gate.** 98.220% is correct here and 89.176% was a defect in
-Duluth; what separated them was decomposing the gap, not comparing the number.
+**11 overlapping district pairs totalling 0.022856 sq mi**, the worst `D4×D6` at 0.018929 — against
+MN-3's flat threshold of 0.001. Ramsey has **zero**. This is the same line-work noise as the 912
+sliver gaps, on a county 40× the area with 40× the boundary to leave it on.
 
-Measured by [`measure-county-coverage.mjs`](./measure-county-coverage.mjs) and
-[`locate-slc-gap.mjs`](./locate-slc-gap.mjs), both read-only (`BEGIN … ROLLBACK`).
+So GATE 4's tolerance is **per county and measured**: St. Louis 0.03 per pair / 0.05 total, Ramsey
+0.001 / 0.001. Both were watched refusing a planted 8+ sq mi overlap, so the looser number is still
+a gate. ⚠ And the loader now **prints the measurement beside the verdict** — it first said *"no
+overlapping district pairs"* for a layer with eleven of them.
+
+## ✅ The probe, and three waves stacking
+
+| Anchor | Answers | From MN-4 |
+| --- | --- | --- |
+| **Duluth City Hall** | **13** | Commissioner D1 *Annie Harala*, Sheriff, County Attorney, **Auditor/Treasurer** |
+| **Saint Paul City Hall** | **8** | Commissioner D5 *Rafael E. Ortega*, Sheriff, County Attorney |
+| **Hibbing City Hall** | **7** | Commissioner D7 *Mike Jugovich*, Sheriff, County Attorney, Auditor/Treasurer |
+
+A Duluth address now returns its councilor (MN-3), its legislators (MN-2) and its county officers
+(MN-4) together. 🟢 **The probe asserts the statutory asymmetry directly**: an auditor seat must
+come back for St. Louis and must **not** for Ramsey.
+
+**Per-district control: 14 of 14**, each at its own interior point, each returning exactly one
+holder and the right one, 14 distinct names.
+
+## ⚠ MN-3's OFFSHORE CONTROL POINT DOES NOT TRANSFER, AND IT FAILED LOUDLY
+
+MN-3 used a point 20 km out in Lake Superior (−91.85, 46.95) to prove a city-council probe returns
+nothing offshore. Reused here it **returned a commissioner — correctly**: it is inside St. Louis
+County, whose districts run out into the lake. ▶ **A negative control must be outside the thing
+being tested, not outside the last thing that was tested.** The controls are now in Ashland County
+WI, Keweenaw County MI, Hennepin County MN and Madison WI, and the probe carries a positive control
+proving it is not simply blind.
+
+## 🟢 The known lake wedge is characterised in the probe, not hidden
+
+A point at (−91.8825, 46.8566) — inside the 120.593 sq mi wedge the loader accepted — returns the
+**three countywide officers and no commissioner**. That is the exact, honest price of 98.220%, and
+it is asserted so nobody rediscovers it as a bug.
