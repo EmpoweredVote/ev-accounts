@@ -237,9 +237,66 @@ today, and re-run this check if the wave slips past early November.
 
 ## ▶ Still owed
 
-1. The **coverage gate** on both commissioner-district layers — the measurement that separated
-   Duluth's two maps. Neither county is measured against its `G4020` polygon yet.
-2. Two `X` codes, checked free in production **and** across every git ref, and two migration slots.
-3. Structure and occupancy migrations, dry-run as one transaction with every gate watched failing.
-4. An address probe per county: Duluth City Hall should now also return a St. Louis commissioner,
+1. Two `X` codes, checked free in production **and** across every git ref, and two migration slots.
+2. Structure and occupancy migrations, dry-run as one transaction with every gate watched failing.
+3. An address probe per county: Duluth City Hall should now also return a St. Louis commissioner,
    Saint Paul City Hall a Ramsey one.
+
+---
+
+# The coverage measurement — run 2026-09-15
+
+| County | Districts union | County polygon | **Covered** | Uncovered |
+| --- | --- | --- | --- | --- |
+| **Ramsey** | 170.013 sq mi | 170.013 sq mi | **100.000%** | 0.0000 sq mi |
+| **St. Louis** | 6,738.734 sq mi | 6,860.543 sq mi | **98.220%** | **122.149 sq mi** |
+
+**Ramsey's seven districts tile the county exactly**, the way Saint Paul's seven wards tile the
+city. Nothing to explain.
+
+## 🔴🔴 ST. LOUIS SCORES 98.220%, AND MN-3's THRESHOLD WOULD HAVE REJECTED IT WRONGLY
+
+MN-3's loader gate is `minCoverPct: 99.9`, which is what refused Duluth's superseded map at
+89.176%. **Copying that number into MN-4 would make the loader refuse St. Louis County — and the
+layer is correct.** A fresh session reusing the MN-3 template without measuring first would likely
+have concluded it had the wrong map, which is the opposite of the truth.
+
+The number alone cannot decide it. **Where the gap is, decides it:**
+
+| | |
+| --- | --- |
+| Pieces the gap breaks into | **924** |
+| Pieces under 0.01 sq mi | **912** — boundary digitisation noise between two agencies' line work |
+| Largest single piece | **120.593 sq mi — 98.7% of the whole gap** |
+| Its interior point | (-91.8825, 46.8566) |
+| Incorporated places containing that point | **none** |
+| Nearest Minnesota incorporated place | **Duluth, 3.98 km away** |
+| Distance to the county's outer boundary | **6.60 km** |
+
+So the gap is a **single wedge of Lake Superior**, lying between where the commissioner districts
+stop and where the county's boundary runs out into the lake — plus 912 slivers. It is an **edge
+wedge, not an interior hole**, and no inhabited land is uncovered.
+
+⚠ Duluth's own place polygon overhangs the lake by 11.16 sq mi (measured in MN-3), which is why
+the nearest "place" to a point 6.6 km inside the county's lake boundary is Duluth itself.
+
+⚠ **Minnesota's legislative districts DO cover that water** — the point falls inside SD-8 (`27008`)
+and HD-8B (`2708B`). Two Minnesota agencies disagree about how far out to draw. That is a fact
+about line work, not evidence the county layer is stale.
+
+## ▶ The gate MN-4 needs is NOT the gate MN-3 used
+
+Requiring near-total coverage is wrong for a county whose polygon includes its share of a Great
+Lake. The Fort Wayne rule applies instead — **bound the gap and explain it, rather than require
+closure**:
+
+1. the uncovered area must be **one** piece above a sliver threshold, not several;
+2. that piece must contain **no incorporated place**;
+3. the slivers must each stay under ~0.01 sq mi;
+4. Ramsey, which genuinely tiles, keeps a strict threshold.
+
+▶ **A single percentage is not a gate.** 98.220% is correct here and 89.176% was a defect in
+Duluth; what separated them was decomposing the gap, not comparing the number.
+
+Measured by [`measure-county-coverage.mjs`](./measure-county-coverage.mjs) and
+[`locate-slc-gap.mjs`](./locate-slc-gap.mjs), both read-only (`BEGIN … ROLLBACK`).
