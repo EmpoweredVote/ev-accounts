@@ -43,6 +43,7 @@ import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js
 import essentialsCoordinateLookupRouter from './routes/essentialsCoordinateLookup.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import treasuryRouter from './routes/treasury.js';
+import publicCoverageRouter from './routes/publicCoverage.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
 import internalJobsRouter from './routes/internalJobs.js';
@@ -96,6 +97,17 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(helmet());
+
+// ⚠⚠ MOUNTED BEFORE cookieParser AND THE GLOBAL CORS ALLOWLIST, DELIBERATELY.
+// The global policy below sets `credentials: true`, and a browser REJECTS
+// `Access-Control-Allow-Credentials: true` alongside `Access-Control-Allow-
+// Origin: *`. Mounting this public, unauthenticated, any-origin endpoint ahead
+// of it means it never acquires the credentialed header — layering a
+// `cors({origin:'*'})` AFTER the allowlist would instead produce a response
+// that fails in real browsers while passing every server-side test.
+// Needs neither cookies nor a body parser. See routes/publicCoverage.ts.
+app.use('/api/treasury/coverage', publicCoverageRouter);
+
 app.use(cookieParser());
 
 const allowedOrigins = env.CORS_ORIGIN
