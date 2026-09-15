@@ -4,8 +4,9 @@ Wave: Knight slice 5, stage 4. Opened **2026-09-15**. Leases `county:27137` and 
 held by chris@empowered.vote on DESKTOP-G6KDNN2. Slice notes:
 [`.planning/knight-foundation/mn.md`](../../../.planning/knight-foundation/mn.md).
 
-**Status: office lists settled from statute, both boundary layers found and inspected, rosters
-identified. The per-member change-check, the coverage gates and the migrations are NOT done.**
+**Status:** office lists settled from statute, both boundary layers found, and the
+**change-check is done** — all 19 officers, each with a term start. The coverage gates and the
+migrations are **not** done.
 
 ---
 
@@ -106,7 +107,7 @@ superseded map carried plausible populations and a recent item date and was stil
 
 ---
 
-## Rosters as at 2026-09-15 — identified, NOT yet change-checked
+## Rosters as at 2026-09-15
 
 Each county's board page and its GIS layer agree, name for name.
 
@@ -151,18 +152,94 @@ whole string.
 
 ---
 
-## ▶ What MN-4 still owes
+# The change-check — done 2026-09-15
 
-1. **The per-member change-check**, all 19 of them, against each officer's own page — including
-   the three St. Louis constitutional officers, whose terms are reported as expiring at the end of
-   2026 and whose current holders must be confirmed rather than inferred from a candidacy story.
-   🔴 MN-3's finding applies directly: for a body like this the signal is an **expired date**, not
-   a banner, and a word scanner is blind to it.
-2. **Term starts.** St. Louis publishes expiries per commissioner; Ramsey does not appear to.
-3. **The coverage gate on both layers** — the measurement that separated Duluth's two maps. Neither
-   county has been measured against its `G4020` county polygon yet.
-4. **Two `X` codes** for the commissioner-district layers, checked free in production *and* across
-   every git ref, and **two migration slots** from the allocator.
-5. **An address probe per county.** Duluth City Hall and Saint Paul City Hall already have geocoded
-   points and should now return a commissioner as well — Duluth sits in St. Louis County, Saint
-   Paul in Ramsey.
+All **19** officers' pages fetched and read: **19/19 HTTP 200, 19/19 naming the person the roster
+says holds the seat, and ZERO stated terms already expired.** Roster:
+[`backend/data/mn-counties-roster.json`](../mn-counties-roster.json).
+
+Both signals ran over every page, because MN-2 and MN-3 each found a different one — a **word**
+banner and an **expired date** — and neither alone is enough. All six controls fired.
+
+## 🟢 The expired-date signal came up clean, and the distribution is why that is believable
+
+St. Louis publishes a term expiry per commissioner. **Three expire 2027-01-04 and four expire
+2029-01-09** — a 3/4 stagger, *not* uniform, which is exactly the check that exposed Duluth's four
+identical stale at-large dates. Ramsey publishes no expiry at all.
+
+## 🔴 THE TWO ST. LOUIS EXPIRY COHORTS FOLLOW DIFFERENT RULES, SO NEITHER GIVES A DAY
+
+MN-3 derived Duluth's `term_start` as *expiry − 4 years* because every published expiry was a
+**first Monday in January**, the boundary Duluth's charter names. That arithmetic does **not**
+carry here:
+
+| Stated expiry | Weekday | First Monday of that January |
+| --- | --- | --- |
+| 2027-01-04 | **Monday** ✅ | 2027-01-04 — matches |
+| 2029-01-09 | **Tuesday** ❌ | 2029-01-01 — eight days earlier |
+
+**Minn. Stat. § 375.01** is why: a commissioner serves four years *"and until their successors
+qualify"*, and qualification happens at the board's organizational meeting — the first Tuesday
+after the first Monday — not on a fixed calendar day. § 382.01's clean first-Monday rule governs
+the **constitutional officers**, not the board.
+
+▶ So commissioner starts are written at **`year`** precision (St. Louis) or **`month`** (Ramsey,
+whose pages say "began her term in January 2025" and give no day), and only the five constitutional
+officers get **`day`**. CLAUDE.md sanctions exactly this: a source that gives only a year is passed
+as January 1 at `year` precision rather than guessed to a day.
+
+⚠ **The resulting precision mix is 8 `day` · 4 `month` · 7 `year`, and its unevenness is the
+point.** MN-3's 18 were all `day`; flattening these 19 to match would have been a fabrication.
+
+## 🔴 Three pages state a FIRST swearing-in, and it reads exactly like a term start
+
+| Officer | Page says | Actual current term |
+| --- | --- | --- |
+| **Nancy Nilsen**, St. Louis Auditor | *"sworn in on January 3, 2019"* | re-elected **2022-11-08**, 60,787–13,838 |
+| **Rafael E. Ortega**, Ramsey D5 | *"elected to the Ramsey County Board in 1994"* | re-elected **2022-11-08** |
+| **Mary Jo McGuire**, Ramsey D2 | *"has served … since 2012"* | re-elected **2024-11-05** |
+
+This is MN-3's Nelsie Yang trap three more times. A biography states when someone *arrived*; the
+wave seats the term they hold *now*.
+
+## 🔴 "ELECTED IN 2023" IN A BODY THAT VOTES IN EVEN YEARS — AND IT WAS NOT A SPECIAL ELECTION
+
+Ramsey District 6's page says Mai Chong Xiong was *"elected in 2023"*. Minnesota county
+commissioners are elected in **even** years, so that reads as a special election. It is not one:
+she **assumed office on 2023-01-02**, having been elected in November 2022. The page is describing
+the year she took her seat.
+
+▶ **A biography's loose phrasing is not an election record.** Chasing it to the election result is
+what settled it, and the same instinct is what *correctly* found the one real special election.
+
+## 🔴 One genuine mid-term change, in 19
+
+**Ramsey District 3.** Trista Martinson resigned; **Garrison McMurtrey won the special election on
+2025-02-11** and began his term that February — the first Black man elected to a county board in
+Minnesota. A blanket "elected 2024" would have been wrong for this seat, and only the per-member
+read found it. Every other one of the 19 is a regular-cycle winner.
+
+## The five constitutional officers were all elected on the same day, and that is structural
+
+Fletcher, Choi, Ramsay, Maki and Nilsen were **all** elected **2022-11-08**, so all five start at
+**2023-01-02** — the first Monday in January, per § 382.01. A uniform answer normally needs
+suspicion; here it is correct by construction, because Minnesota runs every county officer on the
+gubernatorial cycle. It was still corroborated from **five separate election results**, not
+inferred once and copied.
+
+⚠ St. Louis's sheriff page says he was *"sworn in as Sheriff on January 10, 2023"*. That is the
+**ceremony**; § 382.01 begins the term on 2023-01-02, and the statutory date is what is recorded.
+
+## ⚠ All five are on the 2026-11-03 ballot
+
+Their four-year terms end in January 2027. The standing rule applies: seat who holds the seat
+today, and re-run this check if the wave slips past early November.
+
+## ▶ Still owed
+
+1. The **coverage gate** on both commissioner-district layers — the measurement that separated
+   Duluth's two maps. Neither county is measured against its `G4020` polygon yet.
+2. Two `X` codes, checked free in production **and** across every git ref, and two migration slots.
+3. Structure and occupancy migrations, dry-run as one transaction with every gate watched failing.
+4. An address probe per county: Duluth City Hall should now also return a St. Louis commissioner,
+   Saint Paul City Hall a Ramsey one.
