@@ -466,3 +466,92 @@ both post-verify gates passed unchanged, and the four counts afterwards were ide
 
 ▶ **Next: stage 3** — Duluth and Saint Paul city councils. Neither council's district layer has
 been measured yet.
+
+---
+
+# MN-3 — Duluth and Saint Paul councils (APPLIED 2026-09-15)
+
+`X0052`/`X0053` boundaries, then `CC_0109` structure, then `CC_0110` occupancy.
+**18 offices, 18 people, 0 vacancies** — Duluth 10, Saint Paul 8.
+Full record, sources and gate output: [`backend/data/seed-mn-cities-2026/SOURCES.md`](../../backend/data/seed-mn-cities-2026/SOURCES.md).
+Roster: [`backend/data/mn-cities-roster.json`](../../backend/data/mn-cities-roster.json).
+
+## 🔴🔴 Duluth publishes two council-district maps and a count cannot tell them apart
+
+Both return exactly five features numbered 1–5. The city adopted a new map on 2022-03-28.
+
+**The population attribute does not discriminate** — the old layer's totals sit close enough to
+the 2020 census to pass a plausibility check. What gives it away is the **field names**,
+`POP_2010` and `Numb_12`, whose precinct populations sum to **86,265, Duluth's 2010 census
+population exactly**.
+
+The decisive measurement is coverage: the superseded map leaves **8.68 sq mi of Duluth in no
+district** (89.176%) against the current map's 99.984%. Roughly one address in nine would return
+no councilor and nothing would error.
+
+⚠ **Two layers inside one service can be different vintages.** The old service's precinct layer
+holds 35 precincts while its own district layer was dissolved from 43.
+
+## 🔴🔴 A city council's change-check signal is an expired date, not a banner
+
+The word scanner built on MN-2's lesson — resigned, vacant, appointed, sworn in, stepping down,
+interim — ran over all 18 member pages and returned **one benign hit**, with **all six of its
+positive controls firing**. It was still the wrong instrument: Terese Tomanek's page says
+*"Term Expires: January 5, 2026"*, read on 2026-09-14.
+
+▶ **A CONTROL PROVES A DETECTOR IS NOT BROKEN. IT CANNOT PROVE THE DETECTOR IS LOOKING AT THE
+RIGHT THING.**
+
+**All four Duluth at-large pages state the same expired date.** The *distribution* gave it away —
+Duluth staggers its council, so its expiries must not be uniform. The four names are right and all
+four dates are stale; Jordon Johnson's page states an expiry that predates his own term.
+
+## 🔴 Three seats had turned over mid-term, and a list page got one wrong
+
+Duluth District 2 (Mayou resigned, DeLuca interim, Desotelle elected), Duluth District 4 (a
+special election to an unexpired partial term, which is why the seat appears in both the 2023 and
+2025 listings), and Saint Paul Ward 4 (Jalali resigned 2025-03-08, Coleman won the 2025-08-12
+special and was sworn in 2025-08-27).
+
+⚠ Saint Paul's own council index says flatly *"Councilmembers were elected to a 4-year term in
+2023"*, which is **wrong for Ward 4** — the MN-2 lesson in a second dress.
+
+## 🟢 Every term is dated, and the two cities are not made uniform
+
+MN-2 wrote all 200 legislative terms open-ended at `unknown`. Both cities publish dates, so all 18
+carry a real `term_start` at `day` precision and the gate asserts **0 undated and 0 ended**.
+
+Saint Paul's seven wards **tile the city exactly** (100.000%); Duluth's five districts **overhang
+it by 11.16 sq mi** of Lake Superior and unincorporated township. Duluth's four at-large seats run
+in one citywide race and are **not numbered**; Saint Paul has **no at-large seat at all**, which
+the structure gate asserts it never gains.
+
+## ✅ Probe, and the two waves stacking
+
+Duluth City Hall returns **9** answers, Saint Paul City Hall **5** — ward, mayor, and the
+legislators MN-2 seated. 🟢 The mayor Saint Paul returns is **Kaohly Her**, the person whose
+departure from HD-64A the Minnesota House's own Leadership tab still has not noticed. One person
+closes both waves.
+
+**Per-district control: 12 of 12**, each at its own interior point, each returning exactly one
+holder and the right one, with offshore and Minneapolis negative controls.
+
+## 🔴 Sixteen gates watched failing first — and two of my own controls were lying
+
+Six loader gates and eight migration gates were each run against a deliberately wrong input.
+GATE 3 refused Duluth's superseded map at 89.176% while passing the current one at 99.984%.
+
+Two controls planted something **other than what they claimed, and both looked like passes**: a
+greedy regex deleted three boundary inserts instead of one, so the gate correctly reported 2 — the
+gate was right and the control was lying — and a "two seats, one person" control duplicated a
+person row, tripping a unique index before the gate was ever reached.
+▶ **A CONTROL THAT ABORTS FOR THE WRONG REASON PROVES NOTHING.** Every control now asserts what it
+planted before the file is written.
+
+🟢 No matview refresh was needed, and that was checked: `geofence_child_county` is defined over
+`G4110` and mentions no `X00` code.
+
+## ▶ Next
+
+**Stage 4** — the St. Louis and Ramsey county boards. Ramsey's `OpenData/OpenData` MapServer layer
+2 is `Commissioner Districts`, found during MN-1 and noted then for exactly this.

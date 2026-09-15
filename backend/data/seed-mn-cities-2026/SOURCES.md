@@ -295,7 +295,7 @@ seating is deterministic without asserting a seat name that no ballot carries.
 
 ---
 
-# The migrations — written and dry-run clean 2026-09-14, NOT APPLIED
+# The migrations — APPLIED 2026-09-15
 
 | | |
 | --- | --- |
@@ -389,3 +389,70 @@ Every control now asserts what it planted before the file is written.
    Hall both have geocoded points in [`../seed-mn-2026/anchors-L2022.json`](../seed-mn-2026/anchors-L2022.json).
    Expect **eight** answers at Saint Paul City Hall: ward, mayor, SD-65, HD-65B, and the federal rows.
 3. `check:reachability` after the apply.
+
+---
+
+# ✅ MN-3 APPLIED 2026-09-15 — DULUTH AND SAINT PAUL ARE SEATED
+
+Loader, then `CC_0109`, then `CC_0110`. All three exit 0, all gates green on the way in.
+
+Measured from OUTSIDE the migrations, before and after:
+
+| | Before | After |
+| --- | --- | --- |
+| `X0052`/`X0053` boundaries | 0 | **12** |
+| City governments | 0 | **2** |
+| MN `LOCAL` districts | 0 | **14** |
+| City offices | 0 | **18** |
+| **Seated** (`count(och.politician_id)`) | 0 | **18** |
+| People in the reserved band | 0 | **18** |
+| `politicians` total | 87,124 | **87,142** — +18 exactly |
+| `offices_missing_terms` | 823 / 655 unflagged | **823 / 655 — unmoved** |
+| Texas Saint Paul row | 1 | **1, intact** |
+
+`offices_missing_terms` did not move at all, because all 18 new offices got a term on the same day.
+
+## ✅ The address probe
+
+**Duluth City Hall → 9 answers**: Council District 3 (Roz Randorf), all four at-large councilors,
+Mayor Reinert, CD-8 Pete Stauber, HD-8A Pete Johnson, SD-8 Jennifer A. McEwen.
+
+**Saint Paul City Hall → 5 answers**: Ward 2 (Rebecca Noecker), Mayor **Kaohly Her**, CD-4 Betty
+McCollum, HD-65B María Isa Pérez-Vega, SD-65 Sandra L. Pappas.
+
+🟢 The two waves now stack at one point: a Saint Paul address returns its ward, its mayor, and the
+legislators MN-2 seated — and the mayor it returns is the person whose departure from HD-64A the
+Minnesota House's own Leadership tab still has not noticed.
+
+### Per-district control — green is not a claim about districts unless you count them
+
+All **12** council districts probed at their **own** interior point: each returns exactly one
+office, exactly one holder, sits inside exactly one district, and the holder is the person the
+roster names. **12 of 12, 0 failures.**
+
+| Control | Result |
+| --- | --- |
+| a point in Lake Superior, 20 km offshore | 0 council answers |
+| Minneapolis City Hall | 0 council answers |
+| twelve districts, twelve holders | 12 distinct names — the detector discriminates |
+| a wrong expectation | reported as a mismatch |
+
+## ✅ Idempotent, proved by re-running the whole chain
+
+The loader and both migrations were run a second time: `inserted 0 boundary row(s)` twice, every
+`essentials.*` write `INSERT 0 0`, both gates passing unchanged.
+
+## ✅ Gates after the apply
+
+`check:reachability` — **nothing regressed**, and two buckets stay below baseline (`BAD_GEOMETRY`
+4 of 5, `UNREACHABLE` 37 of 38). `check:migrations`, `check:reservations`, `check:occupancy` green.
+
+🟢 **NO MATVIEW REFRESH WAS NEEDED, AND THAT WAS CHECKED RATHER THAN ASSUMED.**
+`geofence_child_county` is defined over `G4110` and does not mention any `X00` code, so the twelve
+new council boundaries are not children of it. MN-1's note — G4110 is a child, G5210/G5220 are not
+— extends to X0052/X0053.
+
+## ▶ Next
+
+Stage 4: the St. Louis and Ramsey county boards. Ramsey's `OpenData/OpenData` MapServer layer 2 is
+`Commissioner Districts`, found during MN-1 and noted then for exactly this.
