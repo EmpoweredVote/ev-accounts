@@ -1574,3 +1574,107 @@ export async function createBudgetLineItem(
   );
   return mapLineItem(rows[0]);
 }
+
+// ── Public coverage catalog (Civic Spaces Ask 2) ─────────────────────────────
+
+/**
+ * The geoid-keyed coverage catalog served at GET /api/treasury/coverage.
+ *
+ * Mirrors the shape Treasury Tracker ALREADY CONSUMES from Essentials
+ * (`src/utils/essentialsCoverage.ts`: generatedAt / cities / counties / states /
+ * federal) so a consumer can point one matcher at either catalog. The single
+ * addition is `slug`, because TT addresses entities by slug rather than geoid —
+ * emitting it means no consumer ever reconstructs TT's `toSlug` and drifts.
+ */
+export interface CoverageRecordOut {
+  label: string;
+  geoids: string[];
+  state: string;
+  slug: string;
+}
+export interface CoverageStateOut { label: string; abbrev: string; slug: string }
+export interface CoverageCatalogOut {
+  generatedAt: string;
+  cities: CoverageRecordOut[];
+  counties: CoverageRecordOut[];
+  states: CoverageStateOut[];
+  federal: { label: string; slug: string };
+}
+
+interface CoverageRow {
+  tier: 'city' | 'county' | 'state' | 'federal';
+  label: string;
+  state: string;
+  slug: string;
+  geoid: string | null;
+}
+
+/**
+ * ⚠ The slug expression MUST stay byte-identical to TT's `toSlug`
+ * (src/utils/entityRouting.ts):
+ *
+ *     `${m.name.toLowerCase().replace(/\s+/g, '-')}-${m.state.toLowerCase()}`
+ *
+ * Drift here is invisible — it does not throw, the link just stops resolving,
+ * and before TT's #158 an unresolved slug rendered a DIFFERENT city's budget.
+ */
+const SLUG_SQL = `lower(regexp_replace(m.name, '\\s+', '-', 'g')) || '-' || lower(m.state)`;
+
+let coverageCache: { at: number; value: CoverageCatalogOut } | null = null;
+const COVERAGE_TTL_MS = 15 * 60 * 1000;
+
+export async function getCoverageCatalog(): Promise<CoverageCatalogOut> {
+  if (coverageCache && Date.now() - coverageCache.at < COVERAGE_TTL_MS) {
+    return coverageCache.value;
+  }
+
+  // ⚠ Only entities that HAVE at least one budget: a row whose budget a reader
+  // cannot open must not be advertised as coverage. And only entities with a
+  // geoid — an entity we cannot key is OMITTED rather than emitted with
+  // `geoids: []`, which would invite a consumer to fall back to label matching.
+  // States and the federal row are exempt: they carry no geoids field / none.
+  const { rows } = await pool.query<CoverageRow>(
+    `SELECT
+       CASE
+         WHEN m.entity_type = 'county'  THEN 'county'
+         WHEN m.entity_type = 'state'   THEN 'state'
+         WHEN m.entity_type = 'federal' THEN 'federal'
+         ELSE 'city'
+       END AS tier,
+       m.name AS label, m.state, ${SLUG_SQL} AS slug, m.geoid
+     FROM treasury.municipalities m
+     WHERE EXISTS (SELECT 1 FROM treasury.budgets b WHERE b.municipality_id = m.id)
+       AND (
+         m.entity_type IN ('state', 'federal')
+         OR (m.geoid IS NOT NULL
+             AND m.entity_type IN ('county','city','town','village','borough','municipality','township'))
+       )
+     ORDER BY m.state, m.name`
+  );
+
+  const cities: CoverageRecordOut[] = [];
+  const counties: CoverageRecordOut[] = [];
+  const states: CoverageStateOut[] = [];
+  let federal = { label: 'United States', slug: 'united-states-us' };
+
+  for (const r of rows) {
+    if (r.tier === 'federal') { federal = { label: r.label, slug: r.slug }; continue; }
+    if (r.tier === 'state') { states.push({ label: r.label, abbrev: r.state, slug: r.slug }); continue; }
+    // geoids is an ARRAY to match the shape TT already consumes, even though TT
+    // holds exactly one geoid per entity.
+    const rec: CoverageRecordOut = {
+      label: r.label, geoids: [r.geoid as string], state: r.state, slug: r.slug,
+    };
+    (r.tier === 'county' ? counties : cities).push(rec);
+  }
+
+  const value: CoverageCatalogOut = {
+    generatedAt: new Date().toISOString(),
+    cities, counties, states, federal,
+  };
+  coverageCache = { at: Date.now(), value };
+  return value;
+}
+
+/** Test seam: drop the memoised catalog. */
+export function __clearCoverageCache(): void { coverageCache = null; }
