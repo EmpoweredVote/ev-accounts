@@ -154,7 +154,10 @@ and the separately elected county officers.
 ## ✅ RESOLVED — the loader collapsed A/B districts in `ocd_id` (found and fixed 2026-09-12)
 
 **Fixed before any Minnesota row was written** — `src/lib/ocdDistrictSuffix.ts`, 13 tests, wired
-into the loader. Maryland's 24 existing rows are NOT repaired by it; that is still owed.
+into the loader. ✅ **Maryland's existing rows were repaired 2026-09-16 by `CC_0113`** — and the
+scope was **42 rows in `districts` PLUS 42 in `geofence_boundaries`**, not the 24 recorded here. 24
+is `rows − distinct` in one table, a count of the collapse rather than of the rows carrying it, and
+`geofence_boundaries` was never named at all.
 
 Found during the Task 3 dry run. **The dry run itself passed** — 67 and 134 records, both
 pre-flight assertions green, no DB writes — and the defect is invisible in its output.
@@ -215,7 +218,7 @@ ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, suffix);
 Byte-equivalent for every purely numeric code — `'043'` → `43`, `'008'` → `8` — so the 19 states
 already loaded through this path are unchanged. Only codes carrying a letter change.
 
-⚠ **Repairing Maryland's 24 existing rows is a separate migration**, not part of MN-1. Writing MN
+✅ **Repaired 2026-09-16 by `CC_0113` — 84 rows, not 24.** It was a separate migration, not part of MN-1. Writing MN
 correctly does not fix MD, and MD's wrong `ocd_id`s are already embedded in whatever has read them.
 
 ## Open questions, carried into MN-1
@@ -374,7 +377,7 @@ than added, leaving the count right.
 1. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
    still unmeasured. Ramsey's `OpenData/OpenData` MapServer layer 2 is `Commissioner Districts` —
    found during MN-1 and noted then for stage 4.
-2. Still owed from MN-1: Maryland's 24 collided `ocd_id` rows; a second geographic source for the
+2. ✅ Maryland's collided `ocd_id` rows repaired 2026-09-16 (`CC_0113`, 84 rows). Still owed: a second geographic source for the
    Duluth anchor, since St. Louis County GIS was never actually searched; `backend/scripts/` is
    unlinted and untypechecked.
 
@@ -625,7 +628,9 @@ the thing being tested, not outside the last thing that was tested.
 
 Carried forward beyond this slice:
 
-1. **Maryland's 24 collided `ocd_id` rows** are still unrepaired — `ocdDistrictSuffix.ts` fixed the
-   loader before any Minnesota row was written, but MD was already in production. ND (slice 12) and
-   SD (slice 15) will hit the same shape.
+1. ✅ **Maryland repaired 2026-09-16 by `CC_0113`** — and the real scope was **84 rows across TWO
+   tables** (42 `districts` + 42 `geofence_boundaries`), not the 24 on record; the boundary table was
+   never named. The live harm was `federalCoverage`'s seat denominator, which reported **94 for a
+   state with 118**. ▶ ND (slice 12) and SD (slice 15) share the shape; the loader is fixed, but
+   nothing in CI asserts it.
 2. `backend/scripts/` is unlinted.

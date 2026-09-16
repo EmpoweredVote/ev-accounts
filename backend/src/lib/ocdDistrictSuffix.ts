@@ -25,8 +25,11 @@
  *
  * 🔴 IT IS ALREADY IN PRODUCTION. Maryland's delegate districts are 1A/1B/1C: 71 `sldl` rows,
  *    47 distinct `ocd_id`s, 24 sharing one. North Dakota and South Dakota have the same shape
- *    and are not loaded yet. Repairing Maryland's existing rows is a separate migration —
- *    writing Minnesota correctly does not fix Maryland.
+ *    and are not loaded yet. ✅ **Maryland was repaired on 2026-09-16 by
+ *    `migrations/CC_0113_md_ocd_suffix_repair.sql`** — and the real scope was **84 rows across TWO
+ *    tables**: 42 in `essentials.districts` and 42 in `essentials.geofence_boundaries`, which this
+ *    note never mentioned. 24 is `rows − distinct` in one table, a count of the collapse rather
+ *    than of the rows carrying it.
  *
  * ── WHY THIS IS SAFE FOR EVERY STATE ALREADY LOADED ──────────────────────────────────────────
  *
