@@ -107,9 +107,43 @@ The defect scan — a lettered `geo_id` whose `ocd_id` suffix drops the letter �
 nationally**. Inverted, the same scan finds **mn 134** and **md 42**, so the zero is a real zero and
 not a broken query.
 
-## ▶ Still open
+## ✅ THE GUARD — added 2026-09-16, in two halves
 
-**North Dakota (slice 12) and South Dakota (slice 15) have the same subdistrict shape and are not
-loaded yet.** The loader is fixed, so they will be written correctly — but nothing in CI asserts it.
-This defect is invisible to `check:reachability`, to every identity anchor, and to `ocd_id` having
-no unique constraint. A guard has not been added; it would be its own change.
+ND (slice 12) and SD (slice 15) have the same subdistrict shape and are not loaded yet. The loader
+is fixed; these assert it **stays** fixed. The workflow's own rule decided the placement: a check
+that talks to the database gets its own job, and `static guards` accepts only dependency-free ones.
+
+| | `check:ocd-loader` | `check:ocd-suffixes` |
+| --- | --- | --- |
+| Reads | the LOADER source | the DATA in production |
+| Runs | step in `static guards`, **push + PR** | own job, **schedule only** |
+| Catches | the pull request that would cause a bad load | a bad load that already happened |
+| Price | free — the job pays its minute anyway | ~30 billed min/month |
+
+Neither replaces the other. The data half gates the **end state**, which is the rule; but it can
+only fail *after* a hand-run loader has written to production, so the static half fails on the PR
+instead.
+
+🔴 **THE DATA GUARD CARRIES ITS OWN POSITIVE CONTROL.** A read-only check cannot plant a row, so it
+measures the **inverse** too — the rows that correctly *keep* a letter (MN 134 + MD 42 = 176 today).
+If that count is zero the query has stopped matching and the check **fails saying so**, rather than
+reporting a clean sweep. A detector that reports "nothing found" is worthless until it has been
+shown finding something.
+
+### 🔴 THE FIRST DRAFT OF THE STATIC GUARD FIRED ON CORRECT CODE
+
+It scanned the whole loader for `parseInt` on a district code and flagged
+`const dn = parseInt(districtNum ?? '0', 10);` — which is in the **`cd` branch**, where it is
+**right**, because congressional district codes are plain numbers (`01`, `00` = at-large). Only the
+`sldu`/`sldl` branch is subject to the letter rule, so the guard is scoped to that branch.
+▶ **A guard that fires on correct code is a guard that gets deleted.** There is now a control
+asserting it stays quiet on the `cd` branch, alongside the ones that make it fire.
+
+It also reported the wrong line number — 1832 for a call on 1912 — because it *deleted* comments
+before matching. Comments are now blanked in place.
+
+### Controls: [`control-ocd-guards.sh`](./control-ocd-guards.sh)
+
+Six, all passing: the real loader passes · the reintroduced `parseInt` is refused · **the `cd`
+branch does NOT fire** · a renamed `case 'sldu':` anchor is refused rather than silently finding
+nothing · production passes · a planted collapsed row is caught inside a rolled-back transaction.

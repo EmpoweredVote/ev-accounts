@@ -302,6 +302,28 @@ jobs:
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-postgis-spatial-ref-guard.mjs
 
+      # --- OCD-ID loader suffix guard --------------------------------------------------------------
+      # `parseInt('01A', 10)` is 1. A loader deriving a state-legislative OCD-ID suffix that way drops
+      # the subdistrict letter, so 1A/1B/1C collapse onto `.../sldl:1`. It happened twice: Minnesota
+      # (caught in a dry run, 2026-09-12) and Maryland, which shipped 84 damaged rows across TWO tables
+      # before CC_0113 repaired them on 2026-09-16. ND (slice 12) and SD (slice 15) have the same shape
+      # and are not loaded yet.
+      #
+      # NOTHING ELSE IN CI CAN SEE IT: `ocd_id` has no unique constraint so duplicates write silently,
+      # and address search resolves on `geo_id`, so reachability and every identity anchor stay green.
+      # What it corrupts is arithmetic — federalCoverage's seat denominator read 94 for a state with 118.
+      #
+      # This step is the STATIC half: it asserts the sldu/sldl branch of load-state-tiger-boundaries.ts
+      # still derives its suffix via ocdDistrictSuffix() and has not gone back to parseInt. It is scoped
+      # to that branch on purpose — the `cd` branch's parseInt is CORRECT, because congressional codes
+      # are plain numbers, and an earlier draft that scanned the whole file flagged it. The DATA half is
+      # the `ocd-suffixes` job below; neither replaces the other, because this one fails on the pull
+      # request that would cause a bad load while that one fails after one has run.
+      # Static, no DATABASE_URL, dependency-free — so it belongs here and carries the same `if:`.
+      - name: OCD-ID loader suffix guard
+        if: ${{ !cancelled() }}
+        run: node backend/scripts/check-ocd-loader-suffix.mjs
+
   migration-reservations:
     name: migration reservations
     runs-on: ubuntu-latest
@@ -777,5 +799,56 @@ jobs:
 
       - name: Check public.spatial_ref_sys has not been tampered with
         run: npm run check:spatial-ref
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  ocd-suffixes:
+    name: state-leg OCD-ID suffixes
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job, and it cannot join `static guards` — that job is dependency-free and this one needs
+    # `pg`. Its static companion, which reads the LOADER rather than the data, IS a step there.
+    #
+    # WHAT IT WATCHES: a state-legislative row whose `geo_id` ends in a letter while its `ocd_id` suffix
+    # does not — the `parseInt('01A')` defect. Both `essentials.districts` AND
+    # `essentials.geofence_boundaries` are scanned: the boundary table carried identical damage in
+    # Maryland and was named in no write-up of the defect, which is exactly why it is not omitted here.
+    # It gates the END STATE, which is the rule — the loader being correct is a claim about code, and
+    # this is a claim about what is actually in production.
+    #
+    # 🔴 IT CARRIES ITS OWN POSITIVE CONTROL. A read-only check cannot plant a row, so it measures the
+    # INVERSE too — the rows that correctly keep a letter (MN 134 + MD 42 = 176 today). If that count is
+    # zero the query has stopped matching and the check FAILS saying so, rather than reporting a clean
+    # sweep. A detector that reports "nothing found" is worthless until it has been shown finding something.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum). What it measures changes
+    # only when someone runs a TIGER loader by hand against production — a deliberate, ad-hoc act, never
+    # a consequence of a push — so charging it per push would bill ~494 minutes a month to watch for
+    # something pushes do not do. Same reasoning as `spatial-ref-baseline` and `child-county`. The pull
+    # request that would CAUSE a bad load is caught by the static step instead, for free.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks), matching the other live-DB checks, and
+    # says so out loud rather than printing a pass.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no state-legislative OCD-ID drops a geo_id letter
+        run: npm run check:ocd-suffixes
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
