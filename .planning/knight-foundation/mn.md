@@ -226,3 +226,406 @@ correctly does not fix MD, and MD's wrong `ocd_id`s are already embedded in what
    exposes no documented REST endpoint. GA-5's route — read the iframe on the jurisdiction's own page
    and find what it actually calls — is the precedent.
 3. **Do Duluth and Saint Paul publish council-district layers?** Unmeasured; stage 3's problem.
+
+---
+
+# MN-2 — the legislature (APPLIED 2026-09-14)
+
+Branch `knight/mn-2-legislature`, worktree `/c/ev-accounts-mn`, lease `state:mn`.
+Migrations **`CC_0107`** (structure) and **`CC_0108`** (occupancy) — both slots **reserved from the
+allocator**, not counted. Roster:
+[`backend/data/seed-mn-legislature-2026/ROSTERS.md`](../../backend/data/seed-mn-legislature-2026/ROSTERS.md).
+
+**201 offices — 134 House + 67 Senate. 200 seated, 1 vacant. 198 people created, 2 reused.**
+
+Baseline re-measured against production 2026-09-14, and it matched what stage 1 left: **67 + 134
+districts present, ZERO legislative offices, ZERO legislative chambers**, and exactly **one**
+`State of Minnesota` government row (`b610e3f3-…`). Indiana's 22 indistinguishable governments do
+not recur here, and that was measured rather than hoped.
+
+## 🔴🔴 A ROSTER LIST PAGE IS NOT A CHANGE-CHECK — AND THIS IS THE FINDING OF THE WAVE
+
+`house.mn.gov/members/` listed **Joe Schomacker for 21A on 2026-09-14**, three months after he
+resigned. Neither chamber publishes a vacancy marker: a case-insensitive search for `vacan` over
+the House list page and over the Senate API returns **nothing at all**. The only in-band signal is
+a banner on the member's own profile page — *"Resigning effective 11:59 p.m. Sunday, June 21st
+2026"*.
+
+So the change-check is **all 201 individual member pages**, not the two roster pages. It found
+exactly one status note in 201, and its own positive controls — a resignation banner, a vacancy
+wording, a death wording and a successor wording, each planted into a copy of SD-35 — all fired.
+
+The House's own Session Daily settles the disposition: *"No special election will be called to fill
+the remainder of his term."* **HD-21A is vacant**, first vacant day **2026-06-22**, filled at the
+2026-11-03 general.
+
+▶ **Disposition follows Georgia's SD-12, with one difference.** The office is created and flagged
+through `essentials.vacate_office()`, which with no open term writes **no span** and sets
+`is_vacant` + `vacant_since`. Georgia left `vacant_since` NULL because only the *announcement* was
+documented; **Minnesota's date is documented, so it is written.** No person row is created for
+Schomacker — this wave seats who holds a seat today.
+
+## 🔴 THE HOUSE'S OWN LEADERSHIP TAB IS STALE, AND THE OTHER FOUR TABS ARE NOT
+
+One document, five tabs, and they do not all agree. Leadership lists **Amanda Hemmingsen-Jaeger
+(47A)** and **Kaohly Vang Her (64A)**; Alphabetical, District Order, Republican and DFL all list
+the successors **Shelley Buck** and **Meg Luger-Nikolai**, and Open States agrees with those four.
+Hemmingsen-Jaeger is now the **senator for district 47** — she moved chamber, and one tab did not
+notice.
+
+⚠ The two caucus tabs carry **67 each**, not 134. An absence from the Republican tab is a fact
+about party, not a disagreement; the builder asserts that GOP and DFL *partition* the House
+instead. A first draft treated the absences as 128 disagreements.
+
+## 🔴 EIGHT MEMBER NAMES ARE HTML-ENCODED
+
+`Mar&#237;a Isa P&#233;rez-Vega` is one of them. A raw regex capture writes mojibake into a
+voter-facing field. `extract-house-tabs.mjs` decodes, and **refuses to run if it finds no encoded
+name to decode** — a decoder that is never exercised has proved nothing.
+
+## 🔴 FIVE NAME COLLISIONS, SPLITTING TWO WAYS — AND THE FIFTH WAS INVISIBLE
+
+Production holds an **active** politician row with the same `(first_name, last_name)` for five of
+the 200 members, which `essentials.politician_name_duplicate_guard` refuses. Each was read before
+it was classified.
+
+| Seat | Roster | Existing row | Verdict |
+| --- | --- | --- | --- |
+| 55B | Kaela Berg | Kaela Berg, candidate MN-02 | ♻ same person — reuse |
+| 54 | Eric R. Pratt | Eric Pratt, candidate MN-02 | ♻ same person — reuse |
+| 20B | Steven Jacob | Steven Jacob, candidate **KS**-01, a Libertarian from Lawrence | ✂ different |
+| 9B | Tom Murphy | Tom Murphy, **Mayor of Sahuarita, AZ** | ✂ different |
+| 64 | Erin P. Murphy | Erin **J.** Murphy, **Boston City Councillor** | ✂ different |
+
+⚠ **The guard is lifted for three rows, not for the migration.** `CC_0108` inserts the 195
+collision-free rows with the trigger **armed**, so a collision nobody anticipated still stops it;
+only then is `essentials.allow_duplicate_name` set to `'on'` for the three, and back to `'off'`
+immediately afterwards.
+
+🟢 **THE FIFTH COLLISION WAS INVISIBLE UNTIL A DIFFERENT BUG WAS FIXED.** An early draft of the
+roster builder took `full_name` from the chamber and `first_name` from Open States, writing
+**"Steven Jacob"** with `first_name` **"Steve"**. The guard keys on `(first_name, last_name)`, so
+the mismatch hid the Kansas Steven Jacob from the reuse search entirely — the exact-match query
+returned **four** collisions, not five.
+▶ **A FIELD PAIR THAT A CONSTRAINT READS MUST COME FROM ONE SOURCE.**
+
+## 🔴 THERE IS NO `term_start` TO BE HAD, AND NONE IS INVENTED
+
+The richest per-member pages either chamber publishes give an election **year** and an ordinal —
+"Elected: 2010 / Term: 8th" (House), "re-elected 2020, 2022 / Term: 4th" (Senate). The Legislative
+Reference Library's legislator database gives **biennia** ("House 1971-72"). Neither is a date.
+
+At least six sitting members took their seats at a **2025 special election** rather than at the
+start of the biennium, so the constitutional first-Monday-in-January date would be positively
+wrong for them and is not a fact about anyone else either. Every term is written **open-ended at
+`start_precision = 'unknown'`** — the GA-2 and IN-2 pattern. `seat_officeholder()` is not used; it
+refuses a NULL `term_start` by design.
+
+## 🔴 ALL 201 SEATS ARE ON THE 2026-11-03 BALLOT
+
+Every Minnesota House seat is elected every two years, and the Senate class elected in 2022 serves
+through 2026. ▶ **Re-run the change-check immediately before applying** if this slips past early
+November. A certified result is not a fact about who holds the seat; only a *special*-election
+winner starts early.
+
+## ✅ Dry run — both migrations as ONE transaction, and the rollback was verified
+
+```
+INSERT 0 1 · INSERT 0 1 · INSERT 0 201 · vacate_office -> f
+NOTICE:  MN-2 structure OK: 2 chambers, 134 House + 67 Senate offices, 1 vacant (21A since 2026-06-22)
+INSERT 0 195 · SET · INSERT 0 3 · SET · INSERT 0 200
+NOTICE:  MN-2 occupancy OK: 198 people in band, 201 offices, 200 seated, 200 terms, 0 dated, 0 ended, 21A vacant
+ROLLBACK
+```
+
+`vacate_office` returning **`f`** is correct: there was no open term to close, and the flag is
+still set. Production was re-measured afterwards and is **untouched** — 0 legislative offices, 4
+chambers (the pre-existing executives), 0 people in the reserved band, no 21A office. The rollback
+reverted, confirmed rather than assumed.
+
+### 🔴 EVERY GATE WAS WATCHED FAILING FIRST
+
+A gate that passes can pass for the wrong reason. Five defects were planted into copies of the dry
+run (`backend/data/seed-mn-legislature-2026/gate-controls.sh`), and each aborted with a
+**distinguishable** exception:
+
+| Control | Reported |
+| --- | --- |
+| one office short | `expected 134 House / 67 Senate offices, got 134 / 66` |
+| vacancy never flagged | `expected 1 vacant Minnesota legislative office(s), got 0` |
+| one term short | `expected 200 seated Minnesota legislative offices, got 199` |
+| a term carries a date | `200 dated and 0 ended terms; every Minnesota term is open-ended and unknown` |
+| the vacant seat seated | `expected 200 seated Minnesota legislative offices, got 201` |
+
+⚠ The last one aborts at the **seated-count** gate, which fires before the dedicated 21A gate. The
+21A gate is still there and still needed — it catches the case where a seat is *swapped* rather
+than added, leaving the count right.
+
+## ✅ Gates green
+
+| Gate | Result |
+| --- | --- |
+| `check:migrations` | OK — 2 added vs `origin/master`, 1905 slots across 148 refs, tree scan clean |
+| `check:reservations` | OK — both slots reserved by their own author |
+| `check:occupancy` | OK — 4 files scanned, no writes to the dropped `offices.politician_id` |
+
+## ▶ Owed, carried forward
+
+1. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
+   still unmeasured. Ramsey's `OpenData/OpenData` MapServer layer 2 is `Commissioner Districts` —
+   found during MN-1 and noted then for stage 4.
+2. Still owed from MN-1: Maryland's 24 collided `ocd_id` rows; a second geographic source for the
+   Duluth anchor, since St. Louis County GIS was never actually searched; `backend/scripts/` is
+   unlinted and untypechecked.
+
+## ✅ MN-2 APPLIED 2026-09-14 — THE MINNESOTA LEGISLATURE IS SEATED
+
+`CC_0107` then `CC_0108`, both exit 0, both gates green on the way in.
+
+```
+CC_0107: INSERT 0 1 · INSERT 0 1 · INSERT 0 201 · vacate_office -> f
+NOTICE:  MN-2 structure OK: 2 chambers, 134 House + 67 Senate offices, 1 vacant (21A since 2026-06-22)
+CC_0108: INSERT 0 195 · SET · INSERT 0 3 · SET · INSERT 0 200
+NOTICE:  MN-2 occupancy OK: 198 people in band, 201 offices, 200 seated, 200 terms, 0 dated, 0 ended, 21A vacant
+```
+
+Measured from OUTSIDE the migrations, before and after:
+
+| | Before | After | Expected |
+| --- | --- | --- | --- |
+| MN legislative offices | 0 | **201** | 201 |
+| MN chambers on the government row | 4 | **6** | 4 executives + 2 |
+| People in band `-2732201..-2732001` | 0 | **198** | 198 |
+| MN legislative terms | 0 | **200** | 200 |
+| MN legislative **seated** (`count(och.politician_id)`) | 0 | **200** | 200 |
+| `politicians` total | 86,926 | **87,124** | +198 exactly |
+| `offices_missing_terms` total | 822 | **823** | +1, the vacant 21A |
+| `offices_missing_terms` **unflagged** | 655 | **655** | unmoved — 21A is flagged |
+
+### ✅ The three dispositions landed as written
+
+- **21A**: `is_vacant` true, `vacant_since` **2026-06-22**, **0** terms, **0** holders. No span written.
+- **The two reused rows** keep their MN-02 race edge *and* gain one term each — Kaela Berg on
+  House 55B, Eric Pratt on Senate 54. No duplicate person was created.
+- **The three namesake pairs are six distinct rows**, and only the Minnesota one of each holds a
+  Minnesota seat: Steven Jacob (MN 20B) beside Steven Jacob (KS candidate, no office); Tom Murphy
+  (MN 9B) beside Tom Murphy (Mayor, Sahuarita AZ); Erin P. Murphy (MN Senate 64) beside
+  Erin J. Murphy (City Councillor, Boston).
+
+### ✅ END-TO-END PROBE — and it matches a THIRD, INDEPENDENT authority
+
+The only reliable detector is whether an address returns a legislator. All four MN-1 anchors were
+run point → `geofence_boundaries` → `districts` → `offices` → `office_terms` → `politicians`:
+
+| Point | Senate | House |
+| --- | --- | --- |
+| Duluth City Hall | SD-8 **Jennifer A. McEwen** | HD-8A **Pete Johnson** |
+| Saint Paul City Hall | SD-65 **Sandra L. Pappas** | HD-65B **María Isa Pérez-Vega** |
+| 235 Marshall Ave | SD-64 **Erin P. Murphy** | HD-64A **Meg Luger-Nikolai** |
+| 1200 Montreal Ave | SD-64 **Erin P. Murphy** | HD-64B **Dave Pinto** |
+
+🟢 **THE NAMES ARE THE POINT, NOT THE DISTRICT NUMBERS.** MN-1 recorded what the *state's own*
+"Who Represents Me" tool returned at Duluth and Saint Paul City Hall — McEwen, Johnson, Pappas,
+Perez-Vega. Those names came from `gis.lcc.mn.gov`, not from either chamber's roster and not from
+Open States. The seeded chain reproduces all four. That is a third authority agreeing, not a
+restatement of the sources the roster was built from.
+
+🟢 Two further things fall out of the same table. **`María Isa Pérez-Vega` renders with its
+accents**, so the HTML-decoder fix reached production. And **64A and 64B resolve to different
+people inside one Senate district** — the only test that catches a collapsed or swapped A/B half.
+64A returns **Meg Luger-Nikolai**, the successor the House's own Leadership tab still gets wrong.
+
+⚠ **The probe was controlled.** Eight OK out of eight is a uniform answer. Re-running it with
+Duluth's expectation set to the **2012 plan's** `7`/`7A` reported `*** WRONG DISTRICT ***` on
+exactly those two rows and left the other six OK.
+
+### ✅ PER-DISTRICT CONTROL — green is not a claim about districts unless you count them
+
+| Layer | Districts | With exactly 1 office | With exactly 1 holder | Unseated | Anomalies |
+| --- | --- | --- | --- | --- | --- |
+| `STATE_LOWER` | 134 | **134** | 133 | 1 — `2721A` | none |
+| `STATE_UPPER` | 67 | **67** | **67** | 0 | none |
+
+The single unseated district is **named**, not merely counted, and it is the expected one. No
+Minnesota legislator holds two Minnesota legislative seats.
+
+### ✅ Idempotent, proved by re-running both
+
+Both migrations were applied a second time. Every write into `essentials.*` reported `INSERT 0 0`,
+both post-verify gates passed unchanged, and the four counts afterwards were identical —
+201 offices, 198 people, 200 terms, 87,124 politicians.
+
+### ✅ Gates after the apply
+
+| Gate | Result |
+| --- | --- |
+| `check:reachability` | **OK — nothing regressed**, and TWO buckets fell: `BAD_GEOMETRY` 4 (baseline 5), `UNREACHABLE` 37 (baseline 38). `DEAD_GEOGRAPHY` unmoved at 17. |
+| `check:migrations` | OK |
+| `check:reservations` | OK |
+| `check:occupancy` | OK |
+
+▶ **Next: stage 3** — Duluth and Saint Paul city councils. Neither council's district layer has
+been measured yet.
+
+---
+
+# MN-3 — Duluth and Saint Paul councils (APPLIED 2026-09-15)
+
+`X0052`/`X0053` boundaries, then `CC_0109` structure, then `CC_0110` occupancy.
+**18 offices, 18 people, 0 vacancies** — Duluth 10, Saint Paul 8.
+Full record, sources and gate output: [`backend/data/seed-mn-cities-2026/SOURCES.md`](../../backend/data/seed-mn-cities-2026/SOURCES.md).
+Roster: [`backend/data/mn-cities-roster.json`](../../backend/data/mn-cities-roster.json).
+
+## 🔴🔴 Duluth publishes two council-district maps and a count cannot tell them apart
+
+Both return exactly five features numbered 1–5. The city adopted a new map on 2022-03-28.
+
+**The population attribute does not discriminate** — the old layer's totals sit close enough to
+the 2020 census to pass a plausibility check. What gives it away is the **field names**,
+`POP_2010` and `Numb_12`, whose precinct populations sum to **86,265, Duluth's 2010 census
+population exactly**.
+
+The decisive measurement is coverage: the superseded map leaves **8.68 sq mi of Duluth in no
+district** (89.176%) against the current map's 99.984%. Roughly one address in nine would return
+no councilor and nothing would error.
+
+⚠ **Two layers inside one service can be different vintages.** The old service's precinct layer
+holds 35 precincts while its own district layer was dissolved from 43.
+
+## 🔴🔴 A city council's change-check signal is an expired date, not a banner
+
+The word scanner built on MN-2's lesson — resigned, vacant, appointed, sworn in, stepping down,
+interim — ran over all 18 member pages and returned **one benign hit**, with **all six of its
+positive controls firing**. It was still the wrong instrument: Terese Tomanek's page says
+*"Term Expires: January 5, 2026"*, read on 2026-09-14.
+
+▶ **A CONTROL PROVES A DETECTOR IS NOT BROKEN. IT CANNOT PROVE THE DETECTOR IS LOOKING AT THE
+RIGHT THING.**
+
+**All four Duluth at-large pages state the same expired date.** The *distribution* gave it away —
+Duluth staggers its council, so its expiries must not be uniform. The four names are right and all
+four dates are stale; Jordon Johnson's page states an expiry that predates his own term.
+
+## 🔴 Three seats had turned over mid-term, and a list page got one wrong
+
+Duluth District 2 (Mayou resigned, DeLuca interim, Desotelle elected), Duluth District 4 (a
+special election to an unexpired partial term, which is why the seat appears in both the 2023 and
+2025 listings), and Saint Paul Ward 4 (Jalali resigned 2025-03-08, Coleman won the 2025-08-12
+special and was sworn in 2025-08-27).
+
+⚠ Saint Paul's own council index says flatly *"Councilmembers were elected to a 4-year term in
+2023"*, which is **wrong for Ward 4** — the MN-2 lesson in a second dress.
+
+## 🟢 Every term is dated, and the two cities are not made uniform
+
+MN-2 wrote all 200 legislative terms open-ended at `unknown`. Both cities publish dates, so all 18
+carry a real `term_start` at `day` precision and the gate asserts **0 undated and 0 ended**.
+
+Saint Paul's seven wards **tile the city exactly** (100.000%); Duluth's five districts **overhang
+it by 11.16 sq mi** of Lake Superior and unincorporated township. Duluth's four at-large seats run
+in one citywide race and are **not numbered**; Saint Paul has **no at-large seat at all**, which
+the structure gate asserts it never gains.
+
+## ✅ Probe, and the two waves stacking
+
+Duluth City Hall returns **9** answers, Saint Paul City Hall **5** — ward, mayor, and the
+legislators MN-2 seated. 🟢 The mayor Saint Paul returns is **Kaohly Her**, the person whose
+departure from HD-64A the Minnesota House's own Leadership tab still has not noticed. One person
+closes both waves.
+
+**Per-district control: 12 of 12**, each at its own interior point, each returning exactly one
+holder and the right one, with offshore and Minneapolis negative controls.
+
+## 🔴 Sixteen gates watched failing first — and two of my own controls were lying
+
+Six loader gates and eight migration gates were each run against a deliberately wrong input.
+GATE 3 refused Duluth's superseded map at 89.176% while passing the current one at 99.984%.
+
+Two controls planted something **other than what they claimed, and both looked like passes**: a
+greedy regex deleted three boundary inserts instead of one, so the gate correctly reported 2 — the
+gate was right and the control was lying — and a "two seats, one person" control duplicated a
+person row, tripping a unique index before the gate was ever reached.
+▶ **A CONTROL THAT ABORTS FOR THE WRONG REASON PROVES NOTHING.** Every control now asserts what it
+planted before the file is written.
+
+🟢 No matview refresh was needed, and that was checked: `geofence_child_county` is defined over
+`G4110` and mentions no `X00` code.
+
+## ✅ MN-4 APPLIED 2026-09-15 — BOTH COUNTY BOARDS ARE SEATED
+
+**19 offices, 19 seated, 0 vacancies.** St. Louis 10, Ramsey 9 — `CC_0111` (structure) and
+`CC_0112` (occupancy), on `X0054` and `X0055`. Full record:
+[`backend/data/seed-mn-counties-2026/SOURCES.md`](../../backend/data/seed-mn-counties-2026/SOURCES.md).
+
+### 🔴🔴 THE TWO COUNTIES DO NOT ELECT THE SAME OFFICES, AND NEITHER MATCHES THE GENERAL RULE
+
+§ 382.01 says auditor, treasurer, sheriff, recorder, attorney, coroner. **Ramsey elects a board,
+a sheriff and an attorney** (§ 383A.20 — Minnesota's only home rule charter county makes the other
+four appointive). **St. Louis elects those plus an Auditor/Treasurer** (§ 383C.136 abolished the
+treasurer in 1969 and gave its duties to the auditor). Neither elects a coroner. The migration's
+post-verify asserts 4+3 chambers and 10+9 offices, and refuses a Ramsey auditor by name.
+
+### 🔴🔴 A SINGLE PERCENTAGE IS NOT A GATE, MEASURED IN BOTH DIRECTIONS
+
+Ramsey tiles its county at **100.000%**; St. Louis covers **98.220%** and is **correct** — the gap
+is one 120.593 sq mi edge wedge of Lake Superior plus 912 slivers, holding no incorporated place.
+MN-3's `minCoverPct: 99.9` would have refused it.
+
+But the number chosen instead would have failed the other way: a control that removes Duluth's own
+district still scores **97.682%**, above the 97% backstop. **What refused it was decomposing the
+gap** — a 157.597 sq mi piece that contains Duluth — and GATE 3P, which asks the reachability
+question directly: every incorporated place in the county must sit in exactly one district (27 in
+St. Louis, 15 in Ramsey). ▶ Neither threshold, on its own, was the gate.
+
+⚠ Area ratios mislead in both directions here and that is why they are not the main gate. Duluth's
+place polygon is only **96.077%** covered (its own polygon overhangs the lake) and White Bear Lake
+**99.118%** (it straddles the Washington County line). Both are correct.
+
+### 🔴 GATE 4's TOLERANCE IS A PROPERTY OF THE COUNTY, NOT A CONSTANT
+
+St. Louis's layer self-overlaps on **11 pairs totalling 0.022856 sq mi**; Ramsey's on **zero**.
+MN-3's flat 0.001 refused a correct layer. Tolerances are now measured per county and each was
+watched refusing a planted 8 sq mi overlap. ⚠ The loader also had to be made to **print the
+measurement beside the verdict** — it first said *"no overlapping district pairs"* about a layer
+with eleven of them.
+
+### 🔴🔴 A CONTROL CAN PLANT A REAL CHANGE IN THE WRONG PLACE, AND IT LOOKS LIKE A PASS
+
+MN-3 ended on *a control that aborts for the wrong reason proves nothing*. The next form of it:
+the coverage control removed **St. Louis district 1** to orphan Duluth — **Duluth is in district
+3** — and **Ramsey district 4** to orphan Saint Paul — **Saint Paul is in district 5**. Both gates
+passed, correctly, on a control that had orphaned nobody. Both now assert the place sits in **0**
+districts before judging. ▶ **Assert the consequence you planted, not the action you took.**
+
+### 🔴 THE ROSTER CONTRADICTED ITS OWN PROSE, AND THE PROSE WAS RIGHT
+
+Three Ramsey commissioners carried `2023-01-02` at **`day`** — § 382.01's first Monday, which
+governs the **constitutional officers** and not the board (§ 375.01 gives no day, which is why St.
+Louis's two expiry cohorts land on a Monday and a Tuesday). No page states a day. Corrected to
+`month`, making the mix **5 `day` · 7 `month` · 7 `year`** — the five being exactly the five
+constitutional officers, as the notes had claimed all along. `CC_0112` asserts the mix *and* that
+no commissioner carries a day.
+
+### ✅ 52 gate verdicts, and the probe
+
+24 loader verdicts (12 controls, each asserting what it planted) and **28 migration gates**, run by
+splitting each migration at its post-verify banner so the real gate text judges a broken state.
+Dry-run as one transaction with the rollback verified; both applied; both re-run idempotent.
+
+**Duluth City Hall returns 13 answers, Saint Paul 8, Hibbing 7** — councilor, legislators and
+county officers together, three waves stacking. Per-district control **14 of 14**.
+
+⚠ **MN-3's offshore control point does not transfer** — 20 km out in Lake Superior returns a
+commissioner, correctly, because it is inside St. Louis County. A negative control must be outside
+the thing being tested, not outside the last thing that was tested.
+
+## ▶ Next
+
+**Slice 5 is complete: stages 1-4 all applied.** Nothing is owed within Minnesota.
+
+Carried forward beyond this slice:
+
+1. **Maryland's 24 collided `ocd_id` rows** are still unrepaired — `ocdDistrictSuffix.ts` fixed the
+   loader before any Minnesota row was written, but MD was already in production. ND (slice 12) and
+   SD (slice 15) will hit the same shape.
+2. `backend/scripts/` is unlinted.
