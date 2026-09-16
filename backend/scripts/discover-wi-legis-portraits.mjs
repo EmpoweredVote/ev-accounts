@@ -27,7 +27,7 @@ async function get(url, attempt = 1) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.text();
   } catch (err) {
-    if (attempt >= 3) throw new Error(`${url}: ${err.message}`);
+    if (attempt >= 3) throw new Error(`${url}: ${err.message}`, { cause: err });
     await sleep(400 * attempt);
     return get(url, attempt + 1);
   }

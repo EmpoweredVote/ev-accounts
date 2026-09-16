@@ -122,9 +122,9 @@ async function main(): Promise<void> {
                   ), ''), 'anonymous')
                 ELSE 'anonymous'
               END,
-              '\s+', ' ', 'g'
+              's+', ' ', 'g'
             ),
-            '\.', '', 'g'
+            '.', '', 'g'
           ),
           '-', ' ', 'g'
         ))))
