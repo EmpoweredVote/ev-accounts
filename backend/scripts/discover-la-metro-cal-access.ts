@@ -45,7 +45,7 @@ function normalize(s: string): string {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '') // strip accent marks
     .toLowerCase()
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ' ') // punctuation → space
+    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, ' ') // punctuation → space
     .replace(/\s+/g, ' ')
     .trim();
 }

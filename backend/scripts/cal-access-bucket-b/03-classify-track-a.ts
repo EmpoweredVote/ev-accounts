@@ -111,7 +111,7 @@ export function conflictingGivenName(official: string, first: string): string | 
     const toks = seg[1].trim().split(/\s+/);
     if (toks.length <= 2) for (const t of toks) if (/[A-Za-z]{2,}/.test(t)) candidates.push(t);
   }
-  const m2 = official.match(/\b(?:COMMITTEE TO ELECT|FRIENDS TO ELECT|COMMITTEE TO SUPPORT|COMMITTEE FOR|NEIGHBORS FOR|SUPPORTERS OF|FRIENDS OF|TO SUPPORT|TO ELECT|ELECT)\s+((?:[A-Za-z'’.\-]+|"[A-Za-z'’.\-]+")(?:\s+(?:[A-Za-z'’.\-]+|"[A-Za-z'’.\-]+")){0,2})\s*$/i);
+  const m2 = official.match(/\b(?:COMMITTEE TO ELECT|FRIENDS TO ELECT|COMMITTEE TO SUPPORT|COMMITTEE FOR|NEIGHBORS FOR|SUPPORTERS OF|FRIENDS OF|TO SUPPORT|TO ELECT|ELECT)\s+((?:[A-Za-z'’.-]+|"[A-Za-z'’.-]+")(?:\s+(?:[A-Za-z'’.-]+|"[A-Za-z'’.-]+")){0,2})\s*$/i);
   if (m2) candidates.push(m2[1].trim().split(/\s+/)[0]);
 
   const given = givenName(first);
@@ -177,14 +177,14 @@ export function givenName(first: string): string {
  * Returns the conflicting leading surname, or null when the committee leads with our own.
  */
 export function leadingDifferentSurname(official: string, last: string): string | null {
-  const m = official.match(/^([A-Za-z'’\-]+)\s+FOR\s+/i);
+  const m = official.match(/^([A-Za-z'’-]+)\s+FOR\s+/i);
   if (!m) return null;                       // no "<SURNAME> FOR ..." opening; says nothing either way
   const lead = fold(m[1].toLowerCase()).replace(/[.'’]/g, '');
   const surname = fold(last.trim().toLowerCase());
   if (!lead || !surname) return null;
   if (lead === surname) return null;
   // A multi-word surname legitimately opens with its own first word ("DE LEON FOR ...").
-  if (surname.split(/[\s\-]/)[0] === lead) return null;
+  if (surname.split(/[\s-]/)[0] === lead) return null;
   return m[1];
 }
 

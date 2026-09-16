@@ -1962,7 +1962,7 @@ async function processLayer(
       // 130-04 D-01 grep-verifiable: `upsertGeofence(client, { ... state: fipsArg ... })`.
       // D-09 single resolution point: registry lookup with place-only fallback (CA byte-equivalence preserved).
       const runMakeValid = STATE_RUN_MAKEVALID[abbrevUpper]?.has(layer) ?? (layer === 'place');
-      // eslint-disable-next-line max-len
+
       const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid, sourceString: layerDef.sourceString });
       if (upsertResult.inserted) {
         totals.inserted_boundary++;
@@ -1975,7 +1975,7 @@ async function processLayer(
       // 130-04 D-02 grep-verifiable: `insertDistrictIfMissing(client, { ... state: abbrev ... })`.
       if (layerDef.writeDistrictRow && ocd_id !== null) {
         const effectiveDistrictType = STATE_LAYER_TYPE_MAP[abbrevUpper]?.[layer] ?? layerDef.district_type;
-        // eslint-disable-next-line max-len
+
         const districtResult = await insertDistrictIfMissing(client, { geo_id, ocd_id, name, state: abbrev, district_type: effectiveDistrictType, mtfcc: layerDef.mtfcc });
         if (districtResult.inserted) {
           totals.inserted_district++;

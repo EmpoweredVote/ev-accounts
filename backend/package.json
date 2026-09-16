@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
     "test:watch": "vitest",
-    "lint": "eslint src",
+    "lint": "eslint src scripts",
     "typecheck": "tsc --noEmit",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
     "check:reservations": "node scripts/check-migration-reservations.mjs",

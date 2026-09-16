@@ -172,7 +172,7 @@ function stripSuffix(office: string): string {
   // Strip trailing " COMMITTEE" first (may appear after district number)
   result = result.replace(/\s+COMMITTEE\s*$/i, '').trim();
   // Strip " DISTRICT N" or " DISTRICT NN" at the end (with optional dash/period)
-  result = result.replace(/\s+DISTRICT\s+[\d\-]+\s*$/i, '').trim();
+  result = result.replace(/\s+DISTRICT\s+[\d-]+\s*$/i, '').trim();
   // Strip trailing standalone numbers (e.g., "State Rep 29", "Indiana Senate 31")
   result = result.replace(/\s+\d+\s*$/, '').trim();
   // Strip leading "DISTRICT N " or "DISTRICT NN " at the start

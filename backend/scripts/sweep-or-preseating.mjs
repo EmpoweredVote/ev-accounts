@@ -99,7 +99,7 @@ const { rows } = await pool.query(`
     JOIN essentials.politicians p    ON p.id = pc.politician_id
     LEFT JOIN essentials.offices o   ON o.politician_id = p.id
    -- Deliberately POSIX classes, no backslash escapes: this SQL sits in a JS
-   -- template literal, where '\y' and '\d' collapse to 'y' and 'd' and silently
+   -- template literal, where 'y' and 'd' collapse to 'y' and 'd' and silently
    -- match nothing. SESSION_RE below does the precise extraction, so a slightly
    -- loose prefilter here is safe.
    WHERE (array_to_string(pc.sources,' ') || ' ' || coalesce(pc.reasoning,''))
