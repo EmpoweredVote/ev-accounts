@@ -217,7 +217,10 @@ async function main() {
   await pool.end();
 
   const officesByPid: Record<string, { title: string | null; chamber: string | null }[]> = {};
-  for (const o of officeRows) (officesByPid[o.politician_id] ??= []).push({ title: o.title, chamber: o.chamber });
+  // `row`, not `o`: this is a JS result object, and the occupancy guard's alias heuristic reads
+  // `o.politician_id` as a SQL offices alias. The query above already resolves occupancy through
+  // essentials.office_terms, which is correct.
+  for (const row of officeRows) (officesByPid[row.politician_id] ??= []).push({ title: row.title, chamber: row.chamber });
 
   const decisions = worklist.map((r: any) => {
     const kws = officeKeywords(officesByPid[r.politician_id] ?? []);

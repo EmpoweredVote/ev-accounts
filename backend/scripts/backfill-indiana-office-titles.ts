@@ -279,7 +279,14 @@ async function main(): Promise<void> {
              o.title AS office_title
       FROM transparent_motivations.politician_sources ps
       JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-      LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+      -- ADR 0002 phase 5 dropped essentials.offices.politician_id; 'o.politician_id = p.id'
+      -- would throw 42703 undefined_column. Occupancy resolves through office_current_holder.
+      -- ⚠ is_vacant stays on the MATCH (the join condition), not a downstream filter: some
+      --   offices carry a current term while still flagged vacant, and filtering after the match
+      --   emits a spurious all-NULL office row for their holder.
+      -- ⚠ Both joins stay LEFT so a politician with no seat still yields a row, as before.
+      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      LEFT JOIN essentials.offices o ON o.id = och.office_id AND o.is_vacant = false
       WHERE ps.source_system = 'indiana'
         AND ps.research_status = 'needs_research'
       ORDER BY p.full_name

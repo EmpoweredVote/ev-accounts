@@ -97,7 +97,13 @@ const { rows } = await pool.query(`
       ON pa.politician_id = pc.politician_id AND pa.topic_id = pc.topic_id
     JOIN inform.compass_topics t     ON t.id = pc.topic_id
     JOIN essentials.politicians p    ON p.id = pc.politician_id
-    LEFT JOIN essentials.offices o   ON o.politician_id = p.id
+    -- ADR 0002 phase 5 dropped essentials.offices.politician_id; the old
+    -- 'o.politician_id = p.id' here would throw 42703 undefined_column. Occupancy resolves
+    -- through office_current_holder. ⚠ Was a LEFT JOIN, but the WHERE below filters on
+    -- o.representing_state and o.title, which already made it inner in practice; the office is
+    -- deliberately chosen (Oregon Representative/Senator), so this cannot fan out.
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o        ON o.id = och.office_id
    -- Deliberately POSIX classes, no backslash escapes: this SQL sits in a JS
    -- template literal, where 'y' and 'd' collapse to 'y' and 'd' and silently
    -- match nothing. SESSION_RE below does the precise extraction, so a slightly
