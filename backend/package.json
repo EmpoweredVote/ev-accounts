@@ -20,6 +20,8 @@
     "check:answer-delete-guards:list": "node scripts/check-answer-delete-guards.mjs --list",
     "check:lens-freshness": "node scripts/check-lens-freshness.mjs",
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
+    "check:ocd-loader": "node scripts/check-ocd-loader-suffix.mjs",
+    "check:ocd-suffixes": "node scripts/check-ocd-suffixes.mjs",
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:season-scaffold": "node scripts/check-season-scaffold.mjs",
     "check:reachability": "node scripts/check-address-reachability.mjs",
