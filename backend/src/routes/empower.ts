@@ -30,6 +30,7 @@ const ConfirmSchema = z.object({
     compass_stances_public: z.literal(true),
     platform_terms: z.literal(true),
   }),
+  legal_name: z.string().min(1).max(200).optional(),
 });
 
 const DemoteSchema = z.object({
@@ -61,7 +62,10 @@ router.post(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      const result = await runPreflight(authReq.userId);
+      const result = await runPreflight(
+        authReq.userId,
+        typeof req.body?.legal_name === 'string' ? req.body.legal_name : undefined
+      );
       res.status(200).json(result);
     } catch (err) {
       console.error('[POST /empower/preflight] error:', err);
@@ -101,11 +105,11 @@ router.post(
     }
 
     try {
-      const result = await confirmEmpowerment(authReq.userId, [
-        'legal_name_public',
-        'compass_stances_public',
-        'platform_terms',
-      ]);
+      const result = await confirmEmpowerment(
+        authReq.userId,
+        ['legal_name_public', 'compass_stances_public', 'platform_terms'],
+        parsed.data.legal_name
+      );
       res.status(201).json({ empowered: true, profile: result.empowered_profile });
     } catch (err) {
       const errMessage = err instanceof Error ? err.message : String(err);
