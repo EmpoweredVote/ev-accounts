@@ -20,8 +20,23 @@ import {
   sendWorkosPasswordReset,
   confirmWorkosPasswordReset,
 } from '../lib/workosAuthService.js';
+import { isVaultEnabled, upsertSeal } from '../lib/idVault.js';
 
 const router = Router();
+
+/**
+ * Seal-first name routing for Connected signup. When the vault is enabled we
+ * seal the real name and hand the RPC NULL (legal_name is nullable); otherwise
+ * we keep today's behaviour and pass the name through to the profile row.
+ * Returns the value to pass as p_legal_name.
+ */
+export async function resolveSignupLegalName(userId: string, legalName: string): Promise<string | null> {
+  if (isVaultEnabled()) {
+    await upsertSeal(userId, { name: legalName }); // seal FIRST, before the RPC
+    return null;
+  }
+  return legalName;
+}
 
 /** Shared cookie options — used for both set and clear to ensure domain/path match */
 function evSessionCookieOptions() {
@@ -313,11 +328,12 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   // Unknown RPC errors are logged but do not fail the response — auth user was already created.
   if (invite_code && legal_name) {
     try {
+      const rpcLegalName = await resolveSignupLegalName(userId, legal_name);
       const { data: rpcResult, error: rpcError } = await adminRpc(
         'signup_with_invite',
         {
           p_user_id: userId,
-          p_legal_name: legal_name,
+          p_legal_name: rpcLegalName,
           p_invite_code: invite_code,
           p_display_name: display_name,
         },
