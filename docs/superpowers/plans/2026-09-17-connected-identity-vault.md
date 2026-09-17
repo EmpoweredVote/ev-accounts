@@ -957,11 +957,18 @@ In `routes/empower.ts`, extend `ConfirmSchema` with an optional name and thread 
       );
 ```
 
-For `/preflight`, accept an optional body name (guard: `req.body?.legal_name`) and pass it:
+For `/preflight`, accept an optional body name and pass it — **treat empty/whitespace as absent** (an
+unfilled form field must fall back to the DB name, not defeat the `??` chain and produce a bad slug):
 
 ```ts
-      const result = await runPreflight(authReq.userId, typeof req.body?.legal_name === 'string' ? req.body.legal_name : undefined);
+      const rawName = req.body?.legal_name;
+      const confirmedName = typeof rawName === 'string' && rawName.trim().length > 0 ? rawName : undefined;
+      const result = await runPreflight(authReq.userId, confirmedName);
 ```
+
+Defense-in-depth: `runPreflight`/`confirmEmpowerment` also normalize a blank `confirmedLegalName` to
+absent internally (e.g. `const confirmed = confirmedLegalName?.trim() ? confirmedLegalName : undefined;`
+then `confirmed ?? connected.legal_name ?? ''`), so no caller can slip an empty string past the fallback.
 
 - [ ] **Step 4: Run — expect PASS.**
 
