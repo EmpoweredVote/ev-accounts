@@ -134,9 +134,13 @@ export async function getAccountDetail(userId: string): Promise<Record<string, u
     // Non-fatal: fall back to whatever admin_get_account_detail returned
   }
 
-  // The real name is vaulted (ev-cto 0022). No admin read path exposes it —
-  // only the offline two-person break-glass. Strip it if the RPC still returns it.
-  delete (result as Record<string, unknown>).legal_name;
+  // The real Connect name is vaulted (ev-cto 0022). The RPC nests it under
+  // connected_profile (row_to_json of connect.connected_profiles), so strip it there.
+  // Leave empowered_profile.legal_name — that name is public.
+  const cp = (result as Record<string, unknown>).connected_profile;
+  if (cp && typeof cp === 'object') {
+    delete (cp as Record<string, unknown>).legal_name;
+  }
 
   return result;
 }
