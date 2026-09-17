@@ -52,6 +52,11 @@ on a table the product legitimately reads constantly.
 
 ### Stage 1 — per-role statement logging. This is the core of it.
 
+> 🔴 **Amended 2026-09-17 after running the §7 checks.** Both checks passed, but measuring
+> production showed **one `ALTER ROLE` is not enough**: five roles can read every stance and
+> this logs one of them. The corrected scope is below; the original single statement is kept
+> because it is still the first and most important line.
+
 ```sql
 ALTER ROLE postgres SET log_statement = 'all';
 ```
@@ -71,6 +76,43 @@ State the limits honestly rather than overselling it:
 - `postgres` is **shared**, so the log says "postgres", not *which person*. Stage 2 fixes
   that, and until it lands this is an activity log rather than an accountability one.
 - Anyone who can set `log_statement` can unset it. Stage 4 is the answer.
+
+#### Stage 1b — the other roles that can read every stance
+
+Measured 2026-09-17. `rolbypassrls` does not grant table access, so the question is who holds
+read access, **including by role membership** — which is where the surprise was.
+
+| Role | Full read via | Logged by the statement above? |
+|---|---|---|
+| `ev_api` | direct grant + `rolbypassrls` | no — **the application, intentionally** |
+| `service_role` | direct grant + `rolbypassrls`, assumed via `SET ROLE` from `authenticator` | no — **the application, intentionally** |
+| `postgres` | direct grant, `pg_read_all_data`, `rolbypassrls` | **yes** |
+| `cli_login_postgres` | **member of `postgres`** | 🔴 **no** |
+| `supabase_read_only_user` | **member of `pg_read_all_data`** + `rolbypassrls` | 🔴 **no** |
+| `supabase_etl_admin` | **member of `pg_read_all_data`** + `rolbypassrls` | 🔴 **no** |
+| `supabase_admin` | superuser | 🔴 **no**, and the platform sets `log_statement=none` on it |
+
+Three things follow, and none was visible from the repo:
+
+1. **`pg_read_all_data` is the actual access path**, not a table grant. Neither
+   `supabase_read_only_user` nor `supabase_etl_admin` appears in
+   `information_schema.role_table_grants` for `inform.compass_responses`; both read it
+   anyway through that predefined role. Any reasoning about who can read stances must follow
+   memberships.
+2. **Role settings do not inherit.** `rolconfig` applies to the session's *login* role, so
+   `cli_login_postgres` stays unlogged even though it is a member of `postgres`. Add it
+   explicitly.
+3. **Some of these may not be ours to fix.** `postgres` has `CREATEROLE` but is **not**
+   superuser and holds no admin option over the `supabase_*` roles, so `ALTER ROLE` on them
+   will likely be refused. `supabase_admin` is superuser with `log_statement=none` set by the
+   platform.
+
+So the honest scope of Stage 1 is: **log `postgres` and `cli_login_postgres`; attempt
+`supabase_read_only_user` and `supabase_etl_admin` and expect to be refused; accept that
+`supabase_admin` is unloggable by us.** Whether the platform-managed roles are reachable by a
+human at all is a Supabase access-control question, not a Postgres one — if nobody can obtain
+those credentials, the residual gap is small. **That is worth confirming rather than
+assuming**, because it is the difference between three unlogged paths and none.
 
 ### Stage 2 — named human roles, so the log says *who*
 
@@ -109,11 +151,20 @@ Two cheap assertions, run wherever the existing smoke scripts run:
 
 1. **Logging is still on.** Every human role still has `log_statement = 'all'` —
    `pg_roles.rolconfig` answers this directly.
-2. **No new reader appeared.** The set of roles holding `SELECT` on
-   `inform.compass_responses` matches an expected allowlist — `information_schema.role_table_grants`.
+2. **No new reader appeared.** The set of roles that can read `inform.compass_responses`
+   matches an expected allowlist.
+
+   🔴 **Corrected 2026-09-17. The original version of this check was wrong**: it read
+   `information_schema.role_table_grants` alone, which would have reported a clean result
+   while `supabase_read_only_user` and `supabase_etl_admin` read every stance through
+   `pg_read_all_data`. A grants-only guard misses membership-based access entirely — the
+   exact failure it exists to catch.
+
+   The check must union both paths: direct grants **and** membership in any role holding
+   read access, `pg_read_all_data` included. `pg_auth_members` is the second half.
 
 Both fail loudly on the two ways this decays silently: someone turns logging off, or someone
-grants a new role access to the table.
+gains read access to the table — **by grant or by membership**.
 
 ## 5. What this deliberately does not do
 
@@ -147,18 +198,58 @@ Two consequences land on whoever implements this:
    at Stage 1 the 7-day expiry is the only erasure story. If Stage 3's in-database audit
    lands, it must support pseudonymising a subject id in place.
 
-## 7. Could not be verified from the repo — check before applying
+## 7. The pre-flight checks — RUN 2026-09-17
 
-1. **That no application path still connects as `postgres`.** `env.ts` exposes `DATABASE_URL`,
-   `CIVIC_SPACES_DATABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`; the repo does not reveal which
-   role each connection string resolves to in production. Stage 1's cheapness depends entirely
-   on `postgres` being human-only — if an app path still uses it, Stage 1 becomes a firehose.
-2. **Whether the Supabase dashboard's SQL editor runs as `postgres`** or as a separate
-   platform role. If separate, that role needs the same treatment or the most likely human
-   path stays unlogged.
-3. **That Supabase surfaces role-level `log_statement` output**, and does not reset role
-   settings across platform maintenance.
-4. **Supabase's log retention window** — it bounds §6 regardless of what policy is chosen.
+Both load-bearing checks were run against production (`kxsdzaojfaibhuzmclfq`) with read-only
+metadata queries. **Both passed.** Running them also invalidated part of Stage 1, which is the
+point of running checks rather than reasoning about them.
 
-Items 1 and 2 are load bearing. If either is false, Stage 1 needs rethinking rather than
-tuning, so check them first.
+### 1. No application path connects as `postgres` — ✅ PASS
+
+Live connections, `pg_stat_activity`:
+
+| Role | `application_name` | What it is |
+|---|---|---|
+| `ev_api` | `Supavisor` | the app's `pg` pool |
+| `authenticator` | `PostgREST 14.5` | PostgREST; `SET ROLE`s to `anon`/`authenticated`/`service_role` |
+| `pgbouncer` | `Supavisor (auth_query)` | pooler internals |
+| `postgres` | `mgmt-api` | **the management API — the session running this check** |
+| `supabase_admin` | — / `postgres_exporter` | platform |
+
+No application path uses `postgres`. Stage 1 is a scalpel, not a firehose.
+
+⚠ **One correction to §3's table while here:** `service_role` is **not** a login role and does
+not appear as a connection. PostgREST connects as `authenticator` and `SET ROLE`s per request.
+That matters because `rolconfig` applies at login — a per-role `log_statement` on
+`service_role` would not take effect. Irrelevant to this design (we do not log it), but it
+would silently defeat any future attempt to.
+
+### 2. The dashboard runs as `postgres` — ✅ PASS
+
+`SELECT current_user` over the management API returns **`postgres`**, `application_name =
+'mgmt-api'`, `is_superuser = off`. So logging `postgres` does cover the dashboard path, and
+`application_name` additionally separates dashboard/API queries from a `psql` session.
+
+### 3. and 4. — answered
+
+- Supabase **Pro** plan: observability window is **7 days** (Team 28). This is what fixes
+  retention in ADR 0007 §5a.
+- `postgres` currently has **no** `rolconfig` at all, so Stage 1 adds a setting with nothing
+  to conflict with. `supabase_admin`, `supabase_auth_admin` and `supabase_storage_admin`
+  already carry `log_statement=none`, set by the platform.
+
+### What the checks changed
+
+**Stage 1 was insufficient as originally written.** See Stage 1b: five roles can read every
+stance and the original single `ALTER ROLE` logs one. The access path for two of them is
+`pg_read_all_data` membership rather than a table grant — invisible to the grants query this
+spec originally proposed as the Stage 4 guard, which is now corrected.
+
+### Still unverified
+
+- **That Supabase does not reset `rolconfig` across platform maintenance.** Stage 4's first
+  assertion is what would catch it, which is an argument for building Stage 4 alongside
+  Stage 1 rather than after it.
+- **Whether a human can obtain `supabase_read_only_user`, `supabase_etl_admin` or
+  `supabase_admin` credentials at all.** This is a Supabase access-control question, and it
+  decides whether the residual gap in Stage 1b is three real unlogged paths or none.
