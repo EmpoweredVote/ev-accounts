@@ -62,10 +62,10 @@ router.post(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      const result = await runPreflight(
-        authReq.userId,
-        typeof req.body?.legal_name === 'string' ? req.body.legal_name : undefined
-      );
+      const rawName = req.body?.legal_name;
+      const confirmedName =
+        typeof rawName === 'string' && rawName.trim().length > 0 ? rawName : undefined;
+      const result = await runPreflight(authReq.userId, confirmedName);
       res.status(200).json(result);
     } catch (err) {
       console.error('[POST /empower/preflight] error:', err);
