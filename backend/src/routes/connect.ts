@@ -22,6 +22,7 @@ import { requireConnected } from '../middleware/tierGuards.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { resolvedDistrictCount } from '../lib/jurisdictionPayload.js';
+import { isVaultEnabled, upsertSeal } from '../lib/idVault.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -80,6 +81,14 @@ const compassImportBodySchema = z.object({
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+/** Seal the raw street address into the vault when enabled. Coords stay under
+ *  the existing single key (spec D5); this only adds the sealed raw address. */
+export async function sealAddressIfEnabled(userId: string, rawAddress: string): Promise<void> {
+  if (isVaultEnabled()) {
+    await upsertSeal(userId, { address: rawAddress });
+  }
+}
 
 /**
  * Map ClaimResult error codes to HTTP status codes and error payloads.
@@ -597,6 +606,14 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       console.error('[connect/set-location] upsert_user_location error:', upsertError.message);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
       return;
+    }
+
+    // Seal the raw address (public key only — no ceremony). Non-fatal: a seal
+    // failure must not block district resolution the site needs to place them.
+    try {
+      await sealAddressIfEnabled(userId, address);
+    } catch (sealErr) {
+      console.error('[connect/set-location] id_vault seal failed (non-fatal):', sealErr);
     }
 
     const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
