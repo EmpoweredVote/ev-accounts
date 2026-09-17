@@ -279,7 +279,8 @@ router.get('/accounts', async (req, res) => {
 
 /**
  * GET /api/admin/accounts/:userId
- * Full account detail including tolerance_rating, legal_name, roles, audit log.
+ * Full account detail including tolerance_rating, roles, audit log. The
+ * Connect legal_name is vaulted (id_vault) and never returned here.
  * Every access is logged to admin_audit_log (ADMN-02).
  */
 router.get('/accounts/:userId', async (req, res) => {

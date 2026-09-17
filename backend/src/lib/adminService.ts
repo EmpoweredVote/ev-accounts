@@ -107,7 +107,10 @@ export async function listAccounts(
 
 /**
  * Get full account detail for a single user.
- * Returns all fields including tolerance_rating and legal_name (admin context).
+ * Returns all fields including tolerance_rating (admin context). The Connect
+ * legal_name is NOT returned — it is vaulted (id_vault), readable only via
+ * offline break-glass, never by the app or any admin; the underlying RPC
+ * still computes it but this function strips it before it reaches the caller.
  * Includes active roles, recent audit log entries, and calibration lapse info.
  */
 export async function getAccountDetail(userId: string): Promise<Record<string, unknown>> {
