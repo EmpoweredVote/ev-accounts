@@ -134,6 +134,10 @@ export async function getAccountDetail(userId: string): Promise<Record<string, u
     // Non-fatal: fall back to whatever admin_get_account_detail returned
   }
 
+  // The real name is vaulted (ev-cto 0022). No admin read path exposes it —
+  // only the offline two-person break-glass. Strip it if the RPC still returns it.
+  delete (result as Record<string, unknown>).legal_name;
+
   return result;
 }
 

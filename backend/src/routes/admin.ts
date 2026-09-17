@@ -288,7 +288,7 @@ router.get('/accounts/:userId', async (req, res) => {
     const detail = await getAccountDetail(userId);
     // ADMN-02: log every admin view of sensitive account details
     await logAdminAction(actorId(req), 'view_account_detail', userId, {
-      viewed_fields: ['tolerance_rating', 'legal_name', 'roles', 'audit_log'],
+      viewed_fields: ['tolerance_rating', 'roles', 'audit_log'],
     });
     res.json(detail);
   } catch (err) {
