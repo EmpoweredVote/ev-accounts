@@ -7,6 +7,26 @@
   (full exchange, 632 lines). This file is the single actionable item from it.
 - **Tracking:** none yet — please assign.
 
+> ✅ **BUILT 2026-09-17 — `backend/src/lib/stanceVisibilityGate.test.ts`.**
+> Four tests, in the shape of `compass.answers.scope.test.ts`: a chainable stub records every
+> `.eq(column, value)` the services send, so the assertion is that the predicate actually
+> reaches the client rather than that the source contains a string.
+>
+> They pin all three reads (`getPublicProfile`, `getCandidateBySlug`, `getCandidateAnswers`)
+> **and** that `getOwnerProfile` deliberately does *not* filter — so a future "simplification"
+> unifying the two paths fails here instead of in production.
+>
+> **Mutation-tested.** With `.eq('visibility','public')` removed from `profileService`, the
+> unauthenticated-path assertion fails; restored, it passes. A test that has only ever passed
+> is a hypothesis.
+>
+> Two vacuous passes were found and fixed while writing it, both worth knowing about because
+> either would have shipped a test that asserted nothing:
+> `getSelectedTopics` mocked as `[]` skipped candidateService's stance read entirely
+> (`if (selectedTopicIds.length > 0)`), and `cache.get` mocked as `undefined` was treated as a
+> cache **hit** by `if (cached !== null)`, returning before any read. Hence the explicit
+> `stanceRelationWasRead()` assertion in every test.
+
 ## Ask, in one line
 
 **Add a test asserting that every service-role read of `inform.compass_responses` on a
