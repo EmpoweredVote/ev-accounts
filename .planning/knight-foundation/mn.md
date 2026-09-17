@@ -770,8 +770,38 @@ Eleven rows ship below 480px wide, and every one was checked against the publish
 **600x750 is a ceiling, not a contract.** Enlarging these would bake in interpolation and produce a
 file that looks like a full-resolution asset while carrying no more detail.
 
+## ✅ Banners — both live 2026-09-16 (essentials#150)
+
+`cities/duluth.jpg` and `cities/saint-paul.jpg`, 1700x540 JPEG q90 progressive, registered as
+`duluth` and `'saint paul'` with `match:'exact'` and `state:'MN'`.
+
+- **Duluth** — the shipping canal, the Aerial Lift Bridge and Canal Park from the air.
+  Bspor.88, **CC0**. anchor_y 0.10; at 0.25 the bridge rides the top edge and the band is mostly water.
+- **Saint Paul** — the Union Depot colonnade, its bases and the lawn. August Schwerdfeger, **CC BY 4.0**.
+
+🔴🔴 **THE ADJACENCY RULE DECIDED SAINT PAUL, NOT TASTE.** `states/MN.jpg` is the Minneapolis skyline
+from the Stone Arch Bridge — a daytime downtown skyline panorama. Saint Paul's own best-known view is
+the same composition, so **the city's obvious banner was the one frame the rule refuses**; a reader
+moving from the state section to the city section would have met the same picture twice.
+
+🔴🔴 **A SOURCE CLOSE TO THE ASSET RATIO MAKES `anchor_y` A NO-OP, AND THAT IS NOT OBVIOUS.** The
+Union Depot panorama is **3.09:1 against the asset's 3.148:1** — 22 source pixels apart — so the
+anchor moves the composed frame about **ten pixels** and cannot choose what the desktop band shows.
+Six anchor variants and six zoom variants all failed for the same reason before the cause was
+measured. **The lever that works is trimming the SOURCE** (here the top 690px, the roofline), which
+moves the content relative to the frame instead of moving the frame.
+
+🔴 **AND THE OPERATOR CAUGHT IT IN THE BEND FAILURE'S OWN WORDS — "looks better on mobile than
+desktop".** The first certified crop held the whole colonnade; mobile keeps 96.9% of the height and
+showed the building whole, while the desktop band ended above the column bases, so the building had
+no ground. **That phrase is the signature of a banner certified on the wrong box**, and it is worth
+treating as a fault report rather than a preference.
+
+✅ Both objects were fetched back from the CDN and decoded: 1700x540, **sha256 identical to the local
+files**, with a key that cannot exist requested as a control (HTTP 400, correctly refused). New keys,
+so no `-v2` and no stale-CDN risk. `banners.json` regenerated; 429 essentials tests pass.
+
 ## ▶ Owed
 
-1. **133 House portraits** — blocked on permission, above.
+1. **133 House portraits** — blocked on permission. See the top of this section.
 2. **Lynn Marie Nephew** — blank until Duluth publishes a portrait or the council office sends one.
-3. **Two banners** — Duluth and Saint Paul, and the adjacency test against the Minnesota state banner.
