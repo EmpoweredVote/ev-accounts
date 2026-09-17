@@ -125,16 +125,27 @@ grants a new role access to the table.
   users' stances by design; that path is governed by the visibility-gate test (#508), not by
   this.
 
-## 6. Retention, which is not a technical question
+## 6. Retention — SETTLED 2026-09-16, in ADR 0007 §5a–5c
 
-Logs nobody reads are not an audit; they are a liability with a storage bill. Two things need
-deciding, and neither is derivable from the code:
+Logs nobody reads are not an audit; they are a liability with a storage bill. This section
+originally left retention and review open. Both are now decided, and the policy lives in
+**ADR 0007 §5a–5c** — not here. Summarised only so this design is readable on its own:
 
-- **How long** stance-read logs are kept.
-- **Who looks**, and on what cadence.
+- **7 days** (§5a) — the **Supabase Pro platform ceiling**, not a chosen number. Longer
+  retention needs Stage 3, a log drain, or a plan change; revisit it *with* Stage 3.
+- **Weekly review by a named person** (§5b), forced by the 7-day window: a slower cadence
+  means evidence expires unseen. Reviewer is **Chris until delegated in the ADR**.
+- **Erasure pseudonymises rather than deletes** (§5c) — the record keeps *that* a read
+  happened and *who* did it, losing only *whose* stances.
 
-Recommend both be written into ADR 0007 §5 when this lands, because they are the difference
-between an audit and the appearance of one.
+Two consequences land on whoever implements this:
+
+1. **§5b expects an alert, not a checklist.** Expected volume is near zero, and a routine
+   that is empty every week is one that stops being performed. Prefer a scheduled query that
+   fires only on a non-empty result.
+2. **§5c is a Stage 3 requirement.** Statement logs cannot be selectively pseudonymised, so
+   at Stage 1 the 7-day expiry is the only erasure story. If Stage 3's in-database audit
+   lands, it must support pseudonymising a subject id in place.
 
 ## 7. Could not be verified from the repo — check before applying
 

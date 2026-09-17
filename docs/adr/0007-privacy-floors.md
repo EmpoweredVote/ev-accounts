@@ -122,6 +122,75 @@ This ADR does not specify the mechanism. It specifies that **the mechanism is pa
 policy, not a follow-up to it**: a rule nobody can verify is a statement of intent, and §4
 is meant to be a commitment.
 
+The mechanism is designed in
+`docs/superpowers/specs/2026-09-15-stance-read-audit-design.md`. Retention and review are
+policy rather than design, so they are settled here.
+
+### 5a. Retention — 7 days, and that is a ceiling rather than a judgement
+
+> **Stance-read audit records are retained for 7 days.**
+
+Decided by Chris, 2026-09-16.
+
+The mechanism's first stage logs to **Postgres logs**, and this organisation is on the
+Supabase **Pro** plan, whose observability window is **7 days** (Team is 28). So 7 days is
+not a number anyone chose — it is the platform ceiling, and the policy states it as such so
+that nobody later reads it as a considered trade-off.
+
+It happens to be defensible on its own terms. Stances are **GDPR Art. 9 special-category
+data** (§9 of `PRIVACY-DATA-MODEL.md`), so a record of *who read whose stances* is itself a
+record about special-category data. Art. 5(1)(e) storage limitation argues for keeping such
+records briefly, not indefinitely. A short window is the privacy-preserving answer as well
+as the cheap one.
+
+**What 7 days does not buy, stated plainly:** a read that nobody looks at within a week is
+invisible permanently. That is the direct cost of this choice, and it is why §5b is not
+optional.
+
+Longer retention is possible and was **not** chosen now: it requires the deferred
+in-database audit of the design's Stage 3, or a log drain, or a plan change. Revisit it
+with Stage 3 rather than separately.
+
+### 5b. Review — weekly, and by a named person
+
+> **A named individual reviews stance-read records weekly.**
+
+Decided by Chris, 2026-09-16.
+
+Weekly is not a preference; it is forced by §5a. A cadence longer than the 7-day window
+means evidence expires before anyone sees it, and the audit becomes decorative.
+
+**The reviewer is a person, never a team.** A duty assigned to "engineering" is a duty
+nobody performs. **Reviewer: Chris, until explicitly delegated in this ADR** — reassignment
+is an edit here, not an informal handover.
+
+Expected volume is near zero: on 2026-09-14 no stance in the system was public and no
+staff-read path existed, so most weeks should find nothing. **That is the failure mode to
+design against** — a routine that is empty every week is a routine that stops being
+performed. Implementations should prefer a scheduled query that alerts only on a non-empty
+result over a checklist item a human is trusted to remember.
+
+### 5c. Erasure — pseudonymise, keep the record
+
+> **When a user is erased under GDPR Art. 17, audit records naming them are pseudonymised,
+> not deleted: the subject's id is replaced with an irreversible token.**
+
+Decided by Chris, 2026-09-16.
+
+The audit still shows that a read occurred and who performed it; it no longer says whose
+stances were read. This mirrors the approach `PRIVACY-DATA-MODEL.md` §9 proposes for
+`connect.invite_chains` (tension 1) — reduce the personal element to a non-personal token
+rather than destroy the accountability record.
+
+The alternative was rejected for a specific reason: full deletion would let a person erase
+the evidence of who accessed their data, **including in precisely the case where that
+evidence is what mattered**. Erasure should remove the personal data, not the trace of its
+misuse.
+
+At a 7-day window this rarely bites — records usually expire before an erasure request
+completes. It is settled now anyway, because Stage 3 would make it live and it is far
+cheaper to decide while the answer is still hypothetical.
+
 ## 6. Explicitly open — do not read this ADR as settling any of it
 
 - **Can EV ever unmask?** `PRIVACY-DATA-MODEL.md` §8a. **Chris is actively exploring this
