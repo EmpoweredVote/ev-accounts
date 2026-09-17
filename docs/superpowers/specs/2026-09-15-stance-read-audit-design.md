@@ -107,12 +107,20 @@ Three things follow, and none was visible from the repo:
    will likely be refused. `supabase_admin` is superuser with `log_statement=none` set by the
    platform.
 
-So the honest scope of Stage 1 is: **log `postgres` and `cli_login_postgres`; attempt
-`supabase_read_only_user` and `supabase_etl_admin` and expect to be refused; accept that
-`supabase_admin` is unloggable by us.** Whether the platform-managed roles are reachable by a
-human at all is a Supabase access-control question, not a Postgres one — if nobody can obtain
-those credentials, the residual gap is small. **That is worth confirming rather than
-assuming**, because it is the difference between three unlogged paths and none.
+**Resolved 2026-09-17 — see §7. The scope of Stage 1 is: `ALTER ROLE postgres`, and that is
+enough.**
+
+The four apparent gaps close on inspection rather than on work:
+
+- `cli_login_postgres` **cannot authenticate** — its password expired 2026-08-17. Nothing to
+  do. (Worth a Stage 4 assertion that it stays expired, since a renewal would silently reopen
+  an unlogged path that inherits `postgres`.)
+- `supabase_read_only_user`, `supabase_etl_admin` and `supabase_admin` are **Supabase's
+  credentials, not EV's** — platform-operated, with no customer-facing path to obtain them.
+
+So `postgres` is the only one of the five an EV human can hold, and it is the one Stage 1
+logs. What is left is vendor access, which §7 explains is outside what any audit built here
+can reach.
 
 ### Stage 2 — named human roles, so the log says *who*
 
@@ -245,11 +253,45 @@ stance and the original single `ALTER ROLE` logs one. The access path for two of
 `pg_read_all_data` membership rather than a table grant — invisible to the grants query this
 spec originally proposed as the Stage 4 guard, which is now corrected.
 
+### Can a human obtain the unlogged roles' credentials? — ANSWERED 2026-09-17
+
+This was the question that decided whether Stage 1b left three real gaps or none. **It leaves
+none that EV can act on, and Stage 1 is sufficient for what this audit is for.**
+
+| Role | Obtainable by an EV human? | Basis |
+|---|---|---|
+| `postgres` | **Yes** — and it is the one Stage 1 logs | Documented as "the default Postgres role, admin privileges"; the Dashboard exposes its connection string and password reset. The customer-facing credential. |
+| `cli_login_postgres` | **No — expired** | `rolvaliduntil = 2026-08-17`, a month before this check. It cannot authenticate. |
+| `supabase_etl_admin` | **No documented path** | Supabase docs: used by *Replication powered by Supabase ETL*. Platform-operated. |
+| `supabase_admin` | **No** | Supabase docs: *"an internal role Supabase uses for administrative tasks, such as running upgrades and automations."* |
+| `supabase_read_only_user` | **No documented path** | Not in Supabase's published role list at all. Undocumented and platform-internal. |
+
+All five carry SCRAM-SHA-256 passwords, so all are *technically* loginable — but the
+credentials for the bottom three are held by **Supabase, not by EV**.
+
+**That reframes the residual gap, and the reframing matters.** The three roles Stage 1 cannot
+log are the vendor's, not EV staff's. So:
+
+- For the threat model ADR 0007 §5 actually addresses — **EV staff accountability** — Stage 1
+  is **sufficient**, because `postgres` is the only credential an EV human can hold and it is
+  the one that gets logged.
+- What remains is **vendor access**: Supabase's own staff and automation can read the database
+  without appearing in any log we control. That is a real exposure, but it is a
+  **vendor-trust** question, not an audit-design one. **You cannot audit your cloud provider
+  from inside their database**, and no amount of `ALTER ROLE` changes it. If it needs
+  addressing, the instruments are contractual, or encryption-at-rest with keys the provider
+  does not hold — not this spec.
+
+⚠ **One thing worth knowing about the `postgres` credential.** It is a member of
+`pg_read_all_data`, which extends to the system catalogs: `postgres` can read `pg_authid`,
+including every role's stored password verifier. SCRAM verifiers are **not** replayable as
+passwords — possession does not permit authentication the way an MD5 hash would — but they are
+exposed to offline attack. The practical point is that the blast radius of the `postgres`
+credential is the whole database, and that is a further argument for **Stage 2**: humans should
+be using named least-privilege roles for routine work, not `postgres`.
+
 ### Still unverified
 
 - **That Supabase does not reset `rolconfig` across platform maintenance.** Stage 4's first
   assertion is what would catch it, which is an argument for building Stage 4 alongside
   Stage 1 rather than after it.
-- **Whether a human can obtain `supabase_read_only_user`, `supabase_etl_admin` or
-  `supabase_admin` credentials at all.** This is a Supabase access-control question, and it
-  decides whether the residual gap in Stage 1b is three real unlogged paths or none.
