@@ -194,14 +194,57 @@ Boulder County, outside the city — returns **0 city, 10 county** and a *differ
 (Karen McCormick, Katie Wallace). Denver returns **neither** city nor county, and a third pair again.
 A control that returned the same legislators would have proved only that the query runs.
 
+## ✅ CO-5 — STAGE 5 COMPLETE 2026-09-16. 19 portraits and one banner. **COLORADO IS THE PROGRAMME'S SIXTH FINISHED SLICE.**
+
+**19 of 19 render**, verified by fetching every stored object back from the CDN and decoding it, with
+a bogus-key control that failed as required. 0 broken, 0 blank.
+
+🔴🔴 **THE CITY TOOK WALLACH'S PORTRAIT AND UPLOADED IT WITH EVERYONE ELSE'S — ONLY THE PAGE CARD IS
+MISSING.** `2025-12/wallach.jpg` sits in the same December 2025 directory as the other eight, at the
+same 2000x2200, and the council page does not link it. It was found by probing the batch's naming
+convention after the page again came up eight-of-nine. **A missing card is not a missing asset**, and
+the file carried a verify-the-face flag on the sheet precisely because a filename guess is where a
+wrong person hides.
+
+⚠ **NEITHER PUBLISHER HAS A PHOTO POLICY**, checked before any harvester was written — the MN-5 rule.
+The city has a privacy policy and no terms of use; the county grants CC BY 4.0 for **datasets** and
+says nothing about images. That is the Minnesota Senate's standing, not the Minnesota House's, so
+both sets shipped as `press_use`.
+
+⚠ **NINE COUNTY PORTRAITS SHIP BELOW TARGET AND THAT IS WHAT THE COUNTY PUBLISHES** — its own
+`srcset` lists 250w as the full size, so those are not derivatives to be stripped. The one that was
+improvable was the Assessor: the index serves her at 140x175 and her own department page carries a
+larger file. The city's nine are 2000x2200.
+
+### ✅ The banner: `cities/boulder.jpg` (essentials#151)
+
+The Flatirons rising behind a pine screen from Bluebell Road — **joiseyshowaa, CC BY-SA 2.0**,
+anchor_y 0.50.
+
+🔴🔴 **COLORADO IS THE FIRST STATE WHERE TWO COMPOSITIONS WERE ALREADY SPOKEN FOR, AND THE SECOND
+EXISTS BECAUSE OF THE FIRST.** `states/CO.jpg` is the Denver skyline; Colorado Springs took Garden of
+the Gods precisely to avoid repeating it. **Boulder's signature view is also rock**, so the adjacency
+test was a real decision rather than a formality. The Asheville ruling settles it on camera height
+and what fills the frame, and the shipped frame differs on all three axes: grey-tan tilted slab
+rather than red fin, a camera looking UP a flank rather than across a park at eye level, and a near
+field of pine forest rather than rock. **The two frames were stacked on the review page so the
+closest call could be judged rather than argued.**
+
+🔴 **TWO REJECTIONS WORTH KEEPING.** Pearl Street Mall is the most compositionally distinctive frame
+Boulder has — a street corridor, like Bloomington's — and it **fails the people test outright**:
+figures hundreds of pixels tall, far past the ~67px that refused Durham's courtyard and the 10-20px
+silhouettes Travis County accepted. A sunset panorama was refused **on subject**: the dramatic band
+across its sky is wildfire smoke, with a parked car and a standing figure in the near field.
+
+✅ Object fetched back and decoded, sha256 identical to the local file, missing-key control HTTP 400.
+New key, so no `-v2` and no stale-CDN risk. `banners.json` regenerated; 429 essentials tests pass.
+
 ## ▶ Next
 
-1. **Stage 5 for Boulder**: 19 portraits and one banner.
-   🔴 Two Colorado compositions are already spoken for — `states/CO.jpg` is a **Denver skyline** and
-   `cities/colorado-springs.jpg` is **Garden of the Gods**, chosen in that wave *because* the state
-   banner is a skyline. The Flatirons are the obvious answer and must be tested against both: an
-   elevated rock formation against a city is not the same composition as Garden of the Gods, but the
-   two need seeing side by side before either is certified.
-   ⚠ And read Boulder's chamber-photo question the way MN-5 forced: **before building any roster
-   portrait script, read the publisher's photo policy.**
-2. **CO-4**: nothing. Boulder is Colorado's only Knight city, so this slice closes at stage 5.
+**Colorado is finished.** Boulder is the state's only Knight city, so slice 9 closes here with no
+debts: 19 seats, 19 seated, 19 portraits, one banner, and no undated row except the Surveyor's, which
+is deliberate and gated.
+
+▶ The programme's next opening is **slice 6, Pennsylvania** (Philadelphia and State College), which
+starts from zero — no `place`, `sldu` or `sldl` polygons and no legislature — or **slice 10, Charlotte**,
+where geography and the legislature already exist, as Boulder's did.
