@@ -16,8 +16,10 @@ vi.mock('../lib/geocodingService.js', () => ({
   },
 }));
 vi.mock('../lib/inviteService.js', () => ({ claimInviteCode: vi.fn() }));
+const getLegalNameDraft = vi.hoisted(() => vi.fn());
 vi.mock('../lib/connectService.js', () => ({
   getLocationConsent: vi.fn(),
+  getLegalNameDraft,
   getConnectedProfile: vi.fn(),
   upsertConnectedProfile: vi.fn(),
   setLocationConsent: vi.fn(),
@@ -53,7 +55,7 @@ const isEnabled = vi.hoisted(() => vi.fn());
 const upsertSeal = vi.hoisted(() => vi.fn());
 vi.mock('../lib/idVault.js', () => ({ isVaultEnabled: isEnabled, upsertSeal }));
 
-import { sealAddressIfEnabled } from './connect.js';
+import { sealAddressIfEnabled, resolveCompleteConnectSeal } from './connect.js';
 
 describe('set-location address sealing', () => {
   beforeEach(() => { isEnabled.mockReset(); upsertSeal.mockReset(); });
@@ -68,5 +70,50 @@ describe('set-location address sealing', () => {
     isEnabled.mockReturnValue(false);
     await sealAddressIfEnabled('user-1', '742 Evergreen Terrace');
     expect(upsertSeal).not.toHaveBeenCalled();
+  });
+});
+
+// POST /complete seal parity (CA_0120, spec §4.4): before this fix, /complete
+// called complete_connect_flow with only p_user_id, and the RPC wrote the
+// plaintext legal_name_draft into connected_profiles regardless of the vault.
+// resolveCompleteConnectSeal is the extracted seal-first-then-flag decision the
+// route now calls before the RPC — mirrors resolveSignupLegalName in auth.ts.
+describe('POST /complete name sealing (resolveCompleteConnectSeal)', () => {
+  beforeEach(() => {
+    isEnabled.mockReset();
+    upsertSeal.mockReset();
+    getLegalNameDraft.mockReset();
+  });
+
+  it('vault ON with a draft name: reads the draft, seals it, and flags the RPC to null the column', async () => {
+    isEnabled.mockReturnValue(true);
+    getLegalNameDraft.mockResolvedValue('Ada Lovelace');
+
+    const sealName = await resolveCompleteConnectSeal('user-1');
+
+    expect(getLegalNameDraft).toHaveBeenCalledWith('user-1');
+    expect(upsertSeal).toHaveBeenCalledWith('user-1', { name: 'Ada Lovelace' });
+    expect(sealName).toBe(true);
+  });
+
+  it('vault ON with no draft name (edge case — nothing to seal): does not call upsertSeal, still flags the RPC', async () => {
+    isEnabled.mockReturnValue(true);
+    getLegalNameDraft.mockResolvedValue(null);
+
+    const sealName = await resolveCompleteConnectSeal('user-1');
+
+    expect(getLegalNameDraft).toHaveBeenCalledWith('user-1');
+    expect(upsertSeal).not.toHaveBeenCalled();
+    expect(sealName).toBe(true);
+  });
+
+  it('vault OFF: never reads the draft or seals, and tells the RPC not to null the column', async () => {
+    isEnabled.mockReturnValue(false);
+
+    const sealName = await resolveCompleteConnectSeal('user-1');
+
+    expect(getLegalNameDraft).not.toHaveBeenCalled();
+    expect(upsertSeal).not.toHaveBeenCalled();
+    expect(sealName).toBe(false);
   });
 });

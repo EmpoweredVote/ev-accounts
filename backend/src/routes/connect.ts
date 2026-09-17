@@ -14,6 +14,7 @@ import {
   saveCompassImportDraft,
   importCompassCalibrations,
   getLocationConsent,
+  getLegalNameDraft,
   type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -88,6 +89,25 @@ export async function sealAddressIfEnabled(userId: string, rawAddress: string): 
   if (isVaultEnabled()) {
     await upsertSeal(userId, { address: rawAddress });
   }
+}
+
+/**
+ * Seal-first name routing for POST /complete. Mirrors resolveSignupLegalName
+ * (routes/auth.ts): when the vault is enabled, read the draft legal name the
+ * member entered during enrollment and seal it into id_vault BEFORE calling
+ * complete_connect_flow (fail-safe ordering — spec §4.4). Returns the
+ * p_seal_name flag the RPC uses to NULL out connected_profiles.legal_name
+ * instead of writing the plaintext draft (CA_0120).
+ */
+export async function resolveCompleteConnectSeal(userId: string): Promise<boolean> {
+  const sealName = isVaultEnabled();
+  if (sealName) {
+    const draftName = await getLegalNameDraft(userId);
+    if (draftName) {
+      await upsertSeal(userId, { name: draftName });
+    }
+  }
+  return sealName;
 }
 
 /**
@@ -303,13 +323,21 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
  *
  * Response intentionally omits tolerance_rating and legal_name — privacy
  * enforcement at the serialization layer (not just RLS).
+ *
+ * Seal-on-write (spec §4.4, CA_0120): when the vault is enabled, the draft
+ * legal name is sealed into id_vault BEFORE the RPC runs, and p_seal_name=true
+ * tells complete_connect_flow to NULL connected_profiles.legal_name instead of
+ * writing the plaintext draft. When the vault is disabled, behaviour is
+ * unchanged — p_seal_name defaults to false and the draft is written as today.
  */
 router.post('/complete', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
   try {
+    const sealName = await resolveCompleteConnectSeal(userId);
     const { data, error } = await adminRpc('complete_connect_flow', {
       p_user_id: userId,
+      p_seal_name: sealName,
     });
 
     if (error) {
