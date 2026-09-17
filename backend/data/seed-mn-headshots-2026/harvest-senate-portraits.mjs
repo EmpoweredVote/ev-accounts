@@ -55,7 +55,7 @@ for (const m of senators) {
   const tag = [...html.matchAll(/<img[^>]*src=['"]\/graphics\/[^'"]+['"][^>]*>/gi)].map((x) => x[0]);
   if (tag.length !== 1) { problems.push(`${m.full_name} (SD-${m.district}): ${tag.length} portrait tags on the bio page`); continue; }
   const src = tag[0].match(/src=['"]([^'"]+)['"]/i)[1];
-  const alt = (tag[0].match(/alt=['"]([^'"]*)['"]/i) ?? [, ''])[1].trim();
+  const alt = (tag[0].match(/alt=['"]([^'"]*)['"]/i)?.[1] ?? '').trim();
   const row = byGeo.get(m.geo_id);
   if (!row) { problems.push(`${m.full_name} (SD-${m.district}): no production office for geo_id ${m.geo_id}`); continue; }
   if (!row.politician_id) { problems.push(`SD-${m.district}: production office is unseated`); continue; }

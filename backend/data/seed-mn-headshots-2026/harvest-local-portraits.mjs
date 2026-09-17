@@ -71,10 +71,12 @@ for (const [idx, kind] of [[cityIdx, 'city'], [cntyIdx, 'county']]) {
     const key = kind === 'city' ? m.city : m.county;
     const url = m.finalUrl ?? m.url;
     const cache = path.join(PAGES, `${key}-${(m.seat ?? '').replace(/\W+/g, '')}-${surname(m.name)}.html`);
-    let html = '';
-    let status = 'cache';
-    if (fs.existsSync(cache)) html = fs.readFileSync(cache, 'utf8');
-    else {
+    let html;
+    let status;
+    if (fs.existsSync(cache)) {
+      html = fs.readFileSync(cache, 'utf8');
+      status = 'cache';
+    } else {
       const res = await fetch(url, { headers: { 'User-Agent': UA } });
       status = `HTTP ${res.status}`;
       html = await res.text();
@@ -82,8 +84,8 @@ for (const [idx, kind] of [[cityIdx, 'city'], [cntyIdx, 'county']]) {
     }
     const imgs = [...html.matchAll(/<img[^>]*>/gi)].map((t) => ({
       tag: t[0],
-      src: (t[0].match(/src=["']([^"']+)["']/i) ?? [, ''])[1],
-      alt: (t[0].match(/alt=["']([^"']*)["']/i) ?? [, ''])[1],
+      src: t[0].match(/src=["']([^"']+)["']/i)?.[1] ?? '',
+      alt: t[0].match(/alt=["']([^"']*)["']/i)?.[1] ?? '',
     // 🔴 A NAME BEATS THE NOISE FILTER. The first cut dropped Duluth's mayor, because his portrait
     // is `reinert_roger_formal-headshot_-with-seal.jpg` and the filter refuses anything matching
     // `seal` -- the city seal is IN the photograph. A filename that names the person is evidence;
