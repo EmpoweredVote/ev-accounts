@@ -137,7 +137,12 @@ export async function getReservedSlug(userId: string): Promise<string | null> {
  * DB checks are delegated to run_empower_preflight RPC. Slug generation and
  * caching remain in TypeScript (crypto.randomUUID is not available in PL/pgSQL).
  */
-export async function runPreflight(userId: string): Promise<PreflightResult> {
+export async function runPreflight(userId: string, confirmedLegalName?: string): Promise<PreflightResult> {
+  // Normalize once: an empty/whitespace-only string must fall through to the DB
+  // value below, the same as null/undefined would via `??`. `??` alone does not
+  // catch '', which is how an unfilled form field used to corrupt the slug.
+  const confirmed = confirmedLegalName?.trim() ? confirmedLegalName : undefined;
+
   const { data, error } = await adminRpc('run_empower_preflight', {
     p_user_id: userId,
   });
@@ -192,14 +197,16 @@ export async function runPreflight(userId: string): Promise<PreflightResult> {
     slugPreview = empowered.candidate_page_slug;
     await cache.set(`slug_reservation:${userId}`, slugPreview, 3600);
   } else {
-    // Fresh empowerment: generate a new slug
-    slugPreview = await reserveSlug(userId, connected.legal_name!);
+    // Fresh empowerment: generate a new slug from the confirmed name when given,
+    // else the DB value (falls back across the id-vault cutover — see ADR).
+    const nameForSlug = confirmed ?? connected.legal_name ?? '';
+    slugPreview = await reserveSlug(userId, nameForSlug);
   }
 
   const successResult: PreflightSuccess = {
     eligible: true,
     summary: {
-      legal_name: connected.legal_name!,
+      legal_name: confirmed ?? connected.legal_name ?? '',
       compass_completeness: compassCompleteness,
       slug_preview: slugPreview,
     },
@@ -256,8 +263,13 @@ export async function recordConsent(
  */
 export async function confirmEmpowerment(
   userId: string,
-  consentedItems: string[]
+  consentedItems: string[],
+  confirmedLegalName?: string
 ): Promise<{ empowered_profile: Record<string, unknown> }> {
+  // Normalize once: an empty/whitespace-only string must fall through to the DB
+  // value below, the same as null/undefined would via `??`.
+  const confirmed = confirmedLegalName?.trim() ? confirmedLegalName : undefined;
+
   // 1. Retrieve reserved slug — must have run preflight first
   const reservedSlug = await getReservedSlug(userId);
   if (!reservedSlug) {
@@ -289,7 +301,7 @@ export async function confirmEmpowerment(
     .schema('empower')
     .rpc('execute_empowerment', {
       p_user_id: userId,
-      p_legal_name: connectedProfile.legal_name ?? '',
+      p_legal_name: confirmed ?? connectedProfile.legal_name ?? '',
       p_connected_profile_id: connectedProfile.id,
       p_reserved_slug: reservedSlug,
     });

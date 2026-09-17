@@ -128,6 +128,11 @@ const envSchema = z.object({
     (v) => (typeof v === 'string' && v.trim() === '' ? undefined : v),
     z.enum(['api', 'worker']).optional()
   ),
+  // Identity vault (ev-cto decision 0022). PUBLIC key only — safe to hold.
+  // Absent = vault disabled: name/address keep today's storage. Set after the
+  // offline key ceremony (Phase B) to switch writes to the sealed vault.
+  ID_VAULT_PUBLIC_KEY: z.string().optional(),
+  ID_VAULT_KEY_VERSION: z.coerce.number().int().positive().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
@@ -138,4 +143,9 @@ if (!parsed.success) {
   process.exit(1);
 }
 
-export const env = parsed.data;
+// Ensure optional vault vars are included in env even if undefined
+export const env = {
+  ...parsed.data,
+  ID_VAULT_PUBLIC_KEY: parsed.data.ID_VAULT_PUBLIC_KEY,
+  ID_VAULT_KEY_VERSION: parsed.data.ID_VAULT_KEY_VERSION,
+};

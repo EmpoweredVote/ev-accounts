@@ -279,7 +279,8 @@ router.get('/accounts', async (req, res) => {
 
 /**
  * GET /api/admin/accounts/:userId
- * Full account detail including tolerance_rating, legal_name, roles, audit log.
+ * Full account detail including tolerance_rating, roles, audit log. The
+ * Connect legal_name is vaulted (id_vault) and never returned here.
  * Every access is logged to admin_audit_log (ADMN-02).
  */
 router.get('/accounts/:userId', async (req, res) => {
@@ -288,7 +289,7 @@ router.get('/accounts/:userId', async (req, res) => {
     const detail = await getAccountDetail(userId);
     // ADMN-02: log every admin view of sensitive account details
     await logAdminAction(actorId(req), 'view_account_detail', userId, {
-      viewed_fields: ['tolerance_rating', 'legal_name', 'roles', 'audit_log'],
+      viewed_fields: ['tolerance_rating', 'roles', 'audit_log'],
     });
     res.json(detail);
   } catch (err) {

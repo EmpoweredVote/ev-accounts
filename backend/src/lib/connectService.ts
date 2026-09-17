@@ -345,3 +345,19 @@ export async function getLocationConsent(userId: string): Promise<boolean> {
   if (error || !data) return false;
   return data.location_consent === true;
 }
+
+/**
+ * getLegalNameDraft
+ * Server-side trusted read of the draft legal name captured during Connect
+ * enrollment (connect.verification_sessions.legal_name_draft). Used by
+ * POST /complete's seal-on-write path (spec §4.4) to seal the name into
+ * id_vault before calling complete_connect_flow. Returns null if there is no
+ * session for the user, or the draft is unset.
+ */
+export async function getLegalNameDraft(userId: string): Promise<string | null> {
+  const { rows } = await pool.query<{ legal_name_draft: string | null }>(
+    `SELECT legal_name_draft FROM connect.verification_sessions WHERE user_id = $1`,
+    [userId]
+  );
+  return rows[0]?.legal_name_draft ?? null;
+}
