@@ -801,6 +801,50 @@ jobs:
         run: npm run check:spatial-ref
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  stance-audit:
+    name: stance-read audit guard
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is exactly the 2026-08-14 defect), and it cannot join `static
+    # guards` — that job is dependency-free and this one needs `pg`.
+    #
+    # WHAT IT WATCHES: the stance-read audit required by ADR 0007 §5. That audit is one line of
+    # configuration (CC_0116: log_statement=all on `postgres`), so it can be switched off by anyone who
+    # can switch it on, and a platform event resetting rolconfig would be silent. It also watches for a
+    # NEW role gaining read access to inform.compass_responses — political opinions, GDPR Art. 9
+    # special-category data — using effective privilege rather than direct grants, because two roles
+    # already read that table through pg_read_all_data with no grant on it at all.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # This is the cheap kind the header blesses: ~30 billed minutes a month (one nightly run at the
+    # one-minute minimum). What it measures is role configuration in PROD, which drifts on the CALENDAR,
+    # not on our commits — a push cannot change a role setting — so charging it per push would bill
+    # ~494 minutes a month to watch for something pushes never cause. Same reasoning as
+    # `spatial-ref-baseline` and `child-county`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check the stance-read audit is on and no new role can read stances
+        run: npm run check:stance-audit
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   ocd-suffixes:
     name: state-leg OCD-ID suffixes
     runs-on: ubuntu-latest

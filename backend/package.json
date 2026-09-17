@@ -47,7 +47,8 @@
     "steward": "node scripts/steward.mjs",
     "check:ladder-text": "node scripts/check-ladder-text-reads.mjs",
     "check:postgis-guard": "node scripts/check-postgis-spatial-ref-guard.mjs",
-    "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs"
+    "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs",
+    "check:stance-audit": "node scripts/check-stance-audit.mjs"
   },
   "overrides": {
     "qs": "^6.16.0",
