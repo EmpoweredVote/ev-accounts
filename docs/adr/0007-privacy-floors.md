@@ -126,6 +126,17 @@ The mechanism is designed in
 `docs/superpowers/specs/2026-09-15-stance-read-audit-design.md`. Retention and review are
 policy rather than design, so they are settled here.
 
+**Scope, established 2026-09-17: this floor covers EV staff, and cannot cover Supabase.**
+Measuring production showed that of the roles able to read every stance, `postgres` is the
+only credential an EV human can obtain — and it is the one the mechanism logs. The remaining
+unlogged roles (`supabase_admin`, `supabase_etl_admin`, `supabase_read_only_user`) are
+**Supabase's own**, platform-operated, with no customer path to obtain them. Their access is
+real and is **not** auditable from inside the database, because you cannot audit your cloud
+provider using their own logs. That is a vendor-trust question whose instruments are
+contractual, or encryption with keys the provider does not hold — not this ADR. §4's
+guarantee should be read accordingly: it is a commitment about **EV's** conduct, not a claim
+that no one at the hosting provider can read a stance.
+
 ### 5a. Retention — 7 days, and that is a ceiling rather than a judgement
 
 > **Stance-read audit records are retained for 7 days.**
