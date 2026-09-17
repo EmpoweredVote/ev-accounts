@@ -86,6 +86,12 @@ BEGIN
 END;
 $$;
 
+-- Reproduce the original restrictive ACL: service_role only (adminRpc calls this),
+-- never PUBLIC. A fresh CREATE re-grants PUBLIC EXECUTE by the built-in default, which
+-- would expose this SECURITY DEFINER function to anon/authenticated via PostgREST.
+REVOKE ALL ON FUNCTION public.complete_connect_flow(uuid, boolean) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.complete_connect_flow(uuid, boolean) TO service_role;
+
 -- Post-verify gate: the 2-arg overload exists (p_user_id uuid, p_seal_name boolean,
 -- exactly one defaulted argument, matching names), and the 1-arg overload is gone so
 -- every caller resolves to this one. to_regprocedure resolves an exact signature to
@@ -117,6 +123,13 @@ BEGIN
 
   IF to_regprocedure('public.complete_connect_flow(uuid)') IS NOT NULL THEN
     RAISE EXCEPTION 'public.complete_connect_flow(uuid) 1-arg overload still present after DROP';
+  END IF;
+
+  IF has_function_privilege('public', 'public.complete_connect_flow(uuid, boolean)', 'EXECUTE') THEN
+    RAISE EXCEPTION 'complete_connect_flow must not be EXECUTE-able by PUBLIC';
+  END IF;
+  IF NOT has_function_privilege('service_role', 'public.complete_connect_flow(uuid, boolean)', 'EXECUTE') THEN
+    RAISE EXCEPTION 'service_role must have EXECUTE on complete_connect_flow';
   END IF;
 END $$;
 
