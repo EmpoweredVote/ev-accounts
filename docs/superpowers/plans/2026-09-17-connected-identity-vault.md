@@ -1007,29 +1007,42 @@ vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
 import { getAccountDetail } from './adminService.js';
 
 describe('getAccountDetail — name stays vaulted', () => {
-  it('strips legal_name from the returned detail', async () => {
+  it('strips legal_name from the nested connected_profile', async () => {
+    // admin_get_account_detail nests the Connect legal_name under `connected_profile`
+    // (row_to_json of connect.connected_profiles). The public empowered_profile name stays.
     rpc.mockImplementation((fn: string) =>
       fn === 'admin_get_account_detail'
-        ? Promise.resolve({ data: { user_id: 'u1', legal_name: 'Ada Lovelace', tolerance_rating: 3 }, error: null })
+        ? Promise.resolve({ data: {
+            user_id: 'u1',
+            connected_profile: { legal_name: 'Ada Lovelace', tolerance_rating: 3 },
+            empowered_profile: { legal_name: 'Ada Lovelace' }, // public — must remain
+          }, error: null })
         : Promise.resolve({ data: [], error: null })
     );
-    const detail = await getAccountDetail('u1');
-    expect('legal_name' in detail).toBe(false);
-    expect(detail.tolerance_rating).toBe(3);
+    const detail = await getAccountDetail('u1') as Record<string, any>;
+    expect('legal_name' in (detail.connected_profile ?? {})).toBe(false); // vaulted name gone
+    expect(detail.connected_profile.tolerance_rating).toBe(3);            // other fields kept
+    expect(detail.empowered_profile.legal_name).toBe('Ada Lovelace');     // public name kept
   });
 });
 ```
 
-- [ ] **Step 2: Run — expect FAIL** (legal_name still present).
+- [ ] **Step 2: Run — expect FAIL** (nested legal_name still present).
 
 - [ ] **Step 3: Implement**
 
-In `getAccountDetail`, before `return result;`:
+In `getAccountDetail`, before `return result;` — strip the name from the NESTED `connected_profile`
+(a top-level `delete result.legal_name` is a no-op; the RPC returns the name at
+`result.connected_profile.legal_name`). Leave `empowered_profile.legal_name` — that name is public.
 
 ```ts
-  // The real name is vaulted (ev-cto 0022). No admin read path exposes it —
-  // only the offline two-person break-glass. Strip it if the RPC still returns it.
-  delete (result as Record<string, unknown>).legal_name;
+  // The real Connect name is vaulted (ev-cto 0022). No admin read path exposes it —
+  // only the offline two-person break-glass. The RPC nests it under connected_profile
+  // (row_to_json of connect.connected_profiles), so strip it there.
+  const cp = (result as Record<string, unknown>).connected_profile;
+  if (cp && typeof cp === 'object') {
+    delete (cp as Record<string, unknown>).legal_name;
+  }
 ```
 
 In `routes/admin.ts` (~291), drop `'legal_name'` from `viewed_fields`:
