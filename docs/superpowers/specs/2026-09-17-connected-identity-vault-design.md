@@ -82,20 +82,32 @@ A new isolated schema `id_vault`, one table `sealed_identities`:
 | `key_version` | `smallint` NOT NULL | Which keypair sealed this row. Enables rotation. |
 | `sealed_at` | `timestamptz` NOT NULL `DEFAULT now()` | Last seal write. |
 
-**Access model — the app can write ciphertext but never read it:**
-- `REVOKE ALL` from `public`, `anon`, `authenticated`.
-- `GRANT INSERT, UPDATE, DELETE ON id_vault.sealed_identities TO ev_api` — it seals (writes) and can
-  delete for erasure.
-- `GRANT SELECT (user_id, key_version, sealed_at) ON id_vault.sealed_identities TO ev_api` —
-  **column-scoped**: the app may check *whether* and *when* a row was sealed, never the `sealed_*`
-  bytea. There is no decrypted form in the DB because decryption is off-DB.
-- **RLS enabled, default-deny** (matching the CA_0109 posture): one policy permits `ev_api` to
-  INSERT/UPDATE/DELETE its writes; **no SELECT policy exists**, so together with the column grants the
-  ciphertext is unreadable through the app. Break-glass reads the ciphertext out-of-band (a privileged
-  direct connection or a dump, not `ev_api`); ciphertext is useless without the key.
+**Access model — the app can write (seal) but never read (revised 2026-09-17 after probing prod).**
+Two facts drove this to a SECURITY DEFINER function rather than table grants + RLS:
+1. The API's runtime role **`ev_api` is `BYPASSRLS`** (migration 1386, the trusted-backend tier), so
+   **RLS cannot constrain it** — GRANTS are its only control.
+2. `INSERT … ON CONFLICT DO UPDATE` **requires SELECT** privilege (verified against prod). Granting
+   `ev_api` SELECT to make an upsert work would also let it read ciphertext.
 
-There is no `SECURITY DEFINER` read function. This is the deliberate difference from the location
-model (§6 of the data model), whose `SECURITY DEFINER` RPCs decrypt on demand with a DB-held key.
+So the model is:
+- `REVOKE ALL` on the schema and table from `PUBLIC`.
+- `GRANT USAGE ON SCHEMA id_vault TO ev_api` — enough to call the function, nothing more.
+- **`ev_api` gets NO privilege on the table** — no SELECT/INSERT/UPDATE/DELETE. It cannot read or
+  even write the table directly (both verified denied against prod).
+- The one write path is **`id_vault.seal_upsert(p_user_id, p_sealed_name, p_sealed_address,
+  p_key_version)`**, a `SECURITY DEFINER` function owned by the (superuser) migration role,
+  `SET search_path = ''`. It performs the partial upsert, preserving the column not being sealed via
+  `COALESCE` — safe because the function runs as its owner (which may read), never as `ev_api`.
+  `GRANT EXECUTE` to `ev_api`; `REVOKE` from `PUBLIC`.
+- **RLS enabled** on the table as defense-in-depth against any *non-BYPASSRLS* role (e.g. a future
+  PostgREST exposure) — deny-by-default, no policies. It is not `ev_api`'s control.
+- The post-verify gate asserts: table exists; `ev_api` holds **zero** direct table privilege
+  (table- and column-level); `ev_api` **can** EXECUTE `seal_upsert`.
+
+Break-glass reads the ciphertext out-of-band (a privileged direct connection, not `ev_api`);
+ciphertext is useless without the key. There is no `SECURITY DEFINER` **read** function — the definer
+function only *writes*. This is the deliberate difference from the location model (§6 of the data
+model), whose `SECURITY DEFINER` RPCs *decrypt* on demand with a DB-held key.
 
 ### 4.2 Key material + ceremony (offline)
 
@@ -118,8 +130,10 @@ Public-key-only. Depends on `libsodium-wrappers` and the `ID_VAULT_PUBLIC_KEY` c
 - `isVaultEnabled(): boolean` — true when a public key + version are configured.
 - `sealName(name: string): Buffer` — `crypto_box_seal`.
 - `sealAddress(raw: string): Buffer`.
-- `upsertSeal(userId, { name?, address? })` — writes ciphertext to `id_vault.sealed_identities`
-  (INSERT … ON CONFLICT (user_id) DO UPDATE), stamps `key_version`, `sealed_at`. Idempotent.
+- `upsertSeal(userId, { name?, address? })` — seals the provided part(s) and calls
+  `SELECT id_vault.seal_upsert($1,$2,$3,$4)` with `(userId, sealedName|null, sealedAddress|null,
+  keyVersion)`. The definer function does the partial upsert; a `null` part leaves the other column
+  untouched. The app never touches the table directly. Idempotent.
 - No open/decrypt function exists in the app. Attempting one is impossible: `crypto_box_seal_open`
   needs the secret key, which the app never holds.
 

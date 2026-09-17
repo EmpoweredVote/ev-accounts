@@ -156,11 +156,19 @@ git commit -m "feat(id-vault): add libsodium + secrets.js deps and vault env var
 
 ## Task 2: `id_vault` schema migration
 
+> **REVISED 2026-09-17 (see spec §4.1).** Probing prod showed `ev_api` is `BYPASSRLS` (so RLS can't
+> constrain it) and `ON CONFLICT DO UPDATE` requires SELECT. The migration therefore uses a
+> **SECURITY DEFINER function `id_vault.seal_upsert(...)`** owned by the superuser migration role, with
+> `ev_api` granted EXECUTE and **no direct table privilege**. The grant+RLS sketch in the steps below is
+> superseded by the committed file `backend/migrations/CA_0118_id_vault_schema.sql` — treat that file
+> (verified against prod: `ev_api` seals via the function; direct SELECT/INSERT both denied) as the
+> source of truth. Slot **CA_0118** is already reserved by the controller (skip Step 1).
+
 **Files:**
-- Create: `backend/migrations/CA_<schema>_id_vault_schema.sql`
+- Create: `backend/migrations/CA_0118_id_vault_schema.sql`
 
 **Interfaces:**
-- Produces: schema `id_vault`, table `id_vault.sealed_identities(user_id uuid PK, sealed_name bytea, sealed_address bytea, key_version smallint, sealed_at timestamptz)`; `ev_api` may INSERT/UPDATE/DELETE and SELECT only `(user_id, key_version, sealed_at)`.
+- Produces: schema `id_vault`; table `id_vault.sealed_identities(user_id uuid PK → public.users(id) ON DELETE CASCADE, sealed_name bytea, sealed_address bytea, key_version smallint NOT NULL, sealed_at timestamptz)`; function `id_vault.seal_upsert(uuid, bytea, bytea, smallint)` (SECURITY DEFINER); `ev_api` has USAGE on the schema + EXECUTE on the function and **no direct table privilege**.
 
 - [ ] **Step 1: Reserve the slot**
 
@@ -489,11 +497,10 @@ describe('idVault — gating', () => {
     expect(isVaultEnabled()).toBe(true);
     await upsertSeal('11111111-1111-1111-1111-111111111111', { name: 'Ada' });
     const [sql, params] = poolQueryMock.mock.calls[0];
-    expect(sql).toMatch(/INSERT INTO id_vault\.sealed_identities/);
-    expect(sql).toMatch(/ON CONFLICT \(user_id\) DO UPDATE/);
-    expect(sql).not.toMatch(/SELECT .*sealed_/i);
-    expect(Buffer.isBuffer(params[1])).toBe(true); // sealed_name is a Buffer
-    expect(params[3]).toBe(1);                      // key_version
+    expect(sql).toMatch(/id_vault\.seal_upsert/);   // writes via the SECURITY DEFINER function
+    expect(Buffer.isBuffer(params[1])).toBe(true);  // sealed_name is a Buffer
+    expect(params[2]).toBeNull();                    // address not provided -> null (function COALESCEs)
+    expect(params[3]).toBe(1);                       // key_version
   });
 });
 ```
@@ -534,8 +541,10 @@ export async function sealAddress(raw: string): Promise<Buffer> {
 }
 
 /**
- * Seal the given parts and UPSERT them for this user. COALESCE keeps an existing
- * name when only the address is sealed (and vice-versa). Idempotent.
+ * Seal the given parts for this user via the SECURITY DEFINER function
+ * id_vault.seal_upsert. ev_api holds EXECUTE on that function and NO direct table
+ * privilege, so it can seal but cannot read the ciphertext. A null part leaves the
+ * other column untouched (the function COALESCEs). Idempotent. See CA_0118 + spec §4.1.
  */
 export async function upsertSeal(
   userId: string,
@@ -544,13 +553,7 @@ export async function upsertSeal(
   const sealedName = parts.name !== undefined ? await sealName(parts.name) : null;
   const sealedAddress = parts.address !== undefined ? await sealAddress(parts.address) : null;
   await pool.query(
-    `INSERT INTO id_vault.sealed_identities (user_id, sealed_name, sealed_address, key_version, sealed_at)
-     VALUES ($1, $2, $3, $4, now())
-     ON CONFLICT (user_id) DO UPDATE SET
-       sealed_name    = COALESCE(EXCLUDED.sealed_name, id_vault.sealed_identities.sealed_name),
-       sealed_address = COALESCE(EXCLUDED.sealed_address, id_vault.sealed_identities.sealed_address),
-       key_version    = EXCLUDED.key_version,
-       sealed_at      = now()`,
+    `SELECT id_vault.seal_upsert($1, $2, $3, $4)`,
     [userId, sealedName, sealedAddress, env.ID_VAULT_KEY_VERSION]
   );
 }
