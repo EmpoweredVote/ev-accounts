@@ -8,6 +8,16 @@ importer promises: 4:5, and no larger than 600x750.
 
 ⚠ A POSITIVE CONTROL RUNS ALONGSIDE: a bucket key that cannot exist must fail. A verifier that
 passes everything is indistinguishable from one that tests nothing.
+
+🔴 MN-6 REMOVED A FILTER THAT HAD GONE STALE AND MADE THIS VERIFIER BLIND. MN-5 excluded the
+Minnesota House here -- `AND c.name_formal <> 'Minnesota House of Representatives'` -- because the
+House was a licence debt with no portraits, so its 133 rows were all blank and would have drowned
+the report. When permission arrived and the 133 were imported, the exclusion stayed, and the first
+post-import run reported **108 rows, 0 broken, control failed as required** while testing not one
+of the rows the wave had just written. It was green *because* it was blind.
+
+**A filter that names the thing it excludes must be re-read whenever that thing changes.** The
+count is the tell: this run covers the House, so it must report more than 200 rows, not 108.
 """
 import os
 import sys
@@ -33,7 +43,7 @@ cur.execute("""
     JOIN essentials.governments g ON g.id = c.government_id
     JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
-   WHERE g.name IN %s AND c.name_formal <> 'Minnesota House of Representatives'
+   WHERE g.name IN %s
    ORDER BY 2, 1""", (GOVS,))
 rows = cur.fetchall()
 cur.close(); conn.close()

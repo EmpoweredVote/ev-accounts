@@ -803,5 +803,122 @@ so no `-v2` and no stale-CDN risk. `banners.json` regenerated; 429 essentials te
 
 ## ▶ Owed
 
-1. **133 House portraits** — blocked on permission. See the top of this section.
+1. ~~**133 House portraits** — blocked on permission.~~ ✅ **CLOSED 2026-09-17 by MN-6 — permission
+   granted and all 133 imported.** See the MN-6 section below.
 2. **Lynn Marie Nephew** — blank until Duluth publishes a portrait or the council office sends one.
+
+---
+
+# MN-6 — the House portrait licence, GRANTED and APPLIED 2026-09-17. 132 imported, 1 skipped, 0 failed.
+
+**Minnesota House: 1 renderable → 133 of 133.** The 134th office is HD-21A, vacant since 2026-06-22,
+and it is correctly blank. This closes the largest debt MN-5 recorded and closes stage 5.
+
+## The grant, and exactly how far it reaches
+
+Mike Cook, Minnesota House of Representatives, answered the request in
+[`HOUSE-PERMISSION-REQUEST.md`](../../backend/data/seed-mn-headshots-2026/HOUSE-PERMISSION-REQUEST.md)
+by email on 2026-09-17:
+
+> "We are good with your request. To make it easy, feel free to just credit Minnesota House of
+> Representatives for the whole set. Otherwise, Andrew VonBank and Michele Jokinen our are
+> photographers. Both are involved in member pictures. Let me know if you need anything else."
+
+**"Your request" is load bearing, so the request's own wording defines the scope.** It asked for
+three things and the grant covers all three: storing our own copy rather than hotlinking, **cropping
+to a common 4:5 frame** — named explicitly as the specific permission sought, because the policy
+forbids alteration "in any way, including cropping" — and a credit. He **waived the policy's
+per-photographer credit** in favour of a blanket one.
+
+Every row therefore carries `photo_license` =
+**`Minnesota House of Representatives (used by permission, 2026-09-17)`**. The API returns
+`photo_license` to the frontend, so the credit travels with the row rather than living only here.
+🔴 **The two photographers are named in this record and NOT written per row.** The House does not
+publish which of them took which portrait, and a guessed attribution is worse than the blanket credit
+we were offered.
+
+🔴🔴 **THE GRANT IS TO US, NOT TO THE FILES.** Open States serves the same `house.mn.gov` images under
+the same copyright and no grant reaches them. A later session must not read "MN House portraits are
+fine" as a property of the image.
+🔴🔴 **THE SENATE IS NOT COVERED.** This email is the House. The 67 Senate portraits still ship as
+`press_use` on the separate reasoning MN-5 recorded.
+
+## 🔴🔴 THE HOUSE PUBLISHES A FILE ITS OWN MEMBER PAGES NEVER LINK
+
+Each profile page links `…/hinfo/memberimgls94/<district>.gif` — **525x675, palette, ~186 KB**. A
+**1050x1350 RGB JPEG, ~900 KB** sits at the same path under the same base name, unlinked and
+unlabelled. Exactly double, same aspect ratio. This is the Lucero/Kupec lesson from MN-5 a second
+time: **the display size is not the file, and the extension is not the format.**
+
+It matters: 525px cannot reach the 600x750 target, so the first proof sheet flagged **all 133** amber
+for upscaling. From the JPEG, **0 flagged** and all 133 ship at full 600x750.
+
+It stays inside the grant — the request named `house.mn.gov/hinfo/memberimgls94/`, and this is the
+same host and the same directory. ⚠ **A caucus-site copy would also be high resolution and was NOT
+used.** That is a different publisher and the permission does not reach it.
+
+### The JPEG's identity had to be PROVED, not assumed
+
+The member page asserts whose portrait it is only for the GIF, through its `alt`. Nothing on the page
+mentions the JPEG. **A file at the same base name is not necessarily the same photograph.**
+
+Each JPEG was downscaled to its GIF's exact size and compared by mean absolute pixel difference:
+**min 2.63 · median 3.15 · max 19.45** across all 133. The verdict came from the measured
+distribution, never a threshold picked in advance — and **the five largest differences were examined
+side by side**, because those are the only rows where a swap could hide. All five are plainly the same
+sitting, pose and clothing. The tail has two innocent causes: the GIF's palette quantisation, and a
+slightly tighter frame on the 1043x1350 files versus the 1050x1350 ones.
+
+Each candidate keeps its GIF URL as `_page_linked_gif` — the file whose alt text carries the identity.
+
+## 🔴 THE POST-IMPORT VERIFIER PASSED WHILE TESTING NONE OF THE NEW WORK
+
+`verify-stored-objects.py` reported **108 rows, 0 broken, positive control failed as required** — a
+clean result, with a working control, immediately after 132 rows were written. It was **green because
+it was blind**: MN-5 had written `AND c.name_formal <> 'Minnesota House of Representatives'` into its
+query, correctly at the time, because the House was a licence debt whose 133 blank rows would have
+drowned the report. **Permission removed the reason; nobody removed the filter.**
+
+**A workaround sized in units of a bug outlives the bug fix** — and here it beat a working positive
+control, because a control proves the verifier can detect a broken object, never that it is looking at
+the right rows. **A filter that names the thing it excludes must be re-read whenever that thing
+changes.** The count is the tell: 108 before, and it had to exceed 200.
+
+## ✅ Measured from outside, after the apply
+
+| Chamber | Offices | Seated | Renderable | `politician_images` |
+| --- | --- | --- | --- | --- |
+| Minnesota House | 134 | 133 | **133** | 133 |
+| Minnesota Senate | 67 | 67 | 67 | 67 |
+| Statewide executives | 4 | 4 | 4 | 4 |
+
+✅ **Objects fetched back from the CDN and DECODED**, not header-sniffed: **241 rows · 240 decode and
+are 4:5 within 600x750 · 0 broken · 1 blank**, with a bucket key that cannot exist failing as
+required. The 600x750 bucket went **89 → 222**, exactly +133. The single blank is Lynn Marie Nephew,
+the deliberate one MN-5 recorded.
+
+## The one skip, and why it stays
+
+**Kaela Berg (HD-55B)** already held a portrait under `cc_by-sa_4.0` and the importer skipped her, as
+it skips anyone with an existing image row. **Decision: leave it.** A Creative Commons portrait is
+validly licensed, already renders, and is reusable by anyone; this House permission is ours alone.
+Swapping a free licence for a permission-bound one would buy uniformity and give up the better
+licence.
+
+## Gates and controls, all watched failing first
+
+- **The alt-text check failed before it passed.** HD-65B's alt is `Rep. Mar&#237;a Isa P&#233;rez-Vega`
+  — MN-2's HTML-encoding trap, now in the `alt` attribute. Fixed by **decoding entities**, never by
+  loosening the comparison, which would also have let a genuinely wrong alt through.
+- 🔴 **The first name-check control planted NOTHING and still read as a pass.** It matched district
+  `01A` where the roster says `1A`, so zero rows were corrupted and the run reported a clean 133/133.
+  The corrected control **asserts the plant before reporting a verdict**: it corrupted 2 rows, and the
+  check caught exactly 2 and named both.
+- All 133 source files **decode and are byte-distinct** — no shared placeholder hiding in the set.
+- A nonexistent district (`99Z.jpg`) **404s**, so a 200 from that path means something.
+
+## Repeat of a hazard this file has already paid for
+
+`## ▶ Owed` appears **twice** in this file. The MN-3/MN-4 records were destroyed once by an edit
+anchored on the first occurrence. This section was appended at EOF and the owed item was edited on
+unique text, never on the heading.
