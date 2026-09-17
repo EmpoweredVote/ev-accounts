@@ -372,369 +372,48 @@ than added, leaving the count right.
 | `check:reservations` | OK — both slots reserved by their own author |
 | `check:occupancy` | OK — 4 files scanned, no writes to the dropped `offices.politician_id` |
 
-## ▶ Owed, carried forward
-
-1. Stage 3 (Duluth and Saint Paul councils) and stage 4 (St. Louis and Ramsey county boards) are
-   still unmeasured. Ramsey's `OpenData/OpenData` MapServer layer 2 is `Commissioner Districts` —
-   found during MN-1 and noted then for stage 4.
-2. ✅ Maryland's collided `ocd_id` rows repaired 2026-09-16 (`CC_0113`, 84 rows). Still owed: a second geographic source for the
-   Duluth anchor, since St. Louis County GIS was never actually searched; `backend/scripts/` is
-   unlinted and untypechecked.
-
-## ✅ MN-2 APPLIED 2026-09-14 — THE MINNESOTA LEGISLATURE IS SEATED
-
-`CC_0107` then `CC_0108`, both exit 0, both gates green on the way in.
-
-```
-CC_0107: INSERT 0 1 · INSERT 0 1 · INSERT 0 201 · vacate_office -> f
-NOTICE:  MN-2 structure OK: 2 chambers, 134 House + 67 Senate offices, 1 vacant (21A since 2026-06-22)
-CC_0108: INSERT 0 195 · SET · INSERT 0 3 · SET · INSERT 0 200
-NOTICE:  MN-2 occupancy OK: 198 people in band, 201 offices, 200 seated, 200 terms, 0 dated, 0 ended, 21A vacant
-```
-
-Measured from OUTSIDE the migrations, before and after:
-
-| | Before | After | Expected |
-| --- | --- | --- | --- |
-| MN legislative offices | 0 | **201** | 201 |
-| MN chambers on the government row | 4 | **6** | 4 executives + 2 |
-| People in band `-2732201..-2732001` | 0 | **198** | 198 |
-| MN legislative terms | 0 | **200** | 200 |
-| MN legislative **seated** (`count(och.politician_id)`) | 0 | **200** | 200 |
-| `politicians` total | 86,926 | **87,124** | +198 exactly |
-| `offices_missing_terms` total | 822 | **823** | +1, the vacant 21A |
-| `offices_missing_terms` **unflagged** | 655 | **655** | unmoved — 21A is flagged |
-
-### ✅ The three dispositions landed as written
-
-- **21A**: `is_vacant` true, `vacant_since` **2026-06-22**, **0** terms, **0** holders. No span written.
-- **The two reused rows** keep their MN-02 race edge *and* gain one term each — Kaela Berg on
-  House 55B, Eric Pratt on Senate 54. No duplicate person was created.
-- **The three namesake pairs are six distinct rows**, and only the Minnesota one of each holds a
-  Minnesota seat: Steven Jacob (MN 20B) beside Steven Jacob (KS candidate, no office); Tom Murphy
-  (MN 9B) beside Tom Murphy (Mayor, Sahuarita AZ); Erin P. Murphy (MN Senate 64) beside
-  Erin J. Murphy (City Councillor, Boston).
-
-### ✅ END-TO-END PROBE — and it matches a THIRD, INDEPENDENT authority
-
-The only reliable detector is whether an address returns a legislator. All four MN-1 anchors were
-run point → `geofence_boundaries` → `districts` → `offices` → `office_terms` → `politicians`:
-
-| Point | Senate | House |
-| --- | --- | --- |
-| Duluth City Hall | SD-8 **Jennifer A. McEwen** | HD-8A **Pete Johnson** |
-| Saint Paul City Hall | SD-65 **Sandra L. Pappas** | HD-65B **María Isa Pérez-Vega** |
-| 235 Marshall Ave | SD-64 **Erin P. Murphy** | HD-64A **Meg Luger-Nikolai** |
-| 1200 Montreal Ave | SD-64 **Erin P. Murphy** | HD-64B **Dave Pinto** |
-
-🟢 **THE NAMES ARE THE POINT, NOT THE DISTRICT NUMBERS.** MN-1 recorded what the *state's own*
-"Who Represents Me" tool returned at Duluth and Saint Paul City Hall — McEwen, Johnson, Pappas,
-Perez-Vega. Those names came from `gis.lcc.mn.gov`, not from either chamber's roster and not from
-Open States. The seeded chain reproduces all four. That is a third authority agreeing, not a
-restatement of the sources the roster was built from.
-
-🟢 Two further things fall out of the same table. **`María Isa Pérez-Vega` renders with its
-accents**, so the HTML-decoder fix reached production. And **64A and 64B resolve to different
-people inside one Senate district** — the only test that catches a collapsed or swapped A/B half.
-64A returns **Meg Luger-Nikolai**, the successor the House's own Leadership tab still gets wrong.
-
-⚠ **The probe was controlled.** Eight OK out of eight is a uniform answer. Re-running it with
-Duluth's expectation set to the **2012 plan's** `7`/`7A` reported `*** WRONG DISTRICT ***` on
-exactly those two rows and left the other six OK.
-
-### ✅ PER-DISTRICT CONTROL — green is not a claim about districts unless you count them
-
-| Layer | Districts | With exactly 1 office | With exactly 1 holder | Unseated | Anomalies |
-| --- | --- | --- | --- | --- | --- |
-| `STATE_LOWER` | 134 | **134** | 133 | 1 — `2721A` | none |
-| `STATE_UPPER` | 67 | **67** | **67** | 0 | none |
-
-The single unseated district is **named**, not merely counted, and it is the expected one. No
-Minnesota legislator holds two Minnesota legislative seats.
-
-### ✅ Idempotent, proved by re-running both
-
-Both migrations were applied a second time. Every write into `essentials.*` reported `INSERT 0 0`,
-both post-verify gates passed unchanged, and the four counts afterwards were identical —
-201 offices, 198 people, 200 terms, 87,124 politicians.
-
-### ✅ Gates after the apply
-
-| Gate | Result |
-| --- | --- |
-| `check:reachability` | **OK — nothing regressed**, and TWO buckets fell: `BAD_GEOMETRY` 4 (baseline 5), `UNREACHABLE` 37 (baseline 38). `DEAD_GEOGRAPHY` unmoved at 17. |
-| `check:migrations` | OK |
-| `check:reservations` | OK |
-| `check:occupancy` | OK |
-
-▶ **Next: stage 3** — Duluth and Saint Paul city councils. Neither council's district layer has
-been measured yet.
-
----
-
-# MN-3 — Duluth and Saint Paul councils (APPLIED 2026-09-15)
-
-`X0052`/`X0053` boundaries, then `CC_0109` structure, then `CC_0110` occupancy.
-**18 offices, 18 people, 0 vacancies** — Duluth 10, Saint Paul 8.
-Full record, sources and gate output: [`backend/data/seed-mn-cities-2026/SOURCES.md`](../../backend/data/seed-mn-cities-2026/SOURCES.md).
-Roster: [`backend/data/mn-cities-roster.json`](../../backend/data/mn-cities-roster.json).
-
-## 🔴🔴 Duluth publishes two council-district maps and a count cannot tell them apart
-
-Both return exactly five features numbered 1–5. The city adopted a new map on 2022-03-28.
-
-**The population attribute does not discriminate** — the old layer's totals sit close enough to
-the 2020 census to pass a plausibility check. What gives it away is the **field names**,
-`POP_2010` and `Numb_12`, whose precinct populations sum to **86,265, Duluth's 2010 census
-population exactly**.
-
-The decisive measurement is coverage: the superseded map leaves **8.68 sq mi of Duluth in no
-district** (89.176%) against the current map's 99.984%. Roughly one address in nine would return
-no councilor and nothing would error.
-
-⚠ **Two layers inside one service can be different vintages.** The old service's precinct layer
-holds 35 precincts while its own district layer was dissolved from 43.
-
-## 🔴🔴 A city council's change-check signal is an expired date, not a banner
-
-The word scanner built on MN-2's lesson — resigned, vacant, appointed, sworn in, stepping down,
-interim — ran over all 18 member pages and returned **one benign hit**, with **all six of its
-positive controls firing**. It was still the wrong instrument: Terese Tomanek's page says
-*"Term Expires: January 5, 2026"*, read on 2026-09-14.
-
-▶ **A CONTROL PROVES A DETECTOR IS NOT BROKEN. IT CANNOT PROVE THE DETECTOR IS LOOKING AT THE
-RIGHT THING.**
-
-**All four Duluth at-large pages state the same expired date.** The *distribution* gave it away —
-Duluth staggers its council, so its expiries must not be uniform. The four names are right and all
-four dates are stale; Jordon Johnson's page states an expiry that predates his own term.
-
-## 🔴 Three seats had turned over mid-term, and a list page got one wrong
-
-Duluth District 2 (Mayou resigned, DeLuca interim, Desotelle elected), Duluth District 4 (a
-special election to an unexpired partial term, which is why the seat appears in both the 2023 and
-2025 listings), and Saint Paul Ward 4 (Jalali resigned 2025-03-08, Coleman won the 2025-08-12
-special and was sworn in 2025-08-27).
-
-⚠ Saint Paul's own council index says flatly *"Councilmembers were elected to a 4-year term in
-2023"*, which is **wrong for Ward 4** — the MN-2 lesson in a second dress.
-
-## 🟢 Every term is dated, and the two cities are not made uniform
-
-MN-2 wrote all 200 legislative terms open-ended at `unknown`. Both cities publish dates, so all 18
-carry a real `term_start` at `day` precision and the gate asserts **0 undated and 0 ended**.
-
-Saint Paul's seven wards **tile the city exactly** (100.000%); Duluth's five districts **overhang
-it by 11.16 sq mi** of Lake Superior and unincorporated township. Duluth's four at-large seats run
-in one citywide race and are **not numbered**; Saint Paul has **no at-large seat at all**, which
-the structure gate asserts it never gains.
-
-## ✅ Probe, and the two waves stacking
-
-Duluth City Hall returns **9** answers, Saint Paul City Hall **5** — ward, mayor, and the
-legislators MN-2 seated. 🟢 The mayor Saint Paul returns is **Kaohly Her**, the person whose
-departure from HD-64A the Minnesota House's own Leadership tab still has not noticed. One person
-closes both waves.
-
-**Per-district control: 12 of 12**, each at its own interior point, each returning exactly one
-holder and the right one, with offshore and Minneapolis negative controls.
-
-## 🔴 Sixteen gates watched failing first — and two of my own controls were lying
-
-Six loader gates and eight migration gates were each run against a deliberately wrong input.
-GATE 3 refused Duluth's superseded map at 89.176% while passing the current one at 99.984%.
-
-Two controls planted something **other than what they claimed, and both looked like passes**: a
-greedy regex deleted three boundary inserts instead of one, so the gate correctly reported 2 — the
-gate was right and the control was lying — and a "two seats, one person" control duplicated a
-person row, tripping a unique index before the gate was ever reached.
-▶ **A CONTROL THAT ABORTS FOR THE WRONG REASON PROVES NOTHING.** Every control now asserts what it
-planted before the file is written.
-
-🟢 No matview refresh was needed, and that was checked: `geofence_child_county` is defined over
-`G4110` and mentions no `X00` code.
-
-## ✅ MN-4 APPLIED 2026-09-15 — BOTH COUNTY BOARDS ARE SEATED
-
-**19 offices, 19 seated, 0 vacancies.** St. Louis 10, Ramsey 9 — `CC_0111` (structure) and
-`CC_0112` (occupancy), on `X0054` and `X0055`. Full record:
-[`backend/data/seed-mn-counties-2026/SOURCES.md`](../../backend/data/seed-mn-counties-2026/SOURCES.md).
-
-### 🔴🔴 THE TWO COUNTIES DO NOT ELECT THE SAME OFFICES, AND NEITHER MATCHES THE GENERAL RULE
-
-§ 382.01 says auditor, treasurer, sheriff, recorder, attorney, coroner. **Ramsey elects a board,
-a sheriff and an attorney** (§ 383A.20 — Minnesota's only home rule charter county makes the other
-four appointive). **St. Louis elects those plus an Auditor/Treasurer** (§ 383C.136 abolished the
-treasurer in 1969 and gave its duties to the auditor). Neither elects a coroner. The migration's
-post-verify asserts 4+3 chambers and 10+9 offices, and refuses a Ramsey auditor by name.
-
-### 🔴🔴 A SINGLE PERCENTAGE IS NOT A GATE, MEASURED IN BOTH DIRECTIONS
-
-Ramsey tiles its county at **100.000%**; St. Louis covers **98.220%** and is **correct** — the gap
-is one 120.593 sq mi edge wedge of Lake Superior plus 912 slivers, holding no incorporated place.
-MN-3's `minCoverPct: 99.9` would have refused it.
-
-But the number chosen instead would have failed the other way: a control that removes Duluth's own
-district still scores **97.682%**, above the 97% backstop. **What refused it was decomposing the
-gap** — a 157.597 sq mi piece that contains Duluth — and GATE 3P, which asks the reachability
-question directly: every incorporated place in the county must sit in exactly one district (27 in
-St. Louis, 15 in Ramsey). ▶ Neither threshold, on its own, was the gate.
-
-⚠ Area ratios mislead in both directions here and that is why they are not the main gate. Duluth's
-place polygon is only **96.077%** covered (its own polygon overhangs the lake) and White Bear Lake
-**99.118%** (it straddles the Washington County line). Both are correct.
-
-### 🔴 GATE 4's TOLERANCE IS A PROPERTY OF THE COUNTY, NOT A CONSTANT
-
-St. Louis's layer self-overlaps on **11 pairs totalling 0.022856 sq mi**; Ramsey's on **zero**.
-MN-3's flat 0.001 refused a correct layer. Tolerances are now measured per county and each was
-watched refusing a planted 8 sq mi overlap. ⚠ The loader also had to be made to **print the
-measurement beside the verdict** — it first said *"no overlapping district pairs"* about a layer
-with eleven of them.
-
-### 🔴🔴 A CONTROL CAN PLANT A REAL CHANGE IN THE WRONG PLACE, AND IT LOOKS LIKE A PASS
-
-MN-3 ended on *a control that aborts for the wrong reason proves nothing*. The next form of it:
-the coverage control removed **St. Louis district 1** to orphan Duluth — **Duluth is in district
-3** — and **Ramsey district 4** to orphan Saint Paul — **Saint Paul is in district 5**. Both gates
-passed, correctly, on a control that had orphaned nobody. Both now assert the place sits in **0**
-districts before judging. ▶ **Assert the consequence you planted, not the action you took.**
-
-### 🔴 THE ROSTER CONTRADICTED ITS OWN PROSE, AND THE PROSE WAS RIGHT
-
-Three Ramsey commissioners carried `2023-01-02` at **`day`** — § 382.01's first Monday, which
-governs the **constitutional officers** and not the board (§ 375.01 gives no day, which is why St.
-Louis's two expiry cohorts land on a Monday and a Tuesday). No page states a day. Corrected to
-`month`, making the mix **5 `day` · 7 `month` · 7 `year`** — the five being exactly the five
-constitutional officers, as the notes had claimed all along. `CC_0112` asserts the mix *and* that
-no commissioner carries a day.
-
-### ✅ 52 gate verdicts, and the probe
-
-24 loader verdicts (12 controls, each asserting what it planted) and **28 migration gates**, run by
-splitting each migration at its post-verify banner so the real gate text judges a broken state.
-Dry-run as one transaction with the rollback verified; both applied; both re-run idempotent.
-
-**Duluth City Hall returns 13 answers, Saint Paul 8, Hibbing 7** — councilor, legislators and
-county officers together, three waves stacking. Per-district control **14 of 14**.
-
-⚠ **MN-3's offshore control point does not transfer** — 20 km out in Lake Superior returns a
-commissioner, correctly, because it is inside St. Louis County. A negative control must be outside
-the thing being tested, not outside the last thing that was tested.
-
-## ▶ Next
-
-**Stages 1-4 are applied. STAGE 5 IS OPEN AND WAS NEVER "NOTHING OWED"** — see MN-5 below. The line
-that stood here said Minnesota owed nothing, which counted the *jurisdictions* and forgot that stage 5
-is headshots plus a banner for the whole slice, legislature included. GA-6 paid for that lesson and
-wrote it down; this file repeated the error anyway.
-
-Carried forward beyond this slice:
-
-1. ✅ **Maryland repaired 2026-09-16 by `CC_0113`** — and the real scope was **84 rows across TWO
-   tables** (42 `districts` + 42 `geofence_boundaries`), not the 24 on record; the boundary table was
-   never named. The live harm was `federalCoverage`'s seat denominator, which reported **94 for a
-   state with 118**. ▶ ND (slice 12) and SD (slice 15) share the shape; the loader is fixed, and
-   `check:ocd-suffixes` now watches both tables on a schedule.
-2. ✅ `backend/scripts/` is linted (PR #515).
-
-# MN-5 — stage 5 assets, PART ONE APPLIED 2026-09-16. 99 portraits imported, 0 failed.
-
-**Measured before: 242 Minnesota offices, 241 seated, SIX renderable portraits.** The four statewide
-executives had one each and two legislators did; every city, every county and 199 of 201 legislative
-seats had none.
-
-## 🔴🔴 THE MINNESOTA HOUSE FORBIDS THE USE THIS PIPELINE MAKES — 133 SEATS ARE A LICENCE DEBT, NOT A GAP
-
-The House publishes a complete, consistent portrait per district at
-`house.mn.gov/hinfo/memberimgls94/<district>.gif`, 525x675, with the member's name in the page's
-`alt`. Its *Photo and Digital Image Use Policy* (updated 2024-10-23) retains copyright in perpetuity,
-requires permission **in advance**, requires a per-photographer credit, forbids sale or use "on a
-website" for for-profit purposes — and **forbids digital alteration "in any way, including
-cropping"**, which is precisely what a 4:5 proof-sheet crop is.
-
-**No workaround survives that clause.** Hotlinking dodges the hosting question and still crops.
-Open States serves the same `house.mn.gov` files, re-pointed rather than re-licensed.
-
-▶ Ruling (Cantrell, 2026-09-16): **record the debt, request permission, ship everything else.** The
-request is drafted at [`backend/data/seed-mn-headshots-2026/HOUSE-PERMISSION-REQUEST.md`](../../backend/data/seed-mn-headshots-2026/HOUSE-PERMISSION-REQUEST.md).
-
-⚠ **The Senate is a DIFFERENT question, and was asked separately.** It publishes no policy, and its
-portraits are 1200x1500. The 67 shipped as `press_use`, the treatment GA-6's 233 had. **Georgia and
-Florida raised no such question because those chambers publish no such policy — absence of a policy
-is not a licence, but a published refusal is a refusal.** ▶ Every later slice inherits the question:
-**read the chamber's photo policy BEFORE building a roster-portrait script.**
-
-## 🔴 A CAPTURE IS EVIDENCE ABOUT THE QUESTION IT WAS TAKEN FOR
-
-MN-3 captured all 18 city member pages, for TERM DATES, and its copies are already wrong about
-portraits: all four Duluth at-large pages carried `/media/12005/headshot.jpg` in that capture, while
-the live pages carry three different files and one of them carries none at all. Re-reading live is
-not fussiness — the cached answer was wrong for three of four.
-
-## 🔴 THREE DETECTOR FAULTS, EACH OF WHICH LOOKED LIKE AN HONEST ANSWER
-
-- **A noise filter dropped the Mayor of Duluth.** His portrait is
-  `reinert_roger_formal-headshot_-with-seal.jpg`, and the filter refused anything matching `seal` —
-  the city seal is IN the photograph. **A filename that names the person now outranks the filter.**
-  A substring list is a guess about files that carry no name; it must never overrule one that does.
-- **Node's `fetch` reported "0 of 37 upgraded" and the number was false.** These hosts refuse its TLS
-  fingerprint. On `requests` the same rules upgraded seven Saint Paul portraits, one of them from
-  325x260 to 2880x3600. **The failure was shaped exactly like an honest negative** — the known
-  `reference_waf_blocks_node_fetch_by_tls` rule, arriving as a measurement rather than an error.
-- **A Drupal derivative carries THREE marks and all three must come off**: the `/styles/<style>/public/`
-  segment, the `.webp` Drupal appends when it re-encodes, and the `itok` signature. Stripping only the
-  style segment returns the same 325px file and looks like "no larger copy exists".
-
-## ✅ Resolved by office, and the name checked TWICE
-
-The Senate half used GA-6's rule: resolve on (chamber → MTFCC, district `geo_id`), never on a name.
-The name is a redundancy check and it ran against **both** the production row and the portrait's own
-`alt` text, because an alt naming someone else outvotes the page. **67 of 67 resolved, 0 name
-disagreements.**
-
-## ✅ The decode and distinctness checks were CONTROLLED BEFORE USE
-
-A planted truncated body (header intact, image incomplete) failed the full decode; a planted
-byte-identical twin was caught by hash. Both fired. Then, on the real set: **104 sources decode, 0
-capped, 104 byte-distinct of 104** — so no shared placeholder is hiding in the set, which is the
-failure a count alone cannot see.
-
-## 🔴 senate.mn SERVES ONE SENATOR A 126x162 GIF UNDER A `.jpg` NAME
-
-Eric Lucero (SD-30) and Robert Kupec (SD-4) are the only two senators below target on the state's own
-site — 126x162 and 320x400 against everyone else's 1200x1500. Both caucus sites host the same
-official portraits at full resolution, under the same `30Lucero` / `04Kupec` base names. **The
-extension is not the format and the display size is not the file.**
-
-## ✅ Applied — 99 imported, 0 failed, measured from outside
-
-| Body | Offices | Seated | Renderable | `photo_custom_url` | `politician_images` |
-| --- | --- | --- | --- | --- | --- |
-| Minnesota Senate | 67 | 67 | **67** | 67 | 67 |
-| St. Louis County Board | 7 | 7 | **7** | 7 | 7 |
-| Ramsey County Board | 7 | 7 | **7** | 7 | 7 |
-| Duluth City Council | 9 | 9 | 8 | 8 | 8 |
-| Saint Paul City Council | 7 | 7 | 6 | 6 | 6 |
-| County officers (4) and mayors (2) | 6 | 6 | 4 | 4 | 4 |
-| Minnesota House | 134 | 133 | **1** | 1 | 1 | 
-
-✅ **AND THE OBJECTS WERE FETCHED BACK.** Every stored URL was re-fetched from the CDN and **decoded**,
-not header-sniffed: **104 of 108 decode and are 4:5 within the 600x750 ceiling, 0 broken**, and the
-four blanks are exactly the four the operator held for re-sourcing. **A bogus bucket key ran alongside
-and failed as required** — a verifier that passes everything is indistinguishable from one that tests
-nothing.
-
-**600x750 is a ceiling, not a contract**: 87 rows ship at 600x750 and 17 at their native cropped size,
-the smallest being Ramsey's eight at 200x250. **Ramsey publishes nothing larger** — its own
-per-commissioner pages serve the same 200x250 file, checked one by one, and St. Louis serves Keith
-Nelson a 200x300 file dated 2017.
+## ✅ The four held back — three re-sourced and imported, one is a deliberate blank
+
+The operator rejected four on the first sheet. Re-sourcing found that **two of the four already had a
+better file on the SAME host**, one needed a different host, and one has no usable portrait anywhere:
+
+- **Cheniqua Johnson** — her official council portrait exists at the same `2024-02/<Name> (Ward N).jpg`
+  path as the other seven wards, 1200x960. **Her own ward page never links it**; it offers news cards,
+  a video frame and a screenshot. The index page is the authority for a portrait, not the member page.
+- **Bob Fletcher** — the county links `sheriff-fletcher-flag **- resized**.jpg`, 550x290 landscape.
+  The un-resized original is 503x651 **portrait**. **One filename suffix apart, and the crop inverts.**
+- **Kaohly Her** — `stpaul.gov` publishes only a December 2025 ward-tour event photograph, and her
+  campaign portrait was rejected too. Commons holds `MayorHer.jpg`, 2852x4008, **CC BY-SA 4.0**, credit
+  **Travellers & Tinkers**, described as her as Mayor. Imported as `cc_by-sa_4.0` — **the credit is the
+  licence, so it travels with the row.**
+- **Lynn Marie Nephew — BLANK, and that is the answer.** `duluthmn.gov` carries no photograph of her at
+  all, only the city logo, though she is Council President. Her campaign has three photographs and all
+  three are landscape; both the centre crop and the subject-detected crop were rejected. Commons has
+  nothing. Facebook and Instagram are refused sources. **A blank is honest; a portrait nobody approved
+  is not.**
+
+🔴 **WIKIMEDIA ANSWERS A GENERIC BROWSER USER AGENT WITH HTTP 429.** The shared tooling sends
+`Mozilla/5.0 (Windows NT 10.0; Win64; x64)`, and the refusal reads exactly like an absent file. Their
+policy asks for a descriptive agent naming the tool and a contact address. **The same shape as the WAF
+rule, inverted: there the server lies about success, here it refuses a client that looks anonymous.**
 
 ## ▶ Owed
 
-1. **133 House portraits** — blocked on permission, above.
-2. **Four re-sourced portraits** awaiting approval: Nephew (no city portrait exists; campaign
-   landscape), Her (the city publishes only an event photograph; campaign portrait), Johnson (the
-   council portrait exists under the ward-7 filename her own page does not use), Fletcher (the
-   un-resized original is 503x651 PORTRAIT where the linked copy is 550x290 landscape).
+1. **133 House portraits** — blocked on permission. See the top of this section.
+2. **Lynn Marie Nephew** — blank until Duluth publishes a portrait or the council office sends one.
 3. **Two banners** — Duluth and Saint Paul, and the adjacency test against the Minnesota state banner.
+
+## ⚠ The small-portrait floor is MEASURED, not conceded
+
+Eleven rows ship below 480px wide and every one was checked against the publisher's own alternatives:
+
+| Row | Ships at | Why nothing better exists |
+| --- | --- | --- |
+| Ramsey's seven commissioners | 200x250 | The county publishes portraits pre-sized; the bare filename 404s and **each per-commissioner page serves the same file** |
+| John Choi, Ramsey County Attorney | 232x290 | `IMG_0007.jpg` is the only photograph of him the county publishes |
+| Keith Nelson, St. Louis District 6 | 200x250 | A 2017 e-graphics file; he is **the only commissioner absent** from the county's 480x720 board folder |
+| Nancy Nilsen, St. Louis Auditor | 400x500 | The department's own file |
+| Wendy Durrwachter, Duluth District 1 | 389x486 | An opaque CMS filename on her own page, face verified on the sheet |
+
+**600x750 is a ceiling, not a contract.** Enlarging these would bake in interpolation and produce a
+file that looks like a full-resolution asset while carrying no more detail.

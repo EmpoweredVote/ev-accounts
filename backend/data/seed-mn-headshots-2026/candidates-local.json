@@ -85,14 +85,11 @@
   "name": "Lynn Marie Nephew",
   "office": "Councilor, At Large",
   "cohort": "City of Duluth",
-  "url": "https://images.squarespace-cdn.com/content/v1/642cd31e73ab9710adf02e4f/c3f74138-3356-45c1-bc36-4dc25ce65080/Nephew-Summer-Portrait-007_1-WEB.png",
-  "page": "https://lynnmarienephewforduluth.com/about-me",
+  "url": null,
+  "page": "https://duluthmn.gov/city-council/city-councilors/lynn-marie-nephew/",
   "license": "campaign_use",
   "positional": true,
-  "_note": "duluthmn.gov carries NO portrait of her. The campaign photograph is 749x500 LANDSCAPE, so the centre crop is tight — re-cropped on the detected subject.",
-  "crop": {
-   "bbox": true
-  }
+  "_note": "NO PORTRAIT EXISTS that we may use. duluthmn.gov carries none — only the city logo. Her campaign has three photographs and all three are landscape; both crops were rejected. Commons has nothing. Facebook and Instagram are refused sources. She stays BLANK."
  },
  {
   "politician_id": "84d06d20-3f6f-4318-a8f7-97b72c59a53d",
@@ -110,12 +107,12 @@
   "name": "Kaohly Her",
   "office": "Mayor",
   "cohort": "City of Saint Paul",
-  "url": "https://kaohlyforstp.com/wp-content/uploads/2025/08/kh_main_v3.png",
-  "page": "https://kaohlyforstp.com/",
-  "license": "campaign_use",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/MayorHer.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:MayorHer.jpg",
+  "license": "cc_by-sa_4.0",
   "positional": false,
   "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/large/public/2025-12/Mayor-Elect%20Her%20-%20Ward%203%20Tour%20-%20December%209%202025-20-2048x2048.jpeg.webp?itok=Du3PTque",
-  "_note": "stpaul.gov publishes only a December 2025 ward-tour event photograph of the mayor. This is her campaign portrait, 1208x1491."
+  "_note": "stpaul.gov publishes only a ward-tour event photograph, and her campaign portrait was rejected. Commons holds a 2852x4008 CC BY-SA 4.0 photograph of her AS MAYOR, credit Travellers & Tinkers. The credit must travel with it."
  },
  {
   "politician_id": "d41ccb51-4068-4fce-82d2-61c2e8472137",
