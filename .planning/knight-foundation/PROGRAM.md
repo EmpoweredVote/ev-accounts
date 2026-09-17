@@ -5,7 +5,7 @@
 **Update this file at the end of every session.** It is the only place that knows where the program
 stands. `MEMORY.md` holds one pointer to it and nothing else.
 
-Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md) · [`mn.md`](./mn.md).
+Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md) · [`mn.md`](./mn.md) · [`co.md`](./co.md).
 
 Stage legend, from spec §3:
 `1` geography (TIGER place + sldu + sldl) · `2` legislature · `3` city waves · `4` county waves ·
@@ -38,7 +38,9 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 | 6 | PA | Philadelphia, State College | — | — | — | — | — |
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
 | 8 | OH | Akron | — | — | — | — | — |
-| 9 | CO | Boulder | ✅ | ✅ | — | — | — |
+| 9 | CO | Boulder | ✅ | ✅ | WIP | WIP | — |
+🟡 **CO-3 RESEARCHED 2026-09-16, NOTHING WRITTEN.** Boulder holds **zero** offices — and 🔴 **`%Boulder%` RETURNS BOULDER CITY, *NEVADA***, already seated with 5 council offices, so the obvious query reports a city that is 1,000 miles away (the `%St. Paul%` trap again: **match on `geo_id`**). The city is **nine at-large seats including a DIRECTLY ELECTED mayor** (Measure 2E, RCV since 2023) — the Tallahassee shape, **no district layer**, and nothing like Colorado Springs' 6+3+mayor in the same state. 🔴🔴 **THE CITY'S OWN COUNCIL PAGE LISTS EIGHT OF NINE — Mark Wallach, who TOPPED the 2025 poll, is missing.** 🔴 **THE COUNTY'S RESULTS LISTING IS NOT ORDERED BY VOTES** (Wallach ninth on the page, first on votes); listing order would have seated two candidates with 2,957 and 1,499. 🔴 **A FILE NAMED `…Coordinated-Canvass.pdf` IS A RISK-LIMITING-AUDIT SLIDE DECK** — right county, right election, no votes: a filename is not a document. 🔴 **BOULDER COUNTY ELECTS A SURVEYOR AND THE SEATED EL PASO TEMPLATE HAS NO SURVEYOR ROW** — 3 commissioners + 7 officers; read each county's own page. ⚠ The place `0807850` has a BOUNDARY and **no `districts` row** (the Columbus/Macon gap), and `08013` is simultaneously G4020, G5210 and G5220 — **the key is (mtfcc, geo_id)**. Detail: [`co.md`](./co.md). ▶ Owed before writing: term starts for all 19 seats, Winer's continuous occupancy since 2021, and whether Boulder's commissioners are elected county-wide or by district.
+
 | 10 | NC | Charlotte | ✅ | ✅ | — | — | — |
 | 11 | MI | Detroit | — | — | — | — | — |
 | 12 | ND | Grand Forks | — | — | — | — | — |
