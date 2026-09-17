@@ -5,6 +5,7 @@
  * inert without a secret key, which never enters app config, env, or the DB.
  */
 import _sodium from 'libsodium-wrappers';
+import secrets from 'secrets.js-grempe';
 
 let ready: Promise<void> | null = null;
 export function sodiumReady(): Promise<void> {
@@ -39,4 +40,17 @@ export async function generateKeypair(): Promise<{
 
 export function publicKeyFromB64(b64: string): Uint8Array {
   return _sodium.from_base64(b64, _sodium.base64_variants.ORIGINAL);
+}
+
+const SHARES = 4;
+const THRESHOLD = 2;
+
+/** Split the 32-byte (64 hex char) secret key into 4 shares; any 2 reconstruct it. */
+export function splitSecretKey(secretKeyHex: string): string[] {
+  return secrets.share(secretKeyHex, SHARES, THRESHOLD);
+}
+
+/** Reconstruct the secret key hex from >= 2 shares. Fewer than 2 yields non-key output. */
+export function combineSecretKey(shares: string[]): string {
+  return secrets.combine(shares);
 }
