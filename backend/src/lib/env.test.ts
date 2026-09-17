@@ -14,7 +14,7 @@ import { describe, it, expect } from 'vitest';
 
 describe('env — identity vault vars', () => {
   it('exposes the vault vars as optional (undefined when unset)', async () => {
-    const { env } = await import('./env');
+    const { env } = await import('./env.js');
     expect('ID_VAULT_PUBLIC_KEY' in env).toBe(true);
     // In the test environment they are unset:
     expect(env.ID_VAULT_KEY_VERSION === undefined || typeof env.ID_VAULT_KEY_VERSION === 'number').toBe(true);
