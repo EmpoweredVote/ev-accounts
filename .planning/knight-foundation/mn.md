@@ -624,13 +624,117 @@ the thing being tested, not outside the last thing that was tested.
 
 ## ▶ Next
 
-**Slice 5 is complete: stages 1-4 all applied.** Nothing is owed within Minnesota.
+**Stages 1-4 are applied. STAGE 5 IS OPEN AND WAS NEVER "NOTHING OWED"** — see MN-5 below. The line
+that stood here said Minnesota owed nothing, which counted the *jurisdictions* and forgot that stage 5
+is headshots plus a banner for the whole slice, legislature included. GA-6 paid for that lesson and
+wrote it down; this file repeated the error anyway.
 
 Carried forward beyond this slice:
 
 1. ✅ **Maryland repaired 2026-09-16 by `CC_0113`** — and the real scope was **84 rows across TWO
    tables** (42 `districts` + 42 `geofence_boundaries`), not the 24 on record; the boundary table was
    never named. The live harm was `federalCoverage`'s seat denominator, which reported **94 for a
-   state with 118**. ▶ ND (slice 12) and SD (slice 15) share the shape; the loader is fixed, but
-   nothing in CI asserts it.
-2. `backend/scripts/` is unlinted.
+   state with 118**. ▶ ND (slice 12) and SD (slice 15) share the shape; the loader is fixed, and
+   `check:ocd-suffixes` now watches both tables on a schedule.
+2. ✅ `backend/scripts/` is linted (PR #515).
+
+# MN-5 — stage 5 assets, PART ONE APPLIED 2026-09-16. 99 portraits imported, 0 failed.
+
+**Measured before: 242 Minnesota offices, 241 seated, SIX renderable portraits.** The four statewide
+executives had one each and two legislators did; every city, every county and 199 of 201 legislative
+seats had none.
+
+## 🔴🔴 THE MINNESOTA HOUSE FORBIDS THE USE THIS PIPELINE MAKES — 133 SEATS ARE A LICENCE DEBT, NOT A GAP
+
+The House publishes a complete, consistent portrait per district at
+`house.mn.gov/hinfo/memberimgls94/<district>.gif`, 525x675, with the member's name in the page's
+`alt`. Its *Photo and Digital Image Use Policy* (updated 2024-10-23) retains copyright in perpetuity,
+requires permission **in advance**, requires a per-photographer credit, forbids sale or use "on a
+website" for for-profit purposes — and **forbids digital alteration "in any way, including
+cropping"**, which is precisely what a 4:5 proof-sheet crop is.
+
+**No workaround survives that clause.** Hotlinking dodges the hosting question and still crops.
+Open States serves the same `house.mn.gov` files, re-pointed rather than re-licensed.
+
+▶ Ruling (Cantrell, 2026-09-16): **record the debt, request permission, ship everything else.** The
+request is drafted at [`backend/data/seed-mn-headshots-2026/HOUSE-PERMISSION-REQUEST.md`](../../backend/data/seed-mn-headshots-2026/HOUSE-PERMISSION-REQUEST.md).
+
+⚠ **The Senate is a DIFFERENT question, and was asked separately.** It publishes no policy, and its
+portraits are 1200x1500. The 67 shipped as `press_use`, the treatment GA-6's 233 had. **Georgia and
+Florida raised no such question because those chambers publish no such policy — absence of a policy
+is not a licence, but a published refusal is a refusal.** ▶ Every later slice inherits the question:
+**read the chamber's photo policy BEFORE building a roster-portrait script.**
+
+## 🔴 A CAPTURE IS EVIDENCE ABOUT THE QUESTION IT WAS TAKEN FOR
+
+MN-3 captured all 18 city member pages, for TERM DATES, and its copies are already wrong about
+portraits: all four Duluth at-large pages carried `/media/12005/headshot.jpg` in that capture, while
+the live pages carry three different files and one of them carries none at all. Re-reading live is
+not fussiness — the cached answer was wrong for three of four.
+
+## 🔴 THREE DETECTOR FAULTS, EACH OF WHICH LOOKED LIKE AN HONEST ANSWER
+
+- **A noise filter dropped the Mayor of Duluth.** His portrait is
+  `reinert_roger_formal-headshot_-with-seal.jpg`, and the filter refused anything matching `seal` —
+  the city seal is IN the photograph. **A filename that names the person now outranks the filter.**
+  A substring list is a guess about files that carry no name; it must never overrule one that does.
+- **Node's `fetch` reported "0 of 37 upgraded" and the number was false.** These hosts refuse its TLS
+  fingerprint. On `requests` the same rules upgraded seven Saint Paul portraits, one of them from
+  325x260 to 2880x3600. **The failure was shaped exactly like an honest negative** — the known
+  `reference_waf_blocks_node_fetch_by_tls` rule, arriving as a measurement rather than an error.
+- **A Drupal derivative carries THREE marks and all three must come off**: the `/styles/<style>/public/`
+  segment, the `.webp` Drupal appends when it re-encodes, and the `itok` signature. Stripping only the
+  style segment returns the same 325px file and looks like "no larger copy exists".
+
+## ✅ Resolved by office, and the name checked TWICE
+
+The Senate half used GA-6's rule: resolve on (chamber → MTFCC, district `geo_id`), never on a name.
+The name is a redundancy check and it ran against **both** the production row and the portrait's own
+`alt` text, because an alt naming someone else outvotes the page. **67 of 67 resolved, 0 name
+disagreements.**
+
+## ✅ The decode and distinctness checks were CONTROLLED BEFORE USE
+
+A planted truncated body (header intact, image incomplete) failed the full decode; a planted
+byte-identical twin was caught by hash. Both fired. Then, on the real set: **104 sources decode, 0
+capped, 104 byte-distinct of 104** — so no shared placeholder is hiding in the set, which is the
+failure a count alone cannot see.
+
+## 🔴 senate.mn SERVES ONE SENATOR A 126x162 GIF UNDER A `.jpg` NAME
+
+Eric Lucero (SD-30) and Robert Kupec (SD-4) are the only two senators below target on the state's own
+site — 126x162 and 320x400 against everyone else's 1200x1500. Both caucus sites host the same
+official portraits at full resolution, under the same `30Lucero` / `04Kupec` base names. **The
+extension is not the format and the display size is not the file.**
+
+## ✅ Applied — 99 imported, 0 failed, measured from outside
+
+| Body | Offices | Seated | Renderable | `photo_custom_url` | `politician_images` |
+| --- | --- | --- | --- | --- | --- |
+| Minnesota Senate | 67 | 67 | **67** | 67 | 67 |
+| St. Louis County Board | 7 | 7 | **7** | 7 | 7 |
+| Ramsey County Board | 7 | 7 | **7** | 7 | 7 |
+| Duluth City Council | 9 | 9 | 8 | 8 | 8 |
+| Saint Paul City Council | 7 | 7 | 6 | 6 | 6 |
+| County officers (4) and mayors (2) | 6 | 6 | 4 | 4 | 4 |
+| Minnesota House | 134 | 133 | **1** | 1 | 1 | 
+
+✅ **AND THE OBJECTS WERE FETCHED BACK.** Every stored URL was re-fetched from the CDN and **decoded**,
+not header-sniffed: **104 of 108 decode and are 4:5 within the 600x750 ceiling, 0 broken**, and the
+four blanks are exactly the four the operator held for re-sourcing. **A bogus bucket key ran alongside
+and failed as required** — a verifier that passes everything is indistinguishable from one that tests
+nothing.
+
+**600x750 is a ceiling, not a contract**: 87 rows ship at 600x750 and 17 at their native cropped size,
+the smallest being Ramsey's eight at 200x250. **Ramsey publishes nothing larger** — its own
+per-commissioner pages serve the same 200x250 file, checked one by one, and St. Louis serves Keith
+Nelson a 200x300 file dated 2017.
+
+## ▶ Owed
+
+1. **133 House portraits** — blocked on permission, above.
+2. **Four re-sourced portraits** awaiting approval: Nephew (no city portrait exists; campaign
+   landscape), Her (the city publishes only an event photograph; campaign portrait), Johnson (the
+   council portrait exists under the ward-7 filename her own page does not use), Fletcher (the
+   un-resized original is 503x651 PORTRAIT where the linked copy is 550x290 landscape).
+3. **Two banners** — Duluth and Saint Paul, and the adjacency test against the Minnesota state banner.
