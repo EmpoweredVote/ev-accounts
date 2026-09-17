@@ -158,14 +158,50 @@ a November election — 2022 winners from January 2023, 2024 winners from Januar
 county officer elected in 2026 takes office in January 2027. That is the certified-result rule from
 the Knight programme — a certified result is not a fact about who holds the seat.
 
+## ✅ APPLIED 2026-09-16 — `CC_0114` structure, `CC_0115` occupancy. 19 offices, 19 seated, 0 vacancies.
+
+| Body | Offices | Seated |
+| --- | --- | --- |
+| Boulder City Council | 9 | 9 |
+| Boulder County Board of County Commissioners | 3 | 3 |
+| Boulder County Elected Officials | 7 | 7 |
+
+✅ **Idempotent, proved by re-running both** — every `essentials.*` write came back `INSERT 0 0` and
+both gates stayed green. ✅ **Dry-run first as one transaction, and the rollback was verified** to
+have left no government, no district and no person behind.
+
+✅ **BOTH GATES WERE WATCHED FAILING FIRST**, on the unapplied database: *"expected 2 governments,
+got 0"* and *"expected 19 people in the reserved band, got 0"*. ⚠ **And the control harness lied
+before the gates did** — a loop over both control files printed nothing at all, which reads exactly
+like two silent gates. The cause was shell path escaping in the loop, not the gates; running each
+file directly is what showed it. **A detector that reports nothing is a claim about the detector
+until you run it by hand.**
+
+### ✅ The probe: four kinds of answer from one address
+
+**Boulder City Hall returns 22 answers** — 9 city, 10 county, 2 state legislative — and all four
+kinds the programme defines "done" by: a council member, a county commissioner, a state
+representative (Junie Joseph) and a state senator (Judy Amabile).
+
+🔴 **"EXACTLY ONE COUNCILLOR" IS THE WRONG ASSERTION HERE, AND IT IS THE RIGHT ONE ELSEWHERE.**
+Boulder elects every seat at large, so every Boulder address is represented by **all nine** council
+seats and **all three** commissioners. MN-4 asserted exactly one commissioner per point and was
+correct; asserting that here would fail on correct data. **The assertion follows the electorate, not
+the habit.**
+
+✅ **The controls discriminate, and they sit outside the thing being tested.** Longmont — inside
+Boulder County, outside the city — returns **0 city, 10 county** and a *different* legislative pair
+(Karen McCormick, Katie Wallace). Denver returns **neither** city nor county, and a third pair again.
+A control that returned the same legislators would have proved only that the query runs.
+
 ## ▶ Next
 
-1. Source the term starts above; reconcile the city roster against the 2021, 2023 and 2025 results.
-2. Write the structure migration (2 governments, 3 chambers, 19 offices) and the district row for
-   place `0807850`.
-3. Write the occupancy migration, dated, with `start_precision` honest per row.
-4. Gates: per-seat control, an address probe at Boulder's city hall returning **four** answers
-   (councillor, county commissioner, state representative, state senator), and `check:reachability`.
-5. Stage 5: 19 portraits and one banner. Colorado's state banner is a Denver skyline, and Colorado
-   Springs already took Garden of the Gods, so **two compositions are spoken for** before Boulder
-   starts. The Flatirons are the obvious answer and need testing against both.
+1. **Stage 5 for Boulder**: 19 portraits and one banner.
+   🔴 Two Colorado compositions are already spoken for — `states/CO.jpg` is a **Denver skyline** and
+   `cities/colorado-springs.jpg` is **Garden of the Gods**, chosen in that wave *because* the state
+   banner is a skyline. The Flatirons are the obvious answer and must be tested against both: an
+   elevated rock formation against a city is not the same composition as Garden of the Gods, but the
+   two need seeing side by side before either is certified.
+   ⚠ And read Boulder's chamber-photo question the way MN-5 forced: **before building any roster
+   portrait script, read the publisher's photo policy.**
+2. **CO-4**: nothing. Boulder is Colorado's only Knight city, so this slice closes at stage 5.
