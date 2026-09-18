@@ -149,13 +149,25 @@ Public-key-only. Depends on `libsodium-wrappers` and the `ID_VAULT_PUBLIC_KEY` c
   exists without a vaulted name. A seal written before an RPC that then fails leaves an idempotent,
   overwritable orphan row — acceptable and self-healing on retry.
 
-**Address change** (verification / district re-derivation flow):
-- The raw street address is present transiently (`verification_sessions.home_address_draft`). Seal it
-  into the vault (public key only, no ceremony), then re-derive districts via the existing path, then
-  discard the transient draft.
-- **New retention, made explicit:** today the raw address is discarded once districts resolve
-  (migration 060). This build begins **retaining it, sealed**, because it is the break-glass payload
-  named in data model §8a. The precise coordinates continue under the existing single key (D5).
+**Address change** (`POST /set-location`, district re-derivation flow):
+- The address arrives as a **request-body param** (the member re-enters it in the location step;
+  `LocationStep.tsx`), not from a draft. Seal it into the vault (public key only, no ceremony), then
+  re-derive districts via the existing path. The seal is non-fatal here — it must not block the
+  district resolution the site needs to place the member.
+- **New retention, made explicit:** today `set-location`'s address was discarded once districts
+  resolved (migration 060). This build begins **retaining it, sealed**, because it is the break-glass
+  payload named in data model §8a. The precise coordinates continue under the existing single key (D5).
+
+**Enrollment drafts** (`connect.verification_sessions`, in-scope plaintext source — added 2026-09-17):
+- `legal_name_draft` and `home_address_draft` hold the plaintext real name and raw street address
+  during the multi-step flow and, before this fix, were **retained after completion** — readable by
+  the BYPASSRLS `ev_api` role. This is the plaintext store the whole-branch review found; migration
+  060's "home_address_draft … intentionally NOT removed here" is **superseded**.
+- **Disposition (seal-then-null):** at `POST /complete`, `resolveCompleteConnectSeal` seals both drafts
+  into the vault (fatal on failure when enabled) before `complete_connect_flow` nulls both drafts in the
+  same atomic UPDATE (migration `CA_0121`). Existing completed rows are purged retroactively
+  (migration `CA_0122`). The `signup_with_invite` path creates no drafts, so it needs no change.
+  Design: `docs/superpowers/specs/2026-09-17-verification-sessions-draft-purge-design.md`.
 
 ### 4.5 Empowerment promotion — confirm, don't unseal
 

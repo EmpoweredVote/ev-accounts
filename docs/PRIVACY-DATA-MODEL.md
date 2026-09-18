@@ -154,8 +154,11 @@ guarded function**. It maps `account_id ⇄ pseudonym_id` and `account_id ⇄ lo
 
 **Drop**
 - `connect.connected_profiles.legal_name`
-- `verification_sessions.legal_name_draft`, `home_address_draft` — keep only as transient
-  enrollment state, deleted the moment districts are resolved.
+- `verification_sessions.legal_name_draft`, `home_address_draft` — transient enrollment state only,
+  nulled at completion. At `POST /complete` the real name and raw address are sealed into `id_vault`
+  (when enabled), then `complete_connect_flow` nulls both drafts atomically (migration `CA_0121`);
+  rows completed before the fix are purged retroactively (migration `CA_0122`). Implemented
+  2026-09-17 — the earlier "deleted the moment districts are resolved" intent went unbuilt until then.
 
 **Unchanged (Empowered is public by design)**
 - `empower.empowered_profiles.legal_name` (public), `candidate_page_slug`, `politician_id`.
