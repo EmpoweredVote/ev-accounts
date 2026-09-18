@@ -5,7 +5,7 @@
 **Update this file at the end of every session.** It is the only place that knows where the program
 stands. `MEMORY.md` holds one pointer to it and nothing else.
 
-Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md) · [`mn.md`](./mn.md) · [`co.md`](./co.md).
+Per-state notes: [`fl.md`](./fl.md) · [`ga.md`](./ga.md) · [`ca.md`](./ca.md) · [`in.md`](./in.md) · [`mn.md`](./mn.md) · [`co.md`](./co.md) · [`nc.md`](./nc.md) · [`pa.md`](./pa.md).
 
 Stage legend, from spec §3:
 `1` geography (TIGER place + sldu + sldl) · `2` legislature · `3` city waves · `4` county waves ·
@@ -37,7 +37,9 @@ Status: `—` not started · `WIP` in progress · `✅` done and gated · `n/a` 
 
 🟡 **MN-5 PART ONE APPLIED 2026-09-16 — 99 PORTRAITS IMPORTED, 0 FAILED.** Measured before: **242 Minnesota offices, 241 seated, SIX renderable portraits.** Now: **Senate 67/67, both county boards 7/7, Duluth 8 of 10, Saint Paul 6 of 8.** Every imported row carries `photo_custom_url` AND a `politician_images` row, and **every stored object was fetched back and DECODED — 104 of 108, 0 broken, with a bogus-key control that failed as required.** 🔴🔴 **THE MINNESOTA HOUSE FORBIDS THIS USE: 133 SEATS ARE A LICENCE DEBT, NOT A GAP.** Its photo policy retains copyright, demands permission in advance, and **forbids alteration "in any way, including cropping"** — so no hotlink or mirror survives it. Ruling (Cantrell, 2026-09-16): record the debt, send the request, ship the rest. ▶ **EVERY LATER SLICE INHERITS THE QUESTION — read the chamber's photo policy BEFORE building a roster-portrait script.** Georgia and Florida raised none because those chambers publish none; **absence of a policy is not a licence, but a published refusal IS a refusal.** ✅ **BANNERS LIVE 2026-09-16** (essentials#150): `cities/duluth.jpg` (Bspor.88, CC0) and `cities/saint-paul.jpg` (August Schwerdfeger, CC BY 4.0), both `match:'exact'` and MN-scoped — **Duluth, GEORGIA is slice 2 of this same programme**, so a state-blind match would hand Lake Superior to a suburb of Atlanta. 🔴🔴 **SAINT PAUL'S OWN SKYLINE WAS THE ONE FRAME THE ADJACENCY RULE REFUSES** (the state banner is the Minneapolis skyline). 🔴🔴 **A SOURCE NEAR THE ASSET RATIO MAKES `anchor_y` A NO-OP** — 3.09:1 against 3.148:1 moves the frame ten pixels; **trim the SOURCE instead**. 🔴 The operator caught the first crop with **"better on mobile than desktop"** — the Bend failure's signature. ▶ **Stage 5 closes on two recorded debts: the 133 House portraits (licence) and one Duluth councillor with no publishable photograph.**
 
-| 6 | PA | Philadelphia, State College | — | — | — | — | — |
+| 6 | PA | Philadelphia, State College | ✅ | — | — | — | — |
+
+🟢 **PA-1 APPLIED 2026-09-18 — PENNSYLVANIA HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME.** 253 boundaries and 253 districts — 203 House + 50 Senate — 0 errors, `districts` 8,724 → 8,977 and `geofence_boundaries` 62,807 → 63,060, both moving by **exactly 253**. 🔴🔴 **A COUNT CAN NEVER DATE A PENNSYLVANIA MAP**: Pa. Const. Art. II §16 FIXES the chambers at 203 and 50, so that shape fits the 2012 plan, the 2022 plan and every future one — MN-1 had the weaker form of this and settled it on one renumbered district. **This wave settled it on all 253**, testing every TIGER polygon at its own internal point against **PennDOT’s own layers** (PASDA — a Commonwealth boundary set, not a Census mirror): **203/203 and 50/50 agree, 0 differ**. ⚠ **And the sweep was then made to fail** — the same comparison against the TIGER 2018 polygons differs on 44 House and 5 Senate districts, so the verifier can tell the maps apart (`scripts/verify-pa-tiger-vintage.mjs`). Three anchors move and all three resolve to 2024: State College SD 34→25, Allentown SD 16→14, Erie HD 2→1. 🔴🔴 **THE geo_id COLLISION IS THE WORST IN THE PROGRAM AND IT IS WITH COUNTIES** — **all 67** PA county geo_ids are also a House district id, 25 are also a Senate district, and every Senate id is a House id: **`42101` is Philadelphia County AND House District 101**, 142 new collisions from one load. NC-3 met one instance of this; in PA it is the rule. **The key is (mtfcc, geo_id).** ⚠ **STAGE 1 OWED NO PLACE LAYER** — PA’s 1,013 G4110, 989 G4210 and 2,573 G4040 rows were loaded HOURS EARLIER by the Civic Spaces municipal wave (#541), so Philadelphia `4260000` and State College `4273808` already had geometry. **Measure the layer before loading it.** 🟢 **`check:child-county` is red for exactly MI 533 + PA 1,013 + OH 925 = 2,471 — that wave’s debt, not this one’s**: the check defines a child as G4110/G5420/G5400/G5410, so G5210/G5220 cannot appear, which is why no refresh was needed (read in the check’s source, not assumed). ✅ **Both pre-flight gates watched failing first**, per-district control **50/50 and 203/203 resolve to exactly one**, Ohio negative control 0, six anchors agree with PennDOT in production, idempotent on re-run, `offices_missing_terms` **unmoved at 823/655**, `check:reachability` nothing regressed with two buckets below baseline. 🟢 Philadelphia city `4260000` measures **142.422 sq mi against the county’s 142.422** — coterminous, so the government keys on the TIGER place, the Columbus/Macon rule unchanged. ▶ **Next: stage 2 — 253 seats, the largest single legislature block the program will ever seat.** Full record: [`pa.md`](./pa.md).
 | 7 | SC | Columbia, Myrtle Beach | — | — | — | — | — |
 | 8 | OH | Akron | — | — | — | — | — |
 | 9 | CO | Boulder | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -105,8 +107,8 @@ inherited.
 | Gary | IN | Lake — ✅ **12/19 SEATED (`CC_0095`)**, 7 council district seats deferred | 🟡 **PARTIALLY SEATED 2026-09-10 (`CC_0092`/`CC_0093`): 6 of 12** — Mayor, City Clerk, **Judge of the City Court** and 3 at-large. 🔴🔴 **GARY ELECTS A JUDGE AND FORT WAYNE DOES NOT — 12 offices against 11.** 🔴🔴 **THE 6 DISTRICT SEATS ARE DEFERRED**: the 2023 settlement map is PDF-only, and the city's own GeoJSON repo has ONE COMMIT dated **2014-07-21**. Offices without geometry are unreachable, so the gate asserts their ABSENCE. 🔴 Mark Spencer left the at-large seat for SD-3 and is seated there by `CC_0089` — the probe asserts he holds exactly one seat |
 | Duluth | MN | St. Louis | ▶ **MN-1 OPEN 2026-09-12.** TIGER place **`2717000`**, confirmed on two TIGERweb vintages. Parent county `27137` already present |
 | Saint Paul | MN | Ramsey | ▶ **MN-1 OPEN 2026-09-12.** TIGER place **`2758000`** — TIGER names it **`St. Paul`**, so a `Saint Paul` search returns NOTHING and `%St. Paul%` returns FIVE cities. 🔴 Production already holds a government row **`City of Saint Paul, Texas, US`**. **Match on `geo_id`, never on name.** Parent county `27123` already present |
-| Philadelphia | PA | — | **consolidated city-county**, coterminous |
-| State College | PA | Centre | borough, not a city |
+| Philadelphia | PA | — | **consolidated city-county**, and the coterminous claim is now MEASURED: place `4260000` and county `42101` are both **142.422 sq mi**. ▶ **PA-1 OPEN 2026-09-18** — place polygon already present (loaded by #541, not by this program); legislative geography loaded. Stage 4 drops the commission and keeps the separately elected county officers, read off the charter |
+| State College | PA | Centre | borough, not a city — **4.578 sq mi** inside Centre County (1,111.620). ▶ **PA-1 OPEN 2026-09-18.** TIGER place **`4273808`**, already present. 🔴 Its Senate seat is one of the three anchors that DATE the map: **SD-34 under the 2012 plan, SD-25 under the 2022 plan** |
 | Columbia | SC | Richland | |
 | Myrtle Beach | SC | Horry | |
 | Akron | OH | Summit | |
@@ -144,7 +146,7 @@ Re-measure rather than trust these once any wave has applied.
 | MS | 0/122 | 0/52 |
 | ND | 0/94 | 0/47 |
 | OH | 0/99 | 0/33 |
-| PA | 0/203 | 0/50 |
+| PA | 0/203 *(geography loaded 2026-09-18)* | 0/50 *(geography loaded 2026-09-18)* |
 | SC | 0/124 | 0/46 |
 | SD | 0/70 | 0/35 |
 

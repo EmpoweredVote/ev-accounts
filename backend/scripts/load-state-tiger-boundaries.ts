@@ -237,6 +237,39 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // Minnesota congressional districts and all 87 counties; reloading them is not idempotent
   // progress, it is a second chance to introduce a conflicting geo_id.
   MN: new Set(['sldu', 'sldl', 'place']),
+  // PA. Knight program slice 6 — Philadelphia and State College. Production held ZERO
+  // G5210/G5220 rows for FIPS 42 and ZERO state legislative offices before this wave;
+  // measured 2026-09-18.
+  // Counts MEASURED against raw TIGER 2024 FIPS 42 on 2026-09-18 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   50 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'050'
+  //   sldl  203 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'203'
+  // Pennsylvania is single-member in both chambers, so these polygon counts ARE the seat
+  // counts — unlike AZ/WA (and ND/SD in later Knight waves) where one sldl polygon carries
+  // two seats. Codes are plain digits with no letter half, so ocdDistrictSuffix yields 203
+  // and 50 DISTINCT suffixes; the MN/MD A-B collapse cannot arise here, and the pre-flight
+  // asserts the distinct count anyway rather than reasoning about it.
+  // 🔴 VINTAGE IS THE 2022 LRC FINAL PLAN, AND IT WAS PROVEN, NOT ASSUMED. 203/50 is also the
+  // shape of the 2012 plan — the counts are fixed by Pa. Const. Art. II §16, so a count can
+  // NEVER date this map. Every one of the 253 TIGER polygons was tested at its own internal
+  // point against PennDOT's own 'Pa House 2026_07' and 'Pa Senatorial 2026_07' layers
+  // (PASDA, maps.pasda.psu.edu, a Commonwealth source independent of Census): 203/203 and
+  // 50/50 agree, 0 differ, 0 errors. The test was then run against the TIGER 2018 polygons'
+  // internal points and FAILED on 44 House and 5 Senate districts, which is the control
+  // showing it can fail. Three anchors move between the two vintages and all three resolve
+  // to the 2024 file: State College SD 34 -> 25, Allentown SD 16 -> 14, Erie HD 2 -> 1.
+  // 🔴 THE geo_id COLLISION IS THE WORST IN THE PROGRAM SO FAR, AND IT IS WITH COUNTIES.
+  // sldl runs 42001..42203 and sldu 42001..42050, while PA's 67 counties are 42001..42133 odd:
+  // measured 2026-09-18, ALL 67 county geo_ids are also a House district geo_id, 25 are also a
+  // Senate district, and every one of the 50 Senate ids is also a House id — 142 new string
+  // collisions from this one load. '42101' is Philadelphia County AND House District 101.
+  // Every join must pair geo_id with mtfcc/district_type; this is NC-3's `37119` as a rule
+  // rather than an incident. Congressional is unaffected (4-char ids, 4201..4217).
+  // place/cousub are EXCLUDED: PA's G4110 (1,013), G4210 (989) and G4040 (2,573) rows were
+  // loaded on 2026-09-18 by scripts/load-municipal-boundaries.sh, and Philadelphia city
+  // 4260000 and State College borough 4273808 are both already present with geometry.
+  // cd/county are EXCLUDED: prod already holds all 17 PA congressional and all 67 counties.
+  PA: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1790,8 +1823,70 @@ async function processLayer(
     }
   }
 
+  // ── PA MTFCC pre-flight assertion (Knight program, wave PA-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 42 on 2026-09-18 by parsing the
+  // .dbf inside each zip directly, not inferred from Pa. Const. Art. II §16:
+  //   sldu   50 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, GEOID 42001..42050
+  //   sldl  203 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, GEOID 42001..42203
+  // Pennsylvania is single-member in both chambers, so these polygon counts ARE the
+  // seat counts: 50 Senators + 203 Representatives.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR, AND THE COUNT CANNOT DATE THE MAP. 203/50
+  // is fixed by the constitution, so it is ALSO the 2012 plan's shape and every plan's
+  // shape — see the vintage proof in the PA allowlist comment above, which rests on all
+  // 253 polygons agreeing with PennDOT's own layer and on the 2018 file failing the same
+  // test. If a count drifts, something other than a remap has happened: stop. Do NOT
+  // raise the number to get a green run.
+  // The second assertion is the OCD-ID one: PA's codes are plain digits, so the suffixes
+  // must be as numerous as the records. A collapse here is the MN '08A' / MD '1A' defect
+  // arriving in a state that cannot produce it, i.e. a loader regression.
+  if (fipsArg === '42') {
+    const EXPECTED_PA_MTFCC: Record<string, number> = {
+      sldu: 50,   // 50 PA Senate districts (2022 LRC Final Plan, adopted 2022-02-04,
+                  // PA Supreme Court appeals denied 2022-03-16) — measured 2026-09-18
+      sldl: 203,  // 203 PA House districts, same plan — measured 2026-09-18
+    };
+    if (layer in EXPECTED_PA_MTFCC) {
+      const expected = EXPECTED_PA_MTFCC[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[PA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 42 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[PA OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. PA district codes ` +
+          `are plain digits and cannot collide — this is the MN '08A' / MD '1A' collapse in a ` +
+          `state that cannot produce it. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] PA MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
