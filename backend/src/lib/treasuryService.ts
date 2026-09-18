@@ -564,6 +564,58 @@ export async function getCities(mode: DatasetsMode = 'full'): Promise<TreasuryCi
 }
 
 /**
+ * Names an entity used to be published under, for Treasury Tracker's
+ * `?entity=` deep links.
+ *
+ * WHY: a state publisher renaming a city forks or renames the TT entity, and
+ * every link ever shared to the old slug dies. The MN OSA renamed Birchwood to
+ * Birchwood Village between its FY2020 and FY2021 filings; TT merged the two
+ * entities (TT PR #185) and `birchwood-mn` stopped resolving.
+ *
+ * ⚠⚠ EMITS SLUGS, from the same `slugSql` the coverage catalog uses. An earlier
+ * draft served names only, reasoning that a second implementation of the slug
+ * format would drift silently. That reasoning was wrong here: this service
+ * ALREADY owns a slug expression (`SLUG_SQL`, right above), and
+ * GET /api/treasury/coverage already emits `slug` for exactly the stated reason
+ * — "no consumer ever reconstructs TT's `toSlug` and drifts". Withholding slugs
+ * would not remove an implementation, it would force every consumer that is not
+ * TT to write one. `label`/`slug` mirrors the coverage record shape.
+ *
+ * CONTRACT: rows are NOT filtered against /cities' budget-bearing rule. An
+ * alias naming an entity that /cities omits is handled by the consumer, which
+ * treats a target it cannot find as not-found rather than inventing one.
+ */
+export interface TreasuryEntityAlias {
+  slug: string;
+  label: string;
+  canonicalSlug: string;
+  canonicalLabel: string;
+}
+
+export async function getEntityAliases(): Promise<TreasuryEntityAlias[]> {
+  const { rows } = await pool.query<{
+    slug: string;
+    label: string;
+    canonical_slug: string;
+    canonical_label: string;
+  }>(
+    `SELECT ${slugSql('a.alias_name', 'a.state')} AS slug,
+            a.alias_name                          AS label,
+            ${SLUG_SQL}                           AS canonical_slug,
+            m.name                                AS canonical_label
+       FROM treasury.municipality_aliases a
+       JOIN treasury.municipalities m ON m.id = a.municipality_id
+      ORDER BY a.alias_name`
+  );
+  return rows.map((r) => ({
+    slug: r.slug,
+    label: r.label,
+    canonicalSlug: r.canonical_slug,
+    canonicalLabel: r.canonical_label,
+  }));
+}
+
+/**
  * Fetch a single city by UUID. Returns null if not found OR if the municipality
  * has no associated budgets.
  *
@@ -1618,7 +1670,11 @@ interface CoverageRow {
  * Drift here is invisible — it does not throw, the link just stops resolving,
  * and before TT's #158 an unresolved slug rendered a DIFFERENT city's budget.
  */
-const SLUG_SQL = `lower(regexp_replace(m.name, '\\s+', '-', 'g')) || '-' || lower(m.state)`;
+function slugSql(nameCol: string, stateCol: string): string {
+  return `lower(regexp_replace(${nameCol}, '\\s+', '-', 'g')) || '-' || lower(${stateCol})`;
+}
+
+const SLUG_SQL = slugSql('m.name', 'm.state');
 
 let coverageCache: { at: number; value: CoverageCatalogOut } | null = null;
 const COVERAGE_TTL_MS = 15 * 60 * 1000;

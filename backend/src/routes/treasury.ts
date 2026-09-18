@@ -21,6 +21,7 @@ import type { Request, Response } from 'express';
 import { z } from 'zod';
 import {
   getCities,
+  getEntityAliases,
   getCityById,
   getBudgetsByCityId,
   getBudgetById,
@@ -56,6 +57,21 @@ router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise
     res.status(200).json(cities);
   } catch (err) {
     console.error('[GET /treasury/cities] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// GET /api/treasury/aliases
+// Names entities used to be published under, so Treasury Tracker can resolve a
+// `?entity=` link whose slug was retired by a publisher rename. Static path, no
+// input, no auth beyond the optional pass — the same public read as /cities.
+// NOTE: registered before /cities/:id-style params.
+router.get('/aliases', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const aliases = await getEntityAliases();
+    res.status(200).json(aliases);
+  } catch (err) {
+    console.error('[GET /treasury/aliases] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
