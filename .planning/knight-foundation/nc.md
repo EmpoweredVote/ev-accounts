@@ -590,3 +590,64 @@ error in another.
    the courts' own records.
 3. The **judges wave**, carrying the Buncombe/Durham DA and Soil-and-Water backfill, the school
    board question, and the 26-C/26A/26E labelling conflict.
+
+---
+
+# ▶ RESUME STAGE 5 HERE (written 2026-09-17, before clearing context)
+
+Stages 3 and 4 are applied and merged-pending. **Stage 5 — headshots and a banner — has not started.**
+
+| | |
+| --- | --- |
+| Worktree | `/c/ev-accounts-nc-3` (branch `data/nc-3-charlotte-mecklenburg`) |
+| PR | **#534**, open against master |
+| Leases | `place:3712000` and `county:37119`, both to 2026-09-18 18:00Z — **`extend` them, don't re-take** |
+| Roster | `backend/data/charlotte-mecklenburg-roster.json` — all 28 with seats, dates and sources |
+| Probe | `backend/scripts/verify-charlotte-mecklenburg-probes.sql` |
+
+⚠ `npm install` has already been run in that worktree's `backend`. A different worktree will need it
+again before any `tsx` script runs.
+
+## The 28 who need portraits
+
+12 Charlotte (Mayor + 4 at-large + 7 district) and 16 Mecklenburg (9 commissioners + Sheriff,
+Register of Deeds, Clerk of Superior Court, District Attorney + 3 soil-and-water supervisors). **All
+28 are new rows with no `photo_custom_url`** — the wave is a clean import, not a repair.
+
+## The sourcing lead, and why it is strong
+
+🟢 **The city publishes official headshots and OFFERS THEM FOR DOWNLOAD.** The mayor's page carries
+"Download Mayor Harrington's Headshot (JPG, 247KB)" beside a 1000×1000 portrait at
+`www.charlottenc.gov/files/sharedassets/city/v/2/city-government/leadership/images/city-council/council-home/mayor-rob-harrington.jpg`.
+An explicit download offer from the body itself is the strongest licence signal short of a written
+grant. ▶ **Check every one of the 12 council pages for the same offer before sourcing anywhere else.**
+
+🔴 **`charlottenc.gov` is 403 TO `curl` EVEN WITH A BROWSER USER-AGENT.** Fetch in Playwright, using
+an in-page `fetch` on the **`www.`** host — the bare `charlottenc.gov` host is a different origin and
+CORS blocks it. This is how the council history PDF was retrieved.
+⚠ **8 of the 12 council member links point at `charlottenc.prelive.opencities.com`**, the CMS staging
+host. Rewrite them to `www.charlottenc.gov` on the same path.
+🔴 **A departed member's URL can serve their successor** — `/City-Council/Tariq-Bokhari` returns 200
+and is byte-identical to Kimberly Owens' page. Assert the page NAMES the person before taking an
+image from it.
+
+The county side is unmeasured: `bocc.mecknc.gov` member pages, `mecksheriff.com`,
+`deeds.mecknc.gov`, `mecklenburgcountycourt.org`, `charmeckda.com`, `conserve.mecknc.gov/Board`.
+
+## The pipeline (do not re-invent it)
+
+1. Build a candidates JSON — the shape is in `backend/data/seed-mn-headshots-2026/candidates-house.json`.
+2. `py scripts/render-headshot-contact-sheet.py --json <file> --title "..." --out <file>.html`
+   (add `--embed-width 300` only if the artifact would exceed 16 MB; 28 faces will not).
+3. **Publish the sheet as an Artifact and get batch approval. Never one dialog per person.**
+4. `py scripts/import-headshot-candidates.py --json <file>` — it writes the object, the
+   `politician_images` row, `photo_custom_url` and `photo_origin_url`. **No migration is needed.**
+5. Verify from OUTSIDE: re-fetch every stored URL from the CDN and **decode** it, with a bogus bucket
+   key alongside that must fail.
+
+## The banner
+
+Not started. Charlotte's skyline is the obvious composition and therefore the first thing to test for
+**adjacency** — read what the North Carolina state banner uses before composing, and check the
+Asheville and Durham keys, since both are already in the essentials repo. Banners live in the
+**essentials** repo (`buildingImages.js`), not in this one.
