@@ -330,10 +330,12 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
  * Response intentionally omits tolerance_rating and legal_name — privacy
  * enforcement at the serialization layer (not just RLS).
  *
- * Seal-on-write (spec §4.4, CA_0120): when the vault is enabled, the draft
- * legal name is sealed into id_vault BEFORE the RPC runs, and p_seal_name=true
- * tells complete_connect_flow to NULL connected_profiles.legal_name instead of
- * writing the plaintext draft. When the vault is disabled, behaviour is
+ * Seal-on-write (spec §4.4, CA_0120/CA_0121): when the vault is enabled, the
+ * draft legal name AND raw address are sealed into id_vault BEFORE the RPC
+ * runs, and p_seal_name=true tells complete_connect_flow to NULL
+ * connected_profiles.legal_name instead of writing the plaintext draft.
+ * complete_connect_flow then nulls both drafts (legal_name_draft,
+ * home_address_draft) after use. When the vault is disabled, behaviour is
  * unchanged — p_seal_name defaults to false and the draft is written as today.
  */
 router.post('/complete', requireAuth, async (req: Request, res: Response): Promise<void> => {

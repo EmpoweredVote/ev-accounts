@@ -11,9 +11,9 @@
 -- removed here" comment.
 --
 -- Body is copied byte-for-byte from CA_0120_complete_connect_flow_seal_parity.sql
--- (the current live definition); the ONLY change is the two NULL assignments in
--- the "advance session to complete" UPDATE. Signature, p_seal_name CASE, ACL and
--- post-verify gate are unchanged.
+-- (the current live definition); the only changes are the two NULL assignments
+-- in the "advance session to complete" UPDATE and its preceding comment.
+-- Signature, p_seal_name CASE, ACL and post-verify gate are unchanged.
 BEGIN;
 
 DROP FUNCTION IF EXISTS public.complete_connect_flow(uuid);
