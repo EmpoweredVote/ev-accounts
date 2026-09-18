@@ -386,3 +386,101 @@ why this was caught rather than shipped. Same family as the Duluth `with-seal` f
 2. **The District Attorney decision** — a program-level call, recommended above.
 3. The **holdover decision** for 2021-12-06 → 2022-09-06 (recommended: continuous), stated explicitly in
    the migration comment.
+
+---
+
+# NC-3 — THE INCLUSION RULING (Cantrell, 2026-09-17) and what it changed
+
+> **"If you vote on the DA, they should be included, otherwise they should be omitted."**
+
+**The electorate decides inclusion.** An office is seated if the voters of that jurisdiction elect it,
+and omitted if they do not. This settles the District Attorney — Mecklenburg's voters elect it — and it
+is the same principle as CO-3's *the assertion follows the electorate*, applied to which offices exist
+rather than to how many answers a probe should return.
+
+⚠ **It reaches further than the DA, so the ballot was enumerated rather than guessed.** From the
+Mecklenburg Board of Elections' own `2026-offices-ballot-and-filing-fees`, county voters elect: County
+Commissioner (3 at-large + 6 district), Clerk of Superior Court, Sheriff, **District Attorney**, **Soil
+& Water Conservation District Supervisor**, **District Court Judge** and **Superior Court Judge**
+(sub-districts 26-C, 26-F, 26-H). Register of Deeds is elected too, on the presidential cycle.
+
+## Scope decided with the ruling (Cantrell, 2026-09-17)
+
+- **NC-3 seats the DA and the elected Soil & Water supervisors.** Both are countywide, so they need no
+  new geometry — they hang off the county polygon exactly as the Sheriff does.
+- **Judges become their own wave, covering every NC county.** Three measured reasons: Superior Court
+  sits in **sub-county districts whose geometry production does not have** (an office without geometry
+  is unreachable — the Gary precedent, where the gate asserted the seats' *absence*); the **bench size
+  must come from G.S. 7A-41**, not a ballot page, since 9 District Court seats being *up* in 2026 means
+  the bench is larger; and the **Board of Elections and the statute disagree on the Superior Court
+  sub-district labels** (26-C/26-F/26-H against 26A/26B/26C), which must be resolved before anything is
+  written.
+- 🔴 **BUNCOMBE AND DURHAM NOW CARRY A MEASURED DEBT.** Both are already seated with three officers and
+  no DA, no Soil & Water and no judges, and their voters elect all of them. **Production holds no
+  district attorney, no judge and no soil-and-water office anywhere in North Carolina** — measured, not
+  assumed. Decision: **record the debt now, close it in the judges wave**, so all NC counties get one
+  consistent treatment in one pass.
+
+## 🔴🔴 THE SOIL AND WATER BOARD IS 5 PEOPLE AND ONLY 3 ARE ELECTED
+
+The district's own page, quoted:
+
+> "Each soil and water conservation district is administered by a five person board of supervisors.
+> **Three of these supervisors are elected** at the same time as the regular election of county
+> officers. This election is nonpartisan and is conducted by the respective county board of elections.
+> **Two supervisors are appointed** by the North Carolina Soil and Water Conservation Commission…
+> All five supervisors serve four year terms of office."
+
+Under the ruling the two appointed supervisors are **omitted**: **Daniel Austin** (appointed 2023-07-19)
+and **Eliseo Pascual** (appointed 2025-05-27). This is the ruling doing real work — it removes two
+sitting members of a real board, because nobody votes for them.
+
+🔴🔴 **AND THE PAGE'S PER-PERSON LABEL DESCRIBES HOW SOMEONE ARRIVED, NOT WHAT THEY ARE NOW.**
+**Nancy Carter** reads "appointed to the Board in January, 2012, **elected in 2014**". Taking that first
+word as her status would omit her — and would leave **two** elected supervisors against a statutory
+**three**. **The count is the check**: the statute says 3, so any reading that yields 2 is wrong. Same
+family as the `is_vacant` trap — a field that looks like a status is a history.
+
+| Supervisor | Elected? | Continuous since | Precision | Source wording |
+| --- | --- | --- | --- | --- |
+| Barbara Bleiweis (Chair) | ✅ elected | 2017 | `year` | "served on the Board since 2017 and is in her second term as an elected Supervisor" |
+| Nancy Carter (Vice-Chair) | ✅ elected | 2012-01 | `month` | "appointed to the Board in January, 2012, elected in 2014" |
+| Mitchell Mullen | ✅ elected | **2024-12-04** | `day` | "will serve a four-year term effective December 4, 2024" |
+| Daniel Austin | ❌ appointed | — | — | **OMITTED** — "appointed … July 19, 2023" |
+| Eliseo Pascual | ❌ appointed | — | — | **OMITTED** — "appointed … May 27, 2025" |
+
+⚠ Their own page spells him "Mitchel" once and "Mitchell" twice. Use **Mitchell Mullen**.
+
+## The county's separately elected officers, dated to the precision each source supports
+
+| Office | Holder | Continuous since | Precision | Source |
+| --- | --- | --- | --- | --- |
+| Sheriff | Garry L. McFadden | 2018 | `year` | `mecksheriff.com` — "45th Sheriff"; first elected 2018 |
+| Register of Deeds | Fredrick Smith | 2016 | `year` | "Fred was first elected to office in 2016" |
+| Clerk of Superior Court | Elisa Chinn-Gary | 2014 | `year` | first elected November 2014; sworn for a second term 2018-12-03 |
+| **District Attorney** | **Spencer B. Merriweather III** | **2017-11-27** | `day` | `charmeckda.com/about-the-da` — "sworn into office on November 27, 2017, and he was subsequently elected in 2018" |
+
+🔴 **THREE OF THE FOUR SHIP AT `year` PRECISION ON PURPOSE.** North Carolina seats county officers on
+the first Monday in December, and the BOCC's own page gives that exact date for every term — so
+2018-12-03, 2016-12-05 and 2014-12-01 are all *available as an inference*. **They are not written as
+facts.** The rule is "don't invent dates": the sources say a year, so the rows say a year. Day
+precision is a five-minute lookup in the county's or the courts' own records if it is ever wanted.
+
+## The shape NC-3 will write
+
+| Government | Chamber | Offices |
+| --- | --- | --- |
+| City of Charlotte | City Council | **12** — Mayor + 4 at-large + 7 districts |
+| Mecklenburg County | Board of County Commissioners | **9** — 3 at-large + 6 districts |
+| Mecklenburg County | Elected Officials | **4** — Sheriff, Register of Deeds, Clerk of Superior Court, District Attorney |
+| Mecklenburg County | Soil and Water Conservation District | **3** — elected supervisors only |
+
+**28 offices, 28 people, 0 vacancies.**
+
+⚠ **Two modelling decisions, stated rather than inherited.** The **District Attorney** goes in
+`Elected Officials` beside the Clerk of Superior Court, because both are judicial-branch officers whom
+county voters elect, and the Clerk is already there in Buncombe and Durham. The **Soil and Water**
+supervisors get their **own chamber** rather than being folded into `Elected Officials`, because the
+district is legally "a governmental subdivision of the state of North Carolina, and a public body,
+corporate and politic" — not part of county government — and the chamber name is where that fact can
+live. Both hang off the county polygon `(G4020, 37119)`.
