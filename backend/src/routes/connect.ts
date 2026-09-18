@@ -14,7 +14,7 @@ import {
   saveCompassImportDraft,
   importCompassCalibrations,
   getLocationConsent,
-  getLegalNameDraft,
+  getEnrollmentDrafts,
   type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -92,19 +92,25 @@ export async function sealAddressIfEnabled(userId: string, rawAddress: string): 
 }
 
 /**
- * Seal-first name routing for POST /complete. Mirrors resolveSignupLegalName
- * (routes/auth.ts): when the vault is enabled, read the draft legal name the
- * member entered during enrollment and seal it into id_vault BEFORE calling
- * complete_connect_flow (fail-safe ordering — spec §4.4). Returns the
- * p_seal_name flag the RPC uses to NULL out connected_profiles.legal_name
- * instead of writing the plaintext draft (CA_0120).
+ * Seal-first draft routing for POST /complete. Mirrors resolveSignupLegalName
+ * (routes/auth.ts): when the vault is enabled, read the enrollment drafts and
+ * seal the real name AND raw address into id_vault BEFORE calling
+ * complete_connect_flow (fail-safe ordering — spec §4.4). The seal is FATAL: if
+ * it throws, /complete returns 500, the RPC never runs, and the drafts survive
+ * for a clean retry — a draft is never nulled before it is safely sealed.
+ * complete_connect_flow then nulls both drafts atomically. Returns the p_seal_name
+ * flag the RPC uses to NULL connected_profiles.legal_name instead of writing the
+ * plaintext draft (CA_0120).
  */
 export async function resolveCompleteConnectSeal(userId: string): Promise<boolean> {
   const sealName = isVaultEnabled();
   if (sealName) {
-    const draftName = await getLegalNameDraft(userId);
-    if (draftName) {
-      await upsertSeal(userId, { name: draftName });
+    const { legalName, homeAddress } = await getEnrollmentDrafts(userId);
+    const parts: { name?: string; address?: string } = {};
+    if (legalName) parts.name = legalName;
+    if (homeAddress) parts.address = homeAddress;
+    if (Object.keys(parts).length > 0) {
+      await upsertSeal(userId, parts);
     }
   }
   return sealName;
@@ -324,10 +330,12 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
  * Response intentionally omits tolerance_rating and legal_name — privacy
  * enforcement at the serialization layer (not just RLS).
  *
- * Seal-on-write (spec §4.4, CA_0120): when the vault is enabled, the draft
- * legal name is sealed into id_vault BEFORE the RPC runs, and p_seal_name=true
- * tells complete_connect_flow to NULL connected_profiles.legal_name instead of
- * writing the plaintext draft. When the vault is disabled, behaviour is
+ * Seal-on-write (spec §4.4, CA_0120/CA_0121): when the vault is enabled, the
+ * draft legal name AND raw address are sealed into id_vault BEFORE the RPC
+ * runs, and p_seal_name=true tells complete_connect_flow to NULL
+ * connected_profiles.legal_name instead of writing the plaintext draft.
+ * complete_connect_flow then nulls both drafts (legal_name_draft,
+ * home_address_draft) after use. When the vault is disabled, behaviour is
  * unchanged — p_seal_name defaults to false and the draft is written as today.
  */
 router.post('/complete', requireAuth, async (req: Request, res: Response): Promise<void> => {
