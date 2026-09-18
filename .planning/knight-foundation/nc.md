@@ -651,3 +651,126 @@ Not started. Charlotte's skyline is the obvious composition and therefore the fi
 **adjacency** — read what the North Carolina state banner uses before composing, and check the
 Asheville and Durham keys, since both are already in the essentials repo. Banners live in the
 **essentials** repo (`buildingImages.js`), not in this one.
+
+---
+
+# NC-3 STAGE 5a — HEADSHOTS APPLIED 2026-09-17. 27 of 28, verified from the CDN.
+
+Approved on one contact sheet (`https://claude.ai/code/artifact/968660c0-6cb2-47d3-ba5e-c75ad4905f25`),
+imported with `scripts/import-headshot-candidates.py`. **No migration** — the pipeline writes the
+storage object, the `politician_images` row, `photo_custom_url` and `photo_origin_url` directly.
+
+| Cohort | Seats | Portraits | Source |
+| --- | --- | --- | --- |
+| Charlotte — Mayor and City Council | 12 | **12** | `charlottenc.gov`, 1000×1000 originals |
+| Mecklenburg — Board of County Commissioners | 9 | **9** | `bocc.mecknc.gov` / `mecknc.widen.net` DAM, 1400–1640 × 2048 |
+| Mecklenburg — Elected Officials | 4 | **3** | `mecksheriff.com`, `deeds.mecknc.gov`, `charmeckda.com` |
+| Mecklenburg — Soil and Water | 3 | **3** | Ballotpedia, candidate-submitted |
+
+The record of what was approved is `backend/data/seed-charlotte-2026/headshot-candidates.json`; the
+outside-in verifier is `backend/scripts/verify-charlotte-mecklenburg-photos.mjs`.
+
+## ✅ Verified from OUTSIDE, with both controls
+
+`verify-charlotte-mecklenburg-photos.mjs` reads `photo_custom_url` — the field the render path
+coalesces first, not the `politician_images` row — then re-fetches each object from the CDN and
+**decodes** it.
+
+- **27 decode**, 24 at 600×750 and 3 at native size (Merriweather 387×484, Bleiweis 495×619,
+  Carter 240×300). Nothing was enlarged.
+- **Negative control:** a bogus bucket key is refused (HTTP 400). It was also proved against a
+  **94 KB HTML 200** — `bocc.mecknc.gov`'s own home page does not decode, and a real 109 KB portrait
+  does. A control that only ever sees an 88-byte error body has not shown that the decoder reads
+  magic numbers.
+- **Count control:** the run asserts it read **28 seats and tested 27 objects**. This is the MN-6
+  lesson — a verifier can report "0 broken" while testing none of the rows just written, so the
+  count is the tell.
+- **End to end:** `GET /api/essentials/address-search?address=600 E 4th St, Charlotte, NC 28202` on
+  live prod returns 61 politicians, **17 of them NC-3 seats, 16 carrying our CDN portrait** and one
+  deliberately blank. That is the whole point of the wave: a voter at City Hall now sees faces.
+
+## 🔴 The sourcing lead was real, but only the MAYOR carries the download offer
+
+The resume note said to check all 12 council pages for the mayor's explicit
+"Download … Headshot (JPG, 247KB)" link. **Measured: 1 of 12 has it.** The other 11 pages offer only
+a district-map PDF. The 11 are still official `.gov` portraits and ship as press use — but the
+"explicit download offer" is a property of the mayor's page alone, not of the city's CMS.
+
+🟢 **`charlottenc.gov` is NOT 403 to `node` fetch.** The resume note said to use Playwright. All 12
+pages and all 12 image assets returned 200 to a plain `fetch` with a browser UA, byte-count-matching
+what Playwright saw. **`mecksheriff.com` IS 403** — that one needed Playwright, and its bytes were
+written straight into `.tmp-headshot-cache` under `sha1(url)`, which the importer reads before it
+ever tries the network. **Pre-seeding that cache is the supported way past a WAF**, and it also
+guarantees the bytes that shipped are the bytes that were approved.
+
+✅ **The prelive trap and the departed-member trap were both closed by reading all 12 pages.** Eight
+roster links point at `charlottenc.prelive.opencities.com`; rewritten to `www.charlottenc.gov` on the
+same path, all 200. Every page's own `<title>` and `<h1>` names the person whose portrait it carries.
+Four pages use a fuller name form than the roster — `James "Smuggie" Mitchell Jr.`,
+`Dr. Victoria Watlington`, `Reneé Perkins Johnson`, `Ed Driggs` — which is the name check passing,
+not failing.
+
+## 🔴 THE POSITIONAL-FILENAME RULE FIRED ONCE, AND A SECOND AUTHORITY SETTLED IT
+
+The Sheriff's only in-house portrait is `Sheriff1024.jpg` — the filename names the **office**, and the
+page carries no alt text. That is the off-by-one class exactly. It was resolved by comparing it with
+Ballotpedia's McFadden photo, whose alt text **names him**: same man. Both were then shown to the
+operator with the frame flagged `VERIFY FACE`.
+
+⚠ **The county's group photos are not a fallback.** `Executive-Staff.png` is a single flat 1919×1439
+image of the whole command staff, and the BOCC home page serves `-hor` crops at 328×184 — landscape,
+useless for a 4:5 portrait. The per-member pages carry the real portraits; the index page does not.
+
+## 🔴 Elisa Chinn-Gary ships BLANK, and that is the correct answer
+
+The Clerk of Superior Court has **no usable portrait at any acceptable source**:
+`nccourts.gov/judicial-directory/elisa-chinn-gary` carries no image, Ballotpedia holds only its
+silhouette placeholder, and the only photographs found are on Facebook and LinkedIn, which this
+programme does not use. A blank keeps her in the headshot backlog, where she belongs; a link would
+have counted as coverage.
+
+⚠ **`mecklenburgcountycourt.org` is NOT the Clerk's office.** It ranks well and looks official, and
+its page set is a jail roster, court dockets and an FAQ — a third-party records site. No image was
+taken from it. The Clerk's authority is `nccourts.gov`.
+
+## The three Soil and Water portraits are a different class, and were approved as such
+
+Ballotpedia candidate-submitted snapshots, not studio portraits: Bleiweis at an event with a
+stranger's shoulder at the frame edge, Carter outdoors, Mullen a soft indoor photo. Each Ballotpedia
+page names **Mecklenburg** and the **Soil and Water** board, so the identification is sound, and the
+operator approved them on the sheet after the quality was stated. Carter's source is 240×320, so the
+2.50× upscale was refused and she ships at native size.
+
+## ▶ Stage 5b — THE BANNER, and the constraint nobody has hit before
+
+🔴🔴 **NORTH CAROLINA'S STATE BANNER *IS* THE CHARLOTTE UPTOWN SKYLINE** (`states/NC.jpg`, Bruce
+Emmerling, CC BY-SA 4.0). Charlotte is the first city in this programme that is **already the subject
+of its own state's panorama** while needing a city banner of its own. Two precedents point opposite
+ways and both shipped:
+
+- **Austin → TX:** the state took a different subject (the Chisos Mountains) and the skyline moved
+  down to `cities/austin.jpg` byte-for-byte.
+- **Nevada:** the state kept the Las Vegas Strip and the city banner is deliberately the Welcome sign
+  — one city twice on one page, accepted.
+
+Measured while establishing this, and it changes the adjacency answer:
+
+- `states/NC.jpg` is 1700×540, mean luminance 127.0, not greyscale (channel spread 25.8).
+- **In the 6:1 desktop band (rows 128–411) the tower CROWNS ARE CUT OFF.** The band shows a parking
+  deck, mid-rise offices and trees at close, ground-level range. The state banner does **not**
+  display a recognisable Charlotte skyline where a desktop visitor looks.
+- So an **elevated or distant Charlotte frame with the crowns visible** is compositionally different
+  from the state band — and also different from Asheville (elevated, mountains dominate) and from
+  Durham (wide low-rise with foliage). **Charlotte needs the FOURTH distinct NC composition**; the
+  first three are spent.
+
+Facts already established for whichever route is chosen:
+
+- `cities/charlotte.jpg` **does not exist** (HTTP 400). A new key needs no `-v2`; the stale-CDN rule
+  applies to overwrites. `states/NC-v2.jpg` does not exist either.
+- Charlotte's **12 city offices carry `representing_city = 'Charlotte'`**, so a city banner surfaces
+  from an ordinary address search. Mecklenburg's 16 county offices leave it NULL, so a county banner
+  would resolve only from `browse_label` — the same shape as Buncombe and Durham.
+- Banners live in `C:\Transparent Motivations\essentials`, branch `main`, registry
+  `src/lib/buildingImages.js`. **Certify in the 6:1 band, never the full frame.** Real licensed
+  photos only — the `banner-design` skill is the wrong tool (D-09).
