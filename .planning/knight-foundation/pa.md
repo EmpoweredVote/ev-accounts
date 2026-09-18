@@ -306,7 +306,149 @@ scanner cannot see an expiry date it was never told to look for. Here there is n
 
 ---
 
-## ▶ Next: stage 3 — Philadelphia and State College
+# PA-3 — stage 3 APPLIED 2026-09-18. 26 offices, 26 seated, 0 vacancies.
+
+`X0058` (10 council-district polygons), `CC_0121` structure, `CC_0122` occupancy.
+
+| | Philadelphia | State College |
+| --- | --- | --- |
+| Government | `City of Philadelphia, Pennsylvania, US`, keyed on TIGER place **4260000** | `Borough of State College, Pennsylvania, US`, place **4273808** |
+| Chambers | Philadelphia City Council (17) · Office of the Mayor | State College Borough Council (7) · Office of the Mayor |
+| Offices | **18** — Mayor + 10 district + **7 unnumbered at-large** | **8** — Mayor + **7 at-large**, no ward layer |
+| Districts | 10 on `X0058` + 1 citywide `G4110` | 1 citywide `G4110` |
+
+**The two are not made uniform.** Philadelphia's ten districts tile the city (142.434 sq mi of
+district against a 142.422 sq mi place, 99.968% covered); State College's charter says plainly
+*"there is a seven-member Council, elected at large"*, so **no ward layer exists and none was
+invented** — the Tallahassee and Boulder shape.
+
+▶ **Philadelphia's row officers are NOT in this wave.** District Attorney, City Controller,
+Sheriff, Register of Wills and the three City Commissioners are the county officers a consolidated
+city keeps, and they belong to stage 4. Its elected **judges** belong to the judges wave, as North
+Carolina's do.
+
+### Measured from outside, after the apply
+
+- `politicians` **87,468 → 87,494**, exactly +26. All 26 new; no reuse was available.
+- **26 offices, 26 seated** counting `och.politician_id`. **`offices_missing_terms` unmoved at
+  823 / 655.**
+- **Idempotent**: re-running both writes `INSERT 0 0` to every `essentials.*` table.
+- **Per-district control: 10 of 10** council polygons return exactly one district office and
+  exactly one holder; the citywide district carries exactly 8 (Mayor + 7 at-large), all seated.
+
+### 🔴🔴 FIVE COUNCIL-DISTRICT LAYERS, TEN FEATURES EACH, AND A CITY-WIDE PROBE CANNOT SEPARATE THEM
+
+Philadelphia publishes `Council_Districts_1990`, `_2000`, `_2016`, `_2024` and
+`council_districts_2024_2`. **Every one has ten features numbered 1-10.** Duluth's trap, one city
+larger.
+
+The first attempt to settle it probed the **54 Free Library branches** — the city publishes their
+addresses *and* their coordinates — against the city's own address service. All 54 agreed with the
+2024 layer. ⚠ **And all 54 agreed with the superseded 2016 layer too**, though **0 of 10** districts
+are byte-identical between the two plans. The maps differ; they do not differ where a library sits.
+
+What settles it is the population the 2022 remap actually moved. The city's address service returns
+**both** `council_district_2016` and `council_district_2024` for any address, so the changed rows can
+be *found* rather than guessed: sampling the city's own 954,000-row address-point layer, **6 of 150**
+probes changed district, and on exactly those the loaded layer scores **6/6** and the 2016 layer
+**0/6**. `scripts/verify-phl-council-districts.mjs` carries the whole test, and **fails** if the
+changed set is empty.
+
+⚠ `council_districts_2024_2` is a copy — identical feature count and identical total area. Not
+loaded, and not evidence.
+
+### 🔴🔴 THE ROSTER PAGE PUBLISHES THE PAST IN THE SAME FORMAT AS THE PRESENT
+
+`phlcouncil.com/council-members/` carries a **`Past Council Members`** section rendering former
+members exactly like sitting ones: `Councilmember Jannie Blackwell | District 3` (left 2020),
+`Council President Darrell L. Clarke | District 5` (left 2024), and seven former at-large members
+including Helen Gym. A sweep of the whole page reads **14 district members and 0 at-large**, and
+nothing about those rows looks wrong.
+
+▶ The archive heading is **load-bearing**: the parser cuts at it and **throws** if it is ever
+missing, rather than guessing where the past begins. The self-test plants a past member and requires
+it to be excluded.
+
+### 🔴 THREE DETECTORS WERE BROKEN AND EACH WAS CAUGHT BY ITS OWN COUNT
+
+1. **16 of 17 members change-checked.** The member-page matcher dropped `Brian J. O'Neill`, whose
+   page is `/brianoneill/`: it treated every one-letter token as an initial, and the particle in
+   `O'Neill` is one letter once the apostrophe is stripped. **An initial is a token written `J.`,
+   not merely a short one.** An unmatched member is now a finding, not a silent skip.
+2. **Departure language fired on 17 of 17 pages** — every one on the same words, because the site
+   navigation carries `Vacant Property Review Committee`. **A uniform answer is a broken detector.**
+   With that one committee excluded by name the count falls to **4**, all read and cleared, and two
+   of them turned out to be the arrival evidence used below.
+3. **The borough parser was off by one.** State College writes `Members Ezra Nanes , Mayor Evan
+   Myers, Council President …` — each person's title *follows* them — so a naive split produced the
+   mayor `Members Ezra Nanes` and the council president `Mayor Evan Myers`. Two voter-facing names
+   with a heading welded to the front, both of which would have looked like ordinary data. The
+   self-test now pins the exact strings.
+
+### 🔴 THE BOROUGH PUBLISHES NO PER-MEMBER PAGE, SO THE CHANGE-CHECK HAD TO BE A DIFFERENT INSTRUMENT
+
+MN-2's rule is that a roster list page is not a change-check; the member's own page is. **State
+College has no member pages at all** — the run reports `0/0 tested` and says so loudly, because a
+0/0 is not a pass. What was used instead:
+
+- **Centre County's certified 2025 municipal result** — the only election since: the three seats up
+  were won by the three sitting incumbents (Balachandran, Hayes, Krishnankutty), unopposed.
+- **A targeted search for a mid-term change**, which found one: 🔴 **Josh Portney resigned in
+  January 2026** and council **appointed Susan Venegoni on Monday 2026-02-09** to serve the
+  remainder of his term to 2027-12-31. She is on the roster page with nothing to mark her as an
+  appointee. ▶ **The roster page was right and silent; the change was only visible from outside.**
+
+### Terms: four documented arrivals, twenty-two honest blanks
+
+| Person | Start | Precision | How | Why |
+| --- | --- | --- | --- | --- |
+| Cherelle L. Parker | 2024-01-01 | day | elected | took the oath privately on Monday 2024-01-01; the public inauguration on 01-02 is a ceremony |
+| Michael Driscoll | 2022-06-10 | day | elected | his own page: *"was sworn in as a member of Philadelphia City Council on June 10, 2022"* after a May 2022 special |
+| Anthony Phillips | 2022-01-01 | year | elected | a 2022 special to complete Parker's term; the page gives the year and no date |
+| Susan Venegoni | 2026-02-01 | month | appointed | appointed 2026-02-09; her oath is reported only as *"as early as Tuesday"*, so the day is not known |
+
+**The other 22 are open-ended at `unknown`.** Writing 2024-01-01 for everyone elected in 2023 would
+be positively wrong for the incumbents among them, whose occupancy is continuous from an earlier
+swearing-in, and for the two who arrived at 2022 specials. ▶ **Owed, if it is ever wanted:** a day
+for Venegoni from the borough's minutes, and per-member oath dates from each body's own record.
+
+### Gates, each watched failing first
+
+| Control | Planted defect | Gate that fired |
+| --- | --- | --- |
+| 1 | the `X0058` polygons deleted | `expected 10 X0058 council-district boundaries, found 0` |
+| 2 | a district's **polygon** deleted, the district kept | `1 office(s) sit on a district with no polygon` |
+| 3 | one district seat retitled at-large, total still 18 | `expected 7 Philadelphia at-large offices` |
+| 4 | `pa3_terms` emptied | `expected 26 terms, got 0` |
+| 5 | one person seated in two seats | `1 person(s) hold two city seats` |
+
+⚠ **Controls 2 and 3 first fired on the WRONG GATE** — adding an office tripped the district-count
+and office-count gates before reaching the gate under test. They were rebuilt to hold every earlier
+count constant, so each now proves the gate it names. The boundary loader's three gates were watched
+failing the same way, including GATE 2 fed the 2016 map and refusing it.
+
+### ✅ End to end, on live production
+
+| Address | Answers |
+| --- | --- |
+| Philadelphia City Hall | Mayor **Cherelle L. Parker**, **District 5 Jeffery Young, Jr.**, and all 7 at-large |
+| 6301 Ridge Ave | **District 4 Curtis Jones, Jr.** — a different district from the same city |
+| State College Municipal Building | Mayor **Ezra Nanes** and all 7 council members |
+| Columbus, Ohio *(negative control)* | no Pennsylvania city seat at all |
+
+`check:reachability` **nothing regressed**, two buckets below baseline.
+
+---
+
+## ▶ Next: stage 4 — Philadelphia's row officers, and Centre County
+
+Philadelphia keeps its separately elected county officers even though the Council is the commission
+(spec §3.2): **District Attorney, City Controller, Sheriff, Register of Wills and three City
+Commissioners** — seven seats, each to be confirmed from the charter rather than inherited from
+another consolidated city. Centre County, State College's parent, is a second and ordinary county
+board to read from its own page. Philadelphia's elected judges remain with the **judges wave**.
+
+### What stage 3 was told to expect, before it ran
 
 ### What stage 2 was told to watch for, before it ran
 
