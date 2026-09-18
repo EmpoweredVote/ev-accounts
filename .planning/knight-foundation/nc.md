@@ -484,3 +484,109 @@ supervisors get their **own chamber** rather than being folded into `Elected Off
 district is legally "a governmental subdivision of the state of North Carolina, and a public body,
 corporate and politic" — not part of county government — and the chamber name is where that fact can
 live. Both hang off the county polygon `(G4020, 37119)`.
+
+---
+
+# NC-3 — APPLIED 2026-09-17. 28 offices, 28 people, 0 vacancies. Stage 3 AND stage 4 closed.
+
+`CC_0117` (structure) + `CC_0118` (occupancy), preceded by
+`scripts/load-charlotte-mecklenburg-boundaries.ts` (X0056, X0057). Charlotte and Mecklenburg County
+went from **nothing** to fully seated and reachable by address.
+
+| Government | Chamber | Offices | Seated |
+| --- | --- | --- | --- |
+| City of Charlotte | Charlotte City Council | 11 | 11 |
+| City of Charlotte | Office of the Mayor | 1 | 1 |
+| Mecklenburg County | Board of County Commissioners | 9 | 9 |
+| Mecklenburg County | Elected Officials | 4 | 4 |
+| Mecklenburg County | Soil and Water Conservation District | 3 | 3 |
+
+## ✅ The probe: 3 answers → 20
+
+Charlotte-Mecklenburg Government Center, 600 E. 4th St. returned **three** answers before this wave
+and returns **twenty** after — 17 of them from NC-3, plus the three federal and state seats that were
+already there. **Exactly one council district (Danté Anderson) and exactly one commissioner district
+(Mark Jerrell)**, which is the assertion that matters; the other 15 are citywide or countywide seats
+and every address in the jurisdiction is meant to get all of them.
+
+✅ **PER-DISTRICT CONTROL: 13 of 13.** An interior point of every council and commissioner district
+resolves to exactly one office and to the holder the roster names — never zero, never two. Accents
+render (`Danté Anderson`, `Reneé Johnson`).
+
+✅ **NEGATIVE CONTROLS, and the answer shrinks correctly as you leave each jurisdiction:**
+
+| Anchor | council dist | citywide | comm dist | countywide | NC-3 answers |
+| --- | --- | --- | --- | --- | --- |
+| Charlotte City Hall | 1 | 5 | 1 | 10 | **17** |
+| Huntersville — in the county, outside the city | 0 | 0 | 1 | 10 | **11** |
+| Gastonia — outside the county | 0 | 0 | 0 | 0 | **0** |
+
+⚠ **The Gastonia row was non-zero on the first attempt and the data was fine.** A `LEFT JOIN` that
+keeps office-less rows counted Gaston County's own boundary as an answer. **The probe was wrong, not
+the seed** — which is why the corrected query counts `office_id`, and why the saved probe file
+carries that warning.
+
+## ✅ 🔴 A THIRD AUTHORITY AGREES, AND IT IS NEITHER OF OUR SOURCES
+
+The Mecklenburg Board of Elections runs its own address lookup at `apps.meckboe.org`, which is
+neither the GIS layers this wave loaded nor the rosters it seated. For **600 E 4TH ST 28202** it
+returns:
+
+> CONGRESSIONAL DISTRICT 12 · NC SENATE DISTRICT 41 · NC HOUSE DISTRICT 102 · JUDICIAL DISTRICT 26 ·
+> SUPERIOR COURT DISTRICT 26E · **BOARD OF COMMISSIONERS DISTRICT 4** · SCHOOL BOARD DIST 2 ·
+> CHARLOTTE · **CITY COUNCIL DISTRICT 1**
+
+**Every district assignment matches.** This is the MN-2 shape of evidence: a body that had no part in
+producing our answer produced the same one.
+
+✅ `check:reachability` — **nothing regressed**, every bucket at or below baseline
+(`BAD_GEOMETRY` 4 of 5, `DEAD_GEOGRAPHY` 17 of 17, `UNREACHABLE` 37 of 38).
+
+## 🔴 Two things that output says about the JUDGES wave
+
+1. **"SUPERIOR COURT DISTRICT 26E" is a THIRD labelling.** The Board of Elections' ballot page says
+   26-C / 26-F / 26-H; the statute search returned 26A / 26B / 26C; the address lookup says 26E.
+   Three sources, three vocabularies, for the same sub-county judicial geography. **Resolve this from
+   G.S. 7A-41 before writing a single judicial office.**
+2. **"SCHOOL BOARD DIST 2" is another elected body the inclusion ruling reaches.** Charlotte-
+   Mecklenburg Schools' board is elected by these voters and production carries no school board
+   office for it. Add it to the same debt as the DA/Soil-and-Water backfill for Buncombe and Durham.
+
+## Gates, and the two that refused their author
+
+**Loader:** four gates pass on live data (count and numbering, roster-vs-layer names, coverage,
+mutual overlap) and **all five controls refuse a wrong input**.
+
+🔴 **The sharpest control had to be rebuilt.** The obvious input — Charlotte's own superseded
+`SOTC_..._2017` layer — answers **499 "Token Required"** and cannot be fetched. It was also the wrong
+*shape* of control: one that depends on a third party staying public can start passing for the wrong
+reason the day that service changes. The replacement relabels the live layer with the **real
+2023-2025 council**. It returns seven features numbered 1-7, so the count gate passes it, and exactly
+**3 of 7 seats expose it** — the three that turned over in December 2025.
+
+🔴 **THE PRECISION GATE REFUSED ITS OWN AUTHOR.** `CC_0118` was written asserting 24 day-precision
+terms. The dry run failed: `expected 24 day-precision terms, got 23`. Barbara Bleiweis ships at
+`year` and had been counted as a day. The gate now asserts **all three buckets — 23 day, 4 year,
+1 month** — rather than one. A gate that checks a single bucket can be satisfied by a compensating
+error in another.
+
+## Applied counts, measured from outside
+
+- `governments` +2, `chambers` +5, `districts` +14 (13 new district rows plus the Charlotte citywide
+  row; the Mecklenburg county row was **reused**, not duplicated)
+- `geofence_boundaries` +13 (X0056 ×7, X0057 ×6)
+- `politicians` +28, `office_terms` +28, **28 seated counting `och.politician_id`**
+- Buncombe (10) and Durham (8) office counts **unmoved**, asserted by the gate
+- State House District 119 still holds **exactly 1** office, asserted by the gate — it shares the
+  geo_id `37119` with Mecklenburg County and only the MTFCC separates them
+
+## ▶ What NC-3 still owes
+
+1. **Stage 5: headshots and a banner.** Not started. The city publishes official headshots with an
+   explicit download link, which is the strongest licence signal short of a written grant — check
+   every member page for it before sourcing anywhere else. Charlotte's skyline is the obvious banner
+   and therefore the first thing to test against adjacency.
+2. **Day precision for four county officers**, if it is ever wanted — a lookup in the county's and
+   the courts' own records.
+3. The **judges wave**, carrying the Buncombe/Durham DA and Soil-and-Water backfill, the school
+   board question, and the 26-C/26A/26E labelling conflict.
