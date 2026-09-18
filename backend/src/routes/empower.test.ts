@@ -63,3 +63,54 @@ describe('POST /api/empower/confirm — NO_LEGAL_NAME mapping', () => {
     expect(res.body.empowered).toBe(true);
   });
 });
+
+describe('legal_name trimming at the route boundary', () => {
+  it('POST /confirm trims a padded legal_name before it reaches the stored public name', async () => {
+    mockConfirmEmpowerment.mockResolvedValue({ empowered_profile: { id: 'ep-1' } });
+
+    await request(app)
+      .post('/api/empower/confirm')
+      .send({ ...fullConsent, legal_name: '  John Doe  ' });
+
+    // The 3rd argument becomes p_legal_name for execute_empowerment — the value
+    // stored in the PUBLIC empower.empowered_profiles.legal_name. It must be trimmed.
+    expect(mockConfirmEmpowerment).toHaveBeenCalledWith(
+      'user-1',
+      ['legal_name_public', 'compass_stances_public', 'platform_terms'],
+      'John Doe'
+    );
+  });
+
+  it('POST /preflight trims a padded legal_name so the generated slug has no leading hyphen', async () => {
+    mockRunPreflight.mockResolvedValue({
+      eligible: true,
+      summary: {
+        legal_name: 'John Doe',
+        compass_completeness: { required: 5, answered: 5, percent: 100, complete: true },
+        slug_preview: 'john-doe-a3b4',
+      },
+    });
+
+    await request(app).post('/api/empower/preflight').send({ legal_name: '  John Doe  ' });
+
+    // runPreflight feeds generateSlug; only a trimmed name keeps the slug from
+    // starting with a hyphen (generateSlug('  John Doe  ') => '-john-doe-xxxx').
+    expect(mockRunPreflight).toHaveBeenCalledWith('user-1', 'John Doe');
+  });
+
+  it('POST /confirm treats a whitespace-only legal_name as absent (keeps the NO_LEGAL_NAME guard path)', async () => {
+    mockConfirmEmpowerment.mockResolvedValue({ empowered_profile: { id: 'ep-1' } });
+
+    await request(app)
+      .post('/api/empower/confirm')
+      .send({ ...fullConsent, legal_name: '   ' });
+
+    // A blank field resolves to undefined so confirmEmpowerment falls back to the
+    // DB legal_name (and its NO_LEGAL_NAME guard) — never stores a whitespace name.
+    expect(mockConfirmEmpowerment).toHaveBeenCalledWith(
+      'user-1',
+      ['legal_name_public', 'compass_stances_public', 'platform_terms'],
+      undefined
+    );
+  });
+});

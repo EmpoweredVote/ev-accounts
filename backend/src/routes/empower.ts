@@ -63,8 +63,12 @@ router.post(
 
     try {
       const rawName = req.body?.legal_name;
+      // Trim once at the boundary: the confirmed name seeds both the stored public
+      // name and the candidate_page_slug, so padding must not leak downstream
+      // (a leading/trailing space becomes a leading-hyphen slug). A whitespace-only
+      // value resolves to undefined and falls through to the NO_LEGAL_NAME guard.
       const confirmedName =
-        typeof rawName === 'string' && rawName.trim().length > 0 ? rawName : undefined;
+        typeof rawName === 'string' && rawName.trim().length > 0 ? rawName.trim() : undefined;
       const result = await runPreflight(authReq.userId, confirmedName);
       res.status(200).json(result);
     } catch (err) {
@@ -105,11 +109,19 @@ router.post(
       return;
     }
 
+    // Trim once at the boundary: the confirmed name is stored verbatim in the
+    // PUBLIC empower.empowered_profiles.legal_name and seeds the candidate_page_slug.
+    // A whitespace-only value resolves to undefined so confirmEmpowerment falls back
+    // to the DB legal_name and its NO_LEGAL_NAME guard, rather than storing a blank.
+    const rawName = parsed.data.legal_name;
+    const confirmedName =
+      typeof rawName === 'string' && rawName.trim().length > 0 ? rawName.trim() : undefined;
+
     try {
       const result = await confirmEmpowerment(
         authReq.userId,
         ['legal_name_public', 'compass_stances_public', 'platform_terms'],
-        parsed.data.legal_name
+        confirmedName
       );
       res.status(201).json({ empowered: true, profile: result.empowered_profile });
     } catch (err) {
