@@ -440,7 +440,125 @@ failing the same way, including GATE 2 fed the 2016 map and refusing it.
 
 ---
 
-## ▶ Next: stage 4 — Philadelphia's row officers, and Centre County
+# PA-4 — stage 4 APPLIED 2026-09-18. 20 offices, 20 seated, 0 vacancies.
+
+`CC_0123` structure, `CC_0124` occupancy. **No boundary load and no new district** — both countywide
+polygons were already in production.
+
+| | Philadelphia | Centre County |
+| --- | --- | --- |
+| Government | the **existing city row** — city and county are one | **new**: `Centre County, Pennsylvania, US`, `42027` |
+| Chambers | +1 `City and County Elected Officials` | `Board of County Commissioners` + `County Elected Officials` |
+| Offices | **7 row offices** | **13** — 3 commissioners + 10 officers |
+| District | countywide `42101` / G4020 | countywide `42027` / G4020 |
+
+### 🔴 NEITHER HALF MATCHES A TEMPLATE, AND THEY DO NOT MATCH EACH OTHER
+
+**Philadelphia has no county commission, because the City Council is it.** What a consolidated city
+keeps is the separately elected row offices: **District Attorney** (Larry Krasner), **City
+Controller** (Christy Brady), **Sheriff** (Rochelle Bilal), **Register of Wills** (John P. Sabatina)
+and **three City Commissioners** (Omar Sabir, Lisa M. Deeley, Seth Bluestein). They hang on the same
+government row PA-3 created — Columbus and Macon-Bibb again, and no second government is invented
+for a county that is the city.
+
+**Centre County is an ordinary county and still matches no template**, which is MN-4's rule proved a
+third time. Read off the county's own index:
+
+- a **Controller**, not three Auditors — Pennsylvania counties elect one or the other;
+- a combined **Prothonotary and Clerk of Courts**, and a combined **Register of Wills and Clerk of
+  the Orphans' Court** — two offices where a template would write four;
+- 🔴 **TWO JURY COMMISSIONERS.** Act 2013-11 let Pennsylvania counties abolish the office and many
+  did. **Centre did not**, and nothing but the county's own page would have said so. The post-verify
+  gate asserts the count, so a later "tidy" against a state-wide assumption fails loudly.
+
+### 🔴 ELECTED JUDGES ARE IN SCOPE AND ARE STILL NOT HERE
+
+Centre County's page also lists Court of Common Pleas judges and **six Magisterial District Judges**;
+Philadelphia elects its judiciary too. Under the NC-3 inclusion ruling they belong in the data.
+Deferring them to the **judges wave** that North Carolina already owes is a scheduling decision,
+recorded — not a ruling that they do not count.
+
+### Measured from outside, after the apply
+
+- `politicians` **87,494 → 87,514**, exactly +20. Pennsylvania offices **283 → 303**.
+- **20 seated** counting `och.politician_id`. `offices_missing_terms` **unmoved at 823 / 655**.
+- **Pennsylvania still has exactly 67 county districts** — the gate asserts it, because this wave
+  should create none.
+- **Idempotent**: re-running writes `INSERT 0 0` to every `essentials.*` table.
+
+Pennsylvania now stands at four governments:
+
+| Government | Chambers | Offices | Seated |
+| --- | --- | --- | --- |
+| State of Pennsylvania | 6 | 257 | 257 |
+| City of Philadelphia | 3 | 25 | 25 |
+| Centre County | 2 | 13 | 13 |
+| Borough of State College | 2 | 8 | 8 |
+
+### 🟢 THE DUPLICATE-NAME GUARD STAYED ARMED FOR ALL 20, AND THAT WAS MEASURED
+
+The exact `(first_name, last_name)` pair matched **nothing**. The surname-only pass over every
+production row with a Pennsylvania connection returned four — Hope P. Miller against **Brett R.
+Miller** and **Nick Miller**, Shelley Thompson against **Glenn Thompson**, Joseph L. Davidson against
+**Nathan Davidson** — and all four are different people. Unlike PA-2 and PA-3, nothing needed the
+guard lifted. ▶ The pass is still worth running when it finds nothing: that *is* the result.
+
+### Terms
+
+**All 20 are open-ended at `unknown`.** Neither publisher gives an arrival date: the Centre County
+index is a list of names, and the Philadelphia row offices publish biographies with no swearing-in
+date — both were searched before this was written, not assumed. ▶ Owed if wanted: the terms are four
+years and each county's election record would date them.
+
+### Gates, each watched failing first
+
+| Control | Planted defect | Gate that fired |
+| --- | --- | --- |
+| 1 | one Jury Commissioner retitled, officer total held at 10 | `expected 2 Centre County jury commissioners` |
+| 2 | a 68th Pennsylvania county district inserted | `Pennsylvania should still have 67 county districts` |
+| 3 | `pa4_terms` emptied | `expected 20 terms, got 0` |
+| 4 | two terms pointed at one person | `1 person(s) hold more than one seat` |
+
+⚠ **Control 1 first aborted for the wrong reason**: it picked its victim with `min(o2.id)`, and
+`min()` has no `uuid` overload, so the run died before reaching any gate. Rewritten as
+`ORDER BY o2.id LIMIT 1`.
+
+🔴🔴 **AND THEN THREE CONTROLS "TERMINATED" AGAINST A DATABASE THEY NEVER REACHED.** The shell's
+working directory resets between commands, so a later `. ./.env` ran in a directory with no `.env`,
+`DATABASE_URL` silently became empty, and `psql` sat waiting on a local server that does not exist
+until the timeout killed it. **A timeout looks exactly like a slow query, and an empty connection
+string looks exactly like a hung database** — the tell was that `echo "${DATABASE_URL:+yes}"`
+printed nothing. All three were re-run from the right directory and fired correctly. ▶ **Source the
+environment in the same command that uses it.**
+
+### ✅ End to end, on live production
+
+| Address | Answers |
+| --- | --- |
+| Philadelphia City Hall | all **7 row officers** — 3 City Commissioners, Sheriff, Register of Wills, City Controller, District Attorney |
+| State College Municipal Building | all **13 Centre County** offices, including both Jury Commissioners |
+| Bellefonte — in Centre County, outside the borough | the **13 county offices and no borough council seat**, which is the correct shrink |
+| Pittsburgh — neither county | **none of either** |
+
+⚠ A first read of that Bellefonte row said it also returned a Philadelphia office. It did not: the
+**test's own regex** matched `Register of Wills` inside Centre County's *"Register of Wills and Clerk
+of the Orphans' Court"*. The exact-title count is 0. A substring match across two jurisdictions
+invents a leak that is not there — the `bail`/`BAILEY` trap wearing a different hat.
+
+`check:reachability` **nothing regressed**, two buckets below baseline.
+
+---
+
+## ▶ What Pennsylvania still owes
+
+1. **Stage 5** — headshots and a banner for both jurisdictions, and per the GA-6 rule the
+   **legislature's 253 portraits count inside stage 5, not beside it**. Read each chamber's photo
+   policy BEFORE building a harvester: the Minnesota House forbade exactly this use.
+2. **The judges wave** — Philadelphia's judiciary and Centre County's six Magisterial District
+   Judges, alongside North Carolina's.
+3. **Day precision** for the 42 Pennsylvania terms written at `unknown`, if it is ever wanted.
+
+### What stage 4 was told to expect, before it ran
 
 Philadelphia keeps its separately elected county officers even though the Council is the commission
 (spec §3.2): **District Attorney, City Controller, Sheriff, Register of Wills and three City
