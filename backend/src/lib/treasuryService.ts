@@ -564,6 +564,49 @@ export async function getCities(mode: DatasetsMode = 'full'): Promise<TreasuryCi
 }
 
 /**
+ * Names an entity used to be published under, for Treasury Tracker's
+ * `?entity=` deep links.
+ *
+ * WHY: a state publisher renaming a city forks or renames the TT entity, and
+ * every link ever shared to the old slug dies. The MN OSA renamed Birchwood to
+ * Birchwood Village between its FY2020 and FY2021 filings; TT merged the two
+ * entities (TT PR #185) and `birchwood-mn` stopped resolving.
+ *
+ * ⚠⚠ RETURNS NAMES, NEVER SLUGS. The slug format (`<name-hyphenated>-<state>`)
+ * is owned by TT's `toSlug`, and a second implementation here would not throw
+ * when the two drift — it would silently stop matching, so aliases would look
+ * like missing data rather than a bug. This endpoint states what a publisher
+ * called a place; TT decides what that slugs to.
+ *
+ * CONTRACT: rows are NOT filtered against /cities' budget-bearing rule. An
+ * alias naming an entity that /cities omits is handled by the consumer, which
+ * treats a target it cannot find as not-found rather than inventing one.
+ */
+export interface TreasuryEntityAlias {
+  aliasName: string;
+  state: string;
+  canonicalName: string;
+}
+
+export async function getEntityAliases(): Promise<TreasuryEntityAlias[]> {
+  const { rows } = await pool.query<{
+    alias_name: string;
+    state: string;
+    canonical_name: string;
+  }>(
+    `SELECT a.alias_name, a.state, m.name AS canonical_name
+       FROM treasury.municipality_aliases a
+       JOIN treasury.municipalities m ON m.id = a.municipality_id
+      ORDER BY a.alias_name`
+  );
+  return rows.map((r) => ({
+    aliasName: r.alias_name,
+    state: r.state,
+    canonicalName: r.canonical_name,
+  }));
+}
+
+/**
  * Fetch a single city by UUID. Returns null if not found OR if the municipality
  * has no associated budgets.
  *
