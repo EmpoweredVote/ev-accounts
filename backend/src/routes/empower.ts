@@ -123,6 +123,14 @@ router.post(
         return;
       }
 
+      if (errMessage.includes('NO_LEGAL_NAME') || errCode === 'NO_LEGAL_NAME') {
+        res.status(422).json({
+          code: 'NO_LEGAL_NAME',
+          message: 'A legal name is required to publish an Empowered profile.',
+        });
+        return;
+      }
+
       console.error('[POST /empower/confirm] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Empowerment failed' });
     }
