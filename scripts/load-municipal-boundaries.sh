@@ -97,9 +97,25 @@ if [[ "$DB_URL" == *":6543"* ]]; then
   exit 1
 fi
 
-for tool in ogr2ogr psql curl unzip; do
+for tool in ogr2ogr ogrinfo psql curl unzip; do
   command -v "$tool" >/dev/null 2>&1 || { echo "ERROR: $tool not found." >&2; exit 1; }
 done
+
+# GDAL's data files. The Windows GDAL SDK sets these in GDALShell.bat, which a
+# plain shell never runs, so -t_srs dies with "PROJ: Cannot find proj.db" —
+# AFTER the downloads and AFTER --dry-run has already reported success. Fill in
+# only what is unset, only from a directory that actually exists. The exported
+# value must be a NATIVE path: Windows GDAL cannot read an MSYS /c/... string.
+if [[ -z "${PROJ_LIB:-}${PROJ_DATA:-}" ]]; then
+  for d in "C:/Program Files/GDAL/projlib" /usr/share/proj /usr/local/share/proj; do
+    if [[ -f "${d}/proj.db" ]]; then export PROJ_LIB="$d" PROJ_DATA="$d"; break; fi
+  done
+fi
+if [[ -z "${GDAL_DATA:-}" ]]; then
+  for d in "C:/Program Files/GDAL/gdal-data" /usr/share/gdal /usr/local/share/gdal; do
+    if [[ -d "$d" ]]; then export GDAL_DATA="$d"; break; fi
+  done
+fi
 
 # Mask the credential, keep the host. See the header note.
 mask_url() { printf '%s' "$1" | sed -E 's#(//[^:]+):[^@]*@#\1:****@#'; }
@@ -190,11 +206,14 @@ for shp in "${SHAPEFILES[@]}"; do
   # -t_srs: TIGER ships NAD83; the table is 4326 throughout.
   # -nlt GEOMETRY: island townships arrive as MULTIPOLYGON, mainland as POLYGON,
   #                and the target column holds both already.
+  # -sql, NOT -select: GDAL refuses "-select with -append" outright
+  # ("if -append is specified, -select cannot be used"). The layer name of a
+  # shapefile is its basename, so the column list has to go through -sql.
   ogr2ogr -f PostgreSQL "PG:${DB_URL}" "$shp" \
     -nln "${STAGING}" -append \
     -t_srs EPSG:4326 -nlt GEOMETRY \
     -lco GEOMETRY_NAME=geom -lco FID= \
-    -select GEOID,NAMELSAD,MTFCC,STATEFP \
+    -sql "SELECT GEOID, NAMELSAD, MTFCC, STATEFP FROM \"${shp%.shp}\"" \
     -progress >/dev/null
   echo "        staged ${shp}"
 done
