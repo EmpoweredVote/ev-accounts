@@ -6,10 +6,12 @@ status: proposed
 > Civic Spaces ↔ ev-accounts exchange
 > (`civic-spaces/.planning/phases/15-tool-deep-links/ACCOUNTS-HANDOFF.md`).
 >
-> It states **two decided floors** and leaves the **unmask fork explicitly open** — Chris is
-> actively exploring that separately, and nothing here should be read as resolving
-> `PRIVACY-DATA-MODEL.md` §8a. Read `PRIVACY-DATA-MODEL.md` first; this ADR sits under it
-> and reuses its vocabulary (realms, the vault, `pseudonym_id`) without redefining it.
+> It states **two decided floors**. When written it also left the **unmask fork open** —
+> that fork has since closed (escrowed break-glass, decision 0022, 2026-09-17); see §6, which
+> also records that closing it did **not** close §4's staff-read exception. Read
+> `PRIVACY-DATA-MODEL.md` first; this ADR sits under it and reuses its vocabulary (realms,
+> the vault, `pseudonym_id`) without redefining it — though note §6's flag that its §8a text
+> is now out of date.
 >
 > 🔴 The measurements in §2 were taken on 2026-09-14 against production and master
 > `82b095db`. Treat them as a map to re-verify, not as gospel — particularly "every stance
@@ -204,13 +206,34 @@ cheaper to decide while the answer is still hypothetical.
 
 ## 6. Explicitly open — do not read this ADR as settling any of it
 
-- **Can EV ever unmask?** `PRIVACY-DATA-MODEL.md` §8a. **Chris is actively exploring this
-  separately**, and the current direction is a tiered break-glass under split control rather
-  than pure double-blind — but it is **not decided**, and §4's transitional exception is
-  deliberately written so that either outcome remains available. Nothing here forecloses it.
+- ✅ **Can EV ever unmask? — CLOSED 2026-09-17. Escrowed break-glass, not pure double-blind.**
+  When this ADR was written the fork was open and §4 was deliberately phrased so either
+  outcome stayed available. It has since been decided in
+  `ev-cto/knowledge/decisions/0022-connected-identity-vault.md` (accepted 2026-09-17) and
+  **built** — `docs/superpowers/specs/2026-09-17-connected-identity-vault-design.md`, shipped
+  in PR #528: a Connect member's real name and raw street address are readable only by **two
+  of four board members acting together, offline**, via a CLI that requires a `--reason` and
+  appends to an append-only log.
+
+  🔴 **This does NOT close §4's transitional exception, and the distinction matters.** Decision
+  0022 seals **identity** — name and address. It does not seal **stances**. So "EV staff can
+  read a member's beliefs" is still true, still transitional, and still waiting on the
+  separation Chris's own exploration committed to. Do not read "the vault shipped" as "§4 is
+  finished".
+
+- ⚠ **`PRIVACY-DATA-MODEL.md` has not caught up.** As of 2026-09-18 its §8a is still headed
+  *"(OPEN, pivotal)"* and still says *"Status: open — Chris to decide"*, and §11 still lists
+  the question as open — while the decision is accepted and the code is merged. That is
+  documentation drift in the platform's canonical privacy document, and it is not this ADR's
+  to fix: raised for whoever owns that file.
+
 - **The re-identification threshold.** Unspecified.
 - **The minimum slice population.** Unspecified — see §3's rejected alternative.
-- **Governance of any split-control group.** Unspecified.
+- **Governance of the split-control group.** Partly specified now: 2-of-4 across four board
+  members (0022 §Founder choices, D2), with no backup share. What remains unspecified is the
+  surrounding procedure — who the four are, how a share is rotated or replaced, and what
+  constitutes a valid reason to break glass. The vault spec also records that **cryptographic
+  threshold decryption is still open** (D3), with procedural isolation as the base.
 
 §4 and §5 are floors on *current* behavior. They constrain how low things may go; they do
 not describe the destination.
