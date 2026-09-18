@@ -29,15 +29,15 @@ beforeAll(async () => {
 // retired by a publisher rename against this payload. It decides WHICH ENTITY A
 // READER LANDS ON, so the shape is a contract, not a convenience.
 //
-// ⚠⚠ THE CRITICAL ASSERTION IS THAT THESE ARE NAMES, NOT SLUGS. The slug format
-// is owned by TT's `toSlug`. A `slug`/`canonical` key appearing here would mean
-// a second implementation of that format exists, and the failure mode of drift
-// between them is silent: aliases stop matching and look like missing data
-// rather than a bug. If someone "helpfully" adds slugs, this test fails first.
+// ⚠⚠ IT EMITS SLUGS, from the same expression the coverage catalog uses. An
+// earlier draft forbade them, reasoning that a second copy of TT's `toSlug`
+// would drift silently — but this service already owns a slug expression, and
+// /api/treasury/coverage already emits `slug` so that "no consumer ever
+// reconstructs TT's toSlug and drifts". Withholding them would force every
+// non-TT consumer to write their own.
 // ---------------------------------------------------------------------------
 
-const REQUIRED_ALIAS_KEYS = ['aliasName', 'state', 'canonicalName'] as const;
-const FORBIDDEN_ALIAS_KEYS = ['slug', 'canonical', 'canonicalSlug', 'aliasSlug'] as const;
+const REQUIRED_ALIAS_KEYS = ['slug', 'label', 'canonicalSlug', 'canonicalLabel'] as const;
 
 describe.skipIf(!hasLiveDb)('GET /api/treasury/aliases — contract', () => {
   it('returns 200 with an array', async () => {
@@ -46,7 +46,7 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/aliases — contract', () => {
     expect(Array.isArray(res.body)).toBe(true);
   });
 
-  it('every entry carries aliasName, state and canonicalName as strings', async () => {
+  it('every entry carries slug, label, canonicalSlug and canonicalLabel as strings', async () => {
     const res = await request(app).get('/api/treasury/aliases');
     expect(res.status).toBe(200);
 
@@ -66,18 +66,16 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/aliases — contract', () => {
     }
   });
 
-  it('emits NAMES, never slugs — the slug format has exactly one owner', async () => {
+  it('emits slugs in the TT format, so a consumer never rebuilds toSlug', async () => {
     const res = await request(app).get('/api/treasury/aliases');
     const aliases: unknown[] = res.body as unknown[];
     if (aliases.length === 0) return;
 
+    // `<name-hyphenated>-<state>`, lowercase throughout.
     for (const alias of aliases) {
-      for (const key of FORBIDDEN_ALIAS_KEYS) {
-        expect(
-          alias,
-          `alias entry must not carry '${key}': the slug transform belongs to TT's toSlug, ` +
-            `and a second copy of it fails silently rather than loudly`
-        ).not.toHaveProperty(key);
+      const a = alias as Record<string, string>;
+      for (const key of ['slug', 'canonicalSlug']) {
+        expect(a[key], `${key} must be lowercase with no whitespace`).toMatch(/^[a-z0-9.'-]+-[a-z]{2}$/);
       }
     }
   });
@@ -92,9 +90,9 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/aliases — contract', () => {
       // A self-alias is inert rather than harmful — the consumer ignores it —
       // but it means a rename was recorded that never happened.
       expect(
-        a['aliasName']?.toLowerCase(),
-        `self-alias on ${a['aliasName']}: alias and canonical name are the same`
-      ).not.toBe(a['canonicalName']?.toLowerCase());
+        a['label']?.toLowerCase(),
+        `self-alias on ${a['label']}: alias and canonical name are the same`
+      ).not.toBe(a['canonicalLabel']?.toLowerCase());
     }
   });
 
@@ -108,9 +106,9 @@ describe.skipIf(!hasLiveDb)('GET /api/treasury/aliases — contract', () => {
     const targets = new Map<string, Set<string>>();
     for (const alias of aliases) {
       const a = alias as Record<string, string>;
-      const key = `${a['aliasName']?.toLowerCase()}|${a['state']?.toLowerCase()}`;
+      const key = a['slug'] ?? '';
       if (!targets.has(key)) targets.set(key, new Set());
-      targets.get(key)!.add(a['canonicalName']?.toLowerCase() ?? '');
+      targets.get(key)!.add(a['canonicalLabel']?.toLowerCase() ?? '');
     }
     for (const [key, canonicals] of targets) {
       expect(
