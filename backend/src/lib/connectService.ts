@@ -346,18 +346,27 @@ export async function getLocationConsent(userId: string): Promise<boolean> {
   return data.location_consent === true;
 }
 
+export interface EnrollmentDrafts {
+  legalName: string | null;
+  homeAddress: string | null;
+}
+
 /**
- * getLegalNameDraft
- * Server-side trusted read of the draft legal name captured during Connect
- * enrollment (connect.verification_sessions.legal_name_draft). Used by
- * POST /complete's seal-on-write path (spec §4.4) to seal the name into
- * id_vault before calling complete_connect_flow. Returns null if there is no
- * session for the user, or the draft is unset.
+ * getEnrollmentDrafts
+ * Server-side trusted read of the transient identity drafts captured during
+ * Connect enrollment (connect.verification_sessions.legal_name_draft /
+ * home_address_draft). Used by POST /complete's seal-on-write path (spec §4.4)
+ * to seal the real name and raw address into id_vault BEFORE complete_connect_flow
+ * nulls both drafts. Returns nulls when there is no session for the user, or a
+ * draft is unset.
  */
-export async function getLegalNameDraft(userId: string): Promise<string | null> {
-  const { rows } = await pool.query<{ legal_name_draft: string | null }>(
-    `SELECT legal_name_draft FROM connect.verification_sessions WHERE user_id = $1`,
+export async function getEnrollmentDrafts(userId: string): Promise<EnrollmentDrafts> {
+  const { rows } = await pool.query<{ legal_name_draft: string | null; home_address_draft: string | null }>(
+    `SELECT legal_name_draft, home_address_draft FROM connect.verification_sessions WHERE user_id = $1`,
     [userId]
   );
-  return rows[0]?.legal_name_draft ?? null;
+  return {
+    legalName: rows[0]?.legal_name_draft ?? null,
+    homeAddress: rows[0]?.home_address_draft ?? null,
+  };
 }
