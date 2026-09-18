@@ -774,3 +774,85 @@ Facts already established for whichever route is chosen:
 - Banners live in `C:\Transparent Motivations\essentials`, branch `main`, registry
   `src/lib/buildingImages.js`. **Certify in the 6:1 band, never the full frame.** Real licensed
   photos only — the `banner-design` skill is the wrong tool (D-09).
+
+---
+
+# NC-3 STAGE 5b — BANNER SHIPPED 2026-09-17. `cities/charlotte.jpg`, essentials PR #152.
+
+Certification sheet: `https://claude.ai/code/artifact/4616a8ba-f3a3-493b-8143-5b6272ed326b`
+
+| | |
+| --- | --- |
+| Photograph | Charlotte Skyline (Panoramio), 10 April 2014 07:39 |
+| Author / licence | James Willamor · CC BY-SA 3.0 Unported, read off the Commons File page |
+| Source | 3881×1338 (2.90:1) |
+| Crop | centre 3000×953 at the bottom edge → LANCZOS to 1700×540, a **0.57× downscale** |
+| Candidates | **27** rendered at 1700×540 and read in the 6:1 band |
+
+## 🔴🔴 THE RULING: NEVADA, NOT AUSTIN
+
+North Carolina's state panorama **is** the Charlotte uptown skyline, so Charlotte was the first city
+in the programme already serving as its own state's subject. Cantrell chose to **leave
+`states/NC.jpg` untouched** and give the city a different composition — the Nevada resolution (state
+keeps the Strip, city is the Welcome sign), not the Austin one (state gets a new subject, skyline
+moves down to the city).
+
+What made that defensible is a **measurement, not a preference**: in the 6:1 desktop band the state
+asset **cuts the tower crowns off**, so a desktop visitor sees a parking deck, mid-rise offices and
+trees at close ground level — never a recognisable Charlotte skyline. The shipped frame is distant
+and elevated with the Bank of America crown and the Duke Energy wedge whole.
+
+🔴 **CHARLOTTE NEEDED THE FOURTH DISTINCT NC COMPOSITION.** Durham's own note warned that a third
+city has fewer framings left than the second; a fourth has fewer still.
+
+| | |
+| --- | --- |
+| NC state banner | Charlotte uptown → close, ground-level, buildings fill frame |
+| Asheville | Beaucatcher Mountain → elevated, mountains dominate |
+| Durham | Corcoran Street → wide low-rise with sky and foliage |
+| **Charlotte** | **distant elevated skyline, crowns whole** |
+
+## 🔴 Three findings that transfer to the next banner
+
+1. **THE ANCHOR COULD NOT FIX THE FRAME; A NARROWER CROP COULD** — the `states/CA.jpg` correction
+   meeting a new case. The source is 2.90:1, **narrower** than the 3.148:1 asset, so a full-width
+   crop leaves only **105 rows** of vertical slack: sliding the anchor 0.55 → 1.0 moved the band
+   about **19 rendered pixels** while the skyline stayed marooned under two-thirds of empty sky.
+   Cropping to 3000px wide raises the slack to 385 rows and is still a downscale.
+   **Check the SOURCE ASPECT before assuming an anchor can help.**
+2. **TEST COLOUR — it fired for real.** "2010 Charlotte Skyline" measures **channel spread 4.7 of
+   255**, i.e. greyscale, against the winner's 56.4. Separately the **CC0** candidate — the most
+   permissive licence found — was refused because a highway overpass and a lamp standard cross the
+   band and the crowns are cut at every anchor. **The best licence is not the best frame.**
+3. 🔴 **FINDING THE CORPUS WAS MOST OF THE WORK, and the Bend lesson repeated exactly.** Seven
+   guessed Commons category names returned **0 files**, and a depth-3 recursive walk of the
+   `Category:Charlotte, North Carolina` tree drifted into **US-74 highway photography** and surfaced
+   no skyline at all. The real category is **`Category:Charlotte skylines` (plural)**, and it was
+   found by asking the **one known-good file which categories it belongs to**. ▶ Do that first.
+
+## Verified, not assumed
+
+- **Bytes:** sha256 of the served object is identical to the local file on **both** the plain and a
+  cache-busted URL, decoding as 1700×540 JPEG; a key that cannot exist returns HTTP 400 as a control.
+  A **new key needs no `-v2`** — the stale-CDN rule applies to overwrites.
+- **`match:'exact'` is load-bearing and was PROVED by running `getBuildingImages()`**, not assumed:
+  `'charlottesville'.includes('charlotte')` is true, and the matcher treats a missing caller state as
+  match-allowed. Charlotte/NC and Charlotte with **no state** both resolve to `cities/charlotte.jpg`;
+  **Charlottesville and Port Charlotte resolve to null either way**; an unregistered city returns
+  null, which is the control showing the check can fail.
+- **People test:** passes because there are no people — at 2× zoom the lower band holds buildings and
+  one tree.
+
+⚠ **The one weakness is AGE, and it is recorded rather than hidden.** April 2014: a construction
+crane stands in the right third and towers finished since are absent. The standing alternative is
+**Wesley Heights connector, February 2024** (City Dweller 2, CC BY-SA 4.0), refused on clutter —
+parked cars, utility poles, bare winter trees, a crane across the lower band. Start there if this key
+is ever revisited for currency.
+
+## ▶ What NC-3 still owes after stage 5
+
+1. **Day precision for four county officers**, if it is ever wanted.
+2. The **judges wave**, carrying the Buncombe/Durham DA and Soil-and-Water backfill, the
+   Charlotte-Mecklenburg **school board** question, and the 26-C / 26A / 26E labelling conflict.
+3. **Elisa Chinn-Gary's portrait** — she stays on the headshot backlog until an acceptable source
+   exists.
