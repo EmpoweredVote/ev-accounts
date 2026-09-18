@@ -85,6 +85,7 @@ router.post(
 // Errors:
 //   422 CONSENT_INCOMPLETE — any consent item is missing or not literally true
 //   409 PREFLIGHT_EXPIRED  — slug reservation expired (re-run preflight)
+//   422 NO_LEGAL_NAME      — no legal name available to publish
 //   500 INTERNAL_ERROR     — unexpected failure
 // ---------------------------------------------------------------------------
 
@@ -119,6 +120,14 @@ router.post(
         res.status(409).json({
           code: 'PREFLIGHT_EXPIRED',
           message: 'Preflight has expired. Please run preflight again.',
+        });
+        return;
+      }
+
+      if (errMessage.includes('NO_LEGAL_NAME') || errCode === 'NO_LEGAL_NAME') {
+        res.status(422).json({
+          code: 'NO_LEGAL_NAME',
+          message: 'A legal name is required to publish an Empowered profile.',
         });
         return;
       }

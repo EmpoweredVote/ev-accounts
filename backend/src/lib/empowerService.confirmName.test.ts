@@ -137,3 +137,123 @@ describe('runPreflight — confirmed name', () => {
     }
   });
 });
+
+describe('confirmEmpowerment — legal-name guard', () => {
+  beforeEach(() => {
+    rpc.mockReset();
+    single.mockReset();
+    adminRpc.mockReset();
+    cacheGet.mockReset();
+    cacheSet.mockReset();
+    cacheDel.mockReset();
+    poolQuery.mockReset();
+  });
+
+  it('refuses with NO_LEGAL_NAME and does NOT call execute_empowerment when no name is available', async () => {
+    cacheGet.mockResolvedValue('reserved-slug-x'); // past the PREFLIGHT_EXPIRED check
+    single.mockResolvedValue({ data: { id: 'cp-9', legal_name: null }, error: null });
+    rpc.mockResolvedValue({ data: { id: 'ep-9' }, error: null });
+    poolQuery.mockResolvedValue({ rows: [] });
+
+    await expect(confirmEmpowerment('user-9', ['legal_name_public'])).rejects.toMatchObject({
+      code: 'NO_LEGAL_NAME',
+    });
+    expect(rpc.mock.calls.find((c) => c[0] === 'execute_empowerment')).toBeUndefined();
+  });
+
+  it('refuses when the confirmed name is whitespace-only and the DB name is null', async () => {
+    cacheGet.mockResolvedValue('reserved-slug-y');
+    single.mockResolvedValue({ data: { id: 'cp-10', legal_name: null }, error: null });
+    rpc.mockResolvedValue({ data: { id: 'ep-10' }, error: null });
+    poolQuery.mockResolvedValue({ rows: [] });
+
+    await expect(confirmEmpowerment('user-10', ['legal_name_public'], '   ')).rejects.toMatchObject({
+      code: 'NO_LEGAL_NAME',
+    });
+    expect(rpc.mock.calls.find((c) => c[0] === 'execute_empowerment')).toBeUndefined();
+  });
+});
+
+describe('runPreflight — legal-name guard', () => {
+  beforeEach(() => {
+    rpc.mockReset();
+    single.mockReset();
+    adminRpc.mockReset();
+    cacheGet.mockReset();
+    cacheSet.mockReset();
+    cacheDel.mockReset();
+    poolQuery.mockReset();
+  });
+
+  it('returns eligible:false NO_LEGAL_NAME (and reserves no slug) when no name is available', async () => {
+    adminRpc.mockResolvedValue({
+      data: {
+        eligible: true,
+        connected_profile: { legal_name: null, candidate_role: 'city_council' },
+        empowered_profile: null,
+        compass_completeness: { required: 5, answered: 5, percent: 100, complete: true },
+        is_demoted: false,
+      },
+      error: null,
+    });
+
+    const result = await runPreflight('user-11'); // no confirmed name
+
+    expect(result.eligible).toBe(false);
+    if (!result.eligible) {
+      expect(result.failures.some((f) => f.code === 'NO_LEGAL_NAME')).toBe(true);
+    }
+    expect(cacheSet).not.toHaveBeenCalled();
+  });
+
+  it('stays eligible when a confirmed name is given even though the DB legal_name is null', async () => {
+    adminRpc.mockResolvedValue({
+      data: {
+        eligible: true,
+        connected_profile: { legal_name: null, candidate_role: 'city_council' },
+        empowered_profile: null,
+        compass_completeness: { required: 5, answered: 5, percent: 100, complete: true },
+        is_demoted: false,
+      },
+      error: null,
+    });
+    cacheSet.mockResolvedValue(undefined);
+
+    const result = await runPreflight('user-12', 'Ada Lovelace');
+
+    expect(result.eligible).toBe(true);
+    if (result.eligible) {
+      expect(result.summary.legal_name).toBe('Ada Lovelace');
+      expect(result.summary.slug_preview.startsWith('ada-lovelace-')).toBe(true);
+    }
+  });
+
+  it('refuses a re-empowerment (is_demoted) with NO_LEGAL_NAME when no name is available, and keeps demotion_context', async () => {
+    adminRpc.mockResolvedValue({
+      data: {
+        eligible: true,
+        connected_profile: { legal_name: null, candidate_role: 'city_council' },
+        empowered_profile: {
+          is_active: false,
+          demoted_at: '2026-01-01T00:00:00Z',
+          demotion_reason: null,
+          candidate_page_slug: 'jane-doe-1234',
+        },
+        compass_completeness: { required: 5, answered: 5, percent: 100, complete: true },
+        is_demoted: true,
+        demotion_context: { previously_demoted: true, demoted_at: '2026-01-01T00:00:00Z', demotion_reason: null },
+      },
+      error: null,
+    });
+
+    const result = await runPreflight('user-13'); // no confirmed name
+
+    expect(result.eligible).toBe(false);
+    if (!result.eligible) {
+      expect(result.failures.some((f) => f.code === 'NO_LEGAL_NAME')).toBe(true);
+      expect(result.demotion_context?.previously_demoted).toBe(true);
+    }
+    // The guard returns before the slug-restore branch — no slug reserved.
+    expect(cacheSet).not.toHaveBeenCalled();
+  });
+});

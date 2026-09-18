@@ -190,6 +190,22 @@ export async function runPreflight(userId: string, confirmedLegalName?: string):
   const isDemoted = result.is_demoted ?? false;
   const compassCompleteness = result.compass_completeness!;
 
+  // Fail-safe: a public Empowered profile needs a real name. With the id_vault enabled
+  // connected.legal_name is NULL for new members; if no confirmed name was supplied,
+  // report ineligible rather than reserving an empty-name slug. Placed before the
+  // fresh/re-empowerment branch so a re-empowerment cannot blank an existing public
+  // name either. (spec 2026-09-18-empower-promotion-legal-name-guard)
+  const resolvedName = confirmed ?? connected.legal_name ?? '';
+  if (!resolvedName.trim()) {
+    return {
+      eligible: false,
+      failures: [
+        { code: 'NO_LEGAL_NAME', message: 'Confirm your legal name to go public as an Empowered profile.' },
+      ],
+      ...(result.demotion_context ? { demotion_context: result.demotion_context } : {}),
+    };
+  }
+
   let slugPreview: string;
 
   if (isDemoted && empowered?.candidate_page_slug) {
@@ -258,6 +274,9 @@ export async function recordConsent(
  * 4. Recording the consent items
  * 5. Clearing the slug reservation from cache
  *
+ * Before step 3, refuses with NO_LEGAL_NAME if neither a confirmed name nor a
+ * DB legal_name is available — no RPC call is made in that case.
+ *
  * The execute_empowerment RPC handles all DB writes atomically (empowered_profiles
  * upsert + compass visibility update). No chained JS awaits for multi-table writes.
  */
@@ -295,13 +314,23 @@ export async function confirmEmpowerment(
 
   const connectedProfile = connectedData as { id: string; legal_name: string | null };
 
+  // Fail-safe: never publish an empty public name. With the id_vault enabled a new
+  // member's DB legal_name is NULL; if no confirmed name was supplied, refuse rather
+  // than writing '' to empowered_profiles. (spec 2026-09-18-empower-promotion-legal-name-guard)
+  const legalNameForRpc = confirmed ?? connectedProfile.legal_name ?? '';
+  if (!legalNameForRpc.trim()) {
+    const err = new Error('A legal name is required to publish an Empowered profile.');
+    (err as NodeJS.ErrnoException).code = 'NO_LEGAL_NAME';
+    throw err;
+  }
+
   // 3. Call the execute_empowerment RPC — atomically creates/updates empowered_profiles
   //    and sets compass visibility to public
   const { data, error } = await supabaseAdmin
     .schema('empower')
     .rpc('execute_empowerment', {
       p_user_id: userId,
-      p_legal_name: confirmed ?? connectedProfile.legal_name ?? '',
+      p_legal_name: legalNameForRpc,
       p_connected_profile_id: connectedProfile.id,
       p_reserved_slug: reservedSlug,
     });
