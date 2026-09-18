@@ -238,3 +238,151 @@ check first against adjacency — confirm what the NC state banner uses before c
 4. The council-district **geometry** comparison across the three live layers.
 5. The commissioner-district tiling check.
 6. A change-check on all 21 people: **has this person LEFT?**, against each body's own roster.
+
+---
+
+# NC-3 research, PART TWO — the six owed items, ALL CLOSED 2026-09-17. STILL NOTHING WRITTEN.
+
+## 1. ✅ The mayor's start date, from a city source
+
+`charlottenc.gov/City-News/Rob-Harrington-Sworn-In-as-Charlotte-Mayor`, **published 2026-07-01**:
+
+> "Rob Harrington was officially sworn in as the 60th Mayor of the City of Charlotte during a
+> ceremony held at the Charlotte-Mecklenburg Government Center **this morning**. … Harrington was
+> appointed by Charlotte City Council to serve the remainder of Vi Lyles' term. Lyles … stepped down
+> effective June 30. … Harrington will serve through December 2027."
+
+**`term_start` = 2026-07-01, `day` precision.** No guess, and the earlier news-sourced date is now
+confirmed by the city itself. The city again calls him **Mayor** and **the 60th mayor** — never
+"interim", which is the press's word. The office is `Mayor`.
+
+## 2. ✅ The BOCC continuity walk — and it caught an appointment the roster hides
+
+`bocc.mecknc.gov/past-and-present-commissioners` publishes the full board for every term back to 1938,
+with exact start and end dates. Walked term by term from 2004:
+
+| Seat | Holder | Continuous since | Evidence |
+| --- | --- | --- | --- |
+| At-Large | Leigh Altman | **2020-12-08** | absent from the 2018 board |
+| At-Large | Arthur Griffin | **2022-12-06** | absent from the 2020 board |
+| At-Large | Yvette Townsend-Ingram | **2024-12-02** | new; replaced Patricia Cotham |
+| District 1 | Elaine Powell | **2018-12-03** | Jim Puckett held D1 through 2018 |
+| District 2 | Vilma D. Leake | **2008-12-01** | Norman A. Mitchell, Sr. held D2 through 2008 |
+| District 3 | George Dunlap | 🔴 **2008-10-31** | see below |
+| District 4 | Mark Jerrell | **2018-12-03** | Dumont Clarke held D4 through 2018 |
+| District 5 | Laura J. Meier | **2020-12-08** | Susan B. Harden held D5 through 2020 |
+| District 6 | Susan Rodriguez-McDowell | **2018-12-03** | Bill James held D6 through 2018 |
+
+🔴🔴 **GEORGE DUNLAP DID NOT START WITH AN ELECTION.** The board's own 2006–2008 entry reads:
+
+> "Valerie C. Woodard (D) District 3 (Deceased – Died 10-3-08) · George R. Dunlap (D) District 3
+> (**Effective 10-30-08 Sworn-in 10-31-08**)"
+
+He was **appointed to fill a vacancy caused by a death**, six weeks before the term that the BOCC's own
+biography field — "First elected in 2008" — would imply. His continuous occupancy begins
+**2008-10-31**, not 2008-12-01.
+
+**This is the Charlotte Mitchell case mirrored.** There, "first elected" *overstated* tenure by hiding a
+resignation; here it *understates* by hiding an appointment. **In both directions the biography field is
+not a term start, and only the term-by-term walk gives one.**
+
+## 3. ✅ What Mecklenburg elects separately — and a FOURTH officer the NC template does not carry
+
+Each confirmed on the office's own site today, not from an aggregator:
+
+| Office | Holder | Source |
+| --- | --- | --- |
+| Sheriff | **Garry L. McFadden**, "45th Sheriff" | `mecksheriff.com` |
+| Register of Deeds | **The Honorable Fredrick Smith**, "first elected to office in 2016" | `deeds.mecknc.gov/Fredrick-Smith` |
+| Clerk of Superior Court | **Elisa Chinn-Gary** | `mecklenburgcountycourt.org` |
+| 🔴 District Attorney | **Merriweather**, "District Attorney in 2017" | `charmeckda.com` |
+
+The first three are exactly the `Elected Officials` chamber Buncombe and Durham carry. **The District
+Attorney is the one that does not fit.** `charmeckda.com` bills itself as "District Attorney's Office ·
+**NC Prosecutorial District 26** · Mecklenburg County" — the district is coterminous with the county and
+Mecklenburg's voters elect the post, so by geography it belongs; but it is a **state judicial-branch
+officer**, not a county officer, and **neither Buncombe nor Durham carries one**.
+
+▶ **DECISION OWED, and it is a PROGRAM question, not a Charlotte one.** Adding a DA here alone makes
+Mecklenburg non-comparable with the two NC counties already seated; adding it everywhere is its own
+wave. **Recommendation: follow the Buncombe/Durham template — three officers, no DA — and open the DA as
+a separate question.** Do not resolve it by silently inheriting either answer.
+
+⚠ **The officers' term starts are NOT yet dated.** Item 3 asked which offices exist and who holds them.
+Smith's "first elected in 2016" plus North Carolina's statutory first-Monday-in-December start implies
+2016-12-05, **but that is an inference and this file will not launder it into a source.** Date all of
+them from the county's or the courts' own records at write time, or ship at `month`/`year` precision.
+
+## 4. ✅ Council-district geometry — the three live layers are the SAME plan
+
+Loaded all three into PostGIS, `ST_MakeValid`, and measured the symmetric difference per district:
+
+| District | city layer (sq mi) | vs county copy | vs AGOL copy |
+| --- | --- | --- | --- |
+| 1 | 33.4573 | 0.0138 (0.041%) | 0.0138 (0.041%) |
+| 2 | 49.3855 | 0.0313 (0.063%) | 0.0313 (0.063%) |
+| 3 | 68.6680 | 0.0295 (0.043%) | 0.0295 (0.043%) |
+| 4 | 43.9999 | 0.0304 (0.069%) | 0.0304 (0.069%) |
+| 5 | 40.3303 | 0.0190 (0.047%) | 0.0622 (**0.154%**) |
+| 6 | 38.1601 | 0.0106 (0.028%) | 0.0106 (0.028%) |
+| 7 | 41.2582 | 0.0147 (0.036%) | 0.0147 (0.036%) |
+
+**The worst disagreement is 0.154% of one district.** This is digitisation noise across three copies of
+one plan — not Duluth, where two layers differed by 8.68 sq mi. ✅ **Use the city's own layer**
+(`gis.charlottenc.gov/.../PLN/CouncilDistricts/MapServer/0`), per the Milledgeville precedent that a
+city's own layer supersedes the county's copy. ✅ **The 7 districts do not overlap each other** — no pair
+shares more than 1,000 m².
+
+### The place-coverage gap is 1,820 slivers, and that is the right answer
+
+The 7 districts cover **99.8423%** of TIGER place `3712000`: **0.4945 sq mi of the place uncovered** and
+**2.1651 sq mi of districts outside the place**. Per MN-4 a single percentage is not a gate, so the gap
+was decomposed:
+
+- The uncovered area is **1,820 separate pieces**.
+- The **largest is 0.02798 sq mi** (72,479 m²), with a thinness (area ÷ perimeter²) of **0.00278**
+  against **0.0796** for a circle — about **29× thinner than compact**.
+- The five largest all score 0.0009–0.0055. **Every one is a long thin edge artefact.**
+
+So this is two digitisations of one city limit — the city's own, which tracks annexations, against
+TIGER's vintage — exactly the case the standing rule says needs a **tolerance, not `ST_Equals`**. It is
+not a hole where residents sit unrepresented. ▶ The real test is still the address probe with a
+per-district control, at write time.
+
+## 5. ✅ Commissioner districts tile the county
+
+The 6 districts cover **99.9966%** of Mecklenburg `37119`: 0.0188 sq mi uncovered, 0.0190 sq mi outside.
+**No two overlap.** ✅ **Per-district control: 6 of 6** — an interior point of each district is covered by
+exactly one district, never zero and never two.
+
+## 6. ✅ Change-check on all 21, with controls that fired
+
+**All 12 council members and all 9 commissioners**: the page returns 200, **names the member it should**,
+and carries no resignation, vacancy, "former", "no longer" or expired-term wording. Nobody has left.
+
+The uniform zero-flag answer was not trusted on its own:
+
+- **Control A — the regex.** Run against `"…Bokhari resigned effective April 20, 2025, creating a
+  District 6 vacancy. Term Expires January 2026."` it returns `resigned`, `vacancy`, `Term Expires`. The
+  detector works.
+- **Control B — people who actually left.** `Vi Lyles` → **404**. `Edwin Peacock` → **404**. Patricia
+  Cotham on the county site → **404**. Departed officials are removed, so a 200 carries information.
+
+### 🔴🔴 AND CONTROL B CAUGHT SOMETHING: A DEPARTED MEMBER'S URL CAN SERVE HIS SUCCESSOR
+
+`/City-Council/Tariq-Bokhari` — who resigned on 2025-04-20 — returns **HTTP 200**. It is not a stale
+page. It serves **Kimberly Owens'** page: same `<title>`, same `rel=canonical`
+(`…/City-Council/Kimberly-Owens`), byte-identical at 286,684 bytes, and the text names Owens and never
+names Bokhari. **The city recycles the District 6 slug to whoever holds the seat.**
+
+**A change-check that asks "does this person's page still resolve?" would report Bokhari as sitting.**
+The check must assert that the page **names the person**, which is why `names_self` is in the sweep and
+why this was caught rather than shipped. Same family as the Duluth `with-seal` filter and the
+`%Boulder%` match: **the request succeeded, so the failure is silent.**
+
+## ▶ What is genuinely left before the migrations
+
+1. **Date the county officers** (item 3's caveat) — or ship them at `month`/`year` precision.
+2. **The District Attorney decision** — a program-level call, recommended above.
+3. The **holdover decision** for 2021-12-06 → 2022-09-06 (recommended: continuous), stated explicitly in
+   the migration comment.
