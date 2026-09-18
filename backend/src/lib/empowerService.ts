@@ -274,6 +274,9 @@ export async function recordConsent(
  * 4. Recording the consent items
  * 5. Clearing the slug reservation from cache
  *
+ * Before step 3, refuses with NO_LEGAL_NAME if neither a confirmed name nor a
+ * DB legal_name is available — no RPC call is made in that case.
+ *
  * The execute_empowerment RPC handles all DB writes atomically (empowered_profiles
  * upsert + compass visibility update). No chained JS awaits for multi-table writes.
  */

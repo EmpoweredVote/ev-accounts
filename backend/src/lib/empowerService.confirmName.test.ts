@@ -227,4 +227,33 @@ describe('runPreflight — legal-name guard', () => {
       expect(result.summary.slug_preview.startsWith('ada-lovelace-')).toBe(true);
     }
   });
+
+  it('refuses a re-empowerment (is_demoted) with NO_LEGAL_NAME when no name is available, and keeps demotion_context', async () => {
+    adminRpc.mockResolvedValue({
+      data: {
+        eligible: true,
+        connected_profile: { legal_name: null, candidate_role: 'city_council' },
+        empowered_profile: {
+          is_active: false,
+          demoted_at: '2026-01-01T00:00:00Z',
+          demotion_reason: null,
+          candidate_page_slug: 'jane-doe-1234',
+        },
+        compass_completeness: { required: 5, answered: 5, percent: 100, complete: true },
+        is_demoted: true,
+        demotion_context: { previously_demoted: true, demoted_at: '2026-01-01T00:00:00Z', demotion_reason: null },
+      },
+      error: null,
+    });
+
+    const result = await runPreflight('user-13'); // no confirmed name
+
+    expect(result.eligible).toBe(false);
+    if (!result.eligible) {
+      expect(result.failures.some((f) => f.code === 'NO_LEGAL_NAME')).toBe(true);
+      expect(result.demotion_context?.previously_demoted).toBe(true);
+    }
+    // The guard returns before the slug-restore branch — no slug reserved.
+    expect(cacheSet).not.toHaveBeenCalled();
+  });
 });

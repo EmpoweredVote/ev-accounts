@@ -85,6 +85,7 @@ router.post(
 // Errors:
 //   422 CONSENT_INCOMPLETE — any consent item is missing or not literally true
 //   409 PREFLIGHT_EXPIRED  — slug reservation expired (re-run preflight)
+//   422 NO_LEGAL_NAME      — no legal name available to publish
 //   500 INTERNAL_ERROR     — unexpected failure
 // ---------------------------------------------------------------------------
 
