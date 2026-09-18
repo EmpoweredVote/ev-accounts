@@ -2,11 +2,15 @@
 # =============================================================================
 # load-municipal-boundaries.sh
 #
-# Loads TIGER/Line 2024 MUNICIPAL boundaries for Michigan, Pennsylvania and Ohio
-# into essentials.geofence_boundaries:
+# Loads TIGER/Line 2024 MUNICIPAL boundaries into essentials.geofence_boundaries
+# for the states in STATES (default MI, PA, OH — the first load):
 #
 #   COUSUB (county subdivisions) -> G4040    townships, and in MI cities too
 #   PLACE  (places)              -> G4110 incorporated + G4210 CDP
+#
+# Which layers each state gets is per-state and deliberate — see STATE_LAYERS.
+# COUSUB is NOT loaded where a state's county subdivisions are statistical
+# Census County Divisions rather than governments.
 #
 # ---------------------------------------------------------------------------
 # WHY
@@ -47,6 +51,14 @@
 #   DB_URL="..." ./scripts/load-municipal-boundaries.sh --dry-run  # download + report, no writes
 #   DB_URL="..." REFRESH=1 ./scripts/load-municipal-boundaries.sh  # re-load over existing rows
 #
+#   # a subset — the second wave, the 8 states still unmatched after the first:
+#   DB_URL="..." STATES="25 45 20 21 28 38 46 47" REFRESH=1 \
+#     ./scripts/load-municipal-boundaries.sh
+#
+#   ⚠ REFRESH=1 is REQUIRED for that wave: Massachusetts already carries 293
+#   G4040 + 58 G4110 rows from an earlier partial load, so the pre-flight would
+#   otherwise refuse. The upsert rewrites those 351 in place.
+#
 # ---------------------------------------------------------------------------
 # IDEMPOTENCY AND SAFETY
 # ---------------------------------------------------------------------------
@@ -80,9 +92,50 @@ DRY_RUN=0
 
 # state FIPS -> abbreviation, for readable output only. The `state` column
 # stores the two-digit FIPS, matching every row already in the table.
-declare -A STATE_NAME=( [26]=MI [42]=PA [39]=OH )
-STATES=(26 42 39)
-LAYERS=(cousub place)
+declare -A STATE_NAME=(
+  [26]=MI [42]=PA [39]=OH
+  [25]=MA [45]=SC [20]=KS [21]=KY [28]=MS [38]=ND [46]=SD [47]=TN
+)
+
+# ── ⚠⚠ WHICH LAYERS, PER STATE, AND WHY IT IS NOT "BOTH EVERYWHERE" ──────────
+#
+# COUSUB is a county-subdivision layer, but a county subdivision is TWO
+# DIFFERENT THINGS depending on the state, and TIGER tags both **G4040**:
+#
+#   CLASSFP T1/T9  a township or town — AN ACTUAL GOVERNMENT with a board and
+#                  a budget (MI, PA, MA, KS, ND, SD...)
+#   CLASSFP C5     a subdivision coextensive with an incorporated place
+#   CLASSFP Z1/Z3/Z5/Z9
+#                  a CENSUS COUNTY DIVISION or unorganized territory — a
+#                  STATISTICAL AREA. No officials, no budget, no board.
+#
+# Measured from the 2024 files: **SC (299), KY (493), MS (410) and TN (844) are
+# 100% Z-class.** Loading their COUSUB would put 2,046 statistical areas into
+# the table tagged identically to real governments — and unlike a CDP, which is
+# separated by its own MTFCC (G4210), NOTHING IN THE ROW WOULD DISTINGUISH THEM.
+# Civic Spaces flagged exactly this in red for California: it hands a reader a
+# city row pointing at a statistical division. "A wrong link, not a missing row."
+#
+# So COUSUB is loaded only where TT actually keys entities to MCDs, and the
+# Z-classes are filtered out even there. Every other state gets PLACE alone,
+# which is all its TT entities are keyed to. KS/ND/SD do have real townships,
+# but TT carries no entity for any of them; they can be added when it does.
+declare -A STATE_LAYERS=(
+  [26]="cousub place"   # MI — 1,240 of 1,773 TT entities are 10-digit MCDs
+  [42]="cousub place"   # PA — 1,546 of 2,551
+  [39]="cousub place"   # OH — TT keys places, but 1,309 real T1 townships
+  [25]="cousub place"   # MA — the 13 unmatched are C5 city-MCDs
+  [45]="place"          # SC — 13 entities, all places; COUSUB is 100% CCD
+  [20]="place"          # KS — Wichita only
+  [21]="place"          # KY — Lexington-Fayette only; COUSUB is 100% CCD
+  [28]="place"          # MS — Biloxi only; COUSUB is 100% CCD
+  [38]="place"          # ND — Grand Forks only
+  [46]="place"          # SD — Aberdeen only
+  [47]="place"          # TN — Nashville-Davidson only; COUSUB is 100% CCD
+)
+
+# Override to load a subset: STATES="25 45" ./load-municipal-boundaries.sh
+read -r -a STATES <<< "${STATES:-26 42 39}"
 
 # ── Guards ───────────────────────────────────────────────────────────────────
 if [[ -z "${DB_URL:-}" ]]; then
@@ -120,6 +173,15 @@ fi
 # Mask the credential, keep the host. See the header note.
 mask_url() { printf '%s' "$1" | sed -E 's#(//[^:]+):[^@]*@#\1:****@#'; }
 
+# ⚠⚠ The Z-class exclusion, in ONE place, used by both the count and the load.
+# CLASSFP Z1/Z3/Z5/Z9 are Census County Divisions and unorganized territories:
+# statistical areas that TIGER tags G4040, identically to real township
+# governments. Nothing in the loaded row would tell them apart. PLACE needs no
+# equivalent, because its statistical rows (CDPs) carry their own MTFCC, G4210.
+where_clause() {
+  [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%'" || printf ''
+}
+
 echo "=== TIGER ${TIGER_YEAR} municipal boundaries — MI · PA · OH ==="
 echo "Target : $(mask_url "$DB_URL")"
 echo "Work   : ${WORK_DIR}"
@@ -134,11 +196,16 @@ psql "$DB_URL" -v ON_ERROR_STOP=1 -tAc \
 
 # ── Pre-flight: refuse a silent second load ──────────────────────────────────
 echo
+# The selected states as a SQL in-list, so every query below follows STATES
+# rather than a hardcoded trio. A stale literal here would silently check the
+# wrong states — it would not error, it would just reassure.
+FIPS_SQL="$(printf "'%s'," "${STATES[@]}" | sed 's/,$//')"
+
 echo "--- pre-flight ---"
 EXISTING="$(psql "$DB_URL" -v ON_ERROR_STOP=1 -tAc \
   "select count(*) from essentials.geofence_boundaries
     where mtfcc in ('G4040','G4110','G4210')
-      and left(geo_id, 2) in ('26','42','39');")"
+      and left(geo_id, 2) in (${FIPS_SQL});")"
 echo "        MI/PA/OH rows at G4040/G4110/G4210: ${EXISTING}"
 
 if [[ "$EXISTING" != "0" && "${REFRESH:-0}" != "1" ]]; then
@@ -156,7 +223,7 @@ echo
 echo "--- download ---"
 SHAPEFILES=()
 for fips in "${STATES[@]}"; do
-  for layer in "${LAYERS[@]}"; do
+  for layer in ${STATE_LAYERS[$fips]}; do
     base="tl_${TIGER_YEAR}_${fips}_${layer}"
     url="https://www2.census.gov/geo/tiger/TIGER${TIGER_YEAR}/${layer^^}/${base}.zip"
     if [[ ! -f "${base}.shp" ]]; then
@@ -173,10 +240,19 @@ done
 echo
 echo "--- source feature counts (the load is checked against THESE, not against"
 echo "    what TT expects — a state-complete layer holds units TT does not) ---"
+#
+# ⚠ Counted THROUGH THE SAME WHERE CLAUSE the load uses. A raw Feature Count
+# would exceed what is staged by the number of filtered rows, and the staging
+# guard below — which refuses to upsert unless staged == counted — would fire
+# on every cousub file. The count and the load must ask the same question.
 TOTAL_FEATURES=0
 for shp in "${SHAPEFILES[@]}"; do
-  n="$(ogrinfo -so -al "$shp" 2>/dev/null | awk -F': ' '/^Feature Count/{print $2}')"
-  printf '        %-28s %6s features\n' "$shp" "$n"
+  layer="${shp%.shp}"
+  n="$(ogrinfo -q -dialect SQLITE -sql \
+        "SELECT count(*) AS n FROM \"${layer}\" $(where_clause "$shp")" "$shp" 2>/dev/null \
+        | awk -F'= ' '/n \(Integer\)/{print $2}' | tr -d ' ')"
+  printf '        %-28s %6s features%s\n' "$shp" "$n" \
+    "$([[ "$shp" == *_cousub.shp ]] && echo '  (statistical Z-classes excluded)' || true)"
   TOTAL_FEATURES=$(( TOTAL_FEATURES + n ))
 done
 echo "        ---------------------------------------------"
@@ -213,7 +289,7 @@ for shp in "${SHAPEFILES[@]}"; do
     -nln "${STAGING}" -append \
     -t_srs EPSG:4326 -nlt GEOMETRY \
     -lco GEOMETRY_NAME=geom -lco FID= \
-    -sql "SELECT GEOID, NAMELSAD, MTFCC, STATEFP FROM \"${shp%.shp}\"" \
+    -sql "SELECT GEOID, NAMELSAD, MTFCC, STATEFP FROM \"${shp%.shp}\" $(where_clause "$shp")" \
     -progress >/dev/null
   echo "        staged ${shp}"
 done
@@ -248,7 +324,7 @@ echo "--- loaded, by state and type ---"
 psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
 "select left(geo_id,2) as state_fips, mtfcc, count(*) as rows
    from essentials.geofence_boundaries
-  where source = '${SOURCE_TAG}' and left(geo_id,2) in ('26','42','39')
+  where source = '${SOURCE_TAG}' and left(geo_id,2) in (${FIPS_SQL})
     and mtfcc in ('G4040','G4110','G4210')
   group by 1,2 order by 1,2;"
 
@@ -263,21 +339,47 @@ psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
         count(*) filter (where exists (
           select 1 from essentials.geofence_boundaries g
            where g.geo_id = tt.geoid and g.mtfcc in ('G4110','G4040'))) as matched
-   from tt group by 1 having count(*) >= 50 order by 2 desc;"
+   from tt group by 1
+  order by count(*) - count(*) filter (where exists (
+             select 1 from essentials.geofence_boundaries g
+              where g.geo_id = tt.geoid and g.mtfcc in ('G4110','G4040'))) desc,
+           count(*) desc;"
+# ⚠⚠ NO `having count(*) >= 50` — THAT THRESHOLD IS WHY SOUTH CAROLINA HID.
+# It was in this query to keep the output short, and it silently excluded every
+# state with fewer than 50 TT entities: SC's 13 at 0%, and the six states
+# carrying a single city each. A gap list built from this output was wrong for
+# exactly as long as the threshold was here. Unmatched states now sort first.
 
+# ── Point-in-polygon probes ──────────────────────────────────────────────────
+# ⚠ THE PROBES ARE THE REAL TEST. Rows arriving proves the insert ran; only a
+# real coordinate resolving to exactly one polygon proves the GEOMETRY is
+# usable. One per loaded state, emitted only for the states in STATES so the
+# output cannot quietly reassure about a state this run never touched.
+declare -A PROBE=(
+  [26]="Detroit, MI|-83.0458|42.3314"        [42]="Philadelphia, PA|-75.1652|39.9526"
+  [39]="Columbus, OH|-82.9988|39.9612"       [25]="Weymouth, MA|-70.9395|42.2180"
+  [45]="Charleston, SC|-79.9311|32.7765"     [20]="Wichita, KS|-97.3301|37.6872"
+  [21]="Lexington, KY|-84.5037|38.0406"      [28]="Biloxi, MS|-88.8853|30.3960"
+  [38]="Grand Forks, ND|-97.0329|47.9253"    [46]="Aberdeen, SD|-98.4865|45.4647"
+  [47]="Nashville, TN|-86.7816|36.1627"
+)
 echo "--- point-in-polygon spot check (geometry is usable, not just present) ---"
-psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
-"select 'Detroit, MI' as probe, count(*) as g4110_hits from essentials.geofence_boundaries
-  where mtfcc='G4110' and ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-83.0458, 42.3314), 4326))
- union all
- select 'Philadelphia, PA', count(*) from essentials.geofence_boundaries
-  where mtfcc='G4110' and ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-75.1652, 39.9526), 4326))
- union all
- select 'Columbus, OH', count(*) from essentials.geofence_boundaries
-  where mtfcc='G4110' and ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-82.9988, 39.9612), 4326));"
+PROBE_SQL=""
+for fips in "${STATES[@]}"; do
+  IFS='|' read -r label lon lat <<< "${PROBE[$fips]}"
+  # MA's probe is a TOWN, so it is checked at G4040; the rest are incorporated
+  # places at G4110. Probing the wrong layer would report 0 for a correct load.
+  mtfcc='G4110'; [[ "$fips" == 25 ]] && mtfcc='G4040'
+  [[ -n "$PROBE_SQL" ]] && PROBE_SQL+=" union all "
+  PROBE_SQL+="select '${label}' as probe, '${mtfcc}' as layer, count(*) as hits
+    from essentials.geofence_boundaries
+   where mtfcc='${mtfcc}'
+     and ST_Covers(geometry, ST_SetSRID(ST_MakePoint(${lon}, ${lat}), 4326))"
+done
+psql "$DB_URL" -v ON_ERROR_STOP=1 -c "$PROBE_SQL;"
 
 psql "$DB_URL" -v ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS ${STAGING};"
 
 echo
-echo "Done. Expect PA 2551/2551, MI 1773/1773, OH 253/253 above, every other"
-echo "state unchanged, and exactly 1 hit per point-in-polygon probe."
+echo "Done. Every state listed above should read N/N, every state NOT loaded in"
+echo "this run should be unchanged, and each probe should be exactly 1 hit."
