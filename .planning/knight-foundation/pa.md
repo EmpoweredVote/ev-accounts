@@ -549,6 +549,90 @@ invents a leak that is not there — the `bail`/`BAILEY` trap wearing a differen
 
 ---
 
+# ▶ RESUME PA-5 HERE (written 2026-09-18, before clearing context)
+
+Stages 1-4 are applied, merged and verified. **Stage 5 is open and nothing has been written to
+production for it.** No image has been imported, no banner registered.
+
+## The licence position — settled, do not re-litigate
+
+Measured before any image was fetched, and ruled on by Cantrell 2026-09-18: **the refusal applies
+where it is published.**
+
+| Publisher | Seats | Position |
+| --- | --- | --- |
+| `palegis.us` (House + Senate) | **253** | **No use policy.** The only copyright page is a DMCA complaint procedure. The FL/GA/CO position — ship. |
+| `phlcouncil.com` | 17 | no terms — ship |
+| `phillysheriff.com` | 1 | no site terms — ship |
+| `centrecountypa.gov` · `statecollegepa.us` | 21 | bare "All rights reserved" — ship |
+| `phila.gov`, `phillyda.org`, `vote.phila.gov`, `controller.phila.gov` | **7** | 🔴 *"any modification whatsoever … strictly prohibited without the prior written permission of the City"* — **licence debt, request owed** |
+
+The seven are Mayor, Register of Wills, District Attorney, City Controller and three City
+Commissioners. MN-5's route applies: record the debt, send the request, ship the rest.
+
+## PA-5a — the legislature. Candidate list BUILT, nothing imported.
+
+`py scripts/build-pa-legislature-candidates.py` → `.tmp-pa-candidates.json` (untracked, rebuildable
+in ~6 minutes).
+
+- **252 of 253 have a candidate.** The gap is **Brandon Dukes (HD-12)** — sworn in 2026-09-08, and
+  the chamber has not generated his `/300/` or `/original/` buckets yet. HTTP 404 on both. A dated,
+  re-checkable blank; his 200×280 list card would need a 3× upscale and this pipeline refuses that.
+- **Identity proved, not assumed**: every `/original/` compared against the member's own `/300/` as
+  a downscaled mean absolute difference. **Median 1.96, worst 13.17 (Doug Mastriano)**, reject
+  threshold 18. The five widest pairs — Mastriano, Catherine I Wallen, Jason Ortitay, Ann Flood,
+  Marla Brown — are the only places a mis-keyed bucket could hide and should be eyeballed on the
+  sheet.
+
+### 🟢 THE ORIGINAL IS 7.5× LARGER THAN ANYTHING THE SITE LINKS
+
+`/resources/images/members/200/<id>.jpg` is what the list serves (200×280), `/300/` is what the
+member's own page serves (420 tall), and **`/original/` returns 1500×2100 and is linked from
+nowhere**. Probing bucket names found it. The production crop is 600×750: the linked file needs a
+3× upscale, the original a 0.4× downscale. ▶ **Probe for an unlinked original in every slice.**
+
+### 🔴 A PORTRAIT SERVED AS `.jpg`, WITH `content-type: image/jpeg`, THAT IS A PNG
+
+Senator **Michele Brooks'** original is 2.4 MB of PNG bytes at a `.jpg` path. The magic-number check
+was right about the bytes and wrong about the decision — it threw a good portrait away. Both formats
+are accepted now, written as `bytes([0x89, 0x50, 0x4E, 0x47])` rather than an escape sequence,
+because two patch attempts mangled the escaped form. **The magic number is the truth; what you do
+about it is accept the format you found.**
+
+## Next steps, in order
+
+1. **Render and publish the contact sheet.**
+   `py scripts/render-headshot-contact-sheet.py --json .tmp-pa-candidates.json --embed-width 260 --out <path>`
+   then publish it as an Artifact. It re-downloads all 252 and renders the REAL 600×750 crop, so it
+   takes several minutes. **Approval is a batch contact sheet, never one dialog per person.**
+2. **On approval:** `py scripts/import-headshot-candidates.py` (it reads the same JSON; `--dry-run`
+   first). It writes the storage object, the `politician_images` row, `photo_custom_url` and
+   `photo_origin_url` — **`photo_custom_url` is what renders; a `politician_images` row alone
+   changes nothing a voter sees.**
+3. **Verify from outside**: re-fetch every stored object from the CDN and **decode** it, with a
+   bogus-key control that must fail — and **assert the COUNT of rows tested**, because MN-6 shipped
+   a verifier that reported "0 broken" while testing none of the new rows.
+4. **The four remaining debts**, which are four different problems and should not be summed:
+   - 7 Philadelphia seats — **licence**; send the permission request.
+   - 13 Centre County — **no portrait published at all** on the elected-officials index.
+   - 8 State College — **no portrait published**.
+   - 17 Philadelphia Council — **no systematic headshot**; member pages carry event photos
+     (the one checked was a 600×448 landscape from 2017). Boulder's lesson applies: check whether
+     the asset exists somewhere the card does not link before calling it missing.
+5. **PA-5b, the banners**: `cities/philadelphia.jpg` and `cities/state-college.jpg` in the
+   **essentials** repo (`src/lib/buildingImages.js`), `match:'exact'`, certified in the 6:1 band,
+   and `public/banners.json` regenerated with `node scripts/gen-banners-json.mjs`.
+   ⚠ Check `states/PA.jpg` first for the adjacency rule — Charlotte was the first city whose state
+   banner was its own skyline, and that cost NC-3 a ruling.
+
+## Baseline to re-measure, not trust
+
+Pennsylvania held **4 renderable portraits of 303 seats** when stage 5 opened: the four statewide
+executives, plus Chris Rabb — the row PA-2 **reused** instead of duplicating, which is exactly the
+portrait a duplicate would have lost.
+
+---
+
 ## ▶ What Pennsylvania still owes
 
 1. **Stage 5** — headshots and a banner for both jurisdictions, and per the GA-6 rule the
