@@ -685,9 +685,25 @@ file, not a bad credential.
    ⚠ **And one seat that is neither a debt nor done**: the **Philadelphia Sheriff**, whose site
    `phillysheriff.com` publishes no terms and was ruled shippable. It was not in the PA-5a candidate
    list, which covered the legislature only. It is one portrait, and it is owed.
-5. **PA-5b, the banners** — ▶ **CERTIFIED AND PUBLISHED, AWAITING A PICK. Nothing uploaded, nothing
-   registered.** Sheet: <https://claude.ai/artifact/67inZT6bhztedGSkjW8ujm> (2026-09-19), six
-   proposals and seven refusals, every frame cut to the 6:1 desktop band.
+5. **PA-5b, the banners** — ✅ **SHIPPED 2026-09-19. Both uploaded, registered and verified;
+   essentials PR #154.** Cantrell picked both recommendations from the sheet
+   <https://claude.ai/artifact/67inZT6bhztedGSkjW8ujm> (six proposals, seven refusals, every frame
+   cut to the 6:1 desktop band).
+   - `cities/philadelphia.jpg` — **skyline from the south-west**, Mefman00 / mods by Maps and stuff
+     (Brian W. Schaller), **CC0**.
+   - `cities/state-college.jpg` — **Penn State Campus toward Mount Nittany**, Goonsnick, CC BY-SA 4.0.
+   - Both processed files were **pixel-identical to the certified render** (mean abs diff 0.000),
+     because `certify_banner.py` imports `process_banner.py`'s crop. sha256 matched on **both** the
+     plain and a cache-busted URL; a missing-key control returned HTTP 400 and did not decode. New
+     keys, so no `-v2`. `banners.json`: 242 assets, 239 credited, 0 unparsed, 0 unmatched.
+   - 🔴 **`upload_banner.py` WAS MISSING THE `apikey` HEADER** and would have failed with
+     HTTP 400 `Invalid Compact JWS` — which reads as a bad credential, not a missing header. Fixed
+     in the same PR. The rule was already in memory from 2026-09-09; the script had never caught up.
+   - 🔴 **A CONTROL THAT PASSES CAN PASS FOR THE WRONG REASON, AND IT DID HERE.** The first
+     `match:'exact'` test read `.src` off `getBuildingImages()`, which returns
+     `{ Local, State, Federal }`. Every case came back `null`, so the two *null-expecting*
+     assertions passed while the positive ones failed. **The tell was the case that should not have
+     been null.** The committed tests carry a control so they can fail.
    - ✅ **`states/PA.jpg` was read in the band FIRST, and it is PITTSBURGH** — Cbaile19, CC0,
      elevated and distant, full tower crowns over pale sky with hills behind. So there is **no
      state/city subject collision for Philadelphia**, and the adjacency question is the composition
