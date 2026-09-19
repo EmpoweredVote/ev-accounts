@@ -599,42 +599,75 @@ are accepted now, written as `bytes([0x89, 0x50, 0x4E, 0x47])` rather than an es
 because two patch attempts mangled the escaped form. **The magic number is the truth; what you do
 about it is accept the format you found.**
 
-## ✅ THE SHEET IS APPROVED — start by importing, not by re-rendering
+## ✅ PA-5a APPLIED 2026-09-19 — THE GENERAL ASSEMBLY HAS PORTRAITS, 252 OF 253
 
 **Cantrell approved the whole sheet, 2026-09-19**, against the proof sheet published at
 `https://claude.ai/code/artifact/e8bac4c3-0c22-456b-a849-e81eeb80d220` — 252 frames, each the real
 600x750 production crop. **No frame was excluded.** The 35 amber-ringed frames (source too small to
-reach 600x750 without enlargement) are approved as rendered.
+reach 600x750 without enlargement) were approved as rendered.
 
-**The dry run is clean and was the last thing this session did:**
+**Imported the same day, against live production:**
 
 ```
 py scripts/import-headshot-candidates.py --json .tmp-pa-candidates.json --dry-run
+imported 251 · skipped 1 · failed 0          # re-run before the write, and it reproduced exactly
+
+py scripts/import-headshot-candidates.py --json .tmp-pa-candidates.json
 imported 251 · skipped 1 · failed 0
 ```
 
-That accounts for all 253 seats: **251 to import**, **1 skipped** because Chris Rabb already carries
-an image row — he is the politician PA-2 REUSED rather than duplicated — and **1 with no candidate**,
-Brandon Dukes. Sources run from 1029x1500 to 3694x5541; every one downscales.
+That accounts for all 253 seats: **251 imported**, **1 skipped** because Chris Rabb already carried
+an image row — he is the politician PA-2 REUSED rather than duplicated, and his row already pointed
+at our own CDN — and **1 with no candidate**, Brandon Dukes. Sources ran from 1029x1500 to
+3694x5541; every one downscaled.
+
+Measured in the database afterwards, over the 253 candidate ids: **252 carry `photo_custom_url`,
+all 252 on our CDN, 252 carry a `type='default'` image row.** The single outlier is Brandon Dukes,
+who has neither — the documented, dated blank.
+
+### Verified from outside, with the count asserted
+
+`scripts/verify-imported-headshots.py` was written for this and is wave-scoped on purpose. It
+resolves each candidate id against the read path the browser actually gets
+(`COALESCE(photo_custom_url, photo_origin_url)`), re-fetches the bytes from the CDN and **fully
+decodes** them — `Image.load()`, not `open()`, because a clean HTTP 200 can carry a truncated body
+that only a full decode catches.
+
+```
+control (bogus CDN key): failed as required -- HTTP 400
+
+tested 252 rows -- decoded 252, broken 0
+sizes: 600x750 x217, 548x685 x15, 428x535 x5, 500x625 x4, 511x639 x2, 225x281 x2,
+       375x469 x2, 200x250 x1, 357x446 x1, 547x684 x1, 429x536 x1, 556x695 x1
+no photo at all (1): Brandon Dukes
+
+count check: tested 252 == expected 252
+```
+
+**217 at the full 600x750 and 35 at native cropped size — and 35 is exactly the amber-ringed count
+the operator approved.** The two numbers were derived independently, which is why they are worth
+printing together.
+
+🔴 **`--expect` IS THE POINT OF THAT SCRIPT, NOT AN EXTRA.** MN-6 shipped a verifier that
+printed *108 rows, 0 broken, control failed as required* while testing **none** of the 133 rows just
+written. A control proves a verifier CAN fail; it never proves the verifier read the right rows.
+**The count is the tell.** The guard was watched firing before it was trusted — a 3-row subset
+against `--expect 252` exits 3 and says so.
 
 ⚠ `.tmp-pa-candidates.json` is untracked and rebuildable in ~6 minutes with
-`py scripts/build-pa-legislature-candidates.py`. **Rebuild it before importing if anything has been
-touched since** — and if the rebuild reports a different count than 252, read the difference before
-running the import.
+`py scripts/build-pa-legislature-candidates.py`. It is still on disk in `C:/ev-accounts-pa/backend`,
+alongside the `.tmp-headshot-cache` the sheet and the import shared.
+
+🟢 **THE .env DOES NOT TRAVEL WITH A WORKTREE.** The import died on `KeyError: 'DATABASE_URL'`
+before it wrote anything: `load_dotenv()` reads `backend/.env`, and a `git worktree add` copies no
+untracked file. Copy it in before the first run — and read that error as what it is, a missing
+file, not a bad credential.
 
 ## Next steps, in order
 
-1. **Render and publish the contact sheet.**
-   `py scripts/render-headshot-contact-sheet.py --json .tmp-pa-candidates.json --embed-width 260 --out <path>`
-   then publish it as an Artifact. It re-downloads all 252 and renders the REAL 600×750 crop, so it
-   takes several minutes. **Approval is a batch contact sheet, never one dialog per person.**
-2. **On approval:** `py scripts/import-headshot-candidates.py` (it reads the same JSON; `--dry-run`
-   first). It writes the storage object, the `politician_images` row, `photo_custom_url` and
-   `photo_origin_url` — **`photo_custom_url` is what renders; a `politician_images` row alone
-   changes nothing a voter sees.**
-3. **Verify from outside**: re-fetch every stored object from the CDN and **decode** it, with a
-   bogus-key control that must fail — and **assert the COUNT of rows tested**, because MN-6 shipped
-   a verifier that reported "0 broken" while testing none of the new rows.
+1. ~~Render and publish the contact sheet.~~ **Done 2026-09-19, approved whole.**
+2. ~~Import.~~ **Done 2026-09-19: 251 written, 252 of 253 now renderable.**
+3. ~~Verify from outside.~~ **Done: 252 decoded, 0 broken, count asserted, control failed first.**
 4. **The four remaining debts**, which are four different problems and should not be summed:
    - 7 Philadelphia seats — **licence**; send the permission request.
    - 13 Centre County — **no portrait published at all** on the elected-officials index.
@@ -642,6 +675,9 @@ running the import.
    - 17 Philadelphia Council — **no systematic headshot**; member pages carry event photos
      (the one checked was a 600×448 landscape from 2017). Boulder's lesson applies: check whether
      the asset exists somewhere the card does not link before calling it missing.
+   ⚠ **And one seat that is neither a debt nor done**: the **Philadelphia Sheriff**, whose site
+   `phillysheriff.com` publishes no terms and was ruled shippable. It was not in the PA-5a candidate
+   list, which covered the legislature only. It is one portrait, and it is owed.
 5. **PA-5b, the banners**: `cities/philadelphia.jpg` and `cities/state-college.jpg` in the
    **essentials** repo (`src/lib/buildingImages.js`), `match:'exact'`, certified in the 6:1 band,
    and `public/banners.json` regenerated with `node scripts/gen-banners-json.mjs`.
@@ -654,13 +690,37 @@ Pennsylvania held **4 renderable portraits of 303 seats** when stage 5 opened: t
 executives, plus Chris Rabb — the row PA-2 **reused** instead of duplicating, which is exactly the
 portrait a duplicate would have lost.
 
+**After PA-5a, measured 2026-09-19 over every seat whose district is in PA**, counting a portrait
+as renderable exactly the way the read path does
+(`COALESCE(photo_custom_url, photo_origin_url, '') LIKE 'http%'`):
+
+| Body | Renderable / seats |
+| --- | --- |
+| Pennsylvania House of Representatives | **202 / 203** |
+| Pennsylvania Senate | **50 / 50** |
+| U.S. House (PA districts) | 17 / 17 |
+| U.S. Senate (PA) | 2 / 2 |
+| Statewide executives | 4 / 4 |
+| Philadelphia City Council | 0 / 17 |
+| Philadelphia city and county row offices + Mayor | 0 / 8 |
+| Centre County (commissioners + officers) | 0 / 13 |
+| State College Borough (council + Mayor) | 0 / 8 |
+| **Total** | **275 / 322** |
+
+⚠ **The seat total moved, 303 → 322, and nothing was seated in between.** The earlier figure
+counted PA offices; this one counts seats reached through
+`offices → office_current_holder → districts` with `lower(d.state) = 'pa'`, which also picks up the
+federal delegation. **Two different predicates, two honest numbers** — which is why the predicate
+is written down beside each.
+
 ---
 
 ## ▶ What Pennsylvania still owes
 
-1. **Stage 5** — headshots and a banner for both jurisdictions, and per the GA-6 rule the
-   **legislature's 253 portraits count inside stage 5, not beside it**. Read each chamber's photo
-   policy BEFORE building a harvester: the Minnesota House forbade exactly this use.
+1. **Stage 5, part-done.** ✅ **PA-5a is applied** — the legislature's 253 portraits, which per the
+   GA-6 rule count inside stage 5 and not beside it, are 252 in. ▶ **Still owed: PA-5b (the two
+   banners), the Philadelphia Sheriff's one shippable portrait, and the four debts** — 7 licence,
+   13 Centre County, 8 State College, 17 Philadelphia Council.
 2. **The judges wave** — Philadelphia's judiciary and Centre County's six Magisterial District
    Judges, alongside North Carolina's.
 3. **Day precision** for the 42 Pennsylvania terms written at `unknown`, if it is ever wanted.
