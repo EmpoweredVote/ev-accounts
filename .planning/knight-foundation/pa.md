@@ -669,7 +669,14 @@ file, not a bad credential.
 2. ~~Import.~~ **Done 2026-09-19: 251 written, 252 of 253 now renderable.**
 3. ~~Verify from outside.~~ **Done: 252 decoded, 0 broken, count asserted, control failed first.**
 4. **The four remaining debts**, which are four different problems and should not be summed:
-   - 7 Philadelphia seats — **licence**; send the permission request.
+   - 7 Philadelphia seats — **licence**; the request is **drafted** at
+     [`backend/data/seed-pa-headshots-2026/PHILADELPHIA-PERMISSION-REQUEST.md`](../../backend/data/seed-pa-headshots-2026/PHILADELPHIA-PERMISSION-REQUEST.md)
+     and is **not sent**. It names the seven holders, quotes the clause re-read live on 2026-09-19,
+     and routes to the City Law Department (1515 Arch St., 17th Floor — the office that would give
+     "the prior written permission of the City"). ⚠ **No email address is recorded, because none
+     was verified** — confirm it by telephone before sending. `controller.phila.gov` repeats the
+     clause verbatim and `phillyda.org` / `vote.phila.gov` link the same page, so **one grant covers
+     all seven.**
    - 13 Centre County — **no portrait published at all** on the elected-officials index.
    - 8 State College — **no portrait published**.
    - 17 Philadelphia Council — **no systematic headshot**; member pages carry event photos
@@ -678,11 +685,36 @@ file, not a bad credential.
    ⚠ **And one seat that is neither a debt nor done**: the **Philadelphia Sheriff**, whose site
    `phillysheriff.com` publishes no terms and was ruled shippable. It was not in the PA-5a candidate
    list, which covered the legislature only. It is one portrait, and it is owed.
-5. **PA-5b, the banners**: `cities/philadelphia.jpg` and `cities/state-college.jpg` in the
-   **essentials** repo (`src/lib/buildingImages.js`), `match:'exact'`, certified in the 6:1 band,
-   and `public/banners.json` regenerated with `node scripts/gen-banners-json.mjs`.
-   ⚠ Check `states/PA.jpg` first for the adjacency rule — Charlotte was the first city whose state
-   banner was its own skyline, and that cost NC-3 a ruling.
+5. **PA-5b, the banners** — ▶ **CERTIFIED AND PUBLISHED, AWAITING A PICK. Nothing uploaded, nothing
+   registered.** Sheet: <https://claude.ai/artifact/67inZT6bhztedGSkjW8ujm> (2026-09-19), six
+   proposals and seven refusals, every frame cut to the 6:1 desktop band.
+   - ✅ **`states/PA.jpg` was read in the band FIRST, and it is PITTSBURGH** — Cbaile19, CC0,
+     elevated and distant, full tower crowns over pale sky with hills behind. So there is **no
+     state/city subject collision for Philadelphia**, and the adjacency question is the composition
+     only. Unlike `states/NC.jpg`, this banner *does* show the subject its credit names.
+   - Philadelphia shortlist: **skyline from the south-west** (Mefman00 / Brian W. Schaller, **CC0**,
+     5472x1824 — only 86 rows of slack, so the crop is fixed and already lands) · **City Hall from
+     Broad Street** (Anntom4, CC BY-SA 4.0, vertical anchor 0.30 from a five-step sweep) · **City
+     Hall façade** (Nate Lee, CC BY-SA 4.0).
+   - State College shortlist: **College Avenue toward Mount Nittany** (Goonsnick, CC BY-SA 4.0) ·
+     **HUB Lawn and the Nittany ridge** (JohnDziak, CC BY-SA 4.0) · **downtown rooftops**
+     (Goonsnick, CC BY 4.0).
+   - 🔴 **THE PEOPLE TEST DECIDED THE BEST-LOOKING PHILADELPHIA FRAME.** Chestnut Street at
+     Independence Hall carries foreground figures at roughly **200 px** in the 1700x540 asset — far
+     past Durham's 67 px bound, and the frame was otherwise the strongest civic composition found.
+   - ⚠ **A NARROWER CROP MADE CITY HALL WORSE, NOT BETTER.** The source is 1.76:1 with 1,372 rows
+     of slack, so the anchor *is* the lever here; crop widths of 3400/4000/4600 all pushed the
+     building into the centre under more sky. **The `states/CA.jpg` rule is for sources NARROWER
+     than 3.148:1 — do not reach for it when the slack is already large.**
+   - ⚠ A keyword search for "Old Main Penn State" returned **Minnesota State Mankato's** Old Main
+     at the top. The `--categories-of` method caught it. **Verify a name collision is the same
+     place.**
+   - On a pick: `process_banner.py` at the sheet's own numbers → `upload_banner.py` → register in
+     `src/lib/buildingImages.js` with `match:'exact'` (run the matcher, do not reason about it) →
+     `node scripts/gen-banners-json.mjs` and commit `public/banners.json`, which is CI-enforced.
+     Both keys are **new**, so neither needs a `-v2`.
+   - Work in progress lives in the essentials worktree `C:/essentials-pa`, branch
+     `feat/banners-pa`, as untracked `.tmp-*` files.
 
 ## Baseline to re-measure, not trust
 
