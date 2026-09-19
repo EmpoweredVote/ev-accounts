@@ -182,7 +182,12 @@ where_clause() {
   [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%'" || printf ''
 }
 
-echo "=== TIGER ${TIGER_YEAR} municipal boundaries — MI · PA · OH ==="
+# ⚠ Name the states from STATES, never a literal. Both of these lines were
+# hardcoded to "MI · PA · OH" and stayed that way through a real 8-state run —
+# harmless here because every QUERY already followed STATES, but a banner that
+# names the wrong states is exactly the kind of thing someone later believes.
+STATE_LIST="$(for f in "${STATES[@]}"; do printf '%s ' "${STATE_NAME[$f]}"; done | sed 's/ $//; s/ / · /g')"
+echo "=== TIGER ${TIGER_YEAR} municipal boundaries — ${STATE_LIST} ==="
 echo "Target : $(mask_url "$DB_URL")"
 echo "Work   : ${WORK_DIR}"
 echo "Source : ${SOURCE_TAG}"
@@ -206,7 +211,7 @@ EXISTING="$(psql "$DB_URL" -v ON_ERROR_STOP=1 -tAc \
   "select count(*) from essentials.geofence_boundaries
     where mtfcc in ('G4040','G4110','G4210')
       and left(geo_id, 2) in (${FIPS_SQL});")"
-echo "        MI/PA/OH rows at G4040/G4110/G4210: ${EXISTING}"
+echo "        ${STATE_LIST} rows at G4040/G4110/G4210: ${EXISTING}"
 
 if [[ "$EXISTING" != "0" && "${REFRESH:-0}" != "1" ]]; then
   echo "ERROR: those states already carry ${EXISTING} row(s) at those MTFCCs." >&2
