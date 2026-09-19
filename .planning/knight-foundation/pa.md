@@ -599,6 +599,29 @@ are accepted now, written as `bytes([0x89, 0x50, 0x4E, 0x47])` rather than an es
 because two patch attempts mangled the escaped form. **The magic number is the truth; what you do
 about it is accept the format you found.**
 
+## ✅ THE SHEET IS APPROVED — start by importing, not by re-rendering
+
+**Cantrell approved the whole sheet, 2026-09-19**, against the proof sheet published at
+`https://claude.ai/code/artifact/e8bac4c3-0c22-456b-a849-e81eeb80d220` — 252 frames, each the real
+600x750 production crop. **No frame was excluded.** The 35 amber-ringed frames (source too small to
+reach 600x750 without enlargement) are approved as rendered.
+
+**The dry run is clean and was the last thing this session did:**
+
+```
+py scripts/import-headshot-candidates.py --json .tmp-pa-candidates.json --dry-run
+imported 251 · skipped 1 · failed 0
+```
+
+That accounts for all 253 seats: **251 to import**, **1 skipped** because Chris Rabb already carries
+an image row — he is the politician PA-2 REUSED rather than duplicated — and **1 with no candidate**,
+Brandon Dukes. Sources run from 1029x1500 to 3694x5541; every one downscales.
+
+⚠ `.tmp-pa-candidates.json` is untracked and rebuildable in ~6 minutes with
+`py scripts/build-pa-legislature-candidates.py`. **Rebuild it before importing if anything has been
+touched since** — and if the rebuild reports a different count than 252, read the difference before
+running the import.
+
 ## Next steps, in order
 
 1. **Render and publish the contact sheet.**
