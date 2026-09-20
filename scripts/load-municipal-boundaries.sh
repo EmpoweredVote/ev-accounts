@@ -116,21 +116,30 @@ declare -A STATE_NAME=(
 # Civic Spaces flagged exactly this in red for California: it hands a reader a
 # city row pointing at a statistical division. "A wrong link, not a missing row."
 #
-# So COUSUB is loaded only where TT actually keys entities to MCDs, and the
-# Z-classes are filtered out even there. Every other state gets PLACE alone,
-# which is all its TT entities are keyed to. KS/ND/SD do have real townships,
-# but TT carries no entity for any of them; they can be added when it does.
+# So COUSUB is loaded only where the subdivisions are governments, and the
+# Z-classes are filtered out even there. The CCD states get PLACE alone.
+#
+# ⭐ KS/ND/SD carry real T1 townships and are now loaded, though TT keys no
+# entity to any of them. This table is not TT's — Civic Spaces resolves slices
+# against it, and a township government with no TT budget is still a government
+# a slice can sit on. Coverage here is not bounded by what TT happens to hold.
+#
+# ⚠ KS brings **134 INACTIVE townships** (CLASSFP T9), which is a far bigger
+# number than the single inactive PA township already in the table. They are
+# loaded for consistency — an inactive government is one that stopped, not a
+# statistical artefact — but that is a judgment call at a scale worth naming,
+# not a rule. Filtering T9 as well would drop 139 rows across KS/ND/SD.
 declare -A STATE_LAYERS=(
   [26]="cousub place"   # MI — 1,240 of 1,773 TT entities are 10-digit MCDs
   [42]="cousub place"   # PA — 1,546 of 2,551
   [39]="cousub place"   # OH — TT keys places, but 1,309 real T1 townships
   [25]="cousub place"   # MA — the 13 unmatched are C5 city-MCDs
   [45]="place"          # SC — 13 entities, all places; COUSUB is 100% CCD
-  [20]="place"          # KS — Wichita only
+  [20]="cousub place"   # KS — 1,262 T1 townships (+134 INACTIVE T9)
   [21]="place"          # KY — Lexington-Fayette only; COUSUB is 100% CCD
   [28]="place"          # MS — Biloxi only; COUSUB is 100% CCD
-  [38]="place"          # ND — Grand Forks only
-  [46]="place"          # SD — Aberdeen only
+  [38]="cousub place"   # ND — 1,306 T1 townships, 89 Z3 filtered out
+  [46]="cousub place"   # SD — 899 T1 townships, 108 Z3 filtered out
   [47]="place"          # TN — Nashville-Davidson only; COUSUB is 100% CCD
 )
 
@@ -363,9 +372,16 @@ psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
 declare -A PROBE=(
   [26]="Detroit, MI|-83.0458|42.3314"        [42]="Philadelphia, PA|-75.1652|39.9526"
   [39]="Columbus, OH|-82.9988|39.9612"       [25]="Weymouth, MA|-70.9395|42.2180"
-  [45]="Charleston, SC|-79.9311|32.7765"     [20]="Wichita, KS|-97.3301|37.6872"
-  [21]="Lexington, KY|-84.5037|38.0406"      [28]="Biloxi, MS|-88.8853|30.3960"
-  [38]="Grand Forks, ND|-97.0329|47.9253"    [46]="Aberdeen, SD|-98.4865|45.4647"
+  [45]="Charleston, SC|-79.9311|32.7765"     [21]="Lexington, KY|-84.5037|38.0406"
+  [28]="Biloxi, MS|-88.8853|30.3960"
+  # ⚠ KS/ND/SD probe a TOWNSHIP, not their one city. Those states now load
+  # COUSUB, and a G4110 probe at Wichita would pass without touching a single
+  # row this run writes — a check that reassures instead of checking. Each
+  # point is ST_PointOnSurface of the largest T1 township in that state's
+  # source file, so it is interior by construction, not by eyeball.
+  [20]="Garfield township, KS|-100.4450|38.1322"
+  [38]="Sentinel township, ND|-103.7348|46.8910"
+  [46]="Union township, SD|-103.0179|44.9516"
   [47]="Nashville, TN|-86.7816|36.1627"
 )
 echo "--- point-in-polygon spot check (geometry is usable, not just present) ---"
@@ -374,7 +390,12 @@ for fips in "${STATES[@]}"; do
   IFS='|' read -r label lon lat <<< "${PROBE[$fips]}"
   # MA's probe is a TOWN, so it is checked at G4040; the rest are incorporated
   # places at G4110. Probing the wrong layer would report 0 for a correct load.
-  mtfcc='G4110'; [[ "$fips" == 25 ]] && mtfcc='G4040'
+  # Probe the layer this run actually writes: G4040 wherever cousub is loaded
+  # and the probe names a township, G4110 for the incorporated-place probes.
+  case "$fips" in
+    25|20|38|46) mtfcc='G4040' ;;
+    *)           mtfcc='G4110' ;;
+  esac
   [[ -n "$PROBE_SQL" ]] && PROBE_SQL+=" union all "
   PROBE_SQL+="select '${label}' as probe, '${mtfcc}' as layer, count(*) as hits
     from essentials.geofence_boundaries
