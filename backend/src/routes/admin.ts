@@ -74,6 +74,10 @@ import {
   resolveResearchReview,
   rejectResearchReview,
 } from '../lib/researchEvidenceService.js';
+import {
+  listCandidatesWithPending, listPendingEvidence, acceptEvidence, rejectEvidence,
+  rehomeEvidence, evidenceReviewMetrics,
+} from '../lib/evidenceReviewService.js';
 
 const router = Router();
 
@@ -1321,6 +1325,51 @@ router.post('/research-review/:id/reject', async (req: any, res) => {
   } catch (err) {
     console.error('[admin/research-review/:id/reject] error:', err);
     res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Evidence review
+
+// NOTE: /evidence/candidates and /evidence/metrics must be declared before any
+// /evidence/:id/... route below, or the literal paths get shadowed by :id.
+router.get('/evidence/candidates', async (_req, res) => {
+  try { res.json(await listCandidatesWithPending()); }
+  catch (err) { console.error('[admin/evidence/candidates]', err); res.status(500).json({ error: 'failed' }); }
+});
+router.get('/evidence/metrics', async (_req, res) => {
+  try { res.json(await evidenceReviewMetrics()); }
+  catch (err) { console.error('[admin/evidence/metrics]', err); res.status(500).json({ error: 'failed' }); }
+});
+router.get('/evidence', async (req, res) => {
+  try {
+    const { politician_id, issue, machine_status } = req.query as Record<string, string>;
+    if (!politician_id) return res.status(400).json({ error: 'politician_id required' });
+    res.json(await listPendingEvidence(politician_id, { issue, machineStatus: machine_status }));
+  } catch (err) { console.error('[admin/evidence]', err); res.status(500).json({ error: 'failed' }); }
+});
+router.post('/evidence/:id/accept', async (req: any, res) => {
+  try { await acceptEvidence(req.params.id, actorId(req)); res.json({ ok: true }); }
+  catch (err) { console.error('[admin/evidence/accept]', err); res.status(500).json({ error: 'failed' }); }
+});
+router.post('/evidence/:id/reject', async (req: any, res) => {
+  try {
+    const { reason, note } = req.body ?? {};
+    await rejectEvidence(req.params.id, actorId(req), reason, note);
+    res.json({ ok: true });
+  } catch (err: any) {
+    if (/invalid reject reason/.test(err?.message)) return res.status(400).json({ error: err.message });
+    console.error('[admin/evidence/reject]', err); res.status(500).json({ error: 'failed' });
+  }
+});
+router.post('/evidence/:id/rehome', async (req: any, res) => {
+  try {
+    const { topic_id, issue } = req.body ?? {};
+    await rehomeEvidence(req.params.id, { topicId: topic_id ?? null, issue }, actorId(req));
+    res.json({ ok: true });
+  } catch (err: any) {
+    if (/issue/.test(err?.message)) return res.status(400).json({ error: err.message });
+    console.error('[admin/evidence/rehome]', err); res.status(500).json({ error: 'failed' });
   }
 });
 
