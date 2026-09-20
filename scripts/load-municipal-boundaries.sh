@@ -116,21 +116,28 @@ declare -A STATE_NAME=(
 # Civic Spaces flagged exactly this in red for California: it hands a reader a
 # city row pointing at a statistical division. "A wrong link, not a missing row."
 #
-# So COUSUB is loaded only where TT actually keys entities to MCDs, and the
-# Z-classes are filtered out even there. Every other state gets PLACE alone,
-# which is all its TT entities are keyed to. KS/ND/SD do have real townships,
-# but TT carries no entity for any of them; they can be added when it does.
+# So COUSUB is loaded only where the subdivisions are governments, and the
+# Z-classes are filtered out even there. The CCD states get PLACE alone.
+#
+# ⭐ KS/ND/SD carry real T1 townships and are now loaded, though TT keys no
+# entity to any of them. This table is not TT's — Civic Spaces resolves slices
+# against it, and a township government with no TT budget is still a government
+# a slice can sit on. Coverage here is not bounded by what TT happens to hold.
+#
+# ⚠ T9 (inactive) is filtered as well, dropping 139 rows across KS/ND/SD — 134
+# of them Kansas. See the T9 warning above `where_clause` before ever deleting
+# an existing T9 row: one of them is a government that still files budgets.
 declare -A STATE_LAYERS=(
   [26]="cousub place"   # MI — 1,240 of 1,773 TT entities are 10-digit MCDs
   [42]="cousub place"   # PA — 1,546 of 2,551
   [39]="cousub place"   # OH — TT keys places, but 1,309 real T1 townships
   [25]="cousub place"   # MA — the 13 unmatched are C5 city-MCDs
   [45]="place"          # SC — 13 entities, all places; COUSUB is 100% CCD
-  [20]="place"          # KS — Wichita only
+  [20]="cousub place"   # KS — 1,262 T1 townships; 134 inactive T9 filtered
   [21]="place"          # KY — Lexington-Fayette only; COUSUB is 100% CCD
   [28]="place"          # MS — Biloxi only; COUSUB is 100% CCD
-  [38]="place"          # ND — Grand Forks only
-  [46]="place"          # SD — Aberdeen only
+  [38]="cousub place"   # ND — 1,306 T1; 89 Z3 + 4 T9 filtered
+  [46]="cousub place"   # SD — 899 T1; 108 Z3 + 1 T9 filtered
   [47]="place"          # TN — Nashville-Davidson only; COUSUB is 100% CCD
 )
 
@@ -173,13 +180,26 @@ fi
 # Mask the credential, keep the host. See the header note.
 mask_url() { printf '%s' "$1" | sed -E 's#(//[^:]+):[^@]*@#\1:****@#'; }
 
-# ⚠⚠ The Z-class exclusion, in ONE place, used by both the count and the load.
+# ⚠⚠ The statistical / inactive exclusion, in ONE place, used by both the count
+# and the load.
 # CLASSFP Z1/Z3/Z5/Z9 are Census County Divisions and unorganized territories:
 # statistical areas that TIGER tags G4040, identically to real township
 # governments. Nothing in the loaded row would tell them apart. PLACE needs no
 # equivalent, because its statistical rows (CDPs) carry their own MTFCC, G4210.
+#
+# T9 = an INACTIVE MCD, excluded too. KS alone carries 134 of them.
+#
+# ⚠⚠⚠ BUT "INACTIVE" IS THE CENSUS'S OPINION, AND A PUBLISHER CAN DISAGREE.
+# `4207514944` Cold Spring township is CLASSFP T9, and Treasury Tracker carries
+# it as a live PA entity — population 52, TWO BUDGET ROWS from PA DCED. Census
+# says the government is inactive; the state publishes its budget anyway.
+#
+# ⛔ SO NEVER DELETE AN EXISTING T9 ROW WITHOUT CHECKING treasury.municipalities
+# FIRST. Filtering at load time is safe — this loader only inserts, so rows
+# already in the table survive and Cold Spring keeps its boundary. A DELETE
+# sweep over T9 would silently break coverage for a government that files.
 where_clause() {
-  [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%'" || printf ''
+  [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%' AND CLASSFP <> 'T9'" || printf ''
 }
 
 # ⚠ Name the states from STATES, never a literal. Both of these lines were
@@ -363,9 +383,16 @@ psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
 declare -A PROBE=(
   [26]="Detroit, MI|-83.0458|42.3314"        [42]="Philadelphia, PA|-75.1652|39.9526"
   [39]="Columbus, OH|-82.9988|39.9612"       [25]="Weymouth, MA|-70.9395|42.2180"
-  [45]="Charleston, SC|-79.9311|32.7765"     [20]="Wichita, KS|-97.3301|37.6872"
-  [21]="Lexington, KY|-84.5037|38.0406"      [28]="Biloxi, MS|-88.8853|30.3960"
-  [38]="Grand Forks, ND|-97.0329|47.9253"    [46]="Aberdeen, SD|-98.4865|45.4647"
+  [45]="Charleston, SC|-79.9311|32.7765"     [21]="Lexington, KY|-84.5037|38.0406"
+  [28]="Biloxi, MS|-88.8853|30.3960"
+  # ⚠ KS/ND/SD probe a TOWNSHIP, not their one city. Those states now load
+  # COUSUB, and a G4110 probe at Wichita would pass without touching a single
+  # row this run writes — a check that reassures instead of checking. Each
+  # point is ST_PointOnSurface of the largest T1 township in that state's
+  # source file, so it is interior by construction, not by eyeball.
+  [20]="Garfield township, KS|-100.4450|38.1322"
+  [38]="Sentinel township, ND|-103.7348|46.8910"
+  [46]="Union township, SD|-103.0179|44.9516"
   [47]="Nashville, TN|-86.7816|36.1627"
 )
 echo "--- point-in-polygon spot check (geometry is usable, not just present) ---"
@@ -374,7 +401,12 @@ for fips in "${STATES[@]}"; do
   IFS='|' read -r label lon lat <<< "${PROBE[$fips]}"
   # MA's probe is a TOWN, so it is checked at G4040; the rest are incorporated
   # places at G4110. Probing the wrong layer would report 0 for a correct load.
-  mtfcc='G4110'; [[ "$fips" == 25 ]] && mtfcc='G4040'
+  # Probe the layer this run actually writes: G4040 wherever cousub is loaded
+  # and the probe names a township, G4110 for the incorporated-place probes.
+  case "$fips" in
+    25|20|38|46) mtfcc='G4040' ;;
+    *)           mtfcc='G4110' ;;
+  esac
   [[ -n "$PROBE_SQL" ]] && PROBE_SQL+=" union all "
   PROBE_SQL+="select '${label}' as probe, '${mtfcc}' as layer, count(*) as hits
     from essentials.geofence_boundaries
