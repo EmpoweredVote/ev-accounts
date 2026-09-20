@@ -124,22 +124,20 @@ declare -A STATE_NAME=(
 # against it, and a township government with no TT budget is still a government
 # a slice can sit on. Coverage here is not bounded by what TT happens to hold.
 #
-# ⚠ KS brings **134 INACTIVE townships** (CLASSFP T9), which is a far bigger
-# number than the single inactive PA township already in the table. They are
-# loaded for consistency — an inactive government is one that stopped, not a
-# statistical artefact — but that is a judgment call at a scale worth naming,
-# not a rule. Filtering T9 as well would drop 139 rows across KS/ND/SD.
+# ⚠ T9 (inactive) is filtered as well, dropping 139 rows across KS/ND/SD — 134
+# of them Kansas. See the T9 warning above `where_clause` before ever deleting
+# an existing T9 row: one of them is a government that still files budgets.
 declare -A STATE_LAYERS=(
   [26]="cousub place"   # MI — 1,240 of 1,773 TT entities are 10-digit MCDs
   [42]="cousub place"   # PA — 1,546 of 2,551
   [39]="cousub place"   # OH — TT keys places, but 1,309 real T1 townships
   [25]="cousub place"   # MA — the 13 unmatched are C5 city-MCDs
   [45]="place"          # SC — 13 entities, all places; COUSUB is 100% CCD
-  [20]="cousub place"   # KS — 1,262 T1 townships (+134 INACTIVE T9)
+  [20]="cousub place"   # KS — 1,262 T1 townships; 134 inactive T9 filtered
   [21]="place"          # KY — Lexington-Fayette only; COUSUB is 100% CCD
   [28]="place"          # MS — Biloxi only; COUSUB is 100% CCD
-  [38]="cousub place"   # ND — 1,306 T1 townships, 89 Z3 filtered out
-  [46]="cousub place"   # SD — 899 T1 townships, 108 Z3 filtered out
+  [38]="cousub place"   # ND — 1,306 T1; 89 Z3 + 4 T9 filtered
+  [46]="cousub place"   # SD — 899 T1; 108 Z3 + 1 T9 filtered
   [47]="place"          # TN — Nashville-Davidson only; COUSUB is 100% CCD
 )
 
@@ -182,13 +180,26 @@ fi
 # Mask the credential, keep the host. See the header note.
 mask_url() { printf '%s' "$1" | sed -E 's#(//[^:]+):[^@]*@#\1:****@#'; }
 
-# ⚠⚠ The Z-class exclusion, in ONE place, used by both the count and the load.
+# ⚠⚠ The statistical / inactive exclusion, in ONE place, used by both the count
+# and the load.
 # CLASSFP Z1/Z3/Z5/Z9 are Census County Divisions and unorganized territories:
 # statistical areas that TIGER tags G4040, identically to real township
 # governments. Nothing in the loaded row would tell them apart. PLACE needs no
 # equivalent, because its statistical rows (CDPs) carry their own MTFCC, G4210.
+#
+# T9 = an INACTIVE MCD, excluded too. KS alone carries 134 of them.
+#
+# ⚠⚠⚠ BUT "INACTIVE" IS THE CENSUS'S OPINION, AND A PUBLISHER CAN DISAGREE.
+# `4207514944` Cold Spring township is CLASSFP T9, and Treasury Tracker carries
+# it as a live PA entity — population 52, TWO BUDGET ROWS from PA DCED. Census
+# says the government is inactive; the state publishes its budget anyway.
+#
+# ⛔ SO NEVER DELETE AN EXISTING T9 ROW WITHOUT CHECKING treasury.municipalities
+# FIRST. Filtering at load time is safe — this loader only inserts, so rows
+# already in the table survive and Cold Spring keeps its boundary. A DELETE
+# sweep over T9 would silently break coverage for a government that files.
 where_clause() {
-  [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%'" || printf ''
+  [[ "$1" == *_cousub.shp ]] && printf "WHERE CLASSFP NOT LIKE 'Z%%' AND CLASSFP <> 'T9'" || printf ''
 }
 
 # ⚠ Name the states from STATES, never a literal. Both of these lines were
