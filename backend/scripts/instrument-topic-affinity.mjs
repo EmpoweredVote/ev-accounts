@@ -8,13 +8,14 @@
  * (ladder-language-probe.mjs) found three of them only by accident, because one bill
  * description happened to reproduce another ladder's wording. This asks the question directly.
  *
- * 🔴 LADDER TEXT AND TITLES COME FROM THE VERSIONED SOURCE ONLY. `inform.compass_topics.title` and
- * `inform.compass_stances.text` are FROZEN (CA_0012 / ADR 0004): on 2026-09-08, 29 of the 60 topics
- * in the open season disagreed between the frozen text and the season pin, 16 of them on all five
- * rungs. A frozen read returns a complete, plausible ladder on the right subject, so it fails
- * silently. Titles here come from compass_topic_revisions, and each context row's title from ITS OWN
- * topic_revision_id — which is also more correct for this detector, since a row must be read against
- * the ladder it was actually written against. Enforced by scripts/check-ladder-text-reads.mjs.
+ * 🔴 TITLES AND RUNG TEXT COME FROM compass_topic_revisions / compass_stance_revisions ONLY, and each
+ * context row's title from ITS OWN topic_revision_id. The equivalent columns on the pre-versioning
+ * tables stopped being maintained at CA_0012 (ADR 0004): on 2026-09-08, 29 of the 60 topics in the
+ * open season disagreed with their season pin, 16 of them on all five rungs. Reading the stale copy
+ * returns a complete, plausible ladder on the right subject, so it fails silently — which is exactly
+ * the failure mode this detector exists to catch. Reading via topic_revision_id is also simply more
+ * correct here: a row has to be judged against the ladder it was actually written against.
+ * Enforced by scripts/check-ladder-text-reads.mjs.
  *
  * METHOD — the corpus is its own dictionary.
  *   1. Every time a row cites a bill it usually describes it in the same breath:
