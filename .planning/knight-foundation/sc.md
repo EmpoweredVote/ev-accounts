@@ -202,3 +202,147 @@ will need for Richland, Horry, Columbia and Myrtle Beach.
 
 ▶ **Stage 2 owes 170 offices — SC currently has ZERO state legislative offices and no legislative
 chamber.**
+
+---
+
+# SC-2 — stage 2 APPLIED 2026-09-20. 170 offices, 170 seated, 0 vacancies.
+
+`CC_0125` (structure) + `CC_0126` (occupancy), both slots **reserved from the allocator**. Generated
+by `scripts/gen-sc-legislature-migrations.mjs` from `data/sc-legislature-roster.json`, so 170 seats
+are never hand-typed. Roster and evidence:
+[`backend/data/seed-sc-legislature-2026/ROSTERS.md`](../../backend/data/seed-sc-legislature-2026/ROSTERS.md).
+
+| | |
+| --- | --- |
+| Offices | **170** — 124 Representatives + 46 Senators, 2 chambers, one government row |
+| People | **169 created** (band `-2745200 .. -2745001`) + **1 reused** |
+| Terms | **170**, all open-ended; **17 at `day` precision, 153 at `unknown`** |
+| Vacancies | **0** — neither chamber has one today |
+
+### Measured from outside, after the apply
+
+- `politicians` **87,514 → 87,683**, exactly +169, and all 169 are inside the band.
+- **170 offices, 170 seated** counting `och.politician_id` — never `count(*)`, because
+  `office_current_holder` LEFT JOINs from `offices` and an unseated office is a NULL, not an absence.
+- **`offices_missing_terms` unmoved at 823 / 655 unflagged.** Every office created here got a term.
+- Chambers under *State of South Carolina*: 5 → **7**, the two new ones carrying `official_count`
+  124 / 46 and `term_length` 2 / 4 (S.C. Const. Art. III).
+- **0 terms carry a `term_end`.**
+- **Idempotent, proved by re-running both**: every `essentials.*` write returns `INSERT 0 0` and both
+  gates stay green.
+- **Nobody seated here holds a second seat anywhere in the country** — checked nationally, not just
+  inside South Carolina.
+
+### 🔴🔴 THE DUPLICATE-NAME COLLISION WAS INSIDE THE WAVE, NOT AGAINST PRODUCTION
+
+Two sitting South Carolina legislators are both `(first_name, last_name) = (Luke, Rankin)`:
+
+| Seat | Member | Born | County | Member code |
+| --- | --- | --- | --- | --- |
+| HD-14 | Luke S. Rankin | 1997-08-16, Greenville | Laurens | `1510227092` |
+| SD-33 | Luke A. Rankin, chairman of Senate Judiciary | 1962-04-09, Horry | Horry | `1511363455` |
+
+Different births, different parents, different counties, different chambers, different codes — and
+the production guard keys on the pair, so **the House row made the Senate row a duplicate of a
+person who did not exist when the wave began.**
+
+🔴 **A PRE-FLIGHT THAT COMPARES THE ROSTER ONLY AGAINST PRODUCTION CANNOT SEE THIS.** The two-pass
+name search run before generation — exact pair, then surname-with-a-state-connection, the PA-2
+procedure — returned two hits (Wes Climer, reused; John King of California, a different person) and
+was blind to the collision *inside its own input*. The dry-run found it. The generator now asserts
+that the armed set does not collide with itself and fails at generation time with both seats named.
+
+### 🔴🔴 THE ELECTION DATE IS NOT THE TERM START, AND THE GAP REACHED SEVEN MONTHS
+
+Eighteen member pages carry a line like *"Elected in Special Election June 3, 2025, to fulfill the
+unexpired term of …"*. That is the **election**. HD-50's oath was administered on **2026-01-13**,
+seven months later, because the House was not sitting in between — a member-elect is not a member.
+
+**17 terms are dated from the OATH**, read out of each chamber's own journal by
+[`backend/scripts/find-sc-oath-dates.mjs`](../../backend/scripts/find-sc-oath-dates.mjs). Three
+detector defects were found and each was caught by its own count, not by inspection:
+
+| Defect | What it did | What exposed it |
+| --- | --- | --- |
+| `[^.]` in the name window | "Keishan **M.** Scott" never matched — a middle initial contains a period | three names without an initial matched, so it read as a partial success |
+| one chamber's wording | the House writes *"Member-elect from District No. N … oath of office was administered"*; the Senate writes *"Senator X presented himself at the Bar…"* | SD-12 returned a confident NOT FOUND across every probed day |
+| `Senator SURNAME` | the journal prints a compound surname in full — *"Senator BRIGHT MATTHEWS"* | SD-45 read as NOT FOUND across **84** journal days |
+
+⚠ **SD-26 is left UNDATED on purpose.** Russell Ott's page carries an arrival line — *"Elected in
+Special Election October 29, 2013"* — but that dates a **House** seat he held ten years before
+entering the Senate. Running the search against the journal of the chamber he sits in **today**
+returns nothing for him, which is how the line was rejected instead of imported. **An arrival line
+on a member page can belong to the other chamber.**
+
+### 🔴🔴 THE MEMBER'S OWN PAGE IS NOT A CHANGE-CHECK EITHER — SD-15
+
+All **170** member pages were read: every one names the member the list assigned to that district
+(170/170) and states that district (170/170), 0 errors. It was still not enough.
+
+**Wes Climer (SD-15) signed an irrevocable resignation effective 2026-11-03**, under S.C. Code
+§ 8-1-145, so that his successor is elected at the November general election rather than at a
+separate special election. His own page, his chamber's list, Open States and the state's GIS layer
+all show him with no qualification — and all four are **correct**: he holds the seat until that
+date, and he is written as its holder.
+
+| Instrument | What it could see |
+| --- | --- |
+| roster list, member page, Open States, RFA | Climer, SD-15 — true today, and silent about November |
+| the Senate Journal (273 sitting days swept) | **nothing** — his letter post-dates the last day it covers |
+| `scvotes.gov` | **Senate District 15 Special Election — primary 2026-09-01, election 2026-11-03** |
+
+▶ **No `term_end` is written** — a future `term_end` makes a seat silently self-vacate. **The debt:
+on 2026-11-03, SD-15's term must be closed and its successor seated.** This is the Long Beach
+District 7 shape.
+
+⚠ **A journal sweep answers "who has left", never "who is leaving".**
+[`backend/scripts/sweep-sc-journal-departures.mjs`](../../backend/scripts/sweep-sc-journal-departures.mjs)
+read every sitting day of the 126th General Assembly — 257 departure sentences, all read — and
+reports no unfilled seat. It could not have found SD-15.
+
+### 🔴 The third authority is stale on 7 of 170 — in TWO DIFFERENT FIELDS
+
+The RFA layer carries both a member label and that member's page URL. Three rows are stale in both
+(HD-21, HD-98, SD-12 — all seats that changed hands and are now correctly seated here). **Four rows
+carry the CURRENT member's name beside a STALE URL**: HD-88, HD-50, HD-113, and HD-97, whose URL
+points at District **96**'s member. A check reading only the name would report 3; a check reading
+only the URL would report 7 and call four of them turnovers. **Freshness is a property of a FIELD.**
+
+### Gates, each watched failing first
+
+| Control | Planted defect | Gate that fired |
+| --- | --- | --- |
+| 1 | occupancy applied without the structure | `expected 170 South Carolina legislative offices, got 0` |
+| 2 | `sc_terms` emptied before the insert | `expected 170 terms, got 0` |
+| 3 | a `Representative` office planted on **Richland COUNTY** `45079` | `1 COUNTY district(s) picked up a legislative office — a geo_id-only join` |
+| 4 | HD-2's seat pointed at HD-1's person | `1 person(s) hold more than one South Carolina legislative seat` |
+| 5 | HD-50's oath date removed | `expected 17 dated term(s), got 16` |
+| 6 | SD-15 seated by a different existing row | `SD-15 is not held by the existing Wes Climer row (got 0)` |
+
+Every control **aborted for its own reason**, and each ran against production inside a transaction
+ending in `ROLLBACK`. Both migrations were then dry-run as **ONE transaction ending in ROLLBACK**,
+and **the rollback was confirmed to have reverted**: 0 SC legislative offices, 0 people in the band,
+`offices_missing_terms` unchanged, before anything was applied.
+
+### ✅ End to end, on live production
+
+`GET /api/essentials/address-search` after the apply:
+
+| Address | State House | State Senate |
+| --- | --- | --- |
+| Columbia City Hall | **J. Todd Rutherford**, HD-74 | **Russell L. Ott**, SD-26 |
+| SC State House | **Seth Rose**, HD-72 | **Russell L. Ott**, SD-26 |
+| Myrtle Beach City Hall | **T. Case Brittain, Jr.**, HD-107 | **Luke A. Rankin**, SD-33 |
+| Charlotte, NC *(negative control)* | Becky Carney, NC HD-102 | Caleb Theodros, NC SD-41 — **no SC seat** |
+
+Every answer matches the state's own RFA layer at the same point, and Myrtle Beach returns the
+**Senate** Luke Rankin, not the House one. ⚠ The first run of this probe reported **0 answers for
+every address including the negative control** — a uniform answer, and the payload key was wrong.
+The negative control is what made that visible.
+
+**Per-district control: 46/46 and 124/124 polygons return exactly one office AND exactly one
+holder**, 0 failures. `check:reachability` nothing regressed, two buckets below baseline;
+`check:occupancy`, `check:migrations` and `check:reservations` green.
+
+▶ **Next: stage 3 — Columbia and Myrtle Beach city councils, both unmeasured.** The state's own
+`Municipalities` and `County_Council_Districts` layers are already located for stages 3 and 4.
