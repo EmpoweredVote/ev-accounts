@@ -170,11 +170,35 @@ Set it `false` if that friction outweighs the staleness risk — the check still
 
 ---
 
-## 6. Unverified
+## 6. Rulesets — checked, and there are none
 
-**Organisation-level rulesets were not checked** — `GET /orgs/EmpoweredVote/rulesets` returned 404
-for lack of the `admin:org` scope. Repo rulesets are empty and classic protection is as described,
-so nothing org-wide is *visibly* in play, but this document cannot rule it out. Confirm with
-`gh auth refresh -h github.com -s admin:org` before concluding the repo is unguarded org-wide.
+An earlier draft left this open because `GET /orgs/EmpoweredVote/rulesets` returns 404 without the
+`admin:org` scope. That scope turned out to be unnecessary:
+`GET /repos/{owner}/{repo}/rules/branches/{branch}` reports every **ruleset** rule applying to a
+branch, organisation-level ones included, and needs only repo read.
+
+    GET /repos/EmpoweredVote/ev-accounts/rules/branches/master   ->  []
+
+✅ **No ruleset applies to `master`, at either level.** Combined with repo rulesets being `[]`, the
+classic protection in §1 is the whole of it.
+
+🔴 **The control is what makes that `[]` meaningful, and it is worth copying as a habit.**
+`civic-spaces` `main` demonstrably carries classic protection — one required review and a required
+`build` — and returns `[]` from the same endpoint:
+
+    GET /repos/EmpoweredVote/civic-spaces/rules/branches/main    ->  []
+
+So this endpoint covers **rulesets only and is blind to classic branch protection**. Without the
+control, `[]` on `ev-accounts` would read as "no protection at all", which is the wrong conclusion
+for the right-looking reason. An empty result from an API you have not calibrated against a known
+positive is not evidence.
+
+⚠ **One residual limit, stated rather than glossed.** This endpoint reports the rules applying in
+the *requesting user's* context, and the account used holds org admin. A ruleset whose bypass list
+includes that account could in principle be filtered out. Nothing suggests one exists — repo
+rulesets are empty and the org has shown no sign of ruleset use — but a definitive enumeration
+still wants `gh auth refresh -h github.com -s admin:org` and a direct read of
+`GET /orgs/EmpoweredVote/rulesets`. It would not change §4: a rule this account bypasses is not a
+rule that constrains this account.
 
 Everything else here was read from the API or from `origin/master` on 2026-09-20.
