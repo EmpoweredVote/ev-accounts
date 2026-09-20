@@ -1,0 +1,222 @@
+{
+  "wave": "SC-3",
+  "generated_at": "2026-09-20",
+  "sources": {
+    "columbia_council": "https://citycouncil.columbiasc.gov/",
+    "columbia_districts": "https://citycouncil.columbiasc.gov/districts/",
+    "columbia_profiles": "https://citycouncil.columbiasc.gov/council-profiles/<slug>/",
+    "columbia_swearing_in": "https://columbiasc.gov/city-of-columbia-swearing-in-ceremony-for-the-mayor-and-city-council-members-2/",
+    "myrtle_beach_council": "https://www.cityofmyrtlebeach.com/government/mayor___city_council/index.php",
+    "myrtle_beach_history": "https://www.cityofmyrtlebeach.com/government/mayor_and_city_concil/past_council_members.php",
+    "myrtle_beach_swearing_in": "https://www.cityofmyrtlebeach.com/news_detail_T6_R2527.php",
+    "masc": "https://www.masc.sc/municipality/{columbia,myrtle-beach}"
+  },
+  "cities": [
+    {
+      "key": "columbia",
+      "name": "City of Columbia, South Carolina, US",
+      "place_geo_id": "4516000",
+      "county": "Richland",
+      "form_of_government": "Council-Manager",
+      "council_chamber": "Columbia City Council",
+      "council_official_count": 7,
+      "district_mtfcc": "X0059",
+      "charter_note": "The council's own page: \"City Council consists of the Mayor, Council District members (4), and At-Large Council members (2).\" The council of seven therefore COUNTS the mayor; the mayor's office is modelled in its own chamber, as in every earlier city wave.",
+      "members": [
+        {
+          "title": "Mayor",
+          "full_name": "Daniel J. Rickenmann",
+          "first_name": "Daniel",
+          "last_name": "Rickenmann",
+          "district_geo_id": "4516000",
+          "district_mtfcc": "G4110",
+          "chamber": "Office of the Mayor",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null,
+          "note": "Re-elected 2025-11-04 and sworn in 2026-01-05, but that is a RE-ELECTION: his occupancy began after the 2021 election and no source read here dates that day."
+        },
+        {
+          "title": "Council Member, District 1",
+          "full_name": "Tina N. Herbert",
+          "first_name": "Tina",
+          "last_name": "Herbert",
+          "district_geo_id": "cola-council-district-1",
+          "district_mtfcc": "X0059",
+          "chamber": "Columbia City Council",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null,
+          "note": "Re-elected 2025-11-04; sworn 2026-01-05 for a further term, so the swearing-in does not date her occupancy."
+        },
+        {
+          "title": "Council Member, District 2",
+          "full_name": "Edward H. McDowell, Jr.",
+          "first_name": "Edward",
+          "last_name": "McDowell",
+          "district_geo_id": "cola-council-district-2",
+          "district_mtfcc": "X0059",
+          "chamber": "Columbia City Council",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null,
+          "note": "His profile says \"elected to City Council in 2016\" — an election year, not a term start."
+        },
+        {
+          "title": "Council Member, District 3",
+          "full_name": "Will Brennan",
+          "first_name": "Will",
+          "last_name": "Brennan",
+          "district_geo_id": "cola-council-district-3",
+          "district_mtfcc": "X0059",
+          "chamber": "Columbia City Council",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null
+        },
+        {
+          "title": "Council Member, District 4",
+          "full_name": "Peter M. Brown",
+          "first_name": "Peter",
+          "last_name": "Brown",
+          "district_geo_id": "cola-council-district-4",
+          "district_mtfcc": "X0059",
+          "chamber": "Columbia City Council",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null,
+          "note": "Won the 2025-11-18 runoff as the incumbent and was sworn 2026-01-05 — a re-election, so it does not date his occupancy."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Tyler D. Bailey",
+          "first_name": "Tyler",
+          "last_name": "Bailey",
+          "district_geo_id": "4516000",
+          "district_mtfcc": "G4110",
+          "chamber": "Columbia City Council",
+          "term_start": null,
+          "start_precision": "unknown",
+          "how_started": null
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Sam P. Johnson",
+          "first_name": "Sam",
+          "last_name": "Johnson",
+          "district_geo_id": "4516000",
+          "district_mtfcc": "G4110",
+          "chamber": "Columbia City Council",
+          "term_start": "2026-01-05",
+          "start_precision": "day",
+          "how_started": "elected",
+          "note": "NEW arrival: defeated the incumbent at-large councilmember in the 2025-11-18 runoff and was sworn in on 2026-01-05. The only Columbia seat this wave can date."
+        }
+      ]
+    },
+    {
+      "key": "myrtle-beach",
+      "name": "City of Myrtle Beach, South Carolina, US",
+      "place_geo_id": "4549075",
+      "county": "Horry",
+      "form_of_government": "Council-Manager",
+      "council_chamber": "Myrtle Beach City Council",
+      "council_official_count": 7,
+      "district_mtfcc": null,
+      "charter_note": "Council is elected AT LARGE, non-partisan, at the election on the first Tuesday after the first Monday in November of odd years — the Municipal Association of South Carolina's own directory entry. No ward or district layer exists and none is invented: Tallahassee, State College and Boulder again.",
+      "members": [
+        {
+          "title": "Mayor",
+          "full_name": "Mark Kruea",
+          "first_name": "Mark",
+          "last_name": "Kruea",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Office of the Mayor",
+          "term_start": "2026-01-13",
+          "start_precision": "day",
+          "how_started": "elected",
+          "note": "Elected 2025-11; sworn in 2026-01-13, per the city's own news release."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Michael \"Mike\" Chestnut",
+          "first_name": "Michael",
+          "last_name": "Chestnut",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2000-11-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "note": "The city's own history page: \"Michael L. Chestnut (November 2000-December 2003)\", then every span since without a gap. Continuous since November 2000."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "C. H. \"Mike\" Lowder, Jr.",
+          "first_name": "C.",
+          "last_name": "Lowder",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2010-01-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "note": "The council page says \"elected to City Council in 2009\"; the history page has him from JANUARY 2010, without a gap since. The election year is not the start."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Jackie Hatley",
+          "first_name": "Jackie",
+          "last_name": "Hatley",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2018-01-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "note": "History page: January 2018 onward without a gap. Re-elected in 2025 and sworn again on 2026-01-13, which does not restart her occupancy."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Deborah \"Debbie\" K. Conner",
+          "first_name": "Deborah",
+          "last_name": "Conner",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2024-01-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "note": "History page: January 2024-December 2027. Mayor Pro Tem."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Bill McClure",
+          "first_name": "Bill",
+          "last_name": "McClure",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2024-01-01",
+          "start_precision": "month",
+          "how_started": "elected",
+          "note": "History page: January 2024-December 2027."
+        },
+        {
+          "title": "Council Member, At Large",
+          "full_name": "Philip N. Render",
+          "first_name": "Philip",
+          "last_name": "Render",
+          "district_geo_id": "4549075",
+          "district_mtfcc": "G4110",
+          "chamber": "Myrtle Beach City Council",
+          "term_start": "2026-01-13",
+          "start_precision": "day",
+          "how_started": "elected",
+          "note": "🔴 RETURNING AFTER A GAP. Dr. Render served January 2004 through December 2023 and was OUT for the 2024-2025 term; he was elected again in 2025 and sworn in on 2026-01-13. A \"first elected\" reading would overstate his current occupancy by 22 years."
+        }
+      ]
+    }
+  ]
+}

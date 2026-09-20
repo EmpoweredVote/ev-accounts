@@ -346,3 +346,119 @@ holder**, 0 failures. `check:reachability` nothing regressed, two buckets below 
 
 ▶ **Next: stage 3 — Columbia and Myrtle Beach city councils, both unmeasured.** The state's own
 `Municipalities` and `County_Council_Districts` layers are already located for stages 3 and 4.
+
+---
+
+# SC-3 — stage 3 APPLIED 2026-09-20. 14 offices, 14 seated, 0 vacancies.
+
+`X0059` (4 Columbia council-district polygons), `CC_0127` structure, `CC_0128` occupancy. Roster and
+evidence: [`backend/data/seed-sc-cities-2026/ROSTERS.md`](../../backend/data/seed-sc-cities-2026/ROSTERS.md).
+
+| | |
+| --- | --- |
+| Offices | **14** — Columbia 7, Myrtle Beach 7, in 4 chambers under 2 new city governments |
+| People | **14 created** (band `-2745400 .. -2745301`), 0 reused |
+| Terms | **14**, all open-ended; **3 at `day`, 5 at `month`, 6 at `unknown`** |
+| Vacancies | **0** |
+
+Production held **nothing** for either city beforehand: one South Carolina government row (the
+state), no city government, no local district, no city office.
+
+### 🔴 The two councils are not made uniform
+
+| | Columbia | Myrtle Beach |
+| --- | --- | --- |
+| Council | "the Mayor, Council District members (4), and At-Large Council members (2)" — seven, **counting the mayor** | a mayor and **six** councilmembers |
+| Method | 4 single-member districts + 2 **unnumbered** at-large | **all six at large** (MASC states it in one word) |
+| Geometry | 4 polygons loaded as `X0059` | **none, and none invented** — Tallahassee, State College and Boulder again |
+
+`official_count` carries each city's own number (7 and 7), not a house convention.
+
+### 🔴🔴 MYRTLE BEACH PUBLISHES TWO COUNCIL PAGES AND ONLY ONE IS MAINTAINED
+
+`/government/mayor___city_council/` is current. `/government/mayor_and_city_concil/` still names
+**Mayor Brenda Bethune** and **Councilman Gregg Smith**, whose terms ended in January 2026. Both
+return **HTTP 200** with a complete roster, and the stale one still carries **five of the seven**
+current members — so a name check against it passes for five people out of seven.
+
+Two things separate them: the stale page's *"term expires January 2026"* — **Duluth's rule, that a
+council's change-check signal is an expired date** — and the fact that the **Municipal Association
+of South Carolina**, which maintains neither page, agrees with the other one. ⚠ The *misspelled*
+path is the stale one, but the misspelling is not the tell: the city's own council history still
+lives under that same path. `verify-sc-cities-roster.mjs` asserts the stale page is **still stale**,
+so the day that changes is noticed rather than assumed.
+
+### 🔴🔴 A RE-ELECTION DOES NOT RESTART AN OCCUPANCY — FIVE SEATS WOULD HAVE BEEN WRONG
+
+Columbia's mayor and its District 1 and District 4 members were sworn in on **2026-01-05**, and
+Myrtle Beach's Lowder and Hatley on **2026-01-13**. Every one of those is a **re-election**. Writing
+the swearing-in would have restarted occupancies that never stopped: **Lowder has served since
+January 2010 and Hatley since January 2018.**
+
+🔴 **And the opposite case is in the same wave.** Myrtle Beach's **Philip N. Render** served January
+2004 → December 2023, was **out for the 2024-2025 term**, and returned on 2026-01-13. "First
+elected" would overstate his current occupancy by **22 years**. Both gates are asserted by name in
+`CC_0128`.
+
+⚠ **Myrtle Beach's "Who Served When" history is one term behind** — its last block is
+January 2024-December 2027 and it does not list the January 2026 arrivals. It is an excellent source
+for *when somebody started* and a poor one for *who is serving now*. Columbia has no equivalent at
+all: it publishes election YEARS, which is why six of its seven seats are `unknown`.
+
+### The district layer, and what was NOT proved
+
+Columbia's `CouncilDistrict` publishes **four polygons and one attribute**, `LABEL`. No adoption
+date, no plan name, and **no second boundary set to diff against** — the Philadelphia method is
+unavailable here.
+
+What was checked instead: the council's **own neighbourhood lists**, text published by the council
+rather than by GIS, geocoded through a third party — **8 of 8 anchors** fall in the district the
+page assigns them to, and **two points outside Columbia match nothing**. The districts do not
+overlap, cover **99.955%** of the city, and extend **2.500 sq mi** beyond the TIGER place polygon
+(annexation lag). One polygon is **invalid as published** and is repaired on write.
+
+⚠ **That proves agreement with the council's description today; it does not date the map, and
+nothing available here can.** Recorded as a limitation, not dressed up.
+
+### Gates, each watched failing first
+
+| Control | Planted defect | What fired |
+| --- | --- | --- |
+| 1 | occupancy applied without the structure | `expected 14 city offices, got 0` |
+| 2 | one of the four council polygons deleted | `expected 4 X0059 council-district boundaries, found 3` |
+| 3 | an at-large office **moved** onto Richland County `45079` | `1 county/legislative district(s) picked up a city office` |
+| 4 | Render dated from his 2004 first arrival | `Render is not seated from 2026-01-13` |
+| 5 | Lowder dated from the 2026 swearing-in | `Lowder is not seated from January 2010` |
+| 6 | a second holder on one at-large office | `office_terms_no_overlap` — **the database's own exclusion constraint, not the gate** |
+
+🔴 **Control 3 first aborted for the WRONG REASON.** It began by *inserting* an extra office, and
+the per-city count gate caught that first — the defect was caught, but not by the gate under test.
+Moving an existing office instead keeps both counts at 7, so only the collision gate can fire.
+🟢 **Control 6 is recorded as it happened**: the gate is never reached, because `office_terms`
+refuses the overlapping row itself. That is the stronger answer, and it is left standing rather than
+engineered around.
+
+The loader's own three gates were watched failing too — a tampered feature count (`expected 5, got
+4`) and the coverage gate pointed at the wrong city's polygon (`0.000% of Columbia`). ⚠ Its overlap
+gate first reported **4 overlapping pairs where there are none** — a bad `RIGHT JOIN` counting rows
+rather than pairs. A gate that fires on a healthy layer is as broken as one that never fires.
+
+Both migrations were dry-run against production as **one transaction ending in ROLLBACK**, and the
+rollback was confirmed to have reverted. Both are idempotent, proved by re-running; the boundary
+loader too (`inserted 0`).
+
+### ✅ End to end, on live production
+
+| Address | City-level answers |
+| --- | --- |
+| Columbia City Hall | **4** — Mayor Rickenmann, **District 2 McDowell**, and both at-large (Bailey, Johnson) |
+| Myrtle Beach City Hall | **7** — Mayor Kruea and all six at-large members |
+| Charleston City Hall *(negative control)* | **0** city-level answers |
+
+Columbia City Hall resolving to **District 2** matches the council page's own assignment of the
+downtown neighbourhoods. **Per-district control: 4/4 polygons return exactly one office and exactly
+one holder.** `check:reachability` nothing regressed, two buckets below baseline;
+`check:occupancy`, `check:migrations` and `check:reservations` green.
+
+▶ **Next: stage 4 — Richland and Horry county councils**, plus each county's separately elected
+officers. The state's own `County_Council_Districts` layer is already located.
