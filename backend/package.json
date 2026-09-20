@@ -39,6 +39,7 @@
     "leads:congress": "node scripts/congress-sponsorship-leads.mjs",
     "check:season-floor": "node scripts/check-season-corpus-floor.mjs",
     "check:season-floor:verbose": "node scripts/check-season-corpus-floor.mjs --verbose",
+    "check:instrument-topics": "node scripts/instrument-topic-affinity.mjs --selftest",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
     "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
