@@ -79,6 +79,56 @@ if (!head) { console.error(`${wt}: not a git worktree`); process.exit(2); }
 
 git(wt, ["fetch", "origin", "--quiet"], true);
 
+// 0. WHICH BRANCH IS "UPSTREAM" HERE?
+//
+// 🔴 `origin/master` WAS HARDCODED, AND THAT IS A FACT ABOUT THIS REPO, NOT ABOUT GIT. Pointed at
+//    an essentials worktree on 2026-09-20 this asked about a ref that does not exist there — that
+//    repo's default branch is `main` — and reported the missing answer as two refusals,
+//    `not-merged` and `content-unknown`, for a branch that was merged. It fails SAFE, so it was a
+//    nuisance rather than a hazard; but a checker that refuses every main-default repo is one
+//    people learn to --force past, and then it is not a checker at all.
+//
+// Resolution order, most authoritative first. 🟢 THE ANSWER AND ITS SOURCE ARE PRINTED, so a wrong
+// one is visible in the report rather than buried inside a verdict.
+//
+// ⚠ EVERY CANDIDATE IS CHECKED FOR EXISTENCE BEFORE IT IS RETURNED, and that is not
+//    belt-and-braces. `symbolic-ref` happily resolves to a branch that is GONE — a control run
+//    against a repo whose remote refs had all been deleted still got `origin/trunk` back, and the
+//    comparisons below then failed against a ref that is not there and printed
+//    `content identical: UNKNOWN`. That is the same false refusal this block exists to remove,
+//    re-entering through the fix for it.
+const exists = (ref) => git(wt, ["rev-parse", "--verify", "--quiet", ref], true) !== null;
+const resolveDefaultBranch = () => {
+  // What the remote said its default was, recorded at clone time. Cheap, and offline.
+  const sym = git(wt, ["symbolic-ref", "--short", "refs/remotes/origin/HEAD"], true);
+  if (sym && exists(sym)) return { ref: sym, how: "refs/remotes/origin/HEAD" };
+  // That ref is missing on clones made before it existed, and after `git remote prune`. Ask the
+  // remote directly — one round trip, and only on this path.
+  const shown = git(wt, ["remote", "show", "origin"], true);
+  const m = shown && shown.match(/HEAD branch:\s*(\S+)/);
+  if (m && m[1] !== "(unknown)" && exists("origin/" + m[1])) {
+    return { ref: "origin/" + m[1], how: "git remote show origin" };
+  }
+  // Last resort, and the report calls it a guess. A guess that reads like a measurement is the
+  // exact defect this block exists to remove.
+  for (const guess of ["origin/main", "origin/master"]) {
+    if (exists(guess)) {
+      return { ref: guess, how: "GUESSED — origin/HEAD is unset; run `git remote set-head origin -a`" };
+    }
+  }
+  return null;
+};
+const def = resolveDefaultBranch();
+if (!def) {
+  // Fatal, not "block with a reason": every check below compares against this ref, and comparing
+  // against a ref that does not exist is what produced the false refusal in the first place.
+  console.error(wt + ": cannot resolve the remote's default branch — no refs/remotes/origin/HEAD, "
+    + "no HEAD branch from `git remote show origin`, and neither origin/main nor origin/master "
+    + "exists. Fix with `git remote set-head origin -a`.");
+  process.exit(2);
+}
+const MAIN = def.ref;
+
 // 1. Is this work upstream — BY EITHER ROUTE?
 //
 // 🔴 ANCESTRY IS ONLY ONE ROUTE, AND NOT THE ONE THIS REPO USES. A squash merge replays the whole
@@ -87,7 +137,7 @@ git(wt, ["fetch", "origin", "--quiet"], true);
 //    onto master, this check refused to let go of #486's own worktree for exactly that reason —
 //    and the three merges before it were squashes too. A false "you would drop commits" on the
 //    common case teaches people to pass --force, which is how the check stops being read at all.
-const isAncestor = git(wt, ["merge-base", "--is-ancestor", head, "origin/master"], true) !== null;
+const isAncestor = git(wt, ["merge-base", "--is-ancestor", head, MAIN], true) !== null;
 
 // 2. Content comparison — ALWAYS MEASURED.
 //
@@ -98,7 +148,7 @@ const isAncestor = git(wt, ["merge-base", "--is-ancestor", head, "origin/master"
 //
 //    Compare only the paths this branch TOUCHED. A whole-repo diff would report every other
 //    change merged since, which is not this branch's business.
-const base = git(wt, ["merge-base", head, "origin/master"], true);
+const base = git(wt, ["merge-base", head, MAIN], true);
 let contentState = "unknown";
 let differing = [];
 let comparedCount = 0;
@@ -110,7 +160,7 @@ if (base) {
     if (files.length === 0) {
       contentState = "same";   // the branch changed nothing; there is nothing to lose
     } else {
-      const out = git(wt, ["diff", "--name-only", head, "origin/master", "--", ...files], true);
+      const out = git(wt, ["diff", "--name-only", head, MAIN, "--", ...files], true);
       if (out !== null) {
         differing = out.split("\n").filter(Boolean);
         contentState = differing.length === 0 ? "same" : "differs";
@@ -125,7 +175,7 @@ if (base) {
 // answers the question that actually matters: does master already carry what this branch wrote?
 let patchUpstream = false;
 if (!isAncestor) {
-  const cherry = git(wt, ["cherry", "origin/master", head], true);
+  const cherry = git(wt, ["cherry", MAIN, head], true);
   if (cherry !== null) {
     const lines = cherry.split("\n").filter(Boolean);
     patchUpstream = lines.length > 0 && lines.every((l) => l.startsWith("-"));
@@ -178,11 +228,12 @@ const v = verdictFor({
 
 console.log(`${wt}  [${branch ?? "detached"}]`);
 const upstreamNote = {
-  ancestor: "yes — origin/master contains this commit",
-  squash: `yes — not an ancestor, but master already carries this branch's content${
+  ancestor: `yes — ${MAIN} contains this commit`,
+  squash: `yes — not an ancestor, but ${MAIN} already carries this branch's content${
     patchUpstream ? " (and its patch is upstream)" : ""}. This is what a squash merge leaves`,
   none: "NO",
 }[upstream];
+console.log(`  compares against          : ${MAIN}  (via ${def.how})`);
 console.log(`  work is upstream          : ${upstreamNote}`);
 console.log(`  content identical         : ${
   contentState === "same" ? `yes (${comparedCount} path(s) compared)`

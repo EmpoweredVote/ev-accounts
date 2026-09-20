@@ -4,7 +4,8 @@
  * Design: docs/superpowers/specs/2026-09-04-steward-coordination-design.md (§9)
  *
  *   "Verify before deleting a worktree or branch: untracked-and-ignored count is zero, the
- *    branch is fully merged into origin/master, the merged content is byte-identical, and the
+ *    branch is fully merged into the remote's DEFAULT branch (resolved at runtime, not assumed
+ *    to be master), the merged content is byte-identical, and the
  *    repo stash count is unchanged. Run a positive control on any detector that reports
  *    'nothing found' — on 2026-09-04 two such detectors were silently broken and only a
  *    control exposed them."
@@ -112,11 +113,11 @@ export function unquotePath(raw) {
 
 /**
  * @param {object} facts
- * @param {'ancestor'|'squash'|'none'} facts.upstream  HOW the work reached master. Ancestry is
+ * @param {'ancestor'|'squash'|'none'} facts.upstream  HOW the work reached the default branch. Ancestry is
  *        only one route: a squash merge replays the branch as one new commit, so a fully merged
  *        branch's tip is NOT an ancestor. Absent is read as 'none'.
  * @param {'same'|'differs'|'unknown'} facts.contentState  result of comparing the paths this
- *        branch touched against master. 'unknown' means the comparison could not be made and
+ *        branch touched against the default branch. 'unknown' means the comparison could not be made and
  *        BLOCKS — it must never be inherited as a pass. Absent is read as 'unknown'.
  * @param {number}  facts.stashDelta        change in the repo-wide stash count during the work
  * @param {string[]} facts.untracked        untracked-and-ignored paths present
@@ -147,14 +148,14 @@ export function verdictFor(facts) {
   if (upstream === "none") {
     blockers.push({
       kind: "not-merged",
-      why: "master contains this work by neither route — not by ancestry, and not as a squash "
+      why: "the default branch contains this work by neither route — not by ancestry, and not as a squash "
         + "whose patch is already upstream. Deleting it would drop commits",
     });
   }
   if (contentState === "differs") {
     blockers.push({
       kind: "content-differs",
-      why: "what is on master is not byte-identical to this branch's tip; something did not land",
+      why: "what is on the default branch is not byte-identical to this branch's tip; something did not land",
     });
   }
   if (contentState === "unknown") {
