@@ -270,6 +270,46 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // 4260000 and State College borough 4273808 are both already present with geometry.
   // cd/county are EXCLUDED: prod already holds all 17 PA congressional and all 67 counties.
   PA: new Set(['sldu', 'sldl']),
+  // SC. Knight program slice 7 — Columbia and Myrtle Beach. Production held ZERO
+  // G5210/G5220 rows for FIPS 45 and ZERO state legislative offices before this wave;
+  // measured 2026-09-20 (SC held 15 offices in total: 7 US House, 2 US Senate, 5 statewide
+  // executives, plus 1 US Senate candidate office).
+  // Counts MEASURED against raw TIGER 2024 FIPS 45 on 2026-09-20 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   46 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'046'
+  //   sldl  124 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'124'
+  // Both code ranges are contiguous and every polygon is a simple Polygon. South Carolina is
+  // single-member in both chambers, so these polygon counts ARE the seat counts. Codes are
+  // plain digits with no letter half, so the MN '08A' / MD '1A' collapse cannot arise; the
+  // pre-flight asserts the distinct suffix count anyway rather than reasoning about it.
+  // 🔴 VINTAGE WAS PROVEN, NOT ASSUMED — AND SOUTH CAROLINA IS A HARDER CASE THAN PENNSYLVANIA.
+  // 124/46 is fixed by S.C. Const. Art. III, so a count can never date this map. Worse, the
+  // House was redrawn TWICE in one year: Act 118 (2022-01-27), then Act 226 (2022-06-17), the
+  // remedial plan RFA marks "effective for the 2024 election". A 124-polygon file is therefore
+  // consistent with three different House maps, two of them five months apart.
+  // Every one of the 170 TIGER polygons was tested at its own internal point against the STATE
+  // of South Carolina's own ArcGIS server, gis.state.sc.us (Boundaries_Districts/House_Districts
+  // and /Senate_Districts, maintained by the Revenue and Fiscal Affairs Office, the agency that
+  // draws these maps — not a Census mirror): 124/124 and 46/46 agree, 0 differ, 0 errors.
+  // The same sweep was then run against older vintages and FAILED as required:
+  //   TIGER 2022 (Act 118)   3 House districts differ — HD 52 <-> 70 swap, and 95 -> 90
+  //   TIGER 2018 (2012 plan) 21 House and 6 Senate districts differ
+  // The Act 118 control is the one that matters: only THREE internal points move between the
+  // superseded House map and the live one, so a count, a shape check and even a 2012-era
+  // comparison would all wave the wrong map through.
+  // Tool: scripts/verify-sc-tiger-vintage.mjs, which carries both halves.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PENNSYLVANIA. sldl runs 45001..45124 and
+  // sldu 45001..45046, while SC's 46 counties are 45001..45091 odd: measured 2026-09-20, ALL 46
+  // county geo_ids are also a House district geo_id, 23 are also a Senate district, and all 46
+  // Senate ids are also House ids. '45079' is Richland County AND House District 79 — Richland
+  // is Columbia's parent county, so this wave's own jurisdiction is inside the collision.
+  // '45051' is Horry County AND House District 51, which is Myrtle Beach's. Every join must
+  // pair geo_id with mtfcc/district_type. Congressional is unaffected (4-char ids, 4501..4507).
+  // place/cousub are EXCLUDED: SC's G4110 (271) and G4210 (204) rows were loaded on 2026-09-19
+  // by the municipal wave, and Columbia city 4516000 and Myrtle Beach city 4549075 are both
+  // already present with geometry.
+  // cd/county are EXCLUDED: prod already holds all 7 SC congressional and all 46 counties.
+  SC: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1885,8 +1925,72 @@ async function processLayer(
     }
   }
 
+  // ── SC MTFCC pre-flight assertion (Knight program, wave SC-1) ──────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 45 on 2026-09-20 by parsing the
+  // .dbf inside each zip directly, not inferred from S.C. Const. Art. III:
+  //   sldu   46 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, GEOID 45001..45046
+  //   sldl  124 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, GEOID 45001..45124
+  // South Carolina is single-member in both chambers, so these polygon counts ARE the
+  // seat counts: 46 Senators + 124 Representatives.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR, AND THE COUNT CANNOT DATE THE MAP. 124/46 is
+  // fixed by the constitution, so it is the shape of the 2012 plan, of Act 118 and of
+  // Act 226 alike — and only THREE internal points separate the last two. See the vintage
+  // proof in the SC allowlist comment above, which rests on all 170 polygons agreeing with
+  // the state's own RFA layer and on the 2022 and 2018 files failing the same test. If a
+  // count drifts, something other than a remap has happened: stop. Do NOT raise the number
+  // to get a green run.
+  // The second assertion is the OCD-ID one: SC's codes are plain digits, so the suffixes
+  // must be as numerous as the records. A collapse here is the MN '08A' / MD '1A' defect
+  // arriving in a state that cannot produce it, i.e. a loader regression.
+  if (fipsArg === '45') {
+    const EXPECTED_SC_MTFCC: Record<string, number> = {
+      sldu: 46,   // 46 SC Senate districts (Act 118 of 2022, signed 2022-01-27)
+                  // — measured 2026-09-20
+      sldl: 124,  // 124 SC House districts (Act 226 of 2022, signed 2022-06-17, the
+                  // remedial plan effective for the 2024 election) — measured 2026-09-20
+    };
+    if (layer in EXPECTED_SC_MTFCC) {
+      const expected = EXPECTED_SC_MTFCC[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[SC MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 45 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[SC OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. SC district codes ` +
+          `are plain digits and cannot collide — this is the MN '08A' / MD '1A' collapse in a ` +
+          `state that cannot produce it. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] SC MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
