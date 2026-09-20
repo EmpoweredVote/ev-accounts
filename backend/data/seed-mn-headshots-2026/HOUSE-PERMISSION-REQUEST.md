@@ -59,9 +59,37 @@ Subject: Permission to use Minnesota House member portraits on a non-commercial 
 > - The site is free to the public, carries no advertising and sells nothing. Portraits would appear
 >   only beside the member's own record, never in a way that suggests the House, its members or its
 >   staff endorse anything.
+
 >
 > If a blanket permission is not possible, we would welcome any alternative you prefer — an
 > uncropped display, a different credit, or a different source file.
+
+
+## 🔴 THIS LETTER'S "no endorsement" SENTENCE IS SUPERSEDED — DO NOT COPY IT FORWARD
+
+Correction 2026-09-19, made while drafting the Philadelphia request from this template.
+
+The sentence *"never in a way that suggests the House, its members or its staff endorse anything"*
+is true of the **photograph** and misleading about the **site**. A sourced compass is precisely a
+visual assertion of what a politician holds — a 4 on abortion is a claim about that person, shown
+with its evidence. A grantor reading only that sentence could reasonably feel they had not been
+told.
+
+The corrected shape splits it in two, and every future request must carry both:
+
+1. **Disclose the positions** — the record beside the portrait states what we found this official's
+   positions to be, each one cited. Said before the grant, not after.
+2. **Scope the endorsement clause to the image** — the portrait is not a mark of approval for
+   Empowered Vote or for any candidate, party, product or cause, and say explicitly that this is
+   *not* a claim the surrounding page is silent about the official's own positions.
+
+Worked example: `backend/data/seed-pa-headshots-2026/PHILADELPHIA-PERMISSION-REQUEST.md`.
+
+⚠ **Mike Cook's grant (2026-09-17) was given against the wording above, and it stands.** Nothing was
+misrepresented that a visitor to the site could not see at once, and MN-6 shipped on it.
+**Ruling (Cantrell, 2026-09-19): do not re-approach Minnesota.** No follow-up note, no
+re-disclosure. This note exists so the thinner disclosure is on the record rather than quietly
+overwritten, and so the next letter inherits the corrected version — not as an open action.
 
 ## Until a reply arrives
 
