@@ -757,6 +757,7 @@ router.get('/collections/health', async (req: Request, res: Response) => {
         name: collections.name,
         slug: collections.slug,
         isActive: collections.isActive,
+        featured: collections.featured,
         themeColor: collections.themeColor,
         // Question counts
         activeCount: sql<number>`COUNT(DISTINCT ${questions.id}) FILTER (WHERE ${questions.status} = 'active')`,
@@ -793,6 +794,7 @@ router.get('/collections/health', async (req: Request, res: Response) => {
         name: r.name,
         slug: r.slug,
         isActive: r.isActive,
+        featured: r.featured,
         themeColor: r.themeColor,
         stats: {
           activeCount: Number(r.activeCount),
@@ -821,6 +823,47 @@ router.get('/collections/health', async (req: Request, res: Response) => {
   } catch (error: any) {
     console.error('Error fetching collection health:', error);
     res.status(500).json({ error: 'Failed to fetch collection health', detail: error?.message || String(error) });
+  }
+});
+
+/**
+ * PATCH /collections/:id/featured - Promote or demote a collection on the editorial shelf.
+ *
+ * The shelf is editorial surface, so it has to be editable by an editor. Without this the
+ * flag could only be changed by SQL, and a shelf nobody but an engineer can edit is not
+ * editorial.
+ *
+ * Deliberately narrow: `featured` is the ONLY column it can write. Collections carry
+ * is_active, tier and sort_order, and a general-purpose collection PATCH would put all of
+ * them one typo away from an admin click. Activation in particular gates a collection going
+ * live and stays a deliberate act elsewhere.
+ */
+router.patch('/collections/:id/featured', async (req: Request<{ id: string }>, res: Response) => {
+  try {
+    const collectionId = parseInt(req.params.id, 10);
+    if (isNaN(collectionId)) {
+      return res.status(400).json({ error: 'Invalid collection ID' });
+    }
+
+    const parsed = z.object({ featured: z.boolean() }).safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: 'Body must be { featured: boolean }' });
+    }
+
+    const [updated] = await db
+      .update(collections)
+      .set({ featured: parsed.data.featured, updatedAt: new Date() })
+      .where(eq(collections.id, collectionId))
+      .returning({ id: collections.id, slug: collections.slug, featured: collections.featured });
+
+    if (!updated) {
+      return res.status(404).json({ error: 'Collection not found' });
+    }
+
+    res.json({ success: true, collection: updated });
+  } catch (error: any) {
+    console.error('Error updating collection featured flag:', error);
+    res.status(500).json({ error: 'Failed to update collection', detail: error?.message || String(error) });
   }
 });
 
