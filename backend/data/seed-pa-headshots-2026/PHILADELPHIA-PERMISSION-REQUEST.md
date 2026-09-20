@@ -17,9 +17,28 @@ Minnesota House answered — see `backend/data/seed-mn-headshots-2026/HOUSE-PERM
 | City Commissioner | Omar Sabir | `vote.phila.gov` |
 | City Commissioner | Seth Bluestein | `vote.phila.gov` |
 
-⚠ **The Sheriff is NOT in this group.** Rochelle Bilal's portrait is published on
-`phillysheriff.com`, which carries no site terms, so it ships on the same footing as Georgia's and
-Florida's. It is owed as ordinary work, not as a licence debt. The 17 City Council members are a
+✅ **The Sheriff is NOT in this group, and shipped 2026-09-20.** Rochelle Bilal's portrait came from
+`phillysheriff.com` at 1670x2560, cropped to the full 600x750.
+
+🔴 **AND THE REASON RECORDED HERE WAS WRONG — "no site terms" WAS NOT TRUE.**
+`phillysheriff.com` **does** publish a Terms of Use (effective 2021-12-18,
+<https://phillysheriff.com/terms/>), plus a Disclaimer, a Linking Policy and an External Links
+Policy. The verdict does not change, but the reason does, and the reason is the thing a later
+session will reuse:
+
+> *Intellectual Property* — "The Agreement does not transfer from Us to you any of Ours or third
+> party intellectual property, and all right, title, and interest in and to such property will
+> remain (as between the parties) solely with Philadelphia Sheriff's Office and its licensors."
+
+That is a **reservation of rights, not a prohibition on use.** The page contains no clause against
+reproduction, republication or modification — checked by keyword, not by impression. The Linking
+Policy restricts only **the logo** and **framing**, and we do neither. So this is the Centre County
+and State College class — bare "all rights reserved" — and materially weaker than phila.gov's
+"any modification whatsoever … strictly prohibited".
+
+▶ **"This host publishes no policy" is a claim with a shelf life, exactly like "this host is 403".
+RE-TEST IT before you rely on it.** Here it was not stale, it was simply wrong: a `/terms/` URL
+answered HTTP 200 the whole time and nobody asked it. The 17 City Council members are a
 third, separate case: `phlcouncil.com` carries no terms either, but the site publishes **no
 systematic headshot** — member pages carry event photographs. That is a sourcing problem, not a
 rights problem. **Four different problems; do not sum them.**
