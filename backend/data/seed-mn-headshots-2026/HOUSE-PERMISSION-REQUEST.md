@@ -86,9 +86,10 @@ The corrected shape splits it in two, and every future request must carry both:
 Worked example: `backend/data/seed-pa-headshots-2026/PHILADELPHIA-PERMISSION-REQUEST.md`.
 
 ⚠ **Mike Cook's grant (2026-09-17) was given against the wording above, and it stands.** Nothing was
-misrepresented that a visitor to the site could not see at once, and MN-6 shipped on it. This note
-exists so the thinner disclosure is on the record rather than quietly overwritten, and so the next
-letter inherits the corrected version. A short follow-up note to Mr Cook is available if wanted.
+misrepresented that a visitor to the site could not see at once, and MN-6 shipped on it.
+**Ruling (Cantrell, 2026-09-19): do not re-approach Minnesota.** No follow-up note, no
+re-disclosure. This note exists so the thinner disclosure is on the record rather than quietly
+overwritten, and so the next letter inherits the corrected version — not as an open action.
 
 ## Until a reply arrives
 

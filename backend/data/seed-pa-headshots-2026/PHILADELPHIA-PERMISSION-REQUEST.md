@@ -55,13 +55,47 @@ presented — is not the use we make. We say so plainly below rather than argue 
 
 ## The request to send
 
-**To:** City of Philadelphia Law Department, 1515 Arch St., 17th Floor, Philadelphia, PA 19102 ·
-(215) 683-5000 — the office that would give "the prior written permission of the City".
-**Copy to:** the Office of the Mayor's communications staff, and to the Office of the City
-Commissioners for the three Commissioner portraits on `vote.phila.gov`.
-⚠ **No email address is recorded here because none was verified.** Confirm the current address by
-telephone before sending; writing to a guessed inbox is how a request goes unanswered and gets
-mistaken for a refusal.
+### Where to send it — every address below was read off the City's own pages, 2026-09-19
+
+**▶ TO: `CopyrightAgent@phila.gov`** — the City's **Designated Agent under the DMCA for phila.gov**,
+Office of Innovation & Technology, 1234 Market Street, Philadelphia, PA 19107, (215) 686-8101.
+
+🟢 **This address is published in Section IV(E) of the very page that carries the clause we need
+waived** (<https://www.phila.gov/terms-of-use/>). It is the only copyright-specific contact the City
+publishes anywhere, and OIT is the office that runs phila.gov. That makes it the best-evidenced
+first address, not a guess.
+
+⚠ **But read its remit honestly: a DMCA agent handles TAKEDOWNS, not licensing.** Expect the
+request to be referred onward — so **ask for the referral explicitly in the first message**, which
+the letter's closing paragraph already does. Do not read a referral as a refusal.
+
+**Escalation, if that produces nothing:** the **Law Department**, 1515 Arch St., 17th Floor,
+Philadelphia, PA 19102, **(215) 683-5000**. It is the office that would actually give "the prior
+written permission of the City", and it is the body that wrote the terms of use.
+⚠ **The Law Department publishes no email address** — verified, not assumed. It is a telephone
+route, which is why it is second and not first.
+
+**Copy each office that publishes one of the seven portraits.** Each one can speak for its own
+image, and three of them are separately elected offices rather than parts of the administration:
+
+| Seat | Portrait published on | Contact, as published |
+| --- | --- | --- |
+| Mayor Cherelle L. Parker | `phila.gov` | Web form at <https://www.phila.gov/contact/> · City Hall, Office 215 · (215) 686-2181. **No email published.** |
+| Register of Wills John Sabatina | `phila.gov` | **`rowonline@phila.gov`** · City Hall Room 180 · (215) 686-2233 |
+| City Controller Christy Brady | `controller.phila.gov` | **`controller@phila.gov`** · (215) 686-6680 |
+| City Commissioner Lisa Deeley | `vote.phila.gov` | **`Lisa.Deeley@phila.gov`** |
+| City Commissioner Omar Sabir | `vote.phila.gov` | **`Omar.Sabir@phila.gov`** |
+| City Commissioner Seth Bluestein | `vote.phila.gov` | **`Seth.Bluestein@phila.gov`** |
+| District Attorney Larry Krasner | `phillyda.org` | Contact form at <https://phillyda.org/contact/> · Three South Penn Square, Philadelphia, PA 19107 · 215-686-8000. **No email published.** |
+
+⚠ **`phillyda.org` returns HTTP 403 to `curl` and to plain `fetch`, browser User-Agent or not.** It
+answers normally in a real browser. If a later session reports that site as down, that is the WAF,
+not an outage — and the DA's office publishes **no** general email, only the form. That was checked,
+not assumed.
+
+⚠ **Two of the seven have no email at all**, so the Mayor and the District Attorney reach us only
+through a web form. Paste the letter into the form rather than shortening it: the disclosure bullets
+are the part that must survive.
 
 **Subject:** Permission to use official portraits of Philadelphia elected officials on a
 non-commercial civic information site
@@ -102,9 +136,14 @@ non-commercial civic information site
 >   image carries no endorsement — it is not a claim that the page beside it is silent about the
 >   official's own positions, because it is not.
 >
-> If a blanket permission is not possible, we would welcome any alternative you prefer — an uncropped
-> display, a different credit, or a different source file. If there is a City office better placed to
-> answer this than yours, we would be grateful for the referral.
+> We are writing to you because yours is the copyright contact the City publishes on its terms-of-use
+> page. We understand that a designated agent's role is takedown notices rather than licensing, so if
+> this belongs with another office — the Law Department, or each official's own staff — **we would be
+> grateful if you would tell us which, and we will write to them instead.** A pointer is as useful to
+> us as an answer.
+>
+> If a blanket permission is not possible, we would also welcome any alternative you prefer: an
+> uncropped display, a different credit, or a different source file.
 
 ## 🔴 "No endorsement" means the PORTRAIT, not the page — say both
 
@@ -124,10 +163,10 @@ So the request now carries **two separate bullets**, and any future one must too
    *not* a claim the surrounding page is silent about the official's own positions.
 
 ⚠ **The Minnesota House granted on the OLD wording** (Mike Cook, 2026-09-17), which carried the
-single ambiguous sentence. That grant stands and the work shipped; nothing was misrepresented that
-a reader of the site could not immediately see. But the disclosure was thinner than this one, and
-that is recorded here rather than quietly fixed — a short follow-up note to Mr Cook is available if
-Cantrell wants the record even.
+single ambiguous sentence. **Ruling (Cantrell, 2026-09-19): leave Minnesota alone — no follow-up,
+no re-approach.** That grant stands, the work shipped, and nothing was misrepresented that a visitor
+to the site could not see at once. It is recorded here so the thinner disclosure is on the record
+rather than quietly overwritten, and so **this** letter's shape is what the next one inherits.
 
 ## Until a reply arrives
 
