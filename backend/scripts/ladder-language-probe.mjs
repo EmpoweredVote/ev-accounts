@@ -30,16 +30,15 @@ const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^D
 const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: false } });
 
 const { rows: rungs } = await pool.query(`
-  SELECT r.topic_id, t.title AS topic, sr.value, sr.text
+  SELECT r.topic_id, r.title AS topic, sr.value, sr.text
   FROM inform.compass_stance_revisions sr
-  JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id
-  JOIN inform.compass_topics t ON t.id = r.topic_id`);
+  JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id`);
 
 const { rows: ctx } = await pool.query(`
   SELECT c.politician_id, c.topic_id, c.season_id, s.name AS season,
-         t.title AS topic, p.full_name, c.reasoning, a.value::int AS chair
+         tr.title AS topic, p.full_name, c.reasoning, a.value::int AS chair
   FROM inform.politician_context c
-  JOIN inform.compass_topics t ON t.id = c.topic_id
+  JOIN inform.compass_topic_revisions tr ON tr.id = c.topic_revision_id
   JOIN inform.seasons s ON s.id = c.season_id
   JOIN essentials.politicians p ON p.id = c.politician_id
   LEFT JOIN inform.politician_answers a

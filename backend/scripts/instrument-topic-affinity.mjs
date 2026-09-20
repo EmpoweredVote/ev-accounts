@@ -8,6 +8,14 @@
  * (ladder-language-probe.mjs) found three of them only by accident, because one bill
  * description happened to reproduce another ladder's wording. This asks the question directly.
  *
+ * 🔴 LADDER TEXT AND TITLES COME FROM THE VERSIONED SOURCE ONLY. `inform.compass_topics.title` and
+ * `inform.compass_stances.text` are FROZEN (CA_0012 / ADR 0004): on 2026-09-08, 29 of the 60 topics
+ * in the open season disagreed between the frozen text and the season pin, 16 of them on all five
+ * rungs. A frozen read returns a complete, plausible ladder on the right subject, so it fails
+ * silently. Titles here come from compass_topic_revisions, and each context row's title from ITS OWN
+ * topic_revision_id — which is also more correct for this detector, since a row must be read against
+ * the ladder it was actually written against. Enforced by scripts/check-ladder-text-reads.mjs.
+ *
  * METHOD — the corpus is its own dictionary.
  *   1. Every time a row cites a bill it usually describes it in the same breath:
  *        "SB 17 (89th) banning certain foreign nationals from purchasing real property"
@@ -44,16 +52,15 @@ if (!cs) { console.log('DATABASE_URL absent — skipping instrument-topic self-t
 const pool = new pg.Pool({ connectionString: cs, ssl: { rejectUnauthorized: false } });
 
 const { rows: rungs } = await pool.query(`
-  SELECT r.topic_id, t.title, sr.text
+  SELECT r.topic_id, r.title, sr.text
   FROM inform.compass_stance_revisions sr
-  JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id
-  JOIN inform.compass_topics t ON t.id = r.topic_id`);
+  JOIN inform.compass_topic_revisions r ON r.id = sr.topic_revision_id`);
 
 const { rows: ctx } = await pool.query(`
-  SELECT c.politician_id, c.topic_id, c.season_id, s.name AS season, t.title AS topic,
+  SELECT c.politician_id, c.topic_id, c.season_id, s.name AS season, tr.title AS topic,
          p.full_name, c.reasoning, c.sources, a.value::int AS chair
   FROM inform.politician_context c
-  JOIN inform.compass_topics t ON t.id = c.topic_id
+  JOIN inform.compass_topic_revisions tr ON tr.id = c.topic_revision_id
   JOIN inform.seasons s ON s.id = c.season_id
   JOIN essentials.politicians p ON p.id = c.politician_id
   LEFT JOIN inform.politician_answers a
