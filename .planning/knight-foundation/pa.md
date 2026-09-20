@@ -682,9 +682,27 @@ file, not a bad credential.
    - 17 Philadelphia Council — **no systematic headshot**; member pages carry event photos
      (the one checked was a 600×448 landscape from 2017). Boulder's lesson applies: check whether
      the asset exists somewhere the card does not link before calling it missing.
-   ⚠ **And one seat that is neither a debt nor done**: the **Philadelphia Sheriff**, whose site
-   `phillysheriff.com` publishes no terms and was ruled shippable. It was not in the PA-5a candidate
-   list, which covered the legislature only. It is one portrait, and it is owed.
+   ✅ **The Philadelphia Sheriff SHIPPED 2026-09-20** — Rochelle Bilal, at the full 600x750.
+   Philadelphia's row offices are now 1 of 7; PA statewide **276 of 322**. Three findings:
+   - 🔴 **"`phillysheriff.com` publishes no terms" WAS WRONG, not stale.** The site publishes a
+     Terms of Use (2021-12-18), a Disclaimer and a Linking Policy, and a `/terms/` URL had been
+     answering HTTP 200 the whole time. The verdict survives — the IP clause **reserves rights
+     without prohibiting reproduction or modification**, which is the Centre County / State College
+     class — but the reason is what a later session reuses, so it is corrected in the request file.
+     ▶ **"No policy" is a claim with a shelf life, exactly like "this host is 403". Ask the URL.**
+   - 🟢 **THE LINKED PORTRAIT WAS THE WRONG ONE, AND THE WP REST API FOUND BOTH ALTERNATIVES.**
+     The bio page links a 290x375 `.jpg` that would need a 2.07x upscale. `wp-json/wp/v2/media?search=`
+     returned an unlinked **910x1178 PNG at the same base name** (proved identical to the linked file,
+     **MAD 1.43** against the PA legislature's 1.96 median; control, a genuinely different 2022
+     headshot, scored **87.52**) — and a **1670x2560** plain headshot from 2024. ▶ **On any WordPress
+     host, ask `wp-json/wp/v2/media` before settling for what the page links.**
+   - 🔴 **THE CURRENT PORTRAIT WAS REFUSED FOR A BAKED-IN GOLD OVAL FRAME AND A BADGE WATERMARK.**
+     A centre crop cannot remove either, and beside 252 plain legislators the decoration reads as a
+     defect. The 2024 file is plain, 2.8x the target, and downscales at 0.36x. Identity is not assumed:
+     the site's own media title is "Sheriff Bilal Headshot" and its parent post is *A History Untold:
+     The Philadelphia Sheriff's Office Under Sheriff Rochelle Bilal*. ⚠ **MAD cannot prove identity
+     across two DIFFERENT photographs** — it proves a file is the same shot at another size, nothing
+     more. The 2026 frame remains available if currency is ever preferred to consistency.
 5. **PA-5b, the banners** — ✅ **SHIPPED 2026-09-19. Both uploaded, registered and verified;
    essentials PR #154.** Cantrell picked both recommendations from the sheet
    <https://claude.ai/artifact/67inZT6bhztedGSkjW8ujm> (six proposals, seven refusals, every frame
