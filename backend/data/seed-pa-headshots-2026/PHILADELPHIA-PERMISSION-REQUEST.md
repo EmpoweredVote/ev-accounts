@@ -87,13 +87,47 @@ non-commercial civic information site
 >   recolouring, and nothing that changes what the photograph depicts.
 > - We would carry whatever credit you require, recorded with the image. If you can name the
 >   photographer for each portrait, or give us a single credit that covers the set, we will use it.
-> - The site is free to the public, carries no advertising and sells nothing. A portrait would appear
->   only beside that official's own record, never in a way that suggests the City, its officials or
->   its staff endorse anything.
+> - The site is free to the public, carries no advertising and sells nothing.
+> - **What sits beside the portrait, said plainly now rather than discovered later.** Alongside the
+>   office and the term, we publish the official's positions on policy topics wherever we can
+>   evidence them — each one a specific stated position, with the bill, the vote or the quotation we
+>   drew it from cited next to it, so a reader can check our work. We do not publish a position we
+>   cannot cite, we do not infer one from party membership, and we correct what we get wrong. So the
+>   portrait does appear beside a page that asserts what we have found this official's positions to
+>   be. We would rather you weighed that before granting permission than met it afterwards, and we
+>   are glad to show you the live record for any of the seven first.
+> - **The portrait itself is never used as a mark of approval.** It identifies the person, and
+>   nothing on the site suggests that the City, this official or City staff endorse Empowered Vote,
+>   or any candidate, party, campaign, product or cause. That is the only sense in which we say the
+>   image carries no endorsement — it is not a claim that the page beside it is silent about the
+>   official's own positions, because it is not.
 >
 > If a blanket permission is not possible, we would welcome any alternative you prefer — an uncropped
 > display, a different credit, or a different source file. If there is a City office better placed to
 > answer this than yours, we would be grateful for the referral.
+
+## 🔴 "No endorsement" means the PORTRAIT, not the page — say both
+
+Ruling (Cantrell, 2026-09-19), on reading the draft. The inherited MN sentence — *"never in a way
+that suggests the City, its officials or its staff endorse anything"* — is true of the **image** and
+misleading about the **site**. A sourced compass is exactly a visual assertion of what a politician
+holds: a 4 on abortion is a claim about that person, shown with the evidence behind it. Someone
+granting permission on the strength of that one sentence could reasonably feel they had not been
+told.
+
+So the request now carries **two separate bullets**, and any future one must too:
+
+1. **Disclose the positions.** The record beside the portrait states what we found this official's
+   positions to be, each cited. Say it before the grant, not after.
+2. **Scope the endorsement clause to the image.** The portrait is not a mark of approval for
+   Empowered Vote or for any candidate, party, product or cause — and say explicitly that this is
+   *not* a claim the surrounding page is silent about the official's own positions.
+
+⚠ **The Minnesota House granted on the OLD wording** (Mike Cook, 2026-09-17), which carried the
+single ambiguous sentence. That grant stands and the work shipped; nothing was misrepresented that
+a reader of the site could not immediately see. But the disclosure was thinner than this one, and
+that is recorded here rather than quietly fixed — a short follow-up note to Mr Cook is available if
+Cantrell wants the record even.
 
 ## Until a reply arrives
 
