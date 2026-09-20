@@ -96,7 +96,9 @@ async function districts() {
     console.log('source: the live CouncilDistrict layer');
     return g;
   } catch (e) {
-    if (!fs.existsSync(GEOJSON)) throw new Error(`the layer is unreachable (${e.message}) and no local copy exists`);
+    if (!fs.existsSync(GEOJSON)) {
+      throw new Error(`the layer is unreachable (${e.message}) and no local copy exists`, { cause: e });
+    }
     console.log(`⚠ the live layer is unreachable (${e.message}) — grading the local copy instead`);
     return JSON.parse(fs.readFileSync(GEOJSON, 'utf8'));
   }
