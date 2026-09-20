@@ -24,6 +24,7 @@ const navItems = [
   { label: 'Categories', to: '/admin/categories' },
   { label: 'Coverage', to: '/admin/coverage', exact: true },
   { label: 'Review Queue', to: '/admin/review' },
+  { label: 'Evidence Review', to: '/admin/review/evidence' },
   { label: 'Read & Rank Quotes', to: '/admin/readrank-quotes' },
   { label: 'Read & Rank Coverage', to: '/admin/readrank-coverage' },
 ];
