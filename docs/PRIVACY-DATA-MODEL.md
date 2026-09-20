@@ -264,24 +264,44 @@ human who can identify their own invitee.
   fact. Accountability must then act on information retained **at issuance** (the credential /
   vouching record), not on an after-the-fact re-link. Track B territory.
 
-### 8a. The crux — can EV ever unmask? (OPEN, pivotal)
+### 8a. The crux — can EV ever unmask? (DECIDED 2026-09-17 — escrowed break-glass)
 
 **First, what does NOT drive this fork:** one-person-one-account and banning do **not** require an
 unmask capability — nullifiers handle both blind (§7). So the crux is *not* about keeping uniqueness
 or the ban lever. The **only** remaining driver for an unmask capability is external:
 lawful-disclosure duties on global expansion and extreme-harm cases. That narrows the decision to a
-pure policy choice, decoupled from the account machinery. It still determines whether the vault link
+pure policy choice, decoupled from the account machinery. It determined whether the vault link
 is ever destroyed or held under split custody.
 
 - **Pure double-blind** — EV literally cannot unmask anyone, ever; the link is destroyed after
   verification. Maximally private; no lawful-disclosure path can exist, because the answer exists
   nowhere.
-- **Escrowed break-glass** — EV *alone* can never unmask, but a split set of parties (e.g., two
+- **Escrowed break-glass — CHOSEN.** EV *alone* can never unmask, but a split set of parties (e.g., two
   officers, or a court order plus an offline-held key) could open the link for an extreme case.
   Strong privacy with a defined, auditable, hard-to-abuse exit.
 
-**Status: open — Chris to decide.** Everything downstream (Stage C sealing vs escrow, Track B
-credential design, the GDPR disclosure posture) depends on this.
+**Status: decided 2026-09-17 — escrowed break-glass.** Recorded in
+`ev-cto/knowledge/decisions/0022-connected-identity-vault.md` (accepted 2026-09-17), designed in
+`docs/superpowers/specs/2026-09-17-connected-identity-vault-design.md`, and **built** in PR #528.
+
+A Connect member's real **name and raw street address** are sealed on write and are readable only by
+**two of four board members acting together, offline** — never by the running app, the database, or
+any single person. The read path is an offline CLI (`backend/scripts/id-vault-break-glass.mts`),
+never a route; it requires a `--reason` and appends to an append-only log.
+
+🔴 **This seals identity, not stances.** Decision 0022 covers the name and the raw address. It
+does **not** cover compass stances — EV staff can still read a member's beliefs, which
+`docs/adr/0007-privacy-floors.md` §4 records as an explicitly **transitional** exception, and §5
+requires be audited. Do not read "the vault shipped" as "§4 is finished".
+
+Precise coordinates are also out of scope: they stay under the single `location_encryption_key` so
+districts can be re-derived when boundaries change (vault design D5). So §6's key-custody finding
+still stands for coordinates.
+
+**Still open around the decision:** the governance of the split-control group — who the four holders
+are, how a share is rotated or replaced, and what counts as a valid reason to break glass.
+Cryptographic threshold decryption also remains open (vault design D3); what shipped is procedural
+isolation. §10's Stage C — severing the link entirely — is unchanged and still waits on Track B.
 
 ---
 
@@ -321,8 +341,10 @@ The three-realm + vault model points the right way as we expand globally:
 
 ## 11. Open questions
 
-- **Can EV ever unmask a Connected account?** The pivotal fork — pure double-blind vs escrowed
-  break-glass (§8a). Everything downstream depends on it. Pending Chris.
+- ~~**Can EV ever unmask a Connected account?**~~ **Decided 2026-09-17 — escrowed break-glass**
+  (§8a): two of four board members, offline, for name and raw address only. What remains open is the
+  governance around it — who holds the four shares, how one is rotated, and what counts as a valid
+  reason to break glass.
 - **Empowered → Connected demotion.** Unresolved. Past public (Empowered) activity stays public;
   going forward the person would get a pseudonym. Details TBD.
 - **`invite_chains` vs erasure** (see §9, tension 1).
