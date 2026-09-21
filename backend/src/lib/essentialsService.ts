@@ -486,8 +486,18 @@ export async function getPoliticiansFlatList(
     offsetClause = `OFFSET $${params.length}`;
   }
 
+  // 🔴 DISTINCT ON (p.id) — ONE ROW PER PERSON, not one per office they hold.
+  // The office_current_holder join below is politician-rooted, so a person holding two offices
+  // yielded two result rows. That is what returned two "Aaron Freeman"s, and it also made LIMIT
+  // and OFFSET count duplicates, so a page of 50 could contain fewer than 50 people.
+  // DISTINCT ON needs its own ORDER BY starting at p.id, which would fight the caller's
+  // ORDER BY full_name and the pagination — hence the wrapper: dedupe inside, sort and paginate
+  // outside. Preference for which office represents the person is the same one getPoliticianById
+  // uses: a real reachable seat first, then not vacant, then o.id for stability.
   const queryText = `
-    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+    SELECT * FROM (
+    SELECT DISTINCT ON (p.id)
+           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
@@ -515,7 +525,14 @@ export async function getPoliticiansFlatList(
     FROM essentials.politicians p
     -- ADR 0002 phase 3: which office this person holds NOW, via
     -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
-    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    -- term takes effect on its own date.
+    -- 🔴 THIS JOIN IS POLITICIAN-ROOTED AND CAN FAN OUT, and the comment here used to say it
+    -- could not. The view is one row per OFFICE, so joining FROM offices is safe; joining FROM
+    -- politicians returns one row PER OFFICE THE PERSON HOLDS. The office_terms exclusion
+    -- constraint forbids two people on one office and cannot see one person on two — and people
+    -- do hold two, whether a duplicate row from a discovery sweep or a genuine second seat.
+    -- There is no DISTINCT below: a person holding two offices yields two result rows. That is
+    -- what returned two "Aaron Freeman"s until CC_0103 removed the duplicate office (2026-09-12).
     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
     LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -536,7 +553,17 @@ export async function getPoliticiansFlatList(
     ${incumbentFilter}
     ${searchFilter}
     ${stateFilter}
-    ORDER BY p.full_name
+    ORDER BY p.id,
+             -- 🔴 A SEAT HELD BEATS A SEAT SOUGHT. The migration-196 "Candidate for ..." rows are
+             -- real offices with a district AND a chamber, so without this they win on the
+             -- checks below and a sitting U.S. Representative is reported as a Senate candidate.
+             (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
+             (o.district_id IS NOT NULL) DESC,
+             (o.chamber_id IS NOT NULL) DESC,
+             COALESCE(o.is_vacant, false) ASC,
+             o.id
+    ) s
+    ORDER BY s.full_name
     ${limitClause}
     ${offsetClause}
   `;
@@ -1431,7 +1458,14 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     FROM essentials.politicians p
     -- ADR 0002 phase 3: which office this person holds NOW, via
     -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
-    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    -- term takes effect on its own date.
+    -- 🔴 THIS JOIN IS POLITICIAN-ROOTED AND CAN FAN OUT, and the comment here used to say it
+    -- could not. The view is one row per OFFICE, so joining FROM offices is safe; joining FROM
+    -- politicians returns one row PER OFFICE THE PERSON HOLDS. The office_terms exclusion
+    -- constraint forbids two people on one office and cannot see one person on two — and people
+    -- do hold two, whether a duplicate row from a discovery sweep or a genuine second seat.
+    -- There is no DISTINCT below: a person holding two offices yields two result rows. That is
+    -- what returned two "Aaron Freeman"s until CC_0103 removed the duplicate office (2026-09-12).
     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
     LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -1449,6 +1483,21 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     ${UPCOMING_ELECTIONS_LATERAL}
     WHERE p.id = $1
+    -- 🔴 DETERMINISTIC PICK. A person may hold more than one office, so this can return several
+    -- rows and the caller reads rows[0]. Without an ORDER BY that was whichever row Postgres
+    -- happened to return, which is how a profile could report an office the person merely sought.
+    -- Preference: a seat HELD before a seat SOUGHT, then a real reachable seat (has a district,
+    -- then a chamber), then one not flagged vacant, then o.id so repeated calls agree.
+    -- 🔴 The "Candidate for ..." rule is load-bearing and was missing from the first draft. Those
+    -- rows carry a district AND a chamber, so they won every other check, and this query reported
+    -- Harriet Hageman and Angie Craig — both sitting U.S. Representatives — as Senate candidates.
+    -- Unlike the list query above, this one has no NOT ILIKE Candidate-for filter to lean on.
+    ORDER BY (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
+             (o.district_id IS NOT NULL) DESC,
+             (o.chamber_id IS NOT NULL) DESC,
+             COALESCE(o.is_vacant, false) ASC,
+             o.id
+    LIMIT 1
   `;
 
   // Run base query + all nested queries in parallel
@@ -1519,6 +1568,9 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     return null;
   }
 
+  // ⚠ The query above is politician-rooted and has no DISTINCT and no ORDER BY, so for a person
+  // holding more than one office this picks an ARBITRARY one and reports its title as theirs.
+  // Until CC_0103 that could render "Governor" for someone who merely ran for governor.
   const row = baseResult.rows[0];
 
   const committees = committeesResult.rows.map((r) => ({

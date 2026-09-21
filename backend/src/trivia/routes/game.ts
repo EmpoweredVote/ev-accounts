@@ -66,6 +66,7 @@ router.get('/collections', async (_req: Request, res: Response) => {
         description: collections.description,
         themeColor: collections.themeColor,
         tier: collections.tier,
+        featured: collections.featured,
         sortOrder: collections.sortOrder,
         localeName: collections.localeName,
         localeCode: collections.localeCode,

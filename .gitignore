@@ -48,11 +48,22 @@ coverage/
 supabase/.branches/
 supabase/.temp/
 
-# Stance research and topic draft outputs (keep dirs via .gitkeep)
-# Per-run review CSVs live in dated subdirs too, so match recursively — keep
-# markdown summaries/benchmarks and debate-turn source transcripts tracked.
-backend/data/stance-research/*.csv
-backend/data/stance-research/**/*.csv
+# Topic draft outputs (keep dirs via .gitkeep)
+#
+# stance-research CSVs are deliberately NOT ignored. The two rules that used to
+# sit here (`stance-research/*.csv` and `**/*.csv`, added 2026-06-24) were meant
+# to drop per-run REVIEW output, but the same directory is where a CSV that FED
+# PRODUCTION ROWS lives — a source record, not review output. An applied-but-
+# untracked CSV is the same defect class as an applied-but-uncommitted migration.
+#
+# The rules could not tell the two apart, and there was no path shape to narrow
+# them to: of 105 subdirs exactly one is dated, the rest are cohort names. They
+# also hid badly — 1,371 CSVs stayed tracked (ignore rules do not untrack), so
+# the directory looked populated and healthy while every file written since late
+# June was invisible to `git status` and needed `git add -f`.
+#
+# Scratch already has a convention that works and is honest about being scratch:
+# the `stance-research/**/_*` rule below. Prefix throwaway output with `_`.
 backend/data/topic-drafts/*.json
 
 # Coverage tracker data — version-controlled source of truth.

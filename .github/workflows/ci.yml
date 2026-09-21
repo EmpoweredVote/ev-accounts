@@ -35,24 +35,33 @@ name: CI
 # was ~20 pushes in one night writing 234 rows — and nightly-only would mean hearing about a bad
 # citation batch after all of it is written.
 on:
-  # 📄 Docs-only changes do not run CI. Of 90 push/PR runs in the 8 days above, 18 (20%) changed
-  # nothing but markdown or `.planning/` artefacts. No check in this file reads a .md file — the
-  # guards scan .sql and .ts, the rest query the live database — so those 18 runs could only ever
-  # come back green.
+  # 🔴 `pull_request` HAS NO `paths-ignore`, AND THAT IS NOT AN OVERSIGHT — it had one until
+  # 2026-09-20. The filter was removed so that `ci ok` (bottom of this file), the single REQUIRED
+  # status check on `master`, reports on EVERY pull request — docs-only ones included.
   #
-  # GitHub skips a run only when EVERY changed path matches, so a commit touching one .ts file and
-  # forty .md files still runs the full set. A docs-only push to master also skips the four live-DB
-  # drift jobs for that push; the nightly schedule below still covers them that day.
+  # A required check that never reports does not pass. GitHub waits on "Expected — Waiting for
+  # status to be reported" indefinitely, with no timeout. While the filter was here, every
+  # `**/*.md` and `.planning/**` PR would have been permanently unmergeable, and docs PRs are a
+  # large share of this repo's traffic. See
+  # `docs/superpowers/specs/2026-09-20-master-branch-protection-design.md` §2a.
   #
-  # 🔴 DO NOT ADD SOURCE DIRECTORIES HERE. `docs/infra/**` is CDK TypeScript, not documentation. It is
+  # The saving the filter bought is kept where it still can be: the `changes` job does the same
+  # path test once, and the five PR jobs skip themselves when nothing outside docs changed. A
+  # docs-only PR now costs TWO job-minutes (`changes` + `ci ok`) instead of zero. That is the
+  # price of having a required check at all, and it was paid knowingly — the 18-of-90 measurement
+  # that justified the filter still stands, it just no longer outweighs an unmergeable PR.
+  #
+  # ⚠ `push` KEEPS ITS FILTER. Branch protection evaluates a PULL REQUEST's head commit, so the
+  # push trigger never has to report `ci ok`, and a docs-only push to master should still cost
+  # nothing. A docs-only push also skips the live-DB drift jobs; the nightly schedule covers them.
+  #
+  # ⚠ DO NOT ADD SOURCE DIRECTORIES to the list below — or to the matching `case` in `changes`,
+  # which must be kept in step with it. `docs/infra/**` is CDK TypeScript, not documentation. It is
   # in the clear today only because `**/*.md` does not match it — ignoring `docs/**` wholesale would
   # silently exempt real code the day someone wires a check to it. (No YAML anchor to share this list:
   # GitHub Actions does not expand aliases in workflow files.)
   pull_request:
     branches: [master]
-    paths-ignore:
-      - '**/*.md'
-      - '.planning/**'
   push:
     branches: [master]
     paths-ignore:
@@ -109,12 +118,66 @@ concurrency:
 # EXCEPTION 2 — `backend`: lint → typecheck → test is one pipeline over one commit, where the run order
 # IS the fix order, so it deliberately stops on the first failure.
 jobs:
+  # ──────────────────────────────────────── THE GATE ────────────────────────────────────────
+  # Decides whether anything outside docs changed. Every PR job below hangs off this, and `ci ok`
+  # at the bottom aggregates them into the one context branch protection requires.
+  #
+  # This is where the `pull_request` `paths-ignore` went. Dependency-free on purpose, in the same
+  # spirit as `static guards`: plain git, no `npm ci`, no third-party action.
+  changes:
+    name: changes
+    runs-on: ubuntu-latest
+    outputs:
+      code: ${{ steps.filter.outputs.code }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Both sides of the comparison have to be present, so no shallow clone.
+          fetch-depth: 0
+
+      - id: filter
+        name: Did anything outside docs change?
+        shell: bash
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          # Only a pull request can be docs-only here: `push` keeps its own paths-ignore, and
+          # schedule/workflow_dispatch have no diff to take. Everything else runs the full set.
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "event=$EVENT - not a pull request, running the full set"
+            echo "code=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
+          echo "comparing $base..$HEAD_SHA"
+
+          code=false
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            # KEEP IN STEP with `push`'s paths-ignore in the `on:` block. Same warning applies:
+            # do not add source directories. `docs/infra/**` is CDK TypeScript, and `*.md` not
+            # matching it is the only reason it is safe today.
+            case "$f" in
+              *.md|.planning/*) echo "  docs  $f" ;;
+              *)                echo "  CODE  $f"; code=true ;;
+            esac
+          done < <(git diff --name-only "$base" "$HEAD_SHA")
+
+          echo "code=$code"
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+
   backend:
     name: backend lint · typecheck · test
     runs-on: ubuntu-latest
     # Skipped on the nightly schedule: no commit means no new code to lint, and the scheduled run
     # exists only for the live-DB jobs below.
-    if: github.event_name != 'schedule'
+    needs: changes
+    if: github.event_name != 'schedule' && needs.changes.outputs.code == 'true'
     defaults:
       run:
         working-directory: backend
@@ -188,7 +251,8 @@ jobs:
     # occupancy` was PR-only; on a push its base resolves to origin/master (== HEAD after the push), so
     # it scans an empty diff and is a harmless no-op there — full coverage on PRs, unchanged. `fetch-depth:
     # 0` is the superset the numbering and occupancy diffs need; harmless for the other two.
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    needs: changes
+    if: (github.event_name == 'pull_request' || github.event_name == 'push') && needs.changes.outputs.code == 'true'
     steps:
       # fetch-depth: 0 so the base branch is available to the numbering and occupancy diffs.
       - uses: actions/checkout@v7
@@ -302,6 +366,28 @@ jobs:
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-postgis-spatial-ref-guard.mjs
 
+      # --- OCD-ID loader suffix guard --------------------------------------------------------------
+      # `parseInt('01A', 10)` is 1. A loader deriving a state-legislative OCD-ID suffix that way drops
+      # the subdistrict letter, so 1A/1B/1C collapse onto `.../sldl:1`. It happened twice: Minnesota
+      # (caught in a dry run, 2026-09-12) and Maryland, which shipped 84 damaged rows across TWO tables
+      # before CC_0113 repaired them on 2026-09-16. ND (slice 12) and SD (slice 15) have the same shape
+      # and are not loaded yet.
+      #
+      # NOTHING ELSE IN CI CAN SEE IT: `ocd_id` has no unique constraint so duplicates write silently,
+      # and address search resolves on `geo_id`, so reachability and every identity anchor stay green.
+      # What it corrupts is arithmetic — federalCoverage's seat denominator read 94 for a state with 118.
+      #
+      # This step is the STATIC half: it asserts the sldu/sldl branch of load-state-tiger-boundaries.ts
+      # still derives its suffix via ocdDistrictSuffix() and has not gone back to parseInt. It is scoped
+      # to that branch on purpose — the `cd` branch's parseInt is CORRECT, because congressional codes
+      # are plain numbers, and an earlier draft that scanned the whole file flagged it. The DATA half is
+      # the `ocd-suffixes` job below; neither replaces the other, because this one fails on the pull
+      # request that would cause a bad load while that one fails after one has run.
+      # Static, no DATABASE_URL, dependency-free — so it belongs here and carries the same `if:`.
+      - name: OCD-ID loader suffix guard
+        if: ${{ !cancelled() }}
+        run: node backend/scripts/check-ocd-loader-suffix.mjs
+
   migration-reservations:
     name: migration reservations
     runs-on: ubuntu-latest
@@ -342,7 +428,8 @@ jobs:
     # on 2026-08-14. PR-only would halve it, but 1681 was two DIRECT PUSHES to master with no PR
     # between them and CI never ran, which is why `migration numbering` is push+PR; a slot check
     # that skips direct pushes misses the very event that motivated it.
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    needs: changes
+    if: (github.event_name == 'pull_request' || github.event_name == 'push') && needs.changes.outputs.code == 'true'
     defaults:
       run:
         working-directory: backend
@@ -530,9 +617,62 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  instrument-topics:
+    name: instrument-topic self-test
+    runs-on: ubuntu-latest
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
+    # Guards a DETECTOR, not production data: scripts/instrument-topic-affinity.mjs answers "is the
+    # bill this row cites actually about this row's topic?", and it answers it by learning each
+    # topic's vocabulary from the reasoning corpus. Two different things can break it, which is why
+    # this runs on every trigger rather than taking the `!= 'pull_request'` shape of the other
+    # live-DB jobs:
+    #
+    #   * CODE — someone edits the scorer. That lands in a PR, and a PR is exactly when you want to
+    #     know. The first build of this script failed EVERY known instrument and still printed 376
+    #     findings; an untested classifier is indistinguishable from a working one by eye.
+    #   * CORPUS — the vocabulary drifts under it. A large uniform misfile teaches a topic the wrong
+    #     words, and the detector starts agreeing with the defect. That has no commit to trigger it,
+    #     so the nightly schedule covers it.
+    #
+    # The test itself is four bills whose subject is not in question ("barring the MaineCare program
+    # from covering abortion services" -> Reproductive Rights, and so on). It asserts only that the
+    # scorer puts them on the right topic; it asserts nothing about any politician's row.
+    #
+    # ⚠ THE FOURTH CASE IS A KNOWN FAIL AND IS NOT COUNTED. "Eliminating mandatory parking space
+    # minimums" classifies as Residential Zoning, not Transportation Priorities, because the 82
+    # misfiled LD 427 rows (migration 1882) taught Residential Zoning that vocabulary. It is kept in
+    # the suite as a standing demonstration that a corpus-consensus detector cannot find a LARGE,
+    # UNIFORM misfile — the misfile is its training data. Do not tune it away; for that shape use the
+    # borrowed-ladder probe, whose ground truth is ladder text written independently of the corpus.
+    # If it ever starts passing, the corpus changed underneath it and that is worth a look.
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Exits 0 when DATABASE_URL is absent, so forks get a green skip rather than a red build they
+      # cannot fix — same contract as the other live-DB checks here.
+      - name: Self-test the instrument-topic scorer against known bills
+        run: npm run check:instrument-topics
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   answer-seasons:
     name: answer-season consumers
     runs-on: ubuntu-latest
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
     # Its own job per the rule at the top of this file. It fails for a reason unlike every other
     # check here — a query that forgot a season predicate — so sharing a job would let it mask, or be
     # masked by, something unrelated.
@@ -779,3 +919,153 @@ jobs:
         run: npm run check:spatial-ref
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  stance-audit:
+    name: stance-read audit guard
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is exactly the 2026-08-14 defect), and it cannot join `static
+    # guards` — that job is dependency-free and this one needs `pg`.
+    #
+    # WHAT IT WATCHES: the stance-read audit required by ADR 0007 §5. That audit is one line of
+    # configuration (CC_0116: log_statement=all on `postgres`), so it can be switched off by anyone who
+    # can switch it on, and a platform event resetting rolconfig would be silent. It also watches for a
+    # NEW role gaining read access to inform.compass_responses — political opinions, GDPR Art. 9
+    # special-category data — using effective privilege rather than direct grants, because two roles
+    # already read that table through pg_read_all_data with no grant on it at all.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # This is the cheap kind the header blesses: ~30 billed minutes a month (one nightly run at the
+    # one-minute minimum). What it measures is role configuration in PROD, which drifts on the CALENDAR,
+    # not on our commits — a push cannot change a role setting — so charging it per push would bill
+    # ~494 minutes a month to watch for something pushes never cause. Same reasoning as
+    # `spatial-ref-baseline` and `child-county`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check the stance-read audit is on and no new role can read stances
+        run: npm run check:stance-audit
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  ocd-suffixes:
+    name: state-leg OCD-ID suffixes
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job, and it cannot join `static guards` — that job is dependency-free and this one needs
+    # `pg`. Its static companion, which reads the LOADER rather than the data, IS a step there.
+    #
+    # WHAT IT WATCHES: a state-legislative row whose `geo_id` ends in a letter while its `ocd_id` suffix
+    # does not — the `parseInt('01A')` defect. Both `essentials.districts` AND
+    # `essentials.geofence_boundaries` are scanned: the boundary table carried identical damage in
+    # Maryland and was named in no write-up of the defect, which is exactly why it is not omitted here.
+    # It gates the END STATE, which is the rule — the loader being correct is a claim about code, and
+    # this is a claim about what is actually in production.
+    #
+    # 🔴 IT CARRIES ITS OWN POSITIVE CONTROL. A read-only check cannot plant a row, so it measures the
+    # INVERSE too — the rows that correctly keep a letter (MN 134 + MD 42 = 176 today). If that count is
+    # zero the query has stopped matching and the check FAILS saying so, rather than reporting a clean
+    # sweep. A detector that reports "nothing found" is worthless until it has been shown finding something.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum). What it measures changes
+    # only when someone runs a TIGER loader by hand against production — a deliberate, ad-hoc act, never
+    # a consequence of a push — so charging it per push would bill ~494 minutes a month to watch for
+    # something pushes do not do. Same reasoning as `spatial-ref-baseline` and `child-county`. The pull
+    # request that would CAUSE a bad load is caught by the static step instead, for free.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks), matching the other live-DB checks, and
+    # says so out loud rather than printing a pass.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no state-legislative OCD-ID drops a geo_id letter
+        run: npm run check:ocd-suffixes
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  # ──────────────────────────────────────── THE REQUIRED CHECK ────────────────────────────────────────
+  # 🔴 REQUIRE THIS NAME (`ci ok`) IN BRANCH PROTECTION, NEVER THE INDIVIDUAL JOB NAMES.
+  # A protection config that lists jobs by name silently loses a requirement whenever one is
+  # renamed, split or added: it keeps waiting for a name nobody reports any more, or never learns
+  # about the new one. This is not hypothetical — `instrument-topics` landed in this file between
+  # the protection spec being written and merged, and a name list would have missed it.
+  #
+  # 🔴 `if: always()` IS LOAD-BEARING. Without it this job is SKIPPED the moment a dependency
+  # fails, and a skipped required check never reports — producing exactly the indefinite
+  # "Waiting for status to be reported" wait this whole gate exists to prevent. A red dependency
+  # must produce a RED `ci ok`, not an absent one.
+  #
+  # ⚠ `skipped` COUNTS AS PASSING, and that is a deliberate cost rather than an oversight. It has
+  # to: on a docs-only PR all five jobs skip and this must still go green. The price is that a job
+  # switched off by a broken `if:` also reads as green here. If you edit a job's `if:`, confirm it
+  # still runs when you think it does — this check will not tell you.
+  ci-ok:
+    name: ci ok
+    if: always() && (github.event_name == 'pull_request' || github.event_name == 'push')
+    needs: [changes, backend, static-guards, migration-reservations, instrument-topics, answer-seasons]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every required job succeeded or was deliberately skipped
+        shell: bash
+        env:
+          # ⚠ Hyphenated job ids need BRACKET syntax. `needs.static-guards.result` parses as
+          # subtraction, yields an empty string, and would read as a failure forever.
+          R_CHANGES: ${{ needs.changes.result }}
+          R_BACKEND: ${{ needs.backend.result }}
+          R_GUARDS: ${{ needs['static-guards'].result }}
+          R_MIGRATIONS: ${{ needs['migration-reservations'].result }}
+          R_INSTRUMENT: ${{ needs['instrument-topics'].result }}
+          R_SEASONS: ${{ needs['answer-seasons'].result }}
+        run: |
+          set -uo pipefail
+          fail=0
+          check() {
+            case "$2" in
+              success|skipped) printf 'ok        %-24s %s\n' "$1" "$2" ;;
+              *)               printf 'BLOCKING  %-24s %s\n' "$1" "$2"; fail=1 ;;
+            esac
+          }
+          check "changes"                 "$R_CHANGES"
+          check "backend"                 "$R_BACKEND"
+          check "static guards"           "$R_GUARDS"
+          check "migration reservations"  "$R_MIGRATIONS"
+          check "instrument-topic"        "$R_INSTRUMENT"
+          check "answer-season consumers" "$R_SEASONS"
+          echo
+          if [ "$fail" -ne 0 ]; then
+            echo "ci ok: a required job did not pass"
+            exit 1
+          fi
+          echo "ci ok: all required jobs passed or were deliberately skipped"

@@ -43,6 +43,7 @@ import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js
 import essentialsCoordinateLookupRouter from './routes/essentialsCoordinateLookup.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import treasuryRouter from './routes/treasury.js';
+import publicCoverageRouter from './routes/publicCoverage.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
 import internalJobsRouter from './routes/internalJobs.js';
@@ -51,6 +52,7 @@ import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import { requireAuth } from './middleware/auth.js';
 import { requireAdmin } from './middleware/requireAdmin.js';
 import meetingsRouter from './routes/meetings.js';
+import adminMeetingsRouter from './routes/adminMeetings.js';
 import agendaItemsRouter from './routes/agendaItems.js';
 import peopleRouter from './routes/people.js';
 import searchRouter from './routes/search.js';
@@ -74,6 +76,10 @@ import {
 // Validation Quests (VQ) sub-app — folded in (engine consolidation, Phase 2).
 // See src/vq/app.ts for the seam and rationale.
 import { validationQuestsRouter, startVqCrons } from './vq/app.js';
+// Civic Spaces slice assignment — folded in (engine consolidation, ev-cto decision 0018).
+// One synchronous request route (POST /api/civic-spaces/assign); NOT a job. See
+// src/civic_spaces/ for the module and its dedicated least-privilege DB pool.
+import civicSpacesRouter from './civic_spaces/routes/assignment.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -91,6 +97,17 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(helmet());
+
+// ⚠⚠ MOUNTED BEFORE cookieParser AND THE GLOBAL CORS ALLOWLIST, DELIBERATELY.
+// The global policy below sets `credentials: true`, and a browser REJECTS
+// `Access-Control-Allow-Credentials: true` alongside `Access-Control-Allow-
+// Origin: *`. Mounting this public, unauthenticated, any-origin endpoint ahead
+// of it means it never acquires the credentialed header — layering a
+// `cors({origin:'*'})` AFTER the allowlist would instead produce a response
+// that fails in real browsers while passing every server-side test.
+// Needs neither cookies nor a body parser. See routes/publicCoverage.ts.
+app.use('/api/treasury/coverage', publicCoverageRouter);
+
 app.use(cookieParser());
 
 const allowedOrigins = env.CORS_ORIGIN
@@ -143,6 +160,9 @@ app.use('/api/social', socialRouter);
 // Season composition (reviewer-gated). Mounted before the bare /api/admin
 // routers so nothing generic can shadow /api/admin/seasons/*.
 app.use('/api/admin/seasons', seasonsAdminRouter);
+// Project-2 House-floor review panel (authenticated). Mounted before the bare
+// /api/admin routers so the specific prefix is not shadowed.
+app.use('/api/admin/meetings', adminMeetingsRouter);
 // JWT-gated staging review endpoints for the browser admin UI (STAG-06).
 // Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
 // X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
@@ -218,6 +238,12 @@ app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
 app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
 app.use('/api/events', eventsRouter);   // CTA event telemetry
+
+// === Civic Spaces slice assignment — folded in (engine consolidation, ev-cto decision 0018) ===
+// The civic-spaces frontend calls ${VITE_SLICE_ASSIGNMENT_URL}/assign; point that env var at
+// this base (/api/civic-spaces) to cut over from the standalone civic-spaces-slice-assignment
+// service. A synchronous request route — served under EV_ROLE=api like every other route here.
+app.use('/api/civic-spaces', civicSpacesRouter);
 
 // === Civic Trivia Championships (CTC) — folded in (engine consolidation, Phase 1) ===
 // Each router is mounted under BOTH the /ctc/... alias (byte-for-byte with the old

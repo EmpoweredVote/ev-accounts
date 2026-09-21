@@ -20,6 +20,7 @@ import { requestDb, adminRpc } from './supabase.js';
 import { getRequestAuthUser } from './authService.js';
 import { pool } from './db.js';
 import { isUserAdmin } from './adminService.js';
+import { firstNonBlank, deterministicAutoName } from './displayName.js';
 
 export async function getAccountMe(
   accessToken: string,
@@ -180,7 +181,14 @@ export async function getAccountMe(
   const meResponse: Record<string, unknown> = {
     id: user.id,
     email: authUser.email,
-    display_name: user.display_name,
+    // Never null/empty (watchlist #70): base name → Connected pseudonym → deterministic
+    // pseudonym. The row already selects connected.display_name above. This is what surfaces
+    // a chosen pseudonym stranded in connect when the base name was left null.
+    display_name:
+      firstNonBlank(
+        user.display_name as string | null | undefined,
+        connected?.display_name as string | null | undefined,
+      ) ?? deterministicAutoName(user.id as string),
     avatar_url: user.avatar_url,
     tier,
     is_admin: isAdmin,

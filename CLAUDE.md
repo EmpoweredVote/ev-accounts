@@ -25,13 +25,25 @@ Full rationale: [`docs/adr/0002-temporal-officeholder-terms.md`](docs/adr/0002-t
 
 ### Reading
 
-Join the view, in whichever direction you need. It is **exactly one row per office** (guaranteed by
-`office_terms`' exclusion constraint), so it cannot fan a result set out:
+Join the view in whichever direction you need — but 🔴 **the two directions do NOT carry the same
+guarantee**, and this line used to say they did:
 
 ```sql
 JOIN essentials.office_current_holder och ON och.office_id     = o.id   -- who holds this seat
 JOIN essentials.office_current_holder och ON och.politician_id = p.id   -- what seat does this person hold
 ```
+
+The view is **exactly one row per office** (guaranteed by `office_terms`' exclusion constraint), so
+the **first** join cannot fan a result set out. **The second one can.** That constraint forbids two
+people on one office; it **cannot see one person on two** — and people do hold two, whether a
+duplicate row from a discovery sweep or a genuine second seat. So a politician-rooted join returns
+one row **per office that person holds**, and needs a `DISTINCT ON (p.id)` or a deliberately chosen
+office.
+
+⚠ **This is not hypothetical.** `GET /api/essentials/politicians?q=` carried the old claim as a
+comment and no `DISTINCT`, and returned **two** Aaron Freemans until `CC_0103` deleted the duplicate
+office (2026-09-12). `getPoliticianById` has the same shape and takes `rows[0]` with no `ORDER BY`,
+so it reports an arbitrary one of the two as the person's office.
 
 For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019".
 

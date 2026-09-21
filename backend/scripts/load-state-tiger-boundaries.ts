@@ -23,6 +23,7 @@ import * as https from 'https';
 import AdmZip from 'adm-zip';
 import * as shapefile from 'shapefile';
 import { pathToFileURL } from 'url';
+import { ocdDistrictSuffix } from '../src/lib/ocdDistrictSuffix.js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -189,6 +190,86 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // place/county are deliberately EXCLUDED: this entry exists to wire legislative routing, and
   // TN's counties already exist and carry the Nashville offices — do not disturb them.
   TN: new Set(['sldu', 'sldl']),
+  // MN. Knight program slice 5 — Duluth and Saint Paul. Production held ZERO G5210/G5220
+  // geofences and ZERO state legislative offices for Minnesota before this entry (measured
+  // 2026-09-12), so no Minnesota address could reach a legislator at all.
+  // Counts MEASURED 2026-09-12 by parsing the .dbf inside each TIGER 2024 FIPS 27 zip
+  // directly, not inferred from statute: sldu 67, sldl 134, place 915 (855 G4110 + 60 G4210).
+  // 🔴 VINTAGE IS L2022 AND THAT WAS PROVEN, NOT ASSUMED — AND A COUNT COULD NEVER PROVE IT.
+  // Minnesota's 2012 plan ALSO had 67 Senate and 134 House districts with the SAME A/B
+  // labelling, so 67/134 distinguishes the two plans not at all. LSY=2024 on both layers, but
+  // LSY is a field, not proof (the TN precedent). The discriminator is a RENUMBERED district:
+  // Duluth's Senate seat was District 7 under the 2012 plan and is District 8 under L2022 —
+  // Jen McEwen served District 7 from 2021 to 2023 and was re-elected in the renumbered
+  // District 8 in Nov 2022. Against Duluth City Hall (46.7828, -92.1057): TIGER's SD 008
+  // interior point lies 10.0 km away and is the NEAREST of all 67, while SD 007 is 82.8 km;
+  // HD 08A is 5.9 km and the NEAREST of all 134. Both agree with the Minnesota Legislative
+  // Coordinating Commission's own point service, which returns SD 08 / HD 08A there.
+  // ⚠ Interior-point proximity is strong pre-flight evidence, NOT point-in-polygon containment.
+  // The proof is the post-load ST_Covers anchor check — see backend/data/seed-mn-2026/
+  // anchors-L2022.json, which carries four anchors including a 64A/64B pair.
+  // 🔴 THE TWO SLD LAYERS ARE PADDED DIFFERENTLY, AND A THIRD FORM EXISTS UPSTREAM.
+  // SLDUST is THREE characters, zero-padded: '008'. SLDLST is two digits plus a letter: '08A'.
+  // GEOIDs are therefore '27008' and '2708A'. The LCC service returns a fourth-of-a-kind '08'.
+  // Normalise deliberately; do not assume a shared format between the chambers.
+  // 🔴 A MINNESOTA HOUSE DISTRICT IS NOT AN INTEGER. Every SLDLST ends in A or B — measured
+  // 67 A and 67 B, and all 67 senate-number groups contain exactly 2 members. Never cast, sort
+  // or join one as a number: lexical order puts 10A before 2A.
+  // ⚠ THE A/B PAIRING ABOVE IS LABEL STRUCTURE, NOT GEOMETRY. Whether each House district
+  // actually falls inside its own Senate district must be measured with ST_Covers after the
+  // load. Tennessee's 3:1 ratio invited exactly this assumption and only 28 of 99 nested;
+  // Colorado behaves the same way. Do not infer containment from the numbering.
+  // 🔴 geo_id COLLIDES WITH COUNTIES ON THE SENATE SIDE. sldu runs 27001..27067 and MN's 87
+  // county GEOIDs run 27001..27173 — 34 of them fall inside the sldu range, so '27001' is
+  // Aitkin County AND Senate District 1. Same shape as GA and TN. Every downstream join must
+  // pair geo_id with district_type or mtfcc. sldl is safe by construction: '2708A' ends in a
+  // letter and cannot collide with a numeric county GEOID.
+  // Neither SLD file carries a 'ZZZ' pseudo-district, so skipDistrictCodes removes nothing.
+  // place: Minnesota's incorporated cities are elected governments. The G4110 filter in the
+  // pre-flight excludes the 60 G4210 CDPs, as for FL/GA/NC/CO/WA and the rest. This slice needs
+  // Duluth 2717000 and St. Paul 2758000 — both G4110, FUNCSTAT 'A'. ⚠ TIGER names the capital
+  // 'St. Paul', so a search for 'Saint Paul' matches NOTHING while '%St. Paul%' matches five
+  // Minnesota cities. Match the GEOID, never the name.
+  // cousub is deliberately EXCLUDED even though Minnesota IS a strong-MCD state whose townships
+  // are elected governments — that is a real future need, but it is out of scope for slice 5 and
+  // would add ~1,800 rows this wave cannot verify. Do NOT add MN to COUSUB_FUNCSTAT_STATES
+  // without loading cousub. cd/county are EXCLUDED because production already holds all 8
+  // Minnesota congressional districts and all 87 counties; reloading them is not idempotent
+  // progress, it is a second chance to introduce a conflicting geo_id.
+  MN: new Set(['sldu', 'sldl', 'place']),
+  // PA. Knight program slice 6 — Philadelphia and State College. Production held ZERO
+  // G5210/G5220 rows for FIPS 42 and ZERO state legislative offices before this wave;
+  // measured 2026-09-18.
+  // Counts MEASURED against raw TIGER 2024 FIPS 42 on 2026-09-18 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   50 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'050'
+  //   sldl  203 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'203'
+  // Pennsylvania is single-member in both chambers, so these polygon counts ARE the seat
+  // counts — unlike AZ/WA (and ND/SD in later Knight waves) where one sldl polygon carries
+  // two seats. Codes are plain digits with no letter half, so ocdDistrictSuffix yields 203
+  // and 50 DISTINCT suffixes; the MN/MD A-B collapse cannot arise here, and the pre-flight
+  // asserts the distinct count anyway rather than reasoning about it.
+  // 🔴 VINTAGE IS THE 2022 LRC FINAL PLAN, AND IT WAS PROVEN, NOT ASSUMED. 203/50 is also the
+  // shape of the 2012 plan — the counts are fixed by Pa. Const. Art. II §16, so a count can
+  // NEVER date this map. Every one of the 253 TIGER polygons was tested at its own internal
+  // point against PennDOT's own 'Pa House 2026_07' and 'Pa Senatorial 2026_07' layers
+  // (PASDA, maps.pasda.psu.edu, a Commonwealth source independent of Census): 203/203 and
+  // 50/50 agree, 0 differ, 0 errors. The test was then run against the TIGER 2018 polygons'
+  // internal points and FAILED on 44 House and 5 Senate districts, which is the control
+  // showing it can fail. Three anchors move between the two vintages and all three resolve
+  // to the 2024 file: State College SD 34 -> 25, Allentown SD 16 -> 14, Erie HD 2 -> 1.
+  // 🔴 THE geo_id COLLISION IS THE WORST IN THE PROGRAM SO FAR, AND IT IS WITH COUNTIES.
+  // sldl runs 42001..42203 and sldu 42001..42050, while PA's 67 counties are 42001..42133 odd:
+  // measured 2026-09-18, ALL 67 county geo_ids are also a House district geo_id, 25 are also a
+  // Senate district, and every one of the 50 Senate ids is also a House id — 142 new string
+  // collisions from this one load. '42101' is Philadelphia County AND House District 101.
+  // Every join must pair geo_id with mtfcc/district_type; this is NC-3's `37119` as a rule
+  // rather than an incident. Congressional is unaffected (4-char ids, 4201..4217).
+  // place/cousub are EXCLUDED: PA's G4110 (1,013), G4210 (989) and G4040 (2,573) rows were
+  // loaded on 2026-09-18 by scripts/load-municipal-boundaries.sh, and Philadelphia city
+  // 4260000 and State College borough 4273808 are both already present with geometry.
+  // cd/county are EXCLUDED: prod already holds all 17 PA congressional and all 67 counties.
+  PA: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1684,8 +1765,128 @@ async function processLayer(
     }
   }
 
+  // ── MN MTFCC pre-flight assertion (Knight program, wave MN-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 27 on 2026-09-12 by parsing the
+  // .dbf inside each zip directly, not inferred from statute:
+  //   sldu   67 records, 0 'ZZZ', LSY=2024, MTFCC G5210, SLDUST '001'..'067', GEOID 27001..27067
+  //   sldl  134 records, 0 'ZZZ', LSY=2024, MTFCC G5220, SLDLST '01A'..'67B', GEOID 2701A..2767B
+  // Minnesota is single-member in both chambers, so these polygon counts ARE the
+  // seat counts: 67 Senators + 134 Representatives. Each Senate district is divided
+  // into exactly two House districts, A and B — measured as 67 A, 67 B, with all 67
+  // senate-number groups of size 2.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR. 67/134 is ALSO the shape of Minnesota's
+  // 2012 plan, so these numbers cannot by themselves tell you which map you have —
+  // see the vintage proof in the MN allowlist comment above, which turns on Duluth's
+  // Senate seat being renumbered from 7 to 8. If a count drifts, a remap has happened:
+  // stop, and re-prove the vintage against the Legislature's own point service. Do NOT
+  // raise the number to get a green run.
+  if (fipsArg === '27') {
+    const EXPECTED_MN_MTFCC: Record<string, number> = {
+      sldu: 67,   // 67 MN Senate districts (plan L2022, ordered 2022-02-15) — measured 2026-09-12, no 'ZZZ' row
+      sldl: 134,  // 134 MN House districts, 67 A + 67 B — measured 2026-09-12, no 'ZZZ' row
+      place: 855, // measured 2026-09-12 from the raw .dbf: 915 raw records = 855 G4110 incorporated
+                  // places + 60 G4210 CDPs, which the G4110 filter below excludes. ⚠ TIGERweb's
+                  // Incorporated Places layer reports 856 for MN — it is a NEWER vintage (BAS 2026)
+                  // than the TIGER 2024 file this loader fetches. The one-row gap is a vintage
+                  // difference, not an error; assert against the file being loaded.
+    };
+    if (layer in EXPECTED_MN_MTFCC) {
+      const expected = EXPECTED_MN_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          // Count only incorporated places, matching what the upsert writes. The CDPs are
+          // statistical, not elected — same filter as MD/FL/GA/NC/CO/WA.
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[MN MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 27 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] MN MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── PA MTFCC pre-flight assertion (Knight program, wave PA-1) ───────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 42 on 2026-09-18 by parsing the
+  // .dbf inside each zip directly, not inferred from Pa. Const. Art. II §16:
+  //   sldu   50 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, GEOID 42001..42050
+  //   sldl  203 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, GEOID 42001..42203
+  // Pennsylvania is single-member in both chambers, so these polygon counts ARE the
+  // seat counts: 50 Senators + 203 Representatives.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR, AND THE COUNT CANNOT DATE THE MAP. 203/50
+  // is fixed by the constitution, so it is ALSO the 2012 plan's shape and every plan's
+  // shape — see the vintage proof in the PA allowlist comment above, which rests on all
+  // 253 polygons agreeing with PennDOT's own layer and on the 2018 file failing the same
+  // test. If a count drifts, something other than a remap has happened: stop. Do NOT
+  // raise the number to get a green run.
+  // The second assertion is the OCD-ID one: PA's codes are plain digits, so the suffixes
+  // must be as numerous as the records. A collapse here is the MN '08A' / MD '1A' defect
+  // arriving in a state that cannot produce it, i.e. a loader regression.
+  if (fipsArg === '42') {
+    const EXPECTED_PA_MTFCC: Record<string, number> = {
+      sldu: 50,   // 50 PA Senate districts (2022 LRC Final Plan, adopted 2022-02-04,
+                  // PA Supreme Court appeals denied 2022-03-16) — measured 2026-09-18
+      sldl: 203,  // 203 PA House districts, same plan — measured 2026-09-18
+    };
+    if (layer in EXPECTED_PA_MTFCC) {
+      const expected = EXPECTED_PA_MTFCC[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[PA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 42 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[PA OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. PA district codes ` +
+          `are plain digits and cannot collide — this is the MN '08A' / MD '1A' collapse in a ` +
+          `state that cannot produce it. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] PA MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
@@ -1811,8 +2012,15 @@ async function processLayer(
         }
         case 'sldu':
         case 'sldl': {
-          const dn = parseInt(districtNum ?? '0', 10);
-          ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, String(dn));
+          // 🔴 NOT parseInt. It drops a trailing letter, and some states' legislative district
+          //    codes carry one: MN is '01A'..'67B', MD's delegate districts are 1A/1B/1C, and
+          //    ND/SD use subdistricts too. parseInt('08A') is 8, so 08A and 08B collided on one
+          //    OCD-ID — 134 Minnesota House districts collapsing to 67. ocd_id has no unique
+          //    constraint, so that wrote silently, and address search resolves on geo_id so no
+          //    gate could see it. Maryland is already carrying 24 such rows in production.
+          //    ocdDistrictSuffix strips leading zeros exactly as parseInt did and keeps the
+          //    letter; all 2,400 plain-digit rows across 18 states are byte-identical under it.
+          ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, ocdDistrictSuffix(districtNum));
           break;
         }
         case 'county': {
@@ -1849,7 +2057,7 @@ async function processLayer(
       // 130-04 D-01 grep-verifiable: `upsertGeofence(client, { ... state: fipsArg ... })`.
       // D-09 single resolution point: registry lookup with place-only fallback (CA byte-equivalence preserved).
       const runMakeValid = STATE_RUN_MAKEVALID[abbrevUpper]?.has(layer) ?? (layer === 'place');
-      // eslint-disable-next-line max-len
+
       const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid, sourceString: layerDef.sourceString });
       if (upsertResult.inserted) {
         totals.inserted_boundary++;
@@ -1862,7 +2070,7 @@ async function processLayer(
       // 130-04 D-02 grep-verifiable: `insertDistrictIfMissing(client, { ... state: abbrev ... })`.
       if (layerDef.writeDistrictRow && ocd_id !== null) {
         const effectiveDistrictType = STATE_LAYER_TYPE_MAP[abbrevUpper]?.[layer] ?? layerDef.district_type;
-        // eslint-disable-next-line max-len
+
         const districtResult = await insertDistrictIfMissing(client, { geo_id, ocd_id, name, state: abbrev, district_type: effectiveDistrictType, mtfcc: layerDef.mtfcc });
         if (districtResult.inserted) {
           totals.inserted_district++;

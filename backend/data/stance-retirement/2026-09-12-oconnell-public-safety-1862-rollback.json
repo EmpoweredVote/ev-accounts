@@ -1,0 +1,44 @@
+{
+  "migration": "1862_retire_oconnell_public_safety_approach.sql",
+  "captured_at": "2026-09-12",
+  "why": "Mayor Freddie O'Connell was seated at chair 4 on public-safety-approach from the Nashville Banner 2023 one-on-one. The row was flagged for review in the pass that created it: chair 4's instruments appear verbatim in his own ad copy, but asked what 'invest in police' means he answers 'we already have' and locates the constraint in recruitment class size rather than budget level, which is chair 3's funding posture. Chair 3 was rejected only because its distinguishing crisis-response-team clause is absent. The evidence is under-determined between 3 and 4, so no chair is evidenced.",
+  "disposition": {
+    "answer": "deleted",
+    "context": "rewritten-as-blank"
+  },
+  "answer": {
+    "politician_id": "a5fd7757-33e0-428c-bc7a-4224aac9e4ab",
+    "politician_name": "Freddie O'Connell",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+    "season_name": "Season 2",
+    "topic_revision_id": "b9c1c07f-f80e-493a-9bb0-015e46c9bc71",
+    "editor_id": null,
+    "created_at": "2026-09-11T16:27:29.68423+00:00",
+    "updated_at": "2026-09-11T16:27:29.68423+00:00"
+  },
+  "context_before": {
+    "politician_id": "a5fd7757-33e0-428c-bc7a-4224aac9e4ab",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "reasoning": "Banner 1:1: ad top line invest in police; cites 8 yrs raising police budget for personnel; wages; equipment",
+    "sources": [
+      "https://nashvillebanner.com/2023/08/31/one-on-one-with-freddie-oconnell/"
+    ],
+    "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+    "topic_revision_id": "b9c1c07f-f80e-493a-9bb0-015e46c9bc71",
+    "editor_id": null,
+    "created_at": "2026-09-11T16:27:29.68423+00:00"
+  },
+  "context_after": {
+    "reasoning": "Researched 2026-09-12 - 2 Nashville Banner pieces read in full; no chair is evidenced. The 2023-08-31 one-on-one is under-determined between chairs 3 and 4: chair 4's instruments (staffing, equipment, pay) appear verbatim in his own ad copy, but asked what 'invest in police' means he answers that we already have, and locates the constraint in recruitment class size rather than budget level, which is chair 3's funding posture; chair 3's distinguishing crisis-response-team clause is absent. The 2023-11-21 piece reports his transition COMMITTEES' recommendations, not his own positions, so nothing in it is attributable to him.",
+    "sources": [
+      "https://nashvillebanner.com/2023/08/31/one-on-one-with-freddie-oconnell/"
+    ]
+  },
+  "not_touched": {
+    "note": "His transportation-priorities row (value 1, same Banner source) is unaffected. It names the instrument - the IMPROVE Act referendum for dedicated transit funding - and stands."
+  },
+  "restore": "To undo: re-INSERT the answer row above (the pin triple is still valid - Season 2 is open and still pins revision b9c1c07f for this topic), then restore context.reasoning to context_before.reasoning."
+}

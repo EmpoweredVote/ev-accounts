@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-09-18T20:05:01.216Z",
+  "jurisdictions": {
+    "philadelphia": {
+      "place_geo_id": "4260000",
+      "county_geo_id": "42101",
+      "consolidated": true,
+      "seats": {
+        "mayor": 1,
+        "council_district": 10,
+        "council_at_large": 7
+      },
+      "mayor": {
+        "full_name": "Cherelle L. Parker",
+        "seat_kind": "mayor",
+        "page_url": "https://www.phila.gov/departments/mayor/"
+      },
+      "council": [
+        {
+          "full_name": "Kenyatta Johnson",
+          "seat_kind": "district",
+          "district": 2,
+          "page_url": "https://phlcouncil.com/kenyattajohnson/"
+        },
+        {
+          "full_name": "Mark Squilla",
+          "seat_kind": "district",
+          "district": 1,
+          "page_url": "https://phlcouncil.com/marksquilla/"
+        },
+        {
+          "full_name": "Jamie Gauthier",
+          "seat_kind": "district",
+          "district": 3,
+          "page_url": "https://phlcouncil.com/jamiegauthier/"
+        },
+        {
+          "full_name": "Curtis Jones, Jr.",
+          "seat_kind": "district",
+          "district": 4,
+          "page_url": "https://phlcouncil.com/curtisjonesjr/"
+        },
+        {
+          "full_name": "Jeffery Young, Jr.",
+          "seat_kind": "district",
+          "district": 5,
+          "page_url": "https://phlcouncil.com/jefferyyoungjr/"
+        },
+        {
+          "full_name": "Michael Driscoll",
+          "seat_kind": "district",
+          "district": 6,
+          "page_url": "https://phlcouncil.com/michaeldriscoll/"
+        },
+        {
+          "full_name": "Quetcy Lozada",
+          "seat_kind": "district",
+          "district": 7,
+          "page_url": "https://phlcouncil.com/quetcylozada/"
+        },
+        {
+          "full_name": "Cindy Bass",
+          "seat_kind": "district",
+          "district": 8,
+          "page_url": "https://phlcouncil.com/cindybass/"
+        },
+        {
+          "full_name": "Anthony Phillips",
+          "seat_kind": "district",
+          "district": 9,
+          "page_url": "https://phlcouncil.com/anthonyphillips/"
+        },
+        {
+          "full_name": "Brian J. O’Neill",
+          "seat_kind": "district",
+          "district": 10,
+          "page_url": "https://phlcouncil.com/brianoneill/"
+        },
+        {
+          "full_name": "Katherine Gilmore Richardson",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/katherinegilmorerichardson/"
+        },
+        {
+          "full_name": "Isaiah Thomas",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/isaiahthomas/"
+        },
+        {
+          "full_name": "Jim Harrity",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/jimharrity/"
+        },
+        {
+          "full_name": "Nina Ahmad",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/ninaahmad/"
+        },
+        {
+          "full_name": "Rue Landau",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/ruelandau/"
+        },
+        {
+          "full_name": "Kendra Brooks",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/kendrabrooks/"
+        },
+        {
+          "full_name": "Nicolas O’Rourke",
+          "seat_kind": "at_large",
+          "district": null,
+          "page_url": "https://phlcouncil.com/nicolasorourke/"
+        }
+      ],
+      "change_check": {
+        "tested": 17,
+        "named": 17,
+        "notNamed": [],
+        "departure": [
+          "Curtis Jones, Jr.: \"one who presents an imminent threat. In 2023, Councilmember Jones and former Council President Darrell L. Clarke introduced legislation, approved by Council, proposing an amendment to the Philadelphia\" https://phlcouncil.com/curtisjonesjr/",
+          "Jeffery Young, Jr.: \"hting for what’s right. As a high school senior, Jeffery interned for former Council President and 5th District Councilmember Darrell L. Clarke, which afforded him the opportunity to experience public\" https://phlcouncil.com/jefferyyoungjr/",
+          "Michael Driscoll: \"lection for the 6 th Council District seat held in May 2022, Driscoll resigned his PA House seat and was sworn in as a member of Philadelphia City Council on June 10, 2022. Driscoll is a strong suppor\" https://phlcouncil.com/michaeldriscoll/",
+          "Anthony Phillips: \"cial election to complete the term of Mayor Cherelle Parker after she resigned from the seat. In 2023, he was returned to City Council by the residents of the 9th Council District. He is in his first\" https://phlcouncil.com/anthonyphillips/"
+        ],
+        "errors": [],
+        "skipped": 0
+      }
+    },
+    "state_college": {
+      "place_geo_id": "4273808",
+      "county_geo_id": "42027",
+      "consolidated": false,
+      "seats": {
+        "mayor": 1,
+        "council_at_large": 7
+      },
+      "members": [
+        {
+          "full_name": "Ezra Nanes",
+          "seat_kind": "mayor"
+        },
+        {
+          "full_name": "Evan Myers",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "Gopal Balachandran",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "John Hayes",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "Matt Herndon",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "Kevin Kassab",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "Nalini Krishnankutty",
+          "seat_kind": "at_large"
+        },
+        {
+          "full_name": "Susan Venegoni",
+          "seat_kind": "at_large"
+        }
+      ],
+      "change_check": {
+        "tested": 0,
+        "named": 0,
+        "notNamed": [],
+        "departure": [],
+        "errors": [],
+        "skipped": 8
+      }
+    }
+  },
+  "findings": []
+}
