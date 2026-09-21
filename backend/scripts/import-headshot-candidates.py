@@ -40,7 +40,7 @@ from dotenv import load_dotenv
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from headshot_crop import crop_4x5  # noqa: E402
+from headshot_crop import crop_4x5, monochrome  # noqa: E402
 
 load_dotenv()
 
@@ -134,6 +134,23 @@ for c in cands:
         src = Image.open(BytesIO(raw))
         w, h = src.size                    # SOURCE size, reported in the log line
         img, (kw, kh) = crop_4x5(src, **c.get("crop", {}))
+
+        # 🔴 NEVER SHIP A MONOCHROME PORTRAIT -- a house rule, enforced here so it holds
+        # even when a greyscale row reaches the importer. It was previously enforced only
+        # by the operator's eye on the proof sheet, and SC-5a is what that cost: the South
+        # Carolina Legislative Manual is printed in DeviceGray, so 156 greyscale
+        # candidates were built, rendered and published for approval before anyone saw it.
+        # `allow_monochrome: true` on the row is the deliberate override, per person, and
+        # it has to be written down rather than passed as a global flag.
+        if not c.get("allow_monochrome"):
+            is_mono, chroma, neutral = monochrome(img)
+            if is_mono:
+                failed += 1
+                problems.append(
+                    f"{c['name']}: MONOCHROME (chroma {chroma:.1f}, neutral {neutral:.2f}) "
+                    "-- black-and-white portraits are never shipped. Find a colour source, "
+                    "or set allow_monochrome on this row if it is genuinely wanted.")
+                continue
 
         # NEVER ENLARGE, AND NEVER SKIP FOR BEING SMALL.
         # A source below 600x750 gets stored at its own cropped size instead of being

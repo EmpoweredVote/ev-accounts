@@ -9,7 +9,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ applied 2026-09-20 — 170 offices, 170 seated |
 | 3 city waves | ✅ applied 2026-09-20 — Columbia 7, Myrtle Beach 7 |
 | 4 county waves | ✅ applied 2026-09-20 — Richland 20, Horry 21, 40 seated, 1 vacant |
-| 5 assets | — headshots for 224 SC officials, plus Columbia and Myrtle Beach banners |
+| 5 assets | **WIP** — ✅ SC-5a applied 2026-09-20, the General Assembly is **170/170**. Owed: 54 city/county portraits + both banners |
 
 ---
 
@@ -623,8 +623,137 @@ the boundary loader too (`inserted 0`).
 
 ### ▶ What SC still owes
 
-- **Stage 5** — headshots for 224 South Carolina officials (170 legislative, 14 city, 40 county)
-  and banner keys for Columbia and Myrtle Beach.
+- **Stage 5** — ✅ **SC-5a applied**, see below. Owed: the **54 city and county portraits**
+  (14 city, 40 county) and banner keys for Columbia and Myrtle Beach.
 - **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA: multi-county
   prosecutors the program has now declined three times and never scheduled.
 - **The watershed and school-board seats**, with North Carolina's school-board question.
+
+---
+
+# SC-5a — stage 5, the legislature. APPLIED 2026-09-20. 170 of 170 renderable.
+
+`scripts/build-sc-legislature-candidates.py` (new) → `scripts/import-headshot-candidates.py`
+→ `scripts/verify-imported-headshots.py`. No migration: this path writes
+`politician_images` and `politicians.photo_custom_url` directly.
+
+| | |
+| --- | --- |
+| Seats | **170** — 124 Representatives + 46 Senators |
+| Imported | **169**; 1 skipped (the politician SC-2 reused already carried an image row) |
+| Verified | 170 tested, **170 decoded, 0 broken**, count asserted, control failed first |
+| SC statewide | **15 → 185 of 240** seats renderable |
+
+Baseline before the wave, counted the way the read path does
+(`COALESCE(photo_custom_url, photo_origin_url, '') LIKE 'http%'`): **15 of 240** — the four
+statewide executives, the ten federal seats, and one reused Senate row. Every legislative, city
+and county seat was blank.
+
+## 🔴🔴 SOUTH CAROLINA PUBLISHES NO SOURCE THAT IS BOTH COLOUR AND LARGE
+
+Both halves were measured before anything was chosen, and each source failed a different half.
+
+| Source | Colour | Size | Verdict |
+| --- | --- | --- | --- |
+| **Legislative Manual 2025** (106th ed.) | 🔴 **printed `Indexed(255,DeviceGray)`** | 232x292 … 2548x3214, already 4:5; 96 of 170 at full 600x750 | refused — monochrome |
+| **`scstatehouse.gov/images/members/<code>.jpg`** | ✅ all 170 (chroma median 32.4, **0 mono**) | **168 of 170 at ~125px**; median upscale **4.81x** | **shipped at native size** |
+| Open States `sc.csv` | — | **135 of 170 mirror the state file**; 11 reach 600x750 | not a source |
+| Ballotpedia | — | uniform **150x150, identical chroma** on every hit; 9 of 15 names 404 | a placeholder |
+
+🟢 **LSA HOLDS 3418x5137 ORIGINALS AND THE EXIF PROVES IT.** The 125px file is 45 KB because
+28.7 KB of it is EXIF/Photoshop/ICC left in after downsizing, and that metadata still names the
+source frame — Nikon Z 6_2, shot 2025-09-22. PA-5a's "probe for an unlinked original" **was run and
+failed**: `/original/`, `/large/`, `/300/`, `/full/`, `/hi/`, `/hires/`, `/big/`, `/lg/`, `/photo/`,
+`.png` and `.JPG` all 404, directory index 403. ▶ **Ruling (Cantrell, 2026-09-20): ship the 125px
+colour files, do not request the originals.** Recorded so it is not reopened.
+
+## The licence — a new class, ruled shippable (Cantrell, 2026-09-20)
+
+`scstatehouse.gov/disclaimer.php` (footer-linked; `/terms.php` and `/copyright.php` 404) makes **no
+copyright claim and prohibits neither reproduction nor modification**. Its one restriction is
+*"This information is intended for personal, not commercial, uses"*, inside a paragraph otherwise
+entirely about warranty and liability. Nearer PA's **Centre County** class — a reservation with no
+prohibition, shipped — than Philadelphia's explicit bar on modification without written permission.
+
+## 🔴🔴 THE NO-MONOCHROME RULE WAS DOCUMENTED AND NOT ENFORCED, AND THAT COST THE WHOLE FIRST PASS
+
+The hard rule against black-and-white portraits has stood since 2026-07-08. It lived only in notes,
+so nothing checked it: 156 greyscale portraits were extracted, keyed, rendered and **published for
+approval** before the operator caught them on the sheet — *"Black and White should be a rule we have
+ingrained in this process."*
+
+🟢 **It is now in the shared tooling.** `scripts/headshot_crop.py::monochrome()` measures chroma and
+neutral share **on the crop that ships**; `import-headshot-candidates.py` refuses a monochrome row
+(per-row `allow_monochrome` is the deliberate override) and `render-headshot-contact-sheet.py`
+badges it *black & white — will not ship* and dims the frame. **Watched failing first**: one
+greyscale row refused with its measurement, one colour row passed, same run.
+⚠ It measures **chroma, never `im.mode`** — a greyscale photo saved as RGB has three equal channels
+and passes any mode check, and sepia passes a "is it grey" check.
+
+⚠ **The manual being greyscale is the document, not the extractor** — checked two ways rather than
+assumed: the PDF objects declare `Indexed(255,DeviceGray)`, and a page rendered straight from the
+document measures chroma max 3.
+
+## 🔴🔴 A PIXEL IDENTITY CHECK DOES NOT TRANSFER FROM PENNSYLVANIA
+
+PA-5a proved identity at **MAD median 1.96** because it compared `/original/` against `/300/` — the
+*same photograph* at two sizes. SC's two sources are a print manual and a web downsample: different
+crops, years, sometimes shoots. Seven metrics, each against a different-person control, over 70 pairs:
+
+| metric | genuine max | control min | separated |
+| --- | --- | --- | --- |
+| raw MAD 64x80 | 69.14 | 39.49 | no |
+| equalised MAD 64x80 | 92.61 | 55.61 | no |
+| NCC 64x80 | 1.063 | 0.524 | no |
+| NCC equalised 64x80 | 1.083 | 0.517 | no |
+| NCC centre-70% 48x60 | 1.164 | 0.513 | no |
+| NCC gradient 64x80 | 1.065 | 0.822 | no |
+| NCC gradient centre-70% | 1.109 | 0.853 | no |
+
+**Every distribution overlaps its own control.** The first build derived a threshold from the
+midpoint anyway (71.1) and rejected five members whose photos are fine.
+▶ **A METRIC THAT DOES NOT SEPARATE CANNOT BE A GATE, ONLY A RANKING.** It was kept to badge the
+widest decile for a human look, and the proof sheet gained a `compare_url` inset so the operator
+makes the comparison the metric could not.
+
+## What the manual is still the best source for: IDENTITY
+
+Three rules the extractor paid for, kept because the manual will be re-read when a colour edition or
+the originals arrive:
+
+- 🟢 **THE MANUAL PRINTS THE DISTRICT AND THE SURNAME BESIDE THE FACE**, so the key is one the
+  document states — never an ordinal, never a position in the page's image list. Requiring the
+  printed surname to match the roster's caught **HD-21, HD-88, HD-98 and SD-12** as seats whose
+  predecessor is still in the 2025 edition. Three of those four are the same seats this file
+  already recorded as stale on the RFA layer, found from a completely different source.
+- 🔴 **THE ASSOCIATION INVARIANT IS THE SHARED TOP EDGE, AND ONLY THAT.** Each bio block starts at
+  exactly its photo's `y0`. An x-overlap test *looks* safer and is wrong — the bio wraps **around**
+  the portrait, so a right-hand photo at x 189-246 has its text at x 42-185, not overlapping at all.
+  That constraint silently rejected **41 correct pairs**.
+- 🔴 **FILTER ON SHAPE, NOT SIZE.** A 150px "ignore the ornaments" minimum threw away real
+  portraits — Lee Hewitt's (HD-108) is published at **103x130**. Every member portrait is ~4:5;
+  seals and rules are not. Fixing it moved keyed coverage **120 → 163 of 170**.
+
+## ⚠ "They all look like the same person" was tested as a claim, not taken as an impression
+
+Uniform black-and-white studio portraits read as one face at thumbnail size. Hashing every
+candidate's pixels: **170 distinct images for 170 candidates, 0 duplicate hashes.** No extraction
+defect existed.
+⚠ **The first version of that detector drew its colour control FROM THE CORPUS** and measured chroma
+0.00 — because the first candidate is itself greyscale. A control drawn from the data can be
+poisoned by the defect it is meant to detect; it was rebuilt from a synthetic swatch.
+
+## Verified from outside, with the count asserted
+
+```
+control (bogus CDN key): failed as required -- HTTP 400
+tested 170 rows -- decoded 170, broken 0
+sizes: 125x156 x135, 122x152 x3, 116x145 x3, 110x137 x3, 600x750 x2, ... 98x123 x1
+count check: tested 170 == expected 170
+```
+
+Two frames reach the full 600x750 — Ronnie Sabb (647x806 source) and the reused row. Everything
+else stores at native cropped size; **nothing was enlarged**.
+
+▶ **Next: SC-5b — the 54 city and county portraits**, then the Columbia and Myrtle Beach banners.
+Neither city nor county source has been measured yet; measure colour and size together, as here.
