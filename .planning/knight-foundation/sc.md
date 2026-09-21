@@ -9,7 +9,11 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ applied 2026-09-20 — 170 offices, 170 seated |
 | 3 city waves | ✅ applied 2026-09-20 — Columbia 7, Myrtle Beach 7 |
 | 4 county waves | ✅ applied 2026-09-20 — Richland 20, Horry 21, 40 seated, 1 vacant |
-| 5 assets | **WIP** — ✅ SC-5a 2026-09-20 (legislature **170/170**) · ✅ SC-5b 2026-09-21 (city+county **47/54**, 7 documented blanks). SC is **232 of 240**. ▶ Owed: the two banners |
+| 5 assets | ✅ **CLOSED 2026-09-21** — SC-5a legislature **170/170** · SC-5b city+county **47/54** (7 documented blanks) · SC-5c **both banners live** (essentials [#155](https://github.com/EmpoweredVote/essentials/pull/155)). SC is **232 of 240** |
+
+**All five stages are applied.** 🔴 The slice still owes **SD-15 on 2026-11-03** (Climer's
+irrevocable resignation — close the term, seat the successor), plus the Solicitors and the
+watershed/school-board question. See the end of this file.
 
 ---
 
@@ -872,3 +876,121 @@ enlarged**. 🟢 **The no-monochrome gate ran over the whole wave and flagged ze
 wave since SC-5a made it a code rule.
 
 ▶ **Stage 5 now owes only the Columbia and Myrtle Beach banners.**
+
+---
+
+# SC-5c — the banners. APPLIED 2026-09-21. STAGE 5 CLOSES.
+
+Essentials PR [#155](https://github.com/EmpoweredVote/essentials/pull/155). Both keys live in
+`politician_photos`; both are NEW keys, so no `-v2` — the stale-CDN rule applies to overwrites.
+
+| Key | Source | Licence | Asset | Desktop focus |
+| --- | --- | --- | --- | --- |
+| `cities/columbia.jpg` | 2018 South Carolina State House (cropped), Farragutful | CC BY-SA 4.0 | `vertical_anchor` 0.50 | `50% 82%` |
+| `cities/myrtle-beach.jpg` | Myrtle Beach, SC, USA (Panoramio), James Willamor | CC BY-SA 3.0 | `vertical_anchor` 0.55 | `50% 84%` |
+
+Verified from outside: **sha256 identical on BOTH the plain and a cache-busted URL**, fully
+decoded at 1700x540, with a nonexistent-key control that failed as required.
+
+## 🟢 THIS SLICE BOUGHT A NEW MECHANISM: A PER-BANNER DESKTOP CROP TARGET
+
+`object-fit: cover` with no `object-position` pins the desktop slice to the **centre** of the
+asset. So composing a good full 3.148:1 picture and choosing what desktop sees were **the same
+decision**, and one of them had to lose. Every banner note before this one is an argument about
+which.
+
+South Carolina made that unavoidable. Both subjects are **tall**: the Columbia State House frames
+best with its dome, the dome sits above the centre band, and anchoring the asset low enough to fix
+desktop threw the dome out of the **asset** — which mobile shows 96.9% of. Myrtle Beach was the
+same shape, SkyWheel high and pier low.
+
+Ruling (Cantrell, 2026-09-21): *"build from the bottom of the picture … we will see the columns
+more than the dome"*, and then — on being shown it — *"take the Desktop cut from both of these but
+revert the full asset. Are you able to do that? … I want the ability to target crops rather than
+default to middle for these situations."*
+
+🔴 **THE LITERAL REQUEST WAS IMPOSSIBLE AND THE UNDERLYING ONE WAS NOT.** The band IS the centred
+middle 52.5% of the asset, so fixing the band fixes the asset — they are one crop, and no pair of
+"same band, different asset" exists. What was buildable is the knob itself:
+
+- `CURATED_LOCAL` entries may carry `focus: '50% 82%'`; `getBuildingImages` returns a `focus`
+  sibling map **additively** (the three tier keys keep their exact meaning and type, because other
+  apps consume the registry as an API).
+- **No call site changed** — `buildBannerProps` reads the focus off the same object it already
+  receives.
+- `SectionBanner` validates it and falls back to `'50% 50%'`, so every banner that sets no focus
+  renders byte-identically to before.
+- `STATE_PANORAMA_FOCUS` exists and is **deliberately empty**. ▶ It is now the cheap fix for
+  `states/NC.jpg`, which still cuts the Charlotte tower crowns off, and would have spared
+  `states/CA.jpg` its re-crop and `-v2` upload entirely. Retargeting a live state banner changes
+  what every address in that state sees, so each wants its own review.
+
+⚠ **The focus values were SOLVED and then VERIFIED, not computed and trusted.** Each was derived
+from the approved `vertical_anchor 0.70` band, then the retargeted band was rendered and compared
+against the approved one.
+🔴 **A PIXEL COMPARISON BETWEEN TWO DIFFERENT CROPS OF ONE SOURCE IS NOT ZERO EVEN WHEN THEY MATCH.**
+Each anchor starts the crop on a different source row, so the downscale samples a different pixel
+grid, and the Columbia facade — cornices, window courses, a colonnade — scored MAD 4.8 on content
+that is *identical*. A windowed search proved it was not misalignment, and looking at the two bands
+side by side settled it. **A strict MAD threshold would have rejected a correct method.**
+
+## Adjacency, judged in the band and not on subject nouns
+
+`states/SC.jpg` is the Arthur Ravenel Bridge, and 🟢 **unlike `states/CA.jpg` and `states/NC.jpg`
+its credit is ACCURATE in the band** — the bridge really is what a desktop visitor sees. Read there
+it is a **distant, eye-level view across open water of one engineered structure**, low horizon, big
+sky. That is the composition both cities had to avoid, and it is a real constraint on a beach city.
+
+- Columbia: a building filling the frame at ground level. Opposite composition.
+- Myrtle Beach: a ground-level wall of high-rises. ▶ **The beachfront panoramas were the obvious
+  pick and were REFUSED** — a low horizon across open water is the state banner one tier down.
+
+## Sourcing, and what the refusals teach
+
+🟢 **`Category:Wikivoyage banners of South Carolina` is a 7:1-by-construction corpus**, found by
+asking a known-good file for its categories (the documented method, and it worked first time).
+28 files, one per place. Worth checking in every future slice.
+⚠ **But a ready-made banner is not automatically the right subject.** Columbia's entry in it is the
+**STATUE OF STROM THURMOND**, not the State House — a contested political monument, and it measures
+colour spread **10.5 of 255** against the shipped frame's 109.7, close to greyscale. Two
+independent reasons to refuse the only file already in the target aspect ratio.
+
+Other refusals kept in the registry comments:
+
+- Myrtle Beach's **Ocean Boulevard** street scene is the strongest runner-up and **fails the people
+  test** outright — pedestrians fill the near foreground as identifiable individuals.
+- 🔴 **A 16382x2936 SOURCE CROPPED TO 3.148:1 AND BANDED IS ENTIRELY SKY.** "Panorama of the Myrtle
+  Beach Beachfront 2" is the widest file found and loses its own subject completely. **A very wide
+  source is not automatically a good banner.**
+- `beach-resorts-at-myrtle-beach` is 3.24:1, the closest source to the target ratio and needing
+  almost no crop, and in the band it is a distant treeline under empty sky. **Ratio is not
+  composition.**
+
+People test on the shipped Myrtle Beach frame: figures on the pier and beach are **~7-10px in the
+asset**, inside Durham's 10-20px bound; at `vertical_anchor 0.80` a full beach crowd with umbrellas
+enters and it fails. Columbia has no people in frame.
+
+## Gates
+
+`match:'exact'` on both, and the matcher was **run, not reasoned about**: Columbia and Myrtle Beach
+resolve with their focus, while **Columbia MO/TN/KY/MS/SD, West Columbia, North Myrtle Beach and
+Columbiana all resolve to null**. `'north myrtle beach'.includes('myrtle beach')` is true, so the
+exact flag is the only guard. The `object-position` guard was **watched failing first** by removing
+the line from the component.
+
+454 tests pass; eslint clean on the changed files; `banners.json` regenerated (244 assets / 241
+credited / 0 unmatched / 0 unparsed) and the **built bundle** verified to carry both keys and both
+focus values — not the source, the bundle.
+
+## ▶ South Carolina after stage 5
+
+**All five stages applied.** 232 of 240 seats renderable, both banners live. Still owed, and none
+of it is stage 5's:
+
+1. 🔴 **SD-15 — dated.** Wes Climer's irrevocable resignation takes effect **2026-11-03**; his term
+   must be closed and his successor seated that day.
+2. **7 portrait blanks** with no published source: Horry's Coroner and Probate Judge, and five
+   soil-and-water commissioners. Re-checkable, not actionable today.
+3. **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA — multi-county
+   prosecutors the program has now declined three times and never scheduled.
+4. **The watershed and school-board seats**, with North Carolina's school-board question.
