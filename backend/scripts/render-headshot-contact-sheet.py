@@ -41,7 +41,7 @@ import requests
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from headshot_crop import crop_4x5  # noqa: E402
+from headshot_crop import crop_4x5, monochrome  # noqa: E402
 
 TARGET_W, TARGET_H = 600, 750
 CACHE = ".tmp-headshot-cache"
@@ -115,8 +115,36 @@ for c in cands:
         buf = BytesIO()
         img.save(buf, "JPEG", quality=84, optimize=True)
         c["data"] = base64.b64encode(buf.getvalue()).decode()
+        # OPTIONAL SECOND OPINION. When a row carries `compare_url`, embed that image
+        # as a small inset on the frame. It exists because an automated identity check
+        # is not always available: SC-5a's portraits come from a print manual keyed by
+        # the district printed beside the face, and every pixel metric tried against
+        # the state's own id-keyed file failed its different-person control, so no
+        # threshold drawn from one means anything. Putting the two faces side by side
+        # hands that comparison to the detector that does work here -- the operator.
+        if c.get("compare_url"):
+            try:
+                cck = os.path.join(CACHE, hashlib.sha1(
+                    c["compare_url"].encode()).hexdigest() + ".bin")
+                if os.path.exists(cck) and os.path.getsize(cck) > 0:
+                    craw = open(cck, "rb").read()
+                else:
+                    craw = requests.get(c["compare_url"], headers=UA, timeout=30).content
+                    Image.open(BytesIO(craw)).verify()
+                    open(cck, "wb").write(craw)
+                cimg, _ = crop_4x5(Image.open(BytesIO(craw)))
+                cimg.thumbnail((110, 138), Image.LANCZOS)
+                cbuf = BytesIO()
+                cimg.save(cbuf, "JPEG", quality=82, optimize=True)
+                c["cmp_data"] = base64.b64encode(cbuf.getvalue()).decode()
+            except Exception:  # noqa: BLE001
+                c["cmp_data"] = None  # a missing second opinion is not a failed row
         c["upscale"] = round(upscale, 2)
         c["src_w"], c["src_h"] = w, h
+        # Measured on the CROP that will ship, not on the source file.
+        is_mono, mono_chroma, _ = monochrome(img)
+        c["mono"] = bool(is_mono)
+        c["chroma"] = round(mono_chroma, 1)
         rendered.append(c)
         print(f"  rendered {c['name']:<26} {w}x{h} ({upscale:.2f}x)")
     except Exception as e:  # noqa: BLE001
@@ -141,18 +169,30 @@ flagged = [c for c in rendered if c["positional"] or c["upscale"] > 1.0]
 
 def card(c, n):
     marks = []
+    if c.get("mono"):
+        marks.append('<span class="mark mark-mono">black &amp; white — will not ship</span>')
     if c["positional"]:
         marks.append('<span class="mark mark-face">verify face</span>')
     if c["upscale"] > 1.0:
         marks.append(f'<span class="mark mark-up">{c["upscale"]:.2f}&times; upscale</span>')
     cls = " flagged" if marks else ""
+    if c.get("mono"):
+        cls += " mono"
     host = c["page"].split("/")[2] if c.get("page") else "—"
+    cmp_html = ""
+    if c.get("cmp_data"):
+        cmp_html = (
+            '\n  <div class="cmp"><img src="data:image/jpeg;base64,'
+            + c["cmp_data"]
+            + '" alt="Second source for ' + html.escape(c["name"])
+            + '" loading="lazy" /><span>same person?</span></div>'
+        )
     return f'''<figure class="frame{cls}">
   <button class="shot" type="button" aria-label="Enlarge {html.escape(c['name'])}"
           data-full="data:image/jpeg;base64,{c['data']}" data-name="{html.escape(c['name'])}">
     <img src="data:image/jpeg;base64,{c['data']}" alt="Headshot candidate for {html.escape(c['name'])}" loading="lazy" width="600" height="750" />
     <span class="fno">{n:02d}</span>
-  </button>
+  </button>{cmp_html}
   <figcaption>
     <span class="who">{html.escape(c['name'])}</span>
     <span class="role">{html.escape(c['office'])}</span>
@@ -246,6 +286,22 @@ header p {{ margin:0; color:var(--ink-2); max-width:64ch; }}
   color:#F2F3F5; font:600 10px/1 ui-monospace,Menlo,Consolas,monospace; letter-spacing:.06em;
 }}
 .frame.flagged .shot {{ box-shadow:0 0 0 2px var(--amber); }}
+.frame {{ position:relative; }}
+.cmp {{
+  position:absolute; right:6px; top:6px; width:46px; display:flex;
+  flex-direction:column; align-items:center; gap:2px; pointer-events:none;
+}}
+.cmp img {{
+  width:46px; height:auto; display:block; border-radius:1px;
+  box-shadow:0 0 0 2px rgba(255,255,255,.9), 0 1px 4px rgba(0,0,0,.45);
+}}
+.cmp span {{
+  font-size:8px; line-height:1.1; text-align:center; letter-spacing:.02em;
+  background:rgba(255,255,255,.92); color:#333; padding:1px 3px; border-radius:2px;
+}}
+@media (prefers-color-scheme: dark) {{
+  .cmp span {{ background:rgba(20,20,20,.92); color:#ddd; }}
+}}
 figcaption {{ display:flex; flex-direction:column; gap:2px; }}
 .who {{ font-weight:600; font-size:13.5px; line-height:1.25; }}
 .role {{ font-size:12px; color:var(--ink-2); line-height:1.3; }}
@@ -257,6 +313,9 @@ figcaption {{ display:flex; flex-direction:column; gap:2px; }}
   letter-spacing:.06em; padding:3px 5px; border:1px solid currentColor; border-radius:2px;
 }}
 .mark-face {{ color:var(--amber); }} .mark-up {{ color:var(--rust); }}
+.mark-mono {{ color:#fff; background:var(--frame); padding:1px 5px; border-radius:2px; }}
+.frame.mono .shot {{ box-shadow:0 0 0 3px var(--frame); }}
+.frame.mono .shot img {{ opacity:.55; }}
 .note {{ color:var(--ink-2); max-width:70ch; margin:0 0 14px; font-size:13.5px; }}
 .misslist {{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1px; }}
 .misslist li {{

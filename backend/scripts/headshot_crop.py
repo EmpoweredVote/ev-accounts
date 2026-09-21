@@ -45,6 +45,38 @@ def flatten(im):
     return im.convert("RGB")
 
 
+MONO_CHROMA = 6.0       # mean |max(RGB) - min(RGB)| over the frame
+MONO_NEUTRAL = 0.90     # share of pixels within 6 levels of neutral
+
+
+def monochrome(im, chroma_max=MONO_CHROMA, neutral_min=MONO_NEUTRAL):
+    """Is this a greyscale or sepia portrait? Returns (verdict, chroma, neutral share).
+
+    🔴 STANDING RULE: NEVER SHIP A MONOCHROME PORTRAIT. It is a house rule, not a
+    per-wave judgement -- a black-and-white face beside a colour roster reads as an
+    archive photograph of someone no longer serving, and the asymmetry is exactly the
+    signal the portrait programme exists to remove. It had been enforced only by the
+    operator's eye, and SC-5a is what it cost: the entire South Carolina Legislative
+    Manual is printed in DeviceGray, so 156 of 170 candidates were greyscale and the
+    whole set reached a proof sheet before anyone saw it.
+
+    ⚠ This measures CHROMA, not the file's colour mode. A greyscale photograph saved
+    as RGB has three equal channels and passes any `im.mode` check; a sepia one has a
+    consistent hue and passes a "is it grey" check. Both are caught here, and neither
+    is caught by asking the file what it claims to be.
+
+    ⚠ It is deliberately NOT a decode-time reject. Callers show it to the operator, so
+    a genuine edge case -- a very desaturated but real colour portrait -- is visible and
+    overridable rather than silently dropped.
+    """
+    small = flatten(im).resize((64, 80), Image.LANCZOS)
+    px = list(small.getdata())
+    spreads = [max(p) - min(p) for p in px]
+    chroma = sum(spreads) / len(spreads)
+    neutral = sum(1 for s in spreads if s <= 6) / len(spreads)
+    return (chroma < chroma_max or neutral > neutral_min), chroma, neutral
+
+
 def subject_bbox(im, tol=18):
     """Bounding box of everything that is not near-white. None if the whole frame is ink."""
     bg = Image.new("RGB", im.size, (255, 255, 255))

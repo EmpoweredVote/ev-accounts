@@ -9,7 +9,11 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ applied 2026-09-20 — 170 offices, 170 seated |
 | 3 city waves | ✅ applied 2026-09-20 — Columbia 7, Myrtle Beach 7 |
 | 4 county waves | ✅ applied 2026-09-20 — Richland 20, Horry 21, 40 seated, 1 vacant |
-| 5 assets | — headshots for 224 SC officials, plus Columbia and Myrtle Beach banners |
+| 5 assets | ✅ **CLOSED 2026-09-21** — SC-5a legislature **170/170** · SC-5b city+county **47/54** (7 documented blanks) · SC-5c **both banners live** (essentials [#155](https://github.com/EmpoweredVote/essentials/pull/155)). SC is **232 of 240** |
+
+**All five stages are applied.** 🔴 The slice still owes **SD-15 on 2026-11-03** (Climer's
+irrevocable resignation — close the term, seat the successor), plus the Solicitors and the
+watershed/school-board question. See the end of this file.
 
 ---
 
@@ -623,8 +627,370 @@ the boundary loader too (`inserted 0`).
 
 ### ▶ What SC still owes
 
-- **Stage 5** — headshots for 224 South Carolina officials (170 legislative, 14 city, 40 county)
-  and banner keys for Columbia and Myrtle Beach.
+- **Stage 5** — ✅ **SC-5a and SC-5b applied**, see below. SC is **232 of 240** renderable.
+  Owed: **banner keys for Columbia and Myrtle Beach**, and the 7 portrait blanks
+  (Horry's Coroner and Probate Judge, five soil-and-water commissioners) if a source ever appears.
 - **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA: multi-county
   prosecutors the program has now declined three times and never scheduled.
 - **The watershed and school-board seats**, with North Carolina's school-board question.
+
+---
+
+# SC-5a — stage 5, the legislature. APPLIED 2026-09-20. 170 of 170 renderable.
+
+`scripts/build-sc-legislature-candidates.py` (new) → `scripts/import-headshot-candidates.py`
+→ `scripts/verify-imported-headshots.py`. No migration: this path writes
+`politician_images` and `politicians.photo_custom_url` directly.
+
+| | |
+| --- | --- |
+| Seats | **170** — 124 Representatives + 46 Senators |
+| Imported | **169**; 1 skipped (the politician SC-2 reused already carried an image row) |
+| Verified | 170 tested, **170 decoded, 0 broken**, count asserted, control failed first |
+| SC statewide | **15 → 185 of 240** seats renderable |
+
+Baseline before the wave, counted the way the read path does
+(`COALESCE(photo_custom_url, photo_origin_url, '') LIKE 'http%'`): **15 of 240** — the four
+statewide executives, the ten federal seats, and one reused Senate row. Every legislative, city
+and county seat was blank.
+
+## 🔴🔴 SOUTH CAROLINA PUBLISHES NO SOURCE THAT IS BOTH COLOUR AND LARGE
+
+Both halves were measured before anything was chosen, and each source failed a different half.
+
+| Source | Colour | Size | Verdict |
+| --- | --- | --- | --- |
+| **Legislative Manual 2025** (106th ed.) | 🔴 **printed `Indexed(255,DeviceGray)`** | 232x292 … 2548x3214, already 4:5; 96 of 170 at full 600x750 | refused — monochrome |
+| **`scstatehouse.gov/images/members/<code>.jpg`** | ✅ all 170 (chroma median 32.4, **0 mono**) | **168 of 170 at ~125px**; median upscale **4.81x** | **shipped at native size** |
+| Open States `sc.csv` | — | **135 of 170 mirror the state file**; 11 reach 600x750 | not a source |
+| Ballotpedia | — | uniform **150x150, identical chroma** on every hit; 9 of 15 names 404 | a placeholder |
+
+🟢 **LSA HOLDS 3418x5137 ORIGINALS AND THE EXIF PROVES IT.** The 125px file is 45 KB because
+28.7 KB of it is EXIF/Photoshop/ICC left in after downsizing, and that metadata still names the
+source frame — Nikon Z 6_2, shot 2025-09-22. PA-5a's "probe for an unlinked original" **was run and
+failed**: `/original/`, `/large/`, `/300/`, `/full/`, `/hi/`, `/hires/`, `/big/`, `/lg/`, `/photo/`,
+`.png` and `.JPG` all 404, directory index 403. ▶ **Ruling (Cantrell, 2026-09-20): ship the 125px
+colour files, do not request the originals.** Recorded so it is not reopened.
+
+## The licence — a new class, ruled shippable (Cantrell, 2026-09-20)
+
+`scstatehouse.gov/disclaimer.php` (footer-linked; `/terms.php` and `/copyright.php` 404) makes **no
+copyright claim and prohibits neither reproduction nor modification**. Its one restriction is
+*"This information is intended for personal, not commercial, uses"*, inside a paragraph otherwise
+entirely about warranty and liability. Nearer PA's **Centre County** class — a reservation with no
+prohibition, shipped — than Philadelphia's explicit bar on modification without written permission.
+
+## 🔴🔴 THE NO-MONOCHROME RULE WAS DOCUMENTED AND NOT ENFORCED, AND THAT COST THE WHOLE FIRST PASS
+
+The hard rule against black-and-white portraits has stood since 2026-07-08. It lived only in notes,
+so nothing checked it: 156 greyscale portraits were extracted, keyed, rendered and **published for
+approval** before the operator caught them on the sheet — *"Black and White should be a rule we have
+ingrained in this process."*
+
+🟢 **It is now in the shared tooling.** `scripts/headshot_crop.py::monochrome()` measures chroma and
+neutral share **on the crop that ships**; `import-headshot-candidates.py` refuses a monochrome row
+(per-row `allow_monochrome` is the deliberate override) and `render-headshot-contact-sheet.py`
+badges it *black & white — will not ship* and dims the frame. **Watched failing first**: one
+greyscale row refused with its measurement, one colour row passed, same run.
+⚠ It measures **chroma, never `im.mode`** — a greyscale photo saved as RGB has three equal channels
+and passes any mode check, and sepia passes a "is it grey" check.
+
+⚠ **The manual being greyscale is the document, not the extractor** — checked two ways rather than
+assumed: the PDF objects declare `Indexed(255,DeviceGray)`, and a page rendered straight from the
+document measures chroma max 3.
+
+## 🔴🔴 A PIXEL IDENTITY CHECK DOES NOT TRANSFER FROM PENNSYLVANIA
+
+PA-5a proved identity at **MAD median 1.96** because it compared `/original/` against `/300/` — the
+*same photograph* at two sizes. SC's two sources are a print manual and a web downsample: different
+crops, years, sometimes shoots. Seven metrics, each against a different-person control, over 70 pairs:
+
+| metric | genuine max | control min | separated |
+| --- | --- | --- | --- |
+| raw MAD 64x80 | 69.14 | 39.49 | no |
+| equalised MAD 64x80 | 92.61 | 55.61 | no |
+| NCC 64x80 | 1.063 | 0.524 | no |
+| NCC equalised 64x80 | 1.083 | 0.517 | no |
+| NCC centre-70% 48x60 | 1.164 | 0.513 | no |
+| NCC gradient 64x80 | 1.065 | 0.822 | no |
+| NCC gradient centre-70% | 1.109 | 0.853 | no |
+
+**Every distribution overlaps its own control.** The first build derived a threshold from the
+midpoint anyway (71.1) and rejected five members whose photos are fine.
+▶ **A METRIC THAT DOES NOT SEPARATE CANNOT BE A GATE, ONLY A RANKING.** It was kept to badge the
+widest decile for a human look, and the proof sheet gained a `compare_url` inset so the operator
+makes the comparison the metric could not.
+
+## What the manual is still the best source for: IDENTITY
+
+Three rules the extractor paid for, kept because the manual will be re-read when a colour edition or
+the originals arrive:
+
+- 🟢 **THE MANUAL PRINTS THE DISTRICT AND THE SURNAME BESIDE THE FACE**, so the key is one the
+  document states — never an ordinal, never a position in the page's image list. Requiring the
+  printed surname to match the roster's caught **HD-21, HD-88, HD-98 and SD-12** as seats whose
+  predecessor is still in the 2025 edition. Three of those four are the same seats this file
+  already recorded as stale on the RFA layer, found from a completely different source.
+- 🔴 **THE ASSOCIATION INVARIANT IS THE SHARED TOP EDGE, AND ONLY THAT.** Each bio block starts at
+  exactly its photo's `y0`. An x-overlap test *looks* safer and is wrong — the bio wraps **around**
+  the portrait, so a right-hand photo at x 189-246 has its text at x 42-185, not overlapping at all.
+  That constraint silently rejected **41 correct pairs**.
+- 🔴 **FILTER ON SHAPE, NOT SIZE.** A 150px "ignore the ornaments" minimum threw away real
+  portraits — Lee Hewitt's (HD-108) is published at **103x130**. Every member portrait is ~4:5;
+  seals and rules are not. Fixing it moved keyed coverage **120 → 163 of 170**.
+
+## ⚠ "They all look like the same person" was tested as a claim, not taken as an impression
+
+Uniform black-and-white studio portraits read as one face at thumbnail size. Hashing every
+candidate's pixels: **170 distinct images for 170 candidates, 0 duplicate hashes.** No extraction
+defect existed.
+⚠ **The first version of that detector drew its colour control FROM THE CORPUS** and measured chroma
+0.00 — because the first candidate is itself greyscale. A control drawn from the data can be
+poisoned by the defect it is meant to detect; it was rebuilt from a synthetic swatch.
+
+## Verified from outside, with the count asserted
+
+```
+control (bogus CDN key): failed as required -- HTTP 400
+tested 170 rows -- decoded 170, broken 0
+sizes: 125x156 x135, 122x152 x3, 116x145 x3, 110x137 x3, 600x750 x2, ... 98x123 x1
+count check: tested 170 == expected 170
+```
+
+Two frames reach the full 600x750 — Ronnie Sabb (647x806 source) and the reused row. Everything
+else stores at native cropped size; **nothing was enlarged**.
+
+▶ **Next: SC-5b — the 54 city and county portraits**, then the Columbia and Myrtle Beach banners.
+Neither city nor county source has been measured yet; measure colour and size together, as here.
+
+---
+
+# SC-5b — stage 5, the cities and counties. APPLIED 2026-09-21. 47 of 54.
+
+`scripts/build-sc-local-candidates.py` (new) → `scripts/import-headshot-candidates.py`
+→ `scripts/verify-imported-headshots.py`. No migration.
+
+| | Portraits / seats |
+| --- | --- |
+| Columbia (Mayor + 6 council) | **7 / 7** |
+| Myrtle Beach (Mayor + 6 at-large) | **7 / 7** |
+| Richland (11 council + 6 officers + 3 soil-and-water) | **17 / 20** |
+| Horry (12 council + 6 officers + 3 soil-and-water) | **16 / 21** |
+| **SC statewide** | **185 → 232 of 240** |
+
+47 imported, 0 skipped, 0 failed. Verified from outside with the count asserted:
+**47 tested, 47 decoded, 0 broken**, bogus-key control failed first.
+
+## 🔴 FOUR PUBLISHERS, FOUR PLATFORMS, AND ON NONE OF THEM WAS THE LINKED IMAGE THE BEST ONE
+
+| | What the page links | What is actually published |
+| --- | --- | --- |
+| **Columbia** (WordPress) | the Mayor as a **440x358 LANDSCAPE** file on the council index | **1828x2560 portrait** in his own subdomain's media library |
+| **Richland** (Umbraco) | `…/jason-branham.jpg?dimension=userprofile&w=150&h=150` | **strip the query → 2944x3761**, nearly 20x the linked pixels |
+| **Horry** (Umbraco) | `…/media/<hash>/anderson-tom.jpg` | already the original — up to **4361x6394** |
+| **Myrtle Beach** | plain `<img>` | the original, 450x556 to 1912x2709 |
+
+🟢 **THE WORDPRESS RULE PAID OUT AGAIN, AND ITS SEARCH STILL MISSED HIM.** PA's Philadelphia
+Sheriff lesson is *ask `wp-json/wp/v2/media` before settling for what the page links*. Columbia's
+council site is the **council's** site: it carries six member profiles at 323x427 and no profile
+page for the Mayor at all. His portrait is on `mayor.columbiasc.gov` —
+but `search=Rickenmann` returns **nothing**, because the file the council links is spelled
+**`daniel-rikenmann`**, with one k. ▶ **Search the media library for more than the correct
+spelling.**
+
+🔴 **THE RESIZE CAN BE IN THE QUERY STRING.** Richland serves every councillor as a 150x150
+square through `?dimension=userprofile&w=150&h=150`. Nothing about the URL says "thumbnail" and
+the origin is a 2944x3761 portrait. ⚠ And stripping it is **not** a uniform win — three origins
+really are ~150px (Little, Terracio, Newton), so each was measured rather than assumed, and their
+own profile pages were asked too.
+
+## 🔴🔴 A WAF CAN REJECT A HALF-IMPERSONATION AND ACCEPT A BARE REQUEST
+
+`richlandcountysc.gov`, one image URL, measured:
+
+| Request | Result |
+| --- | --- |
+| bare (python-requests default UA) | **200** |
+| Chrome UA alone | **403** |
+| Chrome UA + Referer | **403** |
+| Chrome UA + `Accept: image/*` | **403** |
+| full Chrome header set **with** Referer | **200** |
+
+▶ **A BROWSER UA IS NOT A KEY. CLAIMING TO BE CHROME WHILE NOT SENDING WHAT CHROME SENDS IS THE
+THING BEING DETECTED** — the standing rule ("403 with a browser UA ⇒ Playwright") is exactly
+inverted here, and the pipeline's own partial UA would have 403'd every Richland portrait.
+⚠ The header set must also **match the resource**: sending `Sec-Fetch-Dest: document` while
+fetching a `.jpg` 403s on this host, and that alone gave four officers a false "no photo
+published" on the first pass. The builder writes the bytes it measured into the shared cache, so
+the importer never refetches them.
+
+## 🔴🔴 THE FIRST CANDIDATE FOR SHERIFF LEON LOTT WAS THE DEPARTMENT BADGE
+
+497x571, portrait-shaped, colourful, and with the words **"LEON LOTT"** rendered inside it — so a
+size test, a shape test and even a name check all passed it. **Looking at it is what rejected it.**
+▶ **A badge is portrait-shaped. Shape and size cannot tell a face from a graphic.**
+
+His real photo was then found only through **Playwright**: `rcsd.net` is a JS-rendered Wix build
+that serves a plain fetch **zero** internal links, and the portrait is identified by the `<img>`'s
+own `alt="Sheriff Leon Lott"`. It is a **2048x1490 landscape** press photo with a second officer
+standing behind him, so a centre crop would have framed the wrong man. Five crops were rendered
+and compared; the chosen override is `anchor_x 0.28, anchor_y 0.34, zoom 1.5`, which keeps him at
+a 0.76x downscale with the other officer out of frame.
+
+## ⚠ A FILENAME NAMING SOMEONE ELSE IS NOT ALWAYS AN ERROR
+
+Myrtle Beach files Councilwoman **Jackie Hatley** as `Jackie Vereen Revize 2023`. The page reads
+*"Councilwoman Jackie Vereen Hatley"* — Vereen is her maiden name, and it is the same person. The
+name was taken from the **page text beside the image**, never the filename, and all seven Myrtle
+Beach names are present with no stranger among them.
+
+Five frames were badged **verify face** because their filename does not name the person: Columbia
+uploads two councillors as `Untitled-design-99.png` and
+`Untitled-design-2026-01-07T135403.696.png`, Horry files its Sheriff as `sheriff-cutout.png` (the
+**office**, not the man), Hatley as above, and Lott as a bare Wix hash.
+
+## The 8 blanks, each with its reason
+
+| Seat | Why |
+| --- | --- |
+| Horry **Coroner** (Robert L. Edge, Jr.) | `horrycountysc.gov` publishes no portrait; its coroner page carries a 1500x414 banner and does not even name him |
+| Horry **Probate Judge** (R. Allen Beverly, Jr.) | the department page carries no image at all |
+| **5 soil-and-water commissioners** — Winburn, Willoughby, Johnson (Horry); Burts, McSwain (Richland) | SC DNR publishes these boards as a **names-and-dates table with no images**, so there is nothing to look for |
+| 1 Richland soil-and-water seat | **vacant** — nobody to photograph |
+
+These are dated, re-checkable gaps, not failures, and they appear on the proof sheet under
+"no candidate found" so coverage reads honestly.
+
+## Verified from outside, with the count asserted
+
+```
+control (bogus CDN key): failed as required -- HTTP 400
+tested 47 rows -- decoded 47, broken 0
+sizes: 600x750 x24, 323x404 x5, 445x556 x4, 320x400 x2, … 124x155 x1
+no photo at all (7): Burts, McSwain, Beverly, Willoughby, Edge, Winburn, Johnson
+count check: tested 47 == expected 47
+```
+
+**24 of 47 reach the full 600x750**; the rest store at native cropped size and **nothing was
+enlarged**. 🟢 **The no-monochrome gate ran over the whole wave and flagged zero** — the first
+wave since SC-5a made it a code rule.
+
+▶ **Stage 5 now owes only the Columbia and Myrtle Beach banners.**
+
+---
+
+# SC-5c — the banners. APPLIED 2026-09-21. STAGE 5 CLOSES.
+
+Essentials PR [#155](https://github.com/EmpoweredVote/essentials/pull/155). Both keys live in
+`politician_photos`; both are NEW keys, so no `-v2` — the stale-CDN rule applies to overwrites.
+
+| Key | Source | Licence | Asset | Desktop focus |
+| --- | --- | --- | --- | --- |
+| `cities/columbia.jpg` | 2018 South Carolina State House (cropped), Farragutful | CC BY-SA 4.0 | `vertical_anchor` 0.50 | `50% 82%` |
+| `cities/myrtle-beach.jpg` | Myrtle Beach, SC, USA (Panoramio), James Willamor | CC BY-SA 3.0 | `vertical_anchor` 0.55 | `50% 84%` |
+
+Verified from outside: **sha256 identical on BOTH the plain and a cache-busted URL**, fully
+decoded at 1700x540, with a nonexistent-key control that failed as required.
+
+## 🟢 THIS SLICE BOUGHT A NEW MECHANISM: A PER-BANNER DESKTOP CROP TARGET
+
+`object-fit: cover` with no `object-position` pins the desktop slice to the **centre** of the
+asset. So composing a good full 3.148:1 picture and choosing what desktop sees were **the same
+decision**, and one of them had to lose. Every banner note before this one is an argument about
+which.
+
+South Carolina made that unavoidable. Both subjects are **tall**: the Columbia State House frames
+best with its dome, the dome sits above the centre band, and anchoring the asset low enough to fix
+desktop threw the dome out of the **asset** — which mobile shows 96.9% of. Myrtle Beach was the
+same shape, SkyWheel high and pier low.
+
+Ruling (Cantrell, 2026-09-21): *"build from the bottom of the picture … we will see the columns
+more than the dome"*, and then — on being shown it — *"take the Desktop cut from both of these but
+revert the full asset. Are you able to do that? … I want the ability to target crops rather than
+default to middle for these situations."*
+
+🔴 **THE LITERAL REQUEST WAS IMPOSSIBLE AND THE UNDERLYING ONE WAS NOT.** The band IS the centred
+middle 52.5% of the asset, so fixing the band fixes the asset — they are one crop, and no pair of
+"same band, different asset" exists. What was buildable is the knob itself:
+
+- `CURATED_LOCAL` entries may carry `focus: '50% 82%'`; `getBuildingImages` returns a `focus`
+  sibling map **additively** (the three tier keys keep their exact meaning and type, because other
+  apps consume the registry as an API).
+- **No call site changed** — `buildBannerProps` reads the focus off the same object it already
+  receives.
+- `SectionBanner` validates it and falls back to `'50% 50%'`, so every banner that sets no focus
+  renders byte-identically to before.
+- `STATE_PANORAMA_FOCUS` exists and is **deliberately empty**. ▶ It is now the cheap fix for
+  `states/NC.jpg`, which still cuts the Charlotte tower crowns off, and would have spared
+  `states/CA.jpg` its re-crop and `-v2` upload entirely. Retargeting a live state banner changes
+  what every address in that state sees, so each wants its own review.
+
+⚠ **The focus values were SOLVED and then VERIFIED, not computed and trusted.** Each was derived
+from the approved `vertical_anchor 0.70` band, then the retargeted band was rendered and compared
+against the approved one.
+🔴 **A PIXEL COMPARISON BETWEEN TWO DIFFERENT CROPS OF ONE SOURCE IS NOT ZERO EVEN WHEN THEY MATCH.**
+Each anchor starts the crop on a different source row, so the downscale samples a different pixel
+grid, and the Columbia facade — cornices, window courses, a colonnade — scored MAD 4.8 on content
+that is *identical*. A windowed search proved it was not misalignment, and looking at the two bands
+side by side settled it. **A strict MAD threshold would have rejected a correct method.**
+
+## Adjacency, judged in the band and not on subject nouns
+
+`states/SC.jpg` is the Arthur Ravenel Bridge, and 🟢 **unlike `states/CA.jpg` and `states/NC.jpg`
+its credit is ACCURATE in the band** — the bridge really is what a desktop visitor sees. Read there
+it is a **distant, eye-level view across open water of one engineered structure**, low horizon, big
+sky. That is the composition both cities had to avoid, and it is a real constraint on a beach city.
+
+- Columbia: a building filling the frame at ground level. Opposite composition.
+- Myrtle Beach: a ground-level wall of high-rises. ▶ **The beachfront panoramas were the obvious
+  pick and were REFUSED** — a low horizon across open water is the state banner one tier down.
+
+## Sourcing, and what the refusals teach
+
+🟢 **`Category:Wikivoyage banners of South Carolina` is a 7:1-by-construction corpus**, found by
+asking a known-good file for its categories (the documented method, and it worked first time).
+28 files, one per place. Worth checking in every future slice.
+⚠ **But a ready-made banner is not automatically the right subject.** Columbia's entry in it is the
+**STATUE OF STROM THURMOND**, not the State House — a contested political monument, and it measures
+colour spread **10.5 of 255** against the shipped frame's 109.7, close to greyscale. Two
+independent reasons to refuse the only file already in the target aspect ratio.
+
+Other refusals kept in the registry comments:
+
+- Myrtle Beach's **Ocean Boulevard** street scene is the strongest runner-up and **fails the people
+  test** outright — pedestrians fill the near foreground as identifiable individuals.
+- 🔴 **A 16382x2936 SOURCE CROPPED TO 3.148:1 AND BANDED IS ENTIRELY SKY.** "Panorama of the Myrtle
+  Beach Beachfront 2" is the widest file found and loses its own subject completely. **A very wide
+  source is not automatically a good banner.**
+- `beach-resorts-at-myrtle-beach` is 3.24:1, the closest source to the target ratio and needing
+  almost no crop, and in the band it is a distant treeline under empty sky. **Ratio is not
+  composition.**
+
+People test on the shipped Myrtle Beach frame: figures on the pier and beach are **~7-10px in the
+asset**, inside Durham's 10-20px bound; at `vertical_anchor 0.80` a full beach crowd with umbrellas
+enters and it fails. Columbia has no people in frame.
+
+## Gates
+
+`match:'exact'` on both, and the matcher was **run, not reasoned about**: Columbia and Myrtle Beach
+resolve with their focus, while **Columbia MO/TN/KY/MS/SD, West Columbia, North Myrtle Beach and
+Columbiana all resolve to null**. `'north myrtle beach'.includes('myrtle beach')` is true, so the
+exact flag is the only guard. The `object-position` guard was **watched failing first** by removing
+the line from the component.
+
+454 tests pass; eslint clean on the changed files; `banners.json` regenerated (244 assets / 241
+credited / 0 unmatched / 0 unparsed) and the **built bundle** verified to carry both keys and both
+focus values — not the source, the bundle.
+
+## ▶ South Carolina after stage 5
+
+**All five stages applied.** 232 of 240 seats renderable, both banners live. Still owed, and none
+of it is stage 5's:
+
+1. 🔴 **SD-15 — dated.** Wes Climer's irrevocable resignation takes effect **2026-11-03**; his term
+   must be closed and his successor seated that day.
+2. **7 portrait blanks** with no published source: Horry's Coroner and Probate Judge, and five
+   soil-and-water commissioners. Re-checkable, not actionable today.
+3. **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA — multi-county
+   prosecutors the program has now declined three times and never scheduled.
+4. **The watershed and school-board seats**, with North Carolina's school-board question.
