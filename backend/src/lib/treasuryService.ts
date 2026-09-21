@@ -546,19 +546,48 @@ const DATASETS_SUMMARY = `json_build_object(
               'dataset_types', COALESCE(json_agg(DISTINCT b.dataset_type) FILTER (WHERE b.id IS NOT NULL), '[]')
             ) AS dataset_summary`;
 
-export async function getCities(mode: DatasetsMode = 'full'): Promise<TreasuryCity[]> {
+/**
+ * The full entity list, or — with `slug` — the single entity addressed by it.
+ *
+ * ⚠⚠ THE SLUG FILTER IS A WHERE CLAUSE AND NOTHING ELSE. Every other part of
+ * the query (the LEFT JOIN, the GROUP BY, the HAVING "has a budget or is a
+ * grouper county" contract, the column list, the ORDER BY) is untouched, so a
+ * slug lookup returns exactly the row the unfiltered list would have contained
+ * — or nothing. It can never surface an entity the list would have hidden, and
+ * it can never return a DIFFERENT entity: no match is an empty array, which is
+ * what lets TT keep resolving an unmatched slug to `not_found` rather than
+ * substituting someone else's budget (TT #158).
+ *
+ * WHY: financials.empowered.vote downloads this entire list — 8,149 entities,
+ * 3.2 MB uncompressed — to read ONE 309-byte row, because the only thing it
+ * does with the list is turn `?entity=empowered-vote-ca` into an id. That is
+ * 0.0097% of the payload, and it is 76% of that page's critical path. The list
+ * is also O(total entities): TT #125 cut it 23.5 MB -> 1.1 MB, and it is back
+ * to 3.2 MB purely because the entity count went 1,144 -> 8,149. Trimming the
+ * constant again would not stop it regrowing; not fetching it does.
+ *
+ * ⚠ Uses SLUG_SQL, the same expression GET /treasury/coverage publishes, so
+ * there is ONE slug definition on this side and it already carries the
+ * byte-identical-to-TT's-toSlug warning.
+ */
+export async function getCities(
+  mode: DatasetsMode = 'full',
+  slug?: string
+): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
     `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
             ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
+     ${slug ? `WHERE ${SLUG_SQL} = $1` : ''}
      GROUP BY m.id
      HAVING COUNT(b.id) > 0
         OR (m.entity_type = 'county' AND EXISTS (
               SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
             ))
-     ORDER BY m.name`
+     ORDER BY m.name`,
+    slug ? [slug] : []
   );
   return rows.map((r) => mapCity(r, mode));
 }
