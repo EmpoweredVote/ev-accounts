@@ -552,6 +552,55 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  instrument-topics:
+    name: instrument-topic self-test
+    runs-on: ubuntu-latest
+    # Guards a DETECTOR, not production data: scripts/instrument-topic-affinity.mjs answers "is the
+    # bill this row cites actually about this row's topic?", and it answers it by learning each
+    # topic's vocabulary from the reasoning corpus. Two different things can break it, which is why
+    # this runs on every trigger rather than taking the `!= 'pull_request'` shape of the other
+    # live-DB jobs:
+    #
+    #   * CODE — someone edits the scorer. That lands in a PR, and a PR is exactly when you want to
+    #     know. The first build of this script failed EVERY known instrument and still printed 376
+    #     findings; an untested classifier is indistinguishable from a working one by eye.
+    #   * CORPUS — the vocabulary drifts under it. A large uniform misfile teaches a topic the wrong
+    #     words, and the detector starts agreeing with the defect. That has no commit to trigger it,
+    #     so the nightly schedule covers it.
+    #
+    # The test itself is four bills whose subject is not in question ("barring the MaineCare program
+    # from covering abortion services" -> Reproductive Rights, and so on). It asserts only that the
+    # scorer puts them on the right topic; it asserts nothing about any politician's row.
+    #
+    # ⚠ THE FOURTH CASE IS A KNOWN FAIL AND IS NOT COUNTED. "Eliminating mandatory parking space
+    # minimums" classifies as Residential Zoning, not Transportation Priorities, because the 82
+    # misfiled LD 427 rows (migration 1882) taught Residential Zoning that vocabulary. It is kept in
+    # the suite as a standing demonstration that a corpus-consensus detector cannot find a LARGE,
+    # UNIFORM misfile — the misfile is its training data. Do not tune it away; for that shape use the
+    # borrowed-ladder probe, whose ground truth is ladder text written independently of the corpus.
+    # If it ever starts passing, the corpus changed underneath it and that is worth a look.
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Exits 0 when DATABASE_URL is absent, so forks get a green skip rather than a red build they
+      # cannot fix — same contract as the other live-DB checks here.
+      - name: Self-test the instrument-topic scorer against known bills
+        run: npm run check:instrument-topics
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   answer-seasons:
     name: answer-season consumers
     runs-on: ubuntu-latest
