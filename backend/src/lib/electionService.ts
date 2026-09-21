@@ -146,7 +146,9 @@ async function fetchStatewideRaceRows(state: string): Promise<ElectionRow[]> {
       ${PHOTO_LATERAL}
       LEFT JOIN essentials.offices o ON o.id = r.office_id
       LEFT JOIN essentials.districts d ON d.id = o.district_id
-      WHERE e.state = $1
+      -- Case-insensitive: not every caller uppercases the state before calling
+      -- (e.g. the /elections/me path passes stored jurisdiction_state verbatim).
+      WHERE upper(e.state) = upper($1::text)
         AND (
           r.office_id IS NULL
           OR d.district_type = ANY($2::text[])
@@ -349,16 +351,25 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
   `;
 
-  // Part B: State code lookup — determine state from any geofence-matched district
+  // Part B: State code lookup — determine the state from the geofence-matched
+  // districts. districts.state is dirty: for a single covering point it can hold
+  // the 2-letter USPS code ('CA'/'ca'), the 2-digit FIPS code ('06'), and 'US'
+  // (the national layer) all at once. The old `DISTINCT ... LIMIT 1` had no
+  // ORDER BY, so it non-deterministically returned e.g. '06', which matches no
+  // elections.state and silently dropped every statewide race (Governor, etc.).
+  // Take the DOMINANT proper 2-letter alpha code, ignoring FIPS and 'US'.
   const stateQueryText = `
-    SELECT DISTINCT d.state
+    SELECT upper(d.state) AS state
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
     WHERE ST_Covers(
       gb.geometry,
       ST_SetSRID(ST_MakePoint($1::float8, $2::float8), 4326)
     )
-    AND d.state IS NOT NULL
+    AND d.state ~ '^[A-Za-z]{2}$'
+    AND upper(d.state) <> 'US'
+    GROUP BY upper(d.state)
+    ORDER BY count(*) DESC, upper(d.state)
     LIMIT 1
   `;
 
@@ -367,8 +378,8 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     pool.query<{ state: string }>(stateQueryText, [lng, lat]),
   ]);
 
-  // Normalize to uppercase — districts.state is mixed case ('ut' vs 'UT') but
-  // elections.state is always uppercase. Without this, Part B returns nothing.
+  // Already uppercased in SQL; keep the guard defensive. elections.state is
+  // always uppercase, so this is the value Part B matches on.
   const stateCode = stateResult.rows[0]?.state?.toUpperCase() ?? null;
 
   const statewideRows = stateCode ? await fetchStatewideRaceRows(stateCode) : [];
