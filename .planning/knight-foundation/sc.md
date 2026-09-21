@@ -5,11 +5,11 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 
 | Stage | State |
 | --- | --- |
-| 1 geography | ✅ applied 2026-09-20 |
-| 2 legislature | — owes 170 offices |
-| 3 city waves | — Columbia, Myrtle Beach |
-| 4 county waves | — Richland, Horry |
-| 5 assets | — |
+| 1 geography | ✅ applied 2026-09-20 — 170 boundaries, 170 districts |
+| 2 legislature | ✅ applied 2026-09-20 — 170 offices, 170 seated |
+| 3 city waves | ✅ applied 2026-09-20 — Columbia 7, Myrtle Beach 7 |
+| 4 county waves | ✅ applied 2026-09-20 — Richland 20, Horry 21, 40 seated, 1 vacant |
+| 5 assets | — headshots for 224 SC officials, plus Columbia and Myrtle Beach banners |
 
 ---
 
@@ -462,3 +462,169 @@ one holder.** `check:reachability` nothing regressed, two buckets below baseline
 
 ▶ **Next: stage 4 — Richland and Horry county councils**, plus each county's separately elected
 officers. The state's own `County_Council_Districts` layer is already located.
+
+---
+
+# SC-4 — stage 4 APPLIED 2026-09-20. 41 offices, 40 seated, 1 vacant. STAGE 4 CLOSES.
+
+`X0060` (11 Richland council-district polygons), `X0061` (11 Horry), `CC_0129` structure,
+`CC_0130` occupancy. Roster and evidence:
+[`backend/data/seed-sc-counties-2026/ROSTERS.md`](../../backend/data/seed-sc-counties-2026/ROSTERS.md).
+
+| | |
+| --- | --- |
+| Offices | **41** — Richland 20, Horry 21, in 6 chambers under 2 new county governments |
+| People | **40 created** (band `-2745500 .. -2745401`), 0 reused |
+| Terms | **40**, all open-ended; **16 at `day`, 24 at `unknown`** |
+| Vacancies | **1** — a Richland soil-and-water seat, flagged and deliberately unseated |
+
+Production held **nothing** for either county beforehand: no government row, no local district, no
+county office. `politicians` **87,697 → 87,737 exact**; SC offices 189 → 230; SC districts 235 →
+257; `offices_missing_terms` 823 → 824 with the **unflagged count unmoved at 655**.
+
+### 🔴🔴 THREE STATUTORY COMMENCEMENT DATES APPLY TO ONE WAVE
+
+A county-officer template that used a single January date would be wrong by six months on three of
+these seats.
+
+| Group | Commences | Authority |
+| --- | --- | --- |
+| County Council, chairman included | **2 January** after the election | § 4-9-90, "the second of January next following their election" |
+| Sheriff · Clerk of Court · Coroner · Probate Judge | **first Tuesday in January** | § 4-11-10 |
+| **Auditor and Treasurer** | **1 July** after the election | § 4-11-10, same sentence (1987 Act No. 21) |
+| Soil and Water commissioner | 1 February after the election | terms expire 31 January on the DNR record |
+
+⚠ **Richland County's own council page says council terms start "January 1".** The statute says the
+second. The statute governs; the one-day disagreement is recorded rather than silently resolved.
+
+### 🔴🔴 THE BALLOT IS THE OFFICE INVENTORY, AND THE STATE PUBLISHES IT
+
+The inclusion ruling asks whether the voters elect an office. The authority is **not** a county web
+page but the **SC Election Commission's candidate record**, `vrems.scvotes.sc.gov`, queried per
+county for the 2020, 2022, 2024 and 2026 statewide generals — two cycles four years apart cover
+every four-year office and the two extra give the predecessor. It settled four things a template
+would have got wrong:
+
+- **Neither county elects a Register of Deeds, and both have one.** Horry's officials page lists
+  Marion Foxworth; he was **appointed** in 2015. Richland's John Hopkins is in the SCAC directory,
+  on no ballot, and not on Richland's own Elected Offices page. No contest in either county in any
+  of the four cycles.
+- **Horry's Auditor changed hands and the roster alone would not have shown it.** Beth Calhoun won
+  in 2020; Tina Hardee beat her in the 2024 primary. With § 4-11-10's July commencement, Hardee's
+  occupancy starts **2025-07-01**.
+- **Both Solicitors are multi-county and are OUT** — the Fifth Circuit is Richland + Kershaw, the
+  Fifteenth is Horry + Georgetown. NC-3 seated a District Attorney *because* the district was
+  coterminous with Mecklenburg; that condition fails here twice. Georgia's multi-county ruling and
+  Palm Beach's unseated State Attorney both apply. Recorded as program-level open work.
+- **Horry's five watershed conservation districts elect 15 commissioners and are DEFERRED** —
+  sub-county, no polygon for any of them, and the county polygon would answer them for every Horry
+  address. School boards go with the question North Carolina already owes.
+
+🔴 **THE SEC CORPUS BEGINS AT 2020, AND THAT WAS PROVED, NOT ASSUMED.** Election `20620`, the 2018
+statewide general, returns **zero** candidate rows for any county, office or status. A positive
+control — the same query against 2020, 2022, 2024 and 2026 — returns hundreds. So the empty answer
+is real, and it is the whole reason **24 of 40 terms carry no date**. A start is never guessed.
+
+### 🔴🔴 THE SOIL AND WATER BOARD IS FIVE PEOPLE, THREE ARE ELECTED, AND ONE SEAT IS EMPTY
+
+SC DNR publishes each district's board with every seat marked **(E)** elected or **(A)** appointed
+— the authority NC-3 had to read out of prose. Horry: Willoughby, Winburn and Johnson (E); Dixon
+and Hardee (A). Richland: Burts and McSwain (E), Mullis and Rhodes (A), and one seat listed
+**"Vacant … 01/31/27 (E)"**.
+
+🔴 **JAMES W. RHODES IS THE TRAP.** The SEC records him **winning the elected seat in 2022**; the
+DNR board shows him today in an **appointed** one. A roster built from the ballot would have seated
+him in a seat he no longer holds. ▶ **The ballot says how somebody arrived; the board record says
+where they sit now.**
+
+The vacant seat is written as `offices.is_vacant` with **no term row** — CLAUDE.md forbids a
+vacancy span whose start date is unknown, and DNR does not publish one. It therefore adds 1 to
+`offices_missing_terms` **flagged**, and 0 to the unflagged count the baseline watches.
+
+### 🔴🔴 A LAYER CALLED "CurrentCouncilDistricts" WAS THE SUPERSEDED MAP
+
+Both counties' polygons come from the **state's** RFA server, stamped with each county's own
+ordinance — Richland **001.22HR effective 2022-02-08**, Horry **01-2022 effective 2022-02-15**. The
+Richland stamp is independently confirmed by the county's own page: *"On Feb. 8, 2022, Richland
+County Council approved an ordinance establishing new electoral districts."* So unlike Columbia at
+SC-3, **this map can be dated.**
+
+Each county also publishes its own digitisation, which makes the Philadelphia diff available:
+
+- **Richland's `RC_Council_Districts` agrees on 11 of 11 internal points.** Two agencies, one
+  ordinance, no disagreement.
+- 🔴 **Horry's is called `CurrentCouncilDistricts` and it is the PRE-2022 PLAN.** Its
+  `lastEditDate` is **2021-11-18**, three months before ordinance 01-2022 took effect; it names
+  **Harold G. Worley** in District 1, **Orton Bellamy** in District 7 and **Johnny Vaught** in
+  District 8 — three members the 2022 election replaced; and it covers **91.26%** of the county
+  against the loaded map's 99.99%. It differs from the loaded map on **4 of 11** districts, which
+  is what a real remap looks like.
+  ▶ **A LAYER'S TITLE IS NOT ITS VINTAGE — READ ITS ATTRIBUTES.** Horry's org also publishes a
+  "Staff Plan" and a "Draft" of the same thing; picking by name similarity gets a plan that was
+  never adopted, and picking the one called "Current" gets the superseded one. What dated this one
+  was the councillors' names inside it.
+  `verify-sc-county-district-vintage.mjs` therefore treats Horry's layer as a **superseded-map
+  control**: it asserts the layer still names those three predecessors and still differs, so the
+  day the county republishes, the check fails loudly.
+
+### 🔴🔴 A NEIGHBOURHOOD LIST IS NOT A PARTITION
+
+SC-3 verified Columbia's polygons against the council's own neighbourhood lists, 8 of 8. The same
+method on Richland County scored **8 of 11, and the three misses were the method's fault, not the
+map's**: District 11 holds **35%** of the Hopkins ZCTA and **16%** of Eastover, so *"District 11
+continues through Hopkins and Eastover"* is true of the district without being true of any
+particular street, and the Shandon anchor sits **105 m** from the District 5 line. The county's own
+layer agrees with the loaded map on all three. ▶ **A city names small areas; a county names towns
+that its districts cut through.** The three anchors were removed as unable to discriminate — not
+re-pointed, and no anchor that *can* discriminate was dropped.
+
+⚠ **And the first run of that tool reported "5 passed, 0 failed" while testing NOTHING in
+Richland** — every anchor was a place name ("Ballentine, SC", "Five Points, Columbia, SC") and the
+Census geocoder returned NO MATCH for all eight, which the tool counted as a silent skip. A skip
+now fails the run.
+
+### Gates, each watched failing first
+
+| Control | Planted defect | What fired |
+| --- | --- | --- |
+| 1 | occupancy applied without the structure | `expected 41 county offices, got 0 — run CC_0129 first` |
+| 2 | one Richland council polygon deleted | `expected 11 X0060 Richland council-district boundaries, found 10` |
+| 3 | the Sheriff **moved** onto State House District 79 | `1 legislative/congressional district(s) picked up a county office` |
+| 4 | Brawley dated from January, not the auditor's July | `Brawley is not seated from 2007-07-01 — § 4-11-10 starts an auditor in JULY` |
+| 5 | the vacant soil-and-water seat un-flagged | `an office with no term is NOT flagged vacant — an invisible office` |
+| 6 | a second holder on one Horry soil-and-water office | `office_terms_no_overlap` — **the database's own exclusion constraint, not the gate** |
+
+The loader's five gates were watched failing too, through a re-runnable `--control=N` flag: a
+deleted feature, a second ordinance stamped on one polygon, a population inflated past the
+**statutory** § 4-9-90 variance limit, a district duplicated onto its neighbour's geometry, and the
+coverage gate pointed at the wrong county (`0.000% of the county`).
+
+🟢 **LOADER GATE 3 IS STATUTORY, NOT A HOUSE RULE.** § 4-9-90 caps the population variance between
+districts at ten percent, and the layer publishes `Pop_2020`, so a map that is not the adopted one
+usually fails there first. Measured: Richland **9.31%**, Horry **3.66%**, and the district
+populations sum to **416,147** and **351,029** — each county's exact 2020 census count.
+
+Both migrations were dry-run against production as **one transaction ending in ROLLBACK**, and the
+rollback was confirmed to have reverted every counter. Both are idempotent, proved by re-running;
+the boundary loader too (`inserted 0`).
+
+### ✅ End to end, on live production
+
+| Address | Answers |
+| --- | --- |
+| Richland County Administration Building, 2020 Hampton St | **17** — council **District 4 (Livingston)**, 6 officers, 3 soil-and-water rows of which one is correctly NULL, plus Columbia's city seats and the state's legislative seats |
+| Horry County Government and Justice Center, 1301 2nd Ave, Conway | **14** — council **District 7 (Anderson)**, the **at-large Chairman (Gardner)**, 6 officers, 3 soil-and-water |
+| Myrtle Beach City Hall, 937 Broadway St | **21** — the SC-3 city answers **and** the SC-4 county answers, council District 2 |
+| Charleston City Hall *(negative control)* | **0** SC-4 answers |
+
+**Per-district control: 22 of 22 polygons return exactly one office and exactly one holder.**
+`check:reachability` nothing regressed, **two buckets below baseline**; `check:occupancy`,
+`check:migrations` and `check:reservations` green.
+
+### ▶ What SC still owes
+
+- **Stage 5** — headshots for 224 South Carolina officials (170 legislative, 14 city, 40 county)
+  and banner keys for Columbia and Myrtle Beach.
+- **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA: multi-county
+  prosecutors the program has now declined three times and never scheduled.
+- **The watershed and school-board seats**, with North Carolina's school-board question.
