@@ -147,6 +147,18 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     one is the path CI cannot watch.
   - Nothing is abandoned on a timer. 14 days is a **reporting** threshold; long branches are
     normal here, and a wrong write costs a migration.
+- 🔴 **`state` TRACKS THE SLOT, NOT THE MIGRATION — there is deliberately no `applied` state.**
+  The CHECK allows exactly `reserved`, `written`, `abandoned`, and **`written` is TERMINAL**: it
+  means *the file exists*, never *the SQL ran*. `CC_0070_steward_schema.sql` says why in the table
+  comment — this repo has **no `schema_migrations` table and no ordered runner**, each migration is
+  applied once by hand, so nothing can observe that one ran and a column claiming to track it
+  would always be stale.
+  - **So the board cannot answer "has this been applied?" — only the data can.** Measured
+    2026-09-21: `CC_0125`-`CC_0130` (SC slice 7) read `written`, which says nothing either way;
+    querying production for SC's 240 offices is what established they had actually run.
+  - ⚠ **Do not report a `written` slot as drift or as an un-applied migration.** It is the correct
+    resting state of every used slot — 1,958 of them at the time of writing. This note exists
+    because that reading was made once and it looked like a real finding.
 - Reserving a number you never use is harmless — set its `state` to `abandoned`. The number is a
   filename label for humans, not a dense sequence, so holes cost nothing.
 - **`npm run check:migrations --prefix backend` is still the auditor**, still CI-enforced, and is
