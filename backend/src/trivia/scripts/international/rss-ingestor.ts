@@ -31,10 +31,33 @@ export interface FeedResult {
 // ~110ms). We deliberately do not spoof a browser UA to get past that. See
 // the rss-ingestor UA-fix commit for the measured per-feed article counts
 // that led to dropping these two entries.
+// Climate desks added 2026-09-21. The three feeds above are all WORLD desks, and
+// the consequence was measurable: across the six nightly runs to 2026-09-20 the
+// `climate` lane was routed ONE story cluster in total, and zero on both runs of
+// 2026-09-21. The climate-change collection is playable only because it has a
+// hand-written spine; the pipeline was contributing nothing to it.
+//
+// Each candidate was measured against the real gate below — the CivicTriviaBot
+// User-Agent, the 15s timeout, and the 300-word body threshold — rather than
+// added on the assumption that a working RSS endpoint means a fetchable article.
+// That assumption is exactly what failed for NPR (see the note above) and for AP.
+//
+//   Carbon Brief          PASS   1218 / 3733 / 1572 words   climate-specific analysis
+//   Guardian Environment  PASS    807 / 2669 / 1070 words   same publisher as the world feed
+//   DW Environment        PASS    891 / 1101 / 1044 words   small feed, all substantive
+//
+// Two were measured and REJECTED, recorded so nobody re-tests them:
+//   BBC Science & Environment — video-heavy. Sampled items returned 106 and 153
+//     words, under the 300-word gate, so most fetches would be wasted. BBC World
+//     already carries the major climate stories.
+//   Yale E360 (https://e360.yale.edu/feed.rss) — HTTP 404. Needs a different URL.
 export const INTERNATIONAL_FEEDS = [
   { name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
   { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
   { name: 'DW', url: 'https://rss.dw.com/rdf/rss-en-world' },
+  { name: 'Carbon Brief', url: 'https://www.carbonbrief.org/feed/' },
+  { name: 'Guardian Environment', url: 'https://www.theguardian.com/environment/rss' },
+  { name: 'DW Environment', url: 'https://rss.dw.com/rdf/rss-en-environment' },
 ] as const;
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
