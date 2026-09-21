@@ -14,6 +14,7 @@ import {
   saveCompassImportDraft,
   importCompassCalibrations,
   getLocationConsent,
+  getEnrollmentDrafts,
   type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -22,6 +23,7 @@ import { requireConnected } from '../middleware/tierGuards.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { resolvedDistrictCount } from '../lib/jurisdictionPayload.js';
+import { isVaultEnabled, upsertSeal } from '../lib/idVault.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -80,6 +82,39 @@ const compassImportBodySchema = z.object({
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+/** Seal the raw street address into the vault when enabled. Coords stay under
+ *  the existing single key (spec D5); this only adds the sealed raw address. */
+export async function sealAddressIfEnabled(userId: string, rawAddress: string): Promise<void> {
+  if (isVaultEnabled()) {
+    await upsertSeal(userId, { address: rawAddress });
+  }
+}
+
+/**
+ * Seal-first draft routing for POST /complete. Mirrors resolveSignupLegalName
+ * (routes/auth.ts): when the vault is enabled, read the enrollment drafts and
+ * seal the real name AND raw address into id_vault BEFORE calling
+ * complete_connect_flow (fail-safe ordering — spec §4.4). The seal is FATAL: if
+ * it throws, /complete returns 500, the RPC never runs, and the drafts survive
+ * for a clean retry — a draft is never nulled before it is safely sealed.
+ * complete_connect_flow then nulls both drafts atomically. Returns the p_seal_name
+ * flag the RPC uses to NULL connected_profiles.legal_name instead of writing the
+ * plaintext draft (CA_0120).
+ */
+export async function resolveCompleteConnectSeal(userId: string): Promise<boolean> {
+  const sealName = isVaultEnabled();
+  if (sealName) {
+    const { legalName, homeAddress } = await getEnrollmentDrafts(userId);
+    const parts: { name?: string; address?: string } = {};
+    if (legalName) parts.name = legalName;
+    if (homeAddress) parts.address = homeAddress;
+    if (Object.keys(parts).length > 0) {
+      await upsertSeal(userId, parts);
+    }
+  }
+  return sealName;
+}
 
 /**
  * Map ClaimResult error codes to HTTP status codes and error payloads.
@@ -294,13 +329,23 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
  *
  * Response intentionally omits tolerance_rating and legal_name — privacy
  * enforcement at the serialization layer (not just RLS).
+ *
+ * Seal-on-write (spec §4.4, CA_0120/CA_0121): when the vault is enabled, the
+ * draft legal name AND raw address are sealed into id_vault BEFORE the RPC
+ * runs, and p_seal_name=true tells complete_connect_flow to NULL
+ * connected_profiles.legal_name instead of writing the plaintext draft.
+ * complete_connect_flow then nulls both drafts (legal_name_draft,
+ * home_address_draft) after use. When the vault is disabled, behaviour is
+ * unchanged — p_seal_name defaults to false and the draft is written as today.
  */
 router.post('/complete', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
   try {
+    const sealName = await resolveCompleteConnectSeal(userId);
     const { data, error } = await adminRpc('complete_connect_flow', {
       p_user_id: userId,
+      p_seal_name: sealName,
     });
 
     if (error) {
@@ -597,6 +642,14 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       console.error('[connect/set-location] upsert_user_location error:', upsertError.message);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
       return;
+    }
+
+    // Seal the raw address (public key only — no ceremony). Non-fatal: a seal
+    // failure must not block district resolution the site needs to place them.
+    try {
+      await sealAddressIfEnabled(userId, address);
+    } catch (sealErr) {
+      console.error('[connect/set-location] id_vault seal failed (non-fatal):', sealErr);
     }
 
     const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {

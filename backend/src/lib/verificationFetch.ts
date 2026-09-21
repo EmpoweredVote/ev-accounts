@@ -3,30 +3,74 @@
  * verifier. The goal is to recover the real, human-visible text of a cited page
  * so the deterministic snippet matcher (researchVerifier) can run, WITHOUT
  * falling back to an expensive re-research LLM agent just because a site is
- * unfriendly to a naive headless fetch.
+ * unfriendly to a naive fetch.
  *
  * Ladder (cheap → expensive; stop at the first tier that returns a "real" page):
  *   1. Plain HTTP fetch + HTML→text  — static / server-rendered pages (.gov,
- *      congress.gov, most newspapers). No browser cost.
- *   2. Headless Chromium (shared browser, reused across the batch) — JS-rendered
- *      pages and basic bot checks.
- *   3. Wayback Machine snapshot       — archive.org serves clean static HTML that
+ *      most newspapers). No browser cost.
+ *   3. Wayback Machine snapshot      — archive.org serves clean static HTML that
  *      is immune to the live site's bot protection / paywall. Rescues the case
- *      where the live page is a Cloudflare challenge or empty shell.
+ *      where the live page is a challenge page or an empty shell.
  *
- * No LLM anywhere. The only "cost" is HTTP/browser latency, and the net effect
- * is FEWER re-research dispatches (the only token-expensive path), so this
- * lowers overall token usage rather than raising it.
+ * The numbering keeps a gap at 2: a headless-browser rung once sat there. It was
+ * removed (knowledge/decisions/0003-scraping-toolchain.md) — it could not run on
+ * the Alpine/musl deployment and was unexercised. The Wayback rung keeps its
+ * historical "tier 3" name so log lines and outcome codes do not shift meaning.
+ * Restoring a middle rung — an anti-bot fetch for pages a plain fetch cannot
+ * reach (e.g. congress.gov, ballotpedia) — is decision 0003 rung 2, tracked
+ * separately.
+ *
+ * No LLM anywhere. The only "cost" is HTTP latency, and the net effect is FEWER
+ * re-research dispatches (the only token-expensive path), so this lowers overall
+ * token usage rather than raising it.
  *
  * The verifier consumes this through researchVerifier.createPageFetcher, which
  * adds per-URL caching and the {ok|reason} envelope. createVerificationFetchSession
- * owns the shared browser; close() it when the batch is done.
+ * is a thin batch wrapper; close() remains for callers but is now a no-op.
  */
 
-import { chromium, type Browser } from 'playwright';
 import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
-import { renderPage, EMPOWERED_VOTE_UA, EMPOWERED_VOTE_UA_TOKEN } from './fetchPageContent.js';
+import { fetchCongressPageText } from './adapters/congressAdapter.js';
+
+/**
+ * Honest user-agent. Names Empowered Vote, links a public policy page, and
+ * gives a contact address so a publisher can reach us or ask to be excluded.
+ *
+ * The product token `EmpoweredVoteBot` is what a site's robots.txt matches on
+ * (see the robots parser below), so it must stay stable — do not reword it.
+ *
+ * Rationale: decision knowledge/decisions/0003-scraping-toolchain.md (rung 0).
+ * From 15 Sep 2026 Cloudflare's defaults classify an unlabelled fetcher that
+ * pretends to be a desktop browser as "evasive". An honest, contactable UA is
+ * both more defensible and more likely to be allowed.
+ *
+ * Contact address confirmed by the founders (Chris, 2026-09-01): info@empowered.vote.
+ *
+ * Also re-exported by fetchPageContent.js so existing importers (backend/scripts/*,
+ * tests) that pull it from there keep working.
+ */
+export const EMPOWERED_VOTE_UA =
+  'EmpoweredVoteBot/1.0 (+https://empowered.vote/crawler; nonprofit civic citation verification; contact info@empowered.vote)';
+
+/**
+ * The robots.txt product token for {@link EMPOWERED_VOTE_UA}. Matching is
+ * case-insensitive; kept as a named constant so the fetcher and the UA cannot
+ * drift apart.
+ */
+export const EMPOWERED_VOTE_UA_TOKEN = 'EmpoweredVoteBot';
+
+/**
+ * DEPRECATED — a spoofed desktop Chrome user-agent. Kept, exported and UNUSED
+ * only so its removal is a deliberate, reviewed act rather than a silent one.
+ *
+ * 🔴 Do NOT reintroduce this into any live fetch path without a founder
+ * decision. Pretending to be a browser is exactly the profile Cloudflare's
+ * 15 Sep 2026 defaults target, and it is indefensible for a civic-trust
+ * nonprofit bound by a radical-transparency clause. Use {@link EMPOWERED_VOTE_UA}.
+ */
+export const LEGACY_BROWSER_UA =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
 const HTTP_TIMEOUT_MS = 12_000;
 const ROBOTS_TIMEOUT_MS = 8_000;
@@ -323,12 +367,94 @@ export async function fetchViaHttp(url: string): Promise<string> {
   return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
 
-/** Tier 3 — closest Wayback Machine snapshot, or null if none/usable. */
-export async function fetchViaWayback(url: string): Promise<string | null> {
+/** How many of the newest CDX captures to consider (we pick the most recent). */
+const CDX_LOOKUP_LIMIT = 5;
+
+/** A `fetch`-shaped seam. Global `fetch` satisfies it; tests pass a fake. */
+type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
+
+/**
+ * Injectable seam for the Wayback tier. The default is the real global `fetch`;
+ * tests pass a fake so they can assert the id_ raw-snapshot URL is built and
+ * that /available is a genuine fallback — without touching the live network.
+ */
+export interface WaybackDeps {
+  fetchImpl?: FetchLike;
+}
+
+/**
+ * CDX lookup — ask archive.org's index for the MOST RECENT HTTP-200 capture of
+ * `url`. This is more complete than the /available endpoint, which
+ * intermittently reports "no snapshot" for a URL that is in fact archived
+ * (measured on congress.gov bill pages). Returns `{timestamp, original}` of the
+ * newest 200 capture, or null when the index has none.
+ *
+ * `limit=-N` returns the N newest captures (verified against web.archive.org);
+ * we still take the max timestamp so an ordering quirk can never pick a stale
+ * row. `collapse=digest` drops consecutive byte-identical captures.
+ */
+async function cdxLatest200(
+  url: string,
+  fetchImpl: FetchLike,
+): Promise<{ timestamp: string; original: string } | null> {
+  const noProto = url.replace(/^https?:\/\//, '');
+  const cdxUrl =
+    'https://web.archive.org/cdx/search/cdx?url=' +
+    encodeURIComponent(noProto) +
+    '&output=json&filter=statuscode:200&collapse=digest&limit=-' +
+    CDX_LOOKUP_LIMIT;
+  const res = await fetchImpl(cdxUrl, { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
+  if (!res.ok) return null;
+  const rows: unknown = await res.json();
+  // CDX json is [header, ...rows]; the header names the columns. Fewer than two
+  // rows means "no captures".
+  if (!Array.isArray(rows) || rows.length < 2 || !Array.isArray(rows[0])) return null;
+  const header = (rows[0] as unknown[]).map(String);
+  const tsIdx = header.indexOf('timestamp');
+  const origIdx = header.indexOf('original');
+  if (tsIdx === -1 || origIdx === -1) return null;
+  let best: { timestamp: string; original: string } | null = null;
+  for (const row of rows.slice(1)) {
+    if (!Array.isArray(row)) continue;
+    const timestamp = String(row[tsIdx] ?? '');
+    const original = String(row[origIdx] ?? '');
+    if (!/^\d{14}$/.test(timestamp) || !original) continue;
+    if (!best || timestamp > best.timestamp) best = { timestamp, original };
+  }
+  return best;
+}
+
+/**
+ * CDX path — find the newest 200 capture, then fetch its RAW archived response.
+ * The `id_` suffix on the timestamp returns the original bytes without the
+ * archive.org toolbar/rewrite wrapper, so the extractor sees the real document.
+ * Returns null on any miss or failure (the caller has already tried /available).
+ */
+async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<string | null> {
+  const hit = await cdxLatest200(url, fetchImpl);
+  if (!hit) return null;
+  const snapUrl = 'https://web.archive.org/web/' + hit.timestamp + 'id_/' + hit.original;
+  const res = await fetchImpl(snapUrl, {
+    signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+    headers: { 'user-agent': EMPOWERED_VOTE_UA },
+  });
+  if (!res.ok) return null;
+  // Pass the ORIGINAL url (not the archive wrapper) so the non-article guard in
+  // the extractor reasons about the real document.
+  const text = htmlToArticleOrText(await res.text(), url);
+  return text || null;
+}
+
+/**
+ * The /available lookup — tier 3's first, cheap attempt (this is exactly the
+ * pre-CDX production behaviour). CDX runs only when this does not return a real
+ * page, so /available stays the fast common path.
+ */
+async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Promise<string | null> {
   const noProto = url.replace(/^https?:\/\//, '');
   let snapUrl: string | undefined;
   try {
-    const avail = await fetch(
+    const avail = await fetchImpl(
       'https://archive.org/wayback/available?url=' + encodeURIComponent(noProto),
       { signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) },
     );
@@ -341,7 +467,7 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
     return null;
   }
   try {
-    const res = await fetch(snapUrl!, {
+    const res = await fetchImpl(snapUrl!, {
       signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
       headers: { 'user-agent': EMPOWERED_VOTE_UA },
     });
@@ -354,10 +480,45 @@ export async function fetchViaWayback(url: string): Promise<string | null> {
   }
 }
 
+/**
+ * Tier 3 — closest Wayback Machine snapshot, or null if none/usable.
+ *
+ * Order: the /available endpoint FIRST (fast — median ~3s on a live sample),
+ * then the CDX index only when /available did not yield a real page. This keeps
+ * the common recovery path at its old cost while still closing the gap where
+ * /available intermittently reports "no snapshot" for a URL that IS archived:
+ * a flaky /available miss is still a miss, and CDX catches it (measured to
+ * recover archived ballotpedia / congress.gov pages /available dropped). It only
+ * ever ADDS recoveries and never removes one. Same 12s timeout, no extra
+ * concurrency — one /available call, then at most one CDX index + one raw-
+ * snapshot fetch.
+ *
+ * (Order chosen from a 200-URL before/after measurement: CDX-first added ~9s of
+ * latency on the tier-1-miss path when archive.org's CDX server was slow, for
+ * the identical recovery. See ev-cto task 2026-09-11-wayback-cdx-tier3.)
+ */
+export async function fetchViaWayback(url: string, deps: WaybackDeps = {}): Promise<string | null> {
+  const fetchImpl: FetchLike = deps.fetchImpl ?? fetch;
+  // /available first — cheap, and enough for most archived pages.
+  const viaAvailable = await fetchViaWaybackAvailable(url, fetchImpl);
+  if (viaAvailable && looksLikeRealPage(viaAvailable)) return viaAvailable;
+  // /available missed or returned a non-real page (the flaky endpoint, or an
+  // archived challenge shell) — give the more complete CDX index its chance.
+  let viaCdx: string | null = null;
+  try {
+    viaCdx = await fetchViaWaybackCdx(url, fetchImpl);
+  } catch {
+    /* CDX unreachable / malformed — fall through to /available's best effort. */
+  }
+  // Prefer a CDX recovery; else return /available's best-effort text (may be thin —
+  // the ladder's looksLikeRealPage gate decides whether to keep it), or null.
+  return viaCdx ?? viaAvailable ?? null;
+}
+
 export interface VerificationFetchSession {
   /** Fetch the best available text for a URL via the ladder. Throws only when every tier fails. */
   fetch(url: string): Promise<string>;
-  /** Close the shared browser (call once the batch is done). */
+  /** No-op, retained for API compatibility (there is no browser to close). */
   close(): Promise<void>;
 }
 
@@ -370,29 +531,41 @@ export interface VerificationFetchDeps {
   robotsAllows?: (url: string) => Promise<boolean>;
   /** Tier 1 — plain HTTP fetch. */
   httpFetch?: (url: string) => Promise<string>;
-  /** Tier 2 — headless render. */
-  render?: (url: string) => Promise<string>;
   /** Tier 3 — Wayback snapshot (archive, not a live-site fetch). */
   wayback?: (url: string) => Promise<string | null>;
+  /** Source-specific tier — congress.gov official API. Runs before the generic tiers. */
+  congressAdapter?: (url: string) => Promise<string | null>;
 }
 
 /**
- * Create a fetch session that reuses ONE headless browser across the batch.
- * Pass `session.fetch` to researchVerifier.createPageFetcher.
+ * Create a fetch session over the browser-free ladder (tier 1 plain fetch →
+ * tier 3 Wayback). Pass `session.fetch` to researchVerifier.createPageFetcher.
+ *
+ * `close()` is retained for callers (createPageFetcher / fetchForVerification
+ * call it) but is now a no-op — there is no browser to tear down.
  */
 export function createVerificationFetchSession(
   deps: VerificationFetchDeps = {},
 ): VerificationFetchSession {
-  let browser: Browser | null = null;
-  const getBrowser = async () => (browser ??= await chromium.launch({ headless: true }));
-
   const allowed = deps.robotsAllows ?? robotsAllows;
   const httpFetch = deps.httpFetch ?? fetchViaHttp;
-  const render = deps.render ?? ((url: string) => getBrowser().then((b) => renderPage(b, url)));
   const wayback = deps.wayback ?? fetchViaWayback;
+  const congressAdapter = deps.congressAdapter ?? fetchCongressPageText;
 
   return {
     async fetch(url: string): Promise<string> {
+      // Source-specific tier — congress.gov official API (before the generic
+      // tiers). It calls api.congress.gov under our own key: an authorized
+      // official API, not a fetch of the live congress.gov site, so it precedes
+      // the robots gate. A null result (not congress.gov, unparseable, no key, or
+      // no API match) falls through to today's ladder unchanged.
+      try {
+        const t = await congressAdapter(url);
+        if (t && looksLikeRealPage(t)) return t;
+      } catch {
+        /* fall through to the generic ladder */
+      }
+
       // Tier 0 — respect robots.txt. If EmpoweredVoteBot is disallowed we do NOT
       // fetch the live site: go straight to the archived snapshot, and if there
       // is none, surface a distinct robots_disallowed outcome (not url_broken).
@@ -417,16 +590,8 @@ export function createVerificationFetchSession(
         /* fall through */
       }
 
-      // Tier 2 — headless Chromium (shared browser)
-      try {
-        const t = await render(url);
-        if (looksLikeRealPage(t)) return t;
-        if (t) candidates.push(t);
-      } catch {
-        /* fall through */
-      }
-
-      // Tier 3 — Wayback snapshot
+      // Tier 3 — Wayback snapshot (the headless-browser rung that once sat
+      // between tier 1 and tier 3 was removed; see the module header + decision 0003).
       try {
         const t = await wayback(url);
         if (t && looksLikeRealPage(t)) return t;
@@ -441,12 +606,8 @@ export function createVerificationFetchSession(
       throw new Error('all fetch tiers failed for ' + url);
     },
 
-    async close() {
-      if (browser) {
-        await browser.close();
-        browser = null;
-      }
-    },
+    // Retained for API compatibility; there is no browser to close.
+    async close() {},
   };
 }
 

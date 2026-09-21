@@ -546,21 +546,102 @@ const DATASETS_SUMMARY = `json_build_object(
               'dataset_types', COALESCE(json_agg(DISTINCT b.dataset_type) FILTER (WHERE b.id IS NOT NULL), '[]')
             ) AS dataset_summary`;
 
-export async function getCities(mode: DatasetsMode = 'full'): Promise<TreasuryCity[]> {
+/**
+ * The full entity list, or — with `slug` — the single entity addressed by it.
+ *
+ * ⚠⚠ THE SLUG FILTER IS A WHERE CLAUSE AND NOTHING ELSE. Every other part of
+ * the query (the LEFT JOIN, the GROUP BY, the HAVING "has a budget or is a
+ * grouper county" contract, the column list, the ORDER BY) is untouched, so a
+ * slug lookup returns exactly the row the unfiltered list would have contained
+ * — or nothing. It can never surface an entity the list would have hidden, and
+ * it can never return a DIFFERENT entity: no match is an empty array, which is
+ * what lets TT keep resolving an unmatched slug to `not_found` rather than
+ * substituting someone else's budget (TT #158).
+ *
+ * WHY: financials.empowered.vote downloads this entire list — 8,149 entities,
+ * 3.2 MB uncompressed — to read ONE 309-byte row, because the only thing it
+ * does with the list is turn `?entity=empowered-vote-ca` into an id. That is
+ * 0.0097% of the payload, and it is 76% of that page's critical path. The list
+ * is also O(total entities): TT #125 cut it 23.5 MB -> 1.1 MB, and it is back
+ * to 3.2 MB purely because the entity count went 1,144 -> 8,149. Trimming the
+ * constant again would not stop it regrowing; not fetching it does.
+ *
+ * ⚠ Uses SLUG_SQL, the same expression GET /treasury/coverage publishes, so
+ * there is ONE slug definition on this side and it already carries the
+ * byte-identical-to-TT's-toSlug warning.
+ */
+export async function getCities(
+  mode: DatasetsMode = 'full',
+  slug?: string
+): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
     `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
             ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
+     ${slug ? `WHERE ${SLUG_SQL} = $1` : ''}
      GROUP BY m.id
      HAVING COUNT(b.id) > 0
         OR (m.entity_type = 'county' AND EXISTS (
               SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
             ))
-     ORDER BY m.name`
+     ORDER BY m.name`,
+    slug ? [slug] : []
   );
   return rows.map((r) => mapCity(r, mode));
+}
+
+/**
+ * Names an entity used to be published under, for Treasury Tracker's
+ * `?entity=` deep links.
+ *
+ * WHY: a state publisher renaming a city forks or renames the TT entity, and
+ * every link ever shared to the old slug dies. The MN OSA renamed Birchwood to
+ * Birchwood Village between its FY2020 and FY2021 filings; TT merged the two
+ * entities (TT PR #185) and `birchwood-mn` stopped resolving.
+ *
+ * ⚠⚠ EMITS SLUGS, from the same `slugSql` the coverage catalog uses. An earlier
+ * draft served names only, reasoning that a second implementation of the slug
+ * format would drift silently. That reasoning was wrong here: this service
+ * ALREADY owns a slug expression (`SLUG_SQL`, right above), and
+ * GET /api/treasury/coverage already emits `slug` for exactly the stated reason
+ * — "no consumer ever reconstructs TT's `toSlug` and drifts". Withholding slugs
+ * would not remove an implementation, it would force every consumer that is not
+ * TT to write one. `label`/`slug` mirrors the coverage record shape.
+ *
+ * CONTRACT: rows are NOT filtered against /cities' budget-bearing rule. An
+ * alias naming an entity that /cities omits is handled by the consumer, which
+ * treats a target it cannot find as not-found rather than inventing one.
+ */
+export interface TreasuryEntityAlias {
+  slug: string;
+  label: string;
+  canonicalSlug: string;
+  canonicalLabel: string;
+}
+
+export async function getEntityAliases(): Promise<TreasuryEntityAlias[]> {
+  const { rows } = await pool.query<{
+    slug: string;
+    label: string;
+    canonical_slug: string;
+    canonical_label: string;
+  }>(
+    `SELECT ${slugSql('a.alias_name', 'a.state')} AS slug,
+            a.alias_name                          AS label,
+            ${SLUG_SQL}                           AS canonical_slug,
+            m.name                                AS canonical_label
+       FROM treasury.municipality_aliases a
+       JOIN treasury.municipalities m ON m.id = a.municipality_id
+      ORDER BY a.alias_name`
+  );
+  return rows.map((r) => ({
+    slug: r.slug,
+    label: r.label,
+    canonicalSlug: r.canonical_slug,
+    canonicalLabel: r.canonical_label,
+  }));
 }
 
 /**
@@ -1574,3 +1655,111 @@ export async function createBudgetLineItem(
   );
   return mapLineItem(rows[0]);
 }
+
+// ── Public coverage catalog (Civic Spaces Ask 2) ─────────────────────────────
+
+/**
+ * The geoid-keyed coverage catalog served at GET /api/treasury/coverage.
+ *
+ * Mirrors the shape Treasury Tracker ALREADY CONSUMES from Essentials
+ * (`src/utils/essentialsCoverage.ts`: generatedAt / cities / counties / states /
+ * federal) so a consumer can point one matcher at either catalog. The single
+ * addition is `slug`, because TT addresses entities by slug rather than geoid —
+ * emitting it means no consumer ever reconstructs TT's `toSlug` and drifts.
+ */
+export interface CoverageRecordOut {
+  label: string;
+  geoids: string[];
+  state: string;
+  slug: string;
+}
+export interface CoverageStateOut { label: string; abbrev: string; slug: string }
+export interface CoverageCatalogOut {
+  generatedAt: string;
+  cities: CoverageRecordOut[];
+  counties: CoverageRecordOut[];
+  states: CoverageStateOut[];
+  federal: { label: string; slug: string };
+}
+
+interface CoverageRow {
+  tier: 'city' | 'county' | 'state' | 'federal';
+  label: string;
+  state: string;
+  slug: string;
+  geoid: string | null;
+}
+
+/**
+ * ⚠ The slug expression MUST stay byte-identical to TT's `toSlug`
+ * (src/utils/entityRouting.ts):
+ *
+ *     `${m.name.toLowerCase().replace(/\s+/g, '-')}-${m.state.toLowerCase()}`
+ *
+ * Drift here is invisible — it does not throw, the link just stops resolving,
+ * and before TT's #158 an unresolved slug rendered a DIFFERENT city's budget.
+ */
+function slugSql(nameCol: string, stateCol: string): string {
+  return `lower(regexp_replace(${nameCol}, '\\s+', '-', 'g')) || '-' || lower(${stateCol})`;
+}
+
+const SLUG_SQL = slugSql('m.name', 'm.state');
+
+let coverageCache: { at: number; value: CoverageCatalogOut } | null = null;
+const COVERAGE_TTL_MS = 15 * 60 * 1000;
+
+export async function getCoverageCatalog(): Promise<CoverageCatalogOut> {
+  if (coverageCache && Date.now() - coverageCache.at < COVERAGE_TTL_MS) {
+    return coverageCache.value;
+  }
+
+  // ⚠ Only entities that HAVE at least one budget: a row whose budget a reader
+  // cannot open must not be advertised as coverage. And only entities with a
+  // geoid — an entity we cannot key is OMITTED rather than emitted with
+  // `geoids: []`, which would invite a consumer to fall back to label matching.
+  // States and the federal row are exempt: they carry no geoids field / none.
+  const { rows } = await pool.query<CoverageRow>(
+    `SELECT
+       CASE
+         WHEN m.entity_type = 'county'  THEN 'county'
+         WHEN m.entity_type = 'state'   THEN 'state'
+         WHEN m.entity_type = 'federal' THEN 'federal'
+         ELSE 'city'
+       END AS tier,
+       m.name AS label, m.state, ${SLUG_SQL} AS slug, m.geoid
+     FROM treasury.municipalities m
+     WHERE EXISTS (SELECT 1 FROM treasury.budgets b WHERE b.municipality_id = m.id)
+       AND (
+         m.entity_type IN ('state', 'federal')
+         OR (m.geoid IS NOT NULL
+             AND m.entity_type IN ('county','city','town','village','borough','municipality','township'))
+       )
+     ORDER BY m.state, m.name`
+  );
+
+  const cities: CoverageRecordOut[] = [];
+  const counties: CoverageRecordOut[] = [];
+  const states: CoverageStateOut[] = [];
+  let federal = { label: 'United States', slug: 'united-states-us' };
+
+  for (const r of rows) {
+    if (r.tier === 'federal') { federal = { label: r.label, slug: r.slug }; continue; }
+    if (r.tier === 'state') { states.push({ label: r.label, abbrev: r.state, slug: r.slug }); continue; }
+    // geoids is an ARRAY to match the shape TT already consumes, even though TT
+    // holds exactly one geoid per entity.
+    const rec: CoverageRecordOut = {
+      label: r.label, geoids: [r.geoid as string], state: r.state, slug: r.slug,
+    };
+    (r.tier === 'county' ? counties : cities).push(rec);
+  }
+
+  const value: CoverageCatalogOut = {
+    generatedAt: new Date().toISOString(),
+    cities, counties, states, federal,
+  };
+  coverageCache = { at: Date.now(), value };
+  return value;
+}
+
+/** Test seam: drop the memoised catalog. */
+export function __clearCoverageCache(): void { coverageCache = null; }

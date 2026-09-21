@@ -12,9 +12,10 @@ You are running the **research-stances** skill. Your job is to research politici
 > follow the curation principles in `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` (the
 > checks + the §4 judgment rules — the working rulebook) and
 > `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` (editing/de-id mechanics), and hand
-> quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical
-> `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` referenced by those skills is not in the tree — use
-> CHECKS.md §4 as the rulebook until it lands.
+> quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical source is
+> the on-the-record corpus, docs/quote-curation/PRINCIPLES.md (sibling checkout:
+> ../on-the-record/docs/quote-curation/PRINCIPLES.md) — read it alongside CHECKS.md §4 as the
+> rulebook.
 
 > **Quotes are pushed as DRAFTS, then audited, then promoted.** This skill never sets a quote live
 > in the same step it inserts it. The flow is: research → pre-push QA → insert as drafts
@@ -160,6 +161,18 @@ For each politician, dispatch a `politician-stance-researcher` agent using the A
 - Wait for each agent to complete and confirm the CSV was written before dispatching the next.
 - Running parallel agents burns the WebSearch/Playwright rate limit quota instantly, producing no usable output.
 
+**Inject the canonical curation rules (do not paraphrase them here).** Run
+
+```bash
+node .claude/skills/research-stances/scripts/extract-canonical-rules.mjs gates deid note
+```
+
+and paste its output into the sub-agent prompt below at the three `INJECT:` markers (`gates`, `deid`,
+`note`). These rules come from the on-the-record corpus (sibling checkout; canonical home
+`on-the-record/docs/quote-curation/PRINCIPLES.md` and its mechanics files) — never restate them from
+memory. If the extractor errors, the on-the-record checkout is missing: **STOP** and resolve that, do
+not fall back to a remembered summary.
+
 **Agent prompt template:**
 
 ```
@@ -235,32 +248,17 @@ TOOL RULE:
 
 CSV OUTPUT — columns (RFC-4180; wrap any field with commas in double quotes, double embedded quotes):
   full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
-- editor_note (REQUIRED for every row with a quote): 1–2 plain-language sentences a stranger can
-  follow with no jargon and no §-refs — say WHY this quote and HOW it aligns with the candidate's
-  Compass value on this topic, plus what you edited ("verbatim, no edits" if none). essentials.quotes
-  requires it and the audit hard-fails without it.
+- editor_note: REQUIRED for every row with a quote_text; essentials.quotes requires it and the audit
+  hard-fails without it — see EDITOR NOTE RULE below for what it must contain.
 
-QUOTE-SELECTION GATES — a quote_text must pass ALL THREE or leave quote_text blank (record the stance
-from the record instead). These mirror the audit's judgment checks:
-- FORWARD, not record: the operative clause is the candidate reasoning about what SHOULD be done —
-  not "I did X / I sued / I voted / we won." A little record as scaffolding is fine; a resume is not.
-- ON-QUESTION: it must answer the topic's framed question (engage that exact axis), not an adjacent
-  one. "Trump's tariffs raised prices" is not a tariff-policy stance; "we already have a commission"
-  is not a redistricting-authority stance. If it only touches the subject, leave quote_text blank.
-- POSITION, not personal attack: critiquing a policy/law/office is fine even when combative;
-  attacking a person (character, family, fitness) is not. Trim the attack or drop the quote.
+QUOTE-SELECTION GATES + RANKING QUESTION + DIFFERENTIATION:
+[INJECT: gates]
 
-DE-IDENTIFICATION CONTRACT (quote_deidentified) — honest marking, never silent paraphrase:
-- Produce quote_deidentified from quote_text by REMOVING identity leaks and MARKING every change:
-  cut spans with "…", and put every inserted/substituted word in [brackets]. Never reword to smooth
-  it over — if you can't mark it honestly, you're paraphrasing.
-- Strip/neutralize: (a) partisan/side tells — "Democrat", "Republican", "GOP", "my party";
-  (b) speaker self-identification — "as governor", "as AG", "when I was Secretary", "I'm a legal
-  immigrant", "the only person here with experience of X", touting one's own record; (c) named third
-  parties in a policy critique — "Newsom"/"Trump" → "[the current administration]".
-- Keep bare state/demographic names, generic "we", bill names without an authorship claim.
-- No trailing "…" at the end of a quote. If de-identifying would change the POSITION itself, leave
-  quote_deidentified BLANK (the quote is still recorded as a library quote, just not blind-eligible).
+DE-IDENTIFICATION CONTRACT:
+[INJECT: deid]
+
+EDITOR NOTE RULE:
+[INJECT: note]
 
 Other rules:
 - Skip any topic where you cannot find sufficient evidence

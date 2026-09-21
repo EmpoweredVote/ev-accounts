@@ -20,6 +20,11 @@ import { pool } from './db.js';
 import { toIsoStringOrNull } from './pgIso.js';
 import type { EventKind } from './eventKinds.js';
 import type { EventEntityState } from './eventEntityRules.js';
+import {
+  publicMeetingStatusClause,
+  publicMeetingExistsClause,
+  type MeetingViewerOptions,
+} from './meetingVisibility.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -351,7 +356,8 @@ const MEETING_COLS = `
 `;
 
 export async function getMeetings(
-  filters?: { city?: string; state?: string; status?: string; raceId?: string }
+  filters?: { city?: string; state?: string; status?: string; raceId?: string },
+  opts?: MeetingViewerOptions
 ): Promise<MeetingListItem[]> {
   const params: string[] = [];
   const conditions: string[] = [];
@@ -371,6 +377,12 @@ export async function getMeetings(
     // Scheduled (agenda-only) meetings must not leak into the default list;
     // every consumer of the unfiltered list predates their existence.
     conditions.push(`status = 'published'`);
+  }
+  // Public status gate (ev-cto decision 0017): intersect with the allowlist so a
+  // public caller passing ?status=draft (or any internal status) gets nothing —
+  // 'draft' ∩ {published,scheduled} = ∅. Admins pass includeAllStatuses.
+  if (!opts?.includeAllStatuses) {
+    conditions.push(publicMeetingStatusClause());
   }
   if (filters?.raceId !== undefined) {
     params.push(filters.raceId);
@@ -409,10 +421,13 @@ export async function getUpcomingMeetings(): Promise<MeetingListItem[]> {
 }
 
 export async function getMeetingById(
-  id: string
+  id: string,
+  opts?: MeetingViewerOptions
 ): Promise<(Meeting & { speakers: Speaker[] }) | null> {
+  // Public callers see only allowlisted statuses; a draft resolves to null (404).
+  const statusGate = opts?.includeAllStatuses ? '' : `AND ${publicMeetingStatusClause()}`;
   const { rows: meetingRows } = await pool.query<MeetingRow>(
-    `SELECT ${MEETING_COLS} FROM meetings.meetings WHERE id = $1`,
+    `SELECT ${MEETING_COLS} FROM meetings.meetings WHERE id = $1 ${statusGate}`,
     [id]
   );
 
@@ -436,10 +451,17 @@ export async function getMeetingById(
 
 export async function getTranscriptByMeetingId(
   meetingId: string,
-  page: number
+  page: number,
+  opts?: MeetingViewerOptions
 ): Promise<{ segments: Segment[]; page: number; totalCount: number }> {
   const limit = 200;
   const offset = (page - 1) * limit;
+
+  // A draft floor meeting DOES have transcript segments — gate them on the
+  // parent meeting's status so draft transcript text stays invisible (0 rows).
+  const meetingGate = opts?.includeAllStatuses
+    ? ''
+    : `AND ${publicMeetingExistsClause('$1')}`;
 
   const [{ rows: segmentRows }, { rows: countRows }] = await Promise.all([
     pool.query<SegmentRow>(
@@ -450,13 +472,13 @@ export async function getTranscriptByMeetingId(
               sp.label AS speaker_label
        FROM meetings.segments s
        LEFT JOIN meetings.speakers sp ON sp.id = s.speaker_id
-       WHERE s.meeting_id = $1
+       WHERE s.meeting_id = $1 ${meetingGate}
        ORDER BY s.segment_index
        LIMIT ${limit} OFFSET $2`,
       [meetingId, offset]
     ),
     pool.query<{ count: string }>(
-      `SELECT COUNT(*) AS count FROM meetings.segments WHERE meeting_id = $1`,
+      `SELECT COUNT(*) AS count FROM meetings.segments s WHERE s.meeting_id = $1 ${meetingGate}`,
       [meetingId]
     ),
   ]);
@@ -469,10 +491,13 @@ export async function getTranscriptByMeetingId(
 }
 
 export async function getSummaryByMeetingId(
-  meetingId: string
+  meetingId: string,
+  opts?: MeetingViewerOptions
 ): Promise<MeetingSummary | null> {
+  // Gate on the allowlist so a draft meeting's summary resolves to null (404).
+  const statusGate = opts?.includeAllStatuses ? '' : `AND ${publicMeetingStatusClause()}`;
   const { rows } = await pool.query<{ summary: unknown | null }>(
-    `SELECT summary FROM meetings.meetings WHERE id = $1`,
+    `SELECT summary FROM meetings.meetings WHERE id = $1 ${statusGate}`,
     [meetingId]
   );
   if (rows.length === 0 || !rows[0].summary) return null;
@@ -537,11 +562,18 @@ export async function getSummaryByMeetingId(
   };
 }
 
-export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
+export async function getVotesByMeetingId(
+  meetingId: string,
+  opts?: MeetingViewerOptions
+): Promise<Vote[]> {
+  // Gate on the parent meeting's status: a draft meeting's votes stay invisible.
+  const meetingGate = opts?.includeAllStatuses
+    ? ''
+    : `AND ${publicMeetingExistsClause('$1')}`;
   const { rows: voteRows } = await pool.query<VoteRow>(
     `SELECT id, meeting_id, resolution, description, result, vote_type, timestamp, created_at
      FROM meetings.votes
-     WHERE meeting_id = $1
+     WHERE meeting_id = $1 ${meetingGate}
      ORDER BY timestamp`,
     [meetingId]
   );

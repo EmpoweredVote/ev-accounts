@@ -107,7 +107,10 @@ export async function listAccounts(
 
 /**
  * Get full account detail for a single user.
- * Returns all fields including tolerance_rating and legal_name (admin context).
+ * Returns all fields including tolerance_rating (admin context). The Connect
+ * legal_name is NOT returned — it is vaulted (id_vault), readable only via
+ * offline break-glass, never by the app or any admin; the underlying RPC
+ * still computes it but this function strips it before it reaches the caller.
  * Includes active roles, recent audit log entries, and calibration lapse info.
  */
 export async function getAccountDetail(userId: string): Promise<Record<string, unknown>> {
@@ -132,6 +135,14 @@ export async function getAccountDetail(userId: string): Promise<Record<string, u
     result.roles = enrichedRoles;
   } catch {
     // Non-fatal: fall back to whatever admin_get_account_detail returned
+  }
+
+  // The real Connect name is vaulted (ev-cto 0022). The RPC nests it under
+  // connected_profile (row_to_json of connect.connected_profiles), so strip it there.
+  // Leave empowered_profile.legal_name — that name is public.
+  const cp = (result as Record<string, unknown>).connected_profile;
+  if (cp && typeof cp === 'object') {
+    delete (cp as Record<string, unknown>).legal_name;
   }
 
   return result;

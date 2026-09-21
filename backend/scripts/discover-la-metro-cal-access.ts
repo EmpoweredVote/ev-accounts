@@ -45,7 +45,7 @@ function normalize(s: string): string {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '') // strip accent marks
     .toLowerCase()
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ' ') // punctuation → space
+    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, ' ') // punctuation → space
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -106,7 +106,14 @@ async function fetchTargetPoliticians(): Promise<TargetPolitician[]> {
       COALESCE(g.city, regexp_replace(g.name, '^City of (.+), California.*$', '\\1')) AS city,
       o.title AS office
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    -- ADR 0002 phase 5 dropped essentials.offices.politician_id; occupancy is a dated row in
+    -- office_terms, resolved through this view. The old 'o.politician_id = p.id' here would
+    -- throw 42703 undefined_column, so this query has been broken since migration 1463.
+    -- ⚠ A politician-rooted join CAN fan out (a person may hold two offices). The office is
+    --   deliberately chosen instead of DISTINCT ON: 'c.name = 'City Council'' below narrows it
+    --   to one seat class, which is what makes the existing SELECT DISTINCT sufficient.
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.chambers c ON c.id = o.chamber_id
     JOIN essentials.governments g ON g.id = c.government_id
     LEFT JOIN (

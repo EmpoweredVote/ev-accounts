@@ -8,6 +8,10 @@
 
 import { pool } from './db.js';
 import type { EventKind } from './eventKinds.js';
+import {
+  publicMeetingStatusClause,
+  publicMeetingExistsClause,
+} from './meetingVisibility.js';
 
 export interface TopicListEntry {
   topicKey: string;
@@ -53,6 +57,9 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
      -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
      -- the current revision's wording. CA_0012 froze ct's own text columns.
      LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
+     -- Public status gate (ev-cto decision 0017): count tags only on publicly
+     -- visible meetings, so a draft meeting's topic tags never inflate a count.
+     WHERE ${publicMeetingExistsClause('mt.meeting_id')}
      GROUP BY mt.topic_key, ctc.short_title
      ORDER BY item_count DESC, mt.topic_key`
   );
@@ -102,7 +109,9 @@ export async function getTopicByKey(topicKey: string): Promise<TopicDetail | nul
             mt.start_time, mt.status
      FROM meetings.meeting_topics mt
      JOIN meetings.meetings m ON m.id = mt.meeting_id
-     WHERE mt.topic_key = $1
+     -- Public status gate (ev-cto decision 0017): a draft meeting's tagged
+     -- sections must not appear in a topic's public item list.
+     WHERE mt.topic_key = $1 AND ${publicMeetingStatusClause('m.status')}
      ORDER BY m.date DESC, mt.meeting_id, mt.section_index`,
     [topicKey]
   );

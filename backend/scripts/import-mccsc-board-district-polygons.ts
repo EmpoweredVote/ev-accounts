@@ -82,6 +82,7 @@ function loadGeojson(): FeatureCollection {
       throw new Error(
         `GeoJSON not found at ${GEOJSON_PATH}.\n` +
           `  Run: npx tsx scripts/fetch-mccsc-board-district-polygons.ts`,
+        { cause: err },
       );
     }
     throw err;

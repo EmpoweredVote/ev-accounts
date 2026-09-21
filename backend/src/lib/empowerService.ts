@@ -137,7 +137,12 @@ export async function getReservedSlug(userId: string): Promise<string | null> {
  * DB checks are delegated to run_empower_preflight RPC. Slug generation and
  * caching remain in TypeScript (crypto.randomUUID is not available in PL/pgSQL).
  */
-export async function runPreflight(userId: string): Promise<PreflightResult> {
+export async function runPreflight(userId: string, confirmedLegalName?: string): Promise<PreflightResult> {
+  // Normalize once: an empty/whitespace-only string must fall through to the DB
+  // value below, the same as null/undefined would via `??`. `??` alone does not
+  // catch '', which is how an unfilled form field used to corrupt the slug.
+  const confirmed = confirmedLegalName?.trim() ? confirmedLegalName : undefined;
+
   const { data, error } = await adminRpc('run_empower_preflight', {
     p_user_id: userId,
   });
@@ -185,6 +190,22 @@ export async function runPreflight(userId: string): Promise<PreflightResult> {
   const isDemoted = result.is_demoted ?? false;
   const compassCompleteness = result.compass_completeness!;
 
+  // Fail-safe: a public Empowered profile needs a real name. With the id_vault enabled
+  // connected.legal_name is NULL for new members; if no confirmed name was supplied,
+  // report ineligible rather than reserving an empty-name slug. Placed before the
+  // fresh/re-empowerment branch so a re-empowerment cannot blank an existing public
+  // name either. (spec 2026-09-18-empower-promotion-legal-name-guard)
+  const resolvedName = confirmed ?? connected.legal_name ?? '';
+  if (!resolvedName.trim()) {
+    return {
+      eligible: false,
+      failures: [
+        { code: 'NO_LEGAL_NAME', message: 'Confirm your legal name to go public as an Empowered profile.' },
+      ],
+      ...(result.demotion_context ? { demotion_context: result.demotion_context } : {}),
+    };
+  }
+
   let slugPreview: string;
 
   if (isDemoted && empowered?.candidate_page_slug) {
@@ -192,14 +213,16 @@ export async function runPreflight(userId: string): Promise<PreflightResult> {
     slugPreview = empowered.candidate_page_slug;
     await cache.set(`slug_reservation:${userId}`, slugPreview, 3600);
   } else {
-    // Fresh empowerment: generate a new slug
-    slugPreview = await reserveSlug(userId, connected.legal_name!);
+    // Fresh empowerment: generate a new slug from the confirmed name when given,
+    // else the DB value (falls back across the id-vault cutover — see ADR).
+    const nameForSlug = confirmed ?? connected.legal_name ?? '';
+    slugPreview = await reserveSlug(userId, nameForSlug);
   }
 
   const successResult: PreflightSuccess = {
     eligible: true,
     summary: {
-      legal_name: connected.legal_name!,
+      legal_name: confirmed ?? connected.legal_name ?? '',
       compass_completeness: compassCompleteness,
       slug_preview: slugPreview,
     },
@@ -251,13 +274,21 @@ export async function recordConsent(
  * 4. Recording the consent items
  * 5. Clearing the slug reservation from cache
  *
+ * Before step 3, refuses with NO_LEGAL_NAME if neither a confirmed name nor a
+ * DB legal_name is available — no RPC call is made in that case.
+ *
  * The execute_empowerment RPC handles all DB writes atomically (empowered_profiles
  * upsert + compass visibility update). No chained JS awaits for multi-table writes.
  */
 export async function confirmEmpowerment(
   userId: string,
-  consentedItems: string[]
+  consentedItems: string[],
+  confirmedLegalName?: string
 ): Promise<{ empowered_profile: Record<string, unknown> }> {
+  // Normalize once: an empty/whitespace-only string must fall through to the DB
+  // value below, the same as null/undefined would via `??`.
+  const confirmed = confirmedLegalName?.trim() ? confirmedLegalName : undefined;
+
   // 1. Retrieve reserved slug — must have run preflight first
   const reservedSlug = await getReservedSlug(userId);
   if (!reservedSlug) {
@@ -283,13 +314,23 @@ export async function confirmEmpowerment(
 
   const connectedProfile = connectedData as { id: string; legal_name: string | null };
 
+  // Fail-safe: never publish an empty public name. With the id_vault enabled a new
+  // member's DB legal_name is NULL; if no confirmed name was supplied, refuse rather
+  // than writing '' to empowered_profiles. (spec 2026-09-18-empower-promotion-legal-name-guard)
+  const legalNameForRpc = confirmed ?? connectedProfile.legal_name ?? '';
+  if (!legalNameForRpc.trim()) {
+    const err = new Error('A legal name is required to publish an Empowered profile.');
+    (err as NodeJS.ErrnoException).code = 'NO_LEGAL_NAME';
+    throw err;
+  }
+
   // 3. Call the execute_empowerment RPC — atomically creates/updates empowered_profiles
   //    and sets compass visibility to public
   const { data, error } = await supabaseAdmin
     .schema('empower')
     .rpc('execute_empowerment', {
       p_user_id: userId,
-      p_legal_name: connectedProfile.legal_name ?? '',
+      p_legal_name: legalNameForRpc,
       p_connected_profile_id: connectedProfile.id,
       p_reserved_slug: reservedSlug,
     });

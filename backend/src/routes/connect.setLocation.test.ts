@@ -54,6 +54,9 @@ vi.mock('../middleware/tierGuards.js', () => ({
   requireConnected: (_req: unknown, _res: unknown, next: () => void) => next(),
   requireEmpowered: (_req: unknown, _res: unknown, next: () => void) => next(),
 }));
+// idVault.js pulls env.js/db.js at module scope too (see connect.idVault.test.ts). Default
+// OFF here — this file exercises set-location's geocoding/district behaviour, not sealing.
+vi.mock('../lib/idVault.js', () => ({ isVaultEnabled: () => false, upsertSeal: vi.fn() }));
 
 import connectRouter from './connect.js';
 

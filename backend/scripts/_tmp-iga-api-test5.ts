@@ -28,7 +28,7 @@ if (js.length < 1000) {
   console.log('JS too short - still getting SPA shell:', js.slice(0, 300));
 } else {
   // Look for API endpoint patterns in the bundle
-  const apiDomains = js.match(/https?:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}\/[a-zA-Z0-9\/\-\_\.]{3,60}/g) || [];
+  const apiDomains = js.match(/https?:\/\/[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,6}\/[a-zA-Z0-9/\-_.]{3,60}/g) || [];
   const unique = [...new Set(apiDomains)].filter(u => !u.includes('fonts.') && !u.includes('cdnjs'));
   console.log('API URLs found:', unique.slice(0, 20));
 

@@ -185,8 +185,8 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
         ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
       JOIN essentials.geofence_boundaries gb2
         ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
-       AND gb1.geometry OPERATOR(public.&&) gb2.geometry
-      WHERE public.ST_Contains(gb1.geometry, public.ST_PointOnSurface(gb2.geometry))
+       AND gb1.geometry && gb2.geometry
+      WHERE ST_Contains(gb1.geometry, ST_PointOnSurface(gb2.geometry))
 
       UNION ALL
 
@@ -197,9 +197,9 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
         ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
       JOIN essentials.geofence_boundaries gb2
         ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
-       AND gb2.geometry OPERATOR(public.&&) gb1.geometry
+       AND gb2.geometry && gb1.geometry
       WHERE gb2.mtfcc NOT IN ('G4110', 'G4120')
-        AND public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
+        AND ST_Contains(gb2.geometry, ST_PointOnSurface(gb1.geometry))
 
       UNION ALL
 
@@ -216,14 +216,14 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
         ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
       JOIN essentials.geofence_boundaries gb2
         ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
-       AND gb1.geometry OPERATOR(public.&&) gb2.geometry
+       AND gb1.geometry && gb2.geometry
       WHERE gb2.mtfcc IN ('G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420')
-        AND public.ST_Intersects(gb1.geometry, gb2.geometry)
-        AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
+        AND ST_Intersects(gb1.geometry, gb2.geometry)
+        AND NOT ST_Touches(gb1.geometry, gb2.geometry)
         -- Drop boundary-imprecision slivers: require a real interior overlap of at
         -- least MIN_OVERLAP_FRACTION of the smaller polygon (see const above).
-        AND public.ST_Area(public.ST_Intersection(gb1.geometry, gb2.geometry))
-            >= ${MIN_OVERLAP_FRACTION} * LEAST(public.ST_Area(gb1.geometry), public.ST_Area(gb2.geometry))
+        AND ST_Area(ST_Intersection(gb1.geometry, gb2.geometry))
+            >= ${MIN_OVERLAP_FRACTION} * LEAST(ST_Area(gb1.geometry), ST_Area(gb2.geometry))
     ) t
   `;
 
@@ -332,7 +332,7 @@ async function findContainingCdFromGazetteerCentroid(geoId: string): Promise<str
   const { rows: cdRows } = await pool.query<{ geo_id: string }>(
     `SELECT geo_id FROM essentials.geofence_boundaries
       WHERE mtfcc = 'G5200'
-        AND public.ST_Contains(geometry, public.ST_SetSRID(public.ST_Point($1::float8, $2::float8), 4326))
+        AND ST_Contains(geometry, ST_SetSRID(ST_Point($1::float8, $2::float8), 4326))
       LIMIT 1`,
     [centroid.lon, centroid.lat]
   );

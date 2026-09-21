@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-09-18T22:07:02.377Z",
+  "jurisdictions": {
+    "philadelphia": {
+      "government_geo_id": "4260000",
+      "district_geo_id": "42101",
+      "district_mtfcc": "G4020",
+      "chamber": "City and County Elected Officials",
+      "consolidated": true,
+      "note": "No county commission: the City Council is it. These are the row offices a consolidated city keeps.",
+      "offices": [
+        {
+          "title": "District Attorney",
+          "full_name": "Larry Krasner",
+          "source": "https://phillyda.org/"
+        },
+        {
+          "title": "City Controller",
+          "full_name": "Christy Brady",
+          "source": "https://controller.phila.gov/"
+        },
+        {
+          "title": "Sheriff",
+          "full_name": "Rochelle Bilal",
+          "source": "https://www.phillysheriff.com/"
+        },
+        {
+          "title": "Register of Wills",
+          "full_name": "John P. Sabatina",
+          "source": "https://www.phila.gov/departments/register-of-wills/"
+        },
+        {
+          "title": "City Commissioner",
+          "full_name": "Omar Sabir",
+          "source": "https://vote.phila.gov/about-us/commissioners/"
+        },
+        {
+          "title": "City Commissioner",
+          "full_name": "Lisa M. Deeley",
+          "source": "https://vote.phila.gov/about-us/commissioners/"
+        },
+        {
+          "title": "City Commissioner",
+          "full_name": "Seth Bluestein",
+          "source": "https://vote.phila.gov/about-us/commissioners/"
+        }
+      ]
+    },
+    "centre": {
+      "government_name": "Centre County, Pennsylvania, US",
+      "government_geo_id": "42027",
+      "district_geo_id": "42027",
+      "district_mtfcc": "G4020",
+      "chambers": {
+        "board": "Board of County Commissioners",
+        "officers": "County Elected Officials"
+      },
+      "consolidated": false,
+      "offices": [
+        {
+          "title": "County Commissioner",
+          "full_name": "Mark Higgins",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "County Commissioner",
+          "full_name": "Amber Concepcion",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "County Commissioner",
+          "full_name": "Steven G. Dershem",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Controller",
+          "full_name": "Jason Moser",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Coroner",
+          "full_name": "Scott A. Sayers",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "District Attorney",
+          "full_name": "Bernie Cantorna",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Jury Commissioner",
+          "full_name": "Hope P. Miller",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Jury Commissioner",
+          "full_name": "Shelley Thompson",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Prothonotary and Clerk of Courts",
+          "full_name": "Jeremy S. Breon",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Recorder of Deeds",
+          "full_name": "Joseph L. Davidson",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Register of Wills and Clerk of the Orphans' Court",
+          "full_name": "Christine Millinder",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Sheriff",
+          "full_name": "Bryan Sampsel",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        },
+        {
+          "title": "Treasurer",
+          "full_name": "Colleen Kennedy",
+          "source": "https://centrecountypa.gov/2007/Elected-OfficialsOffices"
+        }
+      ]
+    }
+  },
+  "excluded_judicial": {
+    "reason": "Elected, and therefore in scope under the NC-3 inclusion ruling, but deferred to the judges wave North Carolina already owes.",
+    "centre_county": [
+      "Court of Common Pleas judges",
+      "six Magisterial District Judges"
+    ],
+    "philadelphia": [
+      "Court of Common Pleas",
+      "Municipal Court"
+    ]
+  },
+  "verify": {
+    "tested": 20,
+    "named": 20,
+    "notNamed": [],
+    "errors": []
+  },
+  "findings": []
+}

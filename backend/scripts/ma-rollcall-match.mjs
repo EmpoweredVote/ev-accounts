@@ -47,7 +47,7 @@ function parseSection(body) {
     const dec = s.match(/-\s*(\d+)\s*\.?\s*$/);
     if (dec) declared = Number(dec[1]);
     const m = s.replace(/-\s*\d+\s*\.?\s*$/, '').trim()
-      .match(/^([A-Z][A-Za-z'’\-]+(?:\s+[A-Z][A-Za-z'’\-]+)*),\s*([A-Z][A-Za-z'’\-]*)(?:\s+([A-Z])\.)?/);
+      .match(/^([A-Z][A-Za-z'’-]+(?:\s+[A-Z][A-Za-z'’-]+)*),\s*([A-Z][A-Za-z'’-]*)(?:\s+([A-Z])\.)?/);
     if (m) names.push({ surname: m[1].trim(), first: m[2].trim(), initial: m[3] || null, raw: s });
   }
   return { names, declared };

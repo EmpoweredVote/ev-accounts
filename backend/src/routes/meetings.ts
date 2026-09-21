@@ -46,7 +46,10 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // ---------------------------------------------------------------------------
 
 // GET /api/meetings
-// Optional query: ?city=Indianapolis&state=IN&status=completed
+// Optional query: ?city=Indianapolis&state=IN&status=scheduled
+// Public status gate (ev-cto decision 0017): the service intersects any status
+// filter with the public allowlist (published, scheduled), so ?status=draft (or
+// any internal status) returns nothing — a draft meeting cannot leak here.
 router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const filters: { city?: string; state?: string; status?: string; raceId?: string } = {};
 

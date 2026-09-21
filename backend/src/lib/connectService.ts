@@ -345,3 +345,28 @@ export async function getLocationConsent(userId: string): Promise<boolean> {
   if (error || !data) return false;
   return data.location_consent === true;
 }
+
+export interface EnrollmentDrafts {
+  legalName: string | null;
+  homeAddress: string | null;
+}
+
+/**
+ * getEnrollmentDrafts
+ * Server-side trusted read of the transient identity drafts captured during
+ * Connect enrollment (connect.verification_sessions.legal_name_draft /
+ * home_address_draft). Used by POST /complete's seal-on-write path (spec §4.4)
+ * to seal the real name and raw address into id_vault BEFORE complete_connect_flow
+ * nulls both drafts. Returns nulls when there is no session for the user, or a
+ * draft is unset.
+ */
+export async function getEnrollmentDrafts(userId: string): Promise<EnrollmentDrafts> {
+  const { rows } = await pool.query<{ legal_name_draft: string | null; home_address_draft: string | null }>(
+    `SELECT legal_name_draft, home_address_draft FROM connect.verification_sessions WHERE user_id = $1`,
+    [userId]
+  );
+  return {
+    legalName: rows[0]?.legal_name_draft ?? null,
+    homeAddress: rows[0]?.home_address_draft ?? null,
+  };
+}

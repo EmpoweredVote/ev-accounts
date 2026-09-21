@@ -1,0 +1,386 @@
+[
+ {
+  "politician_id": "9c055e33-9f4e-4beb-b27b-6c9813f22a4b",
+  "name": "Roger J. Reinert",
+  "office": "Mayor",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/hp3llka2/reinert_roger_formal-headshot_-with-seal.jpg",
+  "page": "https://duluthmn.gov/mayor/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "070f6a39-f2cf-401f-9b06-57d56d8dd2d1",
+  "name": "Wendy Durrwachter",
+  "office": "Councilor, District 1",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/23afjqmb/i-8wdhrjc-x2.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/wendy-durrwachter/",
+  "license": "press_use",
+  "positional": true,
+  "_note": "Her own councillor page serves /media/23afjqmb/i-8wdhrjc-x2.jpg — an opaque CMS filename. VERIFY THE FACE before approving."
+ },
+ {
+  "politician_id": "79156520-c582-4f74-bf10-3231ed7e731a",
+  "name": "Diane Desotelle",
+  "office": "Councilor, District 2",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/unahu1iq/diane-desotelle-district-2-councilor.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/diane-desotelle/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "cbb2a902-f663-40e2-ba0d-1c8d962f71a3",
+  "name": "Roz Randorf",
+  "office": "Councilor, District 3",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/9117/rozrandorf0018.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/roz-randorf/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "de57525f-8f49-4833-9d5c-c394382e2840",
+  "name": "David Clanaugh",
+  "office": "Councilor, District 4",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/ndaddmij/david-clanaugh-district-4-city-councilor.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/david-clanaugh/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "54a12543-7568-4220-b638-211a6f34625a",
+  "name": "Janet Kennedy",
+  "office": "Councilor, District 5",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/9116/janet-kennedy-press.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/janet-kennedy/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "78bdd8d9-a2a0-44e8-bf1f-28db8a6ac5af",
+  "name": "Arik Forsman",
+  "office": "Councilor, At Large",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/xsrptm2t/forsman-head-shot.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/arik-forsman/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "ecf07d2c-e94b-47b8-833f-b6e35c9a0a73",
+  "name": "Jordon Johnson",
+  "office": "Councilor, At Large",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/4fdmblbq/jordon-johnson-at-large-city-councilor.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/jordon-johnson/",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "1033540d-1268-4189-a24d-89d807e20715",
+  "name": "Lynn Marie Nephew",
+  "office": "Councilor, At Large",
+  "cohort": "City of Duluth",
+  "url": null,
+  "page": "https://duluthmn.gov/city-council/city-councilors/lynn-marie-nephew/",
+  "license": "campaign_use",
+  "positional": true,
+  "_note": "NO PORTRAIT EXISTS that we may use. duluthmn.gov carries none — only the city logo. Her campaign has three photographs and all three are landscape; both crops were rejected. Commons has nothing. Facebook and Instagram are refused sources. She stays BLANK."
+ },
+ {
+  "politician_id": "84d06d20-3f6f-4318-a8f7-97b72c59a53d",
+  "name": "Terese Tomanek",
+  "office": "Councilor, At Large",
+  "cohort": "City of Duluth",
+  "url": "https://duluthmn.gov/media/12005/headshot.jpg",
+  "page": "https://duluthmn.gov/city-council/city-councilors/terese-tomanek/",
+  "license": "press_use",
+  "positional": true,
+  "_note": "Her own councillor page serves /media/12005/headshot.jpg — a generic CMS filename that names nobody. VERIFY THE FACE before approving."
+ },
+ {
+  "politician_id": "644b3ee9-31fd-4210-b2bc-54b47d6e9a19",
+  "name": "Kaohly Her",
+  "office": "Mayor",
+  "cohort": "City of Saint Paul",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/MayorHer.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:MayorHer.jpg",
+  "license": "cc_by-sa_4.0",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/large/public/2025-12/Mayor-Elect%20Her%20-%20Ward%203%20Tour%20-%20December%209%202025-20-2048x2048.jpeg.webp?itok=Du3PTque",
+  "_note": "stpaul.gov publishes only a ward-tour event photograph, and her campaign portrait was rejected. Commons holds a 2852x4008 CC BY-SA 4.0 photograph of her AS MAYOR, credit Travellers & Tinkers. The credit must travel with it."
+ },
+ {
+  "politician_id": "d41ccb51-4068-4fce-82d2-61c2e8472137",
+  "name": "Anika Bowie",
+  "office": "Councilmember, Ward 1",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Anika%20Bowie%20%28Ward%201%29.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-1",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2024-02/Anika%20Bowie%20%28Ward%201%29.jpg.webp?itok=FENOmu-r"
+ },
+ {
+  "politician_id": "79bc8a97-cf30-4dcb-88df-474b6cfe4706",
+  "name": "Rebecca Noecker",
+  "office": "Councilmember, Ward 2",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Rebecca%20Noecker%20%28Ward%202%29.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-2",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2024-02/Rebecca%20Noecker%20%28Ward%202%29.jpg.webp?itok=Fmptfj1s"
+ },
+ {
+  "politician_id": "4100a887-7a0a-4f56-a6d9-bb916de6aea4",
+  "name": "Saura Jost",
+  "office": "Councilmember, Ward 3",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Saura%20Jost%20%28Ward%203%29.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-3",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2024-02/Saura%20Jost%20%28Ward%203%29.jpg.webp?itok=NH1vOVnk"
+ },
+ {
+  "politician_id": "0a680f56-a996-4acb-a6f7-c80bed264845",
+  "name": "Molly Coleman",
+  "office": "Councilmember, Ward 4",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2026-02/CM%20Molly%20Coleman%20Headshot.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-4",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2026-02/CM%20Molly%20Coleman%20Headshot.jpg.webp?itok=mh7Q09eB"
+ },
+ {
+  "politician_id": "4b81d184-fbf8-4c65-bf5f-c90dfb5a0789",
+  "name": "HwaJeong Kim",
+  "office": "Councilmember, Ward 5",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Council%20Vice%20President%20HwaJeong%20Kim%20%28Ward%205%29.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-5",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2024-02/Council%20Vice%20President%20HwaJeong%20Kim%20%28Ward%205%29.jpg.webp?itok=wFNTl4H7"
+ },
+ {
+  "politician_id": "045ded13-2804-4b92-a2f8-07d52df8077e",
+  "name": "Nelsie Yang",
+  "office": "Councilmember, Ward 6",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Nelsie%20Yang%20%28Ward%206%29.jpg",
+  "page": "https://www.stpaul.gov/department/city-council/ward-6",
+  "license": "press_use",
+  "positional": false,
+  "_derivative_url": "https://www.stpaul.gov/sites/default/files/styles/max_325x325/public/2024-02/Nelsie%20Yang%20%28Ward%206%29.jpg.webp?itok=taDE13k2"
+ },
+ {
+  "politician_id": "a2446693-46aa-4c2e-bf8e-bb5d9b657d17",
+  "name": "Cheniqua Johnson",
+  "office": "Councilmember, Ward 7",
+  "cohort": "City of Saint Paul",
+  "url": "https://www.stpaul.gov/sites/default/files/2024-02/Cheniqua%20Johnson%20%28Ward%207%29.jpg",
+  "page": "https://www.stpaul.gov/departments/city-council",
+  "license": "press_use",
+  "positional": false,
+  "_note": "Her ward page offers only news-card images; the council portrait follows the same 2024-02 pattern as the other seven wards. 1200x960."
+ },
+ {
+  "politician_id": "abb0df4c-cdac-4639-8067-4212c417574c",
+  "name": "Annie Harala",
+  "office": "Commissioner, District 1",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Annie%20Harala.jpg?ver=TDLtSJHcnK98xE8lb_7hog%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "ae608f46-5315-4617-bc1b-2d297514cadc",
+  "name": "Patrick Boyle",
+  "office": "Commissioner, District 2",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Patrick%20Boyle.jpg?ver=BFTqJYuBAW2Ew37GhCfb2g%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "d2c99fc0-e2bf-4dc2-9e98-8ff263bdcd26",
+  "name": "Ashley Grimm",
+  "office": "Commissioner, District 3",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Ashley%20Grimm.jpg?ver=hjRlLkPa2TxwROHTcHJF5g%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "015ab82d-8127-493e-ac4f-2487ecc2a350",
+  "name": "Paul McDonald",
+  "office": "Commissioner, District 4",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Paul%20McDonald.jpg?ver=nAlCijeBYyt20rUDYIkfIA%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "4442fd29-050a-4d2e-b0be-172841ca119a",
+  "name": "Keith Musolf",
+  "office": "Commissioner, District 5",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Keith%20Musolf.jpg?ver=2019-09-06-103511-750",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "16a26e5a-7014-4942-9d9a-946793c21922",
+  "name": "Keith Nelson",
+  "office": "Commissioner, District 6",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/e-graphics/images/commisioners/Keith-Nelson2017.jpg",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "0c2602a1-5194-4aca-a1d2-a1c0cf889211",
+  "name": "Mike Jugovich",
+  "office": "Commissioner, District 7",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Board%20of%20Commissioners/images/Mike%20Jugovich.jpg?ver=ShheydbjsioyRPlcRQmEPg%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/our-county/board-of-commissioners/current-commissioners",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "012de5c9-545c-4bf8-93d6-0029d024d7c9",
+  "name": "Gordon Ramsay",
+  "office": "Sheriff",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Sheriff/images/Ramsay_Gordon.JPG?ver=L4spNCT2d9d2OGOfghq8LA%3d%3d",
+  "page": "https://www.stlouiscountymn.gov/departments-a-z/sheriff",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "2136d633-fbff-4649-b320-5b3167f14f15",
+  "name": "Kimberly J. Maki",
+  "office": "County Attorney",
+  "cohort": "St. Louis County",
+  "url": "https://content.govdelivery.com/attachments/fancy_images/MNSTLOUIS/2021/09/4906677/3720668/kim-maki_crop.jpg",
+  "page": "https://content.govdelivery.com/accounts/MNSTLOUIS/bulletins/2f02920",
+  "license": "press_use",
+  "positional": true,
+  "_note": "The county attorney page carries only a courthouse photograph. This is the county's OWN bulletin announcing her appointment (2021-09). Her campaign site is under construction."
+ },
+ {
+  "politician_id": "34e2dbc5-396e-4d46-ab22-edab02d18220",
+  "name": "Nancy Nilsen",
+  "office": "Auditor/Treasurer",
+  "cohort": "St. Louis County",
+  "url": "https://www.stlouiscountymn.gov/portals/0/Library/Dept/Auditor/DSC_4713%20-%20Nancy-1%20-%20Final%202.jpg",
+  "page": "https://www.stlouiscountymn.gov/departments-a-z/auditor",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "101d9309-dfa0-4f0f-904e-0ba3f980d129",
+  "name": "Tara Jebens-Singh",
+  "office": "Commissioner, District 1",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-08/Tara%20Jebens-Singh%20200x250.jpg?v=1755793433",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/tara-jebens-singh-district-1",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "1c8ac38a-58f4-4bc7-8d60-bac451cfa154",
+  "name": "Mary Jo McGuire",
+  "office": "Commissioner, District 2",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2026-02/Mary-Jo-McGuire-2026-200x250_0.jpg?v=1770245669",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/mary-jo-mcguire-district-2",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "196aecc9-a964-4fd5-badd-dbc359a5031f",
+  "name": "Garrison McMurtrey",
+  "office": "Commissioner, District 3",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-08/Garrison-McMurtrey-200x250.jpg?v=1755791663",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/garrison-mcmurtrey-district-3",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "18eb9f24-297d-4c64-bf14-819b79005138",
+  "name": "Rena Moran",
+  "office": "Commissioner, District 4",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-08/Rena-Moran-200x250.jpg?v=1755792958",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/rena-moran-district-4",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "cb465cff-fbef-4612-b6fb-3fc565a8a0da",
+  "name": "Rafael E. Ortega",
+  "office": "Commissioner, District 5",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-08/Rafael-Ortega-200x250.jpg?v=1755792271",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/rafael-ortega-district-5",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "7bd4ad93-9490-4cbc-ab23-fb9b33eec31c",
+  "name": "Mai Chong Xiong",
+  "office": "Commissioner, District 6",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/migrated-files/Mai-Chong-Xiong-200x250.jpg?v=1753925257",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/mai-chong-xiong-district-6-board-vice-chair",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "1c83fe10-a05d-44be-8b82-d5c47bb70c2e",
+  "name": "Kelly Miller",
+  "office": "Commissioner, District 7",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-08/Kelly-Miller-200x250.jpg?v=1755791910",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/board-commissioners/kelly-miller-district-7",
+  "license": "press_use",
+  "positional": false
+ },
+ {
+  "politician_id": "8afef6f6-b311-4d30-9a6e-cb39eaaf775f",
+  "name": "Bob Fletcher",
+  "office": "Sheriff",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-09/sheriff-fletcher-flag.jpg",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/sheriffs-office/meet-sheriff-fletcher",
+  "license": "press_use",
+  "positional": false,
+  "_note": "The board-style file is the -resized copy at 550x290 landscape; the un-resized original is 503x651 PORTRAIT. Same file, one suffix apart."
+ },
+ {
+  "politician_id": "3dad7cae-7ae6-49df-a095-39314cacee50",
+  "name": "John Choi",
+  "office": "County Attorney",
+  "cohort": "Ramsey County",
+  "url": "https://assets.ramseycountymn.gov/files/2025-09/IMG_0007.jpg?v=1756991452",
+  "page": "https://www.ramseycountymn.gov/your-government/leadership/county-attorneys-office",
+  "license": "press_use",
+  "positional": false
+ }
+]

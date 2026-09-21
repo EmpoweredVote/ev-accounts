@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-09-14",
+  "state": "MN",
+  "wave": "MN-3",
+  "note": "Hand-assembled from the sources below and change-checked member by member. Unlike MN-2 there is no machine reconciliation here: 18 seats across two cities, from two different publishers, with no third-party roster (Open States does not cover municipal councils).",
+  "sources": {
+    "duluth_gis": "City of Duluth GIS Office, VotingDistricts/MapServer/16 'Districts and City Councilors' - carries the sitting councilor's name per district",
+    "duluth_council": "https://duluthmn.gov/city-council/ and the nine individual councilor pages under /city-council/city-councilors/",
+    "duluth_charter": "Duluth City Charter ch. II 'Elective Officers' ss 2-5; ch. VI s 38",
+    "stpaul_gis": "City of Saint Paul, Council_Ward_/FeatureServer/0 'Council Ward' - carries the sitting councilmember's name, email and phone per ward",
+    "stpaul_council": "https://www.stpaul.gov/department/city-council and the seven ward pages",
+    "stpaul_charter": "Saint Paul City Charter - a mayor at large and seven councilmembers, one per ward, four-year terms"
+  },
+  "change_check": {
+    "method": "All 18 members' own pages fetched and scanned; see sweep-member-pages.mjs and read-duluth-terms.mjs.",
+    "pages_200": 18,
+    "identity_confirmed": 18,
+    "language_scanner_hits": 1,
+    "language_scanner_verdict": "BLIND TO THE ACTUAL DEFECT. The word scanner found one benign biographical line in 18 pages. The real signal was a DATE IN THE PAST on four pages, which no wording flagged.",
+    "expired_term_dates_found": 4,
+    "transitions_resolved": 3
+  },
+  "counts": { "offices": 18, "Duluth": 10, "Saint Paul": 8, "seated": 18, "vacant": 0 },
+  "roster": [
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "District 1", "district_number": 1, "title": "Councilor",
+      "full_name": "Wendy Durrwachter", "first_name": "Wendy", "last_name": "Durrwachter",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": "2028-01-03", "page_date_consistent": true,
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/wendy-durrwachter/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "District 2", "district_number": 2, "title": "Councilor",
+      "full_name": "Diane Desotelle", "first_name": "Diane", "last_name": "Desotelle",
+      "term_start": "2026-01-05", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-11-04", "page_states_term_expires": "2030-01-07", "page_date_consistent": true,
+      "predecessor_note": "Mike Mayou resigned end of June 2025 on moving out of the district; Deborah DeLuca was appointed interim by unanimous council vote and served until the first Monday in January, as ch. II s 4 requires. Desotelle won the November 2025 general with 80%. The INTERIM holder is not modelled: this wave seats who holds the seat today.",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/diane-desotelle/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "District 3", "district_number": 3, "title": "Councilor",
+      "full_name": "Roz Randorf", "first_name": "Roz", "last_name": "Randorf",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": "2028-01-03", "page_date_consistent": true,
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/roz-randorf/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "District 4", "district_number": 4, "title": "Councilor",
+      "full_name": "David Clanaugh", "first_name": "David", "last_name": "Clanaugh",
+      "term_start": "2026-01-05", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-11-04", "page_states_term_expires": "2030-01-07", "page_date_consistent": true,
+      "predecessor_note": "District 4 appears in BOTH the 2023 and 2025 election listings, which looked like a contradiction until it was read: Renee Van Nett left the seat, Tara Swenson won a special election to the unexpired PARTIAL term, and Clanaugh defeated Swenson in the November 2025 general, 53% to 46%.",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/david-clanaugh/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "District 5", "district_number": 5, "title": "Councilor",
+      "full_name": "Janet Kennedy", "first_name": "Janet", "last_name": "Kennedy",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": "2028-01-03", "page_date_consistent": true,
+      "leadership": "Vice President",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/janet-kennedy/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "At Large", "district_number": null, "title": "Councilor, At Large",
+      "full_name": "Arik Forsman", "first_name": "Arik", "last_name": "Forsman",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": "2026-01-05", "page_date_consistent": false,
+      "page_date_note": "STALE. The page states a term that expired 2026-01-05. Forsman won an at-large seat in November 2023, so his term runs to 2028-01-03. All four at-large pages carry the same expired date; the two 2023 winners and the two 2025 winners alike.",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/arik-forsman/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "At Large", "district_number": null, "title": "Councilor, At Large",
+      "full_name": "Lynn Marie Nephew", "first_name": "Lynn", "last_name": "Nephew",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": "2026-01-05", "page_date_consistent": false,
+      "page_date_note": "STALE, same as Forsman. Nephew won an at-large seat in November 2023.",
+      "leadership": "President",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/lynn-marie-nephew/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "At Large", "district_number": null, "title": "Councilor, At Large",
+      "full_name": "Terese Tomanek", "first_name": "Terese", "last_name": "Tomanek",
+      "term_start": "2026-01-05", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-11-04", "page_states_term_expires": "2026-01-05", "page_date_consistent": false,
+      "page_date_note": "STALE. Tomanek was RE-ELECTED at large in November 2025 with 10,504 votes, so her current term runs to 2030-01-07. Her page states the date her PREVIOUS term expired.",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/terese-tomanek/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Duluth City Council",
+      "seat": "At Large", "district_number": null, "title": "Councilor, At Large",
+      "full_name": "Jordon Johnson", "first_name": "Jordon", "last_name": "Johnson",
+      "term_start": "2026-01-05", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-11-04", "page_states_term_expires": "2026-01-05", "page_date_consistent": false,
+      "page_date_note": "STALE. Johnson is a NEWCOMER elected at large in November 2025 with 8,515 votes; his term began 2026-01-05 and runs to 2030-01-07. His page states an expiry that predates his own term.",
+      "source_url": "https://duluthmn.gov/city-council/city-councilors/jordon-johnson/"
+    },
+    {
+      "city": "Duluth", "place_geo_id": "2717000", "body": "Office of the Mayor",
+      "seat": "Mayor", "district_number": null, "title": "Mayor",
+      "full_name": "Roger J. Reinert", "first_name": "Roger", "last_name": "Reinert",
+      "term_start": "2024-01-01", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "page_date_note": "The mayor's page states only 'his term began in January 2024' and gives no day. 2024-01-01 is the first Monday in January 2024, which is the boundary the charter uses (ch. II s 4) and which the three district councilors elected alongside him confirm by stating an expiry of 2028-01-03.",
+      "source_url": "https://duluthmn.gov/mayor/"
+    },
+
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 1", "district_number": 1, "title": "Councilmember",
+      "full_name": "Anika Bowie", "first_name": "Anika", "last_name": "Bowie",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-1"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 2", "district_number": 2, "title": "Councilmember",
+      "full_name": "Rebecca Noecker", "first_name": "Rebecca", "last_name": "Noecker",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "leadership": "President",
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-2"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 3", "district_number": 3, "title": "Councilmember",
+      "full_name": "Saura Jost", "first_name": "Saura", "last_name": "Jost",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-3"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 4", "district_number": 4, "title": "Councilmember",
+      "full_name": "Molly Coleman", "first_name": "Molly", "last_name": "Coleman",
+      "term_start": "2025-08-27", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-08-12", "page_states_term_expires": null, "page_date_consistent": null,
+      "predecessor_note": "Council President Mitra Jalali announced her resignation in January 2025 citing health, effective 2025-03-08. Coleman won the SPECIAL ELECTION of 2025-08-12 with 52.36% and was sworn in 2025-08-27. The council index page's blanket line 'Councilmembers were elected to a 4-year term in 2023' is therefore WRONG FOR THIS SEAT -- another reason a list page is not a change-check. Old sub-pages still sit under /ward-4-councilmember-mitra-jalali/.",
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-4"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 5", "district_number": 5, "title": "Councilmember",
+      "full_name": "HwaJeong Kim", "first_name": "HwaJeong", "last_name": "Kim",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "alternate_names": ["Hwa Jeong Kim"],
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-5"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 6", "district_number": 6, "title": "Councilmember",
+      "full_name": "Nelsie Yang", "first_name": "Nelsie", "last_name": "Yang",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "leadership": "Vice President",
+      "page_note": "Her page says she was 'sworn into the Saint Paul City Council in January 2020'. That is her FIRST term, not the current one; she began a second term with the rest of the 2024 council.",
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-6"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Saint Paul City Council",
+      "seat": "Ward 7", "district_number": 7, "title": "Councilmember",
+      "full_name": "Cheniqua Johnson", "first_name": "Cheniqua", "last_name": "Johnson",
+      "term_start": "2024-01-09", "start_precision": "day", "how_started": "elected",
+      "elected": "2023-11-07", "page_states_term_expires": null, "page_date_consistent": null,
+      "page_note": "Ward 7's URL is /ward-7-cheniqua-johnson, not /ward-7. The guessed /ward-7 returns a 404 whose 110 KB body mentions 'Johnson' twice, so a surname-only identity test PASSES on it. Status is checked before content.",
+      "source_url": "https://www.stpaul.gov/department/city-council/ward-7-cheniqua-johnson"
+    },
+    {
+      "city": "Saint Paul", "place_geo_id": "2758000", "body": "Office of the Mayor",
+      "seat": "Mayor", "district_number": null, "title": "Mayor",
+      "full_name": "Kaohly Her", "first_name": "Kaohly", "last_name": "Her",
+      "term_start": "2026-01-02", "start_precision": "day", "how_started": "elected",
+      "elected": "2025-11-04", "page_states_term_expires": null, "page_date_consistent": null,
+      "alternate_names": ["Kaohly Vang Her"],
+      "note": "56th Mayor of Saint Paul; the city's first woman, first Asian American and first Hmong American mayor. She defeated the incumbent Melvin Carter on 2025-11-04 and was sworn in 2026-01-02. She is the SAME PERSON the Minnesota House's Leadership tab still lists for HD-64A, which is what MN-2 found and could not explain from House sources alone.",
+      "source_url": "https://www.stpaul.gov/departments/mayors-office"
+    }
+  ]
+}

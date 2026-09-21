@@ -170,7 +170,7 @@ const QUERY = `
         WHEN EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE s = ANY($1::text[])
-              OR lower(regexp_replace(s, '^https?://(www\\.)?([^/]+).*\$', '\\2')) = ANY($2::text[])
+              OR lower(regexp_replace(s, '^https?://(www\\.)?([^/]+).*$', '\\2')) = ANY($2::text[])
         )                                                          THEN 'FABRICATED_SOURCE'
         -- A "source" that is not a URL at all cannot be opened, checked or believed.
         --
@@ -189,7 +189,7 @@ const QUERY = `
         -- receives a control character. A literal CR in this comment broke the query once already.)
         WHEN EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
-           WHERE s !~* '^https?://' AND s !~ '^[a-z0-9.-]+\\.[a-z]{2,}(/|\$)'
+           WHERE s !~* '^https?://' AND s !~ '^[a-z0-9.-]+\\.[a-z]{2,}(/|$)'
         )                                                          THEN 'NON_URL_SOURCE'
         -- Every source is a bare domain with no path. Whether that is fatal depends ENTIRELY on
         -- WHOSE domain it is, and the first version of this check did not ask. Measured 2026-07-31:
@@ -205,11 +205,11 @@ const QUERY = `
         -- and never will.
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
-           WHERE btrim(s, '/') !~* '^https?://(www\.)?[a-z0-9.-]+$'
+           WHERE btrim(s, '/') !~* '^https?://(www.)?[a-z0-9.-]+$'
         ) THEN CASE
           WHEN NOT EXISTS (
             SELECT 1 FROM unnest(pc.sources) s
-             WHERE lower(regexp_replace(btrim(s, '/'), '^https?://(www\.)?', '')) NOT IN (
+             WHERE lower(regexp_replace(btrim(s, '/'), '^https?://(www.)?', '')) NOT IN (
                'ballotpedia.org', 'wikipedia.org', 'en.wikipedia.org', 'vote411.org', 'votesmart.org',
                'ontheissues.org', 'opensecrets.org', 'followthemoney.org', 'govtrack.us',
                'legiscan.com', 'congress.gov', 'senate.gov', 'house.gov', 'ourcampaigns.com')
@@ -234,7 +234,7 @@ const QUERY = `
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE s NOT ILIKE '%ballotpedia%'
-              OR s ~* 'ballotpedia\.org/[^#]+#Campaign_themes'
+              OR s ~* 'ballotpedia.org/[^#]+#Campaign_themes'
               OR s ILIKE '%Candidate_Connection%'
         )                                                          THEN 'BALLOTPEDIA_ONLY'
         ELSE NULL

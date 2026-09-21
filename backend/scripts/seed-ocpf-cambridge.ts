@@ -438,7 +438,8 @@ async function seedCityCouncil(pool: pg.Pool): Promise<void> {
           `City Council seed from OCPF /reports/cc/ytd — filerName: ${report.filerName}`,
         ]
       );
-      (result.rowCount ?? 0) > 0 ? inserted++ : alreadyExisted++;
+      if ((result.rowCount ?? 0) > 0) inserted++;
+      else alreadyExisted++;
     }
   }
 

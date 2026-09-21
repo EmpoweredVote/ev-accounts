@@ -21,6 +21,7 @@ import type { Request, Response } from 'express';
 import { z } from 'zod';
 import {
   getCities,
+  getEntityAliases,
   getCityById,
   getBudgetsByCityId,
   getBudgetById,
@@ -50,12 +51,52 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // value — including none — returns the default response byte-for-byte unchanged,
 // because this endpoint is a cross-app contract and trimming it by default would
 // be a silent breaking change.
+//
+// ⚠ `?slug=<entity-slug>` narrows the response to the single entity that slug
+// addresses, as an ARRAY (empty when nothing matches) — same shape, same rows,
+// same contract, so a caller can swap it in without special-casing the result.
+// An unmatched slug is `[]`, never a substituted entity: TT turns that into its
+// "entity not found" landing rather than rendering a different government's
+// budget. Absent or empty `?slug=`, the response is unchanged.
+//
+// ⚠ CACHING: this endpoint is identical for every caller (the handler never
+// reads req.user — optionalAuth is here for rate-limit identity only), so it is
+// `public`. It is also the single largest thing on every Treasury Tracker page
+// load and was previously served with NO Cache-Control at all, which made
+// Cloudflare mark it DYNAMIC and every browser refetch all 3.2 MB on every
+// visit. The entity list changes only when a loader runs, so five minutes of
+// staleness costs nothing a reader can perceive; stale-while-revalidate keeps
+// the refresh off the critical path for an hour after that.
 router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const cities = await getCities(req.query['datasets'] === 'summary' ? 'summary' : 'full');
+    const slugParam = typeof req.query['slug'] === 'string' ? req.query['slug'].trim() : '';
+    if (slugParam.length > 200) {
+      res.status(422).json({ code: 'INVALID_SLUG', message: 'slug too long' });
+      return;
+    }
+    const cities = await getCities(
+      req.query['datasets'] === 'summary' ? 'summary' : 'full',
+      slugParam || undefined
+    );
+    res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
     res.status(200).json(cities);
   } catch (err) {
     console.error('[GET /treasury/cities] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// GET /api/treasury/aliases
+// Names entities used to be published under, so Treasury Tracker can resolve a
+// `?entity=` link whose slug was retired by a publisher rename. Static path, no
+// input, no auth beyond the optional pass — the same public read as /cities.
+// NOTE: registered before /cities/:id-style params.
+router.get('/aliases', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const aliases = await getEntityAliases();
+    res.status(200).json(aliases);
+  } catch (err) {
+    console.error('[GET /treasury/aliases] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

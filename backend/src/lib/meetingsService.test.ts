@@ -11,9 +11,16 @@ import {
   getMeetingById,
   getMeetingEntityState,
   getMeetings,
+  getSummaryByMeetingId,
+  getTranscriptByMeetingId,
   getUpcomingMeetings,
+  getVotesByMeetingId,
   updateMeeting,
 } from './meetingsService.js';
+import {
+  publicMeetingStatusClause,
+  publicMeetingExistsClause,
+} from './meetingVisibility.js';
 
 // A representative meetings.meetings row with a full summary JSONB.
 const fullSummary = {
@@ -421,5 +428,72 @@ describe('admin writes no longer touch race_id', () => {
         return m !== null && /\brace_id\b/.test(m[1]);
       })
     ).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Public status gate (on-the-record ev-cto decision 0017): a draft meeting and
+// anything derived from it must be invisible on every unauthenticated read.
+// ---------------------------------------------------------------------------
+
+describe('meeting status gate — public reads exclude drafts', () => {
+  it('getMeetings gates the list on the public status allowlist', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings();
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingStatusClause());
+  });
+
+  it('getMeetings keeps the allowlist even when a status is explicitly requested (?status=draft cannot leak)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings({ status: 'draft' });
+    const [sql, params] = mockQuery.mock.calls[0];
+    // The requested status is still bound, but intersected with the allowlist —
+    // 'draft' ∩ {published,scheduled} = ∅, so no draft row can return.
+    expect(params).toContain('draft');
+    expect(sql).toContain(publicMeetingStatusClause());
+  });
+
+  it('getMeetingById gates the detail read on the allowlist', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [baseRow] })
+      .mockResolvedValueOnce({ rows: [] }); // speakers
+    await getMeetingById('m1');
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingStatusClause());
+  });
+
+  it('getMeetingById lets an authenticated admin see all statuses', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ ...baseRow, status: 'draft' }] })
+      .mockResolvedValueOnce({ rows: [] });
+    await getMeetingById('m1', { includeAllStatuses: true });
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).not.toContain(publicMeetingStatusClause());
+  });
+
+  it('getTranscriptByMeetingId gates both segment and count queries on the parent meeting', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [] }) // segments
+      .mockResolvedValueOnce({ rows: [{ count: '0' }] }); // count
+    await getTranscriptByMeetingId('m1', 1);
+    const [segSql] = mockQuery.mock.calls[0];
+    const [countSql] = mockQuery.mock.calls[1];
+    expect(segSql).toContain(publicMeetingExistsClause('$1'));
+    expect(countSql).toContain(publicMeetingExistsClause('$1'));
+  });
+
+  it('getSummaryByMeetingId gates the summary read on the allowlist', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ summary: null }] });
+    await getSummaryByMeetingId('m1');
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingStatusClause());
+  });
+
+  it('getVotesByMeetingId gates the votes read on the parent meeting', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getVotesByMeetingId('m1');
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(publicMeetingExistsClause('$1'));
   });
 });

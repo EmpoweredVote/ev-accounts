@@ -22,6 +22,15 @@ const envSchema = z.object({
   // computeRaceMatch matches on quote_id and never reads the token.
   READRANK_TOKEN_SECRET: z.string().min(1),
   DATABASE_URL: z.string().min(1),
+  // CIVIC_SPACES_DATABASE_URL: connection string for the folded Civic Spaces slice-assignment
+  // module (engine consolidation — ev-cto decision 0018). It authenticates as a DEDICATED,
+  // least-privilege Postgres role `civic_spaces_app` that holds grants on ONLY the three
+  // civic_spaces tables it writes — NOT the broad engine key. This walls the module off from
+  // identity (connected_profiles.user_id joins to identity; PRIVACY-ARCHITECTURE property A).
+  // Optional so the engine still boots without it: absent = POST /api/civic-spaces/assign
+  // returns 500 (misconfigured) but nothing else is affected. Lives in the Render dashboard,
+  // never in git. See src/civic_spaces/config/database.ts and migration CA_0111.
+  CIVIC_SPACES_DATABASE_URL: z.string().optional(),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),
@@ -48,6 +57,11 @@ const envSchema = z.object({
   // Campaign finance adapter keys — all optional; absent = feature degraded but server still starts.
   // FEC_API_KEY: register free at api.data.gov/signup/ for 1000 req/hr limit.
   FEC_API_KEY: z.string().optional(),
+  // CONGRESS_GOV_API_KEY: free api.data.gov key (register at https://api.congress.gov)
+  // for the congress.gov official-API verification tier (congressAdapter). Optional —
+  // absent = the adapter is a no-op and congress.gov URLs fall through to the fetch
+  // ladder (tier 1 → Wayback), today's behavior. Lives in the Render dashboard, never in git.
+  CONGRESS_GOV_API_KEY: z.string().optional(),
   // ADMIN_INGEST_TOKEN: pre-shared token for POST /admin/ingest/:adapter.
   ADMIN_INGEST_TOKEN: z.string(),
   // SQS_INGEST_QUEUE_URL: optional SQS queue URL for EventBridge-triggered ingestion.
@@ -100,6 +114,25 @@ const envSchema = z.object({
   // the UI AuthKit-only, new signups could not sign in; with this true and the
   // UI classic-only, they could not either.
   AUTHKIT_PRIMARY: z.enum(['true', 'false']).default('false'),
+  // EV_ROLE selects what THIS process does (job/API split — ev-cto decision 0002 /
+  // hosting-decision-followup step 5). The always-on jobs used to run in the login API
+  // process; that mix blocks a second API copy and caused the 2026-07-22 P1.
+  //   unset (default) — today's exact behaviour: Express + every cron + SQS worker +
+  //                     boot recovery. Nothing changes until someone sets EV_ROLE=api.
+  //   'api'           — Express only: no crons, no SQS worker, no boot recovery.
+  //   'worker'        — the SQS ingestion long-poll loop only, no HTTP listener.
+  // Per-job runs use a SEPARATE entry (src/jobs/run.ts) and never read this var.
+  // An empty/whitespace value is treated as UNSET (default behaviour) rather than an
+  // error — a blank EV_ROLE in the dashboard must not brick the login API.
+  EV_ROLE: z.preprocess(
+    (v) => (typeof v === 'string' && v.trim() === '' ? undefined : v),
+    z.enum(['api', 'worker']).optional()
+  ),
+  // Identity vault (ev-cto decision 0022). PUBLIC key only — safe to hold.
+  // Absent = vault disabled: name/address keep today's storage. Set after the
+  // offline key ceremony (Phase B) to switch writes to the sealed vault.
+  ID_VAULT_PUBLIC_KEY: z.string().optional(),
+  ID_VAULT_KEY_VERSION: z.coerce.number().int().positive().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
@@ -110,4 +143,9 @@ if (!parsed.success) {
   process.exit(1);
 }
 
-export const env = parsed.data;
+// Ensure optional vault vars are included in env even if undefined
+export const env = {
+  ...parsed.data,
+  ID_VAULT_PUBLIC_KEY: parsed.data.ID_VAULT_PUBLIC_KEY,
+  ID_VAULT_KEY_VERSION: parsed.data.ID_VAULT_KEY_VERSION,
+};

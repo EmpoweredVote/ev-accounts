@@ -1,0 +1,2411 @@
+{
+ "source_layer": "https://services6.arcgis.com/3BIBAkkTYicFwv1e/arcgis/rest/services/WAYEO_WebMap_WFL1/FeatureServer/8",
+ "source_item": "92242dc49492424f8378103b52bfa480 (Indiana GIO, WAYEO)",
+ "compared_against": "lakecountyin.gov/departments/council/CC_District_Map3X5.pdf \u2014 Lake County Board of Elections & Registration, Esri ArcMap 10.8.1, created 2022-01-26",
+ "precinct_layer": "https://services5.arcgis.com/8CXRnvSfSpwdf0R6/arcgis/rest/services/Selectable_Features/FeatureServer/4 (Lake County Surveyor, field P26)",
+ "measured": "2026-09-11",
+ "agree": 339,
+ "disagree": 0,
+ "uncomparable": 3,
+ "negative_control": {
+  "georeference_shifted_60pt": "81.2%",
+  "georeference_shifted_200pt": "51.5%",
+  "label_adjacent_sampling": "37.9%"
+ },
+ "rows": [
+  {
+   "precinct": "CAL 05",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 177,
+   "agree": true
+  },
+  {
+   "precinct": "CAL 06",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 139,
+   "agree": true
+  },
+  {
+   "precinct": "CAL 10",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 232,
+   "agree": true
+  },
+  {
+   "precinct": "CAL 12",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 223,
+   "agree": true
+  },
+  {
+   "precinct": "CAL 14",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 182,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 163,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 157,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 04",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 267,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 05",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 112,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 06",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 85,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 07",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 193,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 08",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 266,
+   "agree": true
+  },
+  {
+   "precinct": "CCT 09",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 211,
+   "agree": true
+  },
+  {
+   "precinct": "CL 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 186,
+   "agree": true
+  },
+  {
+   "precinct": "CL 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 199,
+   "agree": true
+  },
+  {
+   "precinct": "CL 03",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 171,
+   "agree": true
+  },
+  {
+   "precinct": "CL 04",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 200,
+   "agree": true
+  },
+  {
+   "precinct": "CL 05",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 244,
+   "agree": true
+  },
+  {
+   "precinct": "CL 06",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 190,
+   "agree": true
+  },
+  {
+   "precinct": "CL 07",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 178,
+   "agree": true
+  },
+  {
+   "precinct": "CL 08",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 152,
+   "agree": true
+  },
+  {
+   "precinct": "CL 09",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 155,
+   "agree": true
+  },
+  {
+   "precinct": "CL 10",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 138,
+   "agree": true
+  },
+  {
+   "precinct": "CL 11",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 232,
+   "agree": true
+  },
+  {
+   "precinct": "CP 02",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 175,
+   "agree": true
+  },
+  {
+   "precinct": "CP 04",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 105,
+   "agree": true
+  },
+  {
+   "precinct": "CP 05",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 175,
+   "agree": true
+  },
+  {
+   "precinct": "CP 06",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 65,
+   "agree": true
+  },
+  {
+   "precinct": "CP 07",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 150,
+   "agree": true
+  },
+  {
+   "precinct": "CP 09",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 353,
+   "agree": true
+  },
+  {
+   "precinct": "CP 10",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 72,
+   "agree": true
+  },
+  {
+   "precinct": "CP 11",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 127,
+   "agree": true
+  },
+  {
+   "precinct": "CP 12",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 148,
+   "agree": true
+  },
+  {
+   "precinct": "CP 13",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 147,
+   "agree": true
+  },
+  {
+   "precinct": "CP 14",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 119,
+   "agree": true
+  },
+  {
+   "precinct": "CP 15",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 100,
+   "agree": true
+  },
+  {
+   "precinct": "CP 18",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 108,
+   "agree": true
+  },
+  {
+   "precinct": "CP 19",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 167,
+   "agree": true
+  },
+  {
+   "precinct": "CP 20",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 90,
+   "agree": true
+  },
+  {
+   "precinct": "CP 21",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 234,
+   "agree": true
+  },
+  {
+   "precinct": "CP 24",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 193,
+   "agree": true
+  },
+  {
+   "precinct": "CP 25",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 131,
+   "agree": true
+  },
+  {
+   "precinct": "CP 26",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 68,
+   "agree": true
+  },
+  {
+   "precinct": "CP 29",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 140,
+   "agree": true
+  },
+  {
+   "precinct": "CP 30",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 205,
+   "agree": true
+  },
+  {
+   "precinct": "CP 31",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 233,
+   "agree": true
+  },
+  {
+   "precinct": "CP 32",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 115,
+   "agree": true
+  },
+  {
+   "precinct": "CT 03",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 152,
+   "agree": true
+  },
+  {
+   "precinct": "CT 04",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 329,
+   "agree": true
+  },
+  {
+   "precinct": "CT 05",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 193,
+   "agree": true
+  },
+  {
+   "precinct": "CT 06",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 389,
+   "agree": true
+  },
+  {
+   "precinct": "CT 07 NV",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 14,
+   "agree": true
+  },
+  {
+   "precinct": "D 01",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 194,
+   "agree": true
+  },
+  {
+   "precinct": "D 02",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 150,
+   "agree": true
+  },
+  {
+   "precinct": "D 03",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 161,
+   "agree": true
+  },
+  {
+   "precinct": "D 04",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 74,
+   "agree": true
+  },
+  {
+   "precinct": "D 05",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 61,
+   "agree": true
+  },
+  {
+   "precinct": "D 06",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 116,
+   "agree": true
+  },
+  {
+   "precinct": "D 07",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 172,
+   "agree": true
+  },
+  {
+   "precinct": "D 08",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 93,
+   "agree": true
+  },
+  {
+   "precinct": "D 09",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 195,
+   "agree": true
+  },
+  {
+   "precinct": "D 10",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 182,
+   "agree": true
+  },
+  {
+   "precinct": "D 11",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 144,
+   "agree": true
+  },
+  {
+   "precinct": "D 14",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 131,
+   "agree": true
+  },
+  {
+   "precinct": "EC 03",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 182,
+   "agree": true
+  },
+  {
+   "precinct": "EC 05",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 70,
+   "agree": true
+  },
+  {
+   "precinct": "EC 07",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 59,
+   "agree": true
+  },
+  {
+   "precinct": "EC 08",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 109,
+   "agree": true
+  },
+  {
+   "precinct": "EC 11",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 125,
+   "agree": true
+  },
+  {
+   "precinct": "EC 13",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 201,
+   "agree": true
+  },
+  {
+   "precinct": "EC 17",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 148,
+   "agree": true
+  },
+  {
+   "precinct": "EC 22",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 52,
+   "agree": true
+  },
+  {
+   "precinct": "EC 23",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 348,
+   "agree": true
+  },
+  {
+   "precinct": "EC 25",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 86,
+   "agree": true
+  },
+  {
+   "precinct": "EC 28",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 191,
+   "agree": true
+  },
+  {
+   "precinct": "EC 31",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 124,
+   "agree": true
+  },
+  {
+   "precinct": "EC 33",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 46,
+   "agree": true
+  },
+  {
+   "precinct": "EC 35",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 42,
+   "agree": true
+  },
+  {
+   "precinct": "EC 36",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 142,
+   "agree": true
+  },
+  {
+   "precinct": "ECT 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 294,
+   "agree": true
+  },
+  {
+   "precinct": "ECT 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 239,
+   "agree": true
+  },
+  {
+   "precinct": "G1 03",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 179,
+   "agree": true
+  },
+  {
+   "precinct": "G1 08",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 111,
+   "agree": true
+  },
+  {
+   "precinct": "G1 16",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 217,
+   "agree": true
+  },
+  {
+   "precinct": "G1 18",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "G1 20",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 198,
+   "agree": true
+  },
+  {
+   "precinct": "G1 22",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 156,
+   "agree": true
+  },
+  {
+   "precinct": "G1 24",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 162,
+   "agree": true
+  },
+  {
+   "precinct": "G2 01",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 88,
+   "agree": true
+  },
+  {
+   "precinct": "G2 04",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 100,
+   "agree": true
+  },
+  {
+   "precinct": "G2 10",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "G2 11",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 133,
+   "agree": true
+  },
+  {
+   "precinct": "G2 12",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 287,
+   "agree": true
+  },
+  {
+   "precinct": "G2 17",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 67,
+   "agree": true
+  },
+  {
+   "precinct": "G2 20",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 152,
+   "agree": true
+  },
+  {
+   "precinct": "G3 03",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 126,
+   "agree": true
+  },
+  {
+   "precinct": "G3 11",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 157,
+   "agree": true
+  },
+  {
+   "precinct": "G3 15",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 70,
+   "agree": true
+  },
+  {
+   "precinct": "G3 16",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 167,
+   "agree": true
+  },
+  {
+   "precinct": "G3 17",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 166,
+   "agree": true
+  },
+  {
+   "precinct": "G3 19",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 159,
+   "agree": true
+  },
+  {
+   "precinct": "G3 21",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 170,
+   "agree": true
+  },
+  {
+   "precinct": "G3 26",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 101,
+   "agree": true
+  },
+  {
+   "precinct": "G4 01",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 227,
+   "agree": true
+  },
+  {
+   "precinct": "G4 03",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 144,
+   "agree": true
+  },
+  {
+   "precinct": "G4 05",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 108,
+   "agree": true
+  },
+  {
+   "precinct": "G4 10",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 113,
+   "agree": true
+  },
+  {
+   "precinct": "G4 16",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 91,
+   "agree": true
+  },
+  {
+   "precinct": "G4 23",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 114,
+   "agree": true
+  },
+  {
+   "precinct": "G4 25",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 113,
+   "agree": true
+  },
+  {
+   "precinct": "G5 01",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 104,
+   "agree": true
+  },
+  {
+   "precinct": "G5 02",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "G5 04",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 214,
+   "agree": true
+  },
+  {
+   "precinct": "G5 06",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 152,
+   "agree": true
+  },
+  {
+   "precinct": "G5 14",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 128,
+   "agree": true
+  },
+  {
+   "precinct": "G5 16",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 76,
+   "agree": true
+  },
+  {
+   "precinct": "G5 20",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 94,
+   "agree": true
+  },
+  {
+   "precinct": "G5 22",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 151,
+   "agree": true
+  },
+  {
+   "precinct": "G5 24 NV",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 160,
+   "agree": true
+  },
+  {
+   "precinct": "G5 28",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 172,
+   "agree": true
+  },
+  {
+   "precinct": "G6 02",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 127,
+   "agree": true
+  },
+  {
+   "precinct": "G6 05",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 92,
+   "agree": true
+  },
+  {
+   "precinct": "G6 07",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 85,
+   "agree": true
+  },
+  {
+   "precinct": "G6 10",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 131,
+   "agree": true
+  },
+  {
+   "precinct": "G6 12",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 74,
+   "agree": true
+  },
+  {
+   "precinct": "G6 14",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 113,
+   "agree": true
+  },
+  {
+   "precinct": "G6 16",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "G6 18",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 110,
+   "agree": true
+  },
+  {
+   "precinct": "GR 01",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 214,
+   "agree": true
+  },
+  {
+   "precinct": "GR 02",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 196,
+   "agree": true
+  },
+  {
+   "precinct": "GR 03",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 92,
+   "agree": true
+  },
+  {
+   "precinct": "GR 06",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 115,
+   "agree": true
+  },
+  {
+   "precinct": "GR 07",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 296,
+   "agree": true
+  },
+  {
+   "precinct": "GR 09",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 102,
+   "agree": true
+  },
+  {
+   "precinct": "GR 10",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 137,
+   "agree": true
+  },
+  {
+   "precinct": "GR 11",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 103,
+   "agree": true
+  },
+  {
+   "precinct": "GR 16",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 209,
+   "agree": true
+  },
+  {
+   "precinct": "GR 17",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 232,
+   "agree": true
+  },
+  {
+   "precinct": "GR 19 NV",
+   "wayeo_district": "3",
+   "pdf_2022_district": null,
+   "pdf_samples": 0,
+   "agree": null
+  },
+  {
+   "precinct": "H1 01",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 143,
+   "agree": true
+  },
+  {
+   "precinct": "H1 03",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 34,
+   "agree": true
+  },
+  {
+   "precinct": "H1 05",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 84,
+   "agree": true
+  },
+  {
+   "precinct": "H1 07",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 162,
+   "agree": true
+  },
+  {
+   "precinct": "H1 08",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 249,
+   "agree": true
+  },
+  {
+   "precinct": "H1 10",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 279,
+   "agree": true
+  },
+  {
+   "precinct": "H1 12",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 137,
+   "agree": true
+  },
+  {
+   "precinct": "H1 16",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 119,
+   "agree": true
+  },
+  {
+   "precinct": "H2 03",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 124,
+   "agree": true
+  },
+  {
+   "precinct": "H2 06",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 70,
+   "agree": true
+  },
+  {
+   "precinct": "H2 11",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 167,
+   "agree": true
+  },
+  {
+   "precinct": "H2 12",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 110,
+   "agree": true
+  },
+  {
+   "precinct": "H2 14",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 142,
+   "agree": true
+  },
+  {
+   "precinct": "H3 03",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 131,
+   "agree": true
+  },
+  {
+   "precinct": "H3 04",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 77,
+   "agree": true
+  },
+  {
+   "precinct": "H3 05",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 81,
+   "agree": true
+  },
+  {
+   "precinct": "H3 07",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 146,
+   "agree": true
+  },
+  {
+   "precinct": "H3 09",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 77,
+   "agree": true
+  },
+  {
+   "precinct": "H3 11",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 93,
+   "agree": true
+  },
+  {
+   "precinct": "H3 16",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 246,
+   "agree": true
+  },
+  {
+   "precinct": "H4 05",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 159,
+   "agree": true
+  },
+  {
+   "precinct": "H4 06",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 86,
+   "agree": true
+  },
+  {
+   "precinct": "H4 07",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 83,
+   "agree": true
+  },
+  {
+   "precinct": "H4 09",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 59,
+   "agree": true
+  },
+  {
+   "precinct": "H4 11",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "H4 12",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 91,
+   "agree": true
+  },
+  {
+   "precinct": "H4 14",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 95,
+   "agree": true
+  },
+  {
+   "precinct": "H4 18",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 53,
+   "agree": true
+  },
+  {
+   "precinct": "H5 04",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 109,
+   "agree": true
+  },
+  {
+   "precinct": "H5 08",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 269,
+   "agree": true
+  },
+  {
+   "precinct": "H5 12",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 122,
+   "agree": true
+  },
+  {
+   "precinct": "H5 13",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 137,
+   "agree": true
+  },
+  {
+   "precinct": "H5 14",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 186,
+   "agree": true
+  },
+  {
+   "precinct": "H5 15",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 116,
+   "agree": true
+  },
+  {
+   "precinct": "H5 17",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 149,
+   "agree": true
+  },
+  {
+   "precinct": "H6 04",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 191,
+   "agree": true
+  },
+  {
+   "precinct": "H6 05",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 114,
+   "agree": true
+  },
+  {
+   "precinct": "H6 07",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 86,
+   "agree": true
+  },
+  {
+   "precinct": "H6 08",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 94,
+   "agree": true
+  },
+  {
+   "precinct": "H6 09",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 61,
+   "agree": true
+  },
+  {
+   "precinct": "H6 10",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 143,
+   "agree": true
+  },
+  {
+   "precinct": "H6 12",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 139,
+   "agree": true
+  },
+  {
+   "precinct": "H6 13",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 158,
+   "agree": true
+  },
+  {
+   "precinct": "H6 15",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 121,
+   "agree": true
+  },
+  {
+   "precinct": "HL 03",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 130,
+   "agree": true
+  },
+  {
+   "precinct": "HL 04",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 141,
+   "agree": true
+  },
+  {
+   "precinct": "HL 05",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 270,
+   "agree": true
+  },
+  {
+   "precinct": "HL 06",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 84,
+   "agree": true
+  },
+  {
+   "precinct": "HL 08",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 63,
+   "agree": true
+  },
+  {
+   "precinct": "HL 09",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 218,
+   "agree": true
+  },
+  {
+   "precinct": "HL 10",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 105,
+   "agree": true
+  },
+  {
+   "precinct": "HL 11",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 110,
+   "agree": true
+  },
+  {
+   "precinct": "HL 12",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 117,
+   "agree": true
+  },
+  {
+   "precinct": "HL 15",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 77,
+   "agree": true
+  },
+  {
+   "precinct": "HL 19",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 48,
+   "agree": true
+  },
+  {
+   "precinct": "HL 20",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 28,
+   "agree": true
+  },
+  {
+   "precinct": "HL 23",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 139,
+   "agree": true
+  },
+  {
+   "precinct": "HL 24",
+   "wayeo_district": "2",
+   "pdf_2022_district": "2",
+   "pdf_samples": 95,
+   "agree": true
+  },
+  {
+   "precinct": "HL 25",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 111,
+   "agree": true
+  },
+  {
+   "precinct": "HL 26",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 183,
+   "agree": true
+  },
+  {
+   "precinct": "HO 02",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 168,
+   "agree": true
+  },
+  {
+   "precinct": "HO 03",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 178,
+   "agree": true
+  },
+  {
+   "precinct": "HO 04",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 182,
+   "agree": true
+  },
+  {
+   "precinct": "HO 05",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 123,
+   "agree": true
+  },
+  {
+   "precinct": "HO 06",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 170,
+   "agree": true
+  },
+  {
+   "precinct": "HO 07",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 57,
+   "agree": true
+  },
+  {
+   "precinct": "HO 10",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 132,
+   "agree": true
+  },
+  {
+   "precinct": "HO 11",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 104,
+   "agree": true
+  },
+  {
+   "precinct": "HO 12",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 57,
+   "agree": true
+  },
+  {
+   "precinct": "HO 15",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 76,
+   "agree": true
+  },
+  {
+   "precinct": "HO 16",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 169,
+   "agree": true
+  },
+  {
+   "precinct": "HO 19",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 110,
+   "agree": true
+  },
+  {
+   "precinct": "HO 22",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 127,
+   "agree": true
+  },
+  {
+   "precinct": "HO 23",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 166,
+   "agree": true
+  },
+  {
+   "precinct": "HO 25",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 267,
+   "agree": true
+  },
+  {
+   "precinct": "HO 27",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 121,
+   "agree": true
+  },
+  {
+   "precinct": "HO 29",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 245,
+   "agree": true
+  },
+  {
+   "precinct": "HOT 05",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 74,
+   "agree": true
+  },
+  {
+   "precinct": "HOT 08",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 47,
+   "agree": true
+  },
+  {
+   "precinct": "HOT 09",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 14,
+   "agree": true
+  },
+  {
+   "precinct": "HT 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 221,
+   "agree": true
+  },
+  {
+   "precinct": "HT 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 207,
+   "agree": true
+  },
+  {
+   "precinct": "HT 03",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 82,
+   "agree": true
+  },
+  {
+   "precinct": "LAKE MICHIGAN NV",
+   "wayeo_district": "3",
+   "pdf_2022_district": null,
+   "pdf_samples": 0,
+   "agree": null
+  },
+  {
+   "precinct": "LS 01",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 95,
+   "agree": true
+  },
+  {
+   "precinct": "LS 02",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 58,
+   "agree": true
+  },
+  {
+   "precinct": "LS 04",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 62,
+   "agree": true
+  },
+  {
+   "precinct": "LS 06",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 75,
+   "agree": true
+  },
+  {
+   "precinct": "LS 07",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 67,
+   "agree": true
+  },
+  {
+   "precinct": "LS 08",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 82,
+   "agree": true
+  },
+  {
+   "precinct": "LS 11",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 94,
+   "agree": true
+  },
+  {
+   "precinct": "LS 13",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 186,
+   "agree": true
+  },
+  {
+   "precinct": "LS 14 NV",
+   "wayeo_district": "3",
+   "pdf_2022_district": "3",
+   "pdf_samples": 184,
+   "agree": true
+  },
+  {
+   "precinct": "LS 15 NV",
+   "wayeo_district": "3",
+   "pdf_2022_district": null,
+   "pdf_samples": 0,
+   "agree": null
+  },
+  {
+   "precinct": "M 01",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 106,
+   "agree": true
+  },
+  {
+   "precinct": "M 02",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 170,
+   "agree": true
+  },
+  {
+   "precinct": "M 04",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 89,
+   "agree": true
+  },
+  {
+   "precinct": "M 05",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 61,
+   "agree": true
+  },
+  {
+   "precinct": "M 06",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 116,
+   "agree": true
+  },
+  {
+   "precinct": "M 08",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 152,
+   "agree": true
+  },
+  {
+   "precinct": "M 09",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 96,
+   "agree": true
+  },
+  {
+   "precinct": "M 11",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 128,
+   "agree": true
+  },
+  {
+   "precinct": "M 12",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 141,
+   "agree": true
+  },
+  {
+   "precinct": "M 13",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 133,
+   "agree": true
+  },
+  {
+   "precinct": "M 14",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 48,
+   "agree": true
+  },
+  {
+   "precinct": "M 15",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 57,
+   "agree": true
+  },
+  {
+   "precinct": "M 16",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 79,
+   "agree": true
+  },
+  {
+   "precinct": "M 18",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 200,
+   "agree": true
+  },
+  {
+   "precinct": "M 19",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 94,
+   "agree": true
+  },
+  {
+   "precinct": "M 20",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 83,
+   "agree": true
+  },
+  {
+   "precinct": "M 21",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 106,
+   "agree": true
+  },
+  {
+   "precinct": "M 22",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 143,
+   "agree": true
+  },
+  {
+   "precinct": "M 24",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 80,
+   "agree": true
+  },
+  {
+   "precinct": "M 25",
+   "wayeo_district": "1",
+   "pdf_2022_district": "1",
+   "pdf_samples": 49,
+   "agree": true
+  },
+  {
+   "precinct": "MER 01",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 92,
+   "agree": true
+  },
+  {
+   "precinct": "MER 02",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 143,
+   "agree": true
+  },
+  {
+   "precinct": "MER 03",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 179,
+   "agree": true
+  },
+  {
+   "precinct": "MER 04",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 283,
+   "agree": true
+  },
+  {
+   "precinct": "MER 05",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 230,
+   "agree": true
+  },
+  {
+   "precinct": "MER 07",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 99,
+   "agree": true
+  },
+  {
+   "precinct": "MER 08",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 63,
+   "agree": true
+  },
+  {
+   "precinct": "MER 09",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 156,
+   "agree": true
+  },
+  {
+   "precinct": "MER 10",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 121,
+   "agree": true
+  },
+  {
+   "precinct": "MER 11",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 87,
+   "agree": true
+  },
+  {
+   "precinct": "MER 12",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 206,
+   "agree": true
+  },
+  {
+   "precinct": "MER 13",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 98,
+   "agree": true
+  },
+  {
+   "precinct": "MER 15",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 97,
+   "agree": true
+  },
+  {
+   "precinct": "MER 16",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 166,
+   "agree": true
+  },
+  {
+   "precinct": "MER 18",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 177,
+   "agree": true
+  },
+  {
+   "precinct": "MER 19",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 190,
+   "agree": true
+  },
+  {
+   "precinct": "MER 21",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 102,
+   "agree": true
+  },
+  {
+   "precinct": "MER 22",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 256,
+   "agree": true
+  },
+  {
+   "precinct": "MER 23",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 125,
+   "agree": true
+  },
+  {
+   "precinct": "MER 28",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 169,
+   "agree": true
+  },
+  {
+   "precinct": "MER 29",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 108,
+   "agree": true
+  },
+  {
+   "precinct": "MER 30",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 56,
+   "agree": true
+  },
+  {
+   "precinct": "MER 33",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 204,
+   "agree": true
+  },
+  {
+   "precinct": "MER 34",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 202,
+   "agree": true
+  },
+  {
+   "precinct": "RT 20",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 252,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 02",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 102,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 04",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 215,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 06",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 56,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 07",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 186,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 09",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 76,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 10",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 89,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 13",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 92,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 14",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 127,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 15",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 120,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 16",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 143,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 17",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 99,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 18",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 105,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 19",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 369,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 20",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 340,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 22",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 169,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 24",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 96,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 26",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 115,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 27",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 82,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 28",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 84,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 32",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 110,
+   "agree": true
+  },
+  {
+   "precinct": "SCH 33",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 140,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 01",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 155,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 02",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 175,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 03",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 159,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 04",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 169,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 05",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 98,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 06",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 131,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 07",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 223,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 08",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 160,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 09",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 132,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 10",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 285,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 11",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 142,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 12",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 164,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 13",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 133,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 14",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 190,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 15",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 97,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 16",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 145,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 18",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 120,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 19",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 129,
+   "agree": true
+  },
+  {
+   "precinct": "SJ 20",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 117,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 01",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 67,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 02",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 309,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 03",
+   "wayeo_district": "6",
+   "pdf_2022_district": "6",
+   "pdf_samples": 122,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 04",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 306,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 07",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 51,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 08",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 244,
+   "agree": true
+  },
+  {
+   "precinct": "SJT 09",
+   "wayeo_district": "4",
+   "pdf_2022_district": "4",
+   "pdf_samples": 198,
+   "agree": true
+  },
+  {
+   "precinct": "W 01",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 162,
+   "agree": true
+  },
+  {
+   "precinct": "W 03",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 153,
+   "agree": true
+  },
+  {
+   "precinct": "W 04",
+   "wayeo_district": "5",
+   "pdf_2022_district": "5",
+   "pdf_samples": 254,
+   "agree": true
+  },
+  {
+   "precinct": "WCT 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 147,
+   "agree": true
+  },
+  {
+   "precinct": "WCT 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 281,
+   "agree": true
+  },
+  {
+   "precinct": "WCT 03",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 262,
+   "agree": true
+  },
+  {
+   "precinct": "WCT 04",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 206,
+   "agree": true
+  },
+  {
+   "precinct": "WCT 06",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 153,
+   "agree": true
+  },
+  {
+   "precinct": "WT 01",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 176,
+   "agree": true
+  },
+  {
+   "precinct": "WT 02",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 100,
+   "agree": true
+  },
+  {
+   "precinct": "WT 03",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 263,
+   "agree": true
+  },
+  {
+   "precinct": "WT 05",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 135,
+   "agree": true
+  },
+  {
+   "precinct": "WT 06",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 185,
+   "agree": true
+  },
+  {
+   "precinct": "WT 07",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 236,
+   "agree": true
+  },
+  {
+   "precinct": "WT 08",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 261,
+   "agree": true
+  },
+  {
+   "precinct": "WT 09",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 258,
+   "agree": true
+  },
+  {
+   "precinct": "WT 10",
+   "wayeo_district": "7",
+   "pdf_2022_district": "7",
+   "pdf_samples": 317,
+   "agree": true
+  }
+ ]
+}

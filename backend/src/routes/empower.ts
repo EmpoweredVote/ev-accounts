@@ -30,6 +30,7 @@ const ConfirmSchema = z.object({
     compass_stances_public: z.literal(true),
     platform_terms: z.literal(true),
   }),
+  legal_name: z.string().min(1).max(200).optional(),
 });
 
 const DemoteSchema = z.object({
@@ -61,7 +62,14 @@ router.post(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      const result = await runPreflight(authReq.userId);
+      const rawName = req.body?.legal_name;
+      // Trim once at the boundary: the confirmed name seeds both the stored public
+      // name and the candidate_page_slug, so padding must not leak downstream
+      // (a leading/trailing space becomes a leading-hyphen slug). A whitespace-only
+      // value resolves to undefined and falls through to the NO_LEGAL_NAME guard.
+      const confirmedName =
+        typeof rawName === 'string' && rawName.trim().length > 0 ? rawName.trim() : undefined;
+      const result = await runPreflight(authReq.userId, confirmedName);
       res.status(200).json(result);
     } catch (err) {
       console.error('[POST /empower/preflight] error:', err);
@@ -81,6 +89,7 @@ router.post(
 // Errors:
 //   422 CONSENT_INCOMPLETE — any consent item is missing or not literally true
 //   409 PREFLIGHT_EXPIRED  — slug reservation expired (re-run preflight)
+//   422 NO_LEGAL_NAME      — no legal name available to publish
 //   500 INTERNAL_ERROR     — unexpected failure
 // ---------------------------------------------------------------------------
 
@@ -100,12 +109,20 @@ router.post(
       return;
     }
 
+    // Trim once at the boundary: the confirmed name is stored verbatim in the
+    // PUBLIC empower.empowered_profiles.legal_name and seeds the candidate_page_slug.
+    // A whitespace-only value resolves to undefined so confirmEmpowerment falls back
+    // to the DB legal_name and its NO_LEGAL_NAME guard, rather than storing a blank.
+    const rawName = parsed.data.legal_name;
+    const confirmedName =
+      typeof rawName === 'string' && rawName.trim().length > 0 ? rawName.trim() : undefined;
+
     try {
-      const result = await confirmEmpowerment(authReq.userId, [
-        'legal_name_public',
-        'compass_stances_public',
-        'platform_terms',
-      ]);
+      const result = await confirmEmpowerment(
+        authReq.userId,
+        ['legal_name_public', 'compass_stances_public', 'platform_terms'],
+        confirmedName
+      );
       res.status(201).json({ empowered: true, profile: result.empowered_profile });
     } catch (err) {
       const errMessage = err instanceof Error ? err.message : String(err);
@@ -115,6 +132,14 @@ router.post(
         res.status(409).json({
           code: 'PREFLIGHT_EXPIRED',
           message: 'Preflight has expired. Please run preflight again.',
+        });
+        return;
+      }
+
+      if (errMessage.includes('NO_LEGAL_NAME') || errCode === 'NO_LEGAL_NAME') {
+        res.status(422).json({
+          code: 'NO_LEGAL_NAME',
+          message: 'A legal name is required to publish an Empowered profile.',
         });
         return;
       }
