@@ -9,7 +9,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ applied 2026-09-20 — 170 offices, 170 seated |
 | 3 city waves | ✅ applied 2026-09-20 — Columbia 7, Myrtle Beach 7 |
 | 4 county waves | ✅ applied 2026-09-20 — Richland 20, Horry 21, 40 seated, 1 vacant |
-| 5 assets | **WIP** — ✅ SC-5a applied 2026-09-20, the General Assembly is **170/170**. Owed: 54 city/county portraits + both banners |
+| 5 assets | **WIP** — ✅ SC-5a 2026-09-20 (legislature **170/170**) · ✅ SC-5b 2026-09-21 (city+county **47/54**, 7 documented blanks). SC is **232 of 240**. ▶ Owed: the two banners |
 
 ---
 
@@ -623,8 +623,9 @@ the boundary loader too (`inserted 0`).
 
 ### ▶ What SC still owes
 
-- **Stage 5** — ✅ **SC-5a applied**, see below. Owed: the **54 city and county portraits**
-  (14 city, 40 county) and banner keys for Columbia and Myrtle Beach.
+- **Stage 5** — ✅ **SC-5a and SC-5b applied**, see below. SC is **232 of 240** renderable.
+  Owed: **banner keys for Columbia and Myrtle Beach**, and the 7 portrait blanks
+  (Horry's Coroner and Probate Judge, five soil-and-water commissioners) if a source ever appears.
 - **The Solicitors**, with Palm Beach's State Attorney and Georgia's circuit DA: multi-county
   prosecutors the program has now declined three times and never scheduled.
 - **The watershed and school-board seats**, with North Carolina's school-board question.
@@ -757,3 +758,117 @@ else stores at native cropped size; **nothing was enlarged**.
 
 ▶ **Next: SC-5b — the 54 city and county portraits**, then the Columbia and Myrtle Beach banners.
 Neither city nor county source has been measured yet; measure colour and size together, as here.
+
+---
+
+# SC-5b — stage 5, the cities and counties. APPLIED 2026-09-21. 47 of 54.
+
+`scripts/build-sc-local-candidates.py` (new) → `scripts/import-headshot-candidates.py`
+→ `scripts/verify-imported-headshots.py`. No migration.
+
+| | Portraits / seats |
+| --- | --- |
+| Columbia (Mayor + 6 council) | **7 / 7** |
+| Myrtle Beach (Mayor + 6 at-large) | **7 / 7** |
+| Richland (11 council + 6 officers + 3 soil-and-water) | **17 / 20** |
+| Horry (12 council + 6 officers + 3 soil-and-water) | **16 / 21** |
+| **SC statewide** | **185 → 232 of 240** |
+
+47 imported, 0 skipped, 0 failed. Verified from outside with the count asserted:
+**47 tested, 47 decoded, 0 broken**, bogus-key control failed first.
+
+## 🔴 FOUR PUBLISHERS, FOUR PLATFORMS, AND ON NONE OF THEM WAS THE LINKED IMAGE THE BEST ONE
+
+| | What the page links | What is actually published |
+| --- | --- | --- |
+| **Columbia** (WordPress) | the Mayor as a **440x358 LANDSCAPE** file on the council index | **1828x2560 portrait** in his own subdomain's media library |
+| **Richland** (Umbraco) | `…/jason-branham.jpg?dimension=userprofile&w=150&h=150` | **strip the query → 2944x3761**, nearly 20x the linked pixels |
+| **Horry** (Umbraco) | `…/media/<hash>/anderson-tom.jpg` | already the original — up to **4361x6394** |
+| **Myrtle Beach** | plain `<img>` | the original, 450x556 to 1912x2709 |
+
+🟢 **THE WORDPRESS RULE PAID OUT AGAIN, AND ITS SEARCH STILL MISSED HIM.** PA's Philadelphia
+Sheriff lesson is *ask `wp-json/wp/v2/media` before settling for what the page links*. Columbia's
+council site is the **council's** site: it carries six member profiles at 323x427 and no profile
+page for the Mayor at all. His portrait is on `mayor.columbiasc.gov` —
+but `search=Rickenmann` returns **nothing**, because the file the council links is spelled
+**`daniel-rikenmann`**, with one k. ▶ **Search the media library for more than the correct
+spelling.**
+
+🔴 **THE RESIZE CAN BE IN THE QUERY STRING.** Richland serves every councillor as a 150x150
+square through `?dimension=userprofile&w=150&h=150`. Nothing about the URL says "thumbnail" and
+the origin is a 2944x3761 portrait. ⚠ And stripping it is **not** a uniform win — three origins
+really are ~150px (Little, Terracio, Newton), so each was measured rather than assumed, and their
+own profile pages were asked too.
+
+## 🔴🔴 A WAF CAN REJECT A HALF-IMPERSONATION AND ACCEPT A BARE REQUEST
+
+`richlandcountysc.gov`, one image URL, measured:
+
+| Request | Result |
+| --- | --- |
+| bare (python-requests default UA) | **200** |
+| Chrome UA alone | **403** |
+| Chrome UA + Referer | **403** |
+| Chrome UA + `Accept: image/*` | **403** |
+| full Chrome header set **with** Referer | **200** |
+
+▶ **A BROWSER UA IS NOT A KEY. CLAIMING TO BE CHROME WHILE NOT SENDING WHAT CHROME SENDS IS THE
+THING BEING DETECTED** — the standing rule ("403 with a browser UA ⇒ Playwright") is exactly
+inverted here, and the pipeline's own partial UA would have 403'd every Richland portrait.
+⚠ The header set must also **match the resource**: sending `Sec-Fetch-Dest: document` while
+fetching a `.jpg` 403s on this host, and that alone gave four officers a false "no photo
+published" on the first pass. The builder writes the bytes it measured into the shared cache, so
+the importer never refetches them.
+
+## 🔴🔴 THE FIRST CANDIDATE FOR SHERIFF LEON LOTT WAS THE DEPARTMENT BADGE
+
+497x571, portrait-shaped, colourful, and with the words **"LEON LOTT"** rendered inside it — so a
+size test, a shape test and even a name check all passed it. **Looking at it is what rejected it.**
+▶ **A badge is portrait-shaped. Shape and size cannot tell a face from a graphic.**
+
+His real photo was then found only through **Playwright**: `rcsd.net` is a JS-rendered Wix build
+that serves a plain fetch **zero** internal links, and the portrait is identified by the `<img>`'s
+own `alt="Sheriff Leon Lott"`. It is a **2048x1490 landscape** press photo with a second officer
+standing behind him, so a centre crop would have framed the wrong man. Five crops were rendered
+and compared; the chosen override is `anchor_x 0.28, anchor_y 0.34, zoom 1.5`, which keeps him at
+a 0.76x downscale with the other officer out of frame.
+
+## ⚠ A FILENAME NAMING SOMEONE ELSE IS NOT ALWAYS AN ERROR
+
+Myrtle Beach files Councilwoman **Jackie Hatley** as `Jackie Vereen Revize 2023`. The page reads
+*"Councilwoman Jackie Vereen Hatley"* — Vereen is her maiden name, and it is the same person. The
+name was taken from the **page text beside the image**, never the filename, and all seven Myrtle
+Beach names are present with no stranger among them.
+
+Five frames were badged **verify face** because their filename does not name the person: Columbia
+uploads two councillors as `Untitled-design-99.png` and
+`Untitled-design-2026-01-07T135403.696.png`, Horry files its Sheriff as `sheriff-cutout.png` (the
+**office**, not the man), Hatley as above, and Lott as a bare Wix hash.
+
+## The 8 blanks, each with its reason
+
+| Seat | Why |
+| --- | --- |
+| Horry **Coroner** (Robert L. Edge, Jr.) | `horrycountysc.gov` publishes no portrait; its coroner page carries a 1500x414 banner and does not even name him |
+| Horry **Probate Judge** (R. Allen Beverly, Jr.) | the department page carries no image at all |
+| **5 soil-and-water commissioners** — Winburn, Willoughby, Johnson (Horry); Burts, McSwain (Richland) | SC DNR publishes these boards as a **names-and-dates table with no images**, so there is nothing to look for |
+| 1 Richland soil-and-water seat | **vacant** — nobody to photograph |
+
+These are dated, re-checkable gaps, not failures, and they appear on the proof sheet under
+"no candidate found" so coverage reads honestly.
+
+## Verified from outside, with the count asserted
+
+```
+control (bogus CDN key): failed as required -- HTTP 400
+tested 47 rows -- decoded 47, broken 0
+sizes: 600x750 x24, 323x404 x5, 445x556 x4, 320x400 x2, … 124x155 x1
+no photo at all (7): Burts, McSwain, Beverly, Willoughby, Edge, Winburn, Johnson
+count check: tested 47 == expected 47
+```
+
+**24 of 47 reach the full 600x750**; the rest store at native cropped size and **nothing was
+enlarged**. 🟢 **The no-monochrome gate ran over the whole wave and flagged zero** — the first
+wave since SC-5a made it a code rule.
+
+▶ **Stage 5 now owes only the Columbia and Myrtle Beach banners.**
