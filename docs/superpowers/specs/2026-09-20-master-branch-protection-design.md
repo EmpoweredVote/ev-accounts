@@ -1,6 +1,6 @@
 # Design — branch protection for `master`
 
-**Status:** Proposal, awaiting a decision (2026-09-20).
+**Status:** §1-§3 measured and current. §4 Step 1 is **built and merged** (PR #572, 2026-09-21); §4 Step 2 — turning the rule on — is still a decision awaiting Chris.
 **Decision owner:** Chris. Applying this changes repo settings, not code.
 **Measured:** 2026-09-20, against the GitHub API and `origin/master`'s `.github/workflows/ci.yml`.
 **Prompted by:** PR #552 merging with `mergeStateStatus: CLEAN` and no review, which contradicted
@@ -76,14 +76,15 @@ the approval for docs-only PRs).
 
 ## 3. Which checks are even eligible
 
-Job names are the status-check context names. Of the 13 jobs in `ci.yml`, only **four** run on
-`pull_request`:
+Job names are the status-check context names. Of the 14 jobs in `ci.yml`, only **five** run
+on `pull_request`:
 
 | Context | Guard | Requirable? |
 |---|---|---|
 | `backend lint · typecheck · test` | `github.event_name != 'schedule'` | ✅ |
 | `static guards` | `pull_request \|\| push` | ✅ |
 | `migration reservations` | `pull_request \|\| push` | ✅ |
+| `instrument-topic self-test` | *(no `if:` — runs on everything)* | ✅ |
 | `answer-season consumers` | *(no `if:` — runs on everything)* | ✅ |
 
 🔴 **The other nine must NEVER be required** — they are `schedule` / `workflow_dispatch` only, or
@@ -92,8 +93,18 @@ explicitly `!= 'pull_request'`, so requiring one blocks every PR forever, exactl
 unit`, `season corpus floor`, `spatial_ref_sys baseline`, `stance-read audit guard`,
 `state-leg OCD-ID suffixes`.
 
-`migration reservations` is the highest-value of the four — it is what enforces the allocated-slot
+`migration reservations` is the highest-value of the five — it is what enforces the allocated-slot
 rule that is otherwise pure convention.
+
+🔴 **This table said *four* when it was merged, and it was already wrong.** `instrument-topics`
+landed in `ci.yml` between this spec being written and being merged, hours apart. Nothing announced
+it; it was found by re-deriving the list from `origin/master` rather than trusting the copy written
+the day before.
+
+**That is the whole argument for requiring one aggregate name rather than a list of job names**, and
+it arrived as evidence instead of as a hypothetical. A protection config naming four contexts would
+now be silently one short — not failing, just quietly checking less than it claims. Treat any
+enumeration of jobs in this document as a snapshot; `ci ok` is the thing that stays correct.
 
 ---
 
@@ -110,11 +121,28 @@ Revisit reviews when a second person is actually reviewing. That is a staffing c
 settings change, and papering over it with `enforce_admins: false` would make the rule decorative
 from the first day.
 
-### Step 1 — make one context report on every PR
+### Step 1 — make one context report on every PR — ✅ DONE
+
+**Shipped in PR #572.** `pull_request` lost its `paths-ignore`; `push` kept its own, because
+protection evaluates a pull request's head commit and a docs-only push should still cost nothing. A
+dependency-free `changes` job does the path test once, the five jobs above carry
+`needs: changes` and skip when nothing outside docs changed, and **`ci ok`** aggregates them.
+
+Verified on #572 itself (a code change): `changes` green, all five jobs green, `ci ok` green, the
+eight schedule-only jobs skipped and untouched.
+
+⚠ **The docs-only path could not be tested from that PR** — `changes` diffs merge-base→head and the
+branch contained the workflow change, so `code` was always `true` there. It needed a separate
+docs-only PR after the merge. **Do not run Step 2 until that has been seen green**, because a
+required check that never reports is the exact failure this gate exists to remove, and turning the
+rule on first is the one order that can wedge the repository.
+
+The original options are kept below for the record.
+
 
 The four jobs cannot be required while `paths-ignore` can suppress them. Two ways out:
 
-**Option A (recommended) — one always-running gate.** Drop `paths-ignore` from the `pull_request`
+**Option A — BUILT, PR #572, merged 2026-09-21.** Drop `paths-ignore` from the `pull_request`
 trigger only, add a cheap first job that decides whether non-docs paths changed, and have the four
 real jobs `needs:` it and skip when they should. One extra job-minute on a docs PR instead of four,
 one context that always reports exactly once, and the header comment's cost argument survives
