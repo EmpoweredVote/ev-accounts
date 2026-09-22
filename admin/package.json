@@ -16,7 +16,7 @@
     "@dagrejs/dagre": "^3.1.1",
     "@headlessui/react": "^2.2.10",
     "@workos-inc/authkit-js": "^0.20.2",
-    "@xyflow/react": "^12.11.3",
+    "@xyflow/react": "^12.11.6",
     "d3-geo": "^3.1.1",
     "d3-selection": "^3.0.0",
     "d3-zoom": "^3.0.0",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@types/d3-geo": "^3.1.1",
-    "@types/d3-selection": "^3.0.11",
+    "@types/d3-selection": "^3.0.12",
     "@types/d3-zoom": "^3.0.8",
     "@types/geojson": "^7946.0.16",
     "@types/react": "^19.2.18",
