@@ -317,7 +317,7 @@ Show the user a formatted summary table:
 | Name 1 | abortion | 1 | "Voted against every restrict..." |
 | ...    | ...        | ... | ... |
 
-CSV saved to: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv`
+Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]/` (research.csv, evidence.csv, gate-findings.json, publish-report.json)
 ```
 
 ### Value-Change Guard — enforced in code
@@ -332,7 +332,7 @@ the review queue with reason `value-change`. Read the buckets from `publish-repo
 | `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` |
 | `unchanged` | same value already in the open season — skipped |
 | `review` | queued for a person: `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
-| `re-research` | gate-high (defective — fix and re-run, not written; this includes an unresolved politician whose row has any other severe finding) or below-threshold (unverified — queued) |
+| `re-research` | `gate-high` (defective — fix and re-run, not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
 
 **The public summary MUST move with the value.** `politician_context.reasoning` is the "here's how we
 got to this value" blurb shown on the candidate's **Essentials profile** and the **Compass** — it is
@@ -397,7 +397,7 @@ node ../.claude/skills/research-stances/scripts/build-and-check.mjs --csv $B/res
 
 Fix every **high** finding in the CSV (write the missing `editor_note`, de-identify honestly, strip
 the trailing ellipsis, neutralize the partisan tell) and re-run until it's clean. Do not push a CSV
-with high-severity findings.
+with high-severity mechanical findings.
 
 **(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
 the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
@@ -547,12 +547,12 @@ await pool.end();
 
 After the pipeline:
 > "Pushed [N] stances and [N] quote drafts for [politician names].
-> - [N] politician_answers upserted (NEW + approved changes only; [M] held for sign-off)
-> - [N] politician_context entries with reasoning and sources
+> - Stances (from publish-report.json): [N] auto-push, [N] unchanged, [N] queued for review ([reasons]), [N] re-research
+> - Every auto-pushed stance was written with its reasoning and its verified snippets
 > - Quotes: [inserted] inserted as drafts, [dupes] already present
 > - Audit: [clean / residual findings resolved via apply_fixes]
 > - Promoted to live: [selected] Read & Rank pick(s); held back (de-id leak): [leaks list]
-> - CSV preserved at: [file path]
+> - Batch preserved at: [batch directory] (research.csv, evidence.csv, gate-findings.json, publish-report.json)
 >
 > Reminder: a race becomes playable in Read & Rank only when ≥2 candidates in it each have a
 > readrank_selected de-identified quote on a live topic."
@@ -562,9 +562,9 @@ After the pipeline:
 ## ERROR HANDLING
 
 - If an agent fails or times out, report which politician failed and offer to retry just that one
-- If the CSV file can't be written, fall back to showing results in conversation and offer to retry the file write
+- If research.csv or evidence.csv can't be written, fall back to showing results in conversation and offer to retry the file write
 - If DB push fails for a specific row, report the error, skip that row, and continue with the rest
-- Never lose data — the CSV is the source of truth; DB push is additive
+- Never lose data — research.csv and evidence.csv in the batch directory are the source of truth, and publish-report.json records what happened to each row; DB push is additive
 
 ---
 
