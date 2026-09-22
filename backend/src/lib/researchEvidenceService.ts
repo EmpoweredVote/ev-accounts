@@ -192,6 +192,25 @@ export async function getResearchReviewById(id: string): Promise<ResearchReviewR
   return rows[0] ? mapReviewRow(rows[0]) : null;
 }
 
+/**
+ * Write one stance (answer + its public "why") into the OPEN season. The only stance write path
+ * for research: verify-stance-research --apply and the review queue both call this.
+ * Answer and context are written together on purpose — reasoning must never lag the value.
+ * Throws if the open season wrote nothing (no open season, or topic not in its question set).
+ */
+export async function writeVerifiedStance(args: {
+  politicianId: string; topicId: string; value: number; reasoning: string; sources: string[]; editorId: string | null;
+}): Promise<void> {
+  // Dynamic imports: a static import pulls db.js in before this file's tests install their mock.
+  const { pool } = await import('./db.js');
+  const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten } = await import('./seasonService.js');
+  const ans = await pool.query(UPSERT_ANSWER_SQL, [args.politicianId, args.topicId, args.value, args.editorId]);
+  await assertWritten(ans.rowCount ?? 0, args.topicId);
+  const ctx = await pool.query(UPSERT_CONTEXT_SQL,
+    [args.politicianId, args.topicId, args.reasoning, args.sources, args.editorId]);
+  await assertWritten(ctx.rowCount ?? 0, args.topicId);
+}
+
 export async function resolveResearchReview(
   id: string,
   resolvedBy: string,
@@ -219,24 +238,11 @@ export async function resolveResearchReview(
     .map((e) => e.url);
   const allSources = [...new Set([...machineVerifiedUrls, ...humanVerifiedUrls])];
 
-  // Imported dynamically, like db.js above and for the same reason: a STATIC
-  // import here pulls seasonService -> db.js in at module-eval time, before
-  // this file's tests can install their pool mock. It fails as a hoisting error
-  // about mockQuery, which reads as unrelated to seasons. Keep it dynamic.
-  const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten } =
-    await import('./seasonService.js');
-
-  // Season-aware write. The shape lives in seasonService so the six write sites
-  // cannot drift apart; it resolves the open season and that season's pinned
-  // ladder revision in the same statement, and writes NOTHING if none is open.
-  // assertWritten turns that silent no-op into an error naming the cause.
-  const ans = await pool.query(UPSERT_ANSWER_SQL,
-    [row.politicianId, row.topicId, finalValue, resolvedBy]);
-  await assertWritten(ans.rowCount ?? 0, row.topicId);
-
-  const ctx = await pool.query(UPSERT_CONTEXT_SQL,
-    [row.politicianId, row.topicId, finalReasoning, allSources, resolvedBy]);
-  await assertWritten(ctx.rowCount ?? 0, row.topicId);
+  // Season-aware write (answer + context together); see writeVerifiedStance.
+  await writeVerifiedStance({
+    politicianId: row.politicianId, topicId: row.topicId, value: finalValue,
+    reasoning: finalReasoning, sources: allSources, editorId: resolvedBy,
+  });
 
   // Write human-verified URLs to politician_context_evidence so they appear in citations
   const batchId = `human-review-${id}`;

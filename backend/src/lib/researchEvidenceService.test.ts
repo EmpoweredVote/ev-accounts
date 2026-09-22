@@ -110,3 +110,22 @@ describe('accumulateEvidence', () => {
     expect(mockQuery).not.toHaveBeenCalled();
   });
 });
+
+describe('writeVerifiedStance', () => {
+  it('writes the answer then the context through the season-aware SQL, in param order', async () => {
+    const { writeVerifiedStance } = await import('./researchEvidenceService.js');
+    const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+    const before = mockQuery.mock.calls.length;
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 }).mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await writeVerifiedStance({ politicianId: 'p', topicId: 't', value: 3, reasoning: 'r', sources: ['u'], editorId: 'e' });
+    const calls = mockQuery.mock.calls.slice(before);
+    expect(calls[0]).toEqual([UPSERT_ANSWER_SQL, ['p', 't', 3, 'e']]);
+    expect(calls[1]).toEqual([UPSERT_CONTEXT_SQL, ['p', 't', 'r', ['u'], 'e']]);
+  });
+  it('refuses to report success when the open season wrote nothing', async () => {
+    const { writeVerifiedStance } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 0 });
+    await expect(writeVerifiedStance({ politicianId: 'p', topicId: 't', value: 3, reasoning: 'r', sources: [], editorId: null }))
+      .rejects.toThrow();
+  });
+});
