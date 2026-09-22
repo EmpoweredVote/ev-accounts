@@ -823,11 +823,31 @@ export async function getFederalContext(): Promise<FederalContext> {
 }
 
 // ── Org financial summary (Treasury Tracker cross-team request 2026-06-20) ────
-// Serves treasury.org_financial_summary — one reconciled per-org (municipality_id +
+// Serves treasury.org_financial_summary_live — one reconciled per-org (municipality_id +
 // fiscal_year) financial row for the donor-facing transparency view. Every row carries
 // source_name/source_url/source_date (the always-sourced standard). goal_amount/goal_label
 // are added by a forward migration (Treasury Tracker Phase 76); `SELECT *` + `?? null` keeps
 // this forward-safe — the two columns serve automatically once they exist, null until then.
+//
+// ⚠ `SELECT *` alone is NOT enough for a new column to reach the client: every field is
+// mapped explicitly below, so a column added upstream must also be added to the interface
+// and the returned object. (The pre-existing comment above overstated this.)
+//
+// ── pending_gross (Treasury Tracker, 2026-09-22) ─────────────────────────────
+// The source is now the VIEW treasury.org_financial_summary_live, which adds
+// `pending_gross`: donations received through the Givebutter webhook since the last
+// reconcile. It is DERIVED from surviving webhook line items on every read and stored
+// nowhere, so it cannot drift or double-count — the Treasury loader already drops webhook
+// rows once an export absorbs them, so a surviving row is by construction not in the base.
+//
+// ⚠⚠ pending_gross is RAISED, never ON HAND. `balance`, `runway_months` and
+// `recon_variance` are bank-sourced and deliberately DO NOT move when a donation arrives:
+// the money sits with the platform until payout, minus fees. Do not add pending_gross to
+// balance anywhere downstream.
+//
+// The view is `security_invoker`, so the RLS of the underlying tables still applies to
+// whichever role this pool connects as — reading it is exactly as privileged as reading
+// the table was.
 export interface OrgFinancialSummary {
   municipality_id: string;
   fiscal_year: number;
@@ -839,6 +859,12 @@ export interface OrgFinancialSummary {
   income_gross: number;
   income_fees: number;
   income_net: number;
+  /**
+   * Donations received since the last reconcile (Givebutter webhook), gross.
+   * 0 when everything is already reconciled. RAISED, not ON HAND — see the note above.
+   * Gross because the platform fee is only known at payout; do not estimate one.
+   */
+  pending_gross: number;
   income_by_source: { source: string; gross: number; fee: number; net: number }[];
   recon_variance: number | null;
   recon_explanation: string | null;
@@ -863,13 +889,13 @@ export async function getOrgFinancialSummary(
   const { rows } =
     fiscalYear !== undefined
       ? await pool.query(
-          `SELECT * FROM treasury.org_financial_summary
+          `SELECT * FROM treasury.org_financial_summary_live
            WHERE municipality_id = $1 AND fiscal_year = $2
            LIMIT 1`,
           [municipalityId, fiscalYear]
         )
       : await pool.query(
-          `SELECT * FROM treasury.org_financial_summary
+          `SELECT * FROM treasury.org_financial_summary_live
            WHERE municipality_id = $1
            ORDER BY fiscal_year DESC
            LIMIT 1`,
@@ -890,6 +916,9 @@ export async function getOrgFinancialSummary(
     income_gross: Number(r.income_gross),
     income_fees: Number(r.income_fees),
     income_net: Number(r.income_net),
+    // `?? 0` keeps this safe if the view has not been applied yet in some environment:
+    // absent column -> 0 pending, i.e. exactly the old behaviour.
+    pending_gross: Number(r.pending_gross ?? 0),
     income_by_source: arr(r.income_by_source),
     recon_variance: num(r.recon_variance),
     recon_explanation: r.recon_explanation ?? null,

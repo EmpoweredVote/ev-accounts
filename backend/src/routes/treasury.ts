@@ -173,10 +173,16 @@ router.get(
 // GET /api/treasury/orgs/:id/financial-summary
 // Optional query: ?fiscal_year=2026 (latest available FY if omitted)
 // Cross-team request (Treasury Tracker, 2026-06-20): reconciled per-org financial
-// summary (treasury.org_financial_summary) for the donor-facing transparency view.
+// summary (treasury.org_financial_summary_live) for the donor-facing transparency view.
 // Always-sourced, public read. NOTE: /orgs/ is its own namespace — no static-path-
-// before-:id collision with /cities or /federal. Service uses SELECT * so the
-// goal_amount/goal_label columns (Treasury Tracker Phase 76 migration) serve forward-safely.
+// before-:id collision with /cities or /federal.
+//
+// ⚠ The service maps every field EXPLICITLY, so `SELECT *` alone does not make a new
+// column serve forward-safely — the interface and the returned object must name it too.
+// (Corrected 2026-09-22; the previous note here claimed otherwise.)
+//
+// Serves `pending_gross` (Treasury Tracker, 2026-09-22): donations arrived since the last
+// reconcile. It is RAISED, not ON HAND — never add it to `balance`.
 router.get(
   '/orgs/:id/financial-summary',
   optionalAuth,
