@@ -85,4 +85,22 @@ describe('checkBatch / toStanceRows', () => {
       { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
     ]);
   });
+
+  // I4: build-stance-topic-bundle dedupes politicians.json by id, not by name — two distinct
+  // people can share a full_name in one bundle, and neither polByName (last-match-wins) nor a
+  // per-row politician_id can tell them apart.
+  const JANE2: BundlePolitician = { full_name: 'Jane Doe', politician_id: 'p2', level: 'state', race_id: 'r2' };
+  it('flags a name shared by two bundle politicians as ambiguous-politician (high)', () => {
+    const f = checkBatch([good], [HEALTH], [JANE, JANE2], ev);
+    expect(f).toEqual([
+      expect.objectContaining({
+        full_name: 'Jane Doe', topic_key: 'healthcare', check_id: 'ambiguous-politician', severity: 'high',
+      }),
+    ]);
+  });
+  it('writes politician_id \'\' for an ambiguous name, even though one namesake would otherwise match', () => {
+    expect(toStanceRows([good], [JANE, JANE2])).toEqual([
+      { full_name: 'Jane Doe', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+    ]);
+  });
 });

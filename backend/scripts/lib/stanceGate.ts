@@ -37,7 +37,7 @@ export interface BundleTopic extends TopicApplicability {
 }
 export interface BundlePolitician { full_name: string; politician_id: string; level: Level | null; race_id: string | null }
 export type GateCheckId =
-  | 'unknown-politician' | 'value-out-of-range' | 'topic-not-in-season' | 'topic-out-of-scope'
+  | 'unknown-politician' | 'ambiguous-politician' | 'value-out-of-range' | 'topic-not-in-season' | 'topic-out-of-scope'
   | 'level-unknown' | 'no-source' | 'source-without-snippet' | 'snippet-too-short'
   | 'evidence-type-invalid' | 'record-no-instrument' | 'statement-needs-review' | 'party-inference';
 export interface GateFinding {
@@ -96,25 +96,59 @@ export function checkStanceRow(
   return out;
 }
 
+/** How many bundle politicians share each lowercase full_name — >1 means the name is ambiguous. */
+function nameCounts(politicians: BundlePolitician[]): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const p of politicians) {
+    const k = p.full_name.toLowerCase();
+    counts.set(k, (counts.get(k) ?? 0) + 1);
+  }
+  return counts;
+}
+
 export function checkBatch(
   rows: ResearchRow[], topics: BundleTopic[], politicians: BundlePolitician[], evidence: EvidenceRow[],
 ): GateFinding[] {
   const topicByKey = new Map(topics.map((t) => [t.topic_key, t]));
   const polByName = new Map(politicians.map((p) => [p.full_name.toLowerCase(), p]));
-  return rows.flatMap((r) => checkStanceRow(r, {
-    topic: topicByKey.get(r.topic_key),
-    politician: polByName.get(r.full_name.toLowerCase()),
-    evidence: evidence.filter((e) => e.full_name.toLowerCase() === r.full_name.toLowerCase() && e.topic_key === r.topic_key),
-  }));
+  // I4: build-stance-topic-bundle dedupes politicians.json by id, not by name, so two distinct
+  // people can share a full_name in one bundle. polByName above (last-match-wins) silently picks
+  // one of them for the row's scope/level checks, and toStanceRows' per-row politician_id can
+  // never tell them apart either — so a shared name is flagged here explicitly, rather than
+  // letting the verifier's single-id resolution quietly resolve onto whichever namesake matched
+  // last.
+  const counts = nameCounts(politicians);
+  return rows.flatMap((r) => {
+    const findings = checkStanceRow(r, {
+      topic: topicByKey.get(r.topic_key),
+      politician: polByName.get(r.full_name.toLowerCase()),
+      evidence: evidence.filter((e) => e.full_name.toLowerCase() === r.full_name.toLowerCase() && e.topic_key === r.topic_key),
+    });
+    const n = counts.get(r.full_name.toLowerCase()) ?? 0;
+    if (n > 1) {
+      findings.push({
+        full_name: r.full_name, topic_key: r.topic_key, check_id: 'ambiguous-politician', severity: 'high',
+        what: `${n} people in politicians.json share this name — research them in separate batches`,
+      });
+    }
+    return findings;
+  });
 }
 
 export function toStanceRows(rows: ResearchRow[], politicians: BundlePolitician[]): StanceRow[] {
   const polByName = new Map(politicians.map((p) => [p.full_name.toLowerCase(), p]));
-  return rows.map((r) => ({
-    full_name: r.full_name,
-    politician_id: polByName.get(r.full_name.toLowerCase())?.politician_id ?? '',
-    topic_key: r.topic_key,
-    value: r.value,
-    reasoning: r.reasoning,
-  }));
+  const counts = nameCounts(politicians);
+  return rows.map((r) => {
+    const k = r.full_name.toLowerCase();
+    // Ambiguous names never carry an id — see checkBatch above. An id chosen from a name
+    // collision is worse than no id: it looks resolved and can write onto the wrong namesake.
+    const ambiguous = (counts.get(k) ?? 0) > 1;
+    return {
+      full_name: r.full_name,
+      politician_id: ambiguous ? '' : (polByName.get(k)?.politician_id ?? ''),
+      topic_key: r.topic_key,
+      value: r.value,
+      reasoning: r.reasoning,
+    };
+  });
 }

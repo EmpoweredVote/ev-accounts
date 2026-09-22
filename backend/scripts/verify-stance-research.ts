@@ -8,8 +8,10 @@
  * .claude/skills/research-stances/README.md and
  * docs/superpowers/specs/2026-04-30-stance-research-verification-design.md.
  *
- *   Dry-run (default): prints the pushable / re-research / review partition,
- *     including the failed-source URLs to feed a re-research --exclude-urls list.
+ *   Dry-run (default): decides every scored row's action bucket — auto-push,
+ *     unchanged, review, or re-research — via stancePublishPolicy.decidePublish,
+ *     printing the bucket counts and, for re-research rows, the failed-source
+ *     URLs to feed a re-research pass.
  *   --apply: pushes auto-push rows through the season-aware writeVerifiedStance
  *     (inform.politician_answers + inform.politician_context) plus
  *     inform.politician_context_evidence, and writes review / below-threshold
@@ -20,8 +22,11 @@
  *     [--threshold 2] [--batch-id <id>] [--apply] [--re-researched] [--editor-id <uuid>]
  * Requires <dir>/gate-findings.json from scripts/stance-gate.ts.
  *
- * Idempotent: re-running the same batch (e.g. after appending re-research rows
- * to the CSVs) is safe — all writes are upserts / replace-by-key.
+ * Idempotent: re-running the same batch is safe — all writes are upserts /
+ * replace-by-key. A re-research pass adds rows to research.csv / evidence.csv and
+ * re-runs scripts/stance-gate.ts (which regenerates stances.csv and
+ * gate-findings.json together) — appending straight to stances.csv instead would
+ * fail the row-count check against gate-findings.json below.
  */
 import 'dotenv/config';
 import { readFileSync, existsSync, writeFileSync } from 'node:fs';
@@ -64,12 +69,26 @@ if (!DIR) {
 }
 // Default 1 verified source (cheap mode — avoids a re-research wave). Override
 // with --threshold or the RESEARCH_STANCES_THRESHOLD env var.
-const THRESHOLD = Number(opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1'));
+const rawThreshold = opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1');
+const THRESHOLD = Number(rawThreshold);
+if (!Number.isInteger(THRESHOLD) || THRESHOLD < 1) {
+  // An unvalidated NaN/0 threshold is not a strict setting — `verifiedSourceCount < THRESHOLD`
+  // is false for every row, so a bad --threshold silently AUTO-PUSHES rows no page verified.
+  console.error(`ERROR: --threshold (or RESEARCH_STANCES_THRESHOLD) must be an integer >= 1, got ${JSON.stringify(rawThreshold)}`);
+  process.exit(2);
+}
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
 const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const EDITOR_ID = opt('--editor-id', process.env.EV_EDITOR_ID) ?? null;
+if (EDITOR_ID && !UUID_RE.test(EDITOR_ID)) {
+  // Catches `--editor-id --apply` (opt() greedily takes the next argv token as the value, so
+  // EDITOR_ID becomes the literal string "--apply") before it can reach a query as a bad param.
+  console.error(`ERROR: --editor-id must be a uuid, got ${JSON.stringify(EDITOR_ID)}`);
+  process.exit(2);
+}
 if (APPLY && !EDITOR_ID) {
   console.error('ERROR: --apply needs --editor-id <admin user uuid> (or EV_EDITOR_ID) — a stance nobody authored is a row nobody can be asked about');
   process.exit(2);
@@ -87,10 +106,24 @@ if (!existsSync(stancesPath)) {
   console.error(`ERROR: ${stancesPath} not found`);
   process.exit(2);
 }
-const allStances: StanceRow[] = parseStancesCsv(readFileSync(stancesPath, 'utf8'));
-const evidenceRows: EvidenceRow[] = existsSync(evidencePath)
-  ? parseEvidenceCsv(readFileSync(evidencePath, 'utf8'))
-  : [];
+let allStances: StanceRow[];
+try {
+  allStances = parseStancesCsv(readFileSync(stancesPath, 'utf8'));
+} catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(`ERROR: ${stancesPath} is not valid CSV: ${msg}`);
+  process.exit(2);
+}
+let evidenceRows: EvidenceRow[] = [];
+if (existsSync(evidencePath)) {
+  try {
+    evidenceRows = parseEvidenceCsv(readFileSync(evidencePath, 'utf8'));
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`ERROR: ${evidencePath} is not valid CSV: ${msg}`);
+    process.exit(2);
+  }
+}
 
 // value=null rows are an explicit "insufficient evidence" signal: skip verification,
 // drop in normal mode (never pushed, never queued).
@@ -101,26 +134,48 @@ const stanceRows = allStances.filter((s) => s.value !== null);
 // gate-findings.json and stances.csv are written together by stance-gate.ts, from the same
 // research.csv. A row-count mismatch means gate-findings.json describes a different batch
 // than the one being verified here — a verdict from that is a blind detector, not a clean one.
-let gateFile: { findings: GateFinding[]; summary: { rows: number } };
+function isFindingShape(f: unknown): f is GateFinding {
+  if (typeof f !== 'object' || f === null) return false;
+  const r = f as Record<string, unknown>;
+  return typeof r.full_name === 'string' && typeof r.topic_key === 'string'
+    && typeof r.check_id === 'string' && typeof r.severity === 'string';
+}
+
+let gateFileRaw: unknown;
 try {
-  gateFile = JSON.parse(readFileSync(gatePath, 'utf8'));
+  gateFileRaw = JSON.parse(readFileSync(gatePath, 'utf8'));
 } catch (err) {
   const msg = err instanceof Error ? err.message : String(err);
   console.error(`ERROR: ${gatePath} is not valid JSON: ${msg}`);
   process.exit(2);
 }
-if (!Array.isArray(gateFile.findings)) {
-  console.error(`ERROR: ${gatePath} is not valid JSON: .findings is not an array`);
+// M5: a malformed-but-parseable file (a non-object top level, a missing .summary, or a finding
+// missing a required field) used to reach a property access on `undefined`/`null` further down
+// and crash with an uncaught TypeError (exit 1) instead of the deliberate "usage/unreadable"
+// exit 2 this script uses everywhere else. Validate the whole shape up front instead.
+if (typeof gateFileRaw !== 'object' || gateFileRaw === null || Array.isArray(gateFileRaw)) {
+  console.error(`ERROR: ${gatePath} is not valid JSON: expected a top-level object`);
   process.exit(2);
 }
-if (gateFile.summary.rows !== allStances.length) {
+const gateFileCandidate = gateFileRaw as { findings?: unknown; summary?: unknown };
+if (!Array.isArray(gateFileCandidate.findings) || !gateFileCandidate.findings.every(isFindingShape)) {
+  console.error(`ERROR: ${gatePath} is not valid JSON: .findings must be an array of findings with string full_name/topic_key/check_id/severity`);
+  process.exit(2);
+}
+const findings = gateFileCandidate.findings as GateFinding[];
+const summary = gateFileCandidate.summary as { rows?: unknown } | undefined;
+if (!summary || typeof summary.rows !== 'number') {
+  console.error(`ERROR: ${gatePath} is not valid JSON: .summary.rows must be a number`);
+  process.exit(2);
+}
+if (summary.rows !== allStances.length) {
   console.error(
-    `ERROR: gate-findings.json covers ${gateFile.summary.rows} rows but stances.csv has ${allStances.length} — re-run scripts/stance-gate.ts`,
+    `ERROR: gate-findings.json covers ${summary.rows} rows but stances.csv has ${allStances.length} — re-run scripts/stance-gate.ts`,
   );
   process.exit(2);
 }
 const gateByKey = new Map<string, GateFinding[]>();
-for (const f of gateFile.findings) {
+for (const f of findings) {
   const k = `${f.full_name.toLowerCase()} ${f.topic_key}`;
   gateByKey.set(k, [...(gateByKey.get(k) ?? []), f]);
 }
