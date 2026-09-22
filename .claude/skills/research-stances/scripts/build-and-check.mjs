@@ -129,40 +129,73 @@ async function main() {
     if (!(r.quote_text || '').trim()) continue;            // only rows with a quote become bundle quotes
     const tk = (r.topic_key || '').toLowerCase();
     const name = r.full_name;
-    // resolve politician_id (by full_name or alternate_names)
-    const pid = (await client.query(
+    // resolve politician_id (by full_name or alternate_names) — fetch up to 2 rows so an
+    // ambiguous name (two namesakes sharing a full_name/alternate_name) is caught instead of
+    // silently picked via LIMIT 1.
+    const pidRows = (await client.query(
       `SELECT id::text FROM essentials.politicians
        WHERE lower(full_name)=lower($1)
-          OR EXISTS (SELECT 1 FROM unnest(alternate_names) a WHERE lower(a)=lower($1)) LIMIT 1`, [name])).rows[0]?.id || null;
+          OR EXISTS (SELECT 1 FROM unnest(alternate_names) a WHERE lower(a)=lower($1)) LIMIT 2`, [name])).rows;
+    if (pidRows.length > 1) console.error(`WARN: "${name}" matches more than one politician — no stance attached`);
+    const pid = pidRows.length === 1 ? pidRows[0].id : null;
     const key = pid + '|' + tk;
     let stance = stanceCache.get(key);
     if (stance === undefined) {
       stance = null;
       if (pid) {
-        // 🔴 THE ANSWER SUBQUERY MUST BE ORDERED AND LIMITED. It is a SCALAR
-        // subquery: with one season it returns one row, and with two it returns
-        // two and Postgres raises 21000, "more than one row returned by a
-        // subquery used as an expression". Loud, but only once a second season
-        // exists — so it looks fine right up until it isn't.
+        // 🔴 THE "NEWEST SEASON ANSWERED" PICK MUST BE ORDERED AND LIMITED. It used to be a
+        // SCALAR subquery: with one season it returns one row, and with two it returns two and
+        // Postgres raises 21000, "more than one row returned by a subquery used as an
+        // expression". Loud, but only once a second season exists — so it looked fine right up
+        // until it wasn't. It's now a LATERAL join (so it can carry topic_revision_id alongside
+        // value), but the same ORDER BY + LIMIT 1 still does the picking, for the same reason.
         //
-        // The question here is "what does this person say on this topic", which
-        // follows the PERSON, not the calendar: take the newest season in which
-        // they actually answered, whichever that is. Someone not researched this
-        // season still has a stance, and asking the open season for it would
-        // blank a compass that has real content. Mirrors
+        // The question here is "what does this person say on this topic", which follows the
+        // PERSON, not the calendar: take the newest season in which they actually answered,
+        // whichever that is. Someone not researched this season still has a stance, and asking
+        // the open season for it would blank a compass that has real content. Mirrors
         // seasonService.newestAnswerLateral.
+        //
+        // Chair text and question text come from the answer's OWN inform.compass_topic_revisions
+        // / inform.compass_stance_revisions — never the frozen inform.compass_stances, and never
+        // gated on is_live (CLAUDE.md "Officeholder..." — same rule, different table: read the
+        // dated/versioned row, not a column that claims to be "current"). With no answer at all,
+        // fall back to the OPEN season's pinned revision (inform.season_questions joined to
+        // inform.seasons where status='open') for question + chairs, value null — but never fall
+        // back for an answer that DOES exist, even when that answer's own revision can't be
+        // found. Mixing an answer from one season with chair text pinned to another is the
+        // defect this replaces.
         const s = (await client.query(
-          `SELECT t.question_text,
-             (SELECT a.value
+          `SELECT tr.question_text,
+             -- @zero-scope: excludes-blanks — a 0 names no chair; the quote judge must not read it as a position.
+             CASE WHEN ans.value = 0 THEN NULL ELSE ans.value END AS value,
+             (SELECT json_agg(json_build_object('v', sr.value, 'text', sr.text) ORDER BY sr.value)
+                FROM inform.compass_stance_revisions sr
+               WHERE sr.topic_revision_id = tr.id) AS chairs
+            FROM inform.compass_topics t
+            LEFT JOIN LATERAL (
+              SELECT a.value, a.topic_revision_id, true AS answered
                 FROM inform.politician_answers a
                 JOIN inform.seasons ssn ON ssn.id = a.season_id
-               WHERE a.topic_id=t.id AND a.politician_id=$1::uuid
+               WHERE a.topic_id = t.id AND a.politician_id = $1::uuid
                ORDER BY ssn.number DESC
-               LIMIT 1) AS value,
-             (SELECT json_agg(json_build_object('v', s.value, 'text', s.text) ORDER BY s.value)
-              FROM inform.compass_stances s WHERE s.topic_id=t.id) AS chairs
-           FROM inform.compass_topics t WHERE t.topic_key=$2`, [pid, tk])).rows[0];
-        if (s) stance = s;
+               LIMIT 1
+            ) ans ON true
+            LEFT JOIN LATERAL (
+              SELECT sq.topic_revision_id
+                FROM inform.season_questions sq
+                JOIN inform.seasons se ON se.id = sq.season_id AND se.status = 'open'
+               WHERE sq.topic_id = t.id
+               LIMIT 1
+            ) open_pin ON true
+            LEFT JOIN inform.compass_topic_revisions tr
+              ON tr.id = CASE WHEN ans.answered THEN ans.topic_revision_id ELSE open_pin.topic_revision_id END
+           WHERE t.topic_key = $2`, [pid, tk])).rows[0];
+        // No chairs is better than wrong chairs: an answer whose own revision can't be found,
+        // or a topic with no ladder at all (no answer AND no open-season pin), yields stance =
+        // null rather than mismatched or missing-but-silent chair text.
+        if (s && s.chairs) stance = s;
+        else console.error(`WARN: "${name}" / ${tk}: no compass ladder revision found for this answer — stance left blank`);
       }
       stanceCache.set(key, stance);
     }
