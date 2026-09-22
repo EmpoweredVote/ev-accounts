@@ -1,6 +1,7 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
 import { SEASON_IS_PUBLISHED } from './seasonService.js';
+import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
 // Types for compare and verdicts service functions
@@ -263,22 +264,8 @@ export async function getCompassTopics() {
   return topics.map(topic => {
     const topicRoles = (rolesRes.data ?? []).filter(r => r.topic_id === topic.id);
 
-    // Normalize tier rows into three booleans at the API boundary.
-    // A topic with no rows defaults to all three tiers = true (cross-cutting).
-    const hasAnyRoleRows = topicRoles.length > 0;
-    const applies_federal = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'federal')
-      : true;
-    const applies_state = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'state')
-      : true;
-    const applies_local = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'local')
-      : true;
-    // CRITICAL: fallback is false (not true) — existing cross-cutting topics must NOT appear on judicial profiles
-    const applies_judicial = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'judicial')
-      : false;
+    // Tier rules live in topicApplicability.ts — shared with the stance-research gate.
+    const { applies_federal, applies_state, applies_local, applies_judicial } = appliesFromRoles(topicRoles);
 
     return {
       ...topic,
