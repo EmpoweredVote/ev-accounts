@@ -22,6 +22,15 @@ You are running the **research-stances** skill. Your job is to research politici
 > (`readrank_selected=false`) → `audit-quotes --include-drafts` → promote the Read & Rank picks to
 > live only once the audit is clean (STEP 4).
 
+> 🔴 **ONE CANONICAL COPY.** This skill and `.claude/agents/politician-stance-researcher.md` live in
+> the ev-accounts repo. Older copies at the workspace root and in `.agents/` were up to three months
+> stale (2026-09-22). If you are reading this anywhere else, stop and use the ev-accounts copy.
+>
+> **The stance pipeline, one line:** `build-stance-topic-bundle` → researcher agent →
+> `stance-gate` → `verify-stance-research` (dry-run) → human review → `verify-stance-research --apply`.
+> Every step is a non-interactive script with exit codes, so the same pipeline can later run on a
+> schedule. Human decisions go to the review queue (`inform.stance_research_review`), not the chat.
+
 ---
 
 ## STEP 0 — Parse Input
@@ -41,17 +50,13 @@ If the input looks like a legislative body (e.g., "Bloomington City Council", "C
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT p.id, p.full_name,
-         (SELECT o2.title FROM essentials.offices o2
-          WHERE o2.politician_id = p.id LIMIT 1) AS title,
-         c.name as chamber_name
-  FROM essentials.politicians p
-  JOIN essentials.chambers c ON c.name ILIKE '%' || \$1 || '%'
-  WHERE EXISTS (
-    SELECT 1 FROM essentials.offices o3
-    WHERE o3.politician_id = p.id
-  )
-  ORDER BY p.full_name
+  SELECT DISTINCT ON (p.id) p.id, p.full_name, o.title, c.name AS chamber_name
+    FROM essentials.office_current_holder och
+    JOIN essentials.offices o ON o.id = och.office_id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+    JOIN essentials.politicians p ON p.id = och.politician_id
+   WHERE c.name ILIKE '%' || \$1 || '%'
+   ORDER BY p.id, o.title
 \`, [process.argv[2]]);
 console.log(JSON.stringify(rows, null, 2));
 await pool.end();
@@ -60,39 +65,33 @@ await pool.end();
 
 Replace `SEARCH_TERM` with the relevant part of the user's input (e.g., "City Council" for "Bloomington City Council").
 
+DISTINCT ON (p.id) is required — a politician-rooted join fans out for anyone holding two offices (CLAUDE.md).
+
 If no results, tell the user and ask them to provide specific names instead.
 
-### Topic Resolution
+### Topic Resolution — the open season's questions, per office level
 
-**ALWAYS fetch live topics AND their stance texts fresh from the DB before every research run. Never use a hardcoded list — the topic set grows over time.**
+**Never query `inform.compass_stances` or `is_live`.** The open season pins a specific ladder
+revision per question; on 2026-09-22, 29 of Season 2's 60 ladders differed from the frozen legacy
+text, and `is_live` returned 44 topics against the season's 60. Build the batch bundle instead:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const { rows } = await pool.query(\`
-  SELECT
-    t.id, t.topic_key, t.title, t.question_text,
-    json_agg(
-      json_build_object('value', s.value, 'text', s.text)
-      ORDER BY s.value
-    ) AS stances
-  FROM inform.compass_topics t
-  JOIN inform.compass_stances s ON s.topic_id = t.id
-  WHERE t.is_live = true
-  GROUP BY t.id, t.topic_key, t.title, t.question_text
-  ORDER BY t.topic_key
-\`);
-console.log(JSON.stringify(rows, null, 2));
-await pool.end();
-"
+cd ev-accounts/backend && set -a && source .env && set +a
+npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<YYYY-MM-DD-batch> \
+  --race <race_id> [--race <race_id> ...]          # candidates on these races
+  # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial>
 ```
 
-Pass the **full output of this query** to each researcher agent prompt — including the stance texts for every value. Never hardcode. As of 2026-06-02 there are 44 live topics; this number will grow.
+It writes `topics.json` + `politicians.json` into the batch dir and prints one
+`TOPIC SCALE REFERENCE (<level>)` block per office level — already filtered to the topics that
+apply at that level (`compass_topic_roles`). Paste the block matching each politician's level
+into that politician's prompt. A politician printed under `level unknown` needs a person to set
+the level (`--politician <uuid>:<level>`) before research.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
 - Topics in scope (all or filtered)
-- Estimated scope (e.g., "3 politicians x 44 topics = up to 132 stance assessments")
+- Estimated scope from the bundle (politicians × in-scope topics for each one's level)
 
 ---
 
@@ -210,25 +209,15 @@ you record, ask: "Does this politician's documented position match the EXACT TEX
 value?" If not, pick a different value or skip the topic.
 
 TOPIC SCALE REFERENCE — assign values by matching to exact stance text:
-[PASTE THE FULL JSON OUTPUT FROM THE TOPIC RESOLUTION QUERY HERE — including id, topic_key, question_text, and the stances array with value+text for each of the 5 levels]
+[PASTE THE TOPIC SCALE REFERENCE BLOCK FOR THIS POLITICIAN'S LEVEL, printed by build-stance-topic-bundle.ts]
 
 The topic_key in your CSV output MUST exactly match one of the topic_key values above.
 Do NOT invent your own topic_key slugs.
 Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
 
-TOPIC PRIORITY BY OFFICE LEVEL (attempt ALL topics; prioritize by level; skip only on no evidence):
-Research every topic in scope — do NOT hard-skip a topic just because of the office level. But lead
-with the topics that match this office's level and spend proportionally more effort there:
-- City office (mayor, city council): lead with the city-level topics (transportation-priorities,
-  economic-development, homelessness-response, residential-zoning, city-sanitation, local-immigration,
-  rent-regulation, growth-and-development, local-environment, public-safety-approach, jail-capacity)
-  and citywide issues (homelessness, housing). Still check the state/federal topics — a mayor often
-  has a public record on climate, civil-rights, immigration, etc.
-- State/federal office: lead with the statewide/national topics; the city-level topics rarely apply,
-  but still check any where the candidate has a documented position.
-Skip a topic ONLY when you genuinely cannot find sufficient evidence — never skip by assumption.
+The TOPIC SCALE REFERENCE is already filtered to the questions this season asks of this office. Research only those; skip a topic when you cannot find evidence for a specific chair.
 
---output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
+--output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 
 TIER-1 SOURCE — READ THIS FIRST:
 [If an OTR transcript file was produced in STEP 0.5, include:]
@@ -246,10 +235,26 @@ TOOL RULE:
   (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times). If a URL 404s, try
   the next pattern. Do not fall back to WebSearch.
 
-CSV OUTPUT — columns (RFC-4180; wrap any field with commas in double quotes, double embedded quotes):
-  full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
-- editor_note: REQUIRED for every row with a quote_text; essentials.quotes requires it and the audit
-  hard-fails without it — see EDITOR NOTE RULE below for what it must contain.
+TWO OUTPUT FILES, both in --output-dir (RFC-4180; quote any field containing commas; double embedded quotes):
+1) research.csv:
+   full_name,topic_key,value,evidence_type,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
+   - editor_note: REQUIRED for every row with a quote_text (see EDITOR NOTE RULE).
+2) evidence.csv:
+   full_name,topic_key,source_url,snippet,snippet_index
+
+EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
+- evidence_type = "record" when the stance rests on something the person DID in office (a bill, act,
+  ordinance, recorded vote); "statement" when it rests on their own words (questionnaire, debate,
+  forum, interview, campaign platform). A challenger with no record uses "statement".
+- record rows: the reasoning MUST name the instrument, e.g. "Voted YES on HB 1001 (2025)".
+- For EVERY source_url_N in research.csv, write at least one evidence.csv row whose snippet is a
+  VERBATIM passage of at least 25 words, copied from that page as you fetched it, that shows the
+  position and names this person (or sits within a few sentences of their name). Copy — never retype,
+  trim to fit, or summarise. A source you cannot back with a verbatim snippet does not go in the row.
+- The evidence must describe THIS chair, not just a direction. If it only shows which side the person
+  is on and two or three chairs sit on that side, leave the value blank. "The least extreme chair the
+  evidence allows" is a tiebreaker, not evidence.
+- Never name a party, a party label, or a party-typical position in reasoning. Party is never evidence.
 
 QUOTE-SELECTION GATES + RANKING QUESTION + DIFFERENTIATION:
 [INJECT: gates]
@@ -262,8 +267,7 @@ EDITOR NOTE RULE:
 
 Other rules:
 - Skip any topic where you cannot find sufficient evidence
-- Every source URL must be real and verifiable — only include URLs you actually fetched successfully
-  (OTR YouTube URLs from the transcript file count as verified)
+- Every source URL must be one you fetched successfully and backed in evidence.csv (OTR YouTube URLs from the transcript file count; their snippet is the transcript passage).
 - Use the full 1-5 range; match to stance text, not political alignment
 ```
 
@@ -285,11 +289,11 @@ Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
 
 After all agents complete:
 
-1. Read the CSV file(s) generated by the agents
-2. If multiple agents wrote to the same file, verify no duplicate headers
-3. If agents returned results in their response text instead of writing to file, manually compile into the CSV file using the Write tool
+1. Read research.csv and evidence.csv from the batch dir
+2. If multiple agents wrote to the same files, verify no duplicate headers
+3. If agents returned results in their response text instead of writing to file, manually compile into the CSV files using the Write tool
 4. Count total stances collected vs. expected (politicians x topics)
-5. The CSV includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
+5. research.csv includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
 
 ---
 
@@ -316,73 +320,19 @@ Show the user a formatted summary table:
 CSV saved to: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv`
 ```
 
-### Value-Change Guard (diff proposed vs. existing)
+### Value-Change Guard — enforced in code
 
-**Before pushing any stance value, diff it against what's already in the DB.** Changing a value that
-was already curated is a bigger deal than filling in a blank one — a prior run pushed a
-party-inferred value change (Hilton redistricting 4→2) that should have been held for a human. Pull
-the current values and compare:
+`verify-stance-research.ts` diffs every proposed value against the **open season** and applies
+`decidePublish` (`backend/scripts/lib/stancePublishPolicy.ts`): a row already holding a value in
+the open season — including a 0 (an editor's blank) — is **never** written automatically; it goes to
+the review queue with reason `value-change`. Read the buckets from `publish-report.json`:
 
-🔴 **DIFF AGAINST THE OPEN SEASON, NOT AGAINST EVERY SEASON.** The push in step 4c writes into the
-open season, and its `ON CONFLICT` replaces that season's row. So "what am I about to overwrite?" is
-a question about the open season alone. Without the `status = 'open'` join this query returns **one
-row per season per topic** the moment Season 2 exists — the same politician and topic listed twice
-with different values, which makes the guard that exists to prevent silent overwrites ambiguous
-exactly when it matters.
-
-`prior_value` is shown alongside, and it is **context, not the thing you are overwriting**: it is
-what this person last said in an *earlier* season. A row with a blank `existing_value` and a filled
-`prior_value` is a NEW answer for this season, not a change — treat it as NEW.
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const { rows } = await pool.query(\`
-  SELECT p.full_name, t.topic_key,
-         open_a.value  AS existing_value,   -- the row step 4c will overwrite
-         prior.value   AS prior_value,      -- what they last said, earlier season
-         prior.number  AS prior_season
-  FROM essentials.politicians p
-  CROSS JOIN inform.compass_topics t
-  LEFT JOIN LATERAL (
-    SELECT a.value
-      FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'
-     WHERE a.politician_id = p.id AND a.topic_id = t.id
-  ) open_a ON true
-  LEFT JOIN LATERAL (
-    -- Newest answered season that is NOT the open one. LATERAL … LIMIT 1, never
-    -- a plain join: joining on (politician_id, topic_id) returns a row per
-    -- season and fans the result out.
-    SELECT a.value, s.number
-      FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id AND s.status <> 'open'
-     WHERE a.politician_id = p.id AND a.topic_id = t.id
-     ORDER BY s.number DESC
-     LIMIT 1
-  ) prior ON true
-  WHERE lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
-    AND (open_a.value IS NOT NULL OR prior.value IS NOT NULL)
-  ORDER BY p.full_name, t.topic_key
-\`, [process.argv.slice(2)]);
-console.log(JSON.stringify(rows, null, 2));
-await pool.end();
-" -- "Name1" "Name2"
-```
-
-Show the user a diff table and split the rows into three buckets:
-
-| Politician | Topic | Existing | Proposed | Bucket |
-|---|---|---|---|---|
-| Name | topic | (none) | 3 | **NEW** — safe to push with approval |
-| Name | topic | 2 | 2 | unchanged — no-op |
-| Name | topic | 4 | 2 | **CHANGE — HOLD for explicit sign-off** |
-
-- **NEW** (no existing value): push with the normal approval.
-- **unchanged**: no-op, skip the write.
-- **CHANGE** (existing ≠ proposed): do **NOT** push automatically. List each one with the CSV
-  reasoning and its supporting quote, and get explicit per-row sign-off. If the change was inferred
-  from party rather than a documented quote, flag it as such.
+| action | meaning |
+|---|---|
+| `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` |
+| `unchanged` | same value already in the open season — skipped |
+| `review` | queued for a person: `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
+| `re-research` | gate-high (defective — fix and re-run, not written; this includes an unresolved politician whose row has any other severe finding) or below-threshold (unverified — queued) |
 
 **The public summary MUST move with the value.** `politician_context.reasoning` is the "here's how we
 got to this value" blurb shown on the candidate's **Essentials profile** and the **Compass** — it is
@@ -435,20 +385,19 @@ skill, **(4f)** promote the Read & Rank picks to live only once the audit is cle
 
 ### 4a. Pre-push QA (before any write)
 
-**(i) Mechanical + bundle.** Run the checker over the CSV — it builds the audit context bundle
-(topics → quotes with stance + editor_note + de-id) and runs the deterministic checks
-(note-missing, note-too-long, deid-missing, trailing-ellipsis, partisan-tell, source-tier-4):
+**(i) Stance gate, snippet verification, quote mechanics — in this order.**
 
 ```bash
-cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
-  --csv data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
-# prints "MECHANICAL FINDINGS: N (high=.. medium=.. low=..)" and writes <csv>.bundle.json
-# exits non-zero if any high-severity finding remains.
+cd ev-accounts/backend && set -a && source .env && set +a
+B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
+npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: fix research.csv/evidence.csv, re-run
+npx tsx scripts/verify-stance-research.ts --dir $B   # dry-run: fetches every source, writes $B/publish-report.json
+node ../.claude/skills/research-stances/scripts/build-and-check.mjs --csv $B/research.csv   # quotes
 ```
 
 Fix every **high** finding in the CSV (write the missing `editor_note`, de-identify honestly, strip
 the trailing ellipsis, neutralize the partisan tell) and re-run until it's clean. Do not push a CSV
-with high-severity mechanical findings.
+with high-severity findings.
 
 **(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
 the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
@@ -460,119 +409,40 @@ passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgm
 - `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
 Only quotes that clear both passes proceed to the push.
 
-### 4b. Resolve IDs
+### 4b. IDs come from the bundle — no separate lookup
 
-Look up `politician_id` and `topic_id`:
+`politicians.json` (written by `build-stance-topic-bundle.ts`) holds each person's `politician_id`;
+`stance-gate.ts` carries it into `stances.csv`; `verify-stance-research.ts` resolves by that id,
+never by name. For the quote push (4d), take `politician_id` from `politicians.json` and `topic_id`
+from `topics.json`.
 
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const { rows } = await pool.query(\`
-  SELECT p.id as politician_id, p.full_name,
-         t.id as topic_id, t.title as topic_title
-  FROM essentials.politicians p
-  CROSS JOIN inform.compass_topics t
-  WHERE (
-    lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
-    OR EXISTS (
-      SELECT 1 FROM unnest(p.alternate_names) AS alt
-      WHERE lower(alt) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
-    )
-  )
-    AND t.is_live = true
-  ORDER BY p.full_name, t.created_at
-\`, [process.argv.slice(2)]);
-console.log(JSON.stringify(rows, null, 2));
-await pool.end();
-" -- "Name1" "Name2"
-```
+- **Two people with the same name in one batch are refused** by the gate (`ambiguous-politician`,
+  high). Research them in separate batches.
+- **A person not in `politicians.json`** is flagged `unknown-politician`. Rebuild the bundle with them
+  (`--politician <uuid>:<level>`) — do not guess an id. If they are not in `essentials.politicians` at
+  all, create them first via the admin panel; their `research.csv` rows are kept.
 
-If a politician name doesn't match any row in `essentials.politicians`, report it:
-> "Could not find '[NAME]' in the politicians table. Their CSV data is preserved but won't be pushed to DB. You may need to create this politician first via the admin panel."
-
-### 4c. Upsert answers and context
-
-Push values only for the **NEW** and **explicitly-approved CHANGE** rows from the STEP 3
-value-change guard — never silently overwrite an already-curated value. The upsert below writes the
-answer (`value`) and the context (`reasoning` + `sources`) **together** — this is deliberate:
-`reasoning` is the public "here's why" summary on the Essentials profile and Compass, so it must
-never lag the value. Confirm every row you push has a non-blank reasoning that matches its value
-before running the script. For each matched row, call the admin service functions:
-
-🔴 **A STANCE IS WRITTEN INTO A SEASON. DO NOT HAND-ROLL THIS SQL.** An answer records a rung *of a
-specific ladder text*, so `inform.politician_answers` carries a `season_id` and a
-`topic_revision_id`, both `NOT NULL`, and `politician_answers_pin_fkey` requires the pair to match a
-row in the open season's question set. Import the shared write shape from `seasonService` — it
-resolves the open season and that season's pinned revision **in the same statement**, so the season
-cannot close between reading it and writing.
-
-⚠️ **The block below replaced a bare `INSERT … (politician_id, topic_id, value)` that had worked for
-a year.** After the season model shipped, that INSERT failed against prod with
-`23502: null value in column "season_id" … violates not-null constraint` — both for the answer and
-for the context. It failed loudly and rolled back, so nothing was corrupted, but this whole step was
-dead until 2026-08-27. Its `ON CONFLICT (politician_id, topic_id)` was a second, quieter bug: the
-primary key is now `(politician_id, topic_id, season_id)`, and the bare pair still resolves only
-because a temporary scaffolding index is up. That index is dropped before Season 2 opens, and the
-old form then fails with `42P10`. **If you find yourself writing either of those, stop.**
-
-🔴 **`assertWritten` IS NOT OPTIONAL.** The upsert sources its `INSERT` from
-`season_questions JOIN seasons … status = 'open'`. If no season is open, the SELECT yields no rows,
-**nothing is written, and nothing raises.** A push that skips the row-count check reports success
-having saved nothing. `assertWritten` turns that silence into an error naming which of the two causes
-it was — no open season, or this topic is not in the open season's question set.
+### 4c. Write stances (and their verified snippets) through the verifier
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-import {
-  UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten,
-} from './src/lib/seasonService.js';
-
-const stances = JSON.parse(process.argv[2]);
-
-// The editor of record for this push. NULL is allowed by the schema, but a
-// stance with no attributable editor is a row nobody can be asked about later.
-// Pass the admin user id doing the research.
-const editorId = process.env.EV_EDITOR_ID ?? null;
-
-await pool.query('BEGIN');
-try {
-  for (const s of stances) {
-    // Season-aware upsert. The pin comes from the season, never from us.
-    // Param order: politician_id, topic_id, value, editor_id.
-    const ans = await pool.query(UPSERT_ANSWER_SQL,
-      [s.politician_id, s.topic_id, s.value, editorId]);
-    await assertWritten(ans.rowCount ?? 0, s.topic_id);
-
-    // Answer and context are written together on purpose — reasoning is the
-    // public 'here's why' and must never lag the value.
-    // Param order: politician_id, topic_id, reasoning, sources, editor_id.
-    const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
-    const ctx = await pool.query(UPSERT_CONTEXT_SQL,
-      [s.politician_id, s.topic_id, s.reasoning, sources, editorId]);
-    await assertWritten(ctx.rowCount ?? 0, s.topic_id);
-  }
-  await pool.query('COMMIT');
-  console.log('Done: ' + stances.length + ' stances upserted');
-} catch (err) {
-  await pool.query('ROLLBACK');
-  console.error('Rolled back due to error:', err.message);
-  process.exit(1);
-}
-await pool.end();
-" '[JSON_ARRAY_OF_RESOLVED_STANCES]'
+cd ev-accounts/backend && set -a && source .env && set +a
+npx tsx scripts/verify-stance-research.ts --dir data/stance-research/YYYY-MM-DD-[BATCH_NAME] \
+  --apply --editor-id <your admin user uuid>
 ```
 
-**Which season did this land in?** Whichever one is open. Today that is Season 1, so new research
-sits alongside the pre-seasons corpus with nothing in the row distinguishing the two. When Season 2
-opens, work pushed before the changeover stays in Season 1 and **remains readable** — reads follow
-the person, not the calendar — while new pushes go to Season 2. A politician researched in Season 1
-but not in Season 2 still shows their Season 1 stances. See
-[`docs/adr/0005-compass-question-seasons.md`](../../../docs/adr/0005-compass-question-seasons.md).
+`auto-push` rows are written with `writeVerifiedStance` (season-aware: `UPSERT_ANSWER_SQL` +
+`UPSERT_CONTEXT_SQL` + `assertWritten`) together with their verified snippets in
+`politician_context_evidence`; `review` and `below-threshold` rows go to `stance_research_review`
+for resolution in the admin review queue; `gate-high` rows are not written.
 
-⚠️ **`backend/scripts/apply-*-stances.ts` are NOT templates.** Around 158 of them still contain the
-old bare-pair upsert. They already ran, so they are harmless where they sit — but copying one gives
-you the broken form above. Copy from this block instead.
+A queued row's verified snippets become public citations only when a person approves it (resolveResearchReview writes them) — never at queue time, because they would render under the stance displayed now.
+
+**Which season?** Whichever is open — check with
+`SELECT number FROM inform.seasons WHERE status = 'open'`. Do not trust a season number written in a
+doc; this one said "Season 1" for a month after Season 2 opened.
+
+⚠️ **Never hand-roll a stance INSERT**, and never copy `backend/scripts/apply-*-stances.ts` — ~158 of
+them carry the pre-seasons bare-pair upsert, which fails (`23502`) or silently writes nothing.
 
 ### 4d. Push quotes to essentials.quotes — as DRAFTS
 
@@ -700,6 +570,12 @@ After the pipeline:
 
 # REWRITE RE-EVALUATION MODE (`--rewrite-id`)
 
+> 🔴 **DO NOT USE UNTIL REDESIGNED (2026-09-22).** This mode auto-approves every proposal with no
+> human gate, and tells the researcher to map old evidence onto the new scale — CLAUDE.md requires a
+> material rewrite to be **re-audited against the new wording** ("a bill citation proves direction,
+> not magnitude"). It also bypasses the evidence gate above. Re-audit rewritten topics with the
+> normal pipeline instead.
+
 When `$ARGUMENTS` includes `--rewrite-id <uuid>`, the skill runs in a
 different mode that feeds the Plan D topic rewrite workflow
 (`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`)
@@ -752,11 +628,17 @@ const { rows: newStances } = await pool.query(
 );
 const { rows: proposals } = await pool.query(\`
   SELECT p.politician_id, p.old_value, p.old_reasoning, p.old_sources, p.status,
-         pol.full_name, o.title AS office_title, c.name AS chamber_name
+         pol.full_name, oc.title AS office_title, oc.chamber_name
   FROM inform.topic_rewrite_stance_proposals p
   JOIN essentials.politicians pol ON pol.id = p.politician_id
-  LEFT JOIN essentials.offices o ON o.politician_id = pol.id AND o.is_current = true
-  LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
+  LEFT JOIN LATERAL (
+    SELECT o.title, c.name AS chamber_name
+      FROM essentials.office_current_holder och
+      JOIN essentials.offices o ON o.id = och.office_id
+      LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
+     WHERE och.politician_id = pol.id
+     ORDER BY o.title LIMIT 1
+  ) oc ON true
   WHERE p.rewrite_id = \$1 AND p.status = 'pending'
   ORDER BY pol.full_name
 \`, [rewriteId]);
