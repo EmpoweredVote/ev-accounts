@@ -145,14 +145,16 @@ BEGIN
      AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries b WHERE b.geo_id = d.geo_id AND b.mtfcc = d.mtfcc);
   IF n_bad_dist <> 0 THEN RAISE EXCEPTION '% council district row(s) do not resolve to a polygon', n_bad_dist; END IF;
 
-  -- coverage vs the TIGER place polygon, with tolerance (two digitisations never match exactly)
-  SELECT abs(public.ST_Area(c.geometry::geography) - public.ST_Area(u.g::geography)) / public.ST_Area(c.geometry::geography)
+  -- coverage vs the TIGER place polygon, with tolerance (two digitisations never match exactly).
+  -- Planar SRID-4326 area: the check is a RATIO over one small city, so degrees are fine, and a
+  -- ::geography cast is banned here (it reads public.spatial_ref_sys -- ev-cto decision 0006).
+  SELECT abs(public.ST_Area(c.geometry) - public.ST_Area(u.g)) / public.ST_Area(c.geometry)
     INTO co_cov
     FROM essentials.geofence_boundaries c,
          (SELECT public.ST_Union(geometry) g FROM essentials.geofence_boundaries
            WHERE mtfcc = 'X0001' AND geo_id LIKE 'compton-council-district-%') u
    WHERE c.geo_id = '0615044' AND c.mtfcc = 'G4110';
-  SELECT abs(public.ST_Area(c.geometry::geography) - public.ST_Area(u.g::geography)) / public.ST_Area(c.geometry::geography)
+  SELECT abs(public.ST_Area(c.geometry) - public.ST_Area(u.g)) / public.ST_Area(c.geometry)
     INTO py_cov
     FROM essentials.geofence_boundaries c,
          (SELECT public.ST_Union(geometry) g FROM essentials.geofence_boundaries
@@ -169,8 +171,8 @@ BEGIN
       ON a.geo_id < b.geo_id AND a.mtfcc = 'X0001' AND b.mtfcc = 'X0001'
      AND ((a.geo_id LIKE 'compton-council-district-%' AND b.geo_id LIKE 'compton-council-district-%')
        OR (a.geo_id LIKE 'pomona-council-district-%'  AND b.geo_id LIKE 'pomona-council-district-%'))
-   WHERE public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)::geography) > 1000;
-  IF n_overlap <> 0 THEN RAISE EXCEPTION '% council district pair(s) overlap by more than 1000 m2', n_overlap; END IF;
+   WHERE public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)) > 1e-7;  -- ~1,000 m2 at 34 N
+  IF n_overlap <> 0 THEN RAISE EXCEPTION '% council district pair(s) overlap by more than ~1000 m2', n_overlap; END IF;
 
   -- END TO END: an interior point of each district returns exactly that district's member
   SELECT count(*) INTO n_wrong
