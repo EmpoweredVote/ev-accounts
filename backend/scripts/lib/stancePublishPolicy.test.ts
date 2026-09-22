@@ -13,9 +13,13 @@ describe('decidePublish', () => {
   it('auto-pushes only a clean, verified, NEW record row', () => {
     expect(decidePublish(base)).toEqual({ action: 'auto-push' });
   });
-  it('routes an unresolved politician to review first', () => {
-    expect(decidePublish({ ...base, politicianResolved: false, gateFindings: [f('no-source', 'high')] }))
+  it('routes an unresolved politician to review when that is the only high finding', () => {
+    expect(decidePublish({ ...base, politicianResolved: false, gateFindings: [f('unknown-politician', 'high')] }))
       .toEqual({ action: 'review', reasons: ['unresolved-politician'] });
+  });
+  it('sends an unresolved politician with another high finding back to research, not review', () => {
+    expect(decidePublish({ ...base, politicianResolved: false, gateFindings: [f('no-source', 'high')] }))
+      .toEqual({ action: 're-research', reasons: ['gate-high'] });
   });
   it('sends any high gate finding back to research — before the verifier count is even considered', () => {
     expect(decidePublish({ ...base, verifiedSourceCount: 0, gateFindings: [f('party-inference', 'high')] }))

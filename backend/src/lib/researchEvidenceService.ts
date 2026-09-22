@@ -211,6 +211,17 @@ export async function writeVerifiedStance(args: {
   await assertWritten(ctx.rowCount ?? 0, args.topicId);
 }
 
+/**
+ * Approve a queued review row: write its stance, then its machine-verified citations, then any
+ * human-verified URLs, then mark it resolved.
+ *
+ * Citations are written HERE, on approval, not when the row was queued (ruling 2026-09-22, R1)
+ * — verify-stance-research.ts's queue loop stores every snippet with its verdict in the review
+ * row's `evidence` jsonb and stops there. Writing them at queue time would render a snippet for
+ * a still-PROPOSED value under whatever stance is displayed right now (getPoliticianCitations
+ * has no batch filter), which for a `value-change` row is a different chair than the one being
+ * proposed, and for a pair whose only context row predates this season lands on a closed one.
+ */
 export async function resolveResearchReview(
   id: string,
   resolvedBy: string,
@@ -243,6 +254,25 @@ export async function resolveResearchReview(
     politicianId: row.politicianId, topicId: row.topicId, value: finalValue,
     reasoning: finalReasoning, sources: allSources, editorId: resolvedBy,
   });
+
+  // Machine-verified snippets, written now (R1) — AFTER writeVerifiedStance, so the open-season
+  // context row exists and accumulateEvidence's "newest published season" pick lands on it.
+  // ON CONFLICT DO NOTHING (inside accumulateEvidence) makes this safe to re-run even for a
+  // review row an older build already wrote snippets for at queue time.
+  const politicianId = row.politicianId;
+  const topicId = row.topicId;
+  const machineVerifiedRows: EvidenceInsertRow[] = row.evidence.flatMap((e) =>
+    e.snippets
+      .filter((s) => s.verdict === 'verified')
+      .map((s) => ({
+        politician_id: politicianId,
+        topic_id: topicId,
+        source_url: e.url,
+        snippet: s.snippet,
+        snippet_index: s.snippet_index,
+        batch_id: row.batchId,
+      })));
+  await accumulateEvidence(machineVerifiedRows);
 
   // Write human-verified URLs to politician_context_evidence so they appear in citations
   const batchId = `human-review-${id}`;

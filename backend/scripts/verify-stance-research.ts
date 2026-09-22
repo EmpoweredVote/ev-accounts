@@ -363,11 +363,12 @@ for (const { row, pid, tid } of queued) {
     }));
     reviewed++;
     console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}`);
-    if (pid && tid && row.verifiedSources.length > 0) {
-      const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-      await accumulateEvidence(evRows);
-      evidenceWritten += evRows.length;
-    }
+    // No citations are written for a queued row (ruling 2026-09-22, R1): accumulateEvidence
+    // attaches a snippet to the pair's newest published context row, and citations render with
+    // no batch filter — so a snippet for a PROPOSED value would show under whatever stance is
+    // displayed right now, before anyone approves. The review row already stores every snippet
+    // with its verdict (buildReviewRowForInsert, above) — resolveResearchReview writes the
+    // machine-verified ones on approval.
   } catch (e: any) {
     errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
   }

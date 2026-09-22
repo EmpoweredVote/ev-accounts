@@ -129,3 +129,58 @@ describe('writeVerifiedStance', () => {
       .rejects.toThrow();
   });
 });
+
+describe('resolveResearchReview — citations written on approval, not at queue time (R1)', () => {
+  const reviewRow = {
+    id: 'rev-1',
+    batch_id: 'batch-1',
+    politician_id: 'p1',
+    full_name_raw: 'Jane Doe',
+    topic_id: 't1',
+    topic_key: 'healthcare',
+    proposed_value: 3,
+    proposed_reasoning: 'reasoning text',
+    evidence: [
+      {
+        url: 'https://a.example',
+        snippets: [
+          { snippet_index: 0, snippet: 'verified snippet text', verdict: 'verified' },
+          { snippet_index: 1, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
+        ],
+      },
+    ],
+    verified_source_count: 1,
+    threshold: 1,
+    status: 'pending',
+    re_research_attempted: false,
+    created_at: '2026-01-01T00:00:00Z',
+  };
+
+  it('inserts exactly one politician_context_evidence row, for the verified snippet only, after the answer and context writes', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+    const before = mockQuery.mock.calls.length;
+    mockQuery
+      .mockResolvedValueOnce({ rows: [reviewRow] })     // getResearchReviewById
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 }) // UPSERT_ANSWER_SQL
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 }) // UPSERT_CONTEXT_SQL
+      .mockResolvedValueOnce({ rows: [] })              // politician_context_evidence insert (verified snippet)
+      .mockResolvedValueOnce({ rows: [] });             // final UPDATE stance_research_review
+
+    await resolveResearchReview('rev-1', 'editor-1');
+
+    const calls = mockQuery.mock.calls.slice(before);
+    expect(calls).toHaveLength(5);
+    expect(calls[1][0]).toBe(UPSERT_ANSWER_SQL);
+    expect(calls[2][0]).toBe(UPSERT_CONTEXT_SQL);
+
+    const evidenceCalls = calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
+    expect(evidenceCalls).toHaveLength(1);
+    expect(evidenceCalls[0][1]).toEqual(['p1', 't1', 'https://a.example', 'verified snippet text', 0, 'batch-1']);
+
+    // The evidence write comes after both the answer and the context write.
+    const evidenceCallIndex = calls.findIndex((c) => String(c[0]).includes('politician_context_evidence'));
+    const contextCallIndex = calls.findIndex((c) => c[0] === UPSERT_CONTEXT_SQL);
+    expect(evidenceCallIndex).toBeGreaterThan(contextCallIndex);
+  });
+});

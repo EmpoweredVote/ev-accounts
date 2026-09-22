@@ -27,7 +27,14 @@ export interface PolicyInput {
 }
 
 export function decidePublish(i: PolicyInput): Decision {
-  if (!i.politicianResolved) return { action: 'review', reasons: ['unresolved-politician'] };
+  if (!i.politicianResolved) {
+    // Unresolved → review, so a person can link the right record — but only when that is ALL
+    // that is wrong. Any other high finding means the research itself is defective, and an
+    // unresolved-politician review queue is not the place to fix a bad citation or a party
+    // inference (ruling 2026-09-22, R2).
+    const otherHigh = i.gateFindings.some((f) => f.severity === 'high' && f.check_id !== 'unknown-politician');
+    return otherHigh ? { action: 're-research', reasons: ['gate-high'] } : { action: 'review', reasons: ['unresolved-politician'] };
+  }
   if (i.gateFindings.some((f) => f.severity === 'high')) return { action: 're-research', reasons: ['gate-high'] };
   if (i.verifiedSourceCount < i.threshold) return { action: 're-research', reasons: ['below-threshold'] };
   if (i.existingOpenSeasonValue !== null && i.existingOpenSeasonValue === i.proposedValue) return { action: 'unchanged' };
