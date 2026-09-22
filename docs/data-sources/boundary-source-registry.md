@@ -74,6 +74,18 @@ A clean single-member layer returns **exactly one** feature for a point-in-polyg
 | Layer | Service URL | Loaded as | Verified |
 |---|---|---|---|
 | Supervisorial districts | *(URL in loader — fill from the LA County GeoHub supervisor-districts script/migration)* | `source=la_county_geohub_supervisor_districts_2024` | from script header — URL to backfill |
+| **Registrar-Recorder precincts** (every voting district, countywide) | `https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/34` | Compton + Pomona council districts loaded 2026-09-22 as `mtfcc=X0001`, `LOCAL`, `source=lacounty_rrcc_precincts_2026` (CA_0141) | **2026-09-22** (33,236 precincts) |
+
+> **The precinct layer covers every by-area contest in the county.** Each precinct carries a
+> district code and a division number per contest type: `DST_CITY`/`DIV_CITY` (2-letter city code +
+> council district; e.g. `CO` Compton, `PY` Pomona, `MP` Monterey Park, `LS` Los Angeles, `ZZ`
+> unincorporated), `DST_USD`/`DIV_USD` (unified school district + trustee area; numeric codes),
+> `DST_HSD`, `DST_ESD`, `DST_JRC` (community college), `DST_HOSP`, `DST_MWD`, `DST_WR`, `DST_CW`,
+> `DST_IRR`, `DST_LIB`, `DST_PARK`, and more. Dissolve precincts by (district, division) to get one
+> polygon per seat. The service text says "Last Updated: March 2022", but the data is current: the
+> Monterey Park dissolve matches the city's 2026 redistricting map (CC_0023) at IoU 0.994–0.995.
+> Numeric school/college codes are not labelled — decode them by overlap with the TIGER polygons.
+> Page with `resultOffset`/`resultRecordCount=1000` and `outSR=4326`.
 
 ### Nationwide — Census TIGER (whole school-district outlines only)
 
