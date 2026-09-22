@@ -6,13 +6,30 @@
  * verify-stance-research.ts expects).
  *
  *   npx tsx scripts/stance-gate.ts --dir data/stance-research/<batch>
- * Exit: 0 clean, 1 high-severity findings (fix research.csv/evidence.csv and re-run), 2 usage.
+ * Exit: 0 clean, 1 high-severity findings (fix research.csv/evidence.csv and re-run), 2 usage/unreadable.
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'csv-parse/sync';
 import { parseEvidenceCsv, writeStancesCsv } from '../src/lib/stanceResearchCsv.js';
 import { checkBatch, toStanceRows, type ResearchRow, type BundleTopic, type BundlePolitician } from './lib/stanceGate.js';
+
+function readOrExit<T>(path: string, parseFn: (text: string) => T, isArray: boolean = false): T {
+  try {
+    const text = readFileSync(path, 'utf8');
+    const result = parseFn(text);
+    if (isArray && !Array.isArray(result)) {
+      console.error(`ERROR: ${path} is not valid JSON: expected an array`);
+      process.exit(2);
+    }
+    return result;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    const ext = path.endsWith('.json') ? 'JSON' : 'CSV';
+    console.error(`ERROR: ${path} is not valid ${ext}: ${msg}`);
+    process.exit(2);
+  }
+}
 
 const i = process.argv.indexOf('--dir');
 const DIR = i !== -1 ? process.argv[i + 1] : undefined;
@@ -21,8 +38,8 @@ for (const f of ['research.csv', 'topics.json', 'politicians.json']) {
   if (!existsSync(join(DIR, f))) { console.error(`ERROR: ${join(DIR, f)} not found`); process.exit(2); }
 }
 
-const records = parse(readFileSync(join(DIR, 'research.csv'), 'utf8'),
-  { columns: true, skip_empty_lines: true, relax_column_count: true }) as Record<string, string>[];
+const records = readOrExit(join(DIR, 'research.csv'), (text) =>
+  parse(text, { columns: true, skip_empty_lines: true, relax_column_count: true }) as Record<string, string>[]);
 const research: ResearchRow[] = records
   .map((r) => ({
     full_name: (r.full_name ?? '').trim(),
@@ -38,9 +55,11 @@ if (research.length === 0) {
   console.error('REFUSING VERDICT: parsed 0 research rows from research.csv — an empty parse is not a clean batch');
   process.exit(2);
 }
-const evidence = existsSync(join(DIR, 'evidence.csv')) ? parseEvidenceCsv(readFileSync(join(DIR, 'evidence.csv'), 'utf8')) : [];
-const topics: BundleTopic[] = JSON.parse(readFileSync(join(DIR, 'topics.json'), 'utf8'));
-const politicians: BundlePolitician[] = JSON.parse(readFileSync(join(DIR, 'politicians.json'), 'utf8'));
+const evidence = existsSync(join(DIR, 'evidence.csv'))
+  ? readOrExit(join(DIR, 'evidence.csv'), parseEvidenceCsv)
+  : [];
+const topics: BundleTopic[] = readOrExit(join(DIR, 'topics.json'), (text) => JSON.parse(text), true);
+const politicians: BundlePolitician[] = readOrExit(join(DIR, 'politicians.json'), (text) => JSON.parse(text), true);
 
 const findings = checkBatch(research, topics, politicians, evidence);
 const by_check: Record<string, number> = {};
