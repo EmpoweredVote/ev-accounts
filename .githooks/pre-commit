@@ -10,7 +10,24 @@
 #    at all. CLAUDE.md forbids --no-verify, so the only honest way to keep that promise is to
 #    never be worth bypassing.
 #
-# Skips silently where node_modules is absent (a fresh clone, CI), exactly like the SessionStart
-# hook. Install with:  git config core.hooksPath .githooks
-[ -d backend/node_modules ] && node backend/scripts/steward-precommit.mjs || true
+# Runs from the root of whichever checkout is committing. A linked worktree usually has no
+# backend/node_modules (10 of 17 on 2026-09-23), so the observer runs through a preload that
+# borrows the MAIN checkout's node_modules and .env (backend/scripts/lib/main-checkout-fallback.mjs).
+# It used to require backend/node_modules here and skip silently without it — which is how it went
+# unheard in most worktrees. With no node_modules anywhere it now says so in one line instead.
+# A checkout whose branch predates the preload runs the script plainly, as before.
+#
+# ⚠ Linked worktrees run the MAIN checkout's copy of this file (their config.worktree sets an
+#   absolute core.hooksPath); see CLAUDE.md. Install with:  npm run install:hooks --prefix backend
+main_backend="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/../backend"
+if [ -d backend/node_modules ] || [ -d "$main_backend/node_modules" ]; then
+  pre=backend/scripts/lib/main-checkout-fallback.mjs
+  if [ -f "$pre" ]; then
+    node --import "./$pre" backend/scripts/steward-precommit.mjs || true
+  else
+    node backend/scripts/steward-precommit.mjs || true
+  fi
+else
+  echo "  steward: pre-commit observer skipped -- no backend/node_modules here or in the main checkout" >&2
+fi
 exit 0

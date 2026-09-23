@@ -324,6 +324,11 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     🔴 **Linked worktrees run the MAIN checkout's copy**: their `config.worktree` sets an absolute
     `core.hooksPath` to `<main clone>/.githooks`, so the hook runs only once the main checkout's
     branch carries the 100755 file. Check with `git rev-parse --git-path hooks`.
+  - ⚠ **Both steward hooks (this one and SessionStart) used to skip SILENTLY without
+    `backend/node_modules`** — 10 of 17 worktrees on 2026-09-23, so most sessions got no board, no
+    worktree marker and no pathspec check. They now run through
+    `backend/scripts/lib/main-checkout-fallback.mjs`, which borrows the main checkout's
+    `node_modules` and `.env`, and print one "skipped" line when neither checkout has them.
 - **Before deleting a worktree or branch**, run the four checks — as **one command**:
 
   ```bash
