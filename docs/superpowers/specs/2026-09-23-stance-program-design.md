@@ -47,7 +47,7 @@ reader who follows them faithfully will reproduce a failure we have already paid
 
 | # | Fix | Why |
 |---|---|---|
-| **H1** | ✅ **Done.** `research-stances/SKILL.md` STEP 1 said to dispatch one research **agent** per politician; both it and the rewrite mode now execute inline, one politician per run. | Withdrawn by ruling 2026-08-24, reaffirmed 2026-09-23. Following it as written turned 38 rows into 8 — §13.1 |
+| **H1** | ✅ **Done.** `research-stances/SKILL.md` STEP 1 said to dispatch one research **agent** per politician; it now executes inline, one politician per run. (The rewrite mode it also affected has since been deleted — §8.6.) | Withdrawn by ruling 2026-08-24, reaffirmed 2026-09-23. Following it as written turned 38 rows into 8 — §13.1 |
 | **H2** | ✅ **Done.** `verify-quotes.mjs` is now `backend/scripts/verify-quotes.mjs`, wave-agnostic, and runnable as `npm run verify:quotes -- <wave-dir>`. | It is the only defence against WebFetch fabricating quotes, and it is currently findable only by accident — §4.11 |
 | **H3** | ✅ **Done.** `research-stances/SKILL.md` STEP 0's topic-resolution query joined `inform.compass_stances` (the **frozen** table) and filtered `WHERE t.is_live = true`. It now resolves the open season's pin by status. | 41 of 61 Season 3 topics disagree with the frozen text, and 18 of them carry `is_live = false` while being perfectly live in the season. The first fails silently and plausibly. The second returns the 44 `is_live` topics — **dropping 18 of Season 3's 61, while including `immigration`, which Season 2 retired and which the write gate no longer accepts** — §2.2, §8.5 |
 
@@ -1025,6 +1025,35 @@ draft you must reject it and propose a fresh one.
 that season opening. **Measured 2026-09-23: 18 of the 61 Season 3 topics carry `is_live = false`** and
 are perfectly live in the season — which is precisely why a nightly job that read `is_live` had to be
 corrected (`CA_0170`).
+
+### 8.6 The Plan D rewrite workflow is retired
+
+✅ **Deleted 2026-09-23.** `research-stances/SKILL.md` carried a `--rewrite-id` REWRITE
+RE-EVALUATION MODE — roughly 250 lines feeding `inform.topic_rewrites` and
+`inform.topic_rewrite_stance_proposals`. It is gone, and the skill now points at §8.3–8.5 instead.
+
+It was flagged during the H3 repair for still reading the frozen `inform.compass_stances` table for
+both its old and its new ladder, and the first instinct was to port it onto the revision model.
+**Measuring first killed that plan**, which is the reusable part of this:
+
+| Table | Rows |
+|---|---|
+| `inform.topic_rewrites` | **0** |
+| `inform.topic_rewrite_stance_proposals` | **0** |
+| `inform.compass_topic_revisions` | **140**, 2026-03-15 → 2026-09-12 |
+
+Both rewrite tables have always been empty. The mode was a second, never-used path to a job the
+revision model already does, and the revision model already carries the two things the rewrite
+workflow was hand-rolling: `change_class` (17 `clarifying`, 123 `substantive`) is the §8.4 ruling
+about which rewordings cost a re-audit, and `rung_map` (on all 17 clarifying revisions and 57 of
+the substantive ones) is the old→new identity mapping.
+
+🔑 **A port would have rebuilt a frozen-table read that had no user.** Before repointing a code
+path at a better model, count its rows — dead code is cheaper to delete than to modernise, and
+every line kept is a place the frozen table can leak back in.
+
+⚠ The two tables themselves are left in place. Dropping them is a migration and a separate
+decision; empty tables cost nothing, and it was the skill that made them reachable.
 
 ---
 
