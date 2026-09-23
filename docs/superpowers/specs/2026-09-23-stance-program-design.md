@@ -173,7 +173,7 @@ revision **in the same statement**, so the season cannot close between the read 
 if no season is open the select yields no rows, **nothing is written, and nothing raises.** A push
 without the row-count check reports success having saved nothing.
 
-⚠ The ~158 `backend/scripts/apply-*-stances.ts` files are **not templates**. They carry a bare
+⚠ The **149** `backend/scripts/apply-*-stances.ts` files (counted on `master`, 2026-09-23) are **not templates**. They carry a bare
 `INSERT (politician_id, topic_id, value)` that predates the season model. They already ran, so they
 are harmless where they sit; copying one gives you a form that fails, or worse, resolves against
 scaffolding that is being removed.
@@ -283,8 +283,11 @@ Pass-1 survival by what pinned the chair:
 | Bare roll-call vote | **0%** |
 | Statement or quote alone | **0%** |
 
-That ordering suggests "votes are weak evidence" — **which is the wrong lesson.** Pass 2 targeted
-votes deliberately and they came back at 50%, split perfectly:
+That ordering suggests "votes are weak evidence" — **which is the wrong lesson**, and it is the
+wrong lesson twice over, because a **0%** in a table is what a reader remembers. Recorded floor
+votes were the single best evidence in the Texas SB 17 / HB 17 audit: they are dated, attributed,
+and the journals parse. What the 0% measures is *bare* votes — a vote with no chair-shaped bill
+under it. Pass 2 targeted votes deliberately and they came back at 50%, split perfectly:
 
 - *Yes on SB23* — a specific Medicaid benefit extension. The bill **is** chair-shaped. Kept.
 - *No on SS AB1* — a rebate deal the member disliked. Oppositional only. Dropped.
@@ -295,6 +298,16 @@ rules out the far end of the scale and nothing more.
 
 Votes are simultaneously the **strongest** evidence on attribution (their name, their vote) and the
 **weakest** on resolution.
+
+Three traps sit on the attribution side, all of them from the Texas cohort:
+
+- 🔴 **An excused absence is not a position.** A member who was not there did not decline to
+  vote. This was nearly cited as evidence of opposition.
+- 🔴 **Check tenure before you read a non-vote.** A blank in the tally for a member who had not
+  yet been seated says nothing about them (§4.10).
+- 🔑 **Verify your parse against the journal's own totals.** Journals are pypdf-parseable, and an
+  18/10 tally scraped off one page turned out to belong to a different bill printed on the same
+  page. The journal prints its own totals; if yours disagree, yours are wrong.
 
 🔑 **Three properties, testable from the lead list, before you spend a fetch.** An instrument
 can seat a chair only if it is *single-subject* (one topic, so the position it evidences is
@@ -492,6 +505,17 @@ the level it applies to, and treat those people as researched. A later pass that
 One member's 2021 "term start" was in fact their **city council** term, not the legislature. A row
 citing a real bill page looks well-sourced while being fabricated.
 
+🔴 **`essentials.office_terms.term_start` cannot adjudicate this below the federal level.** It is
+nullable *by policy* under ADR 0002, with a `start_precision` column so imprecision is recorded
+rather than invented — a NULL there is a deliberate absence of authority, not a gap to fill. No
+term-start authority exists for state or local officeholders in our data or in any single public
+dataset. So resolve seating from the member's own record page, never from our `term_start`, and
+report the row **owed** when the page cannot answer.
+
+⚠ **A candidate seat is not a tenure.** `office_terms` holds `Candidate for U.S. Senate — Alabama`
+rows beside real seats, and a sitting senator seeking re-election has **both**. Reading the wrong
+one gives a term that starts in the future.
+
 `validate-stance-quotes.py` carries a deterministic `[PRE-SEATING]` check that parses session codes
 out of `sources` **and** `reasoning`. Note the trap in the trap: a member with prior service in the
 *other chamber* will false-positive unless the check is keyed to the earliest chamber. And
@@ -616,6 +640,12 @@ OData **caps a page at 15 rows whatever `$top` says** (paging took one body from
 one city publishes **each minutes document twice** (briefing and formal meeting, same underlying
 file) — dedupe by content hash; and **a published minutes PDF can be an unfilled template**
 (`Councilwoman ____ moved`).
+
+🔴🔴 **Skip school boards and school committees entirely — this is a standing product
+decision, not a coverage judgement.** No compass stance research runs for a `School Committee` or
+`School Board` chamber until a dedicated school-board badge ships, because those members must be
+visually distinguished before their stances go live. When a local body list includes them, route
+the city council and leave the school board; say in the wave notes that you did.
 
 ⚠ Some seats set almost no policy the ladders ask about. **6 of 32** NC locals were Sheriff, Register
 of Deeds or Clerk of Superior Court. Expect documented zeros. Do not force.
@@ -1143,7 +1173,8 @@ For the first wave by any new researcher — human or model — on any new body.
 
 1. **Scope from `compass_topic_roles`, live.** Query the role scopes for the level; do not inherit a
    topic list from a file. **Measured 2026-09-23 across the 61 Season 3 topics: 36 carry `local`, 41
-   `state`, 34 `federal`.** These move; re-verify every run.
+   `state`, 34 `federal`.** These move; re-verify every run. **Drop any school board or school
+   committee from the cohort before you start** (§5.3).
 2. **Read the ladders from the season pin** (§2.2), and **diff them against the frozen table** so you
    know which ones would have misled you.
 3. **Test the axis before spending** (§4.7): write down the one question the five rungs all answer,
