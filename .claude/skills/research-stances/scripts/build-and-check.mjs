@@ -7,8 +7,10 @@
  * the deterministic mechanical checks BEFORE anything is inserted, so the orchestrator
  * can fix problems in the CSV instead of in the DB. Mirrors the mechanical pass of the
  * audit-quotes skill (note-missing, note-too-long, note-section-ref, deid-missing,
- * trailing-ellipsis, partisan-tell, source-tier-4, invalid-source, unquotable-source,
- * scorecard-source, stance-label).
+ * trailing-ellipsis, partisan-tell, invalid-source, unquotable-source, scorecard-source,
+ * pointer-only-source, stance-label). There is deliberately no campaign-site URL check:
+ * provenance is judged by directness of answer, not medium, so the audit-quotes judgment
+ * pass owns it (source-not-an-answer).
  *
  *   cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
  *      --csv data/stance-research/2026-07-12-ca-gov-becerra-otr.csv
@@ -51,13 +53,15 @@ const REP = /\b(Republican|Republicans|GOP)\b/;
 const PARTISAN = /\b(Democrat|Democrats|Democratic|Republican|Republicans|GOP|MAGA)\b/;
 const PARTY_PHRASE = /\b(?:my|our) party\b/i;
 const SENTENCE_END = /[.!?](\s|$)/g;
-const CAMPAIGN_SITE = /(for[a-z]+\d{2,4}|20\d\d|campaign)\.(com|org)|(vote|elect)[a-z]+\.(com|org)/i;
 // Secondary aggregators / encyclopedias — NOT valid sources (checks.py: AGGREGATOR_SOURCE).
 const AGGREGATOR_SOURCE = /ontheissues\.org|wikipedia\.org/i;
 // Quiz / questionnaire comparison sites — categorically unquotable (checks.py: QUIZ_SOURCE).
 const QUIZ_SOURCE = /isidewith\.com/i;
 // Legislative scorecards — votes/ratings, never utterances (checks.py: SCORECARD_SOURCE).
 const SCORECARD_SOURCE = /\/(?:[a-z]+-)?scorecards?\//i;
+// VOTE411 answers are the candidate's words, but LWV terms bar reproducing them without
+// written permission — a pointer, never a cited source (checks.py: POINTER_ONLY_SOURCE).
+const POINTER_ONLY_SOURCE = /vote411\.org|thevoterguide\.org/i;
 // A quote this short states a topic, not a position (checks.py: STANCE_LABEL_MAX_WORDS).
 const WORD = /[A-Za-z0-9][A-Za-z0-9'’-]*/g;
 const STANCE_LABEL_MAX_WORDS = 4;
@@ -90,14 +94,14 @@ export function checkQuoteRow(r) {
       what: `blind text contains a partisan/side tell: '${m[0]}'.` });
   }
   const url = r.source_url || '';
-  if (!/youtube\.com|youtu\.be/.test(url) && CAMPAIGN_SITE.test(url)) out.push({ ...base, check_id: 'source-tier-4', severity: 'medium',
-    what: `source looks like a campaign/written page (tier 4): ${url}` });
   if (AGGREGATOR_SOURCE.test(url)) out.push({ ...base, check_id: 'invalid-source', severity: 'high',
     what: `source is a secondary aggregator, not an original: ${url}` });
   if (QUIZ_SOURCE.test(url)) out.push({ ...base, check_id: 'unquotable-source', severity: 'high',
     what: `source is a quiz/questionnaire site (no quotable row): ${url}` });
   if (SCORECARD_SOURCE.test(url)) out.push({ ...base, check_id: 'scorecard-source', severity: 'high',
     what: `source is a legislative scorecard (votes/ratings, not utterances): ${url}` });
+  if (POINTER_ONLY_SOURCE.test(url)) out.push({ ...base, check_id: 'pointer-only-source', severity: 'high',
+    what: `source is VOTE411 / thevoterguide.org: ${url}. LWV terms bar reproducing this without written permission, so it cannot be a cited source.` });
   const words = ((r.quote_text || '').match(WORD) || []).length;
   if (words > 0 && words <= STANCE_LABEL_MAX_WORDS) out.push({ ...base, check_id: 'stance-label', severity: 'medium',
     what: `quote is ${words} word(s) — a stance label, not a rankable statement.` });
