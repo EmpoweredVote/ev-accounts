@@ -437,7 +437,10 @@ skill, **(4f)** promote the Read & Rank picks to live only once the audit is cle
 
 **(i) Mechanical + bundle.** Run the checker over the CSV — it builds the audit context bundle
 (topics → quotes with stance + editor_note + de-id) and runs the deterministic checks
-(note-missing, note-too-long, deid-missing, trailing-ellipsis, partisan-tell, source-tier-4):
+(note-missing, note-section-ref, note-too-long, deid-missing, trailing-ellipsis, partisan-tell,
+invalid-source, unquotable-source, scorecard-source, pointer-only-source, stance-label). There is no
+campaign-site URL check: a campaign page is judged on how directly it answers the question, not on
+its medium, so that call belongs to the judgment pass below (`source-not-an-answer`).
 
 ```bash
 cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
@@ -447,17 +450,23 @@ cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-
 ```
 
 Fix every **high** finding in the CSV (write the missing `editor_note`, de-identify honestly, strip
-the trailing ellipsis, neutralize the partisan tell) and re-run until it's clean. Do not push a CSV
-with high-severity mechanical findings.
+the trailing ellipsis, neutralize the partisan tell, re-source an aggregator / quiz / scorecard row to
+the original) and re-run until it's clean. A `pointer-only-source` row (VOTE411 / thevoterguide.org)
+cannot be cited at all — LWV terms bar reproducing it — so re-source the position to the candidate's
+own materials, or drop the quote if VOTE411 is the only place it appears. Do not push a CSV with
+high-severity mechanical findings.
 
 **(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
 the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
 passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgment findings
 (`not-forward`, `is-attack`, `off-question`, `deid-dishonest`, `note-not-self-contained`,
-`source-summary`, `coupling-in-tension`). Resolve them:
+`source-summary`, `coupling-in-tension`, `source-not-an-answer`). Resolve them:
 - `not-forward` / `off-question` / `is-attack` → drop the quote (keep the stance value from the
   record); a `coupling-in-tension` → surface to the user with the value-change guard.
 - `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
+- `source-not-an-answer` → look for a more direct answer (a questionnaire or interview answer to
+  this question). If none exists, keep the quote: a curator-extracted quote may be all a candidate
+  has, and that is honest presence, not a defect.
 Only quotes that clear both passes proceed to the push.
 
 ### 4b. Resolve IDs
