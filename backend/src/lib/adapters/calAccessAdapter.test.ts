@@ -229,10 +229,16 @@ describe('calAccessAdapter upsert: prune superseded rows', () => {
     });
     expect(res).toMatchObject({ inserted: 1, updated: 1, errors: 0 });
 
-    const del = poolQueryMock.mock.calls.find(([sql]) => String(sql).startsWith('DELETE'));
+    const del = poolQueryMock.mock.calls.find(([sql]) => String(sql).includes('DELETE FROM'));
     expect(del).toBeDefined();
     expect(del![1]).toEqual(['src-100', ['F1_0_1', 'F2_1_1']]);
-    expect(String(del![0])).toContain("c.data_source = 'cal_access'");
+    const sql = String(del![0]);
+    expect(sql).toContain("m.data_source = 'cal_access'");
+    // The CTE that finds the source's rows must filter on politician_source_id ALONE, so the
+    // planner can only use the per-source index (see pruneSuperseded).
+    const cte = sql.slice(sql.indexOf('MATERIALIZED'), sql.indexOf('DELETE FROM'));
+    expect(cte).toMatch(/WHERE politician_source_id = \$1\s*\)/);
+    expect(cte).not.toContain('data_source =');
   });
 
   it('does not prune when a batch failed', async () => {
@@ -244,7 +250,7 @@ describe('calAccessAdapter upsert: prune superseded rows', () => {
       contributions: [contribution('F1_0_1')], skipped: 0, totalParsed: 1,
     });
     expect(res.errors).toBe(1);
-    expect(poolQueryMock.mock.calls.some(([sql]) => String(sql).startsWith('DELETE'))).toBe(false);
+    expect(poolQueryMock.mock.calls.some(([sql]) => String(sql).includes('DELETE FROM'))).toBe(false);
   });
 
   it('does not prune when the export has nothing for the source', async () => {

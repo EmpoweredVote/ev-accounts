@@ -599,11 +599,25 @@ async function pruneSuperseded(contributions: ContributionInsert[]): Promise<voi
   const keep = contributions.map(c => c.source_transaction_id);
   // Anti-join, not `NOT (id = ANY($2))`: a committee can hold ~29k rows (Newsom 2022), and
   // an array test per row is quadratic where a hashed anti-join is linear.
+  //
+  // 🔴 The source's rows are found through a MATERIALIZED CTE that filters on
+  // politician_source_id ALONE, so the only usable index is the per-source one. With
+  // `data_source = 'cal_access'` in the same WHERE, the planner took the (data_source,
+  // source_transaction_id) unique index instead and read EVERY cal_access row for each
+  // source: measured 2026-09-23, 9+ s per prune by the end of the first ingest (155k rows),
+  // because contributions' statistics still counted almost no cal_access rows. 190k inserts
+  // do not reach autovacuum's analyze threshold on a 28M-row table, so that plan would stay.
   const res = await pool.query(
-    `DELETE FROM transparent_motivations.contributions c
-      WHERE c.data_source = 'cal_access'
-        AND c.politician_source_id = $1
-        AND NOT EXISTS (SELECT 1 FROM unnest($2::text[]) AS k(id) WHERE k.id = c.source_transaction_id)`,
+    `WITH mine AS MATERIALIZED (
+       SELECT id, data_source, source_transaction_id
+         FROM transparent_motivations.contributions
+        WHERE politician_source_id = $1
+     )
+     DELETE FROM transparent_motivations.contributions c
+      USING mine m
+      WHERE c.id = m.id
+        AND m.data_source = 'cal_access'
+        AND NOT EXISTS (SELECT 1 FROM unnest($2::text[]) AS k(id) WHERE k.id = m.source_transaction_id)`,
     [sourceID, keep]
   );
   if (res.rowCount) {
