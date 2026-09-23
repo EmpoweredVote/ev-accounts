@@ -2031,18 +2031,13 @@ export async function getRepresentativesByJurisdiction(
     );
     if (stateRes.rows.length > 0) {
       const state = stateRes.rows[0].state;
-      const statewideQueryText = `
-        SELECT ${SELECT_FIELDS}
-        FROM essentials.districts d
-        ${JOINS}
-        WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
-        AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
-        AND (p.is_active = true OR o.is_vacant = true)
-        AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-        AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
-        ORDER BY COALESCE(p.id, o.id)
-      `;
-      const sw = await pool.query(statewideQueryText, [state]);
+      // The same statewide query the address path uses. This used to be an inline copy that still
+      // decided "statewide court" by geo_id LENGTH (anything not 5 chars), so any JUDICIAL district with its own
+      // non-county polygon came back for EVERY user in the state: Indiana's Court of Appeals
+      // Districts 1-3 (7-char geo_ids, migration 1832) and, once CA_0189 linked it, California's
+      // Second Appellate District ('06-appellate-district-2'). buildStatewideQuery's rule is
+      // "statewide iff no geofence below the state outline".
+      const sw = await pool.query(buildStatewideQuery(), [state]);
       statewideRows = sw.rows as Record<string, unknown>[];
     }
   }
