@@ -30,6 +30,12 @@ You are running the **research-stances** skill. Your job is to research politici
 > `stance-gate` → `verify-stance-research` (dry-run) → human review → `verify-stance-research --apply`.
 > Every step is a non-interactive script with exit codes, so the same pipeline can later run on a
 > schedule. Human decisions go to the review queue (`inform.stance_research_review`), not the chat.
+>
+> 🔴 **Review-all is the default (ruling 2026-09-22): nothing auto-publishes.** `--apply` writes
+> every stance to the review queue — a row that passes every check is queued with reason
+> `review-all-mode` — unless the operator passes `--auto-push` for that run. Until a chair-fit
+> classifier exists, a person approves every stance, and those approvals are the labeled set it
+> will be built from. No env var turns `--auto-push` on.
 
 ---
 
@@ -86,7 +92,9 @@ It writes `topics.json` + `politicians.json` into the batch dir and prints one
 `TOPIC SCALE REFERENCE (<level>)` block per office level — already filtered to the topics that
 apply at that level (`compass_topic_roles`). Paste the block matching each politician's level
 into that politician's prompt. A politician printed under `level unknown` needs a person to set
-the level (`--politician <uuid>:<level>`) before research.
+the level (`--politician <uuid>:<level>`, added alongside the same `--race`) before research. The
+bundle keeps one entry per person, so giving someone by both `--race` and `--politician` is fine.
+Each person's `full_name` in `politicians.json` is the spelling every batch file must use.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
@@ -177,6 +185,10 @@ not fall back to a remembered summary.
 ```
 Research the political stances of [POLITICIAN_NAME] ([OFFICE/TITLE if known]).
 
+NAMES AND KEYS: in both files, copy `full_name` exactly as it appears in politicians.json —
+"[POLITICIAN_NAME]", same spelling, case and spacing — and copy `topic_key` exactly as listed in
+the TOPIC SCALE REFERENCE below.
+
 [If --topics was specified:]
 Only research these topics: [TOPIC_LIST]
 
@@ -206,16 +218,16 @@ approximation.
 
 Do NOT pick a value based on party expectation. Do NOT assume direction. For every stance
 you record, ask: "Does this politician's documented position match the EXACT TEXT at this
-value?" If not, pick a different value or skip the topic.
+value?" If not, pick a different value or leave the value blank.
 
 TOPIC SCALE REFERENCE — assign values by matching to exact stance text:
 [PASTE THE TOPIC SCALE REFERENCE BLOCK FOR THIS POLITICIAN'S LEVEL, printed by build-stance-topic-bundle.ts]
 
-The topic_key in your CSV output MUST exactly match one of the topic_key values above.
+The topic_key in your CSV output MUST be copied exactly as listed above.
 Do NOT invent your own topic_key slugs.
 Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
 
-The TOPIC SCALE REFERENCE is already filtered to the questions this season asks of this office. Research only those; skip a topic when you cannot find evidence for a specific chair.
+The TOPIC SCALE REFERENCE is already filtered to the questions this season asks of this office. Research only those. When you cannot find evidence for a specific chair, write the row with a blank value — the pipeline reads a blank as "insufficient evidence".
 
 --output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 
@@ -266,7 +278,8 @@ EDITOR NOTE RULE:
 [INJECT: note]
 
 Other rules:
-- Skip any topic where you cannot find sufficient evidence
+- Where you cannot find sufficient evidence for a specific chair, write the row with a blank value and say in reasoning why the evidence falls short — never guess
+- One row per (full_name, topic_key) in research.csv. If you are re-researching a pair, REPLACE its existing rows in research.csv and evidence.csv — never append a second row for it.
 - Every source URL must be one you fetched successfully and backed in evidence.csv (OTR YouTube URLs from the transcript file count; their snippet is the transcript passage).
 - Use the full 1-5 range; match to stance text, not political alignment
 ```
@@ -292,8 +305,12 @@ After all agents complete:
 1. Read research.csv and evidence.csv from the batch dir
 2. If multiple agents wrote to the same files, verify no duplicate headers
 3. If agents returned results in their response text instead of writing to file, manually compile into the CSV files using the Write tool
-4. Count total stances collected vs. expected (politicians x topics)
-5. research.csv includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
+4. **One row per (full_name, topic_key).** A re-research or retry pass REPLACES that pair's rows in
+   research.csv and evidence.csv — delete the old rows for the pair, then write the new ones. Never
+   append a second row for a pair: two rows cross-verify each other's snippets, so `stance-gate`
+   flags both `duplicate-row` (high) and `verify-stance-research` exits 2.
+5. Count total stances collected vs. expected (politicians x topics)
+6. research.csv includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
 
 ---
 
@@ -317,7 +334,7 @@ Show the user a formatted summary table:
 | Name 1 | abortion | 1 | "Voted against every restrict..." |
 | ...    | ...        | ... | ... |
 
-Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]/` (research.csv, evidence.csv, gate-findings.json, publish-report.json)
+Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]/` (research.csv, evidence.csv; STEP 4a adds gate-findings.json, stances.csv and publish-report.json)
 ```
 
 ### Value-Change Guard — enforced in code
@@ -325,14 +342,22 @@ Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAM
 `verify-stance-research.ts` diffs every proposed value against the **open season** and applies
 `decidePublish` (`backend/scripts/lib/stancePublishPolicy.ts`): a row already holding a value in
 the open season — including a 0 (an editor's blank) — is **never** written automatically; it goes to
-the review queue with reason `value-change`. Read the buckets from `publish-report.json`:
+the review queue with reason `value-change`. These buckets do not exist yet at STEP 3: the
+verifier's dry-run in **STEP 4a(i)** writes them to `publish-report.json`. Read them there before
+any `--apply`:
 
 | action | meaning |
 |---|---|
-| `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` |
+| `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` **only when the run passes `--auto-push`**; without it (the default) this row is `review` / `review-all-mode` |
 | `unchanged` | same value already in the open season — skipped |
-| `review` | queued for a person: `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
-| `re-research` | `gate-high` (defective — fix and re-run, not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
+| `review` | queued for a person: `review-all-mode` (clean, but review-all is on), `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
+| `re-research` | `gate-high` (defective — goes back to the researcher, not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
+
+Every queued row in `publish-report.json` carries `admin_queue_visible`. **`false` means the row
+is saved but NOT in the admin queue**: an `unresolved-politician` row is stored with status
+`unresolved_politician`, and the admin review queue lists only `pending` rows. The verifier prints
+these under `NOT IN THE ADMIN QUEUE — politician not resolved; rebuild the bundle with this person
+(--politician <uuid>:<level>) and re-run:`. Do exactly that; nobody will find them in the admin UI.
 
 **The public summary MUST move with the value.** `politician_context.reasoning` is the "here's how we
 got to this value" blurb shown on the candidate's **Essentials profile** and the **Compass** — it is
@@ -371,7 +396,7 @@ Then ask:
 > 1. **Approve all** — run the pre-push QA, then push stances + quotes as drafts, audit, and promote picks
 > 2. **Reject specific rows** — tell me which politician/topic pairs to remove
 > 3. **Edit values** — tell me which rows to change (e.g., 'change Sherman/healthcare to 3')
-> 4. **Skip DB push** — keep the CSV only, don't write to database
+> 4. **Skip DB push** — keep the batch files only, don't write to database
 >
 > What would you like to do?"
 
@@ -390,14 +415,23 @@ skill, **(4f)** promote the Read & Rank picks to live only once the audit is cle
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a
 B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
-npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: fix research.csv/evidence.csv, re-run
+npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-dispatch the researcher for those pairs, re-run
 npx tsx scripts/verify-stance-research.ts --dir $B   # dry-run: fetches every source, writes $B/publish-report.json
 node ../.claude/skills/research-stances/scripts/build-and-check.mjs --csv $B/research.csv   # quotes
 ```
 
-Fix every **high** finding in the CSV (write the missing `editor_note`, de-identify honestly, strip
-the trailing ellipsis, neutralize the partisan tell) and re-run until it's clean. Do not push a CSV
-with high-severity mechanical findings.
+**Stance findings go back to the researcher. The orchestrator never edits past the gate.** A
+`stance-gate` **high** finding (and a verifier `re-research` row) means the research is defective:
+re-dispatch the `politician-stance-researcher` for that politician/topic, have the new pass REPLACE
+that pair's rows in research.csv and evidence.csv (STEP 2 item 4), and re-run the gate. You — the
+orchestrator — must **never** edit `value`, `reasoning`, `evidence_type`, source URLs or snippets to
+clear a finding. An edit that clears a finding is a claim no researcher made and no fetched page backs;
+the gate exists to stop exactly that.
+
+**Quote mechanics (from `build-and-check.mjs` only) are fixed in the CSV.** Fix every **high**
+quote finding in the quote fields — write the missing `editor_note`, de-identify honestly, strip the
+trailing ellipsis, neutralize the partisan tell in the blind (`quote_deidentified`) text — and re-run
+until it's clean. Do not push a CSV with high-severity mechanical findings.
 
 **(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
 the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
@@ -427,15 +461,36 @@ from `topics.json`.
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a
 npx tsx scripts/verify-stance-research.ts --dir data/stance-research/YYYY-MM-DD-[BATCH_NAME] \
-  --apply --editor-id <your admin user uuid>
+  --apply --editor-id <your admin user uuid>          # review-all (default): every stance is queued
+# add --auto-push ONLY as a deliberate, per-run operator decision (ruling 2026-09-22)
 ```
 
-`auto-push` rows are written with `writeVerifiedStance` (season-aware: `UPSERT_ANSWER_SQL` +
-`UPSERT_CONTEXT_SQL` + `assertWritten`) together with their verified snippets in
-`politician_context_evidence`; `review` and `below-threshold` rows go to `stance_research_review`
-for resolution in the admin review queue; `gate-high` rows are not written.
+**By default nothing is published by this command.** Every scored row that is not `unchanged` or
+`gate-high` goes to `stance_research_review` for a person to approve in the admin review queue — a
+row that passed every check is queued with reason `review-all-mode`. Only with `--auto-push` are
+`auto-push` rows written directly, with `writeVerifiedStance` (season-aware: `UPSERT_ANSWER_SQL` +
+`UPSERT_CONTEXT_SQL` + `assertWritten`) and their verified snippets in
+`politician_context_evidence`, one transaction per row. `gate-high` rows are never written — they go
+back to the researcher (4a(i)).
 
-A queued row's verified snippets become public citations only when a person approves it (resolveResearchReview writes them) — never at queue time, because they would render under the stance displayed now.
+The verifier refuses the whole batch (exit 2, nothing written) when: two rows share a
+(politician, topic) pair; the bundle's ladder revision for a scored topic is no longer the open
+season's pin ("the ladder changed since the bundle was built — rebuild the bundle and re-research
+these topics"); `topics.json` is missing or unreadable; or `--editor-id` is not a user.
+
+Re-running `--apply` on the same batch is safe: review rows a person already resolved or rejected
+are left alone (reported as `LEFT ALONE`), never reset to pending. The SUMMARY reports
+`snippets inserted=N of M attempted`; a shortfall means those snippets were already stored for the
+pair (the evidence unique index has no season column).
+
+**Unresolved politicians are saved but NOT in the admin queue.** A row whose person is not resolved
+is stored with status `unresolved_politician` (its `full_name_raw` kept), and the admin review queue
+lists only `pending` rows. The verifier lists these under `NOT IN THE ADMIN QUEUE — politician not
+resolved; rebuild the bundle with this person (--politician <uuid>:<level>) and re-run:`, and
+publish-report.json marks them `"admin_queue_visible": false`. Rebuild the bundle with each one and
+re-run; do not expect to find them in the admin UI.
+
+A queued row's verified snippets become public citations only when a person approves it (resolveResearchReview writes them) — never at queue time, because they would render under the stance displayed now. Approval is refused when the row has no machine-verified and no hand-verified source.
 
 **Which season?** Whichever is open — check with
 `SELECT number FROM inform.seasons WHERE status = 'open'`. Do not trust a season number written in a
@@ -548,7 +603,8 @@ await pool.end();
 After the pipeline:
 > "Pushed [N] stances and [N] quote drafts for [politician names].
 > - Stances (from publish-report.json): [N] auto-push, [N] unchanged, [N] queued for review ([reasons]), [N] re-research
-> - Every auto-pushed stance was written with its reasoning and its verified snippets
+> - NOT in the admin queue (unresolved politician — rebuild the bundle with them): [list, or "none"]
+> - Every auto-pushed stance (only with --auto-push) was written with its reasoning and its verified snippets
 > - Quotes: [inserted] inserted as drafts, [dupes] already present
 > - Audit: [clean / residual findings resolved via apply_fixes]
 > - Promoted to live: [selected] Read & Rank pick(s); held back (de-id leak): [leaks list]
@@ -561,7 +617,7 @@ After the pipeline:
 
 ## ERROR HANDLING
 
-- If an agent fails or times out, report which politician failed and offer to retry just that one
+- If an agent fails or times out, report which politician failed and offer to retry just that one. A retry REPLACES that politician's rows for the retried topics in research.csv and evidence.csv — never append a second row for a pair (STEP 2 item 4)
 - If research.csv or evidence.csv can't be written, fall back to showing results in conversation and offer to retry the file write
 - If DB push fails for a specific row, report the error, skip that row, and continue with the rest
 - Never lose data — research.csv and evidence.csv in the batch directory are the source of truth, and publish-report.json records what happened to each row; DB push is additive

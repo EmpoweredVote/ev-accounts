@@ -150,7 +150,7 @@ won't be served blind by Read & Rank).
   When both exist and conflict, the record wins and the reasoning says so.
 - **Recency matters** — 2023-2026 actions > 2020 actions, unless the older action is more definitive.
 - **Do not infer from party affiliation.** Base assessment on actual evidence.
-- **Use the full 1-5 range.** Differentiate moderates from extremes within the same party.
+- **Use the full 1-5 range.** Two people on the same side of a topic often sit in different chairs; place each one by their own evidence.
 - **If position has shifted, use MOST RECENT position** but note the shift in reasoning.
 
 ### Reading the ladder (MANDATORY before returning any value)
@@ -163,7 +163,7 @@ ladders are not left-right at all. For every value you return:
 3. **Never use party, a party label, or "what people like them usually think" to choose or adjust a
    value.** That is inference, not evidence, and the pipeline rejects reasoning that does it.
 4. If the evidence shows only a direction and two or three chairs sit on that side, leave the value blank.
-- **SKIP a topic entirely** if you cannot find evidence for a specific chair. Do not guess.
+- **No evidence for a specific chair → write the row with a blank value** (see WHEN EVIDENCE IS INSUFFICIENT). Do not guess.
 
 ### Reasoning Quality
 - 1-3 sentences explaining WHY the politician gets this score.
@@ -171,7 +171,7 @@ ladders are not left-right at all. For every value you return:
 - Include dates where possible.
 - Be factual, concise, nonpartisan.
 
-Good reasoning: "Trump attempted to repeal the ACA multiple times but was blocked by Congress. In his second term, he let enhanced ACA subsidies expire and tightened enrollment rules. He famously said he has 'concepts of a plan' to replace the ACA but has not proposed full privatization or universal coverage."
+Good reasoning: "Voted YES on HB 1001 (2025), which created a state-run public health-insurance option sold alongside private plans, and co-sponsored SB 212 (2026) to fund its premium subsidies. Has not backed replacing private coverage with a single public plan." (Names the instruments, dates them, and says what separates this chair from its neighbour.)
 
 Bad reasoning: "Supports healthcare reform." (too vague)
 Bad reasoning: "Likely moderate on this issue based on party affiliation." (party is never evidence — rejected by the pipeline)
@@ -199,7 +199,9 @@ Write TWO files (RFC-4180; wrap fields containing commas in double quotes; doubl
 ```
 full_name,topic_key,value,evidence_type,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
 ```
-- `topic_key`: exactly a key from the TOPIC SCALE REFERENCE.
+- `full_name`: copy it exactly as it appears in politicians.json — the name your dispatch prompt
+  gives — with the same spelling, case and spacing. Every row for one person uses that one spelling.
+- `topic_key`: copy it exactly as listed in the TOPIC SCALE REFERENCE.
 - `value`: integer 1-5, or blank when evidence is insufficient for a specific chair.
 - `evidence_type`: `record` or `statement` (see Stance Assessment).
 - `reasoning`: 1-3 sentences naming the evidence. Never mention party.
@@ -212,12 +214,20 @@ full_name,topic_key,source_url,snippet,snippet_index
 ```
 - One row per supporting passage; at least one per source URL. `snippet` is verbatim, ≥ 25 words,
   and names or sits beside this person. `snippet_index` counts from 0 per (full_name, topic_key, source_url).
+- `full_name` / `topic_key`: the same exact spellings as the research.csv row they back.
 
-Group rows for one politician together. No BOM. Clean header rows.
+Group rows for one politician together. No BOM. Clean header rows. **research.csv holds ONE row per
+(full_name, topic_key).**
 
 ## FILE OUTPUT
 
-When your dispatch prompt includes --output-dir <path>, write research.csv and evidence.csv into that directory with the Write tool, each with its header row. If a file exists, append rows without repeating the header.
+When your dispatch prompt includes --output-dir <path>, write research.csv and evidence.csv into that directory with the Write tool, each with its header row. If a file exists, add rows for pairs it does not already hold, without repeating the header.
+
+**A re-research pass REPLACES that pair's rows — it never appends.** When you are re-researching a
+(full_name, topic_key) pair that already has rows, remove that pair's existing row from research.csv
+and its existing rows from evidence.csv, then write the new ones. Never leave two research.csv rows
+for one pair: they verify each other's snippets, so the pipeline refuses both (`stance-gate`
+flags `duplicate-row`, and `verify-stance-research` exits before writing anything).
 
 When no --output-dir is specified, return the CSV content in your response text as fenced code blocks.
 
@@ -230,7 +240,7 @@ When you complete your research, end your response with a summary block in this 
 - **Politician:** [full name]
 - **Topics researched:** [count]
 - **Topics with stance:** [count]
-- **Topics skipped:** [comma-separated list of skipped topic_keys, or "none"]
+- **Topics skipped:** [comma-separated topic_keys written with a blank value, or "none"]
 ~~~
 
 This summary helps the orchestrating skill track progress across parallel agent dispatches.
@@ -253,10 +263,12 @@ This summary helps the orchestrating skill track progress across parallel agent 
 
 ## WHEN EVIDENCE IS INSUFFICIENT
 
-If you cannot find strong evidence for a politician on a topic:
-- Do NOT include that topic_key row
-- Do NOT guess based on party affiliation
-- Note which topics were skipped and why in a summary
+If you cannot find evidence for a specific chair for a politician on a topic:
+- **Write the row with a blank `value`.** The pipeline reads a blank as "insufficient evidence": it
+  is never gated, pushed or queued. Say in `reasoning` why the evidence falls short (e.g. "shows
+  support for expanding coverage, but not whether through a public option or a single public plan").
+- Do NOT guess, and do NOT guess based on party affiliation
+- List those topic_keys as "Topics skipped" in the RESEARCH SUMMARY
 
 ## REWRITE RE-EVALUATION MODE
 
