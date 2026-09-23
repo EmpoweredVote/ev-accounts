@@ -71,7 +71,10 @@
 -- ---------------------------------------------------------------------------------------------------
 --   * Deleted terms: INSERT INTO essentials.office_terms SELECT id, office_id, politician_id, term_start,
 --     term_end, start_precision, how_started, how_ended, source, created_at
---     FROM essentials._fabricated_ca0156_removed;
+--     FROM essentials._fabricated_ca0156_removed WHERE reason LIKE 'CA_0156%';
+--     (The WHERE is required: CA_0159 archives its own deleted terms into this same table, reason
+--     prefix 'CA_0159'. Comment corrected by CA_0168; nothing executable changed.)
+--     A2 dates and seats were later corrected by CA_0168 -- roll that back first.
 --   * Tags: strip the ' | verified CA_0156 ...' / ' | unverified CA_0156 ...' suffix from source, and
 --     drop the notes element starting 'CA_0156'.
 --   * Flags: set is_active/is_incumbent back per the class list below (A1 incumbents stay true). Party
