@@ -732,8 +732,13 @@ export async function getPoliticiansByGovernmentList(
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
+           -- district_type is a fact about the DISTRICT; governments.type is only a fallback for a
+           -- district-less office. The merge below keeps THIS query's row over the overlap query's
+           -- row for the same person, so a type derived from g.type silently overwrote a correct
+           -- d.district_type (LASC judges JUDICIAL -> COUNTY, King County council -> COUNTY, state
+           -- legislators -> '' which the frontend files as Local). Measured 2026-09-23.
            CASE
-             WHEN d.district_type = 'SCHOOL' THEN 'SCHOOL'
+             WHEN COALESCE(d.district_type, '') <> '' THEN d.district_type
              WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township', 'Village')
                   AND LOWER(o.title) ~ '(mayor|city manager|city administrator|city secretary|village president|town chairperson)'
                THEN 'LOCAL_EXEC'
