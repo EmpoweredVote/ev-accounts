@@ -393,9 +393,11 @@ library quotes but are NOT eligible to be the Read & Rank pick.
 Then ask:
 > "Review the stances above. Note: approved quotes are pushed as **drafts** and only promoted to
 > live after the quote audit is clean (STEP 4). You can:
-> 1. **Approve all** — run the pre-push QA, then push stances + quotes as drafts, audit, and promote picks
+> 1. **Approve all** — run the pre-push QA, then queue stances for review, push quotes as drafts, audit, and promote picks
 > 2. **Reject specific rows** — tell me which politician/topic pairs to remove
-> 3. **Edit values** — tell me which rows to change (e.g., 'change Sherman/healthcare to 3')
+> 3. **Edit values** — not in the CSV. Change a value in the admin review queue when you approve that row
+> (value override), or send the row back for re-research. Never edit `value`, `reasoning` or sources in
+> research.csv to reach a different chair.
 > 4. **Skip DB push** — keep the batch files only, don't write to database
 >
 > What would you like to do?"
@@ -405,7 +407,7 @@ Then ask:
 ## STEP 4 — QA → Push as Drafts → Audit → Promote
 
 Quotes go through a pipeline, never a single write. The order is: **(4a)** pre-push QA over the CSV,
-**(4b–4d)** push approved stances + quotes as **drafts**, **(4e)** hand off to the `audit-quotes`
+**(4b–4d)** queue approved stances for review, push quotes as **drafts**, **(4e)** hand off to the `audit-quotes`
 skill, **(4f)** promote the Read & Rank picks to live only once the audit is clean.
 
 ### 4a. Pre-push QA (before any write)
@@ -601,7 +603,7 @@ await pool.end();
 ### 4g. Report results
 
 After the pipeline:
-> "Pushed [N] stances and [N] quote drafts for [politician names].
+> "Queued [N] stances for review and pushed [N] quote drafts for [politician names].
 > - Stances (from publish-report.json): [N] auto-push, [N] unchanged, [N] queued for review ([reasons]), [N] re-research
 > - NOT in the admin queue (unresolved politician — rebuild the bundle with them): [list, or "none"]
 > - Every auto-pushed stance (only with --auto-push) was written with its reasoning and its verified snippets
