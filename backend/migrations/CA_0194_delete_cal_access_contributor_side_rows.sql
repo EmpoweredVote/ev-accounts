@@ -36,7 +36,14 @@
 --
 -- No FK references contributions (measured 2026-09-23). No migration runner exists; this file records SQL applied
 -- by hand (pure DML).
--- STATUS: NOT APPLIED. Awaiting operator approval (Chris Andrews).
+-- STATUS: APPLIED to prod 2026-09-23 ~21:17 UTC (operator approval: Chris Andrews), after PR #659 merged (6ae2d0de).
+--   Dry run x2 (BEGIN/ROLLBACK; the rollback left 2,901 + 325 rows) and a planted control (expected count changed
+--   to 2900: the pre-flight RAISEd) right before the apply. Apply: POST OK, contributor-side rows 0. Re-run: "no
+--   contributor-side cal_access rows left", nothing deleted. After: cal_access contributions 0, summaries 0.
+--   FIRST CORRECTED INGEST, same day: `node dist/jobs/run.js cal-access` from merged master, 21:18-21:50 UTC,
+--   exit 0: 619 runs completed, 0 errors; 189,193 rows ($253,008,739) on 215 links, every row's FILER_ID = its
+--   link's committee id; 344 summary rows; ETag saved. 123 of the 133 CA_0192 links hold rows; all 16 CA_0192
+--   people who showed 'data_pending' now show contributions on the live API.
 --
 -- ROLLBACK: none in SQL — the deleted rows were wrong. They can be rebuilt only by running the pre-2026-09-23
 --   adapter, which is the defect. The pre-flight md5 below identifies exactly what was removed.
