@@ -11,7 +11,10 @@
  *     [--race <race_id> ...] [--politician <uuid>:<federal|state|local|judicial> ...]
  * Writes <dir>/topics.json and <dir>/politicians.json, then prints one TOPIC SCALE REFERENCE
  * block per office level present — paste the matching block into each researcher prompt.
- * Exit: 0 ok, 1 no open season / malformed ladder, 2 usage.
+ * politicians.json holds ONE entry per politician_id: a person reached by a --race and also given
+ * by --politician (the documented way to set a level the race could not) is one entry, with the
+ * --politician level.
+ * Exit: 0 ok, 1 no open season / malformed ladder, 2 usage (including a malformed uuid).
  */
 import 'dotenv/config';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -33,6 +36,28 @@ const MANUAL = opts('--politician');
 if (!DIR || (!RACES.length && !MANUAL.length)) {
   console.error('usage: build-stance-topic-bundle.ts --dir <batch> [--race <id> ...] [--politician <uuid>:<level> ...]');
   process.exit(2);
+}
+// Validate every id BEFORE any query: a malformed uuid used to reach `id = $1` and crash with an
+// uncaught "invalid input syntax for type uuid" (exit 1) instead of this script's usage exit 2.
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+for (const r of RACES) {
+  if (!UUID_RE.test(r)) { console.error(`ERROR: --race ${r}: not a uuid`); process.exit(2); }
+}
+const manualArgs: { id: string; level: Level }[] = [];
+for (const m of MANUAL) {
+  const [id, lvl, ...rest] = m.split(':');
+  if (!UUID_RE.test(id ?? '') || rest.length) {
+    console.error(`ERROR: --politician ${m}: expected <uuid>:<level>, and "${id}" is not a uuid`);
+    process.exit(2);
+  }
+  if (!LEVELS.includes(lvl as Level)) { console.error(`ERROR: --politician ${m}: level must be one of ${LEVELS.join('|')}`); process.exit(2); }
+  const lower = id.toLowerCase(); // essentials ids come back as lower-case text
+  const prior = manualArgs.find((a) => a.id === lower);
+  if (prior && prior.level !== lvl) {
+    console.error(`ERROR: --politician ${lower} is given twice with different levels (${prior.level}, ${lvl}) — one person has one level in a bundle`);
+    process.exit(2);
+  }
+  if (!prior) manualArgs.push({ id: lower, level: lvl as Level });
 }
 
 const { rows: raw } = await pool.query(`
@@ -62,7 +87,9 @@ const topics = raw.map(({ roles, ...t }) => {
 });
 
 type Pol = { full_name: string; politician_id: string; level: Level | null; race_id: string | null };
-const politicians: Pol[] = [];
+// Keyed by politician_id: one person given twice (--race and --politician, or two races) is ONE
+// entry. Two entries for one id would otherwise read to stance-gate as two namesakes.
+const byId = new Map<string, Pol>();
 if (RACES.length) {
   const { rows } = await pool.query(`
     SELECT DISTINCT ON (p.id) p.full_name, p.id::text AS politician_id, r.id::text AS race_id,
@@ -75,7 +102,7 @@ if (RACES.length) {
      WHERE r.id = ANY($1::uuid[])
      ORDER BY p.id, r.id`, [RACES]);
   for (const r of rows) {
-    politicians.push({ full_name: r.full_name, politician_id: r.politician_id, race_id: r.race_id,
+    byId.set(r.politician_id, { full_name: r.full_name, politician_id: r.politician_id, race_id: r.race_id,
       level: levelForDistrict(r.district_type, r.is_judicial) });
   }
   const { rows: [{ n }] } = await pool.query(
@@ -83,14 +110,22 @@ if (RACES.length) {
       WHERE race_id = ANY($1::uuid[]) AND politician_id IS NULL`, [RACES]);
   if (n) console.log(`note: ${n} candidate(s) on these races have no politician record and were skipped — they cannot hold a stance`);
 }
-for (const m of MANUAL) {
-  const [id, lvl] = m.split(':');
-  if (!LEVELS.includes(lvl as Level)) { console.error(`ERROR: --politician ${m}: level must be one of ${LEVELS.join('|')}`); process.exit(2); }
+for (const { id, level } of manualArgs) {
   const { rows } = await pool.query('SELECT full_name FROM essentials.politicians WHERE id = $1', [id]);
   if (!rows.length) { console.error(`ERROR: politician ${id} not found`); process.exit(2); }
-  politicians.push({ full_name: rows[0].full_name, politician_id: id, level: lvl as Level, race_id: null });
+  const onRace = byId.get(id);
+  if (onRace) {
+    // Same person as a --race candidate: keep the race_id, take the explicit level.
+    if (onRace.level !== level) {
+      console.log(`note: ${onRace.full_name} (${id}) is on a --race and given by --politician — one entry, level ${level} (was ${onRace.level ?? 'unknown'})`);
+    }
+    byId.set(id, { ...onRace, level });
+  } else {
+    byId.set(id, { full_name: rows[0].full_name, politician_id: id, level, race_id: null });
+  }
 }
 await pool.end();
+const politicians: Pol[] = [...byId.values()];
 
 mkdirSync(DIR, { recursive: true });
 writeFileSync(join(DIR, 'topics.json'), JSON.stringify(topics, null, 2));
