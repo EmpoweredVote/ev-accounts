@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES,
+import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES, GATE_CHECK_IDS,
   type ResearchRow, type BundleTopic, type BundlePolitician } from './stanceGate.js';
 
 const SNIP = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 because she believes every '
@@ -102,5 +102,55 @@ describe('checkBatch / toStanceRows', () => {
     expect(toStanceRows([good], [JANE, JANE2])).toEqual([
       { full_name: 'Jane Doe', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
     ]);
+  });
+
+  // L3: one person listed twice in politicians.json (same id — e.g. given by --race and by
+  // --politician) is one person, not two namesakes.
+  it('does not call one person listed twice (same politician_id) ambiguous', () => {
+    expect(checkBatch([good], [HEALTH], [JANE, { ...JANE, race_id: null }], ev)).toEqual([]);
+    expect(toStanceRows([good], [JANE, { ...JANE, race_id: null }])[0].politician_id).toBe('p1');
+  });
+});
+
+// I3: one normalizer (normName / normTopic / stanceKey from researchVerifier) for gate and verifier.
+describe('checkBatch / toStanceRows — shared normalizer', () => {
+  it('matches a trailing-space, odd-case name and topic to the bundle and to its evidence', () => {
+    const row = { ...good, full_name: 'jane  doe ', topic_key: 'Healthcare' };
+    expect(checkBatch([row], [HEALTH], [JANE], [{ ...ev[0], full_name: 'Jane Doe ' }])).toEqual([]);
+  });
+  it('writes the bundle politician\'s canonical full_name into stances rows', () => {
+    expect(toStanceRows([{ ...good, full_name: 'jane doe ' }], [JANE])).toEqual([
+      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+    ]);
+  });
+  it('keeps the row\'s own spelling when it matched no bundle politician', () => {
+    expect(toStanceRows([{ ...good, full_name: 'Someone Else' }], [JANE])[0]).toMatchObject({ full_name: 'Someone Else', politician_id: '' });
+  });
+});
+
+// C1: two research rows proposing a value for one (person, topic) pair.
+describe('checkBatch — duplicate-row', () => {
+  it('flags BOTH rows of a duplicated pair high, even when the spellings differ only in case/space', () => {
+    const f = checkBatch([good, { ...good, full_name: 'jane doe ', value: 3 }], [HEALTH], [JANE], ev);
+    expect(f).toEqual([
+      expect.objectContaining({ full_name: 'Jane Doe', topic_key: 'healthcare', check_id: 'duplicate-row', severity: 'high' }),
+      expect.objectContaining({ full_name: 'jane doe ', topic_key: 'healthcare', check_id: 'duplicate-row', severity: 'high' }),
+    ]);
+  });
+  it('does not count a value=null row (insufficient evidence) as a second proposal', () => {
+    expect(checkBatch([good, { ...good, value: null, source_urls: [] }], [HEALTH], [JANE], ev)).toEqual([]);
+  });
+  it('does not flag the same person on two different topics', () => {
+    const rent = { ...good, topic_key: 'housing' };
+    const f = checkBatch([good, rent], [HEALTH, topic('housing', {})], [JANE],
+      [...ev, { ...ev[0], topic_key: 'housing' }]);
+    expect(f.map((x) => x.check_id)).not.toContain('duplicate-row');
+  });
+});
+
+describe('GATE_CHECK_IDS', () => {
+  it('lists every check the gate emits, including duplicate-row', () => {
+    expect(GATE_CHECK_IDS).toContain('duplicate-row');
+    expect(new Set(GATE_CHECK_IDS).size).toBe(GATE_CHECK_IDS.length);
   });
 });

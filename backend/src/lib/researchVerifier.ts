@@ -294,9 +294,17 @@ export interface PoliticianNames {
   [fullName: string]: { fullName: string; lastName: string };
 }
 
-function rowKey(fullName: string, topicKey: string): string {
-  return `${fullName} ${topicKey}`;
-}
+/**
+ * THE one name/topic normalizer for a research batch. stance-gate (stanceGate.ts) and
+ * verify-stance-research (this module's verifyEvidence, and the script's gate-findings join) all
+ * key rows through these, so a spelling difference that one of them tolerates cannot be a
+ * mismatch to another. Before this, the gate joined evidence case-insensitively while the
+ * verifier joined exactly — so a `jane doe` evidence row passed the gate and then silently
+ * verified nothing.
+ */
+export const normName = (s: string): string => s.trim().replace(/\s+/g, ' ').toLowerCase();
+export const normTopic = (s: string): string => s.trim().toLowerCase();
+export const stanceKey = (name: string, topic: string): string => `${normName(name)}\u0000${normTopic(topic)}`;
 
 export async function verifyEvidence(args: {
   stanceRows: StanceRow[];
@@ -311,7 +319,7 @@ export async function verifyEvidence(args: {
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
-    const key = rowKey(ev.full_name, ev.topic_key);
+    const key = stanceKey(ev.full_name, ev.topic_key);
     if (!grouped.has(key)) grouped.set(key, new Map());
     const bySource = grouped.get(key)!;
     if (!bySource.has(ev.source_url)) bySource.set(ev.source_url, []);
@@ -322,7 +330,7 @@ export async function verifyEvidence(args: {
   const needsReResearch: VerifiedRow[] = [];
 
   for (const stance of stanceRows) {
-    const key = rowKey(stance.full_name, stance.topic_key);
+    const key = stanceKey(stance.full_name, stance.topic_key);
     const bySource = grouped.get(key) ?? new Map<string, EvidenceRow[]>();
     const names = politicianNames[stance.full_name];
     if (!names) {

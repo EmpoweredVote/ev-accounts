@@ -30,10 +30,12 @@
  * Requires <dir>/gate-findings.json from scripts/stance-gate.ts.
  *
  * Idempotent: re-running the same batch is safe — all writes are upserts /
- * replace-by-key. A re-research pass adds rows to research.csv / evidence.csv and
- * re-runs scripts/stance-gate.ts (which regenerates stances.csv and
- * gate-findings.json together) — appending straight to stances.csv instead would
- * fail the row-count check against gate-findings.json below.
+ * replace-by-key. A re-research pass REPLACES that (politician, topic) pair's rows
+ * in research.csv / evidence.csv — it never appends a second row for a pair (two
+ * rows for one pair are refused: stance-gate flags `duplicate-row`, and this script
+ * exits 2 before any write) — and then re-runs scripts/stance-gate.ts (which
+ * regenerates stances.csv and gate-findings.json together). Appending straight to
+ * stances.csv instead would fail the row-count check against gate-findings.json below.
  */
 import 'dotenv/config';
 import { readFileSync, existsSync, writeFileSync } from 'node:fs';
@@ -43,6 +45,8 @@ import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.
 import {
   verifyEvidence,
   createPageFetcher,
+  normTopic,
+  stanceKey,
   type StanceRow,
   type EvidenceRow,
   type PoliticianNames,
@@ -58,7 +62,7 @@ import {
 } from '../src/lib/researchEvidenceService.js';
 import { OPEN_SEASON_ANSWER_SQL } from '../src/lib/seasonService.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
-import type { GateFinding } from './lib/stanceGate.js';
+import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
 
 // ---------------------------------------------------------------- args
 function flag(name: string): boolean {
@@ -144,11 +148,16 @@ const stanceRows = allStances.filter((s) => s.value !== null);
 // gate-findings.json and stances.csv are written together by stance-gate.ts, from the same
 // research.csv. A row-count mismatch means gate-findings.json describes a different batch
 // than the one being verified here — a verdict from that is a blind detector, not a clean one.
+// A severity or check_id the gate never writes is refused, not trusted: a hand-edited
+// "severity": "critical" would otherwise not count as high, and an unknown check_id would be
+// carried into decidePublish as if the gate had meant it.
+const CHECK_IDS: ReadonlySet<string> = new Set(GATE_CHECK_IDS);
 function isFindingShape(f: unknown): f is GateFinding {
   if (typeof f !== 'object' || f === null) return false;
   const r = f as Record<string, unknown>;
   return typeof r.full_name === 'string' && typeof r.topic_key === 'string'
-    && typeof r.check_id === 'string' && typeof r.severity === 'string';
+    && typeof r.check_id === 'string' && CHECK_IDS.has(r.check_id)
+    && (r.severity === 'high' || r.severity === 'medium');
 }
 
 let gateFileRaw: unknown;
@@ -169,7 +178,7 @@ if (typeof gateFileRaw !== 'object' || gateFileRaw === null || Array.isArray(gat
 }
 const gateFileCandidate = gateFileRaw as { findings?: unknown; summary?: unknown };
 if (!Array.isArray(gateFileCandidate.findings) || !gateFileCandidate.findings.every(isFindingShape)) {
-  console.error(`ERROR: ${gatePath} is not valid JSON: .findings must be an array of findings with string full_name/topic_key/check_id/severity`);
+  console.error(`ERROR: ${gatePath} is not valid JSON: .findings must be an array of findings with string full_name/topic_key, severity high|medium, and a check_id stance-gate emits`);
   process.exit(2);
 }
 const findings = gateFileCandidate.findings as GateFinding[];
@@ -184,9 +193,11 @@ if (summary.rows !== allStances.length) {
   );
   process.exit(2);
 }
+// Keyed through the gate's own normalizer (stanceKey): findings carry research.csv's spelling,
+// stances.csv carries the bundle's canonical one, and the two must meet.
 const gateByKey = new Map<string, GateFinding[]>();
 for (const f of findings) {
-  const k = `${f.full_name.toLowerCase()} ${f.topic_key}`;
+  const k = stanceKey(f.full_name, f.topic_key);
   gateByKey.set(k, [...(gateByKey.get(k) ?? []), f]);
 }
 
@@ -264,7 +275,30 @@ const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: stri
      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
      JOIN inform.compass_topics t ON t.id = sq.topic_id`,
 );
-const topicIdByKey = new Map(topicRows.map((t) => [t.topic_key, t.topic_id]));
+const topicIdByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_id]));
+
+// ---------------------------------------------------------------- one row per pair (C1)
+// Two rows proposing a value for one (politician, topic) pair verify each other's snippets and
+// both reach decidePublish. stance-gate flags them `duplicate-row` (high); this is the verifier's
+// own refusal, so a stale or hand-edited gate-findings.json cannot let one through. Keyed by the
+// resolved (politician_id, topic_id) where there is one — two spellings of one person are one
+// person — else by the normalized name + topic. Checked over every scored row (the same set
+// `decided` is built from below) before any page is fetched, and before any write.
+const pairKey = (s: StanceRow): string => {
+  const pid = idByName.get(s.full_name) ?? null;
+  if (!pid) return `name:${stanceKey(s.full_name, s.topic_key)}`;
+  return `id:${pid}\u0000${topicIdByKey.get(normTopic(s.topic_key)) ?? `key:${normTopic(s.topic_key)}`}`;
+};
+const rowsByPair = new Map<string, StanceRow[]>();
+for (const s of stanceRows) rowsByPair.set(pairKey(s), [...(rowsByPair.get(pairKey(s)) ?? []), s]);
+const duplicatePairs = [...rowsByPair.values()].filter((rs) => rs.length > 1);
+if (duplicatePairs.length) {
+  console.error('ERROR: more than one scored row for one (politician, topic) pair — refusing to decide or write any of them. '
+    + 'A re-research pass must REPLACE the pair\'s rows in research.csv/evidence.csv, never append; fix and re-run stance-gate.ts: '
+    + duplicatePairs.map((rs) => `${rs.map((s) => `${s.full_name}/${s.topic_key}=${s.value}`).join(' + ')}`).join('; '));
+  await pool.end();
+  process.exit(2);
+}
 
 // ---------------------------------------------------------------- verify
 // Tiered fetch ladder (HTTP → Wayback). No LLM in the loop.
@@ -291,13 +325,13 @@ for (const pid of new Set([...idByName.values()].filter((v): v is string => Bool
 type Decided = { row: VerifiedRow; pid: string | null; tid: string | null; decision: Decision };
 const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
   const pid = idByName.get(row.stance.full_name) ?? null;
-  const tid = topicIdByKey.get(row.stance.topic_key) ?? null;
+  const tid = topicIdByKey.get(normTopic(row.stance.topic_key)) ?? null;
   const ex = pid && tid ? existing.get(`${pid} ${tid}`) : undefined;
   const decision = decidePublish({
     proposedValue: row.stance.value as number,
     verifiedSourceCount: row.verifiedSources.length,
     threshold: THRESHOLD,
-    gateFindings: gateByKey.get(`${row.stance.full_name.toLowerCase()} ${row.stance.topic_key}`) ?? [],
+    gateFindings: gateByKey.get(stanceKey(row.stance.full_name, row.stance.topic_key)) ?? [],
     politicianResolved: Boolean(pid),
     existingOpenSeasonValue: ex === undefined ? null : ex,
     autoPushEnabled: AUTO_PUSH,

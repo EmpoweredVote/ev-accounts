@@ -3,10 +3,16 @@
  *
  * Reads <dir>/research.csv, evidence.csv, topics.json, politicians.json (see
  * build-stance-topic-bundle.ts). Writes gate-findings.json and stances.csv (the input
- * verify-stance-research.ts expects).
+ * verify-stance-research.ts expects). stances.csv carries the bundle politician's canonical
+ * full_name for every row that matched one (toStanceRows), so downstream sees one spelling.
+ * Rows, bundle entries and evidence are joined through the verifier's own normalizer
+ * (normName / normTopic / stanceKey in src/lib/researchVerifier.ts).
  *
  *   npx tsx scripts/stance-gate.ts --dir data/stance-research/<batch>
- * Exit: 0 clean, 1 high-severity findings (fix research.csv/evidence.csv and re-run), 2 usage/unreadable.
+ * Exit: 0 clean, 1 high-severity findings, 2 usage/unreadable.
+ * A high finding goes back to the RESEARCHER: re-research that politician/topic (the new pass
+ * REPLACES the pair's rows in research.csv/evidence.csv) and re-run. Never edit value, reasoning,
+ * evidence_type, source URLs or snippets by hand to clear a finding.
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';

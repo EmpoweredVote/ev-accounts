@@ -212,7 +212,22 @@ describe('createPageFetcher', () => {
   });
 });
 
-import { verifyEvidence, type StanceRow, type EvidenceRow } from './researchVerifier.js';
+import { verifyEvidence, normName, normTopic, stanceKey, type StanceRow, type EvidenceRow } from './researchVerifier.js';
+
+describe('normName / normTopic / stanceKey', () => {
+  it('trims, collapses inner whitespace and lowercases a name', () => {
+    expect(normName('  Jane   Doe ')).toBe('jane doe');
+  });
+  it('trims and lowercases a topic_key', () => {
+    expect(normTopic(' Healthcare ')).toBe('healthcare');
+  });
+  it('keys a (name, topic) pair so spelling variants collide and different pairs do not', () => {
+    expect(stanceKey('Jane Doe ', 'Healthcare')).toBe(stanceKey('jane  doe', 'healthcare'));
+    expect(stanceKey('Jane Doe', 'healthcare')).not.toBe(stanceKey('Jane Doe', 'housing'));
+    // The separator cannot occur in either part, so ("a b", "c") and ("a", "b c") stay distinct.
+    expect(stanceKey('a b', 'c')).not.toBe(stanceKey('a', 'b c'));
+  });
+});
 import type { PageFetcher as _PageFetcher } from './researchVerifier.js';
 
 describe('verifyEvidence', () => {
@@ -299,6 +314,28 @@ describe('verifyEvidence', () => {
     });
     expect(result.pushable).toHaveLength(1);
     expect(result.pushable[0].verifiedSources).toHaveLength(1);
+  });
+
+  // I3: the gate and the verifier share one normalizer (normName/normTopic/stanceKey), so evidence
+  // spelled `jane doe` or `Jane Doe ` (trailing space) must back the `Jane Doe` stance row here
+  // exactly as it does in stance-gate — not pass the gate and then verify nothing.
+  it('joins evidence to its stance row through the shared normalizer (case, trailing space)', async () => {
+    const snip = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 because she believes every '
+      + 'family deserves affordable coverage and lower prescription costs at the pharmacy counter today';
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'jane doe', topic_key: 'healthcare', source_url: 'https://a.example', snippet: snip, snippet_index: 0 },
+      { full_name: 'Jane Doe ', topic_key: 'Healthcare ', source_url: 'https://b.example', snippet: snip, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text: `Jane Doe: ${snip}` });
+    const result = await verifyEvidence({
+      stanceRows: [{ full_name: 'Jane Doe', topic_key: 'healthcare', value: 2, reasoning: 'HB 1001', politician_id: 'p1' }],
+      evidenceRows,
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Jane Doe': { fullName: 'Jane Doe', lastName: 'Doe' } },
+    });
+    expect(result.pushable).toHaveLength(1);
+    expect(result.pushable[0].verifiedSources.map((s) => s.url).sort()).toEqual(['https://a.example', 'https://b.example']);
   });
 
   it('routes stance rows with zero evidence rows directly to review queue', async () => {
