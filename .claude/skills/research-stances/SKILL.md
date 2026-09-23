@@ -505,6 +505,18 @@ skill, **(4f)** promote the Read & Rank picks to live only once the audit is cle
 
 ### 4a. Pre-push QA (before any write)
 
+🔴 **(0) Verify every quote against raw page bytes, before anything else.** WebFetch runs each
+page through a summarising model and will hand back paraphrased talking points formatted as
+quotations. A quote that never existed is a fabricated statement attributed to a real person — the
+worst thing this pipeline can produce, and no other check in 4a looks for it.
+
+```bash
+cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<wave>
+```
+
+It exits 1 and names every quote it could not find. A failure is either mis-sourced (find the true
+source) or invented (drop the quote). Do not push past a non-zero exit.
+
 **(i) Mechanical + bundle.** Run the checker over the CSV — it builds the audit context bundle
 (topics → quotes with stance + editor_note + de-id) and runs the deterministic checks
 (note-missing, note-section-ref, note-too-long, deid-missing, trailing-ellipsis, partisan-tell,
