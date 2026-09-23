@@ -101,6 +101,11 @@ not passed (§2.6).
 
 Getting this wrong produces silent failures, which is why it comes before the method.
 
+🔴🔴 **The MCP server named `supabase-local` is production.** There is no local
+database in this program. Every measurement in this document, and every query you run to check
+one, hits the live database that serves voters. Reads are free; anything that writes goes
+through a numbered migration under the guards in §7.
+
 ### 2.1 A seat holds no occupant
 
 `essentials.offices` is a **seat** — district, chamber, title. `offices.politician_id` was dropped
@@ -289,6 +294,14 @@ rules out the far end of the scale and nothing more.
 Votes are simultaneously the **strongest** evidence on attribution (their name, their vote) and the
 **weakest** on resolution.
 
+🔑 **Three properties, testable from the lead list, before you spend a fetch.** An instrument
+can seat a chair only if it is *single-subject* (one topic, so the position it evidences is
+unambiguous), *outcome-shaped* (it states an outcome, not a study, a report-back or a procedural
+step — §4.13), and *divided* (a recorded split with at least 10% against — §4.12). Fail any one
+and no amount of sourcing rescues the row, so find that out from the title and the tally rather
+than from the PDF. This is the cheapest filter in the program, and it is why a body that
+legislates by directive-and-report yields so little (§3.5).
+
 The three failure modes are distinct and are caught differently:
 
 - **Authored bills fail by over-reach.** Bill real, authorship real, claimed chair broader than the
@@ -464,6 +477,12 @@ as thirteen personal beliefs. North Carolina preempts it too.
 ⚠ The ladder is valid elsewhere. The defect is **jurisdictional**, and `compass_topic_roles` has no
 per-state dimension, so it can only be written down. **Before starting a topic, ask whether the rungs
 are things this officeholder may lawfully do.**
+
+🔴 **A scope blank is closed research — never re-queue it.** This is a register, not a Florida
+curiosity: `rent-regulation`, `taxes`, `gun-policy` and the eight-way `education-*` split all have
+rungs no officeholder at some level holds a lever on. Record the jurisdictional finding once, with
+the level it applies to, and treat those people as researched. A later pass that reads them as
+"unsourced" and re-queues them spends a whole wave re-deriving a refusal we already made.
 
 ### 4.10 Pre-seating — a genuine URL is not a genuine vote
 
@@ -737,6 +756,14 @@ not a failed fetch.
 
 🔴🔴 **Treat any "unsourced" or "unverifiable" tally from these tools as a READING QUEUE, never as a
 delete list.**
+
+🔑🔑 **A failed basis is not a failed chair.** The rule above is about the detector; this one is
+about the row. Evidence that does not survive reading makes the row *unevidenced*, which is not the
+same as making the chair wrong — the next step is re-research, not a blank. The Texas SB 17 / HB 17
+cohort flagged 16 rows and resolved to **11 re-seated, 4 blanked, 1 held**. Two corollaries. A blank
+whose note says the row is re-researchable is an invitation, not a closed case. And 🔴 **sweep every
+session a member served** — a sweep restricted to the current session missed SB 4, the actual
+operative statute, and left two of those blanks wrong.
 
 When the citation auditor was calibrated, Texas retire-candidates went **32 → 11 → 3 → 0** and
 Tennessee/Washington **18 → 8 → 5**, as each false-failure class was fixed. **The data never changed.**
@@ -1110,6 +1137,12 @@ Season 3 exists as a **draft** with **61 topics** and **17 answers already writt
 (Nashville Metro Council, `surveillance-technology`, 2026-09-12 to 09-15). It adds exactly one topic
 over Season 2.
 
+🔴🔴 **Opening Season 3 is decided, not pending, and it is not yours to propose.** Everything
+below is about what Season 3 should *contain*; none of it is a step toward opening it. Do not list
+opening the season as a next step, and never call `inform.admin_open_season`. Season 2's topic set
+is likewise frozen — no additions, removals, re-pins or rewordings — though its stances and
+display order are still open, so a ladder fix lands in the Season 3 draft and nowhere else.
+
 ### 12.1 Closed — four defects our own notes still list as open
 
 **Re-tested against the Season 3 pin, 2026-09-23. Do not plan work against these.**
@@ -1221,6 +1254,12 @@ and better. Two reasons:
   only works once the earlier members' rows exist and have been read.
 - **A batch hides which judgment went wrong.** When 38 rows arrive together, the review cost is the
   whole batch. When one person arrives, the reviewer can point at the row and the instrument.
+
+🔴🔴 **And a subagent cannot do this work at all.** No MCP server is bound inside a subagent, so
+a research agent has no route to the season pin, the ladder text, or the database — it can
+web-search and report, and nothing more. Subagents here have also repeatedly reported verification
+they never ran. Inline execution is not a preference about agent count; it is the only mode in
+which the checks in §6 can actually run.
 
 ▶ **Required before handover: update STEP 1 to inline execution, one politician per run.** If
 Andrews' Claude runs the skill as written, it will do the thing this document spends §4 warning
