@@ -858,10 +858,18 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
  * refreshSummaryAggForSource refreshes the agg for every election_cycle present for a
  * politician_source (a single pair-ingest can touch multiple cycles for non-FEC sources).
  * Called from runIngestion after a successful upsert.
+ *
+ * Cycles are read from the agg table too, not only from contributions: an ingest that
+ * PRUNES rows (Cal-Access drops superseded amendments) can empty a cycle, and a cycle with
+ * no contributions left would otherwise never be revisited, leaving its agg row stale.
+ * refreshSummaryAgg deletes the agg row for such a cycle.
  */
 export async function refreshSummaryAggForSource(politicianSourceId: string): Promise<void> {
   const cyclesRes = await pool.query<{ election_cycle: string }>(
-    `SELECT DISTINCT election_cycle FROM transparent_motivations.contributions
+    `SELECT election_cycle FROM transparent_motivations.contributions
+     WHERE politician_source_id = $1
+     UNION
+     SELECT election_cycle FROM transparent_motivations.contribution_summary_agg
      WHERE politician_source_id = $1`,
     [politicianSourceId]
   );
