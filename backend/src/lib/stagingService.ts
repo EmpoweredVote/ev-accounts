@@ -417,7 +417,7 @@ export async function reviewPolitician(
  *   bio_text        -> bio_text
  *   photo_url       -> photo_origin_url
  *   is_appointed    -> is_appointed
- *   is_vacant       -> is_vacant
+ *   is_vacant       -> is_vacant (NULL -> false; the essentials column is NOT NULL since CA_0195)
  *   valid_from      -> valid_from
  *   valid_to        -> valid_to
  *   total_years_in_office -> total_years_in_office
@@ -460,7 +460,7 @@ async function promoteToEssentials(politician: StagingPolitician): Promise<void>
         politician.bioText,
         politician.photoUrl,
         politician.isAppointed,
-        politician.isVacant,
+        politician.isVacant ?? false, // staging.politicians.is_vacant is nullable; essentials is NOT NULL (CA_0195)
         politician.validFrom,
         politician.validTo,
         politician.totalYearsInOffice,
@@ -480,7 +480,7 @@ async function promoteToEssentials(politician: StagingPolitician): Promise<void>
         politician.bioText,
         politician.photoUrl,
         politician.isAppointed,
-        politician.isVacant,
+        politician.isVacant ?? false, // staging.politicians.is_vacant is nullable; essentials is NOT NULL (CA_0195)
         politician.validFrom,
         politician.validTo,
         politician.totalYearsInOffice,

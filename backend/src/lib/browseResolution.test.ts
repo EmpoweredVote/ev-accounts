@@ -52,6 +52,20 @@ describe('government-list browse resolves the full district stack', () => {
   it('district-politician fetch applies the MTFCC guard (handles GEOID collisions / empty districts.mtfcc)', () => {
     expect(BROWSE).toMatch(/fetchDistrictPoliticianRows[\s\S]*?MTFCC_DISTRICT_TYPE_GUARD/);
   });
+
+  it("the government step keeps the district's own district_type; governments.type is only the fallback", () => {
+    // The merge keeps the government step's row over the overlap step's row for the same person.
+    // When the government step derived district_type from governments.type alone, every person it
+    // newly matched lost the district's type: 408 LA Superior Court judges went JUDICIAL -> COUNTY,
+    // King County's council was filed under "Sheriff", state legislators got '' (rendered as Local).
+    const start = BROWSE.indexOf('export async function getPoliticiansByGovernmentList');
+    const step = BROWSE.slice(start, BROWSE.indexOf('let statewideRows', start));
+    const caseBody = step.match(/CASE\s+(WHEN[\s\S]*?)END AS district_type/);
+    expect(caseBody).not.toBeNull();
+    expect(caseBody![1].trimStart()).toMatch(
+      /^WHEN\s+COALESCE\(d\.district_type,\s*''\)\s*<>\s*''\s+THEN\s+d\.district_type\b/
+    );
+  });
 });
 
 describe('government-list elections resolve district races (not just government-linked)', () => {
