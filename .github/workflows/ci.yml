@@ -405,6 +405,53 @@ jobs:
           [ -z "$bad" ] || { printf '::error::not executable in git (mode must be 100755; fix with git update-index --chmod=+x <file>):\n%s\n' "$bad"; exit 1; }
           echo "git hooks executable:"; printf '%s\n' "$modes"
 
+      # --- research-stances fixture parity ---------------------------------------------------------
+      # research-stances' build-and-check.mjs re-implements on-the-record's audit-quotes mechanical
+      # checks, and tests/fixture-parity.test.mjs pins it to the SHARED fixture that lives in
+      # on-the-record: docs/quote-curation/fixtures/mechanical-checks.json. On 2026-09-23 otr#264 and
+      # #646 changed that fixture and this checker together (source-tier-4 out, pointer-only-source
+      # in), and NEITHER repo's CI ran either half of the parity pair. on-the-record's own half
+      # (audit-quotes/tests/test_fixture_parity.py) runs in its Tests workflow since otr#266; this is
+      # the ev-accounts half. extract-canonical-rules.test.mjs also reads on-the-record, through the
+      # same OTR_ROOT, so it runs here too.
+      #
+      # on-the-record is PUBLIC, so the checkout needs no token. It is SPARSE (the two directories the
+      # tests read, plus top-level files) and comes LAST in the job so no guard above sees a second
+      # repo in the tree. It tracks on-the-record `main` ON PURPOSE (Chris Andrews, 2026-09-23): a
+      # fixture change there turns this step red on the next ev-accounts push or PR — which may be
+      # unrelated — until build-and-check.mjs follows. A pinned SHA would stay green and blind.
+      #
+      # 🔴 A GLOB, NOT A DIRECTORY: on node 22 (backend/.node-version) `node --test <dir>/` does not
+      # search the directory — it loads it as a module and fails MODULE_NOT_FOUND. Newer node does
+      # search it, so the directory form passes on a dev machine and fails here. Quoted, so node
+      # expands it, the same way on every shell.
+      # 🔴 POSITIVE CONTROL: a pattern that matches nothing exits 0 with "tests 0", so a moved or
+      # emptied tests/ directory would read as a pass. The TAP copy must count at least one test.
+      # Dependency-free: node:test and node:* built-ins only, no `npm ci`.
+      - name: checkout on-the-record (research-stances fixture)
+        if: ${{ !cancelled() }}
+        uses: actions/checkout@v7
+        with:
+          repository: EmpoweredVote/on-the-record
+          ref: main
+          path: .otr
+          sparse-checkout: |
+            docs/quote-curation
+            .claude/skills
+          persist-credentials: false
+
+      - name: research-stances fixture parity
+        if: ${{ !cancelled() }}
+        env:
+          OTR_ROOT: ${{ github.workspace }}/.otr
+        run: |
+          node --test \
+            --test-reporter=spec --test-reporter-destination=stdout \
+            --test-reporter=tap --test-reporter-destination="$RUNNER_TEMP/research-stances.tap" \
+            '.claude/skills/research-stances/scripts/tests/**/*.test.mjs'
+          grep -qE '^# tests [1-9]' "$RUNNER_TEMP/research-stances.tap" \
+            || { echo "::error::node --test ran 0 research-stances tests -- the check is blind"; exit 1; }
+
   migration-reservations:
     name: migration reservations
     runs-on: ubuntu-latest
