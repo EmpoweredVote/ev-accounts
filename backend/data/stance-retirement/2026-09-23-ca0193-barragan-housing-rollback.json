@@ -1,0 +1,28 @@
+{
+ "migration": "CA_0193",
+ "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+ "written": "2026-09-23",
+ "pass": "Season 2 Housing re-research of Nanette Diaz Barragán (U.S. House CA-44): the CC_0058 carry (3) replaced by the chair her record describes. Season 1 untouched.",
+ "rollback": "Restore the Season 2 answer value and the context reasoning/sources from season2_before.",
+ "rows": [
+  {
+   "politician_id": "5bd54ac0-c8b9-486c-844c-ecc4313e5de7",
+   "name": "Nanette Diaz Barragán",
+   "topic_key": "housing",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "chair_after": 2,
+   "season2_before": {
+    "value": 3.0,
+    "topic_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+    "answer_updated_at": "2026-09-03T20:16:33.815641+00:00",
+    "reasoning": "Barragan co-chairs the Congressional Caucus on Homelessness and introduced the Yes in God's Backyard Act (H.R. 7152, Jan 2026) to enable faith-based institutions to build affordable housing, as well as the Returning Home Act (H.R. 7057) to house formerly incarcerated people. She has also secured millions in direct federal affordable housing funding for her district. This pattern of publicly funding new housing supply and requiring enabling legislation for affordable development aligns with new stance 2.",
+    "sources": [
+     "https://barragan.house.gov/2026/01/20/reps-barragan-and-brown-introduce-bill-to-open-door-for-faith-based-organizations-and-institutions-of-higher-education-to-build-affordable-housing/",
+     "https://barragan.house.gov/housing-homeless/",
+     "https://www.sgvtribune.com/2025/03/28/congress-reestablished-its-caucus-to-address-homelessness-rep-nanette-barragan-its-co-chair-outlines-the-goals/"
+    ],
+    "context_updated_at": "2026-09-03T20:16:33.815641+00:00"
+   }
+  }
+ ]
+}
