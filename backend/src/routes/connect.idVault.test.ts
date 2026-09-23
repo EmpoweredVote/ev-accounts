@@ -33,11 +33,8 @@ vi.mock('../lib/connectService.js', () => ({
   getConnectedProfileVerificationStatus: vi.fn(),
   getVerificationSession: vi.fn(),
   getVerificationSessionStep: vi.fn(),
-  getVerificationSessionId: vi.fn(),
   upsertVerificationSession: vi.fn(),
   updateVerificationSession: vi.fn(),
-  validateCompassVersions: vi.fn(),
-  saveCompassImportDraft: vi.fn(),
   importCompassCalibrations: vi.fn(),
 }));
 vi.mock('../middleware/auth.js', () => ({

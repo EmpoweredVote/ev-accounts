@@ -4,7 +4,6 @@ import { adminRpc } from '../lib/supabase.js';
 import { requireAuth, optionalAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requestDb } from '../lib/supabase.js';
 import {
-  promoteCompassImportDraft,
   getCompassCompleteness,
   getCompassTopics,
   getCompassCategories,
@@ -401,7 +400,6 @@ router.get('/recalibration-flags', optionalAuth, async (req: Request, res: Respo
 // GET /api/compass/answers
 // Auth: optional — unauthenticated returns 200 []
 // Returns user's own compass responses including the inverted field.
-// Triggers lazy promotion of compass_import_draft on first call (non-fatal).
 // Uses createUserClient — RLS enforces owner-only access to compass_responses.
 //
 // 🔴 READS compass_responses_effective, WHICH IS THE ROUTE THE USER SEES. It is
@@ -418,9 +416,6 @@ router.get('/answers', optionalAuth, async (req: Request, res: Response): Promis
   if (!authReq.userId) { res.status(200).json([]); return; }
 
   try {
-    // Lazy promotion — non-fatal if it fails (draft preserved for retry)
-    await promoteCompassImportDraft(authReq.userId);
-
     const db = requestDb(authReq.accessToken);
     const { data, error } = await db
       .schema('inform')
