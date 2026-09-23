@@ -85,7 +85,8 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
     OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD_EDUCATION')
     -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
-    -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT rather
+    -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832) and California's
+    -- Second Appellate District, geo_id '06-appellate-district-2' (migration CA_0189). EXPLICIT rather
     -- than left to the X catch-all below, which admits only LOCAL/COUNTY and would therefore leave
     -- every one of these seats unreachable by address.
     OR (gp.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')

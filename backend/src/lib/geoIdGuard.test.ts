@@ -55,9 +55,22 @@ describe('fallback MTFCC exclusion list', () => {
     const predicate = "gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'";
     expect(script).toContain(predicate);
     expect(queries).toContain(predicate);
-    // NULL geo_id must stay excluded in BOTH, or ~504 CA judges surface on every CA address.
+    // NULL geo_id must stay excluded in BOTH, or the 81 unlinked CA per-judge slots (CA_0189)
+    // surface on every CA address.
     expect(script).toContain('d.geo_id IS NOT NULL');
     expect(queries).toContain('d.geo_id IS NOT NULL');
+  });
+
+  it('leaves no third copy of the statewide rule in essentialsService.ts', () => {
+    // getRepresentativesByJurisdiction (GET /representatives/me) carried its own statewide query
+    // with the old `LENGTH(d.geo_id) != 5` court rule, so every Indiana user got the District 1-3
+    // Court of Appeals judges, and CA_0189's 2nd Appellate District would have gone to every
+    // California user. Every statewide read must go through buildStatewideQuery.
+    const src = read('./essentialsService.ts');
+    expect(src).not.toMatch(/LENGTH\(d\.geo_id\)\s*!=\s*5/i);
+    expect(src).not.toMatch(/length\(d\.geo_id\)\s*<>\s*5/i);
+    const fn = src.slice(src.indexOf('export async function getRepresentativesByJurisdiction('));
+    expect(fn.slice(0, fn.indexOf('\nexport '))).toContain('buildStatewideQuery()');
   });
 
   it('renders the list as a single-quoted SQL IN list', () => {
