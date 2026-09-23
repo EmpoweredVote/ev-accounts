@@ -130,6 +130,20 @@ export function mapContributionsToJudicialDonations(
 // ---------------------------------------------------------------------------
 
 /**
+ * toUtcDateString renders a Date as 'YYYY-MM-DD' from its UTC fields.
+ *
+ * 🔴 judicial.donations.contribution_date is a `date`, and the adapter's dates are UTC
+ * midnight. node-postgres sends a Date in the HOST's local time, so on a host west of UTC
+ * 2018-12-03T00:00Z goes out as 2018-12-02T20:00-04:00 and Postgres keeps 2018-12-02. All
+ * 1,040 rows of the 2026-09-23 run (from an America/Indianapolis host) landed one day early;
+ * CA_0197 repaired them from raw_record RCPT_DATE. A timestamptz column (contributions) is
+ * not affected: it stores the instant.
+ */
+export function toUtcDateString(d: Date | null): string | null {
+  return d ? d.toISOString().slice(0, 10) : null;
+}
+
+/**
  * writeJudicialDonations maps + writes ContributionInsert[] to judicial.donations.
  *
  * Copies the SHAPE of the adapter's upsertBatch() (parameterized $n placeholders,
@@ -172,7 +186,7 @@ export async function writeJudicialDonations(
         row.donor_employer_raw,
         row.donor_occupation_raw,
         row.amount,
-        row.contribution_date,
+        toUtcDateString(row.contribution_date),
         row.data_source,
         row.source_transaction_id,
         row.source_url,

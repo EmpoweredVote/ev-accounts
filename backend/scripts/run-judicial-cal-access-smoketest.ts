@@ -50,7 +50,8 @@
  *      transparent_motivations.ingestion_runs + the adapter's own write path —
  *      wrong table, D-08/D-11). Per Discretion (a), plain structured
  *      console.log is the audit trail for this operator-run ingest.
- *   6. Before exit, runs the JUD-ING-06 post-run attribution assertion and the recipient
+ *   6. Before exit, runs the JUD-ING-06 post-run attribution assertion, the date assertion
+ *      (contribution_date = raw RCPT_DATE), and the recipient
  *      assertion (every cal_access row's raw_record FILER_ID is one of its own judge's filer
  *      ids), then logs the total judicial.donations row count.
  */
@@ -229,7 +230,23 @@ async function main() {
     }
     console.log('[run-judicial-cal-access-smoketest] Recipient assertion: PASSED (every row filed by its own judge\'s committee)');
 
-    // Step 6c: Log total judicial.donations row count (SC#2 confirmation).
+    // Step 6c: every stored date is the SOS date. The first corrected run stored all 1,040 one
+    // day early (a Date sent in the host's local time into a `date` column; CA_0197).
+    const wrongDateRes = await pool.query<{ count: string }>(
+      `SELECT COUNT(*) FROM judicial.donations
+        WHERE data_source = 'cal_access' AND raw_record ? 'RCPT_DATE'
+          AND contribution_date IS DISTINCT FROM ((raw_record ->> 'RCPT_DATE')::timestamptz AT TIME ZONE 'UTC')::date`
+    );
+    const wrongDateCount = Number(wrongDateRes.rows[0].count);
+    if (wrongDateCount !== 0) {
+      console.error(
+        `[run-judicial-cal-access-smoketest] FAIL: ${wrongDateCount} row(s) have a contribution_date other than their raw RCPT_DATE`
+      );
+      process.exit(1);
+    }
+    console.log('[run-judicial-cal-access-smoketest] Date assertion: PASSED (every contribution_date = its raw RCPT_DATE)');
+
+    // Step 6d: Log total judicial.donations row count (SC#2 confirmation).
     const totalRes = await pool.query<{ count: string }>(`SELECT COUNT(*) FROM judicial.donations`);
     console.log(`[run-judicial-cal-access-smoketest] Total judicial.donations rows: ${totalRes.rows[0].count}`);
 

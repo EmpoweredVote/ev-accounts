@@ -43,7 +43,11 @@
 -- none references the population, and its FK would refuse the delete if one did).
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED. Awaiting operator approval (Chris Andrews).
+-- STATUS: APPLIED to prod 2026-09-23 21:38 UTC (operator approval: Chris Andrews, in chat). Dry run first as
+--   BEGIN ... ROLLBACK: pre-flight passed, DELETE 226, post gate passed, and after the rollback the 226 rows were
+--   still there with the same md5. Apply: DELETE 226, post gate passed, judicial.donations 0 rows, judges 3.
+--   Re-run after (as ROLLBACK): DELETE 0, every gate passes. Then the corrected ingest (same PR) wrote 1,040 rows /
+--   $1,171,107.47, all filed by their own judge's committee — the same 1,040 ids as the local parse above.
 --
 -- ROLLBACK: none in SQL — the deleted rows were wrong. They can be rebuilt only by running the pre-#659 adapter,
 --   which is the defect. The pre-flight md5 below identifies exactly what was removed.
