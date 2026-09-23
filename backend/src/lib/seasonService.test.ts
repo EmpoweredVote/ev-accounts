@@ -8,6 +8,7 @@ import {
   UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL,
   isSeasonWriteError, SeasonWriteError,
   WRITABLE_TOPIC_IDS_SQL, writableTopicIds, OPEN_SEASON_ANSWER_SQL,
+  SEASON_IS_PUBLISHED, topicAskedByPublishedSeason,
 } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -280,5 +281,38 @@ describe('OPEN_SEASON_ANSWER_SQL — callers append to it', () => {
     const composed = `${OPEN_SEASON_ANSWER_SQL} AND a.topic_id = ANY($2)`;
     expect(composed).toContain("s.status = 'open'");
     expect(composed.trimEnd().endsWith('ANY($2)')).toBe(true);
+  });
+});
+
+// The display kill switch that replaced `compass_topics.is_live` on the
+// voter-facing tag reads (Read & Rank, essentials quotes, meeting topics).
+// Seventeen Season 2 topics are is_live = false because they were created
+// staged and opening a season flips no boolean — see the helper's comment.
+describe('topicAskedByPublishedSeason — shown if a published season asks it', () => {
+  const sql = topicAskedByPublishedSeason('ct.id');
+
+  it('reads the question set, not is_live', () => {
+    expect(sql).toContain('inform.season_questions sq');
+    expect(sql).not.toMatch(/is_live/);
+  });
+
+  // Draft is the one status never published: a topic staged into a draft
+  // season only (surveillance-technology, 2026-09-23) must stay hidden.
+  it('excludes draft seasons with the shared read gate', () => {
+    expect(sql).toContain(`JOIN inform.seasons s ON s.id = sq.season_id AND ${SEASON_IS_PUBLISHED}`);
+  });
+
+  // NOT the open season: that would drop content on a topic an earlier season
+  // asked (immigration, which Season 2 dropped) — a product decision, not a
+  // side effect of retiring is_live.
+  it('does not narrow to the open season or the promoted view', () => {
+    expect(sql).not.toMatch(/status\s*=\s*'open'/);
+    expect(sql).not.toContain('compass_topics_promoted');
+  });
+
+  it('correlates on the expression it is given', () => {
+    expect(sql).toMatch(/^EXISTS \(/);
+    expect(sql).toMatch(/WHERE sq\.topic_id = ct\.id\)$/);
+    expect(topicAskedByPublishedSeason('ct2.id')).toMatch(/WHERE sq\.topic_id = ct2\.id\)$/);
   });
 });

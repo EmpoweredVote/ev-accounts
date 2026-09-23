@@ -17,6 +17,7 @@ import {
   getVotesByMeetingId,
   updateMeeting,
 } from './meetingsService.js';
+import { topicAskedByPublishedSeason } from './seasonService.js';
 import {
   publicMeetingStatusClause,
   publicMeetingExistsClause,
@@ -495,5 +496,24 @@ describe('meeting status gate — public reads exclude drafts', () => {
     await getVotesByMeetingId('m1');
     const [sql] = mockQuery.mock.calls[0];
     expect(sql).toContain(publicMeetingExistsClause('$1'));
+  });
+});
+
+// The summary's topic tags are titled through the compass topic. That match
+// used to gate on `ct.is_live = true`, so a tag on one of the 17 Season 2
+// topics created staged (is_live = false) came back untitled. The gate is now
+// seasonService.topicAskedByPublishedSeason.
+describe('getSummaryByMeetingId topic tags follow the published seasons', () => {
+  it('titles a tag whose topic a published season asks, not by is_live', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ summary: { sections: [] } }] }) // summary
+      .mockResolvedValueOnce({ rows: [] }); // topic tags
+    await getSummaryByMeetingId('m1');
+
+    const tagSql = mockQuery.mock.calls
+      .map((c) => c[0] as string)
+      .find((q) => q.includes('meetings.meeting_topics'))!;
+    expect(tagSql).toContain(`ON ct.topic_key = mt.topic_key AND ${topicAskedByPublishedSeason('ct.id')}`);
+    expect(tagSql.replace(/--[^\n]*/g, '')).not.toMatch(/is_live/);
   });
 });
