@@ -64,22 +64,46 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-**ALWAYS fetch live topics AND their stance texts fresh from the DB before every research run. Never use a hardcoded list — the topic set grows over time.**
+**ALWAYS resolve the topic set and its rung texts fresh from the DB before every research run,
+through the open season's pin. Never use a hardcoded list, and never read
+`inform.compass_stances`.**
+
+🔴🔴 **`inform.compass_stances` is FROZEN at v1 and `is_live` does not gate the season read
+path.** The query below used to join the frozen table and filter `WHERE t.is_live = true`. Both were
+wrong, and both failed silently — the frozen table returns a complete, plausible ladder on the right
+subject with the wrong rungs. Measured against the open season on 2026-09-23:
+
+| | |
+|---|---|
+| Topics pinned into the open season | **60** |
+| Returned by the old `is_live = true` query | **44** |
+| Pinned topics it dropped | **17** |
+| Topics it returned that are not in the season | **1** — `immigration`, retired in Season 2, which the write gate no longer accepts |
+| Pinned topics whose rungs differ from the frozen table | **29 of 60** (41 of 61 for the Season 3 draft) |
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
+  WITH open_season AS (
+    SELECT id, number FROM inform.seasons WHERE status = 'open'
+  )
   SELECT
-    t.id, t.topic_key, t.title, t.question_text,
+    t.id, t.topic_key,
+    tr.id AS topic_revision_id,
+    tr.title, tr.question_text,
+    (SELECT array_agg(r.role_scope ORDER BY r.role_scope)
+       FROM inform.compass_topic_roles r WHERE r.topic_id = t.id) AS role_scopes,
     json_agg(
-      json_build_object('value', s.value, 'text', s.text)
-      ORDER BY s.value
+      json_build_object('value', sr.value, 'text', sr.text)
+      ORDER BY sr.value
     ) AS stances
-  FROM inform.compass_topics t
-  JOIN inform.compass_stances s ON s.topic_id = t.id
-  WHERE t.is_live = true
-  GROUP BY t.id, t.topic_key, t.title, t.question_text
+  FROM open_season os
+  JOIN inform.season_questions q ON q.season_id = os.id
+  JOIN inform.compass_topics t ON t.id = q.topic_id
+  JOIN inform.compass_topic_revisions tr ON tr.id = q.topic_revision_id
+  JOIN inform.compass_stance_revisions sr ON sr.topic_revision_id = tr.id
+  GROUP BY t.id, t.topic_key, tr.id, tr.title, tr.question_text
   ORDER BY t.topic_key
 \`);
 console.log(JSON.stringify(rows, null, 2));
@@ -87,12 +111,29 @@ await pool.end();
 "
 ```
 
-Pass the **full output of this query** to each researcher agent prompt — including the stance texts for every value. Never hardcode. As of 2026-06-02 there are 44 live topics; this number will grow.
+Notes on reading the result:
+
+- **It resolves whichever season is open, by status — do not hard-code a season number.** Today that
+  is Season 2 (60 topics). The Season 3 draft has 61 and a different pin; a run today writes into the
+  open season, so the open season's rung text is the text your evidence must match.
+- **If it returns zero rows, no season is open. STOP.** Do not fall back to the frozen table. The
+  write path sources its insert from a join on the open season, so with none open nothing is written
+  and nothing raises.
+- `topic_revision_id` is part of the answer you will write and is what an existing row must be judged
+  against. Carry it through; do not discard it.
+- `role_scopes` tells you which office levels the topic is offered at. Use it to prioritize, and read
+  §4.9 of the program design before concluding a topic is unreachable at a level.
+
+Work from the **full output of this query** — including the rung texts for every value. Never
+hardcode, and never restate a ladder from memory: given only a `topic_key`, a model defaults to
+1 = oppose / 5 = support and systematically inverts topics like `ai-regulation` and `tariffs`, which
+run the other way.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
+- The open season's number, and the topic count it pinned
 - Topics in scope (all or filtered)
-- Estimated scope (e.g., "3 politicians x 44 topics = up to 132 stance assessments")
+- Estimated scope (e.g., "3 politicians x 60 topics = up to 180 stance assessments")
 
 ---
 
@@ -176,10 +217,12 @@ as written turned 38 researched rows into 8 survivors.
    arrives, the reviewer can point at the row and the instrument.
 
 🔴 **Read the ladders from the season pin, not from the researcher agent definition.**
-`.claude/agents/politician-stance-researcher.md` carries hard-coded 1–5 scale text that is a copy
-of the **frozen** `inform.compass_stances` table — `abortion` chair 1 and `same-sex-marriage`
-chair 1 there are both stale against the Season 3 pin. Use the topic JSON resolved in STEP 0 as
-the only authority for rung text. The agent file is still useful for its URL patterns
+`.claude/agents/politician-stance-researcher.md` carries hard-coded 1–5 scale text copied from the
+**frozen** `inform.compass_stances` table. Measured 2026-09-23, **29 of the 60 topics pinned into the
+open season have rung text that differs from that table** — `same-sex-marriage` chair 1, for one,
+reads "require all states to recognize…" there and "Guarantee same-sex couples full legal equality
+— equal marriage plus protection…" in the pin. Use the topic JSON resolved in STEP 0 as the only
+authority for rung text. The agent file is still useful for its URL patterns
 (`### URL Patterns — Fetch These in Order`) and its per-office guidance; read it with the Read
 tool for those, and ignore its scales.
 
@@ -508,7 +551,9 @@ Only quotes that clear both passes proceed to the push.
 
 ### 4b. Resolve IDs
 
-Look up `politician_id` and `topic_id`:
+Look up `politician_id` and `topic_id`. 🔴 **Resolve topics from the open season's pin, not from
+`is_live`** — the old filter here dropped the 17 pinned topics that carry `is_live = false`, so a
+correctly researched row on one of them found no `topic_id` and went nowhere, without raising.
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
@@ -525,7 +570,10 @@ const { rows } = await pool.query(\`
       WHERE lower(alt) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
     )
   )
-    AND t.is_live = true
+    AND t.id IN (
+      SELECT q.topic_id FROM inform.season_questions q
+      JOIN inform.seasons s ON s.id = q.season_id AND s.status = 'open'
+    )
   ORDER BY p.full_name, t.created_at
 \`, [process.argv.slice(2)]);
 console.log(JSON.stringify(rows, null, 2));
@@ -750,6 +798,16 @@ When `$ARGUMENTS` includes `--rewrite-id <uuid>`, the skill runs in a
 different mode that feeds the Plan D topic rewrite workflow
 (`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`)
 instead of pushing directly to live data.
+
+🔴🔴 **This mode predates the season model and still reads the frozen table. It was NOT
+repaired when STEP 0 was.** It resolves its old and new ladders with
+`SELECT value, text FROM inform.compass_stances WHERE topic_id = $1`, and it models a rewrite as a
+*new topic row* with the old one left at `is_live = false` — neither of which is how a revision
+works now. Measured 2026-09-23, 29 of the 60 topics pinned into the open season have rung text that
+differs from that table, so the "old framing" and "new framing" this mode shows you may both be
+wrong. Before trusting it: resolve both ladders through the season pin yourself (the STEP 0 query),
+compare them against what this mode prints, and stop if they disagree. Repointing this path at the
+revision model is a design change, not a repair, and is owed — see §8.5 of the program design.
 
 In this mode, the skill:
 
