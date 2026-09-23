@@ -559,31 +559,6 @@ const DATASETS_SUMMARY = `json_build_object(
             ) AS dataset_summary`;
 
 /**
- * The full entity list, or — with `slug` — the single entity addressed by it.
- *
- * ⚠⚠ THE SLUG FILTER IS A WHERE CLAUSE AND NOTHING ELSE. Every other part of
- * the query (the LEFT JOIN, the GROUP BY, the HAVING "has a budget or is a
- * grouper county" contract, the column list, the ORDER BY) is untouched, so a
- * slug lookup returns exactly the row the unfiltered list would have contained
- * — or nothing. It can never surface an entity the list would have hidden, and
- * it can never return a DIFFERENT entity: no match is an empty array, which is
- * what lets TT keep resolving an unmatched slug to `not_found` rather than
- * substituting someone else's budget (TT #158).
- *
- * WHY: financials.empowered.vote downloads this entire list — 8,149 entities,
- * 3.2 MB uncompressed — to read ONE 309-byte row, because the only thing it
- * does with the list is turn `?entity=empowered-vote-ca` into an id. That is
- * 0.0097% of the payload, and it is 76% of that page's critical path. The list
- * is also O(total entities): TT #125 cut it 23.5 MB -> 1.1 MB, and it is back
- * to 3.2 MB purely because the entity count went 1,144 -> 8,149. Trimming the
- * constant again would not stop it regrowing; not fetching it does.
- *
- * ⚠ Uses SLUG_SQL, the same expression GET /treasury/coverage publishes, so
- * there is ONE slug definition on this side and it already carries the
- * byte-identical-to-TT's-toSlug warning.
- */
-
-/**
  * Optional narrowings for GET /api/treasury/cities.
  *
  * ⚠⚠ EVERY ONE OF THESE IS A WHERE CLAUSE AND NOTHING ELSE. The join, the
@@ -624,6 +599,12 @@ export interface TreasuryCityIndex {
   state: string;
   entity_type: string | null;
   county_id: string | null;
+  /**
+   * `false` for a HAVING-admitted grouper county — one whose row is present
+   * only because it has children, not because it has budgets of its own.
+   * That is existing behaviour, not a new semantic: `dataset_summary.years`
+   * is already `[]` for the same row in the non-index shape.
+   */
   has_data: boolean;
   /**
    * The newest fiscal year this entity has a budget row for, or null when it
@@ -639,17 +620,26 @@ const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
             MAX(b.fiscal_year) AS latest_year`;
 
 /**
- * Entity types the treasury schema actually stores. Measured 2026-09-22:
- * city 2,903 · township 2,787 · borough 949 · county 704 · town 486 ·
- * village 253 · state 50 · municipality 15 · nonprofit 1 · federal 1.
+ * Entity types the treasury schema's CHECK constraint permits.
+ *
+ * ⚠⚠ INVARIANT: this set must mirror `municipalities_entity_type_check` in TT
+ * migration `20260903000000_pa_borough_entity_type.sql` EXACTLY — not which
+ * values happen to have rows today. `special_district`, `school_district`,
+ * `conservancy` and `library` are legal in the constraint with zero rows right
+ * now; the moment a loader writes one, this set must already accept it or
+ * every CSV containing it (e.g. TT's `CITY_TIER_TYPES`) 422s as a whole and a
+ * county's children panel goes blank — the PA-borough failure mode (1,202
+ * entities silently invisible) reproduced across repos. Add a type here WHEN
+ * THAT CONSTRAINT GAINS ONE, not after a loader needs it.
  *
  * ⚠ This is a VALIDATION whitelist, not a classification. It says which values
- * exist, never which of them count as a city — that judgement stays in the
- * caller (see CityFilters).
+ * are legal shape, never which of them count as a city — that judgement stays
+ * in the caller (see CityFilters).
  */
 export const KNOWN_ENTITY_TYPES: ReadonlySet<string> = new Set([
-  'city', 'town', 'township', 'village', 'borough',
-  'municipality', 'county', 'state', 'nonprofit', 'federal',
+  'city', 'county', 'township', 'village', 'borough',
+  'nonprofit', 'state', 'municipality', 'special_district',
+  'school_district', 'conservancy', 'library', 'town', 'federal',
 ]);
 
 export function parseEntityTypes(raw: unknown): { values: string[] } | { invalid: string } {
@@ -660,6 +650,33 @@ export function parseEntityTypes(raw: unknown): { values: string[] } | { invalid
   return { values };
 }
 
+/**
+ * The full entity list, or — with `slug` — the single entity addressed by it.
+ * `filters` (entityTypes/state/countyId/fields) narrow it further; see
+ * `CityFilters` for what each one does and the contract it must preserve.
+ *
+ * ⚠⚠ THE SLUG FILTER IS A WHERE CLAUSE AND NOTHING ELSE. Every other part of
+ * the query (the LEFT JOIN, the GROUP BY, the HAVING "has a budget or is a
+ * grouper county" contract, the column list, the ORDER BY) is untouched, so a
+ * slug lookup returns exactly the row the unfiltered list would have contained
+ * — or nothing. It can never surface an entity the list would have hidden, and
+ * it can never return a DIFFERENT entity: no match is an empty array, which is
+ * what lets TT keep resolving an unmatched slug to `not_found` rather than
+ * substituting someone else's budget (TT #158). The same property is required
+ * of every filter in `CityFilters` — see its doc comment.
+ *
+ * WHY: financials.empowered.vote downloads this entire list — 8,149 entities,
+ * 3.2 MB uncompressed — to read ONE 309-byte row, because the only thing it
+ * does with the list is turn `?entity=empowered-vote-ca` into an id. That is
+ * 0.0097% of the payload, and it is 76% of that page's critical path. The list
+ * is also O(total entities): TT #125 cut it 23.5 MB -> 1.1 MB, and it is back
+ * to 3.2 MB purely because the entity count went 1,144 -> 8,149. Trimming the
+ * constant again would not stop it regrowing; not fetching it does.
+ *
+ * ⚠ Uses SLUG_SQL, the same expression GET /treasury/coverage publishes, so
+ * there is ONE slug definition on this side and it already carries the
+ * byte-identical-to-TT's-toSlug warning.
+ */
 export async function getCities(
   mode: DatasetsMode = 'full',
   slug?: string,

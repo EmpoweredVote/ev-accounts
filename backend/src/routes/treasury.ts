@@ -60,6 +60,21 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // "entity not found" landing rather than rendering a different government's
 // budget. Absent or empty `?slug=`, the response is unchanged.
 //
+// ⚠ `?entity_type=<csv>`, `?state=<abbr>`, `?county_id=<uuid>` are additive
+// WHERE-clause narrowings (see CityFilters) — same row shape, same contract
+// as `?slug=`. They compose with each other and with `?slug=`/`?datasets=`.
+// Deliberate asymmetry: an unknown `entity_type` is a 422 `INVALID_ENTITY_TYPE`
+// (a typo reading as "no such places" would be silently wrong — see
+// parseEntityTypes), while an unknown `state` or `county_id` with no matches
+// is `[]`, same as an unmatched slug — a state/county genuinely can have zero
+// entities today. `county_id` must additionally be a UUID or it is a 422
+// `INVALID_COUNTY_ID`. Absent, all three leave the response unchanged.
+//
+// ⚠ `?fields=index` swaps the response to the lean `TreasuryCityIndex` shape
+// (id/name/state/entity_type/county_id/has_data/latest_year) for Treasury
+// Tracker's entity switcher and landing search — see the `fields` note on
+// `CityFilters`. Any other value, or absent, leaves the response unchanged.
+//
 // ⚠ CACHING: this endpoint is identical for every caller (the handler never
 // reads req.user — optionalAuth is here for rate-limit identity only), so it is
 // `public`. It is also the single largest thing on every Treasury Tracker page

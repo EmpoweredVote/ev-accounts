@@ -29,11 +29,16 @@ describe('parseEntityTypes', () => {
     expect(parseEntityTypes('')).toEqual({ values: [] });
   });
 
-  it('knows every type the table actually holds', () => {
-    // Measured 2026-09-22 against production: these ten and nothing else.
-    for (const t of ['city', 'town', 'township', 'village', 'borough',
-                     'municipality', 'county', 'state', 'nonprofit', 'federal']) {
+  it('accepts every type the CHECK constraint permits, not just the ones seeded today', () => {
+    // Mirrors municipalities_entity_type_check (TT migration
+    // 20260903000000_pa_borough_entity_type.sql) — all fourteen, including
+    // special_district/school_district/conservancy/library, which are legal
+    // rows with zero instances today.
+    for (const t of ['city', 'county', 'township', 'village', 'borough',
+                     'nonprofit', 'state', 'municipality', 'special_district',
+                     'school_district', 'conservancy', 'library', 'town', 'federal']) {
       expect(KNOWN_ENTITY_TYPES.has(t)).toBe(true);
     }
+    expect(KNOWN_ENTITY_TYPES.size).toBe(14);
   });
 });

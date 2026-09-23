@@ -41,6 +41,8 @@ beforeEach(() => {
 const sql = () => query.mock.calls[0][0] as string;
 /** The bound parameters of the single call made. */
 const params = () => query.mock.calls[0][1] as unknown[];
+/** The matched WHERE clause text (empty string if none). */
+const whereClauseText = (s: string) => (s.match(WHERE_CLAUSE) ?? [''])[0];
 
 describe('getCities — no slug (unchanged behaviour)', () => {
   it('emits no WHERE clause and binds no parameters', async () => {
@@ -154,6 +156,26 @@ describe('getCities — entity_type / state / county_id filters', () => {
     expect(sql()).toContain("m.entity_type = 'county'");
   });
 
+  // ⚠⚠ THE PROPERTY "WHERE clause only" ACTUALLY NEEDS. Stripping the WHERE
+  // clause (the assertion above) only proves the REST of the query is
+  // untouched — it does NOT prove the WHERE clause itself is safe. A future
+  // filter written as `WHERE b.fiscal_year = $1` would strip just as cleanly
+  // as any other single-line WHERE and pass that assertion, yet it would turn
+  // the LEFT JOIN into an effective INNER JOIN: grouper counties (no budget
+  // rows of their own) would drop out, and every surviving row's
+  // available_datasets/dataset_summary would be silently narrowed to one
+  // fiscal year. So assert directly that every filter constrains the m side
+  // only. (SLUG_SQL is built from m.name/m.state, so it never trips this.)
+  it('every WHERE condition constrains treasury.municipalities (m), never the joined budgets (b)', async () => {
+    await getCities('summary', 'x-y', {
+      entityTypes: ['city'], state: 'CA',
+      countyId: '391bf791-1c1f-424f-a7a5-1b698c79093f',
+    });
+    const clause = whereClauseText(sql());
+    expect(clause).not.toBe('');
+    expect(clause).not.toMatch(/\bb\./);
+  });
+
   it('combines with the slug filter, numbering parameters in order', async () => {
     await getCities('summary', 'los-angeles-ca', { state: 'CA' });
     expect(params()).toEqual(['los-angeles-ca', 'CA']);
@@ -197,7 +219,7 @@ describe('getCities — ?fields=index', () => {
     expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
   });
 
-  it('maps rows to the lean shape with has_data as a real boolean', async () => {
+  it('maps rows to the lean shape, coercing latest_year from the bigint-as-string node-postgres returns', async () => {
     query.mockResolvedValue({ rows: [{
       id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
       county_id: null, has_data: true, latest_year: '2024',
@@ -220,18 +242,8 @@ describe('getCities — ?fields=index', () => {
     expect(sql()).toMatch(/MAX\(b\.fiscal_year\) AS latest_year/);
   });
 
-  it('coerces latest_year from the string node-postgres returns for bigint', async () => {
-    query.mockResolvedValue({ rows: [{
-      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
-      county_id: null, has_data: true, latest_year: '2024',
-    }] });
-    const [row] = await getCities('summary', undefined, { fields: 'index' });
-    expect(row).toEqual({
-      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
-      county_id: null, has_data: true, latest_year: 2024,
-    });
-  });
-
+  // ⚠ Load-bearing: null must stay null, not coerce to 0 or NaN — that would
+  // make a grouper county with no budgets of its own look like it has one.
   it('reports a null latest_year for an entity with no budget rows', async () => {
     query.mockResolvedValue({ rows: [{
       id: 'c2', name: 'Grouper County', state: 'MI', entity_type: 'county',
