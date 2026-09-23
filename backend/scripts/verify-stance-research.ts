@@ -27,10 +27,17 @@
  * Usage:
  *   npx tsx scripts/verify-stance-research.ts --dir data/stance-research/<batch> \
  *     [--threshold 2] [--batch-id <id>] [--apply] [--auto-push] [--re-researched] [--editor-id <uuid>]
- * Requires <dir>/gate-findings.json from scripts/stance-gate.ts.
+ * Requires <dir>/gate-findings.json from scripts/stance-gate.ts, and <dir>/topics.json
+ * from scripts/build-stance-topic-bundle.ts: every scored row's ladder revision must
+ * still be the open season's pin, or the run exits 2 before any write.
+ * Exit: 0 ok, 1 --apply finished with row errors, 2 usage / unreadable / refused batch.
  *
- * Idempotent: re-running the same batch is safe — all writes are upserts /
- * replace-by-key. A re-research pass REPLACES that (politician, topic) pair's rows
+ * Idempotent: re-running the same batch is safe. Stance writes are season-aware
+ * upserts, each in its own transaction with its snippets; snippets are
+ * insert-if-absent. Review-queue rows are upserted per (batch, politician-or-name,
+ * topic), and a re-run refreshes only rows still UNDECIDED (pending /
+ * unresolved_politician) — a row a person already resolved or rejected is left
+ * alone, never reset to pending. A re-research pass REPLACES that (politician, topic) pair's rows
  * in research.csv / evidence.csv — it never appends a second row for a pair (two
  * rows for one pair are refused: stance-gate flags `duplicate-row`, and this script
  * exits 2 before any write) — and then re-runs scripts/stance-gate.ts (which
@@ -110,6 +117,11 @@ if (APPLY && !EDITOR_ID) {
 const gatePath = join(DIR, 'gate-findings.json');
 if (!existsSync(gatePath)) {
   console.error(`ERROR: ${gatePath} not found — run scripts/stance-gate.ts --dir ${DIR} first`);
+  process.exit(2);
+}
+const topicsPath = join(DIR, 'topics.json');
+if (!existsSync(topicsPath)) {
+  console.error(`ERROR: ${topicsPath} not found — it records the ladder revisions this batch was researched against; rebuild it with scripts/build-stance-topic-bundle.ts`);
   process.exit(2);
 }
 
@@ -201,6 +213,43 @@ for (const f of findings) {
   gateByKey.set(k, [...(gateByKey.get(k) ?? []), f]);
 }
 
+// ---------------------------------------------------------------- load the bundle's ladders (I7)
+// topics.json is the exact question set the researcher scored against: each topic's pinned
+// topic_revision_id at the moment build-stance-topic-bundle.ts ran. Checked against the open
+// season's CURRENT pin below.
+let bundleTopicsRaw: unknown;
+try {
+  bundleTopicsRaw = JSON.parse(readFileSync(topicsPath, 'utf8'));
+} catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(`ERROR: ${topicsPath} is not valid JSON: ${msg}`);
+  process.exit(2);
+}
+const isBundleTopic = (t: unknown): t is { topic_key: string; topic_revision_id: string } =>
+  typeof t === 'object' && t !== null
+  && typeof (t as Record<string, unknown>).topic_key === 'string'
+  && typeof (t as Record<string, unknown>).topic_revision_id === 'string';
+if (!Array.isArray(bundleTopicsRaw) || bundleTopicsRaw.length === 0 || !bundleTopicsRaw.every(isBundleTopic)) {
+  console.error(`ERROR: ${topicsPath} is not valid JSON: expected a non-empty array of topics with string topic_key/topic_revision_id`);
+  process.exit(2);
+}
+const bundleRevisionByKey = new Map(
+  (bundleTopicsRaw as { topic_key: string; topic_revision_id: string }[])
+    .map((t) => [normTopic(t.topic_key), t.topic_revision_id]),
+);
+
+// ---------------------------------------------------------------- editor pre-flight (M4)
+// A uuid that names nobody fails the editor_id FK on the FIRST stance write — after every page
+// has been fetched, and (before transactions) after the answer row. Refuse it before anything.
+if (APPLY) {
+  const { rows: editor } = await pool.query(`SELECT 1 FROM public.users WHERE id = $1`, [EDITOR_ID]);
+  if (editor.length === 0) {
+    console.error(`ERROR: --editor-id ${EDITOR_ID} is not a user in public.users — refusing to write stances nobody can be asked about`);
+    await pool.end();
+    process.exit(2);
+  }
+}
+
 // ---------------------------------------------------------------- resolve politicians + topics
 // D1: resolve by the bundle's politician_id first. full_name is not unique here — duplicate
 // discovery stubs and namesakes are real (e.g. three "Rachael Himsel" records existed until
@@ -269,13 +318,34 @@ for (const name of csvNames) {
 
 // 🔴 The open season's question set — not is_live. A stance can only be written to a
 // question the open season asks; is_live and the season's set disagreed on 2026-09-22.
-const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string }>(
-  `SELECT t.id AS topic_id, t.topic_key
+const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string; topic_revision_id: string }>(
+  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id
      FROM inform.season_questions sq
      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
      JOIN inform.compass_topics t ON t.id = sq.topic_id`,
 );
 const topicIdByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_id]));
+const openRevisionByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
+if (topicRows.length === 0) {
+  console.error('ERROR: no open season (or it asks no questions) — nothing can be verified against a pin or written; open a season first');
+  await pool.end();
+  process.exit(2);
+}
+
+// ---------------------------------------------------------------- the ladder must still be the pin (I7)
+// A value is an answer to one ladder's wording. If the open season re-pinned a topic (or dropped
+// it) after the bundle was built, the researcher scored against a sentence the stored answer
+// would not be an answer to. Checked for every scored row's topic that the bundle holds (a topic
+// the bundle lacks is already a gate-high `topic-not-in-season`), before any fetch or write.
+const ladderChanged = [...new Set(stanceRows.map((s) => normTopic(s.topic_key)))]
+  .filter((k) => bundleRevisionByKey.has(k) && bundleRevisionByKey.get(k) !== openRevisionByKey.get(k))
+  .sort();
+if (ladderChanged.length) {
+  console.error(`ERROR: the ladder changed since the bundle was built — rebuild the bundle and re-research these topics: ${ladderChanged
+    .map((k) => `${k} (bundle ${bundleRevisionByKey.get(k)}, open season ${openRevisionByKey.get(k) ?? 'no longer asks it'})`).join('; ')}`);
+  await pool.end();
+  process.exit(2);
+}
 
 // ---------------------------------------------------------------- one row per pair (C1)
 // Two rows proposing a value for one (politician, topic) pair verify each other's snippets and
@@ -341,10 +411,23 @@ const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
 const bucket = (a: Decision['action']) => decided.filter((d) => d.decision.action === a);
 const reasonsOf = (d: Decided): string[] => ('reasons' in d.decision ? [...d.decision.reasons] : []);
 
+// Review rows and below-threshold rows go to the human queue. Gate-high rows are NOT written:
+// the research itself is defective — send those pairs back to the researcher and re-run.
+const queued = decided.filter((d) => d.decision.action === 'review'
+  || (d.decision.action === 're-research' && reasonsOf(d).includes('below-threshold')));
+const queuedSet = new Set(queued);
+// Ruling 2026-09-22 (I4): an unresolved politician's row IS saved (status unresolved_politician,
+// full_name_raw kept), but the admin queue lists only `pending` rows — so nobody will see it
+// there. Say so, in the console and in publish-report.json, instead of implying it is queued.
+const notInAdminQueue = queued.filter((d) => !d.pid);
+
 writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) => ({
   full_name: d.row.stance.full_name, topic_key: d.row.stance.topic_key, value: d.row.stance.value,
   action: d.decision.action, reasons: reasonsOf(d),
   verified_sources: d.row.verifiedSources.map((s) => s.url), failed_urls: failedUrls(d.row),
+  // Only on rows that go to inform.stance_research_review: true = a `pending` row the admin
+  // review queue lists; false = saved as unresolved_politician, which that queue does not list.
+  ...(queuedSet.has(d) ? { admin_queue_visible: Boolean(d.pid) } : {}),
 })), null, 2));
 
 console.log(`\n=== verify-stance-research — batch "${BATCH_ID}" (threshold ${THRESHOLD}) ===`);
@@ -363,6 +446,10 @@ if (nullRows.length) {
   console.log('\n--- value=null (skipped; not pushed, not queued) ---');
   for (const s of nullRows) console.log(`  SKIP\t${s.full_name}\t${s.topic_key}`);
 }
+if (notInAdminQueue.length) {
+  console.log('\n--- NOT IN THE ADMIN QUEUE — politician not resolved; rebuild the bundle with this person (--politician <uuid>:<level>) and re-run: ---');
+  for (const d of notInAdminQueue) console.log(`  UNRESOLVED\t${d.row.stance.full_name}\t${d.row.stance.topic_key}\tvalue=${d.row.stance.value}`);
+}
 console.log(`\nwrote ${join(DIR, 'publish-report.json')}`);
 
 // ---------------------------------------------------------------- apply
@@ -374,8 +461,10 @@ if (!APPLY) {
 
 console.log('\n=== --apply: writing to database ===');
 let pushed = 0;
-let evidenceWritten = 0;
+let snippetsAttempted = 0;
+let snippetsInserted = 0;
 let reviewed = 0;
+let leftDecided = 0;
 const errors: string[] = [];
 const pushedPoliticianIds = new Set<string>();
 
@@ -385,32 +474,42 @@ for (const d of bucket('auto-push')) {
     errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'topic_key not in the open season'} — skipped`);
     continue;
   }
+  // I6: the answer, its context and its snippets commit together or not at all. Before this, a
+  // failure after the answer write left a value with no reasoning, and nothing re-ran it.
+  const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
+  const c = await pool.connect();
   try {
+    await c.query('BEGIN');
     await writeVerifiedStance({
       politicianId: pid, topicId: tid, value: row.stance.value as number,
       reasoning: row.stance.reasoning, sources: row.verifiedSources.map((s) => s.url), editorId: EDITOR_ID,
-    });
-    const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-    await accumulateEvidence(evRows);
-    pushed++; evidenceWritten += evRows.length; pushedPoliticianIds.add(pid);
-    console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (${evRows.length} snippets)`);
+    }, c);
+    const inserted = await accumulateEvidence(evRows, c);
+    await c.query('COMMIT');
+    pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted; pushedPoliticianIds.add(pid);
+    console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
   } catch (e: any) {
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+    await c.query('ROLLBACK').catch(() => undefined);
+    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message} — rolled back, nothing written for this row`);
+  } finally {
+    c.release();
   }
 }
 
-// Review rows and below-threshold rows go to the human queue. Gate-high rows are NOT written:
-// the research itself is defective — fix research.csv / evidence.csv and re-run.
-const queued = decided.filter((d) => d.decision.action === 'review'
-  || (d.decision.action === 're-research' && reasonsOf(d).includes('below-threshold')));
 for (const { row, pid, tid } of queued) {
   try {
-    await upsertReviewRow(buildReviewRowForInsert({
+    const wrote = await upsertReviewRow(buildReviewRowForInsert({
       row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
       threshold: THRESHOLD, reResearchAttempted: RE_RESEARCHED,
     }));
+    if (!wrote) {
+      // I1: this batch's row for the pair was already resolved or rejected by a person.
+      leftDecided++;
+      console.log(`  LEFT ALONE ${row.stance.full_name}/${row.stance.topic_key} — already decided in the review queue`);
+      continue;
+    }
     reviewed++;
-    console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}`);
+    console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}${pid ? '' : ' (unresolved_politician — NOT in the admin queue)'}`);
     // No citations are written for a queued row (ruling 2026-09-22, R1): accumulateEvidence
     // attaches a snippet to the pair's newest published context row, and citations render with
     // no batch filter — so a snippet for a PROPOSED value would show under whatever stance is
@@ -430,8 +529,18 @@ if (pushedPoliticianIds.size) {
 }
 
 console.log(
-  `\nSUMMARY: pushed=${pushed} (snippets=${evidenceWritten}) reviewed=${reviewed} stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
+  `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
+  + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
+  + `stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
 );
+if (snippetsInserted < snippetsAttempted) {
+  console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `
+    + 'politician_context_evidence (politician_id, topic_id, source_url, snippet_index) has no season column, '
+    + 'so a snippet already stored for that pair (from an earlier batch or season) was dropped as already present.');
+}
+if (notInAdminQueue.length) {
+  console.log(`  ${notInAdminQueue.length} row(s) saved as unresolved_politician are NOT in the admin queue — see the list above; rebuild the bundle with those people and re-run.`);
+}
 if (errors.length) {
   errors.forEach((e) => console.log('  ' + e));
   process.exitCode = 1;
