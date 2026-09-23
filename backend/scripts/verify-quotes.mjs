@@ -14,14 +14,79 @@
  * ellipses and whitespace are normalised; wording is not. A quote that fails here is either
  * mis-sourced (fixable — find the true source) or invented (drop it).
  *
- * Usage: node verify-quotes.mjs
+ * Run this on EVERY wave before pushing quotes. It was written for the Colorado Springs wave and
+ * lived in that wave's directory until 2026-09-23, where it was findable only by accident; it is
+ * wave-agnostic now and takes the wave as an argument.
+ *
+ * Usage:
+ *   npm run verify:quotes -- <wave-dir-or-csv> [more...] [--sources <dir>] [--pattern <regex>]
+ *
+ *   node scripts/verify-quotes.mjs data/stance-research/colorado-springs
+ *   node scripts/verify-quotes.mjs data/stance-research/nc-2026/out-batch-04.csv
+ *   node scripts/verify-quotes.mjs data/stance-research/foo --pattern '^rows-.*\\.csv$'
+ *
+ * A directory is scanned for CSVs matching --pattern (default /^out-.*\\.csv$/), and its
+ * `sources/` subdirectory, if present, is loaded as local harvested text so a quote drawn from a
+ * frozen file matches without a refetch. Pass --sources to point somewhere else.
+ *
+ * Exit code is 1 if any quote could not be found in its source, so it can gate a push.
  */
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { parse } from 'csv-parse/sync';
 
-const HERE = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
-const SRC = path.join(HERE, 'sources');
+const argv = process.argv.slice(2);
+const takeFlag = (name) => {
+  const i = argv.indexOf(name);
+  if (i === -1) return null;
+  const v = argv[i + 1];
+  if (!v || v.startsWith('--')) {
+    console.error(`${name} needs a value`);
+    process.exit(2);
+  }
+  argv.splice(i, 2);
+  return v;
+};
+const sourcesFlag = takeFlag('--sources');
+const patternFlag = takeFlag('--pattern');
+const targets = argv.filter((a) => !a.startsWith('--'));
+
+if (targets.length === 0) {
+  console.error('Usage: node scripts/verify-quotes.mjs <wave-dir-or-csv> [more...] [--sources <dir>] [--pattern <regex>]');
+  console.error('Refusing to guess a wave directory \u2014 name the one you are pushing.');
+  process.exit(2);
+}
+
+const CSV_RE = new RegExp(patternFlag || '^out-.*\\.csv$');
+
+// Resolve the targets into a concrete CSV list and a set of directories to look for sources in.
+const csvFiles = [];
+const sourceDirs = [];
+for (const t of targets) {
+  const abs = path.resolve(t);
+  let st;
+  try {
+    st = await stat(abs);
+  } catch {
+    console.error(`no such path: ${t}`);
+    process.exit(2);
+  }
+  if (st.isDirectory()) {
+    const found = (await readdir(abs)).filter((f) => CSV_RE.test(f)).sort();
+    if (found.length === 0) console.error(`\u26a0 no CSV matching ${CSV_RE} in ${t}`);
+    for (const f of found) csvFiles.push(path.join(abs, f));
+    sourceDirs.push(path.join(abs, 'sources'));
+  } else {
+    csvFiles.push(abs);
+    sourceDirs.push(path.join(path.dirname(abs), 'sources'));
+  }
+}
+if (sourcesFlag) sourceDirs.length = 0, sourceDirs.push(path.resolve(sourcesFlag));
+
+if (csvFiles.length === 0) {
+  console.error('no CSV files to check');
+  process.exit(2);
+}
 
 const norm = (s) =>
   (s || '')
@@ -53,10 +118,19 @@ const norm = (s) =>
     .trim();
 
 // Local harvested sources, so a quote drawn from a frozen file can be matched without a refetch.
+// A missing sources/ directory is normal for a wave that never harvested any \u2014 not an error.
 const localText = [];
-for (const f of await readdir(SRC)) {
-  if (!/\.(md|txt)$/.test(f)) continue;
-  localText.push(norm(await readFile(path.join(SRC, f), 'utf8')));
+for (const dir of [...new Set(sourceDirs)]) {
+  let entries;
+  try {
+    entries = await readdir(dir);
+  } catch {
+    continue;
+  }
+  for (const f of entries) {
+    if (!/\.(md|txt)$/.test(f)) continue;
+    localText.push(norm(await readFile(path.join(dir, f), 'utf8')));
+  }
 }
 
 const cache = new Map();
@@ -74,11 +148,10 @@ const fetchNorm = async (url) => {
   return t;
 };
 
-const files = (await readdir(HERE)).filter((f) => /^out-.*\.csv$/.test(f)).sort();
 const results = { verified: [], local: [], notfound: [], unfetchable: [] };
 
-for (const f of files) {
-  const rows = parse(await readFile(path.join(HERE, f), 'utf8'), { columns: true, skip_empty_lines: true, bom: true });
+for (const f of csvFiles) {
+  const rows = parse(await readFile(f, 'utf8'), { columns: true, skip_empty_lines: true, bom: true });
   for (const r of rows) {
     const q = (r.quote_text || '').trim();
     if (!q) continue;
@@ -123,10 +196,19 @@ for (const f of files) {
   }
 }
 
+console.log(`csv files checked            : ${csvFiles.length}`);
+console.log(`local source files loaded    : ${localText.length}`);
+console.log(`quotes examined              : ${results.verified.length + results.local.length + results.notfound.length + results.unfetchable.length}`);
 console.log(`verified against live source : ${results.verified.length}`);
 console.log(`verified against local file  : ${results.local.length}`);
 console.log(`source unfetchable (WAF/404) : ${results.unfetchable.length}`);
 console.log(`🔴 NOT FOUND IN SOURCE        : ${results.notfound.length}`);
 for (const x of results.notfound) console.log(`   [notfound] ${x.who} / ${x.topic} — ${x.why}\n      "${x.q}"`);
 for (const x of results.unfetchable) console.log(`   [unfetchable] ${x.who} / ${x.topic} — ${x.urls.join(' ')}`);
-process.exit(results.notfound.length ? 1 : 0);
+// ⚠ Set exitCode; do NOT process.exit() here. Node's fetch keeps pooled sockets alive for a
+// moment after the last request, and exiting hard while they are closing trips a libuv assertion
+// on Windows (`UV_HANDLE_CLOSING`, src/win/async.c) that replaces our exit code with 127. A gate
+// whose exit code can be overwritten at teardown is not a gate. Let the loop drain instead, with
+// an unref'd backstop so a wedged socket still cannot hang CI.
+process.exitCode = results.notfound.length ? 1 : 0;
+setTimeout(() => process.exit(process.exitCode), 5000).unref();

@@ -43,12 +43,12 @@ failures, every time.
 These are not proposals. Each is a place where our shipped materials contradict this standard, so a
 reader who follows them faithfully will reproduce a failure we have already paid for. They are ours to make, not the reader's.
 
-**Status 2026-09-23: H1 and H3 are done (PRs #662, #664). H2 is the only one still open.**
+**Status 2026-09-23: all three are done — H1 (#662), H3 (#664), H2 (#666).**
 
 | # | Fix | Why |
 |---|---|---|
 | **H1** | ✅ **Done.** `research-stances/SKILL.md` STEP 1 said to dispatch one research **agent** per politician; both it and the rewrite mode now execute inline, one politician per run. | Withdrawn by ruling 2026-08-24, reaffirmed 2026-09-23. Following it as written turned 38 rows into 8 — §13.1 |
-| **H2** | Promote `verify-quotes.mjs` out of the Colorado Springs wave directory into `backend/scripts/`, with an npm script. | It is the only defence against WebFetch fabricating quotes, and it is currently findable only by accident — §4.11 |
+| **H2** | ✅ **Done.** `verify-quotes.mjs` is now `backend/scripts/verify-quotes.mjs`, wave-agnostic, and runnable as `npm run verify:quotes -- <wave-dir>`. | It is the only defence against WebFetch fabricating quotes, and it is currently findable only by accident — §4.11 |
 | **H3** | ✅ **Done.** `research-stances/SKILL.md` STEP 0's topic-resolution query joined `inform.compass_stances` (the **frozen** table) and filtered `WHERE t.is_live = true`. It now resolves the open season's pin by status. | 41 of 61 Season 3 topics disagree with the frozen text, and 18 of them carry `is_live = false` while being perfectly live in the season. The first fails silently and plausibly. The second returns the 44 `is_live` topics — **dropping 18 of Season 3's 61, while including `immigration`, which Season 2 retired and which the write gate no longer accepts** — §2.2, §8.5 |
 
 ---
@@ -515,10 +515,18 @@ sentences attributed to a county commissioner that **did not exist in the articl
 **Verify every `quote_text` against raw page bytes with no model in the loop** — a plain fetch, strip
 tags, normalise quotes and whitespace, substring test.
 
-⚠ **The only implementation we have is stranded in a wave directory**
-(`backend/data/stance-research/colorado-springs/verify-quotes.mjs`). It is not a committed general
-tool and it is not in `package.json`. **Promoting it to `backend/scripts/` is a prerequisite for
-handover** — otherwise a new researcher's only route to this check is to find it by accident.
+✅ **The checker is `backend/scripts/verify-quotes.mjs`**, promoted out of the Colorado Springs
+wave directory on 2026-09-23 (it was findable only by accident there). Run it on every wave
+before pushing quotes:
+
+```bash
+cd backend && npm run verify:quotes -- data/stance-research/<wave>
+```
+
+It scans the directory for `out-*.csv` (override with `--pattern`), loads the wave's `sources/`
+as local text so a quote taken from a harvested file matches without a refetch (override with
+`--sources`), and **exits 1 if any quote could not be found**, so it can gate a push. It refuses
+to guess a wave directory — name the one you are pushing.
 ⚠ Four bugs in that checker had to be fixed before it was trustworthy, each of which falsely accused a
 genuine quote. Most subtly, it **stripped punctuation before splitting on the ellipsis** (destroying
 the truncation marker) and **stripped punctuation before decoding numeric entities**, so
@@ -1117,8 +1125,8 @@ For the first wave by any new researcher — human or model — on any new body.
    batched into one pass — see §13.1. Finish a person, review them, then start the next. Budget for it
    being slower and say so up front.
 7. **Cohort pass** before any push (§3.4).
-8. **Pre-push checks:** `audit-chair-evidence.mjs --csv`, quote verification against raw bytes, the
-   value-change guard against the **open** season.
+8. **Pre-push checks:** `audit-chair-evidence.mjs --csv`, `npm run verify:quotes -- <wave-dir>`
+   (quote verification against raw bytes), the value-change guard against the **open** season.
 9. **Human review of the whole batch, against the ladder text, before the push.** This is the step the
    NC pilot proves is not optional.
 10. **Push dry-run first**, confirm the rollback reverted, then commit. Write the ledger and the
@@ -1316,7 +1324,7 @@ suffixes**, and normalise diacritics by NFKD-then-delete-combining-marks (otherw
 | Borrowed-ladder probe | `backend/scripts/ladder-language-probe.mjs` |
 | Chair-inversion scan | `backend/scripts/chair-inversion-scan.mjs` |
 | Ladder-text read enforcement | `backend/scripts/check-ladder-text-reads.mjs` |
-| Quote verification vs raw bytes | ⚠ `backend/data/stance-research/colorado-springs/verify-quotes.mjs` — **not yet a general tool**, see §4.11 |
+| Quote verification vs raw bytes | `npm run verify:quotes -- <wave-dir>` (`backend/scripts/verify-quotes.mjs`) — exits 1 on any unverified quote, see §4.11 |
 | Payload validator | `backend/scripts/validate-stance-quotes.py` |
 | Topic authoring | `.claude/skills/compass-topic-builder/SKILL.md` |
 | Stance research | `.claude/skills/research-stances/SKILL.md` — ⚠ **see §13.1** |
