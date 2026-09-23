@@ -45,8 +45,9 @@
  * stances.csv instead would fail the row-count check against gate-findings.json below.
  */
 import 'dotenv/config';
-import { readFileSync, existsSync, writeFileSync } from 'node:fs';
+import { readFileSync, existsSync, writeFileSync, rmSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import type { PoolClient } from 'pg';
 import { pool } from '../src/lib/db.js';
 import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.js';
 import {
@@ -85,6 +86,15 @@ if (!DIR) {
   console.error('ERROR: --dir <batch directory> is required');
   process.exit(2);
 }
+// R2: a refused run (any exit-2 path below) must not leave a PREVIOUS run's report sitting in the
+// batch directory — someone reading publish-report.json after a refusal would otherwise see a
+// stale, unrelated result and mistake it for this run's outcome. Removed right after --dir is
+// known, before any other validation can exit; prints only when there was something to remove.
+const stalePublishReportPath = join(DIR, 'publish-report.json');
+if (existsSync(stalePublishReportPath)) {
+  rmSync(stalePublishReportPath, { force: true });
+  console.log('removed stale publish-report.json');
+}
 // Default 1 verified source (cheap mode — avoids a re-research wave). Override
 // with --threshold or the RESEARCH_STANCES_THRESHOLD env var.
 const rawThreshold = opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1');
@@ -100,7 +110,9 @@ const APPLY = flag('--apply');
 // Review-all unless the operator opts in, per run (ruling 2026-09-22). Deliberately argv-only:
 // an env var would let a scheduled run inherit unattended publishing nobody chose for it.
 const AUTO_PUSH = flag('--auto-push');
-const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
+// Stamps re_research_attempted on queued rows that are actually below-threshold re-research
+// attempts — not on every queued row (R7; see the queued-rows loop below).
+const RE_RESEARCHED = flag('--re-researched');
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const EDITOR_ID = opt('--editor-id', process.env.EV_EDITOR_ID) ?? null;
@@ -477,8 +489,14 @@ for (const d of bucket('auto-push')) {
   // I6: the answer, its context and its snippets commit together or not at all. Before this, a
   // failure after the answer write left a value with no reasoning, and nothing re-ran it.
   const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-  const c = await pool.connect();
+  // R3: pool.connect() runs INSIDE the try — a connect failure (pool exhausted, a network blip) is
+  // then a per-row error like any other; the review loop and SUMMARY below still run for the rest
+  // of the batch. Before this, `c` was assigned before the try, so a rejected connect() threw
+  // straight out of the for-loop body, uncaught, and killed the whole --apply run after however
+  // many rows had already pushed.
+  let c: PoolClient | undefined;
   try {
+    c = await pool.connect();
     await c.query('BEGIN');
     await writeVerifiedStance({
       politicianId: pid, topicId: tid, value: row.stance.value as number,
@@ -489,18 +507,26 @@ for (const d of bucket('auto-push')) {
     pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted; pushedPoliticianIds.add(pid);
     console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
   } catch (e: any) {
-    await c.query('ROLLBACK').catch(() => undefined);
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message} — rolled back, nothing written for this row`);
+    await c?.query('ROLLBACK').catch(() => undefined);
+    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`
+      + (c ? ' — rolled back, nothing written for this row' : ' — could not open a connection, nothing written for this row'));
   } finally {
-    c.release();
+    c?.release();
   }
 }
 
-for (const { row, pid, tid } of queued) {
+for (const d of queued) {
+  const { row, pid, tid } = d;
   try {
+    // R7: --re-researched stamps a queued row only when it is actually a re-research attempt
+    // (a below-threshold row) — NOT every queued row. Under review-all (the default) most queued
+    // rows are ordinary review rows (review-all-mode, value-change, statement-evidence, …), never
+    // re-researched at all; stamping all of them re_research_attempted=true misled the reviewer UI
+    // into showing "Re-research attempted" on a row nobody had re-researched.
+    const reResearchAttempted = RE_RESEARCHED && reasonsOf(d).includes('below-threshold');
     const wrote = await upsertReviewRow(buildReviewRowForInsert({
       row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
-      threshold: THRESHOLD, reResearchAttempted: RE_RESEARCHED,
+      threshold: THRESHOLD, reResearchAttempted,
     }));
     if (!wrote) {
       // I1: this batch's row for the pair was already resolved or rejected by a person.
