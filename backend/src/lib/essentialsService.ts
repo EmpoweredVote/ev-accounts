@@ -638,19 +638,28 @@ export async function getPoliticiansFlatList(
 // (shared point-resolution core: resolveOfficialsAtPoint, further below)
 // ---------------------------------------------------------------------------
 
+/** A county-wide district row carries the county's 5-digit FIPS as its geo_id. Sub-county seats
+ *  (commissioner precincts, supervisor and council districts) are typed COUNTY too but carry geo_ids
+ *  of their own ('ramsey-mn-commissioner-district-1', '55101-sup-d8'). Measured 2026-09-23: all 3,260
+ *  COUNTY districts with a 5-digit geo_id have a G4020 geofence; no sub-county COUNTY district does. */
+const isCountyFips = (geoId?: string | null): boolean => /^\d{5}$/.test(geoId ?? '');
+
 /** Pick the user's county (GEOID + name) from the geofence district rows.
- *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent.
+ *  A county is a county-wide COUNTY row, else a G4020 row (a county court). Null when absent —
+ *  never a sub-county seat: the rows arrive in politician-id order, so "the first COUNTY row" used to
+ *  be whichever seat's holder sorted first (Ramsey MN, Miami-Dade and Racine reported a commissioner or
+ *  supervisor district as the county).
  *  `name` (the geofence_boundaries.name, e.g. "Monroe County") is the real county
  *  name; `district_label` is a seat label (e.g. "At-Large") and is only a fallback
  *  for rows that don't carry the geofence name (e.g. tests, callers without the join). */
 export function pickCountyFromDistrictRows(
   rows: Array<{ mtfcc?: string | null; district_type?: string | null; geo_id?: string | null; district_label?: string | null; name?: string | null }>,
 ): { geoid: string; name: string } | null {
-  // Prefer the COUNTY row; fall back to any G4020 row only if no COUNTY row exists.
+  // Prefer the COUNTY row; fall back to a G4020 row only if no county-wide COUNTY row exists.
   // (County-level courts can also be G4020 with the same county geo_id but a court name.)
   const row =
-    rows.find((r) => r.district_type === 'COUNTY') ??
-    rows.find((r) => r.mtfcc === 'G4020');
+    rows.find((r) => r.district_type === 'COUNTY' && isCountyFips(r.geo_id)) ??
+    rows.find((r) => r.mtfcc === 'G4020' && isCountyFips(r.geo_id));
   if (!row || !row.geo_id) return null;
   return { geoid: row.geo_id, name: row.name ?? row.district_label ?? '' };
 }
@@ -658,18 +667,21 @@ export function pickCountyFromDistrictRows(
 /** Pick the user's resolved jurisdiction GEOIDs from the geofence district rows
  *  (the same rows pickCountyFromDistrictRows reads). Each field is the geo_id of
  *  the row whose district_type maps to it, or null when no such row is present.
- *  county prefers a COUNTY row, falling back to JUDICIAL (mirrors
- *  pickCountyFromDistrictRows' COUNTY-first preference for county-level courts
- *  sharing the same geo_id). */
+ *  county prefers a county-wide COUNTY row, falling back to a county-wide JUDICIAL
+ *  row (mirrors pickCountyFromDistrictRows' COUNTY-first preference for county-level
+ *  courts sharing the same geo_id); a sub-county seat or a multi-county court is never
+ *  the county. */
 export function pickJurisdictionFromDistrictRows(
   rows: Array<{ district_type?: string | null; geo_id?: string | null }>,
 ): JurisdictionGeoIds {
   const geoIdForType = (type: string): string | null => rows.find((r) => r.district_type === type)?.geo_id || null;
+  const countyFipsForType = (type: string): string | null =>
+    rows.find((r) => r.district_type === type && isCountyFips(r.geo_id))?.geo_id || null;
   return {
     congressional: geoIdForType('NATIONAL_LOWER'),
     state_senate: geoIdForType('STATE_UPPER'),
     state_house: geoIdForType('STATE_LOWER'),
-    county: geoIdForType('COUNTY') ?? geoIdForType('JUDICIAL'),
+    county: countyFipsForType('COUNTY') ?? countyFipsForType('JUDICIAL'),
     school_district: geoIdForType('SCHOOL'),
   };
 }

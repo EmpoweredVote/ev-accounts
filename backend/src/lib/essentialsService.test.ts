@@ -53,18 +53,42 @@ describe('pickCountyFromDistrictRows', () => {
     expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '49035', name: 'Salt Lake County' });
   });
 
-  // NOTE: characterization test, not a spec. X0001 is a synthetic mtfcc shared by
-  // both SLCo council districts and SLC ward boundaries (distinguished only by
-  // district_type — see boundary-motif-resolution notes). When a COUNTY-typed
-  // district row's matched geofence happens to be an X0001 council-district
-  // polygon, that geofence's `name` is a district-specific label (e.g. "...
-  // Council District 5"), not the plain county name. pickCountyFromDistrictRows
-  // has no mtfcc-based guard against this — it takes district_type === 'COUNTY'
-  // as sufficient and trusts `name` unconditionally. This test documents that
-  // CURRENT (arguably wrong) behavior: the resolved name is the council
-  // boundary's label, not "Salt Lake County". Flagging for a future fix rather
-  // than changing production behavior here.
-  it('NOTE: returns the X0001 council-district name, not the plain county name, when a COUNTY row resolves to a council-district geofence', () => {
+  // Sub-county seats (commissioner precincts, supervisor and council districts) are typed COUNTY too,
+  // with geo_ids of their own, and the point query returns rows in politician-id order — so "the first
+  // COUNTY row" is whichever seat's holder sorts first. Measured live 2026-09-23 via coordinate-lookup:
+  // Ramsey MN reported county "ramsey-mn-commissioner-district-1", Miami-Dade
+  // "miami-dade-fl-commissioner-district-11", Racine "55101-sup-d8". Only a county-wide row carries the
+  // county's 5-digit FIPS as its geo_id (all 3,260 such COUNTY districts have a G4020 geofence; no
+  // sub-county COUNTY district does).
+  it('prefers the county-wide COUNTY row over a sub-county seat that sorts first', () => {
+    const rows = [
+      { mtfcc: 'X0055', district_type: 'COUNTY', geo_id: 'ramsey-mn-commissioner-district-1', name: 'Ramsey County Commissioner District 1' },
+      { mtfcc: 'G4020', district_type: 'COUNTY', geo_id: '27123', name: 'Ramsey County' },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '27123', name: 'Ramsey County' });
+  });
+
+  it('falls back to a G4020 court row when the only COUNTY rows are sub-county seats', () => {
+    const rows = [
+      { mtfcc: 'X0019', district_type: 'COUNTY', geo_id: 'pima-az-supervisor-district-1', name: 'Pima County Supervisor District 1' },
+      { mtfcc: 'G4020', district_type: 'JUDICIAL', geo_id: '04019', district_label: 'Pima County Superior Court', name: 'Pima County' },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '04019', name: 'Pima County' });
+  });
+
+  it('returns null rather than a sub-county seat when no county-wide row is present', () => {
+    const rows = [
+      { mtfcc: 'X0060', district_type: 'COUNTY', geo_id: 'richland-sc-council-district-5', name: 'Richland County Council District 5' },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toBeNull();
+  });
+
+  // X0001 is a synthetic mtfcc shared by both SLCo council districts and SLC ward boundaries
+  // (distinguished only by district_type — see boundary-motif-resolution notes). A COUNTY row on an
+  // X0001 council-district geofence is a seat, not the county: its geo_id is not a county FIPS and its
+  // geofence name is a district label. (Until the county-wide rule above, this returned the council
+  // district as the county; the test used to pin that as a characterization of known-wrong behavior.)
+  it('does not report an X0001 council-district geofence as the county', () => {
     const rows = [
       {
         mtfcc: 'X0001',
@@ -74,10 +98,7 @@ describe('pickCountyFromDistrictRows', () => {
         name: 'Salt Lake County Council District 5',
       },
     ];
-    expect(pickCountyFromDistrictRows(rows)).toEqual({
-      geoid: 'X0001',
-      name: 'Salt Lake County Council District 5',
-    });
+    expect(pickCountyFromDistrictRows(rows)).toBeNull();
   });
 });
 
@@ -120,6 +141,22 @@ describe('pickJurisdictionFromDistrictRows', () => {
       { district_type: 'COUNTY', geo_id: '18105' },
     ];
     expect(pickJurisdictionFromDistrictRows(rows).county).toBe('18105');
+  });
+
+  it('skips a sub-county COUNTY seat that sorts first (same defect as pickCountyFromDistrictRows)', () => {
+    const rows = [
+      { district_type: 'COUNTY', geo_id: 'miami-dade-fl-commissioner-district-11' },
+      { district_type: 'COUNTY', geo_id: '12086' },
+    ];
+    expect(pickJurisdictionFromDistrictRows(rows).county).toBe('12086');
+  });
+
+  it('county is null when only sub-county seats and a non-county court cover the point', () => {
+    const rows = [
+      { district_type: 'COUNTY', geo_id: 'travis-tx-commissioner-precinct-4' },
+      { district_type: 'JUDICIAL', geo_id: '06-appellate-district-2' },
+    ];
+    expect(pickJurisdictionFromDistrictRows(rows).county).toBeNull();
   });
 });
 
