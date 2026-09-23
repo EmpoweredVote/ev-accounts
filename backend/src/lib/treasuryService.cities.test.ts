@@ -109,3 +109,71 @@ describe('getCities — slug filter', () => {
     expect(sql()).toMatch(WHERE_CLAUSE);
   });
 });
+
+describe('getCities — entity_type / state / county_id filters', () => {
+  it('binds every filter as a PARAMETER, never interpolated', async () => {
+    await getCities('summary', undefined, {
+      entityTypes: ['city', 'town'], state: 'CA',
+      countyId: '391bf791-1c1f-424f-a7a5-1b698c79093f',
+    });
+    expect(params()).toEqual([
+      ['city', 'town'], 'CA', '391bf791-1c1f-424f-a7a5-1b698c79093f',
+    ]);
+    expect(sql()).not.toContain('CA');
+    expect(sql()).toMatch(WHERE_CLAUSE);
+  });
+
+  it('ANDs the filters together', async () => {
+    await getCities('summary', undefined, { state: 'CA', entityTypes: ['county'] });
+    expect(sql()).toMatch(/WHERE .* AND /);
+  });
+
+  it('uses = ANY for the type list, so one row cannot match twice', async () => {
+    await getCities('summary', undefined, { entityTypes: ['city'] });
+    expect(sql()).toMatch(/m\.entity_type = ANY\(\$1\)/);
+  });
+
+  // ⚠ THE LOAD-BEARING ASSERTION, same as the slug path's. Stripping the WHERE
+  // clause must reproduce the unfiltered query EXACTLY — that is what stops a
+  // narrowed query returning a row the full list would hide, or hiding one it
+  // would show.
+  it('is a WHERE clause only — it does not alter the row contract', async () => {
+    await getCities('summary', undefined, { state: 'CA' });
+    const filtered = sql();
+    query.mockReset();
+    query.mockResolvedValue(NO_ROWS);
+    await getCities('summary');
+    const unfiltered = sql();
+    const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+    expect(norm(filtered.replace(WHERE_CLAUSE, ''))).toBe(norm(unfiltered));
+  });
+
+  it('keeps the HAVING contract on the filtered path', async () => {
+    await getCities('summary', undefined, { state: 'CA' });
+    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
+    expect(sql()).toContain("m.entity_type = 'county'");
+  });
+
+  it('combines with the slug filter, numbering parameters in order', async () => {
+    await getCities('summary', 'los-angeles-ca', { state: 'CA' });
+    expect(params()).toEqual(['los-angeles-ca', 'CA']);
+    expect(sql()).toMatch(/= \$1/);
+    expect(sql()).toMatch(/m\.state = \$2/);
+  });
+
+  it('treats empty and absent filters as no filter at all', async () => {
+    await getCities('summary', undefined, {});
+    expect(sql()).not.toMatch(WHERE_CLAUSE);
+    expect(params()).toEqual([]);
+    query.mockReset();
+    query.mockResolvedValue(NO_ROWS);
+    await getCities('summary', undefined, { entityTypes: [] });
+    expect(sql()).not.toMatch(WHERE_CLAUSE);
+    expect(params()).toEqual([]);
+  });
+
+  it('returns an empty array when nothing matches — never a substitute', async () => {
+    query.mockResolvedValue(NO_ROWS);
+    expect(await getCities('summary', undefined, { state: 'ZZ' })).toEqual([]);
+  });
+});

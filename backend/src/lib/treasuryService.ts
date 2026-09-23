@@ -570,24 +570,58 @@ const DATASETS_SUMMARY = `json_build_object(
  * there is ONE slug definition on this side and it already carries the
  * byte-identical-to-TT's-toSlug warning.
  */
+
+/**
+ * Optional narrowings for GET /api/treasury/cities.
+ *
+ * ⚠⚠ EVERY ONE OF THESE IS A WHERE CLAUSE AND NOTHING ELSE. The join, the
+ * GROUP BY, the HAVING "has a budget or is a grouper county" contract, the
+ * column list and the ORDER BY are untouched, so a row that comes back is
+ * byte-for-byte the row the unfiltered list would have carried — or nothing.
+ * Same property as `slug`, and for the same reason (TT #158).
+ *
+ * ⚠ `entityTypes` is supplied BY THE CALLER. This service deliberately does not
+ * know what "city-tier" means: Treasury Tracker owns that definition in
+ * `src/utils/cityTierTypes.ts`, with a test policing copies of it, because four
+ * divergent copies once made PA's 949 boroughs invisible to their own county's
+ * panel.
+ */
+export interface CityFilters {
+  entityTypes?: string[];
+  state?: string;
+  countyId?: string;
+}
+
 export async function getCities(
   mode: DatasetsMode = 'full',
-  slug?: string
+  slug?: string,
+  filters: CityFilters = {}
 ): Promise<TreasuryCity[]> {
+  const conds: string[] = [];
+  const vals: unknown[] = [];
+
+  if (slug) { vals.push(slug); conds.push(`${SLUG_SQL} = $${vals.length}`); }
+  if (filters.entityTypes?.length) {
+    vals.push(filters.entityTypes);
+    conds.push(`m.entity_type = ANY($${vals.length})`);
+  }
+  if (filters.state) { vals.push(filters.state); conds.push(`m.state = $${vals.length}`); }
+  if (filters.countyId) { vals.push(filters.countyId); conds.push(`m.county_id = $${vals.length}`); }
+
   const { rows } = await pool.query<CityRow>(
     `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
             ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
-     ${slug ? `WHERE ${SLUG_SQL} = $1` : ''}
+     ${conds.length ? `WHERE ${conds.join(' AND ')}` : ''}
      GROUP BY m.id
      HAVING COUNT(b.id) > 0
         OR (m.entity_type = 'county' AND EXISTS (
               SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
             ))
      ORDER BY m.name`,
-    slug ? [slug] : []
+    vals
   );
   return rows.map((r) => mapCity(r, mode));
 }
