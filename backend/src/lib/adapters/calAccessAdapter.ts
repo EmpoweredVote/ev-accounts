@@ -259,9 +259,11 @@ async function doRequest(storedETag: string | null): Promise<{ body: Buffer | nu
 /**
  * downloadZIP downloads the Cal-Access bulk ZIP using conditional GET (If-None-Match).
  * On network error, retries once without the ETag.
+ *
+ * conditional=false skips the stored ETag and always downloads — see CalAccessAdapterOptions.
  */
-async function downloadZIP(): Promise<DownloadResult> {
-  const storedETag = await loadStoredETag();
+async function downloadZIP(conditional: boolean): Promise<DownloadResult> {
+  const storedETag = conditional ? await loadStoredETag() : null;
   const downloadedAt = new Date();
 
   let result: { body: Buffer | null; etag: string };
@@ -683,12 +685,26 @@ async function upsertBatch(
  *   3. upsert() — idempotent DB write, then prune of superseded rows
  *   After all politicians: saveETag() to persist ETag + total row count
  *
- * fetch() without prepare() still works (one full parse per call) for single-filer callers
- * such as the judicial smoke test.
+ * fetch() without prepare() still works (one full parse per call) for single-filer callers.
  *
  * ETagProvider is also implemented so runIngestion can capture ZIP metadata.
  */
+export interface CalAccessAdapterOptions {
+  /**
+   * true (default): send the stored ETag as If-None-Match, so an unchanged export is a 304
+   * and the run parses nothing. That is right for the scheduled run, which owns the ETag.
+   *
+   * 🔴 false for any run that does not save the ETag (the judicial ingest). Once the scheduled
+   * run has stored the current ETag, a conditional GET returns 304 until SOS publishes a new
+   * export, and a 304 fetch() returns zero records without an error — the run would report
+   * success and write nothing.
+   */
+  conditional?: boolean;
+}
+
 class CalAccessAdapter implements SourceAdapter, ETagProvider {
+  constructor(private readonly options: CalAccessAdapterOptions = {}) {}
+
   // ZIP state — shared across all politicians in one ingestion run
   private zipBuffer: Buffer | null = null;
   private zipETag: string = '';
@@ -723,7 +739,7 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
 
   private async ensureDownloaded(): Promise<void> {
     if (this.zipDownloaded) return;
-    const dl = await downloadZIP();
+    const dl = await downloadZIP(this.options.conditional ?? true);
     this.zipBuffer       = dl.zipBuffer;
     this.zipETag         = dl.etag;
     this.zipDownloadedAt = dl.downloadedAt;
@@ -908,13 +924,14 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
  * createCalAccessAdapter creates a CalAccessAdapter for Cal-Access bulk ZIP ingestion.
  * The ZIP is downloaded once per adapter instance (shared across all politicians in a run).
  * Call adapter.prepare(filerIds) before the per-politician loop, and adapter.saveETag()
- * after it to persist ETag + total row count.
+ * after it to persist ETag + total row count. A run that does not save the ETag passes
+ * { conditional: false } (see CalAccessAdapterOptions).
  */
-export function createCalAccessAdapter(): SourceAdapter & ETagProvider & {
+export function createCalAccessAdapter(options: CalAccessAdapterOptions = {}): SourceAdapter & ETagProvider & {
   prepare(filerIDs: Iterable<string>): Promise<void>;
   saveETag(): Promise<void>;
   markNotModified(): Promise<void>;
   zipWasSkipped(): boolean;
 } {
-  return new CalAccessAdapter();
+  return new CalAccessAdapter(options);
 }

@@ -199,6 +199,23 @@ describe('calAccessAdapter prepare(): one download, one parse per run', () => {
     const init = fetchMock.mock.calls[0][1] as RequestInit;
     expect((init.headers as Record<string, string>)['If-None-Match']).toBe('"etag-1"');
   });
+
+  it('conditional: false ignores the stored ETag and always downloads', async () => {
+    // The scheduled run has stored the current ETag. A conditional GET would be a 304 and
+    // fetch() would return nothing without an error.
+    poolQueryMock.mockResolvedValue({ rows: [{ notes: '"etag-1"' }], rowCount: 1 });
+    fetchMock.mockImplementation(async (_url: string, init: RequestInit) =>
+      (init.headers as Record<string, string>)['If-None-Match']
+        ? new Response(null, { status: 304 })
+        : zipResponse(buildZip()));
+    const adapter = createCalAccessAdapter({ conditional: false });
+    await adapter.prepare(['100']);
+    expect(adapter.zipWasSkipped()).toBe(false);
+    expect(poolQueryMock).not.toHaveBeenCalled();
+    const init = fetchMock.mock.calls[0][1] as RequestInit;
+    expect((init.headers as Record<string, string>)['If-None-Match']).toBeUndefined();
+    expect((await adapter.fetch(source('100'))).records).toHaveLength(3);
+  });
 });
 
 describe('calAccessAdapter upsert: prune superseded rows', () => {

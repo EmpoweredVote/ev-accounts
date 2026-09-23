@@ -2,13 +2,14 @@ import { vi, describe, it, expect } from 'vitest';
 
 // Mock the shared pool so importing judicialCalAccessIngest.ts (which imports
 // ../db.js at module scope) doesn't trigger env.ts's startup validation /
-// process.exit(1) in a test environment with no real DATABASE_URL. This test
-// exercises only the pure mapping fn — writeJudicialDonations (the only export
-// that touches pool.query) is never called here; the real-DB smoke test is
-// Plan 30-03. Mirrors the established pattern in essentialsBrowseService.test.ts.
+// process.exit(1) in a test environment with no real DATABASE_URL. The mapping
+// fn is pure; writeJudicialDonations (the only export that touches pool.query)
+// is tested against the mock for the parameters it sends. Mirrors the
+// established pattern in essentialsBrowseService.test.ts.
 vi.mock('../db.js', () => ({ pool: { query: vi.fn() } }));
 
-import { mapContributionsToJudicialDonations } from './judicialCalAccessIngest.js';
+import { mapContributionsToJudicialDonations, writeJudicialDonations } from './judicialCalAccessIngest.js';
+import { pool } from '../db.js';
 import type { ContributionInsert } from '../adapters/adapterInterface.js';
 
 /**
@@ -18,8 +19,8 @@ import type { ContributionInsert } from '../adapters/adapterInterface.js';
  * source_transaction_id in the exact `${filingID}_${amendID}_${lineItem}`
  * idempotency-key format produced by calAccessAdapter.ts's normalize().
  *
- * This test exercises ONLY the pure mapping fn — no DB connection is opened.
- * The real-DB smoke test for writeJudicialDonations() happens in Plan 30-03.
+ * No DB connection is opened: pool.query is a mock throughout.
+ * The real-DB write is scripts/run-judicial-cal-access-smoketest.ts.
  */
 const contribution = (over: Partial<ContributionInsert> = {}): ContributionInsert => ({
   politician_source_id: 'judge-1',
@@ -95,5 +96,21 @@ describe('mapContributionsToJudicialDonations', () => {
       [contribution({ politician_source_id: 'ignored-value' })]
     );
     expect(row.judge_id).toBe('judge-abc');
+  });
+});
+
+describe('writeJudicialDonations', () => {
+  it('sends contribution_date as the UTC calendar day, never a Date', async () => {
+    // A Date goes out in the HOST's local time: from UTC-4, 2018-12-03T00:00Z became
+    // 2018-12-02 in the `date` column (all 1,040 rows of the 2026-09-23 run; CA_0197).
+    const query = vi.mocked(pool.query);
+    query.mockReset();
+    query.mockResolvedValue({ rows: [{ is_insert: true }] } as never);
+    await writeJudicialDonations('judge-1', [
+      contribution({ contribution_date: new Date(Date.UTC(2018, 11, 3)) }),
+      contribution({ contribution_date: null }),
+    ]);
+    const params = query.mock.calls.map((c) => (c[1] as unknown[])[7]);
+    expect(params).toEqual(['2018-12-03', null]);
   });
 });
