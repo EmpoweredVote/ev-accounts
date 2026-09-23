@@ -73,6 +73,32 @@ describe('refusals still refuse', () => {
     expect(PARTY_NAMES.test('protects the democratic process')).toBe(false);
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 to protect the democratic process.' })).toEqual([]);
   });
+
+  // Fix round 1 (Important, false positive): standard civics/Federalist prose naming a FORM of
+  // government is not a party tell either.
+  it('"a republican form of government" and "republican government" (civics prose) are not party tells', () => {
+    expect(PARTY_NOUNS_ANY_CASE.test('supports a republican form of government')).toBe(false);
+    expect(PARTY_NOUNS_ANY_CASE.test('the Federalist view of republican government')).toBe(false);
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) because he supports a republican form of government.' })).toEqual([]);
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), citing the Federalist view of republican government.' })).toEqual([]);
+  });
+
+  // Fix round 1 (Minor, pre-existing): a country name is not a party tell.
+  it('"the Democratic Republic of the Congo" (a country name) is not a party tell', () => {
+    expect(PARTY_NAMES.test('aid to the Democratic Republic of the Congo')).toBe(false);
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to fund aid to the Democratic Republic of the Congo.' })).toEqual([]);
+  });
+
+  // Both exclusions are narrow: the ordinary party tells they sit next to still flag.
+  it('"a lifelong republican", "Republicans in the chamber", "Democratic nominee" and "as a Democrat" are still flagged', () => {
+    expect(PARTY_NOUNS_ANY_CASE.test('a lifelong republican')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('Republicans in the chamber')).toBe(true);
+    expect(PARTY_NAMES.test('Democratic nominee')).toBe(true);
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong republican.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); Democratic nominee for the seat.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong democrat.' })).toContain('party-inference');
+  });
 });
 
 // R6: lowercase party NOUNS ("democrat", "republican", "gop") are a party tell in any case — unlike

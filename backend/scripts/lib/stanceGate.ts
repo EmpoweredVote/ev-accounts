@@ -55,16 +55,21 @@ export interface GateFinding {
 //   PARTY_NAMES is case-SENSITIVE because its list includes the ADJECTIVE "Democratic", which has
 //     an unrelated lowercase common-word sense ("the democratic process" = relating to democracy,
 //     not the party). Capitalization is the only signal that distinguishes them, so this regex
-//     must not be loosened to `/i`.
+//     must not be loosened to `/i`. It also excludes "Democratic Republic" (a negative lookahead)
+//     — "the Democratic Republic of the Congo" is a country name, not a party tell; "Democratic
+//     nominee" and "the Democratic caucus" are unaffected and still flagged.
 //   PARTY_NOUNS_ANY_CASE (below) covers only the NOUN forms — "democrat(s)", "republican(s)",
 //     "gop" — which name the party in any case: a noun has no such unrelated sense, so "a lifelong
-//     democrat" is a party tell whether or not it happens to be capitalized.
+//     democrat" is a party tell whether or not it happens to be capitalized. It excludes
+//     "republican(s) government" and "republican(s) form of government" (a negative lookahead) —
+//     standard civics / Federalist prose naming a FORM of government, not the party; "a lifelong
+//     republican" and "Republicans in the chamber" are unaffected and still flagged.
 /** Capitalised party names only: "the democratic process" is not a party tell; "Democratic nominee" is. */
-export const PARTY_NAMES = /\b(Democrats?|Democratic|Republicans?|GOP|Libertarians?|Lincoln Party|Green Party)\b/;
+export const PARTY_NAMES = /\b(Democrats?|Democratic(?!\s+Republic\b)|Republicans?|GOP|Libertarians?|Lincoln Party|Green Party)\b/;
 export const PARTY_PHRASES =
   /\b(party (?:line|platform|affiliation|position)|as an? (?:conservative|liberal|progressive)|consistent with (?:her|his|their) party)\b/i;
-/** The noun forms only, any case — "Republic"/"democratic process" do not match (see block comment above). */
-export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?|gop)\b/i;
+/** The noun forms only, any case — "Republic"/"democratic process"/"republican government" do not match (see block comment above). */
+export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?(?!\s+(?:form\s+of\s+)?government\b)|gop)\b/i;
 
 const wordCount = (s: string) => normalizeText(s).split(' ').filter(Boolean).length;
 
