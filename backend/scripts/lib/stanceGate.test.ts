@@ -74,13 +74,16 @@ describe('refusals still refuse', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 to protect the democratic process.' })).toEqual([]);
   });
 
-  // Fix round 1 (Important, false positive): standard civics/Federalist prose naming a FORM of
-  // government is not a party tell either.
-  it('"a republican form of government" and "republican government" (civics prose) are not party tells', () => {
+  // Fix round 1 (Important, false positive), narrowed in fix round 2 (controller ruling): ONLY the
+  // fixed legal phrase "republican form of government" (the Article IV Guarantee Clause wording)
+  // is not a party tell. Round 1 also excluded bare "republican government", which let real party
+  // mentions through ("the republican government of the state", "under republican government,
+  // taxes fell") — bare "republican government" is ambiguous (it can mean a GOP-led government,
+  // not a form of government), and a missed party mention costs more than an extra row sent back
+  // to research, so it is deliberately flagged, not excluded (see the "still flagged" test below).
+  it('"a republican form of government" (the fixed legal phrase) is not a party tell', () => {
     expect(PARTY_NOUNS_ANY_CASE.test('supports a republican form of government')).toBe(false);
-    expect(PARTY_NOUNS_ANY_CASE.test('the Federalist view of republican government')).toBe(false);
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) because he supports a republican form of government.' })).toEqual([]);
-    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), citing the Federalist view of republican government.' })).toEqual([]);
   });
 
   // Fix round 1 (Minor, pre-existing): a country name is not a party tell.
@@ -89,15 +92,24 @@ describe('refusals still refuse', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to fund aid to the Democratic Republic of the Congo.' })).toEqual([]);
   });
 
-  // Both exclusions are narrow: the ordinary party tells they sit next to still flag.
-  it('"a lifelong republican", "Republicans in the chamber", "Democratic nominee" and "as a Democrat" are still flagged', () => {
+  // Both exclusions are narrow: the ordinary party tells they sit next to still flag — including,
+  // as of fix round 2, bare "republican government" (deliberately NOT excluded; see above).
+  it('"a lifelong republican", "Republicans in the chamber", "Democratic nominee", "as a Democrat" and bare "republican government" are still flagged', () => {
     expect(PARTY_NOUNS_ANY_CASE.test('a lifelong republican')).toBe(true);
     expect(PARTY_NOUNS_ANY_CASE.test('Republicans in the chamber')).toBe(true);
     expect(PARTY_NAMES.test('Democratic nominee')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('the Federalist view of republican government')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('the republican government of the state')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('criticized how the republican government of Texas handled it')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('the republicans government relies on')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('under republican government, taxes fell')).toBe(true);
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong republican.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); Democratic nominee for the seat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong democrat.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), citing the Federalist view of republican government.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to describe the republican government of the state.' })).toContain('party-inference');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025): under republican government, taxes fell.' })).toContain('party-inference');
   });
 });
 
