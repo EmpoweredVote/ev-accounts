@@ -326,3 +326,73 @@ describe('getPoliticianCitations — a blanked stance reads as no stance', () =>
     expect(sql).toMatch(/NULLIF\(\s*pa\.value\s*,\s*0\s*\)/);
   });
 });
+
+// 🔴 SEVENTEEN OF SEASON 2'S SIXTY TOPICS ARE NOT is_live (measured 2026-09-22).
+// They were created staged (is_live = false) and went live when Season 2
+// OPENED, which flips no boolean. The citation reader still gated on
+// `ct.is_live = true`, so a sourced stance on any of them rendered no "Why this
+// position?" block — the fourth instance of the defect CC_0066 names.
+describe('getPoliticianCitations — the topic set follows the answer’s season, not is_live', () => {
+  // SQL comments stripped: the query explains in prose why is_live is gone, and
+  // that prose must not satisfy or trip an assertion about the code.
+  const citationSql = async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    return (mockQuery.mock.calls[0][0] as string).replace(/--[^\n]*/g, '');
+  };
+
+  it('does not gate on is_live, so an open-season topic that is not is_live survives', async () => {
+    expect(await citationSql()).not.toMatch(/is_live/);
+  });
+
+  // The season the block follows is pa's (the stance on display) or, with no
+  // answer, pc's (the fallback context). Both LATERALs already exclude draft.
+  it('admits a topic asked by the season the block follows', async () => {
+    const sql = await citationSql();
+    expect(sql).toMatch(
+      /EXISTS\s*\(\s*SELECT 1\s+FROM inform\.season_questions sq\s+WHERE sq\.topic_id\s*=\s*pce\.topic_id\s+AND sq\.season_id\s*=\s*COALESCE\(\s*pa\.season_id\s*,\s*pc\.season_id\s*\)\s*\)/,
+    );
+  });
+
+  // Found by running the query, not by these assertions: the pc LATERAL
+  // selected only reasoning and sources, so pc.season_id raised 42703 on every
+  // request. A mocked pool cannot see that; this pins both halves.
+  it('selects the season_id the predicate reads from each LATERAL', async () => {
+    const sql = await citationSql();
+    expect(sql).toMatch(/SELECT a\.value, a\.season_id,/);
+    expect(sql).toMatch(/SELECT c\.reasoning, c\.sources, c\.season_id\s/);
+  });
+
+  // Inside the pa LATERAL the predicate would change WHICH season wins the
+  // collapse; in the outer WHERE it only decides whether the block exists.
+  it('applies the predicate after every LATERAL, not inside the collapse', async () => {
+    const sql = await citationSql();
+    const lastLateral = sql.lastIndexOf(') pc ON true');
+    expect(lastLateral).toBeGreaterThan(-1);
+    expect(sql.indexOf('inform.season_questions')).toBeGreaterThan(lastLateral);
+  });
+
+  // The service adds no JS-side topic filter of its own: whatever the SQL
+  // admits reaches Citations.jsx, which renders every block it is given.
+  it('returns the block for such a topic, with its stance and ladder', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{
+        topic_key: 'gun-policy', topic_title: 'How should the government regulate firearms?',
+        topic_tension_name: 'Gun Policy', stance_value: 2,
+        stance_text: 'Require universal background checks.', reasoning: 'Sponsored S.1.',
+        source_url: 'https://example.gov/s1', snippet: 'I sponsored S.1.',
+        verified_at: '2026-09-20', is_primary: true,
+      }] })
+      .mockResolvedValueOnce({ rows: [
+        { topic_key: 'gun-policy', value: 1, text: 'Ban' },
+        { topic_key: 'gun-policy', value: 2, text: 'Require universal background checks.' },
+      ] });
+
+    const [block] = await getPoliticianCitations('p1');
+    expect(block).toMatchObject({
+      topic_key: 'gun-policy', has_stance: true, stance_value: 2,
+      citations: [{ source_url: 'https://example.gov/s1', domain: 'example.gov', is_primary: true }],
+    });
+    expect(block.all_stances).toHaveLength(2);
+  });
+});
