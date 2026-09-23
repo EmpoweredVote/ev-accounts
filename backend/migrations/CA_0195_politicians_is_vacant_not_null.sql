@@ -32,7 +32,13 @@
 -- `isVacant ?? false`, so promoting those rows does not hit the new NOT NULL.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, "code first, then data"). Code PR #658 merged
+--   (876a4124) and live on ev-accounts-api (deploy dep-daq41rgu01pc73f5bv5g) BEFORE the apply. Dry run x3 while the PR
+--   was open (with a control insert: omitted column read false, explicit NULL failed) and x2 again right before the
+--   apply; rollback confirmed each time. Apply: 4,777 rows updated, 4 placeholders kept true, 408 LASC judges pass the
+--   filter. Re-run after: UPDATE 0, every gate green. Seated active politicians with NULL is_vacant: 2,760 -> 0.
+--   Live by-government-list, exact id|district_type sets before vs after the apply: LA County link (no skip_overlap),
+--   King, Travis, Philadelphia, Seattle, San Diego +0/-0; LA County skip_overlap +408 (all JUDICIAL); Whittier +2.
 --
 -- ROLLBACK: ALTER TABLE essentials.politicians ALTER COLUMN is_vacant DROP NOT NULL;
 --           ALTER TABLE essentials.politicians ALTER COLUMN is_vacant DROP DEFAULT;
