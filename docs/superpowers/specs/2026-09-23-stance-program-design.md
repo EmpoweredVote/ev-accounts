@@ -43,7 +43,7 @@ failures, every time.
 These are not proposals. Each is a place where our shipped materials contradict this standard, so a
 reader who follows them faithfully will reproduce a failure we have already paid for. They are ours to make, not the reader's.
 
-**Status 2026-09-23: all three are done — H1 (#662), H3 (#664), H2 (#665).**
+**Status 2026-09-23: all three are done — H1 (#662), H3 (#664), H2 (#666).**
 
 | # | Fix | Why |
 |---|---|---|
