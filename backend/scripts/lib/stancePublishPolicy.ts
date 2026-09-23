@@ -3,12 +3,20 @@
  * without a human. Pure and tested, so an unattended (scheduled) run makes exactly the decision
  * an interactive one does.
  *
- * Only a NEW, record-evidenced, gate-clean, page-verified row auto-publishes. Everything else is
- * either sent back to research (defective) or queued for a person (inform.stance_research_review).
+ * Only a NEW, record-evidenced, gate-clean, page-verified row CAN auto-publish — and even that row
+ * goes to a person unless the run opted in with `autoPushEnabled` (verify-stance-research.ts
+ * `--auto-push`). Everything else is either sent back to research (defective) or queued for a
+ * person (inform.stance_research_review).
+ *
+ * Review-all is the default (ruling 2026-09-22, "nothing auto-publishes"): the gate proves a row
+ * cites a real page and names an instrument, but nothing yet proves the evidence fits the CHAIR
+ * rather than just the direction. Until the Plan 2 chair-fit classifier exists, a person approves
+ * every stance — and those decisions are the labeled set that classifier is trained and measured on.
  */
 import type { GateFinding } from './stanceGate.js';
 
-export type ReviewReason = 'unresolved-politician' | 'statement-evidence' | 'gate-medium' | 'value-change';
+export type ReviewReason =
+  | 'unresolved-politician' | 'statement-evidence' | 'gate-medium' | 'value-change' | 'review-all-mode';
 export type ReReason = 'gate-high' | 'below-threshold';
 export type Decision =
   | { action: 'auto-push' }
@@ -24,6 +32,12 @@ export interface PolicyInput {
   politicianResolved: boolean;
   /** Value already stored in the OPEN season; null = none. A 0 is an editor's blank and counts. */
   existingOpenSeasonValue: number | null;
+  /**
+   * The run explicitly opted in to unattended publishing (`--auto-push`). False = review-all: a row
+   * that would otherwise auto-push is queued with reason 'review-all-mode'. Never read from an env
+   * var — it must be a deliberate per-run choice.
+   */
+  autoPushEnabled: boolean;
 }
 
 export function decidePublish(i: PolicyInput): Decision {
@@ -44,5 +58,7 @@ export function decidePublish(i: PolicyInput): Decision {
   if (i.gateFindings.some((f) => f.severity === 'medium' && f.check_id !== 'statement-needs-review')) reasons.push('gate-medium');
   // 🔴 A value already in the open season is never changed without a human — including a 0 (blank).
   if (i.existingOpenSeasonValue !== null) reasons.push('value-change');
-  return reasons.length ? { action: 'review', reasons } : { action: 'auto-push' };
+  if (reasons.length) return { action: 'review', reasons };
+  // Every check passed. Review-all (the default) still sends it to a person — see the header.
+  return i.autoPushEnabled ? { action: 'auto-push' } : { action: 'review', reasons: ['review-all-mode'] };
 }

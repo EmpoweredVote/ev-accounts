@@ -17,9 +17,16 @@
  *     inform.politician_context_evidence, and writes review / below-threshold
  *     rows to inform.stance_research_review.
  *
+ *   REVIEW-ALL IS THE DEFAULT. Without --auto-push, a row that passes every check
+ *     goes to the review queue with reason `review-all-mode` instead of being
+ *     written (ruling 2026-09-22, "nothing auto-publishes"). Until a chair-fit
+ *     classifier exists (Plan 2), a person approves every stance, and those
+ *     approvals are the labeled set Plan 2 needs. --auto-push is a deliberate
+ *     per-run flag; no env var turns it on.
+ *
  * Usage:
  *   npx tsx scripts/verify-stance-research.ts --dir data/stance-research/<batch> \
- *     [--threshold 2] [--batch-id <id>] [--apply] [--re-researched] [--editor-id <uuid>]
+ *     [--threshold 2] [--batch-id <id>] [--apply] [--auto-push] [--re-researched] [--editor-id <uuid>]
  * Requires <dir>/gate-findings.json from scripts/stance-gate.ts.
  *
  * Idempotent: re-running the same batch is safe — all writes are upserts /
@@ -79,6 +86,9 @@ if (!Number.isInteger(THRESHOLD) || THRESHOLD < 1) {
 }
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
+// Review-all unless the operator opts in, per run (ruling 2026-09-22). Deliberately argv-only:
+// an env var would let a scheduled run inherit unattended publishing nobody chose for it.
+const AUTO_PUSH = flag('--auto-push');
 const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -290,6 +300,7 @@ const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
     gateFindings: gateByKey.get(`${row.stance.full_name.toLowerCase()} ${row.stance.topic_key}`) ?? [],
     politicianResolved: Boolean(pid),
     existingOpenSeasonValue: ex === undefined ? null : ex,
+    autoPushEnabled: AUTO_PUSH,
   });
   return { row, pid, tid, decision };
 });
@@ -303,6 +314,9 @@ writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) =
 })), null, 2));
 
 console.log(`\n=== verify-stance-research — batch "${BATCH_ID}" (threshold ${THRESHOLD}) ===`);
+console.log(AUTO_PUSH
+  ? 'mode: --auto-push — rows that pass every check are written without a person'
+  : 'mode: review-all (default) — every stance goes to a person; pass --auto-push to publish clean rows unattended');
 console.log(`stance rows: ${allStances.length} (${stanceRows.length} scored, ${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`);
 console.log(`AUTO-PUSH: ${bucket('auto-push').length}  UNCHANGED: ${bucket('unchanged').length}  REVIEW: ${bucket('review').length}  RE-RESEARCH: ${bucket('re-research').length}`);
 for (const d of decided) {
