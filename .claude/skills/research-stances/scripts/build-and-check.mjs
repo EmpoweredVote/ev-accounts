@@ -174,9 +174,13 @@ async function main() {
                WHERE sr.topic_revision_id = tr.id) AS chairs
             FROM inform.compass_topics t
             LEFT JOIN LATERAL (
+              -- Mirrors SEASON_IS_PUBLISHED (backend/src/lib/seasonService.ts, s.status <> 'draft'):
+              -- a pre-staged draft-season answer is not a position anyone can see yet, so it must not
+              -- count as "answered" here — the quote judge would otherwise score a quote against a
+              -- stance nobody outside the review queue has read.
               SELECT a.value, a.topic_revision_id, true AS answered
                 FROM inform.politician_answers a
-                JOIN inform.seasons ssn ON ssn.id = a.season_id
+                JOIN inform.seasons ssn ON ssn.id = a.season_id AND ssn.status <> 'draft'
                WHERE a.topic_id = t.id AND a.politician_id = $1::uuid
                ORDER BY ssn.number DESC
                LIMIT 1
