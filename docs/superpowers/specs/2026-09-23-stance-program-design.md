@@ -45,7 +45,7 @@ reader who follows them faithfully will reproduce a failure we have already paid
 
 | # | Fix | Why |
 |---|---|---|
-| **H1** | `research-stances/SKILL.md` STEP 1 still says to dispatch one research **agent** per politician. **Change it to inline execution, one politician per run.** | Withdrawn by ruling 2026-08-24, reaffirmed 2026-09-23. Following it as written turned 38 rows into 8 — §13.1 |
+| **H1** | ✅ **Done.** `research-stances/SKILL.md` STEP 1 said to dispatch one research **agent** per politician; both it and the rewrite mode now execute inline, one politician per run. | Withdrawn by ruling 2026-08-24, reaffirmed 2026-09-23. Following it as written turned 38 rows into 8 — §13.1 |
 | **H2** | Promote `verify-quotes.mjs` out of the Colorado Springs wave directory into `backend/scripts/`, with an npm script. | It is the only defence against WebFetch fabricating quotes, and it is currently findable only by accident — §4.11 |
 | **H3** | `research-stances/SKILL.md` STEP 0's topic-resolution query joins `inform.compass_stances` (the **frozen** table) and filters `WHERE t.is_live = true`. **Both are wrong.** Repoint it at the season pin. | 41 of 61 Season 3 topics disagree with the frozen text, and 18 of them carry `is_live = false` while being perfectly live in the season. The first fails silently and plausibly. The second returns the 44 `is_live` topics — **dropping 18 of Season 3's 61, while including `immigration`, which Season 2 retired and which the write gate no longer accepts** — §2.2, §8.5 |
 
