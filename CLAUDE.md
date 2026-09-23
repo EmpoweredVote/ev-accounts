@@ -45,7 +45,11 @@ comment and no `DISTINCT`, and returned **two** Aaron Freemans until `CC_0103` d
 office (2026-09-12). `getPoliticianById` has the same shape and takes `rows[0]` with no `ORDER BY`,
 so it reports an arbitrary one of the two as the person's office.
 
-For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019".
+For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019". It **skips
+terms whose `source` carries `| unverified <slot>`** (CA_0171): placeholder terms an audit kept because it
+could not disprove them (CA_0156, CA_0159), all with `term_start` NULL — unguarded, they answered every
+past date. Read `office_terms` directly to see them. An audit that keeps an unverifiable term should use the
+same tag.
 
 **Never cache "current" in a column.** No trigger fires merely because the calendar advanced — that
 is the whole reason this model exists.
