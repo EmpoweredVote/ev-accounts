@@ -25,7 +25,11 @@
 -- NOT TOUCHED: every other column. updated_at is set to now() on the repaired rows, as any other write would.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED. Awaiting operator approval (Chris Andrews).
+-- STATUS: APPLIED to prod 2026-09-23 23:39 UTC (operator approval: Chris Andrews, in chat). Dry run first as
+--   BEGIN ... ROLLBACK: pre-flight passed, UPDATE 1040, post gate passed, and after the rollback all 1,040 dates were
+--   still one day early. Apply: UPDATE 1040, post gate passed. Re-run after (as ROLLBACK): UPDATE 0, every gate
+--   passes. Date ranges now equal the local parse: Mathai 2013-09-27..2014-11-27, Townsend 2015-07-09..2017-05-01,
+--   Michel 2018-02-07..2018-12-03.
 --
 -- ROLLBACK: UPDATE judicial.donations SET contribution_date = contribution_date - 1 WHERE id IN (<the pinned ids>)
 --   would restore the wrong dates; there is no reason to.
