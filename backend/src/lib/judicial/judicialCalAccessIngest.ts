@@ -1,10 +1,15 @@
 /**
- * judicialCalAccessIngest — connective tissue between the unmodified
+ * judicialCalAccessIngest — connective tissue between the
  * calAccessAdapter.ts parser and the new judicial.donations table.
  *
  * Reuses (verbatim, no forking):
- *   - src/lib/adapters/calAccessAdapter.ts's fetch()/normalize() (via createCalAccessAdapter())
+ *   - src/lib/adapters/calAccessAdapter.ts's prepare()/fetch()/normalize() (via createCalAccessAdapter())
  *   - src/lib/adapters/normalizeDonorName.ts (LOCKED 7-step pipeline)
+ *
+ * 🔴 Reusing the adapter verbatim also reused its defect. Until PR #659 (2026-09-23) it matched
+ * RCPT_CD.CMTE_ID — the CONTRIBUTOR's committee id — so all 226 rows of the first judicial run
+ * were money each judge's own committee paid out (CA_0196 deleted them). Rows written since
+ * carry raw_record FILER_ID, the recipient; rows without that key are from the old adapter.
  *
  * Does NOT reuse:
  *   - the adapter's contributions-table write path — that targets
@@ -13,7 +18,7 @@
  *     judicial.donations instead.
  *   - the adapter's ETag-persistence method — targeted/partial runs never save
  *     the shared production Cal-Access ETag cache (mirrors
- *     campaignFinanceScheduler.ts's runAdapterForSources(), lines ~564-568 —
+ *     campaignFinanceScheduler.ts's runAdapterForSources() —
  *     "ETag ownership belongs to the full scheduled run only").
  *
  * This module never edits calAccessAdapter.ts and never calls the adapter's
@@ -25,7 +30,7 @@ import type { ContributionInsert } from '../adapters/adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
 // ---------------------------------------------------------------------------
-// Fake-PoliticianSource builder (D-07/D-10) — drives the unmodified adapter
+// Fake-PoliticianSource builder (D-07/D-10) — drives the adapter
 // ---------------------------------------------------------------------------
 
 /**
@@ -33,8 +38,9 @@ import type { PoliticianSource } from '../campaignFinanceService.js';
  * PoliticianSource TS interface, using only the two fields fetch()/normalize()
  * actually read: `id` (becomes ContributionInsert.politician_source_id — the
  * judicial mapping fn below discards this, using judgeId directly instead) and
- * `external_id` (the CMTE_ID filter used by fetch()). The remaining 6 fields
- * are never read by the adapter — safe placeholders.
+ * `external_id` (the recipient filer id: fetch() returns the receipts reported on
+ * filings this filer made, RCPT_CD.FILING_ID -> FILER_FILINGS_CD.FILER_ID). The
+ * remaining 6 fields are never read by the adapter — safe placeholders.
  */
 export function buildFakePoliticianSource(judgeId: string, filerId: string): PoliticianSource {
   const now = new Date().toISOString();
@@ -76,7 +82,7 @@ export interface JudicialDonationRow {
 
 /**
  * mapContributionsToJudicialDonations turns ContributionInsert[] (returned by
- * the unmodified adapter's normalize()) into judicial.donations row shapes.
+ * the adapter's normalize()) into judicial.donations row shapes.
  *
  * - donor_name_raw reconstructed from raw_record CTRIB_NAML/CTRIB_NAMF (`.trim()`),
  *   exactly mirroring calAccessAdapter.ts's own reconstruction (line 663).
@@ -135,6 +141,10 @@ export function mapContributionsToJudicialDonations(
  *
  * Does NOT call the adapter's own contributions-table write method (D-11) —
  * that writes transparent_motivations.contributions.
+ *
+ * ⚠ ON CONFLICT touches only updated_at: a stored row is never rewritten and never
+ * removed, so a row from a wrong run stays until something deletes it. The ingest
+ * script refuses to write beside rows from the pre-#659 adapter for that reason.
  */
 export async function writeJudicialDonations(
   judgeId: string,
