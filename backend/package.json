@@ -49,6 +49,7 @@
     "check:ladder-text": "node scripts/check-ladder-text-reads.mjs",
     "check:postgis-guard": "node scripts/check-postgis-spatial-ref-guard.mjs",
     "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs",
+    "check:rls-coverage": "node scripts/check-rls-coverage.mjs",
     "check:stance-audit": "node scripts/check-stance-audit.mjs"
   },
   "overrides": {

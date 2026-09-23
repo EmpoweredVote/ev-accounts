@@ -983,6 +983,51 @@ jobs:
         run: npm run check:spatial-ref
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  rls-coverage:
+    name: rls coverage
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is the 2026-08-14 defect), and it cannot join `static guards` —
+    # that job is dependency-free and this one needs `pg`. It is the live, automated form of the weekly
+    # Supabase advisor read (`rls_disabled_in_public`): it fails when a base table anon/authenticated
+    # can SELECT has row-level security OFF, beyond an allowlist (only public.spatial_ref_sys today —
+    # ev-cto decision 0006). The 2026-09-10 sweep (decision 0015) set "RLS on everywhere it can be on";
+    # the treasury tables, essentials.source_hubs and essentials._fabricated_ca0156_removed each
+    # re-opened it afterwards. The rule and allowlist live in scripts/check-rls-coverage.mjs.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum). What it measures is PROD
+    # state: a table becomes RLS-off when a migration or script is APPLIED to prod by hand (there is no
+    # schema_migrations runner), which happens on the CALENDAR, not on our commits — a push applies
+    # nothing — so a per-push run would bill ~494 minutes a month re-reading unchanged prod and flag
+    # drift the push did not cause. Same reasoning as `spatial_ref_sys baseline` and `reachability`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks. An empty scan is NOT a clean database, so the script refuses to pass if its
+    # positive control (spatial_ref_sys, permanently RLS-off) goes missing.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no anon-readable table has RLS off
+        run: npm run check:rls-coverage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   stance-audit:
     name: stance-read audit guard
     runs-on: ubuntu-latest
