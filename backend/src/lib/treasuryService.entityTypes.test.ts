@@ -1,4 +1,8 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+
+const query = vi.hoisted(() => vi.fn());
+vi.mock('./db.js', () => ({ pool: { query } }));
+
 import { parseEntityTypes, KNOWN_ENTITY_TYPES } from './treasuryService.js';
 
 /**
