@@ -1312,6 +1312,8 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
   } catch (err: any) {
     if (err.code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
     if (err.code === 'INCOMPLETE') { res.status(422).json({ error: err.message }); return; }
+    // Not pending: already resolved/rejected (or unresolved_politician) — never re-approved.
+    if (err.code === 'CONFLICT') { res.status(409).json({ error: err.message }); return; }
     console.error('[admin/research-review/:id/resolve] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }

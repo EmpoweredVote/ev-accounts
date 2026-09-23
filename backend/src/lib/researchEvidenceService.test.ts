@@ -2,8 +2,13 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 import type { VerifiedRow } from './researchVerifier.js';
 
 const mockQuery = vi.fn().mockResolvedValue({ rows: [] });
+// A transaction client (pool.connect()): its own query mock, so a test can tell what ran inside
+// the transaction from what ran on the pool. Default: every statement succeeds with rowCount 1.
+const mockClientQuery = vi.fn().mockResolvedValue({ rows: [], rowCount: 1 });
+const mockRelease = vi.fn();
+const mockConnect = vi.fn(async () => ({ query: mockClientQuery, release: mockRelease }));
 vi.mock('./db.js', () => ({
-  pool: { query: mockQuery },
+  pool: { query: mockQuery, connect: mockConnect },
 }));
 
 import { buildEvidenceRowsForInsert, buildReviewRowForInsert } from './researchEvidenceService.js';
@@ -106,8 +111,73 @@ describe('accumulateEvidence', () => {
 
   it('returns without querying when rows array is empty', async () => {
     const { accumulateEvidence } = await import('./researchEvidenceService.js');
-    await accumulateEvidence([]);
+    expect(await accumulateEvidence([])).toBe(0);
     expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  // I9 (partial): report what was really inserted — the season-less unique index drops a snippet
+  // already stored for the pair, and that must not be counted as written.
+  it('returns the number of rows actually inserted (sum of rowCount), not the number attempted', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    const r = { politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 's', snippet_index: 0, batch_id: 'b' };
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 }).mockResolvedValueOnce({ rows: [], rowCount: 0 });
+    expect(await accumulateEvidence([r, { ...r, snippet_index: 1 }])).toBe(1);
+  });
+
+  it('writes on the caller\'s transaction client when given one, not on the pool', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    const n = await accumulateEvidence([{ politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 's', snippet_index: 0, batch_id: 'b' }], client);
+    expect(n).toBe(1);
+    expect(client.query).toHaveBeenCalledTimes(1);
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+});
+
+// I1: re-running a batch must never resurrect a row a person already decided.
+describe('upsertReviewRow', () => {
+  beforeEach(() => mockQuery.mockClear());
+  const reviewInsert = {
+    batch_id: 'b', politician_id: 'p', full_name_raw: 'Jane Doe', topic_id: 't', topic_key: 'healthcare',
+    proposed_value: 2, proposed_reasoning: 'r', evidence: [], verified_source_count: 1, threshold: 1,
+    status: 'pending' as const, re_research_attempted: false,
+  };
+  it('updates only rows still undecided — the ON CONFLICT DO UPDATE carries a status guard', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(reviewInsert);
+    const sql = String(mockQuery.mock.calls[0][0]);
+    const guard = /WHERE\s+inform\.stance_research_review\.status\s+IN\s*\(\s*'pending'\s*,\s*'unresolved_politician'\s*\)/;
+    expect(sql).toMatch(guard);
+    expect(sql.search(guard)).toBeGreaterThan(sql.indexOf('DO UPDATE'));
+  });
+  it('reports whether it wrote: false when the existing row was already decided', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 }).mockResolvedValueOnce({ rows: [], rowCount: 0 });
+    expect(await upsertReviewRow(reviewInsert)).toBe(true);
+    expect(await upsertReviewRow(reviewInsert)).toBe(false);
+  });
+});
+
+// I5: the reviewer sees what approving would replace — including an editor's blank.
+describe('review reads carry the open-season current value', () => {
+  beforeEach(() => mockQuery.mockClear());
+  it('selects the pair\'s OPEN-season answer, marked as a site that counts blanks', async () => {
+    const { getResearchReviewById, listPendingResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [] }).mockResolvedValueOnce({ rows: [] });
+    await getResearchReviewById('x');
+    await listPendingResearchReview();
+    for (const [sql] of mockQuery.mock.calls) {
+      expect(String(sql)).toContain('@zero-scope: counts-blanks');
+      expect(String(sql)).toMatch(/inform\.politician_answers[\s\S]*s\.status = 'open'/);
+    }
+  });
+  it.each([
+    ['3', 3], ['0', 0], [null, null],
+  ])('maps current_value %j to currentValue %j (0 is a blank, not "none")', async (raw, want) => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: raw }] });
+    expect((await getResearchReviewById('x'))?.currentValue).toBe(want);
   });
 });
 
@@ -127,6 +197,14 @@ describe('writeVerifiedStance', () => {
     mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 0 });
     await expect(writeVerifiedStance({ politicianId: 'p', topicId: 't', value: 3, reasoning: 'r', sources: [], editorId: null }))
       .rejects.toThrow();
+  });
+  it('writes on the caller\'s transaction client when given one, not on the pool', async () => {
+    const { writeVerifiedStance } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    const before = mockQuery.mock.calls.length;
+    await writeVerifiedStance({ politicianId: 'p', topicId: 't', value: 3, reasoning: 'r', sources: ['u'], editorId: 'e' }, client);
+    expect(client.query).toHaveBeenCalledTimes(2);
+    expect(mockQuery.mock.calls.length).toBe(before);
   });
 });
 
@@ -156,23 +234,31 @@ describe('resolveResearchReview — citations written on approval, not at queue 
     created_at: '2026-01-01T00:00:00Z',
   };
 
+  beforeEach(() => {
+    mockQuery.mockClear(); mockClientQuery.mockClear(); mockConnect.mockClear(); mockRelease.mockClear();
+  });
+
+  // Adapted for I6: the read runs on the pool; every write runs on ONE transaction client,
+  // between BEGIN and COMMIT. The assertions about what is written, and in what order, are the
+  // same as before the transaction existed.
   it('inserts exactly one politician_context_evidence row, for the verified snippet only, after the answer and context writes', async () => {
     const { resolveResearchReview } = await import('./researchEvidenceService.js');
     const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
-    const before = mockQuery.mock.calls.length;
-    mockQuery
-      .mockResolvedValueOnce({ rows: [reviewRow] })     // getResearchReviewById
-      .mockResolvedValueOnce({ rows: [], rowCount: 1 }) // UPSERT_ANSWER_SQL
-      .mockResolvedValueOnce({ rows: [], rowCount: 1 }) // UPSERT_CONTEXT_SQL
-      .mockResolvedValueOnce({ rows: [] })              // politician_context_evidence insert (verified snippet)
-      .mockResolvedValueOnce({ rows: [] });             // final UPDATE stance_research_review
+    mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });     // getResearchReviewById (pool)
+    // client: BEGIN, UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, evidence insert, UPDATE, COMMIT — all
+    // resolve with the default { rows: [], rowCount: 1 }.
 
     await resolveResearchReview('rev-1', 'editor-1');
 
-    const calls = mockQuery.mock.calls.slice(before);
-    expect(calls).toHaveLength(5);
+    expect(mockQuery).toHaveBeenCalledTimes(1); // only the read is outside the transaction
+    const calls = mockClientQuery.mock.calls;
+    expect(calls).toHaveLength(6);
+    expect(calls[0][0]).toBe('BEGIN');
     expect(calls[1][0]).toBe(UPSERT_ANSWER_SQL);
     expect(calls[2][0]).toBe(UPSERT_CONTEXT_SQL);
+    expect(String(calls[4][0])).toContain("SET status = 'resolved'");
+    expect(calls[5][0]).toBe('COMMIT');
+    expect(mockRelease).toHaveBeenCalledTimes(1);
 
     const evidenceCalls = calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
     expect(evidenceCalls).toHaveLength(1);
@@ -183,4 +269,56 @@ describe('resolveResearchReview — citations written on approval, not at queue 
     const contextCallIndex = calls.findIndex((c) => c[0] === UPSERT_CONTEXT_SQL);
     expect(evidenceCallIndex).toBeGreaterThan(contextCallIndex);
   });
+
+  // I6: one transaction — a failed context write leaves no value, no citation, no status change.
+  it('rolls back when the context write throws: no evidence insert, no status UPDATE, no COMMIT', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+    mockClientQuery
+      .mockResolvedValueOnce({ rows: [], rowCount: null })          // BEGIN
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 })             // UPSERT_ANSWER_SQL
+      .mockRejectedValueOnce(new Error('context write failed'));    // UPSERT_CONTEXT_SQL
+
+    await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toThrow('context write failed');
+
+    const sqls = mockClientQuery.mock.calls.map((c) => String(c[0]));
+    expect(sqls).toContain('ROLLBACK');
+    expect(sqls).not.toContain('COMMIT');
+    expect(sqls.some((s) => s.includes('politician_context_evidence'))).toBe(false);
+    expect(sqls.some((s) => s.includes('UPDATE inform.stance_research_review'))).toBe(false);
+    expect(mockQuery).toHaveBeenCalledTimes(1); // nothing was written on the pool either
+    expect(mockRelease).toHaveBeenCalledTimes(1);
+  });
+
+  // I2: no approval without a citation.
+  it('refuses (INCOMPLETE) a row with no machine-verified and no human-verified source, before writing', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const unverified = { ...reviewRow, evidence: [{ url: 'https://a.example', snippets: [
+      { snippet_index: 0, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
+    ] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [unverified] });
+    await expect(resolveResearchReview('rev-1', 'editor-1', [])).rejects.toMatchObject({
+      code: 'INCOMPLETE',
+      message: 'No verified or human-verified source — a stance cannot be published without a citation',
+    });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+  it('accepts the same row when the reviewer ticked a source by hand', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const unverified = { ...reviewRow, evidence: [{ url: 'https://a.example', snippets: [
+      { snippet_index: 0, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
+    ] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [unverified] });
+    await resolveResearchReview('rev-1', 'editor-1', ['https://a.example']);
+    expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
+  });
+
+  // M10: only a pending row can be approved.
+  it.each(['resolved', 'rejected', 'superseded', 'unresolved_politician'])(
+    'refuses (CONFLICT) a %s row, before writing', async (status) => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, status }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'CONFLICT' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
 });

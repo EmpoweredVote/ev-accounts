@@ -29,6 +29,8 @@ interface ResearchReviewRow {
   status: string;
   reResearchAttempted: boolean;
   createdAt: string;
+  /** The pair's value in the OPEN season — what approving replaces. 0 = an editor's blank; null = none. */
+  currentValue: number | null;
 }
 
 export function ResearchReviewPage() {
@@ -128,9 +130,18 @@ export function ResearchReviewPage() {
     );
   }
 
-  const canApprove = !!row.politicianId && !!row.topicId && editValue !== '' && !isNaN(Number(editValue));
+  // A stance is never published without a citation: at least one machine-verified source (a
+  // snippet the verifier found on the page) or one the reviewer ticked by hand. The server
+  // refuses the same case (422), so this only saves a round trip.
+  const hasMachineVerified = row.evidence.some((e) => e.snippets.some((s) => s.verdict === 'verified'));
+  const hasSource = hasMachineVerified || humanVerified.size > 0;
+  const canApprove = !!row.politicianId && !!row.topicId && editValue !== '' && !isNaN(Number(editValue)) && hasSource;
   const totalVerified = humanVerified.size;
   const meetsThreshold = totalVerified >= row.threshold;
+  const currentValueText =
+    row.currentValue === null ? 'none'
+    : row.currentValue === 0 ? 'blank (an editor cleared it)'
+    : String(row.currentValue);
 
   return (
     <div className="max-w-2xl">
@@ -157,7 +168,9 @@ export function ResearchReviewPage() {
             ? 'Politician could not be matched to a DB record — approve is disabled.'
             : !row.topicId
             ? 'Topic could not be matched — approve is disabled.'
-            : 'Enter a valid value to enable approve.'}
+            : editValue === '' || isNaN(Number(editValue))
+            ? 'Enter a valid value to enable approve.'
+            : 'No source is verified — check a source URL and mark it verified to enable approve.'}
         </div>
       )}
 
@@ -171,6 +184,9 @@ export function ResearchReviewPage() {
           {row.reResearchAttempted && (
             <span className="text-yellow-600 dark:text-yellow-400">Re-research attempted</span>
           )}
+          <span className={row.currentValue !== null ? 'text-yellow-700 dark:text-yellow-300 font-medium' : ''}>
+            Current value in the open season: {currentValueText}
+          </span>
         </div>
 
         {/* Proposed stance */}
