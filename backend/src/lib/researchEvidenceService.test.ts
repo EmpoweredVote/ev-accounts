@@ -313,6 +313,42 @@ describe('resolveResearchReview — citations written on approval, not at queue 
     expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
   });
 
+  // Approval input validation (2026-09-23 polish pass), service-side defence in depth: a blank
+  // humanVerifiedUrls entry must not itself satisfy "no source → INCOMPLETE" below.
+  it("drops blank/whitespace-only humanVerifiedUrls entries — [''] does not count as a source", async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const unverified = { ...reviewRow, evidence: [{ url: 'https://a.example', snippets: [
+      { snippet_index: 0, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
+    ] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [unverified] });
+    await expect(resolveResearchReview('rev-1', 'editor-1', [''])).rejects.toMatchObject({
+      code: 'INCOMPLETE',
+      message: 'No verified or human-verified source — a stance cannot be published without a citation',
+    });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+  it('keeps a valid http(s) URL and drops blank/non-http(s) entries from humanVerifiedUrls', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const unverified = { ...reviewRow, evidence: [{ url: 'https://a.example', snippets: [
+      { snippet_index: 0, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
+    ] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [unverified] });
+    await resolveResearchReview('rev-1', 'editor-1',
+      ['', '   ', 'not-a-url', 'javascript:alert(1)', '  https://b.example  ']);
+    const evidenceCalls = mockClientQuery.mock.calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
+    expect(evidenceCalls).toHaveLength(1);
+    expect(evidenceCalls[0][1]).toEqual(['p1', 't1', 'https://b.example', '[Human verified during review]', 'human-review-rev-1']);
+  });
+  it.each([7, 2.5])('refuses (INCOMPLETE) a valueOverride of %j that is not an integer 1-5', async (bad) => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+    await expect(resolveResearchReview('rev-1', 'editor-1', [], bad)).rejects.toMatchObject({
+      code: 'INCOMPLETE',
+      message: 'valueOverride must be an integer 1-5',
+    });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+
   // M10: only a pending row can be approved.
   it.each(['resolved', 'rejected', 'superseded', 'unresolved_politician'])(
     'refuses (CONFLICT) a %s row, before writing', async (status) => {

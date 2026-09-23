@@ -1307,6 +1307,25 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
       valueOverride?: number | null;
       reasoningOverride?: string;
     };
+    // Reject a malformed body before it reaches the service (NOT the "R1" ruling referenced
+    // elsewhere in this file — citations on approval; this is approval INPUT validation, added in
+    // the 2026-09-23 polish pass). The service repeats the valueOverride check (defence in depth —
+    // it is also reachable directly, e.g. from a script), but only the route can turn a bad shape
+    // into a clean 400 instead of a 500/crash.
+    if (humanVerifiedUrls !== undefined
+      && (!Array.isArray(humanVerifiedUrls) || !humanVerifiedUrls.every((u) => typeof u === 'string'))) {
+      res.status(400).json({ error: 'humanVerifiedUrls must be an array of strings' });
+      return;
+    }
+    if (valueOverride !== undefined && valueOverride !== null
+      && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
+      res.status(400).json({ error: 'valueOverride must be an integer 1-5' });
+      return;
+    }
+    if (reasoningOverride !== undefined && typeof reasoningOverride !== 'string') {
+      res.status(400).json({ error: 'reasoningOverride must be a string' });
+      return;
+    }
     await resolveResearchReview(req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
     res.json({ ok: true });
   } catch (err: any) {

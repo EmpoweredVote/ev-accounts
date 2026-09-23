@@ -249,6 +249,27 @@ export async function writeVerifiedStance(args: {
 }
 
 /**
+ * Approval input validation (2026-09-23 polish pass), defence in depth: the route already
+ * rejects a shape it doesn't like with a 400, but this function is also reachable directly (a
+ * script, a future caller), so a blank/whitespace entry (`['']`) or a non-http(s) string
+ * (mailto:, javascript:, a bare word) must not slip through and count as a citation below. Keeps
+ * only entries that parse as an http: or https: URL.
+ */
+function cleanHumanVerifiedUrls(urls: string[]): string[] {
+  return urls
+    .map((u) => u.trim())
+    .filter((u) => u.length > 0)
+    .filter((u) => {
+      try {
+        const parsed = new URL(u);
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+      } catch {
+        return false;
+      }
+    });
+}
+
+/**
  * Approve a queued review row: write its stance, then its machine-verified citations, then any
  * human-verified URLs, then mark it resolved.
  *
@@ -286,6 +307,13 @@ export async function resolveResearchReview(
       { code: 'CONFLICT' });
   }
 
+  // Same defence-in-depth reasoning as cleanHumanVerifiedUrls above: the route already rejects a
+  // non-integer or out-of-range valueOverride with a 400, but a direct caller could still pass one.
+  if (valueOverride !== undefined && valueOverride !== null
+    && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
+    throw Object.assign(new Error('valueOverride must be an integer 1-5'), { code: 'INCOMPLETE' });
+  }
+
   const finalValue = valueOverride !== undefined && valueOverride !== null ? valueOverride : row.proposedValue;
   const finalReasoning = reasoningOverride || row.proposedReasoning;
 
@@ -293,11 +321,13 @@ export async function resolveResearchReview(
     throw Object.assign(new Error('Row is missing politician_id, topic_id, or value'), { code: 'INCOMPLETE' });
   }
 
+  const cleanedHumanVerifiedUrls = cleanHumanVerifiedUrls(humanVerifiedUrls);
+
   // All sources to attach: machine-verified + human-verified (deduped)
   const machineVerifiedUrls = row.evidence
     .filter((e) => e.snippets.some((s) => s.verdict === 'verified'))
     .map((e) => e.url);
-  const allSources = [...new Set([...machineVerifiedUrls, ...humanVerifiedUrls])];
+  const allSources = [...new Set([...machineVerifiedUrls, ...cleanedHumanVerifiedUrls])];
   if (allSources.length === 0) {
     throw Object.assign(
       new Error('No verified or human-verified source — a stance cannot be published without a citation'),
@@ -336,7 +366,7 @@ export async function resolveResearchReview(
     await accumulateEvidence(machineVerifiedRows, client);
 
     // Write human-verified URLs to politician_context_evidence so they appear in citations
-    for (const url of humanVerifiedUrls) {
+    for (const url of cleanedHumanVerifiedUrls) {
       await client.query(
         // Same season derivation as accumulateEvidence above.
         `INSERT INTO inform.politician_context_evidence

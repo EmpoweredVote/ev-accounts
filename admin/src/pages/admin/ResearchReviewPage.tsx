@@ -135,7 +135,11 @@ export function ResearchReviewPage() {
   // refuses the same case (422), so this only saves a round trip.
   const hasMachineVerified = row.evidence.some((e) => e.snippets.some((s) => s.verdict === 'verified'));
   const hasSource = hasMachineVerified || humanVerified.size > 0;
-  const canApprove = !!row.politicianId && !!row.topicId && editValue !== '' && !isNaN(Number(editValue)) && hasSource;
+  // The value is a chair 1-5, never anything else — the server refuses the same case (400), so
+  // this only saves a round trip.
+  const numericValue = Number(editValue);
+  const isValidValue = editValue !== '' && Number.isInteger(numericValue) && numericValue >= 1 && numericValue <= 5;
+  const canApprove = !!row.politicianId && !!row.topicId && isValidValue && hasSource;
   const totalVerified = humanVerified.size;
   const meetsThreshold = totalVerified >= row.threshold;
   const currentValueText =
@@ -168,8 +172,8 @@ export function ResearchReviewPage() {
             ? 'Politician could not be matched to a DB record — approve is disabled.'
             : !row.topicId
             ? 'Topic could not be matched — approve is disabled.'
-            : editValue === '' || isNaN(Number(editValue))
-            ? 'Enter a valid value to enable approve.'
+            : !isValidValue
+            ? 'Enter a whole number from 1 to 5 to enable approve.'
             : 'No source is verified — check a source URL and mark it verified to enable approve.'}
         </div>
       )}
