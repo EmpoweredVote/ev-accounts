@@ -51,10 +51,20 @@ export interface GateFinding {
   full_name: string; topic_key: string; check_id: GateCheckId; severity: 'high' | 'medium'; what: string;
 }
 
+// Two regexes, deliberately different case sensitivity:
+//   PARTY_NAMES is case-SENSITIVE because its list includes the ADJECTIVE "Democratic", which has
+//     an unrelated lowercase common-word sense ("the democratic process" = relating to democracy,
+//     not the party). Capitalization is the only signal that distinguishes them, so this regex
+//     must not be loosened to `/i`.
+//   PARTY_NOUNS_ANY_CASE (below) covers only the NOUN forms — "democrat(s)", "republican(s)",
+//     "gop" — which name the party in any case: a noun has no such unrelated sense, so "a lifelong
+//     democrat" is a party tell whether or not it happens to be capitalized.
 /** Capitalised party names only: "the democratic process" is not a party tell; "Democratic nominee" is. */
 export const PARTY_NAMES = /\b(Democrats?|Democratic|Republicans?|GOP|Libertarians?|Lincoln Party|Green Party)\b/;
 export const PARTY_PHRASES =
   /\b(party (?:line|platform|affiliation|position)|as an? (?:conservative|liberal|progressive)|consistent with (?:her|his|their) party)\b/i;
+/** The noun forms only, any case — "Republic"/"democratic process" do not match (see block comment above). */
+export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?|gop)\b/i;
 
 const wordCount = (s: string) => normalizeText(s).split(' ').filter(Boolean).length;
 
@@ -97,7 +107,7 @@ export function checkStanceRow(
     add('evidence-type-invalid', 'high', `evidence_type "${row.evidence_type}" must be record or statement`);
   }
 
-  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning)) {
+  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)) {
     add('party-inference', 'high', 'reasoning names a party or partisan frame — party is never evidence');
   }
   return out;
@@ -131,13 +141,17 @@ export function checkBatch(
   const counts = nameCounts(politicians);
   // C1: two proposed values for one (person, topic) pair. Each row's snippets can "verify" the
   // other's, and both reach decidePublish — so neither may be written; the pair is re-researched
-  // as ONE row (a re-research pass REPLACES a pair's rows, it never appends). value=null rows are
-  // not proposals and are not counted.
-  const proposalsPerPair = new Map<string, number>();
+  // as ONE row (a re-research pass REPLACES a pair's rows, it never appends).
+  //
+  // R5: this counts EVERY row of the pair, null value or not. A value=null row is not itself a
+  // second proposal (it is never flagged), but verifyEvidence joins evidence by (name, topic) —
+  // not by row — so a blank sibling's source_urls still verify the scored row's snippets. Counting
+  // only non-null rows let a research.csv with one blank row and one scored row for the same pair
+  // pass silently while the scored row quietly borrowed the blank row's sources.
+  const rowsPerPair = new Map<string, number>();
   for (const r of rows) {
-    if (r.value === null) continue;
     const k = stanceKey(r.full_name, r.topic_key);
-    proposalsPerPair.set(k, (proposalsPerPair.get(k) ?? 0) + 1);
+    rowsPerPair.set(k, (rowsPerPair.get(k) ?? 0) + 1);
   }
   return rows.flatMap((r) => {
     const key = stanceKey(r.full_name, r.topic_key);
@@ -153,32 +167,41 @@ export function checkBatch(
         what: `${n} people in politicians.json share this name — research them in separate batches`,
       });
     }
-    const dup = proposalsPerPair.get(key) ?? 0;
+    const dup = rowsPerPair.get(key) ?? 0;
+    // Only the NON-NULL rows of a duplicated pair are flagged — a null row produces no findings
+    // of its own (checkStanceRow already returns early for it, above), but it still counts toward
+    // `dup` so a blank-plus-scored pair is caught too (R5).
     if (r.value !== null && dup > 1) {
       findings.push({
         full_name: r.full_name, topic_key: r.topic_key, check_id: 'duplicate-row', severity: 'high',
-        what: `${dup} research rows propose a value for this person and topic — a re-research pass must REPLACE the pair's rows, never append a second`,
+        what: `research.csv has ${dup} rows for this pair — keep exactly one; a re-research pass replaces the row`,
       });
     }
     return findings;
   });
 }
 
-export function toStanceRows(rows: ResearchRow[], politicians: BundlePolitician[]): StanceRow[] {
+export function toStanceRows(rows: ResearchRow[], topics: BundleTopic[], politicians: BundlePolitician[]): StanceRow[] {
   const polByName = new Map(politicians.map((p) => [normName(p.full_name), p]));
   const counts = nameCounts(politicians);
+  // R4: same idea as the full_name canonicalization below, for topic_key — matched through the
+  // same normTopic the gate and verifier already key on.
+  const topicByKey = new Map(topics.map((t) => [normTopic(t.topic_key), t]));
   return rows.map((r) => {
     const k = normName(r.full_name);
     // Ambiguous names never carry an id — see checkBatch above. An id chosen from a name
     // collision is worse than no id: it looks resolved and can write onto the wrong namesake.
     const ambiguous = (counts.get(k) ?? 0) > 1;
     const match = ambiguous ? undefined : polByName.get(k);
+    const topicMatch = topicByKey.get(normTopic(r.topic_key));
     return {
       // The bundle's canonical spelling when the row matched one person, so every downstream
       // reader (verifier, review queue, publish-report) sees one spelling for one person.
       full_name: match?.full_name ?? r.full_name,
       politician_id: match?.politician_id ?? '',
-      topic_key: r.topic_key,
+      // The bundle topic's canonical spelling when the row's key matched one (case/whitespace
+      // variants collapse to the same topic_key downstream, same reasoning as full_name above).
+      topic_key: topicMatch?.topic_key ?? r.topic_key,
       value: r.value,
       reasoning: r.reasoning,
     };

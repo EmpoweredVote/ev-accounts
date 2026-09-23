@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES, GATE_CHECK_IDS,
+import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES, PARTY_NOUNS_ANY_CASE, GATE_CHECK_IDS,
   type ResearchRow, type BundleTopic, type BundlePolitician } from './stanceGate.js';
 
 const SNIP = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 because she believes every '
@@ -75,13 +75,34 @@ describe('refusals still refuse', () => {
   });
 });
 
+// R6: lowercase party NOUNS ("democrat", "republican", "gop") are a party tell in any case — unlike
+// the adjective "democratic", which PARTY_NAMES deliberately keeps case-sensitive (see the block
+// comment above PARTY_NAMES).
+describe('PARTY_NOUNS_ANY_CASE — lowercase party nouns', () => {
+  it('matches the noun in any case; the adjective and unrelated words do not match', () => {
+    expect(PARTY_NOUNS_ANY_CASE.test('a lifelong democrat')).toBe(true);
+    expect(PARTY_NOUNS_ANY_CASE.test('protects the democratic process')).toBe(false);
+    expect(PARTY_NOUNS_ANY_CASE.test('the Republic of Texas')).toBe(false);
+    expect(PARTY_NOUNS_ANY_CASE.test('as a Democrat')).toBe(true);
+  });
+  it('a lowercase party noun in reasoning is party-inference', () => {
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong democrat.' })).toContain('party-inference');
+  });
+  it('"the democratic process" alone is still not party-inference', () => {
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to protect the democratic process.' })).toEqual([]);
+  });
+  it('capitalized "Democrat" (already covered by PARTY_NAMES) is still party-inference', () => {
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
+  });
+});
+
 describe('checkBatch / toStanceRows', () => {
   it('matches rows to topics, people and evidence by name (case-insensitive)', () => {
     const f = checkBatch([{ ...good, full_name: 'jane doe' }], [HEALTH], [JANE], ev);
     expect(f).toEqual([]);
   });
   it('carries the bundle politician_id into verifier rows', () => {
-    expect(toStanceRows([good], [JANE])).toEqual([
+    expect(toStanceRows([good], [HEALTH], [JANE])).toEqual([
       { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
     ]);
   });
@@ -99,7 +120,7 @@ describe('checkBatch / toStanceRows', () => {
     ]);
   });
   it('writes politician_id \'\' for an ambiguous name, even though one namesake would otherwise match', () => {
-    expect(toStanceRows([good], [JANE, JANE2])).toEqual([
+    expect(toStanceRows([good], [HEALTH], [JANE, JANE2])).toEqual([
       { full_name: 'Jane Doe', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
     ]);
   });
@@ -108,7 +129,7 @@ describe('checkBatch / toStanceRows', () => {
   // --politician) is one person, not two namesakes.
   it('does not call one person listed twice (same politician_id) ambiguous', () => {
     expect(checkBatch([good], [HEALTH], [JANE, { ...JANE, race_id: null }], ev)).toEqual([]);
-    expect(toStanceRows([good], [JANE, { ...JANE, race_id: null }])[0].politician_id).toBe('p1');
+    expect(toStanceRows([good], [HEALTH], [JANE, { ...JANE, race_id: null }])[0].politician_id).toBe('p1');
   });
 });
 
@@ -119,12 +140,22 @@ describe('checkBatch / toStanceRows — shared normalizer', () => {
     expect(checkBatch([row], [HEALTH], [JANE], [{ ...ev[0], full_name: 'Jane Doe ' }])).toEqual([]);
   });
   it('writes the bundle politician\'s canonical full_name into stances rows', () => {
-    expect(toStanceRows([{ ...good, full_name: 'jane doe ' }], [JANE])).toEqual([
+    expect(toStanceRows([{ ...good, full_name: 'jane doe ' }], [HEALTH], [JANE])).toEqual([
       { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
     ]);
   });
   it('keeps the row\'s own spelling when it matched no bundle politician', () => {
-    expect(toStanceRows([{ ...good, full_name: 'Someone Else' }], [JANE])[0]).toMatchObject({ full_name: 'Someone Else', politician_id: '' });
+    expect(toStanceRows([{ ...good, full_name: 'Someone Else' }], [HEALTH], [JANE])[0]).toMatchObject({ full_name: 'Someone Else', politician_id: '' });
+  });
+
+  // R4: same idea as full_name, for topic_key.
+  it('writes the bundle topic\'s canonical topic_key into stances rows', () => {
+    expect(toStanceRows([{ ...good, topic_key: 'Healthcare ' }], [HEALTH], [JANE])).toEqual([
+      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+    ]);
+  });
+  it('keeps the row\'s own topic_key spelling when it matched no bundle topic', () => {
+    expect(toStanceRows([{ ...good, topic_key: 'no-such-topic' }], [HEALTH], [JANE])[0]).toMatchObject({ topic_key: 'no-such-topic' });
   });
 });
 
@@ -137,8 +168,15 @@ describe('checkBatch — duplicate-row', () => {
       expect.objectContaining({ full_name: 'jane doe ', topic_key: 'healthcare', check_id: 'duplicate-row', severity: 'high' }),
     ]);
   });
-  it('does not count a value=null row (insufficient evidence) as a second proposal', () => {
-    expect(checkBatch([good, { ...good, value: null, source_urls: [] }], [HEALTH], [JANE], ev)).toEqual([]);
+  // R5: a value=null sibling is not itself a proposal, but it still counts toward the pair's row
+  // total — verifyEvidence joins evidence by (name, topic), not by row, so a blank row's sources
+  // could otherwise verify the scored row's snippets uncounted. The null row gets no finding of
+  // its own; the scored row is flagged.
+  it('a value=null row with a scored sibling for the same pair still flags the scored row duplicate-row', () => {
+    const f = checkBatch([good, { ...good, value: null, source_urls: [] }], [HEALTH], [JANE], ev);
+    expect(f).toEqual([
+      expect.objectContaining({ full_name: 'Jane Doe', topic_key: 'healthcare', check_id: 'duplicate-row', severity: 'high' }),
+    ]);
   });
   it('does not flag the same person on two different topics', () => {
     const rent = { ...good, topic_key: 'housing' };

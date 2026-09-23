@@ -4,7 +4,8 @@
  * Reads <dir>/research.csv, evidence.csv, topics.json, politicians.json (see
  * build-stance-topic-bundle.ts). Writes gate-findings.json and stances.csv (the input
  * verify-stance-research.ts expects). stances.csv carries the bundle politician's canonical
- * full_name for every row that matched one (toStanceRows), so downstream sees one spelling.
+ * full_name AND the bundle topic's canonical topic_key for every row that matched one
+ * (toStanceRows), so downstream sees one spelling of each.
  * Rows, bundle entries and evidence are joined through the verifier's own normalizer
  * (normName / normTopic / stanceKey in src/lib/researchVerifier.ts).
  *
@@ -77,7 +78,7 @@ const summary = {
   by_check,
 };
 writeFileSync(join(DIR, 'gate-findings.json'), JSON.stringify({ findings, summary }, null, 2));
-writeFileSync(join(DIR, 'stances.csv'), writeStancesCsv(toStanceRows(research, politicians)));
+writeFileSync(join(DIR, 'stances.csv'), writeStancesCsv(toStanceRows(research, topics, politicians)));
 
 console.log(`stance-gate: ${summary.rows} rows · high=${summary.high} medium=${summary.medium} · evidence rows=${evidence.length}`);
 for (const f of findings) console.log(`  ${f.severity.padEnd(6)} ${f.check_id.padEnd(24)} ${f.full_name} / ${f.topic_key}: ${f.what}`);
