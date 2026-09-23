@@ -99,6 +99,7 @@ router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise
         entityTypes: types.values,
         state: stateParam || undefined,
         countyId: countyParam || undefined,
+        fields: req.query['fields'] === 'index' ? 'index' : undefined,
       }
     );
     res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');

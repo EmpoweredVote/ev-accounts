@@ -177,3 +177,41 @@ describe('getCities — entity_type / state / county_id filters', () => {
     expect(await getCities('summary', undefined, { state: 'ZZ' })).toEqual([]);
   });
 });
+
+describe('getCities — ?fields=index', () => {
+  it('selects only the index columns and a has_data flag', async () => {
+    await getCities('summary', undefined, { fields: 'index' });
+    const s = sql();
+    expect(s).toContain('m.id');
+    expect(s).toContain('m.county_id');
+    expect(s).toMatch(/COUNT\(b\.id\) > 0\) AS has_data/);
+    // The heavy things must be gone.
+    expect(s).not.toContain('m.hero_image_url');
+    expect(s).not.toContain('m.population');
+    expect(s).not.toContain('dataset_summary');
+    expect(s).not.toContain('available_datasets');
+  });
+
+  it('keeps the HAVING contract, so index rows are the same population', async () => {
+    await getCities('summary', undefined, { fields: 'index' });
+    expect(sql()).toMatch(/HAVING COUNT\(b\.id\) > 0/);
+  });
+
+  it('maps rows to the lean shape with has_data as a real boolean', async () => {
+    query.mockResolvedValue({ rows: [{
+      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
+      county_id: null, has_data: true,
+    }] });
+    const [row] = await getCities('summary', undefined, { fields: 'index' });
+    expect(row).toEqual({
+      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
+      county_id: null, has_data: true,
+    });
+  });
+
+  it('composes with the other filters', async () => {
+    await getCities('summary', undefined, { fields: 'index', state: 'CA' });
+    expect(params()).toEqual(['CA']);
+    expect(sql()).toMatch(WHERE_CLAUSE);
+  });
+});

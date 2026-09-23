@@ -590,7 +590,33 @@ export interface CityFilters {
   entityTypes?: string[];
   state?: string;
   countyId?: string;
+  /**
+   * ⚠ The ONLY filter that changes COLUMNS rather than rows. Opt-in for the
+   * same reason as `datasets=summary`: this endpoint is a cross-app contract,
+   * so the default response must stay byte-for-byte identical.
+   *
+   * Measured 2026-09-22: 3.05 MB -> 1,127 KB for all 8,149 rows, because
+   * `dataset_summary` is most of the weight. It exists for Treasury Tracker's
+   * entity switcher and landing search, which need names to match on and a
+   * has-data flag — nothing else.
+   */
+  fields?: 'index';
 }
+
+/**
+ * The lean row shape for `?fields=index` — see the note on `CityFilters.fields`.
+ */
+export interface TreasuryCityIndex {
+  id: string;
+  name: string;
+  state: string;
+  entity_type: string | null;
+  county_id: string | null;
+  has_data: boolean;
+}
+
+const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
+            (COUNT(b.id) > 0) AS has_data`;
 
 /**
  * Entity types the treasury schema actually stores. Measured 2026-09-22:
@@ -618,7 +644,7 @@ export async function getCities(
   mode: DatasetsMode = 'full',
   slug?: string,
   filters: CityFilters = {}
-): Promise<TreasuryCity[]> {
+): Promise<TreasuryCity[] | TreasuryCityIndex[]> {
   const conds: string[] = [];
   const vals: unknown[] = [];
 
@@ -630,10 +656,14 @@ export async function getCities(
   if (filters.state) { vals.push(filters.state); conds.push(`m.state = $${vals.length}`); }
   if (filters.countyId) { vals.push(filters.countyId); conds.push(`m.county_id = $${vals.length}`); }
 
-  const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
+  const index = filters.fields === 'index';
+
+  const { rows } = await pool.query<CityRow | (TreasuryCityIndex & { has_data: boolean })>(
+    `SELECT ${index
+      ? COLUMNS_INDEX
+      : `m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
-            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
+            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}`}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      ${conds.length ? `WHERE ${conds.join(' AND ')}` : ''}
@@ -645,7 +675,12 @@ export async function getCities(
      ORDER BY m.name`,
     vals
   );
-  return rows.map((r) => mapCity(r, mode));
+  return index
+    ? (rows as Array<TreasuryCityIndex & { has_data: boolean }>).map((r) => ({
+        id: r.id, name: r.name, state: r.state, entity_type: r.entity_type,
+        county_id: r.county_id ?? null, has_data: Boolean(r.has_data),
+      }))
+    : (rows as CityRow[]).map((r) => mapCity(r, mode));
 }
 
 /**
