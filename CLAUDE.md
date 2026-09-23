@@ -318,6 +318,12 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     A hook that can wedge a commit gets deleted, and then the rule has no observer at all.
     A hook cannot be pushed to anyone — it is opt-in per clone, so a colleague who has not run
     the installer is unobserved.
+  - ⚠ **Until 2026-09-23 it never ran on macOS or Linux**: it was committed without its exec bit,
+    and git there skips such a hook with only a `hint:` line (Git for Windows ignores the bit). CI
+    step "git hooks are executable" now fails on any `.githooks/` file that is not mode 100755.
+    🔴 **Linked worktrees run the MAIN checkout's copy**: their `config.worktree` sets an absolute
+    `core.hooksPath` to `<main clone>/.githooks`, so the hook runs only once the main checkout's
+    branch carries the 100755 file. Check with `git rev-parse --git-path hooks`.
 - **Before deleting a worktree or branch**, run the four checks — as **one command**:
 
   ```bash

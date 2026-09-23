@@ -388,6 +388,23 @@ jobs:
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-ocd-loader-suffix.mjs
 
+      # --- git hooks are executable ----------------------------------------------------------------
+      # `.githooks/pre-commit` (the §9 pathspec observer CLAUDE.md describes) was committed 100644 on
+      # 2026-09-04. Git on macOS and Linux SKIPS a hook without the exec bit and says so only as a
+      # `hint:` line, so the observer never ran there; Git for Windows ignores the bit, which is why it
+      # went unnoticed until 2026-09-23. Fails on any tracked .githooks/ file whose INDEX mode is not
+      # 100755 — the index, not the working copy, because a clone takes the mode from git.
+      # 🔴 POSITIVE CONTROL: an EMPTY listing fails too, so a renamed or moved hooks directory reads as
+      # "the check is blind", never as "nothing wrong". Static, no DATABASE_URL, dependency-free.
+      - name: git hooks are executable
+        if: ${{ !cancelled() }}
+        run: |
+          modes=$(git ls-files -s .githooks)
+          [ -n "$modes" ] || { echo "::error::no tracked files under .githooks/ -- the check is blind"; exit 1; }
+          bad=$(printf '%s\n' "$modes" | awk '$1 != "100755"')
+          [ -z "$bad" ] || { printf '::error::not executable in git (mode must be 100755; fix with git update-index --chmod=+x <file>):\n%s\n' "$bad"; exit 1; }
+          echo "git hooks executable:"; printf '%s\n' "$modes"
+
   migration-reservations:
     name: migration reservations
     runs-on: ubuntu-latest
