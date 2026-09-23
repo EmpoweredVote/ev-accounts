@@ -25,9 +25,12 @@
 -- LA County Registrar-Recorder (RR/CC) candidate list or result for Nov 2020 / 2022 / 2024. Several
 -- are real people from a much older board (Culver City's Scott Zeidman and Kathy Paspalis); many
 -- have no trace at all (web search for Culver City's Dawn Espe, Sadie Farber and Jamila Thomas, and
--- for El Segundo's Al Winkler, Robin Funk and Amanda Grossman, finds no board service); and at least
+-- for El Segundo's Al Winkler and Amanda Grossman, finds no board service); and at least
 -- two are real trustees of a DIFFERENT district (Larry Redinger, Walnut Valley, seated on Charter
 -- Oak; Vivian Malauulu, Long Beach, seated on ABC).
+-- CORRECTION (2026-09-23, from the CA_0156 holder audit): an earlier version of this header also
+-- listed El Segundo's Robin Funk as having no trace. That was wrong -- Robin Funk served on the El
+-- Segundo board 2005-2013. This comment-only fix changes nothing that was applied.
 --
 -- ---------------------------------------------------------------------------------------------------
 -- B. HOW THE STALE TERMS ARE ENDED -- operator decision (Chris Andrews, 2026-09-22)
