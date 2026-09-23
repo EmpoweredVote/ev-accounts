@@ -200,12 +200,12 @@ describe('getCities — ?fields=index', () => {
   it('maps rows to the lean shape with has_data as a real boolean', async () => {
     query.mockResolvedValue({ rows: [{
       id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
-      county_id: null, has_data: true,
+      county_id: null, has_data: true, latest_year: '2024',
     }] });
     const [row] = await getCities('summary', undefined, { fields: 'index' });
     expect(row).toEqual({
       id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
-      county_id: null, has_data: true,
+      county_id: null, has_data: true, latest_year: 2024,
     });
   });
 
@@ -213,5 +213,34 @@ describe('getCities — ?fields=index', () => {
     await getCities('summary', undefined, { fields: 'index', state: 'CA' });
     expect(params()).toEqual(['CA']);
     expect(sql()).toMatch(WHERE_CLAUSE);
+  });
+
+  it('carries the newest fiscal year in the index projection', async () => {
+    await getCities('summary', undefined, { fields: 'index' });
+    expect(sql()).toMatch(/MAX\(b\.fiscal_year\) AS latest_year/);
+  });
+
+  it('coerces latest_year from the string node-postgres returns for bigint', async () => {
+    query.mockResolvedValue({ rows: [{
+      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
+      county_id: null, has_data: true, latest_year: '2024',
+    }] });
+    const [row] = await getCities('summary', undefined, { fields: 'index' });
+    expect(row).toEqual({
+      id: 'c1', name: 'Testville', state: 'CA', entity_type: 'city',
+      county_id: null, has_data: true, latest_year: 2024,
+    });
+  });
+
+  it('reports a null latest_year for an entity with no budget rows', async () => {
+    query.mockResolvedValue({ rows: [{
+      id: 'c2', name: 'Grouper County', state: 'MI', entity_type: 'county',
+      county_id: null, has_data: false, latest_year: null,
+    }] });
+    const [row] = await getCities('summary', undefined, { fields: 'index' });
+    expect(row).toEqual({
+      id: 'c2', name: 'Grouper County', state: 'MI', entity_type: 'county',
+      county_id: null, has_data: false, latest_year: null,
+    });
   });
 });

@@ -275,6 +275,18 @@ interface CityRow {
   dataset_summary: { years: Array<string | number> | null; dataset_types: string[] | null } | null;
 }
 
+// Raw shape of a `?fields=index` row — bigint (fiscal_year -> latest_year)
+// comes back from pg as a string or null; see the note on TreasuryCityIndex.
+interface CityIndexRow {
+  id: string;
+  name: string;
+  state: string;
+  entity_type: string | null;
+  county_id: string | null;
+  has_data: boolean;
+  latest_year: string | null;
+}
+
 interface BudgetRow {
   id: string;
   municipality_id: string;
@@ -613,10 +625,18 @@ export interface TreasuryCityIndex {
   entity_type: string | null;
   county_id: string | null;
   has_data: boolean;
+  /**
+   * The newest fiscal year this entity has a budget row for, or null when it
+   * has none. ⚠ Carried in the index because Treasury Tracker's landing search
+   * prints it beside every result; without it that label silently blanks.
+   * Costs ~5 bytes/row (~40 KB on a 1,127 KB payload).
+   */
+  latest_year: number | null;
 }
 
 const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
-            (COUNT(b.id) > 0) AS has_data`;
+            (COUNT(b.id) > 0) AS has_data,
+            MAX(b.fiscal_year) AS latest_year`;
 
 /**
  * Entity types the treasury schema actually stores. Measured 2026-09-22:
@@ -658,7 +678,7 @@ export async function getCities(
 
   const index = filters.fields === 'index';
 
-  const { rows } = await pool.query<CityRow | (TreasuryCityIndex & { has_data: boolean })>(
+  const { rows } = await pool.query<CityRow | CityIndexRow>(
     `SELECT ${index
       ? COLUMNS_INDEX
       : `m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
@@ -676,9 +696,12 @@ export async function getCities(
     vals
   );
   return index
-    ? (rows as Array<TreasuryCityIndex & { has_data: boolean }>).map((r) => ({
+    ? (rows as CityIndexRow[]).map((r) => ({
         id: r.id, name: r.name, state: r.state, entity_type: r.entity_type,
         county_id: r.county_id ?? null, has_data: Boolean(r.has_data),
+        // ⚠ node-postgres returns bigint (fiscal_year) as a JS string; a raw
+        // passthrough would put "2024" where the frontend expects a number.
+        latest_year: r.latest_year !== null && r.latest_year !== undefined ? Number(r.latest_year) : null,
       }))
     : (rows as CityRow[]).map((r) => mapCity(r, mode));
 }
