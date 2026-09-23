@@ -1339,7 +1339,7 @@ describe('computeRaceMatch — the reveal is keyed by question', () => {
 
 // ---------------------------------------------------------------------------
 // The content repoint split one alias into two: `ct` (inform.compass_topics)
-// still matches the row and carries `is_live`; `ctc`
+// still matches the row and carries the kill switch; `ctc`
 // (inform.compass_topics_current) carries the wording. That split is only safe
 // while the kill switch keeps reading `ct`.
 //
@@ -1347,9 +1347,17 @@ describe('computeRaceMatch — the reveal is keyed by question', () => {
 // column, so moving the kill switch onto `ctc` does not error — it silently
 // deletes the condition, and every retired Compass topic comes back into a
 // voter-facing surface. Nothing else in the suite would notice.
+//
+// The switch itself is no longer is_live: 17 Season 2 topics are is_live =
+// false (created staged; opening a season flips no boolean), so their quotes
+// were dropped from every race. It is now "a published season asks this topic"
+// — seasonService.topicAskedByPublishedSeason — still on `ct`, still in WHERE.
 // ---------------------------------------------------------------------------
-describe('content repoint — the is_live kill switch must stay on ct', () => {
-  const killSwitch = /\(\s*ct2?\.topic_key IS NULL OR ct2?\.is_live = true\s*\)/;
+describe('content repoint — the kill switch must stay on ct', () => {
+  const killSwitch =
+    /\(\s*ct2?\.topic_key IS NULL OR EXISTS \(\s*SELECT 1 FROM inform\.season_questions sq[\s\S]*?WHERE sq\.topic_id = ct2?\.id\)\s*\)/;
+  // SQL comments stripped: the query explains in prose why is_live is gone.
+  const code = (sql: string) => sql.replace(/--[^\n]*/g, '');
 
   it('keeps the kill switch reading ct in the playable-races query', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [] });
@@ -1357,6 +1365,10 @@ describe('content repoint — the is_live kill switch must stay on ct', () => {
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(killSwitch);
+    // Two switches here: the rankable-question count (ct2) and the race list
+    // (ct). Gating only one lets a retired topic count toward a race it cannot show.
+    expect(sql.match(new RegExp(killSwitch.source, 'g'))).toHaveLength(2);
+    expect(code(sql)).not.toMatch(/is_live\s*=\s*true/);
     expect(sql).not.toMatch(/ctc\.is_live/);
   });
 
@@ -1366,6 +1378,7 @@ describe('content repoint — the is_live kill switch must stay on ct', () => {
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(killSwitch);
+    expect(code(sql)).not.toMatch(/is_live\s*=\s*true/);
     expect(sql).toContain('inform.compass_topics_current ctc');
     expect(sql).not.toMatch(/ctc\.is_live/);
   });
@@ -1379,6 +1392,7 @@ describe('content repoint — the is_live kill switch must stay on ct', () => {
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(killSwitch);
+    expect(code(sql)).not.toMatch(/is_live\s*=\s*true/);
     expect(sql).toContain('inform.compass_topics_current ctc');
     expect(sql).not.toMatch(/ctc\.is_live/);
   });

@@ -19,6 +19,7 @@ import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
 import { resolvedDistrictCount } from '../lib/jurisdictionPayload.js';
+import { topicAskedByPublishedSeason } from '../lib/seasonService.js';
 
 /**
  * Build MTFCC-tagged (geo_id, mtfcc) pairs from a connected profile's typed
@@ -329,8 +330,11 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
         ORDER BY o.id DESC
         LIMIT 1
       ) o ON true
-      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
-      -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
+      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ${topicAskedByPublishedSeason('ct.id')}
+      -- The gate is "a published season asks this topic", not is_live: 17 Season 2
+      -- topics are is_live = false, and a row with no topic match is dropped below,
+      -- so their quotes vanished. See topicAskedByPublishedSeason.
+      -- TEXT ONLY (ADR 0004). ct keeps the match and the retired-topic gate; ctc carries
       -- the current revision's wording, which CA_0012's freeze trigger means ct
       -- itself can no longer receive. Voter-facing, so stale text here is a
       -- content error rather than a cosmetic one.

@@ -12,6 +12,7 @@ import {
   publicMeetingStatusClause,
   publicMeetingExistsClause,
 } from './meetingVisibility.js';
+import { topicAskedByPublishedSeason } from './seasonService.js';
 
 export interface TopicListEntry {
   topicKey: string;
@@ -53,9 +54,11 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
             COUNT(DISTINCT mt.meeting_id) AS meeting_count
      FROM meetings.meeting_topics mt
      LEFT JOIN inform.compass_topics ct
-       ON ct.topic_key = mt.topic_key AND ct.is_live = true
-     -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
-     -- the current revision's wording. CA_0012 froze ct's own text columns.
+       ON ct.topic_key = mt.topic_key AND ${topicAskedByPublishedSeason('ct.id')}
+     -- TEXT ONLY (ADR 0004). ct keeps the match and the retired-topic gate; ctc
+     -- carries the current revision's wording. CA_0012 froze ct's own text columns.
+     -- The gate is "a published season asks this topic", not is_live — 17 Season 2
+     -- topics are is_live = false; see topicAskedByPublishedSeason.
      LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
      -- Public status gate (ev-cto decision 0017): count tags only on publicly
      -- visible meetings, so a draft meeting's topic tags never inflate a count.
@@ -83,13 +86,14 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
 
 export async function getTopicByKey(topicKey: string): Promise<TopicDetail | null> {
   const { rows: titleRows } = await pool.query<{ title: string | null }>(
-    // TEXT ONLY (ADR 0004): ct gates on is_live, ctc supplies the current
+    // TEXT ONLY (ADR 0004): ct gates on a published season asking the topic
+    // (not is_live — see topicAskedByPublishedSeason), ctc supplies the current
     // revision's wording. CA_0012 froze ct.short_title, so reading it here would
     // pin this page to the 2026-08-21 text.
     `SELECT ctc.short_title AS title
        FROM inform.compass_topics ct
        JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
-      WHERE ct.topic_key = $1 AND ct.is_live = true LIMIT 1`,
+      WHERE ct.topic_key = $1 AND ${topicAskedByPublishedSeason('ct.id')} LIMIT 1`,
     [topicKey]
   );
 

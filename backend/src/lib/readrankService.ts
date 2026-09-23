@@ -4,6 +4,7 @@ import { env } from './env.js';
 import { getBoundaryBatch, getDistrictCountyGeoIds, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 import { USPS_TO_FIPS } from './usStateCodes.js';
+import { topicAskedByPublishedSeason } from './seasonService.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -403,10 +404,11 @@ export async function getPlayableRaces(
                WHERE rc2.race_id = r.id
                  AND essentials.is_live_candidate(rc2.candidate_status, rc2.result)
                  -- A topic with no Compass row is allowed through; one that HAS a
-                 -- Compass row must have it live. Keeping is_live in the LEFT JOIN's
-                 -- ON clause would invert the kill switch: a retired topic would fail
-                 -- to match, yield ct2 IS NULL, and survive as an "unknown" topic.
-                 AND (ct2.topic_key IS NULL OR ct2.is_live = true)
+                 -- Compass row must be asked by a published season. Keeping the
+                 -- switch in the LEFT JOIN's ON clause would invert it: a retired
+                 -- topic would fail to match, yield ct2 IS NULL, and survive as an
+                 -- "unknown" topic. Not is_live — see topicAskedByPublishedSeason.
+                 AND (ct2.topic_key IS NULL OR ${topicAskedByPublishedSeason('ct2.id')})
                -- Per QUESTION, not per topic. Grouping by lower(topic_key) counted a
                -- split topic as one rankable unit whenever its two questions had one
                -- answering candidate each — a pairing no single question satisfies.
@@ -445,9 +447,11 @@ export async function getPlayableRaces(
       LIMIT 1
     ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
     -- Topic spine, in WHERE not ON: a quote whose topic has no Compass row is kept,
-    -- but a quote on a RETIRED (is_live = false) Compass topic is still dropped.
-    -- In the ON clause this predicate would silently disable that kill switch.
-    WHERE (ct.topic_key IS NULL OR ct.is_live = true)
+    -- but a quote on a RETIRED Compass topic — one no published season asks — is
+    -- still dropped. In the ON clause this predicate would silently disable that
+    -- kill switch. It used to read is_live, which hid every quote on the 17
+    -- Season 2 topics created staged; see topicAskedByPublishedSeason.
+    WHERE (ct.topic_key IS NULL OR ${topicAskedByPublishedSeason('ct.id')})
     GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
              d.mtfcc, d.label, d.district_type, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
@@ -643,7 +647,7 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
      AND q.readrank_selected = true
     LEFT JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key)
-    -- TEXT ONLY (ADR 0004). ct stays the matcher and the is_live kill switch;
+    -- TEXT ONLY (ADR 0004). ct stays the matcher and the retired-topic kill switch;
     -- ctc supplies title and question_text from the CURRENT revision. Splitting
     -- them is what makes publishing a revision reach this surface: CA_0012 froze
     -- compass_topics' own text columns, so reading ct.short_title here would show
@@ -655,11 +659,11 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
     LEFT JOIN essentials.readrank_race_topic_questions rtq
       ON rtq.race_id = r.id AND rtq.topic_key = lower(q.topic_key)
     WHERE r.id = $1
-      -- See getPlayableRaces: the is_live kill switch lives here, not in the ON
-      -- clause, so a retired Compass topic still disappears from the evaluation.
-      -- 🔴 It reads ct, NOT ctc. Promotion state is not in the content view, and
-      -- moving this onto ctc would silently delete the kill switch.
-      AND (ct.topic_key IS NULL OR ct.is_live = true)
+      -- See getPlayableRaces: the kill switch lives here, not in the ON clause,
+      -- so a retired Compass topic still disappears from the evaluation.
+      -- 🔴 It reads ct, NOT ctc. ctc is the content view; keyed on ct.id the
+      -- switch cannot be moved onto it by accident.
+      AND (ct.topic_key IS NULL OR ${topicAskedByPublishedSeason('ct.id')})
     -- Non-Compass topics have no short_title; order them by key so a race with
     -- several of them still comes back in a stable order rather than by chance.
     -- The trailing two keys order CARDS WITHIN a topic: ordering by topic title
@@ -762,8 +766,8 @@ export async function computeRaceMatch(
     WHERE r.id = $1 AND q.id = ANY($2::uuid[])
       -- Kill switch in WHERE, not ON — see getPlayableRaces. The reveal must not
       -- resurrect a retired topic the evaluation payload already refused to show.
-      -- 🔴 ct, not ctc — the content view carries no is_live.
-      AND (ct.topic_key IS NULL OR ct.is_live = true)
+      -- 🔴 ct, not ctc — keep both payloads gating on the same alias.
+      AND (ct.topic_key IS NULL OR ${topicAskedByPublishedSeason('ct.id')})
   `, [raceId, quoteIds]);
 
   if (rows.length === 0) return { raceId, positionName: '', ballot: [] };
