@@ -50,9 +50,10 @@ vi.mock('../lib/supabase.js', () => ({
   requestDb: requestDbMock,
 }));
 
-// The route calls promoteCompassImportDraft() before the read; stub it inert.
+// No promoteCompassImportDraft stub, on purpose: GET /answers no longer runs the
+// lazy draft promotion (the legacy import that wrote drafts is gone), and vitest
+// throws if the route reaches for an export this mock does not define.
 vi.mock('../lib/compassService.js', () => ({
-  promoteCompassImportDraft: vi.fn().mockResolvedValue(undefined),
   getCompassCompleteness: vi.fn(),
   getCompassTopics: vi.fn(),
   getCompassCategories: vi.fn(),

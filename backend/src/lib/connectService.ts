@@ -8,7 +8,7 @@
  * Uses only createUserClient (RLS-enforced) and supabaseAnon (public reads).
  */
 
-import { requestDb, supabaseAnon, adminRpc, supabaseAdmin } from './supabase.js';
+import { requestDb, adminRpc, supabaseAdmin } from './supabase.js';
 import { pool } from './db.js';
 import { saveSelectedTopics, validateTopicIds } from './compassService.js';
 
@@ -24,13 +24,6 @@ export interface VerificationSession {
   region_draft: string | null;
   home_address_draft: string | null;
   invite_code_id: string | null;
-}
-
-export interface CalibrationItem {
-  topic_id: string;
-  topic_version: number;
-  stance_id: string;
-  inverted: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -176,44 +169,6 @@ export async function updateVerificationSession(
   return rows[0];
 }
 
-/**
- * getVerificationSessionId
- * Returns the session's UUID, or null if no session exists.
- * Used to check session presence before saving a compass import draft.
- */
-export async function getVerificationSessionId(
-  accessToken: string,
-  userId: string
-): Promise<string | null> {
-  const db = requestDb(accessToken);
-  const { data, error } = await db
-    .schema('connect')
-    .from('verification_sessions')
-    .select('id')
-    .eq('user_id', userId)
-    .maybeSingle();
-
-  if (error) throw error;
-  return data?.id ?? null;
-}
-
-/**
- * saveCompassImportDraft
- * Stores the compass calibration JSON in verification_sessions.compass_import_draft.
- */
-export async function saveCompassImportDraft(
-  accessToken: string,
-  userId: string,
-  calibrations: CalibrationItem[]
-): Promise<void> {
-  await pool.query(
-    `UPDATE connect.verification_sessions
-     SET compass_import_draft = $2, updated_at = now()
-     WHERE user_id = $1`,
-    [userId, JSON.stringify(calibrations)]
-  );
-}
-
 // ---------------------------------------------------------------------------
 // Compass calibration direct import — uses adminRpc (SECURITY DEFINER)
 // ---------------------------------------------------------------------------
@@ -276,48 +231,6 @@ export async function importCompassCalibrations(params: {
   }
 
   return { imported: params.calibrations.length, onboarding_complete: shouldCompleteOnboarding };
-}
-
-// ---------------------------------------------------------------------------
-// Compass version validation — public inform data, uses supabaseAnon
-// ---------------------------------------------------------------------------
-
-/**
- * validateCompassVersions
- * Compares each calibration's topic_version against live server versions.
- * Returns { valid, mismatched, ready_to_import }.
- */
-export async function validateCompassVersions(calibrations: CalibrationItem[]): Promise<{
-  valid: CalibrationItem[];
-  mismatched: Array<{ topic_id: string; client_version: number; server_version: number | null }>;
-  ready_to_import: boolean;
-}> {
-  const { data: liveTopics, error } = await supabaseAnon
-    .schema('inform')
-    .from('compass_topics')
-    .select('id,version')
-    .eq('is_live', true);
-
-  if (error) throw error;
-
-  const liveVersionMap = new Map<string, number>();
-  for (const topic of liveTopics ?? []) {
-    liveVersionMap.set(topic.id, topic.version);
-  }
-
-  const valid: CalibrationItem[] = [];
-  const mismatched: Array<{ topic_id: string; client_version: number; server_version: number | null }> = [];
-
-  for (const cal of calibrations) {
-    const serverVersion = liveVersionMap.get(cal.topic_id) ?? null;
-    if (serverVersion === null || cal.topic_version !== serverVersion) {
-      mismatched.push({ topic_id: cal.topic_id, client_version: cal.topic_version, server_version: serverVersion });
-    } else {
-      valid.push(cal);
-    }
-  }
-
-  return { valid, mismatched, ready_to_import: mismatched.length === 0 };
 }
 
 // ---------------------------------------------------------------------------

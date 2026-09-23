@@ -7,15 +7,11 @@ import {
   getConnectedProfileVerificationStatus,
   getVerificationSession,
   getVerificationSessionStep,
-  getVerificationSessionId,
   upsertVerificationSession,
   updateVerificationSession,
-  validateCompassVersions,
-  saveCompassImportDraft,
   importCompassCalibrations,
   getLocationConsent,
   getEnrollmentDrafts,
-  type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
@@ -64,16 +60,18 @@ const setLocationBodySchema = z.object({
   force: z.boolean().optional().default(false),
 });
 
+// `value` is REQUIRED. A calibration carrying only a legacy `stance_id` used to be
+// validated against compass_topics.is_live and parked as a draft; that path is
+// gone (see the route). An unknown `stance_id` key is stripped, not honoured.
 const compassImportBodySchema = z.object({
   calibrations: z.array(
     z.object({
       topic_id: z.string().uuid(),
       topic_version: z.number().int().positive(),
-      stance_id: z.string().uuid().optional(),
-      value: z.number().int().min(1).max(5).optional(),
+      value: z.number().int().min(1).max(5),
       inverted: z.boolean().optional().default(false),
     })
-  ),
+  ).min(1, 'At least one calibration with a value is required'),
   selected_topics: z.array(z.string().uuid()).min(0).max(8).optional(),
   confirmed: z.boolean().optional().default(false),
   user_id: z.string().uuid().optional(),
@@ -426,19 +424,24 @@ router.get('/status', requireAuth, async (req: Request, res: Response): Promise<
 // ---------------------------------------------------------------------------
 
 /**
- * Two-phase compass calibration import.
+ * Compass calibration import. Every calibration carries a numeric `value`.
  *
- * Phase 1 (confirmed: false) — Validation:
- *   Compare each calibration's topic_version against live server versions.
- *   Returns { valid, mismatched, ready_to_import } so the client can prompt
- *   the user to re-take any mismatched topics before confirming.
+ * Phase 1 (confirmed: false) returns { valid: [], mismatched: [], ready_to_import: true }
+ *   and reads nothing. It only ever validated LEGACY stance_id calibrations; for
+ *   value-bearing ones this was always its answer, and a client that still asks
+ *   first gets the same one. The values themselves are validated by the import
+ *   (import_compass_calibrations raises INVALID_CALIBRATION, answered 400).
  *
- * Phase 2 (confirmed: true) — Write:
- *   Direct import path: calibrations include numeric value fields.
- *     Calls importCompassCalibrations RPC. Optionally commits selected_topics
- *     and marks onboarding complete when 3–8 topic IDs are provided.
- *   Legacy path: calibrations have stance_id only (no value field).
- *     Requires active verification session. Saves draft for lazy promotion.
+ * Phase 2 (confirmed: true) calls importCompassCalibrations. Optionally commits
+ *   selected_topics and marks onboarding complete when 3–8 topic IDs are provided.
+ *
+ * 🔴 THE LEGACY stance_id PATH WAS REMOVED 2026-09-23. It validated versions
+ * against compass_topics.is_live and the frozen compass_topics.version — wrong on
+ * the 17 Season 2 topics created staged (is_live = false) and on 25 of the 60 the
+ * season asks — then parked the calibration as a verification-session draft for
+ * GET /compass/answers to promote. Nothing called it: 0 requests in the Render
+ * logs retained that day (2026-09-09 onward), 0 verification sessions and 0
+ * drafts on prod, and no client in the workspace. Such a body is now a 422.
  *
  * Admin path: if user_id is provided in the body, requireAdmin is enforced
  * and the import is performed on behalf of the specified user.
@@ -460,11 +463,8 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
 
   try {
     if (!confirmed) {
-      // Phase 1: Validate topic versions against live server versions
-      // Only validate calibrations that have topic_version (legacy path)
-      const legacyCals = calibrations.filter(c => c.stance_id !== undefined) as CalibrationItem[];
-      const result = await validateCompassVersions(legacyCals);
-      res.status(200).json(result);
+      // Phase 1: nothing to pre-check for value-bearing calibrations — see above.
+      res.status(200).json({ valid: [], mismatched: [], ready_to_import: true });
       return;
     }
 
@@ -480,73 +480,58 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
     }
 
     const targetUserId = parsed.data.user_id ?? userId;
-    const calibrationsWithValue = calibrations.filter(c => c.value !== undefined);
+    const importItems = calibrations.map(c => ({
+      topic_id: c.topic_id,
+      value: c.value,
+      inverted: c.inverted ?? false,
+    }));
 
-    if (calibrationsWithValue.length > 0) {
-      // New direct import path — calibrations include numeric values
-      const importItems = calibrationsWithValue.map(c => ({
-        topic_id: c.topic_id,
-        value: c.value!,
-        inverted: c.inverted ?? false,
-      }));
-
-      try {
-        const result = await importCompassCalibrations({
-          userId: targetUserId,
-          accessToken,
-          calibrations: importItems,
-          selectedTopics: parsed.data.selected_topics,
+    try {
+      const result = await importCompassCalibrations({
+        userId: targetUserId,
+        accessToken,
+        calibrations: importItems,
+        selectedTopics: parsed.data.selected_topics,
+      });
+      res.status(200).json({
+        imported: true,
+        count: result.imported,
+        onboarding_complete: result.onboarding_complete,
+      });
+    } catch (importErr: unknown) {
+      const e = importErr as { code?: string; message?: string; invalid_ids?: string[] };
+      if (e.code === 'INVALID_CALIBRATION') {
+        res.status(400).json({
+          code: 'INVALID_CALIBRATION',
+          message: 'One or more calibrations failed validation — nothing was saved',
         });
-        res.status(200).json({
-          imported: true,
-          count: result.imported,
-          onboarding_complete: result.onboarding_complete,
-        });
-      } catch (importErr: unknown) {
-        const e = importErr as { code?: string; message?: string; invalid_ids?: string[] };
-        if (e.code === 'INVALID_CALIBRATION') {
-          res.status(400).json({
-            code: 'INVALID_CALIBRATION',
-            message: 'One or more calibrations failed validation — nothing was saved',
-          });
-          return;
-        }
-        if (e.code === 'INVALID_TOPIC_IDS') {
-          res.status(422).json({
-            code: 'INVALID_TOPIC_IDS',
-            message: 'Invalid selected topic IDs',
-            invalid_ids: e.invalid_ids,
-          });
-          return;
-        }
-        // The selected topics could not be validated because no season is open.
-        // A server-state problem, not a bad import — 503 so the caller knows to
-        // retry rather than to go and fix their payload.
-        //
-        // ⚠ This gates only `selectedTopics`. The CALIBRATIONS themselves are
-        // validated by validateCompassVersions, which reads the content view and
-        // stays permissive on purpose: an imported calibration may legitimately
-        // name a topic we no longer ask. Do not fold that one into the season.
-        if (e.code === 'NO_PROMOTED_TOPICS') {
-          res.status(503).json({
-            code: 'NO_PROMOTED_TOPICS',
-            message: 'Compass topics are unavailable right now — no season is open.',
-          });
-          return;
-        }
-        throw importErr;
-      }
-    } else {
-      // Legacy path: save draft for lazy promotion
-      // Require an active verification session for legacy path
-      const sessionId = await getVerificationSessionId(accessToken, userId);
-      if (!sessionId) {
-        res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
         return;
       }
-      const legacyCals = calibrations as CalibrationItem[];
-      await saveCompassImportDraft(accessToken, userId, legacyCals);
-      res.status(200).json({ imported: true, count: calibrations.length });
+      if (e.code === 'INVALID_TOPIC_IDS') {
+        res.status(422).json({
+          code: 'INVALID_TOPIC_IDS',
+          message: 'Invalid selected topic IDs',
+          invalid_ids: e.invalid_ids,
+        });
+        return;
+      }
+      // The selected topics could not be validated because no season is open.
+      // A server-state problem, not a bad import — 503 so the caller knows to
+      // retry rather than to go and fix their payload.
+      //
+      // ⚠ This gates only `selectedTopics`. The CALIBRATIONS are validated by
+      // import_compass_calibrations itself — the topic must exist and the value
+      // be 1..5 (INVALID_CALIBRATION above) — and that stays permissive on
+      // purpose: an imported calibration may legitimately name a topic we no
+      // longer ask. Do not fold that one into the season.
+      if (e.code === 'NO_PROMOTED_TOPICS') {
+        res.status(503).json({
+          code: 'NO_PROMOTED_TOPICS',
+          message: 'Compass topics are unavailable right now — no season is open.',
+        });
+        return;
+      }
+      throw importErr;
     }
   } catch (err) {
     console.error('[connect/compass-import] Unexpected error:', err);
