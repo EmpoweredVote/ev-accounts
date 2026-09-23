@@ -26,6 +26,13 @@
  * keyed `value` instead of `chair_after`, yields ZERO pairs and therefore a vacuous OK — so write the
  * campaign's `written-<batch>.json` in that exact shape and it doubles as this gate's input.
  *
+ * 🔴 NAME THE SEASON FOR ANY PAIR THAT HAS ROWS IN MORE THAN ONE. Context and answers are keyed
+ * (politician_id, topic_id, season_id). Without a season the lookup below joins every context row of
+ * the pair to every answer row and judges whichever comes back first — on CA_0190 it read four
+ * untouched SEASON 1 rows and failed them, while the Season 2 rows the migration wrote were never
+ * looked at. So a `season_id` on the row, or at the top of the file, scopes the lookup to that
+ * season's context and that season's answer. Files without one read exactly as before.
+ *
  * ⚠ PATHS.
  *   · The `--check` argument is resolved UNDER `backend/data/stance-retirement/` unless it already
  *     starts with `data/` (a leading `backend/` is stripped first). So `--check foo.json` reads
@@ -58,7 +65,9 @@ const files = CHECK ? [['check', CHECK.replace(/^backend\//, '')]] : DEFAULT_FIL
 const pairs = [];
 for (const [mig, f] of files) {
   const j = JSON.parse(fs.readFileSync(f.startsWith('data/') ? f : `data/stance-retirement/${f}`, 'utf8'));
-  for (const r of j.rows || []) pairs.push({ mig, pid: r.politician_id, tid: r.topic_id, chair: r.chair_after });
+  for (const r of j.rows || []) {
+    pairs.push({ mig, pid: r.politician_id, tid: r.topic_id, chair: r.chair_after, season: r.season_id ?? j.season_id ?? null });
+  }
 }
 
 // --csv: GATE A RESEARCH CSV *BEFORE* IT IS WRITTEN.
@@ -124,14 +133,17 @@ for (const p of pairs) {
        JOIN inform.compass_topics t ON t.id = c.topic_id
        LEFT JOIN inform.politician_answers a
               ON a.politician_id = c.politician_id AND a.topic_id = c.topic_id
-      WHERE c.politician_id = $1 AND c.topic_id = $2`,
-    [p.pid, p.tid],
+             AND ($3::uuid IS NULL OR a.season_id = c.season_id)
+      WHERE c.politician_id = $1 AND c.topic_id = $2
+        AND ($3::uuid IS NULL OR c.season_id = $3)`,
+    [p.pid, p.tid, p.season],
   );
   if (!r[0]) continue;
   // A BLANKED SPOKE IS RESOLVED, NOT OWED. The debt is "chairs seated without evidence for that
   // chair"; a row with no answer seats no chair, so counting its directional reasoning as debt
   // would keep the number from ever converging and invite a future pass to redo settled rows.
-  if (r[0].chair_now == null) { blanked++; continue; }
+  // value 0 is the season-era blank (CC_0057) and seats no chair either.
+  if (r[0].chair_now == null || Number(r[0].chair_now) === 0) { blanked++; continue; }
   rows.push({
     ...p, ...r[0],
     names_instrument: NAMES_INSTRUMENT.test(r[0].reasoning || ''),
