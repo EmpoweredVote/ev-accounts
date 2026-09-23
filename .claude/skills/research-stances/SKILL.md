@@ -152,14 +152,36 @@ finds debate turns and silently misses every interview.
 
 ---
 
-## STEP 1 — Dispatch Research Agents
+## STEP 1 — Research Each Politician Yourself, Inline
 
-For each politician, dispatch a `politician-stance-researcher` agent using the Agent tool.
+🔴🔴 **Do NOT dispatch a research sub-agent. Do this work yourself, one politician per
+run.** This skill used to say to dispatch a `politician-stance-researcher` agent per politician.
+That instruction was withdrawn by ruling on 2026-08-24 and reaffirmed on 2026-09-23. Following it
+as written turned 38 researched rows into 8 survivors.
 
-**Dispatch rules:**
-- **Always dispatch ONE agent at a time.** Never run agents in parallel.
-- Wait for each agent to complete and confirm the CSV was written before dispatching the next.
-- Running parallel agents burns the WebSearch/Playwright rate limit quota instantly, producing no usable output.
+**Execution rules:**
+- **One politician per run.** Finish a person, review them, then start the next. Do not batch
+  several people into one pass, and do not work two people concurrently.
+- Confirm the CSV rows for that person are written before you start the next person.
+- Use WebFetch only. Never WebSearch or Playwright — both share a rate-limited quota pool.
+
+**Why inline, and not an agent — three reasons, none of them stylistic:**
+1. **No MCP server is bound inside a sub-agent.** A research agent has no route to the season
+   pin, the ladder text, or the database. It can web-search and report, and nothing more — so it
+   cannot do the one thing this skill exists to do.
+2. **Sub-agents here have repeatedly reported verification they never ran.** A returned CSV that
+   claims its sources were fetched is not evidence that they were.
+3. **A cohort pass needs finished peers to compare against, and a batch hides which judgment went
+   wrong.** When 38 rows arrive together the review cost is the whole batch; when one person
+   arrives, the reviewer can point at the row and the instrument.
+
+🔴 **Read the ladders from the season pin, not from the researcher agent definition.**
+`.claude/agents/politician-stance-researcher.md` carries hard-coded 1–5 scale text that is a copy
+of the **frozen** `inform.compass_stances` table — `abortion` chair 1 and `same-sex-marriage`
+chair 1 there are both stale against the Season 3 pin. Use the topic JSON resolved in STEP 0 as
+the only authority for rung text. The agent file is still useful for its URL patterns
+(`### URL Patterns — Fetch These in Order`) and its per-office guidance; read it with the Read
+tool for those, and ignore its scales.
 
 **Inject the canonical curation rules (do not paraphrase them here).** Run
 
@@ -167,13 +189,15 @@ For each politician, dispatch a `politician-stance-researcher` agent using the A
 node .claude/skills/research-stances/scripts/extract-canonical-rules.mjs gates deid note
 ```
 
-and paste its output into the sub-agent prompt below at the three `INJECT:` markers (`gates`, `deid`,
+and paste its output into the research contract below at the three `INJECT:` markers (`gates`, `deid`,
 `note`). These rules come from the on-the-record corpus (sibling checkout; canonical home
 `on-the-record/docs/quote-curation/PRINCIPLES.md` and its mechanics files) — never restate them from
 memory. If the extractor errors, the on-the-record checkout is missing: **STOP** and resolve that, do
 not fall back to a remembered summary.
 
-**Agent prompt template:**
+**Research contract — the standard you hold yourself to for the one politician you are on.**
+Read it as instructions to you, not as a prompt to send anywhere. Substitute the bracketed
+values for the person in front of you.
 
 ```
 Research the political stances of [POLITICIAN_NAME] ([OFFICE/TITLE if known]).
@@ -242,9 +266,10 @@ header) as source_url_1. Only use WebFetch for topics the transcript does not co
 TOOL RULE:
 - Prefer the OTR transcript file above (Read tool) — it is the strongest, pre-verified source.
 - For anything it doesn't cover, use WebFetch ONLY. Never use WebSearch or Playwright — both share a
-  rate-limited quota pool. Fetch URLs directly using the patterns in your agent definition
-  (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times). If a URL 404s, try
-  the next pattern. Do not fall back to WebSearch.
+  rate-limited quota pool. Fetch URLs directly using the patterns under `### URL Patterns — Fetch
+  These in Order` in `.claude/agents/politician-stance-researcher.md` (Ballotpedia,
+  ontheissues.org, official pages, Wikipedia, CalMatters, LA Times) — read that file for them. If a
+  URL 404s, try the next pattern. Do not fall back to WebSearch.
 
 CSV OUTPUT — columns (RFC-4180; wrap any field with commas in double quotes, double embedded quotes):
   full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
@@ -277,17 +302,19 @@ Other rules:
 >       4 = "[stance text for value 4]"
 >       5 = "[stance text for value 5]"
 
-Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
+🔴 **Do not call the Agent tool here.** `politician-stance-researcher` is retained for its URL
+patterns and per-office guidance, which you read; it is not to be dispatched.
 
 ---
 
 ## STEP 2 — Collect and Merge Results
 
-After all agents complete:
+After the last politician in the batch is finished:
 
-1. Read the CSV file(s) generated by the agents
-2. If multiple agents wrote to the same file, verify no duplicate headers
-3. If agents returned results in their response text instead of writing to file, manually compile into the CSV file using the Write tool
+1. Read the CSV file(s) you wrote
+2. Verify no duplicate headers where runs appended to the same file
+3. Confirm every person you researched is represented — a person with no rows is a documented
+   zero and must be recorded as one, not silently dropped
 4. Count total stances collected vs. expected (politicians x topics)
 5. The CSV includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
 
@@ -784,20 +811,20 @@ await pool.end();
 " -- "REWRITE_ID_HERE"
 ```
 
-Confirm with the user before dispatching agents:
+Confirm with the user before starting:
 - Topic being rewritten (`topic_key` and old→new version)
 - New framing (title, question_text, 5 stance texts)
 - Old framing for context
 - Count of politicians to re-evaluate (= count of pending proposals)
 - Estimated scope ("~30 politicians × 1 topic = 30 re-evaluations")
 
-## STEP 1 (rewrite mode) — Dispatch re-evaluation agents
+## STEP 1 (rewrite mode) — Re-evaluate each politician yourself, inline
 
-For each politician with a pending proposal (batch size 3–5 per
-agent to keep context manageable), dispatch a
-`politician-stance-researcher` agent.
+🔴🔴 **Same rule as normal mode: no sub-agent, one politician per run.** Re-evaluation is
+the higher-stakes direction — it changes a curated value rather than filling a blank — so the
+reasons in STEP 1 above apply with more force, not less.
 
-**Dispatch prompt template for re-evaluation:**
+**Re-evaluation contract — instructions to you, for the one politician you are on:**
 
 ```
 You are running in REWRITE RE-EVALUATION MODE.
