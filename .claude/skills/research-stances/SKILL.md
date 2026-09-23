@@ -459,11 +459,21 @@ high-severity mechanical findings.
 **(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
 the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
 passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgment findings
-(`not-forward`, `is-attack`, `off-question`, `deid-dishonest`, `note-not-self-contained`,
-`source-summary`, `coupling-in-tension`, `source-not-an-answer`). Resolve them:
+(`not-forward`, `is-attack`, `off-question`, `question-override`, `deid-dishonest`,
+`note-not-self-contained`, `source-summary`, `coupling-in-tension`, `non-differentiating-goal`,
+`source-not-an-answer`, `misleading-verbatim`). Resolve them:
 - `not-forward` / `off-question` / `is-attack` → drop the quote (keep the stance value from the
   record); a `coupling-in-tension` → surface to the user with the value-change guard.
+- `question-override` → should not fire here: this bundle carries only the Compass question, never
+  a per-race override. If it does, surface it to the user; overrides are checked in the 4e audit.
 - `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
+- `source-summary` → replace the bullet or paraphrase with a sentence the candidate actually wrote
+  in that source. If the source has none, drop the quote.
+- `misleading-verbatim` → restore the qualifier or context the trim removed, or drop the quote if
+  no trim of the passage reads true on the blind card. Being verbatim does not excuse it.
+- `non-differentiating-goal` → surface to the user. The quote names a goal, a target or a
+  direction but no means, so do not promote it to live (4f) unless the user affirms it carries a
+  real distinguishing position.
 - `source-not-an-answer` → look for a more direct answer (a questionnaire or interview answer to
   this question). If none exists, keep the quote: a curator-extracted quote may be all a candidate
   has, and that is honest presence, not a defect.
