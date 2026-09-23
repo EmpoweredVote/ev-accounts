@@ -51,7 +51,12 @@
 -- one Season 2 pair must hash the same after this file as before it.
 --
 -- No migration runner exists; this file records SQL applied by hand. Pure DML.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews). Before the apply: dry run x2 (BEGIN ... ROLLBACK;
+--   the second ran the body twice to prove the re-run is a no-op), each with a whole-corpus snapshot control that read
+--   identical afterwards, and a positive control (a planted 1-second change to Barragán's Season 2 campaign-finance
+--   context) that the fingerprint gate caught. After: a re-run wrote nothing; the control differs only in the answers and
+--   context hashes (counts unchanged) and the target pair; check:stance-sources at baseline (0 / 179 / 1 / 0 / 0 / 0 / 50
+--   / 670); audit-chair-evidence --check OK on the Season 2 row (season_id set in the rollback file).
 --
 -- ROLLBACK: backend/data/stance-retirement/2026-09-23-ca0193-barragan-housing-rollback.json holds the Season 2
 -- pre-image. Set the answer back to 3 and restore the context reasoning and sources from the file.
