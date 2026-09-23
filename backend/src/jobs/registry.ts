@@ -48,6 +48,9 @@ export const JOBS: Record<string, JobFn> = {
   'fec-burst': () => runFecScheduledJob(),
   'la-county-netfile': () => runAdapterForAll('la_county_netfile'),
   'ocpf': () => runAdapterForAll('ocpf'),
+  // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
+  // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.
+  'cal-access': () => runAdapterForAll('cal_access'),
   'district-staleness': () => runDistrictStalenessCheck(),
   'reap-stale-ingestion-runs': () => reapStaleIngestionRuns(),
   // Validation Quests (folded in) — no Lambda handler existed, so these are new entries.

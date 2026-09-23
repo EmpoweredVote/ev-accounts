@@ -348,10 +348,23 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'cal_access': {
-      // Cal-Access downloads the shared ZIP lazily on first fetch() call.
-      // Create adapter once, run each politician through the pipeline,
-      // then call saveETag() to persist the ETag for next run.
+      // Download the shared ZIP and parse it ONCE for every source (prepare), run each
+      // politician through the pipeline from that parse, then saveETag() for the next run.
+      // A download or parse failure throws: it is global, so no per-source run would help.
       const adapter = createCalAccessAdapter();
+      await adapter.prepare(sources.map(ps => ps.external_id));
+
+      // 304 Not Modified — nothing changed since the last full run. Write no per-source
+      // runs (they would all be empty); stamp the metadata row so the day still shows a run.
+      if (adapter.zipWasSkipped()) {
+        console.log('[campaignFinanceScheduler] cal_access: ZIP unchanged (304), no sources processed');
+        try {
+          await adapter.markNotModified();
+        } catch (err) {
+          console.warn('[campaignFinanceScheduler] cal_access: markNotModified failed (non-fatal):', err);
+        }
+        break;
+      }
 
       for (const ps of sources) {
         try {
@@ -363,12 +376,6 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
             err instanceof Error ? err.message : String(err)
           );
         }
-      }
-
-      // Check if ZIP was unchanged (304 Not Modified) — skip ETag save if so
-      if (adapter.zipWasSkipped()) {
-        console.log('[campaignFinanceScheduler] cal_access: ZIP unchanged (304), no sources processed');
-        break;
       }
 
       // Save ETag after all politicians
@@ -526,8 +533,8 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
  * runAdapterForSources runs the cal_access ingestion pipeline for a specific list
  * of politician_sources row IDs (UUIDs from politician_sources.id).
  *
- * Use this for targeted ingest of newly seeded politicians — avoids re-processing
- * all 7k+ confirmed sources and the per-source TSV re-parse cost.
+ * Use this for targeted ingest of newly seeded politicians — avoids writing a run for
+ * every confirmed source. The ZIP is still downloaded and parsed once (prepare).
  *
  * Only supports cal_access — other adapters don't have the same bulk-parse bottleneck.
  */
@@ -556,6 +563,12 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
   console.log(`[campaignFinanceScheduler] runAdapterForSources: running ${sources.length} cal_access source(s)`);
 
   const adapter = createCalAccessAdapter();
+  await adapter.prepare(sources.map(ps => ps.external_id));
+
+  if (adapter.zipWasSkipped()) {
+    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
+    return;
+  }
 
   for (const ps of sources) {
     try {
@@ -567,11 +580,6 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
         err instanceof Error ? err.message : String(err)
       );
     }
-  }
-
-  if (adapter.zipWasSkipped()) {
-    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
-    return;
   }
 
   // Intentionally do NOT save the ETag here. Targeted runs only process a subset
