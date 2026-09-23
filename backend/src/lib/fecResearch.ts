@@ -2,7 +2,9 @@
  * fecResearch — FEC candidate auto-match service.
  *
  * For each federal politician in essentials.politicians without a confirmed FEC
- * politician_source, searches the FEC candidates API by name + state + office,
+ * politician_source — a sitting member, or a candidate seated on a migration-196
+ * "Candidate for U.S. Senate — <State>" placeholder — searches the FEC candidates
+ * API by name + state + office,
  * scores the results, and either auto-confirms a high-confidence match or queues
  * it for human review.
  *
@@ -35,6 +37,8 @@ interface UnmatchedPolitician {
   fec_office: 'H' | 'S';
   source_system: 'fec_house' | 'fec_senate';
   representing_state: string;
+  /** Queued from a "Candidate for …" placeholder: a seat sought, not held. */
+  is_candidate: boolean;
 }
 
 export interface FecCandidate {
@@ -59,6 +63,7 @@ export interface MatchResult {
   status: MatchStatus;
   source_system: string;
   representing_state: string;
+  is_candidate: boolean;
   candidates_found: number;
   selected_fec_id: string | null;
   selected_fec_name: string | null;
@@ -238,20 +243,33 @@ export async function searchFecCandidates(
 // DB query — unmatched federal politicians
 // ---------------------------------------------------------------------------
 
-async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> {
+// Candidates are queued ON PURPOSE (ruling 2026-09-23, Chris Andrews). This query
+// predates the migration-196 "Candidate for U.S. Senate — <State>" placeholders and
+// used to catch their holders by accident — most were hidden by `is_vacant = false`
+// until CA_0195 backfilled the NULLs. Candidates do file with the FEC, and the
+// dedicated scripts/senate-candidate-fec.ts no longer runs (it joins the dropped
+// offices.politician_id), so this queue is their route in. The SELECT says so.
+//
+// 🔴 One row per person. office_current_holder is politician-rooted here, so a
+// sitting Representative who is running for Senate comes back twice — House seat
+// and Senate placeholder — and plain DISTINCT keeps both, because the chamber
+// differs. A SEAT HELD BEATS A SEAT SOUGHT, as in essentialsService.
+export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> {
   const result = await pool.query<{
     id: string;
     full_name: string;
     bioguide_id: string | null;
     chamber_name: string;
     representing_state: string;
+    is_candidate: boolean;
   }>(
-    `SELECT DISTINCT
+    `SELECT DISTINCT ON (p.id)
        p.id,
        p.full_name,
        p.bioguide_id,
        c.name AS chamber_name,
-       o.representing_state
+       o.representing_state,
+       (COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
      FROM essentials.politicians p
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
      JOIN essentials.office_current_holder och ON och.politician_id = p.id
@@ -265,10 +283,15 @@ async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> 
          FROM transparent_motivations.politician_sources ps
          WHERE ps.essentials_politician_id = p.id
            AND ps.source_system LIKE 'fec%'
-       )`
+       )
+     ORDER BY p.id,
+              (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
+              o.id`
   );
 
   return result.rows.map(row => {
+    // The FEC files a candidate under the office SOUGHT, so a placeholder's chamber
+    // is the right office for a candidate too — this is not an incumbency test.
     const isSenate = row.chamber_name.startsWith('U.S. Senate');
     return {
       id: row.id,
@@ -277,6 +300,7 @@ async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> 
       fec_office: isSenate ? 'S' : 'H',
       source_system: isSenate ? 'fec_senate' : 'fec_house',
       representing_state: row.representing_state,
+      is_candidate: row.is_candidate,
     };
   });
 }
@@ -315,6 +339,7 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
       status: 'needs_research',
       source_system: p.source_system,
       representing_state: p.representing_state,
+      is_candidate: p.is_candidate,
       candidates_found: 0,
       selected_fec_id: null,
       selected_fec_name: null,
@@ -351,7 +376,9 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
       }
 
       if (candidates.length === 0) {
-        result.notes = 'No FEC candidates found — may be newly elected or name mismatch';
+        result.notes = p.is_candidate
+          ? 'No FEC candidates found — candidate may not have filed yet, or name mismatch'
+          : 'No FEC candidates found — may be newly elected or name mismatch';
       } else {
         // Score all candidates, pick the best
         const scored = candidates
