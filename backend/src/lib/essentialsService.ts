@@ -451,9 +451,15 @@ export async function getPoliticiansFlatList(
   // Candidate placeholder offices ("Candidate for U.S. Senate — ...", mig 196) are excluded from
   // the incumbents-only view: their holders can be incumbents of OTHER offices (Talarico TX House,
   // Paxton AG), so is_incumbent alone cannot exclude them.
+  //
+  // 🔴 `och.office_id IS NOT NULL` — an incumbent HOLDS A SEAT NOW, and only office_terms can say so.
+  // is_incumbent is a cached flag, and it defaulted to true until CA_0188, so every insert that
+  // omitted it created an "incumbent": this list returned 1,817 active rows with no office at all
+  // (2026-09-23; cleared by CA_0181-CA_0187). The flag stays in the filter because it is what marks
+  // a seated person as not-a-candidate, but it can no longer admit someone the view says holds nothing.
   const incumbentFilter = includeCandidates
     ? ''
-    : "AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+    : "AND och.office_id IS NOT NULL AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
   const params: unknown[] = [];
   let searchFilter = '';

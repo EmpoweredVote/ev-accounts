@@ -4,7 +4,8 @@ import { vi, describe, it, expect } from 'vitest';
 vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
 vi.mock('./geocodingService.js', () => ({ geocodeAddress: vi.fn(), GeocodingError: class GeocodingError extends Error {} }));
 
-import { pickCountyFromDistrictRows, pickJurisdictionFromDistrictRows } from './essentialsService.js';
+import { pool } from './db.js';
+import { getPoliticiansFlatList, pickCountyFromDistrictRows, pickJurisdictionFromDistrictRows } from './essentialsService.js';
 
 describe('pickCountyFromDistrictRows', () => {
   it('returns geoid + name from the G4020 row', () => {
@@ -119,5 +120,29 @@ describe('pickJurisdictionFromDistrictRows', () => {
       { district_type: 'COUNTY', geo_id: '18105' },
     ];
     expect(pickJurisdictionFromDistrictRows(rows).county).toBe('18105');
+  });
+});
+
+describe('getPoliticiansFlatList incumbents-only filter', () => {
+  // is_incumbent defaulted to true until CA_0188, so the flag alone admitted 1,817 active rows
+  // that hold no office. Only office_terms (through office_current_holder) can say who holds a seat.
+  async function sqlFor(includeCandidates: boolean): Promise<string> {
+    const query = vi.mocked(pool.query);
+    query.mockReset();
+    query.mockResolvedValue({ rows: [] } as never);
+    await getPoliticiansFlatList(includeCandidates);
+    return String(query.mock.calls[0][0]);
+  }
+
+  it('requires a current seat when candidates are excluded', async () => {
+    const sql = await sqlFor(false);
+    expect(sql).toContain('och.office_id IS NOT NULL');
+    expect(sql).toContain('p.is_incumbent = true');
+  });
+
+  it('does not require a seat when candidates are included', async () => {
+    const sql = await sqlFor(true);
+    expect(sql).not.toContain('och.office_id IS NOT NULL');
+    expect(sql).not.toContain('p.is_incumbent = true');
   });
 });
