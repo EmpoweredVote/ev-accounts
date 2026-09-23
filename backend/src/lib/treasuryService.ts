@@ -592,6 +592,28 @@ export interface CityFilters {
   countyId?: string;
 }
 
+/**
+ * Entity types the treasury schema actually stores. Measured 2026-09-22:
+ * city 2,903 · township 2,787 · borough 949 · county 704 · town 486 ·
+ * village 253 · state 50 · municipality 15 · nonprofit 1 · federal 1.
+ *
+ * ⚠ This is a VALIDATION whitelist, not a classification. It says which values
+ * exist, never which of them count as a city — that judgement stays in the
+ * caller (see CityFilters).
+ */
+export const KNOWN_ENTITY_TYPES: ReadonlySet<string> = new Set([
+  'city', 'town', 'township', 'village', 'borough',
+  'municipality', 'county', 'state', 'nonprofit', 'federal',
+]);
+
+export function parseEntityTypes(raw: unknown): { values: string[] } | { invalid: string } {
+  if (typeof raw !== 'string' || raw.trim() === '') return { values: [] };
+  const values = raw.split(',').map((s) => s.trim()).filter((s) => s !== '');
+  const invalid = values.find((v) => !KNOWN_ENTITY_TYPES.has(v));
+  if (invalid !== undefined) return { invalid };
+  return { values };
+}
+
 export async function getCities(
   mode: DatasetsMode = 'full',
   slug?: string,

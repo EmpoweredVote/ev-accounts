@@ -21,6 +21,7 @@ import type { Request, Response } from 'express';
 import { z } from 'zod';
 import {
   getCities,
+  parseEntityTypes,
   getEntityAliases,
   getCityById,
   getBudgetsByCityId,
@@ -74,9 +75,31 @@ router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise
       res.status(422).json({ code: 'INVALID_SLUG', message: 'slug too long' });
       return;
     }
+
+    const types = parseEntityTypes(req.query['entity_type']);
+    if ('invalid' in types) {
+      res.status(422).json({
+        code: 'INVALID_ENTITY_TYPE',
+        message: `unknown entity_type: ${types.invalid}`,
+      });
+      return;
+    }
+
+    const stateParam = typeof req.query['state'] === 'string' ? req.query['state'].trim() : '';
+    const countyParam = typeof req.query['county_id'] === 'string' ? req.query['county_id'].trim() : '';
+    if (countyParam && !UUID_REGEX.test(countyParam)) {
+      res.status(422).json({ code: 'INVALID_COUNTY_ID', message: 'county_id must be a uuid' });
+      return;
+    }
+
     const cities = await getCities(
       req.query['datasets'] === 'summary' ? 'summary' : 'full',
-      slugParam || undefined
+      slugParam || undefined,
+      {
+        entityTypes: types.values,
+        state: stateParam || undefined,
+        countyId: countyParam || undefined,
+      }
     );
     res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
     res.status(200).json(cities);
