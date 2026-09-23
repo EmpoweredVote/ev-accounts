@@ -8,7 +8,12 @@
     "the terminal, THEN `1>/dev/null` silences stdout. Writing `>/dev/null 2>&1` instead throws the",
     "notices away and leaves a hook that does nothing visible.",
     "⚠ Both commands fail open and the whole thing is `|| true`: a session must never fail to start",
-    "because the steward was unreachable. 5s timeout covers two ~0.4s round trips."
+    "because the steward was unreachable. 5s timeout covers two ~0.4s round trips.",
+    "A linked worktree usually has no backend/node_modules (10 of 17 on 2026-09-23), and this hook used to",
+    "require it and skip SILENTLY: no board, no worktree marker, so no HEAD-MOVED notice could ever fire.",
+    "It now runs through backend/scripts/lib/main-checkout-fallback.mjs, which borrows the MAIN checkout's",
+    "node_modules and .env; `$p` is left unquoted on purpose so it expands to two words or none. With no",
+    "node_modules anywhere it prints one 'skipped' line instead of nothing."
   ],
   "hooks": {
     "SessionStart": [
@@ -16,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -d backend/node_modules ] && { node backend/scripts/steward.mjs worktree 2>&1 1>/dev/null; node backend/scripts/steward.mjs who 2>&1; } || true",
+            "command": "m=\"$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/../backend\"; if [ -d backend/node_modules ] || [ -d \"$m/node_modules\" ]; then p=; [ -f backend/scripts/lib/main-checkout-fallback.mjs ] && p=\"--import ./backend/scripts/lib/main-checkout-fallback.mjs\"; node $p backend/scripts/steward.mjs worktree 2>&1 1>/dev/null; node $p backend/scripts/steward.mjs who 2>&1; else echo \"steward: board skipped -- no backend/node_modules here or in the main checkout\"; fi; true",
             "timeout": 5,
             "statusMessage": "Checking the steward board"
           }
