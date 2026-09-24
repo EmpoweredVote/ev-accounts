@@ -1,0 +1,609 @@
+{
+  "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = seat on one row, compass answers only on the other (voter-visible harm).",
+  "_updated": "2026-09-24",
+  "pairs": {
+    "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
+      "names": "Lawrence J Demoss ~ Lawrence Demoss",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "00b1ee2d-c4e1-47f8-aae8-83974a625ef3|cad06d77-75d3-42c6-9bf2-6f9921ff9781": {
+      "names": "Brent Taylor ~ Brent Taylor",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "01eac4cc-d6f2-4b33-ab5f-c3d4d2b93dc0|ddca5584-3a27-48d4-9b1a-92af7a47573f": {
+      "names": "Doug Fiefia ~ Doug Fiefia",
+      "state": "ut",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "04d2e529-5456-44bb-a20f-b1ec676c2c22|85194f5e-6574-4371-97da-f1cc89568870": {
+      "names": "Joe Husk ~ Joseph G Husk",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "04ff7894-2f7c-493a-af94-b49aedaf8502|b06a3665-412e-427a-a762-8220a293d5d0": {
+      "names": "Manny Rutinel ~ Manny Rutinel",
+      "state": "co",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
+      "names": "John Braun ~ John Braun",
+      "state": "wa",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "05658b58-f1dd-4d4d-a298-6972cc36d22f|cd892637-c28b-472a-878e-f2fdf1b98935": {
+      "names": "Shevrin Jones ~ Shevrin D. \"Shev\" Jones",
+      "state": "fl",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "05e42e3c-3510-479d-b00f-f557dbb272f5|408224f0-7405-4ed5-99da-694a56941c7b": {
+      "names": "Daniel Cayem ~ Dan Cayem",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "0896566a-c773-4227-aca3-18cf573b60fe|fc1d7143-1be8-49b0-be31-6dbc5874230d": {
+      "names": "Tram Nguyen ~ Tram T. Nguyen",
+      "state": "ma",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "091c923c-0141-47c1-bf51-f9c6617eed60|73457c02-d058-44cb-ac56-c5120284553b": {
+      "names": "Hopi Stosberg ~ Hopi H Stosberg",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "0a377424-7b2a-4e2a-b28f-b872373ce5ec|c554cb1f-cfd4-40b0-b430-9535b31e347d": {
+      "names": "Michael R Moore ~ Mike Moore",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "0a90ac77-c426-4f4e-add8-f5454c42229f|b8175280-a47e-45f4-8ee4-594330e348cd": {
+      "names": "Todd Warner ~ Todd Warner",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "10143b07-141f-4dcb-a664-098869d7ff63|63d60b50-2395-4cde-8999-97a9166d3563": {
+      "names": "Silvia Catten ~ Silvia Catten",
+      "state": "ut",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "101a4057-f3e4-4345-a5f9-92722049fb53|a9233775-b8af-423e-aea6-734c2855e5ac": {
+      "names": "Tim Peck ~ Timothy Peck",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "123c9a42-5715-4ab2-a8bd-76e7adbca27b|2717ff94-f7e8-4b39-b6ec-fc3e30f3d46f": {
+      "names": "Alex Padilla ~ Alex Padilla",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "125c4d54-6b38-4ccc-a05c-b119f1ea34de|a42744c4-d87e-48b4-aa2c-98b9744601a0": {
+      "names": "Noelle M Conyer ~ Noelle Conyer",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "14166b49-c09e-4792-8300-e622b2e0acb2|6caa511c-7051-4974-b86f-f112ca3ada2b": {
+      "names": "Jay Thrasher ~ Jay M Thrasher",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "1635074f-3b7b-4d8c-a12d-e99367f99561|db1917eb-521c-4f77-ae01-42596fde5ca0": {
+      "names": "Gavin Solomon ~ Gavin Solomon",
+      "state": "ks",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "18d6f09f-69f7-454a-b2a3-8924fe0f1fb2|aeaf9686-bb46-4c9e-be64-38b86688f30b": {
+      "names": "Dwight Williams ~ Dwight A Williams",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "1fbf690b-01c5-4d20-a938-de0c56f2e4a8|cf0a621c-b5a9-4923-9942-a8d6b6d50966": {
+      "names": "Jenna Jacobson ~ Jenna Jacobson",
+      "state": "wi",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "28411ed8-614d-4da0-b3e5-fde6084e4a21|cad0a17b-1c71-4c4e-9c45-c20c0eaac9d7": {
+      "names": "Rob Lucero ~ Robert George Lucero Jr.",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "28a5f098-7f90-4fa9-af7e-c034d49cb538|8bfb459b-9823-4b0d-81f4-49cb97831a80": {
+      "names": "Robert Garcia ~ Robert Garcia",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "2bba1c13-f1e5-4ae9-9633-71229f75b452|c5f6d8ec-f6c2-4560-ab67-4c4cf3cbba5b": {
+      "names": "C. Joseph Chang ~ Joseph Chang",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "2d6a4519-d5fe-4c11-9fca-00ee0b31cac6|9a83c931-0295-40a9-aaa3-95eb10e1c236": {
+      "names": "Kevin Craig ~ Kevin Craig",
+      "state": "mo",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "2dbf3032-65b1-4898-813b-0f62dac0192e|a0ea7354-d1ff-49d2-a6c4-44a0a8099222": {
+      "names": "Romaine Quinn ~ Romaine Robert Quinn",
+      "state": "wi",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "3079710f-a2bc-4e9d-a72a-69ba41722966|715f33be-f879-4d31-ba5e-197438689dc3": {
+      "names": "Kelda Roys ~ Kelda Roys",
+      "state": "wi",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "34266501-a4d8-4d2c-83c6-ee49335cf0b9|60870f17-4e23-4f5a-9cf4-8d37870206f8": {
+      "names": "Johnny Garrett ~ Johnny Garrett",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "344e7d4a-0a61-44d3-a2ca-df80e3757728|49b806b1-f15d-4998-a94e-de542d9e323e": {
+      "names": "Warren Petersen ~ Warren Petersen",
+      "state": "az",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "388be49c-5449-4391-8863-2904fc9a9c71|f4ee71a6-8a14-4727-aa39-716fae402f60": {
+      "names": "Michael Cook ~ Mike Cook",
+      "state": "tx",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "3ac86254-fdc1-4b92-b9d8-6365f2846f70|92b03e09-8251-4eb8-a50e-966d52a592e1": {
+      "names": "Ralph Heap ~ Ralph Heap",
+      "state": "az",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "3d8050a4-c3d6-4577-96dd-4faee3e420c3|c7490e09-0985-4e97-9a30-71afd6b8867c": {
+      "names": "John Taylor ~ John Taylor",
+      "state": "ut",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "4f8e9b8f-87c7-4767-8902-6df646a6525d|954d9212-5c81-450e-8e37-1551f26f8fd7": {
+      "names": "Luke S. Rankin ~ Luke A. Rankin",
+      "state": "sc",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "5249613b-40df-4458-830d-cdbb121961dc|ba3e17b7-219a-4700-bb39-01e49998ad80": {
+      "names": "David Cook ~ David Cook",
+      "state": "tx",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "536512af-e485-40a5-baf9-eb0ec63d6d97|664899b9-9002-410b-b42a-40dbaf050d12": {
+      "names": "Kenny Bryant ~ Kenny L Bryant",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "53a867be-2009-4139-aca4-6371dd05cb6a|fd6ea4fe-e8a3-42fc-ba3c-3d9ff1ae1665": {
+      "names": "David B Willibey ~ David Willibey",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "59b23844-46ec-5224-80aa-a861a55f1f74|6b41a3e1-a79d-4589-a1bf-d616f754b8d2": {
+      "names": "Kenneth J. Petersen ~ Ken Petersen",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "59c8b352-1ffb-44fc-89c2-68627ade8a8c|f297e12a-2fac-4de4-b2d1-0ee1c769f93d": {
+      "names": "Isaac E. Barrón ~ Isaac Barron",
+      "state": "nv",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec|f07bf4ef-4e79-4e25-b7a6-27c8ff49d286": {
+      "names": "Matt Boehnke ~ Matt Boehnke",
+      "state": "wa",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "785ab5f3-7756-4210-9f4b-bcbb09147241|a7679d83-5a48-470e-9df2-4d1d7c18a391": {
+      "names": "Carrie Buck ~ Carrie Ann Buck",
+      "state": "nv",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "78f3bb2d-90e4-4263-925e-6203385bc6eb|a0e4e813-6c10-45d8-8f59-f444c6747b61": {
+      "names": "William C. Galvin ~ William Francis Galvin",
+      "state": "ma",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "7a43967d-ffde-405f-be63-6ce39278d812|ed095ae9-1864-47e1-9d5d-36b65f0314fe": {
+      "names": "John Rose ~ John W. Rose",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "7b574d95-952c-476a-b2eb-b9f1493c090c|ad773a1b-a007-4b7f-a1fe-2091db751d0d": {
+      "names": "Jerry Ayers ~ Jerry W Ayers",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "7e182df3-32e1-47df-a855-bbb60941bdb9|e06d325b-1a12-4ff9-a87e-18a73c2c233a": {
+      "names": "Jose M Rios ~ Jose M. Rios",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "7f6c4fa3-192b-4abf-885b-2006c43a3fc9|e4a6ffc5-4cb7-41f8-9f28-b9bbf6da642a": {
+      "names": "Andrew K. Kim ~ Andrew C. Kim",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "8118811a-aadd-4eb9-9208-de0f5d3b29ad|868b219c-a10a-4dc2-a632-9022c7f835d1": {
+      "names": "Andy Biggs ~ Andy Biggs",
+      "state": "az",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "81917154-ced7-5743-8d63-f2ecfb15c29d|e54f6ad7-900d-46eb-bdd6-19d0028b176b": {
+      "names": "Gina Almanza-Ramirez ~ Gina Ramirez",
+      "state": null,
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "830d155a-394e-463c-999d-bcf154460225|a201565a-0aa1-4b6a-9349-6ee7abe90252": {
+      "names": "Vincent Dixie ~ Vincent Dixie",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "88216292-7a3c-4e49-ac4a-722a1b3764e4|dd088bfc-1d4d-476d-b16f-0d4da6ea88b6": {
+      "names": "Maria G. Lopez ~ Maria Isabel López",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "88216292-7a3c-4e49-ac4a-722a1b3764e4|fa143456-4ab3-4d2b-923b-be2b01835cb4": {
+      "names": "Maria G. Lopez ~ Maria G. Lopez",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "89ef426b-e838-4b0d-8c43-e299384c0ea5|b8d4f904-23c8-4baa-8426-fbc44aafdf88": {
+      "names": "Ruben Marte' ~ Ruben D Marte",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "8b15f324-ed8b-4cc9-92b4-fdaf07896b20|cb370677-36db-44b0-ae74-ebb6ae4a3d33": {
+      "names": "Anna Caballero ~ Anna M. Caballero",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "8d51edfa-596b-4fb4-9069-6a4f3ef0b0e9|92929f0b-934b-40fe-b97b-aa98a70cb14c": {
+      "names": "Kim Repecka ~ Kimberly Repecka",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "92dba8fc-2bd1-4a68-ad69-ada24e3ff6f4|e96d79ea-0f4f-4a17-9a94-8fbefed6e5d5": {
+      "names": "Kelly Smith ~ Kelly Smith",
+      "state": "ut",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "95860909-eb07-4ed4-bea1-54081d92ce8d|b90cc4e4-57f3-41b2-9a19-64c218164466": {
+      "names": "David Argudo ~ David E. Argudo",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "96485b13-9104-4057-99de-742df6df85ee|b04e1f2d-d1a4-43de-80db-bdc29dadfaeb": {
+      "names": "Richard Barrera ~ Richard Barrera",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "9664affa-96b6-461f-976e-6cdf077cbf11|c7088ceb-3326-40ac-81b7-d93926c6060f": {
+      "names": "Scott Harriman ~ Scott A. Harriman",
+      "state": "me",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "99443b59-c422-43c4-98ba-070cc2c97491|ba7f92e0-6dfb-4832-a4ed-a4ff4a181546": {
+      "names": "Robyn Vining ~ Robyn Vining",
+      "state": "wi",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "9c83e282-cb78-4e39-aa1e-13875a86e872|a770cc10-dde6-4f1a-938d-af12e632b420": {
+      "names": "London Lamar ~ London Lamar",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "9cff8f78-ffde-4821-91e7-6d14fb093ecc|a3be7449-ec25-4511-bf3d-889a340fbb3f": {
+      "names": "Monty Fritts ~ Monty Fritts",
+      "state": "tn",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "a123c59e-694b-43cc-af03-6610b645e6d2|cde0a592-b775-45dc-bd27-a76e3de8802b": {
+      "names": "Mónica García ~ Monica García",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "unreviewed"
+    },
+    "a97678bc-8844-4560-87b1-5ef4f8013d96|f0a46feb-43bc-4620-a81f-3bbf7e3cec9c": {
+      "names": "Dan Sullivan ~ Daniel J. Sullivan Jr.",
+      "state": "ak",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "a9e04e1e-92d4-44e4-a411-b6fe4814290a|d33b1fb5-bac7-48b9-9628-8169e28f4e16": {
+      "names": "Steve Marshall ~ Steve Marshall",
+      "state": "al",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "ae4d08d2-71c8-4861-b418-8c981d78d13d|cfa073a3-70af-4552-ae30-7c3236137cf0": {
+      "names": "James White ~ James White",
+      "state": "me",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "c2e83228-1f15-4fb6-a1a2-8b11714afe4c|e4e0051a-d7ef-462a-8e1a-24ffda9b3573": {
+      "names": "Sean P Hall ~ Sean Hall",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "c905324f-0568-48e9-931f-d42ddc657ec3|ec5cb4d8-b857-4442-b1c0-96bd69537de6": {
+      "names": "Christopher R Reynolds ~ Christopher Reynolds",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "dd088bfc-1d4d-476d-b16f-0d4da6ea88b6|fa143456-4ab3-4d2b-923b-be2b01835cb4": {
+      "names": "Maria Isabel López ~ Maria G. Lopez",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    },
+    "dfe4ad6a-6017-4dc6-a2e9-a609bb7c232e|f1212497-7049-413a-ac19-81c5baba900d": {
+      "names": "Francesca Hong ~ Francesca Hong",
+      "state": "wi",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "unreviewed"
+    }
+  }
+}

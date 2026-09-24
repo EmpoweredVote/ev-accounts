@@ -42,6 +42,8 @@
     "check:instrument-topics": "node scripts/instrument-topic-affinity.mjs --selftest",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
     "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
+    "check:duplicate-people": "node scripts/check-duplicate-people.mjs",
+    "check:duplicate-people:verbose": "node scripts/check-duplicate-people.mjs --verbose",
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
     "verify:quotes": "node scripts/verify-quotes.mjs",
     "sweep:fabricated-articles": "node scripts/sweep-fabricated-articles.mjs",

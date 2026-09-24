@@ -67,7 +67,8 @@ on:
     paths-ignore:
       - '**/*.md'
       - '.planning/**'
-  # The live-DB jobs (`reachability`, `child-county`, `stance-sources`, `readrank-question-unit`) also
+  # The live-DB jobs (`reachability`, `child-county`, `stance-sources`, `duplicate-people`,
+  # `readrank-question-unit`) also
   # run on a schedule: their
   # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
   # with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest
@@ -678,6 +679,41 @@ jobs:
       # build they cannot fix.
       - name: Check stance sourcing — no Ballotpedia-only rows, no known-fabricated citations
         run: npm run check:stance-sources
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  duplicate-people:
+    name: duplicate people
+    runs-on: ubuntu-latest
+    # One person split across two ACTIVE politicians rows: the seat on one, the compass answers, quotes,
+    # FEC link and race rows on the other. Nothing errors when a load makes the second row, and every pair
+    # so far was found by accident (CA_0180 ... CA_0270). This proposes pairs by folded name + state and by
+    # shared FEC id; it never merges. The baseline is a list of REVIEWED PAIRS with verdicts, not a count,
+    # so "two different Mike Rogers" stays quiet for ever while any new pair fails.
+    #
+    # Its own job for the reason given on `stance-sources`: a failing early step masks every later one.
+    # NOT on pull_request, same as the other live-DB jobs: migrations are applied by hand, so a PR's SQL
+    # has not touched prod yet. The daily schedule is what catches a pair the day a load creates it.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Plants its own control pairs and refuses a verdict if it cannot find them. Skips itself (exit 0)
+      # when DATABASE_URL is absent.
+      - name: Check duplicate people — no new unreviewed pair of active rows
+        run: npm run check:duplicate-people
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
