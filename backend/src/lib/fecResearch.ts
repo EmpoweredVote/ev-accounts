@@ -351,11 +351,25 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
        p.bioguide_id,
        c.name AS chamber_name,
        o.representing_state,
-       (COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
+       (seat.via_race OR COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
      FROM essentials.politicians p
-     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
-     JOIN essentials.office_current_holder och ON och.politician_id = p.id
-     JOIN essentials.offices o ON o.id = och.office_id
+     JOIN (
+       -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+       SELECT och.politician_id, och.office_id, false AS via_race
+         FROM essentials.office_current_holder och
+       UNION ALL
+       -- The office SOUGHT, from a race that can still send the person to office. Most
+       -- candidates have no "Candidate for" placeholder seat, so without this they never
+       -- reach the queue (1,018 of them on 2026-09-24).
+       SELECT rc.politician_id, r.office_id, true AS via_race
+         FROM essentials.race_candidates rc
+         JOIN essentials.races r ON r.id = rc.race_id
+         JOIN essentials.elections e ON e.id = r.election_id
+        WHERE e.election_date >= CURRENT_DATE
+          AND rc.candidate_status IS DISTINCT FROM 'withdrawn'
+          AND (rc.result IS NULL OR rc.result = 'advanced')
+     ) seat ON seat.politician_id = p.id
+     JOIN essentials.offices o ON o.id = seat.office_id
      JOIN essentials.chambers c ON c.id = o.chamber_id
      WHERE p.is_active = true
        AND p.is_vacant = false
@@ -366,7 +380,9 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
          WHERE ps.essentials_politician_id = p.id
            AND ps.source_system LIKE 'fec%'
        )
+     -- held seat, then placeholder seat, then race row: a seat-based entry never changes
      ORDER BY p.id,
+              seat.via_race ASC,
               (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
               o.id`
   );
