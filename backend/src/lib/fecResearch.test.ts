@@ -185,6 +185,170 @@ describe('runFecAutoMatch — a candidate with no FEC hit', () => {
 });
 
 // ---------------------------------------------------------------------------
+// Which of a person's FEC IDs — election_years decides what the name cannot
+// ---------------------------------------------------------------------------
+//
+// A returning candidate has one FEC candidate ID per earlier campaign, under the
+// SAME name, so name scoring ties them and an arbitrary one was confirmed. Three
+// Senate candidates were confirmed onto their previous run's ID this way
+// (found 2026-09-23). The FEC rows below are real, fetched that day, and in the
+// order the FEC API returned them — stale ID first.
+//
+// A sitting member is different: one ID spans many cycles, and election_years
+// lists ELECTIONS, not cycles. A senator not up until 2028 or 2030 has no 2026
+// in it at all (Fetterman below), so "lists the current cycle" can only gate a
+// candidate, never a member.
+
+function fecRow(candidate_id: string, name: string, election_years: number[], overrides: Record<string, unknown> = {}) {
+  return { candidate_id, name, office: 'S', state: 'XX', party: 'DEM', election_years, ...overrides };
+}
+
+const BOOKER_2020 = fecRow('S0KY00420', 'BOOKER, CHARLES', [2020, 2022]);
+const BOOKER_2026 = fecRow('S6KY00385', 'BOOKER, CHARLES', [2026]);
+const ROTH_2022 = fecRow('S2ID00178', 'ROTH, DAVID JORDAN', [2022]);
+const SUNUNU_2002 = fecRow('S0NH00201', 'SUNUNU, JOHN E', [2002, 2008], { party: 'REP' });
+const SUNUNU_2026 = fecRow('S6NH00208', 'SUNUNU, JOHN E', [2026], { party: 'REP' });
+const SUNUNU_FATHER = fecRow('S0NH00045', 'SUNUNU, JOHN H', [1980], { party: 'REP' });
+const FETTERMAN = fecRow('S6PA00274', 'FETTERMAN, JOHN KARL', [2016, 2022, 2028]);
+
+describe('runFecAutoMatch — choosing between several FEC IDs for one person', () => {
+  const savedKey = process.env.FEC_API_KEY;
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    acquireFecSlotMock.mockClear();
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(candidatesSearchResponse()));
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-09-23T12:00:00Z')); // FEC cycle 2026
+    process.env.FEC_API_KEY = 'test-api-key';
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    if (savedKey === undefined) delete process.env.FEC_API_KEY;
+    else process.env.FEC_API_KEY = savedKey;
+  });
+
+  /** Queue one politician, answer each FEC search in turn, and return what was written. */
+  async function autoMatch(row: Record<string, unknown>, ...searches: unknown[][]) {
+    poolQueryMock
+      .mockResolvedValueOnce({ rows: [row] })
+      .mockResolvedValueOnce({ rows: [{ id: 'src-1' }] }); // createSource INSERT
+    const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
+    for (const results of searches) fetchMock.mockResolvedValueOnce(candidatesSearchResponse(results));
+
+    const run = runFecAutoMatch();
+    await vi.runAllTimersAsync();
+    const summary = await run;
+
+    const result = summary.results[0]!;
+    expect(result.error).toBeNull();
+    const [, sourceSystem, externalId, researchStatus, notes] = poolQueryMock.mock.calls[1]![1] as string[];
+    return { result, written: { sourceSystem, externalId, researchStatus, notes } };
+  }
+
+  const candidate = (full_name: string, representing_state: string) =>
+    queueRow({ full_name, representing_state, chamber_name: 'U.S. Senate', is_candidate: true });
+  const senator = (full_name: string, representing_state: string) =>
+    queueRow({ full_name, representing_state, chamber_name: 'U.S. Senate', is_candidate: false });
+
+  it('confirms the ID running this cycle when a returning candidate\'s old ID ties on name', async () => {
+    const { written } = await autoMatch(candidate('Charles Booker', 'KY'), [BOOKER_2020, BOOKER_2026]);
+
+    expect(written).toMatchObject({ externalId: 'S6KY00385', researchStatus: 'confirmed' });
+  });
+
+  it('passes over both an earlier campaign and a same-name relative from 1980', async () => {
+    const { written } = await autoMatch(candidate('John Sununu', 'NH'), [SUNUNU_2002, SUNUNU_2026, SUNUNU_FATHER]);
+
+    expect(written).toMatchObject({ externalId: 'S6NH00208', researchStatus: 'confirmed' });
+  });
+
+  it('prefers the current ID for a sitting member too, when two of theirs tie on name', async () => {
+    const stale = fecRow('S0XX00001', 'DOE, JANE', [2010]);
+    const current = fecRow('S2XX00002', 'DOE, JANE', [2022, 2028]);
+
+    const { written } = await autoMatch(senator('Jane Doe', 'XX'), [stale, current]);
+
+    expect(written).toMatchObject({ externalId: 'S2XX00002', researchStatus: 'confirmed' });
+  });
+
+  it('never confirms a candidate onto an ID that is not running this cycle', async () => {
+    // Roth before his 2026 statement of candidacy was on file: only the 2022 ID exists.
+    const { result, written } = await autoMatch(candidate('David Roth', 'ID'), [ROTH_2022]);
+
+    expect(written.researchStatus).toBe('needs_research');
+    expect(result.status).toBe('needs_research');
+    const listed = JSON.parse(written.notes) as Array<{ candidate_id: string; election_years: number[] }>;
+    expect(listed).toEqual([expect.objectContaining({ candidate_id: 'S2ID00178', election_years: [2022] })]);
+  });
+
+  it('does not let the single-result last-name fallback confirm a candidate onto an old ID either', async () => {
+    // Full-name search misses (a nickname), the last-name retry finds one old ID; the
+    // fallback's 0.8 bump must not outrank the cycle.
+    const { written } = await autoMatch(candidate('Dave Roth', 'ID'), [], [ROTH_2022]);
+
+    expect(written.researchStatus).toBe('needs_research');
+  });
+
+  it('still confirms a sitting senator who is not up this cycle', async () => {
+    // FEC's own row: elections 2016, 2022, 2028 — no 2026, because he is not on this ballot.
+    const { written } = await autoMatch(senator('John Fetterman', 'PA'), [FETTERMAN]);
+
+    expect(written).toMatchObject({ externalId: 'S6PA00274', researchStatus: 'confirmed' });
+  });
+
+  it('still confirms a sitting member whose only ID has no election this cycle or later', async () => {
+    // A member retiring at the end of this term keeps filing on the ID they hold.
+    const retiring = queueRow({ full_name: 'Jane Doe', representing_state: 'UT' });
+    const only = fecRow('H0UT01234', 'DOE, JANE', [2020, 2022, 2024], { office: 'H' });
+
+    const { written } = await autoMatch(retiring, [only]);
+
+    expect(written).toMatchObject({ externalId: 'H0UT01234', researchStatus: 'confirmed' });
+  });
+
+  it('counts an odd-year special election as part of its cycle', async () => {
+    // FEC files a special under its own odd year: Patronis's FL-1 ID lists [2025, 2026].
+    // In early 2025 it listed only the special, and 2025 belongs to cycle 2026.
+    vi.setSystemTime(new Date('2025-03-01T12:00:00Z'));
+    const patronis = fecRow('H6FL01390', 'PATRONIS, JIMMY JR.', [2025], { office: 'H' });
+    const row = queueRow({ full_name: 'Jimmy Patronis', representing_state: 'FL', is_candidate: true });
+
+    const { written } = await autoMatch(row, [patronis]);
+
+    expect(written).toMatchObject({ externalId: 'H6FL01390', researchStatus: 'confirmed' });
+  });
+
+  it('sends it to review when the name favours an old ID and the cycle a newer one', async () => {
+    // A retiring senator's own ID (exact first name) against a current one whose first
+    // name only starts the same way. That can be the same person writing their name
+    // short, or a different Janet running for the seat: the name cannot tell, so a
+    // human does. Confirming either one is a guess.
+    const own = fecRow('S2XX00001', 'DOE, JANE', [2014, 2020]);
+    const other = fecRow('S6XX00002', 'DOE, JANET', [2026]);
+
+    const { written } = await autoMatch(senator('Jane Doe', 'XX'), [own, other]);
+
+    expect(written.researchStatus).toBe('needs_research');
+    const listed = JSON.parse(written.notes) as Array<{ candidate_id: string }>;
+    expect(listed.map(c => c.candidate_id).sort()).toEqual(['S2XX00001', 'S6XX00002']);
+  });
+
+  it('sends two IDs that tie on name AND on cycle to review instead of picking one', async () => {
+    const first = fecRow('S6XX00001', 'DOE, JANE', [2026]);
+    const second = fecRow('S6XX00002', 'DOE, JANE', [2026]);
+
+    const { written } = await autoMatch(candidate('Jane Doe', 'XX'), [first, second]);
+
+    expect(written.researchStatus).toBe('needs_research');
+    const listed = JSON.parse(written.notes) as Array<{ candidate_id: string }>;
+    expect(listed.map(c => c.candidate_id).sort()).toEqual(['S6XX00001', 'S6XX00002']);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // Compound surnames — FEC files the whole surname before the comma
 // ---------------------------------------------------------------------------
 //
