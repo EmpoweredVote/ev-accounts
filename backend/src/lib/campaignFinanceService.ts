@@ -49,6 +49,12 @@ export interface PoliticianSource {
   notes: string;
   created_at: string;
   updated_at: string;
+  /**
+   * The NetFile agency (filing officer) that holds this committee, e.g. 'LACO', 'WEHO'.
+   * Required by a CHECK for source_system 'la_county_netfile' (CA_0224), NULL for every other
+   * system. Only the ingestion scheduler selects it; the admin reads leave it undefined.
+   */
+  netfile_agency?: string | null;
 }
 
 export interface Donor {
@@ -1531,6 +1537,8 @@ export interface CreateSourceInput {
   external_id?: string;
   research_status?: string;
   notes?: string;
+  /** Required for source_system 'la_county_netfile'; see PoliticianSource.netfile_agency. */
+  netfile_agency?: string | null;
 }
 
 export interface UpdateSourceInput {
@@ -1579,11 +1587,11 @@ export async function createSource(data: CreateSourceInput): Promise<PoliticianS
 
   const result = await pool.query<SourceRow>(
     `INSERT INTO transparent_motivations.politician_sources
-       (essentials_politician_id, source_system, external_id, research_status, notes)
-     VALUES ($1, $2, $3, $4, $5)
+       (essentials_politician_id, source_system, external_id, research_status, notes, netfile_agency)
+     VALUES ($1, $2, $3, $4, $5, $6)
      RETURNING id, essentials_politician_id, source_system, external_id,
                research_status, notes, created_at, updated_at`,
-    [data.essentials_politician_id, data.source_system, externalId, researchStatus, notes]
+    [data.essentials_politician_id, data.source_system, externalId, researchStatus, notes, data.netfile_agency ?? null]
   );
 
   const r = result.rows[0];
