@@ -27,8 +27,9 @@
 -- 06:00 UTC ev-jobs-fec-burst run loads their contributions (it ingests confirmed FEC links).
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
 -- STATUS: APPLIED to prod 2026-09-24 (operator approval and apply: Chris Andrews). Dry run (BEGIN ... ROLLBACK) passed and
---   was confirmed reverted before the apply; verified after: 52 rows confirmed onto the reviewed ids, no FEC id on two
---   people; FEC rows now 1,618 confirmed / 96 needs_research.
+--   was confirmed reverted before the apply; verified after: 52 rows confirmed onto the reviewed ids, none of the 52 ids
+--   on a second person; FEC rows now 1,618 confirmed / 96 needs_research. (3 OTHER confirmed ids do sit on two person
+--   rows each -- Gallucci, Gonzales-Torres, Duenas, all CA: duplicate PERSON rows, not from this file.)
 --
 -- ROLLBACK: for the source_ids in _c, set research_status back to 'needs_research' and strip the CA_0258 note. The
 -- original external_id of each row was the auto-match's top-scored candidate; it is listed first in the row's notes.
