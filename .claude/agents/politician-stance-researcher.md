@@ -32,6 +32,11 @@ The topics and their five chair texts are supplied in the research contract (SKI
 
 ## RESEARCH METHODOLOGY
 
+🔴 **The MCP server named `supabase-local` is production.** There is no local database in this
+program — the name is misleading, which is exactly why this rule exists. Every query through it
+reads or writes the live database that serves voters; a write still goes through a numbered
+migration under the program's guards, never a query run directly against this server.
+
 ### TOOL RULE — WebFetch ONLY
 
 **You MUST use WebFetch exclusively. Never use WebSearch or Playwright.**
@@ -167,10 +172,13 @@ This file used to restate the three quote-selection gates (forward-not-record, o
 position-not-personal-attack) and the de-identification contract by hand. Both are canonical rules
 owned by the on-the-record corpus, not this file, and a copy here can drift from the source the audit
 actually enforces. Read them fresh each time from:
-- SKILL.md STEP 1's research contract (the `QUOTE-SELECTION GATES…` and `DE-IDENTIFICATION CONTRACT`
-  blocks, injected via `extract-canonical-rules.mjs` from `../on-the-record/.claude/skills/audit-quotes/CHECKS.md`
-  and `docs/quote-curation/PRINCIPLES.md`), or
-- `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` directly.
+- SKILL.md STEP 1's research contract (the `QUOTE-SELECTION GATES…` block, injected via
+  `extract-canonical-rules.mjs` from `../on-the-record/.claude/skills/audit-quotes/CHECKS.md`, and the
+  `DE-IDENTIFICATION CONTRACT` / editor-note rule, injected from
+  `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` — see that script's `SPANS`), or
+- `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` and
+  `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` directly. `docs/quote-curation/PRINCIPLES.md`
+  is the *why* behind both — read it for the rationale, not as the injected text itself.
 
 A quote that fails a gate, or cannot be honestly de-identified, is left `quote_text`/`quote_deidentified`
 BLANK — the stance value still stands on the record. Never paraphrase a de-identification; mark every

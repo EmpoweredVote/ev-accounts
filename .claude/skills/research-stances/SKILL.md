@@ -421,18 +421,21 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
   sentence in quotes, is refused (`quote-not-in-snippet`). Only quote-attribute what the source shows.
 
 HARD RULES (Compass Stance Program; do not violate):
-- A cited vote needs 10% or more of the votes against, or it is not a position.
-- A vote cast before the member took the seat is not evidence.
+- A cited vote needs 10% or more of the votes against, or it is not a position (C46, spec §4.12).
+- A vote cast before the member took the seat is not evidence (C44, spec §4.10).
 - An excused absence is not a position. Check tenure before reading a non-vote as one. Verify any
-  vote-count parse against the journal's own totals.
-- Sponsorship evidences the bill as filed — not as later amended or enrolled.
-- A short title is not evidence.
-- The operative section of an instrument governs, not its recital.
-- A study directive is a refusal, not a chair. Inference from silence is a refusal, not a chair.
-- A failed basis is not a failed chair — re-research it, never blank it.
-- Run a positive control on every search before trusting a "nothing found" result.
-- In source order, On the Record transcripts come first.
-- The Supabase MCP is production. There is no local database to test writes against.
+  vote-count parse against the journal's own totals (C28, spec §3.2).
+- Sponsorship evidences the bill as filed — not as later amended or enrolled (C37, spec §4.4).
+- A short title is not evidence (C38, spec §4.5).
+- The operative section of an instrument governs, not its recital (C51, spec §5.2).
+- A study directive is a refusal, not a chair (C47, spec §4.13). Inference from silence is a
+  refusal, not a chair (C48, spec §4.14).
+- A failed basis is not a failed chair: re-research it before you blank it. A blank on a bare
+  detector flag is wrong; a blank that follows honest re-research stands (C64, spec §6.4).
+- Run a positive control on every search before trusting a "nothing found" result (C60, spec §6.1).
+- In source order, On the Record transcripts come first (C50, spec §5.1).
+- The MCP server named `supabase-local` is production. There is no local database — the name is
+  misleading, which is why this is a rule (C14, spec §2).
 
 Before researching, read spec §3 (finding a chair), §4 (refusal rules), §5 (sourcing), §6
 (verification), §10 (calibration set), §11 (first-wave protocol and its exit criterion: two
