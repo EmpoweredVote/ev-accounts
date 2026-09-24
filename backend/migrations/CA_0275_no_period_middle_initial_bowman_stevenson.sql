@@ -31,8 +31,10 @@
 --   Duplicate check: no other active politician is named Jay Bowman or Bob/Robert Stevenson, so the change exposes
 --   no duplicate.
 --
--- STATUS: NOT APPLIED. Dry run (BEGIN ... ROLLBACK) twice on prod 2026-09-24, revert confirmed each time; a control
---   with one row forced wrong made the gate raise.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, who ran it). Dry run (BEGIN ... ROLLBACK)
+--   twice before, revert confirmed each time; a control with one row forced wrong made the gate raise. Apply:
+--   UPDATE 2 + UPDATE 1, gate passed, COMMIT. Verified after: 0 active politicians and 0 race_candidates rows match
+--   ^[A-Z]\.? ; both people read middle_initial 'J', full_name unchanged.
 -- ROLLBACK: set last_name := old_last (and middle_initial := NULL on the politicians rows) for the ids below.
 -- IDEMPOTENT: each UPDATE is guarded on last_name = old_last; a re-run changes nothing and the gate still passes.
 
