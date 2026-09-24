@@ -200,7 +200,20 @@ export interface PacListResponse {
 export interface SummaryResponse {
   politician_id: string;
   cycle: string;
+  /**
+   * GROSS receipts: FEC's authoritative receipts when cached, plus the gross itemized sum (refund rows left out) of every
+   * non-FEC source; the gross itemized sum alone otherwise. Returned contributions never reduce it (CA_0255).
+   */
   total_raised: number;
+  /**
+   * Returned contributions, as a POSITIVE amount: -SUM of the negative itemized rows. When FEC's authoritative
+   * receipts carry the headline, only non-FEC refunds count here — FEC receipts are gross already, and FEC's
+   * negative Schedule A lines are not reliably refunds, so reporting them would pair two unlike figures.
+   */
+  total_refunded: number;
+  /** Number of refund rows behind total_refunded. */
+  refund_count: number;
+  /** Number of itemized contributions (amount >= 0 rows). Refund rows are counted in refund_count instead. */
   contribution_count: number;
   confidence_level: string;
   data_source: string;
@@ -251,9 +264,13 @@ interface CycleRow {
 }
 
 interface TotalsRow {
-  total_raised: string;       // numeric -> string (sum of ingested itemized rows)
-  non_fec_total: string;      // numeric -> string (sum of non-FEC ingested rows)
-  contribution_count: string; // bigint -> string
+  gross_total: string;        // numeric -> string (sum of ingested itemized rows that are not refunds)
+  non_fec_gross: string;      // numeric -> string (same, non-FEC rows only)
+  refunded_total: string;     // numeric -> string (-sum of rows with amount < 0, positive)
+  non_fec_refunded: string;   // numeric -> string (same, non-FEC rows only)
+  refund_count: string;       // bigint -> string
+  non_fec_refund_count: string; // bigint -> string
+  contribution_count: string; // bigint -> string (rows that are not refunds, amount >= 0)
   confidence_level_n: string; // int -> string
   individual_total: string;   // numeric -> string
   pac_total: string;          // numeric -> string
@@ -797,7 +814,8 @@ async function getPacContributions(
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
-       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')`,
+       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+       AND ${NOT_REFUND_SQL}`,
     [politicianId, cycle]
   );
   const total = Number(totalsRes.rows[0]?.total ?? 0);
@@ -814,6 +832,7 @@ async function getPacContributions(
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
        AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+       AND ${NOT_REFUND_SQL}
      GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total DESC
      LIMIT ${PAC_LIST_LIMIT}`,
@@ -852,14 +871,39 @@ async function getPacContributions(
 // as "PAC." 'PAC'+'PTY' matches FEC's authoritative PAC figure (see project_pac_classification).
 // Self-funding, transfers, and orgs fall into NEITHER bucket (honestly not individual-donor money
 // nor PAC money); the difference from total_raised is those + unitemized.
+//
+// Both splits are GROSS (refund rows, amount < 0, left out), like total_raised: a returned contribution is reported in
+// total_refunded, never netted out of a bucket (CA_0255).
 const INDIVIDUAL_CASE_SQL = `CASE
-  WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
-    OR c.raw_record->>'entity_type' LIKE 'IND%'
+  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('direct', 'in_kind')
+    OR c.raw_record->>'entity_type' LIKE 'IND%')
   THEN c.amount ELSE 0 END`;
 const PAC_CASE_SQL = `CASE
-  WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
-    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('pac', 'corporate_direct')
+    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY'))
   THEN c.amount ELSE 0 END`;
+/**
+ * Row predicate for every gross figure: sector rollup, top donors, the PAC list and contribution_count.
+ * A refund row (amount < 0) is not a donation, so it must not appear as a negative "donor" or shrink a sector.
+ * $0 rows (432,426 on prod, 2026-09-24) are not refunds and stay counted exactly as before.
+ */
+const NOT_REFUND_SQL = `c.amount >= 0`;
+
+/**
+ * headlineTotals applies the one rule for "raised" and "refunded" (CA_0255). With FEC's authoritative receipts
+ * cached, the headline is those receipts plus the non-FEC gross itemized sum, and only non-FEC refunds are
+ * reported: FEC receipts are gross already, and adding FEC's itemized negatives beside them would mix two
+ * unlike figures. Without them, both figures come from the itemized rows of every source.
+ */
+export function headlineTotals(
+  authoritativeFec: number | null,
+  itemized: { gross: number; refunded: number; refundCount: number },
+  nonFec: { gross: number; refunded: number; refundCount: number }
+): { total_raised: number; total_refunded: number; refund_count: number } {
+  return authoritativeFec != null
+    ? { total_raised: authoritativeFec + nonFec.gross, total_refunded: nonFec.refunded, refund_count: nonFec.refundCount }
+    : { total_raised: itemized.gross, total_refunded: itemized.refunded, refund_count: itemized.refundCount };
+}
 const CONFIDENCE_RANK_SQL = `CASE c.confidence_level
   WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 WHEN 'ESTIMATED' THEN 3 ELSE 4 END`;
 /** Donor name coalesce — identical to getSummary's live top-donor grouping key. */
@@ -874,16 +918,23 @@ const confidenceRank = (label: string): number =>
 
 /**
  * refreshSummaryAgg recomputes the agg row for one (politician_source_id, election_cycle).
+ * Every figure except total_amount (net) and refunded_amount/refund_count is GROSS: refund rows
+ * (amount < 0) are left out of it (CA_0255).
  * Idempotent (upsert). Deletes the row when the pair has no contributions. Best-effort:
  * throws are the caller's to swallow so an agg failure never fails an ingest.
  */
 export async function refreshSummaryAgg(politicianSourceId: string, cycle: string): Promise<void> {
   const totalsRes = await pool.query<{
-    contribution_count: string; total_amount: string; confidence_min: string;
+    row_count: string; contribution_count: string; total_amount: string; confidence_min: string;
+    gross_amount: string; refunded_amount: string; refund_count: string;
     individual_total: string; pac_total: string; data_source: string | null;
   }>(
-    `SELECT COUNT(*) AS contribution_count,
+    `SELECT COUNT(*) AS row_count,
+            COUNT(*) FILTER (WHERE ${NOT_REFUND_SQL}) AS contribution_count,
             COALESCE(SUM(c.amount), 0) AS total_amount,
+            COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL}), 0) AS gross_amount,
+            COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0), 0) AS refunded_amount,
+            COUNT(*) FILTER (WHERE c.amount < 0) AS refund_count,
             COALESCE(MIN(${CONFIDENCE_RANK_SQL}), 1) AS confidence_min,
             COALESCE(SUM(${INDIVIDUAL_CASE_SQL}), 0) AS individual_total,
             COALESCE(SUM(${PAC_CASE_SQL}), 0) AS pac_total,
@@ -893,9 +944,9 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
     [politicianSourceId, cycle]
   );
   const t = totalsRes.rows[0];
-  const count = Number(t?.contribution_count ?? 0);
-
-  if (count === 0) {
+  // A cycle holding ONLY refunds keeps its agg row (contribution_count 0, refund_count > 0): the refunds are real
+  // and the summary reports them. The row goes only when the pair has no rows at all.
+  if (Number(t?.row_count ?? 0) === 0) {
     await pool.query(
       `DELETE FROM transparent_motivations.contribution_summary_agg
        WHERE politician_source_id = $1 AND election_cycle = $2`,
@@ -910,7 +961,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
     `SELECT COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
             SUM(c.amount) AS total, COUNT(*) AS count
      FROM transparent_motivations.contributions c
-     WHERE c.politician_source_id = $1 AND c.election_cycle = $2
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${NOT_REFUND_SQL}
      GROUP BY 1`,
     [politicianSourceId, cycle]
   );
@@ -937,7 +988,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
             MIN(${CONFIDENCE_RANK_SQL}) AS confidence_level_n,
             MIN(c.raw_record::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
-     WHERE c.politician_source_id = $1 AND c.election_cycle = $2
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${NOT_REFUND_SQL}
      GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total_amount DESC
      LIMIT ${AGG_TOP_DONORS}`,
@@ -960,12 +1011,16 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
   await pool.query(
     `INSERT INTO transparent_motivations.contribution_summary_agg
        (politician_source_id, election_cycle, data_source, contribution_count, total_amount,
-        individual_total, pac_total, confidence_min, sector_breakdown, top_donors, refreshed_at)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10::jsonb, now())
+        individual_total, pac_total, confidence_min, sector_breakdown, top_donors,
+        gross_amount, refunded_amount, refund_count, refreshed_at)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10::jsonb, $11, $12, $13, now())
      ON CONFLICT (politician_source_id, election_cycle) DO UPDATE SET
        data_source        = EXCLUDED.data_source,
        contribution_count = EXCLUDED.contribution_count,
        total_amount       = EXCLUDED.total_amount,
+       gross_amount       = EXCLUDED.gross_amount,
+       refunded_amount    = EXCLUDED.refunded_amount,
+       refund_count       = EXCLUDED.refund_count,
        individual_total   = EXCLUDED.individual_total,
        pac_total          = EXCLUDED.pac_total,
        confidence_min     = EXCLUDED.confidence_min,
@@ -973,9 +1028,10 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
        top_donors         = EXCLUDED.top_donors,
        refreshed_at       = now()`,
     [
-      politicianSourceId, cycle, t?.data_source ?? '', count,
+      politicianSourceId, cycle, t?.data_source ?? '', Number(t?.contribution_count ?? 0),
       Number(t?.total_amount ?? 0), Number(t?.individual_total ?? 0), Number(t?.pac_total ?? 0),
       Number(t?.confidence_min ?? 1), JSON.stringify(sectorBreakdown), JSON.stringify(topDonors),
+      Number(t?.gross_amount ?? 0), Number(t?.refunded_amount ?? 0), Number(t?.refund_count ?? 0),
     ]
   );
 }
@@ -1009,6 +1065,9 @@ interface AggRow {
   data_source: string;
   contribution_count: string;
   total_amount: string;
+  gross_amount: string | null;    // NULL = row last refreshed before CA_0255
+  refunded_amount: string | null;
+  refund_count: string | null;
   individual_total: string;
   pac_total: string;
   confidence_min: number;
@@ -1042,6 +1101,7 @@ async function getSummaryFromAgg(
 
   const rowsRes = await pool.query<AggRow>(
     `SELECT a.election_cycle, a.data_source, a.contribution_count, a.total_amount,
+            a.gross_amount, a.refunded_amount, a.refund_count,
             a.individual_total, a.pac_total, a.confidence_min, a.sector_breakdown, a.top_donors
      FROM transparent_motivations.contribution_summary_agg a
      JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
@@ -1054,8 +1114,8 @@ async function getSummaryFromAgg(
   let contributionCount = 0;
   let individualTotal = 0;
   let pacTotal = 0;
-  let itemizedTotal = 0;
-  let nonFecTotal = 0;
+  const itemized = { gross: 0, refunded: 0, refundCount: 0 };
+  const nonFec = { gross: 0, refunded: 0, refundCount: 0 };
   let confMin = 4;
   const sectorAccum = new Map<string, { total: number; count: number }>();
   const donorAccum = new Map<string, TopDonorEntry>();
@@ -1066,8 +1126,16 @@ async function getSummaryFromAgg(
     contributionCount += cnt;
     individualTotal += Number(row.individual_total);
     pacTotal += Number(row.pac_total);
-    itemizedTotal += Number(row.total_amount);
-    if (row.data_source !== 'fec') nonFecTotal += Number(row.total_amount);
+    // A row not yet refreshed under CA_0255 has NULL gross columns: read it the old way (net as gross, no
+    // refunds), which is exactly what it served before. The --gross-missing backfill clears these.
+    const gross = row.gross_amount == null ? Number(row.total_amount) : Number(row.gross_amount);
+    const refunded = row.refunded_amount == null ? 0 : Number(row.refunded_amount);
+    const refunds = Number(row.refund_count ?? 0);
+    for (const acc of row.data_source === 'fec' ? [itemized] : [itemized, nonFec]) {
+      acc.gross += gross;
+      acc.refunded += refunded;
+      acc.refundCount += refunds;
+    }
     confMin = Math.min(confMin, Number(row.confidence_min));
     dataSourceCount.set(row.data_source, (dataSourceCount.get(row.data_source) ?? 0) + cnt);
 
@@ -1108,10 +1176,9 @@ async function getSummaryFromAgg(
   const primaryDataSource = Array.from(dataSourceCount.entries())
     .sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'fec';
 
-  // Headline stays authoritative FEC receipts + non-FEC itemized (unchanged from live path).
+  // Headline stays authoritative FEC receipts + non-FEC itemized (same rule as the live path), both gross.
   const authoritativeFec = await getAuthoritativeFecTotal(politicianId, effectiveCycle);
-  const effectiveTotalRaised =
-    authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
+  const headline = headlineTotals(authoritativeFec, itemized, nonFec);
 
   const sourceSystemMap: Record<string, string> = {
     // 'indiana' is the year-agnostic stamp runAdapterForAll('indiana') writes after each run.
@@ -1132,7 +1199,7 @@ async function getSummaryFromAgg(
   const summary: SummaryResponse = {
     politician_id: politicianId,
     cycle: effectiveCycle,
-    total_raised: effectiveTotalRaised,
+    ...headline,
     contribution_count: contributionCount,
     confidence_level: overallConfidence,
     data_source: primaryDataSource,
@@ -1202,6 +1269,8 @@ export async function getSummary(
         politician_id: politicianId,
         cycle: effectiveCycle,
         total_raised: 0,
+        total_refunded: 0,
+        refund_count: 0,
         contribution_count: 0,
         confidence_level: '',
         data_source: '',
@@ -1230,24 +1299,22 @@ export async function getSummary(
   // Query totals
   const totalsResult = await pool.query<TotalsRow>(
     `SELECT
-       COALESCE(SUM(c.amount), 0) AS total_raised,
-       COALESCE(SUM(c.amount) FILTER (WHERE c.data_source != 'fec'), 0) AS non_fec_total,
-       COUNT(*) AS contribution_count,
+       COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL}), 0) AS gross_total,
+       COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL} AND c.data_source != 'fec'), 0) AS non_fec_gross,
+       COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0), 0) AS refunded_total,
+       COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0 AND c.data_source != 'fec'), 0) AS non_fec_refunded,
+       COUNT(*) FILTER (WHERE c.amount < 0) AS refund_count,
+       COUNT(*) FILTER (WHERE c.amount < 0 AND c.data_source != 'fec') AS non_fec_refund_count,
+       COUNT(*) FILTER (WHERE ${NOT_REFUND_SQL}) AS contribution_count,
        COALESCE(MIN(CASE c.confidence_level
            WHEN 'HIGH'      THEN 1
            WHEN 'MEDIUM'    THEN 2
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END), 0) AS confidence_level_n,
-       COALESCE(SUM(CASE
-           WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
-             OR c.raw_record->>'entity_type' LIKE 'IND%'
-           THEN c.amount ELSE 0 END), 0) AS individual_total,
+       COALESCE(SUM(${INDIVIDUAL_CASE_SQL}), 0) AS individual_total,
        -- PAC = real PACs + party committees only (see INDIVIDUAL_CASE_SQL/PAC_CASE_SQL comment);
        -- excludes self-funding (CAN), victory-fund/JFC + candidate transfers (COM/CCM), orgs (ORG).
-       COALESCE(SUM(CASE
-           WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
-             OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
-           THEN c.amount ELSE 0 END), 0) AS pac_total
+       COALESCE(SUM(${PAC_CASE_SQL}), 0) AS pac_total
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
@@ -1265,11 +1332,21 @@ export async function getSummary(
   // itemized-row sum, which undercounts (unitemized + capped). When authoritative
   // is available, use it for the FEC portion and keep any non-FEC (state/local)
   // itemized sum on top. Otherwise fall back to the itemized sum as before.
-  const itemizedTotal = Number(tRow?.total_raised ?? 0);
-  const nonFecTotal = Number(tRow?.non_fec_total ?? 0);
+  // Both are gross; returned contributions go to total_refunded (headlineTotals, CA_0255).
   const authoritativeFec = await getAuthoritativeFecTotal(politicianId, effectiveCycle);
-  const effectiveTotalRaised =
-    authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
+  const headline = headlineTotals(
+    authoritativeFec,
+    {
+      gross: Number(tRow?.gross_total ?? 0),
+      refunded: Number(tRow?.refunded_total ?? 0),
+      refundCount: Number(tRow?.refund_count ?? 0),
+    },
+    {
+      gross: Number(tRow?.non_fec_gross ?? 0),
+      refunded: Number(tRow?.non_fec_refunded ?? 0),
+      refundCount: Number(tRow?.non_fec_refund_count ?? 0),
+    }
+  );
 
   // Query occupations for sector breakdown (TypeScript-side classification)
   const occResult = await pool.query<OccupationRow>(
@@ -1281,6 +1358,7 @@ export async function getSummary(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
+       AND ${NOT_REFUND_SQL}
        ${confidenceClause}`,
     baseParams
   );
@@ -1317,6 +1395,7 @@ export async function getSummary(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
+       AND ${NOT_REFUND_SQL}
        ${confidenceClause}
      GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')
      ORDER BY total_amount DESC
@@ -1379,7 +1458,7 @@ export async function getSummary(
   const summary: SummaryResponse = {
     politician_id: politicianId,
     cycle: effectiveCycle,
-    total_raised: effectiveTotalRaised,
+    ...headline,
     contribution_count: Number(tRow?.contribution_count ?? 0),
     confidence_level: overallConfidence,
     data_source: primaryDataSource,
