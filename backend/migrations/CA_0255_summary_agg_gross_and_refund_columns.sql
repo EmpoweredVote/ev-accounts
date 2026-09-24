@@ -26,7 +26,9 @@
 --
 -- ADD COLUMN with no default is a catalog-only change: no table rewrite, a brief ACCESS EXCLUSIVE lock.
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). Dry run (BEGIN ... ROLLBACK) passed first and the
+--   columns were confirmed absent after it; verified after the apply: 3 nullable columns present, 5,011 rows untouched
+--   (gross_amount NULL on all of them until the --gross-missing backfill).
 --
 -- ROLLBACK: ALTER TABLE transparent_motivations.contribution_summary_agg
 --             DROP COLUMN IF EXISTS gross_amount, DROP COLUMN IF EXISTS refunded_amount, DROP COLUMN IF EXISTS refund_count;
