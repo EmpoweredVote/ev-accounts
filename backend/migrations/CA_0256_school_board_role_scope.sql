@@ -119,15 +119,16 @@ DECLARE
   v_changed    int;
   v_after_non  int;
 BEGIN
-  -- (a) The CHECK admits exactly the five levels.
+  -- (a) The CHECK admits exactly the five levels — no more, no fewer. Exact equality on the
+  --     definition as Postgres renders it (pg_get_constraintdef, prod 2026-09-24), not a
+  --     LIKE per value, which would also pass a CHECK carrying a sixth value.
   SELECT pg_get_constraintdef(c.oid) INTO v_def
     FROM pg_constraint c
    WHERE c.conrelid = 'inform.compass_topic_roles'::regclass
      AND c.conname = 'chk_role_scope_tier';
-  IF v_def IS NULL
-     OR v_def NOT LIKE '%''federal''%' OR v_def NOT LIKE '%''state''%'
-     OR v_def NOT LIKE '%''local''%'   OR v_def NOT LIKE '%''judicial''%'
-     OR v_def NOT LIKE '%''school''%' THEN
+  IF v_def IS DISTINCT FROM
+     'CHECK ((role_scope = ANY (ARRAY[''federal''::text, ''state''::text, ''local''::text, ''judicial''::text, ''school''::text])))'
+  THEN
     RAISE EXCEPTION 'CA_0256 gate: chk_role_scope_tier is wrong: %', v_def;
   END IF;
 
