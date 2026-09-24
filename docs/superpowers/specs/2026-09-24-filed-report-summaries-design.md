@@ -116,6 +116,19 @@ to the CSV. It refuses a CSV row still flagged `needs_review`. Slots come from `
 
 Claim `county:18105` with the steward before any write.
 
+## Derived totals (operator ruling 2026-09-24, CA_0257)
+
+Filers often leave 15c ("raised") and 17c ("spent") **blank** on a $0 report while writing 0 on lines 13, 16
+and 18 (Granger). Strict NULL would show "Raised — · Spent —" for a report that says $0. The sheet's own
+arithmetic answers it, so a blank is filled from lines the filer wrote — never guessed — and the row says so:
+
+- `total_available` = line 16, column A, as written.
+- 15c blank, 13 and 16 written, 16 − 13 ≥ 0 → `receipts_total = 16 − 13`, `receipts_total_derived = true`.
+- 17c blank, 16 and 18 written, 16 − 18 ≥ 0 → `expenditures_total = 16 − 18`, `expenditures_total_derived = true`.
+- A negative result, or a written 15c/17c that does not reconcile with 16/18, sends the sheet to review.
+- CHECK constraints refuse a derived flag without the lines it came from. YTD columns are never derived.
+- The API passes both flags through; the panel notes when a figure was calculated from the report's totals.
+
 ## Out of scope / follow-ups
 
 - Report-total headline for politicians who also have itemized rows (decision 3).

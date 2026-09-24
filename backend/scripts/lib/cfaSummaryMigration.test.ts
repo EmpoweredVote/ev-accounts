@@ -24,6 +24,9 @@ const GRANGER: Record<string, string> = {
   cash_end: '0.00',
   debts_owed_by: '0.00',
   debts_owed_to: '0.00',
+  total_available: '0.00',
+  receipts_total_derived: 'no',
+  expenditures_total_derived: 'no',
   low_confidence_fields: '',
   needs_review: 'no',
   review_reasons: '',
@@ -57,6 +60,19 @@ describe('buildMigrationSql', () => {
 
   it('refuses an empty batch', () => {
     expect(() => buildMigrationSql([], OPTS)).toThrow(/no rows/);
+  });
+});
+
+describe('buildMigrationSql — derived totals', () => {
+  it('writes the derived flags and line 16', () => {
+    const sql = buildMigrationSql([{ ...GRANGER, receipts_total_derived: 'yes', expenditures_total: '0.00', expenditures_total_derived: 'yes' }], OPTS);
+    expect(sql).toContain('receipts_total_derived, expenditures_total_derived');
+    expect(sql).toMatch(/total_available/);
+    expect(sql).toMatch(/, true, true, 'internal|, true, true,/);
+  });
+
+  it('refuses a derived flag that is not yes/no', () => {
+    expect(() => buildMigrationSql([{ ...GRANGER, receipts_total_derived: '' }], OPTS)).toThrow(/derived/);
   });
 });
 

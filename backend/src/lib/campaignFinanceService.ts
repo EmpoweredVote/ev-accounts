@@ -532,6 +532,9 @@ export interface FiledReportResponse {
   expenditures_ytd: number | null;
   cash_end: number | null;
   debts_owed_by: number | null;
+  /** CA_0257: a blank 15c / 17c filled from the sheet's own arithmetic (16 − 13 / 16 − 18). */
+  receipts_total_derived: boolean;
+  expenditures_total_derived: boolean;
 }
 
 /** NULL means the line was blank on the sheet — it must stay null, never become 0. */
@@ -553,7 +556,8 @@ export async function getFiledReports(politicianId: string): Promise<FiledReport
               to_char(f.period_end, 'YYYY-MM-DD')   AS period_end,
               to_char(f.filed_on, 'YYYY-MM-DD')     AS filed_on,
               f.filed_with, f.receipts_total, f.receipts_ytd, f.receipts_itemized,
-              f.expenditures_total, f.expenditures_ytd, f.cash_end, f.debts_owed_by
+              f.expenditures_total, f.expenditures_ytd, f.cash_end, f.debts_owed_by,
+              f.receipts_total_derived, f.expenditures_total_derived
          FROM transparent_motivations.filed_report_summaries f
          JOIN transparent_motivations.politician_sources ps ON ps.id = f.politician_source_id
         WHERE ps.essentials_politician_id = $1
@@ -580,6 +584,8 @@ export async function getFiledReports(politicianId: string): Promise<FiledReport
     expenditures_ytd: numOrNull(row.expenditures_ytd),
     cash_end: numOrNull(row.cash_end),
     debts_owed_by: numOrNull(row.debts_owed_by),
+    receipts_total_derived: row.receipts_total_derived === true,
+    expenditures_total_derived: row.expenditures_total_derived === true,
   }));
 }
 
