@@ -46,8 +46,10 @@
 --   (first + last) reads "Justin Pearson". candidate_name_key(full_name) -- the (race_id, name) unique index -- reads
 --   full_name only, so it does not change.
 --
--- STATUS: NOT APPLIED. Dry run (BEGIN ... ROLLBACK) twice on prod 2026-09-24, revert confirmed each time; a control
---   with one row forced wrong made the gate raise.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, who ran it). Dry run (BEGIN ... ROLLBACK)
+--   twice before, revert confirmed each time; a control with one row forced wrong made the gate raise. Apply:
+--   UPDATE 110, gate passed, COMMIT. Verified after: 1 row matches ^[A-Z]\.? (the held J Bowman); 0 listed linked rows
+--   disagree with the politician's last_name.
 -- ROLLBACK: for each id in _r, set last_name := old_last.
 -- IDEMPOTENT: the UPDATE is guarded on last_name = old_last AND full_name = full_name as measured; a re-run changes
 --   nothing and the gate still passes.
