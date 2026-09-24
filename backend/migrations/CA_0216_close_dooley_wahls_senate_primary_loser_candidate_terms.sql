@@ -3,6 +3,9 @@
 -- Slot CA_0216 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand.
 --
+-- ✅ APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). UPDATE 2 / 0 / 2; post-verify passed;
+-- re-read after COMMIT: both terms closed (defeated), neither man seated, finance_summary NULL, is_vacant false.
+--
 -- Close the migration-196 "Candidate for U.S. Senate — <State>" placeholder terms of two 2026 Senate
 -- candidates who lost their party's nomination and are not on the November 3, 2026 general ballot:
 --
