@@ -110,10 +110,17 @@ function stripAccents(s: string): string {
     .join('');
 }
 
-/** Normalize a name for comparison: lowercase, strip accents and punctuation. */
+/**
+ * Normalize a name for comparison: lowercase, strip accents and punctuation. A hyphen
+ * becomes a space, so "Sigcho-Lopez" and FEC's "SIGCHO LOPEZ" compare as the same two
+ * words instead of one joined word.
+ */
 export function normalize(name: string): string {
-  return stripAccents(name).replace(/[^a-z\s]/g, '').trim();
+  return stripAccents(name).replace(/-/g, ' ').replace(/[^a-z\s]/g, '').replace(/\s+/g, ' ').trim();
 }
+
+/** Titles FEC sometimes puts where the given name belongs ("RAZACK, MD JD, NIZAM"). */
+const FEC_NAME_TITLES = new Set(['mr', 'mrs', 'ms', 'miss', 'dr', 'md', 'jd', 'phd', 'esq', 'rev', 'hon']);
 
 /**
  * Parse a FEC-format name "LAST, FIRST MIDDLE" into { first, last }.
@@ -126,9 +133,14 @@ export function parseFecName(fecName: string): { first: string; last: string } {
     return { first: '', last: normalize(fecName) };
   }
   const last = normalize(fecName.slice(0, commaIdx).trim());
-  const firstPart = fecName.slice(commaIdx + 1).trim().split(/\s+/)[0] ?? '';
-  const first = normalize(firstPart);
-  return { first, last };
+  // The first real word after the comma: skip titles and the empty token a
+  // double comma leaves ("BRINK,, BRIDGET").
+  const given = fecName
+    .slice(commaIdx + 1)
+    .split(/[\s,]+/)
+    .map(normalize)
+    .filter(t => t && !FEC_NAME_TITLES.has(t));
+  return { first: given[0] ?? '', last };
 }
 
 /** Generational suffixes that must not be mistaken for a last name. */
