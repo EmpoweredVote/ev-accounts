@@ -24,6 +24,8 @@ import {
   searchFecCandidates,
   getUnmatchedFederalPoliticians,
   runFecAutoMatch,
+  parseFecName,
+  scoreMatch,
 } from './fecResearch.js';
 
 function candidatesSearchResponse(results: unknown[] = []) {
@@ -560,5 +562,49 @@ describe('runFecAutoMatch — the last-name fallback', () => {
     await expect(autoMatch(houseCandidate('Dave Roth', 'ID'), [], [])).resolves.toMatchObject({
       queries: ['Dave Roth', 'roth'],
     });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FEC name formatting the scorer must see through
+// ---------------------------------------------------------------------------
+//
+// Found reviewing the 148 rows the 2026-09-24 auto-match left at needs_research
+// (CA_0258): real people scored 0.6 or 0 against their own 2026 ID because FEC
+// put a title before the given name, typed a double comma, or wrote a hyphenated
+// surname with a space. All FEC names below are real.
+
+describe('parseFecName / scoreMatch — FEC name formatting', () => {
+  const person = (full_name: string) =>
+    ({ id: 'p', full_name, bioguide_id: null } as unknown as Parameters<typeof scoreMatch>[0]);
+  const fec = (name: string) => ({ candidate_id: 'H6XX00001', name } as unknown as Parameters<typeof scoreMatch>[1]);
+
+  it('skips titles before the given name', () => {
+    expect(parseFecName('RAZACK, MD JD, NIZAM')).toEqual({ first: 'nizam', last: 'razack' });
+    expect(scoreMatch(person('Nizam Razack'), fec('RAZACK, MD JD, NIZAM'))).toBe(0.9);
+  });
+
+  it('skips the empty token a double comma leaves', () => {
+    expect(parseFecName('BRINK,, BRIDGET')).toEqual({ first: 'bridget', last: 'brink' });
+    expect(scoreMatch(person('Bridget Brink'), fec('BRINK,, BRIDGET'))).toBe(0.9);
+  });
+
+  it('reads a hyphen as a space, on either side', () => {
+    expect(scoreMatch(person('Byron Sigcho-Lopez'), fec('SIGCHO LOPEZ, BYRON'))).toBe(0.9);
+    expect(scoreMatch(person('Bernadette Greene-Placentia'), fec('GREENE PLACENTIA, BERNADETTE'))).toBe(0.9);
+    expect(scoreMatch(person('Melisa Lopez Franzen'), fec('LOPEZ-FRANZEN, MELISA'))).toBe(0.9);
+  });
+
+  it('still does not match a one-word surname to one half of a hyphenated one', () => {
+    expect(scoreMatch(person('Maria Lopez'), fec('SIGCHO-LOPEZ, MARIA'))).toBe(0);
+  });
+
+  it('leaves the given name empty when it holds only titles', () => {
+    expect(parseFecName('SMITH, MR.')).toEqual({ first: '', last: 'smith' });
+  });
+
+  it('keeps a title that follows the given name out of the way, as before', () => {
+    expect(parseFecName('DOUGLASS, EUGENE FARLEY DR.')).toEqual({ first: 'eugene', last: 'douglass' });
+    expect(parseFecName('COESTER, C. MARK MR')).toEqual({ first: 'c', last: 'coester' });
   });
 });
