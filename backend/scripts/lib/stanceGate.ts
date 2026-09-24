@@ -45,6 +45,8 @@ export const GATE_CHECK_IDS = [
   'unknown-politician', 'ambiguous-politician', 'duplicate-row', 'value-out-of-range', 'topic-not-in-season',
   'topic-out-of-scope', 'level-unknown', 'no-source', 'source-without-snippet', 'snippet-too-short',
   'evidence-type-invalid', 'record-no-instrument', 'statement-needs-review', 'party-inference',
+  'reasoning-empty', 'ballotpedia-only', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
+  'quote-not-in-snippet',
 ] as const;
 export type GateCheckId = typeof GATE_CHECK_IDS[number];
 export interface GateFinding {
@@ -78,6 +80,87 @@ export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?(?!\s+form\s+of\s
 
 const wordCount = (s: string) => normalizeText(s).split(' ').filter(Boolean).length;
 
+// C57: mirrors check-stance-sources.mjs's BALLOTPEDIA_ONLY predicate (backend/scripts/check-stance-sources.mjs,
+// ~L226-239) for PRE-WRITE use: every source URL is on ballotpedia.org. That script also carves out a
+// Candidate_Connection survey deep link (the candidate's own words, published nowhere else) once a stance is
+// already live; pre-write there is no such row yet to preserve, so any ballotpedia-only row here is simply
+// sent back for a stronger source.
+function isBallotpediaUrl(url: string): boolean {
+  try { return /(^|\.)ballotpedia\.org$/i.test(new URL(url).hostname); } catch { return /ballotpedia\.org/i.test(url); }
+}
+
+// C58: mirrors check-stance-sources.mjs's PRIMARY_SITE_NO_PATH predicate (~L206-218) — a source URL that is
+// a bare domain with no path. Medium, not high: a bare root belonging to the subject can still support the
+// claim (see that script's comment for the measured rationale); it just needs a path for precision.
+function hasNoPath(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.pathname === '' || u.pathname === '/';
+  } catch { return false; } // an unparseable URL is a NON_URL_SOURCE-shaped problem, not this one
+}
+
+// Mirrored (not imported) from .claude/skills/research-stances/scripts/build-and-check.mjs's
+// POINTER_ONLY_SOURCE: that script lives outside backend/'s tsconfig rootDir. VOTE411 answers are the
+// candidate's own words, but LWV terms bar reproducing them without written permission, so they cannot be a
+// cited source. lwvlac.org is deliberately left OUT — open question for the program owner (task 6 brief,
+// 2026-09-23) — keep in sync with the original if it changes.
+const POINTER_ONLY_SOURCE = /vote411\.org|thevoterguide\.org/i;
+
+// Identifier-bearing subset of NAMES_INSTRUMENT (chair-evidence-patterns.mjs): the forms that NAME a
+// specific instrument by number, letter or dated title, as opposed to a bare "Act"/"Ordinance", "voted
+// yes", "roll call" or "Commissioners Court approved" — which say something happened but cannot themselves
+// be looked up in a source's text. NAMES_INSTRUMENT is NEVER widened for this gate; if a future widening of
+// NAMES_INSTRUMENT adds a new IDENTIFIER-bearing form, copy it here too (a new bare-action form needs no
+// change here). Each pattern tolerates an optional period/space between the letters ("HB" / "H.B." / "HB.")
+// so extraction does not depend on which spelling the reasoning happened to use; comparison against a
+// snippet is done separately, by canonicalizing both sides (canonicalizeInstrumentId, below).
+const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
+  /\bH\.?B\.?\s?\d+\b/,
+  /\bS\.?B\.?\s?\d+\b/,
+  /\b(?:House|Senate) Bill \d{1,4}\b/,
+  /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
+  /\bH\.?R\.?\s?\d+\b/,
+  /\bS\.?J\.?\s?Res\.?\s?\d+\b/,
+  /\bA\.?B\.?-?\s?\d+\b/,
+  /\bLD\s?\d+\b/,
+  /\bSJR\s?\d+\b/,
+  /\bChapter\s?\d+\b/,
+  /\bResolution No\.?\s?\d+\b/,
+  /\bOrdinance No\.?\s?\d+\b/,
+  /\bMeasure \d+\.\d+\b/,
+  /\bO-\d{4,5}\b/,
+  /\bR-\d{5,6}\b/,
+  /\bProposition [A-Z0-9]{1,3}\b/,
+  /(?<![A-Za-z]\.)\bS\.?\s?\d{1,4}\b/,
+  /\bBan of (?:19|20)\d{2}\b/,
+  /\bR-\d{1,4}-\d{2}\b/,
+];
+
+/** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */
+function extractInstrumentIdentifiers(text: string): string[] {
+  const out: string[] = [];
+  for (const pattern of INSTRUMENT_IDENTIFIER_PATTERNS) {
+    const re = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
+    out.push(...(text.match(re) ?? []));
+  }
+  return out;
+}
+
+/**
+ * Canonical form for comparing an instrument identifier against snippet text: normalize (case,
+ * whitespace, curly quotes — normalizeText), then collapse each run of letters or digits together with no
+ * separator — "H.B. 1001", "HB 1001" and "HB1001" all become "hb1001". Digits stay grouped as their own run
+ * (never split), so this cannot accidentally straddle an unrelated word boundary elsewhere in the snippet.
+ */
+function canonicalizeInstrumentId(text: string): string {
+  return (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
+}
+
+/** Text inside straight ("...") or curly (“...”) double quotes in `text`, in order, one entry per span. */
+function extractQuotedPhrases(text: string): string[] {
+  return [...text.matchAll(/"([^"]+)"|“([^”]+)”/g)].map((m) => m[1] ?? m[2] ?? '');
+}
+
 export function checkStanceRow(
   row: ResearchRow,
   ctx: { topic: BundleTopic | undefined; politician: BundlePolitician | undefined; evidence: EvidenceRow[] },
@@ -91,6 +174,7 @@ export function checkStanceRow(
 
   if (!ctx.politician) add('unknown-politician', 'high', `${row.full_name} is not in politicians.json — rebuild the bundle with this person`);
   if (!Number.isInteger(row.value) || row.value < 1 || row.value > 5) add('value-out-of-range', 'high', `value ${row.value} is not an integer 1-5`);
+  if (row.reasoning.trim().length === 0) add('reasoning-empty', 'high', 'reasoning is empty for a scored row');
 
   if (!ctx.topic) {
     add('topic-not-in-season', 'high', `${row.topic_key} is not a question the open season asks — it cannot be written`);
@@ -107,10 +191,26 @@ export function checkStanceRow(
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }
+    if (hasNoPath(url)) add('source-no-path', 'medium', `source URL has no path: ${url}`);
+    if (POINTER_ONLY_SOURCE.test(url)) {
+      add('pointer-only-source', 'high', `source is VOTE411 / thevoterguide.org: ${url}. LWV terms bar reproducing this without written permission, so it cannot be a cited source.`);
+    }
+  }
+  if (row.source_urls.length > 0 && row.source_urls.every(isBallotpediaUrl)) {
+    add('ballotpedia-only', 'high', 'every source is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
   }
 
   if (row.evidence_type === 'record') {
     if (!NAMES_INSTRUMENT.test(row.reasoning)) add('record-no-instrument', 'high', 'record evidence must name the bill, act, ordinance or recorded vote');
+    // C68: citation control in the OTHER direction — naming an instrument in the reasoning is not enough;
+    // it must actually appear in one of the row's cited snippets, or the citation is one-way.
+    const identifiers = [...new Set(extractInstrumentIdentifiers(row.reasoning).map(canonicalizeInstrumentId))];
+    const snippetsCanon = ctx.evidence.map((e) => canonicalizeInstrumentId(e.snippet));
+    for (const id of identifiers) {
+      if (!snippetsCanon.some((s) => s.includes(id))) {
+        add('instrument-not-cited', 'high', `reasoning names an instrument (canonical "${id}") that does not appear in any cited snippet`);
+      }
+    }
   } else if (row.evidence_type === 'statement') {
     add('statement-needs-review', 'medium', "statement evidence (the person's own words) goes to human review");
   } else {
@@ -119,6 +219,16 @@ export function checkStanceRow(
 
   if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)) {
     add('party-inference', 'high', 'reasoning names a party or partisan frame — party is never evidence');
+  }
+
+  // C69: a quoted passage in the reasoning that isn't in any cited snippet is either a wrong sentence or a
+  // fabricated quote — quotation marks are a promise the words were said, and this checks the promise.
+  const quotes = extractQuotedPhrases(row.reasoning).filter((q) => wordCount(q) >= 4);
+  for (const q of quotes) {
+    const nq = normalizeText(q);
+    if (!ctx.evidence.some((e) => normalizeText(e.snippet).includes(nq))) {
+      add('quote-not-in-snippet', 'high', `reasoning quotes text not found verbatim in any cited snippet: "${q}"`);
+    }
   }
   return out;
 }

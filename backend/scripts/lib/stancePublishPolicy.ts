@@ -22,7 +22,10 @@ export type Decision =
   | { action: 'auto-push' }
   | { action: 'unchanged' }
   | { action: 'review'; reasons: ReviewReason[] }
-  | { action: 're-research'; reasons: ReReason[] };
+  | { action: 're-research'; reasons: ReReason[] }
+  // C43/D3: a scope finding is not a research defect — re-researching the same (person, topic) pair
+  // cannot fix it, because the office simply does not hold this question. Recorded, never re-queued.
+  | { action: 'out-of-scope' };
 
 export interface PolicyInput {
   proposedValue: number;
@@ -41,6 +44,11 @@ export interface PolicyInput {
 }
 
 export function decidePublish(i: PolicyInput): Decision {
+  // C43/D3: checked first and unconditionally. A scope finding means the OFFICE does not hold this
+  // question — not that the evidence is bad — so it is never folded into the generic gate-high
+  // re-research bucket (which invites re-queuing the same pair) and never blocked on the politician
+  // resolving first (an out-of-scope topic is out of scope whether or not the person is known).
+  if (i.gateFindings.some((f) => f.check_id === 'topic-out-of-scope')) return { action: 'out-of-scope' };
   if (!i.politicianResolved) {
     // Unresolved → review, so a person can link the right record — but only when that is ALL
     // that is wrong. Any other high finding means the research itself is defective, and an

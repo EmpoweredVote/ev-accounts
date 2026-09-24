@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES, PARTY_NOUNS_ANY_CASE, GATE_CHECK_IDS,
   type ResearchRow, type BundleTopic, type BundlePolitician } from './stanceGate.js';
 
-const SNIP = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 because she believes every '
+const SNIP = 'Representative Jane Doe voted yes on HB 1001 in 2025 because she believes every '
   + 'Hoosier family deserves affordable coverage and lower prescription costs at the pharmacy counter today';
 const topic = (topic_key: string, scope: Partial<BundleTopic>): BundleTopic => ({
   topic_id: `id-${topic_key}`, topic_key, topic_revision_id: `rev-${topic_key}`, question_number: 1,
@@ -44,6 +44,12 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     ['evidence-type-invalid', { evidence_type: 'vibes' }],
     ['record-no-instrument', { reasoning: 'She is a strong supporter of expanding coverage.' }],
     ['party-inference', { reasoning: 'Voted YES on HB 1001; as a Republican she follows the caucus.' }],
+    ['reasoning-empty', { reasoning: '' }],
+    ['ballotpedia-only', { source_urls: ['https://ballotpedia.org/Jane_Doe'] }],
+    ['source-no-path', { source_urls: ['https://a.gov'] }],
+    ['pointer-only-source', { source_urls: ['https://www.vote411.org/ballot/jane-doe'] }],
+    ['instrument-not-cited', { reasoning: 'Voted YES on HB 1001 (2025) and also cited SB 42 in floor remarks.' }],
+    ['quote-not-in-snippet', { reasoning: 'Voted YES on HB 1001 (2025), saying "this expands coverage for every single family in our state."' }],
   ])('%s', (want, patch) => {
     expect(ids({ ...good, ...patch })).toContain(want);
   });
@@ -143,6 +149,77 @@ describe('PARTY_NOUNS_ANY_CASE — lowercase party nouns', () => {
   });
   it('capitalized "Democrat" (already covered by PARTY_NAMES) is still party-inference', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
+  });
+});
+
+describe('reasoning-empty', () => {
+  it('flags whitespace-only reasoning too (trimmed)', () => {
+    expect(ids({ ...good, reasoning: '   ' })).toContain('reasoning-empty');
+  });
+  it('does not flag a short but non-empty reasoning', () => {
+    expect(ids({ ...good, reasoning: 'Yes.' })).not.toContain('reasoning-empty');
+  });
+});
+
+describe('ballotpedia-only (C57)', () => {
+  it('does not flag a row with one ballotpedia source alongside another', () => {
+    const urls = ['https://ballotpedia.org/Jane_Doe', 'https://a.gov/x'];
+    expect(ids({ ...good, source_urls: urls }, { evidence: [ev[0], { ...ev[0], source_url: 'https://ballotpedia.org/Jane_Doe' }] }))
+      .not.toContain('ballotpedia-only');
+  });
+  it('flags every source on a ballotpedia subdomain too', () => {
+    expect(ids({ ...good, source_urls: ['https://www.ballotpedia.org/Jane_Doe'] })).toContain('ballotpedia-only');
+  });
+});
+
+describe('source-no-path (C58)', () => {
+  it('does not flag a source URL that has a path', () => {
+    expect(ids(good)).not.toContain('source-no-path');
+  });
+  it('flags a bare domain with only a trailing slash', () => {
+    expect(ids({ ...good, source_urls: ['https://a.gov/'] })).toContain('source-no-path');
+  });
+});
+
+describe('pointer-only-source', () => {
+  it('does not flag lwvlac.org — left out per the task-6 brief, open question for the program owner', () => {
+    expect(ids({ ...good, source_urls: ['https://lwvlac.org/jane-doe'] }, { evidence: [{ ...ev[0], source_url: 'https://lwvlac.org/jane-doe' }] }))
+      .not.toContain('pointer-only-source');
+  });
+  it('flags thevoterguide.org the same as vote411.org', () => {
+    expect(ids({ ...good, source_urls: ['https://www.thevoterguide.org/candidate/jane-doe'] })).toContain('pointer-only-source');
+  });
+});
+
+describe('instrument-not-cited (C68) — spacing/case variants match', () => {
+  const snippetWith = (bill: string) => `Representative Jane Doe voted yes on ${bill} in 2025 because she believes every `
+    + 'Hoosier family deserves affordable coverage and lower prescription costs at the pharmacy counter today';
+  it.each([
+    ['H.B. 1001', 'HB1001'],
+    ['HB1001', 'H.B. 1001'],
+    ['HB 1001', 'HB1001'],
+  ])('reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
+    const row = { ...good, reasoning: `Voted YES on ${reasoningForm} (2025), which expands the public option.` };
+    const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('does not apply to a bare "Act" or "voted yes" — no identifier named, nothing to cross-check', () => {
+    const row = { ...good, reasoning: 'Voted YES on the Clean Water Act (2025), which expands protections.' };
+    expect(ids(row, { evidence: [{ ...ev[0], snippet: snippetWith('the Clean Water Act') }] })).not.toContain('instrument-not-cited');
+  });
+});
+
+describe('quote-not-in-snippet (C69)', () => {
+  it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };
+    expect(ids(row)).not.toContain('quote-not-in-snippet');
+  });
+  it('does not flag a quote shorter than 4 words — a stance label, not a claimed utterance', () => {
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); called it "good policy".' })).not.toContain('quote-not-in-snippet');
+  });
+  it('flags curly quotes the same as straight quotes', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying “this is a total fabrication nobody actually said.”' };
+    expect(ids(row)).toContain('quote-not-in-snippet');
   });
 });
 

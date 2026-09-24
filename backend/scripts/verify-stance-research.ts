@@ -451,7 +451,13 @@ console.log(AUTO_PUSH
   ? 'mode: --auto-push — rows that pass every check are written without a person'
   : 'mode: review-all (default) — every stance goes to a person; pass --auto-push to publish clean rows unattended');
 console.log(`stance rows: ${allStances.length} (${stanceRows.length} scored, ${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`);
-console.log(`AUTO-PUSH: ${bucket('auto-push').length}  UNCHANGED: ${bucket('unchanged').length}  REVIEW: ${bucket('review').length}  RE-RESEARCH: ${bucket('re-research').length}`);
+console.log(`AUTO-PUSH: ${bucket('auto-push').length}  UNCHANGED: ${bucket('unchanged').length}  REVIEW: ${bucket('review').length}  `
+  + `RE-RESEARCH: ${bucket('re-research').length}  OUT-OF-SCOPE: ${bucket('out-of-scope').length}`);
+if (bucket('out-of-scope').length) {
+  // C43/D3: recorded, not re-queued — a scope finding is closed research, not a defect to re-research.
+  console.log('\n--- OUT OF SCOPE — the office does not hold this question; recorded, not sent back to research ---');
+  for (const d of bucket('out-of-scope')) console.log(`  OUT-OF-SCOPE ${d.row.stance.full_name}\t${d.row.stance.topic_key}\tvalue=${d.row.stance.value}`);
+}
 for (const d of decided) {
   const s = d.row.stance;
   console.log(`  ${d.decision.action.toUpperCase().padEnd(11)} ${s.full_name}\t${s.topic_key}\tvalue=${s.value}\tverified=${d.row.verifiedSources.length}`

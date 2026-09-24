@@ -398,7 +398,10 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
 - evidence_type = "record" when the stance rests on something the person DID in office (a bill, act,
   ordinance, recorded vote); "statement" when it rests on their own words (questionnaire, debate,
   forum, interview, campaign platform). A challenger with no record uses "statement".
-- record rows: the reasoning MUST name the instrument, e.g. "Voted YES on HB 1001 (2025)".
+- record rows: the reasoning MUST name the instrument, e.g. "Voted YES on HB 1001 (2025)" — AND that
+  instrument (bill/ordinance/resolution number, however spelled) must actually appear in one of the
+  row's evidence.csv snippets. Naming it in reasoning without it being in the cited page is a one-way
+  citation and the gate refuses it (`instrument-not-cited`).
 - For EVERY source_url_N in research.csv, write at least one evidence.csv row whose snippet is a
   VERBATIM passage of at least 25 words, copied from that page as you fetched it, that shows the
   position and names this person (or sits within a few sentences of their name). Copy — never retype,
@@ -408,6 +411,14 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
   evidence allows" is a tiebreaker, not evidence.
 - Never name a party, a party label, or a party-typical position in reasoning. Party is never evidence.
 - No source_url in research.csv — stance or quote — may be a vote411.org or thevoterguide.org URL.
+- reasoning must never be blank for a scored (non-blank-value) row (`reasoning-empty`).
+- Do not cite ONLY ballotpedia.org — every source_url on a row being ballotpedia.org is refused
+  (`ballotpedia-only`); cite the record, filing or report the Ballotpedia bio itself draws on.
+- A bare-domain source_url with no path (e.g. `https://example.gov` instead of a specific page) is
+  flagged for review (`source-no-path`) — link the actual page, not the site root.
+- If reasoning puts words in quotation marks, that exact text (normalized for case/whitespace) must
+  appear in one of the row's evidence.csv snippets — a quoted sentence nobody said, or the wrong
+  sentence in quotes, is refused (`quote-not-in-snippet`). Only quote-attribute what the source shows.
 
 QUOTE-SELECTION GATES + RANKING QUESTION + DIFFERENTIATION:
 [INJECT: gates]

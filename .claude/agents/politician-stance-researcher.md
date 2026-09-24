@@ -132,6 +132,19 @@ with per-topic notes, are the SCHOOL-BOARD RULES block in the research contract 
 - Never fabricate or reconstruct a URL. If you did not fetch it successfully, it does not go in the row.
 - Prefer primary sources: legislature and roll-call pages, council minutes, the candidate's own site or
   questionnaire, debate/forum transcripts.
+- **Reasoning may never be blank on a scored row** — the gate refuses an empty reasoning (`reasoning-empty`).
+- **Do not cite ONLY ballotpedia.org.** A row whose every source_url is ballotpedia.org is refused
+  (`ballotpedia-only`) — cite the record, filing or report the bio itself draws on.
+- **Give a source URL a real path, not a bare domain root** — a bare `https://example.gov` is flagged
+  (`source-no-path`); link the specific page.
+- **An instrument named in reasoning must appear in a cited snippet, not just in reasoning** — a bill,
+  ordinance or resolution number that is named but never shows up on the cited page is a one-way
+  citation and is refused (`instrument-not-cited`). This is a citation-control check, not a widening of
+  what counts as an instrument.
+- **Quoted text in reasoning must be verbatim on a cited page** — anything in quotation marks inside
+  `reasoning` (not just `quote_text`) must appear (case/whitespace normalized) in one of the row's
+  evidence.csv snippets, or it is refused (`quote-not-in-snippet`). Never put words in quotes you have
+  not confirmed on the source.
 
 ### Quotes
 - **All quotes must be EXACT, VERBATIM quotes** — never paraphrase or approximate.

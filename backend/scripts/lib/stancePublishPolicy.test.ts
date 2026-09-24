@@ -39,6 +39,18 @@ describe('decidePublish', () => {
   it('treats an editor blank (0) as an existing value — re-seating it is an editor call', () => {
     expect(decidePublish({ ...base, existingOpenSeasonValue: 0 })).toEqual({ action: 'review', reasons: ['value-change'] });
   });
+  // C43/D3: a scope finding is recorded in its own bucket, not folded into re-research.
+  it('routes a topic-out-of-scope finding to out-of-scope, not re-research', () => {
+    expect(decidePublish({ ...base, gateFindings: [f('topic-out-of-scope', 'high')] })).toEqual({ action: 'out-of-scope' });
+  });
+  it('routes to out-of-scope even alongside another high finding', () => {
+    expect(decidePublish({ ...base, gateFindings: [f('topic-out-of-scope', 'high'), f('party-inference', 'high')] }))
+      .toEqual({ action: 'out-of-scope' });
+  });
+  it('routes to out-of-scope even when the politician has not resolved', () => {
+    expect(decidePublish({ ...base, politicianResolved: false, gateFindings: [f('topic-out-of-scope', 'high')] }))
+      .toEqual({ action: 'out-of-scope' });
+  });
   it('queues statement evidence for review, accumulating other reasons', () => {
     expect(decidePublish({ ...base, existingOpenSeasonValue: 5,
       gateFindings: [f('statement-needs-review', 'medium'), f('level-unknown', 'medium')] }))
@@ -56,6 +68,8 @@ describe('decidePublish — review-all mode (autoPushEnabled false, the default)
     expect(decidePublish({ ...reviewAll, autoPushEnabled: true })).toEqual({ action: 'auto-push' });
   });
   it('leaves every earlier decision unchanged — review-all only replaces auto-push', () => {
+    expect(decidePublish({ ...reviewAll, gateFindings: [f('topic-out-of-scope', 'high')] }))
+      .toEqual({ action: 'out-of-scope' });
     expect(decidePublish({ ...reviewAll, politicianResolved: false, gateFindings: [f('unknown-politician', 'high')] }))
       .toEqual({ action: 'review', reasons: ['unresolved-politician'] });
     expect(decidePublish({ ...reviewAll, gateFindings: [f('party-inference', 'high')] }))
