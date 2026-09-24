@@ -56,8 +56,12 @@ import path from "node:path";
 const SCANNED_DIRS = ["backend/migrations", "backend/src", "backend/scripts"];
 const SCANNED_EXT = new Set([".sql", ".ts", ".tsx", ".js", ".mjs", ".cjs", ".py"]);
 
-// This file documents the forbidden pattern, so it would always match itself.
-const SELF = "backend/scripts/check-office-occupancy.mjs";
+// This file documents the forbidden pattern, so it would always match itself. Its test holds the
+// pattern as fixtures on purpose; scanned, it would fail every PR that touches it.
+const SELF = new Set([
+  "backend/scripts/check-office-occupancy.mjs",
+  "backend/scripts/check-office-occupancy.test.ts",
+]);
 
 const repoRoot = execFileSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8" }).trim();
 const git = (args) => execFileSync("git", args, { cwd: repoRoot, encoding: "utf8" }).trim();
@@ -89,13 +93,16 @@ function changedFiles(base) {
   sets.push(tryGit(["ls-files", "--others", "--exclude-standard", "--", ...SCANNED_DIRS]));
   return [...new Set(sets.flatMap((s) => (s ? s.split("\n") : [])).filter(Boolean))]
     .filter((f) => SCANNED_EXT.has(path.extname(f)))
-    .filter((f) => f !== SELF);
+    .filter((f) => !SELF.has(f));
 }
 
 // Strip line comments and block comments so a note ABOUT the old column isn't a violation.
+// A block comment becomes the newlines it held, not "": violations report
+// `code.slice(0, m.index).split("\n").length`, so deleting those newlines reported every hit after a
+// multi-line block too low (senate-candidate-fec.ts:263 for a join on line 291, 2026-09-23).
 function stripComments(src) {
   return src
-    .replace(/\/\*[\s\S]*?\*\//g, "")     // /* ... */
+    .replace(/\/\*[\s\S]*?\*\//g, (block) => block.replace(/[^\n]/g, ""))     // /* ... */
     .split("\n")
     .map((line) => line.replace(/(--|\/\/|#)\s.*$/, ""))
     .join("\n");
@@ -168,7 +175,7 @@ function allTrackedFiles() {
     .split("\n")
     .filter(Boolean)
     .filter((f) => SCANNED_EXT.has(path.extname(f)))
-    .filter((f) => f !== SELF);
+    .filter((f) => !SELF.has(f));
 }
 
 // The column list of an INSERT into essentials.politicians (not politician_* tables: `\s*\(` must
