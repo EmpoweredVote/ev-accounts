@@ -1,5 +1,13 @@
 -- CA_0213_fix_stale_senate_candidate_fec_ids.sql
 --
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, in chat, "I approve"; run by
+--   Chris Andrews with `psql -1 -v ON_ERROR_STOP=1 -f`, after PR #694's CI passed). Dry run first as
+--   BEGIN ... ROLLBACK, then twice in one rolled-back transaction: every gate passed, the second pass
+--   was a no-op with one provenance note per row, and prod was unchanged after. The apply printed
+--   "CA_0213 OK". Verified after from a separate read-only session: the three rows carry S6KY00385,
+--   S6ID00138 and S6NH00208 with the note; contributions unchanged (31,894 / 434 / 5,961); no
+--   politician_sources row carries S0KY00420, S2ID00178 or S0NH00201.
+--
 -- Three 2026 U.S. Senate candidates carry a confirmed `fec_senate` politician_sources row whose
 -- external_id is the FEC candidate id from an EARLIER campaign. FEC registers a new candidate id
 -- per campaign, and the old one keeps the same name, state and office, so a name search cannot
