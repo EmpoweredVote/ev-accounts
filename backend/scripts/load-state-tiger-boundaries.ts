@@ -310,6 +310,60 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // already present with geometry.
   // cd/county are EXCLUDED: prod already holds all 7 SC congressional and all 46 counties.
   SC: new Set(['sldu', 'sldl']),
+  // OH. Knight program slice 8 — Akron and Summit County. Production held ZERO G5210/G5220
+  // rows for FIPS 39 and ZERO state legislative offices before this wave; measured
+  // 2026-09-23 (Ohio held 23 offices in total: 15 US House, 5 statewide executives, 2 US
+  // Senators — plus a `Candidate for U.S. Senate — Ohio` row holding Sherrod Brown, which is
+  // a candidate office and must not be counted as a third senator).
+  // Counts MEASURED against raw TIGER 2024 FIPS 39 on 2026-09-23 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   33 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'033'
+  //   sldl   99 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'099'
+  // Ohio is single-member in BOTH chambers, so these polygon counts ARE the seat counts —
+  // unlike AZ/WA, and unlike ND/SD later in this same program. Codes are plain digits with no
+  // letter half, so the MN '08A' / MD '1A' collapse cannot arise; the pre-flight asserts the
+  // distinct suffix count anyway rather than reasoning about it.
+  // 🔴 VINTAGE WAS PROVEN, NOT ASSUMED. Ohio has been 99/33 for decades, so the 2021, 2022 and
+  // 2023 plans are all exactly this shape and a count can never date the map. The operative
+  // plan is the Ohio Redistricting Commission's, adopted 2023-09-26 and CORRECTED 2023-09-29,
+  // upheld by the Ohio Supreme Court in November 2023, governing the 2024 through 2030
+  // elections. Every one of the 132 TIGER polygons was located at its own published internal
+  // point inside the SECRETARY OF STATE's own shapefiles — ohiosos.gov's
+  // `2024-2032-sd-shapefile.zip` and `2024-2032-hd-shapefile.zip`, whose members are named
+  // "Corrected Sept 29 2023 Unified Bipartisan Redistricting Plan SD/HD SHP" — and all 132
+  // agree: 33/33 Senate, 99/99 House, 0 differ, 0 ambiguous.
+  // The control FAILED as required: the same sweep against TIGER 2022 (the superseded plan)
+  // disagrees on 4 of 33 Senate and 18 of 99 House. ⚠ AND IT STILL AGREES ON 29 AND 81 —
+  // most districts did not move, which is exactly why the wrong map survives a count, a shape
+  // check and a spot check. Among the disagreements SENATE 27 AND 28 SWAP, and Akron — this
+  // slice's own city — sits in one of them, so the wrong vintage would have put Akron in the
+  // wrong Senate district while looking entirely correct.
+  // Tool: scripts/verify-oh-tiger-vintage.mjs, which carries both halves.
+  // 🔴 THE SECRETARY OF STATE IS BEHIND A WAF: ohiosos.gov returns HTTP 403 with a ~1.25 MB
+  // HTML challenge page to a bare request, to a browser UA alone, AND to a full Chrome header
+  // set with a same-origin Referer. Both asset URLs returned a challenge of IDENTICAL SIZE —
+  // a uniform answer is a broken detector. The zips must be fetched in Playwright; the
+  // verifier takes them via --sos-dir and refuses to run without them.
+  // 🔴 AND OHIO'S OWN GIS SERVICE IS THE TRAP, NOT THE ANSWER:
+  // geo.oit.ohio.gov/arcgis/rest/services/OhioHouseSenateDistricts/MapServer layer 1 is titled
+  // "Ohio House Districts (2012- 2022)" — the SUPERSEDED map, named so that it invites exactly
+  // this use, and the host failed to connect on both 443 and 80 when measured. A layer's title
+  // is not its vintage.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA AND SC. sldl runs 39001..39099 and sldu
+  // 39001..39033, while Ohio's 88 counties are 39001..39175 odd. Summit County — Akron's
+  // parent, this wave's own jurisdiction — is 39153, outside the legislative range, but 33 of
+  // 33 Senate ids and most House ids collide with a county. ⚠ AND '39153' ALREADY COLLIDES
+  // ACROSS STATES: geofence_boundaries holds Summit County (G4020, state '39') and a
+  // MISSISSIPPI ZCTA (G6350, state '28') on that same geo_id — live again at slice 16 (Biloxi).
+  // Every join must pair geo_id with mtfcc/district_type.
+  // place/cousub/CDP are EXCLUDED and MUST NOT be re-run: Ohio's G4110 (925), G4040 (1,590)
+  // and G4210 (340) rows were loaded on 2026-09-18 by the national municipal import, and Akron
+  // city 3901000 is already present with geometry at 62.2741 sq mi. Ohio is the first Knight
+  // slice that owes no `place` load.
+  // cd/county are EXCLUDED: prod already holds all 15 OH congressional (G5200) and all 88
+  // counties — plus 15 G5200V26 rows, source `oh_orc_2025`, the 2026-2032 congressional remap
+  // adopted 2025-10-31, which this wave does not touch.
+  OH: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -1989,8 +2043,85 @@ async function processLayer(
     }
   }
 
+  // ── OH pre-flight (Knight slice 8 — Akron / Summit County) ──────────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 39 on 2026-09-23 by parsing the .dbf inside
+  // each zip directly, not inferred from the Ohio Constitution:
+  //   sldu   33 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, GEOID 39001..39033
+  //   sldl   99 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, GEOID 39001..39099
+  // Ohio is single-member in both chambers, so these polygon counts ARE the seat counts:
+  // 33 Senators + 99 Representatives.
+  // 🔴 A DRIFT HERE IS NOT A ROUNDING ERROR, AND THE COUNT CANNOT DATE THE MAP. 99/33 has been
+  // Ohio's shape for decades, so it is equally the shape of the 2021 plan, the 2022 plan and
+  // the live 2023 one — and the 2022 map agrees with the live map on 81 of 99 House and 29 of
+  // 33 Senate districts. See the vintage proof in the OH allowlist comment above, which rests
+  // on all 132 polygons agreeing with the Secretary of State's own shapefiles at their own
+  // internal points, and on TIGER 2022 failing that same test. If a count drifts, something
+  // other than a remap has happened: stop. Do NOT raise the number to get a green run.
+  // The third assertion is Ohio-specific and is the one no other state in this loader can make:
+  // Ohio Const. Art. XI § 4 requires every Senate district to be THREE WHOLE HOUSE DISTRICTS.
+  // 99 = 3 x 33 exactly, so a pair of files that disagree about the plan cannot both satisfy
+  // it. ⚠ The nesting is GEOMETRIC, never arithmetic — measured 2026-09-23, Senate 1 holds
+  // House 81/82/83 and Senate 15 holds House 1/2/3, so "Senate N = House 3N-2..3N" is FALSE
+  // on all 33. This block asserts only the arithmetic precondition; the geometric nesting is
+  // proved in verify-oh-tiger-vintage.mjs, which does not need a database.
+  if (fipsArg === '39') {
+    const EXPECTED_OH_MTFCC: Record<string, number> = {
+      sldu: 33,   // 33 Ohio Senate districts — Ohio Redistricting Commission plan adopted
+                  // 2023-09-26, corrected 2023-09-29 — measured 2026-09-23
+      sldl: 99,   // 99 Ohio House districts, same plan — measured 2026-09-23
+    };
+    if (layer in EXPECTED_OH_MTFCC) {
+      const expected = EXPECTED_OH_MTFCC[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[OH MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 39 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[OH OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. OH district codes ` +
+          `are plain digits and cannot collide — this is the MN '08A' / MD '1A' collapse in a ` +
+          `state that cannot produce it. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (EXPECTED_OH_MTFCC.sldl !== EXPECTED_OH_MTFCC.sldu * 3) {
+        const err = new Error(
+          `[OH nesting assertion] Ohio Const. Art. XI § 4 makes every Senate district three ` +
+          `whole House districts, so sldl must be exactly 3x sldu. Got ` +
+          `${EXPECTED_OH_MTFCC.sldl} and ${EXPECTED_OH_MTFCC.sldu}. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] OH MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `99 = 3 x 33 nesting precondition holds.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

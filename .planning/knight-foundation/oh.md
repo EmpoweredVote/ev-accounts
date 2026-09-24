@@ -8,17 +8,103 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 
 | Stage | State |
 | --- | --- |
-| 1 geography | 🟡 **MEASURED AND VINTAGE-EVIDENCED, NOT LOADED.** Only `sldu` + `sldl` are owed — `place` already exists |
+| 1 geography | ✅ **APPLIED 2026-09-23 — 132 boundaries, 132 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | — 132 offices owed (99 House + 33 Senate), none exist |
 | 3 city waves | — Akron: Mayor + 13 council (10 ward + 3 at-large) |
 | 4 county waves | — Summit: Executive + 11 council (8 district + 3 at-large) + 5 row officers |
 | 5 assets | — 1 banner (`akron`), ~163 portraits |
 
-🔴 **NOTHING HAS BEEN WRITTEN TO PRODUCTION.** Everything below is a measurement.
+---
+
+## ✅ OH-1 APPLIED 2026-09-23 — Ohio has legislative geography for the first time
+
+**132 boundaries and 132 districts — 99 House + 33 Senate — 0 errors.** `districts` 9,584 → 9,716
+and `geofence_boundaries` 71,768 → 71,900, both **exactly +132** against a baseline measured in the
+same session, minutes before the write. No migration: the TIGER loader writes boundaries and
+districts directly, as in SC-1 and PA-1.
+
+Verified from outside, with the counts asserted: 33 `G5210` + 99 `G5220`, **all 132 carrying
+geometry, all `ST_IsValid`, one geometry type per layer, SRID 4326**; `geo_id` contiguous over
+`39001`–`39033` and `39001`–`39099`; **33 and 99 distinct `ocd_id`s**, so the MN `08A` / MD `1A`
+suffix collapse did not occur. `districts.state` was written lowercase `oh`, matching the 88 counties
+already there. Loader re-run: **0 inserted, 132 already existed** — idempotent.
+
+🟢 **AKRON CITY HALL NOW RESOLVES THROUGH PRODUCTION GEOMETRY**, and it returns what the raw files
+predicted: **Summit County, Akron city, State Senate District 28, State House District 33.** A
+Detroit control returns **zero** Ohio legislative boundaries.
+
+🟢 **OHIO'S PLACE LOAD WAS NOT DISTURBED** — `G4110` for FIPS 39 measured **925 before and 925
+after**, asserted rather than assumed, because this is the first slice whose stage 1 ran alongside an
+existing `place` layer it must not touch.
+
+### 🔴 THE VINTAGE WAS PROVED AGAINST THE STATE, AND THE CONTROL FAILED AS REQUIRED
+
+New tool, carrying both halves: **`backend/scripts/verify-oh-tiger-vintage.mjs`**.
+
+The authority is the **Secretary of State's own shapefiles**, `2024-2032-sd-shapefile.zip` and
+`2024-2032-hd-shapefile.zip`, whose members are named **"Corrected Sept 29 2023 Unified Bipartisan
+Redistricting Plan SD/HD SHP"**. ⚠ That filename corrected a date this file had wrong when the slice
+opened: the Commission **adopted on 2023-09-26** and **corrected on 2023-09-29**; the map PDFs are
+titled `adopted2023-09-26` and the shapefiles and legal description carry the 29th.
+
+Every one of the 132 TIGER polygons was located at its own published internal point inside that plan:
+
+| | TIGER 2024 vs the SOS plan | **CONTROL** — TIGER 2022, the superseded plan |
+| --- | --- | --- |
+| Senate | **33 agree, 0 differ, 0 ambiguous** | 29 agree, **4 differ** |
+| House | **99 agree, 0 differ, 0 ambiguous** | 81 agree, **18 differ** |
+
+🔴 **THE CONTROL'S AGREEMENTS ARE THE POINT, NOT ITS DISAGREEMENTS.** The superseded map still
+matches on **29 of 33 and 81 of 99**. Most Ohio districts did not move, so a count, a shape check, a
+"no `ZZZ`" check and even a handful of spot checks would all have waved the wrong plan through.
+⚠ **And among the four Senate disagreements, 27 and 28 SWAP** — `027->028` and `028->027`. Akron
+sits in one of them. **The wrong vintage would have put this slice's own city in the wrong Senate
+district, and nothing about the result would have looked wrong.**
+
+🟢 **Two independent implementations agree.** The measurement was first made in a throwaway Python
+reader of the raw `.shp`/`.dbf`, then reproduced by the tracked Node verifier using `shapefile` and
+`AdmZip`: identical numbers, 33/33, 99/99, 4 and 18.
+
+### 🔴 THE SECRETARY OF STATE IS BEHIND A WAF, AND THE TWO REFUSALS WERE THE SAME SIZE
+
+`ohiosos.gov` returns **HTTP 403 with a ~1.25 MB HTML challenge page** to a bare request, to a
+browser User-Agent alone, **and** to a full Chrome header set with a same-origin `Referer` — all
+three shapes this repo relies on elsewhere. ⚠ **Both asset URLs returned a challenge of identical
+size (926,353 and 926,356 bytes), which is the tell: a uniform answer is a broken detector.** A real
+browser gets HTTP 200 and `application/zip`.
+
+▶ So the zips were fetched **in Playwright**, in the page context, and decoded locally; magic bytes
+`PK\x03\x04` and sizes 1,075,314 and 1,844,420 were confirmed before use. The verifier takes them via
+`--sos-dir`, checks the magic bytes itself, and **refuses to run without them** rather than falling
+back to a Census-only check that would prove nothing. Its refusal message carries the retrieval steps.
+
+### ✅ The pre-flight was watched failing before it was trusted
+
+`EXPECTED_OH_MTFCC.sldu` was temporarily set to 34. The run aborted with
+`MtfccAssertionError: expected 34 records, got 33 … Aborting before any DB write`, and the edit was
+reverted and re-confirmed. The block also asserts the distinct `ocd_id` suffix count, and the
+Ohio-specific arithmetic precondition **99 = 3 × 33**.
+
+### 🟢 A LOADER WARNING THAT DOES NOT APPLY — AND IT WAS CHECKED, NOT ASSUMED
+
+The loader ends every run with **"⚠ ACTION REQUIRED: refresh the persisted child→county mapping"**
+and says `check:child-county` will FAIL until it is refreshed. It did **not** fail: `stale 0`.
+⚠ A check that passes immediately after a load is exactly the shape of a vacuous pass, so the reason
+was established: the matview holds **0 rows for `G5210`/`G5220` out of 13,734** — it tracks places
+and county subdivisions, not legislative layers. ▶ **A legislative-only load needs no matview
+refresh**, and the warning is generic. Do not skip it after a `place` load.
+
+### Gates
+
+`check:occupancy` OK · `check:migrations` OK (0 added vs `origin/master`) · `check:reservations` OK
+(no migrations added) · `check:child-county` **stale 0** · `check:reachability` **nothing regressed,
+UNREACHABLE 9 against a baseline of 24**.
+
+▶ **Next: OH-2 — seat the General Assembly, 132 offices.**
 
 ---
 
-## Baseline, measured against production 2026-09-23 (before anything was written)
+## Baseline as measured when the slice opened, 2026-09-23 — before OH-1 wrote anything
 
 Re-measure rather than trust this once any wave has applied.
 
@@ -238,21 +324,21 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
 
 ## Next steps, in order
 
-1. **Prove the vintage against Ohio's own authority, not the Census's `LSY` field.** Fetch the SOS
-   adopted-map shapefile (`sos.state.oh.us/SOS/reshape/GADistricts/adoptedMap.aspx`) **in Playwright**
-   — `ohiosos.gov` 403s a plain fetch — and compare it against TIGER at each TIGER polygon's own
-   interior point, the way GA-1 closed its vintage check. If the shapefile cannot be had, fall back to
-   identity anchors against the legislature's address lookup, and record which was used.
-2. **Add `OH` to `STATE_LAYER_ALLOWLIST`** in `backend/scripts/load-state-tiger-boundaries.ts` as
-   `new Set(['sldu', 'sldl'])` — **not** `place`, which is already loaded and must not be disturbed —
-   with the measurement above written into the comment beside it, and an OH pre-flight block asserting
-   **33** and **99**, the single-member equality, and the 3-into-1 nesting.
-3. **Run OH-1**: 132 boundaries, 132 districts, 0 errors. Loader re-run must be clean.
-4. **OH-2**: seat the General Assembly. Reconcile the roster from the chambers' own member lists and
-   Open States, then **change-check all 132 member pages individually** — MN-2 found a member listed
-   three months after he resigned, with no vacancy marker anywhere.
+1. ~~Prove the vintage against Ohio's own authority.~~ **Done 2026-09-23 — 132 of 132 agree with the
+   Secretary of State's own plan, and the TIGER 2022 control failed as required.** The adopted-map
+   page at `sos.state.oh.us` does not resolve; the live links are on
+   `ohiosos.gov/elections/district-maps`.
+2. ~~Add `OH` to `STATE_LAYER_ALLOWLIST` with a pre-flight block.~~ **Done — `['sldu','sldl']` only,
+   and the assertion was watched failing at 34.**
+3. ~~Run OH-1.~~ **Done — 132 boundaries, 132 districts, 0 errors; re-run clean.**
+4. **OH-2**: seat the General Assembly, **132 offices**. Reconcile the roster from the chambers' own
+   member lists and Open States, then **change-check all 132 member pages individually** — MN-2 found
+   a member listed three months after he resigned, with no vacancy marker anywhere.
+   - 🔴 `ohiohouse.gov/members/district/<n>` and `ohiosenate.gov/senators/district/<n>` both **404**.
+     Member pages are **name-keyed** (`ohiohouse.gov/members/veronica-r-sims`), so a district-number
+     URL template fails silently on all 132. Find the roster index first.
+   - 🔴 **Measure `offices_missing_terms` in the same session as the write** — see trap 1. It was
+     427/189/238 when OH-1 ran, and a concurrent `CA_` backfill is still moving it.
+   - ▶ Two migration slots will be needed (structure + occupancy). **Allocate them:
+     `npm run steward --prefix backend -- slot CC --purpose "..."`.** None is reserved yet.
 5. **OH-3 Akron**, then **OH-4 Summit**, then **OH-5 assets**.
-
-🔴 **Before any migration: `npm run steward --prefix backend -- slot CC --purpose "..."`.** No slot is
-reserved for this slice yet, because nothing is written. Stage 1 needs none — the TIGER loader writes
-boundaries and districts directly, as in SC-1 and PA-1.
