@@ -22,7 +22,9 @@
 -- THEN: the duplicate is deactivated (is_active = false, is_incumbent stays false) with a note naming its twin.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE. No office_terms change.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval and apply: Chris Andrews). Dry run (BEGIN ... ROLLBACK) passed and
+--   was confirmed reverted before the apply; verified after: duplicate inactive, race row + 11 quotes (8 selected) on
+--   the seated row, which keeps its seat and its confirmed FEC link S6WV00188.
 --
 -- ROLLBACK: re-point race_candidates 8250bf5c-d4bb-4828-a3c4-eb1962c6dde6 and the 11 quote ids in _quote back to
 -- 60d485a8-17c9-4092-a666-b06c011d66e8, and set that row's is_active back to true, removing its CA_0229 note.
