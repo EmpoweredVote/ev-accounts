@@ -14,10 +14,10 @@
 -- exists, and an unsettled row is HELD rather than guessed.
 --
 -- ===========================================================================================
--- WHAT IS WRITTEN — 88 rows
+-- WHAT IS WRITTEN — 101 rows
 -- ===========================================================================================
---   won            22   the party nominee (or, in a one-name contest, the only name)
---   lost           58
+--   won            24   the party nominee (or, in a one-name contest, the only name)
+--   lost           69
 --   advanced        3   Alaska's top-four open primary: Peltola, Dan S. Sullivan, Daniel J. Sullivan Jr.
 --   not_nominated   3   NOT on the U.S. Senate primary ballot at all — our row names the wrong office
 --                       or a later write-in: Christopher Beardsley (DE; running for State Senator
@@ -28,12 +28,8 @@
 -- Each row's result_source names the document, the status wording, and the figures.
 --
 -- ===========================================================================================
--- HELD — 15 rows left with result NULL, on purpose
+-- HELD — 2 rows left with result NULL, on purpose
 -- ===========================================================================================
---   NEW HAMPSHIRE (13): the Secretary of State's 2026-09-08 tallies say only "subject to change if
---     clerks submit amendments", and a State Primary recount schedule is posted. Nothing labels them
---     certified. The margins are wide (Pappas 100,088 / Manzur 50,321; Sununu 75,839 / Brown 29,517),
---     but an unlabelled count is not a certified one. Re-run with NH once it is.
 --   ALASKA (2): David B. Leslie finished 4th (1,850) — a top-four place — but is NOT on the certified
 --     general list; Gerald L. Heikes finished 5th (1,741) and IS on it. News reports a Leslie withdrawal
 --     on 2026-08-31 (the post-primary withdrawal deadline), which would move Heikes up, but no state
@@ -54,6 +50,12 @@
 --   MI  Bureau of Elections Official Candidate Listing, PRI vs GEN reports (who went on to November);
 --       Board of State Canvassers certified 2026-08-24. Statewide vote totals were NOT reachable from a
 --       state source (mielections.us refused; mvic.sos.state.mi.us 403), so MI rows carry no counts.
+--   NH  Secretary of State 2026-09-08 summary tallies (labelled only "subject to change if clerks submit
+--       amendments"; a recount schedule is posted) for the vote counts, and — for WHO WON — the
+--       Secretary of State's general-election "CANDIDATE LIST W/ ADDRESS - 09/17/2026", which names
+--       Pappas (DEM) and Sununu (REP) as the U.S. Senate nominees. A tally could still move by an
+--       amendment; the nominee list is the state saying who is on the November ballot. (Downloaded by
+--       the operator on 2026-09-24; mm.nh.gov is bot-walled to scripts.)
 --   MN  Secretary of State ussenate.txt, 4105/4105; State Canvassing Board certified 2026-08-18.
 --   OK  State Election Board "Official Results", 2026-08-25 runoff (our OK primary race IS the runoff).
 --   RI  Board of Elections ENR API, isOfficialResults true, 40/40.
@@ -205,6 +207,32 @@ FROM (VALUES
    'Minnesota Secretary of State, electionresultsfiles.sos.mn.gov/20260811/ussenate.txt (4105 of 4105 precincts; State Canvassing Board certified 2026-08-18), U.S. Senator. Royce White: R 45,374; Tafoya 211,813. Recorded by CA_0231 (2026-09-24).'),
   ('52c5f0de-fb50-4a78-a658-4e7193066c36'::uuid, 'MN', 'Tom Weiler', 'filed', 'lost',
    'Minnesota Secretary of State, electionresultsfiles.sos.mn.gov/20260811/ussenate.txt (4105 of 4105 precincts; State Canvassing Board certified 2026-08-18), U.S. Senator. Tom Weiler: R 24,247; Tafoya 211,813. Recorded by CA_0231 (2026-09-24).'),
+  ('aeca312c-f6fe-484c-a956-b5533d75584a'::uuid, 'NH', 'Chris Pappas', 'filed', 'won',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Chris Pappas: D 100,088; the Democratic nominee on the 09/17/2026 general list. Recorded by CA_0231 (2026-09-24).'),
+  ('ff5365d2-c538-4b9e-9fd8-49c8c23753f8'::uuid, 'NH', 'David Jarvis', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). David Jarvis: D 1,212; Pappas 100,088. Recorded by CA_0231 (2026-09-24).'),
+  ('6b6ecb1b-5aeb-4efa-a619-e024832fd251'::uuid, 'NH', 'John Vail', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). John Vail: D 956; Pappas 100,088. Recorded by CA_0231 (2026-09-24).'),
+  ('c2dbb71f-bb17-454c-b879-c11730658cf3'::uuid, 'NH', 'Karishma Manzur', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Karishma Manzur: D 50,321; Pappas 100,088. Recorded by CA_0231 (2026-09-24).'),
+  ('439848c2-3939-4367-9df5-76fbb394c088'::uuid, 'NH', 'Maxwell Saal', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Maxwell Saal: D 932; Pappas 100,088. Recorded by CA_0231 (2026-09-24).'),
+  ('76ba9efd-c362-4ad5-8640-92add849ea24'::uuid, 'NH', 'Andy Martin', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Andy Martin: R 789; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('2cd2f0be-47e9-4fd5-af3c-30e126799480'::uuid, 'NH', 'John Sununu', 'filed', 'won',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). John Sununu: R 75,839; the Republican nominee on the 09/17/2026 general list. Recorded by CA_0231 (2026-09-24).'),
+  ('4e5a36ad-9d8c-4088-ac8f-ef9e680f877d'::uuid, 'NH', 'Mary Maxwell', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Mary Maxwell: R 774; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('f0f9e976-8975-4d9a-9ce6-208497042a59'::uuid, 'NH', 'Richard McMenamon II', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Richard McMenamon II: R 403; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('1a73f4e1-3eb6-4c29-88c8-beb5db055f4c'::uuid, 'NH', 'Sabrina Smith', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Sabrina Smith: R 955; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('78da47b7-724d-42a8-aedb-dd9c8d2d715a'::uuid, 'NH', 'Scott Brown', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Scott Brown: R 29,517; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('c053e815-7ce0-47e1-a62d-88bc6bf56b4e'::uuid, 'NH', 'Sky Danley', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Sky Danley: R 1,187; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
+  ('84596ef4-a703-4f00-8ca7-94b0d221f57b'::uuid, 'NH', 'Tom Alciere', 'filed', 'lost',
+   'New Hampshire Secretary of State: 2026 State Primary (2026-09-08) summary tallies 2026-sp-us-senator-summary-democratic.xlsx / -republican.xlsx (sos.nh.gov/2026-state-primary-election-results; county rows sum to TOTALS; labelled only "subject to change if clerks submit amendments"), and the nominees confirmed by the Secretary of State''s "CANDIDATE LIST W/ ADDRESS - 09/17/2026" for the general election, United States Senator: Pappas (DEM), Sununu (REP), Laplante (CON). Tom Alciere: R 602; Sununu 75,839. Recorded by CA_0231 (2026-09-24).'),
   ('96984fe7-ec09-45a9-bfd1-529b856cf4d5'::uuid, 'OK', 'Jim Priest', 'filed', 'lost',
    'Oklahoma State Election Board, Official Results, 2026-08-25 runoff primary (results.okelections.us/OKER/?elecDate=20260825, 1984 of 1984 precincts), FOR UNITED STATES SENATOR - Democrat. Jim Priest: Thomas 79,229 / Priest 50,249. Recorded by CA_0231 (2026-09-24).'),
   ('c4bda444-4e97-40ab-9dc2-ba88c08292e0'::uuid, 'OK', 'N''Kiyla Thomas', 'filed', 'won',
@@ -253,16 +281,15 @@ FROM (VALUES
    'Wyoming Secretary of State, 2026 Statewide Candidates Official Summary (sos.wyo.gov/Elections/Docs/2026/Results/Primary/2026_Statewide_Candidates_Summary.pdf), certified by the State Canvassing Board 2026-08-26; matches the county rows and the precinct zip. Sam Mead: R 35,879; Hageman 83,807. Recorded by CA_0231 (2026-09-24).')
 ) AS v(rc_id, st, full_name, status_before, result, result_source);
 
--- The fifteen rows deliberately left NULL (see header).
+-- The two rows deliberately left NULL (see header).
 CREATE TEMP TABLE ca0231_held ON COMMIT DROP AS
 SELECT rc.id AS rc_id
   FROM essentials.race_candidates rc
   JOIN essentials.races ra ON ra.id = rc.race_id
   JOIN essentials.elections e ON e.id = ra.election_id
  WHERE e.election_type = 'primary' AND ra.position_name LIKE 'U.S. Senate%'
-   AND (   (e.state = 'NH' AND e.election_date = '2026-09-08')
-        OR (e.state = 'AK' AND e.election_date = '2026-08-18'
-            AND rc.full_name IN ('David B. Leslie', 'Gerald L. Heikes')));
+   AND e.state = 'AK' AND e.election_date = '2026-08-18'
+   AND rc.full_name IN ('David B. Leslie', 'Gerald L. Heikes');
 
 -- ---------------------------------------------------------------------------
 -- PRE-FLIGHT
@@ -271,9 +298,9 @@ DO $$
 DECLARE n int;
 BEGIN
   SELECT count(*) INTO n FROM ca0231_result;
-  IF n <> 88 THEN RAISE EXCEPTION 'PRE: % result rows listed, expected 88', n; END IF;
+  IF n <> 101 THEN RAISE EXCEPTION 'PRE: % result rows listed, expected 101', n; END IF;
   SELECT count(*) INTO n FROM ca0231_held;
-  IF n <> 15 THEN RAISE EXCEPTION 'PRE: % held rows found, expected 15 (13 NH + Leslie + Heikes)', n; END IF;
+  IF n <> 2 THEN RAISE EXCEPTION 'PRE: % held rows found, expected 2 (Leslie + Heikes)', n; END IF;
 
   -- Every listed row is the row it claims to be: same id, same name, a U.S. Senate PRIMARY in that
   -- state whose date has passed, and still carrying the status it had at authoring.
@@ -284,7 +311,7 @@ BEGIN
     JOIN essentials.races ra ON ra.id = rc.race_id AND ra.position_name LIKE 'U.S. Senate%'
     JOIN essentials.elections e ON e.id = ra.election_id AND e.election_type = 'primary'
                                AND e.state = c.st AND e.election_date < CURRENT_DATE;
-  IF n <> 88 THEN RAISE EXCEPTION 'PRE: only % of 88 rows match id / name / status / race', n; END IF;
+  IF n <> 101 THEN RAISE EXCEPTION 'PRE: only % of 101 rows match id / name / status / race', n; END IF;
 
   -- Untouched since authoring (first run) or written by THIS migration (re-run). Anything else is
   -- someone else's result; do not overwrite it.
@@ -325,7 +352,7 @@ BEGIN
   SELECT count(*) INTO n FROM ca0231_result c JOIN essentials.race_candidates rc ON rc.id = c.rc_id
    WHERE rc.result = c.result AND rc.result_source = c.result_source AND rc.result_recorded_at IS NOT NULL
      AND rc.candidate_status = c.status_before;
-  IF n <> 88 THEN RAISE EXCEPTION 'POST: % of 88 rows carry their result with candidate_status unchanged', n; END IF;
+  IF n <> 101 THEN RAISE EXCEPTION 'POST: % of 101 rows carry their result with candidate_status unchanged', n; END IF;
 
   SELECT count(*) INTO n FROM ca0231_held h JOIN essentials.race_candidates rc ON rc.id = h.rc_id
    WHERE rc.result IS NOT NULL;
@@ -335,7 +362,7 @@ BEGIN
   -- primary is ONE race row with no primary_party holding both party contests, so it has exactly two
   -- winners — Platner (D) and Collins (R).
   SELECT count(*) INTO n FROM ca0231_result WHERE result = 'won';
-  IF n <> 22 THEN RAISE EXCEPTION 'POST: % won, expected 22', n; END IF;
+  IF n <> 24 THEN RAISE EXCEPTION 'POST: % won, expected 24', n; END IF;
   SELECT count(*) INTO n
     FROM (SELECT ra.id FROM ca0231_result c JOIN essentials.race_candidates rc ON rc.id = c.rc_id
             JOIN essentials.races ra ON ra.id = rc.race_id
@@ -345,8 +372,8 @@ BEGIN
    WHERE st = 'ME' AND result = 'won' AND full_name IN ('Graham Platner', 'Susan M. Collins');
   IF n <> 2 THEN RAISE EXCEPTION 'POST: Maine should have exactly its two party nominees as won, found %', n; END IF;
 
-  RAISE NOTICE 'CA_0231 applied: 88 Senate primary results recorded (22 won, 58 lost, 3 advanced, '
-               '3 not_nominated, 2 withdrew); 15 held (13 NH, AK Leslie + Heikes)';
+  RAISE NOTICE 'CA_0231 applied: 101 Senate primary results recorded (24 won, 69 lost, 3 advanced, '
+               '3 not_nominated, 2 withdrew); 2 held (AK Leslie + Heikes)';
 END $$;
 
 COMMIT;
