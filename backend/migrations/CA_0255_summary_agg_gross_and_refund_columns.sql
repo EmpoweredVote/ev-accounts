@@ -18,7 +18,8 @@
 -- total_amount keeps its meaning (the NET sum, = gross_amount - refunded_amount) so nothing that reads it changes.
 --
 -- NO BACKFILL HERE. The refresher (refreshSummaryAgg) writes the new columns, and from the same release it also computes
--- contribution_count, individual_total, pac_total, sector_breakdown and top_donors over amount > 0 rows only — that
+-- contribution_count, individual_total, pac_total, sector_breakdown and top_donors over non-refund (amount >= 0) rows —
+-- $0 rows stay counted as before — and that
 -- needs the TypeScript sector classifier, so it cannot be done in SQL. After the backend deploys, run:
 --   npx tsx scripts/030-backfill-summary-agg.ts --gross-missing
 -- which recomputes every row whose gross_amount IS NULL. Until then the read path treats NULL as the old behaviour
