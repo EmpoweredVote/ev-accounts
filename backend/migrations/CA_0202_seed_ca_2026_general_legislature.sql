@@ -98,6 +98,13 @@
 -- 2026-09-21 (PDF ModDate 2026-08-27, sha256 prefix 0e514ae7b14378b1).
 --
 -- IDEMPOTENCY: races on (election_id, position_name); candidates on (race_id, lower(full_name)).
+--
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, in chat). Dry run first as BEGIN ... ROLLBACK,
+--   run twice in one transaction (the second inserted nothing); after the rollback the general was back at 25
+--   Assembly / 8 Senate races. Apply: gate passed. Verified after: Assembly 80 races / 156 candidates / 67
+--   incumbents, Senate 20 / 40 / 11 -- the certified list's starred counts. Live elections-by-address: Sacramento
+--   AD-6 + SD-8, Fresno AD-31 + SD-14, San Diego AD-77 and no Senate race (SD-39 is odd; Census geocoder agrees).
+--   PR #675.
 
 BEGIN;
 

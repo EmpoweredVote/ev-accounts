@@ -25,6 +25,11 @@
 -- retrieved 2026-09-21 (PDF ModDate 2026-08-27, sha256 prefix 0e514ae7b14378b1).
 --
 -- IDEMPOTENCY: race on (election_id, position_name); candidates on (race_id, lower(full_name)).
+--
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, in chat). Dry run first as BEGIN ... ROLLBACK,
+--   run twice in one transaction (the second inserted nothing); after the rollback the AD-3 office had no race.
+--   Apply: gate passed. Verified after: GET /api/essentials/elections-by-address for 1201 Civic Center Blvd,
+--   Yuba City returns "State Assembly District 3" with Belza and Johansson. PR #673.
 
 BEGIN;
 
