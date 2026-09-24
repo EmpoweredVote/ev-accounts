@@ -57,7 +57,11 @@
 -- politician_sources is public-read: the reasons carry no phone number.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED -- awaiting operator approval. Dry run against prod 2026-09-24 (BEGIN ... ROLLBACK, body run twice):
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). A dry run (x2 with the snapshot) right before
+--   the apply matched the earlier one; a re-run after it updated 0 and passed every gate. Verified after: the script's
+--   links read confirmed 2 / disputed 37 / not_applicable 2, and the live summary API shows $0 and no cycles for
+--   Francis De Leon Sanchez, Gail Ruderman Feuer and David Fu, while Heather Hutt keeps her la_socrata data.
+--   Earlier dry run against prod 2026-09-24 (BEGIN ... ROLLBACK, body run twice):
 --   run 1 disputed 33 and passed every gate; run 2 updated 0 and passed every gate; a snapshot of all 256 la_socrata
 --   rows matched before and after, so the rollback reverted. Planted control (one committee name altered) tripped the
 --   pre-flight (32 of 33). All 35 reviewed links and their outcome are in
