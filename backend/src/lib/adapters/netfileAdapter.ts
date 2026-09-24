@@ -7,16 +7,25 @@
  * and CORS-open. Its bulk exports (`CampaignExport/*`, `.../export`) demand a Cloudflare
  * Turnstile token, so a job may only use the JSON read endpoints below.
  *
- * ENDPOINTS (base https://netfile.com/api/public/sites/api, re-measured 2026-09-24):
- *   - IdSearch?aid=LACO&sosId=<FPPC id> — maps the state (FPPC) committee id we store in
+ * AGENCY: NetFile hosts many filing officers, each under its own agency code — LA County is
+ * LACO, the City of West Hollywood is WEHO. Every endpoint below takes one, and a filer id
+ * asked under the wrong agency answers exactly like an unknown id: nothing, with HTTP 200.
+ * So the agency is read from the link (politician_sources.netfile_agency, CA_0224), never
+ * assumed. Until 2026-09-24 it was a constant 'LACO', and the three West Hollywood links
+ * (seeded 2026-06-09 with "agency=WEHO" in their notes, which nothing reads) loaded 0 rows on
+ * every run. A link with no agency fails its run rather than falling back to LACO.
+ *
+ * ENDPOINTS (base https://netfile.com/api/public/sites/api, re-measured 2026-09-24; <agency>
+ * is the link's netfile_agency):
+ *   - IdSearch?aid=<agency>&sosId=<FPPC id> — maps the state (FPPC) committee id we store in
  *       politician_sources.external_id to NetFile's OWN filer id.
- *   - filings/byFiler?agencyCode=LACO&filerId=<NetFile id> — the committee's filings. 🔴 Handed
+ *   - filings/byFiler?agencyCode=<agency>&filerId=<NetFile id> — the committee's filings. 🔴 Handed
  *       an FPPC id it answers `{"filings":[],"totalCount":0}` with HTTP 200. That is how every
  *       run from 2026-05-21 to 2026-09-01 "completed" with 0 rows: 172 of the 184 links store
  *       an FPPC id that IdSearch maps. Ten store a 9-digit NetFile id, which IdSearch does not
  *       know; seven of those are LACO filers, three are City of West Hollywood (agency WEHO)
- *       filers that this adapter cannot read.
- *   - SearchCampaignTransactions?aid=LACO&query=<words>&pageSize=N&currentPage=N — a WORD
+ *       filers.
+ *   - SearchCampaignTransactions?aid=<agency>&query=<words>&pageSize=N&currentPage=N — a WORD
  *       search over both the contributor `name` and `filerName`. There is no filer or filing
  *       filter. 🔴 A ':' in the query answers HTTP 500 and a ',' matches nothing, so the
  *       committee name is reduced to its letters and digits first. pageSize up to 10,000 is
@@ -58,7 +67,6 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 // ---------------------------------------------------------------------------
 
 const NETFILE_API_BASE = 'https://netfile.com/api/public/sites/api';
-const NETFILE_AGENCY = 'LACO';
 
 /**
  * Rows per SearchCampaignTransactions page. The largest committee measured on 2026-09-24
@@ -165,18 +173,18 @@ async function getJson<T>(path: string, params: Record<string, string>): Promise
  * Whether that guess holds is decided by filings/byFiler: an id it does not know answers
  * an empty list.
  */
-async function resolveFilerIds(externalId: string): Promise<string[]> {
+async function resolveFilerIds(agency: string, externalId: string): Promise<string[]> {
   const data = await getJson<NetfileIdSearchResponse>('IdSearch', {
-    aid: NETFILE_AGENCY,
+    aid: agency,
     sosId: externalId,
   });
   const ids = (data.committees ?? []).map((c) => c.id);
   return ids.length > 0 ? ids : [externalId];
 }
 
-async function getFilingsForFiler(filerId: string): Promise<NetfileFiling[]> {
+async function getFilingsForFiler(agency: string, filerId: string): Promise<NetfileFiling[]> {
   const data = await getJson<NetfileFilingsResponse>('filings/byFiler', {
-    agencyCode: NETFILE_AGENCY,
+    agencyCode: agency,
     filerId,
     isArchived: 'false',
   });
@@ -252,6 +260,7 @@ function searchQuery(filerName: string): string {
  * fails if that is short of totalCount (Horvath at pageSize 1,000: 4,135 of 4,136).
  */
 async function searchTransactions(
+  agency: string,
   query: string,
   filingIds: ReadonlySet<string>
 ): Promise<NetfileTransaction[]> {
@@ -261,7 +270,7 @@ async function searchTransactions(
 
   for (let currentPage = 1; ; currentPage++) {
     const data = await getJson<NetfileTransactionsResponse>('SearchCampaignTransactions', {
-      aid: NETFILE_AGENCY,
+      aid: agency,
       query,
       pageSize: String(TRANSACTIONS_PAGE_SIZE),
       currentPage: String(currentPage),
@@ -539,15 +548,24 @@ class NetfileAdapter implements SourceAdapter {
       return { records: [], totalExpected: 0, totalFetched: 0 };
     }
 
+    // Which filing officer holds this committee. Never defaulted: under the wrong agency every
+    // endpoint answers an empty list, which is indistinguishable from a quiet committee.
+    const agency = ps.netfile_agency?.trim() ?? '';
+    if (agency === '') {
+      throw new Error(
+        `[netfileAdapter] ps.id=${ps.id} (id=${externalId}) has no netfile_agency — cannot tell which NetFile agency files it`
+      );
+    }
+
     // Steps 1-2: the NetFile filer id(s), then their filings.
-    const filerIds = await resolveFilerIds(externalId);
+    const filerIds = await resolveFilerIds(agency, externalId);
     const filings: NetfileFiling[] = [];
     for (const filerId of filerIds) {
-      filings.push(...(await getFilingsForFiler(filerId)));
+      filings.push(...(await getFilingsForFiler(agency, filerId)));
     }
 
     if (filings.length === 0) {
-      console.log(`[netfileAdapter] fetch: id=${externalId} — NetFile LACO knows no committee or filing for it`);
+      console.log(`[netfileAdapter] fetch: id=${externalId} — NetFile ${agency} knows no committee or filing for it`);
       return { records: [], totalExpected: 0, totalFetched: 0 };
     }
 
@@ -556,7 +574,7 @@ class NetfileAdapter implements SourceAdapter {
     const queries = [...new Set(filings.map((f) => searchQuery(f.filerName)))].filter((q) => q !== '');
     const byId = new Map<string, NetfileTransaction>();
     for (const query of queries) {
-      for (const tx of await searchTransactions(query, ownFilingIds)) {
+      for (const tx of await searchTransactions(agency, query, ownFilingIds)) {
         byId.set(tx.id, tx);
       }
     }
@@ -567,7 +585,7 @@ class NetfileAdapter implements SourceAdapter {
     const records = [...byId.values()].filter((tx) => current.has(tx.filingId));
     this.fetched += records.length;
     console.log(
-      `[netfileAdapter] fetch: id=${externalId} year=${this.year} filerIds=${JSON.stringify(filerIds)} ` +
+      `[netfileAdapter] fetch: id=${externalId} agency=${agency} year=${this.year} filerIds=${JSON.stringify(filerIds)} ` +
         `filings=${filings.length} current=${current.size} queries=${JSON.stringify(queries)} ` +
         `rows=${byId.size} superseded=${byId.size - records.length}`
     );

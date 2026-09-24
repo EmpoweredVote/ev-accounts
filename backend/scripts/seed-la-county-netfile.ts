@@ -358,8 +358,8 @@ async function upsertPoliticianSource(
 
   const res = await pool.query(
     `INSERT INTO transparent_motivations.politician_sources
-       (essentials_politician_id, source_system, external_id, research_status, notes)
-     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3)
+       (essentials_politician_id, source_system, external_id, research_status, notes, netfile_agency)
+     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3, 'LACO')
      ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
     [politicianId, filerId, notes]
   );

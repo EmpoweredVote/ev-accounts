@@ -199,12 +199,13 @@ async function upsertSource(
   // The unique constraint on politician_sources is (essentials_politician_id, source_system, external_id).
   const result = await pool.query<{ id: string }>(
     `INSERT INTO transparent_motivations.politician_sources
-       (essentials_politician_id, source_system, external_id, research_status, notes, created_at, updated_at)
-     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3, NOW(), NOW())
+       (essentials_politician_id, source_system, external_id, research_status, notes, netfile_agency, created_at, updated_at)
+     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3, 'LACO', NOW(), NOW())
      ON CONFLICT (essentials_politician_id, source_system, external_id)
        DO UPDATE SET
          research_status = 'confirmed',
          notes           = EXCLUDED.notes,
+         netfile_agency  = EXCLUDED.netfile_agency,
          updated_at      = NOW()
      RETURNING id`,
     [politicianId, filerId, notes]

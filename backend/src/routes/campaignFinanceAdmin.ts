@@ -113,6 +113,12 @@ const createSourceSchema = z.object({
     .optional()
     .default('needs_research'),
   notes: z.string().optional().default(''),
+  // The NetFile agency that holds the committee ('LACO', 'WEHO', ...). A CHECK requires it for
+  // la_county_netfile (CA_0224); asking here turns that into a 422 instead of a 500.
+  netfile_agency: z.string().regex(/^[A-Z0-9]{2,12}$/).optional(),
+}).refine((s) => s.source_system !== 'la_county_netfile' || s.netfile_agency !== undefined, {
+  message: 'netfile_agency is required for source_system la_county_netfile',
+  path: ['netfile_agency'],
 });
 
 router.post(

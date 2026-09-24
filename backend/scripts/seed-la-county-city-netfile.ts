@@ -242,19 +242,23 @@ async function lookupPoliticianId(fullName: string): Promise<string | null> {
 async function upsertSource(
   politicianId: string,
   filerId: string,
-  notes: string
+  notes: string,
+  agencyCode: string
 ): Promise<string | null> {
+  // netfile_agency is what the adapter reads (CA_0224). The "agency=" in notes is for humans:
+  // the 2026-06-09 run wrote only that, and the adapter read the WEHO links under LACO.
   const result = await pool.query<{ id: string }>(
     `INSERT INTO transparent_motivations.politician_sources
-       (essentials_politician_id, source_system, external_id, research_status, notes, created_at, updated_at)
-     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3, NOW(), NOW())
+       (essentials_politician_id, source_system, external_id, research_status, notes, netfile_agency, created_at, updated_at)
+     VALUES ($1, 'la_county_netfile', $2, 'confirmed', $3, $4, NOW(), NOW())
      ON CONFLICT (essentials_politician_id, source_system, external_id)
        DO UPDATE SET
          research_status = 'confirmed',
          notes           = EXCLUDED.notes,
+         netfile_agency  = EXCLUDED.netfile_agency,
          updated_at      = NOW()
      RETURNING id`,
-    [politicianId, filerId, notes]
+    [politicianId, filerId, notes, agencyCode]
   );
 
   return result.rows[0]?.id ?? null;
@@ -394,7 +398,7 @@ async function main(): Promise<void> {
 
       // Upsert politician_sources row
       const notes = `${city.name} — ${official.office_title} — agency=${usableAgencyCode}`;
-      const psId = await upsertSource(politicianId, filerId, notes);
+      const psId = await upsertSource(politicianId, filerId, notes, usableAgencyCode);
 
       if (psId) {
         console.log(`[seed] ${official.full_name} → filerId=${filerId} ps_id=${psId}`);

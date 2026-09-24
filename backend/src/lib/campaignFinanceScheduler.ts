@@ -51,6 +51,7 @@ interface PoliticianSourceRow {
   notes: string;
   created_at: string;
   updated_at: string;
+  netfile_agency: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -310,7 +311,7 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
 
   const sourcesResult = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,
-            research_status, notes, created_at, updated_at
+            research_status, notes, created_at, updated_at, netfile_agency
      FROM transparent_motivations.politician_sources
      WHERE source_system IN (${placeholder})
        AND research_status = 'confirmed'`,
@@ -563,7 +564,7 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
   const placeholders = sourceIds.map((_, i) => `$${i + 1}`).join(', ');
   const result = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,
-            research_status, notes, created_at, updated_at
+            research_status, notes, created_at, updated_at, netfile_agency
      FROM transparent_motivations.politician_sources
      WHERE id IN (${placeholders})
        AND research_status = 'confirmed'`,

@@ -53,6 +53,12 @@ function tx(t: Tx) {
 }
 
 interface Api {
+  /**
+   * The one agency these fixtures belong to (default LACO). Asked under any other agency the
+   * mock answers as the live API does for an id that agency does not know: no committee, no
+   * filing, no row. That is how the three West Hollywood links read 0 rows under LACO.
+   */
+  agency?: string;
   /** FPPC id → NetFile committee ids, as IdSearch answers. */
   idSearch?: Record<string, string[]>;
   /** NetFile filer id → its filings. Any other id answers the empty list, like the live API. */
@@ -74,13 +80,15 @@ function mockApi(api: Api): ReturnType<typeof vi.fn> {
       if (path.includes(fragment)) return new Response('{}', { status });
     }
     const json = (body: unknown) => new Response(JSON.stringify(body), { status: 200 });
+    const agency = url.searchParams.get('aid') ?? url.searchParams.get('agencyCode');
+    const known = agency === (api.agency ?? 'LACO');
 
     if (path.endsWith('/IdSearch')) {
-      const ids = api.idSearch?.[url.searchParams.get('sosId') ?? ''] ?? [];
+      const ids = (known && api.idSearch?.[url.searchParams.get('sosId') ?? '']) || [];
       return json({ committees: ids.map(id => ({ id, name: `committee ${id}` })), measures: [] });
     }
     if (path.endsWith('/filings/byFiler')) {
-      const list = api.filings?.[url.searchParams.get('filerId') ?? ''] ?? [];
+      const list = (known && api.filings?.[url.searchParams.get('filerId') ?? '']) || [];
       return json({ filings: list, totalCount: 0 });
     }
     if (path.endsWith('/SearchCampaignTransactions')) {
@@ -89,7 +97,7 @@ function mockApi(api: Api): ReturnType<typeof vi.fn> {
       if (query.includes(':')) return new Response('{}', { status: 500 });
       if (query.includes(',')) return json({ items: [], totalCount: 0, hasNextPage: false });
       const words = query.toLowerCase().split(/\s+/).filter(Boolean);
-      const hits = (api.transactions ?? []).filter(t => {
+      const hits = (known ? api.transactions ?? [] : []).filter(t => {
         const hay = `${t.filerName} ${t.name}`.toLowerCase();
         return words.every(w => hay.includes(w));
       });
@@ -97,7 +105,7 @@ function mockApi(api: Api): ReturnType<typeof vi.fn> {
       const page = Number(url.searchParams.get('currentPage'));
       const items = hits.slice((page - 1) * pageSize, page * pageSize);
       return json({
-        aid: 'LACO', items, pageSize, currentPage: page, pageCount: 0,
+        aid: agency, items, pageSize, currentPage: page, pageCount: 0,
         totalCount: hits.length + (api.totalCountBump ?? 0),
         hasNextPage: page * pageSize < hits.length, hasPreviousPage: page > 1,
       });
@@ -108,8 +116,8 @@ function mockApi(api: Api): ReturnType<typeof vi.fn> {
   return fetchMock;
 }
 
-function source(externalId: string, id = `src-${externalId}`): PoliticianSource {
-  return { id, external_id: externalId } as unknown as PoliticianSource;
+function source(externalId: string, id = `src-${externalId}`, agency: string | null = 'LACO'): PoliticianSource {
+  return { id, external_id: externalId, netfile_agency: agency } as unknown as PoliticianSource;
 }
 
 const HENDERSON = 'Henderson for LA Community College Board 2028';
@@ -159,6 +167,40 @@ describe('netfileAdapter fetch: finding the committee', () => {
     const got = await createNetfileAdapter(2026).fetch(source('1450349'));
 
     expect(got.records).toEqual([]);
+  });
+});
+
+describe('netfileAdapter fetch: the agency comes from the link', () => {
+  // Measured 2026-09-24: Chelsea Byers' committee 202019492 is a City of West Hollywood
+  // filer. Under WEHO it has 15 filings and 282 Schedule A rows; under LACO, IdSearch,
+  // filings/byFiler and the search all answer nothing, with HTTP 200.
+  const BYERS = 'Chelsea Byers for West Hollywood City Council 2022';
+  const weho: Api = {
+    agency: 'WEHO',
+    filings: { '202019492': [filing({ id: '203000001', formName: 'FPPC 460', filerName: BYERS, filingDate: '2022-11-01T00:00:00Z' })] },
+    transactions: [tx({ id: 'b', filingId: '203000001', filerName: BYERS })],
+  };
+
+  it("reads all three endpoints under the link's own agency", async () => {
+    const fetchMock = mockApi(weho);
+
+    const got = await createNetfileAdapter(2026).fetch(source('202019492', 'src-byers', 'WEHO'));
+
+    expect(got.records.map(r => r.id)).toEqual(['b']);
+    const agencies = fetchMock.mock.calls.map(c => {
+      const u = new URL(c[0] as string);
+      return u.searchParams.get('aid') ?? u.searchParams.get('agencyCode');
+    });
+    expect(new Set(agencies)).toEqual(new Set(['WEHO']));
+  });
+
+  it('fails a link that names no agency, rather than guessing LA County', async () => {
+    const fetchMock = mockApi(weho);
+
+    await expect(createNetfileAdapter(2026).fetch(source('202019492', 'src-byers', null))).rejects.toThrow(
+      /netfile_agency/
+    );
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 });
 
