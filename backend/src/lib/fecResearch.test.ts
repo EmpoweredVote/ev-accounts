@@ -496,3 +496,69 @@ describe('runFecAutoMatch — compound surnames', () => {
     expect(result.confidence).toBe(0);
   });
 });
+
+// ---------------------------------------------------------------------------
+// The last-name fallback — a surname too short for FEC's search
+// ---------------------------------------------------------------------------
+//
+// When the full-name search finds nothing (a nickname, or a middle name FEC holds
+// only as an initial), the fallback retries with the last name alone. FEC's search
+// rejects any keyword under 3 characters with HTTP 422, so for "Julie Trang Le" the
+// retry for "le" failed on every run and she never left the queue (2026-09-24).
+// FEC files her as "LE, JULIE T" — "Julie Le" finds her. The FEC row below is real.
+
+describe('runFecAutoMatch — the last-name fallback', () => {
+  const savedKey = process.env.FEC_API_KEY;
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    acquireFecSlotMock.mockClear();
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(candidatesSearchResponse()));
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-09-23T12:00:00Z')); // FEC cycle 2026
+    process.env.FEC_API_KEY = 'test-api-key';
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    if (savedKey === undefined) delete process.env.FEC_API_KEY;
+    else process.env.FEC_API_KEY = savedKey;
+  });
+
+  /** Queue one politician, answer each FEC search in turn; return what was written and each search's q. */
+  async function autoMatch(row: Record<string, unknown>, ...searches: unknown[][]) {
+    poolQueryMock
+      .mockResolvedValueOnce({ rows: [row] })
+      .mockResolvedValueOnce({ rows: [{ id: 'src-1' }] }); // createSource INSERT
+    const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
+    for (const results of searches) fetchMock.mockResolvedValueOnce(candidatesSearchResponse(results));
+
+    const run = runFecAutoMatch();
+    await vi.runAllTimersAsync();
+    const summary = await run;
+
+    const result = summary.results[0]!;
+    expect(result.error).toBeNull();
+    const queries = fetchMock.mock.calls.map(c => new URL(String(c[0])).searchParams.get('q'));
+    const [, , externalId, researchStatus] = poolQueryMock.mock.calls[1]![1] as string[];
+    return { result, queries, written: { externalId, researchStatus } };
+  }
+
+  const houseCandidate = (full_name: string, representing_state: string) =>
+    queueRow({ full_name, representing_state, is_candidate: true });
+  const JULIE_LE = { candidate_id: 'H6MN05399', name: 'LE, JULIE T', office: 'H', state: 'MN', party: 'DFL', election_years: [2026] };
+
+  it('retries a surname under 3 characters as "first last", which FEC accepts', async () => {
+    const { queries, written } = await autoMatch(houseCandidate('Julie Trang Le', 'MN'), [], [JULIE_LE]);
+
+    expect(queries).toEqual(['Julie Trang Le', 'julie le']);
+    expect(written).toEqual({ externalId: 'H6MN05399', researchStatus: 'confirmed' });
+  });
+
+  it('still retries a surname of 3 or more characters on its own', async () => {
+    await expect(autoMatch(houseCandidate('Dave Roth', 'ID'), [], [])).resolves.toMatchObject({
+      queries: ['Dave Roth', 'roth'],
+    });
+  });
+});

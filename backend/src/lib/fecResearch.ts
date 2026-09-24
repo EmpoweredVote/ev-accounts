@@ -30,6 +30,8 @@ import { currentFecCycle, fecCycleOf } from './fecCycle.js';
 
 const FEC_CANDIDATES_URL = 'https://api.open.fec.gov/v1/candidates/';
 const SLEEP_BETWEEN_SEARCHES_MS = 1500; // stay well under 1000 req/hr
+/** FEC's candidate search rejects a shorter `q` with HTTP 422. */
+const FEC_MIN_KEYWORD_LENGTH = 3;
 const AUTO_CONFIRM_SCORE = 0.8;
 
 // ---------------------------------------------------------------------------
@@ -459,13 +461,16 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
       result.candidates_found = candidates.length;
 
       // Fallback: if full-name search returns nothing, retry with last name only.
-      // Handles nicknames (e.g. "Jim" stored in DB, "James" in FEC).
+      // Handles nicknames (e.g. "Jim" stored in DB, "James" in FEC). FEC rejects a
+      // keyword under 3 characters (HTTP 422), so a short surname is retried as
+      // "first last" instead: "Julie Trang Le" -> "julie le" finds LE, JULIE T.
       let fallbackUsed = false;
       if (candidates.length === 0) {
-        const lastName = parseDbName(p.full_name).last;
-        if (lastName) {
+        const { first, last: lastName } = parseDbName(p.full_name);
+        const fallbackQuery = lastName.length >= FEC_MIN_KEYWORD_LENGTH || !first ? lastName : `${first} ${lastName}`;
+        if (fallbackQuery.length >= FEC_MIN_KEYWORD_LENGTH) {
           await sleep(SLEEP_BETWEEN_SEARCHES_MS);
-          const fallback = await searchFecCandidates(lastName, p.representing_state, p.fec_office, apiKey);
+          const fallback = await searchFecCandidates(fallbackQuery, p.representing_state, p.fec_office, apiKey);
           if (fallback.length > 0) {
             candidates.push(...fallback);
             result.candidates_found = fallback.length;
