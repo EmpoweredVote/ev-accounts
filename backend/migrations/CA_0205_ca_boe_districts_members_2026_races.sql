@@ -3,7 +3,16 @@
 -- seat the four sitting members, and seed the BOE-1, BOE-2 and BOE-4 races onto
 -- 'CA 2026 Statewide General' (CA_0130 already seeded BOE-3).
 --
--- STATUS: NOT YET APPLIED. Order matters -- see ORDER below.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, in chat, "merge + deploy + apply"). Code
+--   first: PR #683 merged (6d2b876e) and live on ev-accounts-api (deploy dep-daq75u95efls738so540) BEFORE any data.
+--   Dry run first as one BEGIN ... ROLLBACK (geofence insert + this file, twice): every gate passed, the second run
+--   was a no-op, and prod was unchanged after. Negative controls: the loader STOPs on a districts-2/3 swap; this file
+--   RAISEs without the geofences. Then the loader committed 4 X-CA-SBOE rows (guards passed again), and this file
+--   applied with every gate passing; a re-run as ROLLBACK changed nothing. Verified after: offices_missing_terms
+--   428 -> 427 (BOE-3 left, nothing added); check-address-reachability OK; live elections-by-address and
+--   address-search return each district's race and member -- Sacramento BOE-1 / Gaines, San Francisco BOE-2 /
+--   Lieber, Los Angeles BOE-3 / Vazquez, San Diego BOE-4 / Schaefer. Before the apply, Sacramento, San Francisco
+--   and San Diego showed no BOE race, and no address showed any BOE member.
 --
 -- WHY. CA_0130 modelled BOE-3 alone, geofenced to LA County (BOE-3 IS LA County), and seated
 -- nobody, so its office sat in essentials.offices_missing_terms: invisible. The other three
