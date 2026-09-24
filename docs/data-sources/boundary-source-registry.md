@@ -69,6 +69,13 @@ A clean single-member layer returns **exactly one** feature for a point-in-polyg
 | City-County Council districts (General Ordinance 18, 2022, adopted 2022-05-02) | `https://gis.indy.gov/server/rest/services/sde_Voting/sde_Voting/MapServer/21` | `COUNCIL` = `1`–`25`, `districtkey` = `CC-NN` | control for `X0062` (identical to WAYEO Marion, 0.000%); seats 8/12/13/14/18 loaded from WAYEO | **2026-09-24** (last_edited 2026-09-04) |
 | Precinct splits / precincts | same service, layers 26 / 19 | — | not loaded | 2026-09-24 |
 
+### California — Orange County (ocgis.com)
+
+| Layer | Service URL | Key field | Loaded as | Verified |
+|---|---|---|---|---|
+| Supervisorial districts (2021 redistricting, adopted 2021-12-07) | `https://ocgis.com/arcpub/rest/services/Map_Layers/Supervisorial_Districts/MapServer/0` | `DISTRICT` = 1–5; `NAME` = the current member (matched board.oc.gov on all five) | `mtfcc=X-OC-SUP`, geo_id `ocd-division/country:us/state:ca/county:orange/council_district:N` (`load-orange-county-supervisor-boundaries.ts`, CA_0238) | 2026-09-24 |
+| Control: SCAG regional supervisorial districts (`YEAR` 2023) | `https://maps.scag.ca.gov/scaggis/rest/services/OpenData/Supervisorial_boundary_scag/MapServer/0` | `COUNTY`, `DISTRICT`; `NAME` is stale (D1 still Andrew Do) | not loaded; agrees with ocgis within 0.08–0.86% per district | 2026-09-24 |
+
 ### Wisconsin — Racine County
 
 | Layer | Service URL | Key field | Loaded as | Verified |
