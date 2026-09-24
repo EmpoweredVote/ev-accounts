@@ -58,6 +58,16 @@ A clean single-member layer returns **exactly one** feature for a point-in-polyg
 | State Senate districts | `https://gisdata.in.gov/server/rest/services/Hosted/Senate_Districts_of_Indiana_Current/FeatureServer/0` | Current IN Senate | from experience-app config, 2026-09-03 |
 | State House districts | `https://gisdata.in.gov/server/rest/services/Hosted/House_Districts_of_Indiana_Current/FeatureServer/57` | Current IN House | from experience-app config, 2026-09-03 |
 | Congressional districts | `https://gisdata.in.gov/server/rest/services/Hosted/Congressional_Districts_of_Indiana_Current/FeatureServer/0` | Current IN congressional | from experience-app config, 2026-09-03 |
+| **County council districts, all 92 counties** (WAYEO — behind the Secretary of State "Who Are Your Elected Officials" lookup) | `https://services6.arcgis.com/3BIBAkkTYicFwv1e/arcgis/rest/services/WAYEO_WebMap_WFL1/FeatureServer/8` | 398 features; `County` (name), `councildistrictid` = `<fips3>-District N`; 4 per county except Lake 7, St. Joseph 9, Marion 25 (Indianapolis City-County Council). Layer lastEditDate 2025-03-18. Loaded: Lake `X0051` (`load-lake-county-council-boundaries.ts`), Greene / Lawrence / Jackson / Morgan / Brown / Martin / Owen / Marion `X0062` (`load-indiana-wayeo-council-boundaries.ts`, 27 seats). Equals Monroe's own county layer (0.000%), Allen's Election Board layer (≤0.005%) and gis.indy.gov's City Council layer (0.000%). | **2026-09-24** |
+| Voting precincts 2024 | `https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2024/FeatureServer/1` | Statewide; `county` = fips3, `p24` = name. Vintage gate for the 2022-map council terms (every precinct nests in one district). | 2026-09-24 |
+| Voting precincts 2026 | `https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0` | Statewide, 5,121 precincts; `county` = fips3, `p26` = name; lastEditDate 2026-09-11. ⚠ Brown County's 2026 JACKSON 2 crosses council Districts 1 / 2 (65% / 35%) — check Brown's map before seeding its 2026 council races. | 2026-09-24 |
+
+### Indiana — Marion County / Indianapolis (gis.indy.gov)
+
+| Layer | Service URL | Key field | Loaded as | Verified |
+|---|---|---|---|---|
+| City-County Council districts (General Ordinance 18, 2022, adopted 2022-05-02) | `https://gis.indy.gov/server/rest/services/sde_Voting/sde_Voting/MapServer/21` | `COUNCIL` = `1`–`25`, `districtkey` = `CC-NN` | control for `X0062` (identical to WAYEO Marion, 0.000%); seats 8/12/13/14/18 loaded from WAYEO | **2026-09-24** (last_edited 2026-09-04) |
+| Precinct splits / precincts | same service, layers 26 / 19 | — | not loaded | 2026-09-24 |
 
 ### Wisconsin — Racine County
 

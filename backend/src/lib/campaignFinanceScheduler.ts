@@ -32,7 +32,7 @@ import { createCalAccessAdapter } from './adapters/calAccessAdapter.js';
 import { createIndianaAdapter, indianaYears } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
-import { createNetfileAdapter } from './adapters/netfileAdapter.js';
+import { createNetfileAdapter, assertNetfileRunHealthy } from './adapters/netfileAdapter.js';
 import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 import { currentFecCycle } from './fecCycle.js';
@@ -464,17 +464,22 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     case 'la_county_netfile': {
       const year = new Date().getFullYear();
       const adapter = createNetfileAdapter(year);
+      let failed = 0;
       for (const ps of sources) {
         try {
           await runIngestion(adapter, ps, String(year));
           console.log(`[campaignFinanceScheduler] la_county_netfile: source=${ps.id} year=${year} done`);
         } catch (err) {
+          failed++;
           console.error(
             `[campaignFinanceScheduler] la_county_netfile: source=${ps.id} error:`,
             err instanceof Error ? err.message : String(err)
           );
         }
       }
+      // Every source has had its run first; only then does the job fail, so one bad source
+      // never stops the others. Five months of 0-row runs exited 0 before this check.
+      assertNetfileRunHealthy({ sources: sources.length, failed, fetched: adapter.fetchedRowCount() });
       break;
     }
 

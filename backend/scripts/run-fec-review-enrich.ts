@@ -68,17 +68,29 @@ async function main() {
     source_system: string; representing_state: string; chamber: string; district_id: string | null;
     notes: string;
   }>(`
-    SELECT ps.id AS source_id, ps.essentials_politician_id AS politician_id, p.full_name,
-           p.bioguide_id, ps.source_system, o.representing_state, c.name AS chamber,
-           o.district_id, ps.notes
-    FROM transparent_motivations.politician_sources ps
-    JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-    JOIN essentials.offices o ON o.politician_id = p.id
-    JOIN essentials.chambers c ON c.id = o.chamber_id
-    WHERE ps.source_system LIKE 'fec%' AND ps.research_status='needs_research'
-      AND p.is_active=true AND p.is_vacant=false
-      AND (c.name LIKE 'U.S. House%' OR c.name LIKE 'U.S. Senate%')
-    ORDER BY o.representing_state, p.full_name
+    -- One case per source. Occupancy resolves via office_current_holder (ADR 0002
+    -- phase 5); a politician-rooted join fans out when someone holds two offices,
+    -- so pick one: the seat in the source's own chamber, a held seat before a
+    -- "Candidate for" placeholder, then lowest id for determinism.
+    SELECT * FROM (
+      SELECT DISTINCT ON (ps.id)
+             ps.id AS source_id, ps.essentials_politician_id AS politician_id, p.full_name,
+             p.bioguide_id, ps.source_system, o.representing_state, c.name AS chamber,
+             o.district_id, ps.notes
+      FROM transparent_motivations.politician_sources ps
+      JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
+      JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      JOIN essentials.offices o ON o.id = och.office_id
+      JOIN essentials.chambers c ON c.id = o.chamber_id
+      WHERE ps.source_system LIKE 'fec%' AND ps.research_status='needs_research'
+        AND p.is_active=true AND p.is_vacant=false
+        AND (c.name LIKE 'U.S. House%' OR c.name LIKE 'U.S. Senate%')
+      ORDER BY ps.id,
+               ((c.name LIKE 'U.S. Senate%') = (ps.source_system = 'fec_senate')) DESC,
+               (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
+               o.id
+    ) cases
+    ORDER BY representing_state, full_name
   `);
 
   const cases = rows.rows.map(r => {

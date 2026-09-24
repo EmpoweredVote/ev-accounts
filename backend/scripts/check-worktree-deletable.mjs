@@ -27,7 +27,9 @@ import { execFileSync } from "node:child_process";
 import { existsSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import path from "node:path";
 
-import { parsePorcelain, verdictFor } from "./lib/worktree-safety.mjs";
+import {
+  parsePorcelain, verdictFor, isOurEnv, mainWorktreeRoot, canCompareEnv,
+} from "./lib/worktree-safety.mjs";
 
 const target = process.argv[2];
 if (!target || target.startsWith("--")) {
@@ -212,15 +214,35 @@ const untracked = status.untracked.filter((p) => !p.replace(/\\/g, "/").endsWith
 // that "exists nowhere else", which understated the loss and mislabelled the fix.
 const modified = status.modified;
 
-// The .env carve-out is conditional on actually comparing it.
+// 5. The .env carve-out — conditional on actually comparing it against ANOTHER file.
+//
+// 🔴 THE OTHER SIDE USED TO BE `process.cwd()/../backend/.env`, WHICH IS A GUESS ABOUT WHERE YOU
+//    TYPED THE COMMAND. `npm run check:deletable` sets cwd to the package directory of the
+//    worktree you are standing in, so the "main checkout" file resolved to THE FILE UNDER TEST.
+//    A file is byte-identical to itself, so the carve-out was granted without a second copy
+//    existing anywhere — the check would have cleared a worktree holding the only copy of a
+//    credential. Ask git instead: the common dir is the same answer from inside any worktree.
+const commonDirRaw = git(wt, ["rev-parse", "--path-format=absolute", "--git-common-dir"], true)
+  // --path-format landed in git 2.31; on older git the plain form answers relative to the worktree.
+  ?? (() => { const r = git(wt, ["rev-parse", "--git-common-dir"], true); return r ? path.resolve(wt, r) : null; })();
+const mainRoot = mainWorktreeRoot(commonDirRaw);
 const envHere = path.join(wt, "backend", ".env");
-const envMain = path.join(process.cwd(), "..", "backend", ".env");
+const envMain = mainRoot ? path.join(mainRoot, "backend", ".env") : null;
+// ⚠ `isOurEnv`, not "ends with .env": a dependency's own .env (node_modules/natural/.env ships
+//   inside the package) is regenerable, and counting it as present defeated this shortcut.
+const ourEnvPresent = untracked.some(isOurEnv);
 let envIdentical = false;
-try {
-  envIdentical = existsSync(envHere) && existsSync(envMain)
-    && readFileSync(envHere).equals(readFileSync(envMain));
-} catch { envIdentical = false; }
-if (!untracked.some((p) => /(^|[\\/])\.env$/.test(p))) envIdentical = true;  // none present: moot
+if (canCompareEnv(envHere, envMain)) {
+  try {
+    envIdentical = existsSync(envHere) && existsSync(envMain)
+      && readFileSync(envHere).equals(readFileSync(envMain));
+  } catch { envIdentical = false; }
+}
+const envNote = !ourEnvPresent ? `no .env of ours here — moot (would compare against ${envMain ?? "UNRESOLVED"})`
+  : envMain === null ? "NOT COMPARED — no main worktree resolved, so it blocks"
+  : !canCompareEnv(envHere, envMain) ? `NOT COMPARED — ${envMain} is the file under test, and a file equals itself`
+  : envIdentical ? `identical to ${envMain}` : `DIFFERS from ${envMain}, or one of them is missing`;
+if (!ourEnvPresent) envIdentical = true;  // moot
 
 const v = verdictFor({
   upstream, contentState, stashDelta, untracked, modified, envIdentical, controlPassed,
@@ -242,6 +264,7 @@ console.log(`  content identical         : ${
 console.log(`  stash count               : ${stashCount}${baseline === null
   ? "  (no STASH_BASELINE given — not compared; set it to check the delta)" : `  (baseline ${baseline}, delta ${stashDelta})`}`);
 console.log(`  untracked scan control    : ${controlPassed ? "PASSED — the scan can see a planted file" : "FAILED — the scan is blind"}`);
+console.log(`  .env vs the main checkout : ${envNote}`);
 console.log(`  ignorable, not unique     : ${v.ignored.length} path(s)`);
 console.log(`  tracked, uncommitted edits: ${modified.length} file(s)`);
 

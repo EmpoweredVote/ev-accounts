@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { verdictFor, IGNORABLE, parsePorcelain } from './worktree-safety.mjs';
+import {
+  verdictFor, IGNORABLE, parsePorcelain, isOurEnv, mainWorktreeRoot, canCompareEnv,
+} from './worktree-safety.mjs';
 
 // §9 rule 4: "Verify before deleting a worktree or branch: untracked-and-ignored count is zero,
 // the branch is fully merged into origin/master, the merged content is byte-identical, and the
@@ -63,6 +65,35 @@ describe('verdictFor', () => {
     const v = verdictFor({ ...ok, untracked: ['backend/.env'], envIdentical: false });
     expect(v.safe).toBe(false);
     expect(v.blockers.map((b) => b.kind)).toContain('unique-files');
+  });
+
+  // 🔴 A DEPENDENCY'S .env IS NOT OUR .env, AND TREATING IT AS ONE REFUSED A CLEAN WORKTREE.
+  //    `node_modules/natural/.env` ships inside a published package: it matched the `.env` rule,
+  //    which is conditional on a byte-comparison against the main checkout, so it was held to a
+  //    test written for OUR credential file and reported as content that "exists nowhere else".
+  //    Measured 2026-09-23 on a merged, content-identical worktree — the check refused it while
+  //    four identical 544-byte copies sat in the other worktrees' node_modules. `node_modules`
+  //    is regenerable from the lockfile WHATEVER a file inside it is called; that rule wins.
+  it('ignores a .env that ships inside node_modules, compared or not', () => {
+    const v = verdictFor({
+      ...ok,
+      untracked: ['backend/node_modules/natural/.env'],
+      envIdentical: false,
+    });
+    expect(v.safe).toBe(true);
+    expect(v.ignored).toEqual(['backend/node_modules/natural/.env']);
+  });
+
+  // ⚠ The narrowing must not reach our own file: one directory up is still ours.
+  it('still refuses OUR unverified .env when a dependency also has one', () => {
+    const v = verdictFor({
+      ...ok,
+      untracked: ['backend/node_modules/natural/.env', 'backend/.env'],
+      envIdentical: false,
+    });
+    expect(v.safe).toBe(false);
+    const b = v.blockers.find((x) => x.kind === 'unique-files');
+    expect(b!.files).toEqual(['backend/.env']);
   });
 
   it('refuses any other untracked file, naming it', () => {
@@ -220,5 +251,77 @@ describe('verdictFor — content comparison is never inherited', () => {
     const v = verdictFor(withoutIt);
     expect(v.safe).toBe(false);
     expect(v.blockers.map((b) => b.kind)).toContain('not-merged');
+  });
+});
+
+// ── WHICH .env IS OURS, AND WHERE THE OTHER ONE LIVES ────────────────────────────────────────
+//
+// 🔴 BOTH DEFECTS BELOW WERE IN THE SAME FIVE LINES, AND THEY FAIL IN OPPOSITE DIRECTIONS.
+//    A dependency's .env was read as ours and REFUSED a clean worktree (noise, and noise is
+//    what teaches people to --force past a checker). The main checkout's .env was located
+//    relative to `process.cwd()`, so running the check from inside the worktree being judged
+//    pointed it at THAT worktree's own file — a comparison of a file against itself, which
+//    reports "identical" and would CLEAR a worktree holding the only copy of a credential.
+//    The second is the one that loses data.
+describe('isOurEnv', () => {
+  it('is true for the .env we copy into a worktree', () => {
+    expect(isOurEnv('backend/.env')).toBe(true);
+    expect(isOurEnv('.env')).toBe(true);
+  });
+
+  it('is false for one that ships inside a package', () => {
+    expect(isOurEnv('backend/node_modules/natural/.env')).toBe(false);
+    expect(isOurEnv('node_modules/.env')).toBe(false);
+  });
+
+  it('is false for a file that merely starts with .env', () => {
+    expect(isOurEnv('backend/.envrc')).toBe(false);
+    expect(isOurEnv('backend/.env.example')).toBe(false);
+  });
+
+  it('reads a Windows separator the same way', () => {
+    expect(isOurEnv('backend\\node_modules\\natural\\.env')).toBe(false);
+    expect(isOurEnv('backend\\.env')).toBe(true);
+  });
+});
+
+describe('mainWorktreeRoot', () => {
+  // `git rev-parse --path-format=absolute --git-common-dir` answers the MAIN checkout's .git
+  // from inside any linked worktree — which is the fact we want, and unlike process.cwd() it
+  // does not change with where the command was typed.
+  it('is the parent of the common .git directory', () => {
+    expect(mainWorktreeRoot('C:/EV-Accounts/.git')).toBe('C:/EV-Accounts');
+    expect(mainWorktreeRoot('/home/x/repo/.git/')).toBe('/home/x/repo');
+  });
+
+  it('is null for a bare repo, which has no worktree to compare against', () => {
+    expect(mainWorktreeRoot('C:/mirrors/repo.git')).toBe(null);
+    expect(mainWorktreeRoot('')).toBe(null);
+    expect(mainWorktreeRoot(null)).toBe(null);
+  });
+});
+
+describe('canCompareEnv', () => {
+  it('is true for two different paths', () => {
+    expect(canCompareEnv('C:/wt/backend/.env', 'C:/EV-Accounts/backend/.env')).toBe(true);
+  });
+
+  // 🔴 A FILE EQUALS ITSELF. That is not evidence a second copy exists, and it is exactly what
+  //    `npm run check:deletable` produced: npm sets cwd to the package directory of the
+  //    worktree you are standing in, so `cwd/../backend/.env` WAS the file under test.
+  it('is false when both sides resolve to the same file', () => {
+    expect(canCompareEnv('C:/wt/backend/.env', 'C:/wt/backend/.env')).toBe(false);
+    expect(canCompareEnv('C:/wt/backend/../backend/.env', 'C:/wt/backend/.env')).toBe(false);
+  });
+
+  // Fails SAFE: on a case-sensitive filesystem two files differing only in case are distinct,
+  // and calling them the same blocks a deletion rather than clearing one.
+  it('is false when the paths differ only in case', () => {
+    expect(canCompareEnv('C:/WT/backend/.env', 'C:/wt/backend/.env')).toBe(false);
+  });
+
+  it('is false when either side is missing', () => {
+    expect(canCompareEnv(null, 'C:/EV-Accounts/backend/.env')).toBe(false);
+    expect(canCompareEnv('C:/wt/backend/.env', null)).toBe(false);
   });
 });

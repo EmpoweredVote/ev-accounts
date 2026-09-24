@@ -2524,6 +2524,110 @@ function parseArgs(argv: string[]): CliArgs {
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 
+/** What happened when the loader tried to refresh the child→county mapping. */
+export type RefreshOutcome =
+  | { kind: 'refreshed'; staleBefore: number; staleAfter: number }
+  | { kind: 'failed'; reason: string };
+
+const MANUAL_REFRESH = 'REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;';
+
+/**
+ * The lines to print after a refresh attempt.
+ *
+ * 🔴 A FAILURE MUST BE LOUDER THAN A SUCCESS. Every way the call can fail — migration not applied,
+ *    grant revoked, function renamed — ends in the same catch, and if that catch prints something
+ *    reassuring the operator walks away believing the mapping is current while the dashboard shows
+ *    jurisdictions with no county. That is precisely the condition nobody noticed for six nights.
+ *
+ * ⚠ A refresh that RAN and left rows stale is not a success with a caveat. It means the matview
+ *   now agrees with the boundaries table and those children are still unmapped, so the cause is
+ *   something other than staleness — report it, do not absorb it.
+ */
+export function refreshNotice(outcome: RefreshOutcome, insertedBoundaries: number): string[] {
+  if (outcome.kind === 'refreshed' && outcome.staleAfter === 0) {
+    return [
+      '\n=== child→county mapping refreshed ===',
+      `  ${insertedBoundaries} boundary/ies inserted; unmapped children ${outcome.staleBefore} → ${outcome.staleAfter}.`,
+      '  Nothing to do.',
+    ];
+  }
+
+  if (outcome.kind === 'refreshed') {
+    return [
+      '\n=== ⚠⚠ ACTION REQUIRED: the refresh ran and did NOT clear the backlog ===',
+      `  Unmapped children ${outcome.staleBefore} → ${outcome.staleAfter}. The matview now agrees with`,
+      '  essentials.geofence_boundaries, so staleness is NOT what is leaving these unmapped —',
+      '  look at the geometry of the remaining rows rather than refreshing again.',
+      '    npm run check:child-county -- --verbose   # names every one of them',
+    ];
+  }
+
+  return [
+    '\n=== ⚠ ACTION REQUIRED: the mapping was NOT refreshed ===',
+    `  This run inserted ${insertedBoundaries} boundary/ies and the automatic refresh FAILED:`,
+    `    ${outcome.reason}`,
+    '  Until it is refreshed they show with NO county on the coverage dashboard, and the',
+    '  nightly `child→county mapping` job will fail (it is schedule-only, so you may not',
+    '  hear about it for a day). Run it yourself — as postgres, which owns the matview:',
+    `\n  ${MANUAL_REFRESH}`,
+    // Measured on prod 2026-09-24: 30,797 ms. Migration 1696's "~17 s" is stale, and quoting it
+    // is what makes ev_api's 30 s statement_timeout look like comfortable headroom.
+    '\n  ~31 s. Then confirm with:',
+    '    npm run check:child-county   -> expect "stale 0"',
+  ];
+}
+
+/**
+ * Refresh the mapping through the SECURITY DEFINER function.
+ *
+ * 🔴 WHY A FUNCTION AND NOT THE STATEMENT. This loader connects as `ev_api`, and `ev_api` cannot
+ *    refresh a matview owned by postgres — measured: "permission denied for materialized view".
+ *    essentials.refresh_geofence_child_county() is owned by postgres, EXECUTE revoked from PUBLIC
+ *    and granted to ev_api alone.
+ *
+ * ⚠ CONCURRENTLY inside a function is FINE, and the comment that used to sit here saying otherwise
+ *   was wrong — that restriction belongs to CREATE INDEX CONCURRENTLY. Measured on prod 2026-09-24.
+ *
+ * Opens its own connection: main() closes the loader's client in a `finally` before the summary is
+ * printed, and the refresh belongs after the summary where its result is the last thing on screen.
+ */
+export async function refreshChildCountyMapping(): Promise<RefreshOutcome> {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+  });
+  try {
+    await client.connect();
+
+    // 🔴 WITHOUT THIS THE CALL ALWAYS TIMES OUT, AND IT IS NOT CLOSE. Measured on prod 2026-09-24:
+    //    `ev_api` carries statement_timeout = 30s, and the refresh takes ~31 s (30,797 ms). The
+    //    first live run failed with "canceling statement due to statement timeout" — the loader
+    //    would have printed its ACTION REQUIRED fallback after every load, for ever, and the
+    //    feature would have looked implemented while doing nothing.
+    //
+    // ⚠⚠ PUTTING THE SET ON THE FUNCTION DOES NOT WORK — measured, do not "tidy" it there. A
+    //    function-level `SET statement_timeout` is applied when the function starts, but the
+    //    timeout timer was already armed when the STATEMENT started, and changing the GUC does not
+    //    reschedule it. Two probe functions, one with the SET and one without, both died at
+    //    exactly 30 s. The timeout has to be raised on the connection, before the call.
+    await client.query("SET statement_timeout = '600s'");
+
+    const { rows } = await client.query(
+      'SELECT stale_before, stale_after FROM essentials.refresh_geofence_child_county()',
+    );
+    if (rows.length === 0) return { kind: 'failed', reason: 'the refresh function returned no row' };
+    return {
+      kind: 'refreshed',
+      staleBefore: Number(rows[0].stale_before),
+      staleAfter: Number(rows[0].stale_after),
+    };
+  } catch (err) {
+    return { kind: 'failed', reason: (err as Error).message };
+  } finally {
+    try { await client.end(); } catch { /* never connected, or already closed */ }
+  }
+}
+
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
 
@@ -2699,19 +2803,20 @@ async function main(): Promise<void> {
 
   // Nothing else in the codebase refreshes essentials.geofence_child_county — it is only READ, by
   // coverageMapService, and only CHECKED, by scripts/check-child-county-mapping.mjs. So inserting
-  // boundaries here silently leaves it stale, every affected jurisdiction shows with NO county on
-  // the coverage dashboard, and CI goes red on a later, unrelated commit.
-  // That is not hypothetical: the 2026-08-14 Washington load added 281 G4110 places and left CI red
-  // until it was refreshed by hand. Say so loudly whenever this run actually inserted a boundary.
+  // boundaries here leaves it stale, every affected jurisdiction shows with NO county on the
+  // coverage dashboard, and the nightly goes red until somebody refreshes it by hand.
+  //
+  // 🔴 ASKING WAS NOT ENOUGH. This block used to print ACTION REQUIRED and stop. It went unread
+  // after the 2026-08-14 Washington load (281 places, CI red until refreshed by hand) and again
+  // after the 2026-09-18..20 loads — 5,155 children, SIX consecutive red nightlies, cleared only
+  // on 09-23. A message whose whole job is to be noticed has now failed twice, so the loader does
+  // the refresh itself.
+  //
+  // ⚠ `inserted_boundary > 0` already excludes --dry-run: the dry-run path returns before the
+  //   write pass, so nothing is counted as inserted.
   if (grandTotals.inserted_boundary > 0) {
-    console.log('\n=== ⚠ ACTION REQUIRED: refresh the persisted child→county mapping ===');
-    console.log(`  This run inserted ${grandTotals.inserted_boundary} boundary/ies. Until the matview is`);
-    console.log('  refreshed they will show with NO county on the coverage dashboard, and');
-    console.log('  `npm run check:child-county` (which CI runs on every push) will FAIL.');
-    console.log('\n  REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;');
-    console.log('\n  ~17 s. CONCURRENTLY cannot run inside a transaction block. Requires ownership of');
-    console.log('  the matview, so run it as postgres, not as ev_api. Then confirm with:');
-    console.log('    npm run check:child-county   -> expect "stale 0"');
+    const outcome = await refreshChildCountyMapping();
+    for (const line of refreshNotice(outcome, grandTotals.inserted_boundary)) console.log(line);
   }
 }
 

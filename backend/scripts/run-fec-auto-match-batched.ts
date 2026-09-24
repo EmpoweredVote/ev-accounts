@@ -13,7 +13,7 @@
 
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
-import { runFecAutoMatch } from '../src/lib/fecResearch.js';
+import { getUnmatchedFederalPoliticians, runFecAutoMatch } from '../src/lib/fecResearch.js';
 
 const BATCH_SIZE = parseInt(process.argv[2] ?? '120', 10);
 const MAX_BATCHES = parseInt(process.argv[3] ?? '6', 10);
@@ -72,23 +72,15 @@ async function main() {
     if (batch < MAX_BATCHES) await sleep(SLEEP_BETWEEN_BATCHES_MS);
   }
 
-  // Report how many federal politicians still have no fec source.
-  const remaining = await pool.query<{ cnt: string }>(
-    `SELECT COUNT(DISTINCT p.id) AS cnt
-     FROM essentials.politicians p
-     JOIN essentials.offices o ON o.politician_id = p.id
-     JOIN essentials.chambers c ON c.id = o.chamber_id
-     WHERE p.is_active = true AND p.is_vacant = false
-       AND (c.name LIKE 'U.S. House%' OR c.name LIKE 'U.S. Senate%')
-       AND NOT EXISTS (
-         SELECT 1 FROM transparent_motivations.politician_sources ps
-         WHERE ps.essentials_politician_id = p.id AND ps.source_system LIKE 'fec%'
-       )`
-  );
+  // Report how many federal politicians still have no fec source. Ask the queue
+  // itself rather than re-deriving it, so this count cannot drift from what
+  // runFecAutoMatch actually drains (ADR 0002 phase 5 dropped the column the old
+  // copy of this query joined on).
+  const remaining = (await getUnmatchedFederalPoliticians()).length;
 
   console.log('\n=== BATCHED AUTO-MATCH TOTALS ===');
   console.log(JSON.stringify(totals, null, 2));
-  console.log(`Federal politicians still unmatched: ${remaining.rows[0]?.cnt ?? '?'}`);
+  console.log(`Federal politicians still unmatched: ${remaining}`);
 
   await pool.end();
   process.exit(0);
