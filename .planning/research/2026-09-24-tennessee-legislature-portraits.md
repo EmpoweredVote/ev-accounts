@@ -93,15 +93,36 @@ The caucus sites' licence is a separate and weaker question, per the above.
    were not located. ⚠ That is a rendering limitation, not an absence — they need Playwright.
    `tnsenategop.com/members/`, `/senators/` and `/our-members/` are all 404, so the path is
    something else.
-4. **The Tennessee Blue Book.** The Secretary of State's official publication carries member
-   portraits and would be a state work rather than a party one — the best licence answer available
-   if it pans out. ⚠ `sos.tn.gov/products/blue-book` is a 404; the URL was guessed and the
-   publication was not reached.
+4. ~~The Tennessee Blue Book.~~ ✅ **REACHED AND RULED OUT — see below.**
+
+## 🔴 THE BLUE BOOK IS RULED OUT ON RESOLUTION — ITS PORTRAITS ARE 119x153
+
+Reached 2026-09-24 at **`sos.tn.gov/blue-book`**. ⚠ The earlier 404 was a guessed path, as
+suspected; the real page exists and the current edition is **2025-2026**, published as per-section
+PDFs at `publications.tnsosfiles.com/pub/blue_book/25-26/` — `25-26_House.pdf` (39 MB, 124 pages)
+and `25-26_Senate.pdf` (13 MB, 60 pages).
+
+**The member portraits inside are ~119x153.** Enumerated with PyMuPDF and confirmed by eye — they
+are unmistakably the members, not decoration:
+
+| chapter | pages | embedded images | commonest portrait sizes |
+| --- | --- | --- | --- |
+| House | 124 | 113 | 119x153 (49) · 116x154 (26) · 116x156 (11) · 103x137 (7) |
+| Senate | 60 | 49 | 116x154 (10) · 119x153 (7) · 97x123 (5) · 103x137 (4) |
+
+A 119x153 source needs **5.0x** to reach 600x750 — nearly three times worse than the GA member
+page's already-poor 1.88x.
+⚠ **A 39 MB PDF IS NOT EVIDENCE OF LARGE IMAGES.** The file is big because it is 124 print pages,
+not because the portraits are. Measure the embedded raster, never the download size.
+
+▶ **The Blue Book was the best LICENCE answer and it is the worst PIXELS.** It cannot be the
+source, and the party-provenance question it might have dissolved is still live.
 
 ## Order of work when this opens
 
 1. Find the GA's real disclaimer and settle the licence. Nothing ships before this.
-2. Reach the Blue Book — a state publication would beat both other sources on licence.
-3. Measure caucus coverage properly, in Playwright, across all four sites.
+2. ~~Reach the Blue Book.~~ **Done — ruled out on resolution, 119x153.**
+3. Measure caucus coverage properly, in Playwright, across all four sites — they are now the only
+   known source above 400x400.
 4. Decide the spine-plus-upgrade question above, and get the 400x400 enlargement judged on a
    contact sheet **before** building the extractor, not after.
