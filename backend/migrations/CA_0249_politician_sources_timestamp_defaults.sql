@@ -19,7 +19,9 @@
 --
 -- SET DEFAULT is a catalog-only change: no table rewrite, a brief ACCESS EXCLUSIVE lock.
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval and apply: Chris Andrews). Dry run (BEGIN ... ROLLBACK) passed and
+--   the defaults were confirmed absent before the apply; verified after: both columns DEFAULT now(), 87,403 rows untouched
+--   (77 / 8,887 dated).
 --
 -- ROLLBACK: ALTER TABLE transparent_motivations.politician_sources
 --             ALTER COLUMN created_at DROP DEFAULT, ALTER COLUMN updated_at DROP DEFAULT;
