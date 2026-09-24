@@ -330,12 +330,12 @@ jobs:
         run: node backend/scripts/check-answer-delete-guards.mjs
 
       # --- cal-access predicate tripwire -----------------------------------------------------------
-      # `confirm-cal-access.ts` matches Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
-      # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claims 391 committees. It is
-      # inert only by ACCIDENT (migration 1463 dropped the column it joins on, so it throws), and
-      # repairing that join is a one-line change that would re-run the defect at full scale. A RATCHET:
-      # it fails only on the single combination that re-creates the defect, and tests code with comments
-      # stripped so the tripwire's own quoted rule does not jam it shut. Static, runs on forks.
+      # `confirm-cal-access.ts` matched Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
+      # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claimed 391 committees. It was
+      # DELETED 2026-09-23 (with the two discovery scripts, #677), so this passes on "no longer exists".
+      # It stays because restoring the file from history is the likely way back: a restore that also
+      # drops the abort while keeping the last-token rule still fails here. A RATCHET, tested with
+      # comments stripped so the tripwire's own quoted rule does not jam it shut. Static, runs on forks.
       - name: cal-access predicate tripwire
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-cal-access-predicate.mjs

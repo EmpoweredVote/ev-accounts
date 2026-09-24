@@ -9,9 +9,10 @@
 >   candidate. The second seeded `confirmed` links with no control check at all. `CA_0192` found 63
 >   such committees linked as people's own ("… SPONSORED BY BIZFED PAC", "CALIFORNIANS TO RECALL
 >   GAVIN") and disputed them.
-> - **Step 2 cannot run and is unsafe.** `confirm-cal-access.ts` still writes the dropped
->   `essentials.offices.politician_id` (ADR 0002, migration 1463), and it matched on the last token
->   of the name (migrations 1789 and 1792 demoted its results).
+> - **Steps 2 and 3 are deleted too.** `confirm-cal-access.ts` was removed on 2026-09-23. It could
+>   not run (it wrote the dropped `essentials.offices.politician_id`, ADR 0002, migration 1463), and
+>   it matched on the last token of the name (migrations 1789 and 1792 demoted its results). CI step
+>   "cal-access predicate tripwire" still fails a restore that keeps that rule.
 > - The counts below are from April. On 2026-09-23 only 306 `cal_access` links on active rows are
 >   `confirmed`.
 > - **How to link a committee today:** decide it from the SOS bulk export — `FILER_TO_FILER_TYPE_CD`
