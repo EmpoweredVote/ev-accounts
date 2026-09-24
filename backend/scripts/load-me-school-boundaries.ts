@@ -2,7 +2,7 @@
  * load-me-school-boundaries.ts
  *
  * Downloads the Maine TIGER UNSD shapefile from census.gov, filters to the
- * 5 target school districts by GEOID, and inserts
+ * 8 target school districts by GEOID, and inserts
  * G5420 geofence_boundaries rows into essentials.geofence_boundaries.
  *
  * Each district is stored with:
@@ -32,16 +32,22 @@ const TIGER_URL    = 'https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_2
 const MTFCC        = 'G5420';
 const STATE        = '23';           // Maine FIPS — geofence_boundaries.state convention
 const SOURCE       = 'tiger_unsd_me_2024';
-const EXPECTED_COUNT = 5;
+const EXPECTED_COUNT = 8;
 
 // geo_id = GEOID field value directly (e.g. '2307320') — NOT a slug like LAUSD's 'lausd-board-district-N'
-// All 5 GEOIDs verified via NCES CCD district detail pages 2026-06-03.
+// The first 5 GEOIDs verified via NCES CCD district detail pages 2026-06-03.
 const TARGET_GEOIDS = new Map<string, string>([
   ['2307320', 'Lewiston Public Schools'],
   ['2302820', 'Bangor School Department'],
   ['2312330', 'South Portland Public Schools'],
   ['2302610', 'Auburn Public Schools'],
   ['2303150', 'Biddeford Public Schools'],
+  // Added for CA_0288 (2026-09-24): the three city school boards that were filed on their city's
+  // LOCAL (G4110) district. GEOIDs read from tl_2024_23_unsd.dbf (NAME = Portland / Augusta /
+  // Westbrook, PK-12).
+  ['2309930', 'Portland Public Schools'],
+  ['2302640', 'Augusta Public Schools'],
+  ['2313560', 'Westbrook School Department'],
 ]);
 
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -182,7 +188,7 @@ async function main() {
       result = await source.read();
     }
 
-    // Step 5: Assert all 5 GEOIDs were found
+    // Step 5: Assert every target GEOID was found
     if (districtMap.size !== EXPECTED_COUNT) {
       const foundGeoIds = Array.from(districtMap.keys());
       const missingGeoIds = Array.from(TARGET_GEOIDS.keys()).filter(g => !districtMap.has(g));
