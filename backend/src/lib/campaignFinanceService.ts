@@ -494,7 +494,7 @@ const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ES
 /**
  * detectCoverageStatus classifies a politician with no confirmed contributions
  * into one of three coverage statuses:
- *   - 'data_pending'       — has a confirmed committee but no contributions ingested yet
+ *   - 'data_pending'       — has a confirmed committee that ingestion has not yet completed a run for
  *   - 'local_unavailable'  — local/county office; filings are paper/offline
  *   - 'no_data'            — federal/state office with no confirmed committee on file
  */
@@ -516,12 +516,25 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
   // 'data_pending' (248 to 'local_unavailable', 95 to 'no_data'; measured on prod that day).
   // Admin CRUD and write-path lookups aside, the one read that still counts every status is
   // HAS_ANY_CONTRIBUTION_SQL (donorCoverage.ts), deliberately, for the admin coverage maps.
+  //
+  // 🔴 AND ONLY WHILE A RUN IS STILL OWED. A confirmed committee that ingestion has already
+  // completed a run for, and that still has no contributions, is not "being processed": the source
+  // simply holds nothing to load. Typical case: a local committee confirmed at the SOS whose Form 460s
+  // are filed with the city clerk (Corey Calaycay, Claremont — both confirmed committees ran on
+  // 2026-09-23/24 and fetched 0 records). Before this, 187 active politicians read 'data_pending'
+  // and 156 of them had every confirmed committee already ingested, so the banner could never clear.
+  // They now fall through to the office rule below. 'failed' runs do not count as done: a retry is
+  // still owed. Same "done" set as fecBurstResume.ts: 'completed' and 'completed_with_warning'.
   const sourceCountResult = await pool.query<{ cnt: string }>(
     `SELECT COUNT(*) AS cnt
-     FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1
-       AND source_type = 'candidate_committee'
-       AND research_status = 'confirmed'`,
+     FROM transparent_motivations.politician_sources ps
+     WHERE ps.essentials_politician_id = $1
+       AND ps.source_type = 'candidate_committee'
+       AND ps.research_status = 'confirmed'
+       AND NOT EXISTS (
+         SELECT 1 FROM transparent_motivations.ingestion_runs ir
+          WHERE ir.politician_source_id = ps.id
+            AND ir.status IN ('completed', 'completed_with_warning'))`,
     [politicianId]
   );
   const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
