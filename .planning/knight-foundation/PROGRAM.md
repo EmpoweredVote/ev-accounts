@@ -162,34 +162,40 @@ For the four **consolidated city-counties** — Columbus, Macon, Philadelphia, L
 the county commission (the city council already is it) but **keeps the separately elected county
 officers**. Stage 4 is never skipped entirely. See spec §3.2.
 
-## Baselines measured 2026-08-28
+## Baselines — legislature and geofence re-measured 2026-09-24
 
-Re-measure rather than trust these once any wave has applied.
+Re-measure rather than trust these once any wave has applied. 🔴 **The two tables below had NOT been re-measured since 2026-08-28. Four of sixteen rows were wrong in the first and TEN of sixteen in the second**, and in both directions: SC read `0/124` with its General Assembly fully seated, PA read `0 | 0 | 0` geofence polygons with 253 loaded, six states read `place 0` while every one of them already held a `place` layer — and FL and CA were recorded complete after six of their seats had gone vacant. ▶ **A stale baseline is worse than no baseline — it is read as a measurement.** The tables and the arithmetic line under the first one are now generated from production rather than maintained by hand.
+
+⚠ **The sections below this one — portrait splits, local and county seats — were NOT re-measured in this pass.** Their dates stand as written.
 
 ### Legislature seats owed
 
 | State | House have/expect | Senate have/expect |
 | --- | --- | --- |
-| CA | 80/80 | 40/40 |
-| CO | 65/65 | 35/35 |
-| NC | 120/120 | 50/50 |
+| CA | **79/80** *(AD-3 vacant)* | **40/40** |
+| CO | **65/65** | **35/35** |
+| NC | **120/120** | **50/50** |
 | IN | **100/100** | **50/50** |
-| FL | **120/120** | **40/40** |
-| GA | **180/180** | **55/56** |
+| FL | **116/120** *(4 vacant)* | **39/40** *(SD-39 vacant)* |
+| GA | **180/180** | **55/56** *(SD-12 vacant)* |
 | KS | 0/125 | 0/40 |
 | KY | 0/100 | 0/38 |
 | MI | 0/110 | 0/38 |
 | MN | **133/134** *(21A vacant)* | **67/67** |
 | MS | 0/122 | 0/52 |
 | ND | 0/94 | 0/47 |
-| OH | **99/99** | **33/33** |
+| OH | **98/99** *(HD-66 vacant)* | **32/33** *(SD-13 vacant)* |
 | PA | **203/203** | **50/50** |
-| SC | 0/124 | 0/46 |
+| SC | **124/124** | **46/46** |
 | SD | 0/70 | 0/35 |
 
-Total owed: **2,155**, of which **998 are now seated** (FL complete; GA 235 of 236, SD-12 vacant; **IN complete, 150 of 150, no vacancy**; **MN 200 of 201, HD-21A vacant**; **PA complete, 253 of 253, no vacancy**). Remaining: **1,157**.
+Total expected: **2,563**, of which **1,682 are seated**. Remaining: **881**. **Ten of the sixteen legislatures are loaded** — CA, CO, NC, IN, FL, GA, MN, OH, PA, SC.
 
-⚠ **This line stood at 545 for four days after MN-2 seated 200 of these seats.** It is arithmetic over the applied waves, not a fresh query — re-measure before you quote it. ▶ **PA was the largest single block left and it is now seated (PA-2, 2026-09-18). The largest remaining are MS 174, SC 170 and KS 165 — read them off the table above rather than from this line.**
+⚠ **RE-MEASURED 2026-09-24 AND THE OLD LINE WAS WRONG IN BOTH DIRECTIONS.** It read "2,155 owed, 998 seated, 1,157 remaining" — it had missed SC’s 170 seated entirely, and it counted FL and CA as complete when six of their seats had since gone vacant. 🔴 **IT IS ARITHMETIC OVER SIXTEEN ROWS AND HAND ARITHMETIC IS WHY IT KEEPS GOING STALE** — it also stood at 545 for four days after MN-2 seated 200 of these seats. ▶ **Generate it, do not add it up**: `backend/scripts/measure-program-tables.mjs` prints both tables and this line from production, and its method is controlled against the rows already believed correct.
+
+▶ **The largest remaining blocks are MS 174, KS 165 and MI 148** — read them off the table above rather than from this line.
+
+🔴🔴 **A SEAT CAN LEAVE THIS TABLE AFTER YOUR WAVE CLOSES, AND NOTHING TELLS YOU.** FL was recorded "complete, 160 of 160" and now measures **155**: HD-55, HD-78, HD-113, HD-116 and SD-39 are all flagged `is_vacant`, four of them with a `vacant_since` written by a later wave. CA AD-3 went the same way on 2026-06-10, with its term properly closed the day before. **None of this is data loss** — every one is a deliberately recorded vacancy — but a row that reads "complete" is a claim about a date, not a standing fact. That is the same reason `office_current_holder` resolves at read time instead of caching "current" in a column.
 
 🔴 **INDIANA'S 18 PRE-EXISTING SEATS WERE NEVER IN THE 395** — they sat outside this table because the row read "12/100 + 6/50" and nothing summed it. IN-2 added **132** seats and repaired **18**, so the seated total moves by 150, not by 132. ▶ **A partially-seated state is invisible to a table that only counts finished ones.**
 
@@ -215,25 +221,26 @@ Do not read CO or NC as done.
 
 | State | sldl | sldu | place | county |
 | --- | --- | --- | --- | --- |
-| CA | 80 | 40 | 482 | 58 |
-| CO | 65 | 35 | 272 | 64 |
-| IN | 100 | 50 | 566 | 92 |
-| NC | 120 | 50 | 552 | 100 |
+| CA | **80** | **40** | **482** | 58 |
+| CO | **65** | **35** | **272** | 64 |
+| IN | **100** | **50** | **566** | 92 |
+| NC | **120** | **50** | **552** | 100 |
 | FL | **120** | **40** | **411** | 67 |
 | GA | **180** | **56** | **537** | 159 |
-| KS | 0 | 0 | 0 | 105 |
-| KY | 0 | 0 | 0 | 120 |
-| MI | 0 | 0 | 0 | 83 |
-| MN | 0 | 0 | 0 | 87 |
-| MS | 0 | 0 | 0 | 82 |
-| ND | 0 | 0 | 0 | 53 |
+| KS | 0 | 0 | **626** | 105 |
+| KY | 0 | 0 | **419** | 120 |
+| MI | 0 | 0 | **533** | 83 |
+| MN | **134** | **67** | **855** | 87 |
+| MS | 0 | 0 | **300** | 82 |
+| ND | 0 | 0 | **355** | 53 |
 | OH | **99** | **33** | **925** | 88 |
-| PA | 0 | 0 | 0 | 67 |
-| SC | 0 | 0 | 0 | 46 |
-| SD | 0 | 0 | 0 | 66 |
+| PA | **203** | **50** | **1013** | 67 |
+| SC | **124** | **46** | **271** | 46 |
+| SD | 0 | 0 | **310** | 66 |
 
-Every state except CA, CO, IN, NC, FL and GA needs a `place` + `sldu` + `sldl` load before any seat
-in it is reachable by address. **Ten remain.**
+🟢 **NO STATE IN THIS TABLE OWES A `place` LOAD ANY MORE.** All sixteen now carry one; the six that read `0` did so because this table had not been re-measured since 2026-08-28, not because the layer was missing. **Six still need `sldu` + `sldl`: KS, KY, MI, MS, ND, SD** — and those are the only rows here that block address reachability.
+
+✅ **The `place` column has an independent cross-check inside this same file**: MI 533 + PA 1,013 + OH 925 = **2,471**, exactly the figure the PA-1 entry records as the `check:child-county` debt. Two unrelated measurements of the same layer agree.
 
 ### Local and county seats present
 
