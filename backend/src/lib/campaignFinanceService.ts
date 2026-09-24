@@ -1065,9 +1065,9 @@ interface AggRow {
   data_source: string;
   contribution_count: string;
   total_amount: string;
-  gross_amount: string | null;    // NULL = row last refreshed before CA_0255
-  refunded_amount: string | null;
-  refund_count: string | null;
+  gross_amount: string;           // NOT NULL since CA_0277
+  refunded_amount: string;
+  refund_count: string;
   individual_total: string;
   pac_total: string;
   confidence_min: number;
@@ -1126,11 +1126,9 @@ async function getSummaryFromAgg(
     contributionCount += cnt;
     individualTotal += Number(row.individual_total);
     pacTotal += Number(row.pac_total);
-    // A row not yet refreshed under CA_0255 has NULL gross columns: read it the old way (net as gross, no
-    // refunds), which is exactly what it served before. The --gross-missing backfill clears these.
-    const gross = row.gross_amount == null ? Number(row.total_amount) : Number(row.gross_amount);
-    const refunded = row.refunded_amount == null ? 0 : Number(row.refunded_amount);
-    const refunds = Number(row.refund_count ?? 0);
+    const gross = Number(row.gross_amount);
+    const refunded = Number(row.refunded_amount);
+    const refunds = Number(row.refund_count);
     for (const acc of row.data_source === 'fec' ? [itemized] : [itemized, nonFec]) {
       acc.gross += gross;
       acc.refunded += refunded;

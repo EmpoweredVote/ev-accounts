@@ -75,6 +75,7 @@ const query = vi.fn(async (sql: string, params: unknown[] = []) => {
         data_source: 'la_socrata',
         contribution_count: String(g.length),
         total_amount: String(sum(g)),
+        gross_amount: String(sum(g)), refunded_amount: '0', refund_count: '0',
         individual_total: '0',
         pac_total: '0',
         confidence_min: 1,

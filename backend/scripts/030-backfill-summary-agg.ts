@@ -18,6 +18,7 @@
  *     --gross-missing — recompute only agg rows whose gross_amount IS NULL, i.e. rows last written
  *                       before CA_0255 (gross receipts + refunds on their own line). Reads only the
  *                       small agg table to find them, so it never scans contributions. Resumable.
+ *                       Finds nothing since CA_0277 made the columns NOT NULL; kept for the record.
  */
 
 import 'dotenv/config';
