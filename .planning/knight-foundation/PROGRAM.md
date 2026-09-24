@@ -212,11 +212,11 @@ comparable with the old ones.** State the scope of a table in the table.
 
 | State | Seated | Renders from a **hosted** object | `photo_custom_url` **elsewhere** | Falls back to `photo_origin_url` | Nothing renders |
 | --- | --- | --- | --- | --- | --- |
-| CA | 119 | **20** | **98** | 0 | 1 |
+| CA | 119 | **118** | 0 | 0 | 1 |
 | CO | 100 | **99** | 0 | 0 | 1 |
 | FL | 155 | **155** | 0 | 0 | 0 |
 | GA | 235 | **235** | 0 | 0 | 0 |
-| IN | 150 | **132** | **18** | 0 | 0 |
+| IN | 150 | **150** | 0 | 0 | 0 |
 | MN | 200 | **200** | 0 | 0 | 0 |
 | NC | 170 | **1** | 0 | **163** | **6** |
 | OH | 130 | **130** | 0 | 0 | 0 |
@@ -225,8 +225,21 @@ comparable with the old ones.** State the scope of a table in the table.
 
 🔴 **THE THIRD COLUMN IS NEW AND IT SPLITS WHAT THE OLD TABLE MERGED.** A row can carry a
 `photo_custom_url` — the field that actually renders — pointing at **somebody else's server**.
-The old table had no such column, so those rows were counted as "hosted" and read as done. **CA has
-98 and IN has 18.** They render today and they are not ours.
+The old table had no such column, so such a row would count as "hosted" and read as done.
+✅ **It is ZERO everywhere, in the program and outside it.** No legislator portrait anywhere in the
+corpus renders from a third party's host through `photo_custom_url`. The column stays because the
+distinction is worth watching, not because it currently finds anything.
+
+🔴🔴 **THE FIRST RUN OF THIS COLUMN REPORTED 407 OF OUR OWN PORTRAITS AS SOMEBODY
+ELSE'S — CA 98, IN 18, MD 187, UT 103, TX 1.** Our bucket has **two equivalent public URL forms**:
+`https://<ref>.storage.supabase.co/storage/v1/object/public/politician_photos/...` and
+`https://<ref>.supabase.co/storage/v1/object/public/politician_photos/...`. The predicate matched
+the hostname spelling of the first, so every row written in the second form read as external. All
+407 were fetched and confirmed **HTTP 200, real JPEG, from this bucket**.
+▶ **Key on the PROJECT REF and the BUCKET, never on the hostname spelling.** It is
+[[feedback_predicate_shape_not_value]] again: the predicate read the shape of the value instead of
+what the value is. ⚠ And it is the reason the column is kept rather than deleted — a detector
+that has been caught lying once and fixed is worth more than one that was never tested.
 
 🟢 **COLORADO WAS FIXED AND NOBODY UPDATED THIS TABLE**: 20 hosted / 84 fallback has become
 **99 hosted / 0 fallback**. 🔴 **NORTH CAROLINA HAS NOT MOVED AND IS STILL THE WORST ROW** —
@@ -235,8 +248,8 @@ because it is URL-shaped. Some are portraits; some are the roster page the portr
 coverage falls the day a source re-organises. **Do not read NC as done.**
 
 ⚠ **THIRTEEN MORE STATES HOLD A SEATED LEGISLATURE OUTSIDE THIS PROGRAM** — 1,662 seated, of
-which 1,240 hosted, **291 pointing elsewhere (MD 187, UT 103)** and **131 rendering nothing at all
-(TN, the entire chamber)**. They are counted here rather than dropped, because *not in this table*
+which **1,531 hosted, 0 elsewhere**, and **131 rendering nothing at all — that is Tennessee, the
+whole of both chambers**. They are counted here rather than dropped, because *not in this table*
 and *not measured* are different claims.
 
 ### Geofence polygons present

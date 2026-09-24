@@ -29,7 +29,15 @@ import { config } from 'dotenv';
 config({ quiet: true });
 import pg from 'pg';
 
-const OURS = "p.photo_custom_url LIKE 'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/%'";
+// 🔴 OUR BUCKET HAS TWO EQUIVALENT PUBLIC URL FORMS AND BOTH ARE OURS:
+//   https://<ref>.storage.supabase.co/storage/v1/object/public/politician_photos/...
+//   https://<ref>.supabase.co/storage/v1/object/public/politician_photos/...
+// Matching only the first reports 407 of our own portraits as living on somebody
+// else's server -- CA 98, IN 18, MD 187, UT 103, TX 1, all verified HTTP 200 JPEG
+// from this bucket. Key on the PROJECT REF and the bucket, never on the hostname
+// spelling. This is the same defect class as every other predicate that reads the
+// shape of a value instead of what the value is.
+const OURS = "p.photo_custom_url LIKE '%kxsdzaojfaibhuzmclfq%/storage/v1/object/public/politician_photos/%'";
 
 const c = new pg.Client({ connectionString: process.env.DATABASE_URL });
 await c.connect();
