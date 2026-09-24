@@ -48,7 +48,15 @@
 --   name 'Orange County, California, US', type 'County', state 'CA', city NULL, geo_id NULL).
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator: Chris Andrews ran loader, dry run and apply). Loader first (5 X-OC-SUP
+--   boundaries, every gate passed). Dry run: every gate passed, ROLLBACK; apply: COMMIT; re-run inside BEGIN/ROLLBACK:
+--   every INSERT 0, UPDATE 0, DELETE 0, every gate passed. Live address search (accounts-api.empowered.vote):
+--     8200 Westminster Blvd, Westminster      D1 Janet Nguyen
+--     20 Civic Center Plaza, Santa Ana        D2 Vicente Sarmiento
+--     1 Civic Center Plaza, Irvine            D3 Donald P. Wagner
+--     303 W Commonwealth Ave, Fullerton       D4 Doug Chaffee
+--     30000 Town Center Dr, Laguna Niguel     D5 Katrina Foley
+--   check:reachability OK (UNREACHABLE 9 -> 7; ca|COUNTY bucket removed from the baseline).
 --
 -- ROLLBACK: delete the office_terms rows whose source starts 'CA_0238', the three offices, three districts, the
 --   three government_bodies rows and two politicians by the ids below; set website_url back to '' on the D1/D4
