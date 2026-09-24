@@ -2,8 +2,9 @@
  * run-fec-finance-summary.ts — standalone FEC finance summary ingestion script.
  *
  * Populates `essentials.politicians.finance_summary` for every active federal politician —
- * sitting senators and representatives, and the candidates seated on migration-196
- * "Candidate for U.S. Senate — <State>" placeholders — using the FEC API.
+ * sitting senators and representatives, the candidates seated on migration-196
+ * "Candidate for U.S. Senate — <State>" placeholders, and anyone in an upcoming federal race
+ * (race_candidates, same predicate as fecResearch's queue) — using the FEC API.
  *
  * This is the ONLY writer of finance_summary for federal politicians. Senate candidates used to
  * have their own script (senate-candidate-fec.ts, deleted): it re-searched FEC for IDs that
@@ -12,7 +13,8 @@
  *
  * Usage: tsx scripts/run-fec-finance-summary.ts [--dry-run] [--candidates-only] [--politician <uuid> ...]
  *   --dry-run          Resolve every FEC ID and print the plan. No FEC calls, no DB writes.
- *   --candidates-only  Only politicians whose chosen office is a "Candidate for …" placeholder.
+ *   --candidates-only  Only politicians whose chosen office is sought, not held: a "Candidate for …"
+ *                      placeholder or an upcoming federal race row.
  *   --politician <id>  Only this essentials.politicians id; repeat the flag for several. For a
  *                      refresh after an FEC-ID fix (CA_0230 corrected six at once) without a
  *                      two-hour full run. Each id must resolve to an active federal politician
@@ -214,8 +216,13 @@ async function buildCrosswalkMaps(): Promise<CrosswalkMaps> {
  * for the evidence). This is the opposite of essentialsService's "a seat held beats a seat
  * sought": that rule picks what to CALL someone; this one picks whose money is live.
  *
- * A state officeholder running for Senate has only the placeholder among federal offices, so
- * they arrive as a candidate. On 2026-09-23 (--dry-run against prod): 580 people — 428
+ * A state officeholder running for Congress has only the placeholder or the race row among
+ * federal offices, so they arrive as a candidate (Justin J. Pearson, TN-9, 2026-09-24).
+ *
+ * Race rows (added 2026-09-24): an upcoming election, not withdrawn, result empty or 'advanced' —
+ * so a primary loser is NOT summarised for a campaign that is over. A sitting member's race for
+ * their own chamber is re-election, and is filtered out so they stay "sitting". The earlier
+ * counts below predate the race rows. On 2026-09-23 (--dry-run against prod): 580 people — 428
  * representatives, 102 senators (two of them DC's shadow senators, who have no FEC committee and
  * are skipped) and 50 candidates, the nine Representatives above among them.
  */
@@ -231,15 +238,39 @@ async function getFederalPoliticiansFromDb(): Promise<FederalPolitician[]> {
           WHEN d.district_type = 'NATIONAL_UPPER' THEN 'S'
           ELSE 'H'
         END AS chamber_short,
-        (COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
+        (seat.via_race OR COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
       FROM essentials.politicians p
-      JOIN essentials.office_current_holder och ON och.politician_id = p.id
-      JOIN essentials.offices o ON o.id = och.office_id
+      JOIN (
+        -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+        SELECT och.politician_id, och.office_id, false AS via_race
+          FROM essentials.office_current_holder och
+        UNION ALL
+        -- The office SOUGHT, from a race that can still send the person to office -- the same
+        -- predicate as fecResearch's queue (#723). Most candidates have no "Candidate for"
+        -- placeholder seat, so without this they were never summarised: 832 House candidates
+        -- with a confirmed FEC link, 1 summary, on 2026-09-24.
+        SELECT rc.politician_id, r.office_id, true AS via_race
+          FROM essentials.race_candidates rc
+          JOIN essentials.races r ON r.id = rc.race_id
+          JOIN essentials.elections e ON e.id = r.election_id
+         WHERE e.election_date >= CURRENT_DATE
+           AND rc.candidate_status IS DISTINCT FROM 'withdrawn'
+           AND (rc.result IS NULL OR rc.result = 'advanced')
+      ) seat ON seat.politician_id = p.id
+      JOIN essentials.offices o ON o.id = seat.office_id
       JOIN essentials.districts d ON d.id = o.district_id
       WHERE p.is_active = true
         AND d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_LOWER')
+        -- A member running again for their own chamber is re-election, not a new campaign: keep
+        -- them "sitting" so their congress-legislators fallback (Path 1) still applies.
+        AND NOT (seat.via_race AND EXISTS (
+              SELECT 1 FROM essentials.office_current_holder h
+                JOIN essentials.offices ho ON ho.id = h.office_id
+                JOIN essentials.districts hd ON hd.id = ho.district_id
+               WHERE h.politician_id = p.id AND hd.district_type = d.district_type))
       ORDER BY p.id,
-               (COALESCE(o.title, '') ILIKE 'Candidate for%') DESC,
+               (seat.via_race OR COALESCE(o.title, '') ILIKE 'Candidate for%') DESC,
+               seat.via_race ASC,
                o.id
     ) one_per_person
     WHERE ($1::boolean = false OR is_candidate)
