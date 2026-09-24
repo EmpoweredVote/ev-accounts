@@ -29,7 +29,7 @@ import { env } from './env.js';
 import { runIngestion } from './adapters/runIngestion.js';
 import { createFecAdapter } from './adapters/fecAdapter.js';
 import { createCalAccessAdapter } from './adapters/calAccessAdapter.js';
-import { createIndianaAdapter } from './adapters/indianaAdapter.js';
+import { createIndianaAdapter, indianaYears } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { createNetfileAdapter } from './adapters/netfileAdapter.js';
@@ -388,18 +388,12 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'indiana': {
-      const year = new Date().getFullYear();
-      const adapter = createIndianaAdapter(year);
-
-      try {
-        await adapter.preDownload();
-      } catch (err) {
-        console.error(
-          `[campaignFinanceScheduler] indiana: preDownload failed:`,
-          err instanceof Error ? err.message : String(err)
-        );
-        return;
-      }
+      // Last year's file AND this year's: an officeholder off this year's ballot files only
+      // the annual report, which lands in last year's file (see indianaYears).
+      // A download or parse failure throws, as for cal_access: it is global, and a run that
+      // swallowed it used to exit 0 with no per-source runs at all.
+      const adapter = createIndianaAdapter(indianaYears());
+      await adapter.preDownload();
 
       let lastRunId: number | null = null;
 
@@ -436,6 +430,23 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
         } catch (err) {
           console.warn('[campaignFinanceScheduler] indiana: writeUnresolved failed (non-fatal):', err);
         }
+      }
+
+      // Freshness stamp read by campaignFinanceService (last_sync_at / X-Data-Updated-At).
+      // Year-agnostic: the read used to name 'indiana_zip_etag_2026', which 2027 would have
+      // left frozen.
+      try {
+        await pool.query(
+          `INSERT INTO transparent_motivations.data_source_metadata
+             (source_system, last_sync_at, last_sync_status, last_record_count)
+           VALUES ('indiana', NOW(), 'ok', $1)
+           ON CONFLICT (source_system) DO UPDATE
+             SET last_sync_at = NOW(), last_sync_status = 'ok',
+                 last_record_count = EXCLUDED.last_record_count, updated_at = NOW()`,
+          [adapter.confirmedRowCount()]
+        );
+      } catch (err) {
+        console.warn('[campaignFinanceScheduler] indiana: data_source_metadata update failed (non-fatal):', err);
       }
       break;
     }
