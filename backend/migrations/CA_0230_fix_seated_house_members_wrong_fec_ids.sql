@@ -1,6 +1,11 @@
 -- CA_0230_fix_seated_house_members_wrong_fec_ids.sql
 --
--- STATUS: NOT YET APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, in chat, "go ahead with the two
+--   follow-ups"; run by Chris Andrews with `psql -X -v ON_ERROR_STOP=1 -f`). Dry run first: body twice in
+--   one rolled-back transaction — pass 1 wrote, pass 2 wrote 0, every gate passed both times, prod
+--   unchanged after. The apply printed "CA_0230 OK". Verified after from a separate read-only session:
+--   each of the six holds one confirmed fec_house link on the correct ID; H0GA02241 (145 rows) and
+--   H4CA31170 (0 rows) are disputed; contribution counts unchanged (Ogles 14, Fields 896, Cisneros 9,384).
 --
 -- Six seated U.S. Representatives carry a confirmed fec_house politician_sources row whose external_id is
 -- not the FEC candidate ID they are running on. Found 2026-09-24 by the sweep CA_0226 asked for: every
