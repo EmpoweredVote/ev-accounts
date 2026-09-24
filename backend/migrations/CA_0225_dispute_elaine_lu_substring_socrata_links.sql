@@ -30,7 +30,9 @@
 -- "Furutani"). They are NOT touched here; they are a separate sweep.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED -- awaiting operator approval. Dry run against prod 2026-09-24 (BEGIN ... ROLLBACK, body run twice):
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). UPDATE 2; re-run after it UPDATE 0, gates green.
+--   Verified after: the live summary API shows no cycles, no outside spending, coverage_status no_data.
+--   Before the apply, a dry run against prod (BEGIN ... ROLLBACK, body run twice):
 --   run 1 disputed 2 and passed every gate; run 2 updated 0 and passed every gate; a snapshot of both rows matched
 --   before and after, so the rollback reverted. Planted control (one committee name altered) tripped the pre-flight.
 --
