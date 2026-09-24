@@ -9,8 +9,18 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 // to the fake links, so these tests assert on the status getSummary returns, not on SQL text.
 // ---------------------------------------------------------------------------
 
-let links: { research_status: string }[] = [];
+// `run` is the status of the link's latest ingestion run; absent means it has never been ingested.
+let links: { research_status: string; run?: string }[] = [];
 let districtType: string | null = null;
+
+/**
+ * Run statuses the query treats as "ingestion done" (its NOT EXISTS over ingestion_runs), or null
+ * when the query does not look at runs at all. Read from the query itself, like admittedStatuses.
+ */
+function doneRunStatuses(sql: string): string[] | null {
+  const m = sql.match(/NOT EXISTS[\s\S]*ingestion_runs[\s\S]*?\.status\s+IN\s*\(([^)]*)\)/i);
+  return m ? [...m[1].matchAll(/'(\w+)'/g)].map((x) => x[1]) : null;
+}
 
 /** Statuses a WHERE clause admits: `= 'x'`, `IN ('x', 'y')`, or every status when unfiltered. */
 function admittedStatuses(sql: string): string[] | null {
@@ -24,7 +34,10 @@ function admittedStatuses(sql: string): string[] | null {
 const query = vi.fn(async (sql: string) => {
   if (/FROM transparent_motivations\.politician_sources[\s\S]*source_type = 'candidate_committee'/.test(sql)) {
     const admitted = admittedStatuses(sql);
-    const cnt = links.filter((l) => admitted === null || admitted.includes(l.research_status)).length;
+    const done = doneRunStatuses(sql);
+    const cnt = links
+      .filter((l) => admitted === null || admitted.includes(l.research_status))
+      .filter((l) => done === null || l.run === undefined || !done.includes(l.run)).length;
     return { rows: [{ cnt: String(cnt) }] };
   }
   if (sql.includes('essentials.office_current_holder')) {
@@ -86,6 +99,31 @@ describe('getSummary coverage_status — which candidate_committee links count a
 
   it("still reports 'data_pending' when a confirmed link sits beside disputed ones", async () => {
     links = [{ research_status: 'disputed' }, { research_status: 'confirmed' }, { research_status: 'needs_research' }];
+    expect(await coverageStatus()).toBe('data_pending');
+  });
+});
+
+describe('getSummary coverage_status — "data pending" only while an ingestion run is still owed', () => {
+  // Corey Calaycay, 2026-09-24: both confirmed committees ran and fetched 0 records (a local
+  // committee's filings are with the city clerk), yet the panel promised data "being processed".
+  it("does not report 'data_pending' once the only confirmed committee has completed a run", async () => {
+    links = [{ research_status: 'confirmed', run: 'completed' }];
+    expect(await coverageStatus()).toBe('no_data');
+  });
+
+  it("reports 'local_unavailable' for a local office whose confirmed committee ran and loaded nothing", async () => {
+    links = [{ research_status: 'confirmed', run: 'completed_with_warning' }];
+    districtType = 'LOCAL';
+    expect(await coverageStatus()).toBe('local_unavailable');
+  });
+
+  it("still reports 'data_pending' when the only run failed (a retry is owed)", async () => {
+    links = [{ research_status: 'confirmed', run: 'failed' }];
+    expect(await coverageStatus()).toBe('data_pending');
+  });
+
+  it("still reports 'data_pending' when one confirmed committee has never been ingested", async () => {
+    links = [{ research_status: 'confirmed', run: 'completed' }, { research_status: 'confirmed' }];
     expect(await coverageStatus()).toBe('data_pending');
   });
 });
