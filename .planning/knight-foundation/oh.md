@@ -12,7 +12,7 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 | 2 legislature | ✅ **APPLIED 2026-09-23 — 132 offices, 130 seated, 2 vacant** (`CC_0131`/`CC_0132`) |
 | 3 city waves | ✅ **APPLIED 2026-09-23 — Akron 14 offices, 14 seated, 0 vacancies** (`X0063`, `CC_0133`/`CC_0134`) |
 | 4 county waves | ✅ **APPLIED 2026-09-24 — Summit 17 offices, 17 seated, 0 vacancies** (`X0064`, `CC_0136`/`CC_0137`). **Akron scores 4 of 4.** |
-| 5 assets | — 1 banner (`akron`), ~163 portraits |
+| 5 assets | — 1 banner (`akron`) + **161 portraits, MEASURED 2026-09-24: 161 seated, 0 renderable, 161 owed** |
 
 ---
 
@@ -687,8 +687,29 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
    3 of 4.**
 6. ~~OH-4 Summit County.~~ **Done — `X0064`, `CC_0136`/`CC_0137`, 17 offices, 17 seated.
    Akron scores 4 of 4.**
-7. **OH-5 assets** — one banner key `akron`, and ~163 portraits. 🔴 Count the legislature's 130
-   inside stage 5, not beside it (the GA-5 debt).
+7. **OH-5 assets** — the last stage. Baseline **measured 2026-09-24, not estimated**:
+
+   | chamber | seated | renderable | owed |
+   | --- | --- | --- | --- |
+   | Ohio House of Representatives | 98 | 0 | **98** |
+   | Ohio Senate | 32 | 0 | **32** |
+   | Akron City Council | 13 | 0 | **13** |
+   | Summit County Council | 11 | 0 | **11** |
+   | Elected Officials (Summit) | 5 | 0 | **5** |
+   | Office of the County Executive | 1 | 0 | **1** |
+   | Office of the Mayor | 1 | 0 | **1** |
+   | **total** | **161** | **0** | **161** |
+
+   🔴 **The legislature's 130 are INSIDE that total, not beside it** — the GA-5 debt, where 236
+   legislative seats sat outside every stage-5 tally while the column read `WIP` for city reasons.
+   🟢 **Zero renderable is a true zero, not a broken detector**: the count is `photo_custom_url`,
+   which is what actually renders, and every one of these people was created by this slice.
+   ⚠ Re-measure before starting — a concurrent wave can move it.
+   - Plus **one banner key `akron`**. ⚠ Check the state banner's composition first: `states/OH.jpg`
+     must not already be an Akron skyline (the Miami/Wichita/Detroit/Charlotte class), and the
+     adjacency test is about COMPOSITION, not subject.
+   - 🔴 Approval is a **published-artifact contact sheet**, always. No monochrome. Press, official
+     and PD sources only — never social. The credit line is the licence test.
 
 ### Debts this slice already owes
 
