@@ -8,7 +8,10 @@
 --   faces_retention_vote = offices.faces_retention_vote
 -- and its "Elected" filter keeps a judge when is_elected OR faces_retention_vote. Measured 2026-09-24, those columns
 -- are wrong for four groups of seats, so the new tab would drop every judge in LA County and every Monroe County
--- circuit judge. APPLY THIS BEFORE the essentials Judges = 'Elected' change deploys.
+-- circuit judge.
+-- ORDER: this and the essentials change must ship close together. Neither order is free: the OLD frontend (Judges
+-- = 'Appointed') hides the seats this corrects to elected (LA Superior Court 408, Monroe circuit 9), and the NEW
+-- frontend hides them until this runs.
 --
 -- WHAT CHANGES (state law, and the district rows already agree where they carry districts.retention):
 --   A. CA Superior Court (473 seats)           is_appointed_position true -> false.
@@ -33,10 +36,13 @@
 -- triggers (checked 2026-09-24), so the UPDATEs have no side effects.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED. Dry run against prod 2026-09-24 inside BEGIN ... ROLLBACK: both gates passed; inside the
---   transaction the CA/IN judicial seats read appointed-with-no-retention 0 (was 556), elected 522 (was 25),
---   retention 79 (was 20). Rollback verified: counts and an md5 digest of every CA/IN judicial seat's two flags
---   read the same before and after (15b6c771e7cac5e0394261670f27736b).
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, "yes, apply CA_0260").
+--   Dry run first inside BEGIN ... ROLLBACK: both gates passed; rollback verified by counts and an md5 digest of
+--   every CA/IN judicial seat's two flags (15b6c771e7cac5e0394261670f27736b, unchanged before and after).
+--   Digest re-checked unchanged immediately before the apply. After the apply the CA/IN judicial seats read
+--   appointed-with-no-retention 0 (was 556), elected 522 (was 25), retention 79 (was 20); digest
+--   75383c0b51172019cea4d1d201e512f2. Live by-government-list after: LA County 416 judges and Monroe County 12
+--   pass the essentials 'Elected' filter (were 0 and 3).
 --
 -- ROLLBACK: re-run the four UPDATEs with the old values (A, C: is_appointed_position = true; B, D:
 --           faces_retention_vote = false) on the same selectors.
