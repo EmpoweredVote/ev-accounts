@@ -9,7 +9,7 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 | Stage | State |
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-23 — 132 boundaries, 132 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
-| 2 legislature | — 132 offices owed (99 House + 33 Senate), none exist |
+| 2 legislature | ✅ **APPLIED 2026-09-23 — 132 offices, 130 seated, 2 vacant** (`CC_0131`/`CC_0132`) |
 | 3 city waves | — Akron: Mayor + 13 council (10 ward + 3 at-large) |
 | 4 county waves | — Summit: Executive + 11 council (8 district + 3 at-large) + 5 row officers |
 | 5 assets | — 1 banner (`akron`), ~163 portraits |
@@ -101,6 +101,125 @@ refresh**, and the warning is generic. Do not skip it after a `place` load.
 UNREACHABLE 9 against a baseline of 24**.
 
 ▶ **Next: OH-2 — seat the General Assembly, 132 offices.**
+
+---
+
+## ✅ OH-2 APPLIED 2026-09-23 — the Ohio General Assembly is seated
+
+`CC_0131` (structure) + `CC_0132` (occupancy), both slots reserved from the allocator:
+**132 offices — 99 House + 33 Senate — 130 seated, 2 vacant, 130 people created, 0 reused.**
+`politicians` +130, `offices` +132, `office_terms` +130, each **exact** against a baseline measured
+minutes earlier. `offices_missing_terms` 427 → **429**, and the **unflagged count is unmoved at
+238** — both new rows landed in the flagged half, which is what the two vacancies are supposed to do.
+
+🟢 **AKRON NOW ANSWERS 2 OF 4.** Akron City Hall returns **Veronica R. Sims (HD-33)** and
+**Casey Weinstein (SD-28)**, alongside the U.S. Representative it already had. The council member
+and the county council member are OH-3 and OH-4.
+⚠ **Controlled against a second city**: Cleveland returns **Terrence Upchurch (HD-20)** and
+**Nickie J. Antonio (SD-23)** — different people, so the probe is reading geography and not
+returning one answer everywhere. Per-district control: **99 of 99 and 33 of 33** districts resolve
+to exactly one member at their own interior point. **0 Ohio counties** picked up a legislative
+office. Both migrations re-run: every write into `essentials` inserted 0.
+
+### 🔴🔴 TWO SEATS ARE VACANT AND THE TWO SOURCES DISAGREE IN OPPOSITE DIRECTIONS
+
+| | chambers' own directory | Open States |
+| --- | --- | --- |
+| HD-66 | **Vacant** | Sharon Ray, sitting ❌ |
+| SD-13 | **Vacant** | absent ✅ |
+
+- **HD-66** — Sharon Ray resigned **effective 2026-09-14 at 11:59 pm** to become Medina County
+  Recorder, sworn in 2026-09-15; the House's own press release of 2026-09-14 gives the time, so the
+  first vacant day is **2026-09-15** and `vacant_since` says so. **Open States still lists her as
+  the sitting member** and shows 99 of 99 House seats filled — nine days stale.
+  ▶ **This is MN-2's trap with the roles swapped.** There the chamber's own roster was stale and the
+  aggregator was right. Neither is reliably the fresher source; only comparing them shows which.
+- **SD-13** — Nathan Manning took the bench of the Ninth District Court of Appeals on **2026-08-03**
+  and cannot hold both offices. 🔴 **`vacant_since` is deliberately NULL**: no source publishes the
+  resignation's effective date, reporting says only "late July or early August", and 2026-08-03 is an
+  **upper bound on the vacancy's start, not the date it began**. The flag is a fact; the date is not.
+  Dating it is a debt.
+
+Neither carries an `office_terms` row at all — there is no predecessor term to close, because these
+offices were created by this wave. That is the SC-4 treatment of its vacant Richland seat.
+
+### 🔴🔴 THE VACANCY WAS NEARLY LOST TO MY OWN PARSER, AND THE COUNT HID IT
+
+The first House parse returned **98 districts with 67 missing** — close enough to 99 to look like a
+rounding problem. It was not. The vacant tile carries **no headshot**, so a single regex sweeping
+`class → href → name → district → headshot` ran straight through the vacant block and stole the
+*next* member's image, emitting one row that read "District 66, Vacant" and dropping HD-67 entirely.
+▶ **A per-record regex that spans a block boundary will silently merge two records, and the symptom
+is an off-by-one count.** The fix was to split on the container's opening tag and parse each block in
+isolation; that returns 99 of 99 with exactly one vacancy.
+
+### 🔴🔴 THE DATABASE'S OWN GUARD FOUND A NAME COLLISION THAT BOTH MY DETECTORS MISSED
+
+Two checks were run before the dry run and both cleared:
+
+1. **exact `full_name`** — 0 of 130 matched. ⚠ A uniform answer, so it was not trusted.
+2. **loose (first token, last token)** — found **one** candidate, Ohio HD-92's Mark Johnson against
+   a Minnesota state senator. Controlled: the same key returns 230 rows for the first name "John".
+
+The dry run then **aborted** on `DUPLICATE_POLITICIAN_NAME` for **Tom Young** (HD-37). The existing
+row is **"Tom Young, Jr."**, a **South Carolina state senator** seated by `CC_0126` — and *both* my
+checks missed it, because its `full_name` is not "Tom Young" and its **last token is "Jr."**. The
+trigger keys on **`(first_name, last_name)`**, which is the correct key.
+
+▶ **WHEN A CONSTRAINT CATCHES SOMETHING YOUR OWN CHECK DID NOT, ADOPT THE CONSTRAINT'S KEY AND
+RE-RUN THE WHOLE SWEEP — never just unblock the row it named.** Re-run on `(first_name, last_name)`
+with a control (65 active rows share `last_name` 'Smith'), the sweep returns **exactly two**:
+
+| Ohio member | existing row | who that is |
+| --- | --- | --- |
+| HD-37 Tom Young | `-2745147` Tom Young, Jr. | **sitting SC state senator**, SD-24 |
+| HD-92 Mark Johnson | `-2732133` Mark T. Johnson | **sitting MN state senator** |
+
+Both are different people, and the evidence is structural rather than a judgement about names: a
+person cannot simultaneously hold a Senate seat in another state and a seat in the Ohio House. The
+guard was lifted with `SET LOCAL` for **those two statements only** and switched back off; the other
+**128 rows were inserted with the guard live**. This is the GA roster trap, where 2 of 4 name hits
+were a Colorado senator and a Utah treasurer.
+
+### 🔴 EVERY TERM IS OPEN-ENDED AT `unknown`, AND NOTHING WAS GUESSED
+
+A date probe over a member page found **no "assumed office", no "term", and no arrival sentence of
+any kind** — the only date on the page tested was an unrelated news item. Ohio Const. art. II § 2
+does fix commencement at "the first day of January next after their election", but that governs a
+member who **arrived at a general election** and says nothing about those who arrive by caucus
+appointment mid-term. ▶ **Writing 2025-01-01 for all 130 would be the San José D8/D10 error at
+scale: a rule true of most rows, applied to rows it does not govern.** This is the GA-2 / IN-2 /
+MN-2 / PA-2 pattern. `seat_officeholder()` is not used — it refuses a NULL `term_start` by design.
+**Dating these 130 arrivals is a recorded debt.**
+
+### 🔴 TWO SOURCE-ACCESS TRAPS
+
+- **`ohiosenate.gov/senators/directory` returns HTTP 200 and renders the word "ERROR"** with a
+  "© null" footer. `curl` reports 200 and 6,687 bytes, which reads as a thin page rather than a
+  failure. The real list is **`ohiosenate.gov/members/directory`**. A clean 200 can carry an error page.
+- **The member-page sweep was rate-limited at HTTP 429.** Run with 8 workers, **79 of 130 pages came
+  back 429** — which a less careful pass would have recorded as 79 roster failures, or worse, as 79
+  members who "could not be confirmed". Re-run serially with backoff, **all 130 answered**.
+- ⚠ `legislature.ohio.gov` fails TLS verification for `curl` (unable to get local issuer
+  certificate) on both directory URLs. Not used; recorded so the next session does not re-discover it.
+
+### The change-check, and its control
+
+All **130** individual member pages were fetched and each one names **its own member's surname and
+its own district number**; none contains the word "Vacant". ✅ The detector was controlled on a live
+page: correct surname ✓, wrong surname ✗, correct district ✓, wrong district ✗.
+
+### Gates
+
+Six post-verify gates were **watched failing** before the apply — House office count, HD-66's
+vacancy date, the vacancy total, the people-in-band count, the Akron assertion, and the
+no-dated-term rule. ⚠ The last one never reached my gate: the schema's own
+`office_terms_how_started_ch` CHECK refused it first, which is the stronger result.
+Dry run of both migrations as **one transaction ending in ROLLBACK**, then production re-measured
+untouched. `check:occupancy`, `check:migrations`, `check:reservations`, `check:child-county` green;
+`check:reachability` nothing regressed, UNREACHABLE **9** against baseline 24.
+
+▶ **Next: OH-3 — Akron, 14 offices.**
 
 ---
 
@@ -331,14 +450,19 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
 2. ~~Add `OH` to `STATE_LAYER_ALLOWLIST` with a pre-flight block.~~ **Done — `['sldu','sldl']` only,
    and the assertion was watched failing at 34.**
 3. ~~Run OH-1.~~ **Done — 132 boundaries, 132 districts, 0 errors; re-run clean.**
-4. **OH-2**: seat the General Assembly, **132 offices**. Reconcile the roster from the chambers' own
-   member lists and Open States, then **change-check all 132 member pages individually** — MN-2 found
-   a member listed three months after he resigned, with no vacancy marker anywhere.
-   - 🔴 `ohiohouse.gov/members/district/<n>` and `ohiosenate.gov/senators/district/<n>` both **404**.
-     Member pages are **name-keyed** (`ohiohouse.gov/members/veronica-r-sims`), so a district-number
-     URL template fails silently on all 132. Find the roster index first.
-   - 🔴 **Measure `offices_missing_terms` in the same session as the write** — see trap 1. It was
-     427/189/238 when OH-1 ran, and a concurrent `CA_` backfill is still moving it.
-   - ▶ Two migration slots will be needed (structure + occupancy). **Allocate them:
-     `npm run steward --prefix backend -- slot CC --purpose "..."`.** None is reserved yet.
-5. **OH-3 Akron**, then **OH-4 Summit**, then **OH-5 assets**.
+4. ~~OH-2: seat the General Assembly.~~ **Done — `CC_0131`/`CC_0132`, 132 offices, 130 seated,
+   2 vacant. Akron scores 2 of 4.**
+5. **OH-3 Akron**, 14 offices: Mayor + 3 at-large + 10 ward. Akron's ward layer is still unmeasured.
+6. **OH-4 Summit County**, 17 offices — 🔴 a **charter** county, so the Ohio statutory template does
+   not apply (trap 6). Its council districts are published as a **PDF**; ask the county GIS
+   department before concluding no layer exists.
+7. **OH-5 assets** — one banner key `akron`, and ~163 portraits. 🔴 Count the legislature's 130
+   inside stage 5, not beside it (the GA-5 debt).
+
+### Debts this slice already owes
+
+- **130 undated arrivals.** Every General Assembly term is open-ended at `unknown`. Neither chamber
+  publishes a service-start date; dating them needs the chambers' journals, as SC-2 did.
+- **SD-13's vacancy has no start date.** Flagged, undated, and deliberately so.
+- **HD-66 and SD-13 will both be filled by caucus appointment.** When that happens the successor is
+  seated from the appointment date — do not let the vacancy flag go stale.
