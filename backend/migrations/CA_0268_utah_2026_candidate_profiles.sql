@@ -2,6 +2,8 @@
 --
 -- Slot CA_0268 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
+-- ✅ APPLIED to prod 2026-09-24 (approval Chris Andrews): INSERT 9, UPDATE 9 / 7 / 8 / 9 / 7, both gates green. Re-read: 9
+--   photos, 7 websites, 8 bios, 9 images, 9 card photos; live API serves the profiles.
 --
 -- Candidate PROFILE enrichment for the 11 bare 2026-11-03 Utah general-election candidates that CA_0253
 -- (PR #751) added with only a name (external_id -66000160 .. -66000170). Same model as CA_0235 / CA_0131.
