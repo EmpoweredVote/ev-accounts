@@ -57,7 +57,13 @@
 --   unknown from the 2026-07 backfill); no race row.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). Loader first (6 new X0062 boundaries,
+--   every gate passed; X0062 holds 33). Dry run: every gate passed, ROLLBACK; apply: COMMIT; re-run inside
+--   BEGIN/ROLLBACK: every INSERT 0, UPDATE 0, every gate passed. Live address search:
+--     220 N Chestnut St, Seymour      council District 4 Riley + at large Lowery / Turner / Nolting; Auditor Gray,
+--                                     Clerk Cissna, Commissioner D3 Stauffer, Coroner Earl
+--     180 S Main St, Martinsville     council District 1 Keller + at large Crone / Kivett / Merideth
+--   check:reachability OK (UNREACHABLE 9/9).
 --
 -- ROLLBACK: delete the office_terms rows whose source starts 'CA_0232' and reopen the four closed ones
 --   (term_end = NULL, how_ended = NULL on Reedy / Pyle / Foster / Lowery-clerk, and delete Eilbracht's),
