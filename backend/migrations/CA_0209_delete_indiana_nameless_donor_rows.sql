@@ -34,9 +34,16 @@
 --
 -- No FK references contributions (measured 2026-09-23 for CA_0194). No migration runner exists; this file records
 -- SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED. Apply only with operator approval, after the PR that carries the corrected adapter merges,
---   and immediately before its first ingest (`node dist/jobs/run.js indiana`). Between the two, the Essentials
---   finance panel of the 159 sources shows no Indiana data.
+-- STATUS: APPLIED to prod 2026-09-24 ~01:05 UTC (operator approval: Chris Andrews), after PR #687 merged (67fbae6c).
+--   Dry run (BEGIN/ROLLBACK; the rollback left 5,610 indiana rows, 5,446 nameless, 159 summaries) and a planted
+--   control (expected count changed to 5445: the pre-flight RAISEd, reporting 5446 rows on 159 sources, $5552806.15
+--   and the pinned md5) right before the apply. Apply: no error; nameless rows 0.
+--   FIRST CORRECTED INGEST, at once: `node dist/jobs/run.js indiana` from merged master, 01:05-01:11 UTC, exit 0,
+--   368 s, peak RSS 496 MB: 2025 file 103,347 rows (13,012 for confirmed committees), 2026 file 35,851 (10,419);
+--   618 runs completed; 23,431 rows ($22,470,563) on 250 links, 118 with a |#n key, 1,985 with no donor name in the
+--   source (1,979 of them Type 'Unitemized'); 250 summary rows; 0 rows queued as unresolved. Active politicians: 138 of 150 links hold rows (was 89);
+--   48 of the 58 with no finance data anywhere now have it. Live API: Braun $3,635,028 / 547, Rokita $983,198 / 297,
+--   Bray $335,249 / 153, Beckwith 207 rows (was 107, all 'anonymous'), top donors named.
 --
 -- ROLLBACK: none in SQL — the deleted rows were wrong (blank donors, merged gifts). They can be rebuilt only by
 --   running the pre-2026-09-24 adapter, which is the defect. The pre-flight md5 below identifies what was removed.
