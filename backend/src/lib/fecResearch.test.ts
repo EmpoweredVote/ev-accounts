@@ -86,8 +86,9 @@ describe('fecResearch searchFecCandidates (FEC-03) — shared limiter gate', () 
 // placeholder offices, so for months it caught their holders only by accident —
 // and hid most of them behind `p.is_vacant = false` until CA_0195 backfilled the
 // NULLs. Candidates file with the FEC, and the dedicated candidate script
-// (scripts/senate-candidate-fec.ts) joins the dropped offices.politician_id, so
-// this queue is now their route in. These tests pin that the SQL says so.
+// (scripts/senate-candidate-fec.ts, deleted in #676) joined the dropped
+// offices.politician_id, so this queue is now their route in. These tests pin
+// that the SQL says so.
 
 function queueRow(overrides: Record<string, unknown> = {}) {
   return {
