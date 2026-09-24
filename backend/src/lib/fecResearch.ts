@@ -126,19 +126,26 @@ export function parseFecName(fecName: string): { first: string; last: string } {
 /** Generational suffixes that must not be mistaken for a last name. */
 const NAME_SUFFIXES = new Set(['jr', 'sr', 'ii', 'iii', 'iv', 'v']);
 
-/**
- * Parse our DB full_name "First [Middle] Last" into { first, last }.
- * Strips trailing generational suffixes (Jr, Sr, II–V) BEFORE picking the last
- * token — otherwise "Nicholas J. Begich III" yields last name "iii" and fails to
- * match the FEC record "BEGICH, NICHOLAS III". Compound last names are handled
- * naively by taking the first token as first name and last token as last name.
- */
-export function parseDbName(fullName: string): { first: string; last: string } {
+/** Normalized tokens of our DB full_name, with trailing generational suffixes stripped. */
+function dbNameTokens(fullName: string): string[] {
   const tokens = normalize(fullName).split(/\s+/).filter(Boolean);
   // Strip trailing suffix tokens (keep at least one token as the name).
   while (tokens.length > 1 && NAME_SUFFIXES.has(tokens[tokens.length - 1]!)) {
     tokens.pop();
   }
+  return tokens;
+}
+
+/**
+ * Parse our DB full_name "First [Middle] Last" into { first, last }.
+ * Strips trailing generational suffixes (Jr, Sr, II–V) BEFORE picking the last
+ * token — otherwise "Nicholas J. Begich III" yields last name "iii" and fails to
+ * match the FEC record "BEGICH, NICHOLAS III". Our names do not mark where a
+ * compound surname starts, so this takes the last token; scoreMatch does not use
+ * it, because the FEC side says how many words the surname has.
+ */
+export function parseDbName(fullName: string): { first: string; last: string } {
+  const tokens = dbNameTokens(fullName);
   if (tokens.length === 0) return { first: '', last: '' };
   if (tokens.length === 1) return { first: '', last: tokens[0]! };
   return { first: tokens[0]!, last: tokens[tokens.length - 1]! };
@@ -158,18 +165,22 @@ export function scoreMatch(politician: UnmatchedPolitician, candidate: FecCandid
     return 1.0;
   }
 
-  const db = parseDbName(politician.full_name);
   const fec = parseFecName(candidate.name);
+  const surname = fec.last.split(/\s+/).filter(Boolean);
+  const tokens = dbNameTokens(politician.full_name);
 
-  if (!db.last || !fec.last) return 0;
-
-  const lastMatch = db.last === fec.last;
+  // FEC puts the whole surname before the comma, so it says how many words the
+  // surname has: "CORTEZ MASTO, CATHERINE" must match the LAST TWO words of
+  // "Catherine Cortez Masto". A one-word surname compares one word, as before.
+  if (surname.length === 0 || tokens.length < surname.length) return 0;
+  const lastMatch = tokens.slice(-surname.length).join(' ') === surname.join(' ');
   if (!lastMatch) return 0;
 
-  // Last name matches — check first name
-  if (db.first && fec.first) {
-    if (db.first === fec.first) return 0.9;
-    if (fec.first.startsWith(db.first) || db.first.startsWith(fec.first)) return 0.85;
+  // Last name matches — check first name, taken from the words before the surname
+  const first = tokens.length > surname.length ? tokens[0]! : '';
+  if (first && fec.first) {
+    if (first === fec.first) return 0.9;
+    if (fec.first.startsWith(first) || first.startsWith(fec.first)) return 0.85;
   }
 
   // Last name only match
