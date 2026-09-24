@@ -107,13 +107,51 @@ describe('getUnmatchedFederalPoliticians — the FEC research queue', () => {
     poolQueryMock.mockReset();
   });
 
-  it('names candidacy in the SELECT, from the placeholder title, instead of catching it by accident', async () => {
+  it('names candidacy in the SELECT, from a race row or the placeholder title, instead of catching it by accident', async () => {
     poolQueryMock.mockResolvedValueOnce({ rows: [] });
 
     await getUnmatchedFederalPoliticians();
 
     const sql = String(poolQueryMock.mock.calls[0]![0]);
-    expect(sql).toMatch(/\(COALESCE\(o\.title, ''\) ILIKE 'Candidate for%'\)\s+AS is_candidate/);
+    expect(sql).toMatch(/\(seat\.via_race OR COALESCE\(o\.title, ''\) ILIKE 'Candidate for%'\)\s+AS is_candidate/);
+  });
+
+  // A candidate reaches the queue through a SEAT only if someone gave them a
+  // "Candidate for …" placeholder. Most never got one: measured 2026-09-24, 1,018
+  // people in upcoming federal races (972 House, 46 Senate) had no FEC row and no
+  // seat the queue could see. Their race row names the office sought, which is
+  // exactly what the FEC files a candidate under.
+  it('reads the office sought from a federal race row, not only from a seat', async () => {
+    poolQueryMock.mockResolvedValueOnce({ rows: [] });
+
+    await getUnmatchedFederalPoliticians();
+
+    const sql = String(poolQueryMock.mock.calls[0]![0]);
+    expect(sql).toMatch(/FROM essentials\.race_candidates rc\s+JOIN essentials\.races r ON r\.id = rc\.race_id/);
+    expect(sql).toMatch(/SELECT rc\.politician_id, r\.office_id, true AS via_race/);
+  });
+
+  it('takes a race only while it can still send the person to office', async () => {
+    // Past elections, withdrawals and primary losers ("lost", "not_nominated") are
+    // not running: researching them would confirm IDs for campaigns that are over.
+    poolQueryMock.mockResolvedValueOnce({ rows: [] });
+
+    await getUnmatchedFederalPoliticians();
+
+    const sql = String(poolQueryMock.mock.calls[0]![0]);
+    expect(sql).toContain('e.election_date >= CURRENT_DATE');
+    expect(sql).toContain("rc.candidate_status IS DISTINCT FROM 'withdrawn'");
+    expect(sql).toContain("(rc.result IS NULL OR rc.result = 'advanced')");
+  });
+
+  it('files a race-only Senate candidate under the Senate, as a candidacy', async () => {
+    poolQueryMock.mockResolvedValueOnce({
+      rows: [queueRow({ full_name: 'Sandy Spidel Neumann', chamber_name: 'U.S. Senate', representing_state: 'KS', is_candidate: true })],
+    });
+
+    const [row] = await getUnmatchedFederalPoliticians();
+
+    expect(row).toMatchObject({ fec_office: 'S', source_system: 'fec_senate', representing_state: 'KS', is_candidate: true });
   });
 
   it('queues a person once, and a seat held beats a seat sought', async () => {
@@ -127,6 +165,18 @@ describe('getUnmatchedFederalPoliticians — the FEC research queue', () => {
     const sql = String(poolQueryMock.mock.calls[0]![0]);
     expect(sql).toContain('SELECT DISTINCT ON (p.id)');
     expect(sql).toMatch(/ORDER BY p\.id,[\s\S]*?\(COALESCE\(o\.title, ''\) ILIKE 'Candidate for%'\) ASC/);
+  });
+
+  it('ranks every seat, placeholder included, above a race row', async () => {
+    // A sitting representative in a Senate race has a House seat AND a Senate race
+    // row; a placeholder holder also has a race row for the same office. The seat
+    // comes first in both cases, so a seat-based queue entry never changes.
+    poolQueryMock.mockResolvedValueOnce({ rows: [] });
+
+    await getUnmatchedFederalPoliticians();
+
+    const sql = String(poolQueryMock.mock.calls[0]![0]);
+    expect(sql).toMatch(/ORDER BY p\.id,\s+seat\.via_race ASC,\s+\(COALESCE\(o\.title, ''\) ILIKE 'Candidate for%'\) ASC/);
   });
 
   it('files a Senate candidate under the office sought and marks the row as a candidacy', async () => {
@@ -357,8 +407,9 @@ describe('runFecAutoMatch — choosing between several FEC IDs for one person', 
 // the surname has. Comparing only our LAST word with FEC's whole surname scored
 // "Catherine Cortez Masto" 0 against CORTEZ MASTO, CATHERINE — her own ID. Measured
 // 2026-09-23: 3 of 102 sitting senators and 4 of 257 non-incumbent 2026 Senate
-// candidates were sent to needs_research this way. The FEC names below were fetched
-// that day, except Van Hollen's (the search API returned none for him on 2026-09-24).
+// candidates were sent to needs_research this way. The FEC rows below are real.
+// Van Hollen's came from /candidate/S6MD03441 on 2026-09-24: FEC files him under
+// state DC, so a state=MD search does not return him at all.
 
 describe('runFecAutoMatch — compound surnames', () => {
   const savedKey = process.env.FEC_API_KEY;
@@ -403,7 +454,7 @@ describe('runFecAutoMatch — compound surnames', () => {
 
   it.each([
     ['Catherine Cortez Masto', 'NV', false, 'S6NV00200', 'CORTEZ MASTO, CATHERINE', [2016, 2022, 2028]],
-    ['Chris Van Hollen', 'MD', false, 'S6MD03177', 'VAN HOLLEN, CHRIS', [2016, 2022, 2028]],
+    ['Chris Van Hollen', 'MD', false, 'S6MD03441', 'VAN HOLLEN, CHRIS', [2016, 2022, 2028]],
     ['Lisa Blunt Rochester', 'DE', false, 'S4DE00060', 'BLUNT ROCHESTER, LISA', [2024, 2030]],
     ['Alex De Paula', 'VA', true, 'S6VA00226', 'DE PAULA, ALEX', [2026]],
     ['Rachel Lee Fetty Anderson', 'WV', true, 'S6WV00188', 'FETTY ANDERSON, RACHEL LEE', [2026]],
