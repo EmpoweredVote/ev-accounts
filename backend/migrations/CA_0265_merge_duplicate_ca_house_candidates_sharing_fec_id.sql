@@ -35,7 +35,10 @@
 -- No compass data, quotes, race rows or images are on the duplicates. finance_summary is NULL on all six rows.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE. No office_terms change.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval and apply: Chris Andrews). Dry run (BEGIN ... ROLLBACK) passed and
+--   was confirmed reverted before the apply; verified after: 3 duplicates inactive, each holding only its parked
+--   not_applicable empty copy; the 6 links (1,287 contributions, $889,539.86 in aggregates) on the kept rows; no FEC id
+--   confirmed on two people anywhere.
 --
 -- ROLLBACK: re-point the _move link ids back to their duplicate row; give each _empty link a transient external_id,
 -- move it back to its kept row, restore external_id and research_status 'confirmed' and strip its CA_0265 note; set the
