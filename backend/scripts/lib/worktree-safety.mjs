@@ -41,6 +41,71 @@ export const IGNORABLE = [
   /(^|\/)\.env$/,
 ];
 
+/** Inside a directory npm can rebuild from the lockfile. */
+const IN_NODE_MODULES = /(^|\/)node_modules(\/|$)/;
+
+/**
+ * Is this the `.env` WE copy into a worktree — the one that may hold a credential existing
+ * nowhere else — as opposed to one that ships inside a published package?
+ *
+ * 🔴 THE DISTINCTION IS NOT PEDANTRY; COLLAPSING IT REFUSED A CLEAN WORKTREE. `.env` is
+ *    ignorable only once it has been byte-compared (see below), so every path ending in
+ *    `/.env` was held to that test — including `backend/node_modules/natural/.env`, which
+ *    ships inside the `natural` package. On 2026-09-23 that blocked a merged,
+ *    content-identical worktree as holding a file that "exists nowhere else", while four
+ *    byte-identical copies sat in the other worktrees' node_modules. Worse, it also defeated
+ *    the runner's "no .env present, question is moot" shortcut, since a dependency's counted
+ *    as present.
+ *
+ *    A file under node_modules is regenerable from the lockfile WHATEVER it is called, so that
+ *    rule wins. This narrows only the conditional half: `node_modules/x/.env` stays ignorable
+ *    unconditionally, `backend/.env` still has to be compared.
+ */
+export function isOurEnv(p) {
+  const norm = String(p ?? "").replace(/\\/g, "/");
+  return /(^|\/)\.env$/.test(norm) && !IN_NODE_MODULES.test(norm);
+}
+
+/**
+ * The main checkout's root, from `git rev-parse --path-format=absolute --git-common-dir`.
+ *
+ * 🔴 IT USED TO BE `process.cwd()/../backend/.env`, WHICH IS A GUESS ABOUT WHERE YOU TYPED THE
+ *    COMMAND. `npm run check:deletable` sets cwd to the package directory of the worktree you
+ *    are standing in, so the "main" .env resolved to the file UNDER TEST — a comparison of a
+ *    file against itself, which reports identical and would clear a worktree holding the only
+ *    copy of a credential. The common dir is the same answer from anywhere inside any linked
+ *    worktree, which is the property that makes it the right question to ask.
+ *
+ * @returns {string|null} null for a bare repo — it has no worktree to compare against.
+ */
+export function mainWorktreeRoot(gitCommonDir) {
+  const norm = String(gitCommonDir ?? "").replace(/\\/g, "/").replace(/\/+$/, "");
+  if (!norm.endsWith("/.git")) return null;
+  return norm.slice(0, -"/.git".length);
+}
+
+/**
+ * Are these two paths a real comparison — two distinct files?
+ *
+ * ⚠ CASE-INSENSITIVE ON EVERY PLATFORM, DELIBERATELY. On a case-sensitive filesystem two paths
+ *   differing only in case are distinct files, so treating them as one refuses a deletion that
+ *   might have been fine. That is the safe direction; the reverse loses a credential.
+ */
+export function canCompareEnv(a, b) {
+  if (!a || !b) return false;
+  const norm = (p) => String(p).replace(/\\/g, "/")
+    .split("/")
+    .reduce((acc, seg) => {
+      if (seg === "." || seg === "") return acc;
+      if (seg === ".." ) { acc.pop(); return acc; }
+      acc.push(seg);
+      return acc;
+    }, [])
+    .join("/")
+    .toLowerCase();
+  return norm(a) !== norm(b);
+}
+
 /**
  * Parse `git status --porcelain [-uall --ignored]` into the two facts the verdict needs.
  *
@@ -134,8 +199,9 @@ export function verdictFor(facts) {
   for (const p of facts.untracked ?? []) {
     const path = String(p).replace(/\\/g, "/");
     const ignorable = IGNORABLE.some((r) => r.test(path));
-    // A .env only counts as a copy once it has been compared.
-    const isEnv = /(^|\/)\.env$/.test(path);
+    // A .env only counts as a copy once it has been compared — but only OUR .env is held to
+    // that; one inside node_modules is regenerable like everything else in there.
+    const isEnv = isOurEnv(path);
     if (ignorable && (!isEnv || facts.envIdentical)) ignored.push(path);
     else unique.push(path);
   }
