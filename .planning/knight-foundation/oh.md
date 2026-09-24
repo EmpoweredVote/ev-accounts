@@ -12,7 +12,7 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 | 2 legislature | ✅ **APPLIED 2026-09-23 — 132 offices, 130 seated, 2 vacant** (`CC_0131`/`CC_0132`) |
 | 3 city waves | ✅ **APPLIED 2026-09-23 — Akron 14 offices, 14 seated, 0 vacancies** (`X0063`, `CC_0133`/`CC_0134`) |
 | 4 county waves | ✅ **APPLIED 2026-09-24 — Summit 17 offices, 17 seated, 0 vacancies** (`X0064`, `CC_0136`/`CC_0137`). **Akron scores 4 of 4.** |
-| 5 assets | — 1 banner (`akron`) + **161 portraits, MEASURED 2026-09-24: 161 seated, 0 renderable, 161 owed** |
+| 5 assets | ✅ **APPLIED 2026-09-24 — 161 of 161 portraits, and the `akron` banner.** Ohio goes 0 → 161 renderable |
 
 ---
 
@@ -687,29 +687,167 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
    3 of 4.**
 6. ~~OH-4 Summit County.~~ **Done — `X0064`, `CC_0136`/`CC_0137`, 17 offices, 17 seated.
    Akron scores 4 of 4.**
-7. **OH-5 assets** — the last stage. Baseline **measured 2026-09-24, not estimated**:
+7. ~~OH-5 assets.~~ **Done — 161 of 161 portraits and the `akron` banner. The slice closes.**
 
-   | chamber | seated | renderable | owed |
-   | --- | --- | --- | --- |
-   | Ohio House of Representatives | 98 | 0 | **98** |
-   | Ohio Senate | 32 | 0 | **32** |
-   | Akron City Council | 13 | 0 | **13** |
-   | Summit County Council | 11 | 0 | **11** |
-   | Elected Officials (Summit) | 5 | 0 | **5** |
-   | Office of the County Executive | 1 | 0 | **1** |
-   | Office of the Mayor | 1 | 0 | **1** |
-   | **total** | **161** | **0** | **161** |
+---
 
-   🔴 **The legislature's 130 are INSIDE that total, not beside it** — the GA-5 debt, where 236
-   legislative seats sat outside every stage-5 tally while the column read `WIP` for city reasons.
-   🟢 **Zero renderable is a true zero, not a broken detector**: the count is `photo_custom_url`,
-   which is what actually renders, and every one of these people was created by this slice.
-   ⚠ Re-measure before starting — a concurrent wave can move it.
-   - Plus **one banner key `akron`**. ⚠ Check the state banner's composition first: `states/OH.jpg`
-     must not already be an Akron skyline (the Miami/Wichita/Detroit/Charlotte class), and the
-     adjacency test is about COMPOSITION, not subject.
-   - 🔴 Approval is a **published-artifact contact sheet**, always. No monochrome. Press, official
-     and PD sources only — never social. The credit line is the licence test.
+## ✅ OH-5 APPLIED 2026-09-24 — 161 of 161 portraits, and Akron's banner
+
+**Ohio goes 0 → 161 renderable**, all on our own CDN, all carrying a `politician_images` row. The
+baseline was re-measured in this session and again minutes before the write, and it agreed with the
+handoff at **161 seated / 0 renderable / 161 owed**.
+
+| chamber | owed | imported | source |
+| --- | --- | --- | --- |
+| Ohio House of Representatives | 98 | **98** | `ohiohouse.gov`, unlinked `large` 1280x1759 |
+| Ohio Senate | 32 | **32** | `ohiosenate.gov`, unlinked `large` 1280x1600 |
+| Akron City Council | 13 | **13** | `akroncitycouncil.org` Drupal originals |
+| Summit County Council | 11 | **11** | `council.summitoh.net` `/image/original/` |
+| Elected Officials (Summit) | 5 | **5** | five separate publishers |
+| Office of the County Executive | 1 | **1** | `co.summitoh.net` |
+| Office of the Mayor | 1 | **1** | `akronohio.gov` |
+| **total** | **161** | **161** | 0 skipped, 0 failed |
+
+🟢 **Zero renderable was a TRUE zero, and it was proved rather than assumed.** A uniform
+answer is a broken detector, so the same query was read for rows it must NOT return zero for:
+Ohio's Governor, Attorney General, Secretary of State and Treasurer each came back **1**, and
+Summit County **Utah** came back **5 of 5**. ⚠ That Utah county is a live name collision with
+this slice's own subject — the scope keys on `governments.id`, never on a name LIKE.
+
+✅ **Every stored object was verified as a real JPEG at its public URL — 161 of 161, 30 KB
+to 178 KB — with a nonexistent-key control that correctly failed.** The importer's summary says
+what it *did*; this says what is *there*.
+
+### 🔴🔴 THE SHARED IMPORTER WAS BROKEN FOR EVERY WAVE ON THIS MACHINE, AND THE ERROR NAMED THE WRONG THING
+
+The first run failed **all 161 uploads**:
+
+```
+HTTP 400 {"statusCode":"403","error":"Unauthorized","message":"Invalid Compact JWS","code":"AccessDenied"}
+```
+
+**Supabase now issues secret keys as `sb_secret_...` rather than the legacy `service_role` JWT**,
+and Storage parses a lone `Authorization: Bearer` token as a compact JWS — so a valid key is
+refused as a malformed token. ▶ **The `apikey` header is accepted for BOTH key formats**, proved
+by probing the three header combinations against a throwaway object: Bearer alone 400, `apikey`
+alone 200, both 200. Fixed to send both in `import-headshot-candidates.py` and
+`mirror-photo-origin-to-storage.py` — the only other script with that call shape — so it
+works whichever key an `.env` carries and needs no migration.
+
+🔴 **AN AUTH FAILURE WEARING TWO STATUS CODES AT ONCE READS LIKE A BROKEN OBJECT.** The
+transport says 400, the body says 403, and the message names JWS parsing rather than the credential.
+The standing rule that *a missing object in OUR bucket is HTTP 400* points straight past it.
+
+🟢 **THE ESSENTIALS REPO ALREADY KNEW.** `scripts/banners/upload_banner.py` carries the
+comment *"BOTH Authorization AND apikey"*. The lesson was learned in one repo and never crossed into
+the other. ▶ **When a fix concerns a shared external service, grep the sibling repos for the
+same call shape.**
+
+🟢 **NOTHING WAS WRITTEN BY THE FAILED RUN, AND THAT WAS MEASURED RATHER THAN READ OFF THE
+SOURCE.** The importer `continue`s before any database write; production was re-measured afterwards
+and still showed 0 renderable / 0 image rows. The fix was then proved on **one** person end to end
+— object present, real JPEG, `photo_custom_url` pointing at our CDN, `photo_origin_url` holding
+the source PAGE — before the remaining 160 ran.
+
+### 🔴🔴 A BARE NUMERIC FILENAME NAMES NO PERSON — AND THE BINDING WAS THE MEMBER'S OWN URL
+
+The Ohio House serves portraits at `/assets/people/headshots/<size>/<numeric id>.jpg`. A number is
+the positional-filename class: the roster tile alone cannot prove the face belongs to the member
+captioned under it. But each member also has a **name-keyed page**, `ohiohouse.gov/members/<slug>`,
+whose own asset paths carry the same numeric id. **90 of 98 bound, and — the number that matters
+— ZERO MISMATCHES.** The other 8 pages carry no asset path at all, so the check is *silent* on
+them rather than contradicting; those 8 went to the proof sheet flagged "verify face".
+
+🔴🔴 **THE FIRST RUN OF THAT CHECK RETURNED A UNIFORM "NOT FOUND" FOR ALL 98, AND
+THE DETECTOR WAS THE BUG.** It searched for the headshot path on the member page; the member page
+does not serve the headshot, it serves a *banner* under `/assets/people/<id>/`. The id was there the
+whole time. ▶ **The uniform answer was treated as a broken detector and it was one.** The
+corrected check ships with a negative control: a planted id `9999999` is correctly not found.
+
+### The roster parser was watched failing before it was trusted
+
+Both chamber directories are parsed by **splitting on the container tag and reading each block in
+isolation** — the fix for OH-2's off-by-one, where one regex crossed a block boundary and stole
+the next member's image. Two defects were planted and the parser was watched catching both: a
+stripped headshot (reported as a real member with no photo) and a destroyed container tag (reported
+as a lost block). ⚠ **The first attempt at the second defect used a GUESSED marker string that
+never matched, so the control "passed" while planting nothing** — the marker is now read out of
+the live file.
+
+Counts that agree from two directions: **99 House tiles / 98 portraits / HD-66 placeholder** and
+**33 Senate tiles / 32 portraits / SD-13 placeholder**, matching the database's own 98 and 32 and
+both recorded vacancies. **130 of 130 legislators matched by district with all 130 names agreeing
+independently**; **31 of 31 local officials matched by full name**, nothing unmatched in either
+direction.
+
+### 🟢 BOTH CHAMBERS PUBLISH A HIGHER-RESOLUTION FILE THEY NEVER LINK
+
+The directory tiles use a 640px `medium`. A `large` exists at the same path — **1280x1759**
+(House) and **1280x1600** (Senate) — and a ~3200px original of about 10 MB. `large` was taken:
+it clears 600x750 without upscaling and does not cost a gigabyte of downloads. Same shape as MN-6's
+unlinked 1050x1350 JPEG.
+
+⚠ **THE BUCKET NAME IS PER-SITE AND IS NOT GUESSABLE.** Three portraits first failed as
+`cannot identify image file`, which reads like a dead link. All three were a **wrong bucket name**,
+not an absent file: `co.summitoh.net` wanted `col9`, `summitengineer.net` ignores the bucket
+entirely and serves one size at every name, and the Mayor's file sits at the **site root**, not
+under the page that references it.
+
+### Licence
+
+Neither chamber publishes a photo policy. Both footers carry only *"(c) 2026 ... All Rights
+Reserved"* and the linked Disclaimer is liability text that never mentions images. This is the
+**GA/FL/PA shape** — no published refusal to supersede — not the **MN shape**, where a
+policy forbidding cropping and re-hosting required a grant. Operator ruling 2026-09-24: **import as
+`press_use` now**. ⚠ **Absence of a policy is still not a licence**, and a blanket site
+copyright notice is not a photo policy either; what makes this defensible is that no restriction was
+published, and it is recorded here so a later session does not read it as a grant.
+
+Upscales, all shown on the proof sheet and all stored at native size rather than enlarged
+(`--max-upscale 1.0`): **John N. Schmidt 400x500**, and **Brandon Ford**, **Donnie Kammer** and
+**B. Alan Brubaker** at 480x600. No monochrome anywhere in the 161.
+
+**Proof sheet:** https://claude.ai/artifact/5nqDBw52LQGCoNPuyne2sn
+
+---
+
+## ✅ The `akron` banner — and a new shape of the adjacency problem
+
+**`cities/akron.jpg`** — *Main Street Akron*, 24 September 2024, **Dillguy9, CC0**, 4032x2266,
+processed to 1700x540 at `vertical_anchor 0.44` and registered with **`focus: '50% 100%'`**.
+Certification sheet: https://claude.ai/artifact/KNVLvfB5XAdAqzYP6NjrmV
+
+🔴🔴 **THE OHIO STATE BANNER IS A CITY SKYLINE — CINCINNATI FROM DEVOU PARK
+— AND THAT IS A NEW SHAPE OF THE ADJACENCY RULE.** Miami, Wichita, Detroit and Charlotte
+collide because the state banner is *that* city's skyline, so a name check catches them. Here the
+city is different, a name check passes, **and the frame still collides**: read in the 6:1 band,
+`states/OH.jpg` is a horizontal bar of towers at mid-distance under a big sky, which is what *any*
+Akron skyline would also be. ▶ **Run the adjacency test against the BAND and against
+COMPOSITION, never against the subject line.** Eight candidates were refused on it, with reasons, on
+the certification sheet — including Lock 15 on the Ohio & Erie Canal, which is the right idea
+for Akron and at 6:1 is white water and rock. **A correct subject is not a correct frame.**
+
+🟢 **OPERATOR DIRECTION SEPARATED THE ASSET FROM THE DESKTOP CROP** (2026-09-24): *"keep the
+full asset and crop from the top (keeping the bottom) for the desktop band."* The approved
+centre-band crop (`vertical_anchor 0.75`) was a good desktop frame and a poor asset — it threw
+away the tower tops that mobile shows 96.9% of. The asset is now built at **0.44**, holding the
+towers *and* reaching down to the marquee, and the desktop band is aimed at the bottom. Same lesson
+as Columbia and Myrtle Beach, reached from the other direction.
+⚠ **The focus is not a guess.** `50% 100%` puts asset rows 257..540 on the same source rows the
+approved 0.75 band occupied, and it was verified by rendering the retargeted band beside the
+approved one.
+
+✅ **People test passes**: no pedestrians in frame. The only human figures are a promotional LED
+board and a printed historical mural — published graphics on a wall, not identifiable
+bystanders.
+✅ **A new key needs no `-v2`**: both `cities/akron.jpg` and `cities/akron-v2.jpg` returned HTTP
+400 `NoSuchKey` before the upload, so the stale-CDN rule, which applies to overwrites, does not bite.
+✅ `banners:check` green, **242/245 credited**; the full essentials suite **468 tests across 20
+files, all passing**.
+
+⚠ **The essentials checkout at `C:\Transparent Motivations\essentials` was sitting on a merged
+`feat/banners-sc`, 3 behind `origin/main`.** It was left alone. This work is on
+`knight/oh-banner-akron` in a worktree at `C:\essentials-oh-banner`.
 
 ### Debts this slice already owes
 
