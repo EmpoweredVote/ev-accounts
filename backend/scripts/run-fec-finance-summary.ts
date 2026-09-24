@@ -10,9 +10,13 @@
  * fecResearch's auto-match queue now owns, and deleted and rewrote confirmed politician_sources
  * rows as it went.
  *
- * Usage: tsx scripts/run-fec-finance-summary.ts [--dry-run] [--candidates-only]
+ * Usage: tsx scripts/run-fec-finance-summary.ts [--dry-run] [--candidates-only] [--politician <uuid> ...]
  *   --dry-run          Resolve every FEC ID and print the plan. No FEC calls, no DB writes.
  *   --candidates-only  Only politicians whose chosen office is a "Candidate for …" placeholder.
+ *   --politician <id>  Only this essentials.politicians id; repeat the flag for several. For a
+ *                      refresh after an FEC-ID fix (CA_0230 corrected six at once) without a
+ *                      two-hour full run. Each id must resolve to an active federal politician
+ *                      the full run would summarise, or the script exits before any FEC call.
  *
  * Requires environment variables:
  *   DATABASE_URL   — PostgreSQL connection string (in .env)
@@ -58,6 +62,23 @@ import { fecGetJson } from './lib/fecGetJson.js';
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const CANDIDATES_ONLY = process.argv.includes('--candidates-only');
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const ONLY_POLITICIANS = process.argv.flatMap((arg, i, argv) => {
+  // Anything else starting --politician ("--politician=<id>", or several flags passed as one
+  // argument by a shell that does not word-split) would otherwise be ignored, and a filtered run
+  // would silently become a full two-hour one.
+  if (arg.startsWith('--politician') && arg !== '--politician') {
+    console.error(`ERROR: unrecognised argument ${JSON.stringify(arg.slice(0, 60))} — pass "--politician <uuid>" as two arguments`);
+    process.exit(1);
+  }
+  if (arg !== '--politician') return [];
+  const id = argv[i + 1];
+  if (!id || !UUID_RE.test(id)) {
+    console.error(`ERROR: --politician needs an essentials.politicians uuid, got ${id ?? 'nothing'}`);
+    process.exit(1);
+  }
+  return [id.toLowerCase()];
+});
 const FEC_CYCLE = '2026';
 const TOP_DONORS_LIMIT = 10;
 // Note: theunitedstates.io/congress-legislators/legislators-current.json returned HTTP 410 (Gone) on 2026-06-04.
@@ -221,10 +242,24 @@ async function getFederalPoliticiansFromDb(): Promise<FederalPolitician[]> {
                (COALESCE(o.title, '') ILIKE 'Candidate for%') DESC,
                o.id
     ) one_per_person
-    WHERE $1::boolean = false OR is_candidate
+    WHERE ($1::boolean = false OR is_candidate)
+      AND (cardinality($2::uuid[]) = 0 OR id = ANY($2::uuid[]))
     ORDER BY full_name
   `;
-  const result = await pool.query<FederalPolitician>(sql, [CANDIDATES_ONLY]);
+  const result = await pool.query<FederalPolitician>(sql, [CANDIDATES_ONLY, ONLY_POLITICIANS]);
+
+  // A --politician id that is not an active federal officeholder or candidate would otherwise be a
+  // silent no-op: the run "succeeds" having summarised nobody.
+  const found = new Set(result.rows.map(r => r.id));
+  const missing = ONLY_POLITICIANS.filter(id => !found.has(id));
+  if (missing.length > 0) {
+    console.error(
+      `ERROR: --politician id(s) not among the active federal politicians this script summarises` +
+        `${CANDIDATES_ONLY ? ' as candidates' : ''}: ${missing.join(', ')}`,
+    );
+    await pool.end();
+    process.exit(1);
+  }
   return result.rows;
 }
 
@@ -444,7 +479,8 @@ async function main(): Promise<void> {
   const candidateCount = politicians.filter(p => p.is_candidate).length;
   console.log(
     `[run-fec-finance-summary] Found ${politicians.length} active federal politicians ` +
-      `(${candidateCount} summarised as candidates${CANDIDATES_ONLY ? ', --candidates-only' : ''}).`,
+      `(${candidateCount} summarised as candidates${CANDIDATES_ONLY ? ', --candidates-only' : ''}` +
+      `${ONLY_POLITICIANS.length > 0 ? `, --politician x${ONLY_POLITICIANS.length}` : ''}).`,
   );
 
   // Counters
