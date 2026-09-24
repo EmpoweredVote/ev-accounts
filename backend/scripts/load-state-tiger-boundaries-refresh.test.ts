@@ -1,9 +1,14 @@
 import { describe, it, expect } from 'vitest';
 
+// ⚠⚠ THIS FILE LIVES IN scripts/ ON PURPOSE. CI's backend job runs `npm run test:unit`, which is
+//    `vitest run src scripts` — a test under test/ is never executed by it. Written there first,
+//    these ten passed locally and would have run NOWHERE in CI, which is the same class of defect
+//    as the message nobody read that this whole change is about.
+
 // Import-safe: main() only auto-runs when import.meta.url matches process.argv[1]
 // (the isMainModule guard at the bottom of the loader), which never holds under vitest.
-import { refreshNotice } from '../scripts/load-state-tiger-boundaries.js';
-import type { RefreshOutcome } from '../scripts/load-state-tiger-boundaries.js';
+import { refreshNotice } from './load-state-tiger-boundaries.js';
+import type { RefreshOutcome } from './load-state-tiger-boundaries.js';
 
 /**
  * 🔴 WHAT THESE PIN IS THE QUIET FAILURE, NOT THE HAPPY PATH.
@@ -80,5 +85,24 @@ describe('refreshNotice — what it tells you about CI', () => {
     const out = lines({ kind: 'failed', reason: 'permission denied' });
     expect(out).not.toMatch(/every push/i);
     expect(out).toMatch(/nightly/i);
+  });
+});
+
+describe('refreshNotice — the manual fallback tells the truth about the statement', () => {
+  // Both claims below were wrong in the message this replaced, and both mislead in a way that
+  // costs time at exactly the wrong moment — standing in front of a stale matview.
+  const out = () => refreshNotice({ kind: 'failed', reason: 'permission denied' }, 5155).join('\n');
+
+  it('does not repeat the "cannot run in a transaction" claim', () => {
+    // Measured 2026-09-24: REFRESH ... CONCURRENTLY ran fine inside a plpgsql block. The
+    // restriction belongs to CREATE INDEX CONCURRENTLY.
+    expect(out()).not.toMatch(/not in a transaction|cannot run inside a transaction/i);
+  });
+
+  it('quotes a duration that matches what the refresh actually takes', () => {
+    // Measured 2026-09-24 against prod: 30,797 ms. The old "~17 s" is from migration 1696 and is
+    // what makes ev_api's 30 s statement_timeout look like plenty of headroom. It is not.
+    expect(out()).not.toMatch(/~17 s/);
+    expect(out()).toMatch(/~3[01] s|~31 s/);
   });
 });

@@ -50,7 +50,11 @@ const VERBOSE = process.argv.includes('--verbose');
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
 const REFRESH_HINT =
-  'REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;   -- ~17 s, not in a transaction';
+  // ⚠ Both halves of the old note were wrong, measured 2026-09-24 on prod: it takes ~31 s, not
+  //   ~17 s (that figure is migration 1696's and is what makes ev_api's 30 s statement_timeout
+  //   look like headroom), and CONCURRENTLY runs fine inside a transaction — that restriction
+  //   belongs to CREATE INDEX CONCURRENTLY. Run it as postgres, which owns the matview.
+  'REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;   -- ~31 s, as postgres';
 
 (async () => {
   if (!process.env.DATABASE_URL) {
