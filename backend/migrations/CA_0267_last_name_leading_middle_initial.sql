@@ -37,8 +37,9 @@
 --   Matthew D. Klein   5e86fb53 (MN-2 House candidate, ext -270204)  vs 4966792b 'Matt D. Klein' (MN Senate, -2732185)
 --   Richard A. Hyer    05624287 (inactive, ut-city-ogden)             vs 11c6810e 'Richard Hyer' (active)
 --
--- STATUS: NOT APPLIED. Dry run (BEGIN ... ROLLBACK) twice on prod 2026-09-24, revert confirmed. Apply only on
---   Chris Andrews' explicit go-ahead.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). Dry run (BEGIN ... ROLLBACK) twice before,
+--   revert confirmed each time. Apply: UPDATE 82, gate passed, COMMIT. Verified after: 7 rows match ^[A-Z]\. (the held
+--   committee-name rows, 0 active).
 -- ROLLBACK: for each id in _r, set last_name := old_last and clear middle_initial (and name_suffix / preferred_name for
 --   the suffix / nickname rows).
 -- IDEMPOTENT: each UPDATE is guarded on last_name = old_last AND middle_initial empty; a re-run changes nothing and the
