@@ -35,6 +35,7 @@ import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { createNetfileAdapter } from './adapters/netfileAdapter.js';
 import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
+import { currentFecCycle } from './fecCycle.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -187,18 +188,11 @@ export function pingHealthcheck(url: string | undefined): void {
 }
 
 // ---------------------------------------------------------------------------
-// FEC cycle helper
+// FEC cycle helper — lives in ./fecCycle.js so fecResearch can share it without
+// importing this module; re-exported here for existing callers.
 // ---------------------------------------------------------------------------
 
-/**
- * currentFecCycle returns the current FEC election cycle year as a string.
- * FEC cycles are even years; odd years round up to next even year.
- * e.g. 2025 -> "2026", 2026 -> "2026"
- */
-export function currentFecCycle(): string {
-  const year = new Date().getFullYear();
-  return String(year % 2 !== 0 ? year + 1 : year);
-}
+export { currentFecCycle };
 
 // ---------------------------------------------------------------------------
 // Adapter dispatch — runAdapterForAll

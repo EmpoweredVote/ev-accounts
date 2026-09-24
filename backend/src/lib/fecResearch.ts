@@ -15,6 +15,10 @@
  *   4. Multiple candidates, unclear match → needs_research, lists all in notes
  *   5. No candidates found → needs_research with note
  *
+ * When one person has several FEC IDs under the same name — one per campaign —
+ * election_years picks between them; see isCurrentFecId. A candidate is never
+ * confirmed onto an ID that is not running this cycle.
+ *
  * Inserts a politician_sources row for each politician processed.
  * Non-aborting: per-politician errors are logged and counted.
  */
@@ -22,9 +26,11 @@
 import { pool } from './db.js';
 import { createSource } from './campaignFinanceService.js';
 import { acquireFecSlot } from './fecRateLimiter.js';
+import { currentFecCycle, fecCycleOf } from './fecCycle.js';
 
 const FEC_CANDIDATES_URL = 'https://api.open.fec.gov/v1/candidates/';
 const SLEEP_BETWEEN_SEARCHES_MS = 1500; // stay well under 1000 req/hr
+const AUTO_CONFIRM_SCORE = 0.8;
 
 // ---------------------------------------------------------------------------
 // Types
@@ -177,6 +183,64 @@ export function scoreMatch(politician: UnmatchedPolitician, candidate: FecCandid
 }
 
 // ---------------------------------------------------------------------------
+// Which of a person's FEC IDs
+// ---------------------------------------------------------------------------
+
+/**
+ * Is this the FEC ID the person is using NOW?
+ *
+ * A returning candidate gets a new candidate ID per campaign under the same name, so
+ * scoreMatch ties the old and new IDs. Charles Booker, David Roth and John Sununu
+ * were confirmed onto their previous run's ID that way (found 2026-09-23).
+ * election_years tells the IDs apart:
+ *
+ *   - A CANDIDATE's ID is current only if it lists an election in this cycle.
+ *   - A SITTING MEMBER's ID is current if it lists an election in this cycle or a
+ *     later one. One ID covers the whole term, and election_years lists elections,
+ *     not cycles: Fetterman's is [2016, 2022, 2028], with no 2026 in it.
+ *
+ * Not `cycles`: that lists every cycle with any filing, and Booker's 2020 ID shows
+ * 2026 there because its committee still reports.
+ *
+ * Measured 2026-09-23 against the FEC's own lists: of 257 non-incumbent 2026 Senate
+ * candidates, the name-only rule confirmed a wrong ID for 12 (this rule: 0); of 102
+ * sitting senators, 1 (Roger Marshall's House ID — CA_0203) against 0.
+ */
+export function isCurrentFecId(
+  politician: Pick<UnmatchedPolitician, 'is_candidate'>,
+  candidate: Pick<FecCandidate, 'election_years'>,
+  cycle: number
+): boolean {
+  const cycles = (candidate.election_years ?? []).map(fecCycleOf);
+  return politician.is_candidate ? cycles.includes(cycle) : cycles.some(c => c >= cycle);
+}
+
+interface ScoredCandidate {
+  candidate: FecCandidate;
+  score: number;
+  current: boolean;
+}
+
+/** Name strength in bands: a confident match, a surname-only match, no match. */
+function nameBand(score: number): number {
+  return score >= AUTO_CONFIRM_SCORE ? 2 : score > 0 ? 1 : 0;
+}
+
+/**
+ * Strongest first. Inside one band of name strength the current ID comes first, and
+ * the raw score breaks what is left. Returns 0 when nothing separates the two.
+ *
+ * Coming first is not being confirmed: see `outscored` in runFecAutoMatch.
+ */
+function compareMatches(a: ScoredCandidate, b: ScoredCandidate): number {
+  return (
+    nameBand(b.score) - nameBand(a.score) ||
+    Number(b.current) - Number(a.current) ||
+    b.score - a.score
+  );
+}
+
+// ---------------------------------------------------------------------------
 // FEC API search
 // ---------------------------------------------------------------------------
 
@@ -186,6 +250,12 @@ export async function searchFecCandidates(
   office: 'H' | 'S',
   apiKey: string
 ): Promise<FecCandidate[]> {
+  // No election_year filter, on purpose. For a sitting member it is wrong outright —
+  // Fetterman (next election 2028) returns nothing for 2026. For a candidate it adds
+  // nothing isCurrentFecId does not already refuse (it kept the right ID for all 257
+  // 2026 Senate candidates, and no unfiltered search filled the page), while it would
+  // hide a returning candidate's old IDs from the reviewer and drop an odd-year
+  // special, which the FEC files under its own year (Patronis: [2025, 2026]).
   const params = new URLSearchParams({
     api_key: apiKey,
     q: name,
@@ -324,6 +394,7 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
   // repeated calls drain the queue — safe to run in successive batches to stay
   // under the FEC 1,000 req/hr key ceiling.
   const politicians = opts?.limit != null ? allUnmatched.slice(0, opts.limit) : allUnmatched;
+  const cycle = Number(currentFecCycle());
   const results: MatchResult[] = [];
   let autoConfirmed = 0;
   let needsReview = 0;
@@ -382,21 +453,34 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
           : 'No FEC candidates found — may be newly elected or name mismatch';
       } else {
         // Score all candidates, pick the best
-        const scored = candidates
-          .map(c => ({ candidate: c, score: scoreMatch(p, c) }))
-          .sort((a, b) => b.score - a.score);
+        const scored: ScoredCandidate[] = candidates
+          .map(c => ({ candidate: c, score: scoreMatch(p, c), current: isCurrentFecId(p, c, cycle) }))
+          .sort(compareMatches);
 
         const best = scored[0]!;
         // Single result from last-name fallback: unambiguous match in correct state/office.
         // Bump to 0.8 to trigger auto-confirm even without first-name confirmation.
         const effectiveScore = (fallbackUsed && candidates.length === 1 && best.score >= 0.6)
-          ? 0.8
+          ? AUTO_CONFIRM_SCORE
           : best.score;
         result.confidence = effectiveScore;
         result.selected_fec_id = best.candidate.candidate_id;
         result.selected_fec_name = best.candidate.name;
 
-        if (effectiveScore >= 0.8) {
+        // Two IDs that neither the name nor the cycle separates are a human call —
+        // picking one is how the stale IDs got confirmed.
+        const tied = scored.length > 1 && compareMatches(best, scored[1]!) === 0;
+        // A current 0.85 over a stale 0.9 is a first name that only STARTS the same
+        // way (JANET for JANE) — the person writing it short, or someone else. When
+        // the name and the cycle point at different IDs, neither one is confirmed.
+        const outscored = scored.some(
+          s => nameBand(s.score) === nameBand(best.score) && s.score > best.score
+        );
+        // A candidate files anew for each campaign: an ID not running this cycle is
+        // an earlier campaign's, however well the name matches.
+        const staleForCandidate = p.is_candidate && !best.current;
+
+        if (effectiveScore >= AUTO_CONFIRM_SCORE && !tied && !outscored && !staleForCandidate) {
           result.status = 'confirmed';
         } else {
           result.status = 'needs_research';
@@ -406,6 +490,7 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
               candidate_id: s.candidate.candidate_id,
               name: s.candidate.name,
               party: s.candidate.party,
+              election_years: s.candidate.election_years ?? [],
               score: s.score,
             }))
           );
