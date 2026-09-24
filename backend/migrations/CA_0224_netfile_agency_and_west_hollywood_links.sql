@@ -20,7 +20,8 @@
 --      on a link without one instead of assuming LACO.
 --   2. The 181 other la_county_netfile links get 'LACO'. That is measured, not assumed: the first REST run
 --      (2026-09-24 02:48 UTC, #707) read every one of them under LACO -- 172 FPPC ids that IdSearch?aid=LACO maps, 7
---      NetFile ids with LACO filings, and McKenzie 1450349 / Stern 1472646, loaded from the LA County Excel export.
+--      NetFile ids with LACO filings, and McKenzie / Stern, loaded from the LA County Excel export and moved to their
+--      LACO NetFile ids 211581618 / 212080164 by CA_0223.
 --      The gate below refuses to run if any of them carries an "agency=" note other than these three.
 --   3. Erickson 185138647 and Byers 202019492 are their own (controlled) committees: set WEHO, keep confirmed.
 --   4. Heilman 204740311 is NOT his committee: it files Form 496 independent-expenditure reports, and its Schedule A
