@@ -33,7 +33,9 @@
 -- THEN: the duplicate is deactivated (is_active = false, is_incumbent stays false) with a note naming its twin.
 --
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE. No office_terms change.
--- STATUS: NOT YET APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval, including the closed-season override, and apply: Chris Andrews).
+--   Dry run (BEGIN ... ROLLBACK) passed and was confirmed reverted before the apply; verified after: duplicate inactive,
+--   race row, quote, 10 answers and 10 context rows on the seated row, which keeps its State Senate seat.
 --
 -- ROLLBACK: with the same override, re-point race_candidates 08f933cc-fc44-4066-b512-654025f6cccc, quote
 -- b9be256a-2dc1-40da-b728-1227234cd642 and the 10 (topic, season) keys in _ans back to
