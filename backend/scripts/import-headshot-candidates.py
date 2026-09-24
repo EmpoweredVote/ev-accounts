@@ -69,6 +69,17 @@ ap.add_argument("--max-upscale", type=float, default=1.0,
 args = ap.parse_args()
 
 key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
+
+# 🔴 SEND BOTH `apikey` AND `Authorization`, NEVER `Authorization` ALONE.
+# Supabase now issues secret keys in the `sb_secret_…` format instead of the legacy
+# service_role JWT. Storage parses a lone Bearer token as a compact JWS, so an
+# `sb_secret_` key arrives as HTTP 400 carrying {"statusCode":"403", …,
+# "message":"Invalid Compact JWS"} -- an auth failure wearing two different status
+# codes at once, which reads like a broken object rather than a rejected credential.
+# It failed all 161 uploads of the OH-5 wave. The `apikey` header is accepted for
+# BOTH key formats, so sending both works whichever key the .env carries and needs
+# no migration.
+STORAGE_AUTH = {"apikey": key, "Authorization": f"Bearer {key}"}
 conn = psycopg2.connect(os.environ["DATABASE_URL"], sslmode="require")
 cur = conn.cursor()
 
@@ -184,7 +195,7 @@ for c in cands:
             continue
 
         up = requests.post(UPLOAD + filename,
-                           headers={"Authorization": f"Bearer {key}",
+                           headers={**STORAGE_AUTH,
                                     "Content-Type": "image/jpeg", "x-upsert": "true"},
                            data=data, timeout=90)
         if up.status_code not in (200, 201):
