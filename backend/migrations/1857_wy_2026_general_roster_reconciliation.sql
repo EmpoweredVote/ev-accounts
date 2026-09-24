@@ -1,5 +1,11 @@
 -- 1857_wy_2026_general_roster_reconciliation.sql
 --
+-- 🔧 2026-09-24 (Chris Andrews, taking over Phase 167): every election-scoped read below is now also
+--    scoped to r.position_name = 'U.S. Representative At-Large'. CA_0233 added the 2026 U.S. Senate race
+--    to this same general election, so the original election-wide counts (and the name-to-row
+--    resolution) would have counted Senate rows. The UPDATEs were already keyed by row id; no
+--    disposition, source or date in this file changed.
+--
 -- Phase 167 (post-primary reconciliation), cluster 4 of 17: Wyoming's U.S. Representative
 -- At-Large race on the WY 2026 Statewide General (election 28ce873c-af6e-4802-9315-b47a5e0cdd9a).
 -- Seeded 2026-07-07 from the pre-primary roster, provisional_until = 2026-08-18. 24 days stale.
@@ -99,7 +105,7 @@ SELECT rc.id AS rc_id, t.disposition,
        || 'broken, so this reconciliation is against the roster of who is on the ballot rather '
        || 'than against vote totals. ' || t.why AS result_source
   FROM wy_target t
-  JOIN essentials.races r ON r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a'
+  JOIN essentials.races r ON r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a' AND r.position_name = 'U.S. Representative At-Large'
   JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.full_name = t.our_name;
 
 DO $$
@@ -109,7 +115,7 @@ BEGIN
   SELECT count(*) INTO n_m FROM wy_resolved;
   SELECT count(*) INTO n_ours FROM essentials.race_candidates rc
     JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a';
+   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a' AND r.position_name = 'U.S. Representative At-Large';
   IF n_t <> 14 THEN RAISE EXCEPTION 'target holds % rows, expected 14', n_t; END IF;
   IF n_m <> n_t THEN RAISE EXCEPTION 'only % of % names matched a row', n_m, n_t; END IF;
   IF n_ours <> 14 THEN RAISE EXCEPTION 'this election carries % rows, not the 14 accounted for', n_ours; END IF;
@@ -162,7 +168,7 @@ BEGIN
     INTO n_adv, n_not, n_wd, n_null, n_live, n_flag
     FROM essentials.race_candidates rc
     JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a';
+   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a' AND r.position_name = 'U.S. Representative At-Large';
 
   IF n_adv <> 2 THEN RAISE EXCEPTION 'expected 2 advanced (Gray, Kinney), found %', n_adv; END IF;
   IF n_wd  <> 1 THEN RAISE EXCEPTION 'expected 1 withdrew (Chapman), found %', n_wd; END IF;
@@ -176,7 +182,7 @@ BEGIN
 
   SELECT count(*) INTO n_stale
     FROM essentials.race_candidates rc JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a'
+   WHERE r.election_id = '28ce873c-af6e-4802-9315-b47a5e0cdd9a' AND r.position_name = 'U.S. Representative At-Large'
      AND rc.provisional_until IS NOT NULL AND rc.provisional_until <= CURRENT_DATE
      AND (rc.last_verified_at IS NULL OR rc.last_verified_at < rc.provisional_until);
   IF n_stale > 0 THEN RAISE EXCEPTION '% rows left stale on this election', n_stale; END IF;

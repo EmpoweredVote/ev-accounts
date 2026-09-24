@@ -1,5 +1,11 @@
 -- 1856_ak_2026_primary_certification_pass.sql
 --
+-- 🔧 2026-09-24 (Chris Andrews, taking over Phase 167): every election-scoped read below is now also
+--    scoped to r.position_name = 'U.S. Representative At-Large'. CA_0233 added the 2026 U.S. Senate race
+--    to this same general election, so the original election-wide counts (and the name-to-row
+--    resolution) would have counted Senate rows. The UPDATEs were already keyed by row id; no
+--    disposition, source or date in this file changed.
+--
 -- Phase 167 (post-primary reconciliation), cluster 3 of 17: Alaska's U.S. Representative
 -- At-Large race on the AK 2026 Statewide General (election aac67849-bc0f-4c54-be66-cd12c2a16548).
 -- Seeded with the full pre-primary field, provisional_until = 2026-08-18. 24 days stale.
@@ -120,7 +126,7 @@ SELECT rc.id AS rc_id, t.disposition, t.rank,
           END
        AS result_source
   FROM ak_cert_tally t
-  JOIN essentials.races r ON r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548'
+  JOIN essentials.races r ON r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large'
   JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.full_name = t.our_name;
 
 DO $$
@@ -130,7 +136,7 @@ BEGIN
   SELECT count(*) INTO n_m FROM ak_cert_target;
   SELECT count(*) INTO n_ours FROM essentials.race_candidates rc
     JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548';
+   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large';
   IF n_t <> 15 THEN RAISE EXCEPTION 'tally holds % rows, expected 15', n_t; END IF;
   IF n_m <> n_t THEN RAISE EXCEPTION 'only % of % certified candidates matched a row', n_m, n_t; END IF;
   IF n_ours <> 15 THEN RAISE EXCEPTION 'this election carries % rows, not the 15 accounted for', n_ours; END IF;
@@ -172,7 +178,7 @@ BEGIN
     INTO n_adv, n_not, n_null, n_live
     FROM essentials.race_candidates rc
     JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548';
+   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large';
 
   IF n_adv <> 4 THEN RAISE EXCEPTION 'expected the certified top 4 advanced, found %', n_adv; END IF;
   IF n_not <> 10 THEN RAISE EXCEPTION 'expected 10 not_nominated (ranks 6-15), found %', n_not; END IF;
@@ -181,21 +187,21 @@ BEGIN
 
   SELECT count(*) INTO n_held
     FROM essentials.race_candidates rc JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548'
+   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large'
      AND rc.full_name = 'John B. Williams' AND rc.result IS NULL
      AND rc.provisional_until = DATE '2026-09-25';
   IF n_held <> 1 THEN RAISE EXCEPTION 'rank 5 is not held at 2026-09-25 with a NULL result'; END IF;
 
   SELECT count(*) INTO n_stale
     FROM essentials.race_candidates rc JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548'
+   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large'
      AND rc.provisional_until IS NOT NULL AND rc.provisional_until <= CURRENT_DATE
      AND (rc.last_verified_at IS NULL OR rc.last_verified_at < rc.provisional_until);
   IF n_stale > 0 THEN RAISE EXCEPTION '% rows left stale on this election', n_stale; END IF;
 
   SELECT count(*) INTO n_nosrc
     FROM essentials.race_candidates rc JOIN essentials.races r ON r.id = rc.race_id
-   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548'
+   WHERE r.election_id = 'aac67849-bc0f-4c54-be66-cd12c2a16548' AND r.position_name = 'U.S. Representative At-Large'
      AND rc.result IS NOT NULL
      AND (rc.result_source IS NULL OR rc.result_source NOT LIKE '%2026-08-18%');
   IF n_nosrc > 0 THEN RAISE EXCEPTION '% result rows do not cite the 2026-08-18 canvass', n_nosrc; END IF;
