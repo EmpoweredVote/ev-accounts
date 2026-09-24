@@ -4,6 +4,8 @@
 --
 -- Slot CA_0262 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
+-- ✅ APPLIED to prod 2026-09-24 (approval Chris Andrews): DELETE 1, both gates green. Re-read: race gone, primary holds
+--   138 races, Hobbs holds the Recorder seat.
 --
 -- THE EVIDENCE
 --   Rashelle Hobbs (b5638977) holds the Recorder seat (office 24d3f2d6). She was re-elected on 2024-11-05, 250,018 to

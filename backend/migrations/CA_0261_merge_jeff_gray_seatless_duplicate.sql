@@ -5,6 +5,8 @@
 --
 -- Slot CA_0261 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
+-- ✅ APPLIED to prod 2026-09-24 (approval Chris Andrews): UPDATE 1 / 1, both gates green. Re-read: primary row on 6b16270a,
+--   duplicate inactive, twin holds the seat with 2 race rows and 1 image.
 --
 -- THE PAIR (duplicate -> seated twin):
 --   35faf7b8-4d1e-4363-b4db-3531ea3fad5e "Jeff Gray" (created 2026-06-18, data_source sos_filing; no seat, no term,
