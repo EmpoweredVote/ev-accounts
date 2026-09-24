@@ -121,6 +121,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
   /\bH\.?R\.?\s?\d+\b/,
   /\bS\.?J\.?\s?Res\.?\s?\d+\b/,
+  // Asymmetric on purpose: unlike HB/SB/HR above, the hyphen sits AFTER the optional periods ("A.B.-123"
+  // as well as "AB-123"), because NAMES_INSTRUMENT's own AB form pairs the hyphen with the digits, not
+  // with a period a reasoning-writer might also add — canonicalization strips both, so the extra
+  // leniency here cannot admit anything canonicalizeInstrumentId would not already collapse to "ab123".
   /\bA\.?B\.?-?\s?\d+\b/,
   /\bLD\s?\d+\b/,
   /\bSJR\s?\d+\b/,
@@ -204,10 +208,19 @@ export function checkStanceRow(
     if (!NAMES_INSTRUMENT.test(row.reasoning)) add('record-no-instrument', 'high', 'record evidence must name the bill, act, ordinance or recorded vote');
     // C68: citation control in the OTHER direction — naming an instrument in the reasoning is not enough;
     // it must actually appear in one of the row's cited snippets, or the citation is one-way.
+    //
+    // Fix round 1 (Important, false negative): comparing canonical(identifier) against
+    // canonical(WHOLE SNIPPET) with .includes() had no boundary — canonical("HB 1001") = "hb1001" is
+    // itself a substring of canonical("HB 10010") = "hb10010", so a snippet naming only HB 10010 wrongly
+    // satisfied a reasoning citing HB 1001. Extract the snippet's OWN identifier mentions with the same
+    // patterns, canonicalize each one, and compare those tokens for EQUALITY — never substring — so a
+    // longer number sharing a prefix cannot satisfy a shorter one.
     const identifiers = [...new Set(extractInstrumentIdentifiers(row.reasoning).map(canonicalizeInstrumentId))];
-    const snippetsCanon = ctx.evidence.map((e) => canonicalizeInstrumentId(e.snippet));
+    const snippetIdentifierSet = new Set(
+      ctx.evidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map(canonicalizeInstrumentId)),
+    );
     for (const id of identifiers) {
-      if (!snippetsCanon.some((s) => s.includes(id))) {
+      if (!snippetIdentifierSet.has(id)) {
         add('instrument-not-cited', 'high', `reasoning names an instrument (canonical "${id}") that does not appear in any cited snippet`);
       }
     }

@@ -207,6 +207,27 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
     const row = { ...good, reasoning: 'Voted YES on the Clean Water Act (2025), which expands protections.' };
     expect(ids(row, { evidence: [{ ...ev[0], snippet: snippetWith('the Clean Water Act') }] })).not.toContain('instrument-not-cited');
   });
+
+  // Fix round 1 (Important, false negative): canonical("HB 1001") = "hb1001" is a SUBSTRING of
+  // canonical("HB 10010") = "hb10010", so comparing the identifier against the whole canonicalized
+  // snippet with .includes() let a snippet naming only HB 10010 wrongly satisfy a citation to HB 1001.
+  // Fixed by extracting the snippet's OWN identifier mentions and comparing them for equality.
+  it('still flags HB 1001 when the snippet names only HB 10010 (no false negative from a shared prefix)', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), which expands the public option.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('HB 10010') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
+  it('still matches HB1001 against a snippet spelled H.B. 1001 (regression, not just a one-way check)', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB1001 (2025), which expands the public option.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('H.B. 1001') }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('matches a snippet mention immediately followed by a period, at the end of a sentence ("HB 1001.")', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), which expands the public option.' };
+    const snippet = 'Representative Jane Doe expanded coverage for every Hoosier family this year by voting for HB 1001. '
+      + 'She has said lower prescription costs at the pharmacy counter remain her top priority today';
+    expect(ids(row, { evidence: [{ ...ev[0], snippet }] })).not.toContain('instrument-not-cited');
+  });
 });
 
 describe('quote-not-in-snippet (C69)', () => {
