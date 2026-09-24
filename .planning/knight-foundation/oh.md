@@ -10,7 +10,7 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-23 — 132 boundaries, 132 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-23 — 132 offices, 130 seated, 2 vacant** (`CC_0131`/`CC_0132`) |
-| 3 city waves | — Akron: Mayor + 13 council (10 ward + 3 at-large) |
+| 3 city waves | ✅ **APPLIED 2026-09-23 — Akron 14 offices, 14 seated, 0 vacancies** (`X0063`, `CC_0133`/`CC_0134`) |
 | 4 county waves | — Summit: Executive + 11 council (8 district + 3 at-large) + 5 row officers |
 | 5 assets | — 1 banner (`akron`), ~163 portraits |
 
@@ -220,6 +220,116 @@ untouched. `check:occupancy`, `check:migrations`, `check:reservations`, `check:c
 `check:reachability` nothing regressed, UNREACHABLE **9** against baseline 24.
 
 ▶ **Next: OH-3 — Akron, 14 offices.**
+
+---
+
+## ✅ OH-3 APPLIED 2026-09-23 — Akron is seated, and stage 3 closes
+
+`X0063` (10 ward polygons), `CC_0133` structure, `CC_0134` occupancy: **14 offices, 14 people,
+0 vacancies** — 10 ward + 3 at-large council + the Mayor, across **1 government and 2 chambers**.
+`politicians` +14, `offices` +14, `office_terms` +14, `districts` +11, each exact.
+`offices_missing_terms` **unmoved at 429/238** — Akron added no unseated office. Both migrations
+and the loader re-run clean.
+
+🟢 **AKRON CITY HALL NOW ANSWERS 3 OF 4** — Ward 3 (Margo Sommerville), the three at-large members,
+the Mayor, the state representative, the state senator and the U.S. Representative: **8 rows**. The
+county council member is the last one, and it is OH-4.
+⚠ **Controlled against a neighbouring city**: a Cuyahoga Falls address returns **0 Akron city
+offices** and 3 answers in total. Akron's citywide seats do not leak past the city line — the Long
+Beach failure inverted, and the thing an at-large seat on a citywide polygon most easily gets wrong.
+Per-ward control: **10 of 10** wards resolve to exactly one member at their own interior point.
+
+### 🟢 THE WARD LAYER CARRIES ITS OWN CROSS-CHECK, WHICH IS BETTER THAN A DATE
+
+`City of Akron Wards` (owner **AkronGIS**, the city's own org) publishes ten polygons **and a
+`COUNCILPERSON` field**. All ten names match the council's own members page exactly — two different
+city departments naming the same ten people. Akron publishes no adoption date and no second ward
+layer, so as at Columbia there is nothing to diff a map against; what replaces it here is a second
+publisher. The loader's **GATE 2 enforces the agreement and was watched failing** on a planted wrong
+name.
+
+⚠ **THE LAYER IS CURRENT ON NAMES AND STALE ON TITLES.** Its `TITLE` field calls Ward 6 "President
+Pro Tem"; the council's page says Ward 6 is **Vice-President** and Ward 9 is President Pro-Tem.
+Leadership titles are not stored on offices here, so nothing downstream is affected — but **a source
+can be fresh in one column and stale in another, and "the names matched" does not license trusting
+the rest of the row.**
+
+### 🔴🔴 BOTH OBVIOUS SEARCH ROUTES WERE TRAPS
+
+- **`data-akron.opendata.arcgis.com` is a FEDERATED catalogue.** Its "Ward Boundaries" hits resolve
+  to **East Renfrewshire Council, Scotland**, and others to Sherwood, Milton (Ontario) and Elyria.
+  This is IN-6's Lake County trap exactly: for a generically named thing, an aggregated source is a
+  **jurisdiction**-collision risk, not merely a staleness risk.
+- **A web summary asserted "Akron has 8 wards."** It has **ten** — per the city's own government
+  page and the council's members page. ▶ **A count from a summary is not a count from the body.**
+- `gis.akronohio.gov` does not resolve.
+
+### 🟢 CLOSURE IS A PROPERTY OF THIS CITY, AND IT WAS DEMANDED RATHER THAN BOUNDED
+
+Akron's ten wards **partition** the city, unlike Fort Wayne's six districts which correctly leave
+1.13 sq mi uncovered because Fort Wayne elects at-large seats over the rest. Measured: wards union
+**62.2749 sq mi** against the TIGER place's **62.2741**, **99.971% of the city covered**, 0.0181
+sq mi uncovered and 0.0189 sq mi of ward area outside. 🔴 The gate threshold is **99.5%, not 100%**:
+these are **two digitizations of one boundary**, so a sliver difference is expected and is not a
+defect — demanding 100% was tested and fails on correct data. Zero pairwise overlap; all ten single
+connected polygons; one invalid as published and repaired on write.
+
+### 🔴 THE OFFICE INVENTORY IS THE CITY'S OWN SENTENCE
+
+akronohio.gov: *"A Mayor, three At-Large Council persons, and Ward City Council are elected by City
+residents every four years. The City's Council is comprised of 10 Ward Representatives, and 3
+At-Large members."* **Fourteen elected offices and no more.** ⚠ Akron elects **no City Clerk** —
+unlike Fort Wayne and Gary, where the Clerk is elected and was seated, so the Indiana template does
+not carry over. Municipal court judges and the Clerk of Courts stay with the judges wave.
+
+### 🔴🔴 A BLANKET TERM DATE WAS TESTED AND IS FALSE — TWO SEATS PROVE IT
+
+Akron elects the Mayor and all 13 council members to four-year terms at one November election, so
+"everyone started 2024-01-01" looks safe. It is wrong for at least two of the thirteen:
+
+- **Ward 1** — Nancy Holland resigned effective **4pm on 2024-01-05**, five days into the term.
+  Samuel DeShazior was appointed to hold it, and the seat was then filled **for the remainder of the
+  unexpired term at the 2025 general election**. **Fran Wilson**, the current member, therefore
+  arrived in neither January 2024 nor by that appointment.
+- **Ward 8** — James Hardy resigned effective **2024-07-01**; **Bruce Bolden** was appointed in July
+  2024.
+
+▶ **The point is not that the dates are unknown. It is that two seats disprove the blanket rule, so
+applying it to the other eleven would assert something already shown to fail.** All 13 council terms
+are therefore open-ended at `unknown`. This is the San José D8/D10 lesson with the counter-example
+found **before** the write instead of after it.
+
+🟢 **The Mayor IS dated, because the city publishes the date**: *"Mayor Malik was sworn in as Akron's
+63rd Mayor on Jan. 1, 2024."* — 2024-01-01, `day`, `how_started` elected.
+
+### ⚠ The change-check is weaker here than at OH-2, and that is stated rather than papered over
+
+Akron publishes **no per-member pages**, so the page-by-page sweep used on all 130 legislators is not
+available. Two independent city publishers agreeing on the ten ward members replaces it. **On the
+three at-large seats only one publisher exists**, and the Mayor rests on the Mayor's Office page.
+That is a real asymmetry in the evidence and is recorded as one.
+
+### Gates
+
+Name collisions were checked on **the guard's own key**, `(first_name, last_name)` — the lesson OH-2
+paid for: **0 of 14**, against a control of 198 active `John` rows. No override was needed.
+Six post-verify gates were **watched failing**, and ⚠ the sixth — loosening the at-large ordinal
+join, which would seat one person three times — was refused by the **database's own
+`office_terms_no_overlap` exclusion constraint** before reaching my gate. Three loader gates were
+watched failing too. Dry run of both migrations as **one transaction ending in ROLLBACK**.
+`check:occupancy`, `check:migrations`, `check:reservations`, `check:child-county` green;
+`check:reachability` nothing regressed, UNREACHABLE **9** against baseline 24.
+
+### ⚠ `X` boundary codes have no allocator, and that is a gap
+
+`X0063` was chosen by reading `max(mtfcc)` in production — **the exact procedure CLAUDE.md calls
+"the bug" for migration numbers.** The steward tracks `shared`, `CA` and `CC` and **not** `X`.
+It is a narrower risk than the 1681 collision, because an `X` code is only taken when a loader
+writes to production, so the maximum is observable rather than sitting undeclared on somebody's
+branch — but two loaders running at once would still collide. ▶ **Worth adding `X` to the
+allocator.** Noted here rather than fixed, because it is outside this wave.
+
+▶ **Next: OH-4 — Summit County, 17 offices.**
 
 ---
 
@@ -452,10 +562,13 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
 3. ~~Run OH-1.~~ **Done — 132 boundaries, 132 districts, 0 errors; re-run clean.**
 4. ~~OH-2: seat the General Assembly.~~ **Done — `CC_0131`/`CC_0132`, 132 offices, 130 seated,
    2 vacant. Akron scores 2 of 4.**
-5. **OH-3 Akron**, 14 offices: Mayor + 3 at-large + 10 ward. Akron's ward layer is still unmeasured.
+5. ~~OH-3 Akron.~~ **Done — `X0063`, `CC_0133`/`CC_0134`, 14 offices, 14 seated. Akron scores
+   3 of 4.**
 6. **OH-4 Summit County**, 17 offices — 🔴 a **charter** county, so the Ohio statutory template does
    not apply (trap 6). Its council districts are published as a **PDF**; ask the county GIS
-   department before concluding no layer exists.
+   department before concluding no layer exists. 🟢 Summit County has its own ArcGIS org — the
+   `Summit_Admin` account surfaced while searching for Akron's wards, so start there.
+   This is the seat that takes Akron's probe from 3 of 4 to 4 of 4.
 7. **OH-5 assets** — one banner key `akron`, and ~163 portraits. 🔴 Count the legislature's 130
    inside stage 5, not beside it (the GA-5 debt).
 
