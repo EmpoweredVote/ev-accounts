@@ -18,6 +18,24 @@
 import { pool } from './db.js';
 import { normalizeDonorName } from './adapters/normalizeDonorName.js';
 
+/**
+ * The `politician_sources ps` predicate for every read of a politician's OWN fundraising:
+ * totals, contribution lists, cycle pickers, donor search, the summary agg.
+ *
+ * 🔴 BOTH halves are required. An `ie_committee` link (migrations 190/191) is an
+ * independent-expenditure committee that spent in the politician's race; its contributions are
+ * money given to THAT committee, and getOutsideSpendingForPolitician reports them as outside
+ * spending. Until 2026-09-24 these reads filtered on research_status alone, so a confirmed IE link
+ * was summed in as the politician's own money and reported twice (measured on prod: 3 confirmed
+ * la_socrata IE links, 58 rows, $2.42M — Francis De Leon Sanchez's 2024 total read $897,069
+ * against $535,618 raised by his own committees).
+ *
+ * contribution_summary_agg is keyed per politician_source, so it holds IE rows too and needs no
+ * refresh: this predicate on the read is what keeps them out.
+ */
+export const OWN_FUNDRAISING_SQL =
+  `ps.research_status = 'confirmed' AND ps.source_type = 'candidate_committee'`;
+
 // ---------------------------------------------------------------------------
 // TypeScript interfaces — ported from models.go
 // ---------------------------------------------------------------------------
@@ -529,8 +547,7 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
     `SELECT COUNT(*) AS cnt
      FROM transparent_motivations.politician_sources ps
      WHERE ps.essentials_politician_id = $1
-       AND ps.source_type = 'candidate_committee'
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        AND NOT EXISTS (
          SELECT 1 FROM transparent_motivations.ingestion_runs ir
           WHERE ir.politician_source_id = ps.id
@@ -592,7 +609,7 @@ async function getAuthoritativeFecTotal(
          ON ps.external_id = t.external_id
        WHERE ps.essentials_politician_id = $1
          AND ps.source_system LIKE 'fec%'
-         AND ps.research_status = 'confirmed'
+         AND ${OWN_FUNDRAISING_SQL}
          AND t.cycle = $2`,
       [politicianId, cycle]
     );
@@ -632,7 +649,7 @@ async function getFecComposition(
          ON ps.external_id = t.external_id
        WHERE ps.essentials_politician_id = $1
          AND ps.source_system LIKE 'fec%'
-         AND ps.research_status = 'confirmed'
+         AND ${OWN_FUNDRAISING_SQL}
          AND t.cycle = $2`,
       [politicianId, cycle]
     );
@@ -682,7 +699,7 @@ async function getPacContributions(
     `SELECT COALESCE(SUM(c.amount), 0) AS total, COUNT(DISTINCT ${DONOR_NAME_SQL}) AS count
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
-     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
        AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')`,
     [politicianId, cycle]
@@ -698,7 +715,7 @@ async function getPacContributions(
             COUNT(*) AS n
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
-     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
        AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
      GROUP BY ${DONOR_NAME_SQL}
@@ -918,7 +935,7 @@ async function getSummaryFromAgg(
     `SELECT DISTINCT a.election_cycle
      FROM transparent_motivations.contribution_summary_agg a
      JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
-     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
      ORDER BY a.election_cycle DESC`,
     [politicianId]
   );
@@ -932,7 +949,7 @@ async function getSummaryFromAgg(
             a.individual_total, a.pac_total, a.confidence_min, a.sector_breakdown, a.top_donors
      FROM transparent_motivations.contribution_summary_agg a
      JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
-     WHERE ps.essentials_politician_id = $1 AND a.election_cycle = $2 AND ps.research_status = 'confirmed'`,
+     WHERE ps.essentials_politician_id = $1 AND a.election_cycle = $2 AND ${OWN_FUNDRAISING_SQL}`,
     [politicianId, effectiveCycle]
   );
   // Politician has agg for other cycles but not this one — let the live path serve it.
@@ -1066,7 +1083,7 @@ export async function getSummary(
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
      ORDER BY c.election_cycle DESC`,
     [politicianId]
   );
@@ -1138,7 +1155,7 @@ export async function getSummary(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}`,
     baseParams
   );
@@ -1166,7 +1183,7 @@ export async function getSummary(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}`,
     baseParams
   );
@@ -1202,7 +1219,7 @@ export async function getSummary(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}
      GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')
      ORDER BY total_amount DESC
@@ -1232,7 +1249,7 @@ export async function getSummary(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
      GROUP BY c.data_source
      ORDER BY COUNT(*) DESC
      LIMIT 1`,
@@ -1293,7 +1310,7 @@ async function mostRecentCycleWithData(politicianId: string): Promise<string | n
     `SELECT c.election_cycle
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
-     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
      ORDER BY c.election_cycle DESC
      LIMIT 1`,
     [politicianId]
@@ -1366,7 +1383,7 @@ export async function getContributions(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}
        ${cursorClause}
      ORDER BY c.contribution_date DESC, c.id DESC
@@ -1420,7 +1437,7 @@ export async function getContributions(
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
-       AND ps.research_status = 'confirmed'
+       AND ${OWN_FUNDRAISING_SQL}
        ${countConfidenceClause}`,
     countParams
   );
@@ -2235,7 +2252,7 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
       FROM transparent_motivations.contributions c
       JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
       JOIN donor_matches dm ON c.donor_name_normalized = dm.donor_name_normalized
-      WHERE ps.research_status = 'confirmed'
+      WHERE ${OWN_FUNDRAISING_SQL}
       GROUP BY ps.essentials_politician_id
     )
     SELECT p.id AS politician_id, p.full_name AS politician_name,

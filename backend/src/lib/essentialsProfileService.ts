@@ -7,6 +7,7 @@
  */
 
 import { pool } from './db.js';
+import { OWN_FUNDRAISING_SQL } from './campaignFinanceService.js';
 
 // ---------------------------------------------------------------------------
 // Endorsements
@@ -289,7 +290,7 @@ export async function getLegalDonorFirms(
     FROM transparent_motivations.contributions c
     JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
     WHERE ps.essentials_politician_id = $1
-      AND ps.research_status = 'confirmed'
+      AND ${OWN_FUNDRAISING_SQL}
       AND (
         lower(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')) LIKE ANY(ARRAY[
           '%attorney%', '%lawyer%', '%counsel%', '%partner%',
