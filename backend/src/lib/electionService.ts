@@ -77,6 +77,17 @@ const RACE_SELECT = `
   rc.result,
   rc.politician_id`;
 
+/**
+ * The candidates a race's ballot list shows. A `not_nominated` row (mig 1574) ran in the
+ * primary and did not become the nominee, so it is not on this race's ballot — mig 1582 took
+ * it out of every liveness COUNT but left these lists alone, and they rendered 292 primary
+ * losers as active November candidates (2026-09-24). The condition sits in the ON clause, not
+ * the WHERE, so a race whose every row is filtered still comes back (with no candidates).
+ * Withdrawn rows are kept: the client badges them.
+ */
+const BALLOT_CANDIDATE_JOIN = `LEFT JOIN essentials.race_candidates rc
+        ON rc.race_id = r.id AND rc.result IS DISTINCT FROM 'not_nominated'`;
+
 const PHOTO_LATERAL = `
   LEFT JOIN LATERAL (
     SELECT url FROM essentials.politician_images
@@ -99,7 +110,7 @@ async function fetchDistrictRaceRows(geoPairs: (GeoPair | null | undefined)[]): 
         d.district_type
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
-      LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      ${BALLOT_CANDIDATE_JOIN}
       ${PHOTO_LATERAL}
       JOIN essentials.offices o ON o.id = r.office_id
       JOIN essentials.districts d ON d.id = o.district_id
@@ -142,7 +153,7 @@ async function fetchStatewideRaceRows(state: string): Promise<ElectionRow[]> {
         NULL::text AS district_type
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
-      LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      ${BALLOT_CANDIDATE_JOIN}
       ${PHOTO_LATERAL}
       LEFT JOIN essentials.offices o ON o.id = r.office_id
       LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -174,7 +185,7 @@ async function fetchGovernmentRaceRows(governmentGeoIds: string[]): Promise<Elec
         NULL::text AS district_type
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
-      LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      ${BALLOT_CANDIDATE_JOIN}
       ${PHOTO_LATERAL}
       JOIN essentials.offices o ON o.id = r.office_id
       JOIN essentials.chambers ch ON ch.id = o.chamber_id
@@ -320,7 +331,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       d.district_type
     FROM essentials.elections e
     JOIN essentials.races r ON r.election_id = e.id
-    LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    ${BALLOT_CANDIDATE_JOIN}
     ${PHOTO_LATERAL}
     JOIN essentials.offices o ON o.id = r.office_id
     JOIN essentials.districts d ON d.id = o.district_id
