@@ -740,6 +740,47 @@ doc; this one said "Season 1" for a month after Season 2 opened.
 ⚠️ **Never hand-roll a stance INSERT**, and never copy `backend/scripts/apply-*-stances.ts` — all 149 of
 them (counted 2026-09-23) carry the pre-seasons bare-pair upsert, which fails (`23502`) or silently writes nothing.
 
+### 4c.1. After human approvals — export the ledger and audit it
+
+Under review-all (the default), `--apply` above mostly *queues* rows; a person approves each one
+afterward in the admin review queue (`resolveResearchReview`), and that is when a chair is actually
+seated. Once approvals for this batch are done — even partially; re-run this later for the rest —
+build the written ledger from what was actually approved and audit it:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a
+B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
+npx tsx scripts/export-written-ledger.ts --batch $(basename $B) --dir $B
+node scripts/audit-chair-evidence.mjs --check $B/written-$(basename $B).json
+npm run check:stance-sources
+```
+
+`export-written-ledger.ts` reads `inform.stance_research_review` (resolved rows for this batch
+only) and `$B/research.csv` — read-only, no writes — and refuses to produce an empty ledger (see
+its own header for the two distinct refusal messages: 0 resolved rows vs. 0 of them record
+evidence). If `--apply` above also auto-pushed some rows directly (`--auto-push`), it already wrote
+`$B/written-<batch>.json` itself for those; running `export-written-ledger.ts` afterward
+**overwrites** that file with the resolved-review-row ledger — run it only once approvals are the
+ledger you want audited, and re-run `verify-stance-research.ts --apply` first if you need both
+sets covered.
+
+⚠ **Statement rows never appear in this ledger, and that is correct, not a gap.** Evidence class is
+per-row (operator decision 2026-09-22): `record` evidence must name the bill, ordinance or vote
+NAMES_INSTRUMENT looks for; `statement` evidence is the person's own words, which cannot name an
+instrument by definition and goes to human review instead (see CLAUDE.md, "audit-chair-evidence
+--check runs on record rows only"). `export-written-ledger.ts` classifies each resolved row against
+`research.csv`'s `evidence_type` column and drops anything that is `statement` or unclassifiable,
+printing every drop — check that list before trusting a clean audit run; a batch of all-statement
+rows produces an empty ledger and the script refuses to write one (see above), rather than a
+silently vacuous pass.
+
+**Commit the batch directory as the ledger.** `research.csv`, `evidence.csv`, `stances.csv`,
+`gate-findings.json`, `publish-report.json` and `written-<batch>.json` are deliberately NOT
+git-ignored (`backend/.gitignore` only excludes `_*`-prefixed files, `wave*` directories,
+`*.bundle.json` and a few other scratch patterns under `data/stance-research/`) — commit the whole
+directory with an explicit pathspec once `check:stance-sources` is clean, so the audit trail lives
+in git history next to the migration or PR that relied on it.
+
 ### 4d. Push quotes to essentials.quotes — as DRAFTS
 
 Every quote is inserted with `readrank_selected=false` and its `editor_note`. **Nothing is promoted

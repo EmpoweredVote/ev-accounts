@@ -15,7 +15,14 @@
  *   --apply: pushes auto-push rows through the season-aware writeVerifiedStance
  *     (inform.politician_answers + inform.politician_context) plus
  *     inform.politician_context_evidence, and writes review / below-threshold
- *     rows to inform.stance_research_review.
+ *     rows to inform.stance_research_review. Also writes <dir>/written-<batch>.json
+ *     (scripts/lib/writtenLedger.ts) for the rows THIS run wrote, in the shape
+ *     scripts/audit-chair-evidence.mjs --check reads — export-written-ledger.ts writes the
+ *     same file for a batch's RESOLVED review rows once a person approves them (Task 7). And it
+ *     stamps essentials.politicians.last_stances_researched_at for EVERY politician in the batch
+ *     (stances.csv, resolved by name/politician_id), not only the ones pushed — a row queued for
+ *     review or scored value=null still means the person was researched (C118: a research
+ *     timestamp with zero answers is legitimate).
  *
  *   REVIEW-ALL IS THE DEFAULT. Without --auto-push, a row that passes every check
  *     goes to the review queue with reason `review-all-mode` instead of being
@@ -72,6 +79,7 @@ import {
 import { OPEN_SEASON_ANSWER_SQL } from '../src/lib/seasonService.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
 import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
+import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
 
 // ---------------------------------------------------------------- args
 function flag(name: string): boolean {
@@ -267,9 +275,12 @@ if (APPLY) {
 // D1: resolve by the bundle's politician_id first. full_name is not unique here — duplicate
 // discovery stubs and namesakes are real (e.g. three "Rachael Himsel" records existed until
 // 2026-09-22) — so a name-only join can silently write a stance onto the wrong person.
-const csvNames = [...new Set(stanceRows.map((s) => s.full_name))];
+// Every CSV name, not just scored rows: resolution here also feeds the batch's research-timestamp
+// stamp set below (C118), which covers a value=null ("insufficient evidence") row too — a
+// politician with no stance this batch was still researched.
+const csvNames = [...new Set(allStances.map((s) => s.full_name))];
 const idsByName = new Map<string, Set<string>>();
-for (const s of stanceRows) {
+for (const s of allStances) {
   if (!s.politician_id) continue;
   const set = idsByName.get(s.full_name) ?? new Set<string>();
   set.add(s.politician_id);
@@ -495,7 +506,10 @@ if (!APPLY) {
   let reviewed = 0;
   let leftDecided = 0;
   const errors: string[] = [];
-  const pushedPoliticianIds = new Set<string>();
+  // Requirement 1: written-<batch>.json in audit-chair-evidence's shape, for the rows THIS run
+  // wrote (auto-push only — a queued row is a proposal, not yet a chair; export-written-ledger.ts
+  // covers those once a person approves them).
+  const writtenLedgerRows: LedgerRow[] = [];
   // CA_0264: until it is applied the queue has nowhere to record the ladder revision; rows still
   // queue, but approval will show them as "ladder revision unknown". Say so rather than hide it.
   const ladderColumns = queued.length ? await reviewLadderColumnsExist() : true;
@@ -528,7 +542,10 @@ if (!APPLY) {
       }, c);
       const inserted = await accumulateEvidence(evRows, c);
       await c.query('COMMIT');
-      pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted; pushedPoliticianIds.add(pid);
+      pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted;
+      writtenLedgerRows.push({
+        politician_id: pid, topic_id: tid, chair_after: row.stance.value as number, season_id: openSeasonId,
+      });
       console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
     } catch (e: any) {
       await c?.query('ROLLBACK').catch(() => undefined);
@@ -574,17 +591,26 @@ if (!APPLY) {
     }
   }
 
-  if (pushedPoliticianIds.size) {
+  const ledgerPath = join(DIR, `written-${BATCH_ID}.json`);
+  writeFileSync(ledgerPath, JSON.stringify(buildLedgerFile(writtenLedgerRows), null, 2));
+  console.log(`\nwrote ${ledgerPath} (${writtenLedgerRows.length} row(s) written this run)`);
+
+  // C118: stamp EVERY politician in the batch, not just the ones this run wrote a chair for — a
+  // row queued for review, or a value=null ("insufficient evidence") row, still means the person
+  // was researched. Taken from stances.csv (csvNames/idByName, resolved above from allStances),
+  // never from what got pushed.
+  const batchPoliticianIds = politicianIdsInBatch(csvNames, idByName);
+  if (batchPoliticianIds.length) {
     await pool.query(
       `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
-      [[...pushedPoliticianIds]],
+      [batchPoliticianIds],
     );
   }
 
   console.log(
     `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
     + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
-    + `stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
+    + `stamped=${batchPoliticianIds.length} errors=${errors.length}`,
   );
   if (snippetsInserted < snippetsAttempted) {
     console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `
