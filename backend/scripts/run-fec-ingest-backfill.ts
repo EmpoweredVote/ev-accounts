@@ -47,16 +47,26 @@ async function getPending(floor: number, current: number): Promise<WorkItem[]> {
   // pairs that already have a completed run. Pilot + recency ordered.
   const r = await pool.query<WorkItem>(
     `WITH src AS (
-       SELECT ps.id, ps.essentials_politician_id, ps.source_system, ps.external_id,
+       -- One row per source. Occupancy resolves via office_current_holder (ADR 0002
+       -- phase 5); a politician-rooted join fans out when someone holds two offices,
+       -- so pick one: the seat in the source's own chamber, a held seat before a
+       -- "Candidate for" placeholder, then lowest id for determinism.
+       SELECT DISTINCT ON (ps.id)
+              ps.id, ps.essentials_politician_id, ps.source_system, ps.external_id,
               ps.research_status, ps.notes, ps.created_at, ps.updated_at,
               p.full_name, o.representing_state,
               cc.election_years
        FROM transparent_motivations.politician_sources ps
        JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
+       JOIN essentials.chambers c ON c.id = o.chamber_id
        LEFT JOIN transparent_motivations.fec_candidate_cycles cc ON cc.external_id = ps.external_id
        WHERE ps.source_system LIKE 'fec%' AND ps.research_status='confirmed' AND ps.external_id <> ''
-       GROUP BY ps.id, p.full_name, o.representing_state, cc.election_years
+       ORDER BY ps.id,
+                ((c.name LIKE 'U.S. Senate%') = (ps.source_system = 'fec_senate')) DESC,
+                (COALESCE(o.title, '') ILIKE 'Candidate for%') ASC,
+                o.id
      ),
      expanded AS (
        SELECT src.*,
