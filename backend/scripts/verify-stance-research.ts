@@ -468,107 +468,115 @@ console.log(`\nwrote ${join(DIR, 'publish-report.json')}`);
 if (!APPLY) {
   console.log('\n(dry-run — pass --apply to write answers/context/evidence and review-queue rows)');
   await pool.end();
-  process.exit(0);
-}
+  // ⚠ Do NOT process.exit() here. This runs after the fetch session above (createVerificationFetchSession /
+  // createPageFetcher), and Node's fetch keeps pooled sockets alive for a moment after the last
+  // request — exiting hard while they are closing can trip a libuv assertion on some platforms
+  // that replaces our exit code with a wrong one (`UV_HANDLE_CLOSING`, src/win/async.c). That is
+  // exactly what verify-quotes.mjs (backend/scripts/verify-quotes.mjs) hit for real on a live wave.
+  // A gate whose exit code can be overwritten at teardown is not a gate, so set exitCode and let
+  // the loop drain naturally, with an unref'd backstop so a wedged socket still cannot hang CI.
+  process.exitCode = 0;
+  setTimeout(() => process.exit(process.exitCode ?? 0), 5000).unref();
+} else {
+  console.log('\n=== --apply: writing to database ===');
+  let pushed = 0;
+  let snippetsAttempted = 0;
+  let snippetsInserted = 0;
+  let reviewed = 0;
+  let leftDecided = 0;
+  const errors: string[] = [];
+  const pushedPoliticianIds = new Set<string>();
 
-console.log('\n=== --apply: writing to database ===');
-let pushed = 0;
-let snippetsAttempted = 0;
-let snippetsInserted = 0;
-let reviewed = 0;
-let leftDecided = 0;
-const errors: string[] = [];
-const pushedPoliticianIds = new Set<string>();
-
-for (const d of bucket('auto-push')) {
-  const { row, pid, tid } = d;
-  if (!pid || !tid) {
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'topic_key not in the open season'} — skipped`);
-    continue;
-  }
-  // I6: the answer, its context and its snippets commit together or not at all. Before this, a
-  // failure after the answer write left a value with no reasoning, and nothing re-ran it.
-  const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-  // R3: pool.connect() runs INSIDE the try — a connect failure (pool exhausted, a network blip) is
-  // then a per-row error like any other; the review loop and SUMMARY below still run for the rest
-  // of the batch. Before this, `c` was assigned before the try, so a rejected connect() threw
-  // straight out of the for-loop body, uncaught, and killed the whole --apply run after however
-  // many rows had already pushed.
-  let c: PoolClient | undefined;
-  try {
-    c = await pool.connect();
-    await c.query('BEGIN');
-    await writeVerifiedStance({
-      politicianId: pid, topicId: tid, value: row.stance.value as number,
-      reasoning: row.stance.reasoning, sources: row.verifiedSources.map((s) => s.url), editorId: EDITOR_ID,
-    }, c);
-    const inserted = await accumulateEvidence(evRows, c);
-    await c.query('COMMIT');
-    pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted; pushedPoliticianIds.add(pid);
-    console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
-  } catch (e: any) {
-    await c?.query('ROLLBACK').catch(() => undefined);
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`
-      + (c ? ' — rolled back, nothing written for this row' : ' — could not open a connection, nothing written for this row'));
-  } finally {
-    c?.release();
-  }
-}
-
-for (const d of queued) {
-  const { row, pid, tid } = d;
-  try {
-    // R7: --re-researched stamps a queued row only when it is actually a re-research attempt
-    // (a below-threshold row) — NOT every queued row. Under review-all (the default) most queued
-    // rows are ordinary review rows (review-all-mode, value-change, statement-evidence, …), never
-    // re-researched at all; stamping all of them re_research_attempted=true misled the reviewer UI
-    // into showing "Re-research attempted" on a row nobody had re-researched.
-    const reResearchAttempted = RE_RESEARCHED && reasonsOf(d).includes('below-threshold');
-    const wrote = await upsertReviewRow(buildReviewRowForInsert({
-      row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
-      threshold: THRESHOLD, reResearchAttempted,
-    }));
-    if (!wrote) {
-      // I1: this batch's row for the pair was already resolved or rejected by a person.
-      leftDecided++;
-      console.log(`  LEFT ALONE ${row.stance.full_name}/${row.stance.topic_key} — already decided in the review queue`);
+  for (const d of bucket('auto-push')) {
+    const { row, pid, tid } = d;
+    if (!pid || !tid) {
+      errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'topic_key not in the open season'} — skipped`);
       continue;
     }
-    reviewed++;
-    console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}${pid ? '' : ' (unresolved_politician — NOT in the admin queue)'}`);
-    // No citations are written for a queued row (ruling 2026-09-22, R1): accumulateEvidence
-    // attaches a snippet to the pair's newest published context row, and citations render with
-    // no batch filter — so a snippet for a PROPOSED value would show under whatever stance is
-    // displayed right now, before anyone approves. The review row already stores every snippet
-    // with its verdict (buildReviewRowForInsert, above) — resolveResearchReview writes the
-    // machine-verified ones on approval.
-  } catch (e: any) {
-    errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+    // I6: the answer, its context and its snippets commit together or not at all. Before this, a
+    // failure after the answer write left a value with no reasoning, and nothing re-ran it.
+    const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
+    // R3: pool.connect() runs INSIDE the try — a connect failure (pool exhausted, a network blip) is
+    // then a per-row error like any other; the review loop and SUMMARY below still run for the rest
+    // of the batch. Before this, `c` was assigned before the try, so a rejected connect() threw
+    // straight out of the for-loop body, uncaught, and killed the whole --apply run after however
+    // many rows had already pushed.
+    let c: PoolClient | undefined;
+    try {
+      c = await pool.connect();
+      await c.query('BEGIN');
+      await writeVerifiedStance({
+        politicianId: pid, topicId: tid, value: row.stance.value as number,
+        reasoning: row.stance.reasoning, sources: row.verifiedSources.map((s) => s.url), editorId: EDITOR_ID,
+      }, c);
+      const inserted = await accumulateEvidence(evRows, c);
+      await c.query('COMMIT');
+      pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted; pushedPoliticianIds.add(pid);
+      console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
+    } catch (e: any) {
+      await c?.query('ROLLBACK').catch(() => undefined);
+      errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`
+        + (c ? ' — rolled back, nothing written for this row' : ' — could not open a connection, nothing written for this row'));
+    } finally {
+      c?.release();
+    }
   }
-}
 
-if (pushedPoliticianIds.size) {
-  await pool.query(
-    `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
-    [[...pushedPoliticianIds]],
+  for (const d of queued) {
+    const { row, pid, tid } = d;
+    try {
+      // R7: --re-researched stamps a queued row only when it is actually a re-research attempt
+      // (a below-threshold row) — NOT every queued row. Under review-all (the default) most queued
+      // rows are ordinary review rows (review-all-mode, value-change, statement-evidence, …), never
+      // re-researched at all; stamping all of them re_research_attempted=true misled the reviewer UI
+      // into showing "Re-research attempted" on a row nobody had re-researched.
+      const reResearchAttempted = RE_RESEARCHED && reasonsOf(d).includes('below-threshold');
+      const wrote = await upsertReviewRow(buildReviewRowForInsert({
+        row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
+        threshold: THRESHOLD, reResearchAttempted,
+      }));
+      if (!wrote) {
+        // I1: this batch's row for the pair was already resolved or rejected by a person.
+        leftDecided++;
+        console.log(`  LEFT ALONE ${row.stance.full_name}/${row.stance.topic_key} — already decided in the review queue`);
+        continue;
+      }
+      reviewed++;
+      console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}${pid ? '' : ' (unresolved_politician — NOT in the admin queue)'}`);
+      // No citations are written for a queued row (ruling 2026-09-22, R1): accumulateEvidence
+      // attaches a snippet to the pair's newest published context row, and citations render with
+      // no batch filter — so a snippet for a PROPOSED value would show under whatever stance is
+      // displayed right now, before anyone approves. The review row already stores every snippet
+      // with its verdict (buildReviewRowForInsert, above) — resolveResearchReview writes the
+      // machine-verified ones on approval.
+    } catch (e: any) {
+      errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+    }
+  }
+
+  if (pushedPoliticianIds.size) {
+    await pool.query(
+      `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
+      [[...pushedPoliticianIds]],
+    );
+  }
+
+  console.log(
+    `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
+    + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
+    + `stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
   );
+  if (snippetsInserted < snippetsAttempted) {
+    console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `
+      + 'politician_context_evidence (politician_id, topic_id, source_url, snippet_index) has no season column, '
+      + 'so a snippet already stored for that pair (from an earlier batch or season) was dropped as already present.');
+  }
+  if (notInAdminQueue.length) {
+    console.log(`  ${notInAdminQueue.length} row(s) saved as unresolved_politician are NOT in the admin queue — see the list above; rebuild the bundle with those people and re-run.`);
+  }
+  if (errors.length) {
+    errors.forEach((e) => console.log('  ' + e));
+    process.exitCode = 1;
+  }
+  await pool.end();
 }
-
-console.log(
-  `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
-  + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
-  + `stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
-);
-if (snippetsInserted < snippetsAttempted) {
-  console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `
-    + 'politician_context_evidence (politician_id, topic_id, source_url, snippet_index) has no season column, '
-    + 'so a snippet already stored for that pair (from an earlier batch or season) was dropped as already present.');
-}
-if (notInAdminQueue.length) {
-  console.log(`  ${notInAdminQueue.length} row(s) saved as unresolved_politician are NOT in the admin queue — see the list above; rebuild the bundle with those people and re-run.`);
-}
-if (errors.length) {
-  errors.forEach((e) => console.log('  ' + e));
-  process.exitCode = 1;
-}
-await pool.end();
