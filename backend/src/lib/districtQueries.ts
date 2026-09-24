@@ -134,6 +134,10 @@ export const GEOFENCE_DISTRICT_JOIN = `
         -- geoIdGuard.ts does NOT admit JUDICIAL, so relying on a catch-all would leave these
         -- reachable through this join but UNREACHABLE to check-address-reachability.mjs.
         OR (gb.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')
+        -- X-CA-SBOE: California Board of Equalization districts (2021 CRC map, migration CA_0205).
+        -- EXPLICIT, and kept in step with MTFCC_DISTRICT_TYPE_GUARD, whose X catch-all does not
+        -- admit STATE_BOARD.
+        OR (gb.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')
         OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id.
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
