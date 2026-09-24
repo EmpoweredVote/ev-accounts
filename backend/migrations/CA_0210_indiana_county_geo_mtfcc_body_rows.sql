@@ -56,7 +56,16 @@
 -- N" chambers) is a separate follow-up.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 by the operator (Chris Andrews). Dry run: UPDATE 9 / UPDATE 139 /
+--   DELETE 130, every gate passed, ROLLBACK; apply: same counts, COMMIT. Re-run inside BEGIN/ROLLBACK after
+--   the apply: 0 / 0 / 0, every gate passed. Live before -> after:
+--     location search "<X> County" (IN): Greene, Jackson, Lawrence, Martin, Morgan, Owen, Marion geo_id
+--       null -> their FIPS on G4020; Brown and Monroe resolved before (fallback) and still do.
+--     browse by government list: +10 council members exactly as predicted (Greene D1-4, Lawrence D1-4,
+--       Jackson D1, Morgan D4), nobody lost; skip_overlap 52 -> 70..90 per county (county officials now
+--       present).
+--     address search (Nashville / Bloomington / Indianapolis): identical officials and fields, same county.
+--   check:reachability OK (UNREACHABLE 24/24, BAD_GEOMETRY 4/4, DEAD_GEOGRAPHY 17/17).
 --
 -- ROLLBACK:
 --   UPDATE essentials.governments SET geo_id = NULL WHERE id IN (SELECT government_id FROM <ca0210_gov>);
