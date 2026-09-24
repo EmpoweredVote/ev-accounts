@@ -21,6 +21,7 @@ const row = (over: Partial<ElectionRow> = {}): ElectionRow => ({
   is_incumbent: false,
   candidate_status: 'active',
   result: null,
+  is_write_in: false,
   politician_id: null,
   ...over,
 });
@@ -34,6 +35,14 @@ describe('groupElectionRows', () => {
     expect(out).toHaveLength(1);
     expect(out[0].races).toHaveLength(1);
     expect(out[0].races[0].candidates.map((c) => c.full_name)).toEqual(['Jane Doe', 'John Roe']);
+  });
+
+  it('passes is_write_in through, and reads a NULL (no candidate columns) as false', () => {
+    const out = groupElectionRows([
+      row({ candidate_id: 'c1', is_write_in: true }),
+      row({ candidate_id: 'c2', is_write_in: null }),
+    ]);
+    expect(out[0].races[0].candidates.map((c) => c.is_write_in)).toEqual([true, false]);
   });
 
   it('deduplicates a candidate that appears in the same race twice (district + statewide overlap)', () => {

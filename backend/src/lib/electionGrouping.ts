@@ -22,6 +22,11 @@ export interface ElectionCandidate {
    * passed through so clients can render a finished race without re-querying.
    */
   result: string | null;
+  /**
+   * A registered write-in for this race (CA_0279): still standing, but not printed on the
+   * ballot. Clients badge it and leave it out of the Unopposed count. Per race, not per person.
+   */
+  is_write_in: boolean;
   politician_id: string | null;
 }
 
@@ -74,6 +79,7 @@ export interface ElectionRow {
   is_incumbent: boolean | null;
   candidate_status: string | null;
   result: string | null;
+  is_write_in: boolean | null;
   politician_id: string | null;
 }
 
@@ -208,6 +214,7 @@ export function groupElectionRows(rows: ElectionRow[]): ElectionResult[] {
         is_incumbent: row.is_incumbent ?? false,
         candidate_status: row.candidate_status ?? 'unknown',
         result: row.result ?? null,
+        is_write_in: row.is_write_in ?? false,
         politician_id: row.politician_id,
       });
     }
