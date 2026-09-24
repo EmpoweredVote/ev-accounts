@@ -538,9 +538,23 @@ cannot be cited at all — LWV terms bar reproducing it — so re-source the pos
 own materials, or drop the quote if VOTE411 is the only place it appears. Do not push a CSV with
 high-severity mechanical findings.
 
-**(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
-the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
-passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgment findings
+**(ii) Judgment pass — inline, one candidate at a time.** 🔴🔴 **Do NOT dispatch a sub-agent for
+this.** Read the **audit-quotes CHECKS.md §4 judgment prompt**
+(`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`) and apply it yourself to the
+`<csv>.bundle.json` produced above, one candidate per pass. This used to say to dispatch one
+`Agent`-tool sub-agent per candidate *or per race*; that was withdrawn on 2026-09-23 for the same
+reasons STEP 1 gives, two of which apply here without qualification:
+
+- **This is a verification pass**, and a sub-agent returning "clean" is not evidence anything was
+  checked. That failure is on the record here.
+- **"Or per race" is a batch**, and a batch hides which judgment went wrong.
+- Reason 1 applies to **one** of the checks rather than all of them, which is worth knowing: the
+  bundle is a local file, so most checks need no MCP — but `coupling-in-tension` weighs the quote
+  against the seated chair, and the authority for rung text is the **season pin**. A sub-agent
+  cannot reach it and would fall back to the frozen `inform.compass_stances`, on exactly the
+  ladders STEP 0 warns disagree with it.
+
+Produce the same JSON array of judgment findings
 (`not-forward`, `is-attack`, `off-question`, `question-override`, `deid-dishonest`,
 `note-not-self-contained`, `source-summary`, `coupling-in-tension`, `non-differentiating-goal`,
 `source-not-an-answer`, `misleading-verbatim`). Resolve them:
@@ -739,9 +753,14 @@ cd ../on-the-record/.claude/skills/audit-quotes && \
   ../../../.venv/bin/python -m scripts.audit --race <race_id> --include-drafts
 ```
 
-Then run the judgment fan-out and portfolio pass per the `audit-quotes` SKILL.md, and resolve
+Then run the judgment and portfolio pass per the `audit-quotes` SKILL.md, and resolve
 residual findings with `scripts/apply_fixes.py fixes.json` (dry-run first, show the diff, `--commit`
-only after the user OKs). Never auto-apply `decision-required` findings — list them for the user.
+only after the user OKs).
+
+⚠ **`audit-quotes` lives in the `on-the-record` repo and still describes that judgment pass as a
+fan-out.** It has not been changed by this ruling, so read it as *what* to judge, not *how* to
+dispatch it. **Run it inline, one candidate at a time**, for the reasons in 4a(ii). If that skill is
+ever updated, this caveat should go with it. Never auto-apply `decision-required` findings — list them for the user.
 A `source-unverified` finding usually means the quote is **mis-sourced** (wrong `source_url`); hunt
 the true OTR source and re-cite it rather than dropping a genuine quote.
 
