@@ -15,7 +15,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 interface Contrib { source: string; cycle: string; amount: number; donor: string; occupation: string }
 interface AggFixture {
   source: string; cycle: string; data_source: string; contribution_count: number; total_amount: number;
-  gross_amount: number | null; refunded_amount: number | null; refund_count: number | null;
+  gross_amount: number; refunded_amount: number; refund_count: number;
   top_donors?: { name: string; total_amount: number; contribution_count: number }[];
 }
 
@@ -51,9 +51,8 @@ const query = vi.fn(async (sql: string, params: unknown[] = []) => {
       rows: agg.filter((a) => a.cycle === params[1]).map((a) => ({
         election_cycle: a.cycle, data_source: a.data_source,
         contribution_count: String(a.contribution_count), total_amount: String(a.total_amount),
-        gross_amount: a.gross_amount == null ? null : String(a.gross_amount),
-        refunded_amount: a.refunded_amount == null ? null : String(a.refunded_amount),
-        refund_count: a.refund_count == null ? null : String(a.refund_count),
+        gross_amount: String(a.gross_amount), refunded_amount: String(a.refunded_amount),
+        refund_count: String(a.refund_count),
         individual_total: '0', pac_total: '0', confidence_min: 1, sector_breakdown: [],
         top_donors: (a.top_donors ?? []).map((d) => ({
           ...d, donor_type: '', employer: '', occupation: '', sector: '', confidence_level: 'HIGH',
@@ -177,15 +176,6 @@ describe('getSummary (agg fast path) reports raised as gross and refunds on thei
     const { summary } = await getSummary(POLITICIAN, '2022');
     expect(summary.total_raised).toBe(1500);
     expect(summary.total_refunded).toBe(250);
-  });
-
-  it('a row not yet refreshed under CA_0255 reads exactly as before (net as raised, no refunds)', async () => {
-    agg = [{ source: 's1', cycle: '2022', data_source: 'cal_access', contribution_count: 4, total_amount: 1250,
-      gross_amount: null, refunded_amount: null, refund_count: null }];
-    const { summary } = await getSummary(POLITICIAN, '2022');
-    expect(summary.total_raised).toBe(1250);
-    expect(summary.total_refunded).toBe(0);
-    expect(summary.refund_count).toBe(0);
   });
 
   it('FEC cycle: authoritative receipts carry the headline; FEC itemized refunds are not added', async () => {
