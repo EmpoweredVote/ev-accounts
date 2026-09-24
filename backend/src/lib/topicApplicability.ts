@@ -68,15 +68,37 @@ export function isCommunityCollegeBoard(districtLabel: string | null | undefined
 }
 
 /**
+ * THE MISFILED-SCHOOL-BOARD RULE — next to the community-college rule, for the same reason.
+ *
+ * Some K-12 boards sit on a city district (district_type LOCAL) instead of SCHOOL. On prod
+ * (2026-09-24) that is 33 Maine offices, 9 held: Portland ("Board of Public Education"),
+ * Augusta and Lewiston ("School Committee"), Westbrook ("School Board"). Left alone they would
+ * read as `local` and be researched on city topics. So a local-typed district whose office
+ * title or chamber name names a school board, school committee or board of education is level
+ * UNKNOWN (null): a person must re-type the district to SCHOOL. The probe that set this matched
+ * nothing else on COUNTY/LOCAL/LOCAL_EXEC/CITY/TOWNSHIP ("Trustee" alone is village, library or
+ * township, and is deliberately not matched).
+ */
+export const SCHOOL_BOARD_OFFICE_RE = /\bschool (board|committee)\b|\bboard of (public )?education\b/i;
+
+export function namesSchoolBoard(officeLabels: readonly (string | null | undefined)[]): boolean {
+  return officeLabels.some((l) => !!l && SCHOOL_BOARD_OFFICE_RE.test(l));
+}
+
+/**
  * Office level from the office's district. null for an unseen type — never a guess.
  *
  * `districtLabel` is essentials.districts.label. It is needed only for SCHOOL, and it is
  * required there: a SCHOOL district with no label cannot be told apart from a community
  * college, so its level is null (unknown), not 'school'. A community-college board is null too:
  * it is outside every level's topic set, and the gate reports it as unknown rather than scoring it.
+ *
+ * `officeLabels` is the office title and the chamber name(s). It is read only for local-typed
+ * districts: a school board filed on a LOCAL district is null, not 'local' (SCHOOL_BOARD_OFFICE_RE).
  */
 export function levelForDistrict(
   districtType: string | null, isJudicial: boolean | null, districtLabel: string | null,
+  officeLabels: readonly (string | null | undefined)[],
 ): Level | null {
   if (isJudicial || districtType === 'JUDICIAL') return 'judicial';
   if (!districtType) return null;
@@ -87,6 +109,6 @@ export function levelForDistrict(
     if (!districtLabel || isCommunityCollegeBoard(districtLabel)) return null;
     return 'school';
   }
-  if (LOCAL_TYPES.has(districtType)) return 'local';
+  if (LOCAL_TYPES.has(districtType)) return namesSchoolBoard(officeLabels) ? null : 'local';
   return null;
 }

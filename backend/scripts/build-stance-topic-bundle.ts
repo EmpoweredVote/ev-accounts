@@ -16,7 +16,8 @@
  * --politician level.
  * `school` (CA_0256) is a K-12 school board: its reference block lists only topics with an explicit
  * `school` role row (the eight Education Lens topics). A community-college board on a --race resolves
- * to level unknown (topicApplicability.ts, COMMUNITY_COLLEGE_LABEL_RE) — it is outside every level.
+ * to level unknown (topicApplicability.ts, COMMUNITY_COLLEGE_LABEL_RE) — it is outside every level. So
+ * does a school board filed on a LOCAL district (SCHOOL_BOARD_OFFICE_RE): re-type the district first.
  * Exit: 0 ok, 1 no open season / malformed ladder, 2 usage (including a malformed uuid).
  */
 import 'dotenv/config';
@@ -96,17 +97,20 @@ const byId = new Map<string, Pol>();
 if (RACES.length) {
   const { rows } = await pool.query(`
     SELECT DISTINCT ON (p.id) p.full_name, p.id::text AS politician_id, r.id::text AS race_id,
-           d.district_type, d.is_judicial, d.label AS district_label
+           d.district_type, d.is_judicial, d.label AS district_label,
+           o.title AS office_title, ch.name AS chamber_name, ch.name_formal AS chamber_name_formal
       FROM essentials.race_candidates rc
       JOIN essentials.races r ON r.id = rc.race_id
       JOIN essentials.offices o ON o.id = r.office_id
       LEFT JOIN essentials.districts d ON d.id = o.district_id
+      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       JOIN essentials.politicians p ON p.id = rc.politician_id
      WHERE r.id = ANY($1::uuid[])
      ORDER BY p.id, r.id`, [RACES]);
   for (const r of rows) {
     byId.set(r.politician_id, { full_name: r.full_name, politician_id: r.politician_id, race_id: r.race_id,
-      level: levelForDistrict(r.district_type, r.is_judicial, r.district_label) });
+      level: levelForDistrict(r.district_type, r.is_judicial, r.district_label,
+        [r.office_title, r.chamber_name, r.chamber_name_formal]) });
   }
   const { rows: [{ n }] } = await pool.query(
     `SELECT count(*)::int AS n FROM essentials.race_candidates

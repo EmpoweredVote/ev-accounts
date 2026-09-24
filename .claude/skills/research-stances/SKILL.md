@@ -122,7 +122,9 @@ Notes on reading the result:
   a school board. A **community-college** trustee board (district label says "Community College";
   `COMMUNITY_COLLEGE_LABEL_RE` in `backend/src/lib/topicApplicability.ts`) prints under `level unknown`.
   It is outside every level: leave it out of the batch, and do not force it to `school` or `local`.
-  A state board of education stays `state`.
+  A state board of education stays `state`. A school board filed on a city district (district_type
+  LOCAL, e.g. Portland, Augusta, Lewiston and Westbrook ME; `SCHOOL_BOARD_OFFICE_RE`) also prints under
+  `level unknown`: its district must be re-typed to SCHOOL before research. Do not research it as `local`.
 - **It resolves whichever season is open, by status — do not hard-code a season number.** Today that
   is Season 2 (60 topics). The Season 3 draft has 61 and a different pin; a run today writes into the
   open season, so the open season's rung text is the text your evidence must match.
@@ -328,27 +330,38 @@ They add to every other rule in this contract:
 - S4. The ladders do not all point the same way. Library-books chair 1 is the LEAST restrictive rung;
   AI chair 1 is the MOST restrictive. Read each ladder.
 - S5. Where one member moves nearly every item, only the named tally counts (spec §5.3).
-Per topic (state-law claims marked "to verify" in the proposal are unchecked — confirm the statute
-before you rely on it):
+Per topic. Every state-law claim below is marked "(to verify)": it comes from the proposal and has
+NOT been checked against the statute. Confirm the statute before you rely on it.
 - education-ai: most districts handle AI in administrative guidelines, not board policy (S1) — expect blanks.
 - education-charter-authorization: seat only where the member's district is an authorizer, or, for
   chair 5, where a conversion or partnership law applies. "Close existing" covers only charters this
   district authorized. Evidence: a vote on a petition, renewal, revocation or conversion. Not an
-  authorizer: blank.
+  authorizer: blank. IN school corporations are authorizers (to verify); CA limits the grounds on
+  which a district can deny a charter (to verify).
 - education-curriculum: evidence is a vote on a curriculum or materials adoption, a
   controversial-issues policy or an opt-out policy. State standards and content laws limit every rung.
+  Removed rungs (S3): IN HEA 1608 (2023, to verify) limits rungs 1-2 for sexuality content in pre-K-3;
+  CA inclusivity law (to verify) removes rung 5; a "divisive concepts" law, e.g. TX (to verify),
+  removes rung 1.
 - education-equity-programs: rungs 1-2 are removed where state law bans K-12 DEI offices or mandatory
-  training (S3). Subgroup reporting is federally required, so reporting alone is not chair-3 evidence.
-- education-gender-identity: record the state rule first. CA (AB 1955) removes rungs 3-5; IN (HEA 1608)
-  removes rungs 1-2. A vote to implement the state rule is not evidence (S2). Expect mostly blanks in CA and IN.
+  training (S3). IN's 2025 anti-DEI law (to verify): whether it covers school corporations is unknown.
+  Subgroup reporting is federally required, so reporting alone is not chair-3 evidence.
+- education-gender-identity: record the state rule first. CA AB 1955 (2024, to verify) removes rungs
+  3-5. IN HEA 1608 (2023, to verify) requires parental notification, so it removes rungs 1-2; if that
+  statute has NO danger exception (to verify), it removes rung 3 as well, rung 4 is IN's floor, and
+  only rung 5 is a board choice. A vote to implement the state rule is not evidence (S2). Expect mostly
+  blanks in CA and IN.
 - education-library-books: evidence is a vote on the terms of the reconsideration policy, or on one
-  challenge or appeal. A vote to adopt a state-required procedure is not evidence (S2). In IN (HEA 1447)
-  rung 1 cannot be absolute for harmful-to-minors material.
+  challenge or appeal. A vote to adopt a state-required procedure is not evidence (S2). IN HEA 1447
+  (2023, to verify) requires a removal procedure, so rung 1 cannot be absolute for harmful-to-minors
+  material; UT and TX (to verify) may do the same.
 - education-school-budget: a vote to put a referendum on the ballot is rung-1 evidence; a routine
-  maximum-levy advertisement is not. In a fiscally dependent district, rungs 1 and 5 are positions on
-  the budget request — seat them on the member's vote on the request.
+  maximum-levy advertisement is not (IN practice, to verify). In a fiscally dependent district (VA, MA,
+  to verify), rungs 1 and 5 are positions on the budget request — seat them on the member's vote on
+  the request.
 - education-school-police: evidence is a vote on an SRO contract or MOU, a district police budget, or
-  creating or ending one. Where a state mandates campus officers, rungs 1-2 are removed (S3).
+  creating or ending one. Where a state mandates campus officers, e.g. TX (to verify), rungs 1-2 are
+  removed (S3).
 - school-vouchers is not asked of a school board (no board holds a lever on any rung). It is not in
   this reference; do not add it.
 
