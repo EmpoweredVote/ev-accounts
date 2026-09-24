@@ -2570,7 +2570,9 @@ export function refreshNotice(outcome: RefreshOutcome, insertedBoundaries: numbe
     '  nightly `child→county mapping` job will fail (it is schedule-only, so you may not',
     '  hear about it for a day). Run it yourself — as postgres, which owns the matview:',
     `\n  ${MANUAL_REFRESH}`,
-    '\n  ~17 s. Then confirm with:',
+    // Measured on prod 2026-09-24: 30,797 ms. Migration 1696's "~17 s" is stale, and quoting it
+    // is what makes ev_api's 30 s statement_timeout look like comfortable headroom.
+    '\n  ~31 s. Then confirm with:',
     '    npm run check:child-county   -> expect "stale 0"',
   ];
 }
@@ -2589,13 +2591,27 @@ export function refreshNotice(outcome: RefreshOutcome, insertedBoundaries: numbe
  * Opens its own connection: main() closes the loader's client in a `finally` before the summary is
  * printed, and the refresh belongs after the summary where its result is the last thing on screen.
  */
-async function refreshChildCountyMapping(): Promise<RefreshOutcome> {
+export async function refreshChildCountyMapping(): Promise<RefreshOutcome> {
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
   });
   try {
     await client.connect();
+
+    // 🔴 WITHOUT THIS THE CALL ALWAYS TIMES OUT, AND IT IS NOT CLOSE. Measured on prod 2026-09-24:
+    //    `ev_api` carries statement_timeout = 30s, and the refresh takes ~31 s (30,797 ms). The
+    //    first live run failed with "canceling statement due to statement timeout" — the loader
+    //    would have printed its ACTION REQUIRED fallback after every load, for ever, and the
+    //    feature would have looked implemented while doing nothing.
+    //
+    // ⚠⚠ PUTTING THE SET ON THE FUNCTION DOES NOT WORK — measured, do not "tidy" it there. A
+    //    function-level `SET statement_timeout` is applied when the function starts, but the
+    //    timeout timer was already armed when the STATEMENT started, and changing the GUC does not
+    //    reschedule it. Two probe functions, one with the SET and one without, both died at
+    //    exactly 30 s. The timeout has to be raised on the connection, before the call.
+    await client.query("SET statement_timeout = '600s'");
+
     const { rows } = await client.query(
       'SELECT stale_before, stale_after FROM essentials.refresh_geofence_child_county()',
     );
