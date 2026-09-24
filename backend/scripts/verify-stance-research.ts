@@ -66,6 +66,7 @@ import {
   buildReviewRowForInsert,
   accumulateEvidence,
   upsertReviewRow,
+  reviewLadderColumnsExist,
   writeVerifiedStance,
 } from '../src/lib/researchEvidenceService.js';
 import { OPEN_SEASON_ANSWER_SQL } from '../src/lib/seasonService.js';
@@ -330,8 +331,8 @@ for (const name of csvNames) {
 
 // 🔴 The open season's question set — not is_live. A stance can only be written to a
 // question the open season asks; is_live and the season's set disagreed on 2026-09-22.
-const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string; topic_revision_id: string }>(
-  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id
+const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string; topic_revision_id: string; season_id: string }>(
+  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id, sq.season_id::text AS season_id
      FROM inform.season_questions sq
      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
      JOIN inform.compass_topics t ON t.id = sq.topic_id`,
@@ -343,6 +344,9 @@ if (topicRows.length === 0) {
   await pool.end();
   process.exit(2);
 }
+// One open season (seasons_one_open), so every row carries the same season_id. Stored on each
+// queued row with the bundle's revision (CA_0264), so approval can refuse a row re-pinned later.
+const openSeasonId = topicRows[0].season_id;
 
 // ---------------------------------------------------------------- the ladder must still be the pin (I7)
 // A value is an answer to one ladder's wording. If the open season re-pinned a topic (or dropped
@@ -486,6 +490,13 @@ if (!APPLY) {
   let leftDecided = 0;
   const errors: string[] = [];
   const pushedPoliticianIds = new Set<string>();
+  // CA_0264: until it is applied the queue has nowhere to record the ladder revision; rows still
+  // queue, but approval will show them as "ladder revision unknown". Say so rather than hide it.
+  const ladderColumns = queued.length ? await reviewLadderColumnsExist() : true;
+  if (!ladderColumns) {
+    console.warn('WARN: inform.stance_research_review has no topic_revision_id/season_id yet (CA_0264 not applied) — '
+      + `${queued.length} queued row(s) will not record their ladder revision; the review page will show them as "ladder revision unknown"`);
+  }
 
   for (const d of bucket('auto-push')) {
     const { row, pid, tid } = d;
@@ -534,7 +545,10 @@ if (!APPLY) {
       const wrote = await upsertReviewRow(buildReviewRowForInsert({
         row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
         threshold: THRESHOLD, reResearchAttempted,
-      }));
+        // The bundle's revision — equal to the open pin here, since the I7 check above exits on drift.
+        topicRevisionId: bundleRevisionByKey.get(normTopic(row.stance.topic_key)) ?? null,
+        seasonId: openSeasonId,
+      }), { ladderColumns });
       if (!wrote) {
         // I1: this batch's row for the pair was already resolved or rejected by a person.
         leftDecided++;

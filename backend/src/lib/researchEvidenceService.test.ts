@@ -141,11 +141,12 @@ describe('upsertReviewRow', () => {
     batch_id: 'b', politician_id: 'p', full_name_raw: 'Jane Doe', topic_id: 't', topic_key: 'healthcare',
     proposed_value: 2, proposed_reasoning: 'r', evidence: [], verified_source_count: 1, threshold: 1,
     status: 'pending' as const, re_research_attempted: false,
+    topic_revision_id: 'rev-a', season_id: 'season-2',
   };
   it('updates only rows still undecided — the ON CONFLICT DO UPDATE carries a status guard', async () => {
     const { upsertReviewRow } = await import('./researchEvidenceService.js');
     mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
-    await upsertReviewRow(reviewInsert);
+    await upsertReviewRow(reviewInsert, { ladderColumns: true });
     const sql = String(mockQuery.mock.calls[0][0]);
     const guard = /WHERE\s+inform\.stance_research_review\.status\s+IN\s*\(\s*'pending'\s*,\s*'unresolved_politician'\s*\)/;
     expect(sql).toMatch(guard);
@@ -154,8 +155,65 @@ describe('upsertReviewRow', () => {
   it('reports whether it wrote: false when the existing row was already decided', async () => {
     const { upsertReviewRow } = await import('./researchEvidenceService.js');
     mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 }).mockResolvedValueOnce({ rows: [], rowCount: 0 });
-    expect(await upsertReviewRow(reviewInsert)).toBe(true);
-    expect(await upsertReviewRow(reviewInsert)).toBe(false);
+    expect(await upsertReviewRow(reviewInsert, { ladderColumns: true })).toBe(true);
+    expect(await upsertReviewRow(reviewInsert, { ladderColumns: true })).toBe(false);
+  });
+
+  // CA_0264: the row remembers the ladder it was researched against — and a re-run refreshes it.
+  it('writes topic_revision_id + season_id (insert and refresh) when the CA_0264 columns exist', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(reviewInsert, { ladderColumns: true });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(String(sql)).toMatch(/re_research_attempted,\s*topic_revision_id, season_id\)/);
+    expect(String(sql)).toContain('$13, $14');
+    expect(String(sql)).toContain('topic_revision_id = EXCLUDED.topic_revision_id');
+    expect(String(sql)).toContain('season_id = EXCLUDED.season_id');
+    expect((params as unknown[]).slice(12)).toEqual(['rev-a', 'season-2']);
+  });
+  it('omits them — the pre-CA_0264 INSERT, unchanged — when the columns do not exist yet', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(reviewInsert, { ladderColumns: false });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(String(sql)).not.toContain('topic_revision_id');
+    expect(String(sql)).not.toContain('season_id');
+    expect(params).toHaveLength(12);
+  });
+  it('probes information_schema for the columns once, when the caller does not say', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ n: '2' }] })       // probe
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 })    // upsert 1
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 });   // upsert 2 (probe cached)
+    await upsertReviewRow(reviewInsert);
+    await upsertReviewRow(reviewInsert);
+    const sqls = mockQuery.mock.calls.map((c: any[]) => String(c[0]));
+    expect(sqls.filter((q) => q.includes('information_schema.columns'))).toHaveLength(1);
+    expect(sqls[1]).toContain('topic_revision_id');
+    expect(sqls[2]).toContain('topic_revision_id');
+  });
+});
+
+describe('buildReviewRowForInsert — ladder revision (CA_0264)', () => {
+  it('carries the bundle revision and the open season; null when not given', () => {
+    const base = { row: exampleRow, politicianId: 'p', topicId: 't', batchId: 'b', threshold: 1, reResearchAttempted: false };
+    expect(buildReviewRowForInsert({ ...base, topicRevisionId: 'rev-a', seasonId: 's2' }))
+      .toMatchObject({ topic_revision_id: 'rev-a', season_id: 's2' });
+    expect(buildReviewRowForInsert(base)).toMatchObject({ topic_revision_id: null, season_id: null });
+  });
+});
+
+describe('ladderState', () => {
+  it.each([
+    ['rev-a', 'rev-a', false, false],
+    ['rev-a', 'rev-b', false, true],
+    ['rev-a', null, false, true],       // the open season no longer asks the topic
+    [null, 'rev-b', true, false],       // legacy row: unknown, not "changed"
+    [null, null, true, false],
+  ])('row %j vs open pin %j → unknown=%j changed=%j', async (rowRev, openRev, unknown, changed) => {
+    const { ladderState } = await import('./researchEvidenceService.js');
+    expect(ladderState(rowRev, openRev)).toMatchObject({ ladderRevisionUnknown: unknown, ladderChanged: changed });
   });
 });
 
@@ -170,6 +228,8 @@ describe('review reads carry the open-season current value', () => {
     for (const [sql] of mockQuery.mock.calls) {
       expect(String(sql)).toContain('@zero-scope: counts-blanks');
       expect(String(sql)).toMatch(/inform\.politician_answers[\s\S]*s\.status = 'open'/);
+      // CA_0264: the open season's current pin for the topic, beside the row's own revision.
+      expect(String(sql)).toMatch(/inform\.season_questions[\s\S]*s\.status = 'open'[\s\S]*AS open_topic_revision_id/);
     }
   });
   it.each([
@@ -347,6 +407,44 @@ describe('resolveResearchReview — citations written on approval, not at queue 
       message: 'valueOverride must be an integer 1-5',
     });
     expect(mockConnect).not.toHaveBeenCalled();
+  });
+
+  // CA_0264: approval refuses a row whose ladder was re-pinned after it was researched.
+  describe('ladder revision check', () => {
+    it('approves a row whose revision matches the open pin, and reports it as known', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, topic_revision_id: 'rev-a', open_topic_revision_id: 'rev-a' }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).resolves.toEqual({ ladderRevisionUnknown: false });
+      expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
+    });
+    it('refuses (CONFLICT) a row whose revision differs from the open pin, before writing', async () => {
+      const { resolveResearchReview, LADDER_CHANGED_MESSAGE } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, topic_revision_id: 'rev-a', open_topic_revision_id: 'rev-b' }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({
+        code: 'CONFLICT',
+        message: 'the ladder changed since this row was researched — re-research it',
+      });
+      expect(LADDER_CHANGED_MESSAGE).toBe('the ladder changed since this row was researched — re-research it');
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+    it('refuses (CONFLICT) a known revision when the open season no longer asks the topic', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, topic_revision_id: 'rev-a', open_topic_revision_id: null }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'CONFLICT' });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+    it('allows a legacy row (revision NULL) and flags it as ladder revision unknown', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, topic_revision_id: null, open_topic_revision_id: 'rev-b' }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).resolves.toEqual({ ladderRevisionUnknown: true });
+      expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
+    });
+    it('treats a row read before CA_0264 is applied (no column at all) as a legacy row', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      // `r.*` simply has no topic_revision_id key before the migration.
+      mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, open_topic_revision_id: 'rev-b' }] });
+      await expect(resolveResearchReview('rev-1', 'editor-1')).resolves.toEqual({ ladderRevisionUnknown: true });
+    });
   });
 
   // M10: only a pending row can be approved.

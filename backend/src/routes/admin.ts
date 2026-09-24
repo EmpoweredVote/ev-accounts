@@ -1326,12 +1326,15 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
       res.status(400).json({ error: 'reasoningOverride must be a string' });
       return;
     }
-    await resolveResearchReview(req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
-    res.json({ ok: true });
+    const { ladderRevisionUnknown } = await resolveResearchReview(
+      req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
+    // ladderRevisionUnknown: a legacy row (queued before CA_0264), approved without a ladder check.
+    res.json({ ok: true, ladderRevisionUnknown });
   } catch (err: any) {
     if (err.code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
     if (err.code === 'INCOMPLETE') { res.status(422).json({ error: err.message }); return; }
     // Not pending: already resolved/rejected (or unresolved_politician) — never re-approved.
+    // Or the ladder was re-pinned since the row was researched (CA_0264) — re-research it.
     if (err.code === 'CONFLICT') { res.status(409).json({ error: err.message }); return; }
     console.error('[admin/research-review/:id/resolve] error:', err);
     res.status(500).json({ error: 'Internal server error' });

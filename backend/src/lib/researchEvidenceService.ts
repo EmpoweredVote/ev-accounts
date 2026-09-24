@@ -30,6 +30,13 @@ export interface ReviewInsertRow {
   threshold: number;
   status: 'pending' | 'unresolved_politician';
   re_research_attempted: boolean;
+  /**
+   * The ladder revision (bundle topics.json topic_revision_id) this row was researched against,
+   * and the season open at queue time (CA_0264). null = not known — approval then allows the row
+   * but flags it as "ladder revision unknown".
+   */
+  topic_revision_id: string | null;
+  season_id: string | null;
 }
 
 export function buildEvidenceRowsForInsert(args: {
@@ -79,6 +86,10 @@ export function buildReviewRowForInsert(args: {
   batchId: string;
   threshold: number;
   reResearchAttempted: boolean;
+  /** The bundle's topic_revision_id for this row's topic (topics.json). */
+  topicRevisionId?: string | null;
+  /** The open season's id at queue time. */
+  seasonId?: string | null;
 }): ReviewInsertRow {
   return {
     batch_id: args.batchId,
@@ -93,6 +104,8 @@ export function buildReviewRowForInsert(args: {
     threshold: args.threshold,
     status: args.politicianId === null ? 'unresolved_politician' : 'pending',
     re_research_attempted: args.reResearchAttempted,
+    topic_revision_id: args.topicRevisionId ?? null,
+    season_id: args.seasonId ?? null,
   };
 }
 
@@ -168,7 +181,26 @@ export interface ResearchReviewRow {
    * A 0 is an editor's blank and is returned as 0, not hidden (see CURRENT_VALUE_SQL).
    */
   currentValue: number | null;
+  /** The ladder revision the row was researched against (CA_0264). null = unknown (legacy row). */
+  topicRevisionId: string | null;
+  /** The season open when the row was queued (CA_0264). null = unknown (legacy row). */
+  seasonId: string | null;
+  /** The open season's CURRENT pin for this topic. null = no open season, or it no longer asks the topic. */
+  openTopicRevisionId: string | null;
+  /**
+   * true = the row was queued before CA_0264 stored a revision, so nobody can say which ladder it
+   * answers. Approval is allowed; the page says "ladder revision unknown (queued before 2026-09-24)".
+   */
+  ladderRevisionUnknown: boolean;
+  /**
+   * true = the row's revision is known and is NOT the open season's current pin. Approval refuses
+   * it (CONFLICT): the value answers a sentence the open season no longer asks.
+   */
+  ladderChanged: boolean;
 }
+
+/** The refusal message for a row whose ladder was re-pinned after it was researched. */
+export const LADDER_CHANGED_MESSAGE = 'the ladder changed since this row was researched — re-research it';
 
 /**
  * The (politician, topic) pair's stored value in the open season, as a scalar subselect on
@@ -181,6 +213,22 @@ const CURRENT_VALUE_SQL = `
      FROM inform.politician_answers a
      JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'
     WHERE a.politician_id = r.politician_id AND a.topic_id = r.topic_id) AS current_value`;
+
+/**
+ * The open season's CURRENT pin for the row's topic, as a scalar subselect on `r`. At most one
+ * row: one open season, and season_questions' PRIMARY KEY (season_id, topic_id).
+ *
+ * Deliberately names NO CA_0264 column: the row's own topic_revision_id / season_id come through
+ * `r.*`, so these reads work unchanged before that migration is applied (they read as undefined,
+ * mapped to null = "unknown").
+ */
+const OPEN_PIN_SQL = `
+  (SELECT sq.topic_revision_id::text
+     FROM inform.season_questions sq
+     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+    WHERE sq.topic_id = r.topic_id) AS open_topic_revision_id`;
+
+const nullable = (v: unknown): string | null => (v === null || v === undefined ? null : String(v));
 
 function mapReviewRow(row: any): ResearchReviewRow {
   return {
@@ -200,13 +248,30 @@ function mapReviewRow(row: any): ResearchReviewRow {
     createdAt: row.created_at,
     // numeric comes back from pg as a string.
     currentValue: row.current_value === null || row.current_value === undefined ? null : Number(row.current_value),
+    ...ladderState(nullable(row.topic_revision_id), nullable(row.open_topic_revision_id)),
+    seasonId: nullable(row.season_id),
+  };
+}
+
+/**
+ * The row's ladder against the open season's pin. Pure, so the three cases are testable alone:
+ *   known + equal     → approvable;
+ *   known + different → ladderChanged (includes "the open season no longer asks this topic");
+ *   unknown (null)    → ladderRevisionUnknown, approvable with the flag shown.
+ */
+export function ladderState(topicRevisionId: string | null, openTopicRevisionId: string | null) {
+  return {
+    topicRevisionId,
+    openTopicRevisionId,
+    ladderRevisionUnknown: topicRevisionId === null,
+    ladderChanged: topicRevisionId !== null && topicRevisionId !== openTopicRevisionId,
   };
 }
 
 export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> {
   const { pool } = await import('./db.js');
   const { rows } = await pool.query(
-    `SELECT r.*, ${CURRENT_VALUE_SQL}
+    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}
        FROM inform.stance_research_review r
       WHERE r.status = 'pending'
       ORDER BY r.full_name_raw, r.topic_key`,
@@ -217,7 +282,7 @@ export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> 
 export async function getResearchReviewById(id: string): Promise<ResearchReviewRow | null> {
   const { pool } = await import('./db.js');
   const { rows } = await pool.query(
-    `SELECT r.*, ${CURRENT_VALUE_SQL}
+    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}
        FROM inform.stance_research_review r
       WHERE r.id = $1`,
     [id],
@@ -287,6 +352,11 @@ function cleanHumanVerifiedUrls(urls: string[]): string[] {
  * The stance write, both evidence writes and the status UPDATE run in ONE transaction on one
  * client (I6): either the row is approved with its value, reasoning and citations, or nothing is
  * written and it stays pending.
+ *
+ * Also refuses (CONFLICT → 409, LADDER_CHANGED_MESSAGE) a row whose stored ladder revision is known
+ * and is not the open season's current pin for the topic (CA_0264): the proposed value answers a
+ * sentence the open season no longer asks. A legacy row (revision NULL, queued before CA_0264) is
+ * allowed, and the result says so (`ladderRevisionUnknown`) so the caller can show it.
  */
 export async function resolveResearchReview(
   id: string,
@@ -294,7 +364,7 @@ export async function resolveResearchReview(
   humanVerifiedUrls: string[] = [],
   valueOverride?: number | null,
   reasoningOverride?: string,
-): Promise<void> {
+): Promise<{ ladderRevisionUnknown: boolean }> {
   // Lazy, for the same reason as accumulateEvidence above: a static import of
   // seasonService drags db.js in before the test mock is installed.
   const { pool } = await import('./db.js');
@@ -305,6 +375,9 @@ export async function resolveResearchReview(
     throw Object.assign(
       new Error(`Review row is ${row.status}, not pending — only a pending row can be approved`),
       { code: 'CONFLICT' });
+  }
+  if (row.ladderChanged) {
+    throw Object.assign(new Error(LADDER_CHANGED_MESSAGE), { code: 'CONFLICT' });
   }
 
   // Same defence-in-depth reasoning as cleanHumanVerifiedUrls above: the route already rejects a
@@ -396,6 +469,7 @@ export async function resolveResearchReview(
   } finally {
     client.release();
   }
+  return { ladderRevisionUnknown: row.ladderRevisionUnknown };
 }
 
 export async function rejectResearchReview(id: string, resolvedBy: string, notes?: string): Promise<void> {
@@ -408,6 +482,27 @@ export async function rejectResearchReview(id: string, resolvedBy: string, notes
   );
 }
 
+let ladderColumnsProbe: Promise<boolean> | null = null;
+
+/**
+ * Whether inform.stance_research_review carries CA_0264's topic_revision_id + season_id. Probed
+ * once per process and cached. Until CA_0264 is applied the queue write omits them (the row is
+ * then a legacy "ladder revision unknown" row) instead of failing every INSERT — the caller
+ * (verify-stance-research.ts) prints a WARN when this is false.
+ */
+export function reviewLadderColumnsExist(): Promise<boolean> {
+  ladderColumnsProbe ??= (async () => {
+    const { pool } = await import('./db.js');
+    const { rows } = await pool.query<{ n: string }>(
+      `SELECT count(*)::text AS n FROM information_schema.columns
+        WHERE table_schema = 'inform' AND table_name = 'stance_research_review'
+          AND column_name IN ('topic_revision_id', 'season_id')`,
+    );
+    return Number(rows[0]?.n ?? 0) === 2;
+  })();
+  return ladderColumnsProbe;
+}
+
 /**
  * Idempotent upsert into the review queue keyed on (batch_id, politician_id-or-name, topic_key).
  *
@@ -415,17 +510,28 @@ export async function rejectResearchReview(id: string, resolvedBy: string, notes
  * that guard, re-running a batch reset a row a person had already rejected or resolved back to
  * `pending` (it copies EXCLUDED.status) — resurrecting a decision (I1).
  *
+ * Writes the row's ladder revision + queue-time season (CA_0264) when those columns exist; a
+ * re-run refreshes them on an undecided row, like every other research field. Pass
+ * `opts.ladderColumns` to skip the probe (the verifier probes once and warns).
+ *
  * Returns true when a row was inserted or updated, false when the existing row was already
  * decided and was left alone.
  */
-export async function upsertReviewRow(row: ReviewInsertRow): Promise<boolean> {
+export async function upsertReviewRow(row: ReviewInsertRow, opts: { ladderColumns?: boolean } = {}): Promise<boolean> {
   const { pool } = await import('./db.js');
+  const ladder = opts.ladderColumns ?? await reviewLadderColumnsExist();
+  const params: unknown[] = [
+    row.batch_id, row.politician_id, row.full_name_raw, row.topic_id, row.topic_key,
+    row.proposed_value, row.proposed_reasoning, JSON.stringify(row.evidence),
+    row.verified_source_count, row.threshold, row.status, row.re_research_attempted,
+  ];
+  if (ladder) params.push(row.topic_revision_id, row.season_id);
   const res = await pool.query(
     `INSERT INTO inform.stance_research_review
        (batch_id, politician_id, full_name_raw, topic_id, topic_key,
         proposed_value, proposed_reasoning, evidence,
-        verified_source_count, threshold, status, re_research_attempted)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, $11, $12)
+        verified_source_count, threshold, status, re_research_attempted${ladder ? ',\n        topic_revision_id, season_id' : ''})
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, $11, $12${ladder ? ', $13, $14' : ''})
      ON CONFLICT (batch_id, COALESCE(politician_id::text, full_name_raw), topic_key)
      DO UPDATE SET
        proposed_value = EXCLUDED.proposed_value,
@@ -434,13 +540,11 @@ export async function upsertReviewRow(row: ReviewInsertRow): Promise<boolean> {
        verified_source_count = EXCLUDED.verified_source_count,
        threshold = EXCLUDED.threshold,
        status = EXCLUDED.status,
-       re_research_attempted = EXCLUDED.re_research_attempted
+       re_research_attempted = EXCLUDED.re_research_attempted${ladder ? `,
+       topic_revision_id = EXCLUDED.topic_revision_id,
+       season_id = EXCLUDED.season_id` : ''}
      WHERE inform.stance_research_review.status IN ('pending', 'unresolved_politician')`,
-    [
-      row.batch_id, row.politician_id, row.full_name_raw, row.topic_id, row.topic_key,
-      row.proposed_value, row.proposed_reasoning, JSON.stringify(row.evidence),
-      row.verified_source_count, row.threshold, row.status, row.re_research_attempted,
-    ],
+    params,
   );
   return (res.rowCount ?? 0) > 0;
 }

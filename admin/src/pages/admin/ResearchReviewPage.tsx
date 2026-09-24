@@ -31,6 +31,14 @@ interface ResearchReviewRow {
   createdAt: string;
   /** The pair's value in the OPEN season — what approving replaces. 0 = an editor's blank; null = none. */
   currentValue: number | null;
+  /** The ladder revision the row was researched against (CA_0264). null = unknown (legacy row). */
+  topicRevisionId: string | null;
+  /** The open season's current pin for this topic. null = the open season does not ask it. */
+  openTopicRevisionId: string | null;
+  /** Queued before CA_0264 recorded a revision — approvable, but nobody checked which ladder it answers. */
+  ladderRevisionUnknown: boolean;
+  /** Known revision that is not the open pin — the server refuses approval (409). */
+  ladderChanged: boolean;
 }
 
 export function ResearchReviewPage() {
@@ -139,7 +147,9 @@ export function ResearchReviewPage() {
   // this only saves a round trip.
   const numericValue = Number(editValue);
   const isValidValue = editValue !== '' && Number.isInteger(numericValue) && numericValue >= 1 && numericValue <= 5;
-  const canApprove = !!row.politicianId && !!row.topicId && isValidValue && hasSource;
+  // A row researched against a ladder the open season no longer pins is refused by the server
+  // (409); this only saves the round trip.
+  const canApprove = !!row.politicianId && !!row.topicId && !row.ladderChanged && isValidValue && hasSource;
   const totalVerified = humanVerified.size;
   const meetsThreshold = totalVerified >= row.threshold;
   const currentValueText =
@@ -166,7 +176,23 @@ export function ResearchReviewPage() {
         </div>
       )}
 
-      {!canApprove && (
+      {row.ladderChanged && (
+        <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 rounded-md text-sm">
+          The ladder changed since this row was researched — re-research it. Researched against revision{' '}
+          <code className="text-xs">{row.topicRevisionId}</code>; the open season{' '}
+          {row.openTopicRevisionId
+            ? <>now pins <code className="text-xs">{row.openTopicRevisionId}</code>.</>
+            : 'no longer asks this topic.'}
+        </div>
+      )}
+
+      {row.ladderRevisionUnknown && (
+        <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300 rounded-md text-sm">
+          Ladder revision unknown (queued before 2026-09-24). Check the value against the ladder the open season asks now.
+        </div>
+      )}
+
+      {!canApprove && !row.ladderChanged && (
         <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300 rounded-md text-sm">
           {!row.politicianId
             ? 'Politician could not be matched to a DB record — approve is disabled.'

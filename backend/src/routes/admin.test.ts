@@ -34,7 +34,7 @@ vi.mock('../lib/federalCoverage.js', () => ({
 // Only resolveResearchReview is exercised below (task 13, R1 — approval input validation); the
 // other three are mocked only because admin.ts imports them from the same module.
 const { mockResolveResearchReview } = vi.hoisted(() => ({
-  mockResolveResearchReview: vi.fn().mockResolvedValue(undefined),
+  mockResolveResearchReview: vi.fn().mockResolvedValue({ ladderRevisionUnknown: false }),
 }));
 vi.mock('../lib/researchEvidenceService.js', () => ({
   listPendingResearchReview: vi.fn(),
@@ -237,5 +237,20 @@ describe('POST /api/admin/research-review/:id/resolve — approval input validat
     expect(call[2]).toEqual(['https://a.example']);
     expect(call[3]).toBe(3);
     expect(call[4]).toBe('why');
+  });
+
+  // CA_0264: the ladder check's two outcomes, as the page receives them.
+  it('returns ladderRevisionUnknown so the page can flag a legacy row', async () => {
+    mockResolveResearchReview.mockResolvedValueOnce({ ladderRevisionUnknown: true });
+    const res = await request(app).post('/api/admin/research-review/rev-1/resolve').send({});
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true, ladderRevisionUnknown: true });
+  });
+  it('409 with the service message when the ladder changed since the row was researched', async () => {
+    mockResolveResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('the ladder changed since this row was researched — re-research it'), { code: 'CONFLICT' }));
+    const res = await request(app).post('/api/admin/research-review/rev-1/resolve').send({});
+    expect(res.status).toBe(409);
+    expect(res.body.error).toBe('the ladder changed since this row was researched — re-research it');
   });
 });
