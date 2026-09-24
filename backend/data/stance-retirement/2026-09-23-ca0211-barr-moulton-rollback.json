@@ -1,0 +1,19 @@
+{
+  "migration": "CA_0211",
+  "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+  "applied_at": "2026-09-23",
+  "note": "All 11 rows are fresh Season 2 INSERTs (no pre-image existed). Rollback = DELETE these 11 (politician_id, topic_id, season_id) rows from inform.politician_answers and inform.politician_context.",
+  "rows": [
+    { "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d", "who": "Andy Barr", "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f", "topic_key": "abortion", "chair_after": 4 },
+    { "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d", "who": "Andy Barr", "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762", "topic_key": "civil-rights", "chair_after": 5 },
+    { "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d", "who": "Andy Barr", "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570", "topic_key": "fossil-fuels", "chair_after": 4 },
+    { "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d", "who": "Andy Barr", "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd", "topic_key": "religious-freedom", "chair_after": 4 },
+    { "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d", "who": "Andy Barr", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "topic_key": "taxes", "chair_after": 5 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f", "topic_key": "abortion", "chair_after": 1 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac", "topic_key": "deportation", "chair_after": 2 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570", "topic_key": "fossil-fuels", "chair_after": 2 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de", "topic_key": "school-vouchers", "chair_after": 1 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab", "topic_key": "social-security", "chair_after": 1 },
+    { "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0", "who": "Seth Moulton", "topic_id": "683c8084-2281-4920-a07c-18439b2dd413", "topic_key": "tariffs", "chair_after": 2 }
+  ]
+}

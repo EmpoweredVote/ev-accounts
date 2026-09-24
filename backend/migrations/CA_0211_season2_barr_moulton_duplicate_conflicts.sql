@@ -190,13 +190,30 @@
 --                                         instrument seeks a tariff to protect a specific American industry).
 --
 -- No migration runner exists; this file records SQL applied by hand. Pure DML.
--- STATUS: NOT YET APPLIED. Dry-run (BEGIN ... ROLLBACK) to be run against prod before any apply; operator approval
---   required first (Chris Andrews).
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, "I give permission to run the dry run and
+--   then the prod"). Before the apply: dry run x2 (BEGIN ... ROLLBACK) -- the first caught a real bug (an ambiguous
+--   `s1_seated`/`s1_dup` column reference where the pre-flight joined `_ca0211_rows` and `_ca0211_target` together;
+--   fixed by reading both columns from `_ca0211_target` alone, which already carries them via `r.*`) and the second,
+--   after the fix, ran the write body twice in one transaction (with the temp objects dropped and recreated between
+--   runs, since real-table writes persist uncommitted across that boundary) to prove the second run hits the 'done'
+--   branch and writes 0/0 rows. A positive control -- an UPDATE against a Season 1 context row -- was refused by the
+--   database's own `inform.closed_season_is_immutable()` trigger before it ever reached this file's own fingerprint
+--   check, confirming Season 1 immutability is enforced two layers deep. After the real apply: a real re-run (BEGIN
+--   ... COMMIT) confirmed genuine idempotency against live data (0/0 rows, all gates green); `audit-chair-evidence.mjs
+--   --check` passed clean on all 11 rows (OK: all 11 row(s) name an instrument, act or vote).
+--   ⚠ `check:stance-sources` separately reported one NEW ORPHAN_CONTEXT finding (bucket "-"/federal) after this
+--   migration ran. It is NOT caused by this file: it traces to Andy Barr's DEACTIVATED duplicate's Season 1
+--   "redistricting" context row (politician_id d6d297f5-..., updated_at 2026-08-26, a month before this migration),
+--   which has no matching answer in any season and was never touched here -- the fingerprint check below proves both
+--   duplicates unchanged. It is pre-existing drift that this check's per-state baseline had not yet counted; the gate
+--   is season-unaware in general (see [[season2-prestage-blockers]]) and this is a state-bucket variant of the same
+--   blind spot. Flagged as a separate follow-up (task_a030d792), out of scope for this file.
 --
--- ROLLBACK: on apply, snapshot the pre-image (empty, since no Season 2 row exists yet for any of these 11 pairs) to
---   backend/data/stance-retirement/<date>-ca0211-barr-moulton-rollback.json, then to roll back, DELETE the 11 Season 2
---   answer + context rows this file inserts (listed in _ca0211_rows below).
--- IDEMPOTENT: each write is guarded on its pre-image; a re-run writes nothing and every gate still passes.
+-- ROLLBACK: backend/data/stance-retirement/2026-09-23-ca0211-barr-moulton-rollback.json lists all 11 rows (the
+--   pre-image was empty for every one -- these are fresh inserts). To roll back, DELETE the 11 (politician_id,
+--   topic_id, season_id) rows it lists from inform.politician_answers and inform.politician_context.
+-- IDEMPOTENT: each write is guarded on its pre-image; a re-run writes nothing and every gate still passes (proven
+--   twice above, once in a dry run and once for real).
 
 BEGIN;
 
@@ -390,9 +407,7 @@ BEGIN
   IF v_n > 0 THEN RAISE EXCEPTION 'CA_0211: % topic(s) do not admit the federal tier', v_n; END IF;
 
   -- The conflict each row resolves is still the one CA_0204 left (Season 1, seated vs duplicate, all 11 pairs).
-  SELECT count(*) INTO v_n FROM (
-    SELECT politician_id, topic_id, s1_seated, s1_dup FROM _ca0211_rows r JOIN _ca0211_target t USING (politician_id, topic_key)
-  ) x
+  SELECT count(*) INTO v_n FROM _ca0211_target x
    JOIN inform.politician_answers k ON k.politician_id = x.politician_id AND k.topic_id = x.topic_id AND k.season_id = '2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3' AND k.value = x.s1_seated
    JOIN inform.politician_answers d ON d.topic_id = x.topic_id AND d.season_id = '2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3' AND d.value = x.s1_dup
                                     AND d.politician_id = CASE x.politician_id WHEN '164fb70e-b8c1-48cd-a6ef-12d80165c67d' THEN 'd6d297f5-5319-4be1-b938-6bcce63368e7'::uuid
