@@ -28,6 +28,8 @@
  *
  * GEO_IDS
  * -------
+ *   (2026-09-24, second run for CA_0232: Jackson 2-4 and Morgan 1-3 added — the seats CA_0232 creates. Jackson's
+ *   numbering was checked against the county council page's own precinct list per district: exact.)
  *   The eleven Greene / Lawrence / Jackson / Morgan and five Indianapolis districts already carry a
  *   geo_id of the legacy Indiana form <state fips><county fips><5-digit seat> ('1805500001'), the form
  *   Monroe's council districts use ('1810500001', loaded from the county's own layer). This loader keeps
@@ -111,8 +113,8 @@ const range = (fips5: string, ns: number[]) =>
 const TARGETS: Target[] = [
   { county: 'Greene',   fips3: '055', countyGeoId: '18055', expected: 4,  load: range('18055', [1, 2, 3, 4]), body: 'Greene County Council',   ocd: 'greene' },
   { county: 'Lawrence', fips3: '093', countyGeoId: '18093', expected: 4,  load: range('18093', [1, 2, 3, 4]), body: 'Lawrence County Council', ocd: 'lawrence' },
-  { county: 'Jackson',  fips3: '071', countyGeoId: '18071', expected: 4,  load: range('18071', [1]),          body: 'Jackson County Council',  ocd: 'jackson' },
-  { county: 'Morgan',   fips3: '109', countyGeoId: '18109', expected: 4,  load: range('18109', [4]),          body: 'Morgan County Council',   ocd: 'morgan' },
+  { county: 'Jackson',  fips3: '071', countyGeoId: '18071', expected: 4,  load: range('18071', [1, 2, 3, 4]), body: 'Jackson County Council',  ocd: 'jackson' },
+  { county: 'Morgan',   fips3: '109', countyGeoId: '18109', expected: 4,  load: range('18109', [1, 2, 3, 4]), body: 'Morgan County Council',   ocd: 'morgan' },
   { county: 'Brown',    fips3: '013', countyGeoId: '18013', expected: 4,  load: range('18013', [1, 2, 3, 4]), body: 'Brown County Council',    ocd: 'brown' },
   { county: 'Martin',   fips3: '101', countyGeoId: '18101', expected: 4,  load: range('18101', [1, 2, 3, 4]), body: 'Martin County Council',   ocd: 'martin' },
   { county: 'Owen',     fips3: '119', countyGeoId: '18119', expected: 4,  load: range('18119', [1, 2, 3, 4]), body: 'Owen County Council',     ocd: 'owen' },
