@@ -6,7 +6,10 @@
 --
 -- Slot CA_0270 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
--- STATUS: NOT APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead from Chris Andrews.
+-- ✅ APPLIED to prod 2026-09-24 (approval: Chris Andrews). UPDATE 2/2/2/2/2/2/1, both gates green. Dry run x2 (BEGIN ...
+--   ROLLBACK) passed and was confirmed reverted before the apply. Re-read after: 5d56470c and 5e86fb53 are the active
+--   incumbents holding TN House 86 / MN Senate 53 with 4 / 6 answers, 1 / 5 quotes, 1 race row each and external_id
+--   -4720086 / -2732185; de50a88b and 4966792b are inactive and hold nothing.
 --
 -- 🟢 SEASON 1 IS NOT TOUCHED. Ruling 2026-09-24 (Chris Andrews): do not edit the closed season for a merge. The first
 -- draft of this file moved the 10 Season 1 answers with inform.allow_closed_season_write (the CA_0184 / CA_0234
