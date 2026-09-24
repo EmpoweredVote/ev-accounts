@@ -122,10 +122,11 @@ const query = vi.fn(async (sql: string, params: unknown[] = []) => {
   const cycle = params[1] as string;
   const inCycle = vis.filter((c) => c.cycle === cycle);
 
-  if (sql.includes('AS total_raised')) {
+  if (sql.includes('AS gross_total')) {
     return {
       rows: [{
-        total_raised: String(sum(inCycle)), non_fec_total: String(sum(inCycle)),
+        gross_total: String(sum(inCycle)), non_fec_gross: String(sum(inCycle)),
+        refunded_total: '0', non_fec_refunded: '0', refund_count: '0', non_fec_refund_count: '0',
         contribution_count: String(inCycle.length), confidence_level_n: inCycle.length ? '1' : '0',
         individual_total: '0', pac_total: '0',
       }],
