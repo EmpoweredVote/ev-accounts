@@ -626,3 +626,21 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
     results,
   };
 }
+
+/**
+ * Scheduled entry point (jobs/registry.ts `fec-auto-match`). jobs/run.ts fails a run only
+ * when the job throws, and runFecAutoMatch counts a failed search instead of throwing, so a
+ * run where EVERY search failed (a revoked FEC key, the API down) would look healthy. That
+ * case throws here; a run where only some searches failed succeeds and reports the count.
+ */
+export async function runFecAutoMatchJob(): Promise<AutoMatchSummary> {
+  const summary = await runFecAutoMatch();
+  console.info(
+    `[fecResearch] fec-auto-match: processed=${summary.processed} confirmed=${summary.auto_confirmed} ` +
+      `needs_review=${summary.needs_review} errors=${summary.errors}`
+  );
+  if (summary.processed > 0 && summary.errors === summary.processed) {
+    throw new Error(`fec-auto-match: all ${summary.processed} FEC searches failed; nothing was written`);
+  }
+  return summary;
+}
