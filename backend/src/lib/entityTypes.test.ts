@@ -1,9 +1,9 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 
-const query = vi.hoisted(() => vi.fn());
-vi.mock('./db.js', () => ({ pool: { query } }));
-
-import { parseEntityTypes, KNOWN_ENTITY_TYPES } from './treasuryService.js';
+// No db.js mock: entityTypes.ts is pure, which is the point of it having been
+// lifted out of treasuryService. If this file ever needs one again, the module
+// has grown a dependency it should not have.
+import { parseEntityTypes, KNOWN_ENTITY_TYPES } from './entityTypes.js';
 
 /**
  * ⚠⚠ AN UNKNOWN TYPE IS A CALLER BUG, NOT AN EMPTY RESULT. Answering `[]` for

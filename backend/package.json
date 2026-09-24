@@ -51,7 +51,8 @@
     "check:postgis-guard": "node scripts/check-postgis-spatial-ref-guard.mjs",
     "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs",
     "check:rls-coverage": "node scripts/check-rls-coverage.mjs",
-    "check:stance-audit": "node scripts/check-stance-audit.mjs"
+    "check:stance-audit": "node scripts/check-stance-audit.mjs",
+    "check:entity-types": "node scripts/check-entity-types.mjs"
   },
   "overrides": {
     "qs": "^6.16.0",

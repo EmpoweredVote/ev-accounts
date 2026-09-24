@@ -620,35 +620,12 @@ const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
             MAX(b.fiscal_year) AS latest_year`;
 
 /**
- * Entity types the treasury schema's CHECK constraint permits.
- *
- * ⚠⚠ INVARIANT: this set must mirror `municipalities_entity_type_check` in TT
- * migration `20260903000000_pa_borough_entity_type.sql` EXACTLY — not which
- * values happen to have rows today. `special_district`, `school_district`,
- * `conservancy` and `library` are legal in the constraint with zero rows right
- * now; the moment a loader writes one, this set must already accept it or
- * every CSV containing it (e.g. TT's `CITY_TIER_TYPES`) 422s as a whole and a
- * county's children panel goes blank — the PA-borough failure mode (1,202
- * entities silently invisible) reproduced across repos. Add a type here WHEN
- * THAT CONSTRAINT GAINS ONE, not after a loader needs it.
- *
- * ⚠ This is a VALIDATION whitelist, not a classification. It says which values
- * are legal shape, never which of them count as a city — that judgement stays
- * in the caller (see CityFilters).
+ * The `?entity_type=` whitelist and its validator now live in `./entityTypes.js`
+ * — pure, importable without this module's `./db.js` dependency, which
+ * `process.exit(1)`s at load with no DATABASE_URL. Re-exported here so every
+ * existing consumer (routes/treasury.ts) keeps its import unchanged.
  */
-export const KNOWN_ENTITY_TYPES: ReadonlySet<string> = new Set([
-  'city', 'county', 'township', 'village', 'borough',
-  'nonprofit', 'state', 'municipality', 'special_district',
-  'school_district', 'conservancy', 'library', 'town', 'federal',
-]);
-
-export function parseEntityTypes(raw: unknown): { values: string[] } | { invalid: string } {
-  if (typeof raw !== 'string' || raw.trim() === '') return { values: [] };
-  const values = raw.split(',').map((s) => s.trim()).filter((s) => s !== '');
-  const invalid = values.find((v) => !KNOWN_ENTITY_TYPES.has(v));
-  if (invalid !== undefined) return { invalid };
-  return { values };
-}
+export { KNOWN_ENTITY_TYPES, parseEntityTypes } from './entityTypes.js';
 
 /**
  * The full entity list, or — with `slug` — the single entity addressed by it.
