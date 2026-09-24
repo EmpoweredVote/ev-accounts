@@ -1028,6 +1028,54 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  entity-types:
+    name: entity_type whitelist drift
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job, and it cannot join `static guards` — that job is dependency-free and this one needs
+    # `pg`. What it watches is the only contract this repo holds in a CONSTANT while Treasury Tracker
+    # holds it in a MIGRATION: `KNOWN_ENTITY_TYPES` (backend/src/lib/entityTypes.ts) against
+    # `treasury.municipalities`' CHECK constraint. Neither repo's build can see both sides, so they can
+    # drift with every test in both repos green — and the expensive direction is silent: TT sends
+    # CITY_TIER_TYPES as ONE CSV, so a single type this API does not know 422s the whole query and a
+    # county's children panel renders EMPTY, reading as a coverage gap rather than a bug. That is the
+    # PA-borough failure mode (TT PR #150, 1,202 entities invisible) across the repo boundary.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum), ~$0.25. It measures PROD
+    # state that moves when someone APPLIES a TT migration — on the CALENDAR, not on our commits — so
+    # a per-push run would bill ~494 minutes a month re-reading an unchanged constraint and flag drift
+    # the push did not cause. Same reasoning as `rls coverage` and `spatial_ref_sys baseline`.
+    #
+    # 🔑 THE HALF THAT IS OURS IS STILL CHECKED ON EVERY PUSH. The literal in entityTypes.ts is pinned
+    # by scripts/check-entity-types.test.ts inside the `backend` job, so an edit here goes red
+    # immediately; only the DB half waits for the nightly.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks. An unreadable constraint is NOT agreement, so the script exits 2 rather
+    # than passing when it cannot find the constraint or the declaration.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check the API whitelist still mirrors the CHECK constraint
+        run: npm run check:entity-types
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   stance-audit:
     name: stance-read audit guard
     runs-on: ubuntu-latest

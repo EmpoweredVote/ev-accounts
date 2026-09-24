@@ -59,23 +59,19 @@ vi.mock('../middleware/requireAdmin.js', () => ({
 
 /**
  * A route test, not a retest of parseEntityTypes' own logic — that belongs to
- * (and is covered by) treasuryService.entityTypes.test.ts. This mirrors its
- * contract (mirrors KNOWN_ENTITY_TYPES / municipalities_entity_type_check) so
- * the route-level assertions below exercise the real branch behaviour instead
- * of an opaque stub.
+ * (and is covered by) entityTypes.test.ts. The route-level assertions below
+ * need the REAL branch behaviour rather than an opaque stub, so the mocked
+ * service's parseEntityTypes is backed by the real implementation.
+ *
+ * ⚠⚠ IT IS IMPORTED, NOT RETYPED. This file used to carry its own copy of the
+ * fourteen types and its own re-implementation of the parser, because
+ * treasuryService cannot be imported here (it is mocked, and importActual
+ * would load ./db.js, which process.exit(1)s in CI). That copy was a third
+ * declaration of a list whose whole problem is drifting between declarations —
+ * the shape TT PR #150 was about. `../lib/entityTypes.js` is pure and is NOT
+ * mocked, so it imports directly and cannot drift.
  */
-const KNOWN_ENTITY_TYPES = new Set([
-  'city', 'county', 'township', 'village', 'borough',
-  'nonprofit', 'state', 'municipality', 'special_district',
-  'school_district', 'conservancy', 'library', 'town', 'federal',
-]);
-function realParseEntityTypes(raw: unknown): { values: string[] } | { invalid: string } {
-  if (typeof raw !== 'string' || raw.trim() === '') return { values: [] };
-  const values = raw.split(',').map((s) => s.trim()).filter((s) => s !== '');
-  const invalid = values.find((v) => !KNOWN_ENTITY_TYPES.has(v));
-  if (invalid !== undefined) return { invalid };
-  return { values };
-}
+import { parseEntityTypes as realParseEntityTypes } from '../lib/entityTypes.js';
 
 import treasuryRouter from './treasury.js';
 
