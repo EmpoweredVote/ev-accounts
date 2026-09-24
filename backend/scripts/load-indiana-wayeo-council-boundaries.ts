@@ -149,14 +149,25 @@ interface Feature { properties?: Record<string, unknown> | null; geometry?: unkn
 function fail(msg: string): never { console.error(`\n❌ ${msg}`); process.exit(1); }
 
 async function fetchJson(url: string, label: string): Promise<any> {
-  const r = await fetch(url, { headers: { 'User-Agent': 'EmpoweredVote-civic-data/1.0', 'Accept-Encoding': 'gzip' } });
-  const text = await r.text();
-  // A clean HTTP 200 can carry a truncated or WAF-substituted body. Only a full decode catches it.
-  if (!r.ok) fail(`${label}: HTTP ${r.status}`);
-  let j: any;
-  try { j = JSON.parse(text); } catch { fail(`${label}: HTTP ${r.status} but the body is not JSON (${text.length} bytes).`); }
-  if (j && j.error) fail(`${label}: service returned an error payload: ${JSON.stringify(j.error)}`);
-  return j;
+  // gisdata.in.gov returned intermittent HTTP 500s (and 500 error payloads) on 2026-09-24; retry server errors
+  // only, a few times with a growing wait. A 4xx, a non-JSON body or a persistent 5xx still fails the run.
+  for (let attempt = 1; ; attempt++) {
+    const r = await fetch(url, { headers: { 'User-Agent': 'EmpoweredVote-civic-data/1.0', 'Accept-Encoding': 'gzip' } });
+    const text = await r.text();
+    let j: any = null;
+    try { j = JSON.parse(text); } catch { /* handled below */ }
+    const serverError = r.status >= 500 || (j && j.error && Number(j.error.code) >= 500);
+    if (serverError && attempt < 7) {
+      console.log(`    (${label}: server error, retry ${attempt}/6)`);
+      await new Promise((res) => setTimeout(res, 5000 * attempt));
+      continue;
+    }
+    // A clean HTTP 200 can carry a truncated or WAF-substituted body. Only a full decode catches it.
+    if (!r.ok) fail(`${label}: HTTP ${r.status}`);
+    if (j === null) fail(`${label}: HTTP ${r.status} but the body is not JSON (${text.length} bytes).`);
+    if (j.error) fail(`${label}: service returned an error payload: ${JSON.stringify(j.error)}`);
+    return j;
+  }
 }
 
 async function fetchCountyDistricts(county: string, fips3: string, expected: number): Promise<Map<string, Feature>> {
@@ -179,15 +190,20 @@ async function fetchCountyDistricts(county: string, fips3: string, expected: num
 }
 
 async function fetchCountyPrecincts(layer: PrecinctLayer, fips3: string): Promise<Feature[]> {
-  const out: Feature[] = [];
-  for (let offset = 0; ; offset += 1000) {
-    const url = `${layer.url}/query?where=${encodeURIComponent(`county='${fips3}'`)}` +
-      `&outFields=${layer.field},county&returnGeometry=true&outSR=4326&f=geojson` +
-      `&orderByFields=${layer.order}&resultOffset=${offset}&resultRecordCount=1000`;
-    const j = await fetchJson(url, `precincts ${layer.vintage} county='${fips3}' @${offset}`);
-    const feats: Feature[] = Array.isArray(j.features) ? j.features : [];
-    out.push(...feats);
-    if (feats.length < 1000 && !j.properties?.exceededTransferLimit && !j.exceededTransferLimit) break;
+  // ONE request per county, no paging: every county here has < 1000 precincts (Marion 621). 2026-09-24 the
+  // server began returning HTTP 500 for any query carrying orderByFields (which paging needs), so the loader
+  // refuses a truncated page and checks the count instead of paging.
+  const url = `${layer.url}/query?where=${encodeURIComponent(`county='${fips3}'`)}` +
+    `&outFields=${layer.field},county&returnGeometry=true&outSR=4326&f=geojson&resultRecordCount=2000`;
+  const j = await fetchJson(url, `precincts ${layer.vintage} county='${fips3}'`);
+  const out: Feature[] = Array.isArray(j.features) ? j.features : [];
+  if (j.properties?.exceededTransferLimit || j.exceededTransferLimit) {
+    fail(`GATE 5: the ${layer.vintage} precinct query for county '${fips3}' was truncated (${out.length} features).`);
+  }
+  const counted = await fetchJson(`${layer.url}/query?where=${encodeURIComponent(`county='${fips3}'`)}&returnCountOnly=true&f=json`,
+                                  `precinct count ${layer.vintage} county='${fips3}'`);
+  if (Number(counted.count) !== out.length) {
+    fail(`GATE 5: county '${fips3}' ${layer.vintage}: ${out.length} precincts returned, ${counted.count} counted.`);
   }
   if (out.length === 0) fail(`GATE 5: the ${layer.vintage} precinct layer returned no precincts for county '${fips3}'.`);
   return out;
