@@ -39,22 +39,23 @@
  *   2. GET /v1/candidates/totals/?candidate_id=X&cycle=2026 -> receipts
  *   3. GET /v1/schedules/schedule_a/by_employer/?committee_id=Y&cycle=2026 -> top donors
  *
- * Rate limit: 1500ms sleep between every FEC API call. ~580 politicians x 3 calls is ~1,750 calls
- * and over 45 minutes; --candidates-only is ~41 x 3.
+ * Rate limit: every FEC call goes through scripts/lib/fecGetJson.ts — the shared limiter
+ * (acquireFecSlot, FEC_RATE_LIMIT_PER_MINUTE, default 15/min) plus 429/timeout retry. The key is
+ * SHARED with the scheduled ingest and every other session: a private 1500ms sleep here lost 13
+ * of 50 people to HTTP 429 on 2026-09-23. At 15/min, --candidates-only (~50 x 3 calls) takes
+ * ~10 minutes and a full run (~580 x 3) about 2 hours. Without UPSTASH_REDIS_REST_URL/TOKEN in
+ * the environment the limiter counts this process only, not the scheduled job.
  */
 
 import 'dotenv/config';
 import { load as yamlLoad } from 'js-yaml';
 import { pool } from '../src/lib/db.js';
+import { fecGetJson } from './lib/fecGetJson.js';
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
-// At most 40 calls/min — NOT "well under 1000 req/hr", which this line used to claim: 1500ms is up
-// to 2,400/hr. It holds because this key reports X-RateLimit-Limit: 60 over a short window
-// (measured 2026-09-23). On a default 1,000/hr key, a full run would start failing partway.
-const SLEEP_BETWEEN_FEC_CALLS_MS = 1500;
 const DRY_RUN = process.argv.includes('--dry-run');
 const CANDIDATES_ONLY = process.argv.includes('--candidates-only');
 const FEC_CYCLE = '2026';
@@ -105,14 +106,6 @@ interface FederalPolitician {
   chamber_short: 'S' | 'H';
   /** The chosen office is a "Candidate for …" placeholder: a seat sought, not held. */
   is_candidate: boolean;
-}
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // ---------------------------------------------------------------------------
@@ -321,31 +314,20 @@ async function fetchCommitteeId(fecCandidateId: string, apiKey: string): Promise
     candidate_id: fecCandidateId,
     per_page: '1',
   });
-  const resp = await fetch(`${FEC_SEARCH_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC candidates/search HTTP ${resp.status} for ${fecCandidateId}`);
-  }
-  const data = (await resp.json()) as {
+  const data = await fecGetJson<{
     results: Array<{ principal_committees: Array<{ committee_id: string }> }>;
-  };
+  }>(`${FEC_SEARCH_URL}?${params}`, `candidates/search ${fecCandidateId}`);
   const principal = data.results[0]?.principal_committees?.[0]?.committee_id;
   if (principal) return principal;
 
   // /candidates/search/ can return no principal_committees for a new filer; the deleted
   // senate-candidate-fec.ts carried this fallback for candidates. designation=P asks for the
   // principal campaign committee only — its unfiltered results[0] could be any authorized one.
-  await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
   const fallbackParams = new URLSearchParams({ api_key: apiKey, designation: 'P', per_page: '1' });
-  const fallbackResp = await fetch(
+  const fallbackData = await fecGetJson<{ results?: Array<{ committee_id: string }> }>(
     `${FEC_BASE}/candidate/${encodeURIComponent(fecCandidateId)}/committees/?${fallbackParams}`,
-    { signal: AbortSignal.timeout(30_000) },
+    `candidate/${fecCandidateId}/committees`,
   );
-  if (!fallbackResp.ok) {
-    throw new Error(`FEC candidate/committees HTTP ${fallbackResp.status} for ${fecCandidateId}`);
-  }
-  const fallbackData = (await fallbackResp.json()) as { results?: Array<{ committee_id: string }> };
   return fallbackData.results?.[0]?.committee_id ?? null;
 }
 
@@ -374,13 +356,10 @@ async function fetchTotalRaised(fecCandidateId: string, apiKey: string): Promise
     election_full: 'false',
     per_page: '1',
   });
-  const resp = await fetch(`${FEC_TOTALS_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC candidates/totals HTTP ${resp.status} for ${fecCandidateId}`);
-  }
-  const data = (await resp.json()) as { results?: Array<{ receipts?: unknown }> };
+  const data = await fecGetJson<{ results?: Array<{ receipts?: unknown }> }>(
+    `${FEC_TOTALS_URL}?${params}`,
+    `candidates/totals ${fecCandidateId}`,
+  );
   const row = data.results?.[0];
   if (!row || row.receipts == null) return null;
   const receipts = Number(row.receipts);
@@ -404,13 +383,10 @@ async function fetchTopDonorsByEmployer(
     per_page: String(TOP_DONORS_LIMIT + 5), // fetch extra to account for null filtering
     sort: '-total',
   });
-  const resp = await fetch(`${FEC_BY_EMPLOYER_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC schedule_a/by_employer HTTP ${resp.status} for ${committeeId}`);
-  }
-  const data = (await resp.json()) as { results: FecEmployerRow[] };
+  const data = await fecGetJson<{ results: FecEmployerRow[] }>(
+    `${FEC_BY_EMPLOYER_URL}?${params}`,
+    `schedule_a/by_employer ${committeeId}`,
+  );
   return data.results
     .filter((r): r is FecEmployerRow & { employer: string } =>
       r.employer != null && r.employer.trim() !== '',
@@ -506,7 +482,6 @@ async function main(): Promise<void> {
       }
 
       // Step 1: Get committee ID
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const committeeId = await fetchCommitteeId(fecId, apiKey);
       if (!committeeId) {
         console.warn(`  [SKIP] No principal committee found for ${p.full_name} (${fecId})`);
@@ -517,7 +492,6 @@ async function main(): Promise<void> {
       console.log(`  Committee: ${committeeId}`);
 
       // Step 2: Get total raised
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const totalRaised = await fetchTotalRaised(fecId, apiKey);
       if (totalRaised === null) {
         console.warn(
@@ -529,7 +503,6 @@ async function main(): Promise<void> {
       }
 
       // Step 3: Get top donors by employer
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const topDonors = await fetchTopDonorsByEmployer(committeeId, apiKey);
       console.log(`  Top donors: ${topDonors.length} employer entries`);
 
