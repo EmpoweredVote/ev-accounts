@@ -281,16 +281,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "4966792b-a05c-41df-8f4b-9b81deebb166|5e86fb53-a6eb-4b35-82de-79706a66dc1a": {
-      "names": "Matt D. Klein ~ Matthew D. Klein",
-      "state": "mn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: senate.mn SD53 + FEC H6MN02248 (KLEIN, MATTHEW DAVID; Matt Klein for Congress). Merge = CA_0270 (PR #766)."
-    },
     "4f8e9b8f-87c7-4767-8902-6df646a6525d|954d9212-5c81-450e-8e37-1551f26f8fd7": {
       "names": "Luke S. Rankin ~ Luke A. Rankin",
       "state": "sc",
@@ -344,16 +334,6 @@
       ],
       "split": false,
       "verdict": "unreviewed"
-    },
-    "5d56470c-fb82-42f7-82e3-d28bf74ace47|de50a88b-1366-4088-bb0a-baeb16e19e2d": {
-      "names": "Justin J. Pearson ~ Justin J. Pearson",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: capitol.tn.gov District 86 + FEC H6TN09449 (PEARSON, JUSTIN J., Memphis). Merge = CA_0270 (PR #766)."
     },
     "7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec|f07bf4ef-4e79-4e25-b7a6-27c8ff49d286": {
       "names": "Matt Boehnke ~ Matt Boehnke",
