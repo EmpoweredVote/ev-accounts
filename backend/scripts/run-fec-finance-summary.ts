@@ -1,38 +1,63 @@
 /**
  * run-fec-finance-summary.ts — standalone FEC finance summary ingestion script.
  *
- * Populates `essentials.politicians.finance_summary` for all federal politicians
- * (senators + declared 2026 House candidates) using the FEC API.
+ * Populates `essentials.politicians.finance_summary` for every active federal politician —
+ * sitting senators and representatives, and the candidates seated on migration-196
+ * "Candidate for U.S. Senate — <State>" placeholders — using the FEC API.
  *
- * Usage: tsx scripts/run-fec-finance-summary.ts
+ * This is the ONLY writer of finance_summary for federal politicians. Senate candidates used to
+ * have their own script (senate-candidate-fec.ts, deleted): it re-searched FEC for IDs that
+ * fecResearch's auto-match queue now owns, and deleted and rewrote confirmed politician_sources
+ * rows as it went.
+ *
+ * Usage: tsx scripts/run-fec-finance-summary.ts [--dry-run] [--candidates-only]
+ *   --dry-run          Resolve every FEC ID and print the plan. No FEC calls, no DB writes.
+ *   --candidates-only  Only politicians whose chosen office is a "Candidate for …" placeholder.
  *
  * Requires environment variables:
  *   DATABASE_URL   — PostgreSQL connection string (in .env)
- *   FEC_API_KEY    — FEC API key (register at api.data.gov/signup/ for 1000 req/hr limit)
+ *   FEC_API_KEY    — FEC API key (register at api.data.gov/signup/). Not needed for --dry-run.
  *
- * Crosswalk strategy (two-path lookup):
- *   Path 2 (primary): transparent_motivations.politician_sources WHERE source_system LIKE 'fec%'
- *                     AND research_status = 'confirmed'
- *   Path 1 (fallback): bioguide_id -> congress-legislators YAML -> id.fec[] filtered by chamber
- *                     (YAML source used: theunitedstates.io JSON returned 410 Gone)
+ * One office per person. A politician can hold a seat AND seek one — nine sitting
+ * Representatives were running for Senate on 2026-09-23 — and finance_summary is one column read
+ * without office context, so one committee has to win. The SOUGHT seat wins: FEC showed every
+ * one of the nine's House committees either filing nothing for 2025-26 (five) or drained into
+ * the Senate committee (four, $0-$30 cash left after $0.6M-$2.5M of transfers). The House
+ * committee would show a campaign that has already ended.
+ *
+ * Crosswalk strategy — the FEC ID must be for the CHOSEN office's chamber (ID prefix S or H):
+ *   Path 2 (primary): transparent_motivations.politician_sources, research_status = 'confirmed',
+ *                     external_id prefixed with the chamber letter
+ *   Path 1 (fallback, sitting members only): bioguide_id or full name -> congress-legislators
+ *                     YAML -> id.fec[] (YAML source used: theunitedstates.io JSON returned 410 Gone)
+ *   A candidate resolves through Path 2 only: the YAML lists sitting members, so a match there is
+ *   the committee for the office they hold, never the campaign they are running.
  *
  * FEC API calls per politician:
  *   1. GET /v1/candidates/search/?candidate_id=X  -> committee_id
+ *      (fallback: GET /v1/candidate/X/committees/?designation=P)
  *   2. GET /v1/candidates/totals/?candidate_id=X&cycle=2026 -> receipts
  *   3. GET /v1/schedules/schedule_a/by_employer/?committee_id=Y&cycle=2026 -> top donors
  *
- * Rate limit: 1500ms sleep between every FEC API call (~430 calls total, ~10 min runtime).
+ * Rate limit: every FEC call goes through scripts/lib/fecGetJson.ts — the shared limiter
+ * (acquireFecSlot, FEC_RATE_LIMIT_PER_MINUTE, default 15/min) plus 429/timeout retry. The key is
+ * SHARED with the scheduled ingest and every other session: a private 1500ms sleep here lost 13
+ * of 50 people to HTTP 429 on 2026-09-23. At 15/min, --candidates-only (~50 x 3 calls) takes
+ * ~10 minutes and a full run (~580 x 3) about 2 hours. Without UPSTASH_REDIS_REST_URL/TOKEN in
+ * the environment the limiter counts this process only, not the scheduled job.
  */
 
 import 'dotenv/config';
 import { load as yamlLoad } from 'js-yaml';
 import { pool } from '../src/lib/db.js';
+import { fecGetJson } from './lib/fecGetJson.js';
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
-const SLEEP_BETWEEN_FEC_CALLS_MS = 1500; // stay well under 1000 req/hr (matches fecResearch.ts)
+const DRY_RUN = process.argv.includes('--dry-run');
+const CANDIDATES_ONLY = process.argv.includes('--candidates-only');
 const FEC_CYCLE = '2026';
 const TOP_DONORS_LIMIT = 10;
 // Note: theunitedstates.io/congress-legislators/legislators-current.json returned HTTP 410 (Gone) on 2026-06-04.
@@ -77,15 +102,10 @@ interface FederalPolitician {
   id: string;
   bioguide_id: string | null;
   full_name: string;
+  /** Chamber of the chosen office — and so the required FEC ID prefix. */
   chamber_short: 'S' | 'H';
-}
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  /** The chosen office is a "Candidate for …" placeholder: a seat sought, not held. */
+  is_candidate: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -159,87 +179,125 @@ async function buildCrosswalkMaps(): Promise<CrosswalkMaps> {
 // ---------------------------------------------------------------------------
 
 /**
- * Returns all active federal politicians (senators + House members) from the DB.
- * Occupancy is resolved through essentials.office_current_holder -- essentials.offices is a SEAT
- * and holds no occupant (ADR 0002 phase 5 dropped offices.politician_id in migration 1463). The
- * view is exactly one row per office, so it cannot fan this result set out.
+ * Returns every active federal politician, one row per person, with the office that decides
+ * which FEC committee summarises them.
  *
- * The `Candidate for%` exclusion is load-bearing: candidate offices hang off the same
- * NATIONAL_UPPER / NATIONAL_LOWER districts, and without it 50 candidates join the roster of
- * sitting members -- e.g. Angie Craig under "Candidate for U.S. Senate - Minnesota" -- and their
- * campaign committees would be summarised as incumbent finances. With it: 100 senators + 434
- * representatives.
+ * Occupancy is resolved through essentials.office_current_holder -- essentials.offices is a SEAT
+ * and holds no occupant (ADR 0002 phase 5 dropped offices.politician_id in migration 1463).
+ *
+ * 🔴 The join is politician-rooted, so a person comes back once per federal office they hold:
+ * a sitting Representative running for Senate is two rows, House seat and Senate placeholder.
+ * The old plain DISTINCT kept both (the chamber differs), and a `Candidate for%` exclusion hid
+ * the problem by dropping candidates altogether -- which also left every pure candidate without
+ * a finance_summary. DISTINCT ON (p.id) keeps one row, and the SOUGHT seat wins (see the header
+ * for the evidence). This is the opposite of essentialsService's "a seat held beats a seat
+ * sought": that rule picks what to CALL someone; this one picks whose money is live.
+ *
+ * A state officeholder running for Senate has only the placeholder among federal offices, so
+ * they arrive as a candidate. On 2026-09-23 (--dry-run against prod): 580 people — 428
+ * representatives, 102 senators (two of them DC's shadow senators, who have no FEC committee and
+ * are skipped) and 50 candidates, the nine Representatives above among them.
  */
 async function getFederalPoliticiansFromDb(): Promise<FederalPolitician[]> {
   const sql = `
-    SELECT DISTINCT
-      p.id,
-      p.bioguide_id,
-      p.full_name,
-      CASE
-        WHEN d.district_type = 'NATIONAL_UPPER' THEN 'S'
-        ELSE 'H'
-      END AS chamber_short
-    FROM essentials.politicians p
-    JOIN essentials.office_current_holder och ON och.politician_id = p.id
-    JOIN essentials.offices o ON o.id = och.office_id
-    JOIN essentials.districts d ON d.id = o.district_id
-    WHERE p.is_active = true
-      AND d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_LOWER')
-      AND o.title NOT ILIKE 'Candidate for%'
-    ORDER BY p.full_name
+    SELECT id, bioguide_id, full_name, chamber_short, is_candidate
+    FROM (
+      SELECT DISTINCT ON (p.id)
+        p.id,
+        p.bioguide_id,
+        p.full_name,
+        CASE
+          WHEN d.district_type = 'NATIONAL_UPPER' THEN 'S'
+          ELSE 'H'
+        END AS chamber_short,
+        (COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
+      FROM essentials.politicians p
+      JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      JOIN essentials.offices o ON o.id = och.office_id
+      JOIN essentials.districts d ON d.id = o.district_id
+      WHERE p.is_active = true
+        AND d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_LOWER')
+      ORDER BY p.id,
+               (COALESCE(o.title, '') ILIKE 'Candidate for%') DESC,
+               o.id
+    ) one_per_person
+    WHERE $1::boolean = false OR is_candidate
+    ORDER BY full_name
   `;
-  const result = await pool.query<FederalPolitician>(sql);
+  const result = await pool.query<FederalPolitician>(sql, [CANDIDATES_ONLY]);
   return result.rows;
 }
 
 /**
- * Path 2 crosswalk: look up confirmed FEC ID from transparent_motivations.politician_sources.
- * Returns null if no confirmed source found.
+ * Path 2 crosswalk: look up the confirmed FEC ID for one chamber from
+ * transparent_motivations.politician_sources. Returns null if there is none.
+ *
+ * Bound to the chamber by the ID's own prefix (FEC IDs start H, S or P), not by source_system:
+ *   - The old query took ANY confirmed fec% row, newest `created_at` first. created_at is NULL on
+ *     nearly every row (3 of 146 fec_senate, 20 of 516 fec_house on 2026-09-23), so for someone
+ *     with a House AND a Senate ID the pick was arbitrary.
+ *   - source_system is not reliable enough to bind on: five Virginia Representatives carry the
+ *     legacy value 'fec', and Roger Marshall's 'fec_senate' row holds his old House ID
+ *     (H6KS01179), which FEC shows filing nothing for 2025-26. The prefix skips that row and his
+ *     Senate ID comes from Path 1.
  */
-async function lookupFecIdViaSources(politicianId: string): Promise<string | null> {
+async function lookupFecIdViaSources(
+  politicianId: string,
+  chamber: 'S' | 'H',
+): Promise<string | null> {
   const sql = `
     SELECT external_id
     FROM transparent_motivations.politician_sources
     WHERE essentials_politician_id = $1
       AND source_system LIKE 'fec%'
       AND research_status = 'confirmed'
-      AND external_id IS NOT NULL
-      AND external_id != ''
-    ORDER BY created_at DESC
+      AND upper(left(external_id, 1)) = $2
+    ORDER BY updated_at DESC NULLS LAST, created_at DESC NULLS LAST, id
     LIMIT 1
   `;
-  const result = await pool.query<{ external_id: string }>(sql, [politicianId]);
+  const result = await pool.query<{ external_id: string }>(sql, [politicianId, chamber]);
   return result.rows[0]?.external_id ?? null;
 }
 
 /**
- * Resolves FEC candidate ID using three-path lookup:
+ * Resolves the FEC candidate ID for the politician's chosen office:
  *   Path 2 first (politician_sources confirmed rows — highest confidence)
- *   Path 1a (bioguide -> congress-legislators map, filtered by chamber prefix)
+ *   Path 1a (bioguide -> congress-legislators map) — sitting members only
  *   Path 1b (full-name -> congress-legislators name map — for senators without bioguide_id in DB)
- * Returns null if all paths fail.
+ * Every path must yield an ID for the chosen chamber. Returns null if none does.
  */
 async function resolveFecId(
   p: FederalPolitician,
   crosswalk: CrosswalkMaps,
 ): Promise<string | null> {
   // Path 2: politician_sources (primary — catches 2026 candidates already matched)
-  const fromSources = await lookupFecIdViaSources(p.id);
+  const fromSources = await lookupFecIdViaSources(p.id, p.chamber_short);
   if (fromSources) return fromSources;
 
+  // A candidate's ID comes from a confirmed row or not at all. congress-legislators lists sitting
+  // members, so a hit there is the committee for the seat they HOLD — for a Representative
+  // running for Senate, exactly the drained House committee this script is choosing against.
+  // fecResearch's auto-match queue is how a candidate gets a confirmed row.
+  if (p.is_candidate) return null;
+
   // Path 1a: bioguide -> congress-legislators crosswalk (incumbents with bioguide in DB)
-  if (p.bioguide_id && p.bioguide_id.trim() !== '') {
-    const fromBioguide = crosswalk.bioguideMap.get(p.bioguide_id);
-    if (fromBioguide) return fromBioguide;
-  }
-
   // Path 1b: name-based match for senators/reps without bioguide_id in DB
-  // Phase 73 inserted 100 senators without bioguide_id — this path covers them
-  const fromName = crosswalk.nameMap.get(p.full_name.toLowerCase());
-  if (fromName) return fromName;
+  // Phase 73 inserted 100 senators without bioguide_id — Path 1b covers them
+  const fromBioguide =
+    p.bioguide_id && p.bioguide_id.trim() !== '' ? crosswalk.bioguideMap.get(p.bioguide_id) : undefined;
+  const fromCrosswalk = fromBioguide ?? crosswalk.nameMap.get(p.full_name.toLowerCase());
+  if (!fromCrosswalk) return null;
 
-  return null;
+  // The YAML picks an ID by the legislator's own latest term; our office can disagree (a name
+  // collision, or a member who changed chamber). Never summarise the wrong chamber's committee.
+  if (!fromCrosswalk.toUpperCase().startsWith(p.chamber_short)) {
+    console.warn(
+      `  [SKIP] congress-legislators gave ${fromCrosswalk} for ${p.full_name}, ` +
+        `but the chosen office is chamber ${p.chamber_short}`,
+    );
+    return null;
+  }
+  return fromCrosswalk;
 }
 
 // ---------------------------------------------------------------------------
@@ -256,16 +314,21 @@ async function fetchCommitteeId(fecCandidateId: string, apiKey: string): Promise
     candidate_id: fecCandidateId,
     per_page: '1',
   });
-  const resp = await fetch(`${FEC_SEARCH_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC candidates/search HTTP ${resp.status} for ${fecCandidateId}`);
-  }
-  const data = (await resp.json()) as {
+  const data = await fecGetJson<{
     results: Array<{ principal_committees: Array<{ committee_id: string }> }>;
-  };
-  return data.results[0]?.principal_committees?.[0]?.committee_id ?? null;
+  }>(`${FEC_SEARCH_URL}?${params}`, `candidates/search ${fecCandidateId}`);
+  const principal = data.results[0]?.principal_committees?.[0]?.committee_id;
+  if (principal) return principal;
+
+  // /candidates/search/ can return no principal_committees for a new filer; the deleted
+  // senate-candidate-fec.ts carried this fallback for candidates. designation=P asks for the
+  // principal campaign committee only — its unfiltered results[0] could be any authorized one.
+  const fallbackParams = new URLSearchParams({ api_key: apiKey, designation: 'P', per_page: '1' });
+  const fallbackData = await fecGetJson<{ results?: Array<{ committee_id: string }> }>(
+    `${FEC_BASE}/candidate/${encodeURIComponent(fecCandidateId)}/committees/?${fallbackParams}`,
+    `candidate/${fecCandidateId}/committees`,
+  );
+  return fallbackData.results?.[0]?.committee_id ?? null;
 }
 
 /**
@@ -293,13 +356,10 @@ async function fetchTotalRaised(fecCandidateId: string, apiKey: string): Promise
     election_full: 'false',
     per_page: '1',
   });
-  const resp = await fetch(`${FEC_TOTALS_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC candidates/totals HTTP ${resp.status} for ${fecCandidateId}`);
-  }
-  const data = (await resp.json()) as { results?: Array<{ receipts?: unknown }> };
+  const data = await fecGetJson<{ results?: Array<{ receipts?: unknown }> }>(
+    `${FEC_TOTALS_URL}?${params}`,
+    `candidates/totals ${fecCandidateId}`,
+  );
   const row = data.results?.[0];
   if (!row || row.receipts == null) return null;
   const receipts = Number(row.receipts);
@@ -323,13 +383,10 @@ async function fetchTopDonorsByEmployer(
     per_page: String(TOP_DONORS_LIMIT + 5), // fetch extra to account for null filtering
     sort: '-total',
   });
-  const resp = await fetch(`${FEC_BY_EMPLOYER_URL}?${params}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!resp.ok) {
-    throw new Error(`FEC schedule_a/by_employer HTTP ${resp.status} for ${committeeId}`);
-  }
-  const data = (await resp.json()) as { results: FecEmployerRow[] };
+  const data = await fecGetJson<{ results: FecEmployerRow[] }>(
+    `${FEC_BY_EMPLOYER_URL}?${params}`,
+    `schedule_a/by_employer ${committeeId}`,
+  );
   return data.results
     .filter((r): r is FecEmployerRow & { employer: string } =>
       r.employer != null && r.employer.trim() !== '',
@@ -358,8 +415,8 @@ async function updateFinanceSummary(politicianId: string, summary: FinanceSummar
 // ---------------------------------------------------------------------------
 
 async function main(): Promise<void> {
-  // Env guards (match run-fec-auto-match.ts pattern)
-  if (!process.env.FEC_API_KEY) {
+  // Env guards (match run-fec-auto-match.ts pattern). --dry-run makes no FEC calls.
+  if (!DRY_RUN && !process.env.FEC_API_KEY) {
     console.error('ERROR: FEC_API_KEY is not set. Register at https://api.data.gov/signup/');
     process.exit(1);
   }
@@ -368,9 +425,13 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const apiKey = process.env.FEC_API_KEY;
+  const apiKey = process.env.FEC_API_KEY ?? '';
   console.log('[run-fec-finance-summary] Starting FEC finance summary ingestion...');
-  console.log(`[run-fec-finance-summary] FEC API key: ${apiKey.slice(0, 8)}...`);
+  if (DRY_RUN) {
+    console.log('[run-fec-finance-summary] --dry-run: resolving FEC IDs only. No FEC calls, no DB writes.');
+  } else {
+    console.log(`[run-fec-finance-summary] FEC API key: ${apiKey.slice(0, 8)}...`);
+  }
   console.log(`[run-fec-finance-summary] Cycle: ${FEC_CYCLE}`);
 
   const startMs = Date.now();
@@ -380,7 +441,11 @@ async function main(): Promise<void> {
 
   // Query federal politicians
   const politicians = await getFederalPoliticiansFromDb();
-  console.log(`[run-fec-finance-summary] Found ${politicians.length} active federal politicians.`);
+  const candidateCount = politicians.filter(p => p.is_candidate).length;
+  console.log(
+    `[run-fec-finance-summary] Found ${politicians.length} active federal politicians ` +
+      `(${candidateCount} summarised as candidates${CANDIDATES_ONLY ? ', --candidates-only' : ''}).`,
+  );
 
   // Counters
   let processed = 0;
@@ -392,14 +457,18 @@ async function main(): Promise<void> {
 
   for (const p of politicians) {
     processed++;
-    console.log(`\n[${processed}/${politicians.length}] ${p.full_name} (${p.chamber_short})`);
+    const role = p.is_candidate ? 'candidate' : 'sitting';
+    console.log(`\n[${processed}/${politicians.length}] ${p.full_name} (${p.chamber_short}, ${role})`);
 
     try {
       // Resolve FEC ID
       const fecId = await resolveFecId(p, crosswalk);
       if (!fecId) {
         console.warn(
-          `  [SKIP] No FEC ID found for ${p.full_name} (politician_sources + congress-legislators both empty)`,
+          p.is_candidate
+            ? `  [SKIP] No confirmed ${p.chamber_short}-prefixed FEC ID for candidate ${p.full_name} ` +
+                `(fecResearch's auto-match queue confirms candidate IDs)`
+            : `  [SKIP] No FEC ID found for ${p.full_name} (politician_sources + congress-legislators both empty)`,
         );
         skipped_no_fec_id++;
         skippedNames.push(p.full_name);
@@ -407,8 +476,12 @@ async function main(): Promise<void> {
       }
       console.log(`  FEC ID: ${fecId}`);
 
+      if (DRY_RUN) {
+        succeeded++;
+        continue;
+      }
+
       // Step 1: Get committee ID
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const committeeId = await fetchCommitteeId(fecId, apiKey);
       if (!committeeId) {
         console.warn(`  [SKIP] No principal committee found for ${p.full_name} (${fecId})`);
@@ -419,7 +492,6 @@ async function main(): Promise<void> {
       console.log(`  Committee: ${committeeId}`);
 
       // Step 2: Get total raised
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const totalRaised = await fetchTotalRaised(fecId, apiKey);
       if (totalRaised === null) {
         console.warn(
@@ -431,7 +503,6 @@ async function main(): Promise<void> {
       }
 
       // Step 3: Get top donors by employer
-      await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
       const topDonors = await fetchTopDonorsByEmployer(committeeId, apiKey);
       console.log(`  Top donors: ${topDonors.length} employer entries`);
 
@@ -459,7 +530,9 @@ async function main(): Promise<void> {
   const durationSec = ((Date.now() - startMs) / 1000).toFixed(1);
 
   const runSummary = {
+    ...(DRY_RUN ? { dry_run: true } : {}),
     processed,
+    // Under --dry-run this counts FEC IDs resolved, not summaries written.
     succeeded,
     skipped_no_fec_id,
     errors,

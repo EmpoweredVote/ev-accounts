@@ -99,6 +99,47 @@ export interface AnsweredSeason {
 export const SEASON_IS_PUBLISHED = `s.status <> 'draft'`;
 
 /**
+ * A topic that some PUBLISHED season asks, as a SQL predicate.
+ *
+ * THE DISPLAY KILL SWITCH that replaced `compass_topics.is_live` on the
+ * voter-facing reads that show content TAGGED with a topic — Read & Rank
+ * quotes, the essentials quotes endpoint, meeting topic tags. The question it
+ * answers is "may a public surface show content about this topic?".
+ *
+ * 🔴 WHY NOT is_live. Seventeen of Season 2's sixty topics are is_live = false:
+ * they were created staged (CA_0093 et al.) and went live when the season
+ * OPENED, which flips no boolean. Every read that kept `ct.is_live = true`
+ * would silently drop their quotes and tags. CC_0066 is the same defect on the
+ * user-answer write gate.
+ *
+ * WHY NOT THE OPEN SEASON (`compass_topics_promoted`). That is "what do we ask
+ * NOW". Narrowing to it would hide content on a topic an earlier season asked —
+ * immigration, which Season 2 dropped — while is_live still shows it. Whether a
+ * dropped topic's quotes should leave Read & Rank is a product decision, not a
+ * side effect of retiring a boolean.
+ *
+ * WHY NOT DRAFT. A draft season is not published data (see SEASON_IS_PUBLISHED);
+ * a topic staged into a draft season only must stay hidden until it opens,
+ * exactly as is_live = false kept it hidden.
+ *
+ * Measured on prod 2026-09-23: this and is_live agree on all 44 Season 1 topics
+ * and on every tagged row that existed (3,266 Read & Rank quotes, 4,188 quotes,
+ * 866 meeting tags). They differ only on the 17 Season 2 topics, which carried
+ * no tagged content yet — so the switch changed nothing a voter saw that day.
+ *
+ * ⚠ NOT the write gate (`WRITABLE_TOPIC_IDS_SQL`, open season only) and NOT
+ * the promotion set (`getPromotedTopics`). Three questions, three answers.
+ *
+ * @param topicIdExpr SQL expression for the compass topic id (e.g. `ct.id`)
+ */
+export function topicAskedByPublishedSeason(topicIdExpr: string): string {
+  return `EXISTS (
+    SELECT 1 FROM inform.season_questions sq
+      JOIN inform.seasons s ON s.id = sq.season_id AND ${SEASON_IS_PUBLISHED}
+     WHERE sq.topic_id = ${topicIdExpr})`;
+}
+
+/**
  * The newest season in which this person answered this topic, or null if they
  * never have.
  *

@@ -275,6 +275,18 @@ interface CityRow {
   dataset_summary: { years: Array<string | number> | null; dataset_types: string[] | null } | null;
 }
 
+// Raw shape of a `?fields=index` row — bigint (fiscal_year -> latest_year)
+// comes back from pg as a string or null; see the note on TreasuryCityIndex.
+interface CityIndexRow {
+  id: string;
+  name: string;
+  state: string;
+  entity_type: string | null;
+  county_id: string | null;
+  has_data: boolean;
+  latest_year: string | null;
+}
+
 interface BudgetRow {
   id: string;
   municipality_id: string;
@@ -547,7 +559,78 @@ const DATASETS_SUMMARY = `json_build_object(
             ) AS dataset_summary`;
 
 /**
+ * Optional narrowings for GET /api/treasury/cities.
+ *
+ * ⚠⚠ EVERY ONE OF THESE IS A WHERE CLAUSE AND NOTHING ELSE. The join, the
+ * GROUP BY, the HAVING "has a budget or is a grouper county" contract, the
+ * column list and the ORDER BY are untouched, so a row that comes back is
+ * byte-for-byte the row the unfiltered list would have carried — or nothing.
+ * Same property as `slug`, and for the same reason (TT #158).
+ *
+ * ⚠ `entityTypes` is supplied BY THE CALLER. This service deliberately does not
+ * know what "city-tier" means: Treasury Tracker owns that definition in
+ * `src/utils/cityTierTypes.ts`, with a test policing copies of it, because four
+ * divergent copies once made PA's 949 boroughs invisible to their own county's
+ * panel.
+ */
+export interface CityFilters {
+  entityTypes?: string[];
+  state?: string;
+  countyId?: string;
+  /**
+   * ⚠ The ONLY filter that changes COLUMNS rather than rows. Opt-in for the
+   * same reason as `datasets=summary`: this endpoint is a cross-app contract,
+   * so the default response must stay byte-for-byte identical.
+   *
+   * Measured 2026-09-22: 3.05 MB -> 1,127 KB for all 8,149 rows, because
+   * `dataset_summary` is most of the weight. It exists for Treasury Tracker's
+   * entity switcher and landing search, which need names to match on and a
+   * has-data flag — nothing else.
+   */
+  fields?: 'index';
+}
+
+/**
+ * The lean row shape for `?fields=index` — see the note on `CityFilters.fields`.
+ */
+export interface TreasuryCityIndex {
+  id: string;
+  name: string;
+  state: string;
+  entity_type: string | null;
+  county_id: string | null;
+  /**
+   * `false` for a HAVING-admitted grouper county — one whose row is present
+   * only because it has children, not because it has budgets of its own.
+   * That is existing behaviour, not a new semantic: `dataset_summary.years`
+   * is already `[]` for the same row in the non-index shape.
+   */
+  has_data: boolean;
+  /**
+   * The newest fiscal year this entity has a budget row for, or null when it
+   * has none. ⚠ Carried in the index because Treasury Tracker's landing search
+   * prints it beside every result; without it that label silently blanks.
+   * Costs ~5 bytes/row (~40 KB on a 1,127 KB payload).
+   */
+  latest_year: number | null;
+}
+
+const COLUMNS_INDEX = `m.id, m.name, m.state, m.entity_type, m.county_id,
+            (COUNT(b.id) > 0) AS has_data,
+            MAX(b.fiscal_year) AS latest_year`;
+
+/**
+ * The `?entity_type=` whitelist and its validator now live in `./entityTypes.js`
+ * — pure, importable without this module's `./db.js` dependency, which
+ * `process.exit(1)`s at load with no DATABASE_URL. Re-exported here so every
+ * existing consumer (routes/treasury.ts) keeps its import unchanged.
+ */
+export { KNOWN_ENTITY_TYPES, parseEntityTypes } from './entityTypes.js';
+
+/**
  * The full entity list, or — with `slug` — the single entity addressed by it.
+ * `filters` (entityTypes/state/countyId/fields) narrow it further; see
+ * `CityFilters` for what each one does and the contract it must preserve.
  *
  * ⚠⚠ THE SLUG FILTER IS A WHERE CLAUSE AND NOTHING ELSE. Every other part of
  * the query (the LEFT JOIN, the GROUP BY, the HAVING "has a budget or is a
@@ -556,7 +639,8 @@ const DATASETS_SUMMARY = `json_build_object(
  * — or nothing. It can never surface an entity the list would have hidden, and
  * it can never return a DIFFERENT entity: no match is an empty array, which is
  * what lets TT keep resolving an unmatched slug to `not_found` rather than
- * substituting someone else's budget (TT #158).
+ * substituting someone else's budget (TT #158). The same property is required
+ * of every filter in `CityFilters` — see its doc comment.
  *
  * WHY: financials.empowered.vote downloads this entire list — 8,149 entities,
  * 3.2 MB uncompressed — to read ONE 309-byte row, because the only thing it
@@ -572,24 +656,48 @@ const DATASETS_SUMMARY = `json_build_object(
  */
 export async function getCities(
   mode: DatasetsMode = 'full',
-  slug?: string
-): Promise<TreasuryCity[]> {
-  const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
+  slug?: string,
+  filters: CityFilters = {}
+): Promise<TreasuryCity[] | TreasuryCityIndex[]> {
+  const conds: string[] = [];
+  const vals: unknown[] = [];
+
+  if (slug) { vals.push(slug); conds.push(`${SLUG_SQL} = $${vals.length}`); }
+  if (filters.entityTypes?.length) {
+    vals.push(filters.entityTypes);
+    conds.push(`m.entity_type = ANY($${vals.length})`);
+  }
+  if (filters.state) { vals.push(filters.state); conds.push(`m.state = $${vals.length}`); }
+  if (filters.countyId) { vals.push(filters.countyId); conds.push(`m.county_id = $${vals.length}`); }
+
+  const index = filters.fields === 'index';
+
+  const { rows } = await pool.query<CityRow | CityIndexRow>(
+    `SELECT ${index
+      ? COLUMNS_INDEX
+      : `m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.county_id, m.hero_image_url,
             m.created_at, m.updated_at,
-            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}
+            ${mode === 'summary' ? DATASETS_SUMMARY : DATASETS_FULL}`}
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
-     ${slug ? `WHERE ${SLUG_SQL} = $1` : ''}
+     ${conds.length ? `WHERE ${conds.join(' AND ')}` : ''}
      GROUP BY m.id
      HAVING COUNT(b.id) > 0
         OR (m.entity_type = 'county' AND EXISTS (
               SELECT 1 FROM treasury.municipalities child WHERE child.county_id = m.id
             ))
      ORDER BY m.name`,
-    slug ? [slug] : []
+    vals
   );
-  return rows.map((r) => mapCity(r, mode));
+  return index
+    ? (rows as CityIndexRow[]).map((r) => ({
+        id: r.id, name: r.name, state: r.state, entity_type: r.entity_type,
+        county_id: r.county_id ?? null, has_data: Boolean(r.has_data),
+        // ⚠ node-postgres returns bigint (fiscal_year) as a JS string; a raw
+        // passthrough would put "2024" where the frontend expects a number.
+        latest_year: r.latest_year !== null && r.latest_year !== undefined ? Number(r.latest_year) : null,
+      }))
+    : (rows as CityRow[]).map((r) => mapCity(r, mode));
 }
 
 /**

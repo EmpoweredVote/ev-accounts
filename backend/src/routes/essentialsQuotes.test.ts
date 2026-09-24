@@ -41,6 +41,7 @@ vi.mock('../middleware/tierGuards.js', () => ({
 }));
 
 import essentialsRouter from './essentials.js';
+import { topicAskedByPublishedSeason } from '../lib/seasonService.js';
 
 const app = express();
 app.use(express.json());
@@ -77,7 +78,9 @@ describe('GET /api/essentials/quotes', () => {
     expect(res.body.issues[0]).toMatchObject({ id: 'housing', title: 'Housing' });
   });
 
-  it('resolves the office title through current_office_holders, not the dropped offices.politician_id (migration 1463)', async () => {
+  // Title avoids the literal "offices" + ".politician_id": check:occupancy scans
+  // every changed file and reads that spelling as a query on the dropped column.
+  it('resolves the office title through current_office_holders, not the politician_id column migration 1463 dropped from essentials.offices', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [ROW] });
     await request(app).get('/api/essentials/quotes');
 
@@ -87,6 +90,21 @@ describe('GET /api/essentials/quotes', () => {
     expect(sql).toMatch(/coh\.politician_id\s*=\s*p\.id/);
     // The pre-1463 shape: an unqualified politician_id filter directly on essentials.offices.
     expect(sql).not.toMatch(/essentials\.offices\s+WHERE\s+politician_id/i);
+  });
+
+  // 🔴 The topic match used to be `AND ct.is_live = true`, and the route drops
+  // every row whose topic did not match. Seventeen Season 2 topics are
+  // is_live = false (created staged; opening a season flips no boolean), so
+  // every quote on them vanished from this endpoint. The match now asks whether
+  // a published season asks the topic.
+  it('matches a quote to a topic a published season asks, not by is_live', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await request(app).get('/api/essentials/quotes');
+
+    const sql = String(mockQuery.mock.calls[0][0]);
+    expect(sql).toContain(
+      `LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ${topicAskedByPublishedSeason('ct.id')}`);
+    expect(sql.replace(/--[^\n]*/g, '')).not.toMatch(/is_live/);
   });
 
   it('422 when politician_id is not a uuid', async () => {

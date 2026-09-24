@@ -25,6 +25,7 @@ import {
   publicMeetingExistsClause,
   type MeetingViewerOptions,
 } from './meetingVisibility.js';
+import { topicAskedByPublishedSeason } from './seasonService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -523,9 +524,11 @@ export async function getSummaryByMeetingId(
     `SELECT mt.section_index, mt.topic_key, mt.status, ctc.short_title AS title
      FROM meetings.meeting_topics mt
      LEFT JOIN inform.compass_topics ct
-       ON ct.topic_key = mt.topic_key AND ct.is_live = true
-     -- TEXT ONLY (ADR 0004). ct keeps the match and the is_live gate; ctc carries
-     -- the current revision's wording. CA_0012 froze ct's own text columns.
+       ON ct.topic_key = mt.topic_key AND ${topicAskedByPublishedSeason('ct.id')}
+     -- TEXT ONLY (ADR 0004). ct keeps the match and the retired-topic gate; ctc
+     -- carries the current revision's wording. CA_0012 froze ct's own text columns.
+     -- The gate is "a published season asks this topic", not is_live — 17 Season 2
+     -- topics are is_live = false; see topicAskedByPublishedSeason.
      LEFT JOIN inform.compass_topics_current ctc ON ctc.id = ct.id
      WHERE mt.meeting_id = $1`,
     [meetingId]

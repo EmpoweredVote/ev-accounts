@@ -26,10 +26,11 @@ You are running the **research-stances** skill. Your job is to research politici
 > the ev-accounts repo. Older copies at the workspace root and in `.agents/` were up to three months
 > stale (2026-09-22). If you are reading this anywhere else, stop and use the ev-accounts copy.
 >
-> **The stance pipeline, one line:** `build-stance-topic-bundle` → researcher agent →
-> `stance-gate` → `verify-stance-research` (dry-run) → human review → `verify-stance-research --apply`.
-> Every step is a non-interactive script with exit codes, so the same pipeline can later run on a
-> schedule. Human decisions go to the review queue (`inform.stance_research_review`), not the chat.
+> **The stance pipeline, one line:** `build-stance-topic-bundle` → research (inline, one politician
+> per run — STEP 1) → `stance-gate` → `verify-stance-research` (dry-run) → human review →
+> `verify-stance-research --apply`. Every step after research is a non-interactive script with exit
+> codes, so those steps can later run on a schedule. Human decisions go to the review queue
+> (`inform.stance_research_review`), not the chat.
 >
 > 🔴 **Review-all is the default (ruling 2026-09-22): nothing auto-publishes.** `--apply` writes
 > every stance to the review queue — a row that passes every check is queued with reason
@@ -77,9 +78,26 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution — the open season's questions, per office level
 
-**Never query `inform.compass_stances` or `is_live`.** The open season pins a specific ladder
-revision per question; on 2026-09-22, 29 of Season 2's 60 ladders differed from the frozen legacy
-text, and `is_live` returned 44 topics against the season's 60. Build the batch bundle instead:
+**ALWAYS resolve the topic set and its rung texts fresh from the DB before every research run,
+through the open season's pin. Never use a hardcoded list, never read `inform.compass_stances`, and
+never filter on `is_live`.** The bundle builder below does this, and it is the only topic source for a
+batch.
+
+🔴🔴 **`inform.compass_stances` is FROZEN at v1 and `is_live` does not gate the season read
+path.** The topic query this step used to run joined the frozen table and filtered
+`WHERE t.is_live = true`. Both were wrong, and both failed silently — the frozen table returns a
+complete, plausible ladder on the right subject with the wrong rungs. Measured against the open season
+on 2026-09-23:
+
+| | |
+|---|---|
+| Topics pinned into the open season | **60** |
+| Returned by the old `is_live = true` query | **44** |
+| Pinned topics it dropped | **17** |
+| Topics it returned that are not in the season | **1** — `immigration`, retired in Season 2, which the write gate no longer accepts |
+| Pinned topics whose rungs differ from the frozen table | **29 of 60** (41 of 61 for the Season 3 draft) |
+
+Build the batch bundle:
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a
@@ -88,16 +106,41 @@ npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<YYYY-MM
   # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial>
 ```
 
-It writes `topics.json` + `politicians.json` into the batch dir and prints one
+It reads `season_questions → compass_topic_revisions → compass_stance_revisions` for the open season,
+writes `topics.json` + `politicians.json` into the batch dir, and prints one
 `TOPIC SCALE REFERENCE (<level>)` block per office level — already filtered to the topics that
 apply at that level (`compass_topic_roles`). Paste the block matching each politician's level
-into that politician's prompt. A politician printed under `level unknown` needs a person to set
-the level (`--politician <uuid>:<level>`, added alongside the same `--race`) before research. The
-bundle keeps one entry per person, so giving someone by both `--race` and `--politician` is fine.
-Each person's `full_name` in `politicians.json` is the spelling every batch file must use.
+into that politician's research contract (STEP 1). A politician printed under `level unknown` needs a
+person to set the level (`--politician <uuid>:<level>`, added alongside the same `--race`) before
+research. The bundle keeps one entry per person, so giving someone by both `--race` and `--politician`
+is fine. Each person's `full_name` in `politicians.json` is the spelling every batch file must use.
+
+Notes on reading the result:
+
+- **It resolves whichever season is open, by status — do not hard-code a season number.** Today that
+  is Season 2 (60 topics). The Season 3 draft has 61 and a different pin; a run today writes into the
+  open season, so the open season's rung text is the text your evidence must match.
+- **If no season is open, the bundle exits 1 and writes nothing. STOP.** (It also exits 1 when a
+  pinned ladder does not have exactly five rungs.) Do not fall back to the frozen table. The write path
+  sources its insert from a join on the open season, so with none open nothing is written and nothing
+  raises.
+- `topic_revision_id` is printed with each topic (`revision: …`) and kept in `topics.json`. It is what
+  an existing row must be judged against, and `verify-stance-research` refuses the batch if it is no
+  longer the open season's pin. Carry it through; do not discard it.
+- Scope is already applied: each level's block lists only the topics `compass_topic_roles` offers at
+  that level, and `stance-gate` refuses a row outside it (`topic-out-of-scope`). A topic offered at a
+  level can still have rungs this officeholder may not lawfully do — read §4.9 of the program design
+  (`docs/superpowers/specs/2026-09-23-stance-program-design.md`) before starting the topic. A scope
+  blank recorded there is closed research, not a gap to re-queue.
+
+Work from the **full bundle output** — including the rung texts for every value. Never hardcode, and
+never restate a ladder from memory: given only a `topic_key`, a model defaults to 1 = oppose /
+5 = support and systematically inverts topics like `ai-regulation` and `tariffs`, which run the other
+way.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
+- The open season's number, and the topic count it pinned
 - Topics in scope (all or filtered)
 - Estimated scope from the bundle (politicians × in-scope topics for each one's level)
 
@@ -152,21 +195,48 @@ finds debate turns and silently misses every interview.
 `OTR_SOURCES=<n> OTR_CANDIDATES=<n>` at the end.
 
 - If `OTR_SOURCES=0`, the race isn't on the platform yet — fall back to web research (STEP 1 tiers).
-- Pass each candidate's transcript file path into that candidate's research-agent prompt as the
-  **tier-1 source** (below). The agent should draw verbatim quotes from it first, and only use
-  WebFetch for topics the transcripts don't cover.
+- Put each candidate's transcript file path into that candidate's research contract (STEP 1) as the
+  **tier-1 source**. Draw verbatim quotes from it first, and use WebFetch only for topics the
+  transcripts don't cover.
 - Not a race (e.g. a single official)? Skip this step and go straight to web research.
 
 ---
 
-## STEP 1 — Dispatch Research Agents
+## STEP 1 — Research Each Politician Yourself, Inline
 
-For each politician, dispatch a `politician-stance-researcher` agent using the Agent tool.
+🔴🔴 **Do NOT dispatch a research sub-agent. Do this work yourself, one politician per
+run.** This skill used to say to dispatch a `politician-stance-researcher` agent per politician.
+That instruction was withdrawn by ruling on 2026-08-24 and reaffirmed on 2026-09-23. Following it
+as written turned 38 researched rows into 8 survivors.
 
-**Dispatch rules:**
-- **Always dispatch ONE agent at a time.** Never run agents in parallel.
-- Wait for each agent to complete and confirm the CSV was written before dispatching the next.
-- Running parallel agents burns the WebSearch/Playwright rate limit quota instantly, producing no usable output.
+**Execution rules:**
+- **One politician per run.** Finish a person, review them, then start the next. Do not batch
+  several people into one pass, and do not work two people concurrently.
+- Confirm that person's rows are written to research.csv and evidence.csv before you start the next
+  person.
+- Use WebFetch only. Never WebSearch or Playwright — both share a rate-limited quota pool.
+
+**Why inline, and not an agent — three reasons, none of them stylistic:**
+1. **No MCP server is bound inside a sub-agent.** A research agent has no route to the season
+   pin, the ladder text, or the database. It can web-search and report, and nothing more — so it
+   cannot do the one thing this skill exists to do.
+2. **Sub-agents here have repeatedly reported verification they never ran.** A returned CSV that
+   claims its sources were fetched is not evidence that they were.
+3. **A cohort pass needs finished peers to compare against, and a batch hides which judgment went
+   wrong.** When 38 rows arrive together the review cost is the whole batch; when one person
+   arrives, the reviewer can point at the row and the instrument.
+
+🔴 **Read the ladders from the bundle, and from nowhere else.** The only authority for rung text is
+the `TOPIC SCALE REFERENCE` block that `build-stance-topic-bundle.ts` printed in STEP 0 from the open
+season's pin — never memory, and never a ladder copied into a file. Older copies of the researcher
+agent definition carried hard-coded 1–5 scale text from the **frozen** `inform.compass_stances`
+table; measured 2026-09-23, **29 of the 60 topics pinned into the open season have rung text that
+differs from that table** — `same-sex-marriage` chair 1, for one, reads "require all states to
+recognize…" there and "Guarantee same-sex couples full legal equality — equal marriage plus
+protection…" in the pin. `.claude/agents/politician-stance-researcher.md` now carries no ladders. It
+is a **reference**, not a dispatch target: read it with the Read tool for its URL patterns
+(`### URL Patterns — Fetch These in Order`), its evidence contract and output format, and its
+per-office guidance.
 
 **Inject the canonical curation rules (do not paraphrase them here).** Run
 
@@ -174,13 +244,15 @@ For each politician, dispatch a `politician-stance-researcher` agent using the A
 node .claude/skills/research-stances/scripts/extract-canonical-rules.mjs gates deid note
 ```
 
-and paste its output into the sub-agent prompt below at the three `INJECT:` markers (`gates`, `deid`,
+and paste its output into the research contract below at the three `INJECT:` markers (`gates`, `deid`,
 `note`). These rules come from the on-the-record corpus (sibling checkout; canonical home
 `on-the-record/docs/quote-curation/PRINCIPLES.md` and its mechanics files) — never restate them from
 memory. If the extractor errors, the on-the-record checkout is missing: **STOP** and resolve that, do
 not fall back to a remembered summary.
 
-**Agent prompt template:**
+**Research contract — the standard you hold yourself to for the one politician you are on.**
+Read it as instructions to you, not as a prompt to send anywhere. Substitute the bracketed
+values for the person in front of you.
 
 ```
 Research the political stances of [POLITICIAN_NAME] ([OFFICE/TITLE if known]).
@@ -243,9 +315,10 @@ header) as source_url_1. Only use WebFetch for topics the transcript does not co
 TOOL RULE:
 - Prefer the OTR transcript file above (Read tool) — it is the strongest, pre-verified source.
 - For anything it doesn't cover, use WebFetch ONLY. Never use WebSearch or Playwright — both share a
-  rate-limited quota pool. Fetch URLs directly using the patterns in your agent definition
-  (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times). If a URL 404s, try
-  the next pattern. Do not fall back to WebSearch.
+  rate-limited quota pool. Fetch URLs directly using the patterns under `### URL Patterns — Fetch
+  These in Order` in `.claude/agents/politician-stance-researcher.md` (Ballotpedia,
+  ontheissues.org, official pages, Wikipedia, CalMatters, LA Times) — read that file for them. If a
+  URL 404s, try the next pattern. Do not fall back to WebSearch.
 
 TWO OUTPUT FILES, both in --output-dir (RFC-4180; quote any field containing commas; double embedded quotes):
 1) research.csv:
@@ -284,9 +357,10 @@ Other rules:
 - Use the full 1-5 range; match to stance text, not political alignment
 ```
 
-> **Orchestrator note:** When pasting the JSON output into the `TOPIC SCALE REFERENCE` placeholder above, format each topic entry as:
+> **Note:** `build-stance-topic-bundle.ts` already prints each topic entry in this shape — paste its
+> block for the politician's level as printed:
 >
->     [topic_key] (id: [uuid])
+>     [topic_key] (id: [uuid], revision: [topic_revision_id])
 >     Question: "[question_text]"
 >       1 = "[stance text for value 1]"
 >       2 = "[stance text for value 2]"
@@ -294,22 +368,24 @@ Other rules:
 >       4 = "[stance text for value 4]"
 >       5 = "[stance text for value 5]"
 
-Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
+🔴 **Do not call the Agent tool here.** `politician-stance-researcher` is retained for its URL
+patterns and per-office guidance, which you read; it is not to be dispatched.
 
 ---
 
 ## STEP 2 — Collect and Merge Results
 
-After all agents complete:
+After the last politician in the batch is finished:
 
-1. Read research.csv and evidence.csv from the batch dir
-2. If multiple agents wrote to the same files, verify no duplicate headers
-3. If agents returned results in their response text instead of writing to file, manually compile into the CSV files using the Write tool
+1. Read research.csv and evidence.csv — the files you wrote — from the batch dir
+2. Verify no duplicate headers where runs appended to the same file
+3. Confirm every person you researched is represented — a person with no evidenced chair is a
+   documented zero and must be recorded as one (blank-value rows that say why), not silently dropped
 4. **One row per (full_name, topic_key).** A re-research or retry pass REPLACES that pair's rows in
    research.csv and evidence.csv — delete the old rows for the pair, then write the new ones. Never
    append a second row for a pair: two rows cross-verify each other's snippets, so `stance-gate`
    flags both `duplicate-row` (high) and `verify-stance-research` exits 2.
-5. Count total stances collected vs. expected (politicians x topics)
+5. Count total stances collected vs. expected (politicians × in-scope topics from the bundle)
 6. research.csv includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
 
 ---
@@ -351,7 +427,7 @@ any `--apply`:
 | `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` **only when the run passes `--auto-push`**; without it (the default) this row is `review` / `review-all-mode` |
 | `unchanged` | same value already in the open season — skipped |
 | `review` | queued for a person: `review-all-mode` (clean, but review-all is on), `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
-| `re-research` | `gate-high` (defective — goes back to the researcher, not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
+| `re-research` | `gate-high` (defective — goes back to research (4a(i)), not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
 
 Every queued row in `publish-report.json` carries `admin_queue_visible`. **`false` means the row
 is saved but NOT in the admin queue**: an `unresolved-politician` row is stored with status
@@ -412,37 +488,97 @@ skill, **(4f)** promote the Read & Rank picks to live only once the audit is cle
 
 ### 4a. Pre-push QA (before any write)
 
+🔴 **(0) Verify every quote against raw page bytes, before anything else.** WebFetch runs each
+page through a summarising model and will hand back paraphrased talking points formatted as
+quotations. A quote that never existed is a fabricated statement attributed to a real person — the
+worst thing this pipeline can produce, and no other check in 4a looks for it.
+
+<!-- TODO(Task 2): these arguments find no file in a research-stances batch. verify-quotes scans a
+directory for /^out-.*\.csv$/ and a batch holds research.csv, so as written it exits 2 ("no CSV files
+to check"). Task 2 of docs/superpowers/plans/2026-09-23-stance-program-reconciliation.md sets the
+batch CSV and --sources (OTR transcripts). -->
+```bash
+cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<wave>
+```
+
+It exits 1 and names every quote it could not find. A failure is either mis-sourced (find the true
+source) or invented (drop the quote). Do not push past a non-zero exit.
+
 **(i) Stance gate, snippet verification, quote mechanics — in this order.**
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a
 B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
-npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-dispatch the researcher for those pairs, re-run
+npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-research those pairs yourself, re-run
 npx tsx scripts/verify-stance-research.ts --dir $B   # dry-run: fetches every source, writes $B/publish-report.json
 node ../.claude/skills/research-stances/scripts/build-and-check.mjs --csv $B/research.csv   # quotes
+# build-and-check prints "MECHANICAL FINDINGS: N (high=.. medium=.. low=..)", writes
+# $B/research.bundle.json, and exits non-zero if any high-severity finding remains.
 ```
 
-**Stance findings go back to the researcher. The orchestrator never edits past the gate.** A
+`build-and-check.mjs` builds the audit context bundle (topics → quotes with stance + editor_note +
+de-id) and runs the deterministic quote checks (note-missing, note-section-ref, note-too-long,
+deid-missing, trailing-ellipsis, partisan-tell, invalid-source, unquotable-source, scorecard-source,
+pointer-only-source, stance-label). There is no campaign-site URL check: a campaign page is judged on
+how directly it answers the question, not on its medium, so that call belongs to the judgment pass
+below (`source-not-an-answer`).
+
+**Stance findings go back to research. The orchestrator never edits past the gate.** A
 `stance-gate` **high** finding (and a verifier `re-research` row) means the research is defective:
-re-dispatch the `politician-stance-researcher` for that politician/topic, have the new pass REPLACE
-that pair's rows in research.csv and evidence.csv (STEP 2 item 4), and re-run the gate. You — the
-orchestrator — must **never** edit `value`, `reasoning`, `evidence_type`, source URLs or snippets to
-clear a finding. An edit that clears a finding is a claim no researcher made and no fetched page backs;
-the gate exists to stop exactly that.
+re-research that pair yourself — fetch the sources again and rebuild the row from what the pages say
+— have the new pass REPLACE that pair's rows in research.csv and evidence.csv (STEP 2 item 4), and
+re-run the gate. Research runs inline, so the same session also acts as orchestrator from the gate to
+the push; in that role you must **never** edit `value`, `reasoning`, `evidence_type`, source URLs or
+snippets to clear a finding. An edit that clears a finding is a claim no research pass made and no
+fetched page backs; the gate exists to stop exactly that.
 
 **Quote mechanics (from `build-and-check.mjs` only) are fixed in the CSV.** Fix every **high**
 quote finding in the quote fields — write the missing `editor_note`, de-identify honestly, strip the
 trailing ellipsis, neutralize the partisan tell in the blind (`quote_deidentified`) text — and re-run
-until it's clean. Do not push a CSV with high-severity mechanical findings.
+until it's clean. An aggregator / quiz / scorecard source (`invalid-source`, `unquotable-source`,
+`scorecard-source`) must be re-sourced to the original; a `pointer-only-source` row (VOTE411 /
+thevoterguide.org) cannot be cited at all — LWV terms bar reproducing it — so re-source the position
+to the candidate's own materials, or drop the quote if VOTE411 is the only place it appears. A new
+source URL changes the stance row, so re-sourcing is a re-research of that pair (fetch the original,
+back it with a snippet in evidence.csv, REPLACE the pair's rows, re-run the gate), not an edit.
+Dropping the quote (clearing its quote fields) is a quote-field fix. Do not push a CSV with
+high-severity mechanical findings.
 
-**(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
-the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
-passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgment findings
-(`not-forward`, `is-attack`, `off-question`, `deid-dishonest`, `note-not-self-contained`,
-`source-summary`, `coupling-in-tension`). Resolve them:
+**(ii) Judgment pass — inline, one candidate at a time.** 🔴🔴 **Do NOT dispatch a sub-agent for
+this.** Read the **audit-quotes CHECKS.md §4 judgment prompt**
+(`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`) and apply it yourself to the
+`<csv>.bundle.json` produced above (`$B/research.bundle.json`), one candidate per pass. This used
+to say to dispatch one `Agent`-tool sub-agent per candidate *or per race*; that was withdrawn on
+2026-09-23 for the same reasons STEP 1 gives, two of which apply here without qualification:
+
+- **This is a verification pass**, and a sub-agent returning "clean" is not evidence anything was
+  checked. That failure is on the record here.
+- **"Or per race" is a batch**, and a batch hides which judgment went wrong.
+- Reason 1 applies to **one** of the checks rather than all of them, which is worth knowing: the
+  bundle is a local file, so most checks need no MCP — but `coupling-in-tension` weighs the quote
+  against the seated chair, and the authority for rung text is the **season pin**. A sub-agent
+  cannot reach it and would fall back to the frozen `inform.compass_stances`, on exactly the
+  ladders STEP 0 warns disagree with it.
+
+Produce the same JSON array of judgment findings
+(`not-forward`, `is-attack`, `off-question`, `question-override`, `deid-dishonest`,
+`note-not-self-contained`, `source-summary`, `coupling-in-tension`, `non-differentiating-goal`,
+`source-not-an-answer`, `misleading-verbatim`). Resolve them:
 - `not-forward` / `off-question` / `is-attack` → drop the quote (keep the stance value from the
   record); a `coupling-in-tension` → surface to the user with the value-change guard.
+- `question-override` → should not fire here: this bundle carries only the Compass question, never
+  a per-race override. If it does, surface it to the user; overrides are checked in the 4e audit.
 - `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
+- `source-summary` → replace the bullet or paraphrase with a sentence the candidate actually wrote
+  in that source. If the source has none, drop the quote.
+- `misleading-verbatim` → restore the qualifier or context the trim removed, or drop the quote if
+  no trim of the passage reads true on the blind card. Being verbatim does not excuse it.
+- `non-differentiating-goal` → surface to the user. The quote names a goal, a target or a
+  direction but no means, so do not promote it to live (4f) unless the user affirms it carries a
+  real distinguishing position.
+- `source-not-an-answer` → look for a more direct answer (a questionnaire or interview answer to
+  this question). If none exists, keep the quote: a curator-extracted quote may be all a candidate
+  has, and that is honest presence, not a defect.
 Only quotes that clear both passes proceed to the push.
 
 ### 4b. IDs come from the bundle — no separate lookup
@@ -450,7 +586,9 @@ Only quotes that clear both passes proceed to the push.
 `politicians.json` (written by `build-stance-topic-bundle.ts`) holds each person's `politician_id`;
 `stance-gate.ts` carries it into `stances.csv`; `verify-stance-research.ts` resolves by that id,
 never by name. For the quote push (4d), take `politician_id` from `politicians.json` and `topic_id`
-from `topics.json`.
+from `topics.json`. `topics.json` is already the open season's pin (STEP 0), so a `topic_id` taken
+from it is always a question the open season asks — the `is_live` trap that the old name-based lookup
+here fell into (17 pinned topics dropped, without raising) cannot happen.
 
 - **Two people with the same name in one batch are refused** by the gate (`ambiguous-politician`,
   high). Research them in separate batches.
@@ -473,7 +611,7 @@ row that passed every check is queued with reason `review-all-mode`. Only with `
 `auto-push` rows written directly, with `writeVerifiedStance` (season-aware: `UPSERT_ANSWER_SQL` +
 `UPSERT_CONTEXT_SQL` + `assertWritten`) and their verified snippets in
 `politician_context_evidence`, one transaction per row. `gate-high` rows are never written — they go
-back to the researcher (4a(i)).
+back to research (4a(i)): re-research the pair yourself.
 
 The verifier refuses the whole batch (exit 2, nothing written) when: two rows share a
 (politician, topic) pair; the bundle's ladder revision for a scored topic is no longer the open
@@ -498,8 +636,8 @@ A queued row's verified snippets become public citations only when a person appr
 `SELECT number FROM inform.seasons WHERE status = 'open'`. Do not trust a season number written in a
 doc; this one said "Season 1" for a month after Season 2 opened.
 
-⚠️ **Never hand-roll a stance INSERT**, and never copy `backend/scripts/apply-*-stances.ts` — ~158 of
-them carry the pre-seasons bare-pair upsert, which fails (`23502`) or silently writes nothing.
+⚠️ **Never hand-roll a stance INSERT**, and never copy `backend/scripts/apply-*-stances.ts` — all 149 of
+them (counted 2026-09-23) carry the pre-seasons bare-pair upsert, which fails (`23502`) or silently writes nothing.
 
 ### 4d. Push quotes to essentials.quotes — as DRAFTS
 
@@ -560,9 +698,14 @@ cd ../on-the-record/.claude/skills/audit-quotes && \
   ../../../.venv/bin/python -m scripts.audit --race <race_id> --include-drafts
 ```
 
-Then run the judgment fan-out and portfolio pass per the `audit-quotes` SKILL.md, and resolve
+Then run the judgment and portfolio pass per the `audit-quotes` SKILL.md, and resolve
 residual findings with `scripts/apply_fixes.py fixes.json` (dry-run first, show the diff, `--commit`
-only after the user OKs). Never auto-apply `decision-required` findings — list them for the user.
+only after the user OKs).
+
+⚠ **`audit-quotes` lives in the `on-the-record` repo and still describes that judgment pass as a
+fan-out.** It has not been changed by this ruling, so read it as *what* to judge, not *how* to
+dispatch it. **Run it inline, one candidate at a time**, for the reasons in 4a(ii). If that skill is
+ever updated, this caveat should go with it. Never auto-apply `decision-required` findings — list them for the user.
 A `source-unverified` finding usually means the quote is **mis-sourced** (wrong `source_url`); hunt
 the true OTR source and re-cite it rather than dropping a genuine quote.
 
@@ -619,259 +762,36 @@ After the pipeline:
 
 ## ERROR HANDLING
 
-- If an agent fails or times out, report which politician failed and offer to retry just that one. A retry REPLACES that politician's rows for the retried topics in research.csv and evidence.csv — never append a second row for a pair (STEP 2 item 4)
+- If research on a politician cannot be finished (sources will not load, or the run stops part-way), report which politician and which topics are unfinished, and offer to re-research just those yourself. A retry REPLACES that politician's rows for the retried topics in research.csv and evidence.csv — never append a second row for a pair (STEP 2 item 4)
 - If research.csv or evidence.csv can't be written, fall back to showing results in conversation and offer to retry the file write
 - If DB push fails for a specific row, report the error, skip that row, and continue with the rest
 - Never lose data — research.csv and evidence.csv in the batch directory are the source of truth, and publish-report.json records what happened to each row; DB push is additive
 
 ---
 
-# REWRITE RE-EVALUATION MODE (`--rewrite-id`)
+# Changing a ladder is not this skill's job
 
-> 🔴 **DO NOT USE UNTIL REDESIGNED (2026-09-22).** This mode auto-approves every proposal with no
-> human gate, and tells the researcher to map old evidence onto the new scale — CLAUDE.md requires a
-> material rewrite to be **re-audited against the new wording** ("a bill citation proves direction,
-> not magnitude"). It also bypasses the evidence gate above. Re-audit rewritten topics with the
-> normal pipeline instead.
+This skill used to carry a `--rewrite-id` REWRITE RE-EVALUATION MODE that fed
+`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`. **It was removed on 2026-09-23.**
+Both of those tables have always been empty — zero rows, ever — while the revision model it
+predates has 140 revisions spanning 2026-03-15 to 2026-09-12. It was a second, unused path to a job
+the revision model already does, and it still read the frozen `inform.compass_stances` table for
+both of its ladders, which is the defect this skill spends STEP 0 warning about.
 
-When `$ARGUMENTS` includes `--rewrite-id <uuid>`, the skill runs in a
-different mode that feeds the Plan D topic rewrite workflow
-(`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`)
-instead of pushing directly to live data.
+Use the revision model instead. It already carries what rewrite mode was hand-rolling:
 
-In this mode, the skill:
+- **`change_class`** — `clarifying` keeps existing seats and nothing re-audits; `substantive` means
+  the seats' evidence was gathered against a sentence that no longer exists, so those rows need a
+  re-audit against the new wording. State the seated-row count in the proposal's rationale so the
+  reviewer can price that re-audit before approving.
+- **`rung_map`** — the old→new identity mapping that decides which seats carry forward.
 
-1. Skips the normal politician-name input — the politician list
-   comes from `topic_rewrite_stance_proposals` rows already seeded
-   for the rewrite.
-2. Fetches BOTH the old and new topic framing and passes them to
-   the agent so each politician gets re-scored under the new scale.
-3. Pushes proposed values to `admin_upsert_stance_proposal` instead
-   of direct inserts on `politician_context`.
-4. Auto-approves each proposal via `admin_approve_stance_proposal`
-   (the workflow's human gate is intentionally bypassed by
-   auto-approval — the audit trail in `topic_rewrites` provides
-   rollback safety).
-5. Skips the STEP 3 approval summary prompt (nothing to approve —
-   everything auto-approves).
+Mechanics are in §8.3–8.5 of `docs/superpowers/specs/2026-09-23-stance-program-design.md`: propose
+a revision and approve it; for a **major** change do not publish — stage it into the next draft
+season and let the season opening publish it. A season's pin never moves once open, so rows already
+seated keep asserting exactly the wording they were evidenced against.
 
-## STEP 0 (rewrite mode) — Parse and fetch rewrite detail
-
-Parse `$ARGUMENTS` for `--rewrite-id <uuid>`. If present, switch to
-rewrite mode and IGNORE the politician-name and `--topics` args.
-
-Fetch the rewrite detail including old and new framing, plus the
-pending proposals queue:
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const rewriteId = process.argv[2];
-const { rows: detail } = await pool.query(\`
-  SELECT r.*,
-         ot.title AS old_title, ot.question_text AS old_question_text, ot.version AS old_version,
-         nt.title AS new_title, nt.question_text AS new_question_text, nt.version AS new_version
-  FROM inform.topic_rewrites r
-  JOIN inform.compass_topics ot ON ot.id = r.old_topic_id
-  JOIN inform.compass_topics nt ON nt.id = r.new_topic_id
-  WHERE r.id = \$1
-\`, [rewriteId]);
-const { rows: oldStances } = await pool.query(
-  'SELECT value, text FROM inform.compass_stances WHERE topic_id=\$1 ORDER BY value',
-  [detail[0].old_topic_id]
-);
-const { rows: newStances } = await pool.query(
-  'SELECT value, text FROM inform.compass_stances WHERE topic_id=\$1 ORDER BY value',
-  [detail[0].new_topic_id]
-);
-const { rows: proposals } = await pool.query(\`
-  SELECT p.politician_id, p.old_value, p.old_reasoning, p.old_sources, p.status,
-         pol.full_name, oc.title AS office_title, oc.chamber_name
-  FROM inform.topic_rewrite_stance_proposals p
-  JOIN essentials.politicians pol ON pol.id = p.politician_id
-  LEFT JOIN LATERAL (
-    SELECT o.title, c.name AS chamber_name
-      FROM essentials.office_current_holder och
-      JOIN essentials.offices o ON o.id = och.office_id
-      LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
-     WHERE och.politician_id = pol.id
-     ORDER BY o.title LIMIT 1
-  ) oc ON true
-  WHERE p.rewrite_id = \$1 AND p.status = 'pending'
-  ORDER BY pol.full_name
-\`, [rewriteId]);
-console.log(JSON.stringify({ rewrite: detail[0], oldStances, newStances, proposals }, null, 2));
-await pool.end();
-" -- "REWRITE_ID_HERE"
-```
-
-Confirm with the user before dispatching agents:
-- Topic being rewritten (`topic_key` and old→new version)
-- New framing (title, question_text, 5 stance texts)
-- Old framing for context
-- Count of politicians to re-evaluate (= count of pending proposals)
-- Estimated scope ("~30 politicians × 1 topic = 30 re-evaluations")
-
-## STEP 1 (rewrite mode) — Dispatch re-evaluation agents
-
-For each politician with a pending proposal (batch size 3–5 per
-agent to keep context manageable), dispatch a
-`politician-stance-researcher` agent.
-
-**Dispatch prompt template for re-evaluation:**
-
-```
-You are running in REWRITE RE-EVALUATION MODE.
-
-A compass topic has been rewritten with new framing. You need to
-re-score each listed politician's stance under the new scale. Their
-old stance under the old scale is provided as context — use it to
-understand their position, then map that position onto the new scale.
-
-## Topic key
-[TOPIC_KEY, e.g. ai-regulation]
-
-## OLD framing (what the politician was originally scored against)
-Question: [old_question_text]
-Stance scale:
-  1 = [old_stance_1]
-  2 = [old_stance_2]
-  3 = [old_stance_3]
-  4 = [old_stance_4]
-  5 = [old_stance_5]
-
-## NEW framing (what you're scoring against now)
-Question: [new_question_text]
-Stance scale:
-  1 = [new_stance_1]
-  2 = [new_stance_2]
-  3 = [new_stance_3]
-  4 = [new_stance_4]
-  5 = [new_stance_5]
-
-## Politicians to re-evaluate
-
-For each politician below, you have their prior stance, prior
-reasoning, and prior sources. Your task is to produce a NEW value,
-NEW reasoning, and NEW sources under the new scale.
-
-[For each politician in the batch, include:]
-### [full_name] ([office_title], [chamber_name])
-- Prior value under old scale: [old_value]
-- Prior reasoning: [old_reasoning]
-- Prior sources: [old_sources joined]
-
-## Instructions
-
-- Prefer mapping the prior evidence onto the new scale — that's the
-  fastest path when the new framing is a generalization or
-  reframing of the old one.
-- Only do fresh research if the new framing asks about something the
-  old research didn't cover (e.g., new framing includes a dimension
-  the old scale ignored). Note in reasoning when you added evidence.
-- Your new reasoning MUST explicitly reference the new scale. Write
-  as if explaining to someone looking at the new question/stances
-  for the first time. Do not reference the old scale.
-- If a politician's position genuinely spans two new stances, pick
-  the better match and note the ambiguity in reasoning.
-- If you cannot score a politician under the new framing with
-  available evidence, output value=null and note in reasoning why.
-  Do NOT guess.
-
-## Output format
-
-For each politician, produce one CSV row:
-
-full_name,politician_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3
-
-Write to --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-rewrite-[TOPIC_KEY].csv
-
-Important: The politician_id column is new in this mode — include
-the UUID from the batch input for each row.
-```
-
-## STEP 2 (rewrite mode) — Collect results (same as normal mode)
-
-Same as STEP 2 in normal mode, just with politician_id column.
-
-## STEP 3 (rewrite mode) — SKIPPED
-
-No approval prompt. In rewrite mode, the workflow auto-approves
-every proposal. The audit trail lives in the `topic_rewrites` table
-and every change is reversible (old topic row stays with
-is_live=false for easy rollback).
-
-## STEP 4 (rewrite mode) — Push proposals + auto-approve
-
-For each re-evaluated row, call TWO RPCs in sequence:
-
-### 4a. Upsert the proposal
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const rewriteId = process.argv[2];
-const stances = JSON.parse(process.argv[3]);
-for (const s of stances) {
-  if (s.value === null || s.value === undefined) {
-    console.log('SKIP ' + s.full_name + ': no value (insufficient evidence)');
-    continue;
-  }
-  const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
-  // Upsert via the RPC (SECURITY DEFINER handles schema access)
-  await pool.query(\`
-    SELECT inform.admin_upsert_stance_proposal(\$1::uuid, \$2::uuid, \$3::numeric, \$4::text, \$5::text[])
-  \`, [rewriteId, s.politician_id, s.value, s.reasoning, sources]);
-  console.log('UPSERT ' + s.full_name + ' value=' + s.value);
-}
-await pool.end();
-" -- "REWRITE_ID" '[JSON_ARRAY]'
-```
-
-### 4b. Auto-approve each proposal
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const rewriteId = process.argv[2];
-const actorId = process.argv[3];  // user id running the rewrite
-const politicianIds = JSON.parse(process.argv[4]);
-for (const pid of politicianIds) {
-  try {
-    await pool.query(\`
-      SELECT inform.admin_approve_stance_proposal(\$1::uuid, \$2::uuid, \$3::uuid, \$4::text)
-    \`, [rewriteId, pid, actorId, 'auto-approved by research-stances rewrite mode']);
-    console.log('APPROVE ' + pid);
-  } catch (e) {
-    console.log('SKIP ' + pid + ': ' + e.message);
-  }
-}
-await pool.end();
-" -- "REWRITE_ID" "ACTOR_USER_ID" '[JSON_POLITICIAN_IDS]'
-```
-
-Note on `actorId`: this is a Supabase user id needed by the RPC for
-audit logging. The orchestrator (not the skill) supplies it — use
-the same id that created the rewrite.
-
-### 4c. Report results
-
-```
-## Rewrite re-evaluation complete: [topic_key]
-
-- Rewrite ID: [uuid]
-- Politicians re-evaluated: [N]
-- Proposals approved: [N]
-- Skipped (insufficient evidence): [list]
-
-The rewrite is now ready for publish_ready + publish. The
-orchestrator will run `admin_mark_rewrite_publish_ready` and
-`admin_publish_topic_rewrite` to complete the workflow.
-```
-
-The skill stops here in rewrite mode. The orchestrating
-conversation (not the skill itself) is responsible for calling
-`admin_mark_rewrite_publish_ready` + `admin_publish_topic_rewrite`
-afterward — that way the human/AI running the rewrite can inspect
-the proposals table between auto-approval and publish if desired,
-even though the normal path is to publish immediately.
+Once a new ladder is pinned into the open season, re-researching the people seated against the old
+one is an ordinary run of this skill — STEP 0 resolves the new rung text from the pin, and the
+value-change guard (STEP 3, enforced by `verify-stance-research`) sends each changed value to the
+review queue, where a person signs off on it one row at a time.

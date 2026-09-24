@@ -1,6 +1,29 @@
 # CAL-ACCESS Ingest Runbook
 
-**Last updated:** 2026-04-01  
+> ## 🔴 THE LINKING PIPELINE BELOW IS RETIRED — do not revive it as written (2026-09-23)
+>
+> - **Step 1 is deleted.** `discover-cal-access-candidates.ts` and `discover-by-jurisdiction.ts` were
+>   removed on 2026-09-23 (git history keeps them). Both linked committees to people **by name only**.
+>   The first classified Cal-Access SUB_CATEGORY `40102` (PRIMARILY FORMED CANDIDATE) as the
+>   candidate's own committee; those are **independent committees that support or oppose** the
+>   candidate. The second seeded `confirmed` links with no control check at all. `CA_0192` found 63
+>   such committees linked as people's own ("… SPONSORED BY BIZFED PAC", "CALIFORNIANS TO RECALL
+>   GAVIN") and disputed them.
+> - **Steps 2 and 3 are deleted too.** `confirm-cal-access.ts` was removed on 2026-09-23. It could
+>   not run (it wrote the dropped `essentials.offices.politician_id`, ADR 0002, migration 1463), and
+>   it matched on the last token of the name (migrations 1789 and 1792 demoted its results). CI step
+>   "cal-access predicate tripwire" still fails a restore that keeps that rule.
+> - The counts below are from April. On 2026-09-23 only 306 `cal_access` links on active rows are
+>   `confirmed`.
+> - **How to link a committee today:** decide it from the SOS bulk export — `FILER_TO_FILER_TYPE_CD`
+>   CATEGORY `40002` (CONTROLLED), a `FILER_LINKS_CD` `12011` link naming the controlling candidate,
+>   and state e-filed covers in `CVR_CAMPAIGN_DISCLOSURE_CD`. `CA_0192`'s header describes the method.
+>   Do **not** confirm a local committee that has no SOS covers: its filings are with the city or
+>   county, so it loads nothing and shows a false "data pending".
+> - Ingestion is separate and still live: `calAccessAdapter.ts`, run by the `cal-access` job in
+>   `backend/src/jobs/registry.ts` (#659). It loads only `confirmed` links.
+
+**Last updated:** 2026-04-01 (banner above: 2026-09-23)  
 **Status:** Phase 1 (discovery + auto-confirm + ambiguous pass) complete. ~64k `needs_research` rows remain.  
 **Purpose:** Document what happened, what we learned, and the exact steps to continue.
 

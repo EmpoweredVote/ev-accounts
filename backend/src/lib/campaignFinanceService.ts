@@ -494,19 +494,47 @@ const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ES
 /**
  * detectCoverageStatus classifies a politician with no confirmed contributions
  * into one of three coverage statuses:
- *   - 'data_pending'       — has source rows but no contributions ingested yet
+ *   - 'data_pending'       — has a confirmed committee that ingestion has not yet completed a run for
  *   - 'local_unavailable'  — local/county office; filings are paper/offline
- *   - 'no_data'            — federal/state office with no sources on file
+ *   - 'no_data'            — federal/state office with no confirmed committee on file
  */
 async function detectCoverageStatus(politicianId: string): Promise<string> {
   // Count candidate_committee sources only — ie_committee rows represent PAC/IE spending
   // linked to this politician's race, not the politician's own fundraising committee.
   // A politician with only ie_committee sources has genuinely no candidate fundraising.
+  //
+  // Confirmed links only, like every other read in this file. 'data_pending' renders as
+  // "filings for this candidate have been sourced and are being processed", and the ingestion
+  // scheduler reads confirmed links only, so no other status is a filing on its way:
+  // 'disputed' and 'not_applicable' are the wrong committee, and 'needs_research' is an
+  // unchecked surname match (migration 1792) that waiting will never turn into data.
+  //
+  // ⚠ Until 2026-09-23 this count had no research_status filter. Migration 1792 and the
+  // committee-link audits CA_0166, CA_0174, CA_0177 and CA_0178 all say every read path requires
+  // 'confirmed' and nothing reads 'needs_research' — that was false here: their demoted and
+  // disputed links kept the pending banner up. Fixing it moved 343 active politicians off
+  // 'data_pending' (248 to 'local_unavailable', 95 to 'no_data'; measured on prod that day).
+  // Admin CRUD and write-path lookups aside, the one read that still counts every status is
+  // HAS_ANY_CONTRIBUTION_SQL (donorCoverage.ts), deliberately, for the admin coverage maps.
+  //
+  // 🔴 AND ONLY WHILE A RUN IS STILL OWED. A confirmed committee that ingestion has already
+  // completed a run for, and that still has no contributions, is not "being processed": the source
+  // simply holds nothing to load. Typical case: a local committee confirmed at the SOS whose Form 460s
+  // are filed with the city clerk (Corey Calaycay, Claremont — both confirmed committees ran on
+  // 2026-09-23/24 and fetched 0 records). Before this, 187 active politicians read 'data_pending'
+  // and 156 of them had every confirmed committee already ingested, so the banner could never clear.
+  // They now fall through to the office rule below. 'failed' runs do not count as done: a retry is
+  // still owed. Same "done" set as fecBurstResume.ts: 'completed' and 'completed_with_warning'.
   const sourceCountResult = await pool.query<{ cnt: string }>(
     `SELECT COUNT(*) AS cnt
-     FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1
-       AND source_type = 'candidate_committee'`,
+     FROM transparent_motivations.politician_sources ps
+     WHERE ps.essentials_politician_id = $1
+       AND ps.source_type = 'candidate_committee'
+       AND ps.research_status = 'confirmed'
+       AND NOT EXISTS (
+         SELECT 1 FROM transparent_motivations.ingestion_runs ir
+          WHERE ir.politician_source_id = ps.id
+            AND ir.status IN ('completed', 'completed_with_warning'))`,
     [politicianId]
   );
   const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
@@ -843,10 +871,18 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
  * refreshSummaryAggForSource refreshes the agg for every election_cycle present for a
  * politician_source (a single pair-ingest can touch multiple cycles for non-FEC sources).
  * Called from runIngestion after a successful upsert.
+ *
+ * Cycles are read from the agg table too, not only from contributions: an ingest that
+ * PRUNES rows (Cal-Access drops superseded amendments) can empty a cycle, and a cycle with
+ * no contributions left would otherwise never be revisited, leaving its agg row stale.
+ * refreshSummaryAgg deletes the agg row for such a cycle.
  */
 export async function refreshSummaryAggForSource(politicianSourceId: string): Promise<void> {
   const cyclesRes = await pool.query<{ election_cycle: string }>(
-    `SELECT DISTINCT election_cycle FROM transparent_motivations.contributions
+    `SELECT election_cycle FROM transparent_motivations.contributions
+     WHERE politician_source_id = $1
+     UNION
+     SELECT election_cycle FROM transparent_motivations.contribution_summary_agg
      WHERE politician_source_id = $1`,
     [politicianSourceId]
   );
@@ -965,7 +1001,8 @@ async function getSummaryFromAgg(
     authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
 
   const sourceSystemMap: Record<string, string> = {
-    fec: 'fec', indiana: 'indiana_zip_etag_2026', cal_access: 'cal_access', la_city: 'la_city',
+    // 'indiana' is the year-agnostic stamp runAdapterForAll('indiana') writes after each run.
+    fec: 'fec', indiana: 'indiana', cal_access: 'cal_access', la_city: 'la_city',
   };
   const metaSourceSystem = sourceSystemMap[primaryDataSource] ?? primaryDataSource;
   const metaResult = await pool.query<MetaRow>(
@@ -1206,7 +1243,7 @@ export async function getSummary(
   // Query last_sync_at for freshness header — use the actual data source
   const sourceSystemMap: Record<string, string> = {
     fec: 'fec',
-    indiana: 'indiana_zip_etag_2026',
+    indiana: 'indiana', // year-agnostic stamp written after each run (was indiana_zip_etag_2026)
     cal_access: 'cal_access',
     la_city: 'la_city',
   };

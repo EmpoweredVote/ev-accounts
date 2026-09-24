@@ -128,11 +128,16 @@ export const GEOFENCE_DISTRICT_JOIN = `
         OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD_EDUCATION')
         -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
         -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
-        -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT here
+        -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832) and California's
+        -- Second Appellate District (migration CA_0189). EXPLICIT here
         -- and in MTFCC_DISTRICT_TYPE_GUARD; the two must stay in step, and the X catch-all in
         -- geoIdGuard.ts does NOT admit JUDICIAL, so relying on a catch-all would leave these
         -- reachable through this join but UNREACHABLE to check-address-reachability.mjs.
         OR (gb.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')
+        -- X-CA-SBOE: California Board of Equalization districts (2021 CRC map, migration CA_0205).
+        -- EXPLICIT, and kept in step with MTFCC_DISTRICT_TYPE_GUARD, whose X catch-all does not
+        -- admit STATE_BOARD.
+        OR (gb.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')
         OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id.
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
@@ -233,11 +238,13 @@ export function buildStatewideQuery(): string {
     -- against its state outline; any OTHER layer means the court has its own polygon and must be
     -- matched spatially instead (migration 1832 gave Indiana's Districts 1-3 X0029 polygons).
     --
-    -- ⚠ d.geo_id IS NOT NULL is load-bearing. ~504 California JUDICIAL rows carry a NULL geo_id;
+    -- ⚠ d.geo_id IS NOT NULL is load-bearing. ~504 California JUDICIAL rows carried a NULL geo_id;
     -- under the old rule LENGTH(NULL) != 5 is NULL, so they were excluded. Without this clause the
     -- NOT EXISTS would be vacuously TRUE and all 504 would surface on every California address.
     -- Measured against prod: with it, this rule admits exactly the same rows as the old one
     -- (CA 0, IN 16, WI 1); without it, CA jumps 0 -> 504.
+    -- CA_0189 (2026-09-23) linked the held seats (Supreme Court '06', LA Superior Court '06037',
+    -- 2nd Appellate District X0029); 81 stale per-judge slots still carry NULL and still rely on this.
     --
     -- Keep in step with STATEWIDE_RESOLVED in scripts/check-address-reachability.mjs.
     AND (

@@ -27,6 +27,8 @@ The planning version of this runbook is in git history (PR #477).
 
 **Cost added ≈ $4/month** (3 heavy + 2 LLM Render crons; only FEC has real compute; Supabase Cron
 $0; no worker). Confirm against the real Render invoice after a full cycle (ev-cto watchlist #63).
+`ev-jobs-cal-access` (added 2026-09-23) adds ≈ $1.50/month: `pro` at $0.00197/min × ~25 min on a day
+the SOS export changed; a 304 day costs about one minute. $1/month minimum per cron.
 
 ## The HTTP job-trigger route (PR #477 — merged, deployed)
 
@@ -48,6 +50,7 @@ All: runtime `node`, repo `EmpoweredVote/ev-accounts@master`, region `oregon`, e
 | `ev-jobs-ocpf` | `crn-dain6h1594qs739epesg` | `0 4 1 * *` | starter | `… dist/jobs/run.js ocpf` |
 | `ev-jobs-trivia-pipeline` | `crn-dain8nuk1f9s738t6gs0` | `0 7 * * *` | starter | `… dist/jobs/run.js trivia-pipeline` |
 | `ev-jobs-trivia-election-detection` | `crn-dain6d1594qs739ep150` | `0 11 * * *` | starter | `… dist/jobs/run.js trivia-election-detection` |
+| `ev-jobs-cal-access` | `crn-daq44qo473hc73cia100` | `0 16 * * *` | pro (2c-4g) | `… dist/jobs/run.js cal-access` — added 2026-09-23 (PR #659); ~1.9 GB peak, so not `standard` |
 
 **Gotchas hit (why these differ from the plan):**
 - `create_cron_job` has **no root-directory parameter**, so `cd backend &&` is baked into the
@@ -193,6 +196,10 @@ revert.
 - [ ] Verify each **Render cron** at its first real run (fec + trivia tomorrow; Netfile/OCPF Oct 1)
   via the proof queries — or a manual "Run" in the dashboard.
 - [ ] Read the real Render invoice after a full cycle; confirm ~$4/month (ev-cto watchlist #63).
+- [ ] **`ev-jobs-cal-access`: link env group `ev-jobs-shared` in the dashboard** (the MCP cannot link
+  one). Without it the run exits at `env.ts` import. Then check its first run (16:00 UTC): one
+  `ingestion_runs` row per confirmed link, or `data_source_metadata.cal_access_zip_etag`
+  `last_sync_status='not_modified'` on a 304 day.
 - [ ] Optional: one self-alerting Supabase Cron **health job** that runs the proofs and alerts if
   any signal is stale — a laptop-independent alternative to the local daily task.
 - [ ] Before a **second** API copy: clear the "blocks two copies" list in `docs/JOB-API-SPLIT.md`

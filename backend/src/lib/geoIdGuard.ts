@@ -85,10 +85,16 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
     OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD_EDUCATION')
     -- X0029: appellate districts whose geometry is a union of whole counties and so has no TIGER
-    -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832). EXPLICIT rather
+    -- layer of its own — Indiana Court of Appeals Districts 1-3 (migration 1832) and California's
+    -- Second Appellate District, geo_id '06-appellate-district-2' (migration CA_0189). EXPLICIT rather
     -- than left to the X catch-all below, which admits only LOCAL/COUNTY and would therefore leave
     -- every one of these seats unreachable by address.
     OR (gp.mtfcc = 'X0029' AND d.district_type = 'JUDICIAL')
+    -- X-CA-SBOE: California's four Board of Equalization districts, loaded from the 2021 Citizens
+    -- Redistricting Commission map (migration CA_0205). No TIGER layer, and BOE-1/BOE-4 split San
+    -- Bernardino County, so not a union of counties either. EXPLICIT for the same reason as X0029:
+    -- the X catch-all below admits only LOCAL/COUNTY, which would leave every BOE member unreachable.
+    OR (gp.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
     -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
     -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.

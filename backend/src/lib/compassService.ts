@@ -35,39 +35,6 @@ interface PoliticianAnswer {
 }
 
 /**
- * promoteCompassImportDraft
- *
- * Lazy promotion: moves Phase 3 calibration data stored in
- * connect.verification_sessions.compass_import_draft into the live
- * inform.compass_responses table.
- *
- * Called on the first GET /compass/answers for a user. If the draft is
- * already NULL (already promoted or never set), the function exits
- * immediately without touching the database.
- *
- * Non-fatal: if any error occurs the transaction is rolled back, the draft
- * is preserved (so the next GET /answers will retry), and the error is
- * logged but NOT re-thrown. Callers should never surface this failure to
- * the end user.
- *
- * ON CONFLICT (user_id, topic_id) DO NOTHING ensures manual calibrations
- * already saved by the user are never overwritten by an imported draft.
- *
- * Delegates to the promote_compass_import_draft SECURITY DEFINER RPC which
- * handles the transactional multi-step promotion atomically.
- */
-export async function promoteCompassImportDraft(userId: string): Promise<void> {
-  const { error } = await adminRpc('promote_compass_import_draft', {
-    p_user_id: userId,
-  });
-
-  if (error) {
-    // Non-fatal — log but do not re-throw. Draft is preserved for retry.
-    console.error('[promoteCompassImportDraft] error — draft preserved for retry:', error.message);
-  }
-}
-
-/**
  * getCompassCompleteness
  *
  * Calculates how many live compass topics a user has answered, optionally
@@ -1209,7 +1176,9 @@ export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] 
 
 /**
  * Returns all verified citation blocks for a politician, grouped by topic.
- * Only includes topics where at least one verified snippet exists.
+ * Only includes topics where at least one verified snippet exists, and that the
+ * season the block shows (the answer's, else the context's) asks — see the
+ * season_questions predicate in the query. Not is_live.
  * Topics with evidence but no published answer have has_stance = false.
  */
 export async function getPoliticianCitations(politicianId: string): Promise<TopicCitationBlock[]> {
@@ -1238,8 +1207,9 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        pce.verified_at::text AS verified_at,
        (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
      FROM inform.politician_context_evidence pce
-     JOIN inform.compass_topics ct
-       ON ct.id = pce.topic_id AND ct.is_live = true
+     -- Topic identity and title only. Which topics may appear is decided by the
+     -- season_questions predicate in the WHERE below, never by is_live.
+     JOIN inform.compass_topics ct ON ct.id = pce.topic_id
      -- 🔴 THESE MUST BE LATERALs, AND pc MUST SHARE pa'S SEASON.
      -- This query is voter-facing (essentials Citations.jsx renders the reasoning
      -- under "Why this position?"). As plain bare-pair LEFT JOINs, each evidence
@@ -1273,7 +1243,8 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         LIMIT 1
      ) cs ON true
      LEFT JOIN LATERAL (
-       SELECT c.reasoning, c.sources
+       -- season_id is read only by the topic-set predicate in the WHERE below.
+       SELECT c.reasoning, c.sources, c.season_id
          FROM inform.politician_context c
          JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE c.politician_id = pce.politician_id AND c.topic_id = pce.topic_id
@@ -1285,6 +1256,25 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         LIMIT 1
      ) pc ON true
      WHERE pce.politician_id = $1
+       -- 🔴 THE TOPIC SET FOLLOWS THE SEASON THIS BLOCK SHOWS — not is_live, and
+       -- not the open season. This used to be "ct.is_live = true" on the join,
+       -- which hid every citation on the 17 Season 2 topics created staged
+       -- (is_live = false): opening a season flips no boolean. Same defect
+       -- CC_0066 fixed on the user-answer write gate.
+       --
+       -- The season is pa's when there is a stance and pc's when there is not;
+       -- both LATERALs already exclude draft, so a block with neither has
+       -- nothing published to show and is dropped. It is NOT the promoted set
+       -- (getPromotedTopics): that is the open season only, and would drop the
+       -- citation for a Season 1 answer on a topic Season 2 no longer asks,
+       -- while getPoliticianAnswers still serves that answer (ADR 0005 §3.4).
+       --
+       -- Here in the outer WHERE, not inside pa: there it would change WHICH
+       -- season wins the collapse instead of deciding whether the block exists.
+       AND EXISTS (
+         SELECT 1 FROM inform.season_questions sq
+          WHERE sq.topic_id = pce.topic_id
+            AND sq.season_id = COALESCE(pa.season_id, pc.season_id))
      ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
               pce.verified_at DESC`,

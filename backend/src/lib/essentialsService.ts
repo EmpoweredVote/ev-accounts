@@ -208,142 +208,6 @@ export interface AddressSearchResult {
   jurisdictionGeoIds: JurisdictionGeoIds;
 }
 
-export interface PoliticianRecord {
-  id: string;
-  full_name: string | null;
-  first_name: string | null;
-  last_name: string | null;
-  preferred_name: string | null;
-  photo_origin_url: string | null;
-  is_active: boolean;
-  is_vacant: boolean | null;
-  is_incumbent: boolean;
-  party: string | null;
-  party_short_name: string | null;
-  slug: string | null;
-  bio_text: string | null;
-}
-
-export interface PoliticianGroup {
-  party: string | null;
-  incumbent: PoliticianRecord | null;
-  candidates: PoliticianRecord[];
-}
-
-// ---------------------------------------------------------------------------
-// getPoliticiansGrouped
-// ---------------------------------------------------------------------------
-
-/**
- * Fetch active politicians from essentials.politicians and group by party.
- *
- * After Phase 35 deduplication, essentials.politicians is the unified source
- * of truth. inform-specific columns (office_title, district_type, is_candidate,
- * etc.) are not present; essentials uses is_incumbent to distinguish incumbents
- * from non-incumbents.
- *
- * Filters applied:
- *   - is_active = true  (exclude deactivated/removed records)
- *
- * When includeCandidates is false:
- *   - Returns only rows where is_incumbent = true
- *   - Each group: { party, incumbent: politician, candidates: [] }
- *
- * When includeCandidates is true:
- *   - Returns all active politicians (incumbents + non-incumbents)
- *   - Each group: { party, incumbent: first incumbent in party, candidates: non-incumbents }
- *
- * Ordering: non-null party groups first (alphabetical), null last.
- *
- * On DB error: throws (NOT a silent empty array).
- */
-export async function getPoliticiansGrouped(
-  includeCandidates: boolean
-): Promise<PoliticianGroup[]> {
-  // Uses pool.query() — essentials schema is not exposed via PostgREST.
-  // Build parameterized query with optional incumbent filter.
-  const baseSelect = `
-    SELECT id, full_name, first_name, last_name, preferred_name,
-           photo_origin_url, is_active, is_vacant, is_incumbent,
-           party, party_short_name, slug, bio_text
-    FROM essentials.politicians
-    WHERE is_active = true`;
-
-  const queryText = includeCandidates
-    ? `${baseSelect} ORDER BY party ASC NULLS LAST, last_name ASC, first_name ASC`
-    : `${baseSelect} AND is_incumbent = true ORDER BY party ASC NULLS LAST, last_name ASC, first_name ASC`;
-
-  const { rows } = await pool.query<{
-    id: string;
-    full_name: string | null;
-    first_name: string | null;
-    last_name: string | null;
-    preferred_name: string | null;
-    photo_origin_url: string | null;
-    is_active: boolean;
-    is_vacant: boolean | null;
-    is_incumbent: boolean;
-    party: string | null;
-    party_short_name: string | null;
-    slug: string | null;
-    bio_text: string | null;
-  }>(queryText);
-
-  // Group by party
-  const groupMap = new Map<string | null, PoliticianGroup>();
-
-  for (const row of rows) {
-    const key = row.party ?? null;
-    const record: PoliticianRecord = {
-      id: row.id,
-      full_name: row.full_name,
-      first_name: row.first_name,
-      last_name: row.last_name,
-      preferred_name: row.preferred_name,
-      photo_origin_url: row.photo_origin_url,
-      is_active: row.is_active,
-      is_vacant: row.is_vacant,
-      is_incumbent: row.is_incumbent,
-      party: row.party,
-      party_short_name: row.party_short_name,
-      slug: row.slug,
-      bio_text: row.bio_text,
-    };
-
-    if (!groupMap.has(key)) {
-      groupMap.set(key, {
-        party: key,
-        incumbent: null,
-        candidates: [],
-      });
-    }
-
-    const group = groupMap.get(key)!;
-
-    if (record.is_incumbent) {
-      // First incumbent seen for this party becomes the group incumbent
-      if (group.incumbent === null) {
-        group.incumbent = record;
-      } else {
-        group.candidates.push(record);
-      }
-    } else {
-      group.candidates.push(record);
-    }
-  }
-
-  // Sort groups: non-null party first (alphabetical), null last
-  const groups = Array.from(groupMap.values());
-  groups.sort((a, b) => {
-    if (a.party === null && b.party === null) return 0;
-    if (a.party === null) return 1;
-    if (b.party === null) return -1;
-    return a.party.localeCompare(b.party);
-  });
-
-  return groups;
-}
-
 // ---------------------------------------------------------------------------
 // batchFetchImages — shared by flat list and search results
 // ---------------------------------------------------------------------------
@@ -451,9 +315,15 @@ export async function getPoliticiansFlatList(
   // Candidate placeholder offices ("Candidate for U.S. Senate — ...", mig 196) are excluded from
   // the incumbents-only view: their holders can be incumbents of OTHER offices (Talarico TX House,
   // Paxton AG), so is_incumbent alone cannot exclude them.
+  //
+  // 🔴 `och.office_id IS NOT NULL` — an incumbent HOLDS A SEAT NOW, and only office_terms can say so.
+  // is_incumbent is a cached flag, and it defaulted to true until CA_0188, so every insert that
+  // omitted it created an "incumbent": this list returned 1,817 active rows with no office at all
+  // (2026-09-23; cleared by CA_0181-CA_0187). The flag stays in the filter because it is what marks
+  // a seated person as not-a-candidate, but it can no longer admit someone the view says holds nothing.
   const incumbentFilter = includeCandidates
     ? ''
-    : "AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+    : "AND och.office_id IS NOT NULL AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
   const params: unknown[] = [];
   let searchFilter = '';
@@ -632,19 +502,28 @@ export async function getPoliticiansFlatList(
 // (shared point-resolution core: resolveOfficialsAtPoint, further below)
 // ---------------------------------------------------------------------------
 
+/** A county-wide district row carries the county's 5-digit FIPS as its geo_id. Sub-county seats
+ *  (commissioner precincts, supervisor and council districts) are typed COUNTY too but carry geo_ids
+ *  of their own ('ramsey-mn-commissioner-district-1', '55101-sup-d8'). Measured 2026-09-23: all 3,260
+ *  COUNTY districts with a 5-digit geo_id have a G4020 geofence; no sub-county COUNTY district does. */
+const isCountyFips = (geoId?: string | null): boolean => /^\d{5}$/.test(geoId ?? '');
+
 /** Pick the user's county (GEOID + name) from the geofence district rows.
- *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent.
+ *  A county is a county-wide COUNTY row, else a G4020 row (a county court). Null when absent —
+ *  never a sub-county seat: the rows arrive in politician-id order, so "the first COUNTY row" used to
+ *  be whichever seat's holder sorted first (Ramsey MN, Miami-Dade and Racine reported a commissioner or
+ *  supervisor district as the county).
  *  `name` (the geofence_boundaries.name, e.g. "Monroe County") is the real county
  *  name; `district_label` is a seat label (e.g. "At-Large") and is only a fallback
  *  for rows that don't carry the geofence name (e.g. tests, callers without the join). */
 export function pickCountyFromDistrictRows(
   rows: Array<{ mtfcc?: string | null; district_type?: string | null; geo_id?: string | null; district_label?: string | null; name?: string | null }>,
 ): { geoid: string; name: string } | null {
-  // Prefer the COUNTY row; fall back to any G4020 row only if no COUNTY row exists.
+  // Prefer the COUNTY row; fall back to a G4020 row only if no county-wide COUNTY row exists.
   // (County-level courts can also be G4020 with the same county geo_id but a court name.)
   const row =
-    rows.find((r) => r.district_type === 'COUNTY') ??
-    rows.find((r) => r.mtfcc === 'G4020');
+    rows.find((r) => r.district_type === 'COUNTY' && isCountyFips(r.geo_id)) ??
+    rows.find((r) => r.mtfcc === 'G4020' && isCountyFips(r.geo_id));
   if (!row || !row.geo_id) return null;
   return { geoid: row.geo_id, name: row.name ?? row.district_label ?? '' };
 }
@@ -652,18 +531,21 @@ export function pickCountyFromDistrictRows(
 /** Pick the user's resolved jurisdiction GEOIDs from the geofence district rows
  *  (the same rows pickCountyFromDistrictRows reads). Each field is the geo_id of
  *  the row whose district_type maps to it, or null when no such row is present.
- *  county prefers a COUNTY row, falling back to JUDICIAL (mirrors
- *  pickCountyFromDistrictRows' COUNTY-first preference for county-level courts
- *  sharing the same geo_id). */
+ *  county prefers a county-wide COUNTY row, falling back to a county-wide JUDICIAL
+ *  row (mirrors pickCountyFromDistrictRows' COUNTY-first preference for county-level
+ *  courts sharing the same geo_id); a sub-county seat or a multi-county court is never
+ *  the county. */
 export function pickJurisdictionFromDistrictRows(
   rows: Array<{ district_type?: string | null; geo_id?: string | null }>,
 ): JurisdictionGeoIds {
   const geoIdForType = (type: string): string | null => rows.find((r) => r.district_type === type)?.geo_id || null;
+  const countyFipsForType = (type: string): string | null =>
+    rows.find((r) => r.district_type === type && isCountyFips(r.geo_id))?.geo_id || null;
   return {
     congressional: geoIdForType('NATIONAL_LOWER'),
     state_senate: geoIdForType('STATE_UPPER'),
     state_house: geoIdForType('STATE_LOWER'),
-    county: geoIdForType('COUNTY') ?? geoIdForType('JUDICIAL'),
+    county: countyFipsForType('COUNTY') ?? countyFipsForType('JUDICIAL'),
     school_district: geoIdForType('SCHOOL'),
   };
 }
@@ -2025,18 +1907,13 @@ export async function getRepresentativesByJurisdiction(
     );
     if (stateRes.rows.length > 0) {
       const state = stateRes.rows[0].state;
-      const statewideQueryText = `
-        SELECT ${SELECT_FIELDS}
-        FROM essentials.districts d
-        ${JOINS}
-        WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
-        AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
-        AND (p.is_active = true OR o.is_vacant = true)
-        AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-        AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
-        ORDER BY COALESCE(p.id, o.id)
-      `;
-      const sw = await pool.query(statewideQueryText, [state]);
+      // The same statewide query the address path uses. This used to be an inline copy that still
+      // decided "statewide court" by geo_id LENGTH (anything not 5 chars), so any JUDICIAL district with its own
+      // non-county polygon came back for EVERY user in the state: Indiana's Court of Appeals
+      // Districts 1-3 (7-char geo_ids, migration 1832) and, once CA_0189 linked it, California's
+      // Second Appellate District ('06-appellate-district-2'). buildStatewideQuery's rule is
+      // "statewide iff no geofence below the state outline".
+      const sw = await pool.query(buildStatewideQuery(), [state]);
       statewideRows = sw.rows as Record<string, unknown>[];
     }
   }

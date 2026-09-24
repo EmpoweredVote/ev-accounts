@@ -330,12 +330,12 @@ jobs:
         run: node backend/scripts/check-answer-delete-guards.mjs
 
       # --- cal-access predicate tripwire -----------------------------------------------------------
-      # `confirm-cal-access.ts` matches Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
-      # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claims 391 committees. It is
-      # inert only by ACCIDENT (migration 1463 dropped the column it joins on, so it throws), and
-      # repairing that join is a one-line change that would re-run the defect at full scale. A RATCHET:
-      # it fails only on the single combination that re-creates the defect, and tests code with comments
-      # stripped so the tripwire's own quoted rule does not jam it shut. Static, runs on forks.
+      # `confirm-cal-access.ts` matched Cal-Access committees on the LAST SPACE-DELIMITED TOKEN of
+      # full_name, ignoring last_name: "Gracey Van Der Mark" -> "mark" claimed 391 committees. It was
+      # DELETED 2026-09-23 (with the two discovery scripts, #677), so this passes on "no longer exists".
+      # It stays because restoring the file from history is the likely way back: a restore that also
+      # drops the abort while keeping the last-token rule still fails here. A RATCHET, tested with
+      # comments stripped so the tripwire's own quoted rule does not jam it shut. Static, runs on forks.
       - name: cal-access predicate tripwire
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-cal-access-predicate.mjs
@@ -387,6 +387,70 @@ jobs:
       - name: OCD-ID loader suffix guard
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-ocd-loader-suffix.mjs
+
+      # --- git hooks are executable ----------------------------------------------------------------
+      # `.githooks/pre-commit` (the §9 pathspec observer CLAUDE.md describes) was committed 100644 on
+      # 2026-09-04. Git on macOS and Linux SKIPS a hook without the exec bit and says so only as a
+      # `hint:` line, so the observer never ran there; Git for Windows ignores the bit, which is why it
+      # went unnoticed until 2026-09-23. Fails on any tracked .githooks/ file whose INDEX mode is not
+      # 100755 — the index, not the working copy, because a clone takes the mode from git.
+      # 🔴 POSITIVE CONTROL: an EMPTY listing fails too, so a renamed or moved hooks directory reads as
+      # "the check is blind", never as "nothing wrong". Static, no DATABASE_URL, dependency-free.
+      - name: git hooks are executable
+        if: ${{ !cancelled() }}
+        run: |
+          modes=$(git ls-files -s .githooks)
+          [ -n "$modes" ] || { echo "::error::no tracked files under .githooks/ -- the check is blind"; exit 1; }
+          bad=$(printf '%s\n' "$modes" | awk '$1 != "100755"')
+          [ -z "$bad" ] || { printf '::error::not executable in git (mode must be 100755; fix with git update-index --chmod=+x <file>):\n%s\n' "$bad"; exit 1; }
+          echo "git hooks executable:"; printf '%s\n' "$modes"
+
+      # --- research-stances fixture parity ---------------------------------------------------------
+      # research-stances' build-and-check.mjs re-implements on-the-record's audit-quotes mechanical
+      # checks, and tests/fixture-parity.test.mjs pins it to the SHARED fixture that lives in
+      # on-the-record: docs/quote-curation/fixtures/mechanical-checks.json. On 2026-09-23 otr#264 and
+      # #646 changed that fixture and this checker together (source-tier-4 out, pointer-only-source
+      # in), and NEITHER repo's CI ran either half of the parity pair. on-the-record's own half
+      # (audit-quotes/tests/test_fixture_parity.py) runs in its Tests workflow since otr#266; this is
+      # the ev-accounts half. extract-canonical-rules.test.mjs also reads on-the-record, through the
+      # same OTR_ROOT, so it runs here too.
+      #
+      # on-the-record is PUBLIC, so the checkout needs no token. It is SPARSE (the two directories the
+      # tests read, plus top-level files) and comes LAST in the job so no guard above sees a second
+      # repo in the tree. It tracks on-the-record `main` ON PURPOSE (Chris Andrews, 2026-09-23): a
+      # fixture change there turns this step red on the next ev-accounts push or PR — which may be
+      # unrelated — until build-and-check.mjs follows. A pinned SHA would stay green and blind.
+      #
+      # 🔴 A GLOB, NOT A DIRECTORY: on node 22 (backend/.node-version) `node --test <dir>/` does not
+      # search the directory — it loads it as a module and fails MODULE_NOT_FOUND. Newer node does
+      # search it, so the directory form passes on a dev machine and fails here. Quoted, so node
+      # expands it, the same way on every shell.
+      # 🔴 POSITIVE CONTROL: a pattern that matches nothing exits 0 with "tests 0", so a moved or
+      # emptied tests/ directory would read as a pass. The TAP copy must count at least one test.
+      # Dependency-free: node:test and node:* built-ins only, no `npm ci`.
+      - name: checkout on-the-record (research-stances fixture)
+        if: ${{ !cancelled() }}
+        uses: actions/checkout@v7
+        with:
+          repository: EmpoweredVote/on-the-record
+          ref: main
+          path: .otr
+          sparse-checkout: |
+            docs/quote-curation
+            .claude/skills
+          persist-credentials: false
+
+      - name: research-stances fixture parity
+        if: ${{ !cancelled() }}
+        env:
+          OTR_ROOT: ${{ github.workspace }}/.otr
+        run: |
+          node --test \
+            --test-reporter=spec --test-reporter-destination=stdout \
+            --test-reporter=tap --test-reporter-destination="$RUNNER_TEMP/research-stances.tap" \
+            '.claude/skills/research-stances/scripts/tests/**/*.test.mjs'
+          grep -qE '^# tests [1-9]' "$RUNNER_TEMP/research-stances.tap" \
+            || { echo "::error::node --test ran 0 research-stances tests -- the check is blind"; exit 1; }
 
   migration-reservations:
     name: migration reservations
@@ -919,6 +983,99 @@ jobs:
         run: npm run check:spatial-ref
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  rls-coverage:
+    name: rls coverage
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is the 2026-08-14 defect), and it cannot join `static guards` —
+    # that job is dependency-free and this one needs `pg`. It is the live, automated form of the weekly
+    # Supabase advisor read (`rls_disabled_in_public`): it fails when a base table anon/authenticated
+    # can SELECT has row-level security OFF, beyond an allowlist (only public.spatial_ref_sys today —
+    # ev-cto decision 0006). The 2026-09-10 sweep (decision 0015) set "RLS on everywhere it can be on";
+    # the treasury tables, essentials.source_hubs and essentials._fabricated_ca0156_removed each
+    # re-opened it afterwards. The rule and allowlist live in scripts/check-rls-coverage.mjs.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum). What it measures is PROD
+    # state: a table becomes RLS-off when a migration or script is APPLIED to prod by hand (there is no
+    # schema_migrations runner), which happens on the CALENDAR, not on our commits — a push applies
+    # nothing — so a per-push run would bill ~494 minutes a month re-reading unchanged prod and flag
+    # drift the push did not cause. Same reasoning as `spatial_ref_sys baseline` and `reachability`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks. An empty scan is NOT a clean database, so the script refuses to pass if its
+    # positive control (spatial_ref_sys, permanently RLS-off) goes missing.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no anon-readable table has RLS off
+        run: npm run check:rls-coverage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  entity-types:
+    name: entity_type whitelist drift
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job, and it cannot join `static guards` — that job is dependency-free and this one needs
+    # `pg`. What it watches is the only contract this repo holds in a CONSTANT while Treasury Tracker
+    # holds it in a MIGRATION: `KNOWN_ENTITY_TYPES` (backend/src/lib/entityTypes.ts) against
+    # `treasury.municipalities`' CHECK constraint. Neither repo's build can see both sides, so they can
+    # drift with every test in both repos green — and the expensive direction is silent: TT sends
+    # CITY_TIER_TYPES as ONE CSV, so a single type this API does not know 422s the whole query and a
+    # county's children panel renders EMPTY, reading as a coverage gap rather than a bug. That is the
+    # PA-borough failure mode (TT PR #150, 1,202 entities invisible) across the repo boundary.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum), ~$0.25. It measures PROD
+    # state that moves when someone APPLIES a TT migration — on the CALENDAR, not on our commits — so
+    # a per-push run would bill ~494 minutes a month re-reading an unchanged constraint and flag drift
+    # the push did not cause. Same reasoning as `rls coverage` and `spatial_ref_sys baseline`.
+    #
+    # 🔑 THE HALF THAT IS OURS IS STILL CHECKED ON EVERY PUSH. The literal in entityTypes.ts is pinned
+    # by scripts/check-entity-types.test.ts inside the `backend` job, so an edit here goes red
+    # immediately; only the DB half waits for the nightly.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret), matching the
+    # other live-DB checks. An unreadable constraint is NOT agreement, so the script exits 2 rather
+    # than passing when it cannot find the constraint or the declaration.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check the API whitelist still mirrors the CHECK constraint
+        run: npm run check:entity-types
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   stance-audit:
     name: stance-read audit guard
     runs-on: ubuntu-latest

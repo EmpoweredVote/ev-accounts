@@ -45,7 +45,11 @@ comment and no `DISTINCT`, and returned **two** Aaron Freemans until `CC_0103` d
 office (2026-09-12). `getPoliticianById` has the same shape and takes `rows[0]` with no `ORDER BY`,
 so it reports an arbitrary one of the two as the person's office.
 
-For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019".
+For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019". It **skips
+terms whose `source` carries `| unverified <slot>`** (CA_0171): placeholder terms an audit kept because it
+could not disprove them (CA_0156, CA_0159), all with `term_start` NULL — unguarded, they answered every
+past date. Read `office_terms` directly to see them. An audit that keeps an unverifiable term should use the
+same tag.
 
 **Never cache "current" in a column.** No trigger fires merely because the calendar advanced — that
 is the whole reason this model exists.
@@ -54,9 +58,11 @@ is the whole reason this model exists.
 
 An office with **no `office_terms` row is invisible**: no holder, so the official never appears in
 Essentials, stance research, coverage or campaign finance — and **nothing errors**. This is the one
-failure mode CI cannot catch. Watch `essentials.offices_missing_terms` (baseline at migration 1464:
-857 rows, 158 legitimately flagged `is_vacant`, 699 unknown-occupancy predating the backfill — treat
-a count above 699 unflagged as new drift).
+failure mode CI cannot catch. Watch `essentials.offices_missing_terms`. **Baseline, measured
+2026-09-23: 428 rows — 189 legitimately flagged `is_vacant`, 239 unknown-occupancy. Treat a count
+above 239 unflagged as new drift.** It was 857 / 158 / 699 at migration 1464; `CA_0183` (421 LA
+Superior Court, 2nd DCA and Supreme Court judges seated from the courts' rosters) and `CA_0187` did
+most of the fall. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
 
 Use the helpers rather than hand-rolling the two-step:
 
@@ -81,6 +87,11 @@ Honesty rules that the schema enforces:
 - **A vacancy is a fact about a span**, so `office_terms.politician_id` is nullable. But do **not**
   write a vacancy span whose start date you don't know — set `offices.is_vacant` and leave the span
   unwritten.
+- 🔴 **Set `politicians.is_incumbent` explicitly on every insert** — `true` when you seat the person,
+  `false` for a candidate or former officeholder. It is a cached flag the incumbents-only reads filter
+  on. It defaulted to `true` until `CA_0188`, and that created **1,817 active "incumbents" with no
+  seat** (cleared by `CA_0181`-`CA_0187`). It defaults to `false` now, so a seated person inserted
+  without it is **hidden** from address search. `check:occupancy` fails an INSERT that omits it.
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
@@ -314,6 +325,17 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     A hook that can wedge a commit gets deleted, and then the rule has no observer at all.
     A hook cannot be pushed to anyone — it is opt-in per clone, so a colleague who has not run
     the installer is unobserved.
+  - ⚠ **Until 2026-09-23 it never ran on macOS or Linux**: it was committed without its exec bit,
+    and git there skips such a hook with only a `hint:` line (Git for Windows ignores the bit). CI
+    step "git hooks are executable" now fails on any `.githooks/` file that is not mode 100755.
+    🔴 **Linked worktrees run the MAIN checkout's copy**: their `config.worktree` sets an absolute
+    `core.hooksPath` to `<main clone>/.githooks`, so the hook runs only once the main checkout's
+    branch carries the 100755 file. Check with `git rev-parse --git-path hooks`.
+  - ⚠ **Both steward hooks (this one and SessionStart) used to skip SILENTLY without
+    `backend/node_modules`** — 10 of 17 worktrees on 2026-09-23, so most sessions got no board, no
+    worktree marker and no pathspec check. They now run through
+    `backend/scripts/lib/main-checkout-fallback.mjs`, which borrows the main checkout's
+    `node_modules` and `.env`, and print one "skipped" line when neither checkout has them.
 - **Before deleting a worktree or branch**, run the four checks — as **one command**:
 
   ```bash

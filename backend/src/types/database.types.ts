@@ -240,7 +240,6 @@ export type Database = {
       }
       verification_sessions: {
         Row: {
-          compass_import_draft: Json | null
           created_at: string
           display_name_draft: string | null
           expires_at: string | null
@@ -255,7 +254,6 @@ export type Database = {
           verification_method: string | null
         }
         Insert: {
-          compass_import_draft?: Json | null
           created_at?: string
           display_name_draft?: string | null
           expires_at?: string | null
@@ -270,7 +268,6 @@ export type Database = {
           verification_method?: string | null
         }
         Update: {
-          compass_import_draft?: Json | null
           created_at?: string
           display_name_draft?: string | null
           expires_at?: string | null
@@ -1993,10 +1990,6 @@ export type Database = {
       }
       postgis_version: { Args: never; Returns: string }
       postgis_wagyu_version: { Args: never; Returns: string }
-      promote_compass_import_draft: {
-        Args: { p_user_id: string }
-        Returns: undefined
-      }
       revoke_role: {
         Args: { p_role_slug: string; p_user_id: string }
         Returns: undefined

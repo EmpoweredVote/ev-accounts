@@ -29,10 +29,10 @@ import { env } from './env.js';
 import { runIngestion } from './adapters/runIngestion.js';
 import { createFecAdapter } from './adapters/fecAdapter.js';
 import { createCalAccessAdapter } from './adapters/calAccessAdapter.js';
-import { createIndianaAdapter } from './adapters/indianaAdapter.js';
+import { createIndianaAdapter, indianaYears } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
-import { createNetfileAdapter } from './adapters/netfileAdapter.js';
+import { createNetfileAdapter, assertNetfileRunHealthy } from './adapters/netfileAdapter.js';
 import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 
@@ -348,10 +348,23 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'cal_access': {
-      // Cal-Access downloads the shared ZIP lazily on first fetch() call.
-      // Create adapter once, run each politician through the pipeline,
-      // then call saveETag() to persist the ETag for next run.
+      // Download the shared ZIP and parse it ONCE for every source (prepare), run each
+      // politician through the pipeline from that parse, then saveETag() for the next run.
+      // A download or parse failure throws: it is global, so no per-source run would help.
       const adapter = createCalAccessAdapter();
+      await adapter.prepare(sources.map(ps => ps.external_id));
+
+      // 304 Not Modified — nothing changed since the last full run. Write no per-source
+      // runs (they would all be empty); stamp the metadata row so the day still shows a run.
+      if (adapter.zipWasSkipped()) {
+        console.log('[campaignFinanceScheduler] cal_access: ZIP unchanged (304), no sources processed');
+        try {
+          await adapter.markNotModified();
+        } catch (err) {
+          console.warn('[campaignFinanceScheduler] cal_access: markNotModified failed (non-fatal):', err);
+        }
+        break;
+      }
 
       for (const ps of sources) {
         try {
@@ -365,12 +378,6 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
         }
       }
 
-      // Check if ZIP was unchanged (304 Not Modified) — skip ETag save if so
-      if (adapter.zipWasSkipped()) {
-        console.log('[campaignFinanceScheduler] cal_access: ZIP unchanged (304), no sources processed');
-        break;
-      }
-
       // Save ETag after all politicians
       try {
         await adapter.saveETag();
@@ -381,18 +388,12 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'indiana': {
-      const year = new Date().getFullYear();
-      const adapter = createIndianaAdapter(year);
-
-      try {
-        await adapter.preDownload();
-      } catch (err) {
-        console.error(
-          `[campaignFinanceScheduler] indiana: preDownload failed:`,
-          err instanceof Error ? err.message : String(err)
-        );
-        return;
-      }
+      // Last year's file AND this year's: an officeholder off this year's ballot files only
+      // the annual report, which lands in last year's file (see indianaYears).
+      // A download or parse failure throws, as for cal_access: it is global, and a run that
+      // swallowed it used to exit 0 with no per-source runs at all.
+      const adapter = createIndianaAdapter(indianaYears());
+      await adapter.preDownload();
 
       let lastRunId: number | null = null;
 
@@ -430,6 +431,23 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
           console.warn('[campaignFinanceScheduler] indiana: writeUnresolved failed (non-fatal):', err);
         }
       }
+
+      // Freshness stamp read by campaignFinanceService (last_sync_at / X-Data-Updated-At).
+      // Year-agnostic: the read used to name 'indiana_zip_etag_2026', which 2027 would have
+      // left frozen.
+      try {
+        await pool.query(
+          `INSERT INTO transparent_motivations.data_source_metadata
+             (source_system, last_sync_at, last_sync_status, last_record_count)
+           VALUES ('indiana', NOW(), 'ok', $1)
+           ON CONFLICT (source_system) DO UPDATE
+             SET last_sync_at = NOW(), last_sync_status = 'ok',
+                 last_record_count = EXCLUDED.last_record_count, updated_at = NOW()`,
+          [adapter.confirmedRowCount()]
+        );
+      } catch (err) {
+        console.warn('[campaignFinanceScheduler] indiana: data_source_metadata update failed (non-fatal):', err);
+      }
       break;
     }
 
@@ -452,17 +470,22 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     case 'la_county_netfile': {
       const year = new Date().getFullYear();
       const adapter = createNetfileAdapter(year);
+      let failed = 0;
       for (const ps of sources) {
         try {
           await runIngestion(adapter, ps, String(year));
           console.log(`[campaignFinanceScheduler] la_county_netfile: source=${ps.id} year=${year} done`);
         } catch (err) {
+          failed++;
           console.error(
             `[campaignFinanceScheduler] la_county_netfile: source=${ps.id} error:`,
             err instanceof Error ? err.message : String(err)
           );
         }
       }
+      // Every source has had its run first; only then does the job fail, so one bad source
+      // never stops the others. Five months of 0-row runs exited 0 before this check.
+      assertNetfileRunHealthy({ sources: sources.length, failed, fetched: adapter.fetchedRowCount() });
       break;
     }
 
@@ -526,8 +549,8 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
  * runAdapterForSources runs the cal_access ingestion pipeline for a specific list
  * of politician_sources row IDs (UUIDs from politician_sources.id).
  *
- * Use this for targeted ingest of newly seeded politicians — avoids re-processing
- * all 7k+ confirmed sources and the per-source TSV re-parse cost.
+ * Use this for targeted ingest of newly seeded politicians — avoids writing a run for
+ * every confirmed source. The ZIP is still downloaded and parsed once (prepare).
  *
  * Only supports cal_access — other adapters don't have the same bulk-parse bottleneck.
  */
@@ -556,6 +579,12 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
   console.log(`[campaignFinanceScheduler] runAdapterForSources: running ${sources.length} cal_access source(s)`);
 
   const adapter = createCalAccessAdapter();
+  await adapter.prepare(sources.map(ps => ps.external_id));
+
+  if (adapter.zipWasSkipped()) {
+    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
+    return;
+  }
 
   for (const ps of sources) {
     try {
@@ -567,11 +596,6 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
         err instanceof Error ? err.message : String(err)
       );
     }
-  }
-
-  if (adapter.zipWasSkipped()) {
-    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
-    return;
   }
 
   // Intentionally do NOT save the ETag here. Targeted runs only process a subset

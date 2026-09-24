@@ -55,9 +55,22 @@ describe('fallback MTFCC exclusion list', () => {
     const predicate = "gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'";
     expect(script).toContain(predicate);
     expect(queries).toContain(predicate);
-    // NULL geo_id must stay excluded in BOTH, or ~504 CA judges surface on every CA address.
+    // NULL geo_id must stay excluded in BOTH, or the 81 unlinked CA per-judge slots (CA_0189)
+    // surface on every CA address.
     expect(script).toContain('d.geo_id IS NOT NULL');
     expect(queries).toContain('d.geo_id IS NOT NULL');
+  });
+
+  it('leaves no third copy of the statewide rule in essentialsService.ts', () => {
+    // getRepresentativesByJurisdiction (GET /representatives/me) carried its own statewide query
+    // with the old `LENGTH(d.geo_id) != 5` court rule, so every Indiana user got the District 1-3
+    // Court of Appeals judges, and CA_0189's 2nd Appellate District would have gone to every
+    // California user. Every statewide read must go through buildStatewideQuery.
+    const src = read('./essentialsService.ts');
+    expect(src).not.toMatch(/LENGTH\(d\.geo_id\)\s*!=\s*5/i);
+    expect(src).not.toMatch(/length\(d\.geo_id\)\s*<>\s*5/i);
+    const fn = src.slice(src.indexOf('export async function getRepresentativesByJurisdiction('));
+    expect(fn.slice(0, fn.indexOf('\nexport '))).toContain('buildStatewideQuery()');
   });
 
   it('renders the list as a single-quoted SQL IN list', () => {
@@ -131,5 +144,26 @@ describe('X0029 — appellate districts derived as unions of counties', () => {
     // X-codes never reach the fallback (it excludes `LIKE 'X%'`), so listing X0029
     // there would be misleading noise rather than protection.
     expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X0029');
+  });
+});
+
+describe('X-CA-SBOE — California Board of Equalization districts', () => {
+  it('admits X-CA-SBOE for STATE_BOARD explicitly, not via the X catch-all', () => {
+    // The four BOE districts are the 2021 Citizens Redistricting Commission map, which has no
+    // TIGER layer; BOE-1 and BOE-4 split San Bernardino County, so they are not unions of whole
+    // counties either (migration CA_0205). The X catch-all admits only LOCAL/COUNTY here, so
+    // without this clause every seated BOE member would be UNREACHABLE by address.
+    expect(MTFCC_DISTRICT_TYPE_GUARD).toContain(
+      "(gp.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')",
+    );
+  });
+
+  it('admits X-CA-SBOE for STATE_BOARD in the geofence district join too', () => {
+    const queries = read('./districtQueries.ts');
+    expect(queries).toContain("(gb.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')");
+  });
+
+  it('keeps X-CA-SBOE out of the fallback exclusion list', () => {
+    expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X-CA-SBOE');
   });
 });

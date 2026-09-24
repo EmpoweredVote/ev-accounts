@@ -15,6 +15,16 @@
  *              valid code, so it cannot be caught by pattern-matching with any confidence.
  *              Watch `essentials.offices_missing_terms` for that one (see migration 1464).
  *
+ * A THIRD rule, same family (added 2026-09-23, CA_0188): an INSERT into `essentials.politicians`
+ * whose column list does not name `is_incumbent`. That flag is a CACHED occupancy fact — the
+ * incumbents-only reads filter on it — and it defaulted to TRUE, so every insert that left it out
+ * created an "incumbent" holding no seat: 1,817 active rows by 2026-09-23 (cleared by
+ * CA_0181-CA_0187). CA_0188 flips the default to false, which moves the failure to the other side:
+ * a seated person inserted without the flag is now HIDDEN from address search (the reachability
+ * check's REPS_FILTER_HIDDEN catches that one, but only after the write reaches prod). Neither
+ * default is safe to rely on, so the rule is: say it. `true` when you seat someone, `false` for a
+ * candidate. The ~55 historical generators that omit it are not flagged unless someone edits one.
+ *
  * Deliberately scoped to files ADDED OR MODIFIED on this branch. History is full of one-off
  * seeders that legitimately wrote the column when it existed; rewriting them would be dishonest
  * about what actually ran against prod.
@@ -46,8 +56,12 @@ import path from "node:path";
 const SCANNED_DIRS = ["backend/migrations", "backend/src", "backend/scripts"];
 const SCANNED_EXT = new Set([".sql", ".ts", ".tsx", ".js", ".mjs", ".cjs", ".py"]);
 
-// This file documents the forbidden pattern, so it would always match itself.
-const SELF = "backend/scripts/check-office-occupancy.mjs";
+// This file documents the forbidden pattern, so it would always match itself. Its test holds the
+// pattern as fixtures on purpose; scanned, it would fail every PR that touches it.
+const SELF = new Set([
+  "backend/scripts/check-office-occupancy.mjs",
+  "backend/scripts/check-office-occupancy.test.ts",
+]);
 
 const repoRoot = execFileSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8" }).trim();
 const git = (args) => execFileSync("git", args, { cwd: repoRoot, encoding: "utf8" }).trim();
@@ -79,13 +93,16 @@ function changedFiles(base) {
   sets.push(tryGit(["ls-files", "--others", "--exclude-standard", "--", ...SCANNED_DIRS]));
   return [...new Set(sets.flatMap((s) => (s ? s.split("\n") : [])).filter(Boolean))]
     .filter((f) => SCANNED_EXT.has(path.extname(f)))
-    .filter((f) => f !== SELF);
+    .filter((f) => !SELF.has(f));
 }
 
 // Strip line comments and block comments so a note ABOUT the old column isn't a violation.
+// A block comment becomes the newlines it held, not "": violations report
+// `code.slice(0, m.index).split("\n").length`, so deleting those newlines reported every hit after a
+// multi-line block too low (senate-candidate-fec.ts:263 for a join on line 291, 2026-09-23).
 function stripComments(src) {
   return src
-    .replace(/\/\*[\s\S]*?\*\//g, "")     // /* ... */
+    .replace(/\/\*[\s\S]*?\*\//g, (block) => block.replace(/[^\n]/g, ""))     // /* ... */
     .split("\n")
     .map((line) => line.replace(/(--|\/\/|#)\s.*$/, ""))
     .join("\n");
@@ -158,12 +175,18 @@ function allTrackedFiles() {
     .split("\n")
     .filter(Boolean)
     .filter((f) => SCANNED_EXT.has(path.extname(f)))
-    .filter((f) => f !== SELF);
+    .filter((f) => !SELF.has(f));
 }
+
+// The column list of an INSERT into essentials.politicians (not politician_* tables: `\s*\(` must
+// follow the exact name). Only the parenthesised form is checked; an INSERT with no column list
+// fills columns by position and is too rare here to pattern-match with confidence.
+const POLITICIAN_INSERT = /INSERT\s+INTO\s+essentials\.politicians\s*\(([^)]*)\)/gi;
 
 const base = SCAN_ALL ? null : resolveBase();
 const files = SCAN_ALL ? allTrackedFiles() : changedFiles(base);
 const violations = [];
+const incumbentViolations = [];
 
 for (const rel of files) {
   let src;
@@ -179,6 +202,16 @@ for (const rel of files) {
     if (m) {
       const line = code.slice(0, m.index).split("\n").length;
       violations.push({ rel, line, why, snippet: m[0].replace(/\s+/g, " ").slice(0, 120) });
+      break; // one finding per file is enough to act on
+    }
+  }
+  if (!SCAN_ALL) {
+    POLITICIAN_INSERT.lastIndex = 0;
+    let m;
+    while ((m = POLITICIAN_INSERT.exec(code)) !== null) {
+      if (/\bis_incumbent\b/i.test(m[1])) continue;
+      const line = code.slice(0, m.index).split("\n").length;
+      incumbentViolations.push({ rel, line, snippet: m[0].replace(/\s+/g, " ").slice(0, 120) });
       break; // one finding per file is enough to act on
     }
   }
@@ -220,6 +253,20 @@ if (SCAN_ALL) {
   process.exit(0);
 }
 
+if (incumbentViolations.length > 0) {
+  console.error("INSERT into essentials.politicians without an explicit is_incumbent.\n");
+  for (const v of incumbentViolations) {
+    console.error(`  ${v.rel}:${v.line}`);
+    console.error(`      ${v.snippet}`);
+  }
+  console.error("\nis_incumbent is what the incumbents-only reads filter on. Its default was TRUE until");
+  console.error("CA_0188 (1,817 seatless 'incumbents' followed) and is FALSE now (a seated person left");
+  console.error("without it is hidden from address search). Name the column and give the value you mean:");
+  console.error("  true  — this row is being SEATED (and write its office_terms row: seat_officeholder)");
+  console.error("  false — a candidate, a former officeholder, a committee-named discovery row\n");
+  if (violations.length === 0) process.exit(1);
+}
+
 if (violations.length > 0) {
   console.error("essentials.offices.politician_id was dropped (ADR 0002 phase 5, migration 1463).");
   console.error("essentials.offices is a SEAT and holds no occupant. Occupancy lives in");
@@ -245,6 +292,7 @@ if (violations.length > 0) {
 }
 
 console.log(
-  `Office occupancy OK — ${files.length} changed file(s) scanned, no writes to offices.politician_id.` +
+  `Office occupancy OK — ${files.length} changed file(s) scanned, no writes to offices.politician_id, ` +
+    `every politicians INSERT names is_incumbent.` +
     (base ? "" : " (no git base; scanned working tree only)"),
 );

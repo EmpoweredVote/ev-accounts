@@ -73,7 +73,8 @@
  *
  * A DELIBERATE NON-CHECK: "two districts share a geo_id" looks like the obvious fan-out invariant,
  * and it is NOT usable — ~700 rows match it legitimately (Sacramento keys all 9 council districts
- * to place FIPS 0643000; 504 CA judicial rows carry a NULL geo_id). Measured before writing, not
+ * to place FIPS 0643000; 504 CA judicial rows carried a NULL geo_id — 81 still do after CA_0189, and
+ * the 408 LA Superior Court seats CA_0189 linked all share '06037'). Measured before writing, not
  * assumed.
  *
  * Needs a live DB, so this does NOT run on every PR like check:migrations / check:occupancy do.
@@ -212,6 +213,9 @@ pool.on('connect', (client) => {
  * A JUDICIAL row with a NULL geo_id (the ~504 CA rows) is deliberately NOT covered — `length(NULL)`
  * is NULL, so it stays in whatever bucket it is in today. Those are a real backlog, not a modelling
  * artefact, and this change must not quietly absolve them.
+ * Update 2026-09-23: CA_0183 seated 421 of them, which is what first made them UNREACHABLE; CA_0189
+ * linked every held seat. The 81 still NULL are unheld per-judge slots, so they fall in no bucket —
+ * and seating anyone on one without setting its geo_id fires UNREACHABLE ca|JUDICIAL, as it should.
  */
 const STATEWIDE_RESOLVED = `(d.district_type = 'JUDICIAL' AND d.state IS NOT NULL AND d.geo_id IS NOT NULL
    AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gsw

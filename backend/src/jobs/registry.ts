@@ -48,6 +48,12 @@ export const JOBS: Record<string, JobFn> = {
   'fec-burst': () => runFecScheduledJob(),
   'la-county-netfile': () => runAdapterForAll('la_county_netfile'),
   'ocpf': () => runAdapterForAll('ocpf'),
+  // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
+  // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.
+  'cal-access': () => runAdapterForAll('cal_access'),
+  // Never had a schedule either: until 2026-09-24 only the admin endpoint and
+  // confirm-indiana.ts ran it, and the last run was 2026-05-01. Two ZIPs of ~1-3 MB a run.
+  'indiana': () => runAdapterForAll('indiana'),
   'district-staleness': () => runDistrictStalenessCheck(),
   'reap-stale-ingestion-runs': () => reapStaleIngestionRuns(),
   // Validation Quests (folded in) — no Lambda handler existed, so these are new entries.
