@@ -1,6 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 
-vi.mock('../../src/lib/db.js', () => ({ pool: { query: vi.fn() } }));
+vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
+// The ingest wrapper's import; loading the real scheduler validates the whole env and exits.
+vi.mock('./campaignFinanceScheduler.js', () => ({ runAdapterForAll: vi.fn() }));
 
 import { planLocalSummary } from './localFinanceSummary.js';
 

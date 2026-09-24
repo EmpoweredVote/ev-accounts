@@ -24,6 +24,7 @@
 
 import cron from 'node-cron';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
+import { runNetfileIngestWithSummaries } from '../lib/localFinanceSummary.js';
 
 /**
  * startCampaignFinanceCron registers the FEC ingestion cron job.
@@ -51,7 +52,7 @@ export function startCampaignFinanceCron(): void {
     '0 3 1 * *',
     async () => {
       try {
-        await runAdapterForAll('la_county_netfile');
+        await runNetfileIngestWithSummaries(); // ingest, then the local finance_summary writers
       } catch (err) {
         console.error('[cron] Unhandled error in Netfile ingest job:', err);
       }

@@ -27,6 +27,7 @@
 import { runCalibrationLapseJob } from '../lib/cronService.js';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 import { runFecAutoMatchJob } from '../lib/fecResearch.js';
+import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/localFinanceSummary.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
 import { runConsensusPass } from '../vq/jobs/consensusBatchJob.js';
@@ -52,7 +53,12 @@ export const JOBS: Record<string, JobFn> = {
   // (admin endpoint / scripts). Runs as the FIRST step of ev-jobs-fec-burst, so links it
   // confirms get their contributions in the same run.
   'fec-auto-match': () => runFecAutoMatchJob(),
-  'la-county-netfile': () => runAdapterForAll('la_county_netfile'),
+  // The ingest, then the local finance_summary writers (city first). Since 2026-09-24; a summary failure is
+  // logged and does not fail the ingest. See src/lib/localFinanceSummary.ts.
+  'la-county-netfile': () => runNetfileIngestWithSummaries(),
+  // On-demand only (no schedule): rewrite the LA_SOCRATA and LA_COUNTY_NETFILE finance_summary snapshots, e.g.
+  // after disputing a committee link. Exits non-zero if any row failed.
+  'local-finance-summary': () => runLocalFinanceSummaries(),
   'ocpf': () => runAdapterForAll('ocpf'),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
   // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.

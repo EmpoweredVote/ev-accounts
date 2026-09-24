@@ -1,7 +1,9 @@
 /**
  * write-la-city-finance-summary.ts — write essentials.politicians.finance_summary for LA City officials from
- * their confirmed own la_socrata committees. All rules live in scripts/lib/localFinanceSummary.ts: own
+ * their confirmed own la_socrata committees. All rules live in src/lib/localFinanceSummary.ts: own
  * committees only, raised = gross, returned contributions as total_refunded, stale summaries cleared.
+ *
+ * Runs automatically after every NetFile ingest (both writers, city first). Use this for a one-off.
  *
  * Usage:
  *   cd backend && npx tsx scripts/write-la-city-finance-summary.ts [--dry-run]
@@ -11,14 +13,14 @@
 
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
-import { runLocalFinanceSummary } from './lib/localFinanceSummary.js';
+import { runLocalFinanceSummary, LA_SOCRATA } from '../src/lib/localFinanceSummary.js';
 
 if (!process.env.DATABASE_URL) {
   console.error('ERROR: DATABASE_URL is not set');
   process.exit(1);
 }
 
-runLocalFinanceSummary({ sourceSystem: 'la_socrata', label: 'LA_SOCRATA' }, process.argv.includes('--dry-run'))
+runLocalFinanceSummary(LA_SOCRATA, process.argv.includes('--dry-run'))
   .then(() => pool.end())
   .catch(async (err) => {
     console.error('[write-la-city-finance-summary] Fatal:', err);
