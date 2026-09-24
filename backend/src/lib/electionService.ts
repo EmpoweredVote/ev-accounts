@@ -75,6 +75,7 @@ const RACE_SELECT = `
   rc.is_incumbent,
   rc.candidate_status,
   rc.result,
+  COALESCE(rc.is_write_in, false) AS is_write_in,
   rc.politician_id`;
 
 /**
@@ -206,6 +207,8 @@ export interface CandidateDetail {
   last_name: string | null;
   photo_url: string | null;
   is_incumbent: boolean;
+  /** Registered write-in for this race (CA_0279). */
+  is_write_in: boolean;
   politician_id: string | null;
   position_name: string;
   election_date: string | null;
@@ -277,6 +280,7 @@ export async function getCandidateById(candidateId: string): Promise<CandidateDe
       rc.last_name,
       COALESCE(rc.photo_url, pi.url) AS photo_url,
       rc.is_incumbent,
+      COALESCE(rc.is_write_in, false) AS is_write_in,
       rc.politician_id,
       r.position_name,
       e.election_date::text AS election_date,
