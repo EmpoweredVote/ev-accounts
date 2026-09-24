@@ -1,6 +1,12 @@
 -- CA_0226_merge_ca_federal_duplicates_fix_ruiz_fec_id.sql
 --
--- STATUS: NOT YET APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews, in chat, "go ahead on the
+--   recommended next steps"; run by Chris Andrews with `psql -X -v ON_ERROR_STOP=1 -f`). Dry run first:
+--   body twice in one rolled-back transaction — pass 1 wrote 1+3+1+4+1 rows, pass 2 wrote 0, every gate
+--   passed both times, prod unchanged after. The apply printed "CA_0226 OK". Verified after from a
+--   separate read-only session: seated Ruiz holds confirmed H2CA36439 ($11,788,393.09) and disputed
+--   H0CA36177 (14 contributions kept); the Governor race row is on c98fd0a3; the four dups and LaMalfa
+--   are inactive; no dup holds a source.
 --
 -- Found 2026-09-24 while checking the 94 confirmed FEC politician_sources rows whose politician holds
 -- no current office (the rows run-fec-ingest-backfill.ts skips since #713). 92 of the 94 are 2026
