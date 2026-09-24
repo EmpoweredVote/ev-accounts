@@ -247,8 +247,9 @@ export async function searchFecCandidates(
 // predates the migration-196 "Candidate for U.S. Senate — <State>" placeholders and
 // used to catch their holders by accident — most were hidden by `is_vacant = false`
 // until CA_0195 backfilled the NULLs. Candidates do file with the FEC, and the
-// dedicated scripts/senate-candidate-fec.ts no longer runs (it joins the dropped
+// dedicated scripts/senate-candidate-fec.ts is deleted (#676; it joined the dropped
 // offices.politician_id), so this queue is their route in. The SELECT says so.
+// scripts/run-fec-finance-summary.ts reads the confirmed rows it writes.
 //
 // 🔴 One row per person. office_current_holder is politician-rooted here, so a
 // sitting Representative who is running for Senate comes back twice — House seat
