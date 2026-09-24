@@ -74,3 +74,49 @@ describe('summaryCsvRow', () => {
     expect(cell('needs_review')).toBe('no');
   });
 });
+
+// Granger's sheet exactly as written: 15c and 17c BLANK, lines 13, 16 and 18 show 0.
+const GRANGER_AS_WRITTEN = {
+  ...GRANGER,
+  receipts_total: null,
+  receipts_ytd: null,
+  total_available: 0,
+};
+
+describe('derived totals — a blank 15c / 17c filled from the sheet\'s own arithmetic', () => {
+  it('derives raised = 16 − 13 and spent = 16 − 18, and says so', () => {
+    const s = parseSummarySheetJson(GRANGER_AS_WRITTEN)!;
+    expect(s.money.receipts_total).toBe(0);
+    expect(s.money.expenditures_total).toBe(0);
+    expect(s.derived).toEqual({ receipts_total: true, expenditures_total: true });
+    expect(reviewReasons(s)).toEqual([]);
+  });
+
+  it('never marks a written 15c as derived', () => {
+    const s = parseSummarySheetJson({ ...GRANGER_AS_WRITTEN, receipts_total: 0 })!;
+    expect(s.derived.receipts_total).toBe(false);
+  });
+
+  it('does not derive without line 16, and leaves the blank blank', () => {
+    const s = parseSummarySheetJson({ ...GRANGER_AS_WRITTEN, total_available: null })!;
+    expect(s.money.receipts_total).toBeNull();
+    expect(s.derived.receipts_total).toBe(false);
+  });
+
+  it('refuses a negative derivation and sends the sheet to review', () => {
+    const s = parseSummarySheetJson({ ...GRANGER_AS_WRITTEN, cash_start: 50, total_available: 20 })!;
+    expect(s.money.receipts_total).toBeNull();
+    expect(reviewReasons(s).join(' ')).toMatch(/line 16/);
+  });
+
+  it('flags a sheet whose written 15c does not add up to line 16', () => {
+    const s = parseSummarySheetJson({ ...GRANGER_AS_WRITTEN, receipts_total: 100, cash_start: 0, total_available: 90 })!;
+    expect(reviewReasons(s).join(' ')).toMatch(/line 16/);
+  });
+
+  it('carries the derived flags into the CSV', () => {
+    const row = summaryCsvRow(CTX, parseSummarySheetJson(GRANGER_AS_WRITTEN)!);
+    expect(row[SUMMARY_CSV_COLUMNS.indexOf('receipts_total_derived')]).toBe('yes');
+    expect(row[SUMMARY_CSV_COLUMNS.indexOf('total_available')]).toBe('0.00');
+  });
+});

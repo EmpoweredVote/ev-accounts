@@ -21,6 +21,7 @@ export const MONEY_FIELDS = [
   'receipts_unitemized',
   'receipts_total',
   'receipts_ytd',
+  'total_available',
   'expenditures_total',
   'expenditures_ytd',
   'cash_end',
@@ -41,6 +42,8 @@ export interface SummarySheet {
   filed_on: string | null;
   filed_with: string | null;
   money: Record<MoneyField, number | null>;
+  /** True where a blank 15c / 17c was filled from the sheet's own arithmetic (16 − 13, 16 − 18). */
+  derived: { receipts_total: boolean; expenditures_total: boolean };
   /** Fields the model was unsure of, plus any it returned in an unreadable form. */
   low_confidence_fields: string[];
 }
@@ -84,6 +87,20 @@ export function parseSummarySheetJson(raw: unknown): SummarySheet | null {
     }
   }
 
+  // A blank 15c / 17c is filled only from lines the filer wrote, never guessed (operator ruling 2026-09-24):
+  //   line 16 = 13 + 15c  ⇒  15c = 16 − 13;   line 18 = 16 − 17c  ⇒  17c = 16 − 18.
+  // A negative result means the sheet or the reading is wrong: leave the blank and let review catch it.
+  const derived = { receipts_total: false, expenditures_total: false };
+  const { cash_start: l13, total_available: l16, cash_end: l18 } = money;
+  if (money.receipts_total === null && l13 !== null && l16 !== null && l16 - l13 >= 0) {
+    money.receipts_total = Math.round((l16 - l13) * 100) / 100;
+    derived.receipts_total = true;
+  }
+  if (money.expenditures_total === null && l16 !== null && l18 !== null && l16 - l18 >= 0) {
+    money.expenditures_total = Math.round((l16 - l18) * 100) / 100;
+    derived.expenditures_total = true;
+  }
+
   return {
     form: 'CFA-4',
     report_type: o.report_type as ReportType,
@@ -93,6 +110,7 @@ export function parseSummarySheetJson(raw: unknown): SummarySheet | null {
     filed_on: asDate(o.filed_on),
     filed_with: asText(o.filed_with),
     money,
+    derived,
     low_confidence_fields: [...low],
   };
 }
@@ -107,6 +125,15 @@ export function reviewReasons(s: SummarySheet): string[] {
   const { receipts_itemized: a, receipts_unitemized: b, receipts_total: c } = s.money;
   if (a !== null && b !== null && c !== null && Math.abs(a + b - c) > 0.005) {
     reasons.push(`15c (${c}) is not 15a + 15b (${a} + ${b})`);
+  }
+  const { cash_start: l13, total_available: l16, cash_end: l18, expenditures_total: e } = s.money;
+  if (l13 !== null && l16 !== null && l16 < l13) reasons.push(`line 16 (${l16}) is less than line 13 (${l13})`);
+  if (l16 !== null && l18 !== null && l18 > l16) reasons.push(`line 18 (${l18}) is more than line 16 (${l16})`);
+  if (!s.derived.receipts_total && c !== null && l13 !== null && l16 !== null && Math.abs(l13 + c - l16) > 0.005) {
+    reasons.push(`line 16 (${l16}) is not 13 + 15c (${l13} + ${c})`);
+  }
+  if (!s.derived.expenditures_total && e !== null && l16 !== null && l18 !== null && Math.abs(l16 - e - l18) > 0.005) {
+    reasons.push(`line 18 (${l18}) is not 16 − 17c (${l16} − ${e})`);
   }
   return reasons;
 }
@@ -124,6 +151,8 @@ export const SUMMARY_CSV_COLUMNS: readonly string[] = [
   'filed_on',
   'filed_with',
   ...MONEY_FIELDS,
+  'receipts_total_derived',
+  'expenditures_total_derived',
   'low_confidence_fields',
   'needs_review',
   'review_reasons',
@@ -148,6 +177,8 @@ export function summaryCsvRow(
     s.filed_on ?? '',
     s.filed_with ?? '',
     ...MONEY_FIELDS.map((f) => (s.money[f] === null ? '' : s.money[f]!.toFixed(2))),
+    s.derived.receipts_total ? 'yes' : 'no',
+    s.derived.expenditures_total ? 'yes' : 'no',
     s.low_confidence_fields.join(' '),
     reasons.length > 0 ? 'yes' : 'no',
     reasons.join('; '),
@@ -180,6 +211,7 @@ List in low_confidence_fields the key of every value you are not sure you read c
   "receipts_unitemized": number|null,   // line 15b, column A
   "receipts_total": number|null,        // line 15c, column A
   "receipts_ytd": number|null,          // line 15c, column B
+  "total_available": number|null,       // line 16, column A
   "expenditures_total": number|null,    // line 17c, column A
   "expenditures_ytd": number|null,      // line 17c, column B
   "cash_end": number|null,              // line 18, column A

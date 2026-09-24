@@ -81,6 +81,9 @@ export function buildMigrationSql(
     if (!DATE_RE.test(r.period_start) || !DATE_RE.test(r.period_end)) fail(n, 'period dates missing or malformed');
     if (r.filed_on !== '' && !DATE_RE.test(r.filed_on)) fail(n, 'filed_on malformed');
     if (r.filed_with.trim() === '') fail(n, 'filed_with missing');
+    for (const f of ['receipts_total_derived', 'expenditures_total_derived']) {
+      if (r[f] !== 'yes' && r[f] !== 'no') fail(n, `${f} must be yes/no, got "${r[f] ?? ''}"`);
+    }
     const money = MONEY_FIELDS.map((f) => {
       const v = (r[f] ?? '').trim();
       if (v === '') return 'NULL';
@@ -92,10 +95,11 @@ export function buildMigrationSql(
     return `-- ${n}. ${r.politician_name} — ${r.report_type} ${r.period_start}..${r.period_end} (${sourcePdf})
 INSERT INTO transparent_motivations.filed_report_summaries
   (politician_source_id, form, report_type, is_amendment, period_start, period_end, filed_on, filed_with,
-   ${MONEY_FIELDS.join(', ')}, source_pdf, source)
+   ${MONEY_FIELDS.join(', ')}, receipts_total_derived, expenditures_total_derived, source_pdf, source)
 SELECT ps.id, 'CFA-4', ${q(r.report_type)}, ${r.is_amendment === 'yes'}, ${q(r.period_start)}, ${q(r.period_end)},
        ${r.filed_on === '' ? 'NULL' : q(r.filed_on)}, ${q(r.filed_with.trim())},
-       ${money.join(', ')}, ${q(sourcePdf)}, ${q(opts.slot)}
+       ${money.join(', ')}, ${r.receipts_total_derived === 'yes'}, ${r.expenditures_total_derived === 'yes'},
+       ${q(sourcePdf)}, ${q(opts.slot)}
   FROM transparent_motivations.politician_sources ps
  WHERE ps.essentials_politician_id = ${q(r.politician_id)}
    AND ps.source_system = ${q(opts.sourceSystem)}
@@ -109,6 +113,7 @@ ON CONFLICT ON CONSTRAINT filed_report_summaries_uniq DO NOTHING;`;
 -- Spec: docs/superpowers/specs/2026-09-24-filed-report-summaries-design.md
 -- Each row attaches to the politician's ONE confirmed ${opts.sourceSystem} candidate committee. Zero or two
 -- such links would write 0 or 2 rows, which the gate below refuses. NULL = the line was blank on the sheet.
+-- *_derived = a blank 15c / 17c filled from the sheet's own arithmetic (16 − 13, 16 − 18); CA_0257 CHECKs it.
 -- IDEMPOTENT: ON CONFLICT DO NOTHING; a re-run writes nothing and the gate still passes.
 
 ${inserts.join('\n\n')}

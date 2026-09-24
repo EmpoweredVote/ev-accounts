@@ -146,7 +146,8 @@ const GRANGER_ROW = {
   period_start: '2026-01-01', period_end: '2026-04-10', filed_on: '2026-04-15',
   filed_with: 'Monroe Circuit Court Clerk', receipts_total: '0.00', receipts_ytd: '0.00',
   receipts_itemized: null, expenditures_total: null, expenditures_ytd: null, cash_end: '0.00',
-  debts_owed_by: '0.00', politician_source_id: 'internal', source_pdf: 'internal.pdf',
+  debts_owed_by: '0.00', receipts_total_derived: false, expenditures_total_derived: false,
+  politician_source_id: 'internal', source_pdf: 'internal.pdf',
 };
 
 describe('getSummary coverage_status — filed report summaries', () => {
@@ -169,6 +170,15 @@ describe('getSummary coverage_status — filed report summaries', () => {
     expect(r.filed_with).toBe('Monroe Circuit Court Clerk');
     expect(r).not.toHaveProperty('politician_source_id');
     expect(r).not.toHaveProperty('source_pdf');
+  });
+
+  // CA_0257: a blank 15c / 17c filled from 16 − 13 / 16 − 18 must say so, so the panel can too.
+  it('passes the derived flags through as booleans', async () => {
+    links = [{ research_status: 'confirmed' }];
+    reports = [{ linkIndex: 0, ...GRANGER_ROW, receipts_total: '0.00', receipts_total_derived: true }];
+    const { summary } = await getSummary(POLITICIAN);
+    expect(summary.filed_reports![0].receipts_total_derived).toBe(true);
+    expect(summary.filed_reports![0].expenditures_total_derived).toBe(false);
   });
 
   it('ignores a report on a disputed link', async () => {
