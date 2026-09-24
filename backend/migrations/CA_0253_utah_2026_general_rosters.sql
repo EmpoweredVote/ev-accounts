@@ -3,6 +3,8 @@
 -- Slot CA_0253 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand.
 --
+-- ✅ APPLIED to prod 2026-09-24 (approval Chris Andrews): INSERT 11 / 67 / 123, UPDATE 1 / 1, both gates green.
+--
 -- Make Utah's 2026-11-03 GENERAL-election rosters match the certified lists, for every office our
 -- 2026-06-23 Utah primary covers: Utah State House (HD21-58, HD60-65), Utah State Senate (SD9, 11, 12,
 -- 13, 14, 18, 19, 21, 23), the State Board of Education (5, 7, 8, 11, 14), and county offices in Salt
