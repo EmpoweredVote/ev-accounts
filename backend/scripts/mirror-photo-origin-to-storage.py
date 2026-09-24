@@ -198,7 +198,12 @@ def main():
 
             up = requests.post(
                 UPLOAD + filename,
-                headers={"Authorization": f"Bearer {key}",
+                # 🔴 BOTH HEADERS. A lone Bearer token is parsed as a compact JWS, so
+                # Supabase's newer `sb_secret_…` key is refused with HTTP 400 carrying
+                # {"statusCode":"403", "message":"Invalid Compact JWS"}. `apikey` is
+                # accepted for both key formats. See import-headshot-candidates.py.
+                headers={"apikey": key,
+                         "Authorization": f"Bearer {key}",
                          "Content-Type": "image/jpeg",
                          "x-upsert": "true"},
                 data=data, timeout=60,
