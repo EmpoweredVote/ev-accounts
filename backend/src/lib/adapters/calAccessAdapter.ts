@@ -229,12 +229,26 @@ export async function readBody(response: Response): Promise<Buffer> {
 
 /**
  * doRequest sends one GET for the Cal-Access ZIP.
- * Returns null body on 304. Throws on unexpected status.
+ * Returns a null body when the export is unchanged: a 304, OR a 200 whose ETag equals the
+ * stored one. Throws on unexpected status.
+ *
+ * sendETag goes out as If-None-Match. knownETag is the ETag of the export already loaded; the
+ * retry sends no If-None-Match but still knows it.
+ *
+ * Why a 200 can mean "unchanged": CloudFront answers a conditional GET with 304 only when the
+ * edge holds the object. On a cache miss it returns the full object. Measured 2026-09-23: the
+ * Render run at 23:54 UTC re-read the unchanged 1.58 GB (~7 min, no retry logged) while a
+ * conditional GET from elsewhere got "304, Hit from cloudfront" for the same ETag. The ETag is
+ * the S3 object's, so a 200 that carries the stored one is the same export: cancel the body
+ * before it is read.
  */
-async function doRequest(storedETag: string | null): Promise<{ body: Buffer | null; etag: string }> {
+async function doRequest(
+  sendETag: string | null,
+  knownETag: string | null
+): Promise<{ body: Buffer | null; etag: string }> {
   const headers: Record<string, string> = {};
-  if (storedETag) {
-    headers['If-None-Match'] = storedETag;
+  if (sendETag) {
+    headers['If-None-Match'] = sendETag;
   }
 
   const response = await fetch(CAL_ACCESS_ZIP_URL, {
@@ -242,15 +256,23 @@ async function doRequest(storedETag: string | null): Promise<{ body: Buffer | nu
     signal: AbortSignal.timeout(900_000), // 15 min: 1.58 GB took ~5 min at 5.3 MB/s (2026-09-23)
   });
 
+  const etag = response.headers.get('ETag') ?? '';
+  console.log(
+    `[calAccessAdapter] GET ${CAL_ACCESS_ZIP_URL}: HTTP ${response.status}, ` +
+    `x-cache=${response.headers.get('x-cache') ?? '-'}, etag=${etag || '-'}, stored=${knownETag || '-'}`
+  );
+
   if (response.status === 304) {
-    return { body: null, etag: storedETag ?? '' };
+    return { body: null, etag: knownETag ?? '' };
   }
 
   if (response.status === 200) {
-    return {
-      body: await readBody(response),
-      etag: response.headers.get('ETag') ?? '',
-    };
+    if (knownETag && etag === knownETag) {
+      await response.body?.cancel();
+      console.log('[calAccessAdapter] 200 carries the stored ETag: same export, body not read');
+      return { body: null, etag: knownETag };
+    }
+    return { body: await readBody(response), etag };
   }
 
   throw new Error(`calAccessAdapter: unexpected HTTP status ${response.status} ${response.statusText}`);
@@ -269,12 +291,12 @@ async function downloadZIP(conditional: boolean): Promise<DownloadResult> {
   let result: { body: Buffer | null; etag: string };
 
   try {
-    result = await doRequest(storedETag);
+    result = await doRequest(storedETag, storedETag);
   } catch (firstErr) {
     // Retry once without If-None-Match on network error
     console.warn('[calAccessAdapter] Initial request failed, retrying without ETag:', firstErr);
     try {
-      result = await doRequest(null);
+      result = await doRequest(null, storedETag);
     } catch (retryErr) {
       throw new Error(`calAccessAdapter: downloadZIP retry failed: ${retryErr}`, {
         cause: retryErr,
@@ -706,12 +728,14 @@ async function upsertBatch(
 export interface CalAccessAdapterOptions {
   /**
    * true (default): send the stored ETag as If-None-Match, so an unchanged export is a 304
-   * and the run parses nothing. That is right for the scheduled run, which owns the ETag.
+   * (or a 200 carrying the stored ETag — see doRequest) and the run parses nothing. That is
+   * right for the scheduled run, which owns the ETag.
    *
    * 🔴 false for any run that does not save the ETag (the judicial ingest). Once the scheduled
    * run has stored the current ETag, a conditional GET returns 304 until SOS publishes a new
    * export, and a 304 fetch() returns zero records without an error — the run would report
-   * success and write nothing.
+   * success and write nothing. false also turns off the same-ETag 200 skip, because no stored
+   * ETag is loaded at all.
    */
   conditional?: boolean;
 }

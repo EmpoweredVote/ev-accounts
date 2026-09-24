@@ -216,6 +216,59 @@ describe('calAccessAdapter prepare(): one download, one parse per run', () => {
     expect((init.headers as Record<string, string>)['If-None-Match']).toBeUndefined();
     expect((await adapter.fetch(source('100'))).records).toHaveLength(3);
   });
+
+  // CloudFront answers If-None-Match with 304 only when the edge holds the object; on a miss it
+  // sends the full 200 (the Render run of 2026-09-23 23:54 UTC re-read the unchanged 1.58 GB).
+  function trackedZipResponse(etag: string): { response: Response; cancelled: () => boolean } {
+    const bytes = new Uint8Array(buildZip());
+    let wasCancelled = false;
+    const body = new ReadableStream<Uint8Array>({
+      pull(controller) { controller.enqueue(bytes); controller.close(); },
+      cancel() { wasCancelled = true; },
+    });
+    const response = new Response(body, {
+      status: 200,
+      headers: { 'content-length': String(bytes.length), ETag: etag },
+    });
+    return { response, cancelled: () => wasCancelled };
+  }
+
+  it('treats a 200 that carries the stored ETag as unchanged and does not read the body', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [{ notes: '"etag-1"' }], rowCount: 1 });
+    const tracked = trackedZipResponse('"etag-1"');
+    fetchMock.mockImplementation(async () => tracked.response);
+    const adapter = createCalAccessAdapter();
+    await adapter.prepare(['100']);
+    expect(adapter.zipWasSkipped()).toBe(true);
+    expect(tracked.cancelled()).toBe(true);
+    expect((await adapter.fetch(source('100'))).records).toHaveLength(0);
+  });
+
+  it('reads a 200 whose ETag differs from the stored one', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [{ notes: '"etag-old"' }], rowCount: 1 });
+    const tracked = trackedZipResponse('"etag-new"');
+    fetchMock.mockImplementation(async () => tracked.response);
+    const adapter = createCalAccessAdapter();
+    await adapter.prepare(['100']);
+    expect(adapter.zipWasSkipped()).toBe(false);
+    expect(adapter.getETag()).toBe('"etag-new"');
+    expect((await adapter.fetch(source('100'))).records).toHaveLength(3);
+  });
+
+  it('still recognises the stored ETag on the retry that sends no If-None-Match', async () => {
+    poolQueryMock.mockResolvedValue({ rows: [{ notes: '"etag-1"' }], rowCount: 1 });
+    const tracked = trackedZipResponse('"etag-1"');
+    fetchMock
+      .mockImplementationOnce(async () => { throw new Error('socket hang up'); })
+      .mockImplementationOnce(async () => tracked.response);
+    const adapter = createCalAccessAdapter();
+    await adapter.prepare(['100']);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect((fetchMock.mock.calls[1][1] as RequestInit & { headers: Record<string, string> }).headers['If-None-Match'])
+      .toBeUndefined();
+    expect(adapter.zipWasSkipped()).toBe(true);
+    expect(tracked.cancelled()).toBe(true);
+  });
 });
 
 describe('calAccessAdapter upsert: prune superseded rows', () => {
