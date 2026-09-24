@@ -8,12 +8,15 @@
  *
  * Usage (from backend/):
  *   npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<batch> \
- *     [--race <race_id> ...] [--politician <uuid>:<federal|state|local|judicial> ...]
+ *     [--race <race_id> ...] [--politician <uuid>:<federal|state|local|judicial|school> ...]
  * Writes <dir>/topics.json and <dir>/politicians.json, then prints one TOPIC SCALE REFERENCE
  * block per office level present — paste the matching block into each researcher prompt.
  * politicians.json holds ONE entry per politician_id: a person reached by a --race and also given
  * by --politician (the documented way to set a level the race could not) is one entry, with the
  * --politician level.
+ * `school` (CA_0256) is a K-12 school board: its reference block lists only topics with an explicit
+ * `school` role row (the eight Education Lens topics). A community-college board on a --race resolves
+ * to level unknown (topicApplicability.ts, COMMUNITY_COLLEGE_LABEL_RE) — it is outside every level.
  * Exit: 0 ok, 1 no open season / malformed ladder, 2 usage (including a malformed uuid).
  */
 import 'dotenv/config';
@@ -24,7 +27,7 @@ import {
   appliesFromRoles, appliesToLevel, levelForDistrict, type Level,
 } from '../src/lib/topicApplicability.js';
 
-const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial'];
+const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial', 'school'];
 function opts(name: string): string[] {
   const out: string[] = [];
   process.argv.forEach((a, i) => { if (a === name && process.argv[i + 1]) out.push(process.argv[i + 1]); });
@@ -93,7 +96,7 @@ const byId = new Map<string, Pol>();
 if (RACES.length) {
   const { rows } = await pool.query(`
     SELECT DISTINCT ON (p.id) p.full_name, p.id::text AS politician_id, r.id::text AS race_id,
-           d.district_type, d.is_judicial
+           d.district_type, d.is_judicial, d.label AS district_label
       FROM essentials.race_candidates rc
       JOIN essentials.races r ON r.id = rc.race_id
       JOIN essentials.offices o ON o.id = r.office_id
@@ -103,7 +106,7 @@ if (RACES.length) {
      ORDER BY p.id, r.id`, [RACES]);
   for (const r of rows) {
     byId.set(r.politician_id, { full_name: r.full_name, politician_id: r.politician_id, race_id: r.race_id,
-      level: levelForDistrict(r.district_type, r.is_judicial) });
+      level: levelForDistrict(r.district_type, r.is_judicial, r.district_label) });
   }
   const { rows: [{ n }] } = await pool.query(
     `SELECT count(*)::int AS n FROM essentials.race_candidates
@@ -136,6 +139,10 @@ for (const level of LEVELS) {
   if (!politicians.some((p) => p.level === level)) continue;
   const inScope = topics.filter((t) => appliesToLevel(t, level));
   console.log(`\n===== TOPIC SCALE REFERENCE (${level}) — ${inScope.length} topics =====`);
+  if (!inScope.length) {
+    // An empty reference must not read as "nothing to find". For school it means CA_0256's role rows are absent.
+    console.log(`⚠ no open-season topic applies at the ${level} level — do not research${level === 'school' ? ' (are CA_0256\'s school role rows applied?)' : ''}`);
+  }
   for (const t of inScope) {
     console.log(`\n${t.topic_key} (id: ${t.topic_id}, revision: ${t.topic_revision_id})`);
     console.log(`Question: "${t.question_text}"`);

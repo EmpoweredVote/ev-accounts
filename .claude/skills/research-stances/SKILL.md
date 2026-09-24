@@ -103,7 +103,7 @@ Build the batch bundle:
 cd ev-accounts/backend && set -a && source .env && set +a
 npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<YYYY-MM-DD-batch> \
   --race <race_id> [--race <race_id> ...]          # candidates on these races
-  # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial>
+  # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial|school>
 ```
 
 It reads `season_questions → compass_topic_revisions → compass_stance_revisions` for the open season,
@@ -117,6 +117,12 @@ is fine. Each person's `full_name` in `politicians.json` is the spelling every b
 
 Notes on reading the result:
 
+- **`school` is a K-12 school board** (CA_0256; rulings 2026-09-23 / 2026-09-24, Chris Andrews). Its
+  reference lists only the eight Education Lens topics (`education-*`). `school-vouchers` is not asked of
+  a school board. A **community-college** trustee board (district label says "Community College";
+  `COMMUNITY_COLLEGE_LABEL_RE` in `backend/src/lib/topicApplicability.ts`) prints under `level unknown`.
+  It is outside every level: leave it out of the batch, and do not force it to `school` or `local`.
+  A state board of education stays `state`.
 - **It resolves whichever season is open, by status — do not hard-code a season number.** Today that
   is Season 2 (60 topics). The Season 3 draft has 61 and a different pin; a run today writes into the
   open season, so the open season's rung text is the text your evidence must match.
@@ -305,6 +311,46 @@ Do NOT invent your own topic_key slugs.
 Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
 
 The TOPIC SCALE REFERENCE is already filtered to the questions this season asks of this office. Research only those. When you cannot find evidence for a specific chair, write the row with a blank value — the pipeline reads a blank as "insufficient evidence".
+
+[If this politician's level is `school` (K-12 school board), include this block:]
+SCHOOL-BOARD RULES (rulings 2026-09-23 / 2026-09-24, Chris Andrews; per-rung basis in
+.superpowers/sdd/2026-09-23-stance-program-reconciliation/school-scope-proposal.md §2-§3).
+They add to every other rule in this contract:
+- S1. Evidence is the member's own act or words. An act is a board vote: on a policy, a budget, a levy
+  or referendum resolution, an SRO contract or MOU, a materials adoption, or a charter petition,
+  renewal or revocation. A superintendent's administrative rule or a staff decision is NOT the member's act.
+- S2. A vote that only implements a state mandate is not chair evidence. Seat a chair only on a vote or
+  words that pick among the options the law leaves open, or that go against the mandate.
+- S3. A RUNG THAT STATE LAW REMOVES is seated ONLY from a vote the member cast before the law took
+  effect — name the vote and its date. Otherwise the value stays blank. The member's words alone never
+  seat such a rung: this narrows statement evidence at the school level only. Name the state rule in
+  reasoning.
+- S4. The ladders do not all point the same way. Library-books chair 1 is the LEAST restrictive rung;
+  AI chair 1 is the MOST restrictive. Read each ladder.
+- S5. Where one member moves nearly every item, only the named tally counts (spec §5.3).
+Per topic (state-law claims marked "to verify" in the proposal are unchecked — confirm the statute
+before you rely on it):
+- education-ai: most districts handle AI in administrative guidelines, not board policy (S1) — expect blanks.
+- education-charter-authorization: seat only where the member's district is an authorizer, or, for
+  chair 5, where a conversion or partnership law applies. "Close existing" covers only charters this
+  district authorized. Evidence: a vote on a petition, renewal, revocation or conversion. Not an
+  authorizer: blank.
+- education-curriculum: evidence is a vote on a curriculum or materials adoption, a
+  controversial-issues policy or an opt-out policy. State standards and content laws limit every rung.
+- education-equity-programs: rungs 1-2 are removed where state law bans K-12 DEI offices or mandatory
+  training (S3). Subgroup reporting is federally required, so reporting alone is not chair-3 evidence.
+- education-gender-identity: record the state rule first. CA (AB 1955) removes rungs 3-5; IN (HEA 1608)
+  removes rungs 1-2. A vote to implement the state rule is not evidence (S2). Expect mostly blanks in CA and IN.
+- education-library-books: evidence is a vote on the terms of the reconsideration policy, or on one
+  challenge or appeal. A vote to adopt a state-required procedure is not evidence (S2). In IN (HEA 1447)
+  rung 1 cannot be absolute for harmful-to-minors material.
+- education-school-budget: a vote to put a referendum on the ballot is rung-1 evidence; a routine
+  maximum-levy advertisement is not. In a fiscally dependent district, rungs 1 and 5 are positions on
+  the budget request — seat them on the member's vote on the request.
+- education-school-police: evidence is a vote on an SRO contract or MOU, a district police budget, or
+  creating or ending one. Where a state mandates campus officers, rungs 1-2 are removed (S3).
+- school-vouchers is not asked of a school board (no board holds a lever on any rung). It is not in
+  this reference; do not add it.
 
 --output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 

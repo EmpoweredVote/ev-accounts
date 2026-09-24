@@ -232,7 +232,9 @@ export async function getCompassTopics() {
     const topicRoles = (rolesRes.data ?? []).filter(r => r.topic_id === topic.id);
 
     // Tier rules live in topicApplicability.ts — shared with the stance-research gate.
-    const { applies_federal, applies_state, applies_local, applies_judicial } = appliesFromRoles(topicRoles);
+    // applies_school (CA_0256) is true only on a topic with an explicit `school` row.
+    const { applies_federal, applies_state, applies_local, applies_judicial, applies_school } =
+      appliesFromRoles(topicRoles);
 
     return {
       ...topic,
@@ -240,6 +242,7 @@ export async function getCompassTopics() {
       applies_state,
       applies_local,
       applies_judicial,
+      applies_school,
       stances: stancesRes.rows
         .filter(s => s.effective_revision_id === topic.effective_revision_id)
         .map(({ effective_revision_id: _e, ...s }) => s),
@@ -355,29 +358,18 @@ export async function getCompassCategories() {
   // than an is_live flag.
   const promotedById = new Map(promotedTopics.map(t => [t.id, t]));
 
-  // Build a per-topic tier map so we can attach booleans without an extra join.
-  // A topic with no rows defaults to all three tiers = true (cross-cutting),
-  // matching the fallback behavior in getCompassTopics.
-  const rolesByTopicId = new Map<string, Set<string>>();
+  // Build a per-topic role map so we can attach tier booleans without an extra join.
+  // The flags come from appliesFromRoles — the same rule getCompassTopics and the
+  // stance-research gate use (no rows = federal+state+local; never judicial, never school).
+  // This used to restate that rule inline, which is how a fifth level would have been missed.
+  const rolesByTopicId = new Map<string, { role_scope: string }[]>();
   for (const r of rolesRes.data ?? []) {
-    const set = rolesByTopicId.get(r.topic_id) ?? new Set<string>();
-    set.add(r.role_scope);
-    rolesByTopicId.set(r.topic_id, set);
+    const list = rolesByTopicId.get(r.topic_id) ?? [];
+    list.push({ role_scope: r.role_scope });
+    rolesByTopicId.set(r.topic_id, list);
   }
 
-  const tierFlagsFor = (topicId: string) => {
-    const scopes = rolesByTopicId.get(topicId);
-    if (!scopes || scopes.size === 0) {
-      // CRITICAL: applies_judicial defaults to false — cross-cutting topics must NOT appear on judicial profiles
-      return { applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false };
-    }
-    return {
-      applies_federal:  scopes.has('federal'),
-      applies_state:    scopes.has('state'),
-      applies_local:    scopes.has('local'),
-      applies_judicial: scopes.has('judicial'),
-    };
-  };
+  const tierFlagsFor = (topicId: string) => appliesFromRoles(rolesByTopicId.get(topicId) ?? []);
 
   return (catRes.data ?? []).map(cat => ({
     ...cat,

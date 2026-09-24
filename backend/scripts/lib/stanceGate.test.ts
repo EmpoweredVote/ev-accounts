@@ -7,7 +7,7 @@ const SNIP = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 becau
 const topic = (topic_key: string, scope: Partial<BundleTopic>): BundleTopic => ({
   topic_id: `id-${topic_key}`, topic_key, topic_revision_id: `rev-${topic_key}`, question_number: 1,
   title: topic_key, question_text: '?', stances: [1, 2, 3, 4, 5].map((value) => ({ value, text: `rung ${value}` })),
-  applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false, ...scope,
+  applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false, applies_school: false, ...scope,
 });
 const HEALTH = topic('healthcare', { applies_local: false });
 const RENT = topic('rent-regulation', { applies_federal: false, applies_state: false });
@@ -58,6 +58,18 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
   });
   it('topic-out-of-scope', () => {
     expect(ids({ ...good, topic_key: 'rent-regulation' }, { topic: RENT, evidence: [] })).toContain('topic-out-of-scope');
+  });
+  it('topic-out-of-scope at the school level: only an explicit school topic passes (CA_0256)', () => {
+    const board: BundlePolitician = { ...JANE, level: 'school' };
+    const EDU = topic('education-library-books', { applies_federal: false, applies_school: true });
+    const VOUCHERS = topic('school-vouchers', { applies_local: false });
+    expect(ids({ ...good, topic_key: 'education-library-books' }, { topic: EDU, politician: board, evidence: [] }))
+      .not.toContain('topic-out-of-scope');
+    expect(ids({ ...good, topic_key: 'school-vouchers' }, { topic: VOUCHERS, politician: board, evidence: [] }))
+      .toContain('topic-out-of-scope');
+    // A local-applicable topic with no school row is still out of scope for a school board.
+    expect(ids({ ...good, topic_key: 'rent-regulation' }, { topic: RENT, politician: board, evidence: [] }))
+      .toContain('topic-out-of-scope');
   });
   it('level-unknown is a review signal, not a block', () => {
     const f = checkStanceRow(good, { topic: HEALTH, politician: { ...JANE, level: null }, evidence: ev });

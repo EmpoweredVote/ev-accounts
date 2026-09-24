@@ -103,6 +103,21 @@ Statewide executives do not cast legislative roll-call votes. Map their *executi
 
 The distinction matters: a **bill signing** (Governor) is a different evidentiary act than an **amicus brief** (AG) or an **investment decision** (Treasurer). Cite the act that actually happened; do not generalize one office's tools onto another.
 
+### Office-Type Evidence Guidance (K-12 school boards — the `school` level)
+
+A school board is researched only on the eight Education Lens topics its TOPIC SCALE REFERENCE lists
+(CA_0256; rulings 2026-09-23 / 2026-09-24). Community-college boards are out of scope. The full rules,
+with per-topic notes, are the SCHOOL-BOARD RULES block in the research contract in
+`.claude/skills/research-stances/SKILL.md`. In short:
+
+- Evidence is the member's own board vote (policy, budget, levy or referendum resolution, SRO contract
+  or MOU, materials adoption, charter petition) or own words. A superintendent's or staff decision is not.
+- A vote that only implements a state mandate is not chair evidence.
+- A rung that state law removes is seated only from a vote the member cast before the law took effect.
+  Otherwise the value stays blank — words alone never seat it.
+- The ladders do not all point the same way (library-books chair 1 is least restrictive; AI chair 1 is
+  most restrictive). Read each one.
+
 ## CRITICAL RULES
 
 ### Tool Usage
