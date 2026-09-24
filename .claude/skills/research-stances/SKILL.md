@@ -420,6 +420,25 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
   appear in one of the row's evidence.csv snippets — a quoted sentence nobody said, or the wrong
   sentence in quotes, is refused (`quote-not-in-snippet`). Only quote-attribute what the source shows.
 
+HARD RULES (Compass Stance Program; do not violate):
+- A cited vote needs 10% or more of the votes against, or it is not a position.
+- A vote cast before the member took the seat is not evidence.
+- An excused absence is not a position. Check tenure before reading a non-vote as one. Verify any
+  vote-count parse against the journal's own totals.
+- Sponsorship evidences the bill as filed — not as later amended or enrolled.
+- A short title is not evidence.
+- The operative section of an instrument governs, not its recital.
+- A study directive is a refusal, not a chair. Inference from silence is a refusal, not a chair.
+- A failed basis is not a failed chair — re-research it, never blank it.
+- Run a positive control on every search before trusting a "nothing found" result.
+- In source order, On the Record transcripts come first.
+- The Supabase MCP is production. There is no local database to test writes against.
+
+Before researching, read spec §3 (finding a chair), §4 (refusal rules), §5 (sourcing), §6
+(verification), §10 (calibration set), §11 (first-wave protocol and its exit criterion: two
+consecutive batches where the reviewer changes no chair) —
+`docs/superpowers/specs/2026-09-23-stance-program-design.md`.
+
 QUOTE-SELECTION GATES + RANKING QUESTION + DIFFERENTIATION:
 [INJECT: gates]
 
@@ -478,8 +497,8 @@ Show the user a formatted summary table:
 
 | Politician | Topics Found | Topics Skipped |
 |-----------|-------------|---------------|
-| Name 1    | 19/21       | ai-regulation, redistricting |
-| Name 2    | 21/21       | none |
+| Name 1    | [found]/[in-scope] | ai-regulation, redistricting |
+| Name 2    | [found]/[in-scope] | none |
 
 ### Stance Overview
 
@@ -686,10 +705,11 @@ Only quotes that clear both passes proceed to the push.
 
 `politicians.json` (written by `build-stance-topic-bundle.ts`) holds each person's `politician_id`;
 `stance-gate.ts` carries it into `stances.csv`; `verify-stance-research.ts` resolves by that id,
-never by name. For the quote push (4d), take `politician_id` from `politicians.json` and `topic_id`
-from `topics.json`. `topics.json` is already the open season's pin (STEP 0), so a `topic_id` taken
-from it is always a question the open season asks — the `is_live` trap that the old name-based lookup
-here fell into (17 pinned topics dropped, without raising) cannot happen.
+never by name. For the quote push (4d), take `politician_id` from `politicians.json` and `topic_key`
+from `topics.json` (the quote object in 4d carries `topic_key`, not `topic_id` — `essentials.quotes`
+has no `topic_id` column). `topics.json` is already the open season's pin (STEP 0), so a `topic_key`
+taken from it is always a question the open season asks — the `is_live` trap that the old name-based
+lookup here fell into (17 pinned topics dropped, without raising) cannot happen.
 
 - **Two people with the same name in one batch are refused** by the gate (`ambiguous-politician`,
   high). Research them in separate batches.
@@ -704,6 +724,10 @@ cd ev-accounts/backend && set -a && source .env && set +a
 npx tsx scripts/verify-stance-research.ts --dir data/stance-research/YYYY-MM-DD-[BATCH_NAME] \
   --apply --editor-id <your admin user uuid>          # review-all (default): every stance is queued
 # add --auto-push ONLY as a deliberate, per-run operator decision (ruling 2026-09-22)
+# add --re-researched when THIS run is a re-research pass over pairs the last run sent back
+#   below-threshold. It stamps re_research_attempted=true only on the queued rows whose reasons
+#   include below-threshold — never on every queued row of the run — so the admin review queue
+#   shows "Re-research attempted" only where that is actually true. Omit it on an ordinary run.
 ```
 
 **By default nothing is published by this command.** Every scored row that is not `unchanged` or
@@ -767,8 +791,9 @@ sets covered.
 ⚠ **Statement rows never appear in this ledger, and that is correct, not a gap.** Evidence class is
 per-row (operator decision 2026-09-22): `record` evidence must name the bill, ordinance or vote
 NAMES_INSTRUMENT looks for; `statement` evidence is the person's own words, which cannot name an
-instrument by definition and goes to human review instead (see CLAUDE.md, "audit-chair-evidence
---check runs on record rows only"). `export-written-ledger.ts` classifies each resolved row against
+instrument by definition and goes to human review instead (see the Global Constraints in
+`docs/superpowers/plans/2026-09-23-stance-program-reconciliation.md`, "`audit-chair-evidence --check`
+runs on record rows only"). `export-written-ledger.ts` classifies each resolved row against
 `research.csv`'s `evidence_type` column and drops anything that is `statement` or unclassifiable,
 printing every drop — check that list before trusting a clean audit run; a batch of all-statement
 rows produces an empty ledger and the script refuses to write one (see above), rather than a
@@ -836,7 +861,7 @@ With the drafts in place, run the real quote audit (it adds YouTube source-verif
 ingested OTR transcripts — the check the mechanical pass can't do):
 
 ```bash
-cd ../on-the-record/.claude/skills/audit-quotes && \
+cd on-the-record/.claude/skills/audit-quotes && \
   ../../../.venv/bin/python -m scripts.audit --race <race_id> --include-drafts
 ```
 

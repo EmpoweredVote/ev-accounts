@@ -601,6 +601,12 @@ if (!APPLY) {
   // never from what got pushed.
   const batchPoliticianIds = politicianIdsInBatch(csvNames, idByName);
   if (batchPoliticianIds.length) {
+    // C118: this stamp is deliberately unconditional on whether any row above pushed, was queued,
+    // or errored — it records that these people were RESEARCHED this run, not that anything was
+    // WRITTEN for them. A research timestamp with zero answers is still a legitimate result (see the
+    // file header), so this UPDATE must not be made to depend on push/queue success. It is a single
+    // atomic statement — one UPDATE over the whole id array — precisely so a partial failure earlier
+    // in this function can never leave some of the batch stamped and the rest not.
     await pool.query(
       `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
       [batchPoliticianIds],

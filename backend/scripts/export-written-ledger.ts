@@ -104,6 +104,11 @@ const { rows: dbRows } = await pool.query<{
           COALESCE(${seasonIdSelect}, open_season.id)::text AS season_id,
           a.value::text AS chair_after
      FROM inform.stance_research_review r
+     -- The join carries no season predicate beyond status = 'open' because it relies on the
+     -- seasons_one_open invariant: at most one row in inform.seasons can hold status = 'open' at a
+     -- time. That is what makes this a safe LEFT JOIN rather than a fan-out — if the invariant were
+     -- ever violated, a legacy row with no season_id of its own (COALESCE below) would silently
+     -- multiply into one ledger row per open season instead of at most one.
      LEFT JOIN inform.seasons open_season ON open_season.status = 'open'
      LEFT JOIN inform.politician_answers a
             ON a.politician_id = r.politician_id AND a.topic_id = r.topic_id
