@@ -1331,9 +1331,26 @@ web-search and report, and nothing more. Subagents here have also repeatedly rep
 they never ran. Inline execution is not a preference about agent count; it is the only mode in
 which the checks in §6 can actually run.
 
-▶ **Required before handover: update STEP 1 to inline execution, one politician per run.** If
-Andrews' Claude runs the skill as written, it will do the thing this document spends §4 warning
-against.
+✅ **Done 2026-09-23 (#662).** STEP 1 now reads "Do NOT dispatch a research sub-agent. Do this work
+yourself, one politician per run," and carries the three reasons above. The Plan D rewrite mode it
+also affected has since been deleted (#667, §8.6).
+
+⚠ **The ban extends to the quote-judgment pass, and that took a second decision.** STEP 4a(ii) used
+to dispatch one sub-agent per candidate *or per race* to run the eleven CHECKS.md §4 judgments over
+the bundle file. It now runs inline, one candidate at a time. The three reasons do not apply equally
+there, and saying which is the point:
+
+- Reason 2 applies **squarely** — 4a(ii) *is* a verification pass, and a returned "clean" that was
+  never run is exactly the failure.
+- Reason 3 applies **squarely** — "or per race" is a batch, and a batch hides which judgment went
+  wrong.
+- Reason 1 applies to **one** of the eleven checks. The bundle is a local file a sub-agent could
+  read, so most checks need no MCP. But `coupling-in-tension` weighs the quote against the chair,
+  and the authority for rung text is the season pin — which a sub-agent cannot reach. It would
+  silently fall back to the frozen table, on the very ladders §2.2 says disagree.
+
+**A judgment that decides what a voter reads is made where it can be seen and challenged.** That is
+the same principle as STEP 1, not a second rule.
 
 ### 13.2 Exhaust cheap SQL predicates before reading pages
 
