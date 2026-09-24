@@ -106,6 +106,10 @@
  *                                     Verify the pairs, then lower BOTH floors.
  *     answers AND context fall, UNACCOUNTED  →  rows are being destroyed. STOP.
  *     answers fall, context RISES            →  also destruction, with a rewrite on top. STOP.
+ *     answers HOLD, context falls, and named ORPHAN pairs (context, no answer in any season)
+ *     account for it exactly             →  a context-only WITHDRAWAL. Deliberate.
+ *                                           Verify the pairs, then lower the CONTEXT floor.
+ *                                           (CA_0214 is the worked example.) Unaccounted: STOP.
  *
  * 🔴 THE WITHDRAWAL BRANCH WAS MISSING UNTIL 2026-09-02, AND ITS ABSENCE MADE CORRECT WORK
  * READ AS DATA LOSS. This table used to say, flatly, "answers AND context fall together →
@@ -292,10 +296,21 @@ const FLOORS = {
     // 🔴 CC_0037 IS THE FIRST THING TO MOVE IT, AND THAT IS CORRECT, NOT A BREACH. A
     //    withdrawal deletes the context because the context is the thing that is wrong.
     //    33,818 − 12 = 33,806, derived the same way as the answer floor.
-    context: flagInt('floor-context', 1, 33806),
+    //
+    // −1 context, 0 answers, on 2026-09-24: CA_0214 (PR #699). It deleted ONE Season 1 context row
+    //    with no answer in any season — the ORPHAN_CONTEXT "State Redistricting" reasoning on Andy
+    //    Barr's deactivated, seatless "Candidate for U.S. Senate" duplicate (d6d297f5…, topic
+    //    48cc9585…), under the CC_0044 hatch and with the reason in its header. A context-only
+    //    withdrawal: there was no answer to take down with it. It did not lower this floor in the
+    //    same PR, so the next manual run went red at 33,805 — the fourth time this gate, not the
+    //    PR, found a deliberate reduction. Verified before moving the number: the green dispatch
+    //    run at 2026-09-24T01:42Z read 33,806; #699 opened 02:22Z and merged 02:25Z; the pinned
+    //    key reads 0 rows now; and no Season 1 context or answer row was created or updated after
+    //    01:42Z, so the net −1 cannot hide an addition. 33,806 − 1 = 33,805.
+    context: flagInt('floor-context', 1, 33805),
     questions: flagInt('floor-questions', 1, 44),
     measured: '2026-08-27',
-    adjusted: '2026-09-02',
+    adjusted: '2026-09-24',
   },
   2: {
     // Season 2 opened 2026-09-04 14:31Z with 60 questions, and took no answers of its own at
