@@ -608,3 +608,112 @@ describe('parseFecName / scoreMatch — FEC name formatting', () => {
     expect(parseFecName('COESTER, C. MARK MR')).toEqual({ first: 'c', last: 'coester' });
   });
 });
+
+// ---------------------------------------------------------------------------
+// Re-checking needs_research rows
+// ---------------------------------------------------------------------------
+//
+// The queue used to skip anyone with ANY FEC row, so a needs_research row was
+// final: a candidate who had not filed yet when the auto-match ran was never
+// looked at again after they filed. After the 2026-09-24 run and review, 96 rows
+// sat there (58 with no FEC record at all). A needs_research-only person now
+// comes back once their row is older than the re-check interval, and the re-check
+// rewrites that same row instead of adding a second one.
+
+describe('getUnmatchedFederalPoliticians — re-checking needs_research rows', () => {
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+  });
+
+  it('lets back in a person whose only FEC row is a needs_research row older than the interval', async () => {
+    poolQueryMock.mockResolvedValueOnce({ rows: [] });
+
+    await getUnmatchedFederalPoliticians();
+
+    const sql = String(poolQueryMock.mock.calls[0]![0]);
+    // any settled FEC row, or a needs_research row checked recently, still keeps the person out
+    expect(sql).toMatch(
+      /AND NOT EXISTS \(\s*SELECT 1\s+FROM transparent_motivations\.politician_sources ps\s+WHERE ps\.essentials_politician_id = p\.id\s+AND ps\.source_system LIKE 'fec%'\s+AND \(ps\.research_status <> 'needs_research'\s+OR ps\.updated_at >= now\(\) - interval '7 days'\)/,
+    );
+  });
+
+  it('returns the needs_research row to re-check, or null for a first check', async () => {
+    poolQueryMock.mockResolvedValueOnce({
+      rows: [queueRow({ id: 'pol-1', recheck_source_id: 'src-old' }), queueRow({ id: 'pol-2', recheck_source_id: null })],
+    });
+
+    const rows = await getUnmatchedFederalPoliticians();
+
+    expect(rows.map(r => r.recheck_source_id)).toEqual(['src-old', null]);
+    expect(String(poolQueryMock.mock.calls[0]![0])).toMatch(/AS recheck_source_id/);
+  });
+});
+
+describe('runFecAutoMatch — a re-check rewrites the existing row', () => {
+  const savedKey = process.env.FEC_API_KEY;
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    acquireFecSlotMock.mockClear();
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(candidatesSearchResponse()));
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-10-05T12:00:00Z')); // FEC cycle 2026
+    process.env.FEC_API_KEY = 'test-api-key';
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    if (savedKey === undefined) delete process.env.FEC_API_KEY;
+    else process.env.FEC_API_KEY = savedKey;
+  });
+
+  const VAN_HILLEARY_2026 = { candidate_id: 'H4TN04072', name: 'HILLEARY, VAN', office: 'H', state: 'TN', party: 'REP', election_years: [2000, 2002, 2026] };
+
+  async function recheck(fecResults: unknown[]) {
+    poolQueryMock
+      .mockResolvedValueOnce({ rows: [queueRow({ full_name: 'Van Hilleary', representing_state: 'TN', is_candidate: true, recheck_source_id: 'src-old' })] })
+      .mockResolvedValueOnce({ rows: [{ id: 'src-old' }] }); // the UPDATE
+    (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce(candidatesSearchResponse(fecResults));
+
+    const run = runFecAutoMatch();
+    await vi.runAllTimersAsync();
+    const summary = await run;
+    const [sql, params] = poolQueryMock.mock.calls[1]! as [string, unknown[]];
+    return { result: summary.results[0]!, sql: String(sql), params };
+  }
+
+  it('UPDATEs the needs_research row in place when the person has now filed', async () => {
+    const { result, sql, params } = await recheck([VAN_HILLEARY_2026]);
+
+    expect(result).toMatchObject({ status: 'confirmed', selected_fec_id: 'H4TN04072', source_id: 'src-old', error: null });
+    expect(sql).toMatch(/^\s*UPDATE transparent_motivations\.politician_sources/);
+    expect(sql).not.toMatch(/INSERT/);
+    expect(sql).toMatch(/updated_at = now\(\)/);
+    expect(sql).toMatch(/WHERE id = \$1 AND research_status = 'needs_research'/);
+    expect(params).toEqual(['src-old', 'fec_house', 'H4TN04072', 'confirmed', '']);
+  });
+
+  it('still rewrites the row when the answer is again needs_research, so it waits out the interval', async () => {
+    const { result, sql, params } = await recheck([]);
+
+    expect(result).toMatchObject({ status: 'needs_research', source_id: 'src-old', error: null });
+    expect(sql).toMatch(/^\s*UPDATE transparent_motivations\.politician_sources/);
+    expect(params[3]).toBe('needs_research');
+  });
+
+  it('reports an error and writes nothing else when the row was settled meanwhile', async () => {
+    poolQueryMock
+      .mockResolvedValueOnce({ rows: [queueRow({ full_name: 'Van Hilleary', representing_state: 'TN', is_candidate: true, recheck_source_id: 'src-old' })] })
+      .mockResolvedValueOnce({ rows: [] }); // UPDATE matched nothing: someone confirmed or disputed it
+    (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce(candidatesSearchResponse([VAN_HILLEARY_2026]));
+
+    const run = runFecAutoMatch();
+    await vi.runAllTimersAsync();
+    const summary = await run;
+
+    expect(summary.results[0]!.error).toMatch(/no longer needs_research/);
+    expect(summary.errors).toBe(1);
+    expect(poolQueryMock).toHaveBeenCalledTimes(2);
+  });
+});

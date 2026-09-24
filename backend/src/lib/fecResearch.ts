@@ -30,6 +30,8 @@ import { currentFecCycle, fecCycleOf } from './fecCycle.js';
 
 const FEC_CANDIDATES_URL = 'https://api.open.fec.gov/v1/candidates/';
 const SLEEP_BETWEEN_SEARCHES_MS = 1500; // stay well under 1000 req/hr
+/** How long a needs_research FEC row waits before the queue re-checks it. */
+const RECHECK_INTERVAL_DAYS = 7;
 /** FEC's candidate search rejects a shorter `q` with HTTP 422. */
 const FEC_MIN_KEYWORD_LENGTH = 3;
 const AUTO_CONFIRM_SCORE = 0.8;
@@ -47,6 +49,8 @@ interface UnmatchedPolitician {
   representing_state: string;
   /** Queued from a "Candidate for …" placeholder: a seat sought, not held. */
   is_candidate: boolean;
+  /** The person's stale needs_research FEC row, re-checked in place; null on a first check. */
+  recheck_source_id: string | null;
 }
 
 export interface FecCandidate {
@@ -350,6 +354,24 @@ export async function searchFecCandidates(
 // sitting Representative who is running for Senate comes back twice — House seat
 // and Senate placeholder — and plain DISTINCT keeps both, because the chamber
 // differs. A SEAT HELD BEATS A SEAT SOUGHT, as in essentialsService.
+/** Rewrite a needs_research FEC row with a re-check's answer; throws if it was settled meanwhile. */
+async function rewriteNeedsResearchSource(
+  sourceId: string,
+  data: { source_system: string; external_id: string; research_status: string; notes: string }
+): Promise<string> {
+  const updated = await pool.query<{ id: string }>(
+    `UPDATE transparent_motivations.politician_sources
+        SET source_system = $2, external_id = $3, research_status = $4, notes = $5, updated_at = now()
+      WHERE id = $1 AND research_status = 'needs_research'
+      RETURNING id`,
+    [sourceId, data.source_system, data.external_id, data.research_status, data.notes]
+  );
+  if (updated.rows.length === 0) {
+    throw new Error(`politician_source ${sourceId} is no longer needs_research; re-check not written`);
+  }
+  return updated.rows[0]!.id;
+}
+
 export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> {
   const result = await pool.query<{
     id: string;
@@ -358,6 +380,7 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
     chamber_name: string;
     representing_state: string;
     is_candidate: boolean;
+    recheck_source_id: string | null;
   }>(
     `SELECT DISTINCT ON (p.id)
        p.id,
@@ -365,7 +388,14 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
        p.bioguide_id,
        c.name AS chamber_name,
        o.representing_state,
-       (seat.via_race OR COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate
+       (seat.via_race OR COALESCE(o.title, '') ILIKE 'Candidate for%') AS is_candidate,
+       (SELECT ps.id
+          FROM transparent_motivations.politician_sources ps
+         WHERE ps.essentials_politician_id = p.id
+           AND ps.source_system LIKE 'fec%'
+           AND ps.research_status = 'needs_research'
+         ORDER BY ps.updated_at NULLS FIRST
+         LIMIT 1) AS recheck_source_id
      FROM essentials.politicians p
      JOIN (
        -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
@@ -388,11 +418,16 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
      WHERE p.is_active = true
        AND p.is_vacant = false
        AND (c.name LIKE 'U.S. House%' OR c.name LIKE 'U.S. Senate%')
+       -- A settled FEC row keeps the person out for good. A needs_research row keeps them
+       -- out only for the re-check interval: a candidate who had not filed when it was
+       -- written is looked at again. NULL updated_at (rows written before CA_0249) is due.
        AND NOT EXISTS (
          SELECT 1
          FROM transparent_motivations.politician_sources ps
          WHERE ps.essentials_politician_id = p.id
            AND ps.source_system LIKE 'fec%'
+           AND (ps.research_status <> 'needs_research'
+                OR ps.updated_at >= now() - interval '${RECHECK_INTERVAL_DAYS} days')
        )
      -- held seat, then placeholder seat, then race row: a seat-based entry never changes
      ORDER BY p.id,
@@ -413,6 +448,7 @@ export async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitic
       source_system: isSenate ? 'fec_senate' : 'fec_house',
       representing_state: row.representing_state,
       is_candidate: row.is_candidate,
+      recheck_source_id: row.recheck_source_id ?? null,
     };
   });
 }
@@ -541,15 +577,26 @@ export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMa
         }
       }
 
-      // Insert politician_source row
-      const inserted = await createSource({
-        essentials_politician_id: p.id,
-        source_system: p.source_system,
-        external_id: result.selected_fec_id ?? '',
-        research_status: result.status,
-        notes: result.notes,
-      });
-      result.source_id = inserted.id;
+      // First check: insert the politician_source row. Re-check: rewrite the person's
+      // needs_research row in place (a second row would break the one-row-per-person
+      // queue test), and only while it is still needs_research.
+      if (p.recheck_source_id) {
+        result.source_id = await rewriteNeedsResearchSource(p.recheck_source_id, {
+          source_system: p.source_system,
+          external_id: result.selected_fec_id ?? '',
+          research_status: result.status,
+          notes: result.notes,
+        });
+      } else {
+        const inserted = await createSource({
+          essentials_politician_id: p.id,
+          source_system: p.source_system,
+          external_id: result.selected_fec_id ?? '',
+          research_status: result.status,
+          notes: result.notes,
+        });
+        result.source_id = inserted.id;
+      }
 
       if (result.status === 'confirmed') {
         autoConfirmed++;
