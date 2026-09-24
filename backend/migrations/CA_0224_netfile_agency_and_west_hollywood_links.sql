@@ -42,7 +42,10 @@
 -- column every source of the run fails. The old code ignores the column, so applying first is safe.
 --
 -- No migration runner exists; this file records SQL applied by hand (DDL + DML, one transaction).
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). Dry run x2 (BEGIN ... ROLLBACK, revert
+--   confirmed) and a planted wrong filer id (tripped the pre-flight) before the apply. After: LACO 181 confirmed,
+--   WEHO 5 confirmed + 1 disputed. The first re-run stopped at the "other agency" pre-flight, which did not yet skip
+--   the three links this file adds (their notes say agency=WEHO); rolled back, gate fixed, re-run then changed nothing.
 --
 -- ROLLBACK:
 --   DELETE FROM transparent_motivations.politician_sources
@@ -108,7 +111,8 @@ BEGIN
   -- no other la_county_netfile link names an agency: the rest are the LACO links the 2026-09-24 run read
   SELECT count(*) INTO v_n FROM transparent_motivations.politician_sources ps
    WHERE ps.source_system = 'la_county_netfile' AND ps.notes ~ 'agency=' AND ps.notes !~ 'agency=LACO\M'
-     AND NOT EXISTS (SELECT 1 FROM _weho w WHERE w.id = ps.id);
+     AND NOT EXISTS (SELECT 1 FROM _weho w WHERE w.id = ps.id)
+     AND NOT EXISTS (SELECT 1 FROM _new n WHERE n.politician_id = ps.essentials_politician_id AND n.external_id = ps.external_id);
   IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % other la_county_netfile link(s) name a non-LACO agency -- review them first', v_n; END IF;
 
   -- netfile_agency is still unset outside la_county_netfile (a re-run leaves it so too)
