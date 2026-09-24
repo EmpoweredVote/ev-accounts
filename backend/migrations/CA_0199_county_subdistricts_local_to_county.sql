@@ -64,7 +64,21 @@
 -- d.mtfcc and skips a NULL. Set to X0001, guarded on the matching X0001 geofence existing.
 --
 -- No migration runner exists; this file records SQL applied by hand. No DELETE.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews), AFTER #670 (5520de85) was live —
+--   confirmed 00:02:34Z by coordinate-lookup: Ramsey 27123, Miami-Dade 12086, Racine 55101 (were a
+--   commissioner / supervisor district each), Madison control 55025.
+--   Dry run: UPDATE 59 / UPDATE 3, every gate passed, rollback confirmed reverted (59 LOCAL, 3 NULL mtfcc).
+--   Apply: same counts, COMMIT. Re-run inside BEGIN/ROLLBACK after the apply: UPDATE 0 / UPDATE 0, every gate
+--   passed. Live, grouped with essentials main's groupHierarchy.js — the two same-named sub-groups merged:
+--     Travis 48453          Commissioners Court 1 + 4  -> 5 (County Judge first)
+--     Horry 45051           Horry County Council 11 + 1 -> 12
+--     Washington OR 41067   Board of County Commissioners 1 + 4 -> 5
+--     Salt Lake 49035       Council 3 + 15 -> 9 (+ Countywide Elected Officials 9, CA_0200)
+--     700 Lavaca St, Austin -> county 48453; Commissioners Court: County Judge + Precinct 3 together
+--   King County's 2026-11-03 Council District 8 race now reads district_type COUNTY, like the county's
+--   Assessor / Prosecuting Attorney / Director of Elections races. Row counts per browse unchanged.
+--   check:reachability: totals unchanged (UNREACHABLE 24/24); Orange County's two unreachable supervisor seats
+--   moved bucket ca|LOCAL -> ca|COUNTY, baseline updated in the same commit (ca|LOCAL 6 -> 4, ca|COUNTY 2).
 --
 -- ROLLBACK:
 --   UPDATE essentials.districts SET district_type = 'LOCAL'

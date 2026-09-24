@@ -53,7 +53,17 @@
 --   keys on any of these chamber names (both gated below).
 --
 -- No migration runner exists; this file records SQL applied by hand. No DELETE.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). First dry run caught that
+--   chambers.slug is a GENERATED column (from name_formal) — the INSERT no longer names it; the gates still
+--   compare the generated slug to the recorded one. Second dry run: INSERT 10 / UPDATE 73, every gate passed,
+--   rollback confirmed reverted (0 new chambers, 73 officers still on the old chambers). Apply: same counts,
+--   COMMIT. Re-run inside BEGIN/ROLLBACK after the apply: INSERT 0 / UPDATE 0, every gate passed.
+--   Live, grouped with essentials main's groupHierarchy.js:
+--     browse 49049  Utah County Commission 11          -> Commission 3 + Countywide Elected Officials 8
+--     browse 49035  Salt Lake County Council 3 + 15    -> Council 9 + Countywide Elected Officials 9 (with CA_0199)
+--     browse 49005  Cache County Council 15            -> Council 7 + Countywide Elected Officials 8
+--     351 W Center St, Provo -> county 49049; Commission 3 + Countywide Elected Officials 8
+--   Row counts per browse unchanged. check:reachability OK (UNREACHABLE 24/24, BAD_GEOMETRY 4/4, DEAD 17/17).
 --
 -- ROLLBACK:
 --   UPDATE essentials.offices o SET chamber_id = c.old_chamber_id
@@ -261,8 +271,10 @@ END $$;
 -- ---------------------------------------------------------------------------
 -- 1. The ten chambers.
 -- ---------------------------------------------------------------------------
-INSERT INTO essentials.chambers (id, government_id, name, name_formal, slug, policy_engagement_level)
-SELECT new_chamber_id, government_id, 'Countywide Elected Officials', name_formal, slug, 'full'
+-- chambers.slug is a GENERATED column (from name_formal), so it is not inserted; gates 0e and 3a check that
+-- the generated value equals the slug recorded above.
+INSERT INTO essentials.chambers (id, government_id, name, name_formal, policy_engagement_level)
+SELECT new_chamber_id, government_id, 'Countywide Elected Officials', name_formal, 'full'
   FROM ca0200_chamber
 ON CONFLICT (id) DO NOTHING;
 
