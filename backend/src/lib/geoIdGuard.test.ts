@@ -146,3 +146,24 @@ describe('X0029 — appellate districts derived as unions of counties', () => {
     expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X0029');
   });
 });
+
+describe('X-CA-SBOE — California Board of Equalization districts', () => {
+  it('admits X-CA-SBOE for STATE_BOARD explicitly, not via the X catch-all', () => {
+    // The four BOE districts are the 2021 Citizens Redistricting Commission map, which has no
+    // TIGER layer; BOE-1 and BOE-4 split San Bernardino County, so they are not unions of whole
+    // counties either (migration CA_0205). The X catch-all admits only LOCAL/COUNTY here, so
+    // without this clause every seated BOE member would be UNREACHABLE by address.
+    expect(MTFCC_DISTRICT_TYPE_GUARD).toContain(
+      "(gp.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')",
+    );
+  });
+
+  it('admits X-CA-SBOE for STATE_BOARD in the geofence district join too', () => {
+    const queries = read('./districtQueries.ts');
+    expect(queries).toContain("(gb.mtfcc = 'X-CA-SBOE' AND d.district_type = 'STATE_BOARD')");
+  });
+
+  it('keeps X-CA-SBOE out of the fallback exclusion list', () => {
+    expect(FALLBACK_EXCLUDED_MTFCCS).not.toContain('X-CA-SBOE');
+  });
+});

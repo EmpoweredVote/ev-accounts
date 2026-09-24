@@ -33,6 +33,12 @@
 -- is_incumbent flag (he is still an incumbent -- of CA-01) or his 16 compass answers, all asserted
 -- intact below. Found while linking him to FEC (PR #663): he was the only politician in that run
 -- holding a state-legislative seat and a U.S. House seat at once.
+--
+-- STATUS: APPLIED to prod 2026-09-23 (operator approval: Chris Andrews, in chat). Dry run first as BEGIN ... ROLLBACK:
+--   every gate passed and the rollback left the AD-3 term open with no start. A double run in one transaction was a
+--   no-op (one "vacated" suffix). Apply: every gate passed. Verified after: AD-3 term 2014-12-01..2026-06-09 resigned,
+--   no current holder, 79 Assembly members seated; GET /api/essentials/politicians?q=James Gallagher returns one row,
+--   U.S. Representative CA-01. PR #671.
 
 DO $$
 DECLARE
