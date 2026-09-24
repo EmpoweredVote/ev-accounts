@@ -65,7 +65,19 @@
 --   frontend keys and labels on chamber_name_formal, as CA_0191 chose for the California courts.
 --
 -- No migration runner exists; this file records SQL applied by hand. No DELETE.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 by the operator (Chris Andrews). Dry run first: UPDATE 174 / UPDATE 1,
+--   every gate passed, rollback confirmed reverted (166 empty name_formal in the eight counties, Monroe's
+--   old body row intact). Apply: same counts, COMMIT. Re-run inside BEGIN/ROLLBACK after the apply:
+--   UPDATE 0 / UPDATE 0, every gate passed. Live after the apply, grouped with essentials main's
+--   groupHierarchy.js (row counts of every response unchanged):
+--     browse 18013 Brown   17 sub-groups -> Board of Commissioners 3, County Council 7, Countywide Elected
+--                          Officials 9; judge under "Brown County Circuit Court"
+--     browse 18097 Marion   9 sub-groups -> Countywide Elected Officials 9; "Marion County Superior Court"
+--                          28 judges, "Marion County Circuit Court" 1
+--     browse 18055 Greene  13 -> 3 (+ Circuit Court, Superior Court); browse 18119 Owen 17 -> 3
+--     browse 18105 Monroe  officers "Monroe County Officials" -> "Monroe County Countywide Elected Officials"
+--     61 Jefferson St, Nashville / 200 E Washington St, Indianapolis / 401 N Morton St, Bloomington: same
+--   check:reachability OK (UNREACHABLE 24/24, BAD_GEOMETRY 4/4, DEAD_GEOGRAPHY 17/17).
 --
 -- ROLLBACK:
 --   UPDATE essentials.chambers ch SET name_formal = t.old_formal
