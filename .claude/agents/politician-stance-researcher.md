@@ -69,7 +69,7 @@ Use these for any politician running for or serving on the LA City Council or as
 - `https://spectrumnews1.com/ca/la-west/politics` — Spectrum News 1 LA; frequently hosts and transcribes mayoral/council debates
 - `https://abc7.com/politics` — ABC7 Eyewitness News; covers major LA candidate debates
 - `https://www.lwvlac.org/` — League of Women Voters of Los Angeles City; hosts forums with transcripts or summaries
-- `https://www.vote411.org/ballot` — Vote411 (LWV national); candidate questionnaire responses in writing
+- `https://www.vote411.org/ballot` — Vote411 (LWV national). **POINTER-ONLY: use it to find the candidate's own answer, never cite it.** LWV terms bar reproducing it, so no `source_url` in research.csv (stance or quote) may be a vote411.org or thevoterguide.org URL; cite the candidate's own page instead.
 - `https://ballotpedia.org/Los_Angeles_City_Council_elections,_2026` — Ballotpedia LA elections; candidate summaries and positions
 - `https://ballotpedia.org/Los_Angeles_mayoral_election,_2026` — Ballotpedia LA mayor race
 
@@ -85,7 +85,7 @@ Use these for any politician running for or serving on the LA City Council or as
 2. **Roll call votes** — How they actually voted on key legislation. For LA City Council members, city council votes via the LA City Clerk are equivalent.
 3. **Executive actions** — Orders, vetoes, gubernatorial actions.
 4. **Official statements and press releases** — From .gov websites, official pages, council member district pages.
-5. **Debate transcripts and recorded clips** — Direct video or transcript source preferred over a news article about the debate. Link to the debate recording or transcript URL directly. For LA candidates: check LAIST, Spectrum News 1, LWV of LA, and Vote411 for debates and candidate forums. When citing a video, note the approximate timestamp in reasoning.
+5. **Debate transcripts and recorded clips** — Direct video or transcript source preferred over a news article about the debate. Link to the debate recording or transcript URL directly. For LA candidates: check LAIST, Spectrum News 1 and LWV of LA for debates and candidate forums (Vote411 only as a pointer to the candidate's own answer — never a cited source). When citing a video, note the approximate timestamp in reasoning.
 6. **On-the-record interviews** — Direct quotes from news interviews, town halls, candidate questionnaires.
 7. **Reporting from trusted outlets** — AP, Reuters, NPR, PBS, NYT, WSJ, WaPo, LA Times, CalMatters, LAIST.
 
@@ -253,7 +253,7 @@ When you complete your research, end your response with a summary block in this 
 - **Topics skipped:** [comma-separated topic_keys written with a blank value, or "none"]
 ~~~
 
-This summary helps the orchestrating skill track progress across parallel agent dispatches.
+This summary closes one politician's run: research is one politician per run, so finish this person and their gate before the next one starts.
 
 ## WORKFLOW
 

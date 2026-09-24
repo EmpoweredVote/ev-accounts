@@ -214,6 +214,11 @@ as written turned 38 researched rows into 8 survivors.
   several people into one pass, and do not work two people concurrently.
 - Confirm that person's rows are written to research.csv and evidence.csv before you start the next
   person.
+- Then run the gate on the batch before you start the next person:
+  `cd ev-accounts/backend && npx tsx scripts/stance-gate.ts --dir data/stance-research/<YYYY-MM-DD-batch>`.
+  It uses no network and no database and writes only `gate-findings.json` and `stances.csv` in the
+  batch dir, so it is safe to run as often as you like. Its findings are per row, so they name this
+  person's defects before the next person starts; re-research those pairs (STEP 4a(i)) first.
 - Use WebFetch only. Never WebSearch or Playwright — both share a rate-limited quota pool.
 
 **Why inline, and not an agent — three reasons, none of them stylistic:**
@@ -319,6 +324,9 @@ TOOL RULE:
   These in Order` in `.claude/agents/politician-stance-researcher.md` (Ballotpedia,
   ontheissues.org, official pages, Wikipedia, CalMatters, LA Times) — read that file for them. If a
   URL 404s, try the next pattern. Do not fall back to WebSearch.
+- vote411.org and thevoterguide.org are POINTER-ONLY: use them to find where the candidate answered,
+  then cite the candidate's own page. Never put a vote411.org or thevoterguide.org URL in any
+  source_url column — LWV terms bar reproducing it.
 
 TWO OUTPUT FILES, both in --output-dir (RFC-4180; quote any field containing commas; double embedded quotes):
 1) research.csv:
@@ -340,6 +348,7 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
   is on and two or three chairs sit on that side, leave the value blank. "The least extreme chair the
   evidence allows" is a tiebreaker, not evidence.
 - Never name a party, a party label, or a party-typical position in reasoning. Party is never evidence.
+- No source_url in research.csv — stance or quote — may be a vote411.org or thevoterguide.org URL.
 
 QUOTE-SELECTION GATES + RANKING QUESTION + DIFFERENTIATION:
 [INJECT: gates]
@@ -502,7 +511,8 @@ cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<wave>
 ```
 
 It exits 1 and names every quote it could not find. A failure is either mis-sourced (find the true
-source) or invented (drop the quote). Do not push past a non-zero exit.
+source — a new source URL, so re-research that pair; see 4a(i)) or invented (drop the quote). Do not
+push past a non-zero exit.
 
 **(i) Stance gate, snippet verification, quote mechanics — in this order.**
 
@@ -536,9 +546,14 @@ fetched page backs; the gate exists to stop exactly that.
 quote finding in the quote fields — write the missing `editor_note`, de-identify honestly, strip the
 trailing ellipsis, neutralize the partisan tell in the blind (`quote_deidentified`) text — and re-run
 until it's clean. An aggregator / quiz / scorecard source (`invalid-source`, `unquotable-source`,
-`scorecard-source`) must be re-sourced to the original; a `pointer-only-source` row (VOTE411 /
-thevoterguide.org) cannot be cited at all — LWV terms bar reproducing it — so re-source the position
-to the candidate's own materials, or drop the quote if VOTE411 is the only place it appears. A new
+`scorecard-source`) must be re-sourced to the original. 🔴 **VOTE411 / thevoterguide.org cannot be
+cited at all — LWV terms bar reproducing it — and that applies to every row, not only quote rows.**
+No `source_url_1..3` in research.csv, on a stance row or a quote row, may be a vote411.org or
+thevoterguide.org URL. `build-and-check.mjs` flags it only on rows with a quote (`pointer-only-source`),
+and `stance-gate` does not check it yet, so look for it yourself: on this branch a stance row's
+snippets become public citations when a person approves the row. Re-source the position to the
+candidate's own materials; if VOTE411 is the only place it appears, drop the quote, and a stance
+that rests only on it has no citable source, so its re-research ends in a blank value. A new
 source URL changes the stance row, so re-sourcing is a re-research of that pair (fetch the original,
 back it with a snippet in evidence.csv, REPLACE the pair's rows, re-run the gate), not an edit.
 Dropping the quote (clearing its quote fields) is a quote-field fix. Do not push a CSV with
@@ -570,15 +585,17 @@ Produce the same JSON array of judgment findings
   a per-race override. If it does, surface it to the user; overrides are checked in the 4e audit.
 - `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
 - `source-summary` → replace the bullet or paraphrase with a sentence the candidate actually wrote
-  in that source. If the source has none, drop the quote.
+  in that source. If the source has none, drop the quote. Taking the sentence from a different
+  source is a new source URL: re-research that pair (4a(i)); never edit `source_url_1..3` directly.
 - `misleading-verbatim` → restore the qualifier or context the trim removed, or drop the quote if
   no trim of the passage reads true on the blind card. Being verbatim does not excuse it.
 - `non-differentiating-goal` → surface to the user. The quote names a goal, a target or a
   direction but no means, so do not promote it to live (4f) unless the user affirms it carries a
   real distinguishing position.
 - `source-not-an-answer` → look for a more direct answer (a questionnaire or interview answer to
-  this question). If none exists, keep the quote: a curator-extracted quote may be all a candidate
-  has, and that is honest presence, not a defect.
+  this question). Citing it is a new source URL, so re-research that pair (4a(i)); never edit
+  `source_url_1..3` directly. If none exists, keep the quote: a curator-extracted quote may be all a
+  candidate has, and that is honest presence, not a defect.
 Only quotes that clear both passes proceed to the push.
 
 ### 4b. IDs come from the bundle — no separate lookup
