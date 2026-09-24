@@ -19,7 +19,7 @@ const exampleRow: VerifiedRow = {
     {
       url: 'https://a.example',
       snippets: [
-        { snippet: 'snippet text one', snippet_index: 0, verdict: { verdict: 'verified', matchOffset: 100 } },
+        { snippet: 'snippet text one', snippet_index: 0, verdict: { verdict: 'verified', matchOffset: 100 }, matchedSpan: 'text one' },
         { snippet: 'snippet text two', snippet_index: 1, verdict: { verdict: 'snippet_not_found' } },
       ],
     },
@@ -40,11 +40,17 @@ describe('buildEvidenceRowsForInsert', () => {
         politician_id: '11111111-1111-1111-1111-111111111111',
         topic_id: '22222222-2222-2222-2222-222222222222',
         source_url: 'https://a.example',
-        snippet: 'snippet text one',
+        // I6: the matched on-page span, never the full snippet.
+        snippet: 'text one',
         snippet_index: 0,
         batch_id: '2026-04-30-test',
       },
     ]);
+  });
+  it('I6: a verified snippet with no matched span is not published', () => {
+    const noSpan: VerifiedRow = { ...exampleRow, verifiedSources: [{ url: 'https://a.example', snippets: [
+      { snippet: 'snippet text one', snippet_index: 0, verdict: { verdict: 'verified', matchOffset: 100 } }] }] };
+    expect(buildEvidenceRowsForInsert({ row: noSpan, politicianId: 'p', topicId: 't', batchId: 'b' })).toEqual([]);
   });
 });
 
@@ -142,6 +148,7 @@ describe('upsertReviewRow', () => {
     proposed_value: 2, proposed_reasoning: 'r', evidence: [], verified_source_count: 1, threshold: 1,
     status: 'pending' as const, re_research_attempted: false,
     topic_revision_id: 'rev-a', season_id: 'season-2',
+    served_revision_id: 'rev-a3', queue_reasons: ['review-all-mode'], evidence_type: 'record',
   };
   it('updates only rows still undecided — the ON CONFLICT DO UPDATE carries a status guard', async () => {
     const { upsertReviewRow } = await import('./researchEvidenceService.js');
@@ -180,10 +187,30 @@ describe('upsertReviewRow', () => {
     expect(String(sql)).not.toContain('season_id');
     expect(params).toHaveLength(12);
   });
+  // CA_0285 (not applied yet): the queue write names the new columns only once they exist.
+  it('writes served_revision_id, queue_reasons (text[]) and evidence_type when CA_0285 is applied', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(reviewInsert, { columns: new Set(['topic_revision_id', 'season_id', 'served_revision_id', 'queue_reasons', 'evidence_type'] as const) });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(String(sql)).toMatch(/topic_revision_id, season_id, served_revision_id, queue_reasons, evidence_type\)/);
+    expect(String(sql)).toContain('$13, $14, $15, $16::text[], $17');
+    expect(String(sql)).toContain('queue_reasons = EXCLUDED.queue_reasons');
+    expect((params as unknown[]).slice(12)).toEqual(['rev-a', 'season-2', 'rev-a3', ['review-all-mode'], 'record']);
+  });
+  it('before CA_0285 (only CA_0264 applied) writes exactly the CA_0264 INSERT', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(reviewInsert, { columns: new Set(['topic_revision_id', 'season_id'] as const) });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(String(sql)).not.toContain('served_revision_id');
+    expect(String(sql)).not.toContain('queue_reasons');
+    expect(params).toHaveLength(14);
+  });
   it('probes information_schema for the columns once, when the caller does not say', async () => {
     const { upsertReviewRow } = await import('./researchEvidenceService.js');
     mockQuery
-      .mockResolvedValueOnce({ rows: [{ n: '2' }] })       // probe
+      .mockResolvedValueOnce({ rows: [{ column_name: 'topic_revision_id' }, { column_name: 'season_id' }] }) // probe
       .mockResolvedValueOnce({ rows: [], rowCount: 1 })    // upsert 1
       .mockResolvedValueOnce({ rows: [], rowCount: 1 });   // upsert 2 (probe cached)
     await upsertReviewRow(reviewInsert);
@@ -205,6 +232,15 @@ describe('buildReviewRowForInsert — ladder revision (CA_0264)', () => {
 });
 
 describe('ladderState', () => {
+  // C1: a clarifying publish moves the served text without moving the pin — that is a change too.
+  it.each([
+    ['s1', 's1', false],
+    ['s1', 's3', true],
+    [null, 's3', false],               // row queued before CA_0285: served unknown, pin decides
+  ])('same pin, row served %j vs open served %j → changed=%j', async (rowServed, openServed, changed) => {
+    const { ladderState } = await import('./researchEvidenceService.js');
+    expect(ladderState('rev-a', 'rev-a', rowServed, openServed).ladderChanged).toBe(changed);
+  });
   it.each([
     ['rev-a', 'rev-a', false, false],
     ['rev-a', 'rev-b', false, true],
@@ -229,8 +265,33 @@ describe('review reads carry the open-season current value', () => {
       expect(String(sql)).toContain('@zero-scope: counts-blanks');
       expect(String(sql)).toMatch(/inform\.politician_answers[\s\S]*s\.status = 'open'/);
       // CA_0264: the open season's current pin for the topic, beside the row's own revision.
-      expect(String(sql)).toMatch(/inform\.season_questions[\s\S]*s\.status = 'open'[\s\S]*AS open_topic_revision_id/);
+      expect(String(sql)).toContain('AS open_topic_revision_id');
+      expect(String(sql)).toMatch(/inform\.season_questions[\s\S]*s\.status = 'open'[\s\S]*\) open_pin ON true/);
+      // C1: and its SERVED revision (ADR 0006), through the shared resolver.
+      expect(String(sql)).toContain('AS open_served_revision_id');
+      expect(String(sql)).toMatch(/e\.status IN \('published', 'superseded'\)[\s\S]*WHERE pin\.id = open_pin\.topic_revision_id/);
+      // I2: what voters see — the newest PUBLISHED season (not the open one), blanks included.
+      expect(String(sql)).toMatch(/s\.status <> 'draft'[\s\S]*\) shown ON true/);
+      expect(String(sql)).toContain('AS shown_value');
     }
+  });
+  it('I2: maps the displayed (voter-visible) value, its season and served rung text; a 0 stays a blank', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: null, shown_value: '3', shown_season_number: 1, shown_text: 'rung three' }] });
+    const r = await getResearchReviewById('x');
+    expect(r?.currentValue).toBeNull();
+    expect(r?.displayed).toEqual({ value: 3, seasonNumber: 1, text: 'rung three' });
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'y', evidence: [], shown_value: '0', shown_season_number: 2, shown_text: null }] });
+    expect((await getResearchReviewById('y'))?.displayed).toEqual({ value: 0, seasonNumber: 2, text: null });
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'z', evidence: [] }] });
+    expect((await getResearchReviewById('z'))?.displayed).toBeNull();
+  });
+  it('CA_0285: maps queue_reasons and evidence_type; null before the migration', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], queue_reasons: ['statement-evidence', 'gate-medium'], evidence_type: 'statement' }] });
+    expect(await getResearchReviewById('x')).toMatchObject({ queueReasons: ['statement-evidence', 'gate-medium'], evidenceType: 'statement' });
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'y', evidence: [] }] });
+    expect(await getResearchReviewById('y')).toMatchObject({ queueReasons: null, evidenceType: null });
   });
   it.each([
     ['3', 3], ['0', 0], [null, null],
@@ -267,7 +328,7 @@ describe('review reads carry the open-season current value', () => {
 describe('getResearchReviewWithLadder', () => {
   beforeEach(() => mockQuery.mockClear());
 
-  const fiveRungs = [1, 2, 3, 4, 5].map((value) => ({ question_text: 'How much regulation?', value, text: `rung ${value}` }));
+  const fiveRungs = [1, 2, 3, 4, 5].map((value) => ({ served_id: 'rev-a3', question_text: 'How much regulation?', value, text: `rung ${value}` }));
 
   it('reads the row\'s OWN revision when known, and marks it not using the open pin', async () => {
     const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
@@ -278,9 +339,12 @@ describe('getResearchReviewWithLadder', () => {
     const [ladderSql, ladderParams] = mockQuery.mock.calls[1];
     expect(String(ladderSql)).toContain('inform.compass_topic_revisions');
     expect(String(ladderSql)).toContain('inform.compass_stance_revisions');
+    // C1: the SERVED revision of the row's pin, resolved by version — not the pin's own rungs.
+    expect(String(ladderSql)).toMatch(/e\.version\s+=\s+pin\.version[\s\S]*e\.status IN \('published', 'superseded'\)[\s\S]*ORDER BY e\.revision DESC/);
     expect(ladderParams).toEqual(['rev-a']);
     expect(result?.ladder).toEqual({
-      revisionId: 'rev-a',
+      revisionId: 'rev-a3',
+      pinRevisionId: 'rev-a',
       questionText: 'How much regulation?',
       rungs: [1, 2, 3, 4, 5].map((value) => ({ value, text: `rung ${value}` })),
       usingOpenPin: false,
@@ -295,7 +359,14 @@ describe('getResearchReviewWithLadder', () => {
     const result = await getResearchReviewWithLadder('x');
     expect(mockQuery.mock.calls[1][1]).toEqual(['rev-b']);
     expect(result?.ladder?.usingOpenPin).toBe(true);
-    expect(result?.ladder?.revisionId).toBe('rev-b');
+    expect(result?.ladder?.pinRevisionId).toBe('rev-b');
+  });
+  it('returns ladder: null when the served revision does not carry exactly five rungs', async () => {
+    const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], topic_revision_id: 'rev-a', open_topic_revision_id: 'rev-a' }] })
+      .mockResolvedValueOnce({ rows: fiveRungs.slice(0, 4) });
+    expect((await getResearchReviewWithLadder('x'))?.ladder).toBeNull();
   });
 
   it('returns ladder: null when neither the row\'s revision nor the open pin is known', async () => {
@@ -341,6 +412,10 @@ describe('writeVerifiedStance', () => {
   });
 });
 
+// A 25-word page span inside a longer researcher snippet (I6).
+const SPAN = 'Jane Doe voted yes on House Bill 1001 in 2025 because she believes every family deserves affordable coverage and lower prescription costs at the pharmacy counter';
+const FULL_SNIPPET = `At a town hall she said: ${SPAN} — her words.`;
+
 describe('resolveResearchReview — citations written on approval, not at queue time (R1)', () => {
   const reviewRow = {
     id: 'rev-1',
@@ -355,7 +430,7 @@ describe('resolveResearchReview — citations written on approval, not at queue 
       {
         url: 'https://a.example',
         snippets: [
-          { snippet_index: 0, snippet: 'verified snippet text', verdict: 'verified' },
+          { snippet_index: 0, snippet: FULL_SNIPPET, verdict: 'verified', matched_span: SPAN },
           { snippet_index: 1, snippet: 'not found snippet text', verdict: 'snippet_not_found' },
         ],
       },
@@ -395,12 +470,54 @@ describe('resolveResearchReview — citations written on approval, not at queue 
 
     const evidenceCalls = calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
     expect(evidenceCalls).toHaveLength(1);
-    expect(evidenceCalls[0][1]).toEqual(['p1', 't1', 'https://a.example', 'verified snippet text', 0, 'batch-1']);
+    // I6: the matched span is published, never the researcher's full snippet.
+    expect(evidenceCalls[0][1]).toEqual(['p1', 't1', 'https://a.example', SPAN, 0, 'batch-1']);
 
     // The evidence write comes after both the answer and the context write.
     const evidenceCallIndex = calls.findIndex((c) => String(c[0]).includes('politician_context_evidence'));
     const contextCallIndex = calls.findIndex((c) => c[0] === UPSERT_CONTEXT_SQL);
     expect(evidenceCallIndex).toBeGreaterThan(contextCallIndex);
+  });
+
+  // I6 (ruling 2026-09-24): no publishable span, no machine citation.
+  it.each([
+    ['no matched_span (queued before 2026-09-24)', undefined],
+    ['a span under 25 words', 'Jane Doe voted yes on House Bill 1001'],
+    ['a span that is not a run of the snippet', `${SPAN} plus words the snippet never had`],
+  ])('does not publish a verified snippet with %s, and refuses the row when it was the only citation', async (_label, span) => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const row = { ...reviewRow, evidence: [{ url: 'https://a.example', snippets: [
+      { snippet_index: 0, snippet: FULL_SNIPPET, verdict: 'verified', ...(span ? { matched_span: span } : {}) }] }] };
+    mockQuery.mockResolvedValueOnce({ rows: [row] });
+    await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+
+  // I5: the status UPDATE carries the pending guard and a 0-row result rolls the approval back.
+  it('resolves only a still-pending row: 0 rows on the guarded UPDATE is CONFLICT and rolls back', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+    mockClientQuery.mockImplementation(async (sql: string) =>
+      (String(sql).includes("SET status = 'resolved'") ? { rows: [], rowCount: 0 } : { rows: [], rowCount: 1 }));
+    let sqls: string[];
+    try {
+      await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'CONFLICT' });
+      sqls = mockClientQuery.mock.calls.map((c) => String(c[0]));
+    } finally {
+      mockClientQuery.mockReset();
+      mockClientQuery.mockResolvedValue({ rows: [], rowCount: 1 });
+    }
+    // The stance was written inside the transaction, and the rollback undoes it.
+    expect(sqls[0]).toBe('BEGIN');
+    expect(sqls).toContain('ROLLBACK');
+    expect(sqls).not.toContain('COMMIT');
+  });
+  it("the resolve UPDATE is guarded by AND status = 'pending'", async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+    await resolveResearchReview('rev-1', 'editor-1');
+    const upd = mockClientQuery.mock.calls.map((c) => String(c[0])).find((q) => q.includes("SET status = 'resolved'"));
+    expect(upd).toMatch(/WHERE id = \$1 AND status = 'pending'/);
   });
 
   // I6: one transaction — a failed context write leaves no value, no citation, no status change.
@@ -568,4 +685,37 @@ describe('resolveResearchReview — citations written on approval, not at queue 
       await expect(resolveResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'CONFLICT' });
       expect(mockConnect).not.toHaveBeenCalled();
     });
+});
+
+// I5 (final review 2026-09-24): rejecting an already-resolved row used to flip it to rejected while
+// its published stance stayed live, and drop it from export-written-ledger's audit.
+describe('rejectResearchReview — only a pending row', () => {
+  beforeEach(() => mockQuery.mockReset());
+  it("guards the UPDATE with AND status = 'pending' and succeeds on 1 row", async () => {
+    const { rejectResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await rejectResearchReview('rev-1', 'editor-1', 'why');
+    expect(String(mockQuery.mock.calls[0][0])).toMatch(/WHERE id = \$1 AND status = 'pending'/);
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+  it('fails loudly with CONFLICT when the row is already resolved', async () => {
+    const { rejectResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 0 }).mockResolvedValueOnce({ rows: [{ status: 'resolved' }] });
+    await expect(rejectResearchReview('rev-1', 'editor-1')).rejects.toMatchObject({ code: 'CONFLICT' });
+  });
+  it('fails with NOT_FOUND when the id names no row', async () => {
+    const { rejectResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 0 }).mockResolvedValueOnce({ rows: [] });
+    await expect(rejectResearchReview('nope', 'editor-1')).rejects.toMatchObject({ code: 'NOT_FOUND' });
+  });
+});
+
+describe('validStoredSpan (I6)', () => {
+  it('accepts a >= 25-word whole-word run of the snippet; refuses anything else', async () => {
+    const { validStoredSpan } = await import('./researchEvidenceService.js');
+    expect(validStoredSpan(FULL_SNIPPET, SPAN)).toBe(SPAN);
+    expect(validStoredSpan(FULL_SNIPPET, undefined)).toBeNull();
+    expect(validStoredSpan(FULL_SNIPPET, 'Jane Doe voted')).toBeNull();
+    expect(validStoredSpan(FULL_SNIPPET, `${SPAN} extra`)).toBeNull();
+  });
 });

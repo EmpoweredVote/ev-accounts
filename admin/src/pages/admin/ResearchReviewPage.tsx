@@ -6,9 +6,17 @@ import { overrideNeedsReasoning } from './researchReviewApproval';
 interface EvidenceSnippet {
   snippet_index: number;
   snippet: string;
-  verdict: 'verified' | 'not_found' | 'url_broken' | string;
+  verdict: 'verified' | 'not_found' | 'url_broken' | 'span_too_short' | 'url_not_cited' | string;
   reason?: string;
+  /**
+   * I6 (ruling 2026-09-24): the matched on-page span — the ONLY text approval publishes as the
+   * citation. Absent on rows queued before 2026-09-24; such a snippet is not published.
+   */
+  matched_span?: string;
 }
+
+/** A snippet that approval will publish: machine-verified AND carrying its matched span. */
+const isPublishable = (s: EvidenceSnippet) => s.verdict === 'verified' && !!s.matched_span?.trim();
 
 interface EvidenceSource {
   url: string;
@@ -32,6 +40,14 @@ interface ResearchReviewRow {
   createdAt: string;
   /** The pair's value in the OPEN season — what approving replaces. 0 = an editor's blank; null = none. */
   currentValue: number | null;
+  /**
+   * I2: what voters see NOW — the newest published season's answer (the Season 1 chair when the
+   * open season has none). value 0 = a blank. null = nothing shown. text = that rung's served text.
+   */
+  displayed: { value: number; seasonNumber: number; text: string | null } | null;
+  /** CA_0285: why the row was queued, and its evidence class. null = not recorded. */
+  queueReasons: string[] | null;
+  evidenceType: string | null;
   /** The ladder revision the row was researched against (CA_0264). null = unknown (legacy row). */
   topicRevisionId: string | null;
   /** The open season's current pin for this topic. null = the open season does not ask it. */
@@ -44,7 +60,10 @@ interface ResearchReviewRow {
   bodyLabel: string | null;
   /** The full ladder text for this row's revision (or the open pin, for a legacy row). */
   ladder: {
+    /** The SERVED revision (ADR 0006) — the text voters read. */
     revisionId: string;
+    /** The pin it resolves from. */
+    pinRevisionId: string;
     questionText: string;
     rungs: Array<{ value: number; text: string }>;
     usingOpenPin: boolean;
@@ -80,7 +99,7 @@ export function ResearchReviewPage() {
       // Pre-check any sources the machine already verified
       const preVerified = new Set(
         data.evidence
-          .filter((e) => e.snippets.some((s) => s.verdict === 'verified'))
+          .filter((e) => e.snippets.some(isPublishable))
           .map((e) => e.url),
       );
       setHumanVerified(preVerified);
@@ -151,7 +170,8 @@ export function ResearchReviewPage() {
   // A stance is never published without a citation: at least one machine-verified source (a
   // snippet the verifier found on the page) or one the reviewer ticked by hand. The server
   // refuses the same case (422), so this only saves a round trip.
-  const hasMachineVerified = row.evidence.some((e) => e.snippets.some((s) => s.verdict === 'verified'));
+  // I6: only a snippet with a stored page span is a machine citation.
+  const hasMachineVerified = row.evidence.some((e) => e.snippets.some(isPublishable));
   const hasSource = hasMachineVerified || humanVerified.size > 0;
   // The value is a chair 1-5, never anything else — the server refuses the same case (400), so
   // this only saves a round trip.
@@ -175,6 +195,13 @@ export function ResearchReviewPage() {
     row.currentValue === null ? 'none'
     : row.currentValue === 0 ? 'blank (an editor cleared it)'
     : String(row.currentValue);
+  // I2: the open season can hold nothing while voters still see a Season 1 chair — approving
+  // replaces THAT, so the reviewer must see it.
+  const displayedText =
+    row.displayed === null ? 'nothing (no chair shown)'
+    : row.displayed.value === 0 ? `a blank (Season ${row.displayed.seasonNumber}) — no chair shown`
+    : `chair ${row.displayed.value} (Season ${row.displayed.seasonNumber})${row.displayed.text ? `: “${row.displayed.text}”` : ''}`;
+  const replacesShownChair = row.displayed !== null && row.displayed.value !== 0 && row.currentValue === null;
 
   return (
     <div className="max-w-2xl">
@@ -238,6 +265,25 @@ export function ResearchReviewPage() {
           <span className={row.currentValue !== null ? 'text-yellow-700 dark:text-yellow-300 font-medium' : ''}>
             Current value in the open season: {currentValueText}
           </span>
+          <span>
+            Evidence: <strong className="text-gray-700 dark:text-gray-300">{row.evidenceType ?? 'not recorded'}</strong>
+          </span>
+          <span>
+            Queued because:{' '}
+            <strong className="text-gray-700 dark:text-gray-300">
+              {row.queueReasons && row.queueReasons.length ? row.queueReasons.join(', ') : 'reasons not recorded (queued before CA_0285)'}
+            </strong>
+          </span>
+        </div>
+
+        {/* I2: what voters see right now, which approval replaces. */}
+        <div className={`rounded-md px-3 py-2 text-sm ${
+          replacesShownChair
+            ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300'
+            : 'bg-gray-50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300'
+        }`}>
+          Voters see now: {displayedText}
+          {replacesShownChair && ' — approving replaces this chair, although the open season holds no value.'}
         </div>
 
         {/* Ladder — task 5, requirement 1: the question and all five rungs for the row's own
@@ -246,7 +292,7 @@ export function ResearchReviewPage() {
         {row.ladder && (
           <div>
             <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
-              Ladder
+              Ladder — the text voters read (served revision <code className="normal-case">{row.ladder.revisionId.slice(0, 8)}</code>)
               {row.ladder.usingOpenPin && (
                 <span className="normal-case font-normal text-yellow-700 dark:text-yellow-400">
                   {' '}(open season's ladder — this row's revision is unknown)
@@ -419,24 +465,39 @@ function SourceBlock({
 }
 
 function SnippetRow({ snip }: { snip: EvidenceSnippet }) {
+  const publishable = isPublishable(snip);
   const color =
-    snip.verdict === 'verified'
+    publishable
       ? 'text-green-700 dark:text-green-400'
-      : snip.verdict === 'url_broken'
+      : snip.verdict === 'url_broken' || snip.verdict === 'url_not_cited'
       ? 'text-red-600 dark:text-red-400'
       : 'text-gray-500 dark:text-gray-400';
 
   return (
     <div className="text-xs space-y-0.5">
       <span className={`font-medium ${color}`}>
-        {snip.verdict === 'verified'
-          ? '✓ auto-verified'
+        {publishable
+          ? '✓ auto-verified — the citation below is published on approval'
+          : snip.verdict === 'verified'
+          ? '– verified before 2026-09-24, with no page span stored — not published as a citation'
           : snip.verdict === 'url_broken'
           ? `✗ broken${snip.reason ? `: ${snip.reason}` : ''}`
+          : snip.verdict === 'url_not_cited'
+          ? '✗ not one of the row’s cited sources — not verified, not published'
+          : snip.verdict === 'span_too_short'
+          ? '– fewer than 25 contiguous words are on the page — not verified'
           : '– snippet not found'}
       </span>
+      {/* I6: the citation is the matched page span only; the researcher's full snippet is context. */}
+      {publishable && (
+        <p className="text-gray-800 dark:text-gray-200">
+          <span className="not-italic font-semibold">Citation: </span>"{snip.matched_span}"
+        </p>
+      )}
       {snip.snippet && (
-        <p className="text-gray-600 dark:text-gray-400 italic">"{snip.snippet}"</p>
+        <p className="text-gray-500 dark:text-gray-400 italic">
+          {publishable ? 'Researcher’s snippet (not published): ' : ''}"{snip.snippet}"
+        </p>
       )}
     </div>
   );

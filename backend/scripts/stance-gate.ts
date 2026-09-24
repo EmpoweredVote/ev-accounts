@@ -6,6 +6,8 @@
  * verify-stance-research.ts expects). stances.csv carries the bundle politician's canonical
  * full_name AND the bundle topic's canonical topic_key for every row that matched one
  * (toStanceRows), so downstream sees one spelling of each.
+ * It also carries each row's evidence_type and its research.csv source_url_1..3 (column source_urls):
+ * the verifier verifies and publishes only evidence on those URLs (I1, 2026-09-24).
  * Rows, bundle entries and evidence are joined through the verifier's own normalizer
  * (normName / normTopic / stanceKey in src/lib/researchVerifier.ts).
  *

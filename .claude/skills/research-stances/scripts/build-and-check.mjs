@@ -47,6 +47,24 @@ function databaseUrl() {
   return m[1];
 }
 
+// ---- the served-revision resolver (ADR 0006 §3) ----
+// A VERBATIM MIRROR of seasonService.servedRevisionLateral (backend/src/lib/seasonService.ts). This
+// file cannot import backend TypeScript, so the text is copied; backend/src/lib/servedRevision.test.ts
+// builds both with the same arguments and fails if they differ. Change both together.
+export function servedRevisionLateral(pinExpr, alias = 'eff') {
+  return `LATERAL (
+    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision
+      FROM inform.compass_topic_revisions pin
+      JOIN inform.compass_topic_revisions e
+        ON e.topic_id = pin.topic_id
+       AND e.version  = pin.version
+       AND e.status IN ('published', 'superseded')
+     WHERE pin.id = ${pinExpr}
+     ORDER BY e.revision DESC
+     LIMIT 1
+  ) ${alias}`;
+}
+
 // ---- mechanical checks (ported from audit-quotes scripts/checks.py) ----
 const DEM = /\b(Democrat|Democrats|Democratic)\b/;
 const REP = /\b(Republican|Republicans|GOP)\b/;
@@ -160,8 +178,8 @@ async function main() {
         // the open season for it would blank a compass that has real content. Mirrors
         // seasonService.newestAnswerLateral.
         //
-        // Chair text and question text come from the answer's OWN inform.compass_topic_revisions
-        // / inform.compass_stance_revisions — never the frozen inform.compass_stances, and never
+        // Chair text and question text come from the SERVED revision of the answer's OWN pin
+        // (inform.compass_topic_revisions / inform.compass_stance_revisions; ADR 0006) — never the frozen inform.compass_stances, and never
         // gated on is_live (CLAUDE.md "Officeholder..." — same rule, different table: read the
         // dated/versioned row, not a column that claims to be "current"). With no answer at all,
         // fall back to the OPEN season's pinned revision (inform.season_questions joined to
@@ -196,8 +214,12 @@ async function main() {
                WHERE sq.topic_id = t.id
                LIMIT 1
             ) open_pin ON true
-            LEFT JOIN inform.compass_topic_revisions tr
-              ON tr.id = CASE WHEN ans.answered THEN ans.topic_revision_id ELSE open_pin.topic_revision_id END
+            -- C1 (final review 2026-09-24): the SERVED revision of that pin — the latest
+            -- published/superseded revision of its version (ADR 0006), which is the text voters
+            -- read, not the pin's own (superseded) rungs. Verbatim mirror of
+            -- seasonService.servedRevisionLateral (backend/src/lib/seasonService.ts; this file is
+            -- outside backend's rootDir); servedRevision.test.ts fails if the two drift.
+            LEFT JOIN ${servedRevisionLateral('CASE WHEN ans.answered THEN ans.topic_revision_id ELSE open_pin.topic_revision_id END', 'tr')} ON true
            WHERE t.topic_key = $2`, [pid, tk])).rows[0];
         // No chairs is better than wrong chairs: an answer whose own revision can't be found,
         // or a topic with no ladder at all (no answer AND no open-season pin), yields stance =

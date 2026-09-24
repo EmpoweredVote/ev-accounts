@@ -256,6 +256,9 @@ full_name,topic_key,source_url,snippet,snippet_index
 ```
 - One row per supporting passage; at least one per source URL. `snippet` is verbatim, ≥ 25 words,
   and names or sits beside this person. `snippet_index` counts from 0 per (full_name, topic_key, source_url).
+- `source_url` must be one of THIS row's `source_url_1..3` in research.csv (`evidence-url-not-cited`
+  otherwise). Only the longest run of the snippet that is on the page word for word is published, and
+  that run must itself be ≥ 25 words — copy one continuous passage, with no framing words added.
 - `full_name` / `topic_key`: the same exact spellings as the research.csv row they back.
 
 Group rows for one politician together. No BOM. Clean header rows. **research.csv holds ONE row per

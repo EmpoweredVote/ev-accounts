@@ -33,14 +33,15 @@ vi.mock('../lib/federalCoverage.js', () => ({
 
 // Only resolveResearchReview is exercised below (task 13, R1 — approval input validation); the
 // other three are mocked only because admin.ts imports them from the same module.
-const { mockResolveResearchReview } = vi.hoisted(() => ({
+const { mockResolveResearchReview, mockRejectResearchReview } = vi.hoisted(() => ({
   mockResolveResearchReview: vi.fn().mockResolvedValue({ ladderRevisionUnknown: false }),
+  mockRejectResearchReview: vi.fn().mockResolvedValue(undefined),
 }));
 vi.mock('../lib/researchEvidenceService.js', () => ({
   listPendingResearchReview: vi.fn(),
   getResearchReviewWithLadder: vi.fn(),
   resolveResearchReview: mockResolveResearchReview,
-  rejectResearchReview: vi.fn(),
+  rejectResearchReview: mockRejectResearchReview,
 }));
 
 import adminRouter from './admin.js';
@@ -267,5 +268,25 @@ describe('POST /api/admin/research-review/:id/resolve — approval input validat
     expect(res.status).toBe(422);
     expect(res.body.error).toBe(
       'valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value');
+  });
+});
+
+// I5 (final review 2026-09-24): a reject that finds no pending row is loud, not a silent 200.
+describe('POST /api/admin/research-review/:id/reject', () => {
+  it('200 on a pending row', async () => {
+    const res = await request(app).post('/api/admin/research-review/rev-1/reject').send({ notes: 'n' });
+    expect(res.status).toBe(200);
+  });
+  it('409 with the service message when the row is no longer pending', async () => {
+    mockRejectResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('Review row is resolved, not pending — only a pending row can be rejected'), { code: 'CONFLICT' }));
+    const res = await request(app).post('/api/admin/research-review/rev-1/reject').send({});
+    expect(res.status).toBe(409);
+    expect(res.body.error).toBe('Review row is resolved, not pending — only a pending row can be rejected');
+  });
+  it('404 when the id names no row', async () => {
+    mockRejectResearchReview.mockRejectedValueOnce(Object.assign(new Error('Not found'), { code: 'NOT_FOUND' }));
+    const res = await request(app).post('/api/admin/research-review/nope/reject').send({});
+    expect(res.status).toBe(404);
   });
 });

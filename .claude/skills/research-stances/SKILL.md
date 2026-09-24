@@ -1,7 +1,7 @@
 ---
 name: research-stances
 description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on Empowered Vote policy topics (national, state, and local city-level). Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
-argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
+argument-hint: "\"Politician Name(s)\" | \"Legislative body\""
 ---
 
 # /research-stances — Politician Stance Research Orchestrator
@@ -27,8 +27,9 @@ You are running the **research-stances** skill. Your job is to research politici
 > stale (2026-09-22). If you are reading this anywhere else, stop and use the ev-accounts copy.
 >
 > **The stance pipeline, one line:** `build-stance-topic-bundle` → research (inline, one politician
-> per run — STEP 1) → `stance-gate` → `verify-stance-research` (dry-run) → human review →
-> `verify-stance-research --apply`. Every step after research is a non-interactive script with exit
+> per run — STEP 1) → `stance-gate` → `verify:quotes` → `build-and-check` (quotes) →
+> `verify-stance-research` (dry-run) → `verify-stance-research --apply` (queues rows) → human review
+> in the admin queue. Every step after research is a non-interactive script with exit
 > codes, so those steps can later run on a schedule. Human decisions go to the review queue
 > (`inform.stance_research_review`), not the chat.
 >
@@ -44,7 +45,11 @@ You are running the **research-stances** skill. Your job is to research politici
 
 Parse `$ARGUMENTS` for:
 - **Politician names**: comma-separated list (e.g., `"Brad Sherman, Maxine Waters"`)
-- **--topics**: optional comma-separated topic_keys to limit scope (defaults to all topics)
+
+There is **no topic filter.** Research every topic in the `TOPIC SCALE REFERENCE` block for the
+politician's level (ruling 2026-09-24, Chris Andrews: the local reference keeps all 35 topics).
+`build-stance-topic-bundle.ts` has no `--topics` flag. A topic in the block that this office holds no
+lever on is a scope blank (spec §4.9) — record it as a blank row with the reason; do not drop it.
 
 If `$ARGUMENTS` is empty, ask the user:
 > "Which politician(s) would you like me to research? You can provide names (e.g., 'Brad Sherman, Maxine Waters') or a body (e.g., 'Bloomington City Council')."
@@ -106,7 +111,16 @@ npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<YYYY-MM
   # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial|school>
 ```
 
-It reads `season_questions → compass_topic_revisions → compass_stance_revisions` for the open season,
+It reads the open season's pins (`season_questions`) and prints the **served** text of each: the latest
+published/superseded revision of the pin's version (ADR 0006; `seasonService.servedRevisionLateral`, the
+same resolver the voter compass uses), then its `compass_stance_revisions`.
+
+🔴 **The served text, not the pin's own rungs.** Every open-season pin is a superseded revision, and on
+13 of the 60 topics its rung text differs from what voters read (measured 2026-09-24 — abortion on all
+five rungs). Evidence must match the text voters read. The bundle does this for you; never read rungs
+off `season_questions.topic_revision_id` directly.
+
+The bundle
 writes `topics.json` + `politicians.json` into the batch dir, and prints one
 `TOPIC SCALE REFERENCE (<level>)` block per office level — already filtered to the topics that
 apply at that level (`compass_topic_roles`). Paste the block matching each politician's level
@@ -132,9 +146,10 @@ Notes on reading the result:
   pinned ladder does not have exactly five rungs.) Do not fall back to the frozen table. The write path
   sources its insert from a join on the open season, so with none open nothing is written and nothing
   raises.
-- `topic_revision_id` is printed with each topic (`revision: …`) and kept in `topics.json`. It is what
-  an existing row must be judged against, and `verify-stance-research` refuses the batch if it is no
-  longer the open season's pin. Carry it through; do not discard it.
+- Each topic prints `pin: …` and `served: …`, and `topics.json` keeps both (`topic_revision_id` = the
+  pin, which an answer write records; `served_revision_id` = the revision whose text you are shown).
+  `verify-stance-research` refuses the batch if either one has moved since the bundle was built — a
+  clarifying publish changes the served text without moving the pin. Carry them through.
 - Scope is already applied: each level's block lists only the topics `compass_topic_roles` offers at
   that level, and `stance-gate` refuses a row outside it (`topic-out-of-scope`). A topic offered at a
   level can still have rungs this officeholder may not lawfully do — read §4.9 of the program design
@@ -149,7 +164,7 @@ way.
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
 - The open season's number, and the topic count it pinned
-- Topics in scope (all or filtered)
+- Topics in scope (every topic in each level's block — there is no filter)
 - Estimated scope from the bundle (politicians × in-scope topics for each one's level)
 
 ---
@@ -274,11 +289,8 @@ NAMES AND KEYS: in both files, copy `full_name` exactly as it appears in politic
 "[POLITICIAN_NAME]", same spelling, case and spacing — and copy `topic_key` exactly as listed in
 the TOPIC SCALE REFERENCE below.
 
-[If --topics was specified:]
-Only research these topics: [TOPIC_LIST]
-
-[If --topics was NOT specified:]
-Research all current policy topics.
+Research every topic in the TOPIC SCALE REFERENCE below. A topic this office holds no lever on is a
+blank row with the reason (spec §4.9), not a skipped topic.
 
 FIVE-CHAIRS FRAMING — READ BEFORE ASSIGNING ANY VALUE:
 
@@ -406,6 +418,13 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
   VERBATIM passage of at least 25 words, copied from that page as you fetched it, that shows the
   position and names this person (or sits within a few sentences of their name). Copy — never retype,
   trim to fit, or summarise. A source you cannot back with a verbatim snippet does not go in the row.
+- Only the part of a snippet that is on the page word for word is ever published: the verifier keeps
+  the longest run of your snippet that appears contiguously on the page, and that run must itself be
+  25 words or more, or the snippet does not count (ruling 2026-09-24). Framing words you add are
+  dropped, and a snippet with words left out mid-passage can fail. Copy one continuous passage.
+- Every evidence.csv row's source_url must be one of THAT row's source_url_1..3 in research.csv. An
+  evidence URL the row does not cite is refused by the gate (`evidence-url-not-cited`), and the
+  verifier never verifies or publishes it. When you re-source a row, remove its old evidence rows.
 - The evidence must describe THIS chair, not just a direction. If it only shows which side the person
   is on and two or three chairs sit on that side, leave the value blank. "The least extreme chair the
   evidence allows" is a tiebreaker, not evidence.
@@ -461,7 +480,7 @@ Other rules:
 > **Note:** `build-stance-topic-bundle.ts` already prints each topic entry in this shape — paste its
 > block for the politician's level as printed:
 >
->     [topic_key] (id: [uuid], revision: [topic_revision_id])
+>     [topic_key] (id: [uuid], pin: [topic_revision_id], served: [served_revision_id])
 >     Question: "[question_text]"
 >       1 = "[stance text for value 1]"
 >       2 = "[stance text for value 2]"
@@ -529,6 +548,11 @@ any `--apply`:
 | `unchanged` | same value already in the open season — skipped |
 | `review` | queued for a person: `review-all-mode` (clean, but review-all is on), `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
 | `re-research` | `gate-high` (defective — goes back to research (4a(i)), not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
+| `out-of-scope` | the gate found `topic-out-of-scope`: the office does not hold this question. Recorded, **not** re-researched and not queued — re-researching the same pair cannot change it |
+
+A queued row stores its reasons (`queue_reasons`) and `evidence_type` once CA_0285 is applied, and the
+review page shows them, with the value voters see now (the Season 1 chair when the open season holds
+none) beside the open-season value.
 
 Every queued row in `publish-report.json` carries `admin_queue_visible`. **`false` means the row
 is saved but NOT in the admin queue**: an `unresolved-politician` row is stored with status
@@ -625,7 +649,8 @@ a hand-edited quote is unverified until step (0) has run against it again.
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a
 B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
-npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-research those pairs yourself, re-run
+npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-research those pairs yourself, re-run —
+                                                     # EXCEPT topic-out-of-scope, which is closed research (see below)
 npx tsx scripts/verify-stance-research.ts --dir $B   # dry-run: fetches every source, writes $B/publish-report.json
 node ../.claude/skills/research-stances/scripts/build-and-check.mjs --csv $B/research.csv   # quotes
 # build-and-check prints "MECHANICAL FINDINGS: N (high=.. medium=.. low=..)", writes
@@ -639,8 +664,12 @@ pointer-only-source, stance-label). There is no campaign-site URL check: a campa
 how directly it answers the question, not on its medium, so that call belongs to the judgment pass
 below (`source-not-an-answer`).
 
-**Stance findings go back to research. The orchestrator never edits past the gate.** A
-`stance-gate` **high** finding (and a verifier `re-research` row) means the research is defective:
+**Stance findings go back to research. The orchestrator never edits past the gate.** One high finding
+is not a research defect: `topic-out-of-scope` means the office does not hold the question, so the
+verifier records the row as `out-of-scope` and it is **not** re-researched — remove nothing, re-run
+nothing for it. `level-unknown` is also high: fix the person's level (re-type the district, or leave a
+community-college trustee out of the batch) before any research. Every other `stance-gate` **high**
+finding (and a verifier `re-research` row) means the research is defective:
 re-research that pair yourself — fetch the sources again and rebuild the row from what the pages say
 — have the new pass REPLACE that pair's rows in research.csv and evidence.csv (STEP 2 item 4), and
 re-run the gate. Research runs inline, so the same session also acts as orchestrator from the gate to
@@ -655,9 +684,9 @@ until it's clean. An aggregator / quiz / scorecard source (`invalid-source`, `un
 `scorecard-source`) must be re-sourced to the original. 🔴 **VOTE411 / thevoterguide.org cannot be
 cited at all — LWV terms bar reproducing it — and that applies to every row, not only quote rows.**
 No `source_url_1..3` in research.csv, on a stance row or a quote row, may be a vote411.org or
-thevoterguide.org URL. `build-and-check.mjs` flags it only on rows with a quote (`pointer-only-source`),
-and `stance-gate` does not check it yet, so look for it yourself: on this branch a stance row's
-snippets become public citations when a person approves the row. Re-source the position to the
+thevoterguide.org URL. `stance-gate` refuses it on every row (`pointer-only-source`, high) — in the row's
+sources AND in any evidence.csv URL for the pair — and `build-and-check.mjs` flags it on rows with a
+quote. It matters because a stance row's snippets become public citations when a person approves the row. Re-source the position to the
 candidate's own materials; if VOTE411 is the only place it appears, drop the quote, and a stance
 that rests only on it has no citable source, so its re-research ends in a blank value. A new
 source URL changes the stance row, so re-sourcing is a re-research of that pair (fetch the original,
@@ -742,9 +771,11 @@ row that passed every check is queued with reason `review-all-mode`. Only with `
 back to research (4a(i)): re-research the pair yourself.
 
 The verifier refuses the whole batch (exit 2, nothing written) when: two rows share a
-(politician, topic) pair; the bundle's ladder revision for a scored topic is no longer the open
-season's pin ("the ladder changed since the bundle was built — rebuild the bundle and re-research
-these topics"); `topics.json` is missing or unreadable; or `--editor-id` is not a user.
+(politician, topic) pair; the bundle's pin OR served revision for a scored topic is no longer the open
+season's ("the ladder changed since the bundle was built — rebuild the bundle and re-research
+these topics"); `topics.json` is missing, unreadable, or has no `served_revision_id` (a bundle built
+before 2026-09-24 printed the pin's text — rebuild it and re-research); `stances.csv` has no
+`source_urls` column (re-run `stance-gate`); or `--editor-id` is not a user.
 
 Re-running `--apply` on the same batch is safe: review rows a person already resolved or rejected
 are left alone (reported as `LEFT ALONE`), never reset to pending. The SUMMARY reports
@@ -758,7 +789,7 @@ resolved; rebuild the bundle with this person (--politician <uuid>:<level>) and 
 publish-report.json marks them `"admin_queue_visible": false`. Rebuild the bundle with each one and
 re-run; do not expect to find them in the admin UI.
 
-A queued row's verified snippets become public citations only when a person approves it (resolveResearchReview writes them) — never at queue time, because they would render under the stance displayed now. Approval is refused when the row has no machine-verified and no hand-verified source.
+A queued row's verified snippets become public citations only when a person approves it (resolveResearchReview writes them) — never at queue time, because they would render under the stance displayed now. What is published is each snippet's **matched on-page span**, never the full snippet (ruling 2026-09-24); a row queued before that stored no span, and its snippets are not published. Approval is refused when the row has no publishable machine-verified and no hand-verified source, and resolve and reject both act only on a row still `pending` (409 otherwise).
 
 **Which season?** Whichever is open — check with
 `SELECT number FROM inform.seasons WHERE status = 'open'`. Do not trust a season number written in a

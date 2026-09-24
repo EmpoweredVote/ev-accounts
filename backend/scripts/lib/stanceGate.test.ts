@@ -77,12 +77,36 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     expect(ids({ ...good, topic_key: 'rent-regulation' }, { topic: RENT, politician: board, evidence: [] }))
       .toContain('topic-out-of-scope');
   });
-  it('level-unknown is a review signal, not a block', () => {
+  it('level-unknown is HIGH (I3): a community-college or mis-typed school board never reaches the queue', () => {
     const f = checkStanceRow(good, { topic: HEALTH, politician: { ...JANE, level: null }, evidence: ev });
-    expect(f).toEqual([expect.objectContaining({ check_id: 'level-unknown', severity: 'medium' })]);
+    expect(f).toEqual([expect.objectContaining({ check_id: 'level-unknown', severity: 'high' })]);
   });
   it('unknown-politician', () => {
     expect(ids(good, { politician: undefined })).toContain('unknown-politician');
+  });
+});
+
+// I1 (final review 2026-09-24): evidence.csv joins by (name, topic), not by URL, so it can carry a URL the
+// row does not cite. Those URLs are flagged, and the pointer / Ballotpedia checks see them too.
+describe('checkStanceRow — evidence URLs the row does not cite (I1)', () => {
+  const stale = { ...ev[0], source_url: 'https://www.vote411.org/ballot/jane-doe', snippet_index: 1 };
+  it('flags an evidence URL that is not one of the row sources, and a VOTE411 one as pointer-only', () => {
+    const f = checkStanceRow(good, { topic: HEALTH, politician: JANE, evidence: [...ev, stale] });
+    expect(f.map((x) => [x.check_id, x.severity])).toEqual(expect.arrayContaining([
+      ['evidence-url-not-cited', 'high'], ['pointer-only-source', 'high'],
+    ]));
+  });
+  it('flags ballotpedia-only when every EVIDENCE url is Ballotpedia even though the row cites a primary source', () => {
+    const bp = { ...ev[0], source_url: 'https://ballotpedia.org/Jane_Doe' };
+    expect(ids(good, { evidence: [bp] })).toEqual(expect.arrayContaining(['ballotpedia-only', 'evidence-url-not-cited']));
+  });
+  it('a quote or an instrument found only in an uncited snippet does not satisfy the citation checks', () => {
+    const elsewhere = { ...ev[0], source_url: 'https://other.gov/z', snippet: `${SNIP} and SB 42 too` };
+    const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025) and SB 42.' };
+    expect(ids(row, { evidence: [...ev, elsewhere] })).toEqual(expect.arrayContaining(['evidence-url-not-cited', 'instrument-not-cited']));
+  });
+  it('a clean row with only cited evidence gets neither finding', () => {
+    expect(ids(good)).not.toContain('evidence-url-not-cited');
   });
 });
 
@@ -251,7 +275,7 @@ describe('checkBatch / toStanceRows', () => {
   });
   it('carries the bundle politician_id into verifier rows', () => {
     expect(toStanceRows([good], [HEALTH], [JANE])).toEqual([
-      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning, evidence_type: 'record', source_urls: good.source_urls },
     ]);
   });
 
@@ -269,7 +293,7 @@ describe('checkBatch / toStanceRows', () => {
   });
   it('writes politician_id \'\' for an ambiguous name, even though one namesake would otherwise match', () => {
     expect(toStanceRows([good], [HEALTH], [JANE, JANE2])).toEqual([
-      { full_name: 'Jane Doe', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+      { full_name: 'Jane Doe', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: good.reasoning, evidence_type: 'record', source_urls: good.source_urls },
     ]);
   });
 
@@ -289,7 +313,7 @@ describe('checkBatch / toStanceRows — shared normalizer', () => {
   });
   it('writes the bundle politician\'s canonical full_name into stances rows', () => {
     expect(toStanceRows([{ ...good, full_name: 'jane doe ' }], [HEALTH], [JANE])).toEqual([
-      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning, evidence_type: 'record', source_urls: good.source_urls },
     ]);
   });
   it('keeps the row\'s own spelling when it matched no bundle politician', () => {
@@ -299,7 +323,7 @@ describe('checkBatch / toStanceRows — shared normalizer', () => {
   // R4: same idea as full_name, for topic_key.
   it('writes the bundle topic\'s canonical topic_key into stances rows', () => {
     expect(toStanceRows([{ ...good, topic_key: 'Healthcare ' }], [HEALTH], [JANE])).toEqual([
-      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning },
+      { full_name: 'Jane Doe', politician_id: 'p1', topic_key: 'healthcare', value: 2, reasoning: good.reasoning, evidence_type: 'record', source_urls: good.source_urls },
     ]);
   });
   it('keeps the row\'s own topic_key spelling when it matched no bundle topic', () => {

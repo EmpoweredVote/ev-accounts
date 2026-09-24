@@ -1349,6 +1349,10 @@ router.post('/research-review/:id/reject', async (req: any, res) => {
     await rejectResearchReview(req.params.id, actorId(req), notes);
     res.json({ ok: true });
   } catch (err) {
+    const code = (err as { code?: string }).code;
+    if (code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
+    // I5: only a pending row can be rejected — a resolved row's published stance must stay audited.
+    if (code === 'CONFLICT') { res.status(409).json({ error: (err as Error).message }); return; }
     console.error('[admin/research-review/:id/reject] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }

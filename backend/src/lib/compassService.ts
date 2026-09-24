@@ -1,6 +1,6 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
-import { SEASON_IS_PUBLISHED } from './seasonService.js';
+import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
 import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
@@ -149,17 +149,11 @@ export async function getPromotedTopics(): Promise<PromotedTopic[]> {
             t.is_live, t.office_scope
        FROM inform.compass_topics_promoted p
        JOIN inform.compass_topics t ON t.id = p.id
-       JOIN LATERAL (
-         SELECT e.id, e.title, e.short_title, e.question_text, e.version
-           FROM inform.compass_topic_revisions pin
-           JOIN inform.compass_topic_revisions e
-             ON e.topic_id = pin.topic_id
-            AND e.version  = pin.version
-            AND e.status IN ('published', 'superseded')
-          WHERE pin.id = p.season_revision_id
-          ORDER BY e.revision DESC
-          LIMIT 1
-       ) eff ON true
+       -- The resolver is shared (seasonService.servedRevisionLateral) so the
+       -- stance-research bundle and review page read the SAME text voters do.
+       -- Text source: inform.compass_topic_revisions (the served revision), never
+       -- the frozen compass_topics text columns.
+       JOIN ${servedRevisionLateral('p.season_revision_id', 'eff')} ON true
       -- ⚠ created_at, NOT p.display_order, and this is deliberate. display_order
       -- is the season's own ordering and is the obviously "right" column to reach
       -- for — but CA_0019 seeded it as row_number() OVER (ORDER BY topic_key),

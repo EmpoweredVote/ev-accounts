@@ -1,8 +1,9 @@
 /**
  * build-stance-topic-bundle.ts — the exact question set a stance-research batch is scored against.
  *
- * 🔴 Reads the OPEN season's pinned ladder revisions (season_questions -> compass_topic_revisions
- * -> compass_stance_revisions), NEVER the frozen legacy inform.compass_stances. On 2026-09-22,
+ * 🔴 Reads the OPEN season's SERVED ladder text — the latest published/superseded revision of each
+ * pin's version (ADR 0006; seasonService.servedRevisionLateral, the resolver the voter compass uses) —
+ * NEVER the pin's own rungs and NEVER the frozen legacy inform.compass_stances. On 2026-09-22,
  * 29 of the open season's 60 ladders differed from the legacy text: a researcher shown the legacy
  * text scores against a sentence the stored answer is not an answer to.
  *
@@ -27,6 +28,7 @@ import { pool } from '../src/lib/db.js';
 import {
   appliesFromRoles, appliesToLevel, levelForDistrict, type Level,
 } from '../src/lib/topicApplicability.js';
+import { servedRevisionLateral } from '../src/lib/seasonService.js';
 
 const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial', 'school'];
 function opts(name: string): string[] {
@@ -64,21 +66,40 @@ for (const m of MANUAL) {
   if (!prior) manualArgs.push({ id: lower, level: lvl as Level });
 }
 
+// 🔴 C1 (final review 2026-09-24): the ladder TEXT is the SERVED revision — the latest
+// published/superseded revision of the pin's version (ADR 0006 Option Y), the exact words the voter
+// compass shows (compassService.getPromotedTopics uses the same servedRevisionLateral). The pin is a
+// superseded revision on every open-season topic, and on 13 of 60 its rung text differs from what
+// voters read (abortion on all five rungs). topic_revision_id stays the PIN: it is what an answer
+// write records (UPSERT_ANSWER_SQL stamps sq.topic_revision_id) and what the drift checks compare.
+// served_revision_id is the revision whose words the researcher is shown; the verifier refuses the
+// batch if either one has moved since this bundle was built.
 const { rows: raw } = await pool.query(`
   SELECT t.id::text AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id,
-         sq.question_number, tr.title, tr.question_text,
+         eff.id::text AS served_revision_id,
+         sq.question_number, eff.title, eff.question_text,
          (SELECT json_agg(json_build_object('value', sr.value, 'text', sr.text) ORDER BY sr.value)
             FROM inform.compass_stance_revisions sr
-           WHERE sr.topic_revision_id = sq.topic_revision_id) AS stances,
+           WHERE sr.topic_revision_id = eff.id) AS stances,
          (SELECT coalesce(json_agg(json_build_object('role_scope', r.role_scope)), '[]'::json)
             FROM inform.compass_topic_roles r WHERE r.topic_id = t.id) AS roles
     FROM inform.season_questions sq
     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
     JOIN inform.compass_topics t ON t.id = sq.topic_id
-    JOIN inform.compass_topic_revisions tr ON tr.id = sq.topic_revision_id
+    JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff')} ON true
    ORDER BY sq.question_number`);
 if (!raw.length) {
   console.error('ERROR: no open season, or it has no season_questions — refusing to write an empty bundle');
+  await pool.end();
+  process.exit(1);
+}
+// The served lateral is INNER: a pin whose version has no published/superseded revision serves
+// nothing and would silently drop out of the bundle. Count it against the open season's question set.
+const { rows: [{ asked }] } = await pool.query(
+  `SELECT count(*)::int AS asked FROM inform.season_questions sq
+     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'`);
+if (asked !== raw.length) {
+  console.error(`ERROR: the open season asks ${asked} questions but only ${raw.length} have a served (published) revision — refusing a partial bundle`);
   await pool.end();
   process.exit(1);
 }
@@ -148,7 +169,7 @@ for (const level of LEVELS) {
     console.log(`⚠ no open-season topic applies at the ${level} level — do not research${level === 'school' ? ' (are CA_0256\'s school role rows applied?)' : ''}`);
   }
   for (const t of inScope) {
-    console.log(`\n${t.topic_key} (id: ${t.topic_id}, revision: ${t.topic_revision_id})`);
+    console.log(`\n${t.topic_key} (id: ${t.topic_id}, pin: ${t.topic_revision_id}, served: ${t.served_revision_id})`);
     console.log(`Question: "${t.question_text}"`);
     for (const s of t.stances) console.log(`  ${s.value} = "${s.text}"`);
   }

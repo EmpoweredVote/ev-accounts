@@ -35,8 +35,11 @@
  *   npx tsx scripts/verify-stance-research.ts --dir data/stance-research/<batch> \
  *     [--threshold 2] [--batch-id <id>] [--apply] [--auto-push] [--re-researched] [--editor-id <uuid>]
  * Requires <dir>/gate-findings.json from scripts/stance-gate.ts, and <dir>/topics.json
- * from scripts/build-stance-topic-bundle.ts: every scored row's ladder revision must
- * still be the open season's pin, or the run exits 2 before any write.
+ * from scripts/build-stance-topic-bundle.ts: every scored row's ladder must still be the open
+ * season's — the same pin AND the same served revision (ADR 0006; a clarifying publish moves the
+ * served text without moving the pin) — or the run exits 2 before any write. stances.csv must carry
+ * stance-gate's source_urls column: only evidence on a row's own research.csv sources is verified
+ * or published (I1).
  * Exit: 0 ok, 1 --apply finished with row errors, 2 usage / unreadable / refused batch.
  *
  * Idempotent: re-running the same batch is safe. Stance writes are season-aware
@@ -73,10 +76,11 @@ import {
   buildReviewRowForInsert,
   accumulateEvidence,
   upsertReviewRow,
-  reviewLadderColumnsExist,
+  reviewOptionalColumns,
   writeVerifiedStance,
+  ladderMatches,
 } from '../src/lib/researchEvidenceService.js';
-import { OPEN_SEASON_ANSWER_SQL } from '../src/lib/seasonService.js';
+import { OPEN_SEASON_ANSWER_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
 import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
 import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
@@ -172,6 +176,14 @@ if (existsSync(evidencePath)) {
   }
 }
 
+// I1 (final review 2026-09-24): the verifier verifies only evidence on a row's OWN sources, which
+// stance-gate now writes into stances.csv. A stances.csv without the column was written by an older
+// gate and would let an evidence URL the row never cited verify and be published — refuse it.
+if (allStances.some((s) => s.source_urls === undefined)) {
+  console.error(`ERROR: ${stancesPath} has no source_urls column — it was written by an older stance-gate. Re-run scripts/stance-gate.ts --dir ${DIR}`);
+  process.exit(2);
+}
+
 // value=null rows are an explicit "insufficient evidence" signal: skip verification,
 // drop in normal mode (never pushed, never queued).
 const nullRows = allStances.filter((s) => s.value === null);
@@ -246,18 +258,23 @@ try {
   console.error(`ERROR: ${topicsPath} is not valid JSON: ${msg}`);
   process.exit(2);
 }
-const isBundleTopic = (t: unknown): t is { topic_key: string; topic_revision_id: string } =>
+type BundleLadder = { topic_key: string; topic_revision_id: string; served_revision_id: string };
+const isBundleTopic = (t: unknown): t is BundleLadder =>
   typeof t === 'object' && t !== null
   && typeof (t as Record<string, unknown>).topic_key === 'string'
-  && typeof (t as Record<string, unknown>).topic_revision_id === 'string';
+  && typeof (t as Record<string, unknown>).topic_revision_id === 'string'
+  && typeof (t as Record<string, unknown>).served_revision_id === 'string';
 if (!Array.isArray(bundleTopicsRaw) || bundleTopicsRaw.length === 0 || !bundleTopicsRaw.every(isBundleTopic)) {
-  console.error(`ERROR: ${topicsPath} is not valid JSON: expected a non-empty array of topics with string topic_key/topic_revision_id`);
+  // C1: a bundle with no served_revision_id was built before 2026-09-24 and printed the PIN's rung
+  // text, which on 13 of 60 topics is not what voters read. Its research was judged against the
+  // wrong sentence; refuse it rather than guess.
+  console.error(`ERROR: ${topicsPath} is not valid: expected a non-empty array of topics with string topic_key/topic_revision_id/served_revision_id `
+    + '(a bundle without served_revision_id showed the pin\'s text, not the served text — rebuild it with scripts/build-stance-topic-bundle.ts and re-research)');
   process.exit(2);
 }
-const bundleRevisionByKey = new Map(
-  (bundleTopicsRaw as { topic_key: string; topic_revision_id: string }[])
-    .map((t) => [normTopic(t.topic_key), t.topic_revision_id]),
-);
+const bundleTopics = bundleTopicsRaw as BundleLadder[];
+const bundleRevisionByKey = new Map(bundleTopics.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
+const bundleServedByKey = new Map(bundleTopics.map((t) => [normTopic(t.topic_key), t.served_revision_id]));
 
 // ---------------------------------------------------------------- editor pre-flight (M4)
 // A uuid that names nobody fails the editor_id FK on the FIRST stance write — after every page
@@ -342,14 +359,21 @@ for (const name of csvNames) {
 
 // 🔴 The open season's question set — not is_live. A stance can only be written to a
 // question the open season asks; is_live and the season's set disagreed on 2026-09-22.
-const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string; topic_revision_id: string; season_id: string }>(
-  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id, sq.season_id::text AS season_id
+// served_revision_id: the revision whose text voters read now (ADR 0006, servedRevisionLateral).
+// LEFT lateral: a pin with no served revision still counts as asked, and reads as drift below.
+const { rows: topicRows } = await pool.query<{
+  topic_id: string; topic_key: string; topic_revision_id: string; served_revision_id: string | null; season_id: string;
+}>(
+  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id,
+          eff.id::text AS served_revision_id, sq.season_id::text AS season_id
      FROM inform.season_questions sq
      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
-     JOIN inform.compass_topics t ON t.id = sq.topic_id`,
+     JOIN inform.compass_topics t ON t.id = sq.topic_id
+     LEFT JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff')} ON true`,
 );
 const topicIdByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_id]));
 const openRevisionByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
+const openServedByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.served_revision_id]));
 if (topicRows.length === 0) {
   console.error('ERROR: no open season (or it asks no questions) — nothing can be verified against a pin or written; open a season first');
   await pool.end();
@@ -364,12 +388,17 @@ const openSeasonId = topicRows[0].season_id;
 // it) after the bundle was built, the researcher scored against a sentence the stored answer
 // would not be an answer to. Checked for every scored row's topic that the bundle holds (a topic
 // the bundle lacks is already a gate-high `topic-not-in-season`), before any fetch or write.
+// C1: BOTH ids are compared. The pin catches a re-pin or a dropped topic; the served id catches a
+// clarifying publish mid-batch, which changes the words voters read without moving the pin.
 const ladderChanged = [...new Set(stanceRows.map((s) => normTopic(s.topic_key)))]
-  .filter((k) => bundleRevisionByKey.has(k) && bundleRevisionByKey.get(k) !== openRevisionByKey.get(k))
+  .filter((k) => bundleRevisionByKey.has(k) && !ladderMatches(
+    { pin: bundleRevisionByKey.get(k) ?? null, served: bundleServedByKey.get(k) ?? null },
+    { pin: openRevisionByKey.get(k) ?? null, served: openServedByKey.get(k) ?? null }))
   .sort();
 if (ladderChanged.length) {
   console.error(`ERROR: the ladder changed since the bundle was built — rebuild the bundle and re-research these topics: ${ladderChanged
-    .map((k) => `${k} (bundle ${bundleRevisionByKey.get(k)}, open season ${openRevisionByKey.get(k) ?? 'no longer asks it'})`).join('; ')}`);
+    .map((k) => `${k} (bundle pin ${bundleRevisionByKey.get(k)} served ${bundleServedByKey.get(k)}, `
+      + `open season ${openRevisionByKey.has(k) ? `pin ${openRevisionByKey.get(k)} served ${openServedByKey.get(k) ?? 'none'}` : 'no longer asks it'})`).join('; ')}`);
   await pool.end();
   process.exit(2);
 }
@@ -510,12 +539,16 @@ if (!APPLY) {
   // wrote (auto-push only — a queued row is a proposal, not yet a chair; export-written-ledger.ts
   // covers those once a person approves them).
   const writtenLedgerRows: LedgerRow[] = [];
-  // CA_0264: until it is applied the queue has nowhere to record the ladder revision; rows still
-  // queue, but approval will show them as "ladder revision unknown". Say so rather than hide it.
-  const ladderColumns = queued.length ? await reviewLadderColumnsExist() : true;
-  if (!ladderColumns) {
+  // CA_0264 / CA_0285: until each is applied the queue has nowhere to record what it adds; rows
+  // still queue, with those fields left out. Say so rather than hide it.
+  const reviewColumns = queued.length ? await reviewOptionalColumns() : new Set<never>();
+  if (queued.length && !(reviewColumns.has('topic_revision_id') && reviewColumns.has('season_id'))) {
     console.warn('WARN: inform.stance_research_review has no topic_revision_id/season_id yet (CA_0264 not applied) — '
       + `${queued.length} queued row(s) will not record their ladder revision; the review page will show them as "ladder revision unknown"`);
+  }
+  if (queued.length && !(reviewColumns.has('served_revision_id') && reviewColumns.has('queue_reasons') && reviewColumns.has('evidence_type'))) {
+    console.warn('WARN: inform.stance_research_review has no served_revision_id/queue_reasons/evidence_type yet (CA_0285 not applied) — '
+      + `${queued.length} queued row(s) will not record why they were queued; the review page will show "reasons not recorded"`);
   }
 
   for (const d of bucket('auto-push')) {
@@ -571,7 +604,11 @@ if (!APPLY) {
         // The bundle's revision — equal to the open pin here, since the I7 check above exits on drift.
         topicRevisionId: bundleRevisionByKey.get(normTopic(row.stance.topic_key)) ?? null,
         seasonId: openSeasonId,
-      }), { ladderColumns });
+        // C1: the served revision whose text the researcher read (also drift-checked above).
+        servedRevisionId: bundleServedByKey.get(normTopic(row.stance.topic_key)) ?? null,
+        // I2: why this row is in the queue, so the reviewer can see it.
+        queueReasons: reasonsOf(d),
+      }), { columns: reviewColumns });
       if (!wrote) {
         // I1: this batch's row for the pair was already resolved or rejected by a person.
         leftDecided++;

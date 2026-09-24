@@ -29,7 +29,13 @@ export interface ResearchRow {
 export interface BundleTopic extends TopicApplicability {
   topic_id: string;
   topic_key: string;
+  /** The open season's PIN for the topic — what an answer write records, and the drift key. */
   topic_revision_id: string;
+  /**
+   * The SERVED revision (ADR 0006: latest published/superseded revision of the pin's version) —
+   * the revision whose question_text and stances this bundle carries, i.e. what voters read.
+   */
+  served_revision_id?: string;
   question_number: number;
   title: string;
   question_text: string;
@@ -46,7 +52,7 @@ export const GATE_CHECK_IDS = [
   'topic-out-of-scope', 'level-unknown', 'no-source', 'source-without-snippet', 'snippet-too-short',
   'evidence-type-invalid', 'record-no-instrument', 'statement-needs-review', 'party-inference',
   'reasoning-empty', 'ballotpedia-only', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
-  'quote-not-in-snippet',
+  'quote-not-in-snippet', 'evidence-url-not-cited',
 ] as const;
 export type GateCheckId = typeof GATE_CHECK_IDS[number];
 export interface GateFinding {
@@ -183,7 +189,10 @@ export function checkStanceRow(
   if (!ctx.topic) {
     add('topic-not-in-season', 'high', `${row.topic_key} is not a question the open season asks — it cannot be written`);
   } else if (ctx.politician) {
-    if (!ctx.politician.level) add('level-unknown', 'medium', `office level unknown for ${row.full_name}; scope not checked`);
+    // I3 (final review 2026-09-24): HIGH, not medium. An unknown level is a community-college board
+    // (outside every level) or a school board filed on a LOCAL district (re-type it first) — neither
+    // may reach the review queue, where a medium finding showed only as an unexplained gate-medium.
+    if (!ctx.politician.level) add('level-unknown', 'high', `office level unknown for ${row.full_name}; scope cannot be checked — fix the district type or leave this person out of the batch`);
     else if (!appliesToLevel(ctx.topic, ctx.politician.level)) add('topic-out-of-scope', 'high', `${row.topic_key} does not apply at the ${ctx.politician.level} level`);
   }
 
@@ -200,9 +209,29 @@ export function checkStanceRow(
       add('pointer-only-source', 'high', `source is VOTE411 / thevoterguide.org: ${url}. LWV terms bar reproducing this without written permission, so it cannot be a cited source.`);
     }
   }
-  if (row.source_urls.length > 0 && row.source_urls.every(isBallotpediaUrl)) {
-    add('ballotpedia-only', 'high', 'every source is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
+  // I1 (final review 2026-09-24): evidence.csv is joined to the row by (name, topic), not by URL, so
+  // it can carry a URL the row does not cite — e.g. an old VOTE411 snippet left behind after the row
+  // was re-sourced. The verifier never verifies or publishes such a URL (researchVerifier
+  // url_not_cited); this flags it before the verifier runs, and the pointer / Ballotpedia checks
+  // below look at BOTH URL sets, so nothing on the evidence side slips past them.
+  const cited = new Set(row.source_urls);
+  const evidenceUrls = [...new Set(ctx.evidence.map((e) => e.source_url.trim()).filter(Boolean))];
+  for (const url of evidenceUrls) {
+    if (!cited.has(url)) {
+      add('evidence-url-not-cited', 'high', `evidence.csv has a snippet for ${url}, which is not one of this row's source_url_1..3 — remove it or cite it`);
+      if (POINTER_ONLY_SOURCE.test(url)) {
+        add('pointer-only-source', 'high', `evidence URL is VOTE411 / thevoterguide.org: ${url}. LWV terms bar reproducing this without written permission, so it cannot be a cited source.`);
+      }
+    }
   }
+  if ((row.source_urls.length > 0 && row.source_urls.every(isBallotpediaUrl))
+    || (evidenceUrls.length > 0 && evidenceUrls.every(isBallotpediaUrl))) {
+    add('ballotpedia-only', 'high', 'every source (or every evidence URL) is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
+  }
+
+  // Only snippets on a CITED URL can satisfy the citation-control checks below: a snippet the
+  // verifier will never publish cannot be the evidence a quote or an instrument points to.
+  const citedEvidence = ctx.evidence.filter((e) => cited.has(e.source_url.trim()));
 
   if (row.evidence_type === 'record') {
     if (!NAMES_INSTRUMENT.test(row.reasoning)) add('record-no-instrument', 'high', 'record evidence must name the bill, act, ordinance or recorded vote');
@@ -217,7 +246,7 @@ export function checkStanceRow(
     // longer number sharing a prefix cannot satisfy a shorter one.
     const identifiers = [...new Set(extractInstrumentIdentifiers(row.reasoning).map(canonicalizeInstrumentId))];
     const snippetIdentifierSet = new Set(
-      ctx.evidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map(canonicalizeInstrumentId)),
+      citedEvidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map(canonicalizeInstrumentId)),
     );
     for (const id of identifiers) {
       if (!snippetIdentifierSet.has(id)) {
@@ -239,7 +268,7 @@ export function checkStanceRow(
   const quotes = extractQuotedPhrases(row.reasoning).filter((q) => wordCount(q) >= 4);
   for (const q of quotes) {
     const nq = normalizeText(q);
-    if (!ctx.evidence.some((e) => normalizeText(e.snippet).includes(nq))) {
+    if (!citedEvidence.some((e) => normalizeText(e.snippet).includes(nq))) {
       add('quote-not-in-snippet', 'high', `reasoning quotes text not found verbatim in any cited snippet: "${q}"`);
     }
   }
@@ -337,6 +366,9 @@ export function toStanceRows(rows: ResearchRow[], topics: BundleTopic[], politic
       topic_key: topicMatch?.topic_key ?? r.topic_key,
       value: r.value,
       reasoning: r.reasoning,
+      // I1: the verifier verifies only evidence on these URLs; I2: evidence_type is stored on the review row.
+      evidence_type: r.evidence_type,
+      source_urls: r.source_urls,
     };
   });
 }

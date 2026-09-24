@@ -374,3 +374,77 @@ describe('verifyEvidence', () => {
     expect(result.needsReResearch[0].verifiedSources).toHaveLength(0);
   });
 });
+
+import { matchedSpan } from './researchVerifier.js';
+
+// I6 (ruling 2026-09-24): the 60% rule decides whether a snippet is grounded; only the matched
+// on-page span is ever published, and that span must itself be >= 25 contiguous page words.
+describe('matchedSpan (I6)', () => {
+  const passage = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
+  it('returns the whole snippet when it is on the page verbatim, in the snippet\'s own casing', () => {
+    const span = matchedSpan(passage, `nav ${passage.toUpperCase()} footer`);
+    expect(span?.text).toBe(passage);
+    expect(span?.words).toBe(passage.split(' ').length);
+  });
+  it('drops the researcher\'s framing words: the span is page text only', () => {
+    const framed = `President Adams responded. August 1, 2024. He stated: ${passage}`;
+    const span = matchedSpan(framed, `nav home about ${passage} more footer`);
+    expect(span?.text).toBe(passage);
+    expect(span?.text).not.toContain('He stated');
+  });
+  it('matches whole page words only — a span never ends in a clipped word', () => {
+    const page = 'alpha beta gamma deltas';
+    expect(matchedSpan('alpha beta gamma delta', page)?.text).toBe('alpha beta gamma');
+  });
+  it('returns null when no word of the snippet is on the page', () => {
+    expect(matchedSpan('zzz yyy', 'alpha beta')).toBeNull();
+  });
+});
+
+describe('verifyEvidence — I6 published span and I1 cited URLs', () => {
+  const names = { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } };
+  const pagePassage = 'The senator told reporters she strongly supports a robust public option for healthcare coverage and has personally cosponsored several major bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+  const verbatim = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
+  const row = (source_urls?: string[]): StanceRow => ({ full_name: 'Brad Sherman', topic_key: 'healthcare', value: 2, reasoning: 'r', politician_id: '', ...(source_urls ? { source_urls } : {}) });
+
+  it('a snippet that passes the 60% rule but has no 25-word contiguous span is span_too_short, not verified', async () => {
+    // Drops "robust" and "major": matchSnippet verifies it on shingle coverage, but the longest
+    // contiguous run on the page is under 25 words.
+    const dropped = 'The senator told reporters she strongly supports a public option for healthcare coverage and has personally cosponsored several bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+    expect(matchSnippet(dropped, `Brad Sherman: ${pagePassage}`).verdict).toBe('verified');
+    const result = await verifyEvidence({
+      stanceRows: [row()], threshold: 1, politicianNames: names,
+      evidenceRows: [{ full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: dropped, snippet_index: 0 }],
+      fetcher: async () => ({ ok: true, text: `Brad Sherman: ${pagePassage}` }),
+    });
+    expect(result.pushable).toHaveLength(0);
+    expect(result.needsReResearch[0].failedSources[0].snippets[0].verdict.verdict).toBe('span_too_short');
+  });
+
+  it('a verified snippet carries its matched span, without the framing words', async () => {
+    const result = await verifyEvidence({
+      stanceRows: [row()], threshold: 1, politicianNames: names,
+      evidenceRows: [{ full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: `He stated at a town hall on Tuesday: ${verbatim}`, snippet_index: 0 }],
+      fetcher: async () => ({ ok: true, text: `Brad Sherman: ${verbatim}` }),
+    });
+    const snip = result.pushable[0].verifiedSources[0].snippets[0];
+    expect(snip.verdict.verdict).toBe('verified');
+    expect(snip.matchedSpan).toBe(verbatim);
+  });
+
+  it('an evidence URL that is not in the row sources is url_not_cited, never fetched, and does not count', async () => {
+    const fetched: string[] = [];
+    const result = await verifyEvidence({
+      stanceRows: [row(['https://a.example'])], threshold: 2, politicianNames: names,
+      evidenceRows: [
+        { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: verbatim, snippet_index: 0 },
+        { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://www.vote411.org/x', snippet: verbatim, snippet_index: 0 },
+      ],
+      fetcher: async (url) => { fetched.push(url); return { ok: true, text: `Brad Sherman: ${verbatim}` }; },
+    });
+    expect(fetched).toEqual(['https://a.example']);
+    expect(result.pushable).toHaveLength(0); // only 1 of the 2 needed sources counts
+    const failed = result.needsReResearch[0].failedSources;
+    expect(failed.map((f) => [f.url, f.snippets[0].verdict.verdict])).toEqual([['https://www.vote411.org/x', 'url_not_cited']]);
+  });
+});
