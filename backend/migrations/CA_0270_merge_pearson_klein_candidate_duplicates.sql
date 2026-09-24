@@ -1,199 +1,148 @@
 -- CA_0270_merge_pearson_klein_candidate_duplicates.sql
 -- Identity merge of two sitting state legislators who are each split across two essentials.politicians rows: a
--- seated state-legislature row, and a separate 2026 U.S. House candidate row. Same pattern as CA_0234 (answers,
--- race row and quotes only on the duplicate) and CA_0204 (FEC link on the duplicate): the SEATED row is the person;
--- what hangs on the duplicate moves to it; nothing is deleted.
+-- 2026 U.S. House candidate row (holding the compass answers, quotes, FEC link and race row) and a separate
+-- state-legislature row (holding only the seat). The SEAT moves to the candidate row; nothing else moves.
+-- Same survivor rule as CA_0227 (N'Kiyla Thomas): keep the row whose Season 1 answers would otherwise have to move.
 --
 -- Slot CA_0270 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
--- No migration runner exists; this file records SQL applied by hand (pure DML).
--- STATUS: NOT APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead from Chris Andrews, which must
---   also cover the closed-season override below.
+-- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
+-- STATUS: NOT APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead from Chris Andrews.
 --
--- Found 2026-09-24 by CA_0267 (PR #764): once a leading middle initial moves out of last_name, first_name + surname
--- matches three pairs. Two are merged here. The third is already done:
+-- 🟢 SEASON 1 IS NOT TOUCHED. Ruling 2026-09-24 (Chris Andrews): do not edit the closed season for a merge. The first
+-- draft of this file moved the 10 Season 1 answers with inform.allow_closed_season_write (the CA_0184 / CA_0234
+-- pattern); this version keeps them where they are and moves the seat instead. No inform.* row is written.
 --
--- THE PAIRS (duplicate -> seated twin):
+-- Found 2026-09-24 by CA_0267 (PR #764): once a leading middle initial moved out of last_name, first_name + surname
+-- matched three pairs. Two are merged here. The third is already done.
+--
+-- THE PAIRS (seat row -> survivor):
 --   1. JUSTIN J. PEARSON
---      5d56470c-fb82-42f7-82e3-d28bf74ace47 (external_id -470907, from 1197; created 2026-07-04; no seat)
---        -> de50a88b-1366-4088-bb0a-baeb16e19e2d (external_id -4720086, TN General Assembly directory; created
---           2026-09-11; holds State House District 86, office 03bf94b9).
+--      de50a88b-1366-4088-bb0a-baeb16e19e2d (external_id -4720086, TN General Assembly seed 1855; created 2026-09-11;
+--        holds State House District 86 via office_terms 0f19fb40; nothing else references it)
+--        -> 5d56470c-fb82-42f7-82e3-d28bf74ace47 (external_id -470907, from 1197; the TN-9 candidate: 4 Season 1
+--           answers + context, 1 quote, fec_house H6TN09449, race row 5273ca75, portrait).
 --      ONE PERSON: the Tennessee General Assembly page for District 86 names "Representative Justin J. Pearson,
 --      Democrat, Memphis" (capitol.tn.gov/house/members/h86.html). FEC H6TN09449 is "PEARSON, JUSTIN J.", Memphis
 --      TN, TN-09, committee C00922633 "The Committee to Elect Justin J. Pearson". NBC News, 2025-10, reports the
 --      "Tennessee Three legislator Justin Pearson" launching the TN-9 primary challenge to Rep. Steve Cohen, and the
 --      TN SOS 2026-08-06 Democratic primary totals name "Justin J. Pearson" the District 9 winner (CA_0266). The
---      duplicate's own Season 1 context already reads "As a TN state representative Pearson ..." and cites his
+--      candidate row's own Season 1 context already reads "As a TN state representative Pearson ..." and cites his
 --      state bill HB1393.
---   2. MATTHEW D. KLEIN
---      5e86fb53-a6eb-4b35-82de-79706a66dc1a (external_id -270204, from 1211; created 2026-07-04; no seat)
---        -> 4966792b-a05c-41df-8f4b-9b81deebb166 "Matt D. Klein" (external_id -2732185, MN Legislature member lists;
---           created 2026-09-14; holds State Senate District 53, office 2eecc490).
+--   2. MATT D. KLEIN
+--      4966792b-a05c-41df-8f4b-9b81deebb166 "Matt D. Klein" (external_id -2732185, MN legislature seed CC_0108; created
+--        2026-09-14; holds State Senate District 53 via office_terms 8d5162d7, plus its own politician_images row)
+--        -> 5e86fb53-a6eb-4b35-82de-79706a66dc1a "Matthew D. Klein" (external_id -270204, from 1211; the MN-2
+--           candidate: 6 Season 1 answers + context, 5 quotes, fec_house H6MN02248, race row 13bdc18a, portrait).
 --      ONE PERSON: the Minnesota Senate member page names "Senator Matt D. Klein (53, DFL)" (senate.mn, mem_id 1235).
 --      FEC H6MN02248 is "KLEIN, MATTHEW DAVID", West St. Paul MN, MN-02, committee C00904292 "Matt Klein for
 --      Congress", whose site (kleinforcongress.com) says he has served in the state Senate since 2017 and represents
---      Senate District 53. The duplicate's own Season 1 context cites his MN Senate committee work.
+--      Senate District 53. The candidate row's own Season 1 context cites his MN Senate committee work.
 --   3. RICHARD A. HYER — NO CHANGE. 05624287 was already merged into 11c6810e (Ogden City Council District 2) and
 --      deactivated by CA_0182 (applied 2026-09-23). Only its own politician_images row remains on it, as that
 --      precedent leaves it. The pre-flight asserts this is still so. ogdencity.gov/164/Richard-Hyer: "District 2,
 --      Term: January 2012 - December 2027".
 --
--- 🔴 THIS FILE EDITS A CLOSED SEASON, WITH THE OVERRIDE THE TRIGGER ASKS FOR. inform.closed_season_is_immutable()
--- blocks every write to a Season 1 answer or context row unless inform.allow_closed_season_write = 'on'. Why: this is
--- an IDENTITY correction, not a position change. No value, season, topic or topic_revision pin changes; each answer
--- moves from one row of the person to the other row of the SAME person, where the read paths look for it. Left alone,
--- deactivating the duplicates would hide 4 (Pearson) and 6 (Klein) Season 1 answers from their own profiles. Neither
--- seated twin answers ANY topic in any season, so nothing collides and nothing is chosen between. No Season 2 row
--- exists on any of the four rows. The override is SET LOCAL and RESET straight after, so it covers the two UPDATEs only.
+-- WHAT CHANGES, per pair:
+--   a. The seat's office_terms row is re-pointed to the survivor (term dates untouched; office_terms_no_overlap
+--      excludes on (office_id, daterange), not politician_id). Its source gains ' | merged onto <id> by CA_0270'.
+--   b. external_id is SWAPPED: the survivor takes the legislature seed's id, the seat row takes the candidate seed's.
+--      Why: both legislature generators find people by external_id (1855's TN term insert joins
+--      p.external_id = prefix - district; CC_0108's MN term insert and its NOT EXISTS person guard use external_id).
+--      Without the swap, a re-run of either would find the DEACTIVATED seat row and try to seat it again. The
+--      candidate ids (-470907, -270204) are referenced nowhere else in the repo (git grep, 2026-09-24).
+--   c. The survivor is set is_incumbent = true explicitly (it now holds the seat; CLAUDE.md). Where the survivor's
+--      source / data_source is NULL it takes the seat row's legislature citation. A CA_0270 note is appended; the
+--      older CA_0181 note ("holds no seat") stays as history.
+--   d. Klein only: the survivor takes the name the Senate and his campaign use — first_name 'Matt', full_name
+--      'Matt D. Klein' — and keeps 'Matthew D. Klein' (his FEC name) in alternate_names with 'Matt Klein'.
+--      last_name 'Klein' and middle_initial 'D.' are already right (CA_0267). His race row keeps "Matthew D. Klein",
+--      the name he filed under. Pearson's names are already identical on both rows.
+--   e. The seat row is deactivated (is_active = false, is_incumbent = false) with a note naming the survivor.
 --
--- WHAT MOVES (every column named like politician_id, plus politician_id_bridge.essentials_id, counted 2026-09-24):
---   Pearson: race_candidates 5273ca75 (TN-9 2026 general, result 'advanced' by CA_0266); politician_sources 5c6f96fe
---     (fec_house H6TN09449, confirmed); quote be4f91d6 (readrank_selected); 4 Season 1 answers + 4 context rows;
---     AND his politician_images row 591fb604 plus photo_custom_url — the seated twin has NO photo and no image row,
---     so without this the merge would blank his portrait. The image URL is a storage path; it keeps working when
---     the row is re-pointed.
---   Klein: race_candidates 13bdc18a (MN-2 2026 general, result 'not_nominated' by CA_0263 — he lost the 2026-08-11
---     DFL primary); politician_sources f3f702f8 (fec_house H6MN02248, confirmed); 5 quotes (3 readrank_selected);
---     6 Season 1 answers + 6 context rows. His image row stays (the twin has its own), as in CA_0229 / CA_0261.
---   No politician_context_evidence, stance_research_review, contacts, aliases, bridge or office_terms rows exist on
---   either duplicate; the pre-flight refuses to run if that changes. No politician_sources collision: neither twin
---   holds any source. Contribution aggregates key off politician_source_id, so they follow the link unchanged.
---   Both race rows carry no photo_url or website_url, so race_candidate_mirror_data writes nothing.
---   finance_summary is NULL on all four rows; nothing to carry. FOLLOW-UP after apply: run the federal
---   finance-summary writer for both twins (backend/scripts/run-fec-finance-summary.ts --politician <id>).
+-- NOT CHANGED: every inform.* row (answers, context, evidence, review) — nothing there references the seat rows;
+--   race_candidates, quotes, politician_sources (already on the survivor); photos (each survivor keeps its own
+--   portrait; Klein's seat row keeps its own senate.mn image row, as CA_0229 / CA_0261 leave images).
+--   finance_summary is NULL on all four rows. FOLLOW-UP after apply: run the federal finance-summary writer for both
+--   survivors (backend/scripts/run-fec-finance-summary.ts --politician <id>).
+-- check:stance-sources: the survivors' state bucket was their race state (tn, mn) and becomes their seat state (tn,
+--   mn) — the same bucket, so the baseline does not move. check:duplicate-people (PR #773) lists both pairs as
+--   same_person; after apply they are resolved.
+-- ⚠ CA_0267's pre-flight matches Klein's candidate row by full_name 'Matthew D. Klein'. CA_0267 is applied and nothing
+--   replays migrations, but a re-run of CA_0267 after this file would stop at its pre-flight.
 --
--- THEN: each duplicate is deactivated (is_active = false, is_incumbent stays false) with a note naming its twin.
---
--- NOT CHANGED: any name. CA_0267 (not yet applied) edits last_name / middle_initial on both duplicates, keyed on id and
---   full_name only, so the two files apply in either order. The twins keep their names ("Justin J. Pearson",
---   "Matt D. Klein"); the race rows keep the names they were filed under. is_incumbent on the twins stays true
---   (each holds a state seat). check:stance-sources: Klein's one BALLOTPEDIA_ONLY row stays in bucket 'mn' (the twin's
---   seat is in MN), so the baseline does not move.
---
--- ROLLBACK (once applied): with the same override, re-point the rows listed in _move / _ans back to each duplicate;
---   re-point image 591fb604 back to 5d56470c and set de50a88b's photo_custom_url back to NULL; set both duplicates
---   is_active = true and remove their CA_0270 note.
--- IDEMPOTENT: every step is guarded on its pre-image; a re-run moves nothing and every gate still passes.
+-- ROLLBACK (once applied), per pair: re-point the office_terms row back to the seat row and strip its ' | merged onto'
+--   suffix; swap external_id back (via NULL); set the survivor is_incumbent = false and remove its CA_0270 note (and,
+--   for Klein, restore first_name 'Matthew', full_name 'Matthew D. Klein', alternate_names '{}'; clear the copied
+--   source / data_source); set the seat row is_active = true, is_incumbent = true and remove its CA_0270 note.
+-- IDEMPOTENT: every step is guarded on its pre-image; a re-run changes nothing and every gate still passes.
 
 BEGIN;
 
-CREATE TEMP TABLE _pair (dup uuid PRIMARY KEY, keep uuid, dup_name text, keep_name text, keep_office uuid,
-                         n_ans int, n_quotes int) ON COMMIT DROP;
+CREATE TEMP TABLE _pair (keep uuid PRIMARY KEY, seat uuid UNIQUE, term_id uuid, office_id uuid,
+                         keep_ext bigint, seat_ext bigint, n_ans int, n_quotes int, who text) ON COMMIT DROP;
 INSERT INTO _pair VALUES
-  ('5d56470c-fb82-42f7-82e3-d28bf74ace47', 'de50a88b-1366-4088-bb0a-baeb16e19e2d', 'Justin J. Pearson', 'Justin J. Pearson',
-   '03bf94b9-7c03-466d-99c6-594128709cfd', 4, 1),
-  ('5e86fb53-a6eb-4b35-82de-79706a66dc1a', '4966792b-a05c-41df-8f4b-9b81deebb166', 'Matthew D. Klein', 'Matt D. Klein',
-   '2eecc490-1173-46d0-a520-11a6ada9b2a7', 6, 5);
+  ('5d56470c-fb82-42f7-82e3-d28bf74ace47', 'de50a88b-1366-4088-bb0a-baeb16e19e2d', '0f19fb40-b1fc-4ff1-886f-f3007739764c',
+   '03bf94b9-7c03-466d-99c6-594128709cfd', -470907, -4720086, 4, 1, 'Justin J. Pearson'),
+  ('5e86fb53-a6eb-4b35-82de-79706a66dc1a', '4966792b-a05c-41df-8f4b-9b81deebb166', '8d5162d7-66d7-4520-a00f-206cec3e2311',
+   '2eecc490-1173-46d0-a520-11a6ada9b2a7', -270204, -2732185, 6, 5, 'Matt D. Klein');
 
--- the reviewed race and FEC rows, one each per pair
-CREATE TEMP TABLE _move (tbl text, id uuid, dup uuid, keep uuid, PRIMARY KEY (tbl, id)) ON COMMIT DROP;
-INSERT INTO _move VALUES
-  ('race',   '5273ca75-fe58-48d4-b6a4-55d1d4f3663c', '5d56470c-fb82-42f7-82e3-d28bf74ace47', 'de50a88b-1366-4088-bb0a-baeb16e19e2d'),
-  ('source', '5c6f96fe-405e-4456-a08c-21440c2ecc44', '5d56470c-fb82-42f7-82e3-d28bf74ace47', 'de50a88b-1366-4088-bb0a-baeb16e19e2d'),
-  ('race',   '13bdc18a-3447-49b1-a348-2e39728b8677', '5e86fb53-a6eb-4b35-82de-79706a66dc1a', '4966792b-a05c-41df-8f4b-9b81deebb166'),
-  ('source', 'f3f702f8-f2bb-4c6c-a654-891456134db7', '5e86fb53-a6eb-4b35-82de-79706a66dc1a', '4966792b-a05c-41df-8f4b-9b81deebb166');
-
--- the answer keys across each pair (on the duplicate before a first run, on the twin after)
-CREATE TEMP TABLE _ans (dup uuid, keep uuid, topic_id uuid, season_id uuid, PRIMARY KEY (dup, topic_id, season_id)) ON COMMIT DROP;
-INSERT INTO _ans
-SELECT pr.dup, pr.keep, a.topic_id, a.season_id
-  FROM _pair pr JOIN inform.politician_answers a ON a.politician_id IN (pr.dup, pr.keep);
-
-CREATE TEMP TABLE _before ON COMMIT DROP AS
-SELECT pr.keep,
-       (SELECT COALESCE(sum(a.total_amount), 0) FROM transparent_motivations.contribution_summary_agg a
-          JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
-         WHERE ps.essentials_politician_id IN (pr.keep, pr.dup)) AS pair_total
-  FROM _pair pr;
+-- a fingerprint of everything on the survivors this file must NOT change
+CREATE TEMP TABLE _inform_before ON COMMIT DROP AS
+SELECT 'a' AS t, md5(string_agg(a::text, '|' ORDER BY a.politician_id, a.topic_id, a.season_id)) AS h
+  FROM inform.politician_answers a WHERE a.politician_id IN (SELECT keep FROM _pair)
+UNION ALL
+SELECT 'c', md5(string_agg(c::text, '|' ORDER BY c.politician_id, c.topic_id, c.season_id))
+  FROM inform.politician_context c WHERE c.politician_id IN (SELECT keep FROM _pair);
 
 -- ─── Pre-flight ──────────────────────────────────────────────────────────────────────────────────
 DO $$
 DECLARE v_n int;
 BEGIN
-  -- each twin is active, the incumbent, and holds its reviewed state-legislature seat (EXISTS: a politician-rooted
-  -- join on office_current_holder can fan out)
+  -- each seat term is on the seat row (first run) or already on the survivor (re-run), and it is the only term
+  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.office_terms t ON t.id = pr.term_id
+   WHERE t.office_id = pr.office_id AND t.politician_id IN (pr.seat, pr.keep) AND t.term_end IS NULL;
+  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 reviewed seat terms in place', v_n; END IF;
+  SELECT count(*) INTO v_n FROM essentials.office_terms
+   WHERE politician_id IN (SELECT seat FROM _pair UNION ALL SELECT keep FROM _pair);
+  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % office_terms rows across the pairs, expected 2', v_n; END IF;
+  -- the term is the office's current holder, so the survivor will show as seated
+  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.office_current_holder och ON och.office_id = pr.office_id
+   WHERE och.politician_id IN (pr.seat, pr.keep);
+  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 seats resolve to the pair as current holder', v_n; END IF;
+
+  -- external_ids are in their pre-image or already swapped
+  SELECT count(*) INTO v_n FROM _pair pr
+    JOIN essentials.politicians k ON k.id = pr.keep JOIN essentials.politicians s ON s.id = pr.seat
+   WHERE (k.external_id = pr.keep_ext AND s.external_id = pr.seat_ext)
+      OR (k.external_id = pr.seat_ext AND s.external_id = pr.keep_ext);
+  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 pairs have their reviewed external_ids', v_n; END IF;
+
+  -- survivors: active, same surname, holding everything else of the person
   SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians k ON k.id = pr.keep
-   WHERE k.full_name = pr.keep_name AND k.is_active AND k.is_incumbent
-     AND EXISTS (SELECT 1 FROM essentials.office_current_holder och
-                  WHERE och.politician_id = pr.keep AND och.office_id = pr.keep_office);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 twins are the active holder of their reviewed seat', v_n; END IF;
-  SELECT count(*) INTO v_n FROM essentials.office_terms WHERE politician_id IN (SELECT keep FROM _pair);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: twins hold % office_terms rows, expected 2', v_n; END IF;
+   WHERE k.is_active AND k.last_name IN ('Pearson', 'Klein') AND k.middle_initial IN ('J.', 'D.')
+     AND (SELECT count(*) FROM inform.politician_answers a WHERE a.politician_id = pr.keep) = pr.n_ans
+     AND (SELECT count(*) FROM inform.politician_context c WHERE c.politician_id = pr.keep) = pr.n_ans
+     AND (SELECT count(*) FROM essentials.quotes q WHERE q.politician_id = pr.keep) = pr.n_quotes
+     AND (SELECT count(*) FROM essentials.race_candidates rc WHERE rc.politician_id = pr.keep) = 1
+     AND (SELECT count(*) FROM transparent_motivations.politician_sources ps
+           WHERE ps.essentials_politician_id = pr.keep AND ps.source_system = 'fec_house'
+             AND ps.research_status = 'confirmed') = 1;
+  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 survivors hold their reviewed answers, quotes, race row and FEC link', v_n; END IF;
 
-  -- each duplicate is the reviewed name, not an incumbent, and holds no term
-  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians d ON d.id = pr.dup
-   WHERE d.full_name = pr.dup_name AND NOT d.is_incumbent
-     AND NOT EXISTS (SELECT 1 FROM essentials.office_terms t WHERE t.politician_id = d.id);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % of 2 duplicates are the reviewed seatless non-incumbent row', v_n; END IF;
-
-  -- the reviewed race and FEC rows are on the duplicate (or already on the twin), and there are no others
-  SELECT count(*) INTO v_n FROM _move m
-   WHERE (m.tbl = 'race'   AND EXISTS (SELECT 1 FROM essentials.race_candidates x
-                                        WHERE x.id = m.id AND x.politician_id IN (m.dup, m.keep)))
-      OR (m.tbl = 'source' AND EXISTS (SELECT 1 FROM transparent_motivations.politician_sources x
-                                        WHERE x.id = m.id AND x.essentials_politician_id IN (m.dup, m.keep)
-                                          AND x.source_system = 'fec_house' AND x.research_status = 'confirmed'));
-  IF v_n <> 4 THEN RAISE EXCEPTION 'PRE: % of 4 reviewed race/FEC rows in place', v_n; END IF;
-  SELECT count(*) INTO v_n FROM essentials.race_candidates
-   WHERE politician_id IN (SELECT dup FROM _pair UNION ALL SELECT keep FROM _pair);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % race rows across the pairs, expected 2', v_n; END IF;
-  SELECT count(*) INTO v_n FROM transparent_motivations.politician_sources
-   WHERE essentials_politician_id IN (SELECT dup FROM _pair UNION ALL SELECT keep FROM _pair);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: % politician_sources rows across the pairs, expected 2', v_n; END IF;
-  -- the race rows carry no photo or website, so the mirror trigger writes nothing
-  SELECT count(*) INTO v_n FROM essentials.race_candidates
-   WHERE id IN (SELECT id FROM _move WHERE tbl = 'race')
-     AND (COALESCE(photo_url, '') <> '' OR COALESCE(website_url, '') <> '');
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % race rows now carry a photo or website', v_n; END IF;
-
-  -- quotes: 1 Pearson + 5 Klein across each pair
-  SELECT count(*) INTO v_n FROM _pair pr
-   WHERE (SELECT count(*) FROM essentials.quotes q WHERE q.politician_id IN (pr.dup, pr.keep)) = pr.n_quotes;
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: quote counts across the pairs are not 1 and 5'; END IF;
-
-  -- answers: 4 + 6, all in the closed Season 1, each with its context row and no context row without an answer
-  SELECT count(*) INTO v_n FROM _pair pr
-   WHERE (SELECT count(*) FROM _ans x WHERE x.dup = pr.dup) = pr.n_ans;
-  IF v_n <> 2 THEN RAISE EXCEPTION 'PRE: answer counts across the pairs are not 4 and 6'; END IF;
-  SELECT count(*) INTO v_n FROM _ans x JOIN inform.seasons s ON s.id = x.season_id
-   WHERE s.id <> '2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3' OR s.status <> 'closed';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % answers outside the closed Season 1; this file was reviewed for S1 only', v_n; END IF;
-  SELECT count(*) INTO v_n FROM inform.politician_context c
-   WHERE c.politician_id IN (SELECT dup FROM _pair UNION ALL SELECT keep FROM _pair);
-  IF v_n <> 10 THEN RAISE EXCEPTION 'PRE: % context rows across the pairs, expected 10', v_n; END IF;
-  SELECT count(*) INTO v_n FROM inform.politician_context c
-   WHERE c.politician_id IN (SELECT dup FROM _pair UNION ALL SELECT keep FROM _pair)
-     AND NOT EXISTS (SELECT 1 FROM _ans x WHERE x.topic_id = c.topic_id AND x.season_id = c.season_id
-                        AND c.politician_id IN (x.dup, x.keep));
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % context rows with no matching answer', v_n; END IF;
-  -- no (topic, season) answered on both rows of a pair
-  SELECT count(*) INTO v_n FROM _pair pr JOIN inform.politician_answers a ON a.politician_id = pr.dup
-   WHERE EXISTS (SELECT 1 FROM inform.politician_answers k
-                  WHERE k.politician_id = pr.keep AND k.topic_id = a.topic_id AND k.season_id = a.season_id);
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % answer conflicts between a duplicate and its twin', v_n; END IF;
-
-  -- nothing references a context row by key, and nothing else hangs on a duplicate
-  SELECT (SELECT count(*) FROM inform.politician_context_evidence WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM inform.stance_research_review      WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM inform.evidence_items               WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM essentials.politician_contacts      WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM essentials.politician_name_aliases  WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM politician_id_bridge                WHERE essentials_id IN (SELECT dup FROM _pair))
+  -- seat rows: nothing but the term (and Klein's own image)
+  SELECT (SELECT count(*) FROM inform.politician_answers        WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM inform.politician_context        WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM inform.politician_context_evidence WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM inform.stance_research_review    WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM inform.evidence_items            WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM essentials.race_candidates       WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM essentials.quotes                WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM essentials.politician_contacts   WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM essentials.politician_name_aliases WHERE politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM transparent_motivations.politician_sources WHERE essentials_politician_id IN (SELECT seat FROM _pair))
+       + (SELECT count(*) FROM politician_id_bridge             WHERE essentials_id IN (SELECT seat FROM _pair))
     INTO v_n;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % rows on a duplicate that this file does not move', v_n; END IF;
-
-  -- images: Pearson's twin has none (his moves); Klein's twin has its own (his stays)
-  SELECT count(*) INTO v_n FROM essentials.politician_images
-   WHERE id = '591fb604-01b7-4aa9-9995-89dd394a995e'
-     AND politician_id IN ('5d56470c-fb82-42f7-82e3-d28bf74ace47', 'de50a88b-1366-4088-bb0a-baeb16e19e2d');
-  IF v_n <> 1 THEN RAISE EXCEPTION 'PRE: Pearson''s image row is not in its reviewed place'; END IF;
-  SELECT count(*) INTO v_n FROM essentials.politician_images
-   WHERE politician_id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d' AND id <> '591fb604-01b7-4aa9-9995-89dd394a995e';
-  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: Pearson''s twin has % image(s) of its own now; re-review', v_n; END IF;
-  SELECT count(*) INTO v_n FROM essentials.politicians
-   WHERE id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d' AND NOT photo_custom_url_manual_override
-     AND (COALESCE(photo_custom_url, '') = ''
-          OR photo_custom_url = 'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/5d56470c-fb82-42f7-82e3-d28bf74ace47-headshot.jpg');
-  IF v_n <> 1 THEN RAISE EXCEPTION 'PRE: Pearson''s twin has a photo of its own now; re-review'; END IF;
+  IF v_n <> 0 THEN RAISE EXCEPTION 'PRE: % rows on a seat row that this file does not move', v_n; END IF;
 
   -- pair 3 (Hyer) needs nothing: CA_0182 left only the duplicate's own image row on it
   SELECT count(*) INTO v_n FROM essentials.politicians
@@ -212,119 +161,99 @@ BEGIN
   RAISE NOTICE 'CA_0270 pre-flight OK';
 END $$;
 
--- ─── 1. Race rows, FEC links, quotes ─────────────────────────────────────────────────────────────
-UPDATE essentials.race_candidates rc SET politician_id = m.keep, updated_at = now()
-  FROM _move m WHERE m.tbl = 'race' AND rc.id = m.id AND rc.politician_id = m.dup;
+-- ─── 1. Move the seat ────────────────────────────────────────────────────────────────────────────
+UPDATE essentials.office_terms t
+   SET politician_id = pr.keep,
+       source = t.source || ' | merged onto ' || pr.keep::text || ' by CA_0270 (2026-09-24)'
+  FROM _pair pr
+ WHERE t.id = pr.term_id AND t.politician_id = pr.seat;
 
-UPDATE transparent_motivations.politician_sources ps SET essentials_politician_id = m.keep, updated_at = now()
-  FROM _move m WHERE m.tbl = 'source' AND ps.id = m.id AND ps.essentials_politician_id = m.dup;
+-- ─── 2. Swap external_id (unique, so through NULL) ───────────────────────────────────────────────
+UPDATE essentials.politicians s SET external_id = NULL
+  FROM _pair pr WHERE s.id = pr.seat AND s.external_id = pr.seat_ext
+   AND EXISTS (SELECT 1 FROM essentials.politicians k WHERE k.id = pr.keep AND k.external_id = pr.keep_ext);
+UPDATE essentials.politicians k SET external_id = pr.seat_ext
+  FROM _pair pr WHERE k.id = pr.keep AND k.external_id = pr.keep_ext
+   AND EXISTS (SELECT 1 FROM essentials.politicians s WHERE s.id = pr.seat AND s.external_id IS NULL);
+UPDATE essentials.politicians s SET external_id = pr.keep_ext
+  FROM _pair pr WHERE s.id = pr.seat AND s.external_id IS NULL;
 
-UPDATE essentials.quotes q SET politician_id = pr.keep, updated_at = now()
-  FROM _pair pr WHERE q.politician_id = pr.dup;
+-- ─── 3. Deactivate the seat rows (before any rename, so no two ACTIVE rows share a name) ────────
+UPDATE essentials.politicians s
+   SET is_active = false, is_incumbent = false,
+       notes = COALESCE(s.notes, ARRAY[]::text[]) || ('CA_0270 (2026-09-24): DUPLICATE of ' || pr.keep::text
+               || ', the row that holds this person''s compass answers, quotes, FEC link and 2026 U.S. House race row. '
+               || 'Its state-legislature seat (office_terms ' || pr.term_id::text || ') and its external_id moved '
+               || 'there; deactivated, not deleted.')::text
+  FROM _pair pr
+ WHERE s.id = pr.seat AND (s.is_active OR s.is_incumbent);
 
--- ─── 2. Pearson's portrait: his twin has none ────────────────────────────────────────────────────
-UPDATE essentials.politician_images SET politician_id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d'
- WHERE id = '591fb604-01b7-4aa9-9995-89dd394a995e' AND politician_id = '5d56470c-fb82-42f7-82e3-d28bf74ace47';
+-- ─── 4. The survivor now holds the seat ──────────────────────────────────────────────────────────
+UPDATE essentials.politicians k
+   SET is_incumbent = true,
+       source       = COALESCE(k.source, s.source),
+       data_source  = COALESCE(k.data_source, s.data_source),
+       notes = COALESCE(k.notes, ARRAY[]::text[]) || ('CA_0270 (2026-09-24): holds the state-legislature seat '
+               || '(office_terms ' || pr.term_id::text || ') and external_id of ' || pr.seat::text
+               || ', a duplicate row of the same person, now deactivated. Season 1 was not touched.')::text
+  FROM _pair pr JOIN essentials.politicians s ON s.id = pr.seat
+ WHERE k.id = pr.keep
+   AND NOT EXISTS (SELECT 1 FROM unnest(k.notes) n WHERE n LIKE 'CA_0270 (2026-09-24): holds%');
 
 UPDATE essentials.politicians
-   SET photo_custom_url = 'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/5d56470c-fb82-42f7-82e3-d28bf74ace47-headshot.jpg'
- WHERE id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d' AND COALESCE(photo_custom_url, '') = ''
-   AND NOT photo_custom_url_manual_override;
-
--- ─── 3. Season 1 answers and their context (closed season: identity correction) ──────────────────
-SET LOCAL inform.allow_closed_season_write = 'on';
-
-UPDATE inform.politician_context c SET politician_id = x.keep
-  FROM _ans x
- WHERE c.politician_id = x.dup AND c.topic_id = x.topic_id AND c.season_id = x.season_id;
-
-UPDATE inform.politician_answers a SET politician_id = x.keep
-  FROM _ans x
- WHERE a.politician_id = x.dup AND a.topic_id = x.topic_id AND a.season_id = x.season_id;
-
-RESET inform.allow_closed_season_write;
-
--- ─── 4. Deactivate the duplicates ────────────────────────────────────────────────────────────────
-UPDATE essentials.politicians d
-   SET is_active = false, is_incumbent = false,
-       notes = COALESCE(d.notes, ARRAY[]::text[]) || ('CA_0270 (2026-09-24): DUPLICATE of ' || pr.keep::text || ' ('
-               || pr.keep_name || '), the row that holds the same person''s state-legislature seat. 2026 U.S. House '
-               || 'race row, FEC link, quotes and ' || pr.n_ans || ' Season 1 answers with their context moved there'
-               || CASE WHEN pr.dup = '5d56470c-fb82-42f7-82e3-d28bf74ace47' THEN ', and the portrait' ELSE '' END
-               || '; deactivated, not deleted.')::text
-  FROM _pair pr
- WHERE d.id = pr.dup AND (d.is_active OR d.is_incumbent);
+   SET first_name = 'Matt', full_name = 'Matt D. Klein', alternate_names = ARRAY['Matt Klein', 'Matthew D. Klein']
+ WHERE id = '5e86fb53-a6eb-4b35-82de-79706a66dc1a' AND full_name = 'Matthew D. Klein' AND NOT full_name_manual_override;
 
 -- ─── Post-verify gate ────────────────────────────────────────────────────────────────────────────
 DO $$
-DECLARE v_n int; v_amt numeric; v_before numeric;
+DECLARE v_n int;
 BEGIN
-  IF COALESCE(NULLIF(current_setting('inform.allow_closed_season_write', true), ''), 'off') <> 'off' THEN
-    RAISE EXCEPTION 'POST: the closed-season override is still on';
-  END IF;
-
-  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians d ON d.id = pr.dup
-   WHERE NOT d.is_active AND NOT d.is_incumbent AND d.full_name = pr.dup_name
-     AND EXISTS (SELECT 1 FROM unnest(d.notes) n WHERE n LIKE 'CA_0270 (2026-09-24): DUPLICATE of ' || pr.keep::text || '%');
-  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 duplicates deactivated with the note', v_n; END IF;
-
-  -- nothing left on a duplicate but Klein's own image
-  SELECT (SELECT count(*) FROM essentials.race_candidates WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM transparent_motivations.politician_sources WHERE essentials_politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM essentials.quotes WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM inform.politician_answers WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM inform.politician_context WHERE politician_id IN (SELECT dup FROM _pair))
-       + (SELECT count(*) FROM essentials.politician_images WHERE politician_id = '5d56470c-fb82-42f7-82e3-d28bf74ace47')
-    INTO v_n;
-  IF v_n <> 0 THEN RAISE EXCEPTION 'POST: % rows still on a duplicate', v_n; END IF;
-  SELECT count(*) INTO v_n FROM essentials.politician_images WHERE politician_id = '5e86fb53-a6eb-4b35-82de-79706a66dc1a';
-  IF v_n <> 1 THEN RAISE EXCEPTION 'POST: Klein''s duplicate image row was touched'; END IF;
-
-  -- everything reviewed is on the twin
-  SELECT count(*) INTO v_n FROM _move m
-   WHERE (m.tbl = 'race'   AND EXISTS (SELECT 1 FROM essentials.race_candidates x WHERE x.id = m.id AND x.politician_id = m.keep))
-      OR (m.tbl = 'source' AND EXISTS (SELECT 1 FROM transparent_motivations.politician_sources x
-                                        WHERE x.id = m.id AND x.essentials_politician_id = m.keep));
-  IF v_n <> 4 THEN RAISE EXCEPTION 'POST: % of 4 race/FEC rows on the twins', v_n; END IF;
-  SELECT count(*) INTO v_n FROM _pair pr
-   WHERE (SELECT count(*) FROM essentials.quotes q WHERE q.politician_id = pr.keep) = pr.n_quotes
-     AND (SELECT count(*) FROM inform.politician_answers a JOIN _ans x USING (topic_id, season_id)
-           WHERE a.politician_id = pr.keep AND x.keep = pr.keep) = pr.n_ans
-     AND (SELECT count(*) FROM inform.politician_context c JOIN _ans x USING (topic_id, season_id)
-           WHERE c.politician_id = pr.keep AND x.keep = pr.keep) = pr.n_ans;
-  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 twins hold all their quotes, answers and context', v_n; END IF;
-
-  SELECT count(*) INTO v_n FROM essentials.politicians
-   WHERE id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d'
-     AND photo_custom_url = 'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/5d56470c-fb82-42f7-82e3-d28bf74ace47-headshot.jpg'
-     AND EXISTS (SELECT 1 FROM essentials.politician_images i
-                  WHERE i.id = '591fb604-01b7-4aa9-9995-89dd394a995e' AND i.politician_id = 'de50a88b-1366-4088-bb0a-baeb16e19e2d');
-  IF v_n <> 1 THEN RAISE EXCEPTION 'POST: Pearson''s twin lacks the portrait'; END IF;
-
-  -- the twins keep their seats and flags; one active row per person
+  -- each survivor is the active, seated incumbent, with the legislature's external_id
   SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians k ON k.id = pr.keep
-   WHERE k.is_active AND k.is_incumbent AND k.full_name = pr.keep_name
+   WHERE k.is_active AND k.is_incumbent AND k.external_id = pr.seat_ext AND k.full_name = pr.who
      AND EXISTS (SELECT 1 FROM essentials.office_current_holder och
-                  WHERE och.politician_id = pr.keep AND och.office_id = pr.keep_office);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 twins still active incumbents holding their seat', v_n; END IF;
-  SELECT count(*) INTO v_n FROM essentials.office_terms WHERE politician_id IN (SELECT keep FROM _pair);
-  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: twins hold % office_terms rows, expected 2 (none moved)', v_n; END IF;
+                  WHERE och.office_id = pr.office_id AND och.politician_id = pr.keep)
+     AND EXISTS (SELECT 1 FROM essentials.office_terms t
+                  WHERE t.id = pr.term_id AND t.politician_id = pr.keep
+                    AND strpos(t.source, 'merged onto ' || pr.keep::text || ' by CA_0270') > 0)
+     AND EXISTS (SELECT 1 FROM unnest(k.notes) n WHERE n LIKE 'CA_0270 (2026-09-24): holds%');
+  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 survivors are the seated incumbent with the swapped id and note', v_n; END IF;
   SELECT count(*) INTO v_n FROM essentials.politicians
-   WHERE is_active AND ((first_name = 'Justin' AND full_name LIKE '%Pearson')
-                     OR (first_name IN ('Matt', 'Matthew') AND full_name LIKE '% Klein' AND full_name LIKE '% D. %'));
-  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % active Justin Pearson / Matt D. Klein rows, expected 2', v_n; END IF;
+   WHERE id = '5e86fb53-a6eb-4b35-82de-79706a66dc1a' AND first_name = 'Matt' AND last_name = 'Klein'
+     AND middle_initial = 'D.' AND alternate_names @> ARRAY['Matt Klein', 'Matthew D. Klein'];
+  IF v_n <> 1 THEN RAISE EXCEPTION 'POST: Klein''s survivor does not carry the reviewed names'; END IF;
+  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians k ON k.id = pr.keep
+   WHERE k.source IS NOT NULL OR k.data_source IS NOT NULL;
+  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 survivors carry a legislature citation', v_n; END IF;
 
-  -- no money created or destroyed
-  FOR v_before, v_amt IN
-    SELECT b.pair_total, (SELECT COALESCE(sum(a.total_amount), 0) FROM transparent_motivations.contribution_summary_agg a
-                            JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
-                           WHERE ps.essentials_politician_id = b.keep)
-      FROM _before b
-  LOOP
-    IF v_before <> v_amt THEN RAISE EXCEPTION 'POST: pair confirmed total moved from % to %', v_before, v_amt; END IF;
-  END LOOP;
+  -- each seat row is inactive, holds nothing, and has the candidate's old external_id
+  SELECT count(*) INTO v_n FROM _pair pr JOIN essentials.politicians s ON s.id = pr.seat
+   WHERE NOT s.is_active AND NOT s.is_incumbent AND s.external_id = pr.keep_ext
+     AND NOT EXISTS (SELECT 1 FROM essentials.office_terms t WHERE t.politician_id = s.id)
+     AND EXISTS (SELECT 1 FROM unnest(s.notes) n WHERE n LIKE 'CA_0270 (2026-09-24): DUPLICATE of ' || pr.keep::text || '%');
+  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % of 2 seat rows deactivated, emptied and noted', v_n; END IF;
 
-  RAISE NOTICE 'CA_0270 applied: Pearson and Klein duplicates deactivated; race rows, FEC links, quotes and 10 Season 1 answers on the seated twins';
+  -- 🟢 Season 1 untouched: the survivors' answers and context are byte-identical, and still complete
+  SELECT count(*) INTO v_n FROM _inform_before b
+   WHERE b.h IS DISTINCT FROM (
+     CASE b.t
+       WHEN 'a' THEN (SELECT md5(string_agg(a::text, '|' ORDER BY a.politician_id, a.topic_id, a.season_id))
+                        FROM inform.politician_answers a WHERE a.politician_id IN (SELECT keep FROM _pair))
+       ELSE          (SELECT md5(string_agg(c::text, '|' ORDER BY c.politician_id, c.topic_id, c.season_id))
+                        FROM inform.politician_context c WHERE c.politician_id IN (SELECT keep FROM _pair))
+     END);
+  IF v_n <> 0 THEN RAISE EXCEPTION 'POST: survivors'' answers or context changed; this file must not write inform.*'; END IF;
+  SELECT count(*) INTO v_n FROM _pair pr
+   WHERE (SELECT count(*) FROM inform.politician_answers a WHERE a.politician_id = pr.keep) = pr.n_ans;
+  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: survivors no longer hold 4 and 6 answers'; END IF;
+
+  -- one active row per person
+  SELECT count(*) INTO v_n FROM essentials.politicians
+   WHERE is_active AND ((first_name = 'Justin' AND last_name = 'Pearson')
+                     OR (first_name IN ('Matt', 'Matthew') AND last_name = 'Klein'));
+  IF v_n <> 2 THEN RAISE EXCEPTION 'POST: % active Justin Pearson / Matt Klein rows, expected 2', v_n; END IF;
+
+  RAISE NOTICE 'CA_0270 applied: seats moved onto the Pearson and Klein rows that hold their answers; duplicates deactivated; Season 1 untouched';
 END $$;
 
 COMMIT;
