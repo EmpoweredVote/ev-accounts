@@ -12,10 +12,15 @@
  *     this, a person whose links were later disputed kept the old snapshot forever: measured 2026-09-24, 78 of
  *     132 LA_SOCRATA summaries claimed money their confirmed own committees no longer hold.
  *   - A summary from ANOTHER source (e.g. FEC) is never overwritten or cleared.
+ *
+ * WHEN IT RUNS: after every NetFile ingest (runNetfileIngestWithSummaries — the `la-county-netfile` job and the
+ * in-process monthly cron), and on demand as the `local-finance-summary` job or the two write-la-*.ts scripts.
+ * Until 2026-09-24 it ran only by hand, so every ingest and every disputed link left the stored summary behind.
  */
 
-import { pool } from '../../src/lib/db.js';
-import { OWN_FUNDRAISING_SQL } from '../../src/lib/campaignFinanceService.js';
+import { pool } from './db.js';
+import { OWN_FUNDRAISING_SQL } from './campaignFinanceService.js';
+import { runAdapterForAll } from './campaignFinanceScheduler.js';
 
 export type LocalSource = { sourceSystem: 'la_socrata' | 'la_county_netfile'; label: 'LA_SOCRATA' | 'LA_COUNTY_NETFILE' };
 
@@ -101,13 +106,15 @@ async function getOwnTotals(politicianId: string, src: LocalSource): Promise<Own
   return { gross: Number(row?.gross ?? 0), refunded: Number(row?.refunded ?? 0), refundCount: Number(row?.refund_count ?? 0) };
 }
 
+export type RunCounts = { written: number; unchanged: number; cleared: number; keptOtherSource: number; nothing: number; errors: number };
+
 /** Runs the writer for one source. With dryRun, computes and prints every decision and writes nothing. */
-export async function runLocalFinanceSummary(src: LocalSource, dryRun: boolean): Promise<void> {
+export async function runLocalFinanceSummary(src: LocalSource, dryRun: boolean): Promise<RunCounts> {
   const tag = `[finance-summary ${src.label}${dryRun ? ' DRY RUN' : ''}]`;
   const candidates = await getCandidates(src);
   console.log(`${tag} ${candidates.length} candidate politician(s).`);
 
-  const counts = { written: 0, unchanged: 0, cleared: 0, keptOtherSource: 0, nothing: 0, errors: 0 };
+  const counts: RunCounts = { written: 0, unchanged: 0, cleared: 0, keptOtherSource: 0, nothing: 0, errors: 0 };
   for (const p of candidates) {
     try {
       const plan = planLocalSummary(p.finance_summary, await getOwnTotals(p.id, src), src.label);
@@ -141,4 +148,35 @@ export async function runLocalFinanceSummary(src: LocalSource, dryRun: boolean):
     }
   }
   console.log(`${tag} done ${JSON.stringify(counts)}${dryRun ? ' — nothing was written' : ''}`);
+  return counts;
+}
+
+export const LA_SOCRATA: LocalSource = { sourceSystem: 'la_socrata', label: 'LA_SOCRATA' };
+export const LA_COUNTY_NETFILE: LocalSource = { sourceSystem: 'la_county_netfile', label: 'LA_COUNTY_NETFILE' };
+
+/**
+ * Both local writers, CITY FIRST. The order matters: a person whose Socrata links were disputed but who has
+ * NetFile money (Erik Miller, Robert Luna on 2026-09-24) holds a stale LA_SOCRATA summary that the county writer
+ * must not overwrite. The city run clears it, and then the county run may write theirs.
+ * Throws when any row errored, so an on-demand job exits non-zero.
+ */
+export async function runLocalFinanceSummaries(): Promise<void> {
+  const city = await runLocalFinanceSummary(LA_SOCRATA, false);
+  const county = await runLocalFinanceSummary(LA_COUNTY_NETFILE, false);
+  const errors = city.errors + county.errors;
+  if (errors > 0) throw new Error(`local finance_summary: ${errors} row(s) failed (city ${city.errors}, county ${county.errors})`);
+}
+
+/**
+ * The NetFile ingest, then the local summaries. A summary failure is logged and does NOT fail the ingest: the
+ * contributions are the product, the summary is a derived snapshot the next run rewrites. An ingest failure
+ * skips the summaries (nothing new to summarise) and propagates as before.
+ */
+export async function runNetfileIngestWithSummaries(): Promise<void> {
+  await runAdapterForAll('la_county_netfile');
+  try {
+    await runLocalFinanceSummaries();
+  } catch (err) {
+    console.error('[local-finance-summary] after NetFile ingest — summaries NOT fully refreshed:', err);
+  }
 }
