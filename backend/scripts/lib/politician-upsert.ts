@@ -14,6 +14,9 @@ export interface UpsertPoliticianInput {
   full_name: string;
   first_name: string;
   last_name: string;
+  // From splitPersonName. NULL keeps what the row already has on a re-run, so a hand-set value survives.
+  middle_initial?: string | null;
+  name_suffix?: string | null;
   data_source: string;             // e.g., 'ut-legislator-le-utah', 'ut-county-roster', 'ut-sboe-roster'
   photo_origin_url?: string | null; // optional: original source URL pre-rehost (audit only)
 }
@@ -44,19 +47,22 @@ export async function upsertPolitician(
       // writes its office_terms row). The column default is false since CA_0188, and leaving it out
       // would hide the officeholder from address search. check:occupancy requires the column here.
       `INSERT INTO essentials.politicians
-         (external_id, full_name, first_name, last_name,
+         (external_id, full_name, first_name, last_name, middle_initial, name_suffix,
           is_active, is_vacant, is_incumbent,
           data_source, photo_origin_url, last_synced)
-       VALUES ($1, $2, $3, $4, true, false, true, $5, $6, now())
+       VALUES ($1, $2, $3, $4, $7, $8, true, false, true, $5, $6, now())
        ON CONFLICT (external_id) DO UPDATE SET
          full_name        = EXCLUDED.full_name,
          first_name       = EXCLUDED.first_name,
          last_name        = EXCLUDED.last_name,
+         middle_initial   = COALESCE(EXCLUDED.middle_initial, essentials.politicians.middle_initial),
+         name_suffix      = COALESCE(EXCLUDED.name_suffix, essentials.politicians.name_suffix),
          data_source      = EXCLUDED.data_source,
          photo_origin_url = COALESCE(EXCLUDED.photo_origin_url, essentials.politicians.photo_origin_url),
          last_synced      = now()
        RETURNING id, (xmax = 0) AS inserted`,
-      [row.external_id, row.full_name, row.first_name, row.last_name, row.data_source, row.photo_origin_url ?? null],
+      [row.external_id, row.full_name, row.first_name, row.last_name, row.data_source, row.photo_origin_url ?? null,
+       row.middle_initial ?? null, row.name_suffix ?? null],
     );
     await client.query(`RELEASE SAVEPOINT ${sp}`);
     return { id: ins.rows[0].id, inserted: Boolean((ins.rows[0] as unknown as { inserted: boolean }).inserted) };

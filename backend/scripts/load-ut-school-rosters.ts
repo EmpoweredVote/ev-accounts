@@ -14,6 +14,7 @@ import path from 'node:path';
 import pg from 'pg';
 import { assignExternalId } from './lib/external-id';
 import { upsertPolitician, upsertOffice, replaceContacts } from './lib/politician-upsert';
+import { splitPersonName } from './lib/split-person-name';
 import { rehostPhoto } from './lib/photo-rehost';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -135,15 +136,16 @@ async function loadDistrict(pool: pg.Pool, district: SchoolRecord): Promise<Dist
         continue;
       }
 
-      const [first, ...rest] = row.full_name.split(' ');
-      const last = rest.join(' ') || first;
+      const name = splitPersonName(row.full_name);
       const { inserted } = await upsertPolitician(
         client,
         {
           external_id,
           full_name: row.full_name,
-          first_name: first,
-          last_name: last,
+          first_name: name.first,
+          last_name: name.last,
+          middle_initial: name.middle_initial,
+          name_suffix: name.suffix,
           data_source: dataSource,
           photo_origin_url: row.photo_url || null,
         },

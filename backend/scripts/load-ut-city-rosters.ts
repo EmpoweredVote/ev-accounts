@@ -15,6 +15,7 @@ import path from 'node:path';
 import pg from 'pg';
 import { assignExternalId } from './lib/external-id';
 import { upsertPolitician, upsertOffice, replaceContacts } from './lib/politician-upsert';
+import { splitPersonName } from './lib/split-person-name';
 import { rehostPhoto } from './lib/photo-rehost';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -132,10 +133,10 @@ async function ingest(
       return;
     }
 
-    const [first, ...rest] = fullName.split(' ');
-    const last = rest.join(' ') || first;
+    const name = splitPersonName(fullName);
     await upsertPolitician(client, {
-      external_id, full_name: fullName, first_name: first, last_name: last,
+      external_id, full_name: fullName, first_name: name.first, last_name: name.last,
+      middle_initial: name.middle_initial, name_suffix: name.suffix,
       data_source: opts.sourceSlug, photo_origin_url: opts.photo ?? null,
     }, idx);
 
