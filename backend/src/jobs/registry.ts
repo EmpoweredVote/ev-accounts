@@ -26,6 +26,7 @@
  */
 import { runCalibrationLapseJob } from '../lib/cronService.js';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
+import { runFecAutoMatchJob } from '../lib/fecResearch.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
 import { runConsensusPass } from '../vq/jobs/consensusBatchJob.js';
@@ -46,6 +47,11 @@ export const JOBS: Record<string, JobFn> = {
   // Core (backend/src/cron/) — the always-on jobs the API ran in-process.
   'calibration-lapse': () => runCalibrationLapseJob(),
   'fec-burst': () => runFecScheduledJob(),
+  // Finds FEC ids for the federal research queue: new officeholders and candidates, plus a
+  // re-check of needs_research rows older than 7 days. Until 2026-09-24 it ran only by hand
+  // (admin endpoint / scripts). Runs as the FIRST step of ev-jobs-fec-burst, so links it
+  // confirms get their contributions in the same run.
+  'fec-auto-match': () => runFecAutoMatchJob(),
   'la-county-netfile': () => runAdapterForAll('la_county_netfile'),
   'ocpf': () => runAdapterForAll('ocpf'),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.

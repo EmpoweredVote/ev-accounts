@@ -26,6 +26,7 @@ import {
   runFecAutoMatch,
   parseFecName,
   scoreMatch,
+  runFecAutoMatchJob,
 } from './fecResearch.js';
 
 function candidatesSearchResponse(results: unknown[] = []) {
@@ -715,5 +716,67 @@ describe('runFecAutoMatch — a re-check rewrites the existing row', () => {
     expect(summary.results[0]!.error).toMatch(/no longer needs_research/);
     expect(summary.errors).toBe(1);
     expect(poolQueryMock).toHaveBeenCalledTimes(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// runFecAutoMatchJob — the scheduled entry point
+// ---------------------------------------------------------------------------
+//
+// jobs/run.ts exits 0 unless the job THROWS, and runFecAutoMatch never throws for a
+// failed search: it counts the error and moves on. On a schedule, a run where every
+// search failed (a revoked FEC key, the API down) would therefore look healthy. The
+// job wrapper turns "every person errored" into a thrown error, so the cron run fails.
+
+describe('runFecAutoMatchJob — the scheduled entry point', () => {
+  const savedKey = process.env.FEC_API_KEY;
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    acquireFecSlotMock.mockClear();
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-10-05T12:00:00Z'));
+    process.env.FEC_API_KEY = 'test-api-key';
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    if (savedKey === undefined) delete process.env.FEC_API_KEY;
+    else process.env.FEC_API_KEY = savedKey;
+  });
+
+  async function settle<T>(p: Promise<T>): Promise<T> {
+    const handled = p.then(v => ({ ok: true as const, v }), (e: unknown) => ({ ok: false as const, e }));
+    await vi.runAllTimersAsync();
+    const r = await handled;
+    if (!r.ok) throw r.e;
+    return r.v;
+  }
+
+  it('fails the run when every search errored', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 403, json: async () => ({}) }));
+    poolQueryMock.mockResolvedValueOnce({ rows: [queueRow({ id: 'pol-1' }), queueRow({ id: 'pol-2', full_name: 'John Roe' })] });
+
+    await expect(settle(runFecAutoMatchJob())).rejects.toThrow(/all 2 FEC searches failed/);
+  });
+
+  it('succeeds on an empty queue', async () => {
+    vi.stubGlobal('fetch', vi.fn());
+    poolQueryMock.mockResolvedValueOnce({ rows: [] });
+
+    await expect(settle(runFecAutoMatchJob())).resolves.toMatchObject({ processed: 0, errors: 0 });
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('succeeds when only some searches errored, and reports them', async () => {
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: false, status: 503, json: async () => ({}) })
+      .mockResolvedValue(candidatesSearchResponse()));
+    poolQueryMock
+      .mockResolvedValueOnce({ rows: [queueRow({ id: 'pol-1' }), queueRow({ id: 'pol-2', full_name: 'John Roe' })] })
+      .mockResolvedValue({ rows: [{ id: 'src-2' }] });
+
+    await expect(settle(runFecAutoMatchJob())).resolves.toMatchObject({ processed: 2, errors: 1 });
   });
 });
