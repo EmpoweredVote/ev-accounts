@@ -37,7 +37,10 @@
 --   the three chambers; only chambers references the government.)
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator: Chris Andrews). Dry run: every gate passed, ROLLBACK; apply: COMMIT
+--   (UPDATE 1, UPDATE 5, DELETE 3, DELETE 1); re-run inside BEGIN/ROLLBACK: every UPDATE/DELETE 0, gates passed.
+--   Live address search, 200 N Spring St, Los Angeles: Hilda L. Solis, district_type COUNTY, "Los Angeles County Board
+--   of Supervisors". check:reachability OK (UNREACHABLE 7/7).
 --
 -- ROLLBACK: re-insert the pre-image government and chambers; move chamber 9de1e8c8 back to 841f214e; set the five
 --   districts back to district_type 'LOCAL', mtfcc 'X0001'.

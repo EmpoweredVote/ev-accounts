@@ -37,7 +37,11 @@
 --   fd703947 on 66316105. The three one-seat chambers had name_formal ''.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator: Chris Andrews). Dry run: gates passed, ROLLBACK; apply: COMMIT
+--   (MA UPDATE 1 / DELETE 1; IN UPDATE 19, 1, 3, 1 / DELETE 4); re-run inside BEGIN/ROLLBACK: every UPDATE/DELETE 0.
+--   Live address search: Indianapolis (200 W Washington St) Braun / Beckwith / Rokita under "Indiana Governor" /
+--   "Indiana Lieutenant Governor" / "Indiana Attorney General", senators Banks / Young; Boston (24 Beacon St) Healey /
+--   Driscoll / Campbell, senators Markey / Warren. check:reachability OK.
 --
 -- ROLLBACK: re-insert the five pre-image rows; move the chambers / districts listed above back; set e00dba00.geo_id
 --   NULL; set name_formal '' on 80557ef6 / e9650ac7 / 13da2df4.

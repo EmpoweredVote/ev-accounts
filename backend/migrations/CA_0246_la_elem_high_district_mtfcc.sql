@@ -20,7 +20,9 @@
 --   G5420 geofence, and has EXACTLY ONE geofence, whose code is G5400 or G5410. Nothing else changes.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator: Chris Andrews). Dry run: gates passed, ROLLBACK; apply: COMMIT (UPDATE 31);
+--   re-run inside BEGIN/ROLLBACK: 0 candidates, UPDATE 0, gates passed. Live elections-by-address, 3540 Lexington Ave,
+--   El Monte: the 2026 LA County General now lists "El Monte City School Board". check:reachability OK.
 --
 -- ROLLBACK: UPDATE essentials.districts SET mtfcc = 'G5420' WHERE id IN (the 31 ids the pre-flight temp table lists).
 -- IDEMPOTENT: a re-run finds 0 candidates and changes 0 rows.
