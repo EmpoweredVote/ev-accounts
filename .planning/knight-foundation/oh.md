@@ -11,7 +11,7 @@ Worktree `C:\ev-accounts-oh`, branch `knight/oh-slice8`.
 | 1 geography | ✅ **APPLIED 2026-09-23 — 132 boundaries, 132 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-23 — 132 offices, 130 seated, 2 vacant** (`CC_0131`/`CC_0132`) |
 | 3 city waves | ✅ **APPLIED 2026-09-23 — Akron 14 offices, 14 seated, 0 vacancies** (`X0063`, `CC_0133`/`CC_0134`) |
-| 4 county waves | — Summit: Executive + 11 council (8 district + 3 at-large) + 5 row officers |
+| 4 county waves | ✅ **APPLIED 2026-09-24 — Summit 17 offices, 17 seated, 0 vacancies** (`X0064`, `CC_0136`/`CC_0137`). **Akron scores 4 of 4.** |
 | 5 assets | — 1 banner (`akron`), ~163 portraits |
 
 ---
@@ -333,6 +333,127 @@ allocator.** Noted here rather than fixed, because it is outside this wave.
 
 ---
 
+## ✅ OH-4 APPLIED 2026-09-24 — Summit County is seated, stage 4 closes, and Akron scores 4 of 4
+
+`X0064` (8 council-district polygons), `CC_0136` structure, `CC_0137` occupancy: **17 offices, 17
+people, 0 vacancies** — 8 district council + 3 at-large council + County Executive + 5 elected
+officers, across 1 government and 3 chambers. `politicians` +17, `offices` +17, `office_terms` +17,
+`districts` **+8** (the countywide row already existed and was reused). `offices_missing_terms`
+**unmoved at 429/238**. Loader and both migrations re-run clean.
+
+🟢 **AKRON CITY HALL NOW RETURNS 18 ROWS AND SCORES 4 OF 4** — Ward 3 (Sommerville), **county
+council District 4 (Jeff Wilhite)**, HD-33 (Sims) and SD-28 (Weinstein), plus the Mayor, Akron's
+three at-large, Summit's three at-large, the County Executive, all five county officers and the
+U.S. Representative. ⚠ A Cleveland control returns **0 Summit offices**. Per-district control 8/8.
+
+### 🔴🔴 THE COUNTY PUBLISHES TWO COUNCIL MAPS THAT DISAGREE ABOUT AKRON, AND NEITHER NAME NOR CLOSURE COULD SETTLE IT
+
+Both live in the county's own `Summit_Admin` ArcGIS org:
+
+| | features | key field | last edited |
+| --- | --- | --- | --- |
+| `Summit_County_Council_2025`, layer **"Plan A4"** | **11** (8 districts + 3 at-large with NULL geometry) | `PA4` | 2026-03-02 |
+| `County_Council_2023` | 8 | **`Dist2013`** | 2025-02-06 |
+
+They are not two renderings of one map: per-district symmetric difference runs **5% to 209%** of
+district area. **Akron City Hall is District 5 on the 2023 layer and District 4 on Plan A4** — so
+the choice decides which real person is shown as the county council member for this slice's own city.
+
+🔴 **A NAME CANNOT ARBITRATE.** "County_Council_2023" sounds current and carries a field named for
+**2013**; "Plan A4" is a districting-commission plan label, and SC-4 learned that such an org also
+publishes drafts and staff plans that were never adopted.
+🔴 **NEITHER CAN CLOSURE.** Both tile the county — **99.937%** and **99.996%**. That is CA-2's rule
+exactly: closure is a property of the *reference*, never an arbitration between vintages.
+
+### 🟢 WHAT DID SETTLE IT, in order of weight
+
+1. **The arbiter — the members' own words.** Each council member's page names the communities they
+   represent. Tested at each place's TIGER interior point: **Plan A4 agrees on 17 of 18, the 2023
+   layer on 15 of 18.** Plan A4 wins Cuyahoga Falls (Schmidt, D2), Boston Heights and Munroe Falls
+   (Licate, D3). This is now **GATE 5** in the loader, so it is re-runnable.
+2. **The body's own lookup app.** The council's "Find Your Council Member" page redirects to an
+   ArcGIS app whose webmap has exactly **one** operational layer: Plan A4. A second council lookup
+   app uses the same webmap. CA-2 named this as one of the real legs, and it is.
+3. **The council's own PDF** is `district-map-february-2025.pdf`; the Plan A4 layer was created
+   **2025-02-18**, the same month.
+4. Plan A4 carries all **eleven** members with current leadership roles; the 2023 layer carries
+   eight and a stale email domain.
+
+### 🔴 THE ONE PIECE OF EVIDENCE POINTING THE OTHER WAY IS RECORDED, NOT BURIED
+
+**Jeff Wilhite's own council page says his District 4 covers Bath Township**, and Plan A4 puts Bath
+in District 5. The 2023 layer puts it in District 4, matching his page. That is the single miss out
+of eighteen, against three other members' pages that contradict the 2023 map in return. The reading
+is that his bio was not updated when the boundaries moved — mixed staleness across bios is exactly
+what a boundary change looks like. ▶ **If a later session finds an instrument that overturns this,
+District 4 vs District 5 for Akron is the first thing to re-check.**
+
+⚠ **And the Bath test itself needed scoping: Ohio has THREE townships named "Bath".** A join on
+name alone returned all three, two of them outside Summit, and scored them as failures for both
+maps. Summit's is `geo_id 3915304248`. The Lake County jurisdiction-collision trap, inside my own
+query this time.
+
+### 🔴🔴 THE CHARTER, CONFIRMED BY THE OFFICE THAT PROVES IT
+
+Summit elects a **County Executive** and **no commissioners**, an **11-member Council** (8 district
++ 3 at-large, enlarged by the voters in 1988), and **five** row officers. 🟢 The Fiscal Officer's own
+site states the merge in its own words — she "manages the county divisions of **Auditor, Recorder,
+and Treasurer**" — so the three statutory offices Ohio's other 86 counties elect are one office here,
+and there is no elected Coroner either. **An Ohio statutory template would have invented four offices
+and missed two.** `CC_0136` carries a gate that refuses any of the abolished titles.
+
+⚠ **So stage 4 here buys nothing reusable for a later Ohio county** — the opposite of what the
+program spec's state-slice argument predicts. Only Cuyahoga shares this shape.
+
+### 🔴 SOURCE-ACCESS NOTES
+
+- **`engineer.summitoh.net` and `clerkofcourts.summitoh.net` do not resolve.** The working hosts are
+  `summitengineer.net` and `clerkweb.summitoh.net`. ▶ A guessed subdomain is not an absence.
+- `boe.ohio.gov` — the Board of Elections, which would have been an independent authority on the
+  districts — **403s behind the same Secretary of State WAF and serves a maintenance page**, 1.28 MB
+  of it, with a clean-looking body.
+- The **Census API answered HTTP 200 with an HTML "Missing Key" page**, so the charter's own
+  population-equality test could not be run. The documented trap, met head on.
+- `summitmaps.summitoh.net` (which hosts a layer literally titled "County Council Districts (2016)")
+  returns **503**.
+
+### Terms: two dated, fifteen not
+
+🟢 Only two arrivals are published by the office that holds them: **Fiscal Officer Kristen M.
+Scalise "since May 2011"** → 2011-05-01 at `month` (the day is not published), and **Prosecutor
+Elliot Kolkovich "sworn into office on February 21, 2024"** → 2024-02-21 at `day`. ⚠ Both carry
+`how_started = 'unknown'`: a February start is mid-term and the page does not say whether by
+appointment or election. **The date is sourced; the mechanism is not, and only the sourced half is
+written.**
+
+🔴 **The Clerk of Courts is a live instance of the case OH-3 proved.** Tavia Galonski was
+**appointed in January 2024** to a seat she then **won in November 2024** — so neither a January
+commencement nor her election year describes when she took the office. It is the San José Candelas
+case exactly. Her appointment date is not published, so nothing is written.
+
+### Gates
+
+Name collisions checked on the guard's own key — **0 of 17** against a 198-row control. Six
+post-verify gates **watched failing**, including the named Akron assertions in both halves; ⚠ the
+at-large ordinal control was refused by the **`office_terms_no_overlap` exclusion constraint** before
+reaching my gate, and the planted Auditor was caught by the officer-count gate *before* the charter
+gate — the charter gate is a second line, not the only one. Five loader gates watched failing.
+
+🔴🔴 **AND MY FIRST CONTROL HARNESS LIED ABOUT ALL THREE LOADER GATES.** It reported "DID NOT FIRE"
+for GATE 1, GATE 2 and GATE 5. Run directly, every one of them fired. The harness piped the script's
+output through `grep | head -1` inside a command substitution, and the script's own crash-on-exit
+left the substitution empty. ▶ **Three gates reporting "did not fire" is a uniform answer, and a
+uniform answer is a broken detector — including when the detector is the control harness itself.**
+Re-run writing to a file first, all three fired.
+
+Dry run of both migrations as **one transaction ending in ROLLBACK**. `check:occupancy`,
+`check:migrations`, `check:reservations`, `check:child-county` green; `check:reachability` nothing
+regressed, UNREACHABLE **9** against baseline 24.
+
+▶ **Next: OH-5 — assets. One banner key `akron`, and ~163 portraits.**
+
+---
+
 ## Baseline as measured when the slice opened, 2026-09-23 — before OH-1 wrote anything
 
 Re-measure rather than trust this once any wave has applied.
@@ -564,11 +685,8 @@ an Akron member seated under the 2023 plan. That is one anchor, not a proof; OH-
    2 vacant. Akron scores 2 of 4.**
 5. ~~OH-3 Akron.~~ **Done — `X0063`, `CC_0133`/`CC_0134`, 14 offices, 14 seated. Akron scores
    3 of 4.**
-6. **OH-4 Summit County**, 17 offices — 🔴 a **charter** county, so the Ohio statutory template does
-   not apply (trap 6). Its council districts are published as a **PDF**; ask the county GIS
-   department before concluding no layer exists. 🟢 Summit County has its own ArcGIS org — the
-   `Summit_Admin` account surfaced while searching for Akron's wards, so start there.
-   This is the seat that takes Akron's probe from 3 of 4 to 4 of 4.
+6. ~~OH-4 Summit County.~~ **Done — `X0064`, `CC_0136`/`CC_0137`, 17 offices, 17 seated.
+   Akron scores 4 of 4.**
 7. **OH-5 assets** — one banner key `akron`, and ~163 portraits. 🔴 Count the legislature's 130
    inside stage 5, not beside it (the GA-5 debt).
 
