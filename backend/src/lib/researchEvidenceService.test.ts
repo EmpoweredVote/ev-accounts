@@ -239,6 +239,79 @@ describe('review reads carry the open-season current value', () => {
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: raw }] });
     expect((await getResearchReviewById('x'))?.currentValue).toBe(want);
   });
+
+  // Task 5, requirement 2: the list view groups by (topic, body/chamber) — the body comes from a
+  // DISTINCT-ON-deduped join, never a plain politician-rooted one (CLAUDE.md — that fans out).
+  it('joins the politician\'s current office body via a DISTINCT ON subquery, and maps body_label', async () => {
+    const { getResearchReviewById, listPendingResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [] }).mockResolvedValueOnce({ rows: [] });
+    await getResearchReviewById('x');
+    await listPendingResearchReview();
+    for (const [sql] of mockQuery.mock.calls) {
+      expect(String(sql)).toMatch(/DISTINCT ON\s*\(\s*och\.politician_id\s*\)/);
+      expect(String(sql)).toContain('essentials.office_current_holder');
+      expect(String(sql)).toContain('AS body_label');
+    }
+  });
+  it('maps body_label to bodyLabel, null when the politician holds no current office', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], body_label: 'State Senate' }] });
+    expect((await getResearchReviewById('x'))?.bodyLabel).toBe('State Senate');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'y', evidence: [], body_label: null }] });
+    expect((await getResearchReviewById('y'))?.bodyLabel).toBeNull();
+  });
+});
+
+// Task 5, requirement 1: the detail page reads the full ladder (question + five rungs) for the
+// row's own revision, or the open season's pin for a legacy row — from the versioned source only.
+describe('getResearchReviewWithLadder', () => {
+  beforeEach(() => mockQuery.mockClear());
+
+  const fiveRungs = [1, 2, 3, 4, 5].map((value) => ({ question_text: 'How much regulation?', value, text: `rung ${value}` }));
+
+  it('reads the row\'s OWN revision when known, and marks it not using the open pin', async () => {
+    const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], topic_revision_id: 'rev-a', open_topic_revision_id: 'rev-a' }] })
+      .mockResolvedValueOnce({ rows: fiveRungs });
+    const result = await getResearchReviewWithLadder('x');
+    const [ladderSql, ladderParams] = mockQuery.mock.calls[1];
+    expect(String(ladderSql)).toContain('inform.compass_topic_revisions');
+    expect(String(ladderSql)).toContain('inform.compass_stance_revisions');
+    expect(ladderParams).toEqual(['rev-a']);
+    expect(result?.ladder).toEqual({
+      revisionId: 'rev-a',
+      questionText: 'How much regulation?',
+      rungs: [1, 2, 3, 4, 5].map((value) => ({ value, text: `rung ${value}` })),
+      usingOpenPin: false,
+    });
+  });
+
+  it('falls back to the open season\'s pin for a legacy row (revision unknown), and says so', async () => {
+    const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], topic_revision_id: null, open_topic_revision_id: 'rev-b' }] })
+      .mockResolvedValueOnce({ rows: fiveRungs });
+    const result = await getResearchReviewWithLadder('x');
+    expect(mockQuery.mock.calls[1][1]).toEqual(['rev-b']);
+    expect(result?.ladder?.usingOpenPin).toBe(true);
+    expect(result?.ladder?.revisionId).toBe('rev-b');
+  });
+
+  it('returns ladder: null when neither the row\'s revision nor the open pin is known', async () => {
+    const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], topic_revision_id: null, open_topic_revision_id: null }] });
+    const result = await getResearchReviewWithLadder('x');
+    expect(result?.ladder).toBeNull();
+    expect(mockQuery).toHaveBeenCalledTimes(1); // no ladder query attempted
+  });
+
+  it('returns null (not found) without querying the ladder', async () => {
+    const { getResearchReviewWithLadder } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    expect(await getResearchReviewWithLadder('missing')).toBeNull();
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('writeVerifiedStance', () => {
@@ -444,6 +517,46 @@ describe('resolveResearchReview — citations written on approval, not at queue 
       // `r.*` simply has no topic_revision_id key before the migration.
       mockQuery.mockResolvedValueOnce({ rows: [{ ...reviewRow, open_topic_revision_id: 'rev-b' }] });
       await expect(resolveResearchReview('rev-1', 'editor-1')).resolves.toEqual({ ladderRevisionUnknown: true });
+    });
+  });
+
+  // Task 5, requirement 3: a value override that is not accompanied by a changed reasoning is an
+  // unevidenced claim — the public "why" would still argue the OLD chair for the NEW value.
+  describe('value override requires a changed reasoning', () => {
+    it('refuses (INCOMPLETE) a changed valueOverride with no reasoningOverride at all', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [reviewRow] }); // reviewRow.proposed_value === 3
+      await expect(resolveResearchReview('rev-1', 'editor-1', [], 4)).rejects.toMatchObject({
+        code: 'INCOMPLETE',
+        message: 'valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value',
+      });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+    it('refuses (INCOMPLETE) a changed valueOverride whose reasoningOverride equals the old reasoning', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+      await expect(resolveResearchReview('rev-1', 'editor-1', [], 4, '  reasoning text  ')).rejects.toMatchObject({
+        code: 'INCOMPLETE',
+      });
+      expect(mockConnect).not.toHaveBeenCalled();
+    });
+    it('accepts a changed valueOverride with a genuinely different reasoningOverride', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+      await resolveResearchReview('rev-1', 'editor-1', [], 4, 'new reasoning explaining the higher chair');
+      expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
+    });
+    it('does not require a reasoningOverride when valueOverride equals the proposed value', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+      await resolveResearchReview('rev-1', 'editor-1', [], 3); // reviewRow.proposed_value === 3
+      expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
+    });
+    it('does not require a reasoningOverride when valueOverride is absent (re-approving as proposed)', async () => {
+      const { resolveResearchReview } = await import('./researchEvidenceService.js');
+      mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
+      await resolveResearchReview('rev-1', 'editor-1');
+      expect(mockClientQuery.mock.calls.map((c) => String(c[0]))).toContain('COMMIT');
     });
   });
 

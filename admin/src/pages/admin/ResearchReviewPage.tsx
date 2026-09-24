@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { apiFetch } from '../../lib/api';
+import { overrideNeedsReasoning } from './researchReviewApproval';
 
 interface EvidenceSnippet {
   snippet_index: number;
@@ -39,6 +40,15 @@ interface ResearchReviewRow {
   ladderRevisionUnknown: boolean;
   /** Known revision that is not the open pin — the server refuses approval (409). */
   ladderChanged: boolean;
+  /** The body/chamber of the politician's current office (list-view cohort grouping). */
+  bodyLabel: string | null;
+  /** The full ladder text for this row's revision (or the open pin, for a legacy row). */
+  ladder: {
+    revisionId: string;
+    questionText: string;
+    rungs: Array<{ value: number; text: string }>;
+    usingOpenPin: boolean;
+  } | null;
 }
 
 export function ResearchReviewPage() {
@@ -147,9 +157,18 @@ export function ResearchReviewPage() {
   // this only saves a round trip.
   const numericValue = Number(editValue);
   const isValidValue = editValue !== '' && Number.isInteger(numericValue) && numericValue >= 1 && numericValue <= 5;
+  // Task 5, requirement 3: a value override with no changed reasoning is refused by the server
+  // (422); this only saves the round trip. The server is the source of truth either way.
+  const needsReasoningForOverride = overrideNeedsReasoning({
+    proposedValue: row.proposedValue,
+    proposedReasoning: row.proposedReasoning,
+    editedValue: isValidValue ? numericValue : null,
+    editedReasoning: editReasoning,
+  });
   // A row researched against a ladder the open season no longer pins is refused by the server
   // (409); this only saves the round trip.
-  const canApprove = !!row.politicianId && !!row.topicId && !row.ladderChanged && isValidValue && hasSource;
+  const canApprove = !!row.politicianId && !!row.topicId && !row.ladderChanged
+    && isValidValue && hasSource && !needsReasoningForOverride;
   const totalVerified = humanVerified.size;
   const meetsThreshold = totalVerified >= row.threshold;
   const currentValueText =
@@ -200,6 +219,8 @@ export function ResearchReviewPage() {
             ? 'Topic could not be matched — approve is disabled.'
             : !isValidValue
             ? 'Enter a whole number from 1 to 5 to enable approve.'
+            : needsReasoningForOverride
+            ? 'The value differs from the proposal — edit the reasoning to explain the new value before approving.'
             : 'No source is verified — check a source URL and mark it verified to enable approve.'}
         </div>
       )}
@@ -218,6 +239,42 @@ export function ResearchReviewPage() {
             Current value in the open season: {currentValueText}
           </span>
         </div>
+
+        {/* Ladder — task 5, requirement 1: the question and all five rungs for the row's own
+            revision (or the open season's pin, for a legacy row), so the reviewer checks the
+            proposed chair against the ladder text itself rather than trusting the topic key. */}
+        {row.ladder && (
+          <div>
+            <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+              Ladder
+              {row.ladder.usingOpenPin && (
+                <span className="normal-case font-normal text-yellow-700 dark:text-yellow-400">
+                  {' '}(open season's ladder — this row's revision is unknown)
+                </span>
+              )}
+            </p>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">{row.ladder.questionText}</p>
+            <ol className="space-y-1">
+              {row.ladder.rungs.map((rung) => {
+                const isProposed = row.proposedValue === rung.value;
+                return (
+                  <li
+                    key={rung.value}
+                    className={`flex gap-2 rounded-md px-2 py-1 text-sm ${
+                      isProposed
+                        ? 'bg-ev-red/10 border border-ev-red/40 text-gray-900 dark:text-white font-medium'
+                        : 'text-gray-600 dark:text-gray-400'
+                    }`}
+                  >
+                    <span className="shrink-0 w-4 text-right">{rung.value}</span>
+                    <span>{rung.text}</span>
+                    {isProposed && <span className="ml-auto shrink-0 text-xs text-ev-red">proposed</span>}
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        )}
 
         {/* Proposed stance */}
         <div>

@@ -197,6 +197,39 @@ export interface ResearchReviewRow {
    * it (CONFLICT): the value answers a sentence the open season no longer asks.
    */
   ladderChanged: boolean;
+  /**
+   * The body/chamber of the politician's CURRENT office (task 5) — e.g. "State Senate", or the
+   * office title when there is no chamber (a mayor, an executive seat). null when the politician
+   * holds no current office, or the row has no politician_id yet (unresolved_politician).
+   * Computed via a DISTINCT-ON-deduped join (CLAUDE.md: a politician-rooted
+   * essentials.office_current_holder join fans out over two offices one person holds), so this is
+   * ONE deliberately chosen office per politician, never a second result row.
+   */
+  bodyLabel: string | null;
+}
+
+/** One rung of a ladder, read from the versioned source (never the frozen `compass_stances`). */
+export interface LadderRung {
+  value: number;
+  text: string;
+}
+
+/**
+ * The full ladder text for one `compass_topic_revisions` row: the question and its five rungs,
+ * read from `inform.compass_topic_revisions` / `inform.compass_stance_revisions` — the versioned
+ * source `check:ladder-text` requires (never the frozen `compass_topics.question_text` /
+ * `compass_stances.text`, which CA_0012 stopped maintaining).
+ */
+export interface LadderInfo {
+  revisionId: string;
+  questionText: string;
+  rungs: LadderRung[];
+  /**
+   * true = the row's OWN revision is unknown (a legacy row, queued before CA_0264), so this is the
+   * open season's CURRENT pin shown instead, labelled accordingly by the caller. false = this is
+   * the exact revision the row was researched against.
+   */
+  usingOpenPin: boolean;
 }
 
 /** The refusal message for a row whose ladder was re-pinned after it was researched. */
@@ -228,6 +261,30 @@ const OPEN_PIN_SQL = `
      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
     WHERE sq.topic_id = r.topic_id) AS open_topic_revision_id`;
 
+/**
+ * The row's politician's CURRENT office body/chamber (task 5, list-view cohort grouping).
+ *
+ * 🔴 A politician-rooted join into `essentials.office_current_holder` fans out — the view is one
+ * row per OFFICE, and the exclusion constraint on `office_terms` cannot see one person holding
+ * TWO offices (see CLAUDE.md, "Officeholder occupancy"). So this is a `DISTINCT ON
+ * (och.politician_id)` subquery, deduped to ONE office per politician BEFORE it ever joins `r` —
+ * the same fix `essentialsService.ts` uses for the identical shape (`getPoliticians`).
+ * `COALESCE(ch.name, o.title)`: most offices sit in a chamber ("State Senate", "City Council");
+ * a single-holder office (mayor, a statewide executive seat) has no chamber, so its own title is
+ * the body. A vacant office is deprioritized (`is_vacant NULLS LAST`) but not excluded — the
+ * subquery is keyed on the politician who WON it, and CLAUDE.md warns that a stale `is_vacant`
+ * flag can sit beside a live term either way.
+ */
+const BODY_JOIN_SQL = `
+  LEFT JOIN (
+    SELECT DISTINCT ON (och.politician_id)
+           och.politician_id, COALESCE(ch.name, o.title) AS body_label
+      FROM essentials.office_current_holder och
+      JOIN essentials.offices o ON o.id = och.office_id
+      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+     ORDER BY och.politician_id, o.is_vacant NULLS LAST, o.id
+  ) body ON body.politician_id = r.politician_id`;
+
 const nullable = (v: unknown): string | null => (v === null || v === undefined ? null : String(v));
 
 function mapReviewRow(row: any): ResearchReviewRow {
@@ -250,6 +307,7 @@ function mapReviewRow(row: any): ResearchReviewRow {
     currentValue: row.current_value === null || row.current_value === undefined ? null : Number(row.current_value),
     ...ladderState(nullable(row.topic_revision_id), nullable(row.open_topic_revision_id)),
     seasonId: nullable(row.season_id),
+    bodyLabel: nullable(row.body_label),
   };
 }
 
@@ -271,8 +329,9 @@ export function ladderState(topicRevisionId: string | null, openTopicRevisionId:
 export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> {
   const { pool } = await import('./db.js');
   const { rows } = await pool.query(
-    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}
+    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}, body.body_label
        FROM inform.stance_research_review r
+       ${BODY_JOIN_SQL}
       WHERE r.status = 'pending'
       ORDER BY r.full_name_raw, r.topic_key`,
   );
@@ -282,12 +341,61 @@ export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> 
 export async function getResearchReviewById(id: string): Promise<ResearchReviewRow | null> {
   const { pool } = await import('./db.js');
   const { rows } = await pool.query(
-    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}
+    `SELECT r.*, ${CURRENT_VALUE_SQL}, ${OPEN_PIN_SQL}, body.body_label
        FROM inform.stance_research_review r
+       ${BODY_JOIN_SQL}
       WHERE r.id = $1`,
     [id],
   );
   return rows[0] ? mapReviewRow(rows[0]) : null;
+}
+
+/**
+ * The ladder text for one `compass_topic_revisions` id — the question and its five rungs, read
+ * only from the versioned source (`check:ladder-text`'s gate; see LadderInfo). null when the
+ * revision id names no row (should not happen for a real FK value, but a defensive read here
+ * beats a 500 on the review page).
+ */
+async function fetchLadder(revisionId: string, usingOpenPin: boolean): Promise<LadderInfo | null> {
+  const { pool } = await import('./db.js');
+  const { rows } = await pool.query<{ question_text: string; value: number; text: string }>(
+    `SELECT t.question_text, s.value, s.text
+       FROM inform.compass_topic_revisions t
+       JOIN inform.compass_stance_revisions s ON s.topic_revision_id = t.id
+      WHERE t.id = $1
+      ORDER BY s.value`,
+    [revisionId],
+  );
+  if (rows.length === 0) return null;
+  return {
+    revisionId,
+    questionText: rows[0].question_text,
+    rungs: rows.map((r) => ({ value: r.value, text: r.text })),
+    usingOpenPin,
+  };
+}
+
+/**
+ * The single-row read used by the admin DETAIL page (task 5, requirement 1): the review row plus
+ * its ladder text. Deliberately a second function, not a `ladder` field folded into
+ * `getResearchReviewById` — that function is also called by `resolveResearchReview` on every
+ * approval, and an approval never needs to read the ladder wording, only compare its id (see
+ * `ladderState`). Keeping the ladder fetch out of the shared function keeps that comparison at
+ * its original one query.
+ *
+ * Reads the row's OWN revision when known; falls back to the open season's current pin
+ * (`openTopicRevisionId`) for a legacy row (`ladderRevisionUnknown`), labelled `usingOpenPin` so
+ * the page can say so ("(open season's ladder — this row's revision is unknown)"). null when
+ * neither is known (no open season, or the open season does not ask this topic either).
+ */
+export async function getResearchReviewWithLadder(
+  id: string,
+): Promise<(ResearchReviewRow & { ladder: LadderInfo | null }) | null> {
+  const row = await getResearchReviewById(id);
+  if (!row) return null;
+  const revisionForLadder = row.topicRevisionId ?? row.openTopicRevisionId;
+  const ladder = revisionForLadder ? await fetchLadder(revisionForLadder, row.topicRevisionId === null) : null;
+  return { ...row, ladder };
 }
 
 /**
@@ -385,6 +493,19 @@ export async function resolveResearchReview(
   if (valueOverride !== undefined && valueOverride !== null
     && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
     throw Object.assign(new Error('valueOverride must be an integer 1-5'), { code: 'INCOMPLETE' });
+  }
+
+  // Task 5, requirement 3: a reviewer who changes the CHAIR must also write why — the public
+  // "why this position?" text is the reasoning, and it must never assert the OLD chair's rationale
+  // for a DIFFERENT value. Only checked when the value actually changes: re-approving the
+  // proposed value with the proposed reasoning untouched is the ordinary case and needs no edit.
+  if (valueOverride !== undefined && valueOverride !== null && valueOverride !== row.proposedValue) {
+    const trimmedOverride = (reasoningOverride ?? '').trim();
+    if (trimmedOverride === '' || trimmedOverride === row.proposedReasoning.trim()) {
+      throw Object.assign(
+        new Error('valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value'),
+        { code: 'INCOMPLETE' });
+    }
   }
 
   const finalValue = valueOverride !== undefined && valueOverride !== null ? valueOverride : row.proposedValue;

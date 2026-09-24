@@ -70,7 +70,7 @@ import { getFederalDelegation } from '../lib/federalCoverage.js';
 import { getElectionsStateScores, getElectionsCountyScores } from '../lib/electionsMapService.js';
 import {
   listPendingResearchReview,
-  getResearchReviewById,
+  getResearchReviewWithLadder,
   resolveResearchReview,
   rejectResearchReview,
 } from '../lib/researchEvidenceService.js';
@@ -1291,7 +1291,9 @@ router.get('/research-review', async (_req, res) => {
 
 router.get('/research-review/:id', async (req, res) => {
   try {
-    const row = await getResearchReviewById(req.params.id);
+    // Detail page (task 5): carries the ladder text (question + five rungs) alongside the row, so
+    // the reviewer checks the proposal against the ladder without a second client-side fetch.
+    const row = await getResearchReviewWithLadder(req.params.id);
     if (!row) { res.status(404).json({ error: 'Not found' }); return; }
     res.json(row);
   } catch (err) {

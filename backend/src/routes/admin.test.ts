@@ -38,7 +38,7 @@ const { mockResolveResearchReview } = vi.hoisted(() => ({
 }));
 vi.mock('../lib/researchEvidenceService.js', () => ({
   listPendingResearchReview: vi.fn(),
-  getResearchReviewById: vi.fn(),
+  getResearchReviewWithLadder: vi.fn(),
   resolveResearchReview: mockResolveResearchReview,
   rejectResearchReview: vi.fn(),
 }));
@@ -252,5 +252,20 @@ describe('POST /api/admin/research-review/:id/resolve — approval input validat
     const res = await request(app).post('/api/admin/research-review/rev-1/resolve').send({});
     expect(res.status).toBe(409);
     expect(res.body.error).toBe('the ladder changed since this row was researched — re-research it');
+  });
+
+  // Task 5, requirement 3: the route has no proposedValue/proposedReasoning to compare against
+  // (that lives in the row the service already fetched), so this rule is enforced service-side —
+  // the route just passes the INCOMPLETE code through as 422, same as every other INCOMPLETE.
+  it('422 with the service message when a changed valueOverride carries no distinct reasoningOverride', async () => {
+    mockResolveResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value'),
+      { code: 'INCOMPLETE' }));
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: 4 });
+    expect(res.status).toBe(422);
+    expect(res.body.error).toBe(
+      'valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value');
   });
 });
