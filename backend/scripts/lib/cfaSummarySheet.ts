@@ -165,6 +165,8 @@ const COST_PER_OUTPUT_TOKEN = 5.0 / 1_000_000;
 const SYSTEM_PROMPT = `You read the summary sheet (page 1) of an Indiana CFA-4 campaign finance report.
 Return ONLY a JSON object, no markdown. Use null for any line that is BLANK on the sheet — a blank is not 0.
 Write 0 only where the sheet shows a 0. Amounts are plain numbers in dollars.
+Read each line on its own. Lines 16 (total) and 18 (cash on hand) are separate lines: never copy their value
+into line 15c or 17c. If the 15c or 17c box is empty on the page, return null for it even when 16 or 18 shows 0.
 List in low_confidence_fields the key of every value you are not sure you read correctly.
 
 {
