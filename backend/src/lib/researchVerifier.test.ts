@@ -22,6 +22,15 @@ describe('normalizeText', () => {
     expect(normalizeText('a &amp; b &nbsp; c &quot;d&quot;')).toBe('a & b c "d"');
   });
 
+  it('decodes numeric HTML entities (decimal and hex) before quote normalization', () => {
+    // &#8217; and &#x2019; are both the curly right single quote (U+2019) — neither is a named
+    // entity, so undecoded they would survive as literal "&#8217;"/"&#x2019;" text and never fold
+    // to the straight apostrophe a snippet types.
+    expect(normalizeText('you&#8217;re here')).toBe("you're here");
+    expect(normalizeText('you&#x2019;re here')).toBe("you're here");
+    expect(normalizeText('you&#X2019;re here')).toBe("you're here");
+  });
+
   it('trims leading and trailing whitespace', () => {
     expect(normalizeText('   hi   ')).toBe('hi');
   });
@@ -89,6 +98,20 @@ describe('matchSnippet', () => {
     const paraphrase = 'The senator broadly backs a government insurance choice for medical coverage and has repeatedly sponsored measures expanding elder healthcare access without lifting middle income tax burdens over recent years in office.';
     const page = `prefix ${longSnippet} suffix`;
     expect(matchSnippet(paraphrase, page).verdict).toBe('snippet_not_found');
+  });
+
+  it('verifies a snippet with straight apostrophes against a page whose apostrophes are numeric HTML entities (decimal and hex)', () => {
+    // Before the numeric-entity decode, this snippet would NOT match either page: the raw
+    // "&#8217;"/"&#x2019;" text has no curly quote for the curly->straight step to fold, so the
+    // page's "we&#8217;ve" never becomes "we've" and the whole-string / windowed matches all miss.
+    const snippet = "The senator said we've finally reached a point where we can't ignore the crisis "
+      + "any longer and it's time to act with real urgency for every family in this district.";
+    const pageDecimal = 'nav home. The senator said we&#8217;ve finally reached a point where we '
+      + 'can&#8217;t ignore the crisis any longer and it&#8217;s time to act with real urgency for '
+      + 'every family in this district. footer links';
+    const pageHex = pageDecimal.replace(/&#8217;/g, '&#x2019;');
+    expect(matchSnippet(snippet, pageDecimal).verdict).toBe('verified');
+    expect(matchSnippet(snippet, pageHex).verdict).toBe('verified');
   });
 
   it('honors a lower minWords for concise quotes (e.g. read-rank)', () => {

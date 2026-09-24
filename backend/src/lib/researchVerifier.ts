@@ -18,9 +18,31 @@ const HTML_ENTITIES: Record<string, string> = {
   '&#39;': "'",
 };
 
+// 🔴 Decode numeric character references BEFORE anything else touches punctuation.
+// `&#8217;` (decimal) and `&#x2019;` (hex) are both the curly right single quote — neither is in
+// HTML_ENTITIES above, so left alone they survive as literal "&#8217;" text: "you&#8217;re" would
+// never become "you're" and would fail to match a snippet that (honestly) types a straight
+// apostrophe. Ported from verify-quotes.mjs (backend/scripts/verify-quotes.mjs), which hit this for
+// real on a live wave. `String.fromCodePoint` also gets this right for names/quotes outside the
+// BMP; a malformed reference (bad digits) is left as-is rather than throwing.
+function decodeNumericEntities(input: string): string {
+  return input
+    .replace(/&#(\d+);/g, (match, dec: string) => {
+      const code = Number(dec);
+      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
+    })
+    .replace(/&#[xX]([0-9a-fA-F]+);/g, (match, hex: string) => {
+      const code = parseInt(hex, 16);
+      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
+    });
+}
+
 export function normalizeText(input: string): string {
-  let out = input;
-  // HTML entities first (before quote normalization, since &quot; → ")
+  // Numeric entities first (see decodeNumericEntities) — decoding `&#8217;` before anything else
+  // runs turns it into the same curly apostrophe a named &rsquo; would have produced, so the
+  // curly-quote normalization below catches both.
+  let out = decodeNumericEntities(input);
+  // HTML entities next (before quote normalization, since &quot; → ")
   for (const [entity, replacement] of Object.entries(HTML_ENTITIES)) {
     out = out.split(entity).join(replacement);
   }

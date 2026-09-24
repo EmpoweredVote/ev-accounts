@@ -37,6 +37,13 @@ describe('htmlToText', () => {
     expect(htmlToText('<p>a &amp; b &nbsp;&quot;c&quot;</p>')).toBe('a & b "c"');
   });
 
+  it('decodes numeric HTML entities (decimal and hex) to the real character', () => {
+    // htmlToText itself does not fold curly quotes to straight ones (that is
+    // researchVerifier.normalizeText's job, applied downstream) — it only owes the real character,
+    // not a literal "&#8217;"/"&#x2019;" string surviving into the extracted text.
+    expect(htmlToText('<p>you&#8217;re here and you&#x2019;re there</p>')).toBe('you’re here and you’re there');
+  });
+
   it('keeps text that spans inline tags contiguous (space-separated)', () => {
     expect(htmlToText('<b>SB 79</b> would erode local control')).toBe('SB 79 would erode local control');
   });
