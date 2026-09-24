@@ -245,10 +245,21 @@ for c in cands:
         # all 155 Florida rows while still reporting them imported. A page URL somebody
         # already recorded is left alone.
         cur.execute(
+            # 🔴 THE EXTENSION TEST MISSES AN IMAGE URL THAT CARRIES NO EXTENSION.
+            # North Carolina serves member portraits at /Members/MemberImage/H/744/High,
+            # so 134 rows kept the IMAGE url as their "provenance" and the page was never
+            # written -- a dead image link then counts as coverage under
+            # HAS_RENDERABLE_PHOTO_SQL, which is the defect this field exists to avoid.
+            # ⚠ Matching the candidate's own `url` does NOT fix it either: a wave that
+            # upgrades the source (NC imported /High while the stored value was /Low)
+            # never matches. So the caller states it, per row, with "origin_is_image":
+            # true -- explicit and auditable, rather than a pattern that has now been
+            # wrong twice.
             "UPDATE essentials.politicians SET photo_origin_url = %s "
             " WHERE id = %s AND (photo_origin_url IS NULL "
-            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp|gif)(\\?|$)')",
-            (c["page"], pid))
+            "                    OR photo_origin_url ~* '\\.(jpg|jpeg|png|webp|gif)(\\?|$)'"
+            "                    OR %s)",
+            (c["page"], pid, bool(c.get("origin_is_image"))))
         conn.commit()
         done += 1
         print(f"  imported {c['name']:<26} {w}x{h} -> {out_w}x{out_h}"
