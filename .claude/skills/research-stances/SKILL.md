@@ -502,17 +502,31 @@ page through a summarising model and will hand back paraphrased talking points f
 quotations. A quote that never existed is a fabricated statement attributed to a real person — the
 worst thing this pipeline can produce, and no other check in 4a looks for it.
 
-<!-- TODO(Task 2): these arguments find no file in a research-stances batch. verify-quotes scans a
-directory for /^out-.*\.csv$/ and a batch holds research.csv, so as written it exits 2 ("no CSV files
-to check"). Task 2 of docs/superpowers/plans/2026-09-23-stance-program-reconciliation.md sets the
-batch CSV and --sources (OTR transcripts). -->
 ```bash
-cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<wave>
+cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<YYYY-MM-DD-batch>/research.csv \
+  --sources data/stance-research/otr-transcripts/<race_id>   # drop --sources if STEP 0.5 (OTR) did not run
 ```
+
+Name `research.csv` directly, not the batch directory: `verify-quotes.mjs`'s directory-scan pattern
+(`/^out-.*\.csv$/`) only applies when the target is a *directory* — a file path is checked as-is, no
+`--pattern` needed.
+
+`--sources <dir>` loads every `.md`/`.txt` file in that ONE directory and checks a quote's text against
+all of them BEFORE trying to fetch the URL it cites — and it does that match blind to which URL the row
+actually names. That is what lets it verify an OTR-cited quote at all: `extract-otr.mjs` (STEP 0.5) cites
+each quote by its **YouTube URL**, which is not fetchable text, but the transcript file it wrote for that
+candidate is plain text — pointing `--sources` at `otr-transcripts/<race_id>` puts that file in the pool
+this check searches. A quote the transcript doesn't cover still falls through to a live fetch of its own
+`source_url_1..3` in the same run; passing `--sources` only changes which directory is tried first, it
+never turns off the live-fetch fallback.
 
 It exits 1 and names every quote it could not find. A failure is either mis-sourced (find the true
 source — a new source URL, so re-research that pair; see 4a(i)) or invented (drop the quote). Do not
 push past a non-zero exit.
+
+🔁 **Re-run this check after any quote-field edit made to resolve a 4a(ii) finding** (`source-summary`,
+`misleading-verbatim`, or a `deid-dishonest`/`note-not-self-contained` fix that touched `quote_text`) —
+a hand-edited quote is unverified until step (0) has run against it again.
 
 **(i) Stance gate, snippet verification, quote mechanics — in this order.**
 
