@@ -1001,7 +1001,8 @@ async function getSummaryFromAgg(
     authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
 
   const sourceSystemMap: Record<string, string> = {
-    fec: 'fec', indiana: 'indiana_zip_etag_2026', cal_access: 'cal_access', la_city: 'la_city',
+    // 'indiana' is the year-agnostic stamp runAdapterForAll('indiana') writes after each run.
+    fec: 'fec', indiana: 'indiana', cal_access: 'cal_access', la_city: 'la_city',
   };
   const metaSourceSystem = sourceSystemMap[primaryDataSource] ?? primaryDataSource;
   const metaResult = await pool.query<MetaRow>(
@@ -1242,7 +1243,7 @@ export async function getSummary(
   // Query last_sync_at for freshness header — use the actual data source
   const sourceSystemMap: Record<string, string> = {
     fec: 'fec',
-    indiana: 'indiana_zip_etag_2026',
+    indiana: 'indiana', // year-agnostic stamp written after each run (was indiana_zip_etag_2026)
     cal_access: 'cal_access',
     la_city: 'la_city',
   };

@@ -8,23 +8,37 @@
  *   EV-Backend/internal/campaign_finance/adapter/indiana/normalize.go
  *
  * Contains four layers in one file:
- *   1. ZIP Download    — ETag-cached annual bulk ZIP from campaignfinance.in.gov
- *   2. CSV Parser      — header-driven column indexing, BOM-safe, caches by FileNumber
+ *   1. ZIP Download    — one annual bulk ZIP per year from campaignfinance.in.gov, every run
+ *   2. CSV Parser      — Windows-1252, header-driven column indexing, caches by FileNumber
  *   3. Normalizer      — dual-type Date/string handling, election cycle, MEDIUM confidence
  *   4. Upsert          — ON CONFLICT (data_source, source_transaction_id) DO UPDATE
  *
+ * 🔴 WHAT WAS WRONG UNTIL 2026-09-24 (measured on prod that day; see indianaAdapter.test.ts):
+ *   - It read ONLY the current calendar year's file. An officeholder who is not on this year's
+ *     ballot files no pre-primary report, so their money is in LAST year's file (the annual
+ *     report). 58 active politicians held a confirmed committee and no data at all; 48 of them
+ *     have rows in the 2025 file (Mike Braun 440, Todd Rokita 172, Rodric Bray 153).
+ *   - It read columns the export does not carry: the donor is `Name`, not `ContributorName`
+ *     (likewise `Type`, `Received_By`). Every stored donor was blank ("anonymous"), and because
+ *     the donor is part of the transaction key, different donors who gave the same amount on
+ *     the same day collapsed into one row: 10,419 rows in the 2026 file became 6,503.
+ *   - A 304 made every source's run "completed" with 0 records (488 runs on 2026-04-03).
+ *     Downloads are now unconditional — see downloadZIP.
+ *
  * Indiana-specific extras (NOT part of SourceAdapter interface):
- *   - writeUnresolved(rows, runId): writes known-but-unconfirmed FileNumbers to unresolved queue
+ *   - writeUnresolved(rows, runId): writes rows of needs_research FileNumbers to the unresolved queue
  *   - normalizeRow(rec, ps): exported for backfill/resolve handler in Plan 07
  *
  * Export:
- *   createIndianaAdapter(year): SourceAdapter factory
+ *   createIndianaAdapter(years): SourceAdapter factory
+ *   indianaYears(now): the years a scheduled run reads
  *   writeUnresolved(rows, runId): Indiana-specific unresolved queue writer
  *   normalizeRow(rec, ps): exported normalizer for backfill/resolve reuse
  */
 
 import AdmZip from 'adm-zip';
 import { parse } from 'csv-parse/sync';
+import iconv from 'iconv-lite';
 import { pool } from '../db.js';
 import type {
   SourceAdapter,
@@ -41,12 +55,45 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 // Constants
 // ---------------------------------------------------------------------------
 
-/** Annual contribution ZIP URL — %s replaced with 4-digit year */
+/** Annual contribution ZIP URL — %d replaced with 4-digit year */
 const INDIANA_ZIP_URL_TEMPLATE =
   'https://campaignfinance.in.gov/PublicSite/Docs/BulkDataDownloads/%d_ContributionData.csv.zip';
 
-/** Per-year ETag key template stored in data_source_metadata */
+/** Per-year ETag key template stored in data_source_metadata (provenance only — see downloadZIP) */
 const ETAG_KEY_TEMPLATE = 'indiana_zip_etag_%d';
+
+/**
+ * Header names the parser accepts for each field, live name first. The live export (2025 and
+ * 2026 files, checked 2026-09-23) says `Name`, `Type`, `Received_By`; the Go port read the
+ * second spelling of each, which those files do not carry.
+ */
+const COLUMN_ALIASES = {
+  contributorName: ['Name', 'ContributorName'],
+  contributionType: ['Type', 'ContributionType'],
+  receivedBy: ['Received_By', 'ReceivedBy'],
+} as const;
+
+/** A header without these cannot be ingested: fail the run rather than store blanks. */
+const REQUIRED_COLUMNS: readonly (string | readonly string[])[] = [
+  'FileNumber',
+  'Amount',
+  'ContributionDate',
+  COLUMN_ALIASES.contributorName,
+];
+
+/**
+ * indianaYears returns the calendar years a scheduled run reads: last year and this one.
+ *
+ * Last year is not optional. Its file holds the annual report (filed each January), which is
+ * the ONLY report an officeholder who is not on this year's ballot files — before 2026-09-24,
+ * reading this year alone left every such committee empty. Both years of an even-year cycle
+ * normalize into that cycle; in an odd year, last year's file still receives late filings and
+ * amendments for the cycle that just ended.
+ */
+export function indianaYears(now: Date = new Date()): number[] {
+  const year = now.getUTCFullYear();
+  return [year - 1, year];
+}
 
 // ---------------------------------------------------------------------------
 // Internal types
@@ -72,6 +119,8 @@ interface ParsedRow {
   receivedBy: string;
   amended: string;
   rowNumber: number;
+  /** The bulk file the row came from. */
+  year: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -86,16 +135,10 @@ function zipUrl(year: number): string {
   return INDIANA_ZIP_URL_TEMPLATE.replace('%d', String(year));
 }
 
-/** Reads previously saved ETag for a given year from data_source_metadata. Empty string if none. */
-async function loadStoredETag(year: number): Promise<string> {
-  const result = await pool.query<{ notes: string }>(
-    `SELECT notes FROM transparent_motivations.data_source_metadata WHERE source_system = $1 LIMIT 1`,
-    [etagKey(year)]
-  );
-  return result.rows[0]?.notes ?? '';
-}
-
-/** Upserts the ETag value for a given year into data_source_metadata. */
+/**
+ * Records the ETag of the file this run read, per year. Provenance only: nothing sends it
+ * back as If-None-Match any more.
+ */
 async function saveETag(year: number, etag: string): Promise<void> {
   await pool.query(
     `INSERT INTO transparent_motivations.data_source_metadata
@@ -108,72 +151,49 @@ async function saveETag(year: number, etag: string): Promise<void> {
 }
 
 interface DownloadResult {
-  /** In-memory ZIP buffer (null if 304 Not Modified) */
+  /** In-memory ZIP buffer; null when the state has not published a file for the year (404). */
   buffer: Buffer | null;
   etag: string;
-  downloadedAt: Date;
-  skipped: boolean;
 }
 
 /**
- * downloadZIP fetches the Indiana annual contribution ZIP for the given year,
- * using ETag caching to skip re-download when the server returns 304.
+ * downloadZIP fetches the Indiana annual contribution ZIP for the given year.
  *
- * Returns buffer=null + skipped=true on 304 Not Modified.
- * On first-attempt error, retries without ETag (in case of cache-related server error).
+ * 🔴 UNCONDITIONAL, ON PURPOSE. It used to send the stored ETag as If-None-Match, and on a 304
+ * fetch() returned nothing for EVERY source — runIngestion then wrote a 'completed' run with 0
+ * records for each one (488 on 2026-04-03, 618 on 2026-05-01), which since PR #681 tells
+ * detectCoverageStatus that no data is owed. It also meant a committee confirmed after the last
+ * download got nothing until the state next changed the file. The files are small (2025: 1.8 MB,
+ * 2026: 0.8 MB), so reading them every run costs less than either failure.
+ *
+ * Returns buffer=null on 404: a year with no file yet (early January) is empty, not an error.
+ * Any other failure is retried once, then thrown.
  */
 async function downloadZIP(year: number): Promise<DownloadResult> {
-  const storedETag = await loadStoredETag(year);
-  const downloadedAt = new Date();
   const url = zipUrl(year);
-
-  let result = await doRequest(url, storedETag);
-
-  // Retry without ETag on error (cache-related server error recovery)
+  const result = (await doRequest(url)) ?? (await doRequest(url));
   if (result === null) {
-    result = await doRequest(url, '');
-    if (result === null) {
-      throw new Error(`indiana: downloadZIP year=${year}: HTTP request failed after retry`);
-    }
+    throw new Error(`indiana: downloadZIP year=${year}: HTTP request failed after retry`);
   }
-
-  if (result.skipped) {
-    return { buffer: null, etag: storedETag, downloadedAt, skipped: true };
-  }
-
-  return { buffer: result.buffer, etag: result.etag, downloadedAt, skipped: false };
-}
-
-interface RequestResult {
-  buffer: Buffer | null;
-  etag: string;
-  skipped: boolean;
+  return result;
 }
 
 /**
- * doRequest sends a GET request with an optional If-None-Match header.
- * Returns null on network error (caller retries without ETag).
- * Returns { buffer: null, skipped: true } on 304 Not Modified.
- * Returns { buffer, etag } on 200 OK.
+ * doRequest sends one GET. Returns null on a network error or an unexpected status (the
+ * caller retries once), { buffer: null } on 404, and { buffer, etag } on 200.
  */
-async function doRequest(url: string, storedETag: string): Promise<RequestResult | null> {
-  const headers: Record<string, string> = {};
-  if (storedETag) {
-    headers['If-None-Match'] = storedETag;
-  }
-
+async function doRequest(url: string): Promise<DownloadResult | null> {
   let response: Response;
   try {
     response = await fetch(url, {
-      headers,
       signal: AbortSignal.timeout(120_000), // 2 min for large ZIP
     });
   } catch {
     return null;
   }
 
-  if (response.status === 304) {
-    return { buffer: null, etag: '', skipped: true };
+  if (response.status === 404) {
+    return { buffer: null, etag: '' };
   }
 
   if (response.status !== 200) {
@@ -185,11 +205,7 @@ async function doRequest(url: string, storedETag: string): Promise<RequestResult
   const buffer = Buffer.from(arrayBuffer);
   const etag = response.headers.get('ETag') ?? '';
 
-  if (!etag) {
-    console.warn(`[indianaAdapter] server returned no ETag header for ${url}; next run will re-download`);
-  }
-
-  return { buffer, etag, skipped: false };
+  return { buffer, etag };
 }
 
 // ---------------------------------------------------------------------------
@@ -201,21 +217,27 @@ async function doRequest(url: string, storedETag: string): Promise<RequestResult
  * Common in Windows-generated CSV files from Indiana Campaign Finance portal.
  */
 function stripBOM(s: string): string {
-  return s.startsWith('\uFEFF') ? s.slice(1) : s;
+  return s.startsWith('﻿') ? s.slice(1) : s;
 }
 
 /**
  * parseCSV opens a ZIP buffer, locates the inner CSV by suffix (*ContributionData.csv),
  * and parses it into matched and unmatched slices based on knownFileNumbers.
  *
+ * The file is Windows-1252, not UTF-8 (the 2025 file has a bare 0xAE, "®"): decoding it as
+ * UTF-8 turned every such byte into U+FFFD.
+ *
  * Column positions are determined by the header row — NOT hardcoded indexes.
  * This makes the parser resilient to column reordering across annual exports.
+ * A header missing a REQUIRED_COLUMNS entry throws: a renamed column is a run that
+ * cannot be trusted, not a column of blanks.
  *
  * A row is "matched" if its FileNumber is in knownFileNumbers.
  * Unmatched rows (completely unknown FileNumbers) are silently dropped.
  */
 function parseCSV(
   zipBuffer: Buffer,
+  year: number,
   knownFileNumbers: Set<string>
 ): {
   matched: ParsedRow[];
@@ -232,7 +254,7 @@ function parseCSV(
   }
 
   // Get raw CSV content as string
-  let csvContent = csvEntry.getData().toString('utf8');
+  let csvContent = iconv.decode(csvEntry.getData(), 'win1252');
   // Strip BOM from entire content (handles file-level BOM)
   csvContent = stripBOM(csvContent);
 
@@ -257,6 +279,16 @@ function parseCSV(
     colIdx[colName] = i;
   }
 
+  for (const required of REQUIRED_COLUMNS) {
+    const names = typeof required === 'string' ? [required] : required;
+    if (!names.some((n) => colIdx[n] !== undefined)) {
+      throw new Error(
+        `indiana: parseCSV year=${year}: header has no ${names.join(' / ')} column ` +
+        `(header: ${headerRow.join(', ')})`
+      );
+    }
+  }
+
   const matched: ParsedRow[] = [];
   const unmatched: ParsedRow[] = [];
   let totalParsed = 0;
@@ -270,7 +302,7 @@ function parseCSV(
     const amount = parseFloat(amountStr);
 
     if (isNaN(amount)) {
-      console.warn(`[indianaAdapter] row ${rowNum + 1}: cannot parse Amount "${amountStr}" (skipping row)`);
+      console.warn(`[indianaAdapter] year=${year} row ${rowNum + 1}: cannot parse Amount "${amountStr}" (skipping row)`);
       continue;
     }
 
@@ -282,7 +314,7 @@ function parseCSV(
       if (parsed !== null) {
         contributionDate = parsed;
       } else {
-        console.warn(`[indianaAdapter] row ${rowNum + 1}: cannot parse ContributionDate "${dateStr}" (using zero time)`);
+        console.warn(`[indianaAdapter] year=${year} row ${rowNum + 1}: cannot parse ContributionDate "${dateStr}" (using zero time)`);
       }
     }
 
@@ -292,19 +324,20 @@ function parseCSV(
       committee: colGet(record, colIdx, 'Committee'),
       candidateName: colGet(record, colIdx, 'CandidateName'),
       contributorType: colGet(record, colIdx, 'ContributorType'),
-      contributorName: colGet(record, colIdx, 'ContributorName'),
+      contributorName: colGetAny(record, colIdx, COLUMN_ALIASES.contributorName),
       address: colGet(record, colIdx, 'Address'),
       city: colGet(record, colIdx, 'City'),
       state: colGet(record, colIdx, 'State'),
       zip: colGet(record, colIdx, 'Zip'),
       occupation: colGet(record, colIdx, 'Occupation'),
-      contributionType: colGet(record, colIdx, 'ContributionType'),
+      contributionType: colGetAny(record, colIdx, COLUMN_ALIASES.contributionType),
       description: colGet(record, colIdx, 'Description'),
       amount,
       contributionDate,
-      receivedBy: colGet(record, colIdx, 'ReceivedBy'),
+      receivedBy: colGetAny(record, colIdx, COLUMN_ALIASES.receivedBy),
       amended: colGet(record, colIdx, 'Amended'),
       rowNumber: rowNum,
+      year,
     };
 
     if (knownFileNumbers.has(fileNumber)) {
@@ -322,6 +355,12 @@ function colGet(record: string[], colIdx: Record<string, number>, name: string):
   const i = colIdx[name];
   if (i === undefined || i >= record.length) return '';
   return (record[i] ?? '').trim();
+}
+
+/** Returns the value of the first alias the header carries. */
+function colGetAny(record: string[], colIdx: Record<string, number>, names: readonly string[]): string {
+  const name = names.find((n) => colIdx[n] !== undefined);
+  return name === undefined ? '' : colGet(record, colIdx, name);
 }
 
 /**
@@ -355,6 +394,29 @@ function parseIndianaDate(dateStr: string): Date | null {
 // ---------------------------------------------------------------------------
 // Normalizer — ported from normalize.go
 // ---------------------------------------------------------------------------
+
+/** Max length of contributions.source_transaction_id (varchar(128)). */
+const SOURCE_TX_ID_MAX = 128;
+
+/**
+ * transactionKey is a row's source_transaction_id: FileNumber|date|donor|amount, truncated to
+ * 128 chars. The donor is part of it, so a blank donor (the column-name bug fixed 2026-09-24)
+ * merged different donors' same-day, same-amount gifts into one row.
+ */
+function transactionKey(fileNumber: string, tranDate: Date, contributorName: string, amount: number): string {
+  const dateStr = tranDate.getTime() === 0
+    ? '0001-01-01'
+    : tranDate.toISOString().slice(0, 10);
+  const key = `${fileNumber}|${dateStr}|${contributorName}|${amount.toFixed(2)}`;
+  return key.length > SOURCE_TX_ID_MAX ? key.slice(0, SOURCE_TX_ID_MAX) : key;
+}
+
+/** withOccurrence keys the n-th row sharing a transactionKey; the first keeps the plain key. */
+function withOccurrence(key: string, n: number): string {
+  if (n <= 1) return key;
+  const suffix = `|#${n}`;
+  return key.slice(0, SOURCE_TX_ID_MAX - suffix.length) + suffix;
+}
 
 /**
  * normalizeRow converts a single deserialized raw row map and a PoliticianSource
@@ -424,14 +486,7 @@ export function normalizeRow(
   // --- Source transaction ID: composite, truncated to 128 chars ---
   const contributorName = String(rec['ContributorName'] ?? rec['contributorName'] ?? '');
   const fileNumber = String(rec['FileNumber'] ?? rec['fileNumber'] ?? '');
-  const dateStr = tranDate.getTime() === 0
-    ? '0001-01-01'
-    : tranDate.toISOString().slice(0, 10);
-
-  let sourceTxId = `${fileNumber}|${dateStr}|${contributorName}|${amount.toFixed(2)}`;
-  if (sourceTxId.length > 128) {
-    sourceTxId = sourceTxId.slice(0, 128);
-  }
+  const sourceTxId = transactionKey(fileNumber, tranDate, contributorName, amount);
 
   // --- Contribution date pointer (null if zero time) ---
   const contributionDate: Date | null =
@@ -557,7 +612,7 @@ async function upsertBatch(
 // ---------------------------------------------------------------------------
 
 /**
- * writeUnresolved writes rows from known-but-unconfirmed FileNumbers to the
+ * writeUnresolved writes rows of needs_research FileNumbers to the
  * transparent_motivations.unresolved_contributions table.
  *
  * This enables backfill in Phase 8: once OrgIds are confirmed, these rows can
@@ -566,12 +621,23 @@ async function upsertBatch(
  * runId: the ingestion_runs.id to associate these rows with.
  * Returns count of rows written.
  *
- * ON CONFLICT: skips duplicates (same adapter_name + external_id + fingerprint).
+ * Idempotent: a row whose SourceTransactionId (the key normalizeRow would give it) is already
+ * queued for the same FileNumber, in any status, is skipped. Until 2026-09-24 every run
+ * appended the whole set again — harmless while the adapter ran by hand, not on a schedule.
  * NOTE: This function is NOT part of the SourceAdapter interface — it is
  * Indiana-specific and called by the Indiana ingest handler after RunIngestion.
  */
 export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise<number> {
   if (rows.length === 0) return 0;
+
+  // Same keys normalize() would give these rows: occurrence counted per FileNumber.
+  const occurrences = new Map<string, number>();
+  const keys = rows.map((row) => {
+    const base = transactionKey(row.fileNumber, row.contributionDate, row.contributorName, row.amount);
+    const n = (occurrences.get(base) ?? 0) + 1;
+    occurrences.set(base, n);
+    return withOccurrence(base, n);
+  });
 
   let written = 0;
 
@@ -586,7 +652,7 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
       const row = batch[idx];
       const base = idx * COLS_PER_ROW + 1;
       valuePlaceholders.push(
-        `($${base}, $${base + 1}, $${base + 2}::jsonb, $${base + 3}, $${base + 4})`
+        `($${base}::varchar, $${base + 1}::bigint, $${base + 2}::jsonb, $${base + 3}::int, $${base + 4}::varchar)`
       );
 
       const rawObj = {
@@ -608,6 +674,8 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
         ReceivedBy: row.receivedBy,
         Amended: row.amended,
         RowNumber: row.rowNumber,
+        SourceFileYear: row.year,
+        SourceTransactionId: keys[i + idx],
       };
 
       params.push(
@@ -622,7 +690,15 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
     const sql = `
       INSERT INTO transparent_motivations.unresolved_contributions
         (adapter_name, ingestion_run_id, raw_row, row_number, external_id)
-      VALUES ${valuePlaceholders.join(', ')}
+      SELECT v.adapter_name, v.ingestion_run_id, v.raw_row, v.row_number, v.external_id
+      FROM (VALUES ${valuePlaceholders.join(', ')})
+        AS v(adapter_name, ingestion_run_id, raw_row, row_number, external_id)
+      WHERE NOT EXISTS (
+        SELECT 1 FROM transparent_motivations.unresolved_contributions u
+        WHERE u.adapter_name = v.adapter_name
+          AND u.external_id = v.external_id
+          AND u.raw_row->>'SourceTransactionId' = v.raw_row->>'SourceTransactionId'
+      )
       RETURNING id
     `;
 
@@ -643,70 +719,59 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
 
 /**
  * IndianaAdapter implements SourceAdapter for Indiana Campaign Finance bulk CSV data.
- * Downloads the annual contribution ZIP, parses the CSV once (caching results by
- * FileNumber), and routes rows to either confirmed contributions or the unresolved queue
- * based on politician_sources research_status.
+ * Downloads one annual contribution ZIP per requested year, parses each once (caching
+ * results by FileNumber), and routes rows to either confirmed contributions or the
+ * unresolved queue based on politician_sources research_status.
  *
  * Also implements ETagProvider so runIngestion can record ETag/download metadata.
  */
 class IndianaAdapter implements SourceAdapter, ETagProvider {
-  private readonly year: number;
+  private readonly years: number[];
 
   // Download state
-  private zipBuffer: Buffer | null = null;
-  private zipEtag = '';
-  private zipDownloadedAt: Date | null = null;
-  private zipSkipped = false;
-  private zipDownloaded = false;
+  private prepared = false;
+  private etags: { year: number; etag: string }[] = [];
+  private downloadedAt: Date | null = null;
 
-  // Entity resolution maps — populated by preDownload() from politician_sources
-  /** FileNumber -> PoliticianSource.id for research_status='confirmed' */
-  private confirmedFileNumbers = new Map<string, string>();
-  /** All indiana sources regardless of research_status */
-  private allKnownFileNumbers = new Set<string>();
-
-  // CSV parse cache — populated on first fetch() call
-  private parsedOnce = false;
-  /** FileNumber -> confirmed rows */
+  // CSV parse cache — populated by preDownload()
+  /** FileNumber -> rows, for research_status='confirmed' FileNumbers, every year in order */
   private parsedCache = new Map<string, ParsedRow[]>();
-  /** Rows from known-but-unconfirmed FileNumbers — for writeUnresolved */
+  /** Rows from needs_research FileNumbers — for writeUnresolved */
   private unmatchedRows: ParsedRow[] = [];
 
-  constructor(year: number) {
-    this.year = year;
+  constructor(years: number[]) {
+    if (years.length === 0) {
+      throw new Error('indiana: createIndianaAdapter needs at least one year');
+    }
+    this.years = [...years].sort((a, b) => a - b);
   }
 
   name(): string {
     return 'indiana';
   }
 
-  // ETagProvider implementation
+  // ETagProvider implementation — one ETag per year read, e.g. `2025="a"; 2026="b"`
   getETag(): string | null {
-    return this.zipEtag || null;
+    if (this.etags.length === 0) return null;
+    return this.etags.map((e) => `${e.year}=${e.etag}`).join('; ');
   }
 
   getZIPDownloadedAt(): Date | null {
-    return this.zipDownloadedAt;
+    return this.downloadedAt;
   }
 
   /**
-   * preDownload downloads the annual ZIP (with ETag caching) and queries
-   * politician_sources to build entity resolution maps.
-   * Must be called before fetch().
+   * preDownload reads politician_sources, then downloads and parses every requested year's
+   * ZIP, caching the rows of known FileNumbers. Must be called before fetch().
+   *
+   * Throws on a failure no single source could survive — a download that fails after one
+   * retry, an unreadable header, or no year published at all — so a scheduled run exits
+   * non-zero instead of writing a "completed" empty run for every source.
+   *
+   * Only 'confirmed' FileNumbers load; 'needs_research' ones go to the unresolved queue.
+   * 'not_applicable' and 'disputed' are the wrong committee, and their rows are dropped.
    */
   async preDownload(): Promise<void> {
-    const result = await downloadZIP(this.year);
-    this.zipBuffer = result.buffer;
-    this.zipEtag = result.etag;
-    this.zipDownloadedAt = result.downloadedAt;
-    this.zipSkipped = result.skipped;
-    this.zipDownloaded = true;
-
-    if (result.etag) {
-      await saveETag(this.year, result.etag);
-    }
-
-    // Build entity resolution maps from politician_sources
     const sourcesResult = await pool.query<{
       id: string;
       external_id: string;
@@ -721,78 +786,71 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
       console.warn('[indianaAdapter] preDownload: no politician_sources with source_system=\'indiana\' found — all rows will be dropped');
     }
 
+    const confirmed = new Set<string>();
+    const queued = new Set<string>();
     for (const s of sourcesResult.rows) {
-      this.allKnownFileNumbers.add(s.external_id);
-      if (s.research_status === 'confirmed') {
-        this.confirmedFileNumbers.set(s.external_id, s.id);
+      if (s.research_status === 'confirmed') confirmed.add(s.external_id);
+      else if (s.research_status === 'needs_research') queued.add(s.external_id);
+    }
+    const known = new Set([...confirmed, ...queued]);
+
+    this.downloadedAt = new Date();
+    let published = 0;
+
+    for (const year of this.years) {
+      const { buffer, etag } = await downloadZIP(year);
+      if (!buffer) {
+        console.warn(`[indianaAdapter] year=${year}: no bulk file published (HTTP 404) — read as empty`);
+        continue;
+      }
+      published++;
+
+      const { matched, totalParsed } = parseCSV(buffer, year, known);
+      let toConfirmed = 0;
+      let toQueue = 0;
+      for (const row of matched) {
+        if (confirmed.has(row.fileNumber)) {
+          const existing = this.parsedCache.get(row.fileNumber) ?? [];
+          existing.push(row);
+          this.parsedCache.set(row.fileNumber, existing);
+          toConfirmed++;
+        } else if (queued.has(row.fileNumber)) {
+          this.unmatchedRows.push(row);
+          toQueue++;
+        }
+      }
+      console.log(
+        `[indianaAdapter] year=${year}: ${totalParsed} total rows, ` +
+        `${toConfirmed} rows to confirmed contributions, ${toQueue} rows to unresolved queue, ` +
+        `etag=${etag || '(none)'}`
+      );
+
+      if (etag) {
+        this.etags.push({ year, etag });
+        await saveETag(year, etag);
       }
     }
+
+    if (published === 0) {
+      throw new Error(`indiana: no bulk file published for any of ${this.years.join(', ')}`);
+    }
+    this.prepared = true;
   }
 
   /**
-   * ensureParsed parses the CSV exactly once across all fetch() calls.
-   * Caches confirmed rows by FileNumber; accumulates unresolved rows.
-   */
-  private ensureParsed(): void {
-    if (this.parsedOnce) return;
-    this.parsedOnce = true;
-
-    if (!this.zipBuffer) {
-      throw new Error('indiana: ensureParsed: no ZIP buffer (preDownload not called or 304 skipped)');
-    }
-
-    const { matched, unmatched: _unmatched, totalParsed } = parseCSV(
-      this.zipBuffer,
-      this.allKnownFileNumbers
-    );
-
-    console.log(
-      `[indianaAdapter] parseCSV year=${this.year}: ${totalParsed} total rows, ` +
-      `${matched.length} matched known FileNumbers`
-    );
-
-    // Split matched rows into confirmed (-> parsedCache) and unresolved (-> unmatchedRows)
-    for (const row of matched) {
-      const psId = this.confirmedFileNumbers.get(row.fileNumber);
-      if (psId !== undefined) {
-        const existing = this.parsedCache.get(row.fileNumber) ?? [];
-        existing.push(row);
-        this.parsedCache.set(row.fileNumber, existing);
-      } else {
-        // In allKnownFileNumbers but NOT confirmed — goes to unresolved queue
-        this.unmatchedRows.push(row);
-      }
-    }
-
-    // _unmatched = completely unknown FileNumbers — silently drop
-
-    let confirmedCount = 0;
-    for (const rows of this.parsedCache.values()) {
-      confirmedCount += rows.length;
-    }
-    console.log(
-      `[indianaAdapter] year=${this.year}: ${confirmedCount} rows to confirmed contributions, ` +
-      `${this.unmatchedRows.length} rows to unresolved queue`
-    );
-  }
-
-  /**
-   * fetch returns all confirmed contribution rows for the given PoliticianSource.
-   * On first call parses the full CSV and caches results; subsequent calls use cache.
+   * fetch returns all confirmed contribution rows for the given PoliticianSource,
+   * across every year read.
    */
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
-    if (!this.zipDownloaded) {
+    if (!this.prepared) {
       throw new Error('indiana: fetch called before preDownload');
     }
-    if (this.zipSkipped) {
-      return { records: [], totalExpected: 0, totalFetched: 0 };
-    }
-
-    this.ensureParsed();
 
     const rows = this.parsedCache.get(ps.external_id) ?? [];
 
-    // Convert ParsedRow structs to plain record maps for the SourceAdapter pipeline
+    // Convert ParsedRow structs to plain record maps for the SourceAdapter pipeline.
+    // Keys keep their historical names (ContributorName, ContributionType, ReceivedBy):
+    // backfill-donor-name-normalized.ts and the resolve handler read raw_record by them.
     const records: Record<string, unknown>[] = rows.map((row) => ({
       FileNumber: row.fileNumber,
       CommitteeType: row.committeeType,
@@ -812,6 +870,7 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
       ReceivedBy: row.receivedBy,
       Amended: row.amended,
       RowNumber: row.rowNumber,
+      SourceFileYear: row.year,
     }));
 
     return {
@@ -824,11 +883,17 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
   /**
    * normalize converts FetchResult records into ContributionInsert structs.
    * Delegates to normalizeRow to keep normalization in one place (no drift with backfill).
+   *
+   * A second row with the same key — the same donor giving the same amount on the same day,
+   * which the file does carry — gets `|#2` (then `|#3`, ...) instead of being dropped as a
+   * duplicate. The count of identical keys does not depend on row order, so the suffix is
+   * stable across runs; the first row keeps the plain key.
    */
   async normalize(raw: FetchResult, ps: PoliticianSource): Promise<NormalizeResult> {
     const contributions: ContributionInsert[] = [];
     let skipped = 0;
     const totalParsed = raw.records.length;
+    const occurrences = new Map<string, number>();
 
     for (const rec of raw.records) {
       const contrib = normalizeRow(rec, ps);
@@ -837,6 +902,9 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
         skipped++;
         continue;
       }
+      const n = (occurrences.get(contrib.source_transaction_id) ?? 0) + 1;
+      occurrences.set(contrib.source_transaction_id, n);
+      contrib.source_transaction_id = withOccurrence(contrib.source_transaction_id, n);
       contributions.push(contrib);
     }
 
@@ -851,7 +919,7 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
   }
 
   /**
-   * getUnmatchedRows returns the accumulated unresolved rows after the first fetch().
+   * getUnmatchedRows returns the rows of needs_research FileNumbers read by preDownload().
    * Used by Indiana ingest handler to call writeUnresolved after RunIngestion.
    */
   getUnmatchedRows(): ParsedRow[] {
@@ -862,6 +930,13 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
   unresolvedCount(): number {
     return this.unmatchedRows.length;
   }
+
+  /** confirmedRowCount returns how many rows preDownload() read for confirmed FileNumbers. */
+  confirmedRowCount(): number {
+    let n = 0;
+    for (const rows of this.parsedCache.values()) n += rows.length;
+    return n;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -869,16 +944,16 @@ class IndianaAdapter implements SourceAdapter, ETagProvider {
 // ---------------------------------------------------------------------------
 
 /**
- * createIndianaAdapter creates an IndianaAdapter for the given year.
+ * createIndianaAdapter creates an IndianaAdapter that reads the given years' files.
+ * A scheduled run passes indianaYears().
  *
  * IMPORTANT: Call adapter.preDownload() before running the ingestion pipeline.
- * The returned SourceAdapter does NOT include preDownload() — cast to
- * IndianaAdapterFull to access Indiana-specific methods.
  */
-export function createIndianaAdapter(year: number): SourceAdapter & ETagProvider & {
+export function createIndianaAdapter(years: number[]): SourceAdapter & ETagProvider & {
   preDownload(): Promise<void>;
   getUnmatchedRows(): ParsedRow[];
   unresolvedCount(): number;
+  confirmedRowCount(): number;
 } {
-  return new IndianaAdapter(year);
+  return new IndianaAdapter(years);
 }
