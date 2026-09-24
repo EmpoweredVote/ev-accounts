@@ -14,6 +14,12 @@
  *   Re-running with the same input produces ZERO new rows (ON CONFLICT skips).
  *   source_transaction_id = SHA-256 of politicianId|date|amount|donorNormalized|page.
  *
+ * Summary sheets:
+ *   Every PDF's page 1 (the CFA-4 summary sheet) is also read, in dry-run too and for $0 reports, into
+ *   local-cfa-summaries-<ts>.csv. Nothing from it is written to the DB here: review the CSV against the PDFs,
+ *   then run scripts/cfa-summaries-to-migration.ts. Already-loaded candidates are skipped by default, so pass
+ *   --include-already-loaded to get their summary sheets (contribution inserts are idempotent).
+ *
  * Dry-run note:
  *   --dry-run skips DB writes ONLY — OCR still runs (to show you what would be inserted).
  *   Cost is ~$0.001/page × ~10 pages × ~7 new candidates ≈ $0.07 per dry-run.
@@ -38,6 +44,7 @@ import * as crypto from 'crypto';
 import { Pool } from 'pg';
 import { normalizeDonorName } from '../src/lib/adapters/normalizeDonorName.js';
 import { pdfToPageImages, extractContributionsFromImages, ContributionRow } from './lib/pdfOcrPipeline.js';
+import { extractSummarySheet, summaryCsvRow, SUMMARY_CSV_COLUMNS } from './lib/cfaSummarySheet.js';
 
 // =============================================================================
 // CLI argument parsing
@@ -541,6 +548,7 @@ async function main(): Promise<void> {
   const reviewRows: ReviewRow[] = [];
   const skipRows: SkipRow[] = [];
   const summaries: CandidateSummary[] = [];
+  const summarySheetRows: string[][] = [];
 
   let totalInserted = 0;
   let totalSkippedFolders = 0;
@@ -700,6 +708,25 @@ async function main(): Promise<void> {
         const pagePaths = await pdfToPageImages(pdfPath, tmpDir);
         console.log(`    Pages: ${pagePaths.length}`);
 
+        // Page 1 is the CFA-4 summary sheet: read its totals even when the report has no Schedule A rows.
+        const summary = await extractSummarySheet(pagePaths[0], jurisdictionHint);
+        pdfCostUsd += summary.costUsd;
+        const ctx = { folder: folderName, pdf: pdfFile, politician_id: politicianId, politician_name: politicianName };
+        if (summary.sheet) {
+          summarySheetRows.push(summaryCsvRow(ctx, summary.sheet));
+          const m = summary.sheet.money;
+          console.log(`    Summary: ${summary.sheet.report_type} ${summary.sheet.period_start}..${summary.sheet.period_end} raised=${m.receipts_total ?? '—'} spent=${m.expenditures_total ?? '—'} cash_end=${m.cash_end ?? '—'}`);
+        } else {
+          // Keep the PDF visible in the CSV so a person reads it by hand; the generator refuses needs_review=yes.
+          const blank = SUMMARY_CSV_COLUMNS.map(() => '');
+          const at = (c: string) => SUMMARY_CSV_COLUMNS.indexOf(c);
+          blank[at('folder')] = ctx.folder; blank[at('pdf')] = ctx.pdf;
+          blank[at('politician_id')] = ctx.politician_id; blank[at('politician_name')] = ctx.politician_name;
+          blank[at('needs_review')] = 'yes'; blank[at('review_reasons')] = summary.warning ?? 'extraction failed';
+          summarySheetRows.push(blank);
+          console.log(`    Summary: NOT READ — ${summary.warning}`);
+        }
+
         const result = await extractContributionsFromImages(pagePaths, {
           candidateName: politicianName,
           jurisdictionHint,
@@ -852,6 +879,13 @@ async function main(): Promise<void> {
   ].join(','));
   fs.writeFileSync(csvPath, [csvHeader, ...csvLines].join('\n'), 'utf8');
 
+  const summariesPath = path.join(scriptDir, `local-cfa-summaries-${timestamp}.csv`);
+  fs.writeFileSync(
+    summariesPath,
+    [SUMMARY_CSV_COLUMNS.join(','), ...summarySheetRows.map((r) => r.map(escapeCsvCell).join(','))].join('\n') + '\n',
+    'utf8'
+  );
+
   // ─── Step 4: Final summary ────────────────────────────────────────────────
 
   const durationMs = Date.now() - startMs;
@@ -866,6 +900,7 @@ async function main(): Promise<void> {
   console.log(`Total low-confidence:  ${totalLowConfidence}`);
   console.log(`Total cost (USD):      $${totalCostUsd.toFixed(4)}`);
   console.log(`Review CSV:            ${csvPath}`);
+  console.log(`Summaries CSV:         ${summariesPath} (${summarySheetRows.length} report(s); review, then cfa-summaries-to-migration.ts)`);
   console.log(`Duration:              ${(durationMs / 1000).toFixed(1)}s`);
   console.log('');
 

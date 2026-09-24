@@ -211,6 +211,8 @@ export interface SummaryResponse {
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
   coverage_status?: string;
+  /** Present only when coverage_status = 'filed_reports'. */
+  filed_reports?: FiledReportResponse[];
   composition?: CompositionResponse;
   pac_contributions?: PacListResponse;
   outside_spending: OutsideSpendingResponse;
@@ -512,17 +514,99 @@ export function validateConfidence(raw: string | undefined): string | null {
 const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ESTIMATED' };
 
 // ---------------------------------------------------------------------------
+// getFiledReports — filed summary sheets (CFA-4 first) on confirmed own committees
+// ---------------------------------------------------------------------------
+
+export interface FiledReportResponse {
+  form: string;
+  report_type: string;
+  is_amendment: boolean;
+  period_start: string;
+  period_end: string;
+  filed_on: string | null;
+  filed_with: string;
+  receipts_total: number | null;
+  receipts_ytd: number | null;
+  receipts_itemized: number | null;
+  expenditures_total: number | null;
+  expenditures_ytd: number | null;
+  cash_end: number | null;
+  debts_owed_by: number | null;
+}
+
+/** NULL means the line was blank on the sheet — it must stay null, never become 0. */
+function numOrNull(v: unknown): number | null {
+  return v == null ? null : Number(v);
+}
+
+/**
+ * getFiledReports returns the newest filed summary sheets (max 4, newest period first) on the
+ * politician's confirmed own-fundraising committees. An amendment replaces its original for the
+ * same report and period. Explicit whitelist: politician_source_id and source_pdf never leave here.
+ */
+export async function getFiledReports(politicianId: string): Promise<FiledReportResponse[]> {
+  const r = await pool.query<Record<string, unknown>>(
+    `SELECT * FROM (
+       SELECT DISTINCT ON (ps.id, f.form, f.report_type, f.period_start, f.period_end)
+              f.form, f.report_type, f.is_amendment,
+              to_char(f.period_start, 'YYYY-MM-DD') AS period_start,
+              to_char(f.period_end, 'YYYY-MM-DD')   AS period_end,
+              to_char(f.filed_on, 'YYYY-MM-DD')     AS filed_on,
+              f.filed_with, f.receipts_total, f.receipts_ytd, f.receipts_itemized,
+              f.expenditures_total, f.expenditures_ytd, f.cash_end, f.debts_owed_by
+         FROM transparent_motivations.filed_report_summaries f
+         JOIN transparent_motivations.politician_sources ps ON ps.id = f.politician_source_id
+        WHERE ps.essentials_politician_id = $1
+          AND ${OWN_FUNDRAISING_SQL}
+        ORDER BY ps.id, f.form, f.report_type, f.period_start, f.period_end,
+                 f.is_amendment DESC, f.created_at DESC
+     ) latest
+     ORDER BY period_end DESC
+     LIMIT 4`,
+    [politicianId]
+  );
+  return r.rows.map((row) => ({
+    form: String(row.form),
+    report_type: String(row.report_type),
+    is_amendment: row.is_amendment === true,
+    period_start: String(row.period_start),
+    period_end: String(row.period_end),
+    filed_on: row.filed_on == null ? null : String(row.filed_on),
+    filed_with: String(row.filed_with),
+    receipts_total: numOrNull(row.receipts_total),
+    receipts_ytd: numOrNull(row.receipts_ytd),
+    receipts_itemized: numOrNull(row.receipts_itemized),
+    expenditures_total: numOrNull(row.expenditures_total),
+    expenditures_ytd: numOrNull(row.expenditures_ytd),
+    cash_end: numOrNull(row.cash_end),
+    debts_owed_by: numOrNull(row.debts_owed_by),
+  }));
+}
+
+// ---------------------------------------------------------------------------
 // detectCoverageStatus — classify zero-state politicians by data availability
 // ---------------------------------------------------------------------------
 
 /**
  * detectCoverageStatus classifies a politician with no confirmed contributions
- * into one of three coverage statuses:
+ * into one of four coverage statuses:
+ *   - 'filed_reports'      — a confirmed committee's filed summary sheet is on file (e.g. a $0 CFA-4)
  *   - 'data_pending'       — has a confirmed committee that ingestion has not yet completed a run for
  *   - 'local_unavailable'  — local/county office; filings are paper/offline
  *   - 'no_data'            — federal/state office with no confirmed committee on file
  */
-async function detectCoverageStatus(politicianId: string): Promise<string> {
+async function detectCoverageStatus(
+  politicianId: string
+): Promise<{ status: string; filedReports?: FiledReportResponse[] }> {
+  // A report we hold is a finished fact, not a pending one, so it precedes the run-owed rule below.
+  // A $0 CFA-4 leaves no contribution rows, and the Monroe importer writes no ingestion_runs, so
+  // without this 18 Monroe politicians read "being processed" for a report that says $0.
+  // Spec: docs/superpowers/specs/2026-09-24-filed-report-summaries-design.md
+  const filedReports = await getFiledReports(politicianId);
+  if (filedReports.length > 0) {
+    return { status: 'filed_reports', filedReports };
+  }
+
   // Count candidate_committee sources only — ie_committee rows represent PAC/IE spending
   // linked to this politician's race, not the politician's own fundraising committee.
   // A politician with only ie_committee sources has genuinely no candidate fundraising.
@@ -563,7 +647,7 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
   const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
 
   if (sourceCount > 0) {
-    return 'data_pending';
+    return { status: 'data_pending' };
   }
 
   // No source rows — check the politician's office district_type
@@ -582,10 +666,10 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
   const localTypes = ['LOCAL', 'LOCAL_EXEC', 'COUNTY', 'SCHOOL'];
 
   if (districtType && localTypes.includes(districtType)) {
-    return 'local_unavailable';
+    return { status: 'local_unavailable' };
   }
 
-  return 'no_data';
+  return { status: 'no_data' };
 }
 
 // ---------------------------------------------------------------------------
@@ -1103,7 +1187,7 @@ export async function getSummary(
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
-    const [coverageStatus, outsideSpending] = await Promise.all([
+    const [coverage, outsideSpending] = await Promise.all([
       detectCoverageStatus(politicianId),
       getOutsideSpendingForPolitician(politicianId),
     ]);
@@ -1121,7 +1205,8 @@ export async function getSummary(
         pac_total: 0,
         sector_breakdown: [],
         top_donors: [],
-        coverage_status: coverageStatus,
+        coverage_status: coverage.status,
+        ...(coverage.filedReports ? { filed_reports: coverage.filedReports } : {}),
         outside_spending: outsideSpending,
       },
       updatedAt: null,

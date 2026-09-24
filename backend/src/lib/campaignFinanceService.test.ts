@@ -12,6 +12,8 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 // `run` is the status of the link's latest ingestion run; absent means it has never been ingested.
 let links: { research_status: string; run?: string }[] = [];
 let districtType: string | null = null;
+// Filed summary sheets; each belongs to links[linkIndex]. Rows carry DB shapes (numeric as string).
+let reports: ({ linkIndex: number } & Record<string, unknown>)[] = [];
 
 /**
  * Run statuses the query treats as "ingestion done" (its NOT EXISTS over ingestion_runs), or null
@@ -32,6 +34,15 @@ function admittedStatuses(sql: string): string[] | null {
 }
 
 const query = vi.fn(async (sql: string) => {
+  // First: this query also joins politician_sources on candidate_committee, so the branch below would match it.
+  if (sql.includes('transparent_motivations.filed_report_summaries')) {
+    const admitted = admittedStatuses(sql);
+    return {
+      rows: reports
+        .filter((r) => admitted === null || admitted.includes(links[r.linkIndex].research_status))
+        .map(({ linkIndex: _linkIndex, ...row }) => row),
+    };
+  }
   if (/FROM transparent_motivations\.politician_sources[\s\S]*source_type = 'candidate_committee'/.test(sql)) {
     const admitted = admittedStatuses(sql);
     const done = doneRunStatuses(sql);
@@ -60,6 +71,7 @@ async function coverageStatus(): Promise<string | undefined> {
 beforeEach(() => {
   links = [];
   districtType = null;
+  reports = [];
   query.mockClear();
 });
 
@@ -125,5 +137,52 @@ describe('getSummary coverage_status — "data pending" only while an ingestion 
   it("still reports 'data_pending' when one confirmed committee has never been ingested", async () => {
     links = [{ research_status: 'confirmed', run: 'completed' }, { research_status: 'confirmed' }];
     expect(await coverageStatus()).toBe('data_pending');
+  });
+});
+
+// Dorothy Granger's CFA-4 pre-primary 2026, as the DB returns it. 15a/17c are blank on the sheet.
+const GRANGER_ROW = {
+  form: 'CFA-4', report_type: 'pre_primary', is_amendment: false,
+  period_start: '2026-01-01', period_end: '2026-04-10', filed_on: '2026-04-15',
+  filed_with: 'Monroe Circuit Court Clerk', receipts_total: '0.00', receipts_ytd: '0.00',
+  receipts_itemized: null, expenditures_total: null, expenditures_ytd: null, cash_end: '0.00',
+  debts_owed_by: '0.00', politician_source_id: 'internal', source_pdf: 'internal.pdf',
+};
+
+describe('getSummary coverage_status — filed report summaries', () => {
+  // The Monroe importer writes no ingestion_runs, so without this rule a $0 report reads "being processed".
+  it("reports 'filed_reports' for a confirmed link whose report is on file, even with no run", async () => {
+    links = [{ research_status: 'confirmed' }];
+    reports = [{ linkIndex: 0, ...GRANGER_ROW }];
+    const { summary } = await getSummary(POLITICIAN);
+    expect(summary.coverage_status).toBe('filed_reports');
+    expect(summary.filed_reports).toHaveLength(1);
+  });
+
+  it('whitelists fields: numbers are numbers, blanks stay null, internal ids never leave', async () => {
+    links = [{ research_status: 'confirmed' }];
+    reports = [{ linkIndex: 0, ...GRANGER_ROW }];
+    const { summary } = await getSummary(POLITICIAN);
+    const r = summary.filed_reports![0];
+    expect(r.receipts_total).toBe(0);
+    expect(r.receipts_itemized).toBeNull();
+    expect(r.filed_with).toBe('Monroe Circuit Court Clerk');
+    expect(r).not.toHaveProperty('politician_source_id');
+    expect(r).not.toHaveProperty('source_pdf');
+  });
+
+  it('ignores a report on a disputed link', async () => {
+    links = [{ research_status: 'disputed' }];
+    reports = [{ linkIndex: 0, ...GRANGER_ROW }];
+    const { summary } = await getSummary(POLITICIAN);
+    expect(summary.coverage_status).toBe('no_data');
+    expect(summary.filed_reports).toBeUndefined();
+  });
+
+  it("keeps 'data_pending' for a confirmed, never-run link with no report", async () => {
+    links = [{ research_status: 'confirmed' }];
+    const { summary } = await getSummary(POLITICIAN);
+    expect(summary.coverage_status).toBe('data_pending');
+    expect(summary.filed_reports).toBeUndefined();
   });
 });
