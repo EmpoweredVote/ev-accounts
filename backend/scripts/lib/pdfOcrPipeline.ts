@@ -199,7 +199,10 @@ export async function pdfToPageImages(pdfPath: string, outputDir: string): Promi
 // ---------------------------------------------------------------------------
 
 const HAIKU_MODEL = 'claude-haiku-4-5-20251001';
-const HAIKU_FALLBACK = 'claude-3-5-haiku-latest';
+// Used only when the pinned snapshot above is rejected as unknown: the Haiku 4.5 alias, which keeps resolving
+// if that dated snapshot is ever retired. (Was 'claude-3-5-haiku-latest' — Claude Haiku 3.5, retired 2026-02-19,
+// so the fallback itself would have failed.)
+const HAIKU_FALLBACK = 'claude-haiku-4-5';
 
 // Cost per token (USD) — Haiku 4.5 pricing (approximate)
 const COST_PER_INPUT_TOKEN = 1.0 / 1_000_000;  // $1.00/MTok
