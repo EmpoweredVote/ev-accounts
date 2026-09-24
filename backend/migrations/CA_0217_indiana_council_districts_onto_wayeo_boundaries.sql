@@ -38,7 +38,17 @@
 --   two at-large), Morgan 4 of 7 (District 4 and three at-large), Indianapolis 5 of 25.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews). Loader first: every gate passed,
+--   27 X0062 boundaries inserted (0 present before). CA_0217 dry run: UPDATE 27, every gate passed, round trip
+--   27/27, ROLLBACK; apply: same, COMMIT; re-run inside BEGIN/ROLLBACK: UPDATE 0, every gate passed.
+--   Live address search, before -> after:
+--     61 Jefferson St, Nashville (Brown)   council District 1+2+3+4 + 3 at-large -> District 3 + 3 at-large
+--     1 E Main St, Bloomfield (Greene)     3 at-large -> + District 1
+--     916 15th St, Bedford (Lawrence)      3 at-large -> + District 2
+--     200 E Washington St, Indianapolis    no council member -> City-County Council District 12 (Vop Osili);
+--                                          gis.indy.gov's own layer returns CC-12 at the same point
+--   check:reachability: UNREACHABLE 24 -> 9 (in|COUNTY 15 -> 0; baseline shrunk in the same commit),
+--   BAD_GEOMETRY 4/4, DEAD_GEOGRAPHY 17/17.
 --
 -- ROLLBACK:
 --   UPDATE essentials.districts d SET geo_id = t.old_geo_id, mtfcc = t.old_mtfcc
