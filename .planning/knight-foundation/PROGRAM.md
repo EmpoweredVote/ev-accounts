@@ -218,7 +218,7 @@ comparable with the old ones.** State the scope of a table in the table.
 | GA | 235 | **235** | 0 | 0 | 0 |
 | IN | 150 | **150** | 0 | 0 | 0 |
 | MN | 200 | **200** | 0 | 0 | 0 |
-| NC | 170 | **1** | 0 | **163** | **6** |
+| NC | 170 | **170** | 0 | 0 | 0 |
 | OH | 130 | **130** | 0 | 0 | 0 |
 | PA | 253 | **252** | 0 | 0 | 1 |
 | SC | 170 | **170** | 0 | 0 | 0 |
@@ -242,10 +242,12 @@ what the value is. ⚠ And it is the reason the column is kept rather than delet
 that has been caught lying once and fixed is worth more than one that was never tested.
 
 🟢 **COLORADO WAS FIXED AND NOBODY UPDATED THIS TABLE**: 20 hosted / 84 fallback has become
-**99 hosted / 0 fallback**. 🔴 **NORTH CAROLINA HAS NOT MOVED AND IS STILL THE WORST ROW** —
-**163 of 170 render off a third-party `photo_origin_url`**, which `HAS_RENDERABLE_PHOTO_SQL` accepts
-because it is URL-shaped. Some are portraits; some are the roster page the portrait sat on. Their
-coverage falls the day a source re-organises. **Do not read NC as done.**
+**99 hosted / 0 fallback**.
+✅ **NORTH CAROLINA IS CLOSED — 170 OF 170, 2026-09-24.** It had been the worst row in the table
+since it was written: 163 of 170 rendered off a third-party `photo_origin_url`, which
+`HAS_RENDERABLE_PHOTO_SQL` accepts because it is URL-shaped, and 6 rendered nothing at all. It is
+now the first state in the program where **every seated legislator renders from an object we own**.
+See the NC-5 record in [`nc.md`](./nc.md).
 
 ⚠ **THIRTEEN MORE STATES HOLD A SEATED LEGISLATURE OUTSIDE THIS PROGRAM** — 1,662 seated, of
 which **1,531 hosted, 0 elsewhere**, and **131 rendering nothing at all — that is Tennessee, the

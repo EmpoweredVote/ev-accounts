@@ -856,3 +856,124 @@ is ever revisited for currency.
    Charlotte-Mecklenburg **school board** question, and the 26-C / 26A / 26E labelling conflict.
 3. **Elisa Chinn-Gary's portrait** — she stays on the headshot backlog until an acceptable source
    exists.
+
+---
+
+# ✅ NC-5 APPLIED 2026-09-24 — the legislature is 170 of 170, and NC is the first state in the program where every seated legislator renders from an object we own
+
+**169 imported across two passes, 0 skipped, 0 failed.** North Carolina goes from **1** portrait on
+our own CDN to **170**, and from **163** rendering off a third party to **zero**.
+
+| | before | after |
+| --- | --- | --- |
+| renders from an object we own | 1 | **170** |
+| falls back to a third-party `photo_origin_url` | 163 | **0** |
+| renders nothing at all | 6 | **0** |
+
+✅ All 170 objects fetched back and confirmed **real JPEGs** (42–145 KB) with a nonexistent-key
+control that failed as required, and `photo_origin_url` points at the member's own biography page for
+**170 of 170**.
+
+## 🟢 THE LICENCE IS AN EXPLICIT PUBLIC-DOMAIN GRANT, PUBLISHED BY THE CHAMBER ITSELF
+
+`ncleg.gov/Disclaimer`, under **"Use of Photographs and Graphics"**:
+
+> "Photos of House and Senate Members on the individual NCGA Website member webpages are **not
+> published on the NCGA Website until we receive copyright release from the photographer** so these
+> specific photos are **considered in the public domain** once they are published on the NCGA
+> Website."
+
+That is an **affirmative grant**, and the strongest the program has found. It is stronger than Ohio
+(which publishes no photo policy at all, so OH-5 shipped on `press_use`) and it is the opposite of
+the Minnesota House, whose **published refusal** had to be superseded by a personal grant. It applies
+precisely to the member-page photos, which is what all 170 of these are.
+▶ **Read the disclaimer, not just the footer.** Every footer on that site says nothing useful;
+the grant is three clicks away under a heading about photographs.
+
+## 🔴🔴 THIS WAS A RE-POINTING JOB, NOT A MIRRORING JOB — AND PROFILING IS WHAT SHOWED THAT
+
+The brief was "mirror NC's 163 third-party portraits". Profiling first — the WA rule, where 176 rows
+turned out to be 22 distinct URLs — changed what the job was:
+
+| host | rows |
+| --- | --- |
+| `www.ncleg.gov` | **134** |
+| `s3.amazonaws.com` | 12 |
+| `storage.googleapis.com` | 5 |
+| Squarespace / Wix | 4 |
+| eight singletons: campaign sites, a news site, a university, a law firm, a vendor CDN, **a Google Images thumbnail** | 8 |
+
+🟢 **ALL 29 OFF-SITE ROWS HAD AN OFFICIAL NCGA PORTRAIT ALREADY PUBLISHED — 29 of 29.** Rather
+than mirror a 200x300 campaign thumbnail, or a Google image-search result, each was matched to its
+member id on the NCGA roster and re-pointed. **27 went from a tiny off-site file to 1200x1800**;
+Jonah Garson went from Squarespace to 4327x4443.
+▶ **Before mirroring a third-party portrait, check whether the body publishes one.** The answer
+here was yes for every single one, and mirroring would have locked in 29 bad frames and a licence
+question that did not need to exist.
+
+## 🟢 THE LINKED IMAGE IS `/Low`. THERE IS A `/High`, AND NOTHING LINKS IT
+
+Stored URLs were `…/Members/MemberImage/H/744/Low` — **386x540**. The same path serves
+**`/High` at 1200x1800**. Same shape as MN-6's unlinked 1050x1350 JPEG and OH-5's unlinked `large`;
+the third time in one session.
+⚠ **AN INVALID SIZE NAME IS NOT AN ERROR.** `/Medium`, `/Full`, `/Original` and `/Large` all
+return **HTTP 200 with a 4,798-byte non-image**. Only `/Low` and `/High` are real, and a checker that
+trusts a 200 would have mirrored a placeholder 134 times.
+⚠ One exception: **Harry Warren's `/High` is SMALLER than his `/Low`** (393x448 against 386x540) —
+a tighter crop, not a bigger file. His `/Low` was kept.
+
+## 🔴🔴 THE CROP WAS WRONG ON ALL 163 AND EVERY COUNTER SAID IT WAS FINE
+
+The first proof sheet reported `rendered 163 · missing 0 · flagged 2`, no monochrome — and **every
+face had the top of its head cut off.** NCGA portraits are 1200x1800 and frame the head high;
+`crop_4x5` at the default `anchor_y=0.5` takes a centre band of 1500 rows, **removing 150 from the
+top**, straight through the crown. `anchor_y=0` fixes it.
+▶ **Those counters measure the PIPELINE, and the pipeline worked perfectly. Nothing in it can
+measure COMPOSITION — so look at the frames before publishing the sheet.** Caught by Cantrell, not
+by me. See [[feedback_look_at_the_proof_sheet_you_publish]].
+
+## The six who rendered nothing — and three that needed a hand-crop
+
+All six had an NCGA public-domain portrait too, so the state could close rather than stop at 164.
+Three of their sources are **not headshots**, and needed per-person `zoom`/`anchor` overrides:
+
+| | source | crop | why |
+| --- | --- | --- | --- |
+| Anna Ferguson | 5464x8192 | `zoom 2.4, y 0.12` | seated full-length |
+| John L. Lowery | 3759x3507 | `zoom 1.9, y 0.22` | full body outdoors |
+| Dan Kiger | 1024x768 | `zoom 2.0, x 0.42, y 0.65` | landscape half-body |
+
+⚠ **RAISING A SUBJECT AND ENLARGING THE FACE ARE THE SAME LEVER HERE, NOT TWO.** My first two
+passes sat all three too low; the operator rejected both. Once the zoom window is in play the ratio
+crop takes its **full height**, so vertical placement is governed entirely by `anchor_y` — and the
+only way to make a face *bigger* is to zoom in, which is what costs the pixels. Kiger was judged
+**side by side against Phil Rubin as a reference face**, which is what finally settled it:
+`z1.5 y0.70` kept the most pixels and still read low and small; `z2.0 y0.65` matches the row at
+**307x384, a 1.95x enlargement** — accepted deliberately, because the alternative is one portrait
+that reads differently in every grid. He is the only one of the 170 whose source is not a studio
+headshot.
+
+## 🔴 A SECOND DEFECT IN THE SHARED IMPORTER: PROVENANCE WAS LEFT POINTING AT THE IMAGE
+
+After the first 163 landed, `photo_origin_url` held the member's biography page for only **29**. The
+importer rewrites provenance when the old value is NULL **or matches a file-extension regex** — and
+`/Members/MemberImage/H/744/High` **has no extension**, so 134 rows kept the IMAGE url as their
+"provenance". That is exactly the defect the field exists to prevent: a dead image link then counts
+as coverage under `HAS_RENDERABLE_PHOTO_SQL`.
+⚠ **AND THE OBVIOUS FIX IS ALSO WRONG.** Matching the candidate's own `url` never fires when a
+wave *upgrades* the source — NC imported `/High` while the stored value was `/Low`. It matched **1
+row of 134**. The pattern has now been wrong twice, so the caller states it per row with
+`"origin_is_image": true` rather than the importer guessing.
+The 134 were repaired against `/Members/MemberImage/`, which is unambiguously an image path on that
+host and can never be a biography page. ⚠ One row needed its own fix: **Caleb Theodros's
+provenance was a Google Images thumbnail URL** — no extension, no `MemberImage` path, so neither
+rule caught it.
+
+**Proof sheets:** the 163 — https://claude.ai/artifact/QAZThoisV2axxHqU8GuA7D ·
+the last six — https://claude.ai/artifact/YFPCPwwrNGaLp29GKh9wcE
+
+## What NC still owes
+
+Nothing on the legislature. The local and county rows are separate: Charlotte is 12/12/12 and
+Mecklenburg 16/16/**15** — **Elisa Chinn-Gary** remains the one Mecklenburg officer on the headshot
+backlog, unchanged by this wave.
