@@ -9,7 +9,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | Stage | State |
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-25 — 95 boundaries, 95 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
-| 2 legislature | — **141 offices owed: 47 Senate + 94 House.** Nothing measured yet |
+| 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | — Grand Forks, unmeasured |
 | 4 county waves | — Grand Forks County, unmeasured |
 | 5 assets | — portraits + the `grand-forks` banner |
@@ -322,13 +322,10 @@ address. **Stage 2 must precede stage 3**, as in every slice.
 2. ~~Add `ND` to `STATE_LAYER_ALLOWLIST` with a pre-flight block.~~ **Done — `['sldu','sldl']` only,
    and all three assertions were watched failing.**
 3. ~~Run ND-1.~~ **Done — 95 boundaries, 95 districts, 0 errors.**
-4. **ND-2: seat the Legislative Assembly.** 141 offices. Owed before anything else:
-   - the roster from the Legislative Assembly's own member pages, **change-checked per member**,
-     not from a roster index page (MN-2's rule, and SC's one layer down);
-   - a decision on how two representatives share one district row — **this is the slice's new
-     structural question and it has no precedent in the program**;
-   - the duplicate-name guard, with the expectation that it will fire: North Dakota is small and
-     the corpus is national.
+4. ~~ND-2: seat the Legislative Assembly.~~ **Done 2026-09-25 — `CC_0144`/`CC_0145`, 141 offices,
+   141 seated, 0 vacant, 8 arrivals dated to the day. Grand Forks scores 3 of 5.** The structural
+   question was settled on ballot truth: two identical-title offices per district, Arizona's shape,
+   paired to members by a deterministic slot that asserts nothing.
 5. **ND-3 Grand Forks.** Read the city's own charter sentence for the office inventory. Grand Forks
    is a **home-rule city with a council**; the ward count and whether any seat is at-large must come
    from the charter, never from the map.
@@ -348,3 +345,226 @@ address. **Stage 2 must precede stage 3**, as in every slice.
 - ⚠ **The `--vintage 2025` files carry the same plan** (48 polygons, LSY 2024) and were not used.
   Nothing depends on this, but if a later wave reloads ND, 2024 is the vintage this slice proved and
   2025 is unproved.
+
+---
+
+## ✅ ND-2 APPLIED 2026-09-25 — the North Dakota Legislative Assembly is seated
+
+`CC_0144` (structure) + `CC_0145` (occupancy): **141 offices — 47 Senate + 94 House — 141 seated,
+0 vacant, 141 people created.** Measured from outside after the apply: `politicians`
+**88,854 → 88,995** and `office_terms` **9,330 → 9,471**, both **exactly +141**.
+`offices_missing_terms` went **423 → 564** when `CC_0144` created the offices and back to
+**423 / 238 unflagged** when `CC_0145` seated them — the whole excursion accounted for, with
+141 out and 141 back.
+
+Both migrations are **idempotent, proved by re-running each**: every `essentials.*` insert
+returns `INSERT 0 0` on the second run and both gates still pass.
+
+### 🔴🔴 THE ROSTER THAT LOOKS RIGHT HOLDS 148 MEMBERS — SEVEN MORE THAN THE CONSTITUTION ALLOWS
+
+ndlegis.gov publishes **three** member lists for the 69th Assembly: Regular Session, Jan 2026
+Special Session, Sep 2026 Special Session. The regular-session list is **cumulative** — it retains
+everyone who held a seat at any point — so **seven districts list FOUR members**.
+
+🔴 **And "four in a district" is invisible to the obvious shape check here.** North Dakota's House
+is legitimately two-per-district, so four reads as 2×2. In a single-member state this defect
+announces itself on the first `GROUP BY district`; in North Dakota it looks like the correct answer.
+A wave that took the first roster it found would have tried to seat 148 people into 141 seats.
+
+| roster | members | senators | reps | districts not holding 1+2 |
+| --- | --- | --- | --- | --- |
+| Regular Session | **148** | **48** | **100** | **7** (11, 20, 25, 26, 27, 42, 44) |
+| Jan 2026 Special Session | 141 | 47 | 94 | none |
+| **Sep 2026 Special Session** (used) | **141** | **47** | **94** | **none** |
+
+The Sep 2026 special session convened **2026-09-02**, three weeks before this wave, which makes its
+roster the current statement of membership.
+
+### 🟢 ALL 141 MEMBER PAGES WERE READ, AND THE ZERO WAS CONTROLLED
+
+MN-2's rule is that a roster list page is not a change-check. Every member's own biography page was
+fetched and its `<h1>` asserted to name that member — **141 of 141, 0 failures** — and **none**
+carries a departure marker on a 69th-Assembly row.
+
+🔴 **A uniform answer is a broken detector until proved otherwise**, so the identical sweep was
+re-run over the 148-member cumulative roster. It found **all seven departures, every one dated to
+the day**:
+
+| district | member | left | successor | arrived |
+| --- | --- | --- | --- | --- |
+| HD-11 | Liz Conmy | **deceased 2026-04-25** | Adam Goldwyn | 2026-06-01 |
+| HD-20 | Jared C. Hagert | resigned 2026-02-09 | Dave Rustebakke | 2026-04-21 |
+| HD-25 | Cynthia Schreiber-Beck | **deceased 2025-05-18** | Kathy Skroch | 2025-09-10 |
+| HD-26 | Jeremy L. Olson | resigned 2025-05-05 | Kelby Timmons | 2025-05-29 |
+| HD-27 | Josh Christy | **deceased 2025-02-18** | TJ Brown | 2025-03-10 |
+| HD-42 | Emily O'Brien | resigned 2025-08-19 | Dustin McNally | 2025-09-19 |
+| SD-44 | Josh Boschee | resigned 2026-08-04 | Jamie Selzler | **2026-08-05** |
+
+⚠ **The gaps are real vacancies, not data quality.** HD-25 sat empty for nearly four months. None of
+the seven predecessors is written by this wave; they are history, and the seat is held today by the
+successor.
+
+### 🟢 NORTH DAKOTA DATES ITS ARRIVALS, WHICH MICHIGAN AND MINNESOTA COULD NOT
+
+MI-2 closed with **148 undated arrivals** and MN-2 with **200 unknowns**, in both cases because no
+member page published a date. North Dakota's do: the "Assembly Sessions by Year" block carries
+`Active August 5, 2026`, `Resigned August 4, 2026`, `Deceased April 25, 2026`, `Effective 1/7/25 -
+8/4/26`. Boschee's resignation and Selzler's arrival are **consecutive days**, which is exactly the
+shape `seat_officeholder` produces.
+
+**Eight terms are written at `day` precision**, the seven successors above plus **Karen Grindberg
+(HD-41), active 2024-12-01**. The mechanism is not inferred from the date: N.D.C.C. 16.1-13-10 fills
+a legislative vacancy by appointment of the vacating member's **district party committee**, and two
+cases were confirmed against contemporaneous reporting — the District 44 Dem-NPL executive committee
+appointed Selzler on 2026-08-04, and the District 41 Republican executive committee appointed
+Grindberg to the remainder of Michelle Strinden's term after Strinden resigned to become lieutenant
+governor.
+
+🔴 **THE EIGHTH ARRIVAL IS ONE NO ROSTER DIFF COULD SEE.** Grindberg arrived **2024-12-01**, before
+the assembly convened, so she appears in all three rosters and the diff between them is silent about
+her. The roster diff found seven; reading the member pages found eight. **A diff of snapshots can
+only see changes that happened between the snapshots.**
+
+⚠ **AND TWO SOURCES DISAGREE BY ONE DAY ON GRINDBERG, WHICH IS RECORDED RATHER THAN SMOOTHED.** The
+Legislative Branch says `Active December 1, 2024`; contemporaneous reporting says she was **sworn in
+December 2, 2024**, Strinden's resignation having taken effect December 1. The body's own record is
+what is written. **"First sworn" and "active from" are different facts**, and this is a case where
+they differ.
+
+### 🔴 THE OTHER 133 TERMS ARE OPEN-ENDED AT `unknown`, AND THAT IS A DECISION, NOT A GAP
+
+A date exists in the abstract — N.D. Const. art. IV § 7 begins terms on **the first day of December
+following the election** — and it was still not written, for three reasons that compound:
+
+1. **Both chambers serve four-year terms** (art. IV § 4) and North Dakota staggers them, so whether
+   a given member's current term began 2022-12-01 or 2024-12-01 is not knowable from anything read
+   here.
+2. **A re-election does not restart an occupancy** (the SC-3 rule), so even the correct term start
+   would be the wrong value for a member who has held the seat continuously since before it.
+3. The bio pages publish `Senate since 1987`-style lines, but that is a fact about service in the
+   **chamber**, not in this **seat** — and North Dakota redrew its map in 2021 and again by court
+   order effective 2024-01-08. Writing `1987-01-01` would assert tenure in a seat that did not exist
+   in that shape.
+
+Those `since` years **are** captured, in `backend/data/seed-nd-2026/nd-members.json`, as evidence for
+a later dating pass. Same disposition as OH-2 and MN-2, with more of the reasoning available.
+
+### 🔴🔴 TWO OFFICES SHARE ONE DISTRICT, SO THE DISTRICT IS NOT A KEY
+
+Every earlier wave in this program could match a member to an office through the district alone. In
+North Dakota 46 House districts hold **two interchangeable offices**, and the seats carry no position
+number on any ballot, so **no fact in the world says which member holds which row.**
+
+▶ The assignment is therefore made **deterministic rather than meaningful**: offices ranked by their
+own `id`, members by `full_name`, slot *N* matched to slot *N*. Both keys are stable, which is what
+makes the migration idempotent. **The pairing asserts nothing, and nothing downstream may read
+meaning into it.**
+
+🔴 **The office title carries no seat number either, and that was a decision about ballot truth.**
+Production already held two shapes: **Arizona** (60 offices over 30 districts, one title, elected at
+large) and **Washington** (`State Representative (Position 1)` / `(Position 2)`, because Washington's
+ballot really numbers the seats). North Dakota elects by **block voting** — one contest, "vote for
+two", no positions — so it is Arizona's shape. `(Seat 1)`/`(Seat 2)` would have put a distinction on
+a voter-facing title that exists on no North Dakota ballot. The structure gate asserts **exactly two
+distinct titles** statewide.
+
+### 🔴 A MEMBER'S OWN DISTRICT LABEL IS NOT THE HEADING IT SITS UNDER
+
+Lisa Finley-DeVille and Clayton Fegley both appear under the accordion heading **"District 4"**, and
+their own rows say **4A** and **4B**. The heading is what the roster groups by; the member's label
+identifies the seat. Using the heading would have tried to join both to a `STATE_LOWER` district
+`38004` — which does not exist. A loud failure rather than a silent one, but **only by luck of North
+Dakota having no whole House District 4.**
+
+### 🔴 ONE NAME COLLIDES WITH A DIFFERENT PERSON, AND THE SWEEP RAN ON THE GUARD'S KEY
+
+`Dick Anderson`, Representative for **ND House District 6** (Republican, farmer, UND, House since
+2011), shares `(first_name, last_name)` with `-4110005 Dick Anderson`, who **sits today as an OREGON
+STATE SENATOR for OR SD-5**. A person cannot hold both, so these are different people — the same
+structural evidence the GA roster trap needed, where 2 of 4 name hits were a Colorado senator and a
+Utah treasurer. The guard is lifted for **exactly one row**; the other 140 were inserted with it live.
+
+⚠ **The sweep was run on the guard's own key**, which is OH-2's lesson, **and it was controlled**:
+the same query reports **66 active `Johnson`s and 37 active `Anderson`s**, so the single hit is a
+true single and not an empty detector. Here the `full_name` sweep and the `(first_name, last_name)`
+sweep agreed — unlike Ohio, where they did not.
+
+### 🔴 THE RESERVED external_id BAND WAS WRONG ON THE FIRST CHOICE
+
+The first band picked, `-2761141..-2761001`, **already held 14 rows**. It was chosen after checking a
+*different* band (`-2760400..-2760131`, which was empty) and not re-checking. The band actually used
+is `-2762400..-2762260`, verified empty by a `generate_series` scan over 200-wide blocks.
+**Re-check the band you actually use, not the one you looked at first.**
+
+### Gates
+
+| gate | result |
+| --- | --- |
+| row deltas | `politicians` +141 exactly, `office_terms` +141 exactly |
+| offices | 47 Senate + 94 House = 141 |
+| seated | **141**, counting `och.politician_id` and never `count(*)` |
+| `offices_missing_terms` | 423 → 564 → **423 / 238 unflagged**, fully accounted |
+| every whole House district holds **2 distinct** holders | 46 of 46 |
+| subdistricts 4A / 4B hold 1 each | pass |
+| nobody holds two ND legislative seats | pass |
+| dated terms | exactly **8** at `day`, 0 with a `term_end` |
+| Grand Forks' four districts reach 12 seated offices | pass |
+| distinct office titles statewide | exactly **2** |
+| idempotency | re-run of both: every `essentials.*` insert `INSERT 0 0` |
+| `check:reachability` | green, nothing regressed (4 / 17 / 7, all at baseline) |
+| `check:occupancy` · `check:migrations` · `check:reservations` · `check:ocd-suffixes` | all green |
+
+### Every gate was watched failing first
+
+| gate | tamper | what it printed |
+| --- | --- | --- |
+| House office total | `NOT EXISTS` guard instead of the count | `expected 94 ... found 48` — **the half-House defect the obvious guard causes** |
+| House office total | 4A/4B given two offices each | `expected 94 ... found 96` |
+| **per whole district = 2** | 4A given 2 and District 1 given 1 — **total still exactly 94** | `1 whole House district(s) do not hold exactly 2 offices` |
+| **per subdistrict = 1** | 4A given 2 and 4B given 0 — **total still 94, every whole district still 2** | `subdistrict 4A/4B does not hold exactly 1 office (2 offending)` |
+| 2 distinct holders | both District 1 House seats pointed at the same person — **141 terms, 141 seated** | `1 whole House district(s) do not hold exactly 2 DISTINCT holders` |
+| nobody holds two seats | a House member also given the District 1 Senate seat | `1 person/people hold more than one ND legislative seat` |
+| 8 dated arrivals | Selzler's published date dropped | `expected exactly 8 day-precision ND terms ... got 7` |
+
+🔴 **The two middle rows are the point of the whole exercise.** Both tampers leave the total at
+exactly 94 and both would pass any count. The per-district assertions are the only thing standing
+between a correct total and a wrong distribution — and in a multi-member state a wrong distribution
+is the likely defect, not a wrong total.
+
+### End-to-end probe, measured against production after the apply
+
+| anchor | answers |
+| --- | --- |
+| **Grand Forks City Hall** | **3** — Sen. Scott Meyer, Reps Nels Christianson and Steve Vetter (D18) |
+| University of North Dakota | 3 — Sen. Claire Cory, Reps Doug Osowski and **Dustin McNally** (D42, arrival showing as `2025-09-19 day`) |
+| **Belcourt — Turtle Mountain** | 3 — Sen. **Richard Marcellais**, Reps **Collette Brown** and **Jayme Davis** (D9) |
+| **Fort Totten — Spirit Lake** | 3 — **the same three** (D9) |
+| **New Town — Fort Berthold** | **2** — Sen. Chuck Walen (D4) and **one** Rep, Lisa Finley-DeVille (**4A**) |
+| CONTROL — Duluth, MN | none |
+
+🟢 **Two rows here are worth more than the counts.** Belcourt and Fort Totten returning the **same
+delegation** is the court's remedy visible to a voter — under the struck-down map those two
+reservations were in different districts. And New Town returning **one** representative rather than
+two is the single-member subdistrict working end to end, through a schema whose default in this
+state is two.
+
+▶ **Grand Forks scores 3 of 5.** The remaining two are stage 3 (city council) and stage 4 (county
+commission).
+
+### Tooling this wave added
+
+| script | what it does |
+| --- | --- |
+| `scripts/nd-legislature-roster-extract.mjs` | pulls all three session rosters from the `members-by-district` accordion, asserts 47 districts / 47 senators / 94 reps, and diffs the sessions |
+| `scripts/nd-legislature-member-sweep.mjs` | reads every member's own biography page, asserts the `<h1>` names that member, and extracts the 69th-Assembly status lines |
+
+⚠ **A 404 on ndlegis.gov is a 70 KB styled page**, so response size proves nothing on this host.
+Both scripts judge by status code and assert the page names the member they asked for.
+
+### 🟢 A stage-5 lead found while here
+
+The Legislative Branch publishes a **`Legislator Photo Request Form`**
+(`ndlegis.gov/legislator-photo-request`) and every member row carries a portrait URL under
+`/sites/default/files/styles/.../person/photo/`. Those URLs are captured in
+`backend/data/seed-nd-2026/nd-roster-special-2.json`. **The licence is not yet established** — that
+is stage 5's gate, and MN-5 is the precedent for asking.
