@@ -364,10 +364,179 @@ context so a human can settle it in one look.
 
 ---
 
-## ▶ Next: MI-3 — Detroit City Council
+## MI-3 — Detroit (APPLIED 2026-09-24)
 
-Stage 3. Confirm Detroit's elected inventory from the charter, never from a template, and measure
-the council-district layer and its vintage before writing anything. Stage 4 is **Wayne County**.
+`X0065` (7 council-district polygons), `CC_0140` structure, `CC_0141` occupancy: **18 offices, 18
+seated, 0 vacant** — 1 government, 4 chambers, 17 people created, 1 reused. `politicians` 88,816 →
+88,833 (**exactly +17**), `offices` +18, `terms` +18, `districts` +8. `offices_missing_terms`
+**unmoved at 423/238**. All three writes re-run clean: 0 inserted, 7 boundaries already existed.
+
+### The office inventory is the charter's own sentence
+
+> "The elective officers of the city are the Mayor, the nine (9) members comprising the City
+> Council, the City Clerk and seven (7) elected Board of Police Commissioners."
+
+1 + 9 + 1 + 7 = **18**. The council splits 7 district + 2 at-large because the charter creates
+"seven (7) non at-large districts and one (1) at-large district", electing two from the latter.
+
+🔴🔴 **DETROIT ELECTS ITS POLICE OVERSIGHT BOARD, AND MOST CITIES DO NOT.** The Board of Police
+Commissioners has **eleven** members: **7 elected by district** and 4 appointed by the Mayor. Only
+the 7 elected are seated; one appointed seat is currently vacant and neither fact belongs in the
+table. ⚠ The **elected** members serve **four**-year terms — the board's own page leads with a
+five-year figure, which describes the **appointed** members.
+
+🔴 **THREE OF THE SEVEN WON AS WRITE-INS.** Districts 1, 2 and 3 had **no candidate on the 2025
+ballot** and were won on write-in votes (Ivey, Williams, Morris). They are elected officeholders and
+are seated like the rest. Recorded because "no candidate filed" is normally the shape of a vacancy,
+and here it is not.
+
+### 🔴🔴 One geography, two elected bodies
+
+Police-commission districts have **identical boundaries** to council districts, so each of the 7
+`X0065` polygons carries **two** offices and a Detroit address correctly returns **both** a council
+member and a police commissioner.
+
+⚠ That is the Long Beach fan-out shape, and here it is **correct** — the same inversion IN-5 found
+with Allen County's three commissioners. No coverage or fan-out check can separate the two cases;
+only the charter can. `CC_0140` gate 9 asserts exactly 2 offices per council district, so a later
+wave cannot quietly add a third.
+
+### The vintage question, and the answer is the opposite of MI-1's
+
+Detroit publishes **three** layers — `city_council_districts_2013`, `city_council_districts_2026`
+and one titled **"Current Detroit City Council Districts"** — plus a *2026 to 2013 crosswalk*, which
+is the city itself saying these are two different maps.
+
+🟢 **THE 2026 LAYER DATES ITSELF.** Its own description: selected by City Council **8-1 on
+2024-02-06** under charter Sec. 3-108, "used to determine resident districts when voting in 2025
+municipal elections, and will officially take effect **January 1, 2026**". The sitting members took
+office that same day.
+
+⚠ **NOTE THIS IS THE OPPOSITE ANSWER TO MI-1's SENATE.** There the newer map was authorised for a
+*future* election, so the sitting members still represented the old one. Here the new map took
+effect on the day the new members did. **"Which map is newer" is never the question; "which map do
+the sitting members represent" is.**
+
+🟢 **"Current" turned out to be byte-identical to the 2026 layer** — same vertex counts, zero area
+difference on all seven, measured rather than assumed — so the city serves the operative map under
+two names, and the loader uses that as two-publisher agreement. ⚠ Reading "Current" as the live map
+would have been right *by luck*: Horry County's `CurrentCouncilDistricts` was the superseded map
+under exactly that name. The 2013 map differs from the loaded one on **all seven** districts, by
+1.65%–18.18%.
+
+⚠ **The layer says it is not the legal boundary** — "for illustrative purposes only... refer to the
+geographical boundaries formally approved by the Detroit City Council on February 6, 2024". The
+legal boundary is a street-by-street description, and the layer carries it per district in a
+`legal_description` field; gate 3 asserts all seven are present.
+
+### 🔴 The closure gate had to be measured, not copied
+
+Akron's ten wards tile its place polygon at 99.971% and OH-3 gated at 99.5%. Detroit's seven cover
+**97.421%** of TIGER place `2622000` — **139.22 sq mi against the place's 142.90** — because the
+TIGER polygon includes the Detroit River out to the international boundary while the districts tile
+the **land** (~138.75 sq mi). 3.850 sq mi uncovered, 0.165 sq mi outside the city.
+**Akron's threshold would have failed on correct Detroit data.** The Great Lakes term from MI-1, for
+a third time, and Fort Wayne's rule: gate the structure and set a coverage bound from a measurement.
+
+### 🔴🔴 The X-code allocator gap, and why filling it naively is worse
+
+OH-3 recorded that `X` boundary codes are picked by reading `max(mtfcc)` in prod — "the exact
+procedure CLAUDE.md calls the bug for migration numbers" — and asked for X in the steward.
+
+**The steward's allocator turns out to be generic: `steward slot X` works.** It returned **`X_0001`**
+— and production's `X0001` already holds **207 rows**. 🔴 **AN UNSEEDED NAMESPACE IS WORSE THAN NO
+ALLOCATOR, BECAUSE IT HANDS OUT NUMBERS THAT ARE ALREADY TAKEN.** The seed is the hard part:
+`sync --seed` can bootstrap migrations because it reads git, and nothing reads
+`geofence_boundaries.mtfcc`. `X_0001` was marked **abandoned** with that reason on the row.
+
+MI-3 therefore used **`X0065`**, read from prod's max **in the same session as the write**, and the
+loader refuses if anything already occupies it or if the max has moved past it. ▶ Seeding the X
+namespace from prod remains the real fix.
+
+### Roster and the change-check
+
+Mayor **Mary Sheffield** (sworn 2026-01-01, Detroit's 76th mayor and first woman elected to the
+office), Clerk **Janice M. Winfrey** (re-elected 2025-11-04), nine council members, seven elected
+police commissioners.
+
+⚠ **`detroitmi.gov` sits behind a Cloudflare interstitial** that answers a plain fetch with HTTP 403
+"Just a moment...". The sweep ran inside a real browser session and issued its 18 requests
+**same-origin**, which is what made the challenge cookie apply. All 18 pages name their own
+officeholder.
+
+⚠ **A "does the page's own `<title>`/`<h1>` name them" test reported 17 of 17 and is NOT a finding.**
+Detroit titles its pages by **office** ("City Council District 2"), not by person. 17 of 17 is a
+uniform answer, and here the uniform answer was the test not matching this site's convention — the
+same test that correctly caught a dead member link in MI-2.
+
+### 🔴 One person reused, and MI-2's defect fixed before the gate had to catch it
+
+The name sweep ran on the **guard's own key** across all 18 and returned exactly one hit:
+**`-261303` Mary Waters**, the sitting at-large council member, already in production as a 2024
+MI-13 congressional candidate. Reused, not duplicated.
+
+Candidate rows carry `is_incumbent = false`, and the reps feed hides those — the defect that left
+four Michigan legislative seats invisible in MI-2. `CC_0141` sets the flag **in the same migration
+that seats her**, and **gate 7 asserts the reps-feed predicate itself** rather than trusting the fix.
+
+### 🔴 Only one term is dated, and the reason is not "Detroit publishes nothing"
+
+All 18 offices were on the 2025-11-04 ballot and the winners' current **term** began 2026-01-01 —
+but `office_terms` records **occupancy**, not the current term. **Seven of the nine council members
+were re-elected** and have held their seats for years; James Tate since 2010. Writing 2026-01-01 for
+them would assert they arrived this year.
+
+⚠ And their own pages give the other trap: Tate's says **"since November 2009"** and **"since
+2010"** — a *first* election, not an occupancy start, and the two do not even agree with each other.
+
+So the Mayor is dated **2026-01-01 `day`** (a newly open office with a reported swearing-in) and the
+other 17 are open-ended at `unknown`. Akron exactly.
+
+### 🔴 Community Advisory Councils are excluded (ruling 2026-09-24, Cantrell)
+
+Detroit also elects **5-member Community Advisory Councils**, on the city ballot, in the **3 of 7
+districts** that created one by petition (D4, D5, D7) — 15 more elected people. They are **not** in
+the charter's enumeration of "the elective officers of the city", hold no governing power, and the
+set changes as districts opt in or out. Excluded as SC-4 excluded Horry's 15 watershed
+commissioners. **A recorded debt, not an oversight** — the inclusion ruling does reach them, and a
+later wave may take them.
+
+### ✅ Verified from outside
+
+- 18 offices, **18 seated counting `och.politician_id`**, 0 vacant, 4 chambers, 1 government.
+- **Probe**: Detroit City Hall returns **6** answers — Mayor Sheffield, Clerk Winfrey, both at-large
+  members, **Council D6 Santiago-Romero and Police Commissioner D6 Lisa Carter**; Grandmont/Rosedale
+  returns D1 Tate and Commissioner D1 Ivey. **Grand Rapids returns 0 Detroit offices.**
+- **Per-district control 7/7**: every council district resolves at its own interior point to exactly
+  2 offices, both seated, from 2 different bodies — with a Grand Rapids positive control returning 0.
+- Five loader gates and five migration gates **watched failing**.
+  🔴 **THREE OF THE FIRST FIVE MIGRATION CONTROLS WERE SHADOWED BY GATE 3** ("the charter names 18
+  elective officers"), which runs first and trips on any plant that adds or removes an office — so
+  gates 5, 6 and 9 were never exercised and all three "passed" vacuously. ▶ **A control for a
+  structural gate must hold every earlier gate's quantity constant** and break only the shape its
+  target measures; each plant now moves or retitles an office instead of creating or deleting one.
+  This is MI-2's gate-3 lesson for the third time in the programme.
+- Dry run of both migrations as **ONE transaction ending in ROLLBACK**, revert re-measured and exact.
+- `check:reachability` nothing regressed; `check:occupancy`, `check:migrations`,
+  `check:reservations`, `check:child-county`, `check:duplicate-people` green.
+
+### Debts carried out of MI-3
+
+- 🔴 **17 undated arrivals** (the Mayor is dated). Detroit publishes no per-member service dates,
+  and a blanket 2026-01-01 would be false for the seven re-elected incumbents.
+- 🔴 **The 15 Community Advisory Council seats**, excluded by ruling and reversible.
+- 🔴 **Seed the `X` namespace in the steward from `geofence_boundaries.mtfcc`**, or leave it out —
+  `X_0001` is abandoned and the namespace must not be used until it is seeded.
+- 🔴 The **Crane A1 `sldu` re-load for 2027-01-01** (MI-1), which also re-seats the Senate.
+
+---
+
+## ▶ Next: MI-4 — Wayne County
+
+Stage 4. Wayne County's polygon (`26163`) is already present at 672.3911 sq mi and the county holds
+**no** government row yet. Read the county charter for the elected inventory — Wayne is a **charter**
+county, so an all-Michigan statutory template will not describe it (Summit County's lesson at OH-4).
+The 15-member County Commission is elected by district, so that layer and its vintage come first.
 
 Carried debts:
 - 🔴 **`sldu` must be re-loaded to Crane A1 after the 2026 election** (members seated 2027-01-01).

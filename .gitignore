@@ -185,10 +185,10 @@ ui-ux-pro-max-skill/
 # scripts/tn-ga-portrait-extract.py. The candidates JSON and the ledger are tracked.
 backend/data/seed-tn-headshots-2026/portraits/
 
-# Knight slice 11 (MI-1) vintage-proof inputs: 4 TIGER zips, 4 State of Michigan authority
-# layers and the 2020 tract gazetteer, ~67 MB. Not committed — regenerate deterministically
-# with `node scripts/verify-mi-tiger-vintage.mjs --fetch`, which refuses a truncated download.
-backend/data/seed-mi-2026/_tiger/
-backend/data/seed-mi-2026/_authority/
-backend/data/seed-mi-2026/_*.html
-backend/data/seed-mi-2026/_*.json
+# Knight slice 11 (MI) inputs and scratch. Everything prefixed `_` here is regenerable, the
+# same convention as backend/scripts/_*: 4 TIGER zips, 4 State of Michigan authority layers,
+# the 2020 tract gazetteer, Detroit's three council-district layers and the two fetched TLS
+# intermediates — ~67 MB. Regenerate with `verify-mi-tiger-vintage.mjs --fetch` (which refuses
+# a truncated download), `build-mi-legislature-roster.mjs` and
+# `load-detroit-council-boundaries.mjs`.
+backend/data/seed-mi-2026/_*
