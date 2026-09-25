@@ -36,6 +36,7 @@ import { createNetfileAdapter, assertNetfileRunHealthy } from './adapters/netfil
 import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 import { currentFecCycle } from './fecCycle.js';
+import { FEC_INCREMENTAL_FIRST_ORDER_SQL } from './fecBurstResume.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -303,12 +304,17 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
   const systemValues = adapterName === 'fec' ? ['fec_house', 'fec_senate'] : [adapterName];
   const placeholder = systemValues.map((_, i) => `$${i + 1}`).join(', ');
 
+  // FEC walks known sources before first-time backfills, so a run cut short loses only
+  // backfills (see FEC_INCREMENTAL_FIRST_ORDER_SQL). Other adapters keep their order.
+  const orderBy = adapterName === 'fec' ? `ORDER BY ${FEC_INCREMENTAL_FIRST_ORDER_SQL}` : '';
+
   const sourcesResult = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,
             research_status, notes, created_at, updated_at, netfile_agency
-     FROM transparent_motivations.politician_sources
+     FROM transparent_motivations.politician_sources ps
      WHERE source_system IN (${placeholder})
-       AND research_status = 'confirmed'`,
+       AND research_status = 'confirmed'
+     ${orderBy}`,
     systemValues
   );
 
