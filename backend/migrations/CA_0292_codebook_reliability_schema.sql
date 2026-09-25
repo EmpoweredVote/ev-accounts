@@ -14,8 +14,10 @@ BEGIN;
 --                              must not be rewritten by later answer writes (today it lives only in
 --                              politician_answers, which later writes change — Moore/social-security
 --                              was approved as 4 and reads 5 today). A correction is a new row with
---                              supersedes_id. Only excluded_from_cert and politician_id (duplicate-
---                              person merges) may be updated.
+--                              supersedes_id. Only excluded_from_cert, politician_id, office_id and
+--                              review_id may be updated — the first two for duplicate-person merges,
+--                              the last two nulled by ON DELETE SET NULL on office retirement /
+--                              review-row delete.
 --   reliability_certifications one row per computation; never updated. decidePublish (P3) reads the
 --                              newest row per key.
 --
