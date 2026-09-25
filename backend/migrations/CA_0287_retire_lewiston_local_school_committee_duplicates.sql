@@ -32,7 +32,9 @@
 -- share falls by 8 and the unflagged drift count does not move).
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED. Dry run (BEGIN ... ROLLBACK) 2026-09-24, together with CA_0288: gates pass, a re-run is a no-op,
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews), before CA_0288. Verified after: archive 8
+--   offices + 1 chamber, Lewiston city district 8 offices, offices_missing_terms 431 -> 423 (unflagged 238 unchanged),
+--   a re-run inside BEGIN ... ROLLBACK deleted nothing. Before that: dry run 2026-09-24, together with CA_0288: gates pass, a re-run is a no-op,
 --   and a planted office_terms row on a duplicate trips the pre-flight. The rollback was confirmed to revert.
 --
 -- ROLLBACK (restore both, then the archive may be dropped). chambers.slug is GENERATED, so name the columns:

@@ -32,7 +32,10 @@
 -- all flagged is_vacant with no term. That is unknown occupancy, not a vacancy. No holder is invented here.
 --
 -- No migration runner exists; this file records SQL applied by hand.
--- STATUS: NOT APPLIED. Dry run (BEGIN ... ROLLBACK, with the 3 polygons loaded inside the transaction) 2026-09-24:
+-- STATUS: APPLIED to prod 2026-09-24 (operator approval: Chris Andrews), after load-me-school-boundaries.ts (3 inserted,
+--   5 already present) and CA_0287. Verified after: SCHOOL districts hold 9 / 9 / 7, city districts 9 / 9 / 8, a re-run
+--   inside BEGIN ... ROLLBACK moved nothing, check:reachability at baseline, buildDistrictQuery at each city hall returns
+--   the city district and the SCHOOL district. Before that: dry run (BEGIN ... ROLLBACK, polygons loaded inside) 2026-09-24:
 --   gates pass, a re-run is a no-op, a planted district on 2309930 trips the pre-flight. Each school polygon equals its
 --   city polygon (intersection = 100% of both). buildDistrictQuery at each city hall then returned the city district
 --   (council + mayor) AND the new SCHOOL district; Lewiston returned only its SCHOOL board, no phantom seats.
