@@ -54,12 +54,22 @@ published. Every one is a genuine studio portrait on a uniform warm-grey gradien
 no placeholders, no group shots, no seals. Two backdrops differ (a flag behind Lt. Gov. Randy
 McNally) and both are real official portraits.
 
-- **Monochrome: 0 of 131**, with a control that separates a colour frame (mean chroma 25.8) from
-  the same frame forced to grey (0.0).
-  🔴 **AND THE STANDING NO-MONOCHROME RULE IS NOT ENFORCED IN CODE.** `headshot_crop.py` has no
-  monochrome check; the only trace in the repo is a hand-written rejection list in
-  `build-in-stage5-candidates.py`. Anything relying on the pipeline to catch a black-and-white
-  portrait is relying on something that is not there. Measured here by hand.
+- **Monochrome: 0 of 131**, agreed from two directions. `headshot_crop.monochrome()` ran inside
+  the renderer over every shipped crop — **chroma min 21.0, median 37.4, max 98.7, nothing
+  flagged** — and an independent hand measure with its own control (a colour frame at 25.8
+  against the same frame forced to grey at 0.0) found the same zero.
+
+  🔴 **AND A STALE WORKING TREE ALMOST PUT A FALSE CLAIM IN THIS LEDGER.** A grep for
+  `monochrome` over `C:\EV-Accounts\backend\scripts` came back with nothing but a hand-written
+  rejection list, and was written up as *"the standing rule is enforced by nothing"* — the exact
+  regression SC-5a paid 156 published frames for. It is wrong. That checkout sits on an older
+  branch whose `headshot_crop.py` predates SC-5a, so the grep was reading a file from before the
+  gate existed. `git grep` over the refs found `def monochrome` on master and on this branch, and
+  both the renderer and the importer import it.
+  ▶ **GREP A REF, NOT A WORKING TREE, WHEN THE QUESTION IS "DOES THIS REPO DO X".** A shared
+  checkout is on whatever branch its last session left it on. ⚠ The commit message on
+  `data/tn-legislature-portraits` carries the wrong version of this and is corrected here rather
+  than by rewriting a pushed commit.
 - **Sizes: 129 at 400x400, one 400x405, one 381x400.** So the crop cannot assume 1:1.
 - **House portraits are RGBA**; alpha is composited onto white by `headshot_crop.flatten`, which
   is what stops a transparent PNG shipping as a black square.
