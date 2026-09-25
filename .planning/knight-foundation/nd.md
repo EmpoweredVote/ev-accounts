@@ -11,7 +11,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | 1 geography | ✅ **APPLIED 2026-09-25 — 95 boundaries, 95 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
-| 4 county waves | ▶ **MEASURED 2026-09-25, nothing written.** Commission is **5 seats elected AT LARGE — no districts**; the separately elected officer list is still owed |
+| 4 county waves | ▶ **MEASURED 2026-09-25, nothing written.** **7 elected offices** — 5 commissioners **AT LARGE (no districts)** + Sheriff + State's Attorney. **No geometry to load.** 🔴 Blocked on one question: are Recorder and Auditor appointed under the home-rule charter? |
 | 5 assets | — portraits + the `grand-forks` banner. A **Legislator Photo Request Form** exists; the licence is unestablished |
 
 ---
@@ -959,3 +959,113 @@ The gates assert that nine offices exist, are seated, are dated and reach the ri
 cannot tell whether Berg and Fridolfs were swapped** — Ward 3 and Ward 5 would each still hold
 exactly one dated holder. That pairing rests on the roll calls quoted above and on nothing else, and
 it is recorded as a limitation rather than covered by a gate that does not exist.
+
+---
+
+## ▶ ND-4 — MEASURED 2026-09-25, NOTHING WRITTEN. One question stands between it and the write.
+
+### 🔴🔴 THE JUNE RESULT IS A PRIMARY, AND FOUR COUNTY SEATS ARE STILL UNDECIDED TODAY
+
+North Dakota decides **city** offices in the June election and **county** offices in **November**.
+June is the county **primary**. The Grand Forks County ballot of **2026-06-09** carried:
+
+| contest, as the ballot names it | candidates |
+| --- | --- |
+| **County Commission (vote for one)** | Bob Mullen · Tony Hodny · Mitch McCoy |
+| **County Commission (vote for three)** | Mark Rustad · Rachel Duray · Andrew Krauseneck · Kimberly Hagen · Debra Kolden-Thibert |
+| **State's attorney (vote for one)** | Haley Wamstad |
+| **Sheriff (vote for one)** | Andy Schneider |
+
+🔴 **So four of the five commission seats, the sheriff and the state's attorney are all mid-cycle
+right now**, with the general on 2026-11-03 — six weeks after this wave. **Nothing from that June
+sheet may be seated.** ND-3's June result *was* an election because it was a city race; the
+identical-looking county sheet on the same day was not. **"A certified result is not a fact about
+who holds the seat" — and a PRIMARY result is not even a result.**
+
+⚠ Two commission races on one ballot is itself the tell: three seats on the regular cycle plus
+**one unexpired term**. Grand Forks County lost a long-serving commissioner, **Gary Malm**, whose
+death the Mayor noted in the city's own minutes of 2024-06-17. Whether Anthony Hodny currently
+holds that seat by appointment is the open question below.
+
+### 🟢 SEVEN ELECTED COUNTY OFFICES, NOT NINE — AND NO COMMISSION DISTRICTS
+
+| office | count | evidence |
+| --- | --- | --- |
+| Commissioner | **5, AT LARGE** | the state's 2026 precinct layer sets `Commissioner1 = "Districts At-Large"` on **all 37** county precinct parts with `Commissioner2..5` null, and the county's own page lists five people titled bare "Commissioner" with no district number |
+| Sheriff | 1 | on the 2026 ballot; *"the sheriff and the state's attorney, under state law, will always be elected and that will not change under home rule"* |
+| State's Attorney | 1 | same |
+| ~~Recorder~~ | 0 | **appointed** — see below |
+| ~~Auditor~~ | 0 | **appointed** — see below |
+| ~~Treasurer~~ | 0 | **does not exist as a separate office** |
+
+▶ **ND-4 therefore loads NO geometry.** All seven seats are countywide and attach to the county
+polygon `38035` (G4020), already in production. This is the opposite of the program's usual shape
+and it must not be "fixed" by inventing commission districts.
+
+**The current holders**, from the county's own pages, read 2026-09-25:
+
+| office | holder |
+| --- | --- |
+| Commissioner | Terry Bjerke · Kimberly Hagen · Anthony Hodny · Bob Rost · Mark Rustad |
+| Sheriff | Andrew Schneider |
+| State's Attorney | Haley Wamstad |
+
+🟢 **North Dakota's county terms have statutory start dates**, which is the same gift art. IV § 7
+gave ND-2 — the ND Secretary of State's own candidate guidance:
+
+| office | term | begins |
+| --- | --- | --- |
+| Commissioner | 4 years | **the first Monday in December** following the election |
+| Sheriff | 4 years | **January 1** following the election |
+| State's Attorney | 4 years | **January 1** following the election |
+| Recorder | 4 years | January 1 following the election |
+| Auditor | 4 years | April 1 following the election |
+| Treasurer | 4 years | May 1 following the election |
+
+### 🔴 WHY RECORDER AND AUDITOR ARE READ AS APPOINTED — AND WHY THAT IS STILL THE OPEN QUESTION
+
+The county employs **Garlynn Helmoski, County Recorder** and **Colleen Morstad, County Auditor**
+(department "Finance & Tax"). Neither appears on the **2022, 2024 or 2026** ballot. ⚠ And **there is
+no County Treasurer at all** — the only "Treasurer" in the staff directory is the Secretary-Treasurer
+of the Water Resource District, a different body; the function sits inside Finance & Tax.
+
+The SOS's own guidance says *"some counties use an appointment process for some contests, depending
+on their form of government"*, and Grand Forks County adopted a **home-rule charter** — the 2022
+measure that led on election night by **20 votes out of 16,774** and went to an automatic recount.
+Contemporaneous reporting of that campaign says *"the sheriff and the state's attorney, under state
+law, will always be elected and that will not change under home rule"* — which is only worth saying
+if other offices did change.
+
+🔴 **BUT THIS IS STILL AN ARGUMENT FROM ABSENCE, AND ABSENCE IS NOT PROOF.** It is the same shape as
+"an absence on a roster is not a vacancy": three ballots with no recorder race is consistent with
+appointment and also with a cycle I have not looked at. What makes it more than a bare absence is
+the convergence — three consecutive cycles, plus a home-rule charter, plus reporting that names
+exactly the two offices home rule could *not* touch.
+
+▶ **The authority is the charter, and the charter is unread.** `gfcounty.nd.gov`'s Home Rule Charter
+download is a **7,477,329-byte scanned image PDF** — its first object is an `/XObject /Image`, so it
+has no text layer and cannot be searched without OCR. **ND-4 should not write until that document,
+or the county auditor's own statement, settles it.**
+
+### 🔴 THE COUNTY IS BEHIND THE SAME WAF, AND ITS CHARTER URL SERVES A CHALLENGE PAGE
+
+`gfcounty.nd.gov` answers **HTTP 403 with a 475-byte body** outside a browser. The charter URL is
+the sharper case: fetched with `curl` it is **403, `Content-Type: text/html`, body beginning
+`<HTML><H`** — a challenge page wearing a `.pdf` URL. Fetched inside Playwright the same URL is
+**200, `application/pdf`, magic `%PDF-`**. **Check the magic bytes, not the extension.**
+
+### What ND-4 still owes, in order
+
+1. **Settle Recorder and Auditor** from the charter (OCR the scan) or from the county auditor
+   directly. Everything else is ready.
+2. **Date the five commissioners.** The statutory start is the first Monday in December after each
+   member's first election, so each needs its election year: two seats were decided in **Nov 2024**
+   (*"On the ballot are two seats for the Grand Forks County Commission"*), and the rest earlier.
+   ⚠ **Anthony Hodny may hold Gary Malm's unexpired seat by appointment** — the "vote for one" race
+   in 2026 is exactly the shape a mid-term vacancy leaves. An appointment is dated by the
+   commission's own minutes, not by an election.
+3. **Date the Sheriff and State's Attorney.** Both are on the 2026 cycle, so both were last elected
+   in **2022** with terms from **2023-01-01**; each needs its FIRST arrival, since a re-election does
+   not restart an occupancy.
+4. **Write it**: 7 offices, no geometry, on the county polygon `38035`. Grand Forks then scores
+   **5 of 5**.
