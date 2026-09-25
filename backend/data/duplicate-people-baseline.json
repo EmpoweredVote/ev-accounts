@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = seat on one row, compass answers only on the other (voter-visible harm).",
-  "_updated": "2026-09-24",
+  "_updated": "2026-09-25",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -10,16 +10,6 @@
       ],
       "split": false,
       "verdict": "unreviewed"
-    },
-    "00b1ee2d-c4e1-47f8-aae8-83974a625ef3|cad06d77-75d3-42c6-9bf2-6f9921ff9781": {
-      "names": "Brent Taylor ~ Brent Taylor",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: TN Senate 31 + FEC H6TN09464, TN-9 nominee (capitol.tn.gov s31; Action News 5 2026-05-07). Merge = CA_0291."
     },
     "01eac4cc-d6f2-4b33-ab5f-c3d4d2b93dc0|ddca5584-3a27-48d4-9b1a-92af7a47573f": {
       "names": "Doug Fiefia ~ Doug Fiefia",
@@ -38,16 +28,6 @@
       ],
       "split": false,
       "verdict": "unreviewed"
-    },
-    "04ff7894-2f7c-493a-af94-b49aedaf8502|b06a3665-412e-427a-a762-8220a293d5d0": {
-      "names": "Manny Rutinel ~ Manny Rutinel",
-      "state": "co",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: CO House 32 (resigned 9/4/26, leg.colorado.gov) + FEC H6CO08013, CO-8 nominee. Merge = CA_0291."
     },
     "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
       "names": "John Braun ~ John Braun",
@@ -111,16 +91,6 @@
       ],
       "split": false,
       "verdict": "unreviewed"
-    },
-    "10143b07-141f-4dcb-a664-098869d7ff63|63d60b50-2395-4cde-8999-97a9166d3563": {
-      "names": "Silvia Catten ~ Silvia Catten",
-      "state": "ut",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: Millcreek Council D1, Utah SD-13 candidate (vote.utah.gov S13-Silvia-Catten.pdf). Merge = CA_0291."
     },
     "101a4057-f3e4-4345-a5f9-92722049fb53|a9233775-b8af-423e-aea6-734c2855e5ac": {
       "names": "Tim Peck ~ Timothy Peck",
@@ -420,16 +390,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "830d155a-394e-463c-999d-bcf154460225|a201565a-0aa1-4b6a-9349-6ee7abe90252": {
-      "names": "Vincent Dixie ~ Vincent Dixie",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: TN House 54 + FEC H6TN07229, TN-7 (capitol.tn.gov h54; NewsChannel 5). Merge = CA_0291."
-    },
     "88216292-7a3c-4e49-ac4a-722a1b3764e4|dd088bfc-1d4d-476d-b16f-0d4da6ea88b6": {
       "names": "Maria G. Lopez ~ Maria Isabel López",
       "state": "ca",
@@ -475,16 +435,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "92dba8fc-2bd1-4a68-ad69-ada24e3ff6f4|e96d79ea-0f4f-4a17-9a94-8fbefed6e5d5": {
-      "names": "Kelly Smith ~ Kelly Smith",
-      "state": "ut",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: Cedar Hills Council, Utah SD-21 candidate (vote.utah.gov S21-Kelly-Smith.pdf; SL Tribune 2026-06-07). Merge = CA_0291."
-    },
     "95860909-eb07-4ed4-bea1-54081d92ce8d|b90cc4e4-57f3-41b2-9a19-64c218164466": {
       "names": "David Argudo ~ David E. Argudo",
       "state": "ca",
@@ -520,16 +470,6 @@
       ],
       "split": false,
       "verdict": "unreviewed"
-    },
-    "9c83e282-cb78-4e39-aa1e-13875a86e872|a770cc10-dde6-4f1a-938d-af12e632b420": {
-      "names": "London Lamar ~ London Lamar",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "same_person",
-      "note": "Same person: TN Senate 33 + FEC H6TN09498, TN-9 (capitol.tn.gov s33; Action News 5 2026-05-26). Merge = CA_0291."
     },
     "9cff8f78-ffde-4821-91e7-6d14fb093ecc|a3be7449-ec25-4511-bf3d-889a340fbb3f": {
       "names": "Monty Fritts ~ Monty Fritts",

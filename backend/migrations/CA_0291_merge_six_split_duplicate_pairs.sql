@@ -5,7 +5,9 @@
 --
 -- Slot CA_0291 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML). No DELETE.
--- STATUS: NOT APPLIED. Dry-run only (BEGIN ... ROLLBACK), pending operator go-ahead from Chris Andrews.
+-- ✅ APPLIED to prod 2026-09-25 (approval: Chris Andrews). Both gates green. Dry run x2 passed and was confirmed
+--   reverted before the apply. Re-read after: the six survivors are active and hold their seat terms (Rutinel's closed
+--   2026-09-04, is_incumbent false) with the roster external_ids; the six roster rows are inactive and hold nothing.
 --
 -- 🟢 SEASON 1 IS NOT TOUCHED. Ruling 2026-09-24 (Chris Andrews): a merge never edits the closed season. The survivor
 -- is the row that already holds the answers, so no inform.* row is written; the post-gate fingerprints them.
