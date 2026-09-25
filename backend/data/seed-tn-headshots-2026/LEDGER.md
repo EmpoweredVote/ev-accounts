@@ -1,7 +1,41 @@
 # Tennessee General Assembly portraits — extraction ledger, 2026-09-24
 
-**131 seated legislators extracted, 0 failures, 130 to import.** Proof sheet published for
-approval: <https://claude.ai/artifact/7ksjh4rCa2pfg1ksjRRzJ7>
+## ✅ APPLIED 2026-09-24 — TENNESSEE GOES 0 → 131 OF 131 RENDERING
+
+Sheet approved by Cantrell. **130 imported, 2 skipped, 0 failed.**
+
+| | seated | renders | `politician_images` | before |
+| --- | --- | --- | --- | --- |
+| Tennessee House | 98 | **98** | 98 | 1 |
+| Tennessee Senate | 33 | **33** | 33 | 0 |
+
+The two skips are correct: **H86 Justin J. Pearson** already held a row (untouched, still
+`cc_by-sa_4.0`), and **H1 John Crawford** was the end-to-end pilot run before the other 129.
+
+**Verified from outside, with the count asserted:** all 131 `photo_custom_url` objects were
+fetched — **131 decode as real JPEGs, 0 broken** — at 320x400 (129), 324x405 (1, the 400x405
+source) and 600x750 (1, Pearson's pre-existing file). 🔴 **The bogus-key control failed as
+required**: HTTP 400, not an image.
+
+✅ **A CONTROL SCOPE THAT MUST NOT MOVE DID NOT MOVE** — Tennessee's 13 statewide executives read
+13 before and 13 after. The baseline was measured **in the same session as the write**, never
+read off an earlier note.
+
+**Licence landed on every row**: 116 carry the base sentence, 14 carry it plus `Photo by Jed
+DeKalb`. Stored as U+2014, checked at the codepoint — the console renders it as `?`, the database
+does not. **0 rows are left holding a raw image URL as `photo_origin_url`**; all 130 record the
+member page.
+
+⚠ **Justin J. Pearson has no `photo_origin_url`** and is the only one. It was NULL before and was
+not invented: his portrait is not from the General Assembly, so writing the GA page there would be
+a false provenance. ▶ **He is also the one row where an upgrade is available and was NOT taken** —
+his current photo is an outdoor candid while the GA publishes a studio portrait matching the other
+130. Replacing an already-approved portrait is a separate decision, so it is recorded, not done.
+
+---
+
+**131 seated legislators extracted, 0 failures, 130 to import.** Proof sheet approved:
+<https://claude.ai/artifact/7ksjh4rCa2pfg1ksjRRzJ7>
 
 Licence and ruling: [`.planning/research/2026-09-24-tennessee-legislature-portraits.md`](../../../.planning/research/2026-09-24-tennessee-legislature-portraits.md)
 · request letter: [`GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md`](./GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md)

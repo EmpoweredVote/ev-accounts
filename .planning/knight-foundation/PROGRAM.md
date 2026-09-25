@@ -254,6 +254,20 @@ which **1,531 hosted, 0 elsewhere**, and **131 rendering nothing at all — that
 whole of both chambers**. They are counted here rather than dropped, because *not in this table*
 and *not measured* are different claims.
 
+🟢 **TENNESSEE IS CLOSED, 2026-09-24 — 0 → 131 of 131 RENDERING, ALL ON OUR OWN CDN.** 130
+imported, 2 skipped (H86 already held a row; H1 was the end-to-end pilot), **0 failed**. House
+**98/98**, Senate **33/33**, `politician_images` 98 + 33, and **131 of 131 stored objects were
+fetched and decode**, with a bogus-key control that failed as required. The control scope — TN's
+13 statewide executives — is **unmoved at 13**. Corpus-wide portrait work, not a Knight slice;
+full record in [`backend/data/seed-tn-headshots-2026/LEDGER.md`](../../backend/data/seed-tn-headshots-2026/LEDGER.md)
+and PRs #795 / #796.
+🔴🔴 **THE SOURCE PUBLISHES NO IMAGE URL — the portrait is a base64 data URI inside the member
+page, and the LICENCE is inside the file too.** Every row carries
+`(C) State of Tennessee — editorial or personal use only`, plus `Photo by Jed DeKalb` on the 14
+whose file names him, so the obligation travels with the row. All 130 stored at **native
+320x400**: the source is 400x400 and 600x750 would have cost 1.88x on an entire state.
+▶ The remaining upgrade is the resolution request to the two Chief Clerks — **drafted, not sent**.
+
 ### Geofence polygons present
 
 | State | sldl | sldu | place | county |
