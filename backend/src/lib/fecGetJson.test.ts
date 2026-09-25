@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach, type Mock } from 'vite
 
 // The shared limiter is the pacing gate under test — count its calls, never wait on it.
 const { acquireFecSlot } = vi.hoisted(() => ({ acquireFecSlot: vi.fn(async () => {}) }));
-vi.mock('../../src/lib/fecRateLimiter.js', () => ({ acquireFecSlot }));
+vi.mock('./fecRateLimiter.js', () => ({ acquireFecSlot }));
 
 import { fecGetJson, parseRetryAfterMs, type FecGetOptions } from './fecGetJson.js';
 

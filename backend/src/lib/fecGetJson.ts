@@ -1,5 +1,5 @@
 /**
- * fecGetJson — one GET against the FEC API for scripts: through the shared limiter, with retry.
+ * fecGetJson — one GET against the FEC API for scripts and jobs: through the shared limiter, with retry.
  *
  * 🔴 The FEC key is SHARED — the scheduled ingest, the auto-match queue and every session's
  * scripts spend the same budget. On 2026-09-23 run-fec-finance-summary.ts paced itself with a
@@ -20,7 +20,7 @@
  * Errors name `label`, never the URL: the URL carries the api_key.
  */
 
-import { acquireFecSlot } from '../../src/lib/fecRateLimiter.js';
+import { acquireFecSlot } from './fecRateLimiter.js';
 
 export interface FecGetOptions {
   /** Retries after the first attempt. Default 5. */
