@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = seat on one row, compass answers only on the other (voter-visible harm).",
-  "_updated": "2026-09-24",
+  "_updated": "2026-09-25",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -9,15 +9,6 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
-    },
-    "00b1ee2d-c4e1-47f8-aae8-83974a625ef3|cad06d77-75d3-42c6-9bf2-6f9921ff9781": {
-      "names": "Brent Taylor ~ Brent Taylor",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
       "verdict": "unreviewed"
     },
     "01eac4cc-d6f2-4b33-ab5f-c3d4d2b93dc0|ddca5584-3a27-48d4-9b1a-92af7a47573f": {
@@ -36,15 +27,6 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
-    },
-    "04ff7894-2f7c-493a-af94-b49aedaf8502|b06a3665-412e-427a-a762-8220a293d5d0": {
-      "names": "Manny Rutinel ~ Manny Rutinel",
-      "state": "co",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
       "verdict": "unreviewed"
     },
     "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
@@ -108,15 +90,6 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
-    },
-    "10143b07-141f-4dcb-a664-098869d7ff63|63d60b50-2395-4cde-8999-97a9166d3563": {
-      "names": "Silvia Catten ~ Silvia Catten",
-      "state": "ut",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
       "verdict": "unreviewed"
     },
     "101a4057-f3e4-4345-a5f9-92722049fb53|a9233775-b8af-423e-aea6-734c2855e5ac": {
@@ -396,7 +369,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "Different people: Andrew K. Kim is the 2026 LA mayoral candidate (kimforla.com); Andrew C. Kim is an LA County Superior Court judge. Different middle initial."
     },
     "8118811a-aadd-4eb9-9208-de0f5d3b29ad|868b219c-a10a-4dc2-a632-9022c7f835d1": {
       "names": "Andy Biggs ~ Andy Biggs",
@@ -414,15 +388,6 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
-    },
-    "830d155a-394e-463c-999d-bcf154460225|a201565a-0aa1-4b6a-9349-6ee7abe90252": {
-      "names": "Vincent Dixie ~ Vincent Dixie",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
       "verdict": "unreviewed"
     },
     "88216292-7a3c-4e49-ac4a-722a1b3764e4|dd088bfc-1d4d-476d-b16f-0d4da6ea88b6": {
@@ -470,15 +435,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "92dba8fc-2bd1-4a68-ad69-ada24e3ff6f4|e96d79ea-0f4f-4a17-9a94-8fbefed6e5d5": {
-      "names": "Kelly Smith ~ Kelly Smith",
-      "state": "ut",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "unreviewed"
-    },
     "95860909-eb07-4ed4-bea1-54081d92ce8d|b90cc4e4-57f3-41b2-9a19-64c218164466": {
       "names": "David Argudo ~ David E. Argudo",
       "state": "ca",
@@ -515,15 +471,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "9c83e282-cb78-4e39-aa1e-13875a86e872|a770cc10-dde6-4f1a-938d-af12e632b420": {
-      "names": "London Lamar ~ London Lamar",
-      "state": "tn",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": true,
-      "verdict": "unreviewed"
-    },
     "9cff8f78-ffde-4821-91e7-6d14fb093ecc|a3be7449-ec25-4511-bf3d-889a340fbb3f": {
       "names": "Monty Fritts ~ Monty Fritts",
       "state": "tn",
@@ -540,7 +487,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "Different people: Mónica García (LAUSD board, empowered.vote/school-district/los_angeles_unified) vs Monica García, Glendora Unified Trustee Area 2 (glendora.k12.ca.us). Different districts."
     },
     "a97678bc-8844-4560-87b1-5ef4f8013d96|f0a46feb-43bc-4620-a81f-3bbf7e3cec9c": {
       "names": "Dan Sullivan ~ Daniel J. Sullivan Jr.",
