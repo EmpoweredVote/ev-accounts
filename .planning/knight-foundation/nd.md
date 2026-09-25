@@ -10,9 +10,9 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-25 — 95 boundaries, 95 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
-| 3 city waves | — Grand Forks, unmeasured |
-| 4 county waves | — Grand Forks County, unmeasured |
-| 5 assets | — portraits + the `grand-forks` banner |
+| 3 city waves | ▶ **MEASURED 2026-09-25, nothing written.** **9 offices** — Mayor + 7 wards + an **elected Municipal Judge**. Ward geometry found (state precinct layer); **no term dates published anywhere** |
+| 4 county waves | ▶ **MEASURED 2026-09-25, nothing written.** Commission is **5 seats elected AT LARGE — no districts**; the separately elected officer list is still owed |
+| 5 assets | — portraits + the `grand-forks` banner. A **Legislator Photo Request Form** exists; the licence is unestablished |
 
 ---
 
@@ -326,12 +326,16 @@ address. **Stage 2 must precede stage 3**, as in every slice.
    141 seated, 0 vacant, 8 arrivals dated to the day. Grand Forks scores 3 of 5.** The structural
    question was settled on ballot truth: two identical-title offices per district, Arizona's shape,
    paired to members by a deterministic slot that asserts nothing.
-5. **ND-3 Grand Forks.** Read the city's own charter sentence for the office inventory. Grand Forks
-   is a **home-rule city with a council**; the ward count and whether any seat is at-large must come
-   from the charter, never from the map.
-6. **ND-4 Grand Forks County.** The ND county-officer template is state law (N.D.C.C. tit. 11) and
-   is reusable across the state — but which officers this county still elects separately is read
-   from the county's own record, as Summit County proved when it broke the spec's assumption.
+5. **ND-3 Grand Forks.** ~~Read the city's own charter sentence for the office inventory.~~
+   **Measured 2026-09-25 — 9 offices: Mayor + 7 single-member wards + an ELECTED Municipal Judge,
+   no at-large seat.** Ward geometry located in the state's 2026 precinct layer and proved to tile
+   the city within digitization noise. ▶ **Still owed before writing: a decision on term dates**
+   (the city publishes none) **and a change-check that is not the roster page** — see the ND-3
+   section below.
+6. **ND-4 Grand Forks County.** ~~Read the county's own record rather than the state template.~~
+   **Measured 2026-09-25 — the commission is 5 seats elected AT LARGE, with NO districts**, agreed
+   by the state precinct layer and the county's own page. ▶ **Still owed: which officers the voters
+   elect**, which the scanned home-rule charter has not yet answered.
 7. **ND-5 assets.** Portraits and the `grand-forks` banner. ⚠ Check the banner against the ND state
    banner for composition collision before choosing a frame.
 
@@ -568,3 +572,160 @@ The Legislative Branch publishes a **`Legislator Photo Request Form`**
 `/sites/default/files/styles/.../person/photo/`. Those URLs are captured in
 `backend/data/seed-nd-2026/nd-roster-special-2.json`. **The licence is not yet established** — that
 is stage 5's gate, and MN-5 is the precedent for asking.
+
+---
+
+## ▶ ND-3 and ND-4 — MEASURED 2026-09-25, NOTHING WRITTEN TO PRODUCTION
+
+Everything below is evidence gathered after ND-2 closed. **No production write has been made for
+either stage.** Re-measure before trusting it.
+
+### 🔴 THE OFFICE INVENTORY IS THE CITY'S OWN SENTENCE, AND IT IS NINE, NOT EIGHT
+
+| office | count | the sentence that establishes it |
+| --- | --- | --- |
+| Mayor | 1 | separate citywide executive — *"This is different from the Mayor, who is the head administrator of the city"* |
+| Council Member, Wards 1–7 | 7 | *"The Grand Forks City Council consists of 7 members, each representing one of the city's 7 wards"* — **no at-large seat** |
+| **Municipal Judge** | **1** | *"**The Municipal Judge is elected for a four-year term.**"* |
+| **total** | **9** | |
+
+🔴🔴 **THE MUNICIPAL JUDGE IS ELECTED AND WOULD HAVE BEEN MISSED.** It is not on the City Leadership
+page, not on the City Council page, and not in any roster — it sits on a Municipal Court staff page
+under City Departments. The inclusion ruling is that **an office is seated if the voters elect it**,
+so it is in scope, exactly as Gary's City Court judge was and Fort Wayne's absent one was not.
+⚠ **And the same sentence excludes two people**: *"two Alternate Municipal Judges as recommended by
+the court and **appointed by the City Council**"*. Elected judge in, appointed alternates out —
+the distinction is in one paragraph and nowhere else.
+
+**The roster as published (2026-09-25), all from the city's own pages:**
+
+| seat | holder |
+| --- | --- |
+| Mayor | Brandon Bochenski |
+| Ward 1 | Danny Weigel *(Council Vice President)* |
+| Ward 2 | Rebecca Osowski |
+| Ward 3 | Tricia Berg |
+| Ward 4 | Angela Salentiny |
+| Ward 5 | Mike Fridolfs |
+| Ward 6 | Dana Sande *(Council President)* |
+| Ward 7 | Ken Vein |
+| Municipal Judge | Kerry Rosenquist |
+
+⚠ President and Vice President are **council roles, not seats** — Sande and Vein hold one office each.
+
+### 🔴 THE CITY IS BEHIND A WAF, AND BOTH REFUSAL SHAPES WERE THE SAME SIZE
+
+`grandforksgov.com` answers **HTTP 403 with a 468-byte body** to a bare request **and** to a full
+browser User-Agent — two shapes, **identical size**, which is the tell that it is a WAF and not a
+missing page. The same is true of `gfcounty.nd.gov`. Both were read in Playwright, where they return
+200.
+🔴 **And the county's charter download proves the corollary.** Fetched outside the browser it returns
+**HTTP 403 with `Content-Type: text/html` and a body whose first bytes are `<HTML><H`** — a challenge
+page wearing a `.pdf` URL. Inside Playwright the same URL is **HTTP 200, `application/pdf`, 7,477,329
+bytes, magic `%PDF-`**. **Check the magic bytes, not the extension.**
+⚠ That charter is a **scanned image PDF** (its first object is an `/XObject /Image`), so it cannot be
+read as text without OCR. The office inventory below comes from the county's own HTML pages instead,
+and the charter remains the authority to reconcile against when someone OCRs it.
+
+### 🟢 WARD GEOMETRY EXISTS, AND NOT WHERE IT FIRST APPEARED TO
+
+The city's own **Ward & Precinct Map** link redirects to `showdocument?id=42167` — **a PDF**, and its
+`t=` tick parameter dates it to early 2022. A PDF is the Gary problem: an office without geometry is
+unreachable by every resident.
+
+🟢 **The state has it instead.** `NDGISHUB Voter Precincts` — *"Voter precinct splits for the 2026
+election in North Dakota... by Legislative District, County, City, **Ward**, School District,
+Emergency Services, **Commissioner District**, Park District..."* — carries **all seven Grand Forks
+wards** as 11 precinct parts, modified 2026-05-05:
+
+```
+https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Voter_Precincts/FeatureServer/0
+```
+
+▶ **One layer supplies both remaining stages' geography.** That is worth knowing before ND-4 goes
+looking for a county layer that does not exist.
+
+⚠ **A name trap sits next to it.** The same catalogue serves `Ward2015` and `Ward2010` — those are
+**Ward County aerial photography**. Ward is a North Dakota county. A search for "ward" returns the
+photography before the wards.
+
+**Dissolved to 7 wards and measured against the city place polygon `3832060` already in production:**
+
+| measure | value |
+| --- | --- |
+| wards | **7**, and **0 overlapping pairs** |
+| city area (TIGER 2024) | 29.3188 sq mi |
+| union of the 7 wards | 29.2096 sq mi |
+| city **not** in any ward | 0.1904 sq mi |
+| ward **outside** the city | 0.0812 sq mi |
+
+🔴 **AND THE DISAGREEMENT IS NOISE, WHICH WAS PROVED RATHER THAN ASSUMED.** 0.19 sq mi is small, but
+Duluth's superseded map left 8.68 sq mi uncovered and still looked plausible, so area alone decides
+nothing. **The shape does.** The gap is **88 separate pieces** and the overhang **90** — 178
+fragments along a shared edge, which is what two digitizations of one boundary produce. The largest
+gap piece is 81.22 acres with a **compactness of 0.0072** (a circle is 1.0): an extremely elongated
+ribbon, on the city's eastern edge, where the boundary is the **Red River**. Every one of the six
+largest pieces has compactness ≤ 0.066.
+▶ **Compactness separates a sliver from a hole; area cannot.** A single 0.19 sq mi blob at
+compactness 0.6 would have been a missing neighbourhood and this table would read the same.
+
+| ward | sq mi | interior point |
+| --- | --- | --- |
+| 1 | 12.1327 | 47.925755, -97.093172 |
+| 2 | 4.7271 | 47.940328, -97.053458 |
+| 3 | 1.7763 | 47.910298, -97.045678 |
+| 4 | 2.2355 | 47.901272, -97.032626 |
+| 5 | 3.8468 | 47.871211, -97.042122 |
+| 6 | 2.2403 | 47.881926, -97.073243 |
+| 7 | 2.2509 | 47.907064, -97.071163 |
+
+### 🔴🔴 GRAND FORKS COUNTY ELECTS ITS COMMISSION **AT LARGE** — THERE ARE NO COMMISSION DISTRICTS
+
+Two independent sources agree, and neither is an assumption carried from another county:
+
+1. The state's 2026 precinct layer sets **`Commissioner1 = "Districts At-Large"` on all 37** Grand
+   Forks County precinct parts, and `Commissioner2`..`Commissioner5` are **null on every row**.
+2. The county's own Commissioners page lists **five people with the bare title "Commissioner"** and
+   **no district number**: Terry Bjerke, Kimberly Hagen, Anthony Hodny, Bob Rost, Mark Rustad.
+
+▶ **So ND-4 has no district geometry to load, and it must not invent any.** Five at-large seats
+covering the whole county, the same shape Tallahassee's commission had and the opposite of the
+default this program has usually met. This is OH-4's lesson again — the county officer template is
+state-scoped only as a *starting question*.
+
+⚠ **The officer list is still owed.** N.D.C.C. tit. 11 names the statutory county officers, but Grand
+Forks County is a **home-rule county** and a home-rule charter may make a statutory office
+appointive. The county's site shows a Sheriff, a State's Attorney and a Recorder's Office as separate
+departments; **which of those the voters elect has not yet been established** and must come from the
+charter or the county auditor's own ballot record, not from the department list.
+
+### 🟢 AN INDEPENDENT THIRD AUTHORITY AGREES WITH ND-1's LOAD
+
+The same precinct layer's `Legislative` field says Grand Forks County touches **districts 17, 18, 20,
+42 and 43** — **exactly the five** ND-1's `ST_Intersects` measurement found against TIGER geometry.
+Two unrelated sources, the same answer, and neither is the Census.
+
+### ⚠ What ND-3 does NOT yet have: dates, and a change-check worth the name
+
+**The city publishes no term dates anywhere.** Each ward page carries a name, a ward, an email and a
+phone — and nothing else. There is no "Term Expires" line, which means Grand Forks offers **neither**
+of the two change-check signals this program has used: no departure banner (MN-2) and no expired date
+(MN-3).
+
+▶ **So ND-3 owes a decision before it writes**, and it should be made deliberately rather than
+defaulted:
+- terms at `start_precision => 'unknown'` on the OH-2 precedent, **or** dates reconstructed from the
+  county auditor's certified results for the June 2024 and June 9 2026 city elections — noting that
+  **a certified result is not a fact about who holds the seat**, only about who won;
+- a change-check that is not the roster page. The council's own **agendas and minutes** record who is
+  present at each meeting, which is a real signal and a bigger job.
+- Known so far: wards 2, 4 and 6 were on the **2026-06-09** ballot; the Mayor and wards 1, 3, 5 and 7
+  are the 2024 class. Terms are four years and staggered.
+
+### ⚠ The `X` boundary code, and the gap that is still open
+
+ND-3 needs an `X` code for the ward layer. Production's `max(mtfcc)` over `X%` is **`X0066`**, taken
+by MI-4, so the next free code is **`X0067`** — read from production because **the `X` namespace has
+no allocator**. `steward slot X` hands out numbers that are already taken, and `X_0001` is abandoned.
+🔴 **This is the same shape as the migration-number collision the steward exists to prevent**, and it
+is unfixed. OH-3 recorded it; ND-3 will meet it again.
