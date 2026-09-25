@@ -14,11 +14,23 @@ import { pool } from '../src/lib/db.js';
 import { buildCoderPrompt, seedFor, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
 import { annexPath } from './lib/codebookAnnex.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
+import { seatJurisdictionNames } from './lib/seatJurisdiction.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const politicianId = arg('--politician'); const officeArg = arg('--office');
 if (!dir || !politicianId) { console.error('usage: --dir <batch> --politician <uuid> [--office <uuid>]'); process.exit(2); }
 const repoRoot = resolve(process.cwd(), '..');
+// The batch id is the dir name; sources.json's batch_id (what snapshot-sources stores) must agree,
+// or the stored snapshots and the stored labels would sit under two different batch ids.
+const batchId = dir.split('/').filter(Boolean).pop()!;
+const sourcesPath = join(dir, 'sources.json');
+if (existsSync(sourcesPath)) {
+  const manifestBatch = (JSON.parse(readFileSync(sourcesPath, 'utf8')) as { batch_id?: unknown }).batch_id;
+  if (manifestBatch !== undefined && manifestBatch !== batchId) {
+    console.error(`sources.json batch_id ${String(manifestBatch)} != batch dir name ${batchId} — rename one so they agree`);
+    process.exit(2);
+  }
+}
 
 const politicians = JSON.parse(readFileSync(join(dir, 'politicians.json'), 'utf8')) as { full_name: string; politician_id: string; level: string | null; race_id: string | null }[];
 const pol = politicians.find((p) => p.politician_id === politicianId);
@@ -47,7 +59,7 @@ if (heldRows.length > 1) {
 if (heldRows.length === 1) {
   const r = heldRows[0];
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'seated', office_id: r.office_id, office_title: r.title,
-    jurisdiction_names: [r.representing_state, r.representing_city].filter(Boolean), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null };
+    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null };
 } else if (pol.race_id) {
   const race = await pool.query(
     `SELECT r.office_id::text, o.title, o.representing_state, o.representing_city, e.election_date::text
@@ -63,7 +75,7 @@ if (heldRows.length === 1) {
     process.exit(2);
   }
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'candidate', office_id: r.office_id, office_title: r.title,
-    jurisdiction_names: [r.representing_state, r.representing_city].filter(Boolean), term_start: null, start_precision: null, term_end: null, election_date: r.election_date };
+    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: null, start_precision: null, term_end: null, election_date: r.election_date };
 } else { console.error('no current seat and no race — cannot establish the office being coded'); process.exit(2); }
 await pool.end();
 
@@ -75,8 +87,6 @@ const topics: PromptTopic[] = topicsRaw.map((t) => {
 });
 const snapshots = JSON.parse(readFileSync(join(dir, 'snapshots.json'), 'utf8')) as SnapshotRecord[];
 const codebookMd = readFileSync(join(repoRoot, 'docs', 'codebook', 'stance-and-quote-codebook.md'), 'utf8');
-const batchId = dir.split('/').filter(Boolean).pop()!;
-
 writeFileSync(join(dir, 'coding-context.json'), JSON.stringify({ batch_id: batchId, seat, topics }, null, 2));
 mkdirSync(join(dir, 'coder-inputs'), { recursive: true });
 mkdirSync(join(dir, 'labels'), { recursive: true });
