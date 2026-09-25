@@ -6,9 +6,11 @@ corpus-wide portrait work, the shape of the Florida and Washington sweeps, not a
 
 Nothing has been written. This is a source and licence assessment only.
 
-✅ **THE LICENCE IS SETTLED (2026-09-24)** — `(C) State of Tennessee, "editorial or personal use
-only"`, found **inside the PNG metadata**, not on any page. What remains is an operator ruling on
-whether our use is editorial. [Jump to it](#-the-licence-is-settled--and-it-was-never-on-a-page).
+✅ **THE LICENCE IS SETTLED AND RULED (2026-09-24)** — `(C) State of Tennessee, "editorial or
+personal use only"`, found **inside the PNG metadata**, not on any page.
+**Ruling (Cantrell, 2026-09-24): ship under the editorial-use grant, store at native size, and ask
+for the full-resolution originals anyway.** This wave is **not blocked**.
+Letter: [`backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md`](../../backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md).
 
 ## Measured 2026-09-24
 
@@ -124,11 +126,16 @@ surviving a blank value. Three rows carry it. Read the value, never the presence
 - It is also an **explicit grant** for editorial use — which Ohio never gave. So Tennessee is
   neither the OH/GA/FL/PA shape (silence) nor the MN shape (a published refusal). **It is a third
   shape: a published permission with a stated limit.**
-- ▶ **The operator decision is whether Empowered Vote's use is "editorial".** Displaying an
-  officeholder's portrait beside their seat, district and record is informational, not promotional
-  — but the sentence closes with *"all other uses require written permission"*, so the judgement
-  belongs to Cantrell and not to this file. If the answer is anything but a confident yes, the MN-5
-  route applies: ask, and ship nothing until the answer arrives.
+- ✅ **RULED (Cantrell, 2026-09-24): our use IS editorial — ship it.** A portrait beside an
+  officeholder's seat, district and record is informational, not promotional, and it is exactly what
+  the state granted. **Blocking 130 portraits on an email would be treating a grant like a
+  silence**, which is what separates this from MN-5 and Philadelphia.
+- ✅ **RULED: store at native size** (`--max-upscale 1.0`), as OH-5 did for its four small frames.
+  400x400 renders smaller; nothing is invented; a later upgrade simply replaces the object.
+- ▶ **The request is still sent — for the PIXELS, not the rights.** The state holds originals; 400x400
+  costs a 1.88x enlargement. This is the MN-6 shape, which took that wave from all-133-flagged to
+  zero. Drafted, **not sent**:
+  [`GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md`](../../backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md).
 
 ### How the whole-site sweep was proved, not assumed
 
@@ -230,12 +237,18 @@ source, and the party-provenance question it might have dissolved is still live.
 
 ## Order of work when this opens
 
-1. ~~Find the GA's real disclaimer and settle the licence.~~ ✅ **DONE 2026-09-24 — the licence is
-   `(C) State of Tennessee, editorial or personal use only`, read out of the PNG metadata.**
-   ▶ **The open item is now an operator ruling, not research**: is our use "editorial"? Nothing
-   ships before that answer.
+1. ~~Find the GA's real disclaimer and settle the licence.~~ ✅ **DONE AND RULED 2026-09-24.** The
+   licence is `(C) State of Tennessee, editorial or personal use only`, read out of the PNG
+   metadata; Cantrell ruled our use editorial. **Nothing blocks.**
 2. ~~Reach the Blue Book.~~ **Done — ruled out on resolution, 119x153.**
-3. Measure caucus coverage properly, in Playwright, across all four sites — they are now the only
-   known source above 400x400.
-4. Decide the spine-plus-upgrade question above, and get the 400x400 enlargement judged on a
-   contact sheet **before** building the extractor, not after.
+3. ~~Measure caucus coverage properly, in Playwright, across all four sites.~~ ❌ **DROPPED.** The
+   party-provenance objection stands and the resolution argument no longer needs them: native-size
+   storage removes the enlargement, and the full-resolution ask goes to the chamber instead. MN-6
+   refused a caucus copy on exactly this reasoning with a grant already in hand.
+4. **Build the extractor** — one regex per member page, keyed by district. Composite RGBA onto
+   white; do not assume 1:1 (two rows are 400x405 and 381x400). Run it **slow and one-pass**
+   (`robots.txt`), and skip H84, which is vacant.
+5. **Contact sheet, then import** — 130 frames at native size, per the standing rule that approval
+   is a batch contact-sheet artifact and that the frames are looked at before the sheet is published.
+6. **Send the resolution request** and record whatever credit line comes back in `photo_license`, so
+   the obligation travels with the row rather than living in a planning file.
