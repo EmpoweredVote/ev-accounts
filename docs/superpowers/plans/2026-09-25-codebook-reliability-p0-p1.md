@@ -77,8 +77,9 @@ sub-agents label code-snapshotted sources against the codebook, and code measure
 | `backend/scripts/lib/agreement.ts` (+ `.test.ts`) | per-row unanimity | 9 |
 | `backend/scripts/lib/confirm.ts` (+ `.test.ts`) | CONFIRM checks | 10 |
 | `backend/scripts/lib/codingReport.ts` (+ `.test.ts`), `backend/scripts/code-stance-batch.ts` | batch report; `--apply` coder labels | 11 |
-| `backend/scripts/reliability-report.ts`, `backend/package.json` | cross-batch M1 per stratum; npm scripts | 12 |
-| `.claude/skills/research-stances/SKILL.md`, spec §7 | shadow procedure; first shadow run | 13 |
+| `backend/scripts/lib/disagreementDigest.ts` (+ `.test.ts`), `backend/scripts/code-stance-batch.ts` | per-variable disagreement digest (improvement loop 1) | 12 |
+| `backend/scripts/reliability-report.ts`, `backend/package.json` | cross-batch M1 per stratum; npm scripts | 13 |
+| `.claude/skills/research-stances/SKILL.md`, spec §7 | shadow procedure; first shadow run | 14 |
 
 ---
 
@@ -1721,7 +1722,7 @@ git commit -m "feat(stance-coding): seat context + three shuffled coder prompts"
 - Create: `.claude/agents/stance-coder.md`, `backend/scripts/lib/stanceCoderAgent.test.ts`
 
 **Interfaces:**
-- Produces: the sub-agent type `stance-coder` for the Agent tool. Task 13 dispatches it.
+- Produces: the sub-agent type `stance-coder` for the Agent tool. Task 14 dispatches it.
 
 - [ ] **Step 1: Write the failing guard test**
 
@@ -2287,7 +2288,196 @@ git commit -m "feat(stance-coding): shadow coding report per batch; --apply stor
 
 ---
 
-### Task 12: Cross-batch reliability report and npm scripts
+### Task 12: Disagreement digest (improvement loop 1)
+
+Spec §10.1: after each batch, name the codebook variables the coders split on most. The ranked list
+is the input to proposed codebook edits. It is data for a person. **It never edits the codebook.**
+
+**Files:**
+- Create: `backend/scripts/lib/disagreementDigest.ts`, `backend/scripts/lib/disagreementDigest.test.ts`
+- Modify: `backend/scripts/code-stance-batch.ts` (from Task 11). Write `disagreement-digest.json` and
+  print the top three.
+
+**Interfaces:**
+- Consumes: `alphaNominal`, `chairCategory`, `Unit` (Task 1); `rowKey`, `CoderRow`,
+  `validateCoderLabelFile` (Task 2).
+- Produces:
+  - `DIGEST_VARIABLES`
+  - `type DigestVariable`
+  - `MAX_EXAMPLES = 3`
+  - `interface VariableDigest { variable; units: number; split_units: number; alpha: number | null; examples: { unit: string; values: (string | null)[] }[] }`
+  - `buildDisagreementDigest(rowsBySlot: ReadonlyMap<number, readonly CoderRow[]>, slots?: number[]): { variables: VariableDigest[]; ranked: DigestVariable[] }`
+  - the file `<batch>/disagreement-digest.json`.
+  - A unit for V1–V5 is one (row, snapshot) passage; a unit for `v6_chair` is one row.
+
+- [ ] **Step 1: Write the failing test**
+
+```ts
+// backend/scripts/lib/disagreementDigest.test.ts
+import { describe, it, expect } from 'vitest';
+import { buildDisagreementDigest, MAX_EXAMPLES } from './disagreementDigest.js';
+import type { CoderRow, Passage } from './coderLabel.js';
+
+const P = (over: Partial<Passage> = {}): Passage => ({ snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question',
+  v3_class: 'record', v4_shape: 'chair-shaped', v5_time: 'in-term', date: '2022-01-01', instrument: 'HB 1', provision_quote: null, ...over });
+const R = (topic_id: string, value: number | null, passages: Passage[] = [P()]): CoderRow => ({ politician_id: 'p', office_id: 'o', topic_id,
+  served_revision_id: 'r', passages, v6_value: value, v6_blank_reason: value === null ? 'no-evidence' : null, rests_on: value === null ? [] : ['s1'],
+  reasoning: 'x', needs_source: [], quotes: [] });
+
+describe('buildDisagreementDigest (spec §10.1)', () => {
+  it('reports no splits when the three coders agree on everything', () => {
+    const d = buildDisagreementDigest(new Map([1, 2, 3].map((s) => [s, [R('t1', 4)]])));
+    expect(d.ranked).toEqual([]);
+    expect(d.variables.every((v) => v.split_units === 0)).toBe(true);
+  });
+  it('ranks the variable that split, with the three values as the example', () => {
+    const d = buildDisagreementDigest(new Map([
+      [1, [R('t1', 4)]], [2, [R('t1', 4, [P({ v4_shape: 'multi-subject' })])]], [3, [R('t1', 4)]],
+    ]));
+    expect(d.ranked).toEqual(['v4_shape']);
+    const v4 = d.variables.find((v) => v.variable === 'v4_shape')!;
+    expect(v4).toMatchObject({ units: 1, split_units: 1 });
+    expect(v4.examples).toEqual([{ unit: 'p|o|t1#s1', values: ['chair-shaped', 'multi-subject', 'chair-shaped'] }]);
+  });
+  it('treats the chair as a row-level unit with BLANK as a category', () => {
+    const d = buildDisagreementDigest(new Map([[1, [R('t1', 4)]], [2, [R('t1', null)]], [3, [R('t1', 4)]]]));
+    const v6 = d.variables.find((v) => v.variable === 'v6_chair')!;
+    expect(v6.examples[0]).toEqual({ unit: 'p|o|t1', values: ['4', 'BLANK', '4'] });
+  });
+  it('still counts a unit coded by only two coders (a missing coder is null, not a split)', () => {
+    const d = buildDisagreementDigest(new Map([[1, [R('t1', 4)]], [2, [R('t1', 5)]]]));
+    const v6 = d.variables.find((v) => v.variable === 'v6_chair')!;
+    expect(v6).toMatchObject({ units: 1, split_units: 1 });
+    expect(v6.examples[0].values).toEqual(['4', '5', null]);
+  });
+  it('ranks by split RATE, not count', () => {
+    // v5 splits on 1 of 1 passage; v6 splits on 1 of 2 rows.
+    const d = buildDisagreementDigest(new Map([
+      [1, [R('t1', 4), R('t2', 3, [P({ snapshot_id: 's2' })])]],
+      [2, [R('t1', 4, [P({ v5_time: 'pre-seating' })]), R('t2', 2, [P({ snapshot_id: 's2' })])]],
+    ]));
+    expect(d.ranked.indexOf('v5_time')).toBeLessThan(d.ranked.indexOf('v6_chair'));
+  });
+  it(`keeps at most ${MAX_EXAMPLES} examples per variable`, () => {
+    const topics = ['t1', 't2', 't3', 't4', 't5'];
+    const d = buildDisagreementDigest(new Map([[1, topics.map((t) => R(t, 1))], [2, topics.map((t) => R(t, 2))]]));
+    expect(d.variables.find((v) => v.variable === 'v6_chair')!.examples).toHaveLength(MAX_EXAMPLES);
+  });
+});
+```
+
+- [ ] **Step 2: Run it and confirm that it fails.**
+
+- [ ] **Step 3: Implement**
+
+```ts
+// backend/scripts/lib/disagreementDigest.ts
+/**
+ * disagreementDigest — improvement loop 1 (spec §10.1). Per codebook variable: how many units the
+ * coders split on, α, and a few examples. Ranked by split RATE, it tells a person which part of the
+ * codebook the coders read differently — the input to a proposed codebook edit, which is then
+ * measured by replay before it is adopted (§10.2). It never edits anything itself.
+ * Units: a (row, snapshot) passage for V1–V5; a row for the chair. A missing coder is null.
+ */
+import { alphaNominal, chairCategory, type Unit } from './reliability.js';
+import { rowKey, type CoderRow, type Passage } from './coderLabel.js';
+
+export const DIGEST_VARIABLES = ['v1_attribution', 'v2_relevance', 'v3_class', 'v4_shape', 'v5_time', 'v6_chair'] as const;
+export type DigestVariable = typeof DIGEST_VARIABLES[number];
+const PASSAGE_VARIABLES = DIGEST_VARIABLES.slice(0, 5) as readonly Exclude<DigestVariable, 'v6_chair'>[];
+export const MAX_EXAMPLES = 3;
+
+export interface VariableDigest {
+  variable: DigestVariable;
+  /** Units at least two coders gave a value for. */
+  units: number;
+  split_units: number;
+  alpha: number | null;
+  examples: { unit: string; values: (string | null)[] }[];
+}
+
+export function buildDisagreementDigest(
+  rowsBySlot: ReadonlyMap<number, readonly CoderRow[]>,
+  slots: number[] = [1, 2, 3],
+): { variables: VariableDigest[]; ranked: DigestVariable[] } {
+  const byVar = new Map<DigestVariable, Map<string, (string | null)[]>>(DIGEST_VARIABLES.map((v) => [v, new Map()]));
+  const put = (v: DigestVariable, unit: string, idx: number, value: string) => {
+    const m = byVar.get(v)!;
+    const vals = m.get(unit) ?? slots.map(() => null);
+    vals[idx] = value;
+    m.set(unit, vals);
+  };
+  slots.forEach((slot, idx) => {
+    for (const r of rowsBySlot.get(slot) ?? []) {
+      const key = rowKey(r);
+      put('v6_chair', key, idx, chairCategory(r.v6_value));
+      for (const p of r.passages) for (const v of PASSAGE_VARIABLES) put(v, `${key}#${p.snapshot_id}`, idx, String(p[v as keyof Passage]));
+    }
+  });
+  const variables: VariableDigest[] = DIGEST_VARIABLES.map((v) => {
+    const entries = [...byVar.get(v)!];
+    const coded = entries.filter(([, vals]) => vals.filter((x) => x !== null).length >= 2);
+    const split = coded.filter(([, vals]) => new Set(vals.filter((x) => x !== null)).size > 1);
+    return {
+      variable: v,
+      units: coded.length,
+      split_units: split.length,
+      alpha: alphaNominal(entries.map(([, vals]) => vals) as Unit[]).alpha,
+      examples: split.slice(0, MAX_EXAMPLES).map(([unit, values]) => ({ unit, values })),
+    };
+  });
+  const rate = (d: VariableDigest) => (d.units ? d.split_units / d.units : 0);
+  const ranked = variables
+    .filter((d) => d.split_units > 0)
+    .sort((a, b) => rate(b) - rate(a) || a.variable.localeCompare(b.variable))
+    .map((d) => d.variable);
+  return { variables, ranked };
+}
+```
+
+- [ ] **Step 4: Run it and confirm that it passes.**
+
+- [ ] **Step 5: Wire it into `code-stance-batch.ts`**
+
+Add the imports at the top:
+
+```ts
+import { buildDisagreementDigest } from './lib/disagreementDigest.js';
+import type { CoderRow } from './lib/coderLabel.js';
+```
+
+Insert this block **immediately before** the `if (APPLY) {` line:
+
+```ts
+// Improvement loop 1 (spec §10.1): which codebook variables did the coders read differently?
+const validRows = new Map<number, CoderRow[]>();
+for (const [slot, raw] of files) {
+  const v = validateCoderLabelFile(raw, { snapshotText, expectedSlot: slot });
+  if (v.fileErrors.length) continue;
+  validRows.set(slot, v.rows.flatMap((r) => (r.row && r.errors.length === 0 ? [r.row] : [])));
+}
+const digest = buildDisagreementDigest(validRows);
+writeFileSync(join(dir, 'disagreement-digest.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, ...digest }, null, 2));
+console.log(`most-split codebook variables: ${digest.ranked.slice(0, 3).join(', ') || 'none'} → ${join(dir, 'disagreement-digest.json')}`);
+```
+
+- [ ] **Step 6: Run the Task 11 and Task 12 tests together**
+
+```bash
+cd backend && npx vitest run scripts/lib/codingReport.test.ts scripts/lib/disagreementDigest.test.ts
+```
+
+Expected: PASS.
+
+- [ ] **Step 7: Commit**
+
+```bash
+git commit -m "feat(stance-coding): per-variable disagreement digest (improvement loop 1)" -- backend/scripts/lib/disagreementDigest.ts backend/scripts/lib/disagreementDigest.test.ts backend/scripts/code-stance-batch.ts
+```
+
+---
+
+### Task 13: Cross-batch reliability report and npm scripts
 
 **Files:**
 - Create: `backend/scripts/reliability-report.ts`
@@ -2353,7 +2543,7 @@ console.log(`\nall strata: M1 α = ${all.alpha === null ? 'undef' : all.alpha.to
 
 ⚠ `compass_topic_roles.level` gives the topic's levels, not the person's. For one person the right
 level is the bundle's `politician.level`. P1 accepts the topic-roles proxy for this *report only*.
-The P2 plan should store `level` on `stance_coder_labels`. Record this in the P1 findings (Task 13).
+The P2 plan should store `level` on `stance_coder_labels`. Record this in the P1 findings (Task 14).
 
 - [ ] **Step 2: Add the npm scripts** in `backend/package.json`, next to `"check:stance-sources"`:
 
@@ -2369,7 +2559,7 @@ The P2 plan should store `level` on `stance_coder_labels`. Record this in the P1
 Run:
 
 ```bash
-cd backend && npx vitest run scripts/lib/reliability.test.ts scripts/lib/coderLabel.test.ts scripts/lib/codebookAnnex.test.ts scripts/lib/sourcesManifest.test.ts scripts/lib/snapshotSources.test.ts scripts/lib/coderPrompt.test.ts scripts/lib/stanceCoderAgent.test.ts scripts/lib/agreement.test.ts scripts/lib/confirm.test.ts scripts/lib/codingReport.test.ts scripts/lib/stancePublishPolicy.test.ts
+cd backend && npx vitest run scripts/lib/reliability.test.ts scripts/lib/coderLabel.test.ts scripts/lib/codebookAnnex.test.ts scripts/lib/sourcesManifest.test.ts scripts/lib/snapshotSources.test.ts scripts/lib/coderPrompt.test.ts scripts/lib/stanceCoderAgent.test.ts scripts/lib/agreement.test.ts scripts/lib/confirm.test.ts scripts/lib/codingReport.test.ts scripts/lib/disagreementDigest.test.ts scripts/lib/stancePublishPolicy.test.ts
 ```
 
 Expected: all PASS. `stancePublishPolicy.test.ts` must pass **unchanged**, which proves that P1 did
@@ -2383,7 +2573,7 @@ git commit -m "feat(stance-coding): cross-batch M1 reliability report + npm scri
 
 ---
 
-### Task 13: The shadow procedure in the skill, and the first shadow run
+### Task 14: The shadow procedure in the skill, and the first shadow run
 
 **Files:**
 - Modify: `.claude/skills/research-stances/SKILL.md`. Add a section after the verify step, headed
@@ -2441,9 +2631,11 @@ git commit -m "docs(research-stances): P1 shadow coding procedure; spec notes P1
 - [ ] **Step 4: Write the findings** in `docs/superpowers/specs/2026-09-25-codebook-p1-findings.md`:
   - M1 for the batch;
   - the invalid-label rate per model;
-  - which codebook variables split most (from `coding-report.json`);
+  - which codebook variables split most (from `disagreement-digest.json`). Each of the top ones gets
+    a proposed codebook edit, written under "Proposed edits" in the findings file for the operator to
+    rule on (spec §10.1);
   - `needs_source` rounds;
-  - the Task 12 level-proxy note;
+  - the Task 13 level-proxy note;
   - any codebook wording the coders misread. Each misreading becomes a **MINOR** codebook edit, or a
     **MAJOR** one if a rule changed.
 

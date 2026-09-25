@@ -581,7 +581,7 @@ The seasons are the history: a closed season keeps the chair that was true then.
 | Phase | Delivers | Publish behaviour |
 |---|---|---|
 | **P0** | codebook v1.0 + annexes for the first-wave topics; migrations §4; `reliability.ts` + positive control | unchanged (review-all) |
-| **P1 shadow** | `sources.json`, snapshots, 3 coders, agreement, CONFIRM, report — **all computed, none acted on** | unchanged; the review page shows the coder split as information only |
+| **P1 shadow** | `sources.json`, snapshots, 3 coders, agreement, CONFIRM, report, disagreement digest (§10.1) — **all computed, none acted on** | unchanged; the review page shows the coder split as information only |
 | **P2 blind review** | blind mode on the review page; gold capture; hard-example loop into the codebook | unchanged |
 | **P3 certify** | `reliability_certifications`; `decidePublish` reads it; audit sample | auto-publish **only** in certified strata |
 | **P4 skeptic** | refutation sub-agent in CONFIRM | tighter |
@@ -643,3 +643,56 @@ These affect the annexes, so the annexes for those topics wait for them:
 - **P7** — does ballot access get its own ladder?
 - Also listed there: §8.3 (seven local `ORPHAN_CONTEXT` rows) and §5.6 (were the
   `BALLOTPEDIA_ONLY` / `PRIMARY_SITE_NO_PATH` baseline raises earned?).
+
+---
+
+## 10. Improvement loop (operator request, 2026-09-25)
+
+**Rule for every loop: the system proposes a change, measurement decides, and a person approves.**
+Nothing edits the codebook, a prompt, a model choice or the collector's search order by itself.
+
+**Goodhart guard:** a loop that optimises coder-vs-coder agreement (M1) can teach three similar
+coders to agree on the same wrong chair. Every adoption decision below is judged on **agreement with
+blind human gold (M2, M3, M4)**. M1 is a diagnostic only.
+
+### 10.1 Loop 1 — disagreement mining (P1)
+
+- **After each batch:** `disagreement-digest.json` ranks the codebook variables by how often the
+  three coders split: V1–V5 per (row, snapshot) passage, and the chair per row. Each variable carries
+  α and up to three examples.
+- **From P2 on:** the rows where a reviewer's blind answer differed from their final answer are also
+  added, because they show where a person changed their mind.
+- **The action:** the top-ranked variables get a **proposed codebook edit**, drafted by an agent or a
+  person, in the batch findings. The operator rules. An adopted edit is a MINOR or MAJOR codebook
+  version bump (§2), and its examples join the hard-case register, marked `excluded_from_cert`.
+
+### 10.2 Loop 2 — every change is measured before adoption (P3)
+
+- **What counts as a change:** a codebook edit, a coder prompt change, a coder model change, or an
+  annex reading. Each one is a **candidate**.
+- **How it is measured:** the snapshots are frozen, so the candidate is **replayed**. The three coders
+  code the saved gold inputs again under the candidate.
+- **Tune / test split:** gold items are assigned once, at random, to `tune` (70%) or `test` (30%).
+  - Iterating on a candidate may use `tune` as often as needed.
+  - The adoption decision uses `test` **once per candidate**, and the result is recorded.
+- **Adoption rule:** on `test`, the candidate must not lower M2 or the M3 Wilson bound, and must not
+  add a severe error (M4). A candidate that only raises M1 is **not** an improvement.
+- **The record:** each run writes a row to `inform.reliability_certifications` with the candidate's
+  `codebook_version` and `model_set`, so the history of what was tried stays queryable.
+- **To build later:** the `tune`/`test` assignment needs a column on `stance_gold_labels`
+  (`split text CHECK (split IN ('tune','test'))`, set once). That is P3 schema; CA_0292 does not add it.
+
+### 10.3 Loop 3 — the collector learns where evidence is (P3)
+
+- **What is logged:** per batch, and per level and `source_kind`, the pages that yielded a passage the
+  consensus rested on, the pages that were not codable (by failure reason), and the `needs_source`
+  requests that were fetched and whether they were then used.
+- **Rolled up:** into a per-level **yield table**, the continuously measured version of the
+  stance-program §3.2 figures (bill-first and so on).
+- **The action:** the table proposes the collector's search order for each level in the SKILL. The
+  operator adopts or rejects each change.
+
+### 10.4 Loop 4 — certification follows the evidence (P3)
+
+This is §3.3–§3.4, restated as a loop: strata certify when they earn it, and decertify on an audit
+failure, after a model change, or after a MAJOR codebook bump until replay passes.
