@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildDisagreementDigest, MAX_EXAMPLES } from './disagreementDigest.js';
-import type { CoderRow, Passage } from './coderLabel.js';
+import { buildDisagreementDigest, validRowsFirstOccurrence, MAX_EXAMPLES } from './disagreementDigest.js';
+import type { CoderRow, Passage, ValidationResult } from './coderLabel.js';
 
 const P = (over: Partial<Passage> = {}): Passage => ({ snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question',
   v3_class: 'record', v4_shape: 'chair-shaped', v5_time: 'in-term', date: '2022-01-01', instrument: 'HB 1', provision_quote: null, ...over });
@@ -46,5 +46,19 @@ describe('buildDisagreementDigest (spec sec10.1)', () => {
     const topics = ['t1', 't2', 't3', 't4', 't5'];
     const d = buildDisagreementDigest(new Map([[1, topics.map((t) => R(t, 1))], [2, topics.map((t) => R(t, 2))]]));
     expect(d.variables.find((v) => v.variable === 'v6_chair')!.examples).toHaveLength(MAX_EXAMPLES);
+  });
+});
+
+describe('validRowsFirstOccurrence (fix round 1)', () => {
+  it('claims the key on the first occurrence even when invalid, so a later valid duplicate is still ignored', () => {
+    const validRow = R('t1', 4);
+    const validated: ValidationResult = {
+      fileErrors: [],
+      rows: [
+        { key: 'p|o|t1', row: null, errors: ['row: something invalid'] },
+        { key: 'p|o|t1', row: validRow, errors: [] },
+      ],
+    };
+    expect(validRowsFirstOccurrence(validated)).toEqual([]);
   });
 });

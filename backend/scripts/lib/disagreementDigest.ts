@@ -6,7 +6,7 @@
  * Units: a (row, snapshot) passage for V1-V5; a row for the chair. A missing coder is null.
  */
 import { alphaNominal, chairCategory, type Unit } from './reliability.js';
-import { rowKey, type CoderRow, type Passage } from './coderLabel.js';
+import { rowKey, type CoderRow, type Passage, type ValidationResult } from './coderLabel.js';
 
 export const DIGEST_VARIABLES = ['v1_attribution', 'v2_relevance', 'v3_class', 'v4_shape', 'v5_time', 'v6_chair'] as const;
 export type DigestVariable = typeof DIGEST_VARIABLES[number];
@@ -20,6 +20,22 @@ export interface VariableDigest {
   split_units: number;
   alpha: number | null;
   examples: { unit: string; values: (string | null)[] }[];
+}
+
+/**
+ * One coder file's valid rows, deduped by rowKey the way codingReport.ts is: the FIRST occurrence of
+ * a key claims it (valid or not), so a later duplicate is always ignored even if it is valid — the
+ * digest and the report must never disagree about which row (if any) a key resolves to.
+ */
+export function validRowsFirstOccurrence(validated: ValidationResult): CoderRow[] {
+  const seenKeys = new Set<string>();
+  const rows: CoderRow[] = [];
+  for (const r of validated.rows) {
+    if (seenKeys.has(r.key)) continue; // key already claimed by an earlier occurrence
+    seenKeys.add(r.key); // claim the key on first occurrence, valid or not
+    if (validated.fileErrors.length === 0 && r.row && r.errors.length === 0) rows.push(r.row);
+  }
+  return rows;
 }
 
 export function buildDisagreementDigest(

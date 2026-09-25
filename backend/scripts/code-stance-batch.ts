@@ -13,7 +13,7 @@ import { buildCodingReport } from './lib/codingReport.js';
 import { validateCoderLabelFile, CODEBOOK_VERSION } from './lib/coderLabel.js';
 import type { CoderRow } from './lib/coderLabel.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
-import { buildDisagreementDigest } from './lib/disagreementDigest.js';
+import { buildDisagreementDigest, validRowsFirstOccurrence } from './lib/disagreementDigest.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
@@ -48,16 +48,7 @@ if (report.needsSource.length) console.log(`\n${report.needsSource.length} row(s
 const validRows = new Map<number, CoderRow[]>();
 for (const [slot, raw] of files) {
   const v = validateCoderLabelFile(raw, { snapshotText, expectedSlot: slot });
-  if (v.fileErrors.length) continue;
-  const seenKeys = new Set<string>();
-  const rows: CoderRow[] = [];
-  for (const r of v.rows) {
-    if (!r.row || r.errors.length !== 0) continue;
-    if (seenKeys.has(r.key)) continue; // duplicate row key within this file — keep only the first (matches codingReport.ts)
-    seenKeys.add(r.key);
-    rows.push(r.row);
-  }
-  validRows.set(slot, rows);
+  validRows.set(slot, validRowsFirstOccurrence(v));
 }
 const digest = buildDisagreementDigest(validRows);
 writeFileSync(join(dir, 'disagreement-digest.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, ...digest }, null, 2));
