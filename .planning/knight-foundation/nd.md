@@ -10,7 +10,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-25 — 95 boundaries, 95 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
-| 3 city waves | ▶ **MEASURED 2026-09-25, nothing written.** **9 offices** — Mayor + 7 wards + an **elected Municipal Judge**. Ward geometry found (state precinct layer); **no term dates published anywhere** |
+| 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
 | 4 county waves | ▶ **MEASURED 2026-09-25, nothing written.** Commission is **5 seats elected AT LARGE — no districts**; the separately elected officer list is still owed |
 | 5 assets | — portraits + the `grand-forks` banner. A **Legislator Photo Request Form** exists; the licence is unestablished |
 
@@ -729,3 +729,233 @@ by MI-4, so the next free code is **`X0067`** — read from production because *
 no allocator**. `steward slot X` hands out numbers that are already taken, and `X_0001` is abandoned.
 🔴 **This is the same shape as the migration-number collision the steward exists to prevent**, and it
 is unfixed. OH-3 recorded it; ND-3 will meet it again.
+
+---
+
+## ✅ ND-3 APPLIED 2026-09-25 — Grand Forks is seated, on the DATED route
+
+`X0067` (7 ward boundaries) + `CC_0146` (structure) + `CC_0147` (occupancy): **9 offices, 9 people,
+9 terms, 9 seated, 0 vacant — and every term is dated.** Measured from outside after the apply:
+`politicians` **88,995 → 89,004**, `office_terms` **9,471 → 9,480**, both exactly **+9**;
+`districts` **10,116 → 10,124** exactly **+8**; `geofence_boundaries` **72,300 → 72,307** exactly
+**+7**. `offices_missing_terms` **unmoved at 423 / 238 unflagged**.
+
+All three artefacts are **idempotent, proved by re-running each**.
+
+🟢 **No matview refresh was needed, and that was checked rather than assumed**:
+`geofence_child_county` holds **0** rows whose boundary carries an `X` mtfcc.
+
+### 🔴🔴 GRAND FORKS ELECTS NINE OFFICES, AND THE NINTH IS ON NONE OF THE OBVIOUS PAGES
+
+| office | count | the sentence that establishes it |
+| --- | --- | --- |
+| Mayor | 1 | *"This is different from the Mayor, who is the head administrator of the city"* |
+| Council Member, Wards 1–7 | 7 | *"The Grand Forks City Council consists of 7 members, each representing one of the city's 7 wards"* — **no at-large seat** |
+| **Municipal Judge** | **1** | *"**The Municipal Judge is elected for a four-year term.**"* |
+
+The judge is not on City Leadership, not on the City Council page, and not in any roster. That one
+sentence sits on a Municipal Court staff page under City Departments. **An office is seated if the
+voters elect it**, so it is in scope — as Gary's Judge of the City Court was at IN-4.
+
+⚠ **And the same paragraph excludes two people**: *"two Alternate Municipal Judges as recommended by
+the court and **appointed by the City Council**"*. Elected judge in, appointed alternates out. The
+distinction exists in that paragraph and nowhere else on the site.
+
+🟢 The judge is confirmed in office by the city's own record: at the 2026-07-06 Organizational
+Meeting the **City Auditor administered his oath, and he then administered the council's**. Those
+same minutes record the Municipal Court *"becoming a court of record, due to action approved in the
+2025 State Legislative Session"* — which is also why `N.D.C.C.` ch. 40-18 (Municipal Judges) now
+reads *"Repealed by S.L. 2025, ch. 379, § 4"*.
+
+### 🟢 THE DATED ROUTE — WHAT EACH OF THE NINE DATES RESTS ON
+
+Grand Forks publishes **no term dates anywhere**. Each ward page carries a name, a ward, an email
+and a phone, and nothing else. The dates came from the council's own **PROCEEDINGS OF THE CITY
+COUNCIL** minutes, where the oath is a dated event at a named meeting.
+
+**Six at `day` precision:**
+
+| seat | holder | start | the record |
+| --- | --- | --- | --- |
+| Mayor | Brandon Bochenski | **2020-06-23** | sworn the evening of the sine die meeting at which Mayor Brown was recognised for 20 years |
+| Ward 2 | Rebecca Osowski | **2022-06-28** | *"Incoming ... Rebecca Osowski, Ward 2 ... were sworn in on Tuesday night"*; the city's calendar names that meeting *"City Council (Sine Die) and City Council (Organizational)"* |
+| Municipal Judge | Kerry Rosenquist | **2022-06-28** | sworn the same night as *"newly elected"*; the 2026 minutes call him *"reelected"* and refer back to *"his first term"* |
+| Ward 3 | Tricia Berg | **2024-07-01** | the roll calls either side: 2024-06-17 is *"Weigel, Osowski, **Weber**, Lunski, **Kvamme**, Sande and Vein"*, 2024-07-01 is *"Weigel, Osowski, **Berg**, Lunski, **Fridolfs**, Sande and Vein"* |
+| Ward 5 | Mike Fridolfs | **2024-07-01** | the same pair of roll calls; he replaced Kvamme |
+| Ward 4 | Angela Salentiny | **2026-07-06** | *"Judge Rosenquist then administered the oaths of office to Council Members Rebecca Osowski (Ward 2), Angela Salentiny (Ward 4) and Dana Sande (Ward 6)."* |
+
+⚠ **THE OATH DATE IS NOT A RULE AND MUST NOT BE COMPUTED.** It is not "the first Monday in July"
+and not "two weeks after the election": **2020 was a Tuesday in June, 2022 a Tuesday in June, 2024
+Monday 1 July, 2026 Monday 6 July.** Each was read from that year's record. The 2024 date is
+doubly sourced — the Mayor announced it in advance on 2024-06-17 (*"July 1 is also the date that
+the current City Council will adjourn Sine Die and the newly elected City Council will hold their
+organizational meeting and be sworn into office"*) and the roll call confirms the changeover.
+
+**Three at `year` precision, a deliberate downgrade:**
+
+| seat | holder | start | source |
+| --- | --- | --- | --- |
+| Ward 1 | Danny Weigel | **2016** | *"has been on the council since 2016"* |
+| Ward 7 | Ken Vein | **2012** | *"has served on the Grand Forks City Council since 2012"* |
+| Ward 6 | Dana Sande | **2010** | *"In 2010 Dana was elected to the Grand Forks City Council, representing Ward 6"* |
+
+The oath dates for 2010, 2012 and 2016 were not read, so the day is not written — `YYYY-01-01` at
+`start_precision => 'year'`, which is CLAUDE.md's rule for a year-only source. ⚠ **1 January is
+EARLIER than the real arrival**, which is in June; that is what year precision means here and it
+must not be read as a day.
+
+🟢 **The three years carry an internal cross-check.** The article that dates Weigel to 2016 also
+says *"only Sande and council member Ken Vein have served longer"* — and **2010 < 2012 < 2016**
+reproduces that ordering exactly, from three separate statements. That proves no single year, but a
+transcription error in any of them would have broken it.
+
+🔴 **A re-election does not restart an occupancy**, so every date above is the person's FIRST
+arrival in that seat. Six of the nine have been re-elected at least once; none of them carries the
+2024 or 2026 oath date for that reason.
+
+### 🟢 THE CHANGE-CHECK IS A ROLL CALL, AND AN ABSENCE IS WHAT MAKES IT ONE
+
+The minutes of **2026-08-17** — five weeks before this wave — record:
+
+> *"Present at roll call were Council Members Weigel, Osowski, Berg, Salentiny, Sande and Vein – 6;
+> **absent: Fridolfs – 1**"*, with **Mayor Bochenski presiding**.
+
+All seven wards and the Mayor are accounted for **by name**.
+
+🔴 **"absent: Fridolfs" is the load-bearing half.** A roster that simply omitted him would be
+indistinguishable from a vacancy. Naming him absent positively asserts that he still holds Ward 5.
+**An absence is not a vacancy — and here the record says which one it is.** This is the signal
+Grand Forks has instead of MN-2's departure banner and MN-3's expired term date, and it is stronger
+than either, because it is produced twice a month by the body itself.
+
+⚠ **The judge's change-check is weaker, and that is stated rather than papered over.** He appears in
+no roll call. The most recent record of him in office is the 2026-07-06 oath administration —
+**eleven weeks** before this wave, against five for the council.
+
+### 🔴🔴 THE WARD-COVERAGE GATE I WROTE FIRST WAS WRONG, AND ONLY THE TAMPER SHOWED IT
+
+The seven wards cover **99.351%** of the TIGER place — which would **fail Akron's 99.5% gate**, and
+is not a defect: the city's eastern boundary is the **Red River**, and the state's precinct
+digitization and the Census's place digitization trace it differently. The uncovered 0.1904 sq mi
+is **88 separate pieces**, with 90 more of ward lying outside the place, and the largest uncovered
+piece has a compactness of **0.0072** — an extreme ribbon, where a circle is 1.0.
+
+So I wrote the second gate as a **compactness ceiling of 0.10**, documented it as the load-bearing
+test, and asserted that compactness is what separates a sliver from a hole.
+
+🔴 **Then I dropped Ward 3 from the dissolve — a whole missing ward, the exact defect the gate
+exists for — and the largest uncovered piece came back at 1.90 sq mi with compactness 0.0524. It
+passed.** The missing ward merges with the river slivers into one connected, ragged piece; it is not
+compact at all. **Compactness separates a ribbon from a disc. It does not separate a missing ward
+from a boundary artefact.**
+
+The quantity that does separate them is the **area of the largest single piece**: **0.1269 sq mi**
+healthy against **1.9032 sq mi** with a ward missing — a 15× gap with room on both sides. The gate
+is now a 0.50 sq mi ceiling, and the same tamper fails it:
+
+```
+🔴 GATE 4: the largest single uncovered piece is 1.90319 sq mi (ceiling 0.5) — that is a
+   NEIGHBOURHOOD in no ward, not a boundary sliver.
+```
+
+Compactness is still **printed**, because it is genuinely how the healthy case was recognised as
+slivers. It no longer gates anything.
+
+▶ **The general lesson, and it cost nothing but would have cost a wave: a gate that has never been
+watched failing is a guess about what the defect looks like.** This one was written confidently and
+documented confidently, and was wrong until it was tampered with. ⚠ Note also that Duluth's real
+hole was 8.68 sq mi and passed a plausibility check — so the *percentage* gate alone is not enough
+either. It takes both.
+
+### 🔴 THE CITY'S OWN WARD MAP IS A PDF; THE STATE HAS THE GEOMETRY
+
+`grandforksgov.com`'s "Ward & Precinct Map" link redirects to `showdocument?id=42167`, a PDF whose
+`t=` tick parameter dates it to early 2022. A PDF cannot answer "who represents this address" —
+the Gary problem.
+
+🟢 `NDGISHUB Voter Precincts` (*"Voter precinct splits for the 2026 election in North Dakota... by
+Legislative District, County, City, **Ward**, ... **Commissioner District**, Park District..."*,
+catalogue modified 2026-05-05) carries all seven wards as **11 precinct parts**, dissolved here into
+7. ▶ **The same layer carries the county's commissioner column, which is what ND-4 reads.**
+
+⚠ **A name trap sits beside it**: `Ward2015` and `Ward2010` in the same catalogue are **Ward COUNTY
+aerial photography**. Ward is a North Dakota county.
+
+⚠ **What this dates and does not date.** The publisher states the layer is for the 2026 election and
+the catalogue gives a modified date — that dates the **layer**. Nothing available dates the ward
+**boundaries**: Grand Forks publishes no adoption date and no second ward layer, so there is nothing
+to diff a map against. Same limitation as Akron at OH-3 and Columbia at SC-3, recorded rather than
+dressed up. What *is* checkable is the count, and it is checked against the city's own sentence.
+
+### 🔴 BOTH THE CITY AND THE COUNTY SIT BEHIND A WAF
+
+`grandforksgov.com` and `gfcounty.nd.gov` both answer **HTTP 403 with a 468-byte body** to a bare
+request **and** to a full browser User-Agent — two shapes, **identical size**, which is the tell.
+Read in Playwright they return 200.
+
+🔴 **And a `.pdf` URL can serve a challenge page.** The county's home-rule charter fetched outside
+the browser is **403, `Content-Type: text/html`, body beginning `<HTML><H`**. Inside Playwright the
+same URL is **200, `application/pdf`, 7,477,329 bytes, magic `%PDF-`**. **Check the magic bytes, not
+the extension.** ⚠ That charter is a **scanned image PDF**, so ND-4's officer list is still owed.
+
+### 🔴 A NAME TRAP THAT WOULD HAVE LOOKED AUTHORITATIVE
+
+The ND Secretary of State's results portal serves pages for *"Grand Forks Ward 2"* and *"Grand Forks
+Ward 4"*. Those are **voting precincts in the November general**, not council seats. City elections
+are run by the **county auditor** in June and are not in that portal at all. A search lands on the
+SOS pages first, and they carry the state's own branding.
+
+### Gates
+
+| gate | result |
+| --- | --- |
+| row deltas | `politicians` +9, `office_terms` +9, `districts` +8, `geofence_boundaries` +7 — all exact |
+| offices | 7 wards + Mayor + Municipal Judge = 9 |
+| seated | **9**, counting `och.politician_id` |
+| every district has geometry | 8 of 8 |
+| every ward holds exactly one office | 7 of 7 — the assertion ND-2 could *not* make about the House |
+| the **Municipal Judge** exists and is seated | pass, with its own named gate |
+| dated terms | **6 `day` + 3 `year` = 9, and 0 `unknown`** |
+| nobody holds two city offices | pass |
+| ward coverage | 99.351%, largest single gap 0.1269 sq mi (ceiling 0.50) |
+| no two wards overlap | 0 pairs |
+| `offices_missing_terms` | unmoved at 423 / 238 |
+| `geofence_child_county` needs no refresh | 0 `X%` rows — checked |
+| idempotency | all three re-run: every `essentials.*` insert `INSERT 0 0` |
+| `check:reachability` | green, nothing regressed |
+| `check:occupancy` · `check:migrations` · `check:reservations` · `check:ocd-suffixes` | green |
+
+### Gates watched failing first
+
+| gate | tamper | what it printed |
+| --- | --- | --- |
+| ward count | expected 12 parts | `GATE 1: expected 12 precinct parts, got 11` |
+| **largest gap area** | Ward 3 dropped, coverage floor lowered so the shape gate was the one under test | `GATE 4: the largest single uncovered piece is 1.90319 sq mi (ceiling 0.5)` — **and the compactness gate it replaced PASSED this same tamper** |
+| district geometry | a ward district pointed at a geo_id with no boundary | `1 Grand Forks district(s) have no matching boundary — unreachable by address` |
+| office total | the Municipal Judge left out | `expected 9 Grand Forks offices ... found 8` |
+| **Municipal Judge** | the judge replaced by a non-elected officer — **total still 9, wards still 7, Mayor still 1** | `expected exactly 1 elected Municipal Judge office, found 0 — the two ALTERNATE judges are appointed and must not be seated` |
+| dated-route assertion | one arrival downgraded to `unknown` | `expected 6 day-precision terms ... got 5` |
+| dated-route assertion | a year-precision arrival written as a day | `expected 6 day-precision terms ... got 7` |
+
+### End-to-end probe
+
+| anchor | answers |
+| --- | --- |
+| **Grand Forks City Hall** | **6** — Mayor Bochenski · Municipal Judge Rosenquist · Council Member Ward 3 Tricia Berg · Sen. Scott Meyer · Reps Nels Christianson and Steve Vetter |
+| CONTROL — **East Grand Forks, MN** City Hall | **none** |
+| CONTROL — Fargo City Hall | 3, all state — no city offices, because Fargo is not seeded |
+
+🟢 **The East Grand Forks control is the one worth having.** It is a different city, in a different
+state, about a mile away across the Red River, and it shares the name. It returns nothing.
+
+🟢 City Hall sits in **Ward 3**, and Ward 3's member is who it returns.
+
+▶ **Grand Forks scores 4 of 5 on the program's probe** — council member ✅, state senator ✅, state
+representatives ✅✅, **county commissioner ❌**. Stage 4 is the last one.
+
+### ⚠ What no gate here can catch
+
+The gates assert that nine offices exist, are seated, are dated and reach the right addresses. **They
+cannot tell whether Berg and Fridolfs were swapped** — Ward 3 and Ward 5 would each still hold
+exactly one dated holder. That pairing rests on the roll calls quoted above and on nothing else, and
+it is recorded as a limitation rather than covered by a gate that does not exist.
