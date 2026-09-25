@@ -364,6 +364,74 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // counties — plus 15 G5200V26 rows, source `oh_orc_2025`, the 2026-2032 congressional remap
   // adopted 2025-10-31, which this wave does not touch.
   OH: new Set(['sldu', 'sldl']),
+  // MI. Knight program slice 11 — Detroit and Wayne County. Production held ZERO G5210/G5220
+  // rows for FIPS 26 and ZERO state legislative offices before this wave; measured 2026-09-24
+  // (Michigan held 13 G5200 congressional districts, 83 counties, 533 G4110 places, 212 G4210
+  // CDPs and 1,540 G4040 county subdivisions, none of which this wave touches).
+  // Counts MEASURED against raw TIGER 2025 FIPS 26 on 2026-09-24 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   38 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'038'
+  //   sldl  110 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'110'
+  // Michigan is single-member in BOTH chambers, so these polygon counts ARE the seat counts —
+  // unlike AZ/WA and unlike ND/SD later in this same program. Codes are plain digits with no
+  // letter half, so the MN '08A' / MD '1A' collapse cannot arise; the pre-flight asserts the
+  // distinct suffix count anyway rather than reasoning about it.
+  //
+  // 🔴🔴 VINTAGE IS THE WHOLE GAME ON THIS SLICE AND DETROIT IS THE REASON. Michigan has had
+  // 110 House and 38 Senate seats since 1964, so a count dates nothing. In Agee v. Benson
+  // (W.D. Mich., 2023-12-21) a three-judge panel held the MICRC drew 13 Detroit-area districts
+  // predominantly on the basis of race and enjoined them. FOUR real plans are in play and all
+  // four are 110/38.
+  // 🔴🔴 AND THE TWO CHAMBERS MOVED ON DIFFERENT DATES, SO THE CORRECT PLAN IS NOT THE NEWEST
+  // ONE FOR BOTH. This wave loads the map each SITTING member was elected under:
+  //   sldl -> "Motown Sound FC E1", approved 2024-03-27, used from the 2024 election onward.
+  //   sldu -> "Linden" (2021 MICRC). Senators serve FOUR-YEAR terms and were last elected in
+  //           November 2022, so the sitting Senate represents Linden until 2026-12-31. The
+  //           remedial Senate plan "Crane A1" (MICRC 2024-06-26, panel 2024-07-26) is
+  //           authorised FOR THE 2026 ELECTIONS and is NOT the current map.
+  // ⚠ 🔴 THEREFORE THIS LOAD HAS A KNOWN EXPIRY ON THE SENATE HALF: members elected
+  // 2026-11-03 take office 2027-01-01 under Crane A1, and sldu must be re-loaded then. See
+  // PROGRAM.md; the same shape as the FL 2026 polygon gap.
+  // 🔴 LSY IS A LABEL, NOT A VINTAGE — TIGER 2024 AND 2025 BOTH STAMP sldu LSY=2024 AND BOTH
+  // CARRY LINDEN. Measured across TIGER 2022/2023/2024/2025: the Senate layer is byte-stable
+  // (max per-district area change 0.0005%), so NO TIGER vintage through 2025 carries Crane A1.
+  // Reading LSY would have asserted the opposite. The House layer DOES move at 2023 -> 2024,
+  // on 18 of 110 districts by up to 35.6% of area.
+  // 🔴 VINTAGE WAS PROVEN SEPARATELY PER CHAMBER, NOT ASSUMED, against the State of Michigan's
+  // own ArcGIS organisation (dxRQUfTDNtfqZ301) — which the MICRC's own mapping-data page names
+  // as the publisher of the 2024 maps rather than hosting them itself. All 3,017 Michigan 2020
+  // census tract internal points were located in both layers:
+  //   TIGER 2025 sldl vs Motown Sound FC E1 : 2,969/2,969 tracts, 109/109 locatable seats
+  //   TIGER 2025 sldu vs Linden             : 2,968/2,968 tracts,  38/38  seats
+  // The controls are the REAL COMPETING PLANS, not a stale vintage, and both failed:
+  //   vs Hickory (2021 House) 284 of 2,968 tracts and 6 seats disagree
+  //   vs Crane A1 (2024 Senate) 483 of 2,969 tracts and 6 seats disagree
+  // Tool: scripts/verify-mi-tiger-vintage.mjs, with --self-test to watch it fail.
+  // 🔴 A PER-DISTRICT AREA TEST WAS TRIED FIRST AND DOES NOT SEPARATE — IT MEASURES THE GREAT
+  // LAKES. TIGER legislative polygons carry lake water; the state's layers are clipped to the
+  // shoreline, so House 88 differs by 931% and Senate 31 by 450% between two digitisations of
+  // the SAME plan, swamping the 1.2%-35% a real redraw produces. Both the claim and its
+  // control "failed" on the same districts — a metric that does not separate is a ranking.
+  // ⚠ HD-109's own published internal point (46.720711,-87.411743) lies in Lake Superior about
+  // 20 km north of Marquette and is in NO state polygon; it is scored by its tract points and
+  // declared in the verifier rather than ignored.
+  // ⚠ AN UNSCOPED SEARCH FOR THESE PLAN NAMES IS A JURISDICTION COLLISION: ArcGIS Hub answers
+  // "motown sound" with a Detroit history story map and "crane a1" with sandhill crane hunting
+  // zones in Texas, North Dakota and Montana. Scope to the org. ⚠ And the layers' `Layout`
+  // field is NOT the plan name — it reads "Landscape".
+  // ⚠ michigan.gov 403s a BARE request and answers a UA-only request with HTTP 200 — the
+  // inverse of the ohiosos.gov WAF, where a full Chrome header set was also refused.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA, SC AND OH. sldl runs 26001..26110 and
+  // sldu 26001..26038, while Michigan's 83 counties are 26001..26165 odd. Wayne County —
+  // Detroit's parent, this wave's own jurisdiction — is 26163, outside the legislative range,
+  // but all 38 Senate ids and most House ids collide with a county. Every join must pair
+  // geo_id with mtfcc/district_type.
+  // place/cousub/CDP are EXCLUDED and MUST NOT be re-run: Michigan's G4110 (533), G4040
+  // (1,540) and G4210 (212) rows are already present, and Detroit city 2622000 is already
+  // present with geometry. This is the Ohio shape — a slice that owes no `place` load.
+  // cd/county are EXCLUDED: prod already holds all 13 MI congressional (G5200) and all 83
+  // counties.
+  MI: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -2120,8 +2188,144 @@ async function processLayer(
     }
   }
 
+  // ── MI MTFCC + VINTAGE pre-flight assertion (Knight slice 11) ───────────────
+  // 🔴 A COUNT CANNOT DATE A MICHIGAN MAP. 110/38 has been true since 1964 and all four plans
+  // in play — Hickory and Linden (2021), Motown Sound FC E1 and Crane A1 (2024) — have exactly
+  // that shape. Ohio's structural proof (every Senate district is three whole House districts,
+  // Ohio Const. Art. XI § 4) has NO Michigan equivalent: Michigan Senate districts do not nest
+  // in House districts, so there is nothing to cross-check internally. What replaces it is
+  // ANCHORS: points whose district differs between the plan we want and the plan we must not
+  // load. Each anchor is a 2020 census tract internal point in the redrawn Detroit-area
+  // corridor, published by the Census and therefore stable, with both answers measured against
+  // the State of Michigan's own layers on 2026-09-24.
+  // 🔴 THE SENATE ANCHORS ARE A GUARD AGAINST A FUTURE TIGER, NOT AGAINST TODAY'S. No TIGER
+  // vintage through 2025 carries Crane A1, but the 2026 vintage is expected to, and sldu must
+  // NOT silently switch under a re-run while the sitting senators still represent Linden.
+  if (fipsArg === '26') {
+    const EXPECTED_MI_MTFCC: Record<string, number> = {
+      sldu: 38,    // 38 Michigan Senate districts — MICRC "Linden", adopted 2021-12-28 — measured 2026-09-24
+      sldl: 110,   // 110 Michigan House districts — remedial "Motown Sound FC E1", approved 2024-03-27
+    };
+    // [lat, lon, district under the plan we load, district under the plan we refuse, labels]
+    const MI_VINTAGE_ANCHORS: Record<string, Array<[number, number, number, number, string, string]>> = {
+      sldl: [
+        [42.5061325, -82.8859088, 13, 11, 'Motown Sound FC E1', 'Hickory'],
+        [42.4820722, -82.8849489, 12, 11, 'Motown Sound FC E1', 'Hickory'],
+        [42.5206312, -82.9353950, 13, 12, 'Motown Sound FC E1', 'Hickory'],
+        [42.4956854, -83.0170761, 14, 13, 'Motown Sound FC E1', 'Hickory'],
+      ],
+      sldu: [
+        [42.9444302, -83.5451429, 24, 23, 'Linden', 'Crane A1'],
+        [42.6598807, -82.8780366, 11, 24, 'Linden', 'Crane A1'],
+        [42.6625061, -83.0634452, 24, 9, 'Linden', 'Crane A1'],
+        [42.6196998, -82.9868613, 10, 11, 'Linden', 'Crane A1'],
+      ],
+    };
+    // Controls, so both halves of this gate can be WATCHED FAILING rather than trusted:
+    //   MI_PREFLIGHT_CONTROL=count   perturbs the expected record count -> MTFCC assertion fires
+    //   MI_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected district -> VINTAGE fires
+    // The vintage half has a third control that needs no flag and is the realistic one:
+    //   --vintage 2023  (carries Hickory for sldl) -> the anchor names the wrong plan.
+    const MI_CONTROL = process.env.MI_PREFLIGHT_CONTROL ?? '';
+    if (MI_CONTROL) console.log(`  [${layer}] ⚠ MI_PREFLIGHT_CONTROL=${MI_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (MI_CONTROL === 'count') EXPECTED_MI_MTFCC[layer] = EXPECTED_MI_MTFCC[layer] - 1;
+    if (MI_CONTROL === 'anchor' && MI_VINTAGE_ANCHORS[layer]?.length) MI_VINTAGE_ANCHORS[layer][0][2] = 999;
+
+    if (layer in EXPECTED_MI_MTFCC) {
+      const expected = EXPECTED_MI_MTFCC[layer];
+      const anchors = MI_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const anchorHits: Array<number | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let districtNum: number | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+          districtNum = parseInt(fpVal, 10);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom)) anchorHits[i] = districtNum;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[MI MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify the TIGER FIPS 26 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[MI OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. MI district codes ` +
+          `are plain digits and cannot collide — this is the MN '08A' / MD '1A' collapse in a ` +
+          `state that cannot produce it. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      for (let i = 0; i < anchors.length; i++) {
+        const [lat, lon, want, refuse, wantPlan, refusePlan] = anchors[i];
+        const got = anchorHits[i];
+        if (got === want) continue;
+        const reading =
+          got === refuse
+            ? `it returned ${got}, which is this point's district under ${refusePlan} — THIS FILE CARRIES THE WRONG PLAN`
+            : `it returned ${got === null ? 'no district at all' : got}, which is neither ${wantPlan} (${want}) nor ${refusePlan} (${refuse})`;
+        const err = new Error(
+          `[MI VINTAGE assertion] layer=${layer}: anchor ${lat},${lon} must be district ${want} ` +
+          `under ${wantPlan}, and ${reading}. A count of ${expected} passes on BOTH plans, which ` +
+          `is why this anchor exists (Agee v. Benson redrew the Detroit-area seats). ` +
+          `TIGER file: ${url}. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] MI MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `${anchors.length}/${anchors.length} vintage anchors match ${anchors[0][4]} ` +
+                  `and reject ${anchors[0][5]}.`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
