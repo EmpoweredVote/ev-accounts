@@ -1346,3 +1346,53 @@ A member portrait carries **no EXIF at all**, and the raw file contains none of 
 `copyright`, `rights`, `Creative Commons`, `public domain`, `Credit` or `xmp`. ▶ **Nothing is
 granted in the file.** The `Legislator Photo Request Form` is the remaining route, and MN-5 is the
 precedent for how to ask.
+
+### ▶ ND-5 EXTRACTION DONE 2026-09-25 — 141 of 141, and the sheet is published for approval
+
+Contact sheet: **https://claude.ai/artifact/Qi55gMAhJQcLtQLuZt3MtQ**
+Tooling: `scripts/nd-legislature-portrait-extract.py` · `scripts/nd-portrait-contact-sheet.py`
+Ledger: `backend/data/seed-nd-2026/portraits/LEDGER.json`
+
+**Ruling (Cantrell, 2026-09-25): ship the 157×196 natives.** No upscale, no second source.
+
+| check | result |
+| --- | --- |
+| extracted | **141 of 141, 0 failures** |
+| monochrome | **0** — the SC-5 rule, enforced |
+| byte-identical duplicates | **0** |
+| dimensions | **157×196 on every frame**, one distinct size |
+| structure | 47 senators · 2 per whole House district · 1 each on 4A/4B |
+| **positive control** | a deliberately wrong filename returns **404** — the sweep can fail |
+
+🔴 **The frames are embedded in the sheet UNMODIFIED.** The question is whether the shipping asset is
+good enough, so re-encoding or resampling for the page would have put something else in front of the
+reviewer. The sheet is 10.33 MB of `data:` URIs for that reason, and the CSP blocks external images
+anyway.
+
+🟢 **I looked at all 141 before publishing the sheet.** Every one is a head-and-shoulders portrait;
+no badges, no logos, no placeholders. **A badge is portrait-shaped and no counter can see that.**
+
+🔴🔴 **AND THE MEASUREMENT BEAT MY EYE.** I spotted **two** frames on a light backdrop by looking.
+Scanning corner lightness against the set's median found **six**: Myrdal (S-19), Selzler (S-44),
+Davis (H-9), Rustebakke (H-20), Brown (H-27), Grindberg (H-41).
+🟢 **And the six are not noise — four of them arrived mid-term.** Selzler, Rustebakke, Brown and
+Grindberg are four of the eight dated arrivals from ND-2; they were seated between elections and sat
+for their photograph outside the main session. **The backdrop is a signature of how someone arrived.**
+▶ *Looking* caught that they were portraits. *Measuring* caught how many there were. Neither would
+have done on its own — and my first draft of the page said "both", which I corrected before
+publishing rather than shipping the wrong count.
+
+### ⚠ What approval of the sheet does NOT cover
+
+**The licence is unsettled.** Nothing is granted in the bytes — no EXIF at all, and no `Copyright`,
+`rights`, `Creative Commons`, `public domain`, `Credit` or `xmp` string anywhere in the file (read
+first, on the TN precedent). The Legislative Branch publishes a **Legislator Photo Request Form**;
+MN-5 is the precedent for asking. **Approving the frames is not the right to publish them.**
+
+### Owed before ND-5 closes
+
+1. **Settle the licence** via the photo request form.
+2. **Import the 141** to our own CDN and set `photo_custom_url` — 🔴 a `politician_images` row alone
+   changes nothing a voter sees.
+3. **The 16 city and county portraits** are still unmeasured.
+4. **The `grand-forks` banner**, after the adjacency test against the ND state banner.
