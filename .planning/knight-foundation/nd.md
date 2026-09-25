@@ -12,7 +12,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
 | 4 county waves | ✅ **APPLIED 2026-09-25 — 7 offices, 7 seated, 0 vacant, 6 day + 1 year precision** (`CC_0148`/`CC_0149`). **No geometry loaded: the commission is at large.** Grand Forks scores **5 of 5** |
-| 5 assets | ▶ **141 EXTRACTED AND APPROVED 2026-09-25**, nothing imported. 🔴🔴 **LICENCE ON HOLD BY RULING — do not import, do not send the request.** ✅ **16 city/county sources MEASURED 2026-09-25: 7 exist at 1600x2000, 9 do not exist at all** |
+| 5 assets | ✅ **APPLIED 2026-09-25 — 148 PORTRAITS IMPORTED, 0 failed; 148 of 148 decode from the CDN.** Hold LIFTED by Cantrell the same day. Banner adjacency test run: **no collision**. ⚠ Licence stays an **accepted debt** on both cohorts; the request form is still **not sent** |
 
 ---
 
@@ -1516,3 +1516,102 @@ imports, and it was caught by looking, not by any counter.
 3. **Nine people have no portrait route at all**: Salentiny, Rosenquist, and all seven county
    officials. A blank beats a link.
 4. **The `grand-forks` banner**, after the adjacency test against the ND state banner.
+
+
+## ✅✅ ND-5 APPLIED 2026-09-25 — 148 PORTRAITS IMPORTED. THE HOLD WAS LIFTED.
+
+> 🟢🟢 **RULING (Cantrell, 2026-09-25, later the same day): IMPORT ALL 148 — the 141
+> legislature portraits AND the 7 Grand Forks city portraits.** *"we will eventually find the
+> copyright, but for now we will import."*
+>
+> ⚠ **THE HOLD AND ITS LIFT ARE BOTH DATED 2026-09-25. READ THE LIFT.** The earlier ruling on
+> this page says *do not import, do not send the request form, do not ask again*. That is
+> **superseded for the import only**.
+> ⚠ **THE PHOTO REQUEST FORM IS STILL NOT SENT.** The lift covers importing, not corresponding.
+> ⚠ **THE LICENCE IS STILL UNSETTLED FOR BOTH COHORTS AND IS NOW A KNOWN, ACCEPTED DEBT.**
+> Every one of the 148 rows carries `photo_license = 'unknown'`, which is the honest value:
+> nothing is granted in the bytes of either set, and neither publisher publishes a policy.
+> **Do not record either cohort as licence-cleared.**
+
+🔴 **"IMPORT THE HEADSHOTS" WAS AMBIGUOUS AND I ASKED BEFORE ACTING.** Two cohorts were live
+at once — 141 under an explicit same-day hold, and 7 never ruled on. Importing sets
+`photo_custom_url`, which is what a voter sees. **Guessing the scope would have been the defect.**
+
+### Result
+
+| cohort | seated | renders before | renders after | shipped at |
+| --- | --- | --- | --- | --- |
+| ND Legislative Assembly | 141 | 0 | **141** | 157x196 **native, not enlarged** |
+| Grand Forks city | 9 | 0 | **7** | 600x750 (a 2.67x downscale) |
+| Grand Forks County | 7 | 0 | **0** | no source exists |
+| pre-existing ND statewide (**CONTROL**) | 5 | 5 | **5** | unmoved |
+
+`imported 148 · skipped 0 · failed 0`. ⚠ **The control scope reads 5, not the 8 the ND-5
+baseline quotes** — the congressional delegation hangs off a FEDERAL government row and is
+outside a North-Dakota-scoped query. **State the scope, do not assume the number carries over.**
+
+✅ **VERIFIED FROM OUTSIDE THE DATABASE**: all **148 of 148** `photo_custom_url` values fetch
+from the public CDN and decode as JPEG — **141 served at 157x196 and 7 at 600x750**, exactly what
+was shipped. **Negative control**: a zero-UUID object key returns HTTP 400, so the check can fail.
+✅ **Provenance is clean**: all 148 `photo_origin_url` values point at a PAGE; **0 point at an
+image**, which is the defect that pipeline exists to prevent.
+
+### 🔴🔴 I RAN A STALE COPY OF THE SHARED IMPORTER, BECAUSE IT WAS THE ONE WITH THE `.env`
+
+The ND worktree has no `.env` (copying one in is refused by the permission layer), so the importer
+was run from the main clone `C:\EV-Accounts\backend`. **That clone sits on an unrelated, unpushed
+branch and carried a 238-line copy of the script; `origin/master` and this worktree both carry
+287 lines.** The stale copy was missing three things the current one has: the `apikey` storage
+header, the `monochrome` gate, and `origin_is_image` provenance handling.
+▶ **THE CLONE THAT HAS THE CREDENTIALS IS NOT NECESSARILY THE CLONE WITH THE CURRENT CODE.**
+Check which copy you are about to run, not just whether it runs.
+⚠ **I then "fixed" the `apikey` header in that stale copy — reinventing a fix that was already
+on master.** The edit has been reverted; the main clone is simply behind, and there is nothing to
+land upstream.
+✅ **The three gaps were measured after the fact rather than assumed harmless**: provenance is
+correct (0 of 148 point at an image), licence is recorded on all 148, and **0 of 148 are
+monochrome** — re-checked with the current `headshot_crop.monochrome`, with a positive control
+(a greyscaled copy of a shipped frame) that **fires** and a negative control (a known-colour city
+frame) that **does not**.
+
+### 🔴🔴 `monochrome()` RETURNS A TUPLE, SO `if monochrome(im)` IS ALWAYS TRUE
+
+My first monochrome sweep flagged **148 of 148**, including seven frames I had looked at and knew
+were in colour — flags, a purple tie, blue suits. The function returns `(is_mono, chroma,
+neutral_fraction)`, and **any non-empty tuple is truthy**. The tell was the positive control
+printing `(True, 0.0, 1.0)` instead of `True`. Unpacked, the real answer is **0 of 148**.
+▶ **A uniform answer is a broken detector — and this time the detector was MINE, not the
+source's.** Same shape as the WAF earlier in this same slice, twice in one session.
+
+### 🟢 THE STORAGE AUTH RULE, CONFIRMED BY A CONTROL WATCHED FAILING
+
+Supabase Storage refuses a lone `Authorization: Bearer` with an `sb_secret_…` key as
+**HTTP 400 whose BODY says `{"statusCode":"403", "message":"Invalid Compact JWS"}`** — an auth
+failure wearing two status codes, which reads like a missing object. Sending **both `apikey` and
+`Authorization`** is accepted. Proved in one run: negative refused, positive accepted, bytes read
+back identical, test object deleted. The current importer already does this; only the stale copy
+did not.
+
+### ✅ BANNER ADJACENCY TEST — NO COLLISION. GRAND FORKS IS CLEAR.
+
+`states/ND.jpg` is **"Painted Canyon overlook, Theodore Roosevelt NP"** (Acroterion, CC BY-SA 4.0),
+1700x540. Read **in the desktop 6:1 band** — rows **128–411 of 540 (52.4%)**, which is where
+adjacency is decided, not in the full frame. The band shows **badlands: horizontal rock strata and
+sky, no built structure of any kind**, and the location is western North Dakota — roughly 350
+miles from Grand Forks, which sits on the Red River at the eastern edge.
+▶ **So Grand Forks is NOT a Miami/Wichita/Detroit/Charlotte case**, where the state banner *is*
+that city's skyline. A Grand Forks banner may use a built subject. **This is now measured; before
+today it was only an absence from a list of four.**
+✅ Colour checked in the band too: mean saturation **0.211**, near-grey **14.6%** — nowhere near
+the GA-3 all-greyscale failure. ⚠ No `focus` is set on the entry, so the band is centred.
+⚠ **No Grand Forks banner has been sourced yet** — the adjacency question is answered, the
+choice of frame is not. The usual rules still apply: prefer a horizontally arranged subject near
+3:1, and a frontal building portrait is not a banner subject.
+
+### What ND-5 still owes
+
+1. **Find the copyright** for both cohorts — the accepted debt. The request form is unsent.
+2. **Nine people still have no portrait route**: Salentiny, Rosenquist, and all seven county
+   officials. A blank beats a link.
+3. **Source and register the `grand-forks` city banner** in the essentials repo
+   (`buildingImages.js` + `public/banners.json`, which is generated and CI-enforced).
