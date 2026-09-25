@@ -1,6 +1,7 @@
 # Stance & quote codebook + inter-coder reliability — design
 
-**Status:** design approved section by section in session (Chris Andrews, 2026-09-25). Not built.
+**Status:** design approved section by section in session, and rulings Q1–Q9 made (Chris Andrews,
+2026-09-25; §9.1). Not built.
 Nothing in this document changes the pipeline, the database or the review page yet.
 **Author of record:** Chris Andrews (operator). Migration slots, when they come, are `CA_`.
 **Companion:** first-draft codebook at [`docs/codebook/stance-and-quote-codebook.md`](../../codebook/stance-and-quote-codebook.md).
@@ -76,6 +77,14 @@ keeps the evidence program's tier vocabulary and its gold items.
       "reported a check it never ran" failure is possible.
   - **Sub-agents, not API calls:** API calls are billed per token. Sub-agents run on plan quota
     (the operator's decision, 2026-09-25).
+  - **Why tool-less (Q1, ruled 2026-09-25):**
+    - Every coder must code the *same* units. If coders could search, α would mix "found different
+      sources" with "read the same source differently".
+    - A coder can make no claim that code cannot check.
+    - WebFetch returns a model summary, not the page (stance-program §4.11).
+    - Replay needs identical inputs.
+
+    A coder that needs more evidence emits a **source request** instead of fetching it (§1.3).
 
 ---
 
@@ -140,6 +149,14 @@ is detectable.
   vendors ("convergent error is not corroboration", stance-program §5.4). **That is why agreement
   alone never publishes.** Only agreement *in a stratum measured against blind human gold* does.
 
+**Source requests.** A coder may add `needs_source` entries to its label (for example, `"Clerk
+roll call, H.R. 28 (2025)"`), meaning the evidence it needs is named but not in the snapshots.
+- A row with any `needs_source` does not publish.
+- The collector (inline, with tools) fetches the requested source, and code snapshots it.
+- **All three** coders then code the row again, so every coder always sees the same material.
+- After two request rounds with no new snapshot, the row goes to review with reason
+  `source-unavailable`.
+
 **Unit of coding:**
 - One (politician, office, topic, season) row.
 - Per source passage: V1–V5.
@@ -183,12 +200,13 @@ is wrong. A refutation that carries a code-verifiable citation → review.
 ### 1.7 Decide (code)
 
 New `queue_reasons` values: `coder-split`, `coder-missing`, `confirm-failed`, `stratum-uncertified`,
-`blind-sample`, `audit-sample`.
+`blind-sample`, `audit-sample`, `source-unavailable`, `statement-other`, `statement-out-of-cycle`.
 
 **The existing always-review reasons stay always-review, even in a certified stratum:**
 - `replaces-published-chair`
 - `value-change`
-- `statement-evidence` (until ruling Q2)
+- `statement-evidence` is narrowed (Q2): it becomes `statement-other`, which is always review.
+  `statement-answer` rows follow the normal certification rule.
 
 ---
 
@@ -271,8 +289,18 @@ New V4 values: `multi-subject`, `procedural`. Coders must name the provision the
 ### 3.2 Strata
 
 A stratum is the topic's role-scope **level** (federal / state / local / school) × the **evidence
-class** (record / statement), which gives 8 chair strata.
-- **Statement strata stay uncertified** until ruling Q2.
+class** of the basis the consensus rests on. The class is one of:
+- `record`
+- `statement-answer`: a questionnaire, a moderated debate answer, a first-person issue page, or a
+  signed pledge;
+- `statement-other`: news quotes, social posts, speeches, interviews.
+
+That gives 12 chair strata.
+- **`statement-other` strata never certify** (Q2, ruled 2026-09-25). Statements matched to a question
+  after the fact had 0% pass-1 survival.
+- **`statement-answer` strata certify under the normal rule.** This is what lets a candidate with no
+  record ever auto-publish.
+- **A row resting on several classes takes the weakest class present.**
 - **Per-topic veto:** one severe error on a topic removes that topic from auto-publish in every
   stratum, until a person clears it.
 
@@ -288,8 +316,13 @@ A stratum is certified when **all** of the following hold:
 
 ### 3.4 Staying certified
 
-- **Audit sample:** 1 in 10 auto-published rows is queued as `audit-sample`, blind. This grows the gold
-  set and detects drift.
+- **Audit sample (Q7, ruled 2026-09-25):**
+  - 1 in 5 of a newly certified stratum's first 100 auto-published rows goes to a person, blind, as
+    `audit-sample`; after that, 1 in 10.
+  - This grows the gold set and detects drift. For scale: if the machine starts to get 1 row in 10
+    wrong, a 1-in-10 audit catches it within 100 published rows about 65% of the time; 1 in 5, about
+    88%.
+  - The rates are configuration, not code.
 - **Immediate decertification:**
   - any severe error on an audited row; or
   - M3 over the last 50 audited rows falls below the rule.
@@ -314,8 +347,8 @@ A stratum is certified when **all** of the following hold:
 
 ### 3.6 Expected pace
 
-Blind mode is 1 in 3 of queued rows, so one stratum needs about 150 reviewed rows to reach 50 blind
-items. Federal/record will certify first. Local and school will take months. That is intended: those
+Blind mode is 1 in 2 of queued rows until the first stratum certifies, then 1 in 3 (§4.6). So one
+stratum needs about 100 reviewed rows to reach 50 blind items early on, and about 150 later. Federal/record will certify first. Local and school will take months. That is intended: those
 strata have the least structured evidence.
 
 ---
@@ -355,6 +388,7 @@ Migration slots come from `npm run steward --prefix backend -- slot CA --purpose
 | `rests_on` | uuid[] of snapshot IDs |
 | `source_codes` | jsonb: V1–V5 per snapshot, plus `provision_quote` |
 | `quote_codes` | jsonb: V7–V8 |
+| `needs_source` | jsonb: source requests (§1.3); empty when none |
 | `valid` | |
 | `label_sha256` | |
 | `raw_output` | |
@@ -409,7 +443,8 @@ since CA_0285; it gains the values in §1.7.
 4. **Reveal:** the coders' chairs and reasoning appear. The reviewer approves, changes or rejects
    (`final_*`). If the blind and final answers differ → the row is flagged `hard-example-candidate`.
 
-**Sample rate:** 1 in 3 of queued rows (`blind-sample`), plus every `audit-sample`. Other rows review as
+**Sample rate (Q7):** 1 in 2 of queued rows (`blind-sample`) until the first stratum certifies, then
+1 in 3. Every `audit-sample` is also blind. Other rows review as
 today and write `mode = 'standard'` (reference, not gold).
 
 **Legacy rows:** the 23 resolved rows (§0.2) may be imported as `standard`, for reference only.
@@ -431,7 +466,8 @@ publish, never gain one.
   other seat is V2 = `off`.
 - **Duplicate-person merge:** the merge template re-points `politician_id` on
   `stance_coder_labels` and `stance_gold_labels` exactly as it does on review rows.
-- **Candidate with no record:** statement strata only, so no auto-publish until ruling Q2.
+- **Candidate with no record:** statement strata only. Such a row can auto-publish only from a
+  certified `statement-answer` stratum (Q2).
 
 ### 5.2 Time and seating
 
@@ -441,7 +477,15 @@ publish, never gain one.
   split on which is newest → review.
 - **Old record, new ladder:** allowed if the record is chair-shaped against the *served* rung text.
   A record has no age limit.
-- **Statement older than 4 years:** → review (proposed; ruling Q4).
+- **Statement age follows the election cycle (Q4, ruled 2026-09-25).** A statement counts only if it
+  is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  Anything older → review (`statement-out-of-cycle`). CONFIRM computes this from `office_terms` and the
+  race dates. If the dates are not at `day` precision → review. Every published chair shows its
+  `evidence_as_of` date (§6).
 
 ### 5.3 Ladder and season
 
@@ -460,7 +504,7 @@ publish, never gain one.
 | `public-record`: legislature, council, clerk, SOS, court, agency | a person fetches it in a real browser (operator or Claude in Chrome, human pace) → `fetched_by = 'human'` | full text |
 | `own-site`: the politician's campaign or office site, own social account | as above | full text |
 | `news`: publisher, wire | **never bypassed**, including by anti-bot scraping services. The collector finds the primary source. If the news article is the only source → review, and a person may human-verify it | excerpt windows only |
-| `pointer`: Ballotpedia, VOTE411, aggregators | not evidence; the coders see it tagged `pointer` and cannot rest a chair on it | excerpt |
+| `pointer`: Ballotpedia, VOTE411, aggregators, **scorecard pages** (LCV, NRA, ATR…) | not evidence; the coders see it tagged `pointer` and cannot rest a chair on it. The collector follows a scorecard page to the roll calls it lists, and each roll call is snapshotted and coded as a record on its own. A grade, a percentage or an endorsement is never evidence and never corroboration (Q9) | excerpt |
 | `transcript`: OTR transcript | codable. A bare video URL is a lead, not evidence | full text |
 
 - A row whose only sources cannot be snapshotted → review, never auto-publish.
@@ -508,8 +552,16 @@ publish, never gain one.
 
 The seasons are the history: a closed season keeps the chair that was true then.
 
-- **Season open:** every seated politician is coded again against the new season's served ladders.
-  This is the main refresh.
+- **Carry-forward at season open (Q3, ruled 2026-09-25):**
+  - If the topic's question and all five rungs are **unchanged** between the closed season's pin and
+    the new season's served revision, the old chair **carries forward** and is shown until the row is
+    re-researched. This is the current behaviour: an absent new-season row shows the older season.
+  - If the question or any rung **changed**, the old chair does **not** carry forward; the spoke shows
+    as not yet researched this season.
+  - "Unchanged" is decided by code, by comparing the revision texts, not by the change class alone.
+- **Re-research in every season, including carried-forward rows.** Every seated politician is coded
+  again against the new season's served ladders during that season. This is the main refresh. A
+  carried-forward row keeps its old `evidence_as_of` date until then, and voters see that date.
 - **Inside an open season:** a quarterly light pass. The collector searches only for evidence
   **newer than `evidence_as_of`**. If it finds any, the row is re-coded. A changed chair is always
   `value-change`, so it is always reviewed.
@@ -548,33 +600,35 @@ with *each other*, the codebook is the problem, and gold would not help.
   material, not certification gold.
 - **Superseded:** raw percent agreement → α; the single-labeler accept criteria → §3.3; "no
   auto-accept" → auto-accept only in certified strata.
-- **Open (ruling Q6):** the paid extractor, cross-checker and judge (haiku, gemini, deepseek). Either
-  keep them as a fourth, different-vendor coder whose label is diagnostic only, or retire them in
-  favour of the sub-agent coders.
-- **Codebook ruling for both programs:** the lever definition (Q5, the codebook's V7).
+- **Paid models (Q6, ruled 2026-09-25):**
+  - **The extractor stays**, as a collector tool that finds candidate quotes in long transcripts.
+    Finding is collecting, not judging.
+  - **One other-vendor judge stays as a diagnostic fourth coder.** Its label is recorded and reported
+    per stratum as a **shared-error warning**. The warning fires when the three Claude coders agree
+    unanimously and the fourth coder often disagrees. **It never counts** toward unanimity or
+    certification.
+  - The cross-checker and the second judge retire.
+  - **Before building:** read the per-item cost from the judge A/B report. If the cost is too high, run
+    the fourth coder on a sample (e.g., 1 in 5).
+- **The lever definition (Q5, ruled 2026-09-25)** is the codebook's V7. It is binding on both programs.
 
 ---
 
-## 9. Rulings owed
+## 9. Rulings
 
-### 9.1 From this design (Chris Andrews)
+### 9.1 Made 2026-09-25 (Chris Andrews)
 
-- **Q1.** Confirm the ruling wording in §0.5: tool-less coder sub-agents are allowed; collection stays
-  inline.
-- **Q2.** Can a **statement** stratum ever certify, or is statement evidence review-only for good?
-- **Q3.** At season open, does an un-re-coded Season 1 chair **carry forward** (the current behaviour:
-  an absent S2 row shows S1), or show as "not yet researched this season"?
-- **Q4.** Is a statement older than 4 years review-only? Choose the number.
-- **Q5.** **The lever definition.** PRINCIPLES.md:139 counts "build shelters" and "triple housing
-  construction" as levers; the decomposition spec says broad actions like these are not instruments.
-  The codebook proposes a test that reconciles the two (see V7).
-- **Q6.** The evidence program's paid judges: keep as a diagnostic fourth coder, or retire?
-- **Q7.** The rates: blind sample 1-in-3, audit 1-in-10. Keep them or change them?
-- **Q8.** Do a **signed pledge** (e.g., the ATR Taxpayer Protection Pledge) and a **filed lawsuit**
-  count as record? The draft codes both as `record` with V4 required. Both appear in the 23 reviewed
-  rows.
-- **Q9.** Are scorecards (LCV, NRA, ATR grades) excluded as evidence **and** as corroboration? The draft
-  says both.
+| # | Question | Ruling |
+|---|---|---|
+| Q1 | May the coders use tools? | **No.** They get Write only (for their label file). A coder that needs more evidence emits `needs_source`; the collector fetches it and all three re-code (§0.5, §1.3). |
+| Q2 | Can statement evidence ever auto-publish? | **Split.** `statement-answer` (questionnaire, moderated debate answer, first-person issue page, signed pledge) can certify. `statement-other` (news quotes, social posts, speeches, interviews) never auto-publishes (§3.2). |
+| Q3 | Does a Season 1 chair carry forward? | **Yes, if the question and rungs are unchanged**, until the row is re-researched in the new season. If they changed, no (§6). |
+| Q4 | Statement age? | **By election cycle:** current term, current campaign, or the campaign that seated them; older → review. Every chair shows `evidence_as_of`. Records have no age limit (§5.2). |
+| Q5 | What is a lever? | **Two tests:** T1, a same-goal opponent could choose a different means; **and** T2, a voter could later check whether it was done. Optional `lever-named` tag when a specific instrument is named (codebook V7). |
+| Q6 | The evidence program's paid models? | **Keep the extractor** as a collector tool. **Keep one other-vendor judge** as a diagnostic fourth coder (a shared-error warning, never counted). Retire the rest. Read the per-item cost first (§8). |
+| Q7 | Sample rates? | **Staged.** Blind 1 in 2 until the first stratum certifies, then 1 in 3. Audit 1 in 5 for a stratum's first 100 auto rows, then 1 in 10. These are configuration (§3.4, §4.6). |
+| Q8 | Pledges and lawsuits? | **A pledge is `statement-answer`** (a signed answer to fixed text; it does not outrank the person's later words). **Lawsuits, amicus briefs and signed official letters are `record`**, but the legal claim itself must match the rung clause; procedural claims prove nothing (codebook V3). |
+| Q9 | Scorecards? | **A grade, percentage or endorsement is not evidence and not corroboration.** The scorecard page is a `pointer` to the roll calls it lists, and each roll call is coded as its own record. A candidate's published answers to a group's questionnaire are `statement-answer` (§5.4). |
 
 ### 9.2 Still owed from the stance-program spec §12.3 (Cantrell, 2026-09-23)
 

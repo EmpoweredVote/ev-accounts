@@ -1,6 +1,7 @@
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.1 (DRAFT, 2026-09-25). Not yet ruled on. Every label records `codebook_version`.
+**Version:** 0.2 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1). The annex
+readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -134,26 +135,39 @@ unevidenced chair.
 
 | Value | Definition |
 |---|---|
-| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed, filed. The instrument must be named (bill number, ordinance number, docket, case). |
-| `statement` | The person's own words expressing a position (speech, interview, questionnaire, own site, own social account). |
-| `not-evidence` | Scorecards and ratings, quizzes, voter-guide summaries not in the person's words, encyclopedia or aggregator pages, advocacy-group profiles. |
+| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed into law, filed (a lawsuit, an amicus brief), signed an official letter. The instrument must be named (bill number, ordinance number, docket, case, dated letter). |
+| `statement-answer` | The person's own words **given in answer to this question**: a questionnaire (including one a group published with the candidate's answers), a moderated debate answer to the question, a first-person issue page on their own site, a signed pledge. |
+| `statement-other` | The person's own words matched to the question afterwards: news quotes, interviews, speeches, social posts. |
+| `not-evidence` | Scorecard grades, percentages and endorsements; quizzes; voter-guide summaries not in the person's words; encyclopedia or aggregator pages; advocacy-group profiles. |
 
 **Rules**
 - A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
-  `not-evidence` until the roll call is found.
-- **Scorecards are `not-evidence`, and they are not corroboration either** (draft; ruling Q9). A
-  scorecard is another organization's summary of *which* votes it chose to count.
-- **Pledges and lawsuits** (draft; ruling Q8): a signed pledge and a filed lawsuit are `record`. They
-  are documented acts with a named instrument. They then go through V4 like any record: is the
-  instrument chair-shaped?
-- When `record` and `statement` conflict, the record wins, and the row is coded
+  `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **Scorecards (Q9, ruled).**
+  - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
+    A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
+    often brings back the party signal.
+  - The scorecard **page** is a `pointer`. Follow it to the roll calls it lists, and code each one as
+    a record on its own.
+- **Pledges (Q8, ruled): `statement-answer`.**
+  - The text is the group's, and the person agreed to it, which is how a questionnaire works.
+  - It does **not** outrank the person's later words, because it is not a record.
+  - The election-cycle rule (V5) applies: a pledge signed three campaigns ago → review.
+- **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
+  letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
+  a deadline) proves nothing about the policy.
+- **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
+  answering *this* question (a questionnaire item, a moderator's question, their own issue page
+  heading), it is an answer. If a curator later decided that the words speak to the question, it is
+  `statement-other`. When unsure → `statement-other`.
+- When `record` and a statement conflict, the record wins, and the row is coded
   `record-vs-statement-conflict` if the conflict decides the chair.
 
 **Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
 roll call. → `record`.
 
-**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `record` (draft Q8). The
-pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
+**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `statement-answer`
+(Q8). The pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
 it cannot choose between rungs that differ on *which* cuts.
 
 **Bad [real].** Blake Moore / `climate-change`: "scored 0% from the League of Conservation Voters" +
@@ -229,8 +243,8 @@ appropriation, plus his statement that it is "squarely in our national interest"
   `direction-only`. **This is the example to rule on for the annex.**
 
 **Hard [real].** Burgess Owens / `redistricting`: a filed federal lawsuit arguing the Elections Clause
-gives map-drawing "exclusively to state legislatures". → `record` (draft Q8), and the claim in the
-complaint is itself the position. It is `chair-shaped` if rung 5 says "legislature alone draws the
+gives map-drawing "exclusively to state legislatures". → `record` (Q8), and the claim in the
+complaint is itself the position (a substantive claim, not a procedural one). It is `chair-shaped` if rung 5 says "legislature alone draws the
 maps". The coder quotes the complaint's claim as `provision_quote`.
 
 **Bad [real] — the omnibus trap.** Mike Kennedy / `school-vouchers`, published as rung 5 (universal
@@ -267,7 +281,13 @@ chair. → `direction-only`.
 
 **Rules**
 - A **record** has no age limit if it is chair-shaped against the served rung text.
-- A **statement** older than 4 years → the row goes to review (draft; ruling Q4).
+- **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  An older statement is coded, but the row goes to review (`statement-out-of-cycle`). Code, not the
+  coder, applies this from the dates; the coder records the date it sees.
 - `superseded-by-later` passages are coded but cannot support the chair. The newest evidence governs.
 - A person's position change is not an error. The closed season keeps the old chair.
 - `undated` statements cannot support a chair. `undated` records are looked up (the instrument has a
@@ -279,7 +299,7 @@ is 9 years old, and the source is Wikipedia (V3 `not-evidence`). Find his own re
 role alone → review.
 
 **Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
-have voted yes" on the Respect for Marriage Act. → `own-words`, `statement`, pre-seating by
+have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
 construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
 the instrument's content (marriage recognition with religious-organization protections) is the
 position. It is `in-term` for the campaign that seated her. Note: the served ladder changed between
@@ -354,25 +374,51 @@ The vocabulary is the on-the-record evidence program's.
 
 | Value | Definition |
 |---|---|
-| `lever` | It names a concrete means a plausible opponent **who shares the goal** could reject. |
-| `direction` | A contestable lean with no named means ("we need to be tougher on…"). |
-| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography. |
+| `lever` | It names a means that passes **both** T1 and T2, below. |
+| `direction` | A contestable lean whose means fails T2 ("remove regulations", "be tougher on…"). |
+| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography, a slogan. |
 
-**Proposed reconciliation of the lever definition (ruling Q5).** The two sources disagree:
-- PRINCIPLES.md:139 counts "build shelters" and "triple housing construction" as levers.
-- The decomposition spec treats a broad action like "build more housing" as not an instrument.
+**The lever tests (Q5, ruled 2026-09-25).** Name the goal the quote serves, then apply:
 
-**Test:** name the goal, then ask whether *a candidate who holds the same goal could plausibly choose a
-different means*.
-- "Build shelters" → yes: an opponent can prefer permanent housing first. **lever.**
-- "Build more housing", in a race where every candidate says it → no. **none**. It is a shared goal
-  phrased as an action.
-- "Triple housing construction" → a target on a shared goal. **none**, unless the passage names how
-  (zoning, permits, public financing).
+- **T1, the opponent test:** could a candidate *who holds the same goal* reasonably choose a different
+  means? If not, the "means" is the shared goal phrased as an action → `none`.
+- **T2, the accountability test:** could a voter later check whether the person *did it*? If not, the
+  means is too vague to hold anyone to → `direction`.
 
-The test is relative to the question, not to the words. The same phrase can be a lever in one race
-and a shared goal in another. The coder decides it from the other candidates' passages when the
-collector supplies them, and otherwise codes `direction` and flags `lever-unclear`.
+A quote is `lever` only if it passes both. When the lever names a specific instrument (a law, a rule,
+a program, an agency action, a waiver, a budget line), also set `v7_flag = "lever-named"`. That tag
+is useful for display and for chair evidence; it is not required for rankability.
+
+This settles the disagreement between PRINCIPLES.md:139 ("build shelters" is a lever) and the
+decomposition spec (broad actions are not instruments):
+- "Build shelters" passes T1 (an opponent can prefer housing first) and T2 (shelter beds can be
+  counted) → `lever`.
+- "Build more housing", where every candidate says it, fails T1 → `none`.
+- "Triple housing construction" fails T1 (a target on a shared goal) unless the passage names how →
+  `none`.
+
+T1 is relative to the question and the race, not to the words. The coder uses the other candidates'
+passages when the collector supplies them; otherwise it sets `v7_flag = "lever-unclear"`.
+
+**Graded examples [real, `essentials.quotes`, Steve Hilton unless noted]**
+
+| # | Quote (short) | T1 | T2 | Code |
+|---|---|---|---|---|
+| 1 | "repeal the low-carbon fuel standard… change the refinery regulations" | yes | yes | `lever`, `lever-named` |
+| 2 | "a waiver from the Medicaid IMD rule that stops any institution with more than 16 beds…" | yes | yes | `lever`, `lever-named` |
+| 3 | "instructing the California Department of Geologic and Energy Management to… issue permits" | yes | yes | `lever`, `lever-named` |
+| 4 | "it is illegal to live and camp on the streets. We need to enforce the law… drug treatment… cannot be a choice" | yes (vs Becerra's "Housing First approaches… paired… with treatment") | yes | `lever` |
+| 5 | "If a community doesn't want a data center, there shouldn't be someone forcing that data center in there" | yes (vs state siting authority) | only if the passage says how (e.g., a local veto) | `direction` as quoted |
+| 6 | "We could get that back by removing regulations" (AI) | yes | no — which regulations? | `direction` |
+| 7 | "Government's role is to facilitate rather than provide…" (childcare) | yes | no | `direction` |
+| 8 | "common sense on climate change, not ideology" | — | — | `none` |
+
+⚠ **Two currently selected Read & Rank quotes code as not rankable** under this rule:
+- climate-change: #8;
+- economic-development: "California's policy regime should be unequivocally on the side of job- and
+  wealth-creators" → `direction`.
+
+A quote re-audit should review them. This codebook does not change them.
 
 **Good (lever).** "We must build much more housing. That includes… deed-restricted affordable,
 market-rate, social housing, and shelters." (PRINCIPLES.md). The second sentence names the means, so
@@ -485,12 +531,14 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H1 | Yea on a reconciliation bill that contains the clause | V4 `multi-subject` | V4.1 | [real] Kennedy / school-vouchers |
 | H2 | Party-line vote given as the only basis, and no roll call in the sources | V1 fail; BLANK `no-evidence` | 0.2, V6 | [real] Maloy / trans-athletes |
 | H3 | Scorecard beside a quote that points the other way | V3 `not-evidence` | V3 | [real] Moore / climate-change |
-| H4 | A hypothetical vote on a named bill, said as a candidate | `statement`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
+| H4 | A hypothetical vote on a named bill, said as a candidate | `statement-answer`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
 | H5 | A compound rung with one side evidenced | BLANK `compound-partial` | V4.2 | [real] Owens, Maloy / social-security |
 | H6 | A child tax credit coded on a childcare-provider rung | V2 `adjacent` | V2 | [real] Moore / childcare |
-| H7 | A filed lawsuit as the position | `record` (Q8) | V3 | [real] Owens / redistricting |
-| H8 | A signed pledge | `record` (Q8), limited shape | V3 | [real] Moore / taxes |
-| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 test | [real] tier_gold_v1 |
+| H7 | A filed lawsuit as the position | `record`; the substantive claim must match the rung (Q8) | V3 | [real] Owens / redistricting |
+| H8 | A signed pledge | `statement-answer` (Q8), limited shape | V3 | [real] Moore / taxes |
+| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
+| H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
+| H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
 
 ---
 
@@ -498,7 +546,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 
 ```json
 {
-  "codebook_version": "0.1",
+  "codebook_version": "0.2",
   "coder_slot": 1,
   "rows": [
     {
@@ -511,7 +559,8 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
           "snapshot_id": "uuid",
           "v1_attribution": "own-words | own-act | third-party-characterization | namesake-unclear",
           "v2_relevance": "on-question | adjacent | off",
-          "v3_class": "record | statement | not-evidence",
+          "v3_class": "record | statement-answer | statement-other | not-evidence",
+          "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
           "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
           "v5_time": "in-term | pre-seating | superseded-by-later | undated",
           "instrument": "H.R. 8035 (118th) | null",
@@ -523,12 +572,13 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
       "v6_blank_reason": null,
       "rests_on": ["snapshot uuid"],
       "reasoning": "1–3 sentences; names the instrument or quotes the words; cites the rung by its text",
+      "needs_source": ["e.g. Clerk roll call, H.R. 28 (119th), final passage"],
       "quotes": [
         {
           "snapshot_id": "uuid",
           "text": "verbatim span",
           "v7_tier": "lever | direction | none",
-          "v7_flag": "lever-unclear | null",
+          "v7_flag": "lever-named | lever-unclear | null",
           "v8_quotable": true,
           "v8_codes": []
         }
