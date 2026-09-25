@@ -30,10 +30,16 @@ const held = await pool.query(
           och.term_start::text, och.term_end::text,
           (SELECT ot.start_precision FROM essentials.office_terms ot
             WHERE ot.office_id = och.office_id AND ot.politician_id = och.politician_id
+              AND ot.term_start IS NOT DISTINCT FROM och.term_start
             ORDER BY ot.term_start DESC NULLS LAST LIMIT 1) AS start_precision
      FROM essentials.office_current_holder och JOIN essentials.offices o ON o.id = och.office_id
     WHERE och.politician_id = $1`, [politicianId]);
-const heldRows = officeArg ? held.rows.filter((r) => r.office_id === officeArg) : held.rows;
+const heldAll = held.rows;
+const heldRows = officeArg ? heldAll.filter((r) => r.office_id === officeArg) : heldAll;
+if (officeArg && heldAll.length > 0 && heldRows.length === 0) {
+  console.error(`--office ${officeArg} is not one of this politician's current offices: ${heldAll.map((r) => `${r.office_id} (${r.title})`).join(', ')}`);
+  process.exit(2);
+}
 if (heldRows.length > 1) {
   console.error(`politician holds ${heldRows.length} offices — pass --office one of: ${heldRows.map((r) => `${r.office_id} (${r.title})`).join(', ')}`);
   process.exit(2);
@@ -45,10 +51,17 @@ if (heldRows.length === 1) {
 } else if (pol.race_id) {
   const race = await pool.query(
     `SELECT r.office_id::text, o.title, o.representing_state, o.representing_city, e.election_date::text
-       FROM essentials.races r JOIN essentials.offices o ON o.id = r.office_id JOIN essentials.elections e ON e.id = r.election_id
+       FROM essentials.races r
+       LEFT JOIN essentials.offices o ON o.id = r.office_id
+       JOIN essentials.elections e ON e.id = r.election_id
       WHERE r.id = $1`, [pol.race_id]);
   if (race.rowCount !== 1) { console.error(`race ${pol.race_id} not found`); process.exit(2); }
   const r = race.rows[0];
+  if (!r.office_id) { console.error(`race ${pol.race_id} has no office_id — cannot establish the office being coded`); process.exit(2); }
+  if (officeArg && r.office_id !== officeArg) {
+    console.error(`--office ${officeArg} does not match this politician's race office ${r.office_id} (${r.title}) — cannot establish the office being coded`);
+    process.exit(2);
+  }
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'candidate', office_id: r.office_id, office_title: r.title,
     jurisdiction_names: [r.representing_state, r.representing_city].filter(Boolean), term_start: null, start_precision: null, term_end: null, election_date: r.election_date };
 } else { console.error('no current seat and no race — cannot establish the office being coded'); process.exit(2); }
