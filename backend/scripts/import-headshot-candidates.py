@@ -117,11 +117,21 @@ for c in cands:
         # It also stops the import re-hammering hosts the sheet already rate-limited:
         # miami.gov 403s every non-browser client, so those came from the Wayback Machine,
         # which then 503s under repeated fetches.
-        ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
-        if os.path.exists(ck) and os.path.getsize(ck) > 0:
-            raw = open(ck, "rb").read()
+        # 🔴 "bytes_from" IS FOR A SOURCE THAT HAS NO URL -- see the same block in
+        # render-headshot-contact-sheet.py. The proof sheet reads the SAME file, so what
+        # the operator approved is byte-for-byte what ships, which is the whole reason the
+        # fetch here is cache-first in the first place. A missing file RAISES; it never
+        # falls back to c["url"], because that URL is a member PAGE, not an image.
+        if c.get("bytes_from"):
+            if not os.path.exists(c["bytes_from"]):
+                raise FileNotFoundError(f"bytes_from missing: {c['bytes_from']}")
+            raw = open(c["bytes_from"], "rb").read()
         else:
-            raw = requests.get(c["url"], headers=UA, timeout=60).content
+            ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
+            if os.path.exists(ck) and os.path.getsize(ck) > 0:
+                raw = open(ck, "rb").read()
+            else:
+                raw = requests.get(c["url"], headers=UA, timeout=60).content
         # 🔴 DECODABILITY, not a format whitelist. The rule that matters is "never trust the
         # extension and never trust HTTP status -- a WAF page arrives as HTTP 200" -- and
         # actually decoding the bytes enforces that MORE strictly than a magic-number
