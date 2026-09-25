@@ -25,11 +25,18 @@ export interface RowReport {
   shadow_reasons: string[];
 }
 
+export interface CodingReport {
+  rows: RowReport[];
+  m1: { alpha: number | null; units: number };
+  needsSource: { key: string; requests: string[] }[];
+  validity: { slot: number; fileErrors: string[]; rowErrors: number }[];
+}
+
 export function buildCodingReport(i: {
   context: { batch_id: string; seat: SeatContext; topics: PromptTopic[] };
   files: Map<number, unknown>;
   snapshotText: ReadonlyMap<string, string>;
-}) {
+}): CodingReport {
   const { seat, topics } = i.context;
   const validity: { slot: number; fileErrors: string[]; rowErrors: number }[] = [];
   const bySlot = new Map<number, Map<string, { row: CoderRow | null; valid: boolean }>>();
@@ -39,7 +46,9 @@ export function buildCodingReport(i: {
     if (raw === undefined) { validity.push({ slot, fileErrors: ['file missing'], rowErrors: 0 }); bySlot.set(slot, rows); continue; }
     const v = validateCoderLabelFile(raw, { snapshotText: i.snapshotText, expectedSlot: slot });
     validity.push({ slot, fileErrors: v.fileErrors, rowErrors: v.rows.filter((r) => r.errors.length).length });
-    for (const r of v.rows) rows.set(r.key, { row: r.row, valid: v.fileErrors.length === 0 && r.errors.length === 0 });
+    // Duplicate (politician, office, topic) keys within one coder file: keep the first occurrence
+    // only, so the report is consistent with what --apply will store (fix round 1, item 4).
+    for (const r of v.rows) if (!rows.has(r.key)) rows.set(r.key, { row: r.row, valid: v.fileErrors.length === 0 && r.errors.length === 0 });
     bySlot.set(slot, rows);
   }
   const units: Unit[] = [];

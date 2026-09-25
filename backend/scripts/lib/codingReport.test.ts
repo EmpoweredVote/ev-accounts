@@ -55,4 +55,23 @@ describe('buildCodingReport', () => {
     const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [ns, row('t2', null)])]));
     expect(buildCodingReport({ context, files, snapshotText }).needsSource).toEqual([{ key: 'p1|o1|t1', requests: ['Clerk roll call, H.R. 28'] }]);
   });
+  it('treats a prose (non-JSON) coder file as coder-missing for every row', () => {
+    const files = new Map<number, unknown>([
+      [1, file(1, [row('t1', 4), row('t2', 4)])],
+      [2, file(2, [row('t1', 4), row('t2', 4)])],
+      [3, 'Sorry, I cannot complete this request right now.'],
+    ]);
+    const r = buildCodingReport({ context, files, snapshotText });
+    expect(r.rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
+  });
+  it('keeps the first occurrence when a coder file has a duplicate row key', () => {
+    const files = new Map<number, unknown>([
+      [1, file(1, [row('t1', 4), row('t1', 1), row('t2', 4)])],
+      [2, file(2, [row('t1', 4), row('t2', 4)])],
+      [3, file(3, [row('t1', 4), row('t2', 4)])],
+    ]);
+    const r = buildCodingReport({ context, files, snapshotText });
+    const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.shadow).toBe('would-publish-if-certified');
+  });
 });
