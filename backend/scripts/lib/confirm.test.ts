@@ -27,6 +27,9 @@ describe('confirmRow (spec §1.6)', () => {
   it('flags a snapshot that names neither the jurisdiction nor the office (namesake guard)', () =>
     expect(run({ snapshotText: new Map([['s1', 'Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]) }))
       .toContain('identity-not-in-snapshot'));
+  it('flags a snapshot with a different person (person-not-in-snapshot)', () =>
+    expect(run({ snapshotText: new Map([['s1', 'Utah State Senator Jane Roe voted for the override; the bill requires students to compete on teams matching their sex at birth.']]) }))
+      .toContain('person-not-in-snapshot'));
   it('flags a record dated before the current term', () => expect(run({ restsOnPassages: [P({ date: '2019-02-01' })] })).toContain('record-before-term'));
   it('flags imprecise term dates rather than guessing (§4.10)', () =>
     expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ date: '2021-03-01' })] })).toContain('dates-imprecise'));
@@ -36,4 +39,10 @@ describe('confirmRow (spec §1.6)', () => {
   it('flags a vote without its provision text on the page (vote ladder)', () =>
     expect(run({ restsOnPassages: [P({ provision_quote: null })] })).toContain('provision-missing'));
   it('flags a served-revision mismatch', () => expect(run({ rowServedRevisionId: 'r0' })).toContain('revision-drift'));
+  it('flags a record in candidate mode (record-not-this-office)', () =>
+    expect(run({ seat: { ...seat, mode: 'candidate', term_start: null, election_date: '2026-11-03' } }))
+      .toContain('record-not-this-office'));
+  it('flags statement with imprecise seated term start (dates-imprecise for statement)', () =>
+    expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ v3_class: 'statement-answer', date: '2022-01-01', provision_quote: null })] }))
+      .toContain('dates-imprecise'));
 });
