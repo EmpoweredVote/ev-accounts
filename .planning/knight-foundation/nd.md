@@ -12,7 +12,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
 | 4 county waves | ✅ **APPLIED 2026-09-25 — 7 offices, 7 seated, 0 vacant, 6 day + 1 year precision** (`CC_0148`/`CC_0149`). **No geometry loaded: the commission is at large.** Grand Forks scores **5 of 5** |
-| 5 assets | ▶ **BASELINE MEASURED 2026-09-25**: **157 portraits owed** (141 legislature + 9 city + 7 county), all a measured ZERO; 141 source URLs already captured. 🔴 **The licence is the gate** |
+| 5 assets | ▶ **141 EXTRACTED AND APPROVED 2026-09-25**, nothing imported. 🔴🔴 **LICENCE ON HOLD BY RULING — do not import, do not send the request.** 16 city/county sources still unmeasured |
 
 ---
 
@@ -1381,6 +1381,17 @@ for their photograph outside the main session. **The backdrop is a signature of 
 ▶ *Looking* caught that they were portraits. *Measuring* caught how many there were. Neither would
 have done on its own — and my first draft of the page said "both", which I corrected before
 publishing rather than shipping the wrong count.
+
+
+> 🔴🔴 **RULING (Cantrell, 2026-09-25): THE FRAMES AND THE 157×196 RESOLUTION ARE APPROVED, AND THE
+> LICENCE IS ON HOLD. DO NOT IMPORT THE 141, AND DO NOT SEND THE PHOTO REQUEST FORM.**
+>
+> This is the combination most likely to be misread. The frames are extracted, the contact sheet is
+> approved and the resolution question is settled — which together look like a green light. They are
+> not. Importing sets `photo_custom_url`, which is what a voter actually sees, and **stage 5 has a
+> licence gate** (MN-5 is where it fired). **Stage 5 stays OPEN and slice 12 stays at four of five
+> stages until Cantrell lifts the hold.** Nothing about the portraits is blocked on research; it is
+> blocked on a decision that has been taken and is to be left alone.
 
 ### ⚠ What approval of the sheet does NOT cover
 
