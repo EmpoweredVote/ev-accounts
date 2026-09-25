@@ -6,6 +6,12 @@ corpus-wide portrait work, the shape of the Florida and Washington sweeps, not a
 
 Nothing has been written. This is a source and licence assessment only.
 
+✅ **THE LICENCE IS SETTLED AND RULED (2026-09-24)** — `(C) State of Tennessee, "editorial or
+personal use only"`, found **inside the PNG metadata**, not on any page.
+**Ruling (Cantrell, 2026-09-24): ship under the editorial-use grant, store at native size, and ask
+for the full-resolution originals anyway.** This wave is **not blocked**.
+Letter: [`backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md`](../../backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md).
+
 ## Measured 2026-09-24
 
 | chamber | offices | seated | already ours | owed |
@@ -71,6 +77,115 @@ gets the official 400x400 by default, so coverage and provenance are uniform and
 caucus portrait is used only where it exists, and the fact is recorded per row. That keeps one rule
 for everyone and still takes the better pixels where they are available.
 
+## ✅ THE LICENCE IS SETTLED — AND IT WAS NEVER ON A PAGE
+
+**`(C) State of Tennessee — "Editorial or personal use only, all other uses require written
+permission."`** Photographer **Jed DeKalb**, Chief Photographer for Tennessee State Government.
+
+🔴🔴 **THE POLICY IS EMBEDDED IN THE IMAGE FILES, NOT PUBLISHED ON THE SITE.** Every earlier pass
+looked for a disclaimer page, because that is where NC's and OH's answers were. Tennessee has no
+such page — and it does not need one, because the rights statement travels inside each portrait as
+a PNG `tEXt` chunk. ▶ **When a site publishes no policy, read the bytes it publishes instead.**
+The statement is only visible after the base64 is decoded, which is why two prior passes and a
+whole-site sweep both missed it.
+
+### Measured across all 132 districts, 2026-09-24
+
+131 portraits read (H84 is **Vacant** on the GA's own page — matching our 98 seated House exactly,
+from two independent directions). 0 fetch failures.
+
+| `Copyright` field | count |
+| --- | --- |
+| *(absent)* | 112 |
+| `(C)2012 State of Tennessee  Editorial or personal use only, all other uses require written permission` | 5 |
+| `(C)2013 …` *(same sentence)* | 3 |
+| `(C)2017 …` *(same sentence)* | 3 |
+| `(C)2015 …` *(same sentence)* | 1 |
+| `(C) 2008 State of Tennessee` *(no terms)* | 3 |
+| `(C) 2007 State of Tennessee` *(no terms)* | 1 |
+| `x-default` *(empty placeholder)* | 3 |
+| **carrying a rights string** | **19 of 131** |
+
+`Author = Jed DeKalb` on **14**. Per-district record:
+[`backend/data/tn-portrait-metadata-2026-09-24.json`](../../backend/data/tn-portrait-metadata-2026-09-24.json).
+
+⚠ **A MINORITY CARRIES THE STRING, AND NOTHING CONTRADICTS IT.** The other 112 are not a different
+licence — they are the same photographs re-saved by a tool that drops metadata (`Software` reads
+`GIMP 2.10.8`, `GIMP 2.10.22`, `Adobe Photoshop CS6` on sampled rows). **Every rights string that
+exists names the same owner and, where it states terms, the same terms.** Treat the set as one
+licence; do not treat a stripped file as unencumbered.
+
+⚠ **`Copyright = x-default` IS AN EMPTY FIELD, NOT A CLAIM.** It is the XMP language-alternative tag
+surviving a blank value. Three rows carry it. Read the value, never the presence of the key.
+
+### What this licence is, and is not
+
+- It is an **explicit copyright assertion** by the State of Tennessee. This is **stronger** than
+  Ohio, where only a blanket footer existed and the ruling was `press_use` on the reasoning that
+  *no restriction was published*. Here a restriction **is** published.
+- It is also an **explicit grant** for editorial use — which Ohio never gave. So Tennessee is
+  neither the OH/GA/FL/PA shape (silence) nor the MN shape (a published refusal). **It is a third
+  shape: a published permission with a stated limit.**
+- ✅ **RULED (Cantrell, 2026-09-24): our use IS editorial — ship it.** A portrait beside an
+  officeholder's seat, district and record is informational, not promotional, and it is exactly what
+  the state granted. **Blocking 130 portraits on an email would be treating a grant like a
+  silence**, which is what separates this from MN-5 and Philadelphia.
+- ✅ **RULED: store at native size** (`--max-upscale 1.0`), as OH-5 did for its four small frames.
+  400x400 renders smaller; nothing is invented; a later upgrade simply replaces the object.
+- ▶ **The request is still sent — for the PIXELS, not the rights.** The state holds originals; 400x400
+  costs a 1.88x enlargement. This is the MN-6 shape, which took that wave from all-133-flagged to
+  zero. Drafted, **not sent**:
+  [`GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md`](../../backend/data/seed-tn-headshots-2026/GENERAL-ASSEMBLY-RESOLUTION-REQUEST.md).
+
+### How the whole-site sweep was proved, not assumed
+
+`capitol.tn.gov` publishes **no** disclaimer, terms-of-use, copyright or photo policy anywhere:
+
+- The **site map lists the whole site** and contains no policy page. The master layout's footer
+  offers only Home · Homework Help · About · Help & FAQs · Capitol Tour · Legislative Links ·
+  Site Map · Workplace Discrimination Policy · Careers. The member pages share that footer.
+- **All 100 URLs in `capitol.tn.gov/sitemap.xml` were fetched and scanned.** Two hits, both false:
+  *"unlawful photography"* in a bill subject line, and *"reproducing"* in the how-a-bill-becomes-law
+  explainer. **0 of 100 carry a `(C)` symbol or the word "copyright".**
+- 🔴 **THE SOFT 404 IS REAL AND IT IS WHY GUESSED PATHS PROVE NOTHING.** Any missing path returns
+  **HTTP 200** with `og:url = https://capitol.tn.gov/Error.aspx` and the title *"Page Not Found -
+  Tennessee General Assembly"*, at a stable 39,985 bytes. A classifier keyed on that signature was
+  **controlled both ways** — it called the bogus path SOFT-404 and the homepage REAL — before any
+  candidate was judged.
+- ✅ **Controls on every "nothing found".** The 100-page sweep was checked for a footer word known
+  to be present: **100 of 100**. The `(C)`-symbol detector was controlled against `ohiohouse.gov`
+  (fires) and `tn.gov/web-policies.html` (9 hits for "copyright"), so its zero on the GA is a real
+  zero and not a blind one.
+- **`tn.gov`'s statewide web policies do not reach the legislature.** The set is Privacy,
+  Accessibility, Linking, Security, COPPA and DMCA — **no terms-of-use and no copyright grant** —
+  and the DMCA page scopes itself to *"the TN.gov site (the 'Site')"* and only describes how to
+  **send** an infringement notice. The GA site links to none of them.
+- ⚠ **`robots.txt` on both hosts ends `User-agent: * → Disallow: /`.** Named crawlers are allowed
+  (Googlebot, Bingbot, DuckDuckBot, Slurp, Siteimprove, `archive.org_bot`); a generic agent is not.
+  That is not a copyright term, but it is a stated wish about automated fetching, and a 132-page
+  extractor run should be slow and one-pass.
+- 🔴 **ONE CHECK CAME BACK BLIND AND IS RECORDED AS UNKNOWN.** The Wayback CDX index was queried for
+  any archived `capitol.tn.gov` URL containing a policy word. It returned empty — **and so did the
+  positive control**, because the Internet Archive was serving **HTTP 503 "Temporarily Offline"**.
+  The empty result is therefore evidence of nothing. Whether a policy page once existed and was
+  removed is **still open**; re-run it when the archive is back.
+
+### The files themselves
+
+Decoded and inspected. The House portrait is **400x400 PNG, RGBA** — so alpha must be composited
+onto white, not discarded. Senate rows are mostly **RGB**; two are off-square (**400x405**,
+**381x400**), so the crop cannot assume 1:1. Sizes are otherwise uniform at 400x400, confirming the
+**1.88x enlargement** problem stands unchanged.
+✅ One portrait was decoded and **looked at** (H7, Rep. Rebecca Alexander): a real studio portrait on
+a grey gradient, not a badge or a placeholder. The uniform backdrop across the set is consistent
+with a single state photographer, which is what the `Author` field says.
+🟢 **The extractor is one regex.** `src='data:image/png;base64,…'`, one match per member page, keyed
+by district — no name matching, no collision risk.
+
+---
+
+## 🔴 SUPERSEDED — the earlier reading of the licence
+
 ## 🔴 THE LICENCE IS UNRESOLVED FOR BOTH SOURCES
 
 No photo policy was found for the General Assembly. ⚠ **`capitol.tn.gov/disclaimer.html` returns
@@ -83,8 +198,10 @@ The caucus sites' licence is a separate and weaker question, per the above.
 
 ## What is still unknown
 
-1. **The real GA legal/disclaimer page.** Not located; `/disclaimer.html` and
-   `/about/disclaimer.html` are both soft 404s.
+1. ~~**The real GA legal/disclaimer page.**~~ ✅ **RESOLVED 2026-09-24 — there is none, and the
+   licence did not need one.** The whole crawlable site was swept with controls; the rights
+   statement lives in the image metadata. See the top of this file.
+   ⚠ One residual: the Wayback check for a *removed* policy page was **blind** (archive 503).
 2. **Caucus coverage.** `tnhousegop.org/members/` yielded **52 distinct uploaded images** against
    roughly 75 House Republicans — so the page is paginated, lazy-loaded, or some of those images are
    not members. Unmeasured.
@@ -120,9 +237,18 @@ source, and the party-provenance question it might have dissolved is still live.
 
 ## Order of work when this opens
 
-1. Find the GA's real disclaimer and settle the licence. Nothing ships before this.
+1. ~~Find the GA's real disclaimer and settle the licence.~~ ✅ **DONE AND RULED 2026-09-24.** The
+   licence is `(C) State of Tennessee, editorial or personal use only`, read out of the PNG
+   metadata; Cantrell ruled our use editorial. **Nothing blocks.**
 2. ~~Reach the Blue Book.~~ **Done — ruled out on resolution, 119x153.**
-3. Measure caucus coverage properly, in Playwright, across all four sites — they are now the only
-   known source above 400x400.
-4. Decide the spine-plus-upgrade question above, and get the 400x400 enlargement judged on a
-   contact sheet **before** building the extractor, not after.
+3. ~~Measure caucus coverage properly, in Playwright, across all four sites.~~ ❌ **DROPPED.** The
+   party-provenance objection stands and the resolution argument no longer needs them: native-size
+   storage removes the enlargement, and the full-resolution ask goes to the chamber instead. MN-6
+   refused a caucus copy on exactly this reasoning with a grant already in hand.
+4. **Build the extractor** — one regex per member page, keyed by district. Composite RGBA onto
+   white; do not assume 1:1 (two rows are 400x405 and 381x400). Run it **slow and one-pass**
+   (`robots.txt`), and skip H84, which is vacant.
+5. **Contact sheet, then import** — 130 frames at native size, per the standing rule that approval
+   is a batch contact-sheet artifact and that the frames are looked at before the sheet is published.
+6. **Send the resolution request** and record whatever credit line comes back in `photo_license`, so
+   the obligation travels with the row rather than living in a planning file.
