@@ -218,10 +218,11 @@ export interface ResearchReviewRow {
   /**
    * I2: what VOTERS SEE for this pair right now — the newest PUBLISHED season's answer (the read
    * path's collapse, seasonService.newestAnswerLateral), which is the Season 1 chair when the open
-   * season holds none. value 0 = a blank (no chair shown). null = nothing shown. `text` is that
-   * rung's SERVED text. Approving this row replaces what voters see, even when currentValue is null.
+   * season holds none. value 0 = a blank (no chair shown). null = nothing shown, including a topic the
+   * open season does not ask. `text` is that rung on the OPEN season's served ladder — what voters
+   * read (N1); `historyText` is the same rung on the ladder the answer was recorded against. Approving this row replaces what voters see, even when currentValue is null.
    */
-  displayed: { value: number; seasonNumber: number; text: string | null } | null;
+  displayed: { value: number; seasonNumber: number; text: string | null; historyText: string | null } | null;
   /** CA_0285: why the row was queued, and its evidence class. null = not recorded (legacy, or before CA_0285). */
   queueReasons: string[] | null;
   evidenceType: string | null;
@@ -323,15 +324,24 @@ async function reviewReadJoins(): Promise<string> {
   LEFT JOIN ${servedRevisionLateral('open_pin.topic_revision_id', 'open_eff')} ON true
   -- @zero-scope: counts-blanks — a 0 here is a blank voters see; the reviewer must see it as one.
   ${newestAnswerLateral('r.politician_id', 'r.topic_id', 'shown')}
-  LEFT JOIN ${servedRevisionLateral('shown.topic_revision_id', 'shown_eff')} ON true
+  -- N1 (re-review 2026-09-24): voters read the displayed value against the OPEN season's served
+  -- ladder (getCompassTopics keys stances on the promoted topic's effective revision), NOT against
+  -- the ladder of the season the answer was written in. So the rung text comes from open_eff.
   LEFT JOIN inform.compass_stance_revisions shown_sr
-    ON shown_sr.topic_revision_id = shown_eff.id AND shown_sr.value = shown.value`;
+    ON shown_sr.topic_revision_id = open_eff.id AND shown_sr.value = shown.value
+  -- History only: the same value's text on the ladder the answer was recorded against.
+  LEFT JOIN ${servedRevisionLateral('shown.topic_revision_id', 'shown_eff')} ON true
+  LEFT JOIN inform.compass_stance_revisions shown_hist_sr
+    ON shown_hist_sr.topic_revision_id = shown_eff.id AND shown_hist_sr.value = shown.value`;
 }
 
 const REVIEW_READ_COLUMNS = `
   open_pin.topic_revision_id::text AS open_topic_revision_id,
   open_eff.id::text AS open_served_revision_id,
-  shown.value AS shown_value, shown.season_number AS shown_season_number, shown_sr.text AS shown_text`;
+  -- A topic the open season does not ask is not on the voter compass at all: nothing is shown.
+  CASE WHEN open_pin.topic_revision_id IS NULL THEN NULL ELSE shown.value END AS shown_value,
+  shown.season_number AS shown_season_number, shown_sr.text AS shown_text,
+  shown_hist_sr.text AS shown_history_text`;
 
 /**
  * The row's politician's CURRENT office body/chamber (task 5, list-view cohort grouping).
@@ -381,6 +391,7 @@ function mapReviewRow(row: any): ResearchReviewRow {
       value: Number(row.shown_value),
       seasonNumber: Number(row.shown_season_number),
       text: nullable(row.shown_text),
+      historyText: nullable(row.shown_history_text),
     },
     queueReasons: Array.isArray(row.queue_reasons) ? row.queue_reasons.map(String) : null,
     evidenceType: nullable(row.evidence_type),

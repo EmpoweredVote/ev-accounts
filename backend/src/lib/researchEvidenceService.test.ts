@@ -277,14 +277,44 @@ describe('review reads carry the open-season current value', () => {
   });
   it('I2: maps the displayed (voter-visible) value, its season and served rung text; a 0 stays a blank', async () => {
     const { getResearchReviewById } = await import('./researchEvidenceService.js');
-    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: null, shown_value: '3', shown_season_number: 1, shown_text: 'rung three' }] });
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: null, shown_value: '3', shown_season_number: 1, shown_text: 'rung three', shown_history_text: 'old rung three' }] });
     const r = await getResearchReviewById('x');
     expect(r?.currentValue).toBeNull();
-    expect(r?.displayed).toEqual({ value: 3, seasonNumber: 1, text: 'rung three' });
+    expect(r?.displayed).toEqual({ value: 3, seasonNumber: 1, text: 'rung three', historyText: 'old rung three' });
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'y', evidence: [], shown_value: '0', shown_season_number: 2, shown_text: null }] });
-    expect((await getResearchReviewById('y'))?.displayed).toEqual({ value: 0, seasonNumber: 2, text: null });
+    expect((await getResearchReviewById('y'))?.displayed).toEqual({ value: 0, seasonNumber: 2, text: null, historyText: null });
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'z', evidence: [] }] });
     expect((await getResearchReviewById('z'))?.displayed).toBeNull();
+  });
+  // N1 (re-review 2026-09-24): voters read the value against the OPEN season's served ladder.
+  it('N1: an S1 answer on a topic whose version changed is shown with the OPEN season\'s served text', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockClear();
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getResearchReviewById('x');
+    const sql = String(mockQuery.mock.calls[0][0]);
+    // The displayed rung joins the open season's served revision, never the answer's own pin.
+    expect(sql).toMatch(/shown_sr\s+ON shown_sr\.topic_revision_id = open_eff\.id AND shown_sr\.value = shown\.value/);
+    expect(sql).not.toMatch(/shown_sr\.topic_revision_id = shown_eff\.id/);
+    // The answer's own ladder is kept only as history.
+    expect(sql).toMatch(/shown_hist_sr\.topic_revision_id = shown_eff\.id/);
+    // Mapping: S1 value 5 on climate-change, S2 v2 ladder text first, S1 v1 text as history.
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], shown_value: '5', shown_season_number: 1,
+      shown_text: 'S2 served chair 5', shown_history_text: 'S1 chair 5', open_topic_revision_id: 'pin-s2' }] });
+    expect((await getResearchReviewById('x'))?.displayed).toEqual(
+      { value: 5, seasonNumber: 1, text: 'S2 served chair 5', historyText: 'S1 chair 5' });
+  });
+  it('N1: a topic the open season does not ask (S1-only, e.g. immigration) shows nothing', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockClear();
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getResearchReviewById('x');
+    expect(String(mockQuery.mock.calls[0][0]))
+      .toMatch(/CASE WHEN open_pin\.topic_revision_id IS NULL THEN NULL ELSE shown\.value END AS shown_value/);
+    // As the database returns it for such a row: shown_value NULL.
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], shown_value: null, shown_season_number: 1,
+      shown_text: null, shown_history_text: 'S1 immigration chair 4', open_topic_revision_id: null }] });
+    expect((await getResearchReviewById('x'))?.displayed).toBeNull();
   });
   it('CA_0285: maps queue_reasons and evidence_type; null before the migration', async () => {
     const { getResearchReviewById } = await import('./researchEvidenceService.js');

@@ -44,7 +44,7 @@ interface ResearchReviewRow {
    * I2: what voters see NOW — the newest published season's answer (the Season 1 chair when the
    * open season has none). value 0 = a blank. null = nothing shown. text = that rung's served text.
    */
-  displayed: { value: number; seasonNumber: number; text: string | null } | null;
+  displayed: { value: number; seasonNumber: number; text: string | null; historyText: string | null } | null;
   /** CA_0285: why the row was queued, and its evidence class. null = not recorded. */
   queueReasons: string[] | null;
   evidenceType: string | null;
@@ -284,6 +284,12 @@ export function ResearchReviewPage() {
         }`}>
           Voters see now: {displayedText}
           {replacesShownChair && ' — approving replaces this chair, although the open season holds no value.'}
+          {row.displayed && row.displayed.value !== 0 && row.displayed.historyText
+            && row.displayed.historyText !== row.displayed.text && (
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              Season {row.displayed.seasonNumber} (history): “{row.displayed.historyText}”
+            </p>
+          )}
         </div>
 
         {/* Ladder — task 5, requirement 1: the question and all five rungs for the row's own
