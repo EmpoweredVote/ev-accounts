@@ -1,0 +1,315 @@
+{
+  "codebook_version": "0.2",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-10-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Open letter argues broadly against the abortion ban; names no gestational standard."
+        },
+        {
+          "snapshot_id": "d9257546-cef1-5033-b8a5-e8f37e1fa389",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 208 (2024)",
+          "provision_quote": "Reestablishes the licensure of abortion clinics. Changes statutes concerning when an abortion may be performed. Removes the eight week limitation on the use of an abortion inducing drug. Allows, rather then requires, the revocation of a physician's license for the performance of an abortion in violation of the law.",
+          "note": "Authored bill loosens the abortion ban; digest does not state the resulting gestational limit, so it shows direction but not a specific rung."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her open letter opposes the abortion ban in rhetorical terms only, naming no legal standard. Her own-act sponsorship of Senate Bill 208 (2024), which 'reestablishes the licensure of abortion clinics' and 'removes the eight week limitation on the use of an abortion inducing drug,' shows she favors loosening the ban, but the digest does not state which gestational cutoff results, so it cannot be matched to a specific rung's text.",
+      "needs_source": [
+        "Full text of Senate Bill 208 (2024) showing the reinstated gestational-limit language",
+        "Any floor vote or roll call on Senate Bill 208 or a successor bill"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
+          "text": "Make no mistake, state abortion bans are not about saving lives—they are coming at the cost of lives.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Asked directly whether she'd support a two-year moratorium, she rejects a 'blanket no' but names no alternative standard."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Asked whether she would support a two-year moratorium on data center development, the subject of the rung 'Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers,' Yoder said a 'blanket \"no\"... gives us one more permission to step out of the importance of being engaged.' This shows she opposes an outright moratorium but does not state which remaining rung she favors.",
+      "needs_source": [
+        "Yoder's own words or votes naming a specific data-center standard (cost-shifting bars, impact assessments, permitting rules, or rate-impact transparency)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "So a blanket ‘no,’ I think, gives us one more permission to step out of the importance of being engaged",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "7d3d9112-ef23-5f09-9bbe-7b8def21eaa7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-01-06",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 170 (2022)",
+          "provision_quote": "Requires the board of trustees of the Indiana public retirement system (system) to divest investments and investment products in a company that is publicly traded and identified as one of the 200 largest reserve-owning fossil fuel companies based on the amount of carbon emissions in a company's oil, gas, and coal reserves.",
+          "note": "Pension-divestment measure; it does not speak to production or drilling levels, the dimension the rungs order."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is her authored Senate Bill 170 (2022), which requires the state pension system to divest from major fossil-fuel reserve holders. This is a pension-investment measure, not a production or drilling standard, so it does not speak to the dimension the rungs order and establishes no chair.",
+      "needs_source": [
+        "Yoder's own words or votes on fossil fuel production, drilling, or permitting levels"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "6a51c12a-8c17-5105-ae64-3d6d9e9247f3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-02-18",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 2 (2025)",
+          "provision_quote": null,
+          "note": "Opposes SB 2's Medicaid/HIP enrollment cap and reinstated work requirements as harmful; names no preferred program structure."
+        },
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-24",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes a Medicaid/SNAP fraud-prevention measure as adding 'confusion, delay and risk' rather than reform; names no policy clause."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Yoder's own words oppose Senate Bill 2 (2025), which caps Healthy Indiana Plan enrollment and reinstates work requirements, warning it could see 'working Hoosiers and rural hospitals being harmed the most,' and she separately criticized a Medicaid/SNAP fraud measure as adding delay rather than being reform. Both show she opposes scaling back Medicaid access but neither states whether she wants expansion, steady programs with cost controls, or another structure, and neither addresses Medicare, which the ladder also covers.",
+      "needs_source": [
+        "Yoder's own words or votes on Medicare specifically",
+        "Final roll call on Senate Bill 2 (2025)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "6a51c12a-8c17-5105-ae64-3d6d9e9247f3",
+          "text": "As it currently stands, the bill — under the guise of fiscal responsibility — could result in working Hoosiers and rural hospitals being harmed the most",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "When a policy asks the most from people who already have the least, that is not reform",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-24",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Calls for equal accountability/transparency standards for voucher schools; this is an oversight question, not the eligibility-scope dimension the rungs order."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only quote in Yoder's own words is conditional and about accountability standards for a 'universal school choice state,' which speaks to oversight rather than to eliminating, opposing expansion of, capping, or universalizing voucher eligibility. The reporter's paraphrase that universal vouchers have been 'disruptive to public schools and teachers' is not in her own words. No passage establishes a rung.",
+      "needs_source": [
+        "Yoder's own words or votes directly addressing voucher eligibility scope (income caps, universal eligibility, or repeal)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "If we are going to be a universal school choice state, then every school must be held to the same accountability and transparency standards",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "6024804d-b662-5e4d-88ec-64264fa1f0fa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1041 (2025)",
+          "provision_quote": null,
+          "note": "Roll Call 334, 3rd reading of HB 1041, lists Yoder among the six Nay votes on final passage."
+        },
+        {
+          "snapshot_id": "b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2025-04-16",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1041 (2025)",
+          "provision_quote": "Prohibits a male, based on the student's biological sex at birth in accordance with the student's genetics and reproductive biology, from participating on an athletic team or sport designated as being a female, women's, or girls' athletic team or sport.",
+          "note": "Official bill record; supplies HB 1041's operative text but does not itself attribute any act to Yoder."
+        },
+        {
+          "snapshot_id": "52da5a1f-8a21-524a-9a16-3b1a2af5e666",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-04",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes HB 1041's lack of protections against invasive verification; names no eligibility standard."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Yoder voted Nay on House Bill 1041 (2025), whose operative text bars athletes from girls' teams based on 'biological sex at birth' — the standard in the rung requiring transgender athletes to 'compete only on teams matching their biological sex assigned at birth.' Her Nay vote shows she opposes that standard, but her floor remarks criticized only the bill's lack of protection against 'genital inspections, forced disclosure of medical history or invasive questioning,' naming no alternative eligibility standard among the remaining rungs.",
+      "needs_source": [
+        "Yoder's own words stating a specific eligibility standard she supports (unrestricted, documentation-based, or case-by-case)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "52da5a1f-8a21-524a-9a16-3b1a2af5e666",
+          "text": "What is in this bill is the license to discriminate. A license to sexually harass.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "0fd9f104-4605-5f68-a1b1-189d71fcf056",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-08",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 10 (2025)",
+          "provision_quote": null,
+          "note": "Questions the fraud rationale for removing student institutional IDs as valid voter ID; concerns which photo IDs qualify, not the ID-type ladder itself."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is Yoder's floor remarks opposing Senate Bill 10 (2025), which removed student institutional IDs as valid voter ID: she asked 'where is the fraud? … Where is the abuse of student IDs in our elections?' This questions the bill's justification but concerns which specific photo IDs qualify, not the ID-type dimension the rungs order, and names no identification standard she supports.",
+      "needs_source": [
+        "Roll call on Senate Bill 10 (2025) showing Yoder's vote",
+        "Yoder's own words naming a specific voter ID standard"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "0fd9f104-4605-5f68-a1b1-189d71fcf056",
+          "text": "We are told that this bill is about election integrity, but let’s ask ourselves the hard question: where is the fraud? … Where is the abuse of student IDs in our elections?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

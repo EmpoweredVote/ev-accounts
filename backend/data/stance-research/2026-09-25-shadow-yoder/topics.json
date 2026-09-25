@@ -1,0 +1,254 @@
+[
+  {
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "topic_key": "abortion",
+    "topic_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+    "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+    "question_number": 1,
+    "title": "Reproductive Rights and Abortion Access",
+    "question_text": "How should the law handle abortion?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+      },
+      {
+        "value": 2,
+        "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+      },
+      {
+        "value": 3,
+        "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+      },
+      {
+        "value": 4,
+        "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+      },
+      {
+        "value": 5,
+        "text": "ban abortion in all cases, with no exceptions."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+    "topic_key": "data-centers",
+    "topic_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "question_number": 8,
+    "title": "Data Center Development & Energy Costs",
+    "question_text": "How should government manage the growth of large-scale data centers?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+      },
+      {
+        "value": 2,
+        "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+      },
+      {
+        "value": 3,
+        "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+      },
+      {
+        "value": 4,
+        "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+      },
+      {
+        "value": 5,
+        "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+    "topic_key": "fossil-fuels",
+    "topic_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+    "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+    "question_number": 11,
+    "title": "Fossil Fuel Policy",
+    "question_text": "What role should fossil fuels play in the nation's energy future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Phase out fossil fuel production entirely."
+      },
+      {
+        "value": 2,
+        "text": "Allow no new drilling and let production decline over time."
+      },
+      {
+        "value": 3,
+        "text": "Keep fossil fuel production steady at current levels."
+      },
+      {
+        "value": 4,
+        "text": "Expand fossil fuel production with new drilling and permits."
+      },
+      {
+        "value": 5,
+        "text": "Maximize production and open more public land and waters to drilling."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+    "topic_key": "medicare/aid",
+    "topic_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "question_number": 28,
+    "title": "Medicare / Medicaid",
+    "question_text": "How should Medicare and Medicaid be funded and structured?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Medicare to cover everyone regardless of age"
+      },
+      {
+        "value": 2,
+        "text": "significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage"
+      },
+      {
+        "value": 3,
+        "text": "improve current programs while controlling costs"
+      },
+      {
+        "value": 4,
+        "text": "scale back both programs, shifting more coverage to private insurance"
+      },
+      {
+        "value": 5,
+        "text": "phase out both programs and use private insurance only"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "topic_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "question_number": 36,
+    "title": "School Vouchers & Public Education Funding",
+    "question_text": "What role should vouchers and school choice play in the public education system?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+      },
+      {
+        "value": 2,
+        "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+      },
+      {
+        "value": 3,
+        "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+      },
+      {
+        "value": 4,
+        "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+      },
+      {
+        "value": 5,
+        "text": "Providing universal vouchers so that education funding follows the student to any school \u2014 public, private, or religious \u2014 chosen by the family"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "topic_key": "trans-athletes",
+    "topic_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+    "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+    "question_number": 40,
+    "title": "Transgender Athletes",
+    "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+      },
+      {
+        "value": 2,
+        "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+      },
+      {
+        "value": 3,
+        "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+      },
+      {
+        "value": 4,
+        "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+      },
+      {
+        "value": 5,
+        "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "topic_key": "voting-rights",
+    "topic_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+    "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+    "question_number": 43,
+    "title": "Voting Rights and Electoral Integrity",
+    "question_text": "How should the government verify a voter's identity and eligibility?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require no identification to vote, verifying voters by signature or existing records."
+      },
+      {
+        "value": 2,
+        "text": "Accept non-photo identification, such as a utility bill or bank statement."
+      },
+      {
+        "value": 3,
+        "text": "Require photo ID to vote, but let voters without one cast a ballot after signing an affidavit."
+      },
+      {
+        "value": 4,
+        "text": "Require photo ID in person and an ID number on every mail ballot."
+      },
+      {
+        "value": 5,
+        "text": "Require documentary proof of citizenship to register to vote."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

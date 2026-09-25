@@ -1,0 +1,18 @@
+Wrote `labels/coder-1.json` — 7 rows, all BLANK.
+
+| Topic | Chair | Reason | Best surviving evidence |
+|---|---|---|---|
+| abortion | BLANK | `direction-only` | SB 208 (2024), her own act; digest gives no gestational threshold, so rungs 2 vs 3 can't be separated (rung 1 excluded — it "lessens" limits) |
+| data-centers | BLANK | `direction-only` | Her answer declining a two-year moratorium excludes rung 1, names no other |
+| fossil-fuels | BLANK | `no-evidence` | SB 170 (2022) pension divestment is `adjacent` — investment, not production |
+| medicare/aid | BLANK | `direction-only` | SB 2 (2025) opposition excludes scaling back; no rung named |
+| school-vouchers | BLANK | `no-evidence` | Her only own-words quote is about accountability standards → `adjacent` to the eligibility rungs; the "disruptive" line is reporter paraphrase |
+| trans-athletes | BLANK | `direction-only` | Nay on HB 1041 (Roll Call 334) — single-subject, so it rules out rung 4/5 but not 1/2/3 |
+| voting-rights | BLANK | `no-evidence` | Which photo IDs count (student IDs, SB 10) is not a rung boundary; remark is rhetorical; no roll call in the sources |
+
+Two things worth flagging for the reviewer:
+
+- **`b5b3e197` (HB 1041 bill page) is coded `namesake-unclear` at V1 on purpose.** The bill is rung-4 shaped and single-subject, but it is Donato's/Davis's instrument, not Yoder's act. It appears in the row only to supply the `provision_quote` her Nay was cast against. If the gate treats `namesake-unclear` as a hard reject on a passage that isn't in `rests_on`, that's a schema question, not a coding one.
+- **One `lever` in the set**: her voucher accountability quote. I set `v7_flag = "lever-unclear"` because no other candidates' passages were supplied, so T1 couldn't be applied against the race per the V7 rule.
+
+`needs_source` names 13 specific instruments/roll calls — mostly Indiana Senate roll calls (SB 2 2025, SB 10 2025, HEA 1001 2023, the 2025 budget voucher provision) and the full text of SB 208. Several rows would likely resolve to a numeric chair with those.
