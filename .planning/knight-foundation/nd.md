@@ -1314,3 +1314,35 @@ page text; the county staff directory may. Neither has been checked.
 4. **The `grand-forks` banner.** ⚠ Run the adjacency test against the ND state banner before choosing
    a frame. Grand Forks is *not* one of the four known state-banner collisions (Miami, Wichita,
    Detroit, Charlotte), but that is a fact about those four, not a clearance for this one.
+
+### 🔴🔴 THE LEGISLATURE'S PORTRAITS ARE NATIVELY 157×196, AND THERE IS NO BIGGER FILE
+
+Measured 2026-09-25. The roster links a Drupal derivative at
+`/sites/default/files/styles/member_list_photo/public/person/photo/<x>.jpg` — **140×175, 21 KB**.
+OH-5's rule says both chambers usually publish a higher-resolution file they never link, so the
+unlinked original was checked:
+
+| URL | size |
+| --- | --- |
+| `…/styles/member_list_photo/public/person/photo/x.jpg` (linked) | 140 × 175, 21 KB |
+| `…/styles/biography_image/public/person/photo/x.jpg` | 140 × 175, 21 KB |
+| **`…/person/photo/x.jpg` (the unlinked original)** | **157 × 196, 51 KB** |
+| `…/styles/large/public/person/photo/x.jpg` | **HTTP 404** |
+
+▶ **The original exists and is barely larger.** 157×196 is the whole of what North Dakota publishes.
+There is no query-string resize to strip and no `large` style to reach for.
+
+🔴 **So ND-5 cannot ship these at the program's usual size without a heavy upscale**, and *"a
+server-side upscale defeats the upscale warning — keep the native"*. MI already carries a debt of
+9 portraits shipped at 3.75× from 200 px sources; this would be **141 at worse than that**.
+▶ **This is a decision for the slice owner, not a detail**: ship 141 small natives, find another
+source (the SOS candidate portraits are a candidate), or ask the Legislative Branch for originals
+via the photo request form — which is the same conversation the licence needs anyway.
+
+### 🟢 AND THE LICENCE IS NOT IN THE BYTES — THE TN PATTERN DOES NOT APPLY HERE
+
+Tennessee's grant turned out to be in the PNG metadata and on no page, so the bytes were read first.
+A member portrait carries **no EXIF at all**, and the raw file contains none of `Copyright`,
+`copyright`, `rights`, `Creative Commons`, `public domain`, `Credit` or `xmp`. ▶ **Nothing is
+granted in the file.** The `Legislator Photo Request Form` is the remaining route, and MN-5 is the
+precedent for how to ask.
