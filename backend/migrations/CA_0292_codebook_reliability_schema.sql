@@ -8,7 +8,11 @@ BEGIN;
 -- Spec: docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md §4.
 --
 --   source_snapshots           what the coders saw — full text for public records / own site /
---                              transcripts, excerpt windows only for news and pointers (§5.4)
+--                              transcripts, excerpt windows only for news and pointers (§5.4).
+--                              id is DETERMINISTIC (UUIDv5 layout over batch|url|page_sha256|
+--                              sha256(snapshot_text), snapshotSources.ts snapshotIdFor): a re-run of
+--                              the same page and excerpt reproduces the id the coders cited, and a
+--                              changed excerpt gets a new id. So id is the only uniqueness needed.
 --   stance_coder_labels        one row per coder per (batch, politician, office, topic)
 --   stance_gold_labels         one row per HUMAN decision. APPEND-ONLY: the chair a person chose
 --                              must not be rewritten by later answer writes (today it lives only in
@@ -29,7 +33,7 @@ BEGIN;
 -- =============================================================================
 
 CREATE TABLE IF NOT EXISTS inform.source_snapshots (
-  id              uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  id              uuid PRIMARY KEY,  -- no default: the caller supplies the deterministic id
   batch_id        text NOT NULL,
   url             text NOT NULL,
   source_kind     text NOT NULL CHECK (source_kind IN ('public-record', 'own-site', 'news', 'pointer', 'transcript')),
@@ -38,7 +42,6 @@ CREATE TABLE IF NOT EXISTS inform.source_snapshots (
   page_sha256     text NOT NULL CHECK (page_sha256 ~ '^[0-9a-f]{64}$'),
   snapshot_text   text NOT NULL CHECK (btrim(snapshot_text) <> ''),
   excerpt_only    boolean NOT NULL,
-  UNIQUE (batch_id, url, page_sha256),
   CHECK (excerpt_only = (source_kind IN ('news', 'pointer')))
 );
 
@@ -53,6 +56,8 @@ CREATE TABLE IF NOT EXISTS inform.stance_coder_labels (
   served_revision_id  uuid NOT NULL REFERENCES inform.compass_topic_revisions(id),
   coder_slot          smallint NOT NULL CHECK (coder_slot BETWEEN 1 AND 4),
   is_diagnostic       boolean NOT NULL DEFAULT false,
+  -- The seat's level (coding-context.json seat.level) — the reliability stratum's level (spec §3.2).
+  level               text CHECK (level IS NULL OR level IN ('federal', 'state', 'local', 'judicial', 'school')),
   model               text NOT NULL,
   codebook_version    text NOT NULL,
   value               smallint CHECK (value BETWEEN 1 AND 5),
@@ -67,6 +72,7 @@ CREATE TABLE IF NOT EXISTS inform.stance_coder_labels (
   raw_output          jsonb,
   created_at          timestamptz NOT NULL DEFAULT now(),
   CHECK (NOT valid OR ((value IS NULL) = (blank_reason IS NOT NULL))),
+  CONSTRAINT stance_coder_labels_diagnostic_is_slot_4 CHECK (is_diagnostic = (coder_slot = 4)),
   UNIQUE (batch_id, politician_id, office_id, topic_id, coder_slot)
 );
 
@@ -99,7 +105,7 @@ CREATE TABLE IF NOT EXISTS inform.stance_gold_labels (
 
 CREATE TABLE IF NOT EXISTS inform.reliability_certifications (
   id                uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  level             text NOT NULL CHECK (level IN ('federal', 'state', 'local', 'school')),
+  level             text NOT NULL CHECK (level IN ('federal', 'state', 'local', 'judicial', 'school')),
   evidence_class    text NOT NULL CHECK (evidence_class IN ('record', 'statement-answer', 'statement-other')),
   topic_id          uuid REFERENCES inform.compass_topics(id),
   codebook_version  text NOT NULL,
@@ -139,6 +145,9 @@ END $$;
 -- Append-only guards.
 CREATE OR REPLACE FUNCTION inform.gold_labels_append_only() RETURNS trigger LANGUAGE plpgsql AS $$
 BEGIN
+  IF TG_OP = 'TRUNCATE' THEN
+    RAISE EXCEPTION 'stance_gold_labels is append-only: write a superseding row instead of truncating';
+  END IF;
   IF TG_OP = 'DELETE' THEN
     RAISE EXCEPTION 'stance_gold_labels is append-only: write a superseding row instead of deleting %', OLD.id;
   END IF;
@@ -151,6 +160,10 @@ END $$;
 DROP TRIGGER IF EXISTS gold_labels_append_only ON inform.stance_gold_labels;
 CREATE TRIGGER gold_labels_append_only BEFORE UPDATE OR DELETE ON inform.stance_gold_labels
   FOR EACH ROW EXECUTE FUNCTION inform.gold_labels_append_only();
+-- A row trigger does not fire on TRUNCATE; a statement trigger does.
+DROP TRIGGER IF EXISTS gold_labels_no_truncate ON inform.stance_gold_labels;
+CREATE TRIGGER gold_labels_no_truncate BEFORE TRUNCATE ON inform.stance_gold_labels
+  FOR EACH STATEMENT EXECUTE FUNCTION inform.gold_labels_append_only();
 
 CREATE OR REPLACE FUNCTION inform.certifications_immutable() RETURNS trigger LANGUAGE plpgsql AS $$
 BEGIN
@@ -159,6 +172,9 @@ END $$;
 DROP TRIGGER IF EXISTS certifications_immutable ON inform.reliability_certifications;
 CREATE TRIGGER certifications_immutable BEFORE UPDATE OR DELETE ON inform.reliability_certifications
   FOR EACH ROW EXECUTE FUNCTION inform.certifications_immutable();
+DROP TRIGGER IF EXISTS certifications_no_truncate ON inform.reliability_certifications;
+CREATE TRIGGER certifications_no_truncate BEFORE TRUNCATE ON inform.reliability_certifications
+  FOR EACH STATEMENT EXECUTE FUNCTION inform.certifications_immutable();
 
 -- RLS default-deny.
 ALTER TABLE inform.source_snapshots            ENABLE ROW LEVEL SECURITY;
@@ -177,8 +193,8 @@ COMMENT ON TABLE inform.stance_coder_labels IS
   'diagnostic other-vendor coder (ruling Q6), never counted. Duplicate-person merges must re-point '
   'politician_id here.';
 COMMENT ON TABLE inform.source_snapshots IS
-  'What the coders saw (spec §1.2). news/pointer = excerpt windows only; page_sha256 hashes the '
-  'fetched page text.';
+  'What the coders saw (spec §1.2). news/pointer = excerpt windows only (400 words max); page_sha256 '
+  'hashes the fetched page text. id is deterministic over batch|url|page_sha256|sha256(snapshot_text).';
 
 DO $$
 DECLARE v int;
@@ -191,9 +207,37 @@ BEGIN
      AND column_name IN ('review_mode', 'codebook_version', 'unanimous', 'consensus_value', 'office_id');
   IF v <> 5 THEN RAISE EXCEPTION 'CA_0292: expected 5 new review columns, found %', v; END IF;
   SELECT count(*) INTO v FROM pg_trigger
-   WHERE tgname IN ('gold_labels_append_only', 'certifications_immutable') AND NOT tgisinternal
+   WHERE tgname IN ('gold_labels_append_only', 'certifications_immutable', 'gold_labels_no_truncate', 'certifications_no_truncate')
+     AND NOT tgisinternal
      AND tgrelid IN ('inform.stance_gold_labels'::regclass, 'inform.reliability_certifications'::regclass);
-  IF v <> 2 THEN RAISE EXCEPTION 'CA_0292: expected 2 append-only triggers, found %', v; END IF;
+  IF v <> 4 THEN RAISE EXCEPTION 'CA_0292: expected 4 append-only triggers (2 row + 2 truncate), found %', v; END IF;
+
+  -- stance_coder_labels.level exists, with its CHECK.
+  IF NOT EXISTS (SELECT 1 FROM information_schema.columns
+                  WHERE table_schema = 'inform' AND table_name = 'stance_coder_labels' AND column_name = 'level') THEN
+    RAISE EXCEPTION 'CA_0292: inform.stance_coder_labels.level is missing';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'inform.stance_coder_labels'::regclass
+                  AND conname = 'stance_coder_labels_diagnostic_is_slot_4') THEN
+    RAISE EXCEPTION 'CA_0292: CHECK stance_coder_labels_diagnostic_is_slot_4 is missing';
+  END IF;
+  -- reliability_certifications.level accepts judicial.
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'inform.reliability_certifications'::regclass
+                  AND contype = 'c' AND pg_get_constraintdef(oid) LIKE '%judicial%') THEN
+    RAISE EXCEPTION 'CA_0292: reliability_certifications.level CHECK does not allow judicial';
+  END IF;
+  -- source_snapshots: id is the conflict target (PRIMARY KEY, no default); the old
+  -- UNIQUE (batch_id, url, page_sha256) is gone — it refused a changed excerpt of the same page.
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'inform.source_snapshots'::regclass AND contype = 'p') THEN
+    RAISE EXCEPTION 'CA_0292: inform.source_snapshots has no PRIMARY KEY';
+  END IF;
+  IF EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'inform.source_snapshots'::regclass AND contype = 'u') THEN
+    RAISE EXCEPTION 'CA_0292: inform.source_snapshots still carries a UNIQUE constraint besides its id';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = 'inform' AND table_name = 'source_snapshots'
+              AND column_name = 'id' AND column_default IS NOT NULL) THEN
+    RAISE EXCEPTION 'CA_0292: inform.source_snapshots.id must have no default (ids are deterministic)';
+  END IF;
 
   IF has_table_privilege('anon', 'inform.source_snapshots', 'SELECT') THEN
     RAISE EXCEPTION 'CA_0292: REVOKE did not take — anon can SELECT inform.source_snapshots';
