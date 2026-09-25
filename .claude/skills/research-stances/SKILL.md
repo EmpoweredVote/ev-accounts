@@ -964,6 +964,36 @@ After the pipeline:
 
 ---
 
+## SHADOW CODING (P1, spec 2026-09-25) — measures, publishes nothing
+
+Run AFTER the normal pipeline for the same politician. It does not change what the verify step
+queues. Its only outputs are `coding-report.json` and, with the operator's OK, rows in
+`inform.stance_coder_labels`.
+
+1. **Collect.** While researching, also write `<batch>/sources.json` (the
+   `backend/scripts/lib/sourcesManifest.ts` contract): every source you read, with its `source_kind`,
+   instruments and verbatim anchor passages. **No `value`, chair or reasoning keys** — the parser
+   refuses them. For a public-record or own-site page that automation cannot fetch, save it from a
+   real browser into `<batch>/human-saved/` and set `human_saved_path`. **Never do this for news**
+   (spec §5.4).
+2. `npm run coding:snapshot --prefix backend -- --dir <batch>` → `snapshots.json`. Read the NOT CODABLE
+   lines.
+3. `npm run coding:inputs --prefix backend -- --dir <batch> --politician <uuid> [--office <uuid>]`
+   → `coder-inputs/coder-{1,2,3}.md`.
+4. **Dispatch three coders in ONE message** (parallel Agent calls), `subagent_type: "stance-coder"`:
+   - slot 1 with `model: "opus"`, slots 2 and 3 with `model: "sonnet"`;
+   - each call's `prompt` = the **exact** contents of `coder-inputs/coder-N.md`. Do not edit,
+     summarise or add to it; the file hash printed in step 3 is the record of what was sent.
+   - Do not read the coders' files and "fix" them. An invalid label is data (`coder-missing`).
+5. `npm run coding:report --prefix backend -- --dir <batch> --season-id <open season uuid> --models "opus,sonnet,sonnet"`.
+6. If `needs-source.json` is non-empty: fetch those sources (you are the only role with tools), add
+   them to `sources.json`, and repeat from step 2 — **all three coders again**. After two rounds with
+   no new snapshot, stop (spec §1.3).
+7. `--apply` on steps 2 and 5 **only with the operator's explicit OK**, and only after CA_0292 is
+   applied.
+
+---
+
 ## ERROR HANDLING
 
 - If research on a politician cannot be finished (sources will not load, or the run stops part-way), report which politician and which topics are unfinished, and offer to re-research just those yourself. A retry REPLACES that politician's rows for the retried topics in research.csv and evidence.csv — never append a second row for a pair (STEP 2 item 4)

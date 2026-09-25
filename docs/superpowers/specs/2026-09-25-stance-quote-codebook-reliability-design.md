@@ -128,7 +128,7 @@ Script `backend/scripts/snapshot-sources.ts`. It reuses `researchVerifier`'s fet
 **Stored:**
 - **Public records** (government sites, the politician's own site): the full normalised text.
 - **Third-party copyrighted text** (news): excerpt windows only — matched span ± context, a few
-  hundred words maximum — plus `raw_sha256` of the full page. Enough to verify and replay; not a
+  hundred words maximum — plus `page_sha256` of the full page. Enough to verify and replay; not a
   copy of the article.
 - Raw bytes go to the batch directory (git-ignored).
 
@@ -371,8 +371,8 @@ Migration slots come from `npm run steward --prefix backend -- slot CA --purpose
 | `fetched_at` | |
 | `fetched_by` | `code` or `human` |
 | `http_status` | |
-| `raw_sha256` | |
-| `normalized_text` | full text for public records; excerpt windows only for third-party text |
+| `page_sha256` | |
+| `snapshot_text` | full text for public records; excerpt windows only for third-party text |
 | `batch_id` | |
 
 ### 4.2 `inform.stance_coder_labels`
@@ -581,7 +581,7 @@ The seasons are the history: a closed season keeps the chair that was true then.
 | Phase | Delivers | Publish behaviour |
 |---|---|---|
 | **P0** | codebook v1.0 + annexes for the first-wave topics; migrations §4; `reliability.ts` + positive control | unchanged (review-all) |
-| **P1 shadow** | `sources.json`, snapshots, 3 coders, agreement, CONFIRM, report, disagreement digest (§10.1) — **all computed, none acted on** | unchanged; the review page shows the coder split as information only |
+| **P1 shadow** | `sources.json`, snapshots, 3 coders, agreement, CONFIRM, report, disagreement digest (§10.1) — **all computed, none acted on** | unchanged; the review page is not changed in P1 (showing the coder split moves to P2) |
 | **P2 blind review** | blind mode on the review page; gold capture; hard-example loop into the codebook | unchanged |
 | **P3 certify** | `reliability_certifications`; `decidePublish` reads it; audit sample | auto-publish **only** in certified strata |
 | **P4 skeptic** | refutation sub-agent in CONFIRM | tighter |
