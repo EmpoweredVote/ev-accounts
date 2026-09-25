@@ -1619,76 +1619,87 @@ choice of frame is not. The usual rules still apply: prefer a horizontally arran
 
 ## ✅ THE `grand-forks` BANNER IS CHOSEN, PROCESSED, UPLOADED AND REGISTERED (2026-09-25)
 
-**Asset:** `cities/grand-forks.jpg`, 1700x540, from
-`File:Sorlie Memorial Bridge - Red River State Recreation Area (37074916543).jpg` —
-**Tony Webster, CC BY-SA 2.0**, 5809x3931, processed at `--vertical-anchor 0.60`.
-That is a **0.29x DOWNSCALE**, so every pixel is real. Uploaded, then verified
-**byte-identical** to the local file by sha256 rather than trusting HTTP 200.
+**Asset:** `cities/grand-forks.jpg`, 1700x540, from `File:North Dakota Mill 2022-07-20 01.jpg` —
+**Schwerdf, CC BY 4.0**, 7047x4677, processed at `--vertical-anchor 0.50`. A **0.24x DOWNSCALE**.
 Registered in the **essentials** repo (`buildingImages.js` + regenerated `banners.json`):
 [essentials#164](https://github.com/EmpoweredVote/essentials/pull/164), CI green.
-Certification sheet: https://claude.ai/artifact/3rmwAPfr92az2UiW2kXycu
+Sheet: https://claude.ai/artifact/3rmwAPfr92az2UiW2kXycu
 
-**Subject:** the Sorlie Memorial Bridge in profile at left, the Red River across the band,
-and the Grand Forks skyline visible behind the treeline. Band channel spread **23.6**,
-mean saturation **0.265** — *more* saturated than `states/ND.jpg`'s own band at 0.211.
+**Subject:** the **North Dakota Mill and Elevator** — state-owned, the only state-owned mill in the
+United States, in Grand Forks since 1922. Band channel spread **56.5**, saturation **0.341**,
+luminance 128.6 — the most colourful of the five candidates.
+⚠ Overhead wires and a road cross the frame. Inherent to the source, accepted knowingly.
 
-🔴🔴 **FOUR OF THE FIVE CANDIDATES ARE TITLED AND CATEGORISED "GRAND FORKS,
-NORTH DAKOTA" AND SIT IN MINNESOTA.** Every candidate coordinate was tested against the TIGER
-place polygon, and only the North Dakota Mill fell inside **Grand Forks city (FIPS 38)**; the
-Red River sunset and all three Sorlie Bridge frames fall inside **East Grand Forks city
-(FIPS 27)**. ▶ **A category name is not a jurisdiction** — the Maumee/Gary rule, in its
-sharpest form yet, because here the *title itself* names the wrong state's city.
-⚠ **The chosen frame is one of those four, knowingly.** The bridge spans the two cities and
-the camera looks across at the North Dakota bank, which is exactly why the band carries the
-bridge, the river and the Grand Forks skyline together. **Recorded in the code comment, not
-left for someone to discover.**
+> 🔴🔴 **RULING (Cantrell, 2026-09-25): PREFER THE FRAME THAT IS ACTUALLY IN THE
+> JURISDICTION, EVEN WHEN A PRETTIER ONE SITS ACROSS THE LINE.**
+>
+> I proposed the **Sorlie Memorial Bridge** first, and it has the better band: bridge in profile,
+> the Red River across the frame, the Grand Forks skyline behind the treeline. It was photographed
+> **from the Minnesota bank**. Cantrell rejected it: *"Grand Forks MN is not only bad, but
+> problematic. If you only have one in Grand Forks ND, we should DEFINITELY use that one."*
+> **A banner is a claim about WHERE A PLACE IS, on a site whose whole value is getting jurisdiction
+> right** — so a Minnesota photograph standing in for a North Dakota city is not merely a weaker
+> choice, it is the error class this product exists to avoid. **Composition lost to jurisdiction,
+> deliberately.** ▶ I had surfaced the jurisdiction fact and then recommended the frame anyway,
+> treating it as a caveat to disclose rather than a disqualifier. **It was a disqualifier.**
 
-🔴🔴 **THE BEND DEFECT REPRODUCED ITSELF, AND ONLY THE BAND CAUGHT IT.** The
-Red River sunset is the **best full frame of the five** — water mirroring a sunset sky — and
-in the 6:1 desktop band **the river is gone**, cropped away below the window, leaving bare
-autumn treetops and no subject. Certified on the full frame it would have shipped broken.
-▶ **Certify in the band. The full frame is not the test**, and this is the wave that would
-have proved it again.
+🔴🔴 **FOUR OF THE FIVE CANDIDATES ARE TITLED *AND CATEGORISED* "GRAND FORKS, NORTH
+DAKOTA" AND SIT IN MINNESOTA.** Every coordinate was tested against the TIGER place polygon:
+
+| candidate | falls inside |
+| --- | --- |
+| **North Dakota Mill** ← shipped | **Grand Forks city (FIPS 38)** |
+| Red River Banks + Flood Wall | East Grand Forks city (**FIPS 27, MN**) |
+| Sorlie Bridge – Welcome | East Grand Forks city (**27**) |
+| Sorlie Memorial Bridge – RRSRA | East Grand Forks city (**27**) |
+| Demers Ave Bridge | East Grand Forks city (**27**) |
+
+▶ **A category name is not a jurisdiction** — the Maumee/Gary rule, in its sharpest form yet,
+because here the *file title itself* names the wrong state's city. **Test the coordinate, never the
+label.**
+
+🔴🔴 **THE BEND DEFECT REPRODUCED ITSELF, AND ONLY THE BAND CAUGHT IT.** The Red River
+sunset is the **best full frame of the five** — water mirroring a sunset sky — and in the 6:1
+desktop band **the river is gone**, cropped away below the window, leaving bare autumn treetops and
+no subject. ▶ **Certify in the band. The full frame is not the test.**
 
 🔴 **TWO FILES, ONE PHOTOGRAPHER, ONE DAY, NEARLY THE SAME NAME, COMPLETELY DIFFERENT
-PICTURES.** `Sorlie Bridge - Welcome to North Dakota` is an up-angle of steel truss and a
-bronze plaque — **channel spread 12.4, luminance 95.1**, the darkest and least colourful of
-the five, refused **by measurement before taste**. `Sorlie Memorial Bridge - Red River State
-Recreation Area` is the accepted frame. **The name does not tell you which.**
+PICTURES.** `Sorlie Bridge - Welcome to North Dakota` is an up-angle of steel truss and a bronze
+plaque — **channel spread 12.4, luminance 95.1**, refused **by measurement before taste**.
+**The name does not tell you which.**
 
-🔴🔴 **THE COMMONS CATEGORY IS DOMINATED BY A DHS ENFORCEMENT VISIT, AND IT IS
-THE LARGEST, MOST NUMEROUS AND MOST PERMISSIVELY LICENSED CLUSTER IN IT.** Roughly 40 of the
-60 files in `Category:Grand Forks, North Dakota` are DHSgov, 6000x4000, **public domain**,
-all dated 4 February 2026 — and on LOOKING they are a named federal cabinet official touring
-the Grand Forks Border Patrol sector: uniforms, a government jet, a briefing board, an
-airfield apron. **Not a picture of the city at all**, and this site is antipartisan by design.
-▶ **Aspect and licence are not merit** — Gary's ruin photography in a new dress, and the
-counters would have ranked these first on every measurable axis.
-⚠ The rest of the category is 1997 Red River **flood** photography, a FEMA trailer, a Customs
-and Border Protection drone, a bus advert and a campus map. **Grand Forks' Commons coverage is
-genuinely thin**, which is the finding, not a reason to lower the bar.
+🔴🔴 **THE COMMONS CATEGORY IS DOMINATED BY A DHS ENFORCEMENT VISIT, THE LARGEST, MOST
+NUMEROUS AND MOST PERMISSIVELY LICENSED CLUSTER IN IT.** ~40 of 60 files are DHSgov, 6000x4000,
+**public domain**, all dated 4 February 2026 — and on LOOKING they are a named federal cabinet
+official touring the Grand Forks Border Patrol sector: uniforms, a government jet, a briefing board.
+**Not a picture of the city**, and this site is antipartisan by design. ▶ **Aspect and licence are
+not merit.** The rest of the category is 1997 Red River **flood** photography, a FEMA trailer, a CBP
+drone, a bus advert and a campus map. **Grand Forks' Commons coverage is genuinely thin.**
 
-🟢 **`match: 'exact'` IS LOAD-BEARING HERE FOR TWO INDEPENDENT REASONS**, both ending
-with the wrong place being served this banner:
-- `'east grand forks'.includes('grand forks')` is **true**, and the state scope catches it
-  only while the caller's state parses — `getBuildingImages` treats an unknown caller state
-  as *match-allowed*.
-- `'grand forks county'.includes('grand forks')` is **true and the county is in the SAME
-  state**, so the state scope cannot separate them at all.
+🟢 **`match: 'exact'` IS LOAD-BEARING TWICE**: `'east grand forks'.includes('grand forks')` is
+true and the state guard is **skipped when the caller's state does not parse**; and
+`'grand forks county'.includes('grand forks')` is true with the county in the **same state**, so the
+guard cannot help at all.
 
-🔴 **A LIBRARY'S LOG LINE SILENTLY CORRUPTED A CREDENTIAL.** The first upload failed
-with `Invalid Compact JWS` — the same message the storage-auth rule warns about — and the
-headers were already correct. The real cause: `SUPABASE_SERVICE_ROLE_KEY=$(node -e
-"require('dotenv').config(); ...")` captured **dotenv's own banner line from stdout** along
-with the key, giving a 118-character value where the key is **41**. ▶ **Print a credential's
-LENGTH before using it**, and pass `{quiet: true}` when capturing from a library that logs to
-stdout. The error message pointed at auth; the defect was shell capture.
+🔴 **THE OVERWRITE WAS VERIFIED ON BOTH URLS.** Replacing an existing key invokes the
+stale-CDN rule, so the new bytes were confirmed **byte-identical on the plain URL *and* a
+cache-busted URL**, with a nonexistent-key control returning HTTP 400. Neither served stale bytes,
+so **no `-v2` was needed**.
 
-⚠ **Surfacing:** the nine CITY offices carry `representing_city = 'Grand Forks'`, so the
-banner resolves from an ordinary address search. The seven COUNTY offices carry NULL, so **no
-county banner is implied** — the Richland/Horry shape.
-⚠ **No `focus` key**: the 0.60 anchor is baked into the asset, so the centred desktop band
-is exactly the frame that was certified. A focus would move the window off it.
+🔴 **A LIBRARY'S LOG LINE SILENTLY CORRUPTED A CREDENTIAL.** The first upload failed with
+`Invalid Compact JWS` — the same message the storage-auth rule warns about — while the headers
+were already correct. `KEY=$(node -e "require('dotenv').config(); …")` captured **dotenv's own
+banner line from stdout** along with the key: 118 characters where the key is **41**. ▶ **Print a
+credential's LENGTH before using it**, and pass `{quiet: true}`. The message pointed at auth; the
+defect was shell capture.
+
+⚠ **Surfacing:** the nine CITY offices carry `representing_city = 'Grand Forks'`, so the banner
+resolves from an ordinary address search. The seven COUNTY offices carry NULL, so **no county banner
+is implied**. ⚠ **No `focus`**: the 0.50 anchor is baked in, so the centred band is the certified
+frame.
+⚠ **`C:\Transparent Motivations\essentials` is its own repo** (`EmpoweredVote/essentials.git`)
+nested inside the transparent-motivations checkout, default branch **`main`**, convention
+`feat/banners-<state>`. A worktree off the OUTER repo comes up empty of it.
 
 ### What ND-5 still owes
 
