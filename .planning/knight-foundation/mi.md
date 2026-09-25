@@ -531,17 +531,255 @@ later wave may take them.
 
 ---
 
-## ▶ Next: MI-4 — Wayne County
+## MI-4 — Wayne County (APPLIED 2026-09-25)
 
-Stage 4. Wayne County's polygon (`26163`) is already present at 672.3911 sq mi and the county holds
-**no** government row yet. Read the county charter for the elected inventory — Wayne is a **charter**
-county, so an all-Michigan statutory template will not describe it (Summit County's lesson at OH-4).
-The 15-member County Commission is elected by district, so that layer and its vintage come first.
+`X0066` (15 commission-district polygons), `CC_0142` structure, `CC_0143` occupancy.
+**21 offices, 21 seated, 0 vacant** — 1 government, 3 chambers, 21 people created, **0 reused**.
 
-Carried debts:
+Measured from outside, against a baseline taken in the same session:
+
+| | before | after |
+| --- | --- | --- |
+| `politicians` | 88,833 | **88,854** (+21 exact) |
+| `offices` | 9,374 | 9,395 |
+| `office_terms` | 9,309 | 9,330 |
+| `districts` | 10,006 | 10,021 |
+| `geofence_boundaries` | 72,190 | 72,205 |
+| `offices_missing_terms` | 423 / 238 | **unmoved** |
+
+All three writes re-run with every `essentials.*` insert at 0.
+
+### 🔴🔴 The county's own live service is the superseded map
+
+Wayne publishes **four** commission-district layers. They are **two maps**, and the split is the
+opposite of the one anybody would guess:
+
+| layer | host | plan | verdict |
+| --- | --- | --- | --- |
+| `county_commission_districts.zip` | waynecountymi.gov GIS Data page | PlanID **1566** | **the current map** |
+| `Wayne_County_Commission_Districts_` | `services1/7k5pwykhBf04bSfy` (Eastern Michigan University) | PlanID **1566** | byte-identical, second publisher |
+| `County_Commission_Districts` | `services1/b6rkZNtCd6Mx2gvB` — **the county's own ArcGIS** | 2012 | **superseded** |
+| `Wayne_County_Commission_Districts` | `services2/HsXtOCMp1Nis1Ogr` (Data Driven Detroit) | 2012 | the control |
+
+The county's own service and D3's 2012 layer are byte-identical **to each other** on all fifteen
+districts (0.0000% area difference), and that service's `Commission` field still names Jewel Ware,
+Ilona Varga, Burton Leland, Gary Woronchak and Raymond Basham — none of whom has served for years.
+It is owned by `kspivey_wayne`, the same county GIS user named inside the *current* zip's own
+metadata path, and ArcGIS reports it modified 2023-01-04, **one day after** the current zip was
+exported.
+
+▶ **MI-3 reached for a live feature service in preference to a file, and here that rule loads the
+wrong Wayne.** FRESHNESS IS A PROPERTY OF A FIELD, NOT OF A SOURCE — MI-2's SD-35 lesson was about
+occupancy; this is the same lesson about geometry, from the same publisher on the same day.
+
+⚠ A count cannot separate the two: **both plans have fifteen districts numbered 1–15.**
+
+### 🟢 The vintage was proved from the data, four ways, and "newest" was none of them
+
+1. **The fifteen populations.** The Wayne County Apportionment Commission adopted its plan 5-0 on
+   **2021-11-10**, and the adopted *Staff Plan 2021* publishes a population per district. The loaded
+   layer reproduces all fifteen **exactly**, along with the plan's stated total **1,793,411**, ideal
+   **119,561** and total deviation **9.48**. A control that adds 1 to a single district breaks it.
+   ⚠ The plan itself explains the 150 by which its total falls short of the 2020 census count:
+   "not including 150 people housed in two blocks that are detention centers".
+2. **The file's lineage, not its date.** The zip's members are stamped 2023-01-03, but its ESRI
+   metadata carries `CreaDate 20211110` — the adoption date — and records the 2023 step as an
+   `ExportFeatures` re-export. **A timestamp on the container is not the age of the data.**
+3. **A second, unrelated host** serves byte-identical geometry.
+4. 🟢 **The plan's own sentence, tested against the polygons.** It states: *"Four cities were split
+   to balance population. Allen Park, Detroit, Livonia, and Plymouth Township are split."* Measured
+   against TIGER: **Detroit 7, Allen Park 2, Livonia 2, Plymouth charter township 2 — and nothing
+   else split**, with Plymouth **city** correctly NOT split. This is the strongest of the four,
+   because it checks prose against geometry rather than one number against another.
+
+⚠ **The layer's title disagrees with the resolution, and that is not a defect.** The shapefile is
+titled **"Kinloch Proposal with Sabree Edits"**; the resolution adopts "the attached Staff
+apportionment plan". Staff built the adopted plan from the Kinloch proposal with the chair's edits.
+**Names could not settle this. The numbers did.**
+⚠ The resolution PDF is a **scan with an empty text layer** — `pdftotext` returns 2 bytes. It had
+to be rendered and read as an image.
+⚠ An unscoped search for the layer returns **"Wayne Co. NC Commissioner Districts"**. The
+jurisdiction-collision trap, again.
+
+### 🔴🔴 The charter is the office inventory — and the template would invent abolished offices
+
+Home Rule Charter for the County of Wayne (adopted 1981-11-03, effective 1983-01-01, amendments
+through 2012-11-06):
+
+- **Sec. 9.111(a)** — the CEO is "elected at large on a partisan basis for a 4 year term";
+- **Sec. 3.111** — "The Commission has 15 members", single-member districts (Sec. 3.112(a));
+- **Sec. 2.211** — "the Sheriff, the Prosecuting Attorney, the County Clerk, the Treasurer, and the
+  Register of Deeds are elected at large on a partisan basis to 4 year terms".
+
+1 + 15 + 5 = **21**. What a Michigan statutory template would add:
+
+- **Drain Commissioner** — deleted from Secs. 2.211/2.212 and its department repealed (Secs.
+  4.261–4.263) at the general election of **1986-11-04, 291,053 yes to 114,465 no**, effective
+  1987-01-01;
+- **Road Commission** — abolished by a later amendment;
+- **Auditor General** — Sec. 3.119, **appointed** by the Commission, not elected;
+- no Surveyor and no Coroner appear in the charter at all.
+
+**Gate 11 asserts that none of them exists.** Summit County's lesson at OH-4, with a second charter
+behind it.
+
+🟢 **The inventory is corroborated by a document written for another purpose.** Sec. 2.112 composes
+the County Apportionment Commission from "the County Clerk, the Treasurer, the Prosecuting Attorney
+and the County chairperson of each of the 2 political parties" — and the 2021 apportionment
+resolution is signed by Sabree (Treasurer), Garrett (Clerk) and Worthy (Prosecuting Attorney). Two
+independent documents, the same three offices.
+
+### 🔴 The charter is NOT the term authority
+
+Sec. 3.112(a): "The term of office of a Commissioner is 2 years, concurrent with that of a State
+representative." That is **superseded**. Michigan moved county commissioners to **four-year terms**
+for those elected at or after the November 2024 general election, and the county's own
+"Commissioners by District" record heads its current block **"Dist. 2025-28"**.
+
+▶ **READ THE CHARTER FOR THE INVENTORY AND GENERAL LAW FOR THE TERM.** A charter that is exactly
+right about what exists can be silently stale about how long it lasts — and the wrong reading here
+would have put all 21 seats on the 2026 ballot instead of only the six countywide ones.
+
+### 🔴 One geography, one body — the inverse of MI-3
+
+Detroit's police-commission districts are identical to its council districts, so each Detroit
+polygon carries **two** offices. Wayne's carry exactly **one**, and gate 9b pins that, so a later
+wave cannot hang a second body on this geography the way Detroit legitimately does. The same pair
+of gates, asserting opposite numbers, ten days apart.
+
+### 🔴 Closure had to be measured again, and Detroit's own band would reject it
+
+The fifteen cover **95.963%** of TIGER county 26163 — 645.2464 of 672.3911 sq mi, 0 overlapping
+pairs. **MI-3 gated Detroit at 96.0%–100.5%, which would FAIL on correct Wayne data.**
+
+The deficit is water, proved rather than assumed:
+
+- the census gazetteer puts Wayne's land at **611.8390** sq mi and its water at **60.9070**;
+- **626 of 627** Wayne tract internal points fall in exactly one district, none in two, and all
+  fifteen districts contain at least one;
+- the single miss is tract **`26163990100`**, which has **`ALAND = 0`** and 26.757 sq mi of Lake
+  St. Clair — and 26.757 is the uncovered 27.68.
+
+Controls: a Grand Rapids point and a Lake Erie point both resolve to 0 districts.
+▶ **A CLOSURE THRESHOLD IS NOT PORTABLE. Fourth time in this programme.**
+
+### 🔴🔴 Two seats turned over mid-term, and only the Commission's journal says so
+
+The roster was change-checked against three current authorities — each commissioner's own page
+(15/15 name their own member), the county's district→commissioner redirect map, and the **roll call
+of the full Commission meeting of 2026-09-15**, which lists all fifteen. Against those, the county's
+own term-by-term record still shows Clark-Coleman in D5 and Knezek in D8.
+
+| seat | what happened | date | record |
+| --- | --- | --- | --- |
+| D5 | Commissioner **Irma Clark-Coleman died in office** 2025-06-10; Angelique Peterson-Mayberry appointed 14-0 | **2025-07-02** | Journal No. 13, Res. **2025-455** |
+| D8 | **David Knezek** left to become president of Henry Ford College; Hassan M. Ahmad appointed 11-0 | **2026-08-06** | Journal No. 16, Res. **2026-572** |
+| D14 | **Raymond Basham resigned** effective 2023-12-31; Alex Garza appointed 9-0 | **2024-01-04** | Res. **2024-007** |
+
+🔴 **NEITHER TURNOVER IS MENTIONED ON THE PAGE OF THE PERSON WHO ARRIVED.** Peterson-Mayberry's
+biography says only "Today, Angelique proudly serves as the Wayne County Commissioner for
+District 5". A change-check that reads member pages finds *who*, never *since when*.
+⚠ **A newspaper account of the D5 appointment says "Thursday" and is dated 2025-07-03. The journal
+says Tuesday, July 2.** The primary record moved the date by a day.
+⚠ The D8 journal's **roll call lists fourteen members**, because Ahmad was not one yet when it was
+called. The D14 journal's prints "District 14 - vacant".
+▶ **FOR AN APPOINTED ARRIVAL, THE ONLY DOCUMENT THAT ANSWERS "SINCE WHEN" IS THE BODY'S OWN
+JOURNAL.**
+
+### 🔴 15 of 21 terms are dated, and the record that dates them is nine months stale
+
+The Commission publishes "Commissioners by District", its own membership term by term since 1983 —
+exactly the document the "first elected is not a term start" rule asks for. Its current edition is
+stamped **2025-01-02** and says so **only in its filename**, so it predates both turnovers above.
+It is nonetheless what dates the other thirteen.
+
+- **11** entered at a term boundary → `year` precision, 1 January, `elected`;
+- **Glenn S. Anderson** arrived mid-term ("sworn in … in January 2016"; the record shows the
+  2015-16 seat as "Richard LeBlanc/Glenn S. Anderson") → `month`;
+- the **3 appointees** above → `day`, from their resolutions.
+
+⚠ **Two seats are dated 2013 for a reason that is easy to get wrong.** Alisha R. Bell has served
+continuously since 2003 and Joseph Palamara since 1999, but both **changed district number** at the
+2013 term — Bell 8→7, Palamara 14→15. `office_terms` records occupancy of a **seat**, so the D7 and
+D15 terms begin in 2013. The longer service is a fact about the person, not about this office.
+⚠ **Martha G. Scott's own biography says she is "currently serving her sixth term"; the record shows
+her eighth.** A term COUNT in a biography is not a date, and it can be stale in a direction that
+looks plausible.
+
+The **six countywide officers are `unknown`**, open-ended: **not one county page states when its
+officer took office**, and the wave did not invent a date to fill a column. Recorded as a debt.
+
+### 🔴 The name sweep returned zero, which is also what a broken detector returns
+
+Swept on the duplicate guard's own key — `lower(first_name)`, `lower(last_name)`, active rows only —
+for all 21 names: **no collisions.** That is unlike MI-2 (6 hits) and MI-3 (1), so the sweep was
+re-run with **Mary Sheffield, Joseph Tate and Mary Waters planted in the same query shape**; all
+three were found. The detector works and the zero is real. ⚠ Production holds 68 active Smiths, 12
+Evanses, 10 Garretts and 5 McCormicks — plenty of surnames, none of these people.
+
+### ⚠ waynecountymi.gov refuses a half-impersonation, and my first description of it was wrong
+
+Measured on both a CMS page and the static zip:
+
+```
+curl bare                 -> 200      curl -A '<Chrome UA>'  -> 403
+curl with full Chrome hdrs -> 403      node fetch with a UA   -> 200
+```
+
+A User-Agent is not a key here; **pinning one onto curl is what gets refused**, because the UA then
+disagrees with the TLS fingerprint underneath it. michigan.gov at MI-1 was the opposite way round,
+so neither behaviour can be assumed.
+
+🔴 **The loader's first `--wafcontrol` asserted "a browser User-Agent is refused", and it FAILED** —
+node's fetch sends one and is served. The control disproved the comment it was written to protect.
+▶ **Write the control even when you are only documenting something.** It now asserts the only thing
+that must hold at runtime: the authority is reachable bare and arrives as one whole shapefile.
+
+### ✅ Verified from outside
+
+- 21 offices, **21 seated counting `och.politician_id`**, 0 vacant, 3 chambers, 1 government.
+- **Probe**: the **Guardian Building** (500 Griswold, the county seat) returns **7** Wayne offices —
+  the six countywide plus **Commissioner D2 Jonathan C. Kinloch**; **Livonia City Hall** returns
+  **7** with **D12 Glenn S. Anderson**; **Grand Rapids returns 0**.
+  🟢 Livonia resolving to D12 rather than D9 is not a surprise to be explained away — the adopted
+  plan names Livonia as one of its four split cities, and the geometry splits it in two.
+- **Per-district control 15/15**: every district's interior point returns exactly **1** commissioner
+  and exactly **6** countywide officers.
+- **Eight loader gates and seven migration gates watched failing**, every control holding each
+  earlier gate's quantity constant.
+  🔴 **The GATE 3b control took three attempts, and the first two looked reasonable.**
+  `live = old2012` trips gate 2 (the 2012 layer has no `TotalPop`); moving only the loaded layer's
+  geometry trips gate 3a (it stops matching its mirror); **only moving both the layer and its
+  mirror reaches 3b.** MI-3's shadowing lesson for the fourth time — and it was caught by *running*
+  the controls, not by reasoning about them.
+- Dry run of both migrations as **ONE transaction ending in ROLLBACK**, and the revert re-measured
+  back to the exact baseline.
+- `check:occupancy`, `check:migrations`, `check:reservations`, `check:child-county`,
+  `check:duplicate-people` green; `check:reachability` nothing regressed (4/17/7).
+
+### Debts carried out of MI-4
+
+- 🔴 **6 undated countywide arrivals** — CEO, Sheriff, Prosecuting Attorney, Clerk, Treasurer,
+  Register of Deeds. No county page publishes a start date for any of them.
+- ⚠ **Judges and community-college trustees are excluded by precedent.** Wayne voters elect Third
+  Circuit and Probate judges and nine WCCCD trustees. No county stage 4 in this programme has
+  seated judges (Summit was Executive + 11 Council + 5 row officers). Reversible, as MI-3's
+  Community Advisory Councils are; the inclusion ruling does reach them.
+- 🔴 The **`X` namespace is still unseeded**. MI-4 used **X0066**, read from prod max in the same
+  session as the write. `X_0001` remains abandoned.
+
+---
+
+## ▶ Next: MI-5 — stage 5 assets
+
+Portraits for all **21** Wayne County officials and all **18** Detroit ones — **and the 148
+legislators**, which is GA-6's lesson: count the legislature's portraits *inside* stage 5, not
+beside it. Michigan's seated total is **187**.
+
+⚠ **Detroit's banner collides with `states/MI.jpg`**, which *is* Detroit's skyline. The Miami move —
+version the state banner, never overwrite — is available.
+
+Carried from earlier waves:
 - 🔴 **`sldu` must be re-loaded to Crane A1 after the 2026 election** (members seated 2027-01-01).
-  The loader's Senate anchors will abort a re-run until they are updated, which is deliberate:
-  changing them is the moment someone decides the Senate has turned over.
-- ⚠ **Detroit's banner collides with `states/MI.jpg`**, which *is* Detroit's skyline. The Miami
-  move — version the state banner, never overwrite — is available. Stage 5.
-- Stage 4 is **Wayne County**.
+  The loader's Senate anchors will abort a re-run until they are updated, which is deliberate.
+- 🔴 **17 undated Detroit arrivals** and the **15 Community Advisory Council seats**.
