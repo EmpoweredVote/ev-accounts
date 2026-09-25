@@ -12,7 +12,18 @@ import type { SeatContext } from './coderPrompt.js';
 export const CAMPAIGN_LOOKBACK_DAYS = 548;
 export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
-  | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift';
+  | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer';
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+/**
+ * Word-boundary match on normalised text. A name of two characters or fewer never matches: a USPS
+ * code ('in', 'ut') is on nearly every page, so it proves nothing about identity (final review item 1).
+ */
+export function namedOnPage(normalizedPage: string, name: string): boolean {
+  const n = normalizeText(name);
+  if (n.length <= 2) return false;
+  return new RegExp(`(^|[^a-z0-9])${escapeRe(n)}($|[^a-z0-9])`).test(normalizedPage);
+}
 
 const minusDays = (iso: string, days: number): string => {
   const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
@@ -43,16 +54,20 @@ export function confirmRow(i: {
   seat: SeatContext;
   restsOnPassages: Passage[];
   snapshotText: ReadonlyMap<string, string>;
+  /** snapshot_id -> source_kind (from snapshots.json). An id missing here counts as a pointer (fail closed). */
+  sourceKind: ReadonlyMap<string, string>;
   rowServedRevisionId: string;
   bundleServedRevisionId: string;
 }): ConfirmFinding[] {
   const out = new Set<ConfirmFinding>();
-  const names = [...i.seat.jurisdiction_names, i.seat.office_title].map((n) => normalizeText(n)).filter(Boolean);
+  const names = [...i.seat.jurisdiction_names, i.seat.office_title].filter(Boolean);
   const identityOk = i.restsOnPassages.some((p) => {
     const t = normalizeText(i.snapshotText.get(p.snapshot_id) ?? '');
-    return names.some((n) => t.includes(n));
+    return names.some((n) => namedOnPage(t, n));
   });
   if (!identityOk) out.add('identity-not-in-snapshot');
+  // Spec §5.4: a pointer is never evidence — a chair may not rest on one.
+  if (i.restsOnPassages.some((p) => (i.sourceKind.get(p.snapshot_id) ?? 'pointer') === 'pointer')) out.add('rests-on-pointer');
   const cycleStart = earliestStatementDate(i.seat);
   const lastName = extractLastName(i.seat.full_name);
   for (const p of i.restsOnPassages) {

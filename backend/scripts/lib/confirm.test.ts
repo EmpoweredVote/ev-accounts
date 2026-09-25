@@ -12,8 +12,9 @@ const P = (over: Partial<Passage> = {}): Passage => ({
   snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record', v4_shape: 'chair-shaped',
   v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth', ...over,
 });
+const kinds = new Map([['s1', 'public-record']]);
 const run = (over: Partial<Parameters<typeof confirmRow>[0]> = {}) =>
-  confirmRow({ seat, restsOnPassages: [P()], snapshotText: text, rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1', ...over });
+  confirmRow({ seat, restsOnPassages: [P()], snapshotText: text, sourceKind: kinds, rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1', ...over });
 
 describe('earliestStatementDate (ruling Q4 proxy)', () => {
   it('seated: current term start minus 548 days', () => expect(earliestStatementDate(seat)).toBe('2019-07-03'));
@@ -54,4 +55,22 @@ describe('confirmRow (spec §1.6)', () => {
     expect(run({ snapshotText: new Map([['s1', 'Jane Roe voted for the bill.']]), restsOnPassages: [P({ date: null, provision_quote: null })] }))
       .toContain('undated-evidence')
       .and.toContain('person-not-in-snapshot'));
+  // Final review item 1: a USPS code ('UT', 'IN') substring-matched almost every page.
+  const noJurisdiction = new Map([['s1', 'J. Stuart Adams said but the bill requires students to compete on teams matching their sex at birth.']]);
+  it.each([['UT'], ['Utah'], ['IN']])('flags identity when jurisdiction %s is not on the page as a word', (j) =>
+    expect(run({ seat: { ...seat, jurisdiction_names: [j], office_title: 'State Senator' }, snapshotText: noJurisdiction }))
+      .toContain('identity-not-in-snapshot'));
+  it('does not match a jurisdiction inside a longer word (Utah vs Utahns)', () =>
+    expect(run({ snapshotText: new Map([['s1', 'Utahns heard J. Stuart Adams: the bill requires students to compete on teams matching their sex at birth.']]) }))
+      .toContain('identity-not-in-snapshot'));
+  it('matches a jurisdiction on word boundaries', () =>
+    expect(run({ snapshotText: new Map([['s1', 'In Utah, J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]) }))
+      .not.toContain('identity-not-in-snapshot'));
+  // Final review item 3: spec 5.4 — a pointer is never evidence.
+  it('flags a chair that rests on a pointer source', () =>
+    expect(run({ sourceKind: new Map([['s1', 'pointer']]) })).toContain('rests-on-pointer'));
+  it('flags a rests_on source with no known kind (fail closed)', () =>
+    expect(run({ sourceKind: new Map() })).toContain('rests-on-pointer'));
+  it('does not flag a news source as a pointer', () =>
+    expect(run({ sourceKind: new Map([['s1', 'news']]) })).not.toContain('rests-on-pointer'));
 });

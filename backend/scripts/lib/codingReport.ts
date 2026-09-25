@@ -36,6 +36,8 @@ export function buildCodingReport(i: {
   context: { batch_id: string; seat: SeatContext; topics: PromptTopic[] };
   files: Map<number, unknown>;
   snapshotText: ReadonlyMap<string, string>;
+  /** snapshot_id -> source_kind, from snapshots.json (final review item 3). */
+  sourceKind: ReadonlyMap<string, string>;
 }): CodingReport {
   const { seat, topics } = i.context;
   const validity: { slot: number; fileErrors: string[]; rowErrors: number }[] = [];
@@ -77,9 +79,11 @@ export function buildCodingReport(i: {
       const cRow = rowsBySlot.get(consensusSlot(labels, outcome.value))!;
       const restsOn = cRow.passages.filter((p) => outcome.shared_sources.includes(p.snapshot_id));
       evidenceClass = weakestClass(restsOn);
-      confirm = confirmRow({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id });
+      confirm = confirmRow({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id });
       if (confirm.length) reasons.push('confirm-failed');
       if (evidenceClass === 'statement-other') reasons.push('statement-other');
+      // A chair whose every source is a news excerpt goes to a person (spec §5.4).
+      if (restsOn.length > 0 && restsOn.every((p) => i.sourceKind.get(p.snapshot_id) === 'news')) reasons.push('news-only-basis');
     }
     const publishable = outcome.kind === 'unanimous-chair' && reasons.length === 0;
     return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass },

@@ -13,6 +13,7 @@ const row = (topic_id: string, v: number | null): CoderRow => ({ politician_id: 
   passages: [P], v6_value: v, v6_blank_reason: v === null ? 'no-evidence' : null, rests_on: v === null ? [] : ['s1'], reasoning: 'r', needs_source: [], quotes: [] });
 const file = (slot: number, rows: CoderRow[]) => ({ codebook_version: CODEBOOK_VERSION, coder_slot: slot, rows });
 const context = { batch_id: 'b', seat, topics };
+const sourceKind = new Map([['s1', 'public-record']]);
 
 describe('weakestClass', () => {
   it('takes the weakest class present (spec section 3.2)', () => {
@@ -28,7 +29,7 @@ describe('buildCodingReport', () => {
       [2, file(2, [row('t1', 4), row('t2', 3)])],
       [3, file(3, [row('t1', 4), row('t2', 2)])],
     ]);
-    const r = buildCodingReport({ context, files, snapshotText });
+    const r = buildCodingReport({ context, files, snapshotText, sourceKind });
     const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
     const t2 = r.rows.find((x) => x.topic_key === 'k-t2')!;
     expect(t1.shadow).toBe('would-publish-if-certified');
@@ -40,20 +41,20 @@ describe('buildCodingReport', () => {
   });
   it('treats a missing coder file as coder-missing for every row', () => {
     const files = new Map<number, unknown>([[1, file(1, [row('t1', 4), row('t2', 4)])], [2, file(2, [row('t1', 4), row('t2', 4)])]]);
-    const r = buildCodingReport({ context, files, snapshotText });
+    const r = buildCodingReport({ context, files, snapshotText, sourceKind });
     expect(r.rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
   });
   it('never marks a statement-other row publishable (ruling Q2)', () => {
     const so = { ...row('t1', 4), passages: [{ ...P, v3_class: 'statement-other' as const, provision_quote: null }] };
     const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [so, row('t2', null)])]));
-    const t1 = buildCodingReport({ context, files, snapshotText }).rows.find((x) => x.topic_key === 'k-t1')!;
+    const t1 = buildCodingReport({ context, files, snapshotText, sourceKind }).rows.find((x) => x.topic_key === 'k-t1')!;
     expect(t1.shadow).toBe('would-review');
     expect(t1.shadow_reasons).toContain('statement-other');
   });
   it('collects needs-source requests', () => {
     const ns = { ...row('t1', null), needs_source: ['Clerk roll call, H.R. 28'] };
     const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [ns, row('t2', null)])]));
-    expect(buildCodingReport({ context, files, snapshotText }).needsSource).toEqual([{ key: 'p1|o1|t1', requests: ['Clerk roll call, H.R. 28'] }]);
+    expect(buildCodingReport({ context, files, snapshotText, sourceKind }).needsSource).toEqual([{ key: 'p1|o1|t1', requests: ['Clerk roll call, H.R. 28'] }]);
   });
   it('treats a prose (non-JSON) coder file as coder-missing for every row', () => {
     const files = new Map<number, unknown>([
@@ -61,7 +62,7 @@ describe('buildCodingReport', () => {
       [2, file(2, [row('t1', 4), row('t2', 4)])],
       [3, 'Sorry, I cannot complete this request right now.'],
     ]);
-    const r = buildCodingReport({ context, files, snapshotText });
+    const r = buildCodingReport({ context, files, snapshotText, sourceKind });
     expect(r.rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
   });
   it('keeps the first occurrence when a coder file has a duplicate row key', () => {
@@ -70,8 +71,20 @@ describe('buildCodingReport', () => {
       [2, file(2, [row('t1', 4), row('t2', 4)])],
       [3, file(3, [row('t1', 4), row('t2', 4)])],
     ]);
-    const r = buildCodingReport({ context, files, snapshotText });
+    const r = buildCodingReport({ context, files, snapshotText, sourceKind });
     const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
     expect(t1.shadow).toBe('would-publish-if-certified');
+  });
+  // Final review item 3.
+  const unanimous = () => new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [row('t1', 4), row('t2', null)])]));
+  it('sends a chair resting only on news to review (news-only-basis)', () => {
+    const t1 = buildCodingReport({ context, files: unanimous(), snapshotText, sourceKind: new Map([['s1', 'news']]) }).rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.shadow).toBe('would-review');
+    expect(t1.shadow_reasons).toContain('news-only-basis');
+  });
+  it('sends a chair resting on a pointer to review (rests-on-pointer)', () => {
+    const t1 = buildCodingReport({ context, files: unanimous(), snapshotText, sourceKind: new Map([['s1', 'pointer']]) }).rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.confirm).toContain('rests-on-pointer');
+    expect(t1.shadow).toBe('would-review');
   });
 });

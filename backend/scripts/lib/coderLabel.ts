@@ -81,6 +81,23 @@ function enumErr(where: string, field: string, v: unknown, allowed: readonly str
   return typeof v === 'string' && allowed.includes(v) ? null : `${where}: ${field} ${String(v)} not allowed`;
 }
 
+/**
+ * A passage date is YYYY, YYYY-MM or YYYY-MM-DD with a real month and day, or null. Anything else
+ * ("March 2010", "unknown") would make the CONFIRM date checks compare strings and fail open.
+ */
+export function isCoderDate(v: unknown): boolean {
+  if (typeof v !== 'string') return false;
+  const m = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/.exec(v);
+  if (!m) return false;
+  if (m[2] === undefined) return true;
+  const month = Number(m[2]);
+  if (month < 1 || month > 12) return false;
+  if (m[3] === undefined) return true;
+  const day = Number(m[3]);
+  const daysInMonth = new Date(Date.UTC(Number(m[1]), month, 0)).getUTCDate();
+  return day >= 1 && day <= daysInMonth;
+}
+
 function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): ValidatedRow {
   const errors: string[] = [];
   if (!isObj(raw)) return { key: '?', row: null, errors: ['row: not an object'] };
@@ -100,6 +117,7 @@ function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): V
       const e = enumErr(where, f, p[f], allowed);
       if (e) errors.push(e);
     }
+    if (p.date !== null && !isCoderDate(p.date)) errors.push(`${where}: date ${String(p.date)} not YYYY, YYYY-MM or YYYY-MM-DD`);
     if (p.provision_quote !== null && p.provision_quote !== undefined) {
       if (typeof p.provision_quote !== 'string') errors.push(`${where}: provision_quote not a string`);
       else if (text !== undefined && !verbatimIn(text, p.provision_quote)) errors.push(`${where}: provision_quote not verbatim in snapshot`);

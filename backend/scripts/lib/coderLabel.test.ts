@@ -96,4 +96,10 @@ describe('validateCoderLabelFile', () => {
     expect(r.rows[0].errors).toEqual([]);
     expect(r.rows[1].errors.length).toBeGreaterThan(0);
   });
+  // Final review item 2: a date the CONFIRM checks cannot compare must not pass as valid.
+  it.each([['March 2010'], ['unknown'], ['2010-13'], ['2010-02-30'], ['2010-1-5'], ['20101']])('refuses passage date %s', (d) =>
+    expect(validateCoderLabelFile(file([row({ passages: [passage({ date: d })] })]), ctx).rows[0].errors)
+      .toContain(`passage ${SNAP}: date ${d} not YYYY, YYYY-MM or YYYY-MM-DD`));
+  it.each([['2010'], ['2010-03'], ['2024-02-29'], [null]])('accepts passage date %s', (d) =>
+    expect(validateCoderLabelFile(file([row({ passages: [passage({ date: d })] })]), ctx).rows[0].errors).toEqual([]));
 });
