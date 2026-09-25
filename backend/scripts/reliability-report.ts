@@ -13,7 +13,7 @@ const i = process.argv.indexOf('--codebook');
 const version = i > 0 ? process.argv[i + 1] : CODEBOOK_VERSION;
 const { rows } = await pool.query(
   `SELECT l.batch_id, l.politician_id, l.office_id, l.topic_id, l.coder_slot, l.valid, l.value, l.rests_on, l.source_codes,
-          (SELECT string_agg(DISTINCT r.level, ',') FROM inform.compass_topic_roles r WHERE r.topic_id = l.topic_id) AS levels
+          (SELECT string_agg(DISTINCT r.role_scope, ',') FROM inform.compass_topic_roles r WHERE r.topic_id = l.topic_id) AS levels
      FROM inform.stance_coder_labels l
     WHERE l.codebook_version = $1 AND NOT l.is_diagnostic AND l.coder_slot BETWEEN 1 AND 3`, [version]);
 await pool.end();
