@@ -538,16 +538,19 @@ Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAM
 `verify-stance-research.ts` diffs every proposed value against the **open season** and applies
 `decidePublish` (`backend/scripts/lib/stancePublishPolicy.ts`): a row already holding a value in
 the open season — including a 0 (an editor's blank) — is **never** written automatically; it goes to
-the review queue with reason `value-change`. These buckets do not exist yet at STEP 3: the
+the review queue with reason `value-change`. A row that would replace what voters see now from an
+older season (the Season 1 fallback, including a 0) goes to review with `replaces-published-chair`,
+even with `--auto-push` (ruling 2026-09-24). These buckets do not exist yet at STEP 3: the
 verifier's dry-run in **STEP 4a(i)** writes them to `publish-report.json`. Read them there before
 any `--apply`:
 
 | action | meaning |
 |---|---|
-| `auto-push` | new, record-evidenced, gate-clean, verified — written on `--apply` **only when the run passes `--auto-push`**; without it (the default) this row is `review` / `review-all-mode` |
-| `unchanged` | same value already in the open season — skipped |
-| `review` | queued for a person: `review-all-mode` (clean, but review-all is on), `statement-evidence`, `value-change`, `gate-medium`, `unresolved-politician` |
+| `auto-push` | new, record-evidenced, gate-clean, verified, and **nothing is shown to voters for the pair now** — written on `--apply` **only when the run passes `--auto-push`**; without it (the default) this row is `review` / `review-all-mode` |
+| `unchanged` | same value already in the **open** season — skipped |
+| `review` | queued for a person: `review-all-mode` (clean, but review-all is on), `statement-evidence`, `value-change` (an open-season value, incl. 0, would change), `replaces-published-chair` (see below), `gate-medium`, `unresolved-politician` |
 | `re-research` | `gate-high` (defective — goes back to research (4a(i)), not written; this includes an unresolved politician whose row has any other severe finding) or `below-threshold` (unverified — queued) |
+| — `replaces-published-chair` | ruling 2026-09-24: the open season holds no value, but voters see an older season's chair (or a 0 blank) as the fallback, and this write would replace it. **Always review, even with `--auto-push`.** This includes proposing the SAME chair as the Season 1 fallback: the write creates the Season 2 row with new reasoning and citations against Season 2's served text, so it is a person's call, not `unchanged` |
 | `out-of-scope` | the gate found `topic-out-of-scope`: the office does not hold this question. Recorded, **not** re-researched and not queued — re-researching the same pair cannot change it |
 
 A queued row stores its reasons (`queue_reasons`) and `evidence_type` once CA_0285 is applied, and the

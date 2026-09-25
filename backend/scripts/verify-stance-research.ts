@@ -80,7 +80,7 @@ import {
   writeVerifiedStance,
   ladderMatches,
 } from '../src/lib/researchEvidenceService.js';
-import { OPEN_SEASON_ANSWER_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
+import { OPEN_SEASON_ANSWER_SQL, DISPLAYED_VALUES_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
 import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
 import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
@@ -448,11 +448,23 @@ for (const pid of new Set([...idByName.values()].filter((v): v is string => Bool
   for (const r of rows) existing.set(`${pid} ${r.topic_id}`, Number(r.value));
 }
 
+// What voters see now (ruling 2026-09-24) — one batched query for every resolved politician.
+const displayed = new Map<string, { value: number; season: number }>();
+{
+  const pids = [...new Set([...idByName.values()].filter((v): v is string => Boolean(v)))];
+  if (pids.length) {
+    const { rows } = await pool.query<{ politician_id: string; topic_id: string; value: string; season_number: number }>(
+      DISPLAYED_VALUES_SQL, [pids]);
+    for (const r of rows) displayed.set(`${r.politician_id} ${r.topic_id}`, { value: Number(r.value), season: r.season_number });
+  }
+}
+
 type Decided = { row: VerifiedRow; pid: string | null; tid: string | null; decision: Decision };
 const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
   const pid = idByName.get(row.stance.full_name) ?? null;
   const tid = topicIdByKey.get(normTopic(row.stance.topic_key)) ?? null;
   const ex = pid && tid ? existing.get(`${pid} ${tid}`) : undefined;
+  const shown = pid && tid ? displayed.get(`${pid} ${tid}`) : undefined;
   const decision = decidePublish({
     proposedValue: row.stance.value as number,
     verifiedSourceCount: row.verifiedSources.length,
@@ -460,6 +472,7 @@ const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
     gateFindings: gateByKey.get(stanceKey(row.stance.full_name, row.stance.topic_key)) ?? [],
     politicianResolved: Boolean(pid),
     existingOpenSeasonValue: ex === undefined ? null : ex,
+    displayedValue: shown === undefined ? null : shown.value,
     autoPushEnabled: AUTO_PUSH,
   });
   return { row, pid, tid, decision };
@@ -480,6 +493,7 @@ const notInAdminQueue = queued.filter((d) => !d.pid);
 writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) => ({
   full_name: d.row.stance.full_name, topic_key: d.row.stance.topic_key, value: d.row.stance.value,
   action: d.decision.action, reasons: reasonsOf(d),
+  displayed_value: (d.pid && d.tid ? displayed.get(`${d.pid} ${d.tid}`) : undefined) ?? null,
   verified_sources: d.row.verifiedSources.map((s) => s.url), failed_urls: failedUrls(d.row),
   // Only on rows that go to inform.stance_research_review: true = a `pending` row the admin
   // review queue lists; false = saved as unresolved_politician, which that queue does not list.

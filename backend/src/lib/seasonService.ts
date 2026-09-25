@@ -484,6 +484,26 @@ export async function assertWritten(rowCount: number, topicId: string): Promise<
 }
 
 /**
+ * WHAT VOTERS SEE NOW, batched: for each (politician, topic) pair of these politicians, the newest
+ * PUBLISHED season's answer — restricted to topics the OPEN season asks, because a topic it does
+ * not ask is not on the voter compass at all. The same resolution as newestAnswerLateral plus the
+ * review page's open_pin check (researchEvidenceService, "Voters see now", N1). A 0 comes back as 0.
+ *
+ * Param order: $1 politician_ids (uuid[]). One row per pair at most (DISTINCT ON).
+ */
+export const DISPLAYED_VALUES_SQL = `
+  -- @zero-scope: counts-blanks — a 0 is a blank voters see; replacing it is a change to what they see.
+  SELECT DISTINCT ON (a.politician_id, a.topic_id)
+         a.politician_id::text AS politician_id, a.topic_id::text AS topic_id, a.value, s.number AS season_number
+    FROM inform.politician_answers a
+    JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+   WHERE a.politician_id = ANY($1::uuid[])
+     AND EXISTS (SELECT 1 FROM inform.season_questions oq
+                   JOIN inform.seasons os ON os.id = oq.season_id AND os.status = 'open'
+                  WHERE oq.topic_id = a.topic_id)
+   ORDER BY a.politician_id, a.topic_id, s.number DESC`;
+
+/**
  * The read shape, as a SQL fragment: newest answered season for one
  * politician/topic pair, as a LATERAL subquery.
  *
