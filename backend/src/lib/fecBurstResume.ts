@@ -46,6 +46,34 @@ export const BURST_WINDOW_START_SQL = `
 `;
 
 /**
+ * Order a FEC walk so sources ingested before run FIRST and first-time backfills run LAST.
+ *
+ * WHY. An incremental source takes ~1.6s; a source that has never been ingested pulls its
+ * whole contribution history and took ~45s on 2026-09-25, all of it spent waiting on the
+ * shared ~1,000 req/hr FEC key. That day 959 of 1,631 confirmed sources were new (the
+ * 09-24 auto-match confirmed 886 at once), the unordered walk interleaved them, and the
+ * burst was still running at 12:07 against Render's 12-hour cron ceiling. Walking the
+ * known sources first means a run cut short by that ceiling (or a deploy, or a crash)
+ * drops only backfills, which have no data to go stale yet — never the daily refresh of
+ * sources voters can already see. The next burst, or the resume pass, picks the rest up.
+ *
+ * "Ingested before" means a terminal success at ANY time, not just in this burst window,
+ * so the resume pass keeps the same order as the burst it is finishing.
+ *
+ * Expects the politician_sources table aliased as `ps`. `false` sorts before `true`.
+ */
+export const FEC_INCREMENTAL_FIRST_ORDER_SQL = `
+  NOT EXISTS (
+    SELECT 1
+      FROM transparent_motivations.ingestion_runs prior
+     WHERE prior.politician_source_id = ps.id
+       AND prior.adapter_name = 'fec'
+       AND prior.status IN ('completed', 'completed_with_warning')
+  ),
+  ps.id
+`;
+
+/**
  * Confirmed FEC sources with NO terminal success inside the current burst window.
  *
  * 🔴 Only 'completed' and 'completed_with_warning' count as done. A 'running' row is
@@ -66,7 +94,7 @@ export const pendingFecSourcesSql = `
               AND r.status IN ('completed', 'completed_with_warning')
               AND r.started_at >= ${BURST_WINDOW_START_SQL}
          )
-   ORDER BY ps.id
+   ORDER BY ${FEC_INCREMENTAL_FIRST_ORDER_SQL}
 `;
 
 export interface ResumeResult {
