@@ -3,7 +3,8 @@
  *
  * Pipeline: parsed CSVs → fetch each source URL → for each snippet, check it
  * appears verbatim on the page (after normalization) and the politician's
- * name appears within 500 characters of the match. No LLM involved.
+ * name appears within 500 characters of the match — or, on a multi-candidate questionnaire page,
+ * that the match sits in the politician's own section (checkSectionAttribution). No LLM involved.
  *
  * See docs/superpowers/specs/2026-04-30-stance-research-verification-design.md
  */
@@ -77,8 +78,13 @@ export interface MatchOptions {
   minCoverage?: number;
 }
 
+export type AttributionRule = 'proximity' | 'section';
+
 export type SnippetVerdict =
-  | { verdict: 'verified'; matchOffset: number }
+  // `rule` names the attribution rule that tied the snippet to the politician: `proximity` (name
+  // within NAME_PROXIMITY_CHARS) or `section` (checkSectionAttribution). Absent on a bare
+  // matchSnippet result, which says only that the text is on the page.
+  | { verdict: 'verified'; matchOffset: number; rule?: AttributionRule }
   | { verdict: 'snippet_not_found' }
   | { verdict: 'snippet_too_short' }
   | { verdict: 'name_not_present' }
@@ -273,14 +279,14 @@ export function checkNameProximity(args: {
 
   // Full name in window → verified.
   if (window.includes(fullNameLower)) {
-    return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+    return { verdict: 'verified', matchOffset: matchOffsetInNormalized, rule: 'proximity' };
   }
 
   // Last name in window?
   if (window.includes(lastNameLower)) {
     const isCommon = COMMON_LAST_NAMES.has(lastNameLower);
     if (!isCommon) {
-      return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+      return { verdict: 'verified', matchOffset: matchOffsetInNormalized, rule: 'proximity' };
     }
     // Common last name — require title qualifier within 30 chars before each
     // occurrence of the last name in the window.
@@ -288,13 +294,153 @@ export function checkNameProximity(args: {
     while (idx !== -1) {
       const lookbehind = window.slice(Math.max(0, idx - 30), idx);
       if (TITLE_PATTERN.test(lookbehind)) {
-        return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+        return { verdict: 'verified', matchOffset: matchOffsetInNormalized, rule: 'proximity' };
       }
       idx = window.indexOf(lastNameLower, idx + 1);
     }
   }
 
   return { verdict: 'name_not_present' };
+}
+
+// ---------------------------------------------------------------- section attribution
+/**
+ * SECTION ATTRIBUTION (operator ruling 2026-09-24).
+ *
+ * A multi-candidate questionnaire page names each candidate ONCE, as a section heading
+ * ("AShley Pirani, District 3"), then prints that candidate's answers — often thousands of
+ * characters below the heading, far outside NAME_PROXIMITY_CHARS. A first-person questionnaire
+ * answer is valid evidence (program spec A3), so the proximity rule alone rejects the page shape
+ * that carries the best evidence. This rule is the second way a snippet can be attributed; the
+ * proximity rule is unchanged and is tried first.
+ *
+ * A snippet (its publishable span, [spanStart, spanEnd) in the normalized page) is attributed to
+ * politician P by section when:
+ *
+ *   1. P's name occurs on the page BEFORE the span. P's name is the full name, or first + last
+ *      name with at most one middle token between them, matched on the normalized page (so
+ *      case-insensitive: "AShley Pirani" matches) and on whole words. Last name alone never counts.
+ *      The NEAREST such occurrence is P's heading.
+ *   2. NO SECTION BOUNDARY lies between the end of that occurrence and the END of the span. A
+ *      boundary inside the span would mean the span runs into the next candidate's section.
+ *
+ * A SECTION BOUNDARY is any of:
+ *
+ *   a. a name of any OTHER politician in the batch roster (same name forms as rule 1);
+ *   b. a name from `knownNames` other than P's — the caller passes every essentials politician,
+ *      so a candidate who is on the page but not in the batch (Jon Hays, Daniel O'Neill, ...) is
+ *      still a boundary. Matched as a word pair, or a pair around one middle token
+ *      ("tabetha l crouch"), keyed first + last;
+ *   c. a HEADING MARKER — a seat label after a comma, dash, colon or parenthesis:
+ *      ", district 3", " - ward 2", " (seat a)", ", at-large". This needs no name list at all, so a
+ *      heading for a person who is in no list ("Jon Hays, District 3") is still a boundary. The one
+ *      marker that is NOT a boundary is P's own heading marker, which starts where P's
+ *      occurrence ends.
+ *
+ * Every rule errs toward REJECTING. A spurious boundary (an answer that happens to say "my
+ * district, district 3", or a politician's name mentioned inside P's own section) costs a
+ * verified snippet; a missed boundary would attribute another candidate's answer to P, which is
+ * the failure this function exists to prevent. For the same reason, if another roster member's
+ * name matches the same text as P's name (two people with one first + last name), the section rule
+ * is not used for P at all.
+ *
+ * Residual risk, stated so the reviewer can price it: if P's name is MENTIONED inside another
+ * candidate's section with no heading marker or known name after it, the text that follows reads
+ * as P's section. The verdict carries `rule: 'section'` so the reviewer knows to check it.
+ */
+export const HEADING_MARKER = /(?:[,:(]|\s-)\s*(?:(?:district|ward|seat|precinct|zone|position|subdistrict)\s+(?:no\.?\s*|#\s*)?(?:\d+|[a-z])(?![a-z0-9])|at[- ]large(?![a-z0-9]))/g;
+
+const escapeRegex = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const NAME_SUFFIXES = new Set(['jr', 'sr', 'ii', 'iii', 'iv', 'v']);
+
+/** Name tokens of a normalized name, with a trailing Jr./Sr./II suffix dropped. */
+const stripWord = (w: string): string => w.replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, '');
+
+function nameTokens(name: string): string[] {
+  const toks = normalizeText(name).replace(/,/g, ' ').split(' ').map(stripWord).filter(Boolean);
+  while (toks.length > 2 && NAME_SUFFIXES.has(toks[toks.length - 1])) toks.pop();
+  return toks;
+}
+
+/** "first last" key used for knownNames. Exported so the caller builds the set the same way. */
+export function nameKey(name: string): string | null {
+  const t = nameTokens(name);
+  return t.length >= 2 ? `${t[0]} ${t[t.length - 1]}` : null;
+}
+
+/** Whole-word regex for a person's name: the full name, or first + last with ≤1 middle token. */
+function personNamePattern(fullName: string): RegExp | null {
+  const t = nameTokens(fullName);
+  if (t.length < 2) return null;
+  const full = t.map(escapeRegex).join(' ');
+  const firstLast = `${escapeRegex(t[0])}(?: \\S+)? ${escapeRegex(t[t.length - 1])}`;
+  return new RegExp(`(?<![a-z0-9'])(?:${full}|${firstLast})(?![a-z0-9'])`, 'g');
+}
+
+interface Occ { start: number; end: number }
+const occurrences = (re: RegExp, page: string): Occ[] =>
+  [...page.matchAll(re)].map((m) => ({ start: m.index!, end: m.index! + m[0].length }));
+
+/** Occurrences on the page of any known name (by first+last key), with that key. */
+function knownNameOccurrences(page: string, knownNames: ReadonlySet<string>): (Occ & { key: string })[] {
+  const out: (Occ & { key: string })[] = [];
+  const words: Occ[] = [];
+  for (const m of page.matchAll(/[^ ]+/g)) words.push({ start: m.index!, end: m.index! + m[0].length });
+  // Word text with punctuation stripped at the edges ("crouch," → "crouch").
+  const w = words.map((o) => stripWord(page.slice(o.start, o.end)));
+  for (let i = 0; i < words.length; i++) {
+    for (const j of [i + 1, i + 2]) {
+      if (j >= words.length || !w[i] || !w[j]) continue;
+      const key = `${w[i]} ${w[j]}`;
+      if (knownNames.has(key)) out.push({ start: words[i].start, end: words[j].end, key });
+    }
+  }
+  return out;
+}
+
+export function checkSectionAttribution(args: {
+  fullName: string;
+  /** Every politician in the batch (their canonical full names), P included or not. */
+  roster: readonly string[];
+  /** first+last keys (nameKey) of every known politician — boundaries even if not in the batch. */
+  knownNames?: ReadonlySet<string>;
+  pageText: string;
+  /** The span's start and end in the normalized page. */
+  spanStart: number;
+  spanEnd: number;
+}): SnippetVerdict {
+  const { fullName, roster, knownNames, pageText, spanStart, spanEnd } = args;
+  const page = normalizeText(pageText);
+  const selfRe = personNamePattern(fullName);
+  const selfKey = nameKey(fullName);
+  if (!selfRe || !selfKey || spanStart < 0) return { verdict: 'name_not_present' };
+
+  const own = occurrences(selfRe, page).filter((o) => o.start < spanStart);
+  if (own.length === 0) return { verdict: 'name_not_present' };
+  const heading = own[own.length - 1];
+
+  const selfNorm = normalizeText(fullName);
+  const others = roster.filter((r) => normalizeText(r) !== selfNorm);
+  const boundaries: number[] = [];
+  for (const other of others) {
+    const re = personNamePattern(other);
+    if (!re) continue;
+    const occ = occurrences(re, page);
+    // Ambiguous: another roster member's name matches P's own heading text.
+    if (occ.some((o) => o.start < heading.end && o.end > heading.start)) return { verdict: 'name_not_present' };
+    for (const o of occ) boundaries.push(o.start);
+  }
+  if (knownNames) {
+    for (const o of knownNameOccurrences(page, knownNames)) if (o.key !== selfKey) boundaries.push(o.start);
+  }
+  for (const m of page.matchAll(HEADING_MARKER)) {
+    // P's own heading marker starts where P's name ends ("ashley pirani, district 3"), or one
+    // space after it ("ashley pirani (district 3)").
+    if (m.index! >= heading.end && m.index! <= heading.end + 1) continue;
+    boundaries.push(m.index!);
+  }
+  if (boundaries.some((b) => b >= heading.end && b < spanEnd)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: spanStart, rule: 'section' };
 }
 
 export type PageFetchResult =
@@ -408,8 +554,17 @@ export async function verifyEvidence(args: {
   politicianNames: PoliticianNames;
   /** Snippet match tuning. Defaults: minWords 25, minCoverage 0.6. */
   match?: MatchOptions;
+  /**
+   * nameKey() of every known politician (the caller loads essentials.politicians). Section
+   * boundaries for checkSectionAttribution, so a candidate on the page who is not in this batch
+   * still ends the previous candidate's section. Optional: without it, the roster and heading
+   * markers are the only boundaries.
+   */
+  knownNames?: ReadonlySet<string>;
 }): Promise<VerifyResult> {
-  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match } = args;
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, knownNames } = args;
+  // The batch roster for section attribution: every politician in the batch, canonical names.
+  const roster = [...new Set(Object.values(politicianNames).map((n) => n.fullName))];
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
@@ -473,12 +628,19 @@ export async function verifyEvidence(args: {
             continue;
           }
           // Name proximity is measured from the SPAN — the text that will be published.
-          const proxVerdict = checkNameProximity({
+          let proxVerdict = checkNameProximity({
             fullName: names.fullName,
             lastName: names.lastName,
             pageText: fetched.text,
             matchOffsetInNormalized: span.offset,
           });
+          // Ruling 2026-09-24: a questionnaire answer far below its candidate's section heading.
+          if (proxVerdict.verdict === 'name_not_present') {
+            proxVerdict = checkSectionAttribution({
+              fullName: names.fullName, roster, knownNames, pageText: fetched.text,
+              spanStart: span.offset, spanEnd: span.offset + normalizeText(span.text).length,
+            });
+          }
           judged.push({
             snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict,
             ...(proxVerdict.verdict === 'verified' ? { matchedSpan: span.text } : {}),

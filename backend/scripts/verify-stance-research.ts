@@ -65,6 +65,7 @@ import {
   createPageFetcher,
   normTopic,
   stanceKey,
+  nameKey,
   type StanceRow,
   type EvidenceRow,
   type PoliticianNames,
@@ -428,6 +429,19 @@ if (duplicatePairs.length) {
 
 // ---------------------------------------------------------------- verify
 // Tiered fetch ladder (HTTP → Wayback). No LLM in the loop.
+// Section attribution (ruling 2026-09-24) treats every known politician's name as a section
+// boundary, so a candidate on a questionnaire page who is not in this batch still ends the
+// previous candidate's section. Read-only.
+// ⚠ Keyed from first_name + last_name, NOT full_name: ~76k rows have an empty first_name and a
+// full_name that is a campaign committee ("KARAS, COMMITTEE TO ELECT SAM P."). Their word pairs
+// ("committee chair", "education the") match ordinary prose, and made every answer on a
+// questionnaire page fail (measured 2026-09-24 on the ICPE page).
+const { rows: knownNameRows } = await pool.query<{ first_name: string; last_name: string }>(
+  `SELECT first_name, last_name FROM essentials.politicians
+    WHERE btrim(coalesce(first_name, '')) <> '' AND btrim(coalesce(last_name, '')) <> ''
+      AND first_name !~ '[,;0-9]' AND last_name !~ '[,;0-9]'`);
+const knownNames = new Set(knownNameRows.map((r) => nameKey(`${r.first_name} ${r.last_name}`))
+  .filter((k): k is string => Boolean(k)));
 const fetchSession = createVerificationFetchSession();
 const fetcher = createPageFetcher(fetchSession.fetch);
 const { pushable, needsReResearch } = await verifyEvidence({
@@ -436,10 +450,13 @@ const { pushable, needsReResearch } = await verifyEvidence({
   fetcher,
   threshold: THRESHOLD,
   politicianNames,
+  knownNames,
 });
 await fetchSession.close();
 
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
+const sectionVerified = (row: VerifiedRow) => row.verifiedSources.some((s) => s.snippets
+  .some((x) => x.verdict.verdict === 'verified' && x.verdict.rule === 'section'));
 
 // Existing OPEN-season values — the thing a write would replace.
 const existing = new Map<string, number>();
@@ -495,6 +512,10 @@ writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) =
   action: d.decision.action, reasons: reasonsOf(d),
   displayed_value: (d.pid && d.tid ? displayed.get(`${d.pid} ${d.tid}`) : undefined) ?? null,
   verified_sources: d.row.verifiedSources.map((s) => s.url), failed_urls: failedUrls(d.row),
+  // Which attribution rule verified each source's snippets: `proximity` (name within 500 chars)
+  // or `section` (the snippet sits under this person's section heading — ruling 2026-09-24).
+  verified_by: d.row.verifiedSources.map((s) => ({ url: s.url, rules: [...new Set(s.snippets
+    .flatMap((x) => (x.verdict.verdict === 'verified' && x.verdict.rule ? [x.verdict.rule] : [])))] })),
   // Only on rows that go to inform.stance_research_review: true = a `pending` row the admin
   // review queue lists; false = saved as unresolved_politician, which that queue does not list.
   ...(queuedSet.has(d) ? { admin_queue_visible: Boolean(d.pid) } : {}),
@@ -515,6 +536,7 @@ if (bucket('out-of-scope').length) {
 for (const d of decided) {
   const s = d.row.stance;
   console.log(`  ${d.decision.action.toUpperCase().padEnd(11)} ${s.full_name}\t${s.topic_key}\tvalue=${s.value}\tverified=${d.row.verifiedSources.length}`
+    + (sectionVerified(d.row) ? '\tvia=section' : '')
     + (reasonsOf(d).length ? `\t[${reasonsOf(d).join(', ')}]` : '')
     + (d.decision.action === 're-research' ? `\texclude-urls=${failedUrls(d.row).join(',') || '(none)'}` : ''));
 }

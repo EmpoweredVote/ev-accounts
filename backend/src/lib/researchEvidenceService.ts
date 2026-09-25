@@ -96,6 +96,8 @@ function snippetsForJsonb(verifiedSources: VerifiedRow['verifiedSources'], faile
       verdict: snip.verdict.verdict,
       // I6: stored beside the full snippet; approval publishes this, never `snippet`.
       matched_span: snip.verdict.verdict === 'verified' ? publishableSpan(snip) ?? undefined : undefined,
+      // proximity | section — which rule tied the snippet to the politician (ruling 2026-09-24).
+      rule: snip.verdict.verdict === 'verified' ? snip.verdict.rule : undefined,
       reason:
         snip.verdict.verdict === 'url_broken' || snip.verdict.verdict === 'robots_disallowed'
           ? snip.verdict.reason

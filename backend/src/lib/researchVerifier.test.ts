@@ -136,7 +136,7 @@ describe('checkNameProximity', () => {
       pageText: page,
       matchOffsetInNormalized: normalizeText(page).indexOf(normalizeText(longSnippet)),
     });
-    expect(v).toEqual({ verdict: 'verified', matchOffset: expect.any(Number) });
+    expect(v).toEqual({ verdict: 'verified', matchOffset: expect.any(Number), rule: 'proximity' });
   });
 
   it('verified when last name appears within 500 chars before the snippet', () => {
@@ -446,5 +446,121 @@ describe('verifyEvidence — I6 published span and I1 cited URLs', () => {
     expect(result.pushable).toHaveLength(0); // only 1 of the 2 needed sources counts
     const failed = result.needsReResearch[0].failedSources;
     expect(failed.map((f) => [f.url, f.snippets[0].verdict.verdict])).toEqual([['https://www.vote411.org/x', 'url_not_cited']]);
+  });
+});
+
+import { checkSectionAttribution, nameKey } from './researchVerifier.js';
+
+describe('section attribution (ruling 2026-09-24)', () => {
+  // An ICPE-shaped questionnaire page: each candidate named once, as a section heading, with
+  // answers thousands of characters below it.
+  const filler = (tag: string) => Array.from({ length: 40 }, (_, i) =>
+    `Question ${i + 1} for ${tag} asks about the public schools of the county and the answer runs long.`).join(' ');
+  const answer = 'Second, we must provide robust training to all teachers, administrators, and staff on equity. This must include training from vetted professionals who can also provide resources and mentoring for all as questions arise.';
+  const hawk = 'I believe the district should return to basics, cut the central office budget in half, and put every saved dollar into classroom teachers and reading instruction for the youngest students in our schools.';
+  const section = (heading: string, tag: string, body: string) => `${heading} 1. Describe your connections. ${filler(tag)} ${body} ${filler(`${tag}-tail`)}`;
+  const intro = 'MCCSC school board election 2022. Candidates are listed by district. Questions and responses are below.';
+
+  const roster = { 'Ashley Pirani': { fullName: 'Ashley Pirani', lastName: 'Pirani' },
+    'Jon Hays': { fullName: 'Jon Hays', lastName: 'Hays' }, 'Erin Wyatt': { fullName: 'Erin Wyatt', lastName: 'Wyatt' } };
+  // Both orders, so each negative case is refused by a BOUNDARY (the other candidate's section
+  // follows this one's) and not only by "this person's heading comes later".
+  const page = (piraniBody: string, haysBody: string, piraniFirst = false) => {
+    const hays = section('Jon Hays, District 3', 'two', haysBody);
+    const pirani = section('AShley Pirani, District 3', 'three', piraniBody);
+    return [intro, section('Erin B Wyatt, District 1', 'one', ''),
+      ...(piraniFirst ? [pirani, hays] : [hays, pirani]),
+      'Brandon M. Shurr, District 7 did not participate in survey.'].join(' ');
+  };
+  const url = 'https://www.icpe-monroecounty.org/x.html';
+  const run = (who: string, snippet: string, text: string) => verifyEvidence({
+    stanceRows: [{ full_name: who, topic_key: 'education-equity-programs', value: 2, reasoning: 'r', politician_id: '' }],
+    evidenceRows: [{ full_name: who, topic_key: 'education-equity-programs', source_url: url, snippet, snippet_index: 0 }],
+    fetcher: async () => ({ ok: true, text }), threshold: 1, politicianNames: roster,
+  });
+  const verdictOf = async (who: string, snippet: string, text: string) => {
+    const r = await run(who, snippet, text);
+    const row = r.pushable[0] ?? r.needsReResearch[0];
+    return [...row.verifiedSources, ...row.failedSources][0].snippets[0].verdict;
+  };
+
+  it('fixture sanity: the answer is far outside the 500-char proximity window', () => {
+    const n = normalizeText(page(answer, hawk));
+    expect(n.indexOf(normalizeText(answer)) - n.indexOf('ashley pirani')).toBeGreaterThan(NAME_PROXIMITY_CHARS * 4);
+  });
+
+  it.each([false, true])("a snippet in Pirani's section verifies for Pirani, by rule `section` (piraniFirst=%s)", async (pf) => {
+    expect(await verdictOf('Ashley Pirani', answer, page(answer, hawk, pf))).toEqual({ verdict: 'verified', matchOffset: expect.any(Number), rule: 'section' });
+  });
+
+  it.each([false, true])("the SAME text planted in Hays' section does NOT verify for Pirani (piraniFirst=%s)", async (pf) => {
+    expect((await verdictOf('Ashley Pirani', answer, page('', answer, pf))).verdict).toBe('name_not_present');
+  });
+
+  it.each([false, true])("a snippet in Pirani's section does not verify for Hays (piraniFirst=%s)", async (pf) => {
+    expect((await verdictOf('Jon Hays', answer, page(answer, hawk, pf))).verdict).toBe('name_not_present');
+    // …while Hays' own answer does.
+    expect(await verdictOf('Jon Hays', hawk, page(answer, hawk, pf))).toMatchObject({ verdict: 'verified', rule: 'section' });
+  });
+
+  it('a snippet before the first heading does not verify', async () => {
+    const text = `${intro} ${answer} ${filler('x')} ${page('', hawk)}`;
+    expect((await verdictOf('Ashley Pirani', answer, text)).verdict).toBe('name_not_present');
+  });
+
+  it('a non-roster heading between the heading and the snippet is a boundary (heading marker)', async () => {
+    const only = { 'Ashley Pirani': roster['Ashley Pirani'] }; // Hays is NOT in the batch
+    const text = [intro, section('AShley Pirani, District 3', 'three', ''), section('Jon Hays, District 3', 'two', answer)].join(' ');
+    const r = await verifyEvidence({
+      stanceRows: [{ full_name: 'Ashley Pirani', topic_key: 't', value: 2, reasoning: 'r', politician_id: '' }],
+      evidenceRows: [{ full_name: 'Ashley Pirani', topic_key: 't', source_url: url, snippet: answer, snippet_index: 0 }],
+      fetcher: async () => ({ ok: true, text }), threshold: 1, politicianNames: only,
+    });
+    expect(r.pushable).toHaveLength(0);
+    expect(r.needsReResearch[0].failedSources[0].snippets[0].verdict.verdict).toBe('name_not_present');
+  });
+
+  const spanOf = (text: string, snip: string) => {
+    const n = normalizeText(text);
+    const start = n.indexOf(normalizeText(snip));
+    return { spanStart: start, spanEnd: start + normalizeText(snip).length };
+  };
+
+  it('a known (non-batch) name with no heading marker is a boundary via knownNames', () => {
+    const text = `AShley Pirani answers. ${filler('p')} Jon Hays answers. ${filler('h')} ${answer}`;
+    const base = { fullName: 'Ashley Pirani', roster: ['Ashley Pirani'], pageText: text, ...spanOf(text, answer) };
+    expect(checkSectionAttribution(base).verdict).toBe('verified'); // no list: nothing ends her section
+    expect(checkSectionAttribution({ ...base, knownNames: new Set([nameKey('Jon Hays')!]) }).verdict).toBe('name_not_present');
+    // A known name with a middle initial on the page ("Tabetha L Crouch") is still a boundary.
+    const t2 = `AShley Pirani answers. ${filler('p')} Tabetha L Crouch answers. ${filler('h')} ${answer}`;
+    expect(checkSectionAttribution({ fullName: 'Ashley Pirani', roster: [], pageText: t2, ...spanOf(t2, answer),
+      knownNames: new Set([nameKey('Tabetha Crouch')!]) }).verdict).toBe('name_not_present');
+    // P's own name in knownNames is not a boundary.
+    expect(checkSectionAttribution({ ...base, knownNames: new Set([nameKey('Ashley Pirani')!]) }).verdict).toBe('verified');
+  });
+
+  it('last name alone is not a heading', () => {
+    const text = `Pirani, District 3. ${filler('p')} ${answer}`;
+    expect(checkSectionAttribution({ fullName: 'Ashley Pirani', roster: ['Ashley Pirani'], pageText: text, ...spanOf(text, answer) }).verdict)
+      .toBe('name_not_present');
+  });
+
+  it('a span that runs into the next heading does not verify', () => {
+    const tail = 'Jon Hays, District 3 1. Describe your connections to public schools here in the county today.';
+    const text = `AShley Pirani, District 3 ${filler('p')} ${answer} ${tail}`;
+    const snip = `${answer} ${tail}`;
+    expect(checkSectionAttribution({ fullName: 'Ashley Pirani', roster: ['Ashley Pirani'], pageText: text, ...spanOf(text, snip) }).verdict)
+      .toBe('name_not_present');
+  });
+
+  it('two roster members sharing a first + last name: the section rule is not used', () => {
+    const text = `Ashley Pirani, District 3 ${filler('p')} ${answer}`;
+    expect(checkSectionAttribution({ fullName: 'Ashley Pirani', roster: ['Ashley Pirani', 'Ashley M Pirani'], pageText: text, ...spanOf(text, answer) }).verdict)
+      .toBe('name_not_present');
+  });
+
+  it('a proximity match still reports rule `proximity`', async () => {
+    const text = `AShley Pirani, District 3: ${answer}`;
+    expect(await verdictOf('Ashley Pirani', answer, text)).toEqual({ verdict: 'verified', matchOffset: expect.any(Number), rule: 'proximity' });
   });
 });
