@@ -21,6 +21,8 @@ BEGIN;
 --
 -- 🔴 Duplicate-person merge migrations must re-point politician_id on stance_coder_labels and
 --    stance_gold_labels exactly as they do on stance_research_review.
+-- Office retirements and review-row deletes null the gold row's office_id/review_id (the decision
+-- itself — chair, blind answer — stays locked).
 -- Purely additive. RLS default-deny (CTO decision 0015): the API reads through the pool.
 -- =============================================================================
 
@@ -34,15 +36,16 @@ CREATE TABLE IF NOT EXISTS inform.source_snapshots (
   page_sha256     text NOT NULL CHECK (page_sha256 ~ '^[0-9a-f]{64}$'),
   snapshot_text   text NOT NULL CHECK (btrim(snapshot_text) <> ''),
   excerpt_only    boolean NOT NULL,
-  UNIQUE (batch_id, url, page_sha256)
+  UNIQUE (batch_id, url, page_sha256),
+  CHECK (excerpt_only = (source_kind IN ('news', 'pointer')))
 );
 
 CREATE TABLE IF NOT EXISTS inform.stance_coder_labels (
   id                  uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   batch_id            text NOT NULL,
-  review_id           uuid REFERENCES inform.stance_research_review(id),
+  review_id           uuid REFERENCES inform.stance_research_review(id) ON DELETE SET NULL,
   politician_id       uuid NOT NULL REFERENCES essentials.politicians(id),
-  office_id           uuid NOT NULL REFERENCES essentials.offices(id),
+  office_id           uuid NOT NULL REFERENCES essentials.offices(id) ON DELETE CASCADE,
   topic_id            uuid NOT NULL REFERENCES inform.compass_topics(id),
   season_id           uuid NOT NULL REFERENCES inform.seasons(id),
   served_revision_id  uuid NOT NULL REFERENCES inform.compass_topic_revisions(id),
@@ -67,9 +70,9 @@ CREATE TABLE IF NOT EXISTS inform.stance_coder_labels (
 
 CREATE TABLE IF NOT EXISTS inform.stance_gold_labels (
   id                  uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  review_id           uuid NOT NULL REFERENCES inform.stance_research_review(id),
+  review_id           uuid REFERENCES inform.stance_research_review(id) ON DELETE SET NULL,
   politician_id       uuid NOT NULL REFERENCES essentials.politicians(id),
-  office_id           uuid REFERENCES essentials.offices(id),
+  office_id           uuid REFERENCES essentials.offices(id) ON DELETE SET NULL,
   topic_id            uuid NOT NULL REFERENCES inform.compass_topics(id),
   season_id           uuid NOT NULL REFERENCES inform.seasons(id),
   served_revision_id  uuid NOT NULL REFERENCES inform.compass_topic_revisions(id),
@@ -115,7 +118,7 @@ ALTER TABLE inform.stance_research_review
   ADD COLUMN IF NOT EXISTS codebook_version text,
   ADD COLUMN IF NOT EXISTS unanimous        boolean,
   ADD COLUMN IF NOT EXISTS consensus_value  smallint,
-  ADD COLUMN IF NOT EXISTS office_id        uuid REFERENCES essentials.offices(id);
+  ADD COLUMN IF NOT EXISTS office_id        uuid REFERENCES essentials.offices(id) ON DELETE SET NULL;
 
 DO $$
 BEGIN
@@ -137,8 +140,9 @@ BEGIN
   IF TG_OP = 'DELETE' THEN
     RAISE EXCEPTION 'stance_gold_labels is append-only: write a superseding row instead of deleting %', OLD.id;
   END IF;
-  IF (to_jsonb(NEW) - 'excluded_from_cert' - 'politician_id') IS DISTINCT FROM (to_jsonb(OLD) - 'excluded_from_cert' - 'politician_id') THEN
-    RAISE EXCEPTION 'stance_gold_labels is append-only: only excluded_from_cert and politician_id may change (row %)', OLD.id;
+  IF (to_jsonb(NEW) - 'excluded_from_cert' - 'politician_id' - 'office_id' - 'review_id')
+     IS DISTINCT FROM (to_jsonb(OLD) - 'excluded_from_cert' - 'politician_id' - 'office_id' - 'review_id') THEN
+    RAISE EXCEPTION 'stance_gold_labels is append-only: only excluded_from_cert, politician_id, office_id and review_id may change (row %)', OLD.id;
   END IF;
   RETURN NEW;
 END $$;
@@ -185,8 +189,22 @@ BEGIN
      AND column_name IN ('review_mode', 'codebook_version', 'unanimous', 'consensus_value', 'office_id');
   IF v <> 5 THEN RAISE EXCEPTION 'CA_0292: expected 5 new review columns, found %', v; END IF;
   SELECT count(*) INTO v FROM pg_trigger
-   WHERE tgname IN ('gold_labels_append_only', 'certifications_immutable') AND NOT tgisinternal;
+   WHERE tgname IN ('gold_labels_append_only', 'certifications_immutable') AND NOT tgisinternal
+     AND tgrelid IN ('inform.stance_gold_labels'::regclass, 'inform.reliability_certifications'::regclass);
   IF v <> 2 THEN RAISE EXCEPTION 'CA_0292: expected 2 append-only triggers, found %', v; END IF;
+
+  IF has_table_privilege('anon', 'inform.source_snapshots', 'SELECT') THEN
+    RAISE EXCEPTION 'CA_0292: REVOKE did not take — anon can SELECT inform.source_snapshots';
+  END IF;
+  IF has_table_privilege('anon', 'inform.stance_coder_labels', 'SELECT') THEN
+    RAISE EXCEPTION 'CA_0292: REVOKE did not take — anon can SELECT inform.stance_coder_labels';
+  END IF;
+  IF has_table_privilege('anon', 'inform.stance_gold_labels', 'SELECT') THEN
+    RAISE EXCEPTION 'CA_0292: REVOKE did not take — anon can SELECT inform.stance_gold_labels';
+  END IF;
+  IF has_table_privilege('anon', 'inform.reliability_certifications', 'SELECT') THEN
+    RAISE EXCEPTION 'CA_0292: REVOKE did not take — anon can SELECT inform.reliability_certifications';
+  END IF;
 END $$;
 
 COMMIT;
