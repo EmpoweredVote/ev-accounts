@@ -45,4 +45,13 @@ describe('confirmRow (spec §1.6)', () => {
   it('flags statement with imprecise seated term start (dates-imprecise for statement)', () =>
     expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ v3_class: 'statement-answer', date: '2022-01-01', provision_quote: null })] }))
       .toContain('dates-imprecise'));
+  it('passes a long snapshot with name only near the end (offset scan coverage)', () => {
+    const longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '.repeat(11) + 'Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.';
+    expect(longText.length).toBeGreaterThan(650);
+    expect(run({ snapshotText: new Map([['s1', longText]]) })).toEqual([]);
+  });
+  it('flags undated passage with no name (both undated-evidence and person-not-in-snapshot)', () =>
+    expect(run({ snapshotText: new Map([['s1', 'Jane Roe voted for the bill.']]), restsOnPassages: [P({ date: null, provision_quote: null })] }))
+      .toContain('undated-evidence')
+      .and.toContain('person-not-in-snapshot'));
 });

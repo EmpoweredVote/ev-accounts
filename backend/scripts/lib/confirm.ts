@@ -56,8 +56,6 @@ export function confirmRow(i: {
   const cycleStart = earliestStatementDate(i.seat);
   const lastName = extractLastName(i.seat.full_name);
   for (const p of i.restsOnPassages) {
-    if (!p.date) { out.add('undated-evidence'); continue; }
-    const d = floorDate(p.date);
     const snapshotText = i.snapshotText.get(p.snapshot_id) ?? '';
     const normalizedText = normalizeText(snapshotText);
 
@@ -69,8 +67,8 @@ export function confirmRow(i: {
       const verdict = checkNameProximity({ fullName: i.seat.full_name, lastName, pageText: snapshotText, matchOffsetInNormalized: offset });
       personVerified = verdict.verdict === 'verified';
     } else {
-      // Scan offsets 0, 1000, 2000, ... up to normalized text length.
-      for (let offset = 0; offset < normalizedText.length; offset += 1000) {
+      // Scan offsets 0, 500, 1000, ... to ensure full coverage (windows overlap and tile).
+      for (let offset = 0; offset < normalizedText.length; offset += 500) {
         const verdict = checkNameProximity({ fullName: i.seat.full_name, lastName, pageText: snapshotText, matchOffsetInNormalized: offset });
         if (verdict.verdict === 'verified') {
           personVerified = true;
@@ -79,6 +77,10 @@ export function confirmRow(i: {
       }
     }
     if (!personVerified) out.add('person-not-in-snapshot');
+
+    // Date checks (skip if no date, but person/identity checks already completed).
+    if (!p.date) { out.add('undated-evidence'); continue; }
+    const d = floorDate(p.date);
 
     if (p.v3_class === 'record') {
       if (i.seat.mode === 'candidate') {
