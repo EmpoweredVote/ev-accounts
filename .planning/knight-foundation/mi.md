@@ -770,16 +770,143 @@ that must hold at runtime: the authority is reachable bare and arrives as one wh
 
 ---
 
-## ▶ Next: MI-5 — stage 5 assets
+## MI-5 — stage 5 assets (APPLIED 2026-09-25)
 
-Portraits for all **21** Wayne County officials and all **18** Detroit ones — **and the 148
-legislators**, which is GA-6's lesson: count the legislature's portraits *inside* stage 5, not
-beside it. Michigan's seated total is **187**.
+**191 of 191 Michigan officeholders render from an image we host.** 184 imported this wave — 182
+new plus 2 replaced — over 7 that were already correct. No migration: portraits are an importer
+job, not a schema change.
 
-⚠ **Detroit's banner collides with `states/MI.jpg`**, which *is* Detroit's skyline. The Miami move —
-version the state banner, never overwrite — is available.
+| cohort | seated | sourced | source |
+| --- | --- | --- | --- |
+| Michigan House | 110 | 110 | legislature.mi.gov |
+| Michigan Senate | 38 | 38 | legislature.mi.gov |
+| Statewide (Gov, Lt Gov, AG, SoS) | 4 | already held | — |
+| Detroit council / clerk / mayor | 11 | 10 | detroitmi.gov |
+| Detroit Board of Police Commissioners | 7 | 7 | detroitmi.gov |
+| Wayne County Commission | 15 | 15 | waynecountymi.gov |
+| Wayne County countywide | 6 | 6 | waynecountymi.gov + sheriffconnect.com |
 
-Carried from earlier waves:
-- 🔴 **`sldu` must be re-loaded to Crane A1 after the 2026 election** (members seated 2027-01-01).
-  The loader's Senate anchors will abort a re-run until they are updated, which is deliberate.
-- 🔴 **17 undated Detroit arrivals** and the **15 Community Advisory Council seats**.
+⚠ **THE SCOPE WAS 191, NOT THE 187 THE TRACKER IMPLIED.** The State of Michigan government holds
+**152** seats, not 148: the four statewide executives were seated long before MI-2 and sit outside
+the legislature's count. GA-6's rule is "count the legislature inside stage 5"; Michigan adds the
+corollary that the statewide row is inside it too.
+
+### 🔴🔴 A placeholder is portrait-shaped, and so is a departed member's card
+
+`legislature.mi.gov/Legislature/Legislators` carries all 148 portraits in one document — the
+Legislative Service Bureau's list, which is neither caucus list and is the only source that
+includes Karen Whitsett. Its filenames are **positional**: `S18.webp` is a seat, not a person.
+Three things a positional sweep would have got wrong:
+
+- **`S0.webp`, alt "Placeholder"** — a grey silhouette. A glob over `/Images/LEG2025/*.webp` would
+  have imported it as somebody's face. It is attached to the card of **Kristen McDonald Rivet**,
+  who resigned 2025-01-03 and whose card the Legislature still renders.
+- **`S35.webp` does not exist.** The sitting senator for SD-35 is **`S35B.webp`, Chedrick Greene**,
+  who won the 2026-05-05 special election. A URL built as `S{district}.webp` gets a 404 for that
+  seat, or worse, a stale cached file.
+- 149 cards for 148 seats, and the extra one is the departed member.
+
+🟢 **The binding that works is the `alt` attribute, and the discriminator that works is the card's
+own district link** — the placeholder has none. Cross-checked against production by
+(chamber, district): **147 of 148 names match exactly**. The single disagreement is HD-7
+"Tonya Phillips" against our "Tonya Myers Phillips", which is MI-2's documented finding: the
+Legislature omits "Myers" and her own page's `<h1>` carries it.
+⚠ **The second disagreement was MY DECODER.** `Amos O&#x27;Neal` reported as a mismatch because the
+checker decoded `&#39;` but not the hex form. MI-2's HTML-encoding trap, this time in the tool that
+was supposed to catch it. Fixed to decode both; a decoder that silently fails invents disagreements
+and can hide a real one behind them.
+
+### 🔴 Three hosts, three different refusals, and none of them is "a browser UA works"
+
+| host | what works | what fails |
+| --- | --- | --- |
+| `legislature.mi.gov` | Node with the MI-2 DigiCert intermediates | **Python `requests` fails** `CERTIFICATE_VERIFY_FAILED` |
+| `waynecountymi.gov` | bare `curl`, and Node fetch with a UA | `curl -A '<Chrome UA>'` → **403**, full Chrome headers → **403** |
+| `detroitmi.gov` | only inside a Playwright session | bare **403**, full Chrome impersonation **403** (Cloudflare JS challenge) |
+
+🔴 **THE RENDERER AND THE IMPORTER BOTH USE `requests` WITH A BROWSER UA, SO TWO OF THE THREE HOSTS
+ARE UNREACHABLE TO THEM.** Left alone that produces 169 rows of "no candidate found" — and a
+connection failure is not an absence. All three cohorts therefore ship through **`bytes_from`**,
+the renderer's existing escape hatch, so the operator approves exactly the bytes that are imported.
+🟢 **Detroit's images came out through the browser as downloads** — `fetch` + an `<a download>`
+click inside the cleared session — which avoids shuttling a megabyte of base64 through the tool.
+
+### 🔴 The resize is in the URL, and stripping it is not a rule
+
+Three shapes in one wave:
+- **Drupal image styles** (Detroit): `/styles/default/public/…?itok=…` → the original at the same
+  path without the style segment. Same 362×362, just less compressed. Took the original.
+- **WordPress derivatives** (Sheriff): `WCS-Raphael-Washington-**263x300**.jpeg` → the unsuffixed
+  original is **350×400**, a real gain, confirmed by edge energy (16.21 vs 16.69 at more pixels).
+- **A CMS `?w=` parameter** (Wayne): `?w=1600` returns a 1600×1600 file from a 200×200 original.
+  🔴🔴 **IT IS A PURE SERVER-SIDE UPSCALE** — downscaling it back to 200×200 differs from the native
+  file by RMS **1.23**, and edge energy collapses **14.22 → 1.23**. Taking it would have shipped a
+  file the contact sheet scored as needing **no upscale** while carrying 200 px of real detail.
+  ▶ **A SERVER-SIDE UPSCALE DEFEATS THE UPSCALE WARNING.** The native 200 px files were kept so the
+  sheet reports an honest 3.75×.
+- ⚠ And Kinloch's inverts the first rule: his stripped URL is **smaller** (434×502) than the
+  `?w=480` render. Fetch both, keep the larger *true* pixel count.
+
+### 🔴 The contact sheet had no `<meta charset>`
+
+Found by looking at the rendered sheet: its own title showed `â€"` where an em dash belonged. The
+file is written UTF-8 and is correct on disk, so every check that reads the bytes passes — the
+defect exists only in the rendered page, which is the one thing the operator looks at. No Michigan
+name is non-ASCII, so this wave was unharmed; **MN-2's "María Isa Pérez-Vega" would have been shown
+as a mangled name under a face**, which is the wrong-person failure mode wearing a typography
+costume. Fixed in `scripts/render-headshot-contact-sheet.py`.
+
+### ⚠ A control disproved my own documentation
+
+The loader's first `--wafcontrol` asserted "a browser User-Agent is refused" and **failed**, because
+node's fetch sends one and is served. The finding was real but stated too broadly: what
+`waynecountymi.gov` refuses is a UA that disagrees with the TLS fingerprint under it.
+▶ **WRITE THE CONTROL EVEN WHEN YOU ARE ONLY DOCUMENTING SOMETHING.**
+
+### 🔴 Two existing portraits were replaced, and the counters could not see why
+
+Both were sitting legislators carried in as 2026 federal candidates, so both already had an image
+row and the importer skipped them:
+- **Mallory McMorrow** — `…/<uuid>/default.jpg`, **2774×2771, 6.2 MB, square**: the raw original,
+  not the 600×750 render. This is the `default.jpeg` importer memory records as a root cause. Looking
+  at it added a second reason: it is not a headshot at all, but a seated shot at a table with
+  another person's shoulder in frame.
+- **Donavan McKinney** — a campaign step-and-repeat backdrop.
+Both now carry their official chamber portrait. ▶ **A ROW THAT PASSES EVERY COUNTER CAN STILL BE THE
+WRONG PICTURE; ONLY LOOKING FINDS IT.**
+
+### ✅ Verified from outside
+
+- **191 / 191** seated Michigan officeholders have a non-empty `photo_custom_url`; **0** fall back
+  to `photo_origin_url` and **0** are blank.
+- A random sample of 14 was re-fetched: all resolve as real images at the expected sizes.
+  🔴 That check was broken twice before it was right — psql's CRLF put a `\r` in every URL, and
+  `/tmp` resolves differently for MSYS `curl` and Windows Python. **Both were caught by a
+  CONTROL-GOOD row failing**, not by the 14 failing; 14 of 14 failing was the tell that the detector,
+  not the data, was wrong.
+- The sheet was reviewed on screen before publishing — BOPC, Wayne countywide and the Senate head —
+  and the 21 outlier-sized legislature sources were looked at as a separate montage first.
+
+### Debts carried out of MI-5
+
+- 🔴 **The Detroit banner still collides with `states/MI.jpg`**, which *is* Detroit's skyline. The
+  Miami move — version the state banner, never overwrite — is still available and still owed. MI has
+  **no city banner**.
+- ⚠ **Nine portraits ship at 3.75× upscale** from 200 px sources: Worthy, Youngblood, Sabree and
+  Garrett (Wayne countywide), and Whitfield-Calloway, Lavish Williams, Watts, Carter and Camille
+  (Detroit). Approved knowingly; a better source would be a real improvement.
+- ⚠ The `?w=` upscale trap is a property of the Wayne CMS and will recur on any later Wayne wave.
+
+---
+
+## ▶ Next: slice 12 — ND / Grand Forks
+
+Michigan is complete across all five stages. The remaining Michigan debts are the **Detroit banner**
+(it collides with `states/MI.jpg`), the **Crane A1 `sldu` re-load for 2027-01-01** (which also
+re-seats the Senate), **17 undated Detroit arrivals**, **6 undated Wayne countywide arrivals**, and
+the excluded sets: Detroit's **15 Community Advisory Council** seats and Wayne's **judges and WCCCD
+trustees**, both reversible.
+
+⚠ **ND's House is multi-member — two representatives per district.** Every earlier slice in this
+programme has been single-member in both chambers, so the office-per-district assumption that
+MI-4's gate 9b pins does not carry over.

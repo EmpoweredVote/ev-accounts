@@ -243,7 +243,14 @@ miss_block = f'''<section class="cohort missing">
   <ul class="misslist">{miss_rows}</ul>
 </section>''' if missing else ""
 
-doc = f'''<title>{html.escape(TITLE)}</title>
+# 🔴 WITHOUT THIS THE BROWSER FALLS BACK TO LATIN-1 AND MANGLES EVERY NON-ASCII NAME. The file
+# is written UTF-8 and is correct on disk, so the defect is invisible to every check that reads
+# the bytes -- it appears only in the rendered sheet, which is the one thing the operator looks
+# at. MI-5 had no non-ASCII name and still saw it, in the em dash of its own title; MN-2's
+# "María Isa Pérez-Vega" would have been shown as a mangled name UNDER A FACE, which is the
+# wrong-person failure mode wearing a typography costume.
+doc = f'''<meta charset="utf-8">
+<title>{html.escape(TITLE)}</title>
 <style>
 :root {{
   --ground:#EDEFF2; --panel:#F7F8FA; --ink:#171A1F; --ink-2:#4A525E; --ink-3:#79828F;
