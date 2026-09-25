@@ -254,8 +254,13 @@ which **1,531 hosted, 0 elsewhere**, and **131 rendering nothing at all — that
 whole of both chambers**. They are counted here rather than dropped, because *not in this table*
 and *not measured* are different claims.
 
-🟢 **TENNESSEE IS CLOSED, 2026-09-24 — 0 → 131 of 131 RENDERING, ALL ON OUR OWN CDN.** 130
-imported, 2 skipped (H86 already held a row; H1 was the end-to-end pilot), **0 failed**. House
+🟢 **TENNESSEE IS CLOSED, 2026-09-24 — 0 → 131 of 131 RENDERING, ALL ON OUR OWN CDN AND ALL
+FROM ONE PUBLISHER.** 130 imported, 2 skipped (H86 already held a row; H1 was the end-to-end
+pilot), **0 failed** — then **H86 Justin J. Pearson was replaced** on operator instruction, so the
+set is uniform. ⚠ That swap **narrowed the rights** (`cc_by-sa_4.0` → editorial-use-only) and
+**lowered the resolution** (600x750 → 320x400) in exchange for consistency and a recorded
+provenance; the displaced source was identified first and is named in the ledger, so it is
+reversible. House
 **98/98**, Senate **33/33**, `politician_images` 98 + 33, and **131 of 131 stored objects were
 fetched and decode**, with a bogus-key control that failed as required. The control scope — TN's
 13 statewide executives — is **unmoved at 13**. Corpus-wide portrait work, not a Knight slice;

@@ -26,11 +26,41 @@ DeKalb`. Stored as U+2014, checked at the codepoint — the console renders it a
 does not. **0 rows are left holding a raw image URL as `photo_origin_url`**; all 130 record the
 member page.
 
-⚠ **Justin J. Pearson has no `photo_origin_url`** and is the only one. It was NULL before and was
-not invented: his portrait is not from the General Assembly, so writing the GA page there would be
-a false provenance. ▶ **He is also the one row where an upgrade is available and was NOT taken** —
-his current photo is an outdoor candid while the GA publishes a studio portrait matching the other
-130. Replacing an already-approved portrait is a separate decision, so it is recorded, not done.
+### H86 Justin J. Pearson — replaced on operator instruction, 2026-09-24
+
+He was the one row carrying a portrait from elsewhere. Cantrell directed the swap to the GA
+studio portrait, so the wave is now **131 of 131 from one publisher**: renders 131, on our own
+CDN 131, seated 131.
+
+⚠ **THIS IS NOT PURELY AN UPGRADE, AND BOTH HALVES ARE RECORDED SO IT STAYS REVERSIBLE.**
+
+| | before | after |
+| --- | --- | --- |
+| frame | outdoor candid, in profile, looking away | studio portrait, facing camera, matching the other 130 |
+| size | **600x750** (the full target) | **320x400** (native, below target) |
+| licence | **`cc_by-sa_4.0`** — a free licence | `(C) State of Tennessee — editorial or personal use only` |
+| `photo_origin_url` | **NULL** | the GA member page |
+
+So the swap **narrows the rights and lowers the resolution**, and buys consistency, a subject
+looking at the camera, and — for the first time on this row — a recorded provenance.
+
+🟢 **THE OLD SOURCE WAS IDENTIFIED BEFORE IT WAS OVERWRITTEN, AND IT HAD NEVER BEEN RECORDED.**
+`photo_origin_url` was NULL, so the row asserted CC BY-SA 4.0 while naming nobody — and **CC BY-SA
+requires attribution**, which made the previous state a licence-compliance gap in its own right.
+Found on Commons and confirmed by eye, not by the metric:
+
+> **`File:Justin J Pearson August 2023.jpg`** — TrentBenge, own work, **CC BY-SA 4.0**, 1884x2512.
+> <https://commons.wikimedia.org/wiki/File:Justin_J_Pearson_August_2023.jpg>
+
+⚠ **The pixel metric did NOT establish this.** A 4:5 crop of that file against our stored copy
+scores **MAD 32.97/255**, which on its face reads as a different photograph; the two were put side
+by side and are plainly one image at two crops. ▶ **A metric that does not separate is a ranking,
+not a gate** — the SC-5a rule, again.
+
+**The old bytes are gone** — the importer upserts to the same storage key
+(`<uuid>-headshot.jpg`), so there is no second object to fall back to. What makes this reversible
+is the record above: `sha256 6fd6d218…a36538`, 118,184 bytes, 600x750, re-derivable from the
+Commons original at any time.
 
 ---
 
