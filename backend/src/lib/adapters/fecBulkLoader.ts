@@ -23,6 +23,10 @@
  * precondition for Phase A1 amendment reconciliation. This change is FORWARD-LOOKING ONLY:
  * rows already in production predate it and still need `scripts/backfill-fec-file-numbers.ts`
  * or an A1 re-ingest to gain these fields. No re-ingest is triggered by this change.
+ *
+ * 2026-09-25: run rows are stamped with the indiv file's Last-Modified, not now() (see
+ * bulkRunWatermark — now() skipped every contribution FEC loaded after the file was
+ * built), and `newOnly` limits a load to first-time backfills (see newFecSourceIds).
  */
 
 import { Readable } from 'node:stream';
@@ -46,6 +50,12 @@ export interface BulkLoadOptions {
   sample?: number;
   /** 'P' = principal committees only (matches API coverage; default). 'all' = all authorized. */
   designation?: 'P' | 'all';
+  /**
+   * Load only sources with NO successful FEC run for this cycle yet — the first-time
+   * backfills the rate-limited API walks at ~45s each. Leaves every source the daily
+   * burst already keeps current alone: no rows, no agg refresh, no run row.
+   */
+  newOnly?: boolean;
 }
 
 const BULK_BASE = 'https://www.fec.gov/files/bulk-downloads';
@@ -58,16 +68,75 @@ const I_AMNDT = 1, I_RPT_TP = 2, I_PGI = 3, I_TRAN_ID = 16, I_FILE_NUM = 17;
 // ccl column indexes: CAND_ID | CAND_ELECTION_YR | FEC_ELECTION_YR | CMTE_ID | CMTE_TP | CMTE_DSGN | LINKAGE_ID
 const C_CAND = 0, C_CMTE = 3, C_DSGN = 5;
 
-/** Stream a remote FEC bulk .zip and yield each line already split on '|'. Constant memory. */
-async function* streamZipLines(url: string): AsyncGenerator<string[]> {
+/**
+ * Open a remote FEC bulk .zip: its Last-Modified header, plus its lines already split on
+ * '|'. Constant memory. The header is read from the FINAL response — fec.gov 302s to S3,
+ * and fetch follows the redirect, so this is the file's own date, not the redirect's.
+ */
+async function openZipLines(url: string): Promise<{ lastModified: string | null; lines: AsyncGenerator<string[]> }> {
   const res = await fetch(url);
   if (!res.ok || !res.body) throw new Error(`bulk download failed: HTTP ${res.status} for ${url}`);
-  const nodeStream = Readable.fromWeb(res.body as Parameters<typeof Readable.fromWeb>[0]);
-  const entry = nodeStream.pipe(unzipper.ParseOne());
-  const rl = readline.createInterface({ input: entry, crlfDelay: Infinity });
-  for await (const line of rl) {
-    if (line) yield line.split('|');
+  const body = res.body;
+  async function* lines(): AsyncGenerator<string[]> {
+    const nodeStream = Readable.fromWeb(body as Parameters<typeof Readable.fromWeb>[0]);
+    const entry = nodeStream.pipe(unzipper.ParseOne());
+    const rl = readline.createInterface({ input: entry, crlfDelay: Infinity });
+    for await (const line of rl) {
+      if (line) yield line.split('|');
+    }
   }
+  return { lastModified: res.headers.get('last-modified'), lines: lines() };
+}
+
+/** Stream a remote FEC bulk .zip and yield each line already split on '|'. Constant memory. */
+async function* streamZipLines(url: string): AsyncGenerator<string[]> {
+  yield* (await openZipLines(url)).lines;
+}
+
+/**
+ * bulkRunWatermark — the started_at a bulk load may claim for its `fec` run rows.
+ *
+ * 🔴 NOT now(). The API adapter resumes each pair from max(started_at) of its successful
+ * runs, minus a 2-day lookback (getFecLoadCursor). A bulk file is only as current as the
+ * day FEC built it — `indiv26.zip` was 5 days old on 2026-09-25 — so stamping now() moves
+ * the cursor past every contribution FEC loaded between the file's build and the load.
+ * The next API run then starts after them and they are never fetched. Nothing errors.
+ *
+ * Returns the file's Last-Modified (never later than `now`), or null when the header is
+ * missing or unparseable. Null means "write no run rows": the pair then keeps its old
+ * cursor (or none), the API re-reads the window, and SUB_ID dedup absorbs the overlap.
+ * Re-reading costs rate limit; skipping costs data. Pay the rate limit.
+ */
+export function bulkRunWatermark(lastModified: string | null, now: Date = new Date()): Date | null {
+  if (!lastModified) return null;
+  const t = Date.parse(lastModified);
+  if (isNaN(t)) return null;
+  return new Date(Math.min(t, now.getTime()));
+}
+
+/**
+ * newFecSourceIds — confirmed FEC sources with no successful `fec` run for this cycle.
+ *
+ * Per cycle on purpose: the API cursor is per (source, cycle), so a source current for
+ * 2024 but never loaded for 2026 is still a whole-cycle backfill for 2026.
+ */
+export async function newFecSourceIds(cycle: string): Promise<Set<string>> {
+  const r = await pool.query<{ id: string }>(
+    `SELECT ps.id
+       FROM transparent_motivations.politician_sources ps
+      WHERE ps.source_system IN ('fec', 'fec_house', 'fec_senate')
+        AND ps.research_status = 'confirmed'
+        AND NOT EXISTS (
+              SELECT 1
+                FROM transparent_motivations.ingestion_runs r
+               WHERE r.politician_source_id = ps.id
+                 AND r.adapter_name = 'fec'
+                 AND r.election_cycle = $1
+                 AND r.status IN ('completed', 'completed_with_warning')
+            )`,
+    [cycle]
+  );
+  return new Set(r.rows.map((row) => row.id));
 }
 
 /** FEC bulk date is MMDDYYYY. */
@@ -132,7 +201,12 @@ export function mapBulkRow(c: string[], sourceId: string, cycle: string): Contri
 
 /** Build CMTE_ID -> politician_source_id from ccl, restricted to our confirmed candidates. */
 async function buildCommitteeMap(cycle: string, yy: string, opts: BulkLoadOptions): Promise<Map<string, string>> {
-  const sources = await getConfirmedFecSources();
+  let sources = await getConfirmedFecSources();
+  if (opts.newOnly) {
+    const fresh = await newFecSourceIds(cycle);
+    sources = sources.filter((s) => fresh.has(s.id));
+    console.log(`[bulk] --new-only: ${sources.length} source(s) with no successful ${cycle} FEC run`);
+  }
   const candToSource = new Map<string, string>();
   for (const s of sources) if (s.external_id) candToSource.set(s.external_id, s.id);
 
@@ -192,7 +266,7 @@ export async function buildCandidateCommitteeMap(cycle: string): Promise<Map<str
 /** After a real load, record a `fec` ingestion_run per touched pair so the truncation
  *  audit (getTruncatedPairs) reflects the new coverage. Expected = largest expected ever
  *  seen for the pair (from prior run notes); stored = current row count. */
-async function finalizePair(sourceId: string, cycle: string): Promise<void> {
+async function finalizePair(sourceId: string, cycle: string, watermark: Date): Promise<void> {
   const storedRes = await pool.query<{ n: string }>(
     `SELECT count(*) n FROM transparent_motivations.contributions
      WHERE data_source='fec' AND politician_source_id=$1 AND election_cycle=$2`,
@@ -211,8 +285,10 @@ async function finalizePair(sourceId: string, cycle: string): Promise<void> {
   await pool.query(
     `INSERT INTO transparent_motivations.ingestion_runs
        (adapter_name, politician_source_id, election_cycle, started_at, completed_at, status, records_fetched, records_inserted, notes)
-     VALUES ('fec', $1, $2, now(), now(), $3, $4, $4, $5)`,
-    [sourceId, cycle, status, stored, `fetched ${stored} of expected ${expected} (${pct}%) [bulk indiv]`]
+     VALUES ('fec', $1, $2, $6, now(), $3, $4, $4, $5)`,
+    [sourceId, cycle, status, stored,
+     `fetched ${stored} of expected ${expected} (${pct}%) [bulk indiv as of ${watermark.toISOString().slice(0, 10)}]`,
+     watermark]
   );
 }
 
@@ -242,7 +318,10 @@ export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}
     batch = [];
   };
 
-  for await (const c of streamZipLines(`${BULK_BASE}/${cycle}/indiv${yy}.zip`)) {
+  const indiv = await openZipLines(`${BULK_BASE}/${cycle}/indiv${yy}.zip`);
+  const watermark = bulkRunWatermark(indiv.lastModified);
+  console.log(`[bulk] indiv${yy}.zip Last-Modified: ${indiv.lastModified ?? '(missing)'}`);
+  for await (const c of indiv.lines) {
     scanned++;
     if (opts.sample && sampled < opts.sample) { console.log('[bulk][indiv sample]', c.slice(0, 21).join('|')); sampled++; }
     if (scanned % 2_000_000 === 0) console.log(`[bulk] scanned ${scanned.toLocaleString()}, matched ${matched.toLocaleString()}...`);
@@ -262,10 +341,18 @@ export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}
   console.log(`[bulk] cycle ${cycle}: scanned=${scanned.toLocaleString()} matched=${matched.toLocaleString()} written=${written.toLocaleString()} memoSkipped=${skippedMemo} sources=${touched.size}`);
 
   if (!opts.dry && touched.size > 0) {
-    for (const sid of touched) {
-      try { await refreshSummaryAggForSource(sid); await finalizePair(sid, cycle); }
-      catch (e) { console.warn(`[bulk] finalize failed for ${sid}: ${e instanceof Error ? e.message : String(e)}`); }
+    if (!watermark) {
+      console.warn(
+        `[bulk] 🔴 indiv${yy}.zip has no usable Last-Modified — writing NO run rows. ` +
+        `The API will re-read these pairs' whole window (SUB_ID dedup absorbs the overlap).`
+      );
     }
-    console.log(`[bulk] refreshed agg + wrote audit run rows for ${touched.size} source(s).`);
+    for (const sid of touched) {
+      try {
+        await refreshSummaryAggForSource(sid);
+        if (watermark) await finalizePair(sid, cycle, watermark);
+      } catch (e) { console.warn(`[bulk] finalize failed for ${sid}: ${e instanceof Error ? e.message : String(e)}`); }
+    }
+    console.log(`[bulk] refreshed agg for ${touched.size} source(s); run rows ${watermark ? `stamped ${watermark.toISOString()}` : 'NOT written'}.`);
   }
 }
