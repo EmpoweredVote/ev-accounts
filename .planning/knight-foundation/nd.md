@@ -11,8 +11,8 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | 1 geography | ✅ **APPLIED 2026-09-25 — 95 boundaries, 95 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
-| 4 county waves | ▶ **MEASURED 2026-09-25, nothing written.** **7 elected offices** — 5 commissioners **AT LARGE (no districts)** + Sheriff + State's Attorney. **No geometry to load.** ✅ **BLOCKER CLEARED 2026-09-25 by OCR of the charter** — Art. 6 § 1 “Offices to be Elected” names three: the 5 at-large commissioners, the Sheriff and the State's Attorney. Only DATES remain |
-| 5 assets | — portraits + the `grand-forks` banner. A **Legislator Photo Request Form** exists; the licence is unestablished |
+| 4 county waves | ✅ **APPLIED 2026-09-25 — 7 offices, 7 seated, 0 vacant, 6 day + 1 year precision** (`CC_0148`/`CC_0149`). **No geometry loaded: the commission is at large.** Grand Forks scores **5 of 5** |
+| 5 assets | ▶ **BASELINE MEASURED 2026-09-25**: **157 portraits owed** (141 legislature + 9 city + 7 county), all a measured ZERO; 141 source URLs already captured. 🔴 **The licence is the gate** |
 
 ---
 
@@ -1147,3 +1147,170 @@ The inventory and the geometry question are settled. Remaining:
    were last elected in **2022** with terms from **2023-01-01**; each needs their FIRST arrival,
    since a re-election does not restart an occupancy.
 3. ⚠ **Nothing from the 2026-06-09 primary may be used.** The general is 2026-11-03.
+
+---
+
+## ✅ ND-4 APPLIED 2026-09-25 — Grand Forks County is seated, and the slice scores 5 of 5
+
+`CC_0148` (structure) + `CC_0149` (occupancy): **7 offices, 7 people, 7 terms, 7 seated, 0 vacant.**
+`politicians` **89,004 → 89,011** and `office_terms` **9,480 → 9,487**, both exactly **+7**.
+`offices_missing_terms` **unmoved at 423 / 238**. Both migrations idempotent, proved by re-running.
+
+**North Dakota now holds 165 offices, 165 seated.**
+
+### 🔴🔴 THIS WAVE LOADED NO GEOMETRY, AND THAT IS THE FINDING
+
+Grand Forks County elects its commission **at large**. All seven offices hang on the COUNTY district
+`38035`, which already existed with geometry. **No commission district was created, and the gate
+asserts that none exists** — inventing one is the defect this wave was most likely to produce.
+
+Three independent sources agree, and the charter is the one that settles it:
+
+> **Charter art. 6 § 1, "Offices to be Elected"** — *"The Board of County Commissioners shall consist
+> of five members who shall be elected on a nonpartisan ballot. All of the candidates seeking the
+> office of county commissioner shall be **voted upon by the qualified electors of the entire
+> county**."* … *"**The Sheriff and State's Attorney shall remain elected offices**…"*
+
+Seven offices, not nine: art. 7 lets the Board establish offices *"in addition to those offices to be
+filled by election"* and *"appoint department heads"*, so the Recorder and the Auditor are appointed
+and are **not** seated, and there is no Treasurer at all.
+
+### 🟢 THE DATES ARE STATUTORY, SO AN ELECTION YEAR YIELDS A DAY
+
+ND fixes county term starts: **commissioner — the first Monday in December** following the election;
+**sheriff and state's attorney — January 1**. Computed, not guessed: December 2022 → **2022-12-05**,
+December 2024 → **2024-12-02**.
+
+| office | holder | start | prec. | how |
+| --- | --- | --- | --- | --- |
+| Commissioner | Terry Bjerke | 2024-12-02 | day | elected 2024 (13,173 votes, 30%) |
+| Commissioner | Kimberly Hagen | 2022-12-05 | day | elected 2022 |
+| Commissioner | Mark Rustad | 2022-12-05 | day | elected 2022 **on a recount** |
+| Commissioner | Anthony Hodny | **2026-03-11** | day | **appointed** to Cynthia Pic's seat |
+| Commissioner | Bob Rost | 2019-01-01 | **year** | see below |
+| Sheriff | Andrew Schneider | 2019-01-01 | day | elected 2018, took office January 2019 |
+| State's Attorney | Haley Wamstad | 2019-01-01 | day | elected 2018; first woman in the office |
+
+⚠ **Rustad's seat was decided by the recount, not by election night.** The initial report named **Lon
+Kvasager** the third winner; Rustad trailed by 27 votes (6,729 to 6,702) and the automatic recount
+reversed it. A wave reading election-night coverage would have seated the wrong person.
+
+🔴 **Cynthia Pic died on 2026-02-13** and Hodny was appointed at a special commission meeting on
+**2026-03-11**. ⚠ My earlier note guessed this vacancy was **Gary Malm's** — it was not. Malm was a
+long-serving commissioner whose death the *city's* minutes recorded in 2024; the 2026 vacancy is
+Pic's. **A remembered name is not a source.**
+
+🔴 **Hodny's term ends 2026-11-30 and that end is DELIBERATELY NOT WRITTEN.** He serves only until the
+winner of the 2026-11-03 general takes the unexpired seat. A future `term_end` self-vacates a seat the
+moment the calendar passes it, so it is a **recorded debt for the November wave**, not a value. The
+gate asserts 0 term_end, and the tamper that wrote one fired.
+
+🔴 **THREE ROWS READ `2019-01-01` AND ONLY TWO MEAN THE SAME THING.** Schneider's and Wamstad's are
+`day` — the statute fixes 1 January and both took office then. **Bob Rost's is `year`**, and the
+literal date is an artefact of the convention, not a claim about 1 January.
+
+**Why Rost is the one year-precision row**, and it is not laziness: the county's own Commissioner
+History List — which, unlike the charter, *does* carry a text layer — ends with the open group
+*"2019-  David Engen · Cynthia Pic · Diane Knauf · Tom Falck · **Bob Rost**"*, published 2020. ⚠ **And
+his arrival cannot be computed from the 2018 election, because BOB ROST WAS THE SHERIFF Andrew
+Schneider succeeded in January 2019.** He cannot have begun a commissioner's term on 2018-12-03 while
+still holding the sheriff's office through 2018-12-31. The statutory computation is unsafe for him
+specifically, so the day is left unclaimed. He was re-elected 2022-11-08 with the field's highest
+total, which does not restart the occupancy.
+
+### 🔴🔴 THE JUNE 2026 COUNTY SHEET IS A PRIMARY, AND NOTHING FROM IT WAS SEATED
+
+ND decides **city** offices in June and **county** offices in November. The 2026-06-09 county ballot —
+*County Commission (vote for one)*, *(vote for three)*, *State's attorney*, *Sheriff* — is a primary
+whose general is **2026-11-03**, six weeks after this wave. **ND-3's June result was an election
+because it was a city race; the identical-looking county sheet the same day was not.** Every date
+above predates it.
+
+### Gates, and the tampers that proved them
+
+| gate | result |
+| --- | --- |
+| deltas | `politicians` +7, `office_terms` +7, exact |
+| offices | 5 Commissioners + Sheriff + State's Attorney = 7, all on district `38035` |
+| **no commission district invented** | 0 |
+| seated | 7, counting `och.politician_id` |
+| precision | **6 `day` + 1 `year` = 7, 0 unknown** |
+| appointed arrivals | exactly 1 (Hodny) |
+| **5 distinct commissioners** | 5 |
+| nobody holds two county offices | pass |
+| `offices_missing_terms` | unmoved 423 / 238 |
+| idempotency | both re-run, every `essentials.*` insert `INSERT 0 0` |
+| `check:reachability` · `occupancy` · `migrations` · `reservations` | all green |
+
+| tamper | what fired |
+| --- | --- |
+| `NOT EXISTS` guard instead of the count | `expected 7 … found 3` — the guard that seats one commissioner of five |
+| Hodny's known end written as data | `7 county term(s) carry a term_end — Hodny's 2026-11-30 end is a recorded debt, not a value` |
+| two commissioner **terms** naming one person — **7 people, 7 terms, 7 seated all still true** | `the 5 at-large commissioner seats resolve to 4 distinct holders` |
+
+🔴 **The first attempt at that last tamper proved nothing and was redone.** Changing the *person* row
+tripped `idx_essentials_politicians_external_id` before the gate was reached — a control that aborts
+for the wrong reason. Changing only the *term* row isolated it.
+
+### ✅ THE PROBE: GRAND FORKS SCORES 5 OF 5
+
+Grand Forks City Hall, 255 N 4th St, now returns **12 answers across 8 titles**:
+
+| title | n | holders |
+| --- | --- | --- |
+| Commissioner | **5** | Bjerke, Hagen, Hodny, Rost, Rustad |
+| Council Member, Ward 3 | 1 | Tricia Berg |
+| Mayor | 1 | Brandon Bochenski |
+| Municipal Judge | 1 | Kerry Rosenquist |
+| Representative | **2** | Nels Christianson, Steve Vetter |
+| Senator | 1 | Scott Meyer |
+| Sheriff | 1 | Andrew Schneider |
+| State's Attorney | 1 | Haley Wamstad |
+
+⚠ **The program's "four answers" test is a poor fit for North Dakota in both directions**: the House
+is multi-member so the state answer is two people, and the commission is at-large so the county
+answer is five. The right test here is **five distinct kinds of answer**, which is what this is.
+
+---
+
+## ▶ ND-5 — BASELINE MEASURED 2026-09-25, NOTHING WRITTEN
+
+### The portrait debt is 157, and it is a measured zero rather than an estimate
+
+| cohort | seated | hosted on our CDN | third-party only | **nothing renders** |
+| --- | --- | --- | --- | --- |
+| Legislature | 141 | 0 | 0 | **141** |
+| Grand Forks city | 9 | 0 | 0 | **9** |
+| Grand Forks County | 7 | 0 | 0 | **7** |
+| *(pre-existing ND: 1 US Rep, 2 US Sen, 5 statewide execs)* | 8 | **8** | 0 | 0 |
+| **owed** | | | | **157** |
+
+🟢 Unlike CO and NC, **nothing here renders off a third-party `photo_origin_url`** — so there is no
+coverage that will silently fall when a source re-organises. The 157 is honest.
+
+### What exists, and the one thing that is not settled
+
+🟢 **The legislature's portraits are already captured.** Every member row in
+`backend/data/seed-nd-2026/nd-roster-special-2.json` carries a `photo_url` under
+`ndlegis.gov/sites/default/files/styles/…/person/photo/`. 141 of 141.
+
+🔴 **THE LICENCE IS NOT ESTABLISHED, AND THAT IS THE STAGE-5 GATE.** The ND Legislative Branch
+publishes a **`Legislator Photo Request Form`** (`ndlegis.gov/legislator-photo-request`), which is
+evidence that photo reuse is a thing they expect to be *asked* about — not evidence of a grant. MN-5
+is the precedent: the request was drafted, sent, and answered before anything was published.
+⚠ Compare TN, where the licence turned out to be **in the PNG metadata and on no page** — so read the
+bytes before concluding there is no grant.
+
+⚠ **The city's and county's portraits are unmeasured.** Grand Forks ward pages carry no photo in the
+page text; the county staff directory may. Neither has been checked.
+
+### Owed before ND-5 can publish
+
+1. **Settle the legislature licence** — read the image metadata first, then the request form.
+2. **Measure the city and county photo sources** (16 people).
+3. **A contact sheet as a published Artifact** — approval is always a batch contact-sheet artifact,
+   and 🔴 **look at the frames before publishing the sheet**: the counters measure the pipeline, and
+   nothing in it can measure composition.
+4. **The `grand-forks` banner.** ⚠ Run the adjacency test against the ND state banner before choosing
+   a frame. Grand Forks is *not* one of the four known state-banner collisions (Miami, Wichita,
+   Detroit, Charlotte), but that is a fact about those four, not a clearance for this one.
