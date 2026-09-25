@@ -17,6 +17,10 @@ INPUT: a JSON array (default .tmp-all-candidates.json), one object per subject:
     office         office title, shown under the frame
     cohort         grouping label for the section heading
     url            candidate image URL (null => listed under "no candidate found")
+    bytes_from     OPTIONAL local file to read instead of fetching url. For a source that
+                   publishes no image URL at all -- Tennessee embeds each portrait as a
+                   base64 data URI inside the member page. The importer reads the same
+                   file, so the operator approves exactly the bytes that ship.
     page           source page, for the provenance line
     license        photo_license to record
     positional     true when the filename encodes a SEAT not a PERSON
@@ -77,17 +81,29 @@ for c in cands:
         # lost a different handful of faces on every pass and no run was ever complete.
         # Cache-first also means the operator is comparing identical bytes between passes.
         # Delete .tmp-headshot-cache/ to force a refetch.
-        os.makedirs(CACHE, exist_ok=True)
-        ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
-        if os.path.exists(ck) and os.path.getsize(ck) > 0:
-            raw = open(ck, "rb").read()
+        # 🔴 "bytes_from" IS FOR A SOURCE THAT HAS NO URL. Tennessee's General Assembly
+        # embeds every member portrait as a base64 data URI inside the member page, so
+        # there is no image to fetch and nothing a URL can address; the extractor
+        # (scripts/tn-ga-portrait-extract.py) writes real files and points here.
+        # It is NOT a cache: the file IS the source, so a missing one RAISES rather than
+        # falling back to c["url"] -- that fallback would fetch the member page, get HTML,
+        # and report "no usable image" for a portrait that is sitting on disk.
+        if c.get("bytes_from"):
+            if not os.path.exists(c["bytes_from"]):
+                raise FileNotFoundError(f"bytes_from missing: {c['bytes_from']}")
+            raw = open(c["bytes_from"], "rb").read()
         else:
-            raw = requests.get(c["url"], headers=UA, timeout=40).content
-            try:                                   # cache anything that actually decodes,
-                Image.open(BytesIO(raw)).verify()  # which includes WEBP -- a JPEG/PNG
-                open(ck, "wb").write(raw)          # allowlist silently skipped nine rows
-            except Exception:                      # noqa: BLE001
-                pass                               # HTML error pages never reach the cache
+            os.makedirs(CACHE, exist_ok=True)
+            ck = os.path.join(CACHE, hashlib.sha1(c["url"].encode()).hexdigest() + ".bin")
+            if os.path.exists(ck) and os.path.getsize(ck) > 0:
+                raw = open(ck, "rb").read()
+            else:
+                raw = requests.get(c["url"], headers=UA, timeout=40).content
+                try:                                   # cache anything that actually decodes,
+                    Image.open(BytesIO(raw)).verify()  # which includes WEBP -- a JPEG/PNG
+                    open(ck, "wb").write(raw)          # allowlist silently skipped nine rows
+                except Exception:                      # noqa: BLE001
+                    pass                               # HTML error pages never reach the cache
         # ONE crop implementation, shared with the importer (scripts/headshot_crop.py).
         # A per-row "crop" override handles subjects the centre crop gets wrong.
         src = Image.open(BytesIO(raw))
