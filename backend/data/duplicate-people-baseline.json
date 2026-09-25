@@ -18,7 +18,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: TN Senate 31 + FEC H6TN09464, TN-9 nominee (capitol.tn.gov s31; Action News 5 2026-05-07). Merge = CA_0291."
     },
     "01eac4cc-d6f2-4b33-ab5f-c3d4d2b93dc0|ddca5584-3a27-48d4-9b1a-92af7a47573f": {
       "names": "Doug Fiefia ~ Doug Fiefia",
@@ -45,7 +46,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: CO House 32 (resigned 9/4/26, leg.colorado.gov) + FEC H6CO08013, CO-8 nominee. Merge = CA_0291."
     },
     "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
       "names": "John Braun ~ John Braun",
@@ -117,7 +119,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: Millcreek Council D1, Utah SD-13 candidate (vote.utah.gov S13-Silvia-Catten.pdf). Merge = CA_0291."
     },
     "101a4057-f3e4-4345-a5f9-92722049fb53|a9233775-b8af-423e-aea6-734c2855e5ac": {
       "names": "Tim Peck ~ Timothy Peck",
@@ -396,7 +399,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "Different people: Andrew K. Kim is the 2026 LA mayoral candidate (kimforla.com); Andrew C. Kim is an LA County Superior Court judge. Different middle initial."
     },
     "8118811a-aadd-4eb9-9208-de0f5d3b29ad|868b219c-a10a-4dc2-a632-9022c7f835d1": {
       "names": "Andy Biggs ~ Andy Biggs",
@@ -423,7 +427,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: TN House 54 + FEC H6TN07229, TN-7 (capitol.tn.gov h54; NewsChannel 5). Merge = CA_0291."
     },
     "88216292-7a3c-4e49-ac4a-722a1b3764e4|dd088bfc-1d4d-476d-b16f-0d4da6ea88b6": {
       "names": "Maria G. Lopez ~ Maria Isabel López",
@@ -477,7 +482,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: Cedar Hills Council, Utah SD-21 candidate (vote.utah.gov S21-Kelly-Smith.pdf; SL Tribune 2026-06-07). Merge = CA_0291."
     },
     "95860909-eb07-4ed4-bea1-54081d92ce8d|b90cc4e4-57f3-41b2-9a19-64c218164466": {
       "names": "David Argudo ~ David E. Argudo",
@@ -522,7 +528,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "same_person",
+      "note": "Same person: TN Senate 33 + FEC H6TN09498, TN-9 (capitol.tn.gov s33; Action News 5 2026-05-26). Merge = CA_0291."
     },
     "9cff8f78-ffde-4821-91e7-6d14fb093ecc|a3be7449-ec25-4511-bf3d-889a340fbb3f": {
       "names": "Monty Fritts ~ Monty Fritts",
@@ -540,7 +547,8 @@
         "NAME_STATE"
       ],
       "split": true,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "Different people: Mónica García (LAUSD board, empowered.vote/school-district/los_angeles_unified) vs Monica García, Glendora Unified Trustee Area 2 (glendora.k12.ca.us). Different districts."
     },
     "a97678bc-8844-4560-87b1-5ef4f8013d96|f0a46feb-43bc-4620-a81f-3bbf7e3cec9c": {
       "names": "Dan Sullivan ~ Daniel J. Sullivan Jr.",
