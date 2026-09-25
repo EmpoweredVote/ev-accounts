@@ -12,7 +12,7 @@ Worktree `C:\ev-accounts-nd`, branch `knight/nd-slice12`.
 | 2 legislature | ✅ **APPLIED 2026-09-25 — 141 offices, 141 seated, 0 vacant** (`CC_0144`/`CC_0145`). Grand Forks scores **3 of 5** |
 | 3 city waves | ✅ **APPLIED 2026-09-25 — 9 offices, 9 seated, 0 vacant, EVERY TERM DATED** (`X0067`, `CC_0146`/`CC_0147`). Grand Forks scores **4 of 5** |
 | 4 county waves | ✅ **APPLIED 2026-09-25 — 7 offices, 7 seated, 0 vacant, 6 day + 1 year precision** (`CC_0148`/`CC_0149`). **No geometry loaded: the commission is at large.** Grand Forks scores **5 of 5** |
-| 5 assets | ▶ **141 EXTRACTED AND APPROVED 2026-09-25**, nothing imported. 🔴🔴 **LICENCE ON HOLD BY RULING — do not import, do not send the request.** 16 city/county sources still unmeasured |
+| 5 assets | ▶ **141 EXTRACTED AND APPROVED 2026-09-25**, nothing imported. 🔴🔴 **LICENCE ON HOLD BY RULING — do not import, do not send the request.** ✅ **16 city/county sources MEASURED 2026-09-25: 7 exist at 1600x2000, 9 do not exist at all** |
 
 ---
 
@@ -1405,5 +1405,114 @@ MN-5 is the precedent for asking. **Approving the frames is not the right to pub
 1. **Settle the licence** via the photo request form.
 2. **Import the 141** to our own CDN and set `photo_custom_url` — 🔴 a `politician_images` row alone
    changes nothing a voter sees.
-3. **The 16 city and county portraits** are still unmeasured.
+3. ✅ **The 16 city and county portraits are MEASURED** — see the section below. 7 of 16 exist.
+4. **The `grand-forks` banner**, after the adjacency test against the ND state banner.
+
+
+### ✅ ND-5 — THE 16 CITY AND COUNTY SOURCES ARE MEASURED (2026-09-25). NOTHING IMPORTED.
+
+Tool: `backend/scripts/nd-city-county-portrait-measure.mjs` · ledger
+`backend/data/seed-nd-2026/_nd5-city-county-sources.json` · frames in `_sources/` (23 MB,
+untracked, **proved regenerable: a re-run reproduced 8 of 8 byte-identical**).
+
+| cohort | seated | portrait published | pixels |
+| --- | --- | --- | --- |
+| City council wards 1, 2, 3, 5, 6, 7 | 6 | **6** | 1600x2000 PNG |
+| Mayor Bochenski | 1 | **1** | 1600x2000 JPEG |
+| Council Ward 4 (Salentiny) | 1 | **0** | — |
+| Municipal Judge (Rosenquist) | 1 | **0** | — |
+| Grand Forks County (5 commissioners + Sheriff + State's Attorney) | 7 | **0** | — |
+| **total** | **16** | **7** | |
+
+🔴🔴 **THE WAF DISCRIMINATES ON THE HTTP STACK, NOT THE USER-AGENT — AND MY FIRST SWEEP
+REPORTED 15 OF 15 "NO PORTRAIT" BECAUSE OF IT.** Both hosts answer Node's `fetch` with HTTP 200
+(bare *and* with a Chrome UA) and refuse Python `requests` **and** `curl` with HTTP 403
+"Access Denied" (483/485 bytes) in **every** header shape tried — bare, +Chrome UA, and
++UA+Accept+Accept-Language. **Adding headers does not help; the client has to be a different
+HTTP stack.** This is the inverse of `waynecountymi.gov`, which refused curl+ChromeUA and served
+a bare request, and a third shape again after `michigan.gov`.
+▶ **The program's renderer and importer both use Python `requests`, so this whole cohort is
+invisible to them.** Any future import must go through `bytes_from`, as MI-5's Detroit and Wayne
+cohorts did.
+▶ **The uniform answer is what exposed it** — 15 of 15 identical "no portrait" was not
+credible, because I had already read `alt="Danny Weigel ward 1 council member"` off Weigel's page
+by eye minutes earlier. **A detector whose every answer agrees has not been tested.**
+
+🟢 **THE CITY PUBLISHES 1600x2000 — EXACTLY 4:5, AND A 2.67x DOWNSCALE TO THE 600x750
+TARGET.** This is the **opposite** of the legislature's 157x196, which is the whole of what North
+Dakota publishes and forced the ship-the-natives ruling. The city cohort needs no upscale at all,
+and there is no resize to strip: the `src` carries no query string.
+
+🔴 **BIND BY THE `alt`; THE `src` IS OPAQUE.** Both sites are **Granicus**, and a portrait
+is served as `/home/showpublishedimage/<id>/<ticks>` — an id that names nothing. The `alt`
+carries the person and the seat (`"Rebecca Osowski ward 2 council member"`). MI-5's rule, holding
+for a second vendor.
+
+🔴 **SALENTINY (WARD 4) HAS NO PORTRAIT, AND THE COUNT IS THE TELL.** Her staff page
+carries **14** `<img>` tags where the other six carry **15**; the member portrait slot is simply
+absent. Confirmed twice, once per sweep, and by reading the page's images by eye. Her page still
+names her in its own `<title>`, so this is a missing photograph, not a missing person.
+
+🔴 **BOCHENSKI RETURNS TWO `alt` HITS AND ONE IS NOT A PORTRAIT** — `"Mayor Bochenski
+Swearing in to office 2024"` is **1903x350**, a banner strip. The portrait is the second,
+`alt="Bochenski"`, 1600x2000. **Shape separated them; the name did not.**
+
+🔴🔴 **THE COUNTY'S GRANICUS TEMPLATE HAS NO PHOTO SLOT AT ALL — 0 OF 7, AND IT
+IS CONTROLLED.** Every county staff page carries exactly **8** `<img>` tags (nav spacers plus a
+YouTube and a Facebook icon). I swept **14** county staff pages across eight departments: **all 14
+at exactly 8 tags, 0 portraits.** ▶ **Positive control: the identical predicate run against the
+CITY host finds 6 of 7.** Same vendor, same detector, same session — so the county's zero is a
+fact about the county, not about the sweep.
+
+🔴 **THE SHERIFF'S OFFICE RUNS ITS OWN SITE AND IT NEVER NAMES THE SHERIFF.**
+`gfcounty.nd.gov/government/sheriff` redirects to **`gfcountysheriff.org`**, a Wix site with eight
+nav items (Corrections, Civil, Fingerprinting, Tip 411, Forms, Employment, Contact) and **no
+leadership, staff or "about the sheriff" page**. Rendered in Playwright, the page text contains
+**no occurrence of "Schneider"**, and its only large images are a 1905x721 banner and a 913x566
+landscape — neither portrait-shaped, neither carrying an `alt`.
+
+🔴 **THE MUNICIPAL COURT PAGE NO LONGER NAMES ROSENQUIST.** ND-3 recorded that the elected
+Municipal Judge's *only* mention was one sentence on a Municipal Court staff page; that page
+carries **zero** occurrences of the name today and links no staff directory entry. ▶ **The
+sentence that established the office is gone from the live site — ND-3's citation is the record
+of it.** This does not unseat him; it means the office has no live portrait route.
+
+### The licence for the city's seven is SILENCE, read on the TN precedent
+
+**Nothing is granted in the bytes.** Every one of the seven carries an XMP packet, and it holds
+exactly one field of substance: **`xmp:CreatorTool = Canva (Renderer)`**, with a document, user and
+`brand=GF team` id. There is no `dc:rights`, no `dc:creator`, no `xmpRights`, no
+`photoshop:Credit`, and no photographer named anywhere.
+⚠ **AND MY OWN KEYWORD SCAN PRODUCED A FALSE POSITIVE I HAD TO CHASE DOWN** — a raw-byte
+search for `author` hit in all eight files. It is **XMP schema boilerplate, not a rights field**.
+TN's rule again from the other side: `Copyright = x-default` is an empty field, not a claim, and
+**a substring is not a value**.
+
+**Neither site publishes a policy.** No terms, copyright, disclaimer or legal page is linked from
+either home page, and the city's sitemap (13 child sitemaps, **5,857 URLs**) contains no site-wide
+policy page — only a transit-department accessibility page and a transit privacy policy. The
+element whose own class is `copyright` carries **only the Granicus vendor credit** ("Website Design
+by Granicus"), not a notice by the City or the County.
+⚠ **5,857 URLs is too many to sweep the way TN's 100 were**, so "no policy anywhere" is **not**
+proved here to TN's standard. What is proved: none is linked, none is in the sitemap's URL names,
+and none is in the bytes.
+
+▶ **So the city cohort's licence shape is SILENCE** — the OH/GA/FL/PA shape, not TN's
+published-permission-with-a-stated-limit and not MN's published refusal. **That is a measurement,
+not a clearance.** The 141 legislature portraits are on a deliberate hold; **this cohort has not
+been ruled on at all.**
+
+🟢 **I LOOKED AT ALL SEVEN.** Every one is a genuine head-and-shoulders portrait on the
+same studio setup — flag and wood panel, in colour, subject facing camera, no badge, no logo,
+no placeholder, no superimposed text. ⚠ **The framing is WIDE**: each subject sits small in the
+frame with a lot of headroom and torso, so the program's "crop ~1 ear above hair" rule means a real
+crop here, not the straight 4:5 downscale the aspect ratio invites. That is a note for whoever
+imports, and it was caught by looking, not by any counter.
+
+### What ND-5 still owes
+
+1. **The legislature licence** — ON HOLD by ruling. Do not import, do not send the form.
+2. **A ruling on the city's seven**, whose licence shape is silence (above).
+3. **Nine people have no portrait route at all**: Salentiny, Rosenquist, and all seven county
+   officials. A blank beats a link.
 4. **The `grand-forks` banner**, after the adjacency test against the ND state banner.

@@ -1,0 +1,310 @@
+[
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 1",
+    "name": "Danny Weigel",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/38/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10316/639190279763700000",
+        "alt": "Danny Weigel ward 1 council member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 4204616,
+        "magic": "89504e47",
+        "sha256": "3396dbac5cd225fc",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\weigel-1eb0360f.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125294,
+    "page_title": "Weigel, Danny | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 2",
+    "name": "Rebecca Osowski",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/94/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10320/639190319131700000",
+        "alt": "Rebecca Osowski ward 2 council member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3394252,
+        "magic": "89504e47",
+        "sha256": "2d1ed6e3a0a7e13d",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\osowski-ec61217a.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125353,
+    "page_title": "Osowski, Rebecca | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 3",
+    "name": "Tricia Berg",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/12/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10308/639190278021200000",
+        "alt": "Tricia Berg ward 3 council member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3592068,
+        "magic": "89504e47",
+        "sha256": "47ba906007545457",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\berg-6f5eac1f.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125255,
+    "page_title": "Berg, Tricia | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 4",
+    "name": "Angela Salentiny",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/14/259",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 125173,
+    "page_title": "Salentiny, Angela | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 14,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 5",
+    "name": "Mike Fridolfs",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/36/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10306/639190277600070000",
+        "alt": "Mike Fridolfs Ward 5 Council Member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3542648,
+        "magic": "89504e47",
+        "sha256": "b3f600cfb8c41729",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\fridolfs-5598db64.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125312,
+    "page_title": "Fridolfs, Mike | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 6",
+    "name": "Dana Sande",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/18/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10318/639190280252830000",
+        "alt": "Dana Sande ward 6 council member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3685357,
+        "magic": "89504e47",
+        "sha256": "0682dc14fcbef8d0",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\sande-2603a041.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125237,
+    "page_title": "Sande, Dana | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Council Member, Ward 7",
+    "name": "Ken Vein",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/20/259",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/10312/639190278932930000",
+        "alt": "Ken Vein ward 7 council member",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 4798407,
+        "magic": "89504e47",
+        "sha256": "d9ec8d8ae58ece9d",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\vein-816e1e67.png"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 125175,
+    "page_title": "Vein, Ken | City Council | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 15,
+    "alt_hits": 1
+  },
+  {
+    "cohort": "city",
+    "role": "Mayor",
+    "name": "Brandon Bochenski",
+    "page": "https://www.grandforksgov.com/government/city-leadership/mayor-bochenski",
+    "candidates": [
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/9458/639106297427070000",
+        "alt": "Mayor Bochenski Swearing in to office 2024 ",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 78195,
+        "magic": "ffd8ffe0",
+        "sha256": "02d9e48603f94916",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\bochenski-5fad8867.jpg"
+      },
+      {
+        "url": "https://www.grandforksgov.com/home/showpublishedimage/9444/639106296771230000",
+        "alt": "Bochenski",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 311496,
+        "magic": "ffd8ffe0",
+        "sha256": "982266289d9f4dd9",
+        "file": "C:\\ev-accounts-nd\\backend\\data\\seed-nd-2026\\_sources\\bochenski-e0b035c5.jpg"
+      }
+    ],
+    "page_status": 200,
+    "page_bytes": 129191,
+    "page_title": "Mayor Bochenski | City of Grand Forks, ND",
+    "page_names_person": true,
+    "img_tags": 14,
+    "alt_hits": 2
+  },
+  {
+    "cohort": "city",
+    "role": "Municipal Judge",
+    "name": "Kerry Rosenquist",
+    "page": "https://www.grandforksgov.com/government/city-departments/municipal-court",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 113719,
+    "page_title": "Municipal Court | City of Grand Forks, ND",
+    "page_names_person": false,
+    "img_tags": 14,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "Commissioner",
+    "name": "Kimberly Hagen",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/122/142",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 75457,
+    "page_title": "Hagen, Kimberly | Commissioners | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "Commissioner",
+    "name": "Terry Bjerke",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/118/142",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 75445,
+    "page_title": "Bjerke, Terry | Commissioners | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "Commissioner",
+    "name": "Anthony Hodny",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/281/142",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 75451,
+    "page_title": "Hodny, Anthony | Commissioners | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "Commissioner",
+    "name": "Mark Rustad",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/120/142",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 75439,
+    "page_title": "Rustad, Mark | Commissioners | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "Commissioner",
+    "name": "Bob Rost",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/126/142",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 75420,
+    "page_title": "Rost, Bob | Commissioners | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "county",
+    "role": "State's Attorney",
+    "name": "Haley Wamstad",
+    "page": "https://www.gfcounty.nd.gov/Home/Components/StaffDirectory/StaffDirectory/128/160",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 82415,
+    "page_title": "Wamstad, Haley | State&#39;s Attorney | Grand Forks County, ND",
+    "page_names_person": true,
+    "img_tags": 8,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "CONTROL",
+    "role": "negative: Weigel's surname against Osowski's page",
+    "name": "Danny Weigel",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/94/259",
+    "candidates": [],
+    "page_status": 200,
+    "page_bytes": 125353,
+    "page_title": "Osowski, Rebecca | City Council | City of Grand Forks, ND",
+    "page_names_person": false,
+    "img_tags": 15,
+    "alt_hits": 0
+  },
+  {
+    "cohort": "CONTROL",
+    "role": "negative: nonexistent staff id 99999",
+    "name": "Danny Weigel",
+    "page": "https://www.grandforksgov.com/Home/Components/StaffDirectory/StaffDirectory/99999/259",
+    "candidates": [],
+    "page_status": 404,
+    "page_bytes": 88517,
+    "page_title": "| City of Grand Forks, ND",
+    "page_names_person": false,
+    "img_tags": 10,
+    "alt_hits": 0
+  }
+]
