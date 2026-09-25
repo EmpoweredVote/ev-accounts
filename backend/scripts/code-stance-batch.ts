@@ -11,7 +11,9 @@ import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { buildCodingReport } from './lib/codingReport.js';
 import { validateCoderLabelFile, CODEBOOK_VERSION } from './lib/coderLabel.js';
+import type { CoderRow } from './lib/coderLabel.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
+import { buildDisagreementDigest } from './lib/disagreementDigest.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
@@ -41,6 +43,25 @@ console.log(`M1 (batch) alpha = ${report.m1.alpha === null ? 'undefined' : repor
 for (const v of report.validity) console.log(`coder ${v.slot}: ${v.fileErrors.length ? v.fileErrors.join('; ') : 'file ok'}, ${v.rowErrors} invalid row(s)`);
 for (const r of report.rows) console.log(`${r.shadow.padEnd(27)} ${r.topic_key.padEnd(28)} ${r.outcome.kind}${r.shadow_reasons.length ? `  [${r.shadow_reasons.join(', ')}]` : ''}`);
 if (report.needsSource.length) console.log(`\n${report.needsSource.length} row(s) request sources → ${join(dir, 'needs-source.json')} (collector fetches, then re-snapshot and re-code all three)`);
+
+// Improvement loop 1 (spec sec10.1): which codebook variables did the coders read differently?
+const validRows = new Map<number, CoderRow[]>();
+for (const [slot, raw] of files) {
+  const v = validateCoderLabelFile(raw, { snapshotText, expectedSlot: slot });
+  if (v.fileErrors.length) continue;
+  const seenKeys = new Set<string>();
+  const rows: CoderRow[] = [];
+  for (const r of v.rows) {
+    if (!r.row || r.errors.length !== 0) continue;
+    if (seenKeys.has(r.key)) continue; // duplicate row key within this file — keep only the first (matches codingReport.ts)
+    seenKeys.add(r.key);
+    rows.push(r.row);
+  }
+  validRows.set(slot, rows);
+}
+const digest = buildDisagreementDigest(validRows);
+writeFileSync(join(dir, 'disagreement-digest.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, ...digest }, null, 2));
+console.log(`most-split codebook variables: ${digest.ranked.slice(0, 3).join(', ') || 'none'} -> ${join(dir, 'disagreement-digest.json')}`);
 
 if (APPLY) {
   // Scope filter (fix round 1, item 1): only rows that belong to THIS batch's seat and topic set may
