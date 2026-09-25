@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { apiFetch } from '../../lib/api';
+import { groupResearchReviewRows } from './researchReviewGrouping';
 
 interface StagingStance {
   id: string;
@@ -29,6 +30,8 @@ interface ResearchReviewRow {
   verifiedSourceCount: number;
   threshold: number;
   batchId: string;
+  /** The body/chamber of the politician's current office — null when they hold none. */
+  bodyLabel: string | null;
 }
 
 interface TopicRevisionRow {
@@ -269,26 +272,50 @@ export function ReviewQueuePage() {
       ) : research.rows.length === 0 ? (
         <Empty message="No research stances pending review." />
       ) : (
-        <div className="space-y-2">
-          {research.rows.map((row) => (
-            <Link
-              key={row.id}
-              to={`/admin/review/research/${row.id}`}
-              className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-ev-red dark:hover:border-ev-red transition-colors"
-            >
-              <div>
-                <p className="font-medium text-gray-900 dark:text-white">{row.fullNameRaw}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{row.topicKey}</p>
+        // Grouped by topic then by body/chamber (task 5, requirement 2) — a reviewer works one
+        // cohort (say, every State Senate row on `housing`) against one ladder at a time, instead
+        // of hopping topics row by row. bodyLabel comes from the politician's CURRENT office.
+        <div className="space-y-6">
+          {groupResearchReviewRows(research.rows).map((topicGroup) => (
+            <div key={topicGroup.topicKey}>
+              <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                {topicGroup.topicKey}
+                <span className="text-xs font-normal bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-1.5 py-0.5 rounded">
+                  {topicGroup.count}
+                </span>
+              </h2>
+              <div className="space-y-4">
+                {topicGroup.bodies.map((bodyGroup) => (
+                  <div key={bodyGroup.body}>
+                    <h3 className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5 pl-1">
+                      {bodyGroup.body} <span className="text-gray-400 dark:text-gray-500">({bodyGroup.rows.length})</span>
+                    </h3>
+                    <div className="space-y-2">
+                      {bodyGroup.rows.map((row) => (
+                        <Link
+                          key={row.id}
+                          to={`/admin/review/research/${row.id}`}
+                          className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-ev-red dark:hover:border-ev-red transition-colors"
+                        >
+                          <div>
+                            <p className="font-medium text-gray-900 dark:text-white">{row.fullNameRaw}</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{row.topicKey}</p>
+                          </div>
+                          <div className="text-right text-sm text-gray-500 dark:text-gray-400">
+                            {row.proposedValue !== null && (
+                              <p className="font-medium text-gray-700 dark:text-gray-300">value {row.proposedValue}</p>
+                            )}
+                            <p className="text-xs">
+                              {row.verifiedSourceCount}/{row.threshold} sources verified
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="text-right text-sm text-gray-500 dark:text-gray-400">
-                {row.proposedValue !== null && (
-                  <p className="font-medium text-gray-700 dark:text-gray-300">value {row.proposedValue}</p>
-                )}
-                <p className="text-xs">
-                  {row.verifiedSourceCount}/{row.threshold} sources verified
-                </p>
-              </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}

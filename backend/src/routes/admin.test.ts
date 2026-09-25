@@ -31,15 +31,30 @@ vi.mock('../lib/federalCoverage.js', () => ({
   getFederalDelegation: mockGetFederalDelegation,
 }));
 
+// Only resolveResearchReview is exercised below (task 13, R1 — approval input validation); the
+// other three are mocked only because admin.ts imports them from the same module.
+const { mockResolveResearchReview, mockRejectResearchReview } = vi.hoisted(() => ({
+  mockResolveResearchReview: vi.fn().mockResolvedValue({ ladderRevisionUnknown: false }),
+  mockRejectResearchReview: vi.fn().mockResolvedValue(undefined),
+}));
+vi.mock('../lib/researchEvidenceService.js', () => ({
+  listPendingResearchReview: vi.fn(),
+  getResearchReviewWithLadder: vi.fn(),
+  resolveResearchReview: mockResolveResearchReview,
+  rejectResearchReview: mockRejectResearchReview,
+}));
+
 import adminRouter from './admin.js';
 
 const app = express();
+app.use(express.json());
 app.use('/api/admin', adminRouter);
 
 beforeEach(() => {
   mockGetElectionsStateScores.mockReset();
   mockGetElectionsCountyScores.mockReset();
   mockGetFederalDelegation.mockReset();
+  mockResolveResearchReview.mockClear();
 });
 
 // Shared fixture race set — one statewide race (bare-state ocd_id, no county-pinnable
@@ -158,5 +173,120 @@ describe('ELEC-03: state/county denominator consistency', () => {
     // alteration. A regression in route glue that dropped/duplicated data would break
     // this equality even though each branch's own mock would still report success.
     expect(mi.countyCoverage.races_total).toBe(countyDrilldownTotal);
+  });
+});
+
+// Task 13, R1: the route rejects a malformed body with 400 before resolveResearchReview ever
+// runs — a bad shape must never reach the service (or the DB).
+describe('POST /api/admin/research-review/:id/resolve — approval input validation', () => {
+  it('400 when humanVerifiedUrls is not an array', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ humanVerifiedUrls: 'https://a.example' });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/humanVerifiedUrls/);
+    expect(mockResolveResearchReview).not.toHaveBeenCalled();
+  });
+
+  it('400 when humanVerifiedUrls contains a non-string entry', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ humanVerifiedUrls: ['https://a.example', 5] });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/humanVerifiedUrls/);
+    expect(mockResolveResearchReview).not.toHaveBeenCalled();
+  });
+
+  it.each([7, 2.5, 0, -1, '3'])('400 when valueOverride is %j (not absent, null, or an integer 1-5)', async (bad) => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: bad });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/valueOverride/);
+    expect(mockResolveResearchReview).not.toHaveBeenCalled();
+  });
+
+  it('400 when reasoningOverride is not a string', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ reasoningOverride: 42 });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/reasoningOverride/);
+    expect(mockResolveResearchReview).not.toHaveBeenCalled();
+  });
+
+  it('reaches the service when humanVerifiedUrls is absent and valueOverride is null (both allowed)', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: null });
+    expect(res.status).toBe(200);
+    expect(mockResolveResearchReview).toHaveBeenCalledTimes(1);
+    const call = mockResolveResearchReview.mock.calls[0];
+    expect(call[0]).toBe('rev-1');
+    expect(call[2]).toEqual([]);
+    expect(call[3]).toBe(null);
+    expect(call[4]).toBeUndefined();
+  });
+
+  it('reaches the service with a valid integer valueOverride 1-5 and a string array', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ humanVerifiedUrls: ['https://a.example'], valueOverride: 3, reasoningOverride: 'why' });
+    expect(res.status).toBe(200);
+    const call = mockResolveResearchReview.mock.calls[0];
+    expect(call[0]).toBe('rev-1');
+    expect(call[2]).toEqual(['https://a.example']);
+    expect(call[3]).toBe(3);
+    expect(call[4]).toBe('why');
+  });
+
+  // CA_0264: the ladder check's two outcomes, as the page receives them.
+  it('returns ladderRevisionUnknown so the page can flag a legacy row', async () => {
+    mockResolveResearchReview.mockResolvedValueOnce({ ladderRevisionUnknown: true });
+    const res = await request(app).post('/api/admin/research-review/rev-1/resolve').send({});
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true, ladderRevisionUnknown: true });
+  });
+  it('409 with the service message when the ladder changed since the row was researched', async () => {
+    mockResolveResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('the ladder changed since this row was researched — re-research it'), { code: 'CONFLICT' }));
+    const res = await request(app).post('/api/admin/research-review/rev-1/resolve').send({});
+    expect(res.status).toBe(409);
+    expect(res.body.error).toBe('the ladder changed since this row was researched — re-research it');
+  });
+
+  // Task 5, requirement 3: the route has no proposedValue/proposedReasoning to compare against
+  // (that lives in the row the service already fetched), so this rule is enforced service-side —
+  // the route just passes the INCOMPLETE code through as 422, same as every other INCOMPLETE.
+  it('422 with the service message when a changed valueOverride carries no distinct reasoningOverride', async () => {
+    mockResolveResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value'),
+      { code: 'INCOMPLETE' }));
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: 4 });
+    expect(res.status).toBe(422);
+    expect(res.body.error).toBe(
+      'valueOverride differs from the proposed value — reasoningOverride must be present and explain the new value');
+  });
+});
+
+// I5 (final review 2026-09-24): a reject that finds no pending row is loud, not a silent 200.
+describe('POST /api/admin/research-review/:id/reject', () => {
+  it('200 on a pending row', async () => {
+    const res = await request(app).post('/api/admin/research-review/rev-1/reject').send({ notes: 'n' });
+    expect(res.status).toBe(200);
+  });
+  it('409 with the service message when the row is no longer pending', async () => {
+    mockRejectResearchReview.mockRejectedValueOnce(Object.assign(
+      new Error('Review row is resolved, not pending — only a pending row can be rejected'), { code: 'CONFLICT' }));
+    const res = await request(app).post('/api/admin/research-review/rev-1/reject').send({});
+    expect(res.status).toBe(409);
+    expect(res.body.error).toBe('Review row is resolved, not pending — only a pending row can be rejected');
+  });
+  it('404 when the id names no row', async () => {
+    mockRejectResearchReview.mockRejectedValueOnce(Object.assign(new Error('Not found'), { code: 'NOT_FOUND' }));
+    const res = await request(app).post('/api/admin/research-review/nope/reject').send({});
+    expect(res.status).toBe(404);
   });
 });

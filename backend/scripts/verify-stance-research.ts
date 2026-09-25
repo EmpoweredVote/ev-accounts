@@ -2,31 +2,69 @@
  * verify-stance-research.ts — deterministic verification gate for /research-stances.
  *
  * Reads a batch directory's `stances.csv` + `evidence.csv`, fetches each cited
- * URL with headless Chromium, and checks every snippet appears verbatim on the
- * page (after normalization) with the politician's name within 500 characters.
- * No LLM in the loop. See .claude/skills/research-stances/README.md and
+ * URL through the tiered fetch ladder (HTTP → Wayback; src/lib/verificationFetch.ts),
+ * and checks every snippet appears verbatim on the page (after normalization) with
+ * the politician's name within 500 characters. No LLM in the loop. See
+ * .claude/skills/research-stances/README.md and
  * docs/superpowers/specs/2026-04-30-stance-research-verification-design.md.
  *
- *   Dry-run (default): prints the pushable / re-research / review partition,
- *     including the failed-source URLs to feed a re-research --exclude-urls list.
- *   --apply: pushes pushable rows to inform.politician_answers +
- *     inform.politician_context + inform.politician_context_evidence, and writes
- *     below-threshold / unresolved rows to inform.stance_research_review.
+ *   Dry-run (default): decides every scored row's action bucket — auto-push,
+ *     unchanged, review, or re-research — via stancePublishPolicy.decidePublish,
+ *     printing the bucket counts and, for re-research rows, the failed-source
+ *     URLs to feed a re-research pass.
+ *   --apply: pushes auto-push rows through the season-aware writeVerifiedStance
+ *     (inform.politician_answers + inform.politician_context) plus
+ *     inform.politician_context_evidence, and writes review / below-threshold
+ *     rows to inform.stance_research_review. Also writes <dir>/written-<batch>.json
+ *     (scripts/lib/writtenLedger.ts) for the rows THIS run wrote, in the shape
+ *     scripts/audit-chair-evidence.mjs --check reads — export-written-ledger.ts writes the
+ *     same file for a batch's RESOLVED review rows once a person approves them (Task 7). And it
+ *     stamps essentials.politicians.last_stances_researched_at for EVERY politician in the batch
+ *     (stances.csv, resolved by name/politician_id), not only the ones pushed — a row queued for
+ *     review or scored value=null still means the person was researched (C118: a research
+ *     timestamp with zero answers is legitimate).
+ *
+ *   REVIEW-ALL IS THE DEFAULT. Without --auto-push, a row that passes every check
+ *     goes to the review queue with reason `review-all-mode` instead of being
+ *     written (ruling 2026-09-22, "nothing auto-publishes"). Until a chair-fit
+ *     classifier exists (Plan 2), a person approves every stance, and those
+ *     approvals are the labeled set Plan 2 needs. --auto-push is a deliberate
+ *     per-run flag; no env var turns it on.
  *
  * Usage:
  *   npx tsx scripts/verify-stance-research.ts --dir data/stance-research/<batch> \
- *     [--threshold 2] [--batch-id <id>] [--apply] [--re-researched]
+ *     [--threshold 2] [--batch-id <id>] [--apply] [--auto-push] [--re-researched] [--editor-id <uuid>]
+ * Requires <dir>/gate-findings.json from scripts/stance-gate.ts, and <dir>/topics.json
+ * from scripts/build-stance-topic-bundle.ts: every scored row's ladder must still be the open
+ * season's — the same pin AND the same served revision (ADR 0006; a clarifying publish moves the
+ * served text without moving the pin) — or the run exits 2 before any write. stances.csv must carry
+ * stance-gate's source_urls column: only evidence on a row's own research.csv sources is verified
+ * or published (I1).
+ * Exit: 0 ok, 1 --apply finished with row errors, 2 usage / unreadable / refused batch.
  *
- * Idempotent: re-running the same batch (e.g. after appending re-research rows
- * to the CSVs) is safe — all writes are upserts / replace-by-key.
+ * Idempotent: re-running the same batch is safe. Stance writes are season-aware
+ * upserts, each in its own transaction with its snippets; snippets are
+ * insert-if-absent. Review-queue rows are upserted per (batch, politician-or-name,
+ * topic), and a re-run refreshes only rows still UNDECIDED (pending /
+ * unresolved_politician) — a row a person already resolved or rejected is left
+ * alone, never reset to pending. A re-research pass REPLACES that (politician, topic) pair's rows
+ * in research.csv / evidence.csv — it never appends a second row for a pair (two
+ * rows for one pair are refused: stance-gate flags `duplicate-row`, and this script
+ * exits 2 before any write) — and then re-runs scripts/stance-gate.ts (which
+ * regenerates stances.csv and gate-findings.json together). Appending straight to
+ * stances.csv instead would fail the row-count check against gate-findings.json below.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import 'dotenv/config';
+import { readFileSync, existsSync, writeFileSync, rmSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import type { PoolClient } from 'pg';
 import { pool } from '../src/lib/db.js';
 import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.js';
 import {
   verifyEvidence,
   createPageFetcher,
+  normTopic,
+  stanceKey,
   type StanceRow,
   type EvidenceRow,
   type PoliticianNames,
@@ -38,7 +76,14 @@ import {
   buildReviewRowForInsert,
   accumulateEvidence,
   upsertReviewRow,
+  reviewOptionalColumns,
+  writeVerifiedStance,
+  ladderMatches,
 } from '../src/lib/researchEvidenceService.js';
+import { OPEN_SEASON_ANSWER_SQL, DISPLAYED_VALUES_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
+import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
+import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
+import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
 
 // ---------------------------------------------------------------- args
 function flag(name: string): boolean {
@@ -54,12 +99,56 @@ if (!DIR) {
   console.error('ERROR: --dir <batch directory> is required');
   process.exit(2);
 }
+// R2: a refused run (any exit-2 path below) must not leave a PREVIOUS run's report sitting in the
+// batch directory — someone reading publish-report.json after a refusal would otherwise see a
+// stale, unrelated result and mistake it for this run's outcome. Removed right after --dir is
+// known, before any other validation can exit; prints only when there was something to remove.
+const stalePublishReportPath = join(DIR, 'publish-report.json');
+if (existsSync(stalePublishReportPath)) {
+  rmSync(stalePublishReportPath, { force: true });
+  console.log('removed stale publish-report.json');
+}
 // Default 1 verified source (cheap mode — avoids a re-research wave). Override
 // with --threshold or the RESEARCH_STANCES_THRESHOLD env var.
-const THRESHOLD = Number(opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1'));
+const rawThreshold = opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1');
+const THRESHOLD = Number(rawThreshold);
+if (!Number.isInteger(THRESHOLD) || THRESHOLD < 1) {
+  // An unvalidated NaN/0 threshold is not a strict setting — `verifiedSourceCount < THRESHOLD`
+  // is false for every row, so a bad --threshold silently AUTO-PUSHES rows no page verified.
+  console.error(`ERROR: --threshold (or RESEARCH_STANCES_THRESHOLD) must be an integer >= 1, got ${JSON.stringify(rawThreshold)}`);
+  process.exit(2);
+}
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
-const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
+// Review-all unless the operator opts in, per run (ruling 2026-09-22). Deliberately argv-only:
+// an env var would let a scheduled run inherit unattended publishing nobody chose for it.
+const AUTO_PUSH = flag('--auto-push');
+// Stamps re_research_attempted on queued rows that are actually below-threshold re-research
+// attempts — not on every queued row (R7; see the queued-rows loop below).
+const RE_RESEARCHED = flag('--re-researched');
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const EDITOR_ID = opt('--editor-id', process.env.EV_EDITOR_ID) ?? null;
+if (EDITOR_ID && !UUID_RE.test(EDITOR_ID)) {
+  // Catches `--editor-id --apply` (opt() greedily takes the next argv token as the value, so
+  // EDITOR_ID becomes the literal string "--apply") before it can reach a query as a bad param.
+  console.error(`ERROR: --editor-id must be a uuid, got ${JSON.stringify(EDITOR_ID)}`);
+  process.exit(2);
+}
+if (APPLY && !EDITOR_ID) {
+  console.error('ERROR: --apply needs --editor-id <admin user uuid> (or EV_EDITOR_ID) — a stance nobody authored is a row nobody can be asked about');
+  process.exit(2);
+}
+const gatePath = join(DIR, 'gate-findings.json');
+if (!existsSync(gatePath)) {
+  console.error(`ERROR: ${gatePath} not found — run scripts/stance-gate.ts --dir ${DIR} first`);
+  process.exit(2);
+}
+const topicsPath = join(DIR, 'topics.json');
+if (!existsSync(topicsPath)) {
+  console.error(`ERROR: ${topicsPath} not found — it records the ladder revisions this batch was researched against; rebuild it with scripts/build-stance-topic-bundle.ts`);
+  process.exit(2);
+}
 
 // ---------------------------------------------------------------- load CSVs
 const stancesPath = join(DIR, 'stances.csv');
@@ -68,47 +157,277 @@ if (!existsSync(stancesPath)) {
   console.error(`ERROR: ${stancesPath} not found`);
   process.exit(2);
 }
-const allStances: StanceRow[] = parseStancesCsv(readFileSync(stancesPath, 'utf8'));
-const evidenceRows: EvidenceRow[] = existsSync(evidencePath)
-  ? parseEvidenceCsv(readFileSync(evidencePath, 'utf8'))
-  : [];
+let allStances: StanceRow[];
+try {
+  allStances = parseStancesCsv(readFileSync(stancesPath, 'utf8'));
+} catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(`ERROR: ${stancesPath} is not valid CSV: ${msg}`);
+  process.exit(2);
+}
+let evidenceRows: EvidenceRow[] = [];
+if (existsSync(evidencePath)) {
+  try {
+    evidenceRows = parseEvidenceCsv(readFileSync(evidencePath, 'utf8'));
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`ERROR: ${evidencePath} is not valid CSV: ${msg}`);
+    process.exit(2);
+  }
+}
+
+// I1 (final review 2026-09-24): the verifier verifies only evidence on a row's OWN sources, which
+// stance-gate now writes into stances.csv. A stances.csv without the column was written by an older
+// gate and would let an evidence URL the row never cited verify and be published — refuse it.
+if (allStances.some((s) => s.source_urls === undefined)) {
+  console.error(`ERROR: ${stancesPath} has no source_urls column — it was written by an older stance-gate. Re-run scripts/stance-gate.ts --dir ${DIR}`);
+  process.exit(2);
+}
 
 // value=null rows are an explicit "insufficient evidence" signal: skip verification,
 // drop in normal mode (never pushed, never queued).
 const nullRows = allStances.filter((s) => s.value === null);
 const stanceRows = allStances.filter((s) => s.value !== null);
 
-// ---------------------------------------------------------------- resolve names + topics
-const csvNames = [...new Set(stanceRows.map((s) => s.full_name))];
-const { rows: polRows } = csvNames.length
+// ---------------------------------------------------------------- load gate findings (D3)
+// gate-findings.json and stances.csv are written together by stance-gate.ts, from the same
+// research.csv. A row-count mismatch means gate-findings.json describes a different batch
+// than the one being verified here — a verdict from that is a blind detector, not a clean one.
+// A severity or check_id the gate never writes is refused, not trusted: a hand-edited
+// "severity": "critical" would otherwise not count as high, and an unknown check_id would be
+// carried into decidePublish as if the gate had meant it.
+const CHECK_IDS: ReadonlySet<string> = new Set(GATE_CHECK_IDS);
+function isFindingShape(f: unknown): f is GateFinding {
+  if (typeof f !== 'object' || f === null) return false;
+  const r = f as Record<string, unknown>;
+  return typeof r.full_name === 'string' && typeof r.topic_key === 'string'
+    && typeof r.check_id === 'string' && CHECK_IDS.has(r.check_id)
+    && (r.severity === 'high' || r.severity === 'medium');
+}
+
+let gateFileRaw: unknown;
+try {
+  gateFileRaw = JSON.parse(readFileSync(gatePath, 'utf8'));
+} catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(`ERROR: ${gatePath} is not valid JSON: ${msg}`);
+  process.exit(2);
+}
+// M5: a malformed-but-parseable file (a non-object top level, a missing .summary, or a finding
+// missing a required field) used to reach a property access on `undefined`/`null` further down
+// and crash with an uncaught TypeError (exit 1) instead of the deliberate "usage/unreadable"
+// exit 2 this script uses everywhere else. Validate the whole shape up front instead.
+if (typeof gateFileRaw !== 'object' || gateFileRaw === null || Array.isArray(gateFileRaw)) {
+  console.error(`ERROR: ${gatePath} is not valid JSON: expected a top-level object`);
+  process.exit(2);
+}
+const gateFileCandidate = gateFileRaw as { findings?: unknown; summary?: unknown };
+if (!Array.isArray(gateFileCandidate.findings) || !gateFileCandidate.findings.every(isFindingShape)) {
+  console.error(`ERROR: ${gatePath} is not valid JSON: .findings must be an array of findings with string full_name/topic_key, severity high|medium, and a check_id stance-gate emits`);
+  process.exit(2);
+}
+const findings = gateFileCandidate.findings as GateFinding[];
+const summary = gateFileCandidate.summary as { rows?: unknown } | undefined;
+if (!summary || typeof summary.rows !== 'number') {
+  console.error(`ERROR: ${gatePath} is not valid JSON: .summary.rows must be a number`);
+  process.exit(2);
+}
+if (summary.rows !== allStances.length) {
+  console.error(
+    `ERROR: gate-findings.json covers ${summary.rows} rows but stances.csv has ${allStances.length} — re-run scripts/stance-gate.ts`,
+  );
+  process.exit(2);
+}
+// Keyed through the gate's own normalizer (stanceKey): findings carry research.csv's spelling,
+// stances.csv carries the bundle's canonical one, and the two must meet.
+const gateByKey = new Map<string, GateFinding[]>();
+for (const f of findings) {
+  const k = stanceKey(f.full_name, f.topic_key);
+  gateByKey.set(k, [...(gateByKey.get(k) ?? []), f]);
+}
+
+// ---------------------------------------------------------------- load the bundle's ladders (I7)
+// topics.json is the exact question set the researcher scored against: each topic's pinned
+// topic_revision_id at the moment build-stance-topic-bundle.ts ran. Checked against the open
+// season's CURRENT pin below.
+let bundleTopicsRaw: unknown;
+try {
+  bundleTopicsRaw = JSON.parse(readFileSync(topicsPath, 'utf8'));
+} catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(`ERROR: ${topicsPath} is not valid JSON: ${msg}`);
+  process.exit(2);
+}
+type BundleLadder = { topic_key: string; topic_revision_id: string; served_revision_id: string };
+const isBundleTopic = (t: unknown): t is BundleLadder =>
+  typeof t === 'object' && t !== null
+  && typeof (t as Record<string, unknown>).topic_key === 'string'
+  && typeof (t as Record<string, unknown>).topic_revision_id === 'string'
+  && typeof (t as Record<string, unknown>).served_revision_id === 'string';
+if (!Array.isArray(bundleTopicsRaw) || bundleTopicsRaw.length === 0 || !bundleTopicsRaw.every(isBundleTopic)) {
+  // C1: a bundle with no served_revision_id was built before 2026-09-24 and printed the PIN's rung
+  // text, which on 13 of 60 topics is not what voters read. Its research was judged against the
+  // wrong sentence; refuse it rather than guess.
+  console.error(`ERROR: ${topicsPath} is not valid: expected a non-empty array of topics with string topic_key/topic_revision_id/served_revision_id `
+    + '(a bundle without served_revision_id showed the pin\'s text, not the served text — rebuild it with scripts/build-stance-topic-bundle.ts and re-research)');
+  process.exit(2);
+}
+const bundleTopics = bundleTopicsRaw as BundleLadder[];
+const bundleRevisionByKey = new Map(bundleTopics.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
+const bundleServedByKey = new Map(bundleTopics.map((t) => [normTopic(t.topic_key), t.served_revision_id]));
+
+// ---------------------------------------------------------------- editor pre-flight (M4)
+// A uuid that names nobody fails the editor_id FK on the FIRST stance write — after every page
+// has been fetched, and (before transactions) after the answer row. Refuse it before anything.
+if (APPLY) {
+  const { rows: editor } = await pool.query(`SELECT 1 FROM public.users WHERE id = $1`, [EDITOR_ID]);
+  if (editor.length === 0) {
+    console.error(`ERROR: --editor-id ${EDITOR_ID} is not a user in public.users — refusing to write stances nobody can be asked about`);
+    await pool.end();
+    process.exit(2);
+  }
+}
+
+// ---------------------------------------------------------------- resolve politicians + topics
+// D1: resolve by the bundle's politician_id first. full_name is not unique here — duplicate
+// discovery stubs and namesakes are real (e.g. three "Rachael Himsel" records existed until
+// 2026-09-22) — so a name-only join can silently write a stance onto the wrong person.
+// Every CSV name, not just scored rows: resolution here also feeds the batch's research-timestamp
+// stamp set below (C118), which covers a value=null ("insufficient evidence") row too — a
+// politician with no stance this batch was still researched.
+const csvNames = [...new Set(allStances.map((s) => s.full_name))];
+const idsByName = new Map<string, Set<string>>();
+for (const s of allStances) {
+  if (!s.politician_id) continue;
+  const set = idsByName.get(s.full_name) ?? new Set<string>();
+  set.add(s.politician_id);
+  idsByName.set(s.full_name, set);
+}
+const idsToLookUp = [...new Set([...idsByName.values()].flatMap((set) => [...set]))];
+// Compare as text so a malformed id in the CSV cannot throw a uuid cast error.
+const { rows: idRows } = idsToLookUp.length
   ? await pool.query<{ id: string; full_name: string }>(
-      `SELECT id, full_name FROM essentials.politicians
-       WHERE full_name = ANY($1)
-          OR lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
-      [csvNames],
+      `SELECT id::text AS id, full_name FROM essentials.politicians WHERE id::text = ANY($1::text[])`,
+      [idsToLookUp],
     )
   : { rows: [] };
-const dbByLower = new Map(polRows.map((p) => [p.full_name.toLowerCase(), p]));
+const polById = new Map(idRows.map((p) => [p.id, p]));
+
+const namesNeedingFallback = csvNames.filter((n) => (idsByName.get(n)?.size ?? 0) === 0);
+const { rows: nameRows } = namesNeedingFallback.length
+  ? await pool.query<{ id: string; full_name: string }>(
+      `SELECT id::text AS id, full_name FROM essentials.politicians
+       WHERE lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
+      [namesNeedingFallback],
+    )
+  : { rows: [] };
+const nameMatchesByLower = new Map<string, { id: string; full_name: string }[]>();
+for (const p of nameRows) {
+  const k = p.full_name.toLowerCase();
+  nameMatchesByLower.set(k, [...(nameMatchesByLower.get(k) ?? []), p]);
+}
 
 const lastToken = (name: string) => name.trim().split(/\s+/).filter(Boolean).slice(-1)[0] ?? name;
 
 const politicianNames: PoliticianNames = {};
 const idByName = new Map<string, string | null>(); // csv name -> politician_id (or null if unmatched)
 for (const name of csvNames) {
-  const db = dbByLower.get(name.toLowerCase());
-  const canonical = db?.full_name ?? name;
+  const ids = idsByName.get(name);
+  let resolved: { id: string; full_name: string } | null = null;
+  if (ids && ids.size === 1) {
+    const [id] = ids;
+    const p = polById.get(id);
+    if (p) {
+      resolved = p;
+    } else {
+      console.warn(`WARN: ${name} carries politician_id ${id}, which is not in essentials.politicians — unresolved`);
+    }
+  } else if (ids && ids.size > 1) {
+    console.warn(`WARN: ${name} carries ${ids.size} distinct politician_ids in this batch (${[...ids].join(', ')}) — unresolved`);
+  } else {
+    const matches = nameMatchesByLower.get(name.toLowerCase()) ?? [];
+    if (matches.length === 1) {
+      resolved = matches[0];
+    } else if (matches.length > 1) {
+      console.warn(`WARN: ${name} matches ${matches.length} politicians by name — unresolved (carries no politician_id to disambiguate)`);
+    }
+  }
+  const canonical = resolved?.full_name ?? name;
   politicianNames[name] = { fullName: canonical, lastName: lastToken(canonical) };
-  idByName.set(name, db?.id ?? null);
+  idByName.set(name, resolved?.id ?? null);
 }
 
-const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: string }>(
-  `SELECT id AS topic_id, topic_key FROM inform.compass_topics WHERE is_live = true`,
+// 🔴 The open season's question set — not is_live. A stance can only be written to a
+// question the open season asks; is_live and the season's set disagreed on 2026-09-22.
+// served_revision_id: the revision whose text voters read now (ADR 0006, servedRevisionLateral).
+// LEFT lateral: a pin with no served revision still counts as asked, and reads as drift below.
+const { rows: topicRows } = await pool.query<{
+  topic_id: string; topic_key: string; topic_revision_id: string; served_revision_id: string | null; season_id: string;
+}>(
+  `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id,
+          eff.id::text AS served_revision_id, sq.season_id::text AS season_id
+     FROM inform.season_questions sq
+     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+     JOIN inform.compass_topics t ON t.id = sq.topic_id
+     LEFT JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff')} ON true`,
 );
-const topicIdByKey = new Map(topicRows.map((t) => [t.topic_key, t.topic_id]));
+const topicIdByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_id]));
+const openRevisionByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
+const openServedByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.served_revision_id]));
+if (topicRows.length === 0) {
+  console.error('ERROR: no open season (or it asks no questions) — nothing can be verified against a pin or written; open a season first');
+  await pool.end();
+  process.exit(2);
+}
+// One open season (seasons_one_open), so every row carries the same season_id. Stored on each
+// queued row with the bundle's revision (CA_0264), so approval can refuse a row re-pinned later.
+const openSeasonId = topicRows[0].season_id;
+
+// ---------------------------------------------------------------- the ladder must still be the pin (I7)
+// A value is an answer to one ladder's wording. If the open season re-pinned a topic (or dropped
+// it) after the bundle was built, the researcher scored against a sentence the stored answer
+// would not be an answer to. Checked for every scored row's topic that the bundle holds (a topic
+// the bundle lacks is already a gate-high `topic-not-in-season`), before any fetch or write.
+// C1: BOTH ids are compared. The pin catches a re-pin or a dropped topic; the served id catches a
+// clarifying publish mid-batch, which changes the words voters read without moving the pin.
+const ladderChanged = [...new Set(stanceRows.map((s) => normTopic(s.topic_key)))]
+  .filter((k) => bundleRevisionByKey.has(k) && !ladderMatches(
+    { pin: bundleRevisionByKey.get(k) ?? null, served: bundleServedByKey.get(k) ?? null },
+    { pin: openRevisionByKey.get(k) ?? null, served: openServedByKey.get(k) ?? null }))
+  .sort();
+if (ladderChanged.length) {
+  console.error(`ERROR: the ladder changed since the bundle was built — rebuild the bundle and re-research these topics: ${ladderChanged
+    .map((k) => `${k} (bundle pin ${bundleRevisionByKey.get(k)} served ${bundleServedByKey.get(k)}, `
+      + `open season ${openRevisionByKey.has(k) ? `pin ${openRevisionByKey.get(k)} served ${openServedByKey.get(k) ?? 'none'}` : 'no longer asks it'})`).join('; ')}`);
+  await pool.end();
+  process.exit(2);
+}
+
+// ---------------------------------------------------------------- one row per pair (C1)
+// Two rows proposing a value for one (politician, topic) pair verify each other's snippets and
+// both reach decidePublish. stance-gate flags them `duplicate-row` (high); this is the verifier's
+// own refusal, so a stale or hand-edited gate-findings.json cannot let one through. Keyed by the
+// resolved (politician_id, topic_id) where there is one — two spellings of one person are one
+// person — else by the normalized name + topic. Checked over every scored row (the same set
+// `decided` is built from below) before any page is fetched, and before any write.
+const pairKey = (s: StanceRow): string => {
+  const pid = idByName.get(s.full_name) ?? null;
+  if (!pid) return `name:${stanceKey(s.full_name, s.topic_key)}`;
+  return `id:${pid}\u0000${topicIdByKey.get(normTopic(s.topic_key)) ?? `key:${normTopic(s.topic_key)}`}`;
+};
+const rowsByPair = new Map<string, StanceRow[]>();
+for (const s of stanceRows) rowsByPair.set(pairKey(s), [...(rowsByPair.get(pairKey(s)) ?? []), s]);
+const duplicatePairs = [...rowsByPair.values()].filter((rs) => rs.length > 1);
+if (duplicatePairs.length) {
+  console.error('ERROR: more than one scored row for one (politician, topic) pair — refusing to decide or write any of them. '
+    + 'A re-research pass must REPLACE the pair\'s rows in research.csv/evidence.csv, never append; fix and re-run stance-gate.ts: '
+    + duplicatePairs.map((rs) => `${rs.map((s) => `${s.full_name}/${s.topic_key}=${s.value}`).join(' + ')}`).join('; '));
+  await pool.end();
+  process.exit(2);
+}
 
 // ---------------------------------------------------------------- verify
-// Tiered fetch ladder (HTTP → headless Chromium → Wayback), reusing one browser
-// across the batch. No LLM in the loop.
+// Tiered fetch ladder (HTTP → Wayback). No LLM in the loop.
 const fetchSession = createVerificationFetchSession();
 const fetcher = createPageFetcher(fetchSession.fetch);
 const { pushable, needsReResearch } = await verifyEvidence({
@@ -120,131 +439,247 @@ const { pushable, needsReResearch } = await verifyEvidence({
 });
 await fetchSession.close();
 
-// A below-threshold row is re-researchable only if its politician resolved; an
-// unresolved politician can never push, so it routes straight to review.
-const reResearch = needsReResearch.filter((r) => idByName.get(r.stance.full_name));
-const unresolved = needsReResearch.filter((r) => !idByName.get(r.stance.full_name));
-
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
 
-// ---------------------------------------------------------------- report
-console.log(`\n=== verify-stance-research — batch "${BATCH_ID}" (threshold ${THRESHOLD}) ===`);
-console.log(
-  `stance rows: ${allStances.length} (${stanceRows.length} scored, ${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`,
-);
-console.log(
-  `\nPUSHABLE: ${pushable.length}   RE-RESEARCH: ${reResearch.length}   UNRESOLVED→REVIEW: ${unresolved.length}`,
-);
+// Existing OPEN-season values — the thing a write would replace.
+const existing = new Map<string, number>();
+for (const pid of new Set([...idByName.values()].filter((v): v is string => Boolean(v)))) {
+  const { rows } = await pool.query<{ topic_id: string; value: string }>(OPEN_SEASON_ANSWER_SQL, [pid]);
+  for (const r of rows) existing.set(`${pid} ${r.topic_id}`, Number(r.value));
+}
 
-if (pushable.length) {
-  console.log('\n--- pushable (>= threshold verified sources) ---');
-  for (const r of pushable) {
-    console.log(`  PUSH\t${r.stance.full_name}\t${r.stance.topic_key}\tvalue=${r.stance.value}\tverified_sources=${r.verifiedSources.length}`);
+// What voters see now (ruling 2026-09-24) — one batched query for every resolved politician.
+const displayed = new Map<string, { value: number; season: number }>();
+{
+  const pids = [...new Set([...idByName.values()].filter((v): v is string => Boolean(v)))];
+  if (pids.length) {
+    const { rows } = await pool.query<{ politician_id: string; topic_id: string; value: string; season_number: number }>(
+      DISPLAYED_VALUES_SQL, [pids]);
+    for (const r of rows) displayed.set(`${r.politician_id} ${r.topic_id}`, { value: Number(r.value), season: r.season_number });
   }
 }
-if (reResearch.length) {
-  console.log('\n--- below threshold → re-research ONE pass, exclude these failed URLs ---');
-  for (const r of reResearch) {
-    console.log(`  RE-RESEARCH\t${r.stance.full_name}\t${r.stance.topic_key}\tverified=${r.verifiedSources.length}/${THRESHOLD}\texclude-urls=${failedUrls(r).join(',') || '(none — no sources captured)'}`);
-  }
+
+type Decided = { row: VerifiedRow; pid: string | null; tid: string | null; decision: Decision };
+const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
+  const pid = idByName.get(row.stance.full_name) ?? null;
+  const tid = topicIdByKey.get(normTopic(row.stance.topic_key)) ?? null;
+  const ex = pid && tid ? existing.get(`${pid} ${tid}`) : undefined;
+  const shown = pid && tid ? displayed.get(`${pid} ${tid}`) : undefined;
+  const decision = decidePublish({
+    proposedValue: row.stance.value as number,
+    verifiedSourceCount: row.verifiedSources.length,
+    threshold: THRESHOLD,
+    gateFindings: gateByKey.get(stanceKey(row.stance.full_name, row.stance.topic_key)) ?? [],
+    politicianResolved: Boolean(pid),
+    existingOpenSeasonValue: ex === undefined ? null : ex,
+    displayedValue: shown === undefined ? null : shown.value,
+    autoPushEnabled: AUTO_PUSH,
+  });
+  return { row, pid, tid, decision };
+});
+const bucket = (a: Decision['action']) => decided.filter((d) => d.decision.action === a);
+const reasonsOf = (d: Decided): string[] => ('reasons' in d.decision ? [...d.decision.reasons] : []);
+
+// Review rows and below-threshold rows go to the human queue. Gate-high rows are NOT written:
+// the research itself is defective — send those pairs back to the researcher and re-run.
+const queued = decided.filter((d) => d.decision.action === 'review'
+  || (d.decision.action === 're-research' && reasonsOf(d).includes('below-threshold')));
+const queuedSet = new Set(queued);
+// Ruling 2026-09-22 (I4): an unresolved politician's row IS saved (status unresolved_politician,
+// full_name_raw kept), but the admin queue lists only `pending` rows — so nobody will see it
+// there. Say so, in the console and in publish-report.json, instead of implying it is queued.
+const notInAdminQueue = queued.filter((d) => !d.pid);
+
+writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) => ({
+  full_name: d.row.stance.full_name, topic_key: d.row.stance.topic_key, value: d.row.stance.value,
+  action: d.decision.action, reasons: reasonsOf(d),
+  displayed_value: (d.pid && d.tid ? displayed.get(`${d.pid} ${d.tid}`) : undefined) ?? null,
+  verified_sources: d.row.verifiedSources.map((s) => s.url), failed_urls: failedUrls(d.row),
+  // Only on rows that go to inform.stance_research_review: true = a `pending` row the admin
+  // review queue lists; false = saved as unresolved_politician, which that queue does not list.
+  ...(queuedSet.has(d) ? { admin_queue_visible: Boolean(d.pid) } : {}),
+})), null, 2));
+
+console.log(`\n=== verify-stance-research — batch "${BATCH_ID}" (threshold ${THRESHOLD}) ===`);
+console.log(AUTO_PUSH
+  ? 'mode: --auto-push — rows that pass every check are written without a person'
+  : 'mode: review-all (default) — every stance goes to a person; pass --auto-push to publish clean rows unattended');
+console.log(`stance rows: ${allStances.length} (${stanceRows.length} scored, ${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`);
+console.log(`AUTO-PUSH: ${bucket('auto-push').length}  UNCHANGED: ${bucket('unchanged').length}  REVIEW: ${bucket('review').length}  `
+  + `RE-RESEARCH: ${bucket('re-research').length}  OUT-OF-SCOPE: ${bucket('out-of-scope').length}`);
+if (bucket('out-of-scope').length) {
+  // C43/D3: recorded, not re-queued — a scope finding is closed research, not a defect to re-research.
+  console.log('\n--- OUT OF SCOPE — the office does not hold this question; recorded, not sent back to research ---');
+  for (const d of bucket('out-of-scope')) console.log(`  OUT-OF-SCOPE ${d.row.stance.full_name}\t${d.row.stance.topic_key}\tvalue=${d.row.stance.value}`);
 }
-if (unresolved.length) {
-  console.log('\n--- unresolved politician (not in essentials.politicians) → review queue ---');
-  for (const r of unresolved) {
-    console.log(`  REVIEW\t${r.stance.full_name}\t${r.stance.topic_key}\t(no politician_id — preserved as full_name_raw)`);
-  }
+for (const d of decided) {
+  const s = d.row.stance;
+  console.log(`  ${d.decision.action.toUpperCase().padEnd(11)} ${s.full_name}\t${s.topic_key}\tvalue=${s.value}\tverified=${d.row.verifiedSources.length}`
+    + (reasonsOf(d).length ? `\t[${reasonsOf(d).join(', ')}]` : '')
+    + (d.decision.action === 're-research' ? `\texclude-urls=${failedUrls(d.row).join(',') || '(none)'}` : ''));
 }
 if (nullRows.length) {
   console.log('\n--- value=null (skipped; not pushed, not queued) ---');
   for (const s of nullRows) console.log(`  SKIP\t${s.full_name}\t${s.topic_key}`);
 }
+if (notInAdminQueue.length) {
+  console.log('\n--- NOT IN THE ADMIN QUEUE — politician not resolved; rebuild the bundle with this person (--politician <uuid>:<level>) and re-run: ---');
+  for (const d of notInAdminQueue) console.log(`  UNRESOLVED\t${d.row.stance.full_name}\t${d.row.stance.topic_key}\tvalue=${d.row.stance.value}`);
+}
+console.log(`\nwrote ${join(DIR, 'publish-report.json')}`);
 
 // ---------------------------------------------------------------- apply
 if (!APPLY) {
   console.log('\n(dry-run — pass --apply to write answers/context/evidence and review-queue rows)');
   await pool.end();
-  process.exit(0);
-}
-
-console.log('\n=== --apply: writing to database ===');
-let pushed = 0;
-let evidenceWritten = 0;
-let reviewed = 0;
-const errors: string[] = [];
-const pushedPoliticianIds = new Set<string>();
-
-for (const row of pushable) {
-  const pid = idByName.get(row.stance.full_name)!;
-  const tid = topicIdByKey.get(row.stance.topic_key);
-  if (!pid || !tid) {
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'unknown topic_key'} — skipped`);
-    continue;
+  // ⚠ Do NOT process.exit() here. This runs after the fetch session above (createVerificationFetchSession /
+  // createPageFetcher), and Node's fetch keeps pooled sockets alive for a moment after the last
+  // request — exiting hard while they are closing can trip a libuv assertion on some platforms
+  // that replaces our exit code with a wrong one (`UV_HANDLE_CLOSING`, src/win/async.c). That is
+  // exactly what verify-quotes.mjs (backend/scripts/verify-quotes.mjs) hit for real on a live wave.
+  // A gate whose exit code can be overwritten at teardown is not a gate, so set exitCode and let
+  // the loop drain naturally, with an unref'd backstop so a wedged socket still cannot hang CI.
+  process.exitCode = 0;
+  setTimeout(() => process.exit(process.exitCode ?? 0), 5000).unref();
+} else {
+  console.log('\n=== --apply: writing to database ===');
+  let pushed = 0;
+  let snippetsAttempted = 0;
+  let snippetsInserted = 0;
+  let reviewed = 0;
+  let leftDecided = 0;
+  const errors: string[] = [];
+  // Requirement 1: written-<batch>.json in audit-chair-evidence's shape, for the rows THIS run
+  // wrote (auto-push only — a queued row is a proposal, not yet a chair; export-written-ledger.ts
+  // covers those once a person approves them).
+  const writtenLedgerRows: LedgerRow[] = [];
+  // CA_0264 / CA_0285: until each is applied the queue has nowhere to record what it adds; rows
+  // still queue, with those fields left out. Say so rather than hide it.
+  const reviewColumns = queued.length ? await reviewOptionalColumns() : new Set<never>();
+  if (queued.length && !(reviewColumns.has('topic_revision_id') && reviewColumns.has('season_id'))) {
+    console.warn('WARN: inform.stance_research_review has no topic_revision_id/season_id yet (CA_0264 not applied) — '
+      + `${queued.length} queued row(s) will not record their ladder revision; the review page will show them as "ladder revision unknown"`);
   }
-  try {
-    await pool.query(
-      `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-       VALUES ($1, $2, $3)
-       ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
-      [pid, tid, row.stance.value],
-    );
-    const sources = row.verifiedSources.map((s) => s.url);
-    await pool.query(
-      `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-       VALUES ($1, $2, $3, $4)
-       ON CONFLICT (politician_id, topic_id)
-       DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
-      [pid, tid, row.stance.reasoning, sources],
-    );
-    const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-    await accumulateEvidence(evRows);
-    pushed++;
-    evidenceWritten += evRows.length;
-    pushedPoliticianIds.add(pid);
-    console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (${evRows.length} snippets)`);
-  } catch (e: any) {
-    errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+  if (queued.length && !(reviewColumns.has('served_revision_id') && reviewColumns.has('queue_reasons') && reviewColumns.has('evidence_type'))) {
+    console.warn('WARN: inform.stance_research_review has no served_revision_id/queue_reasons/evidence_type yet (CA_0285 not applied) — '
+      + `${queued.length} queued row(s) will not record why they were queued; the review page will show "reasons not recorded"`);
   }
-}
 
-for (const row of [...reResearch, ...unresolved]) {
-  const pid = idByName.get(row.stance.full_name) ?? null;
-  const tid = pid ? topicIdByKey.get(row.stance.topic_key) ?? null : null;
-  try {
-    await upsertReviewRow(
-      buildReviewRowForInsert({
-        row,
-        politicianId: pid,
-        topicId: tid,
-        batchId: BATCH_ID,
-        threshold: THRESHOLD,
-        reResearchAttempted: RE_RESEARCHED,
-      }),
-    );
-    reviewed++;
-    console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key} (${pid ? 'pending' : 'unresolved_politician'})`);
-    // Persist verified snippets even when below threshold — as long as politician resolves
-    if (pid && tid && row.verifiedSources.length > 0) {
-      const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-      await accumulateEvidence(evRows);
-      evidenceWritten += evRows.length;
+  for (const d of bucket('auto-push')) {
+    const { row, pid, tid } = d;
+    if (!pid || !tid) {
+      errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'topic_key not in the open season'} — skipped`);
+      continue;
     }
-  } catch (e: any) {
-    errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+    // I6: the answer, its context and its snippets commit together or not at all. Before this, a
+    // failure after the answer write left a value with no reasoning, and nothing re-ran it.
+    const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
+    // R3: pool.connect() runs INSIDE the try — a connect failure (pool exhausted, a network blip) is
+    // then a per-row error like any other; the review loop and SUMMARY below still run for the rest
+    // of the batch. Before this, `c` was assigned before the try, so a rejected connect() threw
+    // straight out of the for-loop body, uncaught, and killed the whole --apply run after however
+    // many rows had already pushed.
+    let c: PoolClient | undefined;
+    try {
+      c = await pool.connect();
+      await c.query('BEGIN');
+      await writeVerifiedStance({
+        politicianId: pid, topicId: tid, value: row.stance.value as number,
+        reasoning: row.stance.reasoning, sources: row.verifiedSources.map((s) => s.url), editorId: EDITOR_ID,
+      }, c);
+      const inserted = await accumulateEvidence(evRows, c);
+      await c.query('COMMIT');
+      pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted;
+      writtenLedgerRows.push({
+        politician_id: pid, topic_id: tid, chair_after: row.stance.value as number, season_id: openSeasonId,
+      });
+      console.log(`  PUSHED ${row.stance.full_name}/${row.stance.topic_key} value=${row.stance.value} (snippets inserted ${inserted} of ${evRows.length})`);
+    } catch (e: any) {
+      await c?.query('ROLLBACK').catch(() => undefined);
+      errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`
+        + (c ? ' — rolled back, nothing written for this row' : ' — could not open a connection, nothing written for this row'));
+    } finally {
+      c?.release();
+    }
   }
-}
 
-if (pushedPoliticianIds.size) {
-  await pool.query(
-    `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
-    [[...pushedPoliticianIds]],
+  for (const d of queued) {
+    const { row, pid, tid } = d;
+    try {
+      // R7: --re-researched stamps a queued row only when it is actually a re-research attempt
+      // (a below-threshold row) — NOT every queued row. Under review-all (the default) most queued
+      // rows are ordinary review rows (review-all-mode, value-change, statement-evidence, …), never
+      // re-researched at all; stamping all of them re_research_attempted=true misled the reviewer UI
+      // into showing "Re-research attempted" on a row nobody had re-researched.
+      const reResearchAttempted = RE_RESEARCHED && reasonsOf(d).includes('below-threshold');
+      const wrote = await upsertReviewRow(buildReviewRowForInsert({
+        row, politicianId: pid, topicId: pid ? tid : null, batchId: BATCH_ID,
+        threshold: THRESHOLD, reResearchAttempted,
+        // The bundle's revision — equal to the open pin here, since the I7 check above exits on drift.
+        topicRevisionId: bundleRevisionByKey.get(normTopic(row.stance.topic_key)) ?? null,
+        seasonId: openSeasonId,
+        // C1: the served revision whose text the researcher read (also drift-checked above).
+        servedRevisionId: bundleServedByKey.get(normTopic(row.stance.topic_key)) ?? null,
+        // I2: why this row is in the queue, so the reviewer can see it.
+        queueReasons: reasonsOf(d),
+      }), { columns: reviewColumns });
+      if (!wrote) {
+        // I1: this batch's row for the pair was already resolved or rejected by a person.
+        leftDecided++;
+        console.log(`  LEFT ALONE ${row.stance.full_name}/${row.stance.topic_key} — already decided in the review queue`);
+        continue;
+      }
+      reviewed++;
+      console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key}${pid ? '' : ' (unresolved_politician — NOT in the admin queue)'}`);
+      // No citations are written for a queued row (ruling 2026-09-22, R1): accumulateEvidence
+      // attaches a snippet to the pair's newest published context row, and citations render with
+      // no batch filter — so a snippet for a PROPOSED value would show under whatever stance is
+      // displayed right now, before anyone approves. The review row already stores every snippet
+      // with its verdict (buildReviewRowForInsert, above) — resolveResearchReview writes the
+      // machine-verified ones on approval.
+    } catch (e: any) {
+      errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
+    }
+  }
+
+  const ledgerPath = join(DIR, `written-${BATCH_ID}.json`);
+  writeFileSync(ledgerPath, JSON.stringify(buildLedgerFile(writtenLedgerRows), null, 2));
+  console.log(`\nwrote ${ledgerPath} (${writtenLedgerRows.length} row(s) written this run)`);
+
+  // C118: stamp EVERY politician in the batch, not just the ones this run wrote a chair for — a
+  // row queued for review, or a value=null ("insufficient evidence") row, still means the person
+  // was researched. Taken from stances.csv (csvNames/idByName, resolved above from allStances),
+  // never from what got pushed.
+  const batchPoliticianIds = politicianIdsInBatch(csvNames, idByName);
+  if (batchPoliticianIds.length) {
+    // C118: this stamp is deliberately unconditional on whether any row above pushed, was queued,
+    // or errored — it records that these people were RESEARCHED this run, not that anything was
+    // WRITTEN for them. A research timestamp with zero answers is still a legitimate result (see the
+    // file header), so this UPDATE must not be made to depend on push/queue success. It is a single
+    // atomic statement — one UPDATE over the whole id array — precisely so a partial failure earlier
+    // in this function can never leave some of the batch stamped and the rest not.
+    await pool.query(
+      `UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY($1::uuid[])`,
+      [batchPoliticianIds],
+    );
+  }
+
+  console.log(
+    `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
+    + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
+    + `stamped=${batchPoliticianIds.length} errors=${errors.length}`,
   );
+  if (snippetsInserted < snippetsAttempted) {
+    console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `
+      + 'politician_context_evidence (politician_id, topic_id, source_url, snippet_index) has no season column, '
+      + 'so a snippet already stored for that pair (from an earlier batch or season) was dropped as already present.');
+  }
+  if (notInAdminQueue.length) {
+    console.log(`  ${notInAdminQueue.length} row(s) saved as unresolved_politician are NOT in the admin queue — see the list above; rebuild the bundle with those people and re-run.`);
+  }
+  if (errors.length) {
+    errors.forEach((e) => console.log('  ' + e));
+    process.exitCode = 1;
+  }
+  await pool.end();
 }
-
-console.log(
-  `\nSUMMARY: pushed=${pushed} (snippets=${evidenceWritten}) reviewed=${reviewed} stamped=${pushedPoliticianIds.size} errors=${errors.length}`,
-);
-if (errors.length) {
-  errors.forEach((e) => console.log('  ' + e));
-  process.exitCode = 1;
-}
-await pool.end();

@@ -22,6 +22,15 @@ describe('normalizeText', () => {
     expect(normalizeText('a &amp; b &nbsp; c &quot;d&quot;')).toBe('a & b c "d"');
   });
 
+  it('decodes numeric HTML entities (decimal and hex) before quote normalization', () => {
+    // &#8217; and &#x2019; are both the curly right single quote (U+2019) — neither is a named
+    // entity, so undecoded they would survive as literal "&#8217;"/"&#x2019;" text and never fold
+    // to the straight apostrophe a snippet types.
+    expect(normalizeText('you&#8217;re here')).toBe("you're here");
+    expect(normalizeText('you&#x2019;re here')).toBe("you're here");
+    expect(normalizeText('you&#X2019;re here')).toBe("you're here");
+  });
+
   it('trims leading and trailing whitespace', () => {
     expect(normalizeText('   hi   ')).toBe('hi');
   });
@@ -89,6 +98,20 @@ describe('matchSnippet', () => {
     const paraphrase = 'The senator broadly backs a government insurance choice for medical coverage and has repeatedly sponsored measures expanding elder healthcare access without lifting middle income tax burdens over recent years in office.';
     const page = `prefix ${longSnippet} suffix`;
     expect(matchSnippet(paraphrase, page).verdict).toBe('snippet_not_found');
+  });
+
+  it('verifies a snippet with straight apostrophes against a page whose apostrophes are numeric HTML entities (decimal and hex)', () => {
+    // Before the numeric-entity decode, this snippet would NOT match either page: the raw
+    // "&#8217;"/"&#x2019;" text has no curly quote for the curly->straight step to fold, so the
+    // page's "we&#8217;ve" never becomes "we've" and the whole-string / windowed matches all miss.
+    const snippet = "The senator said we've finally reached a point where we can't ignore the crisis "
+      + "any longer and it's time to act with real urgency for every family in this district.";
+    const pageDecimal = 'nav home. The senator said we&#8217;ve finally reached a point where we '
+      + 'can&#8217;t ignore the crisis any longer and it&#8217;s time to act with real urgency for '
+      + 'every family in this district. footer links';
+    const pageHex = pageDecimal.replace(/&#8217;/g, '&#x2019;');
+    expect(matchSnippet(snippet, pageDecimal).verdict).toBe('verified');
+    expect(matchSnippet(snippet, pageHex).verdict).toBe('verified');
   });
 
   it('honors a lower minWords for concise quotes (e.g. read-rank)', () => {
@@ -212,7 +235,22 @@ describe('createPageFetcher', () => {
   });
 });
 
-import { verifyEvidence, type StanceRow, type EvidenceRow } from './researchVerifier.js';
+import { verifyEvidence, normName, normTopic, stanceKey, type StanceRow, type EvidenceRow } from './researchVerifier.js';
+
+describe('normName / normTopic / stanceKey', () => {
+  it('trims, collapses inner whitespace and lowercases a name', () => {
+    expect(normName('  Jane   Doe ')).toBe('jane doe');
+  });
+  it('trims and lowercases a topic_key', () => {
+    expect(normTopic(' Healthcare ')).toBe('healthcare');
+  });
+  it('keys a (name, topic) pair so spelling variants collide and different pairs do not', () => {
+    expect(stanceKey('Jane Doe ', 'Healthcare')).toBe(stanceKey('jane  doe', 'healthcare'));
+    expect(stanceKey('Jane Doe', 'healthcare')).not.toBe(stanceKey('Jane Doe', 'housing'));
+    // The separator cannot occur in either part, so ("a b", "c") and ("a", "b c") stay distinct.
+    expect(stanceKey('a b', 'c')).not.toBe(stanceKey('a', 'b c'));
+  });
+});
 import type { PageFetcher as _PageFetcher } from './researchVerifier.js';
 
 describe('verifyEvidence', () => {
@@ -301,6 +339,28 @@ describe('verifyEvidence', () => {
     expect(result.pushable[0].verifiedSources).toHaveLength(1);
   });
 
+  // I3: the gate and the verifier share one normalizer (normName/normTopic/stanceKey), so evidence
+  // spelled `jane doe` or `Jane Doe ` (trailing space) must back the `Jane Doe` stance row here
+  // exactly as it does in stance-gate — not pass the gate and then verify nothing.
+  it('joins evidence to its stance row through the shared normalizer (case, trailing space)', async () => {
+    const snip = 'Representative Jane Doe voted yes on House Bill 1001 in 2025 because she believes every '
+      + 'family deserves affordable coverage and lower prescription costs at the pharmacy counter today';
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'jane doe', topic_key: 'healthcare', source_url: 'https://a.example', snippet: snip, snippet_index: 0 },
+      { full_name: 'Jane Doe ', topic_key: 'Healthcare ', source_url: 'https://b.example', snippet: snip, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text: `Jane Doe: ${snip}` });
+    const result = await verifyEvidence({
+      stanceRows: [{ full_name: 'Jane Doe', topic_key: 'healthcare', value: 2, reasoning: 'HB 1001', politician_id: 'p1' }],
+      evidenceRows,
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Jane Doe': { fullName: 'Jane Doe', lastName: 'Doe' } },
+    });
+    expect(result.pushable).toHaveLength(1);
+    expect(result.pushable[0].verifiedSources.map((s) => s.url).sort()).toEqual(['https://a.example', 'https://b.example']);
+  });
+
   it('routes stance rows with zero evidence rows directly to review queue', async () => {
     const fetcher: _PageFetcher = async () => { throw new Error('should not be called'); };
     const result = await verifyEvidence({
@@ -312,5 +372,79 @@ describe('verifyEvidence', () => {
     });
     expect(result.needsReResearch).toHaveLength(1);
     expect(result.needsReResearch[0].verifiedSources).toHaveLength(0);
+  });
+});
+
+import { matchedSpan } from './researchVerifier.js';
+
+// I6 (ruling 2026-09-24): the 60% rule decides whether a snippet is grounded; only the matched
+// on-page span is ever published, and that span must itself be >= 25 contiguous page words.
+describe('matchedSpan (I6)', () => {
+  const passage = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
+  it('returns the whole snippet when it is on the page verbatim, in the snippet\'s own casing', () => {
+    const span = matchedSpan(passage, `nav ${passage.toUpperCase()} footer`);
+    expect(span?.text).toBe(passage);
+    expect(span?.words).toBe(passage.split(' ').length);
+  });
+  it('drops the researcher\'s framing words: the span is page text only', () => {
+    const framed = `President Adams responded. August 1, 2024. He stated: ${passage}`;
+    const span = matchedSpan(framed, `nav home about ${passage} more footer`);
+    expect(span?.text).toBe(passage);
+    expect(span?.text).not.toContain('He stated');
+  });
+  it('matches whole page words only — a span never ends in a clipped word', () => {
+    const page = 'alpha beta gamma deltas';
+    expect(matchedSpan('alpha beta gamma delta', page)?.text).toBe('alpha beta gamma');
+  });
+  it('returns null when no word of the snippet is on the page', () => {
+    expect(matchedSpan('zzz yyy', 'alpha beta')).toBeNull();
+  });
+});
+
+describe('verifyEvidence — I6 published span and I1 cited URLs', () => {
+  const names = { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } };
+  const pagePassage = 'The senator told reporters she strongly supports a robust public option for healthcare coverage and has personally cosponsored several major bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+  const verbatim = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
+  const row = (source_urls?: string[]): StanceRow => ({ full_name: 'Brad Sherman', topic_key: 'healthcare', value: 2, reasoning: 'r', politician_id: '', ...(source_urls ? { source_urls } : {}) });
+
+  it('a snippet that passes the 60% rule but has no 25-word contiguous span is span_too_short, not verified', async () => {
+    // Drops "robust" and "major": matchSnippet verifies it on shingle coverage, but the longest
+    // contiguous run on the page is under 25 words.
+    const dropped = 'The senator told reporters she strongly supports a public option for healthcare coverage and has personally cosponsored several bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+    expect(matchSnippet(dropped, `Brad Sherman: ${pagePassage}`).verdict).toBe('verified');
+    const result = await verifyEvidence({
+      stanceRows: [row()], threshold: 1, politicianNames: names,
+      evidenceRows: [{ full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: dropped, snippet_index: 0 }],
+      fetcher: async () => ({ ok: true, text: `Brad Sherman: ${pagePassage}` }),
+    });
+    expect(result.pushable).toHaveLength(0);
+    expect(result.needsReResearch[0].failedSources[0].snippets[0].verdict.verdict).toBe('span_too_short');
+  });
+
+  it('a verified snippet carries its matched span, without the framing words', async () => {
+    const result = await verifyEvidence({
+      stanceRows: [row()], threshold: 1, politicianNames: names,
+      evidenceRows: [{ full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: `He stated at a town hall on Tuesday: ${verbatim}`, snippet_index: 0 }],
+      fetcher: async () => ({ ok: true, text: `Brad Sherman: ${verbatim}` }),
+    });
+    const snip = result.pushable[0].verifiedSources[0].snippets[0];
+    expect(snip.verdict.verdict).toBe('verified');
+    expect(snip.matchedSpan).toBe(verbatim);
+  });
+
+  it('an evidence URL that is not in the row sources is url_not_cited, never fetched, and does not count', async () => {
+    const fetched: string[] = [];
+    const result = await verifyEvidence({
+      stanceRows: [row(['https://a.example'])], threshold: 2, politicianNames: names,
+      evidenceRows: [
+        { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: verbatim, snippet_index: 0 },
+        { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://www.vote411.org/x', snippet: verbatim, snippet_index: 0 },
+      ],
+      fetcher: async (url) => { fetched.push(url); return { ok: true, text: `Brad Sherman: ${verbatim}` }; },
+    });
+    expect(fetched).toEqual(['https://a.example']);
+    expect(result.pushable).toHaveLength(0); // only 1 of the 2 needed sources counts
+    const failed = result.needsReResearch[0].failedSources;
+    expect(failed.map((f) => [f.url, f.snippets[0].verdict.verdict])).toEqual([['https://www.vote411.org/x', 'url_not_cited']]);
   });
 });

@@ -38,6 +38,21 @@ describe('writeStancesCsv', () => {
     expect(reparsed[0].full_name).toBe('Brad, Sherman');
     expect(reparsed[0].reasoning).toBe('has "quotes" inside');
   });
+
+  it('I1: round-trips the row sources and evidence_type; an old CSV without the columns leaves them undefined', () => {
+    const csv = writeStancesCsv([
+      { full_name: 'A', politician_id: '', topic_key: 't', value: 2, reasoning: 'r',
+        evidence_type: 'record', source_urls: ['https://a.example/x', 'https://b.example/y'] },
+      { full_name: 'B', politician_id: '', topic_key: 't', value: null, reasoning: '' },
+    ]);
+    const [a, b] = parseStancesCsv(csv);
+    expect(a.source_urls).toEqual(['https://a.example/x', 'https://b.example/y']);
+    expect(a.evidence_type).toBe('record');
+    expect(b.source_urls).toEqual([]);
+    const old = parseStancesCsv('full_name,politician_id,topic_key,value,reasoning\nA,,t,2,r\n');
+    expect(old[0].source_urls).toBeUndefined();
+    expect(old[0].evidence_type).toBeUndefined();
+  });
 });
 
 describe('writeEvidenceCsv', () => {

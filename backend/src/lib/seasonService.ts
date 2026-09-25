@@ -140,6 +140,49 @@ export function topicAskedByPublishedSeason(topicIdExpr: string): string {
 }
 
 /**
+ * THE SERVED REVISION of a pin, as a LATERAL subquery — ADR 0006 §3, Option Y.
+ *
+ * A season pins one `compass_topic_revisions` row, but voters see the LATEST
+ * published-or-superseded revision of that pin's VERSION: a minor (editorial /
+ * clarifying) publish adds a higher `revision` at the same `version` and shows
+ * immediately, with no write to the pin. So "the pin's text" and "the text
+ * voters read" differ whenever a minor publish has happened. Measured on prod
+ * 2026-09-24: 13 of the open season's 60 topics, abortion on all five rungs.
+ *
+ * 🔴 ANYTHING THAT SHOWS LADDER TEXT TO A RESEARCHER OR A REVIEWER MUST USE
+ * THIS, not the pin. A chair is a claim about the exact words a voter reads;
+ * evidence judged against a superseded rung is evidence for a different
+ * sentence. The pin id is still what an answer RECORDS (UPSERT_ANSWER_SQL
+ * stamps `sq.topic_revision_id`), so keep both: pin for provenance and drift,
+ * served for text.
+ *
+ * Yields `<alias>.id`, `.title`, `.short_title`, `.question_text`, `.version`,
+ * `.revision`. No row (so an INNER lateral drops the topic) when the pin's
+ * version has no published/superseded revision — a draft-only pin serves
+ * nothing, exactly as getPromotedTopics already behaved.
+ *
+ * Mirrored, not imported, in .claude/skills/research-stances/scripts/
+ * build-and-check.mjs (outside backend's rootDir); servedRevision.test.ts pins
+ * the two copies together.
+ *
+ * @param pinExpr SQL expression for the pinned compass_topic_revisions id
+ * @param alias   alias for the lateral
+ */
+export function servedRevisionLateral(pinExpr: string, alias = 'eff'): string {
+  return `LATERAL (
+    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision
+      FROM inform.compass_topic_revisions pin
+      JOIN inform.compass_topic_revisions e
+        ON e.topic_id = pin.topic_id
+       AND e.version  = pin.version
+       AND e.status IN ('published', 'superseded')
+     WHERE pin.id = ${pinExpr}
+     ORDER BY e.revision DESC
+     LIMIT 1
+  ) ${alias}`;
+}
+
+/**
  * The newest season in which this person answered this topic, or null if they
  * never have.
  *
@@ -439,6 +482,26 @@ export async function assertWritten(rowCount: number, topicId: string): Promise<
   // operator to go open a season when a season is already open.
   throw new Error(`write affected 0 rows for topic ${topicId} for an unknown reason`);
 }
+
+/**
+ * WHAT VOTERS SEE NOW, batched: for each (politician, topic) pair of these politicians, the newest
+ * PUBLISHED season's answer — restricted to topics the OPEN season asks, because a topic it does
+ * not ask is not on the voter compass at all. The same resolution as newestAnswerLateral plus the
+ * review page's open_pin check (researchEvidenceService, "Voters see now", N1). A 0 comes back as 0.
+ *
+ * Param order: $1 politician_ids (uuid[]). One row per pair at most (DISTINCT ON).
+ */
+export const DISPLAYED_VALUES_SQL = `
+  -- @zero-scope: counts-blanks — a 0 is a blank voters see; replacing it is a change to what they see.
+  SELECT DISTINCT ON (a.politician_id, a.topic_id)
+         a.politician_id::text AS politician_id, a.topic_id::text AS topic_id, a.value, s.number AS season_number
+    FROM inform.politician_answers a
+    JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+   WHERE a.politician_id = ANY($1::uuid[])
+     AND EXISTS (SELECT 1 FROM inform.season_questions oq
+                   JOIN inform.seasons os ON os.id = oq.season_id AND os.status = 'open'
+                  WHERE oq.topic_id = a.topic_id)
+   ORDER BY a.politician_id, a.topic_id, s.number DESC`;
 
 /**
  * The read shape, as a SQL fragment: newest answered season for one

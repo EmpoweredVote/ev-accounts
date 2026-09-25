@@ -1,6 +1,7 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
-import { SEASON_IS_PUBLISHED } from './seasonService.js';
+import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
+import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
 // Types for compare and verdicts service functions
@@ -148,17 +149,11 @@ export async function getPromotedTopics(): Promise<PromotedTopic[]> {
             t.is_live, t.office_scope
        FROM inform.compass_topics_promoted p
        JOIN inform.compass_topics t ON t.id = p.id
-       JOIN LATERAL (
-         SELECT e.id, e.title, e.short_title, e.question_text, e.version
-           FROM inform.compass_topic_revisions pin
-           JOIN inform.compass_topic_revisions e
-             ON e.topic_id = pin.topic_id
-            AND e.version  = pin.version
-            AND e.status IN ('published', 'superseded')
-          WHERE pin.id = p.season_revision_id
-          ORDER BY e.revision DESC
-          LIMIT 1
-       ) eff ON true
+       -- The resolver is shared (seasonService.servedRevisionLateral) so the
+       -- stance-research bundle and review page read the SAME text voters do.
+       -- Text source: inform.compass_topic_revisions (the served revision), never
+       -- the frozen compass_topics text columns.
+       JOIN ${servedRevisionLateral('p.season_revision_id', 'eff')} ON true
       -- ⚠ created_at, NOT p.display_order, and this is deliberate. display_order
       -- is the season's own ordering and is the obviously "right" column to reach
       -- for — but CA_0019 seeded it as row_number() OVER (ORDER BY topic_key),
@@ -230,22 +225,10 @@ export async function getCompassTopics() {
   return topics.map(topic => {
     const topicRoles = (rolesRes.data ?? []).filter(r => r.topic_id === topic.id);
 
-    // Normalize tier rows into three booleans at the API boundary.
-    // A topic with no rows defaults to all three tiers = true (cross-cutting).
-    const hasAnyRoleRows = topicRoles.length > 0;
-    const applies_federal = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'federal')
-      : true;
-    const applies_state = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'state')
-      : true;
-    const applies_local = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'local')
-      : true;
-    // CRITICAL: fallback is false (not true) — existing cross-cutting topics must NOT appear on judicial profiles
-    const applies_judicial = hasAnyRoleRows
-      ? topicRoles.some(r => r.role_scope === 'judicial')
-      : false;
+    // Tier rules live in topicApplicability.ts — shared with the stance-research gate.
+    // applies_school (CA_0256) is true only on a topic with an explicit `school` row.
+    const { applies_federal, applies_state, applies_local, applies_judicial, applies_school } =
+      appliesFromRoles(topicRoles);
 
     return {
       ...topic,
@@ -253,6 +236,7 @@ export async function getCompassTopics() {
       applies_state,
       applies_local,
       applies_judicial,
+      applies_school,
       stances: stancesRes.rows
         .filter(s => s.effective_revision_id === topic.effective_revision_id)
         .map(({ effective_revision_id: _e, ...s }) => s),
@@ -368,29 +352,18 @@ export async function getCompassCategories() {
   // than an is_live flag.
   const promotedById = new Map(promotedTopics.map(t => [t.id, t]));
 
-  // Build a per-topic tier map so we can attach booleans without an extra join.
-  // A topic with no rows defaults to all three tiers = true (cross-cutting),
-  // matching the fallback behavior in getCompassTopics.
-  const rolesByTopicId = new Map<string, Set<string>>();
+  // Build a per-topic role map so we can attach tier booleans without an extra join.
+  // The flags come from appliesFromRoles — the same rule getCompassTopics and the
+  // stance-research gate use (no rows = federal+state+local; never judicial, never school).
+  // This used to restate that rule inline, which is how a fifth level would have been missed.
+  const rolesByTopicId = new Map<string, { role_scope: string }[]>();
   for (const r of rolesRes.data ?? []) {
-    const set = rolesByTopicId.get(r.topic_id) ?? new Set<string>();
-    set.add(r.role_scope);
-    rolesByTopicId.set(r.topic_id, set);
+    const list = rolesByTopicId.get(r.topic_id) ?? [];
+    list.push({ role_scope: r.role_scope });
+    rolesByTopicId.set(r.topic_id, list);
   }
 
-  const tierFlagsFor = (topicId: string) => {
-    const scopes = rolesByTopicId.get(topicId);
-    if (!scopes || scopes.size === 0) {
-      // CRITICAL: applies_judicial defaults to false — cross-cutting topics must NOT appear on judicial profiles
-      return { applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false };
-    }
-    return {
-      applies_federal:  scopes.has('federal'),
-      applies_state:    scopes.has('state'),
-      applies_local:    scopes.has('local'),
-      applies_judicial: scopes.has('judicial'),
-    };
-  };
+  const tierFlagsFor = (topicId: string) => appliesFromRoles(rolesByTopicId.get(topicId) ?? []);
 
   return (catRes.data ?? []).map(cat => ({
     ...cat,

@@ -70,7 +70,7 @@ import { getFederalDelegation } from '../lib/federalCoverage.js';
 import { getElectionsStateScores, getElectionsCountyScores } from '../lib/electionsMapService.js';
 import {
   listPendingResearchReview,
-  getResearchReviewById,
+  getResearchReviewWithLadder,
   resolveResearchReview,
   rejectResearchReview,
 } from '../lib/researchEvidenceService.js';
@@ -1291,7 +1291,9 @@ router.get('/research-review', async (_req, res) => {
 
 router.get('/research-review/:id', async (req, res) => {
   try {
-    const row = await getResearchReviewById(req.params.id);
+    // Detail page (task 5): carries the ladder text (question + five rungs) alongside the row, so
+    // the reviewer checks the proposal against the ladder without a second client-side fetch.
+    const row = await getResearchReviewWithLadder(req.params.id);
     if (!row) { res.status(404).json({ error: 'Not found' }); return; }
     res.json(row);
   } catch (err) {
@@ -1307,11 +1309,35 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
       valueOverride?: number | null;
       reasoningOverride?: string;
     };
-    await resolveResearchReview(req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
-    res.json({ ok: true });
+    // Reject a malformed body before it reaches the service (NOT the "R1" ruling referenced
+    // elsewhere in this file — citations on approval; this is approval INPUT validation, added in
+    // the 2026-09-23 polish pass). The service repeats the valueOverride check (defence in depth —
+    // it is also reachable directly, e.g. from a script), but only the route can turn a bad shape
+    // into a clean 400 instead of a 500/crash.
+    if (humanVerifiedUrls !== undefined
+      && (!Array.isArray(humanVerifiedUrls) || !humanVerifiedUrls.every((u) => typeof u === 'string'))) {
+      res.status(400).json({ error: 'humanVerifiedUrls must be an array of strings' });
+      return;
+    }
+    if (valueOverride !== undefined && valueOverride !== null
+      && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
+      res.status(400).json({ error: 'valueOverride must be an integer 1-5' });
+      return;
+    }
+    if (reasoningOverride !== undefined && typeof reasoningOverride !== 'string') {
+      res.status(400).json({ error: 'reasoningOverride must be a string' });
+      return;
+    }
+    const { ladderRevisionUnknown } = await resolveResearchReview(
+      req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
+    // ladderRevisionUnknown: a legacy row (queued before CA_0264), approved without a ladder check.
+    res.json({ ok: true, ladderRevisionUnknown });
   } catch (err: any) {
     if (err.code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
     if (err.code === 'INCOMPLETE') { res.status(422).json({ error: err.message }); return; }
+    // Not pending: already resolved/rejected (or unresolved_politician) — never re-approved.
+    // Or the ladder was re-pinned since the row was researched (CA_0264) — re-research it.
+    if (err.code === 'CONFLICT') { res.status(409).json({ error: err.message }); return; }
     console.error('[admin/research-review/:id/resolve] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
@@ -1323,6 +1349,10 @@ router.post('/research-review/:id/reject', async (req: any, res) => {
     await rejectResearchReview(req.params.id, actorId(req), notes);
     res.json({ ok: true });
   } catch (err) {
+    const code = (err as { code?: string }).code;
+    if (code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
+    // I5: only a pending row can be rejected — a resolved row's published stance must stay audited.
+    if (code === 'CONFLICT') { res.status(409).json({ error: (err as Error).message }); return; }
     console.error('[admin/research-review/:id/reject] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
