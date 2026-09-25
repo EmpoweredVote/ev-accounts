@@ -13,6 +13,9 @@ describe('agree (spec section 1.5, section 5.5)', () => {
     expect(agree([L(1, null), L(2, null), L(3, null)])).toEqual({ kind: 'unanimous-blank', reason: 'no-evidence' });
     expect(agree([L(1, null), L(2, null, [], { blank_reason: 'direction-only' }), L(3, null)]).kind).toBe('split');
   });
+  it('null values with null blank_reason returns split, not invalid unanimous-blank', () =>
+    expect(agree([L(1, null, ['a'], { blank_reason: null }), L(2, null, ['a'], { blank_reason: null }), L(3, null, ['a'], { blank_reason: null })]))
+      .toEqual({ kind: 'split', values: [null, null, null] }));
   it('a split names every coder value', () =>
     expect(agree([L(1, 4), L(2, 5), L(3, 4)])).toEqual({ kind: 'split', values: [4, 5, 4] }));
   it('an invalid or absent coder makes the row coder-missing, even when the other two agree', () => {

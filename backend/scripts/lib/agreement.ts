@@ -31,7 +31,9 @@ export function agree(labels: CoderRowLabel[], expectedSlots: number[] = [1, 2, 
   if (new Set(values).size > 1) return { kind: 'split', values };
   if (values[0] === null) {
     const reasons = new Set(ls.map((l) => l.blank_reason));
-    return reasons.size === 1 ? { kind: 'unanimous-blank', reason: ls[0].blank_reason! } : { kind: 'split', values };
+    return reasons.size === 1 && ls[0].blank_reason !== null
+      ? { kind: 'unanimous-blank', reason: ls[0].blank_reason }
+      : { kind: 'split', values };
   }
   const shared = ls.slice(1).reduce((acc, l) => acc.filter((id) => l.rests_on.includes(id)), [...ls[0].rests_on]);
   return shared.length
