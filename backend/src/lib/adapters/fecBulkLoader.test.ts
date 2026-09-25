@@ -110,3 +110,100 @@ describe('mapBulkRow (quick-260729-0jn — amendment + election fields)', () => 
     expect(mapped.raw_record['file_number']).toBe('');
   });
 });
+
+// ---------------------------------------------------------------------------
+// Run-row watermark + --new-only (2026-09-25)
+// ---------------------------------------------------------------------------
+
+import AdmZip from 'adm-zip';
+import { bulkRunWatermark, loadFecBulkCycle } from './fecBulkLoader.js';
+import * as campaignFinanceService from '../campaignFinanceService.js';
+
+describe('bulkRunWatermark', () => {
+  const now = new Date('2026-09-25T12:00:00Z');
+
+  it("stamps the FILE's date, not now() — the API cursor resumes from it", () => {
+    // 🔴 now() would move the cursor past everything FEC loaded after the file was built.
+    expect(bulkRunWatermark('Sun, 20 Sep 2026 15:56:56 GMT', now)?.toISOString())
+      .toBe('2026-09-20T15:56:56.000Z');
+  });
+
+  it('never claims a date later than now (clock skew)', () => {
+    expect(bulkRunWatermark('Sat, 26 Sep 2026 00:00:00 GMT', now)?.toISOString()).toBe(now.toISOString());
+  });
+
+  it('returns null for a missing or unparseable header — the caller then writes no run rows', () => {
+    expect(bulkRunWatermark(null, now)).toBeNull();
+    expect(bulkRunWatermark('not a date', now)).toBeNull();
+  });
+});
+
+describe('loadFecBulkCycle run rows and --new-only', () => {
+  const zipOf = (lines: string[]): Buffer => {
+    const z = new AdmZip();
+    z.addFile('data.txt', Buffer.from(lines.join('\n') + '\n'));
+    return z.toBuffer();
+  };
+  // ccl: CAND_ID | CAND_ELECTION_YR | FEC_ELECTION_YR | CMTE_ID | CMTE_TP | CMTE_DSGN | LINKAGE_ID
+  const ccl = zipOf(['H6OLD0001|2026|2026|C00000001|H|P|1', 'H6NEW0002|2026|2026|C00000002|H|P|2']);
+  const indiv = zipOf([
+    indivRow({ cmteId: 'C00000001', subId: '111' }).join('|'),
+    indivRow({ cmteId: 'C00000002', subId: '222' }).join('|'),
+  ]);
+
+  const stubFetch = (lastModified: string | null) =>
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+      const body = url.includes('/ccl') ? ccl : indiv;
+      const headers = new Headers(lastModified && url.includes('/indiv') ? { 'last-modified': lastModified } : {});
+      return new Response(new Uint8Array(body), { status: 200, headers });
+    });
+
+  const runRowInserts = () =>
+    poolQueryMock.mock.calls.filter(([sql]) => /INSERT INTO transparent_motivations\.ingestion_runs/.test(String(sql)));
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    vi.mocked(campaignFinanceService.getConfirmedFecSources).mockResolvedValue([
+      { id: 'src-old', external_id: 'H6OLD0001' },
+      { id: 'src-new', external_id: 'H6NEW0002' },
+    ] as never);
+    poolQueryMock.mockImplementation(async (sql: string) => {
+      if (/NOT EXISTS/.test(sql)) return { rows: [{ id: 'src-new' }] };      // newFecSourceIds
+      if (/INSERT INTO transparent_motivations\.contributions/.test(sql)) return { rows: [], rowCount: 1 };
+      if (/count\(\*\) n/.test(sql)) return { rows: [{ n: '1' }] };
+      if (/regexp_match/.test(sql)) return { rows: [{ exp: null }] };
+      return { rows: [], rowCount: 0 };
+    });
+  });
+
+  it('stamps run rows with the Last-Modified date', async () => {
+    const f = stubFetch('Sun, 20 Sep 2026 15:56:56 GMT');
+    await loadFecBulkCycle('2026');
+    f.mockRestore();
+    const rows = runRowInserts();
+    expect(rows).toHaveLength(2);
+    for (const [, params] of rows) {
+      expect((params as unknown[])[5]).toEqual(new Date('2026-09-20T15:56:56Z'));
+      expect(String((params as unknown[])[4])).toMatch(/as of 2026-09-20/);
+    }
+  });
+
+  it('writes NO run rows when the file date is unknown', async () => {
+    const f = stubFetch(null);
+    await loadFecBulkCycle('2026');
+    f.mockRestore();
+    expect(runRowInserts()).toHaveLength(0);
+  });
+
+  it('--new-only loads and finalizes only sources with no successful run for the cycle', async () => {
+    const f = stubFetch('Sun, 20 Sep 2026 15:56:56 GMT');
+    await loadFecBulkCycle('2026', { newOnly: true });
+    f.mockRestore();
+    const rows = runRowInserts();
+    expect(rows.map(([, p]) => (p as unknown[])[0])).toEqual(['src-new']);
+    const newOnlyQuery = poolQueryMock.mock.calls.find(([sql]) => /NOT EXISTS/.test(String(sql)));
+    expect(String(newOnlyQuery![0])).toMatch(/election_cycle = \$1/);
+    expect(newOnlyQuery![1]).toEqual(['2026']);
+  });
+});
