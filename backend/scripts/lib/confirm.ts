@@ -1,12 +1,15 @@
 /**
  * confirm — phase-1 CONFIRM (spec §1.6): code-only checks after the coders agree. Any finding
  * sends the row to a person. Identity guards against namesakes; dates guard pre-seating (§4.10)
- * and the statement cycle (ruling Q4); the vote ladder requires the operative provision on the page.
+ * and the statement cycle (ruling Q4); record passages are judged as one basis per instrument
+ * group (via recordBasis.checkRecordGroup) — a vote or sponsorship record may span a vote/actor
+ * page and a separate bill-text page, so the group as a whole must show the person acting, the
+ * provision, and (for a vote) a readable, divided tally. Statements stay judged per passage.
  * 🟡 CAMPAIGN_LOOKBACK_DAYS is an implementation PROXY for "the current term, the current campaign,
  * or the campaign that seated them" — the operator may change it.
  */
 import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
-import { verbatimIn, type Passage } from './coderLabel.js';
+import type { Passage } from './coderLabel.js';
 import type { SeatContext } from './coderPrompt.js';
 import { checkRecordGroup, instrumentKey } from './recordBasis.js';
 
@@ -14,7 +17,7 @@ export const CAMPAIGN_LOOKBACK_DAYS = 548;
 export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
   | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
-  | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision';
+  | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**

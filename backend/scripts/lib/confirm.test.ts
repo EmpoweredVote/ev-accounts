@@ -30,8 +30,10 @@ describe('confirmRow (spec §1.6)', () => {
     expect(run({ snapshotText: new Map([['s1', 'Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]) }))
       .toContain('identity-not-in-snapshot'));
   it('flags a snapshot with a different person (person-not-in-snapshot)', () =>
-    expect(run({ snapshotText: new Map([['s1', 'Utah State Senator Jane Roe voted for the override; the bill requires students to compete on teams matching their sex at birth.']]) }))
-      .toContain('person-not-in-snapshot'));
+    expect(run({
+      restsOnPassages: [P({ actor_quote: 'Jane Roe voted for the override' })],
+      snapshotText: new Map([['s1', 'Utah State Senator Jane Roe voted for the override; the bill requires students to compete on teams matching their sex at birth.']]),
+    })).toContain('person-not-in-snapshot'));
   it('flags a record dated before the current term', () => expect(run({ restsOnPassages: [P({ date: '2019-02-01' })] })).toContain('record-before-term'));
   it('flags imprecise term dates rather than guessing (§4.10)', () =>
     expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ date: '2021-03-01' })] })).toContain('dates-imprecise'));
@@ -91,4 +93,19 @@ describe('record groups (D1)', () => {
     expect(run({ restsOnPassages: [bill], snapshotText: t2, sourceKind: kinds })).toEqual(expect.arrayContaining(['vote-not-evidenced'])));
   it('record-before-term uses the actor (vote) date, not the bill-text date', () =>
     expect(run({ restsOnPassages: [vote, { ...bill, date: '2019-01-01' }], snapshotText: t2, sourceKind: kinds })).not.toContain('record-before-term'));
+
+  it('two record groups (two instruments) are judged separately: the group missing its vote page still fails, the valid group adds nothing extra', () => {
+    const otherBill = P({ snapshot_id: 'other-bill', instrument: 'S.B. 22 (2022)', record_kind: 'vote',
+      actor_quote: null, tally_quote: null, provision_quote: 'requires students to compete on teams matching their sex at birth', date: '2022-03-25' });
+    const t3 = new Map([...t2, ['other-bill', 'S.B. 22 (2022). The bill requires students to compete on teams matching their sex at birth.']]);
+    const k3 = new Map([...kinds, ['other-bill', 'public-record']]);
+    const findings = run({ restsOnPassages: [vote, bill, otherBill], snapshotText: t3, sourceKind: k3 });
+    // The S.B. 22 group has no vote page, so its own finding must appear.
+    expect(findings).toEqual(expect.arrayContaining(['vote-not-evidenced']));
+    // The H.B. 11 group (vote + bill) is valid on its own (per the test above) and must not
+    // contribute any of its own possible findings just because it now shares the row with a bad group.
+    expect(findings).not.toContain('tally-unreadable');
+    expect(findings).not.toContain('near-unanimous-vote');
+    expect(findings).not.toContain('instrument-mismatch');
+  });
 });
