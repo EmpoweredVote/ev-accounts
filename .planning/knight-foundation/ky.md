@@ -11,7 +11,7 @@ Worktree `C:\ev-accounts-ky`, branch `knight/ky-slice13`.
 | 1 geography | ✅ **APPLIED 2026-09-26 — 138 boundaries, 138 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-26 — 138 offices, 138 seated, 0 vacant** (`CC_0150`/`CC_0151`). Lexington scores **2 of 4** |
 | 3 city waves | ✅ **APPLIED 2026-09-26 — 16 offices, 16 seated, 0 vacant, EVERY TERM DATED** (`X0068`, `CC_0152`/`CC_0153`). Lexington scores **3 of 5** |
-| 4 county waves | — Fayette County officers. Consolidated, so the commission drops and the officers stay |
+| 4 county waves | ✅ **APPLIED 2026-09-26 — 18 offices, 18 seated, 0 vacant** (`X0069`, `CC_0154`/`CC_0155`). 🔴 The commission did **NOT** drop: Fayette keeps a Fiscal Court. Lexington scores **4 of 5** |
 | 5 assets | — portraits for everyone seated in the slice, plus one `lexington` banner |
 
 ---
@@ -516,3 +516,476 @@ consolidated, so the Council *is* the county body.
 structure, but it **does** require the government to retain the county offices named in the Kentucky
 Constitution — so stage 4 is not empty despite consolidation. The commission drops; the separately
 elected officers stay, confirmed from the charter in that wave and never inherited.
+
+---
+
+## ▶ KY-4 IN PROGRESS — research only, NOTHING WRITTEN TO PRODUCTION (2026-09-26)
+
+**Stage 4 opened 2026-09-26.** No migration slot taken yet, no SQL written, no production row changed.
+Lease `state:ky` live to 2026-09-27 21:04Z.
+
+### 🔴🔴 THE SPEC'S PREMISE FOR A CONSOLIDATED CITY IS WRONG HERE: FAYETTE STILL HAS A FISCAL COURT
+
+Spec §3.2 says stage 4 for a consolidated city-county "drops the **county commission** — because the city
+council already is it — and keeps the county officers". Philadelphia, Columbus-Muscogee and Macon-Bibb all
+behaved that way. **Lexington-Fayette does not.**
+
+The charter's own Article 11 — [`backend/data/seed-ky-2026/charter-article-11.txt`](../../backend/data/seed-ky-2026/charter-article-11.txt),
+read from Municode 2026-09-26 — **preserves both the County Judge and the Fiscal Court**:
+
+> **11.02 Fiscal Court.** Nothing in this Charter shall be construed to alter or affect the election or term
+> of members of the County Fiscal Court. Composition — The County Fiscal Court shall be composed of the
+> Judge of the County Court and three (3) Commissioners to be elected from the Urban County at-large …
+
+It is vestigial but real: it keeps the school ad valorem levy, the county road-aid advisory power under
+KRS 179.415, and one seat on the County Budget Commission. **Read the charter, not the pattern — "consolidated"
+is not a template.**
+
+### 🔴🔴 A CANDIDATE FILING IS NOT EVIDENCE THAT AN OFFICE EXISTS
+
+The Secretary of State's county filings database (`web.sos.ky.gov/CandidateFilings/countyfilings.aspx`,
+county id **34**) returns, for Fayette in 2026, filings for **County Commissioner (3)** *and*
+**Magistrate / Justice of the Peace (5)**. In Kentucky a county's fiscal court is composed of commissioners
+**or** magistrates — never both — so the database plainly **does not validate that the office exists in the
+county it is filed in**. It is a record of what someone handed the clerk.
+
+⚠ Read alone it would have created a magistrate layer that does not exist, beside a commission that does.
+
+### ⚠ THE OFFICIAL BALLOT CARRIES THE SAME CONTRADICTION, AND IT IS NOT YET RESOLVED
+
+`Official-Cumulative-Report-P26.pdf` — the Fayette County Clerk's **own official** cumulative report for the
+2026 primary, saved to the seed directory — heads its races `OFFICIAL BALLOT FOR FAYETTE COUNTY` and
+contains:
+
+| Race on the 2026 primary ballot |
+| --- |
+| `COUNTY JUDGE/EXECUTIVE` |
+| `COUNTY COMMISSIONER District 1` |
+| `COUNTY COMMISSIONER District 2` |
+| **`MAGISTRATE District 3`** |
+| `CONSTABLE District 1` · `CONSTABLE District 3` |
+
+So the third fiscal-court seat is labelled **Magistrate** while the first two are labelled **Commissioner**,
+and the charter says all three are **at-large**. Three descriptions, three different structures.
+🔴 **Do not seat the third member until the county's own record says what that seat is called.**
+
+### The occupancy that two independent sources agree on
+
+| Seat | Holder | Sources |
+| --- | --- | --- |
+| County Judge/Executive | **Mary Diane (McCord) Hanna** | WKYT 2025-06-05; Wikipedia fiscal-courts list; her own 2026 re-filing |
+| Fiscal Court Commissioner 1 | **Brian Miller** | WKYT 2025-06-05; Wikipedia |
+| Fiscal Court Commissioner 2 | **Alayne White** | WKYT 2025-06-05; Wikipedia |
+| Fiscal Court Commissioner 3 | **David Lowe** | WKYT 2025-06-05; Wikipedia |
+
+Both sources read *elected 2022*, which under Ky. Const. § 99 puts the term start at the **first Monday in
+January after the election — 2023-01-02**. ⚠ That is a *computed* date, and KY-2 and KY-3 each proved a
+computed arrival wrong. It must be checked against the county's own record before it is written at day
+precision; year precision is the honest fallback.
+
+### 🔴🔴 `WebFetch` FABRICATED FOUR NAMES AND THREE DISTRICT LABELS
+
+Asked for the Fayette row of the Wikipedia fiscal-courts list, `WebFetch` returned
+*"District A: Noah Karsten Grimes · District B: Mark S. Lynch · District C: Kathleen Parks"*.
+**The raw bytes of that same page say `Commissioner 1 Brian Miller · 2 Alayne White · 3 David Lowe`.**
+Every name and every district label in the summary was invented, and it was formatted as a quotation.
+
+▶ **In this program `WebFetch` may be used to LOCATE a page. It must never be the source of a NAME, a DATE
+or a COUNT.** Fetch the bytes and parse them. This is the broken-detector family, except the wrong answer
+arrives wearing a citation.
+
+### The statutory frame, read from the primary sources (PDFs in the seed directory)
+
+- **Ky. Const. § 99** — every four years from 1998 each county elects a *Judge of the County Court, County
+  Court Clerk, County Attorney, Sheriff, Jailer, Coroner, Surveyor and Assessor*, and per Justice's District
+  one *Justice of the Peace* and one *Constable*. Terms start the **first Monday in January** after the
+  election. So the 2022 winners began **2023-01-02** and the next election is **November 2026**.
+- **Ky. Const. § 97** — *Circuit Court Clerk* and *Commonwealth's Attorney* every six years from 2000 →
+  elected **2024**, term from **2025-01-06**. ▶ This is why no Circuit Court Clerk appears in the 2026
+  filings: the absence is the cycle, not a missing office.
+- **Ky. Const. § 104** — the General Assembly may abolish the *Assessor*; the elected successor is the
+  **Property Valuation Administrator** (KRS 132.370).
+- **Ky. Const. § 105** — the General Assembly may consolidate *Jailer* into *Sheriff*; where it does, **the
+  office of Sheriff is retained** and the Sheriff performs the Jailer's duties.
+- 🟢 **FAYETTE HAS NO ELECTED JAILER, AND THE CHARTER SAYS SO IN ITS OWN EDITOR'S NOTE**: *"Sections 11.05
+  and 11.07 — The sheriff and jailer were merged effective January 3, 1994, by 1990 Ky. Acts Ch. 138."*
+  KRS 67A.028 then let the urban-county government stand up a **correctional services division** holding all
+  of the sheriff's and jailer's jail duties — Chapter 24 of the code — whose staff are classified civil
+  service, **not** elected. No Jailer filed in Fayette in 2026, which agrees.
+
+### Office inventory as it stands — ▶ NOT YET FINAL
+
+| # | Office | Seats | Status |
+| --- | --- | --- | --- |
+| 1 | County Judge/Executive | 1 | charter 11.01 + editor's note; on the 2026 ballot |
+| 2 | Fiscal Court Commissioner | 3 | charter 11.02; **third seat's title unresolved** |
+| 3 | County Clerk | 1 | charter 11.03 |
+| 4 | County Attorney | 1 | charter 11.04 |
+| 5 | Sheriff | 1 | charter 11.05 |
+| 6 | Property Valuation Administrator | 1 | charter 11.06 |
+| 7 | Coroner | 1 | charter 11.07; Gary Ginn filed 2026 |
+| 8 | Surveyor | 1 | charter 11.07; Gary Roland filed 2026 — **incumbency unverified** |
+| 9 | Constable | 3 | charter 11.07; districts 1, 2, 3 all filed 2026 |
+| 10 | Circuit Court Clerk | 1 | charter 11.07; § 97 cycle, elected 2024 |
+| 11 | Commonwealth's Attorney | 1 | charter 11.07; § 97 cycle — **confirm the 22nd Judicial Circuit is Fayette County exactly** |
+| — | Jailer | **0** | merged into Sheriff 1994-01-03 |
+| — | Justice of the Peace | ? | named in charter 11.07, but the fiscal court is commissioners |
+
+**Open scope question for Cantrell:** the 2026 ballot also carries **Soil and Water Conservation District
+Supervisor** (3 filed). The voters elect it, which is the inclusion test, but it is a special district
+rather than a city or county office and no earlier slice in this program has seated one.
+⚠ **Elected judges stay deferred to the judges wave**, as PA-4 recorded — that is scheduling, not exclusion.
+
+### Sources pulled to disk this session (untracked, under `backend/data/seed-ky-2026/`)
+
+`charter-article-11.txt` · `fayette-official-cumulative-P26.pdf` · `kyconst-sec097/099/100/104.pdf` ·
+`krs-67a-020/028/030/060.pdf` · `krs-67a-index.html` · `sos-countyfilings-34.html` ·
+`wiki-ky-fiscal-courts.html` · `lex-county-state-services.html` · `fayette-judge-exec-site.html`
+
+### 🔴 Publisher and fetch traps this stage has already hit
+
+- **amlegal no longer publishes Lexington-Fayette at all.** Every search engine still points the charter at
+  `codelibrary.amlegal.com/codes/lexingtonfayettecoky/...`, which **403s** a `fetch` and a bare `curl` and
+  **404s** in a real browser. amlegal's own Kentucky region index lists Louisville-Jefferson County and
+  **not** Lexington. The live code is Municode's **`lexington-fayette_urban`** client, which is what
+  `lexingtonky.gov` itself links to.
+- ⚠ **`library.municode.com/ky/lexington-fayette_county` is an EMPTY CLIENT SHELL** that returns a clean 200
+  and renders a "Publications" heading with nothing under it. A second Municode client for the same city,
+  also still indexed. **Two live-looking publishers, one real one.**
+- **Municode's `/api/codesToc` returns 401 to `curl` and 401 to `fetch` inside the page.** Drive the UI.
+- **`vrsws.sos.ky.gov` 403s `curl` behind an "Acceptable Use Policy" page.** Playwright reaches it.
+- ⚠ **The two Secretary of State systems disagree on Fayette's county id — filings uses `34`, election-night
+  reporting uses `36`.** Neither is the FIPS (`067`). Assert the county name printed in the result.
+- ⚠ **`apps.legislature.ky.gov/Law/Constitution/…?rsn=N` — `rsn` IS A ROW NUMBER, NOT A SECTION NUMBER.**
+  `rsn=99` returns **Section 91** and `rsn=114` returns **Section 105**; the offset is not constant, because
+  headings occupy rows too. Every section cited above was confirmed by reading its own printed title.
+- ⚠ **`fayettecountyjudgeexecutive.com` is a PARKED DOMAIN** — HTTP 200, **114 bytes**, a script redirect to
+  `/lander`. It is the email domain on the judge/executive's own candidate filing, and it publishes nothing.
+
+### ▶ Next steps for KY-4, in order
+
+1. **Resolve the third fiscal-court seat** (Commissioner or Magistrate) and how the three are elected —
+   at-large per the charter, or by district per the ballot. From the county's own record, not a secondary
+   source.
+2. **Verify every current holder individually and date each arrival.** Sheriff, County Clerk, County
+   Attorney and PVA each publish their own site (`fayettesheriff.com`, `fayettekyclerk.gov`,
+   `fayettecountyattorney.com`, `fayettepva.com`), all four linked by `lexingtonky.gov` itself. Coroner,
+   Surveyor, Constables and Circuit Court Clerk have no obvious publisher yet.
+3. **Decide the Soil and Water question** and record the ruling.
+4. Write `ROSTERS-fayette.md`, then take the slots (`steward slot CC`) and write structure + occupancy —
+   **offices and people in ONE wave**, per spec §3 stage 4.
+5. Dry-run `BEGIN; … ROLLBACK;`, confirm the rollback reverted, then apply, measure from outside against a
+   same-session baseline, and re-probe end to end.
+
+### ✅ KY-4 RESEARCH CLOSED 2026-09-26 — 18 seats rostered, still nothing written to production
+
+Full roster, every source and every change-check:
+[`backend/data/seed-ky-2026/ROSTERS-fayette.md`](../../backend/data/seed-ky-2026/ROSTERS-fayette.md).
+
+**Correction to the block above.** It said the vote totals showed the three fiscal-court seats were
+elected **by district**. They are not — they are **at-large**, as charter 11.02 says. That reading
+came from the 2026 primary PDF, whose columns `pdftotext -layout` had **interleaved**, so the numbers
+compared were not on the lines they appeared to be on. The county's certified **2022 general**
+results parse cleanly and carry explicit `TOTAL` rows: commissioners **66,529 / 66,114 / 503**
+(countywide scale, against a 102,742-vote countywide judge/executive race) while magistrates and
+constables run **18,904–23,292** (one-third scale). `DIST 1/2/3` on the commissioner line is a **seat
+number, not a geography**. ▶ **A total you did not see labelled `TOTAL` is not a total.**
+
+That also answers the "third seat" question the block above left open: all three commissioner seats
+are at-large, and the lone `MAGISTRATE District 3` label on the 2026 primary report is not a third
+commissioner at all — Fayette elects **commissioners and magistrates both**, nine district-and-
+at-large seats in total, and the county's own 2022 certified results list all nine.
+
+### What the change-check caught — it paid twice
+
+- 🔴 **The county clerk who won in 2022 does not hold the office.** Don Blevins Jr. won with 69,903
+  votes (67%); **Susan Lamb** was appointed **2023-02-01** and then won the **November 2023 special
+  election**. Her office publishes its own succession list — `Susan Lamb 2023-Present · Donald W.
+  Blevins Jr. 2009-2023`. Seating the 2022 winners wholesale would have seated the wrong person.
+- 🔴 **Magistrate District 3 changed hands and nothing dates it.** George Biggerstaff won it in 2022,
+  assumed **2023-01-02** and **left office 2023-08-26**; the city's own GIS layer carries
+  `MAGREP = "Chrysanthia Carr-Seals (D)"`. No source anywhere gives her arrival date, so that row
+  gets an **open-ended term at `start_precision => 'unknown'`**. ⚠ A Beshear press release
+  reappointing the same person to a **state board** through 2027-01-17 is a different body and is
+  not evidence about this seat.
+- 🟢 Thirteen seats were confirmed unchanged by a source independent of the 2022 result. **That is
+  the result, not a skipped step.**
+
+### The arrival dates, and the five that predate the current term
+
+**4 day · 13 year · 1 unknown · 0 invented · 5 appointed.** Only four arrivals are claimed at day
+precision, and every one of them is a **first-party or contemporaneous** statement:
+
+| Seat | Holder | Arrival | Source |
+| --- | --- | --- | --- |
+| PVA | David O'Neill | **2009-02-11** | 🟢 his own office — *"since February 11, 2009, when he was appointed by Governor Steve Beshear"* |
+| County Attorney | Angela C. Evans | **2022-09-30** | WKYT the same day — *"He is stepping down Friday. Evans was sworn in at 3 Friday afternoon."* |
+| Commonwealth's Attorney | Kimberly Baird | **2022-10-01** | Ballotpedia raw, a specific non-default date |
+| County Clerk | Susan Lamb | **2023-02-01** | Ballotpedia raw, a specific non-default date |
+
+🔴 **Everyone who simply took office on the constitutional default gets YEAR precision, not day.**
+Ky. Const. § 99 fixes "the first Monday in January after their election" — 2023-01-02 — and
+Ballotpedia prints exactly that for nine of these seats. **That is a computed date wearing a
+citation.** KY-2 and KY-3 each proved a computed arrival wrong inside this slice; the rule holds.
+
+⚠ **Five of eighteen do not start when their current term did** — Witt 1999, Ginn 2003, O'Neill 2009,
+Riggs 2013, Sparks 2015. `office_terms` carries continuous occupancy, so a re-election must never
+overwrite the earlier start. The KY-2/KY-3 gap-case trap, at 28% of the wave.
+
+### 🟢 The magisterial geography exists, and it is the city's own
+
+`services1.arcgis.com/Mg7DLdfYcSWIaDnu/…/Magisterial_District/FeatureServer/0` — *"Boundaries
+representing the magisterial districts of Lexington-Fayette County, Kentucky"* — **3 features**,
+`MAGISTERIAL` 1/2/3 and `MAGREP`. `wkid 102679` / `latestWkid 2246`, KY State Plane North in feet, so
+**`outSR=4326` is load-bearing** exactly as in KY-1.
+
+⚠ **One set of polygons is used twice**: Ky. Const. § 99 elects one Justice of the Peace **and** one
+Constable per Justice's District, and the vote totals pair up district by district
+(D1 18,904/18,950 · D2 21,740/23,292 · D3 22,851/22,684).
+
+⚠ **KY-3 recorded "four council-district layers"; the catalogue carries six** — `Council_District`
+plus `_1972`, `_1982`, `_1992`, `_2002`, `_2012`. The trap KY-3 documented is real and slightly
+larger than it recorded. It does not change KY-3's result, which proved the live layer by area.
+
+### What KY-4 will write, once the scope question is answered
+
+| Layer | Rows |
+| --- | --- |
+| Government | **none new** — the existing `Lexington-Fayette Urban County Government, Kentucky, US` row, as Philadelphia did in PA-4 |
+| Chambers | `Fayette County Fiscal Court` + `Fayette County Elected Officials` (and a magistrate/constable chamber if those are in scope) |
+| Districts | 12 seats on the **existing** countywide `21067`/`G4020` row; **3 new** magisterial districts if magistrates and constables are in scope |
+| Boundaries | **3** magisterial polygons, if in scope |
+| Offices + people | **18**, or **12** if magistrates and constables are excluded |
+
+▶ **Nothing has been written. No migration slot has been taken.** The next act is the scope ruling,
+then `steward slot CC` for the structure and occupancy pair.
+
+---
+
+## ✅ KY-4 APPLIED 2026-09-26 — Fayette County is seated, 18 offices, 18 seated, 0 vacant
+
+`X0069` (3 magisterial boundaries) + `CC_0154` (structure) + `CC_0155` (occupancy):
+**18 offices — 4 Fiscal Court + 14 county elected officials — 18 seated, 0 vacant, 18 people created,
+0 reused.** No new government row: these hang on the Lexington-Fayette row KY-3 created, which is
+Philadelphia's shape in PA-4.
+
+### Measured from outside, against a same-session baseline
+
+| Measure | Before | After | Delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,165 | 89,183 | **+18** exact |
+| `offices` | 9,706 | 9,724 | **+18** exact |
+| `office_terms` | 9,642 | 9,660 | **+18** exact |
+| `districts` | 10,275 | 10,278 | **+3** exact |
+| `geofence_boundaries` | 72,457 | 72,460 | **+3** exact |
+| `governments` | 608 | 608 | **0** — deliberately |
+| `chambers` | 1,326 | 1,328 | +2 |
+| `offices_missing_terms` | 422 / 238 unflagged | 422 / 238 | **unmoved** |
+
+Fiscal Court **4/4** and Elected Officials **14/14** seated, counting `och.politician_id` — never
+rows, because `office_current_holder` LEFT JOINs from `offices`.
+
+**Idempotent, proved by re-running all three**: `inserted 0 boundary row(s)`, every `essentials.*`
+write `INSERT 0 0`, and all six counts identical afterwards.
+
+### The wave in one table
+
+| Chamber | Offices | Geography |
+| --- | --- | --- |
+| `Fayette County Fiscal Court` | County Judge/Executive + 3 Fiscal Court Commissioners | countywide `21067`/`G4020` |
+| `Fayette County Elected Officials` | Clerk · County Attorney · Sheriff · PVA · Coroner · Surveyor · Circuit Court Clerk · Commonwealth's Attorney | countywide `21067`/`G4020` |
+| `Fayette County Elected Officials` | 3 Magistrates + 3 Constables | 3 new magisterial districts, `X0069` |
+
+**Term dates: 4 day · 13 year · 1 unknown · 0 invented · 5 appointed.**
+
+### 🔴🔴 THE SPEC WAS WRONG FOR THIS JURISDICTION, AND THE CHARTER IS WHAT SAID SO
+
+Spec §3.2 rules that a consolidated city-county's stage 4 **drops the county commission** because the
+council already is it. True in Philadelphia, Columbus-Muscogee and Macon-Bibb. **False in Lexington.**
+Charter 11.01 keeps the County Judge and 11.02 keeps the Fiscal Court — *"composed of the Judge of the
+County Court and three (3) Commissioners to be elected from the Urban County at-large"* — with the
+school ad valorem levy, the county road-aid advisory power and a County Budget Commission seat.
+
+▶ **`READ THE CHARTER, NOT THE PATTERN.` "Consolidated" is a description, not a template**, and this
+is the fourth consolidated jurisdiction in the program and the first to keep its commission.
+
+### 🔴🔴 AND FAYETTE ELECTS COMMISSIONERS *AND* MAGISTRATES — NINE SEATS WHERE A TEMPLATE EXPECTS THREE
+
+They are not alternative forms of one body here. The Fiscal Court is the **commissioner** form; the
+Justices of the Peace survive **separately** under charter 11.07 and do not sit on it. The county's
+own certified November 2022 general results list `COMMISSIONER 1/2/3`, `MAGISTRATE 1/2/3` **and**
+`CONSTABLE 1/2/3`. Vote Local Lexington states what the magistrate actually does in Fayette:
+*"the main role of the Magistrate is to conduct marriages."* Each office carries a `description`
+saying so — **describe the real powers; do not make jurisdictions uniform.**
+
+### 🟢 THE VOTE TOTALS DISCRIMINATED AT-LARGE FROM DISTRICT, AND OVERRULED THE BALLOT LABEL
+
+The certified 2022 return gives the commissioners **66,529 / 66,114 / 503** against a
+**102,742**-vote countywide judge/executive race, while magistrates and constables poll
+**18,904–23,292** — one third. So the commissioners are elected **at-large**, exactly as charter
+11.02 says, and `District 1/2/3` on a commissioner ballot line is a **seat number, not a geography**.
+All three hang on the countywide polygon; the title still reads *District N* because that is what
+the county prints, and `offices.description` carries the truth.
+
+🔴 **I READ THIS WRONG FIRST.** An earlier pass used the 2026 **primary** report and concluded the
+commissioners were district-elected. `pdftotext -layout` had **interleaved that report's columns**,
+so the numbers compared were not on the lines they appeared on. The 2022 file parses cleanly and
+carries explicit `TOTAL` rows. ▶ **A total you did not see labelled `TOTAL` is not a total.**
+
+### 🔴 David Lowe holds a countywide seat on 503 WRITE-IN votes
+
+Marked `(W)` on the county's own return, against 66,529 and 66,114 for the other two commissioners.
+**A turnout-based sanity check would flag that row as corrupt. It is correct.** Recorded because the
+next person to write a plausibility gate over `office_terms` will meet it.
+
+### 🔴🔴 A CERTIFIED RESULT IS NOT A FACT ABOUT WHO HOLDS THE SEAT — IT PAID TWICE HERE
+
+- **County Clerk.** Don Blevins Jr. won November 2022 with 69,903 votes (67%) and does **not** hold
+  the office. **Susan Lamb** was appointed **2023-02-01** and then won the **November 2023 special**.
+  Her own office publishes the succession list: `Susan Lamb 2023-Present · Donald W. Blevins Jr.
+  2009-2023`. Seating the 2022 winners wholesale would have put the wrong person in the office that
+  **runs Fayette County's elections**.
+- **Magistrate District 3.** George Biggerstaff won it in 2022, assumed **2023-01-02** and **left
+  office 2023-08-26**. The city's own GIS layer names **Chrysanthia Carr-Seals**; districts 1 and 2
+  match the certified result exactly.
+
+🟢 **Thirteen seats were confirmed unchanged by a source independent of the 2022 result. That is the
+result, not a skipped step.**
+
+### 🔴 ONE ARRIVAL IS UNDATABLE, AND IT IS WRITTEN THAT WAY
+
+No publisher anywhere gives a day, a month or even a stated year for Carr-Seals' appointment. Her row
+is an **open-ended term with `start_precision = 'unknown'` and a NULL `term_start`**. *"The day after
+Biggerstaff left"* is not a source. A named gate asserts that row stays NULL, and it was watched
+firing when a computed date was substituted.
+⚠ A Governor's press release reappointing the same person to a **state board** through 2027-01-17 is
+a different body and is not evidence about this seat.
+
+### 🔴🔴 "FIRST MONDAY IN JANUARY" IS A COMPUTED DATE WEARING A CITATION
+
+Ky. Const. § 99 fixes a county officer's term start at the first Monday in January after the
+election — **2023-01-02** for the 2022 winners — and a secondary source prints exactly that for
+**nine of these eighteen**. It is not an observation. Every such row is written at **year**
+precision. Only four arrivals are claimed at day precision and each is first-party or
+contemporaneous: O'Neill **2009-02-11** (his own office, *"appointed by Governor Steve Beshear"*),
+Evans **2022-09-30** (WKYT the same day, *"sworn in at 3 Friday afternoon"*), Baird **2022-10-01**,
+Lamb **2023-02-01**. ▶ Year precision under-claims rather than over-claims. This is KY-2's and
+KY-3's finding, holding for a third time in one slice.
+
+⚠ **Five of eighteen do not start when their current term did** — Witt 1999, Ginn 2003, O'Neill 2009,
+Riggs 2013, Sparks 2015. `office_terms` carries continuous occupancy, so a re-election must never
+overwrite the earlier start. The gap-case trap at **28%** of the wave.
+
+### 🔴🔴 `WebFetch` FABRICATED FOUR NAMES AND THREE DISTRICT LABELS, FORMATTED AS A QUOTATION
+
+Asked for the Fayette row of the Wikipedia fiscal-courts list, it returned *"District A: Noah Karsten
+Grimes · District B: Mark S. Lynch · District C: Kathleen Parks"*. **The raw bytes of that same page
+read `Commissioner 1 Brian Miller · 2 Alayne White · 3 David Lowe`** — which is also what WKYT says.
+Every name and every district label was invented.
+
+▶ **In this program `WebFetch` may LOCATE a page. It must never be the source of a NAME, a DATE or a
+COUNT.** Fetch the bytes and parse them. It is the broken-detector family, except the wrong answer
+arrives wearing a citation, so nothing about it looks wrong.
+
+### 🟢 THE MAGISTERIAL GEOGRAPHY, AND THE VINTAGE TEST THAT COULD NOT BE RUN
+
+`Magisterial_District` (`services1.arcgis.com/Mg7DLdfYcSWIaDnu`, owner **`gis_lfucg`**) — 3 features,
+`MAGISTERIAL` 1/2/3. `wkid 102679`, KY State Plane North in **feet**, so `outSR=4326` is load-bearing
+exactly as in KY-1. **One set of polygons carries six offices**, because Ky. Const. § 99 elects one
+Justice of the Peace *and* one Constable per Justice's District — and the certified vote totals pair
+up district by district (D1 18,904/18,950 · D2 21,740/23,292 · D3 22,851/22,684).
+
+🔴 **KY-3's area-versus-prior-vintage test cannot be run here, and that absence is the finding.**
+Lexington publishes **six** council-district layers, so KY-3 could prove the live one by area against
+`_2012`. The catalogue carries exactly **one** magisterial layer. Vintage therefore rests on: the
+city's own GIS account as publisher, item created **2020-12-18** (post-census), `lastEditDate`
+**2025-04-24**, and — as corroboration only — a `MAGREP` attribute naming a person who took the seat
+after 2023-08-26. ⚠ **KY-2 found this same GIS family carrying a stale roster beside correct
+geometry. Attributes and geometry are independent; neither vouches for the other.**
+
+What **is** proved, by measurement: the three districts **tile the county** — 285.571 sq mi against
+the place's 285.567, **99.991% covered**, 0.028 sq mi outside — and are **exactly disjoint**, largest
+pairwise overlap **0.000000 sq mi**. ▶ Tiling is a **completeness** test, not a vintage test: a
+superseded map of the same county would tile it too, and it is reported as such.
+
+⚠ **KY-3 recorded "four council-district layers"; the catalogue carries six** (`_1982` and `_1992`
+as well). The trap it documented is real and slightly larger than recorded. KY-3's result stands.
+
+### Gates, each watched failing for its own reason
+
+| Gate | Tamper | Fired |
+| --- | --- | --- |
+| Loader: feature count | expect 4 features | `[magisterial count assertion] … 3 features, expected 4` |
+| Loader: tiling | demand 150% place coverage | `[magisterial tiling assertion] … cover only 99.991%` |
+| Loader: disjointness | tolerance below the measurement | `[magisterial disjointness assertion] … above the -1 sq mi tolerance` |
+| **`CC_0154` Jailer** | create a `Jailer` office | **`a JAILER office exists … Fayette elects no jailer`** |
+| **`CC_0154` `geo_id` collision** | point the Sheriff at `21067`/`G5220` | **`1 Fayette office(s) landed on a district that is neither the county nor a magisterial district`** |
+| `CC_0155` undated arrival | give Carr-Seals a computed date | `expected exactly 1 unknown-precision term … got 0` |
+| `CC_0155` duplicate name | *(not a tamper — it fired for real)* | `DUPLICATE_POLITICIAN_NAME … Brian Miller` |
+
+🔴 **THE DISJOINTNESS CONTROL DID NOT FIRE THE FIRST TIME, AND THE CONTROL WAS THE THING AT FAULT.**
+Set to a tolerance of `0`, it passed: the districts overlap by **exactly** 0.000000 sq mi, and
+`0 > 0` is false. A tamper that cannot trip a strict comparison proves nothing about the gate behind
+it. Re-armed at `-1`, the true measurement trips it and the gate's own message is exercised.
+▶ **Watch the control fail. A control that passes may be passing for the wrong reason.**
+
+🔴 **The Jailer and the undated-arrival controls each tripped an earlier COUNT gate first**, so each
+count gate was relaxed to let execution reach the gate under test — the ordering problem KY-2's
+collision gate and KY-3's Vice Mayor gate both had. A control that aborts for the wrong reason proves
+nothing.
+
+### 🟢 The duplicate-name guard fired for real, and both collisions were read before it was lifted
+
+It stopped the wave on **Brian Miller**. Both namesakes were opened and identified before the guard
+was touched, because the guard's own warning is right — *a sitting officeholder running for a
+different seat is the normal case, not a different person*:
+
+| Name | Existing row | Verdict |
+| --- | --- | --- |
+| Brian Miller | `-300285`, a 2026 candidate for **U.S. House, MONTANA district 2** | different person |
+| David Lowe | `-100591`, a sitting **TEXAS House district 91** member | different person |
+
+The insert is **split** so the guard stays armed for the other 16. The sixteen zeros were
+**CONTROLLED** against two names known to exist (Steven Rudy from KY-2, Linda Gorton from KY-3, each
+returning 1), so they are real answers and not a broken query.
+
+### Dry run and verification
+
+Both migrations were dry-run against production in **one transaction ending in `ROLLBACK`**, and the
+rollback was **confirmed to have reverted** — all five counts back to 89,165 / 9,706 / 9,642 /
+10,275 / 1,326, with zero Fayette chambers and zero Fayette people surviving.
+
+✅ **END-TO-END on live production.** Every Fayette point returns **14** Fayette County offices: the
+**12 countywide** seats plus **exactly one** magistrate and **exactly one** constable — not three of
+each. The three magisterial districts discriminate:
+
+| Point | Magistrate | Constable |
+| --- | --- | --- |
+| Lexington-Fayette Government Center | Rosalind A. Bryant (D1) | Andrea Welker (D1) |
+| inside magisterial district 2 | Lisa Moore Fath (D2) | Jim McKenzie (D2) |
+| inside magisterial district 3 | Chrysanthia Carr-Seals (D3) | Edward Sparks (D3) |
+
+- **Negative controls**: Frankfort, KY returns **0** Fayette offices; Nashville, TN returns **0**.
+- ⚠ A first pass reported Frankfort returning 1. **The probe was wrong, not the data** — it counted
+  district rows rather than offices, so a Franklin County polygon with no Fayette office scored 1.
+  Counting `o.id` gives 0.
+- ✅ `check:reachability` — nothing regressed, all three buckets at baseline
+  (`BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 7).
+- ✅ `check:occupancy`, `check:migrations`, `check:reservations` — all green.
+
+### Debts and deferrals this wave records
+
+- ⏸ **Soil and Water Conservation District Supervisor** (3 on the 2026 Fayette ballot) is **not
+  seated**. The voters elect it, which is this program's inclusion test, but it is a special district
+  rather than a city or county office and no slice in thirteen has seated one. Ruled out of KY-4 by
+  Cantrell 2026-09-26; it is a **program-wide** question, not a Kentucky one.
+- ⏸ **Elected judges** — Circuit, Family and District judges of the 22nd Judicial Circuit — stay
+  deferred to the judges wave, as PA-4 recorded. Scheduling, not exclusion.
+- ⚠ **Carr-Seals' arrival date is owed** if it can ever be sourced; the row is honest as it stands.
+- ⚠ **`CC_0152`'s post-verify gate is now stale on replay.** This wave took Kentucky's `LOCAL`
+  district count from 13 to 16, so re-running `CC_0152` would raise `expected 13 Kentucky LOCAL
+  districts`. Migrations here are applied once and never replayed, so nothing is broken — recorded so
+  the discrepancy is not read as drift.
+
+▶ **Lexington scores 4 of 5. Next: stage 5, assets** — portraits for everyone seated in the slice
+(138 legislators + 16 city + 18 county = **172 people**) plus one `lexington` banner.
