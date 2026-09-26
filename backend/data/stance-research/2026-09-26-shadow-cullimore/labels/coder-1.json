@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "29a72e61-eb0b-44da-b535-974993a59838",
+      "office_id": "3533f253-93b7-4b4b-a3a1-87ac83d88bb1",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "ef490911-c2fa-500b-bebc-b811164b95d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-02-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 17 (2021 General Session)",
+          "provision_quote": null,
+          "note": "Senate final-passage vote page recording Cullimore's Yea on HB 17.",
+          "record_kind": "vote",
+          "actor_quote": "Yeas - 25 Adams, J. S. Bramble, C. Buxton, D. G. Cullimore, K. A.",
+          "tally_quote": "Yeas 25 Nays 3 Abs 1"
+        },
+        {
+          "snapshot_id": "12634a9a-f041-57fb-ba03-7dc0d7545199",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 17 (2021 General Session)",
+          "provision_quote": "A municipality may not enact an ordinance, a resolution, or a policy that prohibits,",
+          "note": "Enrolled bill text printing the operative preemption section; it names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only act in the sources is Cullimore's Yea on HB 17 (2021 General Session), which bars municipalities and counties from prohibiting \"the connection or reconnection of an energy utility service\". That decides which level of government may regulate utility hookups, not whether production should be phased out, held steady, or expanded \"with new drilling and permits\", so it is adjacent under the preemption rule and no rung is established.",
+      "needs_source": [
+        "Cullimore's own vote or sponsorship on a Utah instrument setting oil, gas or coal production, leasing or drilling permit levels",
+        "Cullimore's own words, in answer to the question, on how much fossil fuel production the nation should have"
+      ],
+      "quotes": []
+    }
+  ]
+}

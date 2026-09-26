@@ -1,3 +1,14 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-09-26-shadow-cullimore/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.3" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
 # Empowered Vote — Stance & Quote Codebook
 
 **Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
@@ -119,10 +130,6 @@ Act. An encyclopedia page about a bill is not the person's act; at most it point
 - **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
   decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
   about which level decides.
-  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
-    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
-    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
-    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
 
 **Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
 teams by sex at birth. The rungs differ exactly on that. → `on-question`.
@@ -621,3 +628,41 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   `record` passages of the row on one `instrument`), at least one passage carries a non-empty
   `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
   2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 29a72e61-eb0b-44da-b535-974993a59838  office_id: 3533f253-93b7-4b4b-a3a1-87ac83d88bb1
+Kirk A. Cullimore — State Senator District 19, Utah (seated, level: state)
+Current term: unknown (precision: unknown) to present
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: fossil-fuels
+topic_id: a22215c3-6693-4bc2-b248-01aebba14570  served_revision_id: 58796165-cd12-44de-a9b6-84df43f6eda0
+Question: What role should fossil fuels play in the nation's energy future?
+  1. Phase out fossil fuel production entirely.
+  2. Allow no new drilling and let production decline over time.
+  3. Keep fossil fuel production steady at current levels.
+  4. Expand fossil fuel production with new drilling and permits.
+  5. Maximize production and open more public land and waters to drilling.
+
+#### Annex
+
+(no annex for this topic yet — apply the codebook alone)
+
+## Sources
+
+---
+snapshot_id: 12634a9a-f041-57fb-ba03-7dc0d7545199
+source_kind: public-record
+url: https://le.utah.gov/~2021/bills/hbillenr/HB0017.htm
+
+Utah Legislature HB0017 1 UTILITY PERMITTING AMENDMENTS 2 2021 GENERAL SESSION 3 STATE OF UTAH 4 Chief Sponsor: Stephen G. Handy 5 Senate Sponsor: David P. Hinkins 6 7 LONG TITLE 8 General Description: 9 This bill prohibits municipalities and counties from making certain restrictions on 10 energy utility services. 11 Highlighted Provisions: 12 This bill: 13 ▸ prohibits municipalities and counties from restricting the connection of certain 14 energy utility services. 15 Money Appropriated in this Bill: 16 None 17 Other Special Clauses: 18 This bill provides a special effective date. 19 Utah Code Sections Affected: 20 ENACTS: 21 10-9a-530 , Utah Code Annotated 1953 22 17-27a-526 , Utah Code Annotated 1953 23 24 Be it enacted by the Legislature of the state of Utah: 25 Section 1. Section 10-9a-530 is enacted to read: 26 10-9a-530. Utility service connections. 27 (1) A municipality may not enact an ordinance, a resolution, or a policy that prohibits, 28 or has the effect of prohibiting, the connection or reconnection of an energy utility service 29 provided by a public utility as that term is defined in Section 54-2-1 . 30 (2) Subsection (1) does not apply to: 31 (a) an incentive offered by a municipality; or 32 (b) a building owned by a municipality. 33 Section 2. Section 17-27a-526 is enacted to read: 34 17-27a-526. Utility service connections. 35 (1) A county may not enact an ordinance, a resolution, or a policy that prohibits, or has 36 the effect of prohibiting, the connection or reconnection of an energy utility service provided 37 by a public utility as that term is defined in Section 54-2-1 . 38 (2) Subsection (1) does not apply to: 39 (a) an incentive offered by a county; or 40 (b) a building owned by a county. 41 Section 3. Effective date. 42 If approved by two-thirds of all the members elected to each house, this bill takes effect 43 upon approval by the governor, or the day following the constitutional time limit of Utah 44 Constitution, Article VII, Section 8, without the governor's signature, or in the case of a veto, 45 the date of veto override.
+
+---
+snapshot_id: ef490911-c2fa-500b-bebc-b811164b95d7
+source_kind: public-record
+url: https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2021GS&voteid=482&house=S
+
+Vote Status HB0017 Substitute 1 - - Passed 25 - 3 - 1, 2/12/2021 11:40 AM 1HB 17 Utility Permitting Amendments Handy Hinkins SEDW Passed 6-1-0 3rd Reading Final Passage Yeas 25 Nays 3 Abs 1 Yeas - 25 Adams, J. S. Bramble, C. Buxton, D. G. Cullimore, K. A. Davis, G. Fillmore, L. Grover, K. Harper, W. Hinkins, D. Ipson, D. Johnson, J. Kennedy, M. Kitchen, D. Mayne, K. McCay, D. McKell, M. Millner, A. Owens, D.R. Sandall, S. Stevenson, J. Thatcher, D. Vickers, E. Weiler, T. Wilson, C. Winterton, R. Nays - 3 Escamilla, L. Iwamoto, J. Riebe, K. Absent or not voting - 1 Anderegg, J.

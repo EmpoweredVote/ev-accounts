@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7202f411-4253-5329-9387-677d15265e79",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-08-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 9 (2021-2022)",
+          "provision_quote": null,
+          "note": "Umberg is in the Ayes on both Senate floor votes shown (05/26/21 third reading and 08/30/21 concurrence); the tally quoted is the concurrence vote, which is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Archuleta, Atkins, Becker, Bradford, Caballero, Cortese, Dahle, Dodd, Durazo, Eggman, Gonzalez, Grove, Hertzberg, Hueso, Hurtado, Laird, Leyva, McGuire, Min, Nielsen, Pan, Portantino, Roth, Rubio, Skinner, Umberg, Wieckowski, Wiener",
+          "tally_quote": "Ayes Count 28 Noes Count 7 NVR Count 5"
+        },
+        {
+          "snapshot_id": "e45f22f9-8520-58a2-906f-039398c9ab04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 9 (2021-2022)",
+          "provision_quote": "A proposed housing development containing no more than two residential units within a single-family residential zone shall be considered ministerially, without discretionary review or a hearing",
+          "note": "Single-subject zoning bill; it sets the substantive state rule itself rather than only deciding which level of government may act, so it is not caught by the preemption rule.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Umberg voted Aye on SB 9 (2021-2022), which requires two-unit housing and urban lot splits in single-family zones to be approved \"ministerially, without discretionary review or a hearing\". That is one act of cutting \"the regulations and zoning limits that block private building\", but it does not show he would \"Rely on the market to set prices and supply\" instead of also choosing to \"set binding rules on the private market like rent caps or required affordable units\" or to \"offer subsidies and tax breaks so more affordable housing gets built\" — the same vote is consistent with those rungs too.",
+      "needs_source": [
+        "Umberg's own words on the role of government in housing affordability (first-person issue page, questionnaire answer, or floor statement tying this vote to a position)",
+        "Umberg's roll-call votes on California rent-cap or inclusionary-requirement bills, to test the binding-rules rung",
+        "Umberg's roll-call votes on housing subsidy, tax-credit or affordable-housing financing measures, to test the subsidies rung"
+      ],
+      "quotes": []
+    }
+  ]
+}

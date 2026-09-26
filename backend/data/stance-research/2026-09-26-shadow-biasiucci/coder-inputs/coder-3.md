@@ -1,3 +1,14 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-09-26-shadow-biasiucci/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.3" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
 # Empowered Vote — Stance & Quote Codebook
 
 **Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
@@ -119,10 +130,6 @@ Act. An encyclopedia page about a bill is not the person's act; at most it point
 - **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
   decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
   about which level decides.
-  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
-    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
-    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
-    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
 
 **Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
 teams by sex at birth. The rungs differ exactly on that. → `on-question`.
@@ -621,3 +628,41 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   `record` passages of the row on one `instrument`), at least one passage carries a non-empty
   `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
   2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: b1b97401-d1a9-4442-9f78-2749f1853f6e  office_id: 7fbab045-07c3-4f8b-aedc-a1fe0bac21d9
+Leo Biasiucci — State Representative, Arizona (seated, level: state)
+Current term: 2023-01-02 (precision: day) to present
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: growth-and-development
+topic_id: fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4  served_revision_id: 65e8ffd5-5aac-4d40-8862-a321949eafa4
+Question: How should government manage population growth and new development?
+  1. Hold the pace of growth down — cap major new development, and let residents vote directly on the largest projects.
+  2. Allow growth only as fast as current infrastructure can handle — make new development wait for capacity.
+  3. Welcome steady growth — invest in roads, water and schools ahead of demand so expansion isn't held back.
+  4. Actively push for faster growth — cut red tape and recruit new development, while keeping basic guardrails.
+  5. Step back and let the market set the pace — remove development constraints beyond basic health and safety.
+
+#### Annex
+
+(no annex for this topic yet — apply the codebook alone)
+
+## Sources
+
+---
+snapshot_id: 7ddf90bf-c94d-5342-8d0f-df513ad65ce4
+source_kind: public-record
+url: https://www.azleg.gov/legtext/56leg/2R/bills/HB2570H.htm
+
+HB2570 - 562R - H Ver House Engrossed planning; home design; restrictions; prohibition State of Arizona House of Representatives Fifty-sixth Legislature Second Regular Session 2024 HOUSE BILL 2570 An Act amending title 9, chapter 4, article 6, Arizona Revised Statutes, by adding sections 9-461.18 and 9-461.19; relating to municipal planning. (TEXT OF BILL BEGINS ON NEXT PAGE) Be it enacted by the Legislature of the State of Arizona: Section 1. Title 9, chapter 4, article 6, Arizona Revised Statutes, is amended by adding sections 9-461.18 and 9-461.19, to read: START_STATUTE 9-461.18. Planning; home design; state preemption; applicability A. A municipality may not interfere with a home buyer's right to choose the features, amenities, structure, floor plan and interior and exterior design of a home.� B. Notwithstanding any other law, a municipality may not require any of the following: 1. A homeowners' association, a condominium association or any other association. Property owners may voluntarily form or establish a homeowners' association, a condominium association or another association. 2. A shared feature or amenity that would require a homeowners' association, a condominium association or any other association to maintain or operate the feature or amenity, unless necessary for stormwater management. 3. Screening, walls or fences. 4. Private streets or roads. C. The legislature finds and determines that the citizens of this state continue to experience the significant detrimental effects of a severe crisis due to the shortage of available housing.� It has become virtually impossible for many Arizonans to achieve the American dream of owning their own home.� This statewide housing crisis is caused in no small part due to highly restrictive regulations imposed by municipalities.� The legislature also finds and determines that, pursuant to article II, section 2, Constitution of Arizona, property rights are a fundamental element of individual rights and personal freedom.� A property owner's right to use the property owner's property, protected from unreasonable abridgment by municipal regulation and enforcement, is a matter of statewide concern and is not subject to further regulation by a municipality. D. The provisions of this section do not supersede applicable building codes, fire codes or public health and safety regulations. E. this section applies to developments constructed after the effective date of this section. END_STATUTE START_STATUTE 9-461.19. Planning; urban areas; home size; design; state preemption; applicability A. Notwithstanding any other law, a municipality may not adopt or enforce any code, ordinance, regulation, standard, stipulation or other requirement establishing, directly or indirectly, any of the following: 1. For new developments that are five or more acres in size and that will be platted and located in an area zoned for single-family homes, minimum lot sizes that are greater than one thousand five hundred square feet except a municipality may enforce adopted minimum lot sizes greater than one thousand five hundred square feet where multiple lots smaller than five acres with existing dwelling units are aggregated together. 2. Minimum square footage or dimensions for a single-family home. 3. Maximum or minimum lot coverage for a single-family home and any accessory structures. 4. Minimum building setbacks for a single-family home that are greater than five feet from the side lot lines and ten feet from the front and rear lot lines. 5. Design, architectural or aesthetic elements for a single-family home except for a single-family home within an area that is designated as a district of historical significance pursuant to section 9-462.01, subsection A, paragraph 10 or an area that is designated as historic on the national register of historic places. B. The legislature finds and determines that the citizens of this state continue to experience the significant detrimental effects of a severe crisis due to the shortage of available housing.� It has become virtually impossible for many Arizonans to achieve the American dream of owning their own home.� this statewide housing crisis is caused in no small part due to highly restrictive regulations imposed by municipalities.� The legislature also finds and determines that, pursuant to article II, section 2, Constitution of Arizona, property rights are a fundamental element of individual rights and personal freedom.� A property owner's right to use the property owner's property, protected from unreasonable abridgment by municipal regulation and enforcement, is a matter of statewide concern and is not subject to further regulation by a municipality. C. The provisions of this section do not supersede applicable building codes, fire codes, minimum parking requirements or public health and safety regulations. D. this section applies to developments constructed after the effective date of this section in a municipality with a population of more than seventy thousand persons that is designated in whole or in part as an urban area by the united states census bureau or in a municipality that is located on tribal land. END_STATUTE Sec. 2. Short title This act may be cited as the "Arizona Starter Homes Act".
+
+---
+snapshot_id: e0e09d04-b93f-502e-bb8e-33318b1cadcf
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2570
+
+House Third Reading - HB2570 planning; home design; restrictions; prohibition Action Date Action Vote 02/22/2024 Passed 33-26-0-0-1 Amended AGUILAR Y AUSTIN Y BIASIUCCI Y BLATTMAN Y BLISS Y CARBONE Y CARTER Y CHAPLIK N CONTRERAS L Y CONTRERAS P N COOK Y CREWS Y DE LOS SANTOS Y DIAZ Y DUNN Y GILLETTE Y GRANTHAM Y GRESS N GRIFFIN Y GUTIERREZ N HEAP Y HENDRIX N HERNANDEZ A N HERNANDEZ C Y HERNANDEZ L N HERNANDEZ M Y HODGE N JONES N KOLODIN N LIGUORI Y LIVINGSTON N LUCKING Y MARSHALL Y MARTINEZ Y MATHIS N MCGARR N MONTENEGRO N NGUYEN Y ORTIZ Y PARKER B N PARKER J N PAWLIK N PAYNE Y PEÑA Y PESHLAKAI Y PINGERELLI N QUIÑONEZ N SANDOVAL Y SCHWIEBERT Y SEAMAN N SMITH N STAHL HAMILTON N SUN V TERECH N TRAVERS N TSOSIE Y VILLEGAS N WILLOUGHBY N WILMETH Y TOMA Y [Vote detail dialog for HB2570 (2024) House Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-09-26.]

@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-26-shadow-umberg",
+  "seat": {
+    "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+    "full_name": "Thomas Umberg",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2018-12-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null
+  },
+  "topics": [
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "question_text": "What role should government play in making sure people can afford housing?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make government the main provider — build and operate public housing so everyone is guaranteed a home."
+        },
+        {
+          "value": 2,
+          "text": "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+        },
+        {
+          "value": 3,
+          "text": "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+        },
+        {
+          "value": 4,
+          "text": "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+        },
+        {
+          "value": 5,
+          "text": "Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

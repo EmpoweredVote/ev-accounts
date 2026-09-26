@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.3",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "b1b97401-d1a9-4442-9f78-2749f1853f6e|7fbab045-07c3-4f8b-aedc-a1fe0bac21d9|fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Biasiucci's own first-person words on the pace of growth or on recruiting new development (issue page, questionnaire or floor statement), 2023-2026",
+          "AZ Legislature sponsor/author line for HB 2570 (56th Leg., 2nd Reg. Sess., 2024), to establish whether he authored or sponsored it rather than only voting",
+          "A Biasiucci vote or sponsorship on an instrument that separates rungs 3, 4 and 5 - e.g. an infrastructure- or assured-water-supply adequacy requirement, a growth-cap measure, or a bill directing investment ahead of demand"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "b1b97401-d1a9-4442-9f78-2749f1853f6e|7fbab045-07c3-4f8b-aedc-a1fe0bac21d9|fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "requests": [
+        "Biasiucci's own first-person words on the pace of growth or on recruiting new development (issue page, questionnaire or floor statement), 2023-2026",
+        "AZ Legislature sponsor/author line for HB 2570 (56th Leg., 2nd Reg. Sess., 2024), to establish whether he authored or sponsored it rather than only voting",
+        "A Biasiucci vote or sponsorship on an instrument that separates rungs 3, 4 and 5 - e.g. an infrastructure- or assured-water-supply adequacy requirement, a growth-cap measure, or a bill directing investment ahead of demand"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

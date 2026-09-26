@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json` — one row, `fossil-fuels`, coded BLANK.
+
+**How it codes:** both snapshots are the same record — HB 17 (2021 General Session), Cullimore's Yea on final passage. The vote page carries `actor_quote` and `tally_quote`; the enrolled bill text carries `provision_quote`. Both are `own-act` / `record` / `vote` / `in-term`.
+
+**Why BLANK `no-evidence`:** HB 17 bars municipalities and counties from prohibiting "the connection or reconnection of an energy utility service." That is a preemption instrument — it settles which level of government may regulate utility hookups, not what the rule should be, and the fossil-fuels ladder separates rungs on *production levels* (phase out / no new drilling / steady / expand / maximize). Under V2 and ruling Q10 (H12, Durazo / SB 1174) that is `adjacent`, and on V4 it is `off-axis`: utility connections are a dimension this ladder does not order. No passage survives V1–V5, so `rests_on` is empty.
+
+The tally (Yeas 25 Nays 3 Abs 1) is above the 10% threshold, so `near-unanimous` does not apply — the adjacency is what blocks it, not the margin.
+
+`needs_source` asks for a Utah instrument on production/leasing/permit levels, or Cullimore's own words answering the question. No quotes emitted: both sources are public records with no candidate quote in his voice.
