@@ -39,6 +39,16 @@ const CHAMBER_ON_PAGE: Record<Chamber, RegExp> = {
   upper: /\bsenate\b|\bsen\.|\bSEN\b/i,
   lower: /\bhouse\b|\bassembly\b|\basm\.?\b|\bASM\b/i,
 };
+/**
+ * The page text with the non-chamber uses of chamber words removed, so the chamber test reads only
+ * where the vote happened: "General Assembly" (the whole Indiana legislature) and "<Chamber> Bill /
+ * Resolution / …" (a bill's origin, printed on the other chamber's pages). Without this an Indiana
+ * Senate roll call passed for a House seat (final review 2026-09-26).
+ */
+function chamberText(t: string): string {
+  return t.replace(/\bgeneral\s+assembly\b/gi, ' ')
+    .replace(/\b(?:senate|house|assembly)\s+(?:bills?|enrolled|joint|concurrent|resolutions?|amendments?)\b/gi, ' ');
+}
 
 /** All numbers matching `pattern` (an alternation, e.g. "ayes|yeas") immediately labelling a count. */
 function numbersFor(pattern: string, s: string): number[] {
@@ -151,15 +161,18 @@ export function checkRecordGroup(i: {
   // The actor page must name the seat's chamber (skipped when the seat is not a legislator's).
   if (i.chamber) {
     const re = CHAMBER_ON_PAGE[i.chamber];
-    if (actorPassages.some((p) => !re.test(textOf(p)))) out.add('chamber-not-evidenced');
+    if (actorPassages.some((p) => !re.test(chamberText(textOf(p))))) out.add('chamber-not-evidenced');
   }
 
   // A common surname, or a surname two members share on the page, needs a qualifier in the
-  // actor_quote: a full given name (2+ letters, first or middle) immediately before the surname
-  // ('Greg Walker', 'Stuart Adams'), or the first initial immediately after it ('Walker G'). A single
-  // letter BEFORE the surname never qualifies — it may belong to the previous name on the page
-  // ('Smith G Walker K': that "G" is Smith's, not Walker's).
-  const givenNames = nameWords(i.fullName).slice(0, -1).filter((w) => w.length > 1);
+  // actor_quote: the given name the person goes by, in full, immediately before the surname
+  // ('Greg Walker'; 'Stuart Adams' for "J. Stuart Adams"), or the first initial immediately after it
+  // ('Walker G'). The name gone by is the first given name, or the middle one only when the first is a
+  // bare initial — any other middle name would let a namesake whose first name it is pass ('Lee Smith'
+  // for "John Lee Smith"). A single letter BEFORE the surname never qualifies — it may belong to the
+  // previous name on the page ('Smith G Walker K': that "G" is Smith's, not Walker's).
+  const given = nameWords(i.fullName).slice(0, -1);
+  const givenNames = (given[0]?.length === 1 ? given.slice(1, 2) : given.slice(0, 1)).filter((w) => w.length > 1);
   const common = COMMON_LAST_NAMES.has(last);
   for (const p of actorPassages) {
     const pageCount = words(textOf(p)).filter((w) => w === last).length;

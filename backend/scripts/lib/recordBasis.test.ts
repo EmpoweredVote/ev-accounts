@@ -181,6 +181,12 @@ describe('namesake guard on the actor page (final review fix 2)', () => {
       provision_quote: 'requires students to compete on teams matching their sex at birth' });
     expect(checkRecordGroup({ passages: [p], snapshotText: mm, fullName: 'J. Stuart Adams', chamber: 'upper' }).findings).toEqual([]);
   });
+  it('a middle name counts only when the first given name is a bare initial', () => {
+    const mm = new Map([['s3', 'H.B. 11 (2022). Utah Senate. Senator Lee Smith led the override. The bill requires students to compete on teams matching their sex at birth.']]);
+    const p = P({ snapshot_id: 's3', instrument: 'H.B. 11 (2022)', record_kind: 'other-act', tally_quote: null, actor_quote: 'Lee Smith led the override',
+      provision_quote: 'requires students to compete on teams matching their sex at birth' });
+    expect(checkRecordGroup({ passages: [p], snapshotText: mm, fullName: 'John Lee Smith', chamber: 'upper' }).findings).toContain('name-collision');
+  });
   it('an uncommon surname printed once needs no qualifier', () =>
     expect(checkRecordGroup({ passages: [P({}), billPage], snapshotText: text, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings).toEqual([]));
 });
@@ -211,5 +217,12 @@ describe('positive control: real shadow-batch vote pages', () => {
     const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: seatChamber('Senator') }).findings;
     expect(f).toEqual([]);
   });
+  it('the same IN Senate roll call does NOT pass for a House seat ("General Assembly" / "House Bill" are not the chamber)', () => {
+    const st = load('2026-09-25-shadow-yoder');
+    const id = [...st.keys()].find((k) => k.startsWith('6024804d'))!;
+    const p = P({ snapshot_id: id, instrument: 'HB 1041 (2025)', actor_quote: 'N AY - 6 Ford J.D. Jackson Qaddoura Spencer Hunley Yoder',
+      tally_quote: 'Yea 42 Student eligibility in interscholastic sports. Nay 6', provision_quote: 'Student eligibility in interscholastic sports' });
+    const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: seatChamber('State Representative') }).findings;
+    expect(f).toContain('chamber-not-evidenced');
+  });
 });
-
