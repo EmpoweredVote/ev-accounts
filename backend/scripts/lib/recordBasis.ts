@@ -217,9 +217,19 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
     case 'bill-origin': {
       const tok = billTokenOf(instrument);
       if (!tok) return null;
-      if (tok.startsWith('s')) return 'upper';
-      if (tok.startsWith('a') || tok.startsWith('h')) return 'lower';
-      return null;
+      let origin: Chamber | null = null;
+      if (tok.startsWith('s')) origin = 'upper';
+      else if (tok.startsWith('a') || tok.startsWith('h')) origin = 'lower';
+      if (!origin) return null;
+      // A co-author printed on the same page can sit in the OTHER chamber (final review fix 1: a
+      // namesake co-author, e.g. "Coauthors: Assembly Member Quirk" on a Senate-origin bill, must not
+      // pass for a Senator named Quirk just because the bill itself started in the Senate). The nearest
+      // chamber word before the actor's own surname is the actor's own title, if the page prints one;
+      // that overrides the bill's chamber of origin. No chamber word nearby (the common case: a Digest
+      // that opens "SB 580, Durazo." with no title) keeps the bill-origin reading.
+      const before = chamberBefore(pt, a, extra);
+      if (before && before !== origin) return null;
+      return origin;
     }
     case 'none': return null;
   }

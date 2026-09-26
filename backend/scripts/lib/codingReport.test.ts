@@ -3,6 +3,7 @@ import { buildCodingReport, weakestClass } from './codingReport.js';
 import { CODEBOOK_VERSION, type CoderRow, type Passage } from './coderLabel.js';
 import type { SeatContext, PromptTopic } from './coderPrompt.js';
 import type { S1Lead } from './s1Leads.js';
+import { parseSourceProfile } from './sourceProfiles.js';
 
 const seat: SeatContext = { politician_id: 'p1', full_name: 'J. Stuart Adams', level: 'state', mode: 'seated', office_id: 'o1', office_title: 'State Senator',
   jurisdiction_names: ['Utah'], term_start: '2021-01-01', start_precision: 'day', term_end: null, election_date: null };
@@ -148,6 +149,31 @@ describe('D1 pair end to end (validator + CONFIRM)', () => {
     const t1b = withoutProfiles.rows.find((x) => x.topic_key === 'k-t1')!;
     expect(t1b.profiles).toEqual([]);
     expect(withoutProfiles.noProfileHosts).toEqual({});
+  });
+
+  // Final fix 4: the vote page matches a profile, the bill-text page (same instrument) does not --
+  // noProfileHosts must name only the unmatched page's host, not the matched one's.
+  it('noProfileHosts names only the unmatched page\'s host when the other page in the group matched (final fix 4)', () => {
+    const profile = parseSourceProfile(`---
+profile: test-votes
+version: 1
+scope: state:UT
+body: legislature
+match:
+  url_prefixes: [https://le.utah.gov/votes/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: nearest-before, name_format: surname }
+seat_titles: { Senator: upper }
+controls:
+  - { batch: b, snapshot: s1, person: J. Stuart Adams, office_title: Senator, instrument: H.B. 11 (2022), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+`, 'test.md');
+    const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [d1('t1'), blank('t2')])]));
+    const snapshotUrl = new Map([['vote', 'https://le.utah.gov/votes/hb11'], ['bill', 'https://nowhere.test/bill']]);
+    const r = buildCodingReport({ context, files, snapshotText: st, sourceKind: kinds, snapshotUrl, profiles: [profile] });
+    const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.confirm).toContain('no-source-profile');
+    expect(r.noProfileHosts).toEqual({ 'nowhere.test': 1 });
   });
 });
 

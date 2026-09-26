@@ -153,4 +153,23 @@ controls:
   });
   it('without profiles, no lookup and no no-source-profile (other checks unchanged)', () =>
     expect(confirmRow({ ...base, restsOnPassages: [P({})] })).not.toContain('no-source-profile'));
+
+  // Final fix 4: the up-front loop (`for (const p of records) profileOf(p);` in confirm.ts) runs
+  // BEFORE the group is judged, so a group where one page matches a profile and the other does not
+  // must still fail closed -- a matched vote page must not paper over an unmatched bill-text page on
+  // the same instrument.
+  it('one matched page and one unmatched page in the same record group still fails closed (up-front loop)', () => {
+    const vote = P({ snapshot_id: 'vote', instrument: 'H.B. 11 (2022)', record_kind: 'vote', provision_quote: null,
+      actor_quote: 'Utah Senate President J. Stuart Adams led the override', tally_quote: null });
+    const bill = P({ snapshot_id: 'bill', instrument: 'H.B. 11 (2022)', record_kind: 'vote', actor_quote: null, tally_quote: null,
+      provision_quote: 'requires students to compete on teams matching their sex at birth' });
+    const st = new Map([
+      ['vote', 'H.B. 11. Utah Senate President J. Stuart Adams led the override.'],
+      ['bill', 'H.B. 11. The bill requires students to compete on teams matching their sex at birth.'],
+    ]);
+    const kinds2 = new Map([['vote', 'public-record'], ['bill', 'public-record']]);
+    const snapshotUrl = new Map([['vote', 'https://le.utah.gov/votes/hb11'], ['bill', 'https://nowhere.test/bill']]);
+    const f = confirmRow({ ...base, restsOnPassages: [vote, bill], snapshotText: st, sourceKind: kinds2, snapshotUrl, profiles: [profile] });
+    expect(f).toContain('no-source-profile');
+  });
 });

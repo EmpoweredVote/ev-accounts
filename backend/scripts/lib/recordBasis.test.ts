@@ -354,6 +354,22 @@ describe('source rules', () => {
     expect(run(page, over, R({}), 'upper')).toEqual([]);
     expect(run(page, over, R({ name_format: 'full-name' }), 'upper')).toContain('name-collision');
   });
+  it('bill-origin fails closed on a namesake co-author in the other chamber (final fix 1)', () => {
+    // A synthetic CA-style bill page: the bill itself originates in the Senate (SB 9), but a
+    // co-author printed on the same page is an Assembly Member -- and happens to share a surname
+    // with the Senator being checked. bill-origin alone would say "SB -> Senate" and pass; the
+    // co-author's own printed title must override that when the two disagree.
+    const page = 'SB 9 (2024), Ortiz. Coauthors: Assembly Member Quirk. The bill requires a thing.';
+    const author = { record_kind: 'author' as const, tally_quote: null, actor_quote: 'Assembly Member Quirk' };
+    expect(run(page, author, R({ chamber: 'bill-origin' }), 'upper', 'Sally Quirk')).toContain('chamber-not-evidenced');
+  });
+  it('bill-origin keeps the bill\'s chamber when no title is printed near the actor (real SB 580 Digest shape)', () => {
+    // "SB 580, Durazo." names no title at all near the surname -- bill-origin must still read the
+    // Senate from the bill prefix, exactly as the real ca-leginfo-bill-text control does.
+    const page = 'SB 9 (2024), Wong. The bill requires a thing.';
+    const author = { record_kind: 'author' as const, tally_quote: null, actor_quote: 'SB 9 (2024), Wong' };
+    expect(run(page, author, R({ chamber: 'bill-origin' }), 'upper')).toEqual([]);
+  });
   it('profileOf returning null keeps the generic rules and i.chamber', () => {
     // generic nearest-before reads "Assembly 3rd Reading" as a stage, then finds "Senate" -- so a
     // 'lower' seat must fail, proving the fallback profile's chamber came from i.chamber, not a

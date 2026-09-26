@@ -27,13 +27,18 @@ file and the key.
 3. Add at least one real saved page as an `expect: pass` control — the exact `actor_quote` /
    `tally_quote` copied verbatim from a real `snapshot_text` in a batch's `snapshots.json`. Where the page
    has a trap (a wrong chamber read, a namesake, two votes on one page), add a second control that shows
-   the trap failing the way it should (an `expect` naming the finding).
+   the trap failing the way it should (an `expect` naming the finding). The controls prove each rule
+   gives the right answer on real pages. On the pages we have, the generic rule gives the same answer,
+   so they do not yet prove a profile *needs* its rule. When a page is found where only the declared rule
+   is right, add it as a control.
 4. Run `npx vitest run scripts/lib/sourceProfiles.real.test.ts` from `backend/` and confirm every control
    passes.
 5. Write the body: how to find the record, access (robots-disallowed, JavaScript-only, human-saved vs.
    fetchable by code), what the page proves and does not prove, and any hard cases.
 
 ## Rule-kind catalogue
+
+### Built now
 
 | Rule | Kind | Meaning |
 |---|---|---|
@@ -42,14 +47,16 @@ file and the key.
 | `chamber` | `nearest-before` | the nearest chamber word before the surname (today's rule) |
 | | `word-before-floor` | the chamber word directly before "Floor" in the actor's own vote block (CA) |
 | | `page-header` | the first chamber word on the page (IN roll call) |
-| | `bill-origin` | the chamber comes from the bill prefix — SB → upper, AB/HB → lower; for a primary author on a bill page |
-| | `none` | no chamber: a council, a board, a unicameral body (Nebraska) — the chamber test is skipped |
+| | `bill-origin` | the chamber comes from the bill prefix — SB → upper, AB/HB → lower; for a primary author on a bill page. A co-author printed in the OTHER chamber overrides this (a namesake co-author cannot borrow the bill's chamber of origin) — see `recordBasis.ts` `actorChamber`. |
+| | `none` | no chamber: a council, a board, a unicameral body (Nebraska) — the chamber test is skipped. **Not valid when `seat_titles` names both an `upper` and a `lower` chamber** — that pairing is the signal that this body needs the chamber test, not that it can be skipped (`parseSourceProfile` rejects it). |
 | `name_format` | `surname` | members print by surname; the collision rules of today apply |
-| | `surname-initial` | "Walker G" is the qualified form |
-| | `last-first` | "Watson, R." |
+| | `surname-initial` | accepted; today behaves as `surname` (no separate code path yet) |
+| | `last-first` | accepted; today behaves as `surname` (no separate code path yet) |
 | | `full-name` | "Councilmember Jane Roe" — the full name is required |
 
-Planned, not yet built (designed in the parent spec, built with the first local batch that needs them):
+### Planned, not yet built
+
+Designed in the parent spec, built with the first local batch that needs them:
 `page_kind: minutes` with `vote_rule: named-roll | motion | unanimous-consent`.
 
 ## Template header

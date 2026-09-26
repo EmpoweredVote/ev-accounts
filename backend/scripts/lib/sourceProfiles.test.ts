@@ -53,7 +53,13 @@ describe('parseSourceProfile', () => {
     ['a duplicated mapping key', HEADER + '\nprofile: dup', /f\.md: invalid YAML/],
     ['a control field YAML reads as a number', HEADER.replace('snapshot: aa219c5b', 'snapshot: 20240101'), /f\.md: controls\[0\]\.snapshot must be a string \(quote it\)/],
     ['a duplicate seat title after trim\\+lowercase', HEADER.replace('  Assembly Member: lower', '  Assembly Member: lower\n  senator : lower'), /f\.md: seat_titles: duplicate title "senator"/],
+    ['chamber: none on a body with both an upper and a lower chamber (final fix 2)',
+      HEADER.replace('word-before-floor', 'none'), /f\.md: rules\.chamber none is not valid for a body with two chambers \(seat_titles has upper and lower\)/],
   ])('rejects %s', (_label, h, re) => expect(() => parseSourceProfile(md(h), 'f.md')).toThrow(re));
+  it('chamber: none is fine when seat_titles has only one chamber (a nonpartisan single-body seat)', () => {
+    const single = HEADER.replace('word-before-floor', 'none').replace('  Assembly Member: lower', '  Councilmember: upper');
+    expect(parseSourceProfile(md(single), 'f.md').rules.chamber).toBe('none');
+  });
   it('rejects a file with no front matter', () => expect(() => parseSourceProfile('# no header', 'f.md')).toThrow(/f\.md: no front matter/));
 });
 

@@ -66,11 +66,20 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   if (!Array.isArray(extra) || !extra.every((w) => str(w) && /^[a-z0-9]+$/i.test(w as string))) fail('rules.not_chamber_after must be a list of single words');
   if (!isObj(h.seat_titles)) return fail('seat_titles must be a mapping');
   const seenTitles = new Map<string, string>();
+  const seenChambers = new Set<Chamber>();
   for (const [t, c] of Object.entries(h.seat_titles)) {
     const norm = t.trim().toLowerCase();
     if (seenTitles.has(norm)) fail(`seat_titles: duplicate title "${norm}"`);
     seenTitles.set(norm, t);
     if (c !== 'upper' && c !== 'lower') fail(`seat_titles.${t} "${String(c)}" must be upper | lower`);
+    seenChambers.add(c as Chamber);
+  }
+  // (Final review fix 2) chamber: none skips the actor's-chamber test entirely -- correct for a
+  // nonpartisan, single-body seat (a city council), but silently unsafe for a body that itself has two
+  // chambers: seat_titles naming BOTH upper and lower is exactly the signal that this source's pages
+  // need the chamber test, not that it can be skipped.
+  if (r.chamber === 'none' && seenChambers.has('upper') && seenChambers.has('lower')) {
+    fail('rules.chamber none is not valid for a body with two chambers (seat_titles has upper and lower)');
   }
   if (!Array.isArray(h.controls)) return fail('controls must be a list');
   h.controls.forEach((c, n) => {

@@ -1,11 +1,18 @@
 ---
 profile: in-iga-bill-details
-version: 1
+version: 2
 scope: state:IN
 body: legislature
 match:
   url_prefixes:
-    - https://iga.in.gov/legislative/
+    - https://iga.in.gov/legislative/2019/bills/
+    - https://iga.in.gov/legislative/2020/bills/
+    - https://iga.in.gov/legislative/2021/bills/
+    - https://iga.in.gov/legislative/2022/bills/
+    - https://iga.in.gov/legislative/2023/bills/
+    - https://iga.in.gov/legislative/2024/bills/
+    - https://iga.in.gov/legislative/2025/bills/
+    - https://iga.in.gov/legislative/2026/bills/
 page_kind: author
 rules:
   vote_block: whole-page
@@ -52,3 +59,8 @@ calls are separate PDFs (`in-iga-roll-call`).
   (rule `nearest-before`). `Indiana General Assembly 2024 Session` is not a chamber.
 - This page spells the bill out in full (`Senate Bill 208`), never the short prefix a coder usually
   writes (`SB 208`) — CONFIRM maps the two to one instrument, so use whichever form reads naturally.
+- `match.url_prefixes` lists one line per session year (`.../legislative/<year>/bills/`), not the bare
+  `.../legislative/` root — a prefix that broad would also swallow other IGA pages under `/legislative/`
+  that this profile's rules do not fit (final review fix 3). **A new session year needs a new prefix
+  line here, plus a version bump**, or that year's pages resolve to no profile at all and CONFIRM
+  reports `no-source-profile` for them.
