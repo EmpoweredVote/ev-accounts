@@ -8,7 +8,8 @@ const seat: SeatContext = { politician_id: 'p1', full_name: 'J. Stuart Adams', l
 const topics: PromptTopic[] = ['t1', 't2'].map((id) => ({ topic_id: id, topic_key: `k-${id}`, served_revision_id: 'r1', question_text: 'Q', stances: [], annexMd: null }));
 const snapshotText = new Map([['s1', 'Utah Senate President J. Stuart Adams: the bill requires students to compete on teams matching their sex at birth.']]);
 const P: Passage = { snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record', v4_shape: 'chair-shaped',
-  v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth' };
+  v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth',
+  record_kind: 'other-act', actor_quote: 'J. Stuart Adams' };
 const row = (topic_id: string, v: number | null): CoderRow => ({ politician_id: 'p1', office_id: 'o1', topic_id, served_revision_id: 'r1',
   passages: [P], v6_value: v, v6_blank_reason: v === null ? 'no-evidence' : null, rests_on: v === null ? [] : ['s1'], reasoning: 'r', needs_source: [], quotes: [] });
 const file = (slot: number, rows: CoderRow[]) => ({ codebook_version: CODEBOOK_VERSION, coder_slot: slot, rows });

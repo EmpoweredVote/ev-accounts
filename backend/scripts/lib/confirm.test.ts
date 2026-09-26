@@ -10,7 +10,8 @@ const seat: SeatContext = {
 const text = new Map([['s1', 'Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]);
 const P = (over: Partial<Passage> = {}): Passage => ({
   snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record', v4_shape: 'chair-shaped',
-  v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth', ...over,
+  v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth',
+  record_kind: 'other-act', actor_quote: 'J. Stuart Adams led the override', ...over,
 });
 const kinds = new Map([['s1', 'public-record']]);
 const run = (over: Partial<Parameters<typeof confirmRow>[0]> = {}) =>
@@ -73,4 +74,21 @@ describe('confirmRow (spec §1.6)', () => {
     expect(run({ sourceKind: new Map() })).toContain('rests-on-pointer'));
   it('does not flag a news source as a pointer', () =>
     expect(run({ sourceKind: new Map([['s1', 'news']]) })).not.toContain('rests-on-pointer'));
+});
+
+describe('record groups (D1)', () => {
+  const t2 = new Map([...text,
+    ['vote', 'Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams, Bramble, Cullimore. Noes Riebe'],
+    ['bill', 'H.B. 11 (2022). The bill requires students to compete on teams matching their sex at birth.']]);
+  const vote = P({ snapshot_id: 'vote', instrument: 'H.B. 11 (2022)', record_kind: 'vote', provision_quote: null,
+    actor_quote: 'Ayes Adams, Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' });
+  const bill = P({ snapshot_id: 'bill', instrument: 'H.B. 11 (2022)', record_kind: 'vote', actor_quote: null, tally_quote: null,
+    provision_quote: 'requires students to compete on teams matching their sex at birth', date: '2022-03-25' });
+  const kinds = new Map([['vote', 'public-record'], ['bill', 'public-record']]);
+  it('a vote page + bill text pair passes (no person/provision findings on the bill page)', () =>
+    expect(run({ restsOnPassages: [vote, bill], snapshotText: t2, sourceKind: kinds })).toEqual([]));
+  it('the bill page alone is not a vote', () =>
+    expect(run({ restsOnPassages: [bill], snapshotText: t2, sourceKind: kinds })).toEqual(expect.arrayContaining(['vote-not-evidenced'])));
+  it('record-before-term uses the actor (vote) date, not the bill-text date', () =>
+    expect(run({ restsOnPassages: [vote, { ...bill, date: '2019-01-01' }], snapshotText: t2, sourceKind: kinds })).not.toContain('record-before-term'));
 });
