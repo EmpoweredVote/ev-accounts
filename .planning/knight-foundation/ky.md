@@ -989,3 +989,329 @@ each. The three magisterial districts discriminate:
 
 ▶ **Lexington scores 4 of 5. Next: stage 5, assets** — portraits for everyone seated in the slice
 (138 legislators + 16 city + 18 county = **172 people**) plus one `lexington` banner.
+
+## ▶ KY-5 IN PROGRESS — routes mapped and licence-gated, NOTHING WRITTEN OR MIRRORED (2026-09-26)
+
+Stage 5 is assets: portraits for all **172** people the slice seated, plus a `lexington` banner.
+This section records the route research. **No image has been downloaded for import, no
+`politician_images` row written and no storage object created.** The wave is held at a licence
+question, which is stated at the end.
+
+### Baseline, measured in this session — the slice is greenfield
+
+| Wave | People | `photo_custom_url` | `photo_origin_url` | `politician_images` rows |
+| --- | --- | --- | --- | --- |
+| KY-2 legislature | 138 | 0 | 0 | 0 |
+| KY-3 Lexington | 16 | 0 | 0 | 0 |
+| KY-4 Fayette | 18 | 0 | 0 | 0 |
+| **total** | **172** | **0** | **0** | **0** |
+
+🟢 **A UNIFORM ZERO IS A BROKEN DETECTOR UNTIL A CONTROL PASSES, AND ONE DID.** The same query
+shape run over the Tennessee cohort returns **144 photos across 185 people**, so the detector can
+see a portrait when one exists. Separately, the slice's own office set resolves to **172 distinct
+holders, all 172 inside the `external_id` block, over 172 offices** — a clean 1:1, which also
+proves no KY person was a reused pre-existing record.
+
+▶ So this is **not** a re-pointing job. NC-5's finding — that 29 of 29 off-site rows had an
+official portrait nobody had pointed at — has no analogue here, because there is nothing to
+re-point.
+
+### 🟢 The legislature publishes a complete, name-verified, full-resolution portrait route
+
+All 138 seats were read from their own profile pages (`sweep-ky-portraits.py`,
+`ky-portrait-route.json`). Nothing was constructed.
+
+| Measure | Result |
+| --- | --- |
+| Profile pages read | **138 / 138**, 0 errors |
+| Portrait `alt` present | **138 / 138** |
+| Full-resolution object | **138 / 138 HTTP 200** |
+| Placeholder images | **0** |
+| Sizes | 0.69 MB - 16.7 MB, median 4.2 MB, **0.64 GB total** |
+| Sampled resolution | `house1.jpg` = **3098 x 3872** |
+
+`Legislators Full Res Images` is literally true: the sampled portrait is a Nikon D500 frame at
+300 dpi. **Nothing in this wave would be upscaled** — the 600x750 target is far below native.
+
+🔴🔴 **THE FILENAMES ARE POSITIONAL, AND THE PUBLISHER'S OWN `alt` IS WHAT DEFUSES THEM.**
+`house1.jpg` encodes a SEAT, not a person — the off-by-one class that has bitten this programme
+repeatedly. But every profile carries `alt="<Name> photo"`, so the publisher itself binds each
+positional file to a named human.
+
+🟢 **All 138 alts were checked against the roster WE seated, and all 138 agree** (first and last
+token, after normalising case, punctuation and suffixes). ▶ **The control fired**: planting one
+wrong alt and one seat absent from our roster produced exactly 2 disagreements. The zero is a
+real answer.
+
+### 🔴🔴 `DistrictNumber` IS A FLAT 1-138 INDEX, AND `&Chamber=S` IS SILENTLY IGNORED
+
+Senate district 37 is `DistrictNumber=137` and `senate137.jpg`. Senate portraits run
+`senate101.jpg` ... `senate138.jpg`.
+
+- `senate37.jpg` **404s** — a constructed Senate URL is wrong for the whole chamber.
+- Worse, `...Legislator-Profile.aspx?DistrictNumber=37&Chamber=S` returns **HTTP 200 and the HOUSE
+  member for district 37**. The chamber parameter does nothing. ▶ **A wrong answer arrives as a
+  clean 200**, which is the `fetch` trap family again.
+- ▶ **Read `PIC_URL` and the page's own download link. Never build either from a district number.**
+
+🟢 **KY-2's stale-roster finding does NOT extend to the images.** The GIS layer still names David
+Yates at Senate 37; the profile page at `DistrictNumber=137` names **Gary Clemons, with zero
+mentions of Yates**, and its `alt` reads `Gary Clemons photo` against `senate137.jpg`. The portrait
+library is maintained against the seat and is current. ⚠ Attributes and geometry are independent —
+so are attributes and images. Each needed its own check.
+
+### 🔴 Fetch and parse traps this stage hit
+
+- **`requests` is refused HTTP 403 by `legislature.ky.gov`; `urllib` with a short UA is accepted.**
+  Both send a browser UA. This is the inverse-WAF shape recorded for `michigan.gov` — the client's
+  whole request shape decides, not the UA string.
+- **`robots.txt` advertises `Sitemap: sitemap.xml`, and that file 404s.** The TN method of sweeping
+  a sitemap for a policy page cannot be run here; the footer links had to be walked instead.
+- **`apps.legislature.ky.gov/law/statutes/statute.aspx?id=N` returns a PDF, not HTML.** Decoding it
+  as UTF-8 and re-writing it corrupts the file into something `pdftotext` and `pypdf` both reject.
+  Fetch statutes as bytes.
+- 🔴 **MY OWN DOWNLOAD-LINK REGEX WAS ATTRIBUTE-ORDER SENSITIVE AND FAILED SILENTLY.** `<a
+  class="download" ...>` missed `<a id="downloadFullRes" class="download" ...>`, so 2 of 3 control
+  seats reported "no full-resolution image" when all three had one. It would have **under-reported
+  coverage, not errored**. ▶ The three-seat control is the only reason this was caught before a
+  138-seat run.
+
+### 🟢 Lexington publishes its officials' headshots through a press gallery
+
+- The city site (`lexingtonky.gov/councilmembers`) is Next.js and its `__NEXT_DATA__` carries a
+  structured **title <-> image <-> alt** triple per member, so the name binding comes from the CMS
+  and not from DOM order. **15 of 15 council members** have a portrait. Two filenames are positional
+  (`Picture1.png`, `LFUCG Headshot.jpg`) but both carry a naming `alt`.
+- 🟢 **The Media center links a public PhotoShelter gallery: `Headshots` -> `Current councilmembers`,
+  16 files** — matching the 16 city offices exactly. Native sizes run **2849x3989 to 3861x5405**.
+  Each file carries a caption, a date, `Credit/Provider: Amy Wallot/LFUCG`, `Copyright:
+  Lexington-Fayette Urban County Government`, and a **Download** control.
+- ⚠ The website copies are downsized versions of these masters (`DanWu.JPG` appears in both).
+  **The gallery is the better source** — a per-image credit line, a stated copyright holder, a
+  caption naming the person, and roughly ten times the pixels.
+- ⏸ **The mayor's own portrait is not yet located.** `lexingtonky.gov/mayor` carries news
+  photographs, not a headshot. The 16th gallery file is the likely answer and has not been read.
+
+### ⏸ Fayette County's 18 officers have no route yet
+
+Four officer sites are linked by the county itself. `fayettekyclerk.gov`,
+`fayettecountyattorney.com` and `fayettepva.com` answer, and so does `fayettesheriff.com` — but
+🔴 **only at the apex. `www.fayettesheriff.com` does not resolve at all**, so a probe that assumed
+the `www.` host would have recorded the Sheriff as unreachable. All four carry very few images. The remaining officers — Coroner, Surveyor, the three
+Magistrates, the three Constables, the three Commissioners, the Circuit Court Clerk — have no
+obvious publisher, exactly as KY-4 recorded for their occupancy. This will be a per-person hunt.
+
+🔴 **AND FAYETTE IS FOUR RIGHTS QUESTIONS, NOT ONE.** The **County Attorney's Office** publishes its
+own Terms of Use as a PDF (`fcao-terms-of-use.pdf`, linked from its home page), clause 6:
+
+> *"All content on this website, including text, graphics, logos, images, and software, is the
+> property of the Fayette County Attorney's Office ... You may print copies of the information for
+> your own personal, non-commercial use ... **Any other distribution, modification, or re-use of the
+> content on this site without the express written permission of the Fayette County Attorney's
+> Office is strictly prohibited.**"*
+
+So Angela C. Evans' portrait is held on **its own** terms, separate from the City's and from the
+LRC's. The Clerk and the PVA publish a Privacy Policy and a Disclaimer but no reuse clause, read
+but not yet analysed; the Sheriff's site publishes no policy links at all; the Circuit Court Clerk
+sits under `kycourts.gov`, which points at the statewide `kentucky.gov` policies. ▶ **Count the
+publishers before promising a county wave.**
+
+### 🔴🔴 THE LICENCE IS A FOURTH SHAPE, AND IT IS THE MOST RESTRICTIVE THE PROGRAMME HAS MET
+
+Three publishers, three different positions. None of them is NC's public-domain grant.
+
+**1. Legislative Research Commission — a statutory commercial-use bar, and silence on everything
+else.** Its Policies page states, as a term of use:
+
+> *"Under KRS 61.874, it is unlawful to use any records available on this site for a commercial
+> purpose without agreement with the Legislative Research Commission."*
+
+- **KRS 61.870(4)(a)** (read from the statute's own PDF, `krs-61-870.pdf`) defines a commercial
+  purpose as *"the direct or indirect use of any part of a public record ... for sale, resale,
+  solicitation, rent, or lease of a service, or any use by which the user expects a profit either
+  through commission, salary, or fee."*
+- **KRS 61.870(4)(b)** excludes publication by a **newspaper or periodical**, use by a **radio or
+  television station in its news or other informational programs**, and litigation use. The
+  carve-out is keyed to the KIND of publisher. We are none of the three.
+- 🔴 **THE BYTES ARE SILENT — AND THAT IS THE OPPOSITE OF TENNESSEE.** TN's rights statement lived
+  in a PNG `tEXt` chunk after everything else came up empty. Here the EXIF, the Photoshop IPTC block
+  and the XMP packet of a full-resolution portrait were all read: camera, lens, capture date,
+  `Legislator portrait`, a subject name — and **no `Copyright`, no `dc:rights`, no
+  `xmpRights:UsageTerms`, no by-line**. ▶ Reading the bytes is still the right move; here it
+  returned a genuine absence rather than a find.
+- The only copyright claim is a boilerplate footer, `Copyright 2026 Kentucky Legislative Research
+  Commission / All rights reserved`, repeated as `(C) 2026 Commonwealth of Kentucky`. NC-5's rule —
+  **read the disclaimer, not the footer** — was followed: the Disclaimer, Security and Accessibility
+  pages were all read and **none of them mentions copyright or reuse**. The Policies page's Legal
+  Notice is a generic DMCA safe-harbour notice about third parties, not a grant or a refusal.
+- 🟢 Each member page carries an explicit **"Download Full Resolution Image"** link, and the PIO's
+  news-photo service states *"All photos are attributed to 'LRC Public Information'."* — a credit
+  convention, for news photos.
+
+**2. Lexington-Fayette Urban County Government — an express, itemised prohibition.** Its Terms of
+Use is the clearest refusal any slice has met:
+
+> *"Users may not: Modify or reuse any text, photographs, images, video or any other content ...
+> without the express written permission of the City/LFUCG. Copy and/or distribute text,
+> photographs, images ... without the express written permission of the City/LFUCG. ... Mirror any
+> city-owned website on any other server without the city's permission."*
+
+Our import does all three: it copies, it distributes and it mirrors onto another server.
+⚠ **There is exactly one carve-out, and it is unresolved:** *"Any exceptions to this policy are the
+images available on the free image gallery page."* The Media center's public **Headshots** gallery,
+with its Download control, is the plausible referent — but the Terms never name it and the gallery
+never states terms. **A plausible referent is not a grant.**
+
+**3. Fayette County — unread**, and it is several publishers rather than one.
+
+▶ **KENTUCKY IS NOT A SILENCE.** TN was ruled shippable because *"blocking a wave on an email would
+treat a grant like a silence"*. The inverse governs here: **shipping this wave would treat a stated
+restriction like a grant.** MN-5 and Philadelphia are the closer precedents.
+
+### ▶ What KY-5 needs before anything is mirrored
+
+1. **A ruling on the LRC's 138.** The hinge is a fact only the operator holds: whether Empowered
+   Vote's use of these portraits is a *commercial purpose* under KRS 61.870(4)(a) — a use by which
+   the user expects a profit. If it is not, the LRC clause does not bite and only the bare footer
+   copyright remains. If it is, an agreement with the LRC is required by its own terms.
+2. **A ruling on Lexington's 16**, or a written permission. The gallery carve-out should be put to
+   the LFUCG Public Information Office rather than assumed.
+3. **Letters**, on the TN pattern — drafted, and sent only on the operator's word. Contacts read
+   from the publishers' own pages: `webmaster@lexingtonky.gov` and the LFUCG media-contacts page;
+   the LRC Public Information Office for the legislature.
+4. Only then: Fayette's 18, the mayor's portrait, the contact sheet, and the `lexington` banner.
+
+### ✅ RULED 2026-09-26 (Cantrell) — the 138 SHIP, the 16 are HELD, and the two must not be summed
+
+Two separate rulings on two separate publishers, taken together in one sitting:
+
+| Cohort | Publisher | Ruling |
+| --- | --- | --- |
+| **138 General Assembly** | `legislature.ky.gov` (LRC) | **SHIP.** Empowered Vote's use is not a *commercial purpose* under KRS 61.870(4)(a), so the site's only restriction does not bite. Write to the LRC anyway. |
+| **16 Lexington** | `lexingtonky.gov` (LFUCG) | **HOLD.** Ask the City in writing whether the Media center's Headshots gallery is the "free image gallery page" its Terms carve out. |
+| 18 Fayette County | several, unread | a **third** question, untouched |
+
+🔴 **THE TENNESSEE REASONING CUTS BOTH WAYS, AND WHICH WAY DEPENDS ON WHAT THE PUBLISHER SAID.**
+TN-5 ruled that *blocking a wave on an email would treat a grant like a silence*. That releases the
+LRC's 138, whose only stated restriction is answered by a fact about us. It does **not** release
+Lexington's 16, where shipping would treat a stated prohibition like a grant. **One state, one
+session, opposite answers — because the publishers are different.** Anyone reading "Kentucky
+portraits are fine" off this slice has read it wrong.
+
+Letters drafted, **not sent**, both carrying the PA-5 disclosure shape — the positions bullet
+before the grant, and the endorsement clause scoped to the image only:
+
+- `backend/data/seed-ky-2026/LRC-PERMISSION-REQUEST.md` — LRC Public Information Office, Capitol
+  Annex Room 023, 502-564-8100. ⚠ **It publishes no email**; the routes are the telephone and the
+  site's contact form, whose own page warns off political and sales messages.
+- `backend/data/seed-ky-2026/LEXINGTON-PERMISSION-REQUEST.md` — `pio@lexingtonky.gov`, copying
+  Government Communications (Stacey Dimon), the Urban County Council (Layton Garlington) and the
+  Mayor's Office (Susan Straub), each read off the City's own media-contacts page.
+
+⚠ **Both letters state that we publish NO positions for these people today.** That is true now and
+will stop being true when the stance programme reaches Kentucky. It is written as a plan, not as a
+permanent property, so the disclosure does not go stale into a misrepresentation.
+
+### The name gate is in the pipeline, not in a transcript
+
+`backend/scripts/build-ky-legislature-candidates.py` joins the route sweep to the seated roster and
+**aborts** if any seat's portrait is bound to a different person than the one we seated. It carries
+`--self-test`, which plants two faults and requires the gate to report exactly two.
+
+```
+route rows 138 · seated roster 138
+SELF-TEST: planted 2 faults, gate reported 2 -> [('H1','Steven Rudy','Imposter Person'), ('H999',None,'Savannah Maddox')]
+name gate: 138/138 alts agree with the seated roster
+wrote .tmp-ky-legislature-candidates.json: 138 subjects, 138 with a portrait, 0 without
+```
+
+▶ **A one-off check that passed once is not a gate.** The positional-filename risk is permanent —
+`house1.jpg` will always name a seat — so the thing that defuses it has to run on every build.
+
+## ✅ KY-5a APPLIED 2026-09-26 — the Kentucky General Assembly renders, 0 → 138 of 138
+
+**138 imported, 0 skipped, 0 failed.** No migration: this is an importer run, not SQL.
+`import-headshot-candidates.py --json .tmp-ky-legislature-candidates.json`, after a dry run that
+reported the same 138 and enlarged nothing.
+
+### Measured from outside, against a same-session baseline
+
+The baseline was taken **through both connections first**, and they agree, so the thing that wrote
+and the thing that verified are one database: `DATABASE_URL` authenticates as **`ev_api`** through
+the IPv4 pooler, MCP as `postgres`; both counted 138 KY legislators and **9,034** image rows before
+the write.
+
+| Measure | Before | After | Expected |
+| --- | --- | --- | --- |
+| `politician_images` total | 9,034 | **9,172** | **exactly +138** ✓ |
+| KY legislators with a `default` image row | 0 | **138** | 138 ✓ |
+| KY legislators rendering from **our** CDN (`photo_custom_url`) | 0 | **138** | 138 ✓ |
+| `photo_origin_url` = the member's profile **page** | 0 | **138** | 138 ✓ |
+| `photo_origin_url` wrongly holding an **image** URL | — | **0** | 0 ✓ |
+| Distinct licence strings on the 138 | — | **1** | 1 ✓ |
+| 🟢 **CONTROL — Tennessee, a scope that must not move** | 144 | **144** | unmoved ✓ |
+
+✅ **Every stored object was fetched back from the CDN and decoded: 138 of 138, all exactly
+600x750 RGB, 0 failures.** ▶ **And the reader was proved able to fail**: the same code against a
+bogus object key returned **HTTP 400** and did not decode.
+
+✅ **Nothing was enlarged.** Sources ran 1190x1488 to 3861x5405 — every one a *downscale* to the
+600x750 target, 0.17x to 0.50x. `--max-upscale` never came into play.
+
+### 🔴 THE LIVE API HAS A FIELD CALLED `photo_origin_url` THAT IS NOT THE COLUMN OF THAT NAME
+
+A first end-to-end probe read `photo` / `photoUrl` / `image` off
+`GET /api/essentials/politicians?q=` and got **`None` for all three Kentucky members it tried**,
+which reads exactly like an import that did not take.
+
+🟢 **A positive control is what separated the two readings.** The same probe against Justin Pearson
+(TN, portrait shipped 2026-09-24) also returned `None` — so the **probe** was wrong, not the data.
+The portrait is served under **`images[]`**, and the top-level key **`photo_origin_url` carries the
+RENDERED photo** — the `COALESCE(photo_custom_url, photo_origin_url)` result — not the provenance
+column. Measured on Gary Clemons, both at once:
+
+| Where | `photo_origin_url` holds |
+| --- | --- |
+| the database column | `…/Legislator-Profile.aspx?DistrictNumber=137` — the page ✓ |
+| the API response key | `…/ad2cdf1d-…-headshot.jpg` — our CDN object |
+
+Both are correct for what they are. ▶ **Do not audit provenance through the API.** A future
+`verify-photo-origin-urls` style check pointed at this endpoint would report 100% of rows as
+"provenance is a raw image URL" and be wrong about every one of them.
+
+✅ **Live on production** for both chambers, with the licence string attached to each row:
+Jason Howell (Senate 1) and Gary Clemons (Senate 37) both return our CDN URL and
+`photo_license = "Kentucky General Assembly official member portrait …"`. Data changes need no
+deploy, and none was made.
+
+### What shipped, and what the operator approved
+
+Proof sheet: <https://claude.ai/artifact/DP9yShrFvWcZizKHbTfAR1> — 138 rendered, **0 missing**,
+every card the actual production crop.
+
+⚠ **All 138 cards carry the "verify face" flag, so on this sheet the flag discriminates nothing.**
+It is honest — `houseN.jpg` really does name a seat — but a uniform flag is not a signal. What
+actually clears these rows is the separate name gate in
+`scripts/build-ky-legislature-candidates.py`, which is reported to the operator alongside the sheet
+rather than shown on it. ▶ **If a whole wave is positional, say so in the ask; the badge cannot.**
+
+🟢 **The frames were looked at before the sheet was published**, not after — a 28-face sample spread
+across all 138. Colour studio portraits, consistent head-and-shoulders framing, no badges, no group
+shots, no text over faces, no monochrome. The counters measure the pipeline; only the eye measures
+composition.
+
+### Still owed in KY-5
+
+1. ⏸ **Lexington's 16** — held on the ruling, letter drafted not sent.
+2. ⏸ **Fayette County's 18** — no route, and **four separate rights questions**.
+3. ⏸ **The `lexington` banner** — not started. Four city banners in this programme collide with
+   their own state banner's composition; Lexington is not one of the four, but the adjacency test
+   still applies.
+4. ✅ **The LRC letter was SENT 2026-09-26** through the general contact form
+   (<https://legislature.ky.gov/Pages/contactus.aspx>), by Chris Cantrell: the fields were filled
+   programmatically and the **reCAPTCHA v2 checkbox was ticked and the form submitted by hand**.
+   ⚠ **It is a general form, not a named officer** — that page routes to "the proper department",
+   so **expect a referral rather than an answer, and do not read a referral as a refusal.** The LRC
+   publishes no email for its Public Information Office; the telephone route is **502-564-8100**.
+   ▶ **No reply as of 2026-09-26.** Record it verbatim here when one arrives; if the Commission
+   reads KRS 61.874 differently, the 138 come down.
