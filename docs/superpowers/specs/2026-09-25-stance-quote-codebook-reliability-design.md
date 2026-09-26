@@ -634,7 +634,7 @@ with *each other*, the codebook is the problem, and gold would not help.
 
 | # | Question | Ruling |
 |---|---|---|
-| Q10 | What does a preemption vote prove? (a law that forbids another level of government to act) | **V2 `adjacent`.** It decides *which level* may set a rule, not *what* the rule should be, so it never supports a chair on that ladder — alone or combined with other passages. It is `on-question` only when a rung is itself about which level decides (codebook V2, H12; defect D7). |
+| Q10 | What does a preemption vote prove? (a law that forbids another level of government to act) | **V2 `adjacent`.** It decides *which level* may set a rule, not *what* the rule should be, so it never supports a chair on that ladder — alone or combined with other passages. It is `on-question` only when a rung is itself about which level decides (codebook V2, H12; defect D7). Re-confirmed the same day after a plain-language briefing ("a higher government takes a power away from a lower one"). |
 
 ### 9.2 Still owed from the stance-program spec §12.3 (Cantrell, 2026-09-23)
 
