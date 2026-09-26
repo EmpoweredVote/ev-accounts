@@ -103,7 +103,7 @@ function billTokenOf(instrument: string | null | undefined): string | null {
 function pageShowsInstrument(pageText: string, instrument: string | null | undefined): boolean {
   const token = billTokenOf(instrument);
   if (!token) return false;
-  const compact = normalizeInstrumentForm(pageText.toLowerCase()).replace(/[\s.\-]/g, '');
+  const compact = normalizeInstrumentForm(pageText.toLowerCase()).replace(/[\s.-]/g, '');
   let idx = compact.indexOf(token);
   while (idx !== -1) {
     const next = compact[idx + token.length];
