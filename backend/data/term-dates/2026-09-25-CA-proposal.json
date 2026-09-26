@@ -1,0 +1,3133 @@
+{
+  "state": "CA",
+  "generated_at": "2026-09-26T01:13:19.610Z",
+  "openstates_dir": "/private/tmp/claude-501/-Users-chrisandrews-Documents-GitHub-ev-accounts--claude-worktrees-clever-leakey-bd9943/6b39416e-dfe7-4b74-9487-27155eb0d3ad/scratchpad/openstates-people",
+  "proposals": [
+    {
+      "term_id": "3681e21a-5d64-433b-8e81-2ac4c4abc140",
+      "office_id": "ba13159b-8b41-45a8-bd36-9e7696f7631d",
+      "politician_id": "1af14e38-da38-44ea-854d-3d8f1c615460",
+      "full_name": "Heather Hadwick",
+      "chamber": "California State Assembly",
+      "district": "1",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3b125433-5362-42e2-a2b5-b608962c9481",
+        "name": "Heather Hadwick",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad01.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/01"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "fad5e20f-9a25-4618-977c-1a87adba4765",
+      "office_id": "422eb261-3f7a-4a4d-82f2-da1d3616e6a3",
+      "politician_id": "7c23df4c-d105-4f48-8490-cb667a5e3382",
+      "full_name": "Stephanie Nguyen",
+      "chamber": "California State Assembly",
+      "district": "10",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/62102f53-b531-4290-9699-05a0d7687cae",
+        "name": "Stephanie Nguyen",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a10.asmdc.org",
+          "https://a10.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "daa2afcf-8ed4-4a29-9b7d-972f15a38944",
+      "office_id": "dc4b9295-7a54-4309-ac0c-30b03ed34cc2",
+      "politician_id": "fc8374d8-7186-4be8-9c36-f37df2e9c0d8",
+      "full_name": "Lori D. Wilson",
+      "chamber": "California State Assembly",
+      "district": "11",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/926d1337-0318-4c12-a291-178f10199b23",
+        "name": "Lori Wilson",
+        "tenure_start": "2022-04-06",
+        "official_links": [
+          "https://a11.asmdc.org",
+          "https://a11.asmdc.org/",
+          "https://wilson.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-04-06"
+      ]
+    },
+    {
+      "term_id": "c594495e-af91-43fa-982d-cca8cb8d0db4",
+      "office_id": "a4020ea2-02d1-411b-b586-9b7c8dc4f90b",
+      "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2",
+      "full_name": "Damon Connolly",
+      "chamber": "California State Assembly",
+      "district": "12",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/32e06e60-77ac-4c5e-af1e-2110b602dc97",
+        "name": "Damon Connolly",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a12.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4d6c40c0-1ae1-4372-8d06-fb9272bd062c",
+      "office_id": "49fae1a1-2b2f-41da-9c66-844ad084fa4a",
+      "politician_id": "6a36e92b-d953-4309-8423-1e0ba4e68b6f",
+      "full_name": "Rhodesia Ransom",
+      "chamber": "California State Assembly",
+      "district": "13",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/86d18985-f35b-4e16-9fcc-663394a156ff",
+        "name": "Rhodesia Ransom",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a13.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/13"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "856a05d6-4089-4460-a455-e8f510e061f4",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "full_name": "Buffy Wicks",
+      "chamber": "California State Assembly",
+      "district": "14",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8230907e-9ae3-4ae9-b52a-c8464a157f64",
+        "name": "Buffy Wicks",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a14.asmdc.org",
+          "https://a14.asmdc.org/",
+          "https://a15.asmdc.org"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "981d9cee-7ebd-497c-908f-f227aabe6b03",
+      "office_id": "79f55eaa-b5dc-4368-91be-9046b0e96d74",
+      "politician_id": "52d3e817-03bf-4dd5-8a16-67b44acf23ac",
+      "full_name": "Anamarie Avila Farias",
+      "chamber": "California State Assembly",
+      "district": "15",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c3921173-9680-4387-a70e-ebba5c599846",
+        "name": "Anamarie Avila Farias",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a15.asmdc.org/",
+          "https://avilafarias.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/15"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "dfbd9d7c-6d9b-4255-a0ec-ed2919026799",
+      "office_id": "b58a97c0-8ee8-4949-827d-c06946a12a4c",
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab",
+      "full_name": "Rebecca Bauer-Kahan",
+      "chamber": "California State Assembly",
+      "district": "16",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/2918acca-40a2-4819-a79a-b2873c7895bc",
+        "name": "Rebecca Bauer-Kahan",
+        "tenure_start": "2018-12-03",
+        "official_links": [
+          "https://a16.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-12-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "109a2cb1-d04d-4d03-b972-76c195576410",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "full_name": "Matt Haney",
+      "chamber": "California State Assembly",
+      "district": "17",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cc6eb833-e16b-472a-83ec-31e7df1b1cd9",
+        "name": "Matt Haney",
+        "tenure_start": "2022-05-03",
+        "official_links": [
+          "https://a17.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-05-03"
+      ]
+    },
+    {
+      "term_id": "24a5605f-5800-4698-b59d-c8e4965ce9a8",
+      "office_id": "f675394b-9e74-40ab-9a35-89aca8b4f9e9",
+      "politician_id": "0d70edc9-535c-4191-a222-fe57ebde4467",
+      "full_name": "Mia Bonta",
+      "chamber": "California State Assembly",
+      "district": "18",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a467d09d-289d-4e5a-a2af-a0ce20af14e1",
+        "name": "Mia Bonta",
+        "tenure_start": "2021-09-07",
+        "official_links": [
+          "https://a18.asmdc.org",
+          "https://a18.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2021-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2021-09-07"
+      ]
+    },
+    {
+      "term_id": "b8c2805e-1805-4a57-be61-f1b360c60a1c",
+      "office_id": "43845b1b-7d1c-4034-ad31-0f7ec48da745",
+      "politician_id": "0649630c-bd6d-40fe-8f66-e026e6f6c83e",
+      "full_name": "Catherine Stefani",
+      "chamber": "California State Assembly",
+      "district": "19",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3864202e-3b40-430e-a218-cfe56d83cee5",
+        "name": "Catherine Stefani",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a19.asmdc.org/",
+          "https://sfbos.org/supervisor-stefani-district-2",
+          "https://www.assembly.ca.gov/assemblymembers/19"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "cf0aa7dd-2e62-4944-bad6-6cf0578af966",
+      "office_id": "9d56e4b8-e010-45b6-826f-92e483830169",
+      "politician_id": "d8c6901d-ad98-484e-b932-9ea77cfb677d",
+      "full_name": "Chris Rogers",
+      "chamber": "California State Assembly",
+      "district": "2",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/84a80bdb-37d5-4f52-8f55-e116fb97ca58",
+        "name": "Chris Rogers",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a02.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/02"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "efeb8ade-12bd-43f7-9752-205a382f197a",
+      "office_id": "b306308a-593a-40ae-a05c-7eb9ecaf46ee",
+      "politician_id": "6730d01a-e87e-4177-9a2b-876b9c494774",
+      "full_name": "Liz Ortega",
+      "chamber": "California State Assembly",
+      "district": "20",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/54e48d10-22e1-43da-b114-c1d3f741faff",
+        "name": "Liz Ortega",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a20.asmdc.org",
+          "https://a20.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "2793efa2-f8b7-41bb-ab3c-18589405d788",
+      "office_id": "1e2d5919-ea9e-4c05-af12-c9ac1007d114",
+      "politician_id": "fb44c938-26fd-40ca-9333-e842693a1ad4",
+      "full_name": "Diane Papan",
+      "chamber": "California State Assembly",
+      "district": "21",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/20c72bef-f518-4677-bbcb-83c502c36ede",
+        "name": "Diane Papan",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a21.asmdc.org",
+          "https://a21.asmdc.org/",
+          "https://papan.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "0d248773-be45-473d-a5ab-d50505ecedfc",
+      "office_id": "afcf6e4e-d54b-49bd-8539-731aac0c66aa",
+      "politician_id": "7520a629-a0ec-44b3-9460-c7e4574a897d",
+      "full_name": "Juan Alanis",
+      "chamber": "California State Assembly",
+      "district": "22",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/dfb00d6c-1d0d-410f-8a06-d54841495a62",
+        "name": "Juan Alanis",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad22.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/22"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "67d257c5-cc97-4ed7-86f4-516ef76a09f5",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "full_name": "Marc Berman",
+      "chamber": "California State Assembly",
+      "district": "23",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/24facf9e-7fb1-4475-9120-05cd0145c7c1",
+        "name": "Marc Berman",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a23.asmdc.org/",
+          "https://a24.asmdc.org/",
+          "https://berman.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d82c8bb3-adb1-40b3-a1e1-37c1bb5f830b",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "full_name": "Alex Lee",
+      "chamber": "California State Assembly",
+      "district": "24",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5d0057a2-e04d-44ca-b1d5-fc55e113351a",
+        "name": "Alex Lee",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a24.asmdc.org/",
+          "https://a25.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4d239bef-c58f-4a3f-92ac-113c87703873",
+      "office_id": "3db4bfac-030f-4c8b-afbe-77c093e64ea9",
+      "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4",
+      "full_name": "Ash Kalra",
+      "chamber": "California State Assembly",
+      "district": "25",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/820619fd-d053-4915-b099-1d134a880228",
+        "name": "Ash Kalra",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a25.asmdc.org/",
+          "https://a27.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3c44f3d4-e99e-4548-96be-fb8de43d87d8",
+      "office_id": "4b943fc3-4c68-4b2f-8a56-7159b3cc18ba",
+      "politician_id": "bd4dc076-4bdd-4e10-be2c-80d998b17c50",
+      "full_name": "Patrick J. Ahrens",
+      "chamber": "California State Assembly",
+      "district": "26",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a86994f3-ffe3-4dc6-9e79-bcba7346f919",
+        "name": "Patrick Ahrens",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a26.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/26"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8e0bb15e-ff42-4c2d-8664-0b0b55329806",
+      "office_id": "134ff9e4-cd3e-4d20-a371-35aea15f88b9",
+      "politician_id": "2326fe1b-923d-4e2f-9598-0c8a23528df8",
+      "full_name": "Esmeralda Z. Soria",
+      "chamber": "California State Assembly",
+      "district": "27",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d2a8e29a-5eac-4e2a-a686-d1bdb04927e7",
+        "name": "Esmeralda Soria",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a27.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8f617f59-03d2-4e06-b58a-e29648417364",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "full_name": "Gail Pellerin",
+      "chamber": "California State Assembly",
+      "district": "28",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/2944d19a-c288-4f32-b6a0-72e35f48e570",
+        "name": "Gail Pellerin",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a28.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "66615aa2-fe66-4a71-b76c-60b70dc72754",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "full_name": "Robert Rivas",
+      "chamber": "California State Assembly",
+      "district": "29",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/68f5ee30-aa70-489b-84b7-6501e6188751",
+        "name": "Robert Rivas",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a29.asmdc.org/",
+          "https://a30.asmdc.org/",
+          "https://speaker.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8a6e7932-db0c-45a4-9542-b8e24d0924a1",
+      "office_id": "0cc1657e-3912-4ae8-84d6-ae9c03bb1d63",
+      "politician_id": "2ba6e476-1d62-4ac5-a70d-f4bcbe704f39",
+      "full_name": "Dawn Addis",
+      "chamber": "California State Assembly",
+      "district": "30",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/eddfcfb5-2d07-4e5b-81a0-88e5703dc0bb",
+        "name": "Dawn Addis",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a30.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "39762446-8d52-4883-88ef-ad942ed8e390",
+      "office_id": "4a385343-5298-40bb-a78a-4c9a5e951cdb",
+      "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53",
+      "full_name": "Dr. Joaquin Arambula",
+      "chamber": "California State Assembly",
+      "district": "31",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e2da0f08-1bd8-4ac2-95f1-002870238527",
+        "name": "Joaquin Arambula",
+        "tenure_start": "2016-04-14",
+        "official_links": [
+          "https://a31.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2016-04-14"
+      ]
+    },
+    {
+      "term_id": "e8dcb74c-b224-484e-8ce3-a1636c09e606",
+      "office_id": "f9f7497e-6ed9-4326-9391-5dc6eda76af7",
+      "politician_id": "fcdd3836-bb89-44ec-920a-75a21c9d726f",
+      "full_name": "Stan Ellis",
+      "chamber": "California State Assembly",
+      "district": "32",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/01fddc24-a5ac-40b7-a9e1-80e918fee609",
+        "name": "Stan Ellis",
+        "tenure_start": "2025-03-03",
+        "official_links": [
+          "https://ad32.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/32"
+        ]
+      },
+      "proposal": {
+        "term_start": "2025-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2025-03-03"
+      ]
+    },
+    {
+      "term_id": "861048bc-b458-4e5f-9d6e-aaf8b2e1f258",
+      "office_id": "1f700d36-f535-40ed-94a4-8ff2fba7c34d",
+      "politician_id": "8566674a-3a3b-4c88-bba0-c9f42e4ff810",
+      "full_name": "Alexandra M. Macedo",
+      "chamber": "California State Assembly",
+      "district": "33",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/eb9c8103-ac9d-4342-9d95-5086d867a9bd",
+        "name": "Ali Macedo",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad33.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/33"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "529ed8ce-b287-4b8c-8d84-ece0b83e8158",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "full_name": "Tom Lackey",
+      "chamber": "California State Assembly",
+      "district": "34",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a8879d70-713c-4d0c-b723-77d0e96c18df",
+        "name": "Tom Lackey",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad34.asmrc.org/",
+          "https://ad36.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "21ac0501-8b39-46bd-8f94-4e1c74807406",
+      "office_id": "2dfff08a-d688-4570-80ff-1f2eb165e62a",
+      "politician_id": "539874fc-489f-4643-9b1a-923aca6cc2c1",
+      "full_name": "Jasmeet Kaur Bains",
+      "chamber": "California State Assembly",
+      "district": "35",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b08199e4-63d9-4bd4-9be3-99e628fa7059",
+        "name": "Jasmeet Bains",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a35.asmdc.org/",
+          "https://bains.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/35"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "48482fef-ca5b-4d4c-ae2a-6432cc0e0d98",
+      "office_id": "c7fd48a8-f65d-4282-adc9-27ed5b468151",
+      "politician_id": "5ad32852-789e-4013-995b-6f0aa6a5a5d4",
+      "full_name": "Jeff Gonzalez",
+      "chamber": "California State Assembly",
+      "district": "36",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/552b5bf7-472d-48a4-bb9a-132c1f044737",
+        "name": "Jeff Gonzalez",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad36.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/36"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "db327b35-4395-42ac-93af-44d67784b4cd",
+      "office_id": "6d0f0805-d61e-4961-933e-3cfbdbefa20e",
+      "politician_id": "21940b7c-2424-47e9-a649-077b0f827c2c",
+      "full_name": "Gregg Hart",
+      "chamber": "California State Assembly",
+      "district": "37",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/57f76b8e-63ba-4aa7-93c9-0b0853ce2279",
+        "name": "Gregg Hart",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a37.asmdc.org/",
+          "https://hart.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/37"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a1977170-d9a9-45a8-89d7-4217351c994a",
+      "office_id": "abbe5632-647e-4cb2-ab0c-6a870c3da012",
+      "politician_id": "8c61cd23-68fb-4f1c-8a3c-60da74c86a64",
+      "full_name": "Steve Bennett",
+      "chamber": "California State Assembly",
+      "district": "38",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1e0ccfc0-2d57-4e57-8d16-589d07c1bc72",
+        "name": "Steve Bennett",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a37.asmdc.org/",
+          "https://a38.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "04aabb70-9ac8-4bac-baa4-d1fd947fbc8b",
+      "office_id": "35b83356-848d-49ee-8815-14c7885f7dbb",
+      "politician_id": "b959d608-5674-467e-a1c8-3572c76a729b",
+      "full_name": "Juan Carrillo",
+      "chamber": "California State Assembly",
+      "district": "39",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/092bda0e-23a9-4d25-92a9-5808e996702b",
+        "name": "Juan Carrillo",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a39.asmdc.org/",
+          "https://carrillo.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/39"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d651d32d-7ae6-48d7-a3bd-83368db3b1ba",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "full_name": "Cecilia M. Aguiar-Curry",
+      "chamber": "California State Assembly",
+      "district": "4",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/434bcfb4-1279-40cc-916b-f89af5805a9c",
+        "name": "Cecilia Aguiar-Curry",
+        "tenure_start": "2016-12-05",
+        "official_links": [
+          "https://a04.asmdc.org/",
+          "https://aguiar-curry.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/04"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "205fb142-0a46-461d-a474-a06d783d34ec",
+      "office_id": "e3c96374-ab47-4fa5-9a23-f1b17d1e393e",
+      "politician_id": "d64c969e-f458-4387-98b5-1e7af8cb42f0",
+      "full_name": "Pilar Schiavo",
+      "chamber": "California State Assembly",
+      "district": "40",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d12d3275-2086-4bf5-886b-c4de3823fbf9",
+        "name": "Pilar Schiavo",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a40.asmdc.org/",
+          "https://schiavo.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/40"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "888d6ebf-112d-4ad0-b1c4-fffa7d1c76f5",
+      "office_id": "b5bca67c-a70d-496b-909e-cf33839ce017",
+      "politician_id": "0acbacdd-a873-4e5e-aad9-fa5eca6d7b1e",
+      "full_name": "John Harabedian",
+      "chamber": "California State Assembly",
+      "district": "41",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0253bb3f-2fcb-49ed-a85d-578fee726be8",
+        "name": "John Harabedian",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a41.asmdc.org/",
+          "https://harabedian.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/41"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4f47cc90-d183-4655-83de-d915509a1a56",
+      "office_id": "3752046e-327e-472d-8c0d-5ce65061e7a4",
+      "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4",
+      "full_name": "Jacqui Irwin",
+      "chamber": "California State Assembly",
+      "district": "42",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e7ad99fd-fda5-4114-af3e-320f5be9be3c",
+        "name": "Jacqui Irwin",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a42.asmdc.org/",
+          "https://a44.asmdc.org/",
+          "https://irwin.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a67d7f3e-10f5-48f1-8185-894e803157b6",
+      "office_id": "ac6b849b-7b62-4ea8-912d-d009d9ed8090",
+      "politician_id": "f9cbe210-a840-4924-b4aa-a5de0dc143ba",
+      "full_name": "Celeste Rodriguez",
+      "chamber": "California State Assembly",
+      "district": "43",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1dbf574d-4c03-40ce-8c30-a6727c4bd5ab",
+        "name": "Celeste Rodriguez",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a43.asmdc.org/",
+          "https://crodriguez.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/43"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "540423d9-f8ce-47b5-81ab-f11a69be40b2",
+      "office_id": "1854c5b3-a585-495f-a1f2-c4c79a8e7cac",
+      "politician_id": "e31e6ebf-91ea-478f-b4dc-6974888bdffa",
+      "full_name": "Nick Schultz",
+      "chamber": "California State Assembly",
+      "district": "44",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/06ae0707-255b-4af9-8e3e-c940e8f29600",
+        "name": "Nick Schultz",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a44.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/44"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "54be5a1f-bfbb-4e1f-95ac-254835cc7b95",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "full_name": "James C. Ramos",
+      "chamber": "California State Assembly",
+      "district": "45",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/156660b1-4c3f-45e3-8384-53cda60d7ea5",
+        "name": "James Ramos",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a40.asmdc.org/",
+          "https://a45.asmdc.org/",
+          "https://ramos.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d060cb38-7ad8-4df5-a18f-c3ca3de47071",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "full_name": "Jesse Gabriel",
+      "chamber": "California State Assembly",
+      "district": "46",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/407f6fda-8638-4cca-9704-7aa8df7de26e",
+        "name": "Jesse Gabriel",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a45.asmdc.org/",
+          "https://a46.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "89fa84aa-2b20-4757-9417-a3edcac7880d",
+      "office_id": "fa86b35b-b6e8-4b0b-8eae-5e22a31db37e",
+      "politician_id": "c6c04131-96f3-40d8-b881-e6c57f986d38",
+      "full_name": "Greg Wallis",
+      "chamber": "California State Assembly",
+      "district": "47",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/50e55c91-8b18-45ea-a074-bf500e7a299e",
+        "name": "Greg Wallis",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad47.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "01442e6e-f789-4919-8a87-0e22b8a2a9fc",
+      "office_id": "02cffd4c-9fd6-47c4-ae91-f33c0442efa2",
+      "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d",
+      "full_name": "Blanca E. Rubio",
+      "chamber": "California State Assembly",
+      "district": "48",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/82cbb6e9-8486-44ec-8450-86d1e700f828",
+        "name": "Blanca Rubio",
+        "tenure_start": "2016-12-05",
+        "official_links": [
+          "https://a48.asmdc.org",
+          "https://a48.asmdc.org/",
+          "https://rubio.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4537df80-5204-4399-9ccb-415a8872ffb2",
+      "office_id": "68b9d71e-fa8e-4f71-8fac-2e396818c6eb",
+      "politician_id": "cacdb3e3-f716-4914-9e32-a95cc632af42",
+      "full_name": "Mike Fong",
+      "chamber": "California State Assembly",
+      "district": "49",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3a7bde9c-8709-49c7-89e4-0835ea1f9eb6",
+        "name": "Mike Fong",
+        "tenure_start": "2022-02-22",
+        "official_links": [
+          "https://a49.asmdc.org/",
+          "https://fong.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/49"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-02-22"
+      ]
+    },
+    {
+      "term_id": "f7bc3d48-690c-43a4-a08e-104ea6c1751c",
+      "office_id": "1fc9ccc6-3a81-44e9-b2ed-092d0f79afdf",
+      "politician_id": "038b7624-492e-496c-8b97-0926ef4a4a1e",
+      "full_name": "Joe Patterson",
+      "chamber": "California State Assembly",
+      "district": "5",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c7a404d9-03f7-4e82-b730-1623da31d4cc",
+        "name": "Joe Patterson",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad05.asmrc.org",
+          "https://ad05.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7ae938b6-88de-4bd6-8a64-6e8281b0856a",
+      "office_id": "cf32d02c-0670-428a-a8a7-ea3766437a57",
+      "politician_id": "8bfb459b-9823-4b0d-81f4-49cb97831a80",
+      "full_name": "Robert Garcia",
+      "chamber": "California State Assembly",
+      "district": "50",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8b2f37bc-65b7-40ed-af14-5d93cb765a5d",
+        "name": "Robert Garcia",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a50.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/50",
+          "https://www.longbeach.gov/mayor/contact/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "24368645-6c33-45f6-bb44-d62c66415807",
+      "office_id": "7391433d-3597-487f-8355-f39bb5365079",
+      "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05",
+      "full_name": "Rick Chavez Zbur",
+      "chamber": "California State Assembly",
+      "district": "51",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6b7e3458-361f-4fce-8a8c-069282db2af7",
+        "name": "Rick Zbur",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a51.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/51",
+          "https://zbur.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "0581e1af-a430-4702-aac0-ae06a512016b",
+      "office_id": "5df342df-1554-47f1-ade4-1007685f934b",
+      "politician_id": "685f2150-7b2a-4f94-992c-bf0cf23ffa69",
+      "full_name": "Jessica M. Caloza",
+      "chamber": "California State Assembly",
+      "district": "52",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/81d9225e-7584-43c9-9e9b-f12b7e7dbd4e",
+        "name": "Jessica Caloza",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a52.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/52"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f71f7232-bc3d-4446-ba8b-8bea8f31fe20",
+      "office_id": "454f55bc-6f3f-4e2f-8b74-78c0901abcf1",
+      "politician_id": "108dfd2c-571a-4fef-aaf2-621c3238eea6",
+      "full_name": "Michelle Rodriguez",
+      "chamber": "California State Assembly",
+      "district": "53",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c8e36b71-c739-4afb-b8e9-cbdd4d362693",
+        "name": "Michelle Rodriguez",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a53.asmdc.org/",
+          "https://mrodriguez.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/53"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "66c43a0b-5855-4bae-8c61-87fdf4596c9d",
+      "office_id": "a2f330df-16cd-42be-bcd5-006e57cf1d69",
+      "politician_id": "005d7df1-227e-4110-b254-ec835d5b5e95",
+      "full_name": "Mark Gonzalez",
+      "chamber": "California State Assembly",
+      "district": "54",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/4a6f5a5d-275e-4fb2-a8bf-bb1272d4dfbb",
+        "name": "Mark González",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a54.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/54"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4e26b0b8-4ba1-4976-adae-477d60373831",
+      "office_id": "be3bdca4-d290-474e-aa45-37b336719fa0",
+      "politician_id": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+      "full_name": "Isaac G. Bryan",
+      "chamber": "California State Assembly",
+      "district": "55",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e9e56c3e-1c7d-4eab-a3ac-35cfc7c6a651",
+        "name": "Isaac Bryan",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a54.asmdc.org",
+          "https://a54.asmdc.org/",
+          "https://a55.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3a37513d-b9f3-4294-9067-3878930c6b4d",
+      "office_id": "5badb726-42ee-4919-8574-884cc4e4e3e1",
+      "politician_id": "0afa998d-94e9-4af4-ba00-256c38869398",
+      "full_name": "Lisa Calderon",
+      "chamber": "California State Assembly",
+      "district": "56",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ed58ae30-ffe5-4395-9353-141e4018cbe3",
+        "name": "Lisa Calderon",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a56.asmdc.org/",
+          "https://a57.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c3df4dcd-cfa8-418d-8276-6478337a88aa",
+      "office_id": "7d965633-60b5-419f-8c40-34e1077d2a77",
+      "politician_id": "3c2bfe51-9a53-4992-801b-138a1a8ce9ed",
+      "full_name": "Sade Elhawary",
+      "chamber": "California State Assembly",
+      "district": "57",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6d83a613-6815-48c9-bb31-94adb1ee92ea",
+        "name": "Sade Elhawary",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a57.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/57"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7bd4d454-0a9e-49ab-95cb-c232cb89461d",
+      "office_id": "fa672e10-c60e-48ef-b636-ecded4465e72",
+      "politician_id": "30fee995-e2e3-42d6-9993-d000fd73b919",
+      "full_name": "Leticia Castillo",
+      "chamber": "California State Assembly",
+      "district": "58",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/06d4d543-2374-436f-978d-b924c7ec7d53",
+        "name": "Leticia Castillo",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad58.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/58"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e00529be-4db5-405f-b69a-3a65f3d351c4",
+      "office_id": "43ae2686-e718-4044-aaf0-0ae153d4e5bf",
+      "politician_id": "ed32efa5-b455-4323-a12f-5fe79bc4ffd6",
+      "full_name": "Phillip Chen",
+      "chamber": "California State Assembly",
+      "district": "59",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6ba768a4-2756-42b5-a5c5-f6b8b5db0491",
+        "name": "Phillip Chen",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad55.asmrc.org",
+          "https://ad59.asmrc.org",
+          "https://ad59.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1d946c34-6a4c-4d5d-ae13-0152b2bb6658",
+      "office_id": "11c6dfc5-e935-4094-a01d-1d30ef64f95d",
+      "politician_id": "a7e904b1-ec37-4c43-8594-99d778e7351a",
+      "full_name": "Maggy Krell",
+      "chamber": "California State Assembly",
+      "district": "6",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e8ac7b26-03a5-4818-b05d-0f379029bbdb",
+        "name": "Maggy Krell",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a06.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/06"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "fe5a5521-3174-45d8-894f-ab93e004c184",
+      "office_id": "3879816a-b7c9-4844-870a-34c3c33a96c2",
+      "politician_id": "bbd7825a-6778-4cca-81c8-8ef3ded55965",
+      "full_name": "Dr. Corey A. Jackson",
+      "chamber": "California State Assembly",
+      "district": "60",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e351eaa3-8aa1-4f26-a8ff-2a260a0ad383",
+        "name": "Corey Jackson",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a60.asmdc.org/",
+          "https://jackson.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/60"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c339476b-9cc2-4940-a55c-c68e99e4ede0",
+      "office_id": "35d6cdde-1ce5-423c-9239-97a5b8e54666",
+      "politician_id": "522efd15-f5e2-4e1a-8708-aad87410637d",
+      "full_name": "Tina S. McKinnor",
+      "chamber": "California State Assembly",
+      "district": "61",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1aa5dff4-3d71-4642-a5e6-e3d00a5b99f9",
+        "name": "Tina McKinnor",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a61.asmdc.org/",
+          "https://a62.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7e793485-a6f4-46ec-badc-b27a800c7e7b",
+      "office_id": "c92f4112-2a0c-448d-b35d-39596daa1e55",
+      "politician_id": "1caa9043-2397-4f75-b430-acc0623d64d7",
+      "full_name": "Jose Luis Solache Jr.",
+      "chamber": "California State Assembly",
+      "district": "62",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b9c75c1e-6ea8-4fae-9efa-a7bf0a0cb2cc",
+        "name": "José Solache",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a62.asmdc.org/",
+          "https://solache.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/62"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "78980c57-24e9-4d78-b85c-9a8bdfd23289",
+      "office_id": "9a14e79d-69df-418c-a040-60586b2f8891",
+      "politician_id": "3f200d93-74aa-4191-a275-77b64ff5b219",
+      "full_name": "Natasha Johnson",
+      "chamber": "California State Assembly",
+      "district": "63",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0c47a1ba-99a2-44a9-8c65-fcad12aeee97",
+        "name": "Natasha Johnson",
+        "tenure_start": "2025-09-08",
+        "official_links": [
+          "https://ad63.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/63"
+        ]
+      },
+      "proposal": {
+        "term_start": "2025-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2025-09-08"
+      ]
+    },
+    {
+      "term_id": "4d0f7e77-bd37-47d1-a4d0-951b34c06f53",
+      "office_id": "1f1502ce-0ab9-4b69-880b-adc8263aa223",
+      "politician_id": "c9205ba1-d0c8-4f17-a165-fb2a8fdae742",
+      "full_name": "Blanca Pacheco",
+      "chamber": "California State Assembly",
+      "district": "64",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/f2ba8154-6bf3-4e5e-af05-9412e2a189f2",
+        "name": "Blanca Pacheco",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a64.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3cd2091f-2df8-4adc-b4ab-374c46179277",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "full_name": "Mike A. Gipson",
+      "chamber": "California State Assembly",
+      "district": "65",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/404dbee4-6b74-4249-ab26-9644cab7c7d5",
+        "name": "Mike Gipson",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a64.asmdc.org/",
+          "https://a65.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/65"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9312ad07-c720-4728-9d47-ff98eaf5d0ec",
+      "office_id": "e45c9d52-6288-4865-a2de-dadd73cc18e6",
+      "politician_id": "ea803096-927f-41fe-98e1-deab56291810",
+      "full_name": "Al Muratsuchi",
+      "chamber": "California State Assembly",
+      "district": "66",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/78610d0e-c790-4fc9-ab8e-0887adbbe063",
+        "name": "Al Muratsuchi",
+        "tenure_start": "2016-12-05",
+        "official_links": [
+          "https://a66.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ee73feb0-7738-4312-a8f1-e5f2f6871f64",
+      "office_id": "4f3b86d7-7795-43ef-bf06-1d2191a9fad3",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2",
+      "full_name": "Sharon Quirk-Silva",
+      "chamber": "California State Assembly",
+      "district": "67",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/840aa009-3ae4-4484-b9f0-5c5f5060e7db",
+        "name": "Sharon Quirk-Silva",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a65.asmdc.org/",
+          "https://a67.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d25f7b67-e77e-4319-b8ca-28b91229ad8f",
+      "office_id": "30ef8b70-23fb-4533-b4e1-a9ad1cfa9bef",
+      "politician_id": "a1467b58-9cc8-4611-a03e-07defc1679bf",
+      "full_name": "Avelino Valencia",
+      "chamber": "California State Assembly",
+      "district": "68",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/87062971-b583-4983-8ac5-4af98bef354d",
+        "name": "Avelino Valencia",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a68.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ffbaa4c6-4be1-4b23-a741-4d8e49a864e0",
+      "office_id": "5e24e873-5ddc-407f-b1b3-55037fad21fb",
+      "politician_id": "39d99fc2-b8ab-4846-8ff3-bcb65e16bee4",
+      "full_name": "Josh Lowenthal",
+      "chamber": "California State Assembly",
+      "district": "69",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b20254b0-437a-4d3d-9aa9-baa5db2bc5ef",
+        "name": "Josh Lowenthal",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a69.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a9fddab7-d8da-4a83-8076-002e6afe6199",
+      "office_id": "c8ccc0ec-c339-438e-b5c7-74ac73803fe3",
+      "politician_id": "acb2a944-dd73-484d-83e9-86362af0eb42",
+      "full_name": "Josh Hoover",
+      "chamber": "California State Assembly",
+      "district": "7",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/71aa54c0-3fad-499c-928e-ffbb692a970b",
+        "name": "Joshua Hoover",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad07.asmrc.org",
+          "https://ad07.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "859d462a-82b1-4251-b7a4-40607b90eff8",
+      "office_id": "094f7a7e-b9e4-4a27-9cad-3f456d11fdd6",
+      "politician_id": "c2975ee6-7770-4c5f-809c-4e1245f2ab64",
+      "full_name": "Tri Ta",
+      "chamber": "California State Assembly",
+      "district": "70",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/75229920-399d-4216-9b76-c27ea398665a",
+        "name": "Tri Ta",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad70.asmrc.org",
+          "https://ad70.asmrc.org/",
+          "https://www.ci.westminster.ca.us/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c6be8f0b-6482-4f4f-b97d-7b32e9864108",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "full_name": "Kate Sanchez",
+      "chamber": "California State Assembly",
+      "district": "71",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/76378b56-7ad9-463c-a4fd-47c665b26ee8",
+        "name": "Kate Sanchez",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad71.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4e30b811-a5fd-4a01-af3d-9e17c8e82267",
+      "office_id": "e23ee62c-0e3d-406a-a201-be5c5219a374",
+      "politician_id": "9aa10096-180d-424b-8fc8-cca5796704a6",
+      "full_name": "Diane B. Dixon",
+      "chamber": "California State Assembly",
+      "district": "72",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0c4e1b43-c3d7-4a13-87c4-92e29903cb73",
+        "name": "Diane Dixon",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad72.asmrc.org",
+          "https://ad72.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9f333054-48cf-4d32-b2c2-21e31f48e5c1",
+      "office_id": "9cbc48f6-47c9-4435-b8b9-6201277c2aaa",
+      "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7",
+      "full_name": "Cottie Petrie-Norris",
+      "chamber": "California State Assembly",
+      "district": "73",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c766abf8-06ca-4a98-9665-82b87149ca96",
+        "name": "Cottie Petrie-Norris",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a73.asmdc.org/",
+          "https://a74.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "6fa36396-4ddd-4874-a2c4-3a036158dc61",
+      "office_id": "406f82bd-66e1-4817-b1d5-3f732576f417",
+      "politician_id": "7778111f-551f-407f-87c7-e30268ea5e0a",
+      "full_name": "Laurie Davies",
+      "chamber": "California State Assembly",
+      "district": "74",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1b3ac39e-7b50-4263-bd1d-add1e91d71b9",
+        "name": "Laurie Davies",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad73.asmrc.org/",
+          "https://ad74.asmrc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "2147869b-1ce9-44b4-b65c-a16978a79ba7",
+      "office_id": "fb3ae5e9-bc6e-4136-8450-a8bc82767431",
+      "politician_id": "a6d96375-a61c-4a13-9afa-99914456e8c2",
+      "full_name": "Carl DeMaio",
+      "chamber": "California State Assembly",
+      "district": "75",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/053d119b-847e-43bf-9a22-18b5f309067f",
+        "name": "Carl DeMaio",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad75.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/75"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1e106e35-d115-44bf-9429-de5f72f267ae",
+      "office_id": "82927e9d-6c17-43aa-b580-a7bc0ab81eda",
+      "politician_id": "9a927fae-60bf-41f9-8ec0-433cc98997fa",
+      "full_name": "Dr. Darshana R. Patel",
+      "chamber": "California State Assembly",
+      "district": "76",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/86218623-ea63-4b2a-ab5c-7694e3f4a18a",
+        "name": "Darsh Patel",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a76.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/76"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a8588600-cb9a-4314-b6f8-a8c01e4f90d1",
+      "office_id": "7c2b0638-4953-4803-9d81-9a2d687063b9",
+      "politician_id": "0a9171c6-0676-4704-b825-a7e16c66f1c2",
+      "full_name": "Tasha Boerner",
+      "chamber": "California State Assembly",
+      "district": "77",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/9e69729e-4383-410b-840e-ad4ea0f1ab4a",
+        "name": "Tasha Boerner",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://a77.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9ecf636d-798a-457c-9dd5-ff96645e3153",
+      "office_id": "5b95be8c-1634-43ab-acb5-f904b859a5ef",
+      "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+      "full_name": "Christopher M. Ward",
+      "chamber": "California State Assembly",
+      "district": "78",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/71590420-10d6-4deb-8d59-453256d625b6",
+        "name": "Chris Ward",
+        "tenure_start": "2020-12-07",
+        "official_links": [
+          "https://a78.asmdc.org/",
+          "https://ward.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/78"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-12-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "654511fb-2faa-45ce-9c0d-d8f8ff6a98b9",
+      "office_id": "3441b28c-eac0-462b-9a93-bf312ace0328",
+      "politician_id": "cb2ae7a3-3b6a-462b-8fe8-47f3ce4cb7a2",
+      "full_name": "Dr. LaShae Sharp-Collins",
+      "chamber": "California State Assembly",
+      "district": "79",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/895f777d-ae7b-429a-aa0f-1b2895c13945",
+        "name": "LaShae Sharp-Collins",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a79.asmdc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/79"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3fb19cd6-fff1-4ddc-a2d2-d0cffca19f27",
+      "office_id": "823ebd68-325c-469c-a27f-2168fdb364fc",
+      "politician_id": "4db536d2-d624-4225-b5ff-d22b44c1e9a7",
+      "full_name": "David J. Tangipa",
+      "chamber": "California State Assembly",
+      "district": "8",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/748ce69c-a2bc-41a7-95e2-b09fba6e5ecd",
+        "name": "David Tangipa",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad08.asmrc.org/",
+          "https://www.assembly.ca.gov/assemblymembers/08"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5dc4edea-a284-400c-8603-c1602f14f84f",
+      "office_id": "2a7ab2f1-c173-45ce-8589-ff3fc1c16abd",
+      "politician_id": "e0451383-4594-4247-8297-acc388a7e0c3",
+      "full_name": "David A. Alvarez",
+      "chamber": "California State Assembly",
+      "district": "80",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/52f6ccc1-eb4a-4c09-8614-5e4022395605",
+        "name": "David Alvarez",
+        "tenure_start": "2022-06-15",
+        "official_links": [
+          "https://a80.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-06-15"
+      ]
+    },
+    {
+      "term_id": "438a48b8-10a0-49b4-bde3-bdf6f61567d0",
+      "office_id": "68830803-7f09-48b7-aab8-ba9e2fe10fe7",
+      "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d",
+      "full_name": "Heath Flora",
+      "chamber": "California State Assembly",
+      "district": "9",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c830a90c-8964-4c0f-b31b-729cab1144fd",
+        "name": "Heath Flora",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad09.asmrc.org/",
+          "https://ad12.asmrc.org",
+          "https://www.assembly.ca.gov/assemblymembers/09"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "198e7e3e-8906-4748-8fb4-4390a4c2c9d5",
+      "office_id": "7a7d8d8e-3af2-4372-a943-6aa92c10fefb",
+      "politician_id": "4baa73c2-d38b-4d07-894f-1577d5ba43a3",
+      "full_name": "Caroline Menjivar",
+      "chamber": "California State Senate",
+      "district": "20",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b19c0361-ca41-4cba-bcf4-b7342a67f28b",
+        "name": "Caroline Menjivar",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd20.senate.ca.gov/",
+          "https://senate.ca.gov/sd20"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "49c66e9f-3692-4368-b123-54d25d3423b7",
+      "office_id": "e31dfcd0-d34f-4ecd-93cc-409d0e185687",
+      "politician_id": "863ef272-ea35-482b-aee2-447c06bd469d",
+      "full_name": "Tony Strickland",
+      "chamber": "California State Senate",
+      "district": "36",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3dae8bef-7fb2-40a0-afee-78d79212521b",
+        "name": "Tony Strickland",
+        "tenure_start": "2025-03-11",
+        "official_links": [
+          "https://cssrc.us/web/19/",
+          "https://sr36.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2025-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2025-03-11"
+      ]
+    },
+    {
+      "term_id": "c7df3ad9-0a6b-4057-a766-fbc692e6a4b5",
+      "office_id": "3fde05a0-85bb-4979-a528-c87a05857b10",
+      "politician_id": "c1215ce9-430e-411d-869c-353c93fe1cac",
+      "full_name": "Megan Dahle",
+      "chamber": "California State Senate",
+      "district": "1",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1509d608-4d2b-4ebc-be73-b4cd6c06b7c6",
+        "name": "Megan Dahle",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad01.asmrc.org/",
+          "https://sr01.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b555d6a9-fc7b-412d-9f8d-a862174a448e",
+      "office_id": "402781ee-b5df-472f-b67c-485c07c4782f",
+      "politician_id": "bec15428-f2c6-45a2-9bf0-ae91e6fabe70",
+      "full_name": "Aisha Wahab",
+      "chamber": "California State Senate",
+      "district": "10",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "proposal": null,
+      "flags": [
+        "openstates-holders-0",
+        "official-roster-absent"
+      ]
+    },
+    {
+      "term_id": "267d6f53-d3f2-4531-9976-cb052a2f78ab",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "full_name": "Scott Wiener",
+      "chamber": "California State Senate",
+      "district": "11",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/de84277e-1c23-4036-bd64-b27c310a1c0e",
+        "name": "Scott Wiener",
+        "tenure_start": "2016-12-05",
+        "official_links": [
+          "https://sd11.senate.ca.gov/",
+          "https://senate.ca.gov/sd11"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "29611acd-38ee-41bf-98f5-0b85b6f194af",
+      "office_id": "e38cdc56-9228-456b-ba4c-3fc0ab72f6cd",
+      "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3",
+      "full_name": "Shannon Grove",
+      "chamber": "California State Senate",
+      "district": "12",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b4b8e8fb-831b-4cae-9081-b8f75477fcd0",
+        "name": "Shannon Grove",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://senate.ca.gov/sd12",
+          "https://senate.ca.gov/sd16",
+          "https://sr12.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "09b3b48c-7c17-475b-a426-edf1b0a121e6",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "full_name": "Josh Becker",
+      "chamber": "California State Senate",
+      "district": "13",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c71137b2-3fc3-48bf-b0ad-6c29aff98268",
+        "name": "Josh Becker",
+        "tenure_start": "2020-12-07",
+        "official_links": [
+          "https://sd13.senate.ca.gov/",
+          "https://senate.ca.gov/sd13"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-12-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5bda1819-1ec3-4397-8154-4cf8cb95e7a7",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "full_name": "Anna Caballero",
+      "chamber": "California State Senate",
+      "district": "14",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fe462917-df55-4a43-9fd8-970541544ca6",
+        "name": "Anna Caballero",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd14.senate.ca.gov/",
+          "https://senate.ca.gov/sd12"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c845d727-aef6-45bf-a654-e2bd954382da",
+      "office_id": "58c65b92-cdef-4c5b-a727-494dcbcb6019",
+      "politician_id": "e0dc83f8-f72d-4869-8d79-532002408028",
+      "full_name": "Dave Cortese",
+      "chamber": "California State Senate",
+      "district": "15",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0fa65d2c-6020-4586-a6f1-5dfd41db38ff",
+        "name": "Dave Cortese",
+        "tenure_start": "2020-12-07",
+        "official_links": [
+          "https://sd15.senate.ca.gov/",
+          "https://senate.ca.gov/sd15"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-12-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "07a2681f-172c-4f79-aa56-e7e7849fa929",
+      "office_id": "7e75e10d-f17f-4aa7-838a-985ff1a22834",
+      "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26",
+      "full_name": "Melissa Hurtado",
+      "chamber": "California State Senate",
+      "district": "16",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ee9910a2-0b27-46e0-be87-43c800596b41",
+        "name": "Melissa Hurtado",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd16.senate.ca.gov/",
+          "https://senate.ca.gov/sd14",
+          "https://senate.ca.gov/sd16"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "cae80af9-d34a-40a9-934e-c9f5a1d99ee3",
+      "office_id": "eaf4cad0-012a-48a6-8765-ca9020432782",
+      "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+      "full_name": "John Laird",
+      "chamber": "California State Senate",
+      "district": "17",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7476789f-49a4-491a-b294-9d1486f24193",
+        "name": "John Laird",
+        "tenure_start": "2020-12-07",
+        "official_links": [
+          "https://sd17.senate.ca.gov/",
+          "https://senate.ca.gov/sd17"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-12-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "41b54259-0b6e-431e-8503-53141898b833",
+      "office_id": "bfaacb00-1875-4c65-bbe9-5a5ab0034494",
+      "politician_id": "3a462896-e249-4c79-94b7-175bd2efcf73",
+      "full_name": "Steve Padilla",
+      "chamber": "California State Senate",
+      "district": "18",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/eb745b9e-4ced-494a-a298-fdffa9207b0d",
+        "name": "Steve Padilla",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd18.senate.ca.gov/",
+          "https://senate.ca.gov/sd18"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ce04ae60-4a6c-4022-95b6-eeca340fbcd4",
+      "office_id": "45dee346-e20b-4ce1-86de-f5af9577d2f4",
+      "politician_id": "562cf9a1-ad60-41d9-b9a1-4a19240c39b3",
+      "full_name": "Rosilicie Ochoa Bogh",
+      "chamber": "California State Senate",
+      "district": "19",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cb5b9356-6798-44d2-8dc2-caf5651ac4e3",
+        "name": "Rosilicie Ochoa Bogh",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://senate.ca.gov/sd23",
+          "https://sr19.senate.ca.gov/",
+          "https://sr23.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "de2fb7c8-98d5-4057-89f3-63640dba55a4",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "full_name": "Mike McGuire",
+      "chamber": "California State Senate",
+      "district": "2",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a1394aeb-094a-4fc0-b4d5-005104ceddc0",
+        "name": "Mike McGuire",
+        "tenure_start": "2014-12-01",
+        "official_links": [
+          "https://sd02.senate.ca.gov/",
+          "https://senate.ca.gov/sd02"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-12-01",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "95a48ba6-ca62-4c4f-8ca5-2dc5a9a8d994",
+      "office_id": "889b94ca-7799-4f4c-948f-890386ceb414",
+      "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1",
+      "full_name": "Monique Limón",
+      "chamber": "California State Senate",
+      "district": "21",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e924a3ec-c7c0-4094-8504-7611bcf8979f",
+        "name": "Monique Limón",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd19.senate.ca.gov/",
+          "https://sd21.senate.ca.gov/",
+          "https://senate.ca.gov/sd19"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4d657082-78c7-430a-a50b-39cbbd1e60b7",
+      "office_id": "9705addc-6364-4439-9cc3-9fcbfeb4caaa",
+      "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119",
+      "full_name": "Susan Rubio",
+      "chamber": "California State Senate",
+      "district": "22",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cb0f6477-568f-49db-aba3-f88e7bccbefc",
+        "name": "Susan Rubio",
+        "tenure_start": "2018-12-03",
+        "official_links": [
+          "https://sd22.senate.ca.gov/",
+          "https://senate.ca.gov/sd22"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-12-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e2534331-72b1-4fda-82f0-c40db9b8c856",
+      "office_id": "83592455-dc15-48f1-aa03-1d41b542dd15",
+      "politician_id": "7f3b03b0-b481-4ccf-a33e-1261daabc6e8",
+      "full_name": "Suzette Martinez Valladares",
+      "chamber": "California State Senate",
+      "district": "23",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fb1c2c06-108c-41bf-9f08-44a9f8e0cb08",
+        "name": "Suzette Valladares",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a38.asmdc.org/",
+          "https://sr23.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d119ef57-6632-4187-a1f8-219bf7a66750",
+      "office_id": "58c7cb0f-6409-4e6a-aa4f-1d146e88eb69",
+      "politician_id": "4486f856-118b-475c-83f0-078581a7b268",
+      "full_name": "Benjamin Allen",
+      "chamber": "California State Senate",
+      "district": "24",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e725b91e-1f7f-4510-a9cc-0b9a39d283c3",
+        "name": "Ben Allen",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd24.senate.ca.gov/",
+          "https://senate.ca.gov/sd26"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d6894be2-84a8-489e-a697-caf8b9f88cbc",
+      "office_id": "372ad298-8d89-4037-bb49-b8261371f06d",
+      "politician_id": "611c17c5-3c5f-4685-8c22-3b3fe75482ba",
+      "full_name": "Sasha Renée Pérez",
+      "chamber": "California State Senate",
+      "district": "25",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/aa59bbc8-0f05-4974-a88a-2e805deb26b4",
+        "name": "Sasha Pérez",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd25.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ef29a62d-5132-4dd6-8547-edbbd7c48eca",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "full_name": "Maria Elena Durazo",
+      "chamber": "California State Senate",
+      "district": "26",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b3f55460-f87b-4db4-b6a5-35a735f34076",
+        "name": "María Elena Durazo",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd26.senate.ca.gov/",
+          "https://senate.ca.gov/sd24",
+          "https://senate.ca.gov/sd26"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1eff055a-f250-4d98-bd58-b0fa53f630c6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "full_name": "Henry Stern",
+      "chamber": "California State Senate",
+      "district": "27",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/66bd4b32-5536-4bae-ab55-08c0b70ca5fd",
+        "name": "Henry Stern",
+        "tenure_start": "2016-12-05",
+        "official_links": [
+          "https://sd27.senate.ca.gov/",
+          "https://senate.ca.gov/sd27"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e7213072-e667-4b0b-8a4c-f504805a6c9e",
+      "office_id": "9a837448-d3d3-4c56-b2bf-8d5e41c22ab1",
+      "politician_id": "cb9b6b95-ace4-4ae3-a7e6-ae2349abd741",
+      "full_name": "Lola Smallwood-Cuevas",
+      "chamber": "California State Senate",
+      "district": "28",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/37f2dc9f-d788-4f71-b794-093c8816333b",
+        "name": "Lola Smallwood-Cuevas",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd28.senate.ca.gov/",
+          "https://senate.ca.gov/sd28"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f979535e-a454-4a63-8dea-46804dac4edc",
+      "office_id": "d16d1077-8460-4620-8b7c-c8ef17c5f50f",
+      "politician_id": "1571da4a-b832-4792-917c-184c155b1700",
+      "full_name": "Eloise Gómez Reyes",
+      "chamber": "California State Senate",
+      "district": "29",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/19f694d8-b409-40e5-9f87-d8e3e84afc7f",
+        "name": "Eloise Reyes",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a47.asmdc.org",
+          "https://a50.asmdc.org",
+          "https://a50.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "16b635f5-74cd-4eaa-933f-3ed41f3e49a8",
+      "office_id": "5974a330-9801-4606-b913-7dad263a3f3f",
+      "politician_id": "5c4d4194-a7a1-4efa-80cb-af848e338b8d",
+      "full_name": "Christopher Cabaldon",
+      "chamber": "California State Senate",
+      "district": "3",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8833976f-b95a-45bf-bbd9-ccdb66946d20",
+        "name": "Christopher Cabaldon",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd03.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "10f294be-9ceb-40d8-9905-f3642ccb2f28",
+      "office_id": "a9864785-4397-4f86-94fd-b03bc54bb585",
+      "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca",
+      "full_name": "Bob Archuleta",
+      "chamber": "California State Senate",
+      "district": "30",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a76028df-5730-47b0-b617-1565621def41",
+        "name": "Bob Archuleta",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd30.senate.ca.gov/",
+          "https://senate.ca.gov/sd30",
+          "https://senate.ca.gov/sd32"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "97fc1c35-48df-41b4-9542-6af47f2788fd",
+      "office_id": "d55b76a7-866d-42fd-96c2-c50065af1dd2",
+      "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330",
+      "full_name": "Sabrina Cervantes",
+      "chamber": "California State Senate",
+      "district": "31",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/61cc77e3-551f-40e6-bb6f-16edd89b04db",
+        "name": "Sabrina Cervantes",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a58.asmdc.org/",
+          "https://a60.asmdc.org/",
+          "https://sd31.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "76565692-2e1c-4f1b-b75f-8bfe8c993063",
+      "office_id": "ff40b8f8-a89d-48f3-8934-02c641396e61",
+      "politician_id": "4fccbf85-d794-4cdc-a8b8-674ff1b48784",
+      "full_name": "Kelly Seyarto",
+      "chamber": "California State Senate",
+      "district": "32",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d9462f08-2b27-4969-8436-9a1c21534a40",
+        "name": "Kelly Seyarto",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://ad67.asmrc.org/",
+          "https://senate.ca.gov/sd32",
+          "https://sr32.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a4647c60-4d99-4b82-9115-c6df43e6de13",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "full_name": "Lena Gonzalez",
+      "chamber": "California State Senate",
+      "district": "33",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cb6cc457-59f8-4dd8-aeb5-691c3795ffb7",
+        "name": "Lena Gonzalez",
+        "tenure_start": "2019-06-12",
+        "official_links": [
+          "https://sd33.senate.ca.gov/",
+          "https://senate.ca.gov/sd33"
+        ]
+      },
+      "proposal": {
+        "term_start": "2019-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2019-06-12"
+      ]
+    },
+    {
+      "term_id": "07432257-5e10-43ab-850e-4914948cff0e",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "full_name": "Thomas Umberg",
+      "chamber": "California State Senate",
+      "district": "34",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cecabb81-51ab-46f5-9815-cc3486da0632",
+        "name": "Tom Umberg",
+        "tenure_start": "2018-12-03",
+        "official_links": [
+          "https://sd34.senate.ca.gov/",
+          "https://senate.ca.gov/sd34"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-12-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d160ea6f-3dd9-4b25-89d0-e9122ae47aff",
+      "office_id": "d2fc37a8-8dbe-4a55-8ef3-efb776e441ba",
+      "politician_id": "9edc0c37-f213-4aae-9212-c9cb4780d854",
+      "full_name": "Laura Richardson",
+      "chamber": "California State Senate",
+      "district": "35",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/bd78b1b9-6d92-4c67-a1f4-0548575f3aa5",
+        "name": "Laura Richardson",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd35.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f1648df5-09cd-4842-b1c1-220bbd620d08",
+      "office_id": "e1a551cf-feb6-41a5-9103-10bfa61677e2",
+      "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66",
+      "full_name": "Steven \"Steve\" Choi",
+      "chamber": "California State Senate",
+      "district": "37",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8b61aa87-d573-47e2-b17b-bd0edd3c8cf2",
+        "name": "Steve Choi",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://ad68.asmrc.org/",
+          "https://sr37.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c49b919c-f635-4947-846f-8229052b1882",
+      "office_id": "76ce3998-b6e1-4fb3-9461-2ab82fff6f04",
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+      "full_name": "Catherine S. Blakespear",
+      "chamber": "California State Senate",
+      "district": "38",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/39e3ce0f-c2e2-4480-9e99-76e1e62f366d",
+        "name": "Catherine Blakespear",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd38.senate.ca.gov/",
+          "https://senate.ca.gov/sd38"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "91439ce8-8a80-4a94-bd38-6a9687bdca8d",
+      "office_id": "ebb79fbd-e21a-4cf0-9ec7-49062207eae1",
+      "politician_id": "e5470008-3c0d-4970-a485-053621d8f0a6",
+      "full_name": "Akilah Weber Pierson",
+      "chamber": "California State Senate",
+      "district": "39",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6c2a35d5-c04c-44d0-8bd9-92a625e2b525",
+        "name": "Akilah Weber Pierson",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a79.asmdc.org/",
+          "https://sd39.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1f366eb2-88ff-42da-9ebc-166194624c2e",
+      "office_id": "6105b714-58fe-4ecd-824e-64411f915bff",
+      "politician_id": "6e2d2c6d-b96e-4916-a7c8-51a8f46629ba",
+      "full_name": "Marie Alvarado-Gil",
+      "chamber": "California State Senate",
+      "district": "4",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b6907bd6-05e1-44a4-bfc6-db4b672ff8b4",
+        "name": "Marie Alvarado-Gil",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd04.senate.ca.gov/",
+          "https://senate.ca.gov/sd04",
+          "https://sr04.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "211a52e8-d133-4e66-9bc1-2ba0643ce397",
+      "office_id": "de1a8793-9a9c-4e65-a7c6-c08ddd809a98",
+      "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c",
+      "full_name": "Brian W. Jones",
+      "chamber": "California State Senate",
+      "district": "40",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ea5c3b3d-bbad-41f6-a912-69f60f1553a4",
+        "name": "Brian Jones",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://senate.ca.gov/sd38",
+          "https://senate.ca.gov/sd40",
+          "https://sr40.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "47320c61-3540-47c7-9745-28653ab2196b",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "full_name": "Jerry McNerney",
+      "chamber": "California State Senate",
+      "district": "5",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e9733632-df5d-48b4-b4a3-4768e7dcb5f7",
+        "name": "Jerry McNerney",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd05.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "98d9b751-f3dd-459a-ae1d-468b84570bb3",
+      "office_id": "db68eac2-f869-4eae-bffc-faae657d7eb1",
+      "politician_id": "22152e41-31b9-4700-9226-4e274c616f37",
+      "full_name": "Roger Niello",
+      "chamber": "California State Senate",
+      "district": "6",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ee85bc79-20ee-4046-905e-ad797995fa41",
+        "name": "Roger Niello",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://senate.ca.gov/sd06",
+          "https://sr06.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "fad12c2d-1734-4613-89ee-b3509c8dbd2e",
+      "office_id": "3b0686f2-9dee-41ac-9a35-a3a1d6b90a13",
+      "politician_id": "eeeaf1be-3372-4cf9-b3b6-d5d1dff42615",
+      "full_name": "Jesse Arreguín",
+      "chamber": "California State Senate",
+      "district": "7",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/83a64401-d95d-42c5-8cfc-03bd29e4adc8",
+        "name": "Jesse Arreguín",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://sd07.senate.ca.gov/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "cb5e8624-5955-4950-a988-a99dccebd0ab",
+      "office_id": "e0314625-8c77-41da-9ddb-fa5d1a41217b",
+      "politician_id": "060aa5ab-1d4a-4fd1-89cb-afc96cbc09cb",
+      "full_name": "Angelique Ashby",
+      "chamber": "California State Senate",
+      "district": "8",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/564f2203-7cae-4a40-bc93-5c05a935b98f",
+        "name": "Angelique Ashby",
+        "tenure_start": "2022-12-05",
+        "official_links": [
+          "https://sd08.senate.ca.gov/",
+          "https://senate.ca.gov/sd08"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-12-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8668acc0-0487-4001-9e42-ee62336bf41a",
+      "office_id": "2660a4e7-4572-408b-a4ea-3d1d01d169d1",
+      "politician_id": "29389f8b-de23-4312-af73-264289dc7774",
+      "full_name": "Tim Grayson",
+      "chamber": "California State Senate",
+      "district": "9",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/972cffb0-32a6-4cef-8a0f-a8cd901395b0",
+        "name": "Tim Grayson",
+        "tenure_start": "2024-12-02",
+        "official_links": [
+          "https://a14.asmdc.org",
+          "https://a15.asmdc.org",
+          "https://a15.asmdc.org/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-12-02",
+        "start_precision": "day"
+      },
+      "flags": []
+    }
+  ]
+}

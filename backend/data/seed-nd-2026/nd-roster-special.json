@@ -1,0 +1,1412 @@
+[
+  {
+    "session": "special",
+    "district": "1",
+    "member_district": "1",
+    "chamber": "Senator",
+    "name": "Brad Bekkedahl",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/brad-bekkedahl",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bbekkedahl.jpg"
+  },
+  {
+    "session": "special",
+    "district": "1",
+    "member_district": "1",
+    "chamber": "Representative",
+    "name": "Patrick R. Hatlestad",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/patrick-r-hatlestad",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/phatlestad.jpg"
+  },
+  {
+    "session": "special",
+    "district": "1",
+    "member_district": "1",
+    "chamber": "Representative",
+    "name": "David Richter",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/david-richter",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dwrichter.jpg"
+  },
+  {
+    "session": "special",
+    "district": "2",
+    "member_district": "2",
+    "chamber": "Senator",
+    "name": "Mark Enget",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mark-enget",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/menget.jpg"
+  },
+  {
+    "session": "special",
+    "district": "2",
+    "member_district": "2",
+    "chamber": "Representative",
+    "name": "Bert Anderson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/bert-anderson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bertanderson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "2",
+    "member_district": "2",
+    "chamber": "Representative",
+    "name": "Donald W. Longmuir",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/donald-w-longmuir",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dlongmuir.jpg"
+  },
+  {
+    "session": "special",
+    "district": "3",
+    "member_district": "3",
+    "chamber": "Senator",
+    "name": "Bob Paulson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/bob-paulson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bpaulson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "3",
+    "member_district": "3",
+    "chamber": "Representative",
+    "name": "Jeff Hoverson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jeff-hoverson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jahoverson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "3",
+    "member_district": "3",
+    "chamber": "Representative",
+    "name": "Lori VanWinkle",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/lori-vanwinkle",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lvanwinkle.jpg"
+  },
+  {
+    "session": "special",
+    "district": "4",
+    "member_district": "4",
+    "chamber": "Senator",
+    "name": "Chuck Walen",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/chuck-walen",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cwalen.jpg"
+  },
+  {
+    "session": "special",
+    "district": "4",
+    "member_district": "4B",
+    "chamber": "Representative",
+    "name": "Clayton Fegley",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/clayton-fegley",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cfegley.jpg"
+  },
+  {
+    "session": "special",
+    "district": "4",
+    "member_district": "4A",
+    "chamber": "Representative",
+    "name": "Lisa Finley-DeVille",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/lisa-finley-deville",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lfinleydeville.jpg"
+  },
+  {
+    "session": "special",
+    "district": "5",
+    "member_district": "5",
+    "chamber": "Senator",
+    "name": "Randy A. Burckhard",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/randy-a-burckhard",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/raburckhard.jpg"
+  },
+  {
+    "session": "special",
+    "district": "5",
+    "member_district": "5",
+    "chamber": "Representative",
+    "name": "Jay Fisher",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jay-fisher",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jayfisher.jpg"
+  },
+  {
+    "session": "special",
+    "district": "5",
+    "member_district": "5",
+    "chamber": "Representative",
+    "name": "Scott Louser",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/scott-louser",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/slouser.jpg"
+  },
+  {
+    "session": "special",
+    "district": "6",
+    "member_district": "6",
+    "chamber": "Senator",
+    "name": "Paul J. Thomas",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/paul-j-thomas",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/paulthomas.jpg"
+  },
+  {
+    "session": "special",
+    "district": "6",
+    "member_district": "6",
+    "chamber": "Representative",
+    "name": "Dick Anderson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dick-anderson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dickanderson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "6",
+    "member_district": "6",
+    "chamber": "Representative",
+    "name": "Daniel R. Vollmer",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/daniel-r-vollmer",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dvollmer.jpg"
+  },
+  {
+    "session": "special",
+    "district": "7",
+    "member_district": "7",
+    "chamber": "Senator",
+    "name": "Michelle Axtman",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/michelle-axtman",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/maxtman.jpg"
+  },
+  {
+    "session": "special",
+    "district": "7",
+    "member_district": "7",
+    "chamber": "Representative",
+    "name": "Jason Dockter",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jason-dockter",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jddockter.jpg"
+  },
+  {
+    "session": "special",
+    "district": "7",
+    "member_district": "7",
+    "chamber": "Representative",
+    "name": "Matthew Heilman",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/matthew-heilman",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mheilman.jpg"
+  },
+  {
+    "session": "special",
+    "district": "8",
+    "member_district": "8",
+    "chamber": "Senator",
+    "name": "Jeffery J. Magrum",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jeffery-j-magrum",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jmagrum.jpg"
+  },
+  {
+    "session": "special",
+    "district": "8",
+    "member_district": "8",
+    "chamber": "Representative",
+    "name": "Mike Berg",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-berg",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mberg.jpg"
+  },
+  {
+    "session": "special",
+    "district": "8",
+    "member_district": "8",
+    "chamber": "Representative",
+    "name": "SuAnn Olson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/suann-olson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/solson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "9",
+    "member_district": "9",
+    "chamber": "Senator",
+    "name": "Richard Marcellais",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/richard-marcellais",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rmarcellais.jpg"
+  },
+  {
+    "session": "special",
+    "district": "9",
+    "member_district": "9",
+    "chamber": "Representative",
+    "name": "Collette Brown",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/collette-brown",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cbrown.jpg"
+  },
+  {
+    "session": "special",
+    "district": "9",
+    "member_district": "9",
+    "chamber": "Representative",
+    "name": "Jayme Davis",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/jayme-davis",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jdavis.jpg"
+  },
+  {
+    "session": "special",
+    "district": "10",
+    "member_district": "10",
+    "chamber": "Senator",
+    "name": "Ryan Braunberger",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/ryan-braunberger",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rbraunberger.jpg"
+  },
+  {
+    "session": "special",
+    "district": "10",
+    "member_district": "10",
+    "chamber": "Representative",
+    "name": "Jared Hendrix",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jared-hendrix",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jhendrix.jpg"
+  },
+  {
+    "session": "special",
+    "district": "10",
+    "member_district": "10",
+    "chamber": "Representative",
+    "name": "Steve Swiontek",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/steve-swiontek",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/sswiontek.jpg"
+  },
+  {
+    "session": "special",
+    "district": "11",
+    "member_district": "11",
+    "chamber": "Senator",
+    "name": "Tim Mathern",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/tim-mathern",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tmathern.jpg"
+  },
+  {
+    "session": "special",
+    "district": "11",
+    "member_district": "11",
+    "chamber": "Representative",
+    "name": "Liz Conmy",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/liz-conmy",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lconmy.jpg"
+  },
+  {
+    "session": "special",
+    "district": "11",
+    "member_district": "11",
+    "chamber": "Representative",
+    "name": "Gretchen Dobervich",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/gretchen-dobervich",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/gdobervich.jpg"
+  },
+  {
+    "session": "special",
+    "district": "12",
+    "member_district": "12",
+    "chamber": "Senator",
+    "name": "Cole Conley",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/cole-conley",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cconley.jpg"
+  },
+  {
+    "session": "special",
+    "district": "12",
+    "member_district": "12",
+    "chamber": "Representative",
+    "name": "Mitch Ostlie",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mitch-ostlie",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mostlie.jpg"
+  },
+  {
+    "session": "special",
+    "district": "12",
+    "member_district": "12",
+    "chamber": "Representative",
+    "name": "Bernie Satrom",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/bernie-satrom",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/blsatrom.jpg"
+  },
+  {
+    "session": "special",
+    "district": "13",
+    "member_district": "13",
+    "chamber": "Senator",
+    "name": "Judy Lee",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/judy-lee",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jlee.jpg"
+  },
+  {
+    "session": "special",
+    "district": "13",
+    "member_district": "13",
+    "chamber": "Representative",
+    "name": "Jim Jonas",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jim-jonas",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jjonas.jpg"
+  },
+  {
+    "session": "special",
+    "district": "13",
+    "member_district": "13",
+    "chamber": "Representative",
+    "name": "Austen Schauer",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/austen-schauer",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/aschauer.jpg"
+  },
+  {
+    "session": "special",
+    "district": "14",
+    "member_district": "14",
+    "chamber": "Senator",
+    "name": "Jerry Klein",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jerry-klein",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jklein.jpg"
+  },
+  {
+    "session": "special",
+    "district": "14",
+    "member_district": "14",
+    "chamber": "Representative",
+    "name": "Jon O. Nelson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jon-o-nelson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jonelson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "14",
+    "member_district": "14",
+    "chamber": "Representative",
+    "name": "Robin Weisz",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/robin-weisz",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rweisz.jpg"
+  },
+  {
+    "session": "special",
+    "district": "15",
+    "member_district": "15",
+    "chamber": "Senator",
+    "name": "Kent Weston",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kent-weston",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kweston.jpg"
+  },
+  {
+    "session": "special",
+    "district": "15",
+    "member_district": "15",
+    "chamber": "Representative",
+    "name": "Kathy Frelich",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kathy-frelich",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kfrelich.jpg"
+  },
+  {
+    "session": "special",
+    "district": "15",
+    "member_district": "15",
+    "chamber": "Representative",
+    "name": "Donna Henderson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/donna-henderson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dhenderson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "16",
+    "member_district": "16",
+    "chamber": "Senator",
+    "name": "David A. Clemens",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/david-a-clemens",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dclemens.jpg"
+  },
+  {
+    "session": "special",
+    "district": "16",
+    "member_district": "16",
+    "chamber": "Representative",
+    "name": "Ben Koppelman",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/ben-koppelman",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bkoppelman.jpg"
+  },
+  {
+    "session": "special",
+    "district": "16",
+    "member_district": "16",
+    "chamber": "Representative",
+    "name": "Andrew Marschall",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/andrew-marschall",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/amarschall.jpg"
+  },
+  {
+    "session": "special",
+    "district": "17",
+    "member_district": "17",
+    "chamber": "Senator",
+    "name": "Jonathan Sickler",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jonathan-sickler",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jlsickler.jpg"
+  },
+  {
+    "session": "special",
+    "district": "17",
+    "member_district": "17",
+    "chamber": "Representative",
+    "name": "Landon Bahl",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/landon-bahl",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lbahl.jpg"
+  },
+  {
+    "session": "special",
+    "district": "17",
+    "member_district": "17",
+    "chamber": "Representative",
+    "name": "Mark Sanford",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mark-sanford",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/masanford.jpg"
+  },
+  {
+    "session": "special",
+    "district": "18",
+    "member_district": "18",
+    "chamber": "Senator",
+    "name": "Scott Meyer",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/scott-meyer",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/scottmeyer.jpg"
+  },
+  {
+    "session": "special",
+    "district": "18",
+    "member_district": "18",
+    "chamber": "Representative",
+    "name": "Nels Christianson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/nels-christianson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/nchristianson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "18",
+    "member_district": "18",
+    "chamber": "Representative",
+    "name": "Steve Vetter",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/steve-vetter",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/smvetter.jpg"
+  },
+  {
+    "session": "special",
+    "district": "19",
+    "member_district": "19",
+    "chamber": "Senator",
+    "name": "Janne Myrdal",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/janne-myrdal",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jmyrdal.jpg"
+  },
+  {
+    "session": "special",
+    "district": "19",
+    "member_district": "19",
+    "chamber": "Representative",
+    "name": "Karen A. Anderson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/karen-a-anderson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kanderson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "19",
+    "member_district": "19",
+    "chamber": "Representative",
+    "name": "David Monson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/david-monson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dmonson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "20",
+    "member_district": "20",
+    "chamber": "Senator",
+    "name": "Randy D. Lemm",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/randy-d-lemm",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rlemm.jpg"
+  },
+  {
+    "session": "special",
+    "district": "20",
+    "member_district": "20",
+    "chamber": "Representative",
+    "name": "Mike Beltz",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-beltz",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mbeltz.jpg"
+  },
+  {
+    "session": "special",
+    "district": "20",
+    "member_district": "20",
+    "chamber": "Representative",
+    "name": "Jared C. Hagert",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jared-c-hagert",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jhagert.jpg"
+  },
+  {
+    "session": "special",
+    "district": "21",
+    "member_district": "21",
+    "chamber": "Senator",
+    "name": "Kathy Hogan",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/kathy-hogan",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/khogan.jpg"
+  },
+  {
+    "session": "special",
+    "district": "21",
+    "member_district": "21",
+    "chamber": "Representative",
+    "name": "LaurieBeth Hager",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/lauriebeth-hager",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lbhager.jpg"
+  },
+  {
+    "session": "special",
+    "district": "21",
+    "member_district": "21",
+    "chamber": "Representative",
+    "name": "Mary Schneider",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/mary-schneider",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mschneider.jpg"
+  },
+  {
+    "session": "special",
+    "district": "22",
+    "member_district": "22",
+    "chamber": "Senator",
+    "name": "Mark F. Weber",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mark-f-weber",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/markweber.jpg"
+  },
+  {
+    "session": "special",
+    "district": "22",
+    "member_district": "22",
+    "chamber": "Representative",
+    "name": "Brandy L. Pyle",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/brandy-l-pyle",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bpyle.jpg"
+  },
+  {
+    "session": "special",
+    "district": "22",
+    "member_district": "22",
+    "chamber": "Representative",
+    "name": "Jonathan Warrey",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jonathan-warrey",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jwarrey.jpg"
+  },
+  {
+    "session": "special",
+    "district": "23",
+    "member_district": "23",
+    "chamber": "Senator",
+    "name": "Todd Beard",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/todd-beard",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tbeard.jpg"
+  },
+  {
+    "session": "special",
+    "district": "23",
+    "member_district": "23",
+    "chamber": "Representative",
+    "name": "Dennis Nehring",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dennis-nehring",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/denehring.jpg"
+  },
+  {
+    "session": "special",
+    "district": "23",
+    "member_district": "23",
+    "chamber": "Representative",
+    "name": "Nico Rios",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/nico-rios",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/nrios.jpg"
+  },
+  {
+    "session": "special",
+    "district": "24",
+    "member_district": "24",
+    "chamber": "Senator",
+    "name": "Mike Wobbema",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-wobbema",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mwobbema.jpg"
+  },
+  {
+    "session": "special",
+    "district": "24",
+    "member_district": "24",
+    "chamber": "Representative",
+    "name": "Daniel Johnston",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/daniel-johnston",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/djohnston.jpg"
+  },
+  {
+    "session": "special",
+    "district": "24",
+    "member_district": "24",
+    "chamber": "Representative",
+    "name": "Dwight Kiefert",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dwight-kiefert",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dhkiefert.jpg"
+  },
+  {
+    "session": "special",
+    "district": "25",
+    "member_district": "25",
+    "chamber": "Senator",
+    "name": "Larry Luick",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/larry-luick",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lluick.jpg"
+  },
+  {
+    "session": "special",
+    "district": "25",
+    "member_district": "25",
+    "chamber": "Representative",
+    "name": "Alisa Mitskog",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/alisa-mitskog",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/amitskog.jpg"
+  },
+  {
+    "session": "special",
+    "district": "25",
+    "member_district": "25",
+    "chamber": "Representative",
+    "name": "Kathy Skroch",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kathy-skroch",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kskroch2021.jpg"
+  },
+  {
+    "session": "special",
+    "district": "26",
+    "member_district": "26",
+    "chamber": "Senator",
+    "name": "Dale Patten",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dale-patten",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dpatten.jpg"
+  },
+  {
+    "session": "special",
+    "district": "26",
+    "member_district": "26",
+    "chamber": "Representative",
+    "name": "Roger A. Maki",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/roger-a-maki",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rmaki.jpg"
+  },
+  {
+    "session": "special",
+    "district": "26",
+    "member_district": "26",
+    "chamber": "Representative",
+    "name": "Kelby Timmons",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kelby-timmons",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/ktimmons2023.jpg"
+  },
+  {
+    "session": "special",
+    "district": "27",
+    "member_district": "27",
+    "chamber": "Senator",
+    "name": "Kristin Roers",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kristin-roers",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kroers.jpg"
+  },
+  {
+    "session": "special",
+    "district": "27",
+    "member_district": "27",
+    "chamber": "Representative",
+    "name": "TJ Brown",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/tj-brown",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tbrown.jpg"
+  },
+  {
+    "session": "special",
+    "district": "27",
+    "member_district": "27",
+    "chamber": "Representative",
+    "name": "Gregory Stemen",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/gregory-stemen",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/gstemen.jpg"
+  },
+  {
+    "session": "special",
+    "district": "28",
+    "member_district": "28",
+    "chamber": "Senator",
+    "name": "Robert Erbele",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/robert-erbele",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rerbele.jpg"
+  },
+  {
+    "session": "special",
+    "district": "28",
+    "member_district": "28",
+    "chamber": "Representative",
+    "name": "Mike Brandenburg",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-brandenburg",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mbrandenburg.jpg"
+  },
+  {
+    "session": "special",
+    "district": "28",
+    "member_district": "28",
+    "chamber": "Representative",
+    "name": "Jim Grueneich",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jim-grueneich",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jgrueneich.jpg"
+  },
+  {
+    "session": "special",
+    "district": "29",
+    "member_district": "29",
+    "chamber": "Senator",
+    "name": "Terry M. Wanzek",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/terry-m-wanzek",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tmwanzek.jpg"
+  },
+  {
+    "session": "special",
+    "district": "29",
+    "member_district": "29",
+    "chamber": "Representative",
+    "name": "Craig Headland",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/craig-headland",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cheadland.jpg"
+  },
+  {
+    "session": "special",
+    "district": "29",
+    "member_district": "29",
+    "chamber": "Representative",
+    "name": "Don Vigesaa",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/don-vigesaa",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dwvigesaa.jpg"
+  },
+  {
+    "session": "special",
+    "district": "30",
+    "member_district": "30",
+    "chamber": "Senator",
+    "name": "Diane Larson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/diane-larson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dlarson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "30",
+    "member_district": "30",
+    "chamber": "Representative",
+    "name": "Glenn Bosch",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/glenn-bosch",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/gdbosch.jpg"
+  },
+  {
+    "session": "special",
+    "district": "30",
+    "member_district": "30",
+    "chamber": "Representative",
+    "name": "Mike Nathe",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-nathe",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mrnathe.jpg"
+  },
+  {
+    "session": "special",
+    "district": "31",
+    "member_district": "31",
+    "chamber": "Senator",
+    "name": "Donald Schaible",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/donald-schaible",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dgschaible.jpg"
+  },
+  {
+    "session": "special",
+    "district": "31",
+    "member_district": "31",
+    "chamber": "Representative",
+    "name": "Dawson Holle",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dawson-holle",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dholle.jpg"
+  },
+  {
+    "session": "special",
+    "district": "31",
+    "member_district": "31",
+    "chamber": "Representative",
+    "name": "Karen M. Rohr",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/karen-m-rohr",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kmrohr.jpg"
+  },
+  {
+    "session": "special",
+    "district": "32",
+    "member_district": "32",
+    "chamber": "Senator",
+    "name": "Dick Dever",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dick-dever",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/ddever.jpg"
+  },
+  {
+    "session": "special",
+    "district": "32",
+    "member_district": "32",
+    "chamber": "Representative",
+    "name": "Pat D. Heinert",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/pat-d-heinert",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/pdheinert.jpg"
+  },
+  {
+    "session": "special",
+    "district": "32",
+    "member_district": "32",
+    "chamber": "Representative",
+    "name": "Lisa Meier",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/lisa-meier",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lmeier.jpg"
+  },
+  {
+    "session": "special",
+    "district": "33",
+    "member_district": "33",
+    "chamber": "Senator",
+    "name": "Keith Boehm",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/keith-boehm",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kboehm.jpg"
+  },
+  {
+    "session": "special",
+    "district": "33",
+    "member_district": "33",
+    "chamber": "Representative",
+    "name": "Anna S. Novak",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/anna-s-novak",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/anovak.jpg"
+  },
+  {
+    "session": "special",
+    "district": "33",
+    "member_district": "33",
+    "chamber": "Representative",
+    "name": "Bill Tveit",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/bill-tveit",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/btveit.jpg"
+  },
+  {
+    "session": "special",
+    "district": "34",
+    "member_district": "34",
+    "chamber": "Senator",
+    "name": "Justin Gerhardt",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/justin-gerhardt",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jgerhardt.jpg"
+  },
+  {
+    "session": "special",
+    "district": "34",
+    "member_district": "34",
+    "chamber": "Representative",
+    "name": "Todd Porter",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/todd-porter",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tkporter.jpg"
+  },
+  {
+    "session": "special",
+    "district": "34",
+    "member_district": "34",
+    "chamber": "Representative",
+    "name": "Nathan Toman",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/nathan-toman",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/nptoman.jpg"
+  },
+  {
+    "session": "special",
+    "district": "35",
+    "member_district": "35",
+    "chamber": "Senator",
+    "name": "Sean Cleary",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/sean-cleary",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/scleary.jpg"
+  },
+  {
+    "session": "special",
+    "district": "35",
+    "member_district": "35",
+    "chamber": "Representative",
+    "name": "Karen Karls",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/karen-karls",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kkarls.jpg"
+  },
+  {
+    "session": "special",
+    "district": "35",
+    "member_district": "35",
+    "chamber": "Representative",
+    "name": "Bob Martinson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/bob-martinson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/bmartinson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "36",
+    "member_district": "36",
+    "chamber": "Senator",
+    "name": "Desiree van Oosting",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/desiree-van-oosting",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dvanoosting.jpg"
+  },
+  {
+    "session": "special",
+    "district": "36",
+    "member_district": "36",
+    "chamber": "Representative",
+    "name": "Ty Dressler",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/ty-dressler",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/tdressler.jpg"
+  },
+  {
+    "session": "special",
+    "district": "36",
+    "member_district": "36",
+    "chamber": "Representative",
+    "name": "Dori Hauck",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dori-hauck",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dorihauck.jpg"
+  },
+  {
+    "session": "special",
+    "district": "37",
+    "member_district": "37",
+    "chamber": "Senator",
+    "name": "Dean Rummel",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dean-rummel",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/drummel.jpg"
+  },
+  {
+    "session": "special",
+    "district": "37",
+    "member_district": "37",
+    "chamber": "Representative",
+    "name": "Mike Lefor",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-lefor",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mlefor.jpg"
+  },
+  {
+    "session": "special",
+    "district": "37",
+    "member_district": "37",
+    "chamber": "Representative",
+    "name": "Vicky Steiner",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/vicky-steiner",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/vsteiner.jpg"
+  },
+  {
+    "session": "special",
+    "district": "38",
+    "member_district": "38",
+    "chamber": "Senator",
+    "name": "David Hogue",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/david-hogue",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dhogue.jpg"
+  },
+  {
+    "session": "special",
+    "district": "38",
+    "member_district": "38",
+    "chamber": "Representative",
+    "name": "Dan Ruby",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dan-ruby",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/druby.jpg"
+  },
+  {
+    "session": "special",
+    "district": "38",
+    "member_district": "38",
+    "chamber": "Representative",
+    "name": "Christina Wolff",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/christina-wolff",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cwolff.jpg"
+  },
+  {
+    "session": "special",
+    "district": "39",
+    "member_district": "39",
+    "chamber": "Senator",
+    "name": "Greg Kessel",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/greg-kessel",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/gkessel.jpg"
+  },
+  {
+    "session": "special",
+    "district": "39",
+    "member_district": "39",
+    "chamber": "Representative",
+    "name": "Keith Kempenich",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/keith-kempenich",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kkempenich.jpg"
+  },
+  {
+    "session": "special",
+    "district": "39",
+    "member_district": "39",
+    "chamber": "Representative",
+    "name": "Mike Schatz",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-schatz",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mischatz.jpg"
+  },
+  {
+    "session": "special",
+    "district": "40",
+    "member_district": "40",
+    "chamber": "Senator",
+    "name": "Jose L. Castaneda",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jose-l-castaneda",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jcastaneda.jpg"
+  },
+  {
+    "session": "special",
+    "district": "40",
+    "member_district": "40",
+    "chamber": "Representative",
+    "name": "Macy Bolinske",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/macy-bolinske",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mbolinske.jpg"
+  },
+  {
+    "session": "special",
+    "district": "40",
+    "member_district": "40",
+    "chamber": "Representative",
+    "name": "Matthew Ruby",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/matthew-ruby",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mruby.jpg"
+  },
+  {
+    "session": "special",
+    "district": "41",
+    "member_district": "41",
+    "chamber": "Senator",
+    "name": "Kyle Davison",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/kyle-davison",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kdavison.jpg"
+  },
+  {
+    "session": "special",
+    "district": "41",
+    "member_district": "41",
+    "chamber": "Representative",
+    "name": "Karen Grindberg",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/karen-grindberg",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/kgrindberg.jpg"
+  },
+  {
+    "session": "special",
+    "district": "41",
+    "member_district": "41",
+    "chamber": "Representative",
+    "name": "Jorin Johnson",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jorin-johnson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jjohnson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "42",
+    "member_district": "42",
+    "chamber": "Senator",
+    "name": "Claire Cory",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/claire-cory",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/clairecory.jpg"
+  },
+  {
+    "session": "special",
+    "district": "42",
+    "member_district": "42",
+    "chamber": "Representative",
+    "name": "Dustin McNally",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/dustin-mcnally",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dmcnally2025.jpg"
+  },
+  {
+    "session": "special",
+    "district": "42",
+    "member_district": "42",
+    "chamber": "Representative",
+    "name": "Doug Osowski",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/doug-osowski",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dosowski.jpg"
+  },
+  {
+    "session": "special",
+    "district": "43",
+    "member_district": "43",
+    "chamber": "Senator",
+    "name": "Jeff Barta",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jeff-barta",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jbarta.jpg"
+  },
+  {
+    "session": "special",
+    "district": "43",
+    "member_district": "43",
+    "chamber": "Representative",
+    "name": "Zachary Ista",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/zachary-ista",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/zmista.jpg"
+  },
+  {
+    "session": "special",
+    "district": "43",
+    "member_district": "43",
+    "chamber": "Representative",
+    "name": "Eric J. Murphy",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/eric-j-murphy",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/emurphy.jpg"
+  },
+  {
+    "session": "special",
+    "district": "44",
+    "member_district": "44",
+    "chamber": "Senator",
+    "name": "Josh Boschee",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/josh-boschee",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jboschee.jpg"
+  },
+  {
+    "session": "special",
+    "district": "44",
+    "member_district": "44",
+    "chamber": "Representative",
+    "name": "Austin Foss",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/austin-foss",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/afoss.jpg"
+  },
+  {
+    "session": "special",
+    "district": "44",
+    "member_district": "44",
+    "chamber": "Representative",
+    "name": "Karla Rose Hanson",
+    "party": "Democrat",
+    "bio_url": "https://ndlegis.gov/biography/karla-rose-hanson",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/krhanson.jpg"
+  },
+  {
+    "session": "special",
+    "district": "45",
+    "member_district": "45",
+    "chamber": "Senator",
+    "name": "Ronald Sorvaag",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/ronald-sorvaag",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/rsorvaag.jpg"
+  },
+  {
+    "session": "special",
+    "district": "45",
+    "member_district": "45",
+    "chamber": "Representative",
+    "name": "Carrie McLeod",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/carrie-mcleod",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/cmcleod.jpg"
+  },
+  {
+    "session": "special",
+    "district": "45",
+    "member_district": "45",
+    "chamber": "Representative",
+    "name": "Scott Wagner",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/scott-wagner",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/swagner.jpg"
+  },
+  {
+    "session": "special",
+    "district": "46",
+    "member_district": "46",
+    "chamber": "Senator",
+    "name": "Michelle Powers",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/michelle-powers",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mpowers.jpg"
+  },
+  {
+    "session": "special",
+    "district": "46",
+    "member_district": "46",
+    "chamber": "Representative",
+    "name": "Jim Kasper",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/jim-kasper",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/jkasper.jpg"
+  },
+  {
+    "session": "special",
+    "district": "46",
+    "member_district": "46",
+    "chamber": "Representative",
+    "name": "Desiree Morton",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/desiree-morton",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/dmorton.jpg"
+  },
+  {
+    "session": "special",
+    "district": "47",
+    "member_district": "47",
+    "chamber": "Senator",
+    "name": "Michael Dwyer",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/michael-dwyer",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mdwyer.jpg"
+  },
+  {
+    "session": "special",
+    "district": "47",
+    "member_district": "47",
+    "chamber": "Representative",
+    "name": "Lawrence R. Klemin",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/lawrence-r-klemin",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/lklemin.jpg"
+  },
+  {
+    "session": "special",
+    "district": "47",
+    "member_district": "47",
+    "chamber": "Representative",
+    "name": "Mike Motschenbacher",
+    "party": "Republican",
+    "bio_url": "https://ndlegis.gov/biography/mike-motschenbacher",
+    "photo_url": "https://ndlegis.gov/sites/default/files/styles/member_list_photo/public/person/photo/mmotschenbacher.jpg"
+  }
+]

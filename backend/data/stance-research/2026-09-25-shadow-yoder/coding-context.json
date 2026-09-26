@@ -1,0 +1,224 @@
+{
+  "batch_id": "2026-09-25-shadow-yoder",
+  "seat": {
+    "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+    "full_name": "Shelli Yoder",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2020-11-04",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null
+  },
+  "topics": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "question_text": "How should the law handle abortion?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+        },
+        {
+          "value": 2,
+          "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 3,
+          "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 4,
+          "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+        },
+        {
+          "value": 5,
+          "text": "ban abortion in all cases, with no exceptions."
+        }
+      ],
+      "annexMd": null
+    },
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "question_text": "How should government manage the growth of large-scale data centers?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+        },
+        {
+          "value": 2,
+          "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+        },
+        {
+          "value": 3,
+          "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+        },
+        {
+          "value": 4,
+          "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+        },
+        {
+          "value": 5,
+          "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+        }
+      ],
+      "annexMd": null
+    },
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "question_text": "What role should fossil fuels play in the nation's energy future?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Phase out fossil fuel production entirely."
+        },
+        {
+          "value": 2,
+          "text": "Allow no new drilling and let production decline over time."
+        },
+        {
+          "value": 3,
+          "text": "Keep fossil fuel production steady at current levels."
+        },
+        {
+          "value": 4,
+          "text": "Expand fossil fuel production with new drilling and permits."
+        },
+        {
+          "value": 5,
+          "text": "Maximize production and open more public land and waters to drilling."
+        }
+      ],
+      "annexMd": null
+    },
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "question_text": "How should Medicare and Medicaid be funded and structured?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "expand Medicare to cover everyone regardless of age"
+        },
+        {
+          "value": 2,
+          "text": "significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage"
+        },
+        {
+          "value": 3,
+          "text": "improve current programs while controlling costs"
+        },
+        {
+          "value": 4,
+          "text": "scale back both programs, shifting more coverage to private insurance"
+        },
+        {
+          "value": 5,
+          "text": "phase out both programs and use private insurance only"
+        }
+      ],
+      "annexMd": null
+    },
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "question_text": "What role should vouchers and school choice play in the public education system?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+        },
+        {
+          "value": 2,
+          "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+        },
+        {
+          "value": 3,
+          "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+        },
+        {
+          "value": 4,
+          "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+        },
+        {
+          "value": 5,
+          "text": "Providing universal vouchers so that education funding follows the student to any school \u2014 public, private, or religious \u2014 chosen by the family"
+        }
+      ],
+      "annexMd": "# school-vouchers \u2014 annex (Season 2 served text; draft, not ruled)\n\n**Orientation:** standard. Rung 1 is most restrictive of vouchers, rung 5 is universal.\n\n**Levels:** state (the lever: program statutes), federal (tax-credit scholarships only), school\nboards (no lever on vouchers). Verify against `compass_topic_roles` before use.\n\n1. **\"Eliminating voucher programs that divert taxpayer money from public schools to private\n   institutions\"**\n   - Clauses: [a] eliminate existing programs.\n   - Evidence: a repeal bill, or a vote on a repeal amendment; own words calling for repeal.\n   - Confused with 2 when the person only opposes an *expansion*.\n\n2. **\"Opposing voucher programs and blocking their expansion, without moving to eliminate existing\n   ones\"**\n   - Clauses: [a] oppose expansion; [b] no repeal.\n   - Evidence: a No on an expansion bill **plus** evidence against repeal (a No vote alone is only\n     `direction-only`: it does not separate 1 from 2).\n\n3. **\"Allowing income-based voucher programs, open to a wider range of families under an income\n   cap\"**\n   - Clauses: [a] means-tested; [b] a wider cap.\n   - Evidence: authoring or voting for a means-tested program with a cap.\n\n4. **\"Expanding voucher eligibility to most families so parents can choose the school that best fits\n   their child\"**\n   - Clauses: [a] most families, not all.\n   - Evidence: an expansion bill with a high income cap, or a phased path to universal.\n   - Confused with 5 when a phase-in ends in universal eligibility: code the end state the instrument\n     enacts.\n\n5. **\"Providing universal vouchers so that education funding follows the student to any school \u2014\n   public, private, or religious \u2014 chosen by the family\"**\n   - Clauses: [a] universal; [b] any school, including religious.\n   - Evidence: a universal ESA/voucher statute (e.g., Utah HB215, 2023).\n   - **A federal tax-credit scholarship is not rung 5.** It is a tax credit to donors, not funding that\n     follows the student. \u2192 `adjacent` (see the V4 omnibus example).\n\n**Hard cases:** a vote on a budget that funds an existing program (`multi-subject`); a governor's\nsignature (a record; `chair-shaped` when the signed bill is single-subject).\n"
+    },
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+        },
+        {
+          "value": 2,
+          "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+        },
+        {
+          "value": 3,
+          "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+        },
+        {
+          "value": 4,
+          "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+        },
+        {
+          "value": 5,
+          "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+        }
+      ],
+      "annexMd": null
+    },
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "question_text": "How should the government verify a voter's identity and eligibility?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require no identification to vote, verifying voters by signature or existing records."
+        },
+        {
+          "value": 2,
+          "text": "Accept non-photo identification, such as a utility bill or bank statement."
+        },
+        {
+          "value": 3,
+          "text": "Require photo ID to vote, but let voters without one cast a ballot after signing an affidavit."
+        },
+        {
+          "value": 4,
+          "text": "Require photo ID in person and an ID number on every mail ballot."
+        },
+        {
+          "value": 5,
+          "text": "Require documentary proof of citizenship to register to vote."
+        }
+      ],
+      "annexMd": null
+    }
+  ],
+  "seat_dates_note": "term_start updated 2026-09-25 after CA_0293; coder inputs unchanged (coders saw \"unknown\")"
+}

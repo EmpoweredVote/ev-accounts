@@ -1,0 +1,129 @@
+{
+  "codebook_version": "0.2",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 12,
+      "split_units": 1,
+      "alpha": 0.8929765886287625,
+      "examples": [
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "values": [
+            "namesake-unclear",
+            "third-party-characterization",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 12,
+      "split_units": 2,
+      "alpha": 0.7217391304347827,
+      "examples": [
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|00b95a6a-75db-4521-b523-3326bba938de#e36cea0e-6089-553b-a548-86bedbe14664",
+          "values": [
+            "adjacent",
+            "adjacent",
+            "on-question"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#52da5a1f-8a21-524a-9a16-3b1a2af5e666",
+          "values": [
+            "adjacent",
+            "adjacent",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 12,
+      "split_units": 3,
+      "alpha": 0.6981132075471699,
+      "examples": [
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|af2fdfd6-02c4-49df-b09c-cf8536f4773f#817d3595-590f-5246-99dc-8dd40395e766",
+          "values": [
+            "not-evidence",
+            null,
+            "record"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|4559b513-0fd8-4ed1-babd-f3b554162f40#e36cea0e-6089-553b-a548-86bedbe14664",
+          "values": [
+            "statement-answer",
+            "statement-answer",
+            "statement-other"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "values": [
+            "record",
+            "not-evidence",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 12,
+      "split_units": 4,
+      "alpha": 0.6353276353276354,
+      "examples": [
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|af2fdfd6-02c4-49df-b09c-cf8536f4773f#f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
+          "values": [
+            "direction-only",
+            "rhetorical",
+            "rhetorical"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|00b95a6a-75db-4521-b523-3326bba938de#e36cea0e-6089-553b-a548-86bedbe14664",
+          "values": [
+            "off-axis",
+            "off-axis",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "values": [
+            "chair-shaped",
+            "off-axis",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 12,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 7,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v3_class",
+    "v2_relevance",
+    "v1_attribution"
+  ]
+}

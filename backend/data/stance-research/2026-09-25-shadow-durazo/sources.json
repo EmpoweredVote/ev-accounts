@@ -1,0 +1,193 @@
+{
+  "batch_id": "2026-09-25-shadow-durazo",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB580",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "SB 580 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB57",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "data-centers"
+      ],
+      "instruments": [
+        "SB 57 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB57",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "data-centers"
+      ],
+      "instruments": [
+        "SB 57 (2025) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-SB57-2025.html"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB1174",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "SB 1174 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "SB 1174 (2024) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-SB1174-2024.html"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB494",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "SB 494 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB494",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "SB 494 (2023) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-SB494-2023.html"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB1112",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "childcare"
+      ],
+      "instruments": [
+        "SB 1112 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1112",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "childcare"
+      ],
+      "instruments": [
+        "SB 1112 (2024) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-SB1112-2024.html"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB729",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 729 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB729",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 729 (2024) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-SB729-2024.html"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "AB 1955 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "AB 1955 (2024) Senate floor votes"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-votes-AB1955-2024.html"
+    }
+  ]
+}

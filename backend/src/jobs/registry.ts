@@ -27,6 +27,7 @@
 import { runCalibrationLapseJob } from '../lib/cronService.js';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 import { runFecAutoMatchJob } from '../lib/fecResearch.js';
+import { runFecFinanceSummaryJob } from '../lib/fecFinanceSummary.js';
 import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/localFinanceSummary.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
@@ -53,6 +54,11 @@ export const JOBS: Record<string, JobFn> = {
   // (admin endpoint / scripts). Runs as the FIRST step of ev-jobs-fec-burst, so links it
   // confirms get their contributions in the same run.
   'fec-auto-match': () => runFecAutoMatchJob(),
+  // The federal finance_summary writer (scripts/run-fec-finance-summary.ts ran it only by hand until
+  // 2026-09-25). Stalest first, at most FEC_FINANCE_SUMMARY_MAX_PEOPLE (default 150) people sent to FEC
+  // per run, ~30 min. Meant as the SECOND step of ev-jobs-fec-burst: after fec-auto-match, so a link
+  // confirmed that morning is summarised the same day.
+  'fec-finance-summary': () => runFecFinanceSummaryJob(),
   // The ingest, then the local finance_summary writers (city first). Since 2026-09-24; a summary failure is
   // logged and does not fail the ingest. See src/lib/localFinanceSummary.ts.
   'la-county-netfile': () => runNetfileIngestWithSummaries(),
