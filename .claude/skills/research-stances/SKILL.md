@@ -981,6 +981,10 @@ queues. Its only outputs are `coding-report.json` and, with the operator's OK, r
      number, chamber, a dead bill). **Never pass `s1-leads.json` to a coder.**
    - Search with the topic annex's **Synonyms** as well as the plain topic words, before recording
      that nothing was found.
+   - Before collecting, read the source profiles for the jurisdiction in `docs/sources/` (access
+     notes, which page proves what, traps). A record page from a source with no profile gets
+     `no-source-profile` in CONFIRM: write the profile from `docs/sources/README.md`, with the saved
+     page as an `expect: pass` control, in the same batch.
 2. `npm run coding:snapshot --prefix backend -- --dir <batch>` → `snapshots.json`. Read the NOT CODABLE
    lines.
 3. `npm run coding:inputs --prefix backend -- --dir <batch> --politician <uuid> [--office <uuid>]`

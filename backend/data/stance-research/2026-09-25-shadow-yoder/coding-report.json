@@ -29,7 +29,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "fresh"
+      "seed": "fresh",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|4559b513-0fd8-4ed1-babd-f3b554162f40",
@@ -52,7 +53,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "stale"
+      "seed": "stale",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|a22215c3-6693-4bc2-b248-01aebba14570",
@@ -75,7 +77,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "fresh"
+      "seed": "fresh",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
@@ -95,7 +98,8 @@
       "shadow_reasons": [
         "coder-missing"
       ],
-      "seed": "stale"
+      "seed": "stale",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|00b95a6a-75db-4521-b523-3326bba938de",
@@ -119,7 +123,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "stale"
+      "seed": "stale",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4",
@@ -142,7 +147,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "fresh"
+      "seed": "fresh",
+      "profiles": []
     },
     {
       "key": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
@@ -167,7 +173,8 @@
       "shadow_reasons": [
         "needs-source"
       ],
-      "seed": "stale"
+      "seed": "stale",
+      "profiles": []
     }
   ],
   "m1": {
@@ -251,5 +258,6 @@
       "fileErrors": [],
       "rowErrors": 1
     }
-  ]
+  ],
+  "noProfileHosts": {}
 }

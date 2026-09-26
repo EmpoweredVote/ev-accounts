@@ -83,7 +83,7 @@ match:
 page_kind: vote                       # vote | author | bill-text | minutes
 rules:
   vote_block: aye-count               # aye-count | whole-page
-  chamber: word-before-floor          # word-before-floor | nearest-before | page-header | none
+  chamber: word-before-floor          # word-before-floor | nearest-before | page-header | bill-origin | none
   not_chamber_after: [bill, reading]  # optional: extra words that make a chamber word a bill origin/stage
   name_format: surname                # surname | surname-initial | last-first | full-name
 seat_titles:                          # office_title → chamber, for this body
@@ -121,6 +121,7 @@ Built now (they are the rules in `recordBasis.ts` today, turned into named kinds
 | `chamber` | `nearest-before` | the nearest chamber word before the surname (today's rule) |
 | | `word-before-floor` | the chamber word directly before "Floor" in the actor's block (CA) |
 | | `page-header` | the first chamber word on the page (IN roll call) |
+| | `bill-origin` | the bill prefix: SB → upper, AB/HB → lower — the primary author on a bill page (CA Digest) |
 | | `none` | no chamber: a council, a board, a unicameral body (Nebraska) — the chamber test is skipped |
 | `name_format` | `surname` | members print by surname; the collision rules of today apply |
 | | `surname-initial` | "Walker G" is the qualified form |
