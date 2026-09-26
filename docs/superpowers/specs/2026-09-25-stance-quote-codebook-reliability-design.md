@@ -630,6 +630,12 @@ with *each other*, the codebook is the problem, and gold would not help.
 | Q8 | Pledges and lawsuits? | **A pledge is `statement-answer`** (a signed answer to fixed text; it does not outrank the person's later words). **Lawsuits, amicus briefs and signed official letters are `record`**, but the legal claim itself must match the rung clause; procedural claims prove nothing (codebook V3). |
 | Q9 | Scorecards? | **A grade, percentage or endorsement is not evidence and not corroboration.** The scorecard page is a `pointer` to the roll calls it lists, and each roll call is coded as its own record. A candidate's published answers to a group's questionnaire are `statement-answer` (§5.4). |
 
+### 9.1a Made 2026-09-26 (Chris Andrews)
+
+| # | Question | Ruling |
+|---|---|---|
+| Q10 | What does a preemption vote prove? (a law that forbids another level of government to act) | **V2 `adjacent`.** It decides *which level* may set a rule, not *what* the rule should be, so it never supports a chair on that ladder — alone or combined with other passages. It is `on-question` only when a rung is itself about which level decides (codebook V2, H12; defect D7). Re-confirmed the same day after a plain-language briefing ("a higher government takes a power away from a lower one"). **Refined the same day** after blind gold: a law that removes the very limits a rung names is `on-question` but `direction-only` (an unproven magnitude → BLANK). |
+
 ### 9.2 Still owed from the stance-program spec §12.3 (Cantrell, 2026-09-23)
 
 These affect the annexes, so the annexes for those topics wait for them:

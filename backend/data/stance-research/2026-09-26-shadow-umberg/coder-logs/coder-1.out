@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json` — one row (Umberg / housing), coded BLANK.
+
+**What the sources support:** two snapshots of one record, SB 9 (2021-2022). The vote page shows Umberg in the Ayes on both Senate floor votes (28–6 third reading, 28–7 concurrence — not near-unanimous); the bill text prints the operative provision requiring two-unit housing in single-family zones to be approved "ministerially, without discretionary review or a hearing." Both coded `own-act` / `on-question` / `record` / `vote` / `in-term`, with `actor_quote` and `tally_quote` on the vote page and `provision_quote` on the bill text, per the per-instrument-group rule.
+
+**Why BLANK `direction-only`:** SB 9 is one act of cutting "the regulations and zoning limits that block private building," but it does not exclude the adjacent rungs. The same Aye is fully consistent with also wanting to "set binding rules on the private market like rent caps or required affordable units" (rung 3) or to "offer subsidies and tax breaks" (rung 4); nothing here shows he would "Rely on the market to set prices and supply." Seating rung 5 would be using "least extreme rung the evidence supports" as evidence, which §0.4(3) forbids. `rests_on` is therefore empty.
+
+I also considered the preemption rule (Q10/H12) since SB 9 constrains local agencies, but rejected it: SB 9 sets the substantive state rule itself (what may be built by right, setback caps, parking limits), not merely which level decides — so V2 is `on-question`, not `adjacent`. That reasoning is in the bill-text passage note.
+
+`needs_source` names three things that would settle the row: his own words on government's role in housing affordability, and his roll calls on rent-cap/inclusionary bills and on housing subsidy measures. No quotes emitted — neither snapshot contains his words.

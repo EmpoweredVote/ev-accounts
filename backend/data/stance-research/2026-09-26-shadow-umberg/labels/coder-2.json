@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "e45f22f9-8520-58a2-906f-039398c9ab04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-09-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 9 (2021-2022)",
+          "provision_quote": "A proposed housing development containing no more than two residential units within a single-family residential zone shall be considered ministerially, without discretionary review or a hearing, if the proposed housing development meets all of the following requirements:",
+          "note": "Operative section requires ministerial, no-discretionary-review approval of duplexes/lot splits in single-family zones, matching rung 5's deregulation clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7202f411-4253-5329-9387-677d15265e79",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-08-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 9 (2021-2022)",
+          "provision_quote": null,
+          "note": "Umberg voted Aye in the Senate concurrence vote sending SB 9 to the Governor.",
+          "record_kind": "vote",
+          "actor_quote": "Skinner, Umberg, Wieckowski, Wiener",
+          "tally_quote": "Ayes Count 28 Noes Count 7"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e45f22f9-8520-58a2-906f-039398c9ab04",
+        "7202f411-4253-5329-9387-677d15265e79"
+      ],
+      "reasoning": "Umberg voted Aye (concurrence, 08/30/21) on SB 9 (2021-2022), a single-subject bill whose operative sections require ministerial, no-discretionary-review approval of duplexes and urban lot splits in single-family zones and cap local objective standards, matching rung 5's clause to 'at most, cut the regulations and zoning limits that block private building.' The bill contains no rent caps, required affordable units, or subsidies, so it excludes rungs 3 and 4.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -379,3 +379,27 @@ describe('source rules', () => {
     expect(f).toContain('chamber-not-evidenced');
   });
 });
+
+describe('Arizona rule kinds (word-before-reading, dash-ayes-nays)', () => {
+  const page = 'HB 9 (2023). Senate Third Reading - HB9 thing Action Date Action Vote 04/05/2023 Passed 16-14-0-0-0 ALSTON N GOWAN Y KERR Y. The bill requires a thing.';
+  const R = (over: Partial<SourceRules>): SourceRules => ({ ...GENERIC_RULES, vote_block: 'whole-page', chamber: 'word-before-reading', tally_format: 'dash-ayes-nays', ...over });
+  const run = (rules: SourceRules, chamber: 'upper' | 'lower', over: Partial<Passage> = {}) =>
+    checkRecordGroup({ passages: [P({ snapshot_id: 'az', instrument: 'HB 9 (2023)', actor_quote: 'GOWAN Y', tally_quote: 'Passed 16-14-0-0-0', provision_quote: 'requires a thing', ...over })],
+      snapshotText: new Map([['az', page]]), fullName: 'David Gowan', chamber: null, profileOf: () => ({ rules, chamber }) }).findings;
+  it('reads "Senate Third Reading" as the chamber that voted, and "16-14-0-0-0" as 16 ayes, 14 noes', () =>
+    expect(run(R({}), 'upper')).toEqual([]));
+  it('a House seat on that Senate page fails', () => expect(run(R({}), 'lower')).toContain('chamber-not-evidenced'));
+  it('the generic rules fail the same page closed (stage word, unlabelled tally)', () => {
+    const f = run(R({ chamber: 'nearest-before', tally_format: 'labelled' }), 'upper');
+    expect(f).toContain('chamber-not-evidenced');
+    expect(f).toContain('tally-unreadable');
+  });
+  it('dash-ayes-nays: a tally quote that runs on into the name list still reads its one tally', () =>
+    expect(run(R({}), 'upper', { tally_quote: 'Passed 16-14-0-0-0 ALSTON N GOWAN Y KERR Y' , actor_quote: 'GOWAN Y' })).toEqual([]));
+  it('parseTally dash-ayes-nays', () => {
+    expect(parseTally('Passed 16-14-0-0-0', 'dash-ayes-nays')).toEqual({ ayes: 16, noes: 14 });
+    expect(parseTally('16-14-0-0-0 and 31-28-1-0-0', 'dash-ayes-nays')).toBeNull();
+    expect(parseTally('Passed', 'dash-ayes-nays')).toBeNull();
+    expect(parseTally('Passed 16-14-0-0-0')).toBeNull();
+  });
+});

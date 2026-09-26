@@ -16,6 +16,7 @@ import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { buildDisagreementDigest, validRowsFirstOccurrence } from './lib/disagreementDigest.js';
 import type { S1Lead } from './lib/s1Leads.js';
 import { loadSourceProfiles } from './lib/sourceProfiles.js';
+import { profileDivergences } from './lib/profileDivergence.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
@@ -77,6 +78,12 @@ for (const [slot, raw] of files) {
 const digest = buildDisagreementDigest(validRows);
 writeFileSync(join(dir, 'disagreement-digest.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, ...digest }, null, 2));
 console.log(`most-split codebook variables: ${digest.ranked.slice(0, 3).join(', ') || 'none'} -> ${join(dir, 'disagreement-digest.json')}`);
+
+// Source-profile evidence (ruling 2026-09-26): every real record group where a profile's declared
+// rules and the generic rules disagree. Each is a page worth adding to that profile as a control.
+const divergences = profileDivergences({ validRows, snapshotText, snapshotUrl, profiles, fullName: context.seat.full_name, officeTitle: context.seat.office_title });
+writeFileSync(join(dir, 'profile-divergence.json'), JSON.stringify(divergences, null, 2));
+if (divergences.length) console.log(`profile needs its rule: ${divergences.length} record group(s) where profile ≠ generic -> ${join(dir, 'profile-divergence.json')} (add as controls)`);
 
 if (APPLY) {
   // Scope filter (fix round 1, item 1): only rows that belong to THIS batch's seat and topic set may

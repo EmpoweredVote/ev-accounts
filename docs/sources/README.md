@@ -30,7 +30,9 @@ file and the key.
    the trap failing the way it should (an `expect` naming the finding). The controls prove each rule
    gives the right answer on real pages. On the pages we have, the generic rule gives the same answer,
    so they do not yet prove a profile *needs* its rule. When a page is found where only the declared rule
-   is right, add it as a control.
+   is right, add it as a control. `coding:report` finds these for you: it writes
+   `<batch>/profile-divergence.json`, one entry per real record group where the profile's rules and the
+   generic rules disagree (`backend/scripts/lib/profileDivergence.ts`). Each entry is a candidate control.
 4. Run `npx vitest run scripts/lib/sourceProfiles.real.test.ts` from `backend/` and confirm every control
    passes.
 5. Write the body: how to find the record, access (robots-disallowed, JavaScript-only, human-saved vs.

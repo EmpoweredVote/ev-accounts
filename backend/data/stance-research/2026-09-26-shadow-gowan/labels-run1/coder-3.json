@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+      "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+      "passages": [
+        {
+          "snapshot_id": "79c3e913-529b-5175-ac31-31e7eb71c5da",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2552 (2023)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote on HB2552; Gowan voted Y and the bill passed 16-14.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2552 (2023)",
+          "provision_quote": "This state or a city, town, county or political subdivision of this state may not use any of the following voting methods in an election or nomination process for any state, city, town, county or federal office that does any of the following: 1. Allows voters to select or rank, designate or otherwise indicate approval of or preference for more candidates than are eligible to be declared elected for any office. 2. allows ballots cast to be tabulated in any manner that involves the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates. 3. Requires the ranking of every candidate for an office as a condition of a voter's vote being counted in the final tally.",
+          "note": "Bill text of HB2552 prohibiting ranked-ballot, elimination-round tabulation statewide and locally.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "79c3e913-529b-5175-ac31-31e7eb71c5da",
+        "dcb501dd-ddc1-5ed2-968c-778fec53fa96"
+      ],
+      "reasoning": "Gowan voted Y on the Senate Third Reading of HB2552 (2023), a single-subject bill whose operative section bars the state and every political subdivision from using voting methods that rank more candidates than there are seats, eliminate candidates through tabulation rounds, or transfer votes between candidates. That matches the rung 'Ban ranked-choice voting by law' and excludes the weaker rungs, which only discourage, permit locally, or stay silent on RCV.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

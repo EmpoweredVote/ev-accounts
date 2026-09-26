@@ -1,0 +1,34 @@
+{
+  "batch_id": "2026-09-26-shadow-umberg",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220SB9",
+      "source_kind": "public-record",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 9 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-sb9-votes.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220SB9",
+      "source_kind": "public-record",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 9 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

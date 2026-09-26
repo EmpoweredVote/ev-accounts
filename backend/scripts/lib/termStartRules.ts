@@ -33,6 +33,12 @@ function firstMondayOfDecember(year: number): string {
   return iso(utc(year, 11, 1 + ((8 - dec1.getUTCDay()) % 7)));
 }
 
+/** The n-th Monday (1-based) of January of `year`. */
+function mondayOfJanuary(year: number, n: number): string {
+  const jan1 = utc(year, 0, 1);
+  return iso(utc(year, 0, 1 + ((8 - jan1.getUTCDay()) % 7) + 7 * (n - 1)));
+}
+
 export function legalTermStart(state: string, _chamber: Chamber, electionYear: number): string {
   switch (state) {
     case 'IN': {
@@ -42,6 +48,9 @@ export function legalTermStart(state: string, _chamber: Chamber, electionYear: n
     }
     case 'CA':
       return firstMondayOfDecember(electionYear);
+    case 'AZ':
+      // Const. art. IV pt. 2 §21: two-year terms, the first ending "the first Monday in January, 1913".
+      return mondayOfJanuary(electionYear + 1, 1);
     default:
       throw new Error(`no term-start rule for state ${state}`);
   }
@@ -65,6 +74,14 @@ export interface ClassifiedStart { term_start: string; start_precision: 'day' | 
 export function classifyStart(state: string, chamber: Chamber, date: string): ClassifiedStart {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`start date ${date} not YYYY-MM-DD`);
   const year = Number(date.slice(0, 4));
+  if (state === 'AZ') {
+    // A January term start follows the previous November's election. Members take the oath when the
+    // legislature assembles, the second Monday in January (A.R.S. 41-1101); OpenStates records that
+    // day. It is the same term, so it maps to the constitutional start.
+    const legal = legalTermStart(state, chamber, year - 1);
+    if (date === legal || date === mondayOfJanuary(year, 2)) return { term_start: legal, start_precision: 'day', flag: null };
+    return { term_start: `${year}-01-01`, start_precision: 'year', flag: `off-rule-date ${date}` };
+  }
   if (legalTermStart(state, chamber, year) === date) return { term_start: date, start_precision: 'day', flag: null };
   return { term_start: `${year}-01-01`, start_precision: 'year', flag: `off-rule-date ${date}` };
 }

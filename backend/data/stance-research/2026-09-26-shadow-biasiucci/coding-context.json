@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-26-shadow-biasiucci",
+  "seat": {
+    "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+    "full_name": "Leo Biasiucci",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null
+  },
+  "topics": [
+    {
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "question_text": "How should government manage population growth and new development?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Hold the pace of growth down — cap major new development, and let residents vote directly on the largest projects."
+        },
+        {
+          "value": 2,
+          "text": "Allow growth only as fast as current infrastructure can handle — make new development wait for capacity."
+        },
+        {
+          "value": 3,
+          "text": "Welcome steady growth — invest in roads, water and schools ahead of demand so expansion isn't held back."
+        },
+        {
+          "value": 4,
+          "text": "Actively push for faster growth — cut red tape and recruit new development, while keeping basic guardrails."
+        },
+        {
+          "value": 5,
+          "text": "Step back and let the market set the pace — remove development constraints beyond basic health and safety."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

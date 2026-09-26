@@ -1,0 +1,34 @@
+{
+  "batch_id": "2026-09-26-shadow-biasiucci",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2570",
+      "source_kind": "public-record",
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+      "topic_keys": [
+        "growth-and-development"
+      ],
+      "instruments": [
+        "HB 2570 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2570-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2570H.htm",
+      "source_kind": "public-record",
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+      "topic_keys": [
+        "growth-and-development"
+      ],
+      "instruments": [
+        "HB 2570 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

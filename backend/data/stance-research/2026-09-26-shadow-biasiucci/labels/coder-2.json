@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2570 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading vote on HB2570, passed 33-26-0-0-1.",
+          "record_kind": "vote",
+          "actor_quote": "BIASIUCCI Y",
+          "tally_quote": "Passed 33-26-0-0-1"
+        },
+        {
+          "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2570 (2024)",
+          "provision_quote": "Notwithstanding any other law, a municipality may not adopt or enforce any code, ordinance, regulation, standard, stipulation or other requirement establishing, directly or indirectly, any of the following: 1. For new developments that are five or more acres in size and that will be platted and located in an area zoned for single-family homes, minimum lot sizes that are greater than one thousand five hundred square feet except a municipality may enforce adopted minimum lot sizes greater than one thousand five hundred square feet where multiple lots smaller than five acres with existing dwelling units are aggregated together. 2. Minimum square footage or dimensions for a single-family home. 3. Maximum or minimum lot coverage for a single-family home and any accessory structures. 4. Minimum building setbacks for a single-family home that are greater than five feet from the side lot lines and ten feet from the front and rear lot lines. 5. Design, architectural or aesthetic elements for a single-family home except for a single-family home within an area that is designated as a district of historical significance pursuant to section 9-462.01, subsection A, paragraph 10 or an area that is designated as historic on the national register of historic places.",
+          "note": "Single-subject 'municipal planning' bill text; preserves building codes, fire codes, parking and health/safety rules per subsection C while stripping the design/dimensional mandates listed above.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+        "7ddf90bf-c94d-5342-8d0f-df513ad65ce4"
+      ],
+      "reasoning": "Biasiucci voted Y on HB2570 (2024) House Third Reading, which passed 33-26-0-0-1. HB2570 is a single-subject 'municipal planning' bill that bars municipalities from requiring HOAs, minimum lot sizes above 1,500 square feet, minimum square footage, setbacks beyond five/ten feet, or design and architectural elements for single-family homes, while its own text says these provisions 'do not supersede applicable building codes, fire codes, minimum parking requirements or public health and safety regulations.' That matches rung 5's text, 'remove development constraints beyond basic health and safety,' more closely than rung 4's vaguer 'keeping basic guardrails.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

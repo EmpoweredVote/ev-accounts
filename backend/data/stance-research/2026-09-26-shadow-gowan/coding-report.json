@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.3",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e71471f4-bef5-46ef-a1f2-f19f275b558d|fe457319-058b-4dc5-8540-dac64a6a328f|81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+      "topic_key": "ranked-choice-voting",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 5,
+        "shared_sources": [
+          "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+          "dcb501dd-ddc1-5ed2-968c-778fec53fa96"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "az-azleg-bill-status@1",
+        "az-azleg-bill-text@1"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
