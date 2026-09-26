@@ -17,17 +17,13 @@
           "dcb501dd-ddc1-5ed2-968c-778fec53fa96"
         ]
       },
-      "confirm": [
-        "dates-imprecise"
-      ],
+      "confirm": [],
       "stratum": {
         "level": "state",
         "evidence_class": "record"
       },
-      "shadow": "would-review",
-      "shadow_reasons": [
-        "confirm-failed"
-      ],
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
       "seed": "none",
       "profiles": [
         "az-azleg-bill-status@1",
