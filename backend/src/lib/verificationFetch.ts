@@ -330,7 +330,25 @@ export function clearRobotsCache(): void {
  * the path as ALLOWED — we only ever honour an EXPLICIT Disallow we actually
  * read. This keeps a flaky robots endpoint from silently blocking verification,
  * and matches the RFC's "unavailable → no restrictions" for 4xx.
+ *
+ * EXCEPT for KNOWN_DISALLOW_HOSTS (ruling 2026-09-27, Chris Andrews): a site we
+ * know asks every crawler to stay out fails CLOSED when its robots.txt cannot
+ * be read. leginfo answered some robots fetches with an error, and fail-open
+ * then fetched pages its `Disallow: /` forbids.
  */
+/**
+ * Hosts whose robots.txt disallows the whole site for every crawler (read 2026-09-26/27). When their
+ * robots.txt cannot be read, robotsAllows answers "not allowed" instead of failing open. Their pages
+ * are saved by a person in a browser (source profiles, docs/sources/).
+ */
+export const KNOWN_DISALLOW_HOSTS: ReadonlySet<string> = new Set([
+  'leginfo.legislature.ca.gov', // User-agent: * / Disallow: /
+  'apps.azleg.gov',             // User-agent: * / Disallow: /
+]);
+
+/** A rule that disallows every path (the fail-closed answer for a known-disallow host). */
+const DISALLOW_ALL: RobotsRule = { allow: false, specificity: 1, test: () => true };
+
 export async function robotsAllows(url: string): Promise<boolean> {
   let origin: string;
   let path: string;
@@ -346,26 +364,30 @@ export async function robotsAllows(url: string): Promise<boolean> {
   const now = Date.now();
   let entry = robotsCache.get(origin);
   if (!entry || entry.expires <= now) {
-    const rules = await fetchRobotsRules(origin);
+    const got = await fetchRobotsRules(origin);
+    const rules = got === null ? (KNOWN_DISALLOW_HOSTS.has(new URL(origin).hostname) ? [DISALLOW_ALL] : []) : got;
     entry = { rules, expires: now + ROBOTS_TTL_MS };
     robotsCache.set(origin, entry);
   }
   return isPathAllowed(entry.rules, path);
 }
 
-async function fetchRobotsRules(origin: string): Promise<RobotsRule[]> {
+/** The parsed rules, [] when the site has no robots file (404/410), or null when it could not be read. */
+async function fetchRobotsRules(origin: string): Promise<RobotsRule[] | null> {
   try {
     const res = await fetch(origin + '/robots.txt', {
       redirect: 'follow',
       signal: AbortSignal.timeout(ROBOTS_TIMEOUT_MS),
       headers: { 'user-agent': EMPOWERED_VOTE_UA },
     });
-    // 4xx/404 → no robots file → no restrictions. Anything non-2xx → fail open.
-    if (!res.ok) return [];
+    // 404/410 → no robots file → no restrictions. Any other non-2xx → could not read it (null): the
+    // caller fails open, except for a known-disallow host.
+    if (res.status === 404 || res.status === 410) return [];
+    if (!res.ok) return null;
     const body = await res.text();
     return parseRobotsForAgent(body, EMPOWERED_VOTE_UA_TOKEN);
   } catch {
-    return []; // unreachable / timeout → fail open (allowed)
+    return null; // unreachable / timeout → could not read it
   }
 }
 
