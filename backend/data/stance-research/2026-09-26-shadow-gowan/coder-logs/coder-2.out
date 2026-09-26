@@ -1,1 +1,1 @@
-Coded the David Gowan / ranked-choice-voting row as chair 5 (ban), resting on the HB2552 bill text (provision) and the bill-status page (co-sponsorship + Aye vote, 16-14 Senate Third Reading) — both single-subject, in-term, chair-shaped for the ban rung. File written to `labels/coder-2.json`.
+Wrote coder-2.json with one row: Gowan's Y vote on HB2552 (2023) codes as rung 5 (chair-shaped), evidenced by two record passages — the Senate vote page (actor_quote "GOWAN Y", tally "Passed 16-14-0-0-0") and the bill text (provision_quote of the RCV-ban statute).

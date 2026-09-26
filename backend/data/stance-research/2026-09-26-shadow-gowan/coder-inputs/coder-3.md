@@ -654,11 +654,11 @@ Question: How should votes be cast and counted in elections?
 ## Sources
 
 ---
-snapshot_id: 79c3e913-529b-5175-ac31-31e7eb71c5da
+snapshot_id: 7c587e83-bcdd-54e7-ac3b-429cf75a55cb
 source_kind: public-record
 url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552
 
-Arizona State Legislature — Bill Status Inquiry, HB2552 (Fifty-sixth Legislature, 1st Regular Session 2023). Short Title: voting; elections; tally; prohibition. Sponsors: Smith (Prime) Biasiucci (Co-Sponsor) Bliss (Co-Sponsor) Carbone (Co-Sponsor) Carter (Co-Sponsor) Chaplik (Co-Sponsor) Diaz (Co-Sponsor) Dunn (Co-Sponsor) Gillette (Co-Sponsor) Grantham (Co-Sponsor) Gress (Co-Sponsor) Griffin (Co-Sponsor) Harris (Co-Sponsor) Heap (Co-Sponsor) Hendrix (Co-Sponsor) Jones (Co-Sponsor) Livingston (Co-Sponsor) Marshall (Co-Sponsor) Martinez (Co-Sponsor) McGarr (Co-Sponsor) Montenegro (Co-Sponsor) Nguyen (Co-Sponsor) Parker B (Co-Sponsor) Parker J (Co-Sponsor) Payne (Co-Sponsor) Peña (Co-Sponsor) Pingerelli (Co-Sponsor) Toma (Co-Sponsor) Wilmeth (Co-Sponsor) Farnsworth (Co-Sponsor) Gowan (Co-Sponsor) Hoffman (Co-Sponsor) Kern (Co-Sponsor) Kerr (Co-Sponsor) Mesnard (Co-Sponsor) Rogers (Co-Sponsor) Shamp (Co-Sponsor) Shope (Co-Sponsor) Wadsack (Co-Sponsor). Senate Third Reading - HB2552 voting; elections; tally; prohibition Action Date Action Vote 04/05/2023 Passed 16-14-0-0-0 ALSTON N BENNETT Y BORRELLI Y BURCH N CARROLL Y DIAZ N EPSTEIN N FARNSWORTH Y FERNANDEZ N GABALDÓN N GONZALES N GOWAN Y HATATHLIE N HERNANDEZ N HOFFMAN Y KAISER Y KAVANAGH Y KERN Y KERR Y MARSH N MENDEZ N MESNARD Y MIRANDA N ROGERS Y SHAMP Y SHOPE Y SUNDARESHAN N TERÁN N WADSACK Y PETERSEN Y Date Ayes Nays NV Exc Vac Emer Amend RFE RFEIR 2/3 Vote Action Show Senate THIRD 04/05/2023 16 14 0 0 0 PASSED Transmit to House: 04/05/2023 Transmit to Governor: 04/06/2023 Governor Action 04/12/2023 Vetoed Saved by browser from apps.azleg.gov BillStatus (Senate Third Reading vote detail) on 2026-09-26.
+Senate Third Reading - HB2552 voting; elections; tally; prohibition Action Date Action Vote 04/05/2023 Passed 16-14-0-0-0 ALSTON N BENNETT Y BORRELLI Y BURCH N CARROLL Y DIAZ N EPSTEIN N FARNSWORTH Y FERNANDEZ N GABALDÓN N GONZALES N GOWAN Y HATATHLIE N HERNANDEZ N HOFFMAN Y KAISER Y KAVANAGH Y KERN Y KERR Y MARSH N MENDEZ N MESNARD Y MIRANDA N ROGERS Y SHAMP Y SHOPE Y SUNDARESHAN N TERÁN N WADSACK Y PETERSEN Y [Vote detail dialog for HB2552 (2023) Senate Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-09-26.]
 
 ---
 snapshot_id: dcb501dd-ddc1-5ed2-968c-778fec53fa96

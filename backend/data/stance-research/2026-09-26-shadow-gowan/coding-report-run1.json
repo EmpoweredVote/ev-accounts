@@ -13,11 +13,15 @@
         "kind": "unanimous-chair",
         "value": 5,
         "shared_sources": [
-          "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+          "79c3e913-529b-5175-ac31-31e7eb71c5da",
           "dcb501dd-ddc1-5ed2-968c-778fec53fa96"
         ]
       },
       "confirm": [
+        "no-source-profile",
+        "chamber-not-evidenced",
+        "name-collision",
+        "tally-unreadable",
         "dates-imprecise"
       ],
       "stratum": {
@@ -29,10 +33,7 @@
         "confirm-failed"
       ],
       "seed": "none",
-      "profiles": [
-        "az-azleg-bill-status@1",
-        "az-azleg-bill-text@1"
-      ]
+      "profiles": []
     }
   ],
   "m1": {
@@ -57,5 +58,8 @@
       "rowErrors": 0
     }
   ],
-  "noProfileHosts": {}
+  "noProfileHosts": {
+    "www.azleg.gov": 1,
+    "apps.azleg.gov": 1
+  }
 }

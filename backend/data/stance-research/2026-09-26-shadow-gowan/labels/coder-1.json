@@ -9,6 +9,21 @@
       "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
       "passages": [
         {
+          "snapshot_id": "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2552 (2023)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page: Gowan voted Y on HB2552, a divided 16-14 tally.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
           "snapshot_id": "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
           "v1_attribution": "own-act",
           "v2_relevance": "on-question",
@@ -16,36 +31,21 @@
           "date": "2023",
           "v4_shape": "chair-shaped",
           "v5_time": "in-term",
-          "instrument": "HB 2552 (56th Legislature, 1st Regular Session 2023)",
+          "instrument": "HB 2552 (2023)",
           "provision_quote": "This state or a city, town, county or political subdivision of this state may not use any of the following voting methods in an election or nomination process for any state, city, town, county or federal office that does any of the following: 1. Allows voters to select or rank, designate or otherwise indicate approval of or preference for more candidates than are eligible to be declared elected for any office. 2. allows ballots cast to be tabulated in any manner that involves the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates.",
-          "note": "Bill text page prints the operative prohibition but names no voter, so actor and tally fields are null here.",
+          "note": "House Engrossed text of HB2552; single-subject bill adding A.R.S. 16-605 to prohibit ranked ballots and multi-round elimination tabulation.",
           "record_kind": "vote",
           "actor_quote": null,
           "tally_quote": null
-        },
-        {
-          "snapshot_id": "79c3e913-529b-5175-ac31-31e7eb71c5da",
-          "v1_attribution": "own-act",
-          "v2_relevance": "on-question",
-          "v3_class": "record",
-          "date": "2023-04-05",
-          "v4_shape": "chair-shaped",
-          "v5_time": "in-term",
-          "instrument": "HB 2552 (56th Legislature, 1st Regular Session 2023)",
-          "provision_quote": null,
-          "note": "Senate Third Reading roll call records Gowan Y and a divided 16-14 tally; the same page lists him as a co-sponsor.",
-          "record_kind": "vote",
-          "actor_quote": "GONZALES N GOWAN Y HATATHLIE N",
-          "tally_quote": "Passed 16-14-0-0-0"
         }
       ],
       "v6_value": 5,
       "v6_blank_reason": null,
       "rests_on": [
-        "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
-        "79c3e913-529b-5175-ac31-31e7eb71c5da"
+        "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+        "dcb501dd-ddc1-5ed2-968c-778fec53fa96"
       ],
-      "reasoning": "Gowan is listed as \"Gowan (Co-Sponsor)\" on HB2552 (2023) and voted \"GOWAN Y\" on Senate Third Reading, a divided 16-14 vote. The bill is single-subject: its operative section bars any method that \"allows ballots cast to be tabulated in any manner that involves the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates.\" That is a statutory prohibition, matching \"Ban ranked-choice voting by law\" and excluding the rung that keeps single-choice voting \"but stop short of banning it.\"",
+      "reasoning": "Gowan voted Y on final Senate passage of HB2552 (2023), a single-subject bill whose operative section provides that this state or its subdivisions \"may not use any of the following voting methods\" that allow voters \"to select or rank\" candidates or that allow tabulation \"through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates.\" That is a statutory prohibition of ranked-choice voting, matching the rung \"Ban ranked-choice voting by law\" and excluding the rung that opposes adopting ranked-choice voting \"but stop[s] short of banning it\" as well as the rung allowing it \"where communities choose it.\" The 16-14 tally is far from near-unanimous, so the vote carries the chair on its own.",
       "needs_source": [],
       "quotes": []
     }

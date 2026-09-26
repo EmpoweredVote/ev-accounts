@@ -1,1 +1,68 @@
-[]
+[
+  {
+    "slot": 1,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "7c587e83-bcdd-54e7-ac3b-429cf75a55cb",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "dcb501dd-ddc1-5ed2-968c-778fec53fa96",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

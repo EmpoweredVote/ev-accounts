@@ -38,14 +38,16 @@ export type RecordFinding =
 export type Chamber = 'upper' | 'lower';
 
 export type VoteBlockRule = 'aye-count' | 'whole-page';
-export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'page-header' | 'bill-origin' | 'none';
+export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'page-header' | 'bill-origin' | 'none';
+export type TallyFormat = 'labelled' | 'dash-ayes-nays';
 export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
-export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat }
+export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat }
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
-export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'page-header', 'bill-origin', 'none'];
+export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'page-header', 'bill-origin', 'none'];
+export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
 export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
 /** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
-export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname' };
+export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled' };
 /** Per actor passage: the rules of its source and the seat's chamber in that body. */
 export type PassageProfile = { rules: SourceRules; chamber: Chamber | null };
 export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
@@ -73,8 +75,13 @@ function readSide(pluralAlt: string, singularAlt: string, s: string): number | n
   return candidates.length === 1 ? candidates[0] : null;
 }
 
-export function parseTally(q: string): { ayes: number; noes: number } | null {
+export function parseTally(q: string, format: TallyFormat = 'labelled'): { ayes: number; noes: number } | null {
   const s = q.replace(/\s+/g, ' ');
+  if (format === 'dash-ayes-nays') {
+    // "16-14-0-0-0": Ayes-Nays-NV-Excused-Vacant (Arizona). Exactly one such run, else ambiguous.
+    const runs = [...s.matchAll(/(?<![\d-])(\d+)-(\d+)(?:-\d+){1,4}(?![\d-])/g)];
+    return runs.length === 1 ? { ayes: Number(runs[0][1]), noes: Number(runs[0][2]) } : null;
+  }
   const ayes = readSide('ayes|yeas', 'aye|yea', s);
   const noes = readSide('noes|nays', 'no|nay', s);
   return ayes !== null && noes !== null ? { ayes, noes } : null;
@@ -100,7 +107,7 @@ function billTokenOf(instrument: string | null | undefined): string | null {
  * short instrument ("SB 20") does not match a page about a different, longer bill number
  * ("SB 1174" / "Senate Bill 208").
  */
-function pageShowsInstrument(pageText: string, instrument: string | null | undefined): boolean {
+export function pageShowsInstrument(pageText: string, instrument: string | null | undefined): boolean {
   const token = billTokenOf(instrument);
   if (!token) return false;
   const compact = normalizeInstrumentForm(pageText.toLowerCase()).replace(/[\s.-]/g, '');
@@ -209,6 +216,18 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
       const b = blockOf(bounds, a);
       const start = b >= 1 ? bounds[b - 1] : 0;
       for (let k = a - 1; k >= start; k--) if (pt[k + 1] === 'floor') { const c = chamberAt(pt, k, extra); if (c) return c; }
+      return null;
+    }
+    case 'word-before-reading': {
+      // "Senate Third Reading" on an Arizona vote page names the chamber that voted (unlike CA's
+      // "Motion Assembly 3rd Reading", the bill's origin): the chamber word directly before
+      // "[ordinal] reading", bounded like word-before-floor.
+      const b = blockOf(bounds, a);
+      const start = b >= 1 ? bounds[b - 1] : 0;
+      for (let k = a - 1; k >= start; k--) {
+        const c = CHAMBER_WORD[pt[k]];
+        if (c && (pt[k + 1] === 'reading' || (ORDINAL.test(pt[k + 1] ?? '') && pt[k + 2] === 'reading'))) return c;
+      }
       return null;
     }
     case 'page-header':
@@ -341,7 +360,7 @@ export function checkRecordGroup(i: {
     const votePages = actorPassages.filter((p) => p.record_kind === 'vote');
     if (votePages.length === 0) out.add('vote-not-evidenced');
     for (const p of votePages) {
-      const t = p.tally_quote && quoteWordsIn(textOf(p), p.tally_quote) ? parseTally(p.tally_quote) : null;
+      const t = p.tally_quote && quoteWordsIn(textOf(p), p.tally_quote) ? parseTally(p.tally_quote, prof(p).rules.tally_format) : null;
       // A 0-0 tally proves no division at all: fail closed (final review fix 3).
       if (!t || t.ayes + t.noes === 0) out.add('tally-unreadable');
       else if (isNearUnanimous(t)) out.add('near-unanimous-vote');
