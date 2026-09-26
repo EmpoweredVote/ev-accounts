@@ -7,7 +7,7 @@
 import { normalizeText } from '../../src/lib/researchVerifier.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
-export const CODEBOOK_VERSION = '0.2';
+export const CODEBOOK_VERSION = '0.3';
 
 export const V1_ATTRIBUTION = ['own-words', 'own-act', 'third-party-characterization', 'namesake-unclear'] as const;
 export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;
@@ -18,6 +18,7 @@ export const BLANK_REASONS = ['no-evidence', 'direction-only', 'adjacent-chairs'
 export const V7_TIER = ['lever', 'direction', 'none'] as const;
 export const V7_FLAGS = ['lever-named', 'lever-unclear'] as const;
 export const V8_CODES = ['not-forward', 'is-attack', 'off-question', 'misleading-verbatim', 'source-not-an-answer', 'deid-dishonest', 'non-differentiating-goal'] as const;
+export const RECORD_KIND = ['vote', 'sponsor', 'author', 'other-act'] as const;
 /** V8 codes that do not gate (PRINCIPLES.md: flag for a human, no blanket gate). */
 const NON_GATING_V8 = new Set<string>(['non-differentiating-goal']);
 
@@ -32,6 +33,9 @@ export interface Passage {
   instrument: string | null;
   provision_quote: string | null;
   note?: string;
+  record_kind?: typeof RECORD_KIND[number] | null;
+  actor_quote?: string | null;
+  tally_quote?: string | null;
 }
 export interface QuoteLabel {
   snapshot_id: string;
@@ -74,6 +78,35 @@ export const verbatimIn = (snapshotText: string, span: string): boolean => {
   const s = normalizeText(span);
   return s.length > 0 && normalizeText(snapshotText).includes(s);
 };
+
+/**
+ * A coder (or a source page) may write a bill's chamber as the long form ("Senate Bill 208") or the
+ * short prefix ("SB 208") — the IN bill-listing page only ever prints the long form, while its own
+ * roll-call PDFs print the short form ("HB 1041"), and coders mix the two freely. Mapped to the short
+ * prefix (case-insensitive, whole "<chamber> bill" as two words) so both spellings of the same
+ * instrument produce one key, and so a page in the long form still shows a short-form instrument label
+ * (recordBasis.ts `pageShowsInstrument`).
+ */
+const LONG_FORM_BILL = /\b(senate|house|assembly)\s+bill\b/gi;
+const LONG_FORM_PREFIX: Record<string, string> = { senate: 'sb', house: 'hb', assembly: 'ab' };
+export function normalizeInstrumentForm(s: string): string {
+  return s.replace(LONG_FORM_BILL, (_m, chamber: string) => LONG_FORM_PREFIX[chamber.toLowerCase()]);
+}
+
+/**
+ * The grouping key for a record's instrument (confirm-basis spec §2): one bill in one session.
+ * Shared by the validator (per-group record fields) and recordBasis/confirm (per-group CONFIRM).
+ */
+export function instrumentKey(s: string | null | undefined): string | null {
+  if (!s || !s.trim()) return null;
+  let out = normalizeInstrumentForm(s.toLowerCase().replace(/[–—]/g, '-'));
+  // A hyphen directly between a letter and a digit is bill-number punctuation ("SB-1174"), not a
+  // range, so it must not survive to distinguish "SB-1174" from "SB 1174". A hyphen between two
+  // digits (a session range like "2023-2024") IS the range and must be kept — different sessions of
+  // the same bill number are different instruments.
+  out = out.replace(/([a-z])-(\d)/g, '$1$2').replace(/(\d)-([a-z])/g, '$1$2');
+  return out.replace(/[\s.]/g, '');
+}
 
 const isObj = (x: unknown): x is Record<string, unknown> => typeof x === 'object' && x !== null && !Array.isArray(x);
 const isStrArr = (x: unknown): x is string[] => Array.isArray(x) && x.every((v) => typeof v === 'string');
@@ -122,7 +155,33 @@ function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): V
       if (typeof p.provision_quote !== 'string') errors.push(`${where}: provision_quote not a string`);
       else if (text !== undefined && !verbatimIn(text, p.provision_quote)) errors.push(`${where}: provision_quote not verbatim in snapshot`);
     }
+    if (p.v3_class === 'record') {
+      if (p.record_kind === null || p.record_kind === undefined) errors.push(`${where}: record_kind required for a record`);
+      else { const e = enumErr(where, 'record_kind', p.record_kind, RECORD_KIND); if (e) errors.push(e); }
+    }
+    for (const f of ['actor_quote', 'tally_quote'] as const) {
+      const v = p[f];
+      if (v === null || v === undefined) continue;
+      if (typeof v !== 'string') errors.push(`${where}: ${f} not a string`);
+      else if (text !== undefined && !verbatimIn(text, v)) errors.push(`${where}: ${f} not verbatim in snapshot`);
+    }
     byId.set(p.snapshot_id, p as unknown as Passage);
+  }
+  // Record fields are required per INSTRUMENT GROUP, not per passage (ruling 2026-09-26, "Per
+  // group"): a vote is usually a vote page (names the voter, carries the tally) plus a bill-text page
+  // (carries the provision, names no voters). Grouped across every record passage of the row — the
+  // same key CONFIRM uses — so a label is judged on what it submitted, not only on rests_on.
+  const groups = new Map<string, Record<string, unknown>[]>();
+  for (const p of passages) {
+    if (!isObj(p) || typeof p.snapshot_id !== 'string' || p.v3_class !== 'record') continue;
+    const k = instrumentKey(typeof p.instrument === 'string' ? p.instrument : null) ?? '∅';
+    groups.set(k, [...(groups.get(k) ?? []), p]);
+  }
+  const has = (v: unknown) => typeof v === 'string' && v.trim().length > 0;
+  for (const g of groups.values()) {
+    const label = typeof g[0].instrument === 'string' && g[0].instrument.trim() ? g[0].instrument.trim() : '(no instrument)';
+    if (!g.some((p) => has(p.actor_quote))) errors.push(`record ${label}: no passage carries actor_quote`);
+    if (g.some((p) => p.record_kind === 'vote') && !g.some((p) => has(p.tally_quote))) errors.push(`record ${label}: no passage carries tally_quote`);
   }
   const value = raw.v6_value;
   const reason = raw.v6_blank_reason;

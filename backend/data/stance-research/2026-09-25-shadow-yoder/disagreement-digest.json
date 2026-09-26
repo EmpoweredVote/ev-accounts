@@ -1,27 +1,18 @@
 {
-  "codebook_version": "0.2",
+  "codebook_version": "0.3",
   "variables": [
     {
       "variable": "v1_attribution",
-      "units": 12,
-      "split_units": 1,
-      "alpha": 0.8929765886287625,
-      "examples": [
-        {
-          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
-          "values": [
-            "namesake-unclear",
-            "third-party-characterization",
-            null
-          ]
-        }
-      ]
+      "units": 11,
+      "split_units": 0,
+      "alpha": 1,
+      "examples": []
     },
     {
       "variable": "v2_relevance",
-      "units": 12,
+      "units": 11,
       "split_units": 2,
-      "alpha": 0.7217391304347827,
+      "alpha": 0.7142857142857143,
       "examples": [
         {
           "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|00b95a6a-75db-4521-b523-3326bba938de#e36cea0e-6089-553b-a548-86bedbe14664",
@@ -43,50 +34,34 @@
     },
     {
       "variable": "v3_class",
-      "units": 12,
-      "split_units": 3,
-      "alpha": 0.6981132075471699,
+      "units": 11,
+      "split_units": 2,
+      "alpha": 0.8153846153846154,
       "examples": [
         {
-          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|af2fdfd6-02c4-49df-b09c-cf8536f4773f#817d3595-590f-5246-99dc-8dd40395e766",
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|af2fdfd6-02c4-49df-b09c-cf8536f4773f#f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
           "values": [
-            "not-evidence",
-            null,
-            "record"
+            "statement-other",
+            "statement-other",
+            "statement-answer"
           ]
         },
         {
           "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|4559b513-0fd8-4ed1-babd-f3b554162f40#e36cea0e-6089-553b-a548-86bedbe14664",
           "values": [
             "statement-answer",
-            "statement-answer",
-            "statement-other"
-          ]
-        },
-        {
-          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
-          "values": [
-            "record",
-            "not-evidence",
-            null
+            "statement-other",
+            "statement-answer"
           ]
         }
       ]
     },
     {
       "variable": "v4_shape",
-      "units": 12,
-      "split_units": 4,
-      "alpha": 0.6353276353276354,
+      "units": 11,
+      "split_units": 3,
+      "alpha": 0.7058823529411764,
       "examples": [
-        {
-          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|af2fdfd6-02c4-49df-b09c-cf8536f4773f#f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
-          "values": [
-            "direction-only",
-            "rhetorical",
-            "rhetorical"
-          ]
-        },
         {
           "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|00b95a6a-75db-4521-b523-3326bba938de#e36cea0e-6089-553b-a548-86bedbe14664",
           "values": [
@@ -96,18 +71,26 @@
           ]
         },
         {
-          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1618b9c-0b9e-45af-b986-bb33d270b8e4#52da5a1f-8a21-524a-9a16-3b1a2af5e666",
           "values": [
-            "chair-shaped",
             "off-axis",
-            null
+            "off-axis",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "5aa536e1-faaa-485c-b6d8-0e4d99d16361|09c567c5-b19f-41d4-b113-5982ad0df4e1|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#0fd9f104-4605-5f68-a1b1-189d71fcf056",
+          "values": [
+            "rhetorical",
+            "off-axis",
+            "rhetorical"
           ]
         }
       ]
     },
     {
       "variable": "v5_time",
-      "units": 12,
+      "units": 11,
       "split_units": 0,
       "alpha": null,
       "examples": []
@@ -122,8 +105,7 @@
   ],
   "ranked": [
     "v4_shape",
-    "v3_class",
     "v2_relevance",
-    "v1_attribution"
+    "v3_class"
   ]
 }

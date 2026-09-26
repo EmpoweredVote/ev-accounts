@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildCoderPrompt, shuffleSeeded, seedFor, type SeatContext, type PromptTopic } from './coderPrompt.js';
 import type { SnapshotRecord } from './snapshotSources.js';
+import type { S1Lead } from './s1Leads.js';
 
 const seat: SeatContext = {
   politician_id: 'p1', full_name: 'J. Stuart Adams', level: 'state', mode: 'seated', office_id: 'o1',
@@ -52,4 +53,23 @@ describe('buildCoderPrompt', () => {
     expect(p).toMatch(/Use only the Write tool/);
   });
   it('never mentions party', () => expect(build(1, 1)).not.toMatch(/\b(Republican|Democrat)/));
+  it('never receives an S1 lead — its reasoning cannot reach the prompt, and no parameter accepts one', () => {
+    const lead: S1Lead = {
+      topic_id: 't1', topic_key: 'trans-athletes', season_number: 1, value: 4, pin_revision_id: 'r1',
+      reasoning: 'S1-LEAD-MARKER (a prior season answer — must never anchor a coder)', sources: [], seed: 'fresh',
+    };
+    // Built through the same inputs build-coder-inputs.ts assembles for a real prompt: SeatContext +
+    // PromptTopic[] + SnapshotRecord[] — none of them carry an S1Lead, so there is no field anywhere
+    // in this call that could smuggle `lead.reasoning` through, even by accident.
+    const p = buildCoderPrompt({ codebookMd: '# CODEBOOK', seat, topics: [topic], snapshots: snaps, slot: 1, seed: 1, labelPath: '/b/labels/coder-1.json' });
+    expect(p).not.toContain(lead.reasoning);
+    expect(p).not.toContain('S1-LEAD-MARKER');
+
+    // Type-level guard: buildCoderPrompt's parameter object has no field for a lead today. If a
+    // later change adds one (an `s1Leads` property, say), the excess-property check below starts
+    // passing, TypeScript reports the `@ts-expect-error` as unused, and the direct tsc run in the
+    // brief (which covers this file) turns red — catching the regression before it ships.
+    // @ts-expect-error buildCoderPrompt accepts no s1Leads/leads parameter — adding one must break this.
+    buildCoderPrompt({ codebookMd: '# CODEBOOK', seat, topics: [topic], snapshots: snaps, slot: 1, seed: 1, labelPath: '/b/labels/coder-1.json', s1Leads: [lead] });
+  });
 });

@@ -14,6 +14,8 @@ import { validateCoderLabelFile, CODEBOOK_VERSION } from './lib/coderLabel.js';
 import type { CoderRow } from './lib/coderLabel.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { buildDisagreementDigest, validRowsFirstOccurrence } from './lib/disagreementDigest.js';
+import type { S1Lead } from './lib/s1Leads.js';
+import { loadSourceProfiles } from './lib/sourceProfiles.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
@@ -28,6 +30,10 @@ const snapshots = JSON.parse(readFileSync(join(dir, 'snapshots.json'), 'utf8')) 
 const snapshotText = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map((s) => [s.snapshot_id, s.snapshot_text!]));
 // snapshot_id -> source_kind: CONFIRM refuses a chair resting on a pointer, the report flags news-only.
 const sourceKind = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map((s) => [s.snapshot_id, s.source_kind as string]));
+// snapshot_id -> original URL: CONFIRM resolves a source profile per record passage from this (spec
+// 2026-09-26-source-profiles). Loaded once; a passage whose URL matches no profile fails closed.
+const snapshotUrl = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map((s) => [s.snapshot_id, s.url]));
+const profiles = loadSourceProfiles();
 const files = new Map<number, unknown>();
 const rawText = new Map<number, string>();
 for (const slot of [1, 2, 3]) {
@@ -37,7 +43,22 @@ for (const slot of [1, 2, 3]) {
   rawText.set(slot, t);
   try { files.set(slot, JSON.parse(t)); } catch { files.set(slot, t); } // prose → invalid, not a crash
 }
-const report = buildCodingReport({ context, files, snapshotText, sourceKind });
+// s1-leads.json is COLLECTOR-ONLY (build-s1-leads.ts) — an information-only seed flag on the
+// report, never anything a coder saw and never anything that changes shadow/shadow_reasons.
+const s1LeadsPath = join(dir, 's1-leads.json');
+let s1Leads: S1Lead[] | undefined;
+if (existsSync(s1LeadsPath)) {
+  const s1LeadsFile = JSON.parse(readFileSync(s1LeadsPath, 'utf8')) as { politician_id: string; leads: S1Lead[] };
+  // The leads file names the politician it was built for — refuse it if that batch has since been
+  // reused for someone else, rather than silently attaching another person's leads to this report.
+  if (s1LeadsFile.politician_id !== context.seat.politician_id) {
+    console.error(`ERROR: ${s1LeadsPath} was built for politician ${s1LeadsFile.politician_id}, `
+      + `but this batch's politician is ${context.seat.politician_id} — refusing to use leads built for someone else`);
+    process.exit(1);
+  }
+  s1Leads = s1LeadsFile.leads;
+}
+const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads, snapshotUrl, profiles });
 writeFileSync(join(dir, 'coding-report.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, models, ...report }, null, 2));
 writeFileSync(join(dir, 'needs-source.json'), JSON.stringify(report.needsSource, null, 2));
 
@@ -45,6 +66,7 @@ console.log(`M1 (batch) alpha = ${report.m1.alpha === null ? 'undefined' : repor
 for (const v of report.validity) console.log(`coder ${v.slot}: ${v.fileErrors.length ? v.fileErrors.join('; ') : 'file ok'}, ${v.rowErrors} invalid row(s)`);
 for (const r of report.rows) console.log(`${r.shadow.padEnd(27)} ${r.topic_key.padEnd(28)} ${r.outcome.kind}${r.shadow_reasons.length ? `  [${r.shadow_reasons.join(', ')}]` : ''}`);
 if (report.needsSource.length) console.log(`\n${report.needsSource.length} row(s) request sources → ${join(dir, 'needs-source.json')} (collector fetches, then re-snapshot and re-code all three)`);
+for (const [host, n] of Object.entries(report.noProfileHosts)) console.log(`no source profile: ${host} ×${n} — write docs/sources/… for it (spec 2026-09-26)`);
 
 // Improvement loop 1 (spec sec10.1): which codebook variables did the coders read differently?
 const validRows = new Map<number, CoderRow[]>();

@@ -1,10 +1,1 @@
-Wrote `coder-2.json` with 7 rows. Summary of chairs assigned:
-
-- **voting-rights: chair 1** — SB-1174 (Durazo Aye, signed into law) bars any local ID requirement to vote, matching rung 1's no-ID/signature-verification standard and excluding rungs 2–5's ID requirements.
-- **abortion, school-vouchers**: BLANK `no-evidence` — no sources touch these topics at all.
-- **childcare**: BLANK `no-evidence` — SB-1112 is a narrow admin-cost/reimbursement tweak to an existing subsidy program, adjacent to the ladder's eligibility/generosity clauses.
-- **data-centers**: BLANK `no-evidence` — SB-57 only authorizes a PUC cost-shift study/report, a study-directive, not a moratorium/bar/permitting/minimal-barriers rule.
-- **deportation**: BLANK `no-evidence` — SB-580 (Durazo's own bill) limits state/local cooperation with immigration enforcement, off the axis of who gets deported.
-- **trans-athletes**: BLANK `no-evidence` — AB-1955 is about non-consensual disclosure of gender identity/orientation, unrelated to sports eligibility.
-
-No candidate quotes were available in any source (only vote tallies and bill text, no first-person statements), so all `quotes` arrays are empty.
+Wrote all 7 rows to coder-2.json. Only voting-rights, childcare, and data-centers had usable record evidence, plus a deportation row from Durazo's own SB 580 authorship — all landed BLANK (`no-evidence`) because the matching passages were adjacent/off-axis/study-directive rather than chair-shaped. Abortion, school-vouchers, and trans-athletes had no relevant sources at all.

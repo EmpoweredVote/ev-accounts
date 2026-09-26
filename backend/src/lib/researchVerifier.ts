@@ -237,7 +237,7 @@ export const NAME_PROXIMITY_CHARS = 500;
 
 // Last names common enough that a bare match is too coincidence-prone — require
 // a title qualifier (Sen./Rep./Mayor/Gov./Pres./Councilor/etc.) nearby.
-const COMMON_LAST_NAMES = new Set([
+export const COMMON_LAST_NAMES: ReadonlySet<string> = new Set([
   'smith', 'johnson', 'williams', 'brown', 'jones', 'garcia', 'miller',
   'davis', 'rodriguez', 'martinez', 'hernandez', 'lopez', 'gonzalez',
   'wilson', 'anderson', 'thomas', 'taylor', 'moore', 'jackson', 'martin',

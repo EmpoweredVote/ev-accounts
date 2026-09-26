@@ -1,22 +1,18 @@
-Wrote `labels/coder-1.json` — 7 rows, codebook 0.2, coder slot 1.
+Wrote `labels/coder-1.json` — 7 rows, all BLANK.
 
-**One numeric chair:**
-
-- **voting-rights → 1.** Her Aye on SB 1174 (2023–2024), a single-subject act adding one Elections Code section barring local governments from requiring "identification for the purpose of voting or submitting a ballot." That matches rung 1 and excludes rung 2, since the ban reaches non-photo ID as well. 30–8, so not near-unanimous. `provision_quote` sits on the bill-text snapshot (the vote snapshot contains only roll-call blocks); `rests_on` names both.
-
-**Six blanks:**
-
-| Topic | Reason | Why |
+| topic | code | why |
 |---|---|---|
-| abortion | `no-evidence` | Only SB 729 (fertility coverage) — off the abortion question |
-| childcare | `no-evidence` | SB 1112 is an admin-cost technicality; also 40–0 and 38–0 |
-| data-centers | `no-evidence` | SB 57 is a study directive ("may assess… cost shifts" + report) |
-| deportation | `direction-only` | She authored SB 580, but it governs state cooperation, not who gets removed — fits rungs 1, 2 and 3 alike |
-| school-vouchers | `no-evidence` | Only SB 494, superintendent-termination procedure |
-| trans-athletes | `no-evidence` | AB 1955 is about disclosure and staff retaliation, not athletic eligibility |
+| abortion | BLANK `no-evidence` | Only SB 729 (infertility coverage) is in the sources — V2 `off`. |
+| childcare | BLANK `no-evidence` | SB 1112 only clarifies allowable administrative costs; V2 `adjacent`, and the 40-0 vote is `near-unanimous`. |
+| data-centers | BLANK `no-evidence` | SB 57 authorizes a CPUC assessment and report — V4 `study-directive`, no rung clause. |
+| deportation | BLANK `direction-only` | Her authored SB 580 limits state assistance with immigration enforcement but names no class of person, so it can't separate rung 1 from rung 2. |
+| school-vouchers | BLANK `no-evidence` | Only SB 494 (superintendent termination procedure) — V2 `off`. |
+| trans-athletes | BLANK `no-evidence` | AB 1955 is a disclosure rule, not sports eligibility — V2 `adjacent`. |
+| voting-rights | BLANK `no-evidence` | SB 1174 is preemption (codebook H12) — `adjacent`, not rung 1. |
 
-Judgment calls worth flagging for the reviewer:
+Notes on the two judgment calls:
 
-- **deportation** is the closest split risk. SB 580 is her own authored record and squarely in the immigration-enforcement area, so I coded V2 `on-question` and let V4 carry the failure. A coder reading V2 as `adjacent` (the rungs separate on *whom* to deport; the bill separates on *whether the state assists*) would land on `no-evidence` instead. Either way it blanks. I also noted in `needs_source` that the row owner should check `compass_topic_roles` — deportation scope is federal, so this may be `scope-unavailable` at a state seat.
-- I coded bill-text snapshots as `own-act` where the person voted on or authored the instrument; that's the only V1 value that fits a statute she acted on, and it's what lets the SB 1174 text into `rests_on`.
-- No candidate quotes exist in the sources — all thirteen snapshots are leginfo bill texts and roll-call blocks — so `quotes` is empty on every row rather than manufactured from statutory language.
+- **Deportation** is the only row where I let a passage through V2. SB 580 is her own authored act and it does bear on how far government goes in facilitating removal, but the operative sections order model policies and database guidance — they name no category of person. The findings clause about persons "who do not pose a public safety risk" points toward a rung-2-style carve-out, but it's a recital, so under V4.1 it doesn't govern. Hence `direction-only` rather than `no-evidence`.
+- **Voting-rights** is the documented H12 case; I coded it adjacent as the codebook's own worked example requires, and quoted the preemption clause as the `provision_quote` on the bill-text page.
+
+Every `record` instrument group carries `actor_quote` on the page that prints the voter (or the author line for SB 580), and each vote group carries `tally_quote` from the same page; bill-text pages carry `null` for both and hold the `provision_quote`. All quoted strings are copied from the snapshots, including the curly apostrophes in the AB 1955 text.

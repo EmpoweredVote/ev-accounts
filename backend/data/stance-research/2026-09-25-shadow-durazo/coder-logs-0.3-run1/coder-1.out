@@ -1,0 +1,23 @@
+Wrote `coder-1.json` — 7 rows, codebook 0.3, coder slot 1.
+
+**One numeric chair:**
+
+- **voting-rights → 1.** Aye on SB 1174 (2023-2024), single-subject, operative section bars any local ID requirement "for the purpose of voting or submitting a ballot". That is the rung "Require no identification to vote, verifying voters by signature or existing records." and it excludes every rung requiring non-photo ID, photo ID, or proof of citizenship. Tally 30-8, past the near-unanimous threshold.
+
+**Six blanks:**
+
+| Topic | Reason | Why |
+|---|---|---|
+| abortion | `no-evidence` | Only SB 729 (fertility coverage) — off-question for abortion legality |
+| childcare | `no-evidence` | SB 1112 is an administrative reimbursement clarification (adjacent) and passed 40-0 |
+| data-centers | `no-evidence` | SB 57 authorizes a PUC assessment and report → `study-directive` |
+| deportation | `direction-only` | She authored SB 580, but limiting state assistance and database access doesn't separate rungs 1/2/3 |
+| school-vouchers | `no-evidence` | Only SB 494 (superintendent termination), off-question |
+| trans-athletes | `no-evidence` | AB 1955 is pupil-privacy/disclosure, not athletic eligibility |
+
+Two notes on judgment calls you may want to check against the other coders:
+
+- **SB 580 (deportation)** is her own authored record and squarely on the topic, so I kept it at V2 `on-question` and let it die at V4 rather than calling it adjacent — that makes the blank reason `direction-only` rather than `no-evidence`.
+- **provision_quote placement for SB 1174.** The operative text lives in the bill-text snapshot (`d7255bbb…`), not the votes snapshot. V4.1 says "verbatim from a snapshot" and the record-fields rule contemplates one record spanning pages that name the same instrument, so I put the operative quote on the vote passage and named the source snapshot in `note`. If your gate checks verbatim strictly against the passage's own snapshot, that field will trip and needs a schema decision, not a re-code.
+
+`quotes` is empty on every row — all seven sources are public records; no candidate quote passages were supplied.

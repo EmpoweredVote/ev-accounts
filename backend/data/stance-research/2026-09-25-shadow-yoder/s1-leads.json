@@ -1,0 +1,100 @@
+{
+  "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+  "leads": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+      "reasoning": "Yoder wrote an open letter condemning Indiana's near-total abortion ban and introduced SB 208 in 2023 to reestablish licensed abortion clinics and remove the eight-week limit on abortion-inducing drugs. She has listed restoring reproductive rights as a top priority and stated that court rulings affirm \"access to abortion is a vital healthcare service in which the government should not intervene.\"",
+      "sources": [
+        "https://indianasenatedemocrats.org/open-letter-from-senator-shelli-yoder-on-the-indiana-abortion-ban/",
+        "https://www.shelliyoder.com/priorities",
+        "https://ballotpedia.org/Shelli_Yoder"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "f6630c71-8ba8-464d-82d4-9079803d4e8b",
+      "reasoning": "Yoder opposed Indiana legislation subsidizing small modular nuclear reactors (HB 1007, 2025) when her amendment to limit consumer cost-shifting failed 11-35. She separately criticized Duke Indiana's proposed 33% electricity rate hike and has been focused on ensuring data center energy costs do not burden ratepayers, reflecting a position of supporting regulation and oversight of how data center energy demands affect consumers rather than allowing utilities to pass costs freely.",
+      "sources": [
+        "https://indianasenatedemocrats.org/senator-yoder-criticizes-proposed-duke-electricity-rate-increases/",
+        "https://www.citact.org/senator-shelli-yoder-d-bloomington-district-40"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+      "reasoning": "Yoder introduced legislation to divest Indiana's public pension from fossil fuel companies, stating that 'Indiana seems to be headed full steam in the opposite direction' as other states divest. She opposed HB 1007 (2025) which subsidized small modular nuclear reactors, and has consistently advocated for renewable energy expansion over fossil fuel infrastructure.",
+      "sources": [
+        "https://www.citact.org/senator-shelli-yoder-d-bloomington-district-40",
+        "https://www.shelliyoder.com/priorities"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "92e96359-57a9-4c7e-a78e-a6f1af105ec6",
+      "reasoning": "Yoder fought the 2025 Indiana Medicaid restructuring bill (SB 2) that imposed work requirements and capped enrollment at 500,000 — nearly 200,000 below current levels — warning it would cause hospitals to close and harm the poorest communities. She advocates for expanding Medicaid access and has highlighted Indiana's 17 counties without a hospital as evidence that coverage gaps are already harming residents.",
+      "sources": [
+        "https://www.wfyi.org/news/articles/indiana-senate-passes-medicaid-hip-overhaul-despite-concerns-about-access-coverage",
+        "https://www.wbaa.org/local-news/2025-02-18/indiana-senate-passes-medicaid-hip-overhaul-despite-concerns-about-access-coverage"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "835bc8d1-b31b-4fef-9cca-31318cc0f1d6",
+      "reasoning": "Yoder has consistently opposed Indiana's universal school voucher expansion, calling it 'disruptive to public schools and teachers' after HB 1001 made vouchers universal in 2025. She questioned the equity of ESA proposals (SB 255, 2024), noting transportation barriers exclude low-income families. Her position is not outright abolition — she has said 'if we are going to be a universal school choice state, every school must be held to the same accountability and transparency standards' — and Senate Democrats under her leadership introduced SB 320 and SB 403 to impose accountability on voucher schools, placing her at strongly limit vouchers rather than eliminate them.",
+      "sources": [
+        "https://indianacapitalchronicle.com/2024/01/19/indiana-senator-eyes-2025-for-school-choice-overhaul/",
+        "https://www.chalkbeat.org/indiana/2024/01/18/indiana-lawmakers-school-funding-students-first-proposal-bill/",
+        "https://www.ipm.org/news/2026-04-24/senate-minority-leader-criticizes-new-laws-during-legislative-recap-in-goshen"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+      "reasoning": "Yoder was one of only 6 senators to vote against Indiana's 2025 transgender collegiate sports ban (HB 1041), which passed 42-6. She argued the bill provided 'a license to discriminate' and 'a license to sexually harass,' with no protections against genital inspections or forced medical disclosure, and that it would endanger intersex students and others who 'don't fit into a mold.'",
+      "sources": [
+        "https://indianacapitalchronicle.com/2025/04/04/ban-on-transgender-female-athletes-from-womens-college-teams-passes-with-bipartisan-support/",
+        "https://www.axios.com/local/indianapolis/2025/04/18/indiana-democrats-split-vote-transgender-athlete-sports-ban",
+        "https://www.wfyi.org/news/articles/senate-sends-transgender-collegiate-sports-ban-to-governors-desk-with-bipartisan-support"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "63c52abb-fc28-42a3-a421-a27eced16da0",
+      "reasoning": "Yoder has listed 'expanding voting rights' as a core policy priority and challenged Indiana's 2025 student ID voting ban, asking 'where is the fraud? Where is the abuse of student IDs in our elections?' Democrats were uniformly opposed to the measure, which passed 39-9. She supports broader access to voting and opposes restrictions that make it harder for eligible citizens to vote.",
+      "sources": [
+        "https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/",
+        "https://www.shelliyoder.com/priorities",
+        "https://ballotpedia.org/Shelli_Yoder"
+      ],
+      "seed": "stale"
+    }
+  ]
+}
