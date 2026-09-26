@@ -1,0 +1,4094 @@
+{
+  "state": "IN",
+  "generated_at": "2026-09-26T01:13:13.527Z",
+  "openstates_dir": "/private/tmp/claude-501/-Users-chrisandrews-Documents-GitHub-ev-accounts--claude-worktrees-clever-leakey-bd9943/6b39416e-dfe7-4b74-9487-27155eb0d3ad/scratchpad/openstates-people",
+  "proposals": [
+    {
+      "term_id": "11592fda-56c5-4f9e-8b08-b0d9a3880ec1",
+      "office_id": "13d4f894-0117-404f-b9e0-b6759ab3366b",
+      "politician_id": "8c12dbdc-8afa-409a-8681-928c2e23e93e",
+      "full_name": "Robert B Johnson",
+      "chamber": "Indiana House of Representatives",
+      "district": "100",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5fd5f8d8-b47c-4b69-ba1a-d89f0fb106a7",
+        "name": "Blake Johnson",
+        "tenure_start": "2020-06-27",
+        "official_links": [
+          "https://iga.in.gov/legislative/2020/legislators/legislator_blake_johnson_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_blake_johnson_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_blake_johnson_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2020-06-27"
+      ]
+    },
+    {
+      "term_id": "c2bb5281-71a7-4894-82f0-772fa3e0cf23",
+      "office_id": "30451f34-837d-4474-96b2-b75dfc37f7ad",
+      "politician_id": "6882686d-8db8-445c-9a5c-8f85f0c1ad5e",
+      "full_name": "Bruce Borders",
+      "chamber": "Indiana House of Representatives",
+      "district": "45",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fe83212e-72d8-4d9c-80cb-338c7f318f09",
+        "name": "Bruce Borders",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_bruce_borders_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_bruce_borders_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_bruce_borders_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5da192a1-7753-4ab7-a0b4-c0ae4b840db5",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "full_name": "Bob Heaton",
+      "chamber": "Indiana House of Representatives",
+      "district": "46",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/791928fe-00bb-46bf-9b57-36b7a40e0250",
+        "name": "Bob Heaton",
+        "tenure_start": "2010-11-16",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robert_heaton_1030",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robert_heaton_1030/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_robert_heaton_1030/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2010-11-16"
+      ]
+    },
+    {
+      "term_id": "f06644ad-fdf8-46a3-a910-e0627f6e6c63",
+      "office_id": "4e827459-027f-4998-b86d-c01355c44ed8",
+      "politician_id": "f84421ea-eb49-44c3-a6a7-a3cfaf5dc745",
+      "full_name": "Peggy Mayfield",
+      "chamber": "Indiana House of Representatives",
+      "district": "60",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0acb3367-1e1e-404e-89c8-82e3c6754235",
+        "name": "Peggy Mayfield",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_peggy_mayfield_1121",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_peggy_mayfield_1121/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_peggy_mayfield_1121/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "63ce3d19-c75c-40db-9628-ced2c6d97438",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "full_name": "Matt Pierce",
+      "chamber": "Indiana House of Representatives",
+      "district": "61",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c66bcc9b-d5e6-478b-b11e-25be7f4e0aaa",
+        "name": "Matt Pierce",
+        "tenure_start": "2002-01-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_matthew_pierce_708",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_matthew_pierce_708/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_matthew_pierce_708/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2002-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2002-01-09"
+      ]
+    },
+    {
+      "term_id": "25d4feef-8fef-46ba-b6d3-90b28717cddc",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "full_name": "Dave Hall",
+      "chamber": "Indiana House of Representatives",
+      "district": "62",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e1599f41-bd7d-45c4-8a43-c25d8b519f53",
+        "name": "Dave Hall",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_david_hall_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_david_hall_1",
+          "https://www.indianahouserepublicans.com/members/general/dave-hall"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d912ea42-37a9-4fbc-9f36-0cd41ecebdbd",
+      "office_id": "705ce366-6fb8-45f1-8424-a37725c1d704",
+      "politician_id": "c2f7b661-b9cc-4fc4-929e-6d5c776d0f17",
+      "full_name": "Shane M Lindauer",
+      "chamber": "Indiana House of Representatives",
+      "district": "63",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/2a0b391a-a59d-4b7f-907b-87980c2714d8",
+        "name": "Shane Lindauer",
+        "tenure_start": "2017-11-16",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_shane_lindauer_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_shane_lindauer_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_shane_lindauer_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2017-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2017-11-16"
+      ]
+    },
+    {
+      "term_id": "87713090-cbd3-4292-a6fc-819a95ac02c6",
+      "office_id": "a12f17df-3933-420d-9c5c-11b7793c4599",
+      "politician_id": "8e050c00-d5d8-447a-8a50-3af1688c7aea",
+      "full_name": "Chris D May",
+      "chamber": "Indiana House of Representatives",
+      "district": "65",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/f1571a79-9c64-42b2-82d2-ec9f512722eb",
+        "name": "Chris May",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_chris_may_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_chris_may_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_chris_may_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "43f90a3d-bced-4b2b-af51-80a46fe58478",
+      "office_id": "ac2f22a0-3a86-4508-b76f-34a806c9a652",
+      "politician_id": "4357b09a-6018-4e61-9147-23a0a184fa67",
+      "full_name": "Gregory W Porter",
+      "chamber": "Indiana House of Representatives",
+      "district": "96",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6bc40502-e00f-4b16-8c1d-9f5a613a4e88",
+        "name": "Gregory Porter",
+        "tenure_start": "1992-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_gregory_porter_115",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_gregory_porter_115/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_gregory_porter_115/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1992-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1abc79b3-9a30-4bd6-9e0b-3974f9e8ab5c",
+      "office_id": "1932e535-0be6-44d6-a9d7-40c4124fe38e",
+      "politician_id": "3b8cd30f-9602-4669-b93a-f8bc582aa4cd",
+      "full_name": "Justin Moed",
+      "chamber": "Indiana House of Representatives",
+      "district": "97",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0f97edaa-0f48-4c61-82dd-c70aeb05a5ff",
+        "name": "Justin Moed",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_justin_moed_908",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_justin_moed_908/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_justin_moed_908/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b205ae1a-b016-4671-a937-b2587158ba72",
+      "office_id": "242e6a92-b4cd-4e4f-b61e-1b18990d5195",
+      "politician_id": "be502033-c0b7-42b7-be14-5e41bdd4532f",
+      "full_name": "Robin Shackleford",
+      "chamber": "Indiana House of Representatives",
+      "district": "98",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d15f8f7e-148b-47fc-858d-84ad23347f64",
+        "name": "Robin Shackleford",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robin_shackleford_1128",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robin_shackleford_1128/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_robin_shackleford_1128/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e545ff6b-0661-42e4-82a6-851d241e5426",
+      "office_id": "c172a8a8-d8e6-4493-a519-ae9fd5b33810",
+      "politician_id": "7427f323-978d-4f43-9c00-6cd976647f9b",
+      "full_name": "Vanessa J Summers",
+      "chamber": "Indiana House of Representatives",
+      "district": "99",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/51d00dd2-d18c-4d77-9ad1-710016d30448",
+        "name": "Vanessa Summers",
+        "tenure_start": "1991-06-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_vanessa_summers_231",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_vanessa_summers_231/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_vanessa_summers_231/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1991-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 1991-06-07"
+      ]
+    },
+    {
+      "term_id": "f34cb351-9cd4-49eb-9773-602ef02627b7",
+      "office_id": "1d513f84-c4c6-4ca0-9da4-fe746635faf4",
+      "politician_id": "9ec5d907-b5d8-4f16-8379-703f748b58e0",
+      "full_name": "Carolyn Jackson",
+      "chamber": "Indiana House of Representatives",
+      "district": "1",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/16ded3c5-7034-4910-b5d1-76efa7b2f02f",
+        "name": "Carolyn Jackson",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_carolyn_jackson_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_carolyn_jackson_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_carolyn_jackson_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b98591ca-ba3e-42b4-968c-8e364b5d1aa2",
+      "office_id": "6a40aa09-e0dc-4260-a5f9-dee035cf1e9b",
+      "politician_id": "bda78cce-1711-433e-bdc3-83aa364c1fd2",
+      "full_name": "Chuck Moseley",
+      "chamber": "Indiana House of Representatives",
+      "district": "10",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/17fd494d-905d-4c82-a828-6d975cbf02f3",
+        "name": "Chuck Moseley",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_charles_moseley_973",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_charles_moseley_973/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_charles_moseley_973/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "120fc2a7-2505-459e-8bdb-68b524d20a0e",
+      "office_id": "75504657-4a6b-454b-a043-e746b9b2cf71",
+      "politician_id": "36b039a6-2224-4b73-90b4-2de142d16183",
+      "full_name": "Mike Aylesworth",
+      "chamber": "Indiana House of Representatives",
+      "district": "11",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/2ca76c73-5db4-499b-b718-c83294b5f68e",
+        "name": "Mike Aylesworth",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_aylesworth_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_aylesworth_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_mike_aylesworth_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b0a81cea-efba-4d78-8dec-4168dd91b7cd",
+      "office_id": "515351ae-3574-453f-8431-5ad90c7fcdeb",
+      "politician_id": "4a12bdcb-e722-426e-b2e7-338acac23f40",
+      "full_name": "Mike Andrade",
+      "chamber": "Indiana House of Representatives",
+      "district": "12",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/14aac431-636f-483e-ac39-bf45be53af2f",
+        "name": "Mike Andrade",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_andrade_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_andrade_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_mike_andrade_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4cd71b6a-3bfb-4add-88de-2bff1e923770",
+      "office_id": "40fd1fe1-8e53-4868-905c-4f8182751323",
+      "politician_id": "e469d4ca-dcc0-4e2a-8cd2-d8e7bed54a3b",
+      "full_name": "Matt Commons",
+      "chamber": "Indiana House of Representatives",
+      "district": "13",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1f2380f8-be03-4499-a72a-8dac376d6aaa",
+        "name": "Matt Commons",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_matt_commons_1",
+          "https://www.indianahouserepublicans.com/members/general/matt-commons/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "156b559b-c4a6-4cf4-87bd-d6618fb79e86",
+      "office_id": "a1326c5d-561e-48ee-a882-402c75e56370",
+      "politician_id": "6c52f78a-51c2-4b1f-b91d-a0c9451f5cc2",
+      "full_name": "Vernon Smith",
+      "chamber": "Indiana House of Representatives",
+      "district": "14",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/86b7914b-08e6-4ac7-bcd6-b4afa4dceb09",
+        "name": "Vernon Smith",
+        "tenure_start": "1990-02-11",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_vernon_smith_230",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_vernon_smith_230/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_vernon_smith_230/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1990-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 1990-02-11"
+      ]
+    },
+    {
+      "term_id": "87163cad-6a40-4857-b14c-d634cabff958",
+      "office_id": "a3a5df9a-81e0-4e63-9b23-0b1868bd0709",
+      "politician_id": "98255886-e292-47e7-bfd1-8bfe760bb460",
+      "full_name": "Harold Slager",
+      "chamber": "Indiana House of Representatives",
+      "district": "15",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b71e9f3a-2c59-4e18-80e6-da0a7cc51648",
+        "name": "Hal Slager",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_harold_slager_1111",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_harold_slager_1111/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_harold_slager_1111/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a14900c5-39cb-4e1b-aedb-755a605d8cd3",
+      "office_id": "7cc3d0be-029c-4eb0-8e24-0696a5d9891e",
+      "politician_id": "634d4e4c-57e4-454d-9e40-94e6a0e46f04",
+      "full_name": "Kendell Culp",
+      "chamber": "Indiana House of Representatives",
+      "district": "16",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0b35c9d0-f21d-41a3-b7b6-15759df5bc59",
+        "name": "Kendell Culp",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_kendell_culp_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_kendell_culp_1",
+          "https://www.indianahouserepublicans.com/members/general/kendell-culp"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "fffcdf51-1f22-4887-a212-b96ac4262928",
+      "office_id": "5ed89170-badd-44f1-ad7e-bbe9cefbcf65",
+      "politician_id": "45e48053-6db5-4e63-a5d7-2ad613340bd9",
+      "full_name": "Jack Jordan",
+      "chamber": "Indiana House of Representatives",
+      "district": "17",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/12a4df88-7cf2-453c-9cb8-dc5d4a2f6b55",
+        "name": "Jack Jordan",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_jack_jordan_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jack_jordan_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jack_jordan_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4809c38a-6dcc-47b6-9ac7-79075ee82b18",
+      "office_id": "f55fa8f4-d50c-4821-8a12-79f10bb169da",
+      "politician_id": "1e239b16-89e0-4a93-9724-0df547e079f3",
+      "full_name": "David Abbott",
+      "chamber": "Indiana House of Representatives",
+      "district": "18",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a080b584-c899-4694-a797-73cca22610fe",
+        "name": "David Abbott",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_david_abbott_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_david_abbott_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_david_abbott_1"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f7ca4ba6-9c49-4e4f-b2b2-1013bc740d44",
+      "office_id": "d59ccbcd-abf2-4d11-89dd-c3ea056046d7",
+      "politician_id": "befd0035-e611-4d14-9da9-227156bb2c10",
+      "full_name": "Julie Olthoff",
+      "chamber": "Indiana House of Representatives",
+      "district": "19",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/df8a1659-63b2-4e11-8dce-17bce11f8162",
+        "name": "Julie Olthoff",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_julie_olthoff_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_julie_olthoff_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_julie_olthoff_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "992b64ad-a9fb-4dfc-a730-dbfab0726fdf",
+      "office_id": "6a758c5e-5e73-4bcd-91be-814a786c1861",
+      "politician_id": "7c19c055-65b3-4ab0-b93e-f10e06036974",
+      "full_name": "Earl Harris",
+      "chamber": "Indiana House of Representatives",
+      "district": "2",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e0aaea95-033f-49d8-9be6-3875fc3b8efe",
+        "name": "Earl Harris",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_earl_harris_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_earl_harris_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_earl_harris_1"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "c3fdef3f-5fcb-4bc1-8ef2-76e01c3efbb2",
+      "office_id": "aecf921e-3e4b-41d0-afbf-53f913a8e4ed",
+      "politician_id": "9e2a7aa6-bc33-4c2d-91bb-71f766d49a2e",
+      "full_name": "Jim Pressel",
+      "chamber": "Indiana House of Representatives",
+      "district": "20",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3918dc6e-fbf5-4ea0-b62a-376729b463ec",
+        "name": "Jim Pressel",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_jim_pressel_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jim_pressel_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jim_pressel_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8630338d-ee0e-4b56-8ab6-157d39a3b7f3",
+      "office_id": "92903b72-38f5-4b52-8566-f03eda881b9c",
+      "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+      "full_name": "Timothy Wesco",
+      "chamber": "Indiana House of Representatives",
+      "district": "21",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fbcd4d2c-32c6-4c97-837b-4e4ed80c43df",
+        "name": "Tim Wesco",
+        "tenure_start": "2010-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_timothy_wesco_1025",
+          "https://iga.in.gov/legislative/2023/legislators/legislator_timothy_wesco_1025/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_timothy_wesco_1025/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8547048a-f61b-4661-9dae-d2688813a977",
+      "office_id": "b31e5a27-3cd0-4c1c-a635-65f330f35652",
+      "politician_id": "4c3f4c61-882e-487b-a1dc-2fafce2539de",
+      "full_name": "Craig Snow",
+      "chamber": "Indiana House of Representatives",
+      "district": "22",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d9c1cb89-9943-4afd-9353-8c771dcac356",
+        "name": "Craig Snow",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_craig_snow_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_craig_snow_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_craig_snow_1"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "48eea754-379c-48ee-ace9-18e8a79b5de4",
+      "office_id": "23035d2a-72ab-4fca-aba2-5dcb2c7aa940",
+      "politician_id": "65534e3a-7ea3-4e85-98f8-57c6c3082ad2",
+      "full_name": "Ethan Manning",
+      "chamber": "Indiana House of Representatives",
+      "district": "23",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/bdae77c7-d89e-426d-b6f6-52e1a48bc87a",
+        "name": "Ethan Manning",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ethan_manning_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ethan_manning_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_ethan_manning_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f859c7b3-f8a8-4ae3-82bd-50bd25ead9d5",
+      "office_id": "973e4fed-bfdb-44a1-82b0-415e3c8057df",
+      "politician_id": "452300b4-c6da-4866-be08-7462421673f1",
+      "full_name": "Hunter Smith",
+      "chamber": "Indiana House of Representatives",
+      "district": "24",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0950736c-1a85-4534-91dd-3538759e75cf",
+        "name": "Hunter Smith",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_hunter_smith_1",
+          "https://www.indianahouserepublicans.com/members/general/hunter-smith",
+          "https://www.indianahouserepublicans.com/members/general/hunter-smith/?back=members"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3e521500-3349-4d75-a1f5-e21b40373ce3",
+      "office_id": "441a4e01-78a9-479c-a215-8ce67033a772",
+      "politician_id": "445af4b4-7d6f-4d11-8e7c-a629113604b7",
+      "full_name": "Becky Cash",
+      "chamber": "Indiana House of Representatives",
+      "district": "25",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/172ba652-d80a-45cd-a387-f072925561f7",
+        "name": "Becky Cash",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_becky_cash_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_becky_cash_1",
+          "https://www.indianahouserepublicans.com/members/general/becky-cash"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e98eebd4-2e8f-4a23-9903-7ff5d37a5d4b",
+      "office_id": "bcb5f62a-4c1b-4159-bb6b-d53f96daadf5",
+      "politician_id": "1c1d4016-93b8-4a97-9166-077921868027",
+      "full_name": "Chris Campbell",
+      "chamber": "Indiana House of Representatives",
+      "district": "26",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a2b2e61b-e27c-4ead-8c81-6703ea817037",
+        "name": "Chris Campbell",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_christine_campbell_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_christine_campbell_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_christine_campbell_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "6f69ec59-a880-4f57-9915-49c900a5b60c",
+      "office_id": "179cb4e1-98e0-4858-8b21-895a337e25ea",
+      "politician_id": "4b0d1306-5004-482c-b5e4-44a6c1d542eb",
+      "full_name": "Sheila Klinker",
+      "chamber": "Indiana House of Representatives",
+      "district": "27",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/68f44f31-ba0b-4641-a656-f05e91c02cd8",
+        "name": "Sheila Klinker",
+        "tenure_start": "1982-01-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_sheila_klinker_212",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_sheila_klinker_212/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_sheila_klinker_212/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1982-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 1982-01-05"
+      ]
+    },
+    {
+      "term_id": "d078e373-9113-4870-9a4a-5f8cf560c88c",
+      "office_id": "219c260d-1781-43a6-a04d-7567f113db2b",
+      "politician_id": "3688a87d-4b4c-400c-ab5a-52c90896ef2f",
+      "full_name": "Jeffrey Thompson",
+      "chamber": "Indiana House of Representatives",
+      "district": "28",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6835c75a-05e6-44d8-9d8b-7ee4559892b2",
+        "name": "Jeff Thompson",
+        "tenure_start": "1998-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jeffrey_thompson_529",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jeffrey_thompson_529/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jeffrey_thompson_529/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1998-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "0d9d5346-0019-4be9-aa3c-e4665502c3d0",
+      "office_id": "743aa064-44e8-46a3-8837-a590577f4dde",
+      "politician_id": "e0244003-7c41-48ba-863c-12cff608642b",
+      "full_name": "Alaina Shonkwiler",
+      "chamber": "Indiana House of Representatives",
+      "district": "29",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3564d02c-d1d7-4c46-87b7-dbc1c5f1dc14",
+        "name": "Alaina Shonkwiler",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_alaina_shonkwiler_1",
+          "https://www.indianahouserepublicans.com/members/general/alaina-shonkwiler/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a9f4d156-92e3-4159-80eb-eeefcb358f80",
+      "office_id": "56929398-faca-44eb-920d-0bac8b3e29aa",
+      "politician_id": "cf1be32b-b0f4-47b7-9a46-1394f65987e6",
+      "full_name": "Ragen Hatcher",
+      "chamber": "Indiana House of Representatives",
+      "district": "3",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/4c9685ab-f2a4-46e0-980a-699bb01d26cf",
+        "name": "Ragen Hatcher",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_ragen_hatcher_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ragen_hatcher_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_ragen_hatcher_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "920477ce-3e87-4726-b252-6d27e3532949",
+      "office_id": "6941c0bb-eb53-4312-b370-2d17df4fd3b7",
+      "politician_id": "9c4aa310-5706-42e8-b3f1-b5dee9b6f6fa",
+      "full_name": "Michael Karickhoff",
+      "chamber": "Indiana House of Representatives",
+      "district": "30",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/344cb784-deed-4671-94f1-0616555296e3",
+        "name": "Mike Karickhoff",
+        "tenure_start": "2010-11-02",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_michael_karickhoff_1027",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_michael_karickhoff_1027/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_michael_karickhoff_1027/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2010-11-02"
+      ]
+    },
+    {
+      "term_id": "0447fbf0-72ad-4d1a-8777-ed066da96e44",
+      "office_id": "8963396a-6555-4b23-9f91-88e0fdf6d213",
+      "politician_id": "1e3c9273-2989-4511-9763-a431394792de",
+      "full_name": "Lori Goss-reaves",
+      "chamber": "Indiana House of Representatives",
+      "district": "31",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/4647c4f2-f1d1-4151-a85a-74db23a7fb5d",
+        "name": "Lori Goss-Reaves",
+        "tenure_start": "2023-06-01",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_lori_goss_reaves_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_lori_goss_reaves_1",
+          "https://www.indianahouserepublicans.com/members/general/lori-goss-reaves"
+        ]
+      },
+      "proposal": {
+        "term_start": "2023-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2023-06-01"
+      ]
+    },
+    {
+      "term_id": "43ab9fcb-4ff7-4105-a5c9-9439a9bff9ee",
+      "office_id": "02cc5466-5971-4738-b395-c914c173788a",
+      "politician_id": "7c2a4bfe-f6e1-406f-ac8c-dfc849036a83",
+      "full_name": "Victoria Garcia Wilburn",
+      "chamber": "Indiana House of Representatives",
+      "district": "32",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/58922dd9-3295-4d8f-a1ca-60356b1b4ad8",
+        "name": "Victoria Garcia Wilburn",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_victoria_garcia_wilburn_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_victoria_garcia_wilburn_1",
+          "https://indianahousedemocrats.org/members/victoria-garcia-wilburn"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "202884b3-c283-4fcc-a5f3-55bc3e5d6993",
+      "office_id": "defea4d9-df33-48b2-b208-a065217ec784",
+      "politician_id": "a2bb7489-51a4-4498-be87-ef040eae4ccf",
+      "full_name": "J.D. Prescott",
+      "chamber": "Indiana House of Representatives",
+      "district": "33",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/dcba8890-86e8-4a0c-a4a5-77b2fa98a267",
+        "name": "J.D. Prescott",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_john_prescott_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_john_prescott_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_john_prescott_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "63fa2e17-e66d-4cf8-ad60-627af2833966",
+      "office_id": "e2318196-2db7-40d6-b8e3-142e52475926",
+      "politician_id": "627467eb-e823-4bf1-b97d-026a36d55f43",
+      "full_name": "Sue Errington",
+      "chamber": "Indiana House of Representatives",
+      "district": "34",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/98feacbe-3be5-407e-a437-66d65a836a5e",
+        "name": "Sue Errington",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_sue_errington_866/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_sue_errington_866",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_sue_errington_866/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "41be7fa6-95f9-4836-b555-7f27a7282d95",
+      "office_id": "373a204c-323f-4243-9912-1b42a67c338c",
+      "politician_id": "d9ca3eac-f51d-4d1a-b7ae-df5249459d24",
+      "full_name": "Elizabeth Rowray",
+      "chamber": "Indiana House of Representatives",
+      "district": "35",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fafeb171-4592-4254-bb59-788745371b7b",
+        "name": "Elizabeth Rowray",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_elizabeth_rowray_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_elizabeth_rowray_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_elizabeth_rowray_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b7900167-cb34-461d-9674-433eb367026a",
+      "office_id": "4aec3e97-8522-40a6-8e81-588908fc20e6",
+      "politician_id": "aa2ee278-9763-4a30-90a9-9231331ac129",
+      "full_name": "Kyle Pierce",
+      "chamber": "Indiana House of Representatives",
+      "district": "36",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b5d0a278-d77b-49fe-88d4-2bd473055144",
+        "name": "Kyle Pierce",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_kyle_pierce_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_kyle_pierce_1",
+          "https://www.indianahouserepublicans.com/members/general/kyle-pierce"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "adca573e-3221-45b2-914d-89cc5e85175b",
+      "office_id": "c662f892-d685-4c9b-9461-2ca0d26e60a3",
+      "politician_id": "d2b8e2ab-dc6b-42a9-9aea-b6b661e0476e",
+      "full_name": "Todd Huston",
+      "chamber": "Indiana House of Representatives",
+      "district": "37",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d2667b82-c381-495d-b533-c70a9ae92ec0",
+        "name": "Todd Huston",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_todd_huston_1114",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_todd_huston_1114",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_todd_huston_1114"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "42259ca9-4706-43a6-a1f0-2918bd952caf",
+      "office_id": "f56dead1-876c-428a-98c3-8e88e6672cfa",
+      "politician_id": "89648ec2-7768-41b2-8dfd-4e8297f3d3b2",
+      "full_name": "Heath VanNatter",
+      "chamber": "Indiana House of Representatives",
+      "district": "38",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/113063ff-6e21-4bf7-b9d0-f06aafc349f2",
+        "name": "Heath VanNatter",
+        "tenure_start": "2010-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_heath_vannatter_956",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_heath_vannatter_956/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_heath_vannatter_956/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "90383821-0141-4bcc-aab0-7d32aac3b99a",
+      "office_id": "acab121f-1cfa-44b4-bb4b-d0d6f8c06413",
+      "politician_id": "fed420a8-8d89-48d2-bccc-62ba0a330237",
+      "full_name": "Danny Lopez",
+      "chamber": "Indiana House of Representatives",
+      "district": "39",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7403f289-e044-47ad-b594-05d174ec486e",
+        "name": "Danny Lopez",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_danny_lopez_1",
+          "https://www.indianahouserepublicans.com/members/general/danny-lopez",
+          "https://www.indianahouserepublicans.com/members/general/danny-lopez/?back=members"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "104dc15d-8178-4c20-a424-2a7cffdb20d5",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "full_name": "Edmond Soliday",
+      "chamber": "Indiana House of Representatives",
+      "district": "4",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3fbcc2a9-c620-456c-b38f-03e0f9063c3f",
+        "name": "Ed Soliday",
+        "tenure_start": "2006-11-08",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_edmond_soliday_864/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_edmond_soliday_864",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_edmond_soliday_864/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2006-11-08",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "824af2b5-208a-439b-9516-cb5666dcbe76",
+      "office_id": "88ca1f76-e2b8-4f75-ad29-1e36cefa6cee",
+      "politician_id": "946f7bc2-48ed-447e-a9a5-cb99aae00b31",
+      "full_name": "Gregory Steuerwald",
+      "chamber": "Indiana House of Representatives",
+      "district": "40",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3ee97114-199a-4084-903f-5eaa231ca656",
+        "name": "Greg Steuerwald",
+        "tenure_start": "2007-08-19",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_gregory_steuerwald_927/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_gregory_steuerwald_927",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_gregory_steuerwald_927/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2007-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2007-08-19"
+      ]
+    },
+    {
+      "term_id": "31a46d06-c00a-46c6-9ab0-08e28814e271",
+      "office_id": "6964502c-32ff-4a2e-96ca-9453cf954dda",
+      "politician_id": "6a200c04-7360-455e-b43d-f0ab2591a3cc",
+      "full_name": "Mark Genda",
+      "chamber": "Indiana House of Representatives",
+      "district": "41",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/38ca634d-bbf0-42f3-bf01-4d6cdcb84bbd",
+        "name": "Mark Genda",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_mark_genda_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_mark_genda_1",
+          "https://www.indianahouserepublicans.com/members/general/mark-genda"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d73cda6f-ecd0-41f1-95f2-ee1dc801bd25",
+      "office_id": "c3fc17e8-50da-4fcc-b382-717c3006cb8e",
+      "politician_id": "d64c6b22-8a5a-41d2-b53b-c75fb57d1425",
+      "full_name": "Tim Yocum",
+      "chamber": "Indiana House of Representatives",
+      "district": "42",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fb16b382-4ca4-47c2-abaf-3c6e72f5a780",
+        "name": "Tim Yocum",
+        "tenure_start": "2025-01-16",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_tim_yocum_1",
+          "https://www.indianahouserepublicans.com/members/general/tim-yocum/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2025-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2025-01-16"
+      ]
+    },
+    {
+      "term_id": "274c4c54-a948-4f9f-af96-39e09a74a83e",
+      "office_id": "27e037df-c2f1-4101-8be4-a24b7290ea88",
+      "politician_id": "40200c4e-48b7-41b2-9c58-c8f2ab890ca4",
+      "full_name": "Tonya Pfaff",
+      "chamber": "Indiana House of Representatives",
+      "district": "43",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0f97a586-0089-4eb8-86c1-40f42bc1f594",
+        "name": "Tonya Pfaff",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_tonya_pfaff_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_tonya_pfaff_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_tonya_pfaff_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "03a1fa8f-f122-4eb0-bd7a-e78ccc802fcf",
+      "office_id": "8860e485-151d-4e30-8a27-e835987407e5",
+      "politician_id": "60dec8ad-4ae4-4ff8-bf99-a4d5df5aeb7b",
+      "full_name": "Beau Baird",
+      "chamber": "Indiana House of Representatives",
+      "district": "44",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a8ed53f7-00fb-428b-a629-7532efaf902d",
+        "name": "Beau Baird",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_beau_baird_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_beau_baird_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_beau_baird_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4400c8b8-80e2-48da-b2f1-eb42548a537d",
+      "office_id": "e6adccbc-b417-48b4-82cb-e11717835642",
+      "politician_id": "ca38dc89-dd3d-4a95-9f0f-9b5292a323e6",
+      "full_name": "Robb Greene",
+      "chamber": "Indiana House of Representatives",
+      "district": "47",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/cd2f0bde-b248-4ba3-81ad-042acd7d60c8",
+        "name": "Robb Greene",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_robb_greene_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_robb_greene_1",
+          "https://www.indianahouserepublicans.com/members/general/robb-greene"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "6c73c4bc-de06-4b62-afb1-47cc94daf13f",
+      "office_id": "078b0615-f813-41e8-af5f-1d0c044463dd",
+      "politician_id": "fcad2ac3-c7e5-49a7-8452-e7c951d3be87",
+      "full_name": "Doug Miller",
+      "chamber": "Indiana House of Representatives",
+      "district": "48",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5b58dd7d-acb3-4554-9e4e-c1281155f4ab",
+        "name": "Doug Miller",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_doug_miller_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_doug_miller_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_doug_miller_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7f688f22-b469-4678-9663-9eec6b58cd9f",
+      "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+      "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+      "full_name": "Joanna King",
+      "chamber": "Indiana House of Representatives",
+      "district": "49",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e2a84cfb-4ec9-4c0c-879b-27e51dbd6674",
+        "name": "Joanna King",
+        "tenure_start": "2020-12-21",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_joanna_king_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_joanna_king_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_joanna_king_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2020-12-21"
+      ]
+    },
+    {
+      "term_id": "c45340b8-db99-42ae-b27e-27bc8589bf63",
+      "office_id": "74994b69-aba7-4c30-9e2b-0ab9a4e89f54",
+      "politician_id": "eae88f55-a772-4aa7-9bae-8bc4e6c55ced",
+      "full_name": "Dale Devon",
+      "chamber": "Indiana House of Representatives",
+      "district": "5",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/da8afc87-2b9a-4544-8fb9-2f03f426a451",
+        "name": "Dale DeVon",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_dale_devon_1108",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_dale_devon_1108/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_dale_devon_1108/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4738abc2-1145-4d6d-a1df-4947b14542c1",
+      "office_id": "e818e12c-7312-4d0e-90be-55329b9ec543",
+      "politician_id": "7683de6a-e18c-42d2-9c90-6f5fe38f6932",
+      "full_name": "Lorissa Sweet",
+      "chamber": "Indiana House of Representatives",
+      "district": "50",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3568c1ff-87a5-4121-a468-ced11a824691",
+        "name": "Lorissa Sweet",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://www.indianahouserepublicans.com/members/general/lorissa-sweet",
+          "https://www.indianahouserepublicans.com/members/general/lorissa-sweet/?back=members"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "803adf97-1da6-47cc-9c1f-f4d2838a2402",
+      "office_id": "25d016b7-574a-49ea-854b-3aab8f6b3a86",
+      "politician_id": "c777bab7-48a7-4960-8a2e-bd840e62acc7",
+      "full_name": "Tony Isa",
+      "chamber": "Indiana House of Representatives",
+      "district": "51",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e75ceaff-b623-4887-90a3-2b5328d184c5",
+        "name": "Tony Isa",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_tony_isa_1",
+          "https://www.indianahouserepublicans.com/members/general/tony-isa",
+          "https://www.indianahouserepublicans.com/members/general/tony-isa/?back=members"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e57125e2-0083-4d1f-9a2b-fa13e156e72b",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "full_name": "Ben Smaltz",
+      "chamber": "Indiana House of Representatives",
+      "district": "52",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ea2c35cb-7071-43de-8dc6-e91756d03f11",
+        "name": "Ben Smaltz",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ben_smaltz_1118",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ben_smaltz_1118/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_ben_smaltz_1118/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9e8f6b43-c91c-4ede-a8eb-5c2b0370779e",
+      "office_id": "ed2f07db-66dc-4a58-ad28-baf2804b359c",
+      "politician_id": "e869ec2a-2b8e-4b1f-a725-3f8cd4a2c48a",
+      "full_name": "Ethan Lawson",
+      "chamber": "Indiana House of Representatives",
+      "district": "53",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/bab7e849-4075-4199-b251-34d5f35cc157",
+        "name": "Ethan Lawson",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_ethan_lawson_1",
+          "https://www.indianahouserepublicans.com/members/general/ethan-lawson",
+          "https://www.indianahouserepublicans.com/members/general/ethan-lawson/?back=members"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "67fc1cc2-9747-46e8-bf60-b866c51389e9",
+      "office_id": "69ecd140-ae01-40cd-a572-b7f8841ea6ec",
+      "politician_id": "95e4f47c-a7e4-48c4-8b89-016c4cf3a44a",
+      "full_name": "Cory Criswell",
+      "chamber": "Indiana House of Representatives",
+      "district": "54",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e4588f99-2084-4b0f-9260-f73a8f6aeb62",
+        "name": "Cory Criswell",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_cory_criswell_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_cory_criswell_1",
+          "https://www.indianahouserepublicans.com/members/general/cory-criswell/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e7e28e25-9547-4fd3-8740-9ccd723000e0",
+      "office_id": "32f967b7-387c-4e9e-a59f-d83eb5d5280d",
+      "politician_id": "0408c7bf-e5f9-4754-b978-ad45e317afca",
+      "full_name": "Lindsay Patterson",
+      "chamber": "Indiana House of Representatives",
+      "district": "55",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/62c64f60-2fb9-4edc-86ee-6c0d7cccff75",
+        "name": "Lindsay Patterson",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_lindsay_patterson_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_lindsay_patterson_1",
+          "https://www.indianahouserepublicans.com/members/general/lindsay-patterson"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e4b331aa-27e4-48bf-b051-48cca968ef22",
+      "office_id": "6f1c705d-0db3-47b9-b59b-3b5be294338f",
+      "politician_id": "64652750-ddd9-434f-b869-e95290d9eea4",
+      "full_name": "Brad Barrett",
+      "chamber": "Indiana House of Representatives",
+      "district": "56",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6629fcea-f482-4e63-872d-d2f8734502ca",
+        "name": "Brad Barrett",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_bradford_barrett_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_bradford_barrett_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_bradford_barrett_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8e89b0d8-6056-41f8-8e83-a1914f33cdd8",
+      "office_id": "791af72a-df9d-4521-878c-0bba6f9fbd11",
+      "politician_id": "a8ef5f09-5bd2-4acb-9e83-549466878901",
+      "full_name": "Craig Haggard",
+      "chamber": "Indiana House of Representatives",
+      "district": "57",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/006e6bcf-0a2c-4eef-92e3-44714f31aa4e",
+        "name": "Craig Haggard",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_craig_haggard_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_craig_haggard_1",
+          "https://www.indianahouserepublicans.com/members/general/craig-haggard"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "4924d3d8-0fb5-42cf-9fde-59655b633836",
+      "office_id": "582c74bf-443a-442a-9c7b-e612480c3dd4",
+      "politician_id": "2f768304-a6f6-4b5a-b41d-000727f225a1",
+      "full_name": "Michelle Davis",
+      "chamber": "Indiana House of Representatives",
+      "district": "58",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7580d002-efd7-461a-80ee-06c82ab0db71",
+        "name": "Michelle Davis",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_michelle_davis_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_michelle_davis_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_michelle_davis_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5e8795db-c04b-4553-9e6e-dacece6fd70d",
+      "office_id": "73b00623-1466-4fc0-aa6a-322a4f3a4f3d",
+      "politician_id": "217b8c85-424b-41df-aa1b-7818425623d7",
+      "full_name": "Ryan Lauer",
+      "chamber": "Indiana House of Representatives",
+      "district": "59",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d96c807a-9e72-4861-bca4-67d787cbf49f",
+        "name": "Ryan Lauer",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_ryan_lauer_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ryan_lauer_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_ryan_lauer_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "66673c56-9cc4-40cb-a9f1-87689b4dfa8f",
+      "office_id": "a6da77c3-7820-4879-807b-7dce44c92be6",
+      "politician_id": "fd414331-30b2-4be3-93f1-54b51af4ac49",
+      "full_name": "Maureen Bauer",
+      "chamber": "Indiana House of Representatives",
+      "district": "6",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7e493895-2f49-4a56-a4a3-f888373769b5",
+        "name": "Maureen Bauer",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_maureen_bauer_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_maureen_bauer_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_maureen_bauer_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ab1089b9-9622-4369-96af-39d7c0c0bd3d",
+      "office_id": "626ec4b0-815e-4514-8db4-d9b2a94a1ba1",
+      "politician_id": "b0862650-00c3-480e-9d92-745fdae38121",
+      "full_name": "Matt Hostettler",
+      "chamber": "Indiana House of Representatives",
+      "district": "64",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/be7ad6b3-da1b-4b8d-b41b-6b6e48a9bdfa",
+        "name": "Matt Hostettler",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_matthew_hostettler_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_matthew_hostettler_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_matthew_hostettler_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "0b07dfec-27d9-44e7-96e4-20927c80e056",
+      "office_id": "87040ce2-eb81-4629-b64f-10661a85de16",
+      "politician_id": "2a4695f6-047a-46bb-82f4-c7360b97f203",
+      "full_name": "Zach Payne",
+      "chamber": "Indiana House of Representatives",
+      "district": "66",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a74de022-873d-4a31-986c-66e81356a6f2",
+        "name": "Zach Payne",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_zach_payne_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_zach_payne_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_zach_payne_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "93a89beb-99ab-4867-9a09-62ae862e0169",
+      "office_id": "b9225ef8-b423-42bb-b254-2f3e72619dbe",
+      "politician_id": "cc05de9f-a03a-4049-8d7f-5e4c5b0677e2",
+      "full_name": "Alex Zimmerman",
+      "chamber": "Indiana House of Representatives",
+      "district": "67",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7daef9db-7675-4d8e-8e78-b943a24fd5b7",
+        "name": "Alex Zimmerman",
+        "tenure_start": "2023-07-25",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_alex_zimmerman_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_alex_zimmerman_1",
+          "https://www.indianahouserepublicans.com/members/general/alex-zimmerman"
+        ]
+      },
+      "proposal": {
+        "term_start": "2023-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2023-07-25"
+      ]
+    },
+    {
+      "term_id": "a8b4c79a-1ae2-4af7-9b77-8708f9f3f9ae",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "full_name": "Garrett Bascom",
+      "chamber": "Indiana House of Representatives",
+      "district": "68",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/552456a4-62fc-4f94-a9f9-1c5dd8ebe57a",
+        "name": "Garrett Bascom",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_garrett_bascom_1",
+          "https://www.indianahouserepublicans.com/members/general/garrett-bascom/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "cf16bce2-33e3-4bdf-9cc2-388bd460d83d",
+      "office_id": "5b1c46e1-5d4f-4a63-8dbf-e5f564863177",
+      "politician_id": "d758604c-9dd9-4a00-ac09-90713a7bc4be",
+      "full_name": "Jim Lucas",
+      "chamber": "Indiana House of Representatives",
+      "district": "69",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/70f005b9-1417-4132-9956-ad93942ca87d",
+        "name": "Jim Lucas",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jim_lucas_1123",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jim_lucas_1123",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_jim_lucas_1123"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "1819a91e-e55a-4b19-b8e9-8ab312e29408",
+      "office_id": "6f5b8175-824f-4677-abb3-aea3d9e8b8ae",
+      "politician_id": "6ab10a36-52d6-4d7a-b039-60416eb5fd3f",
+      "full_name": "Jake Teshka",
+      "chamber": "Indiana House of Representatives",
+      "district": "7",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d0f113c5-ffad-4c18-867b-417fea0d0a52",
+        "name": "Jake Teshka",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jake_teshka_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jake_teshka_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jake_teshka_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "41b49e51-1b49-4d45-a6f0-734d22aad965",
+      "office_id": "49a53ab9-754c-4871-81be-303e29557c87",
+      "politician_id": "066daefa-0c25-447b-8a80-e4007ee3103d",
+      "full_name": "Karen Engleman",
+      "chamber": "Indiana House of Representatives",
+      "district": "70",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/efa78779-f35e-49fb-8b6b-5cccd00c870a",
+        "name": "Karen Engleman",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_karen_engleman_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_karen_engleman_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_karen_engleman_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ae104c3a-8f65-429f-8da2-93a07686ac36",
+      "office_id": "bfc4bd8b-8df0-4ea3-a5cb-d0cecc586a24",
+      "politician_id": "96c44dcf-92c5-432f-bd5a-f8cf641ed432",
+      "full_name": "Wendy Dant Chesser",
+      "chamber": "Indiana House of Representatives",
+      "district": "71",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0761bcc1-6fbf-4a37-8b52-46c2bc6912fa",
+        "name": "Wendy Dant Chesser",
+        "tenure_start": "2024-06-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_wendy_dant_chesser_1/",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_wendy_dant_chesser_1/",
+          "https://indianahousedemocrats.org/members/wendy-dant-chesser"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2024-06-04"
+      ]
+    },
+    {
+      "term_id": "4b9b834c-5d9f-42bd-9603-5dbd952c2682",
+      "office_id": "96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9",
+      "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+      "full_name": "Edward Clere",
+      "chamber": "Indiana House of Representatives",
+      "district": "72",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d01b6bbc-9c5e-4479-afd6-3e7410946367",
+        "name": "Ed Clere",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_edward_clere_984",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_edward_clere_984/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_edward_clere_984/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5d29d310-bae2-45d9-9fb0-68e0c1e062f3",
+      "office_id": "549fb9a7-8045-4dbc-b100-3ed3bd6aaf0d",
+      "politician_id": "c93d27ca-26e9-46a1-a261-ed127313d43b",
+      "full_name": "Jennifer Meltzer",
+      "chamber": "Indiana House of Representatives",
+      "district": "73",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/98849cb4-9559-40c1-bd56-414eaef4e22a",
+        "name": "Jenny Meltzer",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_jennifer_meltzer_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_jennifer_meltzer_1",
+          "https://www.indianahouserepublicans.com/members/general/jennifer-meltzer"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "e5042102-1b2b-4a21-b8ed-7295dac92c4e",
+      "office_id": "d6a58f53-8540-47a2-a6c7-941fcaad7d17",
+      "politician_id": "c94874d1-e92b-4b64-8c11-d0108d935583",
+      "full_name": "Steve Bartels",
+      "chamber": "Indiana House of Representatives",
+      "district": "74",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/df749cfb-56e8-482f-bf4b-183a1fb52594",
+        "name": "Steve Bartels",
+        "tenure_start": "2017-11-16",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_stephen_bartels_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_stephen_bartels_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_stephen_bartels_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2017-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2017-11-16"
+      ]
+    },
+    {
+      "term_id": "f3e43188-8eaf-479a-8a61-cf1e35273569",
+      "office_id": "2aba2b81-d818-4611-a0e2-c78465c2cb8a",
+      "politician_id": "cd5fc12d-8d96-41e2-97ca-e00d28b1069a",
+      "full_name": "Cindy Ledbetter",
+      "chamber": "Indiana House of Representatives",
+      "district": "75",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/e3cfa300-8d75-4217-9cc4-371aca7f77dd",
+        "name": "Cindy Ledbetter",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_cindy_ledbetter_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_cindy_ledbetter_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_cindy_ledbetter_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f4918b32-cb8c-469b-8b48-8b68d94959e9",
+      "office_id": "1881c1d5-9fd8-4080-abfe-8372d53b3213",
+      "politician_id": "b79f38f2-02a9-4659-b4df-9e12535a2255",
+      "full_name": "Wendy Mcnamara",
+      "chamber": "Indiana House of Representatives",
+      "district": "76",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ac2c89af-df39-4057-bdeb-15ca57b7ef9f",
+        "name": "Wendy McNamara",
+        "tenure_start": "2010-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_wendy_mcnamara_1046/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_wendy_mcnamara_1046",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_wendy_mcnamara_1046/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3135d52c-3aa3-4efe-a410-092b54f7ebbb",
+      "office_id": "1d472d7b-c337-495e-9b57-2e878214ee7e",
+      "politician_id": "3e91e841-173c-4b60-bff2-a53774334d6a",
+      "full_name": "Alex Burton",
+      "chamber": "Indiana House of Representatives",
+      "district": "77",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ea9905ae-ca94-4184-853c-d7d622dd46ee",
+        "name": "Alex Burton",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_alex_burton_1",
+          "https://indianahousedemocrats.org/members/alex-burton"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "60ec97e7-f659-4542-adf7-0330fa7a1e62",
+      "office_id": "d976b921-e513-48f7-9d7b-51f9f8d01131",
+      "politician_id": "bba53cbb-15de-432f-9d6e-d0ab431eac15",
+      "full_name": "Timothy O'brien",
+      "chamber": "Indiana House of Representatives",
+      "district": "78",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/87eb34dc-70d6-4614-a871-568a836ff552",
+        "name": "Tim O'Brien",
+        "tenure_start": "2021-03-30",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_timothy_obrien_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_timothy_obrien_1/",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_timothy_obrien_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2021-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2021-03-30"
+      ]
+    },
+    {
+      "term_id": "87ee4990-0e2a-4301-97e6-0c21452768cc",
+      "office_id": "9e556e36-d300-4bef-ac90-8df64db0b849",
+      "politician_id": "4f57bead-e464-4a26-bc14-49f9599f2086",
+      "full_name": "Matt Lehman",
+      "chamber": "Indiana House of Representatives",
+      "district": "79",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/423b3123-c1b6-4e2f-92f4-5610130de844",
+        "name": "Matt Lehman",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_matthew_lehman_987",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_matthew_lehman_987/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_matthew_lehman_987/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a3486f10-aaaa-4277-905a-96bbec32277e",
+      "office_id": "3ee24684-c20c-42cd-821c-d126382393a0",
+      "politician_id": "25b4eea9-089e-4a33-b39b-a6a7af676ac8",
+      "full_name": "Ryan Dvorak",
+      "chamber": "Indiana House of Representatives",
+      "district": "8",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/16b01fca-3a93-41a3-ad6a-f2bf9209ddf7",
+        "name": "Ryan Dvorak",
+        "tenure_start": "2002-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ryan_dvorak_697",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ryan_dvorak_697/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_ryan_dvorak_697/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2002-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8d1eb930-8b35-4c30-bc2b-77e3106cb591",
+      "office_id": "425f1da1-b5be-4136-a2db-f66df8757370",
+      "politician_id": "3dc58f52-11b7-43f3-80ce-64e4f82a0e7a",
+      "full_name": "Philip Giaquinta",
+      "chamber": "Indiana House of Representatives",
+      "district": "80",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d1e89034-ef4a-4a10-b16d-16dc617dcdf1",
+        "name": "Phil GiaQuinta",
+        "tenure_start": "2006-11-08",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_philip_giaquinta_879",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_philip_giaquinta_879",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_philip_giaquinta_879"
+        ]
+      },
+      "proposal": {
+        "term_start": "2006-11-08",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "46f17d49-2ab8-4392-8b0e-c37917fb3a44",
+      "office_id": "5dce6f15-5023-490d-a2cc-9fb9b7f96863",
+      "politician_id": "a9bf758c-e902-40cc-ace0-b306c63eb936",
+      "full_name": "Martin Carbaugh",
+      "chamber": "Indiana House of Representatives",
+      "district": "81",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1b9ddafb-fca9-4924-b565-d651c2ca133b",
+        "name": "Martin Carbaugh",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_martin_carbaugh_1125",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_martin_carbaugh_1125/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_martin_carbaugh_1125/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8106ff45-4bbe-4f69-92c4-08ac9b568978",
+      "office_id": "ee9544d6-e907-48c6-90ed-b64bbc1a24a0",
+      "politician_id": "32fbb733-d65c-457b-8ef0-f52e1701d284",
+      "full_name": "Kyle Miller",
+      "chamber": "Indiana House of Representatives",
+      "district": "82",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a67ee82c-450c-49ed-8862-f58e34a3dfbb",
+        "name": "Kyle Miller",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_kyle_miller_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_kyle_miller_1",
+          "https://indianahousedemocrats.org/members/kyle-miller"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f3206c1a-bc87-43f3-a8ef-3101db9caf99",
+      "office_id": "d196b6ca-a0b6-4449-99c0-67f9cbb3c9e2",
+      "politician_id": "11a19d18-3b98-4b6a-b310-9ab4aba1f7c8",
+      "full_name": "Chris Judy",
+      "chamber": "Indiana House of Representatives",
+      "district": "83",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/35824e09-976c-44b7-9825-0787030f0e4e",
+        "name": "Chris Judy",
+        "tenure_start": "2014-09-22",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_christopher_judy_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_christopher_judy_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_christopher_judy_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2014-09-22"
+      ]
+    },
+    {
+      "term_id": "99455cd6-a6ac-4d60-8367-9a16171d4f64",
+      "office_id": "7f3aa504-262d-4509-aabf-f2e8cac682b1",
+      "politician_id": "fb5368e7-35c6-4ae0-b97b-b2e1fb5fb9a6",
+      "full_name": "Robert Morris",
+      "chamber": "Indiana House of Representatives",
+      "district": "84",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/20851625-bc7c-41ed-841e-27af062bc03e",
+        "name": "Bob Morris",
+        "tenure_start": "2010-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robert_morris_1021",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robert_morris_1021/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_robert_morris_1021/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7b7a1f7a-12bb-44b7-bf09-0302299aa0bb",
+      "office_id": "55403296-898c-4fde-b9f0-20738e79bd37",
+      "politician_id": "25b37d28-3c79-44bc-b5ee-6ff777d43c5e",
+      "full_name": "Dave Heine",
+      "chamber": "Indiana House of Representatives",
+      "district": "85",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ed771fd3-4bd9-4c99-bb42-4bd9f5d1ff8d",
+        "name": "Dave Heine",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_dave_heine_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_dave_heine_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_dave_heine_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "605df6ef-d4ad-4aa3-9943-98253206c0eb",
+      "office_id": "fc45e925-2594-498b-9a47-0efd95003771",
+      "politician_id": "3de8d183-2323-45d5-a178-4d24b8f56702",
+      "full_name": "Edward Delaney",
+      "chamber": "Indiana House of Representatives",
+      "district": "86",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/45d8ea46-0d3f-4a80-bf4e-ca016bd458a8",
+        "name": "Ed DeLaney",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_edward_delaney_988",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_edward_delaney_988/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_edward_delaney_988/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "42840af2-08da-4911-9b37-58e58e5c6920",
+      "office_id": "e8eed3c9-27ca-4518-b1b9-c422c9995656",
+      "politician_id": "4810c896-5f26-41c4-837d-f1e8f5f6dc53",
+      "full_name": "Carey Hamilton",
+      "chamber": "Indiana House of Representatives",
+      "district": "87",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ec6a3cce-3eca-4020-8809-a7a1875e1663",
+        "name": "Carey Hamilton",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_carey_hamilton_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_carey_hamilton_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_carey_hamilton_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9333fb69-c9bb-48fe-8b30-76ed2dd58369",
+      "office_id": "e7d4ab8d-c4b9-40c9-a606-20de622fc1e8",
+      "politician_id": "4e30ee0d-4b36-4337-889e-7a26e1fff510",
+      "full_name": "Chris Jeter",
+      "chamber": "Indiana House of Representatives",
+      "district": "88",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8f56f62b-e700-4fdc-b35a-bba408d3e6cf",
+        "name": "Chris Jeter",
+        "tenure_start": "2020-08-26",
+        "official_links": [
+          "https://iga.in.gov/legislative/2020/legislators/legislator_chris_jeter_1/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_chris_jeter_1",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_chris_jeter_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2020-08-26"
+      ]
+    },
+    {
+      "term_id": "6c025065-d38f-4cff-b90e-e153802972c3",
+      "office_id": "2ae7f727-9e2c-42cd-8d71-196354679fd4",
+      "politician_id": "890e2fa1-bd19-43ae-b445-c92b80496710",
+      "full_name": "Mitch Gore",
+      "chamber": "Indiana House of Representatives",
+      "district": "89",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/30a1de33-efbb-41e1-bf59-bf8171089a3a",
+        "name": "Mitch Gore",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mitch_gore_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mitch_gore_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_mitch_gore_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3b048638-11bf-49de-b90a-c92e3c4da76d",
+      "office_id": "fee6bf99-e8e9-40eb-8cbf-7d73961f160e",
+      "politician_id": "7d57b1de-6690-44fe-a995-e430a3f7748e",
+      "full_name": "Randy Novak",
+      "chamber": "Indiana House of Representatives",
+      "district": "9",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/74acd892-bd86-453a-8a48-87954ad68c19",
+        "name": "Randy Novak",
+        "tenure_start": "2025-10-22",
+        "official_links": [
+          "https://iga.in.gov/legislative/2025/legislators/legislator_randy_novak_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_randy_novak_1",
+          "https://www.indianahousedemocrats.org/members/randy-novak"
+        ]
+      },
+      "proposal": {
+        "term_start": "2025-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2025-10-22"
+      ]
+    },
+    {
+      "term_id": "50e75252-01fd-4530-9a63-951381be7f66",
+      "office_id": "f2d497b2-005e-4a6d-8abf-fe5459254537",
+      "politician_id": "c68d71a3-1ed0-4f20-804e-8d39fe0930e9",
+      "full_name": "Andrew Ireland",
+      "chamber": "Indiana House of Representatives",
+      "district": "90",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/27343a14-0487-4a7a-8ddd-1e0991c4a694",
+        "name": "Andrew Ireland",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_andrew_ireland_1",
+          "https://www.indianahouserepublicans.com/members/general/andrew-ireland/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "63b44714-6360-4750-8799-303baa5b31d5",
+      "office_id": "dd704aff-ea11-4e9c-a290-3debbe40671e",
+      "politician_id": "5922a7c4-65a4-46da-acb2-6df183e596b2",
+      "full_name": "Robert Behning",
+      "chamber": "Indiana House of Representatives",
+      "district": "91",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/3d215bfb-c08a-47f0-91d3-eb114b33c56d",
+        "name": "Bob Behning",
+        "tenure_start": "1992-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2019/legislators/legislator_robert_behning_187/",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_robert_behning_187",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_robert_behning_187/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1992-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "db565e81-6705-4ab0-8b01-1c994d56b826",
+      "office_id": "930591c4-4315-40a0-86e1-5e983c8283ff",
+      "politician_id": "6a849ebb-4642-409f-98fc-4a85598fdd8c",
+      "full_name": "Renee Pack",
+      "chamber": "Indiana House of Representatives",
+      "district": "92",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8b2a92f1-4b70-4dfc-8f4f-789aca1b5e8b",
+        "name": "Reneé Pack",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_renee_pack_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_renee_pack_1/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_renee_pack_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f3cc4804-1825-4f63-9531-a0fe25ec1f32",
+      "office_id": "724bbb31-22d9-4cda-b126-4bbea4621b75",
+      "politician_id": "cfcb73c9-7689-4df6-b29f-0a8112af1336",
+      "full_name": "Julie Mcguire",
+      "chamber": "Indiana House of Representatives",
+      "district": "93",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d88b76c4-5b6b-4f93-9347-6ae335208679",
+        "name": "Julie McGuire",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_julie_mcguire_1",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_julie_mcguire_1",
+          "https://www.indianahouserepublicans.com/members/general/julie-mcguire"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "bf72b076-eb51-47b6-aaed-72aa6d50ee8c",
+      "office_id": "50230e51-529e-49d8-9788-ea490ac4dae0",
+      "politician_id": "5dd4fa3d-3348-4158-8d77-3b804c095a18",
+      "full_name": "Cherrish Pryor",
+      "chamber": "Indiana House of Representatives",
+      "district": "94",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8db4d04c-3afe-44c1-940b-7761cd035800",
+        "name": "Cherrish Pryor",
+        "tenure_start": "2008-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_cherrish_pryor_990",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_cherrish_pryor_990/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_cherrish_pryor_990/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2008-11-04"
+      ]
+    },
+    {
+      "term_id": "569d6cb6-b099-4c72-9e8e-56b887f397ba",
+      "office_id": "d4f07ab0-588b-4f4c-ba31-8ab0e4a68eb9",
+      "politician_id": "9613e582-652f-43d3-a986-0d941d3d2599",
+      "full_name": "John Bartlett",
+      "chamber": "Indiana House of Representatives",
+      "district": "95",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5ceabc0e-ec47-41b5-b014-5eddcdc154f3",
+        "name": "John Bartlett",
+        "tenure_start": "2007-12-17",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_john_bartlett_942",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_john_bartlett_942/",
+          "https://iga.in.gov/legislative/2024/legislators/legislator_john_bartlett_942/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2007-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2007-12-17"
+      ]
+    },
+    {
+      "term_id": "d50435e0-9bac-4716-a52a-79ab6bccc4ea",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "full_name": "Greg Taylor",
+      "chamber": "Indiana State Senate",
+      "district": "33",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/39798614-3cb2-40b7-adad-4f5c53ff59e5",
+        "name": "Greg Taylor",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_greg_taylor_976",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_greg_taylor_976/",
+          "https://indianasenatedemocrats.org/senators/s33/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "028af378-cc71-41d9-97b4-5404c20e12fa",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "full_name": "Rodric D Bray",
+      "chamber": "Indiana State Senate",
+      "district": "37",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/766cf9c2-a001-49a1-8fba-075a0510767d",
+        "name": "Rod Bray",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_rodric_bray_1106",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_rodric_bray_1106/",
+          "https://www.indianasenaterepublicans.com/bray"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "27abb507-60cd-426e-a40f-845846c4ee81",
+      "office_id": "0e0178dc-ea70-415a-a739-880c33e8c9db",
+      "politician_id": "f7327a6f-1eb9-4714-9b3f-519916b436d5",
+      "full_name": "Eric S Bassler",
+      "chamber": "Indiana State Senate",
+      "district": "39",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/2d517236-2a88-435f-bc1f-ce09de86c6f9",
+        "name": "Eric Bassler",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_eric_bassler_1",
+          "https://iga.in.gov/legislative/2023/legislators/legislator_eric_bassler_1/",
+          "https://www.indianasenaterepublicans.com/bassler"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ff554b2e-911d-464d-8bac-f55a5ca10ddc",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "full_name": "Shelli Yoder",
+      "chamber": "Indiana State Senate",
+      "district": "40",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/872447dd-3b06-421e-af8c-25ea68aa5ae4",
+        "name": "Shelli Yoder",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_shelli_yoder_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_shelli_yoder_1/",
+          "https://iga.in.gov/legislative/2025/legislators/legislator_shelli_yoder_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b2041384-41d4-4b84-ac3f-1b202c1dbe6a",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "full_name": "Eric A Koch",
+      "chamber": "Indiana State Senate",
+      "district": "44",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a7974310-0d01-4bc1-9c14-29561ec68a60",
+        "name": "Eric Koch",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_eric_koch_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_eric_koch_1/",
+          "https://www.indianasenaterepublicans.com/koch"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "9476bb7a-a24a-4a93-a6fa-2a0cfb2c12e4",
+      "office_id": "f30271df-0d04-4c78-8479-1862c46a4b40",
+      "politician_id": "3def4add-c5bb-44df-95af-ea2de6899b6c",
+      "full_name": "Andrea Hunley",
+      "chamber": "Indiana State Senate",
+      "district": "46",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/f22b3c5a-950d-4e0c-83c8-bf9a7c005c73",
+        "name": "Andrea Hunley",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://indianasenatedemocrats.org/senators/s46/",
+          "https://indianasenatedemocrats.orghttps://www.indianasenatedemocrats.org/s46"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "d9cfd725-fcf1-49e7-9cdb-647e4dc25943",
+      "office_id": "f6e34822-a2f9-4dc2-a289-61df36a1a98a",
+      "politician_id": "b2b02a48-c4e0-4acd-a4c4-b0aecbba7a18",
+      "full_name": "Dan Dernulc",
+      "chamber": "Indiana State Senate",
+      "district": "1",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/bb961150-43c0-4535-bc67-a63127c90047",
+        "name": "Dan Dernulc",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/dernulc"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a63fb12d-fa85-4728-a80b-d2be1f05c167",
+      "office_id": "bc77d5bf-5cb1-4722-9cc4-1ea42f70af70",
+      "politician_id": "275cabb1-7a15-4bcf-88b5-10469a721244",
+      "full_name": "David Niezgodski",
+      "chamber": "Indiana State Senate",
+      "district": "10",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/1fad6d9f-7d2c-4b2e-a74f-26a2ea44f371",
+        "name": "David Niezgodski",
+        "tenure_start": "2006-11-08",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_david_niezgodski_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_david_niezgodski_1/",
+          "https://indianasenatedemocrats.org/senators/s10/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2006-11-08",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "8a541388-f02c-464e-9099-df53ed1dfdfa",
+      "office_id": "6eb6b42c-67f9-48a4-97af-65294cc842a7",
+      "politician_id": "fe167afd-f670-4f13-9fee-2aa3fd6d048e",
+      "full_name": "Linda Rogers",
+      "chamber": "Indiana State Senate",
+      "district": "11",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b5f001ff-6e60-49b9-b074-bb83139410b4",
+        "name": "Linda Rogers",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_linda_rogers_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_linda_rogers_1/",
+          "https://www.indianasenaterepublicans.com/rogers"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b85901ad-aadf-4a9f-9360-c2321186ada5",
+      "office_id": "e75bce55-63ab-48f7-90fa-9995f8d2cf3b",
+      "politician_id": "8d0af843-f21e-4ce8-8f6f-415fc4838f22",
+      "full_name": "Blake Doriot",
+      "chamber": "Indiana State Senate",
+      "district": "12",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a1002ff1-ffd8-4d82-8db9-3a8295ca5e06",
+        "name": "Blake Doriot",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_blake_doriot_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_blake_doriot_1/",
+          "https://www.indianasenaterepublicans.com/doriot"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "b7b82695-7b2c-44a0-89f4-8bf317c0fd2f",
+      "office_id": "a69aeb58-995a-470a-91ab-14c448709103",
+      "politician_id": "07114859-90ed-4ce8-9a20-f5cbb81bd2e5",
+      "full_name": "Susan Glick",
+      "chamber": "Indiana State Senate",
+      "district": "13",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a0b2ce58-2c2d-4b71-a9e2-7b8ae153d53f",
+        "name": "Sue Glick",
+        "tenure_start": "2010-12-16",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_susan_glick_1048",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_susan_glick_1048/",
+          "https://www.indianasenaterepublicans.com/glick"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2010-12-16"
+      ]
+    },
+    {
+      "term_id": "6bf4a5e5-5349-4832-a318-733d8b9d7a58",
+      "office_id": "6b016387-e968-41bc-92f2-9238d4b70427",
+      "politician_id": "162def26-1875-44f6-8f46-1ac8128ead01",
+      "full_name": "Tyler Johnson",
+      "chamber": "Indiana State Senate",
+      "district": "14",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5e19b0fa-7bdc-4732-826c-adf5fbad4e21",
+        "name": "Tyler Johnson",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/johnson"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5197e7f6-2a9c-4e59-ae1a-b2d986474db6",
+      "office_id": "670f8b2c-76f5-4f08-82a9-e71a423278d5",
+      "politician_id": "cdae21e5-88a2-4c55-aaa5-abe050abf4a3",
+      "full_name": "Liz Brown",
+      "chamber": "Indiana State Senate",
+      "district": "15",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/d9013459-1dea-46ee-bdd5-5b2874b76e0a",
+        "name": "Liz Brown",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_liz_brown_1",
+          "https://iga.in.gov/legislative/2023/legislators/legislator_liz_brown_1/",
+          "https://www.indianasenaterepublicans.com/brown"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "90757c6c-d64d-4036-a1ca-f5be36277ded",
+      "office_id": "f05e5e52-a80c-47f4-8d5e-561d6e5730fb",
+      "politician_id": "3b65fd20-b548-4b7a-89b6-49ea5757218c",
+      "full_name": "Justin Busch",
+      "chamber": "Indiana State Senate",
+      "district": "16",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/fc270bf0-2220-476a-ad9c-15db82d62192",
+        "name": "Justin Busch",
+        "tenure_start": "2018-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_justin_busch_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_justin_busch_1/",
+          "https://www.indianasenaterepublicans.com/busch"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2018-11-06"
+      ]
+    },
+    {
+      "term_id": "ce0702d1-4526-4a8f-af2a-b617f585ef61",
+      "office_id": "8d185c37-1e77-4a10-973f-1ea8559983c4",
+      "politician_id": "c348cec4-a31b-419e-8906-1f1b4dfaaff3",
+      "full_name": "Nick McKinley",
+      "chamber": "Indiana State Senate",
+      "district": "17",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b5f773c4-4e25-4fac-b905-5aca0023100d",
+        "name": "Nick McKinley",
+        "tenure_start": "2026-02-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2026/legislators/legislator_nick_mckinley_1",
+          "https://www.indianasenaterepublicans.com/mckinley"
+        ]
+      },
+      "proposal": {
+        "term_start": "2026-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2026-02-09"
+      ]
+    },
+    {
+      "term_id": "03bc5021-b2dc-42ae-902c-5a5d0f60cb43",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "full_name": "Stacey Donato",
+      "chamber": "Indiana State Senate",
+      "district": "18",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b2c735b9-54fb-4e12-9fef-36ffda822b43",
+        "name": "Stacey Donato",
+        "tenure_start": "2019-09-17",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_stacey_donato_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_stacey_donato_1/",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_stacey_donato_1/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2019-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2019-09-17"
+      ]
+    },
+    {
+      "term_id": "40a35e50-bbe7-4258-8947-c0558e80ab84",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "full_name": "Travis Holdman",
+      "chamber": "Indiana State Senate",
+      "district": "19",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/aa948d0d-f7d1-4a11-a58b-986b0d61ebf7",
+        "name": "Travis Holdman",
+        "tenure_start": "2008-04-11",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_travis_holdman_955",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_travis_holdman_955/",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_travis_holdman_955/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2008-04-11"
+      ]
+    },
+    {
+      "term_id": "9e5d25e9-c386-4754-9ace-1cca02eab092",
+      "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+      "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+      "full_name": "Lonnie Randolph",
+      "chamber": "Indiana State Senate",
+      "district": "2",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a48f9631-3436-4445-b8fc-87c143f373cd",
+        "name": "Lonnie Randolph",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_lonnie_randolph_160",
+          "https://indianasenatedemocrats.org/senators/s2/",
+          "https://indianasenatedemocrats.orghttps://www.indianasenatedemocrats.org/s2"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a99a9635-f13d-4116-83b2-b228decf0684",
+      "office_id": "6cd6f99d-42fe-4a1d-91cb-5794096e144e",
+      "politician_id": "4dcf4fa8-90f3-4717-9fa6-8e2fdbe9e602",
+      "full_name": "Scott Baldwin",
+      "chamber": "Indiana State Senate",
+      "district": "20",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/7aea558c-2623-446e-9870-9ee2b8fe5e47",
+        "name": "Scott Baldwin",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_scott_baldwin_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_scott_baldwin_1/",
+          "https://www.indianasenaterepublicans.com/baldwin"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "404789d6-a6c2-40f8-901f-611187c12ab7",
+      "office_id": "61108337-2703-425b-8504-c3433eaaf2d1",
+      "politician_id": "6280a36a-9c26-4c22-a0d8-3ac06693fbfb",
+      "full_name": "James Buck",
+      "chamber": "Indiana State Senate",
+      "district": "21",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/8c8f7869-329e-4063-ab55-30e4eca00529",
+        "name": "Jim Buck",
+        "tenure_start": "2008-04-26",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_james_buck_124",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_james_buck_124/",
+          "https://www.indianasenaterepublicans.com/buck"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2008-04-26"
+      ]
+    },
+    {
+      "term_id": "39dc46c5-73f6-4a65-b72c-a65320f10c9c",
+      "office_id": "32e7397b-3825-487b-b2cf-6760bb213541",
+      "politician_id": "27844ca9-5243-48e1-8053-c3ef4e12c0fe",
+      "full_name": "Ron Alting",
+      "chamber": "Indiana State Senate",
+      "district": "22",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/91572a47-dcdf-4be5-8fec-99630da33a39",
+        "name": "Ron Alting",
+        "tenure_start": "1998-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ron_alting_538",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_ron_alting_538/",
+          "https://iga.in.gov/legislative/2026/legislators/legislator_ron_alting_538/"
+        ]
+      },
+      "proposal": {
+        "term_start": "1998-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "6b49f6a1-bd1a-4094-87f8-874efa229833",
+      "office_id": "696d13bb-aec9-4924-aabc-66cc4860ad21",
+      "politician_id": "8a3eb0a4-fa2a-4918-bf67-8d9ff22253f3",
+      "full_name": "Spencer Deery",
+      "chamber": "Indiana State Senate",
+      "district": "23",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/5f8f629e-daed-4a92-ab9b-98c4127d8a0e",
+        "name": "Spencer Deery",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/deery"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "cb0d2fd4-bab1-4498-bc1d-2b5c6efe5852",
+      "office_id": "0a39769f-993e-420e-818d-aa2e4e12b1cf",
+      "politician_id": "46652b6e-6439-4047-8616-0ec86460a2a3",
+      "full_name": "Brett Clark",
+      "chamber": "Indiana State Senate",
+      "district": "24",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/08d4ca65-7f96-4df8-80cf-33b1cb156a47",
+        "name": "Brett Clark",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/clark"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "fd0fb784-99a6-4da0-a56e-8c64d46ab26b",
+      "office_id": "e44d86ec-9ec0-49bb-a970-20a1f6243bec",
+      "politician_id": "5b09d9c2-ca04-4980-a6d6-6236ea0af802",
+      "full_name": "Mike Gaskill",
+      "chamber": "Indiana State Senate",
+      "district": "25",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/01cb22d6-e0f5-478e-99b2-801ffbf32d2b",
+        "name": "Mike Gaskill",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_gaskill_1",
+          "https://www.indianasenaterepublicans.com/gaskill"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "94148604-4f26-4edd-a914-5a61d9855435",
+      "office_id": "542f4d7b-b409-4385-bbdd-564a97038ef6",
+      "politician_id": "96f697c8-8614-4bc3-b796-bcf02a0380a1",
+      "full_name": "Scott Alexander",
+      "chamber": "Indiana State Senate",
+      "district": "26",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/75d45200-93a5-45b7-90c2-9b3014d7f827",
+        "name": "Scott Alexander",
+        "tenure_start": "2022-11-09",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/alexander"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ee289bc6-bb7e-4d8e-aeb8-f5b1fd2c02df",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "full_name": "Jeff Raatz",
+      "chamber": "Indiana State Senate",
+      "district": "27",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/4267823b-aec1-452a-a040-25b337f04c54",
+        "name": "Jeff Raatz",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jeff_raatz_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_jeff_raatz_1/",
+          "https://www.indianasenaterepublicans.com/raatz"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3791c30c-8688-454c-b320-f5491c5576e5",
+      "office_id": "726c755b-5e57-4491-bcbe-5aaaa9a80120",
+      "politician_id": "868ca671-3b41-4a1e-96a0-a5e3ad1c945b",
+      "full_name": "Michael Crider",
+      "chamber": "Indiana State Senate",
+      "district": "28",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6ffd10c6-9fd6-4378-8841-63ce4ca88764",
+        "name": "Michael Crider",
+        "tenure_start": "2012-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_michael_crider_1130",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_michael_crider_1130/",
+          "https://www.indianasenaterepublicans.com/crider"
+        ]
+      },
+      "proposal": {
+        "term_start": "2012-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "632f0e15-7ebd-4469-8aa6-3c7277ca9bd3",
+      "office_id": "b4ab3354-c6e8-4a29-8aae-938ec2da84dd",
+      "politician_id": "5e7e232c-25e2-46ea-a511-4b9a7ab58b21",
+      "full_name": "J.D. Ford",
+      "chamber": "Indiana State Senate",
+      "district": "29",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/85b8c0cf-3df4-45a1-8c38-d220b7122226",
+        "name": "J.D. Ford",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jd_ford_1",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jd_ford_1/",
+          "https://indianasenatedemocrats.org/senators/s29/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "f21f1660-d56b-4563-a2d8-ff74d563d81c",
+      "office_id": "d134381a-8b52-49d1-bbdb-41ef0a68225e",
+      "politician_id": "e5a011bc-2107-4d33-a3d0-827cbacf9398",
+      "full_name": "Mark Spencer",
+      "chamber": "Indiana State Senate",
+      "district": "3",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c553dcc6-1c2c-49d8-be04-e89e4d123d8b",
+        "name": "Mark Spencer",
+        "tenure_start": "2024-11-06",
+        "official_links": [
+          "https://iga.in.gov/legislative/2025/legislators/legislator_mark_spencer_1",
+          "https://indianasenatedemocrats.org/senator/s3/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-11-06",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "160e2ba5-87a4-475d-aa72-32efd91435a2",
+      "office_id": "61c9efe8-0f74-4380-aba1-015682df210b",
+      "politician_id": "33e307e0-dc84-43c0-b842-de34268c206d",
+      "full_name": "Fady Qaddoura",
+      "chamber": "Indiana State Senate",
+      "district": "30",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ba72879f-42bd-4735-a3e0-d5edd0358f98",
+        "name": "Fady Qaddoura",
+        "tenure_start": "2020-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_fady_qaddoura_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_fady_qaddoura_1/",
+          "https://indianasenatedemocrats.org/senators/s30/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "5aefd816-0a04-4f6e-9da9-32fd2855bd86",
+      "office_id": "60f81720-a5c5-4ee3-ad17-b83a73f63f58",
+      "politician_id": "eb94127d-d394-4704-a53b-1efb2db3bc60",
+      "full_name": "Kyle Walker",
+      "chamber": "Indiana State Senate",
+      "district": "31",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/da010a7d-0344-48cb-b9ba-2eca71007cc6",
+        "name": "Kyle Walker",
+        "tenure_start": "2020-11-17",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_kyle_walker_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_kyle_walker_1/",
+          "https://www.indianasenaterepublicans.com/kyle-walker"
+        ]
+      },
+      "proposal": {
+        "term_start": "2020-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2020-11-17"
+      ]
+    },
+    {
+      "term_id": "e3530199-f5a0-4257-955e-8f502c2cacb3",
+      "office_id": "b3942191-36e3-4cfb-89c4-488d3f283775",
+      "politician_id": "7ac75846-3990-45d0-b74a-b85d6d672f61",
+      "full_name": "Aaron Freeman",
+      "chamber": "Indiana State Senate",
+      "district": "32",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b5e2b0b8-ae2a-4852-9c40-c9bf4a32fe1a",
+        "name": "Aaron Freeman",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_aaron_freeman_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_aaron_freeman_1/",
+          "https://www.indianasenaterepublicans.com/freeman"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ed6e8f72-12b2-4879-b2ce-3090c01ce21a",
+      "office_id": "4525d5f4-1799-41df-98a1-344c295aab2f",
+      "politician_id": "3032d172-6b07-4c16-82d3-7e4f31f88375",
+      "full_name": "La Keisha Jackson",
+      "chamber": "Indiana State Senate",
+      "district": "34",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/6c8d86c3-4157-4673-a7d9-524c9d49f859",
+        "name": "La Keisha Jackson",
+        "tenure_start": "2024-04-24",
+        "official_links": [
+          "https://iga.in.gov/legislative/2024/legislators/legislator_la_keisha_jackson_1",
+          "https://indianasenatedemocrats.org/senators/s34/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2024-04-24"
+      ]
+    },
+    {
+      "term_id": "51d230a8-4e1e-45fa-8f7a-3fd43d142633",
+      "office_id": "93c303b4-a6fa-4c50-b68c-3971078112e1",
+      "politician_id": "debcc50e-5de4-4208-82da-9e1a2b704ebc",
+      "full_name": "Michael Young",
+      "chamber": "Indiana State Senate",
+      "district": "35",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/01bb6149-aa0f-457f-b759-1338b6c8ae5f",
+        "name": "Mike Young",
+        "tenure_start": "2022-07-28",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_r_michael_young_645",
+          "https://www.indianasenaterepublicans.com/young"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-07-28"
+      ]
+    },
+    {
+      "term_id": "0b4aec4d-644f-4374-834b-744b0c79a628",
+      "office_id": "679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3",
+      "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
+      "full_name": "Cyndi Carrasco",
+      "chamber": "Indiana State Senate",
+      "district": "36",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/f15e7d77-05df-4875-88a3-0a1aa40822ec",
+        "name": "Cyndi Carrasco",
+        "tenure_start": "2023-11-01",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/carrasco"
+        ]
+      },
+      "proposal": {
+        "term_start": "2023-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2023-11-01"
+      ]
+    },
+    {
+      "term_id": "0479c96d-b227-43ce-a74e-da262b900ece",
+      "office_id": "5811cd87-8fb3-461c-9885-683c5a110396",
+      "politician_id": "b27f2dd8-fb3c-4797-aed5-ea904768e915",
+      "full_name": "Greg Goode",
+      "chamber": "Indiana State Senate",
+      "district": "38",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/a5c26055-cf9f-4d9c-979a-f8964c48c4da",
+        "name": "Greg Goode",
+        "tenure_start": "2023-11-01",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/goode"
+        ]
+      },
+      "proposal": {
+        "term_start": "2023-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2023-11-01"
+      ]
+    },
+    {
+      "term_id": "4706007c-4de8-46b6-bb0e-7a0c84fa4705",
+      "office_id": "014db973-12b6-46df-a683-882b161829da",
+      "politician_id": "4b938d2b-2e54-4fbc-b048-5406968644d2",
+      "full_name": "Rodney Pol",
+      "chamber": "Indiana State Senate",
+      "district": "4",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/4058ba4c-30a9-46a7-80a1-1f3de1e44a2f",
+        "name": "Rodney Pol",
+        "tenure_start": "2021-11-16",
+        "official_links": [
+          "https://indianasenatedemocrats.org/senators/s4/",
+          "https://indianasenatedemocrats.orghttps://www.indianasenatedemocrats.org/s4",
+          "https://www.indianasenatedemocrats.org/senators/s4/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2021-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2021-11-16"
+      ]
+    },
+    {
+      "term_id": "9196db1c-689b-4610-bda0-6e1f50461136",
+      "office_id": "9ef15737-c7a4-4782-9fda-408da7bc1642",
+      "politician_id": "e93bb9f1-8f60-4f56-a492-0e40d7d49647",
+      "full_name": "Greg Walker",
+      "chamber": "Indiana State Senate",
+      "district": "41",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0bee6f8c-db8b-4e92-8bd4-799c71c55c2c",
+        "name": "Greg Walker"
+      },
+      "proposal": null,
+      "flags": [
+        "no-current-role-start"
+      ]
+    },
+    {
+      "term_id": "b5bae27d-30a7-4326-a4c1-af9267796706",
+      "office_id": "418fe9d6-8dfb-481d-9fda-c1227e71bb07",
+      "politician_id": "38aa44f1-2579-44fb-b520-f055f2edfd70",
+      "full_name": "Jean Leising",
+      "chamber": "Indiana State Senate",
+      "district": "42",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/40ea5143-d0ab-4b9a-a0bc-2cc04f984888",
+        "name": "Jean Leising",
+        "tenure_start": "2008-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_jean_leising_136",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_jean_leising_136/",
+          "https://www.indianasenaterepublicans.com/leising"
+        ]
+      },
+      "proposal": {
+        "term_start": "2008-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "a35fd6ca-efaa-49f1-b4fd-f0fe56d0a342",
+      "office_id": "9a14b054-64fe-4f0e-a0b4-cb30264ec632",
+      "politician_id": "c473defa-6492-4cf7-a7c1-5f9a836ab6ac",
+      "full_name": "Randy Maxwell",
+      "chamber": "Indiana State Senate",
+      "district": "43",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/acd45b79-7930-459f-8118-70b9574ba481",
+        "name": "Randy Maxwell",
+        "tenure_start": "2023-09-28",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/maxwell"
+        ]
+      },
+      "proposal": {
+        "term_start": "2023-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2023-09-28"
+      ]
+    },
+    {
+      "term_id": "5a3c8e9e-a23e-4668-87ca-357eec2bfd75",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "full_name": "Chris Garten",
+      "chamber": "Indiana State Senate",
+      "district": "45",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/dc07e0d2-7372-46c2-967c-878ec522879d",
+        "name": "Chris Garten",
+        "tenure_start": "2018-11-07",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_chris_garten_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_chris_garten_1/",
+          "https://www.indianasenaterepublicans.com/garten"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-11-07",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "7f2816f2-60bf-4028-9f73-51a1b87cf492",
+      "office_id": "4f8a7b64-73b3-45de-843e-5b2ded7a8490",
+      "politician_id": "1ea3c520-481e-4975-9fcb-ef1c508d680f",
+      "full_name": "Gary Byrne",
+      "chamber": "Indiana State Senate",
+      "district": "47",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/aa12c3a4-7207-4474-af92-7a1f9dcf62a3",
+        "name": "Gary Byrne",
+        "tenure_start": "2022-02-14",
+        "official_links": [
+          "https://iga.in.gov/legislative/2022/legislators/legislator_gary_byrne_1/",
+          "https://www.indianasenaterepublicans.com/byrne"
+        ]
+      },
+      "proposal": {
+        "term_start": "2022-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2022-02-14"
+      ]
+    },
+    {
+      "term_id": "7f17a54a-8d9c-42a4-a6a7-4c243019918b",
+      "office_id": "9740efdd-98b5-4f29-a515-327a749efdca",
+      "politician_id": "82bb4a77-7067-474f-a442-0b6c65988323",
+      "full_name": "Daryl Schmitt",
+      "chamber": "Indiana State Senate",
+      "district": "48",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/06fded2a-c138-46b5-9966-7662c0f28c41",
+        "name": "Daryl Schmitt",
+        "tenure_start": "2024-09-10",
+        "official_links": [
+          "https://www.indianasenaterepublicans.com/schmitt"
+        ]
+      },
+      "proposal": {
+        "term_start": "2024-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2024-09-10"
+      ]
+    },
+    {
+      "term_id": "57501c9a-a95b-4a0f-b0e2-ada3c9da3540",
+      "office_id": "5876edc2-bafb-41bb-a48a-271750c94422",
+      "politician_id": "dfab8491-551f-4a3f-b76c-d220a9f4b23b",
+      "full_name": "James Tomes",
+      "chamber": "Indiana State Senate",
+      "district": "49",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/c2c98fe8-fef2-4d38-93f6-9eff4d591bed",
+        "name": "Jim Tomes",
+        "tenure_start": "2010-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_james_tomes_1041",
+          "https://iga.in.gov/legislative/2021/legislators/legislator_james_tomes_1041/",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_james_tomes_1041/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2010-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "ba1cfb62-5c3d-4ec0-8045-acd5c654ac90",
+      "office_id": "4e60187d-e3af-40a3-8a86-9639743d1b13",
+      "politician_id": "cf6383ed-241b-4cbd-a51d-8bfe2eefdd3c",
+      "full_name": "Ed Charbonneau",
+      "chamber": "Indiana State Senate",
+      "district": "5",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/ce2c81c3-e2d6-4394-b960-8787d896bfe5",
+        "name": "Ed Charbonneau",
+        "tenure_start": "2007-06-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ed_charbonneau_919",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_ed_charbonneau_919/",
+          "https://www.indianasenaterepublicans.com/charbonneau"
+        ]
+      },
+      "proposal": {
+        "term_start": "2007-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2007-06-09"
+      ]
+    },
+    {
+      "term_id": "00153d46-9726-44f6-ae4f-0636ff545a6d",
+      "office_id": "d8ed7bde-83bc-4813-b90a-1b05c60f3938",
+      "politician_id": "34f7e7f3-84f9-484e-be41-e3300c18f7f1",
+      "full_name": "Vaneta Becker",
+      "chamber": "Indiana State Senate",
+      "district": "50",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/b6be97c1-d574-443d-b493-224dcb6e2a7f",
+        "name": "Vaneta Becker",
+        "tenure_start": "1992-11-04",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_vaneta_becker_228",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_vaneta_becker_228/",
+          "https://www.indianasenaterepublicans.com/becker"
+        ]
+      },
+      "proposal": {
+        "term_start": "1992-11-04",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "0e0e68b4-427c-453a-ac5e-7e10b577f4f6",
+      "office_id": "e07feaea-4d6f-4167-a8b9-1ae9180f0ff8",
+      "politician_id": "6e1a895d-a956-4806-8938-4977e34cac9a",
+      "full_name": "Rick Niemeyer",
+      "chamber": "Indiana State Senate",
+      "district": "6",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0b243d61-c607-4711-bc54-aecc21281540",
+        "name": "Rick Niemeyer",
+        "tenure_start": "2014-11-05",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_rick_niemeyer_1109",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_rick_niemeyer_1109/",
+          "https://www.indianasenaterepublicans.com/niemeyer"
+        ]
+      },
+      "proposal": {
+        "term_start": "2014-11-05",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "200189bd-0970-4acf-a776-93145528c9b7",
+      "office_id": "d7362c6e-f572-4d9f-941a-44a3075445a2",
+      "politician_id": "5d57215a-7a47-4650-9c7b-47ff41d6322b",
+      "full_name": "Brian Buchanan",
+      "chamber": "Indiana State Senate",
+      "district": "7",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/0482a330-c9fb-4f41-b136-88a4aef2de6a",
+        "name": "Brian Buchanan",
+        "tenure_start": "2018-02-12",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_brian_buchanan_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_brian_buchanan_1/",
+          "https://www.indianasenaterepublicans.com/buchanan"
+        ]
+      },
+      "proposal": {
+        "term_start": "2018-01-01",
+        "start_precision": "year"
+      },
+      "flags": [
+        "off-rule-date 2018-02-12"
+      ]
+    },
+    {
+      "term_id": "495a166d-eb0b-48c6-b4fa-5e5917fa09bd",
+      "office_id": "8587f8ff-0e7f-4b41-9df6-f39c11a34e5d",
+      "politician_id": "254be2be-bda5-40c3-b4de-fc261c3327b6",
+      "full_name": "Mike Bohacek",
+      "chamber": "Indiana State Senate",
+      "district": "8",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/9569c3da-b86b-4b33-a9ad-8d6174323569",
+        "name": "Mike Bohacek",
+        "tenure_start": "2016-11-09",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_mike_bohacek_1",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_mike_bohacek_1/",
+          "https://mikebohacek.com/"
+        ]
+      },
+      "proposal": {
+        "term_start": "2016-11-09",
+        "start_precision": "day"
+      },
+      "flags": []
+    },
+    {
+      "term_id": "3ac80dbf-36bc-439f-ac59-01824248b3ba",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "full_name": "Ryan Mishler",
+      "chamber": "Indiana State Senate",
+      "district": "9",
+      "current": {
+        "term_start": null,
+        "start_precision": "unknown"
+      },
+      "openstates": {
+        "id": "ocd-person/010e5ebe-683c-4fe2-9696-46f7f0b4bea6",
+        "name": "Ryan Mishler",
+        "tenure_start": "2004-11-03",
+        "official_links": [
+          "https://iga.in.gov/legislative/2021/legislators/legislator_ryan_mishler_801",
+          "https://iga.in.gov/legislative/2022/legislators/legislator_ryan_mishler_801/",
+          "https://www.indianasenaterepublicans.com/mishler"
+        ]
+      },
+      "proposal": {
+        "term_start": "2004-11-03",
+        "start_precision": "day"
+      },
+      "flags": []
+    }
+  ]
+}
