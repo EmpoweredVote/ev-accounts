@@ -33,6 +33,12 @@ describe('real source profiles', () => {
   }
 });
 
+// Fix round 1: the IN bill-listing page prints only "Senate Bill 208" / "Senate Bill 170", never the
+// short form, but all three Yoder coders wrote "SB 208" / "SB 170" — before the long-form fix
+// (coderLabel.ts normalizeInstrumentForm) this was 6 false instrument-mismatch findings (2 bills x 3
+// coders). Pinned below so a regression on either mapping direction is caught.
+const NO_LONGER_MISMATCHED = new Set([instrumentKey('SB 208 (2024)'), instrumentKey('SB 170 (2022)')]);
+
 describe('the two shadow batches under their profiles', () => {
   for (const [b, name] of [['2026-09-25-shadow-yoder', 'Shelli Yoder'], ['2026-09-25-shadow-durazo', 'Maria Elena Durazo']] as const) {
     it(`${b}: every record group gives the same findings as the generic rules, and every record page has a profile`, () => {
@@ -44,12 +50,15 @@ describe('the two shadow batches under their profiles', () => {
         for (const r of rows) {
           const groups = new Map<string, Passage[]>();
           for (const p of r.passages ?? []) if (p.v3_class === 'record') { const k = instrumentKey(p.instrument) ?? '∅'; groups.set(k, [...(groups.get(k) ?? []), p]); }
-          for (const g of groups.values()) {
+          for (const [k, g] of groups.entries()) {
             for (const p of g) expect(resolveProfile(profiles, url.get(p.snapshot_id) ?? ''), `profile for ${url.get(p.snapshot_id)}`).not.toBeNull();
             const generic = checkRecordGroup({ passages: g, snapshotText: text, fullName: name, chamber: seatChamber('Senator') }).findings.sort();
             const profiled = checkRecordGroup({ passages: g, snapshotText: text, fullName: name, chamber: seatChamber('Senator'),
               profileOf: (p) => { const pr = resolveProfile(profiles, url.get(p.snapshot_id) ?? '')!; return { rules: pr.rules, chamber: profileSeatChamber(pr, 'Senator') }; } }).findings.sort();
             expect(profiled).toEqual(generic);
+            if (b === '2026-09-25-shadow-yoder' && NO_LONGER_MISMATCHED.has(k)) {
+              expect(generic, `${b} slot ${slot} group ${k}: no instrument-mismatch (long-form fix)`).not.toContain('instrument-mismatch');
+            }
           }
         }
       }

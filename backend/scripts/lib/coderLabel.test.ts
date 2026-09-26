@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { CODEBOOK_VERSION, validateCoderLabelFile, passageAllowsChair, rowKey, type Passage, type CoderRow } from './coderLabel.js';
+import { CODEBOOK_VERSION, validateCoderLabelFile, passageAllowsChair, rowKey, instrumentKey, type Passage, type CoderRow } from './coderLabel.js';
 
 const SNAP = 'aaaaaaaa-0000-0000-0000-000000000001';
 const snapshotText = new Map([[SNAP, 'The Senate voted 21-8 to override the veto of H.B. 11, which requires students to compete on teams matching their sex at birth.']]);
@@ -174,4 +174,20 @@ describe('0.3 record fields are required per instrument group (ruling 2026-09-26
   it('still checks a present actor_quote is verbatim', () =>
     expect(validateCoderLabelFile(file([pair(votePage, { ...billPage, actor_quote: 'Adams voted aye' })]), c).rows[0].errors)
       .toEqual([`passage ${BILL}: actor_quote not verbatim in snapshot`]));
+  it('groups a long-form instrument label with its short-form pair (fix round 1: "Senate Bill 208" = "SB 208")', () => {
+    const v = { ...votePage, instrument: 'SB 208 (2024)' };
+    const b = { ...billPage, instrument: 'Senate Bill 208 (2024)' };
+    expect(validateCoderLabelFile(file([row({ passages: [v, b], rests_on: [VOTE, BILL] })]), c).rows[0].errors).toEqual([]);
+  });
+});
+
+describe('instrumentKey long-form chamber-bill (fix round 1)', () => {
+  it('maps "Senate Bill" / "House Bill" / "Assembly Bill" to the short prefix, case-insensitively', () => {
+    expect(instrumentKey('Senate Bill 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
+    expect(instrumentKey('senate bill 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
+    expect(instrumentKey('House Bill 1041 (2025)')).toBe(instrumentKey('HB 1041 (2025)'));
+    expect(instrumentKey('Assembly Bill 1955 (2023-2024)')).toBe(instrumentKey('AB 1955 (2023-2024)'));
+  });
+  it('does not merge a different bill number just because one is spelled out', () =>
+    expect(instrumentKey('Senate Bill 20 (2024)')).not.toBe(instrumentKey('SB 208 (2024)')));
 });

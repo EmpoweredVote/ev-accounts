@@ -80,12 +80,26 @@ export const verbatimIn = (snapshotText: string, span: string): boolean => {
 };
 
 /**
+ * A coder (or a source page) may write a bill's chamber as the long form ("Senate Bill 208") or the
+ * short prefix ("SB 208") — the IN bill-listing page only ever prints the long form, while its own
+ * roll-call PDFs print the short form ("HB 1041"), and coders mix the two freely. Mapped to the short
+ * prefix (case-insensitive, whole "<chamber> bill" as two words) so both spellings of the same
+ * instrument produce one key, and so a page in the long form still shows a short-form instrument label
+ * (recordBasis.ts `pageShowsInstrument`).
+ */
+const LONG_FORM_BILL = /\b(senate|house|assembly)\s+bill\b/gi;
+const LONG_FORM_PREFIX: Record<string, string> = { senate: 'sb', house: 'hb', assembly: 'ab' };
+export function normalizeInstrumentForm(s: string): string {
+  return s.replace(LONG_FORM_BILL, (_m, chamber: string) => LONG_FORM_PREFIX[chamber.toLowerCase()]);
+}
+
+/**
  * The grouping key for a record's instrument (confirm-basis spec §2): one bill in one session.
  * Shared by the validator (per-group record fields) and recordBasis/confirm (per-group CONFIRM).
  */
 export function instrumentKey(s: string | null | undefined): string | null {
   if (!s || !s.trim()) return null;
-  let out = s.toLowerCase().replace(/[–—]/g, '-');
+  let out = normalizeInstrumentForm(s.toLowerCase().replace(/[–—]/g, '-'));
   // A hyphen directly between a letter and a digit is bill-number punctuation ("SB-1174"), not a
   // range, so it must not survive to distinguish "SB-1174" from "SB 1174". A hyphen between two
   // digits (a session range like "2023-2024") IS the range and must be kept — different sessions of

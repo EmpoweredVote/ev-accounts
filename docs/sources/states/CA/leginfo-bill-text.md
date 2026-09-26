@@ -27,6 +27,15 @@ controls:
     actor_quote: "SB 580, Durazo."
     tally_quote: null
     expect: pass
+  - batch: 2026-09-25-shadow-durazo
+    snapshot: fb096408
+    person: Maria Elena Durazo
+    office_title: Assembly Member
+    instrument: SB 580 (2025-2026)
+    record_kind: author
+    actor_quote: "SB 580, Durazo."
+    tally_quote: null
+    expect: chamber-not-evidenced
 ---
 # California Legislature — bill text (leginfo)
 

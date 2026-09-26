@@ -177,7 +177,11 @@ Problem table.
 - No match → `no-source-profile`, and the generic rules still produce their findings.
 - `word-before-floor` on AB 1955 → Senate; `page-header` on IN roll call 334 → Senate; `none` skips the
   chamber test.
-- The 24 real record groups of the two shadow batches give the same findings as `9a7a72b4`, and no
+- The 24 real record groups of the two shadow batches give the same findings as `9a7a72b4`, **except**:
+  the long-form chamber-bill fix (fix round 1 — `pageShowsInstrument` / `instrumentKey` now map "Senate
+  Bill 208" to the same key as "SB 208") removes 6 false `instrument-mismatch` findings on Yoder's SB 208
+  and SB 170 groups (all three coders, both bills) — the IN bill-listing page only ever prints the long
+  form, and all three coders wrote the short form. Every other group is unchanged. And no
   `no-source-profile` (every source they use has a profile).
 - No profile body text reaches `buildCoderPrompt`.
 - `stancePublishPolicy.test.ts` passes unchanged.

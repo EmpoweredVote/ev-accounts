@@ -50,6 +50,25 @@ describe('instrumentKey', () => {
     expect(instrumentKey('SB 1 (2023-2024)')).not.toBe(instrumentKey('SB 1 (2025-2026)')));
 });
 
+// Long chamber-bill forms (fix round 1): the IN bill-listing page prints only "Senate Bill 208", never
+// "SB 208" — so a coder's short-form instrument label must still find its bill number on a long-form
+// page, and vice versa (coderLabel.ts normalizeInstrumentForm, shared by instrumentKey and
+// pageShowsInstrument).
+describe('pageShowsInstrument long-form / short-form chamber-bill (fix round 1)', () => {
+  const passage = (instrument: string): Passage => ({ snapshot_id: 's', v1_attribution: 'own-act', v2_relevance: 'on-question',
+    v3_class: 'record', v4_shape: 'chair-shaped', v5_time: 'in-term', date: null, instrument, provision_quote: null,
+    record_kind: 'author', actor_quote: null, tally_quote: null });
+  const onPage = (pageText: string, instrument: string) =>
+    checkRecordGroup({ passages: [passage(instrument)], snapshotText: new Map([['s', pageText]]), fullName: 'Shelli Yoder' }).findings;
+
+  it('a page that prints only "Senate Bill 208" is not an instrument-mismatch for "SB 208 (2024)"', () =>
+    expect(onPage('IGA | Senate Bill 208 - Abortion (2024)', 'SB 208 (2024)')).not.toContain('instrument-mismatch'));
+  it('"House Bill 1041" matches "HB 1041"', () =>
+    expect(onPage('Roll Call 334 HB 1041 - Donato - 3rd Reading', 'House Bill 1041 (2025)')).not.toContain('instrument-mismatch'));
+  it('"SB 20" does NOT match a page that shows only "Senate Bill 208" (fail closed on a longer number)', () =>
+    expect(onPage('IGA | Senate Bill 208 - Abortion (2024)', 'SB 20 (2024)')).toContain('instrument-mismatch'));
+});
+
 describe('checkRecordGroup (D1: one basis across pages)', () => {
   it('passes a vote page + bill text pair on one instrument', () => {
     const r = checkRecordGroup({ passages: [P({}), billPage], snapshotText: text, fullName: 'Maria Elena Durazo' });

@@ -24,7 +24,7 @@
  * lower); 'none' skips the chamber test entirely (e.g. a nonpartisan city council).
  */
 import { normalizeText, COMMON_LAST_NAMES } from '../../src/lib/researchVerifier.js';
-import { verbatimIn, instrumentKey, type Passage } from './coderLabel.js';
+import { verbatimIn, instrumentKey, normalizeInstrumentForm, type Passage } from './coderLabel.js';
 
 // instrumentKey lives in coderLabel.ts (the validator groups by it too); re-exported so existing
 // callers keep one import site.
@@ -92,15 +92,18 @@ function billTokenOf(instrument: string | null | undefined): string | null {
 }
 
 /**
- * Does this page ever print the instrument's bill number? Compares against the page with
- * whitespace, periods and hyphens stripped, so "SB-1174" / "SB 1174" / "sb1174" all match — but the
- * token must not be immediately followed by a digit, so a short instrument ("SB 11") does not match
- * a page about a different, longer bill number ("SB 1174").
+ * Does this page ever print the instrument's bill number? The page's long chamber-bill forms
+ * ("Senate Bill 208") are first mapped to the short prefix ("sb208"), the same mapping instrumentKey
+ * uses (coderLabel.ts `normalizeInstrumentForm`) — the IN bill-listing page prints only the long form,
+ * never "SB 208". Then compared with whitespace, periods and hyphens stripped, so "SB-1174" /
+ * "SB 1174" / "sb1174" all match — but the token must not be immediately followed by a digit, so a
+ * short instrument ("SB 20") does not match a page about a different, longer bill number
+ * ("SB 1174" / "Senate Bill 208").
  */
 function pageShowsInstrument(pageText: string, instrument: string | null | undefined): boolean {
   const token = billTokenOf(instrument);
   if (!token) return false;
-  const compact = pageText.toLowerCase().replace(/[\s.\-]/g, '');
+  const compact = normalizeInstrumentForm(pageText.toLowerCase()).replace(/[\s.\-]/g, '');
   let idx = compact.indexOf(token);
   while (idx !== -1) {
     const next = compact[idx + token.length];
