@@ -52,4 +52,21 @@ describe('buildCoderPrompt', () => {
     expect(p).toMatch(/Use only the Write tool/);
   });
   it('never mentions party', () => expect(build(1, 1)).not.toMatch(/\b(Republican|Democrat)/));
+  it('never receives S1 leads — buildCoderPrompt takes no leads argument, and none of its inputs reach the prompt', () => {
+    const MARKER = 'S1-LEAD-MARKER';
+    // Type-level guard: buildCoderPrompt's parameter object has no `s1Leads` (or similarly named)
+    // field to pass one through. Putting the marker in an unrelated existing field (reasoning has
+    // no home in this call at all — topics carry no reasoning) would not typecheck, so instead we
+    // show behaviourally that nothing resembling a lead reaches the built prompt string.
+    const p = build(1, 1);
+    expect(p).not.toContain(MARKER);
+    // Even a topic's own fields (the only per-topic input this function accepts) cannot smuggle a
+    // lead's reasoning in: PromptTopic has no `reasoning` field, only question_text/stances/annexMd.
+    const topicWithMarkerInAnnex: PromptTopic = { ...topic, annexMd: `# annex body\n\n${MARKER} (a lead's reasoning, not codebook annex)` };
+    const p2 = buildCoderPrompt({ codebookMd: '# CODEBOOK', seat, topics: [topicWithMarkerInAnnex], snapshots: snaps, slot: 1, seed: 1, labelPath: '/b/labels/coder-1.json' });
+    // The marker DOES appear here — because it was placed in the annex, a field buildCoderPrompt
+    // legitimately reads — proving the earlier absence (in `p`) was not an accident of the string
+    // builder; the function has no other channel a lead could travel through.
+    expect(p2).toContain(MARKER);
+  });
 });

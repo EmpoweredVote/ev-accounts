@@ -8,6 +8,7 @@ import { validateCoderLabelFile, rowKey, type Passage, type CoderRow } from './c
 import { agree, consensusSlot, type AgreementOutcome, type CoderRowLabel } from './agreement.js';
 import { confirmRow, type ConfirmFinding } from './confirm.js';
 import type { SeatContext, PromptTopic } from './coderPrompt.js';
+import { leadsById, type S1Lead } from './s1Leads.js';
 
 export const EVIDENCE_CLASS_ORDER = ['statement-other', 'statement-answer', 'record'] as const; // weakest first
 export function weakestClass(passages: Passage[]): 'record' | 'statement-answer' | 'statement-other' {
@@ -23,6 +24,9 @@ export interface RowReport {
   stratum: { level: string | null; evidence_class: string | null };
   shadow: 'would-publish-if-certified' | 'would-review';
   shadow_reasons: string[];
+  /** Information only (spec §7 P1 fresh/stale seed) — never read by agree()/confirmRow() and never
+   * changes `shadow` or `shadow_reasons`. 'none' when this topic has no Season 1 lead. */
+  seed: 'fresh' | 'stale' | 'none';
 }
 
 export interface CodingReport {
@@ -38,8 +42,12 @@ export function buildCodingReport(i: {
   snapshotText: ReadonlyMap<string, string>;
   /** snapshot_id -> source_kind, from snapshots.json (final review item 3). */
   sourceKind: ReadonlyMap<string, string>;
+  /** Season 1 leads (build-s1-leads.ts), for the information-only `seed` flag. Never affects the
+   * agreement/confirm/publish computation below — only which value `seed` takes on the row. */
+  s1Leads?: S1Lead[];
 }): CodingReport {
   const { seat, topics } = i.context;
+  const leads = leadsById(i.s1Leads ?? []);
   const validity: { slot: number; fileErrors: string[]; rowErrors: number }[] = [];
   const bySlot = new Map<number, Map<string, { row: CoderRow | null; valid: boolean }>>();
   for (const slot of [1, 2, 3]) {
@@ -86,8 +94,9 @@ export function buildCodingReport(i: {
       if (restsOn.length > 0 && restsOn.every((p) => i.sourceKind.get(p.snapshot_id) === 'news')) reasons.push('news-only-basis');
     }
     const publishable = outcome.kind === 'unanimous-chair' && reasons.length === 0;
+    const seed = leads.get(t.topic_id)?.seed ?? 'none';
     return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass },
-      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons };
+      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed };
   });
   const a = alphaNominal(units);
   return { rows, m1: { alpha: a.alpha, units: a.units }, needsSource, validity };

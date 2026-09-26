@@ -14,6 +14,7 @@ import { validateCoderLabelFile, CODEBOOK_VERSION } from './lib/coderLabel.js';
 import type { CoderRow } from './lib/coderLabel.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { buildDisagreementDigest, validRowsFirstOccurrence } from './lib/disagreementDigest.js';
+import type { S1Lead } from './lib/s1Leads.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
@@ -37,7 +38,13 @@ for (const slot of [1, 2, 3]) {
   rawText.set(slot, t);
   try { files.set(slot, JSON.parse(t)); } catch { files.set(slot, t); } // prose → invalid, not a crash
 }
-const report = buildCodingReport({ context, files, snapshotText, sourceKind });
+// s1-leads.json is COLLECTOR-ONLY (build-s1-leads.ts) — an information-only seed flag on the
+// report, never anything a coder saw and never anything that changes shadow/shadow_reasons.
+const s1LeadsPath = join(dir, 's1-leads.json');
+const s1Leads: S1Lead[] | undefined = existsSync(s1LeadsPath)
+  ? (JSON.parse(readFileSync(s1LeadsPath, 'utf8')) as { leads: S1Lead[] }).leads
+  : undefined;
+const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads });
 writeFileSync(join(dir, 'coding-report.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, models, ...report }, null, 2));
 writeFileSync(join(dir, 'needs-source.json'), JSON.stringify(report.needsSource, null, 2));
 

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { buildCodingReport, weakestClass } from './codingReport.js';
 import { CODEBOOK_VERSION, type CoderRow, type Passage } from './coderLabel.js';
 import type { SeatContext, PromptTopic } from './coderPrompt.js';
+import type { S1Lead } from './s1Leads.js';
 
 const seat: SeatContext = { politician_id: 'p1', full_name: 'J. Stuart Adams', level: 'state', mode: 'seated', office_id: 'o1', office_title: 'State Senator',
   jurisdiction_names: ['Utah'], term_start: '2021-01-01', start_precision: 'day', term_end: null, election_date: null };
@@ -87,5 +88,25 @@ describe('buildCodingReport', () => {
     const t1 = buildCodingReport({ context, files: unanimous(), snapshotText, sourceKind: new Map([['s1', 'pointer']]) }).rows.find((x) => x.topic_key === 'k-t1')!;
     expect(t1.confirm).toContain('rests-on-pointer');
     expect(t1.shadow).toBe('would-review');
+  });
+  it('carries an information-only seed flag from s1Leads, never touching shadow/shadow_reasons', () => {
+    const files = new Map<number, unknown>([
+      [1, file(1, [row('t1', 4), row('t2', 2)])],
+      [2, file(2, [row('t1', 4), row('t2', 3)])],
+      [3, file(3, [row('t1', 4), row('t2', 2)])],
+    ]);
+    const s1Leads: S1Lead[] = [{ topic_id: 't1', topic_key: 'k-t1', season_number: 1, value: 4, pin_revision_id: 'r0', reasoning: 'r', sources: [], seed: 'stale' }];
+    const withLeads = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads });
+    const withoutLeads = buildCodingReport({ context, files, snapshotText, sourceKind });
+    const t1 = withLeads.rows.find((x) => x.topic_key === 'k-t1')!;
+    const t2 = withLeads.rows.find((x) => x.topic_key === 'k-t2')!;
+    expect(t1.seed).toBe('stale');
+    expect(t2.seed).toBe('none');
+    for (const key of ['t1', 't2']) {
+      const a = withLeads.rows.find((x) => x.topic_key === `k-${key}`)!;
+      const b = withoutLeads.rows.find((x) => x.topic_key === `k-${key}`)!;
+      expect(a.shadow).toEqual(b.shadow);
+      expect(a.shadow_reasons).toEqual(b.shadow_reasons);
+    }
   });
 });
