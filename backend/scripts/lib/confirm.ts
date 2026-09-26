@@ -11,14 +11,15 @@
 import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
 import type { Passage } from './coderLabel.js';
 import type { SeatContext } from './coderPrompt.js';
-import { checkRecordGroup, instrumentKey, seatChamber } from './recordBasis.js';
+import { checkRecordGroup, instrumentKey, seatChamber, type PassageProfile } from './recordBasis.js';
+import { resolveProfile, profileSeatChamber, profileTag, type SourceProfile } from './sourceProfiles.js';
 
 export const CAMPAIGN_LOOKBACK_DAYS = 548;
 export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
   | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
   | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage'
-  | 'chamber-not-evidenced' | 'tally-other-vote';
+  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
@@ -56,7 +57,7 @@ const extractLastName = (fullName: string): string => {
   return lastName;
 };
 
-export function confirmRow(i: {
+export interface ConfirmInput {
   seat: SeatContext;
   restsOnPassages: Passage[];
   snapshotText: ReadonlyMap<string, string>;
@@ -64,7 +65,15 @@ export function confirmRow(i: {
   sourceKind: ReadonlyMap<string, string>;
   rowServedRevisionId: string;
   bundleServedRevisionId: string;
-}): ConfirmFinding[] {
+  /** snapshot_id -> original URL (snapshots.json). Used only with `profiles`. */
+  snapshotUrl?: ReadonlyMap<string, string>;
+  /** Loaded source profiles. Given → every record passage must resolve one, else no-source-profile. */
+  profiles?: readonly SourceProfile[];
+}
+
+export function confirmRow(i: ConfirmInput): ConfirmFinding[] { return confirmRowDetailed(i).findings; }
+
+export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[]; profiles: string[] } {
   const out = new Set<ConfirmFinding>();
   const names = [...i.seat.jurisdiction_names, i.seat.office_title].filter(Boolean);
   const identityOk = i.restsOnPassages.some((p) => {
@@ -88,9 +97,27 @@ export function confirmRow(i: {
     group.push(p);
     groups.set(key, group);
   }
+
+  // Every record passage must resolve a source profile when `i.profiles` is given (fail closed);
+  // memoised per snapshot_id so a passage shared across groups is only looked up once.
+  const used = new Set<string>();
+  const profileCache = new Map<string, PassageProfile | null>();
+  const profileOf = (p: Passage): PassageProfile | null => {
+    if (!i.profiles) return null;
+    if (profileCache.has(p.snapshot_id)) return profileCache.get(p.snapshot_id)!;
+    const url = i.snapshotUrl?.get(p.snapshot_id);
+    const prof = url ? resolveProfile(i.profiles, url) : null;
+    let result: PassageProfile | null;
+    if (!prof) { out.add('no-source-profile'); result = null; }
+    else { used.add(profileTag(prof)); result = { rules: prof.rules, chamber: profileSeatChamber(prof, i.seat.office_title) }; }
+    profileCache.set(p.snapshot_id, result);
+    return result;
+  };
+  for (const p of records) profileOf(p);
+
   for (const group of groups.values()) {
     const { findings, actorPassages } = checkRecordGroup({
-      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title) });
+      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf });
     for (const f of findings) out.add(f);
     const datePassages = actorPassages.length > 0 ? actorPassages : group;
     for (const p of datePassages) {
@@ -141,5 +168,5 @@ export function confirmRow(i: {
     }
   }
   if (i.rowServedRevisionId !== i.bundleServedRevisionId) out.add('revision-drift');
-  return [...out];
+  return { findings: [...out], profiles: [...used].sort() };
 }

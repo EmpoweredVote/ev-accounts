@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { confirmRow, earliestStatementDate } from './confirm.js';
+import { confirmRow, confirmRowDetailed, earliestStatementDate } from './confirm.js';
+import { parseSourceProfile } from './sourceProfiles.js';
 import type { SeatContext } from './coderPrompt.js';
 import type { Passage } from './coderLabel.js';
 
@@ -120,4 +121,36 @@ describe('record groups (D1)', () => {
     expect(findings).not.toContain('near-unanimous-vote');
     expect(findings).not.toContain('instrument-mismatch');
   });
+});
+
+describe('source profiles in CONFIRM', () => {
+  const profile = parseSourceProfile(`---
+profile: test-votes
+version: 3
+scope: state:UT
+body: legislature
+match:
+  url_prefixes: [https://le.utah.gov/votes/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: nearest-before, name_format: surname }
+seat_titles: { Senator: upper }
+controls:
+  - { batch: b, snapshot: s1, person: J. Stuart Adams, office_title: Senator, instrument: H.B. 11 (2022), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+`, 'test.md');
+  const base = { seat, snapshotText: text, sourceKind: kinds, rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1' };
+  it('a record passage whose URL matches no profile → no-source-profile', () => {
+    const f = confirmRow({ ...base, restsOnPassages: [P({})], snapshotUrl: new Map([['s1', 'https://elsewhere.gov/x']]), profiles: [profile] });
+    expect(f).toContain('no-source-profile');
+  });
+  it('a record passage with no URL at all → no-source-profile (fail closed)', () =>
+    expect(confirmRow({ ...base, restsOnPassages: [P({})], snapshotUrl: new Map(), profiles: [profile] })).toContain('no-source-profile'));
+  it('a matched profile adds nothing and is reported as profile@version', () => {
+    const r = confirmRowDetailed({ ...base, restsOnPassages: [P({})], snapshotUrl: new Map([['s1', 'https://le.utah.gov/votes/hb11']]), profiles: [profile] });
+    expect(r.findings).not.toContain('no-source-profile');
+    expect(r.profiles).toEqual(['test-votes@3']);
+    expect(r.findings).toEqual(confirmRow({ ...base, restsOnPassages: [P({})] }));
+  });
+  it('without profiles, no lookup and no no-source-profile (other checks unchanged)', () =>
+    expect(confirmRow({ ...base, restsOnPassages: [P({})] })).not.toContain('no-source-profile'));
 });

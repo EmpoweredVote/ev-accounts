@@ -134,5 +134,20 @@ describe('D1 pair end to end (validator + CONFIRM)', () => {
     expect(t1.confirm).toEqual([]);
     expect(t1.shadow).toBe('would-publish-if-certified');
   });
+  it('a record passage with no matching source profile fails closed as no-source-profile', () => {
+    const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [d1('t1'), blank('t2')])]));
+    const snapshotUrl = new Map([['vote', 'https://nowhere.test/vote'], ['bill', 'https://nowhere.test/bill']]);
+    const withProfiles = buildCodingReport({ context, files, snapshotText: st, sourceKind: kinds, snapshotUrl, profiles: [] });
+    const t1 = withProfiles.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.confirm).toContain('no-source-profile');
+    expect(t1.shadow).toBe('would-review');
+    expect(t1.profiles).toEqual([]);
+    expect(withProfiles.noProfileHosts).toEqual({ 'nowhere.test': 1 });
+
+    const withoutProfiles = buildCodingReport({ context, files, snapshotText: st, sourceKind: kinds });
+    const t1b = withoutProfiles.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1b.profiles).toEqual([]);
+    expect(withoutProfiles.noProfileHosts).toEqual({});
+  });
 });
 
