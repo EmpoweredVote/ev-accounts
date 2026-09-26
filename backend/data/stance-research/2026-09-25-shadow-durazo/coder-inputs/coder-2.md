@@ -4,15 +4,19 @@ labels afterwards. If the evidence a row needs is named but not included here, p
 needs_source instead of guessing.
 
 Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-09-25-shadow-durazo/labels/coder-2.json. Write JSON only, matching
-codebook Part E, with "codebook_version": "0.2" and "coder_slot": 2. One row per
+codebook Part E, with "codebook_version": "0.3" and "coder_slot": 2. One row per
 topic below. Every quoted string you write must be copied exactly from a source below.
 
 ## Codebook
 
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.2 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1). The annex
+**Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -134,6 +138,18 @@ providers… with limited subsidies reserved for the lowest-income families."
 - It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
   `no-evidence` unless another source exists.
 
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
 **Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
 environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
 impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
@@ -173,6 +189,33 @@ unevidenced chair.
   `statement-other`. When unsure → `statement-other`.
 - When `record` and a statement conflict, the record wins, and the row is coded
   `record-vs-statement-conflict` if the conflict decides the chair.
+- **Record fields (0.3).**
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
+  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
+    contains the surname, or the author/sponsor line. If two members on the page share the surname,
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
+  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
+- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
+  one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
 
 **Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
 roll call. → `record`.
@@ -226,6 +269,8 @@ A vote does not mean support for every clause of a bill.
 - **The operative section governs, not the recital or the short title** (C38, C51).
 - **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
   version the person acted on.
+- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
+  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
 
 #### V4.2 Clause completeness
 
@@ -483,6 +528,7 @@ revision. A new revision gets a new annex version.
 # <topic_key> — served revision <id> (Season N)
 Orientation: standard | inverted | off-axis — one sentence why.
 Levels with a role: federal / state / local / school   (compass_topic_roles)
+Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
 Per rung:
   <n>. "<rung text>"
      Operative clauses: [a] … [b] …
@@ -516,6 +562,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
 | H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
 | H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
 
 ---
 
@@ -523,7 +570,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 
 ```json
 {
-  "codebook_version": "0.2",
+  "codebook_version": "0.3",
   "coder_slot": 1,
   "rows": [
     {
@@ -542,7 +589,10 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
           "v5_time": "in-term | pre-seating | superseded-by-later | undated",
           "instrument": "H.R. 8035 (118th) | null",
           "provision_quote": "verbatim operative text from this snapshot | null",
-          "note": "≤ 1 sentence"
+          "note": "≤ 1 sentence",
+          "record_kind": "vote | sponsor | author | other-act | null",
+          "actor_quote": "verbatim span showing this person acted | null",
+          "tally_quote": "verbatim vote count text | null"
         }
       ],
       "v6_value": 4,
@@ -571,13 +621,17 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   passage whose V1–V5 values all allow a chair.
 - Every `provision_quote` and every quote `text` is verbatim in its snapshot.
 - Every value is from the lists above.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
 
 
 ## The person
 
 politician_id: c7dc9c50-84c6-4bde-af06-e7f9d5167e93  office_id: 493a571f-b01b-4253-afbc-ffe3979f52bb
 Maria Elena Durazo — Senator, California (seated, level: state)
-Current term: unknown (precision: unknown) to present
+Current term: 2022-12-05 (precision: day) to present
 
 ## Topics (served ladder text — code against these words only)
 
@@ -651,6 +705,9 @@ Question: What role should vouchers and school choice play in the public educati
 **Levels:** state (the lever: program statutes), federal (tax-credit scholarships only), school
 boards (no lever on vouchers). Verify against `compass_topic_roles` before use.
 
+**Synonyms:** "education savings account" (ESA), "scholarship", "tax-credit scholarship",
+"Choice Scholarship" (Indiana), "Utah Fits All".
+
 1. **"Eliminating voucher programs that divert taxpayer money from public schools to private
    institutions"**
    - Clauses: [a] eliminate existing programs.
@@ -710,7 +767,41 @@ Question: How should the government verify a voter's identity and eligibility?
 
 #### Annex
 
-(no annex for this topic yet — apply the codebook alone)
+# voting-rights — annex (Season 2 served text; draft, not ruled)
+
+**Question:** "How should the government verify a voter's identity and eligibility?"
+
+**Orientation:** standard. Rung 1 requires the least identification, rung 5 the most.
+
+**Levels:** state (the lever: election codes set ID and registration rules), federal (registration
+and mail-ballot rules for federal elections). Local governments run elections but, in most states,
+cannot set their own ID rules. Verify against `compass_topic_roles` before use.
+
+**Synonyms:** "voter identification", "voter ID", "photo identification", "proof of citizenship",
+"documentary proof", "SAVE Act", "signature verification", "HAVA identification".
+
+1. **"Require no identification to vote, verifying voters by signature or existing records."**
+   - Clauses: [a] no ID at the polls; [b] signature or record matching instead.
+   - Evidence: a bill that removes an existing state ID requirement; own words against any ID.
+   - Confused with 2 when the person only opposes *photo* ID.
+2. **"Accept non-photo identification, such as a utility bill or bank statement."**
+   - Clauses: [a] ID required; [b] non-photo documents accepted.
+   - Evidence: a bill that widens the accepted list to non-photo documents.
+3. **"Require photo ID to vote, but let voters without one cast a ballot after signing an affidavit."**
+   - Clauses: [a] photo ID; [b] an affidavit fallback.
+4. **"Require photo ID in person and an ID number on every mail ballot."**
+   - Clauses: [a] photo ID in person; [b] an ID number on mail ballots.
+5. **"Require documentary proof of citizenship to register to vote."**
+   - Clauses: [a] documentary proof of citizenship at registration.
+   - Evidence: a proof-of-citizenship bill (for example the federal SAVE Act).
+
+**Hard cases:**
+- **Preemption is not the rule (codebook V2, H12).** A bill that forbids local governments to require
+  ID (California SB 1174, 2024) decides *which level* may set the rule, not *what* the rule is. →
+  `adjacent`.
+- A mail-ballot rule with no identity clause (drop boxes, deadlines) → `adjacent` (codebook V2).
+- An omnibus election bill that includes an ID clause → V4 `multi-subject`.
+
 
 ## Sources
 

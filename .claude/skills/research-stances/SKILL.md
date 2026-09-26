@@ -976,16 +976,34 @@ queues. Its only outputs are `coding-report.json` and, with the operator's OK, r
    refuses them. For a public-record or own-site page that automation cannot fetch, save it from a
    real browser into `<batch>/human-saved/` and set `human_saved_path`. **Never do this for news**
    (spec §5.4).
+   - Before searching, run `npx tsx scripts/build-s1-leads.ts --dir <batch> --politician <uuid>`
+     (from `backend/`) and check each lead's cited sources first. Old citations are often wrong (bill
+     number, chamber, a dead bill). **Never pass `s1-leads.json` to a coder.**
+   - Search with the topic annex's **Synonyms** as well as the plain topic words, before recording
+     that nothing was found.
+   - Before collecting, read the source profiles for the jurisdiction in `docs/sources/` (access
+     notes, which page proves what, traps). A record page from a source with no profile gets
+     `no-source-profile` in CONFIRM: write the profile from `docs/sources/README.md`, with the saved
+     page as an `expect: pass` control, in the same batch.
 2. `npm run coding:snapshot --prefix backend -- --dir <batch>` → `snapshots.json`. Read the NOT CODABLE
    lines.
 3. `npm run coding:inputs --prefix backend -- --dir <batch> --politician <uuid> [--office <uuid>]`
    → `coder-inputs/coder-{1,2,3}.md`.
-4. **Dispatch three coders in ONE message** (parallel Agent calls), `subagent_type: "stance-coder"`:
-   - slot 1 with `model: "opus"`, slots 2 and 3 with `model: "sonnet"`;
-   - each call's `prompt` = the **exact** contents of `coder-inputs/coder-N.md`. Do not edit,
-     summarise or add to it; the file hash printed in step 3 is the record of what was sent.
+4. **Dispatch three coders with the headless CLI**, run from an **empty scratch directory**, one
+   line per slot (slot 1 `--model opus`, slots 2 and 3 `--model sonnet`). This sends the input file
+   byte-exact (the file hash printed in step 3 is the record of what was sent) and uses plan quota:
+
+   ```bash
+   CLAUDE_CONFIG_DIR=~/.claude-ev claude -p --model <opus|sonnet> --tools Write --allowedTools Write --permission-mode acceptEdits --add-dir <batch>/labels --output-format text < <batch>/coder-inputs/coder-N.md
+   ```
+
+   - Do not edit, summarise or add to `coder-N.md`.
    - Do not read the coders' files and "fix" them. An invalid label is data (`coder-missing`).
 5. `npm run coding:report --prefix backend -- --dir <batch> --season-id <open season uuid> --models "opus,sonnet,sonnet"`.
+   Every record passage needs `record_kind`; each record (all passages on one `instrument`) needs
+   `actor_quote` on at least one page, and a vote needs `tally_quote` on at least one page (ruling
+   2026-09-26, per group). CONFIRM judges a vote page and its bill text together, as one basis, and
+   requires the vote page to name the seat's chamber.
 6. If `needs-source.json` is non-empty: fetch those sources (you are the only role with tools), add
    them to `sources.json`, and repeat from step 2 — **all three coders again**. After two rounds with
    no new snapshot, stop (spec §1.3).

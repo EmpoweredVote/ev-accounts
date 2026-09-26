@@ -1,14 +1,16 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { CODEBOOK_VERSION, validateCoderLabelFile, passageAllowsChair, rowKey, type Passage, type CoderRow } from './coderLabel.js';
+import { CODEBOOK_VERSION, validateCoderLabelFile, passageAllowsChair, rowKey, instrumentKey, type Passage, type CoderRow } from './coderLabel.js';
 
 const SNAP = 'aaaaaaaa-0000-0000-0000-000000000001';
 const snapshotText = new Map([[SNAP, 'The Senate voted 21-8 to override the veto of H.B. 11, which requires students to compete on teams matching their sex at birth.']]);
 const passage = (over: Partial<Passage> = {}): Passage => ({
   snapshot_id: SNAP, v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record',
   v4_shape: 'chair-shaped', v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11 (2022)',
-  provision_quote: 'requires students to compete on teams matching their sex at birth', note: '', ...over,
+  provision_quote: 'requires students to compete on teams matching their sex at birth', note: '',
+  record_kind: 'vote', actor_quote: 'The Senate voted 21-8 to override the veto of H.B. 11', tally_quote: 'voted 21-8',
+  ...over,
 });
 const row = (over: Partial<CoderRow> = {}): CoderRow => ({
   politician_id: 'p1', office_id: 'o1', topic_id: 't1', served_revision_id: 'r1',
@@ -102,4 +104,90 @@ describe('validateCoderLabelFile', () => {
       .toContain(`passage ${SNAP}: date ${d} not YYYY, YYYY-MM or YYYY-MM-DD`));
   it.each([['2010'], ['2010-03'], ['2024-02-29'], [null]])('accepts passage date %s', (d) =>
     expect(validateCoderLabelFile(file([row({ passages: [passage({ date: d })] })]), ctx).rows[0].errors).toEqual([]));
+});
+
+describe('0.3 record fields', () => {
+  it('requires record_kind on a record passage, and an actor_quote in its instrument group', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: undefined, actor_quote: undefined })] })]), ctx);
+    expect(r.rows[0].errors).toEqual(expect.arrayContaining([
+      `passage ${SNAP}: record_kind required for a record`,
+      'record H.B. 11 (2022): no passage carries actor_quote',
+    ]));
+  });
+  it('requires a tally_quote in a vote group', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ tally_quote: null })] })]), ctx);
+    expect(r.rows[0].errors).toContain('record H.B. 11 (2022): no passage carries tally_quote');
+  });
+  it('does not require tally_quote for a sponsorship', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: 'sponsor', tally_quote: null })] })]), ctx);
+    expect(r.rows[0].errors).toEqual([]);
+  });
+  it('refuses an actor_quote or tally_quote that is not verbatim', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ actor_quote: 'Yoder voted aye', tally_quote: 'Ayes 40 Noes 0' })] })]), ctx);
+    expect(r.rows[0].errors).toEqual(expect.arrayContaining([
+      `passage ${SNAP}: actor_quote not verbatim in snapshot`,
+      `passage ${SNAP}: tally_quote not verbatim in snapshot`,
+    ]));
+  });
+  it('refuses an unknown record_kind', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: 'cosponsor' as never })] })]), ctx);
+    expect(r.rows[0].errors).toContain(`passage ${SNAP}: record_kind cosponsor not allowed`);
+  });
+  it('asks nothing new of a statement passage', () => {
+    const p = passage({ v3_class: 'statement-other', record_kind: undefined, actor_quote: undefined, tally_quote: undefined });
+    expect(validateCoderLabelFile(file([row({ passages: [p] })]), ctx).rows[0].errors).toEqual([]);
+  });
+});
+
+// Ruling 2026-09-26 (operator: "Per group"): actor_quote / tally_quote are required per instrument
+// group, not per passage — the bill-text half of a vote names no voters and carries no tally.
+describe('0.3 record fields are required per instrument group (ruling 2026-09-26)', () => {
+  const VOTE = 'aaaaaaaa-0000-0000-0000-00000000000v';
+  const BILL = 'aaaaaaaa-0000-0000-0000-00000000000b';
+  const st = new Map([
+    [VOTE, 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams J. S., Bramble, Cullimore. Noes Riebe'],
+    [BILL, 'H.B. 11 (2022). The bill requires students to compete on teams matching their sex at birth.'],
+  ]);
+  const c = { snapshotText: st, expectedSlot: 1 };
+  const votePage = passage({ snapshot_id: VOTE, provision_quote: null, actor_quote: 'Ayes Adams J. S., Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' });
+  const billPage = passage({ snapshot_id: BILL, actor_quote: null, tally_quote: null });
+  const pair = (v: Passage, b: Passage) => row({ passages: [v, b], rests_on: [VOTE, BILL] });
+
+  it('accepts the D1 pair: vote page with actor+tally, bill page with provision and null actor/tally', () =>
+    expect(validateCoderLabelFile(file([pair(votePage, billPage)]), c).rows[0].errors).toEqual([]));
+  it('refuses a group where no passage carries actor_quote', () =>
+    expect(validateCoderLabelFile(file([pair({ ...votePage, actor_quote: null }, billPage)]), c).rows[0].errors)
+      .toEqual(['record H.B. 11 (2022): no passage carries actor_quote']));
+  it('refuses a vote group where no passage carries tally_quote', () =>
+    expect(validateCoderLabelFile(file([pair({ ...votePage, tally_quote: null }, billPage)]), c).rows[0].errors)
+      .toEqual(['record H.B. 11 (2022): no passage carries tally_quote']));
+  it('still requires record_kind on every record passage, the bill page included', () =>
+    expect(validateCoderLabelFile(file([pair(votePage, { ...billPage, record_kind: undefined })]), c).rows[0].errors)
+      .toEqual([`passage ${BILL}: record_kind required for a record`]));
+  it('judges each instrument group on its own', () => {
+    const other = { ...billPage, instrument: 'S.B. 22 (2022)' };
+    expect(validateCoderLabelFile(file([row({ passages: [votePage, billPage, other], rests_on: [VOTE, BILL] })]), c).rows[0].errors)
+      .toEqual(expect.arrayContaining(['record S.B. 22 (2022): no passage carries actor_quote', 'record S.B. 22 (2022): no passage carries tally_quote']));
+  });
+  it('groups every record passage of the row, not only rests_on', () =>
+    expect(validateCoderLabelFile(file([row({ passages: [votePage, billPage], rests_on: [BILL] })]), c).rows[0].errors).toEqual([]));
+  it('still checks a present actor_quote is verbatim', () =>
+    expect(validateCoderLabelFile(file([pair(votePage, { ...billPage, actor_quote: 'Adams voted aye' })]), c).rows[0].errors)
+      .toEqual([`passage ${BILL}: actor_quote not verbatim in snapshot`]));
+  it('groups a long-form instrument label with its short-form pair (fix round 1: "Senate Bill 208" = "SB 208")', () => {
+    const v = { ...votePage, instrument: 'SB 208 (2024)' };
+    const b = { ...billPage, instrument: 'Senate Bill 208 (2024)' };
+    expect(validateCoderLabelFile(file([row({ passages: [v, b], rests_on: [VOTE, BILL] })]), c).rows[0].errors).toEqual([]);
+  });
+});
+
+describe('instrumentKey long-form chamber-bill (fix round 1)', () => {
+  it('maps "Senate Bill" / "House Bill" / "Assembly Bill" to the short prefix, case-insensitively', () => {
+    expect(instrumentKey('Senate Bill 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
+    expect(instrumentKey('senate bill 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
+    expect(instrumentKey('House Bill 1041 (2025)')).toBe(instrumentKey('HB 1041 (2025)'));
+    expect(instrumentKey('Assembly Bill 1955 (2023-2024)')).toBe(instrumentKey('AB 1955 (2023-2024)'));
+  });
+  it('does not merge a different bill number just because one is spelled out', () =>
+    expect(instrumentKey('Senate Bill 20 (2024)')).not.toBe(instrumentKey('SB 208 (2024)')));
 });

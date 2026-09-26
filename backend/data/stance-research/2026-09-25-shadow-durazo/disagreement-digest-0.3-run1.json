@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.3",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.5,
+      "examples": [
+        {
+          "unit": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93|493a571f-b01b-4253-afbc-ffe3979f52bb|44905f3b-e105-4f6c-afc7-5d223813dbac#fb096408-6d38-5f00-8e18-dd8112f26518",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 2,
+      "alpha": 0.2941176470588236,
+      "examples": [
+        {
+          "unit": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93|493a571f-b01b-4253-afbc-ffe3979f52bb|c1ac1330-47f7-44ec-baf3-c913d926b97c#79c1076f-b9be-59bb-889a-f8dd7daac037",
+          "values": [
+            "near-unanimous",
+            "off-axis",
+            null
+          ]
+        },
+        {
+          "unit": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93|493a571f-b01b-4253-afbc-ffe3979f52bb|44905f3b-e105-4f6c-afc7-5d223813dbac#fb096408-6d38-5f00-8e18-dd8112f26518",
+          "values": [
+            "direction-only",
+            "off-axis",
+            "off-axis"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 6,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v2_relevance"
+  ]
+}

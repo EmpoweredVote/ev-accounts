@@ -1,18 +1,25 @@
 /**
  * confirm — phase-1 CONFIRM (spec §1.6): code-only checks after the coders agree. Any finding
  * sends the row to a person. Identity guards against namesakes; dates guard pre-seating (§4.10)
- * and the statement cycle (ruling Q4); the vote ladder requires the operative provision on the page.
+ * and the statement cycle (ruling Q4); record passages are judged as one basis per instrument
+ * group (via recordBasis.checkRecordGroup) — a vote or sponsorship record may span a vote/actor
+ * page and a separate bill-text page, so the group as a whole must show the person acting, the
+ * provision, and (for a vote) a readable, divided tally. Statements stay judged per passage.
  * 🟡 CAMPAIGN_LOOKBACK_DAYS is an implementation PROXY for "the current term, the current campaign,
  * or the campaign that seated them" — the operator may change it.
  */
 import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
-import { verbatimIn, type Passage } from './coderLabel.js';
+import type { Passage } from './coderLabel.js';
 import type { SeatContext } from './coderPrompt.js';
+import { checkRecordGroup, instrumentKey, seatChamber, type PassageProfile } from './recordBasis.js';
+import { resolveProfile, profileSeatChamber, profileTag, type SourceProfile } from './sourceProfiles.js';
 
 export const CAMPAIGN_LOOKBACK_DAYS = 548;
 export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
-  | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer';
+  | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
+  | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage'
+  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
@@ -50,7 +57,7 @@ const extractLastName = (fullName: string): string => {
   return lastName;
 };
 
-export function confirmRow(i: {
+export interface ConfirmInput {
   seat: SeatContext;
   restsOnPassages: Passage[];
   snapshotText: ReadonlyMap<string, string>;
@@ -58,7 +65,15 @@ export function confirmRow(i: {
   sourceKind: ReadonlyMap<string, string>;
   rowServedRevisionId: string;
   bundleServedRevisionId: string;
-}): ConfirmFinding[] {
+  /** snapshot_id -> original URL (snapshots.json). Used only with `profiles`. */
+  snapshotUrl?: ReadonlyMap<string, string>;
+  /** Loaded source profiles. Given → every record passage must resolve one, else no-source-profile. */
+  profiles?: readonly SourceProfile[];
+}
+
+export function confirmRow(i: ConfirmInput): ConfirmFinding[] { return confirmRowDetailed(i).findings; }
+
+export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[]; profiles: string[] } {
   const out = new Set<ConfirmFinding>();
   const names = [...i.seat.jurisdiction_names, i.seat.office_title].filter(Boolean);
   const identityOk = i.restsOnPassages.some((p) => {
@@ -70,7 +85,54 @@ export function confirmRow(i: {
   if (i.restsOnPassages.some((p) => (i.sourceKind.get(p.snapshot_id) ?? 'pointer') === 'pointer')) out.add('rests-on-pointer');
   const cycleStart = earliestStatementDate(i.seat);
   const lastName = extractLastName(i.seat.full_name);
-  for (const p of i.restsOnPassages) {
+
+  // Records are judged as one basis per instrument (confirm-basis spec §2, defect D1): a vote or
+  // sponsorship record may span a vote/actor page and a separate bill-text page.
+  const records = i.restsOnPassages.filter((p) => p.v3_class === 'record');
+  const statements = i.restsOnPassages.filter((p) => p.v3_class !== 'record');
+  const groups = new Map<string, Passage[]>();
+  for (const p of records) {
+    const key = instrumentKey(p.instrument) ?? '∅';
+    const group = groups.get(key) ?? [];
+    group.push(p);
+    groups.set(key, group);
+  }
+
+  // Every record passage must resolve a source profile when `i.profiles` is given (fail closed);
+  // memoised per snapshot_id so a passage shared across groups is only looked up once.
+  const used = new Set<string>();
+  const profileCache = new Map<string, PassageProfile | null>();
+  const profileOf = (p: Passage): PassageProfile | null => {
+    if (!i.profiles) return null;
+    if (profileCache.has(p.snapshot_id)) return profileCache.get(p.snapshot_id)!;
+    const url = i.snapshotUrl?.get(p.snapshot_id);
+    const prof = url ? resolveProfile(i.profiles, url) : null;
+    let result: PassageProfile | null;
+    if (!prof) { out.add('no-source-profile'); result = null; }
+    else { used.add(profileTag(prof)); result = { rules: prof.rules, chamber: profileSeatChamber(prof, i.seat.office_title) }; }
+    profileCache.set(p.snapshot_id, result);
+    return result;
+  };
+  for (const p of records) profileOf(p);
+
+  for (const group of groups.values()) {
+    const { findings, actorPassages } = checkRecordGroup({
+      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf });
+    for (const f of findings) out.add(f);
+    const datePassages = actorPassages.length > 0 ? actorPassages : group;
+    for (const p of datePassages) {
+      if (!p.date) { out.add('undated-evidence'); continue; }
+      const d = floorDate(p.date);
+      if (i.seat.mode === 'candidate') {
+        out.add('record-not-this-office');
+      } else if (i.seat.mode === 'seated') {
+        if (!i.seat.term_start || i.seat.start_precision !== 'day') out.add('dates-imprecise');
+        else if (d < i.seat.term_start) out.add('record-before-term');
+      }
+    }
+  }
+
+  for (const p of statements) {
     const snapshotText = i.snapshotText.get(p.snapshot_id) ?? '';
     const normalizedText = normalizeText(snapshotText);
 
@@ -97,24 +159,14 @@ export function confirmRow(i: {
     if (!p.date) { out.add('undated-evidence'); continue; }
     const d = floorDate(p.date);
 
-    if (p.v3_class === 'record') {
-      if (i.seat.mode === 'candidate') {
-        out.add('record-not-this-office');
-      } else if (i.seat.mode === 'seated') {
-        if (!i.seat.term_start || i.seat.start_precision !== 'day') out.add('dates-imprecise');
-        else if (d < i.seat.term_start) out.add('record-before-term');
-      }
-      if (!p.provision_quote || !verbatimIn(snapshotText, p.provision_quote)) out.add('provision-missing');
-    } else {
-      if (i.seat.mode === 'seated' && i.seat.start_precision !== 'day') {
-        out.add('dates-imprecise');
-      } else if (!cycleStart) {
-        out.add('dates-imprecise');
-      } else if (d < cycleStart) {
-        out.add('statement-out-of-cycle');
-      }
+    if (i.seat.mode === 'seated' && i.seat.start_precision !== 'day') {
+      out.add('dates-imprecise');
+    } else if (!cycleStart) {
+      out.add('dates-imprecise');
+    } else if (d < cycleStart) {
+      out.add('statement-out-of-cycle');
     }
   }
   if (i.rowServedRevisionId !== i.bundleServedRevisionId) out.add('revision-drift');
-  return [...out];
+  return { findings: [...out], profiles: [...used].sort() };
 }
