@@ -1,0 +1,343 @@
+{
+  "codebook_version": "0.2",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "d9257546-cef1-5033-b8a5-e8f37e1fa389",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 208 (Indiana, 2024)",
+          "provision_quote": "Reestablishes the licensure of abortion clinics. Changes statutes concerning when an abortion may be performed. Removes the eight week limitation on the use of an abortion inducing drug.",
+          "note": "She authored a bill that loosens the ban, but the digest never states the gestational threshold the rungs turn on."
+        },
+        {
+          "snapshot_id": "817d3595-590f-5246-99dc-8dd40395e766",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2024-01-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 208 (Indiana, 2024)",
+          "provision_quote": null,
+          "note": "Caucus agenda page written in the third person about her bills; it is a pointer to SB 208, not her own voice."
+        },
+        {
+          "snapshot_id": "f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-10-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her open letter opposes the ban and calls to restore reproductive freedom but names no time limit."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Yoder authored SB 208 (2024), which \"Changes statutes concerning when an abortion may be performed\" and \"Removes the eight week limitation on the use of an abortion inducing drug\", and her October 2024 open letter opposes the ban. Because the bill lessens rather than removes time limits, it excludes \"keep abortion legal at every stage of pregnancy, with no time limit\", but nothing in the sources states the threshold that separates \"legal through the second trimester\" from \"legal during the first trimester\". The evidence shows a side, not a rung.",
+      "needs_source": [
+        "Full text of Indiana SB 208 (2024), the section amending IC 16-34 on when an abortion may be performed, showing the gestational limit it would set",
+        "Yoder's own words naming a gestational threshold she would support"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f8a10e80-1f14-5250-bb7b-ed5357fe9b6b",
+          "text": "How many more people must suffer before we recognize that every individual has a natural right to their own body, a right that cannot and should not be stripped away by the hands of politicians?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Asked whether she would support a two-year moratorium, she declined it, which excludes rung 1 but names none of the others."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Asked at the Goshen recap whether she would back a two-year moratorium on data center development, Yoder answered \"So a blanket ‘no,’ I think, gives us one more permission to step out of the importance of being engaged\". That rules out \"Imposing a moratorium on new data center construction\", but it says nothing about barring cost pass-through to residential customers, community benefit requirements, streamlined permitting, or minimal regulatory barriers.",
+      "needs_source": [
+        "Yoder's vote or authored bill on Indiana data center utility cost allocation or siting (bill number and Senate roll call)",
+        "Her own words on whether data center energy costs may be passed to residential ratepayers"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "So a blanket ‘no,’ I think, gives us one more permission to step out of the importance of being engaged",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "7d3d9112-ef23-5f09-9bbe-7b8def21eaa7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-01-06",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 170 (Indiana, 2022)",
+          "provision_quote": "Requires the board of trustees of the Indiana public retirement system (system) to divest investments and investment products in a company that is publicly traded and identified as one of the 200 largest reserve-owning fossil fuel companies based on the amount of carbon emissions in a company's oil, gas, and coal reserves.",
+          "note": "Pension divestment orders where the state invests, not how much fossil fuel is produced or drilled."
+        },
+        {
+          "snapshot_id": "817d3595-590f-5246-99dc-8dd40395e766",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2024-01-08",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 177 (Indiana, 2024)",
+          "provision_quote": null,
+          "note": "SB 177 \"Creates a state task force to review agrivoltaics issues\"; a study directive described in the caucus's third-person voice."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record is SB 170 (2022), which she authored and which \"Requires the board of trustees of the Indiana public retirement system (system) to divest investments and investment products\" in large fossil fuel companies. Divesting a pension fund is a different dimension from the one the rungs order, which runs from \"Phase out fossil fuel production entirely\" to \"Maximize production and open more public land and waters to drilling\"; SB 177 only creates a task force. No passage speaks to production or drilling levels.",
+      "needs_source": [
+        "Yoder's vote or authored bill on Indiana oil, gas or coal production, drilling permits, or coal plant retirement (bill number and Senate roll call)",
+        "Her own words on whether fossil fuel production should decline, hold steady, or expand"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "6a51c12a-8c17-5105-ae64-3d6d9e9247f3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-02-18",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "She opposes SB 2's HIP work requirements and enrollment cap, which excludes scaling back but names no rung."
+        },
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-24",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "\"that is not reform. That is harm\" names no policy clause."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "On SB 2 (2025), which reintroduced HIP work requirements and capped enrollment, Yoder said the bill \"could result in working Hoosiers and rural hospitals being harmed the most\", and in 2026 she called the Medicaid and SNAP fraud measure harm rather than reform. That excludes \"scale back both programs, shifting more coverage to private insurance\", but it does not separate \"expand Medicare to cover everyone regardless of age\", \"significantly expand Medicare or Medicaid eligibility\", and \"improve current programs while controlling costs\".",
+      "needs_source": [
+        "Indiana Senate roll call on SB 2 (2025), final passage, showing Yoder's vote",
+        "A Yoder-authored Medicaid or Medicare bill, or her own words on whether she would expand eligibility beyond current HIP levels"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "6a51c12a-8c17-5105-ae64-3d6d9e9247f3",
+          "text": "As it currently stands, the bill — under the guise of fiscal responsibility — could result in working Hoosiers and rural hospitals being harmed the most",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "When a policy asks the most from people who already have the least, that is not reform",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-24",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words demand equal accountability and transparency standards, which is not the eligibility dimension the rungs order."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only words in her own voice are \"If we are going to be a universal school choice state, then every school must be held to the same accountability and transparency standards\", which accepts universality as a premise and asks for equal standards; the reporter's line that universal vouchers have been \"disruptive\" is characterization, not her voice. Nothing here evidences \"Eliminating voucher programs\", and per the annex an expansion-only objection cannot separate that rung from \"Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones\".",
+      "needs_source": [
+        "Indiana Senate roll call on the 2023 HEA 1001 voucher expansion and on the 2025 budget provision making Choice Scholarships universal, showing Yoder's vote",
+        "Yoder's own words on whether she would repeal the Choice Scholarship program or only block further expansion"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e36cea0e-6089-553b-a548-86bedbe14664",
+          "text": "If we are going to be a universal school choice state, then every school must be held to the same accountability and transparency standards",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "6024804d-b662-5e4d-88ec-64264fa1f0fa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (Indiana, 2025), Senate Roll Call 334, third reading",
+          "provision_quote": "N AY - 6 Ford J.D. Jackson Qaddoura Spencer Hunley Yoder",
+          "note": "A No on a single-subject bill rules out the rung the bill enacts but chooses none of the remaining rungs."
+        },
+        {
+          "snapshot_id": "b5b3e197-0a6f-5470-b742-c57006f4e331",
+          "v1_attribution": "namesake-unclear",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (Indiana, 2025)",
+          "provision_quote": "Prohibits a male, based on the student's biological sex at birth in accordance with the student's genetics and reproductive biology, from participating on an athletic team or sport designated as being a female, women's, or girls' athletic team or sport.",
+          "note": "The bill page is single-subject and rung-4 shaped, but it is not Yoder's act; it is the instrument her Nay was cast against."
+        },
+        {
+          "snapshot_id": "52da5a1f-8a21-524a-9a16-3b1a2af5e666",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-04",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her floor objections are about harassment, genital inspections and intersex students, not about what eligibility standard should apply."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Yoder voted Nay on HB 1041 (2025), a single-subject bill that \"Prohibits a male, based on the student's biological sex at birth ... from participating on an athletic team or sport designated as being a female, women's, or girls' athletic team or sport\", which rules out \"require transgender athletes to compete only on teams matching their biological sex assigned at birth\" and the total ban. Her floor remarks object to the absence of protections against \"genital inspections, forced disclosure of medical history or invasive questioning\", not to the eligibility standard itself, so nothing separates no restrictions, basic documentation, and case-by-case review.",
+      "needs_source": [
+        "Yoder's own words or an authored bill naming the eligibility standard she would set for transgender athletes",
+        "Her vote on the 2022 Indiana K-12 transgender sports bill (HB 1041, 2022) and the veto override roll call"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "52da5a1f-8a21-524a-9a16-3b1a2af5e666",
+          "text": "There is no language that protects against genital inspections, forced disclosure of medical history or invasive questioning by coaches or school officials.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        }
+      ]
+    },
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "0fd9f104-4605-5f68-a1b1-189d71fcf056",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-08",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Which photo IDs count at the polls is not a boundary any of the five rungs draws; her remark is a rhetorical question about fraud."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only passage in her voice is her question about SB 10 (2025), \"where is the fraud? … Where is the abuse of student IDs in our elections?\", aimed at a bill that removes institutional student IDs from the list of accepted poll identification. The rungs separate on whether identification is required at all, whether it must be a photo, whether an affidavit substitutes, and whether documentary proof of citizenship is needed to register; which photo IDs qualify is a different clause, and the snapshot contains no roll call recording her vote.",
+      "needs_source": [
+        "Indiana Senate roll call on SB 10 (2025), concurrence vote of 39-9, showing Yoder's vote",
+        "Yoder's own words on whether photo ID should be required to vote, and on documentary proof of citizenship at registration"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "0fd9f104-4605-5f68-a1b1-189d71fcf056",
+          "text": "We are told that this bill is about election integrity, but let’s ask ourselves the hard question: where is the fraud?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

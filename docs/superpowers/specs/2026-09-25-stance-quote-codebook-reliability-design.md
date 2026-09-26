@@ -622,7 +622,7 @@ with *each other*, the codebook is the problem, and gold would not help.
 |---|---|---|
 | Q1 | May the coders use tools? | **No.** They get Write only (for their label file). A coder that needs more evidence emits `needs_source`; the collector fetches it and all three re-code (§0.5, §1.3). |
 | Q2 | Can statement evidence ever auto-publish? | **Split.** `statement-answer` (questionnaire, moderated debate answer, first-person issue page, signed pledge) can certify. `statement-other` (news quotes, social posts, speeches, interviews) never auto-publishes (§3.2). |
-| Q3 | Does a Season 1 chair carry forward? | **Yes, if the question and rungs are unchanged**, until the row is re-researched in the new season. If they changed, no (§6). |
+| Q3 | Does a Season 1 chair carry forward? | **SUSPENDED 2026-09-25**, pending Chris Cantrell (see `2026-09-25-season-carry-forward-handoff.md`). The first reading ("only if the question and rungs are unchanged") would hide 27,786 displayed chairs (40 of 43 topics changed wording). New research is Season 2 only. |
 | Q4 | Statement age? | **By election cycle:** current term, current campaign, or the campaign that seated them; older → review. Every chair shows `evidence_as_of`. Records have no age limit (§5.2). |
 | Q5 | What is a lever? | **Two tests:** T1, a same-goal opponent could choose a different means; **and** T2, a voter could later check whether it was done. Optional `lever-named` tag when a specific instrument is named (codebook V7). |
 | Q6 | The evidence program's paid models? | **Keep the extractor** as a collector tool. **Keep one other-vendor judge** as a diagnostic fourth coder (a shared-error warning, never counted). Retire the rest. Read the per-item cost first (§8). |

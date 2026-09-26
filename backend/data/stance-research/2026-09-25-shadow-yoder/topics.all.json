@@ -1,0 +1,2162 @@
+[
+  {
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "topic_key": "abortion",
+    "topic_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+    "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+    "question_number": 1,
+    "title": "Reproductive Rights and Abortion Access",
+    "question_text": "How should the law handle abortion?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+      },
+      {
+        "value": 2,
+        "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+      },
+      {
+        "value": 3,
+        "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+      },
+      {
+        "value": 4,
+        "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+      },
+      {
+        "value": 5,
+        "text": "ban abortion in all cases, with no exceptions."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+    "topic_key": "ai-regulation",
+    "topic_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+    "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+    "question_number": 2,
+    "title": "Artificial Intelligence Oversight",
+    "question_text": "How much should government oversee artificial intelligence development and deployment?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Allow AI companies to develop and deploy technology freely without government interference"
+      },
+      {
+        "value": 2,
+        "text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+      },
+      {
+        "value": 3,
+        "text": "Hold AI developers legally responsible when their systems cause harm"
+      },
+      {
+        "value": 4,
+        "text": "Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and policing"
+      },
+      {
+        "value": 5,
+        "text": "Impose strict government approval requirements before any AI system can be deployed"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "topic_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "served_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "question_number": 3,
+    "title": "Campaign Finance Reform",
+    "question_text": "What rules should govern money in political campaigns and elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Ban all private money in political campaigns"
+      },
+      {
+        "value": 2,
+        "text": "Strictly limit corporate and dark-money spending"
+      },
+      {
+        "value": 3,
+        "text": "Keep contribution limits at current levels"
+      },
+      {
+        "value": 4,
+        "text": "Reduce restrictions on political donations and spending"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate all campaign finance laws and limits"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+    "topic_key": "childcare",
+    "topic_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+    "served_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+    "question_number": 4,
+    "title": "Childcare Affordability & Access",
+    "question_text": "How should government address the cost and availability of childcare?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Establishing publicly funded universal childcare so that all families have access regardless of income"
+      },
+      {
+        "value": 2,
+        "text": "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"
+      },
+      {
+        "value": 3,
+        "text": "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"
+      },
+      {
+        "value": 4,
+        "text": "Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else"
+      },
+      {
+        "value": 5,
+        "text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+    "topic_key": "city-sanitation",
+    "topic_revision_id": "af3c2445-97e5-46a7-b33d-6915c13eab5c",
+    "served_revision_id": "af3c2445-97e5-46a7-b33d-6915c13eab5c",
+    "question_number": 5,
+    "title": "City Sanitation and Cleanliness",
+    "question_text": "How should your community approach street cleanliness and sanitation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Significantly expand public sanitation services, treating cleanliness as the city's responsibility"
+      },
+      {
+        "value": 2,
+        "text": "Concentrate sanitation resources on the most neglected, worst-served neighborhoods to close long-standing service gaps"
+      },
+      {
+        "value": 3,
+        "text": "Maintain current public sanitation services and target enforcement at the businesses and large property owners who create the most waste"
+      },
+      {
+        "value": 4,
+        "text": "Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible"
+      },
+      {
+        "value": 5,
+        "text": "Privatize sanitation services and require residents and businesses to contract for cleanup directly"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+    "topic_key": "civil-rights",
+    "topic_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+    "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+    "question_number": 6,
+    "title": "Civil Rights and Social Justice",
+    "question_text": "What role should government play in addressing racial and social inequality?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "mandate racial equity requirements in all institutions"
+      },
+      {
+        "value": 2,
+        "text": "strengthen civil rights enforcement and address systemic discrimination"
+      },
+      {
+        "value": 3,
+        "text": "maintain current civil rights laws while promoting equal opportunity"
+      },
+      {
+        "value": 4,
+        "text": "limit federal civil rights enforcement to clear cases of discrimination"
+      },
+      {
+        "value": 5,
+        "text": "eliminate affirmative action and all race-based government programs"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+    "topic_key": "climate-change",
+    "topic_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+    "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+    "question_number": 7,
+    "title": "Clean Energy",
+    "question_text": "How much should government do to expand clean energy?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require a shift to clean energy through mandates and firm deadlines."
+      },
+      {
+        "value": 2,
+        "text": "Fund clean energy with major subsidies, tax credits, and public investment."
+      },
+      {
+        "value": 3,
+        "text": "Speed up clean energy by cutting permitting red tape and upgrading the grid."
+      },
+      {
+        "value": 4,
+        "text": "Stay neutral on energy and let the market choose among all sources."
+      },
+      {
+        "value": 5,
+        "text": "End government subsidies and mandates for clean energy."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+    "topic_key": "data-centers",
+    "topic_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "question_number": 8,
+    "title": "Data Center Development & Energy Costs",
+    "question_text": "How should government manage the growth of large-scale data centers?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+      },
+      {
+        "value": 2,
+        "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+      },
+      {
+        "value": 3,
+        "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+      },
+      {
+        "value": 4,
+        "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+      },
+      {
+        "value": 5,
+        "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "topic_key": "deportation",
+    "topic_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+    "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+    "question_number": 9,
+    "title": "Deportation Priorities",
+    "question_text": "How far should the government go in deporting undocumented immigrants?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Stop deportations entirely and protect undocumented immigrants from removal"
+      },
+      {
+        "value": 2,
+        "text": "Only deport undocumented immigrants convicted of serious violent crimes"
+      },
+      {
+        "value": 3,
+        "text": "Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place"
+      },
+      {
+        "value": 4,
+        "text": "Deport all undocumented immigrants, starting with those who have criminal records"
+      },
+      {
+        "value": 5,
+        "text": "Carry out a mass-deportation program to remove all undocumented immigrants, including long-settled families and workers"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "topic_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+    "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+    "question_number": 10,
+    "title": "Economic Development Incentives",
+    "question_text": "How should government attract businesses and support economic development?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so businesses want to come on their own."
+      },
+      {
+        "value": 2,
+        "text": "Help small and local businesses grow, but don't offer subsidies to attract large outside companies."
+      },
+      {
+        "value": 3,
+        "text": "Offer incentives to attract businesses, but only if they commit to good wages and local hiring \u2014 and pay the money back if they don't deliver."
+      },
+      {
+        "value": 4,
+        "text": "Offer large tax breaks and infrastructure to attract major employers, but keep limits and pass on deals that cost too much."
+      },
+      {
+        "value": 5,
+        "text": "Offer the largest incentives to attract any large employer, with no conditions or spending limits."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+    "topic_key": "fossil-fuels",
+    "topic_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+    "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+    "question_number": 11,
+    "title": "Fossil Fuel Policy",
+    "question_text": "What role should fossil fuels play in the nation's energy future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Phase out fossil fuel production entirely."
+      },
+      {
+        "value": 2,
+        "text": "Allow no new drilling and let production decline over time."
+      },
+      {
+        "value": 3,
+        "text": "Keep fossil fuel production steady at current levels."
+      },
+      {
+        "value": 4,
+        "text": "Expand fossil fuel production with new drilling and permits."
+      },
+      {
+        "value": 5,
+        "text": "Maximize production and open more public land and waters to drilling."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "topic_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "question_number": 12,
+    "title": "Growth and Development Pace",
+    "question_text": "How should government manage population growth and new development?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Hold the pace of growth down \u2014 cap major new development, and let residents vote directly on the largest projects."
+      },
+      {
+        "value": 2,
+        "text": "Allow growth only as fast as current infrastructure can handle \u2014 make new development wait for capacity."
+      },
+      {
+        "value": 3,
+        "text": "Welcome steady growth \u2014 invest in roads, water and schools ahead of demand so expansion isn't held back."
+      },
+      {
+        "value": 4,
+        "text": "Actively push for faster growth \u2014 cut red tape and recruit new development, while keeping basic guardrails."
+      },
+      {
+        "value": 5,
+        "text": "Step back and let the market set the pace \u2014 remove development constraints beyond basic health and safety."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "topic_key": "healthcare",
+    "topic_revision_id": "afc91aa2-4d48-4db6-aebd-f4c9788e6ad7",
+    "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+    "question_number": 13,
+    "title": "Healthcare Access",
+    "question_text": "What role should government play in healthcare access?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make healthcare free and available to everyone, fully paid for by the public sector"
+      },
+      {
+        "value": 2,
+        "text": "Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance"
+      },
+      {
+        "value": 3,
+        "text": "Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else"
+      },
+      {
+        "value": 4,
+        "text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+      },
+      {
+        "value": 5,
+        "text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "topic_key": "homelessness",
+    "topic_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+    "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+    "question_number": 14,
+    "title": "Criminalization of Homelessness",
+    "question_text": "How should government address people sleeping or camping in public spaces?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+      },
+      {
+        "value": 2,
+        "text": "Decriminalizing public sleeping and camping in public spaces"
+      },
+      {
+        "value": 3,
+        "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+      },
+      {
+        "value": 4,
+        "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+      },
+      {
+        "value": 5,
+        "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+    "topic_key": "homelessness-response",
+    "topic_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+    "served_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+    "question_number": 15,
+    "title": "Homelessness Funding",
+    "question_text": "How much should your community spend on housing and services to reduce homelessness?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Guarantee housing and support services through dedicated, permanent public funding"
+      },
+      {
+        "value": 2,
+        "text": "Expand housing and support services by increasing public funding"
+      },
+      {
+        "value": 3,
+        "text": "Maintain current housing and service programs at today's funding level, with no major new spending"
+      },
+      {
+        "value": 4,
+        "text": "Provide limited public funding to nonprofits and charities to lead the response, rather than running public programs"
+      },
+      {
+        "value": 5,
+        "text": "Withdraw government funding for housing and support services, treating homelessness as a matter for private charity and the market"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "topic_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+    "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+    "question_number": 16,
+    "title": "Affordable Housing",
+    "question_text": "What role should government play in making sure people can afford housing?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make government the main provider \u2014 build and operate public housing so everyone is guaranteed a home."
+      },
+      {
+        "value": 2,
+        "text": "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+      },
+      {
+        "value": 3,
+        "text": "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+      },
+      {
+        "value": 4,
+        "text": "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+      },
+      {
+        "value": 5,
+        "text": "Rely on the market to set prices and supply \u2014 at most, cut the regulations and zoning limits that block private building."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+    "topic_key": "jail-capacity",
+    "topic_revision_id": "f63a4e70-055e-4115-a5e0-3deeb5748816",
+    "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+    "question_number": 17,
+    "title": "Jail Capacity and Incarceration Alternatives",
+    "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"
+      },
+      {
+        "value": 2,
+        "text": "Reducing the incarcerated population through alternatives to incarceration rather than building new capacity"
+      },
+      {
+        "value": 3,
+        "text": "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"
+      },
+      {
+        "value": 4,
+        "text": "Building additional jail capacity to address overcrowding and facility deficiencies"
+      },
+      {
+        "value": 5,
+        "text": "Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+    "topic_key": "judicial-access-to-justice",
+    "topic_revision_id": "6c1d0a40-eb5c-481b-b035-323dedaa0d88",
+    "served_revision_id": "6c1d0a40-eb5c-481b-b035-323dedaa0d88",
+    "question_number": 18,
+    "title": "Access to Justice",
+    "question_text": "How easy should it be to use the courts?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make it easy to bring a case, and clear away the costs and hurdles that shut people out."
+      },
+      {
+        "value": 2,
+        "text": "Apply the normal requirements, but don't let small mistakes or technicalities keep a real case out."
+      },
+      {
+        "value": 3,
+        "text": "Apply the same rules to everyone, and let a case stand or fall on its own merits."
+      },
+      {
+        "value": 4,
+        "text": "Require people to show a strong case up front, and dismiss those that fall short."
+      },
+      {
+        "value": 5,
+        "text": "Keep the courts for serious cases only, and steer other disputes elsewhere."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+    "topic_key": "judicial-bail-pretrial",
+    "topic_revision_id": "1b4e6f5a-62e6-4939-95f3-c173eb471fb3",
+    "served_revision_id": "1b4e6f5a-62e6-4939-95f3-c173eb471fb3",
+    "question_number": 19,
+    "title": "Deference to Prosecutors",
+    "question_text": "Should a judge trust what prosecutors say, or watch them closely?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Watch closely. Prosecutors have enormous power and real incentives to win. A judge's job is to make sure that power is used fairly."
+      },
+      {
+        "value": 2,
+        "text": "Be skeptical. Hold prosecution to strict standards \u2014 especially on evidence handling and plea deals."
+      },
+      {
+        "value": 3,
+        "text": "Treat both sides equally and let the process work."
+      },
+      {
+        "value": 4,
+        "text": "Give prosecutors reasonable deference. They're trained professionals representing the public."
+      },
+      {
+        "value": 5,
+        "text": "Trust prosecutors. They represent the community and have already screened the case \u2014 judges shouldn't second-guess that judgment."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+    "topic_key": "judicial-criminal-justice",
+    "topic_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+    "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+    "question_number": 20,
+    "title": "Criminal Justice Approach",
+    "question_text": "When someone breaks the law, how should the system respond?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Focus on support and treatment, not punishment."
+      },
+      {
+        "value": 2,
+        "text": "Give the person a chance to make things right through service or restitution, rarely punishment."
+      },
+      {
+        "value": 3,
+        "text": "Each situation is different \u2014 some people need support, some need consequences."
+      },
+      {
+        "value": 4,
+        "text": "Breaking the law needs to have real consequences \u2014 accountability is the priority."
+      },
+      {
+        "value": 5,
+        "text": "Impose the toughest penalties the law allows."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+    "topic_key": "judicial-government-deference",
+    "topic_revision_id": "d1107e47-5d39-4854-9150-37958dfa2d57",
+    "served_revision_id": "d1107e47-5d39-4854-9150-37958dfa2d57",
+    "question_number": 21,
+    "title": "Judicial Deference to Government",
+    "question_text": "When elected officials or a government agency make a decision, how closely should courts review it?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "When the law is unclear, courts should side with the individual and require the government to prove its decision was clearly within its legal authority."
+      },
+      {
+        "value": 2,
+        "text": "When the law is unclear, courts should lean toward the individual and overturn decisions whose legal basis is doubtful."
+      },
+      {
+        "value": 3,
+        "text": "Courts should not favor either side. When the law is unclear, neither the government nor the individual gets the benefit of the doubt."
+      },
+      {
+        "value": 4,
+        "text": "When the law is unclear, courts should lean toward the government and uphold its decision unless it clearly broke the law."
+      },
+      {
+        "value": 5,
+        "text": "Courts should defer to elected officials and agencies almost entirely, overturning a decision only for a plain and serious violation of the law."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+    "topic_key": "judicial-interpretation",
+    "topic_revision_id": "e9bd9e3b-5ced-439e-b989-b98643d053f2",
+    "served_revision_id": "e9bd9e3b-5ced-439e-b989-b98643d053f2",
+    "question_number": 22,
+    "title": "Judicial Interpretation",
+    "question_text": "Does the law change with the times, or does it mean what it said when it was written?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Judges should read the law in light of how society has changed, not only what it meant long ago."
+      },
+      {
+        "value": 2,
+        "text": "Judges should follow what the law was meant to achieve, even when the exact words don't fit a new situation."
+      },
+      {
+        "value": 3,
+        "text": "Start with what the law says; when the words are unclear, weigh what lawmakers were trying to do."
+      },
+      {
+        "value": 4,
+        "text": "Stick to what the words meant when they were written; don't update them to fit new times."
+      },
+      {
+        "value": 5,
+        "text": "Judges should apply the law as written. If it needs to change, that is for elected lawmakers."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+    "topic_key": "judicial-police-accountability",
+    "topic_revision_id": "eb6e1ecd-daa3-4362-810b-55fab93ff64c",
+    "served_revision_id": "eb6e1ecd-daa3-4362-810b-55fab93ff64c",
+    "question_number": 23,
+    "title": "Police Accountability",
+    "question_text": "When a government employee is accused of misconduct, should the office defend them or hold them accountable?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Actively hold government employees accountable when they do wrong, even when they are on the office's own side."
+      },
+      {
+        "value": 2,
+        "text": "Take misconduct complaints seriously, and act on the ones that hold up."
+      },
+      {
+        "value": 3,
+        "text": "Defend government employees when a complaint is weak, and hold them accountable when it has merit."
+      },
+      {
+        "value": 4,
+        "text": "Give government employees the benefit of the doubt, and act only when the wrongdoing is clear."
+      },
+      {
+        "value": 5,
+        "text": "Stand behind government employees and defend their conduct rather than hold them accountable."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+    "topic_key": "judicial-prosecution-priorities",
+    "topic_revision_id": "f7fe7332-5068-4d41-a8cd-d837b9cdba82",
+    "served_revision_id": "f7fe7332-5068-4d41-a8cd-d837b9cdba82",
+    "question_number": 24,
+    "title": "Prosecution Priorities",
+    "question_text": "Does the office try to put people away, or find better solutions?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Prosecution should be a last resort. Connecting people to treatment, housing, or job programs does more good than a criminal record."
+      },
+      {
+        "value": 2,
+        "text": "Use diversion when it's available and makes sense. Reserve prosecution for when community safety actually requires it."
+      },
+      {
+        "value": 3,
+        "text": "Strong cases get prosecuted. Diversion is used when there's a clear benefit \u2014 it's a judgment call every time."
+      },
+      {
+        "value": 4,
+        "text": "Prosecute all solid cases. Declination is the exception and needs a strong reason."
+      },
+      {
+        "value": 5,
+        "text": "The office enforces the law \u2014 not social policy. If a case is prosecutable, prosecute it. Courts figure out the rest."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+    "topic_key": "judicial-transparency",
+    "topic_revision_id": "15252183-dcf4-4ea9-b2e8-0faf26175bb0",
+    "served_revision_id": "15252183-dcf4-4ea9-b2e8-0faf26175bb0",
+    "question_number": 25,
+    "title": "Transparency in Legal Proceedings",
+    "question_text": "How much should the public know about what happens in court?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Everything in court should be public. Courts should never seal records or close hearings."
+      },
+      {
+        "value": 2,
+        "text": "Courts should be open except where the law requires privacy, like juvenile records. Judges shouldn't seal anything beyond that."
+      },
+      {
+        "value": 3,
+        "text": "Courts should be open by default. A judge can seal records or close a hearing only when there's a strong, specific reason that outweighs the public's interest."
+      },
+      {
+        "value": 4,
+        "text": "Openness matters, but so do privacy and fair trials. Judges should seal or close proceedings whenever sensitive information is at stake."
+      },
+      {
+        "value": 5,
+        "text": "Court proceedings should be closed to the public by default. A judge decides what, if anything, becomes public."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false
+  },
+  {
+    "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+    "topic_key": "local-environment",
+    "topic_revision_id": "d67eabf7-8da0-4ca7-b2af-74745b3bfd47",
+    "served_revision_id": "d67eabf7-8da0-4ca7-b2af-74745b3bfd47",
+    "question_number": 26,
+    "title": "Environmental Protection vs. Development",
+    "question_text": "How should your community balance new development with environmental preservation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make environmental protection the overriding priority \u2014 block or sharply limit development that would harm the local environment"
+      },
+      {
+        "value": 2,
+        "text": "Lean strongly toward protection \u2014 put the burden on development to prove it will not damage the environment before it can proceed"
+      },
+      {
+        "value": 3,
+        "text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation"
+      },
+      {
+        "value": 4,
+        "text": "Lean toward development \u2014 treat environmental cost as a manageable trade-off and approve projects with clear economic benefit"
+      },
+      {
+        "value": 5,
+        "text": "Remove local environmental restrictions beyond what state and federal law requires"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+    "topic_key": "local-immigration",
+    "topic_revision_id": "d497a221-1616-4ebf-8405-f9c851083e2c",
+    "served_revision_id": "e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf",
+    "question_number": 27,
+    "title": "Local Immigration Enforcement",
+    "question_text": "How should your community's law enforcement relate to federal immigration enforcement?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies"
+      },
+      {
+        "value": 2,
+        "text": "Comply with ICE detainers only when they are ordered by a court"
+      },
+      {
+        "value": 3,
+        "text": "Follow federal law as required but do not use local resources for proactive immigration enforcement"
+      },
+      {
+        "value": 4,
+        "text": "Honor ICE detainers and share information proactively when federal agencies request it"
+      },
+      {
+        "value": 5,
+        "text": "Direct local police to actively assist with immigration enforcement and support federal detention operations"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+    "topic_key": "medicare/aid",
+    "topic_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "question_number": 28,
+    "title": "Medicare / Medicaid",
+    "question_text": "How should Medicare and Medicaid be funded and structured?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Medicare to cover everyone regardless of age"
+      },
+      {
+        "value": 2,
+        "text": "significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage"
+      },
+      {
+        "value": 3,
+        "text": "improve current programs while controlling costs"
+      },
+      {
+        "value": 4,
+        "text": "scale back both programs, shifting more coverage to private insurance"
+      },
+      {
+        "value": 5,
+        "text": "phase out both programs and use private insurance only"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "topic_key": "misinformation",
+    "topic_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "question_number": 29,
+    "title": "Online Misinformation and Content Moderation",
+    "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "legally require platforms to remove false information"
+      },
+      {
+        "value": 2,
+        "text": "require platforms to label false content, rather than remove it"
+      },
+      {
+        "value": 3,
+        "text": "encourage voluntary standards for combating misinformation online"
+      },
+      {
+        "value": 4,
+        "text": "protect free speech online and prevent government censorship"
+      },
+      {
+        "value": 5,
+        "text": "ban any government involvement in content moderation decisions"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "topic_revision_id": "b9c1c07f-f80e-493a-9bb0-015e46c9bc71",
+    "served_revision_id": "cfc3824f-522e-4671-bd2d-dd628e6578e1",
+    "question_number": 30,
+    "title": "Public Safety Approach",
+    "question_text": "What approach should your community take to public safety?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Shift public safety away from policing and toward mental health, housing, and social services."
+      },
+      {
+        "value": 2,
+        "text": "Send unarmed responders, instead of police, to mental-health and non-violent calls."
+      },
+      {
+        "value": 3,
+        "text": "Keep police as the main responders and add crisis teams to work alongside them."
+      },
+      {
+        "value": 4,
+        "text": "Add more officers and expand police presence to deter and respond to crime."
+      },
+      {
+        "value": 5,
+        "text": "Make policing the community's top public-safety priority, ahead of social and community programs."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+    "topic_key": "redistricting",
+    "topic_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+    "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+    "question_number": 31,
+    "title": "State Redistricting and Gerrymandering",
+    "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "independent citizens' commissions with no elected officials involved at any level."
+      },
+      {
+        "value": 2,
+        "text": "independent redistricting commissions with equal representation from both major parties."
+      },
+      {
+        "value": 3,
+        "text": "bipartisan legislative committees with strict rules requiring supermajority approval."
+      },
+      {
+        "value": 4,
+        "text": "state legislatures with court oversight to prevent extreme partisan bias."
+      },
+      {
+        "value": 5,
+        "text": "the party that controls the state legislature without outside interference."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+    "topic_key": "religious-freedom",
+    "topic_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "question_number": 32,
+    "title": "Religious Freedom",
+    "question_text": "How should the law balance religious freedom with protection from discrimination?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "prohibit religious exemptions from civil rights and anti-discrimination laws."
+      },
+      {
+        "value": 2,
+        "text": "protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."
+      },
+      {
+        "value": 3,
+        "text": "balance protecting religious practices with maintaining equal treatment under the law for all citizens."
+      },
+      {
+        "value": 4,
+        "text": "protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."
+      },
+      {
+        "value": 5,
+        "text": "strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+    "topic_key": "rent-regulation",
+    "topic_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+    "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+    "question_number": 33,
+    "title": "Rent Regulation",
+    "question_text": "What role should government play in regulating rents and protecting tenants?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Expand rent control to cover all rental units communitywide"
+      },
+      {
+        "value": 2,
+        "text": "Strengthen existing rent stabilization and extend coverage to more units"
+      },
+      {
+        "value": 3,
+        "text": "Maintain current tenant protections while allowing market rents for new construction"
+      },
+      {
+        "value": 4,
+        "text": "Limit rent regulations to subsidized units; allow market rents broadly"
+      },
+      {
+        "value": 5,
+        "text": "Oppose rent control entirely; rents should be set by the market without government intervention"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "topic_revision_id": "ef2a5e59-525a-41fa-94de-ce771df7c927",
+    "served_revision_id": "6b5a3504-9e90-455a-9dd5-07e5376399af",
+    "question_number": 34,
+    "title": "Residential Zoning",
+    "question_text": "What should guide decisions about housing density and neighborhood character in your community?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Protect existing single-family neighborhoods; oppose density increases."
+      },
+      {
+        "value": 2,
+        "text": "Allow modest density increases, like duplexes and accessory units, in single-family neighborhoods"
+      },
+      {
+        "value": 3,
+        "text": "Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"
+      },
+      {
+        "value": 4,
+        "text": "Upzone broadly to allow multifamily housing by right in most neighborhoods"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate single-family-only zoning; allow any housing type on any lot communitywide"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "topic_key": "same-sex-marriage",
+    "topic_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "question_number": 35,
+    "title": "Same-Sex Marriage",
+    "question_text": "What legal recognition should same-sex marriages receive?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Guarantee same-sex couples full legal equality \u2014 equal marriage plus protection from discrimination (such as in jobs and housing)."
+      },
+      {
+        "value": 2,
+        "text": "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+      },
+      {
+        "value": 3,
+        "text": "Allow same-sex marriage, but protect religious organizations' right to decline to perform or host these marriages."
+      },
+      {
+        "value": 4,
+        "text": "Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples."
+      },
+      {
+        "value": 5,
+        "text": "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "topic_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "question_number": 36,
+    "title": "School Vouchers & Public Education Funding",
+    "question_text": "What role should vouchers and school choice play in the public education system?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+      },
+      {
+        "value": 2,
+        "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+      },
+      {
+        "value": 3,
+        "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+      },
+      {
+        "value": 4,
+        "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+      },
+      {
+        "value": 5,
+        "text": "Providing universal vouchers so that education funding follows the student to any school \u2014 public, private, or religious \u2014 chosen by the family"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+    "topic_key": "social-security",
+    "topic_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "question_number": 37,
+    "title": "Social Security",
+    "question_text": "How should Social Security be funded and structured for the future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."
+      },
+      {
+        "value": 2,
+        "text": "increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."
+      },
+      {
+        "value": 3,
+        "text": "make small adjustments to both benefits and taxes to keep Social Security stable for future generations."
+      },
+      {
+        "value": 4,
+        "text": "gradually reduce future benefits rather than raise taxes to keep Social Security solvent."
+      },
+      {
+        "value": 5,
+        "text": "transition Social Security to private investment accounts that individuals control themselves."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+    "topic_key": "tariffs",
+    "topic_revision_id": "9f094155-f604-47e8-93db-54a3142420ca",
+    "served_revision_id": "c9b67f92-c9b9-4f7e-a10b-c312a4219346",
+    "question_number": 38,
+    "title": "United States Tariff Policy",
+    "question_text": "How should trade policy balance domestic industry with global commerce?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "eliminate all tariffs and pursue completely free trade with every country."
+      },
+      {
+        "value": 2,
+        "text": "reduce most tariffs, keeping only limited exceptions."
+      },
+      {
+        "value": 3,
+        "text": "use tariffs selectively to protect key American industries and jobs."
+      },
+      {
+        "value": 4,
+        "text": "increase tariffs on countries that don't trade fairly with America."
+      },
+      {
+        "value": 5,
+        "text": "impose high tariffs on all imports to bring manufacturing back to America."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+    "topic_key": "taxes",
+    "topic_revision_id": "87f8c011-5c70-4f39-a1ea-5cc53c010c60",
+    "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+    "question_number": 39,
+    "title": "Taxation and Public Spending",
+    "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Significantly raise taxes on wealthy people and large companies to fund more public services"
+      },
+      {
+        "value": 2,
+        "text": "Moderately raise taxes on wealthy people and large companies to fund existing services"
+      },
+      {
+        "value": 3,
+        "text": "Keep the current tax system mostly as-is, with targeted adjustments \u2014 closing loopholes or granting narrow relief"
+      },
+      {
+        "value": 4,
+        "text": "Cut taxes broadly, including the main rates most people pay"
+      },
+      {
+        "value": 5,
+        "text": "Cut taxes as far as possible and shrink what government does"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "topic_key": "trans-athletes",
+    "topic_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+    "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+    "question_number": 40,
+    "title": "Transgender Athletes",
+    "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+      },
+      {
+        "value": 2,
+        "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+      },
+      {
+        "value": 3,
+        "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+      },
+      {
+        "value": 4,
+        "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+      },
+      {
+        "value": 5,
+        "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "topic_revision_id": "c48782d5-e905-408d-8532-2a5fd5bb6efa",
+    "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+    "question_number": 41,
+    "title": "Transportation Priorities",
+    "question_text": "Where should government focus its transportation investment?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity"
+      },
+      {
+        "value": 2,
+        "text": "Invest equally in road capacity and in multimodal options like transit, bike lanes, and sidewalks"
+      },
+      {
+        "value": 3,
+        "text": "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"
+      },
+      {
+        "value": 4,
+        "text": "Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"
+      },
+      {
+        "value": 5,
+        "text": "Prioritize highway access and abundant free parking as the foundation of local transportation policy"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "topic_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+    "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+    "question_number": 42,
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "significantly increase military and financial aid to Ukraine."
+      },
+      {
+        "value": 2,
+        "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+      },
+      {
+        "value": 3,
+        "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+      },
+      {
+        "value": 4,
+        "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+      },
+      {
+        "value": 5,
+        "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "topic_key": "voting-rights",
+    "topic_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+    "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+    "question_number": 43,
+    "title": "Voting Rights and Electoral Integrity",
+    "question_text": "How should the government verify a voter's identity and eligibility?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require no identification to vote, verifying voters by signature or existing records."
+      },
+      {
+        "value": 2,
+        "text": "Accept non-photo identification, such as a utility bill or bank statement."
+      },
+      {
+        "value": 3,
+        "text": "Require photo ID to vote, but let voters without one cast a ballot after signing an affidavit."
+      },
+      {
+        "value": 4,
+        "text": "Require photo ID in person and an ID number on every mail ballot."
+      },
+      {
+        "value": 5,
+        "text": "Require documentary proof of citizenship to register to vote."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+    "topic_key": "2020-election",
+    "topic_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "served_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "question_number": 44,
+    "title": "2020 Presidential Election",
+    "question_text": "What is your view of the outcome of the 2020 presidential election?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "The election was fair and Joe Biden won legitimately."
+      },
+      {
+        "value": 2,
+        "text": "Joe Biden won, but the election had real problems worth fixing."
+      },
+      {
+        "value": 3,
+        "text": "There was some fraud, but not enough to change the result."
+      },
+      {
+        "value": 4,
+        "text": "Fraud or irregularities may have been enough to change the result."
+      },
+      {
+        "value": 5,
+        "text": "The election was stolen from Donald Trump through widespread fraud."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+    "topic_key": "border-security",
+    "topic_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "question_number": 45,
+    "title": "Border Security",
+    "question_text": "How should the government handle people who cross the border?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Give everyone who crosses the border a fair asylum hearing."
+      },
+      {
+        "value": 2,
+        "text": "Expand orderly, legal ways to seek asylum at the border."
+      },
+      {
+        "value": 3,
+        "text": "Combine strong enforcement with a faster asylum process."
+      },
+      {
+        "value": 4,
+        "text": "Sharply restrict who can claim asylum at the border."
+      },
+      {
+        "value": 5,
+        "text": "End asylum and quickly turn back anyone who crosses illegally."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+    "topic_key": "education-curriculum",
+    "topic_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+    "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+    "question_number": 46,
+    "title": "Curriculum and Contested Topics",
+    "question_text": "How should schools handle contested topics like race, gender, and history in what they teach?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require lessons that center race, gender, and social justice as themes across the curriculum"
+      },
+      {
+        "value": 2,
+        "text": "Teach an honest account of racism, injustice, and diverse identities as part of the core curriculum"
+      },
+      {
+        "value": 3,
+        "text": "Present contested social and historical topics as open questions, giving competing viewpoints equal weight"
+      },
+      {
+        "value": 4,
+        "text": "Keep the curriculum focused on core academics and leave contested social topics to families"
+      },
+      {
+        "value": 5,
+        "text": "Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "topic_key": "education-library-books",
+    "topic_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "question_number": 47,
+    "title": "School Library Books and Instructional Materials",
+    "question_text": "How should schools handle challenges to books in libraries and classrooms?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep every book available and let professional librarians and educators curate the collection"
+      },
+      {
+        "value": 2,
+        "text": "Keep challenged books available to all, while letting parents limit what their own child can borrow"
+      },
+      {
+        "value": 3,
+        "text": "Remove a challenged book only if a review committee of educators and parents finds it unsuitable"
+      },
+      {
+        "value": 4,
+        "text": "Pull any book a parent challenges until it has been reviewed"
+      },
+      {
+        "value": 5,
+        "text": "Remove any book a parent or community member reports as inappropriate, for all students"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+    "topic_key": "education-gender-identity",
+    "topic_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "question_number": 48,
+    "title": "Parental Notification and Transgender Students",
+    "question_text": "What should schools do when a student uses a different name or gender identity at school than at home?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+      },
+      {
+        "value": 2,
+        "text": "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+      },
+      {
+        "value": 3,
+        "text": "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+      },
+      {
+        "value": 4,
+        "text": "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+      },
+      {
+        "value": 5,
+        "text": "Require written parental permission before staff use a student's chosen name or pronouns"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "66b389c7-86fc-45e9-bf34-964bb747f27b",
+    "topic_key": "education-equity-programs",
+    "topic_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+    "served_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+    "question_number": 49,
+    "title": "Equity and Inclusion Programs in Schools",
+    "question_text": "How should schools address gaps in achievement and opportunity between groups of students?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Fund dedicated equity offices and staff to close gaps between student groups"
+      },
+      {
+        "value": 2,
+        "text": "Require equity training for staff and set measurable goals to close gaps between groups"
+      },
+      {
+        "value": 3,
+        "text": "Measure results for each student group and steer extra support to those falling behind"
+      },
+      {
+        "value": 4,
+        "text": "Offer the same supports to every struggling student, without grouping them by race or identity"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate equity programs, training, and staff from the district"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "15d7e730-119b-43a2-a351-1efb7352b86b",
+    "topic_key": "education-school-police",
+    "topic_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "served_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "question_number": 50,
+    "title": "Police in Schools",
+    "question_text": "What role should police officers play in schools?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Remove police officers from schools and rely on counselors and mental health staff"
+      },
+      {
+        "value": 2,
+        "text": "Keep officers out of schools and call them only when a serious crime occurs"
+      },
+      {
+        "value": 3,
+        "text": "Bring in a shared or part-time officer with a limited, clearly defined role"
+      },
+      {
+        "value": 4,
+        "text": "Place a dedicated officer in every school for safety, but bar them from routine discipline"
+      },
+      {
+        "value": 5,
+        "text": "Place an officer in every school with authority to handle discipline and make arrests on campus"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "c8807d3d-4264-47ce-b8c4-08c6c9c33ce3",
+    "topic_key": "education-charter-authorization",
+    "topic_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+    "served_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+    "question_number": 51,
+    "title": "Charter Schools",
+    "question_text": "How should the board handle charter schools that want to open in the district?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Stop authorizing new charter schools and move to close existing ones"
+      },
+      {
+        "value": 2,
+        "text": "Approve new charters rarely, only when a school is clearly failing students"
+      },
+      {
+        "value": 3,
+        "text": "Judge each charter application on its own merits"
+      },
+      {
+        "value": 4,
+        "text": "Welcome charters and approve strong applications to expand family options"
+      },
+      {
+        "value": 5,
+        "text": "Convert failing district schools into charters run by independent operators"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+    "topic_key": "education-school-budget",
+    "topic_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+    "served_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+    "question_number": 52,
+    "title": "School Budget and Spending Priorities",
+    "question_text": "How should schools set spending levels and decide whether to raise more revenue?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise taxes to significantly increase school funding"
+      },
+      {
+        "value": 2,
+        "text": "Increase funding modestly to keep pace with costs, without raising taxes"
+      },
+      {
+        "value": 3,
+        "text": "Hold funding flat at current levels"
+      },
+      {
+        "value": 4,
+        "text": "Cut administrative overhead to lower costs while protecting classroom funding"
+      },
+      {
+        "value": 5,
+        "text": "Cut school funding significantly to reduce the taxes residents pay"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+    "topic_key": "education-ai",
+    "topic_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+    "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+    "question_number": 53,
+    "title": "Artificial Intelligence in Schools",
+    "question_text": "What role should artificial intelligence play in classrooms and student work?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Prohibit artificial intelligence tools in student work and classroom instruction"
+      },
+      {
+        "value": 2,
+        "text": "Restrict artificial intelligence to teacher planning and administrative use, keeping it out of student work"
+      },
+      {
+        "value": 3,
+        "text": "Permit students to use artificial intelligence on designated assignments, with disclosure required"
+      },
+      {
+        "value": 4,
+        "text": "Encourage broad classroom use of artificial intelligence with light guidelines and teacher discretion"
+      },
+      {
+        "value": 5,
+        "text": "Let teachers and students use artificial intelligence freely, without restrictions"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  },
+  {
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "topic_key": "cannabis-policy",
+    "topic_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "question_number": 54,
+    "title": "Cannabis Policy",
+    "question_text": "How should the government regulate cannabis?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep cannabis fully illegal and enforce criminal penalties for possessing or selling it."
+      },
+      {
+        "value": 2,
+        "text": "Allow cannabis only for medical use, available to patients with a physician's authorization."
+      },
+      {
+        "value": 3,
+        "text": "Remove criminal penalties for personal possession, replacing them with civil fines, but keep commercial sales illegal."
+      },
+      {
+        "value": 4,
+        "text": "Legalize recreational cannabis and regulate it through a licensed, taxed commercial market."
+      },
+      {
+        "value": 5,
+        "text": "Legalize cannabis and treat it like an ordinary legal product, with minimal restrictions on growing and using it."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+    "topic_key": "defense-spending",
+    "topic_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "question_number": 55,
+    "title": "Defense Spending",
+    "question_text": "How much should the government spend on the military?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Increase military spending substantially, launching a major buildup to expand the armed forces and their capabilities."
+      },
+      {
+        "value": 2,
+        "text": "Increase military spending moderately, growing the budget above inflation to keep pace with rising threats."
+      },
+      {
+        "value": 3,
+        "text": "Hold military spending roughly flat, allowing it to rise only with inflation."
+      },
+      {
+        "value": 4,
+        "text": "Reduce military spending modestly below current levels."
+      },
+      {
+        "value": 5,
+        "text": "Cut military spending dramatically, roughly halving the budget or more."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+    "topic_key": "military-intervention",
+    "topic_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+    "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+    "question_number": 56,
+    "title": "Foreign Military Intervention",
+    "question_text": "How should the United States use military force abroad?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use US military power to actively lead and police conflicts around the world."
+      },
+      {
+        "value": 2,
+        "text": "Intervene militarily when clear US interests or allied nations are directly threatened."
+      },
+      {
+        "value": 3,
+        "text": "Prefer diplomacy and economic sanctions, using military force only as a last resort."
+      },
+      {
+        "value": 4,
+        "text": "Avoid overseas military action except to defend US territory from direct attack."
+      },
+      {
+        "value": 5,
+        "text": "Withdraw from overseas military commitments and end foreign military intervention."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "topic_key": "gun-policy",
+    "topic_revision_id": "1a72d5df-746f-4469-ab9b-1d3e8bc33b8d",
+    "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+    "question_number": 57,
+    "title": "Gun Policy",
+    "question_text": "How should the government regulate firearms?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+      },
+      {
+        "value": 2,
+        "text": "Ban semi-automatic assault-style weapons, while allowing other firearms."
+      },
+      {
+        "value": 3,
+        "text": "Allow all types of firearms, but require universal background checks on every sale."
+      },
+      {
+        "value": 4,
+        "text": "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+      },
+      {
+        "value": 5,
+        "text": "Repeal major gun restrictions and let adults carry a firearm without a permit."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+    "topic_key": "israel-military-aid",
+    "topic_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "question_number": 58,
+    "title": "U.S. Military Aid to Israel",
+    "question_text": "What level of military aid should the U.S. provide to Israel?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Continue full military aid to Israel with no new conditions."
+      },
+      {
+        "value": 2,
+        "text": "Continue aid to Israel, but require it to comply with humanitarian and human-rights law."
+      },
+      {
+        "value": 3,
+        "text": "Block offensive weapons sales while continuing defensive support such as missile defense."
+      },
+      {
+        "value": 4,
+        "text": "Sharply cut military aid to Israel as a step toward ending it."
+      },
+      {
+        "value": 5,
+        "text": "End all military aid to Israel."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "topic_key": "minimum-wage",
+    "topic_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "question_number": 59,
+    "title": "Minimum Wage",
+    "question_text": "What approach should government take to the minimum wage?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+      },
+      {
+        "value": 2,
+        "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+      },
+      {
+        "value": 3,
+        "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+      },
+      {
+        "value": 4,
+        "text": "Hold the wage floor at its current level and let the market set pay above it."
+      },
+      {
+        "value": 5,
+        "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  },
+  {
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "topic_key": "ranked-choice-voting",
+    "topic_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "question_number": 60,
+    "title": "Ranked-Choice Voting and Electoral Method",
+    "question_text": "How should votes be cast and counted in elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Replace winner-take-all elections with proportional ranked-choice voting \u2014 ranked ballots fill several seats at once, so seats reflect how everyone voted."
+      },
+      {
+        "value": 2,
+        "text": "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+      },
+      {
+        "value": 3,
+        "text": "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+      },
+      {
+        "value": 4,
+        "text": "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+      },
+      {
+        "value": 5,
+        "text": "Ban ranked-choice voting by law."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]
