@@ -49,6 +49,10 @@ describe('parseSourceProfile', () => {
     ['a bad seat chamber', HEADER.replace('Senator: upper', 'Senator: middle'), /f\.md: seat_titles\.Senator "middle"/],
     ['a bad record_kind', HEADER.replace('record_kind: vote', 'record_kind: tweet'), /f\.md: controls\[0\]\.record_kind "tweet"/],
     ['bill-origin chamber on a non-author/bill-text page', HEADER.replace('word-before-floor', 'bill-origin'), /f\.md: rules\.chamber bill-origin is only valid for page_kind author \| bill-text/],
+    ['a YAML syntax error', HEADER.replace('scope: state:CA', 'scope: "state:CA'), /f\.md: invalid YAML/],
+    ['a duplicated mapping key', HEADER + '\nprofile: dup', /f\.md: invalid YAML/],
+    ['a control field YAML reads as a number', HEADER.replace('snapshot: aa219c5b', 'snapshot: 20240101'), /f\.md: controls\[0\]\.snapshot must be a string \(quote it\)/],
+    ['a duplicate seat title after trim\\+lowercase', HEADER.replace('  Assembly Member: lower', '  Assembly Member: lower\n  senator : lower'), /f\.md: seat_titles: duplicate title "senator"/],
   ])('rejects %s', (_label, h, re) => expect(() => parseSourceProfile(md(h), 'f.md')).toThrow(re));
   it('rejects a file with no front matter', () => expect(() => parseSourceProfile('# no header', 'f.md')).toThrow(/f\.md: no front matter/));
 });

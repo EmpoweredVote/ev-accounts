@@ -10,13 +10,13 @@ import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load as yamlLoad } from 'js-yaml';
 import { CHAMBER_RULES, NAME_FORMATS, VOTE_BLOCK_RULES, seatChamber, type Chamber, type SourceRules } from './recordBasis.js';
+import { RECORD_KIND } from './coderLabel.js';
 
 export type PageKind = 'vote' | 'author' | 'bill-text' | 'minutes';
 const PAGE_KINDS: readonly PageKind[] = ['vote', 'author', 'bill-text', 'minutes'];
-const CONTROL_RECORD_KINDS = ['vote', 'sponsor', 'author', 'other-act'] as const;
 export interface ProfileControl {
   batch: string; snapshot: string; person: string; office_title: string; instrument: string;
-  record_kind: (typeof CONTROL_RECORD_KINDS)[number]; actor_quote: string; tally_quote: string | null; expect: string;
+  record_kind: (typeof RECORD_KIND)[number]; actor_quote: string; tally_quote: string | null; expect: string;
 }
 export interface SourceProfile {
   profile: string; version: number; scope: string; body: string; url_prefixes: string[]; page_kind: PageKind;
@@ -35,7 +35,12 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   const fail = (msg: string): never => { throw new Error(`${file}: ${msg}`); };
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(md);
   if (!m) fail('no front matter (a profile starts with a --- YAML header ---)');
-  const h = yamlLoad(m![1]);
+  let h: unknown;
+  try {
+    h = yamlLoad(m![1]);
+  } catch (e) {
+    return fail(`invalid YAML: ${e instanceof Error ? e.message : String(e)}`);
+  }
   if (!isObj(h)) return fail('front matter is not a mapping');
   for (const k of Object.keys(h)) if (!TOP_KEYS.includes(k)) fail(`unknown key "${k}"`);
   for (const k of TOP_KEYS) if (h[k] === undefined) fail(`missing "${k}"`);
@@ -60,13 +65,24 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   const extra = r.not_chamber_after ?? [];
   if (!Array.isArray(extra) || !extra.every((w) => str(w) && /^[a-z0-9]+$/i.test(w as string))) fail('rules.not_chamber_after must be a list of single words');
   if (!isObj(h.seat_titles)) return fail('seat_titles must be a mapping');
-  for (const [t, c] of Object.entries(h.seat_titles)) if (c !== 'upper' && c !== 'lower') fail(`seat_titles.${t} "${String(c)}" must be upper | lower`);
+  const seenTitles = new Map<string, string>();
+  for (const [t, c] of Object.entries(h.seat_titles)) {
+    const norm = t.trim().toLowerCase();
+    if (seenTitles.has(norm)) fail(`seat_titles: duplicate title "${norm}"`);
+    seenTitles.set(norm, t);
+    if (c !== 'upper' && c !== 'lower') fail(`seat_titles.${t} "${String(c)}" must be upper | lower`);
+  }
   if (!Array.isArray(h.controls)) return fail('controls must be a list');
   h.controls.forEach((c, n) => {
     if (!isObj(c)) return fail(`controls[${n}] must be a mapping`);
     for (const k of Object.keys(c)) if (!CONTROL_KEYS.includes(k)) fail(`unknown key "controls[${n}].${k}"`);
-    for (const k of CONTROL_KEYS) if (k !== 'tally_quote' && !str(c[k])) fail(`missing "controls[${n}].${k}"`);
-    if (!CONTROL_RECORD_KINDS.includes(c.record_kind as never)) fail(`controls[${n}].record_kind "${String(c.record_kind)}" is not one of ${CONTROL_RECORD_KINDS.join(' | ')}`);
+    for (const k of CONTROL_KEYS) {
+      if (k === 'tally_quote') continue;
+      const v = c[k];
+      if (v !== undefined && typeof v !== 'string') fail(`controls[${n}].${k} must be a string (quote it)`);
+      if (!str(v)) fail(`missing "controls[${n}].${k}"`);
+    }
+    if (!RECORD_KIND.includes(c.record_kind as never)) fail(`controls[${n}].record_kind "${String(c.record_kind)}" is not one of ${RECORD_KIND.join(' | ')}`);
     if (c.tally_quote !== undefined && c.tally_quote !== null && !str(c.tally_quote)) fail(`controls[${n}].tally_quote must be a string or null`);
   });
   if (!(h.controls as Record<string, unknown>[]).some((c) => c.expect === 'pass')) fail('needs at least one control with expect: pass');
@@ -108,7 +124,7 @@ export function resolveProfile(profiles: readonly SourceProfile[], url: string):
 
 export function profileSeatChamber(p: SourceProfile, officeTitle: string | null | undefined): Chamber | null {
   const t = (officeTitle ?? '').trim().toLowerCase();
-  for (const [title, c] of Object.entries(p.seat_titles)) if (title.toLowerCase() === t) return c;
+  for (const [title, c] of Object.entries(p.seat_titles)) if (title.trim().toLowerCase() === t) return c;
   return seatChamber(officeTitle);
 }
 
