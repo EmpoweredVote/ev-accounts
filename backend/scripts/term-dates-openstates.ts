@@ -20,11 +20,13 @@ import { tenureStartInSeat, classifyStart, districtNumber, surnameMatches, offic
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const osDir = arg('--openstates'); const state = arg('--state'); const out = arg('--out'); const officialDir = arg('--official');
-if (!osDir || !state || !out || !['IN', 'CA'].includes(state)) { console.error('usage: --openstates <dir> --state IN|CA --out <file> [--official <dir of <STATE>-upper|lower.json>]'); process.exit(2); }
+if (!osDir || !state || !out || !['IN', 'CA', 'AZ'].includes(state)) { console.error('usage: --openstates <dir> --state IN|CA|AZ --out <file> [--official <dir of <STATE>-upper|lower.json>]'); process.exit(2); }
 
 const CHAMBERS: Record<string, Record<string, Chamber>> = {
   IN: { 'Indiana State Senate': 'upper', 'Indiana House of Representatives': 'lower' },
   CA: { 'California State Senate': 'upper', 'California State Assembly': 'lower' },
+  // Arizona's chambers carry generic names shared with other states: the state filter below keeps them apart.
+  AZ: { 'State Senate': 'upper', 'House of Representatives': 'lower' },
 };
 
 // Official chamber rosters (district → member name), read from each chamber's own site. A seat whose
@@ -53,8 +55,8 @@ const { rows: seats } = await pool.query(
      JOIN essentials.politicians p  ON p.id = och.politician_id
      LEFT JOIN essentials.districts d ON d.id = o.district_id
      JOIN essentials.office_terms ot ON ot.office_id = och.office_id AND ot.politician_id = och.politician_id AND ot.term_end IS NULL
-    WHERE ch.name = ANY($1::text[])
-    ORDER BY ch.name, d.label`, [Object.keys(CHAMBERS[state])]);
+    WHERE ch.name = ANY($1::text[]) AND d.state = $2
+    ORDER BY ch.name, d.label`, [Object.keys(CHAMBERS[state]), state.toLowerCase()]);
 await pool.end();
 
 const proposals = seats.map((s) => {
@@ -63,7 +65,12 @@ const proposals = seats.map((s) => {
   const base = { term_id: s.term_id, office_id: s.office_id, politician_id: s.politician_id, full_name: s.full_name,
     chamber: s.chamber, district, current: { term_start: s.term_start, start_precision: s.start_precision } };
   if (!district) return { ...base, proposal: null, flags: ['no-district-number'] };
-  const holders = people.filter((p) => p.roles.some((r) => r.type === chamber && String(r.district) === district && !r.end_date));
+  const inDistrict = people.filter((p) => p.roles.some((r) => r.type === chamber && String(r.district) === district && !r.end_date));
+  // A multi-member district (Arizona: two representatives per legislative district) has several current
+  // holders; the one whose surname matches our seat holder is the match. Anything else stays flagged.
+  const holders = inDistrict.length > 1
+    ? inDistrict.filter((p) => surnameMatches(s.full_name, p.family_name ?? p.name.split(' ').pop()!))
+    : inDistrict;
   if (holders.length !== 1) {
     const f = [`openstates-holders-${holders.length}`];
     if (officialDir && !(official.get(`${chamber}|${district}`) ?? []).length) f.push('official-roster-absent');

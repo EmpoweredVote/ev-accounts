@@ -69,3 +69,16 @@ describe('officialSurname', () => {
   it.each([['Steven S. Choi Ph.D.', 'Choi'], ['Akilah Weber Pierson M.D.', 'Pierson'], ['José Luis Solache Jr.', 'Solache'], ['Solache Jr.', 'Solache'], ['Shelli Yoder', 'Yoder'], ['Lori Goss-Reaves', 'Goss-Reaves']])(
     '%s → %s', (n, s) => expect(officialSurname(n)).toBe(s));
 });
+
+describe('Arizona (Const. art. IV pt. 2 §21: two-year terms from the first Monday in January; A.R.S. 41-1101: assembly the second Monday)', () => {
+  it('legal term start is the first Monday in January after the general election', () => {
+    expect(legalTermStart('AZ', 'upper', 2022)).toBe('2023-01-02');
+    expect(legalTermStart('AZ', 'lower', 2024)).toBe('2025-01-06');
+  });
+  it('a start on the constitutional day is day precision', () =>
+    expect(classifyStart('AZ', 'upper', '2023-01-02')).toEqual({ term_start: '2023-01-02', start_precision: 'day', flag: null }));
+  it('a start on that January\'s assembly day (second Monday, as OpenStates records it) maps to the term start', () =>
+    expect(classifyStart('AZ', 'upper', '2023-01-09')).toEqual({ term_start: '2023-01-02', start_precision: 'day', flag: null }));
+  it('any other date (appointment, special election) is year precision and flagged', () =>
+    expect(classifyStart('AZ', 'lower', '2024-03-11')).toEqual({ term_start: '2024-01-01', start_precision: 'year', flag: 'off-rule-date 2024-03-11' }));
+});
