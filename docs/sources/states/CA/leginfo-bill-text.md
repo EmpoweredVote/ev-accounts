@@ -41,7 +41,11 @@ controls:
 
 **Page:** `billNavClient.xhtml?bill_id=…` (bill text, with the Legislative Counsel's Digest).
 
-**Access:** fetchable by code.
+**Access:** 🔴 robots-disallowed — the whole site. `leginfo.legislature.ca.gov/robots.txt` reads
+`User-agent: *` / `Disallow: /`. Code must not fetch it: save the page from a real browser into
+`<batch>/human-saved/` (`fetched_by = human`). (Corrected 2026-09-26: this line said "fetchable by code".
+Some earlier batches did fetch it by code, because the robots check fails open when robots.txt does not
+load — `verificationFetch.robotsAllows`.)
 
 **What it proves:** the provision (quote it as `provision_quote`), and the **primary author**: the
 Digest opens `SB 580, Durazo.` The primary author sits in the bill's house of origin, so the chamber

@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c",
+      "office_id": "de1a8793-9a9c-4e65-a7c6-c08ddd809a98",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2020-09-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 723 (2019-2020)",
+          "provision_quote": "(3) Any person who has an outstanding warrant for any offense listed in this subdivision and who has knowledge of the outstanding warrant, and who owns, purchases, receives, or has in possession or under custody or control any firearm is guilty of a felony.",
+          "note": "A scienter clarification for the prohibited-persons offense sits on a dimension this ladder does not order.",
+          "record_kind": "author",
+          "actor_quote": "SB 723, Jones. Firearms: prohibited persons.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is SB 723 (2019-2020), authored by Jones, which clarifies that the prohibited-persons offense is committed only when the person \"has knowledge of the outstanding warrant\" and repeals Penal Code Section 29851. That concerns who is barred from possession, not what the rungs separate, so it does not reach \"Allow all types of firearms, but require universal background checks on every sale.\" or \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines.\" No passage survived relevance, so the row is blank.",
+      "needs_source": [
+        "California Senate roll call or authorship on a firearms bill whose operative section matches a rung, e.g. a universal-background-check or permitless-carry measure",
+        "Jones's own first-person words on firearm regulation from the current term (2022-12-05 to present) or the campaign that seated him"
+      ],
+      "quotes": []
+    }
+  ]
+}

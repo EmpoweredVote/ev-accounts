@@ -1,0 +1,9 @@
+Coded and written to `coder-1.json`.
+
+**gun-policy → BLANK `no-evidence`**
+
+The single source is Connolly's own authored bill, AB 92 (2023-2024) — `own-act`, `record`, `record_kind: author`, in-term (chaptered 2023-09-26, his term began 2022-12-05). The author line "AB 92, Connolly. Body armor: prohibition." carries `actor_quote`; no vote page is in the sources, so `tally_quote` is null (not required for an `author` group).
+
+It fails V2. The bill makes it "a misdemeanor for a person who is prohibited from possessing a firearm under the laws of this state to purchase, own, or possess body armor" — a collateral rule on body armor for people already barred from guns. The ladder asks what the government should require of firearms themselves, and the rungs turn on civilian ownership bans, an assault-weapon ban, universal background checks on every sale, carry reciprocity, and permitless carry. AB 92 touches none of those clauses, so it's `adjacent` and, on V4, `off-axis`. Direction alone wouldn't pick a rung anyway, but here even direction isn't established for the ladder's dimension.
+
+`rests_on` is empty, consistent with the null `v6_value`. I listed two `needs_source` items: a CA Assembly roll call on a single-subject firearm bill matching a rung clause (with his name and the tally on the page), and his own answer to how firearms should be regulated dated in-cycle.

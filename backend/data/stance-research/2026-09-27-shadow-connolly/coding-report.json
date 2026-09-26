@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "ab26d178-4f69-4ffc-9485-ac03f87643e2|a4020ea2-02d1-411b-b586-9b7c8dc4f90b|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly floor vote records for Connolly on a single-subject firearm bill matching a rung clause (e.g. a universal background-check or assault-weapon measure), with the roll call page showing his name and the tally",
+          "Connolly's own words answering how firearms should be regulated (campaign issue page, candidate questionnaire, or debate answer) dated within his Assembly term or the campaign that seated him",
+          "A record (bill authored, sponsored, or voted on by Connolly) or statement addressing civilian firearm ownership, assault-style weapon restrictions, background checks, or carry/permit rules",
+          "Roll call or authored/sponsored firearm-specific legislation (ownership, assault-weapon, background-check, or carry provisions) for Damon Connolly"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "ab26d178-4f69-4ffc-9485-ac03f87643e2|a4020ea2-02d1-411b-b586-9b7c8dc4f90b|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "California Assembly floor vote records for Connolly on a single-subject firearm bill matching a rung clause (e.g. a universal background-check or assault-weapon measure), with the roll call page showing his name and the tally",
+        "Connolly's own words answering how firearms should be regulated (campaign issue page, candidate questionnaire, or debate answer) dated within his Assembly term or the campaign that seated him",
+        "A record (bill authored, sponsored, or voted on by Connolly) or statement addressing civilian firearm ownership, assault-style weapon restrictions, background checks, or carry/permit rules",
+        "Roll call or authored/sponsored firearm-specific legislation (ownership, assault-weapon, background-check, or carry provisions) for Damon Connolly"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

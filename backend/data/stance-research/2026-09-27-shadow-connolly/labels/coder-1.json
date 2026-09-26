@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2",
+      "office_id": "a4020ea2-02d1-411b-b586-9b7c8dc4f90b",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-26",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 92 (2023-2024)",
+          "provision_quote": "A person who is prohibited from possessing a firearm under the laws of this state, except under Section 29610, who purchases, owns, or possesses body armor, as defined in Section 16288, except as authorized under subdivision (c), is guilty of a misdemeanor.",
+          "note": "Authored bill regulates body armor possession by persons already barred from firearms; it sets no rule on who may own, buy or carry a firearm, which is the dimension the rungs separate.",
+          "record_kind": "author",
+          "actor_quote": "AB 92, Connolly. Body armor: prohibition.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is Connolly's authored AB 92 (2023-2024), which makes it \"a misdemeanor for a person who is prohibited from possessing a firearm under the laws of this state to purchase, own, or possess body armor\" — a collateral rule about body armor for people already barred from guns. It speaks to none of the clauses the rungs turn on (banning civilian ownership, banning semi-automatic assault-style weapons, universal background checks on every sale, loosening carry rules, or permitless carry), so no passage survives V2.",
+      "needs_source": [
+        "California Assembly floor vote records for Connolly on a single-subject firearm bill matching a rung clause (e.g. a universal background-check or assault-weapon measure), with the roll call page showing his name and the tally",
+        "Connolly's own words answering how firearms should be regulated (campaign issue page, candidate questionnaire, or debate answer) dated within his Assembly term or the campaign that seated him"
+      ],
+      "quotes": []
+    }
+  ]
+}

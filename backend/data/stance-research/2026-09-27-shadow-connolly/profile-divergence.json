@@ -1,0 +1,53 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "ab92(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB92",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "ab92(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB92",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "provision-missing"
+    ],
+    "profiled": [
+      "provision-missing"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "ab92(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB92",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c",
+      "office_id": "de1a8793-9a9c-4e65-a7c6-c08ddd809a98",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2020-09-29",
+          "v4_shape": "off-axis",
+          "v5_time": "pre-seating",
+          "instrument": "SB 723 (2019-2020)",
+          "provision_quote": null,
+          "note": "Clarifies the knowledge requirement for prohibited-persons (felons, outstanding-warrant subjects) firearm possession crimes; does not speak to ownership bans, assault weapons, background checks, or carry permits.",
+          "record_kind": "author",
+          "actor_quote": "SB 723, Jones.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 723 (2019-2020), authored by Jones, amends the prohibited-persons firearm statutes to require knowledge of an outstanding warrant; it says nothing about \"Ban civilian firearm ownership\", \"Ban semi-automatic assault-style weapons\", \"universal background checks\", or carry-permit rules, the clauses that separate the gun-policy rungs, so it is adjacent and establishes no rung.",
+      "needs_source": [
+        "A vote, sponsorship, or own-words statement by Jones addressing civilian firearm ownership bans, assault-style weapon restrictions, universal background checks, or carry-permit rules"
+      ],
+      "quotes": []
+    }
+  ]
+}

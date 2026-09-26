@@ -1,0 +1,63 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "sb723(2019-2020)",
+    "snapshots": [
+      {
+        "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB723",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision"
+    ],
+    "profiled": [
+      "name-collision"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "sb723(2019-2020)",
+    "snapshots": [
+      {
+        "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB723",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision",
+      "provision-missing"
+    ],
+    "profiled": [
+      "name-collision",
+      "provision-missing"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "sb723(2019-2020)",
+    "snapshots": [
+      {
+        "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB723",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision",
+      "provision-missing"
+    ],
+    "profiled": [
+      "name-collision",
+      "provision-missing"
+    ]
+  }
+]

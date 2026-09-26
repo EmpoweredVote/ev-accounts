@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "6ab10a36-52d6-4d7a-b039-60416eb5fd3f",
+      "office_id": "6f5b8175-824f-4677-abb3-aea3d9e8b8ae",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "c902ec0b-744f-5ae8-b06c-b52bbe4d2156",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-01-08",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1084 (2024)",
+          "provision_quote": null,
+          "note": "Bill bars firearms-purchase recordkeeping/financial-transaction tracking, not ownership, carry, or background-check rules the rungs order.",
+          "record_kind": "author",
+          "actor_quote": "Teshka, Manning, Haggard",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2c257caa-4a86-5afc-8b71-8941bd088687",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1084 (2024)",
+          "provision_quote": null,
+          "note": "Details page confirms authorship of the same firearms-privacy/financial-transaction bill; still not on-question for the ownership/carry ladder.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Jake Teshka.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Both passages document HB 1084 (2024), which Teshka authored to bar governmental or private tracking of firearms purchasers and restrict firearms merchant category codes on payment cards; nothing in the bill bans or permits ownership, mandates background checks, or changes carry-permit rules, so neither passage speaks to this ladder's question.",
+      "needs_source": [
+        "A vote, sponsorship, or own-words statement by Jake Teshka directly addressing firearm ownership bans, background-check requirements, or carry-permit rules"
+      ],
+      "quotes": []
+    }
+  ]
+}
