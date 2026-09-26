@@ -193,12 +193,21 @@ function chamberBefore(p: string[], a: number, extra: ReadonlySet<string>): Cham
   return null;
 }
 /** The chamber of the vote/act that names the actor, read by the source's chamber rule. */
-function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: string | null | undefined, extra: ReadonlySet<string>): Chamber | null {
+function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: string | null | undefined, extra: ReadonlySet<string>, bounds: number[]): Chamber | null {
   switch (rule) {
     case 'nearest-before': return chamberBefore(pt, a, extra);
-    case 'word-before-floor':
-      for (let k = a - 1; k >= 0; k--) if (pt[k + 1] === 'floor') { const c = chamberAt(pt, k, extra); if (c) return c; }
+    case 'word-before-floor': {
+      // Bound the scan to the actor's own vote block: a CA-style page prints each vote's OWN
+      // "Location <Chamber> Floor" label just before that vote's aye count -- which, by
+      // ayeBoundaries' own reckoning, sits inside the PRECEDING block, not the block it actually
+      // labels. So the region must reach back to the block before last (start = the boundary before
+      // the actor's own), not merely to the actor's own boundary -- otherwise a vote with no floor
+      // label of its own would silently borrow whatever floor label came before it on the page.
+      const b = blockOf(bounds, a);
+      const start = b >= 1 ? bounds[b - 1] : 0;
+      for (let k = a - 1; k >= start; k--) if (pt[k + 1] === 'floor') { const c = chamberAt(pt, k, extra); if (c) return c; }
       return null;
+    }
     case 'page-header':
       for (let k = 0; k < pt.length; k++) { const c = chamberAt(pt, k, extra); if (c) return c; }
       return null;
@@ -231,7 +240,15 @@ export function checkRecordGroup(i: {
   const last = lastNameOf(i.fullName);
   const first = firstNameOf(i.fullName);
   const textOf = (p: Passage) => i.snapshotText.get(p.snapshot_id) ?? '';
-  const prof = (p: Passage): PassageProfile => i.profileOf?.(p) ?? { rules: GENERIC_RULES, chamber: i.chamber ?? null };
+  // Memoised per passage: profileOf can be an expensive load (a later task reads it from disk), and
+  // this function is otherwise called up to three times per passage (located, the chamber loop, the
+  // name-collision loop).
+  const profCache = new WeakMap<Passage, PassageProfile>();
+  const prof = (p: Passage): PassageProfile => {
+    let v = profCache.get(p);
+    if (!v) { v = i.profileOf?.(p) ?? { rules: GENERIC_RULES, chamber: i.chamber ?? null }; profCache.set(p, v); }
+    return v;
+  };
 
   // One instrument for the whole group, and each page must actually show that bill's number.
   const keys = new Set(i.passages.map((p) => instrumentKey(p.instrument)));
@@ -266,9 +283,13 @@ export function checkRecordGroup(i: {
   for (const l of located) {
     const { rules, chamber } = prof(l.p);
     if (!chamber || rules.chamber === 'none') continue;
-    const extra = new Set(rules.not_chamber_after.map((w) => w.toLowerCase()));
+    // Normalised the SAME way as page tokens (words()), so a profile author's "Concurrence" or
+    // "3rd Reading" matches the lowercased, punctuation-stripped token the page actually produces.
+    // A multi-word entry can never match a single page token, so it is dropped rather than silently
+    // reduced to its first word.
+    const extra = new Set(rules.not_chamber_after.map((w) => words(w)).filter((t) => t.length === 1).map((t) => t[0]));
     const inQuote = Math.max(0, words(l.p.actor_quote!).indexOf(last));
-    if (!l.occ.some((a) => actorChamber(rules.chamber, l.pt, a + inQuote, l.p.instrument, extra) === chamber)) out.add('chamber-not-evidenced');
+    if (!l.occ.some((a) => actorChamber(rules.chamber, l.pt, a + inQuote, l.p.instrument, extra, l.bounds) === chamber)) out.add('chamber-not-evidenced');
   }
 
   // A common surname, or a surname two members share on the page, needs a qualifier in the
