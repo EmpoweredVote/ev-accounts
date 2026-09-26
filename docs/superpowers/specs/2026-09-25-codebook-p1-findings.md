@@ -203,6 +203,19 @@ clarifying revision re-words the served text. Fixed in `8527e762`.
     a **different** preemption case the coders have not seen (another state's local-ID or local-rule
     preemption bill). CONFIRM cannot catch this class, so gold is the only guard.
 
+## Durazo re-code after D6 + D7 (2026-09-26)
+
+Same snapshots; inputs rebuilt with the two-passage worked example (D6), hard example H12 and the new
+`voting-rights` annex (D7). Run 1 of 0.3 is kept as `labels-0.3-run1/`, `coding-report-0.3-run1.json`,
+`coder-inputs-0.3-run1/`, `coder-logs-0.3-run1/`.
+
+- **D6 is fixed.** 0 invalid rows (run 1: 4). All three coders cite SB 1174 as **two passages**: the
+  vote page with `actor_quote` and the bill text with `provision_quote`.
+- **D7:** all three now code SB 1174 V2 `adjacent` → BLANK `no-evidence` (run 1: rung 1 ×3). This is
+  expected and proves nothing about coder skill: H12 is in the prompt (leakage). The certification gold
+  needs an unseen preemption case.
+- Every row now asks for more sources (`needs-source` ×7), so CONFIRM does not run on any row.
+
 ## Sources and access
 
 - Indiana `iga.in.gov` pages are JavaScript-only. They were saved from the browser (`fetched_by = human`, public record).

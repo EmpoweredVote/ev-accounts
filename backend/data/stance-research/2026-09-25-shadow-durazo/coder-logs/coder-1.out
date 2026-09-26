@@ -1,23 +1,18 @@
-Wrote `coder-1.json` — 7 rows, codebook 0.3, coder slot 1.
+Wrote `labels/coder-1.json` — 7 rows, all BLANK.
 
-**One numeric chair:**
-
-- **voting-rights → 1.** Aye on SB 1174 (2023-2024), single-subject, operative section bars any local ID requirement "for the purpose of voting or submitting a ballot". That is the rung "Require no identification to vote, verifying voters by signature or existing records." and it excludes every rung requiring non-photo ID, photo ID, or proof of citizenship. Tally 30-8, past the near-unanimous threshold.
-
-**Six blanks:**
-
-| Topic | Reason | Why |
+| topic | code | why |
 |---|---|---|
-| abortion | `no-evidence` | Only SB 729 (fertility coverage) — off-question for abortion legality |
-| childcare | `no-evidence` | SB 1112 is an administrative reimbursement clarification (adjacent) and passed 40-0 |
-| data-centers | `no-evidence` | SB 57 authorizes a PUC assessment and report → `study-directive` |
-| deportation | `direction-only` | She authored SB 580, but limiting state assistance and database access doesn't separate rungs 1/2/3 |
-| school-vouchers | `no-evidence` | Only SB 494 (superintendent termination), off-question |
-| trans-athletes | `no-evidence` | AB 1955 is pupil-privacy/disclosure, not athletic eligibility |
+| abortion | BLANK `no-evidence` | Only SB 729 (infertility coverage) is in the sources — V2 `off`. |
+| childcare | BLANK `no-evidence` | SB 1112 only clarifies allowable administrative costs; V2 `adjacent`, and the 40-0 vote is `near-unanimous`. |
+| data-centers | BLANK `no-evidence` | SB 57 authorizes a CPUC assessment and report — V4 `study-directive`, no rung clause. |
+| deportation | BLANK `direction-only` | Her authored SB 580 limits state assistance with immigration enforcement but names no class of person, so it can't separate rung 1 from rung 2. |
+| school-vouchers | BLANK `no-evidence` | Only SB 494 (superintendent termination procedure) — V2 `off`. |
+| trans-athletes | BLANK `no-evidence` | AB 1955 is a disclosure rule, not sports eligibility — V2 `adjacent`. |
+| voting-rights | BLANK `no-evidence` | SB 1174 is preemption (codebook H12) — `adjacent`, not rung 1. |
 
-Two notes on judgment calls you may want to check against the other coders:
+Notes on the two judgment calls:
 
-- **SB 580 (deportation)** is her own authored record and squarely on the topic, so I kept it at V2 `on-question` and let it die at V4 rather than calling it adjacent — that makes the blank reason `direction-only` rather than `no-evidence`.
-- **provision_quote placement for SB 1174.** The operative text lives in the bill-text snapshot (`d7255bbb…`), not the votes snapshot. V4.1 says "verbatim from a snapshot" and the record-fields rule contemplates one record spanning pages that name the same instrument, so I put the operative quote on the vote passage and named the source snapshot in `note`. If your gate checks verbatim strictly against the passage's own snapshot, that field will trip and needs a schema decision, not a re-code.
+- **Deportation** is the only row where I let a passage through V2. SB 580 is her own authored act and it does bear on how far government goes in facilitating removal, but the operative sections order model policies and database guidance — they name no category of person. The findings clause about persons "who do not pose a public safety risk" points toward a rung-2-style carve-out, but it's a recital, so under V4.1 it doesn't govern. Hence `direction-only` rather than `no-evidence`.
+- **Voting-rights** is the documented H12 case; I coded it adjacent as the codebook's own worked example requires, and quoted the preemption clause as the `provision_quote` on the bill-text page.
 
-`quotes` is empty on every row — all seven sources are public records; no candidate quote passages were supplied.
+Every `record` instrument group carries `actor_quote` on the page that prints the voter (or the author line for SB 580), and each vote group carries `tally_quote` from the same page; bill-text pages carry `null` for both and hold the `provision_quote`. All quoted strings are copied from the snapshots, including the curly apostrophes in the AB 1955 text.
