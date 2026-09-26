@@ -225,4 +225,58 @@ describe('positive control: real shadow-batch vote pages', () => {
     const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: seatChamber('State Representative') }).findings;
     expect(f).toContain('chamber-not-evidenced');
   });
+  it('CA SB 57 page (f3a91fb1) prints two Senate votes: Durazo in each is ONE member, not a collision', () => {
+    const st = load('2026-09-25-shadow-durazo');
+    const id = [...st.keys()].find((k) => k.startsWith('f3a91fb1'))!;
+    const p = P({ snapshot_id: id, instrument: 'SB 57 (2025-2026)', actor_quote: 'Cervantes, Cortese, Durazo, Grayson',
+      tally_quote: 'Ayes Count 29 Noes Count 8 NVR Count 3', provision_quote: null });
+    const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Maria Elena Durazo', chamber: seatChamber('Senator') }).findings;
+    expect(f).not.toContain('name-collision');
+    expect(f).not.toContain('chamber-not-evidenced');
+    expect(f).not.toContain('tally-other-vote');
+  });
+  it('the SB 57 actor from the 09/13 vote with the 05/28 tally is tally-other-vote', () => {
+    const st = load('2026-09-25-shadow-durazo');
+    const id = [...st.keys()].find((k) => k.startsWith('f3a91fb1'))!;
+    const p = P({ snapshot_id: id, instrument: 'SB 57 (2025-2026)', actor_quote: 'Cervantes, Cortese, Durazo, Grayson',
+      tally_quote: 'Ayes Count 25 Noes Count 9 NVR Count 6', provision_quote: null });
+    expect(checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings).toContain('tally-other-vote');
+  });
+});
+
+describe('positive control: chamber layouts on real pages', () => {
+  const load = (batch: string) => {
+    const f = fileURLToPath(new URL(`../../data/stance-research/${batch}/snapshots.json`, import.meta.url));
+    const rows = JSON.parse(readFileSync(f, 'utf8')) as { snapshot_id: string; snapshot_text: string | null }[];
+    return new Map(rows.map((r) => [r.snapshot_id, r.snapshot_text ?? '']));
+  };
+  it('IN author line: the title inside the actor_quote ("Sen. Shelli Yoder") is the chamber', () => {
+    const st = load('2026-09-25-shadow-yoder');
+    const p = P({ snapshot_id: 'd9257546-cef1-5033-b8a5-e8f37e1fa389', instrument: 'SB 208 (2024)', record_kind: 'author', tally_quote: null,
+      actor_quote: 'Authored by: Sen. Shelli Yoder', provision_quote: null });
+    expect(checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: 'upper' }).findings).not.toContain('chamber-not-evidenced');
+  });
+  it('CA AB 1955 Senate floor vote: "Motion Assembly 3rd Reading" is the bill stage, not the chamber', () => {
+    const st = load('2026-09-25-shadow-durazo');
+    const id = [...st.keys()].find((k) => k.startsWith('8666d0a3'))!;
+    const p = P({ snapshot_id: id, instrument: 'AB 1955 (2023-2024)', actor_quote: 'Dodd, Durazo, Eggman',
+      tally_quote: 'Ayes Count 29 Noes Count 8 NVR Count 3', provision_quote: null });
+    const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings;
+    expect(f).not.toContain('chamber-not-evidenced');
+    expect(f).not.toContain('tally-other-vote');
+  });
+});
+
+describe('vote blocks on a page with two chambers', () => {
+  const page = 'SB 9 (2024). Location Assembly Floor Ayes Count 60 Noes Count 15 Ayes Baker, Lee, Ortiz Noes Diaz ' +
+    '|| Location Senate Floor Ayes Count 30 Noes Count 9 Ayes Lee, Ortiz, Wong Noes Diaz. The bill requires a thing.';
+  const m = new Map([['cp', page]]);
+  const V = (actor: string, tally: string) => P({ snapshot_id: 'cp', instrument: 'SB 9 (2024)', actor_quote: actor, tally_quote: tally,
+    provision_quote: 'requires a thing' });
+  it('a Senator listed in the Senate vote passes', () =>
+    expect(checkRecordGroup({ passages: [V('Ortiz, Wong', 'Ayes Count 30 Noes Count 9')], snapshotText: m, fullName: 'Ana Wong', chamber: 'upper' }).findings).toEqual([]));
+  it('an Assembly vote cannot carry a Senator, even though the page names the Senate', () =>
+    expect(checkRecordGroup({ passages: [V('Baker, Lee, Ortiz', 'Ayes Count 60 Noes Count 15')], snapshotText: m, fullName: 'Rosa Ortiz', chamber: 'upper' }).findings).toContain('chamber-not-evidenced'));
+  it('a short name run printed in both votes is tied to the vote its tally names', () =>
+    expect(checkRecordGroup({ passages: [V('Lee, Ortiz', 'Ayes Count 30 Noes Count 9')], snapshotText: m, fullName: 'Rosa Ortiz', chamber: 'upper' }).findings).toEqual([]));
 });

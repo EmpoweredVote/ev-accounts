@@ -25,7 +25,7 @@ export { instrumentKey };
 
 export type RecordFinding =
   | 'person-not-in-snapshot' | 'provision-missing' | 'instrument-mismatch' | 'vote-not-evidenced'
-  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced';
+  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced' | 'tally-other-vote';
 
 /** A legislative seat's chamber; null when the seat is not a legislator's (the chamber test is skipped). */
 export type Chamber = 'upper' | 'lower';
@@ -35,21 +35,6 @@ export function seatChamber(officeTitle: string | null | undefined): Chamber | n
   if (/\brepresentative\b|\bassembly\s*(?:member|man|woman)\b|\bassemblymember\b|\bdelegate\b/i.test(t)) return 'lower';
   return null;
 }
-const CHAMBER_ON_PAGE: Record<Chamber, RegExp> = {
-  upper: /\bsenate\b|\bsen\.|\bSEN\b/i,
-  lower: /\bhouse\b|\bassembly\b|\basm\.?\b|\bASM\b/i,
-};
-/**
- * The page text with the non-chamber uses of chamber words removed, so the chamber test reads only
- * where the vote happened: "General Assembly" (the whole Indiana legislature) and "<Chamber> Bill /
- * Resolution / …" (a bill's origin, printed on the other chamber's pages). Without this an Indiana
- * Senate roll call passed for a House seat (final review 2026-09-26).
- */
-function chamberText(t: string): string {
-  return t.replace(/\bgeneral\s+assembly\b/gi, ' ')
-    .replace(/\b(?:senate|house|assembly)\s+(?:bills?|enrolled|joint|concurrent|resolutions?|amendments?)\b/gi, ' ');
-}
-
 /** All numbers matching `pattern` (an alternation, e.g. "ayes|yeas") immediately labelling a count. */
 function numbersFor(pattern: string, s: string): number[] {
   const re = new RegExp(`\\b(?:${pattern})\\b(?:\\s+count)?\\s*[:\\-]?\\s*(\\d+)`, 'gi');
@@ -132,6 +117,62 @@ function quoteWordsIn(page: string, quote: string): boolean {
   return false;
 }
 
+/** Every start index of the token run `q` in `p`. */
+function runStarts(p: string[], q: string[]): number[] {
+  const out: number[] = [];
+  if (q.length === 0) return out;
+  outer: for (let i = 0; i + q.length <= p.length; i++) {
+    for (let k = 0; k < q.length; k++) if (p[i + k] !== q[k]) continue outer;
+    out.push(i);
+  }
+  return out;
+}
+
+/**
+ * Vote blocks. A page can print several votes on one bill (a floor vote and a concurrence vote; one
+ * per chamber). A block starts at a labelled aye COUNT — "Ayes Count 30", "Yea 42", "Ayes: 40" — and
+ * runs to the next one; the text before the first is the page header (block -1). A bare "Ayes Allen,
+ * …" (a name list, no number) is not a boundary.
+ */
+const AYE_LABEL = new Set(['ayes', 'yeas', 'aye', 'yea']);
+const isNum = (w: string | undefined) => w !== undefined && /^\d+$/.test(w);
+function ayeBoundaries(p: string[]): number[] {
+  const out: number[] = [];
+  for (let k = 0; k < p.length; k++) {
+    if (!AYE_LABEL.has(p[k])) continue;
+    let j = k + 1;
+    if (p[j] === 'count' || p[j] === '-') j++;
+    if (isNum(p[j])) out.push(k);
+  }
+  return out;
+}
+/** The block (index into ayeBoundaries, -1 = header) holding token index `a`. */
+const blockOf = (bounds: number[], a: number) => { let b = -1; for (let k = 0; k < bounds.length; k++) if (bounds[k] <= a) b = k; return b; };
+
+/**
+ * Chamber words as tokens, with their NON-chamber uses removed: "General Assembly" (the whole Indiana
+ * legislature) and "<Chamber> Bill / Resolution / …" (a bill's origin, printed on the other chamber's
+ * pages). Without this an Indiana Senate roll call passed for a House seat (final review 2026-09-26).
+ */
+const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', house: 'lower', assembly: 'lower', asm: 'lower' };
+// A chamber word followed by these names a bill's origin or a stage ("Senate Bill", "Motion Assembly
+// 3rd Reading" on a SENATE floor vote of an Assembly bill, CA AB 1955), not where the vote happened.
+const NOT_CHAMBER_NEXT = /^(bills?|enrolled|joint|concurrent|resolutions?|amendments?|reading)$/;
+const ORDINAL = /^(1st|2nd|3rd|first|second|third)$/;
+function chamberAt(p: string[], k: number): Chamber | null {
+  const c = CHAMBER_WORD[p[k]];
+  if (!c) return null;
+  if (p[k] === 'assembly' && p[k - 1] === 'general') return null;
+  if (p[k + 1] !== undefined && NOT_CHAMBER_NEXT.test(p[k + 1])) return null;
+  if (p[k + 1] !== undefined && ORDINAL.test(p[k + 1]) && p[k + 2] === 'reading') return null; // "Assembly 3rd Reading", not "Senate First Regular Session"
+  return c;
+}
+/** The nearest chamber word BEFORE token index `a`: the chamber of the vote that lists the actor. */
+function chamberBefore(p: string[], a: number): Chamber | null {
+  for (let k = a - 1; k >= 0; k--) { const c = chamberAt(p, k); if (c) return c; }
+  return null;
+}
+
 export function checkRecordGroup(i: {
   passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string;
   /** The seat's chamber (seatChamber(office_title)). Omitted/null skips the chamber test. */
@@ -158,10 +199,32 @@ export function checkRecordGroup(i: {
   const actorPassages = i.passages.filter((p) => p.actor_quote && quoteWordsIn(textOf(p), p.actor_quote) && words(p.actor_quote).includes(last));
   if (actorPassages.length === 0) out.add('person-not-in-snapshot');
 
-  // The actor page must name the seat's chamber (skipped when the seat is not a legislator's).
+  // Where on each actor page the actor_quote sits, and which vote block that is. When the passage
+  // also carries a tally_quote, only occurrences in the tally's block count — the actor and the count
+  // must describe the same vote (a page often prints the same short name run in two votes).
+  const located = actorPassages.map((p) => {
+    const pt = words(textOf(p));
+    const bounds = ayeBoundaries(pt);
+    let occ = runStarts(pt, words(p.actor_quote!));
+    const tallyStarts = p.tally_quote ? runStarts(pt, words(p.tally_quote)) : [];
+    if (tallyStarts.length > 0) {
+      const tb = new Set(tallyStarts.map((t) => blockOf(bounds, t)));
+      const same = occ.filter((a) => tb.has(blockOf(bounds, a)));
+      if (same.length === 0) out.add('tally-other-vote');
+      else occ = same;
+    }
+    return { p, pt, bounds, occ };
+  });
+
+  // The vote that lists the actor must be the seat's chamber: the nearest chamber word before the
+  // actor_quote (skipped when the seat is not a legislator's). Fails closed when no occurrence has it.
   if (i.chamber) {
-    const re = CHAMBER_ON_PAGE[i.chamber];
-    if (actorPassages.some((p) => !re.test(chamberText(textOf(p))))) out.add('chamber-not-evidenced');
+    // Search back from the surname itself, so a title inside the actor_quote counts ("Authored by:
+    // Sen. Shelli Yoder" — the IN author line names no chamber before it).
+    for (const l of located) {
+      const inQuote = words(l.p.actor_quote!).indexOf(last);
+      if (!l.occ.some((a) => chamberBefore(l.pt, a + Math.max(0, inQuote)) === i.chamber)) out.add('chamber-not-evidenced');
+    }
   }
 
   // A common surname, or a surname two members share on the page, needs a qualifier in the
@@ -174,9 +237,16 @@ export function checkRecordGroup(i: {
   const given = nameWords(i.fullName).slice(0, -1);
   const givenNames = (given[0]?.length === 1 ? given.slice(1, 2) : given.slice(0, 1)).filter((w) => w.length > 1);
   const common = COMMON_LAST_NAMES.has(last);
-  for (const p of actorPassages) {
-    const pageCount = words(textOf(p)).filter((w) => w === last).length;
-    if (pageCount < 2 && !common) continue;
+  for (const { p, pt, bounds, occ } of located) {
+    // Count the surname inside the actor's own vote block, not the whole page: a page that prints two
+    // votes lists the same member twice (Durazo, SB 57), which is not two members. The largest count
+    // over the candidate occurrences decides — fail closed.
+    const blockCount = Math.max(0, ...occ.map((a) => {
+      const b = blockOf(bounds, a);
+      const from = b < 0 ? 0 : bounds[b]; const to = b + 1 < bounds.length ? bounds[b + 1] : pt.length;
+      return pt.slice(from, to).filter((w) => w === last).length;
+    }));
+    if (blockCount < 2 && !common) continue;
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
     const qualified = idx.some((k) =>
