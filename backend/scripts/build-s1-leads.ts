@@ -31,42 +31,50 @@ const topics = JSON.parse(readFileSync(join(dir, 'topics.json'), 'utf8')) as
   { topic_id: string; topic_key: string; served_revision_id: string }[];
 
 const leads: S1Lead[] = [];
-for (const t of topics) {
-  // The newest answer in a season that is neither the one being researched now ('open') nor one
-  // not yet published ('draft') — collector lead: the newest closed-season answer, read to be
-  // re-checked, never displayed.
-  // -- @season-scope: all-seasons — collector lead: the newest closed-season answer, read to be re-checked, never displayed
-  const { rows } = await pool.query(
-    `SELECT s.number AS season_number, a.value::float8 AS value, a.topic_revision_id::text AS pin_revision_id,
-            a.season_id::text AS season_id
-       FROM inform.politician_answers a
-       JOIN inform.seasons s ON s.id = a.season_id AND s.status NOT IN ('open', 'draft')
-      WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.value <> 0
-      ORDER BY s.number DESC
-      LIMIT 1`,
-    [politicianId, t.topic_id],
-  );
-  if (rows.length === 0) continue;
-  const a = rows[0] as { season_number: number; value: number; pin_revision_id: string; season_id: string };
-  const { rows: ctxRows } = await pool.query(
-    `SELECT reasoning, sources
-       FROM inform.politician_context
-      WHERE politician_id = $1 AND topic_id = $2 AND season_id = $3`,
-    [politicianId, t.topic_id, a.season_id],
-  );
-  const ctx = ctxRows[0] as { reasoning: string | null; sources: string[] } | undefined;
-  leads.push({
-    topic_id: t.topic_id,
-    topic_key: t.topic_key,
-    season_number: a.season_number,
-    value: a.value,
-    pin_revision_id: a.pin_revision_id,
-    reasoning: ctx?.reasoning ?? null,
-    sources: ctx?.sources ?? [],
-    seed: seedState(a.pin_revision_id, t.served_revision_id),
-  });
+try {
+  for (const t of topics) {
+    // 🔴 The `value <> 0` filter sits OUTSIDE the newest-season collapse (the inner LIMIT 1), never
+    // inside it (CLAUDE.md's blanks-in-the-collapse trap). Filtering inside would let a blank
+    // (value = 0) newest closed season fall through to an OLDER season's rung — serving a lead the
+    // person no longer holds, from a season that isn't even the newest one that touched this topic.
+    // The correct read is: take the newest closed-season row, blank or not, tied to ONE season_id
+    // (so the context join below is honest) — then decide whether it counts as a lead at all.
+    const { rows } = await pool.query(
+      `SELECT * FROM (
+         SELECT s.number AS season_number, a.value::float8 AS value, a.topic_revision_id::text AS pin_revision_id,
+                a.season_id::text AS season_id
+           FROM inform.politician_answers a
+           JOIN inform.seasons s ON s.id = a.season_id AND s.status NOT IN ('open', 'draft')
+          WHERE a.politician_id = $1 AND a.topic_id = $2
+          ORDER BY s.number DESC
+          LIMIT 1
+       ) x WHERE x.value <> 0
+       -- @season-scope: all-seasons — collector lead: the newest closed-season answer, read to be re-checked, never displayed`,
+      [politicianId, t.topic_id],
+    );
+    if (rows.length === 0) continue; // no closed-season answer, or the newest one is a blank (value = 0) — no lead
+    const a = rows[0] as { season_number: number; value: number; pin_revision_id: string; season_id: string };
+    const { rows: ctxRows } = await pool.query(
+      `SELECT reasoning, sources
+         FROM inform.politician_context
+        WHERE politician_id = $1 AND topic_id = $2 AND season_id = $3`,
+      [politicianId, t.topic_id, a.season_id],
+    );
+    const ctx = ctxRows[0] as { reasoning: string | null; sources: string[] } | undefined;
+    leads.push({
+      topic_id: t.topic_id,
+      topic_key: t.topic_key,
+      season_number: a.season_number,
+      value: a.value,
+      pin_revision_id: a.pin_revision_id,
+      reasoning: ctx?.reasoning ?? null,
+      sources: ctx?.sources ?? [],
+      seed: seedState(a.pin_revision_id, t.served_revision_id),
+    });
+  }
+} finally {
+  await pool.end();
 }
-await pool.end();
 
 writeFileSync(join(dir, 's1-leads.json'), JSON.stringify({ politician_id: politicianId, leads }, null, 2));
 const fresh = leads.filter((l) => l.seed === 'fresh').length;
