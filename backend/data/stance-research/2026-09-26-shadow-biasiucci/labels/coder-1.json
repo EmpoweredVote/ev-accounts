@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2570 (56th Leg., 2nd Reg. Sess., 2024)",
+          "provision_quote": "A municipality may not interfere with a home buyer's right to choose the features, amenities, structure, floor plan and interior and exterior design of a home.",
+          "note": "Provision page of the instrument he voted on; it strips an enumerated set of municipal design and lot rules but expressly preserves building codes, fire codes, minimum parking requirements and public health and safety regulations.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2570 (56th Leg., 2nd Reg. Sess., 2024)",
+          "provision_quote": null,
+          "note": "House Third Reading final passage with 26 members against, so it is not near-unanimous, but the roll call itself prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "AGUILAR Y AUSTIN Y BIASIUCCI Y",
+          "tally_quote": "Passed 33-26-0-0-1"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Biasiucci voted Y on HB 2570 (56th Leg., 2nd Reg. Sess., 2024), a single-subject act barring municipalities from requiring an association, screening or private streets and from setting minimum lot sizes above one thousand five hundred square feet, minimum home square footage, lot coverage, setbacks or design elements. That rules out holding \"the pace of growth down\" and making \"new development wait for capacity\", but it does not separate \"cut red tape and recruit new development, while keeping basic guardrails\" from \"remove development constraints beyond basic health and safety\": the act recruits no development and says nothing about pace, while preserving building codes, fire codes, minimum parking requirements and health and safety rules. A legislator who would \"Welcome steady growth\" could also have voted Y, so the surviving evidence fixes a deregulatory direction without choosing a rung.",
+      "needs_source": [
+        "Biasiucci's own first-person words on the pace of growth or on recruiting new development (issue page, questionnaire or floor statement), 2023-2026",
+        "AZ Legislature sponsor/author line for HB 2570 (56th Leg., 2nd Reg. Sess., 2024), to establish whether he authored or sponsored it rather than only voting",
+        "A Biasiucci vote or sponsorship on an instrument that separates rungs 3, 4 and 5 - e.g. an infrastructure- or assured-water-supply adequacy requirement, a growth-cap measure, or a bill directing investment ahead of demand"
+      ],
+      "quotes": []
+    }
+  ]
+}

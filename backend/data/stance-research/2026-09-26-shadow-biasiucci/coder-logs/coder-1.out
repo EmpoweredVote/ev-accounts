@@ -1,0 +1,19 @@
+Wrote `coder-1.json` — one row, `codebook_version` 0.3, `coder_slot` 1.
+
+**Row: growth-and-development → BLANK `direction-only`**
+
+Both snapshots form one `record` group on HB 2570 (56th Leg., 2nd Reg. Sess., 2024), coded `own-act` / `on-question` / `in-term`:
+
+| | vote page | bill text |
+|---|---|---|
+| `record_kind` | `vote` | `vote` |
+| `actor_quote` | `AGUILAR Y AUSTIN Y BIASIUCCI Y` | `null` |
+| `tally_quote` | `Passed 33-26-0-0-1` | `null` |
+| `provision_quote` | `null` | the 9-461.18(A) home-design clause |
+
+Two judgment calls worth flagging for the reviewer:
+
+- **V2 `on-question`, not `adjacent`.** HB 2570 is formally a preemption act, which puts it near ruling Q10 / H12. I read it as outside that rule: unlike Durazo's SB 1174, it leaves no state-level substitute — it abolishes the constraint, so it settles what the rule is, not merely which level sets it. A coder applying Q10 literally would land on `adjacent`, and that split is worth recording.
+- **V4 `direction-only`, not `chair-shaped`.** The bill is single-subject and the tally clears the 10% near-unanimous bar, so V4.1 would allow a chair if the operative section matched a rung. It doesn't cleanly: rung 4's "recruit new development" clause is unevidenced, rung 5's "beyond basic health and safety" is contradicted by the retained minimum parking requirements and historic-district carve-out, and nothing in the act speaks to pace. Rung 3 also survives — a "welcome steady growth" legislator could have voted Y.
+
+`rests_on` is empty (permitted for a blank) and `quotes` is empty — neither snapshot contains first-person words from Biasiucci. `needs_source` lists three: his own words on growth pace or recruitment, the HB 2570 sponsor/author line, and a vote or sponsorship on an instrument that separates rungs 3–5.

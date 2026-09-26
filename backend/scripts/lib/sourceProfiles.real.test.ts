@@ -6,7 +6,8 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { loadSourceProfiles, resolveProfile, profileSeatChamber } from './sourceProfiles.js';
-import { checkRecordGroup, instrumentKey, seatChamber } from './recordBasis.js';
+import { checkRecordGroup, instrumentKey, pageShowsInstrument, seatChamber } from './recordBasis.js';
+import { verbatimIn } from './coderLabel.js';
 import type { Passage } from './coderLabel.js';
 
 const batchDir = (b: string) => fileURLToPath(new URL(`../../data/stance-research/${b}/`, import.meta.url));
@@ -23,6 +24,13 @@ describe('real source profiles', () => {
       const snap = snapshots(c.batch).find((s) => s.snapshot_id.startsWith(c.snapshot));
       expect(snap, `snapshot ${c.snapshot} in ${c.batch}`).toBeDefined();
       expect(resolveProfile(profiles, snap!.url)?.profile, 'the control page resolves to this profile').toBe(p.profile);
+      // A page that names no member (bill text) is proven by its provision and bill number instead.
+      if (!c.actor_quote) {
+        const text = snap!.snapshot_text ?? '';
+        const ok = pageShowsInstrument(text, c.instrument) && !!c.provision_quote && verbatimIn(text, c.provision_quote);
+        expect(ok, 'provision verbatim and bill number shown').toBe(c.expect === 'pass');
+        return;
+      }
       const passage: Passage = { snapshot_id: snap!.snapshot_id, v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record',
         v4_shape: 'chair-shaped', v5_time: 'in-term', instrument: c.instrument, record_kind: c.record_kind, actor_quote: c.actor_quote,
         tally_quote: c.tally_quote, provision_quote: null, date: null };

@@ -1,0 +1,22 @@
+Wrote `labels/coder-1.json`.
+
+**Row: David Gowan / ranked-choice-voting → chair 5**
+
+One instrument, HB 2552 (2023), coded as two passages per the V3 worked example:
+
+| | vote page (`7c587e83`) | bill text (`dcb501dd`) |
+|---|---|---|
+| V1 / V2 | own-act / on-question | own-act / on-question |
+| V3 / kind | record / vote | record / vote |
+| V4 / V5 | chair-shaped / in-term | chair-shaped / in-term |
+| actor_quote | `GOWAN Y` | null |
+| tally_quote | `Passed 16-14-0-0-0` | null |
+| provision_quote | null | the §16-605(B) prohibition |
+
+Key judgments:
+- **Not the H12 preemption trap.** HB2552 does set the rule rather than only allocating who sets it: subsection B binds "This state or a city, town, county or political subdivision of this state" for "any state, city, town, county or federal office," and subsection A fixes plurality winners statewide. So `on-question`, not `adjacent`.
+- **Rung 5 over rung 4.** A statutory prohibition is a ban, which excludes "oppose adopting ranked-choice voting, but stop short of banning it" and "allow ranked-choice voting where communities choose it."
+- **Not near-unanimous.** 14 No of 30 voting (~47%), well past the 10% threshold, so the vote carries the chair alone. Single-subject bill, so the V4.1 omnibus limit doesn't bite.
+- **No quotes.** Neither snapshot contains Gowan's own words, so `quotes` is empty; `needs_source` is empty since the chair is established.
+
+One caveat worth flagging: the office record gives term dates as "unknown," so `in-term` rests on the vote page itself showing him voting in the Arizona Senate in April 2023 rather than on term metadata. A record is age-unlimited when chair-shaped, so this doesn't change the chair either way.

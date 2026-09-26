@@ -35,7 +35,7 @@ describe('parseSourceProfile', () => {
   it('parses a valid header; not_chamber_after defaults to []', () => {
     const p = parseSourceProfile(md(HEADER), 'f.md');
     expect(p.profile).toBe('ca-votes');
-    expect(p.rules).toEqual({ vote_block: 'aye-count', chamber: 'word-before-floor', not_chamber_after: [], name_format: 'surname' });
+    expect(p.rules).toEqual({ vote_block: 'aye-count', chamber: 'word-before-floor', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled' });
     expect(p.url_prefixes).toEqual(['https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml']);
     expect(p.seat_titles).toEqual({ Senator: 'upper', 'Assembly Member': 'lower' });
     expect(profileTag(p)).toBe('ca-votes@1');
@@ -96,5 +96,22 @@ describe('loadSourceProfiles', () => {
   it('rejects the same url prefix in two profiles', () => {
     const d = dirWith({ 'a.md': md(HEADER), 'b.md': md(HEADER.replace('profile: ca-votes', 'profile: other')) });
     expect(() => loadSourceProfiles(d)).toThrow(/url prefix .* in both/);
+  });
+});
+
+describe('tally_format and provision-only controls', () => {
+  it('tally_format defaults to labelled and accepts dash-ayes-nays', () => {
+    expect(parseSourceProfile(md(HEADER), 'f.md').rules.tally_format).toBe('labelled');
+    expect(parseSourceProfile(md(HEADER.replace('  name_format: surname', '  name_format: surname\n  tally_format: dash-ayes-nays')), 'f.md').rules.tally_format).toBe('dash-ayes-nays');
+  });
+  it('rejects an unknown tally_format', () =>
+    expect(() => parseSourceProfile(md(HEADER.replace('  name_format: surname', '  name_format: surname\n  tally_format: roman')), 'f.md')).toThrow(/f\.md: rules\.tally_format "roman"/));
+  it('a control may carry provision_quote instead of actor_quote', () => {
+    const h = HEADER.replace('    actor_quote: "Dodd, Durazo, Eggman"\n', '    provision_quote: "A local government shall not"\n');
+    expect(parseSourceProfile(md(h), 'f.md').controls[0].provision_quote).toBe('A local government shall not');
+  });
+  it('a control with neither actor_quote nor provision_quote is an error', () => {
+    const h = HEADER.replace('    actor_quote: "Dodd, Durazo, Eggman"\n', '');
+    expect(() => parseSourceProfile(md(h), 'f.md')).toThrow(/controls\[0\] needs actor_quote or provision_quote/);
   });
 });

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "office_id": "7fbab045-07c3-4f8b-aedc-a1fe0bac21d9",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2570 (2024)",
+          "provision_quote": "The provisions of this section do not supersede applicable building codes, fire codes, minimum parking requirements or public health and safety regulations.",
+          "note": "Bill text of HB2570 prints the preemption provisions and the health/safety savings clause; names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2570 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on HB2570 shows Biasiucci voting Y; bill passed 33-26-0-0-1.",
+          "record_kind": "vote",
+          "actor_quote": "BIASIUCCI Y",
+          "tally_quote": "Passed 33-26-0-0-1"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+        "e0e09d04-b93f-502e-bb8e-33318b1cadcf"
+      ],
+      "reasoning": "Biasiucci voted Y on HB2570's House Third Reading (Passed 33-26-0-0-1), a single-subject bill preempting municipalities from requiring HOAs, design/aesthetic standards, or minimum lot sizes/setbacks on new home development, while its savings clause preserves only 'building codes, fire codes, minimum parking requirements or public health and safety regulations.' This tracks the rung 'remove development constraints beyond basic health and safety.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

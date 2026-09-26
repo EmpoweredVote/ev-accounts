@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.3",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "29a72e61-eb0b-44da-b535-974993a59838|3533f253-93b7-4b4b-a3a1-87ac83d88bb1|a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Cullimore's own vote or sponsorship on a Utah instrument setting oil, gas or coal production, leasing or drilling permit levels",
+          "Cullimore's own words, in answer to the question, on how much fossil fuel production the nation should have",
+          "Cullimore's own votes, sponsorship, or statements specifically on fossil fuel drilling permits, production levels, or public land/waters leasing"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "29a72e61-eb0b-44da-b535-974993a59838|3533f253-93b7-4b4b-a3a1-87ac83d88bb1|a22215c3-6693-4bc2-b248-01aebba14570",
+      "requests": [
+        "Cullimore's own vote or sponsorship on a Utah instrument setting oil, gas or coal production, leasing or drilling permit levels",
+        "Cullimore's own words, in answer to the question, on how much fossil fuel production the nation should have",
+        "Cullimore's own votes, sponsorship, or statements specifically on fossil fuel drilling permits, production levels, or public land/waters leasing"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+    "topic_key": "local-immigration",
+    "topic_revision_id": "d497a221-1616-4ebf-8405-f9c851083e2c",
+    "served_revision_id": "e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf",
+    "question_number": 27,
+    "title": "Local Immigration Enforcement",
+    "question_text": "How should your community's law enforcement relate to federal immigration enforcement?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies"
+      },
+      {
+        "value": 2,
+        "text": "Comply with ICE detainers only when they are ordered by a court"
+      },
+      {
+        "value": 3,
+        "text": "Follow federal law as required but do not use local resources for proactive immigration enforcement"
+      },
+      {
+        "value": 4,
+        "text": "Honor ICE detainers and share information proactively when federal agencies request it"
+      },
+      {
+        "value": 5,
+        "text": "Direct local police to actively assist with immigration enforcement and support federal detention operations"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

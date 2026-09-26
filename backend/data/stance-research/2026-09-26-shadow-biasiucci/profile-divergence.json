@@ -1,0 +1,68 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "instrument": "hb2570(56thleg,2ndregsess,2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2570H.htm",
+        "profile": "az-azleg-bill-text@1"
+      },
+      {
+        "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2570",
+        "profile": "az-azleg-bill-status@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "instrument": "hb2570(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2570",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2570H.htm",
+        "profile": "az-azleg-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "instrument": "hb2570(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7ddf90bf-c94d-5342-8d0f-df513ad65ce4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2570H.htm",
+        "profile": "az-azleg-bill-text@1"
+      },
+      {
+        "snapshot_id": "e0e09d04-b93f-502e-bb8e-33318b1cadcf",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2570",
+        "profile": "az-azleg-bill-status@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

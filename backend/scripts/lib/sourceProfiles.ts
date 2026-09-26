@@ -9,14 +9,16 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load as yamlLoad } from 'js-yaml';
-import { CHAMBER_RULES, NAME_FORMATS, VOTE_BLOCK_RULES, seatChamber, type Chamber, type SourceRules } from './recordBasis.js';
+import { CHAMBER_RULES, NAME_FORMATS, TALLY_FORMATS, VOTE_BLOCK_RULES, seatChamber, type Chamber, type SourceRules } from './recordBasis.js';
 import { RECORD_KIND } from './coderLabel.js';
 
 export type PageKind = 'vote' | 'author' | 'bill-text' | 'minutes';
 const PAGE_KINDS: readonly PageKind[] = ['vote', 'author', 'bill-text', 'minutes'];
 export interface ProfileControl {
   batch: string; snapshot: string; person: string; office_title: string; instrument: string;
-  record_kind: (typeof RECORD_KIND)[number]; actor_quote: string; tally_quote: string | null; expect: string;
+  record_kind: (typeof RECORD_KIND)[number];
+  /** The actor line to find. Absent on a page that names no member (bill text): then provision_quote is checked instead. */
+  actor_quote: string | null; tally_quote: string | null; provision_quote: string | null; expect: string;
 }
 export interface SourceProfile {
   profile: string; version: number; scope: string; body: string; url_prefixes: string[]; page_kind: PageKind;
@@ -25,8 +27,9 @@ export interface SourceProfile {
 
 export const SOURCES_DIR = fileURLToPath(new URL('../../../docs/sources/', import.meta.url));
 const TOP_KEYS = ['profile', 'version', 'scope', 'body', 'match', 'page_kind', 'rules', 'seat_titles', 'controls'];
-const RULE_KEYS = ['vote_block', 'chamber', 'not_chamber_after', 'name_format'];
-const CONTROL_KEYS = ['batch', 'snapshot', 'person', 'office_title', 'instrument', 'record_kind', 'actor_quote', 'tally_quote', 'expect'];
+const RULE_KEYS = ['vote_block', 'chamber', 'not_chamber_after', 'name_format', 'tally_format'];
+const CONTROL_KEYS = ['batch', 'snapshot', 'person', 'office_title', 'instrument', 'record_kind', 'actor_quote', 'tally_quote', 'provision_quote', 'expect'];
+const OPTIONAL_CONTROL_KEYS = ['actor_quote', 'tally_quote', 'provision_quote'];
 
 const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
 const str = (v: unknown): v is string => typeof v === 'string' && v.trim().length > 0;
@@ -61,6 +64,7 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   if (r.chamber === 'bill-origin' && h.page_kind !== 'author' && h.page_kind !== 'bill-text') {
     fail('rules.chamber bill-origin is only valid for page_kind author | bill-text');
   }
+  if (r.tally_format !== undefined && !TALLY_FORMATS.includes(r.tally_format as never)) fail(`rules.tally_format "${String(r.tally_format)}" is not one of ${TALLY_FORMATS.join(' | ')}`);
   if (!NAME_FORMATS.includes(r.name_format as never)) fail(`rules.name_format "${String(r.name_format)}" is not one of ${NAME_FORMATS.join(' | ')}`);
   const extra = r.not_chamber_after ?? [];
   if (!Array.isArray(extra) || !extra.every((w) => str(w) && /^[a-z0-9]+$/i.test(w as string))) fail('rules.not_chamber_after must be a list of single words');
@@ -86,21 +90,24 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
     if (!isObj(c)) return fail(`controls[${n}] must be a mapping`);
     for (const k of Object.keys(c)) if (!CONTROL_KEYS.includes(k)) fail(`unknown key "controls[${n}].${k}"`);
     for (const k of CONTROL_KEYS) {
-      if (k === 'tally_quote') continue;
+      if (OPTIONAL_CONTROL_KEYS.includes(k)) {
+        if (c[k] !== undefined && c[k] !== null && !str(c[k])) fail(`controls[${n}].${k} must be a non-empty string or null`);
+        continue;
+      }
       const v = c[k];
       if (v !== undefined && typeof v !== 'string') fail(`controls[${n}].${k} must be a string (quote it)`);
       if (!str(v)) fail(`missing "controls[${n}].${k}"`);
     }
     if (!RECORD_KIND.includes(c.record_kind as never)) fail(`controls[${n}].record_kind "${String(c.record_kind)}" is not one of ${RECORD_KIND.join(' | ')}`);
-    if (c.tally_quote !== undefined && c.tally_quote !== null && !str(c.tally_quote)) fail(`controls[${n}].tally_quote must be a string or null`);
+    if (!str(c.actor_quote) && !str(c.provision_quote)) fail(`controls[${n}] needs actor_quote or provision_quote`);
   });
   if (!(h.controls as Record<string, unknown>[]).some((c) => c.expect === 'pass')) fail('needs at least one control with expect: pass');
   return {
     profile: h.profile as string, version: h.version as number, scope: h.scope as string, body: h.body as string,
     url_prefixes: prefixes as string[], page_kind: h.page_kind as PageKind,
-    rules: { vote_block: r.vote_block, chamber: r.chamber, not_chamber_after: extra as string[], name_format: r.name_format } as SourceRules,
+    rules: { vote_block: r.vote_block, chamber: r.chamber, not_chamber_after: extra as string[], name_format: r.name_format, tally_format: r.tally_format ?? 'labelled' } as SourceRules,
     seat_titles: h.seat_titles as Record<string, Chamber>,
-    controls: (h.controls as Record<string, unknown>[]).map((c) => ({ ...c, tally_quote: (c.tally_quote as string | undefined) ?? null }) as ProfileControl),
+    controls: (h.controls as Record<string, unknown>[]).map((c) => ({ ...c, actor_quote: (c.actor_quote as string | undefined) ?? null, tally_quote: (c.tally_quote as string | undefined) ?? null, provision_quote: (c.provision_quote as string | undefined) ?? null }) as ProfileControl),
     file,
   };
 }

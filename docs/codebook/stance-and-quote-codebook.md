@@ -116,6 +116,13 @@ Act. An encyclopedia page about a bill is not the person's act; at most it point
 - Test against the **rung text**, not the topic label. `voting-rights` Season 1 is an identification
   ladder, so a passage about mail ballots is `adjacent`.
 - `adjacent` passages can never support a chair.
+- **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
+  decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
+  about which level decides.
+  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
+    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
+    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
+    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
 
 **Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
 teams by sex at birth. The rungs differ exactly on that. → `on-question`.
