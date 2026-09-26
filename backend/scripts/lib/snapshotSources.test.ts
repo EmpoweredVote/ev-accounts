@@ -101,3 +101,16 @@ describe('buildSnapshot', () => {
     expect(a.snapshot_id).toBe(snapshotIdFor({ batchId: id, url: a.url, pageSha256: a.page_sha256!, snapshotText: a.snapshot_text! }));
   });
 });
+
+describe('buildSnapshot refuses a JavaScript shell', () => {
+  const id = 'b-js';
+  it('a page that is only a "enable JavaScript" shell is NOT CODABLE (js-shell), never an ok snapshot', () => {
+    const s = buildSnapshot({ entry: entry({ source_kind: 'public-record' }), fetchedText: 'Indiana General Assembly You need to enable JavaScript to run this app.', failure: null, fetchedBy: 'code', batchId: id });
+    expect(s.ok).toBe(false);
+    expect(s.failure).toBe('js-shell');
+  });
+  it('a real page that merely mentions JavaScript is kept', () => {
+    const long = 'Bill text. '.repeat(200) + 'You need to enable JavaScript for the video.';
+    expect(buildSnapshot({ entry: entry({ source_kind: 'public-record' }), fetchedText: long, failure: null, fetchedBy: 'code', batchId: id }).ok).toBe(true);
+  });
+});

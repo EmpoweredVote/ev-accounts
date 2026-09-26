@@ -64,3 +64,13 @@ calls are separate PDFs (`in-iga-roll-call`).
   that this profile's rules do not fit (final review fix 3). **A new session year needs a new prefix
   line here, plus a version bump**, or that year's pages resolve to no profile at all and CONFIRM
   reports `no-source-profile` for them.
+- 🔴 **Bill-text PDFs of an AMENDED statute are not safe as a provision source.** Indiana marks deleted
+  words with strike-through and added words with bold — only by print style. Text extraction (pdf.js,
+  pdftotext) drops the style, so deleted and added text run together: HEA 1296 (2022) reads "a person
+  shall not carry a handgun … without being licensed", which is text the act DELETES. A coder would read
+  the opposite of the law. Use a PDF only for sections that are wholly NEW (the introductory clause says
+  "IS ADDED … AS A NEW SECTION/CHAPTER"), or quote the digest and say it is the digest. (Found 2026-09-27.)
+- **An author evidences the bill AS FILED** (codebook V4.1). HEA 1296 (2022) was introduced as a
+  health-insurance (MEWA) bill and became the permitless-carry act by amendment: its author line does not
+  evidence the firearms content. Check the introduced version (`<BILL>.01.INTR.pdf`) before coding an
+  author record.

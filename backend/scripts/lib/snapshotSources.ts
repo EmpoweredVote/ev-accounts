@@ -106,6 +106,9 @@ export function buildSnapshot(args: {
   });
   if (fetchedText === null) return make(false, failure ?? 'fetch-failed', null, null);
   const sha = createHash('sha256').update(fetchedText).digest('hex');
+  // A JavaScript-only site (iga.in.gov) answers a plain fetch with an app shell and HTTP 200. That is
+  // not the page: fail closed rather than hand the coders "You need to enable JavaScript".
+  if (collapse(fetchedText).length < 400 && /enable javascript/i.test(fetchedText)) return make(false, 'js-shell', sha, null);
   const text = excerptOnly
     ? excerptWindows(fetchedText, [...entry.pointer_passages, ...entry.candidate_quotes])
     : collapse(fetchedText);
