@@ -196,9 +196,12 @@ clarifying revision re-words the served text. Fixed in `8527e762`.
   - A bill that forbids *another level of government* from acting (SB 1174: local governments may not
     require ID) does not say what the voter-ID rule itself should be. It is V2 `adjacent` for the
     ladder, unless a rung is about which level decides.
-  - Fix: a **Hard [real]** example in V2 (Durazo / voting-rights / SB 1174), and the same example in a
-    `voting-rights` annex. This is the case the certification gold must include: CONFIRM cannot catch
-    it.
+  - Fix: a **Hard [real]** example in V2 (Durazo / voting-rights / SB 1174), register row H12, and a
+    `voting-rights` annex — **done 2026-09-26**.
+  - Because the example is now in every coder prompt, H12 is `excluded_from_cert` (Part D, leakage). A
+    re-code of Durazo can no longer test D7 — the coders read the answer. The certification gold needs
+    a **different** preemption case the coders have not seen (another state's local-ID or local-rule
+    preemption bill). CONFIRM cannot catch this class, so gold is the only guard.
 
 ## Sources and access
 

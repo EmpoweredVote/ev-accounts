@@ -127,6 +127,18 @@ providers… with limited subsidies reserved for the lowest-income families."
 - It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
   `no-evidence` unless another source exists.
 
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
 **Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
 environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
 impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
@@ -539,6 +551,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
 | H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
 | H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
 
 ---
 
