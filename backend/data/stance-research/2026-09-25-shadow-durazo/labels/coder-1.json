@@ -1,5 +1,5 @@
 {
-  "codebook_version": "0.2",
+  "codebook_version": "0.3",
   "coder_slot": 1,
   "rows": [
     {
@@ -16,31 +16,21 @@
           "date": "2024-08-29",
           "v4_shape": "off-axis",
           "v5_time": "in-term",
-          "instrument": "SB 729 (2023-2024), Chapter 930",
+          "instrument": "SB 729 (2023-2024)",
           "provision_quote": null,
-          "note": "Durazo is listed in the Ayes on the 08/29/24 concurrence vote and the 05/24/23 third reading."
-        },
-        {
-          "snapshot_id": "a0875722-e1b5-56fd-8f6b-0d92898f8cbe",
-          "v1_attribution": "own-act",
-          "v2_relevance": "off",
-          "v3_class": "record",
-          "date": "2024-09-29",
-          "v4_shape": "off-axis",
-          "v5_time": "in-term",
-          "instrument": "SB 729 (2023-2024), Chapter 930",
-          "provision_quote": "A large group health care service plan contract, except a specialized health care service plan contract, that is issued, amended, or renewed on or after July 1, 2025, shall provide coverage for the diagnosis and treatment of infertility and fertility services, including a maximum of three completed oocyte retrievals with unlimited embryo transfers in accordance with the guidelines of the American Society for Reproductive Medicine (ASRM), using single embryo transfer when recommended and medically appropriate.",
-          "provision_quote_note": null,
-          "note": "Operative text of the instrument Durazo voted for; it is an insurance coverage mandate for fertility treatment."
+          "note": "SB 729 is an infertility and fertility services insurance coverage mandate, not a measure on the legality or timing of abortion.",
+          "record_kind": "vote",
+          "actor_quote": "Cortese, Dodd, Durazo, Eggman",
+          "tally_quote": "Ayes Count 31 Noes Count 8 NVR Count 1"
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "no-evidence",
       "rests_on": [],
-      "reasoning": "The only reproductive-health source is Durazo's Aye on SB 729 (2023-2024), whose operative sections require health plans to cover 'the diagnosis and treatment of infertility and fertility services'. Coverage for fertility treatment is a different question from when abortion is lawful, so it cannot establish 'keep abortion legal at every stage of pregnancy, with no time limit.' or any other rung. No passage in the sources addresses abortion.",
+      "reasoning": "The only source touching reproductive health is her Aye on SB 729 (2023-2024), a fertility-coverage insurance mandate, which says nothing about whether the law should permit abortion at any stage or restrict it. No passage survives relevance, so no rung of this ladder is evidenced.",
       "needs_source": [
-        "California Senate floor roll call or authorship by Durazo on a bill setting abortion legality or gestational limits (Reproductive Privacy Act / Health and Safety Code), 2018-2026",
-        "Durazo's own words answering how the law should handle abortion (questionnaire item, debate answer, or her Senate issue page)"
+        "California Senate floor roll call on a bill setting abortion legality or gestational limits, 2023-2026",
+        "Durazo's own first-person words on abortion time limits or exceptions"
       ],
       "quotes": []
     },
@@ -58,30 +48,21 @@
           "date": "2024-08-30",
           "v4_shape": "near-unanimous",
           "v5_time": "in-term",
-          "instrument": "SB 1112 (2023-2024), Chapter 1016",
+          "instrument": "SB 1112 (2023-2024)",
           "provision_quote": null,
-          "note": "Durazo is in the Ayes on a 40-0 concurrence vote and a 38-0 special consent vote, so the vote separates no member from any other."
-        },
-        {
-          "snapshot_id": "178b73c0-a303-5afb-971b-9947d852292e",
-          "v1_attribution": "own-act",
-          "v2_relevance": "adjacent",
-          "v3_class": "record",
-          "date": "2024-09-30",
-          "v4_shape": "off-axis",
-          "v5_time": "in-term",
-          "instrument": "SB 1112 (2023-2024), Chapter 1016",
-          "provision_quote": "The total cost for administration and support services shall not exceed an amount equal to 17.5 percent of the total contract amount.",
-          "note": "The bill only clarifies which administrative costs an alternative payment program may charge; it sets no eligibility threshold, subsidy level, or provider grant."
+          "note": "SB 1112 only clarifies that allowable administrative costs of alternative payment programs include disseminating developmental-screening information, which is not the subsidy-level dimension the rungs separate, and it passed 40-0.",
+          "record_kind": "vote",
+          "actor_quote": "Dodd, Durazo, Eggman",
+          "tally_quote": "Ayes Count 40 Noes Count 0 NVR Count 0"
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "no-evidence",
       "rests_on": [],
-      "reasoning": "Durazo's Aye on SB 1112 (2023-2024) supports a technical amendment to allowable administrative costs in childcare alternative payment programs; it never changes who qualifies for help or how much help they get. It therefore cannot separate 'Establishing publicly funded universal childcare so that all families have access regardless of income' from 'Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else'. The vote was also 40-0 and 38-0, which distinguishes nobody.",
+      "reasoning": "Her Aye on SB 1112 (2023-2024) is an administrative amendment to alternative payment program reimbursement; it does not expand or limit subsidies and so cannot separate rungs such as \"Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families\" from the others. It is also near-unanimous at 40-0, so it could not carry a chair alone.",
       "needs_source": [
-        "California Senate floor roll call or authorship by Durazo on a childcare subsidy eligibility, reimbursement-rate, or provider-grant bill, 2018-2026",
-        "Durazo's own words on whether childcare should be publicly funded and universal or means-tested"
+        "California Senate floor roll call on a childcare subsidy expansion, provider grant, or universal childcare bill, 2023-2026",
+        "Durazo's own first-person words on how far government should subsidize childcare"
       ],
       "quotes": []
     },
@@ -99,30 +80,21 @@
           "date": "2025-09-13",
           "v4_shape": "study-directive",
           "v5_time": "in-term",
-          "instrument": "SB 57 (2025-2026), Chapter 647",
+          "instrument": "SB 57 (2025-2026)",
           "provision_quote": null,
-          "note": "Durazo is in the Ayes on the 09/13/25 concurrence (29-8) and the 05/28/25 third reading (25-9)."
-        },
-        {
-          "snapshot_id": "8b8b97cb-a441-5903-a984-346577517aeb",
-          "v1_attribution": "own-act",
-          "v2_relevance": "on-question",
-          "v3_class": "record",
-          "date": "2025-10-11",
-          "v4_shape": "study-directive",
-          "v5_time": "in-term",
-          "instrument": "SB 57 (2025-2026), Chapter 647",
-          "provision_quote": "The commission may assess the extent to which electrical corporation costs associated with new loads from data centers result in cost shifts to other electrical corporation customers.",
-          "note": "The bill's whole operative content is a permissive assessment plus a report to the Legislature by January 1, 2027."
+          "note": "SB 57 only authorizes the Public Utilities Commission to assess data center cost shifts and post a report by January 1, 2027; it imposes no moratorium, cost bar, approval condition, or permitting change.",
+          "record_kind": "vote",
+          "actor_quote": "Cortese, Durazo, Grayson",
+          "tally_quote": "Ayes Count 29 Noes Count 8 NVR Count 3"
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "no-evidence",
       "rests_on": [],
-      "reasoning": "SB 57 (2025-2026) touches the ratepayer-cost dimension the rungs separate on, but its operative section only authorizes the Public Utilities Commission to assess cost shifts and requires a published report, which is a study directive. It does not bar cost pass-through, so it cannot establish 'Barring utilities from passing any data center energy infrastructure costs to residential customers', and it does nothing on permitting, so it cannot establish 'Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts'.",
+      "reasoning": "Her Aye on SB 57 (2025-2026) supports a commission assessment and report on data center cost shifts, which is a study directive and cannot support a chair. It does not evidence \"Barring utilities from passing any data center energy infrastructure costs to residential customers\" or the approval conditions in \"Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval\".",
       "needs_source": [
-        "California Senate floor roll call or authorship by Durazo on a bill setting data center permitting or allocating data center energy infrastructure costs, 2025-2026",
-        "Durazo's own words on data center siting, energy demand, or residential rate impacts"
+        "California Senate floor roll call on a bill setting data center permitting, ratepayer cost allocation, or community benefit requirements",
+        "Durazo's own first-person words on data center siting or residential rate impacts"
       ],
       "quotes": []
     },
@@ -140,18 +112,21 @@
           "date": "2025-10-12",
           "v4_shape": "direction-only",
           "v5_time": "in-term",
-          "instrument": "SB 580 (2025-2026), Chapter 670",
-          "provision_quote": "On or before July 1, 2026, in consultation with appropriate stakeholders, the Attorney General shall publish model policies for state and local agencies relating to interaction with immigration authorities consistent with federal and state law.",
-          "note": "The Legislative Counsel's Digest names Durazo as author ('SB 580, Durazo'), and the bill also requires agencies to implement the model policy by January 1, 2027, so it is more than a study directive."
+          "instrument": "SB 580 (2025-2026)",
+          "provision_quote": "the Attorney General shall publish model policies for state and local agencies relating to interaction with immigration authorities consistent with federal and state law",
+          "note": "Authoring a state non-assistance and database-guidance measure shows a protective direction but does not separate the removal-scope rungs from one another.",
+          "record_kind": "author",
+          "actor_quote": "SB 580, Durazo. Attorney General: immigration enforcement policies.",
+          "tally_quote": null
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "direction-only",
       "rests_on": [],
-      "reasoning": "Durazo authored SB 580 (2025-2026), which directs the Attorney General to publish model policies on agency 'interaction with immigration authorities' and database guidance limiting information available for immigration enforcement, and requires agencies to adopt them. That governs whether California assists removals; it never says which undocumented immigrants should be removed, so it is equally consistent with 'Stop deportations entirely and protect undocumented immigrants from removal', 'Only deport undocumented immigrants convicted of serious violent crimes', and 'Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place'. The bill's finding about 'persons who do not pose a public safety risk' is a recital and cannot carry a rung.",
+      "reasoning": "She authored SB 580 (2025-2026), which directs the Attorney General to publish model policies \"relating to interaction with immigration authorities\" and database guidance limiting information availability for immigration enforcement. That is a limit on state assistance, not a rule about whom the government should remove, so it rules out the mass-removal end without choosing between \"Stop deportations entirely and protect undocumented immigrants from removal\", \"Only deport undocumented immigrants convicted of serious violent crimes\", and \"Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place\".",
       "needs_source": [
-        "Durazo's own words answering which undocumented immigrants, if any, should be subject to removal (questionnaire item, floor speech, or her Senate issue page)",
-        "Note for the row owner: verify against compass_topic_roles that a state senate seat holds a lever on this ladder at all, since deportation scope is a federal function"
+        "Durazo's own first-person words on which undocumented immigrants should or should not be subject to removal",
+        "An authored bill or roll call that distinguishes removal by criminal conviction or length of residence"
       ],
       "quotes": []
     },
@@ -169,30 +144,21 @@
           "date": "2023-09-13",
           "v4_shape": "off-axis",
           "v5_time": "in-term",
-          "instrument": "SB 494 (2023-2024), Chapter 875",
+          "instrument": "SB 494 (2023-2024)",
           "provision_quote": null,
-          "note": "Durazo is in the Ayes on the 09/13/23 concurrence (32-7) and the 05/15/23 third reading (32-6)."
-        },
-        {
-          "snapshot_id": "4ba84a78-7403-5a1d-adf0-765e30c8402f",
-          "v1_attribution": "own-act",
-          "v2_relevance": "off",
-          "v3_class": "record",
-          "date": "2023-10-13",
-          "v4_shape": "off-axis",
-          "v5_time": "in-term",
-          "instrument": "SB 494 (2023-2024), Chapter 875",
-          "provision_quote": "The governing board of a school district shall not take action to terminate a superintendent or assistant superintendent of the school district, or both, without cause, at a special or emergency meeting of the governing board.",
-          "note": "The bill regulates school board meeting procedure for superintendent terminations and says nothing about school funding or choice."
+          "note": "SB 494 governs when a school board may terminate a superintendent and says nothing about vouchers, scholarships, or education savings accounts.",
+          "record_kind": "vote",
+          "actor_quote": "Dodd, Durazo, Eggman",
+          "tally_quote": "Ayes Count 32 Noes Count 7 NVR Count 1"
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "no-evidence",
       "rests_on": [],
-      "reasoning": "The only education source is Durazo's Aye on SB 494 (2023-2024), which restricts when a school board may terminate a superintendent without cause. It is not a voucher, scholarship, or education savings account measure, so it cannot establish 'Eliminating voucher programs that divert taxpayer money from public schools to private institutions', 'Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones', or any rung above them.",
+      "reasoning": "The only education record in the sources is her Aye on SB 494 (2023-2024), a school board meeting and superintendent-termination measure, which does not touch any voucher, scholarship, or education savings account program. Nothing evidences a rung such as \"Eliminating voucher programs that divert taxpayer money from public schools to private institutions\" or \"Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones\".",
       "needs_source": [
-        "California Senate floor roll call or authorship by Durazo on a voucher, education savings account, or scholarship tax-credit measure",
-        "Durazo's own words on vouchers or school choice (questionnaire item, floor speech, or a stated position on a school choice ballot measure)"
+        "An authored bill or California Senate roll call on a voucher, scholarship, or education savings account program",
+        "Durazo's own first-person words on vouchers or school choice funding"
       ],
       "quotes": []
     },
@@ -210,30 +176,21 @@
           "date": "2024-06-13",
           "v4_shape": "off-axis",
           "v5_time": "in-term",
-          "instrument": "AB 1955 (2023-2024), Chapter 95",
+          "instrument": "AB 1955 (2023-2024)",
           "provision_quote": null,
-          "note": "Durazo is in the Ayes on the 06/13/24 Assembly third reading vote in the Senate (29-8), so the vote is not near-unanimous."
-        },
-        {
-          "snapshot_id": "30fe75c6-6bbf-5a1a-af89-e68e532dde5c",
-          "v1_attribution": "own-act",
-          "v2_relevance": "adjacent",
-          "v3_class": "record",
-          "date": "2024-07-15",
-          "v4_shape": "off-axis",
-          "v5_time": "in-term",
-          "instrument": "AB 1955 (2023-2024), Chapter 95",
-          "provision_quote": "The department shall develop resources, or, as appropriate, update existing resources, for supports and community resources for the support of parents, guardians, and families of lesbian, gay, bisexual, transgender, queer, and questioning (LGBTQ) pupils and strategies to increase support for LGBTQ pupils and thereby improve overall school and community climate.",
-          "note": "The operative sections cover family support resources, forced disclosure of a pupil's LGBTQ status, and retaliation against school employees; none concerns athletics."
+          "note": "AB 1955 bars forced disclosure of a pupil's sexual orientation or gender identity and protects employees from retaliation; it sets no athletic eligibility rule.",
+          "record_kind": "vote",
+          "actor_quote": "Dodd, Durazo, Eggman",
+          "tally_quote": "Ayes Count 29 Noes Count 8 NVR Count 3"
         }
       ],
       "v6_value": null,
       "v6_blank_reason": "no-evidence",
       "rests_on": [],
-      "reasoning": "Durazo's Aye on AB 1955 (2023-2024) supports a bill about disclosure of a pupil's sexual orientation or gender identity, support resources for families, and employee anti-retaliation. The ladder orders how sports eligibility is determined, and nothing in the instrument speaks to whether to 'require transgender athletes to compete only on teams matching their biological sex assigned at birth.' or to any other rung, so the passage is off the axis the rungs order.",
+      "reasoning": "Her Aye on AB 1955 (2023-2024) concerns pupil privacy about gender identity and retaliation against school employees, which is the same policy area but not the dimension these rungs order. Nothing in the sources speaks to whether transgender athletes may compete on teams matching gender identity, case by case, or only by \"biological sex assigned at birth\".",
       "needs_source": [
-        "California Senate floor roll call or authorship by Durazo on a bill setting transgender athlete eligibility for school or interscholastic sports",
-        "Durazo's own words answering how eligibility for transgender athletes should be determined"
+        "An authored bill or California Senate roll call on transgender athlete eligibility in school or organized sports",
+        "Durazo's own first-person words on transgender athlete eligibility"
       ],
       "quotes": []
     },
@@ -251,30 +208,20 @@
           "date": "2024-05-21",
           "v4_shape": "chair-shaped",
           "v5_time": "in-term",
-          "instrument": "SB 1174 (2023-2024), Chapter 990",
-          "provision_quote": null,
-          "note": "Durazo is listed in the Ayes on the 05/21/24 Senate third reading (30-8-2); the operative text she voted for is quoted on the companion bill-text passage."
-        },
-        {
-          "snapshot_id": "d7255bbb-f88a-53a1-b47b-ca619c0ad279",
-          "v1_attribution": "own-act",
-          "v2_relevance": "on-question",
-          "v3_class": "record",
-          "date": "2024-09-29",
-          "v4_shape": "chair-shaped",
-          "v5_time": "in-term",
-          "instrument": "SB 1174 (2023-2024), Chapter 990",
+          "instrument": "SB 1174 (2023-2024)",
           "provision_quote": "A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.",
-          "note": "Single-subject act adding one section to the Elections Code; the prohibition reaches any identification, not only photo identification."
+          "note": "Operative text quoted from the SB 1174 bill-text snapshot d7255bbb-f88a-53a1-b47b-ca619c0ad279; both pages name SB 1174 (2023-2024).",
+          "record_kind": "vote",
+          "actor_quote": "Cortese, Dodd, Durazo, Eggman, Glazer",
+          "tally_quote": "Ayes Count 30 Noes Count 8 NVR Count 2"
         }
       ],
       "v6_value": 1,
       "v6_blank_reason": null,
       "rests_on": [
-        "aa219c5b-dbee-5027-b3cb-bbba415b5977",
-        "d7255bbb-f88a-53a1-b47b-ca619c0ad279"
+        "aa219c5b-dbee-5027-b3cb-bbba415b5977"
       ],
-      "reasoning": "Durazo voted Aye on SB 1174 (2023-2024), a single-subject elections act whose operative section provides that 'A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.' Barring any identification requirement at the point of voting matches 'Require no identification to vote, verifying voters by signature or existing records.' and excludes 'Accept non-photo identification, such as a utility bill or bank statement.', because the prohibition covers non-photo identification too. The 30-8 margin means the vote separates members rather than reflecting consensus.",
+      "reasoning": "Durazo voted Aye on SB 1174 (2023-2024), a single-subject act adding Elections Code Section 10005, whose operative section provides that \"A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot\". Enacting a bar on any identification requirement at the polls is the rung \"Require no identification to vote, verifying voters by signature or existing records.\" and excludes every rung that requires non-photo ID, photo ID, or documentary proof. The 30-8 tally is well past the near-unanimous threshold.",
       "needs_source": [],
       "quotes": []
     }

@@ -104,6 +104,88 @@ The coders agree on the chair and split on *why*. V4 (shape) and V2 (relevance) 
   - The env schema requires it even for scripts. This run passed a placeholder for each process only.
   - Consider making it optional outside `EV_ROLE=api`.
 
+## Codebook 0.2 → 0.3 re-run (2026-09-26)
+
+Same snapshots, rebuilt inputs, the same three models (Opus, Sonnet, Sonnet) through the headless
+`claude-ev -p --tools Write` dispatch. The 0.2 outputs are kept as `labels-0.2/`,
+`coding-report-0.2.json`, `disagreement-digest-0.2.json`, `coder-inputs-0.2/` and `coder-logs-0.2/`.
+Nothing was applied to the database.
+
+### Chair per coder (slot 1 | 2 | 3) — identical under 0.2 and 0.3
+
+| Politician | Topic | 0.2 and 0.3 |
+|---|---|---|
+| Yoder | abortion, data-centers, medicare/aid, trans-athletes | direction-only ×3 |
+| Yoder | fossil-fuels, voting-rights | no-evidence ×3 |
+| Yoder | school-vouchers | no-evidence · no-evidence · direction-only |
+| Durazo | abortion, childcare, data-centers, school-vouchers, trans-athletes | no-evidence ×3 |
+| Durazo | deportation | direction-only · no-evidence · no-evidence |
+| Durazo | voting-rights | **1 · 1 · 1** |
+
+No coder changed a single value. Codebook 0.3 changed the *form* of the labels, not the readings.
+
+### Validator errors under 0.3
+
+- **No error comes from the new fields.** Every `record` passage carries `record_kind` and a
+  verbatim `actor_quote`; every vote carries a verbatim `tally_quote`.
+- Five rows are invalid, for older reasons:
+  - Yoder slot 3, one quote: `text not verbatim in snapshot`.
+  - Durazo slot 1 (voting-rights) and slot 3 (voting-rights, childcare, data-centers):
+    `provision_quote not verbatim in snapshot`. See **D6**.
+- So Durazo / voting-rights is no longer unanimous among *valid* rows: slots 1 and 3 are
+  `coder-missing`, and the row goes to review for that reason. CONFIRM does not run.
+
+### D1 on the real pages
+
+The SB 1174 pair was checked directly with `checkRecordGroup`, using slot 1's own `actor_quote`
+("Cortese, Dodd, Durazo, Eggman, Glazer") and `tally_quote` ("Ayes Count 30 Noes Count 8 NVR Count 2"),
+with the provision moved to the bill-text passage where it is verbatim:
+
+| Group | Findings |
+|---|---|
+| vote page + bill text | none |
+| bill text only | `person-not-in-snapshot`, `vote-not-evidenced` |
+| vote page only, as coded | `provision-missing` |
+
+D1 is fixed: a correct record basis now passes, and each half alone still fails. The vote is divided
+(8 of 38 = 21 % No), so `near-unanimous-vote` does not apply.
+
+### Seed flags
+
+Yoder 3 fresh / 4 stale; Durazo 2 fresh / 5 stale. The first build showed 14 of 14 stale, because
+the design spec compared the Season 1 pin with the open season's *served* revision. The seasons
+design compares **pin with pin**; abortion's S1 and S2 pins are the same revision, and only a
+clarifying revision re-words the served text. Fixed in `8527e762`.
+
+### What this shows
+
+- **Durazo / voting-rights still does not fail on its real ground.** All three coders still read
+  SB 1174 as rung 1 ("Require no identification to vote …"). SB 1174 only bars *local* ID rules;
+  state law is untouched. That is V2 `adjacent` (preemption), and no coder said so. Had the coders
+  cited the vote page and the bill text correctly, CONFIRM would have **passed** this chair: every
+  mechanical check holds. Only a coding judgment can stop it. See **D7**.
+- The verbatim fields do what they were built for: nothing the coders copied was invented.
+
+## Defects found in the 0.3 re-run
+
+- **D6 — coders put the bill's provision on the vote-page passage.** (Important)
+  - Two of three coders wrote the SB 1174 provision as the `provision_quote` of the *vote-page*
+    passage, and cited only that page in `rests_on`. The validator correctly refuses it (the words are
+    on the bill-text page, not the vote page). Slot 1's own log says it expected this.
+  - Cause: codebook 0.3 lists the record fields but has **no worked example** of a two-passage vote
+    record, although the design spec (§1) asked for one example for each `record_kind`.
+  - Fix (codebook 0.3.1, PATCH): add the worked examples — a vote as two passages (vote page with
+    `actor_quote` + `tally_quote`; bill text with `provision_quote`; both in `rests_on`), and one each
+    for `sponsor`, `author` and `other-act`. State in V3 that `provision_quote` comes from the page
+    that prints the provision.
+- **D7 — preemption is read as a position.** (Important, codebook)
+  - A bill that forbids *another level of government* from acting (SB 1174: local governments may not
+    require ID) does not say what the voter-ID rule itself should be. It is V2 `adjacent` for the
+    ladder, unless a rung is about which level decides.
+  - Fix: a **Hard [real]** example in V2 (Durazo / voting-rights / SB 1174), and the same example in a
+    `voting-rights` annex. This is the case the certification gold must include: CONFIRM cannot catch
+    it.
+
 ## Sources and access
 
 - Indiana `iga.in.gov` pages are JavaScript-only. They were saved from the browser (`fetched_by = human`, public record).
@@ -113,7 +195,7 @@ The coders agree on the chair and split on *why*. V4 (shape) and V2 (relevance) 
 
 ## Next steps
 
-1. Fix D1, then run CONFIRM again on these two batches. No new coding is needed, because the labels are stored.
+1. ~~Fix D1~~ — done (0.3 re-run above). Next: fix D6 and D7 in the codebook (0.3.1), then re-code Durazo.
 2. needs_source round 1: fetch the requested roll calls, bill texts and statements, re-snapshot, and have all three coders code again.
 3. Code 3 or more politicians toward the P1 exit (M1 ≥ 0.80 over ≥ 30 rows, ≥ 5 politicians).
    - Include one topic with a clearly chair-shaped authored bill, so that a non-BLANK category exists. M1 is undefined when every value is BLANK.

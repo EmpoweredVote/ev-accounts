@@ -4,15 +4,14 @@ labels afterwards. If the evidence a row needs is named but not included here, p
 needs_source instead of guessing.
 
 Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-09-25-shadow-yoder/labels/coder-2.json. Write JSON only, matching
-codebook Part E, with "codebook_version": "0.3" and "coder_slot": 2. One row per
+codebook Part E, with "codebook_version": "0.2" and "coder_slot": 2. One row per
 topic below. Every quoted string you write must be copied exactly from a source below.
 
 ## Codebook
 
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
-fields (confirm-basis spec). The annex
+**Version:** 0.2 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
@@ -174,15 +173,6 @@ unevidenced chair.
   `statement-other`. When unsure → `statement-other`.
 - When `record` and a statement conflict, the record wins, and the row is coded
   `record-vs-statement-conflict` if the conflict decides the chair.
-- **Record fields (0.3).**
-  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`.
-  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
-    contains the surname, or the author/sponsor line. If two members on the page share the surname,
-    include the initial or first name (for example `Walker G`, or `Watson, R.`).
-  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
-    It is required for a vote.
-- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
-  one record must name the same instrument.
 
 **Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
 roll call. → `record`.
@@ -236,8 +226,6 @@ A vote does not mean support for every clause of a bill.
 - **The operative section governs, not the recital or the short title** (C38, C51).
 - **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
   version the person acted on.
-- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
-  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
 
 #### V4.2 Clause completeness
 
@@ -495,7 +483,6 @@ revision. A new revision gets a new annex version.
 # <topic_key> — served revision <id> (Season N)
 Orientation: standard | inverted | off-axis — one sentence why.
 Levels with a role: federal / state / local / school   (compass_topic_roles)
-Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
 Per rung:
   <n>. "<rung text>"
      Operative clauses: [a] … [b] …
@@ -536,7 +523,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 
 ```json
 {
-  "codebook_version": "0.3",
+  "codebook_version": "0.2",
   "coder_slot": 1,
   "rows": [
     {
@@ -555,10 +542,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
           "v5_time": "in-term | pre-seating | superseded-by-later | undated",
           "instrument": "H.R. 8035 (118th) | null",
           "provision_quote": "verbatim operative text from this snapshot | null",
-          "note": "≤ 1 sentence",
-          "record_kind": "vote | sponsor | author | other-act | null",
-          "actor_quote": "verbatim span showing this person acted | null",
-          "tally_quote": "verbatim vote count text | null"
+          "note": "≤ 1 sentence"
         }
       ],
       "v6_value": 4,
@@ -587,16 +571,13 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   passage whose V1–V5 values all allow a chair.
 - Every `provision_quote` and every quote `text` is verbatim in its snapshot.
 - Every value is from the lists above.
-- A `record` passage (`v3_class = "record"`) requires `record_kind` and `actor_quote`; a `vote`
-  additionally requires `tally_quote`. `actor_quote` and `tally_quote`, when present, are verbatim
-  in their snapshot.
 
 
 ## The person
 
 politician_id: 5aa536e1-faaa-485c-b6d8-0e4d99d16361  office_id: 09c567c5-b19f-41d4-b113-5982ad0df4e1
 Shelli Yoder — Senator, Indiana (seated, level: state)
-Current term: 2020-11-04 (precision: day) to present
+Current term: unknown (precision: unknown) to present
 
 ## Topics (served ladder text — code against these words only)
 
@@ -669,9 +650,6 @@ Question: What role should vouchers and school choice play in the public educati
 
 **Levels:** state (the lever: program statutes), federal (tax-credit scholarships only), school
 boards (no lever on vouchers). Verify against `compass_topic_roles` before use.
-
-**Synonyms:** "education savings account" (ESA), "scholarship", "tax-credit scholarship",
-"Choice Scholarship" (Indiana), "Utah Fits All".
 
 1. **"Eliminating voucher programs that divert taxpayer money from public schools to private
    institutions"**
