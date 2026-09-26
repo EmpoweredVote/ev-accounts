@@ -81,9 +81,11 @@ The coders agree on the chair and split on *why*. V4 (shape) and V2 (relevance) 
   - A record is usually two passages: the **vote page** names the person but carries no provision text, and the **bill text** carries the provision but never names the voters.
   - `confirmRow` requires a name on *every* rests_on passage, and a provision on *every* record passage. So a correct record basis can never pass: here it gave `person-not-in-snapshot` and `provision-missing`.
   - Fix: evaluate the basis as a set. At least one passage names the person as the actor. The named instrument's provision is verbatim in one of the passages. All passages are about the same instrument.
-- **D2 — no term start date for either seat.** (Data)
-  - `office_terms.term_start` is NULL for both Yoder and Durazo, with precision `unknown`, so every row gets `dates-imprecise`.
-  - This blocks certification for most sitting legislators. Backfill real term starts for seated state legislators before P2.
+- **D2 — no term start date for either seat.** (Data) — **FIXED for IN + CA by `CA_0293` (applied 2026-09-25, PR #806).**
+  - `office_terms.term_start` was NULL for both Yoder and Durazo (precision `unknown`), so every row got `dates-imprecise`.
+  - `CA_0293` dated 267 of 269 IN + CA legislators (219 day, 48 year). Yoder is 2020-11-04 and Durazo 2022-12-05.
+  - Both reports were re-run with those dates (only `coding-context.json` seat dates changed; the coder inputs are unchanged). Durazo / voting-rights now fails only on D1 (`provision-missing`, `person-not-in-snapshot`).
+  - Other states still need the roster pass.
 - **D3 — `build-coder-inputs` codes every topic in the bundle.** (Minor)
   - It does not drop topics that do not apply to the seat's level (spec §5.3).
   - This run worked around it by trimming `topics.json` by hand (the full list is in `topics.all.json`).
