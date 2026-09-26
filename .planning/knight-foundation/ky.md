@@ -10,7 +10,7 @@ Worktree `C:\ev-accounts-ky`, branch `knight/ky-slice13`.
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-26 — 138 boundaries, 138 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
 | 2 legislature | ✅ **APPLIED 2026-09-26 — 138 offices, 138 seated, 0 vacant** (`CC_0150`/`CC_0151`). Lexington scores **2 of 4** |
-| 3 city waves | — Lexington-Fayette Urban County Council, unmeasured |
+| 3 city waves | ✅ **APPLIED 2026-09-26 — 16 offices, 16 seated, 0 vacant, EVERY TERM DATED** (`X0068`, `CC_0152`/`CC_0153`). Lexington scores **3 of 5** |
 | 4 county waves | — Fayette County officers. Consolidated, so the commission drops and the officers stay |
 | 5 assets | — portraits for everyone seated in the slice, plus one `lexington` banner |
 
@@ -367,3 +367,152 @@ with zero Kentucky chambers or people surviving.
 
 ▶ **Next: stage 3, the Lexington-Fayette Urban County Council**, unmeasured. Fayette County is split
 across **9 House and 7 Senate districts**, so a Lexington address must return exactly one of each.
+
+---
+
+## ✅ KY-3 APPLIED 2026-09-26 — Lexington-Fayette is seated, and every term carries a date
+
+`X0068` (12 council-district boundaries) + `CC_0152` (structure) + `CC_0153` (occupancy):
+**16 offices — Mayor + 3 at-large + 12 district — 16 seated, 0 vacant, 16 people created, 0 reused.**
+
+### Measured from outside, against a same-session baseline
+
+| Measure | Before | After | Delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,149 | 89,165 | **+16** exact |
+| `offices` | 9,690 | 9,706 | **+16** exact |
+| `office_terms` | 9,626 | 9,642 | **+16** exact |
+| `districts` | 10,262 | 10,275 | **+13** exact |
+| `geofence_boundaries` | 72,445 | 72,457 | **+12** exact |
+| `governments` | 607 | 608 | +1 |
+| `chambers` | 1,324 | 1,326 | +2 |
+| `offices_missing_terms` | 422 / 238 | 422 / 238 | **unmoved** |
+
+Council **15/15** and Mayor **1/1** seated, counting `och.politician_id`. **Idempotent, proved by
+re-running all three**: `inserted 0 boundary row(s)`, every `essentials.*` write `INSERT 0 0`,
+counts identical.
+
+### 🔴🔴 The city's own Councilmembers page produces a wrong inventory if read literally
+
+Its prose describes the Council as *"The vice mayor / Two at-large councilmembers / 12 district
+councilmembers."* Read as written, that creates a separately elected **Vice Mayor** office.
+
+There is none. The city's Government page states it plainly — *"There are 12 district council
+members and three at-large council members"* — and the roster lists Dan Wu as *"Council At-Large and
+Vice Mayor"*. Voters elect **three at-large members**; the top vote-getter takes the title.
+
+▶ By the inclusion ruling — an office is seated if the **voters** elect it — **Vice Mayor is a
+title, not an office.** `CC_0152` carries a named gate that refuses any office whose title contains
+"vice mayor", and it was watched failing.
+
+### 🔴🔴 The oath date is not a rule, and Kentucky proved it again
+
+Whitney Elliott Baxter assumed office **2021-01-04** (a Monday) and Lisa Higgins-Hord's appointment
+runs through **2027-01-04** (a Monday). That invites *"the first Monday in January"*.
+
+The city's own record says the 2025-26 district members took the oath on **Sunday, January 12,
+2025**, at the Lexington Senior Center, administered by Fayette District Judge Denotra Gunther.
+
+**Computing the first Monday would have written 2025-01-06 for five members — wrong by six days.**
+This is ND-3's finding, reproduced in a second state.
+
+⚠ **That ceremony re-swore all twelve district members, incumbents included**, so `2025-01-12` is the
+start of the 2025-26 *term*, not of continuous occupancy. It is used only for the five the archived
+timeline shows **arriving** then — absent 2024-12-22, present 2025-01-17. `office_terms` carries
+continuous occupancy (North Carolina's rows reach back to 1999-01-01), so an incumbent's re-swearing
+must never overwrite an earlier start.
+
+### Term dates: 7 day · 9 year · 0 unknown · 0 invented · 2 appointed
+
+| Seat | Member | Start | Precision | How |
+| --- | --- | --- | --- | --- |
+| D1, D4, D7, D8, D12 | Morton, Curtis, Hale, Beasley, Boone | `2025-01-12` | day | elected |
+| D3 | Tom Eblen | `2026-02-03` | day | **appointed** |
+| D6 | Lisa Higgins-Hord | `2025-08-22` | day | **appointed** |
+| D2 / D10 / AL Wu / AL Brown | Lynch, Sevigny, Wu, Brown | `2023-01-01` | year | elected |
+| D5 / D9 | Sheehan, Baxter | `2021-01-01` | year | elected |
+| D11 / AL Ellinger / Mayor | Reynolds, Ellinger, Gorton | `2019-01-01` | year | elected |
+
+🟢 **Both appointed arrivals are dated from the city's own publications** — the only thing that dates
+an appointed arrival. Higgins-Hord was named and sworn the same day, 2025-08-22, after Denise Gray
+resigned effective 2025-07-31; Eblen's member page states *"appointed by Mayor Linda Gorton on
+Feb. 3, 2026"*, filling Hannah LeGris' unexpired term.
+
+⚠ **Two gap cases, the KY-2 trap again**: **Chuck Ellinger II** served at-large 2003–2014 and
+returned in 2019; **James Brown** moved from a district seat to at-large in 2022. Neither's first
+year on the Council starts the seat he holds now.
+
+### 🔴 Four council-district layers, all with 12 features
+
+Lexington publishes `Council_District`, `Council_District_2012`, `Council_District_2002` and
+`Council_District_1972` in one ArcGIS organisation. **All four carry exactly 12 features** — the
+Duluth trap, where a count cannot separate the live map from a superseded one.
+
+⚠ **The obvious test is too weak.** Locating each 2012 centroid inside the current layer agrees
+**11 of 12** — 92%, which is the level North Dakota proved a struck-down map can pass.
+
+🟢 **The area test discriminates**: all **12** districts differ from the 2012 map by **1.0%–44.9%**
+while the **total is preserved to 0.03%** — the signature of a redistricting, which a stale copy
+cannot produce. That test is built into the loader and re-runs on every load; pointing it at the
+live layer as its own control aborts with `0 of 12 differ`.
+
+Corroboration only: the three superseded layers carry an explicit year in their name, the live one's
+`modified` is 2025-12-16 against 2024-09-13, and its `REP` attribute matches the roster 12/12.
+⚠ **The `REP` match is not a vintage proof** — KY-2 found the state's GIS layer carrying a stale
+roster beside correct geometry. Attributes and geometry are independent.
+
+### 🟢 The place polygon is exactly coterminous with the county, and that was measured
+
+TIGER place `2146027` and county `21067` are **both 285.567 sq mi**, with **zero** difference in
+either direction and **100.000%** coverage — consolidation is real in the geometry, not inferred
+from the word. The control discriminates: Duluth's place covers **1.169%** of St. Louis County.
+
+The 12 council districts cover **99.968%** of the place, 0.016 sq mi falling outside it — two
+digitizations of one boundary, which needs a tolerance rather than an equality test.
+
+### 🔴 The roster parser control earned its keep twice
+
+The first parser returned **zero seats from both archived snapshots**. Controlled against the live
+page rather than believed, it exposed two separate faults: a regex referencing a capture group that
+did not exist, and — once fixed — **14 of 15**, silently dropping **District 2, Shayla Lynch, J.D.**,
+whose name contains a comma. Only keying on the `href` reached 15/15.
+
+⚠ The archived roster is not in anchors at all but inside an **escaped JSON menu blob**, and one
+snapshot returned **undecoded gzip**. Both score as zero to a naive parser.
+
+⚠ The credential `J.D.` is not part of the name and is not written.
+
+### Gates, each watched failing for its own reason
+
+| Gate | Tamper | Fired |
+| --- | --- | --- |
+| Boundary vintage | point the comparison at the live layer | `0 of 12 districts differ` — aborts before any write |
+| Structure: geometry present | `X0068` → `X9999` | `X0068 holds 0 boundaries, expected 12` |
+| Structure: at-large count | relabel one at-large seat | `expected 3 at-large offices, got 2` |
+| **Structure: Vice Mayor** | create a `Vice Mayor` title | **`a Vice Mayor OFFICE exists`** |
+| Occupancy: seated | 16 → 15 | `expected 16 seated` |
+| Occupancy: appointed | 2 → 1 | `expected 2 appointed arrivals` |
+
+🔴 **The Vice Mayor tamper first tripped the at-large COUNT gate**, not the Vice Mayor gate — the
+same ordering problem KY-2's collision gate had. The count gate was relaxed to let execution reach
+it, and it then fired with its own message.
+
+### Verification
+
+Dry-run against production in one transaction ending in `ROLLBACK`, and **the rollback was confirmed
+to have reverted** — all six counts back to baseline with zero Lexington rows surviving.
+
+✅ **END-TO-END at Lexington-Fayette Government Center — seven answers**: state representative
+**George Brown Jr.** (House 77), state senator **Reginald L. Thomas** (Senate 13), **three**
+at-large council members, **Council District 3 Tom Eblen**, and **Mayor Linda Gorton**. The
+program's usual four-answer probe returns seven here because Lexington seats three at-large members
+and a mayor, and the county commissioner answer is absent **by design** — the government is
+consolidated, so the Council *is* the county body.
+
+✅ `check:reachability` nothing regressed, all three buckets at baseline.
+✅ `check:occupancy`, `check:migrations`, `check:reservations` all green.
+
+▶ **Next: stage 4, the Fayette County officers.** KRS 67A does not set an urban-county council's
+structure, but it **does** require the government to retain the county offices named in the Kentucky
+Constitution — so stage 4 is not empty despite consolidation. The commission drops; the separately
+elected officers stay, confirmed from the charter in that wave and never inherited.
