@@ -27,6 +27,7 @@
  *     reply. warn and skip still fail open.
  */
 import { execFileSync } from "node:child_process";
+import { collectBranchDrift, driftLines } from "./lib/steward-drift.mjs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -96,6 +97,71 @@ async function connect() {
 const pad = (ns, num) => (ns ? `${ns}_${String(num).padStart(4, "0")}` : String(num));
 
 /* ── who ─────────────────────────────────────────────────────────────────────────────── */
+/**
+ * Print branch drift for every worktree in this checkout.
+ *
+ * 🔴 THE FIFTH COLLISION. The steward's other mechanisms coordinate on the WORLD — which place,
+ *    which migration number. On 2026-09-26 two slices with DISJOINT jurisdiction claims, distinct
+ *    slot ranges and separate worktrees still collided, in `load-state-tiger-boundaries.ts`,
+ *    because every state's geography load edits it. PR #797 sat 64 behind master with 2
+ *    conflicting files for two days and nothing said so. A jurisdiction claim cannot know which
+ *    FILES seeding that jurisdiction touches; a branch can be asked directly.
+ *
+ * ⚠ READ-ONLY AND NON-BLOCKING, BOTH DELIBERATE. It never fetches — `who` runs at session start
+ *   and must not wait on the network — so it prints the base ref's age instead and calls its own
+ *   numbers floors. And it computes every merge with `merge-tree --write-tree`, in memory, so it
+ *   never touches a worktree belonging to another session. That is the rule this tool enforces;
+ *   it would be absurd to break it while reporting on it.
+ *
+ * ⚠ FAIL OPEN AND SILENT. Drift is advisory. If git is unavailable this prints nothing rather
+ *   than breaking a session start over a nicety.
+ */
+function reportBranchDrift() {
+  const git = (args) => execFileSync("git", args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  let branches;
+  let base = "origin/master";
+  let baseAgeHours = null;
+  try {
+    // The worktrees of THIS checkout, which is what this session can see and act on.
+    const raw = git(["worktree", "list", "--porcelain"]);
+    // Parsed line by line rather than by splitting on blank lines: `--porcelain` separates
+    // records with an empty line, and a regex for that has to spell newlines, which is one more
+    // thing to get wrong in a file that is edited by scripts as often as by hand.
+    branches = [];
+    let where = null;
+    let ref = null;
+    for (const line of raw.split("\n")) {
+      const l = line.trim();
+      if (l.startsWith("worktree ")) { where = l.slice("worktree ".length); ref = null; continue; }
+      if (l.startsWith("branch ")) { ref = l.slice("branch ".length).replace("refs/heads/", ""); continue; }
+      if (l === "") {
+        if (ref) branches.push({ branch: ref, where });
+        where = null; ref = null;
+      }
+    }
+    if (ref) branches.push({ branch: ref, where });
+    try {
+      const head = git(["symbolic-ref", "--quiet", "refs/remotes/origin/HEAD"]).trim();
+      if (head) base = head.replace(/^refs\/remotes\//, "");
+    } catch { /* origin/HEAD unset — origin/master is the repo's default anyway */ }
+    const when = parseInt(git(["log", "-1", "--format=%ct", base]).trim(), 10);
+    if (Number.isFinite(when)) baseAgeHours = (Date.now() / 1000 - when) / 3600;
+  } catch {
+    return;   // no git, nothing to say
+  }
+  let rows;
+  try {
+    rows = collectBranchDrift(git, { branches, base });
+  } catch {
+    return;
+  }
+  const lines = driftLines(rows, { baseLabel: base, baseAgeHours });
+  if (lines.length) {
+    console.log("");
+    for (const l of lines) console.log(l);
+  }
+}
+
 async function cmdWho() {
   let client;
   try {
@@ -103,6 +169,10 @@ async function cmdWho() {
   } catch (e) {
     // FAIL OPEN. Say so loudly, then get out of the way.
     console.warn(`steward: unreachable (${e.message}). Continuing without coordination.`);
+    // ⚠ BUT STILL REPORT DRIFT. It is computed from git alone and needs no database, and an
+    //   unreachable steward is exactly when a session is least coordinated and most likely to
+    //   be working on a branch that has quietly stopped applying.
+    reportBranchDrift();
     return 0;
   }
   try {
@@ -158,6 +228,7 @@ async function cmdWho() {
           + `LAPSED ${ago} — free to take, check first`);
       }
     }
+    reportBranchDrift();
     return 0;
   } finally {
     await client.end();
@@ -739,7 +810,10 @@ const COMMANDS = {
 const run = COMMANDS[cmd];
 if (!run) {
   console.error("usage: steward <who|sync|slot|claim|release|extend> [...]\n"
-    + "  who                              show active claims and outstanding reservations\n"
+    + "  who                              show active claims, outstanding reservations, and\n"
+    + "                                   BRANCH DRIFT — which worktrees' branches have fallen\n"
+    + "                                   behind the base or already conflict with it. Read-only,\n"
+    + "                                   never fetches, and prints even when the steward is down\n"
     + "  sync [--apply]                   reconcile the table against git — promote reservations\n"
     + "                                   whose file now exists; report stale ones, filename drift\n"
     + "                                   and reused-abandoned slots. READ-ONLY without --apply\n"
