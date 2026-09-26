@@ -1,0 +1,8 @@
+{ "batch_id": "2026-09-26-shadow-brown", "sources": [
+  { "url": "https://iga.in.gov/legislative/2026/bills/senate/76/details", "source_kind": "public-record",
+    "politician_id": "cdae21e5-88a2-4c55-aaa5-abe050abf4a3", "office_id": "670f8b2c-76f5-4f08-82a9-e71a423278d5", "topic_keys": ["local-immigration"], "instruments": ["SB 76 (2026)"],
+    "pointer_passages": [], "candidate_quotes": [], "human_saved_path": "human-saved/iga-2026-sb76-details.txt" },
+  { "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/SB0076.01.INTR.pdf", "source_kind": "public-record",
+    "politician_id": "cdae21e5-88a2-4c55-aaa5-abe050abf4a3", "office_id": "670f8b2c-76f5-4f08-82a9-e71a423278d5", "topic_keys": ["local-immigration"], "instruments": ["SB 76 (2026)"],
+    "pointer_passages": [], "candidate_quotes": [], "human_saved_path": "human-saved/iga-2026-sb76-introduced.txt" }
+] }

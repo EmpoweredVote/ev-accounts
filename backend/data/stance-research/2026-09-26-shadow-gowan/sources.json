@@ -1,0 +1,8 @@
+{ "batch_id": "2026-09-26-shadow-gowan", "sources": [
+  { "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552", "source_kind": "public-record",
+    "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d", "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f", "topic_keys": ["ranked-choice-voting"], "instruments": ["HB 2552 (2023)"],
+    "pointer_passages": [], "candidate_quotes": [], "human_saved_path": "human-saved/azleg-2023-hb2552-senate-third.txt" },
+  { "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm", "source_kind": "public-record",
+    "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d", "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f", "topic_keys": ["ranked-choice-voting"], "instruments": ["HB 2552 (2023)"],
+    "pointer_passages": [], "candidate_quotes": [] }
+] }

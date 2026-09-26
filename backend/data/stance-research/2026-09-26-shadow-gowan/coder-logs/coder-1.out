@@ -1,0 +1,11 @@
+Written: `labels/coder-1.json` — one row, `ranked-choice-voting`, chair **5**.
+
+Coding summary:
+
+- **Both snapshots** → `own-act`, `on-question`, `record` / `record_kind: vote`, `chair-shaped`, `in-term`, instrument `HB 2552 (56th Legislature, 1st Regular Session 2023)`.
+- **Bill text** (`dcb501dd`) carries `provision_quote` only; it prints the prohibition but names no voter, so `actor_quote`/`tally_quote` are `null`.
+- **Vote page** (`79c3e913`) carries `actor_quote` `"GONZALES N GOWAN Y HATATHLIE N"` and `tally_quote` `"Passed 16-14-0-0-0"`; it prints no provision, so `provision_quote` is `null`. The instrument group satisfies the per-record requirement.
+- **Not preemption (Q10/H12):** the operative section binds "This state or a city, town, county or political subdivision", so it sets the rule itself rather than only allocating which level decides.
+- **Not near-unanimous:** 14 No of 30 cast.
+- Rung 5 ("Ban ranked-choice voting by law") is matched clause for clause; rung 4 ("stop short of banning it") is excluded by the statutory prohibition.
+- No `quotes` — both sources are records with no own-words span.
