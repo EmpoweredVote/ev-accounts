@@ -364,6 +364,68 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // counties — plus 15 G5200V26 rows, source `oh_orc_2025`, the 2026-2032 congressional remap
   // adopted 2025-10-31, which this wave does not touch.
   OH: new Set(['sldu', 'sldl']),
+  // ND. Knight program slice 12 — Grand Forks and Grand Forks County. Production held ZERO
+  // G5210/G5220 rows for FIPS 38 and ZERO state legislative offices before this wave;
+  // measured 2026-09-25 (North Dakota held 8 offices in total: 1 US Representative at large,
+  // 2 US Senators, 5 statewide executives — all 8 seated, and no candidate-office decoy of
+  // the kind Ohio carried).
+  // Counts MEASURED against raw TIGER 2024 FIPS 38 on 2026-09-25 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   47 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'047'
+  //   sldl   48 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'047'
+  //          with '004' ABSENT and '04A'/'04B' in its place
+  // 🔴🔴 NORTH DAKOTA'S HOUSE IS MULTI-MEMBER AND THE POLYGON COUNT IS NOT THE SEAT COUNT.
+  // N.D. Const. Art. IV § 2: each legislative district elects one senator and TWO
+  // representatives. So 47 Senate seats over 47 polygons, but **94 House seats over 48
+  // polygons** — 46 whole districts electing two each (92), plus subdistricts 4A and 4B
+  // electing ONE each (2). This is the AZ/WA multi-member shape with a twist neither of them
+  // has: the two subdistricts are single-member while every other district is dual-member,
+  // so the seat arithmetic is not a single multiplier. The pre-flight asserts it explicitly.
+  // ▶ Every downstream gate that reads "one office per district" is WRONG here. That includes
+  // the per-district control every earlier Knight slice used.
+  // 🔴 A NORTH DAKOTA HOUSE DISTRICT IS NOT AN INTEGER. '04A' and '04B' carry a letter, so
+  // `parseInt('04A')` is 4 and the two subdistricts collapse onto one OCD-ID — the MN '08A' /
+  // MD '1A' defect, which this file's ocdDistrictSuffix() exists to prevent and which the
+  // pre-flight asserts against by counting distinct suffixes. Never cast, sort or join a
+  // district code as a number: lexical order puts '10' before '4A'.
+  // 🔴 VINTAGE WAS PROVEN, NOT ASSUMED — AND HERE THE CODE SET ITSELF IS EVIDENCE, WHICH IS
+  // RARE. The operative plan is the one the U.S. District Court ordered on 2024-01-08 in
+  // Turtle Mountain Band of Chippewa Indians v. Howe, after holding on 2023-11-17 that the
+  // drawing of Districts 9 and 15 and Subdistricts 9A and 9B diluted Native American voting
+  // strength under VRA § 2. That order DISSOLVED 9A/9B back into a whole District 9 while
+  // leaving 4A/4B intact, so the House layer's own code set dates the map: 49 polygons with
+  // 04A/04B/09A/09B is HB 1504 (2021), 48 polygons with 04A/04B only is the remedial plan.
+  // Measured 2026-09-25: TIGER 2022 and 2023 carry 49 at LSY 2022; TIGER 2024 and 2025 carry
+  // 48 at LSY 2024.
+  // ⚠ THE CODE SET IS EVIDENCE, NOT THE PROOF. The same order also redrew District 15, which
+  // KEPT its number — a code-set check is blind to every boundary change that does not rename
+  // a district. The proof is geometric: all 48 House and all 47 Senate polygons were located
+  // at their own published internal points inside the state's own
+  // `NDGISHUB Legislative Districts` layer and agree 48/48 and 47/47, 0 ambiguous. The control
+  // FAILED as required — TIGER 2022 disagrees on House 9A->9 and 9B->15, and Senate 9->15.
+  // ⚠ AND IT STILL AGREES ON 47 OF 49 AND 46 OF 47. Two districts moved out of 47. A count, a
+  // shape check, a spot check and even a 96%-agreement threshold all pass the STRUCK-DOWN map.
+  // Tool: scripts/verify-nd-tiger-vintage.mjs, which carries both halves and needs no database.
+  // 🔴 THE SUPERSEDED PLAN IS PUBLISHED BESIDE THE CURRENT ONE AND SORTS ABOVE IT ON ONE FIELD.
+  // The ND GIS Hub catalogue also serves `NDGISHUB 2021 67th Assembly Legislative Districts` —
+  // HB 1504, the map the court struck down. Its `modified` is 2021-11-12 but its `issued` is
+  // 2025-03-24, three years LATER than the live layer's 2022-01-21, so sorting the two by
+  // freshness on the wrong field picks the dead map. Name the layer; never take the newest.
+  // 🟢 And unlike Ohio's Secretary of State, ndgishub.nd.gov answers a plain request: no WAF,
+  // no Playwright, HTTP 200 and application/json to a bare fetch.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA, SC AND OH. sldu runs 38001..38047 and
+  // sldl 38001..3804B, while North Dakota's 53 counties are 38001..38105 odd — so 24 county
+  // geo_ids fall inside the Senate range and '38035', Grand Forks County, is outside it only
+  // by luck of the odd numbering. Every join must pair geo_id with mtfcc/district_type. The
+  // two subdistricts are safe by construction: '3804A' ends in a letter and cannot collide
+  // with a numeric county GEOID.
+  // place/cousub/CDP are EXCLUDED and MUST NOT be re-run: North Dakota's G4110 (355), G4040
+  // (1,668) and G4210 (51) rows are already in production, and Grand Forks city 3832060 is
+  // present with geometry. ND is the second Knight slice, after Ohio, that owes no `place`
+  // load — one of six such states (KS KY MI MS ND SD).
+  // cd/county are EXCLUDED: prod already holds North Dakota's single at-large congressional
+  // district (G5200) and all 53 counties.
+  ND: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -2120,8 +2182,100 @@ async function processLayer(
     }
   }
 
+  // ── ND pre-flight (Knight slice 12 — Grand Forks / Grand Forks County) ─────
+  // Counts MEASURED against raw TIGER 2024 FIPS 38 on 2026-09-25 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu   47 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'047'
+  //   sldl   48 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, '004' absent, '04A'/'04B' present
+  // 🔴🔴 THE POLYGON COUNT IS NOT THE SEAT COUNT HERE. N.D. Const. Art. IV § 2 gives every
+  // district one senator and TWO representatives, so 48 House polygons carry 94 seats: 46
+  // whole districts at two each, plus single-member subdistricts 4A and 4B. Do NOT "fix" a
+  // later seat gate by raising these numbers — the polygon counts below are the MAP, and the
+  // seat arithmetic is asserted separately so that the two can never be confused.
+  // 🔴 THE 48 vs 49 DISTINCTION IS THE VINTAGE. 49 with 09A/09B is HB 1504, struck down under
+  // VRA § 2; 48 with a whole District 9 is the plan the U.S. District Court ordered on
+  // 2024-01-08. The subdistrict assertion below is therefore a vintage tripwire, not cosmetics:
+  // if it ever reports 9A or 9B, the file is the dead map and nothing may be written.
+  if (fipsArg === '38') {
+    const EXPECTED_ND_MTFCC: Record<string, number> = {
+      sldu: 47,   // 47 ND Senate districts — court-ordered plan of 2024-01-08 — measured 2026-09-25
+      sldl: 48,   // 48 ND House polygons carrying 94 seats, same plan — measured 2026-09-25
+    };
+    // The only subdistricts the operative plan contains. 9A/9B belong to the struck-down map.
+    const ND_EXPECTED_SUBDISTRICTS = ['4A', '4B'];
+    const ND_HOUSE_SEATS = 94;
+    if (layer in EXPECTED_ND_MTFCC) {
+      const expected = EXPECTED_ND_MTFCC[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[ND MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ ${layer === 'sldl' ? '49 records with 09A/09B is HB 1504, the map struck ' +
+          'down under VRA § 2 — NOT a newer file. ' : ''}Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[ND OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. ND's House ` +
+          `subdistricts 4A/4B carry a letter, so this is the MN '08A' / MD '1A' collapse — ` +
+          `parseInt('04A') is 4. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      const lettered = [...ocdSuffixes].filter((s) => /[A-Z]$/.test(s)).sort();
+      const expectedLettered = layer === 'sldl' ? ND_EXPECTED_SUBDISTRICTS : [];
+      if (lettered.join(',') !== expectedLettered.join(',')) {
+        const err = new Error(
+          `[ND subdistrict assertion] layer=${layer}: subdistricts ${JSON.stringify(lettered)}, ` +
+          `expected ${JSON.stringify(expectedLettered)}. The court's 2024-01-08 order dissolved ` +
+          `9A/9B into a whole District 9 and left 4A/4B standing — so 9A or 9B here means this ` +
+          `file is HB 1504, the STRUCK-DOWN map. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (layer === 'sldl') {
+        // 🔴 The seat arithmetic, asserted apart from the polygon count so the two can never be
+        // read as the same number: 46 dual-member districts + 2 single-member subdistricts = 94.
+        const wholeDistricts = expected - ND_EXPECTED_SUBDISTRICTS.length;
+        const seats = wholeDistricts * 2 + ND_EXPECTED_SUBDISTRICTS.length;
+        if (seats !== ND_HOUSE_SEATS) {
+          const err = new Error(
+            `[ND seat assertion] ${wholeDistricts} dual-member districts + ` +
+            `${ND_EXPECTED_SUBDISTRICTS.length} single-member subdistricts = ${seats} House seats, ` +
+            `expected ${ND_HOUSE_SEATS} (N.D. Const. Art. IV § 2). Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+      console.log(`  [${layer}] ND MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `subdistricts ${JSON.stringify(lettered)}` +
+                  (layer === 'sldl' ? `, seat arithmetic 46x2 + 2 = ${ND_HOUSE_SEATS} holds.` : '.'));
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, ND) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
