@@ -96,8 +96,8 @@ Codebook text changes:
   - **It never enters a coder prompt.** A test checks that `buildCoderPrompt` output contains none of
     its reasoning text.
 - **Fresh or stale seed flag per row** in `coding-report.json`: `fresh` when the older season's pin is
-  the same revision as the open season's served revision, otherwise `stale` (seasons design,
-  "seed state"). It is information only.
+  the same revision as the open season's **pin**, otherwise `stale` (seasons design, "seed state").
+  (Corrected 2026-09-25: this line first said "served revision", which made every lead stale.) It is information only.
 - **Annex Synonyms line** (template + `school-vouchers` example). The SKILL shadow section tells the
   collector to search with them before recording "found nothing".
 

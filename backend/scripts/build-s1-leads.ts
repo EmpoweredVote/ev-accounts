@@ -11,8 +11,8 @@
  * answer in a season whose status is NOT 'open' and NOT 'draft' (the season being researched right
  * now, and one not yet published, are both excluded — only a closed or superseded season counts),
  * together with that season's politician_context row (reasoning, sources) by the same season_id.
- * `seed` says whether that lead's ladder text still matches what this topic serves today
- * ('fresh') or has moved on ('stale') — see s1Leads.ts's seedState.
+ * `seed` says whether that lead's season pinned the same revision the open season pins ('fresh')
+ * or a different one ('stale') — see s1Leads.ts's seedState.
  *
  * Usage (from backend/):
  *   npx tsx scripts/build-s1-leads.ts --dir <batch> --politician <uuid>
@@ -28,7 +28,7 @@ const dir = arg('--dir'); const politicianId = arg('--politician');
 if (!dir || !politicianId) { console.error('usage: --dir <batch> --politician <uuid>'); process.exit(2); }
 
 const topics = JSON.parse(readFileSync(join(dir, 'topics.json'), 'utf8')) as
-  { topic_id: string; topic_key: string; served_revision_id: string }[];
+  { topic_id: string; topic_key: string; topic_revision_id: string }[];
 
 const leads: S1Lead[] = [];
 try {
@@ -69,7 +69,7 @@ try {
       pin_revision_id: a.pin_revision_id,
       reasoning: ctx?.reasoning ?? null,
       sources: ctx?.sources ?? [],
-      seed: seedState(a.pin_revision_id, t.served_revision_id),
+      seed: seedState(a.pin_revision_id, t.topic_revision_id),
     });
   }
 } finally {
