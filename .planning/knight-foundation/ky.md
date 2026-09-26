@@ -9,7 +9,7 @@ Worktree `C:\ev-accounts-ky`, branch `knight/ky-slice13`.
 | Stage | State |
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-26 — 138 boundaries, 138 districts, 0 errors.** Only `sldu` + `sldl` were owed; `place` already existed |
-| 2 legislature | — **owes 138 offices.** Kentucky holds ZERO state legislative offices today |
+| 2 legislature | ✅ **APPLIED 2026-09-26 — 138 offices, 138 seated, 0 vacant** (`CC_0150`/`CC_0151`). Lexington scores **2 of 4** |
 | 3 city waves | — Lexington-Fayette Urban County Council, unmeasured |
 | 4 county waves | — Fayette County officers. Consolidated, so the commission drops and the officers stay |
 | 5 assets | — portraits for everyone seated in the slice, plus one `lexington` banner |
@@ -231,3 +231,139 @@ must therefore return exactly one of each, not nine and seven.
 ## Debts this slice already owes
 
 - Nothing yet. Stage 1 closed clean with no accepted debt.
+
+---
+
+## ✅ KY-2 APPLIED 2026-09-26 — the Kentucky General Assembly is seated
+
+`CC_0150` (structure) + `CC_0151` (occupancy): **138 offices — 100 House + 38 Senate — 138 seated,
+0 vacant, 138 people created, 0 reused.**
+
+### Measured from outside, against a same-session baseline
+
+| Measure | Before | After | Delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,011 | 89,149 | **+138** exact |
+| `offices` | 9,552 | 9,690 | **+138** exact |
+| `office_terms` | 9,488 | 9,626 | **+138** exact |
+| `chambers` | 1,322 | 1,324 | **+2** |
+| `offices_missing_terms` | 422 / 238 unflagged | 422 / 238 | **unmoved** |
+
+House **100/100** and Senate **38/38** seated, counting `och.politician_id` — never rows, because
+`office_current_holder` LEFT JOINs from `offices` and a vacancy is a NULL `politician_id`.
+
+**Idempotent, proved by re-running both**: every `essentials.*` write `INSERT 0 0`, counts identical
+at 89,149 / 9,690 / 9,626 / 1,324.
+
+### 🔴🔴 The GIS layer carries a stale roster, and KY-1 used that layer as its geometry authority
+
+`Ky_Legislative_Districts_WGS84WM` serves `Legislator`/`Full_Name` beside the polygons. KY-1 proved
+its **geometry** 138/138. Its **roster** is stale: Senate District 37 still reads `Yates, David`,
+while the chamber's own list and the member's own profile both read **Gary Clemons**.
+
+David Yates resigned **2025-10-08** to become Jefferson County Clerk; Clemons won the **2025-12-16**
+special election and took office **2026-01-06**. That row is now live at day precision.
+
+▶ **A SOURCE CAN BE AUTHORITATIVE FOR ONE FIELD AND STALE FOR ANOTHER.** Proving a layer's geometry
+says nothing about the attributes riding along with it. Never inherit trust across fields.
+
+### 🔴 In Kentucky a departed legislator has no page, so a list diff is the only change-check
+
+The profile URL is keyed to the **seat** (`DistrictNumber` only), not the person, so a successor
+replaces the predecessor and a departure marker can never appear. A sweep of all 138 pages will
+always return 138 sitting members reading `- Present`.
+
+The departure detector was controlled by tampering — it fires on all 138 — so it is not dead code,
+but **no real page on this host can trigger it**. The cross-source diff caught SD-37; nothing else
+would have.
+
+🔴 **`legislature.ky.gov` SOFT-404s**: `DistrictNumber` 139, 200, 0 and `abc` all return HTTP 200 at
+~61.7 KB against 68–69.5 KB for a real page. **Status is not a validity signal**; the sweep is safe
+only because it asserts a parsed name and title.
+
+🔴 **The Senate is offset by +100 in the profile URL** (Senate 1 = `DistrictNumber=101`, Senate 38 =
+`138`), confirmed empirically at both edges. A naive `DistrictNumber=<district>` silently fetches a
+**House** member for every Senate seat, so the sweep asserts the returned title against the chamber
+it asked for.
+
+### 🔴 One member has held one seat under three published names
+
+House District 81, from the archived LRC rosters: `Frazier, Deanna` (2019–2021) →
+`Frazier Gordon, Deanna` (2021–2025) → `Gordon, Deanna` (2025– ).
+
+A name-keyed diff reads that as two departures and two arrivals. Only the seat-keyed timeline shows
+one continuous tenure. **Matching Kentucky legislators by name across time is unsafe.**
+
+### 🔴🔴 "First elected" is not a term start, and Kentucky proves it four separate ways
+
+Ky. Const. § 30 makes a term begin on 1 January of the year succeeding the election, and an earlier
+draft of this wave used that as a blanket day for 126 seats. **It was wrong.**
+
+| Failure | Count | Example |
+| --- | --- | --- |
+| `Service` is chamber-scoped; gaps and chamber switches | 13 | `House 1994 - 22, House 2025 - Present` — off by 31 years |
+| Changed district number in the 2022 remap | 3 | D90→D14, D88→D43, D82→D49 |
+| Arrived mid-term by special election | 9 | Clemons, Griffee, Berg, … |
+| Caught only by replaying 45 archived rosters | 8 | Heavrin D18 and Banta D63 both read 2019, both first appear in **December** 2019 |
+
+⚠ **And that detector has blind spots**: 40 members predate snapshot coverage, and Griffee — a
+confirmed March 2024 arrival — is **not** flagged, because no 2024 snapshot precedes him.
+
+⚠ **The segment scan was a broken detector first.** It required a four-digit end year, so
+`House 1994 - 22` never matched and all 138 members scored as one segment. A uniform answer was
+reported before it was controlled.
+
+▶ **So a DAY is claimed only where the arrival was individually sourced: 7 day · 131 year · 0
+unknown · 0 invented.** Year precision under-claims rather than over-claims. Compare North Dakota at
+87 of 94 unknown and Ohio at 130 of 130 unknown.
+
+⚠ **The gap between a special election and the oath is NOT a rule** — measured at 6, 7, 7 and 20
+days. ND-3's finding reproduced. Two January 2014 arrivals (Miles H7, Thomas S13) stay at `year`
+because sources disagree across Jan 2 / Jan 4 / Jan 7 and 🔴 **Kentucky publishes no House or Senate
+Journal online** to settle it.
+
+### Namesakes — four, every one a different person
+
+| Member | Seat | The existing row is |
+| --- | --- | --- |
+| Brandon Smith | Senate 30 | a Longview, **Texas** city council candidate |
+| Daniel Elliott | House 54 | the **Indiana** State Treasurer (source `cicero`) |
+| Matthew Lehman | House 67 | an **Indiana** discovery-cohort row, `is_active=false` |
+| William Lawrence | House 70 | a **Michigan** U.S. House District 7 candidate |
+
+The duplicate-name guard is lifted for those four rows only, never for the migration. ⚠ The
+collision query itself fanned out on Daniel Elliott — a live instance of the politician-rooted
+`office_current_holder` join hazard CLAUDE.md documents.
+
+`external_id` block `-2763000..-2762601` was measured **empty** before use; the nearest occupied id
+below it is `-2770001`.
+
+### Gates, each watched failing for its own reason
+
+| Gate | Tamper | Fired |
+| --- | --- | --- |
+| Structure count | expected 100 → 99 | `expected 100 House offices, got 188` |
+| **`geo_id` collision** | drop `district_type` from the office join | **`69 legislative office(s) landed on a non-legislative district`** |
+| Occupancy day count | 7 → 6 | `expected 7 day-precision terms` |
+| Occupancy seated | 138 → 137 | `expected 138 seated` |
+| Roster departure check | invert the `- Present` test | fires on all 138 |
+
+🔴 **The collision tamper first tripped the COUNT gate at 188 offices, not the collision gate.** A
+control that aborts for the wrong reason proves nothing, so the count gate was relaxed to let
+execution reach the collision gate — which then reported **69**, exactly the 50 House-range plus 19
+Senate-range county collisions measured before the wave.
+
+### Dry run and verification
+
+Both migrations were dry-run against production in one transaction ending in `ROLLBACK`, and **the
+rollback was confirmed to have reverted** — all four counts back to 89,011 / 9,552 / 9,488 / 1,322,
+with zero Kentucky chambers or people surviving.
+
+- ✅ **End-to-end**: all four anchors return **2 of 4** answers. Lexington-Fayette Government Center
+  returns **George Brown Jr.** (House 77) and **Reginald L. Thomas** (Senate 13). The Nashville
+  negative control returns **0**.
+- ✅ `check:reachability` — nothing regressed, all three buckets at baseline.
+- ✅ `check:occupancy`, `check:migrations`, `check:reservations` — all green.
+
+▶ **Next: stage 3, the Lexington-Fayette Urban County Council**, unmeasured. Fayette County is split
+across **9 House and 7 Senate districts**, so a Lexington address must return exactly one of each.
