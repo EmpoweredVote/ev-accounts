@@ -7,7 +7,7 @@ const seat: SeatContext = {
   politician_id: 'p', full_name: 'J. Stuart Adams', level: 'state', mode: 'seated', office_id: 'o', office_title: 'State Senator',
   jurisdiction_names: ['Utah'], term_start: '2021-01-01', start_precision: 'day', term_end: null, election_date: null,
 };
-const text = new Map([['s1', 'Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]);
+const text = new Map([['s1', 'H.B. 11. Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.']]);
 const P = (over: Partial<Passage> = {}): Passage => ({
   snapshot_id: 's1', v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record', v4_shape: 'chair-shaped',
   v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11', provision_quote: 'requires students to compete on teams matching their sex at birth',
@@ -48,7 +48,7 @@ describe('confirmRow (spec §1.6)', () => {
     expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ v3_class: 'statement-answer', date: '2022-01-01', provision_quote: null })] }))
       .toContain('dates-imprecise'));
   it('passes a long snapshot with name only near the end (offset scan coverage)', () => {
-    const longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '.repeat(11) + 'Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.';
+    const longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '.repeat(11) + 'H.B. 11. Utah Senate President J. Stuart Adams led the override; the bill requires students to compete on teams matching their sex at birth.';
     expect(longText.length).toBeGreaterThan(650);
     expect(run({ snapshotText: new Map([['s1', longText]]) })).toEqual([]);
   });
@@ -78,7 +78,7 @@ describe('confirmRow (spec §1.6)', () => {
 
 describe('record groups (D1)', () => {
   const t2 = new Map([...text,
-    ['vote', 'Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams, Bramble, Cullimore. Noes Riebe'],
+    ['vote', 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams, Bramble, Cullimore. Noes Riebe'],
     ['bill', 'H.B. 11 (2022). The bill requires students to compete on teams matching their sex at birth.']]);
   const vote = P({ snapshot_id: 'vote', instrument: 'H.B. 11 (2022)', record_kind: 'vote', provision_quote: null,
     actor_quote: 'Ayes Adams, Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' });

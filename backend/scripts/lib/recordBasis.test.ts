@@ -23,6 +23,10 @@ describe('parseTally', () => {
   ])('%s', (q, t) => expect(parseTally(q)).toEqual(t));
   it('returns null when a count is missing (fail closed)', () => expect(parseTally('Bill Passed')).toBeNull());
   it('does not read "Not Voting" as No', () => expect(parseTally('Yea 42 Not Voting 0')).toBeNull());
+  it('prefers the plural/labelled form over a stray "No <n>" (fix round 1)', () =>
+    expect(parseTally('Amendment No 12 Ayes 40 Noes 2')).toEqual({ ayes: 40, noes: 2 }));
+  it('fails closed when the No side is ambiguous between a "No:" label and a real "Nay" (fix round 1)', () =>
+    expect(parseTally('Roll Call No: 334 Yea 46 Nay 5')).toBeNull());
 });
 
 describe('isNearUnanimous', () => {
@@ -38,6 +42,10 @@ describe('instrumentKey', () => {
     expect(instrumentKey('H.B. 11 (2022)')).toBe('hb11(2022)');
   });
   it('null for an empty instrument', () => expect(instrumentKey(null)).toBeNull());
+  it('treats a hyphen between the bill prefix and its number as nothing (fix round 1)', () =>
+    expect(instrumentKey('SB-1174')).toBe(instrumentKey('SB 1174')));
+  it('keeps a hyphen between two digits (a session range)', () =>
+    expect(instrumentKey('SB 1 (2023-2024)')).not.toBe(instrumentKey('SB 1 (2025-2026)')));
 });
 
 describe('checkRecordGroup (D1: one basis across pages)', () => {
@@ -58,7 +66,7 @@ describe('checkRecordGroup (D1: one basis across pages)', () => {
     expect(checkRecordGroup({ passages: [P({ actor_quote: 'Noes Dahle, Grove, Jones' }), billPage], snapshotText: text, fullName: 'Maria Elena Durazo' }).findings)
       .toContain('person-not-in-snapshot'));
   it('flags a near-unanimous vote', () => {
-    const t40 = new Map([...text, ['u', 'Ayes Count 40 Noes Count 0 Ayes Allen, Durazo, Wiener']]);
+    const t40 = new Map([...text, ['u', 'SB 1174 (2023-2024) Ayes Count 40 Noes Count 0 Ayes Allen, Durazo, Wiener']]);
     const u = P({ snapshot_id: 'u', actor_quote: 'Ayes Allen, Durazo, Wiener', tally_quote: 'Ayes Count 40 Noes Count 0' });
     expect(checkRecordGroup({ passages: [u, billPage], snapshotText: t40, fullName: 'Maria Elena Durazo' }).findings).toEqual(['near-unanimous-vote']);
   });
@@ -75,5 +83,50 @@ describe('checkRecordGroup (D1: one basis across pages)', () => {
     const w = P({ snapshot_id: 'r', instrument: 'HB 1041 (2025)', actor_quote: 'Walker', tally_quote: 'Yea 42 Student eligibility in interscholastic sports. Nay 6', provision_quote: 'Student eligibility in interscholastic sports' });
     expect(checkRecordGroup({ passages: [w], snapshotText: text, fullName: 'Greg Walker' }).findings).toContain('name-collision');
     expect(checkRecordGroup({ passages: [{ ...w, actor_quote: 'Walker G' }], snapshotText: text, fullName: 'Greg Walker' }).findings).not.toContain('name-collision');
+  });
+
+  // --- Fix round 1 ---
+
+  it('does not let actor_quote match mid-word ("Lee" inside "Leeds")', () => {
+    const page = 'HB 5 (2024) Ayes Leeds, Smith Noes None';
+    const m = new Map([['x', page]]);
+    const p = P({ snapshot_id: 'x', instrument: 'HB 5 (2024)', record_kind: 'sponsor', tally_quote: null, provision_quote: null, actor_quote: 'Ayes Lee' });
+    expect(checkRecordGroup({ passages: [p], snapshotText: m, fullName: 'Barbara Lee' }).findings).toContain('person-not-in-snapshot');
+  });
+
+  it('does not let tally_quote match mid-number ("Yeas 4" inside "Yeas 46")', () => {
+    const page = 'HB 6 (2024) Nays 5 Yeas 46 Ayes Roe';
+    const m = new Map([['y', page]]);
+    const p = P({ snapshot_id: 'y', instrument: 'HB 6 (2024)', actor_quote: 'Ayes Roe', tally_quote: 'Nays 5 Yeas 4', provision_quote: null });
+    expect(checkRecordGroup({ passages: [p], snapshotText: m, fullName: 'Jane Roe' }).findings).toContain('tally-unreadable');
+  });
+
+  it('flags a page that never shows its own bill number', () => {
+    const p = P({ instrument: 'SB 99 (2023-2024)' }); // snapshot_id 'v' (VOTES) never mentions SB 99
+    expect(checkRecordGroup({ passages: [p], snapshotText: text, fullName: 'Maria Elena Durazo' }).findings).toContain('instrument-mismatch');
+  });
+
+  it('flags a group with no record-class passage', () => {
+    const s = P({ v3_class: 'statement-answer' });
+    expect(checkRecordGroup({ passages: [s], snapshotText: text, fullName: 'Maria Elena Durazo' }).findings).toContain('no-record-passage');
+  });
+
+  it('does not let a single initial before the surname stand in for a full first name', () => {
+    const p = P({ snapshot_id: 'r', instrument: 'HB 1041 (2025)', record_kind: 'sponsor', tally_quote: null, provision_quote: null, actor_quote: 'G Walker K' });
+    expect(checkRecordGroup({ passages: [p], snapshotText: text, fullName: 'Greg Walker' }).findings).toContain('name-collision');
+  });
+
+  it("recognises Sean O'Brien through consistent word tokenisation", () => {
+    const page = "HB 20 (2024) A bill about parks. Ayes O'Brien, Peña Noes Smith";
+    const m = new Map([['n', page]]);
+    const p = P({ snapshot_id: 'n', instrument: 'HB 20 (2024)', record_kind: 'sponsor', tally_quote: null, provision_quote: 'A bill about parks', actor_quote: "Ayes O'Brien" });
+    expect(checkRecordGroup({ passages: [p], snapshotText: m, fullName: "Sean O'Brien" }).findings).not.toContain('person-not-in-snapshot');
+  });
+
+  it('recognises Ana Peña through consistent word tokenisation', () => {
+    const page = "HB 20 (2024) A bill about parks. Ayes O'Brien, Peña Noes Smith";
+    const m = new Map([['n', page]]);
+    const p = P({ snapshot_id: 'n', instrument: 'HB 20 (2024)', record_kind: 'sponsor', tally_quote: null, provision_quote: 'A bill about parks', actor_quote: 'Peña Noes Smith' });
+    expect(checkRecordGroup({ passages: [p], snapshotText: m, fullName: 'Ana Peña' }).findings).not.toContain('person-not-in-snapshot');
   });
 });
