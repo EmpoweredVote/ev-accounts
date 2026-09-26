@@ -1807,3 +1807,80 @@ research names a holder and a scope; it is not a grant in hand, and I am not the
 convert a reading of a statute into a licence field. ▶ **Two operator decisions now exist that did
 not before:** whether to submit the request form — which would settle the licence **and** yield
 **512x640** in place of 157x196 — and whether to approach the City of Grand Forks at all.
+
+
+## 🟢🟢 THE PHOTO REQUEST FORM WAS SUBMITTED 2026-09-26 — DO NOT SEND IT AGAIN
+
+> 🔴🔴 **EVERY EARLIER LINE ON THIS PAGE AND IN `PROGRAM.md` SAYING THE FORM IS
+> "UNSENT" IS NOW SUPERSEDED.** It was sent on **2026-09-26** on Cantrell's instruction, with the
+> answers below. The site states requests are processed **within 2 business days**.
+> **A second submission would be a duplicate request to a government body. Do not re-send it.**
+
+Confirmation received in-page: **"Thank you! Your request has been sent."** — no validation errors,
+the form cleared, and the browser was redirected to `ndlegis.gov`.
+
+### Exactly what we represented — because the agreements bind us
+
+| field | submitted value |
+| --- | --- |
+| Name | BJ Cantrell |
+| Company | Empowered Vote Inc |
+| Phone | 310.499.8131 |
+| Email | chris@empowered.vote |
+| Address | 12048 Culver Blvd Apt 210, Los Angeles, CA 90066 |
+| What will the photos be used for? | **Internet** (the only fitting bucket; its sub-label reads "blog, social networking, forums") |
+| How will the photos be used? | **Multiple Use** — usage expires November 30 of even-numbered years |
+| Type of image | **Digital Quality — 144 ppi**, i.e. the **512x640** file |
+| Photos listed | **141**, one per line, 47 senators + 94 representatives, each with chamber and district |
+| All seven agreements | **Agree** |
+| Expiry acknowledgement | **I understand** |
+
+🟢 **THE DESCRIPTION DISCLOSED THAT WE ARE ALREADY DISPLAYING THE PHOTOS**, and invited a
+refusal, rather than asking as though the use had not begun:
+> *"Disclosure: we are currently displaying the lower-resolution portraits published on each
+> member's page at ndlegis.gov (157 x 196 pixels). We are requesting the 144 ppi digital versions to
+> improve that display and to have the use properly authorised. If the Legislative Assembly would
+> prefer we not display them, please tell us and we will remove them."*
+▶ **An accurate form is worth more than a granted one.** The 141 were imported before the licence
+was settled, so a request written as if they were not in use would have been misleading, and this
+program's whole ethic is that a misleading-but-passing thing is the defect.
+
+### What we are now bound to, if it is granted
+
+🔴 **THE GRANT EXPIRES 2026-11-30 — about nine weeks out — AND IT IS NOT SELF-RENEWING.**
+The acknowledgement reads: *"the use of the photos is through the remainder of this interim
+(November 30 of even-numbered years) and is thereafter invalid. I will have to submit a NEW form for
+the new photos available at the beginning of the next legislative session."*
+▶ **This is a TERM licence with a renewal cadence, and the portraits themselves churn per assembly.**
+The 70th Assembly (2027-28) will publish new photos. **Diary it**; letting it lapse silently would
+leave 141 published portraits outside their own stated term.
+
+🔴 **144 ppi IS A CAP, SO THE 512x640 SHIPS NATIVE.** *"photos used online may not exceed
+144 ppi"*. 512x640 is already exactly 4:5, so `crop_4x5` is a no-op and `--max-upscale 1.0` leaves it
+at native size. Enlarging to the programme's 600x750 would be a 1.17x upscale and would sit against
+that cap. **The standing no-upscale rule and the licence term agree here — do not "fix" the size.**
+
+⚠ **TWO AGREEMENTS ARE NARROWER THAN THE PAGE'S PROSE, AND THAT WAS FLAGGED BEFORE SENDING.**
+The radio says *"the photos may only be used for **legislative business**"* while the page body says
+*"articles and publications related to the legislator's service as a legislator"*. Our use fits the
+second comfortably and the first reads narrower. Likewise *"I will not alter or **distribute** the
+photos outside the terms"* — we host copies on our own CDN and serve them publicly. **Both were put
+to Cantrell before submission and both were accepted knowingly**, which is why the description states
+plainly what we are and offers removal.
+
+🔴 **THE FORM CARRIES A HONEYPOT FIELD** named `Country`, labelled *"Leave this field blank"*.
+It was left empty. **Filling it would have binned the submission silently** — a spam trap reads as a
+required field to anything that fills every input it finds.
+
+⚠ `photo_license` stays **`'unknown'`** on all 148 rows. A submitted request is not a grant.
+**Only a reply changes that field**, and the reply has not arrived.
+
+### What ND-5 owes now
+
+1. **Watch for the reply** (stated turnaround: 2 business days to `chris@empowered.vote`). On a
+   grant: re-extract at **512x640** and re-import the 141, then set `photo_license` from what the
+   reply actually says — not from this page.
+2. **Diary the 2026-11-30 expiry** and the new-session re-request.
+3. **The City of Grand Forks' 7 are untouched** — no approach made, and `N.D.C.C. 44-04-18(11)`
+   means their silence is not permission.
+4. **Nine people still have no portrait route.** A blank beats a link.
