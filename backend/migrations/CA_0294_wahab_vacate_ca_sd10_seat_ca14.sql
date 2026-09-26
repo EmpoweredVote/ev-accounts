@@ -79,7 +79,8 @@ BEGIN
                    AND is_vacant AND vacant_since::date = DATE '2026-09-02') THEN
     RAISE EXCEPTION 'CA_0294: SD10 not flagged vacant from 2026-09-02';
   END IF;
-  IF EXISTS (SELECT 1 FROM essentials.office_current_holder WHERE office_id = '402781ee-b5df-472f-b67c-485c07c4782f') THEN
+  -- office_current_holder has one row per office; politician_id is NULL when the seat is vacant.
+  IF EXISTS (SELECT 1 FROM essentials.office_current_holder WHERE office_id = '402781ee-b5df-472f-b67c-485c07c4782f' AND politician_id IS NOT NULL) THEN
     RAISE EXCEPTION 'CA_0294: SD10 still has a current holder';
   END IF;
   -- CA-14: Wahab is the one current holder, from 2026-09-02; not flagged vacant.
