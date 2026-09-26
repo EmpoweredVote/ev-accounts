@@ -494,6 +494,58 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // cd/county are EXCLUDED: prod already holds North Dakota's single at-large congressional
   // district (G5200) and all 53 counties.
   ND: new Set(['sldu', 'sldl']),
+  // KY. Knight program slice 13 — Lexington and Fayette County. Production held ZERO
+  // G5210/G5220 rows for FIPS 21 and ZERO state legislative offices before this wave;
+  // measured 2026-09-26 (Kentucky held one government row, 'State of Kentucky', carrying 5
+  // statewide executives — Governor, Lt Governor, Attorney General, Secretary of State,
+  // Treasurer — all 5 seated).
+  // Counts MEASURED against raw TIGER 2024 FIPS 21 on 2026-09-26 by parsing the .dbf inside
+  // each zip directly, not inferred from the constitution:
+  //   sldu    38 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5210, SLDUST '001'..'038'
+  //   sldl   100 records, 0 'ZZZ', 0 '000', LSY=2024, MTFCC G5220, SLDLST '001'..'100'
+  // Both chambers are single-member, so polygon count IS seat count here — unlike ND and SD.
+  // 🔴🔴 KENTUCKY GIVES NO STRUCTURAL DISCRIMINATOR, SO THE COUNT ASSERTION BELOW CANNOT DATE
+  // THE MAP AND MUST NOT BE READ AS IF IT COULD. North Dakota's own code set dates its plan (49
+  // House polygons is HB 1504, 48 is the remedial map). Kentucky is 38 and 100 in TIGER 2022,
+  // 2023, 2024 AND 2025 alike, with no 'ZZZ', no '000', no letter suffixes, and contiguous codes
+  // in every one. A count check, a code-set check and a contiguity check all pass every vintage.
+  // The vintage evidence is therefore GEOMETRIC and lives in the anchors below plus
+  // scripts/verify-ky-tiger-vintage.mjs, which needs no database.
+  // ⚠ AND THE ONE FIELD THAT LOOKS LIKE A DISCRIMINATOR IS MISLEADING. LSY reads 2022 in TIGER
+  // 2022/2023 and 2024 in TIGER 2024/2025, which reads like a new plan. It is a Census
+  // bookkeeping refresh: ALAND moves by at most 0.0049% (Senate) and 0.0306% (House), median
+  // ~0.0000%, and every TIGER 2024 internal point falls inside the SAME TIGER 2022 district,
+  // 38/38 and 100/100, 0 moved. 🔴 That uniform answer was CONTROLLED before it was believed —
+  // the identical comparison over North Dakota reports Senate 015->009 and House 015->09B,
+  // 009->09A, reproducing exactly the two districts the Turtle Mountain remedial order moved.
+  // 🟢 VINTAGE PROVEN AGAINST AN AUTHORITY THAT IS NOT THE CENSUS. The Kentucky Legislative
+  // Research Commission — the legislature's own agency, which draws these districts — publishes
+  // them at kygisserver.ky.gov/.../Ky_Legislative_Districts_WGS84WM/MapServer (layer 0 House,
+  // layer 1 Senate; service copyrightText is "Legislative Research Commission"). TIGER 2024
+  // agrees 100/100 and 38/38. The control failed as required: House points against the SENATE
+  // layer agree only 3 of 100, and those three are numeric coincidence, not geography.
+  // ▶ TIGER 2022 AGREEING IS A PASS HERE, NOT A FAILURE — the opposite of North Dakota. Kentucky's
+  // maps are HB 2 (state House, enacted over veto 2022-01-20) and SB 2 (state Senate, law without
+  // signature 2022-01-21). Graham v. Adams challenged HB 2 and the congressional SB 3; the
+  // Kentucky Supreme Court held on 2023-12-14 that partisan-gerrymandering claims ARE justiciable
+  // under the Kentucky Constitution but upheld both plans, and ordered no remedial map. SB 2 was
+  // never challenged. One plan has governed since 2022 and governs the 2026 election.
+  // 🔴 A KENTUCKY DISTRICT CODE IS NOT AN INTEGER ON THE AUTHORITY SIDE. The LRC serves
+  // District = 'H001'/'S001' beside DistrictID = '001'. parseInt('H001') is NaN, not 1 — the same
+  // family as ND's '04A' and MN's '08A'. Match on DistrictID; never cast a code to a number.
+  // 🔴🔴 THE geo_id COLLISION LANDS ON THIS SLICE'S OWN COUNTY, WHICH IS WORSE THAN PA, SC, OH
+  // AND ND. Loaded geo_ids run 21001..21038 (sldu) and 21001..21100 (sldl); Kentucky's 120
+  // counties are 21001..21239 odd. 19 counties collide with the Senate range and 50 with the
+  // House range — and '21067' is Fayette County AND House District 67, the county this slice
+  // exists to seat. Grand Forks escaped the identical collision only by luck of odd numbering.
+  // Every join must pair geo_id with mtfcc/district_type; see src/lib/geoIdGuard.ts.
+  // place/cousub/CDP are EXCLUDED and MUST NOT be re-run: Kentucky's G4110 (419) and G4210 (136)
+  // rows are already in production, and Lexington-Fayette urban county 2146027 is present with
+  // geometry. KY is the third Knight slice, after Ohio and ND, that owes no `place` load.
+  // ⚠ A '%fayette%' NAME SEARCH ALSO MATCHES 'LaFayette city' (2143444). Match on geo_id.
+  // cd/county are EXCLUDED: prod already holds Kentucky's 6 congressional districts (G5200) and
+  // all 120 counties (G4020).
+  KY: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -2464,9 +2516,157 @@ async function processLayer(
                   (layer === 'sldl' ? `, seat arithmetic 46x2 + 2 = ${ND_HOUSE_SEATS} holds.` : '.'));
     }
   }
+  if (fipsArg === '21') {
+    const EXPECTED_KY_MTFCC: Record<string, number> = {
+      sldu: 38,    // 38 Kentucky Senate districts — SB 2 (2022) — measured 2026-09-26
+      sldl: 100,   // 100 Kentucky House districts — HB 2 (2022) — measured 2026-09-26
+    };
+    // 🔴 THE COUNT CANNOT DATE THIS MAP. 38/100 is true of TIGER 2022, 2023, 2024 and 2025
+    // alike, so this assertion catches a wrong state, a wrong layer or a truncated download —
+    // NOT a superseded plan. The vintage evidence is the anchors below, taken from the Kentucky
+    // Legislative Research Commission's own published districts and re-checked here at load
+    // time rather than trusted from the day verify-ky-tiger-vintage.mjs was last run.
+    // [lat, lon, district under the LRC plan, label]
+    const KY_VINTAGE_ANCHORS: Record<string, Array<[number, number, number, string]>> = {
+      sldl: [
+        [38.0464, -84.4958, 77, 'Lexington-Fayette Government Center'],
+        [38.1867, -84.8753, 57, 'Kentucky State Capitol, Frankfort'],
+        [38.2542, -85.7594, 43, 'Louisville Metro Hall'],
+        [37.0834, -88.6000, 1, 'Paducah City Hall'],
+      ],
+      sldu: [
+        [38.0464, -84.4958, 13, 'Lexington-Fayette Government Center'],
+        [38.1867, -84.8753, 20, 'Kentucky State Capitol, Frankfort'],
+        [38.2542, -85.7594, 33, 'Louisville Metro Hall'],
+        [37.0834, -88.6000, 2, 'Paducah City Hall'],
+      ],
+    };
+    // Controls, so both halves of this gate can be WATCHED FAILING rather than trusted:
+    //   KY_PREFLIGHT_CONTROL=count   perturbs the expected record count -> MTFCC assertion fires
+    //   KY_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected district -> VINTAGE fires
+    // ⚠ KENTUCKY HAS NO "--vintage 2022" CONTROL, and that absence is the finding, not an
+    // oversight: Michigan could refuse an older file because an older plan exists. Kentucky's
+    // 2022 file carries the SAME plan, so loading it is correct and a vintage control must be
+    // constructed rather than borrowed from an earlier map.
+    const KY_CONTROL = process.env.KY_PREFLIGHT_CONTROL ?? '';
+    if (KY_CONTROL) console.log(`  [${layer}] ⚠ KY_PREFLIGHT_CONTROL=${KY_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (KY_CONTROL === 'count') EXPECTED_KY_MTFCC[layer] = EXPECTED_KY_MTFCC[layer] - 1;
+    if (KY_CONTROL === 'anchor' && KY_VINTAGE_ANCHORS[layer]?.length) KY_VINTAGE_ANCHORS[layer][0][2] = 999;
+
+    if (layer in EXPECTED_KY_MTFCC) {
+      const expected = EXPECTED_KY_MTFCC[layer];
+      const anchors = KY_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<number | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let districtNum: number | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+          seenCodes.add(fpVal);
+          districtNum = parseInt(fpVal, 10);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = districtNum;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[KY MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ This count is identical in TIGER 2022/2023/2024/2025, so a WRONG ` +
+          `count here means a wrong state, a wrong layer or a truncated download — it can never ` +
+          `mean a superseded plan. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[KY OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. Aborting before ` +
+          `any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      // Contiguity: Kentucky numbers both chambers 001..N with no gaps and no letters. This is
+      // the strongest statement the FILE can make about itself, and it is still not a vintage.
+      const missing: string[] = [];
+      for (let n = 1; n <= expected; n++) {
+        const code = String(n).padStart(3, '0');
+        if (!seenCodes.has(code)) missing.push(code);
+      }
+      if (missing.length) {
+        const err = new Error(
+          `[KY contiguity assertion] layer=${layer}: codes ${JSON.stringify(missing)} absent from ` +
+          `001..${String(expected).padStart(3, '0')}. Kentucky has no subdistricts and no letter ` +
+          `codes, so a gap is a damaged or filtered file. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], got: anchorHits[i], label: a[3] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        const err = new Error(
+          `[KY vintage assertion] layer=${layer}: ` +
+          anchorFailures
+            .map((r) => `${r.label} resolved to district ${r.got ?? 'NONE'}, expected ${r.expected}`)
+            .join('; ') +
+          `. These anchors come from the Kentucky Legislative Research Commission's own published ` +
+          `districts (kygisserver.ky.gov), the body that draws them. ⚠ Kentucky's record COUNT is ` +
+          `identical across every TIGER vintage, so this geometric check is the only thing in this ` +
+          `loader that can tell one plan from another. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] KY MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `codes contiguous 001..${String(expected).padStart(3, '0')}, ` +
+                  `${anchors.length}/${anchors.length} LRC vintage anchors agree.`);
+    }
+  }
 
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md
