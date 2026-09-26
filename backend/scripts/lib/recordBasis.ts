@@ -6,16 +6,39 @@
  * a vote must come from a vote page with a readable, divided tally. The coders copy each fact
  * verbatim (codebook 0.3); code only checks and reads it. Fail closed: anything unreadable is a finding.
  *
- * Known limit (name-collision, fix round 1): a namesake who is absent from the page cannot be
- * detected; only a surname printed twice ON THE PAGE is caught, and only when the actor_quote fails
- * to carry a qualifying first name (immediately before the surname) or initial (immediately after it).
+ * Namesake guard on the actor page (final review fix 2, ruling 2026-09-26 "Fix it now"):
+ * - chamber: when the seat is a legislator's, the actor page must name the seat's chamber (a House
+ *   roll call listing another "Adams" is not Senator Adams's vote) -> otherwise 'chamber-not-evidenced';
+ * - common surname (COMMON_LAST_NAMES) or a surname printed twice on the page: the actor_quote must
+ *   carry a qualifier — a full given name (first or middle, 2+ letters) immediately before the
+ *   surname ('Greg Walker', 'Stuart Adams') or the first initial immediately after it ('Walker G',
+ *   'Adams J. S.') -> otherwise 'name-collision'.
+ * Known limit: a namesake who is absent from the page, in the same chamber, with an uncommon surname
+ * cannot be detected by the page alone.
  */
-import { normalizeText } from '../../src/lib/researchVerifier.js';
-import { verbatimIn, type Passage } from './coderLabel.js';
+import { normalizeText, COMMON_LAST_NAMES } from '../../src/lib/researchVerifier.js';
+import { verbatimIn, instrumentKey, type Passage } from './coderLabel.js';
+
+// instrumentKey lives in coderLabel.ts (the validator groups by it too); re-exported so existing
+// callers keep one import site.
+export { instrumentKey };
 
 export type RecordFinding =
   | 'person-not-in-snapshot' | 'provision-missing' | 'instrument-mismatch' | 'vote-not-evidenced'
-  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage';
+  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced';
+
+/** A legislative seat's chamber; null when the seat is not a legislator's (the chamber test is skipped). */
+export type Chamber = 'upper' | 'lower';
+export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
+  const t = officeTitle ?? '';
+  if (/\bsenator\b/i.test(t)) return 'upper';
+  if (/\brepresentative\b|\bassembly\s*(?:member|man|woman)\b|\bassemblymember\b|\bdelegate\b/i.test(t)) return 'lower';
+  return null;
+}
+const CHAMBER_ON_PAGE: Record<Chamber, RegExp> = {
+  upper: /\bsenate\b|\bsen\.|\bSEN\b/i,
+  lower: /\bhouse\b|\bassembly\b|\basm\.?\b|\bASM\b/i,
+};
 
 /** All numbers matching `pattern` (an alternation, e.g. "ayes|yeas") immediately labelling a count. */
 function numbersFor(pattern: string, s: string): number[] {
@@ -45,17 +68,6 @@ export function parseTally(q: string): { ayes: number; noes: number } | null {
 
 export const isNearUnanimous = (t: { ayes: number; noes: number }): boolean =>
   t.ayes + t.noes > 0 && t.noes / (t.ayes + t.noes) < 0.1;
-
-export function instrumentKey(s: string | null | undefined): string | null {
-  if (!s || !s.trim()) return null;
-  let out = s.toLowerCase().replace(/[–—]/g, '-');
-  // A hyphen directly between a letter and a digit is bill-number punctuation ("SB-1174"), not a
-  // range, so it must not survive to distinguish "SB-1174" from "SB 1174". A hyphen between two
-  // digits (a session range like "2023-2024") IS the range and must be kept — different sessions of
-  // the same bill number are different instruments.
-  out = out.replace(/([a-z])-(\d)/g, '$1$2').replace(/(\d)-([a-z])/g, '$1$2');
-  return out.replace(/[\s.]/g, '');
-}
 
 /** The instrument key without its "(session)" suffix, e.g. 'sb1174 (2023-2024)' -> 'sb1174'. */
 function billTokenOf(instrument: string | null | undefined): string | null {
@@ -110,7 +122,11 @@ function quoteWordsIn(page: string, quote: string): boolean {
   return false;
 }
 
-export function checkRecordGroup(i: { passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string }):
+export function checkRecordGroup(i: {
+  passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string;
+  /** The seat's chamber (seatChamber(office_title)). Omitted/null skips the chamber test. */
+  chamber?: Chamber | null;
+}):
   { findings: RecordFinding[]; actorPassages: Passage[] } {
   // A group with nothing labelled a record (all statements, say) has no vote/sponsorship basis to
   // judge at all.
@@ -132,17 +148,26 @@ export function checkRecordGroup(i: { passages: Passage[]; snapshotText: Readonl
   const actorPassages = i.passages.filter((p) => p.actor_quote && quoteWordsIn(textOf(p), p.actor_quote) && words(p.actor_quote).includes(last));
   if (actorPassages.length === 0) out.add('person-not-in-snapshot');
 
-  // A surname two members share on the page needs a qualifying first name or initial: the FULL
-  // first name immediately before the surname ('Greg Walker'), or a single-letter initial
-  // immediately after it ('Walker G'). A single letter BEFORE the surname never qualifies — it may
-  // belong to the previous name on the page ('Smith G Walker K': that "G" is Smith's, not Walker's).
+  // The actor page must name the seat's chamber (skipped when the seat is not a legislator's).
+  if (i.chamber) {
+    const re = CHAMBER_ON_PAGE[i.chamber];
+    if (actorPassages.some((p) => !re.test(textOf(p)))) out.add('chamber-not-evidenced');
+  }
+
+  // A common surname, or a surname two members share on the page, needs a qualifier in the
+  // actor_quote: a full given name (2+ letters, first or middle) immediately before the surname
+  // ('Greg Walker', 'Stuart Adams'), or the first initial immediately after it ('Walker G'). A single
+  // letter BEFORE the surname never qualifies — it may belong to the previous name on the page
+  // ('Smith G Walker K': that "G" is Smith's, not Walker's).
+  const givenNames = nameWords(i.fullName).slice(0, -1).filter((w) => w.length > 1);
+  const common = COMMON_LAST_NAMES.has(last);
   for (const p of actorPassages) {
     const pageCount = words(textOf(p)).filter((w) => w === last).length;
-    if (pageCount < 2) continue;
+    if (pageCount < 2 && !common) continue;
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
     const qualified = idx.some((k) =>
-      aq[k - 1] === first || (aq[k + 1] !== undefined && aq[k + 1].length === 1 && aq[k + 1] === first[0]));
+      (k > 0 && givenNames.includes(aq[k - 1])) || (aq[k + 1] !== undefined && aq[k + 1].length === 1 && aq[k + 1] === first[0]));
     if (!qualified) out.add('name-collision');
   }
 
@@ -155,7 +180,8 @@ export function checkRecordGroup(i: { passages: Passage[]; snapshotText: Readonl
     if (votePages.length === 0) out.add('vote-not-evidenced');
     for (const p of votePages) {
       const t = p.tally_quote && quoteWordsIn(textOf(p), p.tally_quote) ? parseTally(p.tally_quote) : null;
-      if (!t) out.add('tally-unreadable');
+      // A 0-0 tally proves no division at all: fail closed (final review fix 3).
+      if (!t || t.ayes + t.noes === 0) out.add('tally-unreadable');
       else if (isNearUnanimous(t)) out.add('near-unanimous-vote');
     }
   }

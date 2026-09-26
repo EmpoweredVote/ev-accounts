@@ -11,13 +11,14 @@
 import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
 import type { Passage } from './coderLabel.js';
 import type { SeatContext } from './coderPrompt.js';
-import { checkRecordGroup, instrumentKey } from './recordBasis.js';
+import { checkRecordGroup, instrumentKey, seatChamber } from './recordBasis.js';
 
 export const CAMPAIGN_LOOKBACK_DAYS = 548;
 export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
   | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
-  | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage';
+  | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage'
+  | 'chamber-not-evidenced';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
@@ -88,7 +89,8 @@ export function confirmRow(i: {
     groups.set(key, group);
   }
   for (const group of groups.values()) {
-    const { findings, actorPassages } = checkRecordGroup({ passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name });
+    const { findings, actorPassages } = checkRecordGroup({
+      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title) });
     for (const f of findings) out.add(f);
     const datePassages = actorPassages.length > 0 ? actorPassages : group;
     for (const p of datePassages) {

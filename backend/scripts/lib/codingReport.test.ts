@@ -110,3 +110,29 @@ describe('buildCodingReport', () => {
     }
   });
 });
+
+// Final review fix 1 (ruling 2026-09-26, "Per group"): the D1 pair from confirm.test.ts, submitted as
+// a coder file by three identical coders, must pass the validator AND CONFIRM end to end.
+describe('D1 pair end to end (validator + CONFIRM)', () => {
+  const st = new Map([
+    ['vote', 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams J. S., Bramble, Cullimore. Noes Riebe'],
+    ['bill', 'H.B. 11 (2022). The bill requires students to compete on teams matching their sex at birth.'],
+  ]);
+  const kinds = new Map([['vote', 'public-record'], ['bill', 'public-record']]);
+  const vote: Passage = { ...P, snapshot_id: 'vote', instrument: 'H.B. 11 (2022)', record_kind: 'vote', provision_quote: null,
+    actor_quote: 'Ayes Adams J. S., Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' };
+  const bill: Passage = { ...P, snapshot_id: 'bill', instrument: 'H.B. 11 (2022)', record_kind: 'vote', actor_quote: null, tally_quote: null,
+    provision_quote: 'requires students to compete on teams matching their sex at birth' };
+  const d1 = (topic_id: string): CoderRow => ({ ...row(topic_id, 4), passages: [vote, bill], rests_on: ['vote', 'bill'] });
+  const blank = (topic_id: string): CoderRow => ({ ...row(topic_id, null), passages: [] });
+  it('yields no validator errors and no CONFIRM findings for the row', () => {
+    const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [d1('t1'), blank('t2')])]));
+    const r = buildCodingReport({ context, files, snapshotText: st, sourceKind: kinds });
+    expect(r.validity).toEqual([1, 2, 3].map((slot) => ({ slot, fileErrors: [], rowErrors: 0 })));
+    const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.outcome.kind).toBe('unanimous-chair');
+    expect(t1.confirm).toEqual([]);
+    expect(t1.shadow).toBe('would-publish-if-certified');
+  });
+});
+

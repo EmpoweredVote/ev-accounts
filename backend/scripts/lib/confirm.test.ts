@@ -80,15 +80,27 @@ describe('confirmRow (spec §1.6)', () => {
 
 describe('record groups (D1)', () => {
   const t2 = new Map([...text,
-    ['vote', 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams, Bramble, Cullimore. Noes Riebe'],
+    // A roll call prints the member's initials after a common surname ('Adams J. S.'); a bare 'Adams'
+    // is a namesake risk and fails closed (final review fix 2 — see the test below).
+    ['vote', 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams J. S., Bramble, Cullimore. Noes Riebe'],
     ['bill', 'H.B. 11 (2022). The bill requires students to compete on teams matching their sex at birth.']]);
   const vote = P({ snapshot_id: 'vote', instrument: 'H.B. 11 (2022)', record_kind: 'vote', provision_quote: null,
-    actor_quote: 'Ayes Adams, Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' });
+    actor_quote: 'Ayes Adams J. S., Bramble, Cullimore', tally_quote: 'Ayes Count 21 Noes Count 8' });
   const bill = P({ snapshot_id: 'bill', instrument: 'H.B. 11 (2022)', record_kind: 'vote', actor_quote: null, tally_quote: null,
     provision_quote: 'requires students to compete on teams matching their sex at birth', date: '2022-03-25' });
   const kinds = new Map([['vote', 'public-record'], ['bill', 'public-record']]);
   it('a vote page + bill text pair passes (no person/provision findings on the bill page)', () =>
     expect(run({ restsOnPassages: [vote, bill], snapshotText: t2, sourceKind: kinds })).toEqual([]));
+  it('a bare common surname on the vote page is name-collision (namesake guard, fix 2)', () => {
+    const bare = new Map([...t2, ['vote', 'H.B. 11 (2022). Utah State Senate roll call. Ayes Count 21 Noes Count 8 Ayes Adams, Bramble, Cullimore. Noes Riebe']]);
+    expect(run({ restsOnPassages: [{ ...vote, actor_quote: 'Ayes Adams, Bramble, Cullimore' }, bill], snapshotText: bare, sourceKind: kinds }))
+      .toEqual(['name-collision']);
+  });
+  it('a House roll call cannot stand for a Senator (chamber-not-evidenced, fix 2)', () => {
+    const house = new Map([...t2, ['vote', 'H.B. 11 (2022). Utah House of Representatives roll call. Ayes Count 50 Noes Count 20 Ayes Adams J. S., Barlow. Noes Riebe. Utah']]);
+    expect(run({ restsOnPassages: [{ ...vote, actor_quote: 'Ayes Adams J. S., Barlow', tally_quote: 'Ayes Count 50 Noes Count 20' }, bill], snapshotText: house, sourceKind: kinds }))
+      .toEqual(['chamber-not-evidenced']);
+  });
   it('the bill page alone is not a vote', () =>
     expect(run({ restsOnPassages: [bill], snapshotText: t2, sourceKind: kinds })).toEqual(expect.arrayContaining(['vote-not-evidenced'])));
   it('record-before-term uses the actor (vote) date, not the bill-text date', () =>

@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { parseTally, isNearUnanimous, instrumentKey, checkRecordGroup } from './recordBasis.js';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { parseTally, isNearUnanimous, instrumentKey, checkRecordGroup, seatChamber } from './recordBasis.js';
 import type { Passage } from './coderLabel.js';
 
 // CA leginfo votes page for SB 1174 (Senate floor block) and the bill text — shadow-durazo batch.
@@ -130,3 +132,84 @@ describe('checkRecordGroup (D1: one basis across pages)', () => {
     expect(checkRecordGroup({ passages: [p], snapshotText: m, fullName: 'Ana Peña' }).findings).not.toContain('person-not-in-snapshot');
   });
 });
+
+describe('fail closed on a zero tally (final review fix 3)', () => {
+  it('ayes + noes = 0 is tally-unreadable, not "not near-unanimous"', () => {
+    const z = new Map([...text, ['z', 'SB 1174 (2023-2024) Senate Floor Ayes Count 0 Noes Count 0 Ayes Durazo']]);
+    const p = P({ snapshot_id: 'z', actor_quote: 'Ayes Durazo', tally_quote: 'Ayes Count 0 Noes Count 0' });
+    const f = checkRecordGroup({ passages: [p, billPage], snapshotText: z, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings;
+    expect(f).toEqual(['tally-unreadable']);
+  });
+});
+
+describe('seatChamber', () => {
+  it.each([
+    ['Senator', 'upper'], ['State Senator', 'upper'], ['U.S. Senator', 'upper'],
+    ['State Representative', 'lower'], ['Representative', 'lower'], ['Assembly Member', 'lower'],
+    ['Assemblymember', 'lower'], ['Delegate', 'lower'],
+    ['Mayor', null], ['County Commissioner', null], ['', null],
+  ] as const)('%s -> %s', (t, c) => expect(seatChamber(t)).toBe(c));
+});
+
+describe('namesake guard on the actor page (final review fix 2)', () => {
+  const HOUSE = 'H.B. 11 (2022). Utah House of Representatives roll call. Yeas 50 Nays 20 Yeas Adams, Barlow, Christofferson. The bill requires students to compete on teams matching their sex at birth.';
+  const SENATE = 'H.B. 11 (2022). Utah State Senate roll call. Yeas 21 Nays 8 Yeas Adams J. S., Bramble, Cullimore. The bill requires students to compete on teams matching their sex at birth.';
+  const NEITHER = 'H.B. 11 (2022). Roll call. Yeas 21 Nays 8 Yeas Adams J. S., Bramble, Cullimore. The bill requires students to compete on teams matching their sex at birth.';
+  const m = new Map([['house', HOUSE], ['senate', SENATE], ['neither', NEITHER]]);
+  const A = (id: string, actor: string) => P({ snapshot_id: id, instrument: 'H.B. 11 (2022)', actor_quote: actor,
+    provision_quote: 'requires students to compete on teams matching their sex at birth' });
+  const run = (p: Passage, chamber: 'upper' | 'lower' | null) =>
+    checkRecordGroup({ passages: [p], snapshotText: m, fullName: 'J. Stuart Adams', chamber }).findings;
+
+  it('a Senate page passes for a Senator', () =>
+    expect(run({ ...A('senate', 'Yeas Adams J. S., Bramble'), tally_quote: 'Yeas 21 Nays 8' }, 'upper')).toEqual([]));
+  it('a House-only page listing another Adams is chamber-not-evidenced for a Senator', () =>
+    expect(run({ ...A('house', 'Yeas Adams, Barlow'), tally_quote: 'Yeas 50 Nays 20' }, 'upper')).toContain('chamber-not-evidenced'));
+  it('a page that names no chamber is chamber-not-evidenced', () =>
+    expect(run({ ...A('neither', 'Yeas Adams J. S., Bramble'), tally_quote: 'Yeas 21 Nays 8' }, 'upper')).toEqual(['chamber-not-evidenced']));
+  it('the same House page passes the chamber test for a Representative', () =>
+    expect(run({ ...A('house', 'Yeas Adams, Barlow'), tally_quote: 'Yeas 50 Nays 20' }, 'lower')).not.toContain('chamber-not-evidenced'));
+  it('an unknown chamber (not a legislator title) skips the chamber test', () =>
+    expect(run({ ...A('neither', 'Yeas Adams J. S., Bramble'), tally_quote: 'Yeas 21 Nays 8' }, null)).toEqual([]));
+  it('a common surname with no first name or initial is name-collision, even printed once', () =>
+    expect(run({ ...A('senate', 'Yeas Adams'), record_kind: 'sponsor', tally_quote: null }, 'upper')).toEqual(['name-collision']));
+  it('a common surname qualified by an initial after it passes', () =>
+    expect(run({ ...A('senate', 'Yeas Adams J. S.'), record_kind: 'sponsor', tally_quote: null }, 'upper')).toEqual([]));
+  it('a common surname qualified by a full given name before it passes (middle name counts)', () => {
+    const mm = new Map([['s2', 'H.B. 11 (2022). Utah Senate. Senate President Stuart Adams led the override. The bill requires students to compete on teams matching their sex at birth.']]);
+    const p = P({ snapshot_id: 's2', instrument: 'H.B. 11 (2022)', record_kind: 'other-act', tally_quote: null, actor_quote: 'Stuart Adams led the override',
+      provision_quote: 'requires students to compete on teams matching their sex at birth' });
+    expect(checkRecordGroup({ passages: [p], snapshotText: mm, fullName: 'J. Stuart Adams', chamber: 'upper' }).findings).toEqual([]);
+  });
+  it('an uncommon surname printed once needs no qualifier', () =>
+    expect(checkRecordGroup({ passages: [P({}), billPage], snapshotText: text, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings).toEqual([]));
+});
+
+// POSITIVE CONTROL (final review fix 2): the chamber + common-surname guard must pass the real,
+// correct vote pages it will meet. A check that fails every real page is not a guard.
+describe('positive control: real shadow-batch vote pages', () => {
+  const load = (batch: string) => {
+    const f = fileURLToPath(new URL(`../../data/stance-research/${batch}/snapshots.json`, import.meta.url));
+    const rows = JSON.parse(readFileSync(f, 'utf8')) as { snapshot_id: string; snapshot_text: string | null }[];
+    return new Map(rows.map((r) => [r.snapshot_id, r.snapshot_text ?? '']));
+  };
+  it('CA SB 1174 vote page (aa219c5b) passes for Senator Durazo', () => {
+    const st = load('2026-09-25-shadow-durazo');
+    const id = [...st.keys()].find((k) => k.startsWith('aa219c5b'))!;
+    const p = P({ snapshot_id: id, actor_quote: 'Ayes Archuleta, Ashby, Atkins, Becker, Blakespear, Bradford, Caballero, Cortese, Dodd, Durazo',
+      tally_quote: 'Ayes Count 30 Noes Count 8', provision_quote: null });
+    const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Maria Elena Durazo', chamber: seatChamber('Senator') }).findings;
+    expect(f).not.toContain('chamber-not-evidenced');
+    expect(f).not.toContain('name-collision');
+    expect(f).not.toContain('person-not-in-snapshot');
+  });
+  it('IN Senate roll call 334 (6024804d) passes for Senator Yoder', () => {
+    const st = load('2026-09-25-shadow-yoder');
+    const id = [...st.keys()].find((k) => k.startsWith('6024804d'))!;
+    const p = P({ snapshot_id: id, instrument: 'HB 1041 (2025)', actor_quote: 'N AY - 6 Ford J.D. Jackson Qaddoura Spencer Hunley Yoder',
+      tally_quote: 'Yea 42 Student eligibility in interscholastic sports. Nay 6', provision_quote: 'Student eligibility in interscholastic sports' });
+    const f = checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: seatChamber('Senator') }).findings;
+    expect(f).toEqual([]);
+  });
+});
+
