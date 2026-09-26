@@ -1,0 +1,1604 @@
+{
+  "generated_at": "2026-09-25T04:39:28.238Z",
+  "state": "MI",
+  "wave": "MI-2",
+  "sources": {
+    "A": "https://legislature.mi.gov/Legislature/Legislators",
+    "B": "https://senate.michigan.gov/senators/all-senators/",
+    "C": "https://house.mi.gov/AllRepresentatives",
+    "D": "https://data.openstates.org/people/current/mi.csv"
+  },
+  "counts": {
+    "total": 148,
+    "lower": 110,
+    "upper": 38
+  },
+  "caucus_union_gaps": [
+    4
+  ],
+  "findings": [
+    {
+      "code": "CAUCUS_GAP_EXPLAINED",
+      "detail": "House 4 absent from house.mi.gov (the caucus union) but held by Karen Whitsett per the Legislature's own list — NOT a vacancy"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "upper-16: A \"Joseph N. Bellino Jr.\" vs Open States \"Joe Bellino\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "upper-38: A \"Edward W. McBroom\" vs Open States \"Ed McBroom\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-98: A \"Gregory Alexander\" vs Open States \"Greg Alexander\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-60: A \"Joseph Aragona\" vs Open States \"Joe Aragona\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-96: A \"Timothy Beson\" vs Open States \"Timmy Beson\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-30: A \"William Bruck\" vs Open States \"Will Bruck\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-106: A \"Cameron Cavitt\" vs Open States \"Cam Cavitt\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-29: A \"James DeSana\" vs Open States \"Jim DeSana\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-57: A \"Thomas Kuhn\" vs Open States \"Tom Kuhn\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-110: A \"Gregory Markkanen\" vs Open States \"Greg Markkanen\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-69: A \"Jasper Martus\" vs Open States \"Jaz Martus\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-64: A \"Joseph Pavlov\" vs Open States \"Joe Pavlov\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-108: A \"David Prestin\" vs Open States \"Dave Prestin\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-104: A \"John Roth\" vs Open States \"J.R. Roth\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-85: A \"Bradley Slagh\" vs Open States \"Brad Slagh\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-9: A \"Joseph Tate\" vs Open States \"Joe Tate\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-102: A \"Curtis VanderWall\" vs Open States \"Curt VanderWall\" — same surname, short form"
+    },
+    {
+      "code": "OPENSTATES_NICKNAME",
+      "detail": "lower-59: A \"Douglas Wozniak\" vs Open States \"Doug Wozniak\" — same surname, short form"
+    }
+  ],
+  "change_check": {
+    "read": 147,
+    "unreachable": [],
+    "noPageByDesign": [
+      "lower-4 Karen Whitsett: Karen Whitsett left the Democratic Party in March 2026, so she has no caucus page; legislature.mi.gov still links her to housedems.com/whitsett, which REDIRECTS TO THE CAUCUS HOME PAGE and answers HTTP 200 with an <h1> of \"Michigan House Democrats\". She is confirmed to hold HD-4 by the Legislature's own list and by Open States, and she is not resigning — she announced she will not seek re-election, with the term ending 2026-12-31. No member page exists to read. Read 2026-09-24."
+    ],
+    "nameNotFound": [],
+    "notTheirPage": [],
+    "departureLanguage": [
+      "lower-45 Sarah Lightner: \"resign\" — context: ...n to Effectively Lower Property Taxes & Utility […] Rep. Lightner renews call for MDOC Director Washington to resignSarah LightnerPOSTS|5.20.26Deaths at women’s Huron Valley, Jackson prisons are just latest issue State R... (http://replightner.com/)",
+      "lower-104 John Roth: \"stepping down\" — context: ...terlochen) today released the following statement after Gov. Whitmer announced that Elizabeth Hertel would be stepping down from her role as Director of the Michigan Department of Health and Human Services on June 30th:... (http://reproth.com)"
+    ]
+  },
+  "seats": [
+    {
+      "chamber": "lower",
+      "district": 1,
+      "geo_id": "26001",
+      "district_type": "STATE_LOWER",
+      "full_name": "Tyrone Carter",
+      "first_name": "Tyrone",
+      "last_name": "Carter",
+      "web_page": "https://housedems.com/tyrone-carter"
+    },
+    {
+      "chamber": "lower",
+      "district": 2,
+      "geo_id": "26002",
+      "district_type": "STATE_LOWER",
+      "full_name": "Tullio Liberati",
+      "first_name": "Tullio",
+      "last_name": "Liberati",
+      "web_page": "https://housedems.com/tullio-liberati/"
+    },
+    {
+      "chamber": "lower",
+      "district": 3,
+      "geo_id": "26003",
+      "district_type": "STATE_LOWER",
+      "full_name": "Alabas Farhat",
+      "first_name": "Alabas",
+      "last_name": "Farhat",
+      "web_page": "https://housedems.com/Alabas-Farhat/"
+    },
+    {
+      "chamber": "lower",
+      "district": 4,
+      "geo_id": "26004",
+      "district_type": "STATE_LOWER",
+      "full_name": "Karen Whitsett",
+      "first_name": "Karen",
+      "last_name": "Whitsett",
+      "web_page": null,
+      "web_page_override": {
+        "to": null,
+        "why": "Karen Whitsett left the Democratic Party in March 2026, so she has no caucus page; legislature.mi.gov still links her to housedems.com/whitsett, which REDIRECTS TO THE CAUCUS HOME PAGE and answers HTTP 200 with an <h1> of \"Michigan House Democrats\". She is confirmed to hold HD-4 by the Legislature's own list and by Open States, and she is not resigning — she announced she will not seek re-election, with the term ending 2026-12-31. No member page exists to read. Read 2026-09-24."
+      }
+    },
+    {
+      "chamber": "lower",
+      "district": 5,
+      "geo_id": "26005",
+      "district_type": "STATE_LOWER",
+      "full_name": "Regina Weiss",
+      "first_name": "Regina",
+      "last_name": "Weiss",
+      "web_page": "https://housedems.com/regina-weiss/"
+    },
+    {
+      "chamber": "lower",
+      "district": 6,
+      "geo_id": "26006",
+      "district_type": "STATE_LOWER",
+      "full_name": "Natalie Price",
+      "first_name": "Natalie",
+      "last_name": "Price",
+      "web_page": "https://housedems.com/Natalie-Price/"
+    },
+    {
+      "chamber": "lower",
+      "district": 7,
+      "geo_id": "26007",
+      "district_type": "STATE_LOWER",
+      "full_name": "Tonya Myers Phillips",
+      "first_name": "Tonya",
+      "last_name": "Myers Phillips",
+      "web_page": "https://housedems.com/Tonya-Myers-Phillips/",
+      "name_override": {
+        "from": "Tonya Phillips",
+        "why": "housedems.com/Tonya-Myers-Phillips/ <h1> reads \"State Representative Tonya Myers Phillips\" and the page names District 7; legislature.mi.gov omits \"Myers\". Read 2026-09-24."
+      }
+    },
+    {
+      "chamber": "lower",
+      "district": 8,
+      "geo_id": "26008",
+      "district_type": "STATE_LOWER",
+      "full_name": "Helena Scott",
+      "first_name": "Helena",
+      "last_name": "Scott",
+      "web_page": "https://housedems.com/helena-scott/"
+    },
+    {
+      "chamber": "lower",
+      "district": 9,
+      "geo_id": "26009",
+      "district_type": "STATE_LOWER",
+      "full_name": "Joseph Tate",
+      "first_name": "Joseph",
+      "last_name": "Tate",
+      "web_page": "https://housedems.com/tate"
+    },
+    {
+      "chamber": "lower",
+      "district": 10,
+      "geo_id": "26010",
+      "district_type": "STATE_LOWER",
+      "full_name": "Veronica Paiz",
+      "first_name": "Veronica",
+      "last_name": "Paiz",
+      "web_page": "https://housedems.com/Veronica-Paiz/"
+    },
+    {
+      "chamber": "lower",
+      "district": 11,
+      "geo_id": "26011",
+      "district_type": "STATE_LOWER",
+      "full_name": "Donavan McKinney",
+      "first_name": "Donavan",
+      "last_name": "McKinney",
+      "web_page": "https://housedems.com/Donavan-McKinney/"
+    },
+    {
+      "chamber": "lower",
+      "district": 12,
+      "geo_id": "26012",
+      "district_type": "STATE_LOWER",
+      "full_name": "Kimberly Edwards",
+      "first_name": "Kimberly",
+      "last_name": "Edwards",
+      "web_page": "https://housedems.com/Kimberly-Edwards/"
+    },
+    {
+      "chamber": "lower",
+      "district": 13,
+      "geo_id": "26013",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mai Xiong",
+      "first_name": "Mai",
+      "last_name": "Xiong",
+      "web_page": "https://housedems.com/house-district-13/"
+    },
+    {
+      "chamber": "lower",
+      "district": 14,
+      "geo_id": "26014",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mike McFall",
+      "first_name": "Mike",
+      "last_name": "McFall",
+      "web_page": "https://housedems.com/Mike-McFall/"
+    },
+    {
+      "chamber": "lower",
+      "district": 15,
+      "geo_id": "26015",
+      "district_type": "STATE_LOWER",
+      "full_name": "Erin Byrnes",
+      "first_name": "Erin",
+      "last_name": "Byrnes",
+      "web_page": "https://housedems.com/Erin-Byrnes/"
+    },
+    {
+      "chamber": "lower",
+      "district": 16,
+      "geo_id": "26016",
+      "district_type": "STATE_LOWER",
+      "full_name": "Stephanie Young",
+      "first_name": "Stephanie",
+      "last_name": "Young",
+      "web_page": "https://housedems.com/stephanie-young/"
+    },
+    {
+      "chamber": "lower",
+      "district": 17,
+      "geo_id": "26017",
+      "district_type": "STATE_LOWER",
+      "full_name": "Laurie Pohutsky",
+      "first_name": "Laurie",
+      "last_name": "Pohutsky",
+      "web_page": "https://housedems.com/pohutsky"
+    },
+    {
+      "chamber": "lower",
+      "district": 18,
+      "geo_id": "26018",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jason Hoskins",
+      "first_name": "Jason",
+      "last_name": "Hoskins",
+      "web_page": "https://housedems.com/Jason-Hoskins/"
+    },
+    {
+      "chamber": "lower",
+      "district": 19,
+      "geo_id": "26019",
+      "district_type": "STATE_LOWER",
+      "full_name": "Samantha Steckloff",
+      "first_name": "Samantha",
+      "last_name": "Steckloff",
+      "web_page": "https://housedems.com/samantha-steckloff/"
+    },
+    {
+      "chamber": "lower",
+      "district": 20,
+      "geo_id": "26020",
+      "district_type": "STATE_LOWER",
+      "full_name": "Noah Arbit",
+      "first_name": "Noah",
+      "last_name": "Arbit",
+      "web_page": "https://housedems.com/Noah-Arbit/"
+    },
+    {
+      "chamber": "lower",
+      "district": 21,
+      "geo_id": "26021",
+      "district_type": "STATE_LOWER",
+      "full_name": "Kelly Breen",
+      "first_name": "Kelly",
+      "last_name": "Breen",
+      "web_page": "https://housedems.com/kelly-breen/"
+    },
+    {
+      "chamber": "lower",
+      "district": 22,
+      "geo_id": "26022",
+      "district_type": "STATE_LOWER",
+      "full_name": "Matt Koleszar",
+      "first_name": "Matt",
+      "last_name": "Koleszar",
+      "web_page": "https://housedems.com/koleszar"
+    },
+    {
+      "chamber": "lower",
+      "district": 23,
+      "geo_id": "26023",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jason Morgan",
+      "first_name": "Jason",
+      "last_name": "Morgan",
+      "web_page": "https://housedems.com/Jason-Morgan/"
+    },
+    {
+      "chamber": "lower",
+      "district": 24,
+      "geo_id": "26024",
+      "district_type": "STATE_LOWER",
+      "full_name": "Ranjeev Puri",
+      "first_name": "Ranjeev",
+      "last_name": "Puri",
+      "web_page": "https://housedems.com/ranjeev-puri/"
+    },
+    {
+      "chamber": "lower",
+      "district": 25,
+      "geo_id": "26025",
+      "district_type": "STATE_LOWER",
+      "full_name": "Peter Herzberg",
+      "first_name": "Peter",
+      "last_name": "Herzberg",
+      "web_page": "https://housedems.com/house-district-25/"
+    },
+    {
+      "chamber": "lower",
+      "district": 26,
+      "geo_id": "26026",
+      "district_type": "STATE_LOWER",
+      "full_name": "Dylan Wegela",
+      "first_name": "Dylan",
+      "last_name": "Wegela",
+      "web_page": "https://housedems.com/Dylan-Wegela/"
+    },
+    {
+      "chamber": "lower",
+      "district": 27,
+      "geo_id": "26027",
+      "district_type": "STATE_LOWER",
+      "full_name": "Rylee Linting",
+      "first_name": "Rylee",
+      "last_name": "Linting",
+      "web_page": "https://gophouse.org/member/RepRyleeLinting/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 28,
+      "geo_id": "26028",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jamie Thompson",
+      "first_name": "Jamie",
+      "last_name": "Thompson",
+      "web_page": "http://repthompson.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 29,
+      "geo_id": "26029",
+      "district_type": "STATE_LOWER",
+      "full_name": "James DeSana",
+      "first_name": "James",
+      "last_name": "DeSana",
+      "web_page": "http://repdesana.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 30,
+      "geo_id": "26030",
+      "district_type": "STATE_LOWER",
+      "full_name": "William Bruck",
+      "first_name": "William",
+      "last_name": "Bruck",
+      "web_page": "http://repbruck.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 31,
+      "geo_id": "26031",
+      "district_type": "STATE_LOWER",
+      "full_name": "Reggie Miller",
+      "first_name": "Reggie",
+      "last_name": "Miller",
+      "web_page": "https://housedems.com/Reggie-Miller/"
+    },
+    {
+      "chamber": "lower",
+      "district": 32,
+      "geo_id": "26032",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jimmie Wilson",
+      "first_name": "Jimmie",
+      "last_name": "Wilson",
+      "web_page": "https://housedems.com/Jimmie-Wilson-Jr/"
+    },
+    {
+      "chamber": "lower",
+      "district": 33,
+      "geo_id": "26033",
+      "district_type": "STATE_LOWER",
+      "full_name": "Morgan Foreman",
+      "first_name": "Morgan",
+      "last_name": "Foreman",
+      "web_page": "https://housedems.com/morgan-foreman/"
+    },
+    {
+      "chamber": "lower",
+      "district": 34,
+      "geo_id": "26034",
+      "district_type": "STATE_LOWER",
+      "full_name": "Nancy Jenkins-Arno",
+      "first_name": "Nancy",
+      "last_name": "Jenkins-Arno",
+      "web_page": "https://gophouse.org/member/RepNancyJenkinsArno/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 35,
+      "geo_id": "26035",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jennifer Wortz",
+      "first_name": "Jennifer",
+      "last_name": "Wortz",
+      "web_page": "https://gophouse.org/member/RepJenniferWortz/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 36,
+      "geo_id": "26036",
+      "district_type": "STATE_LOWER",
+      "full_name": "Steve Carra",
+      "first_name": "Steve",
+      "last_name": "Carra",
+      "web_page": "http://repcarra.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 37,
+      "geo_id": "26037",
+      "district_type": "STATE_LOWER",
+      "full_name": "Brad Paquette",
+      "first_name": "Brad",
+      "last_name": "Paquette",
+      "web_page": "http://reppaquette.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 38,
+      "geo_id": "26038",
+      "district_type": "STATE_LOWER",
+      "full_name": "Joey Andrews",
+      "first_name": "Joey",
+      "last_name": "Andrews",
+      "web_page": "https://housedems.com/Joey-Andrews/"
+    },
+    {
+      "chamber": "lower",
+      "district": 39,
+      "geo_id": "26039",
+      "district_type": "STATE_LOWER",
+      "full_name": "Pauline Wendzel",
+      "first_name": "Pauline",
+      "last_name": "Wendzel",
+      "web_page": "http://repwendzel.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 40,
+      "geo_id": "26040",
+      "district_type": "STATE_LOWER",
+      "full_name": "Matt Longjohn",
+      "first_name": "Matt",
+      "last_name": "Longjohn",
+      "web_page": "https://housedems.com/matt-longjohn/"
+    },
+    {
+      "chamber": "lower",
+      "district": 41,
+      "geo_id": "26041",
+      "district_type": "STATE_LOWER",
+      "full_name": "Julie Rogers",
+      "first_name": "Julie",
+      "last_name": "Rogers",
+      "web_page": "https://housedems.com/julie-rogers/"
+    },
+    {
+      "chamber": "lower",
+      "district": 42,
+      "geo_id": "26042",
+      "district_type": "STATE_LOWER",
+      "full_name": "Matt Hall",
+      "first_name": "Matt",
+      "last_name": "Hall",
+      "web_page": "http://repmatthall.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 43,
+      "geo_id": "26043",
+      "district_type": "STATE_LOWER",
+      "full_name": "Rachelle Smit",
+      "first_name": "Rachelle",
+      "last_name": "Smit",
+      "web_page": "http://repsmit.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 44,
+      "geo_id": "26044",
+      "district_type": "STATE_LOWER",
+      "full_name": "Steve Frisbie",
+      "first_name": "Steve",
+      "last_name": "Frisbie",
+      "web_page": "https://gophouse.org/member/RepSteveFrisbie/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 45,
+      "geo_id": "26045",
+      "district_type": "STATE_LOWER",
+      "full_name": "Sarah Lightner",
+      "first_name": "Sarah",
+      "last_name": "Lightner",
+      "web_page": "http://replightner.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 46,
+      "geo_id": "26046",
+      "district_type": "STATE_LOWER",
+      "full_name": "Kathy Schmaltz",
+      "first_name": "Kathy",
+      "last_name": "Schmaltz",
+      "web_page": "http://repschmaltz.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 47,
+      "geo_id": "26047",
+      "district_type": "STATE_LOWER",
+      "full_name": "Carrie Rheingans",
+      "first_name": "Carrie",
+      "last_name": "Rheingans",
+      "web_page": "https://housedems.com/Carrie-Rheingans/"
+    },
+    {
+      "chamber": "lower",
+      "district": 48,
+      "geo_id": "26048",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jennifer Conlin",
+      "first_name": "Jennifer",
+      "last_name": "Conlin",
+      "web_page": "https://housedems.com/Jennifer-Conlin/"
+    },
+    {
+      "chamber": "lower",
+      "district": 49,
+      "geo_id": "26049",
+      "district_type": "STATE_LOWER",
+      "full_name": "Ann Bollin",
+      "first_name": "Ann",
+      "last_name": "Bollin",
+      "web_page": "http://repbollin.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 50,
+      "geo_id": "26050",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jason Woolford",
+      "first_name": "Jason",
+      "last_name": "Woolford",
+      "web_page": "https://gophouse.org/member/RepJasonWoolford/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 51,
+      "geo_id": "26051",
+      "district_type": "STATE_LOWER",
+      "full_name": "Matt Maddock",
+      "first_name": "Matt",
+      "last_name": "Maddock",
+      "web_page": "http://repmaddock.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 52,
+      "geo_id": "26052",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mike Harris",
+      "first_name": "Mike",
+      "last_name": "Harris",
+      "web_page": "http://repharris.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 53,
+      "geo_id": "26053",
+      "district_type": "STATE_LOWER",
+      "full_name": "Brenda Carter",
+      "first_name": "Brenda",
+      "last_name": "Carter",
+      "web_page": "https://housedems.com/brenda-carter"
+    },
+    {
+      "chamber": "lower",
+      "district": 54,
+      "geo_id": "26054",
+      "district_type": "STATE_LOWER",
+      "full_name": "Donni Steele",
+      "first_name": "Donni",
+      "last_name": "Steele",
+      "web_page": "http://repdonnisteele.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 55,
+      "geo_id": "26055",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mark Tisdel",
+      "first_name": "Mark",
+      "last_name": "Tisdel",
+      "web_page": "http://reptisdel.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 56,
+      "geo_id": "26056",
+      "district_type": "STATE_LOWER",
+      "full_name": "Sharon MacDonell",
+      "first_name": "Sharon",
+      "last_name": "MacDonell",
+      "web_page": "https://housedems.com/Sharon-MacDonell/"
+    },
+    {
+      "chamber": "lower",
+      "district": 57,
+      "geo_id": "26057",
+      "district_type": "STATE_LOWER",
+      "full_name": "Thomas Kuhn",
+      "first_name": "Thomas",
+      "last_name": "Kuhn",
+      "web_page": "http://repkuhn.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 58,
+      "geo_id": "26058",
+      "district_type": "STATE_LOWER",
+      "full_name": "Ron Robinson",
+      "first_name": "Ron",
+      "last_name": "Robinson",
+      "web_page": "https://gophouse.org/member/RepRonRobinson/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 59,
+      "geo_id": "26059",
+      "district_type": "STATE_LOWER",
+      "full_name": "Douglas Wozniak",
+      "first_name": "Douglas",
+      "last_name": "Wozniak",
+      "web_page": "http://repwozniak.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 60,
+      "geo_id": "26060",
+      "district_type": "STATE_LOWER",
+      "full_name": "Joseph Aragona",
+      "first_name": "Joseph",
+      "last_name": "Aragona",
+      "web_page": "http://repjoearagona.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 61,
+      "geo_id": "26061",
+      "district_type": "STATE_LOWER",
+      "full_name": "Denise Mentzer",
+      "first_name": "Denise",
+      "last_name": "Mentzer",
+      "web_page": "https://housedems.com/Denise-Mentzer/"
+    },
+    {
+      "chamber": "lower",
+      "district": 62,
+      "geo_id": "26062",
+      "district_type": "STATE_LOWER",
+      "full_name": "Alicia St. Germaine",
+      "first_name": "Alicia",
+      "last_name": "St. Germaine",
+      "web_page": "http://repstgermaine.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 63,
+      "geo_id": "26063",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jay DeBoyer",
+      "first_name": "Jay",
+      "last_name": "DeBoyer",
+      "web_page": "http://repdeboyer.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 64,
+      "geo_id": "26064",
+      "district_type": "STATE_LOWER",
+      "full_name": "Joseph Pavlov",
+      "first_name": "Joseph",
+      "last_name": "Pavlov",
+      "web_page": "https://gophouse.org/member/RepJosephGPavlov/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 65,
+      "geo_id": "26065",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jaime Greene",
+      "first_name": "Jaime",
+      "last_name": "Greene",
+      "web_page": "http://repjaimegreene.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 66,
+      "geo_id": "26066",
+      "district_type": "STATE_LOWER",
+      "full_name": "Josh Schriver",
+      "first_name": "Josh",
+      "last_name": "Schriver",
+      "web_page": "http://repschriver.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 67,
+      "geo_id": "26067",
+      "district_type": "STATE_LOWER",
+      "full_name": "Phil Green",
+      "first_name": "Phil",
+      "last_name": "Green",
+      "web_page": "http://repphilgreen.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 68,
+      "geo_id": "26068",
+      "district_type": "STATE_LOWER",
+      "full_name": "David Martin",
+      "first_name": "David",
+      "last_name": "Martin",
+      "web_page": "http://repmartin.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 69,
+      "geo_id": "26069",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jasper Martus",
+      "first_name": "Jasper",
+      "last_name": "Martus",
+      "web_page": "https://housedems.com/Jasper-Martus/"
+    },
+    {
+      "chamber": "lower",
+      "district": 70,
+      "geo_id": "26070",
+      "district_type": "STATE_LOWER",
+      "full_name": "Cynthia Neeley",
+      "first_name": "Cynthia",
+      "last_name": "Neeley",
+      "web_page": "https://housedems.com/cynthia-neeley/"
+    },
+    {
+      "chamber": "lower",
+      "district": 71,
+      "geo_id": "26071",
+      "district_type": "STATE_LOWER",
+      "full_name": "Brian BeGole",
+      "first_name": "Brian",
+      "last_name": "BeGole",
+      "web_page": "http://repbegole.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 72,
+      "geo_id": "26072",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mike Mueller",
+      "first_name": "Mike",
+      "last_name": "Mueller",
+      "web_page": "http://repmueller.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 73,
+      "geo_id": "26073",
+      "district_type": "STATE_LOWER",
+      "full_name": "Julie Brixie",
+      "first_name": "Julie",
+      "last_name": "Brixie",
+      "web_page": "https://housedems.com/brixie"
+    },
+    {
+      "chamber": "lower",
+      "district": 74,
+      "geo_id": "26074",
+      "district_type": "STATE_LOWER",
+      "full_name": "Kara Hope",
+      "first_name": "Kara",
+      "last_name": "Hope",
+      "web_page": "https://housedems.com/hope"
+    },
+    {
+      "chamber": "lower",
+      "district": 75,
+      "geo_id": "26075",
+      "district_type": "STATE_LOWER",
+      "full_name": "Penelope Tsernoglou",
+      "first_name": "Penelope",
+      "last_name": "Tsernoglou",
+      "web_page": "https://housedems.com/Penelope-Tsernoglou/"
+    },
+    {
+      "chamber": "lower",
+      "district": 76,
+      "geo_id": "26076",
+      "district_type": "STATE_LOWER",
+      "full_name": "Angela Witwer",
+      "first_name": "Angela",
+      "last_name": "Witwer",
+      "web_page": "https://housedems.com/witwer"
+    },
+    {
+      "chamber": "lower",
+      "district": 77,
+      "geo_id": "26077",
+      "district_type": "STATE_LOWER",
+      "full_name": "Emily Dievendorf",
+      "first_name": "Emily",
+      "last_name": "Dievendorf",
+      "web_page": "https://housedems.com/Emily-Dievendorf/"
+    },
+    {
+      "chamber": "lower",
+      "district": 78,
+      "geo_id": "26078",
+      "district_type": "STATE_LOWER",
+      "full_name": "Gina Johnsen",
+      "first_name": "Gina",
+      "last_name": "Johnsen",
+      "web_page": "http://repjohnsen.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 79,
+      "geo_id": "26079",
+      "district_type": "STATE_LOWER",
+      "full_name": "Angela Rigas",
+      "first_name": "Angela",
+      "last_name": "Rigas",
+      "web_page": "http://reprigas.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 80,
+      "geo_id": "26080",
+      "district_type": "STATE_LOWER",
+      "full_name": "Phil Skaggs",
+      "first_name": "Phil",
+      "last_name": "Skaggs",
+      "web_page": "https://housedems.com/Phil-Skaggs/"
+    },
+    {
+      "chamber": "lower",
+      "district": 81,
+      "geo_id": "26081",
+      "district_type": "STATE_LOWER",
+      "full_name": "Stephen Wooden",
+      "first_name": "Stephen",
+      "last_name": "Wooden",
+      "web_page": "https://housedems.com/stephen-wooden/"
+    },
+    {
+      "chamber": "lower",
+      "district": 82,
+      "geo_id": "26082",
+      "district_type": "STATE_LOWER",
+      "full_name": "Kristian Grant",
+      "first_name": "Kristian",
+      "last_name": "Grant",
+      "web_page": "https://housedems.com/Kristian-Grant/"
+    },
+    {
+      "chamber": "lower",
+      "district": 83,
+      "geo_id": "26083",
+      "district_type": "STATE_LOWER",
+      "full_name": "John Fitzgerald",
+      "first_name": "John",
+      "last_name": "Fitzgerald",
+      "web_page": "https://housedems.com/John-Fitzgerald/"
+    },
+    {
+      "chamber": "lower",
+      "district": 84,
+      "geo_id": "26084",
+      "district_type": "STATE_LOWER",
+      "full_name": "Carol Glanville",
+      "first_name": "Carol",
+      "last_name": "Glanville",
+      "web_page": "https://housedems.com/carol-glanville/"
+    },
+    {
+      "chamber": "lower",
+      "district": 85,
+      "geo_id": "26085",
+      "district_type": "STATE_LOWER",
+      "full_name": "Bradley Slagh",
+      "first_name": "Bradley",
+      "last_name": "Slagh",
+      "web_page": "http://repslagh.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 86,
+      "geo_id": "26086",
+      "district_type": "STATE_LOWER",
+      "full_name": "Nancy DeBoer",
+      "first_name": "Nancy",
+      "last_name": "DeBoer",
+      "web_page": "http://repdeboer.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 87,
+      "geo_id": "26087",
+      "district_type": "STATE_LOWER",
+      "full_name": "Will Snyder",
+      "first_name": "Will",
+      "last_name": "Snyder",
+      "web_page": "https://housedems.com/Will-Snyder/"
+    },
+    {
+      "chamber": "lower",
+      "district": 88,
+      "geo_id": "26088",
+      "district_type": "STATE_LOWER",
+      "full_name": "Greg VanWoerkom",
+      "first_name": "Greg",
+      "last_name": "VanWoerkom",
+      "web_page": "http://repvanwoerkom.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 89,
+      "geo_id": "26089",
+      "district_type": "STATE_LOWER",
+      "full_name": "Luke Meerman",
+      "first_name": "Luke",
+      "last_name": "Meerman",
+      "web_page": "http://repmeerman.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 90,
+      "geo_id": "26090",
+      "district_type": "STATE_LOWER",
+      "full_name": "Bryan Posthumus",
+      "first_name": "Bryan",
+      "last_name": "Posthumus",
+      "web_page": "http://repposthumus.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 91,
+      "geo_id": "26091",
+      "district_type": "STATE_LOWER",
+      "full_name": "Pat Outman",
+      "first_name": "Pat",
+      "last_name": "Outman",
+      "web_page": "http://repoutman.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 92,
+      "geo_id": "26092",
+      "district_type": "STATE_LOWER",
+      "full_name": "Jerry Neyer",
+      "first_name": "Jerry",
+      "last_name": "Neyer",
+      "web_page": "http://repneyer.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 93,
+      "geo_id": "26093",
+      "district_type": "STATE_LOWER",
+      "full_name": "Tim Kelly",
+      "first_name": "Tim",
+      "last_name": "Kelly",
+      "web_page": "https://gophouse.org/member/RepTimKelly/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 94,
+      "geo_id": "26094",
+      "district_type": "STATE_LOWER",
+      "full_name": "Amos O'Neal",
+      "first_name": "Amos",
+      "last_name": "O'Neal",
+      "web_page": "https://housedems.com/amos-oneal/"
+    },
+    {
+      "chamber": "lower",
+      "district": 95,
+      "geo_id": "26095",
+      "district_type": "STATE_LOWER",
+      "full_name": "Bill Schuette",
+      "first_name": "Bill",
+      "last_name": "Schuette",
+      "web_page": "http://repschuette.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 96,
+      "geo_id": "26096",
+      "district_type": "STATE_LOWER",
+      "full_name": "Timothy Beson",
+      "first_name": "Timothy",
+      "last_name": "Beson",
+      "web_page": "http://repbeson.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 97,
+      "geo_id": "26097",
+      "district_type": "STATE_LOWER",
+      "full_name": "Matt Bierlein",
+      "first_name": "Matt",
+      "last_name": "Bierlein",
+      "web_page": "http://repbierlein.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 98,
+      "geo_id": "26098",
+      "district_type": "STATE_LOWER",
+      "full_name": "Gregory Alexander",
+      "first_name": "Gregory",
+      "last_name": "Alexander",
+      "web_page": "http://repgregalexander.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 99,
+      "geo_id": "26099",
+      "district_type": "STATE_LOWER",
+      "full_name": "Mike Hoadley",
+      "first_name": "Mike",
+      "last_name": "Hoadley",
+      "web_page": "http://rephoadley.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 100,
+      "geo_id": "26100",
+      "district_type": "STATE_LOWER",
+      "full_name": "Tom Kunse",
+      "first_name": "Tom",
+      "last_name": "Kunse",
+      "web_page": "http://repkunse.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 101,
+      "geo_id": "26101",
+      "district_type": "STATE_LOWER",
+      "full_name": "Joseph Fox",
+      "first_name": "Joseph",
+      "last_name": "Fox",
+      "web_page": "https://gophouse.org/member/RepJosephFox/posts",
+      "web_page_override": {
+        "to": "https://gophouse.org/member/RepJosephFox/posts",
+        "why": "legislature.mi.gov links HD-101 to house.mi.gov/repdetail/repJosephFox, which returns HTTP 404. The caucus page titled \"Joseph Fox Posts | Michigan House Republicans\" names him and District 101. Read 2026-09-24."
+      }
+    },
+    {
+      "chamber": "lower",
+      "district": 102,
+      "geo_id": "26102",
+      "district_type": "STATE_LOWER",
+      "full_name": "Curtis VanderWall",
+      "first_name": "Curtis",
+      "last_name": "VanderWall",
+      "web_page": "http://repvanderwall.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 103,
+      "geo_id": "26103",
+      "district_type": "STATE_LOWER",
+      "full_name": "Betsy Coffia",
+      "first_name": "Betsy",
+      "last_name": "Coffia",
+      "web_page": "https://housedems.com/Betsy-Coffia/"
+    },
+    {
+      "chamber": "lower",
+      "district": 104,
+      "geo_id": "26104",
+      "district_type": "STATE_LOWER",
+      "full_name": "John Roth",
+      "first_name": "John",
+      "last_name": "Roth",
+      "web_page": "http://reproth.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 105,
+      "geo_id": "26105",
+      "district_type": "STATE_LOWER",
+      "full_name": "Ken Borton",
+      "first_name": "Ken",
+      "last_name": "Borton",
+      "web_page": "http://repborton.com"
+    },
+    {
+      "chamber": "lower",
+      "district": 106,
+      "geo_id": "26106",
+      "district_type": "STATE_LOWER",
+      "full_name": "Cameron Cavitt",
+      "first_name": "Cameron",
+      "last_name": "Cavitt",
+      "web_page": "http://repcavitt.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 107,
+      "geo_id": "26107",
+      "district_type": "STATE_LOWER",
+      "full_name": "Parker Fairbairn",
+      "first_name": "Parker",
+      "last_name": "Fairbairn",
+      "web_page": "https://gophouse.org/member/RepParkerFairbairn/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 108,
+      "geo_id": "26108",
+      "district_type": "STATE_LOWER",
+      "full_name": "David Prestin",
+      "first_name": "David",
+      "last_name": "Prestin",
+      "web_page": "http://repprestin.com/"
+    },
+    {
+      "chamber": "lower",
+      "district": 109,
+      "geo_id": "26109",
+      "district_type": "STATE_LOWER",
+      "full_name": "Karl Bohnak",
+      "first_name": "Karl",
+      "last_name": "Bohnak",
+      "web_page": "https://gophouse.org/member/RepKarlBohnak/posts"
+    },
+    {
+      "chamber": "lower",
+      "district": 110,
+      "geo_id": "26110",
+      "district_type": "STATE_LOWER",
+      "full_name": "Gregory Markkanen",
+      "first_name": "Gregory",
+      "last_name": "Markkanen",
+      "web_page": "http://repmarkkanen.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 1,
+      "geo_id": "26001",
+      "district_type": "STATE_UPPER",
+      "full_name": "Erika Geiss",
+      "first_name": "Erika",
+      "last_name": "Geiss",
+      "web_page": "https://senatedems.com/geiss"
+    },
+    {
+      "chamber": "upper",
+      "district": 2,
+      "geo_id": "26002",
+      "district_type": "STATE_UPPER",
+      "full_name": "Sylvia A. Santana",
+      "first_name": "Sylvia",
+      "last_name": "Santana",
+      "web_page": "https://senatedems.com/santana"
+    },
+    {
+      "chamber": "upper",
+      "district": 3,
+      "geo_id": "26003",
+      "district_type": "STATE_UPPER",
+      "full_name": "Stephanie Chang",
+      "first_name": "Stephanie",
+      "last_name": "Chang",
+      "web_page": "https://senatedems.com/chang"
+    },
+    {
+      "chamber": "upper",
+      "district": 4,
+      "geo_id": "26004",
+      "district_type": "STATE_UPPER",
+      "full_name": "Darrin Camilleri",
+      "first_name": "Darrin",
+      "last_name": "Camilleri",
+      "web_page": "https://senatedems.com/camilleri"
+    },
+    {
+      "chamber": "upper",
+      "district": 5,
+      "geo_id": "26005",
+      "district_type": "STATE_UPPER",
+      "full_name": "Dayna Polehanki",
+      "first_name": "Dayna",
+      "last_name": "Polehanki",
+      "web_page": "https://senatedems.com/polehanki"
+    },
+    {
+      "chamber": "upper",
+      "district": 6,
+      "geo_id": "26006",
+      "district_type": "STATE_UPPER",
+      "full_name": "Mary Cavanagh",
+      "first_name": "Mary",
+      "last_name": "Cavanagh",
+      "web_page": "https://senatedems.com/cavanagh"
+    },
+    {
+      "chamber": "upper",
+      "district": 7,
+      "geo_id": "26007",
+      "district_type": "STATE_UPPER",
+      "full_name": "Jeremy Moss",
+      "first_name": "Jeremy",
+      "last_name": "Moss",
+      "web_page": "https://senatedems.com/moss"
+    },
+    {
+      "chamber": "upper",
+      "district": 8,
+      "geo_id": "26008",
+      "district_type": "STATE_UPPER",
+      "full_name": "Mallory McMorrow",
+      "first_name": "Mallory",
+      "last_name": "McMorrow",
+      "web_page": "https://senatedems.com/mcmorrow"
+    },
+    {
+      "chamber": "upper",
+      "district": 9,
+      "geo_id": "26009",
+      "district_type": "STATE_UPPER",
+      "full_name": "Michael Webber",
+      "first_name": "Michael",
+      "last_name": "Webber",
+      "web_page": "https://www.senatormichaelwebber.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 10,
+      "geo_id": "26010",
+      "district_type": "STATE_UPPER",
+      "full_name": "Paul Wojno",
+      "first_name": "Paul",
+      "last_name": "Wojno",
+      "web_page": "https://senatedems.com/wojno"
+    },
+    {
+      "chamber": "upper",
+      "district": 11,
+      "geo_id": "26011",
+      "district_type": "STATE_UPPER",
+      "full_name": "Veronica Klinefelt",
+      "first_name": "Veronica",
+      "last_name": "Klinefelt",
+      "web_page": "https://senatedems.com/klinefelt"
+    },
+    {
+      "chamber": "upper",
+      "district": 12,
+      "geo_id": "26012",
+      "district_type": "STATE_UPPER",
+      "full_name": "Kevin Hertel",
+      "first_name": "Kevin",
+      "last_name": "Hertel",
+      "web_page": "https://senatedems.com/hertel"
+    },
+    {
+      "chamber": "upper",
+      "district": 13,
+      "geo_id": "26013",
+      "district_type": "STATE_UPPER",
+      "full_name": "Rosemary Bayer",
+      "first_name": "Rosemary",
+      "last_name": "Bayer",
+      "web_page": "https://senatedems.com/bayer"
+    },
+    {
+      "chamber": "upper",
+      "district": 14,
+      "geo_id": "26014",
+      "district_type": "STATE_UPPER",
+      "full_name": "Sue Shink",
+      "first_name": "Sue",
+      "last_name": "Shink",
+      "web_page": "https://senatedems.com/shink"
+    },
+    {
+      "chamber": "upper",
+      "district": 15,
+      "geo_id": "26015",
+      "district_type": "STATE_UPPER",
+      "full_name": "Jeff Irwin",
+      "first_name": "Jeff",
+      "last_name": "Irwin",
+      "web_page": "https://senatedems.com/irwin"
+    },
+    {
+      "chamber": "upper",
+      "district": 16,
+      "geo_id": "26016",
+      "district_type": "STATE_UPPER",
+      "full_name": "Joseph N. Bellino Jr.",
+      "first_name": "Joseph",
+      "last_name": "Bellino",
+      "web_page": "https://www.senatorjosephbellino.com"
+    },
+    {
+      "chamber": "upper",
+      "district": 17,
+      "geo_id": "26017",
+      "district_type": "STATE_UPPER",
+      "full_name": "Jonathan Lindsey",
+      "first_name": "Jonathan",
+      "last_name": "Lindsey",
+      "web_page": "https://www.senatorjonathanlindsey.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 18,
+      "geo_id": "26018",
+      "district_type": "STATE_UPPER",
+      "full_name": "Thomas A. Albert",
+      "first_name": "Thomas",
+      "last_name": "Albert",
+      "web_page": "https://www.senatorthomasalbert.com"
+    },
+    {
+      "chamber": "upper",
+      "district": 19,
+      "geo_id": "26019",
+      "district_type": "STATE_UPPER",
+      "full_name": "Sean McCann",
+      "first_name": "Sean",
+      "last_name": "McCann",
+      "web_page": "https://senatedems.com/mccann"
+    },
+    {
+      "chamber": "upper",
+      "district": 20,
+      "geo_id": "26020",
+      "district_type": "STATE_UPPER",
+      "full_name": "Aric Nesbitt",
+      "first_name": "Aric",
+      "last_name": "Nesbitt",
+      "web_page": "https://www.senatoraricnesbitt.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 21,
+      "geo_id": "26021",
+      "district_type": "STATE_UPPER",
+      "full_name": "Sarah Anthony",
+      "first_name": "Sarah",
+      "last_name": "Anthony",
+      "web_page": "https://senatedems.com/anthony"
+    },
+    {
+      "chamber": "upper",
+      "district": 22,
+      "geo_id": "26022",
+      "district_type": "STATE_UPPER",
+      "full_name": "Lana Theis",
+      "first_name": "Lana",
+      "last_name": "Theis",
+      "web_page": "https://www.senatorlanatheis.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 23,
+      "geo_id": "26023",
+      "district_type": "STATE_UPPER",
+      "full_name": "Jim Runestad",
+      "first_name": "Jim",
+      "last_name": "Runestad",
+      "web_page": "https://www.senatorjimrunestad.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 24,
+      "geo_id": "26024",
+      "district_type": "STATE_UPPER",
+      "full_name": "Ruth A. Johnson",
+      "first_name": "Ruth",
+      "last_name": "Johnson",
+      "web_page": "https://www.senatorruthjohnson.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 25,
+      "geo_id": "26025",
+      "district_type": "STATE_UPPER",
+      "full_name": "Dan Lauwers",
+      "first_name": "Dan",
+      "last_name": "Lauwers",
+      "web_page": "https://www.senatordanlauwers.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 26,
+      "geo_id": "26026",
+      "district_type": "STATE_UPPER",
+      "full_name": "Kevin Daley",
+      "first_name": "Kevin",
+      "last_name": "Daley",
+      "web_page": "https://www.senatorkevindaley.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 27,
+      "geo_id": "26027",
+      "district_type": "STATE_UPPER",
+      "full_name": "John Cherry",
+      "first_name": "John",
+      "last_name": "Cherry",
+      "web_page": "https://senatedems.com/cherry"
+    },
+    {
+      "chamber": "upper",
+      "district": 28,
+      "geo_id": "26028",
+      "district_type": "STATE_UPPER",
+      "full_name": "Sam Singh",
+      "first_name": "Sam",
+      "last_name": "Singh",
+      "web_page": "https://senatedems.com/singh"
+    },
+    {
+      "chamber": "upper",
+      "district": 29,
+      "geo_id": "26029",
+      "district_type": "STATE_UPPER",
+      "full_name": "Winnie Brinks",
+      "first_name": "Winnie",
+      "last_name": "Brinks",
+      "web_page": "https://senatedems.com/brinks"
+    },
+    {
+      "chamber": "upper",
+      "district": 30,
+      "geo_id": "26030",
+      "district_type": "STATE_UPPER",
+      "full_name": "Mark E. Huizenga",
+      "first_name": "Mark",
+      "last_name": "Huizenga",
+      "web_page": "https://senatormarkhuizenga.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 31,
+      "geo_id": "26031",
+      "district_type": "STATE_UPPER",
+      "full_name": "Roger Victory",
+      "first_name": "Roger",
+      "last_name": "Victory",
+      "web_page": "https://www.senatorrogervictory.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 32,
+      "geo_id": "26032",
+      "district_type": "STATE_UPPER",
+      "full_name": "Jon C. Bumstead",
+      "first_name": "Jon",
+      "last_name": "Bumstead",
+      "web_page": "https://www.senatorjonbumstead.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 33,
+      "geo_id": "26033",
+      "district_type": "STATE_UPPER",
+      "full_name": "Rick Outman",
+      "first_name": "Rick",
+      "last_name": "Outman",
+      "web_page": "https://www.senatorrickoutman.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 34,
+      "geo_id": "26034",
+      "district_type": "STATE_UPPER",
+      "full_name": "Roger Hauck",
+      "first_name": "Roger",
+      "last_name": "Hauck",
+      "web_page": "https://www.senatorrogerhauck.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 35,
+      "geo_id": "26035",
+      "district_type": "STATE_UPPER",
+      "full_name": "Chedrick Greene",
+      "first_name": "Chedrick",
+      "last_name": "Greene",
+      "web_page": "https://senatedems.com/greene/"
+    },
+    {
+      "chamber": "upper",
+      "district": 36,
+      "geo_id": "26036",
+      "district_type": "STATE_UPPER",
+      "full_name": "Michele Hoitenga",
+      "first_name": "Michele",
+      "last_name": "Hoitenga",
+      "web_page": "https://www.senatormichelehoitenga.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 37,
+      "geo_id": "26037",
+      "district_type": "STATE_UPPER",
+      "full_name": "John Damoose",
+      "first_name": "John",
+      "last_name": "Damoose",
+      "web_page": "https://www.senatorjohndamoose.com/"
+    },
+    {
+      "chamber": "upper",
+      "district": 38,
+      "geo_id": "26038",
+      "district_type": "STATE_UPPER",
+      "full_name": "Edward W. McBroom",
+      "first_name": "Edward",
+      "last_name": "McBroom",
+      "web_page": "https://www.senatoredmcbroom.com/"
+    }
+  ]
+}
