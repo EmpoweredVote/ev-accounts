@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { alphaNominal, wilsonLowerBound, isSevereError, certify, chairCategory, type Unit } from './reliability.js';
+import { alphaNominal, wilsonLowerBound, isSevereError, certify, chairCategory, type Unit, goldMeasures } from './reliability.js';
 
 /** Coder-major matrix (rows = coders) → unit-major (rows = units), the shape alphaNominal takes. */
 const byUnit = (coders: (string | null)[][]): Unit[] =>
@@ -82,5 +82,30 @@ describe('chairCategory', () => {
   it('maps a blank to BLANK and a chair to its digit', () => {
     expect(chairCategory(null)).toBe('BLANK');
     expect(chairCategory(3)).toBe('3');
+  });
+});
+
+describe('goldMeasures (spec §3.1 M2–M4)', () => {
+  const P = (coders: (string | null)[], gold: number | null, offAxis = false) => ({ coders, gold, offAxis });
+  it('M3 counts only unanimous CHAIRS; a unanimous BLANK never publishes', () => {
+    const m = goldMeasures([P(['5', '5', '5'], 5), P(['BLANK', 'BLANK', 'BLANK'], null), P(['4', '4', '4'], 5)]);
+    expect(m.unanimousTotal).toBe(2);
+    expect(m.unanimousCorrect).toBe(1);
+  });
+  it('M4: a unanimous chair where gold is BLANK is severe; a same-side miss is not', () => {
+    expect(goldMeasures([P(['5', '5', '5'], null)]).severe).toBe(1);
+    expect(goldMeasures([P(['4', '4', '4'], 5)]).severe).toBe(0);
+    expect(goldMeasures([P(['4', '4', '4'], 5, true)]).severe).toBe(1);
+  });
+  it('M2 pairs the 2-of-3 consensus with gold, and leaves a 3-way split out (counted)', () => {
+    const m = goldMeasures([P(['5', '5', 'BLANK'], 5), P(['BLANK', 'BLANK', '5'], null), P(['1', '2', '3'], 2)]);
+    expect(m.m2Pairs).toBe(2);
+    expect(m.splits).toBe(1);
+    expect(m.m2).toBe(1);
+  });
+  it('an invalid coder (null) counts as missing: two agreeing valid coders still form a consensus', () => {
+    const m = goldMeasures([P(['5', null, '5'], 5), P(['BLANK', 'BLANK', null], null)]);
+    expect(m.m2Pairs).toBe(2);
+    expect(m.unanimousTotal).toBe(0);
   });
 });
