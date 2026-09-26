@@ -260,6 +260,24 @@ collide cannot be fixed by any convention — those are the steward's job (migra
 jurisdiction claims). The other two need a shared working directory to happen, so they are
 rules. All four are described in the design linked above; these are the two you must follow.
 
+🔴 **THERE IS A FIFTH, AND IT IS THE ONE THE OTHER FOUR CANNOT SEE: TWO BRANCHES EDITING THE SAME
+FILE.** The steward's scopes describe the **world** — which place, which migration number. This
+one is in the **repo**. Measured 2026-09-26: Knight slices 11 (MI) and 12 (ND) held *disjoint*
+jurisdiction claims, took *distinct* slot ranges, and worked in *separate* worktrees — every
+mechanism did its job — and both edited `backend/scripts/load-state-tiger-boundaries.ts`, because
+every state's geography load does. PR #797 sat **64 commits behind master with 2 conflicting
+files for two days** and nothing said so.
+- ⚠ **A JURISDICTION CLAIM CANNOT KNOW WHICH FILES THAT JURISDICTION TOUCHES.** Claiming
+  `state:nd` says nothing about the generic loader, or `PROGRAM.md`, which every slice appends to.
+  Expect to conflict in those two; they are the hot files.
+- 🟢 **`steward who` NOW REPORTS BRANCH DRIFT** for every worktree in the checkout, at session
+  start: how far behind the base each branch is, and **which files already conflict**. It is
+  read-only (`git merge-tree`, computed in memory — it never touches another session's worktree),
+  it never fetches, and **it prints even when the steward's database is down**, because it is git
+  alone. It stays silent when nothing is wrong.
+- ▶ **A CONFLICTING BRANCH DOES NOT GET BETTER BY WAITING.** Merge the base into it early, and do
+  it **in that branch's own worktree** — never by moving HEAD in a worktree you did not create.
+
 **The board tells you where everyone is.** `steward who` runs on session start, so you begin
 knowing what is claimed. Before working a jurisdiction, take the lease:
 
