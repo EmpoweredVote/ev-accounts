@@ -15,6 +15,13 @@
  *   'Adams J. S.') -> otherwise 'name-collision'.
  * Known limit: a namesake who is absent from the page, in the same chamber, with an uncommon surname
  * cannot be detected by the page alone.
+ *
+ * Layout rules (SourceRules) come from the passage's source profile (see `profileOf`, sourceProfiles.ts,
+ * a later task) — GENERIC_RULES when a passage's source has none. Five chamber rule kinds: 'nearest-before'
+ * reads the chamber word closest before the actor (today's default); 'word-before-floor' reads the
+ * chamber word immediately before "Floor", ignoring an intervening motion/stage; 'page-header' reads
+ * the first chamber word on the page; 'bill-origin' reads the bill token itself (S.. = upper, A../H.. =
+ * lower); 'none' skips the chamber test entirely (e.g. a nonpartisan city council).
  */
 import { normalizeText, COMMON_LAST_NAMES } from '../../src/lib/researchVerifier.js';
 import { verbatimIn, instrumentKey, type Passage } from './coderLabel.js';
@@ -29,6 +36,18 @@ export type RecordFinding =
 
 /** A legislative seat's chamber; null when the seat is not a legislator's (the chamber test is skipped). */
 export type Chamber = 'upper' | 'lower';
+
+export type VoteBlockRule = 'aye-count' | 'whole-page';
+export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'page-header' | 'bill-origin' | 'none';
+export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
+export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat }
+export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
+export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'page-header', 'bill-origin', 'none'];
+export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
+/** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
+export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname' };
+/** Per actor passage: the rules of its source and the seat's chamber in that body. */
+export type PassageProfile = { rules: SourceRules; chamber: Chamber | null };
 export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
   const t = officeTitle ?? '';
   if (/\bsenator\b/i.test(t)) return 'upper';
@@ -159,24 +178,47 @@ const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', h
 // 3rd Reading" on a SENATE floor vote of an Assembly bill, CA AB 1955), not where the vote happened.
 const NOT_CHAMBER_NEXT = /^(bills?|enrolled|joint|concurrent|resolutions?|amendments?|reading)$/;
 const ORDINAL = /^(1st|2nd|3rd|first|second|third)$/;
-function chamberAt(p: string[], k: number): Chamber | null {
+function chamberAt(p: string[], k: number, extra: ReadonlySet<string>): Chamber | null {
   const c = CHAMBER_WORD[p[k]];
   if (!c) return null;
   if (p[k] === 'assembly' && p[k - 1] === 'general') return null;
-  if (p[k + 1] !== undefined && NOT_CHAMBER_NEXT.test(p[k + 1])) return null;
-  if (p[k + 1] !== undefined && ORDINAL.test(p[k + 1]) && p[k + 2] === 'reading') return null; // "Assembly 3rd Reading", not "Senate First Regular Session"
+  const next = p[k + 1];
+  if (next !== undefined && (NOT_CHAMBER_NEXT.test(next) || extra.has(next))) return null;
+  if (next !== undefined && ORDINAL.test(next) && p[k + 2] === 'reading') return null; // "Assembly 3rd Reading", not "Senate First Regular Session"
   return c;
 }
 /** The nearest chamber word BEFORE token index `a`: the chamber of the vote that lists the actor. */
-function chamberBefore(p: string[], a: number): Chamber | null {
-  for (let k = a - 1; k >= 0; k--) { const c = chamberAt(p, k); if (c) return c; }
+function chamberBefore(p: string[], a: number, extra: ReadonlySet<string>): Chamber | null {
+  for (let k = a - 1; k >= 0; k--) { const c = chamberAt(p, k, extra); if (c) return c; }
   return null;
+}
+/** The chamber of the vote/act that names the actor, read by the source's chamber rule. */
+function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: string | null | undefined, extra: ReadonlySet<string>): Chamber | null {
+  switch (rule) {
+    case 'nearest-before': return chamberBefore(pt, a, extra);
+    case 'word-before-floor':
+      for (let k = a - 1; k >= 0; k--) if (pt[k + 1] === 'floor') { const c = chamberAt(pt, k, extra); if (c) return c; }
+      return null;
+    case 'page-header':
+      for (let k = 0; k < pt.length; k++) { const c = chamberAt(pt, k, extra); if (c) return c; }
+      return null;
+    case 'bill-origin': {
+      const tok = billTokenOf(instrument);
+      if (!tok) return null;
+      if (tok.startsWith('s')) return 'upper';
+      if (tok.startsWith('a') || tok.startsWith('h')) return 'lower';
+      return null;
+    }
+    case 'none': return null;
+  }
 }
 
 export function checkRecordGroup(i: {
   passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string;
-  /** The seat's chamber (seatChamber(office_title)). Omitted/null skips the chamber test. */
+  /** The seat's chamber (seatChamber(office_title)), used when a passage has no profile. */
   chamber?: Chamber | null;
+  /** The source profile of a passage (sourceProfiles.ts). Absent/null -> GENERIC_RULES + i.chamber. */
+  profileOf?: (p: Passage) => PassageProfile | null;
 }):
   { findings: RecordFinding[]; actorPassages: Passage[] } {
   // A group with nothing labelled a record (all statements, say) has no vote/sponsorship basis to
@@ -189,6 +231,7 @@ export function checkRecordGroup(i: {
   const last = lastNameOf(i.fullName);
   const first = firstNameOf(i.fullName);
   const textOf = (p: Passage) => i.snapshotText.get(p.snapshot_id) ?? '';
+  const prof = (p: Passage): PassageProfile => i.profileOf?.(p) ?? { rules: GENERIC_RULES, chamber: i.chamber ?? null };
 
   // One instrument for the whole group, and each page must actually show that bill's number.
   const keys = new Set(i.passages.map((p) => instrumentKey(p.instrument)));
@@ -204,7 +247,7 @@ export function checkRecordGroup(i: {
   // must describe the same vote (a page often prints the same short name run in two votes).
   const located = actorPassages.map((p) => {
     const pt = words(textOf(p));
-    const bounds = ayeBoundaries(pt);
+    const bounds = prof(p).rules.vote_block === 'whole-page' ? [] : ayeBoundaries(pt);
     let occ = runStarts(pt, words(p.actor_quote!));
     const tallyStarts = p.tally_quote ? runStarts(pt, words(p.tally_quote)) : [];
     if (tallyStarts.length > 0) {
@@ -216,15 +259,16 @@ export function checkRecordGroup(i: {
     return { p, pt, bounds, occ };
   });
 
-  // The vote that lists the actor must be the seat's chamber: the nearest chamber word before the
-  // actor_quote (skipped when the seat is not a legislator's). Fails closed when no occurrence has it.
-  if (i.chamber) {
-    // Search back from the surname itself, so a title inside the actor_quote counts ("Authored by:
-    // Sen. Shelli Yoder" — the IN author line names no chamber before it).
-    for (const l of located) {
-      const inQuote = words(l.p.actor_quote!).indexOf(last);
-      if (!l.occ.some((a) => chamberBefore(l.pt, a + Math.max(0, inQuote)) === i.chamber)) out.add('chamber-not-evidenced');
-    }
+  // The vote that lists the actor must be the seat's chamber, read by the source's chamber rule.
+  // Skipped when the seat has no chamber here or the source has none ('none'). Fails closed when no
+  // occurrence shows it. The search starts at the surname, so a title inside the actor_quote counts
+  // ("Authored by: Sen. Shelli Yoder").
+  for (const l of located) {
+    const { rules, chamber } = prof(l.p);
+    if (!chamber || rules.chamber === 'none') continue;
+    const extra = new Set(rules.not_chamber_after.map((w) => w.toLowerCase()));
+    const inQuote = Math.max(0, words(l.p.actor_quote!).indexOf(last));
+    if (!l.occ.some((a) => actorChamber(rules.chamber, l.pt, a + inQuote, l.p.instrument, extra) === chamber)) out.add('chamber-not-evidenced');
   }
 
   // A common surname, or a surname two members share on the page, needs a qualifier in the
@@ -246,7 +290,8 @@ export function checkRecordGroup(i: {
       const from = b < 0 ? 0 : bounds[b]; const to = b + 1 < bounds.length ? bounds[b + 1] : pt.length;
       return pt.slice(from, to).filter((w) => w === last).length;
     }));
-    if (blockCount < 2 && !common) continue;
+    const fullNameRequired = prof(p).rules.name_format === 'full-name';
+    if (blockCount < 2 && !common && !fullNameRequired) continue;
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
     const qualified = idx.some((k) =>

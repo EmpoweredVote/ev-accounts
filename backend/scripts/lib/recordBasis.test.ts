@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { parseTally, isNearUnanimous, instrumentKey, checkRecordGroup, seatChamber } from './recordBasis.js';
+import { parseTally, isNearUnanimous, instrumentKey, checkRecordGroup, seatChamber, GENERIC_RULES, type SourceRules } from './recordBasis.js';
 import type { Passage } from './coderLabel.js';
 
 // CA leginfo votes page for SB 1174 (Senate floor block) and the bill text — shadow-durazo batch.
@@ -279,4 +279,55 @@ describe('vote blocks on a page with two chambers', () => {
     expect(checkRecordGroup({ passages: [V('Baker, Lee, Ortiz', 'Ayes Count 60 Noes Count 15')], snapshotText: m, fullName: 'Rosa Ortiz', chamber: 'upper' }).findings).toContain('chamber-not-evidenced'));
   it('a short name run printed in both votes is tied to the vote its tally names', () =>
     expect(checkRecordGroup({ passages: [V('Lee, Ortiz', 'Ayes Count 30 Noes Count 9')], snapshotText: m, fullName: 'Rosa Ortiz', chamber: 'upper' }).findings).toEqual([]));
+});
+
+describe('source rules', () => {
+  const R = (over: Partial<SourceRules>): SourceRules => ({ ...GENERIC_RULES, ...over });
+  const run = (page: string, over: Partial<Passage>, rules: SourceRules, chamber: 'upper' | 'lower' | null, fullName = 'Ana Wong') =>
+    checkRecordGroup({ passages: [P({ snapshot_id: 'x', instrument: 'SB 9 (2024)', provision_quote: 'requires a thing', ...over })],
+      snapshotText: new Map([['x', page]]), fullName, chamber: null, profileOf: () => ({ rules, chamber }) }).findings;
+
+  const floorPage = 'SB 9 (2024). Location Senate Floor Ayes Count 30 Noes Count 9 Motion Assembly 3rd Reading Ayes Lee, Wong Noes Diaz. The bill requires a thing.';
+  it('word-before-floor: the chamber is the word before "Floor", not the motion', () => {
+    expect(run(floorPage, { actor_quote: 'Lee, Wong', tally_quote: 'Ayes Count 30 Noes Count 9' }, R({ chamber: 'word-before-floor' }), 'upper')).toEqual([]);
+    expect(run(floorPage, { actor_quote: 'Lee, Wong', tally_quote: 'Ayes Count 30 Noes Count 9' }, R({ chamber: 'word-before-floor' }), 'lower')).toContain('chamber-not-evidenced');
+  });
+  it('page-header: the first chamber word on the page', () => {
+    const page = 'Senate FIRST REGULAR SESSION SB 9 (2024) Yea 30 Nay 9 House members present Wong. The bill requires a thing.';
+    expect(run(page, { actor_quote: 'present Wong', tally_quote: 'Yea 30 Nay 9' }, R({ chamber: 'page-header' }), 'upper')).toEqual([]);
+  });
+  it('bill-origin: SB is the Senate, AB/HB the lower chamber', () => {
+    const page = 'SB 9 (2024), Wong. The bill requires a thing.';
+    const author = { record_kind: 'author' as const, tally_quote: null, actor_quote: 'SB 9 (2024), Wong' };
+    expect(run(page, author, R({ chamber: 'bill-origin' }), 'upper')).toEqual([]);
+    expect(run(page, author, R({ chamber: 'bill-origin' }), 'lower')).toContain('chamber-not-evidenced');
+  });
+  it('none: the chamber test is skipped', () => {
+    const page = 'SB 9 (2024). Council roll call Ayes 5 Noes 2 Ayes Lee, Wong. The bill requires a thing.';
+    expect(run(page, { actor_quote: 'Lee, Wong', tally_quote: 'Ayes 5 Noes 2' }, R({ chamber: 'none' }), 'upper')).toEqual([]);
+  });
+  it('not_chamber_after: an extra word makes a chamber word a stage', () => {
+    const page = 'SB 9 (2024). Senate Floor Ayes 30 Noes 9 Assembly Concurrence Ayes Lee, Wong. The bill requires a thing.';
+    const over = { actor_quote: 'Lee, Wong', tally_quote: 'Ayes 30 Noes 9' };
+    expect(run(page, over, R({}), 'upper')).toContain('chamber-not-evidenced');
+    expect(run(page, over, R({ not_chamber_after: ['concurrence'] }), 'upper')).toEqual([]);
+  });
+  it('whole-page: two aye counts are one vote, so the surname counts across both', () => {
+    const page = 'SB 9 (2024). Senate Ayes 30 Noes 9 Ayes Wong Ayes 29 Noes 9 Ayes Wong. The bill requires a thing.';
+    const over = { actor_quote: 'Ayes Wong', tally_quote: 'Ayes 30 Noes 9' };
+    expect(run(page, over, R({}), 'upper')).not.toContain('name-collision');
+    expect(run(page, over, R({ vote_block: 'whole-page' }), 'upper')).toContain('name-collision');
+  });
+  it('full-name: the given name is always required', () => {
+    const page = 'SB 9 (2024). Senate Ayes 5 Noes 2 Councilmember Wong aye. The bill requires a thing.';
+    const over = { actor_quote: 'Councilmember Wong aye', tally_quote: 'Ayes 5 Noes 2' };
+    expect(run(page, over, R({}), 'upper')).toEqual([]);
+    expect(run(page, over, R({ name_format: 'full-name' }), 'upper')).toContain('name-collision');
+  });
+  it('profileOf returning null keeps the generic rules and i.chamber', () => {
+    const f = checkRecordGroup({ passages: [P({ snapshot_id: 'x', instrument: 'SB 9 (2024)', actor_quote: 'Lee, Wong', tally_quote: 'Ayes Count 30 Noes Count 9', provision_quote: 'requires a thing' })],
+      snapshotText: new Map([['x', floorPage]]), fullName: 'Ana Wong', chamber: 'upper', profileOf: () => null }).findings;
+    // generic nearest-before reads "Assembly 3rd Reading" as a stage, then finds "Senate": passes
+    expect(f).toEqual([]);
+  });
 });
