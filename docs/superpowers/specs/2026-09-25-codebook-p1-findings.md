@@ -147,8 +147,18 @@ with the provision moved to the bill-text passage where it is verbatim:
 | bill text only | `person-not-in-snapshot`, `vote-not-evidenced` |
 | vote page only, as coded | `provision-missing` |
 
-D1 is fixed: a correct record basis now passes, and each half alone still fails. The vote is divided
-(8 of 38 = 21 % No), so `near-unanimous-vote` does not apply.
+D1 was fixed in `checkRecordGroup` only: a correct record basis passes, and each half alone still
+fails. The vote is divided (8 of 38 = 21 % No), so `near-unanimous-vote` does not apply.
+
+⚠ **Correction (final review, 2026-09-26).** This check called `checkRecordGroup` **directly**. End to
+end, the validator ran first and then **rejected the bill-text half**: it required `actor_quote` on
+every record passage and `tally_quote` on every vote passage, and the bill text names no voter and has
+no tally. So D1 was not reachable through `code-stance-batch`. Fixed in `510b7ec6`: the record fields
+are now required **per instrument group** (operator ruling "Per group"), and an end-to-end test runs
+the pair through `validateCoderLabelFile` + `buildCodingReport` with no errors and no findings. The
+same commit adds a namesake guard (the actor page must name the seat's chamber; a common surname
+needs a first name or initial) and fails a 0–0 tally closed. Re-running both reports after the fix
+changed no row: no row reached CONFIRM, and no validator result moved.
 
 ### Seed flags
 
@@ -178,6 +188,10 @@ clarifying revision re-words the served text. Fixed in `8527e762`.
     `actor_quote` + `tally_quote`; bill text with `provision_quote`; both in `rests_on`), and one each
     for `sponsor`, `author` and `other-act`. State in V3 that `provision_quote` comes from the page
     that prints the provision.
+  - **Status 2026-09-26:** the two-passage vote example and the "`provision_quote` from the page that
+    prints the provision" rule are now in codebook V3 (kept at 0.3: a clarification, not a new
+    variable). The `sponsor` / `author` / `other-act` examples are still owed. The coders have **not**
+    been re-coded against it, so it is not yet shown to work.
 - **D7 — preemption is read as a position.** (Important, codebook)
   - A bill that forbids *another level of government* from acting (SB 1174: local governments may not
     require ID) does not say what the voter-ID rule itself should be. It is V2 `adjacent` for the

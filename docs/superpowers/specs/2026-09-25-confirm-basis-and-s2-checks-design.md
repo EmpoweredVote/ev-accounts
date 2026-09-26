@@ -38,15 +38,18 @@ coder cannot invent a fact, because an invented fact is not on the page.
 
 | Field | Required when | Content |
 |---|---|---|
-| `actor_quote` | `v3_class = record` | The words showing the person acted, verbatim from this snapshot: the vote list segment that contains the surname ("Ayes Allen, Archuleta, … Durazo, …"), or the author/sponsor line ("Authored by: Sen. Shelli Yoder"). |
-| `tally_quote` | the record is a vote | The count text, verbatim ("Ayes Count 29 Noes Count 8", "Yea 42 … Nay 6"). |
+| `actor_quote` | at least one passage per record instrument group (ruling 2026-09-26) | The words showing the person acted, verbatim from this snapshot: the vote list segment that contains the surname ("Ayes Allen, Archuleta, … Durazo, …"), or the author/sponsor line ("Authored by: Sen. Shelli Yoder"). |
+| `tally_quote` | at least one passage per vote instrument group (ruling 2026-09-26) | The count text, verbatim ("Ayes Count 29 Noes Count 8", "Yea 42 … Nay 6"). |
 | `record_kind` | `v3_class = record` | `vote` · `sponsor` · `author` · `other-act` (a lawsuit, a signed letter, a veto). |
 
 `instrument` must carry the bill **and the session** (e.g. `SB 1174 (2023-2024)`), because the basis
 check groups passages by it.
 
 The validator (`coderLabel.ts`) adds these checks:
-- the fields are present when required;
+- `record_kind` is present on every record passage; `actor_quote` (and, for a vote, `tally_quote`)
+  is present on at least one passage of each instrument group — grouped by `instrumentKey` across
+  all record passages of the row, the same key CONFIRM uses (ruling 2026-09-26: "Per group"; it
+  first said "on every record passage", which rejected the bill-text half of every vote);
 - `actor_quote` and `tally_quote` are verbatim in their snapshot;
 - `record_kind` is from its list.
 
@@ -63,8 +66,13 @@ Codebook text changes:
 
 - **Record group** (any passage with `v3_class = record`) passes only if all of these hold:
   1. **Actor.** Some passage in the group has an `actor_quote`, and the person's surname is in it.
-     - If the surname appears more than once on that snapshot, the `actor_quote` must also contain the
-       first name or initial of the seat holder. Otherwise: `name-collision`.
+     - If the surname appears more than once on that snapshot, **or is in `COMMON_LAST_NAMES`**, the
+       `actor_quote` must also contain a given name (first or middle, 2+ letters) just before the
+       surname or the first initial just after it. Otherwise: `name-collision` (common-surname part
+       added by ruling 2026-09-26, "Fix it now").
+     - **Chamber (ruling 2026-09-26).** For a legislator seat (office title Senator → upper;
+       Representative / Assembly Member / Delegate → lower), the actor page must name the seat's
+       chamber. Otherwise: `chamber-not-evidenced`. Skipped for any other seat.
   2. **Provision.** `provision_quote` is verbatim on *some* passage of the group (not on every one).
   3. **One instrument.** Every passage in the group names the same `instrument`. Otherwise:
      `instrument-mismatch`.
@@ -72,14 +80,15 @@ Codebook text changes:
      `actor_quote` comes from a vote list. Otherwise: `vote-not-evidenced`. This also covers a dead
      bill: a bill that never reached the floor has no vote page.
   5. **Divided.** Code reads the Aye and No counts from `tally_quote`. If No < 10% of those voting:
-     `near-unanimous-vote`. That vote cannot carry the chair alone.
+     `near-unanimous-vote`. That vote cannot carry the chair alone. A 0–0 tally is
+     `tally-unreadable` (fail closed).
   6. **Person proximity.** The existing `person-not-in-snapshot` check applies to the **actor
      passage** only. The bill text never names voters.
 - **Statement passages** keep the current checks, one passage at a time.
 - **Unchanged:** identity (office/jurisdiction), `rests-on-pointer`, the date checks, and
   `revision-drift`.
 - **New `ConfirmFinding` values:** `name-collision`, `instrument-mismatch`, `vote-not-evidenced`,
-  `near-unanimous-vote`, `tally-unreadable`.
+  `near-unanimous-vote`, `tally-unreadable`, and (ruling 2026-09-26) `chamber-not-evidenced`.
 - **Removed behaviour:** `provision-missing` and `person-not-in-snapshot` no longer fire on a passage
   that is part of a valid record group.
 
@@ -119,7 +128,11 @@ Codebook text changes:
 - **"Walker G" / "Walker K"** on one sheet → `name-collision` unless the `actor_quote` has the
   initial.
 - **Instrument mismatch** across the group → `instrument-mismatch`.
-- **Validator:** a missing `actor_quote` on a record → error; a non-verbatim `tally_quote` → error.
+- **Validator:** a record instrument group with no `actor_quote` → error; a vote group with no
+  `tally_quote` → error; the D1 pair (bill page with null actor/tally) → valid (ruling 2026-09-26);
+  a non-verbatim `tally_quote` → error.
+- **Chamber:** a House-only page listing another Adams → `chamber-not-evidenced` for a Senator; the
+  real SB 1174 and IN RC 334 vote pages pass (positive control).
 - **`s1-leads` never reaches the prompt.**
 - **`stancePublishPolicy.test.ts` passes unchanged** (shadow property).
 

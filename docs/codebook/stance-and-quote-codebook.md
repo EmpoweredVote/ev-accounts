@@ -3,6 +3,9 @@
 **Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
 fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -164,14 +167,32 @@ unevidenced chair.
 - When `record` and a statement conflict, the record wins, and the row is coded
   `record-vs-statement-conflict` if the conflict decides the chair.
 - **Record fields (0.3).**
-  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`.
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
   - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
     contains the surname, or the author/sponsor line. If two members on the page share the surname,
-    include the initial or first name (for example `Walker G`, or `Watson, R.`).
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
   - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
-    It is required for a vote.
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
 - `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
   one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
 
 **Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
 roll call. → `record`.
@@ -576,6 +597,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   passage whose V1–V5 values all allow a chair.
 - Every `provision_quote` and every quote `text` is verbatim in its snapshot.
 - Every value is from the lists above.
-- A `record` passage (`v3_class = "record"`) requires `record_kind` and `actor_quote`; a `vote`
-  additionally requires `tally_quote`. `actor_quote` and `tally_quote`, when present, are verbatim
-  in their snapshot.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.

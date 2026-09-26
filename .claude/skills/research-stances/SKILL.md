@@ -996,8 +996,10 @@ queues. Its only outputs are `coding-report.json` and, with the operator's OK, r
    - Do not edit, summarise or add to `coder-N.md`.
    - Do not read the coders' files and "fix" them. An invalid label is data (`coder-missing`).
 5. `npm run coding:report --prefix backend -- --dir <batch> --season-id <open season uuid> --models "opus,sonnet,sonnet"`.
-   Record passages now need `record_kind`, `actor_quote` (and `tally_quote` for a vote). CONFIRM
-   judges a vote page and its bill text together, as one basis.
+   Every record passage needs `record_kind`; each record (all passages on one `instrument`) needs
+   `actor_quote` on at least one page, and a vote needs `tally_quote` on at least one page (ruling
+   2026-09-26, per group). CONFIRM judges a vote page and its bill text together, as one basis, and
+   requires the vote page to name the seat's chamber.
 6. If `needs-source.json` is non-empty: fetch those sources (you are the only role with tools), add
    them to `sources.json`, and repeat from step 2 — **all three coders again**. After two rounds with
    no new snapshot, stop (spec §1.3).
