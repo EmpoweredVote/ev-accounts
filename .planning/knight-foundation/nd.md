@@ -1703,7 +1703,184 @@ nested inside the transparent-motivations checkout, default branch **`main`**, c
 
 ### What ND-5 still owes
 
-1. **Find the copyright** for both portrait cohorts — the accepted debt. The request form is
-   unsent, and neither cohort is licence-cleared.
-2. **Nine people still have no portrait route**: Salentiny, Rosenquist, and all seven county
+1. **Nine people still have no portrait route**: Salentiny, Rosenquist, and all seven county
    officials. A blank beats a link.
+2. **An operator decision on the two findings below** — the copyright is now FOUND, and it is not
+   what "silence" implied.
+
+
+## 🔴🔴 THE COPYRIGHT IS FOUND (2026-09-26) — AND IT IS NOT SILENCE
+
+Debt 1 is researched, not merely restated. **Nothing was sent**; the photo request form remains
+unsubmitted. Two cohorts, two different answers, and one of them reverses a habit this program has
+carried since Ohio.
+
+### The legislature's 141: an EXPLICIT published copyright claim with a stated permitted use
+
+🔴🔴 **THE TERMS WERE ON THE REQUEST PAGE ALL ALONG, IN ITS BODY TEXT, AND I HAD
+CLASSIFIED THAT PAGE WITHOUT READING IT.** ND-5 recorded `ndlegis.gov/legislator-photo-request` as
+*"evidence that photo reuse is a thing they expect to be ASKED about — not evidence of a grant."*
+That was a judgement about the page's EXISTENCE. Its body says:
+
+> **"The Legislative Assembly holds the copyright for legislator photos. A legislator photo is
+> available for use only in articles and publications related to the legislator's service as a
+> legislator. North Dakota Century Code Section 16.1-10-02 prohibits the use of a requested photo
+> for political purposes. Photos may NOT be used for nonlegislative boards, commissions, or
+> memberships, campaigns, or for personal use."**
+
+▶ **READ THE PAGE, NOT ITS TITLE.** A form is not only a route to ask — it can carry the terms.
+This is the TN lesson in a third dress: TN's grant was in the image bytes and on no page; ND's is on
+a page I had already found and had already filed under the wrong heading.
+
+**The statutory limit was read in full, from the source, not paraphrased.** `N.D.C.C. 16.1-10-02`
+(`ndlegis.gov/cencode/t16-1c10.pdf`) defines "political purpose" as activity supporting or opposing
+a ballot measure or **the election or nomination of a candidate**, and then carves out:
+> **"The term does not include activities undertaken in the performance of public office or a
+> position taken in any bona fide news story, commentary, or editorial."**
+plus factual voter education on a ballot question that does not advocate.
+▶ A nonpartisan page stating who holds an office is factual/editorial, not advocacy — the carve-out
+speaks to exactly our use, and the site is antipartisan by design.
+🔴 **BUT THERE IS A DATED BLACKOUT, AND IT IS A PROGRAM-WIDE CONCERN, NOT AN ND ONE.** In the
+**thirty days before a primary and sixty days before a special or general election**, "political
+purpose" ALSO means any activity in which a **candidate's name, office, district**, or a term
+meaning *incumbent* or *challenger* is used **in support of or in opposition to** that election.
+Neutral factual display stays outside it — the "in support of or in opposition to" qualifier does
+not drop — but this program seats candidates and renders `is_incumbent`, so the interaction is real
+and should be looked at deliberately rather than assumed benign.
+
+🔴🔴 **AND THE "THERE IS NO BIGGER FILE" PREMISE IS NOW FALSE.** The ship-the-natives
+ruling rested on 157x196 being the whole of what North Dakota publishes. The request page states the
+sizes they supply: print **900x1125 @300dpi**, and **digital 512x640 @144ppi**. That digital size is
+**3.26x** the linked derivative and close to the 600x750 target. ▶ The 141 are shipped at 157x196
+today; a request would materially improve every one of them. **OH-5's rule again — a body publishes
+a larger file it does not link — except here it is request-gated and the SIZE IS PUBLISHED.**
+
+⚠ The site-wide `ndlegis.gov/disclaimer` is accuracy + privacy only: **zero** occurrences of
+`copyright`, `reproduc`, `reuse`, `permission` or `public domain` in its body. Unlike NC, whose
+Disclaimer carried the public-domain grant, ND's grants nothing. The footer carries only
+"Copyright (c) <year> North Dakota Legislative Council". **The request page is the only statement.**
+
+### The city's 7: still no published policy — but silence does NOT mean permission in North Dakota
+
+The negative is now properly established rather than asserted:
+- Every standard policy path (`/terms`, `/terms-of-use`, `/legal`, `/copyright`, `/disclaimer`,
+  `/privacy`, `/policies`, `/accessibility`, …) is **non-200** on the city AND the county host.
+- The **full 5,857-URL sitemap** was scanned by name against a broad regex
+  (`terms|copyright|legal|disclaim|privacy|policy|policies|accessib|usage|reuse|rights|licens|
+  media.kit|press.kit|photo`). Every hit is a **business, pet, alcohol or gaming LICENCE**, an
+  employee policy manual, or the transit department's own accessibility page. Nothing about reuse.
+- Nothing in the bytes: the XMP holds only `xmp:CreatorTool = Canva (Renderer) … brand=GF team`.
+- The element whose class is `copyright` carries **only the Granicus vendor credit**.
+
+🟢 **AND THE WAYBACK CHECK ANSWERED THIS TIME, BECAUSE IT HAD CONTROLS.** TN's archive probe
+came back blind (HTTP 503) and was recorded as UNKNOWN. Here both **positive controls returned real
+snapshots** (`grandforksgov.com` 2026-08-31, `ndlegis.gov` 2026-09-21) and the **negative control**
+(a path that never existed) correctly returned none — so the "no snapshot" answers for `/terms`,
+`/terms-of-use`, `/copyright`, `/legal`, `/disclaimer` and `/privacy` are **trustworthy**.
+**No policy page ever existed at those paths.** ▶ **A blind detector and a working one return the
+same empty string; only the controls tell them apart.**
+
+🔴🔴 **BUT NORTH DAKOTA STATUTE CUTS AGAINST READING THAT SILENCE AS PERMISSION.**
+`N.D.C.C. 44-04-18(11)`, in the open-records chapter (`ndlegis.gov/cencode/t44c04.pdf`):
+
+> **"A disclosure of a requested record under this section is not a waiver of any copyright held by
+> the public entity in the requested record or of any applicable evidentiary privilege."**
+
+▶ **ND law expressly contemplates a public entity HOLDING copyright in its records, and says
+publication does NOT waive it.** So the program's habit — OH/GA/FL/PA silence read as `press_use`
+— **is jurisdiction-dependent, and in North Dakota it points the other way.** The City of Grand
+Forks may hold copyright in those seven portraits, unwaived by having published them, and there is
+no published grant. **Absence of a stated restriction is not a grant here.**
+⚠ I nearly recorded `copyright` as ABSENT from ch. 44-04 on a truncated read of my own output. It
+occurs **six times**; a re-run with a positive control (`"public entity"`, 121 hits) found them. The
+other five are trade-secret and computer-software provisions and do not bear on photographs.
+
+### Where that leaves the two cohorts
+
+| cohort | copyright | published permission | our status |
+| --- | --- | --- | --- |
+| Legislature 141 | **Legislative Assembly, explicit** | **Yes, with a stated scope** — articles/publications on the legislator's service; no political purpose (16.1-10-02, which carves out bona fide editorial) | rows read `unknown`; the finding says a **named holder with a scope our use arguably sits inside** |
+| Grand Forks city 7 | **unstated; City may hold it** | **None, and none ever existed** | rows read `unknown`; 44-04-18(11) means silence is **not** a grant |
+
+⚠ **`photo_license = 'unknown'` on all 148 is still the honest value and was NOT changed.** This
+research names a holder and a scope; it is not a grant in hand, and I am not the right party to
+convert a reading of a statute into a licence field. ▶ **Two operator decisions now exist that did
+not before:** whether to submit the request form — which would settle the licence **and** yield
+**512x640** in place of 157x196 — and whether to approach the City of Grand Forks at all.
+
+
+## 🟢🟢 THE PHOTO REQUEST FORM WAS SUBMITTED 2026-09-26 — DO NOT SEND IT AGAIN
+
+> 🔴🔴 **EVERY EARLIER LINE ON THIS PAGE AND IN `PROGRAM.md` SAYING THE FORM IS
+> "UNSENT" IS NOW SUPERSEDED.** It was sent on **2026-09-26** on Cantrell's instruction, with the
+> answers below. The site states requests are processed **within 2 business days**.
+> **A second submission would be a duplicate request to a government body. Do not re-send it.**
+
+Confirmation received in-page: **"Thank you! Your request has been sent."** — no validation errors,
+the form cleared, and the browser was redirected to `ndlegis.gov`.
+
+### Exactly what we represented — because the agreements bind us
+
+| field | submitted value |
+| --- | --- |
+| Name | BJ Cantrell |
+| Company | Empowered Vote Inc |
+| Phone | 310.499.8131 |
+| Email | chris@empowered.vote |
+| Address | 12048 Culver Blvd Apt 210, Los Angeles, CA 90066 |
+| What will the photos be used for? | **Internet** (the only fitting bucket; its sub-label reads "blog, social networking, forums") |
+| How will the photos be used? | **Multiple Use** — usage expires November 30 of even-numbered years |
+| Type of image | **Digital Quality — 144 ppi**, i.e. the **512x640** file |
+| Photos listed | **141**, one per line, 47 senators + 94 representatives, each with chamber and district |
+| All seven agreements | **Agree** |
+| Expiry acknowledgement | **I understand** |
+
+🟢 **THE DESCRIPTION DISCLOSED THAT WE ARE ALREADY DISPLAYING THE PHOTOS**, and invited a
+refusal, rather than asking as though the use had not begun:
+> *"Disclosure: we are currently displaying the lower-resolution portraits published on each
+> member's page at ndlegis.gov (157 x 196 pixels). We are requesting the 144 ppi digital versions to
+> improve that display and to have the use properly authorised. If the Legislative Assembly would
+> prefer we not display them, please tell us and we will remove them."*
+▶ **An accurate form is worth more than a granted one.** The 141 were imported before the licence
+was settled, so a request written as if they were not in use would have been misleading, and this
+program's whole ethic is that a misleading-but-passing thing is the defect.
+
+### What we are now bound to, if it is granted
+
+🔴 **THE GRANT EXPIRES 2026-11-30 — about nine weeks out — AND IT IS NOT SELF-RENEWING.**
+The acknowledgement reads: *"the use of the photos is through the remainder of this interim
+(November 30 of even-numbered years) and is thereafter invalid. I will have to submit a NEW form for
+the new photos available at the beginning of the next legislative session."*
+▶ **This is a TERM licence with a renewal cadence, and the portraits themselves churn per assembly.**
+The 70th Assembly (2027-28) will publish new photos. **Diary it**; letting it lapse silently would
+leave 141 published portraits outside their own stated term.
+
+🔴 **144 ppi IS A CAP, SO THE 512x640 SHIPS NATIVE.** *"photos used online may not exceed
+144 ppi"*. 512x640 is already exactly 4:5, so `crop_4x5` is a no-op and `--max-upscale 1.0` leaves it
+at native size. Enlarging to the programme's 600x750 would be a 1.17x upscale and would sit against
+that cap. **The standing no-upscale rule and the licence term agree here — do not "fix" the size.**
+
+⚠ **TWO AGREEMENTS ARE NARROWER THAN THE PAGE'S PROSE, AND THAT WAS FLAGGED BEFORE SENDING.**
+The radio says *"the photos may only be used for **legislative business**"* while the page body says
+*"articles and publications related to the legislator's service as a legislator"*. Our use fits the
+second comfortably and the first reads narrower. Likewise *"I will not alter or **distribute** the
+photos outside the terms"* — we host copies on our own CDN and serve them publicly. **Both were put
+to Cantrell before submission and both were accepted knowingly**, which is why the description states
+plainly what we are and offers removal.
+
+🔴 **THE FORM CARRIES A HONEYPOT FIELD** named `Country`, labelled *"Leave this field blank"*.
+It was left empty. **Filling it would have binned the submission silently** — a spam trap reads as a
+required field to anything that fills every input it finds.
+
+⚠ `photo_license` stays **`'unknown'`** on all 148 rows. A submitted request is not a grant.
+**Only a reply changes that field**, and the reply has not arrived.
+
+### What ND-5 owes now
+
+1. **Watch for the reply** (stated turnaround: 2 business days to `chris@empowered.vote`). On a
+   grant: re-extract at **512x640** and re-import the 141, then set `photo_license` from what the
+   reply actually says — not from this page.
+2. **Diary the 2026-11-30 expiry** and the new-session re-request.
+3. **The City of Grand Forks' 7 are untouched** — no approach made, and `N.D.C.C. 44-04-18(11)`
+   means their silence is not permission.
+4. **Nine people still have no portrait route.** A blank beats a link.
