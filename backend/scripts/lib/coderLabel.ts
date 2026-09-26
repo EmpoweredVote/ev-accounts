@@ -7,7 +7,7 @@
 import { normalizeText } from '../../src/lib/researchVerifier.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
-export const CODEBOOK_VERSION = '0.2';
+export const CODEBOOK_VERSION = '0.3';
 
 export const V1_ATTRIBUTION = ['own-words', 'own-act', 'third-party-characterization', 'namesake-unclear'] as const;
 export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;
@@ -18,6 +18,7 @@ export const BLANK_REASONS = ['no-evidence', 'direction-only', 'adjacent-chairs'
 export const V7_TIER = ['lever', 'direction', 'none'] as const;
 export const V7_FLAGS = ['lever-named', 'lever-unclear'] as const;
 export const V8_CODES = ['not-forward', 'is-attack', 'off-question', 'misleading-verbatim', 'source-not-an-answer', 'deid-dishonest', 'non-differentiating-goal'] as const;
+export const RECORD_KIND = ['vote', 'sponsor', 'author', 'other-act'] as const;
 /** V8 codes that do not gate (PRINCIPLES.md: flag for a human, no blanket gate). */
 const NON_GATING_V8 = new Set<string>(['non-differentiating-goal']);
 
@@ -32,6 +33,9 @@ export interface Passage {
   instrument: string | null;
   provision_quote: string | null;
   note?: string;
+  record_kind?: typeof RECORD_KIND[number] | null;
+  actor_quote?: string | null;
+  tally_quote?: string | null;
 }
 export interface QuoteLabel {
   snapshot_id: string;
@@ -121,6 +125,18 @@ function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): V
     if (p.provision_quote !== null && p.provision_quote !== undefined) {
       if (typeof p.provision_quote !== 'string') errors.push(`${where}: provision_quote not a string`);
       else if (text !== undefined && !verbatimIn(text, p.provision_quote)) errors.push(`${where}: provision_quote not verbatim in snapshot`);
+    }
+    if (p.v3_class === 'record') {
+      if (p.record_kind === null || p.record_kind === undefined) errors.push(`${where}: record_kind required for a record`);
+      else { const e = enumErr(where, 'record_kind', p.record_kind, RECORD_KIND); if (e) errors.push(e); }
+      if (typeof p.actor_quote !== 'string' || !p.actor_quote) errors.push(`${where}: actor_quote required for a record`);
+      if (p.record_kind === 'vote' && (typeof p.tally_quote !== 'string' || !p.tally_quote)) errors.push(`${where}: tally_quote required for a vote`);
+    }
+    for (const f of ['actor_quote', 'tally_quote'] as const) {
+      const v = p[f];
+      if (v === null || v === undefined) continue;
+      if (typeof v !== 'string') errors.push(`${where}: ${f} not a string`);
+      else if (text !== undefined && !verbatimIn(text, v)) errors.push(`${where}: ${f} not verbatim in snapshot`);
     }
     byId.set(p.snapshot_id, p as unknown as Passage);
   }

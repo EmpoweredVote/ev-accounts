@@ -8,7 +8,9 @@ const snapshotText = new Map([[SNAP, 'The Senate voted 21-8 to override the veto
 const passage = (over: Partial<Passage> = {}): Passage => ({
   snapshot_id: SNAP, v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record',
   v4_shape: 'chair-shaped', v5_time: 'in-term', date: '2022-03-25', instrument: 'H.B. 11 (2022)',
-  provision_quote: 'requires students to compete on teams matching their sex at birth', note: '', ...over,
+  provision_quote: 'requires students to compete on teams matching their sex at birth', note: '',
+  record_kind: 'vote', actor_quote: 'The Senate voted 21-8 to override the veto of H.B. 11', tally_quote: 'voted 21-8',
+  ...over,
 });
 const row = (over: Partial<CoderRow> = {}): CoderRow => ({
   politician_id: 'p1', office_id: 'o1', topic_id: 't1', served_revision_id: 'r1',
@@ -102,4 +104,37 @@ describe('validateCoderLabelFile', () => {
       .toContain(`passage ${SNAP}: date ${d} not YYYY, YYYY-MM or YYYY-MM-DD`));
   it.each([['2010'], ['2010-03'], ['2024-02-29'], [null]])('accepts passage date %s', (d) =>
     expect(validateCoderLabelFile(file([row({ passages: [passage({ date: d })] })]), ctx).rows[0].errors).toEqual([]));
+});
+
+describe('0.3 record fields', () => {
+  it('requires record_kind and actor_quote on a record passage', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: undefined, actor_quote: undefined })] })]), ctx);
+    expect(r.rows[0].errors).toEqual(expect.arrayContaining([
+      `passage ${SNAP}: record_kind required for a record`,
+      `passage ${SNAP}: actor_quote required for a record`,
+    ]));
+  });
+  it('requires tally_quote when record_kind is vote', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ tally_quote: null })] })]), ctx);
+    expect(r.rows[0].errors).toContain(`passage ${SNAP}: tally_quote required for a vote`);
+  });
+  it('does not require tally_quote for a sponsorship', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: 'sponsor', tally_quote: null })] })]), ctx);
+    expect(r.rows[0].errors).toEqual([]);
+  });
+  it('refuses an actor_quote or tally_quote that is not verbatim', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ actor_quote: 'Yoder voted aye', tally_quote: 'Ayes 40 Noes 0' })] })]), ctx);
+    expect(r.rows[0].errors).toEqual(expect.arrayContaining([
+      `passage ${SNAP}: actor_quote not verbatim in snapshot`,
+      `passage ${SNAP}: tally_quote not verbatim in snapshot`,
+    ]));
+  });
+  it('refuses an unknown record_kind', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage({ record_kind: 'cosponsor' as never })] })]), ctx);
+    expect(r.rows[0].errors).toContain(`passage ${SNAP}: record_kind cosponsor not allowed`);
+  });
+  it('asks nothing new of a statement passage', () => {
+    const p = passage({ v3_class: 'statement-other', record_kind: undefined, actor_quote: undefined, tally_quote: undefined });
+    expect(validateCoderLabelFile(file([row({ passages: [p] })]), ctx).rows[0].errors).toEqual([]);
+  });
 });

@@ -5,6 +5,9 @@
 **Levels:** state (the lever: program statutes), federal (tax-credit scholarships only), school
 boards (no lever on vouchers). Verify against `compass_topic_roles` before use.
 
+**Synonyms:** "education savings account" (ESA), "scholarship", "tax-credit scholarship",
+"Choice Scholarship" (Indiana), "Utah Fits All".
+
 1. **"Eliminating voucher programs that divert taxpayer money from public schools to private
    institutions"**
    - Clauses: [a] eliminate existing programs.
