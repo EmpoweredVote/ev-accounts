@@ -27,6 +27,21 @@ const YEAR_QUESTION =
 const FUTURE_MARKER =
   /\b(will|shall|by\s+what\s+year|plans?\s+to|planned\s+to|is\s+permitted|are\s+permitted|committed\s+to|commits?\s+to|targets?|targeting|projects?|projected|projecting|expects?|expected|scheduled|due\s+to|set\s+to|aims?\s+to|intends?\s+to|deadline)\b/i;
 
+/**
+ * A period boundary that lies ahead, e.g. "for a term ending in which year".
+ *
+ * This is a STRONG exemption: it wins even when a past-tense marker is present,
+ * because the past-tense verb describes a different event (being elected) from the
+ * one the question actually asks about (when the term ends). Deliberately narrow —
+ * it requires "term(s)" immediately followed by an end/expiry word, so
+ * "In what year was the council term limit first adopted?" is untouched.
+ *
+ * Found by running the rule against the live bank: smo-407 was a false positive,
+ * while bxl-414 ("When does the current term ... expire?") already passed for having
+ * no past-tense verb at all.
+ */
+const FUTURE_BOUNDARY = /\bterms?\s+(that\s+)?(ending|ends|end|expiring|expires|expire)\b/i;
+
 /** Past-tense constructions. */
 const PAST_MARKER =
   /\b(was|were|did|has\s+been|have\s+been|had|became|opened|established|founded|incorporated|chartered|adopted|signed|charged|elected|created|passed|enacted|built|completed|launched|began|started|ended|occurred|happened|died|born)\b/i;
@@ -72,6 +87,12 @@ export function checkAnachronisticYear(question: QuestionInput): RuleResult {
 
   // Gate 1: is this even a year question?
   if (!YEAR_QUESTION.test(text)) {
+    return { passed: true, violations: [] };
+  }
+
+  // Gate 1a: a question asking when a term ends is forward-looking whatever tense
+  // the surrounding verbs use. This is the one exemption that outranks a past marker.
+  if (FUTURE_BOUNDARY.test(text)) {
     return { passed: true, violations: [] };
   }
 

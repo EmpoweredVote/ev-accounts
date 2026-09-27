@@ -220,3 +220,48 @@ describe('registration in the rules engine', () => {
     expect(result.violations.map(v => v.rule)).toContain('anachronistic-year-option');
   });
 });
+
+describe('checkAnachronisticYear — a past-tense verb about a FUTURE boundary', () => {
+  /**
+   * Found by running the rule against the live bank. smo-407 is past tense ("was
+   * elected") but the value it asks for is when a term ENDS, which is legitimately
+   * in the future. bxl-414 is the same shape without a past-tense verb and already
+   * passed; this is the half that did not.
+   */
+  it('passes a term-ending question with a past-tense verb (smo-407)', () => {
+    freezeYear(2026);
+    const result = checkAnachronisticYear(
+      q({
+        externalId: 'smo-407',
+        text: 'Ellis Raskin was elected to the Santa Monica City Council for a term ending in which year?',
+        options: ['2024', '2026', '2028', '2030'],
+        correctAnswer: 2,
+      })
+    );
+    expect(result.passed).toBe(true);
+  });
+
+  it('passes "whose term expires in what year"', () => {
+    freezeYear(2026);
+    const result = checkAnachronisticYear(
+      q({
+        text: 'The mayor was sworn in last January for a term that expires in which year?',
+        options: ['2026', '2027', '2028', '2029'],
+        correctAnswer: 2,
+      })
+    );
+    expect(result.passed).toBe(true);
+  });
+
+  it('still flags a past event even when the word "term" appears elsewhere', () => {
+    freezeYear(2026);
+    const result = checkAnachronisticYear(
+      q({
+        text: 'In what year was the council term limit first adopted?',
+        options: ['2024', '2025', '2026', '2027'],
+        correctAnswer: 1,
+      })
+    );
+    expect(result.passed).toBe(false);
+  });
+});
