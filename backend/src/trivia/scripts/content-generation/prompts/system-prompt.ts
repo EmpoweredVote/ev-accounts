@@ -62,10 +62,44 @@ ${topicLines}
 
 ## Difficulty Distribution
 
-Distribute difficulty across the full batch:
-- Easy: 40% of questions (foundational facts, direct answers)
-- Medium: 40% of questions (requires some civic knowledge)
-- Hard: 20% of questions (nuanced details, specific facts)
+At least 30% of the batch must be EASY. This is a floor, not a target to hover at — a
+medium-heavy batch is a defect. Aim for roughly 30% easy / 45% medium / 25% hard.
+
+A percentage alone does not work; classify by **what the player must bring**.
+
+**EASY** — someone who lives there would likely know it without study.
+- The single headline executive: the Mayor, the Governor, the President, the Vice
+  President. A resident knows who runs the place.
+- Term lengths — how long a mayor, governor or council member serves.
+- The founding, incorporation or chartering year.
+- Orientation and geography: which county, which bordering state, which river, which ocean.
+- The single most recognisable landmark, employer or institution.
+- The elementary-civics test: a fact an elementary school civics book would state
+  plainly — provided you can source it.
+
+**MEDIUM** — a resident could reason to it, or knows it from some familiarity.
+Institutional structure and process, who appoints whom, advisory scope, non-iconic
+dates, second-order associations.
+
+**HARD** — needs specific study.
+A precise figure recalled exactly; **named holders of any office below the headline
+executive** — council members, commissioners, clerks, auditors, deputies; multi-step
+comparative reasoning.
+
+### The distractor rule
+
+Difficulty is carried by the option set, not the subject. Measured across the live bank,
+questions labelled easy are answered correctly 50.0% of the time — identical to medium,
+and only 25 points above blind guessing.
+
+**An easy question's three distractors must be ones a resident rules out instantly.**
+
+- GOOD — "Who is the Mayor of Cambridge?" against three names who plainly do not hold
+  the office.
+- BAD — the same question against three sitting Cambridge city councillors.
+
+If a famous subject has four independently plausible options, it is NOT easy. Never move
+the correct value to fix this — change the distractors around it.
 
 ## Content Rules
 
@@ -485,12 +519,14 @@ function buildFremontSensitivityInstructions(): string {
 - For structural questions about offices (not specific people): expiresAt: null
 - Prefer structural questions over current-official-name questions to reduce expiration churn
 
-### Difficulty Distribution (Fremont-specific calibration)
-- Target: 40% easy, 40% medium, 20% hard
-- Easy: Foundational facts a civic-minded resident would know (e.g., "How many districts does Fremont have?")
-- Medium: Requires civic knowledge but learnable (e.g., "What role does the city manager play?")
-- Hard: Nuanced details even locals might not know (e.g., "Which five towns consolidated to form Fremont in 1956?")
-- Distractors should scale with difficulty — easy has obviously wrong answers, hard has genuinely tricky ones`;
+### Difficulty Examples (Fremont-specific calibration)
+- The distribution and the tier definitions are the ones stated above; this section
+  only illustrates them for Fremont.
+- Easy: "Which county is Fremont in?" — orientation a resident holds without study
+- Medium: "What role does the city manager play?" — institutional process, learnable
+- Hard: "Which five towns consolidated to form Fremont in 1956?" — specific study
+- Distractors carry the difficulty: an easy question's three wrong options must be ones
+  a Fremont resident rules out instantly`;
 }
 
 /**

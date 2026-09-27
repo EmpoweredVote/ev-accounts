@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { QUALITY_GUIDELINES } from './quality-guidelines.js';
+import { buildSystemPrompt } from './system-prompt.js';
 
 /**
  * WHY THIS EXISTS
@@ -36,5 +37,51 @@ describe('QUALITY_GUIDELINES', () => {
     // A/B/C/D, which does nothing — a player who sorts the numbers mentally is
     // unaffected by position.
     expect(QUALITY_GUIDELINES).toContain('does not fix this');
+  });
+});
+
+/**
+ * WHY THIS EXISTS
+ * ---------------
+ * The prompt used to say "Easy: 40% / Medium: 40% / Hard: 20%" and define the
+ * tiers by nothing at all. A percentage alone never worked: measured across the
+ * live bank, questions labelled easy are answered correctly 50.0% of the time —
+ * identical to medium, and only 25 points above blind guessing.
+ *
+ * The revised rubric classifies by what the player must BRING, sets 30% easy as
+ * a floor rather than a target, and adds the distractor rule, which is the part
+ * that actually moves the number.
+ */
+describe('buildSystemPrompt — difficulty rubric', () => {
+  // Signature: (localeName, topicDistribution, localeSlug?, officeholders?)
+  // The slug is what selects the Fremont calibration block, so it must be passed.
+  const prompt = () => buildSystemPrompt('Fremont, CA', { 'local-government': 10 }, 'fremont-ca');
+
+  it('states the easy floor, not a 40% target', () => {
+    expect(prompt()).toContain('At least 30% of the batch must be EASY');
+    expect(prompt()).not.toContain('Easy: 40% of questions');
+  });
+
+  it('classifies by what the player must bring', () => {
+    const p = prompt();
+    expect(p).toContain('someone who lives there would likely know it without study');
+    expect(p).toContain('needs specific study');
+  });
+
+  it('restricts easy officeholders to the headline executive', () => {
+    expect(prompt()).toContain('named holders of any office below the headline');
+  });
+
+  it('carries the distractor rule, with the measured figure', () => {
+    const p = prompt();
+    expect(p).toContain("An easy question's three distractors must be ones a resident rules out instantly");
+    expect(p).toContain('50.0%');
+  });
+
+  it('does not leave a locale block contradicting the floor', () => {
+    // The Fremont calibration carried its own "Target: 40% easy". One locale
+    // quietly exempting itself from the floor is how the floor stops meaning
+    // anything.
+    expect(prompt()).not.toContain('Target: 40% easy');
   });
 });
