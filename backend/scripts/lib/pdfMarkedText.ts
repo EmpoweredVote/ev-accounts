@@ -12,12 +12,12 @@
  * - A word is deleted when ≥ 60 % of its x-range is covered by the union of such rectangles, OR when a
  *   strike rectangle is assigned to it (each rect goes to the word it overlaps most — Indiana draws one
  *   rect per struck word) AND that assignment is confident: the rect covers ≥ 30 % of the word's width,
- *   OR ≥ 50 % of the rect's own width lies on the word. A rect that is "best" for a word only weakly (a
- *   graze from a neighbour's rect, with no better candidate on the line) does not by itself force a
- *   delete — the word's fate then falls back to the ordinary coverage rule below, which already fails
- *   closed on genuine partial coverage.
+ *   OR ≥ 50 % of the rect's own width lies on the word.
  * - FAIL CLOSED: a word 30–60 % covered with no rect assigned is doubt, and is fenced too (counted as
- *   `ambiguous`). Doubtful text is never presented as law.
+ *   `ambiguous`). So is a word that IS a rect's best (nothing else on the line was closer) but whose
+ *   assignment is too weak to meet the confidence bars above — such a rect was clearly aimed at some
+ *   word, and letting the ordinary coverage rule alone decide let a real (if small) graze read as safe
+ *   law. Doubtful text is never presented as law.
  * - Adjacent deleted words (across items and across line ends) merge into ONE fence.
  *
  * Text items are mostly whole lines, so a word's x-range inside an item is placed by its share of the
@@ -47,7 +47,7 @@ export const MIN_ASSIGN_RECT_COVERAGE = 0.5;
 /** Items whose baselines differ by at most this (pt) share a line. */
 const LINE_TOLERANCE = 1;
 
-interface Word { text: string; lo: number; hi: number; item: PdfTextItem; struck: boolean; deleted: boolean }
+interface Word { text: string; lo: number; hi: number; item: PdfTextItem; struck: boolean; deleted: boolean; weakAssign: boolean }
 
 function coveredLength(lo: number, hi: number, spans: Array<[number, number]>): number {
   const clipped = spans
@@ -103,7 +103,7 @@ function itemWords(item: PdfTextItem, fontWidths: FontWidths | undefined): { wor
     if (/\s/.test(chars[k])) { k++; continue; }
     const start = k;
     while (k < chars.length && !/\s/.test(chars[k])) k++;
-    words.push({ text: chars.slice(start, k).join(''), lo: at(start), hi: at(k), item, struck: false, deleted: false });
+    words.push({ text: chars.slice(start, k).join(''), lo: at(start), hi: at(k), item, struck: false, deleted: false, weakAssign: false });
   }
   return { words, fallback };
 }
@@ -134,10 +134,13 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
       if (r.fallback) widthFallbacks++;
       lineWords.push(...r.words);
     }
-    // Signal 2: Indiana draws one rect per struck word — give each strike rect to the word it overlaps most,
-    // but only trust that assignment (force a delete) when it is confident (see MIN_ASSIGN_*_COVERAGE
-    // above). A weak "best" — the only candidate on the line, grazed rather than struck — is left to the
-    // ordinary coverage rule below instead of being forced.
+    // Signal 2: Indiana draws one rect per struck word — give each strike rect to the word it overlaps most.
+    // A confident assignment (see MIN_ASSIGN_*_COVERAGE above) forces a full delete. A WEAK one — the
+    // rect's best candidate on the line, but grazed rather than struck — is never treated as safe law:
+    // fail closed review 2 found that falling back to the ordinary union-coverage rule let a rect that
+    // was clearly aimed at a word (nothing else on the line was closer) silently leave it unfenced when
+    // the graze itself was small. So a weak assignment always marks the word ambiguous (fenced, counted),
+    // regardless of what the coverage rule alone would have said.
     for (const rect of g.rects) {
       const [a, b] = span(rect);
       const rectWidth = b - a;
@@ -153,6 +156,7 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
       const wordShare = wordWidth > 0 ? bestOverlap / wordWidth : 0;
       const rectShare = rectWidth > 0 ? bestOverlap / rectWidth : 0;
       if (wordShare >= MIN_ASSIGN_WORD_COVERAGE || rectShare >= MIN_ASSIGN_RECT_COVERAGE) best.struck = true;
+      else best.weakAssign = true;
     }
     // Signal 1: coverage by the union of strike rects in the word's item band.
     for (const w of lineWords) {
@@ -161,7 +165,7 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
       const cover = spans.length > 0 && width > 0 ? coveredLength(w.lo, w.hi, spans) / width : 0;
       if (cover >= MIN_COVERAGE || w.struck) {
         w.deleted = true;
-      } else if (cover >= AMBIGUOUS_COVERAGE) {
+      } else if (cover >= AMBIGUOUS_COVERAGE || w.weakAssign) {
         w.deleted = true; // fail closed: doubtful text is never presented as law
         ambiguous++;
       }

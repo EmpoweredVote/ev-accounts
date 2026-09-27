@@ -19,14 +19,19 @@
  * exactly as it always has. Adjacent fences left separated only by whitespace (two `<strike>` runs
  * split by an inline element boundary, most often) are merged into one.
  *
- * FAIL CLOSED on an unresolvable `<style>` rule: if a rule sets line-through on a selector this
- * reader cannot reduce to a bare class name (a combinator, a pseudo-class, an attribute or id
- * selector, or a bare-tag/universal selector with no class at all), it may be marking elements this
- * reader cannot find — so the whole page cannot be trusted to have kept every deletion, and the
- * output carries the literal marker {@link MARKUP_UNRESOLVED_MARKER}. amendmentMarkup
- * (snapshotSources.ts) treats its presence as 'unknown' even when `[deleted: …]` fences are also
- * present elsewhere on the page — some deletions being visibly caught is not evidence that all of
- * them were.
+ * FAIL CLOSED, reported as `unresolved` rather than embedded in the text (fix round 2 — the marker
+ * used to be appended to the returned string, but an excerpt-only snapshot can cut it off, so the
+ * caller must see it as an explicit flag instead): a rule may be striking text this reader cannot
+ * find when
+ *   - a `<style>` rule sets line-through on a selector this reader cannot reduce to either a bare
+ *     class name or a bare tag name already in {@link STRUCK_TAGS} (a combinator, a pseudo-class, an
+ *     attribute or id selector, or a bare tag/universal selector this reader does not already treat
+ *     as struck), or
+ *   - the page links or `@import`s an external stylesheet this reader never reads at all.
+ * `htmlMarkedTextWithStats` returns `{ text, unresolved }`; `htmlToMarkedText` is a string-only
+ * convenience wrapper for callers that only need the text. `unresolved` must be threaded through to
+ * `buildSnapshot`'s `markupUnresolved` (snapshotSources.ts) rather than searched for in the text —
+ * the literal marker this module used to embed is NOT coder-visible output.
  */
 import { parseHTML } from 'linkedom';
 import { htmlToText } from '../../src/lib/verificationFetch.js';
@@ -34,9 +39,7 @@ import { htmlToText } from '../../src/lib/verificationFetch.js';
 const STRIKE_TAGS = new Set(['STRIKE', 'S', 'DEL']);
 const LINE_THROUGH_RE = /text-decoration(?:-line)?\s*:[^;]*line-through/i;
 
-/** The literal marker appended when a `<style>` rule set line-through on a selector this reader
- * could not resolve to a bare class (see the module doc's FAIL CLOSED note). */
-export const MARKUP_UNRESOLVED_MARKER = '[markup-unresolved]';
+export interface HtmlMarkedTextResult { text: string; unresolved: boolean }
 
 // A selector this reader trusts itself to test via an element's classList: one or more class tokens
 // (each ".name"), with an optional leading tag name and no combinator, pseudo-class, attribute or id
@@ -44,11 +47,15 @@ export const MARKUP_UNRESOLVED_MARKER = '[markup-unresolved]';
 // ".struck:hover", "[data-x]", "#id", or a bare "p" (no class at all) do not.
 const RESOLVABLE_SELECTOR_RE = /^[a-zA-Z][a-zA-Z0-9_-]*(?:\.[a-zA-Z0-9_-]+)+$|^(?:\.[a-zA-Z0-9_-]+)+$/;
 const CLASS_TOKEN_RE = /\.([a-zA-Z0-9_-]+)/g;
+// A bare tag name, and nothing else — resolvable only when that tag is already one of STRIKE_TAGS
+// (matching it needs no class lookup at all; isStruck already covers every element with this tag).
+const BARE_TAG_RE = /^[a-zA-Z][a-zA-Z0-9-]*$/;
 
 interface StruckClasses { classes: Set<string>; unresolved: boolean }
 
 /** Class names (lower-cased) declared struck by any `<style>` block's rules (a simple, non-nested
- * CSS reader), plus whether any line-through rule used a selector it could not resolve to a class. */
+ * CSS reader), plus whether any line-through rule used a selector it could not resolve to either a
+ * class or a tag this reader already treats as struck. */
 function struckClassesFrom(document: { querySelectorAll(sel: string): ArrayLike<{ textContent: string | null }> }): StruckClasses {
   const classes = new Set<string>();
   let unresolved = false;
@@ -62,6 +69,9 @@ function struckClassesFrom(document: { querySelectorAll(sel: string): ArrayLike<
         if (!sel) continue;
         if (RESOLVABLE_SELECTOR_RE.test(sel)) {
           for (const cm of sel.matchAll(CLASS_TOKEN_RE)) classes.add(cm[1].toLowerCase());
+        } else if (BARE_TAG_RE.test(sel) && STRIKE_TAGS.has(sel.toUpperCase())) {
+          // e.g. "s { text-decoration: line-through }" — isStruck already fences every <s>, so this
+          // rule adds nothing this reader doesn't already catch; not unresolved.
         } else {
           unresolved = true;
         }
@@ -69,6 +79,21 @@ function struckClassesFrom(document: { querySelectorAll(sel: string): ArrayLike<
     }
   }
   return { classes, unresolved };
+}
+
+/** True when the page links or `@import`s a stylesheet this reader never reads — it may set
+ * line-through on elements no local `<style>` rule (or tag/inline check) ever mentions. */
+function hasExternalStylesheet(document: {
+  querySelectorAll(sel: string): ArrayLike<{ getAttribute(name: string): string | null; textContent: string | null }>;
+}): boolean {
+  for (const link of Array.from(document.querySelectorAll('link'))) {
+    const rel = (link.getAttribute('rel') ?? '').toLowerCase().split(/\s+/);
+    if (rel.includes('stylesheet')) return true;
+  }
+  for (const style of Array.from(document.querySelectorAll('style'))) {
+    if (/@import\b/i.test(style.textContent ?? '')) return true;
+  }
+  return false;
 }
 
 interface StruckElement {
@@ -106,9 +131,14 @@ function mergeAdjacentFences(text: string): string {
   return cur;
 }
 
-export function htmlToMarkedText(html: string): string {
+/** Full result: the fenced, stripped text, and whether any line-through rule could not be fully
+ * resolved (an unresolvable `<style>` selector, or an external/`@import`ed stylesheet this reader
+ * never read). `unresolved` is a flag, never embedded in `text` — an excerpt-only snapshot can cut a
+ * trailing marker off, so the caller (buildSnapshot's `markupUnresolved`) must see it explicitly. */
+export function htmlMarkedTextWithStats(html: string): HtmlMarkedTextResult {
   const { document } = parseHTML(html);
-  const { classes: struckClasses, unresolved } = struckClassesFrom(document as unknown as Parameters<typeof struckClassesFrom>[0]);
+  const { classes: struckClasses, unresolved: unresolvedRule } = struckClassesFrom(document as unknown as Parameters<typeof struckClassesFrom>[0]);
+  const externalStylesheet = hasExternalStylesheet(document as unknown as Parameters<typeof hasExternalStylesheet>[0]);
   const all = Array.from(document.querySelectorAll('*')) as unknown as StruckElement[];
   // Document order from querySelectorAll means an ancestor is always visited before its descendants,
   // so checking against roots collected so far correctly skips a nested struck element.
@@ -121,6 +151,13 @@ export function htmlToMarkedText(html: string): string {
     const text = fenceSafe((root.textContent ?? '').replace(/\s+/g, ' ').trim());
     root.replaceWith(document.createTextNode(text.length > 0 ? `[deleted: ${text}]` : ''));
   }
-  const stripped = mergeAdjacentFences(htmlToText(document.toString()));
-  return unresolved ? `${stripped} ${MARKUP_UNRESOLVED_MARKER}` : stripped;
+  const text = mergeAdjacentFences(htmlToText(document.toString()));
+  return { text, unresolved: unresolvedRule || externalStylesheet };
+}
+
+/** String-only convenience wrapper over {@link htmlMarkedTextWithStats} for a caller that does not
+ * need the `unresolved` flag (tests, mainly) — production callers should use the full result so
+ * amendment_markup can fail closed on it. */
+export function htmlToMarkedText(html: string): string {
+  return htmlMarkedTextWithStats(html).text;
 }

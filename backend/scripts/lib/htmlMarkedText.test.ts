@@ -1,6 +1,6 @@
 // backend/scripts/lib/htmlMarkedText.test.ts
 import { describe, it, expect } from 'vitest';
-import { htmlToMarkedText, MARKUP_UNRESOLVED_MARKER } from './htmlMarkedText.js';
+import { htmlToMarkedText, htmlMarkedTextWithStats } from './htmlMarkedText.js';
 
 describe('htmlToMarkedText', () => {
   it('fences a <strike> element', () => {
@@ -59,22 +59,58 @@ describe('htmlToMarkedText', () => {
     expect(text).toBe('Keep [deleted: a [b〕 c] end.');
     expect(text.indexOf(']')).toBe(text.length - 1 - ' end.'.length);
   });
-  describe('an unresolvable <style> selector fails closed', () => {
-    it('appends the marker when a rule uses a descendant-combinator selector', () => {
+  describe('an unresolvable <style> selector fails closed — via the `unresolved` flag, never embedded in text', () => {
+    it('sets unresolved when a rule uses a descendant-combinator selector, and the text carries no marker', () => {
       const html = '<html><head><style>p .struck { text-decoration: line-through; }</style></head>' +
         '<body><p>Before <span class="struck">deleted words</span> after.</p></body></html>';
-      const text = htmlToMarkedText(html);
-      expect(text).toContain(MARKUP_UNRESOLVED_MARKER);
+      const r = htmlMarkedTextWithStats(html);
+      expect(r.unresolved).toBe(true);
+      expect(r.text).toBe('Before deleted words after.');
+      expect(r.text).not.toContain('[markup-unresolved]');
     });
-    it('appends the marker when a rule sets line-through on a bare tag selector (no class to key off)', () => {
+    it('sets unresolved when a rule sets line-through on a bare tag selector this reader does not already treat as struck', () => {
       const html = '<html><head><style>span { text-decoration: line-through; }</style></head>' +
         '<body><p>Before <span>maybe deleted</span> after.</p></body></html>';
-      expect(htmlToMarkedText(html)).toContain(MARKUP_UNRESOLVED_MARKER);
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(true);
     });
-    it('does NOT append the marker when every line-through rule resolves to a class', () => {
+    it('does NOT set unresolved when every line-through rule resolves to a class', () => {
       const html = '<html><head><style>span.struck { text-decoration: line-through; }</style></head>' +
         '<body><p>Before <span class="struck">deleted words</span> after.</p></body></html>';
-      expect(htmlToMarkedText(html)).not.toContain(MARKUP_UNRESOLVED_MARKER);
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(false);
+    });
+    it('does NOT set unresolved for a bare tag selector already in STRIKE_TAGS (s/del/strike)', () => {
+      const html = '<html><head><style>s { text-decoration: line-through; }</style></head>' +
+        '<body><p>Before <s>deleted words</s> after.</p></body></html>';
+      const r = htmlMarkedTextWithStats(html);
+      expect(r.unresolved).toBe(false);
+      expect(r.text).toBe('Before [deleted: deleted words] after.');
+    });
+    it('does NOT set unresolved for a selector list of only STRIKE_TAGS tags', () => {
+      const html = '<html><head><style>s, del, strike { text-decoration: line-through; }</style></head>' +
+        '<body><p>Before <del>deleted words</del> after.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(false);
+    });
+    it('sets unresolved for a mixed selector list where one selector is not resolvable', () => {
+      const html = '<html><head><style>span, s { text-decoration: line-through; }</style></head>' +
+        '<body><p>Before <s>deleted words</s> after.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(true);
+    });
+  });
+  describe('an external stylesheet fails closed (it may strike text this reader never sees)', () => {
+    it('sets unresolved when the page links an external stylesheet', () => {
+      const html = '<html><head><link rel="stylesheet" href="/styles.css"></head>' +
+        '<body><p>Plain text, no local markup at all.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(true);
+    });
+    it('sets unresolved when a <style> block `@import`s another stylesheet', () => {
+      const html = '<html><head><style>@import url("/other.css");</style></head>' +
+        '<body><p>Plain text, no local markup at all.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(true);
+    });
+    it('does NOT set unresolved for a page with no <link rel="stylesheet"> and no @import', () => {
+      const html = '<html><head><link rel="icon" href="/favicon.ico"></head>' +
+        '<body><p>Plain text.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(false);
     });
   });
 });

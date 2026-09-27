@@ -87,9 +87,11 @@ if (file) {
   const ctype = res.headers.get('content-type') ?? '';
   buf = new Uint8Array(await res.arrayBuffer());
   // A non-PDF response (an HTML error/interstitial page, most often) must never be handed to the PDF
-  // parser as if it were one — refuse it explicitly rather than let pdfMarkedText throw an opaque error.
-  if (!ctype.includes('pdf') && !looksLikePdfBytes(buf)) {
-    console.error(`refused: response is not a PDF (content-type "${ctype}") ${url}`);
+  // parser as if it were one. The magic bytes are the REQUIRED gate, same as saved-file mode — a
+  // claimed `content-type: application/pdf` on a response whose bytes are not actually a PDF (a
+  // mislabelled error page, or a host that always claims "pdf") is refused too, not waved through.
+  if (!looksLikePdfBytes(buf)) {
+    console.error(`refused: response is not a PDF (content-type "${ctype}", first bytes are not ${PDF_MAGIC}) ${url}`);
     process.exit(1);
   }
 }

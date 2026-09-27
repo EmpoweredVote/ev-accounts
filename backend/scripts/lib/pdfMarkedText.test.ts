@@ -112,13 +112,14 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     expect(markedTextFromGeometry(g)).toBe('hello world second');
   });
 
-  it('a weakly-assigned rect (below both MIN_ASSIGN_* thresholds) does not by itself force a delete, but the fail-closed coverage rule still fences genuine partial coverage', () => {
+  it('a weakly-assigned rect (below both MIN_ASSIGN_* thresholds) forces ambiguous, not a silent pass to the coverage rule', () => {
     // One word, two rects, each a weak "best" (it's the only word on the line): rect1 overlaps 15/100 of
     // the word (15 %, rectShare 15/35 ≈ 43 %) and rect2 overlaps 20/100 (20 %, rectShare 20/90 ≈ 22 %) —
     // both under MIN_ASSIGN_WORD_COVERAGE (30 %) and MIN_ASSIGN_RECT_COVERAGE (50 %), so NEITHER assignment
-    // forces a strike. Their UNION coverage of the word is (15+20)/100 = 35 %, which is squarely in the
-    // ordinary ambiguous band (30–60 %) — so the word is still fenced, but via that rule, not the rect
-    // assignment.
+    // forces a full delete via Signal 2. But fail-closed review 2 (fix round 2): a rect that IS a word's
+    // best candidate, however weakly, must never be waved through as safe law — so this still fences as
+    // ambiguous even before considering coverage. (Here the union coverage, (15+20)/100 = 35 %, would have
+    // reached the ordinary ambiguous band on its own too — see the next test for a case where it would not.)
     const g: PageGeometry = {
       items: [item('aaaaaaaaaa', 0, 100)],
       rects: [{ x0: -20, x1: 15, y0: 102.8, y1: 103.2 }, { x0: 80, x1: 170, y0: 102.8, y1: 103.2 }],
@@ -128,14 +129,17 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     expect(r.ambiguous).toBe(1);
   });
 
-  it('a rect that only grazes its sole candidate word (well under both thresholds, and under the coverage floor too) does not fence it at all', () => {
+  it('a rect that only grazes its sole candidate word is fenced as ambiguous, never silently kept as law (fail-closed review 2)', () => {
     // rect overlaps only 5/100 of the word (5 %) and 5/55 of itself (9 %) — the word is the only
-    // candidate so it is still "best", but neither MIN_ASSIGN_* threshold nor AMBIGUOUS_COVERAGE is met.
+    // candidate so it is still "best", and neither MIN_ASSIGN_* threshold is met, and the coverage alone
+    // (5 %) would be under AMBIGUOUS_COVERAGE too. Previously this fell through to the coverage rule and
+    // was read as un-struck law; fix round 2: a rect that is unambiguously AIMED at this word (nothing
+    // else on the line was closer) must never be silently trusted as safe just because the graze is small.
     const g: PageGeometry = { items: [item('aaaaaaaaaa', 0, 100)], rects: [{ x0: -50, x1: 5, y0: 102.8, y1: 103.2 }] };
     const r = markedTextFromGeometryWithStats(g);
-    expect(r.text).toBe('aaaaaaaaaa');
-    expect(r.fences).toBe(0);
-    expect(r.ambiguous).toBe(0);
+    expect(r.text).toBe('[deleted: aaaaaaaaaa]');
+    expect(r.fences).toBe(1);
+    expect(r.ambiguous).toBe(1);
   });
 
   it('a `]` inside deleted text is swapped for U+3015 so it cannot close the fence early', () => {

@@ -9,7 +9,6 @@
 import { createHash } from 'node:crypto';
 import { resolve, sep } from 'node:path';
 import { normalizeText } from '../../src/lib/researchVerifier.js';
-import { MARKUP_UNRESOLVED_MARKER } from './htmlMarkedText.js';
 import type { AmendmentText } from './recordBasis.js';
 import { isExcerptOnly, type SourceEntry, type SourceKind } from './sourcesManifest.js';
 
@@ -47,14 +46,19 @@ export interface SnapshotRecord {
 export const PDF_TRAILER_PREFIX = '[extracted by pdf-snapshot.ts with strike detection';
 
 /**
- * Does `text`, once trailing whitespace is trimmed, END with a pdf-snapshot.ts trailer? Checking only
- * a trailing `]` plus the prefix's presence (rather than a bare `.includes`) means a `[deleted: …]`
- * fence that happened to quote this exact phrase from a bill's own text could not be mistaken for the
- * real trailer, which is always the file's last line.
+ * Does `text`, once trailing whitespace is trimmed, END with a genuine pdf-snapshot.ts trailer?
+ * Finds the LAST occurrence of the trailer's fixed prefix and requires everything from there to the
+ * end of the (trimmed) text to be that one trailer — its own single closing `]`, and no other `]`
+ * anywhere in between. A bare `.includes` would let a `[deleted: …]` fence that happened to quote
+ * this exact phrase from a bill's own text (or any text still following it) be mistaken for the real
+ * trailer, which is always the last thing pdf-snapshot.ts writes.
  */
 function hasPdfSnapshotTrailer(text: string): boolean {
   const trimmed = text.trimEnd();
-  return trimmed.endsWith(']') && trimmed.includes(PDF_TRAILER_PREFIX);
+  const idx = trimmed.lastIndexOf(PDF_TRAILER_PREFIX);
+  if (idx === -1) return false;
+  const tail = trimmed.slice(idx);
+  return tail.endsWith(']') && !tail.slice(0, -1).includes(']');
 }
 
 /**
@@ -64,13 +68,14 @@ function hasPdfSnapshotTrailer(text: string): boolean {
  * (pdfMarkedText) is present; 'unknown' when neither is — fail closed rather than assume nothing
  * was deleted.
  *
- * FAIL CLOSED: htmlToMarkedText's {@link MARKUP_UNRESOLVED_MARKER} — a `<style>` rule set
- * line-through on a selector it could not resolve to a class — always forces 'unknown', even when
- * `[deleted: …]` fences are also present: some deletions being caught is not evidence every one was.
+ * This function reads TEXT ONLY. Whether the HTML→text conversion itself could not fully resolve
+ * every line-through rule (an unresolvable `<style>` selector, or an external stylesheet never read)
+ * is NOT decidable from the text alone — an excerpt-only snapshot can cut off any marker a converter
+ * might have appended — so that case is a separate, explicit `markupUnresolved` flag on
+ * {@link buildSnapshot}, not something this function searches for.
  */
 export function amendmentMarkup(text: string, amendmentText: AmendmentText): 'kept' | 'none' | 'unknown' {
   if (amendmentText === 'final') return 'none';
-  if (text.includes(MARKUP_UNRESOLVED_MARKER)) return 'unknown';
   if (text.includes('[deleted: ') || hasPdfSnapshotTrailer(text)) return 'kept';
   return 'unknown';
 }
@@ -146,14 +151,29 @@ export function buildSnapshot(args: {
   batchId: string;
   /** How this source prints amended text (sourceProfiles.ts `rules.amendment_text`). Default 'final'. */
   amendmentText?: AmendmentText;
+  /**
+   * True when the converter that produced `fetchedText` (htmlMarkedTextWithStats, currently) could
+   * not fully resolve every line-through rule on the page — an unresolvable `<style>` selector, or an
+   * external/`@import`ed stylesheet this reader never read at all. Forces `amendment_markup` to
+   * `'unknown'` regardless of what the (possibly excerpted) text otherwise shows: some deletions
+   * being caught is not evidence every one was, and an excerpt can cut off any in-text signal of this
+   * anyway — so it must travel as an explicit flag, never something searched for in the text.
+   */
+  markupUnresolved?: boolean;
 }): SnapshotRecord {
-  const { entry, fetchedText, failure, fetchedBy, batchId, amendmentText = 'final' } = args;
+  const { entry, fetchedText, failure, fetchedBy, batchId, amendmentText = 'final', markupUnresolved = false } = args;
   const excerptOnly = isExcerptOnly(entry.source_kind);
+  const markup = (text: string | null): 'kept' | 'none' | 'unknown' => {
+    if (amendmentText === 'final') return 'none';
+    if (markupUnresolved) return 'unknown';
+    if (text === null) return 'unknown';
+    return amendmentMarkup(text, amendmentText);
+  };
   const make = (ok: boolean, fail: string | null, sha: string | null, text: string | null): SnapshotRecord => ({
     snapshot_id: snapshotIdFor({ batchId, url: entry.url, pageSha256: sha, snapshotText: text }),
     url: entry.url, source_kind: entry.source_kind, fetched_by: fetchedBy, excerpt_only: excerptOnly,
     ok, failure: fail, page_sha256: sha, snapshot_text: text,
-    amendment_markup: text === null ? (amendmentText === 'final' ? 'none' : 'unknown') : amendmentMarkup(text, amendmentText),
+    amendment_markup: markup(text),
   });
   if (fetchedText === null) return make(false, failure ?? 'fetch-failed', null, null);
   const sha = createHash('sha256').update(fetchedText).digest('hex');

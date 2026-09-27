@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseSourcesManifest } from './lib/sourcesManifest.js';
 import { buildSnapshot, resolveHumanSavedPath, PDF_TRAILER_PREFIX, type SnapshotRecord } from './lib/snapshotSources.js';
-import { htmlToMarkedText } from './lib/htmlMarkedText.js';
+import { htmlMarkedTextWithStats } from './lib/htmlMarkedText.js';
 import { loadSourceProfiles, resolveProfile } from './lib/sourceProfiles.js';
 import { createPageFetcher } from '../src/lib/researchVerifier.js';
 import { createVerificationFetchSession, htmlToText, robotsAllows, EMPOWERED_VOTE_UA, HTTP_TIMEOUT_MS } from '../src/lib/verificationFetch.js';
@@ -41,9 +41,17 @@ const batchId = manifest.batch_id;
 const profiles = loadSourceProfiles();
 
 /** True for a file pdf-snapshot.ts itself produced: already plain text with `[deleted: …]` fences and
- * its own trailer, so it must be read UNSTRIPPED — htmlToText/htmlToMarkedText would treat a stray
- * `<`/`>` in the bill text, or in the trailer's own URL, as an HTML tag and remove it (spec §9). */
-const isPdfSnapshotOutput = (text: string) => text.includes(PDF_TRAILER_PREFIX);
+ * its own trailer, so it must be read UNSTRIPPED — htmlToText/htmlMarkedTextWithStats would treat a
+ * stray `<`/`>` in the bill text, or in the trailer's own URL, as an HTML tag and remove it (spec §9).
+ * Requires the file's actual LAST LINE (raw, unmodified content — real newlines, unlike the collapsed
+ * text buildSnapshot works with) to start with the trailer's fixed prefix and end with `]`, so a bill
+ * that merely quotes the phrase mid-file is not mistaken for a real pdf-snapshot.ts output. */
+function isPdfSnapshotOutput(raw: string): boolean {
+  const trimmed = raw.trimEnd();
+  const lastNL = trimmed.lastIndexOf('\n');
+  const lastLine = lastNL === -1 ? trimmed : trimmed.slice(lastNL + 1);
+  return lastLine.startsWith(PDF_TRAILER_PREFIX) && lastLine.endsWith(']');
+}
 
 const session = createVerificationFetchSession();
 const fetcher = createPageFetcher(session.fetch);
@@ -53,11 +61,17 @@ for (const entry of manifest.sources) {
   if (entry.human_saved_path) {
     const raw = readFileSync(resolveHumanSavedPath(dir, entry.human_saved_path)!, 'utf8');
     // A human-saved page from a `marked` source is read the same way a code fetch would be — with
-    // htmlToMarkedText, so a saved AZ-style HTML page keeps its deletion fences too (spec §9) — UNLESS
-    // it is itself a pdf-snapshot.ts output file (already plain, already fenced): that one is passed
-    // through untouched, trailer and all.
-    const fetchedText = isPdfSnapshotOutput(raw) ? raw : amendmentText === 'marked' ? htmlToMarkedText(raw) : htmlToText(raw);
-    out.push(buildSnapshot({ entry, fetchedText, failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    // htmlMarkedTextWithStats, so a saved AZ-style HTML page keeps its deletion fences too (spec §9)
+    // — UNLESS it is itself a pdf-snapshot.ts output file (already plain, already fenced): that one is
+    // passed through untouched, trailer and all.
+    if (isPdfSnapshotOutput(raw)) {
+      out.push(buildSnapshot({ entry, fetchedText: raw, failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    } else if (amendmentText === 'marked') {
+      const { text, unresolved } = htmlMarkedTextWithStats(raw);
+      out.push(buildSnapshot({ entry, fetchedText: text, failure: null, fetchedBy: 'human', batchId, amendmentText, markupUnresolved: unresolved }));
+    } else {
+      out.push(buildSnapshot({ entry, fetchedText: htmlToText(raw), failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    }
     continue;
   }
   if (amendmentText === 'marked') {
@@ -84,7 +98,8 @@ for (const entry of manifest.sources) {
         continue;
       }
       const html = await res.text();
-      out.push(buildSnapshot({ entry, fetchedText: htmlToMarkedText(html), failure: null, fetchedBy: 'code', batchId, amendmentText }));
+      const { text, unresolved } = htmlMarkedTextWithStats(html);
+      out.push(buildSnapshot({ entry, fetchedText: text, failure: null, fetchedBy: 'code', batchId, amendmentText, markupUnresolved: unresolved }));
     } catch (e) {
       out.push(buildSnapshot({ entry, fetchedText: null, failure: (e as Error).message, fetchedBy: 'code', batchId, amendmentText }));
     }
