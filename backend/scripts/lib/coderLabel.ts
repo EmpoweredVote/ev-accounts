@@ -87,10 +87,15 @@ export const verbatimIn = (snapshotText: string, span: string): boolean => {
  * instrument produce one key, and so a page in the long form still shows a short-form instrument label
  * (recordBasis.ts `pageShowsInstrument`).
  */
-const LONG_FORM_BILL = /\b(senate|house|assembly)\s+bill\b/gi;
-const LONG_FORM_PREFIX: Record<string, string> = { senate: 'sb', house: 'hb', assembly: 'ab' };
+// Indiana prints an enacted bill as its enrolled act — "SENATE ENROLLED ACT No. 1(ss)", page headers
+// "SEA 1(ss)" — never "SB 1" (SB 1(ss), 2022). Same bill, same number, so the same instrument. The
+// short forms need a number to follow, so the word "sea" in running text is never a prefix.
+const LONG_FORM_BILL = /\b(senate|house|assembly)\s+(?:bill|enrolled\s+act)(?:\s+no\.?)?(?=\s*\d)/gi;
+const ENROLLED_SHORT = /\b(sea|hea)(?=\s*\d)/gi;
+const LONG_FORM_PREFIX: Record<string, string> = { senate: 'sb', house: 'hb', assembly: 'ab', sea: 'sb', hea: 'hb' };
 export function normalizeInstrumentForm(s: string): string {
-  return s.replace(LONG_FORM_BILL, (_m, chamber: string) => LONG_FORM_PREFIX[chamber.toLowerCase()]);
+  const prefix = (_m: string, chamber: string) => LONG_FORM_PREFIX[chamber.toLowerCase()];
+  return s.replace(LONG_FORM_BILL, prefix).replace(ENROLLED_SHORT, prefix);
 }
 
 /**

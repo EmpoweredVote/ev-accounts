@@ -38,6 +38,22 @@ describe('confirmRow (spec §1.6)', () => {
   it('flags a record dated before the current term', () => expect(run({ restsOnPassages: [P({ date: '2019-02-01' })] })).toContain('record-before-term'));
   it('flags imprecise term dates rather than guessing (§4.10)', () =>
     expect(run({ seat: { ...seat, start_precision: 'year' }, restsOnPassages: [P({ date: '2021-03-01' })] })).toContain('dates-imprecise'));
+  it('a year-precision term start settles a record from a LATER year (the dates can settle it, §4.10)', () => {
+    const f = run({ seat: { ...seat, term_start: '2010-01-01', start_precision: 'year' }, restsOnPassages: [P({ date: '2022-08-05' })] });
+    expect(f).not.toContain('dates-imprecise');
+    expect(f).not.toContain('record-before-term');
+  });
+  it('a year-precision term start flags a record from an EARLIER year as before the term', () =>
+    expect(run({ seat: { ...seat, term_start: '2010-01-01', start_precision: 'year' }, restsOnPassages: [P({ date: '2009-06-01' })] }))
+      .toContain('record-before-term'));
+  it('a month-precision term start settles a later month and cannot settle the same month', () => {
+    const s2 = { ...seat, term_start: '2021-03-01', start_precision: 'month' as const };
+    expect(run({ seat: s2, restsOnPassages: [P({ date: '2021-04-02' })] })).not.toContain('dates-imprecise');
+    expect(run({ seat: s2, restsOnPassages: [P({ date: '2021-03-20' })] })).toContain('dates-imprecise');
+  });
+  it('an unknown-precision term start never settles a record', () =>
+    expect(run({ seat: { ...seat, term_start: '2010-01-01', start_precision: 'unknown' }, restsOnPassages: [P({ date: '2022-08-05' })] }))
+      .toContain('dates-imprecise'));
   it('flags a statement older than the cycle window', () =>
     expect(run({ restsOnPassages: [P({ v3_class: 'statement-answer', date: '2018-05-01', provision_quote: null })] })).toContain('statement-out-of-cycle'));
   it('flags undated evidence', () => expect(run({ restsOnPassages: [P({ date: null })] })).toContain('undated-evidence'));

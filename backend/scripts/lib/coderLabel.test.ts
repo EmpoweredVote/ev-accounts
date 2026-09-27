@@ -181,6 +181,19 @@ describe('0.3 record fields are required per instrument group (ruling 2026-09-26
   });
 });
 
+describe('instrumentKey — Indiana enrolled-act forms are the same instrument as the bill', () => {
+  it('"Senate Enrolled Act No. 1(ss)", "SEA 1(ss)" and "SB 1(ss)" share a key; so do HEA / HB', () => {
+    expect(instrumentKey('SENATE ENROLLED ACT No. 1(ss)')).toBe(instrumentKey('SB 1(ss)'));
+    expect(instrumentKey('SEA 1(ss)')).toBe(instrumentKey('SB 1(ss)'));
+    expect(instrumentKey('HEA 1296 (2022)')).toBe(instrumentKey('HB 1296 (2022)'));
+    expect(instrumentKey('House Enrolled Act No. 1296 (2022)')).toBe(instrumentKey('HB 1296 (2022)'));
+    expect(instrumentKey('Senate Bill No. 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
+  });
+  it('"sea"/"hea" as ordinary words are not bill prefixes (a number must follow)', () => {
+    expect(instrumentKey('the sea level act')).toBe('thesealevelact');
+  });
+});
+
 describe('instrumentKey long-form chamber-bill (fix round 1)', () => {
   it('maps "Senate Bill" / "House Bill" / "Assembly Bill" to the short prefix, case-insensitively', () => {
     expect(instrumentKey('Senate Bill 208 (2024)')).toBe(instrumentKey('SB 208 (2024)'));
