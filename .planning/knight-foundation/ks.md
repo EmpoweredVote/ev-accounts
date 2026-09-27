@@ -521,20 +521,57 @@ June-2025 arrival that cannot be dated to the day is written `2025-06-01` / `mon
    string-constructed one. **The positive control is the only reason this was caught** — it asserted
    that five known House oath records must be found, and they were not.
 
-### Final term-start position — 163 of 165
+### ✅ THE TWO SENATE COMMISSIONS — chased, and they settle at `month`, 2026-09-27
+
+Every online avenue was tried and each is recorded here so nobody repeats it:
+
+| Source | Result |
+| --- | --- |
+| All 54 Senate journal days, 2026 session | **No interim-oath record exists** — controlled, see above |
+| Governor's press releases (`governor.ks.gov`, site-restricted search) | **Nothing** for either name |
+| Member pages, roster CSV | No dates (`Firstterm` sparse and stale, `Enddate` dead) |
+| Contemporaneous local reporting | Gives the **convention** date, not the oath |
+
+🔴 **AND ONE QUOTE SETTLES IT.** The Abilene Reflector-Chronicle, reporting Hill's selection:
+
+> *"As of **June 18**, Hill does **not know the specific date and place of his swear-in**. He
+> anticipates though it will be next week."*
+
+▶ **The appointee himself did not know his own swearing-in date two days after the convention.** So
+the "will be sworn in Thursday, June 26" figure circulating elsewhere is an **anticipation**, and no
+contemporaneous source fixes the day. That is not a gap in the search; it is the state of the record.
+
+**Both are therefore written at `month` precision — which is what that value exists for:**
+
+| Seat | Written | Evidence |
+| --- | --- | --- |
+| Senate 24 **Scott Hill** | `2025-06-01` · `month` | Republican precinct convention **2025-06-16** (two independent reports agree); Claeys resigned for a USDA post, and Kansas law makes the precincts convene **within 21 days** of a resignation |
+| Senate 25 **Silas Miller** | `2025-12-01` · `month` | Sedgwick County Democratic Party precinct election **2025-12-04** (Kansas Reflector, read directly); Ware announced her resignation **Nov 13** |
+
+⚠ **Residual risk, stated rather than hidden:** if Hill's oath slipped into July, `month` June is
+wrong. "Next week" from June 18 falls inside June, and the Senate was not in session so no floor
+ceremony was needed — but this is an inference about a range, not a sourced day.
+⚠ **A tertiary aggregator gives Miller "December 22, 2025".** It is not used: it is neither
+first-party nor contemporaneous, and this programme's standard is that a DAY is claimed only where
+individually sourced.
+
+▶ **The day-precision record exists — it is simply not published.** Route if it is ever wanted: the
+Secretary of the Senate, or the Secretary of State, who holds the commission itself.
+
+### Final term-start position — 163 of 165 to the day, 165 of 165 dated
 
 | | count | `start_precision` | source |
 | --- | --- | --- | --- |
 | Sworn 2025-01-13, still seated | **157** | `day` | House & Senate Journals, First Day 2025 |
 | House interim appointees | **5** | `day` | House Journal, First Day 2026 |
 | House 121 Mike Storm | **1** | `day` | House Journal, 2026-03-16 |
-| **Senate 24 Hill · Senate 25 Miller** | **2** | — | **open — the Senate publishes none** |
+| Senate 24 Scott Hill | **1** | `month` | convention 2025-06-16; **no day-precision source exists** |
+| Senate 25 Silas Miller | **1** | `month` | precinct election 2025-12-04; same |
 
 ### What stage 2 still owes
 
 1. ✅ **A term-start source — DONE.** The Journals give 162 of 165 to the day.
-2. ▶ **The two open arrivals** — Senate 24 Hill and Senate 25 Miller, from the Senate Secretary
-   or the Secretary of State. House 121 Storm is DONE (2026-03-16).
+2. ✅ **Every arrival is dated** — 163 to the day, 2 at `month`. Nothing is open here.
 3. ▶ **Duplicate-name checks** against existing `politicians` rows. 🔴 Expect real collisions:
    MN-2 already found *a Kansas Libertarian* colliding with a Minnesota legislator, so Kansas names
    are known to exist in this database under other people.
