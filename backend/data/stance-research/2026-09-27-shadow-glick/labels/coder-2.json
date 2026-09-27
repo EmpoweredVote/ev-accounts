@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "07114859-90ed-4ce8-9a20-f5cbb81bd2e5",
+      "office_id": "a69aeb58-995a-470a-91ab-14c448709103",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6b0faac4-071f-5daf-980c-a2e9c4ae6ec8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "Makes changes to when an abortion may be performed, including when: (1) the abortion is necessary to prevent any serious health risk of the pregnant woman or to save the pregnant woman's life; (2) the fetus is diagnosed with a lethal fetal anomaly; or (3) the pregnancy is a result of rape or incest.",
+          "note": "Bill details page names Glick as author and digests the exceptions.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Sen. Susan Glick.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "56e4cf9f-718f-5624-97f8-e4ad83a5a754",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Roll call shows Glick voting Yea on final concurrence, 28-19.",
+          "record_kind": "vote",
+          "actor_quote": "Crane Glick Raatz",
+          "tally_quote": "Yea 28"
+        },
+        {
+          "snapshot_id": "c2a64d18-7efb-5ff2-baa9-4802382f7d2d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age of the fetus, if: (A) for reasons based upon the professional, medical judgment of the pregnant woman's physician, if either: (i) the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "Enrolled act text; operative exception clauses, excluding the deleted first-trimester language.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "6b0faac4-071f-5daf-980c-a2e9c4ae6ec8",
+        "56e4cf9f-718f-5624-97f8-e4ad83a5a754",
+        "c2a64d18-7efb-5ff2-baa9-4802382f7d2d"
+      ],
+      "reasoning": "Glick authored SB 1(ss) (2022 First Special Session) and voted Yea when the Senate concurred, 28-19. The enrolled act permits abortion only before twenty weeks for a serious health risk to the mother, to save her life, or a lethal fetal anomaly, or in the first ten weeks for rape or incest, which matches 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

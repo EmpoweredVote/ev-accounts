@@ -1,0 +1,19 @@
+Wrote `labels/coder-1.json` — one row, `codebook_version: "0.3.1"`, `coder_slot: 1`.
+
+**Chair: 4** — "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+
+**Passages (all three survive V1–V5, all one instrument group, SB 1(ss) (2022 First Special Session)):**
+
+| snapshot | V1 | V3 / kind | V4 | fields carried |
+|---|---|---|---|---|
+| `6b0faac4` details page | own-act | record / author | chair-shaped | `actor_quote`: "Authored by: Sen. Susan Glick." |
+| `56e4cf9f` roll call 58 | own-act | record / vote | chair-shaped | `actor_quote`: "Boehnlein Crane Glick Raatz"; `tally_quote`: "Yea 28 Abortion. Nay 19" |
+| `c2a64d18` enrolled text | own-act | record / vote | chair-shaped | `provision_quote`: the "criminal act, except…" sentence |
+
+Judgment calls worth flagging for the reviewer:
+
+- **Concurrence counted as a chair-bearing vote.** V4's `procedural` list is enumerated (cloture, rule, table, recommit, previous question, adjournment) and does not include concurrence, which here was the final action disposing of the bill (it became Public Law 179(ss) the same day). 28–19 is well outside the 10% `near-unanimous` band.
+- **Lethal fetal anomaly.** The Act carries one exception the rung does not name. It is a narrow additional exception and does not move the law toward the rung that would "allow abortion during the first trimester" — first-trimester abortions remain criminal outside the listed circumstances — so I kept `chair-shaped` rather than `compound-partial`.
+- **The `provision_quote` contains a page-break artifact** ("…shall in all instances be SEA 1(ss) — Concur 13 a criminal act…"). That is how the span reads in the snapshot; I copied it exactly rather than silently cleaning it, since verbatim is a code check.
+- **No `[deleted: …]` text is quoted anywhere** — the ban sentence and the rape/incest clause paraphrased in the note are both added/unchanged text.
+- `quotes` is empty: none of the three sources contains Glick's own words, only her acts. `needs_source` is empty — the record is complete for this chair.

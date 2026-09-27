@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "07114859-90ed-4ce8-9a20-f5cbb81bd2e5",
+      "office_id": "a69aeb58-995a-470a-91ab-14c448709103",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6b0faac4-071f-5daf-980c-a2e9c4ae6ec8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "The Indiana General Assembly bill page names her as the author of the abortion bill that became Public Law 179(ss).",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Sen. Susan Glick.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "56e4cf9f-718f-5624-97f8-e4ad83a5a754",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Her surname appears in the Yea column of the final concurrence vote on the single-subject abortion bill, and the 28-19 split is well outside the near-unanimous band.",
+          "record_kind": "vote",
+          "actor_quote": "Boehnlein Crane Glick Raatz",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "c2a64d18-7efb-5ff2-baa9-4802382f7d2d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "Sec. 1. (a) Abortion shall in all instances be SEA 1(ss) — Concur 13 a criminal act, except when performed under the following circumstances:",
+          "note": "The enrolled text criminalizes abortion except for a serious health risk or to save the pregnant woman's life, a lethal fetal anomaly, and a pregnancy that is \"a result of rape or incest\" within the first ten weeks of postfertilization age.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "6b0faac4-071f-5daf-980c-a2e9c4ae6ec8",
+        "56e4cf9f-718f-5624-97f8-e4ad83a5a754",
+        "c2a64d18-7efb-5ff2-baa9-4802382f7d2d"
+      ],
+      "reasoning": "Glick authored SB 1(ss) (2022 First Special Session) and voted Yea on its concurrence, and the enrolled text provides that \"Abortion shall in all instances be\" \"a criminal act, except when performed under the following circumstances:\" — a serious health risk or saving the woman's life, a lethal fetal anomaly, and a pregnancy that is \"a result of rape or incest\" within ten weeks. That is the rung that would \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life.\" It excludes the rung that would \"allow abortion during the first trimester, and after that only to protect the mother's health\" (first-trimester abortions are criminal outside those exceptions) and the rung that would \"ban abortion in all cases, with no exceptions.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
