@@ -308,8 +308,8 @@ whose file names him, so the obligation travels with the row. All 130 stored at 
 | NC | **120** | **50** | **552** | 100 |
 | FL | **120** | **40** | **411** | 67 |
 | GA | **180** | **56** | **537** | 159 |
-| KS | **125** | **40** | **114** | 105 |
-| KY | **100** | **38** | **136** | 120 |
+| KS | **125** | **40** | **626** | 105 |
+| KY | **100** | **38** | **419** | 120 |
 | MI | **110** | **38** | **533** | 83 |
 | MN | **134** | **67** | **855** | 87 |
 | MS | 0 | 0 | **300** | 82 |
@@ -321,7 +321,8 @@ whose file names him, so the obligation travels with the row. All 130 stored at 
 
 🟢 **NO STATE IN THIS TABLE OWES A `place` LOAD ANY MORE.** All sixteen now carry one; the six that read `0` did so because this table had not been re-measured since 2026-08-28, not because the layer was missing. **TWO still need `sldu` + `sldl`: MS and SD** — and those are the only rows here that block address reachability. ND was struck off by ND-1 on 2026-09-25 (48 + 47), **KY by KY-1 on 2026-09-26 (100 + 38) and KS by KS-1 on 2026-09-27 (125 + 40).**
 
-🔴 **THE `place` COLUMN ABOVE HELD COUNTY-SUBDIVISION COUNTS, NOT PLACES, FOR AT LEAST TWO ROWS — AND ONE OF THEM NEARLY COST A NEEDLESS ~600-ROW LOAD.** Re-measured 2026-09-27: Kansas is **114** `G4210` places and **626** `G4110` county subdivisions; Kentucky is **136** and **419**. The old table carried 626 and 419 in the `place` column. ▶ **Only the KS and KY rows have been re-measured — treat every other high `place` figure here as unverified until someone counts `G4210` for it.** The fix is to read `essentials.geofence_boundaries` keyed by **2-digit FIPS**, never `districts` (USPS), and to name the MTFCC in the query.
+🔴🔴 **CORRECTION, 2026-09-27: THIS TABLE'S `place` COLUMN WAS RIGHT AND A "FIX" TO IT WAS WRONG.** Earlier today the KS and KY rows were changed to 114 and 136 on the claim that the `place` column held county subdivisions. **That claim was false and has been reverted.** This codebase is unambiguous — `load-state-tiger-boundaries.ts` says it repeatedly — that **`G4110` is INCORPORATED MUNICIPALITIES** (the elected governments this programme seats), **`G4210` is CDPs** (statistical, deliberately filtered out), and **`G4040` is county subdivisions**. Measured: Kansas **626 G4110 + 114 G4210**, Kentucky **419 + 136**. ▶ **The `place` column means G4110, and 626 / 419 are correct.**
+⚠ **`ks.md`'s slice-open note that "PROGRAM.md's 626 column is COUNTY SUBDIVISIONS, not places" is likewise wrong and is corrected there.** The KS-1 conclusion is unaffected — Kansas still owes no `place` load — but the LABEL was wrong, and it mattered: **Wichita city is `2079000` with MTFCC `G4110`**, so a stage-3 session looking for it among the 114 `G4210` rows would have found nothing.
 
 ⚠ **THE `MI` ROWS IN BOTH TABLES ABOVE ARE STALE, AND IT IS THE TRACKER THAT IS BEHIND, NOT THE DATA.** Re-run on 2026-09-25, `measure-program-tables.mjs` reads Michigan as **110/110 House, 38/38 Senate and 110 + 38 polygons** — slice 11 applied to production, but its tracker entry is on the unmerged branch of **PR #797**, so these rows have never seen it. The generated totals line is therefore **1,829 seated of 2,563, 734 remaining, 11 of 16 legislatures loaded**, not the 1,682/881/10 printed above. **Left unedited on purpose** — rewriting MI's rows from this branch would collide with the branch that owns them. 🔴 **A TRACKER ROW CAN BE WRONG BECAUSE A PULL REQUEST IS OPEN, AND THAT LOOKS EXACTLY LIKE A ROW NOBODY MEASURED.** Re-generate before quoting either table.
 

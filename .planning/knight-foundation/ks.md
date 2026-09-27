@@ -25,8 +25,15 @@ pointed at the other returns an empty set rather than an error.
 ▶ **Measure geometry in `geofence_boundaries` keyed by FIPS. Measure offices and districts in
 `districts` keyed by USPS.** Never infer one from the other.
 
-⚠ **`PROGRAM.md`'s `626` column for Kansas is COUNTY SUBDIVISIONS, not places.** Reading it as a
-place count is what made the first pass plausible.
+⚠ ~~`PROGRAM.md`'s `626` column for Kansas is COUNTY SUBDIVISIONS, not places.~~
+🔴🔴 **THAT LINE IS WRONG AND WAS CORRECTED 2026-09-27.** `load-state-tiger-boundaries.ts` says
+repeatedly that **`G4110` is INCORPORATED MUNICIPALITIES** — the elected governments this programme
+seats — that **`G4210` is CDPs**, statistical and deliberately filtered out, and that **`G4040`** is
+county subdivisions. So Kansas's **626 `G4110`** rows ARE its places and PROGRAM.md's column was
+right all along; the **114 `G4210`** rows are CDPs.
+▶ **The KS-1 conclusion is unaffected — Kansas owes no `place` load either way — but the LABEL
+mattered: Wichita city is `2079000`, MTFCC `G4110`.** A stage-3 session hunting for it among the
+114 `G4210` rows would have found nothing and concluded the city was missing.
 
 ## Baseline as measured when the slice opened, 2026-09-26
 
@@ -756,6 +763,53 @@ author** reserved · ✅ `check:occupancy` — *"every politicians INSERT names 
 5. ✅ **APPLIED 2026-09-27** — measured from outside through both connections, idempotent on
    re-run, probed end to end, and 165/165 resolve through the full address join.
 6. ▶ **NEXT: stage 3 — Wichita city council.** Unmeasured.
+
+## ▶▶ OPEN STAGE 3 HERE — prepared 2026-09-27, nothing started
+
+**You are in worktree `C:/ev-accounts-ky`, branch `knight/ks-slice14`** (a Kentucky directory name
+holding the Kansas branch). At preparation time: **12 ahead of master, 0 behind, working tree clean,
+HEAD pushed.** 🔴 **This file is NOT on master** — a session in `C:/EV-Accounts` cannot read it.
+
+**Done:** stage 1 (geography) and stage 2 (the legislature) are APPLIED and verified.
+**Stage 3 is Wichita city council, and nothing about it has been measured.**
+
+### First moves
+
+1. 🔴 **`npm run steward --prefix backend -- who` FIRST, and again immediately before any write.**
+   The lease lapsed silently between plan and apply during stage 2. `state:ks` was re-claimed
+   2026-09-27 and runs to **2026-09-28 16:17Z** — it will likely need extending.
+2. `git fetch origin` and check drift. The hot files are the generic TIGER loader and `PROGRAM.md`.
+3. Read `PROGRAM.md`'s KS row for where the programme stands.
+
+### What is already true, measured 2026-09-27
+
+| Fact | Value |
+| --- | --- |
+| **Wichita city boundary** | **`2079000`, MTFCC `G4110`** (an incorporated municipality) |
+| Wichita as a county subdivision | `2017379000`, `G4040` — a different row, do not confuse them |
+| Sedgwick County | `20173` (`G4020`) |
+| Kansas `LOCAL` / `LOCAL_EXEC` districts | **0** |
+| Kansas local or county **offices** | **0** |
+| `governments` rows for Wichita or Sedgwick | **0** — the government row must be created |
+| Kansas custom (`X####`) boundaries | **0** — council-district geometry is NOT loaded |
+
+▶ So stage 3 needs, in order: the **office inventory from the charter**, a `governments` row, council
+**district geometry** (Wichita publishes its own; there is no TIGER layer for city council), then
+structure and occupancy migrations on two fresh `CC_` slots.
+
+### The rules most likely to bite here
+
+- 🔴🔴 **READ THE CHARTER'S OWN SENTENCE — it is the office inventory.** KY-4 found spec §3.2 simply
+  wrong for Lexington, and KY-3 found the city's own councilmembers page inventing a Vice Mayor
+  office that does not exist. **Do not infer a council's shape from other cities.**
+- 🔴 **A certified election result is not a fact about who holds the seat** — it paid twice in
+  Fayette. Confirm every seat against a source independent of the result.
+- 🔴 **The oath date must not be computed.** Three states have paid for that. Kansas's *legislature*
+  publishes its oath in the Journal; a city will not, so expect to source arrivals individually.
+- 🔴 **`politicians.is_incumbent` explicitly on every insert**, and remember stage 2 found **4 of 165
+  already existed** — run the duplicate check with the guard's own predicate before writing.
+- 🔴 **Wichita's banner collides with the Kansas state banner** (one of four such cities). Read
+  `states/KS.jpg` in the 6:1 band before choosing anything. That is stage 5, not now.
 
 ## Expected scope for the slice
 
