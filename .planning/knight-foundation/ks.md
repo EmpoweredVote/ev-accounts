@@ -1099,6 +1099,127 @@ set explicitly to `true` on every one of them.
 | `wichita-council-minutes-2019-01-08.docx` | the appointment motion naming the Jan 15 commencement |
 | `wichita-council-minutes-2019-01-15.docx` | Tuttle's oath, and her first attendance line |
 
+## ▶ KS-3 vintage — MEASURED, NOT PROVED. STILL NOT LOADED, 2026-09-27.
+
+The six polygons are **not loaded** and should not be until the last item below is settled.
+
+### 🔴🔴 THE COUNTY IS NOT AN INDEPENDENT CHECK, AND ONLY MEASURING SHOWED THAT
+
+Sedgwick County runs Wichita's elections and publishes its own council-district layer:
+`gismaps.sedgwickcounty.org/arcgis/rest/services/Map/Op_Election_Dynamic_SP/MapServer/5` — **6 rows
+with `CityCD = 'WI'`, `CouDistNo` 1..6**, and a `CouRepNM` naming the same six members. It reads
+exactly like the independent digitization this slice wanted.
+
+**It is the same geometry.** Measured after reprojecting both to 4326:
+
+| | city layer | county layer |
+| --- | --- | --- |
+| per-district area agreement | — | **0.0000% on all six**, to 9 decimal places |
+| vertices, districts 1-6 | 2143 · 6027 · 4597 · 5561 · 3735 · 2653 | **identical, all six** |
+| coordinate bytes | — | differ (reprojection noise only) |
+
+▶ **24,716 vertices matching one for one is not what two digitizations do.** The county layer is the
+same source geometry, reprojected from Kansas State Plane South (`3420`) instead of Web Mercator
+(`3857`). ⚠ **"Two sources agree" would have been a false claim, and the count-and-name match alone
+would have supported it.** It is corroboration that the city's published boundary is the one the
+ballot-issuing system holds — nothing more.
+🔴 Native SR is `3420` on the county side and `3857` on the city side, so **`outSR=4326` is
+load-bearing on both**.
+
+### 🟢 The area metric discriminates, and that was measured before anything was concluded from it
+
+| test | result |
+| --- | --- |
+| same district, two layers | **0.0000%** |
+| smallest gap between two DIFFERENT districts (1 vs 5) | **0.083%** |
+| largest gap (3 vs 4) | 57.4% |
+
+**The nearest pair is ~570,000× the same-district disagreement.** An agreement this tight cannot be
+an artifact of a metric too blunt to tell districts apart.
+
+⚠ A centroid test was run as well and **5 of 6** county centroids land in the same-numbered city
+district. District 3's area-weighted centroid falls **outside** its own polygon — the district is
+concave. **That is a property of the shape, not a mismatch**, and it is why KY-3's rule that a
+centroid test is too weak applies here twice over.
+
+### 🔴🔴 A COUNCIL BOUNDARY IS NOT FIXED BETWEEN REDISTRICTINGS — IT MOVES WITH ANNEXATION
+
+The Wayback Machine holds **four** captures of this exact endpoint, all in 2026 (May 9, May 21,
+Jun 7, Aug 29). Comparing the May 9 capture with today:
+
+| dist | 2026-05-09 | today | diff |
+| --- | --- | --- | --- |
+| 1 | 0.004891011 | 0.004913107 | 0.4508% |
+| 2 | 0.006795108 | 0.006829638 | 0.5069% |
+| 3 | 0.004587684 | 0.004590026 | 0.0510% |
+| 4 | 0.008280954 | 0.008280859 | 0.0012% |
+| 5 | 0.004905295 | 0.004909048 | 0.0765% |
+| 6 | 0.006482672 | 0.006495928 | 0.2043% |
+| **TOTAL** | 0.035942725 | 0.036018606 | **+0.211%** |
+
+▶ **The total GREW.** A redistricting redistributes area and preserves the total — Lexington's did,
+to 0.03%. This is the opposite signature: the city annexed land. **So the layer is actively
+maintained, and the metric detects real change down to 0.0012%.**
+
+🔴 **This reframes what a vintage proof can even mean here.** "Does this byte-match Map B as adopted
+in 2022" is the WRONG question — Map B as adopted no longer equals the operative boundary, because
+Wichita has annexed since. The right question is **"is this the boundary in force"**, and the
+annexation drift is evidence that the layer tracks it rather than being a frozen copy.
+
+### The documented map history
+
+Not geometry, but it bounds the problem. The Commission of Electors (appointed July 2022) recommended
+**Map A** and **Map B**; the Council approved **Map B on 2022-11-01 by 4-3**, effective
+**2023-01-01**. DABs 1/3/5 preferred Map A, DABs 2/4/6 Map B. The city's own interoffice memo of
+2022-09-19 records Map B as *"this map (which was 2H) … the first map that did not split any new
+neighborhood associations. It has a total deviation with all six districts and 3.55%."* Kansas's next
+council reapportionment follows the 2030 census, so **no redistricting has intervened since**.
+
+### 🔴 WHAT IS NOT PROVED, AND WHY IT CANNOT BE FROM PUBLISHED SOURCES
+
+**There is no reachable prior geometry, so there is no control that can FAIL on vintage.** Every
+avenue was tried and each is recorded so nobody repeats it:
+
+| Route | Result |
+| --- | --- |
+| A superseded sibling layer on the city server | **None.** All 23 layers of `COWGIS/Districts` enumerated; exactly one is council districts. No Lexington-style `_2012` twin — and therefore no twin to test against either |
+| Other city ArcGIS folders | Enumerated `COWGIS`, `OpenData`, `MISC`, `CSEAM`, root. **No redistricting or historical service** |
+| Wayback, pre-2023 capture of the layer | **None.** 4 captures, all 2026 |
+| `wichita.gov/998` Redistricting Dashboard, `/997` Map B page | **Both hard 404** (~96 KB styled error pages) |
+| County `Hosted/Redistricting_2022`, `2020_Redistricting_Webmap`, `Op_Census_Blocks_2020_SP`, `Op_2020_precinct__population_Sp` | **The whole `Hosted` folder is access-restricted** — `Request Rejected`, and ⚠ **Playwright gets the same rejection**, so it is a real restriction and not a UA/TLS block |
+| City data hub search | Returns only the one live layer under two titles, both resolving to the same URL |
+
+⚠ **And one of those rejections was served as a clean HTTP 200** with a `Request Rejected` body, which
+is the standing rule about WAFs reproduced on a second vendor.
+
+### ▶ The one test that would settle it, and what it needs
+
+**Population deviation.** Map B's stated total deviation is **3.55%** across the six districts on
+2020 census counts. The pre-2023 map was drawn on 2010 data and was out of balance by 2022 — that is
+*why* it was replaced. So: assign 2020 census block population to the six current polygons, total the
+deviation, and require ≈3.55%.
+
+🟢 **That is falsifiable and discriminating** — the superseded map cannot produce Map B's deviation.
+⚠ The county's population layers are restricted, so the blocks and P.L. 94-171 counts must come from
+**the Census Bureau directly**, and the point-in-polygon has to be written (no geometry library is
+available in this environment).
+
+**Cheaper alternative:** ask City of Wichita GIS or the County Clerk for the pre-2023 council-district
+layer. One email replaces the whole build, and a real prior map is a stronger control than a derived
+statistic.
+
+### Where the six polygons stand
+
+| Fact | Status |
+| --- | --- |
+| 6 features, `COUNCIL` contiguous 1..6, no gaps, no duplicates, no paging | ✅ measured |
+| The ballot-issuing system holds the same geometry | ✅ measured, vertex for vertex |
+| The layer is live-maintained and tracks annexation | ✅ measured across 4 captures |
+| The metric can detect change and can tell districts apart | ✅ measured |
+| **The geometry descends from Map B and not its predecessor** | 🔴 **NOT PROVED — no control can fail** |
+
+▶ **Do not load until that last line is closed.**
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
