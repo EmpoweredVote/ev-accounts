@@ -626,7 +626,67 @@ the 2026 resignation record — **so the guard's exact-pair test would not even 
 hold no office, so they are **UPDATE + a new `office_terms` row**, not an INSERT — and
 `is_incumbent` must be set to `true` on them explicitly, the same rule that applies to an insert.
 
-## ▶ KS-2 MIGRATIONS WRITTEN AND DRY-RUN, 2026-09-27 — NOT YET APPLIED
+## ✅ KS-2 APPLIED 2026-09-27 — THE KANSAS LEGISLATURE IS SEATED
+
+`CC_0156` (structure) + `CC_0157` (occupancy): **165 offices — 125 House + 40 Senate — 165 seated,
+0 vacant, 161 people created, 4 reused.**
+
+🔴 **THE LEASE HAD LAPSED 1h 25m BEFORE THE FIRST WRITE, AND ONLY `who` SAID SO.** `state:ks` was
+extended to 14:52Z and the apply began at 16:17Z. Nothing warned at write time — the row simply
+stops matching, exactly as CLAUDE.md says. It was re-claimed before anything was written (the
+lapsed holder was this same author and machine, so no work was displaced). ▶ **Re-read `who`
+immediately before a write, not only at session start.**
+
+### Measured from outside, against a same-session baseline through BOTH connections
+
+`DATABASE_URL` as `ev_api` and MCP as `postgres` agreed on every figure before the write.
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,183 | **89,344** | **+161 exact** |
+| `offices` | 9,724 | **9,889** | **+165 exact** |
+| `office_terms` | 9,660 | **9,825** | **+165 exact** |
+| Kansas chambers | 0 | **2** | — |
+| Kansas offices | 0 | **125 House + 40 Senate** | — |
+| **seated** (`count(och.politician_id)`) | 0 | **165** | — |
+| the 4 reused rows reading `is_incumbent` | 0 | **4** | — |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | **unmoved** |
+| Kentucky control | 138 | 138 | **unmoved** |
+
+### ✅ Idempotent, proved by re-running BOTH
+
+Every real write returned `INSERT 0 0` — chambers, offices, politicians, namesakes and both
+`office_terms` paths — and the guarded `UPDATE` returned `UPDATE 0`. The only non-zero lines are
+temp-table fills. Totals re-measured afterwards were unchanged.
+
+### ✅ END TO END: the API now returns Kansas legislators where it returned none
+
+| point | `state_senate` | `state_house` | returned |
+| --- | --- | --- | --- |
+| Wichita City Hall | **`20029`** (was `null`) | **`20103`** (was `null`) | Sen. Oletha Faust Goudeau · Rep. Angela Martinez |
+| Kansas State Capitol, Topeka | **`20019`** | **`20057`** | Sen. Patrick Schmidt · Rep. John Alcala |
+| NEGATIVE: Nashville | `47021` | `47051` | its own two, unchanged |
+
+🟢 **Three independent confirmations in that table.**
+1. **Senate 29 and House 103 are the districts the Kansas Supreme Court discussed BY NUMBER** in its
+   VRA analysis of Sedgwick County — and the pre-flight anchors predicted exactly `20029`/`20103`
+   for this point before anything was loaded.
+2. **Topeka returns Senate 19, the discriminating anchor.** Under the 2012 plan it would read
+   `20018`. The vintage proof holds all the way through to the rendered answer.
+3. **Patrick Schmidt is one of the four REUSED rows** — the person who already existed as a U.S.
+   Senate candidate. He renders as the sitting senator, so the UPDATE path is proved end to end,
+   not just the INSERT path.
+
+### ✅ Reachability — and a per-district control, because the gate's green is not enough
+
+`check:reachability` green: `BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 7, all at baseline.
+⚠ **Its `ST_COVERS_ROUNDTRIP` samples `ORDER BY d.id LIMIT 500` over a uuid, so a pass does not mean
+these 165 were swept.** So the full roundtrip — including the occupancy joins and the whole reps
+filter — was run over **every** Kansas district:
+
+**`STATE_LOWER` 125/125 · `STATE_UPPER` 40/40 resolve through the complete address join.**
+
+## The migrations as written and dry-run
 
 Slots came from the allocator, never counted: **`CC_0156`** (structure) and **`CC_0157`**
 (occupancy), both reserved to chris@empowered.vote before a line was written, and each file named
@@ -684,7 +744,7 @@ vacuously. That trap is documented in the gate itself.
 ✅ `check:migrations` — 2 added, tree scan clean · ✅ `check:reservations` — each in a slot **its own
 author** reserved · ✅ `check:occupancy` — *"every politicians INSERT names is_incumbent"*.
 
-⚠ **Nothing has been applied.** Production is unchanged: 0 Kansas legislative offices, 0 terms.
+🟢 **Applied 2026-09-27 — see the section above for what production measured afterwards.**
 
 ### What stage 2 still owes
 
@@ -693,9 +753,9 @@ author** reserved · ✅ `check:occupancy` — *"every politicians INSERT names 
 3. ✅ **Duplicate-name checks — DONE.** 6 collisions: 4 the same person, 2 genuinely different.
 4. ✅ **The two migrations are WRITTEN and DRY-RUN** — `CC_0156` + `CC_0157`, six gates watched
    failing, rollback confirmed reverted, three CI checks green.
-5. ▶ **APPLY them**, then measure from outside against a same-session baseline through both
-   connections, re-run both to prove 0 inserted, probe end to end from Wichita, and re-run
-   `check:reachability` — which will finally be able to SEE Kansas.
+5. ✅ **APPLIED 2026-09-27** — measured from outside through both connections, idempotent on
+   re-run, probed end to end, and 165/165 resolve through the full address join.
+6. ▶ **NEXT: stage 3 — Wichita city council.** Unmeasured.
 
 ## Expected scope for the slice
 
