@@ -352,6 +352,84 @@ MTFCC and there are **zero** `geo_id` mismatches — COUNTY→`G4020` (105), NAT
 (4), STATE_LOWER→`G5220` (125), STATE_UPPER→`G5210` (40). A county sharing `20029` with a Senate
 district cannot be reached from that Senate district's geometry.
 
+## ▶ KS-2 stage 2 — the roster is verified, 2026-09-27. NOTHING WRITTEN.
+
+Tool: `backend/scripts/build-ks-legislature-roster.mjs`, `--self-test` runs 6 controls.
+**165/165 member pages name the member the roster names, at the seat it gives.** Zero departure
+markers. No migration yet, no `politicians` row written.
+
+### The source is better than any earlier slice's
+
+The Legislature publishes a **first-party CSV** at `…/house/representatives/csv/` and
+`…/senate/senators/csv/` — 125 and 40 rows with `District`, `Fullname`, `Party` and `County` as
+real columns. No scraping heuristics, no name splitting. House 88 R / 37 D; Senate 31 R / 9 D.
+All 125 and all 40 districts present, **no gaps and no duplicates**, so the roster itself reports
+no vacancy.
+
+🟢 **And kslegislature.gov does NOT soft-404**, unlike `legislature.ky.gov`. Bogus slugs return a
+real HTTP 404 (~43.6 KB against ~46.6 KB for a real page). A missing member is detectable here.
+
+### 🔴🔴 The CSV's departure columns are DEAD, and only a positive control established it
+
+`Enddate` and `Endnote` are empty for all 125 House rows. That alone proves nothing — an empty
+column is a uniform answer. So the same columns were read from the **completed 2023-24 biennium**,
+where departures certainly happened: **also 0 of 125.**
+
+▶ **The columns are never populated, so "no rows carry `Enddate`" must never be read as "no
+vacancies".** This is MN-2's *a roster list page is not a change-check*, reproduced inside a CSV.
+The 165-page sweep is what actually answers the question.
+
+⚠ **And the departure detector keeps a blind spot no control can close.** It is proven to fire on
+the language a departure would use (three planted phrases, all caught, on a page otherwise silent).
+It is **not** proven that Kansas ever publishes such language. KY-2 had the same shape and said so.
+
+### 🔴 The roster list is paginated at 20, and `per_page` makes it WORSE
+
+`?per_page=200` returns **ten** slugs — fewer than the default twenty. The only reliable path is
+`?page=N` until the stated total is reached, and the page states its own total ("Showing 1–20 of
+125 representatives"). The tool pages to the expected count and fails if it cannot reach it.
+
+### 🔴🔴 THE BLOCKER: the `Terms` block cannot date Kansas occupancy, and the markup is innocent
+
+Every member page carries a Terms card of (chamber, span) rows. For most it reads cleanly —
+`House 2013–Present`. For nine of 165 it does not, and **the raw HTML was read to confirm the
+parser is not at fault**:
+
+| seat | published Terms |
+| --- | --- |
+| House 81 Blake Carpenter | `2015–2022` · **`2022–Present`** · `2023–2024` · `2025–2026` |
+| House 100 Daniel Hawkins | **`2013–Present`** · `2023–2024` · `2025–2026` |
+| House 45 Mike Amyx | **`2019–Present`** · `2025–2026` |
+| House 8 Chris Croft | **`2019–Present`** · `2023–2024` · `2025–2026` |
+| House 108 Brandon Woodard | **`2019–Present`** · `2025–2026` |
+| House 86 · House 70 · Senate 13 · Senate 10 | **no Terms rows at all** |
+
+A span saying "Present" cannot coexist with a later span that has ended. ▶ **So the span ending in
+"Present" does not reliably give an arrival year, and this tool reports the block rather than
+converting it into a `term_start`.** KY-2's rule holds and is sharpened: *a published service
+string is chamber-scoped **and may not be self-consistent**.*
+
+🔴 **And "first elected" is not available either.** The CSV's `Firstterm` column is populated for
+only **24 of 125** House and **3 of 40** Senate rows, and its latest value anywhere is **2015** —
+both sparse and stale. Reported, never used.
+
+⚠ **Even where the block IS coherent it answers the wrong question.** It gives service in the
+*chamber*, not occupancy of the *district* — and Kansas redistricted in 2022, so a continuous
+member may have changed district number. 23 members are chamber switchers and 15 carry same-chamber
+gaps; both are the KY-2 trap.
+
+### What stage 2 still owes
+
+1. **A term-start source.** Kansas terms begin by statute, but 🔴 **the oath date must not be
+   computed** — three states in this programme have already paid for that. Candidates not yet
+   checked: the Secretary of State's certified 2024 canvass, the chambers' own Journals for the
+   2025 organisational day, and per-member sources for the mid-term arrivals.
+2. **Mid-term arrivals.** Kansas fills legislative vacancies by party convention appointment, so
+   an unknown number of the 165 did not arrive in January 2025. The Terms block cannot identify
+   them reliably.
+3. Duplicate-name checks against existing `politicians` rows, then the structure and occupancy
+   migrations (two `CC_` slots, not yet reserved).
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
@@ -379,8 +457,9 @@ the subject its credit names.
    re-run. See below.
 4. ✅ **DONE 2026-09-27 — probed end to end through the PRODUCTION API**, with a negative control
    outside Kansas and a per-district control over all 165. See below.
-5. ▶ **NEXT: stage 2 — the legislature must precede the cities.** 165 offices, 125 House + 40
-   Senate. Kansas holds zero today.
+5. ▶ **STAGE 2 IN PROGRESS.** 165 offices, 125 House + 40 Senate. Kansas holds zero today.
+   **The roster is built and verified; TERM STARTS ARE NOT ESTABLISHED and that is the blocker.**
+   See below.
 
 ## Debts this slice already owes
 
