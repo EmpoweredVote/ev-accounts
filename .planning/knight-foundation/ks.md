@@ -480,21 +480,61 @@ the gap varies — and it is not relied on: the Journal states both.
 | Interim appointees | **5** | `day` | House Journal, First Day 2026, `OATHS OF OFFICE` |
 | **Still open** | **3** | — | see below |
 
-🔴 **The three open seats.** Senate 24 **Scott Hill** (replaced J.R. Claeys, who left for USDA;
-delegate vote reported 2025-06-16) and Senate 25 **Silas Miller** (replaced Mary Ware) — the Senate
-prints **no interim-oath section**, unlike the House, so its arrivals are not in the Journals at
-all. House 121 **Mike Storm** (replaced John Resman) changed after the 2026 First Day, so it will be
-in a later 2026 daily Journal. ▶ **Route: sweep the 2026 daily Journals for Storm; for the two
-senators, ask the Senate Secretary's office or the Secretary of State for the commission date.**
+### ✅ THE 2026 JOURNAL SWEEP — House 121 is dated, and the Senate gap is now a FINDING
+
+Swept **all 54 House journal days** of the 2026 session (Jan 12 – Apr 10) and **all 54 Senate days**.
+
+🟢 **House 121 — Mike Storm, sworn 2026-03-16.** The `OATH OF OFFICE` record reads: *"I JENNIFER
+COOK, Assistant Secretary of State, hereby certify that Mike Storm was appointed by the Governor,
+March 16th, 2026, to fill the vacancy created by the **death of Rep. John Resman**, State
+Representative for the 121st Legislative District"*, with the jurat *"before me this 16th day of
+March, 2026"*, closing *"The House is now organized with 125 members."*
+⚠ **The first vacancy in this slice caused by a death rather than a resignation** — and Resman still
+appears in a later journal (Mar 23) being replaced on a conference committee, so a name search alone
+would misdate this.
+
+🔴 **THE SENATE PUBLISHES NO INTERIM-OATH RECORD AT ALL, AND THAT IS NOW CONTROLLED, NOT ASSUMED.**
+Across all 54 Senate journal days the phrase *"appointed by the Governor"* appears on exactly three
+— **and all three are bill text**, statutory language about boards and commissions. The one
+`OATH OF OFFICE` heading outside the First Day is likewise bill text, about irrigation-district
+directors. ▶ The identical method found **five real records in the House**, so this is the Senate
+not publishing them, not the method failing.
+
+🔴 **So Senate 24 Scott Hill and Senate 25 Silas Miller cannot be dated from the Journals.** Hill
+replaced J.R. Claeys, who left for the USDA (delegate vote reported 2025-06-16, with a broadcaster
+saying he *"will be sworn in"* on 2025-06-26 — prospective, and not a record). Miller replaced Mary
+Ware. ▶ **Route: the Senate Secretary's office or the Secretary of State's commission record.**
 ⚠ `office_terms.start_precision` permits **`month`** — verified against the live CHECK — so a
-June-2025 arrival that cannot be dated to the day is written `2025-06-01` / `month`, never guessed
-to a day.
+June-2025 arrival that cannot be dated to the day is written `2025-06-01` / `month`, never guessed.
+
+### 🔴🔴 Two tooling traps this sweep paid for
+
+1. **THE JOURNALS PAGINATOR CLAMPS INSTEAD OF ENDING.** Page 11 is the last page of 2026 House
+   journals; pages 12 through 20 all return **the same five rows**. A "page until empty" loop never
+   terminates and double-counts. The `?per_page=200` oddity on the roster is the same family. ▶ Page
+   to a **known total**, then stop — and de-duplicate on the PDF timestamp.
+2. 🔴🔴 **A `\\` WRITTEN THROUGH A HEREDOC ARRIVED AS `\`, AND SILENTLY BROKE A DETECTOR.**
+   `new RegExp('Brunk[\\s\\S]{0,400}?appointed by the Governor')` reached disk as `[\s\S]`, which
+   JavaScript parses as the character class **`[sS]`** — a pattern that compiles, runs, and matches
+   nothing. The sweep reported a clean `0/5` on records that were sitting in the file on one line,
+   four characters apart. ▶ **Use literal `/…/` regex syntax in scripts written this way**, never a
+   string-constructed one. **The positive control is the only reason this was caught** — it asserted
+   that five known House oath records must be found, and they were not.
+
+### Final term-start position — 163 of 165
+
+| | count | `start_precision` | source |
+| --- | --- | --- | --- |
+| Sworn 2025-01-13, still seated | **157** | `day` | House & Senate Journals, First Day 2025 |
+| House interim appointees | **5** | `day` | House Journal, First Day 2026 |
+| House 121 Mike Storm | **1** | `day` | House Journal, 2026-03-16 |
+| **Senate 24 Hill · Senate 25 Miller** | **2** | — | **open — the Senate publishes none** |
 
 ### What stage 2 still owes
 
 1. ✅ **A term-start source — DONE.** The Journals give 162 of 165 to the day.
-2. ▶ **The three open arrivals above** — House 121 Storm from the 2026 daily Journals; Senate 24
-   Hill and Senate 25 Miller from the Senate Secretary or the Secretary of State.
+2. ▶ **The two open arrivals** — Senate 24 Hill and Senate 25 Miller, from the Senate Secretary
+   or the Secretary of State. House 121 Storm is DONE (2026-03-16).
 3. ▶ **Duplicate-name checks** against existing `politicians` rows. 🔴 Expect real collisions:
    MN-2 already found *a Kansas Libertarian* colliding with a Minnesota legislator, so Kansas names
    are known to exist in this database under other people.
