@@ -1218,7 +1218,65 @@ statistic.
 | The metric can detect change and can tell districts apart | ✅ measured |
 | **The geometry descends from Map B and not its predecessor** | 🔴 **NOT PROVED — no control can fail** |
 
-▶ **Do not load until that last line is closed.**
+▶ ~~Do not load until that last line is closed.~~ **CLOSED 2026-09-27 — see below.**
+
+## ✅ KS-3 VINTAGE — PROVED BY POPULATION DEVIATION, 2026-09-27. STILL NOT LOADED.
+
+Tool: `backend/scripts/verify-wichita-council-vintage.mjs`. Needs no database. `--self-test` runs
+three controls and every one must fail.
+
+**The six polygons are balanced on 2020 census counts to a total deviation of 2.40%**, inside the
+five percent the Commission of Electors was appointed to work to, and **they account for Wichita
+city's 2020 population to 0.08%**.
+
+| | measured |
+| --- | --- |
+| Sedgwick County 2020 blocks (TIGERweb layer 10) | **12,158**, no paging |
+| assigned to a district | **7,384** · outside the city 4,774 · **in two districts 0** |
+| population assigned | **397,864** against the city's **397,532** — **+332, 0.08%** |
+| per-district deviation | −1.60 · +0.67 · −0.22 · +0.34 · +0.03 · +0.79 |
+| **total deviation** | **2.40%** |
+
+▶ **A map drawn on 2010 counts cannot be balanced on 2020 counts** — that imbalance is *why*
+Wichita redistricted. 2.40% is a post-2020 map.
+
+### 🟢 Three controls, each watched failing
+
+| Control | Result |
+| --- | --- |
+| `strips` — the same blocks cut into six equal-width longitude bands | **236.34%** deviation — ✅ fails |
+| `target` — tighten the ceiling onto a value the real map cannot meet | ✅ fails |
+| `blocks` — drop every block in district 1, simulating a broken point-in-polygon | **120.56%**, *and* the population control fires at −64,915 (16.33%) — ✅ fails on two gates |
+
+🔴 **`strips` is the one that matters.** A different partition of the same city into six parts gives
+**236%**, about 98× the measured figure. **Tight balance is a property of THIS map, not of any
+six-way split**, so the 2.40% is not an artifact of the method.
+
+### 🔴 WHAT THIS DOES NOT PROVE, STATED RATHER THAN GLOSSED
+
+- ⚠ **It cannot distinguish Map A from Map B.** Both were drawn to the same ≤5% standard on 2020
+  data. It separates a **post-2020 map from the superseded pre-2023 one**, which is the failure mode
+  that matters — Map A was never adopted, so it is never what the city publishes.
+- ⚠ **The measured 2.40% does not reproduce the 3.55% attributed to Map B**, and the residual is
+  explained but not eliminated: whole-block assignment by internal point, against a boundary that has
+  annexed land since adoption. 🔴 **And the 3.55% itself is weak evidence** — it comes from a
+  transcribed DAB discussion whose sentence is garbled (*"It has a total deviation with all six
+  districts and 3.55%"*), not from a formal apportionment report.
+- ▶ **So the gate asserts the Commission's five percent, not 3.55%.** An earlier version of the tool
+  failed unless the figure landed within ±1.5pp of 3.55%; that window was chosen by the author, it
+  happened to pass, and it claimed more than the evidence carries. It was replaced.
+
+### ⚠ Two traps this test paid for
+
+1. 🔴 **`api.census.gov` answers a keyless request with HTTP 200, `text/html`, and a page titled
+   "Missing Key".** Judging by status would have read it as data. Population comes from **TIGERweb's
+   own `POP100`**, never from the Data API.
+2. 🔴 **TIGERweb layer 28 is Census Designated Places and returns a CLEAN EMPTY RESULT for Wichita**,
+   which is an incorporated place. **Layer 26** is the right one and gives `GEOID 2079000`,
+   `POP100 397,532`. This is the documented TIGERweb wrong-layer trap, hit and caught.
+
+▶ **The six polygons may now be loaded.** They still need `governments` + structure + occupancy and
+two `CC_` slots.
 
 ## Expected scope for the slice
 
