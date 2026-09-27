@@ -15,6 +15,7 @@ import { checkStructuralQuality, checkLearnMoreLink } from './rules/structural.j
 import { checkPartisanFraming } from './rules/partisan.js';
 import { checkAddressPhone } from './rules/address-phone.js';
 import { checkAnachronisticYear } from './rules/anachronism.js';
+import { checkSourceDrift } from './rules/source-drift.js';
 
 /**
  * All synchronous rules (fast, no I/O)
@@ -27,6 +28,7 @@ export const ALL_SYNC_RULES: QualityRule[] = [
   checkPartisanFraming,
   checkAddressPhone,
   checkAnachronisticYear,
+  checkSourceDrift,
 ];
 
 /**
