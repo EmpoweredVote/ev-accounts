@@ -293,6 +293,65 @@ evidence that the load is good.** The evidence is the measurement above. Kansas 
 `check:reachability` only when stage 2 seats the offices — and that is when a regression here would
 mean something.
 
+## ✅ KS-1 step 4 — end to end through the production API, 2026-09-27
+
+Probed `POST https://api.empowered.vote/api/essentials/coordinate-lookup` — the anonymous,
+unauthenticated route a voter's browser actually calls. Not a hand-rolled `ST_Contains`.
+
+| | Wichita City Hall | NEGATIVE: Nashville |
+| --- | --- | --- |
+| politicians returned | **42** | 48 |
+| `STATE_EXEC` | 5 (Gov, Lt Gov, AG, SoS, Treasurer) | 1 |
+| `NATIONAL_UPPER` / `NATIONAL_LOWER` | 2 / 1 | 2 / 1 |
+| **`STATE_UPPER` / `STATE_LOWER`** | **0 / 0** | 1 / 1 |
+| `jurisdictionGeoIds.state_senate` | **null** | `47021` |
+| `locality.county_name` | **"Sedgwick County"** | "Davidson County" |
+
+### 🔴 `state_senate` comes back NULL for Wichita, and that is CORRECT — it is not a load fault
+
+The polygons are in production and resolve to `20029` / `20103` in SQL. The API still reports null,
+because `jurisdictionGeoIds` is built by `pickJurisdictionFromDistrictRows` from the rows of
+`buildDistrictQuery`, and that query's `DISTRICT_JOINS` opens with
+
+```sql
+JOIN essentials.offices o ON o.district_id = d.id   -- INNER
+```
+
+▶ **A district with no offices produces no row, so it cannot appear in `jurisdictionGeoIds`.**
+Kansas has zero legislative offices, so null is the only correct answer today. This was read from
+the source, not inferred from the symptom.
+
+🟢 **And the negative control is what makes that null meaningful**: Nashville populates the very
+same fields (`47021` / `47051`). The field is not broken — Kansas simply has nothing to put in it
+yet. ⚠ Note the contrast inside one response: `locality.county_name` **does** say "Sedgwick
+County", because that comes off the geofence name rather than the office-joined path. **Geometry is
+being read; occupancy is what is missing.**
+
+### The per-district control the reachability gate cannot run
+
+`check:reachability`'s `ST_COVERS_ROUNDTRIP` samples `ORDER BY d.id LIMIT 500` over a **uuid**, and
+its sample CTE requires `EXISTS (offices + current holder + active politician)`. Kansas satisfies
+neither, so **all 165 districts are excluded from it**. So the roundtrip was run here directly,
+over every one, using the real `MTFCC_DISTRICT_TYPE_GUARD` clauses (`G5210→STATE_UPPER`,
+`G5220→STATE_LOWER`; the guard's catch-all cannot fire for these two, as both MTFCCs sit in
+`FALLBACK_EXCLUDED_MTFCCS`).
+
+| | probed | resolved itself | exactly one match | cross-state leaks |
+| --- | --- | --- | --- | --- |
+| `STATE_UPPER` | 40 | **40** | 40 | 0 |
+| `STATE_LOWER` | 125 | **125** | 125 | 0 |
+
+🟢 **And the probe was proved able to FAIL.** Re-run giving each district its *neighbour's* point,
+`wrongly_resolved_itself` is **0 of 165** and `correctly_failed` is **165 of 165**. A uniform
+"165/165 pass" from a detector nobody has watched fail is not evidence; this one has been watched.
+
+### 🟢 The 83 `geo_id` collisions do not fan out through the guard
+
+Run over every Kansas district type with the real guard clauses: each type admits **exactly one**
+MTFCC and there are **zero** `geo_id` mismatches — COUNTY→`G4020` (105), NATIONAL_LOWER→`G5200`
+(4), STATE_LOWER→`G5220` (125), STATE_UPPER→`G5210` (40). A county sharing `20029` with a Senate
+district cannot be reached from that Senate district's geometry.
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
@@ -318,8 +377,10 @@ the subject its credit names.
 3. ✅ **APPLIED 2026-09-27 — 165 boundaries and 165 districts are in production.** Measured from
    outside against a same-session baseline taken through both connections, and idempotent on
    re-run. See below.
-4. ▶ **NEXT.** Probe end to end from a Wichita address, with a negative control outside Kansas.
-5. Then stage 2 — **the legislature must precede the cities.**
+4. ✅ **DONE 2026-09-27 — probed end to end through the PRODUCTION API**, with a negative control
+   outside Kansas and a per-district control over all 165. See below.
+5. ▶ **NEXT: stage 2 — the legislature must precede the cities.** 165 offices, 125 House + 40
+   Senate. Kansas holds zero today.
 
 ## Debts this slice already owes
 
