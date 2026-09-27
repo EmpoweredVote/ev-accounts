@@ -8,6 +8,8 @@ import {
   recordGate,
   recordRuleError,
   mergeQualityRuleStats,
+  recordWrittenUnaudited,
+  shouldRecordClaim,
   MAX_SAMPLES,
 } from './qualityGate.js';
 
@@ -218,5 +220,79 @@ describe('mergeQualityRuleStats', () => {
     recordGate(b, 'b', decideRuleGate([], false), false);
     mergeQualityRuleStats(a, b);
     expect(b.audited).toBe(1);
+  });
+});
+
+describe('shouldRecordClaim', () => {
+  /**
+   * run-pipeline records a claim fingerprint after writing, which suppresses the
+   * story for CLAIM_WINDOW_DAYS = 14. The comment above that call promises:
+   * "What is deliberately not remembered is a claim whose candidates were ALL
+   * rejected by the gates, so a transient failure does not suppress the story
+   * permanently."
+   *
+   * That held while `passing` was the last gate. It stopped holding the moment
+   * the rules engine moved INSIDE writePassingQuestions, after that filter:
+   * `written` can now be empty because the rules gate refused, and the claim
+   * would be fingerprinted anyway. The news prompt generates one question for a
+   * straightforward claim, so one blocking violation is enough to lose a story
+   * for a fortnight with no link back to it.
+   */
+  it('records when questions were written', () => {
+    const s = emptyQualityRuleStats();
+    expect(shouldRecordClaim(2, s)).toBe(true);
+  });
+
+  it('records when nothing was written and the gate blocked nothing', () => {
+    // The pre-existing benign case: every insert hit an external_id conflict,
+    // which means the content is already present.
+    const s = emptyQualityRuleStats();
+    recordGate(s, 'a', decideRuleGate([], true), true);
+    expect(shouldRecordClaim(0, s)).toBe(true);
+  });
+
+  it('does NOT record when the gate blocked every question', () => {
+    const s = emptyQualityRuleStats();
+    recordGate(s, 'a', decideRuleGate([blocking('pure-lookup')], true), true);
+    expect(shouldRecordClaim(0, s)).toBe(false);
+  });
+
+  it('records when the gate blocked some but others were written', () => {
+    const s = emptyQualityRuleStats();
+    recordGate(s, 'a', decideRuleGate([blocking('pure-lookup')], true), true);
+    recordGate(s, 'b', decideRuleGate([], true), true);
+    expect(shouldRecordClaim(1, s)).toBe(true);
+  });
+
+  it('is unaffected by suppressed violations, which were written', () => {
+    // Enforcement OFF: the question WAS written, so the claim is covered.
+    const s = emptyQualityRuleStats();
+    recordGate(s, 'a', decideRuleGate([blocking('pure-lookup')], false), false);
+    expect(s.suppressed).toBe(1);
+    expect(shouldRecordClaim(1, s)).toBe(true);
+  });
+});
+
+describe('recordWrittenUnaudited', () => {
+  it('counts a question written without a usable verdict', () => {
+    // The catch around the audit falls through to the insert on purpose: a rule
+    // that crashes is our defect, and refusing to write would turn a bug into
+    // silent content loss. But that makes `written <= audited` false, so the
+    // third outcome needs its own counter rather than an assumed invariant.
+    const s = emptyQualityRuleStats();
+    recordRuleError(s, 'wnews-0007', new Error('boom'));
+    recordWrittenUnaudited(s);
+    expect(s.audited).toBe(0);
+    expect(s.ruleErrors).toBe(1);
+    expect(s.writtenUnaudited).toBe(1);
+  });
+
+  it('merges like the other counters', () => {
+    const a = emptyQualityRuleStats();
+    const b = emptyQualityRuleStats();
+    recordWrittenUnaudited(b);
+    recordWrittenUnaudited(b);
+    mergeQualityRuleStats(a, b);
+    expect(a.writtenUnaudited).toBe(2);
   });
 });

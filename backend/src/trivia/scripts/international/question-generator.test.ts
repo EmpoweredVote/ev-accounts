@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { QUESTION_GENERATION_SYSTEM_PROMPT, toQuestionInput } from './question-generator.js';
+import {
+  QUESTION_GENERATION_SYSTEM_PROMPT,
+  toQuestionInput,
+  auditForPipeline,
+  writePassingQuestions,
+} from './question-generator.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
-import { emptyQualityRuleStats, decideRuleGate, recordGate } from './qualityGate.js';
 
 /**
  * WHY THIS EXISTS
@@ -34,6 +38,30 @@ describe('QUESTION_GENERATION_SYSTEM_PROMPT', () => {
 
   it('requires the four options to be clearly distinct', () => {
     expect(QUESTION_GENERATION_SYSTEM_PROMPT).toContain('clearly distinct');
+  });
+
+  it('warns about the pure-lookup blocklist, which blocks 15% of the news bank', () => {
+    // The rule the prompt never mentioned. checkPureLookup is BLOCKING and its
+    // blocklist matches /in what year (was|did)/ and /what date/. Measured
+    // against the live wnews-/wiran- bank, 274 of 1788 questions (15.3%) match
+    // it -- an order of magnitude more than every other rule combined.
+    expect(QUESTION_GENERATION_SYSTEM_PROMPT).toContain('in what year was');
+    expect(QUESTION_GENERATION_SYSTEM_PROMPT).toContain('in which year');
+  });
+
+  it('does not illustrate a good question with a shape the engine blocks', () => {
+    // Rule 1's worked example used to be "In what year did X begin?" -- which
+    // checkPureLookup refuses outright. The prompt was teaching the model to
+    // write a question the gate would then reject.
+    expect(QUESTION_GENERATION_SYSTEM_PROMPT).not.toContain('In what year did X begin');
+  });
+
+  it('lists every vague qualifier the engine blocks on', () => {
+    // "frequently" was missing; the engine blocks it.
+    for (const w of ['most important', 'best', 'primarily', 'generally', 'mainly',
+                     'usually', 'typically', 'often', 'commonly', 'frequently']) {
+      expect(QUESTION_GENERATION_SYSTEM_PROMPT).toContain(w);
+    }
   });
 
   it('does not import the civic-structure guidelines that news cannot satisfy', () => {
@@ -76,36 +104,58 @@ describe('toQuestionInput', () => {
     expect(result.violations.some(v => v.rule === 'anachronistic-year-option')).toBe(true);
   });
 
-  it('does not touch the network when skipUrlCheck is set', async () => {
-    // Review Focus 2. An unreachable URL must not produce a verdict at all
-    // when the URL check is skipped - if this ever fails, the cron has grown
-    // an HTTP round trip per question and a blocking verdict that depends on
-    // a news site answering a bot.
+  it('does not touch the network on the path the pipeline actually takes', async () => {
+    // Review Focus 2. Asserted against auditForPipeline -- the function the
+    // write loop calls -- rather than against auditQuestion with the option
+    // passed by hand, which would only re-test auditQuestion's own documented
+    // contract and would stay green if the write path dropped the option.
+    //
+    // An unreachable host must yield no verdict at all. If this fails, the cron
+    // has grown an HTTP round trip per question and a blocking verdict that
+    // depends on a news site answering a bot.
     const input = toQuestionInput(
       { ...placed, options: ['2019', '2021', '2024', '2025'] },
       'wnews-0200',
       { name: 'Reuters', url: 'https://this-host-does-not-exist.invalid/x' },
     );
-    const result = await auditQuestion(input, { skipUrlCheck: true });
+    const result = await auditForPipeline(input);
     expect(result.violations.some(v => v.rule === 'broken-learn-more')).toBe(false);
   });
 });
 
-describe('writePassingQuestions accounting', () => {
-  it('counts an audited question that hits an id conflict as audited, not written', () => {
-    // Review Focus 5. The insert is onConflictDoNothing() and `continue`s on
-    // an empty result. Auditing happens BEFORE the insert, so a conflicted
-    // question is correctly audited and correctly not written - the two
-    // counters must not be assumed equal anywhere downstream.
-    //
-    // Asserted structurally rather than against a database: the invariant is
-    // that `written.length <= ruleStats.audited`, and that is the property
-    // run-pipeline's merge relies on.
-    const stats = emptyQualityRuleStats();
-    recordGate(stats, 'wnews-0001', decideRuleGate([], false), false);
-    recordGate(stats, 'wnews-0002', decideRuleGate([], false), false);
-    const written = [{ questionId: 1, externalId: 'wnews-0001', status: 'active' as const }];
-    expect(written.length).toBeLessThanOrEqual(stats.audited);
-    expect(stats.audited).toBe(2);
+describe('writePassingQuestions audit ordering', () => {
+  // Review Focus 5. A question that hits an external_id conflict is audited and
+  // NOT written, which is only true while the audit precedes the insert. That
+  // ordering is the whole design -- a blocking verdict must prevent the row,
+  // not annotate it afterwards -- and it is what makes `audited` and `written`
+  // legitimately differ.
+  //
+  // This cannot be exercised without a database, so it is pinned on the
+  // function's own source. Crude, but it fails if someone moves the audit below
+  // the insert, which the previous version of this test did not: that one never
+  // called writePassingQuestions at all, built both sides by hand, and asserted
+  // 1 <= 2.
+  const src = writePassingQuestions.toString();
+
+  it('audits before inserting', () => {
+    const auditAt = src.indexOf('auditForPipeline');
+    const insertAt = src.indexOf('onConflictDoNothing');
+    expect(auditAt).toBeGreaterThan(-1);
+    expect(insertAt).toBeGreaterThan(-1);
+    expect(auditAt).toBeLessThan(insertAt);
+  });
+
+  it('places the answer before auditing it', () => {
+    // The engine must judge what will actually be stored: placeAnswer rewrites
+    // both options and correctAnswer.
+    const placeAt = src.indexOf('placeAnswer(');
+    const auditAt = src.indexOf('auditForPipeline');
+    expect(placeAt).toBeGreaterThan(-1);
+    expect(placeAt).toBeLessThan(auditAt);
+  });
+
+  it('skips the insert when the gate refuses', () => {
+    // Regex rather than an exact string so a reformat does not fail it.
+    expect(src).toMatch(/if\s*\(\s*!\s*decision\.write\s*\)\s*continue/);
   });
 });

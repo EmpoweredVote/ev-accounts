@@ -78,10 +78,31 @@ describe('buildSystemPrompt — difficulty rubric', () => {
     expect(p).toContain('50.0%');
   });
 
-  it('does not leave a locale block contradicting the floor', () => {
-    // The Fremont calibration carried its own "Target: 40% easy". One locale
-    // quietly exempting itself from the floor is how the floor stops meaning
-    // anything.
-    expect(prompt()).not.toContain('Target: 40% easy');
+  // Every slug buildSystemPrompt branches on. The previous version of this
+  // test only ever built the Fremont prompt, so it asserted nothing about the
+  // other five while reading as coverage.
+  const LOCALE_SLUGS = [
+    'fremont-ca', 'norwich-uk', 'cambridge-ma',
+    'plano-tx', 'portland-or', 'washington-dc',
+  ];
+
+  it.each(LOCALE_SLUGS)('leaves no competing distribution in the %s block', slug => {
+    // A locale restating its own target is how the floor stops meaning
+    // anything. "Over-index on EASY" is fine -- a floor is a minimum, and
+    // exceeding it is not a contradiction. A second "Target: N% easy" is not.
+    const p = buildSystemPrompt('Test Locale', { 'local-government': 10 }, slug);
+    expect(p).toContain('At least 30% of the batch must be EASY');
+    expect(p).not.toMatch(/Target:\s*\d+% easy/);
+  });
+
+  it.each(LOCALE_SLUGS)('does not tell the %s writer that easy distractors must be hard', slug => {
+    // The rubric says an easy question's three distractors must be ones a
+    // resident rules out instantly. A blanket "all four must be plausible /
+    // should need to actually think" three paragraphs later is the opposite
+    // instruction for the same tier, and leaves easy-tier behaviour undefined.
+    const p = buildSystemPrompt('Test Locale', { 'local-government': 10 }, slug);
+    expect(p).not.toContain('ALL four options must be plausible local alternatives');
+    expect(p).not.toContain('A civic-minded local resident should need to actually think before answering');
+    expect(p).toContain('For MEDIUM and HARD questions');
   });
 });

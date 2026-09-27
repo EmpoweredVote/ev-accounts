@@ -132,6 +132,7 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
       blocked: number;
       suppressed: number;
       ruleErrors: number;
+      writtenUnaudited: number;
       enforced: boolean;
       byRule: Record<string, number>;
       samples: string[];

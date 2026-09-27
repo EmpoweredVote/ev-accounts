@@ -105,7 +105,10 @@ Your generated questions will be validated against strict quality rules. Follow 
 - Absurd numbers (e.g., "1,000,000 senators")
 - Obviously fake entities (e.g., "The Department of Unicorns")
 
-**All four options should make someone pause and think about the correct answer.**
+**For MEDIUM and HARD questions, all four options should make someone pause and think
+about the correct answer.** For EASY questions the three distractors must instead be
+ones a resident rules out instantly — still real entities, just obviously not the
+answer. Difficulty is carried by the option set, so this is what separates the tiers.
 
 ### 6a. Numeric distractors — VARY WHERE THE ANSWER FALLS
 

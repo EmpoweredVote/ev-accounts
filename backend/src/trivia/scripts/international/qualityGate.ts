@@ -48,11 +48,17 @@ export interface QualityRuleStats {
   withAdvisoryOnly: number;
   /** Questions the gate actually refused to write (enforcement ON). */
   blocked: number;
-  /** Questions that WOULD have been refused but were written (enforcement OFF).
-   *  The cost of switching the flag on, measured in advance. */
+  /** Questions that WOULD have been refused had enforcement been on
+   *  (enforcement OFF). The cost of switching the flag on, measured in advance.
+   *  Counted at the gate, so a suppressed question that then loses its insert
+   *  to an external_id conflict is still counted here. */
   suppressed: number;
   /** Questions whose audit threw. Contained, never propagated. */
   ruleErrors: number;
+  /** Questions written WITHOUT a usable verdict, because their audit threw.
+   *  These are counted in neither `audited` nor any violation tally, so
+   *  `written <= audited` is NOT an invariant — this is the third outcome. */
+  writtenUnaudited: number;
   /** Violation tally by rule name, blocking and advisory alike. */
   byRule: Record<string, number>;
   /** `externalId:rule` (or `externalId:ERROR:message`) for the first
@@ -69,6 +75,7 @@ export function emptyQualityRuleStats(): QualityRuleStats {
     blocked: 0,
     suppressed: 0,
     ruleErrors: 0,
+    writtenUnaudited: 0,
     byRule: {},
     samples: [],
   };
@@ -127,6 +134,32 @@ export function recordRuleError(
   pushSample(stats, `${externalId}:ERROR:${message.slice(0, 120)}`);
 }
 
+/**
+ * Whether this claim should be fingerprinted in the dedup ledger.
+ *
+ * run-pipeline records a fingerprint after writing, and that suppresses the
+ * story for CLAIM_WINDOW_DAYS = 14. Its comment promises that a claim whose
+ * candidates were ALL rejected is deliberately NOT remembered, so a transient
+ * failure cannot bury a story permanently.
+ *
+ * That promise held while the model's own quality gate was the last filter
+ * before the write. It stops holding once the rules engine runs INSIDE the
+ * write path: `written` can be empty purely because this gate refused. The
+ * news prompt generates a single question for a straightforward claim, so one
+ * blocking violation would otherwise cost the story a fortnight.
+ *
+ * An empty `written` with nothing blocked is the original benign case — every
+ * insert hit an external_id conflict, which means the content is already there.
+ */
+export function shouldRecordClaim(writtenCount: number, stats: QualityRuleStats): boolean {
+  return writtenCount > 0 || stats.blocked === 0;
+}
+
+/** Record a question written without a verdict, because its audit threw. */
+export function recordWrittenUnaudited(stats: QualityRuleStats): void {
+  stats.writtenUnaudited++;
+}
+
 /** Fold `from` into `into`. `from` is left untouched. */
 export function mergeQualityRuleStats(into: QualityRuleStats, from: QualityRuleStats): void {
   into.audited += from.audited;
@@ -135,6 +168,7 @@ export function mergeQualityRuleStats(into: QualityRuleStats, from: QualityRuleS
   into.blocked += from.blocked;
   into.suppressed += from.suppressed;
   into.ruleErrors += from.ruleErrors;
+  into.writtenUnaudited += from.writtenUnaudited;
   for (const [rule, n] of Object.entries(from.byRule)) {
     into.byRule[rule] = (into.byRule[rule] ?? 0) + n;
   }

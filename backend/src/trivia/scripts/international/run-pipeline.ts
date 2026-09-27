@@ -28,6 +28,7 @@ import {
   emptyQualityRuleStats,
   mergeQualityRuleStats,
   qualityRulesEnforced,
+  shouldRecordClaim,
   type QualityRuleStats,
 } from './qualityGate.js';
 import {
@@ -497,17 +498,27 @@ export async function runNightlyPipeline(
           mergeQualityRuleStats(laneStats.qualityRules, writeResult.ruleStats);
           laneStats.generated += written.length;
 
-          // Recorded whenever at least one candidate survived the gates
-          // (`passing.length > 0`) — not strictly when a row was written. If
-          // every insert hits an external_id conflict, `written` is empty and
-          // the fingerprint is still recorded, with questionExternalId: null.
-          // That is benign: a conflict means the id already exists, so the
-          // content IS present. What is deliberately not remembered is a
-          // claim whose candidates were ALL rejected by the gates, so a
-          // transient failure does not suppress the story permanently.
-          await guard.record(
-            keys, cluster.sharedEntities, target.lane, written[0]?.externalId ?? null, jobId,
-          );
+          // Recorded when a row was written, and also when nothing was written
+          // but nothing was blocked either — that is the benign case where
+          // every insert hit an external_id conflict, which means the content
+          // IS already present.
+          //
+          // NOT recorded when the quality gate refused everything. A
+          // fingerprint suppresses the story for CLAIM_WINDOW_DAYS = 14, and a
+          // claim whose candidates were all rejected must stay eligible, so a
+          // rejection cannot bury a story permanently. That guarantee used to
+          // come free from `passing.length > 0`; it does not any more, because
+          // the rules engine now runs INSIDE writePassingQuestions, after that
+          // filter. See shouldRecordClaim().
+          if (shouldRecordClaim(written.length, writeResult.ruleStats)) {
+            await guard.record(
+              keys, cluster.sharedEntities, target.lane, written[0]?.externalId ?? null, jobId,
+            );
+          } else {
+            console.warn(
+              `[QualityRules] claim not fingerprinted — the gate blocked all ${writeResult.ruleStats.blocked} question(s); the story stays eligible`,
+            );
+          }
         }
       } catch (err) {
         // One bad cluster must not cost every lane the rest of the run.
@@ -592,11 +603,12 @@ export async function runNightlyPipeline(
         );
 
         const qr = s.qualityRules;
-        if (qr.audited > 0) {
+        if (qr.audited > 0 || qr.ruleErrors > 0) {
           console.log(
             `[QualityRules] lane=${t.lane}: ${qr.audited} audited, ${qr.withBlocking} with blocking ` +
             `(${qr.blocked} blocked, ${qr.suppressed} written anyway), ` +
-            `${qr.withAdvisoryOnly} advisory-only, ${qr.ruleErrors} rule errors` +
+            `${qr.withAdvisoryOnly} advisory-only, ${qr.ruleErrors} rule errors, ` +
+            `${qr.writtenUnaudited} written unaudited` +
             (Object.keys(qr.byRule).length > 0
               ? ` — ${Object.entries(qr.byRule).map(([r, n]) => `${r}=${n}`).join(' ')}`
               : ''),

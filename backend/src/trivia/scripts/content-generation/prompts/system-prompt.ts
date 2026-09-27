@@ -110,9 +110,15 @@ the correct value to fix this — change the distractors around it.
 - Each question must stand completely alone — no references to other questions
 
 ### Answer Options
-- ALL four options must be plausible local alternatives — no obviously wrong throwaway answers
-- Distractors should be real local entities, real neighboring towns, real government structures, real numbers in the right ballpark
-- A civic-minded local resident should need to actually think before answering
+- Distractors must always be REAL things — real local entities, real neighbouring
+  towns, real government structures, real numbers in the right ballpark. Never
+  invent an entity, and never use "None of the above".
+- How hard they are is what carries the difficulty tier, so it differs by tier:
+  - For MEDIUM and HARD questions, all four options must be genuinely plausible
+    local alternatives — a civic-minded local resident should need to think.
+  - For EASY questions the opposite applies: the three distractors must be ones a
+    resident rules out instantly. They are still real entities, just obviously
+    not the answer. See the difficulty rubric above.
 
 ### Explanations
 - Every explanation MUST begin with: "According to [source name], ..."

@@ -8,6 +8,7 @@ import {
   decideRuleGate,
   recordGate,
   recordRuleError,
+  recordWrittenUnaudited,
   type QualityRuleStats,
 } from './qualityGate.js';
 
@@ -60,6 +61,24 @@ export interface WritePassResult {
  * Takes the PLACED options and answer index, not the model's — `placeAnswer`
  * rewrites both, and the engine must judge what will actually be stored.
  */
+/**
+ * Audit a question the way the nightly pipeline audits it.
+ *
+ * Exists as its own export so the `skipUrlCheck` decision is testable on the
+ * path the pipeline actually takes. Asserting it against `auditQuestion`
+ * directly only re-tests `auditQuestion`'s documented contract, and would stay
+ * green if the write path dropped the option.
+ *
+ * skipUrlCheck is not an optimisation: checkLearnMoreLink fetches source.url
+ * and raises `broken-learn-more` at severity BLOCKING on any non-timeout
+ * failure. A news article URL is not a .gov page that answers bots politely, so
+ * leaving the check on would put an HTTP round trip per question inside the
+ * cron and make a blocking verdict depend on network weather.
+ */
+export async function auditForPipeline(input: QuestionInput) {
+  return auditQuestion(input, { skipUrlCheck: true });
+}
+
 export function toQuestionInput(
   q: {
     text: string;
@@ -145,21 +164,28 @@ Hard rules — a question breaking any of these is rejected by the quality engin
 after you write it, so write them right the first time:
 
 1. TIME. If the question asks what year something happened and the event is in the
-   past, no option may be a year that has not arrived yet. "In what year did X
-   begin?" must not offer 2027. A question about a deadline, a target or a term
-   that ends in the future may offer a future year — the test is the event, not
-   the number.
-2. NUMBERS. When all four options are numbers, quantities, years or percentages,
+   past, no option may be a year that has not arrived yet. A question asking when
+   a past treaty entered into force must not offer 2027. A question about a
+   deadline, a target or a term that ends in the future may offer a future year —
+   the test is the event, not the number.
+2. PHRASING OF DATE QUESTIONS. The engine's "pure lookup" rule blocks the exact
+   phrasings "in what year was", "in what year did" and "what date". These are
+   refused outright, whatever the question is about. Ask the same thing another
+   way: "The treaty entered into force in which year?" rather than "In what year
+   did the treaty enter into force?". Prefer a question about what happened or
+   what changed over one whose whole content is a date.
+3. NUMBERS. When all four options are numbers, quantities, years or percentages,
    the correct value must not always sit in the middle of the range. Vary which
    bracket it falls in across a batch — sometimes smallest, sometimes largest.
    Use one unit throughout a single question, and order the options ascending.
    Never move the correct value to achieve this; change the distractors.
-3. NO VAGUE QUALIFIERS. Do not write "most important", "best", "primarily",
-   "generally", "mainly", "usually", "typically", "often" or "commonly" into a
-   question. They make more than one option defensible.
-4. DISTINCT OPTIONS. The four options must be clearly distinct — not near-synonyms,
+4. NO VAGUE QUALIFIERS. Do not write "most important", "best", "primarily",
+   "generally", "mainly", "usually", "typically", "often", "commonly" or
+   "frequently" into a question. They make more than one option defensible.
+   This matches on substrings, so "best known for" trips it too.
+5. DISTINCT OPTIONS. The four options must be clearly distinct — not near-synonyms,
    not overlapping ranges, not the same phrase reordered.
-5. NO ADDRESSES OR PHONE NUMBERS as answer options.
+6. NO ADDRESSES OR PHONE NUMBERS as answer options.
 
 Generate 1 question for straightforward claims. Generate 2-3 for rich multi-faceted stories.`;
 
@@ -328,14 +354,18 @@ export async function writePassingQuestions(
     // Leaving it on would put an HTTP round trip per question inside the cron
     // and make the verdict depend on network weather.
     const enforce = qualityRulesEnforced();
+    // Dereferenced OUTSIDE the try on purpose. A claim with no source articles
+    // is a malformed claim, not a rules failure; inside the try it would be
+    // logged as "audit threw" and then throw again uncaught at the insert
+    // below, blaming the rules engine for someone else's defect.
+    const auditSource = { name: primarySource.feedName, url: primarySource.url };
     try {
-      const audit = await auditQuestion(
+      const audit = await auditForPipeline(
         toQuestionInput(
           { ...q, options: placed.options, correctAnswer: placed.correctAnswer },
           externalId,
-          { name: primarySource.feedName, url: primarySource.url },
+          auditSource,
         ),
-        { skipUrlCheck: true },
       );
 
       const decision = decideRuleGate(audit.violations, enforce);
@@ -357,6 +387,7 @@ export async function writePassingQuestions(
       // defect, and refusing to write because our own code crashed would turn
       // a bug into silent content loss.
       recordRuleError(ruleStats, externalId, err);
+      recordWrittenUnaudited(ruleStats);
       console.error(
         `[QualityRules] audit threw for ${externalId}: ${err instanceof Error ? err.message : String(err)} — writing unaudited`,
       );
