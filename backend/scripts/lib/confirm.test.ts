@@ -210,14 +210,31 @@ describe('confirmRow: snapshotMarkup wiring (amendment-markup spec §4)', () => 
     expect(f).not.toContain('amendment-markup-lost');
   });
 
-  it('no snapshotMarkup passed at all defaults to unknown (fail closed)', () => {
+  // Fix round 1, item 5: this used to omit `profiles` entirely, so it exercised GENERIC_RULES
+  // (amendment_text: 'final') rather than the `snapshotMarkup` default -- it could not have failed
+  // however `?? 'unknown'` was written. The real default-wiring test needs a `marked` profile AND no
+  // `snapshotMarkup` map, so the only thing making it pass is `markupOf`'s own `?? 'unknown'` fallback.
+  it('a marked profile with no snapshotMarkup map at all defaults to unknown -> amendment-markup-lost (fail closed)', () => {
     const f = confirmRow({
       seat, restsOnPassages: [passage], snapshotText: new Map([['s1', amendingText]]), sourceKind: kinds,
       rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1',
+      snapshotUrl: new Map([['s1', 'https://le.utah.gov/bills/hb11']]),
+      profiles: [parseSourceProfile(
+        '---\nprofile: test-hb11\nversion: 1\nscope: state:UT\nbody: legislature\nmatch:\n  url_prefixes:\n    - https://le.utah.gov/bills/\npage_kind: bill-text\nrules:\n  vote_block: whole-page\n  chamber: none\n  name_format: surname\n  amendment_text: marked\nseat_titles:\n  State Senator: upper\ncontrols:\n  - batch: b\n    snapshot: s1\n    person: J. Stuart Adams\n    office_title: State Senator\n    instrument: "H.B. 11 (2022)"\n    record_kind: other-act\n    actor_quote: "J. Stuart Adams led the override"\n    tally_quote: null\n    provision_quote: null\n    expect: pass\n---\nbody\n',
+        'test-hb11.md',
+      )],
+      // snapshotMarkup deliberately omitted.
     });
-    // No profiles given here -> GENERIC_RULES (amendment_text: 'final') so no finding. Wiring only
-    // matters once a `marked`/`unmarked` profile is in play (covered by the two tests above); this
-    // test confirms the absent map does not crash confirmRow and does not itself add the finding.
+    expect(f).toContain('amendment-markup-lost');
+  });
+
+  it('no profiles at all -> GENERIC_RULES (amendment_text: final) -> never amendment-markup-lost, regardless of snapshotMarkup', () => {
+    const f = confirmRow({
+      seat, restsOnPassages: [passage], snapshotText: new Map([['s1', amendingText]]), sourceKind: kinds,
+      rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1',
+      // No profiles, no snapshotMarkup: the passage falls back to GENERIC_RULES, whose
+      // amendment_text is 'final' -- confirmRow must not crash and must not add the finding.
+    });
     expect(f).not.toContain('amendment-markup-lost');
   });
 });

@@ -268,13 +268,40 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
 // it. Matched against the SAME normalizeText'd page text a quote's span is located in — normalizeText
 // only lowercases and collapses whitespace, so the fence delimiters survive unchanged.
 const DELETED_FENCE_RE = /\[deleted: [^\]]*\]/g;
+/** An opening `[deleted: ` with no closing `]` anywhere after it (a truncated snapshot, most likely a
+ * page cut off mid-fetch) — fail closed by treating it as a fence that runs to the end of the page,
+ * rather than reading none of it as deleted. */
+const OPEN_FENCE_RE = /\[deleted: /g;
 /** Both Indiana's ("is amended to read") and Arizona's (all-caps, since normalizeText lowercases
- * everything) forms read the same after normalizeText. */
-const AMENDED_TO_READ_RE = /is amended to read/;
+ * everything) forms read the same after normalizeText. The plural ("Sections … are amended to read")
+ * covers a multi-section amendment. */
+const AMENDED_TO_READ_RE = /(?:is|are) amended to read/;
 
-/** Every `[deleted: …]` fence's [start, end) character span in a normalizeText'd page. */
+/** Every `[deleted: …]` fence's [start, end) character span in a normalizeText'd page. A `[deleted: `
+ * with no closing `]` anywhere in the rest of the page runs to the end of the page (fail closed on a
+ * truncated snapshot) rather than matching nothing at all. */
 function fenceSpans(normalizedPage: string): [number, number][] {
-  return [...normalizedPage.matchAll(DELETED_FENCE_RE)].map((m) => [m.index!, m.index! + m[0].length]);
+  const spans: [number, number][] = [];
+  const closedStarts = new Set<number>();
+  for (const m of normalizedPage.matchAll(DELETED_FENCE_RE)) {
+    spans.push([m.index!, m.index! + m[0].length]);
+    closedStarts.add(m.index!);
+  }
+  for (const m of normalizedPage.matchAll(OPEN_FENCE_RE)) {
+    if (!closedStarts.has(m.index!)) spans.push([m.index!, normalizedPage.length]);
+  }
+  return spans;
+}
+
+/** Every start index of `needle` in `haystack` (overlapping matches included, fail closed rather than
+ * judging only the first — a provision quoted twice on one page, once outside a fence and once inside
+ * it, must still be caught when the fenced copy is not the first one found). */
+function allIndicesOf(haystack: string, needle: string): number[] {
+  if (needle.length === 0) return [];
+  const out: number[] = [];
+  let i = haystack.indexOf(needle);
+  while (i !== -1) { out.push(i); i = haystack.indexOf(needle, i + 1); }
+  return out;
 }
 
 export function checkRecordGroup(i: {
@@ -388,10 +415,20 @@ export function checkRecordGroup(i: {
   for (const p of provisionPassages) {
     const page = normalizeText(textOf(p));
     const q = normalizeText(p.provision_quote!);
-    const start = page.indexOf(q);
-    if (start !== -1) {
-      const end = start + q.length;
-      if (fenceSpans(page).some(([fs, fe]) => start < fe && fs < end)) out.add('provision-deleted');
+    const starts = allIndicesOf(page, q);
+    if (starts.length === 0) {
+      // verbatimIn (a substring test) said this quote is on the page, but indexOf cannot find it —
+      // should not happen, since both read the same normalizeText'd string, but fail closed rather
+      // than silently passing a quote this check cannot itself locate.
+      out.add('provision-deleted');
+    } else {
+      const spans = fenceSpans(page);
+      // ANY occurrence overlapping a fence is enough — a provision quoted twice on one page (a
+      // digest and the operative section, say) is deleted if even one copy sits inside a fence,
+      // regardless of which occurrence comes first.
+      if (starts.some((start) => { const end = start + q.length; return spans.some(([fs, fe]) => start < fe && fs < end); })) {
+        out.add('provision-deleted');
+      }
     }
     const { rules } = prof(p);
     const markup = i.markupOf?.(p) ?? 'unknown';

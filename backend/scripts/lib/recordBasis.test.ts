@@ -460,4 +460,32 @@ describe('amendment-markup CONFIRM (spec 2026-09-27 §4)', () => {
     }).findings;
     expect(f).toContain('amendment-markup-lost');
   });
+
+  it('the plural "are amended to read" is caught too (a multi-section amendment)', () => {
+    const page = `${pageBase} Sections 1 and 2 are amended to read as follows.`;
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'unknown')).toContain('amendment-markup-lost');
+  });
+
+  // Fix round 1, item 1: the OLD code checked only the FIRST occurrence of the quote, so the result
+  // depended on the order the two copies happen to print in — fenced-copy-second failed OPEN. Both
+  // orders must fail closed the same way.
+  it('a provision quoted twice on one page: the FENCED copy first, a clean copy second -> still provision-deleted', () => {
+    const page = 'HB 1296 (2022). Rep. Gowan. [deleted: a person shall not carry a handgun without a license] Elsewhere: a person shall not carry a handgun without a license.';
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).toContain('provision-deleted');
+  });
+  it('a provision quoted twice on one page: a clean copy first, the FENCED copy second -> still provision-deleted', () => {
+    const page = 'HB 1296 (2022). Rep. Gowan. Elsewhere: a person shall not carry a handgun without a license. [deleted: a person shall not carry a handgun without a license]';
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).toContain('provision-deleted');
+  });
+  it('a provision quoted twice, NEITHER copy fenced -> no provision-deleted', () => {
+    const page = 'HB 1296 (2022). Rep. Gowan. A person shall not carry a handgun without a license. Elsewhere: a person shall not carry a handgun without a license.';
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).not.toContain('provision-deleted');
+  });
+
+  // Fix round 1, item 2: an unclosed `[deleted: ` (a truncated snapshot) must count as a fence running
+  // to the end of the page — fail closed rather than reading a truncated deletion as none at all.
+  it('an unclosed [deleted: (truncated page) counts as a fence running to the end of the page', () => {
+    const page = 'HB 1296 (2022). Rep. Gowan. Section 1. (a) [deleted: a person shall not carry a handgun without a license';
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).toContain('provision-deleted');
+  });
 });

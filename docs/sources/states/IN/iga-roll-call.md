@@ -57,8 +57,11 @@ download (it shows a save dialog); read the saved file's text.
 **Amendment markup (`amendment_text: marked`):** `match.url_prefixes` is `/pdf-documents/`, which also
 covers an Indiana **bill-text** PDF (the enrolled/engrossed act), not only a roll call — a roll call has
 no amending language to lose, but a bill-text PDF read from the same prefix does. Read it with
-`pdf-snapshot.ts`, not a plain fetch: it detects the drawn strike-through rectangles and fences each
-deleted word as `[deleted: …]` (added text is bold in the PDF and needs no fence — it is the law). A
-plain-text extraction of the same PDF has no strike detection at all and reads as `unmarked`; CONFIRM
-fails closed (`amendment-markup-lost`) on either an `unmarked` reading or a `marked` one whose snapshot
-shows no fence, when the page says "is amended to read."
+`pdf-snapshot.ts`, not a plain fetch: it detects the drawn strike-through rectangles, fences each
+deleted word as `[deleted: …]` (added text is bold in the PDF and needs no fence — it is the law), and
+appends its trailer line — so a `pdf-snapshot.ts` read is `amendment_markup: 'kept'` **because of that
+trailer alone**, even on a page with no deletions to fence at all. The fail-closed case is a snapshot
+with **neither** the `pdf-snapshot.ts` trailer **nor** a `[deleted: …]` fence — a plain fetch or a
+plain-text extraction of the same PDF, with no strike detection run over it — which reads as
+`amendment_markup: 'unknown'`; CONFIRM then fails closed (`amendment-markup-lost`) when the page also
+says "is amended to read."
