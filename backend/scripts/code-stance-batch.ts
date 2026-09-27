@@ -86,7 +86,7 @@ console.log(`most-split codebook variables: ${digest.ranked.slice(0, 3).join(', 
 
 // Source-profile evidence (ruling 2026-09-26): every real record group where a profile's declared
 // rules and the generic rules disagree. Each is a page worth adding to that profile as a control.
-const divergences = profileDivergences({ validRows, snapshotText, snapshotUrl, profiles, fullName: context.seat.full_name, officeTitle: context.seat.office_title });
+const divergences = profileDivergences({ validRows, snapshotText, snapshotUrl, profiles, fullName: context.seat.full_name, officeTitle: context.seat.office_title, snapshotMarkup });
 writeFileSync(join(dir, 'profile-divergence.json'), JSON.stringify(divergences, null, 2));
 if (divergences.length) console.log(`profile needs its rule: ${divergences.length} record group(s) where profile ≠ generic -> ${join(dir, 'profile-divergence.json')} (add as controls)`);
 

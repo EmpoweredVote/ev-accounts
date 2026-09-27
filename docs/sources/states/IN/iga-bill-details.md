@@ -42,6 +42,24 @@ controls:
     actor_quote: "Authored by: Sen. Shelli Yoder"
     tally_quote: null
     expect: chamber-not-evidenced
+  - batch: 2026-09-27-shadow-smaltz
+    snapshot: 447259b2
+    person: Ben Smaltz
+    office_title: Representative
+    instrument: HB 1296 (2022)
+    record_kind: author
+    actor_quote: "Authored by: Rep. Ben Smaltz."
+    tally_quote: null
+    expect: pass
+  - batch: 2026-09-27-shadow-smaltz
+    snapshot: 447259b2
+    person: Ben Smaltz
+    office_title: Senator
+    instrument: HB 1296 (2022)
+    record_kind: author
+    actor_quote: "Authored by: Rep. Ben Smaltz."
+    tally_quote: null
+    expect: chamber-not-evidenced
 ---
 # Indiana General Assembly — bill details (iga)
 

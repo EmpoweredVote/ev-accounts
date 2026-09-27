@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "447259b2-e593-563f-a83c-ca597854585b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Official legislature page naming Smaltz as the author of the firearms bill; it names no provision text and no tally.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "373b376c-d46c-5723-9983-7ab241f1dcc1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Adoption of the conference committee report is the House's vote on the final text, and the 30 Nay votes of 99 cast keep it clear of near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Baird Goodrich Lyness Smaltz",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "100827c1-f615-514d-8f25-4da11a1bb272",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Enrolled text: SECTION 12 ends the carry-license requirement for adults, and SECTIONS 10, 11 and 14 repeal IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "447259b2-e593-563f-a83c-ca597854585b",
+        "373b376c-d46c-5723-9983-7ab241f1dcc1",
+        "100827c1-f615-514d-8f25-4da11a1bb272"
+      ],
+      "reasoning": "Smaltz authored HB 1296 (2022), a single-subject firearms act, and voted for the conference committee report that adopted its final text (\"Yea 69 Nay 30 Excused 1 Not Voting 0\"). The enrolled act provides that an adult not otherwise prohibited \"under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana\", and it repeals IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24 along with the license requirement itself, which is the rung that would \"Repeal major gun restrictions and let adults carry a firearm without a permit.\" The rung reading \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines.\" is excluded because the act goes past reciprocity and abolishes the permit.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

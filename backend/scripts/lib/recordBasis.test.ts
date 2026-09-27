@@ -275,6 +275,13 @@ describe('positive control: chamber layouts on real pages', () => {
       actor_quote: 'Authored by: Sen. Shelli Yoder', provision_quote: null });
     expect(checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Shelli Yoder', chamber: 'upper' }).findings).not.toContain('chamber-not-evidenced');
   });
+  it('IN author line: "Rep." before the surname is the lower chamber, like "Sen." is the upper (Smaltz, HB 1296)', () => {
+    const st = load('2026-09-27-shadow-smaltz');
+    const p = P({ snapshot_id: '447259b2-e593-563f-a83c-ca597854585b', instrument: 'HB 1296 (2022)', record_kind: 'author', tally_quote: null,
+      actor_quote: 'Authored by: Rep. Ben Smaltz.', provision_quote: null });
+    expect(checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Ben Smaltz', chamber: 'lower' }).findings).not.toContain('chamber-not-evidenced');
+    expect(checkRecordGroup({ passages: [p], snapshotText: st, fullName: 'Ben Smaltz', chamber: 'upper' }).findings).toContain('chamber-not-evidenced');
+  });
   it('CA AB 1955 Senate floor vote: "Motion Assembly 3rd Reading" is the bill stage, not the chamber', () => {
     const st = load('2026-09-25-shadow-durazo');
     const id = [...st.keys()].find((k) => k.startsWith('8666d0a3'))!;

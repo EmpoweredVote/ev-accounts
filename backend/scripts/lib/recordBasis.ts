@@ -192,7 +192,9 @@ const blockOf = (bounds: number[], a: number) => { let b = -1; for (let k = 0; k
  * legislature) and "<Chamber> Bill / Resolution / …" (a bill's origin, printed on the other chamber's
  * pages). Without this an Indiana Senate roll call passed for a House seat (final review 2026-09-26).
  */
-const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', house: 'lower', assembly: 'lower', asm: 'lower' };
+// 'rep' matches 'sen': Indiana's author line titles a Representative "Rep. Ben Smaltz" (HB 1296,
+// 2022), and without it that line showed no chamber at all ("House Bill" names the bill's origin).
+const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', house: 'lower', rep: 'lower', assembly: 'lower', asm: 'lower' };
 // A chamber word followed by these names a bill's origin or a stage ("Senate Bill", "Motion Assembly
 // 3rd Reading" on a SENATE floor vote of an Assembly bill, CA AB 1955), not where the vote happened.
 const NOT_CHAMBER_NEXT = /^(bills?|enrolled|joint|concurrent|resolutions?|amendments?|reading)$/;
