@@ -13,6 +13,8 @@
  *   carry a qualifier — a full given name (first or middle, 2+ letters) immediately before the
  *   surname ('Greg Walker', 'Stuart Adams') or the first initial immediately after it ('Walker G',
  *   'Adams J. S.') -> otherwise 'name-collision'.
+ * - exception, name_format 'surname-initial': a common surname printed once on the whole page with no
+ *   initial after it is one member of that chamber (the page prints initials to tell namesakes apart).
  * Known limit: a namesake who is absent from the page, in the same chamber, with an uncommon surname
  * cannot be detected by the page alone.
  *
@@ -400,6 +402,14 @@ export function checkRecordGroup(i: {
     }));
     const fullNameRequired = prof(p).rules.name_format === 'full-name';
     if (blockCount < 2 && !common && !fullNameRequired) continue;
+    // 'surname-initial' (Indiana roll calls): the page lists the whole chamber and prints an initial
+    // whenever two members share a surname ("Smith, V", "Young, J"). A surname printed ONCE on the
+    // whole page, with no initial after it, therefore names exactly one member of that chamber — a
+    // common surname needs no given name there. (The chamber and date checks still apply.)
+    if (prof(p).rules.name_format === 'surname-initial' && common) {
+      const onPage = pt.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
+      if (onPage.length === 1 && (pt[onPage[0] + 1] ?? '').length !== 1) continue;
+    }
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
     const qualified = idx.some((k) =>

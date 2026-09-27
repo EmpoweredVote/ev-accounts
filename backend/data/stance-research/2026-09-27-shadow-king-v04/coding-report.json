@@ -18,17 +18,13 @@
           "b7d2553f-89c0-5fb5-bf36-1963f7caca5c"
         ]
       },
-      "confirm": [
-        "name-collision"
-      ],
+      "confirm": [],
       "stratum": {
         "level": "state",
         "evidence_class": "record"
       },
-      "shadow": "would-review",
-      "shadow_reasons": [
-        "confirm-failed"
-      ],
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
       "seed": "none",
       "profiles": [
         "in-iga-bill-details@2",

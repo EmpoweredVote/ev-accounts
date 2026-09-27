@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "slot": 1,
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "instrument": "hb1041(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "4a478ff4-9133-56ed-ab4a-289af0110b4a",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "b7d2553f-89c0-5fb5-bf36-1963f7caca5c",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "70148e16-ac78-5bc4-a055-363237f5e98a",
+        "url": "https://iga.in.gov/legislative/2022/bills/house/1041/details",
+        "profile": "in-iga-bill-details@2"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "instrument": "hb1041(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "70148e16-ac78-5bc4-a055-363237f5e98a",
+        "url": "https://iga.in.gov/legislative/2022/bills/house/1041/details",
+        "profile": "in-iga-bill-details@2"
+      },
+      {
+        "snapshot_id": "b7d2553f-89c0-5fb5-bf36-1963f7caca5c",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "4a478ff4-9133-56ed-ab4a-289af0110b4a",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "name-collision",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "tally-unreadable"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "instrument": "hb1041(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "4a478ff4-9133-56ed-ab4a-289af0110b4a",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "70148e16-ac78-5bc4-a055-363237f5e98a",
+        "url": "https://iga.in.gov/legislative/2022/bills/house/1041/details",
+        "profile": "in-iga-bill-details@2"
+      },
+      {
+        "snapshot_id": "b7d2553f-89c0-5fb5-bf36-1963f7caca5c",
+        "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]
