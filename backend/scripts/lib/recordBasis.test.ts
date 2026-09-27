@@ -522,3 +522,26 @@ describe("name_format 'surname-initial' — a bare surname printed once is one m
     expect(found).not.toContain('name-collision');
   });
 });
+
+// AZ BillStatus: one URL prefix serves the vote dialog ("House Third Reading - HB…") AND the overview
+// (sponsor list, no reading line). 'reading-else-bill-origin' reads the reading line when there is one,
+// else the bill's chamber of origin (with bill-origin's co-author guard).
+describe("chamber 'reading-else-bill-origin' (AZ BillStatus)", () => {
+  const R: SourceRules = { ...GENERIC_RULES, vote_block: 'whole-page', chamber: 'reading-else-bill-origin', tally_format: 'dash-ayes-nays' };
+  const run = (page: string, actor: string, chamber: 'upper' | 'lower', record_kind = 'sponsor', tally: string | null = null, fullName = 'Jake Hoffman', instrument = 'HB 2492 (2022)') =>
+    checkRecordGroup({ passages: [P({ snapshot_id: 'x', instrument, provision_quote: null, record_kind, actor_quote: actor, tally_quote: tally })],
+      snapshotText: new Map([['x', page]]), fullName, chamber: null, profileOf: () => ({ rules: R, chamber }) }).findings;
+  const overview = 'Bill Status Inquiry. Bill History for HB2492. Short Title: voter registration. Sponsors: Hoffman (Prime) Blackman (Co-Sponsor)';
+  it('overview (no reading line): HB → the House', () => {
+    expect(run(overview, 'Hoffman (Prime)', 'lower')).not.toContain('chamber-not-evidenced');
+    expect(run(overview, 'Hoffman (Prime)', 'upper')).toContain('chamber-not-evidenced');
+  });
+  const senate = 'Senate Third Reading - HB2492 voter registration Action Date Action Vote 03/23/2022 Passed 16-12-2-0-0 BARTO Y HOFFMAN Y';
+  it('a reading line wins over the bill origin (Senate vote on an HB)', () => {
+    expect(run(senate, 'HOFFMAN Y', 'upper', 'vote', 'Passed 16-12-2-0-0')).not.toContain('chamber-not-evidenced');
+    expect(run(senate, 'HOFFMAN Y', 'lower', 'vote', 'Passed 16-12-2-0-0')).toContain('chamber-not-evidenced');
+  });
+  it('"House Final Reading" names the House', () =>
+    expect(run('House Final Reading - SB1001 x Action Date Action Vote 06/01/2026 Passed 39-16-5-0-0 GRIFFIN Y', 'GRIFFIN Y', 'lower', 'vote', 'Passed 39-16-5-0-0', 'Gail Griffin', 'SB 1001 (2026)'))
+      .not.toContain('chamber-not-evidenced'));
+});

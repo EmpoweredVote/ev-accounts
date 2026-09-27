@@ -355,3 +355,34 @@ controls:
   it('the span chamber field decides the chamber even when the title is unfamiliar', () =>
     expect(run({ ...base, seat: { ...cand, prior_terms: [{ ...houseSpan, office_title: 'Member' }] } })).not.toContain('chamber-not-evidenced'));
 });
+
+// Decision 2026-09-27 (b): a closed span with an UNKNOWN start still covers its final regular term —
+// a record dated within one term length before the span's end (UT House: 2 years).
+describe('V5 option B — spans with an unknown start cover their last term only', () => {
+  const prof = parseSourceProfile(`---
+profile: test-ut-votes
+version: 1
+scope: state:UT
+body: legislature
+match:
+  url_prefixes: [https://le.test/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: nearest-before, name_format: surname }
+seat_titles: { State Senator: upper, State Representative: lower }
+controls:
+  - { batch: b, snapshot: x, person: Jo Quimby, office_title: State Senator, instrument: HB 11 (2019), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+`, 'test.md');
+  const page = new Map([['v', 'Utah Legislature. HB 11 (2019). House Floor Ayes 50 Noes 20 Ayes Baker, Quimby, Zane. The bill requires students to compete on teams matching their sex at birth.']]);
+  const senator: SeatContext = { ...seat, full_name: 'Jo Quimby', office_title: 'State Senator', term_start: '2021-01-04', start_precision: 'day', state_usps: 'UT' };
+  const span = { office_title: 'State Representative', chamber: 'lower' as const, state_usps: 'UT', term_start: null, start_precision: 'unknown', term_end: '2021-01-03' };
+  const at = (date: string) => run({ restsOnPassages: [P({ snapshot_id: 'v', date, instrument: 'HB 11 (2019)', record_kind: 'vote', actor_quote: 'Baker, Quimby, Zane', tally_quote: 'Ayes 50 Noes 20' })],
+    sourceKind: new Map([['v', 'public-record']]), snapshotUrl: new Map([['v', 'https://le.test/hb11']]), snapshotText: page, profiles: [prof], seat: { ...senator, prior_terms: [span] } });
+  it('within the last term (2019-03-01, span ends 2021-01-03) → counts', () => expect(at('2019-03-01')).not.toContain('prior-service-unverified'));
+  it('before the last term (2016-03-01) → prior-service-unverified', () => expect(at('2016-03-01')).toContain('prior-service-unverified'));
+  it('a state with no term-length rule stays strict', () =>
+    expect(run({ restsOnPassages: [P({ snapshot_id: 'v', date: '2020-03-01', instrument: 'HB 11 (2019)', record_kind: 'vote', actor_quote: 'Baker, Quimby, Zane', tally_quote: 'Ayes 50 Noes 20' })],
+      sourceKind: new Map([['v', 'public-record']]), snapshotUrl: new Map([['v', 'https://le.test/hb11']]), snapshotText: page,
+      profiles: [parseSourceProfile(prof.profile ? `---\nprofile: test-zz\nversion: 1\nscope: state:ZZ\nbody: legislature\nmatch:\n  url_prefixes: [https://le.test/]\npage_kind: vote\nrules: { vote_block: aye-count, chamber: nearest-before, name_format: surname }\nseat_titles: { State Senator: upper, State Representative: lower }\ncontrols:\n  - { batch: b, snapshot: x, person: Jo Quimby, office_title: State Senator, instrument: HB 11 (2019), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }\n---\n` : '', 'z.md')],
+      seat: { ...senator, state_usps: 'ZZ', prior_terms: [{ ...span, state_usps: 'ZZ' }] } })).toContain('prior-service-unverified'));
+});

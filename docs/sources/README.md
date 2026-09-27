@@ -48,6 +48,8 @@ file and the key.
 | | `whole-page` | the page is one vote (or carries no vote at all — an author/bill-text page) |
 | `chamber` | `nearest-before` | the nearest chamber word before the surname (today's rule) |
 | | `word-before-floor` | the chamber word directly before "Floor" in the actor's own vote block (CA) |
+| | `word-before-reading` | the chamber word directly before "[Third / Final] Reading" in the actor's own vote block (AZ vote dialog) |
+| | `reading-else-bill-origin` | `word-before-reading` when the page has a reading line, else `bill-origin` (AZ BillStatus: one prefix serves the vote dialog and the sponsor overview) |
 | | `page-header` | the first chamber word on the page (IN roll call) |
 | | `bill-origin` | the chamber comes from the bill prefix — SB → upper, AB/HB → lower; for a primary author on a bill page. A co-author printed in the OTHER chamber overrides this (a namesake co-author cannot borrow the bill's chamber of origin) — see `recordBasis.ts` `actorChamber`. |
 | | `none` | no chamber: a council, a board, a unicameral body (Nebraska) — the chamber test is skipped. **Not valid when `seat_titles` names both an `upper` and a `lower` chamber** — that pairing is the signal that this body needs the chamber test, not that it can be skipped (`parseSourceProfile` rejects it). |
@@ -78,7 +80,7 @@ match:
 page_kind: vote                       # vote | author | bill-text | minutes
 rules:
   vote_block: aye-count               # aye-count | whole-page
-  chamber: nearest-before              # nearest-before | word-before-floor | page-header | bill-origin | none
+  chamber: nearest-before              # nearest-before | word-before-floor | word-before-reading | reading-else-bill-origin | page-header | bill-origin | none
   not_chamber_after: []               # optional: extra single words that make a chamber word a bill origin/stage, not a location
   name_format: surname                # surname | surname-initial | last-first | full-name
 seat_titles:                          # office_title → chamber, for this body

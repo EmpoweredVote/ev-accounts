@@ -62,10 +62,39 @@ function recordVsTermStart(d: string, start: string | null | undefined, precisio
   return cut === 10 ? 'in' : 'unsettled';
 }
 
-/** Is `d` (a floored date) inside this closed term? Imprecise ends fail closed (never 'in'). */
+/**
+ * Regular term length in years, by state and chamber (the states with source profiles, plus UT used in
+ * tests): CA Const. art. IV §2 (Assembly 2, Senate 4); IN Const. art. 4 §3 (House 2, Senate 4); AZ Const.
+ * art. IV pt. 2 §21 (both 2); UT Const. art. VI §3 (House 2, Senate 4). A state not listed has no
+ * last-term rule, so an unknown start there stays strict.
+ */
+const TERM_YEARS: Record<string, { upper: number; lower: number }> = {
+  CA: { upper: 4, lower: 2 }, IN: { upper: 4, lower: 2 }, AZ: { upper: 2, lower: 2 }, UT: { upper: 4, lower: 2 },
+};
+const minusYears = (iso: string, years: number): string => {
+  const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
+  d.setUTCFullYear(d.getUTCFullYear() - years);
+  return d.toISOString().slice(0, 10);
+};
+
+/**
+ * Is `d` (a floored date) inside this closed term? Imprecise ends fail closed (never 'in').
+ * An UNKNOWN start (OpenStates often records only when an earlier role ended) still covers the span's
+ * final regular term — decision 2026-09-27 (b), Chris Andrews: a span that ended on a known day was held
+ * for at least its last term, so a record dated within one term length before the end counts. Anything
+ * earlier, or a state/chamber with no term-length rule, stays unsettled. (Known limit: a member who
+ * resigned mid-term.)
+ */
 function inTerm(d: string, t: PriorTerm): boolean {
-  if (recordVsTermStart(d, t.term_start, t.start_precision) !== 'in') return false;
-  return t.term_end !== null && d <= t.term_end.slice(0, 10);
+  if (t.term_end === null) return false;
+  const end = t.term_end.slice(0, 10);
+  if (d > end) return false;
+  const v = recordVsTermStart(d, t.term_start, t.start_precision);
+  if (v === 'in') return true;
+  if (t.term_start !== null && t.start_precision !== 'unknown') return false;
+  const chamber = t.chamber ?? seatChamber(t.office_title);
+  const years = chamber ? TERM_YEARS[t.state_usps.toUpperCase()]?.[chamber] : undefined;
+  return years !== undefined && d >= minusYears(end, years);
 }
 
 /**

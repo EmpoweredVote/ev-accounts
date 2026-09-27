@@ -1,7 +1,7 @@
 {
   "state": "IN",
   "openstates_commit": "bf4caf10",
-  "generated_at": "2026-09-27T23:21:27.446Z",
+  "generated_at": "2026-09-27T23:30:57.217Z",
   "proposals": [
     {
       "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
@@ -1510,7 +1510,9 @@
       "openstates_id": "ocd-person/b71e9f3a-2c59-4e18-80e6-da0a7cc51648",
       "openstates_name": "Hal Slager",
       "match": "seat lower 15 + surname",
-      "flags": [],
+      "flags": [
+        "source-span-inverted"
+      ],
       "spans": [
         {
           "chamber": "lower",
@@ -1519,14 +1521,6 @@
           "start_precision": "day",
           "service_end": null,
           "end_precision": null
-        },
-        {
-          "chamber": "lower",
-          "district": "15",
-          "service_start": "2020-11-04",
-          "start_precision": "day",
-          "service_end": "2018-11-06",
-          "end_precision": "day"
         }
       ],
       "source": "OpenStates people @bf4caf10 ocd-person/b71e9f3a-2c59-4e18-80e6-da0a7cc51648 (seat lower 15 + surname)"

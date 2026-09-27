@@ -106,6 +106,11 @@ const proposals = [...byPerson.values()].map((e) => {
     if (sp === 'bad' || ep === 'bad') flags.push('unparsed-date');
     return { chamber: r.type as Chamber, district: String(r.district ?? ''), service_start: asDate(r.start_date), start_precision: sp,
       service_end: asDate(r.end_date), end_precision: ep };
+  }).filter((sp) => {
+    // A role that ends before it starts is a source error (Harold Slager, IN House 15: start 2020-11-04,
+    // end 2018-11-06 — two stints merged). Drop it and flag it; never repair a date by guessing.
+    if (sp.service_start && sp.service_end && sp.service_start > sp.service_end) { flags.push('source-span-inverted'); return false; }
+    return true;
   }) : [];
   return { politician_id: e.politician_id, full_name: e.full_name, kinds: [...e.kinds].sort(), openstates_id: os?.id ?? null, openstates_name: os?.name ?? null,
     match: method || null, flags, spans, source: os ? `OpenStates people @${OS_COMMIT} ${os.id} (${method})` : null };

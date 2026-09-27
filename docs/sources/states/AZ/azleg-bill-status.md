@@ -1,6 +1,6 @@
 ---
 profile: az-azleg-bill-status
-version: 1
+version: 2
 scope: state:AZ
 body: legislature
 match:
@@ -9,7 +9,7 @@ match:
 page_kind: vote
 rules:
   vote_block: whole-page
-  chamber: word-before-reading
+  chamber: reading-else-bill-origin
   tally_format: dash-ayes-nays
   name_format: surname
 seat_titles:
@@ -36,6 +36,24 @@ controls:
     actor_quote: "GOWAN Y"
     tally_quote: "Passed 16-14-0-0-0"
     expect: chamber-not-evidenced
+  - batch: 2026-09-27-shadow-stahl-hamilton
+    snapshot: "29b90958"
+    person: Stephanie Stahl Hamilton
+    office_title: State Representative
+    instrument: HB 2677 (2024)
+    record_kind: sponsor
+    actor_quote: "Stahl Hamilton (Prime)"
+    tally_quote: null
+    expect: pass
+  - batch: 2026-09-27-shadow-stahl-hamilton
+    snapshot: "29b90958"
+    person: Stephanie Stahl Hamilton
+    office_title: State Senator
+    instrument: HB 2677 (2024)
+    record_kind: sponsor
+    actor_quote: "Stahl Hamilton (Prime)"
+    tally_quote: null
+    expect: chamber-not-evidenced
 ---
 # Arizona Legislature — bill status and roll-call votes (azleg)
 
@@ -53,8 +71,11 @@ file: a sponsor who also voted is then printed twice, and CONFIRM reads two memb
 it with `azleg-bill-text`.
 
 **Traps:**
-- `Senate Third Reading` / `House Third Reading` names the chamber that voted (rule
-  `word-before-reading`). This is the opposite of California, where `Motion Assembly 3rd Reading`
+- `Senate Third Reading` / `House Third Reading` / `House Final Reading` names the chamber that voted
+  (rule `reading-else-bill-origin`, v2). The **overview** page (the sponsor list) has no reading line:
+  there the bill's own house of origin is the sponsor's chamber (HB → House), with bill-origin's
+  co-author guard. v1 read only the reading line, so every sponsor record from an overview failed
+  `chamber-not-evidenced` (Stahl Hamilton HB 2677, Hoffman HB 2492, Kavanagh HB 2853). This is the opposite of California, where `Motion Assembly 3rd Reading`
   names the bill's house of origin.
 - The tally is unlabelled: `16-14-0-0-0` = Ayes-Nays-Not voting-Excused-Vacant (rule
   `tally_format: dash-ayes-nays`).

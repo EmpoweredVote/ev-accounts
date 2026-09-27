@@ -41,7 +41,7 @@ export type RecordFinding =
 export type Chamber = 'upper' | 'lower';
 
 export type VoteBlockRule = 'aye-count' | 'whole-page';
-export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'page-header' | 'bill-origin' | 'none';
+export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'reading-else-bill-origin' | 'page-header' | 'bill-origin' | 'none';
 export type TallyFormat = 'labelled' | 'dash-ayes-nays';
 export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
 /**
@@ -53,7 +53,7 @@ export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-na
 export type AmendmentText = 'final' | 'marked' | 'unmarked';
 export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat; amendment_text: AmendmentText }
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
-export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'page-header', 'bill-origin', 'none'];
+export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'reading-else-bill-origin', 'page-header', 'bill-origin', 'none'];
 export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
 export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
 export const AMENDMENT_TEXTS: readonly AmendmentText[] = ['final', 'marked', 'unmarked'];
@@ -239,10 +239,15 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
       const start = b >= 1 ? bounds[b - 1] : 0;
       for (let k = a - 1; k >= start; k--) {
         const c = CHAMBER_WORD[pt[k]];
-        if (c && (pt[k + 1] === 'reading' || (ORDINAL.test(pt[k + 1] ?? '') && pt[k + 2] === 'reading'))) return c;
+        if (c && (pt[k + 1] === 'reading' || ((ORDINAL.test(pt[k + 1] ?? '') || pt[k + 1] === 'final') && pt[k + 2] === 'reading'))) return c;
       }
       return null;
     }
+    case 'reading-else-bill-origin':
+      // AZ BillStatus: one URL prefix serves both the vote dialog ("House Third Reading - HB…", which
+      // names the chamber that voted) and the overview (a sponsor list with no reading line, where the
+      // bill's own house of origin is the sponsor's chamber — bill-origin, with its co-author guard).
+      return actorChamber('word-before-reading', pt, a, instrument, extra, bounds) ?? actorChamber('bill-origin', pt, a, instrument, extra, bounds);
     case 'page-header':
       for (let k = 0; k < pt.length; k++) { const c = chamberAt(pt, k, extra); if (c) return c; }
       return null;
