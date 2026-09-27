@@ -489,14 +489,9 @@ async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<st
   return text || null;
 }
 
-/**
- * The /available lookup — tier 3's first, cheap attempt (this is exactly the
- * pre-CDX production behaviour). CDX runs only when this does not return a real
- * page, so /available stays the fast common path.
- */
-async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Promise<string | null> {
+/** Ask /available for the closest HTTP-200 capture of `url`; its (wrapped) snapshot URL, or null. */
+async function waybackAvailableSnapshotUrl(url: string, fetchImpl: FetchLike): Promise<string | null> {
   const noProto = url.replace(/^https?:\/\//, '');
-  let snapUrl: string | undefined;
   try {
     const avail = await fetchImpl(
       'https://archive.org/wayback/available?url=' + encodeURIComponent(noProto),
@@ -506,10 +501,20 @@ async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Prom
     const json: any = await avail.json();
     const snap = json?.archived_snapshots?.closest;
     if (!snap?.url || String(snap.status) !== '200') return null;
-    snapUrl = snap.url;
+    return String(snap.url);
   } catch {
     return null;
   }
+}
+
+/**
+ * The /available lookup — tier 3's first, cheap attempt (this is exactly the
+ * pre-CDX production behaviour). CDX runs only when this does not return a real
+ * page, so /available stays the fast common path.
+ */
+async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Promise<string | null> {
+  const snapUrl = await waybackAvailableSnapshotUrl(url, fetchImpl);
+  if (!snapUrl) return null;
   try {
     const res = await fetchImpl(snapUrl!, {
       signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
@@ -557,6 +562,188 @@ export async function fetchViaWayback(url: string, deps: WaybackDeps = {}): Prom
   // Prefer a CDX recovery; else return /available's best-effort text (may be thin —
   // the ladder's looksLikeRealPage gate decides whether to keep it), or null.
   return viaCdx ?? viaAvailable ?? null;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Raw-HTML ladder — the same live → Wayback order and robots rules as the text
+// ladder below, but it hands back the page's RAW HTML instead of stripped text.
+//
+// Why a second ladder: every text tier above converts (htmlToArticleOrText)
+// before returning, so a caller that needs the markup itself — the
+// amendment-markup snapshot path (snapshot-sources.ts), whose converter keeps
+// <strike>/<del>/line-through runs as `[deleted: …]` fences — could not use the
+// ladder at all and fell back to a bare live fetch with no archive fallback.
+// The text ladder is left exactly as it was.
+//
+// Deliberate differences from the text ladder:
+//   - No congress.gov adapter tier: it rebuilds text from api.congress.gov and
+//     has no HTML (and so no markup) to hand back.
+//   - Wayback captures are fetched in their `id_` (raw, unwrapped) form, from
+//     /available as well as CDX. The wrapped copy injects the archive toolbar
+//     and its stylesheets, which a markup reader would read as page content.
+//   - A non-HTML live response is a hard stop (NotHtmlError), not a reason to
+//     try the archive: an archived PDF is still a PDF.
+//   - "Real page" is judged on htmlToText(html), the same gate as the text
+//     ladder applied to the text the HTML would yield.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Thrown by the raw-HTML ladder when the live page is not HTML. Detect by the stable `code`. */
+export class NotHtmlError extends Error {
+  readonly code = 'not_html';
+  constructor(url: string, contentType: string) {
+    super('not_html: ' + url + ' (' + (contentType || 'no content-type') + ')');
+    this.name = 'NotHtmlError';
+  }
+}
+
+export interface RawHtmlPage {
+  html: string;
+  /** Where the HTML came from: the live site, or an archived Wayback capture. */
+  via: 'live' | 'wayback';
+  /** The URL whose body this is — the live URL after redirects, or the `id_` capture URL. */
+  fetchedUrl: string;
+}
+
+/** The HTML is a real page (not a stub/challenge) by the same gate the text ladder uses. */
+function htmlLooksReal(html: string): boolean {
+  return looksLikeRealPage(htmlToText(html));
+}
+
+/** Rewrite a wrapped Wayback capture URL (`/web/<ts>/<orig>`) to its raw `id_` form, or null. */
+export function waybackRawCaptureUrl(snapUrl: string): string | null {
+  const m = /^https?:\/\/web\.archive\.org\/web\/(\d{14})(?:[a-z]{2}_)?\/(.+)$/.exec(snapUrl);
+  return m ? 'https://web.archive.org/web/' + m[1] + 'id_/' + m[2] : null;
+}
+
+/** Fetch one raw capture; its HTML if the capture is a 2xx HTML response, else null. */
+async function fetchRawCapture(captureUrl: string, fetchImpl: FetchLike): Promise<RawHtmlPage | null> {
+  try {
+    const res = await fetchImpl(captureUrl, {
+      signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+      headers: { 'user-agent': EMPOWERED_VOTE_UA },
+    });
+    if (!res.ok) return null;
+    if (!(res.headers.get('content-type') ?? '').includes('html')) return null;
+    const html = await res.text();
+    return html ? { html, via: 'wayback', fetchedUrl: captureUrl } : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Wayback, raw — /available first (rewritten to its `id_` capture), then the CDX
+ * index when /available did not yield a real page. Same order and reasoning as
+ * {@link fetchViaWayback}. Returns the best capture found (possibly thin — the
+ * ladder decides), or null.
+ */
+export async function fetchRawHtmlViaWayback(url: string, deps: WaybackDeps = {}): Promise<RawHtmlPage | null> {
+  const fetchImpl: FetchLike = deps.fetchImpl ?? fetch;
+  let viaAvailable: RawHtmlPage | null = null;
+  const snapUrl = await waybackAvailableSnapshotUrl(url, fetchImpl);
+  const rawUrl = snapUrl ? waybackRawCaptureUrl(snapUrl) : null;
+  if (rawUrl) viaAvailable = await fetchRawCapture(rawUrl, fetchImpl);
+  if (viaAvailable && htmlLooksReal(viaAvailable.html)) return viaAvailable;
+  let viaCdx: RawHtmlPage | null = null;
+  try {
+    const hit = await cdxLatest200(url, fetchImpl);
+    if (hit) viaCdx = await fetchRawCapture('https://web.archive.org/web/' + hit.timestamp + 'id_/' + hit.original, fetchImpl);
+  } catch {
+    /* CDX unreachable / malformed — fall through to /available's best effort. */
+  }
+  return viaCdx ?? viaAvailable ?? null;
+}
+
+/** Outcome of a raw live fetch: the page, or a robots refusal on the redirect target's origin. */
+type RawLiveResult = RawHtmlPage | { robotsDisallowed: true };
+
+/**
+ * Tier 1, raw — plain HTTP fetch, body returned unconverted. Throws on network
+ * error / non-2xx, and NotHtmlError for a non-HTML body. A redirect that lands on
+ * another origin gets that origin's robots.txt checked before its body is used.
+ */
+export async function fetchRawHtmlViaHttp(
+  url: string,
+  deps: { fetchImpl?: FetchLike; robotsAllows?: (url: string) => Promise<boolean> } = {},
+): Promise<RawLiveResult> {
+  const fetchImpl: FetchLike = deps.fetchImpl ?? fetch;
+  const allowed = deps.robotsAllows ?? robotsAllows;
+  const res = await fetchImpl(url, {
+    redirect: 'follow',
+    signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+    headers: {
+      'user-agent': EMPOWERED_VOTE_UA,
+      accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'accept-language': 'en-US,en;q=0.9',
+    },
+  });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  // A fake Response (tests) has an empty url; treat that as "not redirected".
+  const finalUrl = res.url || url;
+  if (new URL(finalUrl).origin !== new URL(url).origin && !(await allowed(finalUrl))) {
+    return { robotsDisallowed: true };
+  }
+  const ctype = res.headers.get('content-type') ?? '';
+  if (!ctype.includes('html')) throw new NotHtmlError(url, ctype);
+  return { html: await res.text(), via: 'live', fetchedUrl: finalUrl };
+}
+
+/** Injectable tiers for {@link fetchRawHtml}. Defaults are the real network paths. */
+export interface RawHtmlFetchDeps {
+  robotsAllows?: (url: string) => Promise<boolean>;
+  httpFetch?: (url: string) => Promise<RawLiveResult>;
+  wayback?: (url: string) => Promise<RawHtmlPage | null>;
+}
+
+/**
+ * The raw-HTML ladder: robots gate → live HTTP → Wayback (`id_`), stopping at the
+ * first real page. Throws RobotsDisallowedError when robots says no (for the URL
+ * or its redirect target) and the archive has no copy; NotHtmlError when the live
+ * page is not HTML; otherwise an Error naming the live failure when every tier
+ * failed. A thin page is returned best-effort (longest by text) as the text
+ * ladder does.
+ */
+export async function fetchRawHtml(url: string, deps: RawHtmlFetchDeps = {}): Promise<RawHtmlPage> {
+  const allowed = deps.robotsAllows ?? robotsAllows;
+  const httpFetch = deps.httpFetch ?? ((u: string) => fetchRawHtmlViaHttp(u, { robotsAllows: allowed }));
+  const wayback = deps.wayback ?? ((u: string) => fetchRawHtmlViaWayback(u));
+
+  const archiveOrRefuse = async (): Promise<RawHtmlPage> => {
+    try {
+      const w = await wayback(url);
+      if (w) return w; // an archive.org copy is fair game even when the live site says no
+    } catch {
+      /* fall through to the distinct signal */
+    }
+    throw new RobotsDisallowedError(url);
+  };
+
+  if (!(await allowed(url))) return archiveOrRefuse();
+
+  const candidates: RawHtmlPage[] = [];
+  let liveFailure = 'no live page';
+  try {
+    const live = await httpFetch(url);
+    if ('robotsDisallowed' in live) return archiveOrRefuse();
+    if (htmlLooksReal(live.html)) return live;
+    if (live.html) candidates.push(live);
+  } catch (e) {
+    if (e instanceof NotHtmlError) throw e;
+    liveFailure = (e as Error).message;
+  }
+
+  try {
+    const w = await wayback(url);
+    if (w && htmlLooksReal(w.html)) return w;
+    if (w) candidates.push(w);
+  } catch {
+    /* fall through */
+  }
+
+  if (candidates.length) {
+    return candidates.sort((a, b) => htmlToText(b.html).length - htmlToText(a.html).length)[0];
+  }
+  throw new Error(liveFailure + ' (no archived copy)');
 }
 
 export interface VerificationFetchSession {

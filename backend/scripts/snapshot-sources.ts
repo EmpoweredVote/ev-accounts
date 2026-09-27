@@ -15,7 +15,8 @@ import { buildSnapshot, resolveHumanSavedPath, PDF_TRAILER_PREFIX, type Snapshot
 import { htmlMarkedTextWithStats } from './lib/htmlMarkedText.js';
 import { loadSourceProfiles, resolveProfile } from './lib/sourceProfiles.js';
 import { createPageFetcher } from '../src/lib/researchVerifier.js';
-import { createVerificationFetchSession, htmlToText, robotsAllows, EMPOWERED_VOTE_UA, HTTP_TIMEOUT_MS } from '../src/lib/verificationFetch.js';
+import { createVerificationFetchSession, htmlToText } from '../src/lib/verificationFetch.js';
+import { snapshotMarkedHtml } from './lib/markedHtmlSnapshot.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir');
@@ -35,9 +36,10 @@ for (const entry of manifest.sources) {
 const batchId = manifest.batch_id;
 
 // Amendment-markup spec §1/§3: the source profile says how a URL prints amended text.  A code-fetched
-// HTML page from a `marked` source (AZ azleg strike-through) is read with htmlToMarkedText so deleted
-// words survive as `[deleted: …]` fences; every other source keeps today's behaviour (the verifier's
-// fetch ladder, already stripped to plain text).
+// HTML page from a `marked` source (AZ azleg strike-through) is fetched RAW through the raw-HTML
+// ladder (verificationFetch.fetchRawHtml: live → Wayback id_ capture) and read with htmlToMarkedText so
+// deleted words survive as `[deleted: …]` fences; every other source keeps today's behaviour (the
+// verifier's text ladder, already stripped to plain text).
 const profiles = loadSourceProfiles();
 
 /** True for a file pdf-snapshot.ts itself produced: already plain text with `[deleted: …]` fences and
@@ -56,6 +58,8 @@ function isPdfSnapshotOutput(raw: string): boolean {
 const session = createVerificationFetchSession();
 const fetcher = createPageFetcher(session.fetch);
 const out: SnapshotRecord[] = [];
+/** `marked` pages read from a Wayback capture because the live site did not serve them: [url, capture]. */
+const archivedFrom: [string, string][] = [];
 for (const entry of manifest.sources) {
   const amendmentText = resolveProfile(profiles, entry.url)?.rules.amendment_text ?? 'final';
   if (entry.human_saved_path) {
@@ -75,34 +79,10 @@ for (const entry of manifest.sources) {
     continue;
   }
   if (amendmentText === 'marked') {
-    try {
-      if (!(await robotsAllows(entry.url))) {
-        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId, amendmentText }));
-        continue;
-      }
-      const res = await fetch(entry.url, {
-        redirect: 'follow',
-        signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
-        headers: { 'user-agent': EMPOWERED_VOTE_UA, accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' },
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      // A redirect can land on a different origin than the one whose robots.txt we just checked — that
-      // origin gets its own robots.txt check before its body is used.
-      if (new URL(res.url).origin !== new URL(entry.url).origin && !(await robotsAllows(res.url))) {
-        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId, amendmentText }));
-        continue;
-      }
-      const ctype = res.headers.get('content-type') ?? '';
-      if (!ctype.includes('html')) {
-        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'not-html', fetchedBy: 'code', batchId, amendmentText }));
-        continue;
-      }
-      const html = await res.text();
-      const { text, unresolved } = htmlMarkedTextWithStats(html);
-      out.push(buildSnapshot({ entry, fetchedText: text, failure: null, fetchedBy: 'code', batchId, amendmentText, markupUnresolved: unresolved }));
-    } catch (e) {
-      out.push(buildSnapshot({ entry, fetchedText: null, failure: (e as Error).message, fetchedBy: 'code', batchId, amendmentText }));
-    }
+    // Raw-HTML ladder (robots → live → Wayback id_ capture), so the strike-through markup survives.
+    const { record, page } = await snapshotMarkedHtml(entry, batchId);
+    if (page?.via === 'wayback') archivedFrom.push([entry.url, page.fetchedUrl]);
+    out.push(record);
     continue;
   }
   const r = await fetcher(entry.url);
@@ -114,6 +94,7 @@ await session.close();
 writeFileSync(join(dir, 'snapshots.json'), JSON.stringify(out, null, 2));
 const bad = out.filter((s) => !s.ok);
 console.log(`${out.length - bad.length}/${out.length} sources snapshotted → ${join(dir, 'snapshots.json')}`);
+for (const [url, capture] of archivedFrom) console.log(`  ARCHIVED COPY  ${url}  ← ${capture}`);
 for (const s of bad) console.log(`  NOT CODABLE  ${s.failure}  ${s.url}${s.source_kind === 'public-record' || s.source_kind === 'own-site' ? '  → a person may save it in a browser (spec §5.4)' : ''}`);
 
 if (APPLY) {
