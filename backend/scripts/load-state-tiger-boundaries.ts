@@ -546,6 +546,71 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // cd/county are EXCLUDED: prod already holds Kentucky's 6 congressional districts (G5200) and
   // all 120 counties (G4020).
   KY: new Set(['sldu', 'sldl']),
+  // KS. Knight program slice 14 — Wichita and Sedgwick County. Production held ZERO
+  // G5210/G5220 rows for FIPS 20 and ZERO state legislative offices before this wave;
+  // measured 2026-09-26 (Kansas held 105 counties, 4 congressional districts and 6 MTFCC-less
+  // statewide districts — US Senate plus 5 state executives).
+  // 🔴 MEASURE GEOMETRY IN geofence_boundaries BY FIPS ('20'); MEASURE DISTRICTS AND OFFICES IN
+  // districts BY USPS ('ks'). The two tables key differently and a query written for one and
+  // pointed at the other returns an EMPTY SET rather than an error. A districts-only count of
+  // Kansas places reports zero — places carry boundary rows and no districts rows — and that
+  // nearly put a needless ~600-row `place` load into this slice.
+  // Counts are the LAW here, not a measurement: "Kansas has 40 senatorial districts and 125
+  // representative districts. Kan. Const. art. 2, § 2; K.S.A. 4-101" (No. 125,083, slip op. at 2).
+  // Both chambers are single-member, so polygon count IS seat count — unlike ND and SD.
+  // Measured against raw TIGER FIPS 20 on 2026-09-26 by parsing the .dbf inside each zip:
+  //   sldu    40 records, 0 letters, 0 '000', MTFCC G5210, SLDUST '001'..'040'
+  //   sldl   125 records, 0 letters, 0 '000', MTFCC G5220, SLDLST '001'..'125'
+  // 🔴🔴 KANSAS GIVES NO STRUCTURAL DISCRIMINATOR, THE KENTUCKY SHAPE EXACTLY. Those counts and
+  // code sets are identical in TIGER 2022, 2023, 2024 AND 2025. A count check, a code-set check
+  // and a contiguity check all pass every vintage, so none of them can date the map. LSY is the
+  // misleading field again — 2022 in TIGER 2022/2023 and 2024 in TIGER 2024/2025 — while
+  // statewide ALAND moves 0.0003% and no internal point moves. The vintage evidence is
+  // GEOMETRIC and lives in the anchors below plus scripts/verify-ks-tiger-vintage.mjs.
+  // 🟢 VINTAGE PROVEN AGAINST THE ENACTED PLAN FILE ITSELF, WHICH IS STRONGER THAN ANY EARLIER
+  // SLICE HAD. The Kansas Legislative Research Department — the Legislature's own agency —
+  // publishes the passed shapefiles at klrd.gov/wp-content/uploads/2023/11/{Liberty_3,
+  // Freestate-3F}.zip. Those two names are the names the KANSAS SUPREME COURT uses for the maps
+  // it reviewed: the Senate map "Liberty 3" and the House map "Free State 3F", both enacted by
+  // Substitute for Senate Bill 563. Kentucky had to settle for the LRC's current-geometry map
+  // SERVICE; Kansas publishes the artifact that was voted on. TIGER agrees 40/40 and 125/125
+  // with it in every vintage 2022–2025, zero moved. ⚠ kslegislature.gov/li/redistricting/ 404s.
+  // 🔴🔴 A THRESHOLD TEST PASSES KANSAS'S OLD MAP — this is the finding this slice paid for.
+  // The 2012 court-drawn plan (Essex v. Kobach), carried by TIGER 2020, STILL agrees with the
+  // 2022 plan on 35 of 40 Senate (87.5%) and 112 of 125 House (89.6%). So the discriminator is
+  // NOT the agreement rate; it is that the right plan moves EXACTLY ZERO and the wrong one does
+  // not. Anyone relaxing that to "≥90% agree" re-admits a decade-old superseded map. ND found
+  // the same at 92%; Kansas reproduces it against the REAL prior plan rather than a stale vintage.
+  // 🔴 BOTH LEGISLATIVE MAPS LIVE IN ONE BILL. There is no separate House bill — earlier notes
+  // said "HB 2736" and no such map exists. SB 563 was introduced 2022-03-14 carrying maps for
+  // both chambers; the House amended it 2022-03-21 to its own preferred House map, which is why
+  // the Free State 3F file carries an internal date of 2022-03-21. Signed 2022-04-15.
+  // 🔴 KANSAS REVIEW IS AUTOMATIC AND MANDATORY, WHICH NO OTHER SLICE IN THIS PROGRAM IS. Kan.
+  // Const. art. 10 § 1(b) requires the Attorney General to petition the Supreme Court within 15
+  // days of publication; everywhere else a court looks only if somebody sues. AG Schmidt
+  // petitioned 2022-04-25, the court announced 2022-05-18 and filed 2022-06-21 (No. 125,083),
+  // upholding Sub. SB 563 in full and ordering NO remedial map. The sole intervenor, Senator
+  // Thomas Holland, lost on Senate Districts 3 and 9. One plan governs the 2026 election.
+  // ▶ SO TIGER 2022 AGREEING IS A PASS, NOT A FAILURE — the Kentucky direction, the opposite of
+  // North Dakota, where the old vintage MUST disagree.
+  // ⚠ The 2025 congressional remap push is NOT a legislative-map event: the special session died
+  // 2025-11-05 with no session and no map. Art. 10 § 1(a) puts the next reapportionment in 2032.
+  // 🔴 A KANSAS DISTRICT CODE IS PADDED ON ONE SIDE AND NOT THE OTHER. The authority serves
+  // DISTRICT = '39'; TIGER serves SLDUST/SLDLST = '039'. A raw string compare agrees on NOTHING
+  // and looks exactly like a wrong vintage — the family of defect that '04A' (ND), '08A' (MN)
+  // and 'H001' (KY) are. Verify numeric, then normalise; never cast blind.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA, SC, OH, ND AND KY. Loaded geo_ids run
+  // 20001..20040 (sldu) and 20001..20125 (sldl); Kansas's 105 counties are 20001..20209, ALL
+  // odd — measured against production, 20 collide with the Senate range and 63 with the House
+  // range. Every join must pair geo_id with mtfcc/district_type; see src/lib/geoIdGuard.ts.
+  // 🟢 UNLIKE KENTUCKY, THIS SLICE'S OWN COUNTY ESCAPES: Sedgwick is 20173, above both ranges.
+  // Fayette was 21067 and collided with House District 67. That is luck of the numbering, not a
+  // property of the loader, and it changes nothing about the guard.
+  // place/county/cd are EXCLUDED and MUST NOT be re-run: Kansas's 114 G4210 place rows, 105
+  // counties and 4 congressional districts are already in production. KS is the fourth Knight
+  // slice, after Ohio, ND and KY, that owes no `place` load — one of six such states
+  // (KS KY MI MS ND SD).
+  KS: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -2664,9 +2729,238 @@ async function processLayer(
                   `${anchors.length}/${anchors.length} LRC vintage anchors agree.`);
     }
   }
+  if (fipsArg === '20') {
+    const EXPECTED_KS_MTFCC: Record<string, number> = {
+      // 🟢 THESE TWO NUMBERS ARE THE LAW, NOT A MEASUREMENT — the only slice in this program
+      // where that is true. "Kansas has 40 senatorial districts and 125 representative
+      // districts. Kan. Const. art. 2, § 2; K.S.A. 4-101" (No. 125,083, slip op. at 2). They
+      // were ALSO measured against raw TIGER FIPS 20 on 2026-09-26, and agree.
+      sldu: 40,
+      sldl: 125,
+    };
+    // 🔴 THE COUNT CANNOT DATE THIS MAP, exactly as in Kentucky. 40/125 is true of TIGER 2022,
+    // 2023, 2024 and 2025 alike, so this assertion catches a wrong state, a wrong layer or a
+    // truncated download — NEVER a superseded plan. The vintage evidence is the anchors below.
+    //
+    // ANCHOR SHAPE: [lat, lon, district under the ENACTED 2022 plan, district under the 2012
+    // plan, label]. The fourth element is not decoration — the gate ASSERTS that enough anchors
+    // disagree between the two plans, so this set cannot later be swapped for one that agrees
+    // with everything. See KS_MIN_DISCRIMINATING below.
+    //
+    // 🔴🔴 MOST CIVIC ANCHORS IN KANSAS CANNOT TELL THE TWO PLANS APART, AND THAT WAS MEASURED,
+    // NOT ASSUMED. Six ordinary civic points — two in Wichita, the Capitol, the Wyandotte
+    // courthouse, Overland Park and Garden City — resolve IDENTICALLY under the 2012 and 2022
+    // plans in 11 of their 12 chamber/point pairs. Only the Capitol moves (Senate 18 -> 19).
+    // An anchor set chosen for being recognisable is therefore a WEAK vintage test here. The
+    // last two anchors in each chamber are chosen for the opposite reason: they sit where the
+    // plans actually disagree, and their expected values come from KLRD's enacted plan file.
+    //
+    // 🟢 FIVE ANCHORS ARE CORROBORATED BY THE COURT'S OWN OPINION, which is a source that never
+    // touched TIGER. No. 125,083 discusses Senate 4 (Wyandotte, retained, Black VAP 34.1%),
+    // Senate 29 (Sedgwick, retained, Black 26.2%), House 32 (Wyandotte, Hispanic 57.2%), House
+    // 89 (Sedgwick, Black 30.1%) and House 103 (Sedgwick, Hispanic 40.7%) by number. The
+    // Wyandotte courthouse resolves to Senate 4 and House 32; Wichita City Hall to Senate 29
+    // and House 103; Wichita State to House 89. ⚠ That is CORROBORATION, not the proof — the
+    // court described districts, it did not publish geometry.
+    const KS_VINTAGE_ANCHORS: Record<string, Array<[number, number, number, number, string]>> = {
+      sldu: [
+        [37.6926, -97.3383, 29, 29, 'Wichita City Hall (Sedgwick County)'],
+        [39.0467, -95.6786, 19, 18, 'Kansas State Capitol, Topeka (Shawnee County)'],
+        [39.1129, -94.6269, 4, 4, 'Wyandotte County Courthouse, Kansas City'],
+        [37.967, -100.8753, 39, 39, 'Garden City City Hall'],
+        [37.7528, -97.5493, 26, 27, 'Sedgwick County — 2012 SD-27, 2022 SD-26'],
+        [39.2196, -95.3695, 18, 2, 'Jefferson County — 2012 SD-2, 2022 SD-18'],
+      ],
+      sldl: [
+        [37.6926, -97.3383, 103, 103, 'Wichita City Hall (Sedgwick County)'],
+        [37.7157, -97.2966, 89, 89, 'Wichita State University'],
+        [39.1129, -94.6269, 32, 32, 'Wyandotte County Courthouse, Kansas City'],
+        [38.9748, -94.6837, 22, 22, 'Overland Park City Hall'],
+        [37.967, -100.8753, 123, 123, 'Garden City City Hall'],
+        [39.0188, -94.8436, 117, 39, 'Johnson County — 2012 HD-39, 2022 HD-117'],
+        [38.5114, -96.6499, 13, 68, 'Chase County — 2012 HD-68, 2022 HD-13'],
+      ],
+    };
+    // ⚠ Every coordinate above was rounded to 4 dp FIRST and re-resolved against the enacted
+    // plan afterwards, so the value in this file is exactly the value that was tested. Resolving
+    // at full precision and rounding afterwards can move a point across a boundary and bake in
+    // an anchor that does not hold. Civic coordinates come from the Census address geocoder;
+    // the last two in each chamber are TIGER 2020 internal points, and their counties were read
+    // from production rather than inferred from the name.
+    const KS_MIN_DISCRIMINATING = 2;
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   KS_PREFLIGHT_CONTROL=count   perturbs the expected record count -> MTFCC assertion fires
+    //   KS_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected district -> VINTAGE fires
+    //   KS_PREFLIGHT_CONTROL=weak    drops the discriminating anchors -> DISCRIMINATION fires
+    // 🟢 AND KANSAS HAS THE CONTROL KENTUCKY COULD NOT HAVE, needing no flag at all:
+    //   --vintage 2020  (carries the 2012 court-drawn plan) -> the discriminating anchors name
+    //   the wrong plan and the vintage assertion aborts. Kentucky's 2022 file carries the SAME
+    //   plan, so it had to synthesise its control; Kansas has a real older map to be wrong about.
+    const KS_CONTROL = process.env.KS_PREFLIGHT_CONTROL ?? '';
+    if (KS_CONTROL) console.log(`  [${layer}] ⚠ KS_PREFLIGHT_CONTROL=${KS_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (KS_CONTROL === 'count') EXPECTED_KS_MTFCC[layer] = EXPECTED_KS_MTFCC[layer] - 1;
+    if (KS_CONTROL === 'anchor' && KS_VINTAGE_ANCHORS[layer]?.length) KS_VINTAGE_ANCHORS[layer][0][2] = 999;
+    if (KS_CONTROL === 'weak' && KS_VINTAGE_ANCHORS[layer]?.length) {
+      KS_VINTAGE_ANCHORS[layer] = KS_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+
+    if (layer in EXPECTED_KS_MTFCC) {
+      const expected = EXPECTED_KS_MTFCC[layer];
+      const anchors = KS_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<number | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART. This runs BEFORE the file is
+      // read, because it is a statement about this source file, not about the download. It is
+      // the assertion that stops a later editor from "tidying" the odd-looking last two anchors
+      // into recognisable civic landmarks and silently leaving Kansas with a gate that agrees
+      // with the 2012 map.
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      if (discriminating < KS_MIN_DISCRIMINATING) {
+        const err = new Error(
+          `[KS anchor discrimination assertion] layer=${layer}: only ${discriminating} of ` +
+          `${anchors.length} anchors distinguish the 2022 enacted plan from the 2012 plan, ` +
+          `expected at least ${KS_MIN_DISCRIMINATING}. ⚠ Most civic points in Kansas resolve ` +
+          `IDENTICALLY under both plans — the 2012 map still agrees 87.5% (Senate) and 89.6% ` +
+          `(House) — so an anchor set with too few disagreements cannot date the map at all. ` +
+          `Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let districtNum: number | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          ocdSuffixes.add(ocdDistrictSuffix(fpVal));
+          seenCodes.add(fpVal);
+          districtNum = parseInt(fpVal, 10);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = districtNum;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[KS MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ This count is fixed by Kan. Const. art. 2 § 2 and K.S.A. 4-101 ` +
+          `AND is identical in TIGER 2022/2023/2024/2025, so a WRONG count here means a wrong ` +
+          `state, a wrong layer or a truncated download — it can never mean a superseded plan. ` +
+          `Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[KS OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. Aborting before ` +
+          `any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      // Contiguity: Kansas numbers both chambers 001..N with no gaps and no letters. This is
+      // the strongest statement the FILE can make about itself, and it is still not a vintage.
+      const missing: string[] = [];
+      for (let n = 1; n <= expected; n++) {
+        const code = String(n).padStart(3, '0');
+        if (!seenCodes.has(code)) missing.push(code);
+      }
+      if (missing.length) {
+        const err = new Error(
+          `[KS contiguity assertion] layer=${layer}: codes ${JSON.stringify(missing)} absent from ` +
+          `001..${String(expected).padStart(3, '0')}. Kansas has no subdistricts and no letter ` +
+          `codes, so a gap is a damaged or filtered file. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], prior: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // If the failures ARE the 2012 plan, say so by name — that is the --vintage 2020 case,
+        // and naming it stops the next reader diagnosing a download fault.
+        // 🔴🔴 THIS BRANCH FIRED WRONGLY TWICE BEFORE IT WAS RIGHT, AND BOTH WRONG VERSIONS
+        // LOOKED SUFFICIENT. "every failure landed on its prior value" is vacuously true for a
+        // NON-discriminating anchor, whose prior IS its expected — so the anchor tamper, which
+        // perturbs Wichita City Hall, was diagnosed as "this file is the OLD MAP". Adding "and
+        // some failure has expected !== prior" did not help either: the tamper sets expected to
+        // 999, which satisfies exactly that. ▶ THE HONEST TEST IS NOT ABOUT VALUES, IT IS ABOUT
+        // WHICH ANCHORS FAILED. An old file makes EVERY discriminating anchor fail, and each one
+        // lands on its 2012 value; a tampered expectation makes ONE arbitrary anchor fail while
+        // the discriminating ones still pass. A gate that aborts for the wrong reason sends the
+        // next reader to check --vintage when the fault is in this source file.
+        const failedLabels = new Set(anchorFailures.map((r) => r.label));
+        const allPrior =
+          anchorFailures.every((r) => r.got === r.prior) &&
+          anchors.filter((a) => a[2] !== a[3]).every((a) => failedLabels.has(a[4]));
+        const err = new Error(
+          `[KS vintage assertion] layer=${layer}: ` +
+          anchorFailures
+            .map((r) => `${r.label} resolved to district ${r.got ?? 'NONE'}, expected ${r.expected}`)
+            .join('; ') +
+          `. These anchors' expected values come from the ENACTED PLAN FILES published by the ` +
+          `Kansas Legislative Research Department — the Senate map "Liberty 3" and the House map ` +
+          `"Free State 3F" of Sub. SB 563, the names the Kansas Supreme Court itself uses. ` +
+          (allPrior
+            ? `🔴 EVERY failure matches the 2012 court-drawn plan exactly — this file is the OLD ` +
+              `MAP, not a damaged download. Check --vintage. `
+            : ``) +
+          `⚠ Kansas's record COUNT is identical across every TIGER vintage, so this geometric ` +
+          `check is the only thing in this loader that can tell one plan from another. Aborting ` +
+          `before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] KS MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `codes contiguous 001..${String(expected).padStart(3, '0')}, ` +
+                  `${anchors.length}/${anchors.length} enacted-plan anchors agree ` +
+                  `(${discriminating} of them distinguish the 2012 plan).`);
+    }
+  }
 
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

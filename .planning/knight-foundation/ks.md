@@ -157,6 +157,75 @@ Art. 10, § 1(a) puts the next legislative reapportionment in **2032**.
 Freestate 3C, Free State 1 and 5. No shapefile, so the MI-style "control against the real competing
 plan" is not available here. The 2012 plan is the closest real-plan control there is, and it works.
 
+## ✅ KS-1 step 2 — the loader knows about Kansas, 2026-09-26
+
+`KS: new Set(['sldu', 'sldl'])` is in `STATE_LAYER_ALLOWLIST`, with the slice's findings written
+into the block above it. The pre-flight gate for `fipsArg === '20'` is a sibling of Kentucky's.
+**Dry-run passes 40 and 125. Nothing has been written.**
+
+```
+[sldu] KS MTFCC pre-flight assertion PASSED: 40 records (expected 40), 40 distinct OCD-ID
+       suffixes, codes contiguous 001..040, 6/6 enacted-plan anchors agree (3 distinguish 2012).
+[sldl] KS MTFCC pre-flight assertion PASSED: 125 records (expected 125), 125 distinct OCD-ID
+       suffixes, codes contiguous 001..125, 7/7 enacted-plan anchors agree (2 distinguish 2012).
+```
+
+🟢 **The two counts are THE LAW here, not a measurement** — the only slice in this programme where
+that is true. *"Kansas has 40 senatorial districts and 125 representative districts. Kan. Const.
+art. 2, § 2; K.S.A. 4-101"* (No. 125,083, slip op. at 2). They were measured against TIGER as well,
+and agree.
+
+### 🔴🔴 MOST CIVIC ANCHORS IN KANSAS CANNOT DATE THE MAP — MEASURED, NOT ASSUMED
+
+Six ordinary civic points — two in Wichita, the Capitol, the Wyandotte courthouse, Overland Park
+and Garden City — resolve **identically under the 2012 and 2022 plans in 11 of their 12
+chamber/point pairs.** Only the Capitol moves (Senate 18 → 19).
+
+▶ **An anchor set chosen for being recognisable is a WEAK vintage test here.** So the last two
+anchors in each chamber are chosen for the opposite reason: they sit where the plans actually
+disagree (Sedgwick SD-27→26, Jefferson SD-2→18, Johnson HD-39→117, Chase HD-68→13). Their expected
+values come from KLRD's enacted plan file; their counties were read from production, not inferred
+from a name.
+
+🟢 **And the gate now asserts its own discriminating power.** `KS_MIN_DISCRIMINATING = 2` fails the
+load if too few anchors distinguish the two plans. That is what stops a later editor from tidying
+the odd-looking last two anchors into recognisable landmarks and silently leaving Kansas with a gate
+that agrees with the 2012 map.
+
+### 🔴🔴 The gate fired for the WRONG REASON, and two fixes both looked sufficient
+
+The `anchor` tamper perturbs **Wichita City Hall** — an anchor that does *not* distinguish the
+plans. The error message diagnosed it as **"this file is the OLD MAP — check `--vintage`"**.
+
+- Attempt 1 — *"every failure landed on its prior value"*: **vacuously true** for a
+  non-discriminating anchor, whose prior *is* its expected.
+- Attempt 2 — *"…and some failure has expected ≠ prior"*: the tamper sets expected to `999`, which
+  satisfies exactly that. Still wrong.
+- ✅ The honest test is **not about values — it is about WHICH anchors failed.** An old file makes
+  *every* discriminating anchor fail, each landing on its 2012 value. A tampered expectation makes
+  *one arbitrary* anchor fail while the discriminating ones still pass.
+
+▶ **A gate that aborts for the wrong reason sends the next reader to check `--vintage` when the
+fault is in the source file.** Knight has hit "a gate can abort for the wrong reason" before; this
+is that rule inside the error *message* rather than the error *condition*.
+
+### Controls — every assertion watched failing
+
+| Control | Fires | Result |
+| --- | --- | --- |
+| `KS_PREFLIGHT_CONTROL=count` | MTFCC count | ✅ `expected 39, got 40`, exit 1 |
+| `KS_PREFLIGHT_CONTROL=anchor` | vintage | ✅ exit 1 — **and no false "old map" claim** after the fix |
+| `KS_PREFLIGHT_CONTROL=weak` | discrimination | ✅ `only 0 of 3 anchors distinguish…`, exit 1 |
+| `--vintage 2020` (**no flag needed**) | vintage | ✅ both chambers, **named as the old map** |
+
+🟢 **`--vintage 2020` IS THE CONTROL KENTUCKY COULD NOT HAVE.** Kentucky's 2022 file carries the
+*same* plan, so KY-1 had to synthesise its control. Kansas has a real older map to be wrong about,
+so the loader can be pointed at it and must abort. Senate failed on all three discriminating
+anchors (Capitol 18≠19, Sedgwick 27≠26, Jefferson 2≠18); House on both (Johnson 39≠117, Chase
+68≠13).
+
+✅ `npx tsc --noEmit` clean · `npm run lint` 0 errors · `npm run check:ocd-loader` green.
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
@@ -177,8 +246,8 @@ the subject its credit names.
 1. ✅ **DONE 2026-09-26 — the map vintage is proven**, against KLRD's own enacted plan files, with
    two controls that fail as required and a `--self-test` that makes the proof gate itself fail.
    Nothing has been written to production.
-2. ▶ **NEXT.** Add the allowlist entry and a pre-flight block asserting **40 and 125**, and watch
-   each assertion fail before trusting it.
+2. ✅ **DONE 2026-09-26 — the allowlist entry and the pre-flight block are in**, with every
+   assertion watched failing first. Still nothing written to production. See below.
 3. Load, measure `districts` and `geofence_boundaries` from outside against a same-session baseline
    taken **through the same connection the loader writes with**, and re-run to prove 0 inserted.
 4. Probe end to end from a Wichita address, with a negative control outside Kansas.
