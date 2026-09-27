@@ -13,9 +13,17 @@ import type { DBQuestionRow } from './gameModes.js';
 
 export const TOTAL_QUESTIONS = 5;
 
-// Module-level caches (these values never change during runtime)
+// Module-level caches
 let cachedFederalCollectionId: number | null = null;
 let cachedTopicMap: Map<number, string> | null = null;
+
+/**
+ * Topic ids a refresh has already looked for and failed to find.
+ *
+ * Without this, a question pointing at a topic row that no longer exists would
+ * miss the cache on every request and trigger a fresh SELECT each time.
+ */
+const unresolvableTopicIds = new Set<number>();
 
 // Re-export DBQuestionRow for external consumers
 export type { DBQuestionRow } from './gameModes.js';
@@ -33,12 +41,43 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 /**
- * Load topic map from database (cached after first load)
- * Maps topic ID to display name
+ * Whether the cached topic map has to be reloaded to answer for `requiredIds`.
+ *
+ * Pulled out of the loader so the judgement is testable without a database,
+ * the same way `skipReasonFor()` was pulled out of the preflight loop.
+ *
+ * A cache that exists but is EMPTY is a real state (a database with no topic
+ * rows yet) and is not the same as "not loaded" — hence the explicit null check
+ * rather than a falsiness test.
  */
-async function loadTopicMap(): Promise<Map<number, string>> {
-  if (cachedTopicMap !== null) {
-    return cachedTopicMap;
+export function needsTopicRefresh(
+  cache: Map<number, string> | null,
+  requiredIds: Iterable<number>,
+  unresolvable: ReadonlySet<number>,
+): boolean {
+  if (cache === null) return true;
+  for (const id of requiredIds) {
+    if (!cache.has(id) && !unresolvable.has(id)) return true;
+  }
+  return false;
+}
+
+/**
+ * Load topic map from database. Maps topic ID to display name.
+ *
+ * Cached, but NOT immutably: topic rows are inserted at runtime every time a
+ * collection is scaffolded, and a long-lived process would otherwise keep
+ * serving the map it loaded at boot. A question whose topic is missing from
+ * that map renders as the literal word "Unknown" on the player's card, because
+ * `Question.topic` is passed straight through to QuestionCard.tsx.
+ *
+ * So: pass the topic ids you are about to render. A miss costs one reload, and
+ * an id that the reload still cannot find is remembered so it costs nothing
+ * thereafter.
+ */
+async function loadTopicMap(requiredIds: Iterable<number> = []): Promise<Map<number, string>> {
+  if (!needsTopicRefresh(cachedTopicMap, requiredIds, unresolvableTopicIds)) {
+    return cachedTopicMap!;
   }
 
   const rows = await db.select({ id: topics.id, name: topics.name }).from(topics);
@@ -47,6 +86,11 @@ async function loadTopicMap(): Promise<Map<number, string>> {
     map.set(row.id, row.name);
   }
   cachedTopicMap = map;
+
+  for (const id of requiredIds) {
+    if (!map.has(id)) unresolvableTopicIds.add(id);
+  }
+
   return map;
 }
 
@@ -208,9 +252,6 @@ export async function selectQuestionsForGame(
     // Resolve collection ID
     const targetCollectionId = collectionId ?? await getFederalCollectionId();
 
-    // Load topic map (cached)
-    const topicMap = await loadTopicMap();
-
     // Build query conditions
     const now = new Date();
 
@@ -289,6 +330,7 @@ export async function selectQuestionsForGame(
     });
 
     // Transform DB rows to Question interface
+    const topicMap = await loadTopicMap(dedupedSelected.map(r => r.topicId));
     return transformDBQuestions(dedupedSelected, topicMap);
   } catch (error) {
     console.warn('Database question query failed, falling back to JSON:', error);
@@ -301,7 +343,7 @@ export async function selectQuestionsForGame(
  * Used by the adaptive flow to transform dynamically-selected next questions.
  */
 export async function transformSingleDBQuestion(row: DBQuestionRow): Promise<Question> {
-  const topicMap = await loadTopicMap();
+  const topicMap = await loadTopicMap([row.topicId]);
   return transformDBQuestions([row], topicMap)[0];
 }
 
@@ -322,9 +364,6 @@ export async function createAdaptiveSession(
 }> {
   // Resolve collection ID
   const targetCollectionId = collectionId ?? await getFederalCollectionId();
-
-  // Load topic map (cached)
-  const topicMap = await loadTopicMap();
 
   // Build query conditions (same as selectQuestionsForGame)
   const now = new Date();
@@ -383,6 +422,7 @@ export async function createAdaptiveSession(
     throw new Error('No questions available after pool split');
   }
 
+  const topicMap = await loadTopicMap([firstRow.topicId]);
   const firstQuestion = transformDBQuestions([firstRow], topicMap)[0];
 
   console.log(
