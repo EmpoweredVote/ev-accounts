@@ -25,6 +25,12 @@ import { makeClaimGuard, type ClaimVerdict } from './claimGuard.js';
 import { MIN_ENTITY_OVERLAP, normalizeEntities } from './claimIdentity.js';
 import { makeNearDuplicateCheck } from './nearDuplicate.js';
 import {
+  emptyQualityRuleStats,
+  mergeQualityRuleStats,
+  qualityRulesEnforced,
+  type QualityRuleStats,
+} from './qualityGate.js';
+import {
   createFingerprintStore,
   createSimilarityProbe,
   pruneClaimFingerprints,
@@ -59,6 +65,11 @@ interface LaneStats {
   /** One quality-gate reason per blocked candidate, so a lane that blocks
    *  everything is diagnosable and not merely countable. */
   blockReasons: string[];
+  /** The rules engine's verdict, merged across every claim this lane served.
+   *  Separate from `blocked`/`blockReasons`, which are the MODEL's own
+   *  self-assessment at generation time — a different gate with a different
+   *  failure mode, and conflating them would hide which one is working. */
+  qualityRules: QualityRuleStats;
 }
 
 function emptyStats(): LaneStats {
@@ -72,6 +83,7 @@ function emptyStats(): LaneStats {
     identityFallbacks: 0,
     capped: 0,
     blockReasons: [],
+    qualityRules: emptyQualityRuleStats(),
   };
 }
 
@@ -482,6 +494,7 @@ export async function runNightlyPipeline(
             jobId, target.prefix, target.volatility,
           );
           const written = writeResult.written;
+          mergeQualityRuleStats(laneStats.qualityRules, writeResult.ruleStats);
           laneStats.generated += written.length;
 
           // Recorded whenever at least one candidate survived the gates
@@ -578,6 +591,18 @@ export async function runNightlyPipeline(
           `${s.capped} over-cap, ${s.identityFallbacks} prose-fallback`,
         );
 
+        const qr = s.qualityRules;
+        if (qr.audited > 0) {
+          console.log(
+            `[QualityRules] lane=${t.lane}: ${qr.audited} audited, ${qr.withBlocking} with blocking ` +
+            `(${qr.blocked} blocked, ${qr.suppressed} written anyway), ` +
+            `${qr.withAdvisoryOnly} advisory-only, ${qr.ruleErrors} rule errors` +
+            (Object.keys(qr.byRule).length > 0
+              ? ` — ${Object.entries(qr.byRule).map(([r, n]) => `${r}=${n}`).join(' ')}`
+              : ''),
+          );
+        }
+
         try {
           await db
             .update(generationJobs)
@@ -614,6 +639,10 @@ export async function runNightlyPipeline(
                 capped: s.capped,
                 ...(maxQuestionsPerLane !== undefined ? { maxQuestionsPerLane } : {}),
                 blockReasons: s.blockReasons,
+                qualityRules: {
+                  ...s.qualityRules,
+                  enforced: qualityRulesEnforced(),
+                },
                 rejections: [
                   ...missingLanes,
                   ...partitioned.unroutable,
