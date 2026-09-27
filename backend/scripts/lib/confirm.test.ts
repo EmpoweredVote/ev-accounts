@@ -306,3 +306,52 @@ controls:
   it('a non-legislative seat never takes the earlier-chamber route', () =>
     expect(run({ ...base, seat: { ...senator, office_title: 'Mayor' }, snapshotText: page('House'), profiles: [prof('state:UT', 'legislature')] })).toContain('record-before-term'));
 });
+
+// V5 option B extended to candidates (ruling 2026-09-27): a candidate for a legislative seat is coded
+// on their record from the same legislature, on the same proof of earlier service.
+describe('V5 option B — candidates', () => {
+  const prof = parseSourceProfile(`---
+profile: test-ut-votes
+version: 1
+scope: state:UT
+body: legislature
+match:
+  url_prefixes: [https://le.test/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: nearest-before, name_format: surname }
+seat_titles: { State Senator: upper, State Representative: lower }
+controls:
+  - { batch: b, snapshot: x, person: Jo Quimby, office_title: State Senator, instrument: HB 11 (2019), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+`, 'test.md');
+  const page = new Map([['v', 'Utah Legislature. HB 11 (2019). House Floor Ayes 50 Noes 20 Ayes Baker, Quimby, Zane. The bill requires students to compete on teams matching their sex at birth.']]);
+  const cand: SeatContext = { ...seat, full_name: 'Jo Quimby', mode: 'candidate', office_title: 'State Senator', term_start: null, start_precision: null, election_date: '2026-11-03', state_usps: 'UT' };
+  const vote = P({ snapshot_id: 'v', date: '2019-03-01', instrument: 'HB 11 (2019)', record_kind: 'vote', actor_quote: 'Baker, Quimby, Zane', tally_quote: 'Ayes 50 Noes 20' });
+  const base = { restsOnPassages: [vote], sourceKind: new Map([['v', 'public-record']]), snapshotUrl: new Map([['v', 'https://le.test/hb11']]), snapshotText: page, profiles: [prof] };
+  const houseSpan = { office_title: 'State Representative', chamber: 'lower' as const, state_usps: 'UT', term_start: '2015-01-05', start_precision: 'day', term_end: '2021-01-03' };
+
+  it('earlier House service on file covering the date → the record counts', () => {
+    const f = run({ ...base, seat: { ...cand, prior_terms: [houseSpan] } });
+    expect(f).not.toContain('record-not-this-office');
+    expect(f).not.toContain('prior-service-unverified');
+    expect(f).not.toContain('chamber-not-evidenced');
+  });
+  it('no service on file → prior-service-unverified', () => expect(run({ ...base, seat: cand })).toContain('prior-service-unverified'));
+  it('a record from another body → record-not-this-office, as before', () =>
+    expect(run({ ...base, seat: cand, profiles: [parseSourceProfile(prof.profile ? `---
+profile: test-city
+version: 1
+scope: place:4967000
+body: city-council
+match:
+  url_prefixes: [https://le.test/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: none, name_format: surname }
+seat_titles: {}
+controls:
+  - { batch: b, snapshot: x, person: Jo Quimby, office_title: Council Member, instrument: HB 11 (2019), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+` : '', 'c.md')] })).toContain('record-not-this-office'));
+  it('the span chamber field decides the chamber even when the title is unfamiliar', () =>
+    expect(run({ ...base, seat: { ...cand, prior_terms: [{ ...houseSpan, office_title: 'Member' }] } })).not.toContain('chamber-not-evidenced'));
+});

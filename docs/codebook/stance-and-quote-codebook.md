@@ -355,6 +355,10 @@ chair. → `direction-only`.
   - A record from a **different level** (city council → legislature, legislature → Congress) is
     `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
     question).
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
 - **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
   - the current term;
   - the current campaign;

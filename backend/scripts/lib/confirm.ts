@@ -167,19 +167,19 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
     return i.profiles && url ? resolveProfile(i.profiles, url) : null;
   };
   const priorRoute = new Map<Passage, { covering: PriorTerm } | { unverified: true } | null>();
-  if (i.seat.mode === 'seated') {
-    for (const p of records) {
-      if (!p.date) continue;
-      const d = floorDate(p.date);
-      if (recordVsTermStart(d, i.seat.term_start, i.seat.start_precision) !== 'before') continue;
-      priorRoute.set(p, priorChamberRoute(d, i.seat, rawProfile(p)));
-    }
+  for (const p of records) {
+    if (!p.date) continue;
+    const d = floorDate(p.date);
+    // Seated: only a record from BEFORE the current term needs the route. Candidate (V5 B extended to
+    // candidates, ruling 2026-09-27): every record does — a candidate holds no term of this office.
+    if (i.seat.mode === 'seated' && recordVsTermStart(d, i.seat.term_start, i.seat.start_precision) !== 'before') continue;
+    priorRoute.set(p, priorChamberRoute(d, i.seat, rawProfile(p)));
   }
   const groupProfileOf = (p: Passage): PassageProfile | null => {
     const base = profileOf(p);
     const route = priorRoute.get(p);
     if (!base || !route) return base;
-    if ('covering' in route) return { ...base, chamber: profileSeatChamber(rawProfile(p)!, route.covering.office_title) };
+    if ('covering' in route) return { ...base, chamber: route.covering.chamber ?? profileSeatChamber(rawProfile(p)!, route.covering.office_title) };
     return { ...base, chamber: null };
   };
 
@@ -193,7 +193,9 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
       if (!p.date) { out.add('undated-evidence'); continue; }
       const d = floorDate(p.date);
       if (i.seat.mode === 'candidate') {
-        out.add('record-not-this-office');
+        const route = priorRoute.get(p);
+        if (!route) out.add('record-not-this-office');
+        else if ('unverified' in route) out.add('prior-service-unverified');
       } else if (i.seat.mode === 'seated') {
         const v = recordVsTermStart(d, i.seat.term_start, i.seat.start_precision);
         if (v === 'unsettled') out.add('dates-imprecise');
