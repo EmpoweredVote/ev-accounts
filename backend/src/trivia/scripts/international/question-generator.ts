@@ -79,7 +79,7 @@ const QUESTION_GENERATION_SCHEMA = {
   additionalProperties: false,
 };
 
-const QUESTION_GENERATION_SYSTEM_PROMPT = `You are a civic trivia question writer. Given a verified factual claim from international news, generate 1-3 multiple-choice questions suitable for a trivia game.
+export const QUESTION_GENERATION_SYSTEM_PROMPT = `You are a civic trivia question writer. Given a verified factual claim from international news, generate 1-3 multiple-choice questions suitable for a trivia game.
 
 Question composition rules:
 - Target ~15% of questions involving concrete numbers: budgets, percentages, dates, quantities
@@ -97,6 +97,26 @@ Quality gate — assess EACH question against ALL four blocking checks:
 
 Set quality_gate.passed = true ONLY if the question passes ALL four checks.
 Set quality_gate.passed = false if ANY check fails; include in reason which check failed.
+
+Hard rules — a question breaking any of these is rejected by the quality engine
+after you write it, so write them right the first time:
+
+1. TIME. If the question asks what year something happened and the event is in the
+   past, no option may be a year that has not arrived yet. "In what year did X
+   begin?" must not offer 2027. A question about a deadline, a target or a term
+   that ends in the future may offer a future year — the test is the event, not
+   the number.
+2. NUMBERS. When all four options are numbers, quantities, years or percentages,
+   the correct value must not always sit in the middle of the range. Vary which
+   bracket it falls in across a batch — sometimes smallest, sometimes largest.
+   Use one unit throughout a single question, and order the options ascending.
+   Never move the correct value to achieve this; change the distractors.
+3. NO VAGUE QUALIFIERS. Do not write "most important", "best", "primarily",
+   "generally", "mainly", "usually", "typically", "often" or "commonly" into a
+   question. They make more than one option defensible.
+4. DISTINCT OPTIONS. The four options must be clearly distinct — not near-synonyms,
+   not overlapping ranges, not the same phrase reordered.
+5. NO ADDRESSES OR PHONE NUMBERS as answer options.
 
 Generate 1 question for straightforward claims. Generate 2-3 for rich multi-faceted stories.`;
 
