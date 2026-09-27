@@ -1,0 +1,343 @@
+<title>Blind Gold Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root {
+  --ground: #f3f5f7;
+  --panel: #ffffff;
+  --ink: #18212e;
+  --ink-soft: #4f5b6b;
+  --rule: #d9dee5;
+  --accent: #1f5f8b;
+  --accent-ink: #ffffff;
+  --accent-wash: #e3eef6;
+  --struck: #a33a2c;
+  --struck-wash: #f8e9e6;
+  --ok: #2f6b3d;
+  --ok-wash: #e4f1e6;
+  --warn: #8a5a00;
+  --warn-wash: #f6ecd8;
+  --focus: #e0a526;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #11161d; --panel: #18202a; --ink: #e6ebf1; --ink-soft: #9aa7b6; --rule: #2c3643;
+    --accent: #6fa8d6; --accent-ink: #0d1520; --accent-wash: #1c2c3c;
+    --struck: #ec8c7c; --struck-wash: #3a2220; --ok: #8fcf9b; --ok-wash: #1d3223; --warn: #e7bd6a; --warn-wash: #3a2f19;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #11161d; --panel: #18202a; --ink: #e6ebf1; --ink-soft: #9aa7b6; --rule: #2c3643;
+  --accent: #6fa8d6; --accent-ink: #0d1520; --accent-wash: #1c2c3c;
+  --struck: #ec8c7c; --struck-wash: #3a2220; --ok: #8fcf9b; --ok-wash: #1d3223; --warn: #e7bd6a; --warn-wash: #3a2f19;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font: 15px/1.55 var(--sans); padding-inline: 16px; padding-block: 0 48px; }
+.wrap { max-width: 1180px; margin: 0 auto; }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-block: 22px 16px; border-bottom: 1px solid var(--rule); margin-bottom: 20px; }
+header.top h1 { font: 600 22px/1.2 var(--sans); margin: 0; letter-spacing: -0.01em; }
+header.top p { margin: 4px 0 0; color: var(--ink-soft); max-width: 62ch; font-size: 14px; }
+.meter { font: 500 13px var(--mono); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+.queue { display: flex; flex-direction: column; gap: 6px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+@media (max-width: 860px) { .queue { position: static; } }
+.qhead { font: 600 11px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
+.qitem { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
+.qitem:hover { border-color: var(--accent); }
+.qitem[aria-current="true"] { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.qitem .who { font-weight: 600; font-size: 14px; overflow-wrap: anywhere; }
+.qitem .what { grid-column: 1 / -1; font-size: 13px; color: var(--ink-soft); }
+.chip { font: 500 11px var(--sans); letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; white-space: nowrap; align-self: start; }
+.chip.todo { background: var(--accent-wash); color: var(--accent); }
+.chip.done { background: var(--ok-wash); color: var(--ok); }
+.chip.skip { background: var(--warn-wash); color: var(--warn); }
+.chip.practice { background: transparent; color: var(--ink-soft); border: 1px dashed var(--rule); }
+main.item { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; }
+.eyebrow { font: 600 11px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px; }
+h2 { font: 600 20px/1.25 var(--sans); margin: 0; text-wrap: balance; }
+h3 { font: 600 15px/1.3 var(--sans); margin: 0 0 10px; }
+.sub { color: var(--ink-soft); margin: 4px 0 0; }
+.practice-note { background: var(--warn-wash); color: var(--warn); border-radius: 6px; padding: 8px 12px; font-size: 14px; }
+.question { font: 400 18px/1.4 var(--serif); margin: 0 0 12px; }
+ol.rungs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+ol.rungs li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: 8px; padding: 8px 10px; border-radius: 6px; background: var(--ground); }
+ol.rungs .n { font: 600 14px var(--mono); color: var(--accent); }
+.guide { font-size: 14px; color: var(--ink-soft); margin: 12px 0 0; max-width: 70ch; }
+dl.gloss { margin: 0; display: grid; grid-template-columns: minmax(0, 12em) minmax(0, 1fr); gap: 6px 16px; }
+@media (max-width: 560px) { dl.gloss { grid-template-columns: minmax(0, 1fr); } }
+dl.gloss dt { font-weight: 600; }
+dl.gloss dd { margin: 0; color: var(--ink-soft); }
+.source + .source { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.source .shead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; margin-bottom: 8px; }
+.source .shead strong { font-size: 15px; }
+.source a { color: var(--accent); font-size: 13px; overflow-wrap: anywhere; }
+.legal { font: 400 15.5px/1.65 var(--serif); max-height: 56vh; overflow: auto; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 6px; background: var(--ground); white-space: pre-wrap; overflow-wrap: anywhere; }
+.legal del { color: var(--struck); background: var(--struck-wash); text-decoration: line-through; text-decoration-thickness: 1px; }
+.legend { font-size: 13px; color: var(--ink-soft); margin: 8px 0 0; }
+.legend del { color: var(--struck); background: var(--struck-wash); }
+fieldset { border: 0; margin: 0; padding: 0; }
+legend { font: 600 15px var(--sans); margin-bottom: 8px; padding: 0; }
+.choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.choice { display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; cursor: pointer; background: var(--panel); }
+.choice:has(input:checked) { border-color: var(--accent); background: var(--accent-wash); }
+.choice input { margin-top: 3px; accent-color: var(--accent); }
+.choice small { display: block; color: var(--ink-soft); font-size: 12.5px; }
+.reasons { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.reasons[hidden] { display: none !important; }
+label.field { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; font-weight: 600; font-size: 14px; }
+textarea { font: 14px/1.5 var(--sans); color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 10px; min-height: 76px; resize: vertical; width: 100%; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items: center; }
+button.btn { font: 600 14px var(--sans); padding: 9px 16px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button.btn.ghost { background: transparent; color: var(--accent); }
+button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.confirm { background: var(--accent-wash); border-radius: 6px; padding: 12px 14px; margin-top: 14px; }
+.confirm p { margin: 0 0 10px; }
+.status { font-size: 14px; color: var(--ink-soft); }
+.status.err { color: var(--struck); }
+.locked { background: var(--ok-wash); color: var(--ok); border-radius: 6px; padding: 12px 14px; }
+.locked.skip { background: var(--warn-wash); color: var(--warn); }
+.empty { color: var(--ink-soft); }
+.mono { font-family: var(--mono); font-size: 12.5px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Blind Gold Desk</h1>
+      <p>Give your own answer to each item from the evidence shown. You will not see what the coders chose. After you submit, your answer is fixed. If you do not understand an item, mark it "Not sure" instead of guessing.</p>
+    </div>
+    <div class="meter" id="meter">Connecting…</div>
+  </header>
+  <div class="layout">
+    <nav class="queue" id="queue" aria-label="Items"><p class="qhead">Items</p></nav>
+    <main class="item" id="item"><div class="card empty">Loading items…</div></main>
+  </div>
+</div>
+
+<script>
+(() => {
+  const REASONS = [
+    ['direction-only', 'Direction only', 'The evidence shows which way the person leans, but not which of the rungs on that side.'],
+    ['adjacent-chairs', 'Between two rungs', 'The evidence fits two neighbouring rungs equally, and nothing separates them.'],
+    ['no-evidence', 'No evidence on this question', 'The evidence does not address what this question asks.'],
+    ['compound-partial', 'Only part of a rung', 'A rung makes two claims and the evidence proves only one of them.'],
+    ['record-vs-statement-conflict', 'Record and words conflict', 'What the person did and what they said point to different rungs.'],
+    ['scope-unavailable', 'Not this office’s question', 'An officeholder at this level cannot act on what the rungs describe.'],
+  ];
+  const $ = (s, r = document) => r.querySelector(s);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === undefined || v === null || v === false) continue;
+      if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else n.setAttribute(k, v === true ? '' : v);
+    }
+    for (const k of kids) if (k !== null && k !== undefined) n.append(k);
+    return n;
+  };
+
+  let db = null, uid = null, items = [], labels = new Map(), current = null, canWrite = true;
+  const draft = new Map();   // itemId -> {value, reason, note} (this visit only)
+
+  function legalText(text) {
+    const box = el('div', { class: 'legal', tabindex: '0' });
+    const re = /\[deleted: ([^\]]*)\]/g;
+    let last = 0, m;
+    while ((m = re.exec(text))) {
+      if (m.index > last) box.append(text.slice(last, m.index));
+      box.append(el('del', { title: 'Removed from the law by this act', text: m[1] }));
+      last = re.lastIndex;
+    }
+    if (last < text.length) box.append(text.slice(last));
+    return box;
+  }
+
+  function statusOf(it) {
+    const l = labels.get(it.id);
+    if (it.practice) return l ? ['practice', 'Practice · done'] : ['practice', 'Practice'];
+    if (!l) return ['todo', 'To do'];
+    return l.skipped ? ['skip', 'Not sure'] : ['done', 'Submitted'];
+  }
+
+  function renderQueue() {
+    const q = $('#queue');
+    q.replaceChildren(el('p', { class: 'qhead', text: 'Items' }));
+    if (!items.length) { q.append(el('p', { class: 'empty', text: 'No items yet.' })); return; }
+    for (const it of items) {
+      const [cls, txt] = statusOf(it);
+      const b = el('button', { class: 'qitem', type: 'button', 'aria-current': it.id === current ? 'true' : 'false' },
+        el('span', { class: 'who', text: it.person }),
+        el('span', { class: 'chip ' + cls, text: txt }),
+        el('span', { class: 'what', text: `${it.instrument} · ${it.topic_title}` }));
+      b.addEventListener('click', () => { current = it.id; render(); window.scrollTo({ top: 0 }); });
+      q.append(b);
+    }
+    const real = items.filter((i) => !i.practice);
+    const done = real.filter((i) => labels.has(i.id)).length;
+    $('#meter').textContent = `${done} / ${real.length} answered`;
+  }
+
+  function answerCard(it) {
+    const l = labels.get(it.id);
+    const card = el('section', { class: 'card', 'aria-labelledby': 'ans-h' }, el('h3', { id: 'ans-h', text: 'Your answer' }));
+    if (l) {
+      const when = new Date(l.submitted_at).toLocaleString();
+      if (l.skipped) card.append(el('div', { class: 'locked skip', text: `You marked this "Not sure" on ${when}.${l.note ? ' Note: ' + l.note : ''}` }));
+      else {
+        const r = REASONS.find((x) => x[0] === l.blank_reason);
+        const what = l.value ? `Rung ${l.value}` : `Blank — ${r ? r[1] : l.blank_reason}`;
+        card.append(el('div', { class: 'locked', text: `Submitted ${when}: ${what}.${l.note ? ' Note: ' + l.note : ''}` }));
+      }
+      return card;
+    }
+    if (!db || !uid || !canWrite) {
+      card.append(el('p', { class: 'status', text: 'Answers cannot be saved in this view. Open the page signed in with Contributor access or higher.' }));
+      return card;
+    }
+    const d = draft.get(it.id) ?? { value: null, reason: null, note: '' };
+    draft.set(it.id, d);
+    const fs = el('fieldset', {}, el('legend', { text: 'Which rung does the evidence place this person on?' }));
+    const grid = el('div', { class: 'choices' });
+    const opts = [...it.rungs.map((r) => [String(r.value), `Rung ${r.value}`]), ['blank', 'Blank']];
+    for (const [v, t] of opts) {
+      const id = `pick-${it.id}-${v}`;
+      const input = el('input', { type: 'radio', name: `pick-${it.id}`, id, value: v });
+      if ((d.value === null && d.reason !== null && v === 'blank') || String(d.value) === v) input.checked = true;
+      input.addEventListener('change', () => { if (v === 'blank') { d.value = null; d.reason = d.reason ?? ''; } else { d.value = Number(v); d.reason = null; } update(); });
+      grid.append(el('label', { class: 'choice', for: id }, input, el('span', {}, t, v === 'blank' ? el('small', { text: 'No rung is proven' }) : null)));
+    }
+    fs.append(grid);
+    const reasons = el('div', { class: 'reasons', role: 'radiogroup', 'aria-label': 'Why is it blank?' });
+    reasons.append(el('p', { class: 'eyebrow', text: 'Why is it blank?' }));
+    for (const [code, name, help] of REASONS) {
+      const id = `why-${it.id}-${code}`;
+      const input = el('input', { type: 'radio', name: `why-${it.id}`, id, value: code });
+      if (d.reason === code) input.checked = true;
+      input.addEventListener('change', () => { d.reason = code; update(); });
+      reasons.append(el('label', { class: 'choice', for: id }, input, el('span', {}, name, el('small', { text: help }))));
+    }
+    fs.append(reasons);
+    const note = el('textarea', { id: `note-${it.id}`, placeholder: 'Optional: what decided it for you, or what was unclear.' });
+    note.value = d.note;
+    note.addEventListener('input', () => { d.note = note.value; });
+    const submit = el('button', { class: 'btn', type: 'button', text: 'Submit answer' });
+    const unsure = el('button', { class: 'btn ghost', type: 'button', text: 'Not sure — skip' });
+    const status = el('span', { class: 'status', role: 'status' });
+    const confirmBox = el('div', { class: 'confirm', hidden: true });
+    function update() {
+      reasons.hidden = !(d.value === null && d.reason !== null);
+      submit.disabled = !(d.value !== null || (d.reason && d.reason.length));
+    }
+    function ask(kind) {
+      const summary = kind === 'skip' ? 'Mark this item "Not sure"?' :
+        d.value ? `Submit rung ${d.value}?` : `Submit Blank — ${REASONS.find((x) => x[0] === d.reason)[1]}?`;
+      confirmBox.replaceChildren(el('p', { text: `${summary} You cannot change it after you submit.` }));
+      const yes = el('button', { class: 'btn', type: 'button', text: 'Yes, submit' });
+      const no = el('button', { class: 'btn ghost', type: 'button', text: 'Go back' });
+      no.addEventListener('click', () => { confirmBox.hidden = true; });
+      yes.addEventListener('click', () => save(kind, yes));
+      confirmBox.append(el('div', { class: 'actions' }, yes, no));
+      confirmBox.hidden = false;
+      yes.focus();
+    }
+    async function save(kind, btn) {
+      btn.disabled = true; status.className = 'status'; status.textContent = 'Saving…';
+      const body = kind === 'skip'
+        ? { item_id: it.id, skipped: true, value: null, blank_reason: null, note: d.note.trim(), submitted_at: new Date().toISOString(), practice: !!it.practice }
+        : { item_id: it.id, skipped: false, value: d.value, blank_reason: d.value ? null : d.reason, note: d.note.trim(), submitted_at: new Date().toISOString(), practice: !!it.practice };
+      try {
+        await db.collection(`labels/${uid}/items`).doc(it.id).set(body);
+        draft.delete(it.id);
+        // A marker per labeller, so the study owner can find every labeller's answers.
+        try { await db.doc(`labels/${uid}`).set({ labeller: uid, last_submitted_at: body.submitted_at }); } catch (_) {}
+      } catch (e) {
+        btn.disabled = false; status.className = 'status err';
+        status.textContent = e && e.code === 'invalid_argument' ? 'This view cannot save answers (Contributor access or higher is needed).' : 'Not saved — the connection failed. Try again.';
+        if (e && e.code === 'invalid_argument') canWrite = false;
+      }
+    }
+    submit.addEventListener('click', () => ask('answer'));
+    unsure.addEventListener('click', () => ask('skip'));
+    card.append(fs, el('label', { class: 'field', for: `note-${it.id}` }, 'Note', note), confirmBox, el('div', { class: 'actions' }, submit, unsure, status));
+    update();
+    return card;
+  }
+
+  function renderItem() {
+    const main = $('#item');
+    const it = items.find((i) => i.id === current);
+    if (!it) { main.replaceChildren(el('div', { class: 'card empty', text: items.length ? 'Choose an item.' : 'No items yet. Items appear here when they are ready.' })); return; }
+    const head = el('section', { class: 'card' },
+      el('p', { class: 'eyebrow', text: `${it.state} · ${it.topic_title}` }),
+      el('h2', { text: it.person }),
+      el('p', { class: 'sub', text: `${it.office} · evidence: ${it.instrument}` }));
+    if (it.practice) head.append(el('p', { class: 'practice-note', text: 'Practice item. You have seen results for this one before, so it is not recorded as gold. Use it to learn the page.' }));
+    const q = el('section', { class: 'card' }, el('p', { class: 'eyebrow', text: 'The question' }), el('p', { class: 'question', text: it.question }));
+    const ol = el('ol', { class: 'rungs' });
+    for (const r of it.rungs) ol.append(el('li', {}, el('span', { class: 'n', text: String(r.value) }), el('span', { text: r.text })));
+    q.append(ol, el('p', { class: 'guide', text: 'Choose a rung only when the evidence states that rung’s own measure. Knowing only which side the person is on is not enough — that is Blank, "Direction only".' }));
+    const rules = el('section', { class: 'card' }, el('h3', { text: 'Rules the coders apply' }));
+    const ul = el('ul', { class: 'guide', style: 'margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:4px' });
+    for (const r of [
+      'A rung needs every one of its claims shown. If the act proves only part of a rung, the answer is Blank — "Only part of a rung".',
+      'A vote with fewer than 10% No votes cannot set a rung on its own: nearly everyone voted the same way. The person’s own act (writing, sponsoring or carrying the bill) can.',
+      'Records from either chamber of the same legislature count (a senator’s bills and votes from their House years). Records from another office — a city council, a county, Congress — do not.',
+      'Struck words are removed from the law. They are never the provision.',
+      'Judge the bill’s operative text, not its title or its statement of purpose.',
+    ]) ul.append(el('li', { text: r }));
+    rules.append(ul);
+    const parts = [head, q, rules];
+    if (it.glossary && it.glossary.length) {
+      const dl = el('dl', { class: 'gloss' });
+      for (const g of it.glossary) dl.append(el('dt', { text: g.term }), el('dd', { text: g.def }));
+      parts.push(el('section', { class: 'card' }, el('h3', { text: 'Plain meanings' }), dl));
+    }
+    const ev = el('section', { class: 'card' }, el('h3', { text: 'Evidence' }));
+    for (const s of it.sources) {
+      const box = el('div', { class: 'source' },
+        el('div', { class: 'shead' }, el('strong', { text: s.label }), s.url ? el('a', { href: s.url, target: '_blank', rel: 'noopener', text: 'Open the original' }) : null));
+      if (s.summary) box.append(el('p', { class: 'sub', text: s.summary }));
+      box.append(legalText(s.text));
+      if (s.text.includes('[deleted: ')) box.append(el('p', { class: 'legend' }, 'Words shown like ', el('del', { text: 'this' }), ' are removed from the law by this act. They are not the law.'));
+      ev.append(box);
+    }
+    parts.push(ev, answerCard(it));
+    main.replaceChildren(...parts);
+  }
+
+  function render() { renderQueue(); renderItem(); }
+
+  async function boot() {
+    render();
+    db = await window.claude?.use?.('db') ?? null;
+    const user = await window.claude?.use?.('user') ?? null;
+    uid = user ? await user.id() : null;
+    if (user && typeof user.can === 'function') { const c = await user.can('data.write'); if (c === false) canWrite = false; }
+    if (!db) { $('#meter').textContent = 'Offline'; $('#item').replaceChildren(el('div', { class: 'card empty', text: 'This view cannot reach the item store. Open the page in Claude, signed in.' })); return; }
+    db.collection('items').orderBy('order').onSnapshot((snap) => {
+      items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+      if (!current || !items.some((i) => i.id === current)) {
+        const next = items.find((i) => !i.practice && !labels.has(i.id)) ?? items[0];
+        current = next ? next.id : null;
+      }
+      render();
+    }, () => { $('#meter').textContent = 'Item store unavailable'; });
+    if (uid) {
+      db.collection(`labels/${uid}/items`).onSnapshot((snap) => {
+        labels = new Map(snap.docs.map((d) => [d.id, d.data()]));
+        render();
+      }, () => {});
+    }
+  }
+  boot();
+})();
+</script>

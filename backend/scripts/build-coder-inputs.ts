@@ -58,8 +58,21 @@ if (heldRows.length > 1) {
 }
 if (heldRows.length === 1) {
   const r = heldRows[0];
+  // Codebook V5 option B (ruling 2026-09-27): the person's CLOSED terms in a state-legislature seat of
+  // the same state (the other chamber, or an earlier district). CONFIRM accepts an earlier record only
+  // against one of these, so an empty list fails such a record closed (prior-service-unverified).
+  const prior = r.representing_state ? await pool.query(
+    `SELECT o.title AS office_title, upper(o.representing_state) AS state_usps, ot.term_start::text, ot.start_precision, ot.term_end::text
+       FROM essentials.office_terms ot
+       JOIN essentials.offices o ON o.id = ot.office_id
+       JOIN essentials.districts d ON d.id = o.district_id
+      WHERE ot.politician_id = $1 AND ot.term_end IS NOT NULL AND ot.office_id <> $2
+        AND d.district_type IN ('STATE_UPPER', 'STATE_LOWER')
+        AND upper(o.representing_state) = upper($3)
+      ORDER BY ot.term_start`, [politicianId, r.office_id, r.representing_state]) : { rows: [] };
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'seated', office_id: r.office_id, office_title: r.title,
-    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null };
+    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null,
+    state_usps: r.representing_state ? String(r.representing_state).toUpperCase() : null, prior_terms: prior.rows };
 } else if (pol.race_id) {
   const race = await pool.query(
     `SELECT r.office_id::text, o.title, o.representing_state, o.representing_city, e.election_date::text

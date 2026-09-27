@@ -10,7 +10,7 @@
  */
 import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
 import type { Passage } from './coderLabel.js';
-import type { SeatContext } from './coderPrompt.js';
+import type { PriorTerm, SeatContext } from './coderPrompt.js';
 import { checkRecordGroup, instrumentKey, seatChamber, type PassageProfile } from './recordBasis.js';
 import { resolveProfile, profileSeatChamber, profileTag, type SourceProfile } from './sourceProfiles.js';
 
@@ -19,7 +19,8 @@ export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
   | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
   | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage'
-  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile' | 'amendment-markup-lost' | 'provision-deleted';
+  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile' | 'amendment-markup-lost' | 'provision-deleted'
+  | 'prior-service-unverified';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
@@ -59,6 +60,30 @@ function recordVsTermStart(d: string, start: string | null | undefined, precisio
   if (a > b) return 'in';
   if (a < b) return 'before';
   return cut === 10 ? 'in' : 'unsettled';
+}
+
+/** Is `d` (a floored date) inside this closed term? Imprecise ends fail closed (never 'in'). */
+function inTerm(d: string, t: PriorTerm): boolean {
+  if (recordVsTermStart(d, t.term_start, t.start_precision) !== 'in') return false;
+  return t.term_end !== null && d <= t.term_end.slice(0, 10);
+}
+
+/**
+ * Codebook V5 option B (ruling 2026-09-27, Chris Andrews): a record from before the current term
+ * still counts when it was made in EITHER chamber of the same legislature. The source profile says
+ * which body printed it (`body: legislature`, `scope: state:<USPS>`); the seat must itself be a
+ * legislative seat of that state. Earlier service must be ON FILE (a closed term covering the date):
+ * `{ covering }` supplies that term (the chamber check then uses its title), `{ unverified }` means the
+ * route applies but nothing proves the person sat there then → prior-service-unverified. `null`
+ * means the route does not apply (another body, another state, no profile) → record-before-term.
+ */
+function priorChamberRoute(d: string, seat: SeatContext, prof: SourceProfile | null):
+  { covering: PriorTerm } | { unverified: true } | null {
+  if (!prof || prof.body !== 'legislature' || !seat.state_usps) return null;
+  if (prof.scope.toUpperCase() !== `STATE:${seat.state_usps.toUpperCase()}`) return null;
+  if (!seatChamber(seat.office_title) && !profileSeatChamber(prof, seat.office_title)) return null;
+  const covering = (seat.prior_terms ?? []).find((t) => t.state_usps.toUpperCase() === seat.state_usps!.toUpperCase() && inTerm(d, t));
+  return covering ? { covering } : { unverified: true };
 }
 
 /** Extract lastName from full_name, dropping common suffixes like Jr, Sr, II, III, IV. */
@@ -133,9 +158,34 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
   };
   for (const p of records) profileOf(p);
 
+  // V5 option B: a seated person's record dated before the current term, from the same legislature.
+  // Decided per passage before the group check, because its chamber check must use the chamber of
+  // the EARLIER term (or be skipped when no earlier term is on file — prior-service-unverified then
+  // fails the row closed on its own).
+  const rawProfile = (p: Passage): SourceProfile | null => {
+    const url = i.snapshotUrl?.get(p.snapshot_id);
+    return i.profiles && url ? resolveProfile(i.profiles, url) : null;
+  };
+  const priorRoute = new Map<Passage, { covering: PriorTerm } | { unverified: true } | null>();
+  if (i.seat.mode === 'seated') {
+    for (const p of records) {
+      if (!p.date) continue;
+      const d = floorDate(p.date);
+      if (recordVsTermStart(d, i.seat.term_start, i.seat.start_precision) !== 'before') continue;
+      priorRoute.set(p, priorChamberRoute(d, i.seat, rawProfile(p)));
+    }
+  }
+  const groupProfileOf = (p: Passage): PassageProfile | null => {
+    const base = profileOf(p);
+    const route = priorRoute.get(p);
+    if (!base || !route) return base;
+    if ('covering' in route) return { ...base, chamber: profileSeatChamber(rawProfile(p)!, route.covering.office_title) };
+    return { ...base, chamber: null };
+  };
+
   for (const group of groups.values()) {
     const { findings, actorPassages } = checkRecordGroup({
-      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf,
+      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf: groupProfileOf,
       markupOf: (p) => i.snapshotMarkup?.get(p.snapshot_id) ?? 'unknown' });
     for (const f of findings) out.add(f);
     const datePassages = actorPassages.length > 0 ? actorPassages : group;
@@ -147,7 +197,11 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
       } else if (i.seat.mode === 'seated') {
         const v = recordVsTermStart(d, i.seat.term_start, i.seat.start_precision);
         if (v === 'unsettled') out.add('dates-imprecise');
-        else if (v === 'before') out.add('record-before-term');
+        else if (v === 'before') {
+          const route = priorRoute.get(p);
+          if (!route) out.add('record-before-term');
+          else if ('unverified' in route) out.add('prior-service-unverified');
+        }
       }
     }
   }
