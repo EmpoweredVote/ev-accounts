@@ -32,6 +32,15 @@
  * convenience wrapper for callers that only need the text. `unresolved` must be threaded through to
  * `buildSnapshot`'s `markupUnresolved` (snapshotSources.ts) rather than searched for in the text —
  * the literal marker this module used to embed is NOT coder-visible output.
+ *
+ * ATTRIBUTE NAMES ARE READ CASE-INSENSITIVELY (fix round 3): HTML attribute names are case-insensitive
+ * by spec, but linkedom's `Element.getAttribute` is a case-SENSITIVE lookup against whatever case the
+ * source HTML actually used — `getAttribute('style')` on `<span STYLE="...">` returns `null`. That
+ * silently failed open: `STYLE="text-decoration:line-through"`, `CLASS="s"` (against a `.s` rule), and
+ * `<link REL="stylesheet">` were all missed, so the struck words read as law with `unresolved` false.
+ * {@link attrCI} reads `element.attributes` (name/value pairs preserving source casing) and matches
+ * the wanted name case-insensitively; every attribute this module inspects (`style`, `class`, `rel`)
+ * goes through it instead of `getAttribute`.
  */
 import { parseHTML } from 'linkedom';
 import { htmlToText } from '../../src/lib/verificationFetch.js';
@@ -40,6 +49,17 @@ const STRIKE_TAGS = new Set(['STRIKE', 'S', 'DEL']);
 const LINE_THROUGH_RE = /text-decoration(?:-line)?\s*:[^;]*line-through/i;
 
 export interface HtmlMarkedTextResult { text: string; unresolved: boolean }
+
+interface AttrHolder { attributes: ArrayLike<{ name: string; value: string }> }
+
+/** Case-insensitive `getAttribute` (see the module doc's ATTRIBUTE NAMES note): linkedom's own
+ * `getAttribute` matches the source HTML's exact casing, so `STYLE=`/`CLASS=`/`REL=` are invisible to
+ * a lower-case lookup. Reads `element.attributes` directly instead and compares names lower-cased. */
+function attrCI(el: AttrHolder, name: string): string | null {
+  const lower = name.toLowerCase();
+  for (const a of Array.from(el.attributes)) if (a.name.toLowerCase() === lower) return a.value;
+  return null;
+}
 
 // A selector this reader trusts itself to test via an element's classList: one or more class tokens
 // (each ".name"), with an optional leading tag name and no combinator, pseudo-class, attribute or id
@@ -84,10 +104,10 @@ function struckClassesFrom(document: { querySelectorAll(sel: string): ArrayLike<
 /** True when the page links or `@import`s a stylesheet this reader never reads — it may set
  * line-through on elements no local `<style>` rule (or tag/inline check) ever mentions. */
 function hasExternalStylesheet(document: {
-  querySelectorAll(sel: string): ArrayLike<{ getAttribute(name: string): string | null; textContent: string | null }>;
+  querySelectorAll(sel: string): ArrayLike<AttrHolder & { textContent: string | null }>;
 }): boolean {
   for (const link of Array.from(document.querySelectorAll('link'))) {
-    const rel = (link.getAttribute('rel') ?? '').toLowerCase().split(/\s+/);
+    const rel = (attrCI(link, 'rel') ?? '').toLowerCase().split(/\s+/);
     if (rel.includes('stylesheet')) return true;
   }
   for (const style of Array.from(document.querySelectorAll('style'))) {
@@ -96,9 +116,8 @@ function hasExternalStylesheet(document: {
   return false;
 }
 
-interface StruckElement {
+interface StruckElement extends AttrHolder {
   tagName: string;
-  getAttribute(name: string): string | null;
   contains(other: unknown): boolean;
   textContent: string | null;
   replaceWith(node: unknown): void;
@@ -106,9 +125,9 @@ interface StruckElement {
 
 function isStruck(el: StruckElement, struckClasses: Set<string>): boolean {
   if (STRIKE_TAGS.has(el.tagName)) return true;
-  const style = el.getAttribute('style');
+  const style = attrCI(el, 'style');
   if (style && LINE_THROUGH_RE.test(style)) return true;
-  const cls = el.getAttribute('class');
+  const cls = attrCI(el, 'class');
   if (cls) for (const c of cls.split(/\s+/)) if (struckClasses.has(c.toLowerCase())) return true;
   return false;
 }

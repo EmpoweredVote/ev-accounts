@@ -113,4 +113,22 @@ describe('htmlToMarkedText', () => {
       expect(htmlMarkedTextWithStats(html).unresolved).toBe(false);
     });
   });
+  describe('attribute names are read case-insensitively (fix round 3 — linkedom keeps source casing)', () => {
+    it('fences an element whose inline STYLE attribute (upper-case name) sets line-through', () => {
+      const text = htmlToMarkedText('<p>Before <span STYLE="text-decoration:line-through">deleted words</span> after.</p>');
+      expect(text).toBe('Before [deleted: deleted words] after.');
+    });
+    it('matches a <style> class rule against an element whose CLASS attribute (upper-case name) carries it', () => {
+      const html = '<html><head><style>.s { text-decoration: line-through; }</style></head>' +
+        '<body><p>Before <span CLASS="s">deleted words</span> after.</p></body></html>';
+      const r = htmlMarkedTextWithStats(html);
+      expect(r.text).toBe('Before [deleted: deleted words] after.');
+      expect(r.unresolved).toBe(false);
+    });
+    it('detects an external stylesheet linked with an upper-case REL attribute', () => {
+      const html = '<html><head><link REL="stylesheet" href="/styles.css"></head>' +
+        '<body><p>Plain text, no local markup at all.</p></body></html>';
+      expect(htmlMarkedTextWithStats(html).unresolved).toBe(true);
+    });
+  });
 });
