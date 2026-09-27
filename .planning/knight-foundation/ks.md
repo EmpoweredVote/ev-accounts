@@ -811,6 +811,181 @@ structure and occupancy migrations on two fresh `CC_` slots.
 - 🔴 **Wichita's banner collides with the Kansas state banner** (one of four such cities). Read
   `states/KS.jpg` in the 6:1 band before choosing anything. That is stage 5, not now.
 
+## ▶ KS-3 OPENED 2026-09-27 — the office inventory and the roster are SOURCED. NOTHING WRITTEN.
+
+Lease `state:ks` extended to **2026-09-28 04:33Z** before any work. Branch `knight/ks-slice14`,
+**0 behind master**, 13 ahead. Baseline re-measured against production in this session and it
+matches what stage 2 left: **0** `LOCAL`/`LOCAL_EXEC` districts, **0** local offices, **0**
+`governments` rows for Wichita or Sedgwick, **0** `X####` boundaries. Kansas holds 176 offices —
+125 `STATE_LOWER`, 40 `STATE_UPPER`, 5 `STATE_EXEC`, 4 `NATIONAL_LOWER`, 2 `NATIONAL_UPPER`.
+
+### 🟢 THE OFFICE INVENTORY IS SEVEN, AND THE CODE SAYS IT TWICE IN TWO UNRELATED PLACES
+
+**`Sec. 2.04.005(a)`**, verbatim: *"All references to the 'city council,' 'council,' or 'members of
+the council,' shall be deemed to be to the entire governing body and members thereof consisting of
+**six council members and the mayor**."*
+
+The second statement is in a section about licence appeals and has nothing to do with defining the
+council — which is what makes it a real check rather than a restatement. **`Sec. 2.04.130`-series**:
+*"The panel of three City Council members shall be chosen on a rotating basis by **District Numbers
+1—6 with the Mayor being number 7**."*
+
+▶ **7 offices: Mayor (at-large) + Council Member, Districts 1–6.** `Sec. 2.04.005(c)` corroborates
+arithmetically — a majority *"shall mean four members"*, which is a majority of seven.
+
+### 🔴🔴 THERE IS A VICE MAYOR, AND IT IS NOT AN OFFICE — KY-3's TRAP, REFUTED BY THE RECORD
+
+Lexington's own councilmembers page invented a Vice Mayor office that did not exist (KY-3). Wichita
+**does** have a Vice Mayor, which makes the trap sharper here, not weaker.
+
+`Sec. 2.04.010`: the vice mayor is *"chosen by a majority written vote of the council **from among
+its membership**"* for *"a term of one year"*. The city council's own minutes state it directly —
+Mayor Wu, 2026-01-13: *"**By ordinance, this position is for a term of one year, and it's rotated
+among the six council members.**"* Dalton Glasscock holds it for 2026 **and holds District 4**; J.V.
+Johnston held it for 2025 **and holds District 5**.
+
+▶ **The Vice Mayor is an internal annual rotation among the six, not a seat.** Writing it as an
+office would seat one person twice and trip the duplicate-seat gate — or, worse, not trip anything.
+⚠ The city's own District 4 page says Glasscock *"was selected by the City Council to serve as Vice
+Mayor in 2026"*, which is exactly the sentence that misled KY-3. **Read the ordinance, not the bio.**
+
+### The roster — district-keyed, and confirmed by three independent sources
+
+🔴 **District-keyed, never name-keyed** — and this slice has a live reason. The minutes carry
+**Brandon Johnson** (District 1, outgoing) and **J.V. Johnston** (District 5, sitting) in the same
+document, and the January 12 minutes misspell the former as *"Council Member Brandon **Johnston**"*
+in the very paragraph that also calls him Johnson. That is the KS-2 *"Susan/Suzanne Wikle"* finding
+reproduced in a city record: **the official minutes misname a member, and a name-keyed read would
+see one departure and one arrival that never happened.**
+
+| District | Member | City page | Jan 13 2026 minutes | GIS `MEMBER` |
+| --- | --- | --- | --- | --- |
+| Mayor | Lily Wu | ✅ | ✅ | — (at-large, no polygon) |
+| 1 | Joseph Shepard | ✅ | ✅ | ✅ |
+| 2 | Becky Pattison Tuttle | ✅ | ✅ | ✅ |
+| 3 | Mike Hoheisel | ✅ | ✅ | ✅ |
+| 4 | Dalton Glasscock | ✅ | ✅ | ✅ |
+| 5 | J.V. Johnston | ✅ | ✅ | ✅ |
+| 6 | Maggie Ballard | ✅ | ✅ | ✅ |
+
+The minutes of **2026-01-13** open: *"The City Council met in regular session with Lily Wu, JV
+Johnston, Joseph Shepard, Becky Tuttle, Mike Hoheisel, Dalton Glasscock, and Maggie Ballard."*
+**Seven named, present, in the city's own record.**
+
+🟢 **And each member page NAMES ITS OWN DISTRICT**, so the page-id → district map is read, never
+inferred: `651`→D1, `670`→D2, `695`→D3, `708`→D4, `751`→D5, `762`→D6, `785`→Mayor. The GIS layer's
+`HYPERLINK` field points at those same seven page ids, which is a third agreement on the mapping.
+
+### 🔴🔴 THE CITY'S OWN BIOS ARE STALE FOR THE THREE SEATS THAT WERE UP IN NOVEMBER 2025
+
+District 3's page still reads *"elected … in November 2021 and was officially sworn in on January
+10, 2022"*; District 6's reads *"elected … in November 2021 and sworn in on January 10, 2022"*.
+Both were on the ballot again in **November 2025** and both were re-sworn in January 2026.
+
+▶ **A source can be AUTHORITATIVE FOR ONE FIELD AND STALE FOR ANOTHER** — the bios are right about
+the arrival and silent about the re-election. The Knight rule *"a roster's per-person label says how
+someone ARRIVED, not what they are now"* is what caught this.
+
+### ✅ THE OATH DATE IS READ, NOT COMPUTED — and the two candidate dates are both real meetings
+
+`Sec. 2.04.010` says the swearing-in is at *"a special meeting called on the **second Monday in
+January** of each even-numbered year"*. The second Monday in January 2026 is **January 12**. 🔴 **That
+agreement is a coincidence this slice refused to rely on** — three states have paid for a computed
+oath date, and Wichita held council meetings on **January 6, January 12, January 13 AND January 14,
+2026**, so the calendar alone picks the wrong one as easily as the right one.
+
+**The record settles it.** `CITY COUNCIL PROCEEDINGS, January 12, 2026 — Wichita, Kansas, Monday,
+06:00 PM, OPENING OF SPECIAL MEETING`, City Clerk Shinita Rice:
+
+> **IV) Oath of Office Administered by Judge Jones for Newly Elected Council Members**
+> 1.) Oath of Office for District I Council Member Joseph Shepard
+> 2.) Oath of Office for District III Council Member Mike Hoheisel
+> 3.) Oath of Office for District VI Council Member Maggie Ballard
+
+⚠ **The January 13 meeting is a different oath** — the Vice Mayor's. Its agenda item reads
+*"Selection of the Vice Mayor and Oath of Office"*. **Two oaths two days apart, and only one of them
+seats anybody.**
+
+### 🔴🔴 IT IS A RE-SWEARING FOR TWO OF THE THREE, AND THE MAYOR SAYS SO IN THE SAME MINUTES
+
+> *"Congratulations to our **re-sworn-in** council members, Hoheisel and Ballard and **new** council
+> member, Shepard."* — Mayor Wu, closing the January 12 special meeting
+
+▶ **`office_terms` carries CONTINUOUS occupancy, so a re-election must never overwrite the earlier
+start** — the CO-3 rule, paid for again in KY-3 (five of eighteen) and NC. So `2026-01-12` is the
+start of the 2026-30 *term* for Hoheisel and Ballard, and it is **their term start only for
+Shepard**. Hoheisel's and Ballard's rows must reach back to their 2022 arrival.
+
+⚠ **This is the opposite disposition from what stage 2 wrote**, and the difference is real rather
+than an inconsistency: KS-2's 157 legislators were all sworn on one day into a two-year term, and no
+evidence distinguished a continuing member's earlier arrival. Here the distinction is **stated in
+the record**, so it must be honoured.
+
+### Where each of the 7 stands — 1 of 7 dated, 6 OPEN
+
+| Seat | Member | Continuous since | Status |
+| --- | --- | --- | --- |
+| D1 | Joseph Shepard | **2026-01-12** · `day` | ✅ **SOURCED** — sworn at the special meeting; predecessor Brandon Johnson left after 8 years |
+| D3 | Mike Hoheisel | `2022-01-10`? | ▶ bio only — **needs the January 2022 record**; 2022-01-10 is also a second Monday, so the bio may itself be a computed date |
+| D6 | Maggie Ballard | `2022-01-10`? | ▶ same |
+| D2 | Becky Pattison Tuttle | **appointed 2019** | ▶ page says *"appointed (2019) and twice elected (2019 and 2023)"* — continuous occupancy runs from the **appointment**; no date yet |
+| D4 | Dalton Glasscock | Jan 2024? | ▶ elected **2023-11-07** (page); needs the January 2024 swearing-in record |
+| D5 | J.V. Johnston | Jan 2024? | ▶ elected 2023; same |
+| Mayor | Lily Wu | Jan 2024? | ▶ page says *"sworn in as Wichita's 103rd mayor in January 2024"* — **month only**; needs the record |
+
+▶ **Route for all six: the Agenda Center holds minutes back through the earlier cycles** —
+`https://www.wichita.gov/AgendaCenter/ViewFile/Minutes/_MMDDYYYY-<id>`. The January 2024 and January
+2022 special meetings are the equivalents of the January 12, 2026 one read above.
+
+### ✅ The council-district geometry exists, is the city's own, and has NO superseded sibling
+
+`https://gismaps.wichita.gov/ageweb/rest/services/COWGIS/Districts/MapServer/3` — *Council
+Districts*, polygon, **6 features**, `COUNCIL` contiguous **1..6**, no gaps, no duplicates,
+`exceededTransferLimit` absent.
+
+- 🟢 **The Lexington four-layer trap does not apply.** The whole `Districts` MapServer was
+  enumerated: 23 layers, and **exactly one** is council districts. There is no `Council_District_2012`
+  sibling to be confused with — and equally, **no sibling to use as the vintage control**.
+- 🔴 **Native SR is `102100`/`3857` (Web Mercator), so `outSR=4326` is load-bearing**, exactly as in
+  KY-1 and KY-3.
+- ⚠ **The `MEMBER` attribute matches the roster 6 of 6 and is CURRENT** (it reads Shepard, not the
+  departed Brandon Johnson), which proves the layer is maintained. 🔴 **It is NOT a vintage proof** —
+  KY-2 found a state GIS layer carrying a stale roster beside correct geometry. Recorded as
+  corroboration only.
+- ⚠ **Two hub catalogue entries — *Wichita Council Districts* and *Wichita Council Districts -
+  Census* — resolve to the SAME layer URL.** A count cannot tell them apart because there is nothing
+  to tell apart. Do not read the second as a separate map.
+- 🟢 **Layer 1 of the same MapServer is `BOCC`** — the Sedgwick County commission districts. That is
+  stage 4's geometry, found early and recorded here.
+
+▶ **The vintage is NOT yet proved, and there is no in-org prior map to test against.** Wichita
+redistricted after the 2020 census. Candidate controls: Sedgwick County GIS publishes its own Wichita
+council-district maps (an **independent digitization — needs a tolerance**, never a byte compare), and
+the redistricting ordinance itself. **Do not load until a discriminating control exists.**
+
+### What KS-3 owes next
+
+1. ▶ **The six remaining term starts**, each from a January swearing-in record, never computed.
+2. ▶ **A vintage proof for the six polygons**, with a control that can fail.
+3. ▶ A `governments` row for Wichita — there is none.
+4. ▶ The duplicate-name check with the guard's **own** predicate (`is_active` + the
+   `lower(btrim(first_name))`/`lower(btrim(last_name))` **pair**, from ONE source). Stage 2 found
+   4 of 165 already present; ⚠ **`Joseph Shepard`, `Mike Hoheisel` and `Maggie Ballard` are ordinary
+   names and must be checked, not assumed new.**
+5. ▶ Two fresh `CC_` slots from the allocator — structure and occupancy. **Not yet reserved.**
+
+### Sources captured to disk, `backend/data/seed-ks-2026/`
+
+| File | What it is |
+| --- | --- |
+| `wichita-city-council-page.html` | `wichita.gov/599/City-Council` — *"seven-member Council … four-year terms … staggered"*, *"Six Council members are elected by district, and the Mayor is elected at-large"* |
+| `wichita-member-{651,670,695,708,751,762,785}.html` | the seven member pages, each naming its own district |
+| `wichita-council-minutes-2026-01-12.pdf` | **the swearing-in special meeting** — 15 pages |
+| `wichita-council-minutes-2026-01-13.pdf` | Vice Mayor selection + the seven-member attendance line |
+| `sedgwick-2025-general-election-night.pdf` | Sedgwick County election-night results, Nov 2025 ⚠ **unofficial — a certified result is not a fact about who holds the seat, and this is not even certified** |
+| `_council-attrs.json`, `_council-layer3.json`, `_districts-mapserver.json` | the GIS layer, its metadata and the full 23-layer enumeration |
+
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
