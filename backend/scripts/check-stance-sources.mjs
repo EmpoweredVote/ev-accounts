@@ -40,9 +40,27 @@
  * check-address-reachability, and the same per-bucket shape so growth in one state still fires while
  * the global number is worked down.
  *
- * Buckets are per STATE, deliberately not per visibility. Whether a politician is seated or on a
- * candidate card changes as elections pass, so a visibility bucket would churn on the calendar and
- * report drift where nothing changed. State is stable.
+ * WHAT THE BASELINE KEYS ON, AND THE CLAIM THAT USED TO SIT HERE AND WAS FALSE.
+ *
+ * This block used to read: "Buckets are per STATE, deliberately not per visibility. Whether a
+ * politician is seated or on a candidate card changes as elections pass, so a visibility bucket
+ * would churn on the calendar and report drift where nothing changed. STATE IS STABLE."
+ *
+ * 🔴 The first two sentences are right and the last one is wrong, because the state is DERIVED
+ * THROUGH OCCUPANCY -- coalesce(seat.state, seat.representing_state, cand.state, ''). Seating a
+ * politician can move every one of their rows from one bucket to another. So the design rejected
+ * visibility for churning on occupancy and then bucketed by a value computed from occupancy.
+ *
+ * It cost a red master on 2026-09-27. CC_0157 seated Patrick Schmidt in the Kansas Senate; his
+ * Social Security row, written 2026-08-26 and never touched since, moved from the stateless `-`
+ * bucket to `ks` and was reported as "NEW state -- this state was clean before". The totals were
+ * identical: 179 and 179, with `-` falling 7 -> 6.
+ *
+ * So the baseline now compares ROW IDENTITIES -- "<politician_id>:<topic_id>" per check, carrying
+ * neither state nor season. An identity does not move when a politician is seated, superseded or
+ * re-bucketed. Per-state counts are still computed and still printed, because that is how the
+ * backlog is discussed and a human reading a failure wants to know where the row is -- but nothing
+ * is compared against them.
  *
  * 🔴 ORPHAN_CONTEXT NEEDED ITS OWN QUERY, AND THAT IS THE WHOLE POINT OF IT. Every check above reads
  * `FROM politician_answers LEFT JOIN politician_context`, so a context row with NO answer is outside
@@ -239,7 +257,11 @@ const QUERY = `
         )                                                          THEN 'BALLOTPEDIA_ONLY'
         ELSE NULL
       END AS chk,
-      pc.sources
+      pc.sources,
+      -- The ANSWER's season. Part of the row identity the baseline keys on: a pair legitimately
+      -- holds one row per season, and a bad row written into the OPEN season must not be hidden
+      -- by an already-recorded row in a closed one.
+      pa.season_id
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
@@ -253,7 +275,8 @@ const QUERY = `
       pc.politician_id,
       pc.topic_id,
       'ORPHAN_CONTEXT' AS chk,
-      pc.sources
+      pc.sources,
+      pc.season_id
     FROM inform.politician_context pc
     LEFT JOIN inform.politician_answers pa
       ON pa.politician_id = pc.politician_id AND pa.topic_id = pc.topic_id
@@ -270,9 +293,15 @@ const QUERY = `
   SELECT
     v.chk,
     v.politician_id,
+    v.topic_id,
+    v.season_id,
     v.sources,
     p.first_name || ' ' || p.last_name       AS name,
     coalesce(t.short_title, t.title, v.topic_id::text) AS topic,
+    -- 🔴 THIS VALUE IS NOT STABLE, AND THE BASELINE NO LONGER KEYS ON IT. See the header note
+    -- "WHAT THE BASELINE KEYS ON". It is derived through occupancy, so seating a politician moves
+    -- their rows between buckets. Kept for REPORTING only -- a human reading a failure wants to know
+    -- where the row is, and the per-state totals are how the backlog is discussed.
     lower(coalesce(seat.state, seat.representing_state, cand.state, '')) AS st
   FROM v
   JOIN essentials.politicians p ON p.id = v.politician_id
@@ -313,21 +342,32 @@ const QUERY = `
   const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts]);
 
   const observed = {};
+  const observedRows = {};
   for (const r of rows) {
     const bucket = r.st || '-';
     observed[r.chk] ??= {};
     observed[r.chk][bucket] = (observed[r.chk][bucket] ?? 0) + 1;
+    // The identity the gate actually compares. Deliberately carries NO state and NO season, so a row
+    // that is re-bucketed or superseded is still recognised as the same row.
+    observedRows[r.chk] ??= new Set();
+    observedRows[r.chk].add(`${r.politician_id}:${r.topic_id}:${r.season_id}`);
   }
 
   if (UPDATE) {
     const payload = {
       _comment:
-        'Baseline for check-stance-sources.mjs, keyed check -> state -> count. The gate fires on ' +
-        'GROWTH in a state or on ANY new state. BALLOTPEDIA_ONLY is the Workstream A backlog and these ' +
-        'numbers should only ever go DOWN — never raise one without saying why in the commit message. ' +
-        'ANSWER_WITHOUT_CONTEXT and EMPTY_SOURCES are zero-tolerance and ignore this file.',
+        'Baseline for check-stance-sources.mjs. `rows` is what the gate COMPARES: per check, the set ' +
+        'of "<politician_id>:<topic_id>" identities known to be offending. The gate fires when a row ' +
+        'appears that is NOT in that set. `counts` is per check -> state -> count and is REPORTING ' +
+        'ONLY — it is not compared, because the state is derived through occupancy and moves when a ' +
+        'politician is seated. BALLOTPEDIA_ONLY is the Workstream A backlog and `rows` should only ' +
+        'ever SHRINK — an identity leaves it when the row is actually fixed. ANSWER_WITHOUT_CONTEXT ' +
+        'and EMPTY_SOURCES are zero-tolerance and ignore this file.',
       _updated: new Date().toISOString().slice(0, 10),
       counts: observed,
+      rows: Object.fromEntries(
+        Object.entries(observedRows).map(([chk, set]) => [chk, [...set].sort()]),
+      ),
     };
     writeFileSync(BASELINE, `${JSON.stringify(payload, null, 2)}\n`);
     console.log(`baseline written to ${path.relative(process.cwd(), BASELINE)}`);
@@ -351,15 +391,54 @@ const QUERY = `
     process.exit(2);
   }
 
+  // 🔴🔴 THE GATE COMPARES ROW IDENTITIES, NOT PER-STATE COUNTS, AND THAT IS THE WHOLE POINT.
+  //
+  // It used to compare counts bucketed by state, and on 2026-09-27 that reported a regression that
+  // had not happened. CC_0157 seated Patrick Schmidt in the Kansas Senate. His Social Security row —
+  // written 2026-08-26 and untouched since — had been in the stateless `-` bucket, because he held
+  // no seat and his only race_candidates row reads 'filed' while the fallback requires 'active'.
+  // Seating him gave it a state. Measured: BALLOTPEDIA_ONLY total unchanged at 179, `-` 7 -> 6,
+  // `ks` absent -> 1, and the gate called that "NEW state — this state was clean before".
+  //
+  // The header used to claim "State is stable". It is not: the state is derived THROUGH OCCUPANCY,
+  // which is exactly the thing the per-visibility bucketing was rejected for. Every Knight slice
+  // that seats someone already carrying stance rows can move a bucket.
+  //
+  // An identity cannot move. A row is the same row whoever seats its subject, so:
+  //   * a re-bucketed row      -> same key      -> silent, correctly;
+  //   * a genuinely new row    -> unknown key   -> FAILS, and now NAMES the row rather than a state;
+  //   * a fixed row            -> key disappears -> the baseline shrinks when it is regenerated.
+  //
+  // 🟢 AND IT IS STRICTLY STRONGER THAN COUNTING. Under the old model, one row being fixed while a
+  // different row broke in the same state netted to zero and passed in silence. That cannot happen
+  // to a set of identities.
+  // A baseline written before this change has `counts` but no `rows`. Refuse rather than guess: an
+  // empty key set would make EVERY row a violation, and treating a missing one as "allow all" would
+  // make none of them violations. Both are wrong, so the operator regenerates it deliberately.
+  if (baseline.rows === undefined) {
+    console.error(
+      `FAIL: the baseline at ${path.relative(process.cwd(), BASELINE)} predates identity keying and ` +
+      'has no `rows` map.\nRun `node scripts/check-stance-sources.mjs --update-baseline`, review the ' +
+      'diff, and commit it in the same commit as this change.',
+    );
+    await pool.end();
+    process.exit(2);
+  }
+
   const violations = [];
   const checks = new Set([...Object.keys(observed), ...Object.keys(baseline.counts ?? {})]);
   for (const chk of checks) {
-    const obs = observed[chk] ?? {};
-    const base = ZERO_TOLERANCE.has(chk) ? {} : (baseline.counts?.[chk] ?? {});
-    for (const [bucket, n] of Object.entries(obs)) {
-      const allowed = base[bucket] ?? 0;
-      if (n > allowed) violations.push({ chk, bucket, n, allowed, isNew: !(bucket in base) });
+    if (ZERO_TOLERANCE.has(chk)) {
+      // Zero-tolerance checks ignore the baseline entirely: ANY row is a violation, and it is
+      // reported per state exactly as before.
+      for (const [bucket, n] of Object.entries(observed[chk] ?? {})) {
+        violations.push({ chk, bucket, n, keys: null });
+      }
+      continue;
     }
+    const known = new Set(baseline.rows?.[chk] ?? []);
+    const unknown = [...(observedRows[chk] ?? [])].filter((k) => !known.has(k));
+    if (unknown.length > 0) violations.push({ chk, keys: unknown });
   }
 
   console.log(`stance sources — ${rows.length} offending row(s) across ${checks.size} check(s)`);
@@ -388,11 +467,21 @@ const QUERY = `
   }
 
   console.error('\nFAIL — stance sourcing regressed:\n');
+  // Name the offending ROWS. The old message named a state and a count, which sent the reader
+  // looking for a state-wide cause when the unit of the problem has always been one row.
+  const byKey = new Map(rows.map((r) => [`${r.chk}\u0000${r.politician_id}:${r.topic_id}:${r.season_id}`, r]));
   for (const v of violations) {
-    const why = ZERO_TOLERANCE.has(v.chk)
-      ? 'zero-tolerance check'
-      : v.isNew ? 'NEW state — this state was clean before' : `grew from ${v.allowed}`;
-    console.error(`  ${v.chk}  ${v.bucket}  observed ${v.n} (${why})`);
+    if (ZERO_TOLERANCE.has(v.chk)) {
+      console.error(`  ${v.chk}  ${v.bucket}  observed ${v.n} (zero-tolerance check)`);
+      continue;
+    }
+    console.error(`  ${v.chk}  ${v.keys.length} row(s) not in the recorded backlog:`);
+    for (const k of v.keys.slice(0, 25)) {
+      const r = byKey.get(`${v.chk}\u0000${k}`);
+      const where = r ? `${(r.st || '-').padEnd(3)} ${r.name} — ${r.topic}` : k;
+      console.error(`      ${where}\n        ${k}  [${(r?.sources ?? []).join(' ')}]`);
+    }
+    if (v.keys.length > 25) console.error(`      … and ${v.keys.length - 25} more`);
   }
   // Remediation differs by check and getting it wrong is expensive: telling someone to "cite the roll
   // call" for a PRIMARY_SITE_NO_PATH row invites them to replace a good citation instead of finishing
