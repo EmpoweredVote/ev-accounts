@@ -1,0 +1,21 @@
+Wrote `coder-1.json`.
+
+**Row: Scott Wiener / same-sex-marriage → BLANK `direction-only`**
+
+Two passages, one record group (`ACA 5 (2023-2024)`):
+
+| | vote page (`57e05bd7`) | bill text (`18c4f26c`) |
+|---|---|---|
+| V1 / V2 / V3 | own-act / on-question / record | own-act / on-question / record |
+| `record_kind` | vote | vote |
+| `actor_quote` | `Umberg, Wahab, Wiener, Wilk` | null |
+| `tally_quote` | `Ayes Count 31 Noes Count 0 NVR Count 9` | null |
+| `provision_quote` | null | `SEC. 7.5. (a) The right to marry is a fundamental right.` |
+| V4 shape | near-unanimous | chair-shaped |
+| V5 | in-term (2023-07-13, term began 2016-12-05) | in-term |
+
+Why BLANK rather than a numeric chair: the instrument's operative content does match one rung — it repeals the man-woman clause and makes marriage a fundamental right, with nothing on jobs/housing discrimination and no religious-organization carve-out — but Wiener's act on it is a 31–0 Senate floor vote. Under V4 that is `near-unanimous` and cannot carry a chair alone, and seating the matching rung anyway would be the least-extreme-rung tiebreaker that principle 3 forbids.
+
+I quoted the *added* Section 7.5, not the repealed man-woman language, per the 0.3.1 amendment-markup rule — the repealed text is described only in the legislative counsel's digest here, and it is never the provision.
+
+`needs_source` asks for his own in-term words separating rungs 1 and 2, the ACA 5 author/coauthor listing (the vote page shows the third-reading motion was made "By Wiener", which I noted but did not upgrade to `sponsor` without the bill history), and any divided roll call on marriage recognition. No quotes were coded — both snapshots are public records with no first-person words.

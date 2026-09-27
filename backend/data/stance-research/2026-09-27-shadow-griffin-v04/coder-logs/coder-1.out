@@ -1,0 +1,10 @@
+Wrote `coder-1.json` — one row, Griffin / data-centers, coded at codebook 0.4.
+
+**Coding summary**
+
+- Three passages, all one record group on `HB 2756 (2026)`: the bill status page (`sponsor`, `actor_quote` = "Sponsors: Griffin (Prime)"), the session-law text (provision), and the House Final Reading vote page (`actor_quote` = "GRIFFIN Y", `tally_quote` = "Passed 39-16-5-0-0"). All `own-act`, `in-term` (2026, current term since 2023-01-02).
+- 16 No of 60 voting members, so not `near-unanimous`.
+- **v6: BLANK `direction-only`.** The act requires semiannual interconnection reporting for "extra high load factor customers" and lets the corporation commission require those customers to pay infrastructure costs, with schedules demonstrating protection of non-EHLF customers from subsidizing them. That is not rung 2's bar on passing *any* data center costs to residential customers, not rung 3's pre-approval impact assessments and community benefit requirements, and not rung 4, whose "streamlined permitting" clause is nowhere in the text. No rung is matched clause for clause.
+- Noted in the passage record that the bill text never uses the words "data center" — it regulates a class "as defined by the corporation commission." I coded V2 as `on-question` because large-load cost allocation and disclosure is the dimension rungs 2–4 order, but that judgment is the most contestable part of this row.
+- `needs_source`: the as-introduced House version (sponsorship evidences the bill as filed), and any Griffin first-person words tying the bill to data centers or to permitting speed.
+- No quotes: nothing in the sources is in her own words.

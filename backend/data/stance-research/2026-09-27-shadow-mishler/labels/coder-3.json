@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "b43820da-b1b6-5f2d-bcd2-6b37c2f16221",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page lists Mishler as a Senate sponsor of HB 1002, a broad 'various tax matters' bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Ryan Mishler, Sen. Travis Holdman, Sen. Lonnie Randolph.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "96bedf51-10e7-585b-b551-34f3f1dc5ce0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": "For taxable years beginning after December 31, 2022, and before January 1, 2025, three and fifteen hundredths percent (3.15%).",
+          "note": "Enrolled Act text shows the individual income tax rate cut and utility receipts tax repeal HB 1002 enacts, alongside unrelated Medicaid and telecom-franchise provisions.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "02ec32a0-cd5b-592d-9f65-d1e690ad737f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-09",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Senate roll call on the Conference Committee Report for HB 1002 passed 50-0, with Mishler recorded among the Yea votes.",
+          "record_kind": "vote",
+          "actor_quote": "Mishler",
+          "tally_quote": "Yea 50 Various tax matters. Nay 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mishler sponsored HB 1002 (2022), which cuts the individual income tax rate broadly (3.23% to 3.15%, with further conditional reductions) and repeals the utility receipts tax, and voted Yea on its Conference Committee Report, which passed 50-0. But the bill bundles unrelated matters (a Medicaid managed care reporting requirement, telecom franchise-fee definitions, a narrow mini-mill property tax valuation carve-out) and the floor vote was unanimous, so neither act alone shows whether Mishler holds the position 'Cut taxes broadly, including the main rates most people pay' rather than 'Keep the current tax system mostly as-is, with targeted adjustments' without his own words tying the act to the rate-cut clause specifically.",
+      "needs_source": [
+        "Mishler's own statement or floor explanation of vote tying his HB 1002 sponsorship/vote to the individual income tax rate cut specifically, as required for a multi-subject bill (V4.1)."
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Wrote `labels/coder-1.json` — one row, chair **4**.
+
+**How it coded**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| Bill details page (`b43820da`) | own-act | on-question | record / sponsor | chair-shaped | in-term |
+| Enrolled act text (`96bedf51`) | own-act | on-question | record / sponsor | chair-shaped | in-term |
+| Senate roll call 374 (`02ec32a0`) | own-act | on-question | record / vote | **near-unanimous** | in-term |
+
+All three passages name one instrument, `HB 1002 (2022)`. Record fields are split across the pages that print them: `actor_quote` "Sponsored by: Sen. Ryan Mishler" on the details page and "Bray Ford Jon Mishler Walker K" on the roll call, `tally_quote` "Yea 50 Various tax matters. Nay 0" on the roll call, `provision_quote` (the 3.23% → 3.15% rate clause) on the bill text only. No text inside a `[deleted: …]` fence is quoted.
+
+**Chair reasoning.** Mishler's Senate sponsorship carries the bill's operative content: a cut to the rate every Indiana resident pays, plus outright repeal of the utility receipts tax. That is "Cut taxes broadly, including the main rates most people pay," and it is more than rung 3's "targeted adjustments." Rung 5 is excluded by the act's own text — each further step down is conditioned on ≥2% general fund revenue growth and a sufficient pension stabilization fund, and no government function is shrunk.
+
+**Two things I deliberately did not lean on.** The 50–0 conference-report vote is `near-unanimous`, so it is coded but kept out of `rests_on`; the chair rests on the sponsorship plus the provision text. And `needs_source` asks for the Senate third-reading roll call (to see whether final passage was divided) and for Mishler's own words tying his sponsorship to the rate cut — neither was in the sources given, so neither was assumed.

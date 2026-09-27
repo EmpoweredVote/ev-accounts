@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { pool } from '../src/lib/db.js';
-import { buildCoderPrompt, seedFor, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
+import { buildCoderPrompt, seedFor, type PriorTerm, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
 import { annexPath } from './lib/codebookAnnex.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { seatJurisdictionNames } from './lib/seatJurisdiction.js';
@@ -36,6 +36,32 @@ const politicians = JSON.parse(readFileSync(join(dir, 'politicians.json'), 'utf8
 const pol = politicians.find((p) => p.politician_id === politicianId);
 if (!pol) { console.error(`politician ${politicianId} not in ${dir}/politicians.json`); process.exit(2); }
 
+/**
+ * Codebook V5 option B (ruling 2026-09-27, extended to candidates): the person's CLOSED service in
+ * the same state's legislature — essentials.legislative_service (CA_0296, from OpenStates) plus any
+ * closed office_terms row on a state-legislature seat. CONFIRM accepts an earlier-chamber record only
+ * against one of these, so an empty list fails such a record closed (prior-service-unverified).
+ */
+async function priorService(politician: string, stateUsps: string | null, excludeOffice: string | null): Promise<PriorTerm[]> {
+  if (!stateUsps) return [];
+  const terms = await pool.query(
+    `SELECT o.title AS office_title, upper(o.representing_state) AS state_usps, ot.term_start::text, ot.start_precision, ot.term_end::text
+       FROM essentials.office_terms ot
+       JOIN essentials.offices o ON o.id = ot.office_id
+       JOIN essentials.districts d ON d.id = o.district_id
+      WHERE ot.politician_id = $1 AND ot.term_end IS NOT NULL AND ($2::uuid IS NULL OR ot.office_id <> $2::uuid)
+        AND d.district_type IN ('STATE_UPPER', 'STATE_LOWER') AND upper(o.representing_state) = upper($3)
+      ORDER BY ot.term_start`, [politician, excludeOffice, stateUsps]);
+  const hasTable = (await pool.query(`SELECT to_regclass('essentials.legislative_service') IS NOT NULL AS ok`)).rows[0].ok;
+  const service = hasTable ? (await pool.query(
+    `SELECT CASE chamber WHEN 'upper' THEN 'State Senator' ELSE 'State Representative' END AS office_title, chamber,
+            state_usps, service_start::text AS term_start, start_precision, service_end::text AS term_end
+       FROM essentials.legislative_service
+      WHERE politician_id = $1 AND service_end IS NOT NULL AND state_usps = upper($2)
+      ORDER BY service_end`, [politician, stateUsps])).rows : [];
+  return [...terms.rows, ...service] as PriorTerm[];
+}
+
 let seat: SeatContext;
 const held = await pool.query(
   `SELECT och.office_id::text, o.title, o.representing_state, o.representing_city,
@@ -58,8 +84,10 @@ if (heldRows.length > 1) {
 }
 if (heldRows.length === 1) {
   const r = heldRows[0];
+  const prior = await priorService(politicianId, r.representing_state, r.office_id);
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'seated', office_id: r.office_id, office_title: r.title,
-    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null };
+    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: r.term_start, start_precision: r.start_precision, term_end: r.term_end, election_date: null,
+    state_usps: r.representing_state ? String(r.representing_state).toUpperCase() : null, prior_terms: prior };
 } else if (pol.race_id) {
   const race = await pool.query(
     `SELECT r.office_id::text, o.title, o.representing_state, o.representing_city, e.election_date::text
@@ -75,7 +103,8 @@ if (heldRows.length === 1) {
     process.exit(2);
   }
   seat = { politician_id: politicianId, full_name: pol.full_name, level: pol.level, mode: 'candidate', office_id: r.office_id, office_title: r.title,
-    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: null, start_precision: null, term_end: null, election_date: r.election_date };
+    jurisdiction_names: seatJurisdictionNames(r.representing_state, r.representing_city), term_start: null, start_precision: null, term_end: null, election_date: r.election_date,
+    state_usps: r.representing_state ? String(r.representing_state).toUpperCase() : null, prior_terms: await priorService(politicianId, r.representing_state, null) };
 } else { console.error('no current seat and no race — cannot establish the office being coded'); process.exit(2); }
 await pool.end();
 

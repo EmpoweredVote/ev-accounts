@@ -1,0 +1,11 @@
+Wrote `labels/coder-1.json` — one row, `codebook_version` 0.4, `coder_slot` 1.
+
+**John Kavanagh / school-vouchers → rung 5**, resting on all three snapshots as one record group (`HB 2853 (2022)`):
+
+- **Vote page** (`b43425fb`): `own-act` / `record` / `vote`, `actor_quote` `"KAVANAGH Y"`, `tally_quote` `"Passed 31-26-3-0-0"`. 26 No of 60 members, so the near-unanimous rule doesn't bite.
+- **Bill text** (`0c8b9be6`): carries the `provision_quote` — the added §15-2401.01 making every student "eligible to enroll in a public school in this state" a qualified student. No `[deleted: …]` text is inside the quoted span.
+- **Bill overview** (`f80c1731`): `record` / `sponsor`, `actor_quote` `"Kavanagh (Co-Sponsor)"`.
+
+V5: the act is 2022 in the House and he's a Senator since 2023 — coded `in-term` under the 0.4 option-B ruling, which names this exact case.
+
+One judgment call worth flagging: I coded the co-sponsorship passage `chair-shaped` alongside the vote. Strictly, sponsorship evidences the bill *as filed* (C37) and the overview page shows the third reading passed "Amended", so the as-filed text isn't in the sources. The chair doesn't depend on it — the vote alone is chair-shaped against the enacted text — but a reviewer could reasonably want that passage at `direction-only`. `needs_source` is empty; nothing the row relies on is missing.

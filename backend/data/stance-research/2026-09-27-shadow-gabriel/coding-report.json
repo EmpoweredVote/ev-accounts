@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.3.1",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Gabriel's own first-person words on whether platforms should be legally required to remove false information, or required to label it instead (candidate questionnaire, issue page, or debate answer)",
+          "A floor statement or author's statement by Gabriel tying AB 587 to removal or labeling of false content",
+          "Any Gabriel-authored, co-authored, or voted instrument whose operative section itself requires removal or labeling of false content",
+          "Gabriel's own first-person statement (floor speech, press release, or op-ed) on AB 587 or misinformation policy tying his authorship to a specific rung (removal, labeling, voluntary standards, free-speech protection, or no government involvement)",
+          "Gabriel's own statement (floor speech, op-ed, or press release) explaining AB 587's or a related bill's relationship to platform removal, labeling, voluntary standards, free-speech protection, or the government's role in content moderation"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Gabriel's own first-person words on whether platforms should be legally required to remove false information, or required to label it instead (candidate questionnaire, issue page, or debate answer)",
+        "A floor statement or author's statement by Gabriel tying AB 587 to removal or labeling of false content",
+        "Any Gabriel-authored, co-authored, or voted instrument whose operative section itself requires removal or labeling of false content",
+        "Gabriel's own first-person statement (floor speech, press release, or op-ed) on AB 587 or misinformation policy tying his authorship to a specific rung (removal, labeling, voluntary standards, free-speech protection, or no government involvement)",
+        "Gabriel's own statement (floor speech, op-ed, or press release) explaining AB 587's or a related bill's relationship to platform removal, labeling, voluntary standards, free-speech protection, or the government's role in content moderation"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

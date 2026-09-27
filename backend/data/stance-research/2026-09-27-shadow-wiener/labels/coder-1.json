@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "18c4f26c-10ba-5ce6-ae32-b3ced197e427",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": "SEC. 7.5. (a) The right to marry is a fundamental right.",
+          "note": "Bill-text half of the ACA 5 record: it prints the added provision but names no voter, so actor and tally are null here.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "57e05bd7-06ea-5f93-8606-afd05b1a31eb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-13",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate floor passage was 31-0, under the 10% No threshold, so this act cannot carry a rung alone; the page also shows the motion was made \"By Wiener\".",
+          "record_kind": "vote",
+          "actor_quote": "Umberg, Wahab, Wiener, Wilk",
+          "tally_quote": "Ayes Count 31 Noes Count 0 NVR Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wiener voted Aye on ACA 5 (2023-2024), which repeals the constitutional man-woman marriage clause and provides that \"The right to marry is a fundamental right\" - operative content matching \"the same benefits and protections as any other marriage\" while naming neither \"protection from discrimination (such as in jobs and housing)\" nor any move to \"protect religious organizations' right to decline\". His act on it, though, is a 31-0 Senate floor vote (\"Ayes Count 31 Noes Count 0 NVR Count 9\"), which is near-unanimous and cannot carry a rung alone. Seating the matching rung on that vote would be the least-extreme-rung tiebreaker rather than evidence, so the row is direction-only.",
+      "needs_source": [
+        "Scott Wiener's own in-term words on marriage recognition (first-person issue page, questionnaire or debate answer) that separate \"protection from discrimination (such as in jobs and housing)\" from \"the same benefits and protections as any other marriage\"",
+        "ACA 5 (2023-2024) bill history / author listing, to establish whether Wiener is a principal coauthor or Senate floor sponsor rather than only a voter and mover of the third-reading motion",
+        "A divided (non-near-unanimous) California Senate roll call in which Wiener acted on same-sex marriage recognition or on LGBTQ anti-discrimination protections in employment or housing"
+      ],
+      "quotes": []
+    }
+  ]
+}

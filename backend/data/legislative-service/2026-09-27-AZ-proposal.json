@@ -1,0 +1,3971 @@
+{
+  "state": "AZ",
+  "openstates_commit": "bf4caf10",
+  "generated_at": "2026-09-27T23:21:28.580Z",
+  "proposals": [
+    {
+      "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4",
+      "full_name": "Mark Finchem",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/77415ae8-cbbc-4f67-ac01-3f749d44ff08",
+      "openstates_name": "Mark Finchem",
+      "match": "seat upper 1 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "1",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "11",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/77415ae8-cbbc-4f67-ac01-3f749d44ff08 (seat upper 1 + surname)"
+    },
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "full_name": "Shawnna Bolick",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/355be281-2f88-4108-b894-62c54b67fba3",
+      "openstates_name": "Shawnna Bolick",
+      "match": "seat upper 2 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "2",
+          "service_start": "2023-07-23",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "20",
+          "service_start": "2019-01-04",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/355be281-2f88-4108-b894-62c54b67fba3 (seat upper 2 + surname)"
+    },
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "full_name": "John Kavanagh",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/b6144266-5383-491f-8c87-df8fd11805ea",
+      "openstates_name": "John Kavanagh",
+      "match": "seat upper 3 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "3",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "23",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "23",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/b6144266-5383-491f-8c87-df8fd11805ea (seat upper 3 + surname)"
+    },
+    {
+      "politician_id": "b769f53e-c9e5-4259-9e00-c20bfa945d15",
+      "full_name": "Carine Werner",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/051cb7cf-e965-49a7-844a-a8830447df0c",
+      "openstates_name": "Carine Werner",
+      "match": "seat upper 4 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "4",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/051cb7cf-e965-49a7-844a-a8830447df0c (seat upper 4 + surname)"
+    },
+    {
+      "politician_id": "64520134-c1e3-44b1-aeb5-ed3e8762972d",
+      "full_name": "Lela Alston",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/030638cb-5fcd-4637-8c59-c129e28db988",
+      "openstates_name": "Lela Alston",
+      "match": "seat upper 5 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "5",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "24",
+          "service_start": "2013-01-14",
+          "start_precision": "day",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "24",
+          "service_start": "2019-01-14",
+          "start_precision": "day",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/030638cb-5fcd-4637-8c59-c129e28db988 (seat upper 5 + surname)"
+    },
+    {
+      "politician_id": "5443de2a-bad1-4271-a8ac-30e7443ff605",
+      "full_name": "Theresa Hatathlie",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/384e8b4c-d85b-4414-9372-40116a10b3b6",
+      "openstates_name": "Theresa Hatathlie",
+      "match": "seat upper 6 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "6",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "7",
+          "service_start": "2021-01-10",
+          "start_precision": "day",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/384e8b4c-d85b-4414-9372-40116a10b3b6 (seat upper 6 + surname)"
+    },
+    {
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "full_name": "Wendy Rogers",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/417c9599-7617-4b6d-ac0a-1d1b2a005f4e",
+      "openstates_name": "Wendy Rogers",
+      "match": "seat upper 7 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "7",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "6",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/417c9599-7617-4b6d-ac0a-1d1b2a005f4e (seat upper 7 + surname)"
+    },
+    {
+      "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989",
+      "full_name": "Lauren Kuby",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/159091af-9aa8-4cb8-8c9c-9e20ba83c0ed",
+      "openstates_name": "Lauren Kuby",
+      "match": "seat upper 8 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "8",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/159091af-9aa8-4cb8-8c9c-9e20ba83c0ed (seat upper 8 + surname)"
+    },
+    {
+      "politician_id": "fef8eb85-8360-418d-8239-ccf3a823608b",
+      "full_name": "Kiana Sears",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/78fce9ac-3aa4-484f-b345-f55bbbf9db9b",
+      "openstates_name": "Kiana Sears",
+      "match": "seat upper 9 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "9",
+          "service_start": "2025-03-31",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/78fce9ac-3aa4-484f-b345-f55bbbf9db9b (seat upper 9 + surname)"
+    },
+    {
+      "politician_id": "7ab7c163-bfac-4a95-8b94-22d1a4395522",
+      "full_name": "David C. Farnsworth",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/263ebe9c-566a-4b5c-bfbc-ea1f1d0dc3f2",
+      "openstates_name": "Dave Farnsworth",
+      "match": "seat upper 10 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "10",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/263ebe9c-566a-4b5c-bfbc-ea1f1d0dc3f2 (seat upper 10 + surname)"
+    },
+    {
+      "politician_id": "f1b19116-3c6f-4c44-9faf-bc32db5fc5d2",
+      "full_name": "Catherine Miranda",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/6241112b-910b-4ad8-9c0d-9caad318874f",
+      "openstates_name": "Catherine Miranda",
+      "match": "seat upper 11 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "11",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "27",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2019-01-14",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/6241112b-910b-4ad8-9c0d-9caad318874f (seat upper 11 + surname)"
+    },
+    {
+      "politician_id": "feecd8fc-b007-450a-8779-8e6f68e80dd6",
+      "full_name": "Denise \"Mitzi\" Epstein",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/f0175b18-52a0-407d-af38-c1fe118e209d",
+      "openstates_name": "Mitzi Epstein",
+      "match": "seat upper 12 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "12",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "18",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-03",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/f0175b18-52a0-407d-af38-c1fe118e209d (seat upper 12 + surname)"
+    },
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "full_name": "J.D. Mesnard",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/06adeea1-c37c-4dd1-8be5-92e9b5d3556e",
+      "openstates_name": "J.D. Mesnard",
+      "match": "seat upper 13 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "13",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "17",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2019-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "17",
+          "service_start": "2019-01-14",
+          "start_precision": "day",
+          "service_end": "2021-01-11",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "17",
+          "service_start": "2021-01-11",
+          "start_precision": "day",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/06adeea1-c37c-4dd1-8be5-92e9b5d3556e (seat upper 13 + surname)"
+    },
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "full_name": "Warren Petersen",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/66e496a4-a407-4af1-add3-ef6899b89807",
+      "openstates_name": "Warren Petersen",
+      "match": "seat upper 14 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "14",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "12",
+          "service_start": "2017-01-09",
+          "start_precision": "day",
+          "service_end": "2019-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "12",
+          "service_start": "2019-01-14",
+          "start_precision": "day",
+          "service_end": "2021-01-11",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "12",
+          "service_start": "2021-01-11",
+          "start_precision": "day",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/66e496a4-a407-4af1-add3-ef6899b89807 (seat upper 14 + surname)"
+    },
+    {
+      "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b",
+      "full_name": "Jake Hoffman",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/35f7056c-9f29-4b66-9ae0-f041fe6e7e05",
+      "openstates_name": "Jake Hoffman",
+      "match": "seat upper 15 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "15",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "12",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/35f7056c-9f29-4b66-9ae0-f041fe6e7e05 (seat upper 15 + surname)"
+    },
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "full_name": "Thomas \"T.J.\" Shope",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bde26535-68ee-4eef-bbc8-bfa8a4380015",
+      "openstates_name": "T.J. Shope",
+      "match": "seat upper 16 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "16",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "8",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": "2013-01-01",
+          "start_precision": "day",
+          "service_end": "2014-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": "2015-01-01",
+          "start_precision": "day",
+          "service_end": "2016-12-31",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bde26535-68ee-4eef-bbc8-bfa8a4380015 (seat upper 16 + surname)"
+    },
+    {
+      "politician_id": "c2ee942d-72dc-4e50-8b78-dfe0a6ce8f93",
+      "full_name": "Venden \"Vince\" Leach",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/00f9103d-191e-40ca-8f5c-e5bf806896a6",
+      "openstates_name": "Vince Leach",
+      "match": "seat upper 17 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "17",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "11",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "11",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/00f9103d-191e-40ca-8f5c-e5bf806896a6 (seat upper 17 + surname)"
+    },
+    {
+      "politician_id": "179e2cdb-395e-4f7f-a5e1-775ff176ce64",
+      "full_name": "Priya Sundareshan",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/7ff01dde-5112-436f-a267-dd7a7f91ec9b",
+      "openstates_name": "Priya Sundareshan",
+      "match": "seat upper 18 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "18",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/7ff01dde-5112-436f-a267-dd7a7f91ec9b (seat upper 18 + surname)"
+    },
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "full_name": "David Gowan",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/51520de4-0e87-475b-91d2-99aa18addf72",
+      "openstates_name": "David Gowan",
+      "match": "seat upper 19 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "19",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "30",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2012-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "14",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2016-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "14",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/51520de4-0e87-475b-91d2-99aa18addf72 (seat upper 19 + surname)"
+    },
+    {
+      "politician_id": "82f31f9c-754b-4417-bc21-af295b2b4d2b",
+      "full_name": "Sally Ann Gonzales",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/3c965e03-1e51-4f10-a037-4fb2f35292c5",
+      "openstates_name": "Sally Gonzales",
+      "match": "seat upper 20 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "20",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "3",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "3",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/3c965e03-1e51-4f10-a037-4fb2f35292c5 (seat upper 20 + surname)"
+    },
+    {
+      "politician_id": "8cbc6c91-4147-4831-ae0e-f4658ce282e8",
+      "full_name": "Rosanna Gabaldón",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/6de57177-1b9e-4864-bb87-97c528842030",
+      "openstates_name": "Rosanna Gabaldón",
+      "match": "seat upper 21 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "21",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "2",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "2",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2020-01-10",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/6de57177-1b9e-4864-bb87-97c528842030 (seat upper 21 + surname)"
+    },
+    {
+      "politician_id": "901398ea-3180-4b6d-8ba4-9f0dd85d7bb1",
+      "full_name": "Eva Diaz",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/e1cd66fa-a0de-45fd-ae53-a4db7d178d21",
+      "openstates_name": "Eva Diaz",
+      "match": "seat upper 22 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "22",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/e1cd66fa-a0de-45fd-ae53-a4db7d178d21 (seat upper 22 + surname)"
+    },
+    {
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636",
+      "full_name": "Brian Fernandez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/5425612b-fb2c-4857-8f75-31523345eb2b",
+      "openstates_name": "Brian Fernandez",
+      "match": "seat upper 23 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "23",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "4",
+          "service_start": "2021-11-23",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/5425612b-fb2c-4857-8f75-31523345eb2b (seat upper 23 + surname)"
+    },
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "full_name": "Analise Ortiz",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/87e6206a-c16e-4038-a86f-0d5c88b993e3",
+      "openstates_name": "Analise Ortiz",
+      "match": "seat upper 24 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "24",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "24",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": "2025-01-13",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/87e6206a-c16e-4038-a86f-0d5c88b993e3 (seat upper 24 + surname)"
+    },
+    {
+      "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40",
+      "full_name": "Timothy \"Tim\" Dunn",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/0b8c9973-1ae5-4af3-8a73-713c8365eccd",
+      "openstates_name": "Tim Dunn",
+      "match": "seat upper 25 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "25",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "25",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": "2025-01-13",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "13",
+          "service_start": "2018-02-13",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/0b8c9973-1ae5-4af3-8a73-713c8365eccd (seat upper 25 + surname)"
+    },
+    {
+      "politician_id": "4046a3d6-87ba-41bb-afd8-422f017c851b",
+      "full_name": "Flavio Bravo",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/36cc8d88-e944-4889-b8ab-cf5610f3f03e",
+      "openstates_name": "Flavio Bravo",
+      "match": "seat upper 26 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "26",
+          "service_start": "2023-05-08",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/36cc8d88-e944-4889-b8ab-cf5610f3f03e (seat upper 26 + surname)"
+    },
+    {
+      "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c",
+      "full_name": "Kevin Payne",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/4b336587-cb71-4a49-9cf8-514cdd2771ff",
+      "openstates_name": "Kevin Payne",
+      "match": "seat upper 27 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "27",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "27",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": "2025-01-13",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "21",
+          "service_start": "2017-01-09",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/4b336587-cb71-4a49-9cf8-514cdd2771ff (seat upper 27 + surname)"
+    },
+    {
+      "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+      "full_name": "Frank Carroll",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/faca0001-6681-450b-9577-6185f4f49a3d",
+      "openstates_name": "Frank Carroll",
+      "match": "seat upper 28 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "28",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "22",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-03",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/faca0001-6681-450b-9577-6185f4f49a3d (seat upper 28 + surname)"
+    },
+    {
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "full_name": "Janae Shamp",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/c94f542a-52e0-4831-8479-02793a97ccd9",
+      "openstates_name": "Janae Shamp",
+      "match": "seat upper 29 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "29",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/c94f542a-52e0-4831-8479-02793a97ccd9 (seat upper 29 + surname)"
+    },
+    {
+      "politician_id": "4fe779de-6a47-4321-82f1-ced096543a68",
+      "full_name": "Hildy Angius",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/a739b3e9-8161-4b10-b007-3d1e90de791f",
+      "openstates_name": "Hildy Angius",
+      "match": "seat upper 30 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "30",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/a739b3e9-8161-4b10-b007-3d1e90de791f (seat upper 30 + surname)"
+    },
+    {
+      "politician_id": "b8c33072-6368-4465-8352-14e9fabddfbe",
+      "full_name": "Selina Bliss",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bdcadc0a-7e86-4e6a-8e27-4896dbb094ce",
+      "openstates_name": "Selina Bliss",
+      "match": "seat lower 1 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "1",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bdcadc0a-7e86-4e6a-8e27-4896dbb094ce (seat lower 1 + surname)"
+    },
+    {
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+      "full_name": "Quang H Nguyen",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/a4f969ab-e79a-4364-9a93-ad8c75ccf668",
+      "openstates_name": "Quang Nguyen",
+      "match": "seat lower 1 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "1",
+          "service_start": "2021-01-11",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/a4f969ab-e79a-4364-9a93-ad8c75ccf668 (seat lower 1 + surname)"
+    },
+    {
+      "politician_id": "84bb6849-a68d-42e0-999d-dd0456b9d0b4",
+      "full_name": "Stephanie Simacek",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bf406953-ad2b-43f7-95ea-3af060525c90",
+      "openstates_name": "Stephanie Simacek",
+      "match": "seat lower 2 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "2",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bf406953-ad2b-43f7-95ea-3af060525c90 (seat lower 2 + surname)"
+    },
+    {
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04",
+      "full_name": "Justin Wilmeth",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/2706e746-45b7-4586-8d06-8b80e99d3869",
+      "openstates_name": "Justin Wilmeth",
+      "match": "seat lower 2 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "2",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "15",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/2706e746-45b7-4586-8d06-8b80e99d3869 (seat lower 2 + surname)"
+    },
+    {
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "full_name": "Alexander Kolodin",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/102ffcb1-3028-401f-b74f-6f45db25e05e",
+      "openstates_name": "Alex Kolodin",
+      "match": "seat lower 3 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "3",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/102ffcb1-3028-401f-b74f-6f45db25e05e (seat lower 3 + surname)"
+    },
+    {
+      "politician_id": "85937da6-85eb-4d10-946f-2ed3c391a9c9",
+      "full_name": "Cody Reim",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/367990a3-3e02-455b-97b3-6b8dc34d9bbf",
+      "openstates_name": "Cody Reim",
+      "match": "seat lower 3 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "3",
+          "service_start": "2026-03-18",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/367990a3-3e02-455b-97b3-6b8dc34d9bbf (seat lower 3 + surname)"
+    },
+    {
+      "politician_id": "23675559-e2dd-4e26-abed-2f87954dc70e",
+      "full_name": "Pamela Carter",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/d78cb0f9-fd3c-472e-aeb8-716abd42f26e",
+      "openstates_name": "Pamela Carter",
+      "match": "seat lower 4 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "4",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/d78cb0f9-fd3c-472e-aeb8-716abd42f26e (seat lower 4 + surname)"
+    },
+    {
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "full_name": "Matt Gress",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bfb503ce-dcb1-444b-9484-8a90e73c6a6f",
+      "openstates_name": "Matt Gress",
+      "match": "seat lower 4 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "4",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bfb503ce-dcb1-444b-9484-8a90e73c6a6f (seat lower 4 + surname)"
+    },
+    {
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1",
+      "full_name": "Sarah Liguori",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/99f91f84-b1db-4a48-897a-4f87593357ea",
+      "openstates_name": "Sarah Liguori",
+      "match": "seat lower 5 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "5",
+          "service_start": "2024-02-08",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "28",
+          "service_start": "2021-10-26",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/99f91f84-b1db-4a48-897a-4f87593357ea (seat lower 5 + surname)"
+    },
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "full_name": "Aaron Márquez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/c6a181c7-b58e-4c2a-aa2d-9ca31fc6548f",
+      "openstates_name": "Aaron Márquez",
+      "match": "seat lower 5 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "5",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/c6a181c7-b58e-4c2a-aa2d-9ca31fc6548f (seat lower 5 + surname)"
+    },
+    {
+      "politician_id": "fe4cbf96-b145-48d7-9fcf-120e6b75c290",
+      "full_name": "Mae Peshlakai",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bcc217f5-fe08-4213-b8a5-78d1e4d64184",
+      "openstates_name": "Mae Peshlakai",
+      "match": "seat lower 6 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "6",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bcc217f5-fe08-4213-b8a5-78d1e4d64184 (seat lower 6 + surname)"
+    },
+    {
+      "politician_id": "47a75797-e525-4dd9-ab04-66dd4d667760",
+      "full_name": "Myron Tsosie",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/a437a3ce-e3ba-44ec-af75-3308e70f5a87",
+      "openstates_name": "Myron Tsosie",
+      "match": "seat lower 6 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "6",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "7",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/a437a3ce-e3ba-44ec-af75-3308e70f5a87 (seat lower 6 + surname)"
+    },
+    {
+      "politician_id": "9f5a84e0-0195-4459-ab6e-b3ae09404d2e",
+      "full_name": "Sylvia Allen",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/fa74a7b7-6413-4abb-813d-056b84252549",
+      "openstates_name": "Sylvia Allen",
+      "match": "seat lower 7 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "7",
+          "service_start": "2026-04-29",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "6",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2020-01-11",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/fa74a7b7-6413-4abb-813d-056b84252549 (seat lower 7 + surname)"
+    },
+    {
+      "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7",
+      "full_name": "Walt Blackman",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/d4068bfb-d487-4fde-b36e-7db0ac5cae38",
+      "openstates_name": "Walt Blackman",
+      "match": "seat lower 7 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "7",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/d4068bfb-d487-4fde-b36e-7db0ac5cae38 (seat lower 7 + surname)"
+    },
+    {
+      "politician_id": "d6f22ab7-5f0a-4d58-b53a-fd69bf4ad556",
+      "full_name": "Janeen Connolly",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/acfd8972-7a82-41f3-9fd7-0993cfa7365c",
+      "openstates_name": "Janeen Connolly",
+      "match": "seat lower 8 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/acfd8972-7a82-41f3-9fd7-0993cfa7365c (seat lower 8 + surname)"
+    },
+    {
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90",
+      "full_name": "Brian Garcia",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/c13f449f-0423-4ad5-836b-69913aad6600",
+      "openstates_name": "Brian Garcia",
+      "match": "seat lower 8 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/c13f449f-0423-4ad5-836b-69913aad6600 (seat lower 8 + surname)"
+    },
+    {
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62",
+      "full_name": "Lorena Austin",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/90a36fec-df56-4f22-bf16-790866d5b227",
+      "openstates_name": "Lorena Austin",
+      "match": "seat lower 9 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "9",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/90a36fec-df56-4f22-bf16-790866d5b227 (seat lower 9 + surname)"
+    },
+    {
+      "politician_id": "329dc518-7749-4671-b448-3ddaa396da9c",
+      "full_name": "Seth Blattman",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/4b29d125-27ee-46c7-a6ac-ed870c1f10a7",
+      "openstates_name": "Seth Blattman",
+      "match": "seat lower 9 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "9",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/4b29d125-27ee-46c7-a6ac-ed870c1f10a7 (seat lower 9 + surname)"
+    },
+    {
+      "politician_id": "92b03e09-8251-4eb8-a50e-966d52a592e1",
+      "full_name": "Ralph Heap",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/176a6d0b-88bb-45fa-bf37-b4610972b2ae",
+      "openstates_name": "Ralph Heap",
+      "match": "seat lower 10 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "10",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/176a6d0b-88bb-45fa-bf37-b4610972b2ae (seat lower 10 + surname)"
+    },
+    {
+      "politician_id": "2af8f7d8-79ac-4668-9771-fdfff27ecc6c",
+      "full_name": "Justin Olson",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/448cb969-a498-4826-ad1e-c443fe9b8057",
+      "openstates_name": "Justin Olson",
+      "match": "seat lower 10 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "10",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "25",
+          "service_start": "2013-01-01",
+          "start_precision": "day",
+          "service_end": "2016-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "19",
+          "service_start": "2011-01-01",
+          "start_precision": "day",
+          "service_end": "2012-12-31",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/448cb969-a498-4826-ad1e-c443fe9b8057 (seat lower 10 + surname)"
+    },
+    {
+      "politician_id": "2b044f08-b5ce-4b15-993e-b90c16603c25",
+      "full_name": "Junelle Cavero",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/94895484-6eda-42d7-823b-a4eab17071e8",
+      "openstates_name": "Junelle Cavero",
+      "match": "seat lower 11 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "11",
+          "service_start": "2024-04-17",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/94895484-6eda-42d7-823b-a4eab17071e8 (seat lower 11 + surname)"
+    },
+    {
+      "politician_id": "fb949bda-e2f5-49ab-9069-a70da1fb13bd",
+      "full_name": "Oscar De Los Santos",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/a4fabea6-f50e-4fe9-8696-8b4505a481e8",
+      "openstates_name": "Oscar De Los Santos",
+      "match": "seat lower 11 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "11",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/a4fabea6-f50e-4fe9-8696-8b4505a481e8 (seat lower 11 + surname)"
+    },
+    {
+      "politician_id": "8dcf58fe-fea2-4dd4-81ac-542432b154cf",
+      "full_name": "Patty Contreras",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/61dc96d8-140a-4042-b832-ac51bf0796f3",
+      "openstates_name": "Patty Contreras",
+      "match": "seat lower 12 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "12",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/61dc96d8-140a-4042-b832-ac51bf0796f3 (seat lower 12 + surname)"
+    },
+    {
+      "politician_id": "c2c49ac4-8d5e-46e3-b663-ac1677021a1b",
+      "full_name": "Stacey Travers",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/7bd58fc8-e6df-4091-86c6-c64f54b96c35",
+      "openstates_name": "Stacey Travers",
+      "match": "seat lower 12 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "12",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/7bd58fc8-e6df-4091-86c6-c64f54b96c35 (seat lower 12 + surname)"
+    },
+    {
+      "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d",
+      "full_name": "Jeff Weninger",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/de8a5959-6572-44a9-bea5-ed73c27dd0ce",
+      "openstates_name": "Jeff Weninger",
+      "match": "seat lower 13 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "13",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "17",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/de8a5959-6572-44a9-bea5-ed73c27dd0ce (seat lower 13 + surname)"
+    },
+    {
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "full_name": "Julie Willoughby",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/d19ab410-5bc3-4160-b279-765e25d959ab",
+      "openstates_name": "Julie Willoughby",
+      "match": "seat lower 13 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "13",
+          "service_start": "2023-05-05",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/d19ab410-5bc3-4160-b279-765e25d959ab (seat lower 13 + surname)"
+    },
+    {
+      "politician_id": "1f7399ee-2434-49dc-9a18-857bfa0e41f1",
+      "full_name": "Laurin Hendrix",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/45d0b998-57ed-4c6f-ae22-bdbc4262f3e3",
+      "openstates_name": "Laurin Hendrix",
+      "match": "seat lower 14 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "14",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "22",
+          "service_start": "2009-01-01",
+          "start_precision": "day",
+          "service_end": "2010-12-31",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/45d0b998-57ed-4c6f-ae22-bdbc4262f3e3 (seat lower 14 + surname)"
+    },
+    {
+      "politician_id": "3769c4ad-3844-4ab6-9416-96b93c049b33",
+      "full_name": "Khyl Powell",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bd3fb0ce-720a-4137-bd45-87fb6bcf8649",
+      "openstates_name": "Khyl Powell",
+      "match": "seat lower 14 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "14",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bd3fb0ce-720a-4137-bd45-87fb6bcf8649 (seat lower 14 + surname)"
+    },
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "full_name": "Neal Carter",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/17f344ec-ffe3-46fe-ba7a-8efdc5fbf2fd",
+      "openstates_name": "Neal Carter",
+      "match": "seat lower 15 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "15",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": "2021-11-05",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/17f344ec-ffe3-46fe-ba7a-8efdc5fbf2fd (seat lower 15 + surname)"
+    },
+    {
+      "politician_id": "29b130a2-1531-4b35-b79e-dc0e8e3c0b93",
+      "full_name": "Michael Way",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/555adc5f-cc3a-46b1-a00b-8fb209bc457e",
+      "openstates_name": "Michael Way",
+      "match": "seat lower 15 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "15",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/555adc5f-cc3a-46b1-a00b-8fb209bc457e (seat lower 15 + surname)"
+    },
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "full_name": "Teresa Martinez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/0fa874b7-acab-4f29-b800-56bd54f375fe",
+      "openstates_name": "Teresa Martinez",
+      "match": "seat lower 16 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "16",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "11",
+          "service_start": "2021-11-01",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/0fa874b7-acab-4f29-b800-56bd54f375fe (seat lower 16 + surname)"
+    },
+    {
+      "politician_id": "5dd72969-087b-4db0-b2b1-ee87a1ef11b9",
+      "full_name": "Chris Lopez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/9128a4e7-1464-483c-8642-0d878da05619",
+      "openstates_name": "Chris Lopez",
+      "match": "seat lower 16 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "16",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/9128a4e7-1464-483c-8642-0d878da05619 (seat lower 16 + surname)"
+    },
+    {
+      "politician_id": "6a1417b8-cdcd-43f2-a63d-533beaefc563",
+      "full_name": "Rachel Keshel",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/11b313a8-0f20-4d81-8060-4ec7e65f1a29",
+      "openstates_name": "Rachel Keshel",
+      "match": "seat lower 17 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "17",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/11b313a8-0f20-4d81-8060-4ec7e65f1a29 (seat lower 17 + surname)"
+    },
+    {
+      "politician_id": "c72622ac-61d7-4e8b-83a8-565cfca045c0",
+      "full_name": "Kevin Volk",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/183af2d0-dd61-476d-873f-305ae591968f",
+      "openstates_name": "Kevin Volk",
+      "match": "seat lower 17 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "17",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/183af2d0-dd61-476d-873f-305ae591968f (seat lower 17 + surname)"
+    },
+    {
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491",
+      "full_name": "Nancy Gutierrez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/f9216229-6490-412d-aa30-8baac5c2be3e",
+      "openstates_name": "Nancy Gutierrez",
+      "match": "seat lower 18 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "18",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/f9216229-6490-412d-aa30-8baac5c2be3e (seat lower 18 + surname)"
+    },
+    {
+      "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9",
+      "full_name": "Christopher Mathis",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/b2ed48a3-b9ae-42be-a2c8-22a47477acfd",
+      "openstates_name": "Chris Mathis",
+      "match": "seat lower 18 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "18",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "9",
+          "service_start": "2021-12-09",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/b2ed48a3-b9ae-42be-a2c8-22a47477acfd (seat lower 18 + surname)"
+    },
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "full_name": "Lupe Diaz",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/bc52f516-a13b-4490-a12c-7b98fa3969e5",
+      "openstates_name": "Lupe Diaz",
+      "match": "seat lower 19 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "19",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "14",
+          "service_start": "2021-11-23",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/bc52f516-a13b-4490-a12c-7b98fa3969e5 (seat lower 19 + surname)"
+    },
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "full_name": "Gail Griffin",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/1e39adcf-868d-4722-a07b-09fcd36ad9ed",
+      "openstates_name": "Gail Griffin",
+      "match": "seat lower 19 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "19",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "14",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "14",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/1e39adcf-868d-4722-a07b-09fcd36ad9ed (seat lower 19 + surname)"
+    },
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "full_name": "Alma Hernandez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/6dba6afa-b274-4273-b8c6-270d27214eee",
+      "openstates_name": "Alma Hernández",
+      "match": "seat lower 20 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "20",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "3",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/6dba6afa-b274-4273-b8c6-270d27214eee (seat lower 20 + surname)"
+    },
+    {
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9",
+      "full_name": "Betty J Villegas",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/81d12f3a-b635-4111-be8d-a71d2f7565f2",
+      "openstates_name": "Betty Villegas",
+      "match": "seat lower 20 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "20",
+          "service_start": "2023-07-31",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/81d12f3a-b635-4111-be8d-a71d2f7565f2 (seat lower 20 + surname)"
+    },
+    {
+      "politician_id": "5e9c9ca6-5267-4d01-b19d-a7da775d89d9",
+      "full_name": "Consuelo Hernandez",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/0a4e4b0a-a16e-475b-8aa1-75088657d8c1",
+      "openstates_name": "Consuelo Hernandez",
+      "match": "seat lower 21 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "21",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/0a4e4b0a-a16e-475b-8aa1-75088657d8c1 (seat lower 21 + surname)"
+    },
+    {
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "full_name": "Stephanie Stahl Hamilton",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/df482d8a-1ed9-41ae-b4ba-d73d4cd9aa39",
+      "openstates_name": "Stephanie Stahl Hamilton",
+      "match": "seat lower 21 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "21",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "10",
+          "service_start": "2021-01-10",
+          "start_precision": "day",
+          "service_end": "2021-10-28",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "10",
+          "service_start": "2021-10-28",
+          "start_precision": "day",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/df482d8a-1ed9-41ae-b4ba-d73d4cd9aa39 (seat lower 21 + surname)"
+    },
+    {
+      "politician_id": "d5466317-d90a-41ce-ba20-30c12429dcb3",
+      "full_name": "Lupe Contreras",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/095a6754-d7ca-4f1f-b562-974d92e7eb3c",
+      "openstates_name": "Lupe Contreras",
+      "match": "seat lower 22 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "22",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "19",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/095a6754-d7ca-4f1f-b562-974d92e7eb3c (seat lower 22 + surname)"
+    },
+    {
+      "politician_id": "8d470040-0f53-4881-8b58-5e9563a85f94",
+      "full_name": "Elda Luna-Nájera",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/93db82ca-c8b1-43e4-98ce-ba52f4d0f635",
+      "openstates_name": "Elda Luna-Nájera",
+      "match": "seat lower 22 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "22",
+          "service_start": "2024-03-01",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/93db82ca-c8b1-43e4-98ce-ba52f4d0f635 (seat lower 22 + surname)"
+    },
+    {
+      "politician_id": "81b3d4cc-c502-4fbc-bd75-97773c39b2f5",
+      "full_name": "Michele Peña",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/68c38dfc-a12b-4c51-8b70-c4e02931cddf",
+      "openstates_name": "Michele Peña",
+      "match": "seat lower 23 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "23",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/68c38dfc-a12b-4c51-8b70-c4e02931cddf (seat lower 23 + surname)"
+    },
+    {
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee",
+      "full_name": "Mariana Sandoval",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/3b6fa6b2-0a60-4f2e-9fd8-0882b04d9e0b",
+      "openstates_name": "Mariana Sandoval",
+      "match": "seat lower 23 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "23",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/3b6fa6b2-0a60-4f2e-9fd8-0882b04d9e0b (seat lower 23 + surname)"
+    },
+    {
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6",
+      "full_name": "Anna Abeytia",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/2e9c0206-d392-48a3-a599-7f6d226527b7",
+      "openstates_name": "Anna Abeytia",
+      "match": "seat lower 24 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "24",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/2e9c0206-d392-48a3-a599-7f6d226527b7 (seat lower 24 + surname)"
+    },
+    {
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9",
+      "full_name": "Lydia Hernandez",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/7a33e2bd-8394-45d9-967b-0c39430ff39b",
+      "openstates_name": "Lydia Hernandez",
+      "match": "seat lower 24 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "24",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/7a33e2bd-8394-45d9-967b-0c39430ff39b (seat lower 24 + surname)"
+    },
+    {
+      "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+      "full_name": "Michael Carbone",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/8db06598-a7e1-4b25-9e76-6a2be0d9eae3",
+      "openstates_name": "Michael Carbone",
+      "match": "seat lower 25 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "25",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/8db06598-a7e1-4b25-9e76-6a2be0d9eae3 (seat lower 25 + surname)"
+    },
+    {
+      "politician_id": "4176f760-3c74-4a55-8edc-b7897ee80e21",
+      "full_name": "Nick Kupper",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/8595d83f-1e95-4c0d-8c24-100a4a763a8f",
+      "openstates_name": "Nick Kupper",
+      "match": "seat lower 25 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "25",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/8595d83f-1e95-4c0d-8c24-100a4a763a8f (seat lower 25 + surname)"
+    },
+    {
+      "politician_id": "49b2db49-6438-437c-90ce-36b97670e30a",
+      "full_name": "Cesar Aguilar",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/b1da595a-8c97-42f8-ae58-694c17efa3f3",
+      "openstates_name": "Cesar Aguilar",
+      "match": "seat lower 26 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "26",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/b1da595a-8c97-42f8-ae58-694c17efa3f3 (seat lower 26 + surname)"
+    },
+    {
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210",
+      "full_name": "Quantá Crews",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/0fb2e73b-b140-4669-a9bd-b75facb342dd",
+      "openstates_name": "Quantá Crews",
+      "match": "seat lower 26 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "26",
+          "service_start": "2023-06-07",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/0fb2e73b-b140-4669-a9bd-b75facb342dd (seat lower 26 + surname)"
+    },
+    {
+      "politician_id": "558dc1d6-0365-4707-8373-4ef188aff71c",
+      "full_name": "Lisa Fink",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/981d0aee-d239-4acc-9da8-1332481e57ee",
+      "openstates_name": "Lisa Fink",
+      "match": "seat lower 27 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "27",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/981d0aee-d239-4acc-9da8-1332481e57ee (seat lower 27 + surname)"
+    },
+    {
+      "politician_id": "9c481b8d-e373-4409-bccb-bde6534882da",
+      "full_name": "Tony Rivero",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/ec93f89c-d32f-4f34-bbe9-1aeb8305a065",
+      "openstates_name": "Tony Rivero",
+      "match": "seat lower 27 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "27",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "21",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2020-01-10",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/ec93f89c-d32f-4f34-bbe9-1aeb8305a065 (seat lower 27 + surname)"
+    },
+    {
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "full_name": "David Livingston",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/6e8f2c0d-c9d3-4cb5-ae59-5264cb6d61a7",
+      "openstates_name": "David Livingston",
+      "match": "seat lower 28 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "28",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "22",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2018-01-14",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "22",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/6e8f2c0d-c9d3-4cb5-ae59-5264cb6d61a7 (seat lower 28 + surname)"
+    },
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "full_name": "Beverly Pingerelli",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/77be0e97-4c93-4332-a9f9-9348560fdf98",
+      "openstates_name": "Beverly Pingerelli",
+      "match": "seat lower 28 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "28",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "21",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/77be0e97-4c93-4332-a9f9-9348560fdf98 (seat lower 28 + surname)"
+    },
+    {
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "full_name": "Steve Montenegro",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/37f8815d-1672-42dd-9e9b-305449d7bb8b",
+      "openstates_name": "Steve Montenegro",
+      "match": "seat lower 29 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "29",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "upper",
+          "district": "13",
+          "service_start": "2017-01-01",
+          "start_precision": "day",
+          "service_end": "2018-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "13",
+          "service_start": "2013-01-01",
+          "start_precision": "day",
+          "service_end": "2016-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "12",
+          "service_start": "2009-01-01",
+          "start_precision": "day",
+          "service_end": "2012-12-31",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/37f8815d-1672-42dd-9e9b-305449d7bb8b (seat lower 29 + surname)"
+    },
+    {
+      "politician_id": "ee80504a-fe2d-45e1-8bbe-ce0a5042d2b8",
+      "full_name": "James Taylor",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/70f55f83-fed8-497f-86a9-94b6d428b9b4",
+      "openstates_name": "James Taylor",
+      "match": "seat lower 29 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "29",
+          "service_start": "2025-01-13",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/70f55f83-fed8-497f-86a9-94b6d428b9b4 (seat lower 29 + surname)"
+    },
+    {
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+      "full_name": "Leo Biasiucci",
+      "kinds": [
+        "candidate",
+        "seated"
+      ],
+      "openstates_id": "ocd-person/433aab5d-35be-48cc-80a9-f468d5279022",
+      "openstates_name": "Leo Biasiucci",
+      "match": "seat lower 30 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "30",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        },
+        {
+          "chamber": "lower",
+          "district": "5",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/433aab5d-35be-48cc-80a9-f468d5279022 (seat lower 30 + surname)"
+    },
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "full_name": "John Gillette",
+      "kinds": [
+        "seated"
+      ],
+      "openstates_id": "ocd-person/fd68e4c2-0463-477c-81ea-e2e36273e12b",
+      "openstates_name": "John Gillette",
+      "match": "seat lower 30 + surname",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "30",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": null,
+          "end_precision": null
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/fd68e4c2-0463-477c-81ea-e2e36273e12b (seat lower 30 + surname)"
+    },
+    {
+      "politician_id": "0688018a-0996-4ba8-ba45-021e848bce49",
+      "full_name": "Eric Stafford",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "07013ded-08dd-4a36-b5b6-308e481593eb",
+      "full_name": "Tammy Caputi",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "0755c7f9-868a-4f0f-812f-23b0bf809735",
+      "full_name": "Miranda Lopez",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "0b59d571-71e3-494b-bb5b-f8df403ba483",
+      "full_name": "Gary Hatch",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "0f46b706-0c33-4466-9241-204ceb34a5ca",
+      "full_name": "Michelle Altherr",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "102305cc-e6aa-480d-adb5-bbc2d2aa7eff",
+      "full_name": "Aiden Nicholette Swallow",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "10c0b936-996d-4982-bc09-42e20443ee0a",
+      "full_name": "Marc Graham",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "186a3b90-48b4-46cb-a737-ac34b3cdadc7",
+      "full_name": "Christine Marie Scianna",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "1ad9d855-e499-4a37-85fc-7359851f591c",
+      "full_name": "Tiffany Byrne",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "21d125ba-69b0-4b5e-a44c-85aa82ae7b6f",
+      "full_name": "Richard Grayson",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "2af0db83-5c21-41e4-9d4a-89c7b2e7c133",
+      "full_name": "Donald Hawker",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "2c906e4d-5fd4-440c-bf97-358aa5b5dafb",
+      "full_name": "Mike Gannuscio",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "300a3a29-5220-48d1-9754-758308e5c9b9",
+      "full_name": "Bob Karp",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "343d8f1f-63b0-4805-9ad0-940995a35e3e",
+      "full_name": "Bob Dohse",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "37508991-a40c-470c-8087-eb0972661b19",
+      "full_name": "Barbara Fike",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "3ab679c2-b9f2-4f57-b358-e3c6bbd539e7",
+      "full_name": "Nick Fierro",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "3ece9161-6073-4f01-b338-c944cf0324d4",
+      "full_name": "Jim Bishop",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "3ef6e94f-0a9d-4d3d-bc33-2d6f95c41add",
+      "full_name": "Brian Calaway",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "406ec8f2-496f-4581-8b90-390f3de42c61",
+      "full_name": "Bridget Fitzgibbons",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "40fd6d44-21e9-4244-8806-a058f94596af",
+      "full_name": "Amelia Gallitano",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "42b81e16-b007-4319-a123-f16ee3abc736",
+      "full_name": "Richard \"Rick\" Robert Spargo",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "42c171d8-3a23-46b8-8593-e29374274a3e",
+      "full_name": "James Rogers",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "433844aa-c80f-4168-a908-66244419feff",
+      "full_name": "Lisbeth Arescurenaga",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "4398ee7f-d169-4a6a-960c-767990667728",
+      "full_name": "Jeffrey Fortney",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "4dab6220-2d87-4d28-ad98-f863899a2861",
+      "full_name": "Laura Huber",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "4f1e579c-f749-48d9-ac84-a0d67aeb7d73",
+      "full_name": "Blair Moses",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "508fa6d8-a830-4556-bc8f-88c95306f75d",
+      "full_name": "David Scott",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "50a07b04-2eb3-4ccf-8827-cd71f39ab7e6",
+      "full_name": "Jackie O'Donnell Anderson",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "5228b577-e6f3-424a-8b65-f59e66011fca",
+      "full_name": "Mylie Biggs",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "583c17bf-66f7-4575-b710-d265183fd9aa",
+      "full_name": "Julie Gable",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "5c195e73-0c38-40a6-a37f-0c4be15d2aae",
+      "full_name": "Kyle Clayton",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "5f8498b8-913e-4126-9b94-fe224e96bbee",
+      "full_name": "Edgar Soto",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "60a5f6f1-03c3-44ed-b232-b94ca44ed623",
+      "full_name": "John Skirbst",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "662e8d2c-e6db-4cb8-a59e-afe84f98fcba",
+      "full_name": "Kristie O'Brien",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "709ce928-607a-4395-b1d3-1b4811fbc39c",
+      "full_name": "Sandy Zalecki",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "7a106961-81b8-4e70-9c71-8b5d29adb393",
+      "full_name": "Stephanie Walsh",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "7a991413-5e99-4473-8665-c50d156edfa6",
+      "full_name": "Kevin Hartke",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "832fafc5-36d4-48e2-88e9-5923986e36fb",
+      "full_name": "Bradley D. Bettencourt",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8366ce5a-cb75-4fc8-8fef-3135b5f039c4",
+      "full_name": "Royce \"RJ\" Mark Jenkins",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8383e359-8dfd-4b40-b7b2-22de0df76173",
+      "full_name": "Esteban Flores",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8673f82d-bf26-4ddd-9dc6-6c1ed3480863",
+      "full_name": "Joseph Charles Dailey",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8e68ba41-86b1-4eed-8907-6a7c068b1678",
+      "full_name": "Frank Roberts",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8e9c654c-96ca-4400-9546-b87f5e1e6ce0",
+      "full_name": "Hollace \"Holly\" Lyon",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8f41f8c9-a073-4956-8799-80c7d9ba2976",
+      "full_name": "Cesar Aleman",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8f6d28bd-fe31-403f-acb5-4988ef4600ab",
+      "full_name": "David Rose",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "8faecbdb-437b-45ed-a061-4e7c92bb804d",
+      "full_name": "Racquel \"Rockee\" Armstrong",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "9341f86a-9800-4705-994b-37c2c8b61424",
+      "full_name": "Delores McLaughlin",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "96779cfb-7dce-4cca-9143-72c399acba3a",
+      "full_name": "George Khalaf",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "98a6dd9e-3341-4b61-99f0-ef1c58e433ca",
+      "full_name": "Jason LaForest",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "99f7ca91-2092-42b2-b0b8-991d193da5d1",
+      "full_name": "Bill Loughrige",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "9a418e10-e0c6-460f-8084-3ac0bbb85a82",
+      "full_name": "Emilia Cortez",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "9ad33d82-ff55-42e2-a061-8b6f3b1c6486",
+      "full_name": "Jayme Accalia",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "9b456bc1-ec35-4617-9bc7-685114906971",
+      "full_name": "Helen Hunter",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "9dc1fc82-56dc-4f0e-a6fb-2a642a75c78b",
+      "full_name": "Gary Garcia Snyder",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a0b8deea-5347-442a-bf62-a48cf6d9f228",
+      "full_name": "Deborah Howard",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a271fc70-2cf1-4374-b579-82ae4007b1f3",
+      "full_name": "Alberto Flores",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a4247832-2028-4035-a1b8-e8b722754da2",
+      "full_name": "Paul Carver",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a606ad9f-bc71-4154-9d7f-1f4b593a584f",
+      "full_name": "Tyler Andrew Farnsworth",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a65f9938-6a76-4f21-8c8d-f2a3d898f5d4",
+      "full_name": "Jacob D. Martinez",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "full_name": "Aaron Lieberman",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": "ocd-person/4672a6e8-c178-4444-b602-0730b0c8a559",
+      "openstates_name": "Aaron Lieberman",
+      "match": "family + first given name (unique in state)",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "28",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2021-09-20",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/4672a6e8-c178-4444-b602-0730b0c8a559 (family + first given name (unique in state))"
+    },
+    {
+      "politician_id": "ad080c0e-e211-49b3-bbd2-694def3e524a",
+      "full_name": "Janet Weninger",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "b285d29b-14f3-491e-a7a1-d94e30219bb8",
+      "full_name": "Jamescita Peshlakai",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": "ocd-person/de5058e3-6fff-45fc-b426-2ef2b3e68de0",
+      "openstates_name": "Jamescita Peshlakai",
+      "match": "family + first given name (unique in state)",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "7",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2014-12-31",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "7",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2021-12-22",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/de5058e3-6fff-45fc-b426-2ef2b3e68de0 (family + first given name (unique in state))"
+    },
+    {
+      "politician_id": "b2def48c-4092-4518-babc-c6080ded42cf",
+      "full_name": "David Cook Sr.",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": "ocd-person/b7d285d8-63a8-4e65-8889-2aa064eda4ff",
+      "openstates_name": "David Cook",
+      "match": "family + first given name (unique in state)",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "lower",
+          "district": "7",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": "2025-01-12",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "lower",
+          "district": "8",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-09",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/b7d285d8-63a8-4e65-8889-2aa064eda4ff (family + first given name (unique in state))"
+    },
+    {
+      "politician_id": "b346d645-5ec3-4d81-8fc1-fa2646c4940d",
+      "full_name": "Anthony Jason Ramirez",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "b3d2e07f-d503-4d3e-a230-0e7d7abe0272",
+      "full_name": "Frank Steele",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "b8bed9af-8d85-47a9-8b5e-5ec0a3179931",
+      "full_name": "Lloyd Johnson",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "b941bd0d-c668-4a18-a748-916cfe215ecc",
+      "full_name": "Hector Gomez",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "bc898046-f89b-48c3-a56f-dbc2adc73e71",
+      "full_name": "John Winchester",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "bec05bfa-5963-4efa-bb32-59e0eb2364ae",
+      "full_name": "Christine Ellen Dargon",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c18348ab-53dd-47ae-8e1a-43cb7f4a0bca",
+      "full_name": "Joshua Ayala",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c1fa040d-d0cf-4673-92c8-a9a1d743bf35",
+      "full_name": "Charles \"Charlie\" Eakins",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c279ce30-1b32-44da-ba58-f45e40f0f906",
+      "full_name": "Douglas Everett",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c3a2280d-1b31-4753-b090-7599f6110988",
+      "full_name": "Christopher King",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c4844e6a-8463-4611-86c5-fc3b418e8307",
+      "full_name": "Julia Romero Gusse",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c4b41fca-6d81-403a-ba6a-ef57f0886861",
+      "full_name": "Jonathan McKenna",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "c8e2ec0c-5f00-450f-ac09-2959c072b262",
+      "full_name": "Elaine Aldrete",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "cb3d61dd-5569-4083-b732-3926afa80fa1",
+      "full_name": "Armando Montero",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "ccfc3d75-e579-437c-bb8c-c1a5a417381d",
+      "full_name": "Brian McMahan",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "d49351b8-eb13-41b9-bb80-6c7ada640d19",
+      "full_name": "David Richardson",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "d6b66293-551a-42c7-9158-acf6d179d35f",
+      "full_name": "Jacob Weinberg",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "d7e8bfdb-9575-4137-a85c-95adc2a8c997",
+      "full_name": "Christopher Kibbey",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "da6841a8-0bc9-43f9-92bc-9dca07b45a63",
+      "full_name": "Frank Bertone",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "e25fc2cd-d932-431a-bcc0-99a9b6b3c631",
+      "full_name": "Ian Teller",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "e4b83e10-c332-4f35-ad88-18a72b36de32",
+      "full_name": "Brendan Trachsel",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "full_name": "Christine Marsh",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": "ocd-person/597de349-4f1f-4e72-a537-d0626b5abddc",
+      "openstates_name": "Christine Marsh",
+      "match": "family + first given name (unique in state)",
+      "flags": [],
+      "spans": [
+        {
+          "chamber": "upper",
+          "district": "4",
+          "service_start": "2023-01-09",
+          "start_precision": "day",
+          "service_end": "2025-01-12",
+          "end_precision": "day"
+        },
+        {
+          "chamber": "upper",
+          "district": "28",
+          "service_start": null,
+          "start_precision": "unknown",
+          "service_end": "2023-01-08",
+          "end_precision": "day"
+        }
+      ],
+      "source": "OpenStates people @bf4caf10 ocd-person/597de349-4f1f-4e72-a537-d0626b5abddc (family + first given name (unique in state))"
+    },
+    {
+      "politician_id": "e8052df2-a15f-447d-a97b-86da48dd8498",
+      "full_name": "Michael Braun",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "ea93d00c-1e3d-4da8-b1f7-ef8f7c330fa6",
+      "full_name": "Michiel \"Mike\" Montiel",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "ef7140ad-958b-4f05-9606-5c9ba364093d",
+      "full_name": "Samuel \"Sam\" Martin",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "f49e66b1-28ab-4256-8d5c-1cc28e0f9f5e",
+      "full_name": "Karen Gresham",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "fb782cf9-f5cf-444b-8f95-039792bce28c",
+      "full_name": "Betsy Munoz",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    },
+    {
+      "politician_id": "fe9517ef-324a-44a3-95e7-4f5c3eb7e2c5",
+      "full_name": "Mary Rose",
+      "kinds": [
+        "candidate"
+      ],
+      "openstates_id": null,
+      "openstates_name": null,
+      "match": null,
+      "flags": [
+        "openstates-no-match"
+      ],
+      "spans": [],
+      "source": null
+    }
+  ]
+}

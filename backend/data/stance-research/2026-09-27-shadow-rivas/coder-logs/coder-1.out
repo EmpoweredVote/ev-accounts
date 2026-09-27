@@ -1,0 +1,12 @@
+Wrote `/Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-09-27-shadow-rivas/labels/coder-1.json` — one row, `rent-regulation`, coded **rung 2**.
+
+**How it codes:**
+
+- **Vote page** (`123dec96…`) — `own-act` / `on-question` / `record` (`vote`) / `chair-shaped` / `in-term`. Instrument `AB 1482 (2019-2020)`. `actor_quote` includes the first name (`Reyes, Luz Rivas, Robert Rivas, Rodriguez`) because two Rivases appear on the page; `tally_quote` `Ayes Count 48 Noes Count 26` — 26 of 79 against, so not `near-unanimous`.
+- **Bill text** (`87914e6c…`) — same record, carries the `provision_quote` (the 5%-plus-CPI/10% cap in § 1947.12(a)(1)); actor and tally are `null` because that page doesn't print them.
+
+**Chair reasoning:** single-subject tenancy bill, final passage, so the vote ladder allows a chair. Operative content is a new statewide rent cap plus just-cause termination on units that had neither — "Strengthen existing rent stabilization and extend coverage to more units." Rung 1 is excluded by the act's own exemptions (15-year new-construction carve-out, owner sets the initial rate on a new tenancy); rung 3 is excluded because the bill adds protections rather than maintaining current ones.
+
+**Judgment call worth flagging:** rung 2's first clause, "strengthen existing rent stabilization," is a stretch on a strict reading — AB 1482 leaves Costa-Hawkins and local ordinances untouched and instead creates a new statewide floor. I read the rung as one idea (more regulation, broader coverage, short of universal) rather than two independently-evidenced clauses; a coder reading it as compound would land on BLANK `compound-partial`. That's the likeliest place the three coders split.
+
+`needs_source` asks for anything from the current term (2022-12-05 onward) — the only evidence here is six years old, and though V5 gives records no age limit, nothing in these snapshots speaks to his position now.

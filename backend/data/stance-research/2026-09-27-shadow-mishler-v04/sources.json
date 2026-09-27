@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-09-27-shadow-mishler-v04",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022/bills/house/1002/details",
+      "source_kind": "public-record",
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "HB 1002 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1002-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1002/rollcalls/HB1002.374_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "HB 1002 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1002-rc.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1002/HB1002.04.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "HB 1002 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1002-enrolled.txt"
+    }
+  ]
+}

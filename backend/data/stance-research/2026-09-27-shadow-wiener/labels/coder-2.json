@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "57e05bd7-06ea-5f93-8606-afd05b1a31eb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wiener voted Aye on Senate Floor final passage of ACA 5.",
+          "record_kind": "vote",
+          "actor_quote": "Wahab, Wiener, Wilk",
+          "tally_quote": "Ayes Count 31 Noes Count 0"
+        },
+        {
+          "snapshot_id": "18c4f26c-10ba-5ce6-ae32-b3ced197e427",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": "The right to marry is a fundamental right.",
+          "note": "Chaptered text of ACA 5, the bill Wiener voted for, establishing marriage as a fundamental right with no religious-organization carve-out.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "57e05bd7-06ea-5f93-8606-afd05b1a31eb",
+        "18c4f26c-10ba-5ce6-ae32-b3ced197e427"
+      ],
+      "reasoning": "Wiener voted Aye on Senate Floor final passage of ACA 5 (2023-2024), a single-subject constitutional amendment whose operative text repeals the opposite-sex-only marriage clause and instead declares 'the right to marry is a fundamental right' without any religious-organization exception, matching the rung 'Guarantee same-sex marriage the same benefits and protections as any other marriage.' It does not add discrimination protections in jobs and housing, which would be needed for the fuller rung, and it does not carve out religious organizations, which would point to the narrower rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

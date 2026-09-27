@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "58f93f4f-9a3f-5ecd-8652-844b534aa83f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (55th Legislature, 2nd Regular Session, 2022)",
+          "provision_quote": null,
+          "note": "Co-sponsorship of the ESA expansion, but taken in the Arizona House in 2022, before the Senate term that began 2023-01-02.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kavanagh (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "838392eb-5e1f-58ac-bd8c-a9a642ee905d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (55th Legislature, 2nd Regular Session, 2022)",
+          "provision_quote": null,
+          "note": "House Third Reading Aye on a single-subject ESA bill; 26 of 57 voting members opposed, so it is not near-unanimous, but the vote is a House record.",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "216da375-c911-5eb4-8bc4-1e613e587d75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (55th Legislature, 2nd Regular Session, 2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both:",
+          "note": "Chapter text of the instrument he co-sponsored and voted for; it prints the provision but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is HB2853 (2022), the Arizona empowerment scholarship account expansion, which Kavanagh co-sponsored and voted for in the House of Representatives on 06/22/2022, before the Senate term that began 2023-01-02; under V5 a record from an earlier office is valid for that office only, so no passage survives for this seat. On its content the instrument would be chair-shaped for the rung \"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family\", because new section 15-2401.01 makes every resident eligible to enroll in a public school a qualified student, but that reading cannot be seated here.",
+      "needs_source": [
+        "An Arizona Senate roll call by Kavanagh on an ESA or voucher bill from the 56th or 57th Legislature (2023 or later)",
+        "Kavanagh's own words on empowerment scholarship accounts from his current Senate term or the 2022 campaign that seated him in the Senate"
+      ],
+      "quotes": []
+    }
+  ]
+}

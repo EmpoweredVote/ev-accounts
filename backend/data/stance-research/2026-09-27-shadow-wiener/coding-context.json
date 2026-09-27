@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-27-shadow-wiener",
+  "seat": {
+    "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+    "full_name": "Scott Wiener",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2016-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null
+  },
+  "topics": [
+    {
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "question_text": "What legal recognition should same-sex marriages receive?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Guarantee same-sex couples full legal equality — equal marriage plus protection from discrimination (such as in jobs and housing)."
+        },
+        {
+          "value": 2,
+          "text": "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+        },
+        {
+          "value": 3,
+          "text": "Allow same-sex marriage, but protect religious organizations' right to decline to perform or host these marriages."
+        },
+        {
+          "value": 4,
+          "text": "Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples."
+        },
+        {
+          "value": 5,
+          "text": "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

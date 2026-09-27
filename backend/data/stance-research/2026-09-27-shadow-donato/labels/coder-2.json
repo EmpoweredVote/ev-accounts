@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "351df78a-5dd4-59ed-ba4e-e8d2c8d5c368",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-01",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "(2) procedure for each school to allow a: (A) parent or guardian of a student enrolled in the school; or (B) community member: (i) within the school district; or (ii) within the school district in which the charter school is located; to submit a request to remove material from the school library that is obscene (as described in IC 35-49-2-1) or harmful to minors (as described in IC 35-49-2-2); and",
+          "note": "HB 1447 also amends Muncie schools flexibility, vendor-survey privacy, political neutrality, and obscenity-dissemination law in the same act; no Donato statement ties her vote or sponsorship to the library provision specifically.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b12590e5-2db2-535e-857b-4524fa9c9301",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Final-passage conference committee vote on a multi-subject education bill; does not isolate the library-book provision, and it is not near-unanimous (39-10).",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer Young",
+          "tally_quote": "Yea 39 Education matters. Nay 10"
+        },
+        {
+          "snapshot_id": "75f0aece-f2fb-5fa3-b9d3-610e1b046485",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Bill-tracking page names Donato as a Senate sponsor of HB 1447; its own digest excerpt describes the third-party-vendor-survey provision, not the library-book provision.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Donato sponsored and voted Yea on HB 1447 (2023), which added a chapter letting a parent or community member request removal of school library material that is obscene or harmful to minors, reviewed by the governing body at its next public meeting; but the same act also enacted several unrelated education provisions, so the vote and sponsorship are multi-subject and, without any Donato statement tying her support to the library provision, cannot establish whether she holds 'remove a challenged book only if a review committee of educators and parents finds it unsuitable', 'pull any book a parent challenges until it has been reviewed', or 'remove any book a parent or community member reports as inappropriate, for all students'.",
+      "needs_source": [
+        "Donato floor statement, press release, or testimony specifically addressing HB 1447's school library provision or the library-book-challenge policy question"
+      ],
+      "quotes": []
+    }
+  ]
+}

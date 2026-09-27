@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "72771892-f96a-5695-8621-ac71ee1ce6de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "Bill overview page shows Griffin as prime sponsor of the enacted bill but prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Griffin (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6d362495-7cdd-50e6-910c-2ca8746ba67c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": "REQUIREMENTS FOR EXTRA HIGH LOAD FACTOR CUSTOMER PAYMENTS TO COVER THE COSTS OF ANY INFRASTRUCTURE IMPROVEMENTS, ADDITIONS OR expansions THAT ARE NECESSARY TO FACILITATE SERVICE TO THE CUSTOMER, WHICH SHALL BE SUPPORTED BY SCHEDULES that are FILED BY THE ELECTRIC PUBLIC SERVICE CORPORATION THAT DEMONSTRATE THE PROTECTION OF NON-extra HIGH LOAD FACTOR CUSTOMERS FROM subsidizing extra-high load factor customers.",
+          "note": "The cost-allocation characteristics are ones the commission may establish, not a bar on passing costs to residential customers, and nothing in the act touches permitting.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9ff27240-e5c1-511a-8801-a8241e5d7b0d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "House final passage, 16 of 60 members voting no, so not near-unanimous; the page names the voter and the count but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Griffin is prime sponsor of HB2756 (2026) and voted Aye on its House final passage; the act makes large-load utility customers visible through semiannual interconnection reports and cost-of-service studies, and lets the corporation commission require those customers to cover the infrastructure costs of serving them so other customers do not subsidize them. That evidences only the transparency half of the rung that would encourage data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts; the act streamlines no permitting, and its permissive cost-allocation authority falls short of barring utilities from passing any data center energy infrastructure costs to residential customers.",
+      "needs_source": [
+        "Griffin's own words (floor statement, press release or first-person issue page) tying HB2756 (2026) to data centers and to permitting speed",
+        "Any Arizona instrument Griffin acted on that addresses data center siting or permitting timelines",
+        "Arizona Corporation Commission rate or tariff filing showing whether data center infrastructure costs may be passed to residential ratepayers"
+      ],
+      "quotes": []
+    }
+  ]
+}

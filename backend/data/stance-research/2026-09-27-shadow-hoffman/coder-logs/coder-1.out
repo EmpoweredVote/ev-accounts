@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json`.
+
+**voting-rights → BLANK `no-evidence`**
+
+All three snapshots are one record: HB 2492 (2022), which Hoffman prime-sponsored and voted Aye on. Its operative text ("any application for registration shall be accompanied by satisfactory evidence of citizenship") is chair-shaped for rung 5, "Require documentary proof of citizenship to register to vote."
+
+But the act is from February–March 2022, in the Arizona **House**. The row's office is State Senator, term starting 2023-01-02. Under V5 that is `pre-seating` — a record from an earlier office is valid for that office only — so no passage survives V1–V5 for this seat, and the chair is BLANK.
+
+Record fields distributed per page as the 0.3 ruling requires: `actor_quote`/`tally_quote` on the pages that print them (`Hoffman (Prime)`; `HOFFMAN Y` + `Passed 31-26-3-0-0`), `provision_quote` only on the bill-text page, `null` elsewhere. No `[deleted: …]` text was quoted. `needs_source` asks for an in-term Senate record or in-cycle statement on voter ID / proof of citizenship.

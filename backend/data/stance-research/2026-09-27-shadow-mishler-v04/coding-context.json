@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-27-shadow-mishler-v04",
+  "seat": {
+    "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+    "full_name": "Ryan Mishler",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2004-11-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Significantly raise taxes on wealthy people and large companies to fund more public services"
+        },
+        {
+          "value": 2,
+          "text": "Moderately raise taxes on wealthy people and large companies to fund existing services"
+        },
+        {
+          "value": 3,
+          "text": "Keep the current tax system mostly as-is, with targeted adjustments — closing loopholes or granting narrow relief"
+        },
+        {
+          "value": 4,
+          "text": "Cut taxes broadly, including the main rates most people pay"
+        },
+        {
+          "value": 5,
+          "text": "Cut taxes as far as possible and shrink what government does"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Coded and written to `labels/coder-1.json`.
+
+**Row: Joanna King — trans-athletes → chair 4**
+
+Three passages, all one instrument (`HB 1041 (2022)`), all `record`:
+
+| Snapshot | Kind | Carries |
+|---|---|---|
+| details page | `author` | `actor_quote`: "Co-Authored by: Rep. Chris Jeter, Rep. Joanna King, Rep. Robert Heaton." |
+| enrolled act | `vote` | `provision_quote`: Sec. 4(b), the male-may-not-participate clause |
+| roll call 402 | `vote` | `actor_quote`: "Cook King Negele Torr"; `tally_quote`: "Yea 67 … Nay 28 Excused 5 Not Voting 0" |
+
+Reasoning notes:
+
+- **V4 chair-shaped, not direction-only** — HB 1041 is single-subject (participation in school sports), and its operative section is the rung text: teams are designated by sex and a male by biological sex at birth may not play on a girls' team. This is the codebook's own Adams/HB11 example, one state over.
+- **Rung 5 excluded** by the act's own text — it designates and restricts teams, it does not ban anyone from all organized sport.
+- **Not near-unanimous** — 28 Nay of 95 voting ≈ 29%.
+- **In-term** — the co-authorship and the 2022-05-24 override both fall inside the term that began 2020.
+- **Amendment markup (0.3.1)** — the PDF's printing-code paragraph carries `[deleted: …]` fences; nothing from inside one was quoted. Sec. 4(b) is newly added text in a new IC chapter.
+- **Surname disambiguation** — the roll call prints a bare "King" with no initial, so I quoted the contiguous span verbatim as printed; the details page supplies "Rep. Joanna King" on the same instrument.
+
+One caveat worth flagging: the details page prints only the digest, not the operative section, so I left its `provision_quote` null rather than quote a summary. No candidate quotes exist in these sources (all records, no first-person words), so `quotes` is empty and `needs_source` is empty.

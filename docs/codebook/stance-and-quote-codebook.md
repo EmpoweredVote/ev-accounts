@@ -1,6 +1,6 @@
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.3.1 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
 fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
@@ -9,6 +9,10 @@ carries a worked two-passage vote example.
 **Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
 inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
 quotes it as `provision_quote` (V3 "Record fields").
+**Updated 2026-09-27 (0.3.1 → 0.4 — V5 ruling, option B, Chris Andrews):** a record from **either
+chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
+House years). A record from another level of government (a city council, a county, Congress) is still
+valid for that office only. See V5.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -332,13 +336,29 @@ chair. → `direction-only`.
 
 | Value | Definition |
 |---|---|
-| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. |
-| `pre-seating` | A vote or act from before the person held the office. A record from an earlier office is valid for that office only. |
+| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. **A record** (vote, sponsorship, authorship, a signed act) also counts as `in-term` when it dates from a term in **either chamber of the same legislature** (V5 ruling 2026-09-27, option B). |
+| `pre-seating` | A vote or act from before the person held a seat in this body. A record from **another level of government** (a city council, a county, Congress) is valid for that office only. |
 | `superseded-by-later` | A later passage from the same person states or acts differently. |
 | `undated` | No date can be established. |
 
 **Rules**
 - A **record** has no age limit if it is chair-shaped against the served rung text.
+- **Earlier chamber, same legislature (ruling 2026-09-27, option B).** A person moves between the two
+  chambers of one legislature as the same person, and what they sponsored there is often what elected
+  them to the other. So their earlier-chamber records are coded exactly like in-term records: the vote
+  ladder (V4.1), the near-unanimous rule and `superseded-by-later` all apply unchanged. Code, not the
+  coder, then checks that the earlier term is on file and that the page shows that term's chamber
+  (CONFIRM `prior-service-unverified`, `chamber-not-evidenced`). A statement is not a record: the
+  election-cycle rule below still decides it.
+  - **[real]** John Kavanagh / `school-vouchers`: co-sponsored and voted for AZ HB 2853 (2022) in the
+    House; a State Senator since 2023. → `in-term`; code the act on its content.
+  - A record from a **different level** (city council → legislature, legislature → Congress) is
+    `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
+    question).
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
 - **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
   - the current term;
   - the current campaign;

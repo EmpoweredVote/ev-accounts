@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "199a64f5-c8f4-511a-bc77-8f558759a360",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": null,
+          "note": "AB 587 mandates ToS posting and content-moderation transparency reporting, not removal/labeling/voluntary-standards/free-speech/no-involvement.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 587 requires social media companies to post terms of service and submit reports on content-moderation practices, including whether their terms define “Disinformation or misinformation,” but it does not “legally require platforms to remove false information,” require labeling rather than removal, encourage voluntary standards, address free speech/government censorship, or ban government involvement in moderation decisions — it is a transparency mandate, a dimension these rungs do not order, so it is adjacent and cannot establish a chair.",
+      "needs_source": [
+        "Gabriel's own statement (floor speech, op-ed, or press release) explaining AB 587's or a related bill's relationship to platform removal, labeling, voluntary standards, free-speech protection, or the government's role in content moderation"
+      ],
+      "quotes": []
+    }
+  ]
+}

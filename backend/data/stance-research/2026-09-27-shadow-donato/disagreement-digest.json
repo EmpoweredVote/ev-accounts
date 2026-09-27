@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 2,
+      "alpha": 0.11111111111111116,
+      "examples": [
+        {
+          "unit": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65#351df78a-5dd4-59ed-ba4e-e8d2c8d5c368",
+          "values": [
+            "direction-only",
+            "multi-subject",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65#75f0aece-f2fb-5fa3-b9d3-610e1b046485",
+          "values": [
+            "direction-only",
+            "multi-subject",
+            "multi-subject"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Aye on concurrence in Senate amendments, and earlier Aye on Assembly Third Reading and in Asm Appropriations; the page names the voter and the count but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Bauer-Kahan, Berman, Bloom, Boerner Horvath, Bonta, Burke, Calderon, Carrillo, Cervantes, Chau, Chiu, Chu, Cooley, Eggman, Friedman, Gabriel, Cristina Garcia, Eduardo Garcia, Gipson, Gloria, Gonzalez, Grayson, Holden, Jones-Sawyer, Kalra, Kamlager-Dove, Levine, Limón, Low, McCarty, Medina, Mullin, Muratsuchi, Nazarian, Quirk, Quirk-Silva, Reyes, Luz Rivas, Robert Rivas",
+          "tally_quote": "Ayes Count 48 Noes Count 26 NVR Count 5"
+        },
+        {
+          "snapshot_id": "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "an owner of residential real property shall not, over the course of any 12-month period, increase the gross rental rate for a dwelling or a unit more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower, of the lowest gross rental rate charged for that dwelling or unit at any time during the 12 months prior to the effective date of the increase.",
+          "note": "Chaptered text of the bill he voted for: a statewide cap on rent increases plus a just-cause termination requirement, with new construction and deed-restricted affordable units exempted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+        "e2dfc4e8-d2ba-5c38-8740-bf578dd693da"
+      ],
+      "reasoning": "Rivas voted Aye on AB 1482 (2019-2020), a single-subject tenancy bill that caps rent increases at \"5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower\" and adds a statewide requirement that an owner \"shall not terminate the tenancy without just cause\". That extends rent limits to units that had none while adding to existing tenant protections, which is the rung that would \"Strengthen existing rent stabilization and extend coverage to more units\". It is not the rung that would cover \"all rental units communitywide\" (the act exempts \"Housing that has been issued a certificate of occupancy within the previous 15 years\" and other classes), and it is not the rung that would \"Maintain current tenant protections\", since the act creates new ones.",
+      "needs_source": [
+        "Robert Rivas's own words on rent regulation from the current term (2022-12-05 to present) or the campaign that seated him, to test for superseding evidence",
+        "California Assembly record of Rivas's service in the 2019-2020 session, to confirm the 2019 vote falls within a term of this office"
+      ],
+      "quotes": []
+    }
+  ]
+}

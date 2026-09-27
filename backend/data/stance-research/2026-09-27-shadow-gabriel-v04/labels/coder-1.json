@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A social media company shall post terms of service for each social media platform owned or operated by the company in a manner reasonably designed to inform all users of the social media platform of the existence and contents of the terms of service.",
+          "note": "A disclosure-and-reporting mandate about a platform's own terms of service, not a rule about removing, labeling or voluntarily standardizing false content.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel. Social media companies: terms of service.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Gabriel is named as the author of AB 587 (2021-2022) ('AB 587, Gabriel. Social media companies: terms of service.'), which requires a social media company to post its terms of service and to report to the Attorney General whether those terms define 'Disinformation or misinformation'. That is a transparency and reporting mandate: it does not 'legally require platforms to remove false information', it does not 'require platforms to label false content, rather than remove it', and a duty carrying a civil penalty is not 'encourage voluntary standards for combating misinformation online'. The only passage is adjacent on the dimension the rungs separate, so no passage survives V1-V5.",
+      "needs_source": [
+        "Jesse Gabriel's own first-person words on whether platforms should be required to remove, or required to label, false or misleading online content",
+        "A named California Assembly instrument Gabriel authored, co-authored or voted on that itself mandates removal or labeling of false content (bill number plus the vote page showing his name and the tally)"
+      ],
+      "quotes": []
+    }
+  ]
+}

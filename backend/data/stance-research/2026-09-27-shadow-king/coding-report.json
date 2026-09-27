@@ -1,0 +1,62 @@
+{
+  "codebook_version": "0.3.1",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "b5a9a489-0784-428a-b1ed-81fd40e07ff5|a88bbec4-49c8-41b5-a70f-2cc34b45aab8|d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 4,
+        "shared_sources": [
+          "37d8a9d5-8f53-54e4-8b08-582b82e3f378",
+          "a6293d82-7f28-5b22-b63e-7bfd64899df9",
+          "ce3c6cce-3884-5ca4-8b5e-d57947e9e08a"
+        ]
+      },
+      "confirm": [
+        "name-collision"
+      ],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "confirm-failed"
+      ],
+      "seed": "none",
+      "profiles": [
+        "in-iga-bill-details@2",
+        "in-iga-roll-call@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
