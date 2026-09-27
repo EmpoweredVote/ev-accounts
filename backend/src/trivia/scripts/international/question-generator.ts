@@ -1,5 +1,16 @@
 import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
 import type { ClaimResult } from './claim-extractor.js';
+import type { QuestionInput } from '../../services/qualityRules/types.js';
+import { auditQuestion } from '../../services/qualityRules/index.js';
+import {
+  qualityRulesEnforced,
+  emptyQualityRuleStats,
+  decideRuleGate,
+  recordGate,
+  recordRuleError,
+  recordWrittenUnaudited,
+  type QualityRuleStats,
+} from './qualityGate.js';
 
 // ─── Volatility Types & Helpers ───────────────────────────────────────────────
 
@@ -37,6 +48,57 @@ export interface QuestionWriteResult {
   questionId: number;
   externalId: string;
   status: 'active';
+}
+
+export interface WritePassResult {
+  written: QuestionWriteResult[];
+  ruleStats: QualityRuleStats;
+}
+
+/**
+ * Map a generated question onto the quality engine's input shape.
+ *
+ * Takes the PLACED options and answer index, not the model's — `placeAnswer`
+ * rewrites both, and the engine must judge what will actually be stored.
+ */
+/**
+ * Audit a question the way the nightly pipeline audits it.
+ *
+ * Exists as its own export so the `skipUrlCheck` decision is testable on the
+ * path the pipeline actually takes. Asserting it against `auditQuestion`
+ * directly only re-tests `auditQuestion`'s documented contract, and would stay
+ * green if the write path dropped the option.
+ *
+ * skipUrlCheck is not an optimisation: checkLearnMoreLink fetches source.url
+ * and raises `broken-learn-more` at severity BLOCKING on any non-timeout
+ * failure. A news article URL is not a .gov page that answers bots politely, so
+ * leaving the check on would put an HTTP round trip per question inside the
+ * cron and make a blocking verdict depend on network weather.
+ */
+export async function auditForPipeline(input: QuestionInput) {
+  return auditQuestion(input, { skipUrlCheck: true });
+}
+
+export function toQuestionInput(
+  q: {
+    text: string;
+    options: string[];
+    correctAnswer: number;
+    explanation: string;
+    difficulty: string;
+  },
+  externalId: string,
+  source: { name: string; url: string },
+): QuestionInput {
+  return {
+    text: q.text,
+    options: q.options,
+    correctAnswer: q.correctAnswer,
+    explanation: q.explanation,
+    difficulty: q.difficulty,
+    source,
+    externalId,
+  };
 }
 
 // ─── Claude Call 2: Question Generation ──────────────────────────────────────
@@ -79,7 +141,7 @@ const QUESTION_GENERATION_SCHEMA = {
   additionalProperties: false,
 };
 
-const QUESTION_GENERATION_SYSTEM_PROMPT = `You are a civic trivia question writer. Given a verified factual claim from international news, generate 1-3 multiple-choice questions suitable for a trivia game.
+export const QUESTION_GENERATION_SYSTEM_PROMPT = `You are a civic trivia question writer. Given a verified factual claim from international news, generate 1-3 multiple-choice questions suitable for a trivia game.
 
 Question composition rules:
 - Target ~15% of questions involving concrete numbers: budgets, percentages, dates, quantities
@@ -97,6 +159,33 @@ Quality gate — assess EACH question against ALL four blocking checks:
 
 Set quality_gate.passed = true ONLY if the question passes ALL four checks.
 Set quality_gate.passed = false if ANY check fails; include in reason which check failed.
+
+Hard rules — a question breaking any of these is rejected by the quality engine
+after you write it, so write them right the first time:
+
+1. TIME. If the question asks what year something happened and the event is in the
+   past, no option may be a year that has not arrived yet. A question asking when
+   a past treaty entered into force must not offer 2027. A question about a
+   deadline, a target or a term that ends in the future may offer a future year —
+   the test is the event, not the number.
+2. PHRASING OF DATE QUESTIONS. The engine's "pure lookup" rule blocks the exact
+   phrasings "in what year was", "in what year did" and "what date". These are
+   refused outright, whatever the question is about. Ask the same thing another
+   way: "The treaty entered into force in which year?" rather than "In what year
+   did the treaty enter into force?". Prefer a question about what happened or
+   what changed over one whose whole content is a date.
+3. NUMBERS. When all four options are numbers, quantities, years or percentages,
+   the correct value must not always sit in the middle of the range. Vary which
+   bracket it falls in across a batch — sometimes smallest, sometimes largest.
+   Use one unit throughout a single question, and order the options ascending.
+   Never move the correct value to achieve this; change the distractors.
+4. NO VAGUE QUALIFIERS. Do not write "most important", "best", "primarily",
+   "generally", "mainly", "usually", "typically", "often", "commonly" or
+   "frequently" into a question. They make more than one option defensible.
+   This matches on substrings, so "best known for" trips it too.
+5. DISTINCT OPTIONS. The four options must be clearly distinct — not near-synonyms,
+   not overlapping ranges, not the same phrase reordered.
+6. NO ADDRESSES OR PHONE NUMBERS as answer options.
 
 Generate 1 question for straightforward claims. Generate 2-3 for rich multi-faceted stories.`;
 
@@ -190,9 +279,10 @@ export async function writePassingQuestions(
   jobId: number,
   externalIdPrefix: string,
   volatility: Volatility,
-): Promise<QuestionWriteResult[]> {
+): Promise<WritePassResult> {
+  const ruleStats = emptyQualityRuleStats();
   const passingQuestions = questions.filter(q => q.qualityGate.passed);
-  if (passingQuestions.length === 0) return [];
+  if (passingQuestions.length === 0) return { written: [], ruleStats };
 
   // Lazy DB imports (ESM pattern — consistent with replacementGenerator.ts)
   const { db } = await import('../../db/index.js');
@@ -256,6 +346,53 @@ export async function writePassingQuestions(
 
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);
 
+    // ── Quality rules gate ──────────────────────────────────────────────────
+    // The engine judges the PLACED question, because that is what gets stored.
+    // skipUrlCheck is not an optimisation: checkLearnMoreLink fetches
+    // source.url and raises a BLOCKING violation on any non-timeout failure,
+    // and a news article URL is not a .gov page that answers bots politely.
+    // Leaving it on would put an HTTP round trip per question inside the cron
+    // and make the verdict depend on network weather.
+    const enforce = qualityRulesEnforced();
+    // Dereferenced OUTSIDE the try on purpose. A claim with no source articles
+    // is a malformed claim, not a rules failure; inside the try it would be
+    // logged as "audit threw" and then throw again uncaught at the insert
+    // below, blaming the rules engine for someone else's defect.
+    const auditSource = { name: primarySource.feedName, url: primarySource.url };
+    try {
+      const audit = await auditForPipeline(
+        toQuestionInput(
+          { ...q, options: placed.options, correctAnswer: placed.correctAnswer },
+          externalId,
+          auditSource,
+        ),
+      );
+
+      const decision = decideRuleGate(audit.violations, enforce);
+      recordGate(ruleStats, externalId, decision, enforce);
+
+      if (decision.blocking.length > 0) {
+        const rules = decision.blocking.map(v => v.rule).join(', ');
+        console.log(
+          `[QualityRules] ${enforce ? 'BLOCKED' : 'WOULD BLOCK'} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
+        );
+      }
+
+      if (!decision.write) continue;
+    } catch (err) {
+      // A rule that throws must not cost the claim its remaining questions.
+      // run-pipeline contains errors per CLUSTER, so an escape from here
+      // discards every question left for this claim, not just this one.
+      // Falling through to the insert is deliberate: a broken rule is our
+      // defect, and refusing to write because our own code crashed would turn
+      // a bug into silent content loss.
+      recordRuleError(ruleStats, externalId, err);
+      recordWrittenUnaudited(ruleStats);
+      console.error(
+        `[QualityRules] audit threw for ${externalId}: ${err instanceof Error ? err.message : String(err)} — writing unaudited`,
+      );
+    }
+
     const inserted = await db
       .insert(questionsTable)
       .values({
@@ -305,5 +442,5 @@ export async function writePassingQuestions(
     results.push({ questionId, externalId, status: 'active' });
   }
 
-  return results;
+  return { written: results, ruleStats };
 }
