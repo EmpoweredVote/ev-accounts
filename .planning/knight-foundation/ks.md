@@ -75,28 +75,87 @@ KS: new Set(['sldu', 'sldl']),
 Expected: **40 Senate + 125 House = 165 boundaries and 165 districts.** Stage 2 then owes 165
 offices.
 
-## ▶ The open question for KS-1: what dates the map
+## ✅ KS-1 step 1 — the map vintage is PROVEN, 2026-09-26
 
-Kentucky proved that **a count check cannot date a map** — KY was 38/100 in TIGER 2022, 2023, 2024
-and 2025 alike, with no code-set discriminator, so vintage had to be proved against the
-legislature's own GIS authority rather than against the Census. North Dakota was the opposite: its
-own code set dated the plan, because a remedial order dissolved two subdistricts.
+**TIGER FIPS 20 carries Substitute for Senate Bill 563 — the Senate map "Liberty 3" and the House
+map "Free State 3F" — in every vintage 2022 through 2025. 40 Senate + 125 House.**
+Tool: `backend/scripts/verify-ks-tiger-vintage.mjs`, which needs no database. It carries the proof
+and both controls, and `--self-test` makes the proof gate fail on demand.
 
-**Kansas is unknown on this axis and it must be established before anything is loaded.** Known
-starting points, none of them verified yet:
+🟢 **THE AUTHORITY IS THE ENACTED PLAN FILE ITSELF, WHICH IS STRONGER THAN ANY EARLIER SLICE HAD.**
+The Kansas Legislative Research Department — the Legislature's own agency — publishes the passed
+shapefiles at `klrd.gov/wp-content/uploads/2023/11/{Liberty_3,Freestate-3F}.zip`. Those two names
+are not labels this repo chose: they are the names the Kansas Supreme Court uses for the two maps
+it reviewed. Kentucky had to settle for the LRC's *current-geometry* map service; Kansas publishes
+the artifact that was voted on. Both answer a plain HTTPS request — no WAF, unlike Ohio.
+⚠ `kslegislature.gov/li/redistricting/` is a **404**. Go to KLRD, not to the Legislature's site.
 
-- Kansas redistricted in 2022. The Senate map is **SB 563** and the House map **HB 2736**; the
-  congressional map **Ardanna 2** was litigated (*Rivera v. Schwab*) and upheld by the Kansas
-  Supreme Court in May 2022. Whether either legislative map was challenged is **not established
-  here** — read it from a primary source, not from memory.
-- **Kansas senators serve four-year terms** and were last elected in **November 2024**; House
-  members serve two years. So the sitting chamber's electing map is the question MI-1 got wrong
-  first — *two chambers of one legislature can be on different plans*.
-- The authority to check TIGER against is the **Kansas Legislature's own GIS / redistricting
-  office**, not the Census. Find it; do not assume `kslegislature.gov` publishes a service.
+### 🔴🔴 The finding that must survive this slice: A THRESHOLD TEST PASSES KANSAS'S OLD MAP
 
-🔴 **Do not take "newest TIGER vintage" as the answer.** ND proved the superseded plan can be
-published beside the live one and sort ABOVE it on a freshness field.
+The 2012 court-drawn plan (*Essex v. Kobach*), carried by TIGER 2020, still agrees with the 2022
+enacted plan on **35 of 40 Senate (87.5%)** and **112 of 125 House (89.6%)**.
+
+▶ **So the discriminator is NOT the agreement rate — it is that the correct plan moves EXACTLY
+ZERO districts and the wrong one does not.** Anyone who relaxes `moved === 0` to "≥90% agree"
+re-admits a decade-old superseded map. This reproduces ND's 92% finding *inside Kansas*, against
+the real prior plan rather than a stale vintage. It is control 2 in the tool, and it is the reason
+the tool asserts a count and not a percentage.
+
+### What else the proof established
+
+- 🔴 **Kansas gives NO structural discriminator — the Kentucky shape exactly.** TIGER 2022, 2023,
+  2024 and 2025 are all 40 and 125, MTFCC `G5210`/`G5220`, codes contiguous `001..040` and
+  `001..125`, zero letters, zero zeros. A count check, a code-set check and a contiguity check all
+  pass every vintage. Nothing about the file dates the map; the evidence had to be geometric.
+- ⚠ **`LSY` is the misleading field again**, as in KY and MI. It reads 2022 in TIGER 2022/2023 and
+  2024 in TIGER 2024/2025, which reads like a new plan. It is Census bookkeeping: statewide `ALAND`
+  moves 211,753,641,384 → 211,754,288,230 across all four vintages — **0.0003%** — and every
+  internal point stays put.
+- 🔴 **A KANSAS DISTRICT CODE IS PADDED ON ONE SIDE AND NOT THE OTHER.** The authority serves
+  `DISTRICT = '39'` unpadded; TIGER serves `SLDUST/SLDLST = '039'` zero-padded to three. **A raw
+  string compare agrees on nothing and looks exactly like a wrong vintage.** Both sides are checked
+  numeric before normalising; a non-numeric code is refused, never cast — the family of defect that
+  `04A` (ND), `08A` (MN) and `H001` (KY) are.
+- 🟢 **Both chambers are single-member** (`MEMBERS = 1` on all 165 authority polygons), so polygon
+  count IS seat count — unlike ND and SD.
+- 🔴 **`geo_id` collides with counties, as in PA, SC, OH, ND and KY.** Measured against production:
+  105 Kansas counties, `20001..20209`, all odd — **20 collide with the Senate range, 63 with the
+  House range.** 🟢 **Sedgwick County escapes at `20173`**, above both ranges; Fayette County did
+  not, at `21067`. That is luck of the numbering, not a property of the loader.
+
+### Corrections this step made to the lines that used to sit here
+
+- 🔴 **"The Senate map is SB 563 and the House map HB 2736" was WRONG.** **Both** legislative maps
+  live in **one bill, Substitute for SB 563.** There is no HB 2736 House map. SB 563 was introduced
+  2022-03-14 carrying maps for both chambers; the House amended it on 2022-03-21 to its own
+  preferred House map — which is why the Free State 3F file carries an internal date of 2022-03-21.
+- 🔴 **The congressional plan is "Ad Astra 2", not "Ardanna 2"** (KLRD publishes it as
+  `M3_AdAstra_2.zip`). The bill number for it is **not** established here — do not write one down
+  from memory.
+- ✅ **"Whether either legislative map was challenged is not established here" — now established.**
+  Kansas Constitution art. 10, § 1(b) makes Supreme Court review **AUTOMATIC AND MANDATORY**: the
+  Attorney General *must* petition within 15 days of publication. **This distinguishes Kansas from
+  every other slice in this programme, where review happens only if somebody sues.** AG Schmidt
+  petitioned 2022-04-25; the court announced 2022-05-18 and filed its opinion 2022-06-21 (No.
+  125,083), upholding Sub. SB 563 in full and **ordering no remedial map**. The one intervenor,
+  Senator Thomas Holland, contested the procedure and the boundaries of Senate Districts 3 and 9,
+  and lost. **One plan has governed since 2022 and governs the 2026 election.**
+- ✅ **MI-1's "two chambers on different plans" risk does not apply**, and not because the terms
+  were checked — because both maps are in one bill and both agree in every TIGER vintage. The
+  four-year Senate term is **not** verified here and nothing now depends on it.
+- ▶ **TIGER 2022 agreeing is a PASS here, not a failure** — the Kentucky direction, the opposite of
+  North Dakota. The tool states that expectation in advance and asserts it, because an expectation
+  formed after the measurement is not evidence.
+
+⚠ **The 2025 congressional remap push is NOT a legislative-map event and must not be read as one.**
+Kansas Republicans tried to force a November 2025 special session to redraw the four US House
+districts; House leadership ended the push on **2025-11-05** without a session, so **no map of any
+kind was enacted** and the congressional rows already in production are not stale from it.
+Art. 10, § 1(a) puts the next legislative reapportionment in **2032**.
+
+⚠ **The competing 2022 legislative plans are published as PDF only** — Liberty 2, Freestate 3,
+Freestate 3C, Free State 1 and 5. No shapefile, so the MI-style "control against the real competing
+plan" is not available here. The 2012 plan is the closest real-plan control there is, and it works.
 
 ## Expected scope for the slice
 
@@ -115,10 +174,11 @@ the subject its credit names.
 
 ## Next steps, in order
 
-1. **Establish the map vintage** against the Kansas Legislature's own authority, with a control that
-   fails — the KY-1 shape.
-2. Add the allowlist entry and a pre-flight block asserting **40 and 125**, and watch each assertion
-   fail before trusting it.
+1. ✅ **DONE 2026-09-26 — the map vintage is proven**, against KLRD's own enacted plan files, with
+   two controls that fail as required and a `--self-test` that makes the proof gate itself fail.
+   Nothing has been written to production.
+2. ▶ **NEXT.** Add the allowlist entry and a pre-flight block asserting **40 and 125**, and watch
+   each assertion fail before trusting it.
 3. Load, measure `districts` and `geofence_boundaries` from outside against a same-session baseline
    taken **through the same connection the loader writes with**, and re-run to prove 0 inserted.
 4. Probe end to end from a Wichita address, with a negative control outside Kansas.
@@ -126,4 +186,8 @@ the subject its credit names.
 
 ## Debts this slice already owes
 
-- Nothing yet. Nothing has been written.
+- Nothing to production. Nothing has been written.
+- ⚠ **This file lived only on `knight/ks-slice14` for its first day.** A session starting in the
+  `master` checkout read `MEMORY.md`, found PROGRAM.md's KS row still blank, and found no `ks.md`
+  at all. The branch is pushed, so nothing was lost — but **the handoff chain only works from the
+  slice's own worktree.** `C:/ev-accounts-ky` holds this branch despite the Kentucky name.
