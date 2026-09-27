@@ -568,13 +568,69 @@ Secretary of the Senate, or the Secretary of State, who holds the commission its
 | Senate 24 Scott Hill | **1** | `month` | convention 2025-06-16; **no day-precision source exists** |
 | Senate 25 Silas Miller | **1** | `month` | precinct election 2025-12-04; same |
 
+## ✅ KS-2 duplicate-name checks — 2026-09-27. NOTHING WRITTEN.
+
+Run against production with **exactly the guard's own predicate**, read from
+`essentials.politician_name_duplicate_guard()`: `is_active`, and
+`lower(btrim(first_name))` **and** `lower(btrim(last_name))` — **the PAIR**, not the full name.
+🔴 **The pair came from ONE source** — the first-party CSV's `Firstname`/`Lastname` columns — never
+mixed with the member page's display name or the Journal's sworn list. That is MN-2's rule: *a field
+pair a constraint reads must come from one source.*
+
+🟢 **Both controls behaved before the result was read:** the predicate finds `Daniel Elliott`
+(2 active rows, the namesake KY-2 recorded) and returns nothing for a name that cannot exist.
+
+### 6 of 165 collide with an active row, and they split two ways
+
+**SAME PERSON — 4. Do NOT insert. Point at the existing row.** All four are sitting Kansas senators
+running for higher office in 2026, which the guard's own message calls *"the normal case, not a
+different person"*:
+
+| Seat | Existing row is | Race |
+| --- | --- | --- |
+| Senate 7 Ethan Corson | same person | Governor of Kansas (D) |
+| Senate 8 Cindy Holscher | same person | Governor of Kansas (D) |
+| Senate 16 Ty Masterson | same person | Governor of Kansas (R) |
+| Senate 19 Patrick Schmidt | same person | U.S. Senate, Kansas (D) |
+
+**DIFFERENT PERSON — 2. Lift the guard for these two rows only, never for the migration.**
+
+| Seat | Existing row is |
+| --- | --- |
+| House 120 Adam Smith (R, Wallace County) | **Adam Smith, U.S. Representative, WASHINGTON District 9** |
+| Senate 10 Mike Thompson (R, Johnson County) | **Mike Thompson, U.S. Representative, CALIFORNIA District 4** |
+
+### 🔴🔴 THERE ARE THREE MIKE THOMPSONS, AND TWO OF THEM SAT IN THIS LEGISLATURE AT ONCE
+
+1. **Mike Thompson**, U.S. Representative, California 4 — already in the database.
+2. **Mike Thompson**, Kansas **Senate District 10** — sworn 2025-01-13, still serving.
+3. **Michael Thompson**, Kansas **House District 33** — sworn 2025-01-13, resigned, replaced by
+   Carolyn Caiharr on 2025-09-05.
+
+▶ **Two Kansans of that name were sworn into different chambers on the same day**, which is proof on
+its face that they are different people. Only the senator remains, so the current roster holds one.
+⚠ And the House one is published as *"Mike Thompson"* in the sworn list but *"Michael Thompson"* in
+the 2026 resignation record — **so the guard's exact-pair test would not even have matched him.**
+
+### Inside the roster
+
+- **0** exact `(first, last)` pairs duplicated among the 165 — no two sitting members share a name.
+- **4 surnames held by two sitting members**: Carpenter (House 81 Blake / House 75 Will), Ruiz
+  (House 31 Louis / House 23 Susan), Smith (House 120 Adam / House 3 Chuck), Williams (House 30
+  Laura / House 77 Kristey). ⚠ Not duplicates — and the reason every check in this slice is
+  **district-keyed**.
+
+### ▶ This changes the occupancy migration
+
+**It creates 161 people, not 165.** The other four already exist, carry `is_incumbent = false` and
+hold no office, so they are **UPDATE + a new `office_terms` row**, not an INSERT — and
+`is_incumbent` must be set to `true` on them explicitly, the same rule that applies to an insert.
+
 ### What stage 2 still owes
 
 1. ✅ **A term-start source — DONE.** The Journals give 162 of 165 to the day.
 2. ✅ **Every arrival is dated** — 163 to the day, 2 at `month`. Nothing is open here.
-3. ▶ **Duplicate-name checks** against existing `politicians` rows. 🔴 Expect real collisions:
-   MN-2 already found *a Kansas Libertarian* colliding with a Minnesota legislator, so Kansas names
-   are known to exist in this database under other people.
+3. ✅ **Duplicate-name checks — DONE.** 6 collisions: 4 the same person, 2 genuinely different.
 4. ▶ **The two migrations** — structure (chambers + 165 offices) and occupancy (politicians +
    `office_terms`). 🔴 **Slots NOT yet reserved; allocate them with `steward slot CC`, never count.**
    🔴 Every insert must set `politicians.is_incumbent` explicitly.
