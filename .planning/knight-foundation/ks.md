@@ -418,17 +418,89 @@ both sparse and stale. Reported, never used.
 member may have changed district number. 23 members are chamber switchers and 15 carry same-chamber
 gaps; both are the KY-2 trap.
 
+### ✅ TERM STARTS ARE SOURCED — 162 of 165 to the DAY, 2026-09-27
+
+🟢🟢 **THE JOURNALS ARE THE SOURCE, AND THEY ARE BETTER THAN ANYTHING AN EARLIER SLICE HAD.** The
+Kansas Legislature publishes every daily Journal as a PDF. The **first day of each session** carries
+the whole answer.
+
+**`Journal of the House`, FIRST DAY, Monday, January 13, 2025** contains, verbatim:
+
+> *"I, SCOTT SCHWAB, Secretary of State, do hereby certify that the following persons were elected
+> members of the House of Representatives … for a two-year term beginning on the second Monday of
+> January, A.D. 2025. … Done at the city of Topeka this 2nd day of December, A.D. 2024."*
+
+then the oath — *"administered to them by Chief Justice Marla Luckert"* — and **the full sworn list,
+districts 1 through 125**. The Senate's First Day does the same for all 40, administered by Justice
+**Dan Biles**, with the jurat *"before me this 13th day of January, 2025."*
+
+▶ **So the canvass and the oath are in ONE document.** No separate Secretary of State source was
+needed. **`term_start = 2025-01-13`, precision `day`, for the 157 members still in the seat they
+were sworn into — and the date is STATED, not computed.** The "second Monday" wording appears in
+the certification, but the date is taken from the Journal's own header and jurat, which is why this
+does not repeat the computed-oath-date failure of three earlier states.
+
+🟢 **AND THE INTERIM APPOINTMENTS ARE IN THE JOURNAL TOO.** The 2026 First Day (January 12, 2026)
+opens with `OATHS OF OFFICE` — *"The following members were sworn in during the interim"* — each one
+certified, dated, and naming the predecessor and the officer who administered it:
+
+| Seat | Arrival | Sworn | Replaced | Administered by |
+| --- | --- | --- | --- | --- |
+| House 85 | Steven Brunk | **2025-06-24** | Patrick Penn (resigned) | Asst. SoS Jennifer Cook |
+| House 70 | Gregory Wilson | **2025-07-30** | Scott Hill (resigned) | Judge Heidi L. Anderson |
+| House 33 | Carolyn Caiharr | **2025-09-05** | Michael Thompson (resigned) | Asst. SoS Jennifer Cook |
+| House 5 | Courtney Sappington | **2025-10-13** | Carrie Barth (resigned) | Asst. SoS Jennifer Cook |
+| House 86 | Abi Boatman | **2026-01-12** | Silas Miller (resigned) | Chief Justice Eric Rosen |
+
+⚠ In every one the appointment date and the oath date coincide. **That is not a rule** — ND-3 proved
+the gap varies — and it is not relied on: the Journal states both.
+
+### 🔴 Three traps this pass caught
+
+1. 🔴🔴 **THE OFFICIAL JOURNAL MISNAMES A SITTING MEMBER.** The sworn list reads **"Susan Wikle"**
+   for House 10. Her slug is `rep_wikle_suzanne_1`, her page and `<title>` say **Suzanne Wikle**, her
+   addresses are `Suzanne.Wikle@house.ks.gov` and `Suzanne4ks@gmail.com`, and her Terms read
+   `House 2025–Present`. It is a typo in the primary record. ▶ **A name-keyed diff would have read
+   it as a departure AND an arrival.** This is KY-2's *matching legislators by name across time is
+   unsafe*, now proven against the official Journal itself — which is why the diff is
+   **district-keyed**, with a person-level check on every surname match.
+2. 🔴 **THE SENATE'S 2026 OATH IS "CEREMONIAL" AND DATES NOTHING.** Its First Day records Chief
+   Justice Eric Rosen administering *"the **ceremonial** Oath of Office, for Senators Scott Hill and
+   Silas Miller"* — both of whom had already been serving. Taking 2026-01-12 as their arrival would
+   repeat KY-3's re-swearing trap exactly.
+3. 🔴 **A SCHEDULED SWEARING IS NOT AN OCCURRED ONE.** The only date found for Senate 24 is a report
+   published 2025-06-24 saying Hill *"will be sworn in … this Thursday, June 26"* — prospective, and
+   from a broadcaster, not a record. It is a lead, not a source.
+
+### Where each of the 165 stands
+
+| | count | `start_precision` | source |
+| --- | --- | --- | --- |
+| Sworn 2025-01-13 and still seated | **157** | `day` | House & Senate Journals, First Day 2025 |
+| Interim appointees | **5** | `day` | House Journal, First Day 2026, `OATHS OF OFFICE` |
+| **Still open** | **3** | — | see below |
+
+🔴 **The three open seats.** Senate 24 **Scott Hill** (replaced J.R. Claeys, who left for USDA;
+delegate vote reported 2025-06-16) and Senate 25 **Silas Miller** (replaced Mary Ware) — the Senate
+prints **no interim-oath section**, unlike the House, so its arrivals are not in the Journals at
+all. House 121 **Mike Storm** (replaced John Resman) changed after the 2026 First Day, so it will be
+in a later 2026 daily Journal. ▶ **Route: sweep the 2026 daily Journals for Storm; for the two
+senators, ask the Senate Secretary's office or the Secretary of State for the commission date.**
+⚠ `office_terms.start_precision` permits **`month`** — verified against the live CHECK — so a
+June-2025 arrival that cannot be dated to the day is written `2025-06-01` / `month`, never guessed
+to a day.
+
 ### What stage 2 still owes
 
-1. **A term-start source.** Kansas terms begin by statute, but 🔴 **the oath date must not be
-   computed** — three states in this programme have already paid for that. Candidates not yet
-   checked: the Secretary of State's certified 2024 canvass, the chambers' own Journals for the
-   2025 organisational day, and per-member sources for the mid-term arrivals.
-2. **Mid-term arrivals.** Kansas fills legislative vacancies by party convention appointment, so
-   an unknown number of the 165 did not arrive in January 2025. The Terms block cannot identify
-   them reliably.
-3. Duplicate-name checks against existing `politicians` rows, then the structure and occupancy
-   migrations (two `CC_` slots, not yet reserved).
+1. ✅ **A term-start source — DONE.** The Journals give 162 of 165 to the day.
+2. ▶ **The three open arrivals above** — House 121 Storm from the 2026 daily Journals; Senate 24
+   Hill and Senate 25 Miller from the Senate Secretary or the Secretary of State.
+3. ▶ **Duplicate-name checks** against existing `politicians` rows. 🔴 Expect real collisions:
+   MN-2 already found *a Kansas Libertarian* colliding with a Minnesota legislator, so Kansas names
+   are known to exist in this database under other people.
+4. ▶ **The two migrations** — structure (chambers + 165 offices) and occupancy (politicians +
+   `office_terms`). 🔴 **Slots NOT yet reserved; allocate them with `steward slot CC`, never count.**
+   🔴 Every insert must set `politicians.is_incumbent` explicitly.
 
 ## Expected scope for the slice
 
