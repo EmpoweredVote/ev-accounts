@@ -197,6 +197,30 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
   return { text: out.join(' '), fences, ambiguous, widthFallbacks };
 }
 
+/** Amending language, as CONFIRM reads it (recordBasis AMENDED_TO_READ_RE), in either case. */
+const AMENDING_RE = /(?:is|are) amended to read/i;
+
+/**
+ * Why pdf-snapshot.ts must NOT write this extraction, or null when it may (final review I-1). The
+ * trailer it writes makes the snapshot read amendment_markup 'kept', so it may only be written when
+ * this reader is confident it saw every strike. Refuses: any ambiguous word or width fallback; and an
+ * amending document (IS AMENDED TO READ) in which NO strike was found at all — this reader sees only
+ * thin filled rectangles, so a strike drawn another way (a stroked line, a taller rect, an image mask)
+ * produces 0 fences and 0 ambiguous words, and the deleted words would read as law. An amending bill
+ * that genuinely deletes nothing is refused too; save its text another way (it then reads 'unknown').
+ */
+export function snapshotRefusal(s: MarkedTextStats): string | null {
+  if (s.widthFallbacks > 0 || s.ambiguous > 0) {
+    return `${s.ambiguous} ambiguous word(s) and ${s.widthFallbacks} item(s) placed by character-count fallback ` +
+      `(no usable font widths) — this reader is not confident it read every strike correctly`;
+  }
+  if (s.fences === 0 && AMENDING_RE.test(s.text)) {
+    return 'the document amends existing law ("is amended to read") but no strike was found — strike marks ' +
+      'drawn other than as thin filled rectangles are not read, so deleted words could appear as law';
+  }
+  return null;
+}
+
 /** Pure: geometry → page text with [deleted: …] fences. Items in reading order (top→bottom, left→right). */
 export function markedTextFromGeometry(g: PageGeometry): string {
   return markedTextFromGeometryWithStats(g).text;

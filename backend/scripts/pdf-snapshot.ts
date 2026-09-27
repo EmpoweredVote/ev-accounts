@@ -25,12 +25,12 @@
  * content-type, which a saved file doesn't even have) and REFUSE TO WRITE when pdfMarkedTextWithStats
  * reports any `ambiguous` word (30–60 % strike coverage with no rect confidently assigned to it) or
  * any `widthFallbacks` item (a font with no usable glyph widths, so words were placed by character
- * count instead) — fail closed: a person can save the page's text another way instead of coding
+ * count instead), or an amending document in which no strike was found at all — fail closed: a person can save the page's text another way instead of coding
  * against a page this reader is not confident it read correctly.
  */
 import 'dotenv/config';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { pdfMarkedTextWithStats } from './lib/pdfMarkedText.js';
+import { pdfMarkedTextWithStats, snapshotRefusal } from './lib/pdfMarkedText.js';
 import { robotsAllows, EMPOWERED_VOTE_UA, HTTP_TIMEOUT_MS } from '../src/lib/verificationFetch.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
@@ -97,11 +97,9 @@ if (file) {
 }
 
 const stats = await pdfMarkedTextWithStats(buf);
-if (stats.widthFallbacks > 0 || stats.ambiguous > 0) {
-  console.error(
-    `refused to write: ${stats.ambiguous} ambiguous word(s) and ${stats.widthFallbacks} item(s) placed by ` +
-    `character-count fallback (no usable font widths) — this reader is not confident it read every strike ` +
-    `correctly (fail closed). Save the page's text another way instead.`);
+const refusal = snapshotRefusal(stats);
+if (refusal) {
+  console.error(`refused to write: ${refusal} (fail closed). Save the page's text another way instead.`);
   process.exit(1);
 }
 

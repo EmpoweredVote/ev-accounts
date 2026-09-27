@@ -3,6 +3,7 @@ import fixture from './__fixtures__/in-hea1296-2022-p16.geometry.json';
 import p29Line from './__fixtures__/in-hea1296-2022-p29-struck-line.geometry.json';
 import p17Line from './__fixtures__/in-hea1296-2022-p17-struck-line.geometry.json';
 import {
+  snapshotRefusal,
   markedTextFromGeometry, markedTextFromGeometryWithStats, type PageGeometry, type PdfTextItem,
 } from './pdfMarkedText.js';
 
@@ -156,5 +157,21 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     expect(out).not.toContain('[deleted:');
     const r = markedTextFromGeometryWithStats(g);
     expect([r.fences, r.ambiguous]).toEqual([0, 0]);
+  });
+});
+
+describe('snapshotRefusal — pdf-snapshot.ts writes only what it read with confidence (final review I-1)', () => {
+  const st = (text: string, over: Partial<{ fences: number; ambiguous: number; widthFallbacks: number }> = {}) =>
+    ({ text, fences: 0, ambiguous: 0, widthFallbacks: 0, ...over });
+  it('refuses an amending document in which no strike was found (stroked lines, tall rects, image masks are not read)', () =>
+    expect(snapshotRefusal(st('SECTION 1. IC 35-47-2-1 IS AMENDED TO READ AS FOLLOWS: Sec. 1. A person may carry.'))).toMatch(/no strike/));
+  it('refuses the plural form too', () => expect(snapshotRefusal(st('Sections 2 and 3 are amended to read'))).not.toBeNull());
+  it('accepts an amending document with fences', () =>
+    expect(snapshotRefusal(st('IS AMENDED TO READ [deleted: old] new', { fences: 1 }))).toBeNull());
+  it('accepts a document with no amending language and no fences (new sections, repeals)', () =>
+    expect(snapshotRefusal(st('SECTION 1. IC 35-47-2-2 IS REPEALED.'))).toBeNull());
+  it('refuses on ambiguous words or width fallbacks', () => {
+    expect(snapshotRefusal(st('x', { ambiguous: 1, fences: 3 }))).toMatch(/ambiguous/);
+    expect(snapshotRefusal(st('x', { widthFallbacks: 1 }))).toMatch(/fallback/);
   });
 });
