@@ -226,6 +226,73 @@ anchors (Capitol 18≠19, Sedgwick 27≠26, Jefferson 2≠18); House on both (Jo
 
 ✅ `npx tsc --noEmit` clean · `npm run lint` 0 errors · `npm run check:ocd-loader` green.
 
+## ✅ KS-1 APPLIED 2026-09-27 — KANSAS HAS LEGISLATIVE GEOGRAPHY
+
+**165 boundaries + 165 districts — 40 Senate + 125 House. 0 already existed, 0 errors.** No
+migration; this is a loader run. Kansas still holds **zero** state legislative offices — that is
+stage 2.
+
+### The baseline was taken through BOTH connections first, and they agreed
+
+Measured 2026-09-27 06:51–06:52Z, before any write: `DATABASE_URL` as **`ev_api`** (the role the
+loader writes as, over the IPv4 pooler) and MCP as **`postgres`**. Every figure identical.
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| KS `G5210` boundaries / districts | 0 / 0 | **40 / 40** | +40 |
+| KS `G5220` boundaries / districts | 0 / 0 | **125 / 125** | +125 |
+| `geofence_boundaries` total | 72,460 | **72,625** | **+165 exact** |
+| `districts` total | 10,278 | **10,443** | **+165 exact** |
+| KY control (sldu+sldl) | 138 / 138 | 138 / 138 | **unmoved** |
+| `offices_missing_terms` | 422 / 238 | 422 / 238 | **unmoved** |
+
+### Content, not just counts
+
+- `G5210`: 40 rows, 40 distinct `geo_id`, 40 distinct `ocd_id`, numbers **contiguous 1..40**,
+  `district_type = STATE_UPPER`, sample `ocd-division/country:us/state:ks/sldu:1`.
+- `G5220`: 125 rows, contiguous **1..125**, `STATE_LOWER`, `…/state:ks/sldl:1`.
+- **0 null/invalid/empty geometries.**
+- ✅ **What was already in production is untouched**: 105 counties, 105 county boundaries, 4
+  congressional districts, 114 places.
+
+### 🟢 The predicted `geo_id` collision landed exactly as measured, and nothing was overwritten
+
+**83 `geo_id`s are now shared across MTFCCs in Kansas — which is the 20 Senate-range plus 63
+House-range county collisions, exactly as predicted before the load.** Duplicate
+`(mtfcc, geo_id)` pairs: **0**. The compound key held; no county row was displaced.
+
+### Idempotent, proved by re-running
+
+Second run: **0 inserted (boundaries), 0 inserted (districts), 165 already existed, 0 errors**, and
+every total re-measured **unchanged** afterwards. A re-run that reported zero while quietly
+updating a row would have shown up in that second measurement.
+
+### Spatial probe — the loaded geometry resolves, and the discriminating anchor holds in prod
+
+| point | Senate | House |
+| --- | --- | --- |
+| Wichita City Hall | `20029` | `20103` |
+| Sedgwick County Courthouse | `20029` | `20103` |
+| Kansas State Capitol, Topeka | **`20019`** | `20057` |
+| NEGATIVE: Nashville TN | — | — |
+| NEGATIVE: Lexington KY | — | — |
+
+Every Kansas point hits **exactly one** Senate and **exactly one** House district — no overlap, no
+gap. Both negative controls return zero. 🟢 **Topeka is the discriminating anchor: the 2012 plan
+would read `20018`.** The vintage proof therefore holds against what is actually in production, not
+only against the file that was downloaded.
+
+### ⚠ `check:reachability` is green, and its green says NOTHING about Kansas
+
+Nothing regressed — `BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 7, all at baseline.
+
+🔴 **But all three baselined checks require an ACTIVE HOLDER or OFFICES**, and Kansas has neither
+yet. 165 office-less districts cannot raise `DEAD_GEOGRAPHY`, which is defined as *"a polygon and
+offices, but no active holder"*. ▶ **So this run is invisible to the gate, and its pass is not
+evidence that the load is good.** The evidence is the measurement above. Kansas becomes visible to
+`check:reachability` only when stage 2 seats the offices — and that is when a regression here would
+mean something.
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
@@ -248,9 +315,10 @@ the subject its credit names.
    Nothing has been written to production.
 2. ✅ **DONE 2026-09-26 — the allowlist entry and the pre-flight block are in**, with every
    assertion watched failing first. Still nothing written to production. See below.
-3. Load, measure `districts` and `geofence_boundaries` from outside against a same-session baseline
-   taken **through the same connection the loader writes with**, and re-run to prove 0 inserted.
-4. Probe end to end from a Wichita address, with a negative control outside Kansas.
+3. ✅ **APPLIED 2026-09-27 — 165 boundaries and 165 districts are in production.** Measured from
+   outside against a same-session baseline taken through both connections, and idempotent on
+   re-run. See below.
+4. ▶ **NEXT.** Probe end to end from a Wichita address, with a negative control outside Kansas.
 5. Then stage 2 — **the legislature must precede the cities.**
 
 ## Debts this slice already owes
