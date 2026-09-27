@@ -120,6 +120,23 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
     maxQuestionsPerLane?: number;
     /** One quality-gate reason per blocked candidate. */
     blockReasons?: string[];
+    /** The quality rules engine's verdict on this lane's output.
+     *  `suppressed` is the one to read during the flagged rollout: questions
+     *  that WOULD have been blocked and were written anyway, because
+     *  TRIVIA_QUALITY_RULES_ENFORCE was not set to "true". It is the cost of
+     *  switching enforcement on, measured before switching it on. */
+    qualityRules?: {
+      audited: number;
+      withBlocking: number;
+      withAdvisoryOnly: number;
+      blocked: number;
+      suppressed: number;
+      ruleErrors: number;
+      writtenUnaudited: number;
+      enforced: boolean;
+      byRule: Record<string, number>;
+      samples: string[];
+    };
     /** Every skipped candidate: per-lane rejections, plus `missing-collection`
      *  lanes and rejections belonging to no served lane, which are spliced
      *  into every served lane's row. Shape varies by `reason`. */
