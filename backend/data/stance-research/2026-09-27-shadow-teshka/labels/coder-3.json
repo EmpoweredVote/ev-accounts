@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "6ab10a36-52d6-4d7a-b039-60416eb5fd3f",
+      "office_id": "6f5b8175-824f-4677-abb3-aea3d9e8b8ae",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "c902ec0b-744f-5ae8-b06c-b52bbe4d2156",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-01-08",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1084 (2024)",
+          "provision_quote": "Prohibits a governmental entity or any other person from knowingly or willfully keeping any list, record, or registry of: (1) privately owned firearms; or (2) the owners of firearms; with respect to Indiana consumers.",
+          "note": "Bars firearm-owner registries and payment-network discrimination against firearms retailers; not the ladder's ownership/carry-restriction dimension.",
+          "record_kind": "author",
+          "actor_quote": "Teshka, Manning, Haggard",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2c257caa-4a86-5afc-8b71-8941bd088687",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1084 (2024)",
+          "provision_quote": "Prohibits a governmental entity or any other person from knowingly or willfully keeping any list, record, or registry of: (1) privately owned firearms; or (2) the owners of firearms; with respect to Indiana consumers.",
+          "note": "Also amends capitol-carry rights for specific legislators, staff, and state officers — a narrow institutional carve-out, not general civilian carry loosening.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Jake Teshka.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Both passages show Teshka's own act as author of HB 1084 (2024), but the bill's operative content — banning firearm-owner registries/tracking and barring payment-network discrimination against firearms retailers, plus a narrow capitol-carry provision limited to specific legislators, staff, and state officers — does not address the ladder's ownership/carry-restriction dimension ('How should the government regulate firearms?', from an outright ownership ban to permitless carry), so no rung's operative clauses are matched.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

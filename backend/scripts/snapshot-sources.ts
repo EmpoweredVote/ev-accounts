@@ -11,9 +11,11 @@ import 'dotenv/config';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseSourcesManifest } from './lib/sourcesManifest.js';
-import { buildSnapshot, resolveHumanSavedPath, type SnapshotRecord } from './lib/snapshotSources.js';
+import { buildSnapshot, resolveHumanSavedPath, PDF_TRAILER_PREFIX, type SnapshotRecord } from './lib/snapshotSources.js';
+import { htmlMarkedTextWithStats } from './lib/htmlMarkedText.js';
+import { loadSourceProfiles, resolveProfile } from './lib/sourceProfiles.js';
 import { createPageFetcher } from '../src/lib/researchVerifier.js';
-import { createVerificationFetchSession, htmlToText } from '../src/lib/verificationFetch.js';
+import { createVerificationFetchSession, htmlToText, robotsAllows, EMPOWERED_VOTE_UA, HTTP_TIMEOUT_MS } from '../src/lib/verificationFetch.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir');
@@ -32,19 +34,81 @@ for (const entry of manifest.sources) {
 }
 const batchId = manifest.batch_id;
 
+// Amendment-markup spec §1/§3: the source profile says how a URL prints amended text.  A code-fetched
+// HTML page from a `marked` source (AZ azleg strike-through) is read with htmlToMarkedText so deleted
+// words survive as `[deleted: …]` fences; every other source keeps today's behaviour (the verifier's
+// fetch ladder, already stripped to plain text).
+const profiles = loadSourceProfiles();
+
+/** True for a file pdf-snapshot.ts itself produced: already plain text with `[deleted: …]` fences and
+ * its own trailer, so it must be read UNSTRIPPED — htmlToText/htmlMarkedTextWithStats would treat a
+ * stray `<`/`>` in the bill text, or in the trailer's own URL, as an HTML tag and remove it (spec §9).
+ * Requires the file's actual LAST LINE (raw, unmodified content — real newlines, unlike the collapsed
+ * text buildSnapshot works with) to start with the trailer's fixed prefix and end with `]`, so a bill
+ * that merely quotes the phrase mid-file is not mistaken for a real pdf-snapshot.ts output. */
+function isPdfSnapshotOutput(raw: string): boolean {
+  const trimmed = raw.trimEnd();
+  const lastNL = trimmed.lastIndexOf('\n');
+  const lastLine = lastNL === -1 ? trimmed : trimmed.slice(lastNL + 1);
+  return lastLine.startsWith(PDF_TRAILER_PREFIX) && lastLine.endsWith(']');
+}
+
 const session = createVerificationFetchSession();
 const fetcher = createPageFetcher(session.fetch);
 const out: SnapshotRecord[] = [];
 for (const entry of manifest.sources) {
+  const amendmentText = resolveProfile(profiles, entry.url)?.rules.amendment_text ?? 'final';
   if (entry.human_saved_path) {
-    const html = readFileSync(resolveHumanSavedPath(dir, entry.human_saved_path)!, 'utf8');
-    out.push(buildSnapshot({ entry, fetchedText: htmlToText(html), failure: null, fetchedBy: 'human', batchId }));
+    const raw = readFileSync(resolveHumanSavedPath(dir, entry.human_saved_path)!, 'utf8');
+    // A human-saved page from a `marked` source is read the same way a code fetch would be — with
+    // htmlMarkedTextWithStats, so a saved AZ-style HTML page keeps its deletion fences too (spec §9)
+    // — UNLESS it is itself a pdf-snapshot.ts output file (already plain, already fenced): that one is
+    // passed through untouched, trailer and all.
+    if (isPdfSnapshotOutput(raw)) {
+      out.push(buildSnapshot({ entry, fetchedText: raw, failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    } else if (amendmentText === 'marked') {
+      const { text, unresolved } = htmlMarkedTextWithStats(raw);
+      out.push(buildSnapshot({ entry, fetchedText: text, failure: null, fetchedBy: 'human', batchId, amendmentText, markupUnresolved: unresolved }));
+    } else {
+      out.push(buildSnapshot({ entry, fetchedText: htmlToText(raw), failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    }
+    continue;
+  }
+  if (amendmentText === 'marked') {
+    try {
+      if (!(await robotsAllows(entry.url))) {
+        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId, amendmentText }));
+        continue;
+      }
+      const res = await fetch(entry.url, {
+        redirect: 'follow',
+        signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+        headers: { 'user-agent': EMPOWERED_VOTE_UA, accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      // A redirect can land on a different origin than the one whose robots.txt we just checked — that
+      // origin gets its own robots.txt check before its body is used.
+      if (new URL(res.url).origin !== new URL(entry.url).origin && !(await robotsAllows(res.url))) {
+        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId, amendmentText }));
+        continue;
+      }
+      const ctype = res.headers.get('content-type') ?? '';
+      if (!ctype.includes('html')) {
+        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'not-html', fetchedBy: 'code', batchId, amendmentText }));
+        continue;
+      }
+      const html = await res.text();
+      const { text, unresolved } = htmlMarkedTextWithStats(html);
+      out.push(buildSnapshot({ entry, fetchedText: text, failure: null, fetchedBy: 'code', batchId, amendmentText, markupUnresolved: unresolved }));
+    } catch (e) {
+      out.push(buildSnapshot({ entry, fetchedText: null, failure: (e as Error).message, fetchedBy: 'code', batchId, amendmentText }));
+    }
     continue;
   }
   const r = await fetcher(entry.url);
   out.push(r.ok
-    ? buildSnapshot({ entry, fetchedText: r.text, failure: null, fetchedBy: 'code', batchId })
-    : buildSnapshot({ entry, fetchedText: null, failure: r.reason, fetchedBy: 'code', batchId }));
+    ? buildSnapshot({ entry, fetchedText: r.text, failure: null, fetchedBy: 'code', batchId, amendmentText })
+    : buildSnapshot({ entry, fetchedText: null, failure: r.reason, fetchedBy: 'code', batchId, amendmentText }));
 }
 await session.close();
 writeFileSync(join(dir, 'snapshots.json'), JSON.stringify(out, null, 2));

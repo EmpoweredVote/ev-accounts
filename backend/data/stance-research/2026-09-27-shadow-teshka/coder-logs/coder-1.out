@@ -1,0 +1,8 @@
+Wrote `coder-1.json` — one row, gun-policy, coded BLANK `direction-only`.
+
+Both snapshots are HB 1084 (2024), an `own-act` record (`record_kind: author`, actor quotes `Teshka, Manning, Haggard` and `Authored by: Rep. Jake Teshka.`), so they form a single non-vote instrument group — no `tally_quote` required.
+
+- **Introduced text (c902ec0b):** bans firearm registries and firearms merchant-category codes. That is a privacy/financial dimension none of these five rungs order → V2 `adjacent`, V4 `off-axis`.
+- **Enrolled details page (2c257caa):** the digest adds a right for legislators and named state officers to carry a handgun in the capitol without a license. That touches the carry dimension → V2 `on-question`, but the provision is not in the version he authored (C37), and a building-specific carve-out cannot separate "at most loosen rules on carrying" from "let adults carry a firearm without a permit" → V4 `direction-only`.
+
+No passage survives to a chair, so `v6_value` is null with `rests_on: []`, and no candidate quotes exist (neither source contains his own words). `needs_source` asks for the HB 1084 roll call and for his own words or a roll call on background checks, permitless carry, or an assault-weapon restriction.

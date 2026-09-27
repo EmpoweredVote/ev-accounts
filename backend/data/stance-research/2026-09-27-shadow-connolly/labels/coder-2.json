@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2",
+      "office_id": "a4020ea2-02d1-411b-b586-9b7c8dc4f90b",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2023-09-26",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 92 (2023-2024)",
+          "provision_quote": null,
+          "note": "Restricts body armor for persons already prohibited from firearms; not a firearm-regulation measure the ladder orders.",
+          "record_kind": "author",
+          "actor_quote": "AB 92, Connolly.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 92 (Connolly), chaptered September 26, 2023, makes it a crime for persons already prohibited from possessing a firearm to purchase, own, or possess body armor. It regulates body armor, not firearms, and does not speak to civilian firearm ownership, assault-style weapons, background checks, or carry rules, which is what this ladder's rungs differ on. No surviving passage establishes a chair.",
+      "needs_source": [
+        "A record (bill authored, sponsored, or voted on by Connolly) or statement addressing civilian firearm ownership, assault-style weapon restrictions, background checks, or carry/permit rules"
+      ],
+      "quotes": []
+    }
+  ]
+}

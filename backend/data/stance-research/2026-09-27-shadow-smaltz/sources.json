@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-09-27-shadow-smaltz",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022/bills/house/1296/details",
+      "source_kind": "public-record",
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 1296 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1296-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/rollcalls/HB1296.382_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 1296 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1296-rc382.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 1296 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1296-enrolled.txt"
+    }
+  ]
+}

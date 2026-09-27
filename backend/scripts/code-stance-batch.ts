@@ -34,6 +34,11 @@ const sourceKind = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map(
 // snapshot_id -> original URL: CONFIRM resolves a source profile per record passage from this (spec
 // 2026-09-26-source-profiles). Loaded once; a passage whose URL matches no profile fails closed.
 const snapshotUrl = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map((s) => [s.snapshot_id, s.url]));
+// snapshot_id -> amendment_markup: CONFIRM fails closed (amendment-markup spec §4) when a provision
+// comes from an amending page whose deletions were not kept legible. A snapshots.json written before
+// this field existed has no `amendment_markup` key at all — JSON-parsed as SnapshotRecord that reads
+// as `undefined`, which must default to 'unknown', never 'kept'.
+const snapshotMarkup = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).map((s) => [s.snapshot_id, s.amendment_markup ?? 'unknown']));
 const profiles = loadSourceProfiles();
 const files = new Map<number, unknown>();
 const rawText = new Map<number, string>();
@@ -59,7 +64,7 @@ if (existsSync(s1LeadsPath)) {
   }
   s1Leads = s1LeadsFile.leads;
 }
-const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads, snapshotUrl, profiles });
+const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads, snapshotUrl, profiles, snapshotMarkup });
 writeFileSync(join(dir, 'coding-report.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, models, ...report }, null, 2));
 writeFileSync(join(dir, 'needs-source.json'), JSON.stringify(report.needsSource, null, 2));
 
@@ -81,7 +86,7 @@ console.log(`most-split codebook variables: ${digest.ranked.slice(0, 3).join(', 
 
 // Source-profile evidence (ruling 2026-09-26): every real record group where a profile's declared
 // rules and the generic rules disagree. Each is a page worth adding to that profile as a control.
-const divergences = profileDivergences({ validRows, snapshotText, snapshotUrl, profiles, fullName: context.seat.full_name, officeTitle: context.seat.office_title });
+const divergences = profileDivergences({ validRows, snapshotText, snapshotUrl, profiles, fullName: context.seat.full_name, officeTitle: context.seat.office_title, snapshotMarkup });
 writeFileSync(join(dir, 'profile-divergence.json'), JSON.stringify(divergences, null, 2));
 if (divergences.length) console.log(`profile needs its rule: ${divergences.length} record group(s) where profile ≠ generic -> ${join(dir, 'profile-divergence.json')} (add as controls)`);
 

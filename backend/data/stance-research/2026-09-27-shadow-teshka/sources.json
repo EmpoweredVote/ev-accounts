@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-27-shadow-teshka",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1084/details",
+      "source_kind": "public-record",
+      "politician_id": "6ab10a36-52d6-4d7a-b039-60416eb5fd3f",
+      "office_id": "6f5b8175-824f-4677-abb3-aea3d9e8b8ae",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 1084 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2024-hb1084-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2024/house/bills/HB1084/HB1084.01.INTR.pdf",
+      "source_kind": "public-record",
+      "politician_id": "6ab10a36-52d6-4d7a-b039-60416eb5fd3f",
+      "office_id": "6f5b8175-824f-4677-abb3-aea3d9e8b8ae",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 1084 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2024-hb1084-introduced.txt"
+    }
+  ]
+}

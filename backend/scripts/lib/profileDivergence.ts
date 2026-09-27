@@ -28,6 +28,8 @@ export function profileDivergences(i: {
   profiles: readonly SourceProfile[];
   fullName: string;
   officeTitle: string | null | undefined;
+  /** Each snapshot's amendment_markup (snapshots.json). Absent reads as 'unknown', as in CONFIRM. */
+  snapshotMarkup?: ReadonlyMap<string, 'kept' | 'none' | 'unknown'>;
 }): ProfileDivergence[] {
   const out: ProfileDivergence[] = [];
   const genericChamber = seatChamber(i.officeTitle);
@@ -49,6 +51,7 @@ export function profileDivergences(i: {
         const byPassage = new Map(resolved.map((x) => [x.p, x.prof!]));
         const run = (profiled: boolean) => checkRecordGroup({
           passages: group, snapshotText: i.snapshotText, fullName: i.fullName, chamber: genericChamber,
+          markupOf: (p) => i.snapshotMarkup?.get(p.snapshot_id) ?? 'unknown',
           profileOf: profiled ? (p) => { const pr = byPassage.get(p)!; return { rules: pr.rules, chamber: profileSeatChamber(pr, i.officeTitle) }; } : undefined,
         }).findings.sort();
         const generic = run(false);

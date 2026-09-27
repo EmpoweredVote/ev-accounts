@@ -1,0 +1,21 @@
+Written: `coder-1.json` — one row, gun-policy, **chair 5**.
+
+**Coding summary**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| IGA bill details (447259b2) | own-act | on-question | record / `author` | chair-shaped | in-term |
+| Roll call 382 (373b376c) | own-act | on-question | record / `vote` | chair-shaped | in-term |
+| Enrolled act HB1296.04 (100827c1) | own-act | on-question | record / `author` | chair-shaped | in-term |
+
+All three share `instrument: "HB 1296 (2022)"`. Per the 2026-09-26 ruling, the facts sit on the pages that print them: `actor_quote` on the details page (`Authored by: Rep. Ben Smaltz.`) and on the roll call (`Baird Goodrich Lyness Smaltz`), `tally_quote` on the roll call (`Yea 69 Nay 30 Excused 1 Not Voting 0`), `provision_quote` on the enrolled text; `null` elsewhere.
+
+**Why 5 and not 4.** The enrolled act's operative provision is permitless carry for adults — SECTION 12 rewrites IC 35-47-2-3 so a qualifying adult "is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana" — and SECTIONS 10, 11 and 14 repeal IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24 outright. Both clauses of rung 5 are evidenced by the same act. Rung 4's ceiling ("at most loosen rules on carrying, such as honoring permits across state lines") is exceeded: the bill abolishes the permit rather than extending recognition of it.
+
+**Two judgment calls worth flagging to the reconciler:**
+
+1. **The vote is on the conference committee report, not on original final passage.** I treated CCR adoption as the House's substantive vote on the final text, not as `procedural` — V4's procedural list is closed (cloture, rule, table, recommit, previous question, adjournment) and does not reach it. The 30 Nay of 99 cast also keeps it clear of `near-unanimous`. Authorship carries the chair independently in any case.
+
+2. **Single-subject.** The act touches law-enforcement training (IC 5-2-1-9) and theft grading (IC 35-43-4-2), which could look multi-subject. Reading the amendment markup, SECTION 1's only change is a conforming cross-reference (`IC 11-13-1-3.5(2)`) — the rest is unchanged statute reproduced under Indiana's printing convention — and the theft change is firearm-specific. So I did not code `multi-subject`.
+
+`provision_quote` was taken from added text only; nothing inside a `[deleted: …]` fence is quoted, per 0.3.1. `quotes` is empty — all three sources are public records with no first-person words from Smaltz, so there is no candidate quote to tier. `needs_source` is empty.

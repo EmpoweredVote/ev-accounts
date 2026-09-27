@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2",
+      "office_id": "a4020ea2-02d1-411b-b586-9b7c8dc4f90b",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "bd2bf2c0-b758-5695-9be0-fed3c61c1d49",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-26",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 92 (2023-2024)",
+          "provision_quote": "A person who is prohibited from possessing a firearm under the laws of this state, except under Section 29610, who purchases, owns, or possesses body armor, as defined in Section 16288, except as authorized under subdivision (c), is guilty of a misdemeanor.",
+          "note": "Bill restricts body armor possession by persons already prohibited from firearms; does not set firearm ownership/carry rules the rungs differ on.",
+          "record_kind": "author",
+          "actor_quote": "AB 92, Connolly.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 92 regulates body armor possession by persons already prohibited from having firearms; it does not address firearm ownership, carry, or background-check rules that separate the gun-policy rungs, so it is adjacent and cannot establish a chair.",
+      "needs_source": ["Roll call or authored/sponsored firearm-specific legislation (ownership, assault-weapon, background-check, or carry provisions) for Damon Connolly"],
+      "quotes": []
+    }
+  ]
+}

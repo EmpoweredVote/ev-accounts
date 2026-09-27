@@ -19,7 +19,7 @@ export type ConfirmFinding =
   | 'identity-not-in-snapshot' | 'person-not-in-snapshot' | 'dates-imprecise' | 'record-before-term' | 'statement-out-of-cycle'
   | 'undated-evidence' | 'provision-missing' | 'record-not-this-office' | 'revision-drift' | 'rests-on-pointer'
   | 'instrument-mismatch' | 'vote-not-evidenced' | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage'
-  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile';
+  | 'chamber-not-evidenced' | 'tally-other-vote' | 'no-source-profile' | 'amendment-markup-lost' | 'provision-deleted';
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
@@ -69,6 +69,9 @@ export interface ConfirmInput {
   snapshotUrl?: ReadonlyMap<string, string>;
   /** Loaded source profiles. Given → every record passage must resolve one, else no-source-profile. */
   profiles?: readonly SourceProfile[];
+  /** snapshot_id -> amendment_markup (snapshots.json, amendment-markup spec §3/§4). A snapshot
+   * missing here (an older snapshots.json with no such field) reads as 'unknown' — fail closed. */
+  snapshotMarkup?: ReadonlyMap<string, 'kept' | 'none' | 'unknown'>;
 }
 
 export function confirmRow(i: ConfirmInput): ConfirmFinding[] { return confirmRowDetailed(i).findings; }
@@ -117,7 +120,8 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
 
   for (const group of groups.values()) {
     const { findings, actorPassages } = checkRecordGroup({
-      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf });
+      passages: group, snapshotText: i.snapshotText, fullName: i.seat.full_name, chamber: seatChamber(i.seat.office_title), profileOf,
+      markupOf: (p) => i.snapshotMarkup?.get(p.snapshot_id) ?? 'unknown' });
     for (const f of findings) out.add(f);
     const datePassages = actorPassages.length > 0 ? actorPassages : group;
     for (const p of datePassages) {

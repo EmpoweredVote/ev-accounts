@@ -109,3 +109,34 @@ export function certify(m: StratumMeasures): { certified: boolean; m3WilsonLow: 
 }
 
 export const chairCategory = (value: number | null): Category => (value === null ? 'BLANK' : String(value));
+
+/**
+ * Spec §3.1 M2–M4 inputs for one stratum. Each pair is one coded row with a blind gold decision:
+ * `coders` = the three coders' categories (chairCategory; null = invalid/missing), `gold` = the gold
+ * FINAL answer (the adjudicated chair, or null for BLANK).
+ * - M2 pairs the coder consensus (a category at least two valid coders share) with gold; a row with
+ *   no such consensus is a split: it never publishes, so it is counted but left out of α.
+ * - M3/M4 look only at unanimous CHAIRS (all three valid, same chair): a unanimous BLANK publishes
+ *   nothing, so it can be neither correct nor severe.
+ */
+export function goldMeasures(pairs: ReadonlyArray<{ coders: ReadonlyArray<Category | null>; gold: number | null; offAxis: boolean }>): {
+  m2: number | null; m2Pairs: number; splits: number; unanimousCorrect: number; unanimousTotal: number; severe: number;
+} {
+  const m2Units: Unit[] = [];
+  let splits = 0; let unanimousCorrect = 0; let unanimousTotal = 0; let severe = 0;
+  for (const p of pairs) {
+    const valid = p.coders.filter((c): c is Category => c !== null);
+    const counts = new Map<Category, number>();
+    for (const c of valid) counts.set(c, (counts.get(c) ?? 0) + 1);
+    const consensus = [...counts].find(([, n]) => n >= 2)?.[0] ?? null;
+    if (consensus === null) splits++;
+    else m2Units.push([consensus, chairCategory(p.gold)]);
+    if (valid.length === 3 && counts.size === 1 && valid[0] !== 'BLANK') {
+      const chair = Number(valid[0]);
+      unanimousTotal++;
+      if (chair === p.gold) unanimousCorrect++;
+      if (isSevereError(chair, p.gold, p.offAxis)) severe++;
+    }
+  }
+  return { m2: alphaNominal(m2Units).alpha, m2Pairs: m2Units.length, splits, unanimousCorrect, unanimousTotal, severe };
+}

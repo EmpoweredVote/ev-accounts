@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.3",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c",
+      "office_id": "de1a8793-9a9c-4e65-a7c6-c08ddd809a98",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "299081ad-d32c-58fa-813d-1aec2fd5164b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2020-09-29",
+          "v4_shape": "off-axis",
+          "v5_time": "pre-seating",
+          "instrument": "SB 723 (2019-2020)",
+          "provision_quote": null,
+          "note": "Author of SB 723 (prohibited-persons/outstanding-warrant firearm possession); addresses eligibility of already-prohibited persons, not the ladder's ownership-ban, weapon-type, background-check, or carry dimensions; also predates the current term (2022-12-05).",
+          "record_kind": "author",
+          "actor_quote": "SB 723, Jones.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is SB 723, which Jones authored, clarifying that firearm possession by a person with an outstanding felony or specified-misdemeanor warrant is a crime only when the person has knowledge of the warrant. This is a prohibited-persons eligibility rule, not a passage that speaks to civilian ownership bans, assault-style weapon bans, universal background checks, or carry-permit rules, so it is adjacent and cannot establish any rung. No passage survives V1-V5.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

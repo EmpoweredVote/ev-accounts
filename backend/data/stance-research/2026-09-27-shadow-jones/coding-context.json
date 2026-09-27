@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-27-shadow-jones",
+  "seat": {
+    "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c",
+    "full_name": "Brian W. Jones",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "de1a8793-9a9c-4e65-a7c6-c08ddd809a98",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null
+  },
+  "topics": [
+    {
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "question_text": "How should the government regulate firearms?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+        },
+        {
+          "value": 2,
+          "text": "Ban semi-automatic assault-style weapons, while allowing other firearms."
+        },
+        {
+          "value": 3,
+          "text": "Allow all types of firearms, but require universal background checks on every sale."
+        },
+        {
+          "value": 4,
+          "text": "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+        },
+        {
+          "value": 5,
+          "text": "Repeal major gun restrictions and let adults carry a firearm without a permit."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

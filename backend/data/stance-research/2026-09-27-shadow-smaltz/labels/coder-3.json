@@ -1,0 +1,78 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "447259b2-e593-563f-a83c-ca597854585b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "IGA bill details page names Smaltz as author of HB 1296, a firearms bill.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "373b376c-d46c-5723-9983-7ab241f1dcc1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Roll Call 382 shows Smaltz voting Yea on adoption of the HB 1296 conference committee report.",
+          "record_kind": "vote",
+          "actor_quote": "Goodrich Lyness Smaltz Barrett",
+          "tally_quote": "Yea 69 Nay 30"
+        },
+        {
+          "snapshot_id": "100827c1-f615-514d-8f25-4da11a1bb272",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Enrolled act text amends IC 35-47-2-3 to eliminate the license/permit requirement to carry a handgun in Indiana.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "447259b2-e593-563f-a83c-ca597854585b",
+        "373b376c-d46c-5723-9983-7ab241f1dcc1",
+        "100827c1-f615-514d-8f25-4da11a1bb272"
+      ],
+      "reasoning": "Smaltz authored HB 1296 (2022) and voted Yea on its adoption; the enrolled act's amendment to IC 35-47-2-3 states a person 'is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana,' matching the rung text 'Repeal major gun restrictions and let adults carry a firearm without a permit.'",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "100827c1-f615-514d-8f25-4da11a1bb272",
+          "text": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

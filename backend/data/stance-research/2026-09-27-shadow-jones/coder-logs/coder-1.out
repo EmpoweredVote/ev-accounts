@@ -1,0 +1,9 @@
+Wrote `coder-1.json` — one row, BLANK.
+
+**gun-policy (Brian W. Jones)** → `v6_value: null`, `v6_blank_reason: "no-evidence"`, `rests_on: []`
+
+The single source is the bill-text page for SB 723 (2019-2020), authored by Jones ("SB 723, Jones. Firearms: prohibited persons."). Coded as `own-act` / `record` / `record_kind: author`, with the scienter clause as `provision_quote` and no `tally_quote` (no vote page in the sources, and the group is an `author` record, not a vote).
+
+It fails V2 as `adjacent`: clarifying that the prohibited-persons offense requires knowledge of an outstanding warrant speaks to *who* is barred from possession, not to what separates the rungs (weapon-class bans, universal background checks, no-new-restrictions/carry loosening, repeal). V4 is `off-axis` for the same reason. V5 coded `in-term` — the instrument is a California Senate bill he authored, i.e. an act in this office, though the only term given to me starts 2022-12-05 and the act is from 2020; either reading leaves the row blank.
+
+`needs_source` asks for a CA Senate roll call or authorship on a firearms bill whose operative section matches a rung, or his own first-person words from the current term. No quotes emitted — the sole source contains none of his words.

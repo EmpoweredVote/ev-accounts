@@ -35,7 +35,7 @@ describe('parseSourceProfile', () => {
   it('parses a valid header; not_chamber_after defaults to []', () => {
     const p = parseSourceProfile(md(HEADER), 'f.md');
     expect(p.profile).toBe('ca-votes');
-    expect(p.rules).toEqual({ vote_block: 'aye-count', chamber: 'word-before-floor', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled' });
+    expect(p.rules).toEqual({ vote_block: 'aye-count', chamber: 'word-before-floor', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled', amendment_text: 'final' });
     expect(p.url_prefixes).toEqual(['https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml']);
     expect(p.seat_titles).toEqual({ Senator: 'upper', 'Assembly Member': 'lower' });
     expect(profileTag(p)).toBe('ca-votes@1');
@@ -113,5 +113,19 @@ describe('tally_format and provision-only controls', () => {
   it('a control with neither actor_quote nor provision_quote is an error', () => {
     const h = HEADER.replace('    actor_quote: "Dodd, Durazo, Eggman"\n', '');
     expect(() => parseSourceProfile(md(h), 'f.md')).toThrow(/controls\[0\] needs actor_quote or provision_quote/);
+  });
+});
+
+describe('rules.amendment_text', () => {
+  it('defaults to final when unset', () => {
+    expect(parseSourceProfile(md(HEADER), 'f.md').rules.amendment_text).toBe('final');
+  });
+  it.each(['marked', 'unmarked', 'final'] as const)('accepts %s', (v) => {
+    const h = HEADER.replace('  name_format: surname', `  name_format: surname\n  amendment_text: ${v}`);
+    expect(parseSourceProfile(md(h), 'f.md').rules.amendment_text).toBe(v);
+  });
+  it('rejects an unknown amendment_text', () => {
+    const h = HEADER.replace('  name_format: surname', '  name_format: surname\n  amendment_text: chaptered');
+    expect(() => parseSourceProfile(md(h), 'f.md')).toThrow(/f\.md: rules\.amendment_text "chaptered" is not one of final \| marked \| unmarked/);
   });
 });

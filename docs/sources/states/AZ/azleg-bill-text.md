@@ -1,6 +1,6 @@
 ---
 profile: az-azleg-bill-text
-version: 1
+version: 2
 scope: state:AZ
 body: legislature
 match:
@@ -11,6 +11,7 @@ rules:
   vote_block: whole-page
   chamber: bill-origin
   name_format: surname
+  amendment_text: marked
 seat_titles:
   Senator: upper
   State Senator: upper
@@ -36,3 +37,11 @@ is never an actor page: pair it with the roll call (`azleg-bill-status`) in one 
 
 **Traps:** cite the version the vote was on (the engrossed version of the chamber that voted), not a
 later amended one.
+
+**Amendment markup (`amendment_text: marked`):** an amending bill's `.htm` page strikes through deleted
+text in the HTML; the snapshot path (`htmlToMarkedText`) turns each struck run into a `[deleted: …]`
+fence. Added text prints in CAPITALS and needs no fence — it is the law. A page with only additions and
+no deletions carries no fence at all, so CONFIRM cannot tell "no deletions on this page" from "a
+deletion the fence-writer missed" — it reads `amendment_markup: 'unknown'` and, on a page that also says
+"is amended to read," fails closed with `amendment-markup-lost`. That is a known false positive on an
+additions-only amendment; send it to a person rather than loosen the rule.

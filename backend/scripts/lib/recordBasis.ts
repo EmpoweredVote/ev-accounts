@@ -32,7 +32,8 @@ export { instrumentKey };
 
 export type RecordFinding =
   | 'person-not-in-snapshot' | 'provision-missing' | 'instrument-mismatch' | 'vote-not-evidenced'
-  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced' | 'tally-other-vote';
+  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced' | 'tally-other-vote'
+  | 'amendment-markup-lost' | 'provision-deleted';
 
 /** A legislative seat's chamber; null when the seat is not a legislator's (the chamber test is skipped). */
 export type Chamber = 'upper' | 'lower';
@@ -41,13 +42,21 @@ export type VoteBlockRule = 'aye-count' | 'whole-page';
 export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'page-header' | 'bill-origin' | 'none';
 export type TallyFormat = 'labelled' | 'dash-ayes-nays';
 export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
-export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat }
+/**
+ * How a source prints amended text (amendment-markup spec §1): 'final' — the page prints the law as
+ * it will read, no markup to lose (CA chaptered text); 'marked' — deletions are recoverable from the
+ * page's markup (AZ HTML strike-through, or an IN bill-text PDF read with pdfMarkedText); 'unmarked' —
+ * deletions are NOT recoverable (a PDF read without strike detection, or a plain-text copy).
+ */
+export type AmendmentText = 'final' | 'marked' | 'unmarked';
+export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat; amendment_text: AmendmentText }
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
 export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'page-header', 'bill-origin', 'none'];
 export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
 export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
+export const AMENDMENT_TEXTS: readonly AmendmentText[] = ['final', 'marked', 'unmarked'];
 /** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
-export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled' };
+export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled', amendment_text: 'final' };
 /** Per actor passage: the rules of its source and the seat's chamber in that body. */
 export type PassageProfile = { rules: SourceRules; chamber: Chamber | null };
 export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
@@ -183,7 +192,9 @@ const blockOf = (bounds: number[], a: number) => { let b = -1; for (let k = 0; k
  * legislature) and "<Chamber> Bill / Resolution / …" (a bill's origin, printed on the other chamber's
  * pages). Without this an Indiana Senate roll call passed for a House seat (final review 2026-09-26).
  */
-const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', house: 'lower', assembly: 'lower', asm: 'lower' };
+// 'rep' matches 'sen': Indiana's author line titles a Representative "Rep. Ben Smaltz" (HB 1296,
+// 2022), and without it that line showed no chamber at all ("House Bill" names the bill's origin).
+const CHAMBER_WORD: Record<string, Chamber> = { senate: 'upper', sen: 'upper', house: 'lower', rep: 'lower', assembly: 'lower', asm: 'lower' };
 // A chamber word followed by these names a bill's origin or a stage ("Senate Bill", "Motion Assembly
 // 3rd Reading" on a SENATE floor vote of an Assembly bill, CA AB 1955), not where the vote happened.
 const NOT_CHAMBER_NEXT = /^(bills?|enrolled|joint|concurrent|resolutions?|amendments?|reading)$/;
@@ -254,12 +265,56 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
   }
 }
 
+// Amendment-markup spec §2/§4: fences are exactly `[deleted: … ]`, and a literal `]` inside the
+// deleted text is written `〕` by the fence writer, so the first `]` after `[deleted: ` always closes
+// it. Matched against the SAME normalizeText'd page text a quote's span is located in — normalizeText
+// only lowercases and collapses whitespace, so the fence delimiters survive unchanged.
+const DELETED_FENCE_RE = /\[deleted: [^\]]*\]/g;
+/** An opening `[deleted: ` with no closing `]` anywhere after it (a truncated snapshot, most likely a
+ * page cut off mid-fetch) — fail closed by treating it as a fence that runs to the end of the page,
+ * rather than reading none of it as deleted. */
+const OPEN_FENCE_RE = /\[deleted: /g;
+/** Both Indiana's ("is amended to read") and Arizona's (all-caps, since normalizeText lowercases
+ * everything) forms read the same after normalizeText. The plural ("Sections … are amended to read")
+ * covers a multi-section amendment. */
+const AMENDED_TO_READ_RE = /(?:is|are) amended to read/;
+
+/** Every `[deleted: …]` fence's [start, end) character span in a normalizeText'd page. A `[deleted: `
+ * with no closing `]` anywhere in the rest of the page runs to the end of the page (fail closed on a
+ * truncated snapshot) rather than matching nothing at all. */
+function fenceSpans(normalizedPage: string): [number, number][] {
+  const spans: [number, number][] = [];
+  const closedStarts = new Set<number>();
+  for (const m of normalizedPage.matchAll(DELETED_FENCE_RE)) {
+    spans.push([m.index!, m.index! + m[0].length]);
+    closedStarts.add(m.index!);
+  }
+  for (const m of normalizedPage.matchAll(OPEN_FENCE_RE)) {
+    if (!closedStarts.has(m.index!)) spans.push([m.index!, normalizedPage.length]);
+  }
+  return spans;
+}
+
+/** Every start index of `needle` in `haystack` (overlapping matches included, fail closed rather than
+ * judging only the first — a provision quoted twice on one page, once outside a fence and once inside
+ * it, must still be caught when the fenced copy is not the first one found). */
+function allIndicesOf(haystack: string, needle: string): number[] {
+  if (needle.length === 0) return [];
+  const out: number[] = [];
+  let i = haystack.indexOf(needle);
+  while (i !== -1) { out.push(i); i = haystack.indexOf(needle, i + 1); }
+  return out;
+}
+
 export function checkRecordGroup(i: {
   passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string;
   /** The seat's chamber (seatChamber(office_title)), used when a passage has no profile. */
   chamber?: Chamber | null;
   /** The source profile of a passage (sourceProfiles.ts). Absent/null -> GENERIC_RULES + i.chamber. */
   profileOf?: (p: Passage) => PassageProfile | null;
+  /** Amendment-markup spec §3/§4: what this passage's snapshot shows about kept deletions. Absent
+   * (no snapshots.json amendment_markup available to the caller) reads as 'unknown' — fail closed. */
+  markupOf?: (p: Passage) => 'kept' | 'none' | 'unknown';
 }):
   { findings: RecordFinding[]; actorPassages: Passage[] } {
   // A group with nothing labelled a record (all statements, say) has no vote/sponsorship basis to
@@ -352,8 +407,35 @@ export function checkRecordGroup(i: {
     if (!qualified) out.add('name-collision');
   }
 
-  // The provision is verbatim on some page of the group.
-  if (!i.passages.some((p) => p.provision_quote && verbatimIn(textOf(p), p.provision_quote))) out.add('provision-missing');
+  // The provision is verbatim on some page of the group. For each such page, amendment-markup spec
+  // §4 fails closed: a quote sitting inside a `[deleted: …]` fence is words the law REMOVES, never
+  // the provision; and a page that shows amending language ("is amended to read") from a source
+  // whose markup is not known-kept means any deletion could be silently missing from what the coder
+  // read as the provision.
+  const provisionPassages = i.passages.filter((p) => p.provision_quote && verbatimIn(textOf(p), p.provision_quote));
+  if (provisionPassages.length === 0) out.add('provision-missing');
+  for (const p of provisionPassages) {
+    const page = normalizeText(textOf(p));
+    const q = normalizeText(p.provision_quote!);
+    const starts = allIndicesOf(page, q);
+    if (starts.length === 0) {
+      // verbatimIn (a substring test) said this quote is on the page, but indexOf cannot find it —
+      // should not happen, since both read the same normalizeText'd string, but fail closed rather
+      // than silently passing a quote this check cannot itself locate.
+      out.add('provision-deleted');
+    } else {
+      const spans = fenceSpans(page);
+      // ANY occurrence overlapping a fence is enough — a provision quoted twice on one page (a
+      // digest and the operative section, say) is deleted if even one copy sits inside a fence,
+      // regardless of which occurrence comes first.
+      if (starts.some((start) => { const end = start + q.length; return spans.some(([fs, fe]) => start < fe && fs < end); })) {
+        out.add('provision-deleted');
+      }
+    }
+    const { rules } = prof(p);
+    const markup = i.markupOf?.(p) ?? 'unknown';
+    if (AMENDED_TO_READ_RE.test(page) && rules.amendment_text !== 'final' && markup !== 'kept') out.add('amendment-markup-lost');
+  }
 
   // A vote must come from a vote page, with a word-bounded, readable and divided tally.
   if (i.passages.some((p) => p.record_kind === 'vote')) {

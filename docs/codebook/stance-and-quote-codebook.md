@@ -1,11 +1,14 @@
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.3 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+**Version:** 0.3.1 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
 fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
 record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
 carries a worked two-passage vote example.
+**Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
+inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
+quotes it as `provision_quote` (V3 "Record fields").
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -199,6 +202,9 @@ unevidenced chair.
     on the vote page, `provision_quote` on the page that prints the provision (usually the bill
     text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
     that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
 - `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
   one record must name the same instrument.
 

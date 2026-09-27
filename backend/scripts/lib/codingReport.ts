@@ -55,6 +55,8 @@ export function buildCodingReport(i: {
   snapshotUrl?: ReadonlyMap<string, string>;
   /** Loaded source profiles (sourceProfiles.ts). Passed through to confirmRowDetailed. */
   profiles?: readonly SourceProfile[];
+  /** snapshot_id -> amendment_markup (snapshots.json). Passed through to confirmRowDetailed. */
+  snapshotMarkup?: ReadonlyMap<string, 'kept' | 'none' | 'unknown'>;
 }): CodingReport {
   const { seat, topics } = i.context;
   const leads = leadsById(i.s1Leads ?? []);
@@ -99,7 +101,7 @@ export function buildCodingReport(i: {
       const cRow = rowsBySlot.get(consensusSlot(labels, outcome.value))!;
       const restsOn = cRow.passages.filter((p) => outcome.shared_sources.includes(p.snapshot_id));
       evidenceClass = weakestClass(restsOn);
-      const detailed = confirmRowDetailed({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id, snapshotUrl: i.snapshotUrl, profiles: i.profiles });
+      const detailed = confirmRowDetailed({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id, snapshotUrl: i.snapshotUrl, profiles: i.profiles, snapshotMarkup: i.snapshotMarkup });
       confirm = detailed.findings;
       profiles = detailed.profiles;
       if (confirm.length) reasons.push('confirm-failed');

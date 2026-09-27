@@ -45,4 +45,24 @@ describe('profileDivergences', () => {
       profiles: [profile('word-before-floor')] });
     expect(d.map((x) => [x.slot, x.topic_id])).toEqual([[3, 't2']]);
   });
+  it('passes each snapshot\'s amendment_markup to the profiled run (a kept page is not amendment-markup-lost)', () => {
+    const marked = parseSourceProfile(`---
+profile: test-text
+version: 1
+scope: state:CA
+body: legislature
+match:
+  url_prefixes: [https://votes.test/]
+page_kind: vote
+rules: { vote_block: aye-count, chamber: nearest-before, name_format: surname, amendment_text: marked }
+seat_titles: { Senator: upper }
+controls:
+  - { batch: b, snapshot: x, person: Ana Wong, office_title: Senator, instrument: SB 9 (2024), record_kind: vote, actor_quote: x, tally_quote: null, expect: pass }
+---
+`, 'test.md');
+    const amending = 'SB 9 (2024). Senate Floor Ayes 30 Noes 9 Ayes Lee, Wong. Section 1 is amended to read: The bill requires a thing.';
+    const args = { ...base, snapshotText: new Map([['v', amending]]), validRows: new Map([[1, [row([P()])]]]), profiles: [marked] };
+    expect(profileDivergences({ ...args, snapshotMarkup: new Map([['v', 'kept' as const]]) })).toEqual([]);
+    expect(profileDivergences(args).map((x) => x.profiled)).toEqual([['amendment-markup-lost']]);
+  });
 });
