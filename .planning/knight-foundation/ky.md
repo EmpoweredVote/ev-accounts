@@ -1304,9 +1304,8 @@ composition.
 
 1. ⏸ **Lexington's 16** — held on the ruling, letter drafted not sent.
 2. ⏸ **Fayette County's 18** — no route, and **four separate rights questions**.
-3. ⏸ **The `lexington` banner** — not started. Four city banners in this programme collide with
-   their own state banner's composition; Lexington is not one of the four, but the adjacency test
-   still applies.
+3. ✅ **The `lexington` banner SHIPPED 2026-09-26** — essentials PR **#165**, open not merged.
+   See the KY-5b section below.
 4. ✅ **The LRC letter was SENT 2026-09-26** through the general contact form
    (<https://legislature.ky.gov/Pages/contactus.aspx>), by Chris Cantrell: the fields were filled
    programmatically and the **reCAPTCHA v2 checkbox was ticked and the form submitted by hand**.
@@ -1315,3 +1314,78 @@ composition.
    publishes no email for its Public Information Office; the telephone route is **502-564-8100**.
    ▶ **No reply as of 2026-09-26.** Record it verbatim here when one arrives; if the Commission
    reads KRS 61.874 differently, the 138 come down.
+
+
+## ✅ KY-5b — the `lexington` banner is certified and registered (essentials PR #165)
+
+`cities/lexington.jpg` = **Spendthrift Farm**, Erin Aiken (atthepaddock.com), **CC BY 2.0**, with
+**`focus: '50% 30%'`**. Chosen from 19 candidates rendered in the 6:1 band, out of 77 swept from
+Commons by the documented categories-of method. The banner lives in the **essentials** repo, not
+this one.
+
+### 🟢 The adjacency was read in the band FIRST, and it decided the wave
+
+`states/KY.jpg` is the **Louisville skyline across the Ohio** — and, like `states/SC` and unlike
+`states/CA` and `states/NC`, **its credit is accurate in the band**: the skyline really is what a
+desktop visitor sees. Read there it is a **distant, eye-level view across open water**, buildings
+filling the middle at mid-distance.
+
+That single measurement refused the **three widest candidates**, including an 11503x2665 downtown
+panorama that was otherwise the best-resourced file in the set. ▶ **Composition, never the subject
+noun** — the Asheville rule, holding again.
+🟢 Lexington is the **first Kentucky city banner**, so it had only one adjacency to clear. Durham's
+rule says a third city has fewer framings left than the second; a first has the most.
+
+### 🔴 THE CERTIFYING TOOL COULD NOT SHOW WHAT SHIPS — the Bend defect one layer up
+
+`certify_banner.py` always cut the **centred** band and had no way to express `focus`. So every
+banner that carries one — SC's two, and now this — was certified on a crop that is **not what
+ships**. That is the Bend defect reproduced *inside the tool built to prevent it*.
+🟢 Fixed in PR #165: a candidate may carry `focus`, and the sheet labels the band with the rows it
+actually cut. ▶ **The parser was controlled before it was trusted**: absent and `50% 50%` both give
+the historical rows 128-411, `50% 30%` gives 77-360, unparseable input falls back, and an
+out-of-range percentage clamps.
+
+### 🔴 The focus is load bearing, and it moved the MEASUREMENTS as well as the picture
+
+At the centred cut the barn and the sky fall outside the window and a heavy dark fence rail
+dominates the bottom third. At `50% 30%` the band measures **luminance 116.0 and channel spread
+27.3**, against **89.6 and 20.6** centred. ▶ A focus chosen for composition also improved the
+numbers — so a band's metrics describe *a crop*, never *a file*.
+
+### ⚠ The Commons "original" is PORTRAIT
+
+`File:Spendthrift Farm (28380511168).jpg` is **3456x4608, taller than wide**, and useless for a
+banner. The `(cropped)` derivative, 3344x1453, is the usable file. ▶ **Preferring the original would
+have been wrong here** — check the shape before reaching past a derivative.
+
+### ⚠ Ratio is not composition, again
+
+`Category:Wikivoyage banners of Kentucky` exists with 46 files — the SC lesson says check for it in
+every slice, and it paid. But its only Lexington entry is **2100x300**, which is *shorter* than the
+asset needs: reaching 1700x540 is a **1.8x upscale**. A file already in banner ratio is not
+automatically usable.
+
+### Verification
+
+- 🟢 **The shipping asset is PIXEL-IDENTICAL to the certified one — max absolute difference 0.**
+  What the operator approved is byte-for-byte what ships, because `certify_banner.py` imports
+  `crop_to_ratio` from `process_banner.py`.
+- A **new** key needs no `-v2`, and sha256 was still verified identical on **both** the plain and a
+  cache-busted URL rather than trusting HTTP 200 — with a nonexistent-key control that failed as
+  required (HTTP 400, does not decode).
+- 🟢 **The matcher was RUN, not reasoned about**, through Vite's own resolver: **12 cases pass,
+  both controls included.** `Lexington`/KY and `Lexington` with no caller state resolve;
+  `Lexington` SC, MA and VA do not; **`Lexington County` does not**, which is why the entry carries
+  `match: 'exact'` — Lexington County SC is a live browse label. The focus reaches the caller as
+  `Local: '50% 30%'`.
+- `public/banners.json` regenerated; `banners:check` green at **244/247 credited, 0 unmatched,
+  0 unparsed**. The credit comment is **input** to that generator, so getting it wrong ships a wrong
+  public credit.
+- Build green; the asset path **and** the focus string are both present in the built bundle, with a
+  nonexistent path absent as a control.
+- ⚠ **Live banners are BASELINE JPEG, not progressive.** `cities/columbia.jpg` was measured baseline
+  and `process_banner.py` writes baseline. Any note claiming the spec is "q90 progressive" is wrong
+  about 247 live assets.
+
+▶ **Merging PR #165 is what puts it in front of a voter** — Netlify deploys from `main`.
