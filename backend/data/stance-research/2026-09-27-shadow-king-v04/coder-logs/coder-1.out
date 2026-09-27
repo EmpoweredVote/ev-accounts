@@ -1,0 +1,15 @@
+Written: `coder-1.json` — one row, `trans-athletes`, chair **4**.
+
+**How it codes:**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| HEA 1041 enrolled text | own-act | on-question | record / vote | chair-shaped | in-term |
+| Roll Call 402 (veto override) | own-act | on-question | record / vote | chair-shaped | in-term |
+| Bill details page (co-author) | own-act | record / author | on-question | chair-shaped | in-term |
+
+All three share `instrument: "HB 1041 (2022)"`, so the record fields distribute per the 0.3 ruling: `actor_quote` on the roll call (`Cook King Negele Torr`) and on the details page (`Co-Authored by: Rep. Chris Jeter, Rep. Joanna King, Rep. Robert Heaton.`), `tally_quote` on the roll call only, `provision_quote` only on the page that prints the operative section (the enrolled text, Sec. 4(b)). The other slots are `null` rather than copied across.
+
+**Chair 4, not 5:** the operative section bars males by birth sex from female-designated teams; it does not ban transgender athletes from organized sport, which the rung-5 text would require. This tracks the codebook's Adams/HB11 worked example. The tally (67–28, 28 Nay of 95 voting) clears the near-unanimous threshold, so the override vote carries weight on its own, and the co-authorship evidences the bill as filed.
+
+One judgment call to flag: the `[deleted: …]` spans in the enrolled text are the PDF's printing-code boilerplate, not substantive deletions, and nothing from inside a fence is quoted. `quotes` is empty — none of the three sources contains King's own words, only her acts. `needs_source` is empty because the chair is established without further evidence.

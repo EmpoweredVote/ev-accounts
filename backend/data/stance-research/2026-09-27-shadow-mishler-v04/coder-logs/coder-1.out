@@ -1,0 +1,15 @@
+Wrote `labels/coder-1.json` — one row, chair **4**.
+
+**How it codes:**
+
+| Passage | V1–V5 | Role |
+|---|---|---|
+| Bill details page | own-act / on-question / record (`sponsor`) / chair-shaped / in-term | Carries `actor_quote` — Mishler is the lead Senate sponsor of HB 1002 (2022) |
+| Roll call 374 | own-act / on-question / record (`vote`) / **near-unanimous** / in-term | 50–0, so it carries `actor_quote` + `tally_quote` but not the chair |
+| Enrolled act text | own-act / on-question / record (`sponsor`) / chair-shaped / in-term | Carries `provision_quote` — the IC 6-3-2-1 rate schedule dropping 3.23% → 3.15% |
+
+`rests_on` is the details page and the enrolled text only; the roll call is excluded because `near-unanimous` cannot support a chair.
+
+**Chair reasoning:** the operative section cuts the individual adjusted gross income rate everyone pays (plus Section 3 repeals the utility receipts tax outright), which is "Cut taxes broadly, including the main rates most people pay" — not the targeted/narrow-relief rung below it. Rung 5 is excluded because the deeper phase-downs are gated on general fund revenue growth and pension stabilization sufficiency, and nothing in the act shrinks government functions.
+
+Two notes on judgment calls: I treated Senate sponsorship as authorship-equivalent shape (the roll call header itself reads "HB 1002 - Mishler"), and I avoided quoting anything inside a `[deleted: …]` fence — the provision quote is items (3) and (4) of the live rate schedule so the cut is visible in one verbatim span.

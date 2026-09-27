@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 3,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb#c81f9d6a-5163-5e81-8afc-bf71e435f87d",
+          "values": [
+            "chair-shaped",
+            "multi-subject",
+            "multi-subject"
+          ]
+        },
+        {
+          "unit": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb#3fb9bf85-7b82-5c95-8b18-f9683c42c170",
+          "values": [
+            "near-unanimous",
+            "near-unanimous",
+            "multi-subject"
+          ]
+        },
+        {
+          "unit": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb#909c3da5-0b10-5bcb-8764-7ae863bde3be",
+          "values": [
+            "chair-shaped",
+            "multi-subject",
+            "multi-subject"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "values": [
+            "4",
+            "BLANK",
+            "BLANK"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v6_chair"
+  ]
+}

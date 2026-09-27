@@ -1,0 +1,14 @@
+Wrote `coder-1.json` — one row, coded BLANK.
+
+**Scott Wiener / same-sex-marriage — BLANK `no-evidence`**
+
+Two passages, both coded as one record (`ACA 5 (2023-2024)`, `record_kind: vote`, `in-term`):
+
+- **Vote page** (`36e059a0…`): `own-act` / `on-question` / `record`. `actor_quote` = the Senate Floor Ayes list containing Wiener; `tally_quote` = `Ayes Count 31 Noes Count 0 NVR Count 9`.
+- **Bill text** (`7ff4262f…`): `own-act` / `on-question` / `record`, `provision_quote` = `SEC. 7.5. (a) The right to marry is a fundamental right.` Actor and tally fields are `null` — that page prints neither.
+
+Why BLANK rather than a chair: V4's near-unanimous rule is decisive. Zero Noes on the Senate floor (and 67–0 in the Assembly) is far under the 10% threshold, so the vote cannot carry a chair alone. Its *content* would point at rung 2 ("the same benefits and protections as any other marriage") — it neither adds the jobs-and-housing clause of rung 1 nor the religious-organization carve-out of rung 3 — but since no passage survives V1–V5 with a chair-supporting shape, `rests_on` is empty and the reason is `no-evidence`.
+
+One judgment call worth flagging: the vote page's motion line reads `Motion Assembly 3rd Reading ACA5 Low et al. By Wiener`, i.e. he presented the measure on the Senate floor. I did **not** treat that as a separate `other-act` that escapes the near-unanimous rule — the codebook doesn't rule on floor presentation, and stretching it would manufacture a chair the evidence doesn't carry. It's noted in the passage `note`.
+
+`needs_source` asks for his own first-person words, a divided roll call or a sponsorship/authorship record, and anything on the jobs-and-housing clause that would separate rungs 1 and 2.

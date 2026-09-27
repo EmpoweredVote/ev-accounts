@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "3fb9bf85-7b82-5c95-8b18-f9683c42c170",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-09",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Senate conference-committee-report vote on an omnibus 'various tax matters' bill; the vote page names no single provision.",
+          "record_kind": "vote",
+          "actor_quote": "Ford Jon Mishler Walker K",
+          "tally_quote": "Yea 50 Various tax matters. Nay 0 Conference Committee Report #1 Excused 0 Not Voting 0"
+        },
+        {
+          "snapshot_id": "909c3da5-0b10-5bcb-8764-7ae863bde3be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": "For taxable years beginning after December 31, 2022, and before January 1, 2025, three and fifteen hundredths percent (3.15%).",
+          "note": "Enrolled act cuts the individual income tax rate but in the same bill also repeals the utility receipts tax, sets a special mini-mill property valuation, and amends Medicaid managed-care reporting.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c81f9d6a-5163-5e81-8afc-bf71e435f87d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page names Mishler as a Senate sponsor of the same multi-subject 'various tax matters' bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Ryan Mishler, Sen. Travis Holdman, Sen. Lonnie Randolph",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "All three passages are on one instrument, HB 1002 (2022), a multi-subject bill ('Various tax matters') that cuts the individual income tax rate while also repealing the utility receipts tax, creating a special property-tax valuation for mini-mill equipment, and amending unrelated partnership-audit and Medicaid managed-care provisions. Under V4.1 a vote or sponsorship of a multi-subject bill proves a chair only if the person's own words tie the act to the specific rung clause, and no such statement from Mishler is in these sources.",
+      "needs_source": [
+        "Mishler's own words (floor speech, statement, questionnaire answer) tying his vote or sponsorship of HB 1002 (2022) specifically to the individual income tax rate cut rather than the bill's other provisions",
+        "A single-subject Mishler-sponsored or voted tax bill, or a budget/appropriations statement in his own words, to evidence a chair on this ladder"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "instrument": "hb2492(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "11019933-33fd-5edb-a41d-97b95071dfd4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "cea620f7-fb9a-5084-b23c-b93a82de741a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492#house-third",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "7e0d9c2a-7ead-5b7f-bec7-ab4f87a4d5d4",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "instrument": "hb2492(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "11019933-33fd-5edb-a41d-97b95071dfd4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "cea620f7-fb9a-5084-b23c-b93a82de741a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492#house-third",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "7e0d9c2a-7ead-5b7f-bec7-ab4f87a4d5d4",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "instrument": "hb2492(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "11019933-33fd-5edb-a41d-97b95071dfd4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492",
+        "profile": "az-azleg-bill-status@1"
+      },
+      {
+        "snapshot_id": "7e0d9c2a-7ead-5b7f-bec7-ab4f87a4d5d4",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "cea620f7-fb9a-5084-b23c-b93a82de741a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492#house-third",
+        "profile": "az-azleg-bill-status@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  }
+]

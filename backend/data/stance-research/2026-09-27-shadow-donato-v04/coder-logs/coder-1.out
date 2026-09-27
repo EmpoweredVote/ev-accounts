@@ -1,0 +1,22 @@
+Wrote `labels/coder-1.json` — one row, codebook 0.4, coder slot 1.
+
+**Coding summary — Stacey Donato / education-library-books**
+
+Three passages, all one record group on `HB 1447 (2023)`, all `own-act`, `record`, `in-term` (2023 act; term began 2019):
+
+| Snapshot | Role in the record | V4 shape |
+|---|---|---|
+| Bill details page | sponsor line (`actor_quote`) | `multi-subject` |
+| Enrolled text PDF | the school library provision (`provision_quote`) | `direction-only` |
+| Roll call 520 | her Yea + tally (`actor_quote`, `tally_quote`) | `multi-subject` |
+
+**Chair: BLANK `direction-only`.** Two independent defects:
+
+1. **Clause mismatch.** IC 20-26-5.5 creates a removal-*request* process open to parents, guardians, and community members, reviewed by "the governing body … at the next public meeting." That is review-gated, so it is not rung 4 (pull on challenge) and not rung 5 (remove on report); and the reviewer is the elected school board, not "a review committee of educators and parents," so rung 3 isn't matched either. It shows direction toward restriction without separating 3/4/5.
+2. **Multi-subject instrument.** HB 1447 bundles Muncie school flexibility, third-party vendor surveys, political-activism neutrality, the library chapter, and criminal obscenity defenses. Under V4.1 a final-passage vote on it proves direction at most, and no statement of hers in the sources ties her vote to the library sections.
+
+Tally 39–10 (10 of 49 voting Nay), so `near-unanimous` does not apply — the defect is subject-bundling, not margin.
+
+I did not quote anything inside a `[deleted: …]` fence, per §5 of the amendment-markup rule; note that SECTION 6's narrowing of the harmful-to-minors defense sits in deleted markup, so it is not available as `provision_quote`.
+
+`needs_source` flags three gaps: the as-introduced/as-sponsored version of HB 1447 (the details-page digest describes only the survey provisions, so the library chapter may have been added in conference — C37 matters here), her own words tying the vote to the library sections, and any single-subject Indiana library-materials bill with a Donato act.

@@ -1,0 +1,12 @@
+Wrote `labels/coder-1.json` — one row, `rent-regulation`, coded rung 2.
+
+**How it codes:**
+
+- **Two passages, one record** (`AB 1482 (2019-2020)`): the vote page carries `actor_quote` (the Ayes list through `Robert Rivas` — first name included since Luz Rivas is also on it) and `tally_quote` (`Ayes Count 48 Noes Count 26 NVR Count 5`); the bill-text page carries the `provision_quote` and nulls for the facts it doesn't print, per the V3 record-fields ruling.
+- **V4** `chair-shaped`: single-subject tenancy bill, final concurrence, 26 No out of ~79 so not near-unanimous.
+- **V5** `in-term`: the 2019 vote is from a prior term in the same office (Assembly). I flagged the prior-service check in `needs_source` since CONFIRM, not the coder, verifies it.
+- **V6 = 2**: statewide rent cap extends limits to units that had none, plus new just-cause protections. Rung 1 excluded by the act's own exemptions (15-year new construction, owner-occupied duplexes, deed-restricted affordable); rung 3 excluded because the act creates protections rather than maintaining current ones.
+
+No `quotes` — neither snapshot contains Rivas's own words, only his recorded act.
+
+One judgment call worth flagging: rung 2 is arguably compound ("strengthen existing rent stabilization" **and** "extend coverage to more units"). AB 1482 explicitly leaves local rent-control ordinances untouched (`nor is it a statement regarding the appropriate, allowable rental rate increase when a local government adopts a policy regulating rent`), so a stricter reading of "existing rent stabilization" as *existing local programs* would push this to BLANK `compound-partial`. I read the clause as the statewide tenant-protection regime — which the act does strengthen, adding just cause on top of the existing 60-day-notice law — and coded the chair.

@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "2f59d923-5380-5e94-bd43-d665187ac38a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled text of the bill he sponsored and voted for; new IC 20-33-7.5 mandates parental notification with no staff safety exception and no permission requirement.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f3a1f5ed-00da-5dc9-b14e-e6957f929c73",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Official IGA bill page naming Raatz as a Senate sponsor of HB 1608; the digest paraphrases the provision, so no provision_quote is taken here.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz, Sen. Gary Byrne.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d88173a9-b44f-55ba-9fae-ebb1ffca0d2d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 345, 3rd reading passage; Raatz is in the Yea list and 12 of 50 voting members were opposed, so the near-unanimous rule does not apply.",
+          "record_kind": "vote",
+          "actor_quote": "Charbonneau Gaskill Raatz",
+          "tally_quote": "Yea 37 Education matters. Nay 12 Excused 1 Not Voting 0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "2f59d923-5380-5e94-bd43-d665187ac38a",
+        "f3a1f5ed-00da-5dc9-b14e-e6957f929c73",
+        "d88173a9-b44f-55ba-9fae-ebb1ffca0d2d"
+      ],
+      "reasoning": "Raatz was a Senate sponsor of HB 1608 (2023) and voted Yea on its passage; the enrolled bill's new chapter provides that a school \"shall notify in writing at least one (1) parent\" of a student's request to change \"name\" or \"pronoun, title, or word to identify the student\", which is the rung requiring staff to notify parents whenever a student asks to be treated as a different gender at school. The chapter carries no staff-judgment safety exception, so the rung that notifies parents \"unless staff believe it would put the student in danger\" is excluded, and it requires notification after the request rather than written parental permission beforehand, so the permission rung is excluded as well.",
+      "needs_source": [
+        "A first-person Jeff Raatz statement on parental notification of a student's name or pronoun change (floor remarks, committee testimony, or issue page) — the sources here contain no words of his to draw a quote from"
+      ],
+      "quotes": []
+    }
+  ]
+}

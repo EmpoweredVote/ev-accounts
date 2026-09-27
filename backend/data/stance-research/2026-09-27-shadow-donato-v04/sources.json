@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-09-27-shadow-donato-v04",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1447/details",
+      "source_kind": "public-record",
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_keys": [
+        "education-library-books"
+      ],
+      "instruments": [
+        "HB 1447 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1447-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/rollcalls/HB1447.520_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_keys": [
+        "education-library-books"
+      ],
+      "instruments": [
+        "HB 1447 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1447-rc.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/HB1447.04.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_keys": [
+        "education-library-books"
+      ],
+      "instruments": [
+        "HB 1447 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1447-enrolled.txt"
+    }
+  ]
+}
