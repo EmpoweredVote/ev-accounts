@@ -32,7 +32,8 @@ export { instrumentKey };
 
 export type RecordFinding =
   | 'person-not-in-snapshot' | 'provision-missing' | 'instrument-mismatch' | 'vote-not-evidenced'
-  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced' | 'tally-other-vote';
+  | 'tally-unreadable' | 'near-unanimous-vote' | 'name-collision' | 'no-record-passage' | 'chamber-not-evidenced' | 'tally-other-vote'
+  | 'amendment-markup-lost' | 'provision-deleted';
 
 /** A legislative seat's chamber; null when the seat is not a legislator's (the chamber test is skipped). */
 export type Chamber = 'upper' | 'lower';
@@ -262,12 +263,29 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
   }
 }
 
+// Amendment-markup spec §2/§4: fences are exactly `[deleted: … ]`, and a literal `]` inside the
+// deleted text is written `〕` by the fence writer, so the first `]` after `[deleted: ` always closes
+// it. Matched against the SAME normalizeText'd page text a quote's span is located in — normalizeText
+// only lowercases and collapses whitespace, so the fence delimiters survive unchanged.
+const DELETED_FENCE_RE = /\[deleted: [^\]]*\]/g;
+/** Both Indiana's ("is amended to read") and Arizona's (all-caps, since normalizeText lowercases
+ * everything) forms read the same after normalizeText. */
+const AMENDED_TO_READ_RE = /is amended to read/;
+
+/** Every `[deleted: …]` fence's [start, end) character span in a normalizeText'd page. */
+function fenceSpans(normalizedPage: string): [number, number][] {
+  return [...normalizedPage.matchAll(DELETED_FENCE_RE)].map((m) => [m.index!, m.index! + m[0].length]);
+}
+
 export function checkRecordGroup(i: {
   passages: Passage[]; snapshotText: ReadonlyMap<string, string>; fullName: string;
   /** The seat's chamber (seatChamber(office_title)), used when a passage has no profile. */
   chamber?: Chamber | null;
   /** The source profile of a passage (sourceProfiles.ts). Absent/null -> GENERIC_RULES + i.chamber. */
   profileOf?: (p: Passage) => PassageProfile | null;
+  /** Amendment-markup spec §3/§4: what this passage's snapshot shows about kept deletions. Absent
+   * (no snapshots.json amendment_markup available to the caller) reads as 'unknown' — fail closed. */
+  markupOf?: (p: Passage) => 'kept' | 'none' | 'unknown';
 }):
   { findings: RecordFinding[]; actorPassages: Passage[] } {
   // A group with nothing labelled a record (all statements, say) has no vote/sponsorship basis to
@@ -360,8 +378,25 @@ export function checkRecordGroup(i: {
     if (!qualified) out.add('name-collision');
   }
 
-  // The provision is verbatim on some page of the group.
-  if (!i.passages.some((p) => p.provision_quote && verbatimIn(textOf(p), p.provision_quote))) out.add('provision-missing');
+  // The provision is verbatim on some page of the group. For each such page, amendment-markup spec
+  // §4 fails closed: a quote sitting inside a `[deleted: …]` fence is words the law REMOVES, never
+  // the provision; and a page that shows amending language ("is amended to read") from a source
+  // whose markup is not known-kept means any deletion could be silently missing from what the coder
+  // read as the provision.
+  const provisionPassages = i.passages.filter((p) => p.provision_quote && verbatimIn(textOf(p), p.provision_quote));
+  if (provisionPassages.length === 0) out.add('provision-missing');
+  for (const p of provisionPassages) {
+    const page = normalizeText(textOf(p));
+    const q = normalizeText(p.provision_quote!);
+    const start = page.indexOf(q);
+    if (start !== -1) {
+      const end = start + q.length;
+      if (fenceSpans(page).some(([fs, fe]) => start < fe && fs < end)) out.add('provision-deleted');
+    }
+    const { rules } = prof(p);
+    const markup = i.markupOf?.(p) ?? 'unknown';
+    if (AMENDED_TO_READ_RE.test(page) && rules.amendment_text !== 'final' && markup !== 'kept') out.add('amendment-markup-lost');
+  }
 
   // A vote must come from a vote page, with a word-bounded, readable and divided tally.
   if (i.passages.some((p) => p.record_kind === 'vote')) {

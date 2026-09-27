@@ -199,6 +199,9 @@ unevidenced chair.
     on the vote page, `provision_quote` on the page that prints the provision (usually the bill
     text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
     that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
 - `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
   one record must name the same instrument.
 

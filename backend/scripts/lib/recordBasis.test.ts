@@ -403,3 +403,61 @@ describe('Arizona rule kinds (word-before-reading, dash-ayes-nays)', () => {
     expect(parseTally('Passed 16-14-0-0-0')).toBeNull();
   });
 });
+
+// Amendment-markup spec (2026-09-27), task 3: CONFIRM fails closed when a provision comes from
+// amended text whose deletions were lost, or from inside a [deleted: …] fence.
+describe('amendment-markup CONFIRM (spec 2026-09-27 §4)', () => {
+  const instrument = 'HB 1296 (2022)';
+  const pageBase = 'HB 1296 (2022). Rep. Gowan. Section 1. (a) A person shall not carry a handgun without a license.';
+  const passage = (over: Partial<Passage> = {}): Passage => ({
+    snapshot_id: 'amp', v1_attribution: 'own-act', v2_relevance: 'on-question', v3_class: 'record',
+    v4_shape: 'chair-shaped', v5_time: 'in-term', date: null, instrument, record_kind: 'other-act',
+    actor_quote: 'Rep. Gowan', tally_quote: null,
+    provision_quote: 'a person shall not carry a handgun without a license', ...over,
+  });
+  const run = (page: string, rules: SourceRules, markup: 'kept' | 'none' | 'unknown', over: Partial<Passage> = {}) =>
+    checkRecordGroup({
+      passages: [passage(over)], snapshotText: new Map([['amp', page]]), fullName: 'David Gowan', chamber: null,
+      profileOf: () => ({ rules, chamber: null }), markupOf: () => markup,
+    }).findings;
+
+  it('a provision quoted from inside a [deleted: …] fence -> provision-deleted', () => {
+    const page = 'HB 1296 (2022). Rep. Gowan. Section 1. (a) [deleted: a person shall not carry a handgun without a license] A person may carry a handgun.';
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).toContain('provision-deleted');
+  });
+
+  it('an amending page from a marked source whose markup is unknown -> amendment-markup-lost', () => {
+    const page = `${pageBase} Section 1 is amended to read as follows.`;
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'unknown')).toContain('amendment-markup-lost');
+  });
+
+  it('the same amending page from an unmarked source -> amendment-markup-lost', () => {
+    const page = `${pageBase} Section 1 is amended to read as follows.`;
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'unmarked' }, 'unknown')).toContain('amendment-markup-lost');
+  });
+
+  it('the same amending page with markup known-kept -> no finding', () => {
+    const page = `${pageBase} Section 1 is amended to read as follows.`;
+    const f = run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept');
+    expect(f).not.toContain('amendment-markup-lost');
+    expect(f).not.toContain('provision-deleted');
+  });
+
+  it('a final source never fails closed, even on an amending page with unknown markup', () => {
+    const page = `${pageBase} Section 1 is amended to read as follows.`;
+    expect(run(page, { ...GENERIC_RULES, amendment_text: 'final' }, 'unknown')).not.toContain('amendment-markup-lost');
+  });
+
+  it('a plain page with no amending language passes regardless of markup', () => {
+    expect(run(pageBase, { ...GENERIC_RULES, amendment_text: 'marked' }, 'unknown')).toEqual([]);
+  });
+
+  it('no markupOf given at all defaults to unknown (fail closed)', () => {
+    const page = `${pageBase} Section 1 is amended to read as follows.`;
+    const f = checkRecordGroup({
+      passages: [passage()], snapshotText: new Map([['amp', page]]), fullName: 'David Gowan', chamber: null,
+      profileOf: () => ({ rules: { ...GENERIC_RULES, amendment_text: 'marked' }, chamber: null }),
+    }).findings;
+    expect(f).toContain('amendment-markup-lost');
+  });
+});

@@ -1,6 +1,6 @@
 ---
 profile: in-iga-roll-call
-version: 1
+version: 2
 scope: state:IN
 body: legislature
 match:
@@ -11,6 +11,7 @@ rules:
   vote_block: aye-count
   chamber: page-header
   name_format: surname-initial
+  amendment_text: marked
 seat_titles:
   Senator: upper
   State Senator: upper
@@ -52,3 +53,12 @@ download (it shows a save dialog); read the saved file's text.
   `page-header`). The `_S` / `_H` file suffix agrees with it.
 - Shared surnames print with an initial after them (`Walker G`, `Walker K`) — rule `surname-initial`.
 - The PDF text splits some words (`Y EA`, `N AY`); copy the words as the text shows them.
+
+**Amendment markup (`amendment_text: marked`):** `match.url_prefixes` is `/pdf-documents/`, which also
+covers an Indiana **bill-text** PDF (the enrolled/engrossed act), not only a roll call — a roll call has
+no amending language to lose, but a bill-text PDF read from the same prefix does. Read it with
+`pdf-snapshot.ts`, not a plain fetch: it detects the drawn strike-through rectangles and fences each
+deleted word as `[deleted: …]` (added text is bold in the PDF and needs no fence — it is the law). A
+plain-text extraction of the same PDF has no strike detection at all and reads as `unmarked`; CONFIRM
+fails closed (`amendment-markup-lost`) on either an `unmarked` reading or a `marked` one whose snapshot
+shows no fence, when the page says "is amended to read."

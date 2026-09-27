@@ -55,6 +55,9 @@ file and the key.
 | | `surname-initial` | accepted; today behaves as `surname` (no separate code path yet) |
 | | `last-first` | accepted; today behaves as `surname` (no separate code path yet) |
 | | `full-name` | "Councilmember Jane Roe" — the full name is required |
+| `amendment_text` | `final` (default) | the page prints the law as it will read — no amendment markup to lose (CA chaptered text) |
+| | `marked` | deletions are recoverable from the page's own markup (AZ HTML strike-through; an IN bill-text PDF read with `pdf-snapshot.ts`) |
+| | `unmarked` | deletions are NOT recoverable (a PDF read without strike detection, or a plain-text copy) — CONFIRM fails closed on an amending page (`amendment-markup-lost`, spec 2026-09-27-amendment-markup-design.md §4) |
 
 ### Planned, not yet built
 

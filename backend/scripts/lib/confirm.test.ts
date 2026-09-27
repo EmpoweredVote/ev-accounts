@@ -173,3 +173,51 @@ controls:
     expect(f).toContain('no-source-profile');
   });
 });
+
+// Amendment-markup spec (2026-09-27), task 3: confirmRow threads snapshotMarkup through to
+// checkRecordGroup's markupOf, so a record's provision quoted from an amending page with no known-kept
+// markup fails closed even at the confirmRow entry point (not just inside recordBasis directly).
+describe('confirmRow: snapshotMarkup wiring (amendment-markup spec §4)', () => {
+  const instrument = 'H.B. 11 (2022)';
+  const amendingText = 'H.B. 11. Utah Senate President J. Stuart Adams led the override. Section 1 is amended to read as follows. Requires students to compete on teams matching their sex at birth.';
+  const passage = P({ instrument });
+
+  it('a marked source with unknown snapshot markup on an amending page -> amendment-markup-lost', () => {
+    const f = confirmRow({
+      seat, restsOnPassages: [passage], snapshotText: new Map([['s1', amendingText]]), sourceKind: kinds,
+      rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1',
+      snapshotUrl: new Map([['s1', 'https://le.utah.gov/bills/hb11']]),
+      profiles: [parseSourceProfile(
+        '---\nprofile: test-hb11\nversion: 1\nscope: state:UT\nbody: legislature\nmatch:\n  url_prefixes:\n    - https://le.utah.gov/bills/\npage_kind: bill-text\nrules:\n  vote_block: whole-page\n  chamber: none\n  name_format: surname\n  amendment_text: marked\nseat_titles:\n  State Senator: upper\ncontrols:\n  - batch: b\n    snapshot: s1\n    person: J. Stuart Adams\n    office_title: State Senator\n    instrument: "H.B. 11 (2022)"\n    record_kind: other-act\n    actor_quote: "J. Stuart Adams led the override"\n    tally_quote: null\n    provision_quote: null\n    expect: pass\n---\nbody\n',
+        'test-hb11.md',
+      )],
+      snapshotMarkup: new Map([['s1', 'unknown']]),
+    });
+    expect(f).toContain('amendment-markup-lost');
+  });
+
+  it('the same setup with the snapshot known-kept -> no amendment-markup-lost', () => {
+    const f = confirmRow({
+      seat, restsOnPassages: [passage], snapshotText: new Map([['s1', amendingText]]), sourceKind: kinds,
+      rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1',
+      snapshotUrl: new Map([['s1', 'https://le.utah.gov/bills/hb11']]),
+      profiles: [parseSourceProfile(
+        '---\nprofile: test-hb11\nversion: 1\nscope: state:UT\nbody: legislature\nmatch:\n  url_prefixes:\n    - https://le.utah.gov/bills/\npage_kind: bill-text\nrules:\n  vote_block: whole-page\n  chamber: none\n  name_format: surname\n  amendment_text: marked\nseat_titles:\n  State Senator: upper\ncontrols:\n  - batch: b\n    snapshot: s1\n    person: J. Stuart Adams\n    office_title: State Senator\n    instrument: "H.B. 11 (2022)"\n    record_kind: other-act\n    actor_quote: "J. Stuart Adams led the override"\n    tally_quote: null\n    provision_quote: null\n    expect: pass\n---\nbody\n',
+        'test-hb11.md',
+      )],
+      snapshotMarkup: new Map([['s1', 'kept']]),
+    });
+    expect(f).not.toContain('amendment-markup-lost');
+  });
+
+  it('no snapshotMarkup passed at all defaults to unknown (fail closed)', () => {
+    const f = confirmRow({
+      seat, restsOnPassages: [passage], snapshotText: new Map([['s1', amendingText]]), sourceKind: kinds,
+      rowServedRevisionId: 'r1', bundleServedRevisionId: 'r1',
+    });
+    // No profiles given here -> GENERIC_RULES (amendment_text: 'final') so no finding. Wiring only
+    // matters once a `marked`/`unmarked` profile is in play (covered by the two tests above); this
+    // test confirms the absent map does not crash confirmRow and does not itself add the finding.
+    expect(f).not.toContain('amendment-markup-lost');
+  });
+});
