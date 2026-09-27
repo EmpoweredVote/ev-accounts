@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import fixture from './__fixtures__/in-hea1296-2022-p16.geometry.json';
-import { markedTextFromGeometry, type PageGeometry, type PdfTextItem } from './pdfMarkedText.js';
+import p29Line from './__fixtures__/in-hea1296-2022-p29-struck-line.geometry.json';
+import p17Line from './__fixtures__/in-hea1296-2022-p17-struck-line.geometry.json';
+import {
+  markedTextFromGeometry, markedTextFromGeometryWithStats, type PageGeometry, type PdfTextItem,
+} from './pdfMarkedText.js';
 
 const item = (str: string, x: number, width: number, y = 100, height = 10): PdfTextItem =>
   ({ str, x, y, width, height, fontName: 'f1' });
@@ -15,6 +19,22 @@ describe('markedTextFromGeometry — Indiana HEA 1296 (2022) page 16', () => {
   it('keeps the unstruck words that follow as law', () => {
     expect(text).toContain('A person may carry a handgun');
     expect(text).not.toContain('[deleted: A person');
+  });
+});
+
+describe('markedTextFromGeometry — fully struck lines (regression: short words leaked as law)', () => {
+  // Real geometry: one rect per word. Character-count placement left "of" / "a" unfenced between fences.
+  it.each([
+    ['p29', p29Line, 'enforcement of any provision of this chapter, it is not necessary to'],
+    ['p17', p17Line, 'battery under IC 35-42-2-1.3 may not possess or carry a handgun.'],
+  ])('%s: every word is inside ONE fence', (_p, geo, line) => {
+    const g = geo as PageGeometry;
+    expect(g.rects.length).toBe(line.split(' ').length);
+    const r = markedTextFromGeometryWithStats(g);
+    expect(r.text).toBe(`[deleted: ${line}]`);
+    expect(r.text).not.toMatch(/\] (a|of) \[deleted:/);
+    expect(r.fences).toBe(1);
+    expect(r.widthFallbacks).toBe(0);
   });
 });
 
@@ -49,9 +69,37 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     expect(markedTextFromGeometry(g)).toBe('keep [deleted: one two] end');
   });
 
-  it('a rect covering under 60 % of a word does not delete it', () => {
-    const g: PageGeometry = { items: [item('abcdefghij', 0, 100)], rects: [{ x0: 0, x1: 50, y0: 102.8, y1: 103.2 }] };
-    expect(markedTextFromGeometry(g)).toBe('abcdefghij');
+  it('a word that receives a rect is struck even when coverage is under 60 %', () => {
+    const g: PageGeometry = { items: [item('abcdefghij', 0, 100)], rects: [{ x0: 0, x1: 20, y0: 102.8, y1: 103.2 }] };
+    expect(markedTextFromGeometry(g)).toBe('[deleted: abcdefghij]');
+  });
+
+  it('each rect goes to the word it overlaps most — a neighbour it grazes stays law', () => {
+    // "aaaa bbbb": aaaa = x 0..40, bbbb = x 50..90. The rect covers aaaa and grazes bbbb by 2 pt.
+    const g: PageGeometry = { items: [item('aaaa bbbb', 0, 90)], rects: [{ x0: 0, x1: 52, y0: 102.8, y1: 103.2 }] };
+    expect(markedTextFromGeometry(g)).toBe('[deleted: aaaa] bbbb');
+  });
+
+  it('fail closed: a word 30–60 % covered with no rect of its own is fenced and counted ambiguous', () => {
+    // bbbb = x 50..90; the rect is assigned to aaaa (overlap 40) but covers 16 of bbbb's 40 pt (40 %).
+    const g: PageGeometry = { items: [item('aaaa bbbb', 0, 90)], rects: [{ x0: 0, x1: 66, y0: 102.8, y1: 103.2 }] };
+    const r = markedTextFromGeometryWithStats(g);
+    expect(r.text).toBe('[deleted: aaaa bbbb]');
+    expect(r.ambiguous).toBe(1);
+  });
+
+  it('places words by glyph width when the font gives it, else counts a fallback', () => {
+    // "WWW i": glyph widths W=1000, space=250, i=250 → WWW = x 0..3000/3500 × 70 = 0..60, i = 65..70.
+    // By character count WWW would be x 0..42 and "i" 56..70, and the rect over x 58..70 would miss WWW.
+    const it0 = item('WWW i', 0, 70);
+    const rects = [{ x0: 58, x1: 70, y0: 102.8, y1: 103.2 }];
+    const glyph = markedTextFromGeometryWithStats({ items: [it0], rects, fontWidths: { f1: { W: 1000, ' ': 250, i: 250 } } });
+    expect(glyph.text).toBe('WWW [deleted: i]');
+    expect(glyph.widthFallbacks).toBe(0);
+    const noWidths = markedTextFromGeometryWithStats({ items: [it0], rects });
+    expect(noWidths.widthFallbacks).toBe(1);
+    const partial = markedTextFromGeometryWithStats({ items: [it0], rects, fontWidths: { f1: { W: 1000 } } });
+    expect(partial.widthFallbacks).toBe(1);
   });
 
   it('a rect 1.5 pt or taller is not a strike', () => {
@@ -69,5 +117,7 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     const out = markedTextFromGeometry(g);
     expect(out).toContain('Except as provided in subsection (c), A person may carry a handgun');
     expect(out).not.toContain('[deleted:');
+    const r = markedTextFromGeometryWithStats(g);
+    expect([r.fences, r.ambiguous]).toEqual([0, 0]);
   });
 });

@@ -9,16 +9,24 @@
  * - A strike rectangle is a FILLED path whose height is < 1.5 pt.
  * - It strikes a text item when its centre lies strictly above the item's baseline and below
  *   baseline + 0.6 × the item's height. At or below the baseline it is an underline — ignored.
- * - A word is deleted when ≥ 60 % of its x-range is covered by the union of such rectangles.
+ * - A word is deleted when ≥ 60 % of its x-range is covered by the union of such rectangles, OR when a
+ *   strike rectangle is assigned to it (each rect goes to the word it overlaps most — Indiana draws one
+ *   rect per struck word).
+ * - FAIL CLOSED: a word 30–60 % covered with no rect assigned is doubt, and is fenced too (counted as
+ *   `ambiguous`). Doubtful text is never presented as law.
  * - Adjacent deleted words (across items and across line ends) merge into ONE fence.
  *
- * Text items are mostly whole lines, so a word's x-range inside an item is estimated from its share of
- * the item's characters.
+ * Text items are mostly whole lines, so a word's x-range inside an item is placed by its share of the
+ * item's total glyph width (widths from the operator list's showText glyphs, per font loadedName). An item
+ * with any character of unknown width falls back to character-count share, counted as `widthFallbacks`.
  */
 
 export interface PdfTextItem { str: string; x: number; y: number; width: number; height: number; fontName: string }
 export interface PdfRect { x0: number; x1: number; y0: number; y1: number }   // page coordinates, y up
-export interface PageGeometry { items: PdfTextItem[]; rects: PdfRect[] }
+/** Glyph advance widths (1/1000 em) per font loadedName (= PdfTextItem.fontName), keyed by unicode. */
+export type FontWidths = Record<string, Record<string, number>>;
+export interface PageGeometry { items: PdfTextItem[]; rects: PdfRect[]; fontWidths?: FontWidths }
+export interface MarkedTextStats { text: string; fences: number; ambiguous: number; widthFallbacks: number }
 
 /** Strike rectangles are thinner than this (pt). */
 export const MAX_STRIKE_HEIGHT = 1.5;
@@ -26,10 +34,12 @@ export const MAX_STRIKE_HEIGHT = 1.5;
 export const STRIKE_BAND = 0.6;
 /** Share of a word's width that strikes must cover for the word to be deleted. */
 export const MIN_COVERAGE = 0.6;
+/** Coverage from here up to MIN_COVERAGE, with no strike assigned, is DOUBT — fenced (fail closed). */
+export const AMBIGUOUS_COVERAGE = 0.3;
 /** Items whose baselines differ by at most this (pt) share a line. */
 const LINE_TOLERANCE = 1;
 
-interface Word { text: string; deleted: boolean }
+interface Word { text: string; lo: number; hi: number; item: PdfTextItem; struck: boolean; deleted: boolean }
 
 function coveredLength(lo: number, hi: number, spans: Array<[number, number]>): number {
   const clipped = spans
@@ -52,36 +62,46 @@ function coveredLength(lo: number, hi: number, spans: Array<[number, number]>): 
   return total;
 }
 
-function strikesFor(item: PdfTextItem, rects: PdfRect[]): Array<[number, number]> {
-  const top = item.y + STRIKE_BAND * item.height;
-  return rects
-    .filter((r) => {
-      if (r.y1 - r.y0 >= MAX_STRIKE_HEIGHT) return false;
-      const c = (r.y0 + r.y1) / 2;
-      return c > item.y && c < top;
-    })
-    .map((r) => [Math.min(r.x0, r.x1), Math.max(r.x0, r.x1)] as [number, number]);
+/** Does this rect sit in the strike band of this item (thin, centre strictly above baseline, below baseline + 0.6 h)? */
+function inStrikeBand(r: PdfRect, item: PdfTextItem): boolean {
+  if (r.y1 - r.y0 >= MAX_STRIKE_HEIGHT) return false;
+  const c = (r.y0 + r.y1) / 2;
+  return c > item.y && c < item.y + STRIKE_BAND * item.height;
 }
 
-function itemWords(item: PdfTextItem, rects: PdfRect[]): Word[] {
-  const len = item.str.length;
-  if (len === 0) return [];
-  const spans = strikesFor(item, rects);
+const span = (r: PdfRect): [number, number] => [Math.min(r.x0, r.x1), Math.max(r.x0, r.x1)];
+
+/**
+ * Split an item into words with x-ranges. Positions come from the font's glyph widths (share of the
+ * item's total glyph width); if any character of the item has no known width, the whole item falls back
+ * to character-count share and `fallback` is true.
+ */
+function itemWords(item: PdfTextItem, fontWidths: FontWidths | undefined): { words: Word[]; fallback: boolean } {
+  const chars = [...item.str];
+  if (chars.length === 0) return { words: [], fallback: false };
+  const map = fontWidths?.[item.fontName];
+  let adv: number[] | null = map ? chars.map((ch) => map[ch]) : null;
+  if (adv && adv.some((w) => typeof w !== 'number' || !Number.isFinite(w) || w < 0)) adv = null;
+  const fallback = adv === null;
+  const widths = adv ?? chars.map(() => 1);
+  const total = widths.reduce((a, b) => a + b, 0);
+  const cum = [0];
+  for (const w of widths) cum.push(cum[cum.length - 1] + w);
+  const at = (k: number) => item.x + (total > 0 ? cum[k] / total : k / chars.length) * item.width;
+
   const words: Word[] = [];
-  for (const m of item.str.matchAll(/\S+/g)) {
-    const start = m.index ?? 0;
-    const end = start + m[0].length;
-    const lo = item.x + (start / len) * item.width;
-    const hi = item.x + (end / len) * item.width;
-    const w = hi - lo;
-    const deleted = spans.length > 0 && w > 0 && coveredLength(lo, hi, spans) >= MIN_COVERAGE * w;
-    words.push({ text: m[0], deleted });
+  let k = 0;
+  while (k < chars.length) {
+    if (/\s/.test(chars[k])) { k++; continue; }
+    const start = k;
+    while (k < chars.length && !/\s/.test(chars[k])) k++;
+    words.push({ text: chars.slice(start, k).join(''), lo: at(start), hi: at(k), item, struck: false, deleted: false });
   }
-  return words;
+  return { words, fallback };
 }
 
-/** Pure: geometry → page text with [deleted: …] fences. Items in reading order (top→bottom, left→right). */
-export function markedTextFromGeometry(g: PageGeometry): string {
+/** Pure, with counts: geometry → page text with [deleted: …] fences. */
+export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStats {
   const items = g.items.filter((i) => i.str.trim() !== '');
   const sorted = [...items].sort((a, b) => b.y - a.y || a.x - b.x);
   const lines: PdfTextItem[][] = [];
@@ -95,16 +115,49 @@ export function markedTextFromGeometry(g: PageGeometry): string {
     }
   }
 
+  let widthFallbacks = 0;
+  let ambiguous = 0;
   const words: Word[] = [];
   for (const line of lines) {
     line.sort((a, b) => a.x - b.x);
-    for (const it of line) words.push(...itemWords(it, g.rects));
+    const lineWords: Word[] = [];
+    for (const it of line) {
+      const r = itemWords(it, g.fontWidths);
+      if (r.fallback) widthFallbacks++;
+      lineWords.push(...r.words);
+    }
+    // Signal 2: Indiana draws one rect per struck word — give each strike rect to the word it overlaps most.
+    for (const rect of g.rects) {
+      const [a, b] = span(rect);
+      let best: Word | null = null;
+      let bestOverlap = 0;
+      for (const w of lineWords) {
+        if (!inStrikeBand(rect, w.item)) continue;
+        const o = Math.min(b, w.hi) - Math.max(a, w.lo);
+        if (o > bestOverlap) { bestOverlap = o; best = w; }
+      }
+      if (best) best.struck = true;
+    }
+    // Signal 1: coverage by the union of strike rects in the word's item band.
+    for (const w of lineWords) {
+      const width = w.hi - w.lo;
+      const spans = g.rects.filter((r) => inStrikeBand(r, w.item)).map(span);
+      const cover = spans.length > 0 && width > 0 ? coveredLength(w.lo, w.hi, spans) / width : 0;
+      if (cover >= MIN_COVERAGE || w.struck) {
+        w.deleted = true;
+      } else if (cover >= AMBIGUOUS_COVERAGE) {
+        w.deleted = true; // fail closed: doubtful text is never presented as law
+        ambiguous++;
+      }
+    }
+    words.push(...lineWords);
   }
 
   const out: string[] = [];
   let run: string[] = [];
+  let fences = 0;
   const flush = () => {
-    if (run.length > 0) out.push(`[deleted: ${run.join(' ')}]`);
+    if (run.length > 0) { out.push(`[deleted: ${run.join(' ')}]`); fences++; }
     run = [];
   };
   for (const w of words) {
@@ -116,7 +169,12 @@ export function markedTextFromGeometry(g: PageGeometry): string {
     }
   }
   flush();
-  return out.join(' ');
+  return { text: out.join(' '), fences, ambiguous, widthFallbacks };
+}
+
+/** Pure: geometry → page text with [deleted: …] fences. Items in reading order (top→bottom, left→right). */
+export function markedTextFromGeometry(g: PageGeometry): string {
+  return markedTextFromGeometryWithStats(g).text;
 }
 
 // ── pdfjs-dist wrapper ────────────────────────────────────────────────────────────────────────────
@@ -202,13 +260,27 @@ export async function pdfGeometry(data: Uint8Array): Promise<PageGeometry[]> {
 
       const ol = await page.getOperatorList();
       const rects: PdfRect[] = [];
+      const fontWidths: FontWidths = {};
+      let font = '';
       let ctm: Matrix = [...IDENTITY];
       const stack: Matrix[] = [];
       for (let i = 0; i < ol.fnArray.length; i++) {
         const fn = ol.fnArray[i];
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const args: any = ol.argsArray[i];
-        if (fn === OPS.save) {
+        if (fn === OPS.setFont) {
+          font = String(args?.[0] ?? '');
+          fontWidths[font] ??= {};
+        } else if (fn === OPS.showText && Array.isArray(args?.[0])) {
+          const map = (fontWidths[font] ??= {});
+          for (const glyph of args[0]) {
+            if (glyph && typeof glyph === 'object' && typeof glyph.unicode === 'string' && typeof glyph.width === 'number') {
+              const cps = [...glyph.unicode];
+              if (cps.length === 1) map[glyph.unicode] = map[glyph.unicode] ?? glyph.width;
+              else for (const cp of cps) map[cp] = map[cp] ?? glyph.width / cps.length; // ligature: split evenly
+            }
+          }
+        } else if (fn === OPS.save) {
           stack.push(ctm);
         } else if (fn === OPS.restore) {
           ctm = stack.pop() ?? [...IDENTITY];
@@ -240,7 +312,7 @@ export async function pdfGeometry(data: Uint8Array): Promise<PageGeometry[]> {
           if (r.y1 - r.y0 < MAX_STRIKE_HEIGHT) rects.push(r);
         }
       }
-      pages.push({ items, rects });
+      pages.push({ items, rects, fontWidths });
       page.cleanup();
     }
   } finally {
@@ -249,10 +321,18 @@ export async function pdfGeometry(data: Uint8Array): Promise<PageGeometry[]> {
   return pages;
 }
 
+/** Whole document with counts: fences, ambiguous words (fenced, fail closed), items placed by character count. */
+export async function pdfMarkedTextWithStats(data: Uint8Array): Promise<MarkedTextStats> {
+  const pages = (await pdfGeometry(data)).map(markedTextFromGeometryWithStats);
+  return {
+    text: pages.map((p) => p.text.replace(/\s+/g, ' ').trim()).join('\n'),
+    fences: pages.reduce((n, p) => n + p.fences, 0),
+    ambiguous: pages.reduce((n, p) => n + p.ambiguous, 0),
+    widthFallbacks: pages.reduce((n, p) => n + p.widthFallbacks, 0),
+  };
+}
+
 /** Whole document: pages' marked text joined with '\n', whitespace collapsed per line. */
 export async function pdfMarkedText(data: Uint8Array): Promise<string> {
-  const pages = await pdfGeometry(data);
-  return pages
-    .map((g) => markedTextFromGeometry(g).replace(/\s+/g, ' ').trim())
-    .join('\n');
+  return (await pdfMarkedTextWithStats(data)).text;
 }
