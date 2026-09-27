@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "office_id": "bcdc8c0e-6ac0-497d-91d5-422b030dbc79",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "06da728d-29cb-5b28-bbf7-2dbfee297a47",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-04-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": null,
+          "note": "Vote detail shows Stahl Hamilton voted Y on HB2677's House Third Reading, which passed 32-28.",
+          "record_kind": "vote",
+          "actor_quote": "STAHL HAMILTON Y",
+          "tally_quote": "Passed 32-28-0-0-0"
+        },
+        {
+          "snapshot_id": "29b90958-554e-57bd-8cd2-71f69408531f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page lists Stahl Hamilton as Prime sponsor of HB2677, which later passed both chambers and was signed by the Governor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Stahl Hamilton (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6a9fb5ce-b196-5a3e-8ab0-99f914b05f56",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": "Section 1. Repeal Section 13-3603, Arizona Revised Statutes, is repealed.",
+          "note": "Enacted chapter text's sole operative section repeals A.R.S. 13-3603 and states nothing about what abortion regulation now applies.",
+          "record_kind": "other-act",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Stahl Hamilton was Prime sponsor of HB2677 (2024) and voted Y on its House Third Reading, and the bill was signed into law; but its only operative text repeals A.R.S. 13-3603 without stating any gestational limit or exception scheme, so it shows she opposed the repealed ban without separating rungs 'legal at every stage of pregnancy, with no time limit,' 'legal through the second trimester,' or 'first trimester only.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -9,6 +9,7 @@ match:
     - https://iga.in.gov/legislative/2020/bills/
     - https://iga.in.gov/legislative/2021/bills/
     - https://iga.in.gov/legislative/2022/bills/
+    - https://iga.in.gov/legislative/2022ss1/bills/
     - https://iga.in.gov/legislative/2023/bills/
     - https://iga.in.gov/legislative/2024/bills/
     - https://iga.in.gov/legislative/2025/bills/
@@ -58,6 +59,24 @@ controls:
     instrument: HB 1296 (2022)
     record_kind: author
     actor_quote: "Authored by: Rep. Ben Smaltz."
+    tally_quote: null
+    expect: chamber-not-evidenced
+  - batch: 2026-09-27-shadow-glick
+    snapshot: 6b0faac4
+    person: Susan Glick
+    office_title: Senator
+    instrument: SB 1(ss) (2022 First Special Session)
+    record_kind: author
+    actor_quote: "Authored by: Sen. Susan Glick."
+    tally_quote: null
+    expect: pass
+  - batch: 2026-09-27-shadow-glick
+    snapshot: 6b0faac4
+    person: Susan Glick
+    office_title: Representative
+    instrument: SB 1(ss) (2022 First Special Session)
+    record_kind: author
+    actor_quote: "Authored by: Sen. Susan Glick."
     tally_quote: null
     expect: chamber-not-evidenced
 ---

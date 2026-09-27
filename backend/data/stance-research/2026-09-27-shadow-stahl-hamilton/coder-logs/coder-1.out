@@ -1,0 +1,15 @@
+Wrote `coder-1.json`.
+
+**Row: Stephanie Stahl Hamilton / abortion → BLANK `direction-only`**
+
+All three snapshots are HB2677 (2024), one instrument group:
+
+| snapshot | V1 | V3 / kind | actor / tally / provision |
+|---|---|---|---|
+| bill overview | own-act | record / sponsor | `Stahl Hamilton (Prime)` |
+| vote page | own-act | record / vote | `STAHL HAMILTON Y`, `Passed 32-28-0-0-0` |
+| chapter text | own-act | record / vote | `Section 13-3603, Arizona Revised Statutes, is repealed.` |
+
+The operative section is a bare repeal — V4.1 says the operative section governs, not the short title ("abortion ban; repeal"). The repeal shows she is against the two ban rungs, but it enacts no gestational limit of its own, and the repealed statute's text isn't in any snapshot. That leaves rungs 1, 2 and 3 undistinguished, so `direction-only` rather than a chair. `rests_on` is empty; the vote is 32–28, so near-unanimity isn't the blocker — the missing evidence is what limit she'd set.
+
+Three `needs_source` entries: the pre-repeal text of A.R.S. 13-3603, the gestational limit left in force afterward plus her act on it, and her own in-cycle answer to a gestational-limit question.

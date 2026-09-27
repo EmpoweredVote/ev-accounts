@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "office_id": "bcdc8c0e-6ac0-497d-91d5-422b030dbc79",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6a9fb5ce-b196-5a3e-8ab0-99f914b05f56",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": "Section 1. Repeal Section 13-3603, Arizona Revised Statutes, is repealed.",
+          "note": "Signed chapter law repealing the near-total abortion ban; the repeal itself states no gestational limit.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "29b90958-554e-57bd-8cd2-71f69408531f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page names Stahl Hamilton as prime sponsor of the repeal.",
+          "record_kind": "sponsor",
+          "actor_quote": "Stahl Hamilton (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "06da728d-29cb-5b28-bbf7-2dbfee297a47",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-04-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2677 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows her Yea vote on final passage.",
+          "record_kind": "vote",
+          "actor_quote": "STAHL HAMILTON Y",
+          "tally_quote": "Passed 32-28-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Stahl Hamilton prime-sponsored HB2677 (2024) and voted Yea on House Third Reading (STAHL HAMILTON Y, Passed 32-28-0-0-0); the bill's operative text only repeals the near-total ban ('Repeal Section 13-3603, Arizona Revised Statutes, is repealed.'). This shows opposition to a total ban with no exceptions but names no gestational limit, so it cannot separate rungs 1 through 4 ('keep abortion legal at every stage' through 'allow abortion during the first trimester... only to protect the mother's health').",
+      "needs_source": [
+        "Any statement or record from Stahl Hamilton tying this repeal vote to a specific gestational-limit position (e.g., a floor speech or press release naming a trimester standard), needed to distinguish rungs 1-4"
+      ],
+      "quotes": []
+    }
+  ]
+}

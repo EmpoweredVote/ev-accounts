@@ -45,6 +45,21 @@ export function earliestStatementDate(seat: SeatContext): string | null {
 
 /** A coder date may be YYYY, YYYY-MM or YYYY-MM-DD; compare on its earliest possible day. */
 const floorDate = (d: string): string => (d.length === 4 ? `${d}-01-01` : d.length === 7 ? `${d}-01` : d.slice(0, 10));
+/**
+ * Stance-program §4.10: "if the dates cannot settle it → review". A term start known only to its
+ * year (or month) still settles a record from a LATER year (or month) — Glick, seated 2010 (year),
+ * SB 1(ss) on 2022-08-05 — and a record from an EARLIER one; only the same year (month), or an
+ * unknown start, cannot be settled. `d` is the record's floored date.
+ */
+function recordVsTermStart(d: string, start: string | null | undefined, precision: string | null | undefined): 'in' | 'before' | 'unsettled' {
+  if (!start) return 'unsettled';
+  const cut = precision === 'day' ? 10 : precision === 'month' ? 7 : precision === 'year' ? 4 : 0;
+  if (cut === 0) return 'unsettled';
+  const a = d.slice(0, cut), b = start.slice(0, cut);
+  if (a > b) return 'in';
+  if (a < b) return 'before';
+  return cut === 10 ? 'in' : 'unsettled';
+}
 
 /** Extract lastName from full_name, dropping common suffixes like Jr, Sr, II, III, IV. */
 const extractLastName = (fullName: string): string => {
@@ -130,8 +145,9 @@ export function confirmRowDetailed(i: ConfirmInput): { findings: ConfirmFinding[
       if (i.seat.mode === 'candidate') {
         out.add('record-not-this-office');
       } else if (i.seat.mode === 'seated') {
-        if (!i.seat.term_start || i.seat.start_precision !== 'day') out.add('dates-imprecise');
-        else if (d < i.seat.term_start) out.add('record-before-term');
+        const v = recordVsTermStart(d, i.seat.term_start, i.seat.start_precision);
+        if (v === 'unsettled') out.add('dates-imprecise');
+        else if (v === 'before') out.add('record-before-term');
       }
     }
   }

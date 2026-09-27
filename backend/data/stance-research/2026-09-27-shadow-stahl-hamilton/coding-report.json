@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "2405145c-f082-47f2-861d-d4efd19e8162|bcdc8c0e-6ac0-497d-91d5-422b030dbc79|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Text of section 13-3603, Arizona Revised Statutes, as it stood before HB2677 (2024), to establish what the repealed ban actually prohibited",
+          "Arizona statute or record showing what gestational limit remained in force after HB2677 (2024), and Stahl Hamilton's act on it",
+          "Stahl Hamilton's own words in answer to a gestational-limit question (questionnaire, debate answer, or first-person issue page) dating from her current term or the campaign that seated her",
+          "Any statement or record from Stahl Hamilton tying this repeal vote to a specific gestational-limit position (e.g., a floor speech or press release naming a trimester standard), needed to distinguish rungs 1-4"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "2405145c-f082-47f2-861d-d4efd19e8162|bcdc8c0e-6ac0-497d-91d5-422b030dbc79|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Text of section 13-3603, Arizona Revised Statutes, as it stood before HB2677 (2024), to establish what the repealed ban actually prohibited",
+        "Arizona statute or record showing what gestational limit remained in force after HB2677 (2024), and Stahl Hamilton's act on it",
+        "Stahl Hamilton's own words in answer to a gestational-limit question (questionnaire, debate answer, or first-person issue page) dating from her current term or the campaign that seated her",
+        "Any statement or record from Stahl Hamilton tying this repeal vote to a specific gestational-limit position (e.g., a floor speech or press release naming a trimester standard), needed to distinguish rungs 1-4"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

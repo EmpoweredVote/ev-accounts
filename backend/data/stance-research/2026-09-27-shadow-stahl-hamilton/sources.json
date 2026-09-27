@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-27-shadow-stahl-hamilton",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677",
+      "source_kind": "public-record",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "office_id": "bcdc8c0e-6ac0-497d-91d5-422b030dbc79",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2677-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#house-third",
+      "source_kind": "public-record",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "office_id": "bcdc8c0e-6ac0-497d-91d5-422b030dbc79",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2677-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0181.htm",
+      "source_kind": "public-record",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162",
+      "office_id": "bcdc8c0e-6ac0-497d-91d5-422b030dbc79",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}
