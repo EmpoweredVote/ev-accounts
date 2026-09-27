@@ -626,14 +626,76 @@ the 2026 resignation record — **so the guard's exact-pair test would not even 
 hold no office, so they are **UPDATE + a new `office_terms` row**, not an INSERT — and
 `is_incumbent` must be set to `true` on them explicitly, the same rule that applies to an insert.
 
+## ▶ KS-2 MIGRATIONS WRITTEN AND DRY-RUN, 2026-09-27 — NOT YET APPLIED
+
+Slots came from the allocator, never counted: **`CC_0156`** (structure) and **`CC_0157`**
+(occupancy), both reserved to chris@empowered.vote before a line was written, and each file named
+its slot immediately.
+
+| | `CC_0156` structure | `CC_0157` occupancy |
+| --- | --- | --- |
+| creates | 2 chambers + **165 offices** (125 Representative, 40 Senator) | **161 people**, reuses **4**, writes **165 terms** |
+| `staggered_term` | **false for BOTH** — a Kansas fact, not a copy of Kentucky's shape | — |
+| precision | — | **163 `day` · 2 `month` · 0 year · 0 unknown** |
+| `how_started` | — | 157 `elected` · 8 `appointed` |
+
+🟢 **`staggered_term = false` for the Senate is sourced**: all 40 were elected in November 2024 and
+all 40 took the oath together — *"The roll was called from the certified list of members-elect, with
+forty members-elect present"*. Kansas does not stagger its Senate; Kentucky does, and copying
+Kentucky's row would have been wrong.
+
+### ✅ Dry-run against production, ending in ROLLBACK — and the rollback was confirmed
+
+Both migrations ran in **one transaction** via `psql` (the only real dry-run — `ev_api` cannot do
+DDL). Inside the transaction:
+
+| | baseline | inside the transaction | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,183 | 89,344 | **+161 exact** |
+| `offices` | 9,724 | 9,889 | **+165 exact** |
+| `office_terms` | 9,660 | 9,825 | **+165 exact** |
+| the 4 reused rows reading `is_incumbent` | 0 | **4** | — |
+
+Both gates printed their OK notice. **After `ROLLBACK`, every one of those eight figures returned to
+the baseline exactly** — the rollback was verified to have reverted, not assumed.
+
+### ✅ SIX GATES WATCHED FAILING, EACH FOR ITS OWN REASON
+
+| Tamper | Gate that fired |
+| --- | --- |
+| one office removed | `expected 125 House offices` |
+| an office placed on a **COUNTY** district | `1 legislative office(s) landed on a non-legislative district` |
+| one term deleted | `expected 165 terms` |
+| a reused row left `is_incumbent = false` | `1 seated Kansas legislator(s) are not is_incumbent/is_active` |
+| one person seated in two districts | `1 person(s) hold more than one Kansas legislative seat` |
+| a term rewritten as `year` | `1 year and 0 unknown precision term(s)` |
+
+🔴 **TWO TAMPERS FIRST TRIPPED AN EARLIER GATE, WHICH IS THE KNOWN ORDERING PROBLEM.** Adding an
+office also raises the Senate **count**, and rewriting any row as `year` necessarily drops an earlier
+**precision count** — so in those two runs the blocking gate was relaxed (Senate 40→41, day 163→162)
+**for that run only**, to reach the gate actually under test. KY-2, KY-3 and KY-4 each hit this.
+
+🟢 **The occupancy gate counts `och.politician_id`, never `count(*)`** — `office_current_holder`
+LEFT JOINs from `offices`, so a vacancy is a NULL `politician_id` and `count(*)` would pass
+vacuously. That trap is documented in the gate itself.
+
+### Checks
+
+✅ `check:migrations` — 2 added, tree scan clean · ✅ `check:reservations` — each in a slot **its own
+author** reserved · ✅ `check:occupancy` — *"every politicians INSERT names is_incumbent"*.
+
+⚠ **Nothing has been applied.** Production is unchanged: 0 Kansas legislative offices, 0 terms.
+
 ### What stage 2 still owes
 
 1. ✅ **A term-start source — DONE.** The Journals give 162 of 165 to the day.
 2. ✅ **Every arrival is dated** — 163 to the day, 2 at `month`. Nothing is open here.
 3. ✅ **Duplicate-name checks — DONE.** 6 collisions: 4 the same person, 2 genuinely different.
-4. ▶ **The two migrations** — structure (chambers + 165 offices) and occupancy (politicians +
-   `office_terms`). 🔴 **Slots NOT yet reserved; allocate them with `steward slot CC`, never count.**
-   🔴 Every insert must set `politicians.is_incumbent` explicitly.
+4. ✅ **The two migrations are WRITTEN and DRY-RUN** — `CC_0156` + `CC_0157`, six gates watched
+   failing, rollback confirmed reverted, three CI checks green.
+5. ▶ **APPLY them**, then measure from outside against a same-session baseline through both
+   connections, re-run both to prove 0 inserted, probe end to end from Wichita, and re-run
+   `check:reachability` — which will finally be able to SEE Kansas.
 
 ## Expected scope for the slice
 
