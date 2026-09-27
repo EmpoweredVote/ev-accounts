@@ -477,10 +477,11 @@ export async function runNightlyPipeline(
         // ingest, which leaves this cluster loop a no-op. Kept so the code is
         // safe if that coupling is ever broken — no need to re-derive it.
         if (passing.length > 0 && jobId !== undefined) {
-          const written = await writePassingQuestions(
+          const writeResult = await writePassingQuestions(
             passing, claimResult, idBySlug.get(target.collectionSlug)!,
             jobId, target.prefix, target.volatility,
           );
+          const written = writeResult.written;
           laneStats.generated += written.length;
 
           // Recorded whenever at least one candidate survived the gates

@@ -1,5 +1,15 @@
 import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
 import type { ClaimResult } from './claim-extractor.js';
+import type { QuestionInput } from '../../services/qualityRules/types.js';
+import { auditQuestion } from '../../services/qualityRules/index.js';
+import {
+  qualityRulesEnforced,
+  emptyQualityRuleStats,
+  decideRuleGate,
+  recordGate,
+  recordRuleError,
+  type QualityRuleStats,
+} from './qualityGate.js';
 
 // ─── Volatility Types & Helpers ───────────────────────────────────────────────
 
@@ -37,6 +47,39 @@ export interface QuestionWriteResult {
   questionId: number;
   externalId: string;
   status: 'active';
+}
+
+export interface WritePassResult {
+  written: QuestionWriteResult[];
+  ruleStats: QualityRuleStats;
+}
+
+/**
+ * Map a generated question onto the quality engine's input shape.
+ *
+ * Takes the PLACED options and answer index, not the model's — `placeAnswer`
+ * rewrites both, and the engine must judge what will actually be stored.
+ */
+export function toQuestionInput(
+  q: {
+    text: string;
+    options: string[];
+    correctAnswer: number;
+    explanation: string;
+    difficulty: string;
+  },
+  externalId: string,
+  source: { name: string; url: string },
+): QuestionInput {
+  return {
+    text: q.text,
+    options: q.options,
+    correctAnswer: q.correctAnswer,
+    explanation: q.explanation,
+    difficulty: q.difficulty,
+    source,
+    externalId,
+  };
 }
 
 // ─── Claude Call 2: Question Generation ──────────────────────────────────────
@@ -210,9 +253,10 @@ export async function writePassingQuestions(
   jobId: number,
   externalIdPrefix: string,
   volatility: Volatility,
-): Promise<QuestionWriteResult[]> {
+): Promise<WritePassResult> {
+  const ruleStats = emptyQualityRuleStats();
   const passingQuestions = questions.filter(q => q.qualityGate.passed);
-  if (passingQuestions.length === 0) return [];
+  if (passingQuestions.length === 0) return { written: [], ruleStats };
 
   // Lazy DB imports (ESM pattern — consistent with replacementGenerator.ts)
   const { db } = await import('../../db/index.js');
@@ -276,6 +320,48 @@ export async function writePassingQuestions(
 
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);
 
+    // ── Quality rules gate ──────────────────────────────────────────────────
+    // The engine judges the PLACED question, because that is what gets stored.
+    // skipUrlCheck is not an optimisation: checkLearnMoreLink fetches
+    // source.url and raises a BLOCKING violation on any non-timeout failure,
+    // and a news article URL is not a .gov page that answers bots politely.
+    // Leaving it on would put an HTTP round trip per question inside the cron
+    // and make the verdict depend on network weather.
+    const enforce = qualityRulesEnforced();
+    try {
+      const audit = await auditQuestion(
+        toQuestionInput(
+          { ...q, options: placed.options, correctAnswer: placed.correctAnswer },
+          externalId,
+          { name: primarySource.feedName, url: primarySource.url },
+        ),
+        { skipUrlCheck: true },
+      );
+
+      const decision = decideRuleGate(audit.violations, enforce);
+      recordGate(ruleStats, externalId, decision, enforce);
+
+      if (decision.blocking.length > 0) {
+        const rules = decision.blocking.map(v => v.rule).join(', ');
+        console.log(
+          `[QualityRules] ${enforce ? 'BLOCKED' : 'WOULD BLOCK'} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
+        );
+      }
+
+      if (!decision.write) continue;
+    } catch (err) {
+      // A rule that throws must not cost the claim its remaining questions.
+      // run-pipeline contains errors per CLUSTER, so an escape from here
+      // discards every question left for this claim, not just this one.
+      // Falling through to the insert is deliberate: a broken rule is our
+      // defect, and refusing to write because our own code crashed would turn
+      // a bug into silent content loss.
+      recordRuleError(ruleStats, externalId, err);
+      console.error(
+        `[QualityRules] audit threw for ${externalId}: ${err instanceof Error ? err.message : String(err)} — writing unaudited`,
+      );
+    }
+
     const inserted = await db
       .insert(questionsTable)
       .values({
@@ -325,5 +411,5 @@ export async function writePassingQuestions(
     results.push({ questionId, externalId, status: 'active' });
   }
 
-  return results;
+  return { written: results, ruleStats };
 }
