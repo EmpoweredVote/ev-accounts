@@ -1278,6 +1278,118 @@ six-way split**, so the 2.40% is not an artifact of the method.
 ▶ **The six polygons may now be loaded.** They still need `governments` + structure + occupancy and
 two `CC_` slots.
 
+## ✅✅ KS-3 APPLIED 2026-09-27 — WICHITA IS SEATED
+
+`X0070` (6 council boundaries) + **`CC_0159`** (structure) + **`CC_0160`** (occupancy):
+**7 offices — Mayor + 6 council districts — 7 seated, 0 vacant, 7 people created, 0 reused.**
+
+### Measured from outside against a same-session baseline
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,344 | **89,351** | **+7 exact** |
+| `office_terms` | 9,825 | **9,832** | **+7 exact** |
+| `offices` | 9,889 → 9,896 (CC_0159) | 9,896 | +7 then unmoved |
+| Wichita **seated** (`count(och.politician_id)`) | 0 | **7** | — |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | **returned to baseline** |
+| Kentucky control (sldu+sldl) | 138 | 138 | **unmoved** |
+| Kansas legislature control | 165 | 165 | **unmoved** |
+
+🟢 **`offices_missing_terms` went 422 → 429 → 422.** CC_0159 created seven office rows with no terms,
+which is exactly what that view is for; CC_0160 seated them and it returned to the KS-2 baseline.
+**The transient +7 is the view doing its job, not drift.**
+
+### The seven, as production now holds them
+
+| Office | Holder | Since | Prec. | How |
+| --- | --- | --- | --- | --- |
+| Mayor | Lily Wu | 2024-01-08 | day | elected |
+| Council Member, District 1 | Joseph Shepard | 2026-01-12 | day | elected |
+| Council Member, District 2 | Becky Tuttle | **2019-01-15** | day | **appointed** |
+| Council Member, District 3 | Mike Hoheisel | 2022-01-10 | day | elected |
+| Council Member, District 4 | Dalton Glasscock | 2024-01-08 | day | elected |
+| Council Member, District 5 | J.V. Johnston | 2024-01-08 | day | elected |
+| Council Member, District 6 | Maggie Ballard | 2022-01-10 | day | elected |
+
+**7 of 7 at day precision. 0 year, 0 unknown, 0 computed.** Party is NULL on all seven — the council
+is nonpartisan by charter and this repo is antipartisan by design.
+
+### ✅ END TO END through the production API
+
+`POST https://api.empowered.vote/api/essentials/coordinate-lookup` — the anonymous route a voter's
+browser calls. ⚠ **It takes `lat`/`lng`, not `latitude`/`longitude`**; the wrong field names return
+**HTTP 422 `INVALID_COORDINATES`**, and a reader who judged by "0 politicians returned" would have
+concluded Wichita was unreachable.
+
+| point | returned |
+| --- | --- |
+| Wichita City Hall | **Mayor Lily Wu · Council Member, District 6 Maggie Ballard** |
+| Riverside | Mayor Lily Wu · **District 6** Maggie Ballard |
+| South Wichita | Mayor Lily Wu · **District 4 Dalton Glasscock** |
+| NEGATIVE: Nashville | its own District 19 member, no Wichita officials |
+
+🟢 **South Wichita returning a DIFFERENT district is the part that matters** — it shows the geometry
+discriminates rather than returning one district for every point.
+
+### 🟢 A RESULT WAS DOUBTED AND THE SOURCE SETTLED IT
+
+City Hall resolving to **District 6** looked wrong: the redistricting memo discusses downtown in the
+context of District 1's growth. So the city's **live** ArcGIS layer was queried for that exact point
+and it answers **`COUNCIL 6 | Maggie Ballard`** — one feature. Production agrees.
+▶ The doubt was wrong, and chasing it **validated the load against the authority for a specific
+point**, which is worth more than the assumption would have been.
+
+### Per-district round trip, through the complete occupancy join
+
+**6 of 6** council districts' interior points resolve to **themselves**, each returning its own
+member, with no fan-out. The loader additionally proved, before committing, that each polygon
+contains its own point (6/6), that each resolves to **exactly one** district, and that there are
+**0 cross-district leaks** — the negative half, because a uniform pass from a probe nobody has
+watched fail is not evidence.
+
+### Coverage
+
+place **169.548** sq mi · districts **172.035** sq mi · **99.526%** of the place covered · **3.290**
+sq mi outside it. ⚠ The overhang is expected and is the annexation finding again: the council layer
+is maintained on a different cadence from the TIGER place polygon.
+
+### Gates
+
+✅ `check:reachability` — `BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 7, **all at baseline**.
+✅ `check:occupancy` — *"every politicians INSERT names is_incumbent"*.
+✅ `check:migrations` — 4 added vs origin/master, tree scan clean.
+
+### The migrations as written
+
+Slots from the allocator, never counted: **`CC_0159`** and **`CC_0160`**, both reserved to
+chris@empowered.vote before a line was written, each file named its slot immediately.
+
+- **`CC_0159`** refuses to run unless the six `X0070` boundaries AND TIGER place `2079000` exist —
+  an office on a district with no polygon is invisible to every address search and nothing errors.
+  It also **asserts that no office is called Vice Mayor**, which is the trap this slice was most
+  likely to fall into.
+- **`CC_0160`** counts `och.politician_id`, never `count(*)` — `office_current_holder` LEFT JOINs
+  from `offices`, so a vacancy is a NULL and `count(*)` would pass vacuously. It also asserts nobody
+  holds two Wichita seats, which is what a Vice Mayor office would have produced.
+- Both idempotent; both dry-run against production inside `BEGIN … ROLLBACK`, and **the rollback was
+  confirmed to have reverted** before either was applied (0 governments / 0 districts / 0 offices,
+  then 0 seated).
+
+### 🔴 `X0070` was chosen by reading, not by counting
+
+`X0001`..`X0069` were in use; `X0070` was the next free. ⚠ **Nothing allocates custom MTFCC codes** —
+the steward allocates migration slots only — so a concurrent slice could take the same code and no
+mechanism would notice. Recorded as a gap, not a problem hit.
+
+## What the slice still owes
+
+1. ✅ Stage 1 geography · ✅ Stage 2 legislature · ✅ **Stage 3 Wichita** — all applied.
+2. ▶ **Stage 4: Sedgwick County officers.** 🟢 Its geometry was found early and is recorded above:
+   `Map/Op_Election_Dynamic_SP/MapServer` **layer 1 `BOCC`** on the county's own server.
+3. ▶ **Stage 5: assets** — 7 Wichita portraits plus the legislature's 165, and a `wichita` banner.
+   🔴 **Wichita's banner collides with the Kansas state banner** — read `states/KS.jpg` in the 6:1
+   band first.
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |

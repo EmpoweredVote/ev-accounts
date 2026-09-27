@@ -78,6 +78,8 @@
  *   node scripts/verify-wichita-council-vintage.mjs --self-test     (runs every control)
  */
 
+import { pathToFileURL } from 'node:url';
+
 const UA = { 'User-Agent': 'ev-accounts/ks-slice14' };
 const CITY_LAYER =
   'https://gismaps.wichita.gov/ageweb/rest/services/COWGIS/Districts/MapServer/3';
@@ -88,8 +90,8 @@ const TIGER_PLACES =
 
 const EXPECTED_DISTRICTS = 6;
 const MAP_B_DEVIATION = 3.55;       // City of Wichita interoffice memo, 2022-09-19
-const COMMISSION_CEILING = 5.0;     // the Commission of Electors' own target
-const WICHITA_POP_2020 = 397532;    // TIGERweb Incorporated Places, GEOID 2079000
+export const COMMISSION_CEILING = 5.0;     // the Commission of Electors' own target
+export const WICHITA_POP_2020 = 397532;    // TIGERweb Incorporated Places, GEOID 2079000
 const POP_TOLERANCE_PCT = 2.0;
 
 const arg = (k) => process.argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1];
@@ -148,14 +150,14 @@ function bbox(geom) {
 }
 
 /** Total deviation: (max - min) spread around the ideal, as a percentage of ideal. */
-function totalDeviation(pops) {
+export function totalDeviation(pops) {
   const total = pops.reduce((a, b) => a + b, 0);
   const ideal = total / pops.length;
   const devs = pops.map((p) => ((p - ideal) / ideal) * 100);
   return { total, ideal, devs, spread: Math.max(...devs) - Math.min(...devs) };
 }
 
-async function load() {
+export async function load() {
   const districts = await getJson(
     `${CITY_LAYER}/query?where=1%3D1&outFields=COUNCIL&outSR=4326&returnGeometry=true&f=geojson`,
     'city council layer',
@@ -186,7 +188,7 @@ async function load() {
   return { feats, blocks: blocks.features ?? [], placePop: wichita.attributes.POP100 };
 }
 
-function assign(feats, blocks, mode) {
+export function assign(feats, blocks, mode) {
   const geoms = new Map(feats.map((f) => [Number(f.properties.COUNCIL), f.geometry]));
   const boxes = new Map([...geoms].map(([d, g]) => [d, bbox(g)]));
   const pops = new Map([...geoms.keys()].map((d) => [d, 0]));
@@ -229,7 +231,7 @@ function assign(feats, blocks, mode) {
   return { pops, assigned, multi, outside };
 }
 
-async function run(mode) {
+export async function run(mode) {
   const { feats, blocks, placePop } = await load();
   console.log(`districts: ${feats.length} · blocks in Sedgwick County: ${blocks.length.toLocaleString()}`);
   console.log(`Wichita city 2020 population (TIGERweb layer 26): ${placePop.toLocaleString()}`);
@@ -293,7 +295,11 @@ async function run(mode) {
   return spread;
 }
 
-if (SELF_TEST) {
+// Run only when executed directly. The boundary loader imports `run` so that the write is gated by
+// THIS gate rather than by a copy of it that can drift.
+const IS_MAIN = import.meta.url === pathToFileURL(process.argv[1] ?? '').href;
+
+if (IS_MAIN && SELF_TEST) {
   console.log('=== SELF-TEST: every control must FAIL ===\n');
   let failures = 0;
   for (const c of ['strips', 'target', 'blocks']) {
@@ -303,6 +309,6 @@ if (SELF_TEST) {
   }
   process.exitCode = failures === 3 ? 0 : 1;
   console.log(`\n${failures}/3 controls failed as required`);
-} else {
+} else if (IS_MAIN) {
   await run(CONTROL);
 }
