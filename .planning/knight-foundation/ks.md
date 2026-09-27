@@ -986,6 +986,119 @@ the redistricting ordinance itself. **Do not load until a discriminating control
 | `_council-attrs.json`, `_council-layer3.json`, `_districts-mapserver.json` | the GIS layer, its metadata and the full 23-layer enumeration |
 
 
+## ✅ KS-3 — ALL SEVEN TERM STARTS SOURCED TO THE DAY, 2026-09-27. NOTHING WRITTEN.
+
+`state:ks` live to 2026-09-28 04:33Z, re-read before this work. Branch merged up from master
+(was 17 behind, now 0 behind / 15 ahead; the merge was clean and done in this worktree).
+
+**7 of 7 to the day. Zero computed, zero guessed, zero at `year` or `unknown` precision.**
+
+| Seat | Member | Continuous since | Prec. | How | The record |
+| --- | --- | --- | --- | --- | --- |
+| Mayor | Lily Wu | **2024-01-08** | day | elected | Jan 8 2024 minutes, §VI, oath by **Judge Roush** |
+| D1 | Joseph Shepard | **2026-01-12** | day | elected | Jan 12 2026 special, §IV, oath by **Judge Jones** |
+| D2 | Becky Tuttle | **2019-01-15** | day | **appointed** | motion of Jan 8 2019 + oath Jan 15 2019, **Judge Jones** |
+| D3 | Mike Hoheisel | **2022-01-10** | day | elected | Jan 10 2022 special, oath by **Judge Jennifer Jones** |
+| D4 | Dalton Glasscock | **2024-01-08** | day | elected | Jan 8 2024 minutes, §VII.2, oath by **Judge Kehr** |
+| D5 | J.V. Johnston | **2024-01-08** | day | elected | Jan 8 2024 minutes, §VII.3, oath by **Judge Kehr** |
+| D6 | Maggie Ballard | **2022-01-10** | day | elected | Jan 10 2022 special, oath by **Judge Jennifer Jones** |
+
+### 🔴🔴 THE MOST WIDELY PUBLISHED DATE FOR TUTTLE IS THE VOTE, NOT THE TERM — WRONG BY A WEEK
+
+Every secondary source says Becky Tuttle was *"appointed January 8, 2019"*. **January 8 is the day
+the Council voted.** The motion in the minutes of that meeting says what the term actually is, in
+its own words:
+
+> *"Mayor Longwell moved to pursuant to Section 2.04.040 of the City Code, moves that the City
+> Council appoint Becky Tuttle to serve as the District II Council Member to fill the unexpired term
+> of Council Member Pete Meitzner, **for a term commencing January 15, 2019** and ending January 13,
+> 2020. Motion carried 6 to 0, (Abstained: Meitzner)."*
+
+🟢 **And the two dates are independently confirmed to be different things.** The minutes of
+**January 15, 2019** record: *"Oath of Office administered to Council Member Becky Tuttle by Judge
+Jones. Judge Jones administered the oath of office to **new** District II Council Member Becky
+Tuttle."* She also appears in that meeting's attendance line and not the previous one.
+
+▶ **The commencement the motion names and the oath fall on the same day, and it is not the day of
+the vote.** This is the Knight rule *"a certified result is not a fact about who holds the seat"* in
+its appointment form: **a selection vote is not a term start either.** Taking the reported date
+would have put her in the seat a week early.
+
+⚠ Meitzner left because he won a Sedgwick County Commission seat — the vacancy has a cause on the
+record, which is why `how_started = appointed` is safe to assert.
+
+### 🟢 The re-swearings were identified from the record, never inferred
+
+Three of the seven have been sworn more than once, and `office_terms` carries **continuous**
+occupancy, so none of those later oaths is a term start:
+
+- **Tuttle** — Jan 8 2024: *"this is the **third** time she has been sworn in"* (appointed 2019,
+  elected 2019, elected 2023). Mayor Whipple, same meeting: *"**welcome back** Council Member
+  Tuttle"*, against *"two **new** Council Members … JV Johnston and Dalton Glasscock"*.
+- **Hoheisel and Ballard** — Jan 12 2026: *"our **re-sworn-in** council members, Hoheisel and Ballard
+  and **new** council member, Shepard"*.
+- ⚠ The Jan 10 2022 list marks the distinction in the document itself: *"Brandon Johnson, District I
+  **(Incumbent)**"* against Hoheisel and Ballard with no such tag.
+
+🔴 **So the city labels incumbency inconsistently across the three ceremonies** — a parenthetical in
+2022, a sentence from the chair in 2024, and an adjective in 2026. **There is no field to read; it
+has to be read as prose, per ceremony.**
+
+### ⚠ Two documents disagree with themselves, and neither affects a date
+
+Recorded so the next reader does not treat them as findings:
+- The **Jan 10 2022** minutes head *"Monday, 06:00 A.M."* and then say the meeting was *"called to
+  order at 6:06 **p.m.**"*.
+- The **Jan 8 2024** minutes open *"met in **regular** session"* and close *"The City Council
+  **Special** Meeting adjourned at 7:22 p.m."*
+Both carry one unambiguous date, which is the field this slice needs.
+
+### 🔴 The 2019 minutes are a `.docx`, and the Agenda Center does not reach them
+
+The Agenda Center search covers 2022 onward; a 2019 query returns **empty**, and that emptiness is
+trustworthy only because the *same* query shape returned rows for 2022 and 2024 minutes before it was
+believed. Older minutes live in the **Archive Center** (`Archive.aspx?AMID=101`, 385 documents,
+2019-2026) and are served as **Microsoft Word documents**, not PDFs — `ViewFile/Item/<ADID>` returns
+`application/vnd.openxmlformats-officedocument.wordprocessingml.document`. A reader expecting a PDF
+gets a file it cannot parse and no error.
+
+## ✅ KS-3 duplicate-name check — 0 of 7 collide. All seven are NEW inserts.
+
+Run with the guard's **own** predicate — `is_active`, and `lower(btrim(first_name))` **and**
+`lower(btrim(last_name))`, the **pair**. 🔴 The pair came from **ONE source**, the Jan 13 2026
+attendance line, never mixed with the member pages or the GIS layer.
+
+**All seven return 0 active matches**, and `J.V. Johnston` was checked **both ways** — `JV` and
+`J.V.` — because the guard lowercases and trims but does **not** strip punctuation, and the city's
+own sources disagree on it (the minutes write `JV Johnston`, the page and the GIS `MEMBER` field
+write `J.V. Johnston`).
+
+🟢 **A uniform zero is a broken detector until a control passes, so the predicate was proved able to
+find people first:** `Daniel Elliott` → **2** active rows (the namesake KY-2 recorded), `Patrick
+Schmidt` → 1, `Ty Masterson` → 1, and an impossible name → 0.
+
+▶ **This is the opposite of KS-2**, where 4 of 165 already existed and needed the UPDATE path. The
+Wichita occupancy migration is **7 inserts, 0 reuses** — and `politicians.is_incumbent` must still be
+set explicitly to `true` on every one of them.
+
+## What KS-3 still owes
+
+1. ✅ **Seven term starts — DONE**, all to the day.
+2. ▶ **A vintage proof for the six council polygons**, with a control that can fail. There is no
+   in-org prior map, so the control has to come from outside the city's own service.
+3. ▶ A `governments` row for Wichita — there is none.
+4. ✅ **Duplicate-name check — DONE.** 0 collisions; 7 inserts.
+5. ▶ Two `CC_` slots from the allocator — structure and occupancy. **Not yet reserved.**
+
+### Sources added to `backend/data/seed-ks-2026/`
+
+| File | What it is |
+| --- | --- |
+| `wichita-council-minutes-2024-01-08.pdf` | Mayor Wu, Tuttle (3rd), Glasscock, Johnston — 11 pages |
+| `wichita-council-minutes-2022-01-10.pdf` | Johnson (incumbent), Hoheisel, Ballard — 5 pages |
+| `wichita-council-minutes-2019-01-08.docx` | the appointment motion naming the Jan 15 commencement |
+| `wichita-council-minutes-2019-01-15.docx` | Tuttle's oath, and her first attendance line |
+
 ## Expected scope for the slice
 
 | Stage | Owed | Basis |
