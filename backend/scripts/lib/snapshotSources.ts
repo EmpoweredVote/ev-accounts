@@ -9,6 +9,7 @@
 import { createHash } from 'node:crypto';
 import { resolve, sep } from 'node:path';
 import { normalizeText } from '../../src/lib/researchVerifier.js';
+import { MARKUP_UNRESOLVED_MARKER } from './htmlMarkedText.js';
 import type { AmendmentText } from './recordBasis.js';
 import { isExcerptOnly, type SourceEntry, type SourceKind } from './sourcesManifest.js';
 
@@ -36,7 +37,25 @@ export interface SnapshotRecord {
   amendment_markup: 'kept' | 'none' | 'unknown';
 }
 
-const PDF_TRAILER_PREFIX = '[extracted by pdf-snapshot.ts with strike detection';
+/**
+ * The fixed lead of the trailer pdf-snapshot.ts appends (the rest of the line names the run's date,
+ * source url, and — for a saved file — that it came from one; see pdf-snapshot.ts). Exported so
+ * snapshot-sources.ts's human-saved branch can recognise a pdf-snapshot.ts output file and read it
+ * unstripped (spec §3/§9 — the file is already plain text, and htmlToText's tag-stripping would treat
+ * a stray `<`/`>` in the bill text, or in the trailer itself, as a tag to remove).
+ */
+export const PDF_TRAILER_PREFIX = '[extracted by pdf-snapshot.ts with strike detection';
+
+/**
+ * Does `text`, once trailing whitespace is trimmed, END with a pdf-snapshot.ts trailer? Checking only
+ * a trailing `]` plus the prefix's presence (rather than a bare `.includes`) means a `[deleted: …]`
+ * fence that happened to quote this exact phrase from a bill's own text could not be mistaken for the
+ * real trailer, which is always the file's last line.
+ */
+function hasPdfSnapshotTrailer(text: string): boolean {
+  const trimmed = text.trimEnd();
+  return trimmed.endsWith(']') && trimmed.includes(PDF_TRAILER_PREFIX);
+}
 
 /**
  * amendment-markup spec §3: does this snapshot text show that deleted words were kept legible?
@@ -44,10 +63,15 @@ const PDF_TRAILER_PREFIX = '[extracted by pdf-snapshot.ts with strike detection'
  * Otherwise 'kept' when a `[deleted: …]` fence (htmlToMarkedText) or the pdf-snapshot.ts trailer
  * (pdfMarkedText) is present; 'unknown' when neither is — fail closed rather than assume nothing
  * was deleted.
+ *
+ * FAIL CLOSED: htmlToMarkedText's {@link MARKUP_UNRESOLVED_MARKER} — a `<style>` rule set
+ * line-through on a selector it could not resolve to a class — always forces 'unknown', even when
+ * `[deleted: …]` fences are also present: some deletions being caught is not evidence every one was.
  */
 export function amendmentMarkup(text: string, amendmentText: AmendmentText): 'kept' | 'none' | 'unknown' {
   if (amendmentText === 'final') return 'none';
-  if (text.includes('[deleted: ') || text.includes(PDF_TRAILER_PREFIX)) return 'kept';
+  if (text.includes(MARKUP_UNRESOLVED_MARKER)) return 'unknown';
+  if (text.includes('[deleted: ') || hasPdfSnapshotTrailer(text)) return 'kept';
   return 'unknown';
 }
 

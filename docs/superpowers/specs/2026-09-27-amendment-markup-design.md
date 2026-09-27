@@ -51,7 +51,9 @@ Snapshot text keeps deleted words, fenced so no one can read them as law:
   (height < 1.5 pt) that sit on a text line — between the line's baseline and baseline + 0.6 × its font
   height; a rectangle below the baseline is an underline and is ignored. Split each text item into words,
   place each word by its share of the item's width (glyph widths from the font when pdf.js gives them,
-  else character count). A word is deleted when ≥ 60 % of its width is covered by strike rectangles.
+  else character count). A word is deleted when ≥ 60 % of its width is covered by strike rectangles, or
+  when a strike rectangle is confidently assigned to it (Indiana draws one rect per struck word): ≥ 30 %
+  of the word's width, or ≥ 50 % of the rectangle's own width, lies on that word.
   Adjacent deleted words merge into one `[deleted: …]`.
 - Added text needs no fence: it is the law. (Bold/capitals stay as they are.)
 

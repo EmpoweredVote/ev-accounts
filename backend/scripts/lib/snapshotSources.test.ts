@@ -132,6 +132,17 @@ describe('amendmentMarkup', () => {
     expect(amendmentMarkup('plain bill text, no markup at all', 'marked')).toBe('unknown');
     expect(amendmentMarkup('plain bill text, no markup at all', 'unmarked')).toBe('unknown');
   });
+  it("is 'unknown' when the text carries htmlToMarkedText's markup-unresolved marker, even alongside a real fence", () => {
+    expect(amendmentMarkup('A person [deleted: shall not] may carry. [markup-unresolved]', 'marked')).toBe('unknown');
+  });
+  it("the trailer must be the text's own ending (after trimming trailing whitespace), not merely quoted mid-page", () => {
+    const midPage = '"[extracted by pdf-snapshot.ts with strike detection somewhere]" is a phrase the bill quotes, and the page continues after it.';
+    expect(amendmentMarkup(midPage, 'marked')).toBe('unknown');
+  });
+  it('the trailer is still recognised through trailing whitespace/newlines', () => {
+    const text = 'Bill text.\n[extracted by pdf-snapshot.ts with strike detection, 2026-09-27T00:00:00.000Z, https://iga.in.gov/x.pdf]\n\n  ';
+    expect(amendmentMarkup(text, 'marked')).toBe('kept');
+  });
 });
 
 describe('buildSnapshot amendment_markup', () => {

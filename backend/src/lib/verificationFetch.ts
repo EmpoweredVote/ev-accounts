@@ -72,7 +72,10 @@ export const EMPOWERED_VOTE_UA_TOKEN = 'EmpoweredVoteBot';
 export const LEGACY_BROWSER_UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
-const HTTP_TIMEOUT_MS = 12_000;
+/** Exported so a caller outside this module's own fetch tiers (e.g. the amendment-markup collector
+ * scripts, snapshot-sources.ts / pdf-snapshot.ts) can reuse the exact same timeout rather than
+ * re-guessing a value; this module's own tiers are unaffected. */
+export const HTTP_TIMEOUT_MS = 12_000;
 const ROBOTS_TIMEOUT_MS = 8_000;
 /** How long a parsed robots.txt is trusted before we re-fetch it. */
 const ROBOTS_TTL_MS = 30 * 60 * 1000; // 30 minutes

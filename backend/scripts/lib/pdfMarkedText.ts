@@ -11,7 +11,11 @@
  *   baseline + 0.6 × the item's height. At or below the baseline it is an underline — ignored.
  * - A word is deleted when ≥ 60 % of its x-range is covered by the union of such rectangles, OR when a
  *   strike rectangle is assigned to it (each rect goes to the word it overlaps most — Indiana draws one
- *   rect per struck word).
+ *   rect per struck word) AND that assignment is confident: the rect covers ≥ 30 % of the word's width,
+ *   OR ≥ 50 % of the rect's own width lies on the word. A rect that is "best" for a word only weakly (a
+ *   graze from a neighbour's rect, with no better candidate on the line) does not by itself force a
+ *   delete — the word's fate then falls back to the ordinary coverage rule below, which already fails
+ *   closed on genuine partial coverage.
  * - FAIL CLOSED: a word 30–60 % covered with no rect assigned is doubt, and is fenced too (counted as
  *   `ambiguous`). Doubtful text is never presented as law.
  * - Adjacent deleted words (across items and across line ends) merge into ONE fence.
@@ -36,6 +40,10 @@ export const STRIKE_BAND = 0.6;
 export const MIN_COVERAGE = 0.6;
 /** Coverage from here up to MIN_COVERAGE, with no strike assigned, is DOUBT — fenced (fail closed). */
 export const AMBIGUOUS_COVERAGE = 0.3;
+/** A rect assigned to a word (its best overlap on the line) forces a delete only if it covers this share of the word's width... */
+export const MIN_ASSIGN_WORD_COVERAGE = 0.3;
+/** ...OR this share of the RECT's own width lies on the word (a short word fully under a wider rect). */
+export const MIN_ASSIGN_RECT_COVERAGE = 0.5;
 /** Items whose baselines differ by at most this (pt) share a line. */
 const LINE_TOLERANCE = 1;
 
@@ -126,9 +134,13 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
       if (r.fallback) widthFallbacks++;
       lineWords.push(...r.words);
     }
-    // Signal 2: Indiana draws one rect per struck word — give each strike rect to the word it overlaps most.
+    // Signal 2: Indiana draws one rect per struck word — give each strike rect to the word it overlaps most,
+    // but only trust that assignment (force a delete) when it is confident (see MIN_ASSIGN_*_COVERAGE
+    // above). A weak "best" — the only candidate on the line, grazed rather than struck — is left to the
+    // ordinary coverage rule below instead of being forced.
     for (const rect of g.rects) {
       const [a, b] = span(rect);
+      const rectWidth = b - a;
       let best: Word | null = null;
       let bestOverlap = 0;
       for (const w of lineWords) {
@@ -136,7 +148,11 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
         const o = Math.min(b, w.hi) - Math.max(a, w.lo);
         if (o > bestOverlap) { bestOverlap = o; best = w; }
       }
-      if (best) best.struck = true;
+      if (!best) continue;
+      const wordWidth = best.hi - best.lo;
+      const wordShare = wordWidth > 0 ? bestOverlap / wordWidth : 0;
+      const rectShare = rectWidth > 0 ? bestOverlap / rectWidth : 0;
+      if (wordShare >= MIN_ASSIGN_WORD_COVERAGE || rectShare >= MIN_ASSIGN_RECT_COVERAGE) best.struck = true;
     }
     // Signal 1: coverage by the union of strike rects in the word's item band.
     for (const w of lineWords) {
@@ -156,8 +172,13 @@ export function markedTextFromGeometryWithStats(g: PageGeometry): MarkedTextStat
   const out: string[] = [];
   let run: string[] = [];
   let fences = 0;
+  // A literal `]` inside the deleted text would close the fence early (and a downstream reader
+  // splitting on `[deleted: ... ]` would then treat the rest of the original sentence as deleted, or
+  // not-deleted, depending on which `]` it paired with) -- swap it for the visually similar U+3015
+  // RIGHT TORTOISE SHELL BRACKET, which cannot be confused with the fence's own delimiter.
+  const fenceSafe = (s: string) => s.replace(/\]/g, '〕');
   const flush = () => {
-    if (run.length > 0) { out.push(`[deleted: ${run.join(' ')}]`); fences++; }
+    if (run.length > 0) { out.push(`[deleted: ${fenceSafe(run.join(' '))}]`); fences++; }
     run = [];
   };
   for (const w of words) {

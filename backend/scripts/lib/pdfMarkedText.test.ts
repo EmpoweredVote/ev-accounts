@@ -112,6 +112,39 @@ describe('markedTextFromGeometry — synthetic geometry', () => {
     expect(markedTextFromGeometry(g)).toBe('hello world second');
   });
 
+  it('a weakly-assigned rect (below both MIN_ASSIGN_* thresholds) does not by itself force a delete, but the fail-closed coverage rule still fences genuine partial coverage', () => {
+    // One word, two rects, each a weak "best" (it's the only word on the line): rect1 overlaps 15/100 of
+    // the word (15 %, rectShare 15/35 ≈ 43 %) and rect2 overlaps 20/100 (20 %, rectShare 20/90 ≈ 22 %) —
+    // both under MIN_ASSIGN_WORD_COVERAGE (30 %) and MIN_ASSIGN_RECT_COVERAGE (50 %), so NEITHER assignment
+    // forces a strike. Their UNION coverage of the word is (15+20)/100 = 35 %, which is squarely in the
+    // ordinary ambiguous band (30–60 %) — so the word is still fenced, but via that rule, not the rect
+    // assignment.
+    const g: PageGeometry = {
+      items: [item('aaaaaaaaaa', 0, 100)],
+      rects: [{ x0: -20, x1: 15, y0: 102.8, y1: 103.2 }, { x0: 80, x1: 170, y0: 102.8, y1: 103.2 }],
+    };
+    const r = markedTextFromGeometryWithStats(g);
+    expect(r.text).toBe('[deleted: aaaaaaaaaa]');
+    expect(r.ambiguous).toBe(1);
+  });
+
+  it('a rect that only grazes its sole candidate word (well under both thresholds, and under the coverage floor too) does not fence it at all', () => {
+    // rect overlaps only 5/100 of the word (5 %) and 5/55 of itself (9 %) — the word is the only
+    // candidate so it is still "best", but neither MIN_ASSIGN_* threshold nor AMBIGUOUS_COVERAGE is met.
+    const g: PageGeometry = { items: [item('aaaaaaaaaa', 0, 100)], rects: [{ x0: -50, x1: 5, y0: 102.8, y1: 103.2 }] };
+    const r = markedTextFromGeometryWithStats(g);
+    expect(r.text).toBe('aaaaaaaaaa');
+    expect(r.fences).toBe(0);
+    expect(r.ambiguous).toBe(0);
+  });
+
+  it('a `]` inside deleted text is swapped for U+3015 so it cannot close the fence early', () => {
+    const g: PageGeometry = { items: [item('a [b] c', 0, 70)], rects: [{ x0: 0, x1: 70, y0: 102.8, y1: 103.2 }] };
+    const text = markedTextFromGeometry(g);
+    expect(text).toBe('[deleted: a [b〕 c]');
+    expect(text.indexOf(']')).toBe(text.length - 1); // the only real `]` is the fence's own close
+  });
+
   it('positive control: items and no rects → no fence', () => {
     const g: PageGeometry = { items: (fixture as PageGeometry).items, rects: [] };
     const out = markedTextFromGeometry(g);
