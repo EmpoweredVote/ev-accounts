@@ -1887,3 +1887,116 @@ the same code and no mechanism would notice. Recorded as a gap again, not a prob
 3. ▶ **Stage 5 assets** — 10 Sedgwick portraits, 7 Wichita portraits, the legislature's 165, and a
    `wichita` banner. 🔴 **Wichita's banner collides with the Kansas state banner** — read
    `states/KS.jpg` in the 6:1 band first.
+
+## ✅ KS-5a APPLIED 2026-09-27 — THE KANSAS LEGISLATURE IS 165 OF 165 RENDERABLE
+
+164 portraits imported, 0 skipped, 0 failed. Kansas legislature goes **1 → 165 renderable**
+(Patrick Schmidt already had one from a stance wave).
+
+| | baseline | after |
+| --- | --- | --- |
+| `politician_images` | 9,178 | **9,342** (+164 exact) |
+| `politicians.photo_custom_url` | 8,910 | **9,074** (+164 exact) |
+| KS House renderable | 0 | **125 / 125** |
+| KS Senate renderable | 1 | **40 / 40** |
+| Ohio legislature control | 130 | 130 **unmoved** |
+
+🔴 **THE BASELINE ZERO WAS PROVED BEFORE IT WAS BELIEVED.** 182 seated Kansas officials read
+1 renderable, which is the shape of a broken detector. The identical predicate returned
+**MN 133/133 and 67/67, NC 120/120 and 50/50, OH 98/98 and 32/32** — so the zero is real.
+
+### ✅ Verified from outside, and the count is the tell
+
+`verify-imported-headshots.py --expect 164`: **164 decoded, 0 broken**, negative control (a CDN key
+for a random UUID) **failed as required — HTTP 400**, and `tested 164 == expected 164`. Sizes
+`205x256 ×161` and `202x252 ×3`. That `--expect` assertion is MN-6's lesson: a verifier can print
+"0 broken, control failed as required" while testing none of the rows just written.
+
+### 🟢 THE PORTRAITS ARE NOT ENLARGED, AND THAT IS THE REPO'S RULE NOT A COMPROMISE
+
+Source portraits are **202x302 – 205x300**, a 2.93–2.98× upscale to the 600x750 target.
+`import-headshot-candidates.py` defaults `--max-upscale 1.0` — *"NEVER ENLARGE, AND NEVER SKIP FOR
+BEING SMALL"* — so each ships at its own cropped size. Enlarging would bake in interpolation and
+produce a file that looks full-resolution while carrying no more detail.
+
+⚠ **A LARGER FILE IS NOT A LARGER IMAGE.** `?width=1200` on a portrait returns **14,585 bytes
+against 7,991 — and the identical 205x300 pixels.** The host alternates between two JPEG encodings
+of one image and ignores the parameter; `_large` and `.png` are hard 404s. SC-5's rule that the
+resize can hide in the query string was tested here and **does not hold**, so the first reading
+("a larger file exists") was wrong and measuring the pixels is what showed it.
+
+### 🔴🔴 THE IDENTITY CHECK THAT SHIPPED FIRST COULD NOT FAIL
+
+The first manifest set `name = alt` and then "checked" `alt != name`. **A check whose two sides come
+from one value is not a check**, and it passed 165/165 while proving nothing.
+
+Two more things were wrong with it, both found by looking rather than by the check:
+
+- 🔴 **THE ROSTER PAGE'S `alt` IS A SURNAME** — `alt="Rep. Alcala"`. It cannot separate two members
+  of one surname, and this chamber has **two Carpenters**. The MEMBER's own page carries the full
+  name (`alt="Steve Brunk"`); they are different documents and only one is usable.
+- 🔴 **THE ROSTER PAGE INTERLEAVES A CARD GRID AND A TABLE**, so a member's link and a *different*
+  member's `<img>` sit adjacent in the markup. Splitting on the link and taking the next image is
+  the off-by-one this programme keeps paying for. It came out right for all 165 — verified, 0 of 165
+  mismatched — but the design was unsound.
+
+▶ **So the binding moved to each member's own page, and the join key is the DISTRICT.**
+`bind-ks-portraits.py` accepts a portrait only when the hero image on that member's page points at
+that member's own slug, then joins on district — an integer, unique within a chamber, identical on
+both sides. **A name join would have been the weakest link available**: KS-2 recorded three Mike
+Thompsons, two seated in this legislature at once, one published as both "Mike" and "Michael".
+
+**Three independent documents then have to agree on every row**: the member page's full-name `alt`,
+the Legislature's first-party roster CSV, and production's `politicians.full_name` seated by
+`CC_0157` months earlier. **165/165 agreed; 0 mismatches.**
+
+### ⚠ One row matched on a preferred name, and it is recorded rather than waved through
+
+District 26's CSV reads `Firstname 'Charles'`, `Preffname 'Chip'`, `Fullname 'Chip VanHouden'`, and
+the page alt says "Chip VanHouden" — so a strict given-name check rejected a real person. The fix
+reads the column **the Legislature itself publishes for this**, and stores
+`given_name_matched_on` per row so the widening is visible: **164 matched on `Firstname`, exactly
+1 on `Preffname`.** Production stores the same split, checked directly.
+▶ Widening a rule to make a row pass is only legitimate when the source has a field that says so.
+
+### 🔴 The `&quot;` trap is live in this chamber
+
+`Lewis &quot;Bill&quot; Bloom` arrives entity-encoded. Compared raw it fails against every real
+name; written through to a voter-facing field it is mojibake. KS-2 recorded eight such names.
+The binder unescapes before comparing and asserts no entity survives into any alt.
+
+### ⚠ The placeholder is directly fetchable
+
+Every member page carries `onerror="this.src='/static/li_pics/fallback.8b887e28e491.jpg'"`. A
+missing portrait 404s honestly at the member path — but the placeholder is a real URL, so a
+pipeline that followed the fallback would import a **silhouette under a real name**. Every download
+is hashed against the placeholder's own bytes (`sha1 402c6d284aa1`). **0 placeholders found.**
+
+### 🔴 The amber ring on the contact sheet carried no signal, and that was stated
+
+`render-headshot-contact-sheet.py` flags `positional OR upscale > 1.0`. All 164 are under 600x750,
+so **164 of 164 were flagged** — a size flag, not a "check this face" flag. **None was positional.**
+A flag that fires on everything discriminates nothing, and saying so is part of asking for approval
+honestly. Sheet: `https://claude.ai/artifact/JhtixFEw9GGfi2zXKuNPc4`.
+
+### ⚠ Licence `press_use`, and the nearby restriction that does NOT apply
+
+**The Kansas Legislature publishes no photo policy and no copyright notice** — checked at `/li/`,
+on member pages, and in the footer. Its only policy link is the state portal's.
+
+🔴 **`portal.kansas.gov` DOES carry a restriction, and it is scoped to a different site.** Its Terms
+of Use say downloading grants "only a limited, nonexclusive license for use solely by you for your
+own personal use, **and not for republication, distribution … or preparation of derivative works**"
+— and define "the Site" as **"the Kansas.gov website"**, run by Tyler Kansas / INK. It is not
+asserted over kslegislature.gov.
+▶ **Absence of a policy is not a licence**, but this is the Georgia/Florida footing from MN-5, not
+the Minnesota House's published refusal. Recorded in full so the next reader need not re-derive it.
+
+### Tooling added
+
+| Script | What it does |
+| --- | --- |
+| `build-ks-portrait-manifest.mjs` | pages the roster at the site's own `per_page=20`, stops at a KNOWN TOTAL, and **aborts if a page adds nothing** — KS-2 proved this paginator clamps rather than ending |
+| `measure-ks-portraits.py` | decodes every file with PIL and writes real sizes, upscale and a monochrome test. A hand-rolled JPEG SOF walker returned null on some files, and **a null size reported as "no upscale" is worse than no number** |
+| `bind-ks-portraits.py` | binds photo → district → name across two documents; `--self-test` fires all eight assertions |
+| `ks-portrait-candidates.mjs` | adds production as the third document and refuses on any name disagreement |
