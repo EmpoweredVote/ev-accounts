@@ -1428,3 +1428,462 @@ the subject its credit names.
   `master` checkout read `MEMORY.md`, found PROGRAM.md's KS row still blank, and found no `ks.md`
   at all. The branch is pushed, so nothing was lost — but **the handoff chain only works from the
   slice's own worktree.** `C:/ev-accounts-ky` holds this branch despite the Kentucky name.
+
+## ▶ KS-4 OPENED 2026-09-27 — the office inventory and all ten term starts are SOURCED. NOTHING WRITTEN.
+
+`state:ks` extended to 2026-09-28 20:14Z at session start, re-read before this work. Branch 0 behind
+`origin/master`, 19 ahead.
+
+### 🔴🔴 THE HANDOFF NOTE POINTED AT THE WRONG LAYER, AND A THIRD SOURCE IS THE SAME DATA
+
+The note carried forward from KS-3 read *"`Map/Op_Election_Dynamic_SP` layer 1 `BOCC` on
+`gismaps.sedgwickcounty.org`"*. **Layer 1 of that service is `Election Dropboxes`, a POINT layer.**
+Two servers were conflated: the `layer 1 BOCC` recorded at line 958 is the **City of Wichita's**
+`COWGIS/Districts` MapServer, not the county's.
+
+| Server / service | Layer | Name | Features |
+| --- | --- | --- | --- |
+| `gismaps.wichita.gov` `COWGIS/Districts` | 1 | `BOCC` | 5 |
+| `gismaps.sedgwickcounty.org` `Map/Op_ElectionBOCC_Dynamic_SP` | 0 | County Commission Districts | 5 |
+| `gismaps.sedgwickcounty.org` `Map/Op_Election_Dynamic_SP` | 6 | County Commission | 5 |
+
+🔴 **All three are ONE digitization republished.** `Shape.STArea()` agrees across all three to
+**1 part in 10^8** per district (D3 reads `12,724,603,279.496069` / `.496069` / `.496056`). The
+city's copy is therefore **not** an independent control for vintage — it is the KS-3 "two hub
+entries, one layer" trap one level up, and this time across two different organisations, which is
+what made it look independent.
+
+⚠ The county's whole `Hosted` folder is WAF-restricted (Playwright included), but the **`Map` folder
+is not** — every query above is a plain `curl`.
+
+### 🟢 THE INVENTORY IS TEN SEATS, AND ONLY THE STATUTE COULD HAVE GIVEN IT
+
+**`KSA 19-101a(a)(6)`: a county "shall be subject to all acts of the legislature concerning
+elections … and the election of county officers."** A Kansas county **cannot** add or remove an
+elected county office by home rule. So the statute is not merely the best source for the inventory —
+it is the only one that can be complete, and the county cannot contradict it.
+
+| Office | Seats | Statute | Term | Term commences |
+| --- | --- | --- | --- | --- |
+| County Commissioner, districts 1–5 | 5 | `19-202` | 4y, staggered | 2nd Monday of January (`19-202(d)`) |
+| County Clerk | 1 | `19-301` | 4y | 2nd Monday of January (`25-313(a)`) |
+| County Treasurer | 1 | `19-501` | 4y | 🔴 **2nd Tuesday of OCTOBER** (`19-501`) |
+| Register of Deeds | 1 | `19-1201` | 4y | 2nd Monday of January (`25-313(a)`) |
+| Sheriff | 1 | `19-801a` | 4y | 2nd Monday of January (`25-313(a)`) |
+| District Attorney, 18th Judicial District | 1 | `22a-101` | 4y | 2nd Monday of January (`22a-101(a)`) |
+
+🟢 **`KSA 4-219`: "The county of Sedgwick shall constitute the 18th judicial district."** And
+**`22a-101(b)` ABOLISHED the office of county attorney** in judicial districts 3, 10, 18 and 29.
+Sedgwick has a **District Attorney and no County Attorney** — a seat a county-website inventory
+would have mislabelled. `22a-101(a)` also declares the DA "in no event … an officer of any county",
+which is why the DA belongs in its own chamber rather than under *Countywide Elected Officials*.
+
+Excluded, each with the statute that excludes it — **not** by reading the org chart:
+
+| Not a seat | Why |
+| --- | --- |
+| County Attorney | **abolished** in the 18th (`22a-101(b)`) |
+| County Appraiser | appointed by the board (`19-430`) |
+| County Surveyor | `19-1401` **repealed**; `19-1401a` makes it appointed |
+| District Coroner | appointed by the board from medical-society nominees (`22a-226`) |
+| County Auditor | appointed by the district court, and only in counties of 40,000–60,000 (`19-601`) |
+| Election Commissioner | appointed by the **Secretary of State** in counties over 125,000 (`19-3419`) |
+
+### 🔴🔴 THE COUNTY'S OWN "ELECTED AND APPOINTED OFFICIALS" PAGE CANNOT SETTLE THIS, AND SAYS SO
+
+`/government/elected-and-appointed-officials/` lists **Appraiser · Clerk · District Attorney ·
+Election Commissioner · Register of Deeds · Sheriff · Treasurer** — seven, in one list, with
+**nothing marking which are elected**. Two of the seven are appointed. The title is honest; the list
+is not usable as an inventory.
+
+The election office's register is wider still. `/ElectedOffice/Officials/` is a **CSV of everything
+on a Sedgwick ballot**: 744 rows including **Court of Appeals Judge (14)** and **State Treasurer**,
+which are statewide offices, and **Township Clerk (26) / Township Treasurer (25)**, which are a
+different layer of government. ⚠ It also carries officials' **home addresses, personal e-mail and
+phone numbers** — use it for name/office/district/year only, and do not commit the raw file.
+
+### ✅ ALL TEN TERM STARTS SOURCED — nine from a record, one from the day's own press release
+
+| Seat | Holder | Continuous since | Prec. | How they arrived | The record |
+| --- | --- | --- | --- | --- | --- |
+| Commissioner D1 | Pete Meitzner | **2019-01-14** | day | elected 2018 | canvass + `19-202(d)`; county bio says "January 2019" |
+| Commissioner D2 | Jeff Blubaugh | **2025-01-13** | day | elected 2024 | 2024 official canvass; register 2024-08 → 2025-02 |
+| Commissioner D3 | Stephanie Wise | **2025-01-13** | day | elected 2024 | 2024 official canvass; register 2024-08 → 2025-02 |
+| Commissioner D4 | Ryan Baty | **2023-01-09** | day | elected 2022 | 2022 canvass + CSV totals; register 2022-11 → 2023-03 |
+| Commissioner D5 | Jim Howell | **2015-01-12** | day | elected **2014** | 2014 canvass; page named Skelton 2014-07-01 |
+| County Clerk | Kelly Arnold | **2009-01-12** | day | elected **2008** | 🟢 BOCC minutes — see below |
+| County Treasurer | Brandi Baily | 🔴 **2021-10-12** | day | elected 2020 | `19-501` + measured, see below |
+| Register of Deeds | Tonya Buckingham | 🔴 **2016-01-29** | day | 🔴 **appointed** | county press release of that day |
+| Sheriff | Jeff Easter | **2013-01-14** | day | elected 2012 | 2012 canvass; Hinshaw on page 2012-11-27, Easter 2013-01-27 |
+| District Attorney | Marc Bennett | **2013-01-14** | day | elected 2012 | 2012 canvass; Foulston on page 2013-01-04, Bennett 2013-04-03 |
+
+**10 of 10 at day precision. 0 year, 0 unknown.** Party is recorded by the county on every row and
+is **discarded** — this repo is antipartisan by design.
+
+🟢 Every date's weekday was checked against the rule that produced it: the seven January dates are
+all Mondays, `2021-10-12` is a Tuesday, `2016-01-29` is a Friday (the press release says "today" and
+KMUW said "Friday"), and `2016-01-10` is a Sunday (the release says "Sunday morning"). Four of those
+are controls that could have failed.
+
+### 🔴🔴 "LAST ELECTED" IS NOT "CONTINUOUS SINCE", AND THE COUNTY'S OWN REGISTER ONLY HAS THE FORMER
+
+`/ElectedOffice/Officials/` carries an `ElectionYear` column. For Meitzner it reads **2022**; he has
+held D1 since **January 2019**. For Howell it reads **2022**; he has held D5 since **January 2015**.
+For Arnold it reads **2024**; he has been clerk since **January 2009**. ▶ The column is *the election
+that seated the current term*, and reading it as a start date would be wrong for 3 of 10 by between
+3 and 15 years. This is the roster-label rule again, from the opposite direction.
+
+The walk-back used the county's **own** canvasses: `/elections/election-results/<year>-general/`
+serves full result tables for **2000, 2004, 2008, 2012, 2014, 2016, 2018** (the `-general-election`
+suffix used for 2020/2024 404s for those years — two URL patterns, and only trying both found them).
+
+### 🔴🔴 THE COUNTY TREASURER TAKES OFFICE IN **OCTOBER OF THE YEAR AFTER** THE ELECTION
+
+`KSA 19-501`: elected at the general election "every four (4) years … for a term of four (4) years,
+**commencing on the second Tuesday in October following the election**". `25-313(a)` sets the second
+Monday of January for everyone else *"except as otherwise provided by law"* — and this is that
+exception. Brandi Baily won in **November 2020**; her term began **2021-10-12**, eleven months later.
+
+🟢 **Measured, not assumed.** The county's own `/treasurer/` page in the Wayback Machine:
+
+| Capture | Page says |
+| --- | --- |
+| 2021-01-29 | `alt="County Treasurer Linda Kizzire"` … Linda Kizzire |
+| 2021-08-01 | Linda Kizzire |
+| **2021-10-09** | **Linda Kizzire** — three days before the statutory date |
+| **2021-12-03** | **Brandi Baily** — "Brandi Baily, Sedgwick County Treasurer" |
+
+▶ A January assumption would have put Baily's start **21 months early** and asserted that Kizzire
+left office when she had not. The 2021-01-29 capture is the control that kills it.
+
+⚠ **An AI-generated summary site (`citizenportal.ai`) reports a January 2025 ceremony at which the
+treasurer was "sworn in for another term".** That article calls Blubaugh "**Jeff Lubas**" and Baily
+"**Brandy Bailey**" — it cannot spell either name and is not a source. A ceremonial oath in January
+would not move a statutory October term anyway, and the 2021 measurement stands on its own.
+
+### 🔴🔴 THE REGISTER OF DEEDS WAS **APPOINTED**, A YEAR BEFORE THE ELECTION THE REGISTER CREDITS
+
+The register says Buckingham, ElectionYear 2016. The county's `/deeds/` page says otherwise:
+
+| Capture | Page says |
+| --- | --- |
+| 2015-12-06 | "Bill Meek Register of Deeds" |
+| **2016-02-04** | "Tonya Buckingham Register of Deeds" |
+
+**Bill Meek died in office on Sunday 2016-01-10**, aged 71 (BOCC press release, relayed by KSN).
+`KSA 19-1203` fills the vacancy "in the manner provided by law for filling vacancies in the office of
+member of the house of representatives" → `25-3903` → **party convention, then appointment by the
+Governor**. The chain, from the county's own release of **2016-01-29**:
+
+- **2016-01-10** Meek dies (Sunday — the release says "Sunday morning, January 10th" ✓)
+- week of Jan 18–22 the **Sedgwick County Republican precinct committee** elects Buckingham
+- **2016-01-22** the election is **approved by Governor Brownback**
+- **2016-01-29** *"The new Sedgwick County Register of Deeds will take the oath of office at 4 p.m.
+  today at 525 N. Main, Suite 227."* (Friday ✓)
+
+`Release - New Sedgwick County Register of Deeds 012916.pdf`, Sedgwick County Communications.
+▶ **Three different dates, and only one is the term start.** This is the Tuttle trap from KS-3: the
+most quotable date (the Governor's approval, or the precinct vote) is not the day she took office.
+⚠ The release is same-day but still forward-looking by hours. It is corroborated by KMUW
+(2016-01-26, *"will be sworn in on Friday afternoon"*) and by the page reading Buckingham on
+2016-02-04. Recorded at day precision on that basis.
+
+⚠ Her own county bio says only *"Before her election to office, Tonya Buckingham was the Chief Deputy
+… for over 10 years"* — it frames her arrival as an election and names no date. A per-person label
+again describing how someone arrived, incompletely.
+
+### 🟢 THE COUNTY CLERK'S START CAME FROM THE MINUTES THE CLERK SIGNS
+
+Arnold's window from web captures was wide — Brace on 2008-06-13, Arnold on 2009-02-01 — and did not
+exclude an early appointment. **BOCC minutes closed it, because the County Clerk signs them:**
+
+- `reg-1-7.pdf` (**2009-01-07**): *"Mr. Don Brace, County Clerk"* present; the board marks *"the
+  retirement of Don Brace after serving eight years as the County Clerk"*.
+- `reg-1-14.pdf` (**2009-01-14**): signed **"Kelly B. Arnold, County Clerk"**.
+
+Second Monday of January 2009 = **2009-01-12**, exactly between the two. Brace **served his full term
+and retired at its end** — so Arnold arrived by election, not appointment.
+▶ **Reusable instrument: the BOCC minutes name every commissioner present and are signed by the
+clerk.** `/clerk/meeting-minutes/<year>-meeting-minutes/` covers **1996 → Aug 2010** as PDFs;
+everything after that is in **Legistar** (`sedgwickcounty.legistar.com`).
+
+⚠ **Legistar's `events` endpoint is broken for this client** — every call returns HTTP 400
+*"'Agenda Draft Status' … is not setup in settings"*. `/v1/sedgwickcounty/bodies` (BOCC is
+`BodyId 138`) and `/v1/sedgwickcounty/matters` both work. So matters are searchable and meetings are
+not; **no oath appears in matters** (`substringof('OATH',MatterTitle)` returns 0).
+
+### ✅ No early appointment for any of the other eight
+
+Each handover was tested by reading the **predecessor** off the county's own page, not by assuming
+the loser left on time:
+
+| Handover | Predecessor last seen | Successor first seen | Statutory date in window |
+| --- | --- | --- | --- |
+| Sheriff Hinshaw → Easter | 2012-11-27 | 2013-01-27 | 2013-01-14 ✓ |
+| DA Foulston → Bennett | 2013-01-04 | 2013-04-03 | 2013-01-14 ✓ |
+| Clerk Brace → Arnold | 2009-01-07 (minutes) | 2009-01-14 (minutes) | 2009-01-12 ✓ |
+| D5 Skelton → Howell | 2014-07-01 | 2015-03-16 | 2015-01-12 ✓ |
+| D4 Cruse → Baty | 2022-11-30 | 2023-03-27 | 2023-01-09 ✓ |
+| D2 Lopez → Blubaugh | 2024-08-03 | 2025-02-14 | 2025-01-13 ✓ |
+| D3 Dennis → Wise | 2024-08-03 | 2025-02-14 | 2025-01-13 ✓ |
+
+🟢 **D5 has an independent negative control.** Howell's window (Jul 2014 → Mar 2015) is wide, but
+`KSA 19-205` makes a person holding **any state office ineligible** for county commissioner, and
+kslegislature.gov has him as **Representative, District 81** for the 2013–14 biennium, which ran to
+the second Monday of January 2015. He **could not lawfully** have been seated earlier.
+
+Ten archive captures of the register between **2019-09** and **2026-04** show no other break in any
+of the ten seats.
+
+### 🟢 The 2022 canvass PDF's column alignment was PROVED, not read off
+
+`after-canvass-official-no-wi.pdf` is an Electionware summary whose layout prints the vote totals
+**above** the candidate names, so a reader must decide which number belongs to whom — and getting it
+backwards elects the loser. The county's own `official-2022-general-election_export.csv` carries a
+**`COUNTY TOTALS`** row, and it matches the PDF **name-for-name and vote-for-vote**:
+Meitzner 18,772 / Grant 16,761 · Baty 14,025 / Cruse 12,525 · Howell 14,540 / McIntosh 10,983.
+⚠ **First attempt summed every CSV row and got ~2× every figure** — because `COUNTY TOTALS` is a row
+*inside* the file. A naive sum double-counts the whole election.
+
+### The staggering, measured rather than assumed
+
+**D1, D4, D5 are midterm seats** (2014, 2018, 2022, next 2026); **D2, D3 are presidential-year
+seats** (2016, 2020, 2024). Three and two — which is how `19-202(c)`'s *"no more than a simple
+majority … at any general election"* is satisfied. The four countywide offices and the DA all run in
+presidential years (2012, 2016, 2020, 2024).
+
+### ▶ Structure decision, made and not deferred
+
+Modelled on **Los Angeles County**, which production already holds as government `Los Angeles County,
+California, US` (`type=County`, `geo_id=06037`) with chambers *County Board of Supervisors* (5),
+*Countywide Elected Officials* (3) and *Superior Court* (473).
+
+- government **`Sedgwick County, Kansas, US`**, `type=County`, `state=KS`, `geo_id=20173` — **there is
+  none today**; production has the district row for `20173` and 0 governments.
+- chamber **Board of County Commissioners** → 5 district offices
+- chamber **Countywide Elected Officials** → Clerk, Treasurer, Register of Deeds, Sheriff
+- chamber **Eighteenth Judicial District** → the DA now. 🔴 `22a-101(a)` says the DA is **not** a
+  county officer, so it does not belong in *Countywide Elected Officials*; a separate chamber also
+  gives the judges a home if stage 4b is taken.
+
+### ▶ SCOPE FORK, NOT YET DECIDED: 31 elected judicial seats
+
+The 18th Judicial District **elects** its judges — they are on the county's elected-officials
+register, so the district never adopted the nonpartisan/retention method of `20-2901`.
+
+🔴 **`KSA 4-219` says "There shall be 24 district judges in such district." The register lists 30,
+in divisions 1–30, contiguous and all filled**, plus **1 District Magistrate Judge** (position 1).
+The statute was last amended in **1987**. ▶ **The statute is authoritative for WHICH offices exist
+and stale for HOW MANY** — the same "authoritative for one field, stale for another" that the Knight
+waves keep paying for. Do not seat 24.
+
+Cohorts from the register: 9 divisions last elected 2022, 21 in 2024.
+⚠ Each of the 31 needs its own continuous-since date, and Kansas fills judicial vacancies by
+gubernatorial appointment mid-term, so that is a **bigger research job than all ten county officers
+together**. Recommended as a separate stage 4b, after 4a is applied.
+
+### What KS-4 owes next
+
+1. ▶ **The five commissioner-district polygons**, `outSR=4326`, and a **vintage proof**. 🔴 The three
+   published copies are one digitization, so the city layer is **not** the control — a KS-3-style
+   population-deviation test against the county's adopted redistricting plan is the route.
+2. ▶ A duplicate-name check with the guard's own predicate (`is_active` + the
+   `lower(btrim(first_name))`/`lower(btrim(last_name))` **pair**). ⚠ **`Jeff Easter`, `Kelly Arnold`,
+   `Marc Bennett`, `Ryan Baty` and `Jim Howell` are ordinary names and must be checked, not assumed
+   new.** ⚠ `Jeff Blubaugh` and `Pete Meitzner` are **former Wichita council members** and Wichita is
+   already seated by `CC_0159`/`CC_0160` — they may already exist as people.
+3. ▶ Two fresh `CC_` slots from the allocator — structure and occupancy. **Not yet reserved.**
+4. ▶ `offices.representation_note` is not required here: all ten are `residency` basis with `full`
+   voting powers.
+
+### Sources captured to disk, `backend/data/seed-ks-2026/`
+
+| File | What it is |
+| --- | --- |
+| `statutes/ksa-*.html` | the statutes above, fetched individually — ⚠ **the revisor 403s a directory listing but serves section pages**, and the chapter index lives at `/statutes/ksa_ch<N>.html` |
+| `ksa-ch{4,19,22a,25}-index.html` | chapter indexes, used to enumerate articles rather than guess section numbers |
+| `_sgco-{2000,2004,2008,2012,2014,2016,2018}-general.html` | the county's own result tables |
+| `sedgwick-{2020,2022,2024}-general-official.pdf` + `.txt` | official canvasses |
+| `_sgco-2022-official.csv` | the 2022 precinct export, used **only** as the alignment control |
+| `_sgco-elected-2*.csv` | 10 Wayback captures of the election office's register, 2019-09 → 2026-04 |
+| `sedgwick-release-new-rod-20160129.pdf` | 🟢 the county press release naming the oath hour |
+| `bocc-minutes-2009-01-{07,14}.pdf` + `.txt` | Brace present, then Arnold's signature |
+| `_bocc-{sgco-dedicated,sgco-election6,wichita1}.json` | the three BOCC layers, for the identity test |
+| `_tr-2021*.html`, `_rod-2015*.html`, `_rod-2016*.html`, `_clerk-2009.html` | the transition captures |
+
+## ✅✅ KS-4 APPLIED 2026-09-27 — SEDGWICK COUNTY IS SEATED
+
+`X0071` (5 commission boundaries) + **`CC_0161`** (structure) + **`CC_0162`** (occupancy):
+**10 offices — 5 commissioners + Clerk, Treasurer, Register of Deeds, Sheriff, District Attorney —
+10 seated, 0 vacant, 10 people created, 0 reused.**
+
+### Measured from outside against a same-session baseline
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,351 | **89,361** | **+10 exact** |
+| `office_terms` | 9,832 | **9,842** | **+10 exact** |
+| `offices` | 9,896 | **9,906** | **+10 exact** |
+| `governments` | 609 | **610** | **+1** |
+| `chambers` | 1,330 | **1,333** | **+3** |
+| `districts` | 10,450 | **10,455** | **+5** |
+| `X0071` boundaries | 0 | **5** | — |
+| Sedgwick **seated** (`count(och.politician_id)`) | 0 | **10** | — |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | **unmoved** |
+| Wichita control | 7 | 7 | **unmoved** |
+| Kansas legislature control | 165 | 165 | **unmoved** |
+| Kentucky control (sldu+sldl) | 138 | 138 | **unmoved** |
+
+🟢 **`offices_missing_terms` never moved at all**, unlike KS-3's 422 → 429 → 422. CC_0161 and
+CC_0162 were applied back to back with no measurement between them, so the view was never observed
+holding the ten term-less offices. Both readings are correct; this one simply has no transient.
+
+⚠ **THE KANSAS LEGISLATURE CONTROL WAS BROKEN ON ITS FIRST READING AND RETURNED 0.** The government
+is named **`State of Kansas`** with chambers `Kansas House of Representatives` and `Kansas Senate` —
+not anything matching `%Kansas%Legislature%`, which is what the first query asked for. A control
+that reads 0 because its predicate matches nothing is indistinguishable from a control that reads 0
+because the data is gone. It was fixed and read **165** before and after.
+
+### ✅ Idempotent, proved by re-running all three
+
+`load-sedgwick-bocc-boundaries.mjs`, `CC_0161` and `CC_0162` were each run a second time. Every
+count above is unchanged; both post-verify blocks raised their `OK` notice again.
+
+### The ten, as production now holds them
+
+| Chamber | Office | Holder | Since | Prec. | How |
+| --- | --- | --- | --- | --- | --- |
+| Board of County Commissioners | District 1 | Pete Meitzner | 2019-01-14 | day | elected 2018 |
+| Board of County Commissioners | District 2 | Jeff Blubaugh | 2025-01-13 | day | elected 2024 |
+| Board of County Commissioners | District 3 | Stephanie Wise | 2025-01-13 | day | elected 2024 |
+| Board of County Commissioners | District 4 | Ryan Baty | 2023-01-09 | day | elected 2022 |
+| Board of County Commissioners | District 5 | Jim Howell | 2015-01-12 | day | elected 2014 |
+| Countywide Elected Officials | County Clerk | Kelly Arnold | 2009-01-12 | day | elected 2008 |
+| Countywide Elected Officials | County Treasurer | Brandi Baily | **2021-10-12** | day | elected 2020 |
+| Countywide Elected Officials | Register of Deeds | Tonya Buckingham | **2016-01-29** | day | **appointed** |
+| Countywide Elected Officials | Sheriff | Jeff Easter | 2013-01-14 | day | elected 2012 |
+| Eighteenth Judicial District | District Attorney, 18th Judicial District | Marc Bennett | 2013-01-14 | day | elected 2012 |
+
+**10 of 10 at day precision. 0 year, 0 unknown, 0 computed from a calendar alone.** Party is NULL on
+all ten — the county records every one of them as a Republican, and this repo is antipartisan by
+design.
+
+### ✅ END TO END through the production API
+
+`POST https://api.empowered.vote/api/essentials/coordinate-lookup`, the anonymous route a voter's
+browser calls. ⚠ It takes `lat`/`lng`, not `latitude`/`longitude`.
+
+| point | Sedgwick offices returned |
+| --- | --- |
+| District 1 interior point | **Commissioner D1 Pete Meitzner** + Clerk, Treasurer, Register of Deeds, Sheriff, DA |
+| District 2 interior point | **Commissioner D2 Jeff Blubaugh** + the same five |
+| District 3 interior point | **Commissioner D3 Stephanie Wise** + the same five |
+| District 4 interior point | **Commissioner D4 Ryan Baty** + the same five |
+| District 5 interior point (Derby) | **Commissioner D5 Jim Howell** + the same five |
+| NEGATIVE: Nashville | 0 |
+| NEGATIVE: **Butler County**, immediately east | **0** |
+
+🟢 **5 of 5 districts return their OWN commissioner and nobody else's**, and the five countywide
+seats are constant across all five points — which is the shape a county layer should have and a
+copied polygon would not.
+🟢 **The Butler County negative is the one that matters.** Nashville proves only that Tennessee is
+far away. A point in the adjoining county, 20 miles from the district-3 probe, returning **no**
+Sedgwick official proves the county boundary is being respected.
+
+### 🟢 A RESULT WAS DOUBTED AND THE SOURCE SETTLED IT — AGAIN
+
+The district-1 probe also returned **"Representative Steve Brunk"**, and Brunk left the Kansas House
+in 2017, so it looked like a stale row from a neighbouring slice. `office_terms` gave `term_start
+2025-06-24`, sourced by `CC_0157` to the Legislature's own CSV. kslegislature.gov's member page for
+the 2025-26 biennium reads **"House — District 85, Sedgwick County · Steve Brunk"**. ▶ He returned;
+KS-2's data is right and the doubt was wrong. Chasing it validated a neighbouring slice against the
+authority, which is worth more than the assumption would have been.
+
+### ✅ ELEVEN GATES WATCHED FAILING, EACH FOR ITS OWN REASON
+
+A tamper harness ran every assertion against production inside `BEGIN … ROLLBACK`, and **an
+untampered run first, as a positive control, to prove the harness can execute the SQL at all** —
+without it, "everything errored" could mean the harness was simply broken.
+
+| Gate | Tamper | It said |
+| --- | --- | --- |
+| CC_0161 boundary guard | delete the `X0071` rows | *expected 5 X0071 commission boundaries, found 0* |
+| CC_0161 slug assertion | edit one `name_formal` | *2 of 3 chamber slugs match* |
+| CC_0161 appointed-office trap | rename Sheriff → County Appraiser | *an appointed or abolished office was created* |
+| CC_0161 abolished-office trap | rename the DA → County Attorney | *an appointed or abolished office was created* |
+| CC_0161 no-polygon guard | move D3 to a bogus mtfcc | *1 office(s) sit on a district with no matching boundary* |
+| CC_0162 office-count guard | run without CC_0161 | *found 0. Apply CC_0161 first* |
+| CC_0162 treasurer-October | set the treasurer to 2021-01-11 | *term starts 2021-01-11, not in October* |
+| CC_0162 is_incumbent | clear one `is_incumbent` | *1 … would be hidden from address search* |
+| CC_0162 two-seats | give Howell the Sheriff term as well | *1 person(s) hold more than one Sedgwick County seat* |
+| CC_0162 day-precision | set one term to `year` | *1 term(s) are not day precision* |
+| CC_0162 party | set a party on Baty | *1 official(s) carry a party* |
+
+🔴🔴 **THE APPOINTED-OFFICE TRAP FAILED FOR THE WRONG REASON ON THE FIRST ATTEMPT AND THAT LOOKED
+LIKE A PASS.** The tamper *added* a `County Appraiser` office, the migration aborted — but on the
+**office-count** assertion (`expected 10 … found 11`), which runs earlier. The abort was real and
+the trap was still completely unexercised. It only fires when the count is right, so the tamper was
+changed to **rename** an existing office instead. ▶ **"The gate aborted" is not "the gate I am
+testing aborted" — read the message, not the exit code.**
+
+⚠ **Two tamper cases were rewritten for a related reason.** Re-running a whole migration after a
+tamper lets its own idempotent write UNDO the tamper, so the post-verify passes and the control
+looks broken. The harness runs the tamper and then **only the final post-verify `DO` block**.
+
+### The migrations as written
+
+Slots from the allocator, never counted: **`CC_0161`** and **`CC_0162`**, both reserved to
+chris@empowered.vote before a line was written, each file named its slot immediately.
+
+- **`CC_0161`** refuses to run unless the five `X0071` boundaries, the TIGER county boundary
+  `20173`/`G4020` AND exactly one county district row to reuse all exist. It asserts the chamber
+  split 5/4/1, that no office title matches appraiser, coroner, surveyor, auditor, election
+  commissioner, county manager or **county attorney**, and that all three generated slugs are what
+  a reader would cite.
+- ⚠ **`chambers.slug` is a GENERATED column** (from `name_formal`) and the first draft tried to
+  insert it — `cannot insert a non-DEFAULT value into column "slug"`. Caught by the dry-run.
+- ⚠ **The county district row `20173` was REUSED, not duplicated.** KS-1's geography load had left
+  it with no `government_id` and no offices; CC_0161 attaches it. A second row on the same geometry
+  would have split the county's seats across two districts.
+- **`CC_0162`** counts `och.politician_id`, never `count(*)` — `office_current_holder` LEFT JOINs
+  from `offices`, so a vacancy is a NULL and `count(*)` would pass vacuously. It asserts the
+  treasurer's term starts **in October**, so that a later "correction" to January fails loudly.
+- Both dry-run against production inside `BEGIN … ROLLBACK`, and **the rollback was confirmed to
+  have reverted** — 0 governments, 0 offices, `politicians` and `office_terms` back to baseline, and
+  the county district's `government_id` back to NULL — before either was applied.
+
+### Gates
+
+✅ `check:reachability` — `BAD_GEOMETRY` 4, `DEAD_GEOGRAPHY` 17, `UNREACHABLE` 7, **all at baseline**.
+✅ `check:occupancy` — *"every politicians INSERT names is_incumbent"*, 13 files scanned.
+✅ `check:migrations` — 6 added vs origin/master, 2,168 slots across 380 refs, tree scan clean.
+
+### ⚠ Two operational notes this stage paid for
+
+- 🔴 **`psql` STOPPED CONNECTING MID-SESSION WHILE NODE'S `pg` CLIENT KEPT WORKING.** After seven
+  rapid psql invocations for the tamper suite, every further `psql` hung until timeout — including
+  `select 1` — while `pg` over the same `DATABASE_URL` answered instantly. Killing the stray psql
+  processes did not help. ▶ **Do not read "the database is down" from one client.** The MCP
+  connection and node both confirmed production was idle and healthy. The tamper suite and the
+  apply were done through node instead.
+- ⚠ **`steward extend --label` renews the lease but does NOT change the label.** The board still
+  reads "KS-2 apply" for a lease now covering KS-4. Harmless here; misleading to the next reader.
+
+### 🔴 `X0071` was chosen by reading, not by counting
+
+`X0001`..`X0070` were in use, `X0070` being KS-3's Wichita council districts. ⚠ **Nothing allocates
+custom MTFCC codes** — the steward allocates migration slots only — so a concurrent slice could take
+the same code and no mechanism would notice. Recorded as a gap again, not a problem hit.
+
+### What the slice still owes
+
+1. ✅ Stage 1 geography · ✅ Stage 2 legislature · ✅ Stage 3 Wichita · ✅ **Stage 4a Sedgwick County**.
+2. ▶ **Stage 4b, NOT YET DECIDED: 31 elected judicial seats** — 30 district judge divisions and 1
+   district magistrate judge, all elected countywide in the 18th. The chamber for them already
+   exists. 🔴 `KSA 4-219` says 24 judges and the register shows 30 — **the statute is stale on the
+   count**. Each needs its own continuous-since date, and Kansas fills judicial vacancies by
+   gubernatorial appointment mid-term, so this is a bigger research job than all ten county officers
+   together.
+3. ▶ **Stage 5 assets** — 10 Sedgwick portraits, 7 Wichita portraits, the legislature's 165, and a
+   `wichita` banner. 🔴 **Wichita's banner collides with the Kansas state banner** — read
+   `states/KS.jpg` in the 6:1 band first.
