@@ -1389,3 +1389,79 @@ automatically usable.
   about 247 live assets.
 
 ▶ **Merging PR #165 is what puts it in front of a voter** — Netlify deploys from `main`.
+
+## ✅ KY-5c APPLIED 2026-09-26 — Fayette County renders 6 of 18, and 2 of those 6 nearly were the wrong people
+
+**6 imported, 0 skipped, 0 failed.** No migration; an importer run. `politician_images`
+**9,172 → 9,178, exactly +6** against a baseline taken in the same session as the write.
+
+| Check | Result |
+| --- | --- |
+| Fayette seats with `photo_custom_url` on our CDN | 0 → **6** |
+| `photo_origin_url` recorded | **6**, and **0** wrongly hold an image URL |
+| Distinct licence strings across the 6 | **4** — one per publisher, which is the point |
+| 🟢 CONTROL — the KY legislature must not move | **138 → 138** |
+| 🟢 CONTROL — the two seats dropped for wrong-person must have no photo | **0** |
+| Outside read | **6 of 6 fetched and decoded**; bogus key → **HTTP 400**, no decode |
+
+**Nothing was enlarged.** Every row stored at its native cropped size: 539x674 · 200x250 x3 ·
+160x200 x2. Reaching the programme's 600x750 would have meant 1.11x to 3.75x, and `--max-upscale`
+refused. ⚠ **Five of the six are about a quarter of a normal portrait.** That is honest about what
+Fayette actually publishes, and a small true image beats an enlarged one.
+
+### 🔴🔴 BALLOTPEDIA'S FIRST IMAGE IS NOT THE SUBJECT — IT IS WHOEVER TOPS A RESULTS TABLE
+
+The worst near-miss of the slice. Five Fayette officers had a Ballotpedia portrait; **two of those
+five were photographs of their OPPONENTS**, and both would have shipped under the officeholder's
+name.
+
+- **Andrea Welker**, Constable District 1 — her page's only image is `alt="Image of Wade McNabb"`.
+- **Vincent Riggs**, Circuit Court Clerk — his page's only image is `alt="Image of John Dobson"`.
+
+**The cause:** these images carry `class="image-candidate-thumbnail"` and sit inside **election
+results tables**, not an infobox. Taking "the first plausible image on the page" therefore returns
+the first *candidate in a race*, who is the subject only by luck.
+
+🔴 **AND THE CONTACT SHEET COULD NOT HAVE CAUGHT IT.** All eight frames were rendered and looked at
+before anything was published — **eight plausible headshots of eight plausible officials.** Nothing
+in the pixels was wrong. A proof sheet catches an off-by-one when the wrong frame looks wrong; it is
+blind when the wrong person is also a plausible officeholder.
+▶ **What caught it was a FILENAME** — `JohnBDobson-min.jpg` under Vincent Riggs — and what proved it
+was the publisher's **own per-image `alt`**. That is the same mechanism that cleared all 138
+legislators in KY-5a, running in the opposite direction. **A per-image name assertion is the only
+detector that works here; the eye is not one.**
+⚠ Two of the surviving three carry **bare UUID filenames**, which the flag exists for — and their
+alts name the subject, so they are fine. **The filename is a signal to check, never a verdict.**
+
+### 🔴 Fayette is FIVE publishers and THREE rights positions — count them before promising a wave
+
+| Publisher | What it publishes | Verdict |
+| --- | --- | --- |
+| **Sheriff** `fayettesheriff.com` | **No policy at any probed path** — `terms`, `privacy`, `disclaimer`, `legal`, `copyright`, `policies` all absent, with a 404 control proving the probe could see one | Silence. Shipped. |
+| **County Clerk** `fayettekyclerk.gov` | Privacy policy, bare footer `Copyright 2026`, **no reuse clause** | Shipped. |
+| **PVA** `fayettepva.com` | Disclaimer + privacy, bare footer `ALL RIGHTS RESERVED`, **no reuse clause** | Shipped. |
+| **County Attorney** `fayettecountyattorney.com` | **Explicit prohibition** on distribution, modification and re-use (Terms of Use clause 6, a PDF) | ⏸ **HELD** |
+| **LFUCG** `lexingtonky.gov` | **Explicit prohibition** — and publishes **no portrait anyway** | ⏸ held, moot |
+
+🟢 **PA-5's rule paid again**: *"this host publishes no policy" is a claim with a shelf life — RE-TEST
+IT.* The Sheriff's absence was established by asking nine paths directly, not by observing that
+nothing was linked.
+
+### 🔴 A CONSOLIDATED GOVERNMENT DOES NOT PUBLISH ITS COUNTY'S PEOPLE
+
+`lexingtonky.gov` carries a **Fayette County Coroner's Office** page which **names Gary W. Ginn and
+publishes no portrait at all**. Its county-and-state-services index mentions **none** of the Fiscal
+Court, the Magistrates, the Constables, the Surveyor, the Commonwealth's Attorney or the
+Judge/Executive. ▶ **Consolidation merged the legislative body, not the publishing.** Expect a
+consolidated city's site to be silent about the separately elected county officers — KY-4 found the
+same thing about their occupancy.
+
+### What Fayette still owes — 12 of 18
+
+- ⏸ **County Attorney Angela C. Evans** — a route exists and her own office forbids it. **A fourth
+  letter is owed**, and is not drafted.
+- ⏸ **11 with no route at all**: Commissioners Miller and Lowe, Magistrates Bryant and Fath,
+  Constables Welker, McKenzie and Sparks, Surveyor Roland, Commonwealth's Attorney Baird, Coroner
+  Ginn, Circuit Court Clerk Riggs.
+  ⚠ **Welker and Riggs moved from "routable" to "blank" during this wave**, and that is the correct
+  direction. A blank beats a stranger's face.
