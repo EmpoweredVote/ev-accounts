@@ -9,6 +9,7 @@
 import { createHash } from 'node:crypto';
 import { resolve, sep } from 'node:path';
 import { normalizeText } from '../../src/lib/researchVerifier.js';
+import type { AmendmentText } from './recordBasis.js';
 import { isExcerptOnly, type SourceEntry, type SourceKind } from './sourcesManifest.js';
 
 export const EXCERPT_CONTEXT_WORDS = 150;
@@ -25,6 +26,29 @@ export interface SnapshotRecord {
   page_sha256: string | null;
   snapshot_text: string | null;
   excerpt_only: boolean;
+  /**
+   * Amendment-markup spec §3: 'none' for a `final` source (no markup to lose); 'kept' when the
+   * snapshot's text carries a `[deleted: …]` fence or the pdf-snapshot.ts strike-detection trailer;
+   * 'unknown' otherwise (a `marked`/`unmarked` source whose snapshot shows no evidence deletions
+   * were kept — CONFIRM, task 3, fails closed on this). An older snapshots.json with no such field
+   * reads as 'unknown' when JSON-parsed as SnapshotRecord.
+   */
+  amendment_markup: 'kept' | 'none' | 'unknown';
+}
+
+const PDF_TRAILER_PREFIX = '[extracted by pdf-snapshot.ts with strike detection';
+
+/**
+ * amendment-markup spec §3: does this snapshot text show that deleted words were kept legible?
+ * A `final` source prints no amended text at all, so there is nothing to keep — always 'none'.
+ * Otherwise 'kept' when a `[deleted: …]` fence (htmlToMarkedText) or the pdf-snapshot.ts trailer
+ * (pdfMarkedText) is present; 'unknown' when neither is — fail closed rather than assume nothing
+ * was deleted.
+ */
+export function amendmentMarkup(text: string, amendmentText: AmendmentText): 'kept' | 'none' | 'unknown' {
+  if (amendmentText === 'final') return 'none';
+  if (text.includes('[deleted: ') || text.includes(PDF_TRAILER_PREFIX)) return 'kept';
+  return 'unknown';
 }
 
 const collapse = (s: string) => s.replace(/\s+/g, ' ').trim();
@@ -96,13 +120,16 @@ export function buildSnapshot(args: {
   failure: string | null;
   fetchedBy: 'code' | 'human';
   batchId: string;
+  /** How this source prints amended text (sourceProfiles.ts `rules.amendment_text`). Default 'final'. */
+  amendmentText?: AmendmentText;
 }): SnapshotRecord {
-  const { entry, fetchedText, failure, fetchedBy, batchId } = args;
+  const { entry, fetchedText, failure, fetchedBy, batchId, amendmentText = 'final' } = args;
   const excerptOnly = isExcerptOnly(entry.source_kind);
   const make = (ok: boolean, fail: string | null, sha: string | null, text: string | null): SnapshotRecord => ({
     snapshot_id: snapshotIdFor({ batchId, url: entry.url, pageSha256: sha, snapshotText: text }),
     url: entry.url, source_kind: entry.source_kind, fetched_by: fetchedBy, excerpt_only: excerptOnly,
     ok, failure: fail, page_sha256: sha, snapshot_text: text,
+    amendment_markup: text === null ? (amendmentText === 'final' ? 'none' : 'unknown') : amendmentMarkup(text, amendmentText),
   });
   if (fetchedText === null) return make(false, failure ?? 'fetch-failed', null, null);
   const sha = createHash('sha256').update(fetchedText).digest('hex');

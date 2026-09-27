@@ -12,8 +12,10 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseSourcesManifest } from './lib/sourcesManifest.js';
 import { buildSnapshot, resolveHumanSavedPath, type SnapshotRecord } from './lib/snapshotSources.js';
+import { htmlToMarkedText } from './lib/htmlMarkedText.js';
+import { loadSourceProfiles, resolveProfile } from './lib/sourceProfiles.js';
 import { createPageFetcher } from '../src/lib/researchVerifier.js';
-import { createVerificationFetchSession, htmlToText } from '../src/lib/verificationFetch.js';
+import { createVerificationFetchSession, htmlToText, robotsAllows, EMPOWERED_VOTE_UA } from '../src/lib/verificationFetch.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir');
@@ -32,19 +34,46 @@ for (const entry of manifest.sources) {
 }
 const batchId = manifest.batch_id;
 
+// Amendment-markup spec §1/§3: the source profile says how a URL prints amended text.  A code-fetched
+// HTML page from a `marked` source (AZ azleg strike-through) is read with htmlToMarkedText so deleted
+// words survive as `[deleted: …]` fences; every other source keeps today's behaviour (the verifier's
+// fetch ladder, already stripped to plain text). A human-saved page stays on htmlToText even when its
+// profile is `marked` — a saved PDF's markup is recovered by pdf-snapshot.ts instead, and a saved HTML
+// file is rare enough that hand-checking it is the operator's job (spec's collector note).
+const profiles = loadSourceProfiles();
+
 const session = createVerificationFetchSession();
 const fetcher = createPageFetcher(session.fetch);
 const out: SnapshotRecord[] = [];
 for (const entry of manifest.sources) {
+  const amendmentText = resolveProfile(profiles, entry.url)?.rules.amendment_text ?? 'final';
   if (entry.human_saved_path) {
     const html = readFileSync(resolveHumanSavedPath(dir, entry.human_saved_path)!, 'utf8');
-    out.push(buildSnapshot({ entry, fetchedText: htmlToText(html), failure: null, fetchedBy: 'human', batchId }));
+    out.push(buildSnapshot({ entry, fetchedText: htmlToText(html), failure: null, fetchedBy: 'human', batchId, amendmentText }));
+    continue;
+  }
+  if (amendmentText === 'marked') {
+    try {
+      if (!(await robotsAllows(entry.url))) {
+        out.push(buildSnapshot({ entry, fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId, amendmentText }));
+        continue;
+      }
+      const res = await fetch(entry.url, {
+        redirect: 'follow',
+        headers: { 'user-agent': EMPOWERED_VOTE_UA, accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const html = await res.text();
+      out.push(buildSnapshot({ entry, fetchedText: htmlToMarkedText(html), failure: null, fetchedBy: 'code', batchId, amendmentText }));
+    } catch (e) {
+      out.push(buildSnapshot({ entry, fetchedText: null, failure: (e as Error).message, fetchedBy: 'code', batchId, amendmentText }));
+    }
     continue;
   }
   const r = await fetcher(entry.url);
   out.push(r.ok
-    ? buildSnapshot({ entry, fetchedText: r.text, failure: null, fetchedBy: 'code', batchId })
-    : buildSnapshot({ entry, fetchedText: null, failure: r.reason, fetchedBy: 'code', batchId }));
+    ? buildSnapshot({ entry, fetchedText: r.text, failure: null, fetchedBy: 'code', batchId, amendmentText })
+    : buildSnapshot({ entry, fetchedText: null, failure: r.reason, fetchedBy: 'code', batchId, amendmentText }));
 }
 await session.close();
 writeFileSync(join(dir, 'snapshots.json'), JSON.stringify(out, null, 2));

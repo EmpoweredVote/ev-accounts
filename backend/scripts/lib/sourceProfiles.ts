@@ -9,7 +9,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load as yamlLoad } from 'js-yaml';
-import { CHAMBER_RULES, NAME_FORMATS, TALLY_FORMATS, VOTE_BLOCK_RULES, seatChamber, type Chamber, type SourceRules } from './recordBasis.js';
+import { AMENDMENT_TEXTS, CHAMBER_RULES, NAME_FORMATS, TALLY_FORMATS, VOTE_BLOCK_RULES, seatChamber, type Chamber, type SourceRules } from './recordBasis.js';
 import { RECORD_KIND } from './coderLabel.js';
 
 export type PageKind = 'vote' | 'author' | 'bill-text' | 'minutes';
@@ -27,7 +27,7 @@ export interface SourceProfile {
 
 export const SOURCES_DIR = fileURLToPath(new URL('../../../docs/sources/', import.meta.url));
 const TOP_KEYS = ['profile', 'version', 'scope', 'body', 'match', 'page_kind', 'rules', 'seat_titles', 'controls'];
-const RULE_KEYS = ['vote_block', 'chamber', 'not_chamber_after', 'name_format', 'tally_format'];
+const RULE_KEYS = ['vote_block', 'chamber', 'not_chamber_after', 'name_format', 'tally_format', 'amendment_text'];
 const CONTROL_KEYS = ['batch', 'snapshot', 'person', 'office_title', 'instrument', 'record_kind', 'actor_quote', 'tally_quote', 'provision_quote', 'expect'];
 const OPTIONAL_CONTROL_KEYS = ['actor_quote', 'tally_quote', 'provision_quote'];
 
@@ -65,6 +65,7 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
     fail('rules.chamber bill-origin is only valid for page_kind author | bill-text');
   }
   if (r.tally_format !== undefined && !TALLY_FORMATS.includes(r.tally_format as never)) fail(`rules.tally_format "${String(r.tally_format)}" is not one of ${TALLY_FORMATS.join(' | ')}`);
+  if (r.amendment_text !== undefined && !AMENDMENT_TEXTS.includes(r.amendment_text as never)) fail(`rules.amendment_text "${String(r.amendment_text)}" is not one of ${AMENDMENT_TEXTS.join(' | ')}`);
   if (!NAME_FORMATS.includes(r.name_format as never)) fail(`rules.name_format "${String(r.name_format)}" is not one of ${NAME_FORMATS.join(' | ')}`);
   const extra = r.not_chamber_after ?? [];
   if (!Array.isArray(extra) || !extra.every((w) => str(w) && /^[a-z0-9]+$/i.test(w as string))) fail('rules.not_chamber_after must be a list of single words');
@@ -105,7 +106,7 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   return {
     profile: h.profile as string, version: h.version as number, scope: h.scope as string, body: h.body as string,
     url_prefixes: prefixes as string[], page_kind: h.page_kind as PageKind,
-    rules: { vote_block: r.vote_block, chamber: r.chamber, not_chamber_after: extra as string[], name_format: r.name_format, tally_format: r.tally_format ?? 'labelled' } as SourceRules,
+    rules: { vote_block: r.vote_block, chamber: r.chamber, not_chamber_after: extra as string[], name_format: r.name_format, tally_format: r.tally_format ?? 'labelled', amendment_text: r.amendment_text ?? 'final' } as SourceRules,
     seat_titles: h.seat_titles as Record<string, Chamber>,
     controls: (h.controls as Record<string, unknown>[]).map((c) => ({ ...c, actor_quote: (c.actor_quote as string | undefined) ?? null, tally_quote: (c.tally_quote as string | undefined) ?? null, provision_quote: (c.provision_quote as string | undefined) ?? null }) as ProfileControl),
     file,

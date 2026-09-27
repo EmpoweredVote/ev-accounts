@@ -1,7 +1,7 @@
 // backend/scripts/lib/snapshotSources.test.ts
 import { describe, it, expect } from 'vitest';
 import { join, resolve } from 'node:path';
-import { excerptWindows, buildSnapshot, snapshotIdFor, resolveHumanSavedPath, MAX_EXCERPT_WORDS } from './snapshotSources.js';
+import { excerptWindows, buildSnapshot, snapshotIdFor, resolveHumanSavedPath, amendmentMarkup, MAX_EXCERPT_WORDS } from './snapshotSources.js';
 import type { SourceEntry } from './sourcesManifest.js';
 
 const words = (n: number, w = 'filler') => Array.from({ length: n }, (_, i) => `${w}${i}`).join(' ');
@@ -112,5 +112,52 @@ describe('buildSnapshot refuses a JavaScript shell', () => {
   it('a real page that merely mentions JavaScript is kept', () => {
     const long = 'Bill text. '.repeat(200) + 'You need to enable JavaScript for the video.';
     expect(buildSnapshot({ entry: entry({ source_kind: 'public-record' }), fetchedText: long, failure: null, fetchedBy: 'code', batchId: id }).ok).toBe(true);
+  });
+});
+
+describe('amendmentMarkup', () => {
+  it("is 'none' for a final source, regardless of content", () => {
+    expect(amendmentMarkup('plain law text', 'final')).toBe('none');
+    expect(amendmentMarkup('has a [deleted: word] fence', 'final')).toBe('none');
+  });
+  it("is 'kept' when the text carries a [deleted: …] fence", () => {
+    expect(amendmentMarkup('A person [deleted: shall not] may carry.', 'marked')).toBe('kept');
+    expect(amendmentMarkup('A person [deleted: shall not] may carry.', 'unmarked')).toBe('kept');
+  });
+  it("is 'kept' when the text carries the pdf-snapshot trailer", () => {
+    const text = 'Bill text.\n[extracted by pdf-snapshot.ts with strike detection, 2026-09-27T00:00:00.000Z, https://iga.in.gov/x.pdf]';
+    expect(amendmentMarkup(text, 'marked')).toBe('kept');
+  });
+  it("is 'unknown' for a marked/unmarked source with no fence and no trailer", () => {
+    expect(amendmentMarkup('plain bill text, no markup at all', 'marked')).toBe('unknown');
+    expect(amendmentMarkup('plain bill text, no markup at all', 'unmarked')).toBe('unknown');
+  });
+});
+
+describe('buildSnapshot amendment_markup', () => {
+  const id = 'batch-am';
+  it("defaults amendmentText to 'final' -> amendment_markup 'none'", () => {
+    const s = buildSnapshot({ entry: entry({ source_kind: 'public-record' }), fetchedText: 'A bill.', failure: null, fetchedBy: 'code', batchId: id });
+    expect(s.amendment_markup).toBe('none');
+  });
+  it("a marked source whose text carries a fence -> 'kept'", () => {
+    const s = buildSnapshot({
+      entry: entry({ source_kind: 'public-record' }), fetchedText: 'A person [deleted: shall not] may carry.',
+      failure: null, fetchedBy: 'code', batchId: id, amendmentText: 'marked',
+    });
+    expect(s.amendment_markup).toBe('kept');
+  });
+  it("a marked source whose text carries no fence -> 'unknown'", () => {
+    const s = buildSnapshot({
+      entry: entry({ source_kind: 'public-record' }), fetchedText: 'A bill with no markup.',
+      failure: null, fetchedBy: 'code', batchId: id, amendmentText: 'marked',
+    });
+    expect(s.amendment_markup).toBe('unknown');
+  });
+  it("a failed fetch (no text) still fills amendment_markup: 'none' for final, 'unknown' otherwise", () => {
+    const a = buildSnapshot({ entry: entry(), fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId: id });
+    expect(a.amendment_markup).toBe('none');
+    const b = buildSnapshot({ entry: entry(), fetchedText: null, failure: 'robots_disallowed', fetchedBy: 'code', batchId: id, amendmentText: 'marked' });
+    expect(b.amendment_markup).toBe('unknown');
   });
 });

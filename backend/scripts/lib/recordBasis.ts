@@ -41,13 +41,21 @@ export type VoteBlockRule = 'aye-count' | 'whole-page';
 export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'page-header' | 'bill-origin' | 'none';
 export type TallyFormat = 'labelled' | 'dash-ayes-nays';
 export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
-export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat }
+/**
+ * How a source prints amended text (amendment-markup spec §1): 'final' — the page prints the law as
+ * it will read, no markup to lose (CA chaptered text); 'marked' — deletions are recoverable from the
+ * page's markup (AZ HTML strike-through, or an IN bill-text PDF read with pdfMarkedText); 'unmarked' —
+ * deletions are NOT recoverable (a PDF read without strike detection, or a plain-text copy).
+ */
+export type AmendmentText = 'final' | 'marked' | 'unmarked';
+export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; not_chamber_after: string[]; name_format: NameFormat; tally_format: TallyFormat; amendment_text: AmendmentText }
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
 export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'page-header', 'bill-origin', 'none'];
 export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
 export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
+export const AMENDMENT_TEXTS: readonly AmendmentText[] = ['final', 'marked', 'unmarked'];
 /** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
-export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled' };
+export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled', amendment_text: 'final' };
 /** Per actor passage: the rules of its source and the seat's chamber in that body. */
 export type PassageProfile = { rules: SourceRules; chamber: Chamber | null };
 export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
