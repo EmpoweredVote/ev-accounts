@@ -1,0 +1,15 @@
+Wrote `labels/coder-1.json`.
+
+**Row: John Kavanagh (AZ State Senator) / school-vouchers → BLANK `no-evidence`**
+
+The three snapshots are all one instrument, HB2853 (2022), the Arizona ESA universal-expansion bill:
+
+| snapshot | V1–V5 |
+|---|---|
+| bill overview | `own-act` / `on-question` / `record` (sponsor, `Kavanagh (Co-Sponsor)`) / `chair-shaped` / **`pre-seating`** |
+| House Third Reading | `own-act` / `on-question` / `record` (vote, `KAVANAGH Y`, `Passed 31-26-3-0-0`) / `chair-shaped` / **`pre-seating`** |
+| chapter text | `own-act` / `on-question` / `record` (vote, provision quoted) / `chair-shaped` / **`pre-seating`** |
+
+On content the bill would seat rung 5 — new § 15-2401.01 makes every resident eligible to enroll in an Arizona public school a "qualified student," and § 15-2402(C) transfers 90% of charter-equivalent funding to the account. But every act here is a House of Representatives act from June–July 2022, and the seat being coded is the Senate term that began 2023-01-02. V5: "A record from an earlier office is valid for that office only." No passage survives, so no chair.
+
+`needs_source` asks for a Senate-term ESA roll call or Kavanagh's own words from the current term or the campaign that seated him.

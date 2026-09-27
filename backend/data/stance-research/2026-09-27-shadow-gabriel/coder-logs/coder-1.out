@@ -1,0 +1,14 @@
+Wrote `labels/coder-1.json` — one row, coded BLANK.
+
+**Jesse Gabriel / misinformation → BLANK `no-evidence`**
+
+The single source is AB 587 (2021-2022), which Gabriel authored ("AB 587, Gabriel. Social media companies: terms of service."). Coding:
+
+- **V1 `own-act`** — the digest author line is his act; `record_kind: author`, no vote page so `tally_quote: null`.
+- **V3 `record`** — named instrument, chaptered statute.
+- **V2 `adjacent`** — this is the decisive step. AB 587 compels a platform to *post* its terms of service and *report* its moderation practices to the AG (including whether it defines "Disinformation or misinformation"). The rungs separate on removal / labeling / voluntary standards / speech protection / banning government involvement. A disclosure-and-reporting mandate is none of those, so it's the Moore/data-centers pattern: on-question only at the topic label.
+- **V4 `off-axis`**, **V5 `in-term`** (2022-09-13; authoring an Assembly bill requires holding the seat).
+
+I specifically did not reach for rung 3 — "encourage voluntary standards" doesn't describe a mandate enforced by $15,000/day civil penalties — nor for rung 1 or 2, since the bill requires neither removal nor labeling. Since no passage survives V2, `rests_on` is empty and `quotes` is empty (bill text is not his words).
+
+`needs_source` lists what would settle it: Gabriel's own first-person words on removal vs. labeling, a floor/author statement tying AB 587 to either, or an instrument whose operative section requires one.

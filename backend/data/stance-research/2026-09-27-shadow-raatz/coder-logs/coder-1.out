@@ -1,0 +1,17 @@
+Written `labels/coder-1.json` — one row, chair **4**.
+
+**Coding summary (Jeff Raatz / education-gender-identity)**
+
+Three passages, all one instrument group (`HB 1608 (2023)`), all `record` / `own-act` / `on-question` / `in-term` / `chair-shaped`:
+
+| snapshot | kind | carries |
+|---|---|---|
+| roll call 345 | `vote` | `actor_quote` (`Charbonneau Gaskill Raatz`), `tally_quote` (Yea 37 / Nay 12) |
+| bill details | `sponsor` | `actor_quote` (`Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz, Sen. Gary Byrne.`) |
+| enrolled act | `vote` | `provision_quote` (new IC 20-33-7.5 Sec. 2(a)) |
+
+Facts sit only on the page that prints them, per the 0.3 per-instrument ruling. The enrolled-act PDF carries `[deleted: …]` fences — none is quoted; the provision I cite is added text in a new chapter.
+
+**Why rung 4, not 3 or 5:** the operative section makes written parental notification mandatory ("shall notify… not later than five (5) business days") for a request to change name or pronoun, with no staff-discretion safety exception — which rules out rung 3's "unless staff believe it would put the student in danger." It requires notice *after* the request, not permission *before* staff may use the name, which rules out rung 5.
+
+Not near-unanimous (12 of 49 against). The bill's other half (no human-sexuality instruction in PK–3) is related subject matter, not an omnibus, so the vote ladder's `multi-subject` bar doesn't apply; the sponsorship record carries the chair independently in any case. `quotes` is empty — no first-person words from Raatz appear in these sources.

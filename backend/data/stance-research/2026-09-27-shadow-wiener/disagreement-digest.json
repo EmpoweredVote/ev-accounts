@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.3.1",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 2,
+      "split_units": 2,
+      "alpha": -0.11111111111111116,
+      "examples": [
+        {
+          "unit": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|c5ab4eab-702f-49b8-9277-8ea53f3835c6#18c4f26c-10ba-5ce6-ae32-b3ced197e427",
+          "values": [
+            "chair-shaped",
+            "chair-shaped",
+            "near-unanimous"
+          ]
+        },
+        {
+          "unit": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|c5ab4eab-702f-49b8-9277-8ea53f3835c6#57e05bd7-06ea-5f93-8606-afd05b1a31eb",
+          "values": [
+            "near-unanimous",
+            "chair-shaped",
+            "near-unanimous"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "values": [
+            "BLANK",
+            "2",
+            "BLANK"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v6_chair"
+  ]
+}
