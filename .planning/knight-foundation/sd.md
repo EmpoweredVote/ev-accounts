@@ -12,17 +12,18 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 1 geography | ✅ **APPLIED 2026-09-28 — 72 boundaries, 72 districts, 35 Senate + 37 House, 0 errors.** Only `sldu` + `sldl` were owed; vintage PROVED against the SD Legislature's own adopted-map layer |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — 9 offices, 9 seated, 0 vacant, 7 terms DATED + 2 honestly unknown** (`X0072`, `CC_0165`/`CC_0166`) |
-| 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
+| 4 county waves | ✅ **APPLIED 2026-09-28 — 10 offices, 10 seated, 0 vacant, 8 terms DATED + 2 honestly unknown, NO GEOMETRY LOADED** (`CC_0167`/`CC_0168`) |
 | 5 assets | ▶ **BLOCKED ON A LICENCE.** Letter drafted to the LRC, **NOT SENT, nothing imported**. No `aberdeen` banner key |
 
 ### ▶ RESUMING THIS SLICE — read this before touching anything
 
-**Next is SD-4, Brown County. Its elected office inventory is UNREAD.**
-🔴 Bind on **(mtfcc, geo_id) = (`G4020`, `46013`)**. `Brown County` resolves NINE ways.
-▶ Read the county's own authority the way ND-4 did — Grand Forks County turned out to elect
-**seven** officers with its commission **at large and no districts**, and only the charter settled
-it. South Dakota counties are statutory (SDCL Title 7) rather than chartered, so the statute is the
-likely authority; **check whether Brown County has adopted a charter before assuming that.**
+**Stages 1-4 are APPLIED. Only SD-5 (assets) is left, and it is BLOCKED ON A LICENCE.**
+▶ **The next act is to SEND the letter drafted to `LRC@sdlegislature.gov`** — see stage 5 below.
+South Dakota states *"Use by Permission Only"* up front, unlike North Dakota's silence, so **ask
+first and import nothing** until there is an answer. There is also no `aberdeen` banner key.
+
+🟢 **Aberdeen now scores the full stack.** One point at the Brown County Courthouse returns
+**seventeen** officials — 10 county, 3 city, 3 legislative and the at-large U.S. Representative.
 
 ⚠ **THE WORKTREE IS SET UP UNUSUALLY AND A FRESH SESSION WILL TRIP ON IT.**
 `C:\ev-accounts-sd\backend\node_modules` is a **directory junction** to the main checkout's, and
@@ -621,13 +622,261 @@ quietly convert an unknown into a guess.
 Dry-run was a real `BEGIN … ROLLBACK` through `psql` as `ev_api`, **verified to have reverted**.
 `check:occupancy`, `check:migrations` and `check:reservations` all green.
 
-▶ **Next: SD-4, Brown County — office inventory UNREAD.**
+▶ **SD-4 is applied — see below.**
 
-▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
-— council member, county commissioner, state senator, and **two** state representatives — and
-**four** inside 26A/26B/28A/28B. Neither count is a defect. Aberdeen's own district must be
-established before the probe is written, because which of the two shapes applies there decides what
-the probe asserts.
+▶ **The program's four-answer probe returns SEVENTEEN answers at the Brown County Courthouse**
+— 10 county, 3 Aberdeen, 3 legislative and the at-large U.S. Representative. On a whole
+legislative district the *state* part is council member, county commissioner, state senator and
+**two** state representatives; inside 26A/26B/28A/28B it is four. Neither count is a defect.
+
+---
+
+## ✅ SD-4 APPLIED 2026-09-28 — BROWN COUNTY IS SEATED, AND IT LOADED NO GEOMETRY
+
+`CC_0167` (structure) + `CC_0168` (occupancy): **10 offices, 10 seated, 0 vacant, 10 people
+created, 0 reused.** Baseline measured in the same session, minutes before the write.
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,475 | 89,485 | **+10 exact** |
+| `office_terms` | 9,956 | 9,966 | **+10 exact** |
+| `offices` | 10,020 | 10,030 | **+10 exact** |
+| `chambers` | 1,337 | 1,339 | +2 |
+| `governments` | 611 | 612 | +1 |
+| **`districts`** | 10,532 | **10,532** | **UNMOVED — and that is the finding** |
+| `offices_missing_terms` | 422 / 184 / 238 | **422 / 184 / 238** | **unmoved** |
+
+**8 terms day-precision, 2 honestly `unknown`.** No name collided — the only surname matches in
+production are Bill Sutton (KS), Ed Sutton (SC), Michael Van Meter, Stacy Wiese and Ty Winter, five
+different people. Checked, not assumed.
+
+### 🔴🔴 THE COMMISSION IS ELECTED AT LARGE, SO THIS WAVE CREATED NO DISTRICT
+
+All ten offices hang on the county district that already existed (`COUNTY` / **`G4020`** /
+**`46013`**, government_id was NULL and offices 0). `districts` did not move by a single row. This
+is the opposite of the program's usual shape and it must not be "fixed" later by inventing five
+commissioner districts — **the structure gate fails if any row matching
+`Brown County Commission District%` ever appears.**
+
+🔴 **THE STATUTE CANNOT SETTLE THIS, AND THAT IS THE TRAP.** SDCL 7-8-2 reads *"The nomination and
+election of county commissioners shall be by a vote of the voters of the district of which such
+candidate is a resident voter"*, which sounds decisive and is not: **SDCL 7-8-10** lets the board,
+at each decennial revision, *"choose to have commissioners elected at large"*, or from single-member,
+multi-member or hybrid districts. Only the county's own record says which. Four sources say at large:
+
+1. 🟢 **the county's own sample ballot** for the 4 June 2024 primary — *"For County Commissioner At
+   Large — You may vote for up to two or leave it blank"* — and the **same** contest with the
+   **same** three candidates appears on the ballots of legislative districts **01, 03 and 23**, so
+   every voter in the county votes on every seat;
+2. the Secretary of State's candidate lists name the contest **"County Commissioner At Large"** in
+   2016, 2018, 2020, 2022 and 2024 — five consecutive cycles;
+3. the SOS result pages name it **"County Commissioner At Large - Brown"**;
+4. the county's own Commission page has listed five members with **no district** since at least
+   2014-05-27.
+
+⚠ **A WEB SEARCH SUMMARY SAID "AT LARGE" TOO — AND IT WAS A LEAD, NOT THE SOURCE.** The same
+summary also asserted a 2026 incumbent list. The ballot is what settled it.
+
+⚠ **ONE STATUTORY LOOSE END, RECORDED RATHER THAN HIDDEN.** SDCL 7-8-1 says a commissioner of an
+*"odd-numbered or unnumbered district"* runs in the **gubernatorial** year. Brown County's seats are
+unnumbered, yet two of five are filled in presidential years (Sutton, Dinger — 2024) and three in
+gubernatorial years (Wiese, Gage, Dennert — 2022). The staggering is real and the county states it;
+it survived the move to at-large election, which SDCL 7-8-8 and 7-8-11 expressly provide for.
+**The ballot is the fact; the parity rule is not.**
+
+### 🟢 THE INVENTORY IS TEN, AND THE STATE'S OWN AUDITOR PRINTS IT
+
+| source | what it gives |
+| --- | --- |
+| **SDCL 7-7-1.1 + 7-8-1** | sheriff, auditor, register of deeds (1974 + 4k); treasurer, state's attorney, coroner (1976 + 4k); a board of 3-7 commissioners |
+| **the county's own June-2024 sample ballot** | the commissioner contest, named and at large |
+| 🟢 **SD Department of Legislative Audit** | a **"COUNTY OFFICIALS"** page in every Brown County audit report — as of 31 December **2021, 2023 and 2024** it lists exactly 5 commissioners + Auditor + Treasurer + State's Attorney + Register of Deeds + Sheriff, and nothing else |
+
+▶ **The DLA report is the find worth carrying to every other county slice.** It is a state agency's
+dated list of a county's elected officers, published as page 1 of an audit the county puts on its
+own website. It is the cheapest complete inventory in the program so far, and it is a *third*
+independent voice, not a restatement of the county's page.
+
+🔴 **THE CORONER IS NOT SEATED, AND IT IS PROVED POSITIVELY.** Brown County Commission
+**RESOLUTION #08-24**, adopted **2024-01-16**, *"does hereby adopt the option to appoint the Brown
+County Coroner in lieu of an election pursuant to SDCL 7-7-1.4"* and appoints the **Sheriff** to
+serve as coroner. SDCL 7-7-1.4 requires that election *"not later than the April first preceding
+the election for coroner"*; the coroner's cycle year is 2024 and the resolution predates it. Brian
+Koens was later sworn as Coroner on **2024-12-31** (*"Auditor Heupel swore Brian Koens in as Brown
+County Coroner"*). ▶ **This is ND-4's shape without ND-4's argument from absence** — a named
+instrument, not three empty ballots.
+
+🔴 **THE DIRECTOR OF EQUALIZATION IS NOT SEATED EITHER** — SDCL 10-3-3: *"The county director of
+equalization shall be appointed by the board of county commissioners."* The county's department
+list shows Equalization beside the six elected offices with nothing marking which is which. That is
+the Sedgwick County trap of `CC_0161`, and the statute is what separates them.
+
+### ⚠ THE CHARTER QUESTION, STATED HONESTLY RATHER THAN CLAIMED
+
+SDCL 7-7-1.1 opens *"Unless otherwise provided by county charter"*. Brown County's published
+ordinance code is **20 titles and contains no charter**, and the office set observed is exactly the
+statutory default with the one statutory opt-out exercised by a resolution citing the statute by
+number. **SDCL 6-12-11** makes the Secretary of State the keeper of adopted charters — that
+registry is **not published online and was not read**.
+
+▶ So the negative is **not proved directly**. What makes the inventory safe anyway is that a
+charter, if one exists, **has not changed the office set**, because the set matches the statute it
+would have had to override. ND-4 had to OCR a scanned charter to reach the same certainty; here the
+convergence carries it, and the gap is recorded rather than papered over.
+
+### 🔴🔴 AN ELECTION YEAR IS NOT AN ARRIVAL — IT WOULD HAVE BEEN WRONG FOR SIX OF TEN
+
+| holder | office | start | prec. | how | the dated evidence |
+| --- | --- | --- | --- | --- | --- |
+| **Mike Gage** | Commissioner | **2021-12-14** | day | appointed | *"SWEARING IN CEREMONY: Mike Gage was sworn in by County Auditor, Cathy McNickle as Brown County Commissioner"* — filling the seat of *"former Commissioner Kippley who resigned December 7, 2021"*. **Elected eleven months later.** |
+| **Drew Dennert** | Commissioner | **2023-01-03** | day | elected | *"Drew Dennert, Mike Gage and Doug Fjeldheim were sworn in as Brown County Commissioners"* — the statutory first Tuesday |
+| **Kyler Dinger** | Commissioner | **2025-01-07** | day | elected | *"Auditor Heupel Administered the Oaths of Office to Commissioners Sutton and Dinger"* — the statutory first Tuesday |
+| **Mike Wiese** | Commissioner | **2019-01-01** | day | elected | elected 2018 (6,819, third of six for three seats). 🔴 **A FRESH occupancy: he sat through 2014, is ABSENT from the county's page 2015-01-21 to 2018-07-01, and returns 2019-01-01.** |
+| **Duane Sutton** | Commissioner | **NULL** | **unknown** | — | on the board, already as **Chair**, in the earliest archived copy of the county's own page, **2014-05-27** |
+| **Lynn Heupel** | Auditor | **2022-09-06** | day | appointed | *"Lynn Heupel was named as Interim Auditor for 2 years. She will have to run in the 2024 election"* (2022-08-09) + the same meeting's HR line *"effective September 6, 2022"* |
+| **Patty VanMeter** | Treasurer | **NULL** | **unknown** | — | Treasurer in the earliest archived copy showing her, **2020-02-26**; Sheila Enderson still held it 2019-07-16 |
+| **Mariann Malsom** | Register of Deeds | **2023-01-02** | day | elected | elected 2022; first Monday in January, SDCL 7-7-1. ⚠ **No oath is recorded for her** |
+| **Dave Lunzman** | Sheriff | **2023-01-02** | day | elected | elected 2022; first Monday. ⚠ **His oath is 2023-01-03** — see below |
+| **Karly Winter** | State's Attorney | **2023-07-10** | day | appointed | *"Hiring of Karly Winter as Brown County States Attorney … effective July 10, 2023"*, after *"resignation of Ernest Thompson … effective May 12, 2023"* and Mark Anderson as temporary interim |
+
+▶ **Taking the most recent election would have been wrong for six of the ten.** Taking the *first*
+election in the SOS candidate lists would still have been wrong for four, **because an appointment
+leaves no candidate row at all**.
+
+### 🔴🔴 THE ELECTION RESULTS ARE NOT AN INVENTORY OF WHO WAS ELECTED
+
+South Dakota lets a county auditor leave an uncontested office off the ballot entirely, so an
+unopposed winner appears in **no result at all**. Measured: the SOS's Brown County return for the
+**November 2024 general carries NO county contest whatsoever** — no commissioner, no treasurer, no
+auditor, no state's attorney — **yet five people took those offices from that election**. Doug
+Fjeldheim is the same shape in 2022: on the candidate list, **absent from the result**, and sworn
+in on 2023-01-03.
+
+▶ **The CANDIDATE LIST holds them; the RESULT does not.** Reading the results as the roster of
+winners is a silent under-count, and it is the opposite of ND-4's lesson (*a certified result is
+not a fact about who holds the seat*) — here the result does not even exist.
+
+### 🔴 THREE DIFFERENT STATUTORY START DAYS IN ONE COUNTY
+
+| | day | statute |
+| --- | --- | --- |
+| County Commissioner | **first TUESDAY** of January | SDCL 7-8-1 |
+| Treasurer · Register of Deeds · Sheriff · State's Attorney | **first MONDAY** in January | SDCL 7-7-1 |
+| **County Auditor** | **first MONDAY OF MARCH** | SDCL 7-7-1 |
+
+Making these uniform would be wrong three ways. **The rule applied here is one rule**: an *elected*
+arrival takes the statutory term commencement — a date the statute states, not one this wave
+computes — and an *appointed* arrival takes the date the county's own minutes give it.
+
+🟢 **AND THE DERIVATION IS CONTROLLED.** The two recorded commissioner oaths — **2023-01-03**
+(Dennert) and **2025-01-07** (Dinger) — both land **exactly** on the statutory first Tuesday.
+⚠ **The same control also shows the oath and the term start are different events**: Sheriff
+Lunzman's term began the first **Monday**, 2023-01-02, but he was sworn on 2023-01-03, because
+Brown County swears its countywide officers at the commission's **reorganization** meeting, which
+falls on the commission's Tuesday. Wiese's re-election oath is later still — **2023-01-17**, a
+fortnight after that term began. ▶ That is why the term start comes from the statute and the
+ceremony dates live in the `source` strings.
+
+### 🟢 THE AUDITOR IS OFF-CYCLE, AND THE MINUTES SAY WHY IN ONE SENTENCE
+
+SDCL 7-7-1.1 puts the auditor in the 1974 + 4k class — **2022, 2026**. Brown County's auditor ran in
+**2024**. That looked like a contradiction for hours; the county's own minute resolves it:
+*"Lynn Heupel was named as **Interim Auditor for 2 years**. She will have to run in the **2024
+election**."* A vacancy appointment runs to the next general election, so the seat moved off the
+statutory class. ▶ **An office appearing in the wrong cycle year is a VACANCY signature, not a data
+error.**
+
+### ⚠ THE COUNTY'S OWN PAGES WERE STALE BY MONTHS
+
+The archived **State's Attorney** page still named **Ernest Thompson on 2023-09-28** — ten weeks
+after Karly Winter took the office and four months after Thompson's resignation took effect.
+Trusting it would have placed her arrival *after* September 2023 instead of 10 July. **A source can
+be authoritative for one field and stale for another**; the HR record inside the minutes is what
+dates it.
+
+### 🔴 THREE DETECTOR FAILURES, ALL CAUGHT, ALL WORTH CARRYING
+
+1. 🔴🔴 **A CONTROL PROVES THE SCAN READS THE ROWS — IT CANNOT PROVE THE PREDICATE IS RIGHT.**
+   Grepping 186 archived minutes for **`oath`** returned **zero**, and a positive control confirmed
+   the scan was not blind (78 of 81 files contained `commission`). The scan was fine; **the word was
+   wrong.** Brown County files the event as **`SWEARING IN CEREMONY`**. Searching for that returned
+   Gage, Dennert, Lunzman, Dinger and Koens. ▶ *A clean zero from a working detector is still a
+   statement about the query, not about the world.*
+2. 🔴 **A SURNAME IS NOT A PERSON.** Name scans returned *"Violet Dinger Estate"*, *"Gage Hansen"*,
+   *"Sutton Stearns"*, *"Karly Allison"*, *"Andrea Heupel"* and *"Matthew Heupel"* — claim lists and
+   4-H premium rolls. Every date above comes from a line that names the **office**.
+3. 🔴 **A LIST UNDER A HEADING IS NOT THE HEADING'S MEMBERSHIP.** Parsing the archived Commission
+   page produced **six** commissioners for 2014-2019. The sixth was **"Gary Vetter — Commission
+   Assistant"**, staff. **SDCL 7-8-3 (3, 5 or 7 only) is what caught it** — the statute as an
+   arithmetic control on a scrape.
+
+### ⚠ TWO ARCHIVES LIE ABOUT THEIR OWN DEPTH
+
+- 🔴 **`sdpublicnotices.com` SILENTLY CLAMPS THE DATE RANGE.** A search from 2005-01-01 returned two
+  pages of results and reported **"Published Date From: 7/30/2026"** — the site holds ~60 days and
+  substituted its own range without erroring. The results looked like an answer and matched nothing
+  asked for.
+- 🔴🔴 **A PDF OF EXACTLY 1,048,576 BYTES IS A TRUNCATION, NOT A DOCUMENT.** **40** of the archived
+  Brown County minute volumes came back at exactly 2²⁰ bytes with no `%%EOF`. The Wayback capture
+  itself is partial: the 2019 volume's `x-archive-orig-etag` gives the original as **45 MB**, and
+  the replay serves 1 MiB. `pdftotext` reports *"damaged — attempting to reconstruct"* and yields
+  **0 pages**, but a partly-truncated scan would have yielded its first pages **without complaining**.
+  ▶ **Check the byte count against a power of two, and check for `%%EOF`.** That is why Sutton's and
+  VanMeter's arrivals stay `unknown`: the bound volumes that hold them survive only as a first
+  megabyte.
+
+### Where the dated record actually lives
+
+| source | covers |
+| --- | --- |
+| live site `brown.sd.us/commission-meetings` | **2024-01-02 →** (146 meetings, 159 PDFs, all with a text layer) |
+| Wayback of the old site's weekly minutes | **2020-02-18 → 2023-10-31** |
+| Wayback of the county's department pages | **2014-05-27 → 2026-08-14**, ~2 snapshots a year |
+| SD DLA audit reports on the county's own site | officials as of 31 Dec **2021, 2023, 2024** |
+| SD SOS candidate lists (CSV) | **2016, 2018, 2020, 2022, 2024** primary + general |
+| SD SOS result pages (`eid` 178/291/422/471/684) | 2016-2024; **older `eid`s 302-redirect** |
+
+⚠ **The gap is 2023-11 and 2023-12** — after the old site's archive stops and before the new one
+starts. Nothing needed for SD-4 fell in it.
+
+### Gates and controls
+
+Structure gate asserts: 1 government, 2 chambers, 10 offices, **exactly 5 at-large commissioner
+offices and 5 countywide**, **0 invented commission districts**, every office on **exactly one**
+district, that district carrying geometry, 0 vacant, **6 distinct titles** (the five commissioner
+rows share one **by design**), and **no Coroner or Director of Equalization office**.
+
+Occupancy gate asserts: 10 people in the reserved band, 10 terms, 5 + 5 seated **counting
+`och.politician_id` rather than `*`**, **8 day-precision + 2 unknown explicitly**, every
+unknown-precision term carrying a **NULL** `term_start`, 5 `elected` + 3 `appointed`, every person
+`is_incumbent`, and no person holding two offices anywhere.
+
+🟢 **The end-to-end probe is controlled by the collision itself.** A point at the Brown County
+Courthouse returns **17** officials. Points in **Brown County, Wisconsin** and **Brown County,
+Kansas** each land inside a county row named *"Brown County"* and return **0** South Dakota
+offices — as do Rapid City and Fargo. ▶ The name collision is the control, pointed the right way.
+
+🔴 **The `geo_id` collision is visible in the probe's own output**: State House District 3 and State
+Senate District 3 both carry `geo_id` **`46003`**, while Brown County is **`46013`** — and Senate
+District 13 *is* `46013`. Only `(mtfcc, geo_id)` separates them, and every lookup in both migrations
+carries it.
+
+`check:occupancy` green (10 files scanned). `check:migrations` green (6 added, 2,176 slots across
+393 refs). `check:reservations` green. Dry-run was a real `BEGIN … ROLLBACK` through `psql` as
+`ev_api`, and **the rollback was verified to have reverted** — all three totals returned to
+89,475 / 9,956 / 10,020 before the apply.
+
+🟢 The reserved `external_id` band **-2765886 .. -2765877** was measured empty first, continuing the
+slice's own sequence (SD-2 took -2766000..-2765896, SD-3 -2765895..-2765887).
+
+### ▶ What SD-4 leaves behind
+
+- ⚠ **Duane Sutton's and Patty VanMeter's arrivals are open.** Both are `unknown` with NULL
+  `term_start`. Either could be closed by a source that reaches before **2014-05-27** (Sutton) or
+  into **2019-07..2020-02** (VanMeter) — the county's bound minute volumes, if a complete copy can
+  be got from the county rather than from a truncated capture.
+- ⚠ **The Secretary of State's home-rule charter registry is unread** (SDCL 6-12-11). It is the one
+  document that would settle the charter question positively rather than by convergence.
 
 ---
 
@@ -709,15 +958,15 @@ government row. It does not satisfy stage 4.
 | --- | --- | --- |
 | 1 geography | `sldu` **35** + `sldl` **37** = **72 polygons / 72 districts** | ✅ **MEASURED 2026-09-28** |
 | 2 legislature | **105 offices** — 70 House + 35 Senate | ✅ seat total now **derived** (33x2 + 4) |
-| 3 Aberdeen | unknown — the office inventory has not been read | **nothing read yet** |
-| 4 Brown County | unknown — the office inventory has not been read | **nothing read yet** |
+| 3 Aberdeen | **9 offices** — 1 Mayor + 8 council, two per district over four NAMED districts | ✅ **APPLIED 2026-09-28** |
+| 4 Brown County | **10 offices** — 5 commissioners AT LARGE + Auditor, Treasurer, Register of Deeds, Sheriff, State's Attorney | ✅ **APPLIED 2026-09-28** |
 | 5 assets | portraits for everything seated, plus an `aberdeen` banner | |
 
-⚠ **Aberdeen's and Brown County's office inventories are NOT yet known and must not be guessed.**
-ND-3 found Grand Forks elects **nine** offices, not eight, because a Municipal Judge is elected and
-named in one sentence on a court staff page; ND-4 found Grand Forks County elects **seven** and its
-commission sits **at large with no districts**. Read the city's own code and the county's own
-charter. Do not standardise the municipality — `backend/data/seed-<place>/ROSTERS.md` first.
+✅ **Both inventories were read, not guessed.** Aberdeen's came from its Home Rule Charter ss 2.02,
+2.03 and 6.03; Brown County's from SDCL 7-7-1.1 and 7-8-1, the county's own sample ballot, and the
+SD Department of Legislative Audit's "COUNTY OFFICIALS" page in three consecutive audit reports.
+⚠ **Neither matched a template.** Aberdeen has no elected municipal judge (the ND-3 trap) and Brown
+County elects no coroner and no director of equalization, each excluded by a named instrument.
 
 ---
 
@@ -736,8 +985,13 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
    hottest shared file** — merge `master` into this branch early and often, in this worktree.
 4. ✅ **Dry-run, then apply SD-1 — DONE 2026-09-28.** Both tables moved by **exactly +72** and
    nothing else moved; `offices_missing_terms` unmoved at 422/238.
-5. ▶ **SD-2 — NEXT**: read the legislature's own roster; establish the term-start dates from the body's own
-   record, never computed. Then SD-3 and SD-4 on Aberdeen and Brown County.
+5. ✅ **SD-2 — DONE 2026-09-28.** 105 offices, 105 seated, every term day-precision (`CC_0163`/`CC_0164`).
+6. ✅ **SD-3 — DONE 2026-09-28.** Aberdeen: 9 offices, 7 dated + 2 unknown (`X0072`, `CC_0165`/`CC_0166`).
+7. ✅ **SD-4 — DONE 2026-09-28.** Brown County: 10 offices, 8 dated + 2 unknown, **no geometry loaded**
+   (`CC_0167`/`CC_0168`).
+8. ▶ **SD-5 — NEXT, AND IT IS A LICENCE QUESTION BEFORE IT IS A TECHNICAL ONE.** Send the drafted
+   letter to `LRC@sdlegislature.gov`. **Import nothing until there is an answer** — South Dakota
+   states "Use by Permission Only" up front. There is also no `aberdeen` banner key.
 
 ---
 
@@ -748,8 +1002,16 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
 - ✅ ~~The vintage is unproved.~~ **CLOSED 2026-09-28 — TIGER 2024 carries the 2021 Adopted Map,
   proved geometrically against the SD Legislature's own layer, with the superseded 2010 layer as
   the control that makes the test able to fail.**
-- 🔴 **Aberdeen's office inventory is unread**, and so is Brown County's.
-- ⚠ **Which legislative district Aberdeen sits in is unknown**, so the acceptance probe cannot be
-  written yet — and whether it asserts four answers or five depends on it.
+- ✅ ~~Aberdeen's and Brown County's office inventories are unread.~~ **CLOSED 2026-09-28 — 9 and 10,
+  each from the body's own instrument.**
+- ✅ ~~Which legislative district Aberdeen sits in is unknown.~~ **CLOSED — District 3, a WHOLE
+  district, so the probe asserts the five-answer shape. Measured: the courthouse returns 17
+  officials in total.**
+- ⚠ **Duane Sutton's and Patty VanMeter's arrival dates are still open** — both written `unknown`
+  with a NULL `term_start`. The bound county minute volumes that would close them survive on the
+  Wayback Machine only as a truncated first megabyte of a 45 MB scan; a complete copy would have to
+  come from the county.
+- ⚠ **The Secretary of State's home-rule charter registry (SDCL 6-12-11) is unread.** It is the one
+  document that would settle Brown County's charter question positively rather than by convergence.
 - ⚠ **No `SD` entry exists in the TIGER loader allowlist**, though line 742 already maps FIPS `46` to
   `sd`. The existing SD polygons came from earlier national loads, not from this script.
