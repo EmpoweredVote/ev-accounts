@@ -11,7 +11,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — 72 boundaries, 72 districts, 35 Senate + 37 House, 0 errors.** Only `sldu` + `sldl` were owed; vintage PROVED against the SD Legislature's own adopted-map layer |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
-| 3 city waves | ▶ **MEASURED 2026-09-28, NOTHING WRITTEN. 9 offices** — Mayor + 8 council over 4 districts. Inventory settled from the charter; geometry located and validated. **Blocked on per-member arrival dates** |
+| 3 city waves | ✅ **APPLIED 2026-09-28 — 9 offices, 9 seated, 0 vacant, 7 terms DATED + 2 honestly unknown** (`X0072`, `CC_0165`/`CC_0166`) |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
 | 5 assets | — not started. No `aberdeen` banner key |
 
@@ -518,9 +518,79 @@ though it is not a start date.
 
 ### ▶ What SD-3 still owes
 
-- The X-series boundary load for the four district polygons (SR **4269**, must be set explicitly).
-- The two migrations: structure (1 government, 2 chambers, 9 offices) and occupancy (9 people,
-  7 dated terms + 2 open-ended).
+---
+
+## ✅ SD-3 APPLIED 2026-09-28 — ABERDEEN IS SEATED
+
+`X0072` (4 council polygons) + `CC_0165` (structure) + `CC_0166` (occupancy): **9 offices, 9 seated,
+0 vacant, 9 people created, 0 reused.**
+
+| | delta |
+| --- | --- |
+| `politicians` | **+9 exact** |
+| `office_terms` | **+9 exact** |
+| `offices` | **+9 exact** |
+| `districts` | **+5** (4 council + 1 citywide) |
+| `offices_missing_terms` | **unmoved at 422 / 238** |
+
+**7 terms day-precision, 2 honestly `unknown`.** No name collided — none of the nine exists
+elsewhere in production.
+
+### 🟢 ABERDEEN CITY HALL NOW RETURNS SIX OFFICIALS
+
+| Office | Holder | Term start |
+| --- | --- | --- |
+| Council Member, Northwest District | Charlotte Liebelt | 2022-07-05 |
+| Council Member, Northwest District | Rich Ward | 2024-07-01 |
+| Mayor | Travis Schaunaman | 2019-07-01 |
+| State Representative, District 3 | Al Novstrup | 2025-01-14 |
+| State Representative, District 3 | Brandei Schaefbauer | 2025-01-14 |
+| State Senator, District 3 | Carl Perry | 2025-01-14 |
+
+⚠ **Six, not four** — two multi-member bodies stack at the same address. Only the county
+commission is missing, which is SD-4.
+
+⚠ **`David Novstrup` (council, Southeast) and `Al Novstrup` (State Representative, District 3) are
+DIFFERENT PEOPLE**, both of Aberdeen, both seated by this slice. The full names differ so nothing
+collided, but a surname match across the two waves would merge them.
+
+### 🔴 ONE POLYGON ARRIVED INVALID, AND THE REPAIR IS GATED RATHER THAN TRUSTED
+
+The city's **Northwest** district has a **ring self-intersection** at
+`(-98.5069610644335, 45.4842403902356)` — a zero-area digitising spike. The loader repairs it with
+`ST_MakeValid` and **asserts what the repair did**: measured 2026-09-28, it keeps a single Polygon,
+takes 316 points to 319, and moves the area by **0.000000 m² of 11,515,275.41**. A repair that moved
+more than 1 m² would abort. ▶ **A repair that is not measured is an edit.**
+
+⚠ **A zero rowcount has two causes and they are not the same fact** — already-present, or
+rejected-by-the-area-guard. An earlier version counted both as "already existed", which would have
+hidden a repair that redrew a district. The loader now asks which.
+
+### 🔴 THE EXTRA RINGS ARE HOLES, NOT PARTS
+
+Northwest returns five rings, Northeast three, Southwest two. In GeoJSON that means one exterior and
+N holes — but ArcGIS also emits **multi-part** shapes as multiple rings, and reading a part as a
+hole would cut real territory out of a district **with nothing erroring**. Measured: every ring 0 is
+clockwise with a large area (the ESRI exterior convention), and every later ring is
+counter-clockwise, tiny, and has its first vertex **inside** ring 0. They are genuine in-holdings.
+The loader asserts that shape rather than assuming it.
+
+### Gates and controls
+
+The loader carries five controls — a bogus layer id, the district name set, the population identity
+(**28,495, a number from outside the layer**), the ring orientation test, and probes requiring City
+Hall in exactly one district and two out-of-state points in none. The population and name gates were
+each **watched failing** on a tampered copy.
+
+The structure migration **refuses to run if the four polygons are absent**, and its gate asserts
+that **every Aberdeen office sits on a district that has geometry** — the one failure mode CI cannot
+catch. The occupancy gate asserts 7 day-precision + 2 unknown explicitly, so a later edit cannot
+quietly convert an unknown into a guess.
+
+Dry-run was a real `BEGIN … ROLLBACK` through `psql` as `ev_api`, **verified to have reverted**.
+`check:occupancy`, `check:migrations` and `check:reservations` all green.
+
+▶ **Next: SD-4, Brown County — office inventory UNREAD.**
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
