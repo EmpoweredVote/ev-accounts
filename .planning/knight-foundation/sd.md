@@ -462,13 +462,65 @@ ArcGIS org as the city's imagery, roads, addresses and jurisdictions.
 ⚠ `spatialReference` is **4269 (NAD83)**, not 4326. The load must set SRID explicitly.
 ⚠ The city also publishes a council-district **PDF**; it is not the route and must not become one.
 
-### ▶ What SD-3 still owes before anything is written
+### ✅ THE ARRIVALS ARE DATED FROM THE COUNCIL'S OWN MINUTES (2026-09-28)
 
-- 🔴 **A dated arrival for each of the nine.** The charter fixes 1 July, but only for members who
-  arrived by regular election. Nothing read so far rules out an appointment among the seven whose
-  election year is not directly evidenced, and the Agenda Center's default listing exposes only
-  2025-26, so the July minutes for 2022, 2023 and 2024 have not been read.
-- The X-series boundary load for the four polygons, and the two migrations.
+Ruling: dig the minutes rather than derive. **It was the right call — derivation would have been
+wrong by 25 days on one member and wrong in kind on two others.**
+
+| Member | District | Start | Precision | Evidence |
+| --- | --- | --- | --- | --- |
+| Erin Fouberg | NE | **2022-07-05** | day | *"Finance Officer Jordan McQuillen administered the oath of office to new City Council Members Erin Fouberg, Charlotte Liebelt, and David Novstrup."* |
+| Charlotte Liebelt | NW | **2022-07-05** | day | same minute |
+| David Novstrup | SE | **2022-07-05** | day | same minute |
+| Travis Schaunaman | **Mayor** | **2019-07-01** | day | *"administered the oath of office to Travis Schaunaman, Mayor of the City of Aberdeen, SD"* — his 2024-07-01 oath is a **re-election** |
+| Rich Ward | NW | **2024-07-01** | day | *"administered the oath of office to Mayor Travis Schaunaman and new City Council Member Rich Ward"* |
+| **Talmage Ekanger** | SW | **2025-06-06** | day | *"Finance Officer McQuillen administered the Oath of Office to Talmage Ekanger"*, special meeting |
+| Chad Nilson | SE | **2025-07-01** | day | charter § 2.02(c); no oath recorded; absent 06-23, present 07-07 |
+| Rob Ronayne | NE | **NULL** | **unknown** | continuous since **at least 2016-06-27**, the earliest minute the archive holds |
+| Alan Johnson | SW | **NULL** | **unknown** | continuous since **at least 2016-06-27** |
+
+### 🔴🔴 TWO MEMBERS OF THE SAME ELECTION STARTED 25 DAYS APART, AND THE CHARTER RULE ONLY FITS ONE
+
+Ekanger and Nilson both won on **2025-06-03**. Deriving "1 July after the election" would have given
+both **2025-07-01**. It is right for Nilson and **wrong for Ekanger**:
+
+- **Ekanger's seat was already VACANT.** Justin Reinbold is gone from the roll by 2025-06-02, so the
+  SW seat had no occupant. At the canvass meeting on **2025-06-06** the council resolved that he
+  *"begin discharging the duties of the office as soon as he has qualified"*, the Finance Officer
+  administered the oath **at that meeting**, and *"Mayor Schaunaman thereafter invited Council
+  Member Ekanger to join the meeting"* — he then moved the adjournment. He is at the roll call on
+  2025-06-16 and 2025-06-23, both **before** 1 July.
+- **Nilson's seat was NOT vacant.** Tiffany Langer served the SE seat to the end of her term and is
+  at the roll call through 2025-06-23. And 🔴 **the SE race went to a RECOUNT** — Nilson won
+  **124 to 123** — with Resolution 25-06-02R *"declaring results of SE District election following
+  recount board determination"* adopted 2025-06-16. He first appears at the roll call on 2025-07-07.
+
+▶ **The charter's own exception is the discriminator, and only the minutes expose which side a
+member falls on.** A published term-end year cannot: both men read "Term Ends 2030".
+
+### 🔴 A RE-ELECTION DOES NOT RESTART AN OCCUPANCY, AND THE MAYOR IS THE PROOF
+
+Schaunaman was sworn on **2019-07-01** and sworn **again** on 2024-07-01. The second is a
+re-election of a continuously serving mayor, so the occupancy starts in **2019**, not 2024. Taking
+the most recent oath would have shortened his tenure by five years. The same reasoning is why
+Ronayne and Johnson cannot be dated from their current term: both read "Term Ends 2028", both were
+re-elected in 2023, and both were already at the roll call in **June 2016**.
+
+### ⚠ TWO ARRIVALS ARE OLDER THAN THE CITY'S OWN ARCHIVE
+
+Aberdeen's Agenda Center offers **2015 onward**, and holds no 2015 council minutes — the earliest
+usable roll call is **2016-06-27**. **Rob Ronayne and Alan Johnson are both present in it**, so the
+city's own published record cannot date their arrival. Their terms are written **open-ended at
+`start_precision => 'unknown'`**, which is what the schema is for; writing 2016-06-27 at day
+precision would assert a start that is merely the edge of the archive. ▶ Their continuity since at
+least 2016-06-27 is recorded here and in the migration comment, because it is a real fact even
+though it is not a start date.
+
+### ▶ What SD-3 still owes
+
+- The X-series boundary load for the four district polygons (SR **4269**, must be set explicitly).
+- The two migrations: structure (1 government, 2 chambers, 9 offices) and occupancy (9 people,
+  7 dated terms + 2 open-ended).
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
