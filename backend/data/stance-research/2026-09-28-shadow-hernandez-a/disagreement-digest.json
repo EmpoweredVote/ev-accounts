@@ -1,0 +1,101 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 3,
+      "alpha": -0.33333333333333326,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#ee4f18cb-a494-55f1-a53d-fcf21882f8d9",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#a9d948e7-b333-51c9-8523-9debcc4118b2",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#4a0d6404-e229-5af7-a662-6c6d35dbd0f9",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 3,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#ee4f18cb-a494-55f1-a53d-fcf21882f8d9",
+          "values": [
+            "direction-only",
+            "off-axis",
+            "off-axis"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#a9d948e7-b333-51c9-8523-9debcc4118b2",
+          "values": [
+            "direction-only",
+            "off-axis",
+            "off-axis"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34#4a0d6404-e229-5af7-a662-6c6d35dbd0f9",
+          "values": [
+            "near-unanimous",
+            "near-unanimous",
+            "off-axis"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance",
+    "v4_shape"
+  ]
+}

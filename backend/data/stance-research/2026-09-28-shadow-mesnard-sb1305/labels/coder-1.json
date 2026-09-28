@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Bill overview names him as prime sponsor of SB1305, a single-subject curriculum bill later vetoed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "75343598-1fb8-585f-aad1-2ba26517eaa6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page shows his Aye on a divided 16-12 passage vote, so it is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "0db8e945-92cc-5f28-b839-85721d76633d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": "A public school, school district or state agency or an employee of a public school, school district or state agency may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts:",
+          "note": "Engrossed text prints the operative prohibition, enforced by complaint process, civil penalties up to $5,000 and teacher discipline.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+        "75343598-1fb8-585f-aad1-2ba26517eaa6",
+        "0db8e945-92cc-5f28-b839-85721d76633d"
+      ],
+      "reasoning": "Mesnard was prime sponsor of SB 1305 (2023) and voted Aye on its Senate Third Reading, a single-subject curriculum bill whose operative section says a school \"may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts\", listing race and ethnicity concepts, backed by civil penalties of up to $5,000 and teacher discipline. That is a ban on race lessons treated as divisive, matching \"Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate\", and it is not merely keeping \"the curriculum focused on core academics\" nor presenting topics \"as open questions, giving competing viewpoints equal weight\". The bill's carve-out preserving discussion of \"slavery, Indian removal, the holocaust and Japanese-American internment\" narrows the ban to promoting the listed concepts but does not change its prohibitory shape.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

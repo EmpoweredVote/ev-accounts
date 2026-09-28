@@ -1,0 +1,13 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Matt Gress / gun-policy → BLANK `no-evidence`**
+
+All three snapshots are one record — HB2635 (2025), which Gress prime-sponsored ("Gress (Prime)") and voted for ("GRESS Y"). It's a transaction privilege tax exemption for "Sales of safe firearm storage devices."
+
+- **V2 `adjacent` on all three.** The ladder's rungs run from banning civilian ownership to permitless carry, with universal background checks in the middle. None of them speak to storage or to tax treatment of safety equipment. A tax break for gun safes imposes, loosens and repeals nothing — it's the topic label, not the dimension the rungs separate (the V2 "Blake Moore / data-centers" failure mode).
+- **V4:** the vote page is also `near-unanimous` (57-0-3-0-0, zero No votes), so it couldn't carry a chair alone even if it were on-question; the sponsor/bill-text pages are `off-axis`.
+- **V5 `in-term`** throughout (2025; term began 2023-01-02).
+
+Since no passage survives V1–V5, `rests_on` is empty and `v6_value` is null. `needs_source` asks for an Arizona background-check or permitless-carry/reciprocity roll call, or his own words answering the question.
+
+One judgment call worth flagging: I coded the bill-text page's V1 as `own-act` on the reasoning that all pages of one instrument group are one record (the V3 worked example treats the bill-text page of a vote as `record`), even though that page names no actor — `actor_quote` is null there, carried instead by the overview and vote pages.

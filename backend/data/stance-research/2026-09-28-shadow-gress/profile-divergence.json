@@ -1,0 +1,92 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2635(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2635H.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635#house-third",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "amendment-markup-lost",
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2635(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635#house-third",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2635H.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "amendment-markup-lost",
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2635(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2635H.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635#house-third",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "amendment-markup-lost",
+      "near-unanimous-vote"
+    ]
+  }
+]

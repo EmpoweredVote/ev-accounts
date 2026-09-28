@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": "A facility that is run by or that operates on the property of a public educational institution may not Perform or provide an abortion, unless the abortion is necessary to save the life of the woman having the abortion.",
+          "note": "Bill text bundles a sex/race/genetic-abnormality abortion ban, an educational-facility restriction, clinic and informed-consent rules, and reporting requirements, none of which sets a general gestational-stage standard.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call records Lieberman's No vote on SB1457 as a state representative.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB1457 (2021), which Lieberman voted No on as a state representative ('LIEBERMAN N', 'Passed 31-29-0-0-0'), restricts abortion by the reason given (sex, race, or genetic abnormality), by location ('A facility that is run by or that operates on the property of a public educational institution may not Perform or provide an abortion, unless the abortion is necessary to save the life of the woman having the abortion.'), and through clinic and informed-consent regulation, but it does not set a general standard for when abortion is legal by pregnancy stage as the rungs (from 'keep abortion legal at every stage of pregnancy' to 'ban abortion in all cases, with no exceptions') require. No surviving passage establishes a chair.",
+      "needs_source": [
+        "Lieberman's own words or a vote/sponsorship on a bill setting a general gestational-stage abortion standard (e.g., a trimester limit or a rape/incest/life-of-the-mother exception structure)"
+      ],
+      "quotes": []
+    }
+  ]
+}

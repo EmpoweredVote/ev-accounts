@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-gress",
+  "seat": {
+    "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+    "full_name": "Matt Gress",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "question_text": "How should the government regulate firearms?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+        },
+        {
+          "value": 2,
+          "text": "Ban semi-automatic assault-style weapons, while allowing other firearms."
+        },
+        {
+          "value": 3,
+          "text": "Allow all types of firearms, but require universal background checks on every sale."
+        },
+        {
+          "value": 4,
+          "text": "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+        },
+        {
+          "value": 5,
+          "text": "Repeal major gun restrictions and let adults carry a firearm without a permit."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

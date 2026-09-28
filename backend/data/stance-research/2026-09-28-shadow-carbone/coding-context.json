@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-carbone",
+  "seat": {
+    "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+    "full_name": "Michael Carbone",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "5d39ba29-4d41-4a41-b01c-0c48786c3675",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "question_text": "What role should government play in making sure people can afford housing?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make government the main provider — build and operate public housing so everyone is guaranteed a home."
+        },
+        {
+          "value": 2,
+          "text": "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+        },
+        {
+          "value": 3,
+          "text": "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+        },
+        {
+          "value": 4,
+          "text": "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+        },
+        {
+          "value": 5,
+          "text": "Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

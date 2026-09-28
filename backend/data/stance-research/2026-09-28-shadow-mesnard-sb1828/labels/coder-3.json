@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview names Mesnard as prime sponsor of SB1828, an omnibus tax bill enacted in 2021.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote detail shows Mesnard voting Y on SB1828, which passed 16-14.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "the tax is 2.5% of taxable income",
+          "note": "Chapter 412 bill text shows SB1828 phasing the individual income tax to a flat 2.5% rate alongside unrelated UI, property-tax and credit provisions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1828 (2021), 'omnibus; taxation', which Mesnard prime-sponsored and voted Yea on at Third Reading, combines an individual income-tax rate cut (phased to a flat 2.5%) with unrelated provisions on unemployment-insurance wage bases, property-tax formulas, sales-tax exemptions and targeted credits. Under V4.1, a multi-subject bill's sponsorship or vote proves a chair only if the person's own statement ties it to one provision, and no such statement appears in the sources provided.",
+      "needs_source": [
+        "Mesnard's own statement (floor speech, explanation of vote, or press statement) tying his SB 1828 (2021) sponsorship/vote to a specific tax provision, e.g. the income-tax rate cut in § 43-1011"
+      ],
+      "quotes": []
+    }
+  ]
+}

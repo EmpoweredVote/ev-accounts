@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "topic_key": "education-curriculum",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Hernandez A's own words answering how schools should handle race, gender and history in the curriculum (candidate questionnaire, her own issue page, or a floor statement)",
+          "An Arizona House roll call or sponsorship by Hernandez A on a divided curriculum bill governing instruction on race, gender or sexuality, with the vote page and the bill's operative section",
+          "Hernandez's own words, sponsorship, or votes specifically addressing race/gender/history curriculum content (e.g., critical-race-theory or divisive-concepts curriculum bills)",
+          "Hernandez A's own words (floor statement, interview, questionnaire, or issue page) addressing how Arizona schools should handle contested curriculum topics on race, gender, or history"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "requests": [
+        "Hernandez A's own words answering how schools should handle race, gender and history in the curriculum (candidate questionnaire, her own issue page, or a floor statement)",
+        "An Arizona House roll call or sponsorship by Hernandez A on a divided curriculum bill governing instruction on race, gender or sexuality, with the vote page and the bill's operative section",
+        "Hernandez's own words, sponsorship, or votes specifically addressing race/gender/history curriculum content (e.g., critical-race-theory or divisive-concepts curriculum bills)",
+        "Hernandez A's own words (floor statement, interview, questionnaire, or issue page) addressing how Arizona schools should handle contested curriculum topics on race, gender, or history"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

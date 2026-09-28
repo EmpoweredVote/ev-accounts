@@ -1,0 +1,17 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Kolodin / misinformation → BLANK `no-evidence`**
+
+All three snapshots are the same record — HB2394 (2024), which he prime-sponsored, voted Aye on, and which became Chapter 193:
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| House final reading vote | `own-act` | `adjacent` | `record`/`vote` | `near-unanimous` | `in-term` |
+| Bill overview (prime sponsor) | `own-act` | `adjacent` | `record`/`sponsor` | `off-axis` | `in-term` |
+| Chapter 193 text | `own-act` | `adjacent` | `record`/`sponsor` | `off-axis` | `in-term` |
+
+The bill creates a private cause of action against whoever publishes an AI deepfake of a candidate or citizen. On the dimension these rungs separate — what duty platforms bear and whether government takes part in content moderation — it says nothing: it imposes no removal or labeling duty, encourages no voluntary standards, and its subsection C expressly immunizes interactive computer services. So V2 is `adjacent` and no passage survives to support a chair (V2: "`adjacent` passages can never support a chair"). The 57-0-3 tally is independently disqualifying under the near-unanimous rule.
+
+Record fields are distributed per the 0.3 ruling: `actor_quote`/`tally_quote` on the vote page, `actor_quote` on the overview, `provision_quote` on the law text only. I avoided the `[deleted: candidates; digital impersonation; injunctive relief]` fence in the chapter header.
+
+`needs_source` asks for his own words on platform removal/labeling duties and on government involvement in content moderation — nothing in these three sources reaches that question.

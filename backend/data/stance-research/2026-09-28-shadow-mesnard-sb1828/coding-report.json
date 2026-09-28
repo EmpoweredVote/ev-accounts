@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mesnard's own words tying his sponsorship of SB 1828 (2021) to the income tax rate provision (floor speech, explanation of vote, or press release), which would settle the omnibus concern on the third-reading vote",
+          "SB 1828 (2021) as introduced, since sponsorship evidences the bill as filed and the only text snapshot is the Senate Engrossed / Chapter 412 version",
+          "Mesnard's own statement (floor speech, press release, or explanation of vote) tying his sponsorship or vote on SB 1828 (2021) to a specific provision, e.g. the individual income tax rate cut in Sec. 15 (amending 43-1011).",
+          "Mesnard's own statement (floor speech, explanation of vote, or press statement) tying his SB 1828 (2021) sponsorship/vote to a specific tax provision, e.g. the income-tax rate cut in § 43-1011"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "Mesnard's own words tying his sponsorship of SB 1828 (2021) to the income tax rate provision (floor speech, explanation of vote, or press release), which would settle the omnibus concern on the third-reading vote",
+        "SB 1828 (2021) as introduced, since sponsorship evidences the bill as filed and the only text snapshot is the Senate Engrossed / Chapter 412 version",
+        "Mesnard's own statement (floor speech, press release, or explanation of vote) tying his sponsorship or vote on SB 1828 (2021) to a specific provision, e.g. the individual income tax rate cut in Sec. 15 (amending 43-1011).",
+        "Mesnard's own statement (floor speech, explanation of vote, or press statement) tying his SB 1828 (2021) sponsorship/vote to a specific tax provision, e.g. the income-tax rate cut in § 43-1011"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

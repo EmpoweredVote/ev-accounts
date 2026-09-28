@@ -1,0 +1,86 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "hb2332(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/laws/0201.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332#house-final",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "hb2332(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/laws/0201.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332#house-final",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "provision-missing",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "provision-missing"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "hb2332(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/laws/0201.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332#house-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

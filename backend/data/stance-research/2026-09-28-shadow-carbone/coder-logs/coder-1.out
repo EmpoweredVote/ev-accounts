@@ -1,0 +1,19 @@
+Wrote `labels/coder-1.json` — one row (Carbone / housing), coded BLANK `direction-only`.
+
+**Coding summary**
+
+All three snapshots are the same instrument, HB 2720 (2024), and all three are `own-act` / `record` / `in-term`:
+
+| snapshot | kind | fact it carries |
+|---|---|---|
+| `733747ac` | sponsor | `Carbone (Prime)` |
+| `72e8d029` | sponsor | the ADU provision text (chaptered law) |
+| `5319e2f3` | vote | `CARBONE Y`, `Passed 35-22-3-0-0` |
+
+**V2** — `on-question` under the 2026-09-26 preemption refinement: the law voids the very local zoning limits rung 5 names, so it is not mere level-allocation.
+
+**V4** — `direction-only` for all three. The same refinement says one deregulation law cannot prove "at most" / "rely on the market", and V4.2 (broader than the instrument) bars an ADU-only statute from carrying a rung about the whole private housing market. Nothing here touches rent caps, required affordable units, subsidies or tax breaks, so rungs 3 and 4 are not excluded by evidence either.
+
+**V6** — BLANK `direction-only`, `rests_on` empty. Two `needs_source` entries: his own words on binding market rules, and any record on Arizona housing subsidy/tax-credit measures.
+
+No quotes emitted — none of the three sources contains first-person words.
