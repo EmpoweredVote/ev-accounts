@@ -2003,7 +2003,8 @@ the Minnesota House's published refusal. Recorded in full so the next reader nee
 
 ## ✅ KS-5b APPLIED 2026-09-27 — WICHITA'S 7 ARE SEATED WITH PORTRAITS, AND THE BANNER IS LIVE
 
-**Slice 14 is 172 of 182 renderable.** Wichita 7/7 · legislature 165/165 · Sedgwick County **0/10**.
+**Slice 14 was 172 of 182 renderable at this point.** Wichita 7/7 · legislature 165/165 ·
+Sedgwick County 0/10 — closed by KS-5c below.
 
 ### The 7 Wichita portraits — imported on a ruling, not on an assumption
 
@@ -2081,19 +2082,143 @@ branch **`feat/banners-ky`** (default branch is **`main`**, not master), local p
 `C:\Transparent Motivations\essentials`. That branch had already merged as PR #165 (Lexington) and
 was reused, so the Wichita commit sits on top of a merged branch. **PR #166 is open.**
 
-## ▶▶ OPEN HERE NEXT: SEDGWICK COUNTY'S 10 PORTRAITS — SCOPED, NOT STARTED
+## ✅✅ KS-5c APPLIED 2026-09-28 — SEDGWICK COUNTY IS 10 OF 10, AND SLICE 14 IS COMPLETE
 
-🔴 **THE COUNTY PUBLISHES NO PORTRAIT FOR ANY OF THE TEN.** Measured, not assumed:
+10 imported, 0 skipped, 0 failed. **Slice 14 is 182 of 182 renderable.**
 
-- **The five commissioners** have only `/media/681xx/dN-website-header.jpg` — a **900x325 banner**,
-  alt naming the member, carrying a **circular-masked face on navy with the name baked in as text**.
-  Cropping the circle ships a circle on a navy square, which is the El Paso County defect the
-  importer's alpha-flattening exists to prevent. ⚠ A badge is portrait-shaped; only looking showed
-  what it was.
-- **Clerk, Treasurer, Register of Deeds, Sheriff and the District Attorney have NO image at all** —
-  the department pages carry page banners, icons and building photographs only. `meet-bennett.html`
-  has no `/media/` image.
+| | baseline | after |
+| --- | --- | --- |
+| `politician_images` | 9,349 | **9,359** (+10 exact) |
+| `politicians.photo_custom_url` | 9,081 | **9,091** (+10 exact) |
+| Sedgwick County renderable | 0 / 10 | **10 / 10** |
+| Sedgwick `photo_origin_url` set | — | **10 / 10** |
+| Ohio legislature control | 130 | 130 **unmoved** |
 
-▶ So this is **ten individual hunts**, not a roster sweep: press coverage, campaign material, or a
-records request to the county. It is the part of stage 5 with no tooling behind it.
-⚠ `politician_id`s for all ten are in `CC_0162`; the cohort query is in `ks.md`'s KS-5a section.
+Verified from outside: `verify-imported-headshots.py --expect 10` — **10 decoded, 0 broken**, negative
+control (a CDN key for a random UUID) **failed as required, HTTP 400**, and `tested 10 == expected 10`.
+Stored `268x335 ×5`, `600x750 ×3`, `566x708`, `560x700`. Nothing enlarged.
+
+### 🔴🔴 THE PREVIOUS SCOPING SAID THE COUNTY PUBLISHES NO PORTRAIT. IT PUBLISHES SIX OF THE TEN
+
+That section is corrected below, not deleted, because the way it went wrong is the transferable part.
+It read the five commissioners' **district** pages and the five officers' **department landing** pages.
+Every portrait this slice needed is one level down, on a `/contact/` or `/about/` sub-page:
+
+| Seat | Where the portrait actually is | True px |
+| --- | --- | --- |
+| all 5 commissioners | `/commissioners/<slug>/contact/` → `*-website-bio.jpg`, alt `Commissioner <name>` | 200x250 |
+| Sheriff | `/sheriff/about/` → `/media/73567/d1967-j-easter-5-x-7-in-copy.png` | **1429x2000** |
+| Register of Deeds | `/register-of-deeds/contact/` → `/media/70128/tonya-profile-pic.jpg` | 864x1184 |
+| County Clerk | `/clerk/contact/` → `/media/28663/kelly_arnold.jpg` (note: `/clerk/`, **not** `/county-clerk/`) | 100x133 |
+| District Attorney | `/district-attorney/contact-information/` → `/media/66429/new-m-bennett1.jpg` | 210x277 |
+| Treasurer | `/treasurer/contact/` → `/media/68816/5x2a3573_web.jpg` | 150x210 |
+
+▶ **A DEPARTMENT LANDING PAGE IS NOT THE DEPARTMENT'S PAGE ABOUT ITS OFFICEHOLDER.** On this CMS the
+landing page carries service tiles and a page banner; the human being is on `contact/` or `about/`.
+Enumerate a section's own links (`href="/district-attorney/…"`) before concluding an image does not exist.
+
+### 🔴🔴 AND THE "NO IMAGE" READING WAS PARTLY A SOFT-404
+
+`sedgwickcounty.org` answers an unknown URL with **HTTP 404 carrying a full 45,264-byte page body**.
+Two of the saved captures — `_sgco-meet-rod.html` and `_sgco-county-clerk.html` — are **byte-identical
+md5 `9fd3138873b67f15141c67ca0e42fe62`**, because both are that body. The Register of Deeds "meet" page
+was never actually read; the conclusion drawn from it was drawn from an error page.
+▶ **Two saved captures with the same byte count are a soft-404 until proved otherwise.** `wc -c` across a
+capture directory costs nothing and would have caught this the day it was written.
+
+### 🔴🔴 THE COUNTY'S OWN BUDGET IS THE HIGHEST-RESOLUTION SOURCE IT PUBLISHES
+
+`2026-sedgwick-county-adopted-budget.pdf` (`/media/70491/`, 53 MB, 847 pages) carries, at print
+resolution, what the website only serves as thumbnails:
+
+- **p.2** — the five commissioners, 326–335 px squares, laid over a district map with each name printed
+  beneath its own portrait.
+- **p.110 / p.117 / p.204 / p.355 / p.377** — Clerk, Register of Deeds, Treasurer, Sheriff, District
+  Attorney. Each departmental page carries a printed name box and **one** portrait, so page → name →
+  portrait is a one-to-one binding with no ordering to get wrong.
+- Sizes: **726x816, 728x818, 677x773, 726x816**. The Sheriff's is the exception at 216x244, and it is
+  **half badge** — a large Sheriff's Office star occupies the left of the frame.
+
+⚠ **Bind by geometry, not by reading order.** Two commissioners' names arrive in ONE merged text block
+(`Jim Howell\nJeff Blubaugh`, x 325–558). Word-level x-extents separate them: `Jeff Blubaugh` 325–387
+under the image at 316–397, `Jim Howell` 509–558 under the image at 494–574. `get_image_info(xrefs=True)`
+gives the real placement box; `get_images()` alone gives an unordered xref list and would have paired them
+at random.
+
+### 🔴🔴 THE UMBRACO RESIZER UPSCALES, AND `upscale=false` IS THE CONTROL THAT SAYS SO
+
+`/media/54538/meitzner.jpg?width=1200` returns a clean **1200x1596** JPEG. The stored master is
+**100x133**. `?width=1200&upscale=false` returns 100x133 and is what proves it.
+▶ SC-5's rule that *the resize can hide in the query string* is true here in form and **false in
+substance** — the parameter is honoured and the extra pixels are interpolated. KS-5a found the opposite
+failure on `kslegislature.gov` (parameter ignored, two encodings of one image). **Neither host can be
+predicted; both are settled by one request with `upscale=false`, or by decoding and reading `.size`.**
+
+### 🟢 TWO DOCUMENTS PER FACE, AND THE ONE ROW IT STOPPED
+
+Every frame had to be named by its source — `alt` text, filename, or a printed name box — **and** then
+matched against a second county document. Eight pairs were the same frame twice. Two were not:
+
+- 🔴 **Jim Howell.** The budget's p.2 portrait is a grey-bearded man; his contact page, his district
+  banner and the board-page thumbnail all show a clean-shaven man with dark hair, and the Kansas
+  Legislature's 2013 `rep_howell_jim_1.jpg` matches those three. I held the budget frame back as a
+  suspected mis-caption and put both in front of the operator.
+  ▶ **Ruling (Cantrell, 2026-09-28): same man, older. The budget print is the current sitting; ship it.**
+  The check did its job by refusing to decide — it is not a detector of errors, it is a detector of
+  **disagreement**, and a disagreement can resolve either way.
+- ⚠ **Tonya Buckingham.** Two different sittings, both county-published and both named: the newer
+  `/media/70128` office portrait (shipped) and an older photograph beside a US flag (budget p.117 and
+  `/media/55875`). Flagged on the sheet and passed.
+
+⚠ **A SURNAME IS NOT A PERSON, TWICE OVER IN THIS COHORT.** Wichita publishes a portrait of **Travis**
+Easter and the Kansas Legislature seats **Leah** Howell. A surname join would have offered both.
+
+### The crops, and where the centre crop was wrong
+
+Six shipped at their own crop size; four were downscaled to 600x750. `crop_4x5`'s centre crop is wrong
+for three of these sources, so each was pre-cut to an exact 4:5 box and passed through `bytes_from`
+(the crop then runs as a verified no-op — asserted `round(w/0.8) == h` per row before writing):
+
+- **Jeff Easter** — the budget frame is half badge; the shipped frame is the 1429x2000 `/sheriff/about/`
+  portrait, cropped `(245,0)-(1005,950)`.
+- **Tonya Buckingham** — a standing office shot; the centre crop decapitated her. `(150,40)-(710,740)`.
+- **Brandi Baily** — the budget extract carries a **16-row white strip** at the top (rows 0–15; the
+  photograph starts at y=16). Cropping below it beats painting it black: no invented pixels, 13 px lost.
+
+⚠ **THE COMMISSIONERS' BANNER IS A TRAP THAT ALMOST WORKS.** `/media/681xx/dN-website-header.jpg` is a
+900x325 banner holding a circular-masked face. The disc is identical on all five — centre (804,150),
+r≈166, clipped at the right edge — and the largest 4:5 rectangle **inscribed** in it is 202x253 with no
+navy at all. It was rejected because the circle clips the top of the hair on three of the five. **Solve
+the mask geometry before assuming a masked portrait is unusable, and then look at the result anyway.**
+
+### Licence — `press_use`, and this is NOT Wichita's footing
+
+**Sedgwick County publishes no copyright notice and no photo policy.** Checked on the home page, the
+department pages, and `/policies-and-disclaimers/`, whose five children are HIPAA, non-discrimination,
+open-source usage, website privacy and a disclaimer that covers **external links only**. There is no
+`©` anywhere in the markup of the home page, `/sheriff/about/` or a commissioner contact page.
+
+🔴 **This is the Kansas Legislature / Georgia / Florida footing, not Wichita's.** `wichita.gov/copyright`
+reserves all rights over all content; the county asserts nothing. Absence of a policy is still not a
+grant, so the licence is `press_use` and **a notification letter is owed** — the same posture as KS-5b,
+addressed to the county rather than the city. Only a reply moves `photo_license`.
+
+### Artefacts
+
+| Path | What it is |
+| --- | --- |
+| `data/seed-ks-2026/sedgwick-portraits/*.jpg` | the ten approved 4:5 crops, at native resolution |
+| `data/seed-ks-2026/sedgwick-portraits/candidates.json` | the importer input: `bytes_from`, `page`, `license`, `politician_id` |
+| contact sheet | `https://claude.ai/artifact/NRfbPFUjDM7eym6yGjzm2Z` |
+
+## ▶▶ OPEN HERE NEXT
+
+1. 🔴 **The Wichita permission letter is still DRAFTED, NOT SENT** — `letters/2026-09-27-wichita-portrait-permission.md`,
+   to Jim Jonas `jjonas@wichita.gov`.
+2. 🔴 **A Sedgwick County notification letter is owed and not yet drafted.** Ten portraits are published
+   under `press_use` from a county that states no policy. Same shape as the Wichita letter: the compass
+   disclosure in full, before the ask, and the ask is about the photograph and nothing else.
+3. ▶ **Stage 4b, still undecided: the 31 elected judicial seats** of the 18th Judicial District — 30
+   district judge divisions and 1 district magistrate. `KSA 4-219` says 24 and the register shows 30, so
+   the statute is stale on the count. Kansas fills judicial vacancies by gubernatorial appointment
+   mid-term, so each needs its own continuous-since date. Bigger than all ten county officers together.
