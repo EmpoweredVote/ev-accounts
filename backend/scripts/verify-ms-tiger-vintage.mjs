@@ -357,6 +357,42 @@ for (const layer of ['sldu', 'sldl']) {
   }
 }
 
+// ── --emit-anchors ──────────────────────────────────────────────────────────────────────────
+// 🔴 MISSISSIPPI'S PRE-FLIGHT ANCHORS GUARD A *FUTURE* TIGER, NOT A PAST ONE. No TIGER vintage
+// published to date carries the 2025 remedial plan, and the 2022 plan is the operative one (the
+// three-judge court held the 2025 Joint Resolutions "not operative" on 2026-09-11 after the
+// Supreme Court's vacatur, and the Secretary of State reverted the State's own SEMS to the 2022
+// lines on 2026-07-24). So the risk is not that today's file is stale — it is that a LATER TIGER
+// silently carries a different plan while the count stays at the constitutional 122/52.
+// This emits anchors at real disagreeing blocks: [lat, lon, 2022 code, 2025-remedial code, label].
+// The MI-1 shape, where the Senate anchors existed to guard a future TIGER.
+if (argv.includes('--emit-anchors')) {
+  console.log(`\n${'='.repeat(78)}`);
+  console.log('ANCHOR CANDIDATES — points where the 2022 plan and the 2025 remedial plan DISAGREE');
+  console.log('='.repeat(78));
+  for (const layer of ['sldu', 'sldl']) {
+    const districts = await loadDistricts(layer, VINTAGE);
+    const beq = await loadBeq(BEQ[layer]);
+    // one anchor per remedial district that materially disagrees, at its most populous
+    // disagreeing block, so every anchor sits somewhere people actually live.
+    const best = new Map();
+    for (const b of blocks) {
+      const want = beq.get(b.geoid);
+      if (!want) continue;
+      const got = locate(districts, b.x, b.y);
+      if (got === null || got === want) continue;
+      const cur = best.get(want);
+      if (!cur || b.pop > cur.pop) best.set(want, { ...b, want, got });
+    }
+    const rows = [...best.values()].filter((r) => r.pop >= 50).sort((a, b) => b.pop - a.pop);
+    console.log(`\n  ${layer}: ${rows.length} candidate anchors (block POP20 >= 50)`);
+    for (const r of rows) {
+      console.log(`        [${r.y.toFixed(4)}, ${r.x.toFixed(4)}, '${r.got.slice(2)}', '${r.want.slice(2)}', ` +
+        `'block ${r.geoid} pop ${r.pop} — 2022 ${r.got.slice(2)}, 2025 remedial ${r.want.slice(2)}'],`);
+    }
+  }
+}
+
 console.log(`\n${'='.repeat(78)}`);
 console.log('WHAT THIS DOES AND DOES NOT SETTLE');
 console.log('='.repeat(78));

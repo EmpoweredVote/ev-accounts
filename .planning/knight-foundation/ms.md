@@ -10,7 +10,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 
 | stage | status |
 | --- | --- |
-| 1 geography | ▶ **OPEN AND UNBLOCKED 2026-09-28. LOAD PLAIN TIGER.** The docket settles it: the 2025 plans are *"not operative"* (Doc 318) and the State reverted its own system to the 2022 lines, which is what TIGER carries. Nothing written yet |
+| 1 geography | ✅ **APPLIED 2026-09-28 — MISSISSIPPI HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME. 174 boundaries + 174 districts (52 Senate + 122 House), 0 errors.** No migration. The programme now owes legislative geography nowhere |
 | 2 legislature | — not started. MS holds **0 of 122** House and **0 of 52** Senate |
 | 3 city waves | — not started. Biloxi holds no government, no chamber, no office |
 | 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
@@ -308,6 +308,80 @@ statewide `sldu`/`sldl` load for about **205,000 people in the Senate** and **26
 none of them in this slice. ⚠ **That is a reason to decide, not a reason to proceed** — a stage-1
 load writes the whole state, and knowingly writing a superseded map for 205,000 voters is a debt,
 not a shortcut.
+
+---
+
+## ✅ MS-1 APPLIED 2026-09-28 — 174 boundaries + 174 districts, 0 errors
+
+No migration slot: geography loads run through `scripts/load-state-tiger-boundaries.ts`, which
+gained `MS: new Set(['sldu','sldl'])` and a pre-flight block. Source TIGER 2024 FIPS 28.
+
+**Measured from outside, against a baseline taken in the same session as the write:**
+
+| scope | before | after | expected |
+| --- | --- | --- | --- |
+| `districts` | 10,532 | **10,706** | +174 exact |
+| `geofence_boundaries` | 72,712 | **72,886** | +174 exact |
+| MS `G5210` (Senate) | 0 | **52** | 52 |
+| MS `G5220` (House) | 0 | **122** | 122 |
+| MS `districts` rows | 92 | **266** | +174 exact |
+| MS `G4110` / `G4020` | 300 / 82 | **300 / 82** | must NOT move — unmoved |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | must NOT move — unmoved |
+| CONTROL: SD `G5210`/`G5220` | 35 / 37 | **35 / 37** | unmoved |
+
+All 174 geometries valid, all SRID 4326, 52 and 122 distinct `ocd_id`s — so the MN `08A` / MD `1A`
+collapse did not occur. **Both layers re-run: 0 inserted, 52 and 122 already existed.** The
+child→county matview needed no work and said so (`children 13,737 · mapped 13,737 · stale 0`); a
+legislative-only load writes no `G4110`, which is why.
+
+### The gate, and what its controls cost
+
+Four controls, **every one watched failing**, on both layers:
+`count` → `[MS MTFCC assertion]`; `anchor` → `[MS vintage assertion]`; `weak` →
+`[MS anchor discrimination assertion]`; `gap` → `[MS contiguity assertion]`. Clean runs pass at
+52 and 122.
+
+🔴🔴 **AND A CONTROL CAUGHT A REAL DEFECT IN MY OWN GATE — THE COUNT WAS THE TELL.** The first
+anchor table was written with TIGER's zero-padded codes (`'001'`), but `ocdDistrictSuffix()` strips
+the padding, so every comparison ran `'001' !== '1'`. `MS_PREFLIGHT_CONTROL=anchor` perturbs
+**exactly one** anchor and reported **13 of 13 anchors disagreeing**. A clean run would have failed
+too and looked like a vintage problem. ▶ **A control proves a gate CAN fire; the NUMBER it fires on
+is what says whether the gate is right.** After the fix the same control reports **1 of 13** and
+**1 of 8**.
+
+⚠ **And the first attempt to run those controls printed nothing at all, four times** — the loader
+was refusing on a missing `--fips` before it reached the gate, and my grep showed only silence.
+**Four identical silences is a uniform answer, which is a broken detector**, including when the
+detector is the control harness. Reading the raw output took one command.
+
+### End to end on live production
+
+| probe | county | place | Senate | House |
+| --- | --- | --- | --- | --- |
+| **Biloxi City Hall** | Harrison `28047` | Biloxi city `2806220` | **SD 50** | **HD 115** |
+| Gulfport City Hall | Harrison `28047` | Gulfport city `2829700` | SD 49 | HD 120 |
+| Jackson, Hinds Co. | Hinds `28049` | Jackson city `2836000` | SD 29 | HD 67 |
+| CONTROL Mobile, Alabama | Mobile `01097` | — | **none** | **none** |
+| CONTROL Aberdeen, South Dakota | Brown `46013` | Aberdeen city | SD 3 (SD's own) | HD 3 |
+
+Every value matches the pre-flight anchors, including the two that were measured rather than
+guessed. **Per-district control: 52 of 52 and 122 of 122 interior points resolve to exactly one
+district of their own layer, 0 failures** — with a positive control in the same query showing that
+asking across BOTH layers returns 2 everywhere, so the query can report a number other than one.
+
+🔴 **THE `geo_id` COLLISION IS VISIBLE IN A SINGLE RESULT SET.** Jackson returns `G4020` **`28049`
+= Hinds County** while Gulfport returns `G5210` **`28049` = State Senate District 49**. Same
+`geo_id`, different `mtfcc`, two different places. ⚠ The South Dakota control shows the same trap
+inside one state: `46003` is Senate District 3 **and** House District 3.
+
+### Gates
+
+`check:occupancy` green · `check:migrations` green (0 added vs `origin/master`) ·
+`check:child-county` green · **`check:reachability` nothing regressed** — `BAD_GEOMETRY` 4/4,
+`DEAD_GEOGRAPHY` 17/17, `UNREACHABLE` 7/7, all exactly at baseline.
+
+⚠ **Biloxi still scores 0 of 4**, and that is correct: the polygons exist now, but Mississippi
+holds no legislative office for them to carry. **Stage 2 owes 174 seats.**
 
 ---
 
