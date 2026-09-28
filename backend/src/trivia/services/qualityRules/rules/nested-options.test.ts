@@ -312,10 +312,15 @@ describe('checkNestedOptions — guards', () => {
   });
 });
 
-describe('checkNestedOptions — the nine live repairs stay repaired', () => {
+describe('checkNestedOptions — the live repairs stay repaired', () => {
   /**
-   * These are the option sets the 2026-09-27 content pass wrote to replace the blocking
-   * ones. If a later edit reintroduces same-direction bounds, these fail here first.
+   * The option sets the 2026-09-27 content pass wrote to replace every flagged one in the
+   * live bank: eight that were blocking, then three that were advisory (all four options
+   * an "Over N" bound, with the correct one the weakest). The ninth blocking question,
+   * bxl-175, is not here because it was archived rather than repaired -- its cited source
+   * never mentioned libraries and no source carried the number.
+   *
+   * If a later edit reintroduces same-direction bounds, these fail here first.
    */
   const repaired: Array<[string, string[], number]> = [
     ['bxl-153', ['Under $100,000', '$100,000 to $250,000', '$250,000 to $400,000', 'More than $400,000'], 3],
@@ -326,6 +331,10 @@ describe('checkNestedOptions — the nine live repairs stay repaired', () => {
     ['tucaz-054', ['Less than $25 million', '$25 million to $70 million', '$70 million to $135 million', 'More than $135 million'], 3],
     ['wdc-068', ['$2,500', '$5,000', '$10,000', '$25,000'], 2],
     ['wmnla-038', ['Fewer than 10', '10 to 25', '25 to 40', 'More than 40'], 3],
+    // Were advisory, not blocking: nested but only the weakest bound was true.
+    ['cam-025', ['Fewer than 20,000', '20,000 to 40,000', '40,000 to 60,000', 'More than 60,000'], 3],
+    ['nysts-055', ['About 2 million acres', 'About 4 million acres', 'About 6 million acres', 'About 10 million acres'], 2],
+    ['wdc-025', ['Fewer than 25', '25 to 50', '50 to 100', 'More than 100'], 3],
   ];
 
   it.each(repaired)('%s has exactly one true option', (externalId, options, correctAnswer) => {
