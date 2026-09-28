@@ -1,6 +1,22 @@
 # South Dakota Legislature portrait permission — email draft, 2026-09-28
 
-**Status: DRAFTED, NOT SENT. NOTHING HAS BEEN IMPORTED.** All 105 South Dakota legislators are
+## 🔴🔴 STATUS: **SENT 2026-09-28. DO NOT SEND IT AGAIN.**
+
+Sent by Cantrell from `chris@empowered.vote` to `LRC@sdlegislature.gov`, with the signature
+corrected to **Chris Cantrell / Empowered Vote** first (see the notes at the foot — this is
+correspondence, not a legal form). **EVERY EARLIER LINE CALLING THIS LETTER "NOT SENT" IS
+SUPERSEDED.** A second request would be a duplicate to a government body.
+
+⚠ **The confirmation is the operator's word, not an in-page receipt.** North Dakota's request was a
+web form and returned *"Thank you! Your request has been sent."* on screen; this is ordinary email,
+so there is no such artifact and none should be claimed.
+
+🔴 **NOTHING IS IMPORTED AND `photo_license` STAYS `unknown` ON ALL 105.** A sent request is not a
+grant, and neither is silence. Only a reply moves that field, and only to what the reply says.
+
+---
+
+**Original draft note, 2026-09-28, kept verbatim.** All 105 South Dakota legislators are
 seated in production (SD-2, 2026-09-28) from the Legislature's own public roster and session
 journals, and **not one portrait has been copied, stored or displayed.**
 
@@ -78,14 +94,19 @@ question about how the images would be stored and served.
 
 With thanks for your time,
 
-BJ Cantrell
-Empowered Vote Inc
+Chris Cantrell
+Empowered Vote
 chris@empowered.vote
 
 ---
 
 ## Notes for whoever sends this
 
+- ✅ **The signature was CORRECTED 2026-09-28 before sending.** The draft read "BJ Cantrell /
+  Empowered Vote Inc". He goes by **Chris Cantrell**, and that is what **correspondence** says;
+  **BJ Robert Cantrell** is the full legal name and is for **forms that demand one** — the North
+  Dakota photo request was signed that way because it was a legal form. This is an email, so it
+  takes the Wichita letter's form. Do not "make them consistent"; they differ on purpose.
 - 🔴 **The compass disclosure is its own paragraph and it comes BEFORE the ask is closed out.** The
   standing rule: a sourced position is a claim about a real person, and a permission request that
   hides it is not an accurate request. *"An accurate form is worth more than a granted one."*

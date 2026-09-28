@@ -13,14 +13,22 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — 9 offices, 9 seated, 0 vacant, 7 terms DATED + 2 honestly unknown** (`X0072`, `CC_0165`/`CC_0166`) |
 | 4 county waves | ✅ **APPLIED 2026-09-28 — 10 offices, 10 seated, 0 vacant, 8 terms DATED + 2 honestly unknown, NO GEOMETRY LOADED** (`CC_0167`/`CC_0168`) |
-| 5 assets | ▶ **BLOCKED ON A LICENCE.** Letter drafted to the LRC, **NOT SENT, nothing imported**. No `aberdeen` banner key |
+| 5 assets | ▶ **WAITING ON A REPLY.** LRC letter **SENT 2026-09-28 — do NOT send it again**. Nothing imported; `photo_license` `unknown` on all 105. No `aberdeen` banner key |
 
 ### ▶ RESUMING THIS SLICE — read this before touching anything
 
-**Stages 1-4 are APPLIED. Only SD-5 (assets) is left, and it is BLOCKED ON A LICENCE.**
-▶ **The next act is to SEND the letter drafted to `LRC@sdlegislature.gov`** — see stage 5 below.
-South Dakota states *"Use by Permission Only"* up front, unlike North Dakota's silence, so **ask
-first and import nothing** until there is an answer. There is also no `aberdeen` banner key.
+**Stages 1-4 are APPLIED. Only SD-5 (assets) is left, and it is WAITING ON A REPLY.**
+
+🔴🔴 **THE LRC LETTER WAS SENT 2026-09-28. DO NOT SEND IT AGAIN** — a second request to a
+government body is a duplicate. It went from `chris@empowered.vote` to `LRC@sdlegislature.gov`;
+the text and the full status note are in
+[`letters/2026-09-28-sd-legislature-portrait-permission.md`](./letters/2026-09-28-sd-legislature-portrait-permission.md).
+
+▶ **The next act is to WATCH FOR THE REPLY, and to import nothing until one arrives.** South Dakota
+states *"Use by Permission Only"* up front, unlike North Dakota's silence. **A sent request is not a
+grant and neither is silence** — `photo_license` stays `unknown` on all 105 and moves only to what a
+reply actually says. On a refusal the fallback is **no portrait**, never a news or campaign
+photograph. There is also no `aberdeen` banner key, which needs no permission and can proceed.
 
 🟢 **Aberdeen now scores the full stack.** One point at the Brown County Courthouse returns
 **seventeen** officials — 10 county, 3 city, 3 legislative and the at-large U.S. Representative.
