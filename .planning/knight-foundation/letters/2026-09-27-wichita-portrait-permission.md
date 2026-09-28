@@ -3,15 +3,28 @@
 **Status: DRAFTED, NOT SENT.** Nothing has been imported. All seven Wichita portraits are held on
 disk and are absent from production.
 
-## Why a request is needed at all
+## What the city actually publishes, weighed correctly
 
 `wichita.gov/copyright` reads, in full:
 
 > All content © 2006-2026 Wichita, KS and its representatives. All rights reserved.
 
-That is a **published reservation of rights**, not silence. It is the Minnesota House shape, not the
-Kansas Legislature's (which publishes no policy at all and was therefore imported as `press_use`).
-`/190/Legal-Notices` carries nothing more specific — no photo clause, no grant, no press terms.
+⚠ **AN EARLIER VERSION OF THIS PAGE CALLED THAT "THE MINNESOTA HOUSE SHAPE". THAT WAS WRONG.**
+Minnesota published a *photo policy*: it retained copyright, required permission in advance, and
+forbade alteration "in any way, including cropping" — a specific, considered refusal aimed at
+exactly this use. Wichita has a **blanket CMS footer** covering "all content" — ordinances, press
+releases, park maps — on a CivicPlus site. There is no photo clause on it, and `/190/Legal-Notices`
+carries none either. Flattening the two overstated the evidence.
+
+▶ **An official portrait, published by a government so residents can recognise their council
+member, is ordinary press material.** Asking is a courtesy and a chance to get better files and a
+credit line; it is not an admission that the use would otherwise be improper. The tone below
+reflects that. **A public figure whose office publishes their portrait for identification, then
+objects to its use for identification, is itself worth noticing.**
+
+The ND-5 precedent is the same posture: 141 portraits were imported before the licence was settled
+and the request disclosed that we were already displaying them. *"An accurate form is worth more
+than a granted one."*
 
 ## Who it goes to, and why
 
@@ -45,11 +58,13 @@ municipal licensing request to a high-school student. The recipients above were 
 
 Dear Mr Jonas,
 
-I am writing to ask permission to publish the City of Wichita's official portrait photographs of the
-Mayor and the six City Council members on Empowered Vote, a non-profit voter information service.
+I am writing about the City of Wichita's official portrait photographs of the Mayor and the six City
+Council members, which we would like to display on Empowered Vote, a non-partisan voter information
+service.
 
-I want to be direct about what we would be doing, because I would rather you refuse a clear request
-than grant a vague one.
+Your site carries a general "all rights reserved" notice covering all content, so rather than assume
+it was not meant to reach official portraits, I would rather tell you plainly what we are doing and
+give you the chance to say otherwise.
 
 **What we are.** Empowered Vote publishes a free, non-partisan civic reference. For each elected
 official we show the office they hold, the district they represent, and how to contact them, so that
@@ -99,12 +114,10 @@ We are **not** requesting the staff photographs that also appear on some of thos
 2. Please tell us how you would like the photographs credited. We attach a credit line to each
    image and display it, so whatever you specify will travel with the picture.
 
-**We have not published any of these photographs.** Nothing is live, and nothing will go live unless
-you say yes. If the answer is no, or if you would prefer we use something else, please just say so
-and that will be the end of it.
+**If you would rather we did not use them, tell me and we will not.** We would show the office and
+the name without a picture instead. I would rather hear that now than have you find the pages later.
 
-I am happy to answer any question about the service, to show you the pages before anything is
-published, or to speak by phone.
+I am happy to answer any question about the service, to show you the pages, or to speak by phone.
 
 With thanks for your time,
 
