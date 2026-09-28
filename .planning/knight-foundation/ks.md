@@ -1887,3 +1887,371 @@ the same code and no mechanism would notice. Recorded as a gap again, not a prob
 3. ▶ **Stage 5 assets** — 10 Sedgwick portraits, 7 Wichita portraits, the legislature's 165, and a
    `wichita` banner. 🔴 **Wichita's banner collides with the Kansas state banner** — read
    `states/KS.jpg` in the 6:1 band first.
+
+## ✅ KS-5a APPLIED 2026-09-27 — THE KANSAS LEGISLATURE IS 165 OF 165 RENDERABLE
+
+164 portraits imported, 0 skipped, 0 failed. Kansas legislature goes **1 → 165 renderable**
+(Patrick Schmidt already had one from a stance wave).
+
+| | baseline | after |
+| --- | --- | --- |
+| `politician_images` | 9,178 | **9,342** (+164 exact) |
+| `politicians.photo_custom_url` | 8,910 | **9,074** (+164 exact) |
+| KS House renderable | 0 | **125 / 125** |
+| KS Senate renderable | 1 | **40 / 40** |
+| Ohio legislature control | 130 | 130 **unmoved** |
+
+🔴 **THE BASELINE ZERO WAS PROVED BEFORE IT WAS BELIEVED.** 182 seated Kansas officials read
+1 renderable, which is the shape of a broken detector. The identical predicate returned
+**MN 133/133 and 67/67, NC 120/120 and 50/50, OH 98/98 and 32/32** — so the zero is real.
+
+### ✅ Verified from outside, and the count is the tell
+
+`verify-imported-headshots.py --expect 164`: **164 decoded, 0 broken**, negative control (a CDN key
+for a random UUID) **failed as required — HTTP 400**, and `tested 164 == expected 164`. Sizes
+`205x256 ×161` and `202x252 ×3`. That `--expect` assertion is MN-6's lesson: a verifier can print
+"0 broken, control failed as required" while testing none of the rows just written.
+
+### 🟢 THE PORTRAITS ARE NOT ENLARGED, AND THAT IS THE REPO'S RULE NOT A COMPROMISE
+
+Source portraits are **202x302 – 205x300**, a 2.93–2.98× upscale to the 600x750 target.
+`import-headshot-candidates.py` defaults `--max-upscale 1.0` — *"NEVER ENLARGE, AND NEVER SKIP FOR
+BEING SMALL"* — so each ships at its own cropped size. Enlarging would bake in interpolation and
+produce a file that looks full-resolution while carrying no more detail.
+
+⚠ **A LARGER FILE IS NOT A LARGER IMAGE.** `?width=1200` on a portrait returns **14,585 bytes
+against 7,991 — and the identical 205x300 pixels.** The host alternates between two JPEG encodings
+of one image and ignores the parameter; `_large` and `.png` are hard 404s. SC-5's rule that the
+resize can hide in the query string was tested here and **does not hold**, so the first reading
+("a larger file exists") was wrong and measuring the pixels is what showed it.
+
+### 🔴🔴 THE IDENTITY CHECK THAT SHIPPED FIRST COULD NOT FAIL
+
+The first manifest set `name = alt` and then "checked" `alt != name`. **A check whose two sides come
+from one value is not a check**, and it passed 165/165 while proving nothing.
+
+Two more things were wrong with it, both found by looking rather than by the check:
+
+- 🔴 **THE ROSTER PAGE'S `alt` IS A SURNAME** — `alt="Rep. Alcala"`. It cannot separate two members
+  of one surname, and this chamber has **two Carpenters**. The MEMBER's own page carries the full
+  name (`alt="Steve Brunk"`); they are different documents and only one is usable.
+- 🔴 **THE ROSTER PAGE INTERLEAVES A CARD GRID AND A TABLE**, so a member's link and a *different*
+  member's `<img>` sit adjacent in the markup. Splitting on the link and taking the next image is
+  the off-by-one this programme keeps paying for. It came out right for all 165 — verified, 0 of 165
+  mismatched — but the design was unsound.
+
+▶ **So the binding moved to each member's own page, and the join key is the DISTRICT.**
+`bind-ks-portraits.py` accepts a portrait only when the hero image on that member's page points at
+that member's own slug, then joins on district — an integer, unique within a chamber, identical on
+both sides. **A name join would have been the weakest link available**: KS-2 recorded three Mike
+Thompsons, two seated in this legislature at once, one published as both "Mike" and "Michael".
+
+**Three independent documents then have to agree on every row**: the member page's full-name `alt`,
+the Legislature's first-party roster CSV, and production's `politicians.full_name` seated by
+`CC_0157` months earlier. **165/165 agreed; 0 mismatches.**
+
+### ⚠ One row matched on a preferred name, and it is recorded rather than waved through
+
+District 26's CSV reads `Firstname 'Charles'`, `Preffname 'Chip'`, `Fullname 'Chip VanHouden'`, and
+the page alt says "Chip VanHouden" — so a strict given-name check rejected a real person. The fix
+reads the column **the Legislature itself publishes for this**, and stores
+`given_name_matched_on` per row so the widening is visible: **164 matched on `Firstname`, exactly
+1 on `Preffname`.** Production stores the same split, checked directly.
+▶ Widening a rule to make a row pass is only legitimate when the source has a field that says so.
+
+### 🔴 The `&quot;` trap is live in this chamber
+
+`Lewis &quot;Bill&quot; Bloom` arrives entity-encoded. Compared raw it fails against every real
+name; written through to a voter-facing field it is mojibake. KS-2 recorded eight such names.
+The binder unescapes before comparing and asserts no entity survives into any alt.
+
+### ⚠ The placeholder is directly fetchable
+
+Every member page carries `onerror="this.src='/static/li_pics/fallback.8b887e28e491.jpg'"`. A
+missing portrait 404s honestly at the member path — but the placeholder is a real URL, so a
+pipeline that followed the fallback would import a **silhouette under a real name**. Every download
+is hashed against the placeholder's own bytes (`sha1 402c6d284aa1`). **0 placeholders found.**
+
+### 🔴 The amber ring on the contact sheet carried no signal, and that was stated
+
+`render-headshot-contact-sheet.py` flags `positional OR upscale > 1.0`. All 164 are under 600x750,
+so **164 of 164 were flagged** — a size flag, not a "check this face" flag. **None was positional.**
+A flag that fires on everything discriminates nothing, and saying so is part of asking for approval
+honestly. Sheet: `https://claude.ai/artifact/JhtixFEw9GGfi2zXKuNPc4`.
+
+### ⚠ Licence `press_use`, and the nearby restriction that does NOT apply
+
+**The Kansas Legislature publishes no photo policy and no copyright notice** — checked at `/li/`,
+on member pages, and in the footer. Its only policy link is the state portal's.
+
+🔴 **`portal.kansas.gov` DOES carry a restriction, and it is scoped to a different site.** Its Terms
+of Use say downloading grants "only a limited, nonexclusive license for use solely by you for your
+own personal use, **and not for republication, distribution … or preparation of derivative works**"
+— and define "the Site" as **"the Kansas.gov website"**, run by Tyler Kansas / INK. It is not
+asserted over kslegislature.gov.
+▶ **Absence of a policy is not a licence**, but this is the Georgia/Florida footing from MN-5, not
+the Minnesota House's published refusal. Recorded in full so the next reader need not re-derive it.
+
+### Tooling added
+
+| Script | What it does |
+| --- | --- |
+| `build-ks-portrait-manifest.mjs` | pages the roster at the site's own `per_page=20`, stops at a KNOWN TOTAL, and **aborts if a page adds nothing** — KS-2 proved this paginator clamps rather than ending |
+| `measure-ks-portraits.py` | decodes every file with PIL and writes real sizes, upscale and a monochrome test. A hand-rolled JPEG SOF walker returned null on some files, and **a null size reported as "no upscale" is worse than no number** |
+| `bind-ks-portraits.py` | binds photo → district → name across two documents; `--self-test` fires all eight assertions |
+| `ks-portrait-candidates.mjs` | adds production as the third document and refuses on any name disagreement |
+
+## ✅ KS-5b APPLIED 2026-09-27 — WICHITA'S 7 ARE SEATED WITH PORTRAITS, AND THE BANNER IS LIVE
+
+**Slice 14 was 172 of 182 renderable at this point.** Wichita 7/7 · legislature 165/165 ·
+Sedgwick County 0/10 — closed by KS-5c below.
+
+### The 7 Wichita portraits — imported on a ruling, not on an assumption
+
+7 imported, 0 skipped, 0 failed; verified from outside (7 decoded, 0 broken, bogus-key control
+failed as required, `tested 7 == expected 7`). Stored **160x200** — ⚠ a 4:5 crop of a 200x200 square
+takes the **WIDTH**, so nothing is clipped vertically and no hair or chin was ever at risk.
+
+🔴 **`wichita.gov/copyright` reserves all rights** — *"All content © 2006-2026 Wichita, KS and its
+representatives. All rights reserved."* An earlier reading called that "the Minnesota House shape".
+**That was wrong and is corrected**: Minnesota published a *photo policy* that required permission in
+advance and forbade cropping; Wichita has a blanket CivicPlus footer over "all content", with no
+photo clause anywhere and nothing in `/190/Legal-Notices`.
+
+▶ **Ruling (Cantrell, 2026-09-27): import, and tell them.** An official portrait a government
+publishes so residents can recognise a council member is ordinary press material; the service is
+free and non-profit; most officials want to be seen. The worst case is being asked to take them
+down. This is the ND-5 posture.
+▶ **And the fallback is worse on BOTH counts** — a news or campaign photograph carries a stronger
+and more actively enforced copyright than a city-published official portrait, so a "safer"
+substitute would buy no licence safety and serve the voter worse.
+
+🟢 **THE `alt` TEXT CAUGHT THE FAILURE IT EXISTS TO CATCH.** Three member pages carry a **staff**
+profile picture beside the member's own — Teresa Veazey (D5), Ana Lopez (D6), Becca Johnson (D3).
+Picking "the profile picture" off each page would have put an aide's face under a council member's
+name. ⚠ The URLs are bare `documentID` integers, so the filename can corroborate nothing; all seven
+are flagged `positional`.
+
+### The permission email — drafted, NOT sent
+
+`letters/2026-09-27-wichita-portrait-permission.md`. **To Jim Jonas**, Strategic Communications
+Director, `jjonas@wichita.gov`; cc **Nolan Roth** (Video, Photography & Streaming Producer)
+`nroth@wichita.gov` and **Tyler Schiffelbein** (webmaster) `tschiffelbein@wichita.gov`.
+
+⚠ **Addresses were DECODED, not inferred** — the city publishes every staff email through
+Cloudflare `email-protection`; the hex payload decodes deterministically.
+🔴 **The directory reuses job titles across boards and nearly produced the wrong recipient**:
+"Brooklynn Profit — Public Information Officer" is on the **Mayor's Youth Council**, *"Junior, Derby
+High School"*. Recipients came from the department page, never from a title search.
+
+🔴 **THE LETTER ASKS ABOUT THE PHOTOGRAPH AND NOTHING ELSE.** A draft invited the city to say whether
+it would rather its portraits "did not appear beside that kind of content" — handing a government a
+say over whether we cover its own elected officials. Corrected. The compass disclosure stays, in
+full, before the ask, and states that we **intend** to publish sourced positions for these seven
+(not merely that none exists today), that nothing is inferred from party, and that anything we
+cannot evidence is left blank. It discloses that the photographs are already displayed and offers
+removal. **`photo_license` is `press_use`; only a reply moves it.**
+
+### 🟢 THE BANNER IS LIVE — `cities/wichita.jpg`, essentials PR #166
+
+🔴🔴 **THE KANSAS STATE BANNER IS WICHITA.** `states/KS.jpg` is *"Wichita, Kansas skyline"* by
+Quintin Soloviev; in the 6:1 desktop band it is an aerial of the whole downtown — Epic Center,
+Garvey Center, New York Life tower, INTRUST Bank Arena. The strongest Commons candidate was
+`Wichita, Kansas skyline.jpg` **by the same photographer**; certified and **refused on adjacency**.
+
+**Winner: `Riverside street view` | FUBAR007 | CC BY-SA 3.0, vertical anchor 0.31** (lum 110.5,
+spread 52.4).
+
+🔴🔴 **THE BAND IS THE MIDDLE 52.4%, SO AN EDGE ANCHOR DOES NOT KEEP THAT EDGE OF THE SUBJECT.**
+
+| anchor | band shows | |
+| --- | --- | --- |
+| 0.0 | empty sky and rooflines — **the road is cropped OUT** | rejected |
+| 0.5 | canopy and a wall, no ground | rejected |
+| 1.0 | water and dead grass, lum 62.9 | rejected, dark |
+| **0.31** | street with parked cars, apartment block, far-bank houses, river | **shipped** |
+
+▶ **Solve for where the subject must land in the band, then derive the anchor.** Both edges look
+plausible and both lose the subject. ⚠ Old Town District (CC0) was the better *subject* and is dark
+at every anchor (lum 55.0) — the band killed a frame the full image flatters.
+⚠ **Wichita Falls, TEXAS is a live Commons name collision**; the Kansas provenance is the
+description plus `Category:July 2026 in Kansas`, **never** the filename.
+
+🔴 **THE BANNER LIVES IN A DIFFERENT REPO AND A DIFFERENT BRANCH**: `EmpoweredVote/essentials`,
+branch **`feat/banners-ky`** (default branch is **`main`**, not master), local path
+`C:\Transparent Motivations\essentials`. That branch had already merged as PR #165 (Lexington) and
+was reused, so the Wichita commit sits on top of a merged branch. **PR #166 is open.**
+
+## ✅✅ KS-5c APPLIED 2026-09-28 — SEDGWICK COUNTY IS 10 OF 10, AND SLICE 14 IS COMPLETE
+
+10 imported, 0 skipped, 0 failed. **Slice 14 is 182 of 182 renderable.**
+
+| | baseline | after |
+| --- | --- | --- |
+| `politician_images` | 9,349 | **9,359** (+10 exact) |
+| `politicians.photo_custom_url` | 9,081 | **9,091** (+10 exact) |
+| Sedgwick County renderable | 0 / 10 | **10 / 10** |
+| Sedgwick `photo_origin_url` set | — | **10 / 10** |
+| Ohio legislature control | 130 | 130 **unmoved** |
+
+Verified from outside: `verify-imported-headshots.py --expect 10` — **10 decoded, 0 broken**, negative
+control (a CDN key for a random UUID) **failed as required, HTTP 400**, and `tested 10 == expected 10`.
+Stored `268x335 ×5`, `600x750 ×3`, `566x708`, `560x700`. Nothing enlarged.
+
+### 🔴🔴 THE PREVIOUS SCOPING SAID THE COUNTY PUBLISHES NO PORTRAIT. IT PUBLISHES SIX OF THE TEN
+
+That section is corrected below, not deleted, because the way it went wrong is the transferable part.
+It read the five commissioners' **district** pages and the five officers' **department landing** pages.
+Every portrait this slice needed is one level down, on a `/contact/` or `/about/` sub-page:
+
+| Seat | Where the portrait actually is | True px |
+| --- | --- | --- |
+| all 5 commissioners | `/commissioners/<slug>/contact/` → `*-website-bio.jpg`, alt `Commissioner <name>` | 200x250 |
+| Sheriff | `/sheriff/about/` → `/media/73567/d1967-j-easter-5-x-7-in-copy.png` | **1429x2000** |
+| Register of Deeds | `/register-of-deeds/contact/` → `/media/70128/tonya-profile-pic.jpg` | 864x1184 |
+| County Clerk | `/clerk/contact/` → `/media/28663/kelly_arnold.jpg` (note: `/clerk/`, **not** `/county-clerk/`) | 100x133 |
+| District Attorney | `/district-attorney/contact-information/` → `/media/66429/new-m-bennett1.jpg` | 210x277 |
+| Treasurer | `/treasurer/contact/` → `/media/68816/5x2a3573_web.jpg` | 150x210 |
+
+▶ **A DEPARTMENT LANDING PAGE IS NOT THE DEPARTMENT'S PAGE ABOUT ITS OFFICEHOLDER.** On this CMS the
+landing page carries service tiles and a page banner; the human being is on `contact/` or `about/`.
+Enumerate a section's own links (`href="/district-attorney/…"`) before concluding an image does not exist.
+
+### 🔴🔴 AND THE "NO IMAGE" READING WAS PARTLY A SOFT-404
+
+`sedgwickcounty.org` answers an unknown URL with **HTTP 404 carrying a full 45,264-byte page body**.
+Two of the saved captures — `_sgco-meet-rod.html` and `_sgco-county-clerk.html` — are **byte-identical
+md5 `9fd3138873b67f15141c67ca0e42fe62`**, because both are that body. The Register of Deeds "meet" page
+was never actually read; the conclusion drawn from it was drawn from an error page.
+▶ **Two saved captures with the same byte count are a soft-404 until proved otherwise.** `wc -c` across a
+capture directory costs nothing and would have caught this the day it was written.
+
+### 🔴🔴 THE COUNTY'S OWN BUDGET IS THE HIGHEST-RESOLUTION SOURCE IT PUBLISHES
+
+`2026-sedgwick-county-adopted-budget.pdf` (`/media/70491/`, 53 MB, 847 pages) carries, at print
+resolution, what the website only serves as thumbnails:
+
+- **p.2** — the five commissioners, 326–335 px squares, laid over a district map with each name printed
+  beneath its own portrait.
+- **p.110 / p.117 / p.204 / p.355 / p.377** — Clerk, Register of Deeds, Treasurer, Sheriff, District
+  Attorney. Each departmental page carries a printed name box and **one** portrait, so page → name →
+  portrait is a one-to-one binding with no ordering to get wrong.
+- Sizes: **726x816, 728x818, 677x773, 726x816**. The Sheriff's is the exception at 216x244, and it is
+  **half badge** — a large Sheriff's Office star occupies the left of the frame.
+
+⚠ **Bind by geometry, not by reading order.** Two commissioners' names arrive in ONE merged text block
+(`Jim Howell\nJeff Blubaugh`, x 325–558). Word-level x-extents separate them: `Jeff Blubaugh` 325–387
+under the image at 316–397, `Jim Howell` 509–558 under the image at 494–574. `get_image_info(xrefs=True)`
+gives the real placement box; `get_images()` alone gives an unordered xref list and would have paired them
+at random.
+
+### 🔴🔴 THE UMBRACO RESIZER UPSCALES, AND `upscale=false` IS THE CONTROL THAT SAYS SO
+
+`/media/54538/meitzner.jpg?width=1200` returns a clean **1200x1596** JPEG. The stored master is
+**100x133**. `?width=1200&upscale=false` returns 100x133 and is what proves it.
+▶ SC-5's rule that *the resize can hide in the query string* is true here in form and **false in
+substance** — the parameter is honoured and the extra pixels are interpolated. KS-5a found the opposite
+failure on `kslegislature.gov` (parameter ignored, two encodings of one image). **Neither host can be
+predicted; both are settled by one request with `upscale=false`, or by decoding and reading `.size`.**
+
+### 🟢 TWO DOCUMENTS PER FACE, AND THE ONE ROW IT STOPPED
+
+Every frame had to be named by its source — `alt` text, filename, or a printed name box — **and** then
+matched against a second county document. Eight pairs were the same frame twice. Two were not:
+
+- 🔴 **Jim Howell.** The budget's p.2 portrait is a grey-bearded man; his contact page, his district
+  banner and the board-page thumbnail all show a clean-shaven man with dark hair, and the Kansas
+  Legislature's 2013 `rep_howell_jim_1.jpg` matches those three. I held the budget frame back as a
+  suspected mis-caption and put both in front of the operator.
+  ▶ **Ruling (Cantrell, 2026-09-28): same man, older. The budget print is the current sitting; ship it.**
+  The check did its job by refusing to decide — it is not a detector of errors, it is a detector of
+  **disagreement**, and a disagreement can resolve either way.
+- ⚠ **Tonya Buckingham.** Two different sittings, both county-published and both named: the newer
+  `/media/70128` office portrait (shipped) and an older photograph beside a US flag (budget p.117 and
+  `/media/55875`). Flagged on the sheet and passed.
+
+⚠ **A SURNAME IS NOT A PERSON, TWICE OVER IN THIS COHORT.** Wichita publishes a portrait of **Travis**
+Easter and the Kansas Legislature seats **Leah** Howell. A surname join would have offered both.
+
+### The crops, and where the centre crop was wrong
+
+Six shipped at their own crop size; four were downscaled to 600x750. `crop_4x5`'s centre crop is wrong
+for three of these sources, so each was pre-cut to an exact 4:5 box and passed through `bytes_from`
+(the crop then runs as a verified no-op — asserted `round(w/0.8) == h` per row before writing):
+
+- **Jeff Easter** — the budget frame is half badge; the shipped frame is the 1429x2000 `/sheriff/about/`
+  portrait, cropped `(245,0)-(1005,950)`.
+- **Tonya Buckingham** — a standing office shot; the centre crop decapitated her. `(150,40)-(710,740)`.
+- **Brandi Baily** — the budget extract carries a **16-row white strip** at the top (rows 0–15; the
+  photograph starts at y=16). Cropping below it beats painting it black: no invented pixels, 13 px lost.
+
+⚠ **THE COMMISSIONERS' BANNER IS A TRAP THAT ALMOST WORKS.** `/media/681xx/dN-website-header.jpg` is a
+900x325 banner holding a circular-masked face. The disc is identical on all five — centre (804,150),
+r≈166, clipped at the right edge — and the largest 4:5 rectangle **inscribed** in it is 202x253 with no
+navy at all. It was rejected because the circle clips the top of the hair on three of the five. **Solve
+the mask geometry before assuming a masked portrait is unusable, and then look at the result anyway.**
+
+### Licence — `press_use`, and this is NOT Wichita's footing
+
+**Sedgwick County publishes no copyright notice and no photo policy.** Checked on the home page, the
+department pages, and `/policies-and-disclaimers/`, whose five children are HIPAA, non-discrimination,
+open-source usage, website privacy and a disclaimer that covers **external links only**. There is no
+`©` anywhere in the markup of the home page, `/sheriff/about/` or a commissioner contact page.
+
+🔴🔴 **BUT THE COUNTY DOES CARRY ONE RESTRICTION, AND IT IS SCOPED ELSEWHERE — FOUND ONLY BY FOLLOWING
+THE MEDIA ROOM'S OWN LINKS.** The brand guide `/media/73810/sc_brand-guide_aod.pdf` (16 pp, linked as
+"county logo and graphics standards") cites **Resolution 1-1985**: the seal/logo *"is the property of
+Sedgwick County and may not be reproduced without permission. The same goes for all other seals, logos
+and symbols in this guide."* **The guide never uses the word "photograph" or "photo".** So the county
+has a considered, resolution-backed restriction on its *marks* and has said nothing about photographs
+of its officeholders.
+▶ **This is the KS-5a `portal.kansas.gov` shape** — a real restriction that does not reach the thing in
+hand. **Do not flatten "a restriction exists on this domain" into "the portraits are restricted."** That
+is the first Wichita draft's error running the other way. ⚠ The sibling link `/media/1066/sc-logo-standards.pdf`
+is a **soft-404** (45,264 bytes again); only the brand guide is real.
+🟢 Our crops carry no county mark: they are head-and-shoulders frames, and the Sheriff's Office star
+that sits beside Easter in the budget is outside the frame, as is his shoulder patch.
+
+🔴 **On photographs this is the Kansas Legislature / Georgia / Florida footing, not Wichita's.**
+`wichita.gov/copyright` reserves all rights over all content; the county reserves its seal. Absence of a
+policy is still not a grant, so the licence is `press_use` — the same posture as KS-5b, addressed to the
+county rather than the city. Only a reply moves `photo_license`.
+
+⚠ **`photo_origin_url`'s `#page=` anchors were 0-based and landed one sheet early; corrected in prod
+2026-09-28** to `#page=119` (Arnold), `#page=213` (Baily), `#page=386` (Bennett). A PDF viewer's `#page=`
+is the 1-based **sheet** number, which is not the page number printed in the footer — the budget's front
+matter offsets them by nine (printed 110 = sheet 119). The letter quotes the **printed** numbers, because
+that is what a reader at the county will look for.
+
+### Artefacts
+
+| Path | What it is |
+| --- | --- |
+| `data/seed-ks-2026/sedgwick-portraits/*.jpg` | the ten approved 4:5 crops, at native resolution |
+| `data/seed-ks-2026/sedgwick-portraits/candidates.json` | the importer input: `bytes_from`, `page`, `license`, `politician_id` |
+| contact sheet | `https://claude.ai/artifact/NRfbPFUjDM7eym6yGjzm2Z` |
+
+## ▶▶ OPEN HERE NEXT
+
+1. 🔴 **The Wichita permission letter is still DRAFTED, NOT SENT** — `letters/2026-09-27-wichita-portrait-permission.md`,
+   to Jim Jonas `jjonas@wichita.gov`.
+2. 🔴 **The Sedgwick County notice is DRAFTED, NOT SENT** —
+   `letters/2026-09-28-sedgwick-county-portrait-notice.md`, to **Nicole Gibbs**, Director of Strategic
+   Communications, via `communications@sedgwick.gov`; cc **Brandon Zenner** `bzenner@sedgwick.gov` and
+   **Deputy Branden Stitt** `branden.stitt@sedgwick.gov` (the Sheriff's PIO — one of the ten is his
+   office's own portrait, and the county's social media policy excepts elected officials).
+   🔴 **Gibbs' own address is NOT published; do not construct one.** Two conventions coexist on this
+   domain — `bzenner@` (initial+surname) on the Communications page, `keith.allen@` / `Brian.White@`
+   (first.last) on the Sheriff's — so a guess could be wrong in two different ways.
+   🔴 **AND THE COUNTY DOES CARRY ONE RESTRICTION, SCOPED ELSEWHERE.** The brand guide
+   (`/media/73810/sc_brand-guide_aod.pdf`) cites **Resolution 1-1985**: the seal/logo "may not be
+   reproduced without permission … the same goes for all other seals, logos and symbols in this guide."
+   It **never uses the word photograph**. This is the KS-5a `portal.kansas.gov` shape — a real
+   restriction that does not reach the portraits. ▶ **Do not flatten "a restriction exists on this
+   domain" into "the portraits are restricted."** Our crops are head-and-shoulders and carry no county
+   mark: the Sheriff's Office star beside Easter in the budget is outside the frame, and so is his
+   shoulder patch.
+3. ▶ **Stage 4b, still undecided: the 31 elected judicial seats** of the 18th Judicial District — 30
+   district judge divisions and 1 district magistrate. `KSA 4-219` says 24 and the register shows 30, so
+   the statute is stale on the count. Kansas fills judicial vacancies by gubernatorial appointment
+   mid-term, so each needs its own continuous-since date. Bigger than all ten county officers together.
