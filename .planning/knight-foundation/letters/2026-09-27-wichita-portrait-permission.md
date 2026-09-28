@@ -1,7 +1,14 @@
 # Wichita council portrait permission — email draft, 2026-09-27
 
-**Status: DRAFTED, NOT SENT.** Nothing has been imported. All seven Wichita portraits are held on
-disk and are absent from production.
+**Status: DRAFTED, NOT SENT. The seven portraits ARE IMPORTED and live** (2026-09-27, 7/7
+renderable, verified from outside: 7 decoded, 0 broken, control failed as required).
+
+▶ **That is the ND-5 posture, chosen deliberately** (Cantrell, 2026-09-27): an official portrait a
+government publishes so residents can recognise a council member is ordinary press material, the
+service is free and non-profit, and the worst outcome is being asked to take them down. The letter
+is therefore a courtesy notice with a real ask attached, and it **discloses that the photographs are
+already displayed** — ND-5's rule is that a request written as though the use had not begun is
+misleading.
 
 ## What the city actually publishes, weighed correctly
 
@@ -19,16 +26,21 @@ carries none either. Flattening the two overstated the evidence.
 ▶ **An official portrait, published by a government so residents can recognise their council
 member, is ordinary press material.** Asking is a courtesy and a chance to get better files and a
 credit line; it is not an admission that the use would otherwise be improper. The tone below
-reflects that. **A public figure whose office publishes their portrait for identification, then
-objects to its use for identification, is itself worth noticing.**
+reflects that: matter-of-fact, and expecting a yes. This is a free service that helps elected
+officials be seen by the people they represent, which is generally something they want.
 
-🔴 **THE LETTER ASKS ABOUT THE PHOTOGRAPH AND NOTHING ELSE.** An earlier draft invited the city to
+⚠ **THE LETTER ASKS ABOUT THE PHOTOGRAPH AND NOTHING ELSE.** An earlier draft invited the city to
 say whether it would rather its portraits "did not appear beside that kind of content", which handed
-a government a veto over whether we cover its own elected officials. It does not have one. These are
-public figures, the record is sourced from public material, the service is non-profit, and residents
-being able to identify their representatives and see where they stand is the point of it. The
-compass disclosure stays — in full, before the ask — so the city's decision about the photograph is
-informed. It is disclosure, not a negotiation over the editorial record.
+a government a say over whether we cover its own elected officials. The compass disclosure stays —
+in full, before the ask — so the city's decision about the photograph is informed. It is disclosure,
+not a negotiation over the editorial record.
+
+▶ **AND THE ALTERNATIVE IS WORSE ON BOTH COUNTS, WHICH IS WHY THE OFFICIAL PORTRAIT IS THE RIGHT
+ASK.** If the city declined, the fallback would be a lower-quality publicly available photograph —
+a news image or a campaign shot. Those carry a **stronger and more actively enforced** copyright
+than a portrait a city publishes so residents can recognise a council member. So a substitute would
+buy no licence safety and would serve both the official and the voter worse. The official portrait
+is the photograph the official chose to be recognised by.
 
 The ND-5 precedent is the same posture: 141 portraits were imported before the licence was settled
 and the request disclosed that we were already displaying them. *"An accurate form is worth more
@@ -128,9 +140,11 @@ We are **not** requesting the staff photographs that also appear on some of thos
 2. Please tell us how you would like the photographs credited. We attach a credit line to each
    image and display it, so whatever you specify will travel with the picture.
 
-**If you would rather we did not use the photographs, tell me and we will not.** We would show the
-office and the name without a picture instead. I would rather hear that now than have you find the
-pages later.
+**Disclosure: the photographs are already displayed.** The Wichita pages are live, and the seven
+portraits are on them now, hosted from our own servers. I would rather tell you that than write as
+though the use had not begun. **If you would prefer we take them down, say so and we will** — we
+would show the office and the name without a picture instead. Nothing about that would be a
+difficulty for us.
 
 I am happy to answer any question about the service, to show you the pages, or to speak by phone.
 
@@ -148,10 +162,14 @@ chris@empowered.vote
   correspondence should say. **BJ Robert Cantrell** is the full legal name and is for forms that
   demand one — the North Dakota photo request was signed "BJ Cantrell" because it was a legal form.
   Do not "make them consistent"; they are different on purpose.
-- 🔴 **`photo_license` stays `unknown` until a reply arrives.** A sent request is not a grant. ND-5's
-  rule: only the reply changes that field, and only to what the reply actually says.
-- 🔴 **Do not import the seven on the strength of having asked.** They stay out of production until
-  there is a yes.
+- 🔴 **`photo_license` is `press_use` and a reply is what changes it.** A sent request is not a
+  grant, and neither is silence — ND-5's rule is that only the reply moves that field, and only to
+  what the reply actually says.
+- ▶ **On a "no": remove the seven and show the office and name without a picture.** Do NOT substitute
+  a news or campaign photograph — those carry a stronger and more actively enforced copyright than a
+  city-published official portrait, so the "safer" fallback is worse on licence AND on quality.
+- ✅ **The seven are imported** — `photo_custom_url` set, 160x200 native (a 4:5 crop of a 200x200
+  square takes the width, so nothing is clipped vertically).
 - ▶ If the answer is yes, re-render from whatever files they supply and set the credit line from
   their words, not from this page.
 - ▶ If the answer is no, the seven become a recorded debt and the honest display is a blank. A blank
