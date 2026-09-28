@@ -26,8 +26,11 @@
  *
  * ── TRAPS FOR ANY CALLER ────────────────────────────────────────────────────────────────────
  * 🔴 THE CODE SET IS NOT THE MAP. SD, KS and KY all proved this. Two vintages agreeing on
- *    '001'..'122' says only that the chamber's size is fixed, which for Mississippi it is
- *    (Miss. Const. art. 13 § 254 fixes the two chambers), so the code set can NEVER date the map.
+ *    '001'..'122' says only that the chamber's size has not changed. ⚠ For Mississippi that size
+ *    is a CEILING rather than a constant — Miss. Const. art. 13 § 254 says "not more than"
+ *    fifty-two and one hundred twenty-two, "the number of members of each house to be determined
+ *    by the Legislature" — and every apportionment since 1982 has used the ceiling. So the code
+ *    set can never date the map, and the reason is practice rather than law.
  * 🔴 LSY TRACKS THE CENSUS REFRESH, NOT THE PLAN. Reported here so it can be seen NOT to move
  *    when a plan does.
  * 🔴 geo_id COLLIDES WITH COUNTIES, as in PA, SC, OH, ND, KY and SD. Mississippi's 82 counties
@@ -53,9 +56,11 @@ const VINTAGES = (process.env.VINTAGES || '2022,2023,2024,2025').split(',').map(
 const FIPS = '28';
 
 /**
- * Expected shape. Miss. Const. art. 13 § 254 caps the Legislature and the apportionment
- * statutes fix it at 122 + 52, so this is a CONSTITUTIONAL shape and cannot date anything.
- * Asserted anyway so that drift is loud rather than cosmetic.
+ * Expected shape, MEASURED. ⚠ Miss. Const. art. 13 § 254 CAPS the chambers at 122 and 52 ("not
+ * more than", the number "to be determined by the Legislature") — it does not fix them, and an
+ * earlier version of this comment said it did. Every apportionment since 1982 has used the cap,
+ * which is why this shape cannot date anything. Asserted so that drift is loud rather than
+ * cosmetic, and so that a future plan seating fewer is noticed rather than silently loaded.
  */
 const EXPECT = { sldl: 122, sldu: 52 };
 
@@ -231,5 +236,5 @@ if (problems.length) {
   console.error(`\n🔴 SHAPE DRIFT: ${problems.join(' · ')}`);
   process.exitCode = 1;
 } else {
-  console.log(`\n✅ every vintage measured is sldl ${EXPECT.sldl} / sldu ${EXPECT.sldu}, the constitutional shape.`);
+  console.log(`\n✅ every vintage measured is sldl ${EXPECT.sldl} / sldu ${EXPECT.sldu} — the constitutional CEILING, which every plan since 1982 has used.`);
 }

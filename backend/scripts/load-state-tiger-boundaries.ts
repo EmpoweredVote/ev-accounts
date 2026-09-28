@@ -683,15 +683,27 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   //   sldl  122 records, MTFCC G5220, 0 'ZZZ', SLDLST '001'..'122' CONTIGUOUS, NO letters
   // Both chambers are SINGLE-MEMBER, so unlike SD, ND, AZ and WA the polygon count IS the seat
   // count. No subdistricts, no positions, no block voting.
-  // 🔴🔴 A COUNT CAN NEVER DATE A MISSISSIPPI MAP, AND HERE THAT IS TRUE BY LAW. Miss. Const.
-  // art. 13 § 254 requires the Legislature to apportion the state "into consecutively numbered
-  // senatorial and representative districts", and the chambers are fixed at 52 and 122. So
-  // 122/52 is a CONSTITUTIONAL CONSTANT that every plan Mississippi will ever adopt satisfies —
-  // stronger than Pennsylvania's 203/50, because there the count merely happened to survive a
-  // remap, and stronger than the KS/KY/SD finding, where the code set was stable by accident.
-  // A count check, a contiguity check and an LSY check all pass on every vintage and on every
-  // future plan. ⚠ LSY reads 2022/2022/2024/2024 across the four vintages and tracks the Census
+  // 🔴🔴 A COUNT CANNOT DATE A MISSISSIPPI MAP — BUT NOT FOR THE REASON FIRST WRITTEN HERE.
+  // ⚠ CORRECTION, read from the Secretary of State's own published constitution rather than
+  // remembered: Miss. Const. art. 13 § 254 sets CEILINGS, not a fixed size. "The Senate shall
+  // consist of not more than fifty-two (52) Senators, and the House of Representatives shall
+  // consist of not more than one hundred twenty-two (122) Representatives, THE NUMBER OF MEMBERS
+  // OF EACH HOUSE TO BE DETERMINED BY THE LEGISLATURE." An earlier version of this comment said
+  // § 254 "fixes" the chambers and called 122/52 a constitutional constant. IT DOES NOT, AND IT
+  // IS NOT. This is South Carolina's and Pennsylvania's situation only in appearance: there the
+  // number really is fixed, here it is a maximum the Legislature has simply always chosen.
+  // ▶ THE PRACTICAL CONCLUSION SURVIVES AND THE REASON CHANGES. Every apportionment since 1982
+  // has used the maxima, so 122/52 fits the 2022 plan, the 2025 remedial plan and the 2010 plan
+  // alike, and a count check, a contiguity check and an LSY check all pass on every vintage.
+  // ▶ AND THE CORRECTION HAS A CONSEQUENCE THE OVER-CLAIM HID: a FUTURE Mississippi plan may
+  // lawfully seat FEWER than 122 or 52, so the equality assertion below could one day fail on a
+  // perfectly valid map. That is the South Dakota shape (a range), not the Pennsylvania one.
+  // Read the assertion's failure as "this file is not what was measured", never as "this file
+  // is invalid". ⚠ LSY reads 2022/2022/2024/2024 across the four vintages and tracks the Census
   // refresh, not the plan — the KS-1 trap.
+  // 🟢 § 254 also says "Each apportionment shall be effective for the next regularly scheduled
+  // elections of members of the Legislature", which is the state-law half of why the map
+  // question below turns on the November 2027 cycle.
   // ⚠ AND ALL FOUR FILE HASHES DIFFER WHILE NO DISTRICT MOVES. Measured by
   // scripts/diff-ms-tiger-vintages.mjs: 0 of 878 Mississippi census tract internal points change
   // district in either chamber, across every adjacent vintage pair. The differing bytes are
@@ -3391,10 +3403,14 @@ async function processLayer(
   //   sldu  52 records, 0 'ZZZ', MTFCC G5210, SLDUST '001'..'052' contiguous, NO letters
   //   sldl  122 records, 0 'ZZZ', MTFCC G5220, SLDLST '001'..'122' contiguous, NO letters
   // Both chambers single-member, so the polygon count IS the seat count — unlike SD, ND, AZ, WA.
-  // 🔴🔴 AND THAT COUNT CAN NEVER DATE THE MAP, BY LAW. Miss. Const. art. 13 § 254 fixes the
-  // two chambers, so 122/52 is a constitutional constant that EVERY Mississippi plan satisfies,
-  // past and future. The count assertion below therefore means only "right state, right layer,
-  // complete download" — it can NEVER mean "right plan". The plan is the anchors' job.
+  // 🔴🔴 AND THAT COUNT CANNOT DATE THE MAP. ⚠ Miss. Const. art. 13 § 254 sets CEILINGS —
+  // "not more than" 52 and 122, "the number of members of each house to be determined by the
+  // Legislature" — NOT a fixed size; an earlier version of this comment claimed it fixed them.
+  // Every apportionment since 1982 has used the maxima, so 122/52 fits every plan Mississippi
+  // has had, which is what makes the count blind here. The assertion below therefore means only
+  // "right state, right layer, complete download" — it can NEVER mean "right plan", and because
+  // the number is a maximum rather than a constant it could one day fail on a lawful future map
+  // that seats fewer. The plan is the anchors' job.
   if (fipsArg === '28') {
     const EXPECTED_MS_MTFCC: Record<string, number> = {
       sldu: 52,    // 52 MS Senate districts — 2022 plan — measured 2026-09-28
@@ -3552,9 +3568,11 @@ async function processLayer(
       if (actualCount !== expected) {
         const err = new Error(
           `[MS MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
-          `TIGER file: ${url}. ⚠ Miss. Const. art. 13 § 254 fixes the chambers at 122 and 52, so ` +
-          `a WRONG count here means a wrong state, a wrong layer or a truncated download — it can ` +
-          `NEVER mean a superseded plan, and a RIGHT count can never mean the right one. ` +
+          `TIGER file: ${url}. ⚠ Miss. Const. art. 13 § 254 caps the chambers at 122 and 52 ` +
+          `("not more than", with the number determined by the Legislature), and every plan since ` +
+          `1982 has used the cap — so a RIGHT count can never mean the right plan. A WRONG count ` +
+          `usually means a wrong state, a wrong layer or a truncated download, but it could also ` +
+          `be a lawful future plan seating fewer. Read the file before changing this number. ` +
           `Aborting before any DB write.`
         );
         err.name = 'MtfccAssertionError';

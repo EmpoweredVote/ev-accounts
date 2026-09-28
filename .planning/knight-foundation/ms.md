@@ -104,11 +104,11 @@ in all eight files.
 | LSY | 2022 (×2), 2024 (×2) | 2022 (×2), 2024 (×2) |
 | distinct file hashes | **4** | **4** |
 
-🔴 **NOTHING INSIDE THE FILE DATES THE PLAN, AND HERE IT NEVER CAN.** Miss. Const. art. 13 § 254
-fixes the two chambers, so 122 and 52 are constitutional constants: every plan Mississippi will
-ever adopt has exactly that shape. A count check, a code-set check and an `LSY` check all pass on
-every vintage. This is the Kansas, Kentucky and South Dakota finding for the fourth time, and
-Mississippi is the case where it is true *by law* rather than by accident.
+🔴 **NOTHING INSIDE THE FILE DATES THE PLAN.** A count check, a code-set check and an `LSY` check
+all pass on every vintage. This is the Kansas, Kentucky and South Dakota finding for the fourth
+time.
+⚠⚠ **CORRECTION, 2026-09-28, MADE BEFORE ANYTHING WAS BUILT ON IT: § 254 SETS A CEILING, NOT A FIXED SIZE, AND AN EARLIER VERSION OF THIS PAGE SAID OTHERWISE.** Read from the Secretary of State's own published constitution rather than remembered: *“The Senate shall consist of **not more than** fifty-two (52) Senators, and the House of Representatives shall consist of **not more than** one hundred twenty-two (122) Representatives, **the number of members of each house to be determined by the Legislature**.”* So 122/52 is **not** a constitutional constant, and Mississippi is **not** Pennsylvania's or South Carolina's case, where the number really is fixed. ▶ **The practical conclusion survives and the reason changes**: every apportionment since 1982 has used the maxima, so 122/52 fits the 2010 plan, the 2022 plan and the 2025 remedial plan alike, and a count still cannot date the map — by practice, not by law. ▶ **And the over-claim was hiding a consequence**: a future Mississippi plan may lawfully seat **fewer**, so the loader's equality assertion could one day fail on a perfectly valid map. That is the South Dakota shape (a range), not the Pennsylvania one. 🟢 § 254 also provides that *“Each apportionment shall be effective for the next regularly scheduled elections of members of the Legislature”*, which is the state-law half of why the map question turns on **November 2027**.
+
 
 ⚠ **All four hashes differ, and that is not a remap.** `backend/scripts/diff-ms-tiger-vintages.mjs`
 located every one of Mississippi's 878 census tract internal points under each vintage:

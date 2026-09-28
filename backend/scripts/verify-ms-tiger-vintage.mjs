@@ -15,9 +15,11 @@
  * everyone elected in November 2023 sits under the 2022 plan, and whoever was elected in the
  * November 2025 specials sits under the remedial plan.
  *
- * 🔴 AND THE COUNT, THE CODE SET AND `LSY` ARE ALL BLIND TO THAT. Miss. Const. art. 13 § 254
- * fixes the chambers, so 122 and 52 are constitutional constants: every plan Mississippi will
- * ever adopt has that shape. measure-ms-tiger-legislative.mjs measured TIGER 2022, 2023, 2024
+ * 🔴 AND THE COUNT, THE CODE SET AND `LSY` ARE ALL BLIND TO THAT. ⚠ Miss. Const. art. 13 § 254
+ * CAPS the chambers — "not more than" fifty-two and one hundred twenty-two, "the number of
+ * members of each house to be determined by the Legislature" — rather than fixing them, and an
+ * earlier version of this comment said "fixes". Every apportionment since 1982 has used the cap,
+ * so 122 and 52 fit every Mississippi plan there has been. measure-ms-tiger-legislative.mjs measured TIGER 2022, 2023, 2024
  * and 2025 and found 122/52 with an IDENTICAL code set in all four, while all four file hashes
  * differ. That is the KS / KY / SD finding for the fourth time — nothing inside the file dates
  * the plan.
