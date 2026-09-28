@@ -12,6 +12,7 @@
 import { client } from '../../scripts/content-generation/anthropic-client.js';
 import { db } from '../../db/index.js';
 import { placeAnswer } from '../questionQuality/answerPlacement.js';
+import { auditBeforeInsert } from './auditBeforeInsert.js';
 import {
   questions,
   collectionQuestions,
@@ -485,6 +486,7 @@ export async function generateElectionQuestions(
   // 10. Insert questions into DB
   console.log(`\n  Inserting ${parsedQuestions.length} questions into database...`);
   let questionsCreated = 0;
+  let questionsBlocked = 0;
 
   for (let i = 0; i < parsedQuestions.length; i++) {
     const q = parsedQuestions[i];
@@ -494,6 +496,24 @@ export async function generateElectionQuestions(
     // Write-time answer-position guard -- the output example in the prompt above says
     // correctAnswer: 0, and the model copies it. Seeded on externalId for determinism.
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);
+
+    // Quality gate. Runs on the PLACED question, because that is what gets
+    // stored. Enforcement is per rule and shared with the nightly pipeline via
+    // TRIVIA_QUALITY_RULES_ENFORCE -- unenforced rules still log, they just do
+    // not refuse the write.
+    const verdict = await auditBeforeInsert({
+      externalId,
+      text: q.text,
+      options: placed.options,
+      correctAnswer: placed.correctAnswer,
+      explanation: q.explanation,
+      difficulty: q.difficulty,
+      source: q.source ?? { name: 'Unknown', url: '' },
+    });
+    if (!verdict.write) {
+      questionsBlocked++;
+      continue;
+    }
 
     const inserted = await db
       .insert(questions)
@@ -532,6 +552,11 @@ export async function generateElectionQuestions(
   }
 
   console.log(`  Inserted: ${questionsCreated}/${parsedQuestions.length} questions.`);
+  if (questionsBlocked > 0) {
+    console.log(
+      `  [QualityRules] ${questionsBlocked} refused by an enforced rule and NOT written.`,
+    );
+  }
 
   // 11. Set questionsGenerated = true on the race
   await db
