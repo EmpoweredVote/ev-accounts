@@ -12,7 +12,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — MISSISSIPPI HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME. 174 boundaries + 174 districts (52 Senate + 122 House), 0 errors.** No migration. The programme now owes legislative geography nowhere |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
-| 3 city waves | ▶ **MEASURED 2026-09-28 — inventory read, roster dated, ward geometry proved. NOTHING WRITTEN YET.** 8 elected offices: Mayor + 7 ward council |
+| 3 city waves | ✅ **APPLIED 2026-09-28 — BILOXI IS SEATED. 7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant** (`CC_0171`/`CC_0172`). City Hall now scores 4 of 4 bar the county |
 | 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
 | 5 assets | — not started. No `biloxi` banner key |
 
@@ -696,6 +696,117 @@ be Wayne Gray.
   path and on a bogus one alike. **MS-4 must use Playwright from the start.**
 - ⚠ `biloxi.ms.us/gis` 403s; `biloxi.ms.us/gis-mapping` is the Experience Builder app.
 
+---
+
+## ✅ MS-3 APPLIED 2026-09-28 — BILOXI IS SEATED
+
+`CC_0171` (structure) + `CC_0172` (occupancy), plus `scripts/load-biloxi-ward-boundaries.mjs` for
+the geometry: **7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant, 8 people created,
+0 reused.** Single-member wards, so the polygon count is the seat count.
+
+**Measured from outside, against a baseline taken in the same session as the write:**
+
+| scope | before | after | expected |
+| --- | --- | --- | --- |
+| `geofence_boundaries` | 72,886 | **72,893** | +7 exact |
+| `politicians` | 89,659 | **89,667** | +8 exact |
+| `offices` | 10,204 | **10,212** | +8 exact |
+| `office_terms` | 10,140 | **10,148** | +8 exact |
+| `districts` | 10,706 | **10,714** | +8 exact |
+| `chambers` | 1,341 | **1,343** | +2 |
+| `governments` | 612 | **613** | +1 |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | must NOT move — unmoved |
+| CONTROL: MS legislative offices | 174 | 174 | unmoved |
+| CONTROL: SD legislative offices | 105 | 105 | unmoved |
+| CONTROL: Aberdeen offices | 9 | 9 | unmoved |
+| CONTROL: `X0072` (Aberdeen wards) | 4 | 4 | unmoved |
+
+### ✅ Biloxi City Hall now scores 4 of 4 — and the fourth is still MS-4's
+
+| probe | Mayor | Council | Senate | House |
+| --- | --- | --- | --- | --- |
+| **Biloxi City Hall** | **Gilich** | **Wayne Gray (Ward 1)** | SD 50 DeLano | HD 115 Grady |
+| Tisdale's own address | Gilich | **Paul A. Tisdale (Ward 5)** | SD 49 Carter | HD 117 Felsher |
+| Woolmarket City Center | Gilich | **David Shoemaker (Ward 7)** | SD 50 DeLano | HD 116 Eure |
+| CONTROL Gulfport City Hall | — | **none** | SD 48 | HD 119 |
+| CONTROL Mobile, Alabama | — | — | — | — |
+
+**Per-ward control: 7 of 7 ward interior points resolve to exactly one holder**, with a positive
+control in the same query showing that asking across the ward layer AND the place layer returns
+**2** everywhere — so the query can report a number other than one. ⚠ The county supervisor is
+still missing, and that is correct: Harrison County is MS-4.
+
+### 🔴🔴 THE HOLES ARRIVE AS PARTS, AND ONLY THE WINDING SAYS SO
+
+The city's service returns `f=geojson` that does **not** rewind to RFC 7946. Every one of the
+**162** parts across the seven wards carries **exactly one ring**, so the inner-ring channel GeoJSON
+uses to express a hole is never used at all. Ward 7's two holes — the **Tchoutacabouffa River** —
+arrive as two extra **counter-clockwise** parts nested inside part 0, among 160 clockwise ones.
+
+▶ **Loaded raw, PostGIS would have read them as exteriors.** Ward 7 would overlap itself, come back
+invalid, and `ST_MakeValid` would have **filled** them, handing roughly 19,000 m² of river to Ward 7
+as addressable territory. 🟢 SD-3's area guard would in fact have *aborted* rather than corrupt —
+that guard has now earned its keep twice — but aborting is not loading. The parts are re-assembled
+instead, and a part counts as a hole only when the **nesting test and the winding test agree**;
+either one alone aborts the run. In production ward 7 stores **29 parts and 31 rings**.
+
+⚠ Census reverse geocoding puts both hole centroids **inside Biloxi city**, so this is the city
+clipping its ward around water, not a gap in the city limits.
+
+### 🔴 `Id` IS NOT THE WARD NUMBER
+
+The layer carries `Id` and `Ward_2020`. **`Id` repeats** — `Id = 6` on Wards 4 and 6, `Id = 1` on
+Wards 1 and 3, five distinct values for seven wards. A join on `Id` would have merged two pairs of
+wards silently. **Reading one sample of the rows caught it; a count never would have.** A control
+now asserts the collision still exists, so a future re-publish that repairs `Id` stops the loader
+and makes a human re-choose the key rather than inherit a stale one.
+
+### The gates, all watched failing
+
+**Loader: seven controls**, each on its own target — bogus layer · ward-number set · `Id` still
+unusable · population identity (49,574) · hole reassembly · the ten published anchors · the
+out-of-city probes.
+**Migrations: twelve controls**, via `scripts/ms3-migration-controls.mjs` — missing ward polygons ·
+a foreign `X0073` row · missing place polygon · one office per ward · an office with no polygon ·
+MS-2's 174 offices · seated count · the mayor's oath date · Ward 7's date · the precision split ·
+`is_incumbent` · MS-2's 174 seats.
+
+🔴 **FIVE OF THE NINETEEN WERE SHADOWED ON FIRST WRITING, AND THE HARNESS IS WHAT SAID SO.** MS-2
+found this twice; it is now seven times, so it should be assumed rather than discovered:
+
+- relabelling a ward trips the **ward-set** gate before the anchors;
+- replacing a ward's geometry trips the **anchors** before the out-of-city probe;
+- **adding** an eighth `X0073` row trips the **count** gate before the ownership check — renaming one does not;
+- **adding** an office trips the **total-office** gate before the per-ward gate — *moving* one does not, and the per-ward gate exists precisely because the total cannot see it;
+- changing Ward 7's date **and** its precision trips the **precision split** before the date assertion.
+
+⚠ And one control reported **DID NOT FIRE** when the gate was fine: both migrations carry a line
+reading `Post-verify gate`, so a tamper inserted "before the marker" landed in the **structure**
+gate, which runs before the people exist. **A control that lands in the wrong place reads exactly
+like a missing gate.**
+
+⚠ **`psql` writes `RAISE NOTICE` to STDERR**, so a stdout-only capture shows a clean run with no
+evidence that any gate ran at all. The harness keeps both streams.
+
+Dry run was a real `BEGIN … ROLLBACK` through `psql` as `ev_api`, with both migrations in one
+transaction, and **the rollback was verified to have reverted** — 89,659 / 10,204 / 10,140 / 10,706
+and zero Biloxi rows — before the real apply.
+
+### Gates
+
+`check:occupancy` green · `check:migrations` green (4 added vs `origin/master`, 2,180 slots claimed
+across 393 refs) · `check:reservations` green · **`check:reachability` nothing regressed** —
+`BAD_GEOMETRY` 4/4, `DEAD_GEOGRAPHY` 17/17, `UNREACHABLE` 7/7, every bucket exactly at baseline.
+
+### ⚠ Debts carried out of MS-3
+
+- **Ward 7 is dated to a month.** Promoting it to `2024-03-19` needs the council minutes from the
+  Laserfiche portal, and nothing else will do.
+- **No headshots and no banner yet** — MS-5.
+- 🔴 **`harrisoncountyms.gov` and `www.co.harrison.ms.us` sit behind a Cloudflare challenge**
+  (HTTP 403, *"Just a moment..."*, to a bare fetch and a Chrome UA alike, on real and bogus paths).
+  **MS-4 must open them in Playwright from the start.**
+
 ## Access facts measured this session
 
 🔴🔴 **`legislature.ms.gov` AND `billstatus.ls.state.ms.us` SEND ONLY THEIR LEAF CERTIFICATE.** Both
@@ -751,14 +862,16 @@ The MARIS `.xlsx` block equivalency files were converted to two-column CSV with 
 ## ▶ RESUMING THIS SLICE — read this before touching anything
 
 **State: MS-1 and MS-2 are APPLIED and on `origin/knight/ms-slice16` (PR #839). Nothing is
-uncommitted and nothing is unpushed. MS-3 is next: BILOXI, and its office inventory is UNREAD.**
+uncommitted and nothing is unpushed. **MS-3 is APPLIED too** (`CC_0171`/`CC_0172` + the ward
+load on `X0073`) — see the MS-3 sections above. **MS-4 is next: HARRISON COUNTY, and its office
+inventory is UNREAD.**
 
 | stage | state |
 | --- | --- |
 | 1 geography | ✅ applied — 174 polygons |
 | 2 legislature | ✅ applied — 174 offices seated (`CC_0169`/`CC_0170`) |
-| **3 Biloxi** | ▶ **OPEN, FROM ZERO. Inventory unread.** |
-| 4 Harrison County | — not started |
+| **3 Biloxi** | ✅ applied — 8 offices seated (`CC_0171`/`CC_0172`) + 7 ward polygons on `X0073` |
+| **4 Harrison County** | ▶ **OPEN, FROM ZERO. Inventory unread. The county's hosts are behind Cloudflare — use Playwright.** |
 | 5 assets | — not started. No `biloxi` banner key |
 
 ### What MS-3 has to establish
