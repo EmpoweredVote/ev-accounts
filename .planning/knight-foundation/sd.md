@@ -9,7 +9,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 
 | Stage | State |
 | --- | --- |
-| 1 geography | ▶ **OPEN — `sldu` + `sldl` ONLY, and the load is MEASURED: `sldu` 35 + `sldl` 37 = 72 polygons.** `place` (310) and `county` (66) already exist; SD holds **zero** state legislative polygons. 🔴 **Blocked on the vintage proof, which the file cannot give** |
+| 1 geography | ▶ **OPEN, AND READY TO LOAD — `sldu` 35 + `sldl` 37 = 72 polygons, and the vintage is PROVED** against the SD Legislature's own adopted-map layer. `place` (310) and `county` (66) already exist; SD holds **zero** state legislative polygons |
 | 2 legislature | ▶ **OPEN, FROM ZERO.** South Dakota holds **no legislative office at all** — 0 of 70 House, 0 of 35 Senate |
 | 3 city waves | ▶ **OPEN, FROM ZERO.** Aberdeen holds no government row, no chamber and no office |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
@@ -84,8 +84,96 @@ reproduces the Kansas and Kentucky findings inside South Dakota.
 ⚠ **`LSY` looks like a discriminator and is not** — it tracks the Census refresh, not the plan, the
 same trap KS-1 documented.
 
-▶ **SD-1's vintage proof must therefore be GEOMETRIC** — identity anchors whose district number
-differs between the pre- and post-2021 plans, in the shape MN, PA and ND used. **Still open.**
+---
+
+## ✅ THE VINTAGE IS PROVED 2026-09-28 — TIGER 2024 CARRIES THE 2021 ADOPTED MAP
+
+[`backend/scripts/verify-sd-tiger-vintage.mjs`](../../backend/scripts/verify-sd-tiger-vintage.mjs).
+
+### 🟢 THE AUTHORITY IS THE LEGISLATURE'S OWN LAYER, AND IT PUBLISHES BOTH PLANS
+
+`sdlegislature.gov`'s "Find My Legislators" viewer is an ArcGIS map whose district geometry is
+served as plain GeoJSON from the Legislature's own host. Its redistricting page links the live
+layer as **"2021 Adopted Map"** (`Legislators/Find?activeLayer=2021`), and the viewer loads **both**:
+
+| | URL | features |
+| --- | --- | --- |
+| adopted | `https://sdlegislature.gov/redistrictingFeatureLayer.geojson` | **39** |
+| superseded | `https://sdlegislature.gov/2010redistrictingFeatureLayer.geojson` | **39** |
+
+**Publishing the superseded plan beside the live one is what makes this a real test.** The same
+comparison runs against both, and only one may return zero. Kentucky had to settle for a
+current-geometry service; South Dakota, like Kansas, hands over the artifact.
+
+🔴 **The site is a JavaScript SPA, and a plain fetch of its HTML returns a "use a modern browser"
+shell that reads like a real page.** The GeoJSON URLs were found by rendering the viewer in
+Playwright and reading its network traffic — not by scraping HTML. A `WebFetch` of the
+redistricting home page returned three links, all of them browser download pages.
+
+### 🔴🔴 THE AUTHORITY LAYER HAS 39 FEATURES, AND THE OVERLAP IS THE POINT
+
+Both files carry **1-35 plus 26A, 26B, 28A, 28B**. That is **one layer serving both chambers**: 26
+and 28 are whole **Senate** districts that split into single-member **House** subdistricts, so
+**26A and 26B lie INSIDE 26** and a naive point-in-polygon lookup returns two answers.
+
+▶ So the comparison narrows the authority per chamber *before* locating anything:
+
+| against | authority subset | size |
+| --- | --- | --- |
+| `sldu` (35) | 1-35, subdistricts **excluded** | **35** |
+| `sldl` (37) | 1-35 minus 26 and 28, subdistricts **included** | **37** |
+
+🟢 **Those two subsets come out at exactly 35 and 37** — an independent confirmation of the TIGER
+counts, from a source that has never seen a TIGER file.
+
+### The result
+
+| TIGER vintage | vs adopted plan | vs 2010 plan | verdict |
+| --- | --- | --- | --- |
+| 2020 | 7 / 7 moved (80.0% / 81.1%) | **0 / 0 moved** | 🔴 carries the **superseded** plan |
+| 2022 | **0 / 0 moved** | 7 / 7 moved | ✅ adopted |
+| **2024** | **0 / 0 moved (100%)** | 7 / 7 moved (80.0% / 81.1%) | ✅ **adopted — this is the load vintage** |
+| 2025 | **0 / 0 moved** | 7 / 7 moved | ✅ adopted |
+
+*(Senate / House. "Moved" = the TIGER district's own internal point lands in a differently numbered
+authority district.)*
+
+⚠ **A THRESHOLD TEST PASSES THE SUPERSEDED MAP HERE, exactly as in ND and KS.** TIGER 2020 still
+agrees with the adopted plan on **28 of 35 Senate and 30 of 37 House** districts — 80% and 81%.
+**The discriminator is that the correct plan moves EXACTLY ZERO and the wrong one does not.**
+Anyone relaxing `MOVED === 0` to "most districts agree" re-admits the 2010 plan.
+
+The seven that moved are the same seven in both chambers, because SD's House districts are its
+Senate districts (split only at 26 and 28):
+
+| district (adopted) | was, under the 2010 plan | internal point |
+| --- | --- | --- |
+| 2 | 25 | 43.56556, -96.55920 |
+| 8 | 22 | 44.23210, -97.24072 |
+| 15 | 9 | 43.57064, -96.74050 |
+| 20 | 8 | 43.94537, -98.25638 |
+| 22 | 2 | 44.71227, -98.29160 |
+| 25 | 8 | 43.87210, -96.75352 |
+| 34 | 33 | 44.07340, -103.29828 |
+
+### The controls, all of which fire
+
+1. **A bogus FIPS 99 must fail to download.** It 404s.
+2. **Each authority layer must locate its own features to themselves.** 0 conflicts on all four
+   subsets. 🔴 **This control FAILED on its first construction and the failure was real, not
+   cosmetic**: it probed with a *mean of the polygon's vertices*, which is **not** an interior
+   point — district 25's vertex mean lands inside district 8. Replaced with a true
+   point-on-surface (scan a horizontal line across the bounding box, take the midpoint of the
+   widest interior span), which is inside by construction for any concave or multi-part shape.
+3. **The wrong-plan comparison must return non-zero.** It returns 7 / 7.
+4. **The script must REFUSE the superseded vintage.** Run at `VINTAGE=2020` it exits 1 with
+   *"CARRIES THE SUPERSEDED 2010 PLAN — DO NOT LOAD IT"*.
+
+🔴 **The verdict branch was also wrong once, and it is worth recording**: the first version
+reported a matched *superseded* vintage as "control 3 did not fire", which is a **gate aborting
+for the wrong reason**. Every branch now names the condition it actually found.
+
+▶ **SD-1 is no longer blocked. Load TIGER 2024.**
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
@@ -191,12 +279,10 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
    `26A`/`26B`/`28A`/`28B`, no `026` or `028` polygon. Script
    `backend/scripts/measure-sd-tiger-legislative.mjs`, which asserts that shape and was watched
    failing on a tampered count **and** on a tampered subdistrict list.
-2. ▶ **Prove the vintage — NOW THE BLOCKER, and it must be geometric.** The count, the letters and
-   the code set are **identical in TIGER 2020**, which carries the superseded plan, so none of them
-   can date the map. Find identity anchors the way MN used Duluth's Senate renumbering and PA used
-   State College's SD-34 → SD-25 — pick points whose district number differs between the pre- and
-   post-2021 plans, and probe them. The South Dakota Legislative Research Council is the authority
-   to look for first; KS-1 shows what a legislature's own enacted plan file is worth.
+2. ✅ **Prove the vintage — DONE 2026-09-28.** TIGER 2024 carries the **2021 Adopted Map**: 0 of 35
+   Senate and 0 of 37 House districts moved against the SD Legislature's own layer, while the same
+   test against its published **2010** layer moves 7 and 7. Script
+   `backend/scripts/verify-sd-tiger-vintage.mjs`, which refuses TIGER 2020 by name.
 3. **Add SD to `STATE_LAYER_ALLOWLIST`** in `backend/scripts/load-state-tiger-boundaries.ts` with the
    measurement that justifies its numbers written into the comment, as every other state's entry
    does. 🔴 **This is the program's hottest shared file** — merge `master` into this branch early and
@@ -212,9 +298,9 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
 
 - ✅ ~~The House structure is unproved.~~ **CLOSED 2026-09-28 — 37 `sldl` polygons, 33 whole + four
   subdistricts `26A`/`26B`/`28A`/`28B`, and those are the only splits.**
-- 🔴 **The vintage is unproved, and it is now the blocker.** No anchor has been chosen, and the file
-  gives no structural discriminator — TIGER 2020 carries the superseded plan with the **same 37
-  records and the same code set**. The proof has to be geometric.
+- ✅ ~~The vintage is unproved.~~ **CLOSED 2026-09-28 — TIGER 2024 carries the 2021 Adopted Map,
+  proved geometrically against the SD Legislature's own layer, with the superseded 2010 layer as
+  the control that makes the test able to fail.**
 - 🔴 **Aberdeen's office inventory is unread**, and so is Brown County's.
 - ⚠ **Which legislative district Aberdeen sits in is unknown**, so the acceptance probe cannot be
   written yet — and whether it asserts four answers or five depends on it.
