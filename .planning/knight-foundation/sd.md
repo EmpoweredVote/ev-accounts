@@ -9,7 +9,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 
 | Stage | State |
 | --- | --- |
-| 1 geography | ▶ **OPEN, AND READY TO LOAD — `sldu` 35 + `sldl` 37 = 72 polygons, and the vintage is PROVED** against the SD Legislature's own adopted-map layer. `place` (310) and `county` (66) already exist; SD holds **zero** state legislative polygons |
+| 1 geography | ✅ **APPLIED 2026-09-28 — 72 boundaries, 72 districts, 35 Senate + 37 House, 0 errors.** Only `sldu` + `sldl` were owed; vintage PROVED against the SD Legislature's own adopted-map layer |
 | 2 legislature | ▶ **OPEN, FROM ZERO.** South Dakota holds **no legislative office at all** — 0 of 70 House, 0 of 35 Senate |
 | 3 city waves | ▶ **OPEN, FROM ZERO.** Aberdeen holds no government row, no chamber and no office |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
@@ -173,7 +173,99 @@ Senate districts (split only at 26 and 28):
 reported a matched *superseded* vintage as "control 3 did not fire", which is a **gate aborting
 for the wrong reason**. Every branch now names the condition it actually found.
 
-▶ **SD-1 is no longer blocked. Load TIGER 2024.**
+---
+
+## ✅ SD-1 APPLIED 2026-09-28 — SOUTH DAKOTA HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME
+
+**72 boundaries and 72 districts — 35 Senate + 37 House — 0 errors, 0 already existed, 0 skipped.**
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `districts` (all) | 10,455 | 10,527 | **+72 exact** |
+| `geofence_boundaries` (all) | 72,636 | 72,708 | **+72 exact** |
+| `districts` SD | 73 | **145** | +72 |
+| `geofence_boundaries` FIPS 46 | 2,147 | **2,219** | +72 |
+| `offices_missing_terms` | 422 / 238 unflagged | **422 / 238** | **unmoved** |
+
+Both totals moved by exactly 72 and nothing else moved. Baseline measured in the same session,
+minutes before the write.
+
+**Geometry:** 35 `G5210` + 37 `G5220`, **all 72 valid**, SRID **4326**, 0 NULL, 35 and 37 distinct
+`geo_id`, 35 and 37 distinct `ocd_id`.
+
+🟢 **THE `08A` COLLAPSE DID NOT HAPPEN.** 37 House districts carry **37 distinct `ocd_id`s**, and 4
+of the 37 `geo_id`s carry a letter. `ocdDistrictSuffix()` kept it; `parseInt` would have merged
+26A with 26B and 28A with 28B into 35.
+
+### End-to-end, measured against production after the apply
+
+| probe | Senate | House | County |
+| --- | --- | --- | --- |
+| **Aberdeen City Hall** | District 3 | District 3 | **Brown County** `46013` |
+| Brown County Courthouse | District 3 | District 3 | Brown County |
+| House 26A internal point | **District 26** | **District 26A** (`geo_id` `4626A`) | Mellette |
+| House 28B internal point | **District 28** | **District 28B** (`geo_id` `4628B`) | Harding |
+| Rapid City City Hall | District 32 | District 32 | Pennington |
+
+🟢 **The split chamber works end to end**: one point returns a *whole* Senate district and a
+*lettered* House subdistrict, and the letter survived all the way into `geo_id`.
+
+🔴 **THE COUNTY `geo_id` COLLISION IS NOW LIVE AND VISIBLE IN THIS TABLE.** Senate District 3 is
+`46003` — and so is **Aurora County**. The probe above is only correct because it pairs `geo_id`
+with `mtfcc`. Measured: 66 SD counties run `46003`..`46137` odd, **17 of them inside the Senate
+range**, and **Brown County `46013` collides with Senate District 13**. The four subdistricts are
+safe by construction — `4626A` ends in a letter and cannot collide with a numeric county GEOID.
+
+🟢 **The probe was controlled.** Fargo ND, Sioux City IA and a mid-Atlantic point each return
+**0** SD districts, so a match means something.
+
+### Gates
+
+`check:occupancy` green (3 files scanned, no writes to the dropped column).
+`check:migrations` green (0 added, 2,172 slots across 392 refs, tree scan clean).
+**No migration was needed** — the loader writes geometry directly.
+
+### Every assertion was watched failing first
+
+| control | fires |
+| --- | --- |
+| `SD_PREFLIGHT_CONTROL=count` | MTFCC assertion — "expected 34, got 35" |
+| `SD_PREFLIGHT_CONTROL=anchor` | vintage assertion |
+| `SD_PREFLIGHT_CONTROL=weak` | discrimination assertion — "only 0 of 6 anchors distinguish" |
+| **`--vintage 2020`** (a real superseded map, no flag needed) | vintage assertion, naming the 2010 plan |
+
+🔴🔴 **AND THE `anchor` CONTROL CAUGHT A REAL DEFECT IN MY OWN GATE — THE SAME ONE KANSAS'S FIRED
+TWICE BEFORE IT WAS RIGHT.** The first diagnosis asked *"did every failure land on its prior value,
+and was at least one failure discriminating?"*. Perturbing Aberdeen City Hall's expected code from
+`3` to `999` satisfies both trivially — `999 !== 3` **makes it look discriminating** while it lands
+on `3`, its prior — so a **corrupted anchor table was diagnosed as "THIS FILE IS THE SUPERSEDED
+2010 PLAN"**. Wrong: the file was right and the table was wrong.
+
+▶ **The correct test is a statement about the whole discriminating set**: this file is the 2010 plan
+only if **every** anchor that distinguishes the plans failed onto its 2010 value. One failure out of
+seven cannot be a different map, because six anchors still name the adopted one. Now:
+
+- tamper → *"Only 1 of 8 discriminating anchors failed, so this is NOT simply the 2010 plan —
+  suspect … an edited anchor table."*
+- `--vintage 2020` → *"ALL 7 discriminating anchors failed onto their 2010 value — THIS FILE IS THE
+  SUPERSEDED 2010 PLAN."*
+
+### What the loader gained
+
+`STATE_LAYER_ALLOWLIST.SD = ['sldu','sldl']` and a `fipsArg === '46'` pre-flight asserting: record
+count, distinct OCD-ID suffixes, the exact subdistrict set, **the ABSENCE of whole `026`/`028`
+House polygons**, the seat arithmetic `33×2 + 4 = 70`, and 15 anchors of which **at least 4 must
+discriminate**.
+
+🔴 **SD's anchors compare STRING codes, where Kansas's compare `parseInt`.** Kansas has no lettered
+districts so its shortcut is safe there; here it would silently pass a House anchor that landed in
+the wrong half of a split district. Every SD comparison runs through `ocdDistrictSuffix()`.
+
+🔴 **Kansas's contiguity assertion is deliberately NOT copied.** South Dakota's House code set is
+legitimately non-contiguous, so that check would fail correctly. The SD equivalent is the opposite
+shape: `026` and `028` are asserted **absent**.
+
+▶ **Next: SD-2, the legislature — 105 offices, 70 House + 35 Senate.**
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
@@ -283,13 +375,12 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
    Senate and 0 of 37 House districts moved against the SD Legislature's own layer, while the same
    test against its published **2010** layer moves 7 and 7. Script
    `backend/scripts/verify-sd-tiger-vintage.mjs`, which refuses TIGER 2020 by name.
-3. **Add SD to `STATE_LAYER_ALLOWLIST`** in `backend/scripts/load-state-tiger-boundaries.ts` with the
-   measurement that justifies its numbers written into the comment, as every other state's entry
-   does. 🔴 **This is the program's hottest shared file** — merge `master` into this branch early and
-   often, in this worktree.
-4. **Dry-run, then apply SD-1.** Assert `districts` and `geofence_boundaries` each move by exactly
-   the loaded count and that nothing else moves.
-5. **SD-2**: read the legislature's own roster; establish the term-start dates from the body's own
+3. ✅ **Add SD to `STATE_LAYER_ALLOWLIST` — DONE 2026-09-28**, with the measurement that justifies
+   its numbers in the comment and a `fipsArg === '46'` pre-flight block. 🔴 **This is the program's
+   hottest shared file** — merge `master` into this branch early and often, in this worktree.
+4. ✅ **Dry-run, then apply SD-1 — DONE 2026-09-28.** Both tables moved by **exactly +72** and
+   nothing else moved; `offices_missing_terms` unmoved at 422/238.
+5. ▶ **SD-2 — NEXT**: read the legislature's own roster; establish the term-start dates from the body's own
    record, never computed. Then SD-3 and SD-4 on Aberdeen and Brown County.
 
 ---
