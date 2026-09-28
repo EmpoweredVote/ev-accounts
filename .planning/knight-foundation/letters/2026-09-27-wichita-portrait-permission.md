@@ -22,6 +22,14 @@ credit line; it is not an admission that the use would otherwise be improper. Th
 reflects that. **A public figure whose office publishes their portrait for identification, then
 objects to its use for identification, is itself worth noticing.**
 
+🔴 **THE LETTER ASKS ABOUT THE PHOTOGRAPH AND NOTHING ELSE.** An earlier draft invited the city to
+say whether it would rather its portraits "did not appear beside that kind of content", which handed
+a government a veto over whether we cover its own elected officials. It does not have one. These are
+public figures, the record is sourced from public material, the service is non-profit, and residents
+being able to identify their representatives and see where they stand is the point of it. The
+compass disclosure stays — in full, before the ask — so the city's decision about the photograph is
+informed. It is disclosure, not a negotiation over the editorial record.
+
 The ND-5 precedent is the same posture: 141 portraits were imported before the licence was settled
 and the request disclosed that we were already displaying them. *"An accurate form is worth more
 than a granted one."*
@@ -78,18 +86,24 @@ would host our own copies rather than linking to yours, so that our pages place 
 city's site and do not break if a URL changes.
 
 **We also publish sourced policy positions for elected officials, and we intend to do so for these
-seven.** This is the part I most want you to have in front of you before you decide. Alongside each
-official we publish, where we can evidence it, where that person stands on specific policy
-questions — placed on a five-point scale, with the vote, bill, ordinance or public statement that
-supports it cited and visible to the reader. None of the seven has such a position published today,
-but our plan is to research and publish them, and a portrait sits beside that record. If the city
-would rather its photographs did not appear beside that kind of content, that is an entirely
-reasonable position and I would like to know it now rather than later.
+seven.** I want this in front of you before you decide about the photographs, because a portrait
+will sit beside that record. Alongside each official we publish, where we can evidence it, where
+that person stands on specific policy questions — placed on a five-point scale, with the vote, bill,
+ordinance or public statement that supports it cited and visible to the reader. Nothing is inferred
+from party, and anything we cannot evidence is left blank rather than guessed. None of the seven has
+a position published today; our plan is to research and publish them.
 
-**No endorsement is implied or claimed — and that covers the photograph only.** Permission to use a
-portrait would not suggest that the city, the council, or any official endorses Empowered Vote. It
-equally would not mean the city has reviewed, approved or agrees with any policy position we
-publish. Those positions are ours to source and ours to answer for.
+To be straightforward about scope: **that coverage is not what I am asking permission for.** These
+are elected officials, the record is drawn from public sources, Empowered Vote is non-profit and
+makes no money from any of it, and we have no interest in characterising anyone as other than what
+the evidence shows. Residents being able to identify the people who represent them, and see where
+they stand, is the whole purpose of the service. I am telling you about it so that your decision
+about the photographs is an informed one, not to ask whether we may cover the City Council.
+
+**No endorsement is implied or claimed, in either direction.** Permission to use a portrait would
+not suggest that the city, the council, or any official endorses Empowered Vote — and it equally
+would not mean the city has reviewed, approved or agrees with anything we publish. The positions are
+ours to source and ours to answer for, and if we ever get one wrong I want to hear about it.
 
 **The photographs concerned** are the ones published on each member's page at wichita.gov:
 
@@ -114,8 +128,9 @@ We are **not** requesting the staff photographs that also appear on some of thos
 2. Please tell us how you would like the photographs credited. We attach a credit line to each
    image and display it, so whatever you specify will travel with the picture.
 
-**If you would rather we did not use them, tell me and we will not.** We would show the office and
-the name without a picture instead. I would rather hear that now than have you find the pages later.
+**If you would rather we did not use the photographs, tell me and we will not.** We would show the
+office and the name without a picture instead. I would rather hear that now than have you find the
+pages later.
 
 I am happy to answer any question about the service, to show you the pages, or to speak by phone.
 
@@ -129,9 +144,10 @@ chris@empowered.vote
 
 ## Notes for whoever sends this
 
-- ⚠ **Check the signature.** The North Dakota photo request, submitted 2026-09-26, was signed
-  **BJ Cantrell** with a Los Angeles postal address and the phone 310.499.8131. This draft signs
-  **Chris Cantrell** with email only. Make them consistent before sending.
+- ✅ **The signature is correct as it stands.** He goes by **Chris Cantrell**, and that is what
+  correspondence should say. **BJ Robert Cantrell** is the full legal name and is for forms that
+  demand one — the North Dakota photo request was signed "BJ Cantrell" because it was a legal form.
+  Do not "make them consistent"; they are different on purpose.
 - 🔴 **`photo_license` stays `unknown` until a reply arrives.** A sent request is not a grant. ND-5's
   rule: only the reply changes that field, and only to what the reply actually says.
 - 🔴 **Do not import the seven on the strength of having asked.** They stay out of production until
