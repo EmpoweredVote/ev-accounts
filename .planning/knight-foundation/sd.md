@@ -13,7 +13,38 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — 9 offices, 9 seated, 0 vacant, 7 terms DATED + 2 honestly unknown** (`X0072`, `CC_0165`/`CC_0166`) |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
-| 5 assets | — not started. No `aberdeen` banner key |
+| 5 assets | ▶ **BLOCKED ON A LICENCE.** Letter drafted to the LRC, **NOT SENT, nothing imported**. No `aberdeen` banner key |
+
+### ▶ RESUMING THIS SLICE — read this before touching anything
+
+**Next is SD-4, Brown County. Its elected office inventory is UNREAD.**
+🔴 Bind on **(mtfcc, geo_id) = (`G4020`, `46013`)**. `Brown County` resolves NINE ways.
+▶ Read the county's own authority the way ND-4 did — Grand Forks County turned out to elect
+**seven** officers with its commission **at large and no districts**, and only the charter settled
+it. South Dakota counties are statutory (SDCL Title 7) rather than chartered, so the statute is the
+likely authority; **check whether Brown County has adopted a charter before assuming that.**
+
+⚠ **THE WORKTREE IS SET UP UNUSUALLY AND A FRESH SESSION WILL TRIP ON IT.**
+`C:\ev-accounts-sd\backend\node_modules` is a **directory junction** to the main checkout's, and
+`backend/.env` is a **hard link** to it — the repo's `.env` is read-blocked here, so it could not be
+copied. Both are gitignored. If `npx tsx` or a `.mjs` script dies with `ERR_MODULE_NOT_FOUND`, the
+junction is missing; recreate with:
+
+```
+cmd //c "mklink /J C:\ev-accounts-sd\backend\node_modules C:\EV-Accounts\backend\node_modules"
+cmd //c "mklink /H C:\ev-accounts-sd\backend\.env C:\EV-Accounts\backend\.env"
+```
+
+🟢 **Migrations are applied with `psql`, not the MCP** — dry-run by concatenating the pair with
+`COMMIT` replaced by `ROLLBACK`, then **verify the rollback reverted** before the real apply:
+
+```
+cd /c/ev-accounts-sd/backend && (set -a; . ./.env; set +a; \
+  "/c/Program Files/PostgreSQL/18/bin/psql" "$DATABASE_URL" -v ON_ERROR_STOP=1 -f <file>)
+```
+
+⚠ `state:sd` lease runs to **2026-09-29 07:08Z** — extend it before a long session.
+⚠ Slots used so far: `CC_0163`-`CC_0166`. Allocate new ones; never count.
 
 ---
 
